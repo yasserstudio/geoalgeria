@@ -1,0 +1,64 @@
+{
+  "name": "geoalgeria",
+  "version": "1.0.0",
+  "description": "69 wilayas, 597 dairas, 1657 communes of Algeria — bilingual names, postal codes, coordinates. JSON, CSV, GeoJSON, SQL, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./index.js",
+      "types": "./types/index.d.ts"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "validate": "python3 scripts/validate.py",
+    "test": "python3 scripts/validate.py"
+  },
+  "keywords": [
+    "algeria",
+    "wilayas",
+    "communes",
+    "dairas",
+    "geodata",
+    "geoalgeria",
+    "postal-codes",
+    "geojson",
+    "administrative-divisions",
+    "algerie",
+    "dz",
+    "algeria-cities",
+    "algeria-map",
+    "algeria-geojson",
+    "code-postal-algerie",
+    "wilayas-algerie",
+    "communes-algerie",
+    "algeria-provinces",
+    "algeria-municipalities",
+    "algeria-2025",
+    "address-autocomplete",
+    "address-form",
+    "shipping-zones",
+    "ecommerce-algeria",
+    "typescript",
+    "open-data"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git"
+  },
+  "homepage": "https://geoalgeria.com"
+}
