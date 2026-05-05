@@ -1,6 +1,6 @@
 # GeoAlgeria
 
-> The complete Algerian geodata package — 69 wilayas, 553 dairas, 1,541 communes. One `npm install` away.
+> The complete Algerian geodata package — 69 wilayas, 564 dairas, 1,541 communes. One `npm install` away.
 
 Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata — updated for the 2025 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
 
@@ -13,7 +13,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **553 dairas** (districts), and **1,541 communes** (municipalities) as of the 2025 reform. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law 26-06 (announced Nov 16, 2025; published in JO No. 25, April 5, 2026, adding wilayas 59–69). Source: Journal Officiel de la République Algérienne (JORA). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: May 2026.
+Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities) as of the 2025 reform. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law 26-06 (announced Nov 16, 2025; published in JO No. 25, April 5, 2026, adding wilayas 59–69). Source: Journal Officiel de la République Algérienne (JORA). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: May 2026.
 
 ---
 
@@ -64,7 +64,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
-dz.dairas;                     // all 553 dairas
+dz.dairas;                     // all 564 dairas
 dz.ecommerce;                  // flat dataset for address forms
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }

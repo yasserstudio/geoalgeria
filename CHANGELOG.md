@@ -16,7 +16,7 @@ Versioning rules for datasets:
 - 69 wilayas (original 48 + 2019 reform wilayas 49–58 + 2025 reform wilayas 59–69)
 - 1,541 communes with bilingual names (FR/AR), postal codes, daira assignments
 - 1,541 commune coordinates (98.7% coverage)
-- 553 dairas as first-class entities
+- 564 dairas as first-class entities
 - Multiple export formats: JSON, CSV, GeoJSON, SQL
 - E-commerce optimized flat dataset
 - TypeScript type definitions
