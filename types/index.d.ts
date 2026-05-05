@@ -6,8 +6,59 @@ export interface Wilaya {
   postal_code: string;
   latitude: number;
   longitude: number;
-  created: "original" | "1984" | "2019" | "2025";
+  created: "original" | "2019" | "2025";
   parent_wilaya?: string;
+}
+
+export interface WilayaDetailed {
+  code: number;
+  name_fr: string;
+  name_ar: string;
+  name_en: string;
+  created: number;
+  dairas_count: number;
+  communes_count: number;
+  law?: string;
+  mother_wilaya_code?: number;
+  note?: string;
+  dairas_source?: string;
+  dairas?: DairaDetail[];
+  communes?: CommuneBasic[];
+}
+
+export interface DairaDetail {
+  name_ar: string;
+  name_fr: string;
+  communes?: CommuneBasic[];
+}
+
+export interface CommuneBasic {
+  name_ar: string;
+  name_fr: string;
+}
+
+export interface WilayaDataset {
+  metadata: DatasetMetadata;
+  wilayas: WilayaDetailed[];
+}
+
+export interface DatasetMetadata {
+  title: string;
+  total_wilayas: number;
+  total_communes: number;
+  total_dairas: number;
+  reforms: Reform[];
+  sources: string[];
+  last_updated: string;
+  notes: string[];
+}
+
+export interface Reform {
+  year: number;
+  law: string;
+  journal_officiel?: string;
+  description: string;
+  wilayas_added?: string;
 }
 
 export interface Commune {
@@ -32,11 +83,11 @@ export interface CommuneEcommerce {
   id: number;
   commune_name_fr: string;
   commune_name_ar: string;
-  daira_name_fr: string;
+  daira_name_fr: string | null;
   wilaya_code: number;
   wilaya_name_fr: string;
   wilaya_name_ar: string;
-  postal_code: string;
+  postal_code: string | null;
 }
 
 export interface WilayaWithCommunes extends Wilaya {
