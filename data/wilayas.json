@@ -1,0 +1,947 @@
+{
+  "metadata": {
+    "title": "Algeria Administrative Divisions — 69 Wilayas",
+    "total_wilayas": 69,
+    "total_communes": 1541,
+    "total_dairas": 553,
+    "reforms": [
+      {
+        "year": 1984,
+        "law": "Law 84-09, February 4, 1984",
+        "description": "Original 48 wilayas established"
+      },
+      {
+        "year": 2019,
+        "law": "Law 19-12, December 11, 2019",
+        "journal_officiel": "JO No. 78, December 18, 2019, p.13",
+        "description": "10 southern delegated wilayas promoted to full wilayas (49-58)"
+      },
+      {
+        "year": 2025,
+        "law": "Law 26-06, April 4, 2026",
+        "journal_officiel": "JO No. 25, April 5, 2026",
+        "announced": "2025-11-16",
+        "transition_end": "2026-12-31",
+        "full_autonomy": "2027-01-01",
+        "description": "11 Hauts Plateaux delegated wilayas promoted to full wilayas (59-69)"
+      }
+    ],
+    "sources": [
+      "Journal Officiel No. 25, April 5, 2026 (Law 26-06)",
+      "Journal Officiel No. 78, December 18, 2019 (Law 19-12)",
+      "Ministry of Interior — interieur.gov.dz",
+      "APS (Algérie Presse Service) — aps.dz",
+      "Echorouk Online — echoroukonline.com",
+      "Awras — awras.com (draft law commune lists)",
+      "Djelfa Info — djelfa.info (Presidential Decree 19-328)",
+      "Aures News — elauresnews.dz",
+      "El Moudjahid — elmoudjahid.dz",
+      "France 24 Arabic",
+      "Wikipedia FR/AR (cross-referenced)"
+    ],
+    "last_updated": "2026-05-05",
+    "notes": [
+      "Wilaya numbering 59-69 follows mother wilaya code order (traditional Algerian method)",
+      "Post-reform daïra counts for new wilayas are partially confirmed — full implementing decrees expected before 2027-01-01",
+      "Some mother wilaya websites still show pre-reform data during transition period"
+    ]
+  },
+  "wilayas": [
+    {
+      "code": 1,
+      "name_ar": "أدرار",
+      "name_fr": "Adrar",
+      "name_en": "Adrar",
+      "created": 1984,
+      "dairas_count": 6,
+      "communes_count": 16
+    },
+    {
+      "code": 2,
+      "name_ar": "الشلف",
+      "name_fr": "Chlef",
+      "name_en": "Chlef",
+      "created": 1984,
+      "dairas_count": 13,
+      "communes_count": 35
+    },
+    {
+      "code": 3,
+      "name_ar": "الأغواط",
+      "name_fr": "Laghouat",
+      "name_en": "Laghouat",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 24,
+      "reform_2025": {
+        "communes_lost": 12,
+        "lost_to": [59],
+        "post_reform_communes": 12
+      }
+    },
+    {
+      "code": 4,
+      "name_ar": "أم البواقي",
+      "name_fr": "Oum El Bouaghi",
+      "name_en": "Oum El Bouaghi",
+      "created": 1984,
+      "dairas_count": 12,
+      "communes_count": 29
+    },
+    {
+      "code": 5,
+      "name_ar": "باتنة",
+      "name_fr": "Batna",
+      "name_en": "Batna",
+      "created": 1984,
+      "dairas_count": 21,
+      "communes_count": 61,
+      "reform_2025": {
+        "communes_lost": 8,
+        "lost_to": [60],
+        "post_reform_communes": 53
+      }
+    },
+    {
+      "code": 6,
+      "name_ar": "بجاية",
+      "name_fr": "Béjaïa",
+      "name_en": "Béjaïa",
+      "created": 1984,
+      "dairas_count": 19,
+      "communes_count": 52
+    },
+    {
+      "code": 7,
+      "name_ar": "بسكرة",
+      "name_fr": "Biskra",
+      "name_en": "Biskra",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 27,
+      "reform_2025": {
+        "communes_lost": 5,
+        "lost_to": [61],
+        "post_reform_communes": 22,
+        "note": "Pre-reform count varies by source (27-33); 27 is post-2019 after Ouled Djellal separation"
+      }
+    },
+    {
+      "code": 8,
+      "name_ar": "بشار",
+      "name_fr": "Béchar",
+      "name_en": "Béchar",
+      "created": 1984,
+      "dairas_count": 6,
+      "communes_count": 11
+    },
+    {
+      "code": 9,
+      "name_ar": "البليدة",
+      "name_fr": "Blida",
+      "name_en": "Blida",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 25
+    },
+    {
+      "code": 10,
+      "name_ar": "البويرة",
+      "name_fr": "Bouira",
+      "name_en": "Bouira",
+      "created": 1984,
+      "dairas_count": 12,
+      "communes_count": 45
+    },
+    {
+      "code": 11,
+      "name_ar": "تمنراست",
+      "name_fr": "Tamanrasset",
+      "name_en": "Tamanrasset",
+      "created": 1984,
+      "dairas_count": 3,
+      "communes_count": 5
+    },
+    {
+      "code": 12,
+      "name_ar": "تبسة",
+      "name_fr": "Tébessa",
+      "name_en": "Tébessa",
+      "created": 1984,
+      "dairas_count": 12,
+      "communes_count": 28,
+      "reform_2025": {
+        "communes_lost": 4,
+        "lost_to": [62],
+        "post_reform_communes": 24
+      }
+    },
+    {
+      "code": 13,
+      "name_ar": "تلمسان",
+      "name_fr": "Tlemcen",
+      "name_en": "Tlemcen",
+      "created": 1984,
+      "dairas_count": 20,
+      "communes_count": 53,
+      "reform_2025": {
+        "communes_lost": 4,
+        "lost_to": [63],
+        "post_reform_communes": 49
+      }
+    },
+    {
+      "code": 14,
+      "name_ar": "تيارت",
+      "name_fr": "Tiaret",
+      "name_en": "Tiaret",
+      "created": 1984,
+      "dairas_count": 14,
+      "communes_count": 42,
+      "reform_2025": {
+        "communes_lost": 6,
+        "lost_to": [64],
+        "post_reform_communes": 36
+      }
+    },
+    {
+      "code": 15,
+      "name_ar": "تيزي وزو",
+      "name_fr": "Tizi Ouzou",
+      "name_en": "Tizi Ouzou",
+      "created": 1984,
+      "dairas_count": 21,
+      "communes_count": 67
+    },
+    {
+      "code": 16,
+      "name_ar": "الجزائر",
+      "name_fr": "Alger",
+      "name_en": "Algiers",
+      "created": 1984,
+      "dairas_count": 13,
+      "communes_count": 57
+    },
+    {
+      "code": 17,
+      "name_ar": "الجلفة",
+      "name_fr": "Djelfa",
+      "name_en": "Djelfa",
+      "created": 1984,
+      "dairas_count": 12,
+      "communes_count": 36,
+      "reform_2025": {
+        "communes_lost": 18,
+        "lost_to": [65, 66],
+        "post_reform_communes": 18,
+        "post_reform_dairas": 6,
+        "source": "Djelfa Info — Presidential Decree 19-328"
+      }
+    },
+    {
+      "code": 18,
+      "name_ar": "جيجل",
+      "name_fr": "Jijel",
+      "name_en": "Jijel",
+      "created": 1984,
+      "dairas_count": 11,
+      "communes_count": 28
+    },
+    {
+      "code": 19,
+      "name_ar": "سطيف",
+      "name_fr": "Sétif",
+      "name_en": "Sétif",
+      "created": 1984,
+      "dairas_count": 20,
+      "communes_count": 60
+    },
+    {
+      "code": 20,
+      "name_ar": "سعيدة",
+      "name_fr": "Saïda",
+      "name_en": "Saïda",
+      "created": 1984,
+      "dairas_count": 6,
+      "communes_count": 16
+    },
+    {
+      "code": 21,
+      "name_ar": "سكيكدة",
+      "name_fr": "Skikda",
+      "name_en": "Skikda",
+      "created": 1984,
+      "dairas_count": 13,
+      "communes_count": 38
+    },
+    {
+      "code": 22,
+      "name_ar": "سيدي بلعباس",
+      "name_fr": "Sidi Bel Abbès",
+      "name_en": "Sidi Bel Abbès",
+      "created": 1984,
+      "dairas_count": 15,
+      "communes_count": 52
+    },
+    {
+      "code": 23,
+      "name_ar": "عنابة",
+      "name_fr": "Annaba",
+      "name_en": "Annaba",
+      "created": 1984,
+      "dairas_count": 6,
+      "communes_count": 12
+    },
+    {
+      "code": 24,
+      "name_ar": "قالمة",
+      "name_fr": "Guelma",
+      "name_en": "Guelma",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 34
+    },
+    {
+      "code": 25,
+      "name_ar": "قسنطينة",
+      "name_fr": "Constantine",
+      "name_en": "Constantine",
+      "created": 1984,
+      "dairas_count": 7,
+      "communes_count": 12
+    },
+    {
+      "code": 26,
+      "name_ar": "المدية",
+      "name_fr": "Médéa",
+      "name_en": "Médéa",
+      "created": 1984,
+      "dairas_count": 19,
+      "communes_count": 64,
+      "reform_2025": {
+        "communes_lost": 21,
+        "lost_to": [67],
+        "post_reform_communes": 43
+      }
+    },
+    {
+      "code": 27,
+      "name_ar": "مستغانم",
+      "name_fr": "Mostaganem",
+      "name_en": "Mostaganem",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 32
+    },
+    {
+      "code": 28,
+      "name_ar": "المسيلة",
+      "name_fr": "M'sila",
+      "name_en": "M'sila",
+      "created": 1984,
+      "dairas_count": 15,
+      "communes_count": 47,
+      "reform_2025": {
+        "communes_lost": 23,
+        "lost_to": [68],
+        "post_reform_communes": 24
+      }
+    },
+    {
+      "code": 29,
+      "name_ar": "معسكر",
+      "name_fr": "Mascara",
+      "name_en": "Mascara",
+      "created": 1984,
+      "dairas_count": 16,
+      "communes_count": 47
+    },
+    {
+      "code": 30,
+      "name_ar": "ورقلة",
+      "name_fr": "Ouargla",
+      "name_en": "Ouargla",
+      "created": 1984,
+      "dairas_count": 5,
+      "communes_count": 8
+    },
+    {
+      "code": 31,
+      "name_ar": "وهران",
+      "name_fr": "Oran",
+      "name_en": "Oran",
+      "created": 1984,
+      "dairas_count": 9,
+      "communes_count": 26
+    },
+    {
+      "code": 32,
+      "name_ar": "البيض",
+      "name_fr": "El Bayadh",
+      "name_en": "El Bayadh",
+      "created": 1984,
+      "dairas_count": 8,
+      "communes_count": 22,
+      "reform_2025": {
+        "communes_lost": 7,
+        "lost_to": [69],
+        "post_reform_communes": 15
+      }
+    },
+    {
+      "code": 33,
+      "name_ar": "إليزي",
+      "name_fr": "Illizi",
+      "name_en": "Illizi",
+      "created": 1984,
+      "dairas_count": 3,
+      "communes_count": 4
+    },
+    {
+      "code": 34,
+      "name_ar": "برج بوعريريج",
+      "name_fr": "Bordj Bou Arreridj",
+      "name_en": "Bordj Bou Arreridj",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 34
+    },
+    {
+      "code": 35,
+      "name_ar": "بومرداس",
+      "name_fr": "Boumerdès",
+      "name_en": "Boumerdès",
+      "created": 1984,
+      "dairas_count": 9,
+      "communes_count": 32
+    },
+    {
+      "code": 36,
+      "name_ar": "الطارف",
+      "name_fr": "El Tarf",
+      "name_en": "El Tarf",
+      "created": 1984,
+      "dairas_count": 7,
+      "communes_count": 24
+    },
+    {
+      "code": 37,
+      "name_ar": "تندوف",
+      "name_fr": "Tindouf",
+      "name_en": "Tindouf",
+      "created": 1984,
+      "dairas_count": 1,
+      "communes_count": 2
+    },
+    {
+      "code": 38,
+      "name_ar": "تيسمسيلت",
+      "name_fr": "Tissemsilt",
+      "name_en": "Tissemsilt",
+      "created": 1984,
+      "dairas_count": 8,
+      "communes_count": 22
+    },
+    {
+      "code": 39,
+      "name_ar": "الوادي",
+      "name_fr": "El Oued",
+      "name_en": "El Oued",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 22
+    },
+    {
+      "code": 40,
+      "name_ar": "خنشلة",
+      "name_fr": "Khenchela",
+      "name_en": "Khenchela",
+      "created": 1984,
+      "dairas_count": 8,
+      "communes_count": 21
+    },
+    {
+      "code": 41,
+      "name_ar": "سوق أهراس",
+      "name_fr": "Souk Ahras",
+      "name_en": "Souk Ahras",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 26
+    },
+    {
+      "code": 42,
+      "name_ar": "تيبازة",
+      "name_fr": "Tipaza",
+      "name_en": "Tipaza",
+      "created": 1984,
+      "dairas_count": 10,
+      "communes_count": 28
+    },
+    {
+      "code": 43,
+      "name_ar": "ميلة",
+      "name_fr": "Mila",
+      "name_en": "Mila",
+      "created": 1984,
+      "dairas_count": 13,
+      "communes_count": 32
+    },
+    {
+      "code": 44,
+      "name_ar": "عين الدفلى",
+      "name_fr": "Aïn Defla",
+      "name_en": "Aïn Defla",
+      "created": 1984,
+      "dairas_count": 14,
+      "communes_count": 36
+    },
+    {
+      "code": 45,
+      "name_ar": "النعامة",
+      "name_fr": "Naâma",
+      "name_en": "Naâma",
+      "created": 1984,
+      "dairas_count": 7,
+      "communes_count": 12
+    },
+    {
+      "code": 46,
+      "name_ar": "عين تموشنت",
+      "name_fr": "Aïn Témouchent",
+      "name_en": "Aïn Témouchent",
+      "created": 1984,
+      "dairas_count": 8,
+      "communes_count": 28
+    },
+    {
+      "code": 47,
+      "name_ar": "غرداية",
+      "name_fr": "Ghardaïa",
+      "name_en": "Ghardaïa",
+      "created": 1984,
+      "dairas_count": 8,
+      "communes_count": 10,
+      "note": "Daïra count disputed: FR Wikipedia says 8, University of Ghardaïa says 9. Commune count: FR says 10, AR says 9, University says 13 (may be pre-2019)"
+    },
+    {
+      "code": 48,
+      "name_ar": "غليزان",
+      "name_fr": "Relizane",
+      "name_en": "Relizane",
+      "created": 1984,
+      "dairas_count": 13,
+      "communes_count": 38
+    },
+    {
+      "code": 49,
+      "name_ar": "تيميمون",
+      "name_fr": "Timimoun",
+      "name_en": "Timimoun",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 1,
+      "dairas_count": 4,
+      "communes_count": 10
+    },
+    {
+      "code": 50,
+      "name_ar": "برج باجي مختار",
+      "name_fr": "Bordj Badji Mokhtar",
+      "name_en": "Bordj Badji Mokhtar",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 1,
+      "dairas_count": 1,
+      "communes_count": 2
+    },
+    {
+      "code": 51,
+      "name_ar": "أولاد جلال",
+      "name_fr": "Ouled Djellal",
+      "name_en": "Ouled Djellal",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 7,
+      "dairas_count": 2,
+      "communes_count": 6
+    },
+    {
+      "code": 52,
+      "name_ar": "بني عباس",
+      "name_fr": "Béni Abbès",
+      "name_en": "Béni Abbès",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 8,
+      "dairas_count": 6,
+      "communes_count": 10
+    },
+    {
+      "code": 53,
+      "name_ar": "عين صالح",
+      "name_fr": "In Salah",
+      "name_en": "In Salah",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 11,
+      "dairas_count": 2,
+      "communes_count": 3
+    },
+    {
+      "code": 54,
+      "name_ar": "عين قزام",
+      "name_fr": "In Guezzam",
+      "name_en": "In Guezzam",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 11,
+      "dairas_count": 2,
+      "communes_count": 2
+    },
+    {
+      "code": 55,
+      "name_ar": "توقرت",
+      "name_fr": "Touggourt",
+      "name_en": "Touggourt",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 30,
+      "dairas_count": 5,
+      "communes_count": 13
+    },
+    {
+      "code": 56,
+      "name_ar": "جانت",
+      "name_fr": "Djanet",
+      "name_en": "Djanet",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 33,
+      "dairas_count": 1,
+      "communes_count": 2
+    },
+    {
+      "code": 57,
+      "name_ar": "المغير",
+      "name_fr": "El M'Ghair",
+      "name_en": "El M'Ghair",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 39,
+      "dairas_count": 2,
+      "communes_count": 8
+    },
+    {
+      "code": 58,
+      "name_ar": "المنيعة",
+      "name_fr": "El Meniaa",
+      "name_en": "El Meniaa",
+      "created": 2019,
+      "law": "Law 19-12",
+      "mother_wilaya_code": 47,
+      "dairas_count": 1,
+      "communes_count": 3
+    },
+    {
+      "code": 59,
+      "name_ar": "آفلو",
+      "name_fr": "Aflou",
+      "name_en": "Aflou",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 3,
+      "communes_count": 12,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "آفلو", "name_fr": "Aflou"},
+        {"name_ar": "قلتة سيدي سعد", "name_fr": "Gueltat Sidi Saâd"},
+        {"name_ar": "عين سيدي علي", "name_fr": "Aïn Sidi Ali"},
+        {"name_ar": "بيضاء", "name_fr": "Beidha"},
+        {"name_ar": "بريدة", "name_fr": "Brida"},
+        {"name_ar": "الغيشة", "name_fr": "El Ghicha"},
+        {"name_ar": "الحاج المشري", "name_fr": "Hadj Mechri"},
+        {"name_ar": "سبقاق", "name_fr": "Sebgag"},
+        {"name_ar": "تاويالة", "name_fr": "Taouiala"},
+        {"name_ar": "وادي مرة", "name_fr": "Oued Morra"},
+        {"name_ar": "وادي مزي", "name_fr": "Oued M'zi"},
+        {"name_ar": "سيدي بوزيد", "name_fr": "Sidi Bouzid"}
+      ]
+    },
+    {
+      "code": 60,
+      "name_ar": "بريكة",
+      "name_fr": "Barika",
+      "name_en": "Barika",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 5,
+      "communes_count": 8,
+      "dairas_count": 3,
+      "dairas_source": "Aures News — confirmed by wali of Batna",
+      "communes": [
+        {"name_ar": "بريكة", "name_fr": "Barika"},
+        {"name_ar": "بيطام", "name_fr": "Bitam"},
+        {"name_ar": "عبد القادر عزيل", "name_fr": "Abdelkader Azil"},
+        {"name_ar": "تيلاطو", "name_fr": "Tilatou"},
+        {"name_ar": "سقانة", "name_fr": "Seggana"},
+        {"name_ar": "الجزار", "name_fr": "Djezzar"},
+        {"name_ar": "مدوكل", "name_fr": "Amdoukal"},
+        {"name_ar": "أولاد عمار", "name_fr": "Ouled Ammar"}
+      ]
+    },
+    {
+      "code": 61,
+      "name_ar": "القنطرة",
+      "name_fr": "El Kantara",
+      "name_en": "El Kantara",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 7,
+      "communes_count": 5,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "القنطرة", "name_fr": "El Kantara"},
+        {"name_ar": "عين زعطوط", "name_fr": "Aïn Zaatout"},
+        {"name_ar": "البرانيس", "name_fr": "El Branès"},
+        {"name_ar": "الوطاية", "name_fr": "El Outaya"},
+        {"name_ar": "جمورة", "name_fr": "Djemorah"}
+      ]
+    },
+    {
+      "code": 62,
+      "name_ar": "بئر العاتر",
+      "name_fr": "Bir El Ater",
+      "name_en": "Bir El Ater",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 12,
+      "communes_count": 4,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "بئر العاتر", "name_fr": "Bir El Ater"},
+        {"name_ar": "نقرين", "name_fr": "Negrine"},
+        {"name_ar": "العقلة المالحة", "name_fr": "El Ogla El Malha"},
+        {"name_ar": "فركان", "name_fr": "Ferkane"}
+      ]
+    },
+    {
+      "code": 63,
+      "name_ar": "العريشة",
+      "name_fr": "El Aricha",
+      "name_en": "El Aricha",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 13,
+      "communes_count": 4,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "العريشة", "name_fr": "El Aricha"},
+        {"name_ar": "القور", "name_fr": "El Gor"},
+        {"name_ar": "سيدي الجيلالي", "name_fr": "Sidi Djillali"},
+        {"name_ar": "البويهي", "name_fr": "El Bouihi"}
+      ]
+    },
+    {
+      "code": 64,
+      "name_ar": "قصر الشلالة",
+      "name_fr": "Ksar Chellala",
+      "name_en": "Ksar Chellala",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 14,
+      "communes_count": 6,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "قصر الشلالة", "name_fr": "Ksar Chellala"},
+        {"name_ar": "زمالة الأمير عبد القادر", "name_fr": "Zmalet Emir Abdelkader"},
+        {"name_ar": "الرشايقة", "name_fr": "Rechaïga"},
+        {"name_ar": "الحمادية", "name_fr": "Hamadia"},
+        {"name_ar": "سرغين", "name_fr": "Serghine"},
+        {"name_ar": "بوقرة", "name_fr": "Bougara"}
+      ]
+    },
+    {
+      "code": 65,
+      "name_ar": "عين وسارة",
+      "name_fr": "Aïn Oussara",
+      "name_en": "Aïn Oussara",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 17,
+      "communes_count": 10,
+      "dairas_count": 4,
+      "dairas_source": "Djelfa Info — Presidential Decree 19-328",
+      "dairas": [
+        {
+          "name_ar": "عين وسارة",
+          "name_fr": "Aïn Oussara",
+          "communes": ["عين وسارة", "قرنيني"]
+        },
+        {
+          "name_ar": "البيرين",
+          "name_fr": "Birine",
+          "communes": ["بيرين", "بنهار"]
+        },
+        {
+          "name_ar": "سيدي لعجال",
+          "name_fr": "Sidi Ladjel",
+          "communes": ["سيدي لعجال", "الخميس", "حاسي فدول"]
+        },
+        {
+          "name_ar": "حد الصحاري",
+          "name_fr": "Had Sahary",
+          "communes": ["حد الصحاري", "عين فكة", "بويرة الأحدب"]
+        }
+      ],
+      "communes": [
+        {"name_ar": "عين وسارة", "name_fr": "Aïn Oussara"},
+        {"name_ar": "بيرين", "name_fr": "Birine"},
+        {"name_ar": "بويرة الأحدب", "name_fr": "Bouira Lahdab"},
+        {"name_ar": "الخميس", "name_fr": "El Khemis"},
+        {"name_ar": "سيدي لعجال", "name_fr": "Sidi Ladjel"},
+        {"name_ar": "حد الصحاري", "name_fr": "Had Sahary"},
+        {"name_ar": "قرنيني", "name_fr": "Guernini"},
+        {"name_ar": "بنهار", "name_fr": "Benhar"},
+        {"name_ar": "حاسي فدول", "name_fr": "Hassi Fdoul"},
+        {"name_ar": "عين فكة", "name_fr": "Aïn Fekka"}
+      ]
+    },
+    {
+      "code": 66,
+      "name_ar": "مسعد",
+      "name_fr": "Messaad",
+      "name_en": "Messaad",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 17,
+      "communes_count": 8,
+      "dairas_count": 2,
+      "dairas_source": "Djelfa Info — Presidential Decree 19-328",
+      "dairas": [
+        {
+          "name_ar": "مسعد",
+          "name_fr": "Messaad",
+          "communes": ["مسعد", "سلمانة", "سد الرحال", "دلدول", "القطارة"]
+        },
+        {
+          "name_ar": "فيض البطمة",
+          "name_fr": "Feidh El Botma",
+          "communes": ["فيض البطمة", "أم العظام", "عمورة"]
+        }
+      ],
+      "communes": [
+        {"name_ar": "مسعد", "name_fr": "Messaad"},
+        {"name_ar": "سد الرحال", "name_fr": "Sed Rahal"},
+        {"name_ar": "فيض البطمة", "name_fr": "Feidh El Botma"},
+        {"name_ar": "القطارة", "name_fr": "Guettara"},
+        {"name_ar": "سلمانة", "name_fr": "Selmana"},
+        {"name_ar": "أم العظام", "name_fr": "Oum El Adham"},
+        {"name_ar": "دلدول", "name_fr": "Deldoul"},
+        {"name_ar": "عمورة", "name_fr": "Amourah"}
+      ]
+    },
+    {
+      "code": 67,
+      "name_ar": "قصر البخاري",
+      "name_fr": "Ksar El Boukhari",
+      "name_en": "Ksar El Boukhari",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 26,
+      "communes_count": 21,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "قصر البخاري", "name_fr": "Ksar El Boukhari"},
+        {"name_ar": "أولاد معرف", "name_fr": "Ouled Maaref"},
+        {"name_ar": "عين بوسيف", "name_fr": "Aïn Boucif"},
+        {"name_ar": "دراق", "name_fr": "Draa"},
+        {"name_ar": "بوعيش", "name_fr": "Bouaiche"},
+        {"name_ar": "الكاف الأخضر", "name_fr": "El Kef Lakhdar"},
+        {"name_ar": "شلالة العذاورة", "name_fr": "Chellalet El Adhaoura"},
+        {"name_ar": "أولاد هلال", "name_fr": "Ouled Hellal"},
+        {"name_ar": "تفراوت", "name_fr": "Tafraout"},
+        {"name_ar": "بوغار", "name_fr": "Boughar"},
+        {"name_ar": "سيدي دامد", "name_fr": "Sidi Damed"},
+        {"name_ar": "عزيز", "name_fr": "Aziz"},
+        {"name_ar": "الشهبونية", "name_fr": "Chahbounia"},
+        {"name_ar": "شنيقل", "name_fr": "Cheniguel"},
+        {"name_ar": "عين القصير", "name_fr": "Aïn El Ksar"},
+        {"name_ar": "أم الجليل", "name_fr": "Oum El Djellil"},
+        {"name_ar": "مفتاحة", "name_fr": "Meftaha"},
+        {"name_ar": "بوغزول", "name_fr": "Boughzoul"},
+        {"name_ar": "العوينات", "name_fr": "El Aouinet"},
+        {"name_ar": "أولاد عنتر", "name_fr": "Ouled Antar"},
+        {"name_ar": "السانق", "name_fr": "Es-Sanaag"}
+      ]
+    },
+    {
+      "code": 68,
+      "name_ar": "بوسعادة",
+      "name_fr": "Bou Saâda",
+      "name_en": "Bou Saâda",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 28,
+      "communes_count": 23,
+      "dairas_count": 8,
+      "dairas_source": "Arabic Wikipedia — Wilaya Bou Saâda",
+      "dairas": [
+        {"name_ar": "بوسعادة", "name_fr": "Bou Saâda", "communes": ["بوسعادة", "الهامل", "ولتان"]},
+        {"name_ar": "مجدل", "name_fr": "Medjedel", "communes": ["مجدل", "سليم"]},
+        {"name_ar": "جبل أمساعد", "name_fr": "Djebel Messaad", "communes": ["جبل مسعد", "عين الريش"]},
+        {"name_ar": "عين الملح", "name_fr": "Aïn El Melh", "communes": ["عين الملح", "بئر الفضة", "عين فارس", "سيدي محمد", "مناعة"]},
+        {"name_ar": "بن سرور", "name_fr": "Ben Srour", "communes": ["بن سرور", "أولاد سليمان", "الزرزور", "محمد بوضياف"]},
+        {"name_ar": "الخبانة", "name_fr": "Khoubana", "communes": ["الخبانة", "مصيف", "الحوامد"]},
+        {"name_ar": "سيدي عامر", "name_fr": "Sidi Ameur", "communes": ["سيدي عامر", "تامسة"]},
+        {"name_ar": "أولاد سيدي إبراهيم", "name_fr": "Ouled Sidi Brahim", "communes": ["أولاد سيدي إبراهيم", "بن زوح"]}
+      ],
+      "communes": [
+        {"name_ar": "بوسعادة", "name_fr": "Bou Saâda"},
+        {"name_ar": "الخبانة", "name_fr": "Khoubana"},
+        {"name_ar": "مصيف", "name_fr": "M'cif"},
+        {"name_ar": "أولاد سيدي إبراهيم", "name_fr": "Ouled Sidi Brahim"},
+        {"name_ar": "سيدي عامر", "name_fr": "Sidi Ameur"},
+        {"name_ar": "تامسة", "name_fr": "Tamsa"},
+        {"name_ar": "بن سرور", "name_fr": "Ben Srour"},
+        {"name_ar": "أولاد سليمان", "name_fr": "Ouled Slimane"},
+        {"name_ar": "الحوامد", "name_fr": "El Houamed"},
+        {"name_ar": "الهامل", "name_fr": "El Hamel"},
+        {"name_ar": "الزرزور", "name_fr": "Zarzour"},
+        {"name_ar": "محمد بوضياف", "name_fr": "Mohamed Boudiaf"},
+        {"name_ar": "بن زوح", "name_fr": "Benzouh"},
+        {"name_ar": "بئر الفضة", "name_fr": "Bir Foda"},
+        {"name_ar": "عين فارس", "name_fr": "Aïn Fares"},
+        {"name_ar": "سيدي محمد", "name_fr": "Sidi M'hamed"},
+        {"name_ar": "مناعة", "name_fr": "Menaâ"},
+        {"name_ar": "عين الملح", "name_fr": "Aïn El Melh"},
+        {"name_ar": "مجدل", "name_fr": "Medjedel"},
+        {"name_ar": "سليم", "name_fr": "Slim"},
+        {"name_ar": "عين الريش", "name_fr": "Aïn Errich"},
+        {"name_ar": "ولتان", "name_fr": "Oulteme"},
+        {"name_ar": "جبل مسعد", "name_fr": "Djebel Messaad"}
+      ],
+      "note": "Some sources count 24 communes (adding El Aligue/العليق); AR Wikipedia and Marefa both confirm 23"
+    },
+    {
+      "code": 69,
+      "name_ar": "الأبيض سيدي الشيخ",
+      "name_fr": "El Abiodh Sidi Cheikh",
+      "name_en": "El Abiodh Sidi Cheikh",
+      "created": 2025,
+      "law": "Law 26-06",
+      "mother_wilaya_code": 32,
+      "communes_count": 7,
+      "dairas_count": null,
+      "communes": [
+        {"name_ar": "الأبيض سيدي الشيخ", "name_fr": "El Abiodh Sidi Cheikh"},
+        {"name_ar": "عين العراك", "name_fr": "Aïn El Arak"},
+        {"name_ar": "عرباوة", "name_fr": "Arbaouet"},
+        {"name_ar": "بوسمغون", "name_fr": "Bou Semghoun"},
+        {"name_ar": "شلالة", "name_fr": "Chellala"},
+        {"name_ar": "البنود", "name_fr": "El Bnoud"},
+        {"name_ar": "المهارة", "name_fr": "El Mehara"}
+      ]
+    }
+  ]
+}
