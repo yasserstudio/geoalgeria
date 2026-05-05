@@ -1,0 +1,18 @@
+name: Feature / New Data Request
+description: Suggest new data fields or datasets
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: What would you like added?
+      placeholder: e.g., "Add lat/lng coordinates to communes" or "Add a dairas.json file"
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Do you know a reliable source for this data?
+      placeholder: Link or reference to where this data can be found
+    validations:
+      required: false

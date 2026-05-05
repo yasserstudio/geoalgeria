@@ -1,0 +1,24 @@
+name: Validate Dataset
+
+on:
+  push:
+    branches: [main]
+    paths: ['data/**', 'scripts/**', 'index.js', 'types/**']
+  pull_request:
+    paths: ['data/**', 'scripts/**', 'index.js', 'types/**']
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate data
+        run: python scripts/validate.py
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Test npm package
+        run: node -e "const dz = require('./index.js'); assert = require('assert'); assert(dz.wilayas.length === 69); assert(dz.communes.length > 1600); assert(dz.dairas.length > 500); console.log('npm package OK');"

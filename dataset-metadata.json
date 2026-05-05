@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "GeoAlgeria — Algerian Administrative Divisions",
+  "description": "Complete dataset of Algeria's 69 wilayas, 597 dairas, and 1,657 communes with bilingual names (Arabic/French), postal codes, geographic coordinates, and official administrative codes. Updated for the 2025 reform (Law 26-06).",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "license": "https://opensource.org/licenses/MIT",
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "datePublished": "2025-05-05",
+  "dateModified": "2025-05-05",
+  "version": "1.0.0",
+  "inLanguage": ["fr", "ar"],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Complete dataset (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/algeria.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Communes (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/csv/communes.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Communes (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/geojson/communes.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "E-commerce ready (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/ecommerce/communes.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "SQL dump",
+      "encodingFormat": "application/sql",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/sql/full.sql"
+    }
+  ],
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "18.97 -8.67 37.09 11.98"
+    }
+  },
+  "temporalCoverage": "2025",
+  "keywords": [
+    "Algeria",
+    "wilayas",
+    "communes",
+    "dairas",
+    "postal codes",
+    "geodata",
+    "administrative divisions",
+    "GeoJSON",
+    "algerie",
+    "code postal"
+  ],
+  "measurementTechnique": "Official sources: JORA, Algerie Poste, Law 19-12 (2019), Law 26-06 (2025)",
+  "variableMeasured": [
+    "Wilaya code and names (FR/AR)",
+    "Daira names and commune counts",
+    "Commune names (FR/AR)",
+    "Postal codes",
+    "Geographic coordinates (lat/lng)",
+    "Official commune administrative codes",
+    "Phone area codes per wilaya"
+  ]
+}

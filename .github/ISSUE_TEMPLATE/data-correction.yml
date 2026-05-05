@@ -1,0 +1,43 @@
+name: Data Correction
+description: Report incorrect or missing data
+labels: ["data", "correction"]
+body:
+  - type: dropdown
+    id: file
+    attributes:
+      label: Which file?
+      options:
+        - data/wilayas.json
+        - data/dairas.json
+        - data/communes_w1_w23.json
+        - data/communes_w24_w48.json
+        - data/communes_w49_w69.json
+        - data/ecommerce/communes.json
+        - data/delivery/yalidine.json
+        - data/delivery/zr_express.json
+        - data/delivery/maystro.json
+    validations:
+      required: true
+  - type: input
+    id: entry
+    attributes:
+      label: Entry (commune or wilaya name)
+      placeholder: e.g., "Bordj Bou Arreridj"
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What's wrong and what should it be?
+      placeholder: |
+        Current value: ...
+        Correct value: ...
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source (link or reference)
+      placeholder: e.g., JORA issue number, Algerie Poste page, Wikipedia link
+    validations:
+      required: true
