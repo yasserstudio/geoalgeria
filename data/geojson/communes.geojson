@@ -327,7 +327,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name_fr": "Beni  Bouattab",
+        "name_fr": "Beni Bouattab",
         "name_ar": "بني بوعتاب",
         "wilaya_code": 2,
         "postal_code": "02017",
@@ -4254,7 +4254,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name_fr": "Oued  Djer",
+        "name_fr": "Oued Djer",
         "name_ar": "وادي جر",
         "wilaya_code": 9,
         "postal_code": "09011",
@@ -4493,7 +4493,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Ath Mansour",
-        "name_ar": "آث  منصور",
+        "name_ar": "آث منصور",
         "wilaya_code": 10,
         "postal_code": "10015",
         "daira": "M'Chedallah"
@@ -5104,7 +5104,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name_fr": "Z'barbar (El Isseri )",
+        "name_fr": "Z'barbar",
         "name_ar": "زبربر",
         "wilaya_code": 10,
         "postal_code": "10023",
@@ -7281,7 +7281,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Ait-Oumalou",
-        "name_ar": "أيت  أومالو",
+        "name_ar": "أيت أومالو",
         "wilaya_code": 15,
         "postal_code": "15066",
         "daira": "Tizi Rached"
@@ -9491,7 +9491,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Boudria Beniyadjis",
-        "name_ar": "بودريعة بني  ياجيس",
+        "name_ar": "بودريعة بني ياجيس",
         "wilaya_code": 18,
         "postal_code": "18027",
         "daira": "Djimla"
@@ -12295,7 +12295,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name_fr": "Mostefa  Ben Brahim",
+        "name_fr": "Mostefa Ben Brahim",
         "name_ar": "مصطفى بن ابراهيم",
         "wilaya_code": 22,
         "postal_code": "22016",
@@ -17174,23 +17174,6 @@
     {
       "type": "Feature",
       "properties": {
-        "name_fr": "B. B. Arreridj",
-        "name_ar": "برج بوعريرج",
-        "wilaya_code": 34,
-        "postal_code": "34000",
-        "daira": "Bordj Bou Arreridj"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.766667,
-          36.0704188
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "name_fr": "Belimour",
         "name_ar": "بليمور",
         "wilaya_code": 34,
@@ -17236,6 +17219,23 @@
         "coordinates": [
           5.033333,
           36.15
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Bordj Bou Arreridj",
+        "name_ar": "برج بوعريرج",
+        "wilaya_code": 34,
+        "postal_code": "34000",
+        "daira": "Bordj Bou Arreridj"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.766667,
+          36.0704188
         ]
       }
     },
@@ -19096,7 +19096,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Ben Guecha",
-        "name_ar": "بن  قشة",
+        "name_ar": "بن قشة",
         "wilaya_code": 39,
         "postal_code": "39018",
         "daira": "Taleb Larbi"
@@ -20745,7 +20745,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Ain Beida Harriche",
-        "name_ar": " عين البيضاء أحريش",
+        "name_ar": "عين البيضاء أحريش",
         "wilaya_code": 43,
         "postal_code": "43300",
         "daira": "Aïn Beida Harriche"
@@ -23244,7 +23244,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Sidi Khettab",
-        "name_ar": "سيدي  خطاب",
+        "name_ar": "سيدي خطاب",
         "wilaya_code": 48,
         "postal_code": "48015",
         "daira": "El Matmar"
@@ -23669,7 +23669,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Sidi Khaled",
-        "name_ar": "سيدي  خالد",
+        "name_ar": "سيدي خالد",
         "wilaya_code": 51,
         "postal_code": "51004",
         "daira": "Sidi Khaled"
@@ -25012,7 +25012,7 @@
       "type": "Feature",
       "properties": {
         "name_fr": "Zmalet El Emir Abdelkade",
-        "name_ar": "زمالة  الأمير عبد القادر",
+        "name_ar": "زمالة الأمير عبد القادر",
         "wilaya_code": 64,
         "postal_code": "14027",
         "daira": "Ksar Chellala"
@@ -25338,7 +25338,7 @@
         "name_ar": "عين بوسيف",
         "wilaya_code": 67,
         "postal_code": "66007",
-        "daira": "Ain Boucif"
+        "daira": "Aïn Boucif"
       },
       "geometry": {
         "type": "Point",
@@ -25508,7 +25508,7 @@
         "name_ar": "العوينات",
         "wilaya_code": 67,
         "postal_code": "66011",
-        "daira": "Ain Boucif"
+        "daira": "Aïn Boucif"
       },
       "geometry": {
         "type": "Point",
@@ -25525,7 +25525,7 @@
         "name_ar": "الكاف الاخضر",
         "wilaya_code": 67,
         "postal_code": "66008",
-        "daira": "Ain Boucif"
+        "daira": "Aïn Boucif"
       },
       "geometry": {
         "type": "Point",
@@ -25559,7 +25559,7 @@
         "name_ar": "مفاتحة",
         "wilaya_code": 67,
         "postal_code": "26059",
-        "daira": "Ksar Boukhari"
+        "daira": "Ksar El Boukhari"
       },
       "geometry": {
         "type": "Point",
@@ -25661,7 +25661,7 @@
         "name_ar": "سيدي دامد",
         "wilaya_code": 67,
         "postal_code": "66010",
-        "daira": "Ain Boucif"
+        "daira": "Aïn Boucif"
       },
       "geometry": {
         "type": "Point",
@@ -25695,7 +25695,7 @@
         "name_ar": "عين الملح",
         "wilaya_code": 68,
         "postal_code": "64016",
-        "daira": "Ain El Melh"
+        "daira": "Aïn El Melh"
       },
       "geometry": {
         "type": "Point",
@@ -25712,7 +25712,7 @@
         "name_ar": "عين فارس",
         "wilaya_code": 68,
         "postal_code": "64018",
-        "daira": "Ain El Melh"
+        "daira": "Aïn El Melh"
       },
       "geometry": {
         "type": "Point",
@@ -25729,7 +25729,7 @@
         "name_ar": "عين الريش",
         "wilaya_code": 68,
         "postal_code": "64017",
-        "daira": "Ain El Melh"
+        "daira": "Aïn El Melh"
       },
       "geometry": {
         "type": "Point",
@@ -26018,7 +26018,7 @@
         "name_ar": "سيدي امحمد",
         "wilaya_code": 68,
         "postal_code": "64020",
-        "daira": "Ain El Melh"
+        "daira": "Aïn El Melh"
       },
       "geometry": {
         "type": "Point",
