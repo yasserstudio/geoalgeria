@@ -9,7 +9,9 @@ let _wilayas, _communes, _dairas, _ecommerce, _all;
 
 module.exports = {
   get wilayas() {
-    if (!_wilayas) _wilayas = load("wilayas.json");
+    if (!_wilayas) {
+      _wilayas = this.all.map(({ communes, ...w }) => w);
+    }
     return _wilayas;
   },
 

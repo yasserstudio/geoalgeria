@@ -14,11 +14,11 @@ export interface Commune {
   name_fr: string;
   name_ar: string;
   wilaya_code: number;
-  daira: string;
-  postal_code: string;
-  latitude?: number;
-  longitude?: number;
-  code_commune?: number;
+  daira: string | null;
+  postal_code: string | null;
+  latitude: number | null;
+  longitude: number | null;
+  code_commune: number | null;
 }
 
 export interface Daira {
