@@ -41,7 +41,7 @@
   },
   {
     "name_fr": "Metarfa",
-    "name_ar": "مطارفة",
+    "name_ar": "المطارفة",
     "wilaya_code": 49,
     "daira": "Aougrout",
     "postal_code": "49004",
@@ -61,7 +61,7 @@
   },
   {
     "name_fr": "Ouled Said",
-    "name_ar": "أولاد سعيد",
+    "name_ar": "أولاد السعيد",
     "wilaya_code": 49,
     "daira": "Timimoun",
     "postal_code": "49002",
@@ -71,7 +71,7 @@
   },
   {
     "name_fr": "Talmine",
-    "name_ar": "طلمين",
+    "name_ar": "طالمين",
     "wilaya_code": 49,
     "daira": "Charouine",
     "postal_code": "49009",
@@ -91,7 +91,7 @@
   },
   {
     "name_fr": "Tinerkouk",
-    "name_ar": "تينركوك",
+    "name_ar": "تنركوك",
     "wilaya_code": 49,
     "daira": "Tinerkouk",
     "postal_code": "49006",
@@ -130,6 +130,16 @@
     "code_commune": 707
   },
   {
+    "name_fr": "Chaiba",
+    "name_ar": "الشعيبة",
+    "wilaya_code": 51,
+    "daira": "Kolea",
+    "postal_code": "42011",
+    "latitude": 36.6251,
+    "longitude": 2.729167,
+    "code_commune": 4216
+  },
+  {
     "name_fr": "Doucen",
     "name_ar": "الدوسن",
     "wilaya_code": 51,
@@ -138,16 +148,6 @@
     "latitude": 34.595739,
     "longitude": 5.102266,
     "code_commune": 709
-  },
-  {
-    "name_fr": "Ech Chaiba",
-    "name_ar": "الشعيبة",
-    "wilaya_code": 51,
-    "daira": "Ouled Djellal",
-    "postal_code": "51002",
-    "latitude": 34.5,
-    "longitude": 4.55,
-    "code_commune": 515
   },
   {
     "name_fr": "Ouled Djellal",
@@ -171,7 +171,7 @@
   },
   {
     "name_fr": "Sidi Khaled",
-    "name_ar": "سيدي خالد",
+    "name_ar": "سيدي  خالد",
     "wilaya_code": 51,
     "daira": "Sidi Khaled",
     "postal_code": "51004",
@@ -180,7 +180,7 @@
     "code_commune": 708
   },
   {
-    "name_fr": "Beni Abbes",
+    "name_fr": "Beni-Abbes",
     "name_ar": "بني عباس",
     "wilaya_code": 52,
     "daira": "Beni Abbes",
@@ -190,8 +190,8 @@
     "code_commune": 807
   },
   {
-    "name_fr": "Beni Ikhlef",
-    "name_ar": "بني إخلف",
+    "name_fr": "Beni-Ikhlef",
+    "name_ar": "بن يخلف",
     "wilaya_code": 52,
     "daira": "El Ouata",
     "postal_code": "52006",
@@ -201,7 +201,7 @@
   },
   {
     "name_fr": "El Ouata",
-    "name_ar": "الواطة",
+    "name_ar": "الواتة",
     "wilaya_code": 52,
     "daira": "El Ouata",
     "postal_code": "52005",
@@ -211,7 +211,7 @@
   },
   {
     "name_fr": "Igli",
-    "name_ar": "إيقلي",
+    "name_ar": "إقلي",
     "wilaya_code": 52,
     "daira": "Igli",
     "postal_code": "52010",
@@ -221,7 +221,7 @@
   },
   {
     "name_fr": "Kerzaz",
-    "name_ar": "قرزاز",
+    "name_ar": "كرزاز",
     "wilaya_code": 52,
     "daira": "Kerzaz",
     "postal_code": "52003",
@@ -240,7 +240,7 @@
     "code_commune": 819
   },
   {
-    "name_fr": "Ouled Khoudir",
+    "name_fr": "Ouled-Khodeir",
     "name_ar": "أولاد خضير",
     "wilaya_code": 52,
     "daira": "Ouled Khoudir",
@@ -248,16 +248,6 @@
     "latitude": 29.248889,
     "longitude": -1.05748,
     "code_commune": 803
-  },
-  {
-    "name_fr": "Tabelbala",
-    "name_ar": "تابلبالة",
-    "wilaya_code": 52,
-    "daira": "Tabelbala",
-    "postal_code": "52007",
-    "latitude": 29.41005,
-    "longitude": -3.25261,
-    "code_commune": 812
   },
   {
     "name_fr": "Tamtert",
@@ -280,27 +270,7 @@
     "code_commune": 805
   },
   {
-    "name_fr": "Foggaret Ezzaouia",
-    "name_ar": "فقارة الزاوية",
-    "wilaya_code": 53,
-    "daira": "In Salah",
-    "postal_code": "53002",
-    "latitude": 27.363333,
-    "longitude": 2.8475,
-    "code_commune": 1110
-  },
-  {
-    "name_fr": "In Ghar",
-    "name_ar": "إن غار",
-    "wilaya_code": 53,
-    "daira": "In Ghar",
-    "postal_code": "53003",
-    "latitude": 27.2,
-    "longitude": 2.511111,
-    "code_commune": 1103
-  },
-  {
-    "name_fr": "In Salah",
+    "name_fr": "Ain Salah",
     "name_ar": "عين صالح",
     "wilaya_code": 53,
     "daira": "In Salah",
@@ -310,7 +280,27 @@
     "code_commune": 1108
   },
   {
-    "name_fr": "In Guezzam",
+    "name_fr": "Foggaret Ezzoua",
+    "name_ar": "فقارة الزوى",
+    "wilaya_code": 53,
+    "daira": null,
+    "postal_code": null,
+    "latitude": null,
+    "longitude": null,
+    "code_commune": null
+  },
+  {
+    "name_fr": "Inghar",
+    "name_ar": "إينغر",
+    "wilaya_code": 53,
+    "daira": "In Ghar",
+    "postal_code": "53003",
+    "latitude": 27.2,
+    "longitude": 2.511111,
+    "code_commune": 1103
+  },
+  {
+    "name_fr": "Ain Guezzam",
     "name_ar": "عين قزام",
     "wilaya_code": 54,
     "daira": "In Guezzam",
@@ -320,14 +310,14 @@
     "code_commune": 1104
   },
   {
-    "name_fr": "Tin Zaouatine",
-    "name_ar": "تين زاوتين",
+    "name_fr": "Tin Zouatine",
+    "name_ar": "تين زواتين",
     "wilaya_code": 54,
-    "daira": "Tin Zaouatine",
-    "postal_code": "54002",
-    "latitude": 19.953333,
-    "longitude": 2.966667,
-    "code_commune": 1107
+    "daira": null,
+    "postal_code": null,
+    "latitude": null,
+    "longitude": null,
+    "code_commune": null
   },
   {
     "name_fr": "Benaceur",
@@ -341,7 +331,7 @@
   },
   {
     "name_fr": "Blidet Amor",
-    "name_ar": "بليدة عمور",
+    "name_ar": "بلدة اعمر",
     "wilaya_code": 55,
     "daira": "Tamacine",
     "postal_code": "55006",
@@ -350,18 +340,18 @@
     "code_commune": 5507
   },
   {
-    "name_fr": "El Allia",
-    "name_ar": "العلية",
+    "name_fr": "El Alia",
+    "name_ar": "العالية",
     "wilaya_code": 55,
-    "daira": "El Hadjira",
-    "postal_code": "55010",
+    "daira": "Ouargla",
+    "postal_code": "30009",
     "latitude": 32.6999655,
     "longitude": 5.425556,
     "code_commune": 3020
   },
   {
-    "name_fr": "El Hadjira",
-    "name_ar": "الحاجرة",
+    "name_fr": "El-Hadjira",
+    "name_ar": "الحجيرة",
     "wilaya_code": 55,
     "daira": "El Hadjira",
     "postal_code": "55009",
@@ -370,8 +360,8 @@
     "code_commune": 3014
   },
   {
-    "name_fr": "M'Naguer",
-    "name_ar": "منقر",
+    "name_fr": "M'naguer",
+    "name_ar": "المنقر",
     "wilaya_code": 55,
     "daira": "Taibet",
     "postal_code": "55013",
@@ -381,7 +371,7 @@
   },
   {
     "name_fr": "Megarine",
-    "name_ar": "مقارين",
+    "name_ar": "المقارين",
     "wilaya_code": 55,
     "daira": "Megarine",
     "postal_code": "55007",
@@ -420,16 +410,6 @@
     "code_commune": 3015
   },
   {
-    "name_fr": "Tamacine",
-    "name_ar": "تماسين",
-    "wilaya_code": 55,
-    "daira": "Tamacine",
-    "postal_code": "55005",
-    "latitude": 33.02194444,
-    "longitude": 6.022778,
-    "code_commune": 3016
-  },
-  {
     "name_fr": "Tebesbest",
     "name_ar": "تبسبست",
     "wilaya_code": 55,
@@ -438,6 +418,16 @@
     "latitude": 33.12,
     "longitude": 6.08333,
     "code_commune": 3007
+  },
+  {
+    "name_fr": "Temacine",
+    "name_ar": "تماسين",
+    "wilaya_code": 55,
+    "daira": "Tamacine",
+    "postal_code": "55005",
+    "latitude": 33.02194444,
+    "longitude": 6.022778,
+    "code_commune": 3016
   },
   {
     "name_fr": "Touggourt",
@@ -451,7 +441,7 @@
   },
   {
     "name_fr": "Zaouia El Abidia",
-    "name_ar": "زاوية العابدية",
+    "name_ar": "الزاوية العابدية",
     "wilaya_code": 55,
     "daira": "Touggourt",
     "postal_code": "55004",
@@ -460,7 +450,7 @@
     "code_commune": 3009
   },
   {
-    "name_fr": "Bordj El Haouas",
+    "name_fr": "Bordj El Haouass",
     "name_ar": "برج الحواس",
     "wilaya_code": 56,
     "daira": "Djanet",
@@ -490,7 +480,7 @@
     "code_commune": 3928
   },
   {
-    "name_fr": "El M'Ghair",
+    "name_fr": "El-M'ghaier",
     "name_ar": "المغير",
     "wilaya_code": 57,
     "daira": "El M'Ghair",
@@ -500,8 +490,8 @@
     "code_commune": 3927
   },
   {
-    "name_fr": "M'Rara",
-    "name_ar": "مرارة",
+    "name_fr": "M'rara",
+    "name_ar": "المرارة",
     "wilaya_code": 57,
     "daira": "Djamaa",
     "postal_code": "57006",
@@ -530,7 +520,7 @@
     "code_commune": 3930
   },
   {
-    "name_fr": "Sidi Khellil",
+    "name_fr": "Sidi Khelil",
     "name_ar": "سيدي خليل",
     "wilaya_code": 57,
     "daira": "El M'Ghair",
@@ -550,7 +540,7 @@
     "code_commune": 3921
   },
   {
-    "name_fr": "Tendla",
+    "name_fr": "Tenedla",
     "name_ar": "تندلة",
     "wilaya_code": 57,
     "daira": "Djamaa",
@@ -595,7 +585,6 @@
     "wilaya_code": 59,
     "daira": "Aflou",
     "postal_code": "59001",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.11279,
     "longitude": 2.1019,
     "code_commune": 319
@@ -606,7 +595,6 @@
     "wilaya_code": 59,
     "daira": "Gueltat Sidi Saad",
     "postal_code": "59006",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.156872,
     "longitude": 1.542386,
     "code_commune": 311
@@ -617,7 +605,6 @@
     "wilaya_code": 59,
     "daira": "Brida",
     "postal_code": "59007",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 33.906111,
     "longitude": 1.784444,
     "code_commune": 313
@@ -628,7 +615,6 @@
     "wilaya_code": 59,
     "daira": "Aflou",
     "postal_code": "59002",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.47475,
     "longitude": 2.17408,
     "code_commune": 312
@@ -639,7 +625,6 @@
     "wilaya_code": 59,
     "daira": "El Ghicha",
     "postal_code": "59011",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 33.930145,
     "longitude": 2.140703,
     "code_commune": 314
@@ -650,7 +635,6 @@
     "wilaya_code": 59,
     "daira": "Gueltat Sidi Saad",
     "postal_code": "59005",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.2961,
     "longitude": 1.94667,
     "code_commune": 310
@@ -661,7 +645,6 @@
     "wilaya_code": 59,
     "daira": "Hadj Mechri",
     "postal_code": "59009",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 33.9571296,
     "longitude": 1.5992068,
     "code_commune": 315
@@ -672,7 +655,6 @@
     "wilaya_code": 59,
     "daira": "Aflou",
     "postal_code": "59004",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 33.92422,
     "longitude": 2.4369,
     "code_commune": 322
@@ -683,7 +665,6 @@
     "wilaya_code": 59,
     "daira": "Aflou",
     "postal_code": "59003",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.1666669,
     "longitude": 2.3166669,
     "code_commune": 321
@@ -694,7 +675,6 @@
     "wilaya_code": 59,
     "daira": "El Ghicha",
     "postal_code": "59012",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.02958,
     "longitude": 1.92798,
     "code_commune": 302
@@ -705,7 +685,6 @@
     "wilaya_code": 59,
     "daira": "Brida",
     "postal_code": "59008",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 34.342777,
     "longitude": 2.261389,
     "code_commune": 308
@@ -716,191 +695,16 @@
     "wilaya_code": 59,
     "daira": "Hadj Mechri",
     "postal_code": "59010",
-    "_parent_wilaya": "Laghouat (03)",
     "latitude": 33.87186,
     "longitude": 1.8606,
     "code_commune": 317
   },
   {
-    "name_fr": "Ain El Orak",
-    "name_ar": "عين العراك",
-    "wilaya_code": 60,
-    "daira": "El Abiodh Sidi Cheikh",
-    "postal_code": "60002",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 33.4100573,
-    "longitude": 0.7385302,
-    "code_commune": 3208
-  },
-  {
-    "name_fr": "Arbaouat",
-    "name_ar": "أربوات",
-    "wilaya_code": 60,
-    "daira": "El Abiodh Sidi Cheikh",
-    "postal_code": "60003",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 33.08833333,
-    "longitude": 0.5823,
-    "code_commune": 3209
-  },
-  {
-    "name_fr": "Boussemghoun",
-    "name_ar": "بوسمغون",
-    "wilaya_code": 60,
-    "daira": "Boussemghoun",
-    "postal_code": "60005",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 32.8643,
-    "longitude": 0.0201,
-    "code_commune": 3213
-  },
-  {
-    "name_fr": "Chellala",
-    "name_ar": "شلالة",
-    "wilaya_code": 60,
-    "daira": "Chellala",
-    "postal_code": "60006",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 35.216667,
-    "longitude": 0.0556,
-    "code_commune": 3214
-  },
-  {
-    "name_fr": "El Abiodh Sidi Cheikh",
-    "name_ar": "الأبيض سيدي الشيخ",
-    "wilaya_code": 60,
-    "daira": "El Abiodh Sidi Cheikh",
-    "postal_code": "60001",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 32.898611,
-    "longitude": 0.544444,
-    "code_commune": 3207
-  },
-  {
-    "name_fr": "El Bnoud",
-    "name_ar": "البنود",
-    "wilaya_code": 60,
-    "daira": "El Abiodh Sidi Cheikh",
-    "postal_code": "60004",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 32.31222222,
-    "longitude": 0.244444,
-    "code_commune": 3216
-  },
-  {
-    "name_fr": "El Mehara",
-    "name_ar": "المهارة",
-    "wilaya_code": 60,
-    "daira": "Chellala",
-    "postal_code": "60007",
-    "_parent_wilaya": "El Bayadh (32)",
-    "latitude": 33.311667,
-    "longitude": 0.364444,
-    "code_commune": 3219
-  },
-  {
-    "name_fr": "El Aricha",
-    "name_ar": "العريشة",
-    "wilaya_code": 61,
-    "daira": "El Aricha",
-    "postal_code": "61001",
-    "_parent_wilaya": "Tlemcen (13)",
-    "latitude": 34.22259,
-    "longitude": -1.257,
-    "code_commune": 1332
-  },
-  {
-    "name_fr": "El Bouihi",
-    "name_ar": "البويهي",
-    "wilaya_code": 61,
-    "daira": "Sidi Djillali",
-    "postal_code": "61004",
-    "_parent_wilaya": "Tlemcen (13)"
-  },
-  {
-    "name_fr": "El Gor",
-    "name_ar": "القور",
-    "wilaya_code": 61,
-    "daira": "El Aricha",
-    "postal_code": "61002",
-    "_parent_wilaya": "Tlemcen (13)",
-    "latitude": 34.63797,
-    "longitude": -1.15296,
-    "code_commune": 1310
-  },
-  {
-    "name_fr": "Sidi Djillali",
-    "name_ar": "سيدي الجيلالي",
-    "wilaya_code": 61,
-    "daira": "Sidi Djillali",
-    "postal_code": "61003",
-    "_parent_wilaya": "Tlemcen (13)",
-    "latitude": 34.4609,
-    "longitude": -1.5664,
-    "code_commune": 1341
-  },
-  {
-    "name_fr": "Ain Zaatout",
-    "name_ar": "عين زعطوط",
-    "wilaya_code": 62,
-    "daira": "El Kantara",
-    "postal_code": "62005",
-    "_parent_wilaya": "Biskra (07)",
-    "latitude": 34.9080556,
-    "longitude": 5.83,
-    "code_commune": 718
-  },
-  {
-    "name_fr": "Branis",
-    "name_ar": "برانيس",
-    "wilaya_code": 62,
-    "daira": "Djemorah",
-    "postal_code": "62003",
-    "_parent_wilaya": "Biskra (07)",
-    "latitude": 34.99338,
-    "longitude": 5.775,
-    "code_commune": 7003
-  },
-  {
-    "name_fr": "Djemorah",
-    "name_ar": "جمورة",
-    "wilaya_code": 62,
-    "daira": "Djemorah",
-    "postal_code": "62002",
-    "_parent_wilaya": "Biskra (07)",
-    "latitude": 35.1026843,
-    "longitude": 5.864722,
-    "code_commune": 720
-  },
-  {
-    "name_fr": "El Kantara",
-    "name_ar": "القنطرة",
-    "wilaya_code": 62,
-    "daira": "El Kantara",
-    "postal_code": "62001",
-    "_parent_wilaya": "Biskra (07)",
-    "latitude": 35.192365,
-    "longitude": 5.6668306,
-    "code_commune": 717
-  },
-  {
-    "name_fr": "El Outaya",
-    "name_ar": "الوطاية",
-    "wilaya_code": 62,
-    "daira": "El Outaya",
-    "postal_code": "62004",
-    "_parent_wilaya": "Biskra (07)",
-    "latitude": 35.03412,
-    "longitude": 5.59517,
-    "code_commune": 716
-  },
-  {
-    "name_fr": "Azil Abdelkader",
+    "name_fr": "Azil Abedelkader",
     "name_ar": "عزيل عبد القادر",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Azil Abdelkader",
     "postal_code": "63007",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.3667,
     "longitude": 5.1833,
     "code_commune": 515
@@ -908,10 +712,9 @@
   {
     "name_fr": "Barika",
     "name_ar": "بريكة",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Barika",
     "postal_code": "63001",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.3972,
     "longitude": 5.3658,
     "code_commune": 542
@@ -919,10 +722,9 @@
   {
     "name_fr": "Bitam",
     "name_ar": "بيطام",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Barika",
     "postal_code": "63002",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.0333,
     "longitude": 5.3,
     "code_commune": 514
@@ -930,21 +732,19 @@
   {
     "name_fr": "Djezzar",
     "name_ar": "الجزار",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Seggana",
     "postal_code": "63006",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.50956,
     "longitude": 5.26679,
     "code_commune": 543
   },
   {
-    "name_fr": "M'Doukal",
+    "name_fr": "M Doukal",
     "name_ar": "إمدوكل",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Barika",
     "postal_code": "63003",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.121,
     "longitude": 5.485278,
     "code_commune": 555
@@ -952,10 +752,9 @@
   {
     "name_fr": "Ouled Ammar",
     "name_ar": "أولاد عمار",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Azil Abdelkader",
     "postal_code": "63008",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.15,
     "longitude": 5.34,
     "code_commune": 556
@@ -963,10 +762,9 @@
   {
     "name_fr": "Seggana",
     "name_ar": "سقانة",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Seggana",
     "postal_code": "63005",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.365555,
     "longitude": 5.575,
     "code_commune": 529
@@ -974,262 +772,69 @@
   {
     "name_fr": "Tilatou",
     "name_ar": "تيلاطو",
-    "wilaya_code": 63,
+    "wilaya_code": 60,
     "daira": "Tilatou",
     "postal_code": "63004",
-    "_parent_wilaya": "Batna (05)",
     "latitude": 35.329167,
     "longitude": 5.8667,
     "code_commune": 518
   },
   {
-    "name_fr": "Ain El Melh",
-    "name_ar": "عين الملح",
-    "wilaya_code": 64,
-    "daira": "Ain El Melh",
-    "postal_code": "64016",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 34.8470491,
-    "longitude": 4.1634964,
-    "code_commune": 2841
+    "name_fr": "Ain Zaatout",
+    "name_ar": "عين زعطوط",
+    "wilaya_code": 61,
+    "daira": "El Kantara",
+    "postal_code": "62005",
+    "latitude": 34.9080556,
+    "longitude": 5.83,
+    "code_commune": 718
   },
   {
-    "name_fr": "Ain Errich",
-    "name_ar": "عين الريش",
-    "wilaya_code": 64,
-    "daira": "Ain El Melh",
-    "postal_code": "64017",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 34.680794,
-    "longitude": 4.096956,
-    "code_commune": 2844
+    "name_fr": "Branis",
+    "name_ar": "برانيس",
+    "wilaya_code": 61,
+    "daira": "Djemorah",
+    "postal_code": "62003",
+    "latitude": 34.99338,
+    "longitude": 5.775,
+    "code_commune": 7003
   },
   {
-    "name_fr": "Ain Fares",
-    "name_ar": "عين فارس",
-    "wilaya_code": 64,
-    "daira": "Ain El Melh",
-    "postal_code": "64018",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.03583333,
-    "longitude": 4.428333333,
-    "code_commune": 2837
+    "name_fr": "Djemorah",
+    "name_ar": "جمورة",
+    "wilaya_code": 61,
+    "daira": "Djemorah",
+    "postal_code": "62002",
+    "latitude": 35.1026843,
+    "longitude": 5.864722,
+    "code_commune": 720
   },
   {
-    "name_fr": "Amdjel",
-    "name_ar": "أمجدل",
-    "wilaya_code": 64,
-    "daira": "Amdjel",
-    "postal_code": "64021",
-    "_parent_wilaya": "M'Sila (28)"
+    "name_fr": "El Kantara",
+    "name_ar": "القنطرة",
+    "wilaya_code": 61,
+    "daira": "El Kantara",
+    "postal_code": "62001",
+    "latitude": 35.192365,
+    "longitude": 5.6668306,
+    "code_commune": 717
   },
   {
-    "name_fr": "Ben Srour",
-    "name_ar": "بن سرور",
-    "wilaya_code": 64,
-    "daira": "Ben Srour",
-    "postal_code": "64007",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.0404431,
-    "longitude": 4.5633795,
-    "code_commune": 2824
+    "name_fr": "El Outaya",
+    "name_ar": "الوطاية",
+    "wilaya_code": 61,
+    "daira": "El Outaya",
+    "postal_code": "62004",
+    "latitude": 35.03412,
+    "longitude": 5.59517,
+    "code_commune": 716
   },
   {
-    "name_fr": "Ben Zouh",
-    "name_ar": "بن زوه",
-    "wilaya_code": 64,
-    "daira": "Ouled Sidi Brahim",
-    "postal_code": "64023",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.438055,
-    "longitude": 4.383333,
-    "code_commune": 2835
-  },
-  {
-    "name_fr": "Bir El Fodda",
-    "name_ar": "بئر الفضة",
-    "wilaya_code": 64,
-    "daira": "Ain El Melh",
-    "postal_code": "64019",
-    "_parent_wilaya": "M'Sila (28)"
-  },
-  {
-    "name_fr": "Bou Saada",
-    "name_ar": "بوسعادة",
-    "wilaya_code": 64,
-    "daira": "Bou Saada",
-    "postal_code": "64001",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.219167,
-    "longitude": 4.17402,
-    "code_commune": 2820
-  },
-  {
-    "name_fr": "Djebel Messaad",
-    "name_ar": "جبل أمساعد",
-    "wilaya_code": 64,
-    "daira": "Djebel Messaad",
-    "postal_code": "64014",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 34.991121,
-    "longitude": 4.092493,
-    "code_commune": 2847
-  },
-  {
-    "name_fr": "El Hamel",
-    "name_ar": "الهامل",
-    "wilaya_code": 64,
-    "daira": "Bou Saada",
-    "postal_code": "64002",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.1283,
-    "longitude": 4.083333,
-    "code_commune": 2827
-  },
-  {
-    "name_fr": "Houamed",
-    "name_ar": "الحوامد",
-    "wilaya_code": 64,
-    "daira": "Khoubana",
-    "postal_code": "64006",
-    "_parent_wilaya": "M'Sila (28)"
-  },
-  {
-    "name_fr": "Khoubana",
-    "name_ar": "الخبانة",
-    "wilaya_code": 64,
-    "daira": "Khoubana",
-    "postal_code": "64004",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.31444444,
-    "longitude": 4.566944,
-    "code_commune": 2807
-  },
-  {
-    "name_fr": "M'Sif",
-    "name_ar": "امسيف",
-    "wilaya_code": 64,
-    "daira": "Khoubana",
-    "postal_code": "64005",
-    "_parent_wilaya": "M'Sila (28)"
-  },
-  {
-    "name_fr": "Menaaa",
-    "name_ar": "مناعة",
-    "wilaya_code": 64,
-    "daira": "Amdjel",
-    "postal_code": "64022",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.1777,
-    "longitude": 6.006775,
-    "code_commune": 506
-  },
-  {
-    "name_fr": "Mohammed Boudiaf",
-    "name_ar": "محمد بوضياف",
-    "wilaya_code": 64,
-    "daira": "Ben Srour",
-    "postal_code": "64010",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 34.8941667,
-    "longitude": 4.428611,
-    "code_commune": 2834
-  },
-  {
-    "name_fr": "Ouled Sidi Brahim",
-    "name_ar": "أولاد سيدي إبراهيم",
-    "wilaya_code": 64,
-    "daira": "Ouled Sidi Brahim",
-    "postal_code": "64011",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 36.2,
-    "longitude": 4.174722,
-    "code_commune": 2823
-  },
-  {
-    "name_fr": "Ouled Slimane",
-    "name_ar": "أولاد سليمان",
-    "wilaya_code": 64,
-    "daira": "Ben Srour",
-    "postal_code": "64008",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 34.91609,
-    "longitude": 4.73694444,
-    "code_commune": 2825
-  },
-  {
-    "name_fr": "Oultene",
-    "name_ar": "ولتام",
-    "wilaya_code": 64,
-    "daira": "Bou Saada",
-    "postal_code": "64003",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.0350816,
-    "longitude": 5.3360215,
-    "code_commune": 2846
-  },
-  {
-    "name_fr": "Sidi Ameur",
-    "name_ar": "سيدي عامر",
-    "wilaya_code": 64,
-    "daira": "Sidi Ameur",
-    "postal_code": "64012",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 33.768333,
-    "longitude": 1.413611111,
-    "code_commune": 3218
-  },
-  {
-    "name_fr": "Sidi M'hamed",
-    "name_ar": "سيدي امحمد",
-    "wilaya_code": 64,
-    "daira": "Ain El Melh",
-    "postal_code": "64020",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 36.7563368,
-    "longitude": 3.0551159,
-    "code_commune": 1602
-  },
-  {
-    "name_fr": "Slim",
-    "name_ar": "سليم",
-    "wilaya_code": 64,
-    "daira": "Djebel Messaad",
-    "postal_code": "64015",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 34.938889,
-    "longitude": 3.734722222,
-    "code_commune": 2843
-  },
-  {
-    "name_fr": "Tamsa",
-    "name_ar": "تامسة",
-    "wilaya_code": 64,
-    "daira": "Sidi Ameur",
-    "postal_code": "64013",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.173611,
-    "longitude": 3.925556,
-    "code_commune": 2823
-  },
-  {
-    "name_fr": "Zarzour",
-    "name_ar": "الزرزور",
-    "wilaya_code": 64,
-    "daira": "Ben Srour",
-    "postal_code": "64009",
-    "_parent_wilaya": "M'Sila (28)",
-    "latitude": 35.0358333,
-    "longitude": 4.433333,
-    "code_commune": 2833
-  },
-  {
-    "name_fr": "Bir El Ater",
+    "name_fr": "Bir-El-Ater",
     "name_ar": "بئر العاتر",
-    "wilaya_code": 65,
+    "wilaya_code": 62,
     "daira": "Bir El Ater",
     "postal_code": "65001",
-    "_parent_wilaya": "Tebessa (12)",
     "latitude": 34.74488,
     "longitude": 8.06,
     "code_commune": 1202
@@ -1237,10 +842,9 @@
   {
     "name_fr": "El Ogla El Malha",
     "name_ar": "العقلة المالحة",
-    "wilaya_code": 65,
+    "wilaya_code": 62,
     "daira": "Negrine",
     "postal_code": "65004",
-    "_parent_wilaya": "Tebessa (12)",
     "latitude": 35.121944,
     "longitude": 7.9402184,
     "code_commune": 1215
@@ -1248,10 +852,9 @@
   {
     "name_fr": "Ferkane",
     "name_ar": "فركان",
-    "wilaya_code": 65,
+    "wilaya_code": 62,
     "daira": "Bir El Ater",
     "postal_code": "65002",
-    "_parent_wilaya": "Tebessa (12)",
     "latitude": 34.56233,
     "longitude": 7.412222,
     "code_commune": 1228
@@ -1259,252 +862,59 @@
   {
     "name_fr": "Negrine",
     "name_ar": "نقرين",
-    "wilaya_code": 65,
+    "wilaya_code": 62,
     "daira": "Negrine",
     "postal_code": "65003",
-    "_parent_wilaya": "Tebessa (12)",
     "latitude": 34.48593,
     "longitude": 7.5193093,
     "code_commune": 1209
   },
   {
-    "name_fr": "Ain Boucif",
-    "name_ar": "عين بوسيف",
-    "wilaya_code": 66,
-    "daira": "Ain Boucif",
-    "postal_code": "66007",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.89123,
-    "longitude": 3.1585,
-    "code_commune": 2604
+    "name_fr": "Bouihi",
+    "name_ar": "البويهي",
+    "wilaya_code": 63,
+    "daira": "Sidi Djillali",
+    "postal_code": "61004",
+    "latitude": null,
+    "longitude": null,
+    "code_commune": null
   },
   {
-    "name_fr": "Ain Ouksir",
-    "name_ar": "عين أوكسير",
-    "wilaya_code": 66,
-    "daira": "Chellalet El Adhaoura",
-    "postal_code": "66018",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.818653,
-    "longitude": 3.470555,
-    "code_commune": 2641
+    "name_fr": "El Aricha",
+    "name_ar": "العريشة",
+    "wilaya_code": 63,
+    "daira": "El Aricha",
+    "postal_code": "61001",
+    "latitude": 34.22259,
+    "longitude": -1.257,
+    "code_commune": 1332
   },
   {
-    "name_fr": "Aziz",
-    "name_ar": "عزيز",
-    "wilaya_code": 66,
-    "daira": "Aziz",
-    "postal_code": "66012",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.816667,
-    "longitude": 2.45,
-    "code_commune": 2632
+    "name_fr": "El Gor",
+    "name_ar": "القور",
+    "wilaya_code": 63,
+    "daira": "El Aricha",
+    "postal_code": "61002",
+    "latitude": 34.63797,
+    "longitude": -1.15296,
+    "code_commune": 1310
   },
   {
-    "name_fr": "Boghar",
-    "name_ar": "بوغار",
-    "wilaya_code": 66,
-    "daira": "Boghar",
-    "postal_code": "66019",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.911389,
-    "longitude": 2.71667,
-    "code_commune": 2625
-  },
-  {
-    "name_fr": "Bou Aiche",
-    "name_ar": "بوعيش",
-    "wilaya_code": 66,
-    "daira": "Chahbounia",
-    "postal_code": "66006",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.552778,
-    "longitude": 2.1731,
-    "code_commune": 2610
-  },
-  {
-    "name_fr": "Boughezoul",
-    "name_ar": "بوغزول",
-    "wilaya_code": 66,
-    "daira": "Chahbounia",
-    "postal_code": "66005",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.7533117,
-    "longitude": 2.7381672,
-    "code_commune": 2651
-  },
-  {
-    "name_fr": "Chahbounia",
-    "name_ar": "الشهبونية",
-    "wilaya_code": 66,
-    "daira": "Chahbounia",
-    "postal_code": "66004",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.54472221,
-    "longitude": 2.603333,
-    "code_commune": 2638
-  },
-  {
-    "name_fr": "Chellalet El Adhaoura",
-    "name_ar": "شلالة العذاورة",
-    "wilaya_code": 66,
-    "daira": "Chellalet El Adhaoura",
-    "postal_code": "66015",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.94,
-    "longitude": 3.4139,
-    "code_commune": 2618
-  },
-  {
-    "name_fr": "Cheniguel",
-    "name_ar": "شنيقل",
-    "wilaya_code": 66,
-    "daira": "Chellalet El Adhaoura",
-    "postal_code": "66016",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.922222,
-    "longitude": 3.5667,
-    "code_commune": 2640
-  },
-  {
-    "name_fr": "Derrag",
-    "name_ar": "دراق",
-    "wilaya_code": 66,
-    "daira": "Aziz",
-    "postal_code": "66014",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.908611,
-    "longitude": 2.38778,
-    "code_commune": 2608
-  },
-  {
-    "name_fr": "El Ouinet",
-    "name_ar": "العوينات",
-    "wilaya_code": 66,
-    "daira": "Ain Boucif",
-    "postal_code": "66011",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.3344,
-    "longitude": 3.035556,
-    "code_commune": 2657
-  },
-  {
-    "name_fr": "Kef Lakhdar",
-    "name_ar": "الكاف الأخضر",
-    "wilaya_code": 66,
-    "daira": "Ain Boucif",
-    "postal_code": "66008",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.923333,
-    "longitude": 3.2875,
-    "code_commune": 2617
-  },
-  {
-    "name_fr": "Ksar El Boukhari",
-    "name_ar": "قصر البخاري",
-    "wilaya_code": 66,
-    "daira": "Ksar El Boukhari",
-    "postal_code": "66001",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.88889,
-    "longitude": 2.74905,
-    "code_commune": 2635
-  },
-  {
-    "name_fr": "Meftaha",
-    "name_ar": "مفتاحة",
-    "wilaya_code": 66,
-    "daira": "Ksar El Boukhari",
-    "postal_code": "66002",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 36.6204,
-    "longitude": 3.22248,
-    "code_commune": 914
-  },
-  {
-    "name_fr": "Ouled Antar",
-    "name_ar": "أولاد عنتر",
-    "wilaya_code": 66,
-    "daira": "Boghar",
-    "postal_code": "66020",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.9951773,
-    "longitude": 2.60231,
-    "code_commune": 2658
-  },
-  {
-    "name_fr": "Ouled Hellal",
-    "name_ar": "أولاد هلال",
-    "wilaya_code": 66,
-    "daira": "Boghar",
-    "postal_code": "66021",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.9370104,
-    "longitude": 2.4980197,
-    "code_commune": 2622
-  },
-  {
-    "name_fr": "Ouled Maaref",
-    "name_ar": "أولاد معرف",
-    "wilaya_code": 66,
-    "daira": "Ain Boucif",
-    "postal_code": "66009",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.872222,
-    "longitude": 3.1585,
-    "code_commune": 2603
-  },
-  {
-    "name_fr": "Oum El Djalil",
-    "name_ar": "أم الجليل",
-    "wilaya_code": 66,
-    "daira": "Aziz",
-    "postal_code": "66013",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.8275,
-    "longitude": 2.6239,
-    "code_commune": 2642
-  },
-  {
-    "name_fr": "Saneg",
-    "name_ar": "شنيقل",
-    "wilaya_code": 66,
-    "daira": "Ksar El Boukhari",
-    "postal_code": "66003",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 35.8514,
-    "longitude": 3.253056,
-    "code_commune": 2664
-  },
-  {
-    "name_fr": "Sidi Damed",
-    "name_ar": "سيدي دامد",
-    "wilaya_code": 66,
-    "daira": "Ain Boucif",
-    "postal_code": "66010",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 34.55,
-    "longitude": 0.259722,
-    "code_commune": 2012
-  },
-  {
-    "name_fr": "Tafraout",
-    "name_ar": "تفراوت",
-    "wilaya_code": 66,
-    "daira": "Chellalet El Adhaoura",
-    "postal_code": "66017",
-    "_parent_wilaya": "Medea (26)",
-    "latitude": 36.0877,
-    "longitude": 3.4308,
-    "code_commune": 2623
+    "name_fr": "Sidi Djillali",
+    "name_ar": "سيدي الجيلالي",
+    "wilaya_code": 63,
+    "daira": "Sidi Djillali",
+    "postal_code": "61003",
+    "latitude": 34.4609,
+    "longitude": -1.5664,
+    "code_commune": 1341
   },
   {
     "name_fr": "Bougara",
     "name_ar": "بوقرة",
-    "wilaya_code": 67,
+    "wilaya_code": 64,
     "daira": "Zmalet El Emir Abdelkader",
     "postal_code": "67004",
-    "_parent_wilaya": "Tiaret (14)",
     "latitude": 36.54,
     "longitude": 3.081,
     "code_commune": 922
@@ -1512,10 +922,9 @@
   {
     "name_fr": "Hamadia",
     "name_ar": "حمادية",
-    "wilaya_code": 67,
+    "wilaya_code": 64,
     "daira": "Rechaiga",
     "postal_code": "67006",
-    "_parent_wilaya": "Tiaret (14)",
     "latitude": 35.45918,
     "longitude": 1.87316,
     "code_commune": 1435
@@ -1523,10 +932,9 @@
   {
     "name_fr": "Ksar Chellala",
     "name_ar": "قصر الشلالة",
-    "wilaya_code": 67,
+    "wilaya_code": 64,
     "daira": "Ksar Chellala",
     "postal_code": "67001",
-    "_parent_wilaya": "Tiaret (14)",
     "latitude": 35.21222,
     "longitude": 2.3189,
     "code_commune": 1429
@@ -1534,10 +942,9 @@
   {
     "name_fr": "Rechaiga",
     "name_ar": "الرشايقة",
-    "wilaya_code": 67,
+    "wilaya_code": 64,
     "daira": "Rechaiga",
     "postal_code": "67005",
-    "_parent_wilaya": "Tiaret (14)",
     "latitude": 35.4081,
     "longitude": 1.9739,
     "code_commune": 1430
@@ -1545,32 +952,29 @@
   {
     "name_fr": "Serghine",
     "name_ar": "سرغين",
-    "wilaya_code": 67,
+    "wilaya_code": 64,
     "daira": "Ksar Chellala",
     "postal_code": "67002",
-    "_parent_wilaya": "Tiaret (14)",
     "latitude": 35.254444,
     "longitude": 2.30861,
     "code_commune": 1439
   },
   {
-    "name_fr": "Zmalet El Emir Abdelkader",
-    "name_ar": "زمالة الأمير عبد القادر",
-    "wilaya_code": 67,
-    "daira": "Zmalet El Emir Abdelkader",
-    "postal_code": "67003",
-    "_parent_wilaya": "Tiaret (14)",
-    "latitude": 34.89336,
-    "longitude": 2.31,
-    "code_commune": 1409
+    "name_fr": "Zmalet El Emir Abdelkade",
+    "name_ar": "زمالة  الأمير عبد القادر",
+    "wilaya_code": 64,
+    "daira": null,
+    "postal_code": null,
+    "latitude": null,
+    "longitude": null,
+    "code_commune": null
   },
   {
     "name_fr": "Ain Fekka",
     "name_ar": "عين فقه",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Sidi Laadjel",
     "postal_code": "68010",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.433333,
     "longitude": 3.583333333,
     "code_commune": 1735
@@ -1578,10 +982,9 @@
   {
     "name_fr": "Ain Oussera",
     "name_ar": "عين وسارة",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Ain Oussera",
     "postal_code": "68001",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.4542653,
     "longitude": 2.904444,
     "code_commune": 1731
@@ -1589,10 +992,9 @@
   {
     "name_fr": "Benhar",
     "name_ar": "بنهار",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Ain Oussera",
     "postal_code": "68002",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.4859395,
     "longitude": 3.1081,
     "code_commune": 1732
@@ -1600,10 +1002,9 @@
   {
     "name_fr": "Birine",
     "name_ar": "بيرين",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Birine",
     "postal_code": "68004",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.6383108,
     "longitude": 3.2869,
     "code_commune": 1708
@@ -1611,10 +1012,9 @@
   {
     "name_fr": "Bouira Lahdab",
     "name_ar": "بويرة الأحداب",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Bouira Lahdab",
     "postal_code": "68006",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.243889,
     "longitude": 3.75,
     "code_commune": 1709
@@ -1622,10 +1022,9 @@
   {
     "name_fr": "El Khemis",
     "name_ar": "الخميس",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Birine",
     "postal_code": "68005",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.5397,
     "longitude": 2.515833,
     "code_commune": 1711
@@ -1633,10 +1032,9 @@
   {
     "name_fr": "Guernini",
     "name_ar": "قرنيني",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Ain Oussera",
     "postal_code": "68003",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.19970336,
     "longitude": 2.682895682,
     "code_commune": 1721
@@ -1644,10 +1042,9 @@
   {
     "name_fr": "Had Sahary",
     "name_ar": "حد الصحاري",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Bouira Lahdab",
     "postal_code": "68007",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.35056,
     "longitude": 3.3609,
     "code_commune": 1720
@@ -1655,10 +1052,9 @@
   {
     "name_fr": "Hassi Fedoul",
     "name_ar": "حاسي فدول",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Sidi Laadjel",
     "postal_code": "68009",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.436666,
     "longitude": 2.2142,
     "code_commune": 1733
@@ -1666,10 +1062,9 @@
   {
     "name_fr": "Sidi Laadjel",
     "name_ar": "سيدي لعجال",
-    "wilaya_code": 68,
+    "wilaya_code": 65,
     "daira": "Sidi Laadjel",
     "postal_code": "68008",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 35.438055,
     "longitude": 2.5,
     "code_commune": 1719
@@ -1677,10 +1072,9 @@
   {
     "name_fr": "Amourah",
     "name_ar": "عمورة",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Amourah",
     "postal_code": "69008",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 34.354444,
     "longitude": 3.87083333,
     "code_commune": 1734
@@ -1688,10 +1082,9 @@
   {
     "name_fr": "Deldoul",
     "name_ar": "دلدول",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Messaad",
     "postal_code": "69003",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 28.702778,
     "longitude": 0.15,
     "code_commune": 117
@@ -1699,10 +1092,9 @@
   {
     "name_fr": "Faidh El Botma",
     "name_ar": "فيض البطمة",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Sed Rahal",
     "postal_code": "69007",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 34.527777,
     "longitude": 3.781944,
     "code_commune": 1707
@@ -1710,10 +1102,9 @@
   {
     "name_fr": "Guettara",
     "name_ar": "قطارة",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Messaad",
     "postal_code": "69002",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 33.158611,
     "longitude": 4.685277,
     "code_commune": 1718
@@ -1721,10 +1112,9 @@
   {
     "name_fr": "Messaad",
     "name_ar": "مسعد",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Messaad",
     "postal_code": "69001",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 34.15429,
     "longitude": 3.50309,
     "code_commune": 1717
@@ -1732,10 +1122,9 @@
   {
     "name_fr": "Oum Laadham",
     "name_ar": "أم العظام",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Selmana",
     "postal_code": "69005",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 33.720277,
     "longitude": 4.53056,
     "code_commune": 1724
@@ -1743,10 +1132,9 @@
   {
     "name_fr": "Sed Rahal",
     "name_ar": "سد الرحال",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Sed Rahal",
     "postal_code": "69006",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 33.948333,
     "longitude": 3.231111,
     "code_commune": 1706
@@ -1754,12 +1142,521 @@
   {
     "name_fr": "Selmana",
     "name_ar": "سلمانة",
-    "wilaya_code": 69,
+    "wilaya_code": 66,
     "daira": "Selmana",
     "postal_code": "69004",
-    "_parent_wilaya": "Djelfa (17)",
     "latitude": 34.16440361,
     "longitude": 3.562011761,
     "code_commune": 1722
+  },
+  {
+    "name_fr": "Ain Boucif",
+    "name_ar": "عين بوسيف",
+    "wilaya_code": 67,
+    "daira": "Ain Boucif",
+    "postal_code": "66007",
+    "latitude": 35.89123,
+    "longitude": 3.1585,
+    "code_commune": 2604
+  },
+  {
+    "name_fr": "Ain Ouksir",
+    "name_ar": "عين اقصير",
+    "wilaya_code": 67,
+    "daira": "Chellalet El Adhaoura",
+    "postal_code": "66018",
+    "latitude": 35.818653,
+    "longitude": 3.470555,
+    "code_commune": 2641
+  },
+  {
+    "name_fr": "Aziz",
+    "name_ar": "عزيز",
+    "wilaya_code": 67,
+    "daira": "Aziz",
+    "postal_code": "66012",
+    "latitude": 35.816667,
+    "longitude": 2.45,
+    "code_commune": 2632
+  },
+  {
+    "name_fr": "Boghar",
+    "name_ar": "بوغار",
+    "wilaya_code": 67,
+    "daira": "Boghar",
+    "postal_code": "66019",
+    "latitude": 35.911389,
+    "longitude": 2.71667,
+    "code_commune": 2625
+  },
+  {
+    "name_fr": "Bouaiche",
+    "name_ar": "بوعيش",
+    "wilaya_code": 67,
+    "daira": "Chahbounia",
+    "postal_code": "26053",
+    "latitude": 35.552778,
+    "longitude": 2.1731,
+    "code_commune": 2610
+  },
+  {
+    "name_fr": "Boughzoul",
+    "name_ar": "بوغزول",
+    "wilaya_code": 67,
+    "daira": "Chahbounia",
+    "postal_code": "66005",
+    "latitude": 35.7533117,
+    "longitude": 2.7381672,
+    "code_commune": 2651
+  },
+  {
+    "name_fr": "Chabounia",
+    "name_ar": "الشهبونية",
+    "wilaya_code": 67,
+    "daira": "Chahbounia",
+    "postal_code": "66004",
+    "latitude": 35.54472221,
+    "longitude": 2.603333,
+    "code_commune": 2638
+  },
+  {
+    "name_fr": "Chelalet El Adhaoura",
+    "name_ar": "شلالة العذاورة",
+    "wilaya_code": 67,
+    "daira": "Chellalet El Adhaoura",
+    "postal_code": "66015",
+    "latitude": 35.94,
+    "longitude": 3.4139,
+    "code_commune": 2618
+  },
+  {
+    "name_fr": "Cheniguel",
+    "name_ar": "شنيقل",
+    "wilaya_code": 67,
+    "daira": "Chellalet El Adhaoura",
+    "postal_code": "66016",
+    "latitude": 35.922222,
+    "longitude": 3.5667,
+    "code_commune": 2640
+  },
+  {
+    "name_fr": "Derrag",
+    "name_ar": "دراق",
+    "wilaya_code": 67,
+    "daira": "Aziz",
+    "postal_code": "66014",
+    "latitude": 35.908611,
+    "longitude": 2.38778,
+    "code_commune": 2608
+  },
+  {
+    "name_fr": "El Ouinet",
+    "name_ar": "العوينات",
+    "wilaya_code": 67,
+    "daira": "Ain Boucif",
+    "postal_code": "66011",
+    "latitude": 35.3344,
+    "longitude": 3.035556,
+    "code_commune": 2657
+  },
+  {
+    "name_fr": "Kef Lakhdar",
+    "name_ar": "الكاف الاخضر",
+    "wilaya_code": 67,
+    "daira": "Ain Boucif",
+    "postal_code": "66008",
+    "latitude": 35.923333,
+    "longitude": 3.2875,
+    "code_commune": 2617
+  },
+  {
+    "name_fr": "Ksar El Boukhari",
+    "name_ar": "قصر البخاري",
+    "wilaya_code": 67,
+    "daira": "Ksar El Boukhari",
+    "postal_code": "66001",
+    "latitude": 35.88889,
+    "longitude": 2.74905,
+    "code_commune": 2635
+  },
+  {
+    "name_fr": "M'fatha",
+    "name_ar": "مفاتحة",
+    "wilaya_code": 67,
+    "daira": null,
+    "postal_code": null,
+    "latitude": null,
+    "longitude": null,
+    "code_commune": null
+  },
+  {
+    "name_fr": "Ouled Antar",
+    "name_ar": "أولاد عنتر",
+    "wilaya_code": 67,
+    "daira": "Boghar",
+    "postal_code": "66020",
+    "latitude": 35.9951773,
+    "longitude": 2.60231,
+    "code_commune": 2658
+  },
+  {
+    "name_fr": "Ouled Emaaraf",
+    "name_ar": "أولاد امعرف",
+    "wilaya_code": 67,
+    "daira": null,
+    "postal_code": null,
+    "latitude": null,
+    "longitude": null,
+    "code_commune": null
+  },
+  {
+    "name_fr": "Ouled Hellal",
+    "name_ar": "أولاد هلال",
+    "wilaya_code": 67,
+    "daira": "Boghar",
+    "postal_code": "66021",
+    "latitude": 35.9370104,
+    "longitude": 2.4980197,
+    "code_commune": 2622
+  },
+  {
+    "name_fr": "Oum El Djellil",
+    "name_ar": "أم الجليل",
+    "wilaya_code": 67,
+    "daira": "Aziz",
+    "postal_code": "66013",
+    "latitude": 35.8275,
+    "longitude": 2.6239,
+    "code_commune": 2642
+  },
+  {
+    "name_fr": "Saneg",
+    "name_ar": "السانق",
+    "wilaya_code": 67,
+    "daira": "Ksar El Boukhari",
+    "postal_code": "66003",
+    "latitude": 35.8514,
+    "longitude": 3.253056,
+    "code_commune": 2664
+  },
+  {
+    "name_fr": "Sidi Demed",
+    "name_ar": "سيدي دامد",
+    "wilaya_code": 67,
+    "daira": "Ain Boucif",
+    "postal_code": "66010",
+    "latitude": 34.55,
+    "longitude": 0.259722,
+    "code_commune": 2012
+  },
+  {
+    "name_fr": "Tafraout",
+    "name_ar": "تفراوت",
+    "wilaya_code": 67,
+    "daira": "Chellalet El Adhaoura",
+    "postal_code": "66017",
+    "latitude": 36.0877,
+    "longitude": 3.4308,
+    "code_commune": 2623
+  },
+  {
+    "name_fr": "Ain El Melh",
+    "name_ar": "عين الملح",
+    "wilaya_code": 68,
+    "daira": "Ain El Melh",
+    "postal_code": "64016",
+    "latitude": 34.8470491,
+    "longitude": 4.1634964,
+    "code_commune": 2841
+  },
+  {
+    "name_fr": "Ain Fares",
+    "name_ar": "عين فارس",
+    "wilaya_code": 68,
+    "daira": "Ain El Melh",
+    "postal_code": "64018",
+    "latitude": 35.03583333,
+    "longitude": 4.428333333,
+    "code_commune": 2837
+  },
+  {
+    "name_fr": "Ain Rich",
+    "name_ar": "عين الريش",
+    "wilaya_code": 68,
+    "daira": "Ain El Melh",
+    "postal_code": "64017",
+    "latitude": 34.680794,
+    "longitude": 4.096956,
+    "code_commune": 2844
+  },
+  {
+    "name_fr": "Ben Srour",
+    "name_ar": "بن سرور",
+    "wilaya_code": 68,
+    "daira": "Ben Srour",
+    "postal_code": "64007",
+    "latitude": 35.0404431,
+    "longitude": 4.5633795,
+    "code_commune": 2824
+  },
+  {
+    "name_fr": "Benzouh",
+    "name_ar": "بن زوه",
+    "wilaya_code": 68,
+    "daira": "Ouled Sidi Brahim",
+    "postal_code": "28026",
+    "latitude": 35.438055,
+    "longitude": 4.383333,
+    "code_commune": 2835
+  },
+  {
+    "name_fr": "Bir Foda",
+    "name_ar": "بئر فضة",
+    "wilaya_code": 68,
+    "daira": "Aïn El Melh",
+    "postal_code": "28014",
+    "latitude": 34.82,
+    "longitude": 3.899444,
+    "code_commune": 2836
+  },
+  {
+    "name_fr": "Bou Saada",
+    "name_ar": "بوسعادة",
+    "wilaya_code": 68,
+    "daira": "Bou Saada",
+    "postal_code": "64001",
+    "latitude": 35.219167,
+    "longitude": 4.17402,
+    "code_commune": 2820
+  },
+  {
+    "name_fr": "Djebel Messaad",
+    "name_ar": "جبل مساعد",
+    "wilaya_code": 68,
+    "daira": "Djebel Messaad",
+    "postal_code": "64014",
+    "latitude": 34.991121,
+    "longitude": 4.092493,
+    "code_commune": 2847
+  },
+  {
+    "name_fr": "El Hamel",
+    "name_ar": "الهامل",
+    "wilaya_code": 68,
+    "daira": "Bou Saada",
+    "postal_code": "64002",
+    "latitude": 35.1283,
+    "longitude": 4.083333,
+    "code_commune": 2827
+  },
+  {
+    "name_fr": "El Houamed",
+    "name_ar": "الحوامد",
+    "wilaya_code": 68,
+    "daira": "Khoubana",
+    "postal_code": "28040",
+    "latitude": 35.2917758,
+    "longitude": 4.53358,
+    "code_commune": 2826
+  },
+  {
+    "name_fr": "Khoubana",
+    "name_ar": "خبانة",
+    "wilaya_code": 68,
+    "daira": "Khoubana",
+    "postal_code": "64004",
+    "latitude": 35.31444444,
+    "longitude": 4.566944,
+    "code_commune": 2807
+  },
+  {
+    "name_fr": "M'cif",
+    "name_ar": "مسيف",
+    "wilaya_code": 68,
+    "daira": "Khoubana",
+    "postal_code": "28039",
+    "latitude": 35.3281,
+    "longitude": 4.8,
+    "code_commune": 2808
+  },
+  {
+    "name_fr": "Medjedel",
+    "name_ar": "امجدل",
+    "wilaya_code": 68,
+    "daira": "Medjedel",
+    "postal_code": "28041",
+    "latitude": 34.9611111,
+    "longitude": 3.6793899,
+    "code_commune": 2842
+  },
+  {
+    "name_fr": "Menaa",
+    "name_ar": "مناعة",
+    "wilaya_code": 68,
+    "daira": "Menaa",
+    "postal_code": "05028",
+    "latitude": 35.1777,
+    "longitude": 6.006775,
+    "code_commune": 506
+  },
+  {
+    "name_fr": "Mohamed Boudiaf",
+    "name_ar": "محمد بوضياف",
+    "wilaya_code": 68,
+    "daira": "Ben Srour",
+    "postal_code": "64010",
+    "latitude": 34.8941667,
+    "longitude": 4.428611,
+    "code_commune": 2834
+  },
+  {
+    "name_fr": "Ouled Sidi Brahim",
+    "name_ar": "أولاد سيدي ابراهيم",
+    "wilaya_code": 68,
+    "daira": "Ouled Sidi Brahim",
+    "postal_code": "64011",
+    "latitude": 36.2,
+    "longitude": 4.174722,
+    "code_commune": 2823
+  },
+  {
+    "name_fr": "Ouled Slimane",
+    "name_ar": "أولاد سليمان",
+    "wilaya_code": 68,
+    "daira": "Ben Srour",
+    "postal_code": "64008",
+    "latitude": 34.91609,
+    "longitude": 4.73694444,
+    "code_commune": 2825
+  },
+  {
+    "name_fr": "Oulteme",
+    "name_ar": "ولتام",
+    "wilaya_code": 68,
+    "daira": "Bou Saada",
+    "postal_code": "64003",
+    "latitude": 35.0350816,
+    "longitude": 5.3360215,
+    "code_commune": 2846
+  },
+  {
+    "name_fr": "Sidi Ameur",
+    "name_ar": "سيدي عامر",
+    "wilaya_code": 68,
+    "daira": "Sidi Ameur",
+    "postal_code": "64012",
+    "latitude": 33.768333,
+    "longitude": 1.413611111,
+    "code_commune": 3218
+  },
+  {
+    "name_fr": "Sidi M'hamed",
+    "name_ar": "سيدي امحمد",
+    "wilaya_code": 68,
+    "daira": "Ain El Melh",
+    "postal_code": "64020",
+    "latitude": 36.7563368,
+    "longitude": 3.0551159,
+    "code_commune": 1602
+  },
+  {
+    "name_fr": "Slim",
+    "name_ar": "سليم",
+    "wilaya_code": 68,
+    "daira": "Djebel Messaad",
+    "postal_code": "64015",
+    "latitude": 34.938889,
+    "longitude": 3.734722222,
+    "code_commune": 2843
+  },
+  {
+    "name_fr": "Tamsa",
+    "name_ar": "تامسة",
+    "wilaya_code": 68,
+    "daira": "Sidi Ameur",
+    "postal_code": "64013",
+    "latitude": 35.173611,
+    "longitude": 3.925556,
+    "code_commune": 2823
+  },
+  {
+    "name_fr": "Zarzour",
+    "name_ar": "زرزور",
+    "wilaya_code": 68,
+    "daira": "Ben Srour",
+    "postal_code": "64009",
+    "latitude": 35.0358333,
+    "longitude": 4.433333,
+    "code_commune": 2833
+  },
+  {
+    "name_fr": "Ain El Orak",
+    "name_ar": "عين العراك",
+    "wilaya_code": 69,
+    "daira": "El Abiodh Sidi Cheikh",
+    "postal_code": "60002",
+    "latitude": 33.4100573,
+    "longitude": 0.7385302,
+    "code_commune": 3208
+  },
+  {
+    "name_fr": "Arbaouat",
+    "name_ar": "اربوات",
+    "wilaya_code": 69,
+    "daira": "El Abiodh Sidi Cheikh",
+    "postal_code": "60003",
+    "latitude": 33.08833333,
+    "longitude": 0.5823,
+    "code_commune": 3209
+  },
+  {
+    "name_fr": "Boussemghoun",
+    "name_ar": "بوسمغون",
+    "wilaya_code": 69,
+    "daira": "Boussemghoun",
+    "postal_code": "60005",
+    "latitude": 32.8643,
+    "longitude": 0.0201,
+    "code_commune": 3213
+  },
+  {
+    "name_fr": "Chellala",
+    "name_ar": "شلالة",
+    "wilaya_code": 69,
+    "daira": "Chellala",
+    "postal_code": "60006",
+    "latitude": 35.216667,
+    "longitude": 0.0556,
+    "code_commune": 3214
+  },
+  {
+    "name_fr": "El Bnoud",
+    "name_ar": "البنود",
+    "wilaya_code": 69,
+    "daira": "El Abiodh Sidi Cheikh",
+    "postal_code": "60004",
+    "latitude": 32.31222222,
+    "longitude": 0.244444,
+    "code_commune": 3216
+  },
+  {
+    "name_fr": "El Mehara",
+    "name_ar": "المحرة",
+    "wilaya_code": 69,
+    "daira": "Chellala",
+    "postal_code": "60007",
+    "latitude": 33.311667,
+    "longitude": 0.364444,
+    "code_commune": 3219
+  },
+  {
+    "name_fr": "Labiodh Sidi Cheikh",
+    "name_ar": "الأبيض سيدي الشيخ",
+    "wilaya_code": 69,
+    "daira": "El Abiodh Sidi Cheikh",
+    "postal_code": "60001",
+    "latitude": 32.898611,
+    "longitude": 0.544444,
+    "code_commune": 3207
   }
 ]

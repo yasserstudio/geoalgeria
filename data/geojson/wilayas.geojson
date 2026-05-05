@@ -3,1265 +3,1175 @@
   "features": [
     {
       "type": "Feature",
+      "properties": {
+        "code": 1,
+        "name_fr": "Adrar",
+        "name_ar": "أدرار",
+        "phone_code": "049",
+        "postal_code": "01000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -0.283,
           27.867
         ]
-      },
-      "properties": {
-        "code": 1,
-        "name_fr": "Adrar",
-        "name_ar": "أدرار",
-        "phone_code": "049",
-        "postal_code": "01000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 2,
+        "name_fr": "Chlef",
+        "name_ar": "الشلف",
+        "phone_code": "027",
+        "postal_code": "02000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           1.33167,
           36.16472
         ]
-      },
-      "properties": {
-        "code": 2,
-        "name_fr": "Chlef",
-        "name_ar": "الشلف",
-        "phone_code": "027",
-        "postal_code": "02000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 3,
+        "name_fr": "Laghouat",
+        "name_ar": "الأغواط",
+        "phone_code": "029",
+        "postal_code": "03000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.875,
           33.80278
         ]
-      },
-      "properties": {
-        "code": 3,
-        "name_fr": "Laghouat",
-        "name_ar": "الأغواط",
-        "phone_code": "029",
-        "postal_code": "03000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 4,
+        "name_fr": "Oum El Bouaghi",
+        "name_ar": "أم البواقي",
+        "phone_code": "032",
+        "postal_code": "04000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           7.11361,
           35.8775
         ]
-      },
-      "properties": {
-        "code": 4,
-        "name_fr": "Oum El Bouaghi",
-        "name_ar": "أم البواقي",
-        "phone_code": "032",
-        "postal_code": "04000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 5,
+        "name_fr": "Batna",
+        "name_ar": "باتنة",
+        "phone_code": "033",
+        "postal_code": "05000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           6.16667,
           35.55
         ]
-      },
-      "properties": {
-        "code": 5,
-        "name_fr": "Batna",
-        "name_ar": "باتنة",
-        "phone_code": "033",
-        "postal_code": "05000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 6,
+        "name_fr": "Béjaïa",
+        "name_ar": "بجاية",
+        "phone_code": "034",
+        "postal_code": "06000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.06417,
           36.75111
         ]
-      },
-      "properties": {
-        "code": 6,
-        "name_fr": "Bejaia",
-        "name_ar": "بجاية",
-        "phone_code": "034",
-        "postal_code": "06000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 7,
+        "name_fr": "Biskra",
+        "name_ar": "بسكرة",
+        "phone_code": "033",
+        "postal_code": "07000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.733,
           34.85
         ]
-      },
-      "properties": {
-        "code": 7,
-        "name_fr": "Biskra",
-        "name_ar": "بسكرة",
-        "phone_code": "033",
-        "postal_code": "07000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 8,
+        "name_fr": "Béchar",
+        "name_ar": "بشار",
+        "phone_code": "049",
+        "postal_code": "08000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -2.217,
           31.617
         ]
-      },
-      "properties": {
-        "code": 8,
-        "name_fr": "Bechar",
-        "name_ar": "بشار",
-        "phone_code": "049",
-        "postal_code": "08000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 9,
+        "name_fr": "Blida",
+        "name_ar": "البليدة",
+        "phone_code": "025",
+        "postal_code": "09000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.83194,
           36.46861
         ]
-      },
-      "properties": {
-        "code": 9,
-        "name_fr": "Blida",
-        "name_ar": "البليدة",
-        "phone_code": "025",
-        "postal_code": "09000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 10,
+        "name_fr": "Bouira",
+        "name_ar": "البويرة",
+        "phone_code": "026",
+        "postal_code": "10000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           3.90139,
           36.38
         ]
-      },
-      "properties": {
-        "code": 10,
-        "name_fr": "Bouira",
-        "name_ar": "البويرة",
-        "phone_code": "026",
-        "postal_code": "10000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 11,
+        "name_fr": "Tamanrasset",
+        "name_ar": "تمنراست",
+        "phone_code": "029",
+        "postal_code": "11000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.52556,
           22.78889
         ]
-      },
-      "properties": {
-        "code": 11,
-        "name_fr": "Tamanrasset",
-        "name_ar": "تمنراست",
-        "phone_code": "029",
-        "postal_code": "11000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 12,
+        "name_fr": "Tébessa",
+        "name_ar": "تبسة",
+        "phone_code": "037",
+        "postal_code": "12000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           8.117,
           35.4
         ]
-      },
-      "properties": {
-        "code": 12,
-        "name_fr": "Tebessa",
-        "name_ar": "تبسة",
-        "phone_code": "037",
-        "postal_code": "12000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 13,
+        "name_fr": "Tlemcen",
+        "name_ar": "تلمسان",
+        "phone_code": "043",
+        "postal_code": "13000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -1.31667,
           34.88278
         ]
-      },
-      "properties": {
-        "code": 13,
-        "name_fr": "Tlemcen",
-        "name_ar": "تلمسان",
-        "phone_code": "043",
-        "postal_code": "13000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 14,
+        "name_fr": "Tiaret",
+        "name_ar": "تيارت",
+        "phone_code": "046",
+        "postal_code": "14000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           1.317,
           35.367
         ]
-      },
-      "properties": {
-        "code": 14,
-        "name_fr": "Tiaret",
-        "name_ar": "تيارت",
-        "phone_code": "046",
-        "postal_code": "14000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 15,
+        "name_fr": "Tizi Ouzou",
+        "name_ar": "تيزي وزو",
+        "phone_code": "026",
+        "postal_code": "15000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           4.05,
           36.717
         ]
-      },
-      "properties": {
-        "code": 15,
-        "name_fr": "Tizi Ouzou",
-        "name_ar": "تيزي وزو",
-        "phone_code": "026",
-        "postal_code": "15000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 16,
+        "name_fr": "Alger",
+        "name_ar": "الجزائر",
+        "phone_code": "021",
+        "postal_code": "16000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           3.08722,
           36.7325
         ]
-      },
-      "properties": {
-        "code": 16,
-        "name_fr": "Alger",
-        "name_ar": "الجزائر",
-        "phone_code": "021",
-        "postal_code": "16000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 17,
+        "name_fr": "Djelfa",
+        "name_ar": "الجلفة",
+        "phone_code": "027",
+        "postal_code": "17000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           3.25,
           34.66667
         ]
-      },
-      "properties": {
-        "code": 17,
-        "name_fr": "Djelfa",
-        "name_ar": "الجلفة",
-        "phone_code": "027",
-        "postal_code": "17000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 18,
+        "name_fr": "Jijel",
+        "name_ar": "جيجل",
+        "phone_code": "034",
+        "postal_code": "18000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.75,
           36.81667
         ]
-      },
-      "properties": {
-        "code": 18,
-        "name_fr": "Jijel",
-        "name_ar": "جيجل",
-        "phone_code": "034",
-        "postal_code": "18000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 19,
+        "name_fr": "Sétif",
+        "name_ar": "سطيف",
+        "phone_code": "036",
+        "postal_code": "19000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.41,
           36.19
         ]
-      },
-      "properties": {
-        "code": 19,
-        "name_fr": "Setif",
-        "name_ar": "سطيف",
-        "phone_code": "036",
-        "postal_code": "19000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 20,
+        "name_fr": "Saïda",
+        "name_ar": "سعيدة",
+        "phone_code": "048",
+        "postal_code": "20000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           0.15,
           34.833
         ]
-      },
-      "properties": {
-        "code": 20,
-        "name_fr": "Saida",
-        "name_ar": "سعيدة",
-        "phone_code": "048",
-        "postal_code": "20000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 21,
+        "name_fr": "Skikda",
+        "name_ar": "سكيكدة",
+        "phone_code": "038",
+        "postal_code": "21000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           6.9,
           36.86667
         ]
-      },
-      "properties": {
-        "code": 21,
-        "name_fr": "Skikda",
-        "name_ar": "سكيكدة",
-        "phone_code": "038",
-        "postal_code": "21000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 22,
+        "name_fr": "Sidi Bel Abbès",
+        "name_ar": "سيدي بلعباس",
+        "phone_code": "048",
+        "postal_code": "22000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -0.64139,
           35.19389
         ]
-      },
-      "properties": {
-        "code": 22,
-        "name_fr": "Sidi Bel Abbes",
-        "name_ar": "سيدي بلعباس",
-        "phone_code": "048",
-        "postal_code": "22000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 23,
+        "name_fr": "Annaba",
+        "name_ar": "عنابة",
+        "phone_code": "038",
+        "postal_code": "23000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           7.767,
           36.9
         ]
-      },
-      "properties": {
-        "code": 23,
-        "name_fr": "Annaba",
-        "name_ar": "عنابة",
-        "phone_code": "038",
-        "postal_code": "23000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 24,
+        "name_fr": "Guelma",
+        "name_ar": "قالمة",
+        "phone_code": "037",
+        "postal_code": "24000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           7.433,
           36.45
         ]
-      },
-      "properties": {
-        "code": 24,
-        "name_fr": "Guelma",
-        "name_ar": "قالمة",
-        "phone_code": "037",
-        "postal_code": "24000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 25,
+        "name_fr": "Constantine",
+        "name_ar": "قسنطينة",
+        "phone_code": "031",
+        "postal_code": "25000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           6.6,
           36.35
         ]
-      },
-      "properties": {
-        "code": 25,
-        "name_fr": "Constantine",
-        "name_ar": "قسنطينة",
-        "phone_code": "031",
-        "postal_code": "25000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 26,
+        "name_fr": "Médéa",
+        "name_ar": "المدية",
+        "phone_code": "025",
+        "postal_code": "26000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.75,
           36.2675
         ]
-      },
-      "properties": {
-        "code": 26,
-        "name_fr": "Medea",
-        "name_ar": "المدية",
-        "phone_code": "025",
-        "postal_code": "26000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 27,
+        "name_fr": "Mostaganem",
+        "name_ar": "مستغانم",
+        "phone_code": "045",
+        "postal_code": "27000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           0.083,
           35.933
         ]
-      },
-      "properties": {
-        "code": 27,
-        "name_fr": "Mostaganem",
-        "name_ar": "مستغانم",
-        "phone_code": "045",
-        "postal_code": "27000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 28,
+        "name_fr": "M'sila",
+        "name_ar": "المسيلة",
+        "phone_code": "035",
+        "postal_code": "28000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           4.54722,
           35.70194
         ]
-      },
-      "properties": {
-        "code": 28,
-        "name_fr": "M'Sila",
-        "name_ar": "المسيلة",
-        "phone_code": "035",
-        "postal_code": "28000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 29,
+        "name_fr": "Mascara",
+        "name_ar": "معسكر",
+        "phone_code": "045",
+        "postal_code": "29000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           0.13333,
           35.4
         ]
-      },
-      "properties": {
-        "code": 29,
-        "name_fr": "Mascara",
-        "name_ar": "معسكر",
-        "phone_code": "045",
-        "postal_code": "29000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 30,
+        "name_fr": "Ouargla",
+        "name_ar": "ورقلة",
+        "phone_code": "029",
+        "postal_code": "30000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.317,
           31.95
         ]
-      },
-      "properties": {
-        "code": 30,
-        "name_fr": "Ouargla",
-        "name_ar": "ورقلة",
-        "phone_code": "029",
-        "postal_code": "30000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 31,
+        "name_fr": "Oran",
+        "name_ar": "وهران",
+        "phone_code": "041",
+        "postal_code": "31000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -0.63306,
           35.69694
         ]
-      },
-      "properties": {
-        "code": 31,
-        "name_fr": "Oran",
-        "name_ar": "وهران",
-        "phone_code": "041",
-        "postal_code": "31000",
-        "created": "original"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 32,
+        "name_fr": "El Bayadh",
+        "name_ar": "البيض",
+        "phone_code": "049",
+        "postal_code": "32000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           1.02028,
           33.68028
         ]
-      },
-      "properties": {
-        "code": 32,
-        "name_fr": "El Bayadh",
-        "name_ar": "البيض",
-        "phone_code": "049",
-        "postal_code": "32000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 33,
+        "name_fr": "Illizi",
+        "name_ar": "إليزي",
+        "phone_code": "029",
+        "postal_code": "33000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           8.482,
           26.505
         ]
-      },
-      "properties": {
-        "code": 33,
-        "name_fr": "Illizi",
-        "name_ar": "إليزي",
-        "phone_code": "029",
-        "postal_code": "33000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 34,
+        "name_fr": "Bordj Bou Arreridj",
+        "name_ar": "برج بوعريريج",
+        "phone_code": "035",
+        "postal_code": "34000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           4.767,
           36.067
         ]
-      },
-      "properties": {
-        "code": 34,
-        "name_fr": "Bordj Bou Arreridj",
-        "name_ar": "برج بوعريريج",
-        "phone_code": "035",
-        "postal_code": "34000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 35,
+        "name_fr": "Boumerdès",
+        "name_ar": "بومرداس",
+        "phone_code": "024",
+        "postal_code": "35000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           3.47236,
           36.76034
         ]
-      },
-      "properties": {
-        "code": 35,
-        "name_fr": "Boumerdes",
-        "name_ar": "بومرداس",
-        "phone_code": "024",
-        "postal_code": "35000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 36,
+        "name_fr": "El Tarf",
+        "name_ar": "الطارف",
+        "phone_code": "038",
+        "postal_code": "36000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           8.317,
           36.767
         ]
-      },
-      "properties": {
-        "code": 36,
-        "name_fr": "El Tarf",
-        "name_ar": "الطارف",
-        "phone_code": "038",
-        "postal_code": "36000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 37,
+        "name_fr": "Tindouf",
+        "name_ar": "تندوف",
+        "phone_code": "049",
+        "postal_code": "37000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -8.12861,
           27.67528
         ]
-      },
-      "properties": {
-        "code": 37,
-        "name_fr": "Tindouf",
-        "name_ar": "تندوف",
-        "phone_code": "049",
-        "postal_code": "37000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 38,
+        "name_fr": "Tissemsilt",
+        "name_ar": "تيسمسيلت",
+        "phone_code": "046",
+        "postal_code": "38000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           1.81111,
           35.60778
         ]
-      },
-      "properties": {
-        "code": 38,
-        "name_fr": "Tissemsilt",
-        "name_ar": "تسمسيلت",
-        "phone_code": "046",
-        "postal_code": "38000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 39,
+        "name_fr": "El Oued",
+        "name_ar": "الوادي",
+        "phone_code": "032",
+        "postal_code": "39000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           6.86056,
           33.36111
         ]
-      },
-      "properties": {
-        "code": 39,
-        "name_fr": "El Oued",
-        "name_ar": "الوادي",
-        "phone_code": "032",
-        "postal_code": "39000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 40,
+        "name_fr": "Khenchela",
+        "name_ar": "خنشلة",
+        "phone_code": "032",
+        "postal_code": "40000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           7.133,
           35.417
         ]
-      },
-      "properties": {
-        "code": 40,
-        "name_fr": "Khenchela",
-        "name_ar": "خنشلة",
-        "phone_code": "032",
-        "postal_code": "40000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 41,
+        "name_fr": "Souk Ahras",
+        "name_ar": "سوق أهراس",
+        "phone_code": "037",
+        "postal_code": "41000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           7.95111,
           36.28639
         ]
-      },
-      "properties": {
-        "code": 41,
-        "name_fr": "Souk Ahras",
-        "name_ar": "سوق أهراس",
-        "phone_code": "037",
-        "postal_code": "41000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 42,
+        "name_fr": "Tipaza",
+        "name_ar": "تيبازة",
+        "phone_code": "024",
+        "postal_code": "42000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.44944,
           36.59194
         ]
-      },
-      "properties": {
-        "code": 42,
-        "name_fr": "Tipaza",
-        "name_ar": "تيبازة",
-        "phone_code": "024",
-        "postal_code": "42000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 43,
+        "name_fr": "Mila",
+        "name_ar": "ميلة",
+        "phone_code": "031",
+        "postal_code": "43000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           6.27,
           36.45
         ]
-      },
-      "properties": {
-        "code": 43,
-        "name_fr": "Mila",
-        "name_ar": "ميلة",
-        "phone_code": "031",
-        "postal_code": "43000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 44,
+        "name_fr": "Aïn Defla",
+        "name_ar": "عين الدفلى",
+        "phone_code": "027",
+        "postal_code": "44000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           1.9703,
           36.2652
         ]
-      },
-      "properties": {
-        "code": 44,
-        "name_fr": "Ain Defla",
-        "name_ar": "عين الدفلى",
-        "phone_code": "027",
-        "postal_code": "44000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 45,
+        "name_fr": "Naâma",
+        "name_ar": "النعامة",
+        "phone_code": "049",
+        "postal_code": "45000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -0.31444,
           33.26222
         ]
-      },
-      "properties": {
-        "code": 45,
-        "name_fr": "Naama",
-        "name_ar": "النعامة",
-        "phone_code": "049",
-        "postal_code": "45000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 46,
+        "name_fr": "Aïn Témouchent",
+        "name_ar": "عين تموشنت",
+        "phone_code": "043",
+        "postal_code": "46000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -1.133,
           35.3
         ]
-      },
-      "properties": {
-        "code": 46,
-        "name_fr": "Ain Temouchent",
-        "name_ar": "عين تموشنت",
-        "phone_code": "043",
-        "postal_code": "46000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 47,
+        "name_fr": "Ghardaïa",
+        "name_ar": "غرداية",
+        "phone_code": "029",
+        "postal_code": "47000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           3.667,
           32.483
         ]
-      },
-      "properties": {
-        "code": 47,
-        "name_fr": "Ghardaia",
-        "name_ar": "غرداية",
-        "phone_code": "029",
-        "postal_code": "47000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 48,
+        "name_fr": "Relizane",
+        "name_ar": "غليزان",
+        "phone_code": "046",
+        "postal_code": "48000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           0.55,
           35.73333
         ]
-      },
-      "properties": {
-        "code": 48,
-        "name_fr": "Relizane",
-        "name_ar": "غليزان",
-        "phone_code": "046",
-        "postal_code": "48000",
-        "created": "1984"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 49,
+        "name_fr": "Timimoun",
+        "name_ar": "تيميمون",
+        "phone_code": "049",
+        "postal_code": "49000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -0.23889,
           29.26278
         ]
-      },
-      "properties": {
-        "code": 49,
-        "name_fr": "Timimoun",
-        "name_ar": "تيميمون",
-        "phone_code": "049",
-        "postal_code": "49000",
-        "created": "2019",
-        "parent_wilaya": "Adrar"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 50,
+        "name_fr": "Bordj Badji Mokhtar",
+        "name_ar": "برج باجي مختار",
+        "phone_code": "049",
+        "postal_code": "50000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           0.95417,
           21.32889
         ]
-      },
-      "properties": {
-        "code": 50,
-        "name_fr": "Bordj Badji Mokhtar",
-        "name_ar": "برج باجي مختار",
-        "phone_code": "049",
-        "postal_code": "50000",
-        "created": "2019",
-        "parent_wilaya": "Adrar"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 51,
+        "name_fr": "Ouled Djellal",
+        "name_ar": "أولاد جلال",
+        "phone_code": "033",
+        "postal_code": "51000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.067,
           34.417
         ]
-      },
-      "properties": {
-        "code": 51,
-        "name_fr": "Ouled Djellal",
-        "name_ar": "أولاد جلال",
-        "phone_code": "033",
-        "postal_code": "51000",
-        "created": "2019",
-        "parent_wilaya": "Biskra"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 52,
+        "name_fr": "Béni Abbès",
+        "name_ar": "بني عباس",
+        "phone_code": "049",
+        "postal_code": "52000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -2.1,
           30.08
         ]
-      },
-      "properties": {
-        "code": 52,
-        "name_fr": "Beni Abbes",
-        "name_ar": "بني عباس",
-        "phone_code": "049",
-        "postal_code": "52000",
-        "created": "2019",
-        "parent_wilaya": "Bechar"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 53,
+        "name_fr": "In Salah",
+        "name_ar": "عين صالح",
+        "phone_code": "029",
+        "postal_code": "53000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.48333,
           27.195
         ]
-      },
-      "properties": {
-        "code": 53,
-        "name_fr": "In Salah",
-        "name_ar": "عين صالح",
-        "phone_code": "029",
-        "postal_code": "53000",
-        "created": "2019",
-        "parent_wilaya": "Tamanrasset"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 54,
+        "name_fr": "In Guezzam",
+        "name_ar": "عين قزام",
+        "phone_code": "029",
+        "postal_code": "54000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.77222,
           19.56861
         ]
-      },
-      "properties": {
-        "code": 54,
-        "name_fr": "In Guezzam",
-        "name_ar": "عين قزّام",
-        "phone_code": "029",
-        "postal_code": "54000",
-        "created": "2019",
-        "parent_wilaya": "Tamanrasset"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 55,
+        "name_fr": "Touggourt",
+        "name_ar": "توقرت",
+        "phone_code": "029",
+        "postal_code": "55000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           6.067,
           33.1
         ]
-      },
-      "properties": {
-        "code": 55,
-        "name_fr": "Touggourt",
-        "name_ar": "تقرت",
-        "phone_code": "029",
-        "postal_code": "55000",
-        "created": "2019",
-        "parent_wilaya": "Ouargla"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 56,
+        "name_fr": "Djanet",
+        "name_ar": "جانت",
+        "phone_code": "029",
+        "postal_code": "56000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           9.48528,
           24.555
         ]
-      },
-      "properties": {
-        "code": 56,
-        "name_fr": "Djanet",
-        "name_ar": "جانت",
-        "phone_code": "029",
-        "postal_code": "56000",
-        "created": "2019",
-        "parent_wilaya": "Illizi"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 57,
+        "name_fr": "El M'Ghair",
+        "name_ar": "المغير",
+        "phone_code": "032",
+        "postal_code": "57000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.92417,
           33.95056
         ]
-      },
-      "properties": {
-        "code": 57,
-        "name_fr": "El M'Ghair",
-        "name_ar": "المغير",
-        "phone_code": "032",
-        "postal_code": "57000",
-        "created": "2019",
-        "parent_wilaya": "El Oued"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 58,
+        "name_fr": "El Meniaa",
+        "name_ar": "المنيعة",
+        "phone_code": "029",
+        "postal_code": "58000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.883,
           30.583
         ]
-      },
-      "properties": {
-        "code": 58,
-        "name_fr": "El Meniaa",
-        "name_ar": "المنيعة",
-        "phone_code": "029",
-        "postal_code": "58000",
-        "created": "2019",
-        "parent_wilaya": "Ghardaia"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 59,
+        "name_fr": "Aflou",
+        "name_ar": "آفلو",
+        "phone_code": null,
+        "postal_code": "59000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.10194,
           34.10889
         ]
-      },
-      "properties": {
-        "code": 59,
-        "name_fr": "Aflou",
-        "name_ar": "أفلو",
-        "phone_code": null,
-        "postal_code": "59000",
-        "created": "2025",
-        "parent_wilaya": "Laghouat"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 60,
+        "name_fr": "Barika",
+        "name_ar": "بريكة",
+        "phone_code": null,
+        "postal_code": "60000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.90444,
           35.44889
         ]
-      },
-      "properties": {
-        "code": 60,
-        "name_fr": "Ain Oussera",
-        "name_ar": "عين وسارة",
-        "phone_code": null,
-        "postal_code": "60000",
-        "created": "2025",
-        "parent_wilaya": "Djelfa"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 61,
+        "name_fr": "El Kantara",
+        "name_ar": "القنطرة",
+        "phone_code": null,
+        "postal_code": "61000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.36583,
           35.39722
         ]
-      },
-      "properties": {
-        "code": 61,
-        "name_fr": "Barika",
-        "name_ar": "بريكة",
-        "phone_code": null,
-        "postal_code": "61000",
-        "created": "2025",
-        "parent_wilaya": "Batna"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 62,
+        "name_fr": "Bir El Ater",
+        "name_ar": "بئر العاتر",
+        "phone_code": null,
+        "postal_code": "62000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           8.05806,
           34.74861
         ]
-      },
-      "properties": {
-        "code": 62,
-        "name_fr": "Bir El Ater",
-        "name_ar": "بئر العاتر",
-        "phone_code": null,
-        "postal_code": "62000",
-        "created": "2025",
-        "parent_wilaya": "Tebessa"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 63,
+        "name_fr": "El Aricha",
+        "name_ar": "العريشة",
+        "phone_code": null,
+        "postal_code": "63000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           4.18167,
           35.21917
         ]
-      },
-      "properties": {
-        "code": 63,
-        "name_fr": "Bou Saada",
-        "name_ar": "بوسعادة",
-        "phone_code": null,
-        "postal_code": "63000",
-        "created": "2025",
-        "parent_wilaya": "M'Sila"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 64,
+        "name_fr": "Ksar Chellala",
+        "name_ar": "قصر الشلالة",
+        "phone_code": null,
+        "postal_code": "64000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           0.54444,
           32.89861
         ]
-      },
-      "properties": {
-        "code": 64,
-        "name_fr": "El Abiodh Sidi Cheikh",
-        "name_ar": "الأبيض سيدي الشيخ",
-        "phone_code": null,
-        "postal_code": "64000",
-        "created": "2025",
-        "parent_wilaya": "El Bayadh"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 65,
+        "name_fr": "Aïn Oussara",
+        "name_ar": "عين وسارة",
+        "phone_code": null,
+        "postal_code": "65000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -1.25583,
           34.22278
         ]
-      },
-      "properties": {
-        "code": 65,
-        "name_fr": "El Aricha",
-        "name_ar": "العريشة",
-        "phone_code": null,
-        "postal_code": "65000",
-        "created": "2025",
-        "parent_wilaya": "Tlemcen"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 66,
+        "name_fr": "Messaad",
+        "name_ar": "مسعد",
+        "phone_code": null,
+        "postal_code": "66000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           5.7104,
           35.2166
         ]
-      },
-      "properties": {
-        "code": 66,
-        "name_fr": "El Kantara",
-        "name_ar": "القنطرة",
-        "phone_code": null,
-        "postal_code": "66000",
-        "created": "2025",
-        "parent_wilaya": "Biskra"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 67,
+        "name_fr": "Ksar El Boukhari",
+        "name_ar": "قصر البخاري",
+        "phone_code": null,
+        "postal_code": "67000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.317,
           35.217
         ]
-      },
-      "properties": {
-        "code": 67,
-        "name_fr": "Ksar Chellala",
-        "name_ar": "قصر الشلالة",
-        "phone_code": null,
-        "postal_code": "67000",
-        "created": "2025",
-        "parent_wilaya": "Tiaret"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 68,
+        "name_fr": "Bou Saâda",
+        "name_ar": "بوسعادة",
+        "phone_code": null,
+        "postal_code": "68000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           2.75083,
           35.88556
         ]
-      },
-      "properties": {
-        "code": 68,
-        "name_fr": "Ksar El Boukhari",
-        "name_ar": "قصر البخاري",
-        "phone_code": null,
-        "postal_code": "68000",
-        "created": "2025",
-        "parent_wilaya": "Medea"
       }
     },
     {
       "type": "Feature",
+      "properties": {
+        "code": 69,
+        "name_fr": "El Abiodh Sidi Cheikh",
+        "name_ar": "الأبيض سيدي الشيخ",
+        "phone_code": null,
+        "postal_code": "69000"
+      },
       "geometry": {
         "type": "Point",
         "coordinates": [
           3.5,
           34.16667
         ]
-      },
-      "properties": {
-        "code": 69,
-        "name_fr": "Messaad",
-        "name_ar": "مسعد",
-        "phone_code": null,
-        "postal_code": "69000",
-        "created": "2025",
-        "parent_wilaya": "Djelfa"
       }
     }
   ]
