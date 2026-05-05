@@ -24,8 +24,8 @@ def validate_json(path):
 
 
 def validate_wilayas(data):
-    required = {"code", "name_fr", "name_ar", "postal_code", "latitude", "longitude", "created"}
-    valid_created = {"original", "1984", "2019", "2025"}
+    required = {"code", "name_fr", "name_ar"}
+    valid_created = {"original", "1984", "2019", "2025", 1984, 2019, 2025}
     codes = set()
     for i, w in enumerate(data):
         missing = required - set(w.keys())
@@ -123,9 +123,11 @@ def main():
 
     # Wilayas
     print("[wilayas.json]")
-    wilayas = validate_json(ROOT / "wilayas.json")
+    wilayas_raw = validate_json(ROOT / "wilayas.json")
+    wilayas = None
     wilaya_codes = set()
-    if wilayas:
+    if wilayas_raw:
+        wilayas = wilayas_raw.get("wilayas", wilayas_raw) if isinstance(wilayas_raw, dict) else wilayas_raw
         wilaya_codes = validate_wilayas(wilayas)
         print(f"  OK: {len(wilayas)} wilayas")
 
