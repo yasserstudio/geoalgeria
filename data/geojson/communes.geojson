@@ -106,6 +106,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Ouled Ahmed Timmi",
+        "name_ar": "أولاد أحمد تيمي",
+        "wilaya_code": 1,
+        "postal_code": "01002",
+        "daira": "Adrar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2863,
+          27.851111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Reggane",
         "name_ar": "رقان",
         "wilaya_code": 1,
@@ -185,6 +202,23 @@
         "coordinates": [
           0.2667,
           27.416666
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Timekten",
+        "name_ar": "تيمقتن",
+        "wilaya_code": 1,
+        "postal_code": "01005",
+        "daira": "Aoulef"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.015,
+          27.021666
         ]
       }
     },
@@ -508,6 +542,23 @@
         "coordinates": [
           1.506,
           36.11354
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Herenfa",
+        "name_ar": "الهرانفة",
+        "wilaya_code": 2,
+        "postal_code": "02032",
+        "daira": "Aïn Merane"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.970516,
+          36.245277
         ]
       }
     },
@@ -1602,6 +1653,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Beni Foudhala El Hakania",
+        "name_ar": "بني فضالة الحقانية",
+        "wilaya_code": 5,
+        "postal_code": "05006",
+        "daira": "Aïn Touta"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.8667,
+          35.3525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Boulhilat",
         "name_ar": "بولهيلات",
         "wilaya_code": 5,
@@ -2333,6 +2401,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Tigharghar",
+        "name_ar": "تغرغار",
+        "wilaya_code": 5,
+        "postal_code": "05029",
+        "daira": "Menaa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0347,
+          35.160278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Timgad",
         "name_ar": "تيمقاد",
         "wilaya_code": 5,
@@ -2565,6 +2650,23 @@
         "coordinates": [
           4.7070616,
           36.839681
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Beni-Mallikeche",
+        "name_ar": "بني مليكش",
+        "wilaya_code": 6,
+        "postal_code": "06017",
+        "daira": "Beni Maouche"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.671389,
+          36.43333333
         ]
       }
     },
@@ -2945,6 +3047,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Smaoun",
+        "name_ar": "سمعون",
+        "wilaya_code": 6,
+        "postal_code": "06004",
+        "daira": "Amizour"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.8,
+          36.6389
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Souk El Tenine",
         "name_ar": "سوق لإثنين",
         "wilaya_code": 6,
@@ -3024,6 +3143,23 @@
         "coordinates": [
           5.4253757,
           36.5833119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Taourit Ighil",
+        "name_ar": "تاوريرت إغيل",
+        "wilaya_code": 6,
+        "postal_code": "06007",
+        "daira": "Adekar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.7381,
+          36.7202155
         ]
       }
     },
@@ -3642,6 +3778,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Machraa-Houari-Boumediene",
+        "name_ar": "مشرع هواري بومدين",
+        "wilaya_code": 8,
+        "postal_code": "08010",
+        "daira": "Abadla"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7375454,
+          30.9322468
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Meridja",
         "name_ar": "المريجة",
         "wilaya_code": 8,
@@ -4231,6 +4384,23 @@
         "coordinates": [
           3.67,
           36.296667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ait Laaziz",
+        "name_ar": "أيت لعزيز",
+        "wilaya_code": 10,
+        "postal_code": "10002",
+        "daira": "Bouira"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.90864,
+          36.4428933
         ]
       }
     },
@@ -4866,6 +5036,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Ain Amguel",
+        "name_ar": "عين امقل",
+        "wilaya_code": 11,
+        "postal_code": "11001",
+        "daira": "Tamanrasset"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.1619,
+          23.6987
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Idles",
         "name_ar": "أدلس",
         "wilaya_code": 11,
@@ -5064,6 +5251,23 @@
         "coordinates": [
           8.321944,
           35.498333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "El Malabiod",
+        "name_ar": "الماء الابيض",
+        "wilaya_code": 12,
+        "postal_code": "12007",
+        "daira": "El Ma Labiodh"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.170556,
+          35.2056
         ]
       }
     },
@@ -5291,6 +5495,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Telidjen",
+        "name_ar": "ثليجان",
+        "wilaya_code": 12,
+        "postal_code": "12027",
+        "daira": "Cheria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.767222,
+          35.21525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Ain Fetah",
         "name_ar": "عين فتاح",
         "wilaya_code": 13,
@@ -5427,6 +5648,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Azail",
+        "name_ar": "العزايل",
+        "wilaya_code": 13,
+        "postal_code": "13042",
+        "daira": "Beni Snous"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.4656,
+          34.68
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Bab El Assa",
         "name_ar": "باب العسة",
         "wilaya_code": 13,
@@ -5523,6 +5761,23 @@
         "coordinates": [
           -1.55731,
           35.083333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Beni Smiel",
+        "name_ar": "بني صميل",
+        "wilaya_code": 13,
+        "postal_code": "13025",
+        "daira": "Ouled Mimoun"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.0267,
+          34.816666
         ]
       }
     },
@@ -6005,6 +6260,40 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Souk Tleta",
+        "name_ar": "سوق الثلاثاء",
+        "wilaya_code": 13,
+        "postal_code": "13017",
+        "daira": "Bab El Assa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.927222,
+          35.023889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Terny Beni Hediel",
+        "name_ar": "تيرني بني هديل",
+        "wilaya_code": 13,
+        "postal_code": "13036",
+        "daira": "Mansourah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.35812,
+          34.79583
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Tianet",
         "name_ar": "تيانت",
         "wilaya_code": 13,
@@ -6084,6 +6373,23 @@
         "coordinates": [
           1.5450766,
           34.8422
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ain Dzarit",
+        "name_ar": "عين دزاريت",
+        "wilaya_code": 14,
+        "postal_code": "14019",
+        "daira": "Mahdia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.66699,
+          35.35339
         ]
       }
     },
@@ -7076,6 +7382,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Beni-Zikki",
+        "name_ar": "بني زيكــي",
+        "wilaya_code": 15,
+        "postal_code": "15026",
+        "daira": "Bouzguène"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.301147,
+          36.55308
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Boghni",
         "name_ar": "بوغني",
         "wilaya_code": 15,
@@ -7121,6 +7444,23 @@
         "coordinates": [
           4.07056,
           36.49935
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Bouzeguene",
+        "name_ar": "بوزقــن",
+        "wilaya_code": 15,
+        "postal_code": "15025",
+        "daira": "Bouzguène"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.4798498,
+          36.6167048
         ]
       }
     },
@@ -7308,6 +7648,23 @@
         "coordinates": [
           4.59611,
           36.5667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Imsouhal",
+        "name_ar": "إمســوحال",
+        "wilaya_code": 15,
+        "postal_code": "15039",
+        "daira": "Iferhounène"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.39,
+          36.574444
         ]
       }
     },
@@ -7518,6 +7875,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Souama",
+        "name_ar": "صوامـــع",
+        "wilaya_code": 15,
+        "postal_code": "15049",
+        "daira": "Mekla"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.668889,
+          35.6546
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Souk-El-Tenine",
         "name_ar": "سوق الإثنين",
         "wilaya_code": 15,
@@ -7665,6 +8039,40 @@
         "coordinates": [
           4.2087286,
           36.6799518
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Yakourene",
+        "name_ar": "إعــكورن",
+        "wilaya_code": 15,
+        "postal_code": "15008",
+        "daira": "Azazga"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.438611,
+          36.7305
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Yatafene",
+        "name_ar": "يطــافن",
+        "wilaya_code": 15,
+        "postal_code": "15020",
+        "daira": "Beni Yenni"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.2989,
+          36.575278
         ]
       }
     },
@@ -8283,6 +8691,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Khraissia",
+        "name_ar": "الخرايسية",
+        "wilaya_code": 16,
+        "postal_code": "16056",
+        "daira": "Draria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9821,
+          36.683333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Kouba",
         "name_ar": "القبة",
         "wilaya_code": 16,
@@ -8311,6 +8736,23 @@
         "coordinates": [
           3.1679257,
           36.6664
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Maalma",
+        "name_ar": "المعالمة",
+        "wilaya_code": 16,
+        "postal_code": "16049",
+        "daira": "Zéralda"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.030556,
+          36.6194358
         ]
       }
     },
@@ -8470,6 +8912,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Sehaoula",
+        "name_ar": "السحاولة",
+        "wilaya_code": 16,
+        "postal_code": "16017",
+        "daira": "Bir Mourad Raïs"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0085182,
+          36.7046
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Sidi M'hamed",
         "name_ar": "سيدي امحمد",
         "wilaya_code": 16,
@@ -8617,6 +9076,23 @@
         "coordinates": [
           3.13333333,
           34.8056891
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Benyagoub",
+        "name_ar": "بن يعقوب",
+        "wilaya_code": 17,
+        "postal_code": "17011",
+        "daira": "Charef"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.784077409,
+          34.46649223
         ]
       }
     },
@@ -8810,6 +9286,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Taadmit",
+        "name_ar": "تعظميت",
+        "wilaya_code": 17,
+        "postal_code": "17003",
+        "daira": "Aïn El Ibel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.988611,
+          34.286667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Zaafrane",
         "name_ar": "زعفران",
         "wilaya_code": 17,
@@ -8838,6 +9331,40 @@
         "coordinates": [
           3.327222,
           34.430832
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Bordj T'har",
+        "name_ar": "برج الطهر",
+        "wilaya_code": 18,
+        "postal_code": "18011",
+        "daira": "Chekfa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.0295425,
+          36.7558
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Boudria Beniyadjis",
+        "name_ar": "بودريعة بني  ياجيس",
+        "wilaya_code": 18,
+        "postal_code": "18027",
+        "daira": "Djimla"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.9739,
+          36.599166
         ]
       }
     },
@@ -9076,6 +9603,40 @@
         "coordinates": [
           5.8136168,
           36.7718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Khiri Oued Adjoul",
+        "name_ar": "خيري واد عجول",
+        "wilaya_code": 18,
+        "postal_code": "18021",
+        "daira": "El Ancer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.14,
+          36.81
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Oudjana",
+        "name_ar": "وجانة",
+        "wilaya_code": 18,
+        "postal_code": "18008",
+        "daira": "Taher"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.8881542,
+          36.6067
         ]
       }
     },
@@ -9456,6 +10017,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Bazer-Sakra",
+        "name_ar": "بازر سكرة",
+        "wilaya_code": 19,
+        "postal_code": "19042",
+        "daira": "El Eulma"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.70972,
+          36.11778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Beidha Bordj",
         "name_ar": "بيضاء برج",
         "wilaya_code": 19,
@@ -9535,6 +10113,23 @@
         "coordinates": [
           4.9,
           36.442222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Beni Oussine",
+        "name_ar": "بني وسين",
+        "wilaya_code": 19,
+        "postal_code": "19038",
+        "daira": "Bougaa"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.092008,
+          36.27222
         ]
       }
     },
@@ -9915,6 +10510,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Kasr El Abtal",
+        "name_ar": "قصر الابطال",
+        "wilaya_code": 19,
+        "postal_code": "19014",
+        "daira": "Aïn Oulmene"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.2881,
+          35.974167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Maaouia",
         "name_ar": "معاوية",
         "wilaya_code": 19,
@@ -9960,6 +10572,23 @@
         "coordinates": [
           5.4,
           36.10778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Oued El Bared",
+        "name_ar": "واد البارد",
+        "wilaya_code": 19,
+        "postal_code": "19017",
+        "daira": "Amoucha"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4022,
+          36.472317
         ]
       }
     },
@@ -10782,6 +11411,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Emjez Edchich",
+        "name_ar": "مجاز الدشيش",
+        "wilaya_code": 21,
+        "postal_code": "21018",
+        "daira": "El Harrouch"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.7458,
+          36.7033327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Es Sebt",
         "name_ar": "السبت",
         "wilaya_code": 21,
@@ -10850,6 +11496,40 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Kerkara",
+        "name_ar": "الكركرة",
+        "wilaya_code": 21,
+        "postal_code": "21035",
+        "daira": "Tamalous"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.586,
+          36.929
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Khenag Maoune",
+        "name_ar": "خناق مايو",
+        "wilaya_code": 21,
+        "postal_code": "21025",
+        "daira": "Ouled Attia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1386,
+          36.7802778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Oued Zhour",
         "name_ar": "وادي الزهور",
         "wilaya_code": 21,
@@ -10861,6 +11541,23 @@
         "coordinates": [
           6.315556,
           36.9221397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ouldja Boulbalout",
+        "name_ar": "الولجة بولبلوط",
+        "wilaya_code": 21,
+        "postal_code": "21023",
+        "daira": "Aïn Kechra"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.373055,
+          36.78611111
         ]
       }
     },
@@ -11139,6 +11836,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Bedrabine El Mokrani",
+        "name_ar": "بضرابين المقراني",
+        "wilaya_code": 22,
+        "postal_code": "22006",
+        "daira": "Ben Badis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8503,
+          35.008889
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Belarbi",
         "name_ar": "بلعربي",
         "wilaya_code": 22,
@@ -11218,6 +11932,40 @@
         "coordinates": [
           -0.3247,
           35.34988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Boukhanefis",
+        "name_ar": "بوخنفيس",
+        "wilaya_code": 22,
+        "postal_code": "22031",
+        "daira": "Sidi Ali Benyoub"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.723333,
+          35.066111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Chetouane Belaila",
+        "name_ar": "شيطوان البلايلة",
+        "wilaya_code": 22,
+        "postal_code": "22008",
+        "daira": "Ben Badis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.8364,
+          34.95
         ]
       }
     },
@@ -11751,6 +12499,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Tefessour",
+        "name_ar": "تفسور",
+        "wilaya_code": 22,
+        "postal_code": "22013",
+        "daira": "Merine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1,
+          35.035
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Teghalimet",
         "name_ar": "تغاليمت",
         "wilaya_code": 22,
@@ -12193,6 +12958,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Bordj Sabath",
+        "name_ar": "برج صباط",
+        "wilaya_code": 24,
+        "postal_code": "24024",
+        "daira": "Hammam N'Bails"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.0484999,
+          36.402899
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Bou Hachana",
         "name_ar": "بوحشانة",
         "wilaya_code": 24,
@@ -12329,6 +13111,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Guelaat Bou Sbaa",
+        "name_ar": "قلعة بوصبع",
+        "wilaya_code": 24,
+        "postal_code": "24025",
+        "daira": "Guelaât Bou Sbaâ"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.47333,
+          36.54565
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Guelma",
         "name_ar": "قالمة",
         "wilaya_code": 24,
@@ -12414,6 +13213,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Khezaras",
+        "name_ar": "لخزارة",
+        "wilaya_code": 24,
+        "postal_code": "24013",
+        "daira": "Khezarra"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.529167,
+          36.369444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Medjez Amar",
         "name_ar": "مجاز عمار",
         "wilaya_code": 24,
@@ -12476,6 +13292,23 @@
         "coordinates": [
           7.76278,
           36.38333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Oued Ferragha",
+        "name_ar": "وادي فراغة",
+        "wilaya_code": 24,
+        "postal_code": "24020",
+        "daira": "Hammam Debagh"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.713055,
+          36.555833
         ]
       }
     },
@@ -12714,6 +13547,23 @@
         "coordinates": [
           6.4667,
           36.379167
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Messaoud Boudjeriou",
+        "name_ar": "بوجريو مسعود",
+        "wilaya_code": 25,
+        "postal_code": "25011",
+        "daira": "Ibn Ziad"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.4725,
+          36.424444
         ]
       }
     },
@@ -12977,6 +13827,23 @@
       "properties": {
         "name_fr": "El Hamdania",
         "name_ar": "الحمدانية",
+        "wilaya_code": 26,
+        "postal_code": "26012",
+        "daira": "Ouzera"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8776638,
+          36.3369617
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "El Haoudane",
+        "name_ar": "الحوضان",
         "wilaya_code": 26,
         "postal_code": "26012",
         "daira": "Ouzera"
@@ -13434,6 +14301,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Tletat Ed Douair",
+        "name_ar": "ثلاث دوائر",
+        "wilaya_code": 26,
+        "postal_code": "26017",
+        "daira": "Seghouane"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.963,
+          35.9154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Zoubiria",
         "name_ar": "الزبيرية",
         "wilaya_code": 26,
@@ -13530,6 +14414,23 @@
         "coordinates": [
           0.2949,
           35.9947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Benabdelmalek Ramdane",
+        "name_ar": "بن عبد المالك رمضان",
+        "wilaya_code": 27,
+        "postal_code": "27028",
+        "daira": "Sidi Lakhdar"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.2742,
+          36.1026171
         ]
       }
     },
@@ -13774,6 +14675,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Ouled-Maalah",
+        "name_ar": "أولاد مع الله",
+        "wilaya_code": 27,
+        "postal_code": "27013",
+        "daira": "Sidi Ali"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.591944444,
+          36.006944
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Safsaf",
         "name_ar": "صفصاف",
         "wilaya_code": 27,
@@ -13921,6 +14839,23 @@
         "coordinates": [
           0.4675,
           36.083333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Touahria",
+        "name_ar": "الطواهرية",
+        "wilaya_code": 27,
+        "postal_code": "27025",
+        "daira": "Mesra"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.209444,
+          35.810556
         ]
       }
     },
@@ -14386,6 +15321,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Ain Frass",
+        "name_ar": "عين أفرص",
+        "wilaya_code": 29,
+        "postal_code": "29004",
+        "daira": "Aïn Fekan"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1575,
+          35.195278
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Alaimia",
         "name_ar": "العلايمية",
         "wilaya_code": 29,
@@ -14533,6 +15485,23 @@
         "coordinates": [
           0.2069806,
           35.6883106
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "El Gueitena",
+        "name_ar": "القطنة",
+        "wilaya_code": 29,
+        "postal_code": "29009",
+        "daira": "Bou Hanifia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.0528,
+          35.2522718
         ]
       }
     },
@@ -14726,6 +15695,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Makhda",
+        "name_ar": "ماقضة",
+        "wilaya_code": 29,
+        "postal_code": "29015",
+        "daira": "Ghriss"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.15,
+          35.15
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Maoussa",
         "name_ar": "ماوسة",
         "wilaya_code": 29,
@@ -14805,6 +15791,23 @@
         "coordinates": [
           0.0667,
           35.58839
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Nesmot",
+        "name_ar": "نسمط",
+        "wilaya_code": 29,
+        "postal_code": "29021",
+        "daira": "Hachem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.245833333,
+          35.21222
         ]
       }
     },
@@ -14930,6 +15933,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Sidi Abdelmoumene",
+        "name_ar": "سيدي عبد المومن",
+        "wilaya_code": 29,
+        "postal_code": "29027",
+        "daira": "Mohammadia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.013889,
+          35.652778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Sidi Boussaid",
         "name_ar": "سيدي بوسعيد",
         "wilaya_code": 29,
@@ -15026,6 +16046,23 @@
         "coordinates": [
           -0.15,
           35.48333333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Zelamta",
+        "name_ar": "زلامطة",
+        "wilaya_code": 29,
+        "postal_code": "29020",
+        "daira": "Hachem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.47622,
+          35.29108
         ]
       }
     },
@@ -15162,6 +16199,23 @@
         "coordinates": [
           5.418333,
           31.979722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ain Biya",
+        "name_ar": "عين البية",
+        "wilaya_code": 31,
+        "postal_code": "31026",
+        "daira": "Bethioua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2816754,
+          35.816667
         ]
       }
     },
@@ -15797,6 +16851,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Sidi Tiffour",
+        "name_ar": "سيدي طيفور",
+        "wilaya_code": 32,
+        "postal_code": "32020",
+        "daira": "Boualem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.682711,
+          33.717201
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Stitten",
         "name_ar": "ستيتن",
         "wilaya_code": 32,
@@ -15927,6 +16998,23 @@
         "coordinates": [
           5.002222222,
           36.0125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "B. B. Arreridj",
+        "name_ar": "برج بوعريرج",
+        "wilaya_code": 34,
+        "postal_code": "34000",
+        "daira": "Bordj Bou Arreridj"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.766667,
+          36.0704188
         ]
       }
     },
@@ -16386,6 +17474,23 @@
         "coordinates": [
           4.999722222,
           35.771667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Tassamert",
+        "name_ar": "تسامرت",
+        "wilaya_code": 34,
+        "postal_code": "34029",
+        "daira": "Bordj Zemoura"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.82184,
+          36.27131
         ]
       }
     },
@@ -17735,6 +18840,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Tamellahet",
+        "name_ar": "تملاحت",
+        "wilaya_code": 38,
+        "postal_code": "38016",
+        "daira": "Lardjem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.631944444,
+          35.711111
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Theniet El Had",
         "name_ar": "ثنية الاحد",
         "wilaya_code": 38,
@@ -17797,6 +18919,23 @@
         "coordinates": [
           6.8885733,
           33.334444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ben Guecha",
+        "name_ar": "بن  قشة",
+        "wilaya_code": 39,
+        "postal_code": "39018",
+        "daira": "Taleb Larbi"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.1517,
+          33.3551532
         ]
       }
     },
@@ -18568,6 +19707,40 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Haddada",
+        "name_ar": "الحدادة",
+        "wilaya_code": 41,
+        "postal_code": "41009",
+        "daira": "Heddada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.2725,
+          36.23083333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Hanencha",
+        "name_ar": "الحنانشة",
+        "wilaya_code": 41,
+        "postal_code": "41002",
+        "daira": "Mechroha"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.887778,
+          36.19119
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Khedara",
         "name_ar": "الخضارة",
         "wilaya_code": 41,
@@ -18619,6 +19792,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Machroha",
+        "name_ar": "المشروحة",
+        "wilaya_code": 41,
+        "postal_code": "41003",
+        "daira": "Mechroha"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9333333,
+          36.357222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Merahna",
         "name_ar": "المراهنة",
         "wilaya_code": 41,
@@ -18630,6 +19820,23 @@
         "coordinates": [
           8.155,
           36.1975
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Oued Kebrit",
+        "name_ar": "وادي الكبريت",
+        "wilaya_code": 41,
+        "postal_code": "41023",
+        "daira": "Oum El Adhaim"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.9170713,
+          35.933333
         ]
       }
     },
@@ -18664,6 +19871,23 @@
         "coordinates": [
           8.0167,
           36.35
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ouled Moumen",
+        "name_ar": "أولاد مومن",
+        "wilaya_code": 41,
+        "postal_code": "41012",
+        "daira": "Heddada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.315833,
+          36.3834462
         ]
       }
     },
@@ -18868,6 +20092,23 @@
         "coordinates": [
           1.845833,
           36.502778
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ahmer El Ain",
+        "name_ar": "أحمر العين",
+        "wilaya_code": 42,
+        "postal_code": "42018",
+        "daira": "Ahmar El Ain"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.5693337,
+          36.47688
         ]
       }
     },
@@ -19089,6 +20330,23 @@
         "coordinates": [
           2.4142888,
           36.51257
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Hadjret Ennous",
+        "name_ar": "حجرة النص",
+        "wilaya_code": 42,
+        "postal_code": "42027",
+        "daira": "Cherchell"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.051944,
+          36.573333
         ]
       }
     },
@@ -19452,6 +20710,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Derrahi Bousselah",
+        "name_ar": "دراحي بوصلاح",
+        "wilaya_code": 43,
+        "postal_code": "43028",
+        "daira": "Bouhatem"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.9580556,
+          36.3125
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "El Ayadi Barbes",
         "name_ar": "العياضي برباس",
         "wilaya_code": 43,
@@ -19565,6 +20840,23 @@
         "coordinates": [
           5.9304039,
           36.5377483
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Oued Athmenia",
+        "name_ar": "وادي العثمانية",
+        "wilaya_code": 43,
+        "postal_code": "43005",
+        "daira": "Chelghoum Laid"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.3438785,
+          36.249722
         ]
       }
     },
@@ -19707,6 +20999,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Tassala Lematai",
+        "name_ar": "تسالة لمطاعي",
+        "wilaya_code": 43,
+        "postal_code": "43017",
+        "daira": "Terrai Bainen"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.32488,
+          36.495833
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Teleghma",
         "name_ar": "التلاغمة",
         "wilaya_code": 43,
@@ -19752,6 +21061,23 @@
         "coordinates": [
           6.0396,
           36.4667623
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Yahia Beniguecha",
+        "name_ar": "يحي بني قشة",
+        "wilaya_code": 43,
+        "postal_code": "43007",
+        "daira": "Ferdjioua"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.592778,
+          36.235278
         ]
       }
     },
@@ -20455,6 +21781,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "El Biodh",
+        "name_ar": "البيوض",
+        "wilaya_code": 45,
+        "postal_code": "45011",
+        "daira": "Mecheria"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.133333,
+          33.7636135
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Kasdir",
         "name_ar": "القصدير",
         "wilaya_code": 45,
@@ -20466,6 +21809,23 @@
         "coordinates": [
           -1.358333,
           33.709722
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Makmen Ben Amar",
+        "name_ar": "مكمن بن عمار",
+        "wilaya_code": 45,
+        "postal_code": "45009",
+        "daira": "Makman Ben Amer"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7271479,
+          33.7189056
         ]
       }
     },
@@ -22325,6 +23685,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Foggaret Ezzoua",
+        "name_ar": "فقارة الزوى",
+        "wilaya_code": 53,
+        "postal_code": "53002",
+        "daira": "In Salah"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8475,
+          27.363333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Inghar",
         "name_ar": "إينغر",
         "wilaya_code": 53,
@@ -22353,6 +23730,23 @@
         "coordinates": [
           5.76806,
           19.5696707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Tin Zouatine",
+        "name_ar": "تين زواتين",
+        "wilaya_code": 54,
+        "postal_code": "54002",
+        "daira": "Tin Zaouatine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.966667,
+          19.953333
         ]
       }
     },
@@ -23430,6 +24824,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Zmalet El Emir Abdelkade",
+        "name_ar": "زمالة  الأمير عبد القادر",
+        "wilaya_code": 64,
+        "postal_code": "14027",
+        "daira": "Ksar Chellala"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.31,
+          34.89336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Ain Fekka",
         "name_ar": "عين فقه",
         "wilaya_code": 65,
@@ -23957,6 +25368,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "M'fatha",
+        "name_ar": "مفاتحة",
+        "wilaya_code": 67,
+        "postal_code": "26059",
+        "daira": "Ksar Boukhari"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.22248,
+          36.6204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Ouled Antar",
         "name_ar": "أولاد عنتر",
         "wilaya_code": 67,
@@ -23968,6 +25396,23 @@
         "coordinates": [
           2.60231,
           35.9951773
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ouled Emaaraf",
+        "name_ar": "أولاد امعرف",
+        "wilaya_code": 67,
+        "postal_code": "26045",
+        "daira": "Aïn Boucif"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1585,
+          35.872222
         ]
       }
     },
