@@ -16,7 +16,7 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
-├── dairas.json                  ← 597 dairas
+├── dairas.json                  ← 553 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
@@ -109,7 +109,7 @@ data/
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Sequential ID (1–1657) |
+| `id` | integer | Sequential ID (1–1541) |
 | `commune_name_fr` | string | French name |
 | `commune_name_ar` | string | Arabic name |
 | `daira_name_fr` | string | Parent daira (French) |
@@ -131,7 +131,7 @@ data/
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Sequential ID (1–597) |
+| `id` | integer | Sequential ID (1–553) |
 | `wilaya_code` | integer | Parent wilaya code |
 | `name_fr` | string | French name |
 | `commune_count` | integer | Number of communes in this daira |
@@ -157,16 +157,16 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 ## Coverage
 
 - **69 wilayas** — complete (original 48 + 2019 reform + 2025 reform)
-- **597 dairas** — complete
-- **1,657 communes** — complete
-- **Coordinates** — 98.7% (1,637 / 1,657)
+- **553 dairas** — complete
+- **1,541 communes** — complete
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
 
 ## Sources
 
-- Official Journal (JORA) for administrative divisions
-- Algerie Poste for postal codes
-- Wikipedia (FR) for commune lists per wilaya
-- Law 19-12 (2019) for wilayas 49–58
-- Law 26-06 (2025) for wilayas 59–69
+- Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69
+- Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
+- Ministry of Interior (interieur.gov.dz)
+- APS (Algérie Presse Service)
+- Echorouk Online, Awras, Djelfa Info, Aures News, El Moudjahid, France 24 Arabic
+- Algérie Poste for postal codes

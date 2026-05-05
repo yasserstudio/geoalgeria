@@ -1,6 +1,6 @@
 # GeoAlgeria
 
-> The complete Algerian geodata package — 69 wilayas, 597 dairas, 1,657 communes. One `npm install` away.
+> The complete Algerian geodata package — 69 wilayas, 553 dairas, 1,541 communes. One `npm install` away.
 
 Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata — updated for the 2025 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
 
@@ -13,7 +13,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **597 dairas** (districts), and **1,657 communes** (municipalities) as of 2025. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law 26-06 (2025, added wilayas 59–69). Source: Journal Officiel de la République Algérienne (JORA). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: May 2025.
+Algeria has **69 wilayas** (provinces), **553 dairas** (districts), and **1,541 communes** (municipalities) as of the 2025 reform. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law 26-06 (announced Nov 16, 2025; published in JO No. 25, April 5, 2026, adding wilayas 59–69). Source: Journal Officiel de la République Algérienne (JORA). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: May 2026.
 
 ---
 
@@ -47,7 +47,7 @@ Also referred to as: Algerian provinces (wilayas), districts (dairas), municipal
 - **E-commerce devs** — address forms, shipping zone config, postal code validation
 - **Backend engineers** — seed your DB with one SQL file
 - **Frontend devs** — cascading dropdowns (wilaya → daira → commune)
-- **GIS / data analysts** — GeoJSON with 1,637 point features
+- **GIS / data analysts** — GeoJSON with 1,541 point features
 - **Civic tech builders** — government apps, citizen portals
 - **Students & researchers** — clean, structured, well-documented data
 
@@ -63,8 +63,8 @@ npm install geoalgeria
 const dz = require('geoalgeria');
 
 dz.wilayas;                    // all 69 wilayas
-dz.communes;                   // all 1,657 communes
-dz.dairas;                     // all 597 dairas
+dz.communes;                   // all 1,541 communes
+dz.dairas;                     // all 553 dairas
 dz.ecommerce;                  // flat dataset for address forms
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
@@ -138,16 +138,16 @@ Download `data/geojson/communes.geojson` from this repo — standard GeoJSON, wo
 |------|--------|---------|----------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
-| `data/dairas.json` | JSON | 597 | Daira list with commune counts |
-| `data/communes_w*.json` | JSON | 1,657 | Detailed commune data |
+| `data/dairas.json` | JSON | 553 | Daira list with commune counts |
+| `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
-| `data/csv/communes.csv` | CSV | 1,657 | Spreadsheets, imports |
+| `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | Maps, GIS |
-| `data/geojson/communes.geojson` | GeoJSON | 1,637 | Maps, GIS |
-| `data/sql/full.sql` | SQL | 69 + 1,637 | Normalized database |
-| `data/ecommerce/communes.json` | JSON | 1,657 | Address forms, dropdowns |
-| `data/ecommerce/communes.csv` | CSV | 1,657 | Flat import |
-| `data/ecommerce/communes.sql` | SQL | 1,657 | Single-table database |
+| `data/geojson/communes.geojson` | GeoJSON | 1,541 | Maps, GIS |
+| `data/sql/full.sql` | SQL | 69 + 1,541 | Normalized database |
+| `data/ecommerce/communes.json` | JSON | 1,541 | Address forms, dropdowns |
+| `data/ecommerce/communes.csv` | CSV | 1,541 | Flat import |
+| `data/ecommerce/communes.sql` | SQL | 1,541 | Single-table database |
 | `data/delivery/*.json` | JSON | 69 per provider | Shipping zone calculation |
 
 ## Schema
@@ -199,16 +199,16 @@ View all 69 wilayas on a map: [`algeria.geojson`](algeria.geojson) (GitHub rende
 ## FAQ
 
 **How many wilayas does Algeria have in 2025?**
-69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 added in 2025 (Law 26-06).
+69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 added in 2025 (Law 26-06, published JO No. 25, April 5, 2026). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
 
 **Where can I find a list of all Algerian communes in JSON?**
-Right here — `data/ecommerce/communes.json` has all 1,657 communes in a flat, ready-to-use format.
+Right here — `data/ecommerce/communes.json` has all 1,541 communes in a flat, ready-to-use format.
 
 **What are the new wilayas added in 2025?**
-Wilayas 59-69: Aflou, Ain Oussera, Barika, Bir El Ater, Bou Saada, Chelghoum Laid, Kolea, Mila, Reggane, Sedrata, El Aricha.
+Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Oussara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
 
 **How can I get Algeria postal codes in JSON format?**
-Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly — it includes all 1,657 postal codes mapped to commune names in French and Arabic.
+Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly — it includes all 1,541 postal codes mapped to commune names in French and Arabic.
 
 **What is the best Algeria geodata package for developers?**
 GeoAlgeria is the most complete option as of 2025 — it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
