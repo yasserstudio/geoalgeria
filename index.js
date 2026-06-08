@@ -5,7 +5,7 @@ function load(file) {
   return JSON.parse(fs.readFileSync(path.join(__dirname, "data", file), "utf-8"));
 }
 
-let _wilayas, _communes, _dairas, _ecommerce, _all;
+let _wilayas, _communes, _dairas, _ecommerce, _all, _postOffices, _atms;
 
 module.exports = {
   get wilayas() {
@@ -41,6 +41,19 @@ module.exports = {
     return _all;
   },
 
+  // Post offices & ATMs (Algérie Poste). Mirrored from the geoalgeria-poste
+  // package; see data/poste. Use the standalone geoalgeria-poste package if you
+  // only need postal data.
+  get postOffices() {
+    if (!_postOffices) _postOffices = load("poste/postoffices.json");
+    return _postOffices;
+  },
+
+  get atms() {
+    if (!_atms) _atms = load("poste/atms.json");
+    return _atms;
+  },
+
   getWilaya(code) {
     const n = Number(code);
     return this.wilayas.find((w) => w.code === n);
@@ -69,5 +82,11 @@ module.exports = {
   findByPostalCode(postalCode) {
     const code = String(postalCode).trim();
     return this.communes.filter((c) => c.postal_code === code);
+  },
+
+  getPostOfficesByCommune(codeCommune) {
+    if (codeCommune == null) return [];
+    const code = String(codeCommune).padStart(4, "0");
+    return this.postOffices.filter((o) => o.commune_code === code);
   },
 };

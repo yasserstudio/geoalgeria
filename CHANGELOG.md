@@ -10,6 +10,22 @@ Versioning rules for datasets:
 - **MINOR**: new data added (new communes, new fields, new formats)
 - **PATCH**: corrections to existing data (typos, wrong coordinates, postal codes)
 
+## [1.1.0] - 2026-06-08
+
+### Changed
+- Replaced synthetic commune postal codes with **real Algérie Poste codes** for
+  ~1,440 communes (sourced from baridimap.poste.dz). Previously only ~88 matched
+  reality; every commune now maps to a real Algérie Poste office code.
+- Normalized wilaya 65 to **"Aïn Oussera"** (wilaya, daira, and commune) to match
+  Algérie Poste and common usage.
+
+### Added
+- `data/poste/` — **3,908 post offices** and **2,026 ATMs** (real postal codes,
+  bilingual names, coordinates, commune/wilaya linkage) from Algérie Poste, in
+  JSON, CSV, and GeoJSON.
+- `postOffices`, `atms`, and `getPostOfficesByCommune()` JS API, with `PostOffice`
+  and `Atm` TypeScript types.
+
 ## [1.0.0] - 2025-05-05
 
 ### Added

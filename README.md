@@ -66,12 +66,15 @@ dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
 dz.dairas;                     // all 564 dairas
 dz.ecommerce;                  // flat dataset for address forms
+dz.postOffices;                // 3,908 Algérie Poste offices
+dz.atms;                       // 2,026 ATMs
 
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
 dz.getDairasByWilaya(16);      // dairas in Algiers
 dz.findCommune('Oran');        // search by name (FR or AR)
 dz.findByPostalCode('16000');  // lookup by postal code
+dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
 
 TypeScript types included out of the box.
@@ -149,6 +152,11 @@ Download `data/geojson/communes.geojson` from this repo — standard GeoJSON, wo
 | `data/ecommerce/communes.csv` | CSV | 1,541 | Flat import |
 | `data/ecommerce/communes.sql` | SQL | 1,541 | Single-table database |
 | `data/delivery/*.json` | JSON | 69 per provider | Shipping zone calculation |
+| `data/poste/postoffices.json` | JSON | 3,908 | Post offices (real codes, coords) |
+| `data/poste/atms.json` | JSON | 2,026 | ATM locations |
+| `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | — | Postal data for spreadsheets / maps |
+
+> `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` joins to each commune's `code_commune`.
 
 ## Schema
 

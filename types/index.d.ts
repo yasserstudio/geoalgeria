@@ -110,17 +110,54 @@ export interface DeliveryProvider {
   zones: DeliveryZone[];
 }
 
+export interface PostOffice {
+  id: number;
+  name: string | null;
+  name_ar: string | null;
+  class: string | null;
+  postal_code: string | null;
+  postal_code_old: string | null;
+  address: string | null;
+  commune_code: string | null;
+  commune_fr: string | null;
+  commune_ar: string | null;
+  wilaya_code: string | null;
+  wilaya_fr: string | null;
+  wilaya_ar: string | null;
+  lat: number | null;
+  lng: number | null;
+}
+
+export interface Atm {
+  id: string;
+  name: string | null;
+  status: string | null;
+  postal_code: string | null;
+  postal_code_old: string | null;
+  address: string | null;
+  commune_fr: string | null;
+  commune_ar: string | null;
+  wilaya_code: string | null;
+  wilaya_fr: string | null;
+  wilaya_ar: string | null;
+  lat: number | null;
+  lng: number | null;
+}
+
 declare const algeriaGeodata: {
   readonly wilayas: Wilaya[];
   readonly communes: Commune[];
   readonly dairas: Daira[];
   readonly ecommerce: CommuneEcommerce[];
   readonly all: WilayaWithCommunes[];
+  readonly postOffices: PostOffice[];
+  readonly atms: Atm[];
   getWilaya(code: number): Wilaya | undefined;
   getCommunesByWilaya(wilayaCode: number): Commune[];
   getDairasByWilaya(wilayaCode: number): Daira[];
   findCommune(name: string): Commune[];
   findByPostalCode(postalCode: string): Commune[];
+  getPostOfficesByCommune(codeCommune: number | string): PostOffice[];
 };
 
 export = algeriaGeodata;

@@ -12,8 +12,8 @@
     "url": "https://yasser.studio"
   },
   "datePublished": "2025-05-05",
-  "dateModified": "2026-05-05",
-  "version": "1.0.0",
+  "dateModified": "2026-06-08",
+  "version": "1.1.0",
   "inLanguage": ["fr", "ar"],
   "distribution": [
     {
@@ -68,7 +68,7 @@
     "algerie",
     "code postal"
   ],
-  "measurementTechnique": "Official sources: JORA, Algerie Poste, Law 19-12 (2019), Law 26-06 (2025)",
+  "measurementTechnique": "Official sources: JORA, Algérie Poste BaridiMap (baridimap.poste.dz), Law 19-12 (2019), Law 26-06 (2025)",
   "variableMeasured": [
     "Wilaya code and names (FR/AR)",
     "Daira names and commune counts",
@@ -76,6 +76,7 @@
     "Postal codes",
     "Geographic coordinates (lat/lng)",
     "Official commune administrative codes",
-    "Phone area codes per wilaya"
+    "Phone area codes per wilaya",
+    "Post office and ATM locations (Algérie Poste)"
   ]
 }
