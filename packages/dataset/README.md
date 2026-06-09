@@ -4,7 +4,7 @@
 
 Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata — updated for the 2025 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
 
-[![Validate Dataset](https://github.com/yasserstudio/geoalgeria/actions/workflows/validate.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/validate.yml)
+[![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -89,7 +89,7 @@ TypeScript types included out of the box.
 
 ```html
 <script>
-  fetch('https://cdn.jsdelivr.net/gh/yasserstudio/geoalgeria@main/data/ecommerce/communes.json')
+  fetch('https://cdn.jsdelivr.net/npm/geoalgeria/data/ecommerce/communes.json')
     .then(r => r.json())
     .then(communes => { /* build your dropdown */ });
 </script>
@@ -131,7 +131,7 @@ sqlite3 mydb.sqlite < full.sql
 
 Download `data/geojson/communes.geojson` from this repo — standard GeoJSON, works with Leaflet, Mapbox, QGIS, etc.
 
-> **Note:** SQL, CSV, and GeoJSON files are available in the GitHub repo. The npm package ships JSON files only to keep the install lightweight.
+> **Note:** the npm package ships JSON only (to stay lightweight). The **CSV, GeoJSON, and SQL** exports live in the repo under `data/` and are bundled as a zip on every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
 ---
 
@@ -166,7 +166,7 @@ See [`data/README.md`](data/README.md) for full field documentation.
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). We welcome:
+See [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). We welcome:
 
 - Data corrections (with official sources)
 - Missing commune coordinates (20 remaining)
@@ -195,6 +195,12 @@ Using geoalgeria in your project? [Open a discussion](https://github.com/yassers
 Every star helps the next Algerian developer find clean data instead of broken PDFs. **[Star this repo](https://github.com/yasserstudio/geoalgeria)** if it saved you time.
 
 Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose) — we fix it within 48h, guaranteed.
+
+---
+
+## Sponsor
+
+GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio) — sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
