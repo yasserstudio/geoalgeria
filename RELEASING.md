@@ -10,37 +10,39 @@ The raw `CSV`/`GeoJSON`/`SQL` formats are **not** in the npm tarball (only
 `*.json` is), so each release also cuts a **GitHub Release** with a zipped data
 bundle — that is the only download channel for those formats.
 
-## Day-to-day: add a changeset with every PR
+## Releasing (main-direct, no PR)
 
-Any PR touching `packages/dataset` or `packages/poste` must include a changeset:
+This repo commits straight to `main` — we do **not** use the Changesets
+"Version Packages" PR. To cut a release as a maintainer:
 
 ```bash
-pnpm changeset
+pnpm changeset          # 1. describe the change: pick package(s) + bump + note
+pnpm version-packages   # 2. apply it: bumps versions + CHANGELOGs, consumes the changeset
+git commit -am "chore: version packages — <pkg>@<ver>"   # 3. commit the BUMP
+git push                # 4. push to main
 ```
 
-Choose the package(s), the bump type, write a one-line note, commit the
-generated `.changeset/*.md` file. Bump rules (data semver):
+Bump rules (data semver): **major** = breaking schema change · **minor** = new
+data / format · **patch** = corrections to existing records.
 
-- **major** — breaking schema change (renamed/removed fields)
-- **minor** — new data or new export format
-- **patch** — corrections to existing records
+On push, the **Release** workflow:
+- **stages** any package whose version is new (`npm stage publish`), skipping
+  anything already published *or already staged* — so re-pushing during the
+  approval window is safe; and
+- cuts a **GitHub Release** `name@version` per package with the data bundle.
 
-## How a release flows
+Then **approve the staged packages** to make them live on npm:
 
-1. Merging changesets to `main` makes the **Release** workflow open a
-   **`chore: version packages`** PR: it bumps versions and appends to each
-   `CHANGELOG.md`.
-2. Merging *that* PR triggers the workflow again, which:
-   - **stages** the changed packages to npm (`npm stage publish`) — they do
-     **not** go live until you approve them, and
-   - cuts a **GitHub Release** `name@version` per changed package with the data
-     bundle attached.
-3. **Approve the staged packages** to make them live on npm:
-   ```bash
-   npm stage list
-   npm stage approve <stage-id>     # requires 2FA
-   ```
-   …or approve on npmjs.com → Account → Staged packages.
+```bash
+npm stage list
+npm stage approve <stage-id>     # requires 2FA
+```
+…or approve on npmjs.com → Staged packages.
+
+> **Important:** always run `version-packages` locally and commit the *bump* —
+> never push a bare changeset. Pushing an unversioned changeset makes the
+> workflow try to open a "Version Packages" PR, which fails (Actions can't
+> create PRs here) and isn't the flow we use.
 
 ## One-time setup (maintainer)
 

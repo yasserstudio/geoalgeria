@@ -6,17 +6,6 @@
 
 - 0ddf916: Docs: value-led READMEs, official source citation for the 69-wilaya reform (Law n° 26-06, Journal Officiel n° 25 of 5 April 2026), and fixed post-restructure links/badges. No data changes.
 
-All notable changes to this dataset will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-Versioning rules for datasets:
-
-- **MAJOR**: breaking schema changes (renamed fields, removed fields)
-- **MINOR**: new data added (new communes, new fields, new formats)
-- **PATCH**: corrections to existing data (typos, wrong coordinates, postal codes)
-
 ## [1.1.0] - 2026-06-08
 
 ### Changed
