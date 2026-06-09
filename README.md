@@ -1,233 +1,42 @@
 # GeoAlgeria
 
-> The complete Algerian geodata package — 69 wilayas, 564 dairas, 1,541 communes. One `npm install` away.
+Open data for Algeria — 69 wilayas, 564 dairas, 1,541 communes (bilingual
+FR/AR names, real Algérie Poste postal codes, coordinates) plus 3,908 post
+offices and 2,026 ATMs. Available as JSON, CSV, GeoJSON, SQL, and TypeScript.
 
-Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata — updated for the 2025 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
+This is the **data monorepo**. The website lives in a separate repo
+([`geoalgeria.com`](https://github.com/yasserstudio/geoalgeria.com)).
 
-[![Validate Dataset](https://github.com/yasserstudio/geoalgeria/actions/workflows/validate.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/validate.yml)
-[![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+## Packages
 
----
-
-## Quick Facts
-
-Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities) as of the 2025 reform. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law 26-06 (announced Nov 16, 2025; published in JO No. 25, April 5, 2026, adding wilayas 59–69). Source: Journal Officiel de la République Algérienne (JORA). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: May 2026.
-
----
-
-## Why GeoAlgeria?
-
-Tired of datasets that still think Algeria has 48 wilayas? Same.
-
-| Feature | geoalgeria | leblad | algeria-cities |
-|---------|:-:|:-:|:-:|
-| All 69 wilayas (2025 reform) | ✅ | ❌ (58) | ✅ |
-| Dairas as first-class entities | ✅ | ❌ | ❌ |
-| Postal codes per commune | ✅ | ✅ | ❌ |
-| Coordinates per commune | ✅ | ❌ | ✅ |
-| E-commerce ready (flat, denormalized) | ✅ | ❌ | ❌ |
-| Delivery zone templates | ✅ | ❌ | ❌ |
-| npm package + TypeScript | ✅ | ✅ | ❌ |
-| SQL dump (MySQL/PG/SQLite) | ✅ | ❌ | ✅ |
-| CI-validated on every commit | ✅ | ❌ | ❌ |
-| GeoJSON export | ✅ | ❌ | ✅ |
-| Arabic + French bilingual | ✅ | ✅ | ✅ |
-| Last updated | 2025 | 2021 | 2023 |
-
-Ready to try it? Jump to [Install](#install) or grab the [raw JSON](data/ecommerce/communes.json) directly.
-
-Also referred to as: Algerian provinces (wilayas), districts (dairas), municipalities (communes), cities of Algeria, code postal Algérie, liste des communes d'Algérie JSON, Algeria GeoJSON, wilayas 2025, base de données wilayas Algérie, Algeria administrative divisions dataset.
-
----
-
-## Who's This For?
-
-- **E-commerce devs** — address forms, shipping zone config, postal code validation
-- **Backend engineers** — seed your DB with one SQL file
-- **Frontend devs** — cascading dropdowns (wilaya → daira → commune)
-- **GIS / data analysts** — GeoJSON with 1,541 point features
-- **Civic tech builders** — government apps, citizen portals
-- **Students & researchers** — clean, structured, well-documented data
-
----
-
-## Install
+| Package | npm | What |
+| --- | --- | --- |
+| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | Wilayas, dairas, communes + mirrored postal data |
+| [`packages/poste`](packages/poste) | [`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) | Post offices & ATMs from Algérie Poste |
 
 ```bash
-npm install geoalgeria
+npm i geoalgeria          # the dataset
+npm i @geoalgeria/poste   # post offices + ATMs
 ```
 
-```javascript
-const dz = require('geoalgeria');
+The npm packages ship the `*.json` data. The **CSV / GeoJSON / SQL** exports are
+attached as a zipped bundle to each [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
-dz.wilayas;                    // all 69 wilayas
-dz.communes;                   // all 1,541 communes
-dz.dairas;                     // all 564 dairas
-dz.ecommerce;                  // flat dataset for address forms
-dz.postOffices;                // 3,908 Algérie Poste offices
-dz.atms;                       // 2,026 ATMs
-
-dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
-dz.getCommunesByWilaya(16);    // 57 communes in Algiers
-dz.getDairasByWilaya(16);      // dairas in Algiers
-dz.findCommune('Oran');        // search by name (FR or AR)
-dz.findByPostalCode('16000');  // lookup by postal code
-dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
-```
-
-TypeScript types included out of the box.
-
-**Using this in production?** [Tell us about it](https://github.com/yasserstudio/geoalgeria/discussions) — we feature community projects in the README.
-
----
-
-## Use Without npm
-
-### CDN (no install needed)
-
-```html
-<script>
-  fetch('https://cdn.jsdelivr.net/gh/yasserstudio/geoalgeria@main/data/ecommerce/communes.json')
-    .then(r => r.json())
-    .then(communes => { /* build your dropdown */ });
-</script>
-```
-
-### E-commerce / address forms
-
-Grab `data/ecommerce/communes.json` — flat, denormalized, no joins:
-
-```json
-{
-  "id": 586,
-  "commune_name_fr": "Aïn El Ibel",
-  "commune_name_ar": "عين الإبل",
-  "daira_name_fr": "Aïn El Ibel",
-  "wilaya_code": 17,
-  "wilaya_name_fr": "Djelfa",
-  "wilaya_name_ar": "الجلفة",
-  "postal_code": "17001"
-}
-```
-
-### Database seeding
-
-Download `data/sql/full.sql` from this repo, then:
+## Development
 
 ```bash
-# PostgreSQL
-psql -d mydb -f full.sql
-
-# MySQL
-mysql mydb < full.sql
-
-# SQLite
-sqlite3 mydb.sqlite < full.sql
+pnpm install
+pnpm validate        # schema + integrity checks on the dataset
 ```
 
-### GIS / Mapping
+Releases are automated with [Changesets](https://github.com/changesets/changesets) —
+see [`RELEASING.md`](RELEASING.md). Add a changeset with every data-changing PR:
 
-Download `data/geojson/communes.geojson` from this repo — standard GeoJSON, works with Leaflet, Mapbox, QGIS, etc.
+```bash
+pnpm changeset
+```
 
-> **Note:** SQL, CSV, and GeoJSON files are available in the GitHub repo. The npm package ships JSON files only to keep the install lightweight.
+## Contributing & license
 
----
-
-## All Files
-
-| File | Format | Records | Best for |
-|------|--------|---------|----------|
-| `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
-| `data/wilayas.json` | JSON | 69 | Wilaya list only |
-| `data/dairas.json` | JSON | 553 | Daira list with commune counts |
-| `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
-| `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
-| `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
-| `data/geojson/wilayas.geojson` | GeoJSON | 69 | Maps, GIS |
-| `data/geojson/communes.geojson` | GeoJSON | 1,541 | Maps, GIS |
-| `data/sql/full.sql` | SQL | 69 + 1,541 | Normalized database |
-| `data/ecommerce/communes.json` | JSON | 1,541 | Address forms, dropdowns |
-| `data/ecommerce/communes.csv` | CSV | 1,541 | Flat import |
-| `data/ecommerce/communes.sql` | SQL | 1,541 | Single-table database |
-| `data/delivery/*.json` | JSON | 69 per provider | Shipping zone calculation |
-| `data/poste/postoffices.json` | JSON | 3,908 | Post offices (real codes, coords) |
-| `data/poste/atms.json` | JSON | 2,026 | ATM locations |
-| `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | — | Postal data for spreadsheets / maps |
-
-> `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` joins to each commune's `code_commune`.
-
-## Schema
-
-See [`data/README.md`](data/README.md) for full field documentation.
-
----
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). We welcome:
-
-- Data corrections (with official sources)
-- Missing commune coordinates (20 remaining)
-- Delivery zone data from real carrier accounts (Yalidine, ZR Express, Maystro)
-- New export formats (XML, YAML, PHP arrays, etc.)
-- Translations and transliteration fixes
-
-**First time contributing?** Look for issues labeled `good first issue` — many just need adding coordinates for a single commune.
-
----
-
-## Versioning
-
-This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md](CHANGELOG.md).
-
----
-
-## Built With This Data
-
-Using geoalgeria in your project? [Open a discussion](https://github.com/yasserstudio/geoalgeria/discussions) and we'll feature it here.
-
----
-
-## Support
-
-Every star helps the next Algerian developer find clean data instead of broken PDFs. **[Star this repo](https://github.com/yasserstudio/geoalgeria)** if it saved you time.
-
-Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose) — we fix it within 48h, guaranteed.
-
----
-
-## Preview
-
-View all 69 wilayas on a map: [`algeria.geojson`](algeria.geojson) (GitHub renders this automatically)
-
----
-
-## FAQ
-
-**How many wilayas does Algeria have in 2025?**
-69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 added in 2025 (Law 26-06, published JO No. 25, April 5, 2026). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
-
-**Where can I find a list of all Algerian communes in JSON?**
-Right here — `data/ecommerce/communes.json` has all 1,541 communes in a flat, ready-to-use format.
-
-**What are the new wilayas added in 2025?**
-Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Oussara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
-
-**How can I get Algeria postal codes in JSON format?**
-Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly — it includes all 1,541 postal codes mapped to commune names in French and Arabic.
-
-**What is the best Algeria geodata package for developers?**
-GeoAlgeria is the most complete option as of 2025 — it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
-
-**Liste des wilayas d'Algérie 2025 — où trouver?**
-GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postaux, et coordonnées GPS. Disponible en JSON, CSV, GeoJSON, et SQL. `npm install geoalgeria`
-
----
-
-## License
-
-MIT — free for personal and commercial use.
-
-Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). Data and code are MIT licensed
+([`LICENSE`](LICENSE)); attribution to Algérie Poste applies to the postal data.

@@ -41,8 +41,8 @@ module.exports = {
     return _all;
   },
 
-  // Post offices & ATMs (Algérie Poste). Mirrored from the geoalgeria-poste
-  // package; see data/poste. Use the standalone geoalgeria-poste package if you
+  // Post offices & ATMs (Algérie Poste). Mirrored from the @geoalgeria/poste
+  // package; see data/poste. Use the standalone @geoalgeria/poste package if you
   // only need postal data.
   get postOffices() {
     if (!_postOffices) _postOffices = load("poste/postoffices.json");

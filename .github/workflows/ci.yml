@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v4
+        with:
+          fail-on-severity: high
+          deny-licenses: GPL-2.0, GPL-3.0, AGPL-3.0
+
+  check:
+    name: check (node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22, 24]
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Lockfile integrity hash
+        if: matrix.node-version == 22
+        run: shasum -a 256 pnpm-lock.yaml
+
+      - name: Audit production dependencies
+        if: matrix.node-version == 22
+        run: pnpm audit --prod --audit-level=high
+
+      - name: Validate dataset (schema + integrity)
+        if: matrix.node-version == 22
+        run: pnpm validate
+
+      - name: Smoke test — geoalgeria (CommonJS)
+        working-directory: packages/dataset
+        run: node -e "const d=require('./index.js'); const k=Object.keys(d); if(!k.length){console.error('no exports');process.exit(1)} console.log('geoalgeria exports:', k.join(', '))"
+
+      - name: Smoke test — @geoalgeria/poste (ESM)
+        working-directory: packages/poste
+        run: node --input-type=module -e "import('./index.js').then(m=>{const o=m.postOffices(),a=m.atms(); if(!Array.isArray(o)||!o.length||!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('poste:',o.length,'offices,',a.length,'atms')})"
