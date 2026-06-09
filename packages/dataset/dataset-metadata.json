@@ -20,31 +20,31 @@
       "@type": "DataDownload",
       "name": "Complete dataset (JSON)",
       "encodingFormat": "application/json",
-      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/algeria.json"
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/algeria.json"
     },
     {
       "@type": "DataDownload",
       "name": "Communes (CSV)",
       "encodingFormat": "text/csv",
-      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/csv/communes.csv"
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/csv/communes.csv"
     },
     {
       "@type": "DataDownload",
       "name": "Communes (GeoJSON)",
       "encodingFormat": "application/geo+json",
-      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/geojson/communes.geojson"
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/communes.geojson"
     },
     {
       "@type": "DataDownload",
       "name": "E-commerce ready (JSON)",
       "encodingFormat": "application/json",
-      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/ecommerce/communes.json"
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/ecommerce/communes.json"
     },
     {
       "@type": "DataDownload",
       "name": "SQL dump",
       "encodingFormat": "application/sql",
-      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/data/sql/full.sql"
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/sql/full.sql"
     }
   ],
   "spatialCoverage": {
@@ -55,7 +55,7 @@
       "box": "18.97 -8.67 37.09 11.98"
     }
   },
-  "temporalCoverage": "2025",
+  "temporalCoverage": "2026",
   "keywords": [
     "Algeria",
     "wilayas",
@@ -68,7 +68,8 @@
     "algerie",
     "code postal"
   ],
-  "measurementTechnique": "Official sources: JORA, Algérie Poste BaridiMap (baridimap.poste.dz), Law 19-12 (2019), Law 26-06 (2025)",
+  "measurementTechnique": "Official sources: JORA, Algérie Poste BaridiMap (baridimap.poste.dz), Law 19-12 (2019), Law 26-06 of 4 April 2026 (Journal Officiel n° 25, 5 April 2026)",
+  "citation": "Loi n° 26-06 du 4 avril 2026 relative à la nouvelle organisation territoriale du pays — Journal Officiel de la République Algérienne n° 25 du 5 avril 2026. https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
   "variableMeasured": [
     "Wilaya code and names (FR/AR)",
     "Daira names and commune counts",

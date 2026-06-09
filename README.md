@@ -11,7 +11,7 @@
 
 </div>
 
-Every Algeria dataset on the internet still lists **48 wilayas**. Algeria has had **69 since 2025**. GeoAlgeria is the one that's current — with real Algérie Poste postal codes, GPS coordinates, bilingual names, and post offices & ATMs — shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT, validated on every commit.
+Every Algeria dataset on the internet still lists **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is the one that's current — with real Algérie Poste postal codes, GPS coordinates, bilingual names, and post offices & ATMs — shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT, validated on every commit.
 
 ```bash
 npm install geoalgeria
@@ -38,6 +38,8 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
+> Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf) — plus the 2019 reform (Law 19-12).
+
 ## Why not the others?
 
 | | geoalgeria | leblad | algeria-cities |
@@ -51,7 +53,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | npm + TypeScript types | ✅ | ✅ | ❌ |
 | GeoJSON / SQL exports | ✅ | ❌ | ✅ |
 | CI-validated every commit | ✅ | ❌ | ❌ |
-| Last updated | **2025** | 2021 | 2023 |
+| Last updated | **2026** | 2021 | 2023 |
 
 [See the full comparison →](https://geoalgeria.com/compare)
 

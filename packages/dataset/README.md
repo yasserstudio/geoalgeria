@@ -13,7 +13,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities) as of the 2025 reform. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law 26-06 (announced Nov 16, 2025; published in JO No. 25, April 5, 2026, adding wilayas 59–69). Source: Journal Officiel de la République Algérienne (JORA). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: May 2026.
+Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria is the only dataset that includes all post-reform divisions with postal codes, GPS coordinates, and bilingual names. Last validated: June 2026.
 
 ---
 
@@ -212,8 +212,8 @@ View all 69 wilayas on a map: [`algeria.geojson`](algeria.geojson) (GitHub rende
 
 ## FAQ
 
-**How many wilayas does Algeria have in 2025?**
-69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 added in 2025 (Law 26-06, published JO No. 25, April 5, 2026). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
+**How many wilayas does Algeria have in 2026?**
+69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 made official in April 2026 ([Law n° 26-06, *Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf)). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
 
 **Where can I find a list of all Algerian communes in JSON?**
 Right here — `data/ecommerce/communes.json` has all 1,541 communes in a flat, ready-to-use format.
