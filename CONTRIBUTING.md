@@ -1,90 +1,94 @@
 # Contributing to GeoAlgeria
 
-Thank you for your interest in contributing! This project aims to provide the most complete and accurate dataset of Algerian wilayas, dairas, and communes.
+Thanks for helping! GeoAlgeria aims to be the most complete, accurate, and
+*current* open dataset for Algeria — administrative divisions, postal/banking
+data today, and more kinds of Algeria data over time. Corrections, additions,
+and new-dataset proposals are all welcome.
 
-## How to Contribute
+This is a small monorepo:
 
-### 1. Fork & Clone
+| Path | Package | Contents |
+| --- | --- | --- |
+| `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
+| `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 
-Fork this repo, then clone your fork:
+## How to contribute
+
+### 1. Fork, clone, install
 
 ```bash
 git clone https://github.com/YOUR_FORK/geoalgeria.git
 cd geoalgeria
+pnpm install
 ```
 
-### 2. Make Your Changes
+### 2. Make your change
 
 - Fix incorrect data (names, postal codes, coordinates)
-- Add missing communes or dairas
+- Add missing communes, dairas, or fields
 - Improve Arabic transliterations
-- Add new data fields with reliable sources
+- Add a new export format
 
-### 3. Validate Your Data
+Data lives under `packages/dataset/data/` and `packages/poste/data/`. The postal
+data in `packages/dataset/data/poste/` is **generated** — edit it in
+`packages/poste` and run `npm run fetch` there (it mirrors into the dataset), don't
+hand-edit the mirror.
 
-Before submitting, make sure your JSON is valid:
+### 3. Validate
 
 ```bash
-# Check JSON syntax
-python3 -m json.tool data/wilayas.json > /dev/null
-python3 -m json.tool data/communes_w1_w23.json > /dev/null
-python3 -m json.tool data/communes_w24_w48.json > /dev/null
-python3 -m json.tool data/communes_w49_w69.json > /dev/null
+pnpm validate    # schema + integrity checks on the dataset
 ```
 
-### 4. Submit a Pull Request
+### 4. Open a pull request
 
-- Create a branch: `git checkout -b fix/commune-name-typo`
-- Commit with a clear message describing what you changed and why
-- Open a PR against `main`
+Branch (`git checkout -b fix/commune-name-typo`), commit with a clear message,
+and open a PR against `main`. Maintainers handle versioning/release (Changesets),
+so you don't need to bump versions.
 
-## Data Guidelines
+## Data guidelines
 
 ### Format
-
-- Follow the existing JSON schema (see `data/README.md`)
-- Use UTF-8 encoding
-- Keep entries sorted by `wilaya_code`, then alphabetically by `name_fr` within each wilaya
-- No trailing commas in JSON
+- Follow the existing JSON schema (see [`packages/dataset/data/README.md`](packages/dataset/data/README.md))
+- UTF-8, no trailing commas
+- Keep entries sorted by `wilaya_code`, then alphabetically by `name_fr`
 
 ### Naming
-
-- **French names**: Use official JORA spelling (e.g., "Oum El Bouaghi" not "Oum el Bouaghi")
-- **Arabic names**: Use standard Arabic script without tashkeel (diacritics)
-- **Daira names**: Use the French name of the daira seat (chef-lieu)
+- **French**: official JORA spelling (e.g., "Oum El Bouaghi")
+- **Arabic**: standard script, no tashkeel (diacritics)
+- **Daira**: the French name of the daira seat (chef-lieu)
 
 ### Sources
-
-Always cite your source when correcting data. Accepted sources:
-
+Always cite a source for data changes. Accepted:
 - Official Journal (JORA / الجريدة الرسمية)
-- Algerie Poste (postal codes)
+- Algérie Poste (postal codes, offices, ATMs)
 - ONS (National Statistics Office)
 - Interior Ministry publications
-- Wikipedia (as secondary reference only)
+- Wikipedia (secondary reference only)
 
-### What NOT to Submit
+### What not to submit
+- Data from unofficial/unverifiable sources
+- Frequently-changing data better served as its own dataset (e.g. population)
+- Political/opinion content or copyrighted material
 
-- Data from unofficial or unverifiable sources
-- Population data (changes frequently — better served by a separate dataset)
-- Political or opinion-based content
-- Copyrighted material
+## Requesting a new dataset
 
-## Reporting Issues
+GeoAlgeria is meant to grow into the canonical source for *all kinds* of Algeria
+data, as sources allow. Know of one worth adding (elections, schools, health
+facilities, economic indicators, transport…)?
 
-If you find incorrect data but can't fix it yourself:
+- **Have a concrete, sourced dataset in mind?** Open a
+  [**Request a dataset**](https://github.com/yasserstudio/geoalgeria/issues/new/choose)
+  issue — include where the data comes from and whether it's freely available.
+- **Just an idea or want to discuss/upvote?** Use
+  [Discussions](https://github.com/yasserstudio/geoalgeria/discussions).
 
-1. Open an issue
-2. Specify which file and entry is wrong
-3. Provide the correct value with a source link
+## Code of conduct
 
-## Code of Conduct
-
-- Be respectful and constructive
-- Assume good intentions
-- Focus on data accuracy, not personal preferences
-- Welcome newcomers — not everyone is familiar with git or JSON
+Be respectful and constructive, assume good intent, focus on accuracy over
+preference, and welcome newcomers — not everyone is fluent in git or JSON.
 
 ## Questions?
 
-Open an issue with the label `question` and we'll help you out.
+Open a [Discussion](https://github.com/yasserstudio/geoalgeria/discussions) and
+we'll help.

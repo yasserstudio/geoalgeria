@@ -1,0 +1,44 @@
+name: Request a dataset
+description: Propose a new kind of Algeria data for GeoAlgeria to add
+labels: ["dataset-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        GeoAlgeria aims to become the canonical source for *all kinds* of Algeria data — as sources allow. Concrete, sourced proposals help most. (Just an idea or want to discuss/upvote? Use [Discussions](https://github.com/yasserstudio/geoalgeria/discussions) instead.)
+  - type: textarea
+    id: dataset
+    attributes:
+      label: What dataset should we add?
+      placeholder: e.g., "Election results by commune", "Public schools", "Health facilities", "Road network", "Economic indicators by wilaya"
+    validations:
+      required: true
+  - type: input
+    id: coverage
+    attributes:
+      label: Granularity / coverage
+      placeholder: e.g., per commune / per wilaya / point locations with coordinates
+    validations:
+      required: false
+  - type: textarea
+    id: source
+    attributes:
+      label: Public source & availability
+      description: Where can this data be obtained, and is it freely usable? This is the deciding factor.
+      placeholder: Link to an official portal, open-data set, or API. Note any license/terms if known.
+    validations:
+      required: true
+  - type: input
+    id: formats
+    attributes:
+      label: Formats you'd want
+      placeholder: e.g., JSON, CSV, GeoJSON, SQL, TypeScript
+    validations:
+      required: false
+  - type: textarea
+    id: usecase
+    attributes:
+      label: What would you build with it?
+      placeholder: Helps us prioritize and shape the schema.
+    validations:
+      required: false
