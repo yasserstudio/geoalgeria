@@ -1,64 +1,19 @@
 {
-  "name": "geoalgeria",
-  "version": "1.1.0",
-  "description": "69 wilayas, 564 dairas, 1541 communes of Algeria — bilingual names, postal codes, coordinates, plus 3908 post offices & 2026 ATMs. JSON, CSV, GeoJSON, SQL, TypeScript.",
-  "main": "index.js",
-  "types": "types/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./index.js",
-      "types": "./types/index.d.ts"
-    },
-    "./data/*": "./data/*"
-  },
-  "files": [
-    "data/**/*.json",
-    "types/",
-    "index.js"
-  ],
+  "name": "geoalgeria-monorepo",
+  "private": true,
+  "description": "GeoAlgeria data monorepo — the geoalgeria dataset + @geoalgeria/poste",
+  "packageManager": "pnpm@11.3.0",
   "scripts": {
-    "validate": "python3 scripts/validate.py",
-    "test": "python3 scripts/validate.py"
+    "validate": "pnpm --filter ./packages/dataset validate",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm validate && changeset publish",
+    "release-staged": "pnpm validate && node scripts/stage-publish.js"
   },
-  "keywords": [
-    "algeria",
-    "wilayas",
-    "communes",
-    "dairas",
-    "geodata",
-    "geoalgeria",
-    "postal-codes",
-    "geojson",
-    "administrative-divisions",
-    "algerie",
-    "dz",
-    "algeria-cities",
-    "algeria-map",
-    "algeria-geojson",
-    "code-postal-algerie",
-    "wilayas-algerie",
-    "communes-algerie",
-    "algeria-provinces",
-    "algeria-municipalities",
-    "algeria-2025",
-    "address-autocomplete",
-    "address-form",
-    "shipping-zones",
-    "ecommerce-algeria",
-    "typescript",
-    "open-data"
-  ],
-  "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   },
-  "bugs": {
-    "url": "https://github.com/yasserstudio/geoalgeria/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yasserstudio/geoalgeria.git"
-  },
-  "homepage": "https://geoalgeria.com"
+  "devDependencies": {
+    "@changesets/cli": "^2.30.0"
+  }
 }

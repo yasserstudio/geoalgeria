@@ -1,0 +1,106 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Ensure npm >= 11.15 (staged publishing)
+        run: |
+          NPM_VER=$(npm --version)
+          echo "Current npm: $NPM_VER"
+          if [ "$(printf '%s\n' "11.15.0" "$NPM_VER" | sort -V | head -1)" != "11.15.0" ]; then
+            echo "Upgrading npm for staged publishing support..."
+            npm install -g npm@11.15.0
+            echo "Upgraded to: $(npm --version)"
+          fi
+
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Validate dataset before any publish
+        run: pnpm validate
+
+      - name: Dry-run publish
+        run: |
+          for pkg in packages/dataset packages/poste; do
+            PKG_NAME=$(node -p "require('./$pkg/package.json').name")
+            PKG_VER=$(node -p "require('./$pkg/package.json').version")
+            REGISTRY_VER=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
+            if [ "$PKG_VER" = "$REGISTRY_VER" ]; then
+              echo "--- skip: $pkg ($PKG_NAME@$PKG_VER already published) ---"
+              continue
+            fi
+            echo "--- dry-run: $pkg ($PKG_NAME@$PKG_VER) ---"
+            (cd "$pkg" && npm publish --dry-run --ignore-scripts 2>&1) || exit 1
+          done
+
+      - name: Create Release PR or Stage Packages
+        id: changesets
+        uses: changesets/action@c8bada60c408975afd1a20b3db81d6eee6789308 # v1
+        with:
+          publish: pnpm release-staged
+          createGithubReleases: false
+          title: "chore: version packages"
+          commit: "chore: version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Cut a per-package GitHub Release (geoalgeria@x.y.z) with the raw data
+      # bundle attached — CSV/GeoJSON/SQL never ship to npm, so this is their
+      # only download channel. Guarded by tag existence: fires once per new
+      # version, independent of npm's staged-approval timing.
+      - name: GitHub Releases + data bundles
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          for pkg in packages/dataset packages/poste; do
+            NAME=$(node -p "require('./$pkg/package.json').name")
+            VER=$(node -p "require('./$pkg/package.json').version")
+            TAG="$NAME@$VER"
+            if gh release view "$TAG" >/dev/null 2>&1; then
+              echo "skip: $TAG already released"
+              continue
+            fi
+            echo "releasing: $TAG"
+
+            BUNDLE="$RUNNER_TEMP/geoalgeria-$(basename "$pkg")-$VER.zip"
+            if [ "$pkg" = "packages/dataset" ]; then
+              (cd "$pkg" && zip -qr "$BUNDLE" data algeria.geojson dataset-metadata.json)
+            else
+              (cd "$pkg" && zip -qr "$BUNDLE" data)
+            fi
+
+            NOTES="$RUNNER_TEMP/$NAME-notes.md"
+            awk -v ver="$VER" '
+              BEGIN { gsub(/\./, "\\.", ver); re = "(^|[^0-9.])" ver "([^0-9.]|$)" }
+              /^## / { if (grab) exit; if ($0 ~ re) { grab=1; next } }
+              grab { print }
+            ' "$pkg/CHANGELOG.md" > "$NOTES" || true
+
+            if [ -s "$NOTES" ]; then
+              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
+            else
+              echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
+              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes "$BUNDLE"
+            fi
+          done
