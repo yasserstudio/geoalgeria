@@ -15,36 +15,6 @@ import { join } from "node:path";
 
 const PACKAGES = ["packages/dataset", "packages/poste"];
 
-// Versions already staged (awaiting maintainer approval). Re-running the
-// release on a later push must NOT try to stage them again — npm rejects
-// staging a version that's already staged, which would fail the run.
-function stagedVersions() {
-  try {
-    const out = execFileSync("npm", ["stage", "list"], {
-      encoding: "utf8",
-      stdio: ["pipe", "pipe", "ignore"],
-    });
-    const set = new Set();
-    let name = null;
-    for (const line of out.split("\n")) {
-      const n = line.match(/^\s*package name:\s*(\S+)/);
-      if (n) {
-        name = n[1];
-        continue;
-      }
-      const v = line.match(/^\s*version:\s*(\S+)/);
-      if (v && name) {
-        set.add(`${name}@${v[1]}`);
-        name = null;
-      }
-    }
-    return set;
-  } catch {
-    return new Set();
-  }
-}
-
-const alreadyStaged = stagedVersions();
 let staged = 0;
 let skipped = 0;
 
@@ -68,18 +38,27 @@ for (const pkg of PACKAGES) {
     continue;
   }
 
-  if (alreadyStaged.has(`${name}@${version}`)) {
-    console.log(`skip: ${name}@${version} (already staged, awaiting approval)`);
-    skipped++;
-    continue;
-  }
-
   console.log(`staging: ${name}@${version} (registry: ${registryVersion ?? "unpublished"})`);
   try {
-    execFileSync("npm", ["stage", "publish", "--ignore-scripts"], { cwd: pkg, stdio: "inherit" });
+    const out = execFileSync("npm", ["stage", "publish", "--ignore-scripts"], {
+      cwd: pkg,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    if (out) process.stdout.write(out);
     staged++;
-  } catch {
+  } catch (err) {
+    // Re-running the release during the approval window: npm rejects staging a
+    // version that's already staged with a 409 ("Cannot stage previously
+    // published version"). Treat that as a skip so re-pushes don't fail the run.
+    const log = `${err.stdout ?? ""}${err.stderr ?? ""}`;
+    if (/E409|Cannot stage previously published|409 Conflict/i.test(log)) {
+      console.log(`skip: ${name}@${version} (already staged, awaiting approval)`);
+      skipped++;
+      continue;
+    }
     console.error(`FAILED to stage ${name}@${version}`);
+    if (log) console.error(log);
     process.exit(1);
   }
 }
