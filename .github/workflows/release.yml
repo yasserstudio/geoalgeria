@@ -90,7 +90,7 @@ jobs:
               (cd "$pkg" && zip -qr "$BUNDLE" data)
             fi
 
-            NOTES="$RUNNER_TEMP/$NAME-notes.md"
+            NOTES="$RUNNER_TEMP/$(basename "$NAME")-notes.md"  # basename: scoped names contain '/'
             awk -v ver="$VER" '
               BEGIN { gsub(/\./, "\\.", ver); re = "(^|[^0-9.])" ver "([^0-9.]|$)" }
               /^## / { if (grab) exit; if ($0 ~ re) { grab=1; next } }
