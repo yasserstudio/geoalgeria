@@ -32,11 +32,12 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 | | Count | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (2019 + 2025 reforms) |
+| **Wilayas** | 69 | provinces (2019 + 2026 reforms) |
 | **Dairas** | 564 | districts, as first-class entities |
 | **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates |
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,026 | Algérie Poste GAB network |
+| **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM — [`@geoalgeria/emploi`](packages/emploi) |
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -46,7 +47,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 
 | | geoalgeria | leblad | algeria-cities |
 |---|:---:|:---:|:---:|
-| All 69 wilayas (2025 reform) | ✅ | ❌ (58) | ✅ |
+| All 69 wilayas (2026 reform) | ✅ | ❌ (58) | ✅ |
 | Dairas as first-class entities | ✅ | ❌ | ❌ |
 | Real Algérie Poste postal codes | ✅ | ~ | ❌ |
 | Coordinates per commune | ✅ | ❌ | ✅ |
