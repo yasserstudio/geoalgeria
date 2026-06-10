@@ -11,6 +11,7 @@ This is a small monorepo:
 | --- | --- | --- |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
+| `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 
 ## How to contribute
 
@@ -42,9 +43,19 @@ pnpm validate    # schema + integrity checks on the dataset
 
 ### 4. Open a pull request
 
-Branch (`git checkout -b fix/commune-name-typo`), commit with a clear message,
-and open a PR against `main`. Maintainers handle versioning/release (Changesets),
-so you don't need to bump versions.
+Branch (`git checkout -b fix/commune-name-typo`), commit using
+[Conventional Commits](https://www.conventionalcommits.org)
+(`fix(dataset): correct Béjaïa postal code`), and open a PR against `main`.
+
+You **don't** bump versions — releases are automated. If your change touches
+published data, add a changeset so it ends up in the changelog:
+
+```bash
+pnpm changeset   # pick package(s) + bump type + a one-line note
+```
+
+(No worries if you skip it — a maintainer will add one.) On merge, a bot opens a
+"Version Packages" PR; merging that releases. See [`RELEASING.md`](RELEASING.md).
 
 ## Data guidelines
 

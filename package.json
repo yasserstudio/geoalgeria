@@ -1,6 +1,7 @@
 {
   "name": "geoalgeria-monorepo",
   "private": true,
+  "type": "module",
   "description": "GeoAlgeria data monorepo — the geoalgeria dataset + @geoalgeria/poste",
   "packageManager": "pnpm@11.3.0",
   "scripts": {
@@ -8,7 +9,9 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm validate && changeset publish",
-    "release-staged": "pnpm validate && node scripts/stage-publish.js"
+    "release-staged": "pnpm validate && node scripts/stage-publish.js",
+    "purge-cdn": "node scripts/purge-cdn.js",
+    "announce": "node scripts/announce.js"
   },
   "engines": {
     "node": ">=18"

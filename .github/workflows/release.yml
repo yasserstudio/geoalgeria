@@ -98,7 +98,13 @@ jobs:
             ' "$pkg/CHANGELOG.md" > "$NOTES" || true
 
             if [ -s "$NOTES" ]; then
-              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
+              # Title = "<tag> — <headline>", where the headline is the first bullet
+              # (drop the list marker + changeset hash + bold). See RELEASE_TEMPLATE.md.
+              HEADLINE=$(grep -m1 -E '^[-*][[:space:]]' "$NOTES" \
+                | sed -E 's/^[-*][[:space:]]+//; s/^[0-9a-f]{7,}:[[:space:]]*//; s/\*\*//g')
+              TITLE="$TAG"
+              [ -n "$HEADLINE" ] && TITLE="$TAG — $HEADLINE"
+              gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
             else
               echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
               gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes "$BUNDLE"

@@ -1,0 +1,241 @@
+#!/usr/bin/env node
+/**
+ * Release announcer: turns a published release tag into ready-to-use marketing
+ * copy — a GitHub Discussion body plus X (Twitter) and LinkedIn drafts — built
+ * from that version's CHANGELOG section.
+ *
+ * It WRITES files; it never posts anything. The announce.yml workflow decides
+ * what to publish (Discussion on minor/major, social drafts attached as release
+ * assets for a human to copy-paste). Run locally too:
+ *
+ *   GEOALGERIA_TAG="geoalgeria@1.2.0" node scripts/announce.js
+ *
+ * No dependencies — Node built-ins only.
+ */
+
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
+
+const REPO = "https://github.com/yasserstudio/geoalgeria";
+const SITE = "https://geoalgeria.com";
+
+// name (npm) -> package dir + a human label
+const PACKAGES = {
+  geoalgeria: { dir: "packages/dataset", label: "the GeoAlgeria dataset" },
+  "@geoalgeria/poste": { dir: "packages/poste", label: "post offices & ATMs" },
+  "@geoalgeria/emploi": { dir: "packages/emploi", label: "employment agencies" },
+};
+
+const tag = process.env.GEOALGERIA_TAG || process.argv[2];
+if (!tag) {
+  console.error("Usage: GEOALGERIA_TAG='geoalgeria@1.2.0' node scripts/announce.js");
+  process.exit(1);
+}
+
+// Split on the LAST '@' so scoped names (@geoalgeria/poste@1.0.3) parse correctly.
+// `at` must be > 0: no '@' (-1) or a leading scope '@' (0) means a malformed tag.
+const at = tag.lastIndexOf("@");
+if (at <= 0) {
+  console.error(`Malformed tag "${tag}" — expected name@version (e.g. geoalgeria@1.2.0)`);
+  process.exit(1);
+}
+const name = tag.slice(0, at);
+const version = tag.slice(at + 1);
+const pkg = PACKAGES[name];
+if (!pkg) {
+  console.error(`Unknown package "${name}" — expected one of: ${Object.keys(PACKAGES).join(", ")}`);
+  process.exit(1);
+}
+
+// --- Extract this version's CHANGELOG section -------------------------------
+function changelogSection(dir, ver) {
+  let md;
+  try {
+    md = readFileSync(join(dir, "CHANGELOG.md"), "utf8");
+  } catch {
+    return "";
+  }
+  const lines = md.split("\n");
+  const esc = ver.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  // Match the version anywhere on a `## ` heading — handles both changesets
+  // (`## 1.1.1`) and keep-a-changelog (`## [1.1.0] - 2026-06-08`) styles. The
+  // non-digit/dot boundaries stop 1.1.0 from matching inside 11.1.0 or a date.
+  const re = new RegExp(`(^|[^0-9.])${esc}([^0-9.]|$)`);
+  let grab = false;
+  const out = [];
+  for (const line of lines) {
+    if (/^##\s/.test(line)) {
+      if (grab) break; // next version heading ends the section
+      if (re.test(line)) {
+        grab = true;
+        continue;
+      }
+    }
+    if (grab) out.push(line);
+  }
+  return out.join("\n").trim();
+}
+
+const section = changelogSection(pkg.dir, version);
+if (!section) {
+  console.warn(`WARN  no CHANGELOG section matched ${tag} — drafts will be minimal.`);
+}
+
+// Classify the bump (gates auto-announce: minor/major post, patch stays quiet).
+// Changesets writes "### Major/Minor/Patch Changes". keep-a-changelog doesn't, so
+// fall back to the SemVer delta against the previous CHANGELOG heading.
+function semverDelta(prev, cur) {
+  const a = prev.split(".").map(Number);
+  const b = cur.split(".").map(Number);
+  if (b[0] !== a[0]) return "major";
+  if (b[1] !== a[1]) return "minor";
+  return "patch";
+}
+function previousVersion(dir, ver) {
+  let md;
+  try {
+    md = readFileSync(join(dir, "CHANGELOG.md"), "utf8");
+  } catch {
+    return null;
+  }
+  const versions = [];
+  for (const line of md.split("\n")) {
+    if (!/^##\s/.test(line)) continue;
+    const m = line.match(/(\d+\.\d+\.\d+)/);
+    if (m) versions.push(m[1]);
+  }
+  const i = versions.indexOf(ver);
+  return i >= 0 && i + 1 < versions.length ? versions[i + 1] : null;
+}
+function classifyBump(sec, dir, ver) {
+  if (/###\s+Major Changes/i.test(sec)) return "major";
+  if (/###\s+Minor Changes/i.test(sec)) return "minor";
+  if (/###\s+Patch Changes/i.test(sec)) return "patch";
+  const prev = previousVersion(dir, ver);
+  return prev ? semverDelta(prev, ver) : "minor"; // no prior heading = first release
+}
+const bump = classifyBump(section, pkg.dir, version);
+
+// Pull clean bullets out of a CHANGELOG section: drop the changeset hash, and
+// merge wrapped continuation lines back into their bullet (keep-a-changelog
+// style wraps long bullets across indented lines).
+function highlights(raw) {
+  const bullets = [];
+  for (const line of raw.split("\n")) {
+    const m = line.match(/^\s*[-*]\s+(.*)$/);
+    if (m) {
+      bullets.push(m[1].replace(/^[0-9a-f]{7,}:\s*/i, "").trim());
+    } else if (bullets.length && /^\s+\S/.test(line)) {
+      // Indented continuation of the previous bullet (keep-a-changelog wraps long
+      // bullets). Only indented lines merge — flush-left prose is left alone.
+      bullets[bullets.length - 1] += " " + line.trim();
+    }
+  }
+  const cleaned = bullets.map((b) => b.trim()).filter(Boolean);
+  return cleaned.length ? cleaned : ["See the full changelog for details."];
+}
+// Strip markdown emphasis for plain-text contexts (titles, social posts).
+const plain = (s) =>
+  s
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+const bullets = highlights(section);
+const headline = plain(bullets[0]);
+
+// --- Best-effort "what's inside" totals (flagship dataset only) -------------
+function datasetTotals() {
+  try {
+    const meta = JSON.parse(readFileSync("packages/dataset/dataset-metadata.json", "utf8"));
+    const c = meta.counts || meta;
+    const pick = (...keys) => keys.map((k) => c[k]).find((v) => typeof v === "number");
+    const wil = pick("wilayas", "wilaya");
+    const com = pick("communes", "commune");
+    if (wil && com) return `${wil} wilayas · ${com} communes`;
+  } catch {
+    /* metadata shape varies; skip silently */
+  }
+  return null;
+}
+const totals = name === "geoalgeria" ? datasetTotals() : null;
+
+// --- Render -----------------------------------------------------------------
+const npmUrl = `https://www.npmjs.com/package/${name}`;
+const install = name === "geoalgeria" ? `npm install geoalgeria` : `npm install ${name}`;
+const bulletList = bullets.map((b) => `- ${b}`).join("\n");
+
+const discussion = `## ${tag} — ${headline}
+
+${name === "geoalgeria" ? "**GeoAlgeria** — the open dataset for Algeria. " : `**${name}** (${pkg.label}). `}This ${bump} release:
+
+${bulletList}
+
+${totals ? `Current totals: **${totals}**.\n\n` : ""}Install / update:
+
+\`\`\`bash
+${install}@latest
+\`\`\`
+
+CSV / GeoJSON / SQL bundles are attached to the [release](${REPO}/releases/tag/${encodeURIComponent(tag)}). Found something off? [Open an issue](${REPO}/issues/new/choose) — data fixes ship fast.
+
+npm → ${npmUrl} · code → ${REPO} · map → ${SITE} 🇩🇿
+`;
+
+const xThread = `# X / Twitter — ${tag}
+
+**1/**
+${name === "geoalgeria" ? "GeoAlgeria" : name} ${version} is out. ${headline}
+
+🧵
+
+**2/ what changed**
+${bullets
+  .slice(0, 4)
+  .map((b) => `• ${plain(b)}`)
+  .join("\n")}
+
+**3/ get it**
+\`${install}@latest\`
+${totals ? `Now: ${totals}.\n` : ""}CSV/GeoJSON/SQL on the release. MIT.
+
+${npmUrl} · ${SITE} 🇩🇿
+`;
+
+const linkedin = `# LinkedIn — ${tag}
+
+> Put the link in the FIRST COMMENT, not the body (LinkedIn suppresses reach on posts with external links). First line is the hook.
+
+New release of ${name === "geoalgeria" ? "GeoAlgeria, the open dataset for Algeria" : name}: ${headline}
+
+What's new in ${version}:
+${bullets
+  .slice(0, 5)
+  .map((b) => `• ${plain(b)}`)
+  .join("\n")}
+
+${totals ? `It now covers ${totals}, ` : ""}shipped as JSON/CSV/GeoJSON/SQL/TypeScript — one \`${install}\`, MIT, validated on every commit.
+
+If you build anything for the Algerian market, your corrections and use cases are welcome.
+
+🔗 npm + the interactive map in the comments.
+
+#OpenData #Algeria #OpenSource
+
+**First comment (link):**
+npm → ${npmUrl} · code → ${REPO} · map → ${SITE}
+`;
+
+const outDir = process.env.GEOALGERIA_OUT || ".release-notes";
+mkdirSync(outDir, { recursive: true });
+writeFileSync(join(outDir, "announcement.md"), discussion);
+writeFileSync(join(outDir, "x-thread.md"), xThread);
+writeFileSync(join(outDir, "linkedin.md"), linkedin);
+// Emit machine-readable bits for the workflow (title, bump, whether to announce).
+writeFileSync(
+  join(outDir, "meta.json"),
+  JSON.stringify({ tag, name, version, bump, headline, announceWorthy: bump !== "patch" }, null, 2),
+);
+
+console.log(`Announce kit for ${tag} (${bump}) written to ${outDir}/`);
+console.log(`  headline: ${headline}`);
+console.log(`  announceWorthy: ${bump !== "patch"} (Discussion auto-posts on minor/major only)`);

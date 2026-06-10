@@ -1,0 +1,131 @@
+name: Announce
+
+# Turns a published release into marketing copy:
+#  - minor/major releases auto-post a GitHub Discussion in "Announcements"
+#  - X (Twitter) and LinkedIn drafts are attached to the release for a human to
+#    copy-paste (never auto-posted to third-party networks)
+#
+# Note on timing: this fires when the release.yml workflow cuts the GitHub
+# Release, which happens at npm STAGE time — the package goes live only once you
+# approve the staged version (see RELEASING.md). Approve promptly so the
+# announcement and the live npm version line up.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release tag to announce (e.g. "geoalgeria@1.2.0")'
+        required: true
+
+permissions:
+  contents: write # upload social drafts as release assets
+  discussions: write # create the Announcements discussion
+
+concurrency: ${{ github.workflow }}-${{ github.event.release.tag_name || inputs.tag }}
+
+jobs:
+  announce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+
+      - name: Resolve tag
+        id: tag
+        env:
+          # RAW_TAG is operator/attacker-influenceable (release name / dispatch
+          # input) — keep it in env, never interpolate it into a shell command.
+          RAW_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: |
+          set -euo pipefail
+          # Fail closed on anything that isn't one of our package tags.
+          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi))@[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::Refusing to announce malformed tag: $RAW_TAG"
+            exit 1
+          fi
+          printf 'tag=%s\n' "$RAW_TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Build announce kit
+        env:
+          GEOALGERIA_TAG: ${{ steps.tag.outputs.tag }}
+          GEOALGERIA_OUT: .release-notes
+        run: node scripts/announce.js
+
+      - name: Read meta
+        id: meta
+        run: |
+          set -euo pipefail
+          printf 'worthy=%s\n' "$(jq -r .announceWorthy .release-notes/meta.json)" >> "$GITHUB_OUTPUT"
+          # Heredoc form keeps a multi-word/-line headline from injecting output keys.
+          {
+            echo 'headline<<EOF'
+            jq -r .headline .release-notes/meta.json
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post Announcements discussion (minor/major only)
+        if: steps.meta.outputs.worthy == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.tag.outputs.tag }}
+          HEADLINE: ${{ steps.meta.outputs.headline }}
+        run: |
+          set -euo pipefail
+          REPO_ID=$(gh api graphql -f query='{repository(owner:"yasserstudio",name:"geoalgeria"){id}}' --jq '.data.repository.id')
+          CAT_ID=$(gh api graphql -f query='{repository(owner:"yasserstudio",name:"geoalgeria"){discussionCategories(first:25){nodes{name id}}}}' \
+            --jq '.data.repository.discussionCategories.nodes[] | select(.name=="Announcements") | .id')
+          if [ -z "$CAT_ID" ]; then
+            echo "::warning::No 'Announcements' discussion category — skipping post."
+            exit 0
+          fi
+          # Idempotency: one announcement per tag. Re-runs and workflow_dispatch
+          # must not post a second public Discussion.
+          EXISTING=$(gh api graphql -f catId="$CAT_ID" -f query='
+            query($catId:ID!){repository(owner:"yasserstudio",name:"geoalgeria"){
+              discussions(first:50,categoryId:$catId){nodes{title}}}}' \
+            --jq '.data.repository.discussions.nodes[].title' | grep -F "$TAG" || true)
+          if [ -n "$EXISTING" ]; then
+            echo "Announcement for $TAG already exists — skipping."
+            exit 0
+          fi
+          gh api graphql -f query='
+            mutation($repoId:ID!,$catId:ID!,$title:String!,$body:String!){
+              createDiscussion(input:{repositoryId:$repoId,categoryId:$catId,title:$title,body:$body}){
+                discussion{url}
+              }
+            }' \
+            -f repoId="$REPO_ID" -f catId="$CAT_ID" \
+            -f title="$TAG — $HEADLINE" \
+            -F body=@.release-notes/announcement.md \
+            --jq '.data.createDiscussion.discussion.url'
+
+      - name: Attach social drafts to the release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          set -euo pipefail
+          gh release upload "$TAG" .release-notes/x-thread.md .release-notes/linkedin.md .release-notes/announcement.md --clobber \
+            || echo "::warning::Could not attach drafts to $TAG (release immutable?) — they're in the job summary."
+
+      - name: Job summary
+        env:
+          TAG: ${{ steps.tag.outputs.tag }}
+          WORTHY: ${{ steps.meta.outputs.worthy }}
+        run: |
+          set -euo pipefail
+          {
+            echo "## Announce kit — $TAG"
+            echo "Discussion auto-posted: \`$WORTHY\` (minor/major only)"
+            echo ""
+            echo "### Social drafts"
+            echo '```'
+            cat .release-notes/x-thread.md
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

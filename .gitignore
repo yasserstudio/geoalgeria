@@ -47,11 +47,15 @@ yarn-error.log*
 
 # === Claude Code & AI ===
 .claude/
+.agents/
 CLAUDE.md
 .cursorrules
 .cursor/
 .aider*
 .copilot/
+
+# === Generated release/marketing artifacts ===
+.release-notes/
 
 # === Local dev docs (never publish) ===
 .local/
