@@ -1,10 +1,11 @@
 # Releasing
 
-GeoAlgeria publishes two packages to npm — **`geoalgeria`** (the dataset, kept
-unscoped as the flagship) and **`@geoalgeria/poste`** (under the `@geoalgeria`
-org) — using [Changesets](https://github.com/changesets/changesets) with
-**staged Trusted Publishing** (the same flow as the GPC monorepo). The web app
-lives in the separate **`geoalgeria.com`** repo and is not part of this one.
+GeoAlgeria publishes three packages to npm — **`geoalgeria`** (the dataset, kept
+unscoped as the flagship), **`@geoalgeria/poste`** and **`@geoalgeria/emploi`**
+(under the `@geoalgeria` org) — using
+[Changesets](https://github.com/changesets/changesets) with **staged Trusted
+Publishing** (the same flow as the GPC monorepo). The web app lives in the
+separate **`geoalgeria.com`** repo and is not part of this one.
 
 The raw `CSV`/`GeoJSON`/`SQL` formats are **not** in the npm tarball (only
 `*.json` is), so each release also cuts a **GitHub Release** with a zipped data
@@ -51,14 +52,18 @@ These are prerequisites the workflow can't do for you:
 1. **`@geoalgeria` org** — already created on npmjs.com (owner: `gorthidz`).
    It reserves the `@geoalgeria/*` namespace where `@geoalgeria/poste` lives;
    the flagship `geoalgeria` stays unscoped.
-2. **Both names are already published** (`geoalgeria@1.0.0`,
-   `@geoalgeria/poste@1.0.0`), so the packages exist and Trusted Publishing can
-   be configured directly — no manual claim publish is needed. The first
-   automated release ships `geoalgeria@1.1.0` and `@geoalgeria/poste@1.0.1`.
-3. **Trusted Publisher per package** — on npmjs.com, for each of `geoalgeria`
-   and `@geoalgeria/poste`: *Settings → Trusted Publisher → GitHub Actions*,
-   repo **`yasserstudio/geoalgeria`**, workflow `release.yml`. No `NPM_TOKEN`
-   is used — auth is the workflow's OIDC `id-token`.
+2. **`geoalgeria` and `@geoalgeria/poste` are already published**
+   (`@1.0.0`), so they exist and Trusted Publishing can be configured directly.
+   **`@geoalgeria/emploi` is new** and not yet on npm — claim the name once, by
+   hand, so Trusted Publishing has something to attach to:
+   ```bash
+   cd packages/emploi && npm publish --access public   # one-time, 1.0.0
+   ```
+   After that, future bumps go through the staged workflow like the others.
+3. **Trusted Publisher per package** — on npmjs.com, for each of `geoalgeria`,
+   `@geoalgeria/poste`, and `@geoalgeria/emploi`: *Settings → Trusted Publisher →
+   GitHub Actions*, repo **`yasserstudio/geoalgeria`**, workflow `release.yml`.
+   No `NPM_TOKEN` is used — auth is the workflow's OIDC `id-token`.
 4. **Enable 2FA** on the npm account (required to approve staged packages).
 5. **Repo → Settings → Actions → General → Workflow permissions**: allow
    GitHub Actions to *create and approve pull requests* (for the version PR)

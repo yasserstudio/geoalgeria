@@ -13,7 +13,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const PACKAGES = ["packages/dataset", "packages/poste"];
+const PACKAGES = ["packages/dataset", "packages/poste", "packages/emploi"];
 
 let staged = 0;
 let skipped = 0;
@@ -34,6 +34,16 @@ for (const pkg of PACKAGES) {
 
   if (registryVersion === version) {
     console.log(`skip: ${name}@${version} (already published)`);
+    skipped++;
+    continue;
+  }
+
+  // A package npm has never seen can't be staged — Trusted Publishing's OIDC
+  // grant attaches to an existing package, so `npm stage publish` would 404/401
+  // and fail the whole run. New packages are bootstrapped by a one-time manual
+  // `npm publish` (see RELEASING.md); skip until that's done.
+  if (registryVersion === null) {
+    console.log(`skip: ${name}@${version} (not yet on npm — publish once by hand first; see RELEASING.md)`);
     skipped++;
     continue;
   }
