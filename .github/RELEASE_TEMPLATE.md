@@ -32,8 +32,9 @@ so write that line as the headline.
 Rules:
 - **First bullet is the headline.** Keep it short and specific — "Adds 412 ATM
   coordinates" beats "Update data". It is used **verbatim in three places**:
-  - the GitHub Release **title** → `<tag> — <headline>` (set automatically by
-    `release.yml`),
+  - the GitHub Release **title** → the `<headline>` alone, set automatically by
+    `release.yml` (the package tag is **never** repeated in the title — it's
+    already in the release chip and URL),
   - the **Discussion** title, and
   - the social hook.
 - **Always cite a source** for data changes (it's also the contribution rule).
@@ -53,5 +54,5 @@ Rules:
 ```
 
 That section becomes a GitHub Release titled
-*"geoalgeria@1.1.0 — Real Algérie Poste postal codes for ~1,440 communes"*, a
-matching Discussion, and X/LinkedIn drafts — no extra work.
+*"Real Algérie Poste postal codes for ~1,440 communes"* (tag `geoalgeria@1.1.0`),
+a matching Discussion, and X/LinkedIn drafts — no extra work.
