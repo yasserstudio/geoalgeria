@@ -38,6 +38,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,026 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM — [`@geoalgeria/emploi`](packages/emploi) |
+| **Mobilis network** | 12,345 | 165 agencies + 12,180 points of sale — [`@geoalgeria/mobilis`](packages/mobilis) |
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -74,6 +75,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | Wilayas, dairas, communes + mirrored postal data |
 | [`packages/poste`](packages/poste) | [`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) | Standalone post offices & ATMs from Algérie Poste |
 | [`packages/emploi`](packages/emploi) | [`@geoalgeria/emploi`](https://www.npmjs.com/package/@geoalgeria/emploi) | Standalone employment agencies (AWEM + ALEM) from ANEM |
+| [`packages/mobilis`](packages/mobilis) | [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) | Standalone Mobilis agencies & approved points of sale |
 
 ## Use without npm
 

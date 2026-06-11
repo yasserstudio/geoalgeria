@@ -10,6 +10,7 @@ This file is the short version of how work flows here; deeper docs are linked.
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
+| `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |
 
 The postal data under `packages/dataset/data/poste/` is a **generated mirror** —
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.

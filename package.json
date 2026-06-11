@@ -2,7 +2,7 @@
   "name": "geoalgeria-monorepo",
   "private": true,
   "type": "module",
-  "description": "GeoAlgeria data monorepo — the geoalgeria dataset + @geoalgeria/poste",
+  "description": "GeoAlgeria data monorepo — open Algeria datasets (geoalgeria, @geoalgeria/poste, @geoalgeria/emploi, @geoalgeria/mobilis) published to npm",
   "packageManager": "pnpm@11.3.0",
   "scripts": {
     "validate": "pnpm --filter ./packages/dataset validate",

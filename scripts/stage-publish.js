@@ -13,7 +13,7 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const PACKAGES = ["packages/dataset", "packages/poste", "packages/emploi"];
+const PACKAGES = ["packages/dataset", "packages/poste", "packages/emploi", "packages/mobilis"];
 
 let staged = 0;
 let skipped = 0;

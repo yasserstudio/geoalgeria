@@ -44,7 +44,7 @@ jobs:
         run: |
           set -euo pipefail
           # Fail closed on anything that isn't one of our package tags.
-          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi))@[0-9]+\.[0-9]+\.[0-9]+$'; then
+          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi|mobilis))@[0-9]+\.[0-9]+\.[0-9]+$'; then
             echo "::error::Refusing to announce malformed tag: $RAW_TAG"
             exit 1
           fi

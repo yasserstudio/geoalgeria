@@ -24,6 +24,7 @@ const PACKAGES = {
   geoalgeria: { dir: "packages/dataset", label: "the GeoAlgeria dataset" },
   "@geoalgeria/poste": { dir: "packages/poste", label: "post offices & ATMs" },
   "@geoalgeria/emploi": { dir: "packages/emploi", label: "employment agencies" },
+  "@geoalgeria/mobilis": { dir: "packages/mobilis", label: "Mobilis agencies & points of sale" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];

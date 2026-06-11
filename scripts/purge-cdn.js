@@ -21,6 +21,7 @@ const DEFAULT_PATHS = [
   "npm/geoalgeria/data/ecommerce/communes.json", // advertised in the README
   "npm/@geoalgeria/poste",
   "npm/@geoalgeria/emploi",
+  "npm/@geoalgeria/mobilis",
 ];
 
 const paths = [...DEFAULT_PATHS, ...process.argv.slice(2)];
