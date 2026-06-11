@@ -17,7 +17,6 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
 const REPO = "https://github.com/yasserstudio/geoalgeria";
-const SITE = "https://geoalgeria.com";
 
 // name (npm) -> package dir + a human label
 const PACKAGES = {
@@ -162,12 +161,20 @@ const totals = name === "geoalgeria" ? datasetTotals() : null;
 
 // --- Render -----------------------------------------------------------------
 const npmUrl = `https://www.npmjs.com/package/${name}`;
+const releaseUrl = `${REPO}/releases/tag/${encodeURIComponent(tag)}`;
 const install = name === "geoalgeria" ? `npm install geoalgeria` : `npm install ${name}`;
-const bulletList = bullets.map((b) => `- ${b}`).join("\n");
+// The headline IS bullets[0] and now leads the body as the `##` title, so don't
+// repeat it in the list below (keep it only if it's the sole bullet).
+const bulletList = (bullets.length > 1 ? bullets.slice(1) : bullets)
+  .map((b) => `- ${b}`)
+  .join("\n");
 
-const discussion = `## ${tag} — ${headline}
+// Title is the headline alone — never the package tag (it's already in the
+// release chip + URL). The tag goes on its own "Release" line. See
+// .github/RELEASE_TEMPLATE.md.
+const discussion = `## ${headline}
 
-${name === "geoalgeria" ? "**GeoAlgeria** — the open dataset for Algeria. " : `**${name}** (${pkg.label}). `}This ${bump} release:
+${name === "geoalgeria" ? "**GeoAlgeria** — the open dataset for Algeria. " : `**${name}** (${pkg.label}). `}Release \`${tag}\` — this ${bump} update:
 
 ${bulletList}
 
@@ -177,9 +184,9 @@ ${totals ? `Current totals: **${totals}**.\n\n` : ""}Install / update:
 ${install}@latest
 \`\`\`
 
-CSV / GeoJSON / SQL bundles are attached to the [release](${REPO}/releases/tag/${encodeURIComponent(tag)}). Found something off? [Open an issue](${REPO}/issues/new/choose) — data fixes ship fast.
+CSV / GeoJSON / SQL bundles are attached to the [release](${releaseUrl}). Found something off? [Open an issue](${REPO}/issues/new/choose) — data fixes ship fast.
 
-npm → ${npmUrl} · code → ${REPO} · map → ${SITE} 🇩🇿
+npm → ${npmUrl} · release → ${releaseUrl} 🇩🇿
 `;
 
 const xThread = `# X / Twitter — ${tag}
@@ -199,7 +206,7 @@ ${bullets
 \`${install}@latest\`
 ${totals ? `Now: ${totals}.\n` : ""}CSV/GeoJSON/SQL on the release. MIT.
 
-${npmUrl} · ${SITE} 🇩🇿
+${npmUrl} · ${releaseUrl} 🇩🇿
 `;
 
 const linkedin = `# LinkedIn — ${tag}
@@ -218,12 +225,12 @@ ${totals ? `It now covers ${totals}, ` : ""}shipped as JSON/CSV/GeoJSON/SQL/Type
 
 If you build anything for the Algerian market, your corrections and use cases are welcome.
 
-🔗 npm + the interactive map in the comments.
+🔗 npm + the release link in the comments.
 
 #OpenData #Algeria #OpenSource
 
 **First comment (link):**
-npm → ${npmUrl} · code → ${REPO} · map → ${SITE}
+npm → ${npmUrl} · release → ${releaseUrl}
 `;
 
 const outDir = process.env.GEOALGERIA_OUT || ".release-notes";
