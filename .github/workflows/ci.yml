@@ -41,7 +41,7 @@ jobs:
         if: matrix.node-version == 22
         run: pnpm audit --prod --audit-level=high
 
-      - name: Validate dataset (schema + integrity)
+      - name: Validate datasets (schema + integrity, all packages)
         if: matrix.node-version == 22
         run: pnpm validate
 
@@ -52,3 +52,11 @@ jobs:
       - name: Smoke test — @geoalgeria/poste (ESM)
         working-directory: packages/poste
         run: node --input-type=module -e "import('./index.js').then(m=>{const o=m.postOffices(),a=m.atms(); if(!Array.isArray(o)||!o.length||!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('poste:',o.length,'offices,',a.length,'atms')})"
+
+      - name: Smoke test — @geoalgeria/mobilis (ESM)
+        working-directory: packages/mobilis
+        run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.agences(),p=m.pdv(); if(!Array.isArray(a)||!a.length||!Array.isArray(p)||!p.length){console.error('empty data');process.exit(1)} console.log('mobilis:',a.length,'agences,',p.length,'pdv')})"
+
+      - name: Smoke test — @geoalgeria/emploi (ESM)
+        working-directory: packages/emploi
+        run: node --input-type=module -e "import('./index.js').then(m=>{const w=m.awem(),l=m.alem(); if(!Array.isArray(w)||!w.length||!Array.isArray(l)||!l.length){console.error('empty data');process.exit(1)} console.log('emploi:',w.length,'awem,',l.length,'alem')})"
