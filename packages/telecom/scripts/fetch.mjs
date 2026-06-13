@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 // @geoalgeria/telecom — regenerate the 5G coverage datasets from operator maps.
 //
-// Sources (public, no auth):
+// Sources:
 //   Djezzy  https://www.djezzy5g.dz/map.html  — markers in an XOR-encoded blob
 //   Mobilis https://mobilis.dz/map/5g/data    — JSON endpoint (browser headers)
-//
-// Ooredoo is intentionally NOT fetched here: its map gates data behind an OAuth2
-// flow with in-page credentials, which we do not replay. If/when added it slots
-// in additively under coverage/5g/ooredoo.json without touching this schema.
+//   Ooredoo https://www.ooredoo.dz/.../5g      — /o/c/communes, read via a real
+//           browser session (the site self-authenticates; see fetchOoredoo).
+//           Requires the `agent-browser` CLI on PATH.
 //
 // Output (data/coverage/5g/, + csv/ + geojson/ mirrors + metadata.json):
 //   sites.json   combined, all operators
@@ -20,6 +19,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
 
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(PKG, "data");
@@ -56,7 +56,7 @@ const ALIASES = {
   ouleddjellal: "Ouled Djellal",
 };
 const unmatched = new Set();
-const dropped = { djezzy: 0, mobilis: 0 };
+const dropped = { djezzy: 0, mobilis: 0, ooredoo: 0 };
 
 function wilayaCode(name) {
   let code = NAME_TO_CODE.get(norm(name));
@@ -168,6 +168,80 @@ async function fetchMobilis() {
   return sites;
 }
 
+// ── Ooredoo ─────────────────────────────────────────────────────────────────
+// Ooredoo's 5G page authenticates itself client-side and exposes a public read
+// API of its 5G-covered communes (/o/c/communes). We drive a real browser via
+// the `agent-browser` CLI so the SITE performs its own auth, then read that
+// endpoint from the page's session — we never handle or replay credentials.
+// This step therefore requires the agent-browser CLI on PATH; without it the
+// fetch aborts (rather than silently dropping Ooredoo). Coverage here is
+// commune-level (one point per covered commune), unlike Djezzy/Mobilis sites.
+function abEval(js) {
+  const out = execFileSync("agent-browser", ["eval", js], {
+    encoding: "utf8",
+    timeout: 60000,
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  for (const line of out.split("\n").map((s) => s.trim()).reverse()) {
+    if (!line || line.startsWith("✓") || line.startsWith("✗")) continue;
+    try {
+      let v = JSON.parse(line);
+      if (typeof v === "string") v = JSON.parse(v); // agent-browser quotes string returns
+      return v;
+    } catch {
+      /* keep scanning earlier lines */
+    }
+  }
+  throw new Error("could not parse agent-browser eval output");
+}
+
+async function fetchOoredoo() {
+  const url = "https://www.ooredoo.dz/fr/particuliers/internet/5g";
+  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 60000 });
+  let rows;
+  try {
+    ab("open", url);
+    ab("wait", "5000");
+    rows = abEval(
+      "fetch(location.origin+'/o/c/communes?pageSize=3000&filter='+encodeURIComponent('(latitude ne 0 or longitude ne 0)')," +
+        "{headers:{Authorization:sessionStorage.getItem('tokenbearer'),Accept:'application/json'}})" +
+        ".then(r=>r.json()).then(d=>JSON.stringify(d.items.map(it=>({" +
+        "w:it.villayaId&&it.villayaId.key,c:it.communeId&&it.communeId.name,lat:it.latitude,lng:it.longitude}))))",
+    );
+  } finally {
+    try {
+      ab("close", "--all");
+    } catch {
+      /* ignore */
+    }
+  }
+  const sites = [];
+  for (const r of rows) {
+    const lat = Number(r.lat),
+      lng = Number(r.lng);
+    if (!inAlgeria(lat, lng)) {
+      dropped.ooredoo++;
+      continue;
+    }
+    sites.push({
+      id: id("ooredoo", lat, lng, r.c || ""),
+      technology: TECH,
+      operator: "ooredoo",
+      name: r.c || null,
+      address: null,
+      commune: r.c || null,
+      commune_ar: null,
+      commune_code: null,
+      wilaya_code: r.w ? String(r.w).padStart(2, "0") : null,
+      lat,
+      lng,
+      source: url,
+    });
+  }
+  if (sites.length === 0) throw new Error("got 0 Ooredoo communes");
+  return sites;
+}
+
 // ── outputs ───────────────────────────────────────────────────────────────────
 const FIELDS = [
   "id", "technology", "operator", "name", "address",
@@ -196,7 +270,7 @@ const writeJson = (p, obj) => {
 };
 
 async function main() {
-  const extractors = { djezzy: fetchDjezzy, mobilis: fetchMobilis };
+  const extractors = { djezzy: fetchDjezzy, mobilis: fetchMobilis, ooredoo: fetchOoredoo };
   const perOperator = {};
   const failures = [];
   for (const [op, fn] of Object.entries(extractors)) {
@@ -233,17 +307,20 @@ async function main() {
     sources: {
       djezzy: "https://www.djezzy5g.dz/map.html",
       mobilis: "https://mobilis.dz/map/5g",
+      ooredoo: "https://www.ooredoo.dz/fr/particuliers/internet/5g",
     },
     coverage: { [TECH]: { total: all.length, by_operator: byOperator, wilayas_covered } },
     generated_at: new Date().toISOString().slice(0, 10),
-    note: "5G cell-site presence points published by each operator's coverage map. Marker radii on the source maps are display-only, not measured RF coverage.",
+    note: "5G presence points from each operator's published coverage map. Djezzy and Mobilis are cell-site level; Ooredoo is commune level (points within covered communes — a few communes carry several). Source-map circles are display-only, not measured RF coverage.",
   });
 
   console.log(`  combined: ${all.length} sites across ${wilayas_covered} wilayas`);
   if (unmatched.size) console.warn(`  ⚠ unmatched wilaya names: ${[...unmatched].join(", ")}`);
-  const totalDropped = dropped.djezzy + dropped.mobilis;
+  const totalDropped = dropped.djezzy + dropped.mobilis + dropped.ooredoo;
   if (totalDropped)
-    console.warn(`  ⚠ dropped ${totalDropped} out-of-Algeria point(s) (djezzy ${dropped.djezzy}, mobilis ${dropped.mobilis})`);
+    console.warn(
+      `  ⚠ dropped ${totalDropped} out-of-Algeria point(s) (djezzy ${dropped.djezzy}, mobilis ${dropped.mobilis}, ooredoo ${dropped.ooredoo})`,
+    );
 }
 
 main().catch((e) => {

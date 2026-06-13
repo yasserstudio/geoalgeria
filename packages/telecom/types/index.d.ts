@@ -5,7 +5,7 @@
 export type Technology = "5G";
 
 /** Operator slug. Extends as operators are added. */
-export type Operator = "djezzy" | "mobilis";
+export type Operator = "djezzy" | "mobilis" | "ooredoo";
 
 /** A single coverage point — an operator-published 5G cell-site location. */
 export interface CoverageSite {

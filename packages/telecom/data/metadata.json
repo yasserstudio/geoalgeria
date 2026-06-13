@@ -5,18 +5,20 @@
   ],
   "sources": {
     "djezzy": "https://www.djezzy5g.dz/map.html",
-    "mobilis": "https://mobilis.dz/map/5g"
+    "mobilis": "https://mobilis.dz/map/5g",
+    "ooredoo": "https://www.ooredoo.dz/fr/particuliers/internet/5g"
   },
   "coverage": {
     "5G": {
-      "total": 1505,
+      "total": 1681,
       "by_operator": {
         "djezzy": 1001,
-        "mobilis": 504
+        "mobilis": 504,
+        "ooredoo": 176
       },
-      "wilayas_covered": 18
+      "wilayas_covered": 56
     }
   },
   "generated_at": "2026-06-13",
-  "note": "5G cell-site presence points published by each operator's coverage map. Marker radii on the source maps are display-only, not measured RF coverage."
+  "note": "5G presence points from each operator's published coverage map. Djezzy and Mobilis are cell-site level; Ooredoo is commune level (points within covered communes — a few communes carry several). Source-map circles are display-only, not measured RF coverage."
 }
