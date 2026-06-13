@@ -13,10 +13,17 @@ import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-const PACKAGES = ["packages/dataset", "packages/poste", "packages/emploi", "packages/mobilis"];
+const PACKAGES = [
+  "packages/dataset",
+  "packages/poste",
+  "packages/emploi",
+  "packages/mobilis",
+  "packages/telecom",
+];
 
 let staged = 0;
 let skipped = 0;
+const failed = [];
 
 for (const pkg of PACKAGES) {
   const pkgJson = JSON.parse(readFileSync(join(pkg, "package.json"), "utf8"));
@@ -67,13 +74,20 @@ for (const pkg of PACKAGES) {
       skipped++;
       continue;
     }
+    // Keep going so one package's missing Trusted Publisher (or other error)
+    // doesn't block staging the rest; surface all failures at the end.
     console.error(`FAILED to stage ${name}@${version}`);
     if (log) console.error(log);
-    process.exit(1);
+    failed.push(name);
   }
 }
 
-console.log(`\nDone: ${staged} staged, ${skipped} skipped`);
+console.log(`\nDone: ${staged} staged, ${skipped} skipped, ${failed.length} failed`);
+if (failed.length) {
+  console.error(`Failed to stage: ${failed.join(", ")}`);
+  console.error("Likely a missing Trusted Publisher on npmjs.com for the package(s). See RELEASING.md.");
+  process.exit(1);
+}
 if (staged > 0) {
   console.log("Approve staged packages on npmjs.com → Account → Staged packages");
   console.log("Or run locally: npm stage list && npm stage approve <stage-id>");
