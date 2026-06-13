@@ -52,6 +52,13 @@ import offices from "@geoalgeria/poste/data/postoffices.json" with { type: "json
 // https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/postoffices.json
 ```
 
+The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+
+```ts
+import poste, { type PostOffice, type Atm } from "@geoalgeria/poste";
+const offices: PostOffice[] = poste.postOffices();
+```
+
 **CSV and GeoJSON** are in the repo under [`data/`](data) and bundled in every
 [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases):
 

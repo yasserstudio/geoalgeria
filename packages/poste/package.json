@@ -4,12 +4,17 @@
   "type": "module",
   "description": "Algeria post offices (3908) and ATMs (2026) — real postal codes, bilingual names, coordinates, commune/wilaya linkage. Sourced from Algérie Poste (baridimap.poste.dz). JSON, CSV, GeoJSON.",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
     "./data/*": "./data/*"
   },
   "files": [
     "data/**/*.json",
+    "types/",
     "index.js"
   ],
   "scripts": {

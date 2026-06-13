@@ -65,6 +65,13 @@ import agences from "@geoalgeria/mobilis/data/agences.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/agences.json
 ```
 
+The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+
+```ts
+import mobilis, { type Agence, type Pdv } from "@geoalgeria/mobilis";
+const agences: Agence[] = mobilis.agences();
+```
+
 **CSV and GeoJSON** are in the repo under [`data/`](data) and bundled in every
 [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases):
 

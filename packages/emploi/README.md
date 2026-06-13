@@ -57,6 +57,13 @@ import alem from "@geoalgeria/emploi/data/alem.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/alem.json
 ```
 
+The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+
+```ts
+import emploi, { type Awem, type Alem } from "@geoalgeria/emploi";
+const local: Alem[] = emploi.alem();
+```
+
 **CSV and GeoJSON** are in the repo under [`data/`](data) and bundled in every
 [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases):
 
