@@ -52,3 +52,12 @@ jobs:
       - name: Smoke test — @geoalgeria/poste (ESM)
         working-directory: packages/poste
         run: node --input-type=module -e "import('./index.js').then(m=>{const o=m.postOffices(),a=m.atms(); if(!Array.isArray(o)||!o.length||!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('poste:',o.length,'offices,',a.length,'atms')})"
+
+      - name: Validate @geoalgeria/telecom (5G coverage)
+        if: matrix.node-version == 22
+        working-directory: packages/telecom
+        run: node scripts/validate.mjs
+
+      - name: Smoke test — @geoalgeria/telecom (ESM)
+        working-directory: packages/telecom
+        run: node --input-type=module -e "import('./index.js').then(m=>{const s=m.coverage(); if(!Array.isArray(s)||!s.length){console.error('empty data');process.exit(1)} console.log('telecom:',s.length,'5G sites,',m.metadata().coverage['5G'].wilayas_covered,'wilayas')})"

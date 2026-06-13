@@ -1,0 +1,22 @@
+{
+  "license": "Data © respective operators; redistributed for reference. See README.",
+  "technologies": [
+    "5G"
+  ],
+  "sources": {
+    "djezzy": "https://www.djezzy5g.dz/map.html",
+    "mobilis": "https://mobilis.dz/map/5g"
+  },
+  "coverage": {
+    "5G": {
+      "total": 1505,
+      "by_operator": {
+        "djezzy": 1001,
+        "mobilis": 504
+      },
+      "wilayas_covered": 18
+    }
+  },
+  "generated_at": "2026-06-13",
+  "note": "5G cell-site presence points published by each operator's coverage map. Marker radii on the source maps are display-only, not measured RF coverage."
+}
