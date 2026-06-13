@@ -4,12 +4,17 @@
   "type": "module",
   "description": "Algeria public employment agencies — 58 AWEM (wilaya) + 273 ALEM (local) offices with address, phone, manager, communes served, and coordinates. Sourced from ANEM (anem.dz). JSON, CSV, GeoJSON.",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
     "./data/*": "./data/*"
   },
   "files": [
     "data/**/*.json",
+    "types/",
     "index.js"
   ],
   "scripts": {
