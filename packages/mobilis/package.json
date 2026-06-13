@@ -4,16 +4,22 @@
   "type": "module",
   "description": "Mobilis (ATM Mobilis) sales network in Algeria — 165 commercial agencies (geocoded, bilingual FR/AR) + 12,180 approved points of sale (commune-level directory). Sourced from mobilis.dz. JSON, CSV, GeoJSON.",
   "main": "index.js",
+  "types": "types/index.d.ts",
   "exports": {
-    ".": "./index.js",
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
     "./data/*": "./data/*"
   },
   "files": [
     "data/**/*.json",
+    "types/",
     "index.js"
   ],
   "scripts": {
-    "fetch": "node scripts/fetch.mjs"
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs mobilis"
   },
   "keywords": [
     "algeria",
