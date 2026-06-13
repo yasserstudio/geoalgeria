@@ -13,7 +13,8 @@
     "index.js"
   ],
   "scripts": {
-    "fetch": "node scripts/fetch.mjs"
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs mobilis"
   },
   "keywords": [
     "algeria",
