@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+### Minor Changes
+
+- a113429: Bundle TypeScript type definitions. `PostOffice`, `Atm`, and `Metadata` interfaces plus typed loaders (`postOffices()`, `atms()`, `metadata()`) now ship with the package and resolve automatically via the `types` export condition. No runtime or data changes.
+
 ## 1.0.2
 
 ### Patch Changes
