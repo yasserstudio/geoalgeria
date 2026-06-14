@@ -19,7 +19,7 @@
 //   - CSV row count (minus header) === record count
 //   - GeoJSON feature count === records with valid coordinates
 //   - zero duplicate `id`
-//   - every `wilaya_code` is an integer in [1, 58]
+//   - every `wilaya_code` is an integer in [1, 69]
 //   - required identity fields present and non-empty on every record
 // Plus a mirror-drift check: dataset/data/poste/*.json must equal packages/poste.
 
@@ -91,6 +91,15 @@ const PACKAGES = {
       csv: "csv/alem.csv",
       geojson: "geojson/alem.geojson",
       required: ["id", "name", "wilaya_code"],
+    },
+  ],
+  aviation: [
+    {
+      json: "airports.json",
+      metaKey: "airports",
+      csv: "csv/airports.csv",
+      geojson: "geojson/airports.geojson",
+      required: ["id", "name", "icao", "wilaya_code"],
     },
   ],
 };
@@ -189,13 +198,13 @@ function validateDataset(pkg, spec) {
     const w = Number(r.wilaya_code);
     // require a plain integer string/number (rejects booleans, "16.0", arrays
     // that Number() would otherwise coerce to an in-range integer)
-    if (!/^\d+$/.test(String(r.wilaya_code)) || w < 1 || w > 58) badWilaya++;
+    if (!/^\d+$/.test(String(r.wilaya_code)) || w < 1 || w > 69) badWilaya++;
     for (const f of spec.required) {
       if (r[f] === undefined || r[f] === null || r[f] === "") missingField++;
     }
   }
   if (badWilaya > 0) {
-    fail(`${label}: ${badWilaya} record(s) with wilaya_code outside [1,58]`);
+    fail(`${label}: ${badWilaya} record(s) with wilaya_code outside [1,69]`);
   }
   if (missingField > 0) {
     fail(
@@ -323,14 +332,14 @@ function validateTelecom() {
   let missing = 0;
   for (const s of sites) {
     const w = Number(s.wilaya_code);
-    if (!/^\d+$/.test(String(s.wilaya_code)) || w < 1 || w > 58) badWilaya++;
+    if (!/^\d+$/.test(String(s.wilaya_code)) || w < 1 || w > 69) badWilaya++;
     if (s.technology !== "5G") badTech++;
     if (!inAlgeria(s.lat, s.lng)) badCoord++;
     for (const f of ["id", "operator", "wilaya_code", "lat", "lng"]) {
       if (s[f] === undefined || s[f] === null || s[f] === "") missing++;
     }
   }
-  if (badWilaya) fail(`telecom: ${badWilaya} record(s) with wilaya_code outside [1,58]`);
+  if (badWilaya) fail(`telecom: ${badWilaya} record(s) with wilaya_code outside [1,69]`);
   if (badTech) fail(`telecom: ${badTech} record(s) with technology ≠ "5G"`);
   if (badCoord) fail(`telecom: ${badCoord} record(s) with coordinates outside Algeria`);
   if (missing) fail(`telecom: ${missing} missing required field(s)`);
