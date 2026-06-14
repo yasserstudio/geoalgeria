@@ -1,11 +1,16 @@
 #!/usr/bin/env node
-// Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi) for
-// integrity and cross-format consistency. The flagship `geoalgeria` dataset has
-// its own Python validator (packages/dataset/scripts/validate.py); this is the
-// Node counterpart for the scoped packages so every package is guarded on every
-// commit and before every publish.
+// Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
+// /telecom) for integrity and cross-format consistency. The flagship
+// `geoalgeria` dataset has its own Python validator
+// (packages/dataset/scripts/validate.py); this is the single Node gate for every
+// scoped package so they're all guarded on every commit and before every publish.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi]
+// poste/mobilis/emploi share a flat `data/<name>.json` shape (table-driven
+// below). telecom has a different shape — coverage namespaced by technology
+// (coverage/<tech>/) and split into per-operator files — so it gets its own
+// validator (validateTelecom) that shares the same error accumulator + helpers.
+//
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -223,16 +228,138 @@ function validateMirror() {
   }
 }
 
+// telecom has a bespoke shape (coverage namespaced by technology, split into
+// per-operator files, nested metadata) that doesn't fit the flat PACKAGES table,
+// so it gets a dedicated validator — sharing the same fail()/errors/readJson/
+// csvRowCount/hasCoord helpers and the single pass/fail summary below.
+function validateTelecom() {
+  const dataDir = join(ROOT, "packages", "telecom", "data");
+  const fivegDir = join(dataDir, "coverage", "5g");
+  // 5G is real (operator-published); bounds-check that coordinates land in Algeria.
+  const inAlgeria = (lat, lng) =>
+    Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
+
+  let meta;
+  try {
+    meta = readJson(join(dataDir, "metadata.json"));
+  } catch (e) {
+    return fail(`telecom/metadata.json: cannot read — ${e.message}`);
+  }
+  const summary = meta.coverage?.["5G"] || {};
+
+  let sites;
+  try {
+    sites = readJson(join(fivegDir, "sites.json"));
+  } catch (e) {
+    return fail(`telecom/sites.json: invalid JSON — ${e.message}`);
+  }
+  if (!Array.isArray(sites) || sites.length === 0) {
+    return fail("telecom/sites.json: expected a non-empty array");
+  }
+
+  // combined count vs metadata
+  if (summary.total !== sites.length) {
+    fail(`telecom/sites.json: count ${sites.length} ≠ metadata.coverage.5G.total ${summary.total}`);
+  }
+
+  // per-operator files — counts AND content (ids) must reconcile with sites.json
+  const operators = Object.keys(summary.by_operator || {});
+  const operatorIds = [];
+  for (const op of operators) {
+    const f = join(fivegDir, `${op}.json`);
+    if (!existsSync(f)) {
+      fail(`telecom: missing per-operator file ${op}.json`);
+      continue;
+    }
+    const arr = readJson(f);
+    operatorIds.push(...arr.map((r) => r.id));
+    if (arr.length !== summary.by_operator[op]) {
+      fail(`telecom/${op}.json: count ${arr.length} ≠ metadata.by_operator.${op} ${summary.by_operator[op]}`);
+    }
+    if (arr.some((r) => r.operator !== op)) {
+      fail(`telecom/${op}.json: contains rows from another operator`);
+    }
+  }
+  const siteIds = new Set(sites.map((s) => s.id));
+  const opIdSet = new Set(operatorIds);
+  if (operatorIds.length !== sites.length) {
+    fail(`telecom: per-operator files sum ${operatorIds.length} ≠ sites.json ${sites.length}`);
+  }
+  if (opIdSet.size !== siteIds.size || [...siteIds].some((i) => !opIdSet.has(i))) {
+    fail(`telecom: sites.json ids do not match the union of per-operator ids (content drift)`);
+  }
+
+  // csv mirror
+  const csvPath = join(dataDir, "csv", "coverage", "5g", "sites.csv");
+  if (!existsSync(csvPath)) {
+    fail("telecom: missing csv/coverage/5g/sites.csv");
+  } else {
+    const rows = csvRowCount(csvPath);
+    if (rows !== sites.length) fail(`telecom: CSV rows ${rows} ≠ sites ${sites.length}`);
+  }
+
+  // geojson mirror === sites with coordinates (shared hasCoord rejects blank
+  // coords, matching validateDataset — telecom stores numbers, but stay consistent)
+  const geoPath = join(dataDir, "geojson", "coverage", "5g", "sites.geojson");
+  const withCoord = sites.filter(hasCoord).length;
+  if (!existsSync(geoPath)) {
+    fail("telecom: missing geojson/coverage/5g/sites.geojson");
+  } else {
+    const features = readJson(geoPath).features;
+    if (!Array.isArray(features)) {
+      fail("telecom/sites.geojson: no FeatureCollection features array");
+    } else if (features.length !== withCoord) {
+      fail(`telecom: GeoJSON features ${features.length} ≠ sites with coordinates ${withCoord}`);
+    }
+  }
+
+  // per-record invariants
+  const dups = sites.length - siteIds.size;
+  if (dups > 0) fail(`telecom: ${dups} duplicate id(s)`);
+
+  let badWilaya = 0;
+  let badTech = 0;
+  let badCoord = 0;
+  let missing = 0;
+  for (const s of sites) {
+    const w = Number(s.wilaya_code);
+    if (!/^\d+$/.test(String(s.wilaya_code)) || w < 1 || w > 58) badWilaya++;
+    if (s.technology !== "5G") badTech++;
+    if (!inAlgeria(s.lat, s.lng)) badCoord++;
+    for (const f of ["id", "operator", "wilaya_code", "lat", "lng"]) {
+      if (s[f] === undefined || s[f] === null || s[f] === "") missing++;
+    }
+  }
+  if (badWilaya) fail(`telecom: ${badWilaya} record(s) with wilaya_code outside [1,58]`);
+  if (badTech) fail(`telecom: ${badTech} record(s) with technology ≠ "5G"`);
+  if (badCoord) fail(`telecom: ${badCoord} record(s) with coordinates outside Algeria`);
+  if (missing) fail(`telecom: ${missing} missing required field(s)`);
+
+  console.log(
+    `  OK: ${sites.length} 5G sites (${operators.map((o) => `${o} ${summary.by_operator[o]}`).join(", ")}), ${summary.wilayas_covered} wilayas`,
+  );
+}
+
+// Flat (table-driven) packages plus the bespoke telecom validator, in run order.
+const FLAT = Object.keys(PACKAGES);
+const ALL = [...FLAT, "telecom"];
+
 const only = process.argv[2];
-const targets = only ? [only] : Object.keys(PACKAGES);
+const targets = only ? [only] : ALL;
 for (const pkg of targets) {
+  if (pkg === "telecom") {
+    console.log(`\n[@geoalgeria/telecom]`);
+    validateTelecom();
+    continue;
+  }
   if (!PACKAGES[pkg]) {
-    fail(`unknown package "${pkg}" (expected: ${Object.keys(PACKAGES).join(", ")})`);
+    fail(`unknown package "${pkg}" (expected: ${ALL.join(", ")})`);
     continue;
   }
   console.log(`\n[@geoalgeria/${pkg}]`);
   for (const spec of PACKAGES[pkg]) validateDataset(pkg, spec);
 }
+// the mirror is poste-specific — only run it when validating poste (or all)
 if (!only || only === "poste") {
   console.log(`\n[mirror: dataset ↔ poste]`);
   validateMirror();
