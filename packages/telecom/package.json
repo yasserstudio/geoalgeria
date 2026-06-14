@@ -19,7 +19,7 @@
   ],
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
-    "test": "node scripts/validate.mjs"
+    "test": "node ../../scripts/validate-packages.mjs telecom"
   },
   "keywords": [
     "algeria",
