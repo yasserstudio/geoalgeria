@@ -144,7 +144,9 @@ const plain = (s) =>
     .replace(/\s+/g, " ")
     .trim();
 const bullets = highlights(section);
-const headline = plain(bullets[0]);
+// The lead bullet is the headline (title + hook). Drop trailing sentence punctuation
+// so it reads as a title, not a sentence — the full bullet still carries its period.
+const headline = plain(bullets[0]).replace(/[.;,\s]+$/, "");
 
 // --- Best-effort "what's inside" totals (flagship dataset only) -------------
 function datasetTotals() {
