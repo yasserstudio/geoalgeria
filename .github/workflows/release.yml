@@ -41,7 +41,7 @@ jobs:
 
       - name: Dry-run publish
         run: |
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques; do
             PKG_NAME=$(node -p "require('./$pkg/package.json').name")
             PKG_VER=$(node -p "require('./$pkg/package.json').version")
             REGISTRY_VER=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
@@ -73,7 +73,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques; do
             NAME=$(node -p "require('./$pkg/package.json').name")
             VER=$(node -p "require('./$pkg/package.json').version")
             TAG="$NAME@$VER"

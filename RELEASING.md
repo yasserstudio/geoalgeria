@@ -126,7 +126,8 @@ These are prerequisites the workflow can't do for you:
    ```
    After that, future bumps go through the staged workflow.
 3. **Trusted Publisher per package** — on npmjs.com, for each of `geoalgeria`,
-   `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`: *Settings →
+   `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`,
+   `@geoalgeria/banques`: *Settings →
    Trusted Publisher → GitHub Actions*, repo **`yasserstudio/geoalgeria`**,
    workflow `release.yml`.
    No `NPM_TOKEN` — auth is the workflow's OIDC `id-token`.

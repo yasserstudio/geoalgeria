@@ -22,6 +22,7 @@ const DEFAULT_PATHS = [
   "npm/@geoalgeria/poste",
   "npm/@geoalgeria/emploi",
   "npm/@geoalgeria/mobilis",
+  "npm/@geoalgeria/banques",
 ];
 
 const paths = [...DEFAULT_PATHS, ...process.argv.slice(2)];

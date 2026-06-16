@@ -20,6 +20,7 @@ const PACKAGES = [
   "packages/mobilis",
   "packages/telecom",
   "packages/aviation",
+  "packages/banques",
 ];
 
 let staged = 0;

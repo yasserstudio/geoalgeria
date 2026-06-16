@@ -1,0 +1,54 @@
+{
+  "name": "@geoalgeria/banques",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's licensed banks & financial institutions (Banque d'Algérie agréé list) — 21 banks + 8 financial institutions with FR/AR names, 3-digit RIB bank code, ownership + parent group, country, SWIFT/BIC, website, and head office, plus 1,702 branch locations across 19 banks. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node ../../scripts/validate-packages.mjs banques"
+  },
+  "keywords": [
+    "algeria",
+    "banks",
+    "banques",
+    "banque",
+    "finance",
+    "bank-of-algeria",
+    "swift",
+    "bic",
+    "fintech",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/banques"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

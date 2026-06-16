@@ -102,6 +102,29 @@ const PACKAGES = {
       required: ["id", "name", "icao", "wilaya_code"],
     },
   ],
+  banques: [
+    {
+      json: "banks.json",
+      metaKey: "banks",
+      csv: "csv/banks.csv",
+      geojson: null, // registry of institutions, not geocoded points (HQ wilaya only)
+      required: ["id", "acronym", "name_fr", "wilaya_code"],
+    },
+    {
+      json: "institutions.json",
+      metaKey: "institutions",
+      csv: "csv/institutions.csv",
+      geojson: null,
+      required: ["id", "acronym", "name_fr", "wilaya_code"],
+    },
+    {
+      json: "branches.json",
+      metaKey: "branches",
+      csv: "csv/branches.csv",
+      geojson: "geojson/branches.geojson",
+      required: ["id", "bank_id", "name", "wilaya_code"],
+    },
+  ],
 };
 
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted

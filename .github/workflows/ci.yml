@@ -61,6 +61,10 @@ jobs:
         working-directory: packages/emploi
         run: node --input-type=module -e "import('./index.js').then(m=>{const w=m.awem(),l=m.alem(); if(!Array.isArray(w)||!w.length||!Array.isArray(l)||!l.length){console.error('empty data');process.exit(1)} console.log('emploi:',w.length,'awem,',l.length,'alem')})"
 
+      - name: Smoke test — @geoalgeria/banques (ESM)
+        working-directory: packages/banques
+        run: node --input-type=module -e "import('./index.js').then(m=>{const b=m.banks(),br=m.branches(); if(!Array.isArray(b)||!b.length||!Array.isArray(br)||!br.length){console.error('empty data');process.exit(1)} console.log('banques:',b.length,'banks,',br.length,'branches')})"
+
       - name: Smoke test — @geoalgeria/telecom (ESM)
         working-directory: packages/telecom
         run: node --input-type=module -e "import('./index.js').then(m=>{const s=m.coverage(); if(!Array.isArray(s)||!s.length){console.error('empty data');process.exit(1)} console.log('telecom:',s.length,'5G sites,',m.metadata().coverage['5G'].wilayas_covered,'wilayas')})"
