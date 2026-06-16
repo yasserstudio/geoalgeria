@@ -32,12 +32,13 @@ write it as a **short, sober title**, and put the detail in the lines below.
 Rules:
 - **First bullet is the title — keep it short.** Aim for **≤ ~50 characters / ~8
   words**, no trailing period. It states *what changed*, not a pitch:
-  "Branch locations for all 21 licensed banks" — not "Every licensed bank in
-  Algeria now has branch locations, all 21!". It is used **verbatim** as:
-  - the GitHub Release **title** (set by `release.yml`; the package tag is
-    **never** repeated — it's already in the release chip + URL),
-  - the **Discussion** title, and
-  - the social hook.
+  "Branches for all 21 licensed banks" — not "Every licensed bank in Algeria now
+  has branch locations, all 21!".
+- **Titles render as `<version> - <title>`.** `release.yml` and the announcer
+  prepend the version automatically, so a GitHub Release & Discussion title looks
+  like **`1.1.0 - Branches for all 21 licensed banks`**. The package **name/scope**
+  is never in the title — it's already in the release chip + URL. Used verbatim as
+  the Release title, the Discussion title, and (without the version) the social hook.
 - **Tone: sober and factual.** No emoji, no hype, no marketing CTAs ("ship fast",
   "🇩🇿", "drop it into your app"). This is a data project — state the facts, cite
   the source, link npm + the release. Let the numbers do the selling.

@@ -111,7 +111,7 @@ jobs:
               }
             }' \
             -f repoId="$REPO_ID" -f catId="$CAT_ID" \
-            -f title="$HEADLINE" \
+            -f title="${TAG##*@} - $HEADLINE" \
             -F body=@.release-notes/announcement.md \
             --jq '.data.createDiscussion.discussion.url'
 

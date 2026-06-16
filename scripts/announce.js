@@ -180,7 +180,7 @@ const bulletList = (bullets.length > 1 ? bullets.slice(1) : bullets)
 // Title is the headline alone — never the package tag (it's already in the
 // release chip + URL). The tag goes on its own "Release" line. See
 // .github/RELEASE_TEMPLATE.md.
-const discussion = `## ${headline}
+const discussion = `## ${version} - ${headline}
 
 ${name === "geoalgeria" ? "**GeoAlgeria** — the open dataset for Algeria. " : `**${name}** (${pkg.label}). `}Release \`${tag}\` — this ${bump} update:
 
