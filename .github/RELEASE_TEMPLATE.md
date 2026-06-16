@@ -21,22 +21,26 @@ So the **changeset note you write is the release note**. Write it well once.
 When you run `pnpm changeset`, structure the note like this:
 
 ```
-- <Headline: one line, what a user gains. This FIRST BULLET is the headline.>
-- <More concrete changes: counts, fields, formats. Lead with the number.>
+- <Title: short, factual, what changed. ≤ ~50 chars / ~8 words. No period. THIS is the title.>
+- <Detail: the concrete facts — counts, fields, formats. Lead with the number.>
 - Source: <JORA n° XX / Algérie Poste / ONS / Interior Ministry>   ← for data changes
 ```
 
 With `pnpm changeset`, the first line of your summary becomes this first bullet —
-so write that line as the headline.
+write it as a **short, sober title**, and put the detail in the lines below.
 
 Rules:
-- **First bullet is the headline.** Keep it short and specific — "Adds 412 ATM
-  coordinates" beats "Update data". It is used **verbatim in three places**:
-  - the GitHub Release **title** → the `<headline>` alone, set automatically by
-    `release.yml` (the package tag is **never** repeated in the title — it's
-    already in the release chip and URL),
+- **First bullet is the title — keep it short.** Aim for **≤ ~50 characters / ~8
+  words**, no trailing period. It states *what changed*, not a pitch:
+  "Branch locations for all 21 licensed banks" — not "Every licensed bank in
+  Algeria now has branch locations, all 21!". It is used **verbatim** as:
+  - the GitHub Release **title** (set by `release.yml`; the package tag is
+    **never** repeated — it's already in the release chip + URL),
   - the **Discussion** title, and
   - the social hook.
+- **Tone: sober and factual.** No emoji, no hype, no marketing CTAs ("ship fast",
+  "🇩🇿", "drop it into your app"). This is a data project — state the facts, cite
+  the source, link npm + the release. Let the numbers do the selling.
 - **Always cite a source** for data changes (it's also the contribution rule).
 - **Bump:** `major` = breaking schema · `minor` = new data/format/package ·
   `patch` = corrections to existing records. The bump gates auto-announce
@@ -47,12 +51,13 @@ Rules:
 ## Worked example (geoalgeria@1.1.0)
 
 ```
-- Real Algérie Poste postal codes for ~1,440 communes (previously only ~88 matched reality).
+- Real postal codes for ~1,440 communes
+- Corrected from Algérie Poste data (previously only ~88 matched reality).
 - Added 3,908 post offices and 2,026 ATMs (codes, bilingual names, coordinates) in JSON, CSV, GeoJSON.
 - Added postOffices / atms / getPostOfficesByCommune() JS API + TypeScript types.
 - Source: Algérie Poste (baridimap.poste.dz).
 ```
 
-That section becomes a GitHub Release titled
-*"Real Algérie Poste postal codes for ~1,440 communes"* (tag `geoalgeria@1.1.0`),
-a matching Discussion, and X/LinkedIn drafts — no extra work.
+That section becomes a GitHub Release titled *"Real postal codes for ~1,440
+communes"* (tag `geoalgeria@1.1.0`), a matching Discussion, and X/LinkedIn drafts
+— no extra work.

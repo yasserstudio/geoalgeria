@@ -192,53 +192,36 @@ ${totals ? `Current totals: **${totals}**.\n\n` : ""}Install / update:
 ${install}@latest
 \`\`\`
 
-${bundles} bundles are attached to the [release](${releaseUrl}). Found something off? [Open an issue](${REPO}/issues/new/choose) — data fixes ship fast.
+${bundles} bundles are attached to the [release](${releaseUrl}). Issues and corrections: [open an issue](${REPO}/issues/new/choose).
 
-npm → ${npmUrl} · release → ${releaseUrl} 🇩🇿
+npm: ${npmUrl} · Release: ${releaseUrl}
 `;
 
-const xThread = `# X / Twitter — ${tag}
+const xThread = `# X / Twitter — ${tag} (single post, sober — edit before posting)
 
-**1/**
-${name === "geoalgeria" ? "GeoAlgeria" : name} ${version} is out. ${headline}
+${name === "geoalgeria" ? "GeoAlgeria" : name} ${version}: ${headline}.${bullets[1] ? "\n" + plain(bullets[1]) : ""}
 
-🧵
-
-**2/ what changed**
-${bullets
-  .slice(0, 4)
-  .map((b) => `• ${plain(b)}`)
-  .join("\n")}
-
-**3/ get it**
-\`${install}@latest\`
-${totals ? `Now: ${totals}.\n` : ""}${bundles} on the release. MIT.
-
-${npmUrl} · ${releaseUrl} 🇩🇿
+${npmUrl}
 `;
 
-const linkedin = `# LinkedIn — ${tag}
+const linkedin = `# LinkedIn — ${tag} (sober — edit before posting)
 
-> Put the link in the FIRST COMMENT, not the body (LinkedIn suppresses reach on posts with external links). First line is the hook.
+Note: put the link in the first comment (LinkedIn suppresses reach on posts with external links); the first line is the hook.
 
-New release of ${name === "geoalgeria" ? "GeoAlgeria, the open dataset for Algeria" : name}: ${headline}
+${name === "geoalgeria" ? "GeoAlgeria, the open dataset for Algeria" : name} ${version}: ${headline}.
 
-What's new in ${version}:
+What changed:
 ${bullets
   .slice(0, 5)
-  .map((b) => `• ${plain(b)}`)
+  .map((b) => `- ${plain(b)}`)
   .join("\n")}
 
-${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats} — one \`${install}\`, MIT, validated on every commit.
+${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats} — one \`${install}\`, MIT, validated on every commit. Corrections and use cases welcome.
 
-If you build anything for the Algerian market, your corrections and use cases are welcome.
+#OpenData #Algeria
 
-🔗 npm + the release link in the comments.
-
-#OpenData #Algeria #OpenSource
-
-**First comment (link):**
-npm → ${npmUrl} · release → ${releaseUrl}
+First comment (link):
+npm: ${npmUrl} · Release: ${releaseUrl}
 `;
 
 const outDir = process.env.GEOALGERIA_OUT || ".release-notes";
