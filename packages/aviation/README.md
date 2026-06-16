@@ -117,3 +117,7 @@ dataset (the flagship ships centroids, not boundary polygons).
 Code is [MIT](LICENSE). The underlying data is © **ANAC**, redistributed for reference
 and to power [GeoAlgeria](https://geoalgeria.com). Verify against ANAC for authoritative,
 real-time information.
+
+---
+
+Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

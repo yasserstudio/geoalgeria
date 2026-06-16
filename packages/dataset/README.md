@@ -237,3 +237,7 @@ GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postau
 MIT — free for personal and commercial use.
 
 Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
+
+---
+
+Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

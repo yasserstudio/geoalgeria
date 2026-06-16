@@ -126,6 +126,6 @@ GeoAlgeria is an **independent project — not affiliated with or endorsed by** 
 
 If GeoAlgeria saved you from copy-pasting wilayas out of a PDF, **[give it a ⭐](https://github.com/yasserstudio/geoalgeria)** — it helps the next Algerian developer find clean data.
 
-Made by [Yasser's Studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com)
+Made by [Yasser's Studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
 
 </div>

@@ -107,3 +107,7 @@ Full terms: see the project [**DISCLAIMER**](https://github.com/yasserstudio/geo
 (regulatory listings + each institution's public locator), redistributed for
 reference; attribution appreciated, and you remain responsible for the terms of the
 original sources.
+
+---
+
+Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

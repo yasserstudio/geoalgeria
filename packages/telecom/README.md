@@ -129,3 +129,7 @@ Code is [MIT](LICENSE). The underlying data is © the respective operators
 [GeoAlgeria](https://geoalgeria.com). 5G rollout is ongoing — each rebuild
 reflects whatever the operators' maps currently show; verify against the
 operators for authoritative, real-time information.
+
+---
+
+Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
