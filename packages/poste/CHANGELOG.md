@@ -4,13 +4,13 @@
 
 ### Minor Changes
 
-- a113429: Bundle TypeScript type definitions. `PostOffice`, `Atm`, and `Metadata` interfaces plus typed loaders (`postOffices()`, `atms()`, `metadata()`) now ship with the package and resolve automatically via the `types` export condition. No runtime or data changes.
+- Bundle TypeScript type definitions. `PostOffice`, `Atm`, and `Metadata` interfaces plus typed loaders (`postOffices()`, `atms()`, `metadata()`) now ship with the package and resolve automatically via the `types` export condition. No runtime or data changes.
 
 ## 1.0.2
 
 ### Patch Changes
 
-- 0ddf916: Docs: value-led READMEs, official source citation for the 69-wilaya reform (Law n° 26-06, Journal Officiel n° 25 of 5 April 2026), and fixed post-restructure links/badges. No data changes.
+- Docs: value-led READMEs, official source citation for the 69-wilaya reform (Law n° 26-06, Journal Officiel n° 25 of 5 April 2026), and fixed post-restructure links/badges. No data changes.
 
 ## 1.0.1
 
