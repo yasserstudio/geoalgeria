@@ -35,7 +35,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (by id or acron
 | --- | --- | --- |
 | Banks | **21** | 7 public · 14 foreign-owned — RIB bank code, name FR/AR, ownership + parent, country, SWIFT/BIC, HQ |
 | Financial institutions | **8** | leasing, refinancing & mutual-credit entities (non-deposit) |
-| Branch locations | **1,702** | 19 banks — name, address, phone, wilaya, coordinates; 1,213 geocoded; **67/69 wilayas** |
+| Branch locations | **1,704** | **all 21 banks** — name, address, phone, wilaya, coordinates; 1,213 geocoded; **67/69 wilayas** |
 
 Every record carries `wilaya_code` (head office) linked to the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -59,7 +59,7 @@ Every record carries `wilaya_code` (head office) linked to the
   its 63 branches are captured via a headless browser and refreshed manually;
   **Arab Bank** publishes only city-level points (name + coordinates, no address).
   **BDL** and **Trust Bank** come from each bank's published Google My Maps (KML);
-  **Citibank** is its single Algiers office.
+  **Citibank**, **HSBC** and **Ziraat** are their single Algiers offices.
 - **`bank_code`** is the 3-digit RIB _code banque_ (IBAN positions 5–7), verified
   against independent code-banque tables — no single official public register
   exists. BNH and Ziraat (both newly licensed) have no published code yet →
@@ -67,8 +67,8 @@ Every record carries `wilaya_code` (head office) linked to the
 
 ## Roadmap (this package)
 
-The registry is layer one; **branch locations** now cover **19 of 21 banks /
-1,702 branches** (67/69 wilayas). Each bank publishes its network through a
+The registry is layer one; **branch locations** now cover **all 21 banks /
+1,704 branches** (67/69 wilayas). Each bank publishes its network through a
 different locator — Joomla `com_mymaplocations`, WordPress store-locator / map
 plugins, a Vite SPA bundle, ASP.NET/TYPO3 pages, inline map JSON, Google My Maps
 KML — so banks are added one extractor at a time (see `scripts/fetch.mjs`).
@@ -77,8 +77,6 @@ address); where a source's coordinates disagree with the branch's stated wilaya,
 the coordinates are dropped rather than shipped wrong. Still to come behind the
 same `@geoalgeria/banques`:
 
-- **The last two banks** — HSBC and Ziraat, each a single corporate / newly-
-  licensed office in Algiers.
 - **ATMs (DAB/GAB)** — where individual banks publish locators; honest about
   completeness, since Algeria has no single public ATM directory.
 

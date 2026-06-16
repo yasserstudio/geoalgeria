@@ -494,6 +494,8 @@ const SOURCES = [
   { bank_id: "bdl", kind: "gmymaps", kml: "bdl.kml" },
   { bank_id: "trustbank", kind: "kmldesc", kml: "trustbank.kml" },
   { bank_id: "citibank", kind: "seed", seed: "citibank.json" },
+  { bank_id: "ziraat", kind: "seed", seed: "ziraat.json" },
+  { bank_id: "hsbc", kind: "seed", seed: "hsbc.json" },
 ];
 
 const all = [];
