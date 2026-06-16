@@ -232,7 +232,9 @@ writeFileSync(join(outDir, "linkedin.md"), linkedin);
 // Emit machine-readable bits for the workflow (title, bump, whether to announce).
 writeFileSync(
   join(outDir, "meta.json"),
-  JSON.stringify({ tag, name, version, bump, headline, announceWorthy: bump !== "patch" }, null, 2),
+  // Never auto-announce when no CHANGELOG section matched (headline would be the
+  // "See the full changelog" fallback) — avoids posting an empty/junk Discussion.
+  JSON.stringify({ tag, name, version, bump, headline, announceWorthy: bump !== "patch" && section.trim().length > 0 }, null, 2),
 );
 
 console.log(`Announce kit for ${tag} (${bump}) written to ${outDir}/`);
