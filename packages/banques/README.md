@@ -87,7 +87,23 @@ same `@geoalgeria/banques`:
 [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases). Loaders and
 record shapes are fully **typed**.
 
+## Disclaimer
+
+`@geoalgeria/banques` is an **independent** open dataset. It is **not affiliated
+with, endorsed by, or connected to** the Banque d'Algérie or any bank or
+institution listed; their names, acronyms, and **SWIFT/BIC** codes belong to their
+respective owners and are used for identification only. The data is compiled from
+public sources and provided **"as is", without warranty** — it may be incomplete or
+outdated. **Verify `bank_code` / SWIFT-BIC and branch details against the official
+source before any financial, payment, KYC, or compliance use.** Nothing here is
+financial or legal advice. To report an error or request a correction/removal,
+[open an issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
+
+Full terms: see the project [**DISCLAIMER**](https://github.com/yasserstudio/geoalgeria/blob/main/DISCLAIMER.md).
+
 ## License
 
-MIT for the package. The underlying facts are public regulatory/registry data,
-redistributed for reference.
+**Code** (loaders, types): [MIT](LICENSE). **Data**: public factual data
+(regulatory listings + each institution's public locator), redistributed for
+reference; attribution appreciated, and you remain responsible for the terms of the
+original sources.

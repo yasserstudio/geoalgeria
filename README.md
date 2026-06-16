@@ -114,9 +114,11 @@ Semantic versioning per package, automated with [Changesets](https://github.com/
 
 GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio) — it funds keeping the data current and expanding the coverage.
 
-## License
+## License & disclaimer
 
-[MIT](LICENSE). Postal data is © [Algérie Poste](https://baridimap.poste.dz), redistributed for reference — verify against the source for authoritative, real-time information.
+**Code:** [MIT](LICENSE). **Data:** compiled from public official sources (the *Journal Officiel*, Algérie Poste, ANEM, ANAC, each operator's/institution's public site) and redistributed for reference.
+
+GeoAlgeria is an **independent project — not affiliated with or endorsed by** any government body, regulator, operator, or institution it references; their names and marks belong to their respective owners. The data is provided **"as is", without warranty — verify against the official source** before relying on it, especially for financial, payment, KYC, or compliance use. Full terms: **[DISCLAIMER](DISCLAIMER.md)**.
 
 ---
 
