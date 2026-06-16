@@ -58,8 +58,11 @@ then:
 - **stages** each package whose version is new (`npm stage publish`), skipping
   anything already published *or already staged* — re-runs during the approval
   window are safe; and
-- cuts a **GitHub Release** `name@version` per package with the data bundle and
-  notes pulled from that version's `CHANGELOG.md` section.
+- cuts a **GitHub Release** `name@version` for each **minor/major** version, with
+  the data bundle and notes from that version's `CHANGELOG.md` section. **Patches
+  are skipped** — the npm version and the repo's committed data already cover
+  docs/corrections, so they stay out of the Releases feed (delete any stray ones
+  by hand). The npm publish itself still happens for every version.
 
 The new GitHub Release fires the **Announce** workflow (see below).
 

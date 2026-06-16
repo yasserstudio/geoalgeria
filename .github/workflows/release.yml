@@ -97,6 +97,14 @@ jobs:
               grab { print }
             ' "$pkg/CHANGELOG.md" > "$NOTES" || true
 
+            # Patches (docs/corrections) don't get a GitHub Release — the npm version
+            # and the repo's committed data cover them, and the feed stays meaningful.
+            # Minor/major (new data/format/package) always get a release + bundle.
+            if grep -q '^### Patch Changes' "$NOTES"; then
+              echo "skip release: $TAG is a patch — no GitHub Release"
+              continue
+            fi
+
             if [ -s "$NOTES" ]; then
               # Title = "<version> - <headline>" (the headline is the first bullet).
               # The package name/scope is never in the title — it's already in the
