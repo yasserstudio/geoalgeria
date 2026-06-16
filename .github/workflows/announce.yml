@@ -43,6 +43,13 @@ jobs:
           RAW_TAG: ${{ github.event.release.tag_name || inputs.tag }}
         run: |
           set -euo pipefail
+          # Umbrella project tags (vX.Y.Z) are cut manually and announced by hand —
+          # they aren't a single npm package, so the package announcer skips them.
+          if printf '%s' "$RAW_TAG" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Umbrella project tag $RAW_TAG — not a package release; skipping."
+            printf 'skip=true\n' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           # Fail closed on anything that isn't one of our package tags.
           if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi|mobilis|banques|telecom|aviation))@[0-9]+\.[0-9]+\.[0-9]+$'; then
             echo "::error::Refusing to announce malformed tag: $RAW_TAG"
@@ -51,6 +58,7 @@ jobs:
           printf 'tag=%s\n' "$RAW_TAG" >> "$GITHUB_OUTPUT"
 
       - name: Build announce kit
+        if: steps.tag.outputs.skip != 'true'
         env:
           GEOALGERIA_TAG: ${{ steps.tag.outputs.tag }}
           GEOALGERIA_OUT: .release-notes
@@ -58,6 +66,7 @@ jobs:
 
       - name: Read meta
         id: meta
+        if: steps.tag.outputs.skip != 'true'
         run: |
           set -euo pipefail
           printf 'worthy=%s\n' "$(jq -r .announceWorthy .release-notes/meta.json)" >> "$GITHUB_OUTPUT"
@@ -69,7 +78,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
 
       - name: Post Announcements discussion (minor/major only)
-        if: steps.meta.outputs.worthy == 'true'
+        if: steps.tag.outputs.skip != 'true' && steps.meta.outputs.worthy == 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ steps.tag.outputs.tag }}
@@ -107,7 +116,7 @@ jobs:
             --jq '.data.createDiscussion.discussion.url'
 
       - name: Attach social drafts to the release
-        if: github.event_name == 'release'
+        if: steps.tag.outputs.skip != 'true' && github.event_name == 'release'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ steps.tag.outputs.tag }}
@@ -117,6 +126,7 @@ jobs:
             || echo "::warning::Could not attach drafts to $TAG (release immutable?) — they're in the job summary."
 
       - name: Job summary
+        if: steps.tag.outputs.skip != 'true'
         env:
           TAG: ${{ steps.tag.outputs.tag }}
           WORTHY: ${{ steps.meta.outputs.worthy }}
