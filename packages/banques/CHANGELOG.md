@@ -4,19 +4,21 @@
 
 ### Patch Changes
 
-- Credit Yasser's Studio in the package README (Made by · LinkedIn · X · email).
+- Author credit in README
+- Added a "Made by Yasser's Studio · LinkedIn · X · email" footer to the package README.
 
 ## 1.1.1
 
 ### Patch Changes
 
-- Add a clear disclaimer and a code-vs-data licensing note to the package — independent / not affiliated with the Banque d'Algérie or any bank, no warranty, verify `bank_code`/SWIFT-BIC against the official source before financial use, plus a trademark and corrections/takedown notice.
+- Disclaimer & licensing
+- Added a disclaimer (independent / not affiliated, no warranty, verify against the official source before financial use), a trademark and corrections/takedown notice, and a code-vs-data license split.
 
 ## 1.1.0
 
 ### Minor Changes
 
-- Every licensed bank in Algeria now has branch locations — all 21.
+- Branches for all 21 licensed banks
 - Added the last two banks (HSBC, Ziraat) for full 21/21 coverage: 1,704 branches across 67/69 wilayas (1,213 geocoded) — RIB codes, SWIFT/BIC, ownership + parent group, addresses & coordinates, as JSON, CSV, GeoJSON.
 - Source: each bank's official branch locator + the Banque d'Algérie agréé list (JO n° 9, 6 February 2026).
 
