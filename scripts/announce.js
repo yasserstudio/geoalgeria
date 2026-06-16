@@ -25,6 +25,8 @@ const PACKAGES = {
   "@geoalgeria/emploi": { dir: "packages/emploi", label: "employment agencies" },
   "@geoalgeria/mobilis": { dir: "packages/mobilis", label: "Mobilis agencies & points of sale" },
   "@geoalgeria/banques": { dir: "packages/banques", label: "Algeria's licensed banks, institutions & branches" },
+  "@geoalgeria/telecom": { dir: "packages/telecom", label: "Algeria's telecom operators' network sites" },
+  "@geoalgeria/aviation": { dir: "packages/aviation", label: "Algeria's civil airports" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
@@ -164,6 +166,9 @@ const totals = name === "geoalgeria" ? datasetTotals() : null;
 const npmUrl = `https://www.npmjs.com/package/${name}`;
 const releaseUrl = `${REPO}/releases/tag/${encodeURIComponent(tag)}`;
 const install = name === "geoalgeria" ? `npm install geoalgeria` : `npm install ${name}`;
+// Only the flagship dataset ships a SQL dump; the scoped data packages ship CSV + GeoJSON.
+const bundles = name === "geoalgeria" ? "CSV / GeoJSON / SQL" : "CSV and GeoJSON";
+const allFormats = name === "geoalgeria" ? "JSON/CSV/GeoJSON/SQL/TypeScript" : "JSON/CSV/GeoJSON/TypeScript";
 // The headline IS bullets[0] and now leads the body as the `##` title, so don't
 // repeat it in the list below (keep it only if it's the sole bullet).
 const bulletList = (bullets.length > 1 ? bullets.slice(1) : bullets)
@@ -185,7 +190,7 @@ ${totals ? `Current totals: **${totals}**.\n\n` : ""}Install / update:
 ${install}@latest
 \`\`\`
 
-CSV / GeoJSON / SQL bundles are attached to the [release](${releaseUrl}). Found something off? [Open an issue](${REPO}/issues/new/choose) — data fixes ship fast.
+${bundles} bundles are attached to the [release](${releaseUrl}). Found something off? [Open an issue](${REPO}/issues/new/choose) — data fixes ship fast.
 
 npm → ${npmUrl} · release → ${releaseUrl} 🇩🇿
 `;
@@ -205,7 +210,7 @@ ${bullets
 
 **3/ get it**
 \`${install}@latest\`
-${totals ? `Now: ${totals}.\n` : ""}CSV/GeoJSON/SQL on the release. MIT.
+${totals ? `Now: ${totals}.\n` : ""}${bundles} on the release. MIT.
 
 ${npmUrl} · ${releaseUrl} 🇩🇿
 `;
@@ -222,7 +227,7 @@ ${bullets
   .map((b) => `• ${plain(b)}`)
   .join("\n")}
 
-${totals ? `It now covers ${totals}, ` : ""}shipped as JSON/CSV/GeoJSON/SQL/TypeScript — one \`${install}\`, MIT, validated on every commit.
+${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats} — one \`${install}\`, MIT, validated on every commit.
 
 If you build anything for the Algerian market, your corrections and use cases are welcome.
 

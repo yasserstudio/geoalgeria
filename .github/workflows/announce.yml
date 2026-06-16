@@ -44,7 +44,7 @@ jobs:
         run: |
           set -euo pipefail
           # Fail closed on anything that isn't one of our package tags.
-          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi|mobilis|banques))@[0-9]+\.[0-9]+\.[0-9]+$'; then
+          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi|mobilis|banques|telecom|aviation))@[0-9]+\.[0-9]+\.[0-9]+$'; then
             echo "::error::Refusing to announce malformed tag: $RAW_TAG"
             exit 1
           fi
@@ -85,10 +85,12 @@ jobs:
           fi
           # Idempotency: one announcement per tag. Re-runs and workflow_dispatch
           # must not post a second public Discussion.
+          # The title is headline-only (no tag), so match the tag in title+body —
+          # the body always prints "Release `<tag>`". Keeps one announcement per tag.
           EXISTING=$(gh api graphql -f catId="$CAT_ID" -f query='
             query($catId:ID!){repository(owner:"yasserstudio",name:"geoalgeria"){
-              discussions(first:50,categoryId:$catId){nodes{title}}}}' \
-            --jq '.data.repository.discussions.nodes[].title' | grep -F "$TAG" || true)
+              discussions(first:50,categoryId:$catId){nodes{title body}}}}' \
+            --jq '.data.repository.discussions.nodes[] | .title + " " + .body' | grep -F "$TAG" || true)
           if [ -n "$EXISTING" ]; then
             echo "Announcement for $TAG already exists — skipping."
             exit 0
@@ -100,7 +102,7 @@ jobs:
               }
             }' \
             -f repoId="$REPO_ID" -f catId="$CAT_ID" \
-            -f title="$TAG — $HEADLINE" \
+            -f title="$HEADLINE" \
             -F body=@.release-notes/announcement.md \
             --jq '.data.createDiscussion.discussion.url'
 
