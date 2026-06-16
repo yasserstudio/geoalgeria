@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- b9354da: Credit Yasser's Studio in the package README (Made by · LinkedIn · X · email).
+- Credit Yasser's Studio in the package README (Made by · LinkedIn · X · email).
 
 ## 1.1.1
 
