@@ -1,8 +1,9 @@
 <div align="center">
 
-<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="30"></picture></a>
-
 # GeoAlgeria
+
+<sub>by</sub><br>
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="28"></picture></a>
 
 **The open dataset for Algeria — install it, don't scrape it.**
 
