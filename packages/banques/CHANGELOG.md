@@ -4,7 +4,9 @@
 
 ### Minor Changes
 
-- 5739221: Every licensed bank in Algeria now ships branch locations — all 21. Added the last two (HSBC and Ziraat), bringing the dataset to 1,704 branches across 67/69 wilayas.
+- Every licensed bank in Algeria now has branch locations — all 21.
+- Added the last two banks (HSBC, Ziraat) for full 21/21 coverage: 1,704 branches across 67/69 wilayas (1,213 geocoded) — RIB codes, SWIFT/BIC, ownership + parent group, addresses & coordinates, as JSON, CSV, GeoJSON.
+- Source: each bank's official branch locator + the Banque d'Algérie agréé list (JO n° 9, 6 February 2026).
 
 ## 1.0.0
 
