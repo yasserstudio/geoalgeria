@@ -89,24 +89,23 @@ pnpm purge-cdn
 
 The per-package versions above cover npm. **GeoAlgeria as a whole** also has its
 own SemVer — `vX.Y.Z` — tracked in the root [`CHANGELOG.md`](CHANGELOG.md) and root
-`package.json`, and cut as a git tag + a GitHub Release titled "GeoAlgeria X.Y.Z"
-that summarises the state of every dataset at that point. It's **manual** and
-**occasional** — bump at milestones (a new package, a major refresh, a reform),
-not on every package release. It's independent of the npm package versions.
+`package.json`, and marked with a **git tag**. It is intentionally **not** a GitHub
+Release: the Releases feed is per-package, and an umbrella release there collides
+with and clutters the package releases (a project `1.0.0` sitting next to a package
+`1.0.0`). The project version lives in the **tag + root CHANGELOG** instead. It's
+**manual** and **occasional** — bump at milestones (a new package, a major refresh,
+a reform), independent of the npm package versions.
 
 To cut one:
 
 ```bash
 # 1. bump root package.json "version" + add a CHANGELOG.md section (counts across all packages)
-# 2. tag + release
+# 2. tag it
 git tag v1.1.0 && git push origin v1.1.0
-gh release create v1.1.0 --title "GeoAlgeria 1.1.0" --notes-file <notes>
 ```
 
 Bumps: **major** = breaking project change (package removed/renamed, schema break)
 · **minor** = new package or substantial data expansion · **patch** = corrections.
-The Announce workflow ignores `vX.Y.Z` tags (not a single package), so announce
-these by hand if you want a Discussion.
 
 ## Release notes
 
