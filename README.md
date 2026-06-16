@@ -1,5 +1,7 @@
 <div align="center">
 
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="30"></picture></a>
+
 # GeoAlgeria
 
 **The open dataset for Algeria — install it, don't scrape it.**
@@ -125,6 +127,8 @@ GeoAlgeria is an **independent project — not affiliated with or endorsed by** 
 <div align="center">
 
 If GeoAlgeria saved you from copy-pasting wilayas out of a PDF, **[give it a ⭐](https://github.com/yasserstudio/geoalgeria)** — it helps the next Algerian developer find clean data.
+
+<a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="44"></picture></a>
 
 Made by [Yasser's Studio](https://yasser.studio) · [geoalgeria.com](https://geoalgeria.com) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
 
