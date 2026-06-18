@@ -45,6 +45,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **5G coverage** | 1,681 | Djezzy + Mobilis + Ooredoo 5G sites — [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 33 | ANAC: names, ICAO codes, contacts, coordinates — [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates — [`@geoalgeria/banques`](packages/banques) |
+| **Delivery carriers** | 411 | 16-carrier registry + 411 geocoded stop-desks across 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -85,6 +86,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/telecom`](packages/telecom) | [`@geoalgeria/telecom`](https://www.npmjs.com/package/@geoalgeria/telecom) | Cross-operator 5G coverage (Djezzy + Mobilis + Ooredoo) |
 | [`packages/aviation`](packages/aviation) | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | Civil airports from ANAC — names, ICAO codes, coordinates |
 | [`packages/banques`](packages/banques) | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | All 21 licensed banks + financial institutions & 1,704 branches (RIB, SWIFT, ownership, coordinates) |
+| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carrier registry + 411 geocoded stop-desks & per-carrier coverage (Yalidine, Guepex, Anderson, Noest, Maystro) |
 
 ## Use without npm
 
