@@ -106,14 +106,14 @@ jobs:
             fi
 
             if [ -s "$NOTES" ]; then
-              # Title = "<version> - <headline>" (the headline is the first bullet).
-              # The package name/scope is never in the title — it's already in the
-              # release chip + URL. (drop the list marker + changeset hash + bold.)
+              # Title = the headline (the first bullet) verbatim. The version and
+              # package name/scope are never in the title — both are already in the
+              # release tag chip + URL. (drop the list marker + changeset hash + bold.)
               # See RELEASE_TEMPLATE.md.
               HEADLINE=$(grep -m1 -E '^[-*][[:space:]]' "$NOTES" \
                 | sed -E 's/^[-*][[:space:]]+//; s/^[0-9a-f]{7,}:[[:space:]]*//; s/\*\*//g')
-              TITLE="$VER"
-              [ -n "$HEADLINE" ] && TITLE="$VER - $HEADLINE"
+              TITLE="$TAG"
+              [ -n "$HEADLINE" ] && TITLE="$HEADLINE"
               gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
             else
               echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
