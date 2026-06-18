@@ -34,11 +34,11 @@ Rules:
   words**, no trailing period. It states *what changed*, not a pitch:
   "Branches for all 21 licensed banks" — not "Every licensed bank in Algeria now
   has branch locations, all 21!".
-- **Titles render as `<version> - <title>`.** `release.yml` and the announcer
-  prepend the version automatically, so a GitHub Release & Discussion title looks
-  like **`1.1.0 - Branches for all 21 licensed banks`**. The package **name/scope**
-  is never in the title — it's already in the release chip + URL. Used verbatim as
-  the Release title, the Discussion title, and (without the version) the social hook.
+- **Titles render as just the `<title>`.** `release.yml` and the announcer use the
+  first bullet verbatim, so a GitHub Release & Discussion title looks like
+  **`Branches for all 21 licensed banks`**. The **version and package name/scope**
+  are never in the title — they're already in the release tag chip + URL (which is
+  why the title alone must say what changed). The same title is also the social hook.
 - **Tone: sober and factual.** No emoji, no hype, no marketing CTAs ("ship fast",
   "🇩🇿", "drop it into your app"). This is a data project — state the facts, cite
   the source, link npm + the release. Let the numbers do the selling.
