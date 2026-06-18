@@ -1,0 +1,18 @@
+{
+  "source": "Yalidine + Guepex federated stop-desk relay plus the Anderson, Noest and Maystro agency networks; carrier registry compiled by GeoAlgeria",
+  "origin_stopdesks": [
+    "https://yalidine-express.com.dz/nos-agences/",
+    "https://www.guepex.dz/public/data/agences.json",
+    "https://anderson-ecommerce.com/",
+    "https://noest-dz.com/",
+    "https://maystro-delivery.com/Coverage.html"
+  ],
+  "carriers_source": "CourierDZ (github.com/PiteurStudio/CourierDZ) + carrier websites + GeoAlgeria recon",
+  "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
+  "carriers": 16,
+  "stopdesks": 411,
+  "coverage": 9,
+  "stopdesks_geocoded": 411,
+  "wilayas_covered": 61,
+  "generated_at": "2026-06-18"
+}

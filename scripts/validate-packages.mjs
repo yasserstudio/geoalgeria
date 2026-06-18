@@ -372,9 +372,113 @@ function validateTelecom() {
   );
 }
 
-// Flat (table-driven) packages plus the bespoke telecom validator, in run order.
+// livraison has three datasets of different shapes: only `stopdesks` is geocoded and
+// carries wilaya_code; `carriers` (registry) and `coverage` (per-carrier presence) have
+// no wilaya_code, so they can't use the wilaya_code-enforcing table validator. Dedicated
+// validator, sharing the same fail()/readJson/csvRowCount/hasCoord helpers.
+function validateLivraison() {
+  const dataDir = join(ROOT, "packages", "livraison", "data");
+  const inAlgeria = (lat, lng) =>
+    Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
+
+  let meta;
+  try {
+    meta = readJson(join(dataDir, "metadata.json"));
+  } catch (e) {
+    return fail(`livraison/metadata.json: cannot read — ${e.message}`);
+  }
+
+  // carriers (registry — no coordinates, no wilaya_code)
+  let carriers = [];
+  try {
+    carriers = readJson(join(dataDir, "carriers.json"));
+  } catch (e) {
+    fail(`livraison/carriers.json: invalid JSON — ${e.message}`);
+  }
+  if (!Array.isArray(carriers) || !carriers.length) fail("livraison/carriers.json: expected a non-empty array");
+  if (meta.carriers !== carriers.length) {
+    fail(`livraison/carriers.json: count ${carriers.length} ≠ metadata.carriers ${meta.carriers}`);
+  }
+  const carrierIds = new Set(carriers.map((c) => c.id));
+  if (carrierIds.size !== carriers.length) fail("livraison/carriers.json: duplicate carrier id(s)");
+  if (carriers.some((c) => !c.id || !c.name)) fail("livraison/carriers.json: record(s) missing id/name");
+  const carriersCsv = join(dataDir, "csv", "carriers.csv");
+  if (!existsSync(carriersCsv)) fail("livraison: missing csv/carriers.csv");
+  else if (csvRowCount(carriersCsv) !== carriers.length) fail(`livraison: carriers CSV rows ≠ JSON ${carriers.length}`);
+
+  // stopdesks (geocoded points, wilaya_code required)
+  let desks = [];
+  try {
+    desks = readJson(join(dataDir, "stopdesks.json"));
+  } catch (e) {
+    fail(`livraison/stopdesks.json: invalid JSON — ${e.message}`);
+  }
+  if (!Array.isArray(desks) || !desks.length) fail("livraison/stopdesks.json: expected a non-empty array");
+  if (meta.stopdesks !== desks.length) {
+    fail(`livraison/stopdesks.json: count ${desks.length} ≠ metadata.stopdesks ${meta.stopdesks}`);
+  }
+  const deskIds = new Set(desks.map((s) => s.id));
+  if (deskIds.size !== desks.length) fail(`livraison/stopdesks.json: ${desks.length - deskIds.size} duplicate id(s)`);
+  let badWilaya = 0, badCoord = 0, missing = 0, badOp = 0;
+  for (const s of desks) {
+    const w = Number(s.wilaya_code);
+    if (!/^\d+$/.test(String(s.wilaya_code)) || w < 1 || w > 69) badWilaya++;
+    if (!inAlgeria(s.lat, s.lng)) badCoord++;
+    for (const f of ["id", "operator", "name", "wilaya_code"]) {
+      if (s[f] === undefined || s[f] === null || s[f] === "") missing++;
+    }
+    if (!carrierIds.has(s.operator)) badOp++;
+  }
+  if (badWilaya) fail(`livraison: ${badWilaya} stop-desk(s) with wilaya_code outside [1,69]`);
+  if (badCoord) fail(`livraison: ${badCoord} stop-desk(s) with coordinates outside Algeria`);
+  if (missing) fail(`livraison: ${missing} missing required stop-desk field(s)`);
+  if (badOp) fail(`livraison: ${badOp} stop-desk(s) with an operator absent from carriers.json`);
+  const deskCsv = join(dataDir, "csv", "stopdesks.csv");
+  if (!existsSync(deskCsv)) fail("livraison: missing csv/stopdesks.csv");
+  else if (csvRowCount(deskCsv) !== desks.length) fail(`livraison: stopdesks CSV rows ≠ JSON ${desks.length}`);
+  const geo = join(dataDir, "geojson", "stopdesks.geojson");
+  const withCoord = desks.filter(hasCoord).length;
+  if (!existsSync(geo)) fail("livraison: missing geojson/stopdesks.geojson");
+  else {
+    const features = readJson(geo).features;
+    if (!Array.isArray(features)) fail("livraison/stopdesks.geojson: no FeatureCollection features array");
+    else if (features.length !== withCoord) fail(`livraison: GeoJSON features ${features.length} ≠ stop-desks with coordinates ${withCoord}`);
+  }
+
+  // coverage (per-carrier presence — reconciles against stopdesks + carriers)
+  let cov = [];
+  try {
+    cov = readJson(join(dataDir, "coverage.json"));
+  } catch (e) {
+    fail(`livraison/coverage.json: invalid JSON — ${e.message}`);
+  }
+  if (!Array.isArray(cov) || !cov.length) fail("livraison/coverage.json: expected a non-empty array");
+  if (meta.coverage !== cov.length) {
+    fail(`livraison/coverage.json: count ${cov.length} ≠ metadata.coverage ${meta.coverage}`);
+  }
+  const covIds = new Set(cov.map((c) => c.operator));
+  if (covIds.size !== cov.length) fail("livraison/coverage.json: duplicate operator id(s)");
+  let covSum = 0, covBadWilaya = 0;
+  for (const c of cov) {
+    if (!carrierIds.has(c.operator)) fail(`livraison/coverage.json: operator "${c.operator}" not in carriers.json`);
+    if (!Number.isInteger(c.stopdesks)) fail(`livraison/coverage.json: operator "${c.operator}" has a non-integer stopdesks count`);
+    covSum += Number(c.stopdesks);
+    if (!Array.isArray(c.wilayas) || c.wilayas.some((w) => !Number.isInteger(w) || w < 1 || w > 69)) covBadWilaya++;
+  }
+  if (covBadWilaya) fail(`livraison: ${covBadWilaya} coverage row(s) with wilaya codes outside [1,69]`);
+  if (covSum !== desks.length) fail(`livraison: coverage stop-desk sum ${covSum} ≠ stopdesks ${desks.length}`);
+  const covCsv = join(dataDir, "csv", "coverage.csv");
+  if (!existsSync(covCsv)) fail("livraison: missing csv/coverage.csv");
+  else if (csvRowCount(covCsv) !== cov.length) fail(`livraison: coverage CSV rows ≠ JSON ${cov.length}`);
+
+  console.log(
+    `  OK: ${carriers.length} carriers, ${desks.length} stop-desks (${withCoord} geocoded, ${meta.wilayas_covered} wilayas), ${cov.length} coverage rows`,
+  );
+}
+
+// Flat (table-driven) packages plus the bespoke telecom + livraison validators, in run order.
 const FLAT = Object.keys(PACKAGES);
-const ALL = [...FLAT, "telecom"];
+const ALL = [...FLAT, "telecom", "livraison"];
 
 const only = process.argv[2];
 const targets = only ? [only] : ALL;
@@ -382,6 +486,11 @@ for (const pkg of targets) {
   if (pkg === "telecom") {
     console.log(`\n[@geoalgeria/telecom]`);
     validateTelecom();
+    continue;
+  }
+  if (pkg === "livraison") {
+    console.log(`\n[@geoalgeria/livraison]`);
+    validateLivraison();
     continue;
   }
   if (!PACKAGES[pkg]) {

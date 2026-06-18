@@ -1,0 +1,57 @@
+{
+  "name": "@geoalgeria/livraison",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's COD / e-commerce delivery layer — a registry of delivery carriers, geocoded stop-desk / relay-point locations (Yalidine, Guepex & partner operators), and per-carrier wilaya coverage. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs livraison"
+  },
+  "keywords": [
+    "algeria",
+    "delivery",
+    "livraison",
+    "courier",
+    "cod",
+    "stop-desk",
+    "stopdesk",
+    "yalidine",
+    "guepex",
+    "ecommerce",
+    "logistics",
+    "geojson",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/livraison"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}
