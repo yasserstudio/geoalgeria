@@ -10,25 +10,26 @@
  */
 
 import { execFileSync } from "node:child_process";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const PACKAGES = [
-  "packages/dataset",
-  "packages/poste",
-  "packages/emploi",
-  "packages/mobilis",
-  "packages/telecom",
-  "packages/aviation",
-  "packages/banques",
-];
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+// Derive the publishable packages from the workspace so a newly added package is
+// never silently skipped (it would otherwise never stage on release). Every
+// non-private package dir under packages/ is a staging candidate.
+const PACKAGES = readdirSync(join(ROOT, "packages"))
+  .map((d) => `packages/${d}`)
+  .filter((p) => existsSync(join(ROOT, p, "package.json")) && !JSON.parse(readFileSync(join(ROOT, p, "package.json"), "utf8")).private)
+  .sort();
 
 let staged = 0;
 let skipped = 0;
 const failed = [];
 
 for (const pkg of PACKAGES) {
-  const pkgJson = JSON.parse(readFileSync(join(pkg, "package.json"), "utf8"));
+  const pkgJson = JSON.parse(readFileSync(join(ROOT, pkg, "package.json"), "utf8"));
   const { name, version } = pkgJson;
 
   let registryVersion;
@@ -60,7 +61,7 @@ for (const pkg of PACKAGES) {
   console.log(`staging: ${name}@${version} (registry: ${registryVersion ?? "unpublished"})`);
   try {
     const out = execFileSync("npm", ["stage", "publish", "--ignore-scripts"], {
-      cwd: pkg,
+      cwd: join(ROOT, pkg),
       encoding: "utf8",
       stdio: ["ignore", "pipe", "pipe"],
     });
