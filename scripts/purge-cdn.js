@@ -15,17 +15,25 @@
  * No dependencies — uses global fetch (Node >= 18).
  */
 
-// Versionless paths track the npm "latest" tag — exactly what users hit.
-const DEFAULT_PATHS = [
-  "npm/geoalgeria", // package root + metadata
-  "npm/geoalgeria/data/ecommerce/communes.json", // advertised in the README
-  "npm/@geoalgeria/poste",
-  "npm/@geoalgeria/emploi",
-  "npm/@geoalgeria/mobilis",
-  "npm/@geoalgeria/banques",
-];
+import { readdirSync, readFileSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
 
-const paths = [...DEFAULT_PATHS, ...process.argv.slice(2)];
+const PKGS = join(dirname(fileURLToPath(import.meta.url)), "..", "packages");
+
+// Derive the package roots from the workspace so a new package is never silently
+// skipped — every published (non-private) package's versionless path tracks its npm
+// "latest" tag, exactly what users hit. Plus the specific deep paths the docs advertise.
+const pkgPaths = readdirSync(PKGS)
+  .map((d) => join(PKGS, d, "package.json"))
+  .filter((f) => existsSync(f))
+  .map((f) => JSON.parse(readFileSync(f, "utf8")))
+  .filter((p) => p.name && !p.private)
+  .map((p) => `npm/${p.name}`)
+  .sort();
+const EXTRA_PATHS = ["npm/geoalgeria/data/ecommerce/communes.json"]; // advertised in the README
+
+const paths = [...pkgPaths, ...EXTRA_PATHS, ...process.argv.slice(2)];
 
 let failed = 0;
 for (const p of paths) {
