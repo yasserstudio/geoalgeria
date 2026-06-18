@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+### Patch Changes
+
+- Metadata: complete the package description and keywords to name the Anderson, Noest and Maystro networks alongside Yalidine and Guepex (data unchanged).
+
 ## 1.0.0
 
 ### Added
