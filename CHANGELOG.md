@@ -8,6 +8,14 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.1.0 — 2026-06-18
+
+Added a new dataset/package since 1.0.0.
+
+- **Delivery carriers** (`@geoalgeria/livraison`): a 16-carrier registry, 411 geocoded stop-desks across 61 wilayas, and per-carrier coverage. Stop-desks come from the carriers that publish open agency data — the Yalidine + Guepex relay plus the Anderson, Noest and Maystro networks (each geocoded from its agency cards' Google Maps links).
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`.
+
 ## 1.0.0 — 2026-06-16
 
 First tagged release of the project as a whole — the state of every dataset today.
