@@ -4,6 +4,8 @@
 
 ### Added
 
+- Algeria's COD / e-commerce delivery layer, as installable data: a 16-carrier registry,
+  411 geocoded stop-desks across 61 wilayas, and per-carrier coverage, in JSON, CSV and GeoJSON
 - Carrier registry — 16 Algerian COD / e-commerce delivery companies, each with
   website, service model (stop-desk / home / both), cash-on-delivery support, scope,
   how openly it publishes agency data, and public-API availability
