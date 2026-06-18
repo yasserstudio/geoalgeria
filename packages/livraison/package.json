@@ -2,7 +2,7 @@
   "name": "@geoalgeria/livraison",
   "version": "1.0.0",
   "type": "module",
-  "description": "Algeria's COD / e-commerce delivery layer — a registry of delivery carriers, geocoded stop-desk / relay-point locations (Yalidine, Guepex & partner operators), and per-carrier wilaya coverage. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Algeria's COD / e-commerce delivery layer — a registry of delivery carriers, geocoded stop-desk / relay-point locations (Yalidine, Guepex, Anderson, Noest, Maystro & partner operators), and per-carrier wilaya coverage. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -31,6 +31,9 @@
     "stopdesk",
     "yalidine",
     "guepex",
+    "anderson",
+    "noest",
+    "maystro",
     "ecommerce",
     "logistics",
     "geojson",
