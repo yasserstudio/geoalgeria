@@ -1,0 +1,17 @@
+id,name,website,type,cod,scope,open_agency_data,api,in_stopdesks,stopdesk_count,stopdesk_wilaya_count,notes
+noest,Noest Express,https://noest-dz.com,both,true,domestic,geocoded,private,true,94,55,"Popular COD carrier; publishes its bureaux on its public site, each with a Google Maps link resolved to coordinates. Merchant tracking API is private."
+yalidine,Yalidine Express,https://yalidine-express.com.dz,both,true,domestic,geocoded,documented,true,93,54,Largest COD network; publishes an open geocoded stop-desk table that also lists partner operators (federated relay). Documented developer API (centers/communes/wilayas) is merchant-key gated.
+anderson,Anderson Logistics,https://anderson-ecommerce.com,both,true,domestic,geocoded,none,true,89,50,"Publishes an agency directory; each agency carries its own Google Maps link, resolved to coordinates."
+guepex,Guepex,https://www.guepex.dz,both,true,domestic,geocoded,none,true,70,35,Publishes an open geocoded agencies JSON; shares the same stop-desk network/center ids as Yalidine (federated relay).
+maystro,Maystro Delivery,https://maystro-delivery.com,both,true,domestic,geocoded,private,true,38,37,"Social-commerce focused; its public coverage page lists each stop-desk with a Google Maps link, resolved to coordinates. Merchant integration API is private."
+easyandspeed,EasyAndSpeed,,stop_desk,true,domestic,geocoded,none,true,14,11,Stop-desk operator present in the Yalidine/Guepex relay network.
+zimou-express,Zimou Express,,stop_desk,true,domestic,geocoded,none,true,8,6,Stop-desk operator present in the Guepex relay data.
+wecanservices,WeCanServices,,stop_desk,true,domestic,geocoded,none,true,3,2,Stop-desk operator present in the relay network.
+speedmail,SpeedMail,https://speedmail-dz.com,both,true,domestic,geocoded,none,true,2,2,Appears in the relay network; own site is a WooCommerce shop with no public agency directory.
+aramex,Aramex Algeria,https://www.aramex.com/dz,both,false,international,none,licensed,false,0,0,"International; a handful of offices, locator behind a WAF."
+conexlog,Conexlog (UPS Algeria),https://conexlog-dz.com,both,true,domestic,addresses,none,false,0,0,UPS-authorized contractor; a 'Nos bureaux' page lists desk addresses but without coordinates or an API.
+dhd,DHD,https://dhd-dz.com,both,true,domestic,none,private,false,0,0,COD carrier listed by integration libraries; no open agency list found.
+dhl,DHL Express Algeria,https://www.dhl.com/dz-en,both,false,international,none,licensed,false,0,0,International express; service points available via DHL's licensed Location Finder API (not redistributable).
+ecotrack,Ecotrack,https://ecotrack.dz,both,true,domestic,none,aggregator,false,0,0,Delivery aggregator that integrates several carriers; no single open agency export.
+kazi-tour,Kazi Tour,https://kazi-tour.com,home,true,domestic,none,none,false,0,0,Primarily home delivery / trucking; site has no populated agency directory.
+zr-express,ZR Express,https://zrexpress.com,both,true,domestic,none,private,false,0,0,Operations via the Procolis portal (auth-gated); public site is Cloudflare-blocked. No open agency list.
