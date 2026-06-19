@@ -16,7 +16,7 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
-├── dairas.json                  ← 564 dairas
+├── dairas.json                  ← 555 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
@@ -157,8 +157,8 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 ## Coverage
 
 - **69 wilayas** — complete (original 48 + 2019 reform + 2025 reform)
-- **564 dairas** — complete
-- **1,541 communes** — complete
+- **555 dairas**
+- **1,528 communes** (deduplicated; reconciliation toward the official 1,541 in progress — see the changelog)
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
 

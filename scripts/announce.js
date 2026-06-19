@@ -28,6 +28,7 @@ const PACKAGES = {
   "@geoalgeria/telecom": { dir: "packages/telecom", label: "Algeria's telecom operators' network sites" },
   "@geoalgeria/aviation": { dir: "packages/aviation", label: "Algeria's civil airports" },
   "@geoalgeria/livraison": { dir: "packages/livraison", label: "Algeria's delivery carriers & stop-desks" },
+  "@geoalgeria/jeunesse": { dir: "packages/jeunesse", label: "Algeria's youth & sports institutions" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
