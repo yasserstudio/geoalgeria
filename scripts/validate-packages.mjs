@@ -102,6 +102,15 @@ const PACKAGES = {
       required: ["id", "name", "icao", "wilaya_code"],
     },
   ],
+  jeunesse: [
+    {
+      json: "institutions.json",
+      metaKey: "institutions",
+      csv: "csv/institutions.csv",
+      geojson: "geojson/institutions.geojson",
+      required: ["id", "name", "type_code", "wilaya_code"],
+    },
+  ],
   banques: [
     {
       json: "banks.json",
