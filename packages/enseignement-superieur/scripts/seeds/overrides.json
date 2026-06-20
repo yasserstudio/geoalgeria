@@ -1,0 +1,21 @@
+{
+  "_comment": "Curated placements that TAKE PRECEDENCE over the OSM geocode. Two cases: (a) institutions OpenStreetMap can't find by name AND whose MESRS title names no wilaya (mostly Algiers/Koléa grandes écoles named by discipline); (b) corrections where a discipline-only name geocoded to the wrong same-named school (ENP → the El Harrach original, not ENP Constantine; UFC → its Alger seat, not a Tipaza match). Each asserts a `commune` (resolved by fetch.mjs to its flagship centroid → geo_precision \"commune\") or, where the exact commune is uncertain, a bare `wilaya_code` (→ centroid, geo_precision \"wilaya\"). Communes verified against the flagship; locations cross-checked against each institution's own website. Coordinates are never typed here — only the place name is.",
+  "enp.edu.dz": { "commune": "El Harrach", "wilaya_code": 16 },
+  "ufc.dz": { "commune": "Dely Ibrahim", "wilaya_code": 16 },
+  "univ-usto.dz": { "commune": "Bir El Djir", "wilaya_code": 31 },
+  "ensh.dz": { "commune": "Soumaa", "wilaya_code": 9 },
+  "entp.edu.dz": { "commune": "Kouba", "wilaya_code": 16 },
+  "epau-alger.edu.dz": { "commune": "El Harrach", "wilaya_code": 16 },
+  "ensa.dz": { "commune": "El Harrach", "wilaya_code": 16 },
+  "enssea.net": { "commune": "Kolea", "wilaya_code": 42 },
+  "esc-alger.dz": { "commune": "Kolea", "wilaya_code": 42 },
+  "ensm.dz": { "commune": "Kolea", "wilaya_code": 42 },
+  "esgen.edu.dz": { "commune": "Kolea", "wilaya_code": 42 },
+  "ensjsi.dz": { "commune": "Ben Aknoun", "wilaya_code": 16 },
+  "enssp.dz": { "commune": "Ben Aknoun", "wilaya_code": 16 },
+  "ensmm-annaba.dz": { "commune": "Annaba", "wilaya_code": 23 },
+  "ensb.dz": { "commune": "Bouzareah", "wilaya_code": 16 },
+  "ens-kouba.dz": { "commune": "Kouba", "wilaya_code": 16 },
+  "ensia.edu.dz": { "wilaya_code": 16 },
+  "enssm.dz": { "wilaya_code": 16 }
+}
