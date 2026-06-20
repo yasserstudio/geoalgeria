@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
-// /telecom, /aviation, /banques, /livraison, /jeunesse) for integrity and
-// cross-format consistency. The flagship
+// /telecom, /aviation, /banques, /livraison, /jeunesse, /enseignement-superieur)
+// for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
 // (packages/dataset/scripts/validate.py); this is the single Node gate for every
 // scoped package so they're all guarded on every commit and before every publish.
@@ -11,7 +11,7 @@
 // (coverage/<tech>/) and split into per-operator files — so it gets its own
 // validator (validateTelecom) that shares the same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|enseignement-superieur]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -110,6 +110,15 @@ const PACKAGES = {
       csv: "csv/institutions.csv",
       geojson: "geojson/institutions.geojson",
       required: ["id", "name", "type_code", "wilaya_code"],
+    },
+  ],
+  "enseignement-superieur": [
+    {
+      json: "institutions.json",
+      metaKey: "institutions",
+      csv: "csv/institutions.csv",
+      geojson: "geojson/institutions.geojson",
+      required: ["id", "name", "type", "wilaya_code"],
     },
   ],
   banques: [
