@@ -184,6 +184,26 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 
 ---
 
+## The GeoAlgeria ecosystem
+
+`geoalgeria` is the administrative base layer. Domain datasets install alongside it and join on `wilaya_code`:
+
+| Package | What |
+| --- | --- |
+| [`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) | Post offices & ATMs (Algérie Poste) |
+| [`@geoalgeria/emploi`](https://www.npmjs.com/package/@geoalgeria/emploi) | Employment agencies (ANEM: AWEM + ALEM) |
+| [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) | Mobilis agencies & approved points of sale |
+| [`@geoalgeria/telecom`](https://www.npmjs.com/package/@geoalgeria/telecom) | Cross-operator 5G coverage (Djezzy, Mobilis, Ooredoo) |
+| [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | Civil airports with ICAO codes (ANAC) |
+| [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | Licensed banks, institutions & branches (RIB/SWIFT) |
+| [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carriers & geocoded stop-desks |
+| [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Youth & sports institutions (Ministère de la Jeunesse) |
+| [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
+
+Full list and the monorepo: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
+
+---
+
 ## Built With This Data
 
 Using geoalgeria in your project? [Open a discussion](https://github.com/yasserstudio/geoalgeria/discussions) and we'll feature it here.
