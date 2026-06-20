@@ -13,6 +13,7 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write
+      actions: write # dispatch the Announce workflow after cutting each release
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
@@ -119,4 +120,11 @@ jobs:
               echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
               gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes "$BUNDLE"
             fi
+
+            # Announce this release. The release: published event won't fire (this
+            # release was created with GITHUB_TOKEN, which GitHub suppresses to avoid
+            # recursion), so dispatch Announce explicitly — workflow_dispatch is the
+            # documented exception GITHUB_TOKEN is allowed to trigger.
+            gh workflow run announce.yml -f tag="$TAG" \
+              || echo "::warning::Could not dispatch Announce for $TAG — run it by hand (Actions tab → Announce)."
           done

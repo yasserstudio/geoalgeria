@@ -5,10 +5,17 @@ name: Announce
 #  - X (Twitter) and LinkedIn drafts are attached to the release for a human to
 #    copy-paste (never auto-posted to third-party networks)
 #
-# Note on timing: this fires when the release.yml workflow cuts the GitHub
-# Release, which happens at npm STAGE time — the package goes live only once you
-# approve the staged version (see RELEASING.md). Approve promptly so the
-# announcement and the live npm version line up.
+# How it's triggered: release.yml explicitly DISPATCHES this workflow (per tag)
+# right after it cuts each GitHub Release. The `release: published` event does NOT
+# fire for those releases because release.yml creates them with GITHUB_TOKEN, and
+# GitHub suppresses token-created events to prevent recursion — workflow_dispatch
+# is the documented exception, so dispatch is the reliable path. The `release`
+# trigger is kept for releases created by a human/PAT. Run by hand from the Actions
+# tab (workflow_dispatch) for any tag too.
+#
+# Note on timing: release.yml cuts the GitHub Release at npm STAGE time — the
+# package goes live only once you approve the staged version (see RELEASING.md).
+# Approve promptly so the announcement and the live npm version line up.
 
 on:
   release:
@@ -50,8 +57,11 @@ jobs:
             printf 'skip=true\n' >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          # Fail closed on anything that isn't one of our package tags.
-          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/(poste|emploi|mobilis|banques|telecom|aviation|livraison))@[0-9]+\.[0-9]+\.[0-9]+$'; then
+          # Fail closed on anything that isn't one of our package tags. Match any
+          # @geoalgeria/<name> scoped package (or the unscoped flagship) plus a
+          # semver suffix — generic so a new package never needs this list edited
+          # (the old hardcoded list silently failed jeunesse + enseignement-superieur).
+          if ! printf '%s' "$RAW_TAG" | grep -Eq '^(geoalgeria|@geoalgeria/[a-z][a-z0-9]*(-[a-z0-9]+)*)@[0-9]+\.[0-9]+\.[0-9]+$'; then
             echo "::error::Refusing to announce malformed tag: $RAW_TAG"
             exit 1
           fi
@@ -116,7 +126,9 @@ jobs:
             --jq '.data.createDiscussion.discussion.url'
 
       - name: Attach social drafts to the release
-        if: steps.tag.outputs.skip != 'true' && github.event_name == 'release'
+        # Runs for dispatched runs too (release.yml dispatches us after the release
+        # exists); the upload no-ops with a warning if the release isn't there yet.
+        if: steps.tag.outputs.skip != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ steps.tag.outputs.tag }}
