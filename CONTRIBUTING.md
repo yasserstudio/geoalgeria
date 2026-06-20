@@ -13,6 +13,12 @@ This is a small monorepo:
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 | `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |
+| `packages/telecom/` | `@geoalgeria/telecom` | cross-operator 5G coverage (Djezzy, Mobilis, Ooredoo) |
+| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC) |
+| `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
+| `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
+| `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth & sports institutions (Ministère de la Jeunesse) |
+| `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
 
 ## How to contribute
 

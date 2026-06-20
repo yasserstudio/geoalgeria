@@ -23,9 +23,8 @@ Include:
 
 ## Supported versions
 
-Only the latest published version of each package (`geoalgeria`,
-`@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`) is supported.
-Fixes ship forward in a
+Only the latest published version of each package (`geoalgeria` and every
+`@geoalgeria/*` scoped package) is supported. Fixes ship forward in a
 new release rather than as patches to old versions.
 
 ## Supply-chain practices
