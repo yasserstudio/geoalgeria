@@ -8,6 +8,15 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.2.0 — 2026-06-20
+
+Added two new datasets/packages since 1.1.0.
+
+- **Youth & sports institutions** (`@geoalgeria/jeunesse`): 2,076 institutions across 50 wilayas — maisons de jeunes, complexes sportifs, salles polyvalentes, auberges de jeunes, cultural centers and more (Ministère de la Jeunesse), each with its Arabic name, type, commune/daïra/wilaya and coordinates.
+- **Higher education** (`@geoalgeria/enseignement-superieur`): 110 institutions across 51 wilayas — 58 universities, 35 grandes écoles, 12 écoles normales supérieures and 5 centres universitaires (MESRS), each with its official website, type, and wilaya/commune linkage. Coordinates are OpenStreetMap-derived (ODbL) and labelled per record (`geo_precision`).
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/enseignement-superieur`.
+
 ## 1.1.0 — 2026-06-18
 
 Added a new dataset/package since 1.0.0.
