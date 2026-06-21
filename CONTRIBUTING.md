@@ -19,6 +19,7 @@ This is a small monorepo:
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth & sports institutions (Ministère de la Jeunesse) |
 | `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
+| `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 
 ## How to contribute
 

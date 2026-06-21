@@ -48,6 +48,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Delivery carriers** | 411 | 16-carrier registry + 411 geocoded stop-desks across 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
 | **Youth & sports institutions** | 2,076 | maisons de jeunes, sports complexes, hostels, cultural centers & more across 50 wilayas (Ministère de la Jeunesse) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Higher education** | 110 | 58 universities + 35 grandes écoles + 12 ENS + 5 centres across 51 wilayas, with official websites (MESRS) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
+| **Tourism** | 4,348 | 995 hotels, 1,248 attractions, 1,184 historic sites, 282 thermal springs (ASAL), 32 national parks — [`@geoalgeria/tourisme`](packages/tourisme) |
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -91,6 +92,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carrier registry + 411 geocoded stop-desks & per-carrier coverage (Yalidine, Guepex, Anderson, Noest, Maystro) |
 | [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Youth & sports institutions from the Ministère de la Jeunesse (2,076 across 50 wilayas) |
 | [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network from MESRS — universities, grandes écoles, ENS & centres (110), with official websites & coordinates |
+| [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure — 4,348 geocoded hotels, attractions, historic sites, thermal springs & parks from ASAL, OSM & Wikidata |
 
 ## Use without npm
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
-// /telecom, /aviation, /banques, /livraison, /jeunesse, /enseignement-superieur)
+// /telecom, /aviation, /banques, /livraison, /jeunesse, /enseignement-superieur,
+// /tourisme)
 // for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
 // (packages/dataset/scripts/validate.py); this is the single Node gate for every

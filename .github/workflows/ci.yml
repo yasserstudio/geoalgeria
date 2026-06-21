@@ -72,3 +72,7 @@ jobs:
       - name: Smoke test — @geoalgeria/aviation (ESM)
         working-directory: packages/aviation
         run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.airports(); if(!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('aviation:',a.length,'airports,',m.metadata().wilayas_covered,'wilayas')})"
+
+      - name: Smoke test — @geoalgeria/tourisme (ESM)
+        working-directory: packages/tourisme
+        run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.all(); if(!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('tourisme:',a.length,'entries,',m.lodging().length,'lodging,',m.thermalSprings().length,'thermal springs')})"

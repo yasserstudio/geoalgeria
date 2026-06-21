@@ -1,10 +1,11 @@
 # Releasing
 
-GeoAlgeria publishes ten packages to npm — **`geoalgeria`** (the dataset, kept
+GeoAlgeria publishes eleven packages to npm — **`geoalgeria`** (the dataset, kept
 unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**,
 **`@geoalgeria/mobilis`**, **`@geoalgeria/telecom`**, **`@geoalgeria/aviation`**,
-**`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`** and
-**`@geoalgeria/enseignement-superieur`** (under the `@geoalgeria` org) — using
+**`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`**,
+**`@geoalgeria/enseignement-superieur`** and **`@geoalgeria/tourisme`** (under the
+`@geoalgeria` org) — using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
 monorepo). The web app lives in the separate **`geoalgeria.com`** repo and is
@@ -155,7 +156,7 @@ These are prerequisites the workflow can't do for you:
 3. **Trusted Publisher per package** — on npmjs.com, for each of `geoalgeria`,
    `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`, `@geoalgeria/telecom`,
    `@geoalgeria/aviation`, `@geoalgeria/banques`, `@geoalgeria/livraison`, `@geoalgeria/jeunesse`,
-   `@geoalgeria/enseignement-superieur`: *Settings →
+   `@geoalgeria/enseignement-superieur`, `@geoalgeria/tourisme`: *Settings →
    Trusted Publisher → GitHub Actions*, repo **`yasserstudio/geoalgeria`**,
    workflow `release.yml`.
    No `NPM_TOKEN` — auth is the workflow's OIDC `id-token`.
