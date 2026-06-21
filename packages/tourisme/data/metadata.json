@@ -1,0 +1,23 @@
+{
+  "name": "@geoalgeria/tourisme",
+  "description": "Tourism infrastructure across Algeria — hotels, attractions, historic sites, thermal springs and protected areas",
+  "version": "1.0.0",
+  "lodging": 1602,
+  "attractions": 1248,
+  "historic": 1184,
+  "thermal_springs": 282,
+  "parks": 32,
+  "total": 4348,
+  "wilaya_coverage": 69,
+  "sources": [
+    "ASAL Geoportail (thermal springs)",
+    "OpenStreetMap (hotels, attractions, historic, parks)",
+    "Wikidata (heritage sites, museums, parks)"
+  ],
+  "licenses": {
+    "thermal_springs": "Public government data",
+    "osm_data": "ODbL (OpenStreetMap)",
+    "wikidata": "CC0"
+  },
+  "last_updated": "2026-06-21"
+}

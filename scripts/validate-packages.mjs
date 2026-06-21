@@ -11,7 +11,7 @@
 // (coverage/<tech>/) and split into per-operator files — so it gets its own
 // validator (validateTelecom) that shares the same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|enseignement-superieur]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|enseignement-superieur|tourisme]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -142,6 +142,43 @@ const PACKAGES = {
       csv: "csv/branches.csv",
       geojson: "geojson/branches.geojson",
       required: ["id", "bank_id", "name", "wilaya_code"],
+    },
+  ],
+  tourisme: [
+    {
+      json: "lodging.json",
+      metaKey: "lodging",
+      csv: "csv/lodging.csv",
+      geojson: "geojson/lodging.geojson",
+      required: ["id", "name", "type", "wilaya_code"],
+    },
+    {
+      json: "attractions.json",
+      metaKey: "attractions",
+      csv: "csv/attractions.csv",
+      geojson: "geojson/attractions.geojson",
+      required: ["id", "name", "type", "wilaya_code"],
+    },
+    {
+      json: "historic.json",
+      metaKey: "historic",
+      csv: "csv/historic.csv",
+      geojson: "geojson/historic.geojson",
+      required: ["id", "name", "type", "wilaya_code"],
+    },
+    {
+      json: "thermal-springs.json",
+      metaKey: "thermal_springs",
+      csv: "csv/thermal-springs.csv",
+      geojson: "geojson/thermal-springs.geojson",
+      required: ["id", "name", "type", "wilaya_code"],
+    },
+    {
+      json: "parks.json",
+      metaKey: "parks",
+      csv: "csv/parks.csv",
+      geojson: "geojson/parks.geojson",
+      required: ["id", "name", "category", "wilaya_code"],
     },
   ],
 };
