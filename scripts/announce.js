@@ -30,6 +30,7 @@ const PACKAGES = {
   "@geoalgeria/livraison": { dir: "packages/livraison", label: "Algeria's delivery carriers & stop-desks" },
   "@geoalgeria/jeunesse": { dir: "packages/jeunesse", label: "Algeria's youth & sports institutions" },
   "@geoalgeria/enseignement-superieur": { dir: "packages/enseignement-superieur", label: "Algeria's higher-education network" },
+  "@geoalgeria/tourisme": { dir: "packages/tourisme", label: "Algeria's tourism infrastructure" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
