@@ -262,6 +262,8 @@ MIT — مجاني للاستخدام الشخصي والتجاري.
 
 صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 
+[توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/geoalgeria) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
+
 ---
 
 من تطوير [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

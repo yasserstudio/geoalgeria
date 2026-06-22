@@ -152,6 +152,8 @@ Le code est sous [MIT](LICENSE). Les données des établissements sont © **MESR
 sont © contributeurs OpenStreetMap (ODbL), dérivées via Nominatim. Vérifiez auprès du ministère
 et de chaque établissement pour des informations faisant autorité.
 
+[Documentation API et référence des champs →](https://geoalgeria.com/data/docs/enseignement-superieur) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
+
 ---
 
 Fait par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

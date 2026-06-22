@@ -147,6 +147,8 @@ power [GeoAlgeria](https://geoalgeria.com). Coordinates are © OpenStreetMap con
 derived via Nominatim. Verify against the ministry and each institution for authoritative
 information.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/enseignement-superieur) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

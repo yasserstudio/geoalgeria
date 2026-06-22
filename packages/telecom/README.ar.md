@@ -133,6 +133,8 @@ data/
 بناء تعكس ما تظهره خرائط المشغلين حاليًا؛ تحقق من المشغلين للحصول على
 معلومات رسمية ومحدّثة.
 
+[توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/telecom) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
+
 ---
 
 صنع بواسطة [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

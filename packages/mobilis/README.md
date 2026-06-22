@@ -156,6 +156,8 @@ Mobilis for authoritative, real-time information. The points-of-sale list churns
 as resellers come and go — each rebuild reflects whatever the locator currently
 shows.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/mobilis) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

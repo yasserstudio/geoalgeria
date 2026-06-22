@@ -161,6 +161,8 @@ informations officielles et en temps réel. La liste des points de vente évolue
 au fil des arrivées et départs de revendeurs — chaque reconstruction reflète ce
 que le localisateur affiche à ce moment-là.
 
+[Documentation API et référence des champs →](https://geoalgeria.com/data/docs/mobilis) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
+
 ---
 
 Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

@@ -154,6 +154,8 @@ WAF. شغّل `npm run fetch` لإعادة توليد جميع المخرجات:
 موبيليس للحصول على معلومات رسمية ومحدّثة. قائمة نقاط البيع تتغير مع دخول
 وخروج الموزعين — كل إعادة بناء تعكس ما يعرضه المحدد في تلك اللحظة.
 
+[توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/mobilis) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
+
 ---
 
 من تطوير [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

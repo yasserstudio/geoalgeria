@@ -129,6 +129,8 @@ Code is [MIT](LICENSE). The underlying data is © **Algérie Poste**, redistribu
 for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against
 Algérie Poste for authoritative, real-time information.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/poste) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

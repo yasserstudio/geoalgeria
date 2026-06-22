@@ -139,6 +139,8 @@ The `manager` field is the agency head's name as published, verbatim, on ANEM's
 own public portal — it is not private data. Each rebuild reflects whatever ANEM
 currently shows; if they remove it, it drops out here too.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/emploi) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

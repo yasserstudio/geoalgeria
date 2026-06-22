@@ -132,6 +132,8 @@ Code is [MIT](LICENSE). The underlying data is © the respective operators
 reflects whatever the operators' maps currently show; verify against the
 operators for authoritative, real-time information.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/telecom) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

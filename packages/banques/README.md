@@ -110,6 +110,8 @@ Full terms: see the project [**DISCLAIMER**](https://github.com/yasserstudio/geo
 reference; attribution appreciated, and you remain responsible for the terms of the
 original sources.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/banques) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

@@ -136,6 +136,8 @@ Le code est sous licence [MIT](LICENSE). Les données sous-jacentes sont la prop
 [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès du ministère pour des informations
 officielles et en temps réel.
 
+[Documentation API et référence des champs →](https://geoalgeria.com/data/docs/jeunesse) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
+
 ---
 
 Fait par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

@@ -147,6 +147,8 @@ OpenStreetMap — انظر **الأسماء والإحداثيات** أعلاه.
 لمساهمي OpenStreetMap (رخصة ODbL)، مشتقة عبر Nominatim. تحقق من الوزارة ومن كل مؤسسة
 للحصول على معلومات رسمية.
 
+[توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/enseignement-superieur) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
+
 ---
 
 صنع بواسطة [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

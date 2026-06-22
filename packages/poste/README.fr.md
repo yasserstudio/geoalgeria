@@ -134,6 +134,8 @@ redistribuées à titre de référence et pour alimenter
 [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès d'Algérie Poste pour des
 informations officielles et en temps réel.
 
+[Documentation API et référence des champs →](https://geoalgeria.com/data/docs/poste) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
+
 ---
 
 Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

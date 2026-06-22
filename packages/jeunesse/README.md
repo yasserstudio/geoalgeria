@@ -135,6 +135,8 @@ Code is [MIT](LICENSE). The underlying data is © **Ministère de la Jeunesse**,
 for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against the ministry
 for authoritative, real-time information.
 
+[API docs & field reference →](https://geoalgeria.com/data/docs/jeunesse) · [Browse all packages →](https://geoalgeria.com/data)
+
 ---
 
 Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

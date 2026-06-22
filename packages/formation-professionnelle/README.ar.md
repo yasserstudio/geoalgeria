@@ -153,6 +153,8 @@ data/
 والتعليم المهنيين**، معاد توزيعها كمرجع ولتشغيل [GeoAlgeria](https://geoalgeria.com).
 تحقق من الوزارة للحصول على معلومات رسمية ومحدثة.
 
+[توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/formation-professionnelle) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
+
 ---
 
 صنع بواسطة [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

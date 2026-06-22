@@ -140,6 +140,8 @@ Le champ `manager` contient le nom du responsable de l'agence tel que publié, t
 sur le portail public de l'ANEM — ce n'est pas une donnée privée. Chaque reconstruction
 reflète ce que l'ANEM affiche actuellement ; s'ils le retirent, il disparaît ici aussi.
 
+[Documentation API et référence des champs →](https://geoalgeria.com/data/docs/emploi) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
+
 ---
 
 Réalisé par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

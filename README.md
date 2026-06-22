@@ -98,6 +98,8 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure — 4,348 geocoded hotels, attractions, historic sites, thermal springs & parks from ASAL, OSM & Wikidata |
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training — 1,932 CFPA, INSFP, IFEP, IEP, DFEPs & private centers from MFEP (takwin.dz), with capacity, boarding & coordinates |
 
+[Browse all packages →](https://geoalgeria.com/data) · [API docs & field reference →](https://geoalgeria.com/data/docs)
+
 ## Use without npm
 
 ```html

@@ -138,6 +138,8 @@ data/
 العامة لـ ANEM — وهو ليس بيانات خاصة. كل إعادة بناء تعكس ما تعرضه ANEM
 حالياً؛ إذا أزالوه، يُحذف هنا أيضاً.
 
+[توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/emploi) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
+
 ---
 
 من تطوير [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
