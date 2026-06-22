@@ -9,8 +9,8 @@ the bank/financial, postal, employment, telecom, and aviation data.
 GeoAlgeria is **not affiliated with, endorsed by, sponsored by, or connected to**
 any government body, regulator, operator, or institution whose data it references —
 including, without limitation, the **Banque d'Algérie**, any bank or financial
-institution listed, **Algérie Poste**, **ANEM**, **ANAC**, **Mobilis**, **Djezzy**,
-or **Ooredoo**, or their parent groups. All product, company, and institution names,
+institution listed, **Algérie Poste**, **ANEM**, **ANAC**, **MFEP**, **Mobilis**,
+**Djezzy**, or **Ooredoo**, or their parent groups. All product, company, and institution names,
 acronyms, logos, **SWIFT/BIC** and bank codes are the property of their respective
 owners and are used here for **identification (nominative) purposes only** — not to
 imply any association or endorsement.
