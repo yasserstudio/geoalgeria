@@ -20,6 +20,7 @@ This is a small monorepo:
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth & sports institutions (Ministère de la Jeunesse) |
 | `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
 | `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
+| `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training establishments (MFEP / takwin.dz) |
 
 ## How to contribute
 

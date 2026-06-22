@@ -1,0 +1,57 @@
+{
+  "name": "@geoalgeria/formation-professionnelle",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's 1,932 vocational training establishments — CFPA, INSFP, IFEP, IEP, DFEPs and private accredited centers across 58 wilayas, with type, capacity, boarding, contacts and GPS coordinates. Sourced from takwin.dz (MFEP). JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node ../../scripts/validate-packages.mjs formation-professionnelle"
+  },
+  "keywords": [
+    "algeria",
+    "formation-professionnelle",
+    "vocational-training",
+    "cfpa",
+    "insfp",
+    "mfep",
+    "takwin",
+    "establishments",
+    "geojson",
+    "geoalgeria",
+    "algerie",
+    "dz",
+    "open-data"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/formation-professionnelle"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

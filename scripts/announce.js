@@ -31,6 +31,7 @@ const PACKAGES = {
   "@geoalgeria/jeunesse": { dir: "packages/jeunesse", label: "Algeria's youth & sports institutions" },
   "@geoalgeria/enseignement-superieur": { dir: "packages/enseignement-superieur", label: "Algeria's higher-education network" },
   "@geoalgeria/tourisme": { dir: "packages/tourisme", label: "Algeria's tourism infrastructure" },
+  "@geoalgeria/formation-professionnelle": { dir: "packages/formation-professionnelle", label: "Algeria's vocational training establishments" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
