@@ -1,3 +1,5 @@
+**English** | [Français](README.fr.md) | [العربية](README.ar.md)
+
 # GeoAlgeria
 
 > The Algerian geodata package — 69 wilayas, 555 dairas, 1,528 communes. One `npm install` away.
