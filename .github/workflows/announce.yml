@@ -2,7 +2,7 @@ name: Announce
 
 # Turns a published release into marketing copy:
 #  - minor/major releases auto-post a GitHub Discussion in "Announcements"
-#  - X (Twitter) and LinkedIn drafts are attached to the release for a human to
+#  - X (Twitter) and LinkedIn drafts appear in the job summary for a human to
 #    copy-paste (never auto-posted to third-party networks)
 #
 # How it's triggered: release.yml explicitly DISPATCHES this workflow (per tag)
@@ -27,7 +27,7 @@ on:
         required: true
 
 permissions:
-  contents: write # upload social drafts as release assets
+  contents: read # read repo for announce.js
   discussions: write # create the Announcements discussion
 
 concurrency: ${{ github.workflow }}-${{ github.event.release.tag_name || inputs.tag }}
@@ -124,18 +124,6 @@ jobs:
             -f title="$HEADLINE" \
             -F body=@.release-notes/announcement.md \
             --jq '.data.createDiscussion.discussion.url'
-
-      - name: Attach social drafts to the release
-        # Runs for dispatched runs too (release.yml dispatches us after the release
-        # exists); the upload no-ops with a warning if the release isn't there yet.
-        if: steps.tag.outputs.skip != 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          TAG: ${{ steps.tag.outputs.tag }}
-        run: |
-          set -euo pipefail
-          gh release upload "$TAG" .release-notes/x-thread.md .release-notes/linkedin.md .release-notes/announcement.md --clobber \
-            || echo "::warning::Could not attach drafts to $TAG (release immutable?) — they're in the job summary."
 
       - name: Job summary
         if: steps.tag.outputs.skip != 'true'
