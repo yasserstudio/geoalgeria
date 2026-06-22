@@ -1,3 +1,5 @@
+**English** | [Français](README.fr.md) | [العربية](README.ar.md)
+
 # GeoAlgeria
 
 > The Algerian geodata package — 69 wilayas, 555 dairas, 1,528 communes. One `npm install` away.
@@ -199,6 +201,8 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carriers & geocoded stop-desks |
 | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Youth & sports institutions (Ministère de la Jeunesse) |
 | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
+| [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
+| [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training — CFPA, INSFP, IFEP, private centers (MFEP / takwin.dz) |
 
 Full list and the monorepo: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

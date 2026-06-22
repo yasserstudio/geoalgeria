@@ -1,5 +1,7 @@
 <div align="center">
 
+**English** | [Français](README.fr.md) | [العربية](README.ar.md)
+
 # GeoAlgeria
 
 <sub>by</sub><br>

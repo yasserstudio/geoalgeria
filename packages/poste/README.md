@@ -1,3 +1,5 @@
+**English** | [Français](README.fr.md) | [العربية](README.ar.md)
+
 <div align="center">
 
 # @geoalgeria/poste
