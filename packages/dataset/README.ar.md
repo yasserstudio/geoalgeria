@@ -201,6 +201,8 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | شركات التوصيل ونقاط الاستلام المُرمّزة جغرافياً |
 | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | مؤسسات الشباب والرياضة (وزارة الشباب) |
 | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي — جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز (وزارة التعليم العالي) |
+| [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية — فنادق، معالم سياحية، مواقع تاريخية، منابع حرارية، حدائق وطنية (ASAL، OSM، Wikidata) |
+| [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني — CFPA، INSFP، IFEP، مراكز خاصة (وزارة التكوين المهني / takwin.dz) |
 
 القائمة الكاملة والمستودع الأحادي: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

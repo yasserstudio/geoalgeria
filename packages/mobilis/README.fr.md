@@ -82,7 +82,7 @@ Les fichiers **CSV et GeoJSON** se trouvent dans le dépôt sous [`data/`](data)
 data/
   agences.json              # 165 agences (tableau)
   pdv.json                  # 12 180 points de vente (tableau)
-  metadata.json             # source, compteurs, generated_at
+  metadata.json             # source, comptages, generated_at
   csv/agences.csv           # dépôt + bundle Release (pas dans le tarball npm)
   csv/pdv.csv
   geojson/agences.geojson   # Entités Point (agences uniquement)

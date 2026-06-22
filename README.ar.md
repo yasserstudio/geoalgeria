@@ -48,7 +48,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **المطارات المدنية** | 33 | ANAC: أسماء، رموز ICAO، معلومات اتصال، إحداثيات — [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات — [`@geoalgeria/banques`](packages/banques) |
 | **شركات التوصيل** | 411 | 16 ناقلًا + 411 نقطة استلام في 61 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
-| **مؤسسات الشباب والرياضة** | 2,076 | دور الشباب، مركّبات رياضية، دور الشباب، مراكز ثقافية وأكثر في 50 ولاية (وزارة الشباب) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
+| **مؤسسات الشباب والرياضة** | 2,076 | دور الشباب، مركّبات رياضية، دور إيواء، مراكز ثقافية وأكثر في 50 ولاية (وزارة الشباب) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **التعليم العالي** | 110 | 58 جامعة + 35 مدرسة عليا + 12 مدرسة عليا للأساتذة + 5 مراكز جامعية في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **السياحة** | 4,348 | 995 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية — [`@geoalgeria/tourisme`](packages/tourisme) |
 | **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في 58 ولاية (وزارة التكوين المهني / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |

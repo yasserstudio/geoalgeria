@@ -96,7 +96,7 @@ data/
   carriers.json             # 16 transporteurs (registre)
   stopdesks.json            # 411 bureaux de retrait géocodés (tableau)
   coverage.json             # 9 lignes de couverture par transporteur
-  metadata.json             # sources, compteurs, generated_at
+  metadata.json             # sources, comptages, generated_at
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
@@ -146,7 +146,7 @@ référencent le bureau — `["yalidine","guepex"]` quand les cartes relais conc
 
 ## Besoin aussi des divisions administratives ?
 
-Si vous avez également besoin des wilayas, dairas et communes pour effectuer des jointures,
+Si vous avez également besoin des wilayas, daïras et communes pour effectuer des jointures,
 utilisez le package principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit le jeu de données
 complet des 69 wilayas auquel `wilaya_code` se rattache ici. Utilisez `@geoalgeria/livraison`
@@ -183,4 +183,4 @@ informations officielles et en temps réel.
 
 ---
 
-Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)
+Fait par [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

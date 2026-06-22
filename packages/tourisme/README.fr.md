@@ -140,7 +140,7 @@ wilayas de GeoAlgeria.
 
 ## Besoin aussi des divisions administratives ?
 
-Si vous avez également besoin des wilayas, dairas et communes pour des jointures, utilisez
+Si vous avez également besoin des wilayas, daïras et communes pour des jointures, utilisez
 le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit
 le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence ici. Utilisez
 `@geoalgeria/tourisme` quand vous avez *uniquement* besoin des données touristiques.

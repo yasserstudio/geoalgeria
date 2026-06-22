@@ -201,6 +201,8 @@ Ce jeu de données utilise le [versionnement sémantique](https://semver.org/). 
 | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Transporteurs et points-relais géocodés |
 | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Établissements de jeunesse et sports (Ministère de la Jeunesse) |
 | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Réseau de l'enseignement supérieur — universités, grandes écoles, ENS, centres (MESRS) |
+| [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Infrastructure touristique — hôtels, attractions, sites historiques, sources thermales, parcs (ASAL, OSM, Wikidata) |
+| [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle — CFPA, INSFP, IFEP, centres privés (MFEP / takwin.dz) |
 
 Liste complète et monorepo : [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

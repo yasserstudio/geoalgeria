@@ -47,7 +47,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Couverture 5G** | 1 681 | sites 5G Djezzy + Mobilis + Ooredoo — [`@geoalgeria/telecom`](packages/telecom) |
 | **Aéroports civils** | 33 | ANAC : noms, codes OACI, contacts, coordonnées — [`@geoalgeria/aviation`](packages/aviation) |
 | **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées — [`@geoalgeria/banques`](packages/banques) |
-| **Transporteurs de livraison** | 411 | 16 transporteurs + 411 stop-desks géocodés dans 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
+| **Transporteurs de livraison** | 411 | 16 transporteurs + 411 bureaux de retrait géocodés dans 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
 | **Institutions jeunesse et sports** | 2 076 | maisons de jeunes, complexes sportifs, auberges, centres culturels et plus dans 50 wilayas (Ministère de la Jeunesse) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Enseignement supérieur** | 110 | 58 universités + 35 grandes écoles + 12 ENS + 5 centres dans 51 wilayas, avec sites web officiels (MESRS) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **Tourisme** | 4 348 | 995 hôtels, 1 248 attractions, 1 184 sites historiques, 282 sources thermales (ASAL), 32 parcs nationaux — [`@geoalgeria/tourisme`](packages/tourisme) |
@@ -92,7 +92,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/telecom`](packages/telecom) | [`@geoalgeria/telecom`](https://www.npmjs.com/package/@geoalgeria/telecom) | Couverture 5G multi-opérateurs (Djezzy, Mobilis, Ooredoo) |
 | [`packages/aviation`](packages/aviation) | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | Aéroports civils de l'ANAC — noms, codes OACI, coordonnées |
 | [`packages/banques`](packages/banques) | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | Les 21 banques agréées + institutions financières et 1 704 agences (RIB, SWIFT, propriété, coordonnées) |
-| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Registre des transporteurs + 411 stop-desks géocodés et couverture par transporteur (Yalidine, Guepex, Anderson, Noest, Maystro) |
+| [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Registre des transporteurs + 411 bureaux de retrait géocodés et couverture par transporteur (Yalidine, Guepex, Anderson, Noest, Maystro) |
 | [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Institutions de jeunesse et de sports du Ministère de la Jeunesse (2 076 dans 50 wilayas) |
 | [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Réseau de l'enseignement supérieur du MESRS — universités, grandes écoles, ENS et centres (110), avec sites web officiels et coordonnées |
 | [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Infrastructure touristique — 4 348 hôtels, attractions, sites historiques, sources thermales et parcs géocodés (ASAL, OSM, Wikidata) |
