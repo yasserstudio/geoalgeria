@@ -40,34 +40,37 @@ reproduction clean.
 
 ## Wordmark
 
-- **"GeoAlgeria"** — set as one word, two colors: **Geo** = navy, **Algeria** = green.
-  Equal font weight (color is the only differentiator). Modern geometric sans-serif.
+- **"GeoAlgeria"** — set as one word, two colors: **Geo** = navy `#1A202C`,
+  **Algeria** = green `#2D7A3A`. Equal weight; colour is the only differentiator.
+  Font: **IBM Plex Sans SemiBold** (matches the geoalgeria.com app).
 - **Arabic "جيو الجزائر"** — mirrors the Latin split: **جيو** (Geo) = navy,
-  **الجزائر** (Algeria) = green. Two words, with a space.
-- **Tagline** — "OPEN DATA FOR ALGERIA", navy, small caps, tight letter-spacing.
+  **الجزائر** (Algeria) = green. Font: IBM Plex Sans Arabic SemiBold.
+- The horizontal lockup PNGs are **rendered from the vector mark + IBM Plex via
+  rsvg-convert** (HarfBuzz shapes the Arabic) — no longer AI-generated raster.
 
 ## Sizing rule (important)
 
 - **≥ 48px** → full icon *with* the Algeria map outline.
 - **< 48px (favicon: 16/32px)** → **layers-only** variant, map dropped. The outline
   smudges below ~48px, so the small variant uses just the three green layers.
-  *(This variant is not produced yet — see Open items.)*
+
+## Source of truth (vector mark)
+
+The canonical vector mark now lives **as code** in the app repo:
+`GeoAlgeria-app/apps/web/components/brand/` — `geoalgeria-mark.tsx` (full +
+layers-only), `algeria-silhouette.ts` (national outline dissolved from the real
+wilaya boundaries, not AI-traced), `mark.ts` (shared paths + `BRAND_GREEN`).
+Reuse that geometry; don't regenerate the silhouette.
 
 ## Open items
 
-These are intentionally **not** implemented yet:
-
-- [ ] **Vector masters** — current files are raster PNG from AI generation. Need clean
-      SVG masters (real Algeria geometry, ideally traced from project boundary data
-      rather than AI-approximated).
-- [ ] **Layers-only icon** for the favicon (16 / 32 / 48px) — map dropped.
-- [ ] **Arabic color/spacing check** — confirm جيو = navy, الجزائر = green, and the
-      two words have a space (earlier drafts inverted/joined them).
-- [ ] **Navy vs black** — current PNG wordmark is pure **black** `(0,0,0)`, not the spec
-      navy `#1A202C`. Fix in the vector master (lock navy). The dark-mode variant recolors
-      black→white, so dark mode is unaffected.
-- [ ] **Icon polish** — optically center the map on the top layer; thicken the white
-      outline ~15–20% to balance the chunky layers.
-- [x] **README headers (×3)** — wired in (light/dark via `<picture>`), linked to
-      geoalgeria.com. _Re-export when vectors are final._
-- [ ] **Wire-in (remaining)** — website header, favicon, npm/social avatars.
+- [x] **Accurate map geometry** — silhouette is now dissolved from real wilaya
+      boundaries (app `algeria-silhouette.ts`); the README mark uses the same shape.
+- [x] **Layers-only icon** — done; app ships `app/icon.svg` + favicon set.
+- [x] **Arabic color/spacing** — fixed: جيو navy (right), الجزائر green (left).
+- [x] **Navy locked** — lockup wordmark now uses navy `#1A202C` (not pure black).
+- [x] **README headers (×3)** — wired in (light/dark via `<picture>`).
+- [x] **App** — fully branded (headers, theme, favicon/manifest, OG). See app PR #22.
+- [ ] **Optional: SVG lockup master** — the horizontal lockup is committed as
+      retina PNG (rendered, not AI). A text-outlined SVG master is not produced.
+- [ ] **Wire-in (remaining)** — npm/social avatars.
