@@ -93,7 +93,7 @@ Always cite a source for data changes. Accepted:
 
 ## Requesting a new dataset
 
-GeoAlgeria is meant to grow into the canonical source for *all kinds* of Algeria
+GeoAlgeria is meant to grow into the open reference source for *all kinds* of Algeria
 data, as sources allow. Know of one worth adding (elections, schools, health
 facilities, economic indicators, transport…)?
 
