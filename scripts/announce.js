@@ -28,7 +28,7 @@ const PACKAGES = {
   "@geoalgeria/telecom": { dir: "packages/telecom", label: "Algeria's telecom operators' network sites" },
   "@geoalgeria/aviation": { dir: "packages/aviation", label: "Algeria's civil airports" },
   "@geoalgeria/livraison": { dir: "packages/livraison", label: "Algeria's delivery carriers & stop-desks" },
-  "@geoalgeria/jeunesse": { dir: "packages/jeunesse", label: "Algeria's youth & sports institutions" },
+  "@geoalgeria/jeunesse": { dir: "packages/jeunesse", label: "Algeria's youth establishments" },
   "@geoalgeria/enseignement-superieur": { dir: "packages/enseignement-superieur", label: "Algeria's higher-education network" },
   "@geoalgeria/tourisme": { dir: "packages/tourisme", label: "Algeria's tourism infrastructure" },
   "@geoalgeria/formation-professionnelle": { dir: "packages/formation-professionnelle", label: "Algeria's vocational training establishments" },

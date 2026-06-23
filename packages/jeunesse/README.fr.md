@@ -4,7 +4,7 @@
 
 # @geoalgeria/jeunesse
 
-**Toutes les infrastructures de jeunesse et de sport en Algérie — sous forme de données installables.**
+**Toutes les institutions de jeunesse en Algérie — sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/jeunesse)](https://www.npmjs.com/package/@geoalgeria/jeunesse)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/jeunesse)](https://www.npmjs.com/package/@geoalgeria/jeunesse)
@@ -12,10 +12,12 @@
 
 </div>
 
-2 076 infrastructures de jeunesse et de sport à travers l'Algérie — **maisons de jeunes**, complexes sportifs,
-salles polyvalentes, auberges de jeunes, centres culturels, camps de jeunes et plus encore — chacune avec
-son nom officiel en arabe, son **type** d'infrastructure, commune / daïra / wilaya, et coordonnées GPS.
-Source : **Ministère de la Jeunesse**, distribué en JSON, CSV et GeoJSON. Fait partie de
+2 334 institutions de jeunesse à travers l'Algérie — **maisons de jeunes**, complexes sportifs de
+proximité, salles polyvalentes, auberges de jeunes, centres de sciences et centres culturels, camps de jeunes
+et plus encore — chacune avec son nom, son **type**, son adresse, sa capacité, son statut opérationnel, l'accessibilité PMR,
+la surface bâtie/terrain, commune / daïra / wilaya, et coordonnées GPS. Source : **Ministère de la Jeunesse et des Sports GIS (sig.mjs.gov.dz)** — le même
+système officiel derrière le package sœur [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports).
+Distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -25,38 +27,37 @@ npm install @geoalgeria/jeunesse
 ```js
 import jeunesse from "@geoalgeria/jeunesse";
 
-const all = jeunesse.institutions();              // 2 076
-const inAlgiers = jeunesse.institutionsByWilaya(16); // infrastructures de la wilaya 16
-const houses = jeunesse.institutionsByType("MJ");  // toutes les maisons de jeunes
+const all = jeunesse.institutions();                 // ~2 334
+const inAlgiers = jeunesse.institutionsByWilaya(16);  // institutions de la wilaya 16
+const houses = jeunesse.institutionsByType("MJ");     // toutes les maisons de jeunes
 
-// Chaque enregistrement a lat/lng — tri par distance, carte ou infrastructure la plus proche en quelques lignes.
+// Chaque enregistrement a lat/lng — tri par distance, carte ou institution la plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Recherche de la maison de jeunes la plus proche** — coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
-- **Applications civiques et jeunesse** — cartographier les maisons de jeunes, complexes sportifs et centres culturels par wilaya.
-- **Cartes** — couche de points GeoJSON prête à l'emploi pour tout le réseau jeunesse et sport.
-- **Recherche et planification** — densité des infrastructures par type et wilaya à travers le pays.
+- **Recherche du centre jeunesse le plus proche** — coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
+- **Applications civiques et jeunesse** — cartographier les maisons de jeunes, complexes sportifs et centres culturels par wilaya, filtrés par capacité ou statut opérationnel.
+- **Cartes** — couche de points GeoJSON prête à l'emploi pour tout le réseau des institutions de jeunesse.
+- **Recherche et planification** — densité des institutions par type et wilaya, analyse de capacité, audits d'accessibilité PMR et statut opérationnel.
 
 ## Contenu
 
 | Type | Code | Nombre |
 | --- | --- | --- |
-| Maison de jeunes | `MJ` | 833 |
-| Complexe sportif de proximité | `CS` | 577 |
-| Salle polyvalente | `SPA` | 297 |
-| Auberge de jeunes | `AJ` | 193 |
-| Centre culturel | `CC` | 58 |
-| Camp de jeunes | `CJ` | 51 |
-| Centre de loisirs scientifiques | `CLS` | 35 |
-| Club de jeunes | `CLJ` | 29 |
-| Piscine de proximité | `PAL` | 3 |
-| **Total** | | **2 076** |
+| Maison de jeunes | `MJ` | 960 |
+| Complexe sportif de proximité | `CSP` | 694 |
+| Salle polyvalente | `SPA` | 295 |
+| Auberge de jeunes | `AJ` | 241 |
+| Camp de jeunes | `CJ` | 54 |
+| Centre de loisirs scientifiques | `CLS` | 46 |
+| Foyer de jeunes | `FJ` | 22 |
+| Centre culturel | `CC` | 19 |
+| Bloc d'accueil | `BA` | 3 |
+| **Total** | | **2 334** |
 
-Couvrant **50 wilayas**, chaque infrastructure est géocodée. `wilaya_code` est lié au modèle wilaya de
-[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La source publie moins que l'ensemble complet
-des wilayas ; les huit absentes de la carte du ministère sont simplement absentes en amont, pas supprimées ici.
+Couvrant **58 wilayas**, chaque institution est géocodée. `wilaya_code` est lié au modèle wilaya de
+[`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ## Formats
 
@@ -80,61 +81,77 @@ const all: Institution[] = jeunesse.institutions();
 
 ```
 data/
-  institutions.json            # 2 076 infrastructures (tableau)
+  institutions.json            # ~2 334 institutions (tableau)
   metadata.json                # source, comptages, by_type, generated_at
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités Point (les 2 076 sont géocodées)
+  geojson/institutions.geojson # Entités Point (toutes géocodées)
 ```
 
 ## Structure d'un enregistrement
 
 ```json
 {
-  "id": 4,
-  "name": "دار الشباب خير الدين",
-  "type_code": "MJ",
-  "type_ar": "دار الشباب",
-  "type_fr": "Maison de jeunes",
-  "commune": "تقرت",
-  "daira": "تقرت",
-  "wilaya_code": "55",
-  "wilaya_name": "تقرت",
-  "lat": 33.10933,
-  "lng": 6.07068,
-  "source": "https://youthconnect.mjeunesse.gov.dz/institutions-map"
+  "id": 1,
+  "name": "Auberge de jeunes El amir Abdelkader, Sbaa",
+  "name_ar": "دار الشباب الأمير عبد القادر",
+  "type_code": "AJ",
+  "type_fr": "Auberge de jeunes",
+  "type_ar": "نزل الشباب",
+  "address": "sabaa, tsabit, adrar",
+  "commune": "SEBAA",
+  "daira": "TSABIT",
+  "wilaya_code": "01",
+  "wilaya_name": "ADRAR",
+  "capacity": 50,
+  "year": 2012,
+  "operational": true,
+  "pmr": true,
+  "surface_built_m2": 3600,
+  "surface_land_m2": 3600,
+  "lat": 28.2186,
+  "lng": -0.173,
+  "source": "https://sig.mjs.gov.dz/dashboard/viewer"
 }
 ```
 
-Le ministère publie les noms en **arabe uniquement**, donc `name`, `commune`, `daira` et
-`wilaya_name` sont en arabe ; `type_fr` est un libellé indicatif en français pour le type. Pour les noms
-de wilaya et de commune en français, joignez `wilaya_code` avec le jeu de données
+Le SIG publie les noms en **français** ; `name_ar` est le nom arabe **complété** à partir de la
+carte publique historique du ministère par appariement géographique au plus proche (≤ 200 m, et vérifié par
+type pour ne jamais greffer le nom d'un bâtiment voisin) — présent sur ~59 % des
+enregistrements, `null` où aucune correspondance de confiance n'existe. `name` est `null` pour les ~5 % que
+la source laisse vides ; `commune`, `daira` et `wilaya_name` sont en français (majuscules, comme publiés). Pour
+l'ensemble complet des divisions wilaya/commune en français, joignez `wilaya_code` avec le jeu de données
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété avec un zéro
-sur deux chiffres et est `<= 58` (la source est antérieure à la réforme des 69 wilayas) ; il reste
+sur deux chiffres et est `≤ 58` (la source est antérieure à la réforme des 69 wilayas) ; il reste
 compatible avec le modèle wilaya de GeoAlgeria.
+
+## Infrastructures sportives aussi ?
+
+Pour les stades, piscines, pistes, terrains de jeu et autres installations **sportives** d'Algérie (du
+même SIG du MJS), consultez le package sœur
+**[`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports)**. Utilisez
+`@geoalgeria/jeunesse` pour les institutions de jeunesse ; utilisez `@geoalgeria/sports` pour les
+infrastructures sportives.
 
 ## Besoin des divisions administratives ?
 
 Si vous avez aussi besoin des wilayas, daïras et communes pour les jointures, utilisez le package principal
 **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit le jeu de données complet
-des divisions de wilayas auquel `wilaya_code` fait référence ici. Utilisez `@geoalgeria/jeunesse`
-quand vous avez *uniquement* besoin des données des infrastructures de jeunesse et de sport.
+des divisions de wilayas auquel `wilaya_code` fait référence ici.
 
 ## Source
 
-Les données proviennent du **Ministère de la Jeunesse**, via la carte publique des infrastructures
-(<https://youthconnect.mjeunesse.gov.dz/institutions-map>). Exécutez `npm run fetch` pour régénérer
-toutes les sorties depuis la carte en ligne ; le build fait confiance à la jointure commune->wilaya du
-ministère, répare les enregistrements avec des coordonnées transposées ou dont le signe est manquant
-(un point à l'ouest stocké sans son signe moins — voir `metadata.sign_corrected`), et supprime les
-quelques enregistrements avec des coordonnées de remplissage (`metadata.dropped`). Il échoue bruyamment
-si le nombre d'infrastructures s'effondre ou si un code de type inconnu apparaît.
+Les données proviennent du **Ministère de la Jeunesse et des Sports**, via son SIG public
+(<https://sig.mjs.gov.dz/dashboard/viewer>). Exécutez `npm run fetch` pour régénérer
+toutes les sorties depuis le système en ligne ; le build résout chaque nom de wilaya français au code wilaya officiel,
+répare les enregistrements avec des coordonnées transposées, complète les noms arabes à partir de la carte historique, et
+supprime les quelques enregistrements avec des coordonnées de remplissage/hors limites (`metadata.dropped`). Il échoue bruyamment
+si le nombre d'institutions s'effondre ou si un type inconnu apparaît.
 
 ## Licence et attribution
 
-Le code est sous licence [MIT](LICENSE). Les données sous-jacentes sont la propriété du
-**Ministère de la Jeunesse**, redistribuées à titre de référence et pour alimenter
-[GeoAlgeria](https://geoalgeria.com). Vérifiez auprès du ministère pour des informations
-officielles et en temps réel.
+Le code est sous licence [MIT](LICENSE). Les données sous-jacentes sont © **Ministère de la Jeunesse et des Sports**,
+redistribuées à titre de référence et pour alimenter [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès du
+ministère pour des informations officielles et en temps réel.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/jeunesse) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
 

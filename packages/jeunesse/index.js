@@ -1,5 +1,5 @@
-// @geoalgeria/jeunesse — lightweight loaders for Algeria's youth & sports
-// institutions (Ministère de la Jeunesse).
+// @geoalgeria/jeunesse — lightweight loaders for Algeria's youth establishments
+// (Ministère de la Jeunesse et des Sports — SIG).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -7,7 +7,7 @@ import { dirname, join } from "node:path";
 const DATA = join(dirname(fileURLToPath(import.meta.url)), "data");
 const load = (p) => JSON.parse(readFileSync(join(DATA, p), "utf-8"));
 
-export const institutions = () => load("institutions.json"); // 2,076 youth & sports institutions
+export const institutions = () => load("institutions.json"); // ~2,334 youth establishments
 export const institutionById = (id) =>
   institutions().find((r) => r.id === Number(id)) ?? null;
 export const institutionsByWilaya = (code) => {
