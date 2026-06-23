@@ -1,10 +1,11 @@
 # Releasing
 
-GeoAlgeria publishes twelve packages to npm — **`geoalgeria`** (the dataset, kept
+GeoAlgeria publishes thirteen packages to npm — **`geoalgeria`** (the dataset, kept
 unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**,
 **`@geoalgeria/mobilis`**, **`@geoalgeria/telecom`**, **`@geoalgeria/aviation`**,
 **`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`**,
-**`@geoalgeria/enseignement-superieur`**, **`@geoalgeria/tourisme`** and
+**`@geoalgeria/sports`**, **`@geoalgeria/enseignement-superieur`**,
+**`@geoalgeria/tourisme`** and
 **`@geoalgeria/formation-professionnelle`** (under the
 `@geoalgeria` org) — using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
