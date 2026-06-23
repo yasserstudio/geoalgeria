@@ -1,0 +1,56 @@
+{
+  "name": "@geoalgeria/sports",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's 5,141 sports facilities — stadiums, pools, courts, tracks, halls and more, with type, commune/wilaya linkage, capacity, operational status and GPS coordinates. Sourced from the Ministère de la Jeunesse et des Sports GIS. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs sports"
+  },
+  "keywords": [
+    "algeria",
+    "sports",
+    "infrastructure",
+    "stadiums",
+    "swimming-pools",
+    "football",
+    "athletics",
+    "mjs",
+    "geojson",
+    "geoalgeria",
+    "algerie",
+    "dz",
+    "open-data"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/sports"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

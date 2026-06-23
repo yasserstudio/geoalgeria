@@ -113,6 +113,15 @@ const PACKAGES = {
       required: ["id", "name", "type_code", "wilaya_code"],
     },
   ],
+  sports: [
+    {
+      json: "facilities.json",
+      metaKey: "facilities",
+      csv: "csv/facilities.csv",
+      geojson: "geojson/facilities.geojson",
+      required: ["id", "type_code", "wilaya_code", "lat", "lng"],
+    },
+  ],
   "enseignement-superieur": [
     {
       json: "institutions.json",
