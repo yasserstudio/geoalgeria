@@ -110,7 +110,7 @@ const PACKAGES = {
       metaKey: "institutions",
       csv: "csv/institutions.csv",
       geojson: "geojson/institutions.geojson",
-      required: ["id", "name", "type_code", "wilaya_code"],
+      required: ["id", "type_code", "wilaya_code", "lat", "lng"],
     },
   ],
   sports: [

@@ -1,25 +1,26 @@
 #!/usr/bin/env node
 /**
- * Fetch Algeria's youth & sports institutions from the Ministère de la Jeunesse
- * public map and emit JSON, CSV, and GeoJSON to ../data.
+ * Fetch Algeria's youth establishments from the MJS GeoServer (kharitaDZ) and
+ * emit JSON, CSV, and GeoJSON to ../data.
  *
- * Source (public): https://youthconnect.mjeunesse.gov.dz/institutions-map
- *   The map page (a Laravel app, Leaflet + markercluster) inlines every
- *   institution as a single `const insts = [ … ];` array in the HTML — no auth,
- *   no API call, no WAF. Each record carries id, name (Arabic), latitude,
- *   longitude, a `type` (code + Arabic label) and a `commune` join (commune /
- *   daira / wilaya names + wilaya_code). We parse that array directly.
+ * Source: https://sig.mjs.gov.dz/dashboard/viewer
+ *   The MJS (Ministère de la Jeunesse et des Sports) runs a GeoServer behind a
+ *   Nuxt dashboard. The "etablissements_de_jeunes" WMS layer is publicly
+ *   queryable. We request all features as GeoJSON via the WMS GetMap endpoint
+ *   (format=application/json;type=geojson), which bypasses the auth-gated WFS.
+ *   This is the same official GIS that backs @geoalgeria/sports; the two are
+ *   sister packages (sports infrastructure vs. youth establishments).
  *
- * The ministry publishes names in Arabic only, so `name` is the Arabic name and
- * there is no French name to ship (the type carries an indicative French label).
- * `wilaya_code` comes straight from the ministry's own commune→wilaya join, so we
- * trust it (no nearest-centroid resolution needed) — it is ≤ 58 because the source
- * predates the 69-wilaya reform; that still joins the geoalgeria wilaya model.
+ * v2 note: earlier releases sourced the ministry's public Arabic map. This build
+ * moves to the authoritative GeoServer — more records (~2,300) and far richer
+ * fields (capacity, address, PMR accessibility, operational status, built/land
+ * area, reception year). The GeoServer publishes names in French; the Arabic
+ * names from the legacy source are backfilled by nearest-neighbour geo-match
+ * (scripts/seeds/names_ar.json) into `name_ar` where a confident match exists.
  *
- * Coordinate hygiene: a slice of records have latitude/longitude transposed
- * (lat ≈ 3, lng ≈ 36). We detect any point outside Algeria's bounding box, try a
- * lat/lng swap, keep it if the swap lands in-country, and drop (with a log) the
- * few that are unrecoverable. Every shipped record is therefore geocoded.
+ * Wilaya names from the source are French (all-caps, no diacritics). We resolve
+ * them to numeric wilaya_code using a normalisation map built from the flagship
+ * dataset's 69 wilayas.
  *
  * Usage: node scripts/fetch.mjs
  */
@@ -31,81 +32,186 @@ import { dirname, join } from "node:path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
 const DATASET = join(__dirname, "..", "..", "dataset", "data");
+const NAMES_AR_SEED = join(__dirname, "seeds", "names_ar.json");
 
-const PAGE = "https://youthconnect.mjeunesse.gov.dz/institutions-map";
+const WMS_URL =
+  "https://sig.mjs.gov.dz/api/v1.0/geoserver/public/wms?" +
+  "service=WMS&version=1.1.1&request=GetMap" +
+  "&layers=etablissements_de_jeunes" +
+  "&bbox=-9,18,12,38&width=1&height=1&srs=EPSG:4326" +
+  "&format=application/json;type=geojson";
+
+const SOURCE = "https://sig.mjs.gov.dz/dashboard/viewer";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
 
-// Sanity floor — the ministry lists ~2,000 institutions; fail loudly if a reshape
-// of the page leaves us with far fewer. It is a living dataset, so we don't pin an
-// exact count (it grows), but a collapse to a handful means the parse broke.
-const MIN_EXPECTED = 1500;
+const MIN_EXPECTED = 1800;
 
-// The ministry's nine institution types (its own French acronyms). The Arabic
-// label ships verbatim from the source; `type_fr` is an indicative French label
-// for non-Arabic consumers, keyed by the source code. A code we've never seen is
-// surfaced loudly so the map can be extended deliberately, not silently mislabeled.
-const TYPE_FR = {
-  MJ: "Maison de jeunes",
-  AJ: "Auberge de jeunes",
-  CC: "Centre culturel",
-  CS: "Complexe sportif de proximité",
-  SPA: "Salle polyvalente",
-  CJ: "Camp de jeunes",
-  CLS: "Centre de loisirs scientifiques",
-  CLJ: "Club de jeunes",
-  PAL: "Piscine de proximité",
+// Backfill tolerance: an Arabic name is grafted onto a French record only when a
+// legacy point sits within this many metres. Tight enough to avoid cross-labelling
+// neighbours in dense urban clusters; loose enough to absorb the two sources'
+// modest coordinate disagreement on the same site.
+const NAME_AR_MAX_M = 200;
+
+// The legacy map and this GIS use different type vocabularies. To avoid grafting a
+// neighbouring building's Arabic name onto a record (a maison de jeunes sitting
+// next to a salle polyvalente), a match must also be type-compatible: each new
+// type code accepts only its legacy equivalent(s). New types with no legacy
+// counterpart (FJ, BA) never match, so they stay `name_ar: null`.
+const LEGACY_TYPES_FOR = {
+  MJ: ["MJ"], CSP: ["CS"], SPA: ["SPA"], AJ: ["AJ"],
+  CJ: ["CJ"], CLS: ["CLS"], FJ: [], CC: ["CC"], BA: [],
 };
 
-// Algeria's bounding box (matches the repo's other geocoded validators). An exact
-// 0 in either axis is a data-entry placeholder, not a real reading (Algeria grazes
-// the prime meridian, but never at exactly 0.000000), so it is rejected too.
+// The MJS youth-establishment types — short, stable keys for the 9 the source
+// publishes on this layer. `fr` is the cleaned French label; `ar` is an
+// indicative Arabic label for non-French consumers (the per-record `name_ar`
+// carries the institution's own Arabic name where matched).
+const TYPE_MAP = {
+  "Maison de Jeunes": { code: "MJ", fr: "Maison de jeunes", ar: "دار الشباب" },
+  "Complexe Sportif de Proximite": { code: "CSP", fr: "Complexe sportif de proximité", ar: "مركب رياضي جواري" },
+  "Salle Polyvalente": { code: "SPA", fr: "Salle polyvalente", ar: "قاعة متعددة الرياضات" },
+  "Auberge de Jeunes": { code: "AJ", fr: "Auberge de jeunes", ar: "نزل الشباب" },
+  "Camp de jeunes": { code: "CJ", fr: "Camp de jeunes", ar: "مخيم الشباب" },
+  "Centre de Loisir Scientifique": { code: "CLS", fr: "Centre de loisirs scientifiques", ar: "مركز الترفيه العلمي" },
+  "Foyer de Jeunes": { code: "FJ", fr: "Foyer de jeunes", ar: "نادي الشباب" },
+  "Centre culturel": { code: "CC", fr: "Centre culturel", ar: "مركز ثقافي" },
+  "Bloc d'accueil": { code: "BA", fr: "Bloc d'accueil", ar: "كتلة استقبال" },
+};
+
+// Wilaya name normalisation: MJS uses uppercase ASCII French; the flagship uses
+// accented Title Case. We strip diacritics and case to match.
+function buildWilayaMap() {
+  const wilayas = JSON.parse(readFileSync(join(DATASET, "wilayas.json"), "utf-8")).wilayas;
+  const map = {};
+  for (const w of wilayas) {
+    map[normalise(w.name_fr)] = String(w.code).padStart(2, "0");
+  }
+  return map;
+}
+
+function normalise(s) {
+  return s
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/['’-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toUpperCase();
+}
+
+// MJS uses variant names for some new wilayas; map them to the flagship form.
+const WILAYA_ALIASES = {
+  "AIN SALAH": "IN SALAH",
+  "AIN GUEZZAM": "IN GUEZZAM",
+  "EL MEGHAIER": "EL M GHAIR",
+  "EL MENIA": "EL MENIAA",
+};
+
+// Algeria bounding box. An exact 0 on either axis is a placeholder, not a reading.
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) &&
   lat !== 0 && lng !== 0 &&
   lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
 
-// Per-wilaya bounding boxes, derived from the flagship commune centroids. Used to
-// repair records whose longitude lost its negative sign: a western point stored at
-// +lng stays inside Algeria's national bbox but lands ~2·|lng|° east of its real
-// home (e.g. Tlemcen city at 34.88,-1.32 arriving as 34.88,+1.32 plots near
-// Laghouat). The national bbox can't catch that; the wilaya bbox can.
-const BOX_MARGIN = 0.7; // degrees of slack around the commune-centroid extent
-function loadWilayaBoxes() {
-  const files = ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"];
-  const boxes = {};
-  for (const f of files) {
-    const fp = join(DATASET, f);
-    if (!existsSync(fp)) continue;
-    for (const c of JSON.parse(readFileSync(fp, "utf8"))) {
-      if (c.latitude == null || c.longitude == null) continue;
-      const w = Number(c.wilaya_code);
-      const b = (boxes[w] ||= { minLat: Infinity, maxLat: -Infinity, minLng: Infinity, maxLng: -Infinity });
-      b.minLat = Math.min(b.minLat, c.latitude);
-      b.maxLat = Math.max(b.maxLat, c.latitude);
-      b.minLng = Math.min(b.minLng, c.longitude);
-      b.maxLng = Math.max(b.maxLng, c.longitude);
-    }
-  }
-  return boxes;
-}
-const inBox = (lat, lng, b) =>
-  !!b &&
-  lat >= b.minLat - BOX_MARGIN && lat <= b.maxLat + BOX_MARGIN &&
-  lng >= b.minLng - BOX_MARGIN && lng <= b.maxLng + BOX_MARGIN;
-
 const clean = (s) => {
-  const v = s == null ? "" : String(s).replace(/\s+/g, " ").trim();
+  if (s == null) return null;
+  const v = String(s).replace(/\s+/g, " ").trim();
   return v === "" ? null : v;
 };
 
-async function getText(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "text/html" },
-  });
-  if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
-  return res.text();
+// Names the GIS uses as "no value" placeholders — drop to null rather than ship.
+const JUNK_NAME = new Set(["", "-", "ind", "néant", "neant", "n/a", "na", "."]);
+const cleanName = (s) => {
+  const v = clean(s);
+  if (v == null) return null;
+  return JUNK_NAME.has(v.toLowerCase()) ? null : v;
+};
+
+// Strip the "uuid:" prefix the GIS puts on referential values.
+const stripUUID = (s) => {
+  if (s == null) return null;
+  const v = String(s);
+  const idx = v.indexOf(":");
+  if (idx > 0 && idx < 40 && /^[0-9a-f-]+$/.test(v.slice(0, idx))) {
+    return clean(v.slice(idx + 1));
+  }
+  return clean(v);
+};
+
+function parseYear(v) {
+  const s = stripUUID(v);
+  if (!s) return null;
+  const m = s.match(/\b(19|20)\d{2}\b/);
+  return m ? Number(m[0]) : null;
+}
+
+function parseCapacity(v) {
+  if (v == null) return null;
+  const n = Number(String(v).replace(/[^\d]/g, ""));
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+function parseSurface(v) {
+  if (v == null) return null;
+  const s = String(v).replace(/,/g, ".").replace(/[^\d.]/g, "");
+  const n = parseFloat(s);
+  return Number.isFinite(n) && n > 0 ? n : null;
+}
+
+// --- Arabic name backfill (nearest-neighbour over the legacy seed) -----------
+// Equirectangular metres — good enough at Algeria's latitudes for a sub-km test.
+function metres(aLat, aLng, bLat, bLng) {
+  const R = 6371000;
+  const dLat = ((bLat - aLat) * Math.PI) / 180;
+  const dLng = ((bLng - aLng) * Math.PI) / 180;
+  const lat = ((aLat + bLat) / 2) * (Math.PI / 180);
+  const x = dLng * Math.cos(lat);
+  return Math.sqrt(dLat * dLat + x * x) * R;
+}
+
+function loadNamesArSeed() {
+  if (!existsSync(NAMES_AR_SEED)) return [];
+  try {
+    const seed = JSON.parse(readFileSync(NAMES_AR_SEED, "utf8"));
+    return Array.isArray(seed) ? seed.filter((s) => s.name_ar && inAlgeria(s.lat, s.lng)) : [];
+  } catch (e) {
+    throw new Error(`${NAMES_AR_SEED}: corrupt seed JSON — ${e.message}`);
+  }
+}
+
+// Bucket the seed into ~0.05° cells (~5 km) so each lookup scans only nearby
+// points instead of all 2,000+. Returns finder(lat,lng,typeCode) -> the nearest
+// type-compatible legacy name_ar within tolerance, or null.
+function buildNameArFinder(seed) {
+  const CELL = 0.05;
+  const key = (lat, lng) => `${Math.round(lat / CELL)}:${Math.round(lng / CELL)}`;
+  const grid = new Map();
+  for (const s of seed) {
+    const k = key(s.lat, s.lng);
+    (grid.get(k) || grid.set(k, []).get(k)).push(s);
+  }
+  return (lat, lng, typeCode) => {
+    const allowed = LEGACY_TYPES_FOR[typeCode];
+    if (!allowed || !allowed.length) return null;
+    const cy = Math.round(lat / CELL);
+    const cx = Math.round(lng / CELL);
+    let best = null;
+    let bestD = Infinity;
+    for (let dy = -1; dy <= 1; dy++) {
+      for (let dx = -1; dx <= 1; dx++) {
+        const bucket = grid.get(`${cy + dy}:${cx + dx}`);
+        if (!bucket) continue;
+        for (const s of bucket) {
+          if (!allowed.includes(s.type_code)) continue;
+          const d = metres(lat, lng, s.lat, s.lng);
+          if (d < bestD) { bestD = d; best = s; }
+        }
+      }
+    }
+    return bestD <= NAME_AR_MAX_M && best ? best.name_ar : null;
+  };
 }
 
 // --- writers ---------------------------------------------------------------
@@ -113,7 +219,6 @@ function toCSV(rows, cols) {
   const esc = (v) => {
     if (v === null || v === undefined) return "";
     let s = String(v);
-    // Neutralize spreadsheet formula injection on text fields; numbers pass through.
     if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
     return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
@@ -139,146 +244,156 @@ const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  console.log("Fetching Ministère de la Jeunesse institutions map…");
-  const html = await getText(PAGE);
-  const m = html.match(/const insts\s*=\s*(\[[\s\S]*?\]);/);
-  if (!m) throw new Error("could not find the `const insts = [...]` array on the map page");
+  console.log("Fetching MJS youth establishments from GeoServer…");
+  const res = await fetch(WMS_URL, {
+    headers: { "User-Agent": UA },
+    signal: AbortSignal.timeout(60_000),
+  });
+  if (!res.ok) throw new Error(`WMS request failed: HTTP ${res.status}`);
+  const raw = await res.json();
 
-  let raw;
-  try {
-    raw = JSON.parse(m[1]);
-  } catch (e) {
-    throw new Error(`failed to parse the institutions array: ${e.message}`);
+  if (!raw.features || !Array.isArray(raw.features)) {
+    throw new Error("unexpected response — no features array");
   }
-  if (!Array.isArray(raw) || raw.length < MIN_EXPECTED) {
-    throw new Error(`parsed ${Array.isArray(raw) ? raw.length : "non-array"}; expected >= ${MIN_EXPECTED}`);
+  if (raw.features.length < MIN_EXPECTED) {
+    throw new Error(`only ${raw.features.length} features; expected >= ${MIN_EXPECTED}`);
   }
-  console.log(`  parsed ${raw.length} raw records`);
+  console.log(`  fetched ${raw.features.length} raw features`);
 
-  const boxes = loadWilayaBoxes();
-  if (!Object.keys(boxes).length) {
-    throw new Error(
-      `flagship commune data not found at ${DATASET} — run this from the monorepo; ` +
-        `the longitude sign-repair needs the flagship per-wilaya bounding boxes.`,
-    );
-  }
-
+  const wilayaMap = buildWilayaMap();
+  const findNameAr = buildNameArFinder(loadNamesArSeed());
   const institutions = [];
   const dropped = [];
   const unknownTypes = new Set();
-  let signFixed = 0;
+  const unmappedWilayas = new Set();
+  let arMatched = 0;
 
-  for (const r of raw) {
-    const code = r.type?.code ? String(r.type.code).trim().toUpperCase() : null;
-    if (code && !(code in TYPE_FR)) unknownTypes.add(code);
+  for (const feat of raw.features) {
+    const p = feat.properties;
+    if (p.deleted === true || p.deleted === "true") continue;
 
-    // Coordinate hygiene: accept as-is, else try a lat/lng swap, else drop.
-    let lat = Number(r.latitude);
-    let lng = Number(r.longitude);
+    const coords = feat.geometry?.coordinates;
+    if (!coords) { dropped.push({ id: p.id, reason: "no geometry" }); continue; }
+    let [lng, lat] = coords;
     if (!inAlgeria(lat, lng)) {
-      if (inAlgeria(lng, lat)) {
-        [lat, lng] = [lng, lat];
-      } else {
-        dropped.push({ id: r.id, lat: r.latitude, lng: r.longitude });
-        continue;
-      }
+      if (inAlgeria(lng, lat)) { [lat, lng] = [lng, lat]; }
+      else { dropped.push({ id: p.id, reason: "out of bounds" }); continue; }
     }
 
-    const c = r.commune || {};
+    const typeRaw = stripUUID(p.type_de_letablissement);
+    const typeEntry = typeRaw ? TYPE_MAP[typeRaw] : null;
+    if (typeRaw && !typeEntry) unknownTypes.add(typeRaw);
 
-    // Repair a dropped longitude sign. The source only ever drops the minus sign,
-    // so only repair a record whose wilaya lies ENTIRELY on one side of the meridian,
-    // whose longitude has the wrong sign for it, and whose mirror lands back inside
-    // the wilaya. Wilayas that straddle 0° (sign genuinely ambiguous — e.g. Adrar)
-    // are left untouched, so correct near-meridian points are never flipped.
-    const cw = c.wilaya_code != null ? Number(c.wilaya_code) : null;
-    const box = cw != null ? boxes[cw] : null;
-    if (box) {
-      const wrongSign = (box.maxLng < 0 && lng > 0) || (box.minLng > 0 && lng < 0);
-      if (wrongSign && inBox(lat, -lng, box)) {
-        lng = -lng;
-        signFixed++;
-      }
-    }
+    const wilayaName = stripUUID(p.wilaya);
+    if (!wilayaName) { dropped.push({ id: p.id, reason: "no wilaya" }); continue; }
+    const normWilaya = normalise(wilayaName);
+    const wilayaCode = wilayaMap[normWilaya] || wilayaMap[WILAYA_ALIASES[normWilaya]] || null;
+    if (!wilayaCode) unmappedWilayas.add(wilayaName);
+
+    const funcRaw = stripUUID(p.fonctionnel_ou_non_fonctionnel);
+    const operational = funcRaw
+      ? funcRaw.toLowerCase().includes("non") ? false
+      : funcRaw.toLowerCase().startsWith("fonctionnel") ? true
+      : null
+      : null;
+
+    const pmrRaw = p["accessibilite_aux_personnes_a_mobilite_e_reduite(pmr)"];
+    const pmr = pmrRaw === "true" || pmrRaw === true ? true
+      : pmrRaw === "false" || pmrRaw === false ? false
+      : null;
+
+    const name_ar = findNameAr(lat, lng, typeEntry?.code ?? null);
+    if (name_ar) arMatched++;
 
     institutions.push({
-      id: r.id,
-      name: clean(r.name), // Arabic — the ministry publishes names in Arabic only
-      type_code: code,
-      type_ar: clean(r.type?.name),
-      type_fr: code ? TYPE_FR[code] ?? null : null,
-      commune: clean(c.commune_name), // Arabic, from the source
-      daira: clean(c.daira_name), // Arabic, from the source
-      wilaya_code: c.wilaya_code != null ? String(c.wilaya_code).padStart(2, "0") : null,
-      wilaya_name: clean(c.wilaya_name), // Arabic, from the source
+      id: p.id,
+      name: cleanName(p.denomination_de_letablissement),
+      name_ar,
+      type_code: typeEntry?.code ?? null,
+      type_fr: typeEntry?.fr ?? typeRaw ?? null,
+      type_ar: typeEntry?.ar ?? null,
+      address: clean(p.adresse_de_letablissement),
+      commune: stripUUID(p.commune),
+      daira: stripUUID(p.daira),
+      wilaya_code: wilayaCode,
+      wilaya_name: wilayaName,
+      capacity: parseCapacity(p.capacite_daccueil),
+      year: parseYear(p.annee_de_reception),
+      operational,
+      pmr,
+      surface_built_m2: parseSurface(p.surface_du_batie_en_m),
+      surface_land_m2: parseSurface(p.surface_de_lassiette_en_m),
       lat,
       lng,
-      source: PAGE,
+      source: SOURCE,
     });
   }
 
-  // Guards — fail loudly if the source reshapes.
   if (unknownTypes.size) {
-    throw new Error(
-      `unknown institution type code(s): ${[...unknownTypes].join(", ")} — extend TYPE_FR before shipping`,
-    );
+    throw new Error(`unknown type(s): ${[...unknownTypes].join(", ")} — extend TYPE_MAP`);
   }
-  const ids = institutions.map((r) => r.id);
-  if (new Set(ids).size !== ids.length) throw new Error("duplicate institution id(s) parsed");
-  const malformed = institutions.filter(
-    (r) => !r.name || !r.type_code || !r.type_ar || !r.commune || !r.daira || !r.wilaya_code || !r.wilaya_name,
+  if (unmappedWilayas.size) {
+    throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")} — extend WILAYA_ALIASES`);
+  }
+
+  institutions.sort((a, b) =>
+    (a.wilaya_code || "99").localeCompare(b.wilaya_code || "99") ||
+    (a.type_code || "").localeCompare(b.type_code || "") ||
+    (a.name || "￿").localeCompare(b.name || "￿"),
   );
-  if (malformed.length) {
-    throw new Error(`${malformed.length} record(s) missing a required field (ids: ${malformed.slice(0, 5).map((r) => r.id).join(", ")}…)`);
+
+  const overflow = institutions.filter((r) => {
+    const c = Number(r.wilaya_code);
+    return !Number.isFinite(c) || c < 1 || c > 69;
+  });
+  if (overflow.length) {
+    throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
   }
-  const overflow = institutions.filter((r) => Number(r.wilaya_code) < 1 || Number(r.wilaya_code) > 69);
-  if (overflow.length) throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
 
-  institutions.sort((a, b) => a.id - b.id);
+  institutions.forEach((f, i) => { f.id = i + 1; });
 
-  // --- type / wilaya summaries ---
+  // --- summaries ---
   const byType = {};
-  for (const r of institutions) byType[r.type_code] = (byType[r.type_code] || 0) + 1;
-  const wilayasCovered = new Set(institutions.map((r) => r.wilaya_code)).size;
+  for (const f of institutions) {
+    const k = f.type_code || "OTHER";
+    byType[k] = (byType[k] || 0) + 1;
+  }
+  const wilayasCovered = new Set(institutions.map((f) => f.wilaya_code).filter(Boolean)).size;
 
-  const cols = ["id","name","type_code","type_ar","type_fr","commune","daira","wilaya_code","wilaya_name","lat","lng","source"];
-  const geo = toGeoJSON(institutions);
-  const metadata = {
-    source: "Ministère de la Jeunesse (youthconnect.mjeunesse.gov.dz)",
-    origin: PAGE,
-    license: "Data © Ministère de la Jeunesse; redistributed for reference. See README.",
-    institutions: institutions.length,
-    by_type: byType,
-    wilayas_covered: wilayasCovered,
-    dropped: dropped.length, // records with unrecoverable coordinates, excluded
-    sign_corrected: signFixed, // records whose longitude sign was repaired
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
+  const cols = [
+    "id", "name", "name_ar", "type_code", "type_fr", "type_ar", "address",
+    "commune", "daira", "wilaya_code", "wilaya_name",
+    "capacity", "year", "operational", "pmr",
+    "surface_built_m2", "surface_land_m2", "lat", "lng", "source",
+  ];
 
   mkdirSync(join(DATA, "csv"), { recursive: true });
   mkdirSync(join(DATA, "geojson"), { recursive: true });
   writeJSON("institutions.json", institutions);
   writeText("csv/institutions.csv", toCSV(institutions, cols));
-  writeJSON("geojson/institutions.geojson", geo);
-  writeJSON("metadata.json", metadata);
+  writeJSON("geojson/institutions.geojson", toGeoJSON(institutions));
+  writeJSON("metadata.json", {
+    source: "Ministère de la Jeunesse et des Sports — SIG (sig.mjs.gov.dz)",
+    origin: SOURCE,
+    license: "Data © Ministère de la Jeunesse et des Sports; redistributed for reference. See README.",
+    institutions: institutions.length,
+    by_type: byType,
+    wilayas_covered: wilayasCovered,
+    name_ar_matched: arMatched,
+    dropped: dropped.length,
+    generated_at: new Date().toISOString().slice(0, 10),
+  });
 
   console.log(`\nType breakdown:`);
   for (const [k, v] of Object.entries(byType).sort((a, b) => b[1] - a[1])) {
-    console.log(`  ${String(v).padStart(5)}  ${k}  ${TYPE_FR[k]}`);
+    const entry = Object.values(TYPE_MAP).find((e) => e.code === k);
+    console.log(`  ${String(v).padStart(5)}  ${k.padEnd(4)} ${entry?.fr || k}`);
   }
-  if (signFixed) {
-    console.log(`\nRepaired the longitude sign on ${signFixed} record(s) (western points stored without their minus sign).`);
-  }
-  if (dropped.length) {
-    console.log(`\nDropped ${dropped.length} record(s) with unrecoverable coordinates: ${dropped.map((d) => d.id).join(", ")}`);
-  }
+  console.log(`\nArabic names backfilled: ${arMatched}/${institutions.length}`);
+  if (dropped.length) console.log(`Dropped ${dropped.length} record(s).`);
   console.log(
-    `\nWrote ${institutions.length} institutions across ${wilayasCovered} wilayas ` +
-      `(all geocoded) to ${DATA}.`,
+    `\nWrote ${institutions.length} youth establishments across ${wilayasCovered} wilayas to ${DATA}.`,
   );
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+main().catch((e) => { console.error(e); process.exit(1); });
