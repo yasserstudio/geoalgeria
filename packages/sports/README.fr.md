@@ -16,7 +16,7 @@
 piscines, salles spécialisées, pistes d'athlétisme, courts de tennis, centres équestres,
 bases nautiques et plus — chacune avec son nom, **type** d'infrastructure, adresse,
 commune / daïra / wilaya, capacité, état de fonctionnement, accessibilité PMR, surfaces
-bâtie et foncière, année de réception et coordonnées GPS. Source : le **SIG du Ministère de
+bâtie et foncière, année de réception et coordonnées géographiques. Source : le **SIG du Ministère de
 la Jeunesse et des Sports (sig.mjs.gov.dz)**. Livré en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
