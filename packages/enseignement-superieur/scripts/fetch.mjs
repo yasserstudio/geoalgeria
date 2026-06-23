@@ -28,10 +28,12 @@ import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { PAGE, getHtml, parseInstitutions, instKey, MIN_EXPECTED } from "./mesrs.mjs";
+import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
 const REF = join(__dirname, "..", "..", "dataset", "data", "geojson");
+const DATASET = join(__dirname, "..", "..", "dataset", "data");
 const SEED = join(__dirname, "seeds", "coordinates.json");
 const OVERRIDES_FILE = join(__dirname, "seeds", "overrides.json");
 
@@ -165,6 +167,17 @@ async function main() {
   // commune is uncertain, just a wilaya. Keyed by instKey (website host).
   const overrides = readSeed(OVERRIDES_FILE);
 
+  // Arabic listing: the Arabic name for the network (joined on website host) plus
+  // the private + other-ministry institutions the English page omits entirely.
+  console.log("Fetching MESRS Arabic listing (name_ar + private/other-ministry)…");
+  const htmlAr = await getHtmlAr();
+  const namesAr = anchoredNamesAr(htmlAr);
+  const wilayasJson = JSON.parse(readFileSync(join(DATASET, "wilayas.json"), "utf8")).wilayas;
+  const resolve = buildResolver(wilayasJson);
+  const { extras, unresolved } = parseExtras(htmlAr, resolve);
+  if (unresolved.length) console.warn(`  ⚠️  ${unresolved.length} extra(s) had no resolvable wilaya: ${unresolved.join("; ")}`);
+  const host = (url) => { try { return new URL(url).hostname.replace(/^www\./, "").toLowerCase(); } catch { return null; } };
+
   const records = [];
   const dropped = [];
   let nReject = 0; // geocodes rejected for landing in the wrong wilaya
@@ -212,10 +225,14 @@ async function main() {
       continue;
     }
 
+    const h = host(inst.website);
     records.push({
       name: inst.name,
+      name_ar: (h && namesAr.get(h)) || null,
       type: inst.type,
       type_fr: inst.type_fr,
+      sector: "public",
+      supervisory_ministry: null,
       website: inst.website,
       commune,
       wilaya_code: String(wilaya_code).padStart(2, "0"),
@@ -227,14 +244,44 @@ async function main() {
     });
   }
 
+  // The private + other-ministry institutions (Arabic-only). No coordinates in the
+  // source, so each is placed at its resolved wilaya's centroid (geo_precision
+  // "wilaya"). name stays null — there is no official French name to ship.
+  const networkCount = records.length;
+  for (const e of extras) {
+    const code = Number(e.wilaya_code);
+    const w = WILAYA.get(code);
+    if (!w || !inAlgeria(w.lat, w.lng)) { dropped.push(`${e.name_ar} [no wilaya centroid]`); continue; }
+    const { type, type_fr } = classifyTypeAr(e.name_ar);
+    records.push({
+      name: null,
+      name_ar: e.name_ar,
+      type,
+      type_fr,
+      sector: e.sector,
+      supervisory_ministry: e.supervisory_ministry,
+      website: e.website,
+      commune: null,
+      wilaya_code: String(code).padStart(2, "0"),
+      wilaya_name: w.name_fr,
+      lat: w.lat,
+      lng: w.lng,
+      geo_precision: "wilaya",
+      source: PAGE_AR,
+    });
+  }
+  console.log(`  added ${records.length - networkCount} private/other-ministry institutions`);
+
   // Stable ids: sort by type then name, number 1..N.
   const TYPE_ORDER = { universite: 0, grande_ecole: 1, ens: 2, centre_universitaire: 3 };
-  records.sort((a, b) => (TYPE_ORDER[a.type] - TYPE_ORDER[b.type]) || a.name.localeCompare(b.name, "fr"));
+  const sortName = (r) => r.name || r.name_ar || "";
+  records.sort((a, b) => (TYPE_ORDER[a.type] - TYPE_ORDER[b.type]) || sortName(a).localeCompare(sortName(b), "fr"));
   records.forEach((r, i) => (r.id = i + 1));
 
-  // Guards — fail loudly on a malformed build.
-  const missing = records.filter((r) => !r.name || !r.type || !r.wilaya_code || !r.wilaya_name || r.lat == null || r.lng == null);
-  if (missing.length) throw new Error(`${missing.length} record(s) missing a required field (${missing.slice(0, 3).map((r) => r.name).join("; ")})`);
+  // Guards — fail loudly on a malformed build. Every record must carry at least one
+  // name (French for the network, Arabic for the extras).
+  const missing = records.filter((r) => (!r.name && !r.name_ar) || !r.type || !r.wilaya_code || !r.wilaya_name || r.lat == null || r.lng == null);
+  if (missing.length) throw new Error(`${missing.length} record(s) missing a required field (${missing.slice(0, 3).map((r) => r.name || r.name_ar).join("; ")})`);
   const overflow = records.filter((r) => Number(r.wilaya_code) < 1 || Number(r.wilaya_code) > 69);
   if (overflow.length) throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
 
@@ -242,19 +289,23 @@ async function main() {
   for (const r of records) byType[r.type] = (byType[r.type] || 0) + 1;
   const byPrecision = {};
   for (const r of records) byPrecision[r.geo_precision] = (byPrecision[r.geo_precision] || 0) + 1;
+  const bySector = {};
+  for (const r of records) bySector[r.sector] = (bySector[r.sector] || 0) + 1;
   const wilayasCovered = new Set(records.map((r) => r.wilaya_code)).size;
 
-  // Fail loudly on a degraded build (missing/empty coordinate seed, or a geocode
-  // regression) rather than silently shipping an all-centroid dataset.
-  const campus = byPrecision.campus || 0;
-  if (campus < records.length * MIN_CAMPUS_RATIO) {
+  // The campus-geocode quality guard applies only to the public MESRS network — the
+  // private/other-ministry extras are wilaya-precision by nature (no source coords),
+  // so they're excluded from the ratio to keep the guard meaningful.
+  const networkRecords = records.filter((r) => r.source === PAGE);
+  const campus = networkRecords.filter((r) => r.geo_precision === "campus").length;
+  if (campus < networkRecords.length * MIN_CAMPUS_RATIO) {
     throw new Error(
-      `only ${campus}/${records.length} records are campus-geocoded (< ${Math.round(MIN_CAMPUS_RATIO * 100)}%) — ` +
+      `only ${campus}/${networkRecords.length} network records are campus-geocoded (< ${Math.round(MIN_CAMPUS_RATIO * 100)}%) — ` +
         `regenerate the coordinate seed with \`node scripts/geocode.mjs\` before building`,
     );
   }
 
-  const cols = ["id", "name", "type", "type_fr", "website", "commune", "wilaya_code", "wilaya_name", "lat", "lng", "geo_precision", "source"];
+  const cols = ["id", "name", "name_ar", "type", "type_fr", "sector", "supervisory_ministry", "website", "commune", "wilaya_code", "wilaya_name", "lat", "lng", "geo_precision", "source"];
   const ordered = records.map((r) => Object.fromEntries(cols.map((c) => [c, r[c]])));
   const metadata = {
     source: "Ministère de l'Enseignement Supérieur et de la Recherche Scientifique (mesrs.dz)",
@@ -262,8 +313,10 @@ async function main() {
     license: "Data © MESRS; redistributed for reference. Coordinates are OSM-derived (see README). See README.",
     institutions: ordered.length,
     by_type: byType,
+    by_sector: bySector,
     by_precision: byPrecision,
     wilayas_covered: wilayasCovered,
+    name_ar_count: records.filter((r) => r.name_ar).length,
     dropped: dropped.length,
     generated_at: new Date().toISOString().slice(0, 10),
   };

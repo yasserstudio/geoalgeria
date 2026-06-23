@@ -2,7 +2,7 @@
   "name": "@geoalgeria/enseignement-superieur",
   "version": "1.0.0",
   "type": "module",
-  "description": "Algeria's higher-education network — every university, grande école, école normale supérieure and centre universitaire from the MESRS, with type, official website, wilaya/commune linkage and coordinates. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Algeria's higher-education network — 177 universities, grandes écoles, écoles normales supérieures, centres universitaires, licensed private institutions and establishments under other ministries from the MESRS, with type, sector, supervising ministry, French & Arabic names, official website, wilaya/commune linkage and coordinates. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -30,6 +30,8 @@
     "higher-education",
     "grande-ecole",
     "ecole-normale-superieure",
+    "ecole-privee",
+    "private-university",
     "mesrs",
     "geojson",
     "geoalgeria",
