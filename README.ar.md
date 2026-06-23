@@ -2,12 +2,14 @@
 
 [English](README.md) | [Français](README.fr.md) | **العربية**
 
-# GeoAlgeria
+# جيو الجزائر (GeoAlgeria)
 
 <sub>من</sub><br>
 <a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="28"></picture></a>
 
-**قاعدة البيانات المفتوحة للجزائر — ثبّتها، لا تقم بسحبها.**
+**قاعدة البيانات المفتوحة للجزائر — ثبّتها بدلًا من جمعها يدويًا.**
+
+المرجع المفتوح للتقسيمات الإدارية والبيانات الجغرافية والخدمية في الجزائر.
 
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
@@ -18,7 +20,7 @@
 
 </div>
 
-كل قواعد البيانات المتاحة عن الجزائر على الإنترنت لا تزال تذكر **48 ولاية**. الجزائر لديها **69 ولاية منذ أبريل 2026**. GeoAlgeria هي الوحيدة المحدّثة — مع الرموز البريدية الحقيقية لبريد الجزائر، الإحداثيات GPS، الأسماء ثنائية اللغة، مكاتب البريد والصرّافات الآلية — متوفرة بصيغ JSON، CSV، GeoJSON، SQL و TypeScript. أمر `npm install` واحد، رخصة MIT، يتم التحقق منها عند كل commit.
+كل قواعد البيانات المتاحة عن الجزائر على الإنترنت لا تزال تذكر **48 ولاية**. الجزائر لديها **69 ولاية منذ أبريل 2026**. جيو الجزائر قاعدة البيانات المفتوحة الأكثر اكتمالًا للتقسيمات الإدارية الجزائرية بعد إصلاح 2026 — مع الرموز البريدية الحقيقية لبريد الجزائر، الإحداثيات الجغرافية الدقيقة، الأسماء ثنائية اللغة، مكاتب البريد والصرّافات الآلية — متوفرة بصيغ JSON، CSV، GeoJSON، SQL و TypeScript. أمر `npm install` واحد، رخصة MIT، يتم التحقق منها آليًا عبر CI عند كل تغيير.
 
 ```bash
 npm install geoalgeria
@@ -27,7 +29,7 @@ npm install geoalgeria
 ```js
 const dz = require("geoalgeria");
 
-dz.wilayas;                       // كل الـ 69 ولاية
+dz.wilayas;                       // جميع الولايات الـ69
 dz.getCommunesByWilaya(16);       // 57 بلدية في الجزائر العاصمة
 dz.findByPostalCode("16000");     // → بلدية، دائرة، ولاية
 dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحقيقية
@@ -57,11 +59,11 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 > محدّثة وفق **القانون رقم 26-06** (التنظيم الإقليمي الجديد)، [*الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026040.pdf) — بالإضافة إلى إصلاح 2019 (القانون 19-12).
 
-## لماذا ليس الآخرون؟
+## لماذا جيو الجزائر؟
 
 | | geoalgeria | leblad | algeria-cities |
 |---|:---:|:---:|:---:|
-| كل الـ 69 ولاية (إصلاح 2026) | ✅ | ❌ (58) | ✅ |
+| جميع الولايات الـ69 (إصلاح 2026) | ✅ | ❌ (58) | ✅ |
 | الدوائر ككيانات مستقلة | ✅ | ❌ | ❌ |
 | رموز بريدية حقيقية لبريد الجزائر | ✅ | ~ | ❌ |
 | إحداثيات لكل بلدية | ✅ | ❌ | ✅ |
@@ -69,7 +71,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | جاهز للتجارة الإلكترونية | ✅ | ❌ | ❌ |
 | npm + أنواع TypeScript | ✅ | ✅ | ❌ |
 | تصدير GeoJSON / SQL | ✅ | ❌ | ✅ |
-| تحقق CI عند كل commit | ✅ | ❌ | ❌ |
+| تحقق CI آلي عند كل تغيير | ✅ | ❌ | ❌ |
 | آخر تحديث | **2026** | 2021 | 2023 |
 
 [شاهد المقارنة الكاملة ←](https://geoalgeria.com/compare)
@@ -78,14 +80,14 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 - **التجارة الإلكترونية / الدفع عند الاستلام** — تسلسل عناوين ولاية ← دائرة ← بلدية، التحقق من الرموز البريدية، وتهيئة مناطق الشحن المطابقة لما يستخدمه الناقلون فعليًا.
 - **الخرائط ونظم المعلومات الجغرافية** — GeoJSON جاهز مع 1,528 بلدية، مصمم بشكل صحيح عبر الإصلاحين.
-- **المدني، البحث والبيانات** — بيانات مرجعية نظيفة، منظمة، موثقة المصدر ومُصدَّرة بدلًا من ملفات PDF.
+- **المجتمع المدني، البحث العلمي، ومشاريع البيانات** — بيانات مرجعية نظيفة، منظمة، موثقة المصدر ومُصدَّرة بدلًا من ملفات PDF.
 - **أي شيء يتعلق بالجزائر** — تثبيت واحد، الأنواع مضمّنة.
 
 ## الحزم
 
 | الحزمة | npm | الوصف |
 | --- | --- | --- |
-| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | الولايات، الدوائر، البلديات + بيانات بريدية منسوخة |
+| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | الولايات، الدوائر، البلديات + بيانات بريدية موحّدة |
 | [`packages/poste`](packages/poste) | [`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) | مكاتب البريد والصرّافات الآلية لبريد الجزائر |
 | [`packages/emploi`](packages/emploi) | [`@geoalgeria/emploi`](https://www.npmjs.com/package/@geoalgeria/emploi) | وكالات التشغيل (AWEM + ALEM) للوكالة الوطنية للتشغيل |
 | [`packages/mobilis`](packages/mobilis) | [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) | وكالات موبيليس ونقاط البيع المعتمدة |
@@ -141,7 +143,7 @@ GeoAlgeria هو **مشروع مستقل — غير تابع لأي جهة حكو
 
 <div align="center">
 
-إذا وفّرت لك GeoAlgeria نسخ الولايات من ملف PDF، **[ضع لها ⭐](https://github.com/yasserstudio/geoalgeria)** — هذا يساعد المطور الجزائري التالي في إيجاد بيانات نظيفة.
+إذا وفّرت عليك جيو الجزائر ساعات من البحث وتجميع البيانات، **[ضع لها ⭐](https://github.com/yasserstudio/geoalgeria)** — هذا يساعد المطور الجزائري التالي في إيجاد بيانات نظيفة.
 
 <a href="https://yasser.studio"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/yasser-studio-logo-white.svg"><img src="./assets/yasser-studio-logo.svg" alt="Yasser's Studio" height="44"></picture></a>
 
