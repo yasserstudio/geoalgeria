@@ -18,7 +18,7 @@
 
 </div>
 
-Every Algeria dataset on the internet still lists **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is the one that's current — with real Algérie Poste postal codes, GPS coordinates, bilingual names, and post offices & ATMs — shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT, validated on every commit.
+Most Algeria datasets online still list **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is kept current — with real Algérie Poste postal codes, geographic coordinates, bilingual names, and post offices & ATMs — shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT-licensed, and CI-validated on every commit.
 
 ```bash
 npm install geoalgeria
@@ -57,7 +57,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 
 > Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf) — plus the 2019 reform (Law 19-12).
 
-## Why not the others?
+## Why GeoAlgeria?
 
 | | geoalgeria | leblad | algeria-cities |
 |---|:---:|:---:|:---:|
@@ -66,10 +66,10 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | Real Algérie Poste postal codes | ✅ | ~ | ❌ |
 | Coordinates per commune | ✅ | ❌ | ✅ |
 | Post offices & ATMs | ✅ | ❌ | ❌ |
-| E-commerce ready (flat) | ✅ | ❌ | ❌ |
+| E-commerce ready | ✅ | ❌ | ❌ |
 | npm + TypeScript types | ✅ | ✅ | ❌ |
 | GeoJSON / SQL exports | ✅ | ❌ | ✅ |
-| CI-validated every commit | ✅ | ❌ | ❌ |
+| CI-validated on every commit | ✅ | ❌ | ❌ |
 | Last updated | **2026** | 2021 | 2023 |
 
 [See the full comparison →](https://geoalgeria.com/compare)
@@ -78,14 +78,14 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 
 - **E-commerce / COD** — wilaya → daira → commune address cascades, postal-code validation, and shipping-zone config that matches what carriers actually use.
 - **Maps & GIS** — drop-in GeoJSON with 1,528 commune features, modeled correctly through both reforms.
-- **Civic, research & data** — clean, structured, sourced, and versioned reference data instead of PDFs.
-- **Anything that touches Algeria** — one install, types included.
+- **Research, open data & civic projects** — clean, structured, sourced, and versioned reference data instead of PDFs.
+- **Any project using Algerian data** — one install, types included.
 
 ## Packages
 
 | Package | npm | What |
 | --- | --- | --- |
-| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | Wilayas, dairas, communes + mirrored postal data |
+| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | Wilayas, dairas, communes + structured postal data |
 | [`packages/poste`](packages/poste) | [`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) | Standalone post offices & ATMs from Algérie Poste |
 | [`packages/emploi`](packages/emploi) | [`@geoalgeria/emploi`](https://www.npmjs.com/package/@geoalgeria/emploi) | Standalone employment agencies (AWEM + ALEM) from ANEM |
 | [`packages/mobilis`](packages/mobilis) | [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) | Standalone Mobilis agencies & approved points of sale |
@@ -115,7 +115,7 @@ Prefer files? Grab **CSV / GeoJSON / SQL** from the zipped bundle on any [GitHub
 
 ## Where this is going
 
-GeoAlgeria isn't a one-off dump. The goal is to be **the** canonical, continuously-updated open source for Algeria's data — kept current through every administrative reform, and **expanding to more kinds of Algeria data as sources become available**. Administrative divisions and postal/banking are the start, not the end.
+GeoAlgeria isn't a one-off dump. The goal is to be **the** open reference source, continuously updated, for Algeria's data — kept current through every administrative reform, and **expanding to more kinds of Algeria data as sources become available**. Administrative divisions and postal/banking are the start, not the end.
 
 Watch or ⭐ the repo to follow along, and [open a discussion](https://github.com/yasserstudio/geoalgeria/discussions) to request a dataset.
 
