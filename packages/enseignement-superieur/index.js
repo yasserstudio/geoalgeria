@@ -18,6 +18,10 @@ export const institutionsByType = (type) => {
   const t = String(type).toLowerCase(); // "universite" | "grande_ecole" | "ens" | "centre_universitaire"
   return institutions().filter((r) => r.type === t);
 };
+export const institutionsBySector = (sector) => {
+  const s = String(sector).toLowerCase(); // "public" | "private"
+  return institutions().filter((r) => r.sector === s);
+};
 export const metadata = () => load("metadata.json");
 
-export default { institutions, institutionById, institutionsByWilaya, institutionsByType, metadata };
+export default { institutions, institutionById, institutionsByWilaya, institutionsByType, institutionsBySector, metadata };

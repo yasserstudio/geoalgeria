@@ -13,8 +13,11 @@
       "properties": {
         "id": 1,
         "name": "Université 8 Mai 1945 de Guelma",
+        "name_ar": "جامعة قالمة – 08 ماي 1945",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-guelma.dz/",
         "commune": "Guelma",
         "wilaya_code": "24",
@@ -35,8 +38,11 @@
       "properties": {
         "id": 2,
         "name": "Université Blida 1 – Saad Dahlab",
+        "name_ar": null,
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-blida.dz/",
         "commune": "El-Affroun",
         "wilaya_code": "09",
@@ -57,8 +63,11 @@
       "properties": {
         "id": 3,
         "name": "Université d’Adrar – Ahmed Draya",
+        "name_ar": null,
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://en.univ-adrar.edu.dz/",
         "commune": "Adrar",
         "wilaya_code": "01",
@@ -79,8 +88,11 @@
       "properties": {
         "id": 4,
         "name": "Université d’Alger 1 – Benyoucef Benkhedda",
+        "name_ar": "جامعة الجزائر1 – بن يوسف بن خدة",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-alger.dz/",
         "commune": null,
         "wilaya_code": "16",
@@ -101,8 +113,11 @@
       "properties": {
         "id": 5,
         "name": "Université d’Alger 2 – Abou el Kacem Saâdallah",
+        "name_ar": "جامعة الجزائر 2 – أبوالقاسم سعد الله",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-alger2.dz/",
         "commune": "Bouzareah",
         "wilaya_code": "16",
@@ -123,8 +138,11 @@
       "properties": {
         "id": 6,
         "name": "Université d’Alger 3 – Brahim Soltane Chaibout",
+        "name_ar": "جامعة الجزائر3 ابراهيم سلطان شيبوط",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-alger3.dz/",
         "commune": "Dely Ibrahim",
         "wilaya_code": "16",
@@ -145,8 +163,11 @@
       "properties": {
         "id": 7,
         "name": "Université d’El Oued – Hamma Lakhdar",
+        "name_ar": "جامعة الوادي – حمة لخضر",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.univ-eloued.dz/",
         "commune": "Kouinine",
         "wilaya_code": "39",
@@ -167,8 +188,11 @@
       "properties": {
         "id": 8,
         "name": "Université d’El Tarf – Chadli Bendjedid",
+        "name_ar": "جامعة الطارف – الشاذلي بن جديد",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://univ-eltarf.dz/ucbet/",
         "commune": "El Tarf",
         "wilaya_code": "36",
@@ -189,8 +213,11 @@
       "properties": {
         "id": 9,
         "name": "Université d’Oran 1 – Ahmed Ben Bella",
+        "name_ar": "جامعة احمد بن بلة وهران 1 السانية",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-oran1.dz/",
         "commune": null,
         "wilaya_code": "31",
@@ -211,8 +238,11 @@
       "properties": {
         "id": 10,
         "name": "Université d’Oran 2 – Mohamed Ben Ahmed",
+        "name_ar": "جامعة وهران 2 محمد بن أحمد المدعو الرائد سي موسى",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-oran2.dz/",
         "commune": "Bir El Djir",
         "wilaya_code": "31",
@@ -233,8 +263,11 @@
       "properties": {
         "id": 11,
         "name": "Université de Aïn Témouchent",
+        "name_ar": "جامعة عين تموشنت",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.univ-temouchent.edu.dz/",
         "commune": "Ain Temouchent",
         "wilaya_code": "46",
@@ -255,8 +288,11 @@
       "properties": {
         "id": 12,
         "name": "Université de Annaba – Badji Mokhtar",
+        "name_ar": "جامعة عنابة – باجي مختار",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-annaba.dz/",
         "commune": "Annaba",
         "wilaya_code": "23",
@@ -277,8 +313,11 @@
       "properties": {
         "id": 13,
         "name": "Université de Batna 1 – Hadj Lakhder",
+        "name_ar": "جامعة باتنة 1 – الحاج لخضر",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-batna.dz/",
         "commune": "Fesdis",
         "wilaya_code": "05",
@@ -299,8 +338,11 @@
       "properties": {
         "id": 14,
         "name": "Université de Batna 2 – Mustapha Ben Boulaid",
+        "name_ar": "جامعة باتنة 2 – مصطفى بن بولعيد",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-batna2.dz/",
         "commune": "Fesdis",
         "wilaya_code": "05",
@@ -321,8 +363,11 @@
       "properties": {
         "id": 15,
         "name": "Université de Béchar – Mohamed Tahri",
+        "name_ar": "جامعة طاهري محمد بشار",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-bechar.dz/",
         "commune": "Bechar",
         "wilaya_code": "08",
@@ -343,8 +388,11 @@
       "properties": {
         "id": 16,
         "name": "Université de Béjaia – Abderrahmane Mira",
+        "name_ar": "جامعة بجاية – عبد الرحمان ميرة",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-bejaia.dz/",
         "commune": "Tala Hamza",
         "wilaya_code": "06",
@@ -365,8 +413,11 @@
       "properties": {
         "id": 17,
         "name": "Université de Biskra – Mohamed Khider",
+        "name_ar": "جامعة بسكرة – محمد خيضر",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-biskra.dz/",
         "commune": "Biskra",
         "wilaya_code": "07",
@@ -387,8 +438,11 @@
       "properties": {
         "id": 18,
         "name": "Université de Blida 2 – Lounici Ali",
+        "name_ar": "جامعة البليدة 2 – لونيسي علي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-blida2.dz/",
         "commune": "El-Affroun",
         "wilaya_code": "09",
@@ -409,8 +463,11 @@
       "properties": {
         "id": 19,
         "name": "Université de Bordj Bou Arréridj – Mohamed Bachir El Ibrahimi",
+        "name_ar": "جامعة برج بوعريريج – محمد البشير الابراهيمي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-bba.dz/",
         "commune": "Belimour",
         "wilaya_code": "34",
@@ -431,8 +488,11 @@
       "properties": {
         "id": 20,
         "name": "Université de Bouira – Akli Mohand Oulhadj",
+        "name_ar": "جامعة البويرة – آكلي محند أولحاج",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-bouira.dz/",
         "commune": "Bouira",
         "wilaya_code": "10",
@@ -453,8 +513,11 @@
       "properties": {
         "id": 21,
         "name": "Université de Boumerdès – M’hamed Bougara",
+        "name_ar": "جامعة بومرداس – محمد بوقرة",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-boumerdes.dz/",
         "commune": "Boumerdes",
         "wilaya_code": "35",
@@ -475,8 +538,11 @@
       "properties": {
         "id": 22,
         "name": "Université de Chlef – Hassiba Benbouali",
+        "name_ar": "جامعة الشلف – حسيبة بن بوعلي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-chlef.dz/",
         "commune": "Chlef",
         "wilaya_code": "02",
@@ -497,8 +563,11 @@
       "properties": {
         "id": 23,
         "name": "Université de Constantine 1 – Frères Mentouri",
+        "name_ar": "جامعة قسنطينة1 – الإخوة منتوري",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.umc.edu.dz/",
         "commune": "Constantine",
         "wilaya_code": "25",
@@ -519,8 +588,11 @@
       "properties": {
         "id": 24,
         "name": "Université de Constantine 2 – Abdelhamid Mehri",
+        "name_ar": "جامعة قسنطينة 2 – عبد الحميد مهري",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-constantine2.dz/",
         "commune": "Ain Smara",
         "wilaya_code": "25",
@@ -541,8 +613,11 @@
       "properties": {
         "id": 25,
         "name": "Université de Constantine 3 -Salah Boubnider",
+        "name_ar": "جامعة قسنطينة 3- المجاهد صالح بوبنيدر",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-constantine3.dz/",
         "commune": null,
         "wilaya_code": "25",
@@ -563,8 +638,11 @@
       "properties": {
         "id": 26,
         "name": "Université de Djelfa – Ziane Achour",
+        "name_ar": "جامعة الجلفة – زيان عاشور",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-djelfa.dz/",
         "commune": "Djelfa",
         "wilaya_code": "17",
@@ -585,8 +663,11 @@
       "properties": {
         "id": 27,
         "name": "Université de Ghardaia",
+        "name_ar": "جامعة غرداية",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-ghardaia.dz/",
         "commune": "El Atteuf",
         "wilaya_code": "47",
@@ -607,8 +688,11 @@
       "properties": {
         "id": 28,
         "name": "Université de Jijel – Mohammed Seddik Ben yahia",
+        "name_ar": "جامعة جيجل – محمد الصديق بن يحي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-jijel.dz/",
         "commune": "Jijel",
         "wilaya_code": "18",
@@ -629,8 +713,11 @@
       "properties": {
         "id": 29,
         "name": "Université de Khemis Miliana – Djilali Bounaama",
+        "name_ar": "جامعة خميس مليانة – الجيلالي بونعامة",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-km.dz/",
         "commune": "Khemis-Miliana",
         "wilaya_code": "44",
@@ -651,8 +738,11 @@
       "properties": {
         "id": 30,
         "name": "Université de Khenchela – Abbas Laghrour",
+        "name_ar": "جامعة خنشلة – عباس لغرور",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-khenchela.dz/",
         "commune": "Khenchela",
         "wilaya_code": "40",
@@ -673,8 +763,11 @@
       "properties": {
         "id": 31,
         "name": "Université de la Formation Continue",
+        "name_ar": "جامعة التكوين المتواصل",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ufc.dz/",
         "commune": "Dely Ibrahim",
         "wilaya_code": "16",
@@ -695,8 +788,11 @@
       "properties": {
         "id": 32,
         "name": "Université de Laghouat – Amar Telidji",
+        "name_ar": "جامعة الأغواط – عمار ثليجي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.lagh-univ.dz/",
         "commune": "Laghouat",
         "wilaya_code": "03",
@@ -717,8 +813,11 @@
       "properties": {
         "id": 33,
         "name": "Université de M’sila – Mohamed Boudiaf",
+        "name_ar": "جامعة المسيلة – محمد بوضياف",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-msila.dz/",
         "commune": "M'sila",
         "wilaya_code": "28",
@@ -739,8 +838,11 @@
       "properties": {
         "id": 34,
         "name": "Université de Mascara – Mustapha Stambouli",
+        "name_ar": "جامعة مصطفى اسطمبولي معسكر",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-mascara.dz/",
         "commune": "Mascara",
         "wilaya_code": "29",
@@ -761,8 +863,11 @@
       "properties": {
         "id": 35,
         "name": "Université de Mila – Abdelhafid Boussouf",
+        "name_ar": "جامعة ميلة – عبد الحفيظ بوالصوف",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.centre-univ-mila.dz/?lang=fr",
         "commune": "Mila",
         "wilaya_code": "43",
@@ -783,8 +888,11 @@
       "properties": {
         "id": 36,
         "name": "Université de Mostaganem – Abdelhamid Ibn Badis",
+        "name_ar": "جامعة عبد الحميد ابن باديس مستغانم",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-mosta.dz/",
         "commune": "Mostaganem",
         "wilaya_code": "27",
@@ -805,8 +913,11 @@
       "properties": {
         "id": 37,
         "name": "Université de Naama – Ahmed Salhi",
+        "name_ar": "جامعة النعامة – صالحي أحمد المدعو علي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cuniv-naama.dz/",
         "commune": null,
         "wilaya_code": "45",
@@ -827,8 +938,11 @@
       "properties": {
         "id": 38,
         "name": "Université de Ouargla – Kasdi Merbah",
+        "name_ar": "جامعة ورقلة – قاصدي مرباح",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-ouargla.dz/",
         "commune": "Ouargla",
         "wilaya_code": "30",
@@ -849,8 +963,11 @@
       "properties": {
         "id": 39,
         "name": "Université de Oum El Bouaghi – Larbi Ben M’hidi",
+        "name_ar": "جامعة أم البواقي – العربي بن مهيدي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-oeb.dz/",
         "commune": "Oum El Bouaghi",
         "wilaya_code": "04",
@@ -871,8 +988,11 @@
       "properties": {
         "id": 40,
         "name": "Université de Relizane",
+        "name_ar": "جامعة غليزان",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.univ-relizane.dz/index.php/fr",
         "commune": "Relizane",
         "wilaya_code": "48",
@@ -893,8 +1013,11 @@
       "properties": {
         "id": 41,
         "name": "Université de Saida – Tahar Moulay",
+        "name_ar": "جامعة الدكتور مولاي الطاهر سعيدة",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-saida.dz/",
         "commune": "Ouled Khaled",
         "wilaya_code": "20",
@@ -915,8 +1038,11 @@
       "properties": {
         "id": 42,
         "name": "Université de Sétif 1 – Ferhat Abbas",
+        "name_ar": "جامعة سطيف1 – فرحات عباس",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-setif.dz/",
         "commune": null,
         "wilaya_code": "19",
@@ -937,8 +1063,11 @@
       "properties": {
         "id": 43,
         "name": "Université de Sétif 2 – Mohamed Lamine Debaghine",
+        "name_ar": "جامعة سطيف2 – لمين دباغين",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-setif2.dz/",
         "commune": "Setif",
         "wilaya_code": "19",
@@ -959,8 +1088,11 @@
       "properties": {
         "id": 44,
         "name": "Université de Souk Ahras – Mohammed-Chérif Messaadia",
+        "name_ar": "جامعة سوق أهراس – محمد الشريف مساعدية",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-soukahras.dz/fr/",
         "commune": "Souk Ahras",
         "wilaya_code": "41",
@@ -981,8 +1113,11 @@
       "properties": {
         "id": 45,
         "name": "Université de Tamenghasset",
+        "name_ar": "جامعة تامنغست",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://univ-tam.dz/fr/",
         "commune": "Tamanrasset",
         "wilaya_code": "11",
@@ -1003,8 +1138,11 @@
       "properties": {
         "id": 46,
         "name": "Université de Tébessa – Larbi Tébessi",
+        "name_ar": "جامعة تبسة – العربي التبسي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-tebessa.dz/",
         "commune": "Tebessa",
         "wilaya_code": "12",
@@ -1025,8 +1163,11 @@
       "properties": {
         "id": 47,
         "name": "Université de Tiaret – Ibn Khaldoun",
+        "name_ar": "جامعة بن خلدون تيارت",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-tiaret.dz/",
         "commune": "Tiaret",
         "wilaya_code": "14",
@@ -1047,8 +1188,11 @@
       "properties": {
         "id": 48,
         "name": "Université de Tindouf-Ali Kafi",
+        "name_ar": "جامعة بتندوف – المجاهد علي كافي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cuniv-tindouf.dz/",
         "commune": null,
         "wilaya_code": "37",
@@ -1069,8 +1213,11 @@
       "properties": {
         "id": 49,
         "name": "université de Tipaza – Abdallah Morsli",
+        "name_ar": "جامعة تيبازة – عبد الله مرسلي",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://ar.cu-tipaza.dz/",
         "commune": "Tipaza",
         "wilaya_code": "42",
@@ -1091,8 +1238,11 @@
       "properties": {
         "id": 50,
         "name": "Université de Tissemsilt",
+        "name_ar": null,
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cuniv-tissemsilt.dz/",
         "commune": null,
         "wilaya_code": "38",
@@ -1113,8 +1263,11 @@
       "properties": {
         "id": 51,
         "name": "Université de Tizi Ouzou – Mouloud Maameri",
+        "name_ar": "جامعة تيزي وزو – مولود معمري",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ummto.dz/",
         "commune": "Tizi-Ouzou",
         "wilaya_code": "15",
@@ -1135,8 +1288,11 @@
       "properties": {
         "id": 52,
         "name": "Université de Tlemcen – Abou Bekr Belkaid",
+        "name_ar": "جامعة أبو بكر بلقايد تلمسان",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-tlemcen.dz/",
         "commune": "Mansourah",
         "wilaya_code": "13",
@@ -1157,8 +1313,11 @@
       "properties": {
         "id": 53,
         "name": "Université des sciences et de la technologie d’Alger, Houari Boumediène",
+        "name_ar": "جامعة الجزائر هواري بومدين للعلوم و التكنولوجيا",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.usthb.dz/",
         "commune": "Bab Ezzouar",
         "wilaya_code": "16",
@@ -1179,8 +1338,11 @@
       "properties": {
         "id": 54,
         "name": "Université des sciences islamiques Emir Abdelkader de Constantine",
+        "name_ar": "جامعة قسنطينة للعلوم الإسلامية الأمير عبد القادر",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-emir.dz/",
         "commune": null,
         "wilaya_code": "25",
@@ -1201,8 +1363,11 @@
       "properties": {
         "id": 55,
         "name": "Université du 20 Août 1955 de Skikda",
+        "name_ar": "جامعة سكيكدة – 20 أوت 1955",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-skikda.dz/",
         "commune": null,
         "wilaya_code": "21",
@@ -1223,8 +1388,11 @@
       "properties": {
         "id": 56,
         "name": "Université Médéa – Yahia Farès",
+        "name_ar": "جامعة المدية – يحي فارس",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-medea.dz/",
         "commune": "Medea",
         "wilaya_code": "26",
@@ -1245,8 +1413,11 @@
       "properties": {
         "id": 57,
         "name": "Université Mohamed Boudiaf des sciences et de la technologie – Mohamed Boudiaf",
+        "name_ar": "جامعة محمد بوضياف العلوم والتكنولوجيا- وهران",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-usto.dz/",
         "commune": "Bir El Djir",
         "wilaya_code": "31",
@@ -1267,8 +1438,11 @@
       "properties": {
         "id": 58,
         "name": "Université Sidi Bel Abbès – Djillali Liabes",
+        "name_ar": "جامعة جيلالي ليابس سيدي بلعباس",
         "type": "universite",
         "type_fr": "Université",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.univ-sba.dz/",
         "commune": "Sidi Lahcene",
         "wilaya_code": "22",
@@ -1289,8 +1463,11 @@
       "properties": {
         "id": 59,
         "name": "Ecole des hautes études commerciales",
+        "name_ar": "مدرسة الدراسات العليا التجارية",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.hec.dz/",
         "commune": "Kolea",
         "wilaya_code": "42",
@@ -1311,8 +1488,11 @@
       "properties": {
         "id": 60,
         "name": "Ecole Nationale Polytechnique",
+        "name_ar": "المدرسة الوطنية المتعددة التقنيات",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enp.edu.dz/",
         "commune": "El Harrach",
         "wilaya_code": "16",
@@ -1333,8 +1513,11 @@
       "properties": {
         "id": 61,
         "name": "Ecole Nationale Polytechnique d’Oran – Maurice Audin",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enset-oran.dz/",
         "commune": "Es Senia",
         "wilaya_code": "31",
@@ -1355,8 +1538,11 @@
       "properties": {
         "id": 62,
         "name": "Ecole Nationale Polytechnique de Constantine- Malek Bennabi",
+        "name_ar": "المدرسة الوطنية المتعددة التقنيات بقسنطينة-المفكر مالك بن نبي",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enp-constantine.dz/",
         "commune": null,
         "wilaya_code": "25",
@@ -1377,8 +1563,11 @@
       "properties": {
         "id": 63,
         "name": "Ecole nationale supérieure agronomique- Khalef Abdellah alias Kasdi Merbah",
+        "name_ar": "المدرسة الوطنية العليا للفلاحة -المجاهد خالف عبد الله المدعو قاصدي مرباح",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ensa.dz/",
         "commune": "El Harrach",
         "wilaya_code": "16",
@@ -1399,8 +1588,11 @@
       "properties": {
         "id": 64,
         "name": "Ecole nationale supérieure d’hydraulique – Arbaoui Abdellah",
+        "name_ar": "المدرسة الوطنية العليا للري-المجاهد عرباوي ‬عبد الله",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ensh.dz/",
         "commune": "Soumaa",
         "wilaya_code": "09",
@@ -1421,8 +1613,11 @@
       "properties": {
         "id": 65,
         "name": "Ecole nationale supérieure d’informatique",
+        "name_ar": "المدرسة الوطنية العليا للإعلام الآلي",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.esi.dz/",
         "commune": "Bab Ezzouar",
         "wilaya_code": "16",
@@ -1443,8 +1638,11 @@
       "properties": {
         "id": 66,
         "name": "Ecole Nationale Supérieure de Biotechnologie de Constantine – Tewfik Khaznadar",
+        "name_ar": "المدرسة الوطنية العليا في البيوتكنولوجيا بقسنطينة – الشهيد توفيق خزندار",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://ensbiotech.edu.dz/",
         "commune": "Ain Smara",
         "wilaya_code": "25",
@@ -1465,8 +1663,11 @@
       "properties": {
         "id": 67,
         "name": "Ecole nationale supérieure de journalisme et des sciences de l’information",
+        "name_ar": "المدرسة الوطنية العليا للصحافة وعلوم الإعلام",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://ensjsi.dz/",
         "commune": "Ben Aknoun",
         "wilaya_code": "16",
@@ -1487,8 +1688,11 @@
       "properties": {
         "id": 68,
         "name": "Ecole nationale supérieure de management",
+        "name_ar": "المدرسة الوطنية العليا للمناجمنت",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ensm.dz/",
         "commune": "Kolea",
         "wilaya_code": "42",
@@ -1509,8 +1713,11 @@
       "properties": {
         "id": 69,
         "name": "Ecole Nationale Supérieure de Technologie",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enst.dz/",
         "commune": "Herraoua",
         "wilaya_code": "16",
@@ -1531,8 +1738,11 @@
       "properties": {
         "id": 70,
         "name": "Ecole nationale supérieure des mines et de la métallurgie – Amar Laskri",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://ensmm-annaba.dz/",
         "commune": "Annaba",
         "wilaya_code": "23",
@@ -1553,8 +1763,11 @@
       "properties": {
         "id": 71,
         "name": "Ecole nationale supérieure des sciences de la mer et de l’aménagement du littoral",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enssmal.dz/",
         "commune": "Dely Ibrahim",
         "wilaya_code": "16",
@@ -1575,8 +1788,11 @@
       "properties": {
         "id": 72,
         "name": "Ecole Nationale Supérieure des sciences politiques",
+        "name_ar": "المدرسة الوطنية العليا للعلوم السياسية",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enssp.dz/",
         "commune": "Ben Aknoun",
         "wilaya_code": "16",
@@ -1597,8 +1813,11 @@
       "properties": {
         "id": 73,
         "name": "Ecole nationale supérieure des travaux publics – Francis Jeanson",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.entp.edu.dz/",
         "commune": "Kouba",
         "wilaya_code": "16",
@@ -1619,8 +1838,11 @@
       "properties": {
         "id": 74,
         "name": "École Nationale Supérieure en Intelligence Artificielle",
+        "name_ar": "المدرسة الوطنية العليا للذكاء الاصطناعي",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://ensia.edu.dz/",
         "commune": null,
         "wilaya_code": "16",
@@ -1641,8 +1863,11 @@
       "properties": {
         "id": 75,
         "name": "Ecole nationale supérieure en statistique et en économie appliquée",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enssea.net/",
         "commune": "Kolea",
         "wilaya_code": "42",
@@ -1663,8 +1888,11 @@
       "properties": {
         "id": 76,
         "name": "Ecole nationale supérieure vétérinaire – Rabie Bouchama",
+        "name_ar": "المدرسة الوطنية العليا للبيطرة-الشهيد الربيع بوشامة",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ensv.dz/",
         "commune": "Bab Ezzouar",
         "wilaya_code": "16",
@@ -1685,8 +1913,11 @@
       "properties": {
         "id": 77,
         "name": "Ecole Polytechnique d’architecture et d’Urbanisme-Hocine Aït Ahmed",
+        "name_ar": "المدرسة المتعددة العلوم للهندسة المعمارية والعمران-المجاهد حسين آيت أحمد",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.epau-alger.edu.dz/",
         "commune": "El Harrach",
         "wilaya_code": "16",
@@ -1707,8 +1938,11 @@
       "properties": {
         "id": 78,
         "name": "Ecole Supérieure Agronomique de Mostaganem ex EP SNV Mostaganem",
+        "name_ar": "المدرسة العليا في علوم الفلآحة بمستغانم سابقا-ق. ت. ع.ط.ح. – مستغانم",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.esa-mosta.dz",
         "commune": null,
         "wilaya_code": "27",
@@ -1729,8 +1963,11 @@
       "properties": {
         "id": 79,
         "name": "Ecole Supérieure d’Economie d’Oran ex EPSECG Oran",
+        "name_ar": "المدرسة العليا للإقتصاد بوهران سابقا- ق. ت.ع.ا.ت.ع.ت – وھران",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://ese-oran.dz/",
         "commune": null,
         "wilaya_code": "31",
@@ -1751,8 +1988,11 @@
       "properties": {
         "id": 80,
         "name": "Ecole Supérieure d’Informatique (Sidi Bel Abbes)- 08 Mai 1945",
+        "name_ar": "المدرسة العليا للإعلام الآلي بسيدي بلعباس- 08 ماي",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.esi-sba.dz/",
         "commune": null,
         "wilaya_code": "22",
@@ -1773,8 +2013,11 @@
       "properties": {
         "id": 81,
         "name": "Ecole Supérieure de Commerce-Mouloud Kacem Naït Belkacem",
+        "name_ar": "المدرسة العليا للتجارة- المجاهد مولود قاسم نايت بلقاسم",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.esc-alger.dz/",
         "commune": "Kolea",
         "wilaya_code": "42",
@@ -1795,8 +2038,11 @@
       "properties": {
         "id": 82,
         "name": "Ecole Supérieure de Comptabilité et de Finance de Constantine ex EPSECG Constantine",
+        "name_ar": "المدرسة العليا المحاسبة والمالية بقسنطينة سابقا- ق. ت.ع.ا.ت.ع.ت – قسنطينة",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.escf-constantine.dz/",
         "commune": null,
         "wilaya_code": "25",
@@ -1817,8 +2063,11 @@
       "properties": {
         "id": 83,
         "name": "Ecole Supérieure de Gestion et d’Economie Numérique",
+        "name_ar": "المدرسة العليا للتسيير و الاقتصاد الرقمي",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.esgen.edu.dz/",
         "commune": "Kolea",
         "wilaya_code": "42",
@@ -1839,8 +2088,11 @@
       "properties": {
         "id": 84,
         "name": "Ecole Supérieure de Management de Tlemcen ex EPSECG Tlemcen",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.epsecg-tlemcen.dz/",
         "commune": null,
         "wilaya_code": "13",
@@ -1861,8 +2113,11 @@
       "properties": {
         "id": 85,
         "name": "Ecole Supérieure des Sciences appliquées d’Alger ex EP ST Alger",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.essa-alger.dz/",
         "commune": "Casbah",
         "wilaya_code": "16",
@@ -1883,8 +2138,11 @@
       "properties": {
         "id": 86,
         "name": "Ecole Supérieure des Sciences Appliquées de Tlemcen ex EP ST Tlemcen",
+        "name_ar": "المدرسة العليا في علوم التطبيقية بتلمسان سابقا- ق. ت. ع. ت.- تلمسان",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.essa-tlemcen.dz/",
         "commune": null,
         "wilaya_code": "13",
@@ -1905,8 +2163,11 @@
       "properties": {
         "id": 87,
         "name": "Ecole Supérieure des sciences Biologiques d’ Oran ex EP SNV Oran",
+        "name_ar": "المدرسة العليا للعلوم البيولوجية بوهران سابقا-ق. ت. ع.ط.ح. – وھران",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.essb-oran.edu.dz/index.php/fr/",
         "commune": null,
         "wilaya_code": "31",
@@ -1927,8 +2188,11 @@
       "properties": {
         "id": 88,
         "name": "Ecole Supérieure des Sciences de l’Aliment et des Industries Agroalimentaires d’Alger ex EP SNV Alger",
+        "name_ar": "المدرسة العليا في علوم الغذاء والصناعات الغذائية الفلاحية بالجزائر سابقا- ق. ت. ع.ط.ح -الجزائر",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.essaia.dz/",
         "commune": null,
         "wilaya_code": "16",
@@ -1949,8 +2213,11 @@
       "properties": {
         "id": 89,
         "name": "Ecole Supérieure des Technologies Industrielles de Annaba ex EP ST Annaba",
+        "name_ar": null,
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://esti-annaba.dz/",
         "commune": null,
         "wilaya_code": "23",
@@ -1971,8 +2238,11 @@
       "properties": {
         "id": 90,
         "name": "Ecole Supérieure en Génie Electrique et Energétique d’Oran ex EP ST Oran",
+        "name_ar": "المدرسة العليا في الهندسة الكهروبائية والطاقوية بوهران سابقا-ق. ت. ع. ت.- وھران",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.esgee-oran.dz/",
         "commune": null,
         "wilaya_code": "31",
@@ -1993,8 +2263,11 @@
       "properties": {
         "id": 91,
         "name": "École Supérieure en Sciences et Technologies de l’Informatique et du Numérique de Bejaia",
+        "name_ar": "المدرسة العليا في علوم وتكنولوجيات الإعلام الآلي ببجاية",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://estin.dz/",
         "commune": "Amizour",
         "wilaya_code": "06",
@@ -2015,8 +2288,11 @@
       "properties": {
         "id": 92,
         "name": "L’Ecole nationale supérieure des énergies renouvelables, environnement et développement durable – Batna",
+        "name_ar": "المدرسة الوطنية العليا للطاقات المتجددة والبيئة والتنمية المستدامة",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.hns-re2sd.dz/",
         "commune": null,
         "wilaya_code": "05",
@@ -2037,8 +2313,11 @@
       "properties": {
         "id": 93,
         "name": "L’Ecole supérieure de l’agriculture saharienne – El Oued",
+        "name_ar": "المدرسة الوطنية العليا للزراعات الصحراوية – الوادي",
         "type": "grande_ecole",
         "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://esas-eloued.dz/",
         "commune": null,
         "wilaya_code": "39",
@@ -2052,15 +2331,1693 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.44944,
+          36.59194
+        ]
+      },
+      "properties": {
+        "id": 94,
+        "name": null,
+        "name_ar": "الأكاديمية العسكرية بشرشال (شرشال، ولاية تيبازة)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "42",
+        "wilaya_name": "Tipaza",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 95,
+        "name": null,
+        "name_ar": "المدرسة العسكرية المتعددة التقينات (برج البحري، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 96,
+        "name": null,
+        "name_ar": "المدرسة العليا البحرية بتامنتفوست (تامنتفوست، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 97,
+        "name": null,
+        "name_ar": "المدرسة العليا العسكرية للإعلام والاتصال (سيدي فرج، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 98,
+        "name": null,
+        "name_ar": "المدرسة العليا لتقنيات الطيران (الدار البيضاء، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63306,
+          35.69694
+        ]
+      },
+      "properties": {
+        "id": 99,
+        "name": null,
+        "name_ar": "المدرسة العليا للإدارة العسكرية (وهران)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "31",
+        "wilaya_name": "Oran",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.44944,
+          36.59194
+        ]
+      },
+      "properties": {
+        "id": 100,
+        "name": null,
+        "name_ar": "المدرسة العليا للإشارة ( القليعة، ولاية تيبازة)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "42",
+        "wilaya_name": "Tipaza",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 101,
+        "name": null,
+        "name_ar": "المدرسة العليا للدرك الوطني (زرالدة، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 102,
+        "name": null,
+        "name_ar": "المدرسة العليا للدفاع الجوي عن الإقليم (الرغاية، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 103,
+        "name": null,
+        "name_ar": "المدرسة العليا للضمان الاجتماعي (بن عكنون، ولاية الجزائر).",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère du Travail, de l'Emploi et de la Sécurité sociale",
+        "website": "https://asal.dz/?p=8583&amp;lang=ar",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63306,
+          35.69694
+        ]
+      },
+      "properties": {
+        "id": 104,
+        "name": null,
+        "name_ar": "المدرسة العليا للطيران( تافراوي، ولاية وهران)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "31",
+        "wilaya_name": "Oran",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 105,
+        "name": null,
+        "name_ar": "المدرسة العليا للعتاد (الحراش، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 106,
+        "name": null,
+        "name_ar": "المدرسة العليا للعلوم والتكنولوجيا واد الرمان العاشور.الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "http://www.esst-sup.com/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 107,
+        "name": null,
+        "name_ar": "المدرسة العليا للفندقة والإطعام عين البنيان بالجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 108,
+        "name": null,
+        "name_ar": "المدرسة العليا للفنون الجميلة (الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Culture et des Arts",
+        "website": "https://esba.dz/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 109,
+        "name": null,
+        "name_ar": "المدرسة العليا لمهن البناء بلوزداد.الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.41,
+          36.19
+        ]
+      },
+      "properties": {
+        "id": 110,
+        "name": null,
+        "name_ar": "المدرسة المتخصصة في الحوامات (عين أرنات، ولاية سطيف)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "19",
+        "wilaya_name": "Sétif",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 111,
+        "name": null,
+        "name_ar": "المدرسة الوطنية التحضيرية لدراسة مهندس (الرويبة، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63306,
+          35.69694
+        ]
+      },
+      "properties": {
+        "id": 112,
+        "name": null,
+        "name_ar": "المدرسة الوطنية العليا للاتصالات السلكية واللّاسلكية وتكنولوجيات الإعلام والاتصال (وهران).",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Poste et des Télécommunications",
+        "website": "http://www.ensttic.dz/",
+        "commune": null,
+        "wilaya_code": "31",
+        "wilaya_name": "Oran",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 113,
+        "name": null,
+        "name_ar": "المدرسة الوطنية العليا للبريد وتكنولوجيات الإعلام والاتصال (الكاليتوس، ولاية الجزائر).",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Poste et des Télécommunications",
+        "website": "https://inptic.edu.dz/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.44944,
+          36.59194
+        ]
+      },
+      "properties": {
+        "id": 114,
+        "name": null,
+        "name_ar": "المدرسة الوطنية لحفظ الممتلكات الثقافية (تيبازة)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Culture et des Arts",
+        "website": "https://encrbc.dz/ar/",
+        "commune": null,
+        "wilaya_code": "42",
+        "wilaya_name": "Tipaza",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 115,
+        "name": null,
+        "name_ar": "المدرسة الوطنية لشبه الطبي للصحة العسكرية (عين النعجة،",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 116,
+        "name": null,
+        "name_ar": "المدرسة الوطنية للصحة العسكرية (عين النعجة، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.667,
+          32.483
+        ]
+      },
+      "properties": {
+        "id": 117,
+        "name": null,
+        "name_ar": "المعهد العالي لألداب واللغات “الغفران” غرداية",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": null,
+        "commune": null,
+        "wilaya_code": "47",
+        "wilaya_name": "Ghardaïa",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 118,
+        "name": null,
+        "name_ar": "المعهد العالي لدراسات الأمن الوطني (الأبيار، ولاية الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Défense nationale",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.41,
+          36.19
+        ]
+      },
+      "properties": {
+        "id": 119,
+        "name": null,
+        "name_ar": "المعهد العالي للتجارة والاقتصاد سطيف",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://www.incgdz.com/",
+        "commune": null,
+        "wilaya_code": "19",
+        "wilaya_name": "Sétif",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 120,
+        "name": null,
+        "name_ar": "المعهد العالي للتسيير دالي براهيم",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://isg.dz/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.667,
+          32.483
+        ]
+      },
+      "properties": {
+        "id": 121,
+        "name": null,
+        "name_ar": "المعهد العالي للعلوم الانسانية والتطبيقية غرداية",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": null,
+        "commune": null,
+        "wilaya_code": "47",
+        "wilaya_name": "Ghardaïa",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 122,
+        "name": null,
+        "name_ar": "المعهد العالي للعلوم برج الكيفان الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://his.edu.dz/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 123,
+        "name": null,
+        "name_ar": "المعهد العالي للعلوم والتكنولوجيا – علوم تجريبية ابن رشد",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://www.ibnrochd.com/sup/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 124,
+        "name": null,
+        "name_ar": "المعهد الوطني العالي للموسيقى (الجزائر)",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Culture et des Arts",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 125,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.283,
+          27.867
+        ]
+      },
+      "properties": {
+        "id": 126,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بأدرار",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "01",
+        "wilaya_name": "Adrar",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.83194,
+          36.46861
+        ]
+      },
+      "properties": {
+        "id": 127,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالبليدة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "09",
+        "wilaya_name": "Blida",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.90139,
+          36.38
+        ]
+      },
+      "properties": {
+        "id": 128,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالبويرة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "10",
+        "wilaya_name": "Bouira",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.117,
+          35.4
+        ]
+      },
+      "properties": {
+        "id": 129,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالتبسة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "12",
+        "wilaya_name": "Tébessa",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.75,
+          36.2675
+        ]
+      },
+      "properties": {
+        "id": 130,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالمدية",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "26",
+        "wilaya_name": "Médéa",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.54722,
+          35.70194
+        ]
+      },
+      "properties": {
+        "id": 131,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بالمسيلة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "28",
+        "wilaya_name": "M'sila",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.16667,
+          35.55
+        ]
+      },
+      "properties": {
+        "id": 132,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بباتنة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "05",
+        "wilaya_name": "Batna",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.06417,
+          36.75111
+        ]
+      },
+      "properties": {
+        "id": 133,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي ببجاية",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "06",
+        "wilaya_name": "Béjaïa",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.733,
+          34.85
+        ]
+      },
+      "properties": {
+        "id": 134,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي ببسكرة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "07",
+        "wilaya_name": "Biskra",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.217,
+          31.617
+        ]
+      },
+      "properties": {
+        "id": 135,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي ببشار",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "08",
+        "wilaya_name": "Béchar",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.317,
+          35.367
+        ]
+      },
+      "properties": {
+        "id": 136,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بتيارت",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "14",
+        "wilaya_name": "Tiaret",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.75,
+          36.81667
+        ]
+      },
+      "properties": {
+        "id": 137,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بجيجل",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "18",
+        "wilaya_name": "Jijel",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.41,
+          36.19
+        ]
+      },
+      "properties": {
+        "id": 138,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسطيف",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "19",
+        "wilaya_name": "Sétif",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.15,
+          34.833
+        ]
+      },
+      "properties": {
+        "id": 139,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسعيدة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "20",
+        "wilaya_name": "Saïda",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.9,
           36.86667
         ]
       },
       "properties": {
-        "id": 94,
+        "id": 140,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسكيكدة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "21",
+        "wilaya_name": "Skikda",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.64139,
+          35.19389
+        ]
+      },
+      "properties": {
+        "id": 141,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بسيدي بلعباس",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "22",
+        "wilaya_name": "Sidi Bel Abbès",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.9703,
+          36.2652
+        ]
+      },
+      "properties": {
+        "id": 142,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بعين الدفلة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "44",
+        "wilaya_name": "Aïn Defla",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.6,
+          36.35
+        ]
+      },
+      "properties": {
+        "id": 143,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بقسنطينة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "25",
+        "wilaya_name": "Constantine",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.083,
+          35.933
+        ]
+      },
+      "properties": {
+        "id": 144,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بمستغانم",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "27",
+        "wilaya_name": "Mostaganem",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.13333,
+          35.4
+        ]
+      },
+      "properties": {
+        "id": 145,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بمعسكر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "29",
+        "wilaya_name": "Mascara",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.317,
+          31.95
+        ]
+      },
+      "properties": {
+        "id": 146,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بورقلة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "30",
+        "wilaya_name": "Ouargla",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63306,
+          35.69694
+        ]
+      },
+      "properties": {
+        "id": 147,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي بوهران 1",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "31",
+        "wilaya_name": "Oran",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 148,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي للقابلات بالجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.767,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": 149,
+        "name": null,
+        "name_ar": "المعهد الوطني للتكوين العالي شبه الطبي للقابلات بعنابة",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Santé",
+        "website": null,
+        "commune": null,
+        "wilaya_code": "23",
+        "wilaya_name": "Annaba",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 150,
+        "name": null,
+        "name_ar": "المعهد الوطني لمهن فنون العرض والسمعي البصري",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "public",
+        "supervisory_ministry": "Ministère de la Culture et des Arts",
+        "website": "https://ismas.dz/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.717
+        ]
+      },
+      "properties": {
+        "id": 151,
+        "name": null,
+        "name_ar": "مدرسة ادارة الأعمال المدينة الجديدة تيزي وزو",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "http://emto-univ.com/",
+        "commune": null,
+        "wilaya_code": "15",
+        "wilaya_name": "Tizi Ouzou",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 152,
+        "name": null,
+        "name_ar": "مدرسة ادارة الأعمال بالجزائر(بيزناس سكول) حيدرة الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://em-alger.com/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 153,
+        "name": null,
+        "name_ar": "مدرسة التكوين في تقنيات التسيير دالي ابراهيم الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://eftg-sup.com/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 154,
+        "name": null,
+        "name_ar": "معهد إدارة الأعمال ( أنسيم سوب) حيدرة الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://www.insimsup.dz/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 155,
+        "name": null,
+        "name_ar": "معهد البصريات اولاد فايت. الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "http://www.inoof-dz.com/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.767,
+          36.067
+        ]
+      },
+      "properties": {
+        "id": 156,
+        "name": null,
+        "name_ar": "معهد البصريات برج بوعريريج",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://www.io-bba.com/",
+        "commune": null,
+        "wilaya_code": "34",
+        "wilaya_name": "Bordj Bou Arreridj",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 157,
+        "name": null,
+        "name_ar": "معهد التكنولوجيا ( نوميديا) سيدي عبد الله .الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 158,
+        "name": null,
+        "name_ar": "معهد التكوين في التأمينات والتسيير بن عكنون.الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": null,
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 159,
+        "name": null,
+        "name_ar": "معهد المناجمنت سعيد حمدين بالجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://imaa-univ.com/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.08722,
+          36.7325
+        ]
+      },
+      "properties": {
+        "id": 160,
+        "name": null,
+        "name_ar": "معهد المناجمنت والتطوير الشراقة.الجزائر",
+        "type": "grande_ecole",
+        "type_fr": "Grande école",
+        "sector": "private",
+        "supervisory_ministry": null,
+        "website": "https://mdi-alger.com/",
+        "commune": null,
+        "wilaya_code": "16",
+        "wilaya_name": "Alger",
+        "geo_precision": "wilaya",
+        "source": "https://www.mesrs.dz/reseau-universitaire-ar/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.9,
+          36.86667
+        ]
+      },
+      "properties": {
+        "id": 161,
         "name": "Ecole normale supérieure d’enseignement technologique de Skikda",
+        "name_ar": "المدرسة العليا لأساتذة التعليم التكنولوجي بسكيكدة",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enset-skikda.dz/",
         "commune": null,
         "wilaya_code": "21",
@@ -2079,10 +4036,13 @@
         ]
       },
       "properties": {
-        "id": 95,
+        "id": 162,
         "name": "Ecole Normale Supérieure d’Oran",
+        "name_ar": "المدرسة العليا للأساتذة بوهران",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ens-oran.dz/index.php/fr/",
         "commune": null,
         "wilaya_code": "31",
@@ -2101,10 +4061,13 @@
         ]
       },
       "properties": {
-        "id": 96,
+        "id": 163,
         "name": "Ecole normale supérieure de Béchar",
+        "name_ar": null,
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://ensb.univ-bechar.dz/ensb/?page_id=971",
         "commune": null,
         "wilaya_code": "08",
@@ -2123,10 +4086,13 @@
         ]
       },
       "properties": {
-        "id": 97,
+        "id": 164,
         "name": "Ecole normale supérieure de Bou Saâda",
+        "name_ar": "المدرسة العليا للأساتذة بوسعادة المجاهد الفريق احمد قايد صالح",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ens-bousaada.dz/ar/",
         "commune": "Bou Saada",
         "wilaya_code": "68",
@@ -2145,10 +4111,13 @@
         ]
       },
       "properties": {
-        "id": 98,
+        "id": 165,
         "name": "Ecole normale supérieure de Bouzaréah – Cheikh Mubarak Ben Mohamed Brahimi El Mili",
+        "name_ar": "المدرسة العليا للأساتذة بوزريعة الشيخ مبارك بن محمد إبراهيمي الميلي الجزائري",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ensb.dz/",
         "commune": "Bouzareah",
         "wilaya_code": "16",
@@ -2167,10 +4136,13 @@
         ]
       },
       "properties": {
-        "id": 99,
+        "id": 166,
         "name": "Ecole normale supérieure de Constantine -Assia Djebar",
+        "name_ar": "المدرسة العليا للأساتذة الآداب والعلوم الانسانية قسنطينة الكاتبة آسيا جبار",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ensc.dz/",
         "commune": null,
         "wilaya_code": "25",
@@ -2189,10 +4161,13 @@
         ]
       },
       "properties": {
-        "id": 100,
+        "id": 167,
         "name": "Ecole normale supérieure de Kouba – Mohamed Bachir El Ibrahimi",
+        "name_ar": "المدرسة العليا للأساتذة القبة الشيخ محمد البشير الإبراهيمي",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ens-kouba.dz/",
         "commune": "Kouba",
         "wilaya_code": "16",
@@ -2211,10 +4186,13 @@
         ]
       },
       "properties": {
-        "id": 101,
+        "id": 168,
         "name": "Ecole normale supérieure de Laghouat – Taleb Abderrahmane",
+        "name_ar": "المدرسة العليا للأساتذة بالأغواط – طالب عبد الرحمان",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.ens-lagh.dz/en/",
         "commune": "Laghouat",
         "wilaya_code": "03",
@@ -2233,10 +4211,13 @@
         ]
       },
       "properties": {
-        "id": 102,
+        "id": 169,
         "name": "Ecole Normale Supérieure de Mostaganem",
+        "name_ar": "المدرسة العليا للأساتذة بمستغانم",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://ens.univ-mosta.dz/",
         "commune": null,
         "wilaya_code": "27",
@@ -2255,10 +4236,13 @@
         ]
       },
       "properties": {
-        "id": 103,
+        "id": 170,
         "name": "Ecole normale supérieure de Ouargla",
+        "name_ar": "المدرسة العليا للأساتذة ورقلة",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://ens-ouargla.dz/",
         "commune": null,
         "wilaya_code": "30",
@@ -2277,10 +4261,13 @@
         ]
       },
       "properties": {
-        "id": 104,
+        "id": 171,
         "name": "Ecole normale supérieure de setif – Messaoud Zeghar",
+        "name_ar": "المدرسة العليا للأساتذة سطيف المجاهد مسعود زغار",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.ens-setif.dz/",
         "commune": "El Eulma",
         "wilaya_code": "19",
@@ -2299,10 +4286,13 @@
         ]
       },
       "properties": {
-        "id": 105,
+        "id": 172,
         "name": "Ecole normale supérieure de sourds muets",
+        "name_ar": "المدرسة العليا للأساتذة الصم والبكم",
         "type": "ens",
         "type_fr": "École normale supérieure",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.enssm.dz/",
         "commune": null,
         "wilaya_code": "16",
@@ -2321,10 +4311,13 @@
         ]
       },
       "properties": {
-        "id": 106,
+        "id": 173,
         "name": "Centre universitaire d’Aflou",
+        "name_ar": "المركز الجامعي آفلو",
         "type": "centre_universitaire",
         "type_fr": "Centre universitaire",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "https://www.cu-aflou.dz/index_fr.php",
         "commune": null,
         "wilaya_code": "59",
@@ -2343,10 +4336,13 @@
         ]
       },
       "properties": {
-        "id": 107,
+        "id": 174,
         "name": "Centre universitaire d’El Bayadh – Nour Bachir",
+        "name_ar": "المركز الجامعي بالبيض – نور البشير",
         "type": "centre_universitaire",
         "type_fr": "Centre universitaire",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cu-elbayadh.dz/",
         "commune": null,
         "wilaya_code": "32",
@@ -2365,10 +4361,13 @@
         ]
       },
       "properties": {
-        "id": 108,
+        "id": 175,
         "name": "Centre Universitaire d’Illizi-Cheikh Amoud ben Mokhtar",
+        "name_ar": "المركز الجامعي إليزي المقاوم الشيخ آمود بن مختار",
         "type": "centre_universitaire",
         "type_fr": "Centre universitaire",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cuillizi.dz/?page_id=528&amp;lang=fr#pll_switcher",
         "commune": null,
         "wilaya_code": "33",
@@ -2387,10 +4386,13 @@
         ]
       },
       "properties": {
-        "id": 109,
+        "id": 176,
         "name": "Centre Universitaire de Barika – Si El Haouès",
+        "name_ar": "المركز الجامعي بريكة – أحمد حمودة بن عبد الرزاق المدعو سي الحواس",
         "type": "centre_universitaire",
         "type_fr": "Centre universitaire",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cu-barika.dz/",
         "commune": "Barika",
         "wilaya_code": "60",
@@ -2409,10 +4411,13 @@
         ]
       },
       "properties": {
-        "id": 110,
+        "id": 177,
         "name": "Centre universitaire de Maghnia",
+        "name_ar": "المركز الجامعي لمغنية",
         "type": "centre_universitaire",
         "type_fr": "Centre universitaire",
+        "sector": "public",
+        "supervisory_ministry": null,
         "website": "http://www.cu-maghnia.edu.dz/",
         "commune": "Maghnia",
         "wilaya_code": "13",

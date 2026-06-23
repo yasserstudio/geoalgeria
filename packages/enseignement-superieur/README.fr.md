@@ -12,12 +12,14 @@
 
 </div>
 
-110 établissements d'enseignement supérieur à travers l'Algérie — **universités**, grandes
-écoles, écoles normales supérieures et centres universitaires — chacun avec son nom officiel,
-**son propre site web**, son **type** d'établissement, son rattachement wilaya / commune et ses
-coordonnées. Source : le **Ministère de l'Enseignement Supérieur et de la Recherche Scientifique
-(MESRS)**, livré en JSON, CSV et GeoJSON. Fait partie de
-[GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+177 établissements d'enseignement supérieur à travers l'Algérie — **universités**, grandes
+écoles, écoles normales supérieures, centres universitaires, les **institutions privées
+agréées**, et les établissements **relevant d'autres ministères** (Défense, Santé, Culture…)
+que le MESRS supervise — chacun avec son nom (français et/ou arabe), son **type**
+d'établissement, son **secteur**, le ministère de tutelle, **son propre site web**, son
+rattachement wilaya / commune et ses coordonnées. Source : le **Ministère de l'Enseignement
+Supérieur et de la Recherche Scientifique (MESRS)**, livré en JSON, CSV et GeoJSON. Fait
+partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/enseignement-superieur
@@ -26,9 +28,10 @@ npm install @geoalgeria/enseignement-superieur
 ```js
 import es from "@geoalgeria/enseignement-superieur";
 
-const all = es.institutions();                  // 110
+const all = es.institutions();                  // 177
 const inAlgiers = es.institutionsByWilaya(16);   // établissements de la wilaya 16
 const universities = es.institutionsByType("universite"); // toutes les universités
+const privates = es.institutionsBySector("private");      // les 19 établissements privés
 
 // Chaque enregistrement a lat/lng — tri par distance, carte ou campus le plus proche en quelques lignes.
 ```
@@ -36,28 +39,35 @@ const universities = es.institutionsByType("universite"); // toutes les universi
 ## Ce que vous pouvez construire
 
 - **Recherche de l'université la plus proche** — coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
-- **Applications étudiantes et citoyennes** — cartographier le réseau d'enseignement supérieur par wilaya, avec lien direct vers le site de chaque établissement.
+- **Applications étudiantes et citoyennes** — cartographier le réseau d'enseignement supérieur par wilaya, scinder public vs privé, lien direct vers le site de chaque établissement.
 - **Cartes** — couche de points GeoJSON prête à l'emploi pour tout le réseau d'enseignement supérieur.
-- **Recherche et planification** — nombre d'établissements par type et par wilaya à travers le pays.
+- **Recherche et planification** — nombre d'établissements par type, secteur, ministère de tutelle et wilaya à travers le pays.
 
 ## Contenu
 
 | Type | Code | Nombre |
 | --- | --- | --- |
 | Université | `universite` | 58 |
-| Grande école | `grande_ecole` | 35 |
+| Grande école | `grande_ecole` | 102 |
 | École normale supérieure | `ens` | 12 |
 | Centre universitaire | `centre_universitaire` | 5 |
-| **Total** | | **110** |
+| **Total** | | **177** |
+
+Par **secteur** : 158 publiques · 19 privées agréées. Parmi les établissements publics, 48 relèvent
+**d'autres ministères** que le MESRS qu'il supervise pédagogiquement — lisez `supervisory_ministry`
+(ex. `"Ministère de la Santé"` pour les 25 instituts paramédicaux, `"Ministère de la Défense nationale"`
+pour les 16 écoles militaires), qui est `null` pour le réseau MESRS lui-même.
 
 Couvrant **51 wilayas**. `wilaya_code` est relié au modèle de wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) (schéma à 69 wilayas).
 
 ## Noms et coordonnées — provenance
 
-L'**identité** de chaque enregistrement est à 100 % MESRS : `name`, `type` et le `website`
-officiel proviennent directement de la liste du réseau universitaire du ministère (qui publie
-les noms **uniquement en français**).
+L'**identité** de chaque enregistrement est à 100 % MESRS. Le réseau public's `name` (français)
+et `website` proviennent de la liste du ministère ; les établissements privés et relevant d'autres
+ministères sont publiés uniquement en arabe, donc ils portent `name_ar` avec `name: null`. `name_ar`
+est également **rétroempli** pour le réseau public (jointure sur site web) — présent sur ~93% de tous
+les enregistrements.
 
 La page du ministère ne contient **ni coordonnées ni adresse**, donc la **géographie est
 fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_precision` :
@@ -66,7 +76,7 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_pre
 | --- | --- | --- |
 | `campus` | 61 | Un géocodage OpenStreetMap du campus nommé, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
 | `commune` | 16 | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria` — utilisé quand OSM ne trouve pas le campus par son nom. |
-| `wilaya` | 33 | Le centroïde de la wilaya de l'établissement — solution de repli quand seule la wilaya est connue. |
+| `wilaya` | 100 | Le centroïde de la wilaya de l'établissement — solution de repli quand seule la wilaya est connue. Chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
 `wilaya_code`, `wilaya_name` et `commune` sont toujours réconciliés avec le jeu de données
 principal `geoalgeria`, ils font donc autorité et suivent le schéma à 69 wilayas. Les
@@ -96,10 +106,10 @@ Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inc
 
 ```
 data/
-  institutions.json            # 110 établissements (tableau)
-  metadata.json                # source, comptages, by_type, by_precision, generated_at
+  institutions.json            # 177 établissements (tableau)
+  metadata.json                # source, comptages, by_type, by_sector, by_precision, generated_at
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/institutions.geojson # Entités point (les 110 placées ; 61 géocodées au campus, voir geo_precision)
+  geojson/institutions.geojson # Entités point (les 177 placées ; 61 géocodées au campus, voir geo_precision)
 ```
 
 ## Structure d'un enregistrement
@@ -108,8 +118,11 @@ data/
 {
   "id": 53,
   "name": "Université des sciences et de la technologie d'Alger, Houari Boumediène",
+  "name_ar": "جامعة العلوم والتكنولوجيا هواري بومدين",
   "type": "universite",
   "type_fr": "Université",
+  "sector": "public",
+  "supervisory_ministry": null,
   "website": "http://www.usthb.dz/",
   "commune": "Bab Ezzouar",
   "wilaya_code": "16",
@@ -121,10 +134,10 @@ data/
 }
 ```
 
-La page du réseau MESRS publie les noms **uniquement en français**, donc `name` est en français ;
-pour les noms de wilaya et de commune en arabe, joignez `wilaya_code` au jeu de données
-[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété à deux
-chiffres avec un zéro.
+`name` est français (le réseau MESRS) ou `null` pour les établissements privés/relevant d'autres ministères
+publiés uniquement en arabe — utilisez `name ?? name_ar` pour un label d'affichage. Pour les noms de wilaya et
+de commune en arabe, joignez `wilaya_code` au jeu de données
+[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété à deux chiffres avec un zéro.
 
 ## Besoin des divisions administratives aussi ?
 
@@ -138,12 +151,14 @@ d'établissements d'enseignement supérieur.
 ## Source
 
 L'identité des établissements provient du **MESRS**, via la page publique du réseau
-universitaire (<https://www.mesrs.dz/en/university-network/>). Exécutez `npm run fetch` pour
-régénérer toutes les sorties à partir de la liste en ligne ; la commande réconcilie la
-wilaya/commune de chaque enregistrement avec le jeu de données principal et attache les
-coordonnées de référence (`scripts/seeds/coordinates.json`, actualisées avec `npm run geocode`).
-Elle échoue bruyamment si le nombre d'établissements s'effondre. Les coordonnées sont dérivées
-d'OpenStreetMap — voir **Noms et coordonnées** ci-dessus.
+universitaire — la [liste en anglais](https://www.mesrs.dz/en/university-network/) pour les noms
+français du réseau et la [liste en arabe](https://www.mesrs.dz/reseau-universitaire-ar/) pour les
+noms arabes et les établissements privés + relevant d'autres ministères que la page anglaise
+omet. Exécutez `npm run fetch` pour régénérer toutes les sorties à partir des listes en ligne ;
+la commande réconcilie la wilaya/commune de chaque enregistrement avec le jeu de données principal
+et attache les coordonnées de référence (`scripts/seeds/coordinates.json`, actualisées avec
+`npm run geocode`). Elle échoue bruyamment si le nombre d'établissements s'effondre. Les
+coordonnées sont dérivées d'OpenStreetMap — voir **Noms et coordonnées** ci-dessus.
 
 ## Licence et attribution
 
