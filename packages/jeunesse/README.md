@@ -117,8 +117,8 @@ data/
 
 The GIS publishes names in **French**; `name_ar` is the Arabic name **backfilled** from the
 ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m, and type-checked so a
-neighbouring building's name is never grafted on) — present on ~59% of records, `null` where
-no confident match exists. `name` is `null` for the ~5% the source
+different kind of facility's name is never grafted on) — present on ~59% of records, `null`
+where no confident match exists. `name` is `null` for the ~5% the source
 leaves blank; `commune`, `daira` and `wilaya_name` are French (uppercase, as published). For
 the full French wilaya/commune divisions, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded

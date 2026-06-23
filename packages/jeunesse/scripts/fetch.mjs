@@ -55,10 +55,12 @@ const MIN_EXPECTED = 1800;
 const NAME_AR_MAX_M = 200;
 
 // The legacy map and this GIS use different type vocabularies. To avoid grafting a
-// neighbouring building's Arabic name onto a record (a maison de jeunes sitting
+// different kind of facility's Arabic name onto a record (a maison de jeunes sitting
 // next to a salle polyvalente), a match must also be type-compatible: each new
 // type code accepts only its legacy equivalent(s). New types with no legacy
-// counterpart (FJ, BA) never match, so they stay `name_ar: null`.
+// counterpart (FJ, BA) never match, so they stay `name_ar: null`. The legacy seed
+// also carries CLJ (clubs de jeunes) and PAL (piscines) codes, which this layer
+// doesn't publish — they have no new-type counterpart and are intentionally unused.
 const LEGACY_TYPES_FOR = {
   MJ: ["MJ"], CSP: ["CS"], SPA: ["SPA"], AJ: ["AJ"],
   CJ: ["CJ"], CLS: ["CLS"], FJ: [], CC: ["CC"], BA: [],
@@ -334,6 +336,13 @@ async function main() {
   }
   if (unmappedWilayas.size) {
     throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")} — extend WILAYA_ALIASES`);
+  }
+  // type_code is a non-null contract (typed + advertised). A source row with an
+  // empty type adds nothing to unknownTypes, so guard it explicitly rather than
+  // silently shipping a null-typed record on a future refresh.
+  const typeless = institutions.filter((r) => r.type_code == null);
+  if (typeless.length) {
+    throw new Error(`${typeless.length} record(s) with no type — investigate before shipping`);
   }
 
   institutions.sort((a, b) =>
