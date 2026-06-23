@@ -15,7 +15,7 @@
 5,141 sports facilities across Algeria — **proximity fields**, stadiums, swimming pools,
 specialized halls, athletics tracks, tennis courts, equestrian centers, nautical bases and
 more — each with its name, facility **type**, address, commune / daïra / wilaya, capacity,
-operational status, PMR accessibility, built and land area, year of reception, and GPS
+operational status, PMR accessibility, built and land area, year of reception, and geographic
 coordinates. Sourced from the **Ministère de la Jeunesse et des Sports GIS
 (sig.mjs.gov.dz)**, shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
