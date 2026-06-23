@@ -180,7 +180,10 @@ const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Fetching MJS sports infrastructure from GeoServer…");
-  const res = await fetch(WMS_URL, { headers: { "User-Agent": UA } });
+  const res = await fetch(WMS_URL, {
+    headers: { "User-Agent": UA },
+    signal: AbortSignal.timeout(60_000),
+  });
   if (!res.ok) throw new Error(`WMS request failed: HTTP ${res.status}`);
   const raw = await res.json();
 
@@ -267,10 +270,10 @@ async function main() {
   }
 
   if (unknownTypes.size) {
-    console.warn(`WARNING: unknown type(s): ${[...unknownTypes].join(", ")}`);
+    throw new Error(`unknown type(s): ${[...unknownTypes].join(", ")} — extend TYPE_MAP`);
   }
   if (unmappedWilayas.size) {
-    console.warn(`WARNING: unmapped wilaya(s): ${[...unmappedWilayas].join(", ")}`);
+    throw new Error(`unmapped wilaya(s): ${[...unmappedWilayas].join(", ")} — extend WILAYA_ALIASES`);
   }
 
   // Sort by wilaya then type then name
@@ -279,6 +282,14 @@ async function main() {
     (a.type_code || "").localeCompare(b.type_code || "") ||
     (a.name || "").localeCompare(b.name || ""),
   );
+
+  const overflow = facilities.filter(r => {
+    const c = Number(r.wilaya_code);
+    return !Number.isFinite(c) || c < 1 || c > 69;
+  });
+  if (overflow.length) {
+    throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
+  }
 
   // Assign stable sequential ids
   facilities.forEach((f, i) => { f.id = i + 1; });
