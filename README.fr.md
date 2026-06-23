@@ -18,7 +18,7 @@
 
 </div>
 
-Tous les jeux de données sur l'Algérie disponibles sur internet listent encore **48 wilayas**. L'Algérie en compte **69 depuis avril 2026**. GeoAlgeria est celui qui est à jour — avec les vrais codes postaux d'Algérie Poste, les coordonnées GPS, les noms bilingues, les bureaux de poste et les DAB — livré en JSON, CSV, GeoJSON, SQL et TypeScript. Un seul `npm install`, MIT, validé à chaque commit.
+La plupart des jeux de données sur l'Algérie disponibles en ligne listent encore **48 wilayas**. L'Algérie en compte **69 depuis avril 2026**. GeoAlgeria fait partie des rares jeux de données déjà mis à jour — avec les vrais codes postaux d'Algérie Poste, les coordonnées géographiques, les noms bilingues, les bureaux de poste et les DAB — livré en JSON, CSV, GeoJSON, SQL et TypeScript. Un seul `npm install`, licence MIT, validation CI automatique à chaque mise à jour.
 
 ```bash
 npm install geoalgeria
@@ -57,7 +57,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 
 > À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf) — ainsi que la réforme de 2019 (Loi 19-12).
 
-## Pourquoi pas les autres ?
+## Pourquoi GeoAlgeria ?
 
 | | geoalgeria | leblad | algeria-cities |
 |---|:---:|:---:|:---:|
@@ -69,7 +69,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | Prêt pour le e-commerce (plat) | ✅ | ❌ | ❌ |
 | npm + types TypeScript | ✅ | ✅ | ❌ |
 | Exports GeoJSON / SQL | ✅ | ❌ | ✅ |
-| Validé par CI à chaque commit | ✅ | ❌ | ❌ |
+| Validation CI à chaque mise à jour | ✅ | ❌ | ❌ |
 | Dernière mise à jour | **2026** | 2021 | 2023 |
 
 [Voir la comparaison complète →](https://geoalgeria.com/compare)
@@ -78,14 +78,14 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 
 - **E-commerce / COD** — cascades d'adresses wilaya → daïra → commune, validation des codes postaux et configuration des zones de livraison correspondant à ce que les transporteurs utilisent réellement.
 - **Cartes et SIG** — GeoJSON prêt à l'emploi avec 1 528 features communes, modélisé correctement à travers les deux réformes.
-- **Civique, recherche et données** — données de référence propres, structurées, sourcées et versionnées au lieu de PDF.
-- **Tout ce qui touche à l'Algérie** — un seul install, types inclus.
+- **Recherche, données publiques et projets civiques** — données de référence propres, structurées, sourcées et versionnées au lieu de PDF.
+- **Tout projet utilisant des données algériennes** — un seul install, types inclus.
 
 ## Paquets
 
 | Paquet | npm | Description |
 | --- | --- | --- |
-| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | Wilayas, daïras, communes + données postales miroir |
+| [`packages/dataset`](packages/dataset) | [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) | Wilayas, daïras, communes + données postales consolidées |
 | [`packages/poste`](packages/poste) | [`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) | Bureaux de poste et DAB d'Algérie Poste |
 | [`packages/emploi`](packages/emploi) | [`@geoalgeria/emploi`](https://www.npmjs.com/package/@geoalgeria/emploi) | Agences d'emploi (AWEM + ALEM) de l'ANEM |
 | [`packages/mobilis`](packages/mobilis) | [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) | Agences Mobilis et points de vente agréés |
@@ -115,7 +115,7 @@ Vous préférez les fichiers ? Téléchargez les **CSV / GeoJSON / SQL** depuis 
 
 ## La suite
 
-GeoAlgeria n'est pas un export ponctuel. L'objectif est de devenir **la** source ouverte canonique et continuellement mise à jour pour les données algériennes — maintenue à jour à travers chaque réforme administrative, et **s'étendant à d'autres types de données au fur et à mesure que les sources deviennent disponibles**. Les divisions administratives et les données postales/bancaires ne sont que le début.
+GeoAlgeria n'est pas un export ponctuel. L'objectif est de devenir **la** source de référence ouverte et continuellement mise à jour pour les données algériennes — maintenue à jour à travers chaque réforme administrative, et **s'étendant à d'autres types de données au fur et à mesure que les sources deviennent disponibles**. Les divisions administratives et les données postales/bancaires ne sont que le début.
 
 Suivez ou mettez une ⭐ au repo, et [ouvrez une discussion](https://github.com/yasserstudio/geoalgeria/discussions) pour demander un jeu de données.
 
