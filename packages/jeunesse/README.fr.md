@@ -14,7 +14,7 @@
 
 2 076 infrastructures de jeunesse et de sport à travers l'Algérie — **maisons de jeunes**, complexes sportifs,
 salles polyvalentes, auberges de jeunes, centres culturels, camps de jeunes et plus encore — chacune avec
-son nom officiel en arabe, son **type** d'infrastructure, commune / daïra / wilaya, et coordonnées GPS.
+son nom officiel en arabe, son **type** d'infrastructure, commune / daïra / wilaya, et coordonnées géographiques.
 Source : **Ministère de la Jeunesse**, distribué en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

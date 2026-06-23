@@ -15,7 +15,7 @@
 1,932 vocational training establishments across Algeria — **CFPA**, **INSFP**, **IFEP**,
 **IEP**, **DFEP** and private accredited centers — each with its official name (Arabic,
 with French where available), establishment **type**, **capacity**, **boarding** info, rich
-**contact details** (phone, fax, email, website, Facebook), and GPS coordinates. Sourced
+**contact details** (phone, fax, email, website, Facebook), and geographic coordinates. Sourced
 from the **Ministere de la Formation et de l'Enseignement Professionnels (MFEP)** via
 [takwin.dz](https://takwin.dz), shipped as JSON, CSV, and GeoJSON.
 Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).

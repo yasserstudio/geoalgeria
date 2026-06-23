@@ -15,7 +15,7 @@
 Les **165 agences commerciales** (*Agence Mobilis*) et les **12 180 points de
 vente agréés** de **Mobilis** (ATM Mobilis), l'opérateur mobile public algérien.
 Les agences disposent de noms et adresses bilingues FR/AR ainsi que de
-coordonnées GPS ; les points de vente disposent du nom, de l'adresse et de la
+coordonnées géographiques ; les points de vente disposent du nom, de l'adresse et de la
 commune. Livré en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

@@ -9,7 +9,7 @@ This is a small monorepo:
 
 | Path | Package | Contents |
 | --- | --- | --- |
-| `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
+| `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ structured postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 | `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |

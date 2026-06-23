@@ -15,7 +15,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships **1,528 commune records** and **555 dairas**: a set of records carrying source data issues was removed, and reconciliation toward the official 1,541 is in progress (see the [changelog](CHANGELOG.md)). Last validated: June 2026.
+Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, geographic coordinates, and bilingual names. This release ships **1,528 commune records** and **555 dairas**: a set of records carrying source data issues was removed, and reconciliation toward the official 1,541 is in progress (see the [changelog](CHANGELOG.md)). Last validated: June 2026.
 
 ---
 
@@ -29,7 +29,7 @@ Tired of datasets that still think Algeria has 48 wilayas? Same.
 | Dairas as first-class entities | ✅ | ❌ | ❌ |
 | Postal codes per commune | ✅ | ✅ | ❌ |
 | Coordinates per commune | ✅ | ❌ | ✅ |
-| E-commerce ready (flat, denormalized) | ✅ | ❌ | ❌ |
+| E-commerce ready | ✅ | ❌ | ❌ |
 | Delivery zone templates | ✅ | ❌ | ❌ |
 | npm package + TypeScript | ✅ | ✅ | ❌ |
 | SQL dump (MySQL/PG/SQLite) | ✅ | ❌ | ✅ |
@@ -252,7 +252,7 @@ Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly
 GeoAlgeria is the most complete option as of 2026 — it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
 
 **Liste des wilayas d'Algérie 2026 — où trouver?**
-GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postaux, et coordonnées GPS. Disponible en JSON, CSV, GeoJSON, et SQL. `npm install geoalgeria`
+GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postaux, et coordonnées géographiques. Disponible en JSON, CSV, GeoJSON, et SQL. `npm install geoalgeria`
 
 ---
 

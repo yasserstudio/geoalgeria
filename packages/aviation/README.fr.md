@@ -13,7 +13,7 @@
 </div>
 
 33 aéroports civils à travers l'Algérie — avec les noms officiels, les **codes OACI (ICAO)**,
-les adresses postales, numéros de téléphone, sites web, coordonnées GPS et rattachement
+les adresses postales, numéros de téléphone, sites web, coordonnées géographiques et rattachement
 à la wilaya. Source : ANAC (Autorité Nationale de l'Aviation Civile), distribué en JSON,
 CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

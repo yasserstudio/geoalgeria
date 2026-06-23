@@ -13,7 +13,7 @@
 </div>
 
 33 civil airports across Algeria — with official names, **ICAO (OACI) codes**, postal
-addresses, phone numbers, websites, GPS coordinates, and wilaya linkage. Sourced from
+addresses, phone numbers, websites, geographic coordinates, and wilaya linkage. Sourced from
 ANAC (the Autorité Nationale de l'Aviation Civile), shipped as JSON, CSV, and GeoJSON.
 Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

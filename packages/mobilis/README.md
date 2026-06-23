@@ -15,7 +15,7 @@
 The **165 commercial agencies** (*Agence Mobilis*) and **12,180 approved points
 of sale** (*points de vente agréés*) of **Mobilis** (ATM Mobilis), Algeria's
 state-owned mobile operator. Agencies come with bilingual FR/AR name and
-address and GPS coordinates; points of sale come with name, address, and the
+address and geographic coordinates; points of sale come with name, address, and the
 commune they sit in. Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

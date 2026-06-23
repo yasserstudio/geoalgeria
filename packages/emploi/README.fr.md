@@ -14,7 +14,7 @@
 
 Les **58 AWEM** (agences de wilaya de l'emploi) et **273 ALEM** (agences locales
 de l'emploi) de l'agence nationale de l'emploi, **ANEM** — chacune avec adresse,
-téléphone, fax, email, responsable, les communes desservies et coordonnées GPS.
+téléphone, fax, email, responsable, les communes desservies et coordonnées géographiques.
 Livré en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash

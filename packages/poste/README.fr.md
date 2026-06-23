@@ -12,7 +12,7 @@
 
 </div>
 
-3 908 bureaux de poste et 2 026 distributeurs automatiques (DAB) à travers l'Algérie — avec de **vrais codes postaux**, des noms bilingues (français / arabe), des coordonnées GPS et un rattachement commune/wilaya. Données issues d'Algérie Poste, distribuées en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3 908 bureaux de poste et 2 026 distributeurs automatiques (DAB) à travers l'Algérie — avec de **vrais codes postaux**, des noms bilingues (français / arabe), des coordonnées géographiques et un rattachement commune/wilaya. Données issues d'Algérie Poste, distribuées en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste

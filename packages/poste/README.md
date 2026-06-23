@@ -12,7 +12,7 @@
 
 </div>
 
-3,908 post offices and 2,026 ATMs across Algeria — with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3,908 post offices and 2,026 ATMs across Algeria — with **real postal codes**, bilingual (French / Arabic) names, geographic coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste

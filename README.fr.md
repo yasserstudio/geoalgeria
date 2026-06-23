@@ -66,7 +66,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | Vrais codes postaux Algérie Poste | ✅ | ~ | ❌ |
 | Coordonnées par commune | ✅ | ❌ | ✅ |
 | Bureaux de poste et DAB | ✅ | ❌ | ❌ |
-| Prêt pour le e-commerce (plat) | ✅ | ❌ | ❌ |
+| Prêt pour le e-commerce | ✅ | ❌ | ❌ |
 | npm + types TypeScript | ✅ | ✅ | ❌ |
 | Exports GeoJSON / SQL | ✅ | ❌ | ✅ |
 | Validation CI à chaque mise à jour | ✅ | ❌ | ❌ |

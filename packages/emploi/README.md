@@ -14,7 +14,7 @@
 
 The **58 AWEM** (wilaya employment agencies) and **273 ALEM** (local employment
 agencies) of Algeria's national employment agency, **ANEM** — each with address,
-phone, fax, email, manager, the communes it serves, and GPS coordinates. Shipped
+phone, fax, email, manager, the communes it serves, and geographic coordinates. Shipped
 as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash

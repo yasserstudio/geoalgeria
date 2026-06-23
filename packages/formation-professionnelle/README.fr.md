@@ -16,7 +16,7 @@
 **IFEP**, **IEP**, **DFEP** et centres privés agréés — chacun avec son nom officiel (arabe,
 avec le français quand disponible), **type** d'établissement, **capacité**, informations
 d'**internat**, **coordonnées de contact** détaillées (téléphone, fax, email, site web,
-Facebook) et coordonnées GPS. Source : **Ministère de la Formation et de l'Enseignement
+Facebook) et coordonnées géographiques. Source : **Ministère de la Formation et de l'Enseignement
 Professionnels (MFEP)** via [takwin.dz](https://takwin.dz), distribué en JSON, CSV et GeoJSON.
 Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

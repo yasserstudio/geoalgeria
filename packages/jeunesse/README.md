@@ -14,7 +14,7 @@
 
 2,076 youth & sports institutions across Algeria — **maisons de jeunes**, sports complexes,
 salles polyvalentes, auberges de jeunes, cultural centers, youth camps and more — each with
-its official Arabic name, institution **type**, commune / daïra / wilaya, and GPS coordinates.
+its official Arabic name, institution **type**, commune / daïra / wilaya, and geographic coordinates.
 Sourced from the **Ministère de la Jeunesse**, shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
