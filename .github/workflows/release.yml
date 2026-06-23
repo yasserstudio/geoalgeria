@@ -91,30 +91,25 @@ jobs:
               (cd "$pkg" && zip -qr "$BUNDLE" data)
             fi
 
-            NOTES="$RUNNER_TEMP/$(basename "$NAME")-notes.md"  # basename: scoped names contain '/'
-            awk -v ver="$VER" '
-              BEGIN { gsub(/\./, "\\.", ver); re = "(^|[^0-9.])" ver "([^0-9.]|$)" }
-              /^## / { if (grab) exit; if ($0 ~ re) { grab=1; next } }
-              grab { print }
-            ' "$pkg/CHANGELOG.md" > "$NOTES" || true
+            # Title + body + patch-flag come from scripts/release-notes.mjs (see
+            # RELEASE_TEMPLATE.md). Title = the descriptive headline line of the
+            # CHANGELOG section (falls back to the first bullet); body = the
+            # ### Added/Improved/Dropped sections. The version + package scope are
+            # never in the title — both are already in the release tag chip + URL.
+            RN="node scripts/release-notes.mjs $pkg/CHANGELOG.md $VER $TAG"
 
             # Patches (docs/corrections) don't get a GitHub Release — the npm version
             # and the repo's committed data cover them, and the feed stays meaningful.
-            # Minor/major (new data/format/package) always get a release + bundle.
-            if grep -q '^### Patch Changes' "$NOTES"; then
+            if [ "$($RN is-patch)" = "yes" ]; then
               echo "skip release: $TAG is a patch — no GitHub Release"
               continue
             fi
 
+            NOTES="$RUNNER_TEMP/$(basename "$NAME")-notes.md"  # basename: scoped names contain '/'
+            $RN body > "$NOTES" || true
+
             if [ -s "$NOTES" ]; then
-              # Title = the headline (the first bullet) verbatim. The version and
-              # package name/scope are never in the title — both are already in the
-              # release tag chip + URL. (drop the list marker + changeset hash + bold.)
-              # See RELEASE_TEMPLATE.md.
-              HEADLINE=$(grep -m1 -E '^[-*][[:space:]]' "$NOTES" \
-                | sed -E 's/^[-*][[:space:]]+//; s/^[0-9a-f]{7,}:[[:space:]]*//; s/\*\*//g')
-              TITLE="$TAG"
-              [ -n "$HEADLINE" ] && TITLE="$HEADLINE"
+              TITLE=$($RN title)
               gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
             else
               echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
