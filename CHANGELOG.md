@@ -8,6 +8,16 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.3.0 — 2026-06-23
+
+Added a new sports dataset and substantially expanded two existing ones, all from official ministries.
+
+- **Sports facilities** (`@geoalgeria/sports`, new): 5,141 facilities across 58 wilayas — stadiums, pools, proximity fields, athletics tracks, courts and more (27 types) from the Ministère de la Jeunesse et des Sports GIS, each with capacity, PMR accessibility, operational status, built/land area and coordinates.
+- **Youth establishments** (`@geoalgeria/jeunesse` 2.0.0): rebuilt from that same official GIS — 2,334 establishments (was 2,076) across 58 wilayas, now with French and Arabic names plus capacity, address, surfaces, year and operational status. Breaking: names are now French (read `name_ar` for the Arabic name).
+- **Higher education** (`@geoalgeria/enseignement-superieur` 1.1.0): 110 → 177 institutions — added the 19 licensed private and 48 other-ministry establishments MESRS supervises pedagogically (from the ministry's Arabic listing), with new `name_ar`, `sector` and `supervisory_ministry` fields.
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`.
+
 ## 1.2.0 — 2026-06-20
 
 Added two new datasets/packages since 1.1.0.

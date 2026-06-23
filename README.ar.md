@@ -50,8 +50,9 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **المطارات المدنية** | 33 | ANAC: أسماء، رموز ICAO، معلومات اتصال، إحداثيات — [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات — [`@geoalgeria/banques`](packages/banques) |
 | **شركات التوصيل** | 411 | 16 ناقلًا + 411 نقطة استلام في 61 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
-| **مؤسسات الشباب والرياضة** | 2,076 | دور الشباب، مركّبات رياضية، دور إيواء، مراكز ثقافية وأكثر في 50 ولاية (وزارة الشباب) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
-| **التعليم العالي** | 110 | 58 جامعة + 35 مدرسة عليا + 12 مدرسة عليا للأساتذة + 5 مراكز جامعية في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
+| **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 58 ولاية (وزارة الشباب والرياضة) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
+| **منشآت رياضية** | 5,141 | ملاعب، حمامات سباحة، مجالات من الدرجة الأولى، مضمارات العاب القوى، ملاعب وأكثر (27 نوع) في 58 ولاية (وزارة الشباب والرياضة) — [`@geoalgeria/sports`](packages/sports) |
+| **التعليم العالي** | 177 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **السياحة** | 4,348 | 995 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية — [`@geoalgeria/tourisme`](packages/tourisme) |
 | **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في 58 ولاية (وزارة التكوين المهني / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 
@@ -95,8 +96,9 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/aviation`](packages/aviation) | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | المطارات المدنية من ANAC — أسماء، رموز ICAO، إحداثيات |
 | [`packages/banques`](packages/banques) | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | كل البنوك الـ 21 المعتمدة + المؤسسات المالية و1,704 فروع (RIB، SWIFT، الملكية، الإحداثيات) |
 | [`packages/livraison`](packages/livraison) | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | سجل شركات التوصيل + 411 نقطة استلام وتغطية لكل ناقل (Yalidine، Guepex، Anderson، Noest، Maystro) |
-| [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | مؤسسات الشباب والرياضة لوزارة الشباب (2,076 في 50 ولاية) |
-| [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي لوزارة التعليم العالي — جامعات، مدارس عليا، مدارس عليا للأساتذة ومراكز (110)، مع المواقع الرسمية والإحداثيات |
+| [`packages/jeunesse`](packages/jeunesse) | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | مؤسسات الشباب لوزارة الشباب والرياضة (2,334 في 58 ولاية) |
+| [`packages/sports`](packages/sports) | [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | منشآت رياضية لوزارة الشباب والرياضة — 5,141 في 58 ولاية، 27 نوع، مع السعة والوصول بسهولة والإحداثيات |
+| [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي لوزارة التعليم العالي — جامعات، مدارس عليا، مدارس عليا للأساتذة ومراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى (177)، مع المواقع الرسمية والإحداثيات |
 | [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية — 4,348 فندق ومعلم سياحي وموقع تاريخي ومنبع حراري وحديقة وطنية (ASAL، OSM، Wikidata) |
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني — 1,932 CFPA، INSFP، IFEP، IEP، DFEP ومراكز خاصة من وزارة التكوين المهني (takwin.dz)، مع السعة والإقامة والإحداثيات |
 
