@@ -2,6 +2,8 @@
 
 ## 2.0.0
 
+Algeria's youth establishments — 2,334 from the official Ministère de la Jeunesse GIS, typed and geocoded.
+
 ### Added
 
 - `name_ar` (Arabic name, backfilled from the legacy ministry map by type-checked

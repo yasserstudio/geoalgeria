@@ -2,6 +2,8 @@
 
 ## 1.1.0
 
+Algeria's higher-education network — 177 from the MESRS, now with private & other-ministry institutions.
+
 ### Added
 
 - 19 licensed private institutions and 48 establishments under other ministries
