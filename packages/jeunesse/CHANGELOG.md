@@ -2,16 +2,27 @@
 
 ## 2.0.0
 
-### Major Changes
+### Added
 
-- 7b93dcf: Rebuilt from the official Youth Ministry GIS
+- `name_ar` (Arabic name, backfilled from the legacy ministry map by type-checked
+  nearest-neighbour geo-match, ~59% of records)
+- New per-record fields: address, capacity, year of reception, operational status,
+  PMR accessibility, and built / land area
+- Sister package to `@geoalgeria/sports` — both from the same official Ministère de
+  la Jeunesse et des Sports GIS (sig.mjs.gov.dz)
 
-  - 2,334 youth establishments (was 2,076), spanning 58 wilayas — now sourced from the MJS SIG (sig.mjs.gov.dz), the same system behind the sports dataset
-  - Names are now French (`name`); the Arabic name is backfilled into a new `name_ar` field by type-checked nearest-neighbour geo-match (~59% of records)
-  - New fields: `name_ar`, `address`, `capacity`, `year`, `operational`, `pmr` (PMR accessibility), `surface_built_m2`, `surface_land_m2`
-  - New stable type codes for the nine youth-establishment types (`MJ`, `CSP`, `SPA`, `AJ`, `CJ`, `CLS`, `FJ`, `CC`, `BA`); `id` is now a stable sequential integer
-  - BREAKING: `name` and the commune/daira/wilaya_name fields are now French, not Arabic; type codes and ids changed. Join `wilaya_code` against `geoalgeria` for French divisions, or read `name_ar` for the Arabic name where available
-  - Source: Ministère de la Jeunesse et des Sports — SIG (sig.mjs.gov.dz)
+### Improved
+
+- Rebuilt from the official Ministère de la Jeunesse et des Sports GIS — 2,334
+  establishments (was 2,076), spanning 58 wilayas
+- Primary names are now French, with stable type codes (`MJ`, `CSP`, `SPA`, `AJ`,
+  `CJ`, `CLS`, `FJ`, `CC`, `BA`) and sequential integer ids
+
+### Dropped
+
+- Arabic as the primary `name` (now French — read `name_ar` for the Arabic name)
+  and the legacy youthconnect source; old type codes and ids. Join `wilaya_code`
+  against `geoalgeria` for French commune/wilaya names
 
 ## 1.0.0
 
