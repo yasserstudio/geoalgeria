@@ -8,6 +8,15 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.4.0 — 2026-06-25
+
+Added two new datasets: Algeria's mosques (a Wikidata + OpenStreetMap composite) and the Djezzy boutique network.
+
+- **Mosques** (`@geoalgeria/mosquees`, new): 20,759 mosques across all 69 wilayas — a Wikidata (CC0) + OpenStreetMap (ODbL) composite giving near-complete national coverage against the ~18,449 counted by the Ministère des Affaires Religieuses. Per-record provenance (`source`, `wikidata` QID, `osm_id`): 13,200 Wikidata-only, 5,897 matched in both, 1,662 OpenStreetMap-only; 15,138 Arabic and 7,874 French names, denomination where known, and commune/wilaya linkage.
+- **Djezzy boutiques** (`@geoalgeria/djezzy`, new): 128 Djezzy (Optimum Telecom Algérie) boutiques across 63 wilayas from the Djezzy store locator — each geocoded, with store code, category, address, opening hours, opening code and commune/wilaya linkage.
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`.
+
 ## 1.3.0 — 2026-06-23
 
 Added a new sports dataset and substantially expanded two existing ones, all from official ministries.
