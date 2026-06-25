@@ -1,0 +1,55 @@
+{
+  "name": "@geoalgeria/djezzy",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Djezzy retail network in Algeria — 128 geocoded boutiques (Optimum Telecom Algérie / Djezzy) with category, address, opening hours, opening code, commune/wilaya linkage and GPS coordinates. Sourced from djezzy.dz. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs djezzy"
+  },
+  "keywords": [
+    "algeria",
+    "djezzy",
+    "optimum-telecom",
+    "telecom",
+    "boutique",
+    "store-locator",
+    "points-de-vente",
+    "geojson",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/djezzy"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

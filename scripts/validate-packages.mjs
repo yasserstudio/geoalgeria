@@ -79,6 +79,15 @@ const PACKAGES = {
       required: ["id", "name", "wilaya_code"],
     },
   ],
+  djezzy: [
+    {
+      json: "boutiques.json",
+      metaKey: "boutiques",
+      csv: "csv/boutiques.csv",
+      geojson: "geojson/boutiques.geojson",
+      required: ["id", "name", "wilaya_code"],
+    },
+  ],
   emploi: [
     {
       json: "awem.json",
@@ -102,6 +111,17 @@ const PACKAGES = {
       csv: "csv/airports.csv",
       geojson: "geojson/airports.geojson",
       required: ["id", "name", "icao", "wilaya_code"],
+    },
+  ],
+  mosquees: [
+    {
+      json: "mosquees.json",
+      metaKey: "mosquees",
+      csv: "csv/mosquees.csv",
+      geojson: "geojson/mosquees.geojson",
+      // name is intentionally nullable (many OSM mosques are unnamed), so the
+      // required set guards identity + geocoding rather than name.
+      required: ["id", "source", "wilaya_code", "lat", "lng"],
     },
   ],
   jeunesse: [

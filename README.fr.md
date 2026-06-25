@@ -53,6 +53,8 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Enseignement supérieur** | 177 | universités, grandes écoles, ENS, centres + 19 établissements privés et 48 relevant d'autres ministères dans 51 wilayas, avec sites web officiels (MESRS) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **Tourisme** | 4 348 | 995 hôtels, 1 248 attractions, 1 184 sites historiques, 282 sources thermales (ASAL), 32 parcs nationaux — [`@geoalgeria/tourisme`](packages/tourisme) |
 | **Formation professionnelle** | 1 932 | 856 CFPA + 182 INSFP + 723 établissements privés agréés + 58 DFEP + plus dans 58 wilayas (MFEP / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **Mosquées** | 20 759 | composite Wikidata + OpenStreetMap — noms arabes & français, dénomination, les 69 wilayas — [`@geoalgeria/mosquees`](packages/mosquees) |
+| **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
 
 Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -99,6 +101,8 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Réseau de l'enseignement supérieur du MESRS — universités, grandes écoles, ENS et centres + 19 établissements privés et 48 relevant d'autres ministères (177), avec sites web officiels et coordonnées |
 | [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Infrastructure touristique — 4 348 hôtels, attractions, sites historiques, sources thermales et parcs géocodés (ASAL, OSM, Wikidata) |
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle — 1 932 CFPA, INSFP, IFEP, IEP, DFEP et centres privés du MFEP (takwin.dz), avec capacité, internat et coordonnées |
+| [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy — 128 points de vente géolocalisés de djezzy.dz, avec catégorie, horaires et rattachement commune/wilaya |
+| [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie — 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 
