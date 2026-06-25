@@ -20,6 +20,8 @@ This file is the short version of how work flows here; deeper docs are linked.
 | `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
 | `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training — CFPA, INSFP, DFEPs, private centers (MFEP / takwin.dz) |
+| `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores with category & hours (djezzy.dz) |
+| `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 
 The postal data under `packages/dataset/data/poste/` is a **generated mirror** —
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.

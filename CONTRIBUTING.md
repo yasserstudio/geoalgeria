@@ -22,6 +22,8 @@ This is a small monorepo:
 | `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
 | `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training establishments (MFEP / takwin.dz) |
+| `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores (djezzy.dz) |
+| `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite (all 69 wilayas) |
 
 ## How to contribute
 
