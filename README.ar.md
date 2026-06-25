@@ -55,6 +55,8 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **التعليم العالي** | 177 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **السياحة** | 4,348 | 995 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية — [`@geoalgeria/tourisme`](packages/tourisme) |
 | **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في 58 ولاية (وزارة التكوين المهني / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **المساجد** | 20,759 | تجميع Wikidata + OpenStreetMap — أسماء عربية وفرنسية، المذهب، كل الـ69 ولاية — [`@geoalgeria/mosquees`](packages/mosquees) |
+| **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
 
 الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن JSON فقط للحفاظ على الحجم الخفيف؛ CSV/GeoJSON/SQL متوفرة في كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -101,6 +103,8 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/enseignement-superieur`](packages/enseignement-superieur) | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي لوزارة التعليم العالي — جامعات، مدارس عليا، مدارس عليا للأساتذة ومراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى (177)، مع المواقع الرسمية والإحداثيات |
 | [`packages/tourisme`](packages/tourisme) | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية — 4,348 فندق ومعلم سياحي وموقع تاريخي ومنبع حراري وحديقة وطنية (ASAL، OSM، Wikidata) |
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني — 1,932 CFPA، INSFP، IFEP، IEP، DFEP ومراكز خاصة من وزارة التكوين المهني (takwin.dz)، مع السعة والإقامة والإحداثيات |
+| [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي — 128 محل بيع مُحدّد جغرافيًا من djezzy.dz، مع الفئة وأوقات العمل والربط بالبلدية/الولاية |
+| [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد الجزائر — 20,759 مُحدّدة جغرافيًا، تجميع Wikidata + OpenStreetMap بأسماء عربية وفرنسية ومذهب وربط بالبلدية/الولاية |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 
