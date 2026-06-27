@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
-// /telecom, /aviation, /banques, /livraison, /jeunesse, /enseignement-superieur,
-// /tourisme, /formation-professionnelle)
+// /telecom, /aviation, /banques, /livraison, /jeunesse, /sports,
+// /enseignement-superieur, /tourisme, /formation-professionnelle, /djezzy,
+// /mosquees, /sante)
 // for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
 // (packages/dataset/scripts/validate.py); this is the single Node gate for every
@@ -12,7 +13,7 @@
 // (coverage/<tech>/) and split into per-operator files — so it gets its own
 // validator (validateTelecom) that shares the same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|enseignement-superieur|tourisme|formation-professionnelle]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -131,6 +132,18 @@ const PACKAGES = {
       csv: "csv/institutions.csv",
       geojson: "geojson/institutions.geojson",
       required: ["id", "type_code", "wilaya_code", "lat", "lng"],
+    },
+  ],
+  sante: [
+    {
+      json: "sante.json",
+      metaKey: "sante",
+      csv: "csv/sante.csv",
+      geojson: "geojson/sante.geojson",
+      // lat/lng are intentionally nullable (the MSP carries no coordinates;
+      // some localities don't resolve), so the required set guards identity +
+      // type + wilaya, not geocoding.
+      required: ["id", "name", "type", "wilaya", "wilaya_code", "msp_id"],
     },
   ],
   sports: [
