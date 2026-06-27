@@ -3,7 +3,7 @@
  * Fetch Algeria public employment agencies (AWEM + ALEM) from ANEM's
  * cartographic portal and emit JSON, CSV, and GeoJSON to ../data.
  *
- * Source (ANEM — Agence Nationale de l'Emploi):
+ * Source (ANEM — National Employment Agency):
  *   https://www.anem.dz/#/portail-carto
  *
  * There is no public agencies API. The two datasets are baked into the
@@ -284,7 +284,7 @@ async function main() {
   console.log(`  GeoJSON: ${awemGeo.features.length}/${awem.length} AWEM and ${alemGeo.features.length}/${alem.length} ALEM have coordinates`);
 
   const metadata = {
-    source: "ANEM — Agence Nationale de l'Emploi (anem.dz/#/portail-carto)",
+    source: "ANEM — National Employment Agency (anem.dz/#/portail-carto)",
     origin: ORIGIN,
     license: "Data © ANEM; redistributed for reference. See README.",
     awem: awem.length,

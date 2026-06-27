@@ -121,7 +121,7 @@ For wilayas, dairas, and communes (and postal data), use the main
 
 ## Source
 
-Data comes from **ANEM** (Agence Nationale de l'Emploi) via its cartographic
+Data comes from **ANEM** (National Employment Agency) via its cartographic
 portal (<https://www.anem.dz/#/portail-carto>). There is no public API — the
 agencies are embedded in the portal's JavaScript bundle. Run `npm run fetch` to
 regenerate every output: it rediscovers the current bundle, extracts both

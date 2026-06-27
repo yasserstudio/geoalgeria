@@ -4,7 +4,7 @@
  * and emit JSON, CSV, and GeoJSON to ../data.
  *
  * Source: https://sig.mjs.gov.dz/dashboard/viewer
- *   The MJS (Ministère de la Jeunesse et des Sports) runs a GeoServer behind a
+ *   The MJS (Ministry of Youth and Sports) runs a GeoServer behind a
  *   Nuxt dashboard. The "infrastructures_sportives" WMS layer is publicly
  *   queryable. We request all features as GeoJSON via the WMS GetMap endpoint
  *   (format=application/json;type=geojson), which bypasses the auth-gated WFS.
@@ -315,9 +315,9 @@ async function main() {
   writeText("csv/facilities.csv", toCSV(facilities, cols));
   writeJSON("geojson/facilities.geojson", toGeoJSON(facilities));
   writeJSON("metadata.json", {
-    source: "Ministère de la Jeunesse et des Sports — SIG (sig.mjs.gov.dz)",
+    source: "Ministry of Youth and Sports — SIG (sig.mjs.gov.dz)",
     origin: SOURCE,
-    license: "Data © Ministère de la Jeunesse et des Sports; redistributed for reference. See README.",
+    license: "Data © Ministry of Youth and Sports; redistributed for reference. See README.",
     facilities: facilities.length,
     by_type: byType,
     wilayas_covered: wilayasCovered,

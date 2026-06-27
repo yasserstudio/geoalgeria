@@ -199,7 +199,7 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | Civil airports with ICAO codes (ANAC) |
 | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | Licensed banks, institutions & branches (RIB/SWIFT) |
 | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | Delivery carriers & geocoded stop-desks |
-| [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Youth & sports institutions (Ministère de la Jeunesse) |
+| [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | Youth & sports institutions (Ministry of Youth and Sports) |
 | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
 | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training — CFPA, INSFP, IFEP, private centers (MFEP / takwin.dz) |

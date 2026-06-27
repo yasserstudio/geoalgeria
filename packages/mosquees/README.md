@@ -15,7 +15,7 @@
 **20,759 geocoded mosques** across all **69 wilayas** of Algeria — every one with
 coordinates, most with Arabic and/or French names, and commune/wilaya linkage.
 A community-maintained **composite of Wikidata and OpenStreetMap**, framed
-honestly against the Ministère des Affaires Religieuses (MARW) national count of
+honestly against the Ministry of Religious Affairs (MARW) national count of
 ~18,449. Shipped as JSON, CSV, GeoJSON, and TypeScript. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 

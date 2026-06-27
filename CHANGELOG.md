@@ -20,7 +20,7 @@ Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, 
 
 Added two new datasets: Algeria's mosques (a Wikidata + OpenStreetMap composite) and the Djezzy boutique network.
 
-- **Mosques** (`@geoalgeria/mosquees`, new): 20,759 mosques across all 69 wilayas — a Wikidata (CC0) + OpenStreetMap (ODbL) composite giving near-complete national coverage against the ~18,449 counted by the Ministère des Affaires Religieuses. Per-record provenance (`source`, `wikidata` QID, `osm_id`): 13,200 Wikidata-only, 5,897 matched in both, 1,662 OpenStreetMap-only; 15,138 Arabic and 7,874 French names, denomination where known, and commune/wilaya linkage.
+- **Mosques** (`@geoalgeria/mosquees`, new): 20,759 mosques across all 69 wilayas — a Wikidata (CC0) + OpenStreetMap (ODbL) composite giving near-complete national coverage against the ~18,449 counted by the Ministry of Religious Affairs. Per-record provenance (`source`, `wikidata` QID, `osm_id`): 13,200 Wikidata-only, 5,897 matched in both, 1,662 OpenStreetMap-only; 15,138 Arabic and 7,874 French names, denomination where known, and commune/wilaya linkage.
 - **Djezzy boutiques** (`@geoalgeria/djezzy`, new): 128 Djezzy (Optimum Telecom Algérie) boutiques across 63 wilayas from the Djezzy store locator — each geocoded, with store code, category, address, opening hours, opening code and commune/wilaya linkage.
 
 Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`.
@@ -29,7 +29,7 @@ Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, 
 
 Added a new sports dataset and substantially expanded two existing ones, all from official ministries.
 
-- **Sports facilities** (`@geoalgeria/sports`, new): 5,141 facilities across 58 wilayas — stadiums, pools, proximity fields, athletics tracks, courts and more (27 types) from the Ministère de la Jeunesse et des Sports GIS, each with capacity, PMR accessibility, operational status, built/land area and coordinates.
+- **Sports facilities** (`@geoalgeria/sports`, new): 5,141 facilities across 58 wilayas — stadiums, pools, proximity fields, athletics tracks, courts and more (27 types) from the Ministry of Youth and Sports GIS, each with capacity, PMR accessibility, operational status, built/land area and coordinates.
 - **Youth establishments** (`@geoalgeria/jeunesse` 2.0.0): rebuilt from that same official GIS — 2,334 establishments (was 2,076) across 58 wilayas, now with French and Arabic names plus capacity, address, surfaces, year and operational status. Breaking: names are now French (read `name_ar` for the Arabic name).
 - **Higher education** (`@geoalgeria/enseignement-superieur` 1.1.0): 110 → 177 institutions — added the 19 licensed private and 48 other-ministry establishments MESRS supervises pedagogically (from the ministry's Arabic listing), with new `name_ar`, `sector` and `supervisory_ministry` fields.
 
@@ -39,7 +39,7 @@ Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, 
 
 Added two new datasets/packages since 1.1.0.
 
-- **Youth & sports institutions** (`@geoalgeria/jeunesse`): 2,076 institutions across 50 wilayas — maisons de jeunes, complexes sportifs, salles polyvalentes, auberges de jeunes, cultural centers and more (Ministère de la Jeunesse), each with its Arabic name, type, commune/daïra/wilaya and coordinates.
+- **Youth & sports institutions** (`@geoalgeria/jeunesse`): 2,076 institutions across 50 wilayas — maisons de jeunes, complexes sportifs, salles polyvalentes, auberges de jeunes, cultural centers and more (Ministry of Youth and Sports), each with its Arabic name, type, commune/daïra/wilaya and coordinates.
 - **Higher education** (`@geoalgeria/enseignement-superieur`): 110 institutions across 51 wilayas — 58 universities, 35 grandes écoles, 12 écoles normales supérieures and 5 centres universitaires (MESRS), each with its official website, type, and wilaya/commune linkage. Coordinates are OpenStreetMap-derived (ODbL) and labelled per record (`geo_precision`).
 
 Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/enseignement-superieur`.

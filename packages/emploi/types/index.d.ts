@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/emploi
-// Data sourced from ANEM (Agence Nationale de l'Emploi, anem.dz).
+// Data sourced from ANEM (National Employment Agency, anem.dz).
 
 /** A wilaya-level employment agency (AWEM). */
 export interface Awem {

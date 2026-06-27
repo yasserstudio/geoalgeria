@@ -16,7 +16,7 @@
 specialized halls, athletics tracks, tennis courts, equestrian centers, nautical bases and
 more — each with its name, facility **type**, address, commune / daïra / wilaya, capacity,
 operational status, PMR accessibility, built and land area, year of reception, and geographic
-coordinates. Sourced from the **Ministère de la Jeunesse et des Sports GIS
+coordinates. Sourced from the **Ministry of Youth and Sports GIS
 (sig.mjs.gov.dz)**, shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -143,7 +143,7 @@ wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/sport
 
 ## Source
 
-Data comes from the **Ministère de la Jeunesse et des Sports**, via the public GIS
+Data comes from the **Ministry of Youth and Sports**, via the public GIS
 (<https://sig.mjs.gov.dz/dashboard/viewer>). The ministry maintains a GeoServer with the
 `infrastructures_sportives` layer publicly queryable over WMS. Run `npm run fetch` to
 regenerate every output from the live GIS. The build resolves wilaya names to codes against
@@ -152,7 +152,7 @@ if the facility count collapses or an unknown type appears.
 
 ## License & attribution
 
-Code is [MIT](LICENSE). The underlying data is © **Ministère de la Jeunesse et des Sports**,
+Code is [MIT](LICENSE). The underlying data is © **Ministry of Youth and Sports**,
 redistributed for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against
 the ministry for authoritative, real-time information.
 

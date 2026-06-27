@@ -8,7 +8,7 @@ Algeria's mosques — 20,759 geocoded, a Wikidata + OpenStreetMap composite with
 
 - 20,759 mosques across all 69 wilayas, compiled from Wikidata (CC0) and
   OpenStreetMap (ODbL) — near-complete national coverage against the ~18,449
-  counted by the Ministère des Affaires Religieuses (MARW)
+  counted by the Ministry of Religious Affairs (MARW)
 - Provenance on every record (`source`: wikidata / wikidata+osm / osm) with
   `wikidata` QID and `osm_id` cross-links: 13,200 Wikidata-only, 5,897 matched
   in both, 1,662 OpenStreetMap-only additions

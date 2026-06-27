@@ -2,12 +2,11 @@
 
 ## 1.0.0
 
-Algeria's sports facilities — 5,141 from the Ministère de la Jeunesse et des Sports GIS, typed and geocoded.
+Algeria's sports facilities — 5,141 from the Ministry of Youth and Sports GIS, typed and geocoded.
 
 ### Added
 
-- 5,141 sports facilities across 58 wilayas, sourced from the Ministère de la
-  Jeunesse et des Sports GIS (sig.mjs.gov.dz)
+- 5,141 sports facilities across 58 wilayas, sourced from the Ministry of Youth and Sports GIS (sig.mjs.gov.dz)
 - 27 facility types: proximity fields, stadiums, swimming pools, halls, athletics
   tracks, tennis courts, equestrian centers, nautical bases and more
 - Per-facility name, type, address, commune / daïra / wilaya, capacity, year of
