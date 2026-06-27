@@ -57,6 +57,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في 58 ولاية (وزارة التكوين المهني / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **المساجد** | 20,759 | تجميع Wikidata + OpenStreetMap — أسماء عربية وفرنسية، المذهب، كل الـ69 ولاية — [`@geoalgeria/mosquees`](packages/mosquees) |
 | **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
+| **المؤسسات الصحية** | 695 | EPH · EPSP · EHS · CHU من وزارة الصحة — ثنائية اللغة، 600 بإحداثيات عبر OSM + Wikidata — [`@geoalgeria/sante`](packages/sante) |
 
 الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن JSON فقط للحفاظ على الحجم الخفيف؛ CSV/GeoJSON/SQL متوفرة في كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -105,6 +106,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني — 1,932 CFPA، INSFP، IFEP، IEP، DFEP ومراكز خاصة من وزارة التكوين المهني (takwin.dz)، مع السعة والإقامة والإحداثيات |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي — 128 محل بيع مُحدّد جغرافيًا من djezzy.dz، مع الفئة وأوقات العمل والربط بالبلدية/الولاية |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد الجزائر — 20,759 مُحدّدة جغرافيًا، تجميع Wikidata + OpenStreetMap بأسماء عربية وفرنسية ومذهب وربط بالبلدية/الولاية |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية — 695 من وزارة الصحة (EPH، EPSP، EHS، CHU)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata مع ربط بالبلدية/الولاية |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 
