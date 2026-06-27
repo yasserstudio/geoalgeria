@@ -7,8 +7,7 @@
  * Sources:
  *   - Wikidata (CC0): every item that is an instance of (a subclass of) "mosque"
  *     (Q32815) located in Algeria (P17=Q262), with its coordinate (P625). This
- *     is the comprehensive base — ~19k geocoded mosques, near the Ministère des
- *     Affaires Religieuses (MARW) national count of ~18,449.
+ *     is the comprehensive base — ~19k geocoded mosques, near the Ministry of Religious Affairs (MARW) national count of ~18,449.
  *   - OpenStreetMap (ODbL): amenity=place_of_worship + religion=muslim in
  *     Algeria. Adds precise coordinates, French names, and denomination, plus
  *     mosques Wikidata does not yet have.
@@ -444,7 +443,7 @@ async function main() {
     wilayas_covered: new Set(rows.map((r) => r.wilaya_code).filter(Boolean)).size,
     mosquees_geocoded: rows.filter((r) => r.lat != null).length,
     official_total: OFFICIAL_TOTAL,
-    coverage_note: `${rows.length} mosques compiled from Wikidata + OpenStreetMap, against the ~${OFFICIAL_TOTAL} counted by the Ministère des Affaires Religieuses (MARW). A community-maintained composite, not an official registry.`,
+    coverage_note: `${rows.length} mosques compiled from Wikidata + OpenStreetMap, against the ~${OFFICIAL_TOTAL} counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry.`,
     linkage_note:
       "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
     generated_at: new Date().toISOString().slice(0, 10),

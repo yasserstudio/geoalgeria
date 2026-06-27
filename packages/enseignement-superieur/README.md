@@ -17,7 +17,7 @@ normales supérieures, centres universitaires, the **licensed private institutio
 establishments **under other ministries** (Défense, Santé, Culture…) that MESRS supervises —
 each with its name (French and/or Arabic), institution **type**, **sector**, supervising
 ministry, its own **website**, wilaya / commune linkage and coordinates. Sourced from the
-**Ministère de l'Enseignement Supérieur et de la Recherche Scientifique (MESRS)**, shipped as
+**Ministry of Higher Education and Scientific Research (MESRS)**, shipped as
 JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash

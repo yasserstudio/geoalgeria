@@ -1,5 +1,5 @@
 // @geoalgeria/enseignement-superieur — lightweight loaders for Algeria's
-// higher-education network (Ministère de l'Enseignement Supérieur, MESRS).
+// higher-education network (Ministry of Higher Education, MESRS).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

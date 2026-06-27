@@ -2,7 +2,7 @@
 
 ## 2.0.0
 
-Algeria's youth establishments — 2,334 from the official Ministère de la Jeunesse GIS, typed and geocoded.
+Algeria's youth establishments — 2,334 from the official Ministry of Youth and Sports GIS, typed and geocoded.
 
 ### Added
 
@@ -10,12 +10,11 @@ Algeria's youth establishments — 2,334 from the official Ministère de la Jeun
   nearest-neighbour geo-match, ~59% of records)
 - New per-record fields: address, capacity, year of reception, operational status,
   PMR accessibility, and built / land area
-- Sister package to `@geoalgeria/sports` — both from the same official Ministère de
-  la Jeunesse et des Sports GIS (sig.mjs.gov.dz)
+- Sister package to `@geoalgeria/sports` — both from the same official Ministry of Youth and Sports GIS (sig.mjs.gov.dz)
 
 ### Improved
 
-- Rebuilt from the official Ministère de la Jeunesse et des Sports GIS — 2,334
+- Rebuilt from the official Ministry of Youth and Sports GIS — 2,334
   establishments (was 2,076), spanning 58 wilayas
 - Primary names are now French, with stable type codes (`MJ`, `CSP`, `SPA`, `AJ`,
   `CJ`, `CLS`, `FJ`, `CC`, `BA`) and sequential integer ids
@@ -30,7 +29,7 @@ Algeria's youth establishments — 2,334 from the official Ministère de la Jeun
 
 ### Added
 
-- 2,076 youth & sports institutions sourced from the Ministère de la Jeunesse
+- 2,076 youth & sports institutions sourced from the Ministry of Youth and Sports
   (youthconnect.mjeunesse.gov.dz) — official Arabic names, institution type,
   commune / daïra / wilaya, and GPS coordinates
 - Nine institution types: maisons de jeunes, complexes sportifs de proximité,

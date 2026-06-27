@@ -17,8 +17,8 @@ This is a small monorepo:
 | `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC) |
 | `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
-| `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministère de la Jeunesse et des Sports) |
-| `packages/sports/` | `@geoalgeria/sports` | sports facilities — stadiums, pools, courts, tracks (Ministère de la Jeunesse et des Sports) |
+| `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministry of Youth and Sports) |
+| `packages/sports/` | `@geoalgeria/sports` | sports facilities — stadiums, pools, courts, tracks (Ministry of Youth and Sports) |
 | `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
 | `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training establishments (MFEP / takwin.dz) |

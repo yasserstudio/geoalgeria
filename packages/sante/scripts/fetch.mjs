@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Build Algeria's public health-establishment dataset from the Ministère de la
- * Santé (MoH) registry and emit JSON, CSV, and GeoJSON to ../data. Raw source
+ * Build Algeria's public health-establishment dataset from the Ministry of
+ * Health (MoH) registry and emit JSON, CSV, and GeoJSON to ../data. Raw source
  * pulls are cached under research/sante/.
  *
  * Identity / names (authoritative): the MoH publishes its establishments as a

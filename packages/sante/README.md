@@ -138,8 +138,8 @@ clinics, when added, will carry `"private"`). `source` records which registries
 contributed; `geo_precision` records where the coordinate came from. `lat`/`lng`
 are `null` for the 95 records whose locality could not be matched to a commune.
 
-> **Coordinates and commune are derived, not from the MoH.** The Ministère de la
-> Santé lists names, type and wilaya only. GeoAlgeria matches each
+> **Coordinates and commune are derived, not from the MoH.** The Ministry of
+> Health lists names, type and wilaya only. GeoAlgeria matches each
 > establishment's locality to the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria)
 > commune set within its wilaya (giving `commune`, `commune_code` and a centroid
 > coordinate), then upgrades the coordinate to a precise point where a hospital

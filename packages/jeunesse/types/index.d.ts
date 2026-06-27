@@ -2,7 +2,7 @@
 export type TypeCode =
   | "MJ" | "CSP" | "SPA" | "AJ" | "CJ" | "CLS" | "FJ" | "CC" | "BA";
 
-/** A youth establishment, as published by the Ministère de la Jeunesse et des Sports GIS. */
+/** A youth establishment, as published by the Ministry of Youth and Sports GIS. */
 export interface Institution {
   /** Stable sequential id (1…N), assigned at build time after sorting. */
   id: number;

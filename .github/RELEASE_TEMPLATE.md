@@ -24,7 +24,7 @@ apply):
 ```
 ## 2.0.0
 
-Algeria's youth establishments — 2,334 from the official Ministère de la Jeunesse GIS, typed and geocoded.
+Algeria's youth establishments — 2,334 from the official Ministry of Youth and Sports GIS, typed and geocoded.
 
 ### Added
 
@@ -33,7 +33,7 @@ Algeria's youth establishments — 2,334 from the official Ministère de la Jeun
 
 ### Improved
 
-- Rebuilt from the official Ministère de la Jeunesse et des Sports GIS — 2,334 establishments (was 2,076)
+- Rebuilt from the official Ministry of Youth and Sports GIS — 2,334 establishments (was 2,076)
 
 ### Dropped
 
@@ -41,7 +41,7 @@ Algeria's youth establishments — 2,334 from the official Ministère de la Jeun
 ```
 
 `scripts/release-notes.mjs` turns that into a GitHub Release titled
-*"Algeria's youth establishments — 2,334 from the official Ministère de la Jeunesse
+*"Algeria's youth establishments — 2,334 from the official Ministry of Youth and Sports
 GIS, typed and geocoded."* with the `### Added/Improved/Dropped` sections as the body.
 
 ### Title — the headline line

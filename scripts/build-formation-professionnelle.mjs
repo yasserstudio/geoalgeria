@@ -155,7 +155,7 @@ for (const r of records) {
 }
 
 const metadata = {
-  source: "Ministère de la Formation et de l'Enseignement Professionnels (takwin.dz)",
+  source: "Ministry of Vocational Training and Education (takwin.dz)",
   origin: "https://takwin.dz/tachbik/api/getlistofalletab_byiddfep_puball/",
   license: "Data © MFEP; redistributed for reference. See LICENSE.",
   establishments: records.length,

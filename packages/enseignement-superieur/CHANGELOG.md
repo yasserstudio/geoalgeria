@@ -24,8 +24,7 @@ Algeria's higher-education network — 177 from the MESRS, now with private & ot
 
 ### Added
 
-- Algeria's higher-education network — 110 institutions from the Ministère de
-  l'Enseignement Supérieur (MESRS), with official websites, type, wilaya/commune
+- Algeria's higher-education network — 110 institutions from the Ministry of Higher Education (MESRS), with official websites, type, wilaya/commune
   linkage and coordinates
 - Four institution types: 58 universities, 35 grandes écoles, 12 écoles normales
   supérieures, and 5 centres universitaires, across 51 wilayas

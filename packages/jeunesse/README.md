@@ -16,7 +16,7 @@
 proximité, salles polyvalentes, auberges de jeunes, science & cultural centers, youth camps
 and more — each with its name, **type**, address, capacity, operational status, PMR
 accessibility, built/land area, commune / daïra / wilaya, and GPS coordinates. Sourced from
-the **Ministère de la Jeunesse et des Sports GIS (sig.mjs.gov.dz)** — the same official
+the **Ministry of Youth and Sports GIS (sig.mjs.gov.dz)** — the same official
 system behind [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports).
 Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -141,7 +141,7 @@ wilaya division dataset that `wilaya_code` here links to.
 
 ## Source
 
-Data comes from the **Ministère de la Jeunesse et des Sports**, via its public GIS
+Data comes from the **Ministry of Youth and Sports**, via its public GIS
 (<https://sig.mjs.gov.dz/dashboard/viewer>). Run `npm run fetch` to regenerate every output
 from the live system; the build resolves each French wilaya name to the flagship wilaya code,
 repairs records with transposed coordinates, backfills Arabic names from the legacy map, and
@@ -150,7 +150,7 @@ loudly if the establishment count collapses or an unknown type appears.
 
 ## License & attribution
 
-Code is [MIT](LICENSE). The underlying data is © **Ministère de la Jeunesse et des Sports**,
+Code is [MIT](LICENSE). The underlying data is © **Ministry of Youth and Sports**,
 redistributed for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against
 the ministry for authoritative, real-time information.
 
