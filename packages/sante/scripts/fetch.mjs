@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
  * Build Algeria's public health-establishment dataset from the Ministère de la
- * Santé (MSP) registry and emit JSON, CSV, and GeoJSON to ../data. Raw source
+ * Santé (MoH) registry and emit JSON, CSV, and GeoJSON to ../data. Raw source
  * pulls are cached under research/sante/.
  *
- * Identity / names (authoritative): the MSP publishes its establishments as a
+ * Identity / names (authoritative): the MoH publishes its establishments as a
  * WordPress custom post type at sante.gov.dz, exposed via the REST API
  * (/wp-json/wp/v2/healthinstitution). French and Arabic are separate parallel
  * posts; each is tagged with its wilaya (categorie-healthinstitution taxonomy).
- * The MSP carries no coordinates, address, or commune — only name + type
+ * The MoH carries no coordinates, address, or commune — only name + type
  * (in the title) + wilaya. Type is derived from the title; the FR and AR posts
  * are paired into one bilingual record.
  *
@@ -20,7 +20,7 @@
  * `geo_precision` so the coordinate's origin is explicit.
  *
  * Note: sante.gov.dz may be unreachable from non-Algerian networks / sandboxes;
- * run with direct network access if the MSP pull fails.
+ * run with direct network access if the MoH pull fails.
  *
  * Usage: node scripts/fetch.mjs
  */
@@ -127,7 +127,7 @@ function httpGetBuffer(url, maxBytes = 256 * 1024) {
   });
 }
 
-// --- MSP registry (sante.gov.dz) -------------------------------------------
+// --- MoH registry (sante.gov.dz) -------------------------------------------
 const MSP_BASE = "https://sante.gov.dz/wp-json/wp/v2";
 // sante.gov.dz serves an incomplete TLS chain (leaf only, no intermediate).
 // We fetch the Sectigo intermediate named in the leaf's AIA extension and
@@ -148,7 +148,7 @@ async function mspCA() {
     const pem = new X509Certificate(der).toString();
     _mspCA = [pem, ...tls.rootCertificates];
   } catch (e) {
-    console.warn(`  could not obtain a pinned MSP intermediate CA (${e.message}); using default trust store`);
+    console.warn(`  could not obtain a pinned MoH intermediate CA (${e.message}); using default trust store`);
     _mspCA = null;
   }
   return _mspCA;
@@ -167,7 +167,7 @@ async function fetchPaginated(path, fields, ca) {
 }
 
 async function fetchMSP() {
-  console.log("Fetching MSP health establishments (sante.gov.dz)…");
+  console.log("Fetching MoH health establishments (sante.gov.dz)…");
   const ca = await mspCA();
   const posts = await fetchPaginated("healthinstitution", "id,title,slug,categorie-healthinstitution", ca);
   const byId = new Map();
@@ -176,7 +176,7 @@ async function fetchMSP() {
   console.log(`  ${records.length} establishment posts (FR + AR)`);
   const taxonomy = await fetchPaginated("categorie-healthinstitution", "id,name", ca);
   console.log(`  ${taxonomy.length} wilaya taxonomy terms`);
-  if (records.length < 400) throw new Error("MSP returned too few posts; treating as partial");
+  if (records.length < 400) throw new Error("MoH returned too few posts; treating as partial");
   mkdirSync(RESEARCH_DIR, { recursive: true });
   writeFileSync(join(RESEARCH_DIR, "msp-healthinstitution-raw.json"), JSON.stringify(records, null, 1) + "\n");
   writeFileSync(join(RESEARCH_DIR, "msp-wilaya-taxonomy.json"), JSON.stringify(taxonomy, null, 1) + "\n");
@@ -185,7 +185,7 @@ async function fetchMSP() {
 
 // --- text normalization ----------------------------------------------------
 // WordPress title.rendered is HTML-encoded — decode the entities that appear in
-// MSP titles (en-dash, curly apostrophe, ampersand, …) so names and matching
+// MoH titles (en-dash, curly apostrophe, ampersand, …) so names and matching
 // tokens are clean. Numeric first, then named, then &amp; last.
 function decodeEntities(s) {
   if (typeof s !== "string") return s;
@@ -255,7 +255,7 @@ function lev1(a, b) {
   return 1;
 }
 
-// --- type derivation (keyword-based; robust to MSP typos) -------------------
+// --- type derivation (keyword-based; robust to MoH typos) -------------------
 const TYPE_LABELS = {
   eph: { fr: "Établissement Public Hospitalier", ar: "المؤسسة العمومية الاستشفائية" },
   epsp: { fr: "Établissement Public de Santé de Proximité", ar: "المؤسسة العمومية للصحة الجوارية" },
@@ -659,7 +659,7 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
       type: base.type,
       type_label_fr: TYPE_LABELS[base.type].fr,
       type_label_ar: TYPE_LABELS[base.type].ar,
-      sector: "public", // MSP registry is public establishments; private clinics will carry "private"
+      sector: "public", // MoH registry is public establishments; private clinics will carry "private"
       wilaya: w.name_fr,
       wilaya_ar: w.name_ar,
       wilaya_code: wcode(base.wilayaCode),
@@ -947,10 +947,10 @@ async function main() {
   const geocoded = rows.filter((r) => r.lat != null).length;
   const bilingual = rows.filter((r) => r.name_ar && r.name_fr).length;
   const metadata = {
-    source: "Ministère de la Santé (sante.gov.dz) health-establishment registry, geocoded via OpenStreetMap (ODbL) + Wikidata (CC0)",
+    source: "Ministry of Health (sante.gov.dz) health-establishment registry, geocoded via OpenStreetMap (ODbL) + Wikidata (CC0)",
     origin: "https://sante.gov.dz, https://www.openstreetmap.org, https://www.wikidata.org",
     license:
-      "MSP registry: factual public-sector listing. OpenStreetMap data © OpenStreetMap contributors, ODbL 1.0; Wikidata data is CC0. See README for attribution.",
+      "MoH registry: factual public-sector listing. OpenStreetMap data © OpenStreetMap contributors, ODbL 1.0; Wikidata data is CC0. See README for attribution.",
     sante: rows.length,
     by_type: {
       eph: by("type", "eph"), epsp: by("type", "epsp"), ehs: by("type", "ehs"),
@@ -967,8 +967,8 @@ async function main() {
     geocoded,
     bilingual,
     linkage_note:
-      "Establishment names + type + wilaya are from the MSP registry; the MSP carries no coordinates. Commune is derived by matching the establishment locality to the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, upgraded to a precise OSM/Wikidata point where one sits in the same commune (see geo_precision).",
-    coverage_note: `${rows.length} public health establishments from the Ministère de la Santé — ${geocoded} geocoded (${by("geo_precision", "osm_point") + by("geo_precision", "wikidata_point")} to a precise OSM/Wikidata point, the rest to commune centroid). Names + type + wilaya are official; coordinates are best-effort.`,
+      "Establishment names + type + wilaya are from the MoH registry; the MoH carries no coordinates. Commune is derived by matching the establishment locality to the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, upgraded to a precise OSM/Wikidata point where one sits in the same commune (see geo_precision).",
+    coverage_note: `${rows.length} public health establishments from the Ministry of Health — ${geocoded} geocoded (${by("geo_precision", "osm_point") + by("geo_precision", "wikidata_point")} to a precise OSM/Wikidata point, the rest to commune centroid). Names + type + wilaya are official; coordinates are best-effort.`,
     generated_at: new Date().toISOString().slice(0, 10),
   };
 

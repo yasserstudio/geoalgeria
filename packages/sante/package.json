@@ -2,7 +2,7 @@
   "name": "@geoalgeria/sante",
   "version": "1.0.0",
   "type": "module",
-  "description": "Public health establishments of Algeria — hospitals (EPH), proximity health (EPSP), specialized hospitals (EHS) and university hospitals (CHU) from the Ministère de la Santé, bilingual FR/AR, geocoded via OpenStreetMap & Wikidata, with commune/wilaya linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Public health establishments of Algeria — hospitals (EPH), proximity health (EPSP), specialized hospitals (EHS) and university hospitals (CHU) from the Ministry of Health, bilingual FR/AR, geocoded via OpenStreetMap & Wikidata, with commune/wilaya linkage. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {

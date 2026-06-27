@@ -10,9 +10,9 @@ schema break) · **minor** = a new dataset/package or a substantial data expansi
 
 ## 1.5.0 — 2026-06-27
 
-Added a new dataset: Algeria's public health establishments from the Ministère de la Santé.
+Added a new dataset: Algeria's public health establishments from the Ministry of Health.
 
-- **Health establishments** (`@geoalgeria/sante`, new): 695 public health establishments across the 58 wilayas with health directorates — 270 EPH (public hospitals), 292 EPSP (proximity-health), 108 EHS (specialized hospitals), 20 CHU (university hospitals) and 5 other public hospitals, from the Ministère de la Santé registry (sante.gov.dz). Bilingual French/Arabic (563 with both names), official `type` and `sector`, with commune/wilaya linkage. 600 geocoded via OpenStreetMap (121) and Wikidata (3), the rest to commune centroid; every record labelled with `source` and `geo_precision`. Names + type + wilaya are official; coordinates are best-effort.
+- **Health establishments** (`@geoalgeria/sante`, new): 695 public health establishments across the 58 wilayas with health directorates — 270 EPH (public hospitals), 292 EPSP (proximity-health), 108 EHS (specialized hospitals), 20 CHU (university hospitals) and 5 other public hospitals, from the Ministry of Health registry (sante.gov.dz). Bilingual French/Arabic (563 with both names), official `type` and `sector`, with commune/wilaya linkage. 600 geocoded via OpenStreetMap (121) and Wikidata (3), the rest to commune centroid; every record labelled with `source` and `geo_precision`. Names + type + wilaya are official; coordinates are best-effort.
 
 Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`, `/sante`.
 
