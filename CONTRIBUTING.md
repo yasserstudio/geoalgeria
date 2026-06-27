@@ -24,7 +24,7 @@ This is a small monorepo:
 | `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training establishments (MFEP / takwin.dz) |
 | `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores (djezzy.dz) |
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite (all 69 wilayas) |
-| `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH/EPSP/EHS/CHU (Ministère de la Santé), bilingual, geocoded via OSM + Wikidata |
+| `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH/EPSP/EHS/CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 
 ## How to contribute
 

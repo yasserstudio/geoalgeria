@@ -14,8 +14,7 @@
 
 **695 public health establishments** across all **58 wilayas** with health
 directorates — public hospitals (EPH), proximity-health establishments (EPSP),
-specialized hospitals (EHS) and university hospitals (CHU) from the **Ministère
-de la Santé (MSP)**, bilingual French/Arabic, **600 geocoded** via OpenStreetMap
+specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **600 geocoded** via OpenStreetMap
 and Wikidata with commune/wilaya linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -70,9 +69,9 @@ const mappable = all.filter((e) => e.lat != null);
 | `none` | 95 | locality not resolved to a commune — no coordinates |
 
 > **The registry is official; the coordinates are best-effort.** Names, type and
-> wilaya come from the Ministère de la Santé. The MSP publishes no coordinates,
+> wilaya come from the Ministry of Health. The MoH publishes no coordinates,
 > so GeoAlgeria derives them — see *Source & method* below. Counts move as the
-> MSP, OpenStreetMap and Wikidata are edited; each rebuild reflects their current
+> MoH, OpenStreetMap and Wikidata are edited; each rebuild reflects their current
 > state.
 
 ## Formats
@@ -132,14 +131,14 @@ data/
 ```
 
 `id` is a stable `{wilaya_code}-{type}-{seq}` key synthesized by GeoAlgeria (the
-MSP publishes no establishment code). `name` is the French name where available,
+MoH publishes no establishment code). `name` is the French name where available,
 else Arabic. `type` is derived from the establishment's title; `wilaya` from the
-MSP's wilaya tag. `sector` is `"public"` for the whole MSP registry (private
+MoH's wilaya tag. `sector` is `"public"` for the whole MoH registry (private
 clinics, when added, will carry `"private"`). `source` records which registries
 contributed; `geo_precision` records where the coordinate came from. `lat`/`lng`
 are `null` for the 95 records whose locality could not be matched to a commune.
 
-> **Coordinates and commune are derived, not from the MSP.** The Ministère de la
+> **Coordinates and commune are derived, not from the MoH.** The Ministère de la
 > Santé lists names, type and wilaya only. GeoAlgeria matches each
 > establishment's locality to the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria)
 > commune set within its wilaya (giving `commune`, `commune_code` and a centroid
@@ -158,7 +157,7 @@ you turn an establishment's `commune_code` into a polygon or centroid. Use
 
 Run `npm run fetch` to regenerate every output. It:
 
-1. pulls the **Ministère de la Santé** establishment registry from the
+1. pulls the **Ministry of Health** establishment registry from the
    `sante.gov.dz` WordPress REST API (`healthinstitution`), in French and Arabic,
    each tagged with its wilaya;
 2. derives the **type** from each title and **pairs** the French and Arabic posts
@@ -176,7 +175,7 @@ Raw source pulls are cached under
 
 Package **code** is [MIT](LICENSE). The **data** is a composite:
 
-- The **Ministère de la Santé** registry (names, type, wilaya) is a factual
+- The **Ministry of Health** registry (names, type, wilaya) is a factual
   public-sector listing.
 - **Coordinates** are derived from **Wikidata** (**CC0**, public domain) and
   **OpenStreetMap** (**© OpenStreetMap contributors**, licensed under the

@@ -1,11 +1,11 @@
 // Type definitions for @geoalgeria/sante
-// Public health establishments of Algeria — the Ministère de la Santé (MSP)
+// Public health establishments of Algeria — the Ministry of Health (MoH)
 // registry, geocoded via OpenStreetMap (ODbL) and Wikidata (CC0).
 
 /** Establishment category. */
 export type HealthType = "eph" | "epsp" | "ehs" | "chu" | "clinique" | "hopital";
 
-/** Ownership sector. The MSP registry is public; private clinics carry "private". */
+/** Ownership sector. The MoH registry is public; private clinics carry "private". */
 export type HealthSector = "public" | "private";
 
 /** Where the record's identity came from, plus which geo sources contributed a precise point. */
@@ -38,7 +38,7 @@ export interface HealthEstablishment {
   type_label_fr: string;
   /** Canonical Arabic label for the type. */
   type_label_ar: string;
-  /** Ownership sector ("public" for the MSP registry). */
+  /** Ownership sector ("public" for the MoH registry). */
   sector: HealthSector;
   /** Wilaya name (French). */
   wilaya: string;
@@ -54,7 +54,7 @@ export interface HealthEstablishment {
   lat: number | null;
   /** Longitude, or null when the establishment could not be geocoded. */
   lng: number | null;
-  /** Provenance: MSP registry, plus OSM/Wikidata where a precise point matched. */
+  /** Provenance: MoH registry, plus OSM/Wikidata where a precise point matched. */
   source: HealthSource;
   /** How `lat`/`lng` were obtained. */
   geo_precision: GeoPrecision;

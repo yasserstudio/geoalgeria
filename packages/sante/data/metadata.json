@@ -1,7 +1,7 @@
 {
-  "source": "Ministère de la Santé (sante.gov.dz) health-establishment registry, geocoded via OpenStreetMap (ODbL) + Wikidata (CC0)",
+  "source": "Ministry of Health (sante.gov.dz) health-establishment registry, geocoded via OpenStreetMap (ODbL) + Wikidata (CC0)",
   "origin": "https://sante.gov.dz, https://www.openstreetmap.org, https://www.wikidata.org",
-  "license": "MSP registry: factual public-sector listing. OpenStreetMap data © OpenStreetMap contributors, ODbL 1.0; Wikidata data is CC0. See README for attribution.",
+  "license": "MoH registry: factual public-sector listing. OpenStreetMap data © OpenStreetMap contributors, ODbL 1.0; Wikidata data is CC0. See README for attribution.",
   "sante": 695,
   "by_type": {
     "eph": 270,
@@ -24,7 +24,7 @@
   "wilayas_covered": 58,
   "geocoded": 600,
   "bilingual": 563,
-  "linkage_note": "Establishment names + type + wilaya are from the MSP registry; the MSP carries no coordinates. Commune is derived by matching the establishment locality to the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, upgraded to a precise OSM/Wikidata point where one sits in the same commune (see geo_precision).",
-  "coverage_note": "695 public health establishments from the Ministère de la Santé — 600 geocoded (124 to a precise OSM/Wikidata point, the rest to commune centroid). Names + type + wilaya are official; coordinates are best-effort.",
+  "linkage_note": "Establishment names + type + wilaya are from the MoH registry; the MoH carries no coordinates. Commune is derived by matching the establishment locality to the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, upgraded to a precise OSM/Wikidata point where one sits in the same commune (see geo_precision).",
+  "coverage_note": "695 public health establishments from the Ministry of Health — 600 geocoded (124 to a precise OSM/Wikidata point, the rest to commune centroid). Names + type + wilaya are official; coordinates are best-effort.",
   "generated_at": "2026-06-27"
 }
