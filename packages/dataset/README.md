@@ -203,6 +203,10 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Higher-education network — universities, grandes écoles, ENS, centres (MESRS) |
 | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training — CFPA, INSFP, IFEP, private centers (MFEP / takwin.dz) |
+| [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | Sports facilities — stadiums, pools, courts, tracks (Ministry of Youth and Sports) |
+| [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques — geocoded retail stores with category & hours (djezzy.dz) |
+| [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques — Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
+| [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments — EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 
 Full list and the monorepo: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 
