@@ -33,6 +33,10 @@ const PACKAGES = {
   "@geoalgeria/tourisme": { dir: "packages/tourisme", label: "Algeria's tourism infrastructure" },
   "@geoalgeria/formation-professionnelle": { dir: "packages/formation-professionnelle", label: "Algeria's vocational training establishments" },
   "@geoalgeria/sports": { dir: "packages/sports", label: "Algeria's sports infrastructure" },
+  "@geoalgeria/djezzy": { dir: "packages/djezzy", label: "Djezzy boutiques" },
+  "@geoalgeria/mosquees": { dir: "packages/mosquees", label: "Algeria's mosques" },
+  "@geoalgeria/sante": { dir: "packages/sante", label: "Algeria's public health establishments" },
+  "@geoalgeria/culture": { dir: "packages/culture", label: "Algeria's cultural atlas" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
