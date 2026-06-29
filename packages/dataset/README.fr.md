@@ -203,6 +203,11 @@ Ce jeu de données utilise le [versionnement sémantique](https://semver.org/). 
 | [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | Réseau de l'enseignement supérieur — universités, grandes écoles, ENS, centres (MESRS) |
 | [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | Infrastructure touristique — hôtels, attractions, sites historiques, sources thermales, parcs (ASAL, OSM, Wikidata) |
 | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Formation professionnelle — CFPA, INSFP, IFEP, centres privés (MFEP / takwin.dz) |
+| [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | Installations sportives — stades, piscines, terrains, pistes (Ministère de la Jeunesse et des Sports) |
+| [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy — points de vente géocodés avec catégorie et horaires (djezzy.dz) |
+| [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées — composite Wikidata + OpenStreetMap, bilingue, les 69 wilayas |
+| [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics — EPH, EPSP, EHS, CHU (Ministère de la Santé), bilingues, géolocalisés via OSM + Wikidata |
+| [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel — sites protégés, musées, théâtres, bibliothèques + établissements culturels (Ministère de la Culture), bilingue, entièrement géolocalisé |
 
 Liste complète et monorepo : [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 
