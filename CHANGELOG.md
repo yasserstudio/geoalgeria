@@ -8,6 +8,14 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.6.0 — 2026-06-29
+
+Added a new dataset: Algeria's cultural atlas from the Ministry of Culture.
+
+- **Cultural places** (`@geoalgeria/culture`, new): 1,083 cultural places across 66 of Algeria's 69 wilayas — protected cultural property (580), libraries (257), museums (48), theatres (45) and museums of the Moudjahid (13), plus cultural establishments: maisons de culture (51), culture directorates (33), cinemas (20), cultural centres (15), arts schools (15) and palais de culture (6). From the Ministry of Culture's *Cartes du Patrimoine Culturel Algérien* portal, 100% bilingual French/Arabic, every place geocoded (`geo_precision: source_point`), with a `has_virtual_tour` flag (22 places) and commune/wilaya linkage. Places the portal still files under pre-2019 wilaya codes are rescoped to the current 69-wilaya scheme (Law 26-06) by nearest-commune geography.
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`, `/sante`, `/culture`.
+
 ## 1.5.0 — 2026-06-27
 
 Added a new dataset: Algeria's public health establishments from the Ministry of Health.

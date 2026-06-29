@@ -80,3 +80,7 @@ jobs:
       - name: Smoke test — @geoalgeria/formation-professionnelle (ESM)
         working-directory: packages/formation-professionnelle
         run: node --input-type=module -e "import('./index.js').then(m=>{const e=m.establishments(); if(!Array.isArray(e)||!e.length){console.error('empty data');process.exit(1)} console.log('formation-professionnelle:',e.length,'establishments,',m.metadata().wilayas_covered,'wilayas')})"
+
+      - name: Smoke test — @geoalgeria/culture (ESM)
+        working-directory: packages/culture
+        run: node --input-type=module -e "import('./index.js').then(m=>{const c=m.culture(); if(!Array.isArray(c)||!c.length){console.error('empty data');process.exit(1)} console.log('culture:',c.length,'places,',m.metadata().wilayas_covered,'wilayas')})"

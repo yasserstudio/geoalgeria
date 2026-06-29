@@ -23,6 +23,7 @@ This file is the short version of how work flows here; deeper docs are linked.
 | `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores with category & hours (djezzy.dz) |
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
+| `packages/culture/` | `@geoalgeria/culture` | cultural atlas — protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 
 The postal data under `packages/dataset/data/poste/` is a **generated mirror** —
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.
