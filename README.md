@@ -57,6 +57,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Djezzy boutiques** | 128 | geocoded retail stores with category, hours & commune/wilaya linkage (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
 | **Health establishments** | 695 | EPH · EPSP · EHS · CHU from the Ministry of Health — bilingual, 600 geocoded via OSM + Wikidata — [`@geoalgeria/sante`](packages/sante) |
 | **Cultural places** | 1,083 | Protected sites, museums, theatres, libraries + cultural establishments from the Ministry of Culture — bilingual, all geocoded, 66 wilayas — [`@geoalgeria/culture`](packages/culture) |
+| **Agriculture institutions** | 196 | Services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups from the Ministry of Agriculture — bilingual, geocoded, 58 wilayas — [`@geoalgeria/agriculture`](packages/agriculture) |
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -107,6 +108,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques of Algeria — 20,759 geocoded, a Wikidata + OpenStreetMap composite with Arabic & French names, denomination & commune/wilaya linkage |
 | [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments — 695 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas — 1,083 places from the Ministry of Culture (protected sites, museums, theatres, libraries, cultural establishments), bilingual, fully geocoded with commune/wilaya linkage |
+| [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions — 196 from the Ministry of Agriculture across 7 networks (DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups), bilingual, geocoded with commune/wilaya linkage |
 
 [Browse all packages →](https://geoalgeria.com/data) · [API docs & field reference →](https://geoalgeria.com/data/docs)
 

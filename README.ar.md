@@ -59,6 +59,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
 | **المؤسسات الصحية** | 695 | EPH · EPSP · EHS · CHU من وزارة الصحة — ثنائية اللغة، 600 بإحداثيات عبر OSM + Wikidata — [`@geoalgeria/sante`](packages/sante) |
 | **المواقع الثقافية** | 1083 | مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية من وزارة الثقافة — ثنائية اللغة، كلها بإحداثيات، 66 ولاية — [`@geoalgeria/culture`](packages/culture) |
+| **المؤسسات الفلاحية** | 196 | مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية من وزارة الفلاحة — ثنائية اللغة، بإحداثيات، 58 ولاية — [`@geoalgeria/agriculture`](packages/agriculture) |
 
 الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن JSON فقط للحفاظ على الحجم الخفيف؛ CSV/GeoJSON/SQL متوفرة في كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -109,6 +110,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد الجزائر — 20,759 مُحدّدة جغرافيًا، تجميع Wikidata + OpenStreetMap بأسماء عربية وفرنسية ومذهب وربط بالبلدية/الولاية |
 | [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية — 695 من وزارة الصحة (EPH، EPSP، EHS، CHU)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata مع ربط بالبلدية/الولاية |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي — 1083 موقعًا من وزارة الثقافة (مواقع محمية، متاحف، مسارح، مكتبات، مؤسسات ثقافية)، ثنائية اللغة، كاملة الإحداثيات مع ربط بالبلدية/الولاية |
+| [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية — 196 من وزارة الفلاحة موزعة على 7 شبكات (مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية)، ثنائية اللغة، بإحداثيات مع ربط بالبلدية/الولاية |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 

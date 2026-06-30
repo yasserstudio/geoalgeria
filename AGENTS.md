@@ -24,6 +24,7 @@ This file is the short version of how work flows here; deeper docs are linked.
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas — protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
+| `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions — services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 
 The postal data under `packages/dataset/data/poste/` is a **generated mirror** —
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.
