@@ -37,6 +37,7 @@ const PACKAGES = {
   "@geoalgeria/mosquees": { dir: "packages/mosquees", label: "Algeria's mosques" },
   "@geoalgeria/sante": { dir: "packages/sante", label: "Algeria's public health establishments" },
   "@geoalgeria/culture": { dir: "packages/culture", label: "Algeria's cultural atlas" },
+  "@geoalgeria/agriculture": { dir: "packages/agriculture", label: "Algeria's agriculture-sector institutions" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];

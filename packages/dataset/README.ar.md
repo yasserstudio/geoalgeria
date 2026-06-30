@@ -208,6 +208,7 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد — تجميع Wikidata + OpenStreetMap، ثنائي اللغة، كل الـ69 ولاية |
 | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية — EPH، EPSP، EHS، CHU (وزارة الصحة)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي — مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية (وزارة الثقافة)، ثنائي اللغة، كامل الإحداثيات |
+| [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية — مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية (وزارة الفلاحة)، ثنائي اللغة، بإحداثيات |
 
 القائمة الكاملة والمستودع الأحادي: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

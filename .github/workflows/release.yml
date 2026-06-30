@@ -42,7 +42,7 @@ jobs:
 
       - name: Dry-run publish
         run: |
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture packages/agriculture; do
             PKG_NAME=$(node -p "require('./$pkg/package.json').name")
             PKG_VER=$(node -p "require('./$pkg/package.json').version")
             REGISTRY_VER=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
@@ -77,7 +77,7 @@ jobs:
           # djezzy + mosquees (v1.4.0) and sante (v1.5.0) are intentionally
           # excluded — they shipped in combined project releases, not as
           # per-package releases.
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/culture; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/culture packages/agriculture; do
             NAME=$(node -p "require('./$pkg/package.json').name")
             VER=$(node -p "require('./$pkg/package.json').version")
             TAG="$NAME@$VER"

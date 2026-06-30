@@ -57,6 +57,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
 | **Établissements de santé** | 695 | EPH · EPSP · EHS · CHU du Ministère de la Santé — bilingues, 600 géolocalisés via OSM + Wikidata — [`@geoalgeria/sante`](packages/sante) |
 | **Lieux culturels** | 1 083 | Sites protégés, musées, théâtres, bibliothèques + établissements culturels du Ministère de la Culture — bilingues, tous géolocalisés, 66 wilayas — [`@geoalgeria/culture`](packages/culture) |
+| **Institutions agricoles** | 196 | Directions des services agricoles (DSA), conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics du Ministère de l'Agriculture — bilingues, géolocalisées, 58 wilayas — [`@geoalgeria/agriculture`](packages/agriculture) |
 
 Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -107,6 +108,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie — 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
 | [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics — 695 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel — 1 083 lieux du Ministère de la Culture (sites protégés, musées, théâtres, bibliothèques, établissements culturels), bilingues, entièrement géolocalisés avec rattachement commune/wilaya |
+| [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions du secteur agricole — 196 du Ministère de l'Agriculture réparties en 7 réseaux (DSA, conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics), bilingues, géolocalisées avec rattachement commune/wilaya |
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 

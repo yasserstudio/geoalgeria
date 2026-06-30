@@ -1,0 +1,57 @@
+{
+  "name": "@geoalgeria/agriculture",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Agriculture-sector institutions of Algeria — agricultural-services directorates (DSA), forest conservations, technical & research institutes, training centres, chambers of agriculture, public offices and groups from the Ministry of Agriculture (MADR), bilingual FR/AR, geocoded against the geoalgeria commune set with wilaya/commune linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node ../../scripts/validate-packages.mjs agriculture"
+  },
+  "keywords": [
+    "algeria",
+    "agriculture",
+    "madr",
+    "dsa",
+    "forets",
+    "chambre-agriculture",
+    "inraa",
+    "itgc",
+    "ministry-of-agriculture",
+    "rural-development",
+    "geojson",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/agriculture"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

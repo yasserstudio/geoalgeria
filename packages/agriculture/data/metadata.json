@@ -1,0 +1,29 @@
+{
+  "source": "Ministry of Agriculture, Rural Development and Fisheries (MADR) institutional directory (madr.gov.dz / fr.madr.gov.dz), geocoded against the geoalgeria commune set",
+  "origin": "https://madr.gov.dz/contact/دليل-الهاتف/, https://fr.madr.gov.dz/contact/annuaire/",
+  "license": "MADR directory: factual public-sector listing. See README for attribution.",
+  "agriculture": 196,
+  "by_type": {
+    "centre_formation": 11,
+    "chambre_agriculture": 49,
+    "conservation_forets": 48,
+    "dsa": 58,
+    "groupe_public": 10,
+    "institut_recherche": 16,
+    "office_public": 4
+  },
+  "by_sector": {
+    "public": 196
+  },
+  "by_geo_precision": {
+    "wikidata_point": 0,
+    "commune_centroid": 89,
+    "wilaya_centroid": 107,
+    "none": 0
+  },
+  "wilayas_covered": 58,
+  "geocoded": 196,
+  "linkage_note": "Names + wilaya + address + phone/fax are from the MADR directory, which carries no coordinates. Commune is matched from the address against the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, or the wilaya chief-town centroid when the address has no recognizable commune (see geo_precision).",
+  "coverage_note": "196 agriculture-sector institutions across 7 MADR networks (DSA, Conservations des Forêts, technical/research institutes, training centres, Chambres d'Agriculture, public offices, public groups). DSA covers all 58 wilayas; Conservations des Forêts and Chambres use the pre-2019 48-wilaya division. Names + wilaya are official; coordinates are best-effort (mostly commune/wilaya centroid).",
+  "generated_at": "2026-06-30"
+}

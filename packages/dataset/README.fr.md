@@ -208,6 +208,7 @@ Ce jeu de données utilise le [versionnement sémantique](https://semver.org/). 
 | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées — composite Wikidata + OpenStreetMap, bilingue, les 69 wilayas |
 | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics — EPH, EPSP, EHS, CHU (Ministère de la Santé), bilingues, géolocalisés via OSM + Wikidata |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel — sites protégés, musées, théâtres, bibliothèques + établissements culturels (Ministère de la Culture), bilingue, entièrement géolocalisé |
+| [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions agricoles — directions des services agricoles (DSA), conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics (Ministère de l'Agriculture), bilingue, géolocalisé |
 
 Liste complète et monorepo : [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

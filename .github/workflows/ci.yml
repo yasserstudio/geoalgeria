@@ -84,3 +84,7 @@ jobs:
       - name: Smoke test — @geoalgeria/culture (ESM)
         working-directory: packages/culture
         run: node --input-type=module -e "import('./index.js').then(m=>{const c=m.culture(); if(!Array.isArray(c)||!c.length){console.error('empty data');process.exit(1)} console.log('culture:',c.length,'places,',m.metadata().wilayas_covered,'wilayas')})"
+
+      - name: Smoke test — @geoalgeria/agriculture (ESM)
+        working-directory: packages/agriculture
+        run: node --input-type=module -e "import('./index.js').then(m=>{const a=m.agriculture(); if(!Array.isArray(a)||!a.length){console.error('empty data');process.exit(1)} console.log('agriculture:',a.length,'institutions,',m.metadata().wilayas_covered,'wilayas')})"

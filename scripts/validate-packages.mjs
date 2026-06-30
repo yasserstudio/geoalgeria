@@ -2,7 +2,7 @@
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
 // /telecom, /aviation, /banques, /livraison, /jeunesse, /sports,
 // /enseignement-superieur, /tourisme, /formation-professionnelle, /djezzy,
-// /mosquees, /sante, /culture)
+// /mosquees, /sante, /culture, /agriculture)
 // for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
 // (packages/dataset/scripts/validate.py); this is the single Node gate for every
@@ -13,7 +13,7 @@
 // (coverage/<tech>/) and split into per-operator files — so it gets its own
 // validator (validateTelecom) that shares the same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture|agriculture]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -239,6 +239,15 @@ const PACKAGES = {
       metaKey: "culture",
       csv: "csv/culture.csv",
       geojson: "geojson/culture.geojson",
+      required: ["id", "name", "type", "wilaya_code", "lat", "lng"],
+    },
+  ],
+  agriculture: [
+    {
+      json: "agriculture.json",
+      metaKey: "agriculture",
+      csv: "csv/agriculture.csv",
+      geojson: "geojson/agriculture.geojson",
       required: ["id", "name", "type", "wilaya_code", "lat", "lng"],
     },
   ],
