@@ -1,0 +1,61 @@
+{
+  "name": "@geoalgeria/ferroviaire",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's rail & urban-transit network — 744 stations & stops (train, tram, metro, aerial tramway, gondola) across 50 wilayas, bilingual FR/AR, with operator (SNTF/SETRAM/SEMA), line, and wilaya/commune linkage. Wikidata + OpenStreetMap composite. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs ferroviaire"
+  },
+  "keywords": [
+    "algeria",
+    "ferroviaire",
+    "rail",
+    "railway",
+    "train",
+    "gare",
+    "tramway",
+    "tram",
+    "metro",
+    "sntf",
+    "setram",
+    "sema",
+    "transit",
+    "geojson",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/ferroviaire"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

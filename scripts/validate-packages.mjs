@@ -260,6 +260,15 @@ const PACKAGES = {
       required: ["id", "name", "wilaya_code", "lat", "lng"],
     },
   ],
+  ferroviaire: [
+    {
+      json: "stations.json",
+      metaKey: "stations",
+      csv: "csv/stations.csv",
+      geojson: "geojson/stations.geojson",
+      required: ["id", "type", "wilaya_code", "lat", "lng"],
+    },
+  ],
 };
 
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted
