@@ -8,6 +8,20 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.7.0 — 2026-07-01
+
+Added a new **Transport** sector — four packages — plus `@geoalgeria/agriculture` (shipped since 1.6.0).
+
+- **Intercity bus stations** (`@geoalgeria/gares-routieres`, new): 74 SOGRAL gares routières across 51 wilayas — official names, addresses, surface areas and coordinates (74/74 geocoded; Touggourt and Djanet fixed via OpenStreetMap, Guelma via its commune centroid), with wilaya/commune linkage that reconciles SOGRAL's legacy 48-wilaya codes to the current 69-wilaya scheme (Law 26-06). Source: SOGRAL (`live.sogral.com`).
+- **Rail & urban transit** (`@geoalgeria/ferroviaire`, new): 692 nodes across 50 wilayas — 427 rail + 190 tram + 41 metro + 24 aerial-tramway + 10 gondola. A Wikidata (CC0) + OpenStreetMap (ODbL) composite with operators SNTF/SETRAM/SEMA, `line` membership, bilingual French/Arabic names and commune/wilaya linkage.
+- **Urban bus networks** (`@geoalgeria/buses`, new): 50 ETUSA (Alger) bus lines — termini, stop counts, and the communes and transit stations each line serves (line-level v1; from fr.wikipedia, CC BY-SA). Multi-operator design, ready to add more cities.
+- **Transport umbrella** (`@geoalgeria/transport`, new): one install that re-exports `aviation` + `ferroviaire` + `gares-routieres` + `buses`.
+- **Agriculture institutions** (`@geoalgeria/agriculture`, new since 1.6.0): 196 institutions across 58 wilayas from the Ministry of Agriculture (MADR) — services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices and groups; bilingual, geocoded to commune/wilaya centroid.
+
+Transport packages are domain-named — the operator is the *source* (in `keywords`/`metadata`), not the package name (ANAC's airports ship as `aviation`, not `anac`).
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`, `/sante`, `/culture`, `/agriculture`, `/gares-routieres`, `/ferroviaire`, `/buses`, `/transport`.
+
 ## 1.6.0 — 2026-06-29
 
 Added a new dataset: Algeria's cultural atlas from the Ministry of Culture.
