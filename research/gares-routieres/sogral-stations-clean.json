@@ -1,0 +1,3297 @@
+[
+  {
+    "id": 10,
+    "sogral_code": "213-000001001",
+    "name": "ADRAR",
+    "city": "ADRAR",
+    "official_name": "Gare routière Ouchan Messaoud",
+    "address": "Route nationale N°06 Zone Industriel Adrar",
+    "wilaya_code": "01",
+    "wilaya_name": "Adrar",
+    "lat": 27.894,
+    "lng": -0.288,
+    "geo_precision": "exact",
+    "surface_total_m2": 1966,
+    "surface_built_m2": 983,
+    "dates": {
+      "p23": "2013-07-01",
+      "p24": "2013-07-30"
+    },
+    "metrics": {
+      "P11": 30,
+      "P12": 12,
+      "P13": 28,
+      "P16": 5,
+      "P19": 8,
+      "P20": 50,
+      "P25": 950
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "Wilaya 049361843",
+      "emergency": "Hopital Cac 049 36 85 05"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 27,
+    "sogral_code": "213-000001023",
+    "name": "AOUGROUT",
+    "city": "AOUGROUT",
+    "official_name": "Gare routière Mazouzi Ben Amar Aougrout",
+    "address": "Rue El Charef Aougrout Timimoun",
+    "wilaya_code": "01",
+    "wilaya_name": "Adrar",
+    "lat": 28.733,
+    "lng": 0.332,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 400,
+    "dates": {
+      "p23": "2019-12-24",
+      "p24": "2022-12-11"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 50,
+      "P13": 30,
+      "P19": 6,
+      "P20": 1,
+      "P25": 150
+    },
+    "amenities": {
+      "P29": true
+    },
+    "contacts": {
+      "administrative": null,
+      "emergency": null
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 63,
+    "sogral_code": "213-000001004",
+    "name": "REGGAN",
+    "city": "REGGANE",
+    "official_name": "Gare routière Reggane",
+    "address": "Route nationale n°52 Reggane",
+    "wilaya_code": "01",
+    "wilaya_name": "Adrar",
+    "lat": 26.734312,
+    "lng": 0.164063,
+    "geo_precision": "exact",
+    "surface_total_m2": 16000,
+    "surface_built_m2": 1000,
+    "dates": {
+      "p23": "2019-01-01",
+      "p24": "2019-03-02"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 7,
+      "P14": 1,
+      "P15": 2,
+      "P19": 7,
+      "P21": 50,
+      "P22": 18,
+      "P25": 300
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P36": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 049 97 00 70",
+      "emergency": "Etablissements Publics Hospitaliers Non Universitaires ( EPH ):\r\n+213 49 97 06 61\r\n+213 49 97 06 36"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 72,
+    "sogral_code": "213-000001009",
+    "name": "TIMIMOUNE",
+    "city": "TIMIMOUN",
+    "official_name": "Gare routière El Moudjahid Zaoui Ben Mbarak",
+    "address": "Route nationale N°51 Timimoun",
+    "wilaya_code": "01",
+    "wilaya_name": "Adrar",
+    "lat": 29.246438,
+    "lng": 0.224687,
+    "geo_precision": "exact",
+    "surface_total_m2": 15000,
+    "surface_built_m2": 2500,
+    "dates": {
+      "p23": "2014-01-01",
+      "p24": "2014-02-02"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 36,
+      "P13": 3,
+      "P14": 1,
+      "P19": 6,
+      "P20": 6,
+      "P21": 18,
+      "P25": 650
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 049.30.02.96",
+      "emergency": "Etablissements Publics Hospitaliers:\r\n+213 49 90 45 68\r\n+213 49 90 45 28\r\n+213 49 90 41 10"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 3,
+    "sogral_code": "213-000002001",
+    "name": "CHLEF",
+    "city": "CHLEF",
+    "official_name": "Gare routière Karouzi Ben Abdallah",
+    "address": "Hammadia Chlef",
+    "wilaya_code": "02",
+    "wilaya_name": "Chlef",
+    "lat": 36.155938,
+    "lng": 1.304688,
+    "geo_precision": "exact",
+    "surface_total_m2": 50000,
+    "surface_built_m2": 13000,
+    "dates": {
+      "p23": "2018-05-13",
+      "p24": "2018-05-13"
+    },
+    "metrics": {
+      "P11": 220,
+      "P12": 28,
+      "P13": 24,
+      "P14": 2,
+      "P15": 4,
+      "P16": 34,
+      "P17": 283,
+      "P18": 17,
+      "P19": 14,
+      "P20": 140,
+      "P21": 17,
+      "P22": 84,
+      "P25": 3400
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P35": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "WILAYA 027 77 24 00",
+      "emergency": "Hôpital chorfa frères khelif 027 79 49 73"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 24,
+    "sogral_code": "213-000003019",
+    "name": "AFLOU",
+    "city": "AFLOU",
+    "official_name": "Gare routière Hakimi Mohamed Ben Chikh",
+    "address": "Route El Bayadh Aflou",
+    "wilaya_code": "03",
+    "wilaya_name": "Laghouat",
+    "lat": 34.097,
+    "lng": 2.083,
+    "geo_precision": "exact",
+    "surface_total_m2": 46000,
+    "surface_built_m2": 6270,
+    "dates": {
+      "p23": "2018-01-02",
+      "p24": "2018-03-01"
+    },
+    "metrics": {
+      "P11": 10,
+      "P12": 33,
+      "P13": 3,
+      "P16": 25,
+      "P19": 14,
+      "P20": 3,
+      "P25": 210
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true
+    },
+    "contacts": {
+      "administrative": "APC: 029 16 67 89",
+      "emergency": "EPH Aflou: 029 16 64 65"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 54,
+    "sogral_code": "213-000003001",
+    "name": "LAGHOUAT",
+    "city": "LAGHOUAT",
+    "official_name": "Gare routière Ben Mbarek Tahar",
+    "address": "Route nationale des poids Lourds Laghouat",
+    "wilaya_code": "03",
+    "wilaya_name": "Laghouat",
+    "lat": 33.781813,
+    "lng": 2.893812,
+    "geo_precision": "exact",
+    "surface_total_m2": 50000,
+    "surface_built_m2": 5000,
+    "dates": {
+      "p23": "2018-03-18",
+      "p24": "2019-03-03"
+    },
+    "metrics": {
+      "P11": 160,
+      "P12": 54,
+      "P13": 6,
+      "P16": 15,
+      "P19": 17,
+      "P20": 6,
+      "P25": 600
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true
+    },
+    "contacts": {
+      "administrative": "Wilaya",
+      "emergency": "029 13 48 86 Hopital De maternité"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 61,
+    "sogral_code": "213-000004001",
+    "name": "OUM EL BOUAGHI",
+    "city": "OUM EL BOUAGHI",
+    "official_name": "Gare routière des dix Martyrs de Djabel El Tarf Oum El Bouaghi",
+    "address": "Cité Saada Oum El Bouaghi",
+    "wilaya_code": "04",
+    "wilaya_name": "Oum El Bouaghi",
+    "lat": 35.861687,
+    "lng": 7.113312,
+    "geo_precision": "exact",
+    "surface_total_m2": 29000,
+    "surface_built_m2": 5372,
+    "dates": {
+      "p23": "2019-06-13",
+      "p24": "2019-12-01"
+    },
+    "metrics": {
+      "P11": 15,
+      "P12": 48,
+      "P13": 5,
+      "P14": 4,
+      "P15": 9,
+      "P16": 10,
+      "P17": 20,
+      "P18": 6,
+      "P19": 18,
+      "P20": 5,
+      "P21": 50,
+      "P22": 400,
+      "P25": 2000
+    },
+    "amenities": {
+      "P29": true,
+      "P31": true,
+      "P36": true,
+      "P38": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 032 56 02 09",
+      "emergency": "032.54.12.53"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 29,
+    "sogral_code": "213-000005001",
+    "name": "BATNA",
+    "city": "BATNA",
+    "official_name": "Gare routière Echahid Mohamed Arar",
+    "address": "Route nationale n° 03 Commune de Batna",
+    "wilaya_code": "05",
+    "wilaya_name": "Batna",
+    "lat": 35.576812,
+    "lng": 6.180063,
+    "geo_precision": "exact",
+    "surface_total_m2": 40000,
+    "surface_built_m2": 4353,
+    "dates": {
+      "p23": "2013-04-09",
+      "p24": "2018-01-01"
+    },
+    "metrics": {
+      "P11": 70,
+      "P12": 26,
+      "P13": 22,
+      "P14": 5,
+      "P15": 4,
+      "P16": 150,
+      "P17": 100,
+      "P18": 240,
+      "P19": 16,
+      "P20": 38,
+      "P21": 287,
+      "P22": 190,
+      "P25": 10000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 033.81.21.15",
+      "emergency": "المركز الإستشفائي الجامعي باتنة CHU Batna\r\n033 30 84 00"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 13,
+    "sogral_code": "213-000006001",
+    "name": "BEJAIA",
+    "city": "BEJAIA",
+    "official_name": "Gare routière Zernouh Mohamed dit Hourani",
+    "address": "04 Chemins, Bejaia 06000",
+    "wilaya_code": "06",
+    "wilaya_name": "Béjaïa",
+    "lat": 36.7374375,
+    "lng": 5.0634375,
+    "geo_precision": "exact",
+    "surface_total_m2": 44660,
+    "surface_built_m2": 2100,
+    "dates": {
+      "p23": "2011-05-01",
+      "p24": "2011-05-02"
+    },
+    "metrics": {
+      "P11": 52,
+      "P12": 103,
+      "P13": 8,
+      "P14": 8,
+      "P15": 39,
+      "P16": 35,
+      "P17": 56,
+      "P18": 200,
+      "P19": 12,
+      "P20": 68,
+      "P21": 221,
+      "P22": 2078,
+      "P25": 12794
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "Apc Bejaia 034 17 46 44",
+      "emergency": "Hopital Khalil Amrane 034 12 32 37"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 21,
+    "sogral_code": "213-000007001",
+    "name": "BISKRA",
+    "city": "BISKRA",
+    "official_name": "Gare routière 05 juillet 1962",
+    "address": "Commune El Hadjeb Biskra",
+    "wilaya_code": "07",
+    "wilaya_name": "Biskra",
+    "lat": 34.8277188,
+    "lng": 5.680813,
+    "geo_precision": "exact",
+    "surface_total_m2": 93194,
+    "surface_built_m2": 687975,
+    "dates": {
+      "p23": "2012-05-21",
+      "p24": "2012-08-01"
+    },
+    "metrics": {
+      "P11": 150,
+      "P12": 49,
+      "P13": 31,
+      "P14": 2,
+      "P15": 5,
+      "P16": 123,
+      "P17": 160,
+      "P18": 10,
+      "P19": 24,
+      "P20": 124,
+      "P21": 47,
+      "P22": 49,
+      "P25": 2096
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P34": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "wilaya 033 55 83 72",
+      "emergency": "Hopital bachir Ben nacer 0542 90 60 26"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 62,
+    "sogral_code": "213-000007005",
+    "name": "OULED DJELLAL",
+    "city": "OULED DJELLAL",
+    "official_name": "Gare routière Chala El Hafnaoui",
+    "address": "Route nationale n°46 Ouled Djellal",
+    "wilaya_code": "07",
+    "wilaya_name": "Biskra",
+    "lat": 34.424187,
+    "lng": 5.062562,
+    "geo_precision": "exact",
+    "surface_total_m2": 19992,
+    "surface_built_m2": 713,
+    "dates": {
+      "p23": "2013-11-03",
+      "p24": "2014-03-26"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 54,
+      "P13": 2,
+      "P14": 4,
+      "P15": 4,
+      "P16": 7,
+      "P17": 10,
+      "P19": 12,
+      "P20": 10,
+      "P21": 2,
+      "P22": 25,
+      "P25": 800
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P36": true
+    },
+    "contacts": {
+      "administrative": "APC: 033 76 01 02",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER:\r\n033 52 23 90"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 75,
+    "sogral_code": "213-000007021",
+    "name": "TOLGA",
+    "city": "TOLGA",
+    "official_name": "Gare routière Tolga",
+    "address": "Route nationale N°46 Tolga Biskra",
+    "wilaya_code": "07",
+    "wilaya_name": "Biskra",
+    "lat": 34.734813,
+    "lng": 5.400813,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 91154,
+    "dates": {
+      "p23": "2013-11-03",
+      "p24": "2014-03-26"
+    },
+    "metrics": {
+      "P11": 40,
+      "P12": 12,
+      "P13": 6,
+      "P14": 1,
+      "P15": 1,
+      "P16": 87,
+      "P17": 20,
+      "P18": 7,
+      "P19": 9,
+      "P20": 6,
+      "P21": 14,
+      "P22": 33,
+      "P25": 1250
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P36": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "033 78  79  01",
+      "emergency": "033 57 93 55"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 17,
+    "sogral_code": "213-000008001",
+    "name": "BECHAR",
+    "city": "BECHAR",
+    "official_name": "Gare routière Rezoug Mohamed Béchar",
+    "address": "Route nationale n°06 debdaba Béchar",
+    "wilaya_code": "08",
+    "wilaya_name": "Béchar",
+    "lat": 31.6376875,
+    "lng": -2.1993125,
+    "geo_precision": "exact",
+    "surface_total_m2": 29400,
+    "surface_built_m2": 6370,
+    "dates": {
+      "p23": "2012-10-18",
+      "p24": "2013-07-01"
+    },
+    "metrics": {
+      "P11": 40,
+      "P12": 16,
+      "P13": 60,
+      "P17": 25,
+      "P19": 31,
+      "P20": 91,
+      "P25": 920
+    },
+    "amenities": {
+      "P28": true,
+      "P30": true,
+      "P31": true,
+      "P32": true,
+      "P33": true,
+      "P34": true,
+      "P35": true,
+      "P36": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "049210300",
+      "emergency": "Hopital Tourabi 049 21 03 60"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 32,
+    "sogral_code": "213-000009001",
+    "name": "BLIDA",
+    "city": "BLIDA",
+    "official_name": "Gare routière Chahid Farouk Baila Blida",
+    "address": "Cité Ramoul Blida",
+    "wilaya_code": "09",
+    "wilaya_name": "Blida",
+    "lat": 36.497688,
+    "lng": 2.830688,
+    "geo_precision": "exact",
+    "surface_total_m2": 56000,
+    "surface_built_m2": 1200,
+    "dates": {
+      "p23": "2018-03-14",
+      "p24": "2018-11-01"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 28,
+      "P13": 16,
+      "P14": 13,
+      "P15": 12,
+      "P16": 60,
+      "P17": 250,
+      "P18": 50,
+      "P19": 33,
+      "P20": 81,
+      "P21": 182,
+      "P22": 1205,
+      "P25": 11750
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "DSP 0552 53 10 09",
+      "emergency": "CHU franz fanoun 025 20 90 46"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 55,
+    "sogral_code": "213-000009021",
+    "name": "LARBAA",
+    "city": "LARBAA",
+    "official_name": "Gare routière Echahid Tetbirt Mohamed",
+    "address": "Rue Kebir Mohamed Larbaa",
+    "wilaya_code": "09",
+    "wilaya_name": "Blida",
+    "lat": 36.565938,
+    "lng": 3.149312,
+    "geo_precision": "exact",
+    "surface_total_m2": 14000,
+    "surface_built_m2": 500,
+    "dates": {
+      "p23": "2018-04-01",
+      "p24": "2018-07-01"
+    },
+    "metrics": {
+      "P11": 15,
+      "P12": 19,
+      "P14": 5,
+      "P15": 12,
+      "P19": 7,
+      "P21": 50,
+      "P22": 210,
+      "P25": 6000
+    },
+    "amenities": {
+      "P29": true,
+      "P35": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 025 34 10 18",
+      "emergency": "Hopital de larabaa: 025 46 98 72"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 5,
+    "sogral_code": "213-000010001",
+    "name": "BOUIRA",
+    "city": "BOUIRA",
+    "official_name": "Gare routière Aigoune Mohamed Dit Antar",
+    "address": "Route nationale N°18 Vers Aïn Bessem Bouira.",
+    "wilaya_code": "10",
+    "wilaya_name": "Bouira",
+    "lat": 36.3676875,
+    "lng": 3.8710625,
+    "geo_precision": "exact",
+    "surface_total_m2": 41300,
+    "surface_built_m2": 1290,
+    "dates": {
+      "p23": "2011-06-08",
+      "p24": "2011-07-01"
+    },
+    "metrics": {
+      "P11": 150,
+      "P12": 47,
+      "P13": 1,
+      "P14": 8,
+      "P15": 8,
+      "P16": 30,
+      "P17": 150,
+      "P18": 135,
+      "P19": 18,
+      "P20": 1,
+      "P21": 130,
+      "P22": 213,
+      "P25": 2300
+    },
+    "amenities": {
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "026939706 Wilaya",
+      "emergency": "eph Bouira  026 93 70 50"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 70,
+    "sogral_code": "213-000010038",
+    "name": "SOUR EL GHOZLANE",
+    "city": "SOUR EL GHOZLANE",
+    "official_name": "Gare routière Mansouri El Mougafi",
+    "address": "Route nationale n°08 Sour El Ghozlane",
+    "wilaya_code": "10",
+    "wilaya_name": "Bouira",
+    "lat": 36.134812,
+    "lng": 3.694187,
+    "geo_precision": "exact",
+    "surface_total_m2": 15000,
+    "surface_built_m2": 723,
+    "dates": {
+      "p23": "2011-06-08",
+      "p24": "2011-09-19"
+    },
+    "metrics": {
+      "P11": 60,
+      "P12": 9,
+      "P14": 1,
+      "P15": 3,
+      "P17": 40,
+      "P19": 3,
+      "P21": 30,
+      "P22": 85,
+      "P25": 2300
+    },
+    "amenities": {
+      "P29": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "026756001",
+      "emergency": "026 75 66 55"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 12,
+    "sogral_code": "213-000011001",
+    "name": "TAMANRASSET",
+    "city": "TAMANGHASSET",
+    "official_name": "Gare routière El Moudjahid Zennani Abderrahmane",
+    "address": "Zone D'activité TDC Tamanrasset",
+    "wilaya_code": "11",
+    "wilaya_name": "Tamanrasset",
+    "lat": 22.817813,
+    "lng": 5.489688,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 1507,
+    "dates": {
+      "p23": "2013-08-02",
+      "p24": "2013-12-02"
+    },
+    "metrics": {
+      "P11": 35,
+      "P12": 18,
+      "P13": 20,
+      "P19": 8,
+      "P20": 102,
+      "P25": 280
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "wilaya 029 30 03 04",
+      "emergency": "Hopital tamnrasset 029 32 66 20"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 51,
+    "sogral_code": "213-000011008",
+    "name": "IN SALEH",
+    "city": "AIN SALAH",
+    "official_name": "Gare routière Ain Salah",
+    "address": "Zone Industrielle Ain Salah",
+    "wilaya_code": "11",
+    "wilaya_name": "Tamanrasset",
+    "lat": 27.199438,
+    "lng": 2.478187,
+    "geo_precision": "exact",
+    "surface_total_m2": 30000,
+    "surface_built_m2": 1420,
+    "dates": {
+      "p23": "2013-08-01",
+      "p24": "2018-03-26"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 19,
+      "P13": 24,
+      "P19": 6,
+      "P25": 205
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P32": true,
+      "P35": true,
+      "P36": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 029 36 53 44",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER:\r\n+213 29 36 10 19\r\n+213 29 36 11 47"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 16,
+    "sogral_code": "213-000012001",
+    "name": "TEBESSA",
+    "city": "TEBESSA",
+    "official_name": "Gare routière El Moudjahid Hocine Ait Ahmed",
+    "address": "Route de Constantine Tébessa",
+    "wilaya_code": "12",
+    "wilaya_name": "Tébessa",
+    "lat": 35.429562,
+    "lng": 8.048563,
+    "geo_precision": "exact",
+    "surface_total_m2": 57439,
+    "surface_built_m2": 4068,
+    "dates": {
+      "p23": "2016-02-19",
+      "p24": "2016-07-21"
+    },
+    "metrics": {
+      "P11": 55,
+      "P12": 98,
+      "P13": 47,
+      "P14": 3,
+      "P16": 10,
+      "P17": 150,
+      "P19": 14,
+      "P20": 75,
+      "P21": 5,
+      "P25": 875
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 037.56.27.12/11",
+      "emergency": "EPH   BOUGUERRA  BOULAARAS  BEKKARIA:\r\n037 40 85 77"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 31,
+    "sogral_code": "213-000012002",
+    "name": "BIR EL ATER",
+    "city": "BIR EL ATER",
+    "official_name": "Gare routière El Moudjahid Berai Salah Ben Ibrahim",
+    "address": "Route nationale n°16 Bir El Ater",
+    "wilaya_code": "12",
+    "wilaya_name": "Tébessa",
+    "lat": 34.770438,
+    "lng": 8.059188,
+    "geo_precision": "exact",
+    "surface_total_m2": 10000,
+    "surface_built_m2": 1106,
+    "dates": {
+      "p23": "2015-01-06",
+      "p24": "2015-09-03"
+    },
+    "metrics": {
+      "P12": 20,
+      "P13": 1,
+      "P14": 1,
+      "P15": 2,
+      "P18": 30,
+      "P19": 5,
+      "P20": 5,
+      "P21": 28,
+      "P22": 6,
+      "P25": 200
+    },
+    "amenities": {
+      "P33": true,
+      "P34": true,
+      "P35": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "apc bir El Ater Cité Houari Boumediene",
+      "emergency": "Hopital Dr Tidjani Haddam Bir El Ater"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 38,
+    "sogral_code": "213-000012003",
+    "name": "CHREA",
+    "city": "CHERIA",
+    "official_name": "Gare routière Chréa",
+    "address": "Route Elma Lebiodh Chréa",
+    "wilaya_code": "12",
+    "wilaya_name": "Tébessa",
+    "lat": 35.271063,
+    "lng": 7.751187,
+    "geo_precision": "exact",
+    "surface_total_m2": 10000,
+    "surface_built_m2": 1106,
+    "dates": {
+      "p23": "2015-01-06",
+      "p24": "2016-01-20"
+    },
+    "metrics": {
+      "P11": 10,
+      "P12": 15,
+      "P13": 5,
+      "P14": 3,
+      "P15": 2,
+      "P17": 10,
+      "P19": 5,
+      "P20": 11,
+      "P21": 4,
+      "P22": 44,
+      "P25": 600
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P38": true
+    },
+    "contacts": {
+      "administrative": "APC:  025 31 91 33",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER:\r\n+213 25 47 14 10\r\n+213 25 47 14 09"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 78,
+    "sogral_code": "213-000012019",
+    "name": "OUENZA",
+    "city": "OUENZA",
+    "official_name": "Gare routière 18 Février Ouenza",
+    "address": "Zone D'activité El Ouenza",
+    "wilaya_code": "12",
+    "wilaya_name": "Tébessa",
+    "lat": 35.953946,
+    "lng": 8.127779,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 800,
+    "dates": {
+      "p23": "2015-01-06",
+      "p24": "2016-01-17"
+    },
+    "metrics": {
+      "P11": 10,
+      "P12": 15,
+      "P13": 3,
+      "P14": 1,
+      "P15": 2,
+      "P17": 55,
+      "P19": 5,
+      "P20": 8,
+      "P21": 2,
+      "P22": 40,
+      "P25": 550
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P38": true
+    },
+    "contacts": {
+      "administrative": "APC: 037 62 80 93",
+      "emergency": "HOPITAL DU DR FOUAD BOUGRARA ( OUENZA ):\r\n+213 37 46 97 02\r\n+213 37 46 99 67"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 7,
+    "sogral_code": "213-000013001",
+    "name": "TLEMCEN",
+    "city": "TLEMCEN",
+    "official_name": "Gare routière Yahia Bachir",
+    "address": "Abou Techfine Tlemcen",
+    "wilaya_code": "13",
+    "wilaya_name": "Tlemcen",
+    "lat": 34.9069375,
+    "lng": -1.3331875,
+    "geo_precision": "exact",
+    "surface_total_m2": 70673,
+    "surface_built_m2": 3902,
+    "dates": {
+      "p23": "2017-09-16",
+      "p24": "2017-09-17"
+    },
+    "metrics": {
+      "P11": 110,
+      "P12": 80,
+      "P13": 56,
+      "P14": 73,
+      "P15": 15,
+      "P16": 300,
+      "P17": 500,
+      "P19": 15,
+      "P20": 55,
+      "P21": 73,
+      "P22": 2,
+      "P25": 3000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "043261779 wilaya",
+      "emergency": "CHU Tlemcen 0798491927"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 66,
+    "sogral_code": "213-000013035",
+    "name": "SEBDOU",
+    "city": "SEBDOU",
+    "official_name": "Gare routière Sebdou",
+    "address": "Cité Tebouda Sebdou",
+    "wilaya_code": "13",
+    "wilaya_name": "Tlemcen",
+    "lat": 34.656563,
+    "lng": 1.308187,
+    "geo_precision": "exact",
+    "surface_total_m2": 45000,
+    "surface_built_m2": 292,
+    "dates": {
+      "p23": "2018-11-26",
+      "p24": "2019-01-02"
+    },
+    "metrics": {
+      "P11": 45,
+      "P12": 25,
+      "P15": 1,
+      "P18": 26,
+      "P19": 11,
+      "P22": 32,
+      "P25": 1000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true
+    },
+    "contacts": {
+      "administrative": "APC: 043 34 43 09",
+      "emergency": "EPSP  Sebdou : 043 54 77 80"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 81,
+    "sogral_code": "213-000013027",
+    "name": "MAGHENIA",
+    "city": "MAGHNIA",
+    "official_name": "Gare routière Maghnia",
+    "address": "Cité djerba Maghnia",
+    "wilaya_code": "13",
+    "wilaya_name": "Tlemcen",
+    "lat": 34.841313,
+    "lng": 1.773312,
+    "geo_precision": "exact",
+    "surface_total_m2": 63513,
+    "surface_built_m2": 545492,
+    "dates": {
+      "p23": "2021-08-01",
+      "p24": "2021-12-23"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 60,
+      "P13": 3,
+      "P15": 3,
+      "P16": 230,
+      "P17": 240,
+      "P18": 24,
+      "P19": 16,
+      "P20": 4,
+      "P22": 53,
+      "P25": 5000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P35": true,
+      "P36": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 043 39 76 81",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER:\r\n043-51-65-64\r\n043-51-65-44"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 71,
+    "sogral_code": "213-000014001",
+    "name": "TIARET",
+    "city": "TIARET",
+    "official_name": "Gare routière Echahid Yettouche El Hadj",
+    "address": "Route de Ain Guessam Tiaret",
+    "wilaya_code": "14",
+    "wilaya_name": "Tiaret",
+    "lat": 35.344812,
+    "lng": 1.328187,
+    "geo_precision": "exact",
+    "surface_total_m2": 40000,
+    "surface_built_m2": 3000,
+    "dates": {
+      "p23": "2019-06-13",
+      "p24": "2019-11-01"
+    },
+    "metrics": {
+      "P11": 30,
+      "P12": 11,
+      "P13": 16,
+      "P14": 3,
+      "P15": 12,
+      "P17": 412,
+      "P19": 11,
+      "P20": 21,
+      "P21": 41,
+      "P22": 200,
+      "P25": 5000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P32": true,
+      "P35": true,
+      "P38": true,
+      "P39": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 046 41 71 71/ 046 41 52 52",
+      "emergency": "Etablissements Publics Hospitaliers:\r\n+213 46 46 66 68\r\n+213 46 46 33 62"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 1,
+    "sogral_code": "213-000016000",
+    "name": "ALGER",
+    "city": "ALGER",
+    "official_name": "La gare routière des Grands Invalides de la guerre de libération nationale",
+    "address": "Avenue de L’ALN B.P n°412 – 16040 – Hussein Dey (Alger)",
+    "wilaya_code": "16",
+    "wilaya_name": "Alger",
+    "lat": 36.7425,
+    "lng": 3.108,
+    "geo_precision": "exact",
+    "surface_total_m2": 13000,
+    "surface_built_m2": 8000,
+    "dates": {
+      "p23": "1994-08-16",
+      "p24": "1994-03-31"
+    },
+    "metrics": {
+      "P11": 120,
+      "P12": 75,
+      "P13": 126,
+      "P14": 34,
+      "P15": 3,
+      "P16": 190,
+      "P18": 217,
+      "P19": 93,
+      "P20": 859,
+      "P21": 365,
+      "P22": 117,
+      "P25": 15159
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P35": true,
+      "P36": true,
+      "P37": true,
+      "P38": true,
+      "P39": true,
+      "P40": true,
+      "P42": true
+    },
+    "contacts": {
+      "administrative": "Wilaya D'Alger 021 73 00 73\r\ndirection transport Alger :  1, chemin Ibn Badis El Mouiz (ex Poirson), El Biar, 16030 Alger.",
+      "emergency": "Centre Hostpitalier universitair Mustapha bacha 021 23 55 55 \r\nHopital Ben aknoun 023 38 41 20 \r\nHopital Bitraria 021 99 00 10"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 11,
+    "sogral_code": "213-000017001",
+    "name": "DJELFA",
+    "city": "DJELFA",
+    "official_name": "Gare routière Djelfa",
+    "address": "Route nationale N°46 route de Boussaâda Djelfa",
+    "wilaya_code": "17",
+    "wilaya_name": "Djelfa",
+    "lat": 34.679688,
+    "lng": 3.292063,
+    "geo_precision": "exact",
+    "surface_total_m2": 60000,
+    "surface_built_m2": 1950,
+    "dates": {
+      "p23": "2011-05-19",
+      "p24": "2011-06-01"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 14,
+      "P13": 15,
+      "P14": 4,
+      "P15": 1,
+      "P16": 41,
+      "P17": 250,
+      "P18": 84,
+      "P19": 25,
+      "P20": 33,
+      "P21": 137,
+      "P22": 20,
+      "P25": 3267
+    },
+    "amenities": {
+      "P28": true,
+      "P35": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "Wilaya 027 92 14 14",
+      "emergency": "SEMEP DJELFA 027 89 14 27"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 25,
+    "sogral_code": "213-000017031",
+    "name": "AIN OUSSARA",
+    "city": "AIN OUSSERA",
+    "official_name": "Gare routière Ain Oussara",
+    "address": "Cité Ahmed Zabana route nationale n°01 Ain Oussara",
+    "wilaya_code": "17",
+    "wilaya_name": "Djelfa",
+    "lat": 35.463,
+    "lng": 2.9,
+    "geo_precision": "exact",
+    "surface_total_m2": 35000,
+    "surface_built_m2": 1000,
+    "dates": {
+      "p23": "2011-06-01",
+      "p24": "2011-10-01"
+    },
+    "metrics": {
+      "P11": 75,
+      "P12": 10,
+      "P14": 2,
+      "P15": 5,
+      "P17": 165,
+      "P19": 10,
+      "P21": 70,
+      "P22": 213,
+      "P25": 4150
+    },
+    "amenities": {
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 027 94 26 78",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: \r\n027 80 14 61"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 49,
+    "sogral_code": "213-000017004",
+    "name": "HASSI BAHBAH",
+    "city": "HASSI BAHBAH",
+    "official_name": "Gare routière Hassi Bahbah",
+    "address": "Cité El souk Hassi Bahbah",
+    "wilaya_code": "17",
+    "wilaya_name": "Djelfa",
+    "lat": 35.064688,
+    "lng": 3.033188,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 1000,
+    "dates": {
+      "p23": "2011-06-01",
+      "p24": "2017-01-22"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 10,
+      "P15": 2,
+      "P17": 50,
+      "P19": 10,
+      "P22": 50,
+      "P25": 100
+    },
+    "amenities": {},
+    "contacts": {
+      "administrative": "APC: 027 96 53 71",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: 027 86 29 46"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 82,
+    "sogral_code": "213-000017017",
+    "name": "MESSAAD",
+    "city": "MESSAAD",
+    "official_name": "Gare routière Messaad",
+    "address": "Route Ain El Ibel Messaad",
+    "wilaya_code": "17",
+    "wilaya_name": "Djelfa",
+    "lat": 34.153051451328494,
+    "lng": 3.472476976422937,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 1000,
+    "dates": {
+      "p23": "2011-06-01",
+      "p24": "2012-01-01"
+    },
+    "metrics": {
+      "P11": 30,
+      "P12": 10,
+      "P15": 1,
+      "P16": 40,
+      "P17": 60,
+      "P19": 10,
+      "P22": 44,
+      "P25": 920
+    },
+    "amenities": {},
+    "contacts": {
+      "administrative": "APC: 027 98 80 83",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER:\r\n+213 27 85 61 07\r\n+213 27 85 62 40"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 8,
+    "sogral_code": "213-000018001",
+    "name": "JIJEL",
+    "city": "JIJEL",
+    "official_name": "Gare routière Jijel",
+    "address": "Cité de la gare ferroviaire Jijel",
+    "wilaya_code": "18",
+    "wilaya_name": "Jijel",
+    "lat": 36.809687,
+    "lng": 5.772562,
+    "geo_precision": "exact",
+    "surface_total_m2": 26500,
+    "surface_built_m2": 1840,
+    "dates": {
+      "p23": "2003-11-18",
+      "p24": "2004-02-01"
+    },
+    "metrics": {
+      "P11": 90,
+      "P12": 23,
+      "P13": 15,
+      "P14": 9,
+      "P15": 18,
+      "P16": 5,
+      "P17": 160,
+      "P18": 544,
+      "P19": 21,
+      "P20": 120,
+      "P21": 143,
+      "P22": 1840,
+      "P25": 26474
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "034472230 wilaya",
+      "emergency": "Hopial Mohamed seddik Ben yahia  034 47 23 00"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 19,
+    "sogral_code": "213-000019001",
+    "name": "SETIF",
+    "city": "SETIF",
+    "official_name": "Gare routière Mohamed Boudiaf Sétif",
+    "address": "Cité Mohamed Boudiaf Sétif",
+    "wilaya_code": "19",
+    "wilaya_name": "Sétif",
+    "lat": 36.1845625,
+    "lng": 5.3933125,
+    "geo_precision": "exact",
+    "surface_total_m2": 4000,
+    "surface_built_m2": 1200,
+    "dates": {
+      "p23": "2016-02-26",
+      "p24": "2016-07-01"
+    },
+    "metrics": {
+      "P11": 45,
+      "P12": 57,
+      "P13": 33,
+      "P14": 9,
+      "P15": 42,
+      "P16": 150,
+      "P17": 1200,
+      "P18": 1000,
+      "P19": 32,
+      "P20": 200,
+      "P21": 136,
+      "P22": 348,
+      "P25": 20000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P37": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "036617240 wilaya de setif",
+      "emergency": "CHU Saadna Abdenour 036 44 89 55"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 65,
+    "sogral_code": "213-000020001",
+    "name": "SAIDA",
+    "city": "SAIDA",
+    "official_name": "Gare routière Saida",
+    "address": "Route nationale n°94 Saida",
+    "wilaya_code": "20",
+    "wilaya_name": "Saida",
+    "lat": 34.836188,
+    "lng": 0.173312,
+    "geo_precision": "exact",
+    "surface_total_m2": 67000,
+    "surface_built_m2": 2252,
+    "dates": {
+      "p23": "2013-09-09",
+      "p24": "2013-11-01"
+    },
+    "metrics": {
+      "P11": 60,
+      "P12": 38,
+      "P13": 9,
+      "P14": 9,
+      "P15": 11,
+      "P17": 163,
+      "P18": 320,
+      "P19": 19,
+      "P20": 25,
+      "P21": 84,
+      "P22": 140,
+      "P25": 5500
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P36": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC:  048 41 32 06/07",
+      "emergency": "Hopital Ahmed Medghri Saida: 048.38.26.56"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 68,
+    "sogral_code": "213-000020009",
+    "name": "SIDI BOUBKER",
+    "city": "SIDI BOUBEKEUR",
+    "official_name": "Gare routière Echahid Fedah Abdelkader",
+    "address": "Commune Sdi Boubkeur saida",
+    "wilaya_code": "20",
+    "wilaya_name": "Saida",
+    "lat": 35.04250642326382,
+    "lng": 0.05814938745841031,
+    "geo_precision": "exact",
+    "surface_total_m2": 10995,
+    "surface_built_m2": 537,
+    "dates": {
+      "p23": "2014-07-31",
+      "p24": "2016-03-01"
+    },
+    "metrics": {
+      "P11": 15,
+      "P12": 7,
+      "P15": 3,
+      "P19": 7,
+      "P22": 23,
+      "P25": 1200
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 048 50 40 27",
+      "emergency": "EPH Sadouki Abdelkader Sidi Boubekeur - Saïda:\r\n048 32 51 02"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 69,
+    "sogral_code": "213-000020014",
+    "name": "OULED BRAHIM",
+    "city": "OULED BRAHIM",
+    "official_name": "Gare routière Echahid Boukhacha Moulai El Arbi",
+    "address": "Commune de Ouled Brahim Saida",
+    "wilaya_code": "20",
+    "wilaya_name": "Saida",
+    "lat": 34.985938,
+    "lng": 0.473937,
+    "geo_precision": "exact",
+    "surface_total_m2": 9951,
+    "surface_built_m2": 380,
+    "dates": {
+      "p23": "2014-07-31",
+      "p24": "2014-11-17"
+    },
+    "metrics": {
+      "P11": 25,
+      "P12": 4,
+      "P19": 6,
+      "P22": 28,
+      "P25": 1200
+    },
+    "amenities": {
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P36": true,
+      "P38": true
+    },
+    "contacts": {
+      "administrative": "APC: 025 74 72 89",
+      "emergency": "Etablissements Publics Hospitaliers:\r\n+213 25 57 71 76\r\n+213 25 57 93 05\r\n+213 25 57 93 10"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 20,
+    "sogral_code": "213-000022001",
+    "name": "SIDI BEL ABBES",
+    "city": "SIDI BEL ABBES",
+    "official_name": "Gare routiére Echahid Ben Amiar Slimane dit Kheireddine.",
+    "address": "Route nationale nord Sidi Djilali Sidi Bel Abbès",
+    "wilaya_code": "22",
+    "wilaya_name": "Sidi-Bel-Abbès",
+    "lat": 35.2230625,
+    "lng": -0.6291875,
+    "geo_precision": "exact",
+    "surface_total_m2": 35343,
+    "surface_built_m2": 3361,
+    "dates": {
+      "p23": "2011-04-19",
+      "p24": "2011-04-28"
+    },
+    "metrics": {
+      "P11": 42,
+      "P12": 51,
+      "P13": 33,
+      "P14": 5,
+      "P16": 14,
+      "P17": 225,
+      "P19": 12,
+      "P20": 81,
+      "P21": 2,
+      "P25": 3050
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P38": true,
+      "P40": true
+    },
+    "contacts": {
+      "administrative": "Daira 048576956",
+      "emergency": "CHU Hassani Abdelkader 048 54 43 92"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 9,
+    "sogral_code": "213-000023001",
+    "name": "ANNABA",
+    "city": "ANNABA",
+    "official_name": "Gare routière Mohamed Mounib Sendid",
+    "address": "Route nationale N°44 El Bouni Annaba",
+    "wilaya_code": "23",
+    "wilaya_name": "Annaba",
+    "lat": 36.860313,
+    "lng": 7.711688,
+    "geo_precision": "exact",
+    "surface_total_m2": 60000,
+    "surface_built_m2": 1899,
+    "dates": {
+      "p23": "2015-09-17",
+      "p24": "2015-12-16"
+    },
+    "metrics": {
+      "P11": 100,
+      "P12": 52,
+      "P13": 29,
+      "P14": 9,
+      "P15": 1,
+      "P16": 38,
+      "P18": 20,
+      "P19": 14,
+      "P20": 116,
+      "P21": 179,
+      "P22": 30,
+      "P25": 1690
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "wilaya 0038448120",
+      "emergency": "CHU Annaba 0658085273"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 83,
+    "sogral_code": "213-000023001",
+    "name": "SIDI BRAHIM",
+    "city": "ANNABA",
+    "official_name": "Gare routière Sidi Brahim",
+    "address": "Avenue de l'ALN  Annaba",
+    "wilaya_code": "23",
+    "wilaya_name": "Annaba",
+    "lat": 36.890589205868444,
+    "lng": 7.750662019555378,
+    "geo_precision": "exact",
+    "surface_total_m2": 14000,
+    "surface_built_m2": 1400,
+    "dates": {
+      "p23": "2018-02-12",
+      "p24": "2018-02-12"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 35,
+      "P14": 2,
+      "P15": 10,
+      "P18": 200,
+      "P19": 11,
+      "P21": 8,
+      "P22": 160,
+      "P25": 6000
+    },
+    "amenities": {},
+    "contacts": {
+      "administrative": "APC: 048 68 34 37",
+      "emergency": "048 70 01 85."
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 85,
+    "sogral_code": "213-000024001",
+    "name": "GUELMA",
+    "city": "GUELMA",
+    "official_name": "Gare routière El Moudjahid Décédé Boudefa Ahmed",
+    "address": "Route stratégique n 21 Guelma",
+    "wilaya_code": "24",
+    "wilaya_name": "Guelma",
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "surface_total_m2": 25328,
+    "surface_built_m2": 2169,
+    "dates": {
+      "p23": null,
+      "p24": "2025-07-15"
+    },
+    "metrics": {
+      "P11": 52,
+      "P12": 74,
+      "P13": 15,
+      "P15": 22,
+      "P16": 120,
+      "P17": 80,
+      "P18": 40,
+      "P19": 35,
+      "P20": 135,
+      "P21": 579
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": null,
+      "emergency": null
+    },
+    "data_flags": [
+      "coords_invalid"
+    ],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 22,
+    "sogral_code": "213-000025001",
+    "name": "CONSTANTINE - SAHRAOUI TAHAR",
+    "city": "CONSTANTINE",
+    "official_name": "Gare de l'Est Sahraoui Tahar Constantine",
+    "address": "Cité Bentellis Constantine",
+    "wilaya_code": "25",
+    "wilaya_name": "Constantine",
+    "lat": 36.352313,
+    "lng": 6.622563,
+    "geo_precision": "exact",
+    "surface_total_m2": 21027,
+    "surface_built_m2": 1577,
+    "dates": {
+      "p23": "2016-05-12",
+      "p24": "2016-08-20"
+    },
+    "metrics": {
+      "P11": 150,
+      "P12": 14,
+      "P13": 14,
+      "P14": 14,
+      "P15": 4,
+      "P16": 100,
+      "P17": 200,
+      "P18": 10,
+      "P19": 19,
+      "P20": 29,
+      "P21": 330,
+      "P22": 60,
+      "P25": 2120
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC 031 87 43 55",
+      "emergency": "Etablissement Public Hospitalier: 031-83 13 59"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 39,
+    "sogral_code": "213-000025001",
+    "name": "CONSTANTINE - POLE D'ECHANGE",
+    "city": "CONSTANTINE",
+    "official_name": "Gare routière Palma Constantine",
+    "address": "zone industrielle 01 palma Constantine.",
+    "wilaya_code": "25",
+    "wilaya_name": "Constantine",
+    "lat": 36.328563,
+    "lng": 6.584813,
+    "geo_precision": "exact",
+    "surface_total_m2": 2102799,
+    "surface_built_m2": 0,
+    "dates": {
+      "p23": "2014-09-30",
+      "p24": "2014-10-30"
+    },
+    "metrics": {
+      "P11": 10,
+      "P12": 13,
+      "P13": 1,
+      "P14": 6,
+      "P15": 5,
+      "P16": 100,
+      "P17": 40,
+      "P19": 1,
+      "P20": 3,
+      "P21": 3,
+      "P22": 2,
+      "P25": 5000
+    },
+    "amenities": {},
+    "contacts": {
+      "administrative": "APC: 031 87 43 55",
+      "emergency": "Etablissement Public Hospitalier : 031-83 13 59"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 40,
+    "sogral_code": "213-000025001",
+    "name": "CONSTANTINE - ALI MENDJILI",
+    "city": "CONSTANTINE",
+    "official_name": "Gare routière Ali Mendjeli",
+    "address": "Nouvelle ville universitaire 2 Ali Mendjeli El khroub",
+    "wilaya_code": "25",
+    "wilaya_name": "Constantine",
+    "lat": 36.260313,
+    "lng": 6.574063,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 10000,
+    "dates": {
+      "p23": "2014-09-30",
+      "p24": "2014-10-30"
+    },
+    "metrics": {
+      "P11": 90,
+      "P12": 25,
+      "P13": 17,
+      "P14": 1,
+      "P18": 10,
+      "P19": 22,
+      "P20": 100,
+      "P21": 4,
+      "P25": 610
+    },
+    "amenities": {
+      "P28": true,
+      "P31": true,
+      "P35": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "sonalgaz 031 77 75 23",
+      "emergency": "Hopital Melitaire ali mendjli"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 57,
+    "sogral_code": "213-000026001",
+    "name": "MEDEA",
+    "city": "MEDEA",
+    "official_name": "Gare routière Mèdea",
+    "address": "Route nationale N°1 Médea",
+    "wilaya_code": "26",
+    "wilaya_name": "Médéa",
+    "lat": 36.2751109,
+    "lng": 2.7221233,
+    "geo_precision": "exact",
+    "surface_total_m2": 17000,
+    "surface_built_m2": 1750,
+    "dates": {
+      "p23": "2012-10-07",
+      "p24": "2012-12-02"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 39,
+      "P14": 7,
+      "P15": 13,
+      "P16": 35,
+      "P17": 30,
+      "P18": 20,
+      "P19": 12,
+      "P21": 12,
+      "P22": 26,
+      "P25": 3500
+    },
+    "amenities": {
+      "P35": true
+    },
+    "contacts": {
+      "administrative": "APC: 025 78 20 40",
+      "emergency": "Hopital Moihamed Boudiaf 028 58 23 58"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 14,
+    "sogral_code": "213-000027001",
+    "name": "MOSTAGANEM",
+    "city": "MOSTAGANEM",
+    "official_name": "Gare routiére 5 Juillet 1962",
+    "address": "cité 05 Juillet 1962 Mostaganem",
+    "wilaya_code": "27",
+    "wilaya_name": "Mostaganem",
+    "lat": 35.9168125,
+    "lng": 0.1070625,
+    "geo_precision": "exact",
+    "surface_total_m2": 29285,
+    "surface_built_m2": 296243,
+    "dates": {
+      "p23": "2012-10-01",
+      "p24": "2012-10-09"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 28,
+      "P13": 19,
+      "P14": 3,
+      "P15": 9,
+      "P16": 50,
+      "P18": 35,
+      "P19": 16,
+      "P20": 69,
+      "P21": 6,
+      "P22": 362,
+      "P25": 4100
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "Ansej 045 20 20 26",
+      "emergency": "EHS Psychiatrie 045 39 68 67"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 58,
+    "sogral_code": "213-000028001",
+    "name": "M'SILA",
+    "city": "MSILA",
+    "official_name": "Gare routière Echahid Didouche Mourad",
+    "address": "Cité Sonitex M'sila",
+    "wilaya_code": "28",
+    "wilaya_name": "M'Sila",
+    "lat": 35.707812,
+    "lng": 4.520313,
+    "geo_precision": "exact",
+    "surface_total_m2": 30000,
+    "surface_built_m2": 840,
+    "dates": {
+      "p23": "2012-12-10",
+      "p24": "2013-05-24"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 24,
+      "P13": 2,
+      "P14": 2,
+      "P15": 2,
+      "P16": 4,
+      "P17": 12,
+      "P19": 11,
+      "P20": 6,
+      "P21": 4,
+      "P22": 28,
+      "P25": 400
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P36": true,
+      "P38": true
+    },
+    "contacts": {
+      "administrative": "APC: 035 33 07 77/ 035 33 07 72",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: 035.55.8326"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 35,
+    "sogral_code": "213-000029100",
+    "name": "BOUHNIFIFIA",
+    "city": "HAMMAM BOUHANIFIA",
+    "official_name": "Gare routière Chahid Djaizi Abdelkader",
+    "address": "Cité Mekid Djilali Bouhanifia",
+    "wilaya_code": "29",
+    "wilaya_name": "Mascara",
+    "lat": 35.315813,
+    "lng": 0.051938,
+    "geo_precision": "exact",
+    "surface_total_m2": 13000,
+    "surface_built_m2": 1200,
+    "dates": {
+      "p23": "2018-03-19",
+      "p24": "2018-03-19"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 15,
+      "P14": 1,
+      "P15": 1,
+      "P19": 13,
+      "P21": 15,
+      "P22": 66,
+      "P25": 500
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P36": true
+    },
+    "contacts": {
+      "administrative": "APC: 045 76 78 29",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: (045) 71 40 40"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 4,
+    "sogral_code": "213-000030001",
+    "name": "OUARGLA",
+    "city": "OUARGLA",
+    "official_name": "Gare routière 11 Décembre 1960",
+    "address": "Croisés des chemins Ghardaïa El Menia route des poids lourd",
+    "wilaya_code": "30",
+    "wilaya_name": "Ouargla",
+    "lat": 31.936938,
+    "lng": 5.282062,
+    "geo_precision": "exact",
+    "surface_total_m2": 60000,
+    "surface_built_m2": 2946,
+    "dates": {
+      "p23": "2013-10-31",
+      "p24": "2014-07-31"
+    },
+    "metrics": {
+      "P11": 120,
+      "P12": 35,
+      "P13": 88,
+      "P14": 6,
+      "P15": 3,
+      "P16": 205,
+      "P17": 13,
+      "P19": 19,
+      "P20": 253,
+      "P21": 130,
+      "P22": 102,
+      "P25": 3039
+    },
+    "amenities": {
+      "P28": true,
+      "P31": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "Wilaya 029769066",
+      "emergency": "Hopital Mouhamed Boudiaf \r\n029 70 37 46"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 86,
+    "sogral_code": "213-000030013",
+    "name": "TOUGGOURT",
+    "city": "TOUGGOURT",
+    "official_name": "Gare routière Didouche Mourad TOUGGOURT",
+    "address": "Rue les dunes 01 commune Touggourt",
+    "wilaya_code": "30",
+    "wilaya_name": "Ouargla",
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "surface_total_m2": 60000,
+    "surface_built_m2": 2500,
+    "dates": {
+      "p23": "2018-01-01",
+      "p24": "2018-01-01"
+    },
+    "metrics": {
+      "P11": 85,
+      "P12": 42,
+      "P13": 6,
+      "P14": 7,
+      "P15": 10,
+      "P16": 40,
+      "P17": 15,
+      "P19": 15,
+      "P20": 50,
+      "P21": 20,
+      "P22": 10,
+      "P25": 1800
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": null,
+      "emergency": null
+    },
+    "data_flags": [
+      "coords_invalid"
+    ],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 43,
+    "sogral_code": "213-000032001",
+    "name": "EL BAYADH",
+    "city": "EL BAYADH",
+    "official_name": "Gare routière Martyrs Frères Sayad",
+    "address": "Rue d’Aflou El Bayadh",
+    "wilaya_code": "32",
+    "wilaya_name": "El-Bayadh",
+    "lat": 33.6701875,
+    "lng": 1.0276875,
+    "geo_precision": "exact",
+    "surface_total_m2": 19370,
+    "surface_built_m2": 600,
+    "dates": {
+      "p23": "2013-05-30",
+      "p24": "2013-07-05"
+    },
+    "metrics": {
+      "P11": 50,
+      "P12": 24,
+      "P13": 21,
+      "P14": 3,
+      "P15": 7,
+      "P17": 320,
+      "P19": 11,
+      "P20": 28,
+      "P21": 31,
+      "P22": 137,
+      "P25": 4560
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 049 61 32 57",
+      "emergency": "Hospitalier Mohamed-Boudiaf: \r\n+213 49 71 41 24\r\n+213 49 71 30 01\r\n+213 49 71 00 02\r\n+213 49 71 00 02\r\n+213 49 71 30 01"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 50,
+    "sogral_code": "213-000033006",
+    "name": "IN AMENAS",
+    "city": "AIN AMENAS",
+    "official_name": "Gare routière Laheza Bobo In Amenas",
+    "address": "In Amenas Wilaya d'Illizi",
+    "wilaya_code": "33",
+    "wilaya_name": "Illizi",
+    "lat": 28.037812,
+    "lng": 9.562312,
+    "geo_precision": "exact",
+    "surface_total_m2": 20500,
+    "surface_built_m2": 2065,
+    "dates": {
+      "p23": "2018-03-14",
+      "p24": "2019-01-06"
+    },
+    "metrics": {
+      "P11": 30,
+      "P12": 30,
+      "P13": 21,
+      "P16": 1,
+      "P19": 8,
+      "P20": 57,
+      "P25": 300
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P36": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 029 45 70 46",
+      "emergency": "HOPITAL DE AIN AMMENAS: 029 43 93 11"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 84,
+    "sogral_code": "213-000033001",
+    "name": "ILLIZI",
+    "city": "ILLIZI",
+    "official_name": "Gare routière d'Illizi",
+    "address": "Route de l'aéroport Illizi",
+    "wilaya_code": "33",
+    "wilaya_name": "Illizi",
+    "lat": 26.534,
+    "lng": 8.48,
+    "geo_precision": "exact",
+    "surface_total_m2": 30000,
+    "surface_built_m2": 6095,
+    "dates": {
+      "p23": "2021-08-05",
+      "p24": "2023-07-05"
+    },
+    "metrics": {
+      "P12": 3,
+      "P13": 13,
+      "P16": 3,
+      "P17": 3,
+      "P19": 16,
+      "P20": 10,
+      "P22": 3,
+      "P25": 350
+    },
+    "amenities": {
+      "P29": true,
+      "P31": true,
+      "P36": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": null,
+      "emergency": null
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 87,
+    "sogral_code": "213-000033002",
+    "name": "DJANET",
+    "city": "DJANET",
+    "official_name": "Djanet",
+    "address": "Djanet",
+    "wilaya_code": "33",
+    "wilaya_name": "Illizi",
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "surface_total_m2": 0,
+    "surface_built_m2": 0,
+    "dates": {
+      "p23": "2026-05-07",
+      "p24": "2026-05-07"
+    },
+    "metrics": {
+      "P17": -2
+    },
+    "amenities": {},
+    "contacts": {
+      "administrative": null,
+      "emergency": null
+    },
+    "data_flags": [
+      "coords_missing",
+      "P17_negative"
+    ],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 30,
+    "sogral_code": "213-000034001",
+    "name": "BBA",
+    "city": "BORDJ-BOU-ARRERIDJ",
+    "official_name": "La gare routière Chahid Saoudi Abdelhafid",
+    "address": "Route des annassers Bordj Bou Arreridj",
+    "wilaya_code": "34",
+    "wilaya_name": "Bordj-Bou-Arreridj",
+    "lat": 36.064063,
+    "lng": 4.759187,
+    "geo_precision": "exact",
+    "surface_total_m2": 50000,
+    "surface_built_m2": 800,
+    "dates": {
+      "p23": "2018-03-14",
+      "p24": "2019-02-14"
+    },
+    "metrics": {
+      "P11": 12,
+      "P12": 70,
+      "P13": 13,
+      "P14": 5,
+      "P15": 13,
+      "P16": 80,
+      "P17": 120,
+      "P18": 70,
+      "P19": 31,
+      "P20": 100,
+      "P21": 4,
+      "P22": 184,
+      "P25": 3010
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P38": true,
+      "P40": true
+    },
+    "contacts": {
+      "administrative": "Ansej Bba 035 69 43 49",
+      "emergency": "Hopital Bouzidi lakhder 035 69 37 80"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 34,
+    "sogral_code": "213-000036002",
+    "name": "BOUHADJAR",
+    "city": "BOUHADJAR",
+    "official_name": "Gare routière Bouhadjar",
+    "address": "Ville de Bouhadjar",
+    "wilaya_code": "36",
+    "wilaya_name": "El-Tarf",
+    "lat": 36.505188,
+    "lng": 8.103937,
+    "geo_precision": "exact",
+    "surface_total_m2": 7000,
+    "surface_built_m2": 800,
+    "dates": {
+      "p23": "2015-02-20",
+      "p24": "2015-06-17"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 20,
+      "P13": 1,
+      "P14": 2,
+      "P15": 6,
+      "P17": 60,
+      "P19": 8,
+      "P20": 5,
+      "P21": 12,
+      "P22": 70,
+      "P25": 1100
+    },
+    "amenities": {},
+    "contacts": {
+      "administrative": "APC 038 32 75 06",
+      "emergency": "Etablissements Publics Hospitaliers\r\n+213 38 62 64 32\r\n+213 38 62 67 98"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 42,
+    "sogral_code": "213-000036013",
+    "name": "DREAN",
+    "city": "DREAN",
+    "official_name": "Gare routière El Moudjahid Klai Tahar",
+    "address": "croisée des chemins deux routes nationales 84/16  Dréan El Taref",
+    "wilaya_code": "36",
+    "wilaya_name": "El-Tarf",
+    "lat": 36.68981,
+    "lng": 7.73531,
+    "geo_precision": "exact",
+    "surface_total_m2": 24000,
+    "surface_built_m2": 172019,
+    "dates": {
+      "p23": "2015-10-06",
+      "p24": "2015-10-17"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 18,
+      "P13": 1,
+      "P15": 7,
+      "P16": 24,
+      "P17": 75,
+      "P18": 10,
+      "P19": 8,
+      "P20": 2,
+      "P22": 21,
+      "P25": 950
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P36": true
+    },
+    "contacts": {
+      "administrative": "l",
+      "emergency": "epsp Drean 038 38 92 75"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 23,
+    "sogral_code": "213-000037001",
+    "name": "TINDOUF",
+    "city": "TINDOUF",
+    "official_name": "Gare routière Bataille de Merkala 1956",
+    "address": "Cité El Nasr 37000 Tindouf",
+    "wilaya_code": "37",
+    "wilaya_name": "Tindouf",
+    "lat": 27.666688,
+    "lng": 8.125063,
+    "geo_precision": "exact",
+    "surface_total_m2": 8000,
+    "surface_built_m2": 2000,
+    "dates": {
+      "p23": "2012-06-03",
+      "p24": "2012-07-05"
+    },
+    "metrics": {
+      "P11": 10,
+      "P12": 6,
+      "P13": 12,
+      "P19": 9,
+      "P20": 12,
+      "P25": 220
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "049922029",
+      "emergency": "Hopital tindouf 0697 37 33 37"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 74,
+    "sogral_code": "213-000038001",
+    "name": "TISSEMSSILT",
+    "city": "TISSEMSILT",
+    "official_name": "Gare routière Dendane Abdelkader",
+    "address": "Cité Halile Tissemsilt",
+    "wilaya_code": "38",
+    "wilaya_name": "Tissemsilt",
+    "lat": 35.599738,
+    "lng": 1.785312,
+    "geo_precision": "exact",
+    "surface_total_m2": 38000,
+    "surface_built_m2": 16000,
+    "dates": {
+      "p23": "2017-09-01",
+      "p24": "2017-09-17"
+    },
+    "metrics": {
+      "P11": 60,
+      "P12": 17,
+      "P13": 4,
+      "P14": 2,
+      "P15": 8,
+      "P16": 100,
+      "P17": 200,
+      "P18": 78,
+      "P19": 15,
+      "P20": 16,
+      "P21": 4,
+      "P22": 15,
+      "P25": 6500
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P32": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P39": true,
+      "P40": true
+    },
+    "contacts": {
+      "administrative": "APC: 046 57 63 24/ 046 57 63 25",
+      "emergency": "Etablissements Publics Hospitaliers Non Universitaires (EPH) +213 46 49 73 73\r\n+213 46 47 91 27\r\n+213 46 47 81 30"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 41,
+    "sogral_code": "213-000039028",
+    "name": "DJAMAA",
+    "city": "DJAMAA",
+    "official_name": "Gare routière El Moudjahid Lakhdar Ben Amar Djamaa",
+    "address": "cité 19 Mars 1962 Djamaa",
+    "wilaya_code": "39",
+    "wilaya_name": "El-Oued",
+    "lat": 33.551063,
+    "lng": 5.979688,
+    "geo_precision": "exact",
+    "surface_total_m2": 19760,
+    "surface_built_m2": 736,
+    "dates": {
+      "p23": "2013-11-26",
+      "p24": "2014-10-01"
+    },
+    "metrics": {
+      "P12": 12,
+      "P13": 5,
+      "P19": 11,
+      "P20": 5,
+      "P25": 150
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 032 15 62 34",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: 032.16.23.71 /72"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 46,
+    "sogral_code": "213-000039001",
+    "name": "EL OUED",
+    "city": "EL OUED",
+    "official_name": "Gare routière El Moudjahid Ben Amar Lakhdar",
+    "address": "Cité 19 mars 1962",
+    "wilaya_code": "39",
+    "wilaya_name": "El-Oued",
+    "lat": 33.3774736,
+    "lng": 1.0276875,
+    "geo_precision": "exact",
+    "surface_total_m2": 50000,
+    "surface_built_m2": 3666,
+    "dates": {
+      "p23": "2014-11-13",
+      "p24": "2015-08-20"
+    },
+    "metrics": {
+      "P11": 120,
+      "P12": 27,
+      "P13": 45,
+      "P15": 1,
+      "P16": 50,
+      "P17": 100,
+      "P19": 25,
+      "P20": 282,
+      "P22": 48,
+      "P25": 750
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "cacobath el Ouad  032 13 98 51",
+      "emergency": "EpH El Oued  032 11 22 19"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 37,
+    "sogral_code": "213-000040001",
+    "name": "KHENCHLA",
+    "city": "KHENCHELA",
+    "official_name": "Gare routière Ferhat Ben Belkacem",
+    "address": "Route de meskiana Khenchla",
+    "wilaya_code": "40",
+    "wilaya_name": "Khenchela",
+    "lat": 35.4383692,
+    "lng": 7.1379556,
+    "geo_precision": "exact",
+    "surface_total_m2": 19600,
+    "surface_built_m2": 1500,
+    "dates": {
+      "p23": "2012-12-02",
+      "p24": "2014-01-06"
+    },
+    "metrics": {
+      "P12": 17,
+      "P13": 10,
+      "P14": 4,
+      "P15": 2,
+      "P16": 80,
+      "P17": 130,
+      "P18": 6,
+      "P19": 14,
+      "P20": 40,
+      "P21": 40,
+      "P22": 27,
+      "P25": 510
+    },
+    "amenities": {
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "CMS Khenchla 032 72 20 63",
+      "emergency": "epsp el mahmel 026 74 75 00"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 53,
+    "sogral_code": "213-000040011",
+    "name": "CHECHAR",
+    "city": "CHERCHAR",
+    "official_name": "Gare routière Youssfi Abdelmadjid Ben El Hadj Mohamed",
+    "address": "Cité Le Grand Maghreb Chechar Khenchla",
+    "wilaya_code": "40",
+    "wilaya_name": "Khenchela",
+    "lat": 35.0456875,
+    "lng": 7.0150625,
+    "geo_precision": "exact",
+    "surface_total_m2": 6320,
+    "surface_built_m2": 400,
+    "dates": {
+      "p23": "2014-05-08",
+      "p24": "2014-06-17"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 7,
+      "P13": 1,
+      "P16": 12,
+      "P19": 5,
+      "P20": 3,
+      "P22": 19,
+      "P25": 700
+    },
+    "amenities": {
+      "P38": true,
+      "P44": true
+    },
+    "contacts": {
+      "administrative": "APC: 032 75 35 37",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: 032.75.33.53"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 15,
+    "sogral_code": "213-000041001",
+    "name": "SOUK AHRAS",
+    "city": "SOUK AHRAS",
+    "official_name": "Gare routière Araibia Mbarek Ben El Boussiri .",
+    "address": "Cité Skanska Souk Ahras 41000.",
+    "wilaya_code": "41",
+    "wilaya_name": "Souk-Ahras",
+    "lat": 36.2804375,
+    "lng": 7.9396875,
+    "geo_precision": "exact",
+    "surface_total_m2": 32000,
+    "surface_built_m2": 1910,
+    "dates": {
+      "p23": "2013-10-01",
+      "p24": "2013-11-01"
+    },
+    "metrics": {
+      "P11": 22,
+      "P12": 56,
+      "P13": 14,
+      "P14": 1,
+      "P15": 2,
+      "P16": 31,
+      "P17": 180,
+      "P19": 160,
+      "P20": 58,
+      "P21": 40,
+      "P22": 144,
+      "P25": 3350
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P31": true,
+      "P38": true,
+      "P40": true
+    },
+    "contacts": {
+      "administrative": "wilaya 037 72 44 20",
+      "emergency": "Hopital Regional Souk Ahras 0661 51 79 47"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 80,
+    "sogral_code": "213-000041015",
+    "name": "MDAOUROUCHE",
+    "city": "MDAOUROUCHE",
+    "official_name": "Gare routière El Moudjahid  Houasnia Abdallah",
+    "address": "Cité Lahousnia M'daourouche Souk Ahras",
+    "wilaya_code": "41",
+    "wilaya_name": "Souk-Ahras",
+    "lat": 36.0756762,
+    "lng": 7.8204791,
+    "geo_precision": "exact",
+    "surface_total_m2": 11000,
+    "surface_built_m2": 432,
+    "dates": {
+      "p23": "2014-11-26",
+      "p24": "2015-03-13"
+    },
+    "metrics": {
+      "P11": 20,
+      "P12": 8,
+      "P13": 3,
+      "P15": 5,
+      "P16": 20,
+      "P17": 5,
+      "P18": 30,
+      "P19": 8,
+      "P20": 7,
+      "P22": 80,
+      "P25": 1200
+    },
+    "amenities": {
+      "P29": true,
+      "P31": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P40": true
+    },
+    "contacts": {
+      "administrative": "APC: 037 83 54 01/037 83 54 02",
+      "emergency": "hopital de M'DAOUROUCH: 037-83--50-60"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 73,
+    "sogral_code": "213-000042001",
+    "name": "TIPAZA",
+    "city": "TIPAZA",
+    "official_name": "Gare routière Ibrahim El sahli",
+    "address": "N°391 Classe 11 Commune de Tipaza",
+    "wilaya_code": "42",
+    "wilaya_name": "Tipaza",
+    "lat": 36.585187,
+    "lng": 2.470688,
+    "geo_precision": "exact",
+    "surface_total_m2": 27000,
+    "surface_built_m2": 2959,
+    "dates": {
+      "p23": "2017-01-22",
+      "p24": "2017-01-24"
+    },
+    "metrics": {
+      "P11": 30,
+      "P12": 24,
+      "P13": 3,
+      "P14": 1,
+      "P15": 2,
+      "P16": 36,
+      "P18": 50,
+      "P19": 15,
+      "P20": 3,
+      "P21": 2,
+      "P22": 4,
+      "P25": 2000
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P31": true,
+      "P36": true
+    },
+    "contacts": {
+      "administrative": "024 37 49 36 wilaya",
+      "emergency": "Le Nouveau Hopital De tipaza 027 41 25 63"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 26,
+    "sogral_code": "213-000045003",
+    "name": "AIN SEFRA",
+    "city": "AIN SEFRA",
+    "official_name": "Gare routière Echahid Ben Amara Boutkhil",
+    "address": "Route nationale n°06 Aïn Sefra",
+    "wilaya_code": "45",
+    "wilaya_name": "Naâma",
+    "lat": 32.763063,
+    "lng": 0.596938,
+    "geo_precision": "exact",
+    "surface_total_m2": 23000,
+    "surface_built_m2": 2000,
+    "dates": {
+      "p23": "2010-12-15",
+      "p24": "2011-01-16"
+    },
+    "metrics": {
+      "P11": 100,
+      "P12": 20,
+      "P13": 8,
+      "P14": 1,
+      "P15": 1,
+      "P16": 100,
+      "P17": 100,
+      "P18": 4,
+      "P19": 11,
+      "P20": 8,
+      "P21": 8,
+      "P22": 12,
+      "P25": 934
+    },
+    "amenities": {
+      "P31": true
+    },
+    "contacts": {
+      "administrative": "َAPC 049 56 11 31",
+      "emergency": "مستشفى محمد بوضياف بالعين الصفراء\r\n049 56 60 49"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 56,
+    "sogral_code": "213-000045002",
+    "name": "MECHREA",
+    "city": "MECHRIA",
+    "official_name": "Gare routière Echahid Chouaki Tayeb",
+    "address": "Cité El wiam Mecheria",
+    "wilaya_code": "45",
+    "wilaya_name": "Naâma",
+    "lat": 33.541813,
+    "lng": -0.256062,
+    "geo_precision": "exact",
+    "surface_total_m2": 15000,
+    "surface_built_m2": 4770,
+    "dates": {
+      "p23": "2011-06-30",
+      "p24": "2011-08-15"
+    },
+    "metrics": {
+      "P11": 40,
+      "P12": 24,
+      "P13": 18,
+      "P14": 24,
+      "P15": 6,
+      "P16": 50,
+      "P17": 50,
+      "P18": 6,
+      "P19": 6,
+      "P20": 32,
+      "P21": 42,
+      "P22": 14,
+      "P25": 4500
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P35": true,
+      "P36": true,
+      "P38": true,
+      "P39": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "APC: 49 77 61 33",
+      "emergency": "ETABLISSEMENT PUBLC HOSPITALIER: 049 77 62 64"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 59,
+    "sogral_code": "213-000045001",
+    "name": "NAAMA",
+    "city": "NAAMA",
+    "official_name": "Gare routière Naâma",
+    "address": "Route nationale n°06 Naâma",
+    "wilaya_code": "45",
+    "wilaya_name": "Naâma",
+    "lat": 33.2814375,
+    "lng": 0.3076875,
+    "geo_precision": "exact",
+    "surface_total_m2": 40000,
+    "surface_built_m2": 1500,
+    "dates": {
+      "p23": "2010-12-15",
+      "p24": "2011-01-16"
+    },
+    "metrics": {
+      "P11": 80,
+      "P12": 20,
+      "P13": 1,
+      "P14": 1,
+      "P15": 3,
+      "P17": 5,
+      "P18": 6,
+      "P19": 17,
+      "P20": 1,
+      "P21": 16,
+      "P22": 17,
+      "P25": 800
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P36": true,
+      "P38": true
+    },
+    "contacts": {
+      "administrative": "APC: 049 59 53 65",
+      "emergency": "Hôpital de Naama: 049 59 36 39"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 2,
+    "sogral_code": "213-000046001",
+    "name": "AIN TEMOUCHENT 01",
+    "city": "AIN TEMOUCHENT",
+    "official_name": "Gare routière Aïn Témouchent 1",
+    "address": "Rue Mohamed khemisti Aïn Témouchent",
+    "wilaya_code": "46",
+    "wilaya_name": "Aïn-Témouchent",
+    "lat": 35.313063,
+    "lng": -1.149688,
+    "geo_precision": "exact",
+    "surface_total_m2": 20000,
+    "surface_built_m2": 9700,
+    "dates": {
+      "p23": "2004-01-07",
+      "p24": "2004-04-01"
+    },
+    "metrics": {
+      "P12": 22,
+      "P15": 7,
+      "P16": 30,
+      "P19": 9,
+      "P22": 300,
+      "P25": 3700
+    },
+    "amenities": {
+      "P29": true,
+      "P30": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "wilaya 043 60 51 91",
+      "emergency": "Hopital Dr Benzerdjelo \r\n043 65 63 85 \r\nEpsp el sebbah 043 65 63 85"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 77,
+    "sogral_code": "213-000046001",
+    "name": "AIN TEMOUCHENT 02",
+    "city": "AIN TEMOUCHENT",
+    "official_name": "Gare routière Mohamed Ykrelef Beloufa",
+    "address": "Hai zitoune route d’Oran Aïn Témouchent",
+    "wilaya_code": "46",
+    "wilaya_name": "Aïn-Témouchent",
+    "lat": 35.3704853,
+    "lng": -0.987355,
+    "geo_precision": "exact",
+    "surface_total_m2": 9084,
+    "surface_built_m2": 1383,
+    "dates": {
+      "p23": "2013-06-01",
+      "p24": "2013-06-15"
+    },
+    "metrics": {
+      "P11": 30,
+      "P12": 55,
+      "P13": 9,
+      "P14": 3,
+      "P15": 4,
+      "P16": 26,
+      "P17": 100,
+      "P18": 1,
+      "P19": 15,
+      "P20": 18,
+      "P21": 139,
+      "P22": 4,
+      "P25": 4457
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P30": true,
+      "P35": true,
+      "P36": true,
+      "P37": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": "WILAYA 043 60 51 91",
+      "emergency": "Hopital Dr BenzerdjeB \r\n043 65 63 85 \r\nEpsp el sebbah 043 65 63 85"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 47,
+    "sogral_code": "213-000047001",
+    "name": "GHERDAIA",
+    "city": "GHARDAIA",
+    "official_name": "Gare routière de transport des voyageurs Ghardaïa",
+    "address": "Bouheraoua commune de ghardaia",
+    "wilaya_code": "47",
+    "wilaya_name": "Ghardaia",
+    "lat": 32.54206581060249,
+    "lng": 3.674148480779247,
+    "geo_precision": "exact",
+    "surface_total_m2": 40000,
+    "surface_built_m2": 3200,
+    "dates": {
+      "p23": "2022-04-01",
+      "p24": "2023-10-30"
+    },
+    "metrics": {
+      "P11": 40,
+      "P12": 57,
+      "P13": 43,
+      "P14": 5,
+      "P16": 30,
+      "P17": 84,
+      "P18": 40,
+      "P19": 19,
+      "P20": 71,
+      "P21": 21,
+      "P25": 750
+    },
+    "amenities": {
+      "P29": true,
+      "P35": true,
+      "P38": true,
+      "P40": true,
+      "P41": true
+    },
+    "contacts": {
+      "administrative": null,
+      "emergency": null
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  },
+  {
+    "id": 64,
+    "sogral_code": "213-000048001",
+    "name": "RELIZANE",
+    "city": "RELIZANE",
+    "official_name": "Gare routière Ben Daoued Relizane",
+    "address": "Commune de Ben Daoud Relizane",
+    "wilaya_code": "48",
+    "wilaya_name": "Relizane",
+    "lat": 35.7216235,
+    "lng": -0.2214949,
+    "geo_precision": "exact",
+    "surface_total_m2": 80000,
+    "surface_built_m2": 14800,
+    "dates": {
+      "p23": "2012-01-12",
+      "p24": "2012-02-01"
+    },
+    "metrics": {
+      "P11": 120,
+      "P12": 20,
+      "P13": 5,
+      "P14": 1,
+      "P15": 4,
+      "P16": 40,
+      "P17": 120,
+      "P18": 60,
+      "P19": 44,
+      "P20": 22,
+      "P21": 15,
+      "P22": 50,
+      "P25": 8428
+    },
+    "amenities": {
+      "P28": true,
+      "P29": true,
+      "P38": true,
+      "P40": true
+    },
+    "contacts": {
+      "administrative": "APC: 046 72 34 93",
+      "emergency": "EPH RELIZANE: 046-76-01-97 / 046-76-07-91"
+    },
+    "data_flags": [],
+    "source": "https://live.sogral.com/api/live/agencies"
+  }
+]

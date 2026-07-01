@@ -38,6 +38,7 @@ const PACKAGES = {
   "@geoalgeria/sante": { dir: "packages/sante", label: "Algeria's public health establishments" },
   "@geoalgeria/culture": { dir: "packages/culture", label: "Algeria's cultural atlas" },
   "@geoalgeria/agriculture": { dir: "packages/agriculture", label: "Algeria's agriculture-sector institutions" },
+  "@geoalgeria/gares-routieres": { dir: "packages/gares-routieres", label: "Algeria's intercity bus stations (SOGRAL)" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];

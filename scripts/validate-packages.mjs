@@ -251,6 +251,15 @@ const PACKAGES = {
       required: ["id", "name", "type", "wilaya_code", "lat", "lng"],
     },
   ],
+  "gares-routieres": [
+    {
+      json: "stations.json",
+      metaKey: "stations",
+      csv: "csv/stations.csv",
+      geojson: "geojson/stations.geojson",
+      required: ["id", "name", "wilaya_code", "lat", "lng"],
+    },
+  ],
 };
 
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted
