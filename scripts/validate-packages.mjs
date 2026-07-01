@@ -269,6 +269,15 @@ const PACKAGES = {
       required: ["id", "type", "wilaya_code", "lat", "lng"],
     },
   ],
+  buses: [
+    {
+      json: "lines.json",
+      metaKey: "lines",
+      csv: "csv/lines.csv",
+      geojson: null, // line-level v1 (no per-stop geometry yet)
+      required: ["id", "operator", "wilaya_code"],
+    },
+  ],
 };
 
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted

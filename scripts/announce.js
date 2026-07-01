@@ -40,6 +40,7 @@ const PACKAGES = {
   "@geoalgeria/agriculture": { dir: "packages/agriculture", label: "Algeria's agriculture-sector institutions" },
   "@geoalgeria/gares-routieres": { dir: "packages/gares-routieres", label: "Algeria's intercity bus stations (SOGRAL)" },
   "@geoalgeria/ferroviaire": { dir: "packages/ferroviaire", label: "Algeria's rail & urban transit (SNTF/SETRAM/SEMA)" },
+  "@geoalgeria/buses": { dir: "packages/buses", label: "Algeria's urban bus networks (ETUSA)" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];

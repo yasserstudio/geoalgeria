@@ -1,0 +1,1131 @@
+{
+  "note": "ETUSA (Entreprise de transport urbain et suburbain d'Alger) bus lines, parsed from fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'. Line-level attributes only — routes, not geocoded. For geometry, pull OSM route relations (route=bus, operator=ETUSA) or terminus points. Community source (Wikipedia CC BY-SA), not an official ETUSA feed.",
+  "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99",
+  "fetched": "2026-07-01",
+  "lines_count": 50,
+  "lines": [
+    {
+      "line": "1",
+      "terminus1": "El Harrach",
+      "terminus2": "Place Aïssat Idir, via Haï El Badr",
+      "duration_min": 16,
+      "stops": 16,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : El Harrach • Bachdjerrah • Hussein Dey (Gare routière du Caroubier) • El Magharia • Belouizdad • Sidi M'Hamed. * Stations et gares desservies : El Harrach Centre • Haï El Badr • Cité Mer et Soleil • Cité Amirouche • Les Fusillés • Aïssat Idir ♦ Gare d'El Harrach • Gare du Caroubier • Gare des Ateliers ♦ Téléphérique du Palais de la Culture (station Oued Kniss).",
+      "passengers_year": null,
+      "communes_served": [
+        "El Harrach",
+        "Bachdjerrah",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "El Magharia",
+        "Belouizdad",
+        "Sidi M'Hamed"
+      ],
+      "stations_served": [
+        "El Harrach Centre",
+        "Haï El Badr",
+        "Cité Mer et Soleil",
+        "Cité Amirouche",
+        "Les Fusillés",
+        "Aïssat Idir"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "3",
+      "terminus1": "Bouzaréah - Chevalley",
+      "terminus2": "Souidania, via Bouchaoui",
+      "duration_min": 22,
+      "stops": 22,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bouzaréah (Chevalley) • Dely Ibrahim • Beni Messous • Chéraga (Bouchaoui) • Souidania. * Stations et gares desservies :",
+      "passengers_year": null,
+      "communes_served": [
+        "Bouzaréah (Chevalley)",
+        "Dely Ibrahim",
+        "Beni Messous",
+        "Chéraga (Bouchaoui)",
+        "Souidania"
+      ],
+      "stations_served": [],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "4",
+      "terminus1": "Place du Mai",
+      "terminus2": "Kouba - Ben Omar",
+      "duration_min": 12,
+      "stops": 12,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad (Jardin d'Essai) • Kouba. * Stations et gares desservies : Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Gare des Ateliers (à proximité) ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "Kouba"
+      ],
+      "stations_served": [
+        "Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "5",
+      "terminus1": "El Harrach",
+      "terminus2": "Place des Martyrs",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Casbah (Place des Martyrs) • Alger-Centre (Grande Poste d'Alger) • Belouizdad • Hussein Dey (Gare routière du Caroubier) • El-Harrach. * Stations et gares desservies : Place des Martyrs • Tafourah - Grande Poste • El Harrach Centre ♦ Gare d'Alger • Gare de l'Agha • Gare des Ateliers • Gare du Caroubier • Gare d'El Harrach.",
+      "passengers_year": null,
+      "communes_served": [
+        "Casbah (Place des Martyrs)",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Belouizdad",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "El-Harrach"
+      ],
+      "stations_served": [
+        "Place des Martyrs",
+        "Tafourah - Grande Poste",
+        "El Harrach Centre"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "6",
+      "terminus1": "Place des Martyrs",
+      "terminus2": "Kouba - Station Kouba, via Place du Mai",
+      "duration_min": 21,
+      "stops": 21,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Casbah (Place des Martyrs) • Alger-Centre (Grande Poste d'Alger) • Sidi M'Hamed • Belouizdad (Jardin d'Essai) • Kouba. * Stations et gares desservies : Place des Martyrs • Tafourah - Grande Poste • 1er Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Gare d'Alger • Gare de l'Agha (à proximité) • Gare des Ateliers (à proximité) ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss).",
+      "passengers_year": null,
+      "communes_served": [
+        "Casbah (Place des Martyrs)",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "Kouba"
+      ],
+      "stations_served": [
+        "Place des Martyrs",
+        "Tafourah - Grande Poste",
+        "1er Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "8",
+      "terminus1": "Alger-Centre - Station 2 Mai",
+      "terminus2": "Raïs Hamidou",
+      "duration_min": 10,
+      "stops": 10,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Station 2 Mai) • Casbah • Bab El Oued • Bologhine • Raïs Hamidou. * Stations et gares desservies : Tafourah - Grande Poste • Place des Martyrs ♦ Gare d'Alger ♦ Téléphérique de Notre-Dame d'Afrique (station Bologhine).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Station 2 Mai)",
+        "Casbah",
+        "Bab El Oued",
+        "Bologhine",
+        "Raïs Hamidou"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste",
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "10",
+      "terminus1": "Place du Mai",
+      "terminus2": "Bouzaréah",
+      "duration_min": 17,
+      "stops": 17,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Alger-Centre • El Biar • Bouzaréah. * Stations et gares desservies : Mai.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Alger-Centre",
+        "El Biar",
+        "Bouzaréah"
+      ],
+      "stations_served": [
+        "Mai"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "12",
+      "terminus1": "Place des Martyrs",
+      "terminus2": "Staoueli",
+      "duration_min": 33,
+      "stops": 33,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Casbah (Place des Martyrs) • Bab El Oued • Bologhine • Raïs Hamidou • El Hammamet • Aïn Benian • Chéraga • Staoueli. * Stations et gares desservies : Place des Martyrs ♦ téléphérique de Notre-Dame d'Afrique (station Bologhine).",
+      "passengers_year": null,
+      "communes_served": [
+        "Casbah (Place des Martyrs)",
+        "Bab El Oued",
+        "Bologhine",
+        "Raïs Hamidou",
+        "El Hammamet",
+        "Aïn Benian",
+        "Chéraga",
+        "Staoueli"
+      ],
+      "stations_served": [
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "14",
+      "terminus1": "Place du Mai",
+      "terminus2": "Bir Mourad Raïs",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad (Jardin d'Essai) • El Madania • Bir Mourad Raïs. * Stations et gares desservies : Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Gare des Ateliers (à proximité) ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "El Madania",
+        "Bir Mourad Raïs"
+      ],
+      "stations_served": [
+        "Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "15",
+      "terminus1": "Place du Mai",
+      "terminus2": "Grande Poste",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Alger-Centre (Grande Poste d'Alger). * Stations et gares desservies : Tafourah - Grande Poste • Mai.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Alger-Centre (Grande Poste d'Alger)"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste",
+        "Mai"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "16",
+      "terminus1": "Place du Mai",
+      "terminus2": "El Madania",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr) • El Madania (Diar el Mahçoul). * Stations et gares desservies : Mai ♦ Téléphérique d'El Madania (station El Madania, à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr)",
+        "El Madania (Diar el Mahçoul)"
+      ],
+      "stations_served": [
+        "Mai"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "18",
+      "terminus1": "Bachdjarah",
+      "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bachdjerrah • Bourouba • El Magharia • Kouba (hôpital militaire d'Aïn Naâdja). * Stations et gares desservies : Bachdjarah • Bachdjarah - Tennis • Haï El Badr.",
+      "passengers_year": null,
+      "communes_served": [
+        "Bachdjerrah",
+        "Bourouba",
+        "El Magharia",
+        "Kouba (hôpital militaire d'Aïn Naâdja)"
+      ],
+      "stations_served": [
+        "Bachdjarah",
+        "Bachdjarah - Tennis",
+        "Haï El Badr"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "19",
+      "terminus1": "Place Aïssat Idir",
+      "terminus2": "Bab Ezzouar - Les Hôtels",
+      "duration_min": 16,
+      "stops": 16,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad • Hussein Dey (Gare routière du Caroubier) • Mohammadia • Bab Ezzouar (USTHB). * Stations et gares desservies : Aïssat Idir ♦ Gare des Ateliers • Gare du Caroubier.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "Mohammadia",
+        "Bab Ezzouar (USTHB)"
+      ],
+      "stations_served": [
+        "Aïssat Idir"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "21",
+      "terminus1": "Bouzaréah",
+      "terminus2": "Beni Messous - Sidi Youcef",
+      "duration_min": 10,
+      "stops": 10,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bouzaréah • Beni Messous (Sidi Youcef). * Stations et gares desservies :",
+      "passengers_year": null,
+      "communes_served": [
+        "Bouzaréah",
+        "Beni Messous (Sidi Youcef)"
+      ],
+      "stations_served": [],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "27",
+      "terminus1": "Place du Mai",
+      "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad (Jardin d'Essai) • Kouba (hôpital militaire d'Aïn Naâdja). * Stations et gares desservies : Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Gare des Ateliers (à proximité) ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "Kouba (hôpital militaire d'Aïn Naâdja)"
+      ],
+      "stations_served": [
+        "Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "31",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "Hydra - Place Al Smaa",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur) • Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr) • Hydra (Place Al Smaa). * Stations et gares desservies : Khelifa Boukhalfa (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr)",
+        "Hydra (Place Al Smaa)"
+      ],
+      "stations_served": [
+        "Khelifa Boukhalfa (à proximité)"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "32",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "El Madania",
+      "duration_min": 9,
+      "stops": 9,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur) • Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr) • El Madania (Diar el Mahçoul). * Stations et gares desservies : Khelifa Boukhalfa (à proximité) ♦ Téléphérique d'El Madania (station El Madania, à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr)",
+        "El Madania (Diar el Mahçoul)"
+      ],
+      "stations_served": [
+        "Khelifa Boukhalfa (à proximité)"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "33",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "Kouba - Station Kouba, via Bir Mourad Raïs",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur) • Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr) • Bir Mourad Raïs • Kouba (Station Kouba). * Stations et gares desservies : Khelifa Boukhalfa (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr)",
+        "Bir Mourad Raïs",
+        "Kouba (Station Kouba)"
+      ],
+      "stations_served": [
+        "Khelifa Boukhalfa (à proximité)"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "34",
+      "terminus1": "Place du Mai",
+      "terminus2": "Birkhadem",
+      "duration_min": 19,
+      "stops": 19,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad (Jardin d'Essai) • El Madania • Bir Mourad Raïs • Birkhadem. * Stations et gares desservies : Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Gare des Ateliers (à proximité) ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "El Madania",
+        "Bir Mourad Raïs",
+        "Birkhadem"
+      ],
+      "stations_served": [
+        "Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "35",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "Birkhadem",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur) • Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr) • Bir Mourad Raïs • Birkhadem. * Stations et gares desservies : Khelifa Boukhalfa (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr)",
+        "Bir Mourad Raïs",
+        "Birkhadem"
+      ],
+      "stations_served": [
+        "Khelifa Boukhalfa (à proximité)"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "36",
+      "terminus1": "Bab El Oued - Basta Ali",
+      "terminus2": "Sidi M'Hamed - Palais du Peuple",
+      "duration_min": null,
+      "stops": null,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bab El Oued (Basta Ali) • Sidi M'Hamed (Palais du Peuple). * Stations et gares desservies :",
+      "passengers_year": null,
+      "communes_served": [
+        "Bab El Oued (Basta Ali)",
+        "Sidi M'Hamed (Palais du Peuple)"
+      ],
+      "stations_served": [],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "37",
+      "terminus1": "Grande Poste",
+      "terminus2": "Oued Koriche",
+      "duration_min": null,
+      "stops": null,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Grande Poste) • Oued Koriche. * Stations et gares desservies : Tafourah - Grande Poste.",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Grande Poste)",
+        "Oued Koriche"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "39",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "Aéroport d'Alger",
+      "duration_min": 3,
+      "stops": 3,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés) • Bab Ezzouar • Dar El Beïda (aéroport d'Alger). * Stations et gares desservies : Gare de l'Aéroport Houari Boumédiène.",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés)",
+        "Bab Ezzouar",
+        "Dar El Beïda (aéroport d'Alger)"
+      ],
+      "stations_served": [
+        "Gare de l'Aéroport Houari Boumédiène"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "40",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "Bouzaréah - Chevalley",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur) • Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr) • El Biar • Bouzaréah (Chevalley). * Stations et gares desservies : Khelifa Boukhalfa (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr)",
+        "El Biar",
+        "Bouzaréah (Chevalley)"
+      ],
+      "stations_served": [
+        "Khelifa Boukhalfa (à proximité)"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "43",
+      "terminus1": "Ben Aknoun",
+      "terminus2": "Grande Poste",
+      "duration_min": 12,
+      "stops": 12,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Ben Aknoun • El Biar • Alger-Centre (Grande Poste d'Alger). * Stations et gares desservies : Tafourah - Grande Poste.",
+      "passengers_year": null,
+      "communes_served": [
+        "Ben Aknoun",
+        "El Biar",
+        "Alger-Centre (Grande Poste d'Alger)"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "44",
+      "terminus1": "Ben Aknoun",
+      "terminus2": "Douera - Gare routière",
+      "duration_min": 15,
+      "stops": 15,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Ben Aknoun • Dely Ibrahim • El Achour • Draria • Baba Hassen • Douera. * Stations et gares desservies :",
+      "passengers_year": null,
+      "communes_served": [
+        "Ben Aknoun",
+        "Dely Ibrahim",
+        "El Achour",
+        "Draria",
+        "Baba Hassen",
+        "Douera"
+      ],
+      "stations_served": [],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "45",
+      "terminus1": "Place des Martyrs",
+      "terminus2": "Bouzaréah",
+      "duration_min": 19,
+      "stops": 19,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Casbah (Place des Martyrs) • Alger-Centre • El Biar • Bouzaréah. * Stations et gares desservies : Place des Martyrs.",
+      "passengers_year": null,
+      "communes_served": [
+        "Casbah (Place des Martyrs)",
+        "Alger-Centre",
+        "El Biar",
+        "Bouzaréah"
+      ],
+      "stations_served": [
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "48",
+      "terminus1": "Place du Mai",
+      "terminus2": "Ben Aknoun",
+      "duration_min": 14,
+      "stops": 14,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Alger-Centre • El Biar • Ben Aknoun. * Stations et gares desservies : Mai.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Alger-Centre",
+        "El Biar",
+        "Ben Aknoun"
+      ],
+      "stations_served": [
+        "Mai"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "50",
+      "terminus1": "Ben Aknoun",
+      "terminus2": "Place des Martyrs",
+      "duration_min": 17,
+      "stops": 17,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Ben Aknoun • El Biar • Bab El Oued • Casbah (Place des Martyrs). * Stations et gares desservies : Place des Martyrs.",
+      "passengers_year": null,
+      "communes_served": [
+        "Ben Aknoun",
+        "El Biar",
+        "Bab El Oued",
+        "Casbah (Place des Martyrs)"
+      ],
+      "stations_served": [
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "51",
+      "terminus1": "Bouzaréah - Chevalley",
+      "terminus2": "Ouled Fayet - Plateau",
+      "duration_min": 20,
+      "stops": 20,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bouzaréah (Chevalley) • Dely Ibrahim • Beni Messous • Chéraga • Ouled Fayet. * Stations et gares desservies :",
+      "passengers_year": null,
+      "communes_served": [
+        "Bouzaréah (Chevalley)",
+        "Dely Ibrahim",
+        "Beni Messous",
+        "Chéraga",
+        "Ouled Fayet"
+      ],
+      "stations_served": [],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "54",
+      "terminus1": "Place Maurice Audin",
+      "terminus2": "El Mouradia - Lycée Descartes",
+      "duration_min": 7,
+      "stops": 7,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur) • Sidi M'Hamed (Musée du Bardo, Palais du Peuple) • El Mouradia (Hôtel El Djazaïr, lycée Descartes). * Stations et gares desservies : Khelifa Boukhalfa (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+        "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+        "El Mouradia (Hôtel El Djazaïr, lycée Descartes)"
+      ],
+      "stations_served": [
+        "Khelifa Boukhalfa (à proximité)"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "57",
+      "terminus1": "Grande Poste",
+      "terminus2": "Ouled Fayet",
+      "duration_min": null,
+      "stops": null,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Alger-Centre (Grande Poste d'Alger) • Ben Aknoun • Dely Ibrahim • Ouled Fayet. * Stations et gares desservies : Tafourah - Grande Poste.",
+      "passengers_year": null,
+      "communes_served": [
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Ben Aknoun",
+        "Dely Ibrahim",
+        "Ouled Fayet"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "58",
+      "terminus1": "Place des Martyrs",
+      "terminus2": "Bouzaréah - Chevalley",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Casbah (Place des Martyrs) • Bab El Oued • Oued Koriche • Bouzaréah • El Biar • Bouzaréah (Chevalley). * Stations et gares desservies : Place des Martyrs.",
+      "passengers_year": null,
+      "communes_served": [
+        "Casbah (Place des Martyrs)",
+        "Bab El Oued",
+        "Oued Koriche",
+        "Bouzaréah",
+        "El Biar",
+        "Bouzaréah (Chevalley)"
+      ],
+      "stations_served": [
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "59",
+      "terminus1": "Bouzaréah - Chevalley",
+      "terminus2": "Beni Messous - Sidi Youcef",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bouzaréah (Chevalley) • Beni Messous (Sidi Youcef). * Stations et gares desservies :",
+      "passengers_year": null,
+      "communes_served": [
+        "Bouzaréah (Chevalley)",
+        "Beni Messous (Sidi Youcef)"
+      ],
+      "stations_served": [],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "66",
+      "terminus1": "Bachdjerrah",
+      "terminus2": "Place Aïssat Idir",
+      "duration_min": 12,
+      "stops": 12,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bachdjerrah • Bourouba • El Magharia • Hussein Dey • Belouizdad (Jardin d'Essai) • Sidi M'Hamed. * Stations et gares desservies : Bachdjarah • Bachdjarah - Tenis • Haï El Badr • Cité Mer et Soleil • Cité Amirouche • Les Fusillés • Jardin d'Essai • Hamma • Aïssat Idir ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss) ♦ Gare des Ateliers (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Bachdjerrah",
+        "Bourouba",
+        "El Magharia",
+        "Hussein Dey",
+        "Belouizdad (Jardin d'Essai)",
+        "Sidi M'Hamed"
+      ],
+      "stations_served": [
+        "Bachdjarah",
+        "Bachdjarah - Tenis",
+        "Haï El Badr",
+        "Cité Mer et Soleil",
+        "Cité Amirouche",
+        "Les Fusillés",
+        "Jardin d'Essai",
+        "Hamma",
+        "Aïssat Idir"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "67",
+      "terminus1": "Haï El Badr",
+      "terminus2": "Baraki",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : El Magharia • Kouba • Djasr Kasentina • Baraki. * Stations et gares desservies : Haï El Badr ♦ Gare du Gué de Constantine (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "El Magharia",
+        "Kouba",
+        "Djasr Kasentina",
+        "Baraki"
+      ],
+      "stations_served": [
+        "Haï El Badr"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "72",
+      "terminus1": "Rouiba - Castor",
+      "terminus2": "Place des Martyrs",
+      "duration_min": 26,
+      "stops": 26,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Rouïba • Dar El Beida • Bab Ezzouar • Mohammadia • Hussein Dey (Gare routière du Caroubier) • Alger-Centre (Grande Poste d'Alger) • Casbah (Place des Martyrs). * Stations et gares desservies : Tafourah - Grande Poste • Place des Martyrs ♦ Gare du Caroubier • Gare des Ateliers • Gare d'Alger • Gare de Rouïba (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Rouïba",
+        "Dar El Beida",
+        "Bab Ezzouar",
+        "Mohammadia",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Casbah (Place des Martyrs)"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste",
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "73",
+      "terminus1": "Bachdjarah",
+      "terminus2": "Kouba - Station Kouba",
+      "duration_min": 18,
+      "stops": 18,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bachdjerrah • Bourouba • Birkhadem • Djasr Kasentina • Kouba. * Stations et gares desservies : Bachdjarah • Bachdjarah - Tennis.",
+      "passengers_year": null,
+      "communes_served": [
+        "Bachdjerrah",
+        "Bourouba",
+        "Birkhadem",
+        "Djasr Kasentina",
+        "Kouba"
+      ],
+      "stations_served": [
+        "Bachdjarah",
+        "Bachdjarah - Tennis"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "74",
+      "terminus1": "Bachdjarah",
+      "terminus2": "Place des Martyrs",
+      "duration_min": 14,
+      "stops": 14,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bachdjerrah • El Harrach • Hussein Dey (Gare routière du Caroubier) • Sidi M'Hamed • Alger-Centre (Grande Poste d'Alger) • Casbah (Place des Martyrs). * Stations et gares desservies : Bachdjarah • Tafourah - Grande Poste • Place des Martyrs ♦ Gare du Caroubier • Gare des Ateliers • Gare d'Alger.",
+      "passengers_year": null,
+      "communes_served": [
+        "Bachdjerrah",
+        "El Harrach",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "Sidi M'Hamed",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Casbah (Place des Martyrs)"
+      ],
+      "stations_served": [
+        "Bachdjarah",
+        "Tafourah - Grande Poste",
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "79",
+      "terminus1": "Place du Mai",
+      "terminus2": "Djasr Kasentina - Station Aïn Naâdja",
+      "duration_min": 9,
+      "stops": 9,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad (Jardin d'Essai) • Hussein Dey • Kouba (Hôpital militaire d'Aïn Naâdja) • Djasr Kasentina (Station Aïn Naâdja). * Stations et gares desservies : Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss) ♦ Gare des Ateliers (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "Hussein Dey",
+        "Kouba (Hôpital militaire d'Aïn Naâdja)",
+        "Djasr Kasentina (Station Aïn Naâdja)"
+      ],
+      "stations_served": [
+        "Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "80",
+      "terminus1": "El Harrach",
+      "terminus2": "Kouba - Station Kouba",
+      "duration_min": 11,
+      "stops": 11,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : El Harrach • Bourouba • Bachdjerrah • Kouba (Hôpital militaire d'Aïn Naâdja, Station Kouba). * Stations et gares desservies : El Harrach - Centre • Bachdjarah • Bachdjarah - Tennis ♦ Gare d'El Harrach.",
+      "passengers_year": null,
+      "communes_served": [
+        "El Harrach",
+        "Bourouba",
+        "Bachdjerrah",
+        "Kouba (Hôpital militaire d'Aïn Naâdja, Station Kouba)"
+      ],
+      "stations_served": [
+        "El Harrach - Centre",
+        "Bachdjarah",
+        "Bachdjarah - Tennis"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "81",
+      "terminus1": "Haï El Badr",
+      "terminus2": "Djasr Kasentina - Aïn Naâdja",
+      "duration_min": null,
+      "stops": null,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : El Magharia • Djasr Kasentina. * Stations et gares desservies : Haï El Badr",
+      "passengers_year": null,
+      "communes_served": [
+        "El Magharia",
+        "Djasr Kasentina"
+      ],
+      "stations_served": [
+        "Haï El Badr"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "82",
+      "terminus1": "El Harrach",
+      "terminus2": "Kouba - Station Kouba",
+      "duration_min": 16,
+      "stops": 16,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : El Harrach • Bourouba • Djasr Kasentina (Hôpital militaire d'Aïn Naâdja) • Kouba (Station Kouba). * Stations et gares desservies : El Harrach Centre ♦ Gare de Aïn Naâdja • Gare du Gué de Constantine (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "El Harrach",
+        "Bourouba",
+        "Djasr Kasentina (Hôpital militaire d'Aïn Naâdja)",
+        "Kouba (Station Kouba)"
+      ],
+      "stations_served": [
+        "El Harrach Centre"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "88",
+      "terminus1": "Place du Mai",
+      "terminus2": "Hydra - Place Al Smaa",
+      "duration_min": 8,
+      "stops": 8,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • El Mouradia • Hydra (Place Al Smaa). * Stations et gares desservies : Mai.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "El Mouradia",
+        "Hydra (Place Al Smaa)"
+      ],
+      "stations_served": [
+        "Mai"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "89",
+      "terminus1": "Place du Mai",
+      "terminus2": "Kouba - Vieux Kouba",
+      "duration_min": 14,
+      "stops": 14,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad (Jardin d'Essai) • Kouba. * Stations et gares desservies : Mai • Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss) ♦ Gare des Ateliers (à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "Kouba"
+      ],
+      "stations_served": [
+        "Mai",
+        "Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "90",
+      "terminus1": "Place du Mai",
+      "terminus2": "Bab El Oued - Basta Ali",
+      "duration_min": 9,
+      "stops": 9,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Alger-Centre (Grande Poste d'Alger) • Casbah (Place des Martyrs) • Bab El Oued (Basta Ali). * Stations et gares desservies : Mai • Tafourah - Grande Poste • Place des Martyrs ♦ Gare d'Alger • Gare de l'Agha.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Casbah (Place des Martyrs)",
+        "Bab El Oued (Basta Ali)"
+      ],
+      "stations_served": [
+        "Mai",
+        "Tafourah - Grande Poste",
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "92",
+      "terminus1": "Bab El Oued - Place Ferhani",
+      "terminus2": "Kouba - El Annasser",
+      "duration_min": null,
+      "stops": null,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bab El Oued (Place des Martyrs) • Alger-Centre (Grande Poste d'Alger) • Sidi M'Hamed • Belouizdad (Jardin d'Essai) • Hussein Dey • Kouba (El Annasser). * Stations et gares desservies : Place des Martyrs • Tafourah - Grande Poste • 1er Mai • Place Aïssat Idir (à proximité) • Hamma • Jardin d'Essai • Les Fusillés ♦ Téléphérique d'El Madania (station Hamma) • Téléphérique du Mémorial (station Jardin d'Essai) • Téléphérique du Palais de la Culture (station Oued Kniss) ♦ Gare d'Alger • Gare de l'Agha.",
+      "passengers_year": null,
+      "communes_served": [
+        "Bab El Oued (Place des Martyrs)",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Sidi M'Hamed",
+        "Belouizdad (Jardin d'Essai)",
+        "Hussein Dey",
+        "Kouba (El Annasser)"
+      ],
+      "stations_served": [
+        "Place des Martyrs",
+        "Tafourah - Grande Poste",
+        "1er Mai",
+        "Place Aïssat Idir (à proximité)",
+        "Hamma",
+        "Jardin d'Essai",
+        "Les Fusillés"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "94",
+      "terminus1": "Place Aïssat Idir",
+      "terminus2": "Mohammadia - Cité Mokhtar Zerhouni",
+      "duration_min": 13,
+      "stops": 13,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Belouizdad • Hussein Dey (Gare routière du Caroubier) • Bab Ezzouar • Mohammadia (Cité Mokhtar Zerhouni). * Stations et gares desservies : Aïssat Idir ♦ Gare des Ateliers • Gare du Caroubier.",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Belouizdad",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "Bab Ezzouar",
+        "Mohammadia (Cité Mokhtar Zerhouni)"
+      ],
+      "stations_served": [
+        "Aïssat Idir"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "98",
+      "terminus1": "Bab Ezzouar",
+      "terminus2": "Bab El Oued - Place Ferhani",
+      "duration_min": null,
+      "stops": null,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Bab Ezzouar • Mohammadia • Hussein Dey (Gare routière du Caroubier) • Belouizdad • Alger-Centre (Grande Poste d'Alger) • Casbah (Place des Martyrs) • Bab El Oued. * Stations et gares desservies : Tafourah - Grande Poste • Place des Martyrs ♦ Gare des Ateliers • Gare d'Alger.",
+      "passengers_year": null,
+      "communes_served": [
+        "Bab Ezzouar",
+        "Mohammadia",
+        "Hussein Dey (Gare routière du Caroubier)",
+        "Belouizdad",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Casbah (Place des Martyrs)",
+        "Bab El Oued"
+      ],
+      "stations_served": [
+        "Tafourah - Grande Poste",
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    },
+    {
+      "line": "99",
+      "terminus1": "Place du Mai",
+      "terminus2": "Aïn Benian",
+      "duration_min": 32,
+      "stops": 32,
+      "rolling_stock": "| passage_semaine =",
+      "depot": "| desserte = * Villes et lieux desservis : Sidi M'Hamed • Alger-Centre (Grande Poste d'Alger) • Casbah (Place des Martyrs) • Bab El Oued • Bologhine • Raïs Hamidou • El Hammamet • Aïn Benian. * Stations et gares desservies : Mai • Tafourah - Grande Poste • Place des Martyrs ♦ Gare de l'Agha • Gare d'Alger ♦ Téléphérique de Notre-Dame d'Afrique (station Bologhine, à proximité).",
+      "passengers_year": null,
+      "communes_served": [
+        "Sidi M'Hamed",
+        "Alger-Centre (Grande Poste d'Alger)",
+        "Casbah (Place des Martyrs)",
+        "Bab El Oued",
+        "Bologhine",
+        "Raïs Hamidou",
+        "El Hammamet",
+        "Aïn Benian"
+      ],
+      "stations_served": [
+        "Mai",
+        "Tafourah - Grande Poste",
+        "Place des Martyrs"
+      ],
+      "opened": "| date_fermeture =",
+      "closed": "| longueur ="
+    }
+  ]
+}
