@@ -1,0 +1,32 @@
+{
+  "note": "Métro d'Alger operational facts from SEMA (metro-eldjazair.dz). Authoritative operator; the full 19-station geodata comes from Wikidata/OSM (SEMA's static pages expose only the 5 commercial-agency stations). Use SEMA for the operational count + line-status filter over the ~32 Wikidata metro nodes.",
+  "operator": {
+    "name": "SEMA — Société d'Exploitation du Métro d'Alger",
+    "parent": "EMA — Entreprise Métro d'Alger",
+    "created": 2020,
+    "site": "https://metro-eldjazair.dz",
+    "phone": "+213 23 71 62 32 / 0770 96 16 72",
+    "email": "contact@metro-eldjazair.dz"
+  },
+  "network": {
+    "name_fr": "Métro d'Alger",
+    "name_ar": "مترو الجزائر",
+    "opened": "2011",
+    "stations_operational": 19,
+    "length_km": 16.8,
+    "communes": 10,
+    "wilaya_code": "16",
+    "passengers_per_day": 150000,
+    "hours": "05:00–22:00 (from 2024-09-01)"
+  },
+  "commercial_agencies": [
+    "Place des Martyrs",
+    "Tafourah - Grande Poste",
+    "Bachdjarah",
+    "Aïn Naâdja",
+    "El Harrach Centre"
+  ],
+  "wikidata_note": "Wikidata lists ~32 Algiers metro nodes; 19 are operational. The remainder are extensions under construction / planned — El Harrach → Aéroport Houari Boumediene, Aïn Naâdja → Baraki, Place des Martyrs → Chevalley / Bab El Oued. Gives a metro line-status dimension (operational vs under-construction vs planned).",
+  "source": "https://metro-eldjazair.dz/ (/horaires, /lieux-touristique)",
+  "fetched": "2026-07-01"
+}

@@ -1,0 +1,11 @@
+{
+  "source": "SOGRAL — EPE SOGRAL Spa, Société de Gestion des Gares Routières d'Algérie",
+  "origin": "https://live.sogral.com/api/live/agencies",
+  "license": "Data © SOGRAL; redistributed for reference. See LICENSE.",
+  "stations": 74,
+  "wilayas_covered": 51,
+  "geocoded": 74,
+  "geo_precision_note": "Coordinates from SOGRAL; 3 were fixed (Touggourt/Djanet from OSM; Guelma is the commune centroid, geo_precision=approx).",
+  "linkage_note": "wilaya_code/commune are a nearest-centroid join against the geoalgeria commune set; this also reconciles SOGRAL's legacy 48-wilaya codes to the 58/69 model. Join wilaya_code against `geoalgeria` for names.",
+  "generated_at": "2026-07-01"
+}

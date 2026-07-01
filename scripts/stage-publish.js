@@ -32,6 +32,16 @@ for (const pkg of PACKAGES) {
   const pkgJson = JSON.parse(readFileSync(join(ROOT, pkg, "package.json"), "utf8"));
   const { name, version } = pkgJson;
 
+  // Packages with workspace: deps (e.g. the transport umbrella) must NOT be
+  // published with npm — it ships the literal "workspace:^" spec and breaks
+  // installs. Only pnpm/changeset converts it. Skip here; release via `pnpm release`.
+  const hasWorkspaceDeps = Object.values(pkgJson.dependencies ?? {}).some((v) => String(v).startsWith("workspace:"));
+  if (hasWorkspaceDeps) {
+    console.log(`skip: ${name}@${version} (workspace: deps — publish via 'pnpm publish' / changeset, not npm; see RELEASING.md)`);
+    skipped++;
+    continue;
+  }
+
   let registryVersion;
   try {
     registryVersion = execFileSync("npm", ["view", name, "version"], {

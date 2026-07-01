@@ -1,0 +1,59 @@
+{
+  "name": "@geoalgeria/transport",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's transport sector in one install — re-exports @geoalgeria/aviation (airports), ferroviaire (rail/tram/metro), gares-routieres (intercity bus stations) and buses (urban bus networks). Umbrella meta-package.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "types/",
+    "index.js"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@geoalgeria/aviation": "workspace:^",
+    "@geoalgeria/ferroviaire": "workspace:^",
+    "@geoalgeria/gares-routieres": "workspace:^",
+    "@geoalgeria/buses": "workspace:^"
+  },
+  "keywords": [
+    "algeria",
+    "transport",
+    "aviation",
+    "airport",
+    "rail",
+    "tramway",
+    "metro",
+    "bus",
+    "gare-routiere",
+    "sntf",
+    "setram",
+    "sogral",
+    "etusa",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/transport"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

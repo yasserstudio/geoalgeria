@@ -1,0 +1,16 @@
+{
+  "source": "ETUSA (Établissement de transport urbain et suburbain d'Alger) — line list via fr.wikipedia",
+  "origin": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99",
+  "license": "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
+  "lines": 50,
+  "operators": [
+    "ETUSA"
+  ],
+  "by_operator": {
+    "ETUSA": 50
+  },
+  "with_stop_count": 44,
+  "wilayas_covered": 1,
+  "coverage_note": "v1 covers 50 ETUSA lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'), of ~122 ETUSA passenger lines. Line-level attributes only — per-stop and per-line GEOMETRY (OSM route=bus) is deferred to v1.1; ETUSA-tagged OSM route coverage is currently thin. More operators/cities to be added.",
+  "generated_at": "2026-07-01"
+}

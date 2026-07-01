@@ -12,9 +12,13 @@ importers:
         specifier: ^2.30.0
         version: 2.31.0
 
+  packages/agriculture: {}
+
   packages/aviation: {}
 
   packages/banques: {}
+
+  packages/buses: {}
 
   packages/culture: {}
 
@@ -26,7 +30,11 @@ importers:
 
   packages/enseignement-superieur: {}
 
+  packages/ferroviaire: {}
+
   packages/formation-professionnelle: {}
+
+  packages/gares-routieres: {}
 
   packages/jeunesse: {}
 
@@ -45,6 +53,21 @@ importers:
   packages/telecom: {}
 
   packages/tourisme: {}
+
+  packages/transport:
+    dependencies:
+      '@geoalgeria/aviation':
+        specifier: workspace:^
+        version: link:../aviation
+      '@geoalgeria/buses':
+        specifier: workspace:^
+        version: link:../buses
+      '@geoalgeria/ferroviaire':
+        specifier: workspace:^
+        version: link:../ferroviaire
+      '@geoalgeria/gares-routieres':
+        specifier: workspace:^
+        version: link:../gares-routieres
 
 packages:
 

@@ -3,7 +3,7 @@
   "version": "1.6.0",
   "private": true,
   "type": "module",
-  "description": "GeoAlgeria data monorepo — open Algeria datasets (geoalgeria, @geoalgeria/poste, @geoalgeria/emploi, @geoalgeria/mobilis, @geoalgeria/telecom, @geoalgeria/aviation, @geoalgeria/banques, @geoalgeria/livraison, @geoalgeria/jeunesse, @geoalgeria/sports, @geoalgeria/enseignement-superieur, @geoalgeria/tourisme, @geoalgeria/formation-professionnelle, @geoalgeria/djezzy, @geoalgeria/mosquees, @geoalgeria/sante, @geoalgeria/culture, @geoalgeria/agriculture) published to npm",
+  "description": "GeoAlgeria data monorepo — open Algeria datasets (geoalgeria, @geoalgeria/poste, @geoalgeria/emploi, @geoalgeria/mobilis, @geoalgeria/telecom, @geoalgeria/aviation, @geoalgeria/banques, @geoalgeria/livraison, @geoalgeria/jeunesse, @geoalgeria/sports, @geoalgeria/enseignement-superieur, @geoalgeria/tourisme, @geoalgeria/formation-professionnelle, @geoalgeria/djezzy, @geoalgeria/mosquees, @geoalgeria/sante, @geoalgeria/culture, @geoalgeria/agriculture, @geoalgeria/gares-routieres, @geoalgeria/ferroviaire, @geoalgeria/buses, @geoalgeria/transport) published to npm",
   "packageManager": "pnpm@11.3.0",
   "scripts": {
     "validate": "pnpm --filter ./packages/dataset validate && node scripts/validate-packages.mjs",
