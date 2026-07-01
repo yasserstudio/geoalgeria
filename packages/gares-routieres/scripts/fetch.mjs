@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { toCSV, toGeoJSON, loadCommunes, nearestCommune, wcode, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { toCSV, toGeoJSON, loadCommunes, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..", "..");
@@ -48,12 +48,11 @@ const records = raw.map((r) => {
 });
 
 // Spatial-join commune + wilaya (reconciles legacy wilaya codes to geoalgeria).
-for (const r of records) {
-  if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
-  const c = nearestCommune(r.lat, r.lng, communes);
-  r.wilaya_code = wcode(c.wilaya_code);
-  r.commune = c.name_fr;
-  r.commune_code = c.code_commune ?? null;
+attachCommune(records, communes);
+// Fail loudly on any ungeocoded station — never ship an un-reconciled wilaya_code.
+const ungeocoded = records.filter((r) => !Number.isFinite(r.lat) || !Number.isFinite(r.lng));
+if (ungeocoded.length) {
+  throw new Error(`${ungeocoded.length} ungeocoded station(s): ${ungeocoded.map((r) => r.name).slice(0, 5).join(", ")} — add a COORD_FIX entry or centroid fallback in fetch.mjs`);
 }
 
 // Stable ids: {wilaya}-{seq}, sorted by wilaya then sogral_id.

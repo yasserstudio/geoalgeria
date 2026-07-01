@@ -6,7 +6,8 @@ import { dirname, join } from "node:path";
 const DATA = join(dirname(fileURLToPath(import.meta.url)), "data");
 const load = (p) => JSON.parse(readFileSync(join(DATA, p), "utf-8"));
 
-export const stations = () => load("stations.json"); // 744 rail/tram/metro/… nodes
+export const stations = () => load("stations.json"); // rail/tram/metro/… nodes
+export const stationById = (id) => stations().find((s) => s.id === id) ?? null;
 export const stationsByType = (type) =>
   stations().filter((s) => s.type === String(type).toLowerCase());
 export const stationsByWilaya = (code) => {
@@ -15,4 +16,4 @@ export const stationsByWilaya = (code) => {
 };
 export const metadata = () => load("metadata.json");
 
-export default { stations, stationsByType, stationsByWilaya, metadata };
+export default { stations, stationById, stationsByType, stationsByWilaya, metadata };

@@ -231,7 +231,7 @@ ${bullets
   .map((b) => `- ${plain(b)}`)
   .join("\n")}
 
-${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats} — one \`${install}\`, MIT, validated on every commit. Corrections and use cases welcome.
+${totals ? `It now covers ${totals}, ` : ""}shipped as ${allFormats} — one \`${install}\`, MIT-licensed code, validated on every commit. Corrections and use cases welcome.
 
 #OpenData #Algeria
 

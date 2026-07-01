@@ -14,7 +14,7 @@
 
 <div dir="rtl">
 
-744 عقدة للنقل بالسكك الحديدية والنقل الحضري في الجزائر — **محطات القطار، محطات الترامواي،
+692 عقدة للنقل بالسكك الحديدية والنقل الحضري في الجزائر — **محطات القطار، محطات الترامواي،
 محطات المترو، التلفريك والتلفريك المعلّق** — مع أسماء ثنائية اللغة (فر/عر)، المُشغّل
 (SNTF / SETRAM / SEMA)، الخط، الإحداثيات، والربط بالولاية/البلدية. تجميعة من Wikidata و
 OpenStreetMap، بصيغ JSON و CSV و GeoJSON. جزء من
@@ -32,7 +32,7 @@ npm install @geoalgeria/ferroviaire
 ```js
 import ferroviaire from "@geoalgeria/ferroviaire";
 
-const all = ferroviaire.stations();               // 744
+const all = ferroviaire.stations();               // 692
 const trams = ferroviaire.stationsByType("tram");  // 190
 const alger = ferroviaire.stationsByWilaya(16);
 ```
@@ -43,11 +43,11 @@ const alger = ferroviaire.stationsByWilaya(16);
 
 | النوع | العدد | المُشغّل |
 | --- | --- | --- |
-| سكك حديدية (قطار) | **463** | SNTF |
+| سكك حديدية (قطار) | **427** | SNTF |
 | ترامواي | **190** | SETRAM (7 شبكات) |
-| مترو | **56** | SEMA — مترو الجزائر |
+| مترو | **41** | SEMA — مترو الجزائر |
 | تلفريك | **24** | — |
-| تلفريك معلّق | **11** | — |
+| تلفريك معلّق | **10** | — |
 
 تغطي **50 ولاية**، وكلها مُحدّدة جغرافيًا. يرتبط `wilaya_code` بنموذج الـ69 ولاية في
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).

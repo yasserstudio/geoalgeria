@@ -12,7 +12,7 @@
 
 </div>
 
-744 nœuds ferroviaires et de transport urbain en Algérie — **gares, arrêts de tramway,
+692 nœuds ferroviaires et de transport urbain en Algérie — **gares, arrêts de tramway,
 stations de métro, téléphériques et télécabines** — avec noms bilingues FR/AR, exploitant
 (SNTF / SETRAM / SEMA), ligne, coordonnées GPS et rattachement wilaya/commune. Composite
 Wikidata + OpenStreetMap, en JSON, CSV et GeoJSON. Fait partie de
@@ -28,7 +28,7 @@ npm install @geoalgeria/ferroviaire
 ```js
 import ferroviaire from "@geoalgeria/ferroviaire";
 
-const tout = ferroviaire.stations();               // 744
+const tout = ferroviaire.stations();               // 692
 const trams = ferroviaire.stationsByType("tram");  // 190 arrêts de tram
 const alger = ferroviaire.stationsByWilaya(16);    // rail + métro + tram à Alger
 ```
@@ -37,11 +37,11 @@ const alger = ferroviaire.stationsByWilaya(16);    // rail + métro + tram à Al
 
 | Type | Nombre | Exploitant |
 | --- | --- | --- |
-| Rail (train) | **463** | SNTF |
+| Rail (train) | **427** | SNTF |
 | Tramway | **190** | SETRAM (7 réseaux) |
-| Métro | **56** | SEMA — Métro d'Alger |
+| Métro | **41** | SEMA — Métro d'Alger |
 | Téléphérique | **24** | — |
-| Télécabine | **11** | — |
+| Télécabine | **10** | — |
 
 Couvrant **50 wilayas**, tous géocodés. `wilaya_code` est lié au modèle à 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).

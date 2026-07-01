@@ -984,35 +984,6 @@
         "geo_precision": "exact",
         "source": "wikidata+osm",
         "wikidata": "Q116198149",
-        "osm_id": "node/2333679901"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.718125,
-          34.794278
-        ]
-      },
-      "properties": {
-        "id": "07-002",
-        "name": "Biskra",
-        "name_fr": "Biskra",
-        "name_ar": "محطة القطار الجديدة (طور الانجاز)",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "07",
-        "commune": "Biskra",
-        "commune_code": 701,
-        "lat": 34.794278,
-        "lng": 5.718125,
-        "geo_precision": "exact",
-        "source": "osm",
-        "wikidata": "Q116198149",
         "osm_id": "node/9968184587"
       }
     },
@@ -1026,7 +997,7 @@
         ]
       },
       "properties": {
-        "id": "07-003",
+        "id": "07-002",
         "name": "Oumache",
         "name_fr": "Oumache",
         "name_ar": "محطة قطار أوماش",
@@ -1118,7 +1089,7 @@
         "name_fr": "Béchar",
         "name_ar": "محطة قطار بشار",
         "type": "rail",
-        "line": "ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar",
+        "line": "ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar | ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar",
         "operator": "SNTF",
         "network": null,
         "wilaya_code": "08",
@@ -1137,41 +1108,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.219668,
-          31.62369
-        ]
-      },
-      "properties": {
-        "id": "08-004",
-        "name": "Béchar",
-        "name_fr": "Béchar",
-        "name_ar": "محطة قطار بشار",
-        "type": "rail",
-        "line": "ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Bechar",
-        "commune_code": 801,
-        "lat": 31.62369,
-        "lng": -2.219668,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q119684991",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -1.247222,
           32.050833
         ]
       },
       "properties": {
-        "id": "08-005",
+        "id": "08-004",
         "name": "Beni Ounif",
         "name_fr": "Beni Ounif",
         "name_ar": "محطة قطار بني ونيف",
@@ -1195,41 +1137,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.247222,
-          32.050833
-        ]
-      },
-      "properties": {
-        "id": "08-006",
-        "name": "Beni Ounif",
-        "name_fr": "Beni Ounif",
-        "name_ar": "محطة قطار بني ونيف",
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Beni-Ounif",
-        "commune_code": 821,
-        "lat": 32.050833,
-        "lng": -1.247222,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120281854",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -2.7195,
           31.0205
         ]
       },
       "properties": {
-        "id": "08-007",
+        "id": "08-005",
         "name": "Ancienne gare d'El Abadla",
         "name_fr": "Ancienne gare d'El Abadla",
         "name_ar": "محطة قطار العبادلة",
@@ -1258,7 +1171,7 @@
         ]
       },
       "properties": {
-        "id": "08-008",
+        "id": "08-006",
         "name": "Béchar - Méditerranée-Niger",
         "name_fr": "Béchar - Méditerranée-Niger",
         "name_ar": "محطة_قطار_بشار_العابر_للصحراء",
@@ -1287,7 +1200,7 @@
         ]
       },
       "properties": {
-        "id": "08-009",
+        "id": "08-007",
         "name": "Kenadsa",
         "name_fr": "Kenadsa",
         "name_ar": "محطة قطار القنادسة",
@@ -1316,7 +1229,7 @@
         ]
       },
       "properties": {
-        "id": "08-010",
+        "id": "08-008",
         "name": "Hassi El Haouari",
         "name_fr": "Hassi El Haouari",
         "name_ar": "محطة قطار حاسي الهواري",
@@ -1340,70 +1253,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.06467,
-          31.79808
-        ]
-      },
-      "properties": {
-        "id": "08-011",
-        "name": "Hassi El Haouari",
-        "name_fr": "Hassi El Haouari",
-        "name_ar": "محطة قطار حاسي الهواري",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Lahmar",
-        "commune_code": 806,
-        "lat": 31.79808,
-        "lng": -2.06467,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498560",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -1.8414,
           31.9266
         ]
       },
       "properties": {
-        "id": "08-012",
-        "name": "Ben Zireg",
-        "name_fr": "Ben Zireg",
-        "name_ar": "محطة قطار بن زيراق",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Mogheul",
-        "commune_code": 816,
-        "lat": 31.9266,
-        "lng": -1.8414,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498561",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.8414,
-          31.9266
-        ]
-      },
-      "properties": {
-        "id": "08-013",
+        "id": "08-009",
         "name": "Ben Zireg",
         "name_fr": "Ben Zireg",
         "name_ar": "محطة قطار بن زيراق",
@@ -1432,7 +1287,7 @@
         ]
       },
       "properties": {
-        "id": "08-014",
+        "id": "08-010",
         "name": "Bou Aïch",
         "name_fr": "Bou Aïch",
         "name_ar": "محطة قطار بوعيش",
@@ -1456,70 +1311,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.661642,
-          32.01085
-        ]
-      },
-      "properties": {
-        "id": "08-015",
-        "name": "Bou Aïch",
-        "name_fr": "Bou Aïch",
-        "name_ar": "محطة قطار بوعيش",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Beni-Ounif",
-        "commune_code": 821,
-        "lat": 32.01085,
-        "lng": -1.661642,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498562",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -1.43701,
           32.02051
         ]
       },
       "properties": {
-        "id": "08-016",
-        "name": "Mérirès",
-        "name_fr": "Mérirès",
-        "name_ar": "محطة قطار مريراس",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Beni-Ounif",
-        "commune_code": 821,
-        "lat": 32.02051,
-        "lng": -1.43701,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498563",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.43701,
-          32.02051
-        ]
-      },
-      "properties": {
-        "id": "08-017",
+        "id": "08-011",
         "name": "Mérirès",
         "name_fr": "Mérirès",
         "name_ar": "محطة قطار مريراس",
@@ -1548,36 +1345,7 @@
         ]
       },
       "properties": {
-        "id": "08-018",
-        "name": "Oued El Assi",
-        "name_fr": "Oued El Assi",
-        "name_ar": "محطة قطار واد العاصي",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Beni-Ounif",
-        "commune_code": 821,
-        "lat": 32.082865,
-        "lng": -1.105164,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498564",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.105164,
-          32.082865
-        ]
-      },
-      "properties": {
-        "id": "08-019",
+        "id": "08-012",
         "name": "Oued El Assi",
         "name_fr": "Oued El Assi",
         "name_ar": "محطة قطار واد العاصي",
@@ -1606,36 +1374,7 @@
         ]
       },
       "properties": {
-        "id": "08-020",
-        "name": "Duveyrier",
-        "name_fr": "Duveyrier",
-        "name_ar": "محطة قطار زوبية",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "08",
-        "commune": "Beni-Ounif",
-        "commune_code": 821,
-        "lat": 32.145205,
-        "lng": -1.000249,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498565",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -1.000249,
-          32.145205
-        ]
-      },
-      "properties": {
-        "id": "08-021",
+        "id": "08-013",
         "name": "Duveyrier",
         "name_fr": "Duveyrier",
         "name_ar": "محطة قطار زوبية",
@@ -1664,7 +1403,7 @@
         ]
       },
       "properties": {
-        "id": "08-022",
+        "id": "08-014",
         "name": "Abadla",
         "name_fr": "Abadla",
         "name_ar": null,
@@ -1693,7 +1432,7 @@
         ]
       },
       "properties": {
-        "id": "08-023",
+        "id": "08-015",
         "name": "Tabelbala",
         "name_fr": "Tabelbala",
         "name_ar": "محطة قطار تبلبالة",
@@ -1722,7 +1461,7 @@
         ]
       },
       "properties": {
-        "id": "08-024",
+        "id": "08-016",
         "name": "Gare de Hassi Khebi",
         "name_fr": "Gare de Hassi Khebi",
         "name_ar": "محطة قطار حاسي خبي",
@@ -1751,7 +1490,7 @@
         ]
       },
       "properties": {
-        "id": "08-025",
+        "id": "08-017",
         "name": "Gare de Hammaguir",
         "name_fr": "Gare de Hammaguir",
         "name_ar": "محطة قطار حماقير",
@@ -2112,35 +1851,6 @@
         "commune_code": 905,
         "lat": 36.486036,
         "lng": 2.849069,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q64967869",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.860278,
-          36.458333
-        ]
-      },
-      "properties": {
-        "id": "09-013",
-        "name": "Télécabine de Chréa",
-        "name_fr": "Télécabine de Chréa",
-        "name_ar": "المصعد الهوائي للشريعة",
-        "type": "gondola",
-        "line": null,
-        "operator": null,
-        "network": null,
-        "wilaya_code": "09",
-        "commune": "Blida",
-        "commune_code": 901,
-        "lat": 36.458333,
-        "lng": 2.860278,
         "geo_precision": "exact",
         "source": "wikidata",
         "wikidata": "Q64967869",
@@ -3813,7 +3523,7 @@
         "id": "15-012",
         "name": "station Sidi Belloua",
         "name_fr": "station Sidi Belloua",
-        "name_ar": "محطة سيدي بلوى في طور الانجاز",
+        "name_ar": "محطة قرية رجاونة في طور الانجاز",
         "type": "tram",
         "line": "Télécabine de Tizi Ouzou",
         "operator": "SETRAM",
@@ -3826,7 +3536,7 @@
         "geo_precision": "exact",
         "source": "wikidata+osm",
         "wikidata": "Q140306977",
-        "osm_id": "node/4557835279"
+        "osm_id": "node/4557835280"
       }
     },
     {
@@ -3842,7 +3552,7 @@
         "id": "15-013",
         "name": "station Redjaouna",
         "name_fr": "station Redjaouna",
-        "name_ar": "محطة قرية رجاونة في طور الانجاز",
+        "name_ar": "محطة سيدي بلوى في طور الانجاز",
         "type": "tram",
         "line": "Télécabine de Tizi Ouzou",
         "operator": "SETRAM",
@@ -3855,7 +3565,7 @@
         "geo_precision": "exact",
         "source": "wikidata+osm",
         "wikidata": "Q140306978",
-        "osm_id": "node/4557835280"
+        "osm_id": "node/4557835279"
       }
     },
     {
@@ -4124,41 +3834,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.209163,
-          36.700284
-        ]
-      },
-      "properties": {
-        "id": "16-006",
-        "name": "Aéroport Houari Boumédiène",
-        "name_fr": "Aéroport Houari Boumédiène",
-        "name_ar": "محطة قطار مطار هواري بومدين",
-        "type": "rail",
-        "line": "ligne de Bab Ezzouar à l'aéroport d'Alger",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "16",
-        "commune": "Dar El Beida",
-        "commune_code": 1620,
-        "lat": 36.700284,
-        "lng": 3.209163,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q105767334",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           2.891988,
           36.680624
         ]
       },
       "properties": {
-        "id": "16-007",
+        "id": "16-006",
         "name": "Sidi Abdellah",
         "name_fr": "Sidi Abdellah",
         "name_ar": "محطة قطار سيدي عبد الله",
@@ -4187,7 +3868,7 @@
         ]
       },
       "properties": {
-        "id": "16-008",
+        "id": "16-007",
         "name": "Tessala El Merdja",
         "name_fr": "Tessala El Merdja",
         "name_ar": "محطة قطار تسالة المرجة",
@@ -4216,7 +3897,7 @@
         ]
       },
       "properties": {
-        "id": "16-009",
+        "id": "16-008",
         "name": "Hussein Dey",
         "name_fr": "Hussein Dey",
         "name_ar": "محطة قطار حسين داي",
@@ -4245,7 +3926,7 @@
         ]
       },
       "properties": {
-        "id": "16-010",
+        "id": "16-009",
         "name": "Les Ateliers",
         "name_fr": "Les Ateliers",
         "name_ar": "محطة قطار الورشات",
@@ -4274,7 +3955,7 @@
         ]
       },
       "properties": {
-        "id": "16-011",
+        "id": "16-010",
         "name": "Caroubier",
         "name_fr": "Caroubier",
         "name_ar": "محطة قطار خروبة",
@@ -4303,7 +3984,7 @@
         ]
       },
       "properties": {
-        "id": "16-012",
+        "id": "16-011",
         "name": "Rouïba ZI",
         "name_fr": "Rouïba ZI",
         "name_ar": "محطة قطار الرويبة الصناعية",
@@ -4332,7 +4013,7 @@
         ]
       },
       "properties": {
-        "id": "16-013",
+        "id": "16-012",
         "name": "Réghaïa ZI",
         "name_fr": "Réghaïa ZI",
         "name_ar": "محطة قطار الرغاية الصناعية",
@@ -4361,7 +4042,7 @@
         ]
       },
       "properties": {
-        "id": "16-014",
+        "id": "16-013",
         "name": "Réghaïa",
         "name_fr": "Réghaïa",
         "name_ar": "محطة قطار الرغاية",
@@ -4390,7 +4071,7 @@
         ]
       },
       "properties": {
-        "id": "16-015",
+        "id": "16-014",
         "name": "Gué de Constantine",
         "name_fr": "Gué de Constantine",
         "name_ar": "محطة قطار جسر قسنطينة",
@@ -4419,7 +4100,7 @@
         ]
       },
       "properties": {
-        "id": "16-016",
+        "id": "16-015",
         "name": "Aïn Naâdja",
         "name_fr": "Aïn Naâdja",
         "name_ar": "محطة قطار عين النعجة",
@@ -4448,7 +4129,7 @@
         ]
       },
       "properties": {
-        "id": "16-017",
+        "id": "16-016",
         "name": "Baba Ali",
         "name_fr": "Baba Ali",
         "name_ar": "محطة قطار بابا علي",
@@ -4477,7 +4158,7 @@
         ]
       },
       "properties": {
-        "id": "16-018",
+        "id": "16-017",
         "name": "Zéralda",
         "name_fr": "Zéralda",
         "name_ar": "زرالدة",
@@ -4506,7 +4187,7 @@
         ]
       },
       "properties": {
-        "id": "16-019",
+        "id": "16-018",
         "name": "Rouïba",
         "name_fr": "Rouïba",
         "name_ar": "الرويبة",
@@ -4535,7 +4216,7 @@
         ]
       },
       "properties": {
-        "id": "16-020",
+        "id": "16-019",
         "name": "Agha",
         "name_fr": "Agha",
         "name_ar": "محطة آغا",
@@ -4564,7 +4245,7 @@
         ]
       },
       "properties": {
-        "id": "16-021",
+        "id": "16-020",
         "name": "Dar El Beida",
         "name_fr": "Dar El Beida",
         "name_ar": "الدار البيضاء",
@@ -4593,7 +4274,7 @@
         ]
       },
       "properties": {
-        "id": "16-022",
+        "id": "16-021",
         "name": "Bab Ezzouar",
         "name_fr": "Bab Ezzouar",
         "name_ar": "باب الزوار",
@@ -4622,7 +4303,7 @@
         ]
       },
       "properties": {
-        "id": "16-023",
+        "id": "16-022",
         "name": "Oued Smar",
         "name_fr": "Oued Smar",
         "name_ar": "وادي السمار",
@@ -4651,7 +4332,7 @@
         ]
       },
       "properties": {
-        "id": "16-024",
+        "id": "16-023",
         "name": "Université de Sidi Abdellah",
         "name_fr": "Université de Sidi Abdellah",
         "name_ar": "محطة قطار جامعة سيدي عبد الله",
@@ -4680,7 +4361,7 @@
         ]
       },
       "properties": {
-        "id": "16-025",
+        "id": "16-024",
         "name": "Rouïba SNVI",
         "name_fr": "Rouïba SNVI",
         "name_ar": "الرويبة سوناكوم",
@@ -4709,12 +4390,12 @@
         ]
       },
       "properties": {
-        "id": "16-026",
+        "id": "16-025",
         "name": "Alger",
         "name_fr": "Alger",
         "name_ar": "الجزائر",
         "type": "rail",
-        "line": "ligne d'Alger à Skikda | ligne d'Alger à Oran",
+        "line": "ligne d'Alger à Skikda | ligne d'Alger à Oran | ligne d'Alger à Skikda | ligne d'Alger à Oran",
         "operator": "SNTF",
         "network": null,
         "wilaya_code": "16",
@@ -4725,64 +4406,6 @@
         "geo_precision": "exact",
         "source": "wikidata",
         "wikidata": "Q3095611",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.06182,
-          36.7792
-        ]
-      },
-      "properties": {
-        "id": "16-027",
-        "name": "Alger",
-        "name_fr": "Alger",
-        "name_ar": "الجزائر",
-        "type": "rail",
-        "line": "ligne d'Alger à Skikda | ligne d'Alger à Oran",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "16",
-        "commune": "Casbah",
-        "commune_code": 1607,
-        "lat": 36.7792,
-        "lng": 3.06182,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q3095611",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.20357,
-          36.70123
-        ]
-      },
-      "properties": {
-        "id": "16-028",
-        "name": "Aéroport d'Alger",
-        "name_fr": "Aéroport d'Alger",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne 1",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "16",
-        "commune": "Dar El Beida",
-        "commune_code": 1620,
-        "lat": 36.70123,
-        "lng": 3.20357,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q86664392",
         "osm_id": null
       }
     },
@@ -4796,7 +4419,7 @@
         ]
       },
       "properties": {
-        "id": "16-029",
+        "id": "16-026",
         "name": "محطة طالب عبد الرحمن",
         "name_fr": "محطة طالب عبد الرحمن",
         "name_ar": "محطة طالب عبد الرحمن",
@@ -4825,7 +4448,7 @@
         ]
       },
       "properties": {
-        "id": "16-030",
+        "id": "16-027",
         "name": "محطة الساعات الثلاث",
         "name_fr": "محطة الساعات الثلاث",
         "name_ar": "محطة الساعات الثلاث",
@@ -4854,7 +4477,7 @@
         ]
       },
       "properties": {
-        "id": "16-031",
+        "id": "16-028",
         "name": "محطة تريولي",
         "name_fr": "محطة تريولي",
         "name_ar": "محطة تريولي",
@@ -4883,7 +4506,7 @@
         ]
       },
       "properties": {
-        "id": "16-032",
+        "id": "16-029",
         "name": "Berraki - Le Jardin",
         "name_fr": "Berraki - Le Jardin",
         "name_ar": "محطة الحديقة",
@@ -4912,7 +4535,7 @@
         ]
       },
       "properties": {
-        "id": "16-033",
+        "id": "16-030",
         "name": "Gué de Constantine",
         "name_fr": "Gué de Constantine",
         "name_ar": "جسر قسنطينة",
@@ -4941,7 +4564,7 @@
         ]
       },
       "properties": {
-        "id": "16-034",
+        "id": "16-031",
         "name": "Aéroport Houari Boumédiène",
         "name_fr": "Aéroport Houari Boumédiène",
         "name_ar": "محطة قطار مطار هواري بومدين",
@@ -4970,7 +4593,7 @@
         ]
       },
       "properties": {
-        "id": "16-035",
+        "id": "16-032",
         "name": "Hacen Badi",
         "name_fr": "Hacen Badi",
         "name_ar": "محطة حسان بادي",
@@ -4999,7 +4622,7 @@
         ]
       },
       "properties": {
-        "id": "16-036",
+        "id": "16-033",
         "name": "Pôle Universitaire Bouraoui",
         "name_fr": "Pôle Universitaire Bouraoui",
         "name_ar": "محطة القطب الجامعي",
@@ -5028,7 +4651,7 @@
         ]
       },
       "properties": {
-        "id": "16-037",
+        "id": "16-034",
         "name": "Beaulieu",
         "name_fr": "Beaulieu",
         "name_ar": "محطّة المنظر الجميل",
@@ -5057,7 +4680,7 @@
         ]
       },
       "properties": {
-        "id": "16-038",
+        "id": "16-035",
         "name": "Centre des Affaires",
         "name_fr": "Centre des Affaires",
         "name_ar": "محطة حي الأعمال",
@@ -5086,7 +4709,7 @@
         ]
       },
       "properties": {
-        "id": "16-039",
+        "id": "16-036",
         "name": "Smail Yefsah",
         "name_fr": "Smail Yefsah",
         "name_ar": "محطة اسماعيل يفصح",
@@ -5115,7 +4738,7 @@
         ]
       },
       "properties": {
-        "id": "16-040",
+        "id": "16-037",
         "name": "Rabia Tahar",
         "name_fr": "Rabia Tahar",
         "name_ar": "رابية الطاهر",
@@ -5144,7 +4767,7 @@
         ]
       },
       "properties": {
-        "id": "16-041",
+        "id": "16-038",
         "name": "Université Houari Boumédiène",
         "name_fr": "Université Houari Boumédiène",
         "name_ar": "محطة جامعة هواري بومدين",
@@ -5173,7 +4796,7 @@
         ]
       },
       "properties": {
-        "id": "16-042",
+        "id": "16-039",
         "name": "Oued Smar",
         "name_fr": "Oued Smar",
         "name_ar": "محطة المترو وادي السمار",
@@ -5202,7 +4825,7 @@
         ]
       },
       "properties": {
-        "id": "16-043",
+        "id": "16-040",
         "name": "Mohamed Belarbi",
         "name_fr": "Mohamed Belarbi",
         "name_ar": "محطة محمد بلعربي",
@@ -5231,7 +4854,7 @@
         ]
       },
       "properties": {
-        "id": "16-044",
+        "id": "16-041",
         "name": "Parc Urbain",
         "name_fr": "Parc Urbain",
         "name_ar": "محطة المنتزه الحضري",
@@ -5260,7 +4883,7 @@
         ]
       },
       "properties": {
-        "id": "16-045",
+        "id": "16-042",
         "name": "Aïn Naâdja-Gare",
         "name_fr": "Aïn Naâdja-Gare",
         "name_ar": "محطّة مترو عين النعجة – المحطة",
@@ -5289,7 +4912,7 @@
         ]
       },
       "properties": {
-        "id": "16-046",
+        "id": "16-043",
         "name": "Mohamed Boudiaf",
         "name_fr": "Mohamed Boudiaf",
         "name_ar": "محطّة محمد بوضياف",
@@ -5318,7 +4941,7 @@
         ]
       },
       "properties": {
-        "id": "16-047",
+        "id": "16-044",
         "name": "Jardin",
         "name_fr": "Jardin",
         "name_ar": null,
@@ -5347,7 +4970,7 @@
         ]
       },
       "properties": {
-        "id": "16-048",
+        "id": "16-045",
         "name": "Cité 2004 Logements",
         "name_fr": "Cité 2004 Logements",
         "name_ar": null,
@@ -5376,7 +4999,7 @@
         ]
       },
       "properties": {
-        "id": "16-049",
+        "id": "16-046",
         "name": "El Harrach Centre",
         "name_fr": "El Harrach Centre",
         "name_ar": "الحراش وسط",
@@ -5400,41 +5023,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.13766,
-          36.722
-        ]
-      },
-      "properties": {
-        "id": "16-050",
-        "name": "El Harrach Centre",
-        "name_fr": "El Harrach Centre",
-        "name_ar": null,
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Mohammadia",
-        "commune_code": 1629,
-        "lat": 36.722,
-        "lng": 3.13766,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q20669761",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.13093,
           36.7219
         ]
       },
       "properties": {
-        "id": "16-051",
+        "id": "16-047",
         "name": "El Harrach Gare",
         "name_fr": "El Harrach Gare",
         "name_ar": "محطة الحراش",
@@ -5458,41 +5052,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.13093,
-          36.7219
-        ]
-      },
-      "properties": {
-        "id": "16-052",
-        "name": "El Harrach Gare",
-        "name_fr": "El Harrach Gare",
-        "name_ar": "محطة الحراش",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Bourouba",
-        "commune_code": 1616,
-        "lat": 36.7219,
-        "lng": 3.13093,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q20669762",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.11044,
           36.7183
         ]
       },
       "properties": {
-        "id": "16-053",
+        "id": "16-048",
         "name": "Bachdjarah - Tennis",
         "name_fr": "Bachdjarah - Tennis",
         "name_ar": "محطة باش جراح (التنس)",
@@ -5516,41 +5081,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.11044,
-          36.7183
-        ]
-      },
-      "properties": {
-        "id": "16-054",
-        "name": "Bachdjarah - Tennis",
-        "name_fr": "Bachdjarah - Tennis",
-        "name_ar": "محطة باش جراح (التنس)",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Bourouba",
-        "commune_code": 1616,
-        "lat": 36.7183,
-        "lng": 3.11044,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q20669906",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.11827,
           36.72181
         ]
       },
       "properties": {
-        "id": "16-055",
+        "id": "16-049",
         "name": "Bachdjarah",
         "name_fr": "Bachdjarah",
         "name_ar": "محطة باش جراح",
@@ -5574,41 +5110,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.11827,
-          36.72181
-        ]
-      },
-      "properties": {
-        "id": "16-056",
-        "name": "Bachdjarah",
-        "name_fr": "Bachdjarah",
-        "name_ar": "محطة باش جراح",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Bourouba",
-        "commune_code": 1616,
-        "lat": 36.72181,
-        "lng": 3.11827,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q20669907",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.058056,
           36.779167
         ]
       },
       "properties": {
-        "id": "16-057",
+        "id": "16-050",
         "name": "Ali Boumendjel",
         "name_fr": "Ali Boumendjel",
         "name_ar": "محطة مترو علي بومنجل",
@@ -5637,7 +5144,7 @@
         ]
       },
       "properties": {
-        "id": "16-058",
+        "id": "16-051",
         "name": "1er Mai",
         "name_fr": "1er Mai",
         "name_ar": "أول ماي",
@@ -5661,41 +5168,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.05531,
-          36.7606
-        ]
-      },
-      "properties": {
-        "id": "16-059",
-        "name": "1er Mai",
-        "name_fr": "1er Mai",
-        "name_ar": "أول ماي",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Sidi M'hamed",
-        "commune_code": 1602,
-        "lat": 36.7606,
-        "lng": 3.05531,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q2813532",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.061734,
           36.756856
         ]
       },
       "properties": {
-        "id": "16-060",
+        "id": "16-052",
         "name": "Aïssat Idir",
         "name_fr": "Aïssat Idir",
         "name_ar": "عيسات إدير",
@@ -5724,7 +5202,7 @@
         ]
       },
       "properties": {
-        "id": "16-061",
+        "id": "16-053",
         "name": "Cité Amirouche",
         "name_fr": "Cité Amirouche",
         "name_ar": "حي عميروش",
@@ -5748,41 +5226,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.09422,
-          36.7378
-        ]
-      },
-      "properties": {
-        "id": "16-062",
-        "name": "Cité Amirouche",
-        "name_fr": "Cité Amirouche",
-        "name_ar": "حي عميروش",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Hussein Dey",
-        "commune_code": 1617,
-        "lat": 36.7378,
-        "lng": 3.09422,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q2974625",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.10102,
           36.7332
         ]
       },
       "properties": {
-        "id": "16-063",
+        "id": "16-054",
         "name": "Cité Mer et Soleil",
         "name_fr": "Cité Mer et Soleil",
         "name_ar": "البحر و الشمس",
@@ -5806,41 +5255,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.10102,
-          36.7332
-        ]
-      },
-      "properties": {
-        "id": "16-064",
-        "name": "Cité Mer et Soleil",
-        "name_fr": "Cité Mer et Soleil",
-        "name_ar": "البحر و الشمس",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "El Magharia",
-        "commune_code": 1631,
-        "lat": 36.7332,
-        "lng": 3.10102,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q2974681",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.06641,
           36.7529
         ]
       },
       "properties": {
-        "id": "16-065",
+        "id": "16-055",
         "name": "Hamma",
         "name_fr": "Hamma",
         "name_ar": "الحامة",
@@ -5864,41 +5284,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.06641,
-          36.7529
-        ]
-      },
-      "properties": {
-        "id": "16-066",
-        "name": "Hamma",
-        "name_fr": "Hamma",
-        "name_ar": "الحامة",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Mohamed Belouzdad",
-        "commune_code": null,
-        "lat": 36.7529,
-        "lng": 3.06641,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q3126479",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.10224,
           36.7254
         ]
       },
       "properties": {
-        "id": "16-067",
+        "id": "16-056",
         "name": "Haï El Badr",
         "name_fr": "Haï El Badr",
         "name_ar": "حي البدر",
@@ -5927,7 +5318,7 @@
         ]
       },
       "properties": {
-        "id": "16-068",
+        "id": "16-057",
         "name": "Jardin d'essai",
         "name_fr": "Jardin d'essai",
         "name_ar": "حديقة التجارب",
@@ -5951,41 +5342,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.07218,
-          36.7469
-        ]
-      },
-      "properties": {
-        "id": "16-069",
-        "name": "Jardin d'essai",
-        "name_fr": "Jardin d'essai",
-        "name_ar": "حديقة التجارب",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "El Madania",
-        "commune_code": 1603,
-        "lat": 36.7469,
-        "lng": 3.07218,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q3162444",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.05366,
           36.7663
         ]
       },
       "properties": {
-        "id": "16-070",
+        "id": "16-058",
         "name": "Khelifa Boukhalfa",
         "name_fr": "Khelifa Boukhalfa",
         "name_ar": "خليفة بوخالفة",
@@ -6009,41 +5371,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.05366,
-          36.7663
-        ]
-      },
-      "properties": {
-        "id": "16-071",
-        "name": "Khelifa Boukhalfa",
-        "name_fr": "Khelifa Boukhalfa",
-        "name_ar": "خليفة بوخالفة",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Sidi M'hamed",
-        "commune_code": 1602,
-        "lat": 36.7663,
-        "lng": 3.05366,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q3196135",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.08299,
           36.7423
         ]
       },
       "properties": {
-        "id": "16-072",
+        "id": "16-059",
         "name": "Les Fusillés",
         "name_fr": "Les Fusillés",
         "name_ar": "المعدومين",
@@ -6067,41 +5400,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.08299,
-          36.7423
-        ]
-      },
-      "properties": {
-        "id": "16-073",
-        "name": "Les Fusillés",
-        "name_fr": "Les Fusillés",
-        "name_ar": "المعدومين",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Kouba",
-        "commune_code": 1618,
-        "lat": 36.7423,
-        "lng": 3.08299,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q3232853",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.05809,
           36.7719
         ]
       },
       "properties": {
-        "id": "16-074",
+        "id": "16-060",
         "name": "Tafourah - Grande Poste",
         "name_fr": "Tafourah - Grande Poste",
         "name_ar": "تافورة - البريد المركزي",
@@ -6125,41 +5429,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.05809,
-          36.7719
-        ]
-      },
-      "properties": {
-        "id": "16-075",
-        "name": "Tafourah - Grande Poste",
-        "name_fr": "Tafourah - Grande Poste",
-        "name_ar": "تافورة - البريد المركزي",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Casbah",
-        "commune_code": 1607,
-        "lat": 36.7719,
-        "lng": 3.05809,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q3513795",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.083889,
           36.706111
         ]
       },
       "properties": {
-        "id": "16-076",
+        "id": "16-061",
         "name": "Aïn Naâdja",
         "name_fr": "Aïn Naâdja",
         "name_ar": "محطة مترو عين النعجة",
@@ -6183,41 +5458,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.083889,
-          36.706111
-        ]
-      },
-      "properties": {
-        "id": "16-077",
-        "name": "Aïn Naâdja",
-        "name_fr": "Aïn Naâdja",
-        "name_ar": "محطة مترو عين النعجة",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Bachedjerah",
-        "commune_code": 1619,
-        "lat": 36.706111,
-        "lng": 3.083889,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q52230128",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.062222,
           36.785556
         ]
       },
       "properties": {
-        "id": "16-078",
+        "id": "16-062",
         "name": "Place des Martyrs",
         "name_fr": "Place des Martyrs",
         "name_ar": "محطة مترو ساحة الشهداء",
@@ -6241,70 +5487,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.062222,
-          36.785556
-        ]
-      },
-      "properties": {
-        "id": "16-079",
-        "name": "Place des Martyrs",
-        "name_fr": "Place des Martyrs",
-        "name_ar": "محطة مترو ساحة الشهداء",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Casbah",
-        "commune_code": 1607,
-        "lat": 36.785556,
-        "lng": 3.062222,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q52230167",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.092778,
           36.710556
         ]
       },
       "properties": {
-        "id": "16-080",
-        "name": "Gué de Constantine",
-        "name_fr": "Gué de Constantine",
-        "name_ar": "محطة جسر قسطنطين (مترو الجزائر)",
-        "type": "metro",
-        "line": "ligne 1",
-        "operator": "SEMA",
-        "network": "Métro d'Alger",
-        "wilaya_code": "16",
-        "commune": "Bourouba",
-        "commune_code": 1616,
-        "lat": 36.710556,
-        "lng": 3.092778,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q55074870",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.092778,
-          36.710556
-        ]
-      },
-      "properties": {
-        "id": "16-081",
+        "id": "16-063",
         "name": "Gué de Constantine",
         "name_fr": "Gué de Constantine",
         "name_ar": "محطة جسر قسطنطين (مترو الجزائر)",
@@ -6333,7 +5521,7 @@
         ]
       },
       "properties": {
-        "id": "16-082",
+        "id": "16-064",
         "name": "Les Ateliers",
         "name_fr": "Les Ateliers",
         "name_ar": "وقف ورش العمل",
@@ -6362,7 +5550,7 @@
         ]
       },
       "properties": {
-        "id": "16-083",
+        "id": "16-065",
         "name": "Aéroport d'Alger",
         "name_fr": "Aéroport d'Alger",
         "name_ar": "محطة مطار هواري بومدين",
@@ -6391,7 +5579,7 @@
         ]
       },
       "properties": {
-        "id": "16-084",
+        "id": "16-066",
         "name": null,
         "name_fr": null,
         "name_ar": null,
@@ -6420,7 +5608,7 @@
         ]
       },
       "properties": {
-        "id": "16-085",
+        "id": "16-067",
         "name": "Cité Rabia Tahar",
         "name_fr": "Cité Rabia Tahar",
         "name_ar": "محطة ترامواي يحي بوسحاقي",
@@ -6449,7 +5637,7 @@
         ]
       },
       "properties": {
-        "id": "16-086",
+        "id": "16-068",
         "name": "Cité 5 juillet",
         "name_fr": "Cité 5 juillet",
         "name_ar": "حي 5 جويلية",
@@ -6478,7 +5666,7 @@
         ]
       },
       "properties": {
-        "id": "16-087",
+        "id": "16-069",
         "name": "Bab Ezzouar - Le Pont",
         "name_fr": "Bab Ezzouar - Le Pont",
         "name_ar": "باب الزوار - الجسر",
@@ -6507,7 +5695,7 @@
         ]
       },
       "properties": {
-        "id": "16-088",
+        "id": "16-070",
         "name": "Bekri Bouguerra",
         "name_fr": "Bekri Bouguerra",
         "name_ar": "بكري بوقرة",
@@ -6536,7 +5724,7 @@
         ]
       },
       "properties": {
-        "id": "16-089",
+        "id": "16-071",
         "name": "Bellevue",
         "name_fr": "Bellevue",
         "name_ar": "المنظر الجميل",
@@ -6565,7 +5753,7 @@
         ]
       },
       "properties": {
-        "id": "16-090",
+        "id": "16-072",
         "name": "Ben Mered",
         "name_fr": "Ben Mered",
         "name_ar": "بن مراد",
@@ -6594,7 +5782,7 @@
         ]
       },
       "properties": {
-        "id": "16-091",
+        "id": "16-073",
         "name": "Ben Mrabet",
         "name_fr": "Ben Mrabet",
         "name_ar": "بن مرابط",
@@ -6623,7 +5811,7 @@
         ]
       },
       "properties": {
-        "id": "16-092",
+        "id": "16-074",
         "name": "Ben Redouan",
         "name_fr": "Ben Redouan",
         "name_ar": "بن رضوان",
@@ -6652,7 +5840,7 @@
         ]
       },
       "properties": {
-        "id": "16-093",
+        "id": "16-075",
         "name": "Benzerga",
         "name_fr": "Benzerga",
         "name_ar": "بن زرقة",
@@ -6681,7 +5869,7 @@
         ]
       },
       "properties": {
-        "id": "16-094",
+        "id": "16-076",
         "name": "Bordj El Kifane - Lycée",
         "name_fr": "Bordj El Kifane - Lycée",
         "name_ar": "برج الكيفان - الثانوية",
@@ -6710,7 +5898,7 @@
         ]
       },
       "properties": {
-        "id": "16-095",
+        "id": "16-077",
         "name": "Bordj El Kifane centre",
         "name_fr": "Bordj El Kifane centre",
         "name_ar": "برج الكيفان - وسط",
@@ -6739,7 +5927,7 @@
         ]
       },
       "properties": {
-        "id": "16-096",
+        "id": "16-078",
         "name": "Bordj El Kiffan - Polyclinique",
         "name_fr": "Bordj El Kiffan - Polyclinique",
         "name_ar": "برج الكيفان - العيادة",
@@ -6768,7 +5956,7 @@
         ]
       },
       "properties": {
-        "id": "16-097",
+        "id": "16-079",
         "name": "Café Chergui",
         "name_fr": "Café Chergui",
         "name_ar": "مقهى شرقي",
@@ -6797,7 +5985,7 @@
         ]
       },
       "properties": {
-        "id": "16-098",
+        "id": "16-080",
         "name": "Caroubier",
         "name_fr": "Caroubier",
         "name_ar": "الخروبة",
@@ -6826,7 +6014,7 @@
         ]
       },
       "properties": {
-        "id": "16-099",
+        "id": "16-081",
         "name": "Cinq Maisons",
         "name_fr": "Cinq Maisons",
         "name_ar": "سان ميزون",
@@ -6855,7 +6043,7 @@
         ]
       },
       "properties": {
-        "id": "16-100",
+        "id": "16-082",
         "name": "Cité 8 Mai 1945",
         "name_fr": "Cité 8 Mai 1945",
         "name_ar": "حي 8 ماي 1945",
@@ -6884,7 +6072,7 @@
         ]
       },
       "properties": {
-        "id": "16-101",
+        "id": "16-083",
         "name": "Cité Clair Matin",
         "name_fr": "Cité Clair Matin",
         "name_ar": "حي الصباح",
@@ -6913,7 +6101,7 @@
         ]
       },
       "properties": {
-        "id": "16-102",
+        "id": "16-084",
         "name": "Cité Diplomatique",
         "name_fr": "Cité Diplomatique",
         "name_ar": "الحي الدبلوماسي",
@@ -6942,7 +6130,7 @@
         ]
       },
       "properties": {
-        "id": "16-103",
+        "id": "16-085",
         "name": "Cité Mokhtar Zerhouni",
         "name_fr": "Cité Mokhtar Zerhouni",
         "name_ar": "حي مختار زرهوني",
@@ -6971,7 +6159,7 @@
         ]
       },
       "properties": {
-        "id": "16-104",
+        "id": "16-086",
         "name": "Cité Universitaire CUBE 1",
         "name_fr": "Cité Universitaire CUBE 1",
         "name_ar": "الإقامة الجامعية - ح ج ب 1",
@@ -7000,7 +6188,7 @@
         ]
       },
       "properties": {
-        "id": "16-105",
+        "id": "16-087",
         "name": "Dergana Centre",
         "name_fr": "Dergana Centre",
         "name_ar": "درڨانة وسط",
@@ -7029,7 +6217,7 @@
         ]
       },
       "properties": {
-        "id": "16-106",
+        "id": "16-088",
         "name": "Faculté Biomédicale",
         "name_fr": "Faculté Biomédicale",
         "name_ar": "جامعة درقانة",
@@ -7058,7 +6246,7 @@
         ]
       },
       "properties": {
-        "id": "16-107",
+        "id": "16-089",
         "name": "Foire d'Alger",
         "name_fr": "Foire d'Alger",
         "name_ar": "قصر المعارض",
@@ -7087,7 +6275,7 @@
         ]
       },
       "properties": {
-        "id": "16-108",
+        "id": "16-090",
         "name": "La Glacière",
         "name_fr": "La Glacière",
         "name_ar": "الهواء الجميل",
@@ -7116,7 +6304,7 @@
         ]
       },
       "properties": {
-        "id": "16-109",
+        "id": "16-091",
         "name": "Les Fusillés",
         "name_fr": "Les Fusillés",
         "name_ar": "المعدومين",
@@ -7145,7 +6333,7 @@
         ]
       },
       "properties": {
-        "id": "16-110",
+        "id": "16-092",
         "name": "Les Pins",
         "name_fr": "Les Pins",
         "name_ar": "الصنوبر",
@@ -7174,7 +6362,7 @@
         ]
       },
       "properties": {
-        "id": "16-111",
+        "id": "16-093",
         "name": "Mimouni Hamoudi",
         "name_fr": "Mimouni Hamoudi",
         "name_ar": "ميموني محمود",
@@ -7203,7 +6391,7 @@
         ]
       },
       "properties": {
-        "id": "16-112",
+        "id": "16-094",
         "name": "Mouhous",
         "name_fr": "Mouhous",
         "name_ar": "موحوس",
@@ -7232,7 +6420,7 @@
         ]
       },
       "properties": {
-        "id": "16-113",
+        "id": "16-095",
         "name": "Pont El Harrach",
         "name_fr": "Pont El Harrach",
         "name_ar": "جسر الحراش",
@@ -7261,7 +6449,7 @@
         ]
       },
       "properties": {
-        "id": "16-114",
+        "id": "16-096",
         "name": "Ruisseau",
         "name_fr": "Ruisseau",
         "name_ar": "رويسو",
@@ -7290,7 +6478,7 @@
         ]
       },
       "properties": {
-        "id": "16-115",
+        "id": "16-097",
         "name": "Sidi Dris",
         "name_fr": "Sidi Dris",
         "name_ar": "سيدي ادريس",
@@ -7319,7 +6507,7 @@
         ]
       },
       "properties": {
-        "id": "16-116",
+        "id": "16-098",
         "name": "Tamaris",
         "name_fr": "Tamaris",
         "name_ar": "حي المندرين",
@@ -7348,7 +6536,7 @@
         ]
       },
       "properties": {
-        "id": "16-117",
+        "id": "16-099",
         "name": "Tripoli - Hamadache",
         "name_fr": "Tripoli - Hamadache",
         "name_ar": "طرابلس - حمداش",
@@ -7377,7 +6565,7 @@
         ]
       },
       "properties": {
-        "id": "16-118",
+        "id": "16-100",
         "name": "Tripoli - Maqqaria",
         "name_fr": "Tripoli - Maqqaria",
         "name_ar": "طرابلس - المقرية",
@@ -7406,7 +6594,7 @@
         ]
       },
       "properties": {
-        "id": "16-119",
+        "id": "16-101",
         "name": "Tripoli - Mosquée",
         "name_fr": "Tripoli - Mosquée",
         "name_ar": "طرابلس - المسجد",
@@ -7435,7 +6623,7 @@
         ]
       },
       "properties": {
-        "id": "16-120",
+        "id": "16-102",
         "name": "Tripoli - Thâalibia",
         "name_fr": "Tripoli - Thâalibia",
         "name_ar": "طرابلس- الثعالبية",
@@ -7464,7 +6652,7 @@
         ]
       },
       "properties": {
-        "id": "16-121",
+        "id": "16-103",
         "name": "Université Bab Ezzouar",
         "name_fr": "Université Bab Ezzouar",
         "name_ar": "جامعة العلوم و التكنولوجيا هواري بومدين",
@@ -7493,7 +6681,7 @@
         ]
       },
       "properties": {
-        "id": "16-122",
+        "id": "16-104",
         "name": "Village Africain",
         "name_fr": "Village Africain",
         "name_ar": "القرية الأفريقية",
@@ -7522,7 +6710,7 @@
         ]
       },
       "properties": {
-        "id": "16-123",
+        "id": "16-105",
         "name": null,
         "name_fr": null,
         "name_ar": null,
@@ -7551,7 +6739,7 @@
         ]
       },
       "properties": {
-        "id": "16-124",
+        "id": "16-106",
         "name": "Parc de Loisirs",
         "name_fr": "Parc de Loisirs",
         "name_ar": null,
@@ -7580,7 +6768,7 @@
         ]
       },
       "properties": {
-        "id": "16-125",
+        "id": "16-107",
         "name": null,
         "name_fr": null,
         "name_ar": null,
@@ -7609,7 +6797,7 @@
         ]
       },
       "properties": {
-        "id": "16-126",
+        "id": "16-108",
         "name": "Basilique Notre-Dame d'Afrique (Fermée)",
         "name_fr": "Basilique Notre-Dame d'Afrique (Fermée)",
         "name_ar": "كاتدرائية السيدة الأفريقية (مغلق)",
@@ -7638,7 +6826,7 @@
         ]
       },
       "properties": {
-        "id": "16-127",
+        "id": "16-109",
         "name": "Station Frais Vallon",
         "name_fr": "Station Frais Vallon",
         "name_ar": "محطة فري فالون",
@@ -7667,7 +6855,7 @@
         ]
       },
       "properties": {
-        "id": "16-128",
+        "id": "16-110",
         "name": "Station Bouzaréah",
         "name_fr": "Station Bouzaréah",
         "name_ar": "محطة بوزريعة",
@@ -7696,7 +6884,7 @@
         ]
       },
       "properties": {
-        "id": "16-129",
+        "id": "16-111",
         "name": "Belouizdad",
         "name_fr": "Belouizdad",
         "name_ar": "بلوزداد",
@@ -7725,7 +6913,7 @@
         ]
       },
       "properties": {
-        "id": "16-130",
+        "id": "16-112",
         "name": "El Madania",
         "name_fr": "El Madania",
         "name_ar": "المدنية",
@@ -7754,7 +6942,7 @@
         ]
       },
       "properties": {
-        "id": "16-131",
+        "id": "16-113",
         "name": "Station Bab El Oued",
         "name_fr": "Station Bab El Oued",
         "name_ar": "محطة باب الواد (مغلق)",
@@ -7783,7 +6971,7 @@
         ]
       },
       "properties": {
-        "id": "16-132",
+        "id": "16-114",
         "name": null,
         "name_fr": null,
         "name_ar": null,
@@ -7812,7 +7000,7 @@
         ]
       },
       "properties": {
-        "id": "16-133",
+        "id": "16-115",
         "name": null,
         "name_fr": null,
         "name_ar": null,
@@ -7841,7 +7029,7 @@
         ]
       },
       "properties": {
-        "id": "16-134",
+        "id": "16-116",
         "name": "Station Palais de La Culture",
         "name_fr": "Station Palais de La Culture",
         "name_ar": "محطة قصر الثقافة",
@@ -7870,7 +7058,7 @@
         ]
       },
       "properties": {
-        "id": "16-135",
+        "id": "16-117",
         "name": "Mémorial",
         "name_fr": "Mémorial",
         "name_ar": "مقام الشهيد",
@@ -7899,7 +7087,7 @@
         ]
       },
       "properties": {
-        "id": "16-136",
+        "id": "16-118",
         "name": "Télécabine de Bab El Oued",
         "name_fr": "Télécabine de Bab El Oued",
         "name_ar": null,
@@ -7928,7 +7116,7 @@
         ]
       },
       "properties": {
-        "id": "16-137",
+        "id": "16-119",
         "name": "Télécabine de Oued Koriche",
         "name_fr": "Télécabine de Oued Koriche",
         "name_ar": null,
@@ -18634,7 +17822,7 @@
         "name_fr": "Souk Ahras",
         "name_ar": "سوق أهراس",
         "type": "rail",
-        "line": "ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk",
+        "line": "ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk | ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk",
         "operator": "SNTF",
         "network": null,
         "wilaya_code": "41",
@@ -18646,35 +17834,6 @@
         "source": "wikidata+osm",
         "wikidata": "Q18785566",
         "osm_id": "node/2206396029"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          7.95287,
-          36.2809
-        ]
-      },
-      "properties": {
-        "id": "41-018",
-        "name": "Souk Ahras",
-        "name_fr": "Souk Ahras",
-        "name_ar": "سوق أهراس",
-        "type": "rail",
-        "line": "ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "41",
-        "commune": "Souk Ahras",
-        "commune_code": 4101,
-        "lat": 36.2809,
-        "lng": 7.95287,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q18785566",
-        "osm_id": null
       }
     },
     {
@@ -18962,36 +18121,7 @@
         "lat": 36.3097,
         "lng": 2.3178,
         "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q118151876",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.290359,
-          36.309762
-        ]
-      },
-      "properties": {
-        "id": "44-008",
-        "name": "Gare d'Adélia",
-        "name_fr": "Gare d'Adélia",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "44",
-        "commune": "Ain-Torki",
-        "commune_code": 4423,
-        "lat": 36.309762,
-        "lng": 2.290359,
-        "geo_precision": "exact",
-        "source": "osm",
+        "source": "wikidata+osm",
         "wikidata": "Q118151876",
         "osm_id": "node/2056437891"
       }
@@ -19006,7 +18136,7 @@
         ]
       },
       "properties": {
-        "id": "44-009",
+        "id": "44-008",
         "name": "Boumedfaa",
         "name_fr": "Boumedfaa",
         "name_ar": "محطة قطار بومدفع",
@@ -19035,7 +18165,7 @@
         ]
       },
       "properties": {
-        "id": "44-010",
+        "id": "44-009",
         "name": "Hoceinia",
         "name_fr": "Hoceinia",
         "name_ar": "محطة قطار الحسينية",
@@ -19064,7 +18194,7 @@
         ]
       },
       "properties": {
-        "id": "44-011",
+        "id": "44-010",
         "name": "Khemis Miliana",
         "name_fr": "Khemis Miliana",
         "name_ar": "محطة قطار خميس مليانة",
@@ -19093,7 +18223,7 @@
         ]
       },
       "properties": {
-        "id": "44-012",
+        "id": "44-011",
         "name": "Sidi Lakhdar",
         "name_fr": "Sidi Lakhdar",
         "name_ar": "محطة قطار سيدي لخضر",
@@ -19122,7 +18252,7 @@
         ]
       },
       "properties": {
-        "id": "44-013",
+        "id": "44-012",
         "name": "Arib",
         "name_fr": "Arib",
         "name_ar": "محطة قطار عريب",
@@ -19151,7 +18281,7 @@
         ]
       },
       "properties": {
-        "id": "44-014",
+        "id": "44-013",
         "name": "El Amra",
         "name_fr": "El Amra",
         "name_ar": "محطة قطار العمرة",
@@ -19180,7 +18310,7 @@
         ]
       },
       "properties": {
-        "id": "44-015",
+        "id": "44-014",
         "name": "Rouina",
         "name_fr": "Rouina",
         "name_ar": "محطة قطار الروينة",
@@ -19291,41 +18421,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.565833,
-          32.765833
-        ]
-      },
-      "properties": {
-        "id": "45-004",
-        "name": "Aïn Sefra",
-        "name_fr": "Aïn Sefra",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Ain Sefra",
-        "commune_code": 4503,
-        "lat": 32.765833,
-        "lng": -0.565833,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120281827",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.796944,
           32.371667
         ]
       },
       "properties": {
-        "id": "45-005",
+        "id": "45-004",
         "name": "Djeniene Bourezg",
         "name_fr": "Djeniene Bourezg",
         "name_ar": null,
@@ -19349,41 +18450,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.796944,
-          32.371667
-        ]
-      },
-      "properties": {
-        "id": "45-006",
-        "name": "Djeniene Bourezg",
-        "name_fr": "Djeniene Bourezg",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Djenienne Bourezg",
-        "commune_code": 4504,
-        "lat": 32.371667,
-        "lng": -0.796944,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120281926",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.468333,
           32.758611
         ]
       },
       "properties": {
-        "id": "45-007",
+        "id": "45-005",
         "name": "Tiout",
         "name_fr": "Tiout",
         "name_ar": null,
@@ -19407,41 +18479,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.468333,
-          32.758611
-        ]
-      },
-      "properties": {
-        "id": "45-008",
-        "name": "Tiout",
-        "name_fr": "Tiout",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Tiout",
-        "commune_code": 4504,
-        "lat": 32.758611,
-        "lng": -0.468333,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120282247",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.256111,
           33.543611
         ]
       },
       "properties": {
-        "id": "45-009",
+        "id": "45-006",
         "name": "Mécheria",
         "name_fr": "Mécheria",
         "name_ar": "المشرية",
@@ -19465,41 +18508,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.256111,
-          33.543611
-        ]
-      },
-      "properties": {
-        "id": "45-010",
-        "name": "Mécheria",
-        "name_fr": "Mécheria",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Mecheria",
-        "commune_code": 4502,
-        "lat": 33.543611,
-        "lng": -0.256111,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120286778",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.163056,
           33.742222
         ]
       },
       "properties": {
-        "id": "45-011",
+        "id": "45-007",
         "name": "El Biod",
         "name_fr": "El Biod",
         "name_ar": "البيوض",
@@ -19528,7 +18542,7 @@
         ]
       },
       "properties": {
-        "id": "45-012",
+        "id": "45-008",
         "name": "Moghrar",
         "name_fr": "Moghrar",
         "name_ar": null,
@@ -19552,41 +18566,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.571389,
-          32.523611
-        ]
-      },
-      "properties": {
-        "id": "45-013",
-        "name": "Moghrar",
-        "name_fr": "Moghrar",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Moghrar",
-        "commune_code": 4506,
-        "lat": 32.523611,
-        "lng": -0.571389,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120287136",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.315278,
           33.265278
         ]
       },
       "properties": {
-        "id": "45-014",
+        "id": "45-009",
         "name": "Naâma",
         "name_fr": "Naâma",
         "name_ar": "النعامة",
@@ -19610,41 +18595,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.315278,
-          33.265278
-        ]
-      },
-      "properties": {
-        "id": "45-015",
-        "name": "Naâma",
-        "name_fr": "Naâma",
-        "name_ar": null,
-        "type": "rail",
-        "line": "ligne de Oued Tlelat à Béchar",
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Naama",
-        "commune_code": 4501,
-        "lat": 33.265278,
-        "lng": -0.315278,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q120287247",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.060206,
           33.831795
         ]
       },
       "properties": {
-        "id": "45-016",
+        "id": "45-010",
         "name": "Bir Senia",
         "name_fr": "Bir Senia",
         "name_ar": null,
@@ -19673,36 +18629,7 @@
         ]
       },
       "properties": {
-        "id": "45-017",
-        "name": "Hadjret M'Guil",
-        "name_fr": "Hadjret M'Guil",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Djenienne Bourezg",
-        "commune_code": 4504,
-        "lat": 32.2782,
-        "lng": -0.922,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498566",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.922,
-          32.2782
-        ]
-      },
-      "properties": {
-        "id": "45-018",
+        "id": "45-011",
         "name": "Hadjret M'Guil",
         "name_fr": "Hadjret M'Guil",
         "name_ar": null,
@@ -19731,36 +18658,7 @@
         ]
       },
       "properties": {
-        "id": "45-019",
-        "name": "Dayet El Kerch",
-        "name_fr": "Dayet El Kerch",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Djenienne Bourezg",
-        "commune_code": 4504,
-        "lat": 32.437579,
-        "lng": -0.763043,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498567",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.763043,
-          32.437579
-        ]
-      },
-      "properties": {
-        "id": "45-020",
+        "id": "45-012",
         "name": "Dayet El Kerch",
         "name_fr": "Dayet El Kerch",
         "name_ar": null,
@@ -19789,36 +18687,7 @@
         ]
       },
       "properties": {
-        "id": "45-021",
-        "name": "Les Oglats",
-        "name_fr": "Les Oglats",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Moghrar",
-        "commune_code": 4506,
-        "lat": 32.495725,
-        "lng": -0.643308,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498568",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.643308,
-          32.495725
-        ]
-      },
-      "properties": {
-        "id": "45-022",
+        "id": "45-013",
         "name": "Les Oglats",
         "name_fr": "Les Oglats",
         "name_ar": null,
@@ -19847,36 +18716,7 @@
         ]
       },
       "properties": {
-        "id": "45-023",
-        "name": "Dra Es Saâ",
-        "name_fr": "Dra Es Saâ",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Moghrar",
-        "commune_code": 4506,
-        "lat": 32.542012,
-        "lng": -0.496984,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498569",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.496984,
-          32.542012
-        ]
-      },
-      "properties": {
-        "id": "45-024",
+        "id": "45-014",
         "name": "Dra Es Saâ",
         "name_fr": "Dra Es Saâ",
         "name_ar": null,
@@ -19905,7 +18745,7 @@
         ]
       },
       "properties": {
-        "id": "45-025",
+        "id": "45-015",
         "name": "Rouïba",
         "name_fr": "Rouïba",
         "name_ar": null,
@@ -19934,65 +18774,7 @@
         ]
       },
       "properties": {
-        "id": "45-026",
-        "name": "Rouïba",
-        "name_fr": "Rouïba",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Tiout",
-        "commune_code": 4504,
-        "lat": 32.614138,
-        "lng": -0.40639,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498570",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.40639,
-          32.614138
-        ]
-      },
-      "properties": {
-        "id": "45-027",
-        "name": "Aïn El Hadjadi",
-        "name_fr": "Aïn El Hadjadi",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Tiout",
-        "commune_code": 4504,
-        "lat": 32.614138,
-        "lng": -0.40639,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498571",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.40639,
-          32.614138
-        ]
-      },
-      "properties": {
-        "id": "45-028",
+        "id": "45-016",
         "name": "Aïn El Hadjadi",
         "name_fr": "Aïn El Hadjadi",
         "name_ar": null,
@@ -20021,36 +18803,7 @@
         ]
       },
       "properties": {
-        "id": "45-029",
-        "name": "Ancienne gare d'El Biod",
-        "name_fr": "Ancienne gare d'El Biod",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "El Biodh",
-        "commune_code": 4512,
-        "lat": 33.766918,
-        "lng": -0.125765,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498572",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.125765,
-          33.766918
-        ]
-      },
-      "properties": {
-        "id": "45-030",
+        "id": "45-017",
         "name": "Ancienne gare d'El Biod",
         "name_fr": "Ancienne gare d'El Biod",
         "name_ar": null,
@@ -20079,36 +18832,7 @@
         ]
       },
       "properties": {
-        "id": "45-031",
-        "name": "Tirkount",
-        "name_fr": "Tirkount",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Ain Sefra",
-        "commune_code": 4503,
-        "lat": 32.823939,
-        "lng": -0.609197,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498573",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.609197,
-          32.823939
-        ]
-      },
-      "properties": {
-        "id": "45-032",
+        "id": "45-018",
         "name": "Tirkount",
         "name_fr": "Tirkount",
         "name_ar": null,
@@ -20137,36 +18861,7 @@
         ]
       },
       "properties": {
-        "id": "45-033",
-        "name": "Boughelaba",
-        "name_fr": "Boughelaba",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Ain Sefra",
-        "commune_code": 4503,
-        "lat": 32.937974,
-        "lng": -0.568184,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498574",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.568184,
-          32.937974
-        ]
-      },
-      "properties": {
-        "id": "45-034",
+        "id": "45-019",
         "name": "Boughelaba",
         "name_fr": "Boughelaba",
         "name_ar": null,
@@ -20195,7 +18890,7 @@
         ]
       },
       "properties": {
-        "id": "45-035",
+        "id": "45-020",
         "name": "Mekalis",
         "name_fr": "Mekalis",
         "name_ar": null,
@@ -20219,70 +18914,12 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.482218,
-          33.003145
-        ]
-      },
-      "properties": {
-        "id": "45-036",
-        "name": "Mekalis",
-        "name_fr": "Mekalis",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Tiout",
-        "commune_code": 4504,
-        "lat": 33.003145,
-        "lng": -0.482218,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498575",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           -0.435708,
           33.072746
         ]
       },
       "properties": {
-        "id": "45-037",
-        "name": "Mocta Deli",
-        "name_fr": "Mocta Deli",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Naama",
-        "commune_code": 4501,
-        "lat": 33.072746,
-        "lng": -0.435708,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498576",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.435708,
-          33.072746
-        ]
-      },
-      "properties": {
-        "id": "45-038",
+        "id": "45-021",
         "name": "Mocta Deli",
         "name_fr": "Mocta Deli",
         "name_ar": null,
@@ -20311,36 +18948,7 @@
         ]
       },
       "properties": {
-        "id": "45-039",
-        "name": "Souiga",
-        "name_fr": "Souiga",
-        "name_ar": "محطة سويقة",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Naama",
-        "commune_code": 4501,
-        "lat": 33.168888,
-        "lng": -0.375409,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498577",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.375409,
-          33.168888
-        ]
-      },
-      "properties": {
-        "id": "45-040",
+        "id": "45-022",
         "name": "Souiga",
         "name_fr": "Souiga",
         "name_ar": "محطة سويقة",
@@ -20369,36 +18977,7 @@
         ]
       },
       "properties": {
-        "id": "45-041",
-        "name": "Krebazza",
-        "name_fr": "Krebazza",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "El Biodh",
-        "commune_code": 4512,
-        "lat": 33.671959,
-        "lng": -0.199607,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498579",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.199607,
-          33.671959
-        ]
-      },
-      "properties": {
-        "id": "45-042",
+        "id": "45-023",
         "name": "Krebazza",
         "name_fr": "Krebazza",
         "name_ar": null,
@@ -20427,36 +19006,7 @@
         ]
       },
       "properties": {
-        "id": "45-043",
-        "name": "Teniet Er Relem",
-        "name_fr": "Teniet Er Relem",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Mecheria",
-        "commune_code": 4502,
-        "lat": 33.61074,
-        "lng": -0.2284,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498580",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.2284,
-          33.61074
-        ]
-      },
-      "properties": {
-        "id": "45-044",
+        "id": "45-024",
         "name": "Teniet Er Relem",
         "name_fr": "Teniet Er Relem",
         "name_ar": null,
@@ -20485,36 +19035,7 @@
         ]
       },
       "properties": {
-        "id": "45-045",
-        "name": "El Harchaïa",
-        "name_fr": "El Harchaïa",
-        "name_ar": null,
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Naama",
-        "commune_code": 4501,
-        "lat": 33.330049,
-        "lng": -0.310724,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498581",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.310724,
-          33.330049
-        ]
-      },
-      "properties": {
-        "id": "45-046",
+        "id": "45-025",
         "name": "El Harchaïa",
         "name_fr": "El Harchaïa",
         "name_ar": null,
@@ -20543,36 +19064,7 @@
         ]
       },
       "properties": {
-        "id": "45-047",
-        "name": "Touïfza",
-        "name_fr": "Touïfza",
-        "name_ar": "محطة تويفزة",
-        "type": "rail",
-        "line": null,
-        "operator": "SNTF",
-        "network": null,
-        "wilaya_code": "45",
-        "commune": "Naama",
-        "commune_code": 4501,
-        "lat": 33.399503,
-        "lng": -0.314591,
-        "geo_precision": "exact",
-        "source": "wikidata",
-        "wikidata": "Q123498582",
-        "osm_id": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.314591,
-          33.399503
-        ]
-      },
-      "properties": {
-        "id": "45-048",
+        "id": "45-026",
         "name": "Touïfza",
         "name_fr": "Touïfza",
         "name_ar": "محطة تويفزة",

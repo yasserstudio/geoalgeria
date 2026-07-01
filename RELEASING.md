@@ -155,12 +155,19 @@ These are prerequisites the workflow can't do for you:
    cd packages/<new> && npm publish --access public   # one-time
    ```
    After that, future bumps go through the staged workflow.
+   > ⚠️ **Umbrella / any package with `workspace:*` deps** (e.g.
+   > `@geoalgeria/transport`) must be published with **pnpm**, not npm — npm ships
+   > the literal `workspace:^` spec and breaks installs. Bootstrap it with
+   > `cd packages/transport && pnpm publish --access public --no-git-checks`
+   > (verify via `pnpm pack` that deps resolve to `^x.y.z`).
 3. **Trusted Publisher per package** — on npmjs.com, for each of `geoalgeria`,
    `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`, `@geoalgeria/telecom`,
    `@geoalgeria/aviation`, `@geoalgeria/banques`, `@geoalgeria/livraison`, `@geoalgeria/jeunesse`,
    `@geoalgeria/sports`, `@geoalgeria/enseignement-superieur`, `@geoalgeria/tourisme`,
    `@geoalgeria/formation-professionnelle`, `@geoalgeria/djezzy`, `@geoalgeria/mosquees`,
-   `@geoalgeria/sante`, `@geoalgeria/culture`, `@geoalgeria/agriculture`: *Settings →
+   `@geoalgeria/sante`, `@geoalgeria/culture`, `@geoalgeria/agriculture`,
+   `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`, `@geoalgeria/buses`,
+   `@geoalgeria/transport`: *Settings →
    Trusted Publisher → GitHub Actions*, repo **`yasserstudio/geoalgeria`**,
    workflow `release.yml`.
    No `NPM_TOKEN` — auth is the workflow's OIDC `id-token`.

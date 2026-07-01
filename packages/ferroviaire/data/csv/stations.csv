@@ -32,34 +32,25 @@ id,name,name_fr,name_ar,type,line,operator,network,wilaya_code,commune,commune_c
 06-010,El Kseur-Oued Amizour,El Kseur-Oued Amizour,القصر - أميزور,rail,ligne de Beni Mansour à Béjaia,SNTF,,06,El Kseur,640,36.6657,4.8556,exact,wikidata+osm,Q118496153,node/4053732289
 06-011,Oued Ghir,Oued Ghir,,rail,ligne de Beni Mansour à Béjaia,SNTF,,06,Oued Ghir,651,36.7012,4.9833,exact,wikidata,Q118496163,
 06-012,Gare de Béjaïa,Gare de Béjaïa,محطة بجاية,rail,ligne de Beni Mansour à Béjaia,SNTF,,06,Bejaia,601,36.7512,5.08183,exact,wikidata+osm,Q3096101,node/1885252540
-07-001,Biskra,Biskra,محطة قطار بسكرة,rail,ligne d'El Guerrah à Touggourt,SNTF,,07,Biskra,701,34.859824,5.725479,exact,wikidata+osm,Q116198149,node/2333679901
-07-002,Biskra,Biskra,محطة القطار الجديدة (طور الانجاز),rail,,SNTF,,07,Biskra,701,34.794278,5.718125,exact,osm,Q116198149,node/9968184587
-07-003,Oumache,Oumache,محطة قطار أوماش,rail,ligne d'El Guerrah à Touggourt,SNTF,,07,Oumache,702,34.683342,5.701667,exact,wikidata,Q116198425,
+07-001,Biskra,Biskra,محطة قطار بسكرة,rail,ligne d'El Guerrah à Touggourt,SNTF,,07,Biskra,701,34.859824,5.725479,exact,wikidata+osm,Q116198149,node/9968184587
+07-002,Oumache,Oumache,محطة قطار أوماش,rail,ligne d'El Guerrah à Touggourt,SNTF,,07,Oumache,702,34.683342,5.701667,exact,wikidata,Q116198425,
 08-001,Abadla,Abadla,,rail,,SNTF,,08,Abadla,817,31.053384,-2.643553,exact,osm,,node/13565642705
 08-002,,,,rail,,SNTF,,08,Mogheul,816,31.925437,-1.843043,exact,osm,,node/9357961826
-08-003,Béchar,Béchar,محطة قطار بشار,rail,ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar,SNTF,,08,Bechar,801,31.62369,-2.219668,exact,wikidata+osm,Q119684991,node/2785628270
-08-004,Béchar,Béchar,محطة قطار بشار,rail,ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar,SNTF,,08,Bechar,801,31.62369,-2.219668,exact,wikidata,Q119684991,
-08-005,Beni Ounif,Beni Ounif,محطة قطار بني ونيف,rail,ligne de Oued Tlelat à Béchar,SNTF,,08,Beni-Ounif,821,32.050833,-1.247222,exact,wikidata+osm,Q120281854,node/3251492467
-08-006,Beni Ounif,Beni Ounif,محطة قطار بني ونيف,rail,ligne de Oued Tlelat à Béchar,SNTF,,08,Beni-Ounif,821,32.050833,-1.247222,exact,wikidata,Q120281854,
-08-007,Ancienne gare d'El Abadla,Ancienne gare d'El Abadla,محطة قطار العبادلة,rail,ligne de Béchar à Abadla,SNTF,,08,Abadla,817,31.0205,-2.7195,exact,wikidata+osm,Q122425880,node/2157198889
-08-008,Béchar - Méditerranée-Niger,Béchar - Méditerranée-Niger,محطة_قطار_بشار_العابر_للصحراء,rail,ligne de Béchar à Abadla,SNTF,,08,Bechar,801,31.6252,-2.2213,exact,wikidata,Q122616895,
-08-009,Kenadsa,Kenadsa,محطة قطار القنادسة,rail,,SNTF,,08,Kenadsa,810,31.5537,-2.4263,exact,wikidata,Q123498557,
-08-010,Hassi El Haouari,Hassi El Haouari,محطة قطار حاسي الهواري,rail,,SNTF,,08,Lahmar,806,31.79808,-2.06467,exact,wikidata+osm,Q123498560,node/9357647100
-08-011,Hassi El Haouari,Hassi El Haouari,محطة قطار حاسي الهواري,rail,,SNTF,,08,Lahmar,806,31.79808,-2.06467,exact,wikidata,Q123498560,
-08-012,Ben Zireg,Ben Zireg,محطة قطار بن زيراق,rail,,SNTF,,08,Mogheul,816,31.9266,-1.8414,exact,wikidata,Q123498561,
-08-013,Ben Zireg,Ben Zireg,محطة قطار بن زيراق,rail,,SNTF,,08,Mogheul,816,31.9266,-1.8414,exact,wikidata,Q123498561,
-08-014,Bou Aïch,Bou Aïch,محطة قطار بوعيش,rail,,SNTF,,08,Beni-Ounif,821,32.01085,-1.661642,exact,wikidata+osm,Q123498562,node/9357961836
-08-015,Bou Aïch,Bou Aïch,محطة قطار بوعيش,rail,,SNTF,,08,Beni-Ounif,821,32.01085,-1.661642,exact,wikidata,Q123498562,
-08-016,Mérirès,Mérirès,محطة قطار مريراس,rail,,SNTF,,08,Beni-Ounif,821,32.02051,-1.43701,exact,wikidata,Q123498563,
-08-017,Mérirès,Mérirès,محطة قطار مريراس,rail,,SNTF,,08,Beni-Ounif,821,32.02051,-1.43701,exact,wikidata,Q123498563,
-08-018,Oued El Assi,Oued El Assi,محطة قطار واد العاصي,rail,,SNTF,,08,Beni-Ounif,821,32.082865,-1.105164,exact,wikidata,Q123498564,
-08-019,Oued El Assi,Oued El Assi,محطة قطار واد العاصي,rail,,SNTF,,08,Beni-Ounif,821,32.082865,-1.105164,exact,wikidata,Q123498564,
-08-020,Duveyrier,Duveyrier,محطة قطار زوبية,rail,,SNTF,,08,Beni-Ounif,821,32.145205,-1.000249,exact,wikidata,Q123498565,
-08-021,Duveyrier,Duveyrier,محطة قطار زوبية,rail,,SNTF,,08,Beni-Ounif,821,32.145205,-1.000249,exact,wikidata,Q123498565,
-08-022,Abadla,Abadla,,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Abadla,817,31.0584,-2.6377,exact,wikidata,Q137842723,
-08-023,Tabelbala,Tabelbala,محطة قطار تبلبالة,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Tabelbala,812,29.7563,-4.0165,exact,wikidata+osm,Q138447819,node/13565643066
-08-024,Gare de Hassi Khebi,Gare de Hassi Khebi,محطة قطار حاسي خبي,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Tabelbala,812,29.1647,-5.0662,exact,wikidata+osm,Q138457269,node/13565643345
-08-025,Gare de Hammaguir,Gare de Hammaguir,محطة قطار حماقير,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Erg-Ferradj,802,30.9027,-3.0288,exact,wikidata+osm,Q138465405,node/13565642790
+08-003,Béchar,Béchar,محطة قطار بشار,rail,ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar | ligne de Béchar à Gara Djebilet | ligne de Oued Tlelat à Béchar,SNTF,,08,Bechar,801,31.62369,-2.219668,exact,wikidata+osm,Q119684991,node/2785628270
+08-004,Beni Ounif,Beni Ounif,محطة قطار بني ونيف,rail,ligne de Oued Tlelat à Béchar,SNTF,,08,Beni-Ounif,821,32.050833,-1.247222,exact,wikidata+osm,Q120281854,node/3251492467
+08-005,Ancienne gare d'El Abadla,Ancienne gare d'El Abadla,محطة قطار العبادلة,rail,ligne de Béchar à Abadla,SNTF,,08,Abadla,817,31.0205,-2.7195,exact,wikidata+osm,Q122425880,node/2157198889
+08-006,Béchar - Méditerranée-Niger,Béchar - Méditerranée-Niger,محطة_قطار_بشار_العابر_للصحراء,rail,ligne de Béchar à Abadla,SNTF,,08,Bechar,801,31.6252,-2.2213,exact,wikidata,Q122616895,
+08-007,Kenadsa,Kenadsa,محطة قطار القنادسة,rail,,SNTF,,08,Kenadsa,810,31.5537,-2.4263,exact,wikidata,Q123498557,
+08-008,Hassi El Haouari,Hassi El Haouari,محطة قطار حاسي الهواري,rail,,SNTF,,08,Lahmar,806,31.79808,-2.06467,exact,wikidata+osm,Q123498560,node/9357647100
+08-009,Ben Zireg,Ben Zireg,محطة قطار بن زيراق,rail,,SNTF,,08,Mogheul,816,31.9266,-1.8414,exact,wikidata,Q123498561,
+08-010,Bou Aïch,Bou Aïch,محطة قطار بوعيش,rail,,SNTF,,08,Beni-Ounif,821,32.01085,-1.661642,exact,wikidata+osm,Q123498562,node/9357961836
+08-011,Mérirès,Mérirès,محطة قطار مريراس,rail,,SNTF,,08,Beni-Ounif,821,32.02051,-1.43701,exact,wikidata,Q123498563,
+08-012,Oued El Assi,Oued El Assi,محطة قطار واد العاصي,rail,,SNTF,,08,Beni-Ounif,821,32.082865,-1.105164,exact,wikidata,Q123498564,
+08-013,Duveyrier,Duveyrier,محطة قطار زوبية,rail,,SNTF,,08,Beni-Ounif,821,32.145205,-1.000249,exact,wikidata,Q123498565,
+08-014,Abadla,Abadla,,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Abadla,817,31.0584,-2.6377,exact,wikidata,Q137842723,
+08-015,Tabelbala,Tabelbala,محطة قطار تبلبالة,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Tabelbala,812,29.7563,-4.0165,exact,wikidata+osm,Q138447819,node/13565643066
+08-016,Gare de Hassi Khebi,Gare de Hassi Khebi,محطة قطار حاسي خبي,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Tabelbala,812,29.1647,-5.0662,exact,wikidata+osm,Q138457269,node/13565643345
+08-017,Gare de Hammaguir,Gare de Hammaguir,محطة قطار حماقير,rail,ligne de Béchar à Gara Djebilet,SNTF,,08,Erg-Ferradj,802,30.9027,-3.0288,exact,wikidata+osm,Q138465405,node/13565642790
 09-001,El Affroun,El Affroun,محطة قطار العفرون,rail,ligne d'Alger à Oran,SNTF,,09,El-Affroun,907,36.473625,2.624767,exact,wikidata+osm,Q110463671,node/1835766256
 09-002,Boufarik,Boufarik,محطة قطار بوفاريك,rail,ligne d'Alger à Oran,SNTF,,09,Boufarik,916,36.567148,2.914138,exact,wikidata+osm,Q110509272,node/5204892759
 09-003,Beni Mered,Beni Mered,محطة قطار بني مراد,rail,ligne d'Alger à Oran,SNTF,,09,Beni Mered,921,36.520304,2.859624,exact,wikidata+osm,Q110509313,node/2797257063
@@ -72,7 +63,6 @@ id,name,name_fr,name_ar,type,line,operator,network,wilaya_code,commune,commune_c
 09-010,station Chréa,station Chréa,محطة شريعة,tram,Télécabine de Chréa,SETRAM,,09,Chrea,906,36.429721,2.883538,exact,wikidata+osm,Q140353533,node/3775578194
 09-011,,,,aerial_tram,,,,09,Chrea,906,36.433317,2.889471,exact,osm,,node/2644349379
 09-012,Télécabine de Chréa,Télécabine de Chréa,المصعد الهوائي للشريعة,gondola,,,,09,Ouled Yaich,905,36.486036,2.849069,exact,wikidata,Q64967869,
-09-013,Télécabine de Chréa,Télécabine de Chréa,المصعد الهوائي للشريعة,gondola,,,,09,Blida,901,36.458333,2.860278,exact,wikidata,Q64967869,
 10-001,Ath Mansour,Ath Mansour,محطة قطار آث منصور,rail,ligne d'Alger à Skikda,SNTF,,10,Ath Mansour,1043,36.33246,4.304457,exact,wikidata,Q118186152,
 10-002,Ahnif,Ahnif,محطة قطار الحانيف,rail,ligne d'Alger à Skikda,SNTF,,10,Ath Mansour,1043,36.335879,4.263836,exact,wikidata+osm,Q118200549,node/3693974533
 10-003,El Adjiba,El Adjiba,محطة قطار العجيبة,rail,ligne d'Alger à Skikda,SNTF,,10,El Adjiba,1019,36.328116,4.153513,exact,wikidata+osm,Q118297557,node/2107620831
@@ -130,8 +120,8 @@ id,name,name_fr,name_ar,type,line,operator,network,wilaya_code,commune,commune_c
 15-009,station Kef Naâdja,station Kef Naâdja,محطة كاف النعجة,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.693025,4.046984,exact,wikidata+osm,Q139604875,node/4557835284
 15-010,station Nouvelle Ville,station Nouvelle Ville,محطة المدينة الجديدة,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.700288,4.047545,exact,wikidata+osm,Q139604891,node/4557835283
 15-011,station wilaya,station wilaya,محطة الولاية,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.711994,4.057018,exact,wikidata+osm,Q139604915,node/4557835281
-15-012,station Sidi Belloua,station Sidi Belloua,محطة سيدي بلوى في طور الانجاز,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.728334,4.064169,exact,wikidata+osm,Q140306977,node/4557835279
-15-013,station Redjaouna,station Redjaouna,محطة قرية رجاونة في طور الانجاز,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.73308,4.052464,exact,wikidata+osm,Q140306978,node/4557835280
+15-012,station Sidi Belloua,station Sidi Belloua,محطة قرية رجاونة في طور الانجاز,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.728334,4.064169,exact,wikidata+osm,Q140306977,node/4557835280
+15-013,station Redjaouna,station Redjaouna,محطة سيدي بلوى في طور الانجاز,tram,Télécabine de Tizi Ouzou,SETRAM,,15,Tizi-Ouzou,1501,36.73308,4.052464,exact,wikidata+osm,Q140306978,node/4557835279
 15-014,,,,aerial_tram,,,,15,Ait Boumahdi,1530,36.456401,4.122195,exact,osm,,node/3867898629
 15-015,,,,aerial_tram,,,,15,Bounouh,1512,36.458148,4.107708,exact,osm,,node/3867898630
 15-016,Station Stade 1er Novembre,Station Stade 1er Novembre,محطة أول نوفمبر,aerial_tram,,,,15,Tizi-Ouzou,1501,36.706424,4.055049,exact,osm,Q139622214,node/4557835282
@@ -141,138 +131,120 @@ id,name,name_fr,name_ar,type,line,operator,network,wilaya_code,commune,commune_c
 16-003,,,,rail,,SNTF,,16,Hydra,1628,36.739612,3.014249,exact,osm,,node/313316044
 16-004,El Harrach,El Harrach,محطة قطار الحراش,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Bourouba,1616,36.722095,3.132405,exact,wikidata+osm,Q105748702,node/4880978184
 16-005,Birtouta,Birtouta,محطة قطار بئر توتة,rail,ligne de Birtouta à Zéralda | ligne d'Alger à Oran,SNTF,,16,Bir Touta,1636,36.631095,3.00996,exact,wikidata+osm,Q105766342,node/317893446
-16-006,Aéroport Houari Boumédiène,Aéroport Houari Boumédiène,محطة قطار مطار هواري بومدين,rail,ligne de Bab Ezzouar à l'aéroport d'Alger,SNTF,,16,Dar El Beida,1620,36.700284,3.209163,exact,wikidata,Q105767334,
-16-007,Sidi Abdellah,Sidi Abdellah,محطة قطار سيدي عبد الله,rail,ligne de Birtouta à Zéralda,SNTF,,16,Rahmania,1648,36.680624,2.891988,exact,wikidata+osm,Q110492092,node/2354891782
-16-008,Tessala El Merdja,Tessala El Merdja,محطة قطار تسالة المرجة,rail,ligne de Birtouta à Zéralda,SNTF,,16,Tessala El Merdja,1634,36.639515,2.935544,exact,wikidata+osm,Q110492214,node/4905998852
-16-009,Hussein Dey,Hussein Dey,محطة قطار حسين داي,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Hussein Dey,1617,36.745757,3.093976,exact,wikidata+osm,Q110493750,node/326246921
-16-010,Les Ateliers,Les Ateliers,محطة قطار الورشات,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Mohamed Belouzdad,,36.756399,3.065828,exact,wikidata+osm,Q110493772,node/703272446
-16-011,Caroubier,Caroubier,محطة قطار خروبة,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,El Magharia,1631,36.735131,3.119461,exact,wikidata+osm,Q110493788,node/283528340
-16-012,Rouïba ZI,Rouïba ZI,محطة قطار الرويبة الصناعية,rail,ligne d'Alger à Skikda,SNTF,,16,Rouiba,1638,36.734351,3.30199,exact,wikidata+osm,Q110508067,node/3878584193
-16-013,Réghaïa ZI,Réghaïa ZI,محطة قطار الرغاية الصناعية,rail,ligne d'Alger à Skikda,SNTF,,16,Reghaia,1640,36.73626,3.33121,exact,wikidata,Q110508129,
-16-014,Réghaïa,Réghaïa,محطة قطار الرغاية,rail,ligne d'Alger à Skikda,SNTF,,16,Reghaia,1640,36.735453,3.340686,exact,wikidata+osm,Q110508187,node/703255654
-16-015,Gué de Constantine,Gué de Constantine,محطة قطار جسر قسنطينة,rail,ligne d'Alger à Oran,SNTF,,16,Bourouba,1616,36.696899,3.094871,exact,wikidata+osm,Q110508977,node/316549497
-16-016,Aïn Naâdja,Aïn Naâdja,محطة قطار عين النعجة,rail,ligne d'Alger à Oran,SNTF,,16,Bachedjerah,1619,36.68914,3.078337,exact,wikidata+osm,Q110509033,node/316549483
-16-017,Baba Ali,Baba Ali,محطة قطار بابا علي,rail,ligne d'Alger à Oran,SNTF,,16,Djasr Kasentina,1626,36.667154,3.052214,exact,wikidata+osm,Q110509249,node/316549413
-16-018,Zéralda,Zéralda,زرالدة,rail,ligne de Birtouta à Zéralda,SNTF,,16,Zeralda,1646,36.702174,2.849767,exact,wikidata+osm,Q27624513,node/4478831128
-16-019,Rouïba,Rouïba,الرويبة,rail,ligne d'Alger à Skikda,SNTF,,16,Rouiba,1638,36.734187,3.282868,exact,wikidata+osm,Q28041114,node/253999769
-16-020,Agha,Agha,محطة آغا,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Sidi M'hamed,1602,36.768605,3.05719,exact,wikidata+osm,Q28716341,node/283529874
-16-021,Dar El Beida,Dar El Beida,الدار البيضاء,rail,ligne d'Alger à Skikda,SNTF,,16,Dar El Beida,1620,36.714616,3.210803,exact,wikidata+osm,Q28716502,node/254008647
-16-022,Bab Ezzouar,Bab Ezzouar,باب الزوار,rail,ligne de Bab Ezzouar à l'aéroport d'Alger | ligne d'Alger à Skikda,SNTF,,16,Bab Ezzouar,1621,36.70716,3.186616,exact,wikidata+osm,Q28716506,node/535042048
-16-023,Oued Smar,Oued Smar,وادي السمار,rail,ligne d'Alger à Skikda,SNTF,,16,Bab Ezzouar,1621,36.703793,3.172121,exact,wikidata+osm,Q28716509,node/254011000
-16-024,Université de Sidi Abdellah,Université de Sidi Abdellah,محطة قطار جامعة سيدي عبد الله,rail,ligne de Birtouta à Zéralda,SNTF,,16,Rahmania,1648,36.692015,2.871482,exact,wikidata+osm,Q28716562,node/2354891908
-16-025,Rouïba SNVI,Rouïba SNVI,الرويبة سوناكوم,rail,ligne d'Alger à Skikda,SNTF,,16,Reghaia,1640,36.733828,3.317793,exact,wikidata+osm,Q28716576,node/3854832437
-16-026,Alger,Alger,الجزائر,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Casbah,1607,36.7792,3.06182,exact,wikidata,Q3095611,
-16-027,Alger,Alger,الجزائر,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Casbah,1607,36.7792,3.06182,exact,wikidata,Q3095611,
-16-028,Aéroport d'Alger,Aéroport d'Alger,,rail,ligne 1,SNTF,,16,Dar El Beida,1620,36.70123,3.20357,exact,wikidata,Q86664392,
-16-029,محطة طالب عبد الرحمن,محطة طالب عبد الرحمن,محطة طالب عبد الرحمن,metro,,SEMA,Métro d'Alger,16,Bab El Oued,1605,36.790745,3.057453,exact,osm,,node/12800666651
-16-030,محطة الساعات الثلاث,محطة الساعات الثلاث,محطة الساعات الثلاث,metro,,SEMA,Métro d'Alger,16,Bab El Oued,1605,36.790439,3.050902,exact,osm,,node/12800666667
-16-031,محطة تريولي,محطة تريولي,محطة تريولي,metro,,SEMA,Métro d'Alger,16,Oued Koriche,1608,36.78689,3.04653,exact,osm,,node/12800666668
-16-032,Berraki - Le Jardin,Berraki - Le Jardin,محطة الحديقة,metro,,SEMA,Métro d'Alger,16,Baraki,1614,36.668309,3.095127,exact,osm,,node/12942126787
-16-033,Gué de Constantine,Gué de Constantine,جسر قسنطينة,metro,,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.709584,3.090223,exact,osm,,node/2208811165
-16-034,Aéroport Houari Boumédiène,Aéroport Houari Boumédiène,محطة قطار مطار هواري بومدين,metro,ligne de Bab Ezzouar à l'aéroport d'Alger,SEMA,Métro d'Alger,16,Dar El Beida,1620,36.700284,3.209163,exact,wikidata+osm,Q105767334,node/6270773066
-16-035,Hacen Badi,Hacen Badi,محطة حسان بادي,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.7225,3.14823,exact,wikidata+osm,Q109312749,node/12942126795
-16-036,Pôle Universitaire Bouraoui,Pôle Universitaire Bouraoui,محطة القطب الجامعي,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.7193,3.1524,exact,wikidata+osm,Q109312750,node/12942126794
-16-037,Beaulieu,Beaulieu,محطّة المنظر الجميل,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.70898,3.15799,exact,wikidata+osm,Q109312753,node/3960174519
-16-038,Centre des Affaires,Centre des Affaires,محطة حي الأعمال,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.71178,3.19555,exact,wikidata+osm,Q109312784,node/12942126789
-16-039,Smail Yefsah,Smail Yefsah,محطة اسماعيل يفصح,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.71772,3.19163,exact,wikidata+osm,Q109312785,node/12942126790
-16-040,Rabia Tahar,Rabia Tahar,رابية الطاهر,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.72011,3.18203,exact,wikidata+osm,Q109312786,node/12942126791
-16-041,Université Houari Boumédiène,Université Houari Boumédiène,محطة جامعة هواري بومدين,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.7141,3.17519,exact,wikidata+osm,Q109312787,node/12942126792
-16-042,Oued Smar,Oued Smar,محطة المترو وادي السمار,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.70826,3.16796,exact,wikidata+osm,Q109312788,node/12942126793
-16-043,Mohamed Belarbi,Mohamed Belarbi,محطة محمد بلعربي,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.67377,3.0866,exact,wikidata+osm,Q109312809,node/12942126786
-16-044,Parc Urbain,Parc Urbain,محطة المنتزه الحضري,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.683987,3.083103,exact,wikidata+osm,Q138493971,node/12942126784
-16-045,Aïn Naâdja-Gare,Aïn Naâdja-Gare,محطّة مترو عين النعجة – المحطة,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.690333,3.080989,exact,wikidata+osm,Q138494010,node/12942126785
-16-046,Mohamed Boudiaf,Mohamed Boudiaf,محطّة محمد بوضياف,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.696365,3.076408,exact,wikidata+osm,Q138494033,node/3348151668
-16-047,Jardin,Jardin,,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.67377,3.0866,exact,wikidata,Q138494132,
-16-048,Cité 2004 Logements,Cité 2004 Logements,,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.662269,3.10433,exact,wikidata+osm,Q138494139,node/13231136207
-16-049,El Harrach Centre,El Harrach Centre,الحراش وسط,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.722,3.13766,exact,wikidata+osm,Q20669761,node/6673464970
-16-050,El Harrach Centre,El Harrach Centre,,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.722,3.13766,exact,wikidata,Q20669761,
-16-051,El Harrach Gare,El Harrach Gare,محطة الحراش,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.7219,3.13093,exact,wikidata+osm,Q20669762,node/6673464971
-16-052,El Harrach Gare,El Harrach Gare,محطة الحراش,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.7219,3.13093,exact,wikidata,Q20669762,
-16-053,Bachdjarah - Tennis,Bachdjarah - Tennis,محطة باش جراح (التنس),metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.7183,3.11044,exact,wikidata+osm,Q20669906,node/6673464969
-16-054,Bachdjarah - Tennis,Bachdjarah - Tennis,محطة باش جراح (التنس),metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.7183,3.11044,exact,wikidata,Q20669906,
-16-055,Bachdjarah,Bachdjarah,محطة باش جراح,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.72181,3.11827,exact,wikidata+osm,Q20669907,node/6673464972
-16-056,Bachdjarah,Bachdjarah,محطة باش جراح,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.72181,3.11827,exact,wikidata,Q20669907,
-16-057,Ali Boumendjel,Ali Boumendjel,محطة مترو علي بومنجل,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.779167,3.058056,exact,wikidata+osm,Q24897986,node/966535048
-16-058,1er Mai,1er Mai,أول ماي,metro,ligne 1,SEMA,Métro d'Alger,16,Sidi M'hamed,1602,36.7606,3.05531,exact,wikidata+osm,Q2813532,node/532001411
-16-059,1er Mai,1er Mai,أول ماي,metro,ligne 1,SEMA,Métro d'Alger,16,Sidi M'hamed,1602,36.7606,3.05531,exact,wikidata,Q2813532,
-16-060,Aïssat Idir,Aïssat Idir,عيسات إدير,metro,ligne 1,SEMA,Métro d'Alger,16,Mohamed Belouzdad,,36.756856,3.061734,exact,wikidata+osm,Q2876423,node/532001427
-16-061,Cité Amirouche,Cité Amirouche,حي عميروش,metro,ligne 1,SEMA,Métro d'Alger,16,Hussein Dey,1617,36.7378,3.09422,exact,wikidata+osm,Q2974625,node/532001496
-16-062,Cité Amirouche,Cité Amirouche,حي عميروش,metro,ligne 1,SEMA,Métro d'Alger,16,Hussein Dey,1617,36.7378,3.09422,exact,wikidata,Q2974625,
-16-063,Cité Mer et Soleil,Cité Mer et Soleil,البحر و الشمس,metro,ligne 1,SEMA,Métro d'Alger,16,El Magharia,1631,36.7332,3.10102,exact,wikidata+osm,Q2974681,node/3590827124
-16-064,Cité Mer et Soleil,Cité Mer et Soleil,البحر و الشمس,metro,ligne 1,SEMA,Métro d'Alger,16,El Magharia,1631,36.7332,3.10102,exact,wikidata,Q2974681,
-16-065,Hamma,Hamma,الحامة,metro,ligne 1,SEMA,Métro d'Alger,16,Mohamed Belouzdad,,36.7529,3.06641,exact,wikidata+osm,Q3126479,node/532001439
-16-066,Hamma,Hamma,الحامة,metro,ligne 1,SEMA,Métro d'Alger,16,Mohamed Belouzdad,,36.7529,3.06641,exact,wikidata,Q3126479,
-16-067,Haï El Badr,Haï El Badr,حي البدر,metro,ligne 1,SEMA,Métro d'Alger,16,El Magharia,1631,36.7254,3.10224,exact,wikidata+osm,Q3128904,node/5571463482
-16-068,Jardin d'essai,Jardin d'essai,حديقة التجارب,metro,ligne 1,SEMA,Métro d'Alger,16,El Madania,1603,36.7469,3.07218,exact,wikidata+osm,Q3162444,node/964640551
-16-069,Jardin d'essai,Jardin d'essai,حديقة التجارب,metro,ligne 1,SEMA,Métro d'Alger,16,El Madania,1603,36.7469,3.07218,exact,wikidata,Q3162444,
-16-070,Khelifa Boukhalfa,Khelifa Boukhalfa,خليفة بوخالفة,metro,ligne 1,SEMA,Métro d'Alger,16,Sidi M'hamed,1602,36.7663,3.05366,exact,wikidata+osm,Q3196135,node/3603933963
-16-071,Khelifa Boukhalfa,Khelifa Boukhalfa,خليفة بوخالفة,metro,ligne 1,SEMA,Métro d'Alger,16,Sidi M'hamed,1602,36.7663,3.05366,exact,wikidata,Q3196135,
-16-072,Les Fusillés,Les Fusillés,المعدومين,metro,ligne 1,SEMA,Métro d'Alger,16,Kouba,1618,36.7423,3.08299,exact,wikidata+osm,Q3232853,node/2402077582
-16-073,Les Fusillés,Les Fusillés,المعدومين,metro,ligne 1,SEMA,Métro d'Alger,16,Kouba,1618,36.7423,3.08299,exact,wikidata,Q3232853,
-16-074,Tafourah - Grande Poste,Tafourah - Grande Poste,تافورة - البريد المركزي,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.7719,3.05809,exact,wikidata+osm,Q3513795,node/532001382
-16-075,Tafourah - Grande Poste,Tafourah - Grande Poste,تافورة - البريد المركزي,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.7719,3.05809,exact,wikidata,Q3513795,
-16-076,Aïn Naâdja,Aïn Naâdja,محطة مترو عين النعجة,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.706111,3.083889,exact,wikidata+osm,Q52230128,node/11773874073
-16-077,Aïn Naâdja,Aïn Naâdja,محطة مترو عين النعجة,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.706111,3.083889,exact,wikidata,Q52230128,
-16-078,Place des Martyrs,Place des Martyrs,محطة مترو ساحة الشهداء,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.785556,3.062222,exact,wikidata+osm,Q52230167,node/966535035
-16-079,Place des Martyrs,Place des Martyrs,محطة مترو ساحة الشهداء,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.785556,3.062222,exact,wikidata,Q52230167,
-16-080,Gué de Constantine,Gué de Constantine,محطة جسر قسطنطين (مترو الجزائر),metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.710556,3.092778,exact,wikidata,Q55074870,
-16-081,Gué de Constantine,Gué de Constantine,محطة جسر قسطنطين (مترو الجزائر),metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.710556,3.092778,exact,wikidata,Q55074870,
-16-082,Les Ateliers,Les Ateliers,وقف ورش العمل,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.71552,3.10083,exact,wikidata+osm,Q60846394,node/11773874074
-16-083,Aéroport d'Alger,Aéroport d'Alger,محطة مطار هواري بومدين,metro,ligne 1,SEMA,Métro d'Alger,16,Dar El Beida,1620,36.70123,3.20357,exact,wikidata+osm,Q86664392,node/12942126788
-16-084,,,,metro,,SEMA,Métro d'Alger,16,Casbah,1607,36.781488,3.0597,exact,osm,,way/1285510857
-16-085,Cité Rabia Tahar,Cité Rabia Tahar,محطة ترامواي يحي بوسحاقي,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.724415,3.177037,exact,wikidata+osm,Q111479348,node/3513576791
-16-086,Cité 5 juillet,Cité 5 juillet,حي 5 جويلية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.721527,3.182819,exact,wikidata+osm,Q118592262,node/3513576390
-16-087,Bab Ezzouar - Le Pont,Bab Ezzouar - Le Pont,باب الزوار - الجسر,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.724346,3.184784,exact,wikidata+osm,Q118592263,node/3513574204
-16-088,Bekri Bouguerra,Bekri Bouguerra,بكري بوقرة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.727816,3.14344,exact,wikidata+osm,Q118592264,node/3513689110
-16-089,Bellevue,Bellevue,المنظر الجميل,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.729538,3.136051,exact,wikidata+osm,Q118592265,node/3513693753
-16-090,Ben Mered,Ben Mered,بن مراد,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Bahri,1642,36.758991,3.229405,exact,wikidata+osm,Q118592266,node/3513492377
-16-091,Ben Mrabet,Ben Mrabet,بن مرابط,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.753567,3.220095,exact,wikidata+osm,Q118592267,node/3513540400
-16-092,Ben Redouan,Ben Redouan,بن رضوان,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Bahri,1642,36.755438,3.224216,exact,wikidata+osm,Q118592268,node/8292893942
-16-093,Benzerga,Benzerga,بن زرقة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.773041,3.245156,exact,wikidata+osm,Q118592269,node/3513532150
-16-094,Bordj El Kifane - Lycée,Bordj El Kifane - Lycée,برج الكيفان - الثانوية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.745327,3.187668,exact,wikidata+osm,Q118592270,node/3513552990
-16-095,Bordj El Kifane centre,Bordj El Kifane centre,برج الكيفان - وسط,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.747035,3.190999,exact,wikidata+osm,Q118592272,node/3513552242
-16-096,Bordj El Kiffan - Polyclinique,Bordj El Kiffan - Polyclinique,برج الكيفان - العيادة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.748227,3.197154,exact,wikidata+osm,Q118592274,node/3513552241
-16-097,Café Chergui,Café Chergui,مقهى شرقي,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.777453,3.250164,exact,wikidata+osm,Q118592276,node/3513515526
-16-098,Caroubier,Caroubier,الخروبة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.735714,3.118177,exact,wikidata+osm,Q118592277,node/3513715693
-16-099,Cinq Maisons,Cinq Maisons,سان ميزون,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.725881,3.150803,exact,wikidata+osm,Q118592278,node/3513668361
-16-100,Cité 8 Mai 1945,Cité 8 Mai 1945,حي 8 ماي 1945,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Oued Smar,1615,36.737328,3.184909,exact,wikidata+osm,Q118592279,node/3513573388
-16-101,Cité Clair Matin,Cité Clair Matin,حي الصباح,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.741052,3.18611,exact,wikidata+osm,Q118592280,node/3513571593
-16-102,Cité Diplomatique,Cité Diplomatique,الحي الدبلوماسي,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.773957,3.259357,exact,wikidata+osm,Q118592282,node/4377305014
-16-103,Cité Mokhtar Zerhouni,Cité Mokhtar Zerhouni,حي مختار زرهوني,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.729478,3.174324,exact,wikidata+osm,Q118592283,node/3513613686
-16-104,Cité Universitaire CUBE 1,Cité Universitaire CUBE 1,الإقامة الجامعية - ح ج ب 1,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.732251,3.184065,exact,wikidata+osm,Q118592285,node/3513575500
-16-105,Dergana Centre,Dergana Centre,درڨانة وسط,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.771973,3.260306,exact,wikidata+osm,Q118592286,node/13820124011
-16-106,Faculté Biomédicale,Faculté Biomédicale,جامعة درقانة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.777701,3.258862,exact,wikidata+osm,Q118592287,node/4377305016
-16-107,Foire d'Alger,Foire d'Alger,قصر المعارض,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.731269,3.161369,exact,wikidata+osm,Q118592288,node/3513651506
-16-108,La Glacière,La Glacière,الهواء الجميل,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.732817,3.124631,exact,wikidata+osm,Q118592289,node/3516056360
-16-109,Les Fusillés,Les Fusillés,المعدومين,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Kouba,1618,36.745993,3.086813,exact,wikidata+osm,Q118592290,node/3512265690
-16-110,Les Pins,Les Pins,الصنوبر,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.732199,3.167029,exact,wikidata+osm,Q118592291,node/3513613882
-16-111,Mimouni Hamoudi,Mimouni Hamoudi,ميموني محمود,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.750339,3.211978,exact,wikidata+osm,Q118592293,node/3513529208
-16-112,Mouhous,Mouhous,موحوس,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.749313,3.20648,exact,wikidata+osm,Q118592295,node/3513537666
-16-113,Pont El Harrach,Pont El Harrach,جسر الحراش,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.730293,3.130183,exact,wikidata+osm,Q118592298,node/3513698842
-16-114,Ruisseau,Ruisseau,رويسو,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Kouba,1618,36.742878,3.083489,exact,wikidata+osm,Q118592300,node/7301592854
-16-115,Sidi Dris,Sidi Dris,سيدي ادريس,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.766032,3.238426,exact,wikidata+osm,Q118592301,node/3513534789
-16-116,Tamaris,Tamaris,حي المندرين,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Oued Smar,1615,36.732589,3.173281,exact,wikidata+osm,Q118592302,node/3513616950
-16-117,Tripoli - Hamadache,Tripoli - Hamadache,طرابلس - حمداش,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Hussein Dey,1617,36.74072,3.10409,exact,wikidata+osm,Q118592303,node/3513727274
-16-118,Tripoli - Maqqaria,Tripoli - Maqqaria,طرابلس - المقرية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.737047,3.113689,exact,wikidata+osm,Q118592304,node/3513726622
-16-119,Tripoli - Mosquée,Tripoli - Mosquée,طرابلس - المسجد,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Hussein Dey,1617,36.743234,3.097504,exact,wikidata+osm,Q118592305,node/3513729802
-16-120,Tripoli - Thâalibia,Tripoli - Thâalibia,طرابلس- الثعالبية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Hussein Dey,1617,36.745218,3.092295,exact,wikidata+osm,Q118592306,node/3513729589
-16-121,Université Bab Ezzouar,Université Bab Ezzouar,جامعة العلوم و التكنولوجيا هواري بومدين,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.72081,3.179575,exact,wikidata+osm,Q118592309,node/3513604611
-16-122,Village Africain,Village Africain,القرية الأفريقية,aerial_tram,,,,16,Ben Aknoun,1622,36.74864,3.006449,exact,osm,,node/2555915456
-16-123,,,,aerial_tram,,,,16,Hydra,1628,36.738285,3.015134,exact,osm,,node/2555915621
-16-124,Parc de Loisirs,Parc de Loisirs,,aerial_tram,,,,16,Hydra,1628,36.735764,3.0209,exact,osm,,node/2555916367
-16-125,,,,aerial_tram,,,,16,Ben Aknoun,1622,36.745882,3.006197,exact,osm,,node/2555916378
-16-126,Basilique Notre-Dame d'Afrique (Fermée),Basilique Notre-Dame d'Afrique (Fermée),كاتدرائية السيدة الأفريقية (مغلق),aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.80193,3.042771,exact,osm,,node/288658053
-16-127,Station Frais Vallon,Station Frais Vallon,محطة فري فالون,aerial_tram,,,,16,Oued Koriche,1608,36.780987,3.032703,exact,osm,,node/3003121654
-16-128,Station Bouzaréah,Station Bouzaréah,محطة بوزريعة,aerial_tram,,,,16,Bouzareah,1611,36.791323,3.020884,exact,osm,,node/3092510355
-16-129,Belouizdad,Belouizdad,بلوزداد,aerial_tram,,,,16,Mohamed Belouzdad,,36.749438,3.066762,exact,osm,,node/319862788
-16-130,El Madania,El Madania,المدنية,aerial_tram,,,,16,Mohamed Belouzdad,,36.747783,3.065537,exact,osm,,node/319862789
-16-131,Station Bab El Oued,Station Bab El Oued,محطة باب الواد (مغلق),aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.803788,3.044388,exact,osm,,node/3511293112
-16-132,,,,aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.796036,3.038087,exact,osm,,node/5237141107
-16-133,,,,aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.804044,3.033466,exact,osm,,node/5237141108
-16-134,Station Palais de La Culture,Station Palais de La Culture,محطة قصر الثقافة,aerial_tram,,,,16,Kouba,1618,36.738837,3.081215,exact,osm,,node/957708182
-16-135,Mémorial,Mémorial,مقام الشهيد,aerial_tram,,,,16,El Madania,1603,36.744409,3.071844,exact,osm,,node/964640549
-16-136,Télécabine de Bab El Oued,Télécabine de Bab El Oued,,gondola,,,,16,Bab El Oued,1605,36.789817,3.047081,exact,wikidata+osm,Q109045601,node/5237141104
-16-137,Télécabine de Oued Koriche,Télécabine de Oued Koriche,,gondola,,,,16,Bab El Oued,1605,36.78837,3.04483,exact,wikidata+osm,Q109045605,node/3092511697
+16-006,Sidi Abdellah,Sidi Abdellah,محطة قطار سيدي عبد الله,rail,ligne de Birtouta à Zéralda,SNTF,,16,Rahmania,1648,36.680624,2.891988,exact,wikidata+osm,Q110492092,node/2354891782
+16-007,Tessala El Merdja,Tessala El Merdja,محطة قطار تسالة المرجة,rail,ligne de Birtouta à Zéralda,SNTF,,16,Tessala El Merdja,1634,36.639515,2.935544,exact,wikidata+osm,Q110492214,node/4905998852
+16-008,Hussein Dey,Hussein Dey,محطة قطار حسين داي,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Hussein Dey,1617,36.745757,3.093976,exact,wikidata+osm,Q110493750,node/326246921
+16-009,Les Ateliers,Les Ateliers,محطة قطار الورشات,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Mohamed Belouzdad,,36.756399,3.065828,exact,wikidata+osm,Q110493772,node/703272446
+16-010,Caroubier,Caroubier,محطة قطار خروبة,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,El Magharia,1631,36.735131,3.119461,exact,wikidata+osm,Q110493788,node/283528340
+16-011,Rouïba ZI,Rouïba ZI,محطة قطار الرويبة الصناعية,rail,ligne d'Alger à Skikda,SNTF,,16,Rouiba,1638,36.734351,3.30199,exact,wikidata+osm,Q110508067,node/3878584193
+16-012,Réghaïa ZI,Réghaïa ZI,محطة قطار الرغاية الصناعية,rail,ligne d'Alger à Skikda,SNTF,,16,Reghaia,1640,36.73626,3.33121,exact,wikidata,Q110508129,
+16-013,Réghaïa,Réghaïa,محطة قطار الرغاية,rail,ligne d'Alger à Skikda,SNTF,,16,Reghaia,1640,36.735453,3.340686,exact,wikidata+osm,Q110508187,node/703255654
+16-014,Gué de Constantine,Gué de Constantine,محطة قطار جسر قسنطينة,rail,ligne d'Alger à Oran,SNTF,,16,Bourouba,1616,36.696899,3.094871,exact,wikidata+osm,Q110508977,node/316549497
+16-015,Aïn Naâdja,Aïn Naâdja,محطة قطار عين النعجة,rail,ligne d'Alger à Oran,SNTF,,16,Bachedjerah,1619,36.68914,3.078337,exact,wikidata+osm,Q110509033,node/316549483
+16-016,Baba Ali,Baba Ali,محطة قطار بابا علي,rail,ligne d'Alger à Oran,SNTF,,16,Djasr Kasentina,1626,36.667154,3.052214,exact,wikidata+osm,Q110509249,node/316549413
+16-017,Zéralda,Zéralda,زرالدة,rail,ligne de Birtouta à Zéralda,SNTF,,16,Zeralda,1646,36.702174,2.849767,exact,wikidata+osm,Q27624513,node/4478831128
+16-018,Rouïba,Rouïba,الرويبة,rail,ligne d'Alger à Skikda,SNTF,,16,Rouiba,1638,36.734187,3.282868,exact,wikidata+osm,Q28041114,node/253999769
+16-019,Agha,Agha,محطة آغا,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Sidi M'hamed,1602,36.768605,3.05719,exact,wikidata+osm,Q28716341,node/283529874
+16-020,Dar El Beida,Dar El Beida,الدار البيضاء,rail,ligne d'Alger à Skikda,SNTF,,16,Dar El Beida,1620,36.714616,3.210803,exact,wikidata+osm,Q28716502,node/254008647
+16-021,Bab Ezzouar,Bab Ezzouar,باب الزوار,rail,ligne de Bab Ezzouar à l'aéroport d'Alger | ligne d'Alger à Skikda,SNTF,,16,Bab Ezzouar,1621,36.70716,3.186616,exact,wikidata+osm,Q28716506,node/535042048
+16-022,Oued Smar,Oued Smar,وادي السمار,rail,ligne d'Alger à Skikda,SNTF,,16,Bab Ezzouar,1621,36.703793,3.172121,exact,wikidata+osm,Q28716509,node/254011000
+16-023,Université de Sidi Abdellah,Université de Sidi Abdellah,محطة قطار جامعة سيدي عبد الله,rail,ligne de Birtouta à Zéralda,SNTF,,16,Rahmania,1648,36.692015,2.871482,exact,wikidata+osm,Q28716562,node/2354891908
+16-024,Rouïba SNVI,Rouïba SNVI,الرويبة سوناكوم,rail,ligne d'Alger à Skikda,SNTF,,16,Reghaia,1640,36.733828,3.317793,exact,wikidata+osm,Q28716576,node/3854832437
+16-025,Alger,Alger,الجزائر,rail,ligne d'Alger à Skikda | ligne d'Alger à Oran | ligne d'Alger à Skikda | ligne d'Alger à Oran,SNTF,,16,Casbah,1607,36.7792,3.06182,exact,wikidata,Q3095611,
+16-026,محطة طالب عبد الرحمن,محطة طالب عبد الرحمن,محطة طالب عبد الرحمن,metro,,SEMA,Métro d'Alger,16,Bab El Oued,1605,36.790745,3.057453,exact,osm,,node/12800666651
+16-027,محطة الساعات الثلاث,محطة الساعات الثلاث,محطة الساعات الثلاث,metro,,SEMA,Métro d'Alger,16,Bab El Oued,1605,36.790439,3.050902,exact,osm,,node/12800666667
+16-028,محطة تريولي,محطة تريولي,محطة تريولي,metro,,SEMA,Métro d'Alger,16,Oued Koriche,1608,36.78689,3.04653,exact,osm,,node/12800666668
+16-029,Berraki - Le Jardin,Berraki - Le Jardin,محطة الحديقة,metro,,SEMA,Métro d'Alger,16,Baraki,1614,36.668309,3.095127,exact,osm,,node/12942126787
+16-030,Gué de Constantine,Gué de Constantine,جسر قسنطينة,metro,,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.709584,3.090223,exact,osm,,node/2208811165
+16-031,Aéroport Houari Boumédiène,Aéroport Houari Boumédiène,محطة قطار مطار هواري بومدين,metro,ligne de Bab Ezzouar à l'aéroport d'Alger,SEMA,Métro d'Alger,16,Dar El Beida,1620,36.700284,3.209163,exact,wikidata+osm,Q105767334,node/6270773066
+16-032,Hacen Badi,Hacen Badi,محطة حسان بادي,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.7225,3.14823,exact,wikidata+osm,Q109312749,node/12942126795
+16-033,Pôle Universitaire Bouraoui,Pôle Universitaire Bouraoui,محطة القطب الجامعي,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.7193,3.1524,exact,wikidata+osm,Q109312750,node/12942126794
+16-034,Beaulieu,Beaulieu,محطّة المنظر الجميل,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.70898,3.15799,exact,wikidata+osm,Q109312753,node/3960174519
+16-035,Centre des Affaires,Centre des Affaires,محطة حي الأعمال,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.71178,3.19555,exact,wikidata+osm,Q109312784,node/12942126789
+16-036,Smail Yefsah,Smail Yefsah,محطة اسماعيل يفصح,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.71772,3.19163,exact,wikidata+osm,Q109312785,node/12942126790
+16-037,Rabia Tahar,Rabia Tahar,رابية الطاهر,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.72011,3.18203,exact,wikidata+osm,Q109312786,node/12942126791
+16-038,Université Houari Boumédiène,Université Houari Boumédiène,محطة جامعة هواري بومدين,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.7141,3.17519,exact,wikidata+osm,Q109312787,node/12942126792
+16-039,Oued Smar,Oued Smar,محطة المترو وادي السمار,metro,ligne 1,SEMA,Métro d'Alger,16,Bab Ezzouar,1621,36.70826,3.16796,exact,wikidata+osm,Q109312788,node/12942126793
+16-040,Mohamed Belarbi,Mohamed Belarbi,محطة محمد بلعربي,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.67377,3.0866,exact,wikidata+osm,Q109312809,node/12942126786
+16-041,Parc Urbain,Parc Urbain,محطة المنتزه الحضري,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.683987,3.083103,exact,wikidata+osm,Q138493971,node/12942126784
+16-042,Aïn Naâdja-Gare,Aïn Naâdja-Gare,محطّة مترو عين النعجة – المحطة,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.690333,3.080989,exact,wikidata+osm,Q138494010,node/12942126785
+16-043,Mohamed Boudiaf,Mohamed Boudiaf,محطّة محمد بوضياف,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.696365,3.076408,exact,wikidata+osm,Q138494033,node/3348151668
+16-044,Jardin,Jardin,,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.67377,3.0866,exact,wikidata,Q138494132,
+16-045,Cité 2004 Logements,Cité 2004 Logements,,metro,ligne 1,SEMA,Métro d'Alger,16,Baraki,1614,36.662269,3.10433,exact,wikidata+osm,Q138494139,node/13231136207
+16-046,El Harrach Centre,El Harrach Centre,الحراش وسط,metro,ligne 1,SEMA,Métro d'Alger,16,Mohammadia,1629,36.722,3.13766,exact,wikidata+osm,Q20669761,node/6673464970
+16-047,El Harrach Gare,El Harrach Gare,محطة الحراش,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.7219,3.13093,exact,wikidata+osm,Q20669762,node/6673464971
+16-048,Bachdjarah - Tennis,Bachdjarah - Tennis,محطة باش جراح (التنس),metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.7183,3.11044,exact,wikidata+osm,Q20669906,node/6673464969
+16-049,Bachdjarah,Bachdjarah,محطة باش جراح,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.72181,3.11827,exact,wikidata+osm,Q20669907,node/6673464972
+16-050,Ali Boumendjel,Ali Boumendjel,محطة مترو علي بومنجل,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.779167,3.058056,exact,wikidata+osm,Q24897986,node/966535048
+16-051,1er Mai,1er Mai,أول ماي,metro,ligne 1,SEMA,Métro d'Alger,16,Sidi M'hamed,1602,36.7606,3.05531,exact,wikidata+osm,Q2813532,node/532001411
+16-052,Aïssat Idir,Aïssat Idir,عيسات إدير,metro,ligne 1,SEMA,Métro d'Alger,16,Mohamed Belouzdad,,36.756856,3.061734,exact,wikidata+osm,Q2876423,node/532001427
+16-053,Cité Amirouche,Cité Amirouche,حي عميروش,metro,ligne 1,SEMA,Métro d'Alger,16,Hussein Dey,1617,36.7378,3.09422,exact,wikidata+osm,Q2974625,node/532001496
+16-054,Cité Mer et Soleil,Cité Mer et Soleil,البحر و الشمس,metro,ligne 1,SEMA,Métro d'Alger,16,El Magharia,1631,36.7332,3.10102,exact,wikidata+osm,Q2974681,node/3590827124
+16-055,Hamma,Hamma,الحامة,metro,ligne 1,SEMA,Métro d'Alger,16,Mohamed Belouzdad,,36.7529,3.06641,exact,wikidata+osm,Q3126479,node/532001439
+16-056,Haï El Badr,Haï El Badr,حي البدر,metro,ligne 1,SEMA,Métro d'Alger,16,El Magharia,1631,36.7254,3.10224,exact,wikidata+osm,Q3128904,node/5571463482
+16-057,Jardin d'essai,Jardin d'essai,حديقة التجارب,metro,ligne 1,SEMA,Métro d'Alger,16,El Madania,1603,36.7469,3.07218,exact,wikidata+osm,Q3162444,node/964640551
+16-058,Khelifa Boukhalfa,Khelifa Boukhalfa,خليفة بوخالفة,metro,ligne 1,SEMA,Métro d'Alger,16,Sidi M'hamed,1602,36.7663,3.05366,exact,wikidata+osm,Q3196135,node/3603933963
+16-059,Les Fusillés,Les Fusillés,المعدومين,metro,ligne 1,SEMA,Métro d'Alger,16,Kouba,1618,36.7423,3.08299,exact,wikidata+osm,Q3232853,node/2402077582
+16-060,Tafourah - Grande Poste,Tafourah - Grande Poste,تافورة - البريد المركزي,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.7719,3.05809,exact,wikidata+osm,Q3513795,node/532001382
+16-061,Aïn Naâdja,Aïn Naâdja,محطة مترو عين النعجة,metro,ligne 1,SEMA,Métro d'Alger,16,Bachedjerah,1619,36.706111,3.083889,exact,wikidata+osm,Q52230128,node/11773874073
+16-062,Place des Martyrs,Place des Martyrs,محطة مترو ساحة الشهداء,metro,ligne 1,SEMA,Métro d'Alger,16,Casbah,1607,36.785556,3.062222,exact,wikidata+osm,Q52230167,node/966535035
+16-063,Gué de Constantine,Gué de Constantine,محطة جسر قسطنطين (مترو الجزائر),metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.710556,3.092778,exact,wikidata,Q55074870,
+16-064,Les Ateliers,Les Ateliers,وقف ورش العمل,metro,ligne 1,SEMA,Métro d'Alger,16,Bourouba,1616,36.71552,3.10083,exact,wikidata+osm,Q60846394,node/11773874074
+16-065,Aéroport d'Alger,Aéroport d'Alger,محطة مطار هواري بومدين,metro,ligne 1,SEMA,Métro d'Alger,16,Dar El Beida,1620,36.70123,3.20357,exact,wikidata+osm,Q86664392,node/12942126788
+16-066,,,,metro,,SEMA,Métro d'Alger,16,Casbah,1607,36.781488,3.0597,exact,osm,,way/1285510857
+16-067,Cité Rabia Tahar,Cité Rabia Tahar,محطة ترامواي يحي بوسحاقي,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.724415,3.177037,exact,wikidata+osm,Q111479348,node/3513576791
+16-068,Cité 5 juillet,Cité 5 juillet,حي 5 جويلية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.721527,3.182819,exact,wikidata+osm,Q118592262,node/3513576390
+16-069,Bab Ezzouar - Le Pont,Bab Ezzouar - Le Pont,باب الزوار - الجسر,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.724346,3.184784,exact,wikidata+osm,Q118592263,node/3513574204
+16-070,Bekri Bouguerra,Bekri Bouguerra,بكري بوقرة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.727816,3.14344,exact,wikidata+osm,Q118592264,node/3513689110
+16-071,Bellevue,Bellevue,المنظر الجميل,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.729538,3.136051,exact,wikidata+osm,Q118592265,node/3513693753
+16-072,Ben Mered,Ben Mered,بن مراد,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Bahri,1642,36.758991,3.229405,exact,wikidata+osm,Q118592266,node/3513492377
+16-073,Ben Mrabet,Ben Mrabet,بن مرابط,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.753567,3.220095,exact,wikidata+osm,Q118592267,node/3513540400
+16-074,Ben Redouan,Ben Redouan,بن رضوان,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Bahri,1642,36.755438,3.224216,exact,wikidata+osm,Q118592268,node/8292893942
+16-075,Benzerga,Benzerga,بن زرقة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.773041,3.245156,exact,wikidata+osm,Q118592269,node/3513532150
+16-076,Bordj El Kifane - Lycée,Bordj El Kifane - Lycée,برج الكيفان - الثانوية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.745327,3.187668,exact,wikidata+osm,Q118592270,node/3513552990
+16-077,Bordj El Kifane centre,Bordj El Kifane centre,برج الكيفان - وسط,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.747035,3.190999,exact,wikidata+osm,Q118592272,node/3513552242
+16-078,Bordj El Kiffan - Polyclinique,Bordj El Kiffan - Polyclinique,برج الكيفان - العيادة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.748227,3.197154,exact,wikidata+osm,Q118592274,node/3513552241
+16-079,Café Chergui,Café Chergui,مقهى شرقي,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.777453,3.250164,exact,wikidata+osm,Q118592276,node/3513515526
+16-080,Caroubier,Caroubier,الخروبة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.735714,3.118177,exact,wikidata+osm,Q118592277,node/3513715693
+16-081,Cinq Maisons,Cinq Maisons,سان ميزون,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.725881,3.150803,exact,wikidata+osm,Q118592278,node/3513668361
+16-082,Cité 8 Mai 1945,Cité 8 Mai 1945,حي 8 ماي 1945,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Oued Smar,1615,36.737328,3.184909,exact,wikidata+osm,Q118592279,node/3513573388
+16-083,Cité Clair Matin,Cité Clair Matin,حي الصباح,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.741052,3.18611,exact,wikidata+osm,Q118592280,node/3513571593
+16-084,Cité Diplomatique,Cité Diplomatique,الحي الدبلوماسي,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.773957,3.259357,exact,wikidata+osm,Q118592282,node/4377305014
+16-085,Cité Mokhtar Zerhouni,Cité Mokhtar Zerhouni,حي مختار زرهوني,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.729478,3.174324,exact,wikidata+osm,Q118592283,node/3513613686
+16-086,Cité Universitaire CUBE 1,Cité Universitaire CUBE 1,الإقامة الجامعية - ح ج ب 1,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.732251,3.184065,exact,wikidata+osm,Q118592285,node/3513575500
+16-087,Dergana Centre,Dergana Centre,درڨانة وسط,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.771973,3.260306,exact,wikidata+osm,Q118592286,node/13820124011
+16-088,Faculté Biomédicale,Faculté Biomédicale,جامعة درقانة,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.777701,3.258862,exact,wikidata+osm,Q118592287,node/4377305016
+16-089,Foire d'Alger,Foire d'Alger,قصر المعارض,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.731269,3.161369,exact,wikidata+osm,Q118592288,node/3513651506
+16-090,La Glacière,La Glacière,الهواء الجميل,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.732817,3.124631,exact,wikidata+osm,Q118592289,node/3516056360
+16-091,Les Fusillés,Les Fusillés,المعدومين,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Kouba,1618,36.745993,3.086813,exact,wikidata+osm,Q118592290,node/3512265690
+16-092,Les Pins,Les Pins,الصنوبر,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Mohammadia,1629,36.732199,3.167029,exact,wikidata+osm,Q118592291,node/3513613882
+16-093,Mimouni Hamoudi,Mimouni Hamoudi,ميموني محمود,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.750339,3.211978,exact,wikidata+osm,Q118592293,node/3513529208
+16-094,Mouhous,Mouhous,موحوس,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bordj El Kiffan,1630,36.749313,3.20648,exact,wikidata+osm,Q118592295,node/3513537666
+16-095,Pont El Harrach,Pont El Harrach,جسر الحراش,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.730293,3.130183,exact,wikidata+osm,Q118592298,node/3513698842
+16-096,Ruisseau,Ruisseau,رويسو,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Kouba,1618,36.742878,3.083489,exact,wikidata+osm,Q118592300,node/7301592854
+16-097,Sidi Dris,Sidi Dris,سيدي ادريس,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Herraoua,1639,36.766032,3.238426,exact,wikidata+osm,Q118592301,node/3513534789
+16-098,Tamaris,Tamaris,حي المندرين,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Oued Smar,1615,36.732589,3.173281,exact,wikidata+osm,Q118592302,node/3513616950
+16-099,Tripoli - Hamadache,Tripoli - Hamadache,طرابلس - حمداش,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Hussein Dey,1617,36.74072,3.10409,exact,wikidata+osm,Q118592303,node/3513727274
+16-100,Tripoli - Maqqaria,Tripoli - Maqqaria,طرابلس - المقرية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,El Magharia,1631,36.737047,3.113689,exact,wikidata+osm,Q118592304,node/3513726622
+16-101,Tripoli - Mosquée,Tripoli - Mosquée,طرابلس - المسجد,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Hussein Dey,1617,36.743234,3.097504,exact,wikidata+osm,Q118592305,node/3513729802
+16-102,Tripoli - Thâalibia,Tripoli - Thâalibia,طرابلس- الثعالبية,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Hussein Dey,1617,36.745218,3.092295,exact,wikidata+osm,Q118592306,node/3513729589
+16-103,Université Bab Ezzouar,Université Bab Ezzouar,جامعة العلوم و التكنولوجيا هواري بومدين,tram,ligne unique du tramway d'Alger,SETRAM,Alger,16,Bab Ezzouar,1621,36.72081,3.179575,exact,wikidata+osm,Q118592309,node/3513604611
+16-104,Village Africain,Village Africain,القرية الأفريقية,aerial_tram,,,,16,Ben Aknoun,1622,36.74864,3.006449,exact,osm,,node/2555915456
+16-105,,,,aerial_tram,,,,16,Hydra,1628,36.738285,3.015134,exact,osm,,node/2555915621
+16-106,Parc de Loisirs,Parc de Loisirs,,aerial_tram,,,,16,Hydra,1628,36.735764,3.0209,exact,osm,,node/2555916367
+16-107,,,,aerial_tram,,,,16,Ben Aknoun,1622,36.745882,3.006197,exact,osm,,node/2555916378
+16-108,Basilique Notre-Dame d'Afrique (Fermée),Basilique Notre-Dame d'Afrique (Fermée),كاتدرائية السيدة الأفريقية (مغلق),aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.80193,3.042771,exact,osm,,node/288658053
+16-109,Station Frais Vallon,Station Frais Vallon,محطة فري فالون,aerial_tram,,,,16,Oued Koriche,1608,36.780987,3.032703,exact,osm,,node/3003121654
+16-110,Station Bouzaréah,Station Bouzaréah,محطة بوزريعة,aerial_tram,,,,16,Bouzareah,1611,36.791323,3.020884,exact,osm,,node/3092510355
+16-111,Belouizdad,Belouizdad,بلوزداد,aerial_tram,,,,16,Mohamed Belouzdad,,36.749438,3.066762,exact,osm,,node/319862788
+16-112,El Madania,El Madania,المدنية,aerial_tram,,,,16,Mohamed Belouzdad,,36.747783,3.065537,exact,osm,,node/319862789
+16-113,Station Bab El Oued,Station Bab El Oued,محطة باب الواد (مغلق),aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.803788,3.044388,exact,osm,,node/3511293112
+16-114,,,,aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.796036,3.038087,exact,osm,,node/5237141107
+16-115,,,,aerial_tram,,,,16,Bologhine Ibnou Ziri,,36.804044,3.033466,exact,osm,,node/5237141108
+16-116,Station Palais de La Culture,Station Palais de La Culture,محطة قصر الثقافة,aerial_tram,,,,16,Kouba,1618,36.738837,3.081215,exact,osm,,node/957708182
+16-117,Mémorial,Mémorial,مقام الشهيد,aerial_tram,,,,16,El Madania,1603,36.744409,3.071844,exact,osm,,node/964640549
+16-118,Télécabine de Bab El Oued,Télécabine de Bab El Oued,,gondola,,,,16,Bab El Oued,1605,36.789817,3.047081,exact,wikidata+osm,Q109045601,node/5237141104
+16-119,Télécabine de Oued Koriche,Télécabine de Oued Koriche,,gondola,,,,16,Bab El Oued,1605,36.78837,3.04483,exact,wikidata+osm,Q109045605,node/3092511697
 17-001,محطة القطار القديمة تأسست سنة 1912,محطة القطار القديمة تأسست سنة 1912,محطة القطار القديمة تأسست سنة 1912,rail,,SNTF,,17,Hassi Bahbah,1704,35.063981,3.034428,exact,osm,,node/6291588383
 17-002,Djelfa,Djelfa,محطة قطار الجلفة,rail,ligne de Boughezoul à Laghouat,SNTF,,17,Djelfa,1701,34.6316,3.3077,exact,wikidata+osm,Q123529412,node/11367288869
 17-003,Hassi Bahbah,Hassi Bahbah,محطة قطار حاسي بحبح,rail,ligne de Boughezoul à Laghouat,SNTF,,17,Hassi Bahbah,1704,35.054,3.0527,exact,wikidata+osm,Q124312104,node/11954317205
@@ -641,8 +613,7 @@ id,name,name_fr,name_ar,type,line,operator,network,wilaya_code,commune,commune_c
 41-014,Mechroha,Mechroha,محطة المشروحة,rail,ligne d'Annaba à Djebel Onk,SNTF,,41,Machroha,4104,36.362449,7.847164,exact,wikidata+osm,Q117084378,node/1856567589
 41-015,Aïn Seynour,Aïn Seynour,,rail,ligne d'Annaba à Djebel Onk,SNTF,,41,Machroha,4104,36.324692,7.883333,exact,wikidata,Q117084624,
 41-016,Résidence universitaire Medaguine Mohamed,Résidence universitaire Medaguine Mohamed,,rail,ligne d'Annaba à Djebel Onk,SNTF,,41,Souk Ahras,4101,36.307522,7.938005,exact,wikidata,Q117084632,
-41-017,Souk Ahras,Souk Ahras,سوق أهراس,rail,ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk,SNTF,,41,Souk Ahras,4101,36.2809,7.95287,exact,wikidata+osm,Q18785566,node/2206396029
-41-018,Souk Ahras,Souk Ahras,سوق أهراس,rail,ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk,SNTF,,41,Souk Ahras,4101,36.2809,7.95287,exact,wikidata,Q18785566,
+41-017,Souk Ahras,Souk Ahras,سوق أهراس,rail,ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk | ligne de Souk Ahras à la frontière tunisienne | ligne d'Annaba à Djebel Onk,SNTF,,41,Souk Ahras,4101,36.2809,7.95287,exact,wikidata+osm,Q18785566,node/2206396029
 43-001,El Guerrah,El Guerrah,محطة قطار القراح,rail,ligne d'El Guerrah à Touggourt | ligne d'Alger à Skikda,SNTF,,43,Chelghoum Laid,4303,36.136519,6.608186,exact,wikidata+osm,Q116780218,way/1180830474
 43-002,Tadjenanet,Tadjenanet,محطة قطار تاجنانت,rail,ligne d'Alger à Skikda,SNTF,,43,Tadjenanet,4308,36.11217,5.984399,exact,wikidata+osm,Q117710748,node/3900624365
 43-003,Teleghma,Teleghma,محطة قطار التلاغمة,rail,ligne d'Alger à Skikda,SNTF,,43,Teleghma,4306,36.111901,6.355496,exact,wikidata+osm,Q117710764,node/3639980398
@@ -652,63 +623,40 @@ id,name,name_fr,name_ar,type,line,operator,network,wilaya_code,commune,commune_c
 44-004,Sidi Bouabia,Sidi Bouabia,محطة قطار سيدي بوعبية,rail,ligne d'Alger à Oran,SNTF,,44,El-Attaf,4410,36.2328,1.7123,exact,wikidata+osm,Q118134343,node/3028358959
 44-005,Cheikh Ben Yahia,Cheikh Ben Yahia,محطة قطار الشيخ بن يحيى,rail,ligne d'Alger à Oran,SNTF,,44,Rouina,4416,36.2441,1.7719,exact,wikidata+osm,Q118134348,node/3028356428
 44-006,Aïn Defla,Aïn Defla,محطة قطار عين الدفلى,rail,ligne d'Alger à Oran,SNTF,,44,Ain-Defla,4401,36.2677,1.9691,exact,wikidata+osm,Q118151854,node/2155392412
-44-007,Aïn Torki,Aïn Torki,محطة قطار عين تركي,rail,ligne d'Alger à Oran,SNTF,,44,Ain-Torki,4423,36.3097,2.3178,exact,wikidata,Q118151876,
-44-008,Gare d'Adélia,Gare d'Adélia,,rail,,SNTF,,44,Ain-Torki,4423,36.309762,2.290359,exact,osm,Q118151876,node/2056437891
-44-009,Boumedfaa,Boumedfaa,محطة قطار بومدفع,rail,ligne d'Alger à Oran,SNTF,,44,Boumedfaa,4403,36.3666,2.463,exact,wikidata+osm,Q118849008,node/3028151213
-44-010,Hoceinia,Hoceinia,محطة قطار الحسينية,rail,ligne d'Alger à Oran,SNTF,,44,Hoceinia,4427,36.3233,2.4039,exact,wikidata+osm,Q118876338,node/2056437455
-44-011,Khemis Miliana,Khemis Miliana,محطة قطار خميس مليانة,rail,ligne d'Alger à Oran,SNTF,,44,Khemis-Miliana,4404,36.2631,2.2117,exact,wikidata,Q118876394,
-44-012,Sidi Lakhdar,Sidi Lakhdar,محطة قطار سيدي لخضر,rail,ligne d'Alger à Oran,SNTF,,44,Sidi-Lakhdar,4424,36.2678,2.1634,exact,wikidata+osm,Q118876415,node/3028230940
-44-013,Arib,Arib,محطة قطار عريب,rail,ligne d'Alger à Oran,SNTF,,44,Arib,4406,36.2884,2.0665,exact,wikidata+osm,Q118876427,node/2168057429
-44-014,El Amra,El Amra,محطة قطار العمرة,rail,ligne d'Alger à Oran,SNTF,,44,El-Amra,4408,36.266111,1.872778,exact,wikidata+osm,Q118876446,node/2153935898
-44-015,Rouina,Rouina,محطة قطار الروينة,rail,ligne d'Alger à Oran,SNTF,,44,Rouina,4416,36.2488,1.8098,exact,wikidata+osm,Q118957839,node/2153808262
+44-007,Aïn Torki,Aïn Torki,محطة قطار عين تركي,rail,ligne d'Alger à Oran,SNTF,,44,Ain-Torki,4423,36.3097,2.3178,exact,wikidata+osm,Q118151876,node/2056437891
+44-008,Boumedfaa,Boumedfaa,محطة قطار بومدفع,rail,ligne d'Alger à Oran,SNTF,,44,Boumedfaa,4403,36.3666,2.463,exact,wikidata+osm,Q118849008,node/3028151213
+44-009,Hoceinia,Hoceinia,محطة قطار الحسينية,rail,ligne d'Alger à Oran,SNTF,,44,Hoceinia,4427,36.3233,2.4039,exact,wikidata+osm,Q118876338,node/2056437455
+44-010,Khemis Miliana,Khemis Miliana,محطة قطار خميس مليانة,rail,ligne d'Alger à Oran,SNTF,,44,Khemis-Miliana,4404,36.2631,2.2117,exact,wikidata,Q118876394,
+44-011,Sidi Lakhdar,Sidi Lakhdar,محطة قطار سيدي لخضر,rail,ligne d'Alger à Oran,SNTF,,44,Sidi-Lakhdar,4424,36.2678,2.1634,exact,wikidata+osm,Q118876415,node/3028230940
+44-012,Arib,Arib,محطة قطار عريب,rail,ligne d'Alger à Oran,SNTF,,44,Arib,4406,36.2884,2.0665,exact,wikidata+osm,Q118876427,node/2168057429
+44-013,El Amra,El Amra,محطة قطار العمرة,rail,ligne d'Alger à Oran,SNTF,,44,El-Amra,4408,36.266111,1.872778,exact,wikidata+osm,Q118876446,node/2153935898
+44-014,Rouina,Rouina,محطة قطار الروينة,rail,ligne d'Alger à Oran,SNTF,,44,Rouina,4416,36.2488,1.8098,exact,wikidata+osm,Q118957839,node/2153808262
 45-001,,,,rail,,SNTF,,45,El Biodh,4512,33.812784,-0.424748,exact,osm,,node/9360993934
 45-002,,,,rail,,SNTF,,45,Makmen Ben Amar,4510,33.929675,-0.508345,exact,osm,,node/9360993950
 45-003,Aïn Sefra,Aïn Sefra,عين الصفراء,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Ain Sefra,4503,32.765833,-0.565833,exact,wikidata+osm,Q120281827,node/2320074022
-45-004,Aïn Sefra,Aïn Sefra,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Ain Sefra,4503,32.765833,-0.565833,exact,wikidata,Q120281827,
-45-005,Djeniene Bourezg,Djeniene Bourezg,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Djenienne Bourezg,4504,32.371667,-0.796944,exact,wikidata+osm,Q120281926,node/9358324908
-45-006,Djeniene Bourezg,Djeniene Bourezg,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Djenienne Bourezg,4504,32.371667,-0.796944,exact,wikidata,Q120281926,
-45-007,Tiout,Tiout,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Tiout,4504,32.758611,-0.468333,exact,wikidata+osm,Q120282247,node/4273013260
-45-008,Tiout,Tiout,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Tiout,4504,32.758611,-0.468333,exact,wikidata,Q120282247,
-45-009,Mécheria,Mécheria,المشرية,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Mecheria,4502,33.543611,-0.256111,exact,wikidata+osm,Q120286778,node/2320074234
-45-010,Mécheria,Mécheria,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Mecheria,4502,33.543611,-0.256111,exact,wikidata,Q120286778,
-45-011,El Biod,El Biod,البيوض,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,El Biodh,4512,33.742222,-0.163056,exact,wikidata+osm,Q120286910,node/4273070922
-45-012,Moghrar,Moghrar,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Moghrar,4506,32.523611,-0.571389,exact,wikidata+osm,Q120287136,node/9358324914
-45-013,Moghrar,Moghrar,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Moghrar,4506,32.523611,-0.571389,exact,wikidata,Q120287136,
-45-014,Naâma,Naâma,النعامة,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Naama,4501,33.265278,-0.315278,exact,wikidata+osm,Q120287247,node/3250896614
-45-015,Naâma,Naâma,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Naama,4501,33.265278,-0.315278,exact,wikidata,Q120287247,
-45-016,Bir Senia,Bir Senia,,rail,,SNTF,,45,El Biodh,4512,33.831795,-0.060206,exact,wikidata,Q122928471,
-45-017,Hadjret M'Guil,Hadjret M'Guil,,rail,,SNTF,,45,Djenienne Bourezg,4504,32.2782,-0.922,exact,wikidata,Q123498566,
-45-018,Hadjret M'Guil,Hadjret M'Guil,,rail,,SNTF,,45,Djenienne Bourezg,4504,32.2782,-0.922,exact,wikidata,Q123498566,
-45-019,Dayet El Kerch,Dayet El Kerch,,rail,,SNTF,,45,Djenienne Bourezg,4504,32.437579,-0.763043,exact,wikidata,Q123498567,
-45-020,Dayet El Kerch,Dayet El Kerch,,rail,,SNTF,,45,Djenienne Bourezg,4504,32.437579,-0.763043,exact,wikidata,Q123498567,
-45-021,Les Oglats,Les Oglats,,rail,,SNTF,,45,Moghrar,4506,32.495725,-0.643308,exact,wikidata,Q123498568,
-45-022,Les Oglats,Les Oglats,,rail,,SNTF,,45,Moghrar,4506,32.495725,-0.643308,exact,wikidata,Q123498568,
-45-023,Dra Es Saâ,Dra Es Saâ,,rail,,SNTF,,45,Moghrar,4506,32.542012,-0.496984,exact,wikidata,Q123498569,
-45-024,Dra Es Saâ,Dra Es Saâ,,rail,,SNTF,,45,Moghrar,4506,32.542012,-0.496984,exact,wikidata,Q123498569,
-45-025,Rouïba,Rouïba,,rail,,SNTF,,45,Tiout,4504,32.614138,-0.40639,exact,wikidata+osm,Q123498570,node/9358330035
-45-026,Rouïba,Rouïba,,rail,,SNTF,,45,Tiout,4504,32.614138,-0.40639,exact,wikidata,Q123498570,
-45-027,Aïn El Hadjadi,Aïn El Hadjadi,,rail,,SNTF,,45,Tiout,4504,32.614138,-0.40639,exact,wikidata,Q123498571,
-45-028,Aïn El Hadjadi,Aïn El Hadjadi,,rail,,SNTF,,45,Tiout,4504,32.614138,-0.40639,exact,wikidata,Q123498571,
-45-029,Ancienne gare d'El Biod,Ancienne gare d'El Biod,,rail,,SNTF,,45,El Biodh,4512,33.766918,-0.125765,exact,wikidata,Q123498572,
-45-030,Ancienne gare d'El Biod,Ancienne gare d'El Biod,,rail,,SNTF,,45,El Biodh,4512,33.766918,-0.125765,exact,wikidata,Q123498572,
-45-031,Tirkount,Tirkount,,rail,,SNTF,,45,Ain Sefra,4503,32.823939,-0.609197,exact,wikidata,Q123498573,
-45-032,Tirkount,Tirkount,,rail,,SNTF,,45,Ain Sefra,4503,32.823939,-0.609197,exact,wikidata,Q123498573,
-45-033,Boughelaba,Boughelaba,,rail,,SNTF,,45,Ain Sefra,4503,32.937974,-0.568184,exact,wikidata,Q123498574,
-45-034,Boughelaba,Boughelaba,,rail,,SNTF,,45,Ain Sefra,4503,32.937974,-0.568184,exact,wikidata,Q123498574,
-45-035,Mekalis,Mekalis,,rail,,SNTF,,45,Tiout,4504,33.003145,-0.482218,exact,wikidata+osm,Q123498575,node/9360220023
-45-036,Mekalis,Mekalis,,rail,,SNTF,,45,Tiout,4504,33.003145,-0.482218,exact,wikidata,Q123498575,
-45-037,Mocta Deli,Mocta Deli,,rail,,SNTF,,45,Naama,4501,33.072746,-0.435708,exact,wikidata,Q123498576,
-45-038,Mocta Deli,Mocta Deli,,rail,,SNTF,,45,Naama,4501,33.072746,-0.435708,exact,wikidata,Q123498576,
-45-039,Souiga,Souiga,محطة سويقة,rail,,SNTF,,45,Naama,4501,33.168888,-0.375409,exact,wikidata,Q123498577,
-45-040,Souiga,Souiga,محطة سويقة,rail,,SNTF,,45,Naama,4501,33.168888,-0.375409,exact,wikidata,Q123498577,
-45-041,Krebazza,Krebazza,,rail,,SNTF,,45,El Biodh,4512,33.671959,-0.199607,exact,wikidata,Q123498579,
-45-042,Krebazza,Krebazza,,rail,,SNTF,,45,El Biodh,4512,33.671959,-0.199607,exact,wikidata,Q123498579,
-45-043,Teniet Er Relem,Teniet Er Relem,,rail,,SNTF,,45,Mecheria,4502,33.61074,-0.2284,exact,wikidata,Q123498580,
-45-044,Teniet Er Relem,Teniet Er Relem,,rail,,SNTF,,45,Mecheria,4502,33.61074,-0.2284,exact,wikidata,Q123498580,
-45-045,El Harchaïa,El Harchaïa,,rail,,SNTF,,45,Naama,4501,33.330049,-0.310724,exact,wikidata,Q123498581,
-45-046,El Harchaïa,El Harchaïa,,rail,,SNTF,,45,Naama,4501,33.330049,-0.310724,exact,wikidata,Q123498581,
-45-047,Touïfza,Touïfza,محطة تويفزة,rail,,SNTF,,45,Naama,4501,33.399503,-0.314591,exact,wikidata,Q123498582,
-45-048,Touïfza,Touïfza,محطة تويفزة,rail,,SNTF,,45,Naama,4501,33.399503,-0.314591,exact,wikidata,Q123498582,
+45-004,Djeniene Bourezg,Djeniene Bourezg,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Djenienne Bourezg,4504,32.371667,-0.796944,exact,wikidata+osm,Q120281926,node/9358324908
+45-005,Tiout,Tiout,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Tiout,4504,32.758611,-0.468333,exact,wikidata+osm,Q120282247,node/4273013260
+45-006,Mécheria,Mécheria,المشرية,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Mecheria,4502,33.543611,-0.256111,exact,wikidata+osm,Q120286778,node/2320074234
+45-007,El Biod,El Biod,البيوض,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,El Biodh,4512,33.742222,-0.163056,exact,wikidata+osm,Q120286910,node/4273070922
+45-008,Moghrar,Moghrar,,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Moghrar,4506,32.523611,-0.571389,exact,wikidata+osm,Q120287136,node/9358324914
+45-009,Naâma,Naâma,النعامة,rail,ligne de Oued Tlelat à Béchar,SNTF,,45,Naama,4501,33.265278,-0.315278,exact,wikidata+osm,Q120287247,node/3250896614
+45-010,Bir Senia,Bir Senia,,rail,,SNTF,,45,El Biodh,4512,33.831795,-0.060206,exact,wikidata,Q122928471,
+45-011,Hadjret M'Guil,Hadjret M'Guil,,rail,,SNTF,,45,Djenienne Bourezg,4504,32.2782,-0.922,exact,wikidata,Q123498566,
+45-012,Dayet El Kerch,Dayet El Kerch,,rail,,SNTF,,45,Djenienne Bourezg,4504,32.437579,-0.763043,exact,wikidata,Q123498567,
+45-013,Les Oglats,Les Oglats,,rail,,SNTF,,45,Moghrar,4506,32.495725,-0.643308,exact,wikidata,Q123498568,
+45-014,Dra Es Saâ,Dra Es Saâ,,rail,,SNTF,,45,Moghrar,4506,32.542012,-0.496984,exact,wikidata,Q123498569,
+45-015,Rouïba,Rouïba,,rail,,SNTF,,45,Tiout,4504,32.614138,-0.40639,exact,wikidata+osm,Q123498570,node/9358330035
+45-016,Aïn El Hadjadi,Aïn El Hadjadi,,rail,,SNTF,,45,Tiout,4504,32.614138,-0.40639,exact,wikidata,Q123498571,
+45-017,Ancienne gare d'El Biod,Ancienne gare d'El Biod,,rail,,SNTF,,45,El Biodh,4512,33.766918,-0.125765,exact,wikidata,Q123498572,
+45-018,Tirkount,Tirkount,,rail,,SNTF,,45,Ain Sefra,4503,32.823939,-0.609197,exact,wikidata,Q123498573,
+45-019,Boughelaba,Boughelaba,,rail,,SNTF,,45,Ain Sefra,4503,32.937974,-0.568184,exact,wikidata,Q123498574,
+45-020,Mekalis,Mekalis,,rail,,SNTF,,45,Tiout,4504,33.003145,-0.482218,exact,wikidata+osm,Q123498575,node/9360220023
+45-021,Mocta Deli,Mocta Deli,,rail,,SNTF,,45,Naama,4501,33.072746,-0.435708,exact,wikidata,Q123498576,
+45-022,Souiga,Souiga,محطة سويقة,rail,,SNTF,,45,Naama,4501,33.168888,-0.375409,exact,wikidata,Q123498577,
+45-023,Krebazza,Krebazza,,rail,,SNTF,,45,El Biodh,4512,33.671959,-0.199607,exact,wikidata,Q123498579,
+45-024,Teniet Er Relem,Teniet Er Relem,,rail,,SNTF,,45,Mecheria,4502,33.61074,-0.2284,exact,wikidata,Q123498580,
+45-025,El Harchaïa,El Harchaïa,,rail,,SNTF,,45,Naama,4501,33.330049,-0.310724,exact,wikidata,Q123498581,
+45-026,Touïfza,Touïfza,محطة تويفزة,rail,,SNTF,,45,Naama,4501,33.399503,-0.314591,exact,wikidata,Q123498582,
 46-001,El Amria,El Amria,محطة قطار العامرية,rail,ligne d'Es Senia à Beni Saf,SNTF,,46,El Amria,4606,35.5212,-1.0094,exact,wikidata+osm,Q119172865,node/1686557617
 46-002,Hassi El Ghella,Hassi El Ghella,محطة قطار حاسي الغلة,rail,ligne d'Es Senia à Beni Saf,SNTF,,46,Hassi El Ghella,4620,35.4528,-1.0392,exact,wikidata,Q119172912,
 46-003,El Malah,El Malah,محطة قطار المالح,rail,ligne d'Es Senia à Beni Saf,SNTF,,46,El Maleh,4607,35.3959,-1.0828,exact,wikidata+osm,Q119172955,node/9375782945

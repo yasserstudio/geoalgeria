@@ -12,7 +12,7 @@
 
 </div>
 
-744 rail and urban-transit nodes across Algeria — **train stations, tram stops, metro
+692 rail and urban-transit nodes across Algeria — **train stations, tram stops, metro
 stations, aerial tramways and gondolas** — with bilingual FR/AR names, operator
 (SNTF / SETRAM / SEMA), line membership, GPS coordinates, and wilaya/commune linkage.
 A Wikidata + OpenStreetMap composite, shipped as JSON, CSV, and GeoJSON. Part of
@@ -28,7 +28,7 @@ npm install @geoalgeria/ferroviaire
 ```js
 import ferroviaire from "@geoalgeria/ferroviaire";
 
-const all = ferroviaire.stations();               // 744
+const all = ferroviaire.stations();               // 692
 const trams = ferroviaire.stationsByType("tram");  // 190 tram stops
 const inAlger = ferroviaire.stationsByWilaya(16);  // rail + metro + tram in Algiers
 ```
@@ -44,11 +44,11 @@ const inAlger = ferroviaire.stationsByWilaya(16);  // rail + metro + tram in Alg
 
 | Type | Count | Operator |
 | --- | --- | --- |
-| Rail (train) | **463** | SNTF |
+| Rail (train) | **427** | SNTF |
 | Tram | **190** | SETRAM (7 city networks) |
-| Metro | **56** | SEMA — Métro d'Alger |
+| Metro | **41** | SEMA — Métro d'Alger |
 | Aerial tramway | **24** | — |
-| Gondola | **11** | — |
+| Gondola | **10** | — |
 
 Spanning **50 wilayas**, every node geocoded. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -75,7 +75,7 @@ const stations: Station[] = ferroviaire.stations();
 
 ```
 data/
-  stations.json            # 744 nodes (array)
+  stations.json            # 692 nodes (array)
   metadata.json            # source, counts, generated_at
   csv/stations.csv
   geojson/stations.geojson # Point features (all geocoded)
@@ -105,7 +105,7 @@ data/
 }
 ```
 
-`type` is one of `rail | tram | metro | underground | aerial_tram | gondola`. `source`
+`type` is one of `rail | tram | metro | aerial_tram | gondola`. `source`
 is `wikidata`, `osm`, or `wikidata+osm` (matched within ~150 m). `name` may be `null`
 for a few OSM-only stops. `wilaya_code`/`commune` come from a nearest-centroid join
 against `geoalgeria`.

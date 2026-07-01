@@ -7,7 +7,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { toCSV, toGeoJSON, loadCommunes, nearestCommune, wcode, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { toCSV, toGeoJSON, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..", "..");
@@ -16,7 +16,7 @@ const RESEARCH = join(ROOT, "research/ferroviaire");
 
 const DEG = Math.PI / 180, M_PER_DEG = 111320, MATCH_M = 150, DEDUP_M = 40;
 const TRAM_NETWORK = { "16": "Alger", "31": "Oran", "25": "Constantine", "19": "Sétif", "30": "Ouargla", "55": "Ouargla", "22": "Sidi Bel Abbès", "27": "Mostaganem" };
-const OPERATOR = { rail: "SNTF", tram: "SETRAM", metro: "SEMA", underground: "SEMA" };
+const OPERATOR = { rail: "SNTF", tram: "SETRAM", metro: "SEMA" };
 
 const wdType = (label) => {
   const l = (label || "").toLowerCase();
@@ -34,23 +34,35 @@ const osmType = (t) => {
   return "rail";
 };
 
-// ---- Wikidata base ----
+// ---- Wikidata base (dedup multi-binding items by QID) ----
+// A SPARQL result returns one binding per (item × P31 type × line); items with
+// several types/lines yield multiple rows for the SAME entity. Collapse by QID so
+// one Wikidata station = one record (union its lines; keep first-seen type/coord).
 const wdRaw = JSON.parse(readFileSync(join(RESEARCH, "wikidata-transit-raw.json"), "utf-8")).results.bindings;
-const wd = [];
+const wdMap = new Map();
 for (const b of wdRaw) {
   const type = wdType(b.typeLabel?.value);
   if (type === "bus") continue; // out of scope
   const m = /Point\(([-\d.]+) ([-\d.]+)\)/.exec(b.coord?.value || "");
   if (!m) continue;
-  const lng = round6(+m[1]), lat = round6(+m[2]);
+  const qid = b.item.value.split("/").pop();
   const name_fr = b.name_fr?.value || null, name_ar = b.name_ar?.value || null;
-  wd.push({
+  const line = b.lines?.value || null;
+  const cur = wdMap.get(qid);
+  if (cur) { // extra binding for the same entity — merge, don't duplicate
+    cur.name_fr = cur.name_fr || name_fr;
+    cur.name_ar = cur.name_ar || name_ar;
+    cur.name = cur.name || name_fr || name_ar;
+    if (line && !(cur.line || "").split(" | ").includes(line)) cur.line = cur.line ? `${cur.line} | ${line}` : line;
+    continue;
+  }
+  wdMap.set(qid, {
     name: name_fr || name_ar, name_fr, name_ar, type,
-    line: b.lines?.value || null,
-    wikidata: b.item.value.split("/").pop(), osm_id: null,
-    lat, lng, source: "wikidata",
+    line, wikidata: qid, osm_id: null,
+    lat: round6(+m[2]), lng: round6(+m[1]), source: "wikidata",
   });
 }
+const wd = [...wdMap.values()];
 
 // ---- OSM enrichment ----
 const osmRaw = JSON.parse(readFileSync(join(RESEARCH, "osm-transit-raw.json"), "utf-8")).elements || [];
@@ -73,23 +85,31 @@ for (const e of osmRaw) {
 const CELL = 0.005;
 const key = (lat, lng) => `${Math.floor(lat / CELL)}:${Math.floor(lng / CELL)}`;
 const grid = new Map();
-wd.forEach((r, i) => { const k = key(r.lat, r.lng); (grid.get(k) || grid.set(k, []).get(k)).push(i); });
+const wdByQid = new Map();
+wd.forEach((r, i) => {
+  const k = key(r.lat, r.lng);
+  let cell = grid.get(k); if (!cell) grid.set(k, (cell = [])); cell.push(i);
+  if (r.wikidata) wdByQid.set(r.wikidata, i);
+});
 
 const additions = [];
 let merged = 0;
 for (const o of osm) {
   let bestIdx = -1, bestD = Infinity;
-  const cosLat = Math.cos(o.lat * DEG);
-  const bLat = Math.floor(o.lat / CELL), bLng = Math.floor(o.lng / CELL);
-  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
-    const cand = grid.get(`${bLat + dy}:${bLng + dx}`);
-    if (!cand) continue;
-    for (const idx of cand) {
-      const w = wd[idx];
-      if (o.wikidata && w.wikidata === o.wikidata) { bestIdx = idx; bestD = 0; break; }
-      const mx = (w.lng - o.lng) * cosLat * M_PER_DEG, my = (w.lat - o.lat) * M_PER_DEG;
-      const d = mx * mx + my * my;
-      if (d < bestD) { bestD = d; bestIdx = idx; }
+  if (o.wikidata && wdByQid.has(o.wikidata)) {
+    bestIdx = wdByQid.get(o.wikidata); bestD = 0; // same entity — match regardless of distance
+  } else {
+    const cosLat = Math.cos(o.lat * DEG);
+    const bLat = Math.floor(o.lat / CELL), bLng = Math.floor(o.lng / CELL);
+    for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+      const cand = grid.get(`${bLat + dy}:${bLng + dx}`);
+      if (!cand) continue;
+      for (const idx of cand) {
+        const w = wd[idx];
+        const mx = (w.lng - o.lng) * cosLat * M_PER_DEG, my = (w.lat - o.lat) * M_PER_DEG;
+        const d = mx * mx + my * my;
+        if (d < bestD) { bestD = d; bestIdx = idx; }
+      }
     }
   }
   if (bestIdx >= 0 && bestD <= MATCH_M * MATCH_M) {
@@ -119,14 +139,8 @@ for (const a of additions) {
 }
 const records = [...wd, ...kept];
 
-// ---- Commune / wilaya spatial join ----
-const communes = loadCommunes();
-for (const r of records) {
-  const c = nearestCommune(r.lat, r.lng, communes);
-  r.wilaya_code = wcode(c.wilaya_code);
-  r.commune = c.name_fr;
-  r.commune_code = c.code_commune ?? null;
-}
+// ---- Commune / wilaya spatial join (finite-coord guarded, shared helper) ----
+attachCommune(records);
 
 // ---- Operator / network tagging ----
 for (const r of records) {
@@ -136,7 +150,7 @@ for (const r of records) {
 }
 
 // ---- Stable ids {wilaya}-{seq} ----
-const TYPE_ORDER = ["rail", "metro", "underground", "tram", "aerial_tram", "gondola"];
+const TYPE_ORDER = ["rail", "metro", "tram", "aerial_tram", "gondola"];
 records.sort((a, b) =>
   a.wilaya_code.localeCompare(b.wilaya_code) ||
   TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type) ||
@@ -149,7 +163,7 @@ for (const r of records) {
 
 // ---- Emit ----
 const order = ["id", "name", "name_fr", "name_ar", "type", "line", "operator", "network", "wilaya_code", "commune", "commune_code", "lat", "lng", "geo_precision", "source", "wikidata", "osm_id"];
-const final = records.map((r) => { r.geo_precision = "exact"; const o = {}; for (const k of order) o[k] = r[k] ?? null; return o; });
+const final = records.map((r) => { const o = {}; for (const k of order) o[k] = r[k] ?? null; o.geo_precision = "exact"; return o; });
 
 const count = (fn) => final.reduce((a, r) => (a[fn(r)] = (a[fn(r)] || 0) + 1, a), {});
 const metadata = {

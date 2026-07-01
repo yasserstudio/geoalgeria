@@ -2,24 +2,24 @@
   "source": "Wikidata (CC0) + OpenStreetMap (ODbL) composite — rail & urban transit in Algeria; operators SNTF / SETRAM / SEMA",
   "origin": "https://query.wikidata.org, https://www.openstreetmap.org",
   "license": "Wikidata data is CC0. OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README.",
-  "stations": 744,
+  "stations": 692,
   "by_type": {
-    "rail": 463,
+    "rail": 427,
     "tram": 190,
     "aerial_tram": 24,
-    "gondola": 11,
-    "metro": 56
+    "gondola": 10,
+    "metro": 41
   },
   "by_source": {
-    "wikidata+osm": 507,
-    "wikidata": 178,
-    "osm": 59
+    "wikidata+osm": 508,
+    "wikidata": 127,
+    "osm": 57
   },
   "by_operator": {
-    "SNTF": 463,
+    "SNTF": 427,
     "SETRAM": 190,
-    "unknown": 35,
-    "SEMA": 56
+    "unknown": 34,
+    "SEMA": 41
   },
   "wilayas_covered": 50,
   "coverage_note": "Node universe from Wikidata + OSM. SETRAM operates 172 tram stations across 7 networks; SEMA's Métro d'Alger has 19 operational stations (Wikidata lists more metro nodes incl. entrances/extensions). Heavy-rail line-status (SNTF) is not yet per-node.",

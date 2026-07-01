@@ -2,7 +2,7 @@
 // A Wikidata (CC0) + OpenStreetMap (ODbL) composite of Algeria's rail & urban transit.
 
 /** Transit node kind. */
-export type StationType = "rail" | "tram" | "metro" | "underground" | "aerial_tram" | "gondola";
+export type StationType = "rail" | "tram" | "metro" | "aerial_tram" | "gondola";
 
 /** Where a record came from. */
 export type StationSource = "wikidata" | "wikidata+osm" | "osm";
@@ -60,8 +60,10 @@ export interface Metadata {
   generated_at: string;
 }
 
-/** All transit nodes (744). */
+/** All transit nodes. */
 export function stations(): Station[];
+/** One node by id, or null. */
+export function stationById(id: string): Station | null;
 /** Nodes of a given type ("rail" | "tram" | "metro" | …). */
 export function stationsByType(type: StationType | string): Station[];
 /** Nodes in a wilaya — accepts "16", 16, or "01". */
@@ -71,6 +73,7 @@ export function metadata(): Metadata;
 
 declare const _default: {
   stations: typeof stations;
+  stationById: typeof stationById;
   stationsByType: typeof stationsByType;
   stationsByWilaya: typeof stationsByWilaya;
   metadata: typeof metadata;
