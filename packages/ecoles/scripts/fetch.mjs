@@ -153,7 +153,18 @@ async function fetchOSM() {
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
 const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null);
-const isArabic = (s) => typeof s === "string" && /[؀-ۿ]/.test(s);
+// True only for actual Arabic *letters* — excludes combining marks/punctuation,
+// so a Latin string carrying a stray harakat (e.g. "ُÉcole") is not "Arabic".
+const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
+// Clean a raw OSM name: collapse whitespace, drop stray leading combining marks
+// (a common mis-tag), and reject strings with no letter at all.
+const LEAD_MARKS = /^[̀-ͯؐ-ًؚ-ٰٟۖ-ۭ]+/;
+const cleanName = (v) => {
+  if (typeof v !== "string") return null;
+  const x = v.replace(/\s+/g, " ").trim().replace(LEAD_MARKS, "").trim();
+  // require ≥2 chars and at least one letter (rejects a lone "ب", "-", "12")
+  return x.length >= 2 && /[A-Za-zء-يٱ-ۿ]/.test(x) ? x : null;
+};
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
 
@@ -202,7 +213,19 @@ function classifyCycle(t, amenity) {
   // the definite/teh-marbuta forms (جامعة "university", العليا "higher") so bare
   // substrings in surnames/toponyms (e.g. عليان, or جامع "mosque") don't leak in.
   if (/universit|superieur|جامعة|العليا|التكوين المهني|professionnelle/.test(hay)) return "autre";
-  if (/primaire|primary school|ابتدائ/.test(hay)) return "primaire";
+  // Non-K12 "écoles" that must NOT fall through to the bare-école→primaire
+  // rule: driving schools, Quranic schools, and vocational/training centres
+  // (the last belong to @geoalgeria/formation-professionnelle).
+  if (/auto[- ]?ecole|driving school|تعليم السياقة|مدرسة السياقة|السياقة/.test(hay)) return "autre";
+  // Precise Quranic-school forms only: قرآنية→قرانية (adjective), القرآن→القران,
+  // coranique, تحفيظ. Avoid bare قران — it is a substring of the common surname
+  // المقراني / El Mokrani, which names ordinary primary schools.
+  if (/coraniqu|قرانية|القران|قرءان|تحفيظ/.test(hay)) return "autre";
+  if (/\bformation\b|de formation|\bcfpa\b|\binsfp\b|تكوين/.test(hay)) return "autre";
+  // "ابتداي" not "ابتدائ": normalizeName runs Unicode NFD, which decomposes the
+  // hamza-carrier ئ into ي + combining hamza; the mark is then stripped, so
+  // "ابتدائية" normalizes to "ابتدايية". Match the folded stem (both forms, defensively).
+  if (/primaire|primary school|ابتدائ|ابتداي/.test(hay)) return "primaire";
 
   // isced:level is authoritative when present (values like "1", "1;2", "0;1;2;3").
   const isced = str(t["isced:level"]);
@@ -242,9 +265,20 @@ function normOSM(elements) {
     if (!inAlgeria(lat, lng)) continue;
     const t = el.tags || {};
     const amenity = t.amenity;
-    const rawName = str(t.name);
-    const nameAr = str(t["name:ar"]) || (isArabic(rawName) ? rawName : null);
-    const nameFr = str(t["name:fr"]) || (rawName && !isArabic(rawName) ? rawName : null);
+    const rawName = cleanName(t.name);
+    const tagFr = cleanName(t["name:fr"]);
+    const tagAr = cleanName(t["name:ar"]);
+    // Route strictly by script so name_ar is always Arabic and name_fr always
+    // Latin, even when OSM mis-tags them (a Latin string in name:ar, or vice
+    // versa). Prefer the dedicated tag, then the raw name, then a mis-tagged one.
+    const nameAr = (tagAr && isArabic(tagAr)) ? tagAr
+      : (rawName && isArabic(rawName)) ? rawName
+      : (tagFr && isArabic(tagFr)) ? tagFr
+      : null;
+    const nameFr = (tagFr && !isArabic(tagFr)) ? tagFr
+      : (rawName && !isArabic(rawName)) ? rawName
+      : (tagAr && !isArabic(tagAr)) ? tagAr
+      : null;
     const cycle = classifyCycle(t, amenity);
     rows.push({
       source: "osm",
@@ -280,7 +314,23 @@ function normOSM(elements) {
     else kept.push(r);
   }
   if (dropped) console.log(`  OSM internal de-dup: ${dropped} same-name-within-40m record(s)`);
-  return kept;
+
+  // Second pass: collapse records at the exact same point (a school mapped twice
+  // — e.g. a node and a building, or two spellings — that the name pass missed
+  // because the names differ or one is unnamed). Keep the richest record.
+  const richness = (r) => (r.name ? 1 : 0) + (r.name_ar ? 1 : 0) + (r.name_fr ? 1 : 0);
+  const byPoint = new Map();
+  const order = [];
+  for (const r of kept) {
+    const pk = `${r.lat},${r.lng}`;
+    const prev = byPoint.get(pk);
+    if (!prev) { byPoint.set(pk, r); order.push(pk); }
+    else if (richness(r) > richness(prev)) byPoint.set(pk, r);
+  }
+  const deduped = order.map((pk) => byPoint.get(pk));
+  const removed = kept.length - deduped.length;
+  if (removed) console.log(`  OSM coord de-dup: ${removed} exact-coincident record(s)`);
+  return deduped;
 }
 
 // --- commune centroids + wilaya names (flagship geoalgeria) ----------------

@@ -12,7 +12,7 @@
 
 </div>
 
-**11 833 écoles géolocalisées** dans les **69 wilayas** d'Algérie — chacune avec
+**11 830 écoles géolocalisées** dans les **69 wilayas** d'Algérie — chacune avec
 ses coordonnées, classée par **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Extraites d'**OpenStreetMap** et présentées
@@ -27,7 +27,7 @@ npm install @geoalgeria/ecoles
 ```js
 import ecoles from "@geoalgeria/ecoles";
 
-const all = ecoles.ecoles();   // 11 833 écoles géolocalisées
+const all = ecoles.ecoles();   // 11 830 écoles géolocalisées
 
 // Lycées d'une wilaya (jointure sur wilaya_code de GeoAlgeria)
 const lyceesSetif = all.filter((e) => e.wilaya_code === "19" && e.cycle === "secondaire");
@@ -38,7 +38,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes & annuaires d'écoles** — coordonnées sur les 11 833 enregistrements,
+- **Cartes & annuaires d'écoles** — coordonnées sur les 11 830 enregistrements,
   prêtes pour une carte ou un tri par école la plus proche.
 - **Répartitions par cycle** — filtrez primaire / moyen / secondaire /
   préscolaire, ou classez la densité scolaire par commune/wilaya.
@@ -48,17 +48,17 @@ const named = all.filter((e) => e.name_fr);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Écoles | **11 833** | ✅ toutes | 8 643 nommées, 69 wilayas |
+| Écoles | **11 830** | ✅ toutes | 8 640 nommées, 69 wilayas |
 
 **Par cycle**
 
 | Cycle | Nombre | Signification |
 | --- | --- | --- |
-| `primaire` | 3 969 | école primaire (CITE 1) |
-| `moyen` | 2 378 | collège d'enseignement moyen / CEM (CITE 2) |
-| `secondaire` | 1 575 | lycée (CITE 3) |
-| `prescolaire` | 283 | préscolaire / maternelle / روضة (CITE 0) |
-| `autre` | 3 628 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
+| `primaire` | 4 032 | école primaire (CITE 1) |
+| `moyen` | 2 377 | collège d'enseignement moyen / CEM (CITE 2) |
+| `secondaire` | 1 574 | lycée (CITE 3) |
+| `prescolaire` | 268 | préscolaire / maternelle / روضة (CITE 0) |
+| `autre` | 3 579 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
 
 > **Il s'agit d'un extrait OpenStreetMap, pas d'un registre officiel.** La
 > couverture est partielle et inégale selon les wilayas — ~11,8k écoles
@@ -69,7 +69,7 @@ const named = all.filter((e) => e.name_fr);
 **Le cycle est déduit.** Il provient d'`isced:level` et du nom français/arabe —
 un CEM se nomme toujours متوسطة/collège, un lycée ثانوية/lycée, une maternelle
 روضة/préscolaire. Une simple « école »/« مدرسة » sans mot de cycle est classée
-`primaire` par convention algérienne ; le reste est `autre`. 92 % des écoles
+`primaire` par convention algérienne ; le reste est `autre`. 93 % des écoles
 *nommées* obtiennent un cycle précis.
 
 ## Formats
@@ -96,7 +96,7 @@ inclus dans chaque
 
 ```
 data/
-  ecoles.json              # 11 833 écoles (tableau)
+  ecoles.json              # 11 830 écoles (tableau)
   metadata.json            # source, décomptes, couverture, generated_at
   csv/ecoles.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/ecoles.geojson   # entités Point

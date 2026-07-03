@@ -26,7 +26,7 @@ out center tags;
 ```
 
 Live sizing (2026-07-03): **11,633** `amenity=school` + **242** `amenity=kindergarten`
-→ **11,833** after de-dup. Endpoints tried in order: `overpass-api.de`,
+→ **11,830** after de-dup. Endpoints tried in order: `overpass-api.de`,
 `overpass.kumi.systems`, `maps.mail.ru`. The raw pull is cached to
 `research/ecoles/osm-raw.json` at build time (not committed — ~2 MB, reproducible
 via `npm run fetch`).
@@ -39,7 +39,7 @@ via `npm run fetch`).
    higher-ed/vocational strays → primaire (`ابتدائية`/`primary`). A bare
    "école"/"مدرسة" with no cycle word is classified `primaire` by Algerian
    convention; anything unresolved is `autre`. Names are accent-folded (é→e) and
-   Arabic-normalized (hamza/alef/harakat) before matching. 92% of *named* schools
+   Arabic-normalized (hamza/alef/harakat) before matching. 93% of *named* schools
    resolve to a specific cycle.
 2. **Sector** — `public`/`private` only from an explicit signal (`operator:type`,
    or a privé/خاص name); else `null`.
