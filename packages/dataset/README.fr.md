@@ -209,6 +209,7 @@ Ce jeu de données utilise le [versionnement sémantique](https://semver.org/). 
 | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics — EPH, EPSP, EHS, CHU (Ministère de la Santé), bilingues, géolocalisés via OSM + Wikidata |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel — sites protégés, musées, théâtres, bibliothèques + établissements culturels (Ministère de la Culture), bilingue, entièrement géolocalisé |
 | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions agricoles — directions des services agricoles (DSA), conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics (Ministère de l'Agriculture), bilingue, géolocalisé |
+| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Écoles — 11 833 écoles primaires, CEM, lycées et préscolaires classées par cycle, bilingue, les 69 wilayas (OpenStreetMap) |
 
 Liste complète et monorepo : [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

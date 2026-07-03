@@ -2,7 +2,7 @@
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
 // /telecom, /aviation, /banques, /livraison, /jeunesse, /sports,
 // /enseignement-superieur, /tourisme, /formation-professionnelle, /djezzy,
-// /mosquees, /sante, /culture, /agriculture)
+// /mosquees, /sante, /culture, /agriculture, /ecoles)
 // for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
 // (packages/dataset/scripts/validate.py); this is the single Node gate for every
@@ -13,7 +13,7 @@
 // (coverage/<tech>/) and split into per-operator files — so it gets its own
 // validator (validateTelecom) that shares the same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture|agriculture]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture|agriculture|ecoles]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -132,6 +132,17 @@ const PACKAGES = {
       csv: "csv/institutions.csv",
       geojson: "geojson/institutions.geojson",
       required: ["id", "type_code", "wilaya_code", "lat", "lng"],
+    },
+  ],
+  ecoles: [
+    {
+      json: "ecoles.json",
+      metaKey: "ecoles",
+      csv: "csv/ecoles.csv",
+      geojson: "geojson/ecoles.geojson",
+      // name is intentionally nullable (many OSM schools are unnamed) and sector
+      // is often unknown, so the required set guards identity + cycle + geocoding.
+      required: ["id", "source", "cycle", "wilaya_code", "lat", "lng"],
     },
   ],
   sante: [
