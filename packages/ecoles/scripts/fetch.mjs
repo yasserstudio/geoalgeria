@@ -177,6 +177,21 @@ const CYCLE_LABELS = {
   autre: { fr: "École (cycle non précisé)", ar: "مدرسة (المستوى غير محدّد)" },
 };
 
+// Establishment kind — WHAT the "école" is, orthogonal to its cycle. Most
+// records are "regular"; the rest are special-purpose places OSM files under
+// amenity=school but that aren't part of the K-12 ladder. The non-regular kinds
+// carry cycle "autre" (langues/coranique/conduite/formation) or keep their
+// cycle (special).
+const KIND_LABELS = {
+  regular: { fr: "École ordinaire", ar: "مدرسة عادية" },
+  langues: { fr: "École / institut de langues", ar: "مدرسة أو معهد لغات" },
+  coranique: { fr: "École coranique", ar: "مدرسة قرآنية" },
+  conduite: { fr: "Auto-école", ar: "مدرسة تعليم السياقة" },
+  formation: { fr: "Centre de formation", ar: "مركز تكوين" },
+  special: { fr: "École spécialisée (besoins spécifiques)", ar: "مدرسة للتربية الخاصة" },
+};
+const NON_K12_KINDS = new Set(["langues", "coranique", "conduite", "formation"]);
+
 // Fold Latin diacritics (é→e) via NFD so ASCII word boundaries match accented
 // French ("École" → "ecole"); é is not a \w char, so `\bécole\b` never fires.
 const stripLatinAccents = (s) => s.normalize("NFD").replace(/[̀-ͯ]/g, "");
@@ -192,10 +207,9 @@ function normalizeArabic(s) {
 // Lower-case + strip Latin accents + fold Arabic — the canonical match form.
 const normalizeName = (s) => normalizeArabic(stripLatinAccents(s.toLowerCase()));
 
-// Classify the school cycle from amenity, isced:level, and the FR+AR name.
-function classifyCycle(t, amenity) {
-  if (amenity === "kindergarten") return "prescolaire";
-  const hay = normalizeName(
+// Names, normalized and joined — the match form both classifiers work over.
+function nameHay(t) {
+  return normalizeName(
     [
       t.name, t["name:fr"], t["name:ar"], t["name:en"], t["name:ber"], t["name:kab"],
       t.official_name, t["official_name:fr"], t["official_name:ar"], t.alt_name,
@@ -203,25 +217,42 @@ function classifyCycle(t, amenity) {
       .filter(Boolean)
       .join(" "),
   );
+}
+
+// Classify the establishment kind from the FR+AR name. Order: most-specific
+// special-purpose kinds first; everything else is "regular".
+function classifyKind(t, amenity) {
+  const hay = nameHay(t);
+  // Driving schools. "السياقة" = driving.
+  if (/auto[- ]?ecole|driving school|تعليم السياقة|مدرسة السياقة|السياقة/.test(hay)) return "conduite";
+  // Quranic schools — precise forms only (قرآنية→قرانية, القرآن→القران, coranique,
+  // تحفيظ); avoid bare قران, a substring of the surname المقراني / El Mokrani.
+  if (/coraniqu|قرانية|القران|قرءان|تحفيظ/.test(hay)) return "coranique";
+  // Vocational / training centres (belong to @geoalgeria/formation-professionnelle).
+  if (/\bformation\b|de formation|\bcfpa\b|\binsfp\b|تكوين/.test(hay)) return "formation";
+  // Language institutes.
+  if (/\blangues?\b|\blanguages?\b|لغات|انجليزية|français langue|\bfle\b|berlitz|linguistic|معهد.{0,6}لغ/.test(hay)) return "langues";
+  // Special-needs / adapted schools (kept as real schools — they keep a cycle).
+  if (/sourd|aveugle|handicap|besoins spec|inadapt|autist|deaf|blind|الصم|المكفوفين|المعاقين|ذوي الاحتياجات|تربية خاصة/.test(hay)) return "special";
+  return "regular";
+}
+
+// Classify the school cycle from amenity, kind, isced:level, and the FR+AR name.
+function classifyCycle(t, amenity, kind) {
+  if (amenity === "kindergarten") return "prescolaire";
+  // Non-K12 kinds don't map to a school cycle.
+  if (NON_K12_KINDS.has(kind)) return "autre";
+  const hay = nameHay(t);
 
   // Explicit cycle words win, most-specific first. (hay is accent-folded, so
   // French patterns are written without diacritics.)
   if (/maternelle|presco|prescol|kindergarten|nursery|روضة|رياض اطفال|تحضير/.test(hay)) return "prescolaire";
   if (/lycee|secondaire|secondary school|high school|technicum|ثانوي/.test(hay)) return "secondaire";
   if (/\bc\.?\s?e\.?\s?m\b|college|enseignement moyen|moyenne|middle school|متوسط|اكمالي/.test(hay)) return "moyen";
-  // Higher-ed / vocational strays that occasionally carry amenity=school. Use
-  // the definite/teh-marbuta forms (جامعة "university", العليا "higher") so bare
+  // Higher-ed strays that occasionally carry amenity=school. Use the
+  // definite/teh-marbuta forms (جامعة "university", العليا "higher") so bare
   // substrings in surnames/toponyms (e.g. عليان, or جامع "mosque") don't leak in.
-  if (/universit|superieur|جامعة|العليا|التكوين المهني|professionnelle/.test(hay)) return "autre";
-  // Non-K12 "écoles" that must NOT fall through to the bare-école→primaire
-  // rule: driving schools, Quranic schools, and vocational/training centres
-  // (the last belong to @geoalgeria/formation-professionnelle).
-  if (/auto[- ]?ecole|driving school|تعليم السياقة|مدرسة السياقة|السياقة/.test(hay)) return "autre";
-  // Precise Quranic-school forms only: قرآنية→قرانية (adjective), القرآن→القران,
-  // coranique, تحفيظ. Avoid bare قران — it is a substring of the common surname
-  // المقراني / El Mokrani, which names ordinary primary schools.
-  if (/coraniqu|قرانية|القران|قرءان|تحفيظ/.test(hay)) return "autre";
-  if (/\bformation\b|de formation|\bcfpa\b|\binsfp\b|تكوين/.test(hay)) return "autre";
+  if (/universit|superieur|جامعة|العليا|professionnelle/.test(hay)) return "autre";
   // "ابتداي" not "ابتدائ": normalizeName runs Unicode NFD, which decomposes the
   // hamza-carrier ئ into ي + combining hamza; the mark is then stripped, so
   // "ابتدائية" normalizes to "ابتدايية". Match the folded stem (both forms, defensively).
@@ -257,6 +288,38 @@ function classifySector(t) {
   return null;
 }
 
+// A single-line address from OSM addr:* tags, or null when none are present.
+function parseAddress(t) {
+  const line1 = [str(t["addr:housenumber"]), str(t["addr:street"]) || str(t["addr:place"])]
+    .filter(Boolean)
+    .join(" ");
+  const line2 = [str(t["addr:city"]), str(t["addr:postcode"])].filter(Boolean).join(" ");
+  const parts = [line1, line2].filter(Boolean);
+  return parts.length ? parts.join(", ") : null;
+}
+
+// Normalize OSM isced:level into a sorted ";"-joined level list ("0-1" → "0;1",
+// "primary" → "1", "1;2;3" → "1;2;3"), or null. ISCED 0–3 = pré/primaire/moyen/
+// secondaire; higher levels are kept as-is up to 8.
+const ISCED_WORDS = { kindergarten: 0, preschool: 0, primary: 1, elementary: 1, middle: 2, lower_secondary: 2, secondary: 3, upper_secondary: 3 };
+function parseIscedLevels(t) {
+  const raw = str(t["isced:level"]);
+  if (!raw) return null;
+  const low = raw.toLowerCase();
+  const levels = new Set();
+  for (const [word, lvl] of Object.entries(ISCED_WORDS)) if (low.includes(word)) levels.add(lvl);
+  const range = low.match(/(\d+)\s*-\s*(\d+)/);
+  if (range) {
+    const a = Number(range[1]);
+    const b = Number(range[2]);
+    for (let i = Math.min(a, b); i <= Math.max(a, b); i++) levels.add(i);
+  } else {
+    for (const n of low.match(/\d+/g) || []) levels.add(Number(n));
+  }
+  const out = [...levels].filter((n) => n >= 0 && n <= 8).sort((a, b) => a - b);
+  return out.length ? out.join(";") : null;
+}
+
 function normOSM(elements) {
   const rows = [];
   for (const el of elements) {
@@ -279,7 +342,8 @@ function normOSM(elements) {
       : (rawName && !isArabic(rawName)) ? rawName
       : (tagAr && !isArabic(tagAr)) ? tagAr
       : null;
-    const cycle = classifyCycle(t, amenity);
+    const kind = classifyKind(t, amenity);
+    const cycle = classifyCycle(t, amenity, kind);
     rows.push({
       source: "osm",
       osm_id: `${el.type}/${el.id}`,
@@ -289,11 +353,16 @@ function normOSM(elements) {
       cycle,
       cycle_label_fr: CYCLE_LABELS[cycle].fr,
       cycle_label_ar: CYCLE_LABELS[cycle].ar,
+      kind,
+      kind_label_fr: KIND_LABELS[kind].fr,
+      kind_label_ar: KIND_LABELS[kind].ar,
+      isced_levels: parseIscedLevels(t),
       sector: classifySector(t),
       lat: Number(Number(lat).toFixed(6)),
       lng: Number(Number(lng).toFixed(6)),
       // node = surveyed point; way/relation = building centroid from `out center`.
       geo_precision: el.type === "node" ? "osm_node" : "osm_centroid",
+      address: parseAddress(t),
     });
   }
   // Conservative internal de-dup: identical non-empty name within ~40 m (the
@@ -436,14 +505,17 @@ async function main() {
   // field order: id first, coords last (geo_precision after so CSV reads well)
   const cols = [
     "id", "source", "osm_id", "name", "name_ar", "name_fr",
-    "cycle", "cycle_label_fr", "cycle_label_ar", "sector",
-    "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code",
+    "cycle", "cycle_label_fr", "cycle_label_ar", "kind", "kind_label_fr", "kind_label_ar",
+    "isced_levels", "sector",
+    "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code", "address",
     "lat", "lng", "geo_precision",
   ];
   rows.sort((a, b) => a.id.localeCompare(b.id));
 
   const CYCLES = ["primaire", "moyen", "secondaire", "prescolaire", "autre"];
+  const KINDS = ["regular", "langues", "coranique", "conduite", "formation", "special"];
   const by_cycle = Object.fromEntries(CYCLES.map((c) => [c, rows.filter((r) => r.cycle === c).length]));
+  const by_kind = Object.fromEntries(KINDS.map((k) => [k, rows.filter((r) => r.kind === k).length]));
   const named = rows.filter((r) => r.name).length;
   const by_sector = {
     public: rows.filter((r) => r.sector === "public").length,
@@ -458,7 +530,10 @@ async function main() {
     ecoles: rows.length,
     named,
     by_cycle,
+    by_kind,
     by_sector,
+    with_address: rows.filter((r) => r.address).length,
+    with_isced: rows.filter((r) => r.isced_levels).length,
     wilayas_covered: new Set(rows.map((r) => r.wilaya_code).filter(Boolean)).size,
     ecoles_geocoded: rows.filter((r) => r.lat != null).length,
     official_total: OFFICIAL_TOTAL,
@@ -466,6 +541,8 @@ async function main() {
       `${rows.length} schools compiled from OpenStreetMap, against the ~${OFFICIAL_TOTAL} establishments in Algeria's national school network (primaire + moyen + secondaire, Ministry of National Education, approximate). A community-maintained extract, not an official registry — coverage is partial and uneven by wilaya.`,
     cycle_note:
       "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
+    kind_note:
+      "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle).",
     linkage_note:
       "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
     generated_at: new Date().toISOString().slice(0, 10),
@@ -480,6 +557,10 @@ async function main() {
   console.log(
     `Wrote ${rows.length} schools (${named} named, ${metadata.wilayas_covered} wilayas) — ` +
       CYCLES.map((c) => `${by_cycle[c]} ${c}`).join(", ") + ".",
+  );
+  console.log(
+    `  kinds: ` + KINDS.filter((k) => by_kind[k]).map((k) => `${by_kind[k]} ${k}`).join(", ") +
+      ` | ${metadata.with_address} with address, ${metadata.with_isced} with isced_levels.`,
   );
 }
 

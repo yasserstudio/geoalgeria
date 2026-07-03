@@ -142,8 +142,8 @@ const PACKAGES = {
       csv: "csv/ecoles.csv",
       geojson: "geojson/ecoles.geojson",
       // name is intentionally nullable (many OSM schools are unnamed) and sector
-      // is often unknown, so the required set guards identity + cycle + geocoding.
-      required: ["id", "source", "cycle", "wilaya_code", "lat", "lng"],
+      // is often unknown, so the required set guards identity + cycle + kind + geocoding.
+      required: ["id", "source", "cycle", "kind", "wilaya_code", "lat", "lng"],
     },
   ],
   sante: [

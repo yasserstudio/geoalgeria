@@ -12,6 +12,15 @@ export type EcoleCycle =
   | "prescolaire" // préscolaire / maternelle / روضة (ISCED 0)
   | "autre"; // school of undetermined cycle
 
+/** Establishment kind — what the "école" is, orthogonal to its cycle. */
+export type EcoleKind =
+  | "regular" // a standard école / CEM / lycée / maternelle
+  | "langues" // language school / institute (cycle "autre")
+  | "coranique" // Quranic school (cycle "autre")
+  | "conduite" // driving school / auto-école (cycle "autre")
+  | "formation" // vocational / training centre (cycle "autre")
+  | "special"; // adapted / special-needs school (keeps a cycle)
+
 /** Ownership sector, only when an explicit signal is present. */
 export type EcoleSector = "public" | "private";
 
@@ -38,6 +47,14 @@ export interface Ecole {
   cycle_label_fr: string;
   /** Canonical Arabic label for the cycle. */
   cycle_label_ar: string;
+  /** Establishment kind (mostly "regular"; special-purpose kinds carry cycle "autre"). */
+  kind: EcoleKind;
+  /** Canonical French label for the kind. */
+  kind_label_fr: string;
+  /** Canonical Arabic label for the kind. */
+  kind_label_ar: string;
+  /** ISCED levels served, sorted ";"-joined ("0;1", "2", "1;2;3"), from OSM isced:level; null if absent. */
+  isced_levels: string | null;
   /** Ownership sector when asserted (operator:type or a privé/خاص name), else null. */
   sector: EcoleSector | null;
   /** Wilaya name (French), nearest-centroid join. */
@@ -50,6 +67,8 @@ export interface Ecole {
   commune: string;
   /** Commune code (geoalgeria code_commune), nearest-centroid best-effort. */
   commune_code: number | null;
+  /** Single-line address from OSM addr:* tags, or null when none are present. */
+  address: string | null;
   /** Latitude. */
   lat: number;
   /** Longitude. */
@@ -66,13 +85,19 @@ export interface Metadata {
   ecoles: number;
   named: number;
   by_cycle: Record<EcoleCycle, number>;
+  by_kind: Record<EcoleKind, number>;
   by_sector: { public: number; private: number; unknown: number };
+  /** Records carrying an `address`. */
+  with_address: number;
+  /** Records carrying `isced_levels`. */
+  with_isced: number;
   wilayas_covered: number;
   ecoles_geocoded: number;
   /** Approximate national school-network size, for honest coverage framing. */
   official_total: number;
   coverage_note: string;
   cycle_note: string;
+  kind_note: string;
   linkage_note: string;
   /** ISO date (YYYY-MM-DD) the snapshot was generated. */
   generated_at: string;

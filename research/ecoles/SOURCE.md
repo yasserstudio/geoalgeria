@@ -41,11 +41,19 @@ via `npm run fetch`).
    convention; anything unresolved is `autre`. Names are accent-folded (é→e) and
    Arabic-normalized (hamza/alef/harakat) before matching. 93% of *named* schools
    resolve to a specific cycle.
-2. **Sector** — `public`/`private` only from an explicit signal (`operator:type`,
+2. **Kind** — establishment type, orthogonal to cycle: `regular` (11,640) or one
+   of the special-purpose kinds `langues`/`coranique`/`conduite`/`formation`
+   (which carry cycle `autre`) and `special` (adapted/special-needs, keeps its
+   cycle). Detected from precise FR/AR name patterns (e.g. `قرانية` not bare
+   `قران`, to avoid the surname المقراني). 190 non-regular.
+3. **Sector** — `public`/`private` only from an explicit signal (`operator:type`,
    or a privé/خاص name); else `null`.
-3. **De-dup** — the same school mapped as both a node and a building outline is
-   collapsed (identical name within ~40 m).
-4. **Admin linkage** — OSM carries no Algerian codes, so `wilaya`/`wilaya_ar`/
+4. **Enrichment** — `isced_levels` (OSM `isced:level` normalized to a sorted list,
+   2,037 records) and a single-line `address` from `addr:*` tags (2,625). Names
+   are strictly script-routed (name_ar always Arabic, name_fr always Latin).
+5. **De-dup** — the same school mapped as both a node and a building outline is
+   collapsed (identical name within ~40 m; plus an exact-coordinate pass).
+6. **Admin linkage** — OSM carries no Algerian codes, so `wilaya`/`wilaya_ar`/
    `wilaya_code`/`commune`/`commune_code` are attached by nearest-centroid join
    against the flagship `geoalgeria` commune set (wilaya effectively exact,
    commune best-effort).

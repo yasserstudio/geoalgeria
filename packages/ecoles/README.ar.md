@@ -53,11 +53,11 @@ const named = all.filter((e) => e.name_fr);
 
 | الطور | العدد | المعنى |
 | --- | --- | --- |
-| `primaire` | 4٬032 | مدرسة ابتدائية (ISCED 1) |
+| `primaire` | 4٬020 | مدرسة ابتدائية (ISCED 1) |
 | `moyen` | 2٬377 | متوسطة / CEM (ISCED 2) |
 | `secondaire` | 1٬574 | ثانوية / lycée (ISCED 3) |
 | `prescolaire` | 268 | تحضيري / روضة (ISCED 0) |
-| `autre` | 3٬579 | مدرسة غير محدّدة الطور (بلا اسم، أو اسمٌ بلا كلمة طور) |
+| `autre` | 3٬591 | مدرسة غير محدّدة الطور (بلا اسم، أو اسمٌ بلا كلمة طور) |
 
 > **هذا استخراجٌ من OpenStreetMap، وليس سجلًّا رسميًّا.** التغطية جزئية ومتفاوتة
 > بين الولايات — نحو 11.8 ألف مدرسة مُخرَّطة مقابل ~28٬000 في الشبكة الوطنية
@@ -68,6 +68,26 @@ const named = all.filter((e) => e.name_fr);
 تحمل دائمًا متوسطة/collège، والثانوية ثانوية/lycée، والروضة روضة/préscolaire. أمّا
 «مدرسة»/«école» المجرّدة بلا كلمة طور فتُصنَّف `primaire` بحكم العُرف الجزائري؛ وما
 تبقّى دون حسمٍ فهو `autre`. تحصل 93٪ من المدارس *المُسمّاة* على طورٍ محدّد.
+
+**حسب النوع (`kind`)** — الـ`kind` هو نوع المؤسسة، *مستقلٌّ* عن الطور، ليتيح ترشيح
+(أو عزل) الأماكن الخاصة التي يصنّفها OpenStreetMap تحت `amenity=school`:
+
+| النوع | العدد | المعنى | الطور |
+| --- | --- | --- | --- |
+| `regular` | 11٬640 | مدرسة/متوسطة/ثانوية/روضة عادية | طورها الحقيقي |
+| `formation` | 91 | مركز تكوين مهني | `autre` |
+| `coranique` | 40 | مدرسة قرآنية | `autre` |
+| `langues` | 24 | مدرسة/معهد لغات | `autre` |
+| `special` | 30 | مدرسة للتربية الخاصة (الصم، المكفوفين…) | يحتفظ بطوره |
+| `conduite` | 5 | مدرسة تعليم السياقة | `autre` |
+
+الأنواع الأربعة خارج التعليم الأساسي (`formation`/`coranique`/`langues`/`conduite`)
+تحمل الطور `autre` — فهي ليست مدارس ابتدائية رغم احتواء اسمها على «école»؛ الـ`kind`
+يجعلها قابلة للعثور بدل ضياعها في `autre`.
+
+**كذلك في كل سجلّ:** `isced_levels` (مستويات `isced:level` من OSM، مُطبَّعة كقائمة
+مرتّبة مثل `"1;2"` — في 2٬037 سجلًّا)، و`address` (من وسوم `addr:*` — في 2٬625)،
+و`sector` (`public`/`private` حيث تشير الخريطة).
 
 ## الصيغ
 
@@ -110,12 +130,17 @@ data/
   "cycle": "secondaire",
   "cycle_label_fr": "Lycée",
   "cycle_label_ar": "ثانوية",
+  "kind": "regular",
+  "kind_label_fr": "École ordinaire",
+  "kind_label_ar": "مدرسة عادية",
+  "isced_levels": "3",
   "sector": null,
   "wilaya": "Alger",
   "wilaya_ar": "الجزائر",
   "wilaya_code": "16",
   "commune": "Casbah",
   "commune_code": 1607,
+  "address": null,
   "lat": 36.779365,
   "lng": 3.05949,
   "geo_precision": "osm_centroid"
@@ -123,7 +148,9 @@ data/
 ```
 
 `id` مفتاحٌ ثابت `{wilaya_code}-{seq}` يُوَلِّده GeoAlgeria؛ و`osm_id` يعود إلى
-الكائن المصدر. `name` يكون `null` للنقاط غير المُسمّاة. `sector` يكون
+الكائن المصدر. `name` يكون `null` للنقاط غير المُسمّاة. `cycle` هو الطور و`kind`
+نوع المؤسسة (انظر أعلاه)، ولكلٍّ منهما تسميتان ثنائيتا اللغة. `isced_levels`
+و`address` يأتيان مباشرةً من OSM (`null` عند غياب الوسوم). `sector` يكون
 `"public"`/`"private"` فقط عند وجود إشارةٍ صريحة، وإلّا `null`. `geo_precision`
 يكون `osm_node` (نقطة مسحية) أو `osm_centroid` (مركز مُخطَّط مبنى). ويُربَط
 `wilaya_code` بِـ`wilaya_code` من GeoAlgeria.

@@ -53,11 +53,11 @@ const named = all.filter((e) => e.name_fr);
 
 | Cycle | Count | Meaning |
 | --- | --- | --- |
-| `primaire` | 4,032 | école primaire (ISCED 1) |
+| `primaire` | 4,020 | école primaire (ISCED 1) |
 | `moyen` | 2,377 | collège d'enseignement moyen / CEM (ISCED 2) |
 | `secondaire` | 1,574 | lycée (ISCED 3) |
 | `prescolaire` | 268 | préscolaire / maternelle / روضة (ISCED 0) |
-| `autre` | 3,579 | school of undetermined cycle (unnamed, or a name with no cycle word) |
+| `autre` | 3,591 | school of undetermined cycle (unnamed, or a name with no cycle word) |
 
 > **This is an OpenStreetMap extract, not an official registry.** Coverage is
 > partial and uneven by wilaya — ~11.8k schools mapped against the ~28,000 in the
@@ -70,6 +70,26 @@ CEM always names itself متوسطة/collège, a lycée ثانوية/lycée, a m
 روضة/préscolaire. A bare "école"/"مدرسة" with no cycle word is classified
 `primaire` by Algerian convention (a standalone school is a primary school);
 anything unresolved is `autre`. 93% of *named* schools resolve to a specific cycle.
+
+**By kind** — `kind` is the establishment type, *orthogonal* to cycle, so you can
+filter out (or in) the special-purpose places OSM files under `amenity=school`:
+
+| Kind | Count | Meaning | Cycle |
+| --- | --- | --- | --- |
+| `regular` | 11,640 | a standard école / CEM / lycée / maternelle | its real cycle |
+| `formation` | 91 | vocational / training centre | `autre` |
+| `coranique` | 40 | Quranic school | `autre` |
+| `langues` | 24 | language school / institute | `autre` |
+| `special` | 30 | adapted / special-needs school (deaf, blind…) | keeps its cycle |
+| `conduite` | 5 | driving school (auto-école) | `autre` |
+
+The four non-K-12 kinds (`formation`/`coranique`/`langues`/`conduite`) carry
+cycle `autre` — they're *not* primary schools even though their name contains
+"école"; `kind` is what makes them findable instead of buried in `autre`.
+
+**Also on each record:** `isced_levels` (the OSM `isced:level` served, normalized
+to a sorted list like `"1;2"` — on 2,037 records), `address` (from OSM `addr:*`
+tags — on 2,625), and `sector` (`public`/`private` where the map signals it).
 
 ## Formats
 
@@ -112,12 +132,17 @@ data/
   "cycle": "secondaire",
   "cycle_label_fr": "Lycée",
   "cycle_label_ar": "ثانوية",
+  "kind": "regular",
+  "kind_label_fr": "École ordinaire",
+  "kind_label_ar": "مدرسة عادية",
+  "isced_levels": "3",
   "sector": null,
   "wilaya": "Alger",
   "wilaya_ar": "الجزائر",
   "wilaya_code": "16",
   "commune": "Casbah",
   "commune_code": 1607,
+  "address": null,
   "lat": 36.779365,
   "lng": 3.05949,
   "geo_precision": "osm_centroid"
@@ -126,10 +151,12 @@ data/
 
 `id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria; `osm_id`
 links back to the upstream object. `name` is the best available display name and
-is `null` for unnamed points. `sector` is `"public"`/`"private"` only when the map
-carries an explicit signal, else `null`. `geo_precision` is `osm_node` (a surveyed
-point) or `osm_centroid` (a building outline's centre). `wilaya_code` joins to
-GeoAlgeria's `wilaya_code`.
+is `null` for unnamed points. `cycle` is the education level and `kind` the
+establishment type (see above), each with bilingual labels. `isced_levels` and
+`address` come straight from OSM (`null` when the tags are absent). `sector` is
+`"public"`/`"private"` only when the map carries an explicit signal, else `null`.
+`geo_precision` is `osm_node` (a surveyed point) or `osm_centroid` (a building
+outline's centre). `wilaya_code` joins to GeoAlgeria's `wilaya_code`.
 
 > **Commune/wilaya linkage is derived, not from the source.** OpenStreetMap does
 > not carry Algerian administrative codes. GeoAlgeria attaches `wilaya_code`,
