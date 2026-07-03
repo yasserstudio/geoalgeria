@@ -2,7 +2,8 @@
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
 // /telecom, /aviation, /banques, /livraison, /jeunesse, /sports,
 // /enseignement-superieur, /tourisme, /formation-professionnelle, /djezzy,
-// /mosquees, /sante, /culture, /agriculture, /ecoles)
+// /mosquees, /sante, /culture, /agriculture, /ecoles, /gares-routieres,
+// /ferroviaire, /buses)
 // for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
 // (packages/dataset/scripts/validate.py); this is the single Node gate for every
@@ -13,7 +14,7 @@
 // (coverage/<tech>/) and split into per-operator files — so it gets its own
 // validator (validateTelecom) that shares the same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture|agriculture|ecoles]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|telecom|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture|agriculture|ecoles|gares-routieres|ferroviaire|buses]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
