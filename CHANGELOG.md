@@ -8,6 +8,14 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.8.0 — 2026-07-03
+
+Added a new dataset: Algeria's schools, the largest openly-geocoded school layer for the country.
+
+- **Schools** (`@geoalgeria/ecoles`, new): 11,830 schools and kindergartens across all 69 wilayas, extracted from OpenStreetMap (ODbL) — classified by cycle (4,020 primaire, 2,377 moyen/CEM, 1,574 secondaire/lycée, 268 préscolaire; the rest `autre`), with bilingual French/Arabic names (8,640 named), a `sector` flag where the map signals it (313 public, 48 private), and commune/wilaya linkage by nearest-centroid join. Cycle is inferred from `isced:level` and the FR/AR name — a CEM names itself متوسطة/collège, a lycée ثانوية/lycée — with a bare "école"/"مدرسة" classified `primaire` by Algerian convention; 93% of named schools resolve to a specific cycle. Each record also carries an establishment `kind` (regular / langues / coranique / conduite / formation / special — so language institutes, Quranic & driving schools and training centres are a filterable category, not buried in `autre`), plus `isced_levels` and an `address` from OSM tags where present. Framed honestly as a partial OSM extract (~11.8k mapped against the ~28,000 of the national network), not an official registry.
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`, `/sante`, `/culture`, `/agriculture`, `/ecoles`, `/gares-routieres`, `/ferroviaire`, `/buses`, `/transport`.
+
 ## 1.7.0 — 2026-07-01
 
 Added a new **Transport** sector — four packages — plus `@geoalgeria/agriculture` (shipped since 1.6.0).

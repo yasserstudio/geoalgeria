@@ -1,0 +1,37 @@
+{
+  "source": "OpenStreetMap (ODbL) — schools (amenity=school) and kindergartens (amenity=kindergarten) in Algeria",
+  "origin": "https://www.openstreetmap.org",
+  "license": "OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README for attribution.",
+  "ecoles": 11830,
+  "named": 8640,
+  "by_cycle": {
+    "primaire": 4020,
+    "moyen": 2377,
+    "secondaire": 1574,
+    "prescolaire": 268,
+    "autre": 3591
+  },
+  "by_kind": {
+    "regular": 11640,
+    "langues": 24,
+    "coranique": 40,
+    "conduite": 5,
+    "formation": 91,
+    "special": 30
+  },
+  "by_sector": {
+    "public": 313,
+    "private": 48,
+    "unknown": 11469
+  },
+  "with_address": 2625,
+  "with_isced": 2037,
+  "wilayas_covered": 69,
+  "ecoles_geocoded": 11830,
+  "official_total": 28000,
+  "coverage_note": "11830 schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (primaire + moyen + secondaire, Ministry of National Education, approximate). A community-maintained extract, not an official registry — coverage is partial and uneven by wilaya.",
+  "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
+  "kind_note": "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle).",
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
+  "generated_at": "2026-07-03"
+}
