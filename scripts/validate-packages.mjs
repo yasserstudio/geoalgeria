@@ -263,6 +263,15 @@ const PACKAGES = {
       required: ["id", "name", "type", "wilaya_code", "lat", "lng"],
     },
   ],
+  "industrie-pharmaceutique": [
+    {
+      json: "industrie-pharmaceutique.json",
+      metaKey: "industrie-pharmaceutique",
+      csv: "csv/industrie-pharmaceutique.csv",
+      geojson: "geojson/industrie-pharmaceutique.geojson",
+      required: ["id", "name", "role", "nature", "wilaya_code", "lat", "lng"],
+    },
+  ],
   "gares-routieres": [
     {
       json: "stations.json",

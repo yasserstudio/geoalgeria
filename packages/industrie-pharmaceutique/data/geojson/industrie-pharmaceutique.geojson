@@ -1,0 +1,3425 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3317,
+          36.1647
+        ]
+      },
+      "properties": {
+        "id": "02-dm-01",
+        "name": "EURL CHELICOMP",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Chlef",
+        "wilaya_code": 2,
+        "commune": "Chlef",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3317,
+          36.1647
+        ]
+      },
+      "properties": {
+        "id": "02-pp-01",
+        "name": "EURL RIADH PHARM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Chlef",
+        "wilaya_code": 2,
+        "commune": "Chlef",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.3317,
+          36.1647
+        ]
+      },
+      "properties": {
+        "id": "02-pp-02",
+        "name": "SARL GROUPE SANTE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Chlef",
+        "wilaya_code": 2,
+        "commune": "Chlef",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.2,
+          36.1
+        ]
+      },
+      "properties": {
+        "id": "02-pp-03",
+        "name": "SPA D-B-F",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Chlef",
+        "wilaya_code": 2,
+        "commune": "Oued Sly",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.875,
+          33.8
+        ]
+      },
+      "properties": {
+        "id": "03-pp-01",
+        "name": "EURL CALGAZ ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Laghouat",
+        "wilaya_code": 3,
+        "commune": "Laghouat",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.117,
+          35.8706
+        ]
+      },
+      "properties": {
+        "id": "04-dm-01",
+        "name": "SARL BIOMEST",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Oum El Bouaghi",
+        "wilaya_code": 4,
+        "commune": "Oum El Bouaghi",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.57318,
+          36.03823
+        ]
+      },
+      "properties": {
+        "id": "04-dm-02",
+        "name": "SPA IMGSA GROUPE INDUSTRIE PHARMACEUTIQUE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Oum El Bouaghi",
+        "wilaya_code": 4,
+        "commune": "Ain M'lila",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.57318,
+          36.03823
+        ]
+      },
+      "properties": {
+        "id": "04-pp-01",
+        "name": "SARL DEMOCEDES PHARMA ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oum El Bouaghi",
+        "wilaya_code": 4,
+        "commune": "Ain M'lila",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.57318,
+          36.03823
+        ]
+      },
+      "properties": {
+        "id": "04-pp-02",
+        "name": "SPA IMGSA GROUPE INDUSTRIE PHARMACEUTIQUE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oum El Bouaghi",
+        "wilaya_code": 4,
+        "commune": "Ain M'lila",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.41644,
+          35.7746
+        ]
+      },
+      "properties": {
+        "id": "05-dm-01",
+        "name": "SARL CHARK PHARM PRODUCTION DE MEDICAMENTS",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Batna",
+        "wilaya_code": 5,
+        "commune": "Ain Yagout",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.1741447,
+          35.55597
+        ]
+      },
+      "properties": {
+        "id": "05-pp-01",
+        "name": "SARL LABORATOIRES BIOTECHNOLOGIE PHARMACEUTIQUE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Batna",
+        "wilaya_code": 5,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7510475,
+          34.8
+        ]
+      },
+      "properties": {
+        "id": "07-dm-01",
+        "name": "EURL USINE OASIS DES ZIBANS DE PRODUCTION PHARMACEUTIQUE ET COUTURE ET TEXTILE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Biskra",
+        "wilaya_code": 7,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8161,
+          36.536389
+        ]
+      },
+      "properties": {
+        "id": "09-dm-01",
+        "name": "SARL COPERDIS INDUSTRIE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Blida",
+        "wilaya_code": 9,
+        "commune": "Beni-Tamou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8319,
+          36.47004
+        ]
+      },
+      "properties": {
+        "id": "09-dm-02",
+        "name": "SARL EXPENSIMED",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Blida",
+        "wilaya_code": 9,
+        "commune": "Blida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8319,
+          36.47004
+        ]
+      },
+      "properties": {
+        "id": "09-pp-01",
+        "name": "SARL LABIOCO",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Blida",
+        "wilaya_code": 9,
+        "commune": "Blida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8319,
+          36.47004
+        ]
+      },
+      "properties": {
+        "id": "09-pp-02",
+        "name": "SARL PHARMA SPHERE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Blida",
+        "wilaya_code": 9,
+        "commune": "Blida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9108333,
+          36.57413
+        ]
+      },
+      "properties": {
+        "id": "09-pp-03",
+        "name": "SPA ALDAPH BOUFARIK",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Blida",
+        "wilaya_code": 9,
+        "commune": "Boufarik",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8962348,
+          36.37763
+        ]
+      },
+      "properties": {
+        "id": "10-dm-01",
+        "name": "SARL DIAGNOPHARM",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Bouira",
+        "wilaya_code": 10,
+        "commune": "Bouira",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8962348,
+          36.37763
+        ]
+      },
+      "properties": {
+        "id": "10-pp-01",
+        "name": "SARL CHIMIE PHARMACIE COMMERCE MULTIPLES CPCM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Bouira",
+        "wilaya_code": 10,
+        "commune": "Bouira",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8962348,
+          36.37763
+        ]
+      },
+      "properties": {
+        "id": "10-pp-02",
+        "name": "SARL MAGPHARM BOUIRA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Bouira",
+        "wilaya_code": 10,
+        "commune": "Bouira",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9266502,
+          36.2638925
+        ]
+      },
+      "properties": {
+        "id": "10-pp-03",
+        "name": "SARL ROSASPHARMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Bouira",
+        "wilaya_code": 10,
+        "commune": "Oued El Berdi",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.8962348,
+          36.37763
+        ]
+      },
+      "properties": {
+        "id": "10-pp-04",
+        "name": "SPA BIOPHARM BOUIRA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Bouira",
+        "wilaya_code": 10,
+        "commune": "Bouira",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.12417,
+          35.405556
+        ]
+      },
+      "properties": {
+        "id": "12-pp-01",
+        "name": "SARL ESCENCIA PHARM IMPORT EXPORT",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tébessa",
+        "wilaya_code": 12,
+        "commune": "Tebessa",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.316667,
+          34.882777
+        ]
+      },
+      "properties": {
+        "id": "13-dm-01",
+        "name": "SARL PROMEDAL ZONE 1",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tlemcen",
+        "wilaya_code": 13,
+        "commune": "Tlemcen",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.316667,
+          34.882777
+        ]
+      },
+      "properties": {
+        "id": "13-dm-02",
+        "name": "SARL PROMEDAL ZONE 2 ET 3",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tlemcen",
+        "wilaya_code": 13,
+        "commune": "Tlemcen",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.316667,
+          34.882777
+        ]
+      },
+      "properties": {
+        "id": "13-pp-01",
+        "name": "SARL BENJECT PHARMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tlemcen",
+        "wilaya_code": 13,
+        "commune": "Tlemcen",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-dm-01",
+        "name": "EURL CHERIFI BIO PLUS",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.2087286,
+          36.6799518
+        ]
+      },
+      "properties": {
+        "id": "15-dm-02",
+        "name": "SARL ENTREPRISE DAHMANE HASSENE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Rached",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-dm-03",
+        "name": "SARL VICRALYS",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-dm-04",
+        "name": "SPA CYTOLAB",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-dm-05",
+        "name": "SPA DIMED",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-dm-06",
+        "name": "SPA SUTURAL",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-pp-01",
+        "name": "SPA ALDAPH TIZI OUZOU",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05,
+          36.733333
+        ]
+      },
+      "properties": {
+        "id": "15-pp-02",
+        "name": "SPA CYTOLAB",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tizi Ouzou",
+        "wilaya_code": 15,
+        "commune": "Tizi-Ouzou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-01",
+        "name": "EURL BIHOSPIC",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-02",
+        "name": "EURL PPC MEDICAL",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-03",
+        "name": "EURL VACU TUBE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-04",
+        "name": "SARL 3 S MEDICAL INDUSTRIES",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.949444,
+          36.7365
+        ]
+      },
+      "properties": {
+        "id": "16-dm-05",
+        "name": "SARL ALPHA DIAGNOSTIC",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Ouled Fayet",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0100658,
+          36.758895
+        ]
+      },
+      "properties": {
+        "id": "16-dm-06",
+        "name": "SARL ASCENSIA DIABETES CARE ALGERIA",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Ben Aknoun",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.22248,
+          36.779133
+        ]
+      },
+      "properties": {
+        "id": "16-dm-07",
+        "name": "SARL BIO OSTEO",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Bordj El Bahri",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-dm-08",
+        "name": "SARL COMMERCE INTERNATIONAL LES CRETES",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.949444,
+          36.7365
+        ]
+      },
+      "properties": {
+        "id": "16-dm-09",
+        "name": "SARL CONDOMED",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Ouled Fayet",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-10",
+        "name": "SARL DIAGUS",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-11",
+        "name": "SARL GIAP GENERAL INDUSTRIE D'ARTICLES PARAPHARMACEUTIQUES",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.906,
+          36.680833
+        ]
+      },
+      "properties": {
+        "id": "16-dm-12",
+        "name": "SARL LYN FABRICATION DE PANSEMENT",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rahmania",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-13",
+        "name": "SARL MEDI PIC",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2125,
+          36.7133
+        ]
+      },
+      "properties": {
+        "id": "16-dm-14",
+        "name": "SARL THE ABOU SAMRA BROTHER'S IMPORT EXPORT",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Dar El Beida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-dm-15",
+        "name": "SPA DIAGNOSTICS CARE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-16",
+        "name": "SPA LABORATOIRES STERIMED",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-17",
+        "name": "SPA VITAL CARE PRODUCTION DISTRIBUTION ET LOGISTIQUE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-dm-18",
+        "name": "SPA VITAL CARE PRODUCTION DISTRIBUTION ET LOGISTIQUE SITE DE PRODUCTION 2",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-mixte-01",
+        "name": "SARL GENCOPHARM",
+        "role": "fabricant",
+        "nature": "mixte",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28079,
+          36.7259091
+        ]
+      },
+      "properties": {
+        "id": "16-mixte-02",
+        "name": "SARL GENERICLAB",
+        "role": "fabricant",
+        "nature": "mixte",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rouiba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28079,
+          36.7259091
+        ]
+      },
+      "properties": {
+        "id": "16-mixte-03",
+        "name": "SARL IMC INDUSTRIE MEDICO CHIRURGICALES",
+        "role": "fabricant",
+        "nature": "mixte",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rouiba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2125,
+          36.7133
+        ]
+      },
+      "properties": {
+        "id": "16-pp-01",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL DAR EL BEIDA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Dar El Beida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.058889,
+          36.6969
+        ]
+      },
+      "properties": {
+        "id": "16-pp-02",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL GUE DE CONSTATINE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Djasr Kasentina",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-pp-03",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL OUED SMAR",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.715,
+          36.7164
+        ]
+      },
+      "properties": {
+        "id": "16-pp-04",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL UNITE DE PRODUCTION EL HARRACH",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "El Harrach",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-05",
+        "name": "EURL PHARMALLIANCE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9337917,
+          36.791944
+        ]
+      },
+      "properties": {
+        "id": "16-pp-06",
+        "name": "EURL SPIMACO SAOUDIENNE ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Ain Benian",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-07",
+        "name": "EURL TABUK ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-pp-08",
+        "name": "SARL ALFACARE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.95924,
+          36.7677
+        ]
+      },
+      "properties": {
+        "id": "16-pp-09",
+        "name": "SARL ALPHACARE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Cheraga",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-10",
+        "name": "SARL DAR AL DAWA ALGERIA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-11",
+        "name": "SARL EL KENDI CORPORATION LIL ADOUIYA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28079,
+          36.7259091
+        ]
+      },
+      "properties": {
+        "id": "16-pp-12",
+        "name": "SARL GENERICLAB",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rouiba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-13",
+        "name": "SARL HIKMA PHARMA ALGERIA BABA ALI",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.894444,
+          36.753333
+        ]
+      },
+      "properties": {
+        "id": "16-pp-14",
+        "name": "SARL HIKMA PHARMA ALGERIA INJECTABLES",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Staoueli",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.894444,
+          36.753333
+        ]
+      },
+      "properties": {
+        "id": "16-pp-15",
+        "name": "SARL HIKMA PHARMA ALGERIA STAOUELI A",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Staoueli",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.894444,
+          36.753333
+        ]
+      },
+      "properties": {
+        "id": "16-pp-16",
+        "name": "SARL HIKMA PHARMA ALGERIA STAOUELI B",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Staoueli",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28079,
+          36.7259091
+        ]
+      },
+      "properties": {
+        "id": "16-pp-17",
+        "name": "SARL IMC INDUSTRIE MEDICO CHIRURGICALES",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rouiba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-18",
+        "name": "SARL LABORATOIRE ALGERIEN DU MEDICAMENT",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2125,
+          36.7133
+        ]
+      },
+      "properties": {
+        "id": "16-pp-19",
+        "name": "SARL LABORATOIRES BEKER UNITE A",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Dar El Beida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2125,
+          36.7133
+        ]
+      },
+      "properties": {
+        "id": "16-pp-20",
+        "name": "SARL LABORATOIRES BEKER UNITE B",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Dar El Beida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-pp-21",
+        "name": "SARL LABORATOIRES MERINAL OUED SMAR",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-22",
+        "name": "SARL LAD PHARMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2125,
+          36.7133
+        ]
+      },
+      "properties": {
+        "id": "16-pp-23",
+        "name": "SARL MAGPHARM DAR EL BEIDA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Dar El Beida",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8277963,
+          36.6946148
+        ]
+      },
+      "properties": {
+        "id": "16-pp-24",
+        "name": "SARL MEDIPHARMA INTERNATIONAL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Zeralda",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-25",
+        "name": "SARL VECOPHARM ALGER",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-26",
+        "name": "SPA ABDI IBRAHIM REMEDE PHARMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28079,
+          36.7259091
+        ]
+      },
+      "properties": {
+        "id": "16-pp-27",
+        "name": "SPA ASTRAZENECA ALGERIA PHARMACEUTICAL INDUSTRIES",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rouiba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-28",
+        "name": "SPA BIOGENAL PHARMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-pp-29",
+        "name": "SPA BIOPHARM OUED SMAR",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8277963,
+          36.6946148
+        ]
+      },
+      "properties": {
+        "id": "16-pp-30",
+        "name": "SPA BIORMONE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Zeralda",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-31",
+        "name": "SPA EL KENDI INDUSTRIE DU MEDICAMENT",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-32",
+        "name": "SPA EL KENDI INDUSTRIE DU MEDICAMENT UNITE D ONCOLOGIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-pp-33",
+        "name": "SPA JAMJOOM ALGERIA LIL DAWA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-34",
+        "name": "SPA LES LABORATOIRES FRATER RAZES",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-35",
+        "name": "SPA LES LABORATOIRES FRATER RAZES FORME SECHE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3402,
+          36.7359
+        ]
+      },
+      "properties": {
+        "id": "16-pp-36",
+        "name": "SPA LINDE GAS ALGERIE REGHAIA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Reghaia",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.95924,
+          36.7677
+        ]
+      },
+      "properties": {
+        "id": "16-pp-37",
+        "name": "SPA MAYOLY SPINDLER ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Cheraga",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.95924,
+          36.7677
+        ]
+      },
+      "properties": {
+        "id": "16-pp-38",
+        "name": "SPA PHARMACEUTICAL LABORATORY INTERNATIONAL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Cheraga",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-39",
+        "name": "SPA PRODIPHAL PRODUCTION",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.172222222,
+          36.74472
+        ]
+      },
+      "properties": {
+        "id": "16-pp-40",
+        "name": "SPA PROFAM OUED SMAR",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Oued Smar",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3402,
+          36.7359
+        ]
+      },
+      "properties": {
+        "id": "16-pp-41",
+        "name": "SPA PROFAM REGHAIA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Reghaia",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.95924,
+          36.7677
+        ]
+      },
+      "properties": {
+        "id": "16-pp-42",
+        "name": "SPA PROPHARMAL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Cheraga",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.906,
+          36.680833
+        ]
+      },
+      "properties": {
+        "id": "16-pp-43",
+        "name": "SPA SANOFI AVENTIS ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rahmania",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.28079,
+          36.7259091
+        ]
+      },
+      "properties": {
+        "id": "16-pp-44",
+        "name": "SPA SIDAL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": "Rouiba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-45",
+        "name": "SPA SOMEDIAL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-46",
+        "name": "SPA UPJOHN SAIDAL PHARMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0732760652982463,
+          36.73011172807016
+        ]
+      },
+      "properties": {
+        "id": "16-pp-47",
+        "name": "SPA VITAL CARE PRODUCTION DISTRIBUTION ET LOGISTIQUE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Alger",
+        "wilaya_code": 16,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.7667,
+          36.82055
+        ]
+      },
+      "properties": {
+        "id": "18-pp-01",
+        "name": "SARL BIOREM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Jijel",
+        "wilaya_code": 18,
+        "commune": "Jijel",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4150871,
+          36.19112
+        ]
+      },
+      "properties": {
+        "id": "19-dm-01",
+        "name": "EURL BENKHELIFA MEDICAL SERVICE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "Setif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4150871,
+          36.19112
+        ]
+      },
+      "properties": {
+        "id": "19-dm-02",
+        "name": "SARL ALDISMED",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "Setif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4150871,
+          36.19112
+        ]
+      },
+      "properties": {
+        "id": "19-dm-03",
+        "name": "SARL LABORATOIRES SALEM SETIF",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "Setif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4150871,
+          36.19112
+        ]
+      },
+      "properties": {
+        "id": "19-pp-01",
+        "name": "EURL GENIS Produits Pharmaceutiques et Para-pharmaceutiques",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "Setif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4150871,
+          36.19112
+        ]
+      },
+      "properties": {
+        "id": "19-pp-02",
+        "name": "SARL BIOSCAN INDUSTRIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "Setif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.69016,
+          36.156449
+        ]
+      },
+      "properties": {
+        "id": "19-pp-03",
+        "name": "SARL LABORATOIRES SALEM EL EULMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "El Eulma",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.4150871,
+          36.19112
+        ]
+      },
+      "properties": {
+        "id": "19-pp-04",
+        "name": "SARL OPTIPHARM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "Setif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.69016,
+          36.156449
+        ]
+      },
+      "properties": {
+        "id": "19-pp-05",
+        "name": "SPA PHARMA INVEST PRODUCTION",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sétif",
+        "wilaya_code": 19,
+        "commune": "El Eulma",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6298922,
+          35.2022249
+        ]
+      },
+      "properties": {
+        "id": "22-dm-01",
+        "name": "SPA LINDE GAS ALGERIE SIDI BEL ABBES",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Sidi Bel Abbès",
+        "wilaya_code": 22,
+        "commune": "Sidi Bel-Abbes",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6298922,
+          35.2022249
+        ]
+      },
+      "properties": {
+        "id": "22-pp-01",
+        "name": "SARL TABET PHARM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sidi Bel Abbès",
+        "wilaya_code": 22,
+        "commune": "Sidi Bel-Abbes",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6298922,
+          35.2022249
+        ]
+      },
+      "properties": {
+        "id": "22-pp-02",
+        "name": "SPA LINDE GAS ALGERIE SIDI BEL ABBES",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Sidi Bel Abbès",
+        "wilaya_code": 22,
+        "commune": "Sidi Bel-Abbes",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7667,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": "23-pp-01",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL ANNABA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Annaba",
+        "wilaya_code": 23,
+        "commune": "Annaba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7667,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": "23-pp-02",
+        "name": "SARL EVOLAB",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Annaba",
+        "wilaya_code": 23,
+        "commune": "Annaba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7667,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": "23-pp-03",
+        "name": "SARL LABORATOIRE MM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Annaba",
+        "wilaya_code": 23,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7667,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": "23-pp-04",
+        "name": "SARL LABORATOIRES ROVAC",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Annaba",
+        "wilaya_code": 23,
+        "commune": "Annaba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7667,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": "23-pp-05",
+        "name": "SPA BIOCARE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Annaba",
+        "wilaya_code": 23,
+        "commune": "Annaba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.7667,
+          36.9
+        ]
+      },
+      "properties": {
+        "id": "23-pp-06",
+        "name": "SPA BIOCARE BIOTECH",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Annaba",
+        "wilaya_code": 23,
+        "commune": "Annaba",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-dm-01",
+        "name": "SARL NEOMEDIC",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-01",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL UNITE DE PRODUCTION CONSTANTINE 1",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-02",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL UNITE DE PRODUCTION CONSTANTINE 2",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.71238,
+          36.53307
+        ]
+      },
+      "properties": {
+        "id": "25-pp-03",
+        "name": "SARL BIOGALENIC ZIGHOUD YOUCEF",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Zighoud Youcef",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-04",
+        "name": "SARL GEO PHARM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-05",
+        "name": "SARL ISOPHARM ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-06",
+        "name": "SARL KPMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-07",
+        "name": "SARL KPMA BIOTIC",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.69361,
+          36.26333
+        ]
+      },
+      "properties": {
+        "id": "25-pp-08",
+        "name": "SARL LABORATOIRES DE DIAGNOSTIC MAGHREBINS LDM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "El Khroub",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-09",
+        "name": "SARL LABORATOIRES PHYSIOPHARM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-10",
+        "name": "SARL NADPHARMADIC PRODUCTION",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-11",
+        "name": "SARL NEOMEDIC",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-12",
+        "name": "SARL ODONTOMEDICA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-13",
+        "name": "SARL PHARMIDAL NS",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": "Constantine",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.642433,
+          36.365
+        ]
+      },
+      "properties": {
+        "id": "25-pp-14",
+        "name": "SPA UNION PHARMACEUTIQUE CONSTANTINOISE PALMA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Constantine",
+        "wilaya_code": 25,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          35.8307225
+        ]
+      },
+      "properties": {
+        "id": "27-pp-01",
+        "name": "SARL LABORATOIRE GROUPEMENT PHARMACEUTIQUE ALGERIEN",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Mostaganem",
+        "wilaya_code": 27,
+        "commune": "Stidia",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0,
+          35.8307225
+        ]
+      },
+      "properties": {
+        "id": "27-pp-02",
+        "name": "SPA GROUPEMENT PHARMACEUTIQUE ALGERIEN SITE DE STIDIA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Mostaganem",
+        "wilaya_code": 27,
+        "commune": "Stidia",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-dm-01",
+        "name": "SARL INOTIS",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-dm-02",
+        "name": "SPA HYGIMED ORAN",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6241804,
+          35.6478
+        ]
+      },
+      "properties": {
+        "id": "31-pp-01",
+        "name": "EURL MAGHREB DENTAL INDUSTRY",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": "Es Senia",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5,
+          35.6792778
+        ]
+      },
+      "properties": {
+        "id": "31-pp-02",
+        "name": "SARL AURES GAZ INDUSTRIELS",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": "Hassi Bounif",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-03",
+        "name": "SARL BIOHDER GROUP",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-04",
+        "name": "SARL CONTINENTAL PHARM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.4522604,
+          35.5519239
+        ]
+      },
+      "properties": {
+        "id": "31-pp-05",
+        "name": "SARL GEOMEDICA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": "Oued Tlelat",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-06",
+        "name": "SARL LABORATOIRE MOBEN",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-07",
+        "name": "SARL LABORATOIRES PHARMAGHREB",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-08",
+        "name": "SARL ORION LAB",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-09",
+        "name": "SARL WORLD MEDECINE LIMITED",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6331,
+          35.70833333
+        ]
+      },
+      "properties": {
+        "id": "31-pp-10",
+        "name": "SPA GROUPEMENT PHARMACEUTIQUE ALGERIEN ORAN",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3167,
+          35.85048
+        ]
+      },
+      "properties": {
+        "id": "31-pp-11",
+        "name": "SPA LINDE GAS ALGERIE ARZEW",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": "Arzew",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.545,
+          35.7368
+        ]
+      },
+      "properties": {
+        "id": "31-pp-12",
+        "name": "SPA SOCIETE PHARMACEUTIQUE ALGERIENNE SOPHAL (SITE 02 UNITE 06 BIR EL DJIR)",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": "Bir El Djir",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.545,
+          35.7368
+        ]
+      },
+      "properties": {
+        "id": "31-pp-13",
+        "name": "SPA SOCIETE PHARMACEUTIQUE ALGERIENNE SOPHAL (site 01)",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Oran",
+        "wilaya_code": 31,
+        "commune": "Bir El Djir",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.669,
+          36.1319
+        ]
+      },
+      "properties": {
+        "id": "34-dm-01",
+        "name": "EURL BORDJ EL MOKRANI MEDICAL",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Bordj Bou Arreridj",
+        "wilaya_code": 34,
+        "commune": "Medjana",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.477,
+          36.766
+        ]
+      },
+      "properties": {
+        "id": "35-dm-01",
+        "name": "EPE SPA SOCOTHYD",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Boumerdès",
+        "wilaya_code": 35,
+        "commune": "Boumerdes",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.477,
+          36.766
+        ]
+      },
+      "properties": {
+        "id": "35-dm-02",
+        "name": "SARL OASIS EL IKHOUA MOUAS",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Boumerdès",
+        "wilaya_code": 35,
+        "commune": "Boumerdes",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3308,
+          36.65
+        ]
+      },
+      "properties": {
+        "id": "35-pp-01",
+        "name": "SARL LABORATOIRES MERINAL KHEMIS EL KHECHNA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Boumerdès",
+        "wilaya_code": 35,
+        "commune": "Khemis El Khechna",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3308,
+          36.65
+        ]
+      },
+      "properties": {
+        "id": "35-pp-02",
+        "name": "SPA AT PHARMA KHEMIS EL KHECHNA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Boumerdès",
+        "wilaya_code": 35,
+        "commune": "Khemis El Khechna",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.40995,
+          36.72735
+        ]
+      },
+      "properties": {
+        "id": "35-pp-03",
+        "name": "SPA GLAXO SMITH KLINE ALGERIE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Boumerdès",
+        "wilaya_code": 35,
+        "commune": "Boudouaou",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.3892894,
+          36.6857409
+        ]
+      },
+      "properties": {
+        "id": "35-pp-04",
+        "name": "SPA SOPRODIM",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Boumerdès",
+        "wilaya_code": 35,
+        "commune": "Ouled Moussa",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.894722,
+          36.727222
+        ]
+      },
+      "properties": {
+        "id": "36-pp-01",
+        "name": "SARL ONYX INDUSTRIE PHARMACEUTIQUE",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "El Tarf",
+        "wilaya_code": 36,
+        "commune": "Zerizer",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.317,
+          36.7667186
+        ]
+      },
+      "properties": {
+        "id": "36-pp-02",
+        "name": "SPA BIOTHERA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "El Tarf",
+        "wilaya_code": 36,
+        "commune": "El Tarf",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.317,
+          36.7667186
+        ]
+      },
+      "properties": {
+        "id": "36-pp-03",
+        "name": "SPA LES LABORATOIRES INPHA-MEDIS",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "El Tarf",
+        "wilaya_code": 36,
+        "commune": "El Tarf",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.443,
+          36.591944
+        ]
+      },
+      "properties": {
+        "id": "42-dm-01",
+        "name": "EURL MODERNE SANTE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tipaza",
+        "wilaya_code": 42,
+        "commune": "Tipaza",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.443,
+          36.591944
+        ]
+      },
+      "properties": {
+        "id": "42-dm-02",
+        "name": "SARL SOINS ET SANTE",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Tipaza",
+        "wilaya_code": 42,
+        "commune": "Tipaza",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.19083,
+          36.605
+        ]
+      },
+      "properties": {
+        "id": "42-pp-01",
+        "name": "EPE SPA GROUPE INDUSTRIEL SAIDAL UNITE DE PRODUCTION CHERCHEL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tipaza",
+        "wilaya_code": 42,
+        "commune": "Cherchell",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.443,
+          36.591944
+        ]
+      },
+      "properties": {
+        "id": "42-pp-02",
+        "name": "SARL BIOLOGIE ET VITAMINE D ALGERIE BIOVITAL",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tipaza",
+        "wilaya_code": 42,
+        "commune": "Tipaza",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.443,
+          36.591944
+        ]
+      },
+      "properties": {
+        "id": "42-pp-03",
+        "name": "SARL LABORATOIRES NOVAPHARM TRADING",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tipaza",
+        "wilaya_code": 42,
+        "commune": "Tipaza",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.443,
+          36.591944
+        ]
+      },
+      "properties": {
+        "id": "42-pp-04",
+        "name": "SARL NOVAPHARM PRODUCTION",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Tipaza",
+        "wilaya_code": 42,
+        "commune": "Tipaza",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.2644,
+          36.4503
+        ]
+      },
+      "properties": {
+        "id": "43-dm-01",
+        "name": "SARL TECHNIPHARM",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Mila",
+        "wilaya_code": 43,
+        "commune": null,
+        "geo_precision": "wilaya_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.220167,
+          36.261
+        ]
+      },
+      "properties": {
+        "id": "44-pp-01",
+        "name": "SPA AT PHARMA KHEMIS MILIANA",
+        "role": "fabricant",
+        "nature": "pp",
+        "wilaya": "Aïn Defla",
+        "wilaya_code": 44,
+        "commune": "Khemis-Miliana",
+        "geo_precision": "commune_centroid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.133333,
+          35.297
+        ]
+      },
+      "properties": {
+        "id": "46-dm-01",
+        "name": "SARL TOP GLOVES LATEX INDUSTRIES",
+        "role": "fabricant",
+        "nature": "dm",
+        "wilaya": "Aïn Témouchent",
+        "wilaya_code": 46,
+        "commune": "Ain Temouchent",
+        "geo_precision": "commune_centroid"
+      }
+    }
+  ]
+}

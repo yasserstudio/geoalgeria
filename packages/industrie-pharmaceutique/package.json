@@ -1,0 +1,57 @@
+{
+  "name": "@geoalgeria/industrie-pharmaceutique",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's approved pharmaceutical manufacturers — medicine (PP) and medical-device (DM) production establishments from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual FR/AR, typed by nature, geocoded against the geoalgeria commune set with wilaya/commune linkage. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "test": "node ../../scripts/validate-packages.mjs industrie-pharmaceutique"
+  },
+  "keywords": [
+    "algeria",
+    "pharmaceutique",
+    "industrie-pharmaceutique",
+    "medicaments",
+    "manufacturers",
+    "fabrication",
+    "dispositifs-medicaux",
+    "miph",
+    "saidal",
+    "pharma",
+    "geojson",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/industrie-pharmaceutique"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}
