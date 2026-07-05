@@ -1,0 +1,53 @@
+{
+  "name": "@geoalgeria/pharma",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Algeria's pharmaceutical sector in one install — re-exports @geoalgeria/industrie-pharmaceutique (approved medicine & medical-device manufacturers) and @geoalgeria/pharmacies (officines). Umbrella meta-package.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "files": [
+    "types/",
+    "index.js"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@geoalgeria/industrie-pharmaceutique": "workspace:^",
+    "@geoalgeria/pharmacies": "workspace:^"
+  },
+  "keywords": [
+    "algeria",
+    "pharma",
+    "pharmaceutique",
+    "pharmacies",
+    "medicaments",
+    "manufacturers",
+    "industrie-pharmaceutique",
+    "officine",
+    "health",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/pharma"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

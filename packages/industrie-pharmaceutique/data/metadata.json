@@ -1,0 +1,24 @@
+{
+  "source": "Ministère de l'Industrie Pharmaceutique (MIP) — official list of approved pharmaceutical manufacturing establishments (établissements pharmaceutiques de fabrication), geocoded against the geoalgeria commune set",
+  "origin": "https://miph.gov.dz/fr/etablissements-pharmaceutiques/",
+  "license": "MIP register: factual public-sector listing. See README for attribution.",
+  "industrie-pharmaceutique": 171,
+  "by_nature": {
+    "dm": 48,
+    "pp": 120,
+    "mixte": 3
+  },
+  "by_role": {
+    "fabricant": 171
+  },
+  "by_geo_precision": {
+    "commune_centroid": 126,
+    "wilaya_centroid": 45,
+    "none": 0
+  },
+  "wilayas_covered": 25,
+  "geocoded": 171,
+  "linkage_note": "Operator names + PP/DM nature are from the current MIP fabrication register (updated 2026-06-28), which carries no coordinates. Wilaya/commune are resolved from the 2023 MIP list's wilaya column, a place token in the operator name, or a per-company research pass (company sites, the CACI/El Mouchir directory, press) for makers absent from the 2023 list — never guessed. Coordinates are the commune centroid, or the wilaya centroid where only the wilaya is known (see geo_precision).",
+  "coverage_note": "Approved pharmaceutical MANUFACTURERS only (fabrication agrément). 171 of the ~186 establishments on the register are geocoded here; the rest are contract manufacturers listed as 'sous-traitance' (no own site) or a few very small device makers with no locatable address. Importers, wholesalers, exploitation and promotion are separate MIP registers, not included in this manufacturers layer.",
+  "generated_at": "2026-07-05"
+}

@@ -1,0 +1,15 @@
+{
+  "source": "Ooredoo Algérie — retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public trouvez-nous JSON API",
+  "origin": "https://www.ooredoo.dz/fr/particuliers/trouvez-nous",
+  "license": "Data © Ooredoo Algérie; redistributed for reference. See README.",
+  "ooredoo": 572,
+  "by_type": {
+    "EO": 100,
+    "CSO": 36,
+    "ESO": 436
+  },
+  "wilayas_covered": 63,
+  "ooredoo_geocoded": 572,
+  "note": "Every record carries a real lat/lng from the operator API (geo_precision \"exact\"). Wilaya/commune are attached by nearest-centroid join against the geoalgeria commune set (current 69-wilaya scheme); the operator's own legacy-48 wilaya label is kept as operator_wilaya. A few operator points carry inaccurate source coordinates, so their derived wilaya/commune may be off — operator_wilaya preserves Ooredoo's declared wilaya in those cases.",
+  "generated_at": "2026-07-05"
+}

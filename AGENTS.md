@@ -21,10 +21,14 @@ This file is the short version of how work flows here; deeper docs are linked.
 | `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training — CFPA, INSFP, DFEPs, private centers (MFEP / takwin.dz) |
 | `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores with category & hours (djezzy.dz) |
+| `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores — 572 EO/CSO/ESO with real coordinates & wilaya/commune linkage (ooredoo.dz locator API); completes the telecom retail trio |
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas — protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions — services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
+| `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers — 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) — 3,790 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
+| `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella — re-exports industrie-pharmaceutique + pharmacies in one install |
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools — 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations — 74 SOGRAL gares routières, 51 wilayas, geocoded with surfaces (live.sogral.com) |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit — 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
