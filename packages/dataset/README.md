@@ -213,7 +213,11 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Intercity bus stations — 74 SOGRAL gares routières across 51 wilayas, geocoded with surfaces & commune/wilaya linkage |
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & urban transit — 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OpenStreetMap composite, bilingual |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Urban bus networks — 50 ETUSA (Alger) lines with termini, stop counts, communes & stations served (line-level v1) |
+| [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Pharmaceutical manufacturers — 171 approved medicine & medical-device makers from the Ministry of Pharmaceutical Industry register, bilingual, geocoded |
+| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines) — 3,790 geocoded across 67 wilayas from OpenStreetMap, bilingual where named |
+| [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Ooredoo stores — 572 EO / City Shop / Espace Services with real coordinates; completes the telecom retail trio |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Transport umbrella — installs aviation + ferroviaire + gares-routieres + buses in one step |
+| [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Pharma umbrella — installs industrie-pharmaceutique + pharmacies in one step |
 
 Full list and the monorepo: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 
