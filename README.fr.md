@@ -62,6 +62,9 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Gares routières** | 74 | Gares routières SOGRAL sur 51 wilayas — noms, adresses, superficies, coordonnées — [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **Rail & transport urbain** | 692 | nœuds train, tram, métro, téléphérique & télécabine (SNTF / SETRAM / SEMA) — composite Wikidata + OSM, bilingue, 50 wilayas — [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **Lignes de bus urbaines** | 50 | ETUSA (Alger) — terminus, nombre d'arrêts, communes & stations desservies — [`@geoalgeria/buses`](packages/buses) |
+| **Pharmacies** | 3 790 | officines géolocalisées depuis OpenStreetMap, bilingues si nommées, rattachées commune/wilaya — [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **Fabricants pharmaceutiques** | 171 | fabricants agréés de médicaments & dispositifs médicaux du registre du Ministère de l'Industrie Pharmaceutique, géolocalisés — [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
+| **Points de vente Ooredoo** | 572 | Espaces Ooredoo, City Shops & Espaces Services avec coordonnées réelles, rattachés commune/wilaya (ooredoo.dz) — [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
 Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -117,7 +120,11 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Gares routières — 74 gares SOGRAL sur 51 wilayas, géolocalisées avec superficies et rattachement commune/wilaya |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & transport urbain — 692 nœuds train/tram/métro/téléphérique/télécabine (SNTF/SETRAM/SEMA), composite Wikidata + OSM, bilingue FR/AR |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Réseaux de bus urbains — 50 lignes ETUSA (Alger) avec terminus, arrêts, communes & stations desservies (niveau ligne, v1) |
+| [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Fabricants pharmaceutiques — 171 fabricants agréés de médicaments (PP) & dispositifs médicaux (DM) du registre du Ministère de l'Industrie Pharmaceutique, bilingues, géolocalisés au centroïde commune/wilaya |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines) — 3 790 géolocalisées sur 67 wilayas depuis OpenStreetMap, bilingues si nommées, avec téléphone/horaires/dispensing si renseignés & rattachement commune/wilaya |
+| [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo — 572 EO / City Shop / Espace Services avec coordonnées réelles & rattachement commune/wilaya (ooredoo.dz) ; complète le trio télécom |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Parapluie — installe aviation + ferroviaire + gares-routieres + buses en une fois |
+| [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Parapluie — installe industrie-pharmaceutique + pharmacies en une fois |
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 

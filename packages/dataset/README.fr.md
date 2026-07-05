@@ -213,7 +213,11 @@ Ce jeu de données utilise le [versionnement sémantique](https://semver.org/). 
 | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Gares routières — 74 gares SOGRAL sur 51 wilayas, géolocalisées avec surfaces et rattachement commune/wilaya |
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail & transport urbain — 692 nœuds train/tram/métro/télécabine/gondole (SNTF/SETRAM/SEMA), composite Wikidata + OpenStreetMap, bilingue |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Réseaux de bus urbains — 50 lignes ETUSA (Alger) avec terminus, nombre d'arrêts, communes et stations desservies (niveau ligne v1) |
+| [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Fabricants pharmaceutiques — 171 fabricants agréés de médicaments & dispositifs médicaux du Ministère de l'Industrie Pharmaceutique, bilingues, géolocalisés |
+| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies (officines) — 3 790 géolocalisées sur 67 wilayas depuis OpenStreetMap, bilingues si nommées |
+| [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo — 572 EO / City Shop / Espace Services avec coordonnées réelles ; complète le trio télécom |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Ombrelle transport — installe aviation + ferroviaire + gares-routieres + buses en une étape |
+| [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Parapluie pharma — installe industrie-pharmaceutique + pharmacies en une fois |
 
 Liste complète et monorepo : [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

@@ -8,6 +8,17 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 1.9.0 — 2026-07-05
+
+Added a new **Pharma sector** — pharmaceutical manufacturers and pharmacies — plus `@geoalgeria/ooredoo`, which completes the telecom retail trio, and a `@geoalgeria/pharma` umbrella.
+
+- **Pharmaceutical manufacturers** (`@geoalgeria/industrie-pharmaceutique`, new): 171 approved manufacturers (120 medicine/PP, 48 medical-device/DM, 3 mixte) from the Ministry of Pharmaceutical Industry fabrication register (updated 28/06/2026), bilingual, typed by nature, geocoded to commune/wilaya centroid across 25 wilayas. The register carries no coordinates; wilaya/commune are resolved from the 2023 MIP edition's wilaya column, place tokens in operator names, and a verified per-company research pass for makers absent from 2023 — never guessed. Multi-site firms (Saidal, GPA) are disambiguated by site; ~15 sous-traitance / unlocatable makers are omitted rather than placed speculatively.
+- **Pharmacies** (`@geoalgeria/pharmacies`, new): 3,790 pharmacies (officines) across 67 wilayas from OpenStreetMap (ODbL), geocoded, bilingual FR/AR where named, with phone/opening-hours/`dispensing` where tagged and wilaya/commune linkage by nearest-centroid join. Honest partial coverage (~3.8k mapped vs an estimated ~11k officines nationally; no open official registry). A 1,769-record OpenStreetMap bulk-import artifact near Attatba (Tipaza) is detected and excluded.
+- **Ooredoo stores** (`@geoalgeria/ooredoo`, new): 572 stores (436 Espaces Services, 100 Espaces Ooredoo, 36 City Shops) with real coordinates from the operator locator API; wilaya/commune reconciled from the coordinates (legacy 48 → current 69 scheme). Completes the telecom retail trio with `mobilis` + `djezzy`.
+- **Pharma umbrella** (`@geoalgeria/pharma`, new): one install that re-exports `industrie-pharmaceutique` + `pharmacies`.
+
+Packages: `geoalgeria`, `@geoalgeria/poste`, `/emploi`, `/mobilis`, `/telecom`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`, `/sports`, `/enseignement-superieur`, `/tourisme`, `/formation-professionnelle`, `/djezzy`, `/mosquees`, `/sante`, `/culture`, `/agriculture`, `/ecoles`, `/gares-routieres`, `/ferroviaire`, `/buses`, `/transport`, `/industrie-pharmaceutique`, `/pharmacies`, `/ooredoo`, `/pharma`.
+
 ## 1.8.0 — 2026-07-03
 
 Added a new dataset: Algeria's schools, the largest openly-geocoded school layer for the country.

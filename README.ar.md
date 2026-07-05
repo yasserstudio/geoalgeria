@@ -64,6 +64,9 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **المحطات البرية** | 74 | محطات سوقرال البرية عبر 51 ولاية — الأسماء، العناوين، المساحات، الإحداثيات — [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **السكك والنقل الحضري** | 692 | عُقَد القطار والترامواي والمترو والتلفريك (SNTF / SETRAM / SEMA) — تجميعة Wikidata + OSM، ثنائية اللغة، 50 ولاية — [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **خطوط الحافلات الحضرية** | 50 | ETUSA (الجزائر) — المحطتان الطرفيتان، عدد المواقف، البلديات والمحطات المخدومة — [`@geoalgeria/buses`](packages/buses) |
+| **الصيدليات** | 3٬790 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية — [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **مصنّعو الأدوية** | 171 | مصنّعون معتمدون للأدوية والأجهزة الطبية من سجل وزارة الصناعة الصيدلانية، مُحدَّدون جغرافيًا — [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
+| **نقاط بيع أوريدو** | 572 | فضاءات أوريدو ومتاجر المدينة وفضاءات الخدمات بإحداثيات حقيقية، مربوطة بالبلدية/الولاية (ooredoo.dz) — [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
 الصيغ: **JSON · CSV · GeoJSON · SQL · TypeScript**. حزمة npm تتضمن JSON فقط للحفاظ على الحجم الخفيف؛ CSV/GeoJSON/SQL متوفرة في كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -119,7 +122,11 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية — 74 محطة سوقرال عبر 51 ولاية، بإحداثيات ومساحات وربط بالبلدية/الولاية |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري — 692 عقدة قطار/ترامواي/مترو/تلفريك (SNTF/SETRAM/SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية — 50 خط ETUSA (الجزائر) مع المحطتين الطرفيتين والمواقف والبلديات والمحطات المخدومة (مستوى الخط، v1) |
+| [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية — 171 مصنّعًا معتمدًا للأدوية (PP) والأجهزة الطبية (DM) من سجل وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون إلى مركز البلدية/الولاية |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) — 3٬790 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
+| [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو — 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية والربط بالبلدية/الولاية (ooredoo.dz)؛ يُكمل ثلاثي الاتصالات |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة — تثبّت aviation + ferroviaire + gares-routieres + buses دفعة واحدة |
+| [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة — تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 
