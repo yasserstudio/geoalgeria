@@ -272,6 +272,17 @@ const PACKAGES = {
       required: ["id", "name", "role", "nature", "wilaya_code", "lat", "lng"],
     },
   ],
+  pharmacies: [
+    {
+      json: "pharmacies.json",
+      metaKey: "pharmacies",
+      csv: "csv/pharmacies.csv",
+      geojson: "geojson/pharmacies.geojson",
+      // name is intentionally nullable (many OSM pharmacies are unnamed), so the
+      // required set guards identity + geocoding rather than name.
+      required: ["id", "source", "wilaya_code", "lat", "lng"],
+    },
+  ],
   "gares-routieres": [
     {
       json: "stations.json",
