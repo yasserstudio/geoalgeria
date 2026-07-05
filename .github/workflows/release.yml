@@ -74,11 +74,13 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          # djezzy + mosquees (v1.4.0) and sante (v1.5.0) are intentionally
-          # excluded — they shipped in combined project releases, not as
-          # per-package releases. @geoalgeria/transport (umbrella) is excluded
-          # too — it has no data/ bundle and is published manually via pnpm.
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses; do
+          # @geoalgeria/transport (umbrella) is excluded — it has no data/
+          # bundle and is published manually via pnpm. (djezzy, mosquees and
+          # sante originally shipped in the combined v1.4.0/v1.5.0 project
+          # releases; their per-package releases were backfilled 2026-07-05, so
+          # future bumps flow through here normally — the tag-existence guard
+          # below skips the already-released 1.0.0 tags.)
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses; do
             NAME=$(node -p "require('./$pkg/package.json').name")
             VER=$(node -p "require('./$pkg/package.json').version")
             TAG="$NAME@$VER"
