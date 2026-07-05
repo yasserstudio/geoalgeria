@@ -38,6 +38,8 @@ importers:
 
   packages/gares-routieres: {}
 
+  packages/industrie-pharmaceutique: {}
+
   packages/jeunesse: {}
 
   packages/livraison: {}
@@ -45,6 +47,19 @@ importers:
   packages/mobilis: {}
 
   packages/mosquees: {}
+
+  packages/ooredoo: {}
+
+  packages/pharma:
+    dependencies:
+      '@geoalgeria/industrie-pharmaceutique':
+        specifier: workspace:^
+        version: link:../industrie-pharmaceutique
+      '@geoalgeria/pharmacies':
+        specifier: workspace:^
+        version: link:../pharmacies
+
+  packages/pharmacies: {}
 
   packages/poste: {}
 
