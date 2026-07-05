@@ -90,6 +90,15 @@ const PACKAGES = {
       required: ["id", "name", "wilaya_code"],
     },
   ],
+  ooredoo: [
+    {
+      json: "stores.json",
+      metaKey: "ooredoo",
+      csv: "csv/stores.csv",
+      geojson: "geojson/stores.geojson",
+      required: ["id", "name", "type", "wilaya_code", "lat", "lng"],
+    },
+  ],
   emploi: [
     {
       json: "awem.json",
