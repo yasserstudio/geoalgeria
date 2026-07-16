@@ -39,6 +39,9 @@ build/
 out/
 *.min.json
 
+# === Research source PDFs (extract to .txt; never commit the PDF) ===
+research/**/*.pdf
+
 # === Logs ===
 *.log
 npm-debug.log*
