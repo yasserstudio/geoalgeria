@@ -373,11 +373,20 @@ function validateDataset(pkg, spec) {
   } catch (e) {
     fail(`${pkg}/metadata.json: cannot read — ${e.message}`);
   }
-  // v2 packages carry canonical metadata (record_count); v1 use the package-named key.
+  // v2 packages carry canonical metadata: multi-file packages track per-file counts in
+  // entities[], single-file packages use record_count. v1 uses the package-named key.
   const isV2 = meta.schema_version === "2.0.0";
-  const countKey = isV2 ? "record_count" : spec.metaKey;
-  if (meta[countKey] !== arr.length) {
-    fail(`${label}: count ${arr.length} ≠ metadata.${countKey} ${meta[countKey]}`);
+  let expected, expectedKey;
+  if (isV2) {
+    const entity = (meta.entities || []).find((e) => e.file === spec.json);
+    if (entity) { expected = entity.count; expectedKey = `entities[${spec.json}]`; }
+    else { expected = meta.record_count; expectedKey = "record_count"; }
+  } else {
+    expected = meta[spec.metaKey];
+    expectedKey = spec.metaKey;
+  }
+  if (expected !== arr.length) {
+    fail(`${label}: count ${arr.length} ≠ metadata.${expectedKey} ${expected}`);
   }
 
   // v2 contract: enforce the canonical GeoRecord + metadata shape via @geoalgeria/schema.

@@ -24,6 +24,12 @@ const padC = (c) => (c == null || c === "" ? null : String(c).replace(/\D/g, "")
 const clean = (o) => { const x = {}; for (const k in o) if (o[k] !== undefined) x[k] = o[k]; return x; };
 /** build a refs object of non-empty string ids, or undefined if none. */
 const refs = (o) => { const r = {}; for (const k in o) if (o[k] != null && o[k] !== "") r[k] = String(o[k]); return Object.keys(r).length ? r : undefined; };
+/** atomic lat/lng: both finite → exact point; otherwise ungeocoded (both null, approximate).
+ *  Guards against half-coordinate source records (one axis set, the other null). */
+const geoExact = (r, method) => {
+  const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
+  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? "exact" : "approximate", geo_method: method };
+};
 /** frequency table of a field's values. */
 const count = (rows, key) => { const o = {}; for (const r of rows) { const v = r[key]; if (v != null) o[v] = (o[v] || 0) + 1; } return o; };
 const named = (rows) => rows.filter((r) => r.name).length;
@@ -395,6 +401,90 @@ const MIGRATIONS = {
       stats: (rows) => ({ by_type: count(rows, "type"), by_secteur: count(rows, "secteur") }),
     },
   },
+
+  poste: {
+    files: [
+      { file: "postoffices.json", map: (r) => clean({
+        id: String(r.id), name: r.name, name_ar: r.name_ar,
+        wilaya_code: r.wilaya_code, commune_code: r.commune_code || null,
+        commune: r.commune_fr, commune_ar: r.commune_ar,
+        ...geoExact(r, "baridimap"),
+        source: "baridimap",
+        class: r.class, postal_code: r.postal_code, postal_code_old: r.postal_code_old, address: r.address,
+      }) },
+      { file: "atms.json", map: (r) => clean({
+        id: String(r.id), name: r.name,
+        wilaya_code: r.wilaya_code, commune_code: null,
+        commune: r.commune_fr, commune_ar: r.commune_ar,
+        ...geoExact(r, "baridimap"),
+        source: "baridimap",
+        status: r.status, postal_code: r.postal_code, postal_code_old: r.postal_code_old, address: r.address,
+      }) },
+    ],
+    meta: {
+      sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference", retrieved: TODAY }],
+      license: "Data © Algérie Poste; redistributed for reference",
+      estimatedUniverse: null,
+      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
+      titles: { en: "Algeria post offices & ATMs", fr: "Bureaux de poste et GAB d'Algérie", ar: "مكاتب البريد والصرافات الآلية الجزائرية" },
+      stats: (rows) => ({ distinct_postal_codes: new Set(rows.map((r) => r.postal_code).filter(Boolean)).size }),
+    },
+  },
+
+  emploi: {
+    files: [
+      { file: "awem.json", map: (r) => clean({
+        id: r.id, name: r.name,
+        wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
+        ...geoExact(r, "anem"),
+        source: "anem",
+        type: r.type, code: r.code, address: r.address, phone: r.phone, fax: r.fax, email: r.email, manager: r.manager, communes: r.communes,
+      }) },
+      { file: "alem.json", map: (r) => clean({
+        id: r.id, name: r.name,
+        wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
+        ...geoExact(r, "anem"),
+        source: "anem",
+        type: r.type, code: r.code, address: r.address, phone: r.phone, fax: r.fax, email: r.email, manager: r.manager,
+      }) },
+    ],
+    meta: {
+      sources: [{ key: "anem", name: "ANEM — National Employment Agency (anem.dz)", url: "https://www.anem.dz", license: "Factual public listing (ANEM)", retrieved: TODAY }],
+      license: "Factual public listing (ANEM)",
+      estimatedUniverse: null,
+      coverageNote: "Employment agencies — regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
+      titles: { en: "Algeria employment agencies", fr: "Agences pour l'emploi d'Algérie", ar: "وكالات التشغيل الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type") }),
+    },
+  },
+
+  mobilis: {
+    files: [
+      { file: "agences.json", map: (r) => clean({
+        id: r.id, name: r.name, name_ar: r.name_ar,
+        wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
+        ...geoExact(r, "mobilis"),
+        source: "mobilis",
+        type: r.type, code: r.code, address: r.address, address_ar: r.address_ar,
+      }) },
+      { file: "pdv.json", geojson: false, map: (r) => clean({
+        id: r.id, name: r.name,
+        wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
+        lat: null, lng: null,
+        geo_precision: "approximate", geo_method: "ungeocoded",
+        source: "mobilis",
+        type: r.type, code: r.code, address: r.address,
+      }) },
+    ],
+    meta: {
+      sources: [{ key: "mobilis", name: "Mobilis — ATM Mobilis (mobilis.dz)", url: "https://www.mobilis.dz", license: "Data © ATM Mobilis; redistributed for reference", retrieved: TODAY }],
+      license: "Data © ATM Mobilis; redistributed for reference",
+      estimatedUniverse: null,
+      coverageNote: "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
+      titles: { en: "Mobilis stores (Algeria)", fr: "Points de vente Mobilis", ar: "نقاط بيع موبيليس" },
+      stats: (rows) => ({ by_type: count(rows, "type") }),
+    },
+  },
 };
 
 // --- runner -----------------------------------------------------------------
@@ -402,13 +492,26 @@ function migrate(pkg) {
   const cfg = MIGRATIONS[pkg];
   if (!cfg) { console.error(`  no migration config for ${pkg}`); return false; }
   const dir = join(ROOT, "packages", pkg, "data");
-  const base = cfg.file.replace(/\.json$/, "");
 
   const oldMeta = JSON.parse(readFileSync(join(dir, "metadata.json"), "utf-8"));
   if (oldMeta.schema_version === "2.0.0") { console.log(`  ${pkg}: already v2 — skipped`); return true; }
 
-  const rows = JSON.parse(readFileSync(join(dir, cfg.file), "utf-8")).map(cfg.map);
-  rows.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+  const specs = cfg.files || [{ file: cfg.file, map: cfg.map }];
+  mkdirSync(join(dir, "csv"), { recursive: true });
+  mkdirSync(join(dir, "geojson"), { recursive: true });
+
+  const all = [];
+  const entities = [];
+  for (const s of specs) {
+    const base = s.file.replace(/\.json$/, "");
+    const rows = JSON.parse(readFileSync(join(dir, s.file), "utf-8")).map(s.map);
+    rows.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+    writeFileSync(join(dir, s.file), JSON.stringify(rows, null, 2) + "\n");
+    writeFileSync(join(dir, "csv", `${base}.csv`), toCSV(rows, colsFor(rows)));
+    if (s.geojson !== false) writeFileSync(join(dir, "geojson", `${base}.geojson`), JSON.stringify(toGeoJSON(rows), null, 2) + "\n");
+    entities.push({ file: s.file, count: rows.length });
+    all.push(...rows);
+  }
 
   const preserved = {};
   for (const k of cfg.meta.preserve || []) if (oldMeta[k] != null) preserved[k] = oldMeta[k];
@@ -416,26 +519,20 @@ function migrate(pkg) {
   const metadata = {
     ...buildMetadata({
       package: `@geoalgeria/${pkg}`,
-      records: rows,
+      records: all,
       sources: cfg.meta.sources,
       license: cfg.meta.license,
       updated: TODAY,
       estimatedUniverse: cfg.meta.estimatedUniverse,
       coverageNote: cfg.meta.coverageNote,
       titles: cfg.meta.titles,
+      entities: specs.length > 1 ? entities : undefined,
     }),
-    ...(cfg.meta.stats ? cfg.meta.stats(rows) : {}),
+    ...(cfg.meta.stats ? cfg.meta.stats(all) : {}),
     ...preserved,
   };
-
-  const cols = colsFor(rows);
-  mkdirSync(join(dir, "csv"), { recursive: true });
-  mkdirSync(join(dir, "geojson"), { recursive: true });
-  writeFileSync(join(dir, cfg.file), JSON.stringify(rows, null, 2) + "\n");
-  writeFileSync(join(dir, "csv", `${base}.csv`), toCSV(rows, cols));
-  writeFileSync(join(dir, "geojson", `${base}.geojson`), JSON.stringify(toGeoJSON(rows), null, 2) + "\n");
   writeFileSync(join(dir, "metadata.json"), JSON.stringify(metadata, null, 2) + "\n");
-  console.log(`  ${pkg}: ${rows.length} records → v2 (${metadata.geocoded_pct}% geocoded, ${metadata.wilayas_covered} wilayas)`);
+  console.log(`  ${pkg}: ${all.length} records → v2 (${metadata.geocoded_pct}% geocoded, ${metadata.wilayas_covered} wilayas${specs.length > 1 ? `, ${specs.length} files` : ""})`);
   return true;
 }
 
