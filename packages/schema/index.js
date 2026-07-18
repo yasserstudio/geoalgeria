@@ -1,0 +1,9 @@
+// @geoalgeria/schema — the canonical data contract for GeoAlgeria datasets.
+// Types (types/index.d.ts) + a zero-dependency runtime validator + canonical
+// metadata / manifest / DCAT builders + CSV/GeoJSON emit helpers.
+
+export { SCHEMA_VERSION, GEO_PRECISION, WILAYA_CODES, DZ_BBOX } from "./src/constants.js";
+export { round6, wcode, toCSV, toGeoJSON, haversine, bbox } from "./src/emit.js";
+export { pointInGeometry, pointInWilaya, loadBoundaries } from "./src/geo.js";
+export { validateRecords, validateMetadata } from "./src/validate.js";
+export { buildMetadata, buildManifest, buildDcat } from "./src/build.js";

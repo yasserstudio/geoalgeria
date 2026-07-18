@@ -30,6 +30,8 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+// v2 contract enforcement (dormant until a package declares schema_version "2.0.0").
+import { validateRecords as validateV2Records } from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -368,10 +370,20 @@ function validateDataset(pkg, spec) {
   } catch (e) {
     fail(`${pkg}/metadata.json: cannot read — ${e.message}`);
   }
-  if (meta[spec.metaKey] !== arr.length) {
-    fail(
-      `${label}: count ${arr.length} ≠ metadata.${spec.metaKey} ${meta[spec.metaKey]}`,
-    );
+  // v2 packages carry canonical metadata (record_count); v1 use the package-named key.
+  const isV2 = meta.schema_version === "2.0.0";
+  const countKey = isV2 ? "record_count" : spec.metaKey;
+  if (meta[countKey] !== arr.length) {
+    fail(`${label}: count ${arr.length} ≠ metadata.${countKey} ${meta[countKey]}`);
+  }
+
+  // v2 contract: enforce the canonical GeoRecord shape via @geoalgeria/schema.
+  if (isV2) {
+    const { errors: v2errs, warnings: v2warn } = validateV2Records(arr, {
+      requireName: spec.required.includes("name"),
+    });
+    for (const m of v2errs) fail(`${label} [v2]: ${m}`);
+    if (v2warn.length) console.log(`  ⚠ ${label} [v2]: ${v2warn.length} warning(s)`);
   }
 
   // csv mirror
