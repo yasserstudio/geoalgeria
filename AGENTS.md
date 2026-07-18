@@ -3,6 +3,14 @@
 GeoAlgeria is a small **pnpm monorepo** of open Algeria datasets published to npm.
 This file is the short version of how work flows here; deeper docs are linked.
 
+## Domain vocabulary
+
+Before writing code, data, copy, package descriptions, or issue/PR titles, read
+[`CONTEXT.md`](CONTEXT.md) — the project's canonical glossary — and use its terms,
+avoiding the synonyms each lists under `_Avoid_`. If a concept is missing or a
+term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's the
+`/domain-modeling` skill).
+
 ## Layout
 
 | Path | Package | Contents |
