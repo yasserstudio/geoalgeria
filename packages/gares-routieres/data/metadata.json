@@ -1,11 +1,40 @@
 {
-  "source": "SOGRAL — EPE SOGRAL Spa, Société de Gestion des Gares Routières d'Algérie",
-  "origin": "https://live.sogral.com/api/live/agencies",
-  "license": "Data © SOGRAL; redistributed for reference. See LICENSE.",
-  "stations": 74,
+  "package": "@geoalgeria/gares-routieres",
+  "schema_version": "2.0.0",
+  "title_fr": "Gares routières d'Algérie",
+  "title_ar": "المحطات البرية الجزائرية",
+  "title_en": "Algeria intercity bus stations",
+  "record_count": 74,
+  "geocoded_count": 74,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 73,
+    "approximate": 1
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "SOGRAL-managed intercity bus stations (gares routières) with surface areas, from the SOGRAL live API.",
   "wilayas_covered": 51,
-  "geocoded": 74,
-  "geo_precision_note": "Coordinates from SOGRAL; 3 were fixed (Touggourt/Djanet from OSM; Guelma is the commune centroid, geo_precision=approx).",
-  "linkage_note": "wilaya_code/commune are a nearest-centroid join against the geoalgeria commune set; this also reconciles SOGRAL's legacy 48-wilaya codes to the 58/69 model. Join wilaya_code against `geoalgeria` for names.",
-  "generated_at": "2026-07-01"
+  "bbox": [
+    -2.199312,
+    22.817813,
+    9.562312,
+    36.890589
+  ],
+  "sources": [
+    {
+      "key": "sogral",
+      "name": "SOGRAL — Société de Gestion des Gares Routières d'Algérie",
+      "url": "https://live.sogral.com",
+      "license": "Data © SOGRAL; redistributed for reference",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "Data © SOGRAL; redistributed for reference",
+  "updated": "2026-07-18",
+  "by_geo_method": {
+    "exact": 73,
+    "approx": 1
+  },
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

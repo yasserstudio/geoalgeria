@@ -13,13 +13,22 @@
       "properties": {
         "id": "daad",
         "name": "Aéroport de BOU SAADA/Ain Eddis",
+        "wilaya_code": "68",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.32449005474226,
+        "lng": 4.200126110472756,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAD"
+        },
         "icao": "DAAD",
         "iata": null,
         "address": "BP 278/ BOU SAADA",
         "phone": "+213 35 43 47 78",
-        "website": "https://aeroports-egsa-alger.dz/fr/1.html",
-        "wilaya_code": "68",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/1.html"
       }
     },
     {
@@ -34,13 +43,22 @@
       "properties": {
         "id": "daae",
         "name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane",
+        "wilaya_code": "06",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7158254808996,
+        "lng": 5.071032952852189,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAE"
+        },
         "icao": "DAAE",
         "iata": null,
         "address": "Soummam‐Abane Ramdane‐ Bejaia",
         "phone": "+213 34183036",
-        "website": "https://aeroports-egsa-alger.dz/fr/11.html",
-        "wilaya_code": "06",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/11.html"
       }
     },
     {
@@ -55,13 +73,22 @@
       "properties": {
         "id": "daag",
         "name": "Aéroport d’Alger – Houari Boumediene",
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.69951171485545,
+        "lng": 3.210846808533331,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAG"
+        },
         "icao": "DAAG",
         "iata": null,
         "address": "Alger BP 164 DAR EL BEIDA",
         "phone": "+21323199230",
-        "website": "https://www.aeroportalger.dz/",
-        "wilaya_code": "16",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.aeroportalger.dz/"
       }
     },
     {
@@ -76,13 +103,22 @@
       "properties": {
         "id": "daaj",
         "name": "Aéroport de DJANET / Tiska-DJANET",
+        "wilaya_code": "56",
+        "commune_code": null,
+        "commune": null,
+        "lat": 24.28966075585949,
+        "lng": 9.46571858129957,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAJ"
+        },
         "icao": "DAAJ",
         "iata": null,
         "address": "Aéroport de DJANET / Tiska BP 29. ‐DJANET",
         "phone": "+213 29481502",
-        "website": "https://aeroports-egsa-alger.dz/fr/13.html",
-        "wilaya_code": "56",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/13.html"
       }
     },
     {
@@ -97,13 +133,22 @@
       "properties": {
         "id": "daap",
         "name": "Aéroport de ILLIZI/TAKHAMALT",
+        "wilaya_code": "33",
+        "commune_code": null,
+        "commune": null,
+        "lat": 26.71924934185029,
+        "lng": 8.618196725541447,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAP"
+        },
         "icao": "DAAP",
         "iata": null,
         "address": "Aéroport de ILLIZI/TAKHAMALT BP 39 ‐ILLIZI",
         "phone": "+213 29413013",
-        "website": "https://aeroports-egsa-alger.dz/fr/5.html",
-        "wilaya_code": "33",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/5.html"
       }
     },
     {
@@ -118,13 +163,22 @@
       "properties": {
         "id": "daas",
         "name": "Aéroport de SETIF /8 Mai 45",
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.17553448867715,
+        "lng": 5.330306679093995,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAS"
+        },
         "icao": "DAAS",
         "iata": null,
         "address": "Aéroport de SETIF /8 Mai 45 ‐ BP 219 /Sétif",
         "phone": "+213 36 543135",
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-setif-08-mai-1945",
-        "wilaya_code": "19",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-setif-08-mai-1945"
       }
     },
     {
@@ -139,13 +193,22 @@
       "properties": {
         "id": "daat",
         "name": "Aéroport de Tamanrasset – Aguenar – Hadj Bey Akhamok",
+        "wilaya_code": "11",
+        "commune_code": null,
+        "commune": null,
+        "lat": 22.81520178682999,
+        "lng": 5.448914008186444,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAT"
+        },
         "icao": "DAAT",
         "iata": null,
         "address": "Aéroport de TAMENGHASSET/Aguenar-Hadj Bey Akhamok- BP 38/TAMENGHASSET",
         "phone": "+21329330031",
-        "website": "https://aeroports-egsa-alger.dz/fr/16.html",
-        "wilaya_code": "11",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/16.html"
       }
     },
     {
@@ -160,13 +223,22 @@
       "properties": {
         "id": "daav",
         "name": "Aéroport de JIJEL/FERHAT ABBAS",
+        "wilaya_code": "18",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.79340595973765,
+        "lng": 5.877778649666695,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAAV"
+        },
         "icao": "DAAV",
         "iata": null,
         "address": "Aéroport de JIJEL/FERHAT ABBAS BP :37- TAHER / JIJEL",
         "phone": "+213 34 544408",
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-jijel-ferhat-abbas",
-        "wilaya_code": "18",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-jijel-ferhat-abbas"
       }
     },
     {
@@ -181,13 +253,22 @@
       "properties": {
         "id": "dabb",
         "name": "Aéroport Annaba – Rabah Bitat",
+        "wilaya_code": "36",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.82441556514175,
+        "lng": 7.821324125869026,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DABB"
+        },
         "icao": "DABB",
         "iata": null,
         "address": "Rabah Bitat BP 296‐ Annaba",
         "phone": "+21338529071",
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat",
-        "wilaya_code": "36",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat"
       }
     },
     {
@@ -202,13 +283,22 @@
       "properties": {
         "id": "dabc",
         "name": "Aéroport de Constantine – Mohamed Boudiaf",
+        "wilaya_code": "25",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.28378418745162,
+        "lng": 6.621478825849163,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DABC"
+        },
         "icao": "DABC",
         "iata": null,
         "address": "AVA, Aéroport de CONSTANTINE",
         "phone": "+21331810125",
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-constantine-mohamed-boudiaf",
-        "wilaya_code": "25",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-constantine-mohamed-boudiaf"
       }
     },
     {
@@ -223,13 +313,22 @@
       "properties": {
         "id": "dabs",
         "name": "Aéroport de Tébessa – Cheikh Larbi Tébessi",
+        "wilaya_code": "12",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.42775621347607,
+        "lng": 8.118502895134583,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DABS"
+        },
         "icao": "DABS",
         "iata": null,
         "address": "Aéroport de TEBESSA/Cheikh Larbi Tébessi BP 78‐Tebessa",
         "phone": null,
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-tebessa-cheikh-larbi-tebessi",
-        "wilaya_code": "12",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-tebessa-cheikh-larbi-tebessi"
       }
     },
     {
@@ -244,13 +343,22 @@
       "properties": {
         "id": "dabt",
         "name": "Aéroport BATNA/ Mostepha Ben BOULAID",
+        "wilaya_code": "05",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.75767824581629,
+        "lng": 6.308248427678342,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DABT"
+        },
         "icao": "DABT",
         "iata": null,
         "address": "Batna-Mostepha Ben BOULAID aeroport",
         "phone": "+213 33 870152",
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-batna-mostefa-ben-boulaid",
-        "wilaya_code": "05",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-batna-mostefa-ben-boulaid"
       }
     },
     {
@@ -265,13 +373,22 @@
       "properties": {
         "id": "daob",
         "name": "Aéroport TIARET - Abdelhafid Boussouf Bou Chekif",
+        "wilaya_code": "14",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.34579589348178,
+        "lng": 1.4698592674102533,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOB"
+        },
         "icao": "DAOB",
         "iata": null,
         "address": "Aéroport TIARET / Abdelhafid Boussouf Bou Chekif ‐BP 12/Tiaret",
         "phone": "+213 46240005",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-tiaret/",
-        "wilaya_code": "14",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-tiaret/"
       }
     },
     {
@@ -286,13 +403,22 @@
       "properties": {
         "id": "daof",
         "name": "Aéroport de TINDOUF",
+        "wilaya_code": "37",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.705212653326345,
+        "lng": -8.16543384744355,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOF"
+        },
         "icao": "DAOF",
         "iata": null,
         "address": "AVA, Direction de la Sécurité Aéronautique BP 72 /TINDOUF",
         "phone": "+213 49370017",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-tindouf/",
-        "wilaya_code": "37",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-tindouf/"
       }
     },
     {
@@ -307,13 +433,22 @@
       "properties": {
         "id": "daoi",
         "name": "Aéroport de CHLEF",
+        "wilaya_code": "02",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.21763410012118,
+        "lng": 1.3246854393403855,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOI"
+        },
         "icao": "DAOI",
         "iata": null,
         "address": "Aboubakr Belkaid Airport, Chlef",
         "phone": "+213 27728032",
-        "website": "https://aeroports-egsa-alger.dz/fr/15.html",
-        "wilaya_code": "02",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/15.html"
       }
     },
     {
@@ -328,13 +463,22 @@
       "properties": {
         "id": "daon",
         "name": "Aéroport de Tlemcen – Zenata – Messali El Hadj",
+        "wilaya_code": "13",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.012480117143284,
+        "lng": -1.4480446913865919,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAON"
+        },
         "icao": "DAON",
         "iata": null,
         "address": "Aéroport de TLEMCEN/Zenata-Messali El Hadj/BP50- ZENATA/TLEMCEN",
         "phone": "+21343403149",
-        "website": "https://egsa-oran.dz/index.php/nos-aeroports/",
-        "wilaya_code": "13",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/nos-aeroports/"
       }
     },
     {
@@ -349,13 +493,22 @@
       "properties": {
         "id": "daoo",
         "name": "Aéroport d’Oran – Ahmed Benbella",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.61833150995104,
+        "lng": -0.6109085969987015,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOO"
+        },
         "icao": "DAOO",
         "iata": null,
         "address": "Aéroportd’ORAN/Ahmed BenbellaBP13 -Oran",
         "phone": "+21341591067",
-        "website": "https://egsa-oran.dz/index.php/aeroport-doran/",
-        "wilaya_code": "31",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-doran/"
       }
     },
     {
@@ -370,13 +523,22 @@
       "properties": {
         "id": "daor",
         "name": "Aéroport de BECHAR/Boudghene Ben Ali Lotf",
+        "wilaya_code": "08",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.651481919578377,
+        "lng": -2.2525513149111935,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOR"
+        },
         "icao": "DAOR",
         "iata": null,
         "address": "Boudghene Ben Ali Lotfi‐ BP: 69/Bechar",
         "phone": "+213 49221909",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-bechar/",
-        "wilaya_code": "08",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-bechar/"
       }
     },
     {
@@ -391,13 +553,22 @@
       "properties": {
         "id": "daov",
         "name": "Aéroport de GHRISS",
+        "wilaya_code": "29",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.204242738046425,
+        "lng": 0.15366508348121125,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOV"
+        },
         "icao": "DAOV",
         "iata": null,
         "address": "Aéroport de GHRISS BP 12 - GHRISS",
         "phone": "+213 45715911",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-mascara/",
-        "wilaya_code": "29",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-mascara/"
       }
     },
     {
@@ -412,13 +583,22 @@
       "properties": {
         "id": "daoy",
         "name": "Aéroport d'EL BAYADH",
+        "wilaya_code": "32",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.718310325446744,
+        "lng": 1.093221137403827,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAOY"
+        },
         "icao": "DAOY",
         "iata": null,
         "address": "Aéroport d’El Bayadh BP 209 RP/ El Bayadh",
         "phone": "+213 49667806",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-el-bayadh/",
-        "wilaya_code": "32",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-el-bayadh/"
       }
     },
     {
@@ -433,13 +613,22 @@
       "properties": {
         "id": "datg",
         "name": "Aéroport d’IN GUEZZAM",
+        "wilaya_code": "54",
+        "commune_code": null,
+        "commune": null,
+        "lat": 19.563939499098094,
+        "lng": 5.751815823519952,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DATG"
+        },
         "icao": "DATG",
         "iata": null,
         "address": "Aéroport d’IN GUEZZAM / IN GUEZZAM",
         "phone": "+213 29 351123",
-        "website": "https://aeroports-egsa-alger.dz/fr/7.html",
-        "wilaya_code": "54",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/7.html"
       }
     },
     {
@@ -454,13 +643,22 @@
       "properties": {
         "id": "datm",
         "name": "Aéroport de BORDJ MOKHTAR –BORDJ MOKHTAR",
+        "wilaya_code": "50",
+        "commune_code": null,
+        "commune": null,
+        "lat": 21.371800375167478,
+        "lng": 0.9238537082170545,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DATM"
+        },
         "icao": "DATM",
         "iata": null,
         "address": "BORDJ MOKHTAR",
         "phone": "+213 49329304",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-bordj-badji-mokhtar/",
-        "wilaya_code": "50",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-bordj-badji-mokhtar/"
       }
     },
     {
@@ -475,13 +673,22 @@
       "properties": {
         "id": "daua",
         "name": "Aéroport d’Adrar – Touat – Cheikh Sidi Mohamed Belkebir",
+        "wilaya_code": "01",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.842093213179865,
+        "lng": -0.1894002032622811,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUA"
+        },
         "icao": "DAUA",
         "iata": null,
         "address": "Touat‐Cheikh Sidi Mohamed Belkebir BP15‐Adrar",
         "phone": "+21349358003",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-adrar/",
-        "wilaya_code": "01",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-adrar/"
       }
     },
     {
@@ -496,13 +703,22 @@
       "properties": {
         "id": "daub",
         "name": "Aéroport de BISKRA/ Mohamed KHIDER",
+        "wilaya_code": "07",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.79160974695419,
+        "lng": 5.733631154631189,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUB"
+        },
         "icao": "DAUB",
         "iata": null,
         "address": "ENNA – Direction de la Sécurité Aéronautique BP 27 star Melouk BISKRA, Biskra",
         "phone": "+213 33543005",
-        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-biskra-mohamed-kheider",
-        "wilaya_code": "07",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-biskra-mohamed-kheider"
       }
     },
     {
@@ -517,13 +733,22 @@
       "properties": {
         "id": "daue",
         "name": "Aéroport d’El GOLEA",
+        "wilaya_code": "58",
+        "commune_code": null,
+        "commune": null,
+        "lat": 30.571557198848183,
+        "lng": 2.8688732967150132,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUE"
+        },
         "icao": "DAUE",
         "iata": null,
         "address": "Aéroport d’El GOLEA BP 30- El GOLEA",
         "phone": "+213 29210735",
-        "website": "https://aeroports-egsa-alger.dz/fr/6.html",
-        "wilaya_code": "58",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/6.html"
       }
     },
     {
@@ -538,13 +763,22 @@
       "properties": {
         "id": "daug",
         "name": "Aéroport de Ghardaïa – Noumérat Moufdi Zakaria",
+        "wilaya_code": "47",
+        "commune_code": null,
+        "commune": null,
+        "lat": 32.378608164328305,
+        "lng": 3.8015461545489084,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUG"
+        },
         "icao": "DAUG",
         "iata": null,
         "address": "Aéroport de GHARDAIA/Noumérat‐Moufdi Zakaria BP 123/Ghardaia",
         "phone": "+21329295555",
-        "website": "https://aeroports-egsa-alger.dz/fr/14.html",
-        "wilaya_code": "47",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/14.html"
       }
     },
     {
@@ -559,13 +793,22 @@
       "properties": {
         "id": "dauh",
         "name": "Aéroport de Hassi Messaoud – Oued Irara – Krim Belkacem",
+        "wilaya_code": "30",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.675453603011896,
+        "lng": 6.144544541032298,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUH"
+        },
         "icao": "DAUH",
         "iata": null,
         "address": "Aéroport de Hassi Messaoud/Oued Irara‐Krim Belkacem BP 130",
         "phone": "+21329741885",
-        "website": "https://aeroports-egsa-alger.dz/fr/10.html",
-        "wilaya_code": "30",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/10.html"
       }
     },
     {
@@ -580,13 +823,22 @@
       "properties": {
         "id": "daui",
         "name": "Aéroport de In Salah BP 23 - IN SALAH",
+        "wilaya_code": "53",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.252139159419297,
+        "lng": 2.508766383227296,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUI"
+        },
         "icao": "DAUI",
         "iata": null,
         "address": "Aéroport de In Salah BP 23 - IN SALAH",
         "phone": "+213 29366103",
-        "website": "https://aeroports-egsa-alger.dz/fr/4.html",
-        "wilaya_code": "53",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/4.html"
       }
     },
     {
@@ -601,13 +853,22 @@
       "properties": {
         "id": "dauk",
         "name": "Aéroport de TOUGGOURT /Sidi Mahdi",
+        "wilaya_code": "55",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.06679067003136,
+        "lng": 6.091777108546213,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUK"
+        },
         "icao": "DAUK",
         "iata": null,
         "address": "Aéroport de TOUGGOURT /Sidi Mahdi ‐BP 47 / TOUGGOURT",
         "phone": "+213 29 69 31 45",
-        "website": "https://aeroports-egsa-alger.dz/fr/8.html",
-        "wilaya_code": "55",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/8.html"
       }
     },
     {
@@ -622,13 +883,22 @@
       "properties": {
         "id": "dauo",
         "name": "Aéroport d’El Oued/Guemar",
+        "wilaya_code": "39",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.507414582460555,
+        "lng": 6.784868996915831,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUO"
+        },
         "icao": "DAUO",
         "iata": null,
         "address": "Aéroport d’El Oued/Guemar BP 110 / El Oued",
         "phone": "+213 32101015",
-        "website": "https://aeroports-egsa-alger.dz/fr/17.html",
-        "wilaya_code": "39",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/17.html"
       }
     },
     {
@@ -643,13 +913,22 @@
       "properties": {
         "id": "daut",
         "name": "Aéroport de TIMIMOUN",
+        "wilaya_code": "49",
+        "commune_code": null,
+        "commune": null,
+        "lat": 29.244465048530696,
+        "lng": 0.2812601237662405,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUT"
+        },
         "icao": "DAUT",
         "iata": null,
         "address": "Aéroport de TIMIMOUN ‐ BP 440/ TIMIMOUN",
         "phone": "+213 49305706",
-        "website": "https://egsa-oran.dz/index.php/aeroport-de-timimoun/",
-        "wilaya_code": "49",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://egsa-oran.dz/index.php/aeroport-de-timimoun/"
       }
     },
     {
@@ -664,13 +943,22 @@
       "properties": {
         "id": "dauu",
         "name": "Aéroport de Ouargla/Ain Beida",
+        "wilaya_code": "30",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.936205024205428,
+        "lng": 5.408429008410361,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUU"
+        },
         "icao": "DAUU",
         "iata": null,
         "address": "Aéroport de Ouargla‐ BP 11 /OUARGLA",
         "phone": "+213 29774906",
-        "website": "https://aeroports-egsa-alger.dz/fr/2.html",
-        "wilaya_code": "30",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/2.html"
       }
     },
     {
@@ -685,13 +973,22 @@
       "properties": {
         "id": "dauz",
         "name": "Aéroport de Zarzaitine – In Aménas",
+        "wilaya_code": "33",
+        "commune_code": null,
+        "commune": null,
+        "lat": 28.051765839675433,
+        "lng": 9.63789046606008,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "anac",
+        "refs": {
+          "icao": "DAUZ"
+        },
         "icao": "DAUZ",
         "iata": null,
         "address": "Aéroport de In Amenas B.P 51 /IN AMENAS",
         "phone": "+213 29 45 13",
-        "website": "https://aeroports-egsa-alger.dz/fr/12.html",
-        "wilaya_code": "33",
-        "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+        "website": "https://aeroports-egsa-alger.dz/fr/12.html"
       }
     }
   ]

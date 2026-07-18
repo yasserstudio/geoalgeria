@@ -1,8 +1,37 @@
 {
-  "source": "Ministère de l'Industrie Pharmaceutique (MIP) — official list of approved pharmaceutical manufacturing establishments (établissements pharmaceutiques de fabrication), geocoded against the geoalgeria commune set",
-  "origin": "https://miph.gov.dz/fr/etablissements-pharmaceutiques/",
-  "license": "MIP register: factual public-sector listing. See README for attribution.",
-  "industrie-pharmaceutique": 171,
+  "package": "@geoalgeria/industrie-pharmaceutique",
+  "schema_version": "2.0.0",
+  "title_fr": "Industrie pharmaceutique d'Algérie",
+  "title_ar": "الصناعة الصيدلانية الجزائرية",
+  "title_en": "Algeria pharmaceutical manufacturers",
+  "record_count": 171,
+  "geocoded_count": 171,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 0,
+    "approximate": 171
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Approved pharmaceutical & medical-device manufacturers from the MIP register, geocoded to commune/wilaya centroids (approximate).",
+  "wilayas_covered": 25,
+  "bbox": [
+    -1.316667,
+    33.8,
+    8.317,
+    36.9
+  ],
+  "sources": [
+    {
+      "key": "mip",
+      "name": "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register",
+      "url": "https://www.miph.gov.dz",
+      "license": "Factual public register (MIP)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "Factual public register (MIP)",
+  "updated": "2026-07-18",
   "by_nature": {
     "dm": 48,
     "pp": 120,
@@ -11,14 +40,9 @@
   "by_role": {
     "fabricant": 171
   },
-  "by_geo_precision": {
+  "by_geo_method": {
     "commune_centroid": 126,
-    "wilaya_centroid": 45,
-    "none": 0
+    "wilaya_centroid": 45
   },
-  "wilayas_covered": 25,
-  "geocoded": 171,
-  "linkage_note": "Operator names + PP/DM nature are from the current MIP fabrication register (updated 2026-06-28), which carries no coordinates. Wilaya/commune are resolved from the 2023 MIP list's wilaya column, a place token in the operator name, or a per-company research pass (company sites, the CACI/El Mouchir directory, press) for makers absent from the 2023 list — never guessed. Coordinates are the commune centroid, or the wilaya centroid where only the wilaya is known (see geo_precision).",
-  "coverage_note": "Approved pharmaceutical MANUFACTURERS only (fabrication agrément). 171 of the ~186 establishments on the register are geocoded here; the rest are contract manufacturers listed as 'sous-traitance' (no own site) or a few very small device makers with no locatable address. Importers, wholesalers, exploitation and promotion are separate MIP registers, not included in this manufacturers layer.",
-  "generated_at": "2026-07-05"
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

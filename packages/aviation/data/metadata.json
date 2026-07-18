@@ -1,8 +1,36 @@
 {
-  "source": "ANAC — Autorité Nationale de l'Aviation Civile (anac.dz)",
-  "origin": "https://www.anac.dz/en/carte-des-aeroports-3/",
-  "license": "Data © ANAC; redistributed for reference. See README.",
-  "airports": 33,
+  "package": "@geoalgeria/aviation",
+  "schema_version": "2.0.0",
+  "title_fr": "Aéroports d'Algérie",
+  "title_ar": "مطارات الجزائر",
+  "title_en": "Algeria airports",
+  "record_count": 33,
+  "geocoded_count": 33,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 33,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
   "wilayas_covered": 31,
-  "generated_at": "2026-06-14"
+  "bbox": [
+    -8.165434,
+    19.563939,
+    9.63789,
+    36.824416
+  ],
+  "sources": [
+    {
+      "key": "anac",
+      "name": "ANAC — Autorité Nationale de l'Aviation Civile",
+      "url": "https://www.anac.dz",
+      "license": "Factual public listing (ANAC)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "Factual public listing (ANAC)",
+  "updated": "2026-07-18",
+  "with_iata": 0
 }

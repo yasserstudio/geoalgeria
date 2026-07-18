@@ -157,6 +157,150 @@ const MIGRATIONS = {
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
   },
+
+  sante: {
+    file: "sante.json",
+    map: (r) => {
+      const gp = r.geo_precision;
+      const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
+      return clean({
+        id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
+        wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
+        lat: has ? r.lat : null, lng: has ? r.lng : null,
+        geo_precision: gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate",
+        geo_method: gp,
+        source: "msp",
+        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id }),
+        type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
+        sector: r.sector, slug: r.slug,
+      });
+    },
+    meta: {
+      sources: [
+        { key: "msp", name: "Ministry of Health (sante.gov.dz) — health-establishment registry", url: "https://sante.gov.dz", license: "Official public registry (Ministry of Health)", retrieved: TODAY },
+        { key: "osm", name: "OpenStreetMap — geocoding", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
+        { key: "wikidata", name: "Wikidata — geocoding", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
+      ],
+      license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
+      estimatedUniverse: null,
+      coverageNote: "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+      titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
+    },
+  },
+
+  ferroviaire: {
+    file: "stations.json",
+    map: (r) => clean({
+      id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
+      wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: "exact",
+      geo_method: r.osm_id ? "osm_" + r.osm_id.split("/")[0] : "wikidata",
+      source: r.source,
+      refs: refs({ wikidata: r.wikidata, osm: r.osm_id }),
+      type: r.type, line: r.line, operator: r.operator, network: r.network,
+    }),
+    meta: {
+      sources: [
+        { key: "wikidata", name: "Wikidata — rail & urban transit stations in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
+        { key: "osm", name: "OpenStreetMap — rail & urban transit stations in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
+      ],
+      license: "CC0-1.0 AND ODbL-1.0",
+      estimatedUniverse: null,
+      coverageNote: "Rail and urban-transit stations (SNTF, metro, tram) compiled from Wikidata + OpenStreetMap.",
+      titles: { en: "Algeria railway & transit stations", fr: "Gares ferroviaires et de transit d'Algérie", ar: "محطات السكك الحديدية والنقل الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), by_operator: count(rows, "operator"), linkage_note: LINKAGE }),
+    },
+  },
+
+  "gares-routieres": {
+    file: "stations.json",
+    map: (r) => clean({
+      id: r.id, name: r.name,
+      wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: r.geo_precision === "exact" ? "exact" : "approximate",
+      geo_method: r.geo_precision,
+      source: "sogral",
+      refs: refs({ sogral: r.sogral_code }),
+      official_name: r.official_name, address: r.address,
+      surface_total_m2: r.surface_total_m2, surface_built_m2: r.surface_built_m2,
+    }),
+    meta: {
+      sources: [{ key: "sogral", name: "SOGRAL — Société de Gestion des Gares Routières d'Algérie", url: "https://live.sogral.com", license: "Data © SOGRAL; redistributed for reference", retrieved: TODAY }],
+      license: "Data © SOGRAL; redistributed for reference",
+      estimatedUniverse: null,
+      coverageNote: "SOGRAL-managed intercity bus stations (gares routières) with surface areas, from the SOGRAL live API.",
+      titles: { en: "Algeria intercity bus stations", fr: "Gares routières d'Algérie", ar: "المحطات البرية الجزائرية" },
+      stats: (rows) => ({ by_geo_method: count(rows, "geo_method"), linkage_note: LINKAGE }),
+    },
+  },
+
+  aviation: {
+    file: "airports.json",
+    map: (r) => clean({
+      id: r.id, name: r.name,
+      wilaya_code: r.wilaya_code, commune_code: null, commune: null,
+      lat: r.lat, lng: r.lng,
+      geo_precision: "exact", geo_method: "source_point",
+      source: "anac",
+      refs: refs({ icao: r.icao, iata: r.iata }),
+      icao: r.icao, iata: r.iata, address: r.address, phone: r.phone, website: r.website,
+    }),
+    meta: {
+      sources: [{ key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)", retrieved: TODAY }],
+      license: "Factual public listing (ANAC)",
+      estimatedUniverse: null,
+      coverageNote: "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
+      titles: { en: "Algeria airports", fr: "Aéroports d'Algérie", ar: "مطارات الجزائر" },
+      stats: (rows) => ({ with_iata: rows.filter((r) => r.iata).length }),
+    },
+  },
+
+  agriculture: {
+    file: "agriculture.json",
+    map: (r) => clean({
+      id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
+      wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: "approximate", geo_method: r.geo_precision,
+      source: "madr",
+      refs: refs({ wikidata: r.wikidata, osm: r.osm_id }),
+      type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
+      sector: r.sector, abbreviation: r.abbreviation, address: r.address, phone: r.phone, fax: r.fax, slug: r.slug,
+    }),
+    meta: {
+      sources: [{ key: "madr", name: "Ministry of Agriculture, Rural Development and Fisheries (MADR)", url: "https://madr.gov.dz", license: "Factual public institutional listing (MADR)", retrieved: TODAY }],
+      license: "Factual public institutional listing (MADR)",
+      estimatedUniverse: null,
+      coverageNote: "Agricultural institutions (training institutes, research, services) from the MADR — all positions are wilaya- or commune-centroid approximations (no surveyed points).",
+      titles: { en: "Algeria agricultural institutions", fr: "Institutions agricoles d'Algérie", ar: "المؤسسات الفلاحية الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), linkage_note: LINKAGE }),
+    },
+  },
+
+  "industrie-pharmaceutique": {
+    file: "industrie-pharmaceutique.json",
+    map: (r) => clean({
+      id: r.id, name: r.name,
+      wilaya_code: String(r.wilaya_code).padStart(2, "0"),
+      commune_code: padC(r.commune_code), commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: "approximate", geo_method: r.geo_precision,
+      source: "mip",
+      operateur: r.operateur, role: r.role, nature: r.nature,
+      nature_label_fr: r.nature_label_fr, nature_label_ar: r.nature_label_ar, slug: r.slug,
+    }),
+    meta: {
+      sources: [{ key: "mip", name: "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register", url: "https://www.miph.gov.dz", license: "Factual public register (MIP)", retrieved: TODAY }],
+      license: "Factual public register (MIP)",
+      estimatedUniverse: null,
+      coverageNote: "Approved pharmaceutical & medical-device manufacturers from the MIP register, geocoded to commune/wilaya centroids (approximate).",
+      titles: { en: "Algeria pharmaceutical manufacturers", fr: "Industrie pharmaceutique d'Algérie", ar: "الصناعة الصيدلانية الجزائرية" },
+      stats: (rows) => ({ by_nature: count(rows, "nature"), by_role: count(rows, "role"), by_geo_method: count(rows, "geo_method"), linkage_note: LINKAGE }),
+    },
+  },
 };
 
 // --- runner -----------------------------------------------------------------
