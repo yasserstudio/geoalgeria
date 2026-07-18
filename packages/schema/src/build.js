@@ -1,7 +1,7 @@
 // Builders for the canonical metadata.json, the repo catalog (index.json), and a
 // schema.org/DCAT Dataset descriptor per package. Pure — the caller stamps dates.
 
-import { SCHEMA_VERSION } from "./constants.js";
+import { SCHEMA_VERSION, LIFECYCLE } from "./constants.js";
 import { bbox } from "./emit.js";
 
 /** num/den as a percentage, 1 decimal place (0 when den is falsy). */
@@ -36,6 +36,15 @@ export function buildMetadata(input) {
     if (Object.prototype.hasOwnProperty.call(precision, r.geo_precision)) precision[r.geo_precision]++;
   const wilayas = new Set(records.map((r) => r.wilaya_code).filter(Boolean));
 
+  // Lifecycle rollup — only emitted when at least one record declares a lifecycle.
+  const lifecycle = Object.fromEntries(LIFECYCLE.map((k) => [k, 0]));
+  let anyLifecycle = false;
+  for (const r of records)
+    if (r.lifecycle != null && Object.prototype.hasOwnProperty.call(lifecycle, r.lifecycle)) {
+      lifecycle[r.lifecycle]++;
+      anyLifecycle = true;
+    }
+
   return {
     package: pkg,
     schema_version: SCHEMA_VERSION,
@@ -46,6 +55,7 @@ export function buildMetadata(input) {
     geocoded_count: geocoded.length,
     geocoded_pct: pct(geocoded.length, records.length),
     precision,
+    ...(anyLifecycle ? { lifecycle } : {}),
     estimated_universe: estimatedUniverse,
     coverage_pct: estimatedUniverse ? pct(records.length, estimatedUniverse) : null,
     ...(coverageNote ? { coverage_note: coverageNote } : {}),

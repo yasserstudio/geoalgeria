@@ -2,7 +2,7 @@
 // validateRecords enforces the canonical GeoRecord shape; validateMetadata the
 // canonical DatasetMetadata shape. Errors block a release; warnings are advisory.
 
-import { GEO_PRECISION, DZ_BBOX, WILAYA_CODES } from "./constants.js";
+import { GEO_PRECISION, LIFECYCLE, EVIDENCE_TYPE, DZ_BBOX, WILAYA_CODES } from "./constants.js";
 import { pointInWilaya } from "./geo.js";
 
 const WSET = new Set(WILAYA_CODES); // "01".."69" zero-padded — single source of truth
@@ -70,6 +70,10 @@ export function validateRecords(records, opts = {}) {
     if (!GEO_PRECISION.includes(r.geo_precision))
       err(i, `geo_precision must be one of ${GEO_PRECISION.join("|")} (got ${JSON.stringify(r.geo_precision)})`);
 
+    // lifecycle — optional, but from the fixed vocabulary when present
+    if (r.lifecycle != null && !LIFECYCLE.includes(r.lifecycle))
+      err(i, `lifecycle must be one of ${LIFECYCLE.join("|")} (got ${JSON.stringify(r.lifecycle)})`);
+
     // name — at least one, when required
     if (
       opts.requireName &&
@@ -118,6 +122,8 @@ export function validateMetadata(meta) {
     meta.sources.forEach((s, i) => {
       if (!s || typeof s.key !== "string") errors.push(`metadata.sources[${i}].key is missing`);
       if (!s || typeof s.license !== "string") errors.push(`metadata.sources[${i}].license is missing`);
+      if (s && s.evidence_type != null && !EVIDENCE_TYPE.includes(s.evidence_type))
+        errors.push(`metadata.sources[${i}].evidence_type must be one of ${EVIDENCE_TYPE.join("|")} (got ${JSON.stringify(s.evidence_type)})`);
     });
 
   if (

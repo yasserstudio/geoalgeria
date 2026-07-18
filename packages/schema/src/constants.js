@@ -6,6 +6,13 @@ export const SCHEMA_VERSION = "2.0.0";
 /** Coordinate-provenance vocabulary. Detail (e.g. "osm_node") lives in geo_method. */
 export const GEO_PRECISION = ["exact", "approximate"];
 
+/** Operational status of a facility/asset. Optional per-record; absent means unknown. */
+export const LIFECYCLE = ["operating", "planned", "closed", "unknown"];
+
+/** How a source establishes a record: an official register, community mapping, or
+ *  our own computation. Declared per source (metadata.sources[].evidence_type). */
+export const EVIDENCE_TYPE = ["official", "crowdsourced", "derived"];
+
 /** The 69 post-2026-reform wilaya codes as zero-padded 2-digit strings ("01".."69"). */
 export const WILAYA_CODES = Array.from({ length: 69 }, (_, i) =>
   String(i + 1).padStart(2, "0"),

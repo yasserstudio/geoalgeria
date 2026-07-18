@@ -16,6 +16,8 @@ import {
   toGeoJSON,
   SCHEMA_VERSION,
   WILAYA_CODES,
+  LIFECYCLE,
+  EVIDENCE_TYPE,
 } from "../index.js";
 
 /** A minimal, contract-valid record. */
@@ -86,6 +88,16 @@ test("coordinate sanity guard catches lat/lng swap and sign flip (no polygons ne
 test("geo_precision must be from the vocabulary", () => {
   assert.equal(validateRecords([rec({ geo_precision: "osm_node" })]).errors.length, 1);
   assert.equal(validateRecords([rec({ geo_precision: "approximate" })]).errors.length, 0);
+});
+
+test("lifecycle is optional but validated against the vocabulary when present", () => {
+  assert.deepEqual(LIFECYCLE, ["operating", "planned", "closed", "unknown"]);
+  assert.equal(validateRecords([rec()]).errors.length, 0); // absent — fine
+  assert.equal(validateRecords([rec({ lifecycle: "operating" })]).errors.length, 0);
+  assert.equal(validateRecords([rec({ lifecycle: null })]).errors.length, 0); // null — fine
+  const { errors } = validateRecords([rec({ lifecycle: "demolished" })]);
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /lifecycle must be one of/);
 });
 
 test("requireName option", () => {
@@ -193,6 +205,24 @@ test("buildMetadata computes counts, precision, coverage, bbox", () => {
   assert.equal(meta.estimated_universe, 6);
   assert.equal(meta.coverage_pct, 50);
   assert.deepEqual(meta.bbox, [3.06, 36.75, 3.06, 36.75]);
+  assert.equal(meta.lifecycle, undefined); // no record declared one → field omitted
+  assert.deepEqual(validateMetadata(meta).errors, []);
+});
+
+test("buildMetadata emits a lifecycle rollup only when records declare one", () => {
+  const meta = buildMetadata({
+    package: "@geoalgeria/sports",
+    records: [
+      rec({ id: "sports:16-1", lifecycle: "operating" }),
+      rec({ id: "sports:16-2", lifecycle: "operating" }),
+      rec({ id: "sports:16-3", lifecycle: "closed" }),
+      rec({ id: "sports:16-4" }), // no lifecycle
+    ],
+    sources: [{ key: "mjs", name: "Ministry of Youth & Sports", license: "official", evidence_type: "official" }],
+    license: "MIT",
+    updated: "2026-07-18",
+  });
+  assert.deepEqual(meta.lifecycle, { operating: 2, planned: 0, closed: 1, unknown: 0 });
   assert.deepEqual(validateMetadata(meta).errors, []);
 });
 
@@ -205,6 +235,20 @@ test("validateMetadata catches shape problems", () => {
       sources: [{ key: "a", license: "b" }],
     }).errors.join(),
     /geocoded_count exceeds record_count/,
+  );
+});
+
+test("source evidence_type is optional but validated when present", () => {
+  assert.deepEqual(EVIDENCE_TYPE, ["official", "crowdsourced", "derived"]);
+  const base = {
+    package: "x", schema_version: "2.0.0", record_count: 1, geocoded_count: 1,
+    wilayas_covered: 1, license: "MIT", updated: "2026-07-18",
+  };
+  assert.equal(validateMetadata({ ...base, sources: [{ key: "a", license: "b", evidence_type: "official" }] }).errors.length, 0);
+  assert.equal(validateMetadata({ ...base, sources: [{ key: "a", license: "b" }] }).errors.length, 0); // absent — fine
+  assert.match(
+    validateMetadata({ ...base, sources: [{ key: "a", license: "b", evidence_type: "guessed" }] }).errors.join(),
+    /evidence_type must be one of/,
   );
 });
 

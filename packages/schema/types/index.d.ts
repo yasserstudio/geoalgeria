@@ -6,6 +6,13 @@
 /** Coordinate provenance, coarse-grained. Detail (e.g. "osm_node") goes in `geo_method`. */
 export type GeoPrecision = "exact" | "approximate";
 
+/** Operational status of a facility/asset. Absent means unknown. */
+export type Lifecycle = "operating" | "planned" | "closed" | "unknown";
+
+/** How a source establishes a record: an official register, community mapping, or
+ *  our own computation. Declared per source (SourceRef.evidence_type). */
+export type EvidenceType = "official" | "crowdsourced" | "derived";
+
 /** Cross-dataset external identifiers. Keys are source systems, values their native ids. */
 export interface Refs {
   /** OpenStreetMap element, e.g. "node/3012904279". */
@@ -46,6 +53,8 @@ export interface GeoRecord {
   geo_precision: GeoPrecision;
   /** Free-form geocoding-method detail, e.g. "osm_node", "commune_centroid". */
   geo_method?: string | null;
+  /** Operational status, where the source reports it. Absent means unknown. */
+  lifecycle?: Lifecycle;
   /** Domain type code. */
   type?: string;
   /** Human label for `type` (French). */
@@ -72,6 +81,8 @@ export interface SourceRef {
   license: string;
   /** ISO date the data was retrieved. */
   retrieved?: string;
+  /** How this source establishes its records. */
+  evidence_type?: EvidenceType;
 }
 
 /** Canonical data/metadata.json shape. */
@@ -91,6 +102,8 @@ export interface DatasetMetadata {
   geocoded_pct: number;
   /** Count by geo_precision among geocoded records. */
   precision?: { exact: number; approximate: number };
+  /** Count by lifecycle among records that declare one. Omitted when none do. */
+  lifecycle?: { operating: number; planned: number; closed: number; unknown: number };
   /** Estimated real-world total (the honest denominator), or null if unknown. */
   estimated_universe?: number | null;
   /** record_count / estimated_universe × 100, or null. */
@@ -151,6 +164,8 @@ export type BoundaryIndex = Map<string, { type: string; coordinates: unknown }>;
 
 export const SCHEMA_VERSION: string;
 export const GEO_PRECISION: readonly GeoPrecision[];
+export const LIFECYCLE: readonly Lifecycle[];
+export const EVIDENCE_TYPE: readonly EvidenceType[];
 export const WILAYA_CODES: readonly string[];
 export const DZ_BBOX: { minLng: number; maxLng: number; minLat: number; maxLat: number };
 
