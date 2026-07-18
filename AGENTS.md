@@ -83,3 +83,19 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
 - Push a bump without a changeset, or a changeset without a source for the data.
 - Commit anything from `.agents/` — it's intentionally local.
+
+## Agent skills
+
+Configuration for the [mattpocock/skills](https://github.com/mattpocock/skills) engineering-skills workflow (`/grill-with-docs` → `/to-spec` → `/to-tickets` → `/implement`, plus `/triage`, `/wayfinder`, `/research`, `/tdd`, `/code-review`).
+
+### Issue tracker
+
+Issues & specs live as local markdown under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical roles (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), recorded on a `Status:` line per issue file. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context — one `CONTEXT.md` + `docs/adr/` at the repo root (created lazily by `/domain-modeling`). See `docs/agents/domain.md`.
