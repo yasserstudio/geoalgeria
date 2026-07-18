@@ -91,29 +91,43 @@ async function get(url, headers = {}) {
 }
 
 // ── Djezzy ──────────────────────────────────────────────────────────────────
+// The map fetches wilayas.enc and decrypts it client-side (XOR with a key built
+// from page constants + the footer data-version-id), populating a top-level
+// `wilayas` binding. Node fetch to djezzy5g.dz is blocked at the network layer,
+// so — as with Ooredoo — we drive a real browser and read the page's own
+// already-decrypted `wilayas`, which also means no XOR key to maintain here.
+// Requires the `agent-browser` CLI on PATH.
 async function fetchDjezzy() {
   const base = "https://www.djezzy5g.dz";
-  const html = await (await get(`${base}/map.html`)).text();
-  const version = (html.match(/data-version-id=["'](\d+)["']/) || [])[1] || "2025";
-  // XOR key, reconstructed from the page constants (geo.js) + footer version.
-  const key = "Djezzy5G" + Buffer.from("LU1hcEtleS0=", "base64").toString("binary") + version;
-  const b64 = (await (await get(`${base}/wilayas.enc`)).text()).trim();
-  const enc = Buffer.from(b64, "base64");
-  const k = Buffer.from(key, "utf8");
-  const out = Buffer.alloc(enc.length);
-  for (let i = 0; i < enc.length; i++) out[i] = enc[i] ^ k[i % k.length];
-  const byWilaya = JSON.parse(out.toString("utf8")); // throws if the key/version drifted
+  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 60000 });
+  let byWilaya;
+  try {
+    ab("open", `${base}/map.html`);
+    ab("wait", "8000"); // let the .enc fetch + decrypt populate `wilayas`
+    // `wilayas` is a top-level `let` (global lexical binding, not a window prop).
+    byWilaya = abEval(
+      "JSON.stringify((typeof wilayas !== 'undefined' && wilayas) || window.wilayas || {})",
+    );
+  } finally {
+    try {
+      ab("close", "--all");
+    } catch {
+      /* ignore */
+    }
+  }
 
   const sites = [];
   for (const [wname, w] of Object.entries(byWilaya)) {
     const code = wilayaCode(wname);
     for (const m of w.markers || []) {
-      if (!inAlgeria(m.lat, m.lng)) {
+      const lat = Number(m.lat),
+        lng = Number(m.lng);
+      if (!inAlgeria(lat, lng)) {
         dropped.djezzy++;
         continue;
       }
       sites.push({
-        id: id("djezzy", m.lat, m.lng, m.name || ""),
+        id: id("djezzy", lat, lng, m.name || ""),
         technology: TECH,
         operator: "djezzy",
         name: m.name || null,
@@ -122,13 +136,13 @@ async function fetchDjezzy() {
         commune_ar: null,
         commune_code: null,
         wilaya_code: code,
-        lat: m.lat,
-        lng: m.lng,
+        lat,
+        lng,
         source: `${base}/map.html`,
       });
     }
   }
-  if (sites.length === 0) throw new Error("decoded 0 Djezzy sites (key/version drift?)");
+  if (sites.length === 0) throw new Error("decoded 0 Djezzy sites (wilayas empty — page/format drift?)");
   return sites;
 }
 
