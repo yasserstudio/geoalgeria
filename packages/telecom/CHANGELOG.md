@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Changed
+
+- **5G coverage refreshed from the operators' maps** — 1,681 → **2,798** points across **58** wilayas (was 56). Mobilis grew 504 → 1,621 with the ongoing 5G rollout; Djezzy (1,001) and Ooredoo (176, commune-level) unchanged. Data only; not yet republished to npm. _(PR #104)_
+
+### Fixed
+
+- **Djezzy fetcher** — `fetchDjezzy` now drives a real browser (`agent-browser`) and reads the page's already-decrypted `wilayas`, because node `fetch` to djezzy5g.dz is blocked at the network layer (same pattern as the Ooredoo fetcher). Produces byte-identical output (1,001) to the previous XOR-decode path, so no key/version maintenance in the fetcher. _(PR #104)_
+
 ## 1.0.0
 
 ### Added
