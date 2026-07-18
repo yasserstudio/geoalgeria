@@ -1,17 +1,41 @@
 {
-  "source": "OpenStreetMap (ODbL) — pharmacies (amenity=pharmacy) in Algeria",
-  "origin": "https://www.openstreetmap.org",
-  "license": "OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README for attribution.",
-  "pharmacies": 3790,
+  "package": "@geoalgeria/pharmacies",
+  "schema_version": "2.0.0",
+  "title_fr": "Pharmacies d'Algérie",
+  "title_ar": "صيدليات الجزائر",
+  "title_en": "Algeria pharmacies (officines)",
+  "record_count": 3790,
+  "geocoded_count": 3790,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 3504,
+    "approximate": 286
+  },
+  "estimated_universe": 11000,
+  "coverage_pct": 34.5,
+  "coverage_note": "3790 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.",
+  "wilayas_covered": 67,
+  "bbox": [
+    -8.139568,
+    21.328501,
+    9.574456,
+    37.065122
+  ],
+  "sources": [
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "ODbL-1.0",
+  "updated": "2026-07-18",
   "named": 2459,
   "with_phone": 146,
   "with_hours": 255,
   "with_address": 1159,
   "with_dispensing": 524,
-  "wilayas_covered": 67,
-  "pharmacies_geocoded": 3790,
-  "official_total": 11000,
-  "coverage_note": "3790 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.",
-  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-  "generated_at": "2026-07-05"
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

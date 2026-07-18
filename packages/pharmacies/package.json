@@ -19,6 +19,9 @@
     "types/",
     "index.js"
   ],
+  "dependencies": {
+    "@geoalgeria/schema": "workspace:^"
+  },
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
     "test": "node ../../scripts/validate-packages.mjs pharmacies"

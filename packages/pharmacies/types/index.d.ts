@@ -1,80 +1,47 @@
-// Type definitions for @geoalgeria/pharmacies
-// Algeria's pharmacies (officines) from OpenStreetMap, geocoded and linked to the
-// geoalgeria commune set.
+// Type definitions for @geoalgeria/pharmacies (schema v2).
+// Records conform to the canonical GeoRecord from @geoalgeria/schema, plus the
+// pharmacy-specific fields below. See @geoalgeria/schema for the shared contract.
 
-/** Provenance — OpenStreetMap. */
-export type PharmacySource = "osm";
+import type { GeoRecord, DatasetMetadata } from "@geoalgeria/schema";
 
-/** How the coordinates were obtained. */
-export type GeoPrecision = "osm_node" | "osm_centroid";
-
-/** A pharmacy (officine). */
-export interface Pharmacy {
+/** A pharmacy (officine), sourced from OpenStreetMap (ODbL). */
+export interface Pharmacy extends GeoRecord {
   /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-00042"). */
   id: string;
-  /** Provenance — always "osm". */
-  source: PharmacySource;
-  /** OSM element id (e.g. "node/3012904279"). */
-  osm_id: string;
-  /** Best available display name, or null (many OSM pharmacies are unnamed). */
+  /** Best display name, or null (many OSM pharmacies are unnamed). */
   name: string | null;
-  /** Arabic name, or null. */
-  name_ar: string | null;
-  /** Latin (French) name, or null. */
-  name_fr: string | null;
+  /** Provenance key — always "osm". */
+  source: "osm";
+  /** External ids — `{ osm: "node/3012904279" }`. */
+  refs: { osm: string };
   /** Operator/chain, or null (rare in Algeria). */
   operator: string | null;
   /** Phone number as tagged, or null. */
   phone: string | null;
   /** Opening hours (OSM `opening_hours` syntax), or null. */
   opening_hours: string | null;
-  /** Whether the pharmacy dispenses prescription medicine (`dispensing`), or null if untagged. */
+  /** Whether it dispenses prescription medicine (`dispensing`), or null if untagged. */
   dispensing: boolean | null;
-  /** Wilaya name (French). */
-  wilaya: string;
-  /** Wilaya name (Arabic). */
-  wilaya_ar: string;
-  /** Wilaya code as a zero-padded string ("01".."69"). */
-  wilaya_code: string;
-  /** Commune name (French), nearest-centroid match — best-effort. */
-  commune: string;
-  /** Commune code (geoalgeria code_commune), best-effort; null where the commune has no code upstream. */
-  commune_code: number | null;
   /** Street address from OSM addr:* tags, or null. */
   address: string | null;
-  /** Latitude. */
-  lat: number;
-  /** Longitude. */
-  lng: number;
-  /** node = surveyed point; centroid = building outline center. */
-  geo_precision: GeoPrecision;
+  /** How the point was obtained: node = surveyed (exact), centroid = building (approximate). */
+  geo_method: "osm_node" | "osm_centroid";
 }
 
-/** Dataset metadata (data/metadata.json). */
-export interface Metadata {
-  source: string;
-  origin: string;
-  license: string;
-  pharmacies: number;
+/** Dataset metadata (data/metadata.json) — canonical fields plus pharmacy enrichment stats. */
+export interface Metadata extends DatasetMetadata {
   named: number;
   with_phone: number;
   with_hours: number;
   with_address: number;
   with_dispensing: number;
-  wilayas_covered: number;
-  pharmacies_geocoded: number;
-  /** Approximate national officine count, for honest coverage framing. */
-  official_total: number;
-  coverage_note: string;
   linkage_note: string;
-  /** ISO date (YYYY-MM-DD) the snapshot was generated. */
-  generated_at: string;
 }
 
 /** All pharmacies. */
 export function pharmacies(): Pharmacy[];
 /** A single pharmacy by id, or null. */
-export function pharmacyById(id: string): Pharmacy | null;
+export function pharmacyById(id: string | number): Pharmacy | null;
 /** Pharmacies in a wilaya (accepts numeric or zero-padded code). */
 export function pharmaciesByWilaya(code: string | number): Pharmacy[];
 /** Dataset metadata. */
