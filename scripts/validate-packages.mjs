@@ -31,7 +31,10 @@ import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 // v2 contract enforcement (dormant until a package declares schema_version "2.0.0").
-import { validateRecords as validateV2Records } from "../packages/schema/index.js";
+import {
+  validateRecords as validateV2Records,
+  validateMetadata as validateV2Metadata,
+} from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -377,13 +380,16 @@ function validateDataset(pkg, spec) {
     fail(`${label}: count ${arr.length} ≠ metadata.${countKey} ${meta[countKey]}`);
   }
 
-  // v2 contract: enforce the canonical GeoRecord shape via @geoalgeria/schema.
+  // v2 contract: enforce the canonical GeoRecord + metadata shape via @geoalgeria/schema.
   if (isV2) {
     const { errors: v2errs, warnings: v2warn } = validateV2Records(arr, {
       requireName: spec.required.includes("name"),
     });
     for (const m of v2errs) fail(`${label} [v2]: ${m}`);
-    if (v2warn.length) console.log(`  ⚠ ${label} [v2]: ${v2warn.length} warning(s)`);
+    const metaRes = validateV2Metadata(meta);
+    for (const m of metaRes.errors) fail(`${pkg}/metadata.json [v2]: ${m}`);
+    const warnCount = v2warn.length + metaRes.warnings.length;
+    if (warnCount) console.log(`  ⚠ ${label} [v2]: ${warnCount} warning(s)`);
   }
 
   // csv mirror
@@ -415,30 +421,35 @@ function validateDataset(pkg, spec) {
     }
   }
 
-  // duplicate ids
-  const ids = arr.map((r) => r.id);
-  const dups = ids.length - new Set(ids).size;
-  if (dups > 0) fail(`${label}: ${dups} duplicate id(s)`);
+  // Legacy per-record checks (v1 only). v2 packages are covered by validateV2Records
+  // above, whose multilingual-name rule (name|name_fr|name_ar) would otherwise conflict
+  // with the v1 required-"name" check below and false-fail Arabic-only-named records.
+  if (!isV2) {
+    // duplicate ids
+    const ids = arr.map((r) => r.id);
+    const dups = ids.length - new Set(ids).size;
+    if (dups > 0) fail(`${label}: ${dups} duplicate id(s)`);
 
-  // wilaya_code range + required fields (sample-reported, not per-row spam)
-  let badWilaya = 0;
-  let missingField = 0;
-  for (const r of arr) {
-    const w = Number(r.wilaya_code);
-    // require a plain integer string/number (rejects booleans, "16.0", arrays
-    // that Number() would otherwise coerce to an in-range integer)
-    if (!/^\d+$/.test(String(r.wilaya_code)) || w < 1 || w > 69) badWilaya++;
-    for (const f of spec.required) {
-      if (r[f] === undefined || r[f] === null || r[f] === "") missingField++;
+    // wilaya_code range + required fields (sample-reported, not per-row spam)
+    let badWilaya = 0;
+    let missingField = 0;
+    for (const r of arr) {
+      const w = Number(r.wilaya_code);
+      // require a plain integer string/number (rejects booleans, "16.0", arrays
+      // that Number() would otherwise coerce to an in-range integer)
+      if (!/^\d+$/.test(String(r.wilaya_code)) || w < 1 || w > 69) badWilaya++;
+      for (const f of spec.required) {
+        if (r[f] === undefined || r[f] === null || r[f] === "") missingField++;
+      }
     }
-  }
-  if (badWilaya > 0) {
-    fail(`${label}: ${badWilaya} record(s) with wilaya_code outside [1,69]`);
-  }
-  if (missingField > 0) {
-    fail(
-      `${label}: ${missingField} missing required field(s) (${spec.required.join(", ")})`,
-    );
+    if (badWilaya > 0) {
+      fail(`${label}: ${badWilaya} record(s) with wilaya_code outside [1,69]`);
+    }
+    if (missingField > 0) {
+      fail(
+        `${label}: ${missingField} missing required field(s) (${spec.required.join(", ")})`,
+      );
+    }
   }
 
   console.log(

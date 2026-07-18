@@ -2,10 +2,10 @@
 // validateRecords enforces the canonical GeoRecord shape; validateMetadata the
 // canonical DatasetMetadata shape. Errors block a release; warnings are advisory.
 
-import { GEO_PRECISION, DZ_BBOX } from "./constants.js";
+import { GEO_PRECISION, DZ_BBOX, WILAYA_CODES } from "./constants.js";
 import { pointInWilaya } from "./geo.js";
 
-const WCODE_RE = /^(0[1-9]|[1-5]\d|6[0-9])$/; // "01".."69"
+const WSET = new Set(WILAYA_CODES); // "01".."69" zero-padded — single source of truth
 const isNonEmptyStr = (v) => typeof v === "string" && v.trim() !== "";
 
 /**
@@ -32,7 +32,7 @@ export function validateRecords(records, opts = {}) {
     else seen.add(r.id);
 
     // wilaya_code — zero-padded string "01".."69"
-    const wcodeOk = typeof r.wilaya_code === "string" && WCODE_RE.test(r.wilaya_code);
+    const wcodeOk = typeof r.wilaya_code === "string" && WSET.has(r.wilaya_code);
     if (!wcodeOk)
       err(i, `wilaya_code must be a zero-padded string "01".."69" (got ${JSON.stringify(r.wilaya_code)})`);
 
@@ -44,20 +44,26 @@ export function validateRecords(records, opts = {}) {
         warn(i, `commune_code "${r.commune_code}" does not start with wilaya_code "${r.wilaya_code}"`);
     }
 
-    // coordinates — both finite or both null
-    const hasLat = Number.isFinite(r.lat),
-      hasLng = Number.isFinite(r.lng);
-    if (hasLat !== hasLng) err(i, "lat and lng must both be set or both null");
-    if (hasLat && hasLng) {
-      if (
+    // coordinates — both null (ungeocoded) or both finite numbers
+    const latNull = r.lat == null,
+      lngNull = r.lng == null;
+    if (latNull !== lngNull) {
+      err(i, "lat and lng must both be set or both null");
+    } else if (!latNull) {
+      if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) {
+        err(i, `lat/lng must be finite numbers (got ${JSON.stringify(r.lat)}, ${JSON.stringify(r.lng)})`);
+      } else if (
         r.lat < DZ_BBOX.minLat ||
         r.lat > DZ_BBOX.maxLat ||
         r.lng < DZ_BBOX.minLng ||
         r.lng > DZ_BBOX.maxLng
-      )
+      ) {
         err(i, `coordinate (lng=${r.lng}, lat=${r.lat}) is outside Algeria — likely a lat/lng swap or sign error`);
-      else if (opts.boundaries && wcodeOk && !pointInWilaya(r.lng, r.lat, r.wilaya_code, opts.boundaries))
-        err(i, `coordinate falls outside the wilaya ${r.wilaya_code} boundary`);
+      } else if (opts.boundaries && wcodeOk && !pointInWilaya(r.lng, r.lat, r.wilaya_code, opts.boundaries)) {
+        // Advisory: boundaries are simplified (~150 m), so border-adjacent points
+        // can fall on the wrong side. The bbox guard above stays a hard error.
+        warn(i, `coordinate falls outside the wilaya ${r.wilaya_code} boundary (simplified)`);
+      }
     }
 
     // geo_precision — from the fixed vocabulary

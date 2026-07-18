@@ -4,14 +4,20 @@
 // So a dataset can be checked "does every point fall inside its declared wilaya?"
 // without this package taking on ~MBs of geometry or a hard dep on the boundaries.
 
-/** Ray-casting: is (lng,lat) inside a single linear ring [[lng,lat], ...]? */
+/** Ray-casting: is (lng,lat) inside a single linear ring [[lng,lat], ...]?
+ *  Returns false for malformed rings (non-array, <3 vertices, non-point vertex)
+ *  rather than throwing — a validator must fail gracefully on bad geometry. */
 function pointInRing(lng, lat, ring) {
+  if (!Array.isArray(ring) || ring.length < 3) return false;
   let inside = false;
   for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const xi = ring[i][0],
-      yi = ring[i][1];
-    const xj = ring[j][0],
-      yj = ring[j][1];
+    const pi = ring[i],
+      pj = ring[j];
+    if (!Array.isArray(pi) || !Array.isArray(pj)) return false;
+    const xi = pi[0],
+      yi = pi[1],
+      xj = pj[0],
+      yj = pj[1];
     const intersect =
       yi > lat !== yj > lat &&
       lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi;
@@ -22,16 +28,17 @@ function pointInRing(lng, lat, ring) {
 
 /** Inside a Polygon (outer ring minus holes)? coords = [outerRing, hole1, ...]. */
 function pointInPolygon(lng, lat, coords) {
-  if (!coords.length || !pointInRing(lng, lat, coords[0])) return false;
+  if (!Array.isArray(coords) || coords.length === 0 || !pointInRing(lng, lat, coords[0]))
+    return false;
   for (let h = 1; h < coords.length; h++) {
     if (pointInRing(lng, lat, coords[h])) return false; // inside a hole
   }
   return true;
 }
 
-/** Inside a Polygon or MultiPolygon geometry? */
+/** Inside a Polygon or MultiPolygon geometry? False (never throws) for malformed input. */
 export function pointInGeometry(lng, lat, geometry) {
-  if (!geometry) return false;
+  if (!geometry || !Array.isArray(geometry.coordinates)) return false;
   if (geometry.type === "Polygon") return pointInPolygon(lng, lat, geometry.coordinates);
   if (geometry.type === "MultiPolygon")
     return geometry.coordinates.some((poly) => pointInPolygon(lng, lat, poly));
@@ -47,7 +54,11 @@ export function loadBoundaries(fc, codeProp) {
     const raw =
       codeProp != null ? p[codeProp] : p.wilaya_code ?? p.code ?? p.WILAYA ?? p.id;
     if (raw == null) continue;
-    idx.set(String(raw).padStart(2, "0"), f.geometry);
+    const geom = f.geometry;
+    // Skip malformed geometries so their wilaya simply isn't checked (pointInWilaya
+    // returns true for un-indexed codes) rather than false-flagging every point in it.
+    if (!geom || !Array.isArray(geom.coordinates) || !/Polygon$/.test(geom.type || "")) continue;
+    idx.set(String(raw).padStart(2, "0"), geom);
   }
   return idx;
 }

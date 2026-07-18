@@ -8,6 +8,7 @@ import {
   buildDcat,
   loadBoundaries,
   pointInWilaya,
+  pointInGeometry,
   wcode,
   round6,
   bbox,
@@ -107,10 +108,65 @@ test("point-in-wilaya boundary check", () => {
   assert.equal(pointInWilaya(10, 36, "16", boundaries), false);
   assert.equal(pointInWilaya(3, 36, "31", boundaries), true); // unknown boundary → not flagged
 
-  // a point inside Algeria but outside its declared wilaya polygon is an error
+  // a point inside Algeria but outside its declared wilaya polygon → advisory warning
+  // (boundaries are simplified, so a hard error would false-fail border-adjacent points)
   const outOfWilaya = validateRecords([rec({ lat: 36, lng: 10 })], { boundaries });
-  assert.equal(outOfWilaya.errors.length, 1);
-  assert.match(outOfWilaya.errors[0], /outside the wilaya 16 boundary/);
+  assert.equal(outOfWilaya.errors.length, 0);
+  assert.equal(outOfWilaya.warnings.length, 1);
+  assert.match(outOfWilaya.warnings[0], /outside the wilaya 16 boundary/);
+});
+
+test("point-in-geometry: MultiPolygon and polygon-with-hole", () => {
+  const multi = {
+    type: "MultiPolygon",
+    coordinates: [
+      [[[2, 35], [4, 35], [4, 37], [2, 37], [2, 35]]], // box A around (3,36)
+      [[[6, 35], [8, 35], [8, 37], [6, 37], [6, 35]]], // box B around (7,36)
+    ],
+  };
+  assert.equal(pointInGeometry(3, 36, multi), true);
+  assert.equal(pointInGeometry(7, 36, multi), true);
+  assert.equal(pointInGeometry(5, 36, multi), false); // gap between the two boxes
+
+  const holed = {
+    type: "Polygon",
+    coordinates: [
+      [[0, 0], [10, 0], [10, 10], [0, 10], [0, 0]], // outer
+      [[4, 4], [6, 4], [6, 6], [4, 6], [4, 4]], // hole
+    ],
+  };
+  assert.equal(pointInGeometry(1, 1, holed), true); // in outer, outside hole
+  assert.equal(pointInGeometry(5, 5, holed), false); // inside the hole
+});
+
+test("malformed geometry never throws (validator fails gracefully)", () => {
+  for (const g of [
+    null,
+    { type: "Polygon", coordinates: null },
+    { type: "Polygon", coordinates: [null] },
+    { type: "MultiPolygon", coordinates: [[[[1, 1]]]] }, // ring too short
+    { type: "Point", coordinates: [3, 36] },
+  ]) {
+    assert.doesNotThrow(() => pointInGeometry(3, 36, g));
+    assert.equal(pointInGeometry(3, 36, g), false);
+  }
+  // a malformed boundary is skipped by loadBoundaries → its wilaya isn't checked
+  const boundaries = loadBoundaries({
+    features: [{ properties: { code: 16 }, geometry: { type: "Polygon", coordinates: null } }],
+  });
+  assert.equal(boundaries.size, 0);
+  assert.equal(pointInWilaya(3, 36, "16", boundaries), true);
+});
+
+test("coordinates present but non-numeric are rejected", () => {
+  assert.match(validateRecords([rec({ lat: "36.75", lng: "3.06" })]).errors[0], /finite numbers/);
+  assert.match(validateRecords([rec({ lat: 36.75, lng: NaN })]).errors[0], /finite numbers/);
+});
+
+test("CSV formula-injection guard covers leading-whitespace bypass", () => {
+  assert.match(toCSV([{ a: " =1+1" }], ["a"]), /'\s?=1\+1/); // space + formula → prefixed
+  assert.match(toCSV([{ a: "\t=cmd" }], ["a"]), /'/); // tab + formula → prefixed
+  assert.doesNotMatch(toCSV([{ a: " hello" }], ["a"]), /'/); // benign leading space → untouched
 });
 
 test("buildMetadata computes counts, precision, coverage, bbox", () => {

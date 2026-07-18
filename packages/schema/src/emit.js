@@ -19,7 +19,9 @@ export function toCSV(rows, cols) {
     if (v === null || v === undefined) return "";
     if (typeof v === "object") v = JSON.stringify(v);
     let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
+    // Formula-injection guard: allow optional leading whitespace before the
+    // dangerous lead char, since spreadsheets trim it on import (" =1" → "=1").
+    if (typeof v !== "number" && /^[\s]*[=+\-@\t\r]/.test(s)) s = `'${s}`;
     return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
   };
   const lines = [cols.join(",")];
