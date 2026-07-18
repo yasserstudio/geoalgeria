@@ -301,6 +301,100 @@ const MIGRATIONS = {
       stats: (rows) => ({ by_nature: count(rows, "nature"), by_role: count(rows, "role"), by_geo_method: count(rows, "geo_method"), linkage_note: LINKAGE }),
     },
   },
+
+  jeunesse: {
+    file: "institutions.json",
+    map: (r) => clean({
+      id: String(r.id).padStart(5, "0"),
+      name: r.name, name_ar: r.name_ar,
+      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: "exact", geo_method: "sig_mjs",
+      source: "mjs",
+      type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
+      daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
+      operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
+    }),
+    meta: {
+      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)", retrieved: TODAY }],
+      license: "Factual public listing (Ministry of Youth and Sports)",
+      estimatedUniverse: null,
+      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
+      titles: { en: "Algeria youth institutions", fr: "Établissements de jeunesse d'Algérie", ar: "مؤسسات الشباب الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), named_ar: rows.filter((r) => r.name_ar).length }),
+    },
+  },
+
+  sports: {
+    file: "facilities.json",
+    map: (r) => clean({
+      id: String(r.id).padStart(5, "0"),
+      name: r.name,
+      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: "exact", geo_method: "sig_mjs",
+      source: "mjs",
+      type: r.type_code, type_label_fr: r.type_fr,
+      daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
+      operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
+    }),
+    meta: {
+      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)", retrieved: TODAY }],
+      license: "Factual public listing (Ministry of Youth and Sports)",
+      estimatedUniverse: null,
+      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
+      titles: { en: "Algeria sports facilities", fr: "Infrastructures sportives d'Algérie", ar: "المنشآت الرياضية الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), named: named(rows) }),
+    },
+  },
+
+  "enseignement-superieur": {
+    file: "institutions.json",
+    map: (r) => clean({
+      id: String(r.id).padStart(5, "0"),
+      name: r.name, name_ar: r.name_ar,
+      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      lat: r.lat, lng: r.lng,
+      geo_precision: r.geo_precision === "campus" ? "exact" : "approximate",
+      geo_method: r.geo_precision,
+      source: "mesrs",
+      type: r.type, type_label_fr: r.type_fr, sector: r.sector,
+      supervisory_ministry: r.supervisory_ministry, website: r.website,
+    }),
+    meta: {
+      sources: [{ key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)", retrieved: TODAY }],
+      license: "Factual public listing (MESRS)",
+      estimatedUniverse: null,
+      coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+      titles: { en: "Algeria higher-education institutions", fr: "Établissements d'enseignement supérieur d'Algérie", ar: "مؤسسات التعليم العالي الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method") }),
+    },
+  },
+
+  "formation-professionnelle": {
+    file: "establishments.json",
+    map: (r) => clean({
+      id: String(r.id).padStart(5, "0"),
+      name: r.name, name_fr: r.name_fr,
+      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      lat: Number.isFinite(r.lat) ? r.lat : null, lng: Number.isFinite(r.lng) ? r.lng : null,
+      geo_precision: Number.isFinite(r.lat) ? "exact" : "approximate",
+      geo_method: "takwin",
+      source: "mfep",
+      type: r.type, type_label: r.type_label, abreviation: r.abreviation, code: r.code, secteur: r.secteur,
+      adresse: r.adresse, adresse_fr: r.adresse_fr, telephone: r.telephone, fax: r.fax, email: r.email,
+      site_web: r.site_web, facebook: r.facebook, capacite: r.capacite, capacite_reelle: r.capacite_reelle,
+      surface_m2: r.surface_m2, internat: r.internat, capacite_internat: r.capacite_internat, vocations: r.vocations,
+    }),
+    meta: {
+      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP) — takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: TODAY }],
+      license: "Factual public listing (MFEP)",
+      estimatedUniverse: null,
+      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1375 of 1932 are geocoded.",
+      titles: { en: "Algeria vocational-training establishments", fr: "Établissements de formation professionnelle d'Algérie", ar: "مؤسسات التكوين المهني الجزائرية" },
+      stats: (rows) => ({ by_type: count(rows, "type"), by_secteur: count(rows, "secteur") }),
+    },
+  },
 };
 
 // --- runner -----------------------------------------------------------------

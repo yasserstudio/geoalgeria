@@ -1,8 +1,37 @@
 {
-  "source": "Ministry of Higher Education and Scientific Research (mesrs.dz)",
-  "origin": "https://www.mesrs.dz/en/university-network/",
-  "license": "Data © MESRS; redistributed for reference. Coordinates are OSM-derived (see README). See README.",
-  "institutions": 177,
+  "package": "@geoalgeria/enseignement-superieur",
+  "schema_version": "2.0.0",
+  "title_fr": "Établissements d'enseignement supérieur d'Algérie",
+  "title_ar": "مؤسسات التعليم العالي الجزائرية",
+  "title_en": "Algeria higher-education institutions",
+  "record_count": 177,
+  "geocoded_count": 177,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 61,
+    "approximate": 116
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+  "wilayas_covered": 51,
+  "bbox": [
+    -8.12861,
+    22.805776,
+    8.482,
+    36.912274
+  ],
+  "sources": [
+    {
+      "key": "mesrs",
+      "name": "Ministry of Higher Education and Scientific Research (MESRS)",
+      "url": "https://www.mesrs.dz",
+      "license": "Factual public listing (MESRS)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "Factual public listing (MESRS)",
+  "updated": "2026-07-18",
   "by_type": {
     "universite": 58,
     "grande_ecole": 102,
@@ -13,13 +42,9 @@
     "public": 158,
     "private": 19
   },
-  "by_precision": {
+  "by_geo_method": {
     "campus": 61,
     "wilaya": 100,
     "commune": 16
-  },
-  "wilayas_covered": 51,
-  "name_ar_count": 164,
-  "dropped": 0,
-  "generated_at": "2026-06-23"
+  }
 }

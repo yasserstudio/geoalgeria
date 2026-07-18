@@ -1,8 +1,37 @@
 {
-  "source": "Ministry of Youth and Sports — SIG (sig.mjs.gov.dz)",
-  "origin": "https://sig.mjs.gov.dz/dashboard/viewer",
-  "license": "Data © Ministry of Youth and Sports; redistributed for reference. See README.",
-  "institutions": 2334,
+  "package": "@geoalgeria/jeunesse",
+  "schema_version": "2.0.0",
+  "title_fr": "Établissements de jeunesse d'Algérie",
+  "title_ar": "مؤسسات الشباب الجزائرية",
+  "title_en": "Algeria youth institutions",
+  "record_count": 2334,
+  "geocoded_count": 2334,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 2334,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
+  "wilayas_covered": 58,
+  "bbox": [
+    -8.1489,
+    19.5666,
+    9.5881,
+    37.0688
+  ],
+  "sources": [
+    {
+      "key": "mjs",
+      "name": "Ministry of Youth and Sports — SIG",
+      "url": "https://sig.mjs.gov.dz",
+      "license": "Factual public listing (Ministry of Youth and Sports)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "Factual public listing (Ministry of Youth and Sports)",
+  "updated": "2026-07-18",
   "by_type": {
     "AJ": 241,
     "CLS": 46,
@@ -14,8 +43,5 @@
     "BA": 3,
     "FJ": 22
   },
-  "wilayas_covered": 58,
-  "name_ar_matched": 1381,
-  "dropped": 1,
-  "generated_at": "2026-06-23"
+  "named_ar": 1381
 }

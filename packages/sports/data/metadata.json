@@ -1,8 +1,37 @@
 {
-  "source": "Ministry of Youth and Sports — SIG (sig.mjs.gov.dz)",
-  "origin": "https://sig.mjs.gov.dz/dashboard/viewer",
-  "license": "Data © Ministry of Youth and Sports; redistributed for reference. See README.",
-  "facilities": 5141,
+  "package": "@geoalgeria/sports",
+  "schema_version": "2.0.0",
+  "title_fr": "Infrastructures sportives d'Algérie",
+  "title_ar": "المنشآت الرياضية الجزائرية",
+  "title_en": "Algeria sports facilities",
+  "record_count": 5141,
+  "geocoded_count": 5141,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 5141,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
+  "wilayas_covered": 58,
+  "bbox": [
+    -8.4324,
+    19.5567,
+    10.1953,
+    37.035878
+  ],
+  "sources": [
+    {
+      "key": "mjs",
+      "name": "Ministry of Youth and Sports — SIG",
+      "url": "https://sig.mjs.gov.dz",
+      "license": "Factual public listing (Ministry of Youth and Sports)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "Factual public listing (Ministry of Youth and Sports)",
+  "updated": "2026-07-18",
   "by_type": {
     "AJF": 437,
     "BN": 159,
@@ -32,7 +61,5 @@
     "GS": 1,
     "AJL": 5
   },
-  "wilayas_covered": 58,
-  "dropped": 0,
-  "generated_at": "2026-06-23"
+  "named": 3389
 }
