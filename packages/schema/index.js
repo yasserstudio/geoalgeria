@@ -6,4 +6,4 @@ export { SCHEMA_VERSION, GEO_PRECISION, LIFECYCLE, EVIDENCE_TYPE, WILAYA_CODES, 
 export { round6, wcode, toCSV, toGeoJSON, haversine, bbox } from "./src/emit.js";
 export { pointInGeometry, pointInWilaya, loadBoundaries } from "./src/geo.js";
 export { validateRecords, validateMetadata } from "./src/validate.js";
-export { buildMetadata, buildManifest, buildDcat } from "./src/build.js";
+export { buildMetadata, buildManifest, buildDcat, evidenceForSourceKey } from "./src/build.js";

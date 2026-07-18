@@ -6,6 +6,7 @@ import {
   buildMetadata,
   buildManifest,
   buildDcat,
+  evidenceForSourceKey,
   loadBoundaries,
   pointInWilaya,
   pointInGeometry,
@@ -236,6 +237,16 @@ test("validateMetadata catches shape problems", () => {
     }).errors.join(),
     /geocoded_count exceeds record_count/,
   );
+});
+
+test("evidenceForSourceKey maps keys to canonical evidence types", () => {
+  assert.equal(evidenceForSourceKey("osm"), "crowdsourced");
+  assert.equal(evidenceForSourceKey("wikidata"), "crowdsourced");
+  assert.equal(evidenceForSourceKey("OpenStreetMap"), "crowdsourced");
+  assert.equal(evidenceForSourceKey("derived"), "derived");
+  assert.equal(evidenceForSourceKey("msp"), "official"); // named registry
+  assert.equal(evidenceForSourceKey("mobilis"), "official"); // first-party operator
+  assert.ok(EVIDENCE_TYPE.includes(evidenceForSourceKey("anything")));
 });
 
 test("source evidence_type is optional but validated when present", () => {

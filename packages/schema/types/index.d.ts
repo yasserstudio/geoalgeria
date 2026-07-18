@@ -209,6 +209,7 @@ export interface BuildMetadataInput {
   titles?: { fr?: string; ar?: string; en?: string };
   entities?: { file: string; count: number }[];
 }
+export function evidenceForSourceKey(key: string): EvidenceType;
 export function buildMetadata(input: BuildMetadataInput): DatasetMetadata;
 export function buildManifest(
   metadatas: DatasetMetadata[],

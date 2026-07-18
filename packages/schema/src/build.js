@@ -8,6 +8,20 @@ import { bbox } from "./emit.js";
 const pct = (num, den) => (den ? Math.round((num / den) * 1000) / 10 : 0);
 
 /**
+ * Canonical evidence_type for a source key. Community maps (OSM/Wikidata) are
+ * crowdsourced; explicitly computed geometry is derived; every other key is a
+ * named government registry or first-party operator feed → official.
+ * @param {string} key
+ * @returns {"official"|"crowdsourced"|"derived"}
+ */
+export function evidenceForSourceKey(key) {
+  const k = String(key || "").toLowerCase();
+  if (k === "osm" || k === "openstreetmap" || k === "wikidata") return "crowdsourced";
+  if (k === "derived" || k === "computed" || k === "centroid" || k === "estimate") return "derived";
+  return "official";
+}
+
+/**
  * Build canonical DatasetMetadata from records + provenance.
  * Computes counts, precision breakdown, honest coverage, wilayas_covered and bbox.
  * @param {{
