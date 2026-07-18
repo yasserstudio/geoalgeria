@@ -1,23 +1,128 @@
 {
-  "name": "@geoalgeria/tourisme",
-  "description": "Tourism infrastructure across Algeria — hotels, attractions, historic sites, thermal springs and protected areas",
-  "version": "1.0.0",
-  "lodging": 1602,
-  "attractions": 1248,
-  "historic": 1184,
-  "thermal_springs": 282,
-  "parks": 32,
-  "total": 4348,
-  "wilaya_coverage": 69,
-  "sources": [
-    "ASAL Geoportail (thermal springs)",
-    "OpenStreetMap (hotels, attractions, historic, parks)",
-    "Wikidata (heritage sites, museums, parks)"
-  ],
-  "licenses": {
-    "thermal_springs": "Public government data",
-    "osm_data": "ODbL (OpenStreetMap)",
-    "wikidata": "CC0"
+  "package": "@geoalgeria/tourisme",
+  "schema_version": "2.0.0",
+  "title_fr": "Tourisme en Algérie",
+  "title_ar": "السياحة في الجزائر",
+  "title_en": "Algeria tourism",
+  "record_count": 4348,
+  "geocoded_count": 4348,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 4348,
+    "approximate": 0
   },
-  "last_updated": "2026-06-21"
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
+  "wilayas_covered": 69,
+  "bbox": [
+    -8.153594,
+    19.577869,
+    11.242709,
+    37.087511
+  ],
+  "entities": [
+    {
+      "file": "attractions.json",
+      "count": 1248
+    },
+    {
+      "file": "historic.json",
+      "count": 1184
+    },
+    {
+      "file": "lodging.json",
+      "count": 1602
+    },
+    {
+      "file": "parks.json",
+      "count": 32
+    },
+    {
+      "file": "thermal-springs.json",
+      "count": 282
+    }
+  ],
+  "sources": [
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-07-18"
+    },
+    {
+      "key": "asal",
+      "name": "ASAL Geoportail — thermal springs",
+      "url": "https://www.asal.dz",
+      "license": "Factual public listing (ASAL)",
+      "retrieved": "2026-07-18"
+    }
+  ],
+  "license": "ODbL-1.0 AND factual public listing (ASAL)",
+  "updated": "2026-07-18",
+  "by_type": {
+    "artwork": 244,
+    "museum": 174,
+    "theme_park": 78,
+    "tourist_attraction": 3,
+    "viewpoint": 115,
+    "waterfall": 3,
+    "zoo": 24,
+    "attraction": 591,
+    "cave": 16,
+    "aircraft": 1,
+    "archaeological_site": 249,
+    "ruins": 188,
+    "school": 1,
+    "technical_monument": 1,
+    "temple": 1,
+    "tomb": 61,
+    "townhall": 1,
+    "war_memorial": 2,
+    "water_tap": 3,
+    "wayside_shrine": 1,
+    "wreck": 3,
+    "area": 1,
+    "barracks": 1,
+    "bath": 1,
+    "battle_site": 1,
+    "battlefield": 4,
+    "boundary_stone": 2,
+    "bridge": 2,
+    "building": 6,
+    "castle": 138,
+    "church": 1,
+    "church_building": 5,
+    "château": 1,
+    "city_gate": 34,
+    "citywalls": 10,
+    "district": 2,
+    "fort": 21,
+    "fortification": 1,
+    "fortress": 1,
+    "heritage": 6,
+    "house": 1,
+    "library": 1,
+    "manor": 3,
+    "memorial": 212,
+    "milestone": 1,
+    "military": 1,
+    "mine": 1,
+    "monument": 197,
+    "mosque": 6,
+    "palace": 10,
+    "powder_magazine": 1,
+    "alpine_hut": 32,
+    "hostel": 216,
+    "hotel": 995,
+    "guest_house": 137,
+    "motel": 66,
+    "apartment": 78,
+    "chalet": 78,
+    "forage": 6,
+    "source": 117,
+    "hammam": 111,
+    "ain": 48
+  }
 }

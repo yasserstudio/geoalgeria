@@ -44,6 +44,22 @@ function colsFor(rows) {
   return [...base, ...extra];
 }
 
+// shared tourisme maps (OSM point files share a shape; thermal springs differ).
+const tourOsm = (r) => clean({
+  id: String(r.id), name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
+  wilaya_code: r.wilaya_code, commune_code: null, commune: null,
+  lat: r.lat, lng: r.lng, geo_precision: "exact", geo_method: "osm",
+  source: "osm", refs: refs({ osm: r.osm_id }),
+  type: r.type, category: r.category,
+});
+const tourThermal = (r) => clean({
+  id: String(r.id), name: r.name,
+  wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune_name,
+  lat: r.lat, lng: r.lng, geo_precision: "exact", geo_method: "asal",
+  source: "asal",
+  type: r.type, temperature_c: r.temperature_c, debit_l_s: r.debit_l_s, altitude_m: r.altitude_m, minerality: r.minerality,
+});
+
 // --- per-package migrations -------------------------------------------------
 const MIGRATIONS = {
   mosquees: {
@@ -482,6 +498,27 @@ const MIGRATIONS = {
       estimatedUniverse: null,
       coverageNote: "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
       titles: { en: "Mobilis stores (Algeria)", fr: "Points de vente Mobilis", ar: "نقاط بيع موبيليس" },
+      stats: (rows) => ({ by_type: count(rows, "type") }),
+    },
+  },
+
+  tourisme: {
+    files: [
+      { file: "attractions.json", map: tourOsm },
+      { file: "historic.json", map: tourOsm },
+      { file: "lodging.json", map: tourOsm },
+      { file: "parks.json", map: tourOsm },
+      { file: "thermal-springs.json", map: tourThermal },
+    ],
+    meta: {
+      sources: [
+        { key: "osm", name: "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
+        { key: "asal", name: "ASAL Geoportail — thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: TODAY },
+      ],
+      license: "ODbL-1.0 AND factual public listing (ASAL)",
+      estimatedUniverse: null,
+      coverageNote: "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
+      titles: { en: "Algeria tourism", fr: "Tourisme en Algérie", ar: "السياحة في الجزائر" },
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
   },
