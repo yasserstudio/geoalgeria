@@ -26,6 +26,13 @@ export function validateRecords(records, opts = {}) {
 
   const seen = new Set();
   records.forEach((r, i) => {
+    // Guard first — a null/primitive element would otherwise throw on r.id below,
+    // turning a data error into an uncaught TypeError (build-time DoS).
+    if (!r || typeof r !== "object") {
+      err(i, "record is not an object");
+      return;
+    }
+
     // id — non-empty string, globally unique
     if (!isNonEmptyStr(r.id)) err(i, "missing/invalid id");
     else if (seen.has(r.id)) err(i, `duplicate id "${r.id}"`);
@@ -104,6 +111,8 @@ export function validateRecords(records, opts = {}) {
 export function validateMetadata(meta) {
   const errors = [],
     warnings = [];
+  if (!meta || typeof meta !== "object")
+    return { errors: ["metadata is not an object"], warnings };
   const reqType = (k, type) => {
     if (meta[k] == null) errors.push(`metadata.${k} is missing`);
     else if (typeof meta[k] !== type) errors.push(`metadata.${k} must be a ${type}`);

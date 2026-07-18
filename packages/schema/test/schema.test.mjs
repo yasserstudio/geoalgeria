@@ -171,6 +171,15 @@ test("malformed geometry never throws (validator fails gracefully)", () => {
   assert.equal(pointInWilaya(3, 36, "16", boundaries), true);
 });
 
+test("validator fails safe on hostile input (returns errors, never throws)", () => {
+  assert.doesNotThrow(() => validateRecords([null]));
+  assert.match(validateRecords([null]).errors.join(), /not an object/);
+  assert.doesNotThrow(() => validateRecords([42]));
+  assert.match(validateRecords([42]).errors.join(), /not an object/);
+  assert.doesNotThrow(() => validateMetadata(null));
+  assert.match(validateMetadata(null).errors.join(), /not an object/);
+});
+
 test("coordinates present but non-numeric are rejected", () => {
   assert.match(validateRecords([rec({ lat: "36.75", lng: "3.06" })]).errors[0], /finite numbers/);
   assert.match(validateRecords([rec({ lat: 36.75, lng: NaN })]).errors[0], /finite numbers/);
