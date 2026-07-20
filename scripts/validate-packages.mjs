@@ -34,6 +34,7 @@ import { dirname, join } from "node:path";
 import {
   validateRecords as validateV2Records,
   validateMetadata as validateV2Metadata,
+  WILAYA_CODES,
 } from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -755,9 +756,11 @@ function validateLivraison() {
     if (!carrierIds.has(c.operator)) fail(`livraison/coverage.json: operator "${c.operator}" not in carriers.json`);
     if (!Number.isInteger(c.stopdesks)) fail(`livraison/coverage.json: operator "${c.operator}" has a non-integer stopdesks count`);
     covSum += Number(c.stopdesks);
-    if (!Array.isArray(c.wilayas) || c.wilayas.some((w) => !Number.isInteger(w) || w < 1 || w > 69)) covBadWilaya++;
+    // coverage.wilayas is derived from stopdesks.wilaya_code, so it must carry the
+    // same key type — zero-padded strings — or the two files won't join.
+    if (!Array.isArray(c.wilayas) || c.wilayas.some((w) => !WILAYA_CODES.includes(w))) covBadWilaya++;
   }
-  if (covBadWilaya) fail(`livraison: ${covBadWilaya} coverage row(s) with wilaya codes outside [1,69]`);
+  if (covBadWilaya) fail(`livraison: ${covBadWilaya} coverage row(s) whose wilayas[] are not zero-padded codes "01".."69"`);
   if (covSum !== desks.length) fail(`livraison: coverage stop-desk sum ${covSum} ≠ stopdesks ${desks.length}`);
   const covCsv = join(dataDir, "csv", "coverage.csv");
   if (!existsSync(covCsv)) fail("livraison: missing csv/coverage.csv");

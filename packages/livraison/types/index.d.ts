@@ -88,8 +88,9 @@ export interface CarrierCoverage {
   stopdesks: number;
   /** Number of distinct wilayas with a stop-desk. */
   wilaya_count: number;
-  /** Wilaya codes with at least one stop-desk. */
-  wilayas: number[];
+  /** Wilaya codes with at least one stop-desk, zero-padded — same key type as
+   *  {@link StopDesk.wilaya_code}, so the two join directly. */
+  wilayas: string[];
   /** Number of distinct communes with a stop-desk. */
   commune_count: number;
 }
