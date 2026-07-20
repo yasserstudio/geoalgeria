@@ -6,7 +6,8 @@
   "description": "GeoAlgeria data monorepo — open Algeria datasets (geoalgeria, @geoalgeria/poste, @geoalgeria/emploi, @geoalgeria/mobilis, @geoalgeria/telecom, @geoalgeria/aviation, @geoalgeria/banques, @geoalgeria/livraison, @geoalgeria/jeunesse, @geoalgeria/sports, @geoalgeria/enseignement-superieur, @geoalgeria/tourisme, @geoalgeria/formation-professionnelle, @geoalgeria/djezzy, @geoalgeria/mosquees, @geoalgeria/sante, @geoalgeria/culture, @geoalgeria/agriculture, @geoalgeria/ecoles, @geoalgeria/gares-routieres, @geoalgeria/ferroviaire, @geoalgeria/buses, @geoalgeria/transport) published to npm",
   "packageManager": "pnpm@11.3.0",
   "scripts": {
-    "validate": "pnpm --filter ./packages/dataset validate && node scripts/validate-packages.mjs",
+    "validate": "pnpm --filter ./packages/dataset validate && node scripts/validate-packages.mjs && pnpm test",
+    "test": "node --test test/*.test.mjs packages/*/test/*.test.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm validate && changeset publish",
