@@ -6,13 +6,16 @@
 // during the P3 refresher rework (see packages/schema/MIGRATING.md). The exemplar
 // @geoalgeria/pharmacies was migrated at the generator level and is NOT handled here.
 //
-// Guarded against double-runs (skips a package already at schema_version 2.0.0).
+// Guarded against double-runs: the transform is ONE-WAY (buses reads source_url out
+// of the pre-v2 `source`, so a second pass would overwrite the URL with the key
+// "wikipedia" and still exit 0), so a package is skipped when its metadata says v2
+// OR when its records already carry v2 geo fields — metadata alone can desync.
 // Usage: node scripts/migrate-to-v2.mjs [pkg ...]   (no arg = all configured)
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { buildMetadata, toCSV, toGeoJSON } from "../packages/schema/index.js";
+import { buildMetadata, toCSV, toGeoJSON, wcode, GEO_PRECISION } from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const TODAY = "2026-07-18"; // cutover date (scripts can't call Date.now deterministically here)
@@ -30,6 +33,14 @@ const geoExact = (r, method) => {
   const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
   return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? "exact" : "approximate", geo_method: method };
 };
+/** Records that already carry the canonical v2 geo fields this migration adds.
+ *  `geo_method` is the decisive signal: it is a v2-only field, whereas a few v1
+ *  datasets (ferroviaire, ooredoo) already used the value "exact" for geo_precision
+ *  and would otherwise look migrated. Verified against the pre-migration data of
+ *  every package configured below: zero false positives. */
+const isV2Shaped = (rows) =>
+  rows.length > 0 &&
+  rows.every((r) => GEO_PRECISION.includes(r.geo_precision) && "geo_method" in r);
 /** frequency table of a field's values. */
 const count = (rows, key) => { const o = {}; for (const r of rows) { const v = r[key]; if (v != null) o[v] = (o[v] || 0) + 1; } return o; };
 const named = (rows) => rows.filter((r) => r.name).length;
@@ -527,7 +538,7 @@ const MIGRATIONS = {
     files: [
       { file: "banks.json", geojson: false, map: (r) => clean({
         id: r.id, name: r.name_fr, name_fr: r.name_fr, name_ar: r.name_ar,
-        wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+        wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
         lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
         source: "boa",
         acronym: r.acronym, bank_code: r.bank_code, type: r.type, ownership: r.ownership,
@@ -537,7 +548,7 @@ const MIGRATIONS = {
       }) },
       { file: "institutions.json", geojson: false, map: (r) => clean({
         id: r.id, name: r.name_fr, name_fr: r.name_fr, name_ar: r.name_ar,
-        wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+        wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
         lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
         source: "boa",
         acronym: r.acronym, bank_code: r.bank_code, type: r.type, ownership: r.ownership,
@@ -547,7 +558,7 @@ const MIGRATIONS = {
       }) },
       { file: "branches.json", map: (r) => clean({
         id: r.id, name: r.name,
-        wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+        wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
         ...geoExact(r, "bank_locator"),
         source: "bank_locator",
         bank_id: r.bank_id, address: r.address, phone: r.phone,
@@ -578,9 +589,13 @@ const MIGRATIONS = {
 
   buses: {
     file: "lines.json",
+    geojson: false, // line-level only: an empty FeatureCollection reads as a failed download
     map: (r) => clean({
       id: r.id,
-      wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+      // The source publishes no line name; derive one from the line's own fields
+      // so the contract's "at least one name" rule is satisfied honestly.
+      name: `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`,
+      wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
       lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
       source: "wikipedia",
       operator: r.operator, network: r.network, line: r.line,
@@ -606,7 +621,7 @@ const MIGRATIONS = {
     file: "stopdesks.json",
     map: (r) => clean({
       id: r.id, name: r.name,
-      wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: r.commune,
+      wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: r.commune,
       ...geoExact(r, "carrier_relay"),
       source: (r.sources && r.sources[0]) || "carrier_relay",
       operator: r.operator, address: r.address, sources: r.sources,
@@ -645,18 +660,31 @@ function migrate(pkg) {
   const dir = join(ROOT, "packages", pkg, "data");
 
   const oldMeta = JSON.parse(readFileSync(join(dir, "metadata.json"), "utf-8"));
-  if (oldMeta.schema_version === "2.0.0") { console.log(`  ${pkg}: already v2 — skipped`); return true; }
+  const specs = cfg.files || [{ file: cfg.file, map: cfg.map, geojson: cfg.geojson }];
 
-  const specs = cfg.files || [{ file: cfg.file, map: cfg.map }];
+  // Read every source file before touching anything on disk, so the double-run
+  // guard can veto the whole package rather than half-rewriting it.
+  const sources = specs.map((s) => ({
+    spec: s,
+    input: JSON.parse(readFileSync(join(dir, s.file), "utf-8")),
+  }));
+  if (oldMeta.schema_version === "2.0.0" || sources.some(({ input }) => isV2Shaped(input))) {
+    console.log(`  ${pkg}: already v2 — skipped`);
+    return true;
+  }
+
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
   const all = [];
   const entities = [];
-  for (const s of specs) {
+  for (const { spec: s, input } of sources) {
     const base = s.file.replace(/\.json$/, "");
-    const rows = JSON.parse(readFileSync(join(dir, s.file), "utf-8")).map(s.map);
-    rows.sort((a, b) => String(a.id).localeCompare(String(b.id)));
+    const rows = input.map(s.map);
+    // Plain codepoint order — localeCompare() without a locale reads the ambient
+    // ICU and can reorder committed JSON between machines. (Byte-identical to the
+    // committed order for all 34 current files.)
+    rows.sort((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0));
     writeFileSync(join(dir, s.file), JSON.stringify(rows, null, 2) + "\n");
     writeFileSync(join(dir, "csv", `${base}.csv`), toCSV(rows, colsFor(rows)));
     if (s.geojson !== false) writeFileSync(join(dir, "geojson", `${base}.geojson`), JSON.stringify(toGeoJSON(rows), null, 2) + "\n");
