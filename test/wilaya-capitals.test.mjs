@@ -12,11 +12,21 @@
 // that capital's own wilaya. A permutation moves a capital into someone else's
 // territory and fails immediately.
 //
+// Ownership alone was not enough. Wilaya 49 (Timimoun) shipped a sign-flipped
+// longitude (-0.23889 for +0.2285923) and still passed: at the mirrored point
+// the nearest commune is Ouled Aissa, 22.5 km away and also a commune of 49. So
+// a second, quantitative check rides on the same distance: a capital must sit
+// within CEILING_KM of one of its OWN wilaya's commune centroids. A capital is
+// a commune of its wilaya, so that distance is small by construction — the
+// observed distribution is 0.0-6.7 km over the 68 correct capitals, with the
+// 22.5 km outlier the defect itself. See CEILING_KM below.
+//
 // Catches: permutations/swaps of capitals, lat↔lng transposition, sign flips,
-// and any displacement large enough to land nearer another wilaya's communes.
-// Does NOT catch: a displacement small enough to stay nearest a commune of the
-// same wilaya (see the "wilaya coords" note — small displacements are invisible
-// here), nor a wrong-but-plausible point in a wilaya with no commune centroids.
+// and any displacement of more than CEILING_KM.
+// Does NOT catch: a displacement under CEILING_KM that stays inside the
+// capital's own commune neighbourhood (see the "wilaya coords" note — small
+// displacements are invisible here), nor a wrong-but-plausible point in a
+// wilaya with no commune centroids.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -31,6 +41,19 @@ const read = (...p) => JSON.parse(readFileSync(join(DATA, ...p), "utf-8"));
 const communes = ["communes_w1_w23", "communes_w24_w48", "communes_w49_w69"]
   .flatMap((f) => read("data", `${f}.json`))
   .filter((c) => Number.isFinite(c.latitude) && Number.isFinite(c.longitude));
+
+// Distance ceiling from a capital to the nearest centroid of a commune of its
+// OWN wilaya. Picked from the measured distribution over all 69 capitals, not
+// from a round-number guess:
+//
+//   6.7 Béni Abbès · 5.8 Biskra · 4.8 El Kantara · 4.6 El Bayadh ·
+//   4.2 Constantine · 2.4 Illizi · 2.3 Khenchela · 2.1 Guelma · … · 0.0 (rest)
+//
+// 6.74 km is the worst correct capital and the median is under 0.5 km, so the
+// real signal dies out an order of magnitude below 22.5 km. 10 km leaves ~48%
+// headroom over the worst legitimate value while sitting less than half the
+// distance of the defect it exists to catch — the gap 6.74…22.51 is empty.
+const CEILING_KM = 10;
 
 /** Every file in packages/dataset that carries a capital point: [label, () => {code: [lng, lat]}] */
 const COPIES = [
@@ -92,7 +115,7 @@ test("wilaya capitals: 1,528 commune centroids loaded", () => {
 });
 
 for (const [label, load] of COPIES) {
-  test(`${label}: every capital's nearest commune belongs to its own wilaya`, () => {
+  test(`${label}: every capital sits in, and within ${CEILING_KM} km of, its own wilaya`, () => {
     const capitals = load();
     assert.equal(Object.keys(capitals).length, 69, `${label}: expected 69 wilayas`);
 
@@ -104,17 +127,28 @@ for (const [label, load] of COPIES) {
       );
       let best = null;
       let bestD = Infinity;
+      let own = null;
+      let ownD = Infinity;
       for (const c of communes) {
         const d = km(point, [c.longitude, c.latitude]);
         if (d < bestD) {
           bestD = d;
           best = c;
         }
+        if (Number(c.wilaya_code) === Number(code) && d < ownD) {
+          ownD = d;
+          own = c;
+        }
       }
       if (Number(best.wilaya_code) !== Number(code)) {
         wrong.push(
           `wilaya ${code}: point ${JSON.stringify(point)} is nearest ${best.name_fr} ` +
             `(${bestD.toFixed(1)} km), a commune of wilaya ${best.wilaya_code}`,
+        );
+      } else if (ownD > CEILING_KM) {
+        wrong.push(
+          `wilaya ${code}: point ${JSON.stringify(point)} is ${ownD.toFixed(1)} km from ` +
+            `${own.name_fr}, the nearest commune of wilaya ${code} — over the ${CEILING_KM} km ceiling`,
         );
       }
     }
