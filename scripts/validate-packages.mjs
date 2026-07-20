@@ -529,24 +529,57 @@ function validateDataset(pkg, spec) {
   );
 }
 
-// dataset/data/poste/*.json is a mirror of @geoalgeria/poste — guard against drift.
+// dataset/data/poste is a mirror of @geoalgeria/poste — guard against drift.
+//
+// The whole tree, not just the JSON. poste/scripts/fetch.mjs emits all seven
+// files (json + csv/ + geojson/ + metadata.json) to both destinations from one
+// run, so anything less than a full-tree compare is not a mirror check. It used
+// to compare `*.json` alone, and the v2 migration regenerated packages/poste
+// without re-running that emit: the JSON went v2 while the mirror's csv/,
+// geojson/ and metadata.json stayed on the v1 columns, ids and row order from
+// 86c918d. `geoalgeria` therefore published v2 JSON beside v1 CSV/GeoJSON of
+// the same records, and CI stayed green throughout.
+//
+// Compares bytes, and walks both sides so an extra or missing file is caught
+// too — a re-copy that forgets a file must not read as "in sync".
+function walkFiles(dir, base = dir, out = []) {
+  for (const e of readdirSync(dir, { withFileTypes: true })) {
+    const p = join(dir, e.name);
+    if (e.isDirectory()) walkFiles(p, base, out);
+    else out.push(p.slice(base.length + 1));
+  }
+  return out.sort();
+}
+
 function validateMirror() {
-  const norm = (p) => JSON.stringify(readJson(p));
-  for (const file of ["postoffices.json", "atms.json"]) {
-    const source = join(ROOT, "packages", "poste", "data", file);
-    const mirror = join(ROOT, "packages", "dataset", "data", "poste", file);
+  const sourceDir = join(ROOT, "packages", "poste", "data");
+  const mirrorDir = join(ROOT, "packages", "dataset", "data", "poste");
+  if (!existsSync(mirrorDir)) {
+    fail("mirror: dataset/data/poste is missing entirely");
+    return;
+  }
+  const sourceFiles = walkFiles(sourceDir);
+  const mirrorFiles = new Set(walkFiles(mirrorDir));
+
+  for (const file of sourceFiles) {
+    mirrorFiles.delete(file);
+    const mirror = join(mirrorDir, file);
     if (!existsSync(mirror)) {
       fail(`mirror: dataset/data/poste/${file} is missing`);
       continue;
     }
-    if (norm(source) !== norm(mirror)) {
+    if (!readFileSync(join(sourceDir, file)).equals(readFileSync(mirror))) {
       fail(
         `mirror: dataset/data/poste/${file} drifted from @geoalgeria/poste — re-copy from packages/poste/data/${file}`,
       );
-    } else {
-      console.log(`  OK: mirror dataset/data/poste/${file} in sync`);
     }
   }
+  // Anything left is in the mirror but not in the source.
+  for (const extra of mirrorFiles)
+    fail(`mirror: dataset/data/poste/${extra} has no counterpart in packages/poste/data`);
+
+  if (!errors.some((e) => e.startsWith("mirror:")))
+    console.log(`  OK: mirror dataset/data/poste in sync (${sourceFiles.length} files, byte-identical)`);
 }
 
 // npm's `files` patterns are literal: "data/**/*.json" does NOT match ".geojson".

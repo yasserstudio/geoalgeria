@@ -1,9 +1,47 @@
 {
-  "source": "Algérie Poste — baridimap.poste.dz",
-  "api": "https://baridimap-api.poste.dz/api",
-  "license": "Data © Algérie Poste; redistributed for reference. See README.",
-  "postoffices": 3908,
-  "atms": 2026,
-  "distinct_postal_codes": 3908,
-  "generated_at": "2026-06-08"
+  "package": "@geoalgeria/poste",
+  "schema_version": "2.0.0",
+  "title_fr": "Bureaux de poste et GAB d'Algérie",
+  "title_ar": "مكاتب البريد والصرافات الآلية الجزائرية",
+  "title_en": "Algeria post offices & ATMs",
+  "record_count": 5934,
+  "geocoded_count": 5913,
+  "geocoded_pct": 99.6,
+  "precision": {
+    "exact": 5913,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
+  "wilayas_covered": 58,
+  "bbox": [
+    -8.165285,
+    19.562719,
+    10.195022,
+    37.067213
+  ],
+  "entities": [
+    {
+      "file": "postoffices.json",
+      "count": 3908
+    },
+    {
+      "file": "atms.json",
+      "count": 2026
+    }
+  ],
+  "sources": [
+    {
+      "key": "baridimap",
+      "name": "Algérie Poste — baridimap.poste.dz",
+      "url": "https://baridimap.poste.dz",
+      "license": "Data © Algérie Poste; redistributed for reference",
+      "retrieved": "2026-07-18",
+      "evidence_type": "official"
+    }
+  ],
+  "license": "Data © Algérie Poste; redistributed for reference",
+  "updated": "2026-07-18",
+  "distinct_postal_codes": 4000
 }
