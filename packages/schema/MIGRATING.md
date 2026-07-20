@@ -27,7 +27,8 @@ hand-editing data — then the outputs are regenerated. A package with no genera
      `lat`/`lng` are null (the validator enforces the iff, both directions). Put the
      source-specific method (e.g. `"osm_node"`, `"commune_centroid"`) in `geo_method` —
      and set `geo_method` to `null` too on an ungeocoded record: no method produced a
-     point, so `"ungeocoded"` / `"none"` would be a false claim.
+     point, so `"ungeocoded"` / `"none"` would be a false claim. The validator enforces
+     that iff on `geo_method` as well, so a geocoded record must name its method.
    - External ids (`osm_id`, `wikidata`, `msp_id`, …) → collapse into `refs: { osm, wikidata, msp }`.
    - `source` → a short key that matches a `metadata.sources[].key`.
    - Drop denormalized `wilaya`/`wilaya_ar` name fields — derivable from `wilaya_code`.

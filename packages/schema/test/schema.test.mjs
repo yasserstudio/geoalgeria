@@ -31,8 +31,12 @@ const rec = (over = {}) => ({
   lat: 36.75,
   lng: 3.06,
   geo_precision: "exact",
+  geo_method: "osm_node",
   ...over,
 });
+
+// An ungeocoded record: no point, so neither a precision nor a method.
+const ungeo = (over = {}) => rec({ lat: null, lng: null, geo_precision: null, geo_method: null, ...over });
 
 test("constants", () => {
   assert.equal(SCHEMA_VERSION, "2.0.0");
@@ -82,7 +86,7 @@ test("commune_code must be a numeric string; prefix mismatch warns", () => {
 test("coordinate sanity guard catches lat/lng swap and sign flip (no polygons needed)", () => {
   assert.match(validateRecords([rec({ lat: 3.06, lng: 36.75 })]).errors[0], /outside Algeria/); // swapped
   assert.match(validateRecords([rec({ lat: -36.75 })]).errors[0], /outside Algeria/); // sign flip
-  assert.equal(validateRecords([rec({ lat: null, lng: null, geo_precision: null })]).errors.length, 0); // ungeocoded ok
+  assert.equal(validateRecords([ungeo()]).errors.length, 0); // ungeocoded ok
   assert.equal(validateRecords([rec({ lat: 36.75, lng: null })]).errors.length, 1); // half-set
 });
 
@@ -93,10 +97,10 @@ test("geo_precision must be from the vocabulary", () => {
 
 test("geo_precision is null if and only if lat/lng are null", () => {
   // ungeocoded record asserting a precision for a point that does not exist
-  const stamped = validateRecords([rec({ lat: null, lng: null, geo_precision: "approximate" })]);
+  const stamped = validateRecords([ungeo({ geo_precision: "approximate" })]);
   assert.equal(stamped.errors.length, 1);
   assert.match(stamped.errors[0], /geo_precision must be null when lat\/lng are null/);
-  assert.equal(validateRecords([rec({ lat: null, lng: null, geo_precision: "exact" })]).errors.length, 1);
+  assert.equal(validateRecords([ungeo({ geo_precision: "exact" })]).errors.length, 1);
 
   // geocoded record with no precision — provenance thrown away
   const unstamped = validateRecords([rec({ geo_precision: null })]);
@@ -104,11 +108,32 @@ test("geo_precision is null if and only if lat/lng are null", () => {
   assert.match(unstamped.errors[0], /geo_precision must not be null on a geocoded record/);
 
   // both legal pairings
-  assert.equal(validateRecords([rec({ lat: null, lng: null, geo_precision: null })]).errors.length, 0);
+  assert.equal(validateRecords([ungeo()]).errors.length, 0);
   assert.equal(validateRecords([rec({ geo_precision: "exact" })]).errors.length, 0);
 
   // an absent geo_precision is still a vocabulary error, not an implicit null
   assert.match(validateRecords([rec({ geo_precision: undefined })]).errors[0], /must be one of/);
+});
+
+test("geo_method is null if and only if lat/lng are null", () => {
+  // ungeocoded record naming a method for a point that does not exist — the exact
+  // false provenance ("ungeocoded") that was writable and CI-green before this rule
+  const claimed = validateRecords([ungeo({ geo_method: "ungeocoded" })]);
+  assert.equal(claimed.errors.length, 1);
+  assert.match(claimed.errors[0], /geo_method must be null when lat\/lng are null/);
+  assert.equal(validateRecords([ungeo({ geo_method: "commune_centroid" })]).errors.length, 1);
+
+  // geocoded record with no method — the point's provenance silently dropped
+  const unstamped = validateRecords([rec({ geo_method: null })]);
+  assert.equal(unstamped.errors.length, 1);
+  assert.match(unstamped.errors[0], /geo_method must name how the point was obtained/);
+  // absent and empty are the same claim as null, not an exemption
+  assert.equal(validateRecords([rec({ geo_method: undefined })]).errors.length, 1);
+  assert.equal(validateRecords([rec({ geo_method: "  " })]).errors.length, 1);
+
+  // both legal pairings
+  assert.equal(validateRecords([ungeo()]).errors.length, 0);
+  assert.equal(validateRecords([rec({ geo_method: "wikidata_point" })]).errors.length, 0);
 });
 
 test("lifecycle is optional but validated against the vocabulary when present", () => {
@@ -215,7 +240,7 @@ test("buildMetadata computes counts, precision, coverage, bbox", () => {
   const records = [
     rec(),
     rec({ id: "sante:16-00002", geo_precision: "approximate" }),
-    rec({ id: "sante:31-00001", wilaya_code: "31", commune_code: "3101", lat: null, lng: null, geo_precision: null }),
+    ungeo({ id: "sante:31-00001", wilaya_code: "31", commune_code: "3101" }),
   ];
   const meta = buildMetadata({
     package: "@geoalgeria/sante",

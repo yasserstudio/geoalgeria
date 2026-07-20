@@ -5,7 +5,7 @@
 This package is the single source of truth for the shape of GeoAlgeria's open datasets (schema **v2**). It ships:
 
 - **TypeScript types** — `GeoRecord`, `DatasetMetadata`, `SourceRef`, `Manifest`, `Refs`, `GeoPrecision`. Each `@geoalgeria/*` dataset's records are a `GeoRecord` plus domain-specific extra fields.
-- **A zero-dependency runtime validator** — `validateRecords` / `validateMetadata`. Enforces the contract (string `wilaya_code`, string ONS `commune_code`, `geo_precision: exact|approximate|null` — null if and only if the record has no coordinate, `lat`/`lng`, `refs`), an always-on **Algeria-bbox coordinate guard** that catches lat/lng swaps and sign flips, and an optional **point-in-wilaya** check when you supply boundary polygons.
+- **A zero-dependency runtime validator** — `validateRecords` / `validateMetadata`. Enforces the contract (string `wilaya_code`, string ONS `commune_code`, `geo_precision: exact|approximate|null` and `geo_method` — each null if and only if the record has no coordinate, `lat`/`lng`, `refs`), an always-on **Algeria-bbox coordinate guard** that catches lat/lng swaps and sign flips, and an optional **point-in-wilaya** check when you supply boundary polygons.
 - **Canonical builders** — `buildMetadata` (counts, precision breakdown, honest `estimated_universe` coverage, `bbox`), `buildManifest` (the repo catalog / `index.json`), and `buildDcat` (a schema.org `Dataset` descriptor for Google Dataset Search / AI answer engines).
 - **Emit helpers** — `toCSV`, `toGeoJSON`, `wcode`, `round6`, `haversine`, `bbox`.
 
@@ -37,6 +37,7 @@ const meta = buildMetadata({
 | `commune_code` | `string \| null` | ONS code; first 2 digits === `wilaya_code` |
 | `lat` / `lng` | `number \| null` | both set or both null |
 | `geo_precision` | `"exact" \| "approximate" \| null` | detail in `geo_method`; **null iff `lat`/`lng` are null** |
+| `geo_method` | `string \| null` | how the point was obtained (`"osm_node"`, …); **null iff `lat`/`lng` are null** |
 | `refs` | `{ osm?, wikidata?, msp?, … }` | cross-dataset external ids |
 
 ## Boundary checks

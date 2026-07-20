@@ -54,8 +54,9 @@ export interface GeoRecord {
    *  no point asserts no precision (and no method). Enforced by `validateRecords`. */
   geo_precision: GeoPrecision;
   /** Free-form geocoding-method detail, e.g. "osm_node", "commune_centroid".
-   *  Null on ungeocoded records — no method produced a point. */
-  geo_method?: string | null;
+   *  Required (non-empty) on a geocoded record and null on an ungeocoded one —
+   *  no method produced a point. Enforced by `validateRecords`, both directions. */
+  geo_method: string | null;
   /** Operational status, where the source reports it. Absent means unknown. */
   lifecycle?: Lifecycle;
   /** Domain type code. */

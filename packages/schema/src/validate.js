@@ -94,6 +94,18 @@ export function validateRecords(records, opts = {}) {
     else if (geocoded === false && r.geo_precision !== null)
       err(i, `geo_precision must be null when lat/lng are null (got ${JSON.stringify(r.geo_precision)})`);
 
+    // geo_method — the same iff, on the other half of the geometry contract.
+    // Without it a record can still claim a method for a coordinate that does not
+    // exist (the `"ungeocoded"` provenance that was deleted from 13,425 records
+    // stayed writable and CI-green), or carry a real point with no record of what
+    // produced it — which MIGRATING.md and the glossary both call mandatory.
+    // No vocabulary check: geo_method is deliberately per-source free text
+    // (osm_node, commune_centroid, baridimap, takwin, …), unlike geo_precision.
+    if (geocoded === true && !isNonEmptyStr(r.geo_method))
+      err(i, `geo_method must name how the point was obtained on a geocoded record (got ${JSON.stringify(r.geo_method)})`);
+    else if (geocoded === false && r.geo_method != null)
+      err(i, `geo_method must be null when lat/lng are null (got ${JSON.stringify(r.geo_method)})`);
+
     // lifecycle — optional, but from the fixed vocabulary when present
     if (r.lifecycle != null && !LIFECYCLE.includes(r.lifecycle))
       err(i, `lifecycle must be one of ${LIFECYCLE.join("|")} (got ${JSON.stringify(r.lifecycle)})`);
