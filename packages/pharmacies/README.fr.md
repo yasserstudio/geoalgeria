@@ -56,7 +56,7 @@ metadata().wilayas_covered; // 67
 
 > **Couverture partielle.** 3 790 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur — aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord — c'est un extrait communautaire, **pas un registre officiel**.
 >
-> Les coordonnées sont des points OSM (relevés) ou des centroïdes de bâtiment (`geo_precision`). La commune est un rapprochement au centroïde le plus proche (au mieux) ; la wilaya est quasi exacte. Noms, téléphones et horaires ne figurent que là où un contributeur OSM les a renseignés.
+> Les coordonnées sont des points OSM (relevés) ou des centroïdes de bâtiment (`geo_method`). La commune est un rapprochement au centroïde le plus proche (au mieux) ; la wilaya est quasi exacte. Noms, téléphones et horaires ne figurent que là où un contributeur OSM les a renseignés.
 
 ## Source & licence
 

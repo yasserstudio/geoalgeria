@@ -93,7 +93,7 @@ data/
   carriers.json             # 16 ناقل (سجل)
   stopdesks.json            # 411 مكتب توقف محدد الإحداثيات (مصفوفة)
   coverage.json             # 9 صفوف تغطية لكل ناقل
-  metadata.json             # المصادر، الأعداد، generated_at
+  metadata.json             # المصادر، الأعداد، updated
   csv/                      # المستودع + حزمة الإصدار (ليست في tarball npm)
     carriers.csv
     stopdesks.csv
@@ -107,13 +107,17 @@ data/
 // stopdesks.json
 {
   "id": "160101",
-  "operator": "guepex",
   "name": "Agence Sacré-Cœur",
-  "address": "116 Didouche Mourad, Sacré Cœur, Alger",
+  "wilaya_code": "16",
+  "commune_code": null,
   "commune": "Alger Centre",
-  "wilaya_code": 16,
   "lat": 36.7635831801555,
   "lng": 3.0471151913967005,
+  "geo_precision": "exact",
+  "geo_method": "carrier_relay",
+  "source": "guepex",
+  "operator": "guepex",
+  "address": "116 Didouche Mourad, Sacré Cœur, Alger",
   "sources": ["guepex", "yalidine"]
 }
 ```
@@ -129,15 +133,16 @@ data/
   "scope": "domestic",
   "open_agency_data": "geocoded",
   "api": "documented",
+  "notes": "Largest COD network; publishes an open geocoded stop-desk table that also lists partner operators (federated relay). Documented developer API (centers/communes/wilayas) is merchant-key gated.",
   "in_stopdesks": true,
   "stopdesk_count": 93,
-  "stopdesk_wilaya_count": 54,
-  "notes": "Largest COD network; publishes an open geocoded stop-desk table."
+  "stopdesk_wilaya_count": 54
 }
 ```
 
-`operator` في مكتب التوقف يرتبط بـ `carriers[].id`. `wilaya_code` يرتبط بولايات
-GeoAlgeria. `sources` يسرد التغذيات المفتوحة التي تتضمن المكتب —
+`operator` في مكتب التوقف يرتبط بـ `carriers[].id`. `commune_code` دائمًا `null` —
+تغذيات ترحيل الناقلين تنشر اسم البلدية فقط، لا رمز ONS أبدًا. `wilaya_code` يرتبط
+بولايات GeoAlgeria. `sources` يسرد التغذيات المفتوحة التي تتضمن المكتب —
 `["yalidine","guepex"]` عندما تتطابق خرائط الشبكة، أو `["anderson"]` لوكالة Anderson.
 
 ## هل تحتاج أيضًا إلى التقسيمات الإدارية؟

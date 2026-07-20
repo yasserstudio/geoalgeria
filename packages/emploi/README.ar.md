@@ -14,7 +14,7 @@
 
 **58 AWEM** (وكالات التشغيل الولائية) و**273 ALEM** (وكالات التشغيل المحلية)
 التابعة للوكالة الوطنية للتشغيل **ANEM** — كل واحدة بعنوانها، هاتفها، فاكسها،
-بريدها الإلكتروني، مسؤولها، البلديات التي تغطيها، والإحداثيات الجغرافية.
+بريدها الإلكتروني، مسؤولها، والإحداثيات الجغرافية.
 متوفرة بصيغ JSON وCSV وGeoJSON. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -31,14 +31,13 @@ const all = emploi.agencies();      // جميع الـ 331 (AWEM أولاً)
 // الوكالات في ولاية (ربط عبر wilaya_code الخاص بـ GeoAlgeria)
 const inAlger = all.filter((a) => a.wilaya_code === "16");
 
-// أي وكالة محلية تغطي بلدية ما؟ `communes` يسرد البلديات المخدومة.
-const serving = alem.filter((a) => (a.communes || "").includes("REGGANE"));
+// البحث عن وكالة محلية بالاسم
+const reggane = alem.filter((a) => a.name.includes("REGGANE"));
 ```
 
 ## ما يمكنك بناؤه
 
 - **محددات مواقع الوكالات** — إحداثيات على (تقريباً) كل سجل، جاهزة للترتيب حسب المسافة أو العرض على خريطة.
-- **« أي مكتب يغطي بلديتي؟ »** — سجلات ALEM تسرد البلديات التي تخدمها.
 - **أدلة الاتصال** — هاتف، فاكس، بريد إلكتروني ومسؤول لكل وكالة.
 - **خرائط** — طبقات نقاط GeoJSON جاهزة للاستخدام لشبكة التشغيل بأكملها.
 
@@ -47,7 +46,7 @@ const serving = alem.filter((a) => (a.communes || "").includes("REGGANE"));
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
 | AWEM (وكالات التشغيل الولائية) | **58** | واحدة لكل ولاية |
-| ALEM (وكالات التشغيل المحلية) | **273** | كل واحدة تسرد البلديات المخدومة |
+| ALEM (وكالات التشغيل المحلية) | **273** | مكاتب دون مستوى الولاية، مسمّاة حسب المحلّة |
 
 ## الصيغ
 
@@ -73,7 +72,7 @@ const local: Alem[] = emploi.alem();
 data/
   awem.json               # 58 وكالة ولائية (مصفوفة)
   alem.json               # 273 وكالة محلية (مصفوفة)
-  metadata.json           # المصدر، الأعداد، generated_at
+  metadata.json           # المصادر، الأعداد، updated
   csv/awem.csv            # المستودع + حزمة الإصدار (غير مضمّن في tarball npm)
   csv/alem.csv
   geojson/awem.geojson    # معالم نقطية (سجلات بإحداثيات)
@@ -90,28 +89,34 @@ data/
 ```json
 {
   "id": "01-02",
-  "code": "0102",
-  "type": "ALEM",
   "name": "ALEM REGGANE",
+  "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
+  "lat": 26.71627,
+  "lng": 0.17441,
+  "geo_precision": "exact",
+  "geo_method": "anem",
+  "source": "anem",
+  "type": "ALEM",
+  "code": "0102",
   "address": "Hai Saada - Reggane",
   "phone": "(049) 320 - 373",
   "fax": "(049) 320 - 372",
   "email": "alem.reggane@anem.dz",
-  "manager": "BELHADJ ABBELKADER",
-  "communes": "REGGANE,SALI",
-  "wilaya_code": "01",
-  "lat": 26.71627,
-  "lng": 0.17441
+  "manager": "BELHADJ ABBELKADER"
 }
 ```
 
-`id` هو مفتاح ثابت بصيغة `{wilaya_code}-{seq}` مُولّد بواسطة GeoAlgeria — `code`
-الخاص بـ ANEM محفوظ أيضاً لكنه مفقود في بعض السجلات وغير فريد، لذا يُفضّل استخدام `id`.
-`communes` هي قائمة مفصولة بفواصل للبلديات التي تخدمها الوكالة.
-`wilaya_code` يربط مع `wilaya_code` الخاص بـ GeoAlgeria.
+`id` هو مفتاح ثابت بصيغة `{wilaya_code}-{seq}` مُولّد بواسطة GeoAlgeria، وهو
+فريد ضمن مجموعة `agencies()` المدمجة (معرّفات AWEM لا تحتوي أبداً على شرطة،
+بينما معرّفات ALEM تحتوي عليها دائماً) — `code` الخاص بـ ANEM محفوظ أيضاً لكنه
+مفقود في بعض السجلات وغير فريد، لذا يُفضّل استخدام `id`. حقلا `commune_code`
+و`commune` يساويان `null` حالياً في كل السجلات — مصدر ANEM لا يحدّد إلا الولاية،
+وليس البلدية. `wilaya_code` يربط مع `wilaya_code` الخاص بـ GeoAlgeria.
 
 **AWEM (وكالة ولائية)** — نفس الهيكل، `id` = `wilaya_code` المكوّن من رقمين،
-مع `name` / `address` / `phone` / `manager` و`lat`/`lng`؛ بدون `communes`.
+مع `name` / `address` / `phone` / `manager` و`lat`/`lng`.
 
 ## تحتاج التقسيمات الإدارية أيضاً؟
 

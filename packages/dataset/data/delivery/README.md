@@ -8,18 +8,23 @@ This data is **community-maintained** and may not reflect real-time pricing. Alw
 
 ## Schema
 
+Each file ships as an unfilled template — one zone entry per wilaya, all provider-specific
+fields `null` until a contributor fills them in:
+
 ```json
 {
   "provider": "yalidine",
-  "last_updated": "2025-05-05",
+  "provider_name": "Yalidine",
+  "last_updated": null,
+  "notes": "Template — zones need to be filled by community contributors",
   "zones": [
     {
-      "wilaya_code": 16,
-      "wilaya_name_fr": "Alger",
-      "zone": "A",
-      "home_delivery": true,
-      "desk_delivery": true,
-      "estimated_days": 1
+      "wilaya_code": 1,
+      "wilaya_name_fr": "Adrar",
+      "zone": null,
+      "home_delivery": null,
+      "desk_delivery": null,
+      "estimated_days": null
     }
   ]
 }

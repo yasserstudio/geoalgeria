@@ -73,7 +73,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 ```
 data/
   boutiques.json              # 128 boutiques (tableau)
-  metadata.json               # source, totaux, generated_at
+  metadata.json               # sources, totaux, licence, updated
   csv/boutiques.csv           # dépôt + Release (pas dans le tarball npm)
   geojson/boutiques.geojson   # entités Point
 ```
@@ -82,25 +82,32 @@ data/
 
 ```json
 {
-  "id": "16-001",
-  "code": "Z56",
-  "type": "boutique",
+  "id": "01-001",
   "name": "ADRAR",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "Adrar",
+  "lat": 27.87194,
+  "lng": -0.28569,
+  "geo_precision": "exact",
+  "geo_method": "operator_point",
+  "source": "djezzy",
+  "refs": {
+    "djezzy": "Z56"
+  },
+  "type": "boutique",
   "category": "C",
   "address": "Groupe 74, Prés souk Dinar Tayeb, Adrar.",
   "hours": "08H00 - 18H00",
-  "code_ouverture": null,
-  "wilaya_code": "01",
-  "commune_code": 101,
-  "commune": "Adrar",
-  "lat": 27.87194,
-  "lng": -0.28569
+  "code_ouverture": null
 }
 ```
 
-`id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria. Le code
-interne de Djezzy est conservé dans `code`. `wilaya_code` se joint au
-`wilaya_code` de GeoAlgeria.
+`id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria, unique
+dans ce jeu de données. Le code interne de Djezzy est conservé dans `refs.djezzy`.
+`wilaya_code` se joint au `wilaya_code` de GeoAlgeria. `geo_precision` vaut
+toujours `"exact"` et `geo_method` toujours `"operator_point"` — chaque boutique
+porte une vraie coordonnée publiée par l'opérateur.
 
 > **Le rattachement commune/wilaya est dérivé, pas issu de la source.** Djezzy
 > publie des coordonnées et une adresse mais aucun code administratif. GeoAlgeria

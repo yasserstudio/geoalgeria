@@ -54,7 +54,7 @@ const named = all.filter((m) => m.name_fr);
 | Source | Count | Meaning |
 | --- | --- | --- |
 | `wikidata` | 13,200 | from Wikidata only |
-| `wikidata+osm` | 5,897 | in both, matched within ~150 m (OSM lends a French name / denomination / `osm_id`) |
+| `wikidata+osm` | 5,897 | in both, matched within ~150 m (OSM lends a French name / denomination / `refs.osm`) |
 | `osm` | 1,662 | mapped in OpenStreetMap, not yet in Wikidata |
 
 > **This is a composite, not an official registry.** Wikidata gives near-complete
@@ -86,7 +86,7 @@ const all: Mosquee[] = mosquees.mosquees();
 ```
 data/
   mosquees.json              # 20,759 mosques (array)
-  metadata.json              # sources, counts, coverage, generated_at
+  metadata.json              # sources, counts, coverage, updated
   csv/mosquees.csv           # repo + Release bundle (not in npm tarball)
   geojson/mosquees.geojson   # Point features
 ```
@@ -96,25 +96,30 @@ data/
 ```json
 {
   "id": "16-0914",
-  "source": "wikidata+osm",
-  "wikidata": "Q28717404",
-  "osm_id": "relation/15870867",
   "name": "مسجد عبد الحميد بن باديس",
-  "name_ar": "مسجد عبد الحميد بن باديس",
   "name_fr": "Mosquée Ibn Badis",
-  "denomination": "sunni",
+  "name_ar": "مسجد عبد الحميد بن باديس",
   "wilaya_code": "16",
-  "commune_code": 1607,
+  "commune_code": "1607",
   "commune": "Casbah",
   "lat": 36.779365,
-  "lng": 3.05949
+  "lng": 3.05949,
+  "geo_precision": "approximate",
+  "geo_method": "osm_relation",
+  "source": "wikidata+osm",
+  "refs": {
+    "wikidata": "Q28717404",
+    "osm": "relation/15870867"
+  },
+  "denomination": "sunni"
 }
 ```
 
-`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria. `wikidata`
-and `osm_id` link back to the upstream objects. `name` is the best available
-display name (French preferred, else Arabic) and is `null` for the unnamed OSM
-points. `wilaya_code` joins to GeoAlgeria's `wilaya_code`.
+`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria, unique
+within `mosquees.json`. `refs.wikidata` and `refs.osm` link back to the
+upstream objects. `name` is the best available display name (French preferred,
+else Arabic) and is `null` for the unnamed OSM points. `wilaya_code` joins to
+GeoAlgeria's `wilaya_code`.
 
 > **Commune/wilaya linkage is derived, not from the sources.** Neither Wikidata
 > nor OSM carries Algerian administrative codes. GeoAlgeria attaches
@@ -140,7 +145,7 @@ Run `npm run fetch` to regenerate every output. It:
 2. queries **OpenStreetMap** (Overpass) for `amenity=place_of_worship` +
    `religion=muslim` inside Algeria;
 3. **merges** them — an OSM mosque within ~150 m of a Wikidata mosque is folded
-   into that record (lending its French name, denomination, and `osm_id`); OSM
+   into that record (lending its French name, denomination, and `refs.osm`); OSM
    mosques with no match become their own records;
 4. attaches commune/wilaya by nearest commune centroid.
 

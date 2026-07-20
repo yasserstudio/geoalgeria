@@ -55,7 +55,7 @@ const named = all.filter((m) => m.name_fr);
 | Source | Nombre | Signification |
 | --- | --- | --- |
 | `wikidata` | 13 200 | issu de Wikidata seul |
-| `wikidata+osm` | 5 897 | dans les deux, apparié à ~150 m près (OSM apporte un nom français / une dénomination / un `osm_id`) |
+| `wikidata+osm` | 5 897 | dans les deux, apparié à ~150 m près (OSM apporte un nom français / une dénomination / un `refs.osm`) |
 | `osm` | 1 662 | cartographié dans OpenStreetMap, pas encore dans Wikidata |
 
 > **C'est un composite, pas un registre officiel.** Wikidata offre une couverture
@@ -87,7 +87,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 ```
 data/
   mosquees.json              # 20 759 mosquées (tableau)
-  metadata.json              # sources, totaux, couverture, generated_at
+  metadata.json              # sources, totaux, couverture, updated
   csv/mosquees.csv           # dépôt + Release (pas dans le tarball npm)
   geojson/mosquees.geojson   # entités Point
 ```
@@ -97,25 +97,30 @@ data/
 ```json
 {
   "id": "16-0914",
-  "source": "wikidata+osm",
-  "wikidata": "Q28717404",
-  "osm_id": "relation/15870867",
   "name": "مسجد عبد الحميد بن باديس",
-  "name_ar": "مسجد عبد الحميد بن باديس",
   "name_fr": "Mosquée Ibn Badis",
-  "denomination": "sunni",
+  "name_ar": "مسجد عبد الحميد بن باديس",
   "wilaya_code": "16",
-  "commune_code": 1607,
+  "commune_code": "1607",
   "commune": "Casbah",
   "lat": 36.779365,
-  "lng": 3.05949
+  "lng": 3.05949,
+  "geo_precision": "approximate",
+  "geo_method": "osm_relation",
+  "source": "wikidata+osm",
+  "refs": {
+    "wikidata": "Q28717404",
+    "osm": "relation/15870867"
+  },
+  "denomination": "sunni"
 }
 ```
 
-`id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria.
-`wikidata` et `osm_id` renvoient aux objets sources. `name` est le meilleur nom
-d'affichage disponible (français de préférence, sinon arabe) et vaut `null` pour
-les points OSM sans nom. `wilaya_code` se joint au `wilaya_code` de GeoAlgeria.
+`id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria, unique
+dans `mosquees.json`. `refs.wikidata` et `refs.osm` renvoient aux objets
+sources. `name` est le meilleur nom d'affichage disponible (français de
+préférence, sinon arabe) et vaut `null` pour les points OSM sans nom.
+`wilaya_code` se joint au `wilaya_code` de GeoAlgeria.
 
 > **Le rattachement commune/wilaya est dérivé, pas issu des sources.** Ni Wikidata
 > ni OSM ne portent les codes administratifs algériens. GeoAlgeria attache
@@ -143,7 +148,7 @@ Lancez `npm run fetch` pour régénérer les sorties. Le script :
    `religion=muslim` en Algérie ;
 3. les **fusionne** — une mosquée OSM à ~150 m d'une mosquée Wikidata est intégrée
    à cet enregistrement (apportant son nom français, sa dénomination et son
-   `osm_id`) ; les mosquées OSM sans correspondance deviennent leurs propres
+   `refs.osm`) ; les mosquées OSM sans correspondance deviennent leurs propres
    enregistrements ;
 4. attache la commune/wilaya par centroïde de commune le plus proche.
 

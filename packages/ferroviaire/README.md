@@ -76,7 +76,7 @@ const stations: Station[] = ferroviaire.stations();
 ```
 data/
   stations.json            # 692 nodes (array)
-  metadata.json            # source, counts, generated_at
+  metadata.json            # sources, counts, license, updated
   csv/stations.csv
   geojson/stations.geojson # Point features (all geocoded)
 ```
@@ -85,30 +85,36 @@ data/
 
 ```json
 {
-  "id": "16-021",
+  "id": "16-062",
   "name": "Place des Martyrs",
   "name_fr": "Place des Martyrs",
-  "name_ar": "ساحة الشهداء",
-  "type": "metro",
-  "line": "ligne 1 du métro d'Alger",
-  "operator": "SEMA",
-  "network": "Métro d'Alger",
+  "name_ar": "محطة مترو ساحة الشهداء",
   "wilaya_code": "16",
+  "commune_code": "1607",
   "commune": "Casbah",
-  "commune_code": 1605,
-  "lat": 36.7887,
-  "lng": 3.0603,
+  "lat": 36.785556,
+  "lng": 3.062222,
   "geo_precision": "exact",
+  "geo_method": "osm_node",
   "source": "wikidata+osm",
-  "wikidata": "Q...",
-  "osm_id": "node/..."
+  "refs": {
+    "wikidata": "Q52230167",
+    "osm": "node/966535035"
+  },
+  "type": "metro",
+  "line": "ligne 1",
+  "operator": "SEMA",
+  "network": "Métro d'Alger"
 }
 ```
 
 `type` is one of `rail | tram | metro | aerial_tram | gondola`. `source`
 is `wikidata`, `osm`, or `wikidata+osm` (matched within ~150 m). `name` may be `null`
-for a few OSM-only stops. `wilaya_code`/`commune` come from a nearest-centroid join
-against `geoalgeria`.
+for a few OSM-only stops (23 records). `wilaya_code`/`commune` come from a
+nearest-centroid join against `geoalgeria`. `id` is an opaque string, unique within
+`stations.json` — don't parse it. `geo_precision` is `exact` or `approximate` (all 692
+records are geocoded, so `null` doesn't occur here); `geo_method` records how the
+coordinate was sourced (e.g. `osm_node`, `wikidata`). External ids live under `refs`.
 
 ## Source & license
 

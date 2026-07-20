@@ -57,7 +57,7 @@ dépôt sous [`data/`](data) et joints à chaque
 ```
 data/
   stations.json            # 74 gares (tableau)
-  metadata.json            # source, décomptes, generated_at
+  metadata.json            # sources, décomptes, license, updated
   csv/stations.csv
   geojson/stations.geojson # entités Point (74 géocodées)
 ```

@@ -67,18 +67,19 @@ const privates = es.institutionsBySector("private");      // المؤسسات ا
 `name_ar` أيضا **مملوء بأثر رجعي** للشبكة العامة (ربط عبر الموقع) — موجود على ~93% من جميع السجلات.
 
 صفحة الوزارة **لا تتضمن إحداثيات ولا عنوان**، لذا **الجغرافيا مقدمة هنا** وموسومة
-بشفافية على كل سجل عبر `geo_precision`:
+بشفافية على كل سجل عبر `geo_method` (التفصيل) و`geo_precision` (`"exact"` لـ `campus`،
+و`"approximate"` لـ `commune`/`wilaya`):
 
-| `geo_precision` | العدد | ما تمثله الإحداثيات |
-| --- | --- | --- |
-| `campus` | 61 | ترميز جغرافي من OpenStreetMap للحرم الجامعي المسمى، مع تحقق: أي ترميز يقع في ولاية مختلفة عن اسم المؤسسة يتم رفضه. |
-| `commune` | 16 | النقطة المركزية لبلدية المؤسسة، من مجموعة بيانات `geoalgeria` الرئيسية — يُستخدم حين لا يجد OSM الحرم الجامعي بالاسم. |
-| `wilaya` | 100 | النقطة المركزية لولاية المؤسسة — الحل البديل حين تكون الولاية فقط هي المعروفة. كل مؤسسة خاصة/تابعة لوزارات أخرى توجد هنا، لأن المصدر لا ينشر عناوين لها. |
+| `geo_method` | العدد | `geo_precision` | ما تمثله الإحداثيات |
+| --- | --- | --- | --- |
+| `campus` | 61 | `exact` | ترميز جغرافي من OpenStreetMap للحرم الجامعي المسمى، مع تحقق: أي ترميز يقع في ولاية مختلفة عن اسم المؤسسة يتم رفضه. |
+| `commune` | 16 | `approximate` | النقطة المركزية لبلدية المؤسسة، من مجموعة بيانات `geoalgeria` الرئيسية — يُستخدم حين لا يجد OSM الحرم الجامعي بالاسم. |
+| `wilaya` | 100 | `approximate` | النقطة المركزية لولاية المؤسسة — الحل البديل حين تكون الولاية فقط هي المعروفة. كل مؤسسة خاصة/تابعة لوزارات أخرى توجد هنا، لأن المصدر لا ينشر عناوين لها. |
 
-`wilaya_code` و`wilaya_name` و`commune` دائما مطابقة لمجموعة بيانات `geoalgeria` الرئيسية،
-لذا فهي موثوقة وتتبع نظام 69 ولاية. الإحداثيات هي طبقة إثراء — دقيقة حسب المستوى
-المحدد، وليست موقع حرم جامعي ممسوح. أعد توليدها بـ `npm run geocode`
-(OpenStreetMap Nominatim)، ثم `npm run fetch`.
+`wilaya_code` و`commune` دائما مطابقان لمجموعة بيانات `geoalgeria` الرئيسية، لذا فهما موثوقان
+ويتبعان نظام 69 ولاية (`commune_code` يساوي `null` حاليا في جميع السجلات — الوزارة لا توفر رمز
+بلدية). الإحداثيات هي طبقة إثراء — دقيقة حسب المستوى المحدد، وليست موقع حرم جامعي ممسوح. أعد
+توليدها بـ `npm run geocode` (OpenStreetMap Nominatim)، ثم `npm run fetch`.
 
 ## الصيغ
 
@@ -103,37 +104,43 @@ const all: Institution[] = es.institutions();
 ```
 data/
   institutions.json            # 177 مؤسسة (مصفوفة)
-  metadata.json                # المصدر، الإحصائيات، by_type، by_sector، by_precision، generated_at
+  metadata.json                # المصادر، الإحصائيات، by_type، by_sector، by_geo_method، updated
   csv/institutions.csv         # المستودع + حزمة الإصدار (غير مضمن في tarball npm)
-  geojson/institutions.geojson # كيانات نقطية (177 موضوعة؛ 61 مرمزة جغرافيا على مستوى الحرم، انظر geo_precision)
+  geojson/institutions.geojson # كيانات نقطية (177 موضوعة؛ 61 مرمزة جغرافيا على مستوى الحرم، انظر geo_method)
 ```
 
 ## بنية السجل
 
 ```json
 {
-  "id": 53,
+  "id": "00053",
   "name": "Université des sciences et de la technologie d'Alger, Houari Boumediène",
-  "name_ar": "جامعة العلوم والتكنولوجيا هواري بومدين",
-  "type": "universite",
-  "type_fr": "Université",
-  "sector": "public",
-  "supervisory_ministry": null,
-  "website": "http://www.usthb.dz/",
-  "commune": "Bab Ezzouar",
+  "name_ar": "جامعة الجزائر هواري بومدين للعلوم و التكنولوجيا",
   "wilaya_code": "16",
-  "wilaya_name": "Alger",
+  "commune_code": null,
+  "commune": "Bab Ezzouar",
   "lat": 36.7121849,
   "lng": 3.1810204,
-  "geo_precision": "campus",
-  "source": "https://www.mesrs.dz/en/university-network/"
+  "geo_precision": "exact",
+  "geo_method": "campus",
+  "source": "mesrs",
+  "type": "universite",
+  "type_label_fr": "Université",
+  "sector": "public",
+  "supervisory_ministry": null,
+  "website": "http://www.usthb.dz/"
 }
 ```
 
-`name` باللغة الفرنسية (شبكة الوزارة) أو `null` للمؤسسات الخاصة/التابعة لوزارات أخرى المنشورة بالعربية فقط
-— استخدم `name ?? name_ar` للحصول على علامة العرض. للحصول على أسماء الولايات والبلديات بالعربية، اربط
-`wilaya_code` بمجموعة بيانات
-[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` مكمّل بصفر إلى رقمين.
+`id` سلسلة نصية ثابتة مكمّلة بأصفار يُسندها GeoAlgeria (مصدر الوزارة لا ينشر أي معرّف)، فريدة ضمن
+هذه المجموعة. `name` باللغة الفرنسية (شبكة الوزارة) أو `null` للمؤسسات الخاصة/التابعة لوزارات
+أخرى المنشورة بالعربية فقط — استخدم `name ?? name_ar` للحصول على علامة العرض. للحصول على أسماء
+الولايات والبلديات بالعربية، اربط `wilaya_code` بمجموعة بيانات
+[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` مكمّل بصفر إلى رقمين؛
+`commune_code` يساوي `null` حاليا في جميع السجلات. `geo_precision` تساوي `"exact"` لنقطة حرم
+جامعي حقيقية أو `"approximate"` لمركز بلدية/ولاية — ويحدد `geo_method` أيّهما. `source` مفتاح
+مصدر ثابت (`"mesrs"`) داخل `metadata.sources[]`، وليس رابطًا — انظر **المصدر** أدناه للصفحات
+الفعلية.
 
 ## هل تحتاج التقسيمات الإدارية أيضا؟
 

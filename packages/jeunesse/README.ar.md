@@ -27,7 +27,7 @@ npm install @geoalgeria/jeunesse
 ```js
 import jeunesse from "@geoalgeria/jeunesse";
 
-const all = jeunesse.institutions();                 // ~2,334
+const all = jeunesse.institutions();                 // 2,334
 const inAlgiers = jeunesse.institutionsByWilaya(16);  // مؤسسات الولاية 16
 const houses = jeunesse.institutionsByType("MJ");     // جميع دور الشباب
 
@@ -81,8 +81,8 @@ const all: Institution[] = jeunesse.institutions();
 
 ```
 data/
-  institutions.json            # ~2,334 مؤسسة (مصفوفة)
-  metadata.json                # المصدر، الأعداد، by_type، generated_at
+  institutions.json            # 2,334 مؤسسة (مصفوفة)
+  metadata.json                # المصادر، الأعداد، by_type، license، updated
   csv/institutions.csv         # المستودع + حزمة الإصدار (غير مضمّن في tarball npm)
   geojson/institutions.geojson # معالم نقطية (جميعها مُحددة جغرافيًا)
 ```
@@ -91,36 +91,44 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "00001",
   "name": "Auberge de jeunes El amir Abdelkader, Sbaa",
-  "name_ar": "دار الشباب الأمير عبد القادر",
-  "type_code": "AJ",
-  "type_fr": "Auberge de jeunes",
-  "type_ar": "نزل الشباب",
-  "address": "sabaa, tsabit, adrar",
-  "commune": "SEBAA",
-  "daira": "TSABIT",
+  "name_ar": null,
   "wilaya_code": "01",
-  "wilaya_name": "ADRAR",
+  "commune_code": null,
+  "commune": "SEBAA",
+  "lat": 28.2186,
+  "lng": -0.173,
+  "geo_precision": "exact",
+  "geo_method": "sig_mjs",
+  "source": "mjs",
+  "type": "AJ",
+  "type_label_fr": "Auberge de jeunes",
+  "type_label_ar": "نزل الشباب",
+  "daira": "TSABIT",
+  "address": "sabaa, tsabit, adrar",
   "capacity": 50,
   "year": 2012,
   "operational": true,
   "pmr": true,
   "surface_built_m2": 3600,
-  "surface_land_m2": 3600,
-  "lat": 28.2186,
-  "lng": -0.173,
-  "source": "https://sig.mjs.gov.dz/dashboard/viewer"
+  "surface_land_m2": 3600
 }
 ```
 
-يُنشر النظام الأسماء **بالفرنسية** ؛ `name_ar` هو الاسم العربي **المُتمّم** من خريطة الوزارة العمومية التاريخية
-من خلال المطابقة الجغرافية الأقرب (≤ 200 م، مع التحقّق من النوع حتى لا يُنسب اسم مبنى مجاور) — موجود على ~59% من السجلات،
-`null` حيث لا توجد مطابقة موثوقة. `name` هو `null` لـ ~5% من السجلات التي تتركها المصدر فارغة؛
-`commune` و`daira` و`wilaya_name` بالفرنسية (أحرف كبيرة، كما مُنشرة). للحصول على قائمة كاملة
-بتقسيمات الولايات والبلديات بالفرنسية، اربط `wilaya_code` بمجموعة بيانات
-[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` مُكمَّل بصفر على خانتين
-وهو `≤ 58` (المصدر سابق لإصلاح الـ 69 ولاية)؛ ويبقى متوافقًا مع نموذج الولايات في GeoAlgeria.
+`id` سلسلة نصية غير قابلة للتفسير مكونة من تسلسل مكمّل بأصفار، فريدة داخل
+`institutions.json` — لا تحلّلها. يُنشر النظام الأسماء **بالفرنسية** ؛ `name_ar` هو الاسم
+العربي **المُتمّم** من خريطة الوزارة العمومية التاريخية من خلال المطابقة الجغرافية الأقرب
+(≤ 200 م، مع التحقّق من النوع حتى لا يُنسب اسم مبنى مجاور) — موجود على ~59% من السجلات،
+`null` حيث لا توجد مطابقة موثوقة (كما في المثال أعلاه). `name` هو `null` لـ ~5% من السجلات
+التي تتركها المصدر فارغة؛ `commune` و`daira` بالفرنسية (أحرف كبيرة، كما مُنشرة)؛ `commune_code`
+حاليا دائما `null` (نظام المعلومات الجغرافية لوزارة الشباب والرياضة يوفر اسم البلدية فقط دون
+رمزها). للحصول على قائمة كاملة بتقسيمات الولايات والبلديات بالفرنسية، اربط `wilaya_code`
+بمجموعة بيانات [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` مُكمَّل
+بصفر على خانتين وهو `≤ 58` (المصدر سابق لإصلاح الـ 69 ولاية)؛ ويبقى متوافقًا مع نموذج الولايات
+في GeoAlgeria. قيمة `geo_precision` هي `"exact"` لـ 2,244 سجلا و`"approximate"` لـ 90 سجلا
+(نقطة نظام المعلومات الجغرافية إما خشنة جدا أو مشتركة مع مؤسسة أخرى لتُعتبر نقطة خاصة
+بالمنشأة)؛ جميع السجلات مُحددة جغرافيًا، لذا لا تظهر `null` هنا.
 
 ## البنية التحتية الرياضية أيضًا؟
 
@@ -141,7 +149,7 @@ data/
 (<https://sig.mjs.gov.dz/dashboard/viewer>). نفّذ `npm run fetch` لإعادة توليد
 جميع المخرجات من النظام الحي؛ عملية البناء تحل كل اسم ولاية بالفرنسية إلى رمز الولاية الرسمي،
 وتُصلح السجلات ذات الإحداثيات المعكوسة، وتتمّم الأسماء العربية من الخريطة التاريخية، وتحذف السجلات القليلة
-ذات الإحداثيات الوهمية/خارج الحدود (`metadata.dropped`). تفشل العملية بوضوح إذا انهار عدد المؤسسات أو ظهر نوع معروف.
+ذات الإحداثيات الوهمية/خارج الحدود. تفشل العملية بوضوح إذا انهار عدد المؤسسات أو ظهر نوع معروف.
 
 ## الترخيص والإسناد
 

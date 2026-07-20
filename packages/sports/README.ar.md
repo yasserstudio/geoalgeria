@@ -72,8 +72,9 @@ const المسابح = sports.facilitiesByType("P25");      // كل مسابح 2
 | ملعب كبير | `GS` | 1 |
 | **المجموع** | | **5,141** |
 
-تغطية **58 ولاية**، كل منشأة بإحداثيات جغرافية. `wilaya_code` مرتبط بنموذج الولايات
-في [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+تغطية **58 ولاية**، كل منشأة بإحداثيات جغرافية — 5,008 منها بنقطة `exact`، و133
+المتبقية `approximate`. `wilaya_code` مرتبط بنموذج الولايات في
+[`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ## المصدر
 

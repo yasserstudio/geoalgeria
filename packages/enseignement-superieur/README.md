@@ -69,18 +69,20 @@ published in Arabic only, so they carry `name_ar` with `name: null`. `name_ar` i
 **backfilled** for the public network (joined on website) — present on ~93% of all records.
 
 The ministry's page carries **no coordinates and no address**, so the **geography is supplied
-here** and labelled honestly on every record via `geo_precision`:
+here** and labelled honestly on every record via `geo_method` (detail) and `geo_precision`
+(`"exact"` for `campus`, `"approximate"` for `commune`/`wilaya`):
 
-| `geo_precision` | Count | What the coordinate is |
-| --- | --- | --- |
-| `campus` | 61 | An OpenStreetMap geocode of the named campus, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
-| `commune` | 16 | The centroid of the institution's commune (city), from the `geoalgeria` flagship — used where OSM can't find the campus by name. |
-| `wilaya` | 100 | The centroid of the institution's wilaya — the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
+| `geo_method` | Count | `geo_precision` | What the coordinate is |
+| --- | --- | --- | --- |
+| `campus` | 61 | `exact` | An OpenStreetMap geocode of the named campus, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
+| `commune` | 16 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship — used where OSM can't find the campus by name. |
+| `wilaya` | 100 | `approximate` | The centroid of the institution's wilaya — the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
 
-`wilaya_code`, `wilaya_name` and `commune` are always reconciled to the `geoalgeria` flagship
-dataset, so they are authoritative and in the 69-wilaya scheme. Coordinates are an enrichment
-layer — accurate to the labelled precision, not a surveyed campus position. Regenerate them
-with `npm run geocode` (OpenStreetMap Nominatim), then `npm run fetch`.
+`wilaya_code` and `commune` are always reconciled to the `geoalgeria` flagship dataset, so they
+are authoritative and in the 69-wilaya scheme (`commune_code` is currently `null` on every
+record — MESRS gives no commune code). Coordinates are an enrichment layer — accurate to the
+labelled precision, not a surveyed campus position. Regenerate them with `npm run geocode`
+(OpenStreetMap Nominatim), then `npm run fetch`.
 
 ## Formats
 
@@ -105,37 +107,43 @@ const all: Institution[] = es.institutions();
 ```
 data/
   institutions.json            # 177 institutions (array)
-  metadata.json                # source, counts, by_type, by_sector, by_precision, generated_at
+  metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 177 placed; 61 campus-geocoded, see geo_precision)
+  geojson/institutions.geojson # Point features (all 177 placed; 61 campus-geocoded, see geo_method)
 ```
 
 ## Record shape
 
 ```json
 {
-  "id": 53,
+  "id": "00053",
   "name": "Université des sciences et de la technologie d’Alger, Houari Boumediène",
-  "name_ar": "جامعة العلوم والتكنولوجيا هواري بومدين",
-  "type": "universite",
-  "type_fr": "Université",
-  "sector": "public",
-  "supervisory_ministry": null,
-  "website": "http://www.usthb.dz/",
-  "commune": "Bab Ezzouar",
+  "name_ar": "جامعة الجزائر هواري بومدين للعلوم و التكنولوجيا",
   "wilaya_code": "16",
-  "wilaya_name": "Alger",
+  "commune_code": null,
+  "commune": "Bab Ezzouar",
   "lat": 36.7121849,
   "lng": 3.1810204,
-  "geo_precision": "campus",
-  "source": "https://www.mesrs.dz/en/university-network/"
+  "geo_precision": "exact",
+  "geo_method": "campus",
+  "source": "mesrs",
+  "type": "universite",
+  "type_label_fr": "Université",
+  "sector": "public",
+  "supervisory_ministry": null,
+  "website": "http://www.usthb.dz/"
 }
 ```
 
-`name` is French (the MESRS network) or `null` for the Arabic-only private/other-ministry
-institutions — use `name ?? name_ar` for a display label. For Arabic wilaya and commune names,
-join `wilaya_code` against the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset.
-`wilaya_code` is zero-padded to two digits.
+`id` is a stable zero-padded string assigned by GeoAlgeria (the MESRS source publishes none),
+unique within this dataset. `name` is French (the MESRS network) or `null` for the Arabic-only
+private/other-ministry institutions — use `name ?? name_ar` for a display label. For Arabic
+wilaya and commune names, join `wilaya_code` against the
+[`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
+to two digits; `commune_code` is currently `null` on every record. `geo_precision` is `"exact"`
+for a real campus point or `"approximate"` for a commune/wilaya centroid — `geo_method` records
+which. `source` is a fixed provenance key (`"mesrs"`) into `metadata.sources[]`, not a URL — see
+**Source** below for the actual listing pages.
 
 ## Need the administrative divisions too?
 

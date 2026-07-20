@@ -12,8 +12,8 @@
 
 </div>
 
-**1,681 نقطة تغطية 5G** عبر الجزائر، منشورة من خرائط التغطية الخاصة
-بالمشغلين — **جيزي (1,001)** و**موبيليس (504)** و**أوريدو (176)** — كل
+**2,798 نقطة تغطية 5G** عبر الجزائر، منشورة من خرائط التغطية الخاصة
+بالمشغلين — **جيزي (1,001)** و**موبيليس (1,621)** و**أوريدو (176)** — كل
 نقطة بإحداثياتها وربطها بالولاية/البلدية. متوفرة بصيغ JSON وCSV وGeoJSON
 وTypeScript. جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -24,9 +24,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // جميع النقاط (1,681)
+const sites = telecom.coverage();                       // جميع النقاط (2,798)
 const djezzy = telecom.coverageByOperator("djezzy");    // 1,001
-const mobilis = telecom.coverageByOperator("mobilis");  // 504
+const mobilis = telecom.coverageByOperator("mobilis");  // 1,621
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // تغطية 5G في ولاية (ربط عبر wilaya_code الخاص بـ GeoAlgeria)
@@ -51,10 +51,10 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | المشغل | النقاط | الدقة | خريطة المصدر |
 | --- | --- | --- | --- |
 | جيزي | **1,001** | موقع خلية | djezzy5g.dz |
-| موبيليس | **504** | موقع خلية | mobilis.dz/map/5g |
+| موبيليس | **1,621** | موقع خلية | mobilis.dz/map/5g |
 | أوريدو | **176** | بلدية مغطاة | ooredoo.dz |
 
-تغطي **56 ولاية** (بما في ذلك الولايات الجديدة مثل تيميمون وعين صالح
+تغطي **58 ولاية** (بما في ذلك الولايات الجديدة مثل تيميمون وعين صالح
 وتقرت).
 
 > **ما هي النقطة:** كل سجل هو نقطة منشورة على خريطة تغطية 5G الخاصة

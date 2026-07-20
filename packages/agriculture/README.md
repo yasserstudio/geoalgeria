@@ -70,7 +70,7 @@ metadata().wilayas_covered; // 58
 | `groupe_public` | 10 | Public groups (GVAPRO, AGROLOG, GIPLAIT…) |
 | `office_public` | 4 | Public offices (OAIC, ONIL, ONILEV, ONTA) |
 
-**By coordinate precision** (`geo_precision`)
+**By geocoding method** (`geo_method`)
 
 | Value | Count | Meaning |
 | --- | --- | --- |
@@ -100,7 +100,7 @@ Extracted from the MADR directory (`madr.gov.dz/contact/دليل-الهاتف/`,
 
 ## On accuracy
 
-> Names, wilaya, address and phone/fax are **official** (from the MADR directory). The directory carries **no coordinates**: each record is placed at the centroid of the commune named in its address, or — when the address has no recognizable commune — at the centroid of the wilaya chief town (see `geo_precision`). These are approximate locations for the *wilaya/commune*, not surveyed building points. Some source rows have minor typos that have been normalized.
+> Names, wilaya, address and phone/fax are **official** (from the MADR directory). The directory carries **no coordinates**: each record is placed at the centroid of the commune named in its address, or — when the address has no recognizable commune — at the centroid of the wilaya chief town (see `geo_method`; `geo_precision` is `"approximate"` for every record here — none of these are surveyed points). These are approximate locations for the *wilaya/commune*, not surveyed building points. Some source rows have minor typos that have been normalized.
 
 ## Source & license
 

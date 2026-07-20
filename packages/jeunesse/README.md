@@ -28,7 +28,7 @@ npm install @geoalgeria/jeunesse
 ```js
 import jeunesse from "@geoalgeria/jeunesse";
 
-const all = jeunesse.institutions();                 // ~2,334
+const all = jeunesse.institutions();                 // 2,334
 const inAlgiers = jeunesse.institutionsByWilaya(16);  // establishments in wilaya 16
 const houses = jeunesse.institutionsByType("MJ");     // every maison de jeunes
 
@@ -82,8 +82,8 @@ const all: Institution[] = jeunesse.institutions();
 
 ```
 data/
-  institutions.json            # ~2,334 establishments (array)
-  metadata.json                # source, counts, by_type, generated_at
+  institutions.json            # 2,334 establishments (array)
+  metadata.json                # sources, counts, by_type, license, updated
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
   geojson/institutions.geojson # Point features (all geocoded)
 ```
@@ -92,38 +92,44 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "00001",
   "name": "Auberge de jeunes El amir Abdelkader, Sbaa",
-  "name_ar": "دار الشباب الأمير عبد القادر",
-  "type_code": "AJ",
-  "type_fr": "Auberge de jeunes",
-  "type_ar": "نزل الشباب",
-  "address": "sabaa, tsabit, adrar",
-  "commune": "SEBAA",
-  "daira": "TSABIT",
+  "name_ar": null,
   "wilaya_code": "01",
-  "wilaya_name": "ADRAR",
+  "commune_code": null,
+  "commune": "SEBAA",
+  "lat": 28.2186,
+  "lng": -0.173,
+  "geo_precision": "exact",
+  "geo_method": "sig_mjs",
+  "source": "mjs",
+  "type": "AJ",
+  "type_label_fr": "Auberge de jeunes",
+  "type_label_ar": "نزل الشباب",
+  "daira": "TSABIT",
+  "address": "sabaa, tsabit, adrar",
   "capacity": 50,
   "year": 2012,
   "operational": true,
   "pmr": true,
   "surface_built_m2": 3600,
-  "surface_land_m2": 3600,
-  "lat": 28.2186,
-  "lng": -0.173,
-  "source": "https://sig.mjs.gov.dz/dashboard/viewer"
+  "surface_land_m2": 3600
 }
 ```
 
-The GIS publishes names in **French**; `name_ar` is the Arabic name **backfilled** from the
-ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m, and type-checked so a
-different kind of facility's name is never grafted on) — present on ~59% of records, `null`
-where no confident match exists. `name` is `null` for the ~5% the source
-leaves blank; `commune`, `daira` and `wilaya_name` are French (uppercase, as published). For
-the full French wilaya/commune divisions, join `wilaya_code` against the
+`id` is an opaque, zero-padded sequence string, unique within `institutions.json` — don't
+parse it. The GIS publishes names in **French**; `name_ar` is the Arabic name **backfilled**
+from the ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m, and
+type-checked so a different kind of facility's name is never grafted on) — present on ~59% of
+records, `null` where no confident match exists (as above). `name` is `null` for the ~5% the
+source leaves blank; `commune` and `daira` are French (uppercase, as published); `commune_code`
+is currently always `null` (the MJS GIS gives a commune name only). For the full French
+wilaya/commune divisions, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
 to two digits and is `≤ 58` (the source predates the 69-wilaya reform); it still joins the
-GeoAlgeria wilaya model.
+GeoAlgeria wilaya model. `geo_precision` is `"exact"` for 2,244 records and `"approximate"`
+for 90 (the GIS point is rounded too coarse, or shared with another establishment, to count as
+a per-facility point); every record is geocoded, so `null` doesn't occur here.
 
 ## Sports infrastructure too?
 
@@ -145,7 +151,7 @@ Data comes from the **Ministry of Youth and Sports**, via its public GIS
 (<https://sig.mjs.gov.dz/dashboard/viewer>). Run `npm run fetch` to regenerate every output
 from the live system; the build resolves each French wilaya name to the flagship wilaya code,
 repairs records with transposed coordinates, backfills Arabic names from the legacy map, and
-drops the few with placeholder/out-of-country coordinates (`metadata.dropped`). It fails
+drops the few with placeholder/out-of-country coordinates. It fails
 loudly if the establishment count collapses or an unknown type appears.
 
 ## License & attribution

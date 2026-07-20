@@ -15,8 +15,9 @@
 **695 مؤسسة صحية عمومية** عبر **58 ولاية** لها مديرية للصحة — المؤسسات العمومية
 الاستشفائية (EPH)، ومؤسسات الصحة الجوارية (EPSP)، والمؤسسات الاستشفائية المتخصصة
 (EHS)، والمراكز الاستشفائية الجامعية (CHU) من **وزارة الصحة (MSP)**، ثنائية اللغة
-عربي/فرنسي، **600 منها بإحداثيات** عبر OpenStreetMap وWikidata مع ربطٍ
-بالبلدية والولاية. متوفر بصيغ JSON وCSV وGeoJSON وTypeScript. جزء من
+عربي/فرنسي، **600 منها بإحداثيات** (124 بنقطة دقيقة من OpenStreetMap/Wikidata،
+و476 بمركز ثقل البلدية) مع ربطٍ بالبلدية والولاية. متوفر بصيغ JSON وCSV
+وGeoJSON وTypeScript. جزء من
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -63,10 +64,18 @@ const mappable = all.filter((e) => e.lat != null);
 
 | القيمة | العدد | المعنى |
 | --- | --- | --- |
+| `exact` | 124 | نقطة دقيقة من مرفق في OSM أو Wikidata ضمن البلدية |
+| `approximate` | 476 | مركز ثقل بلدية المؤسسة |
+| `null` | 95 | لم تُربط البلدية — بلا إحداثيات (`lat`/`lng` أيضًا `null`) |
+
+**حسب طريقة الحصول على الإحداثية** (`geo_method`)
+
+| القيمة | العدد | المعنى |
+| --- | --- | --- |
 | `osm_point` | 121 | نقطة دقيقة من مرفق في OpenStreetMap ضمن البلدية |
 | `wikidata_point` | 3 | نقطة دقيقة من مرفق في Wikidata ضمن البلدية |
 | `commune_centroid` | 476 | مركز ثقل بلدية المؤسسة (تقريبي) |
-| `none` | 95 | لم تُربط البلدية — بلا إحداثيات |
+| `null` | 95 | لا توجد طريقة — السجل بلا إحداثيات |
 
 > **السجل رسمي؛ أما الإحداثيات فأفضل ما أمكن.** الأسماء والنوع والولاية من وزارة
 > الصحة. لا تنشر الوزارة إحداثيات، فيستنتجها GeoAlgeria (انظر *المصدر والمنهجية*).
@@ -95,7 +104,7 @@ const all: HealthEstablishment[] = sante.sante();
 ```
 data/
   sante.json              # 695 مؤسسة (مصفوفة)
-  metadata.json           # المصادر، الأعداد، التغطية، generated_at
+  metadata.json           # المصادر، الأعداد، التغطية، updated
   csv/sante.csv           # المستودع + الإصدار (ليس في حزمة npm)
   geojson/sante.geojson   # معالم نقطية (السجلات ذات الإحداثيات)
 ```
@@ -106,33 +115,38 @@ data/
 {
   "id": "01-ehs-02",
   "name": "Etablissement Hospitalier Spécialisé Psychiatrie Adrar",
-  "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية أدرار",
   "name_fr": "Etablissement Hospitalier Spécialisé Psychiatrie Adrar",
+  "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية أدرار",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "Adrar",
+  "lat": 27.875834,
+  "lng": -0.307533,
+  "geo_precision": "exact",
+  "geo_method": "osm_point",
+  "source": "msp",
+  "refs": {
+    "osm": "way/432370657",
+    "msp": "3588"
+  },
   "type": "ehs",
   "type_label_fr": "Établissement Hospitalier Spécialisé",
   "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
   "sector": "public",
-  "wilaya": "Adrar",
-  "wilaya_ar": "أدرار",
-  "wilaya_code": "01",
-  "commune": "Adrar",
-  "commune_code": 101,
-  "source": "msp+osm",
-  "geo_precision": "osm_point",
-  "wikidata": null,
-  "osm_id": "way/432370657",
-  "msp_id": 3588,
-  "slug": "etablissement-hospitalier-specialise-psychiatrie-adrar",
-  "lat": 27.875834,
-  "lng": -0.307533
+  "slug": "etablissement-hospitalier-specialise-psychiatrie-adrar"
 }
 ```
 
 `id` مفتاح ثابت `{wilaya_code}-{type}-{seq}` يولّده GeoAlgeria (لا تنشر الوزارة
-رمزًا). `name` هو الاسم الفرنسي إن وُجد، وإلا العربي. يُشتقّ `type` من العنوان،
-و`wilaya` من وسم الوزارة. `sector` يساوي `"public"` لكامل سجل الوزارة (العيادات
-الخاصة، عند إضافتها، ستحمل `"private"`). يبيّن `source` السجلات المساهِمة، و
-`geo_precision` مصدر الإحداثية. تكون `lat`/`lng` بقيمة `null` للسجلات الـ95 التي
+رمزًا) — قيمة مبهمة، فريدة ضمن `sante.json`. `name` هو الاسم الفرنسي إن وُجد،
+وإلا العربي. يُشتقّ `type` من العنوان، و`wilaya_code` من وسم الوزارة. `sector`
+يساوي `"public"` لكامل سجل الوزارة (العيادات الخاصة، عند إضافتها، ستحمل
+`"private"`). يساوي `source` دائمًا `"msp"` (سجل وزارة الصحة)؛ يحمل `refs`
+معرّفات المصادر المساهِمة — دائمًا `msp`، إضافة إلى `osm` أو `wikidata` عند
+رفع الإحداثية إلى نقطة دقيقة. تكون `geo_precision` إما `"exact"` أو
+`"approximate"` أو `null`؛ ويبيّن `geo_method` كيفية الحصول على الإحداثية
+(`osm_point`، أو `wikidata_point`، أو `commune_centroid`، أو `null`). تكون
+`lat`/`lng`/`geo_precision`/`geo_method` كلّها `null` معًا للسجلات الـ95 التي
 تعذّر ربط بلديتها.
 
 > **الإحداثيات والبلدية مُستنتَجة وليست من الوزارة.** تَسرد وزارة الصحة الأسماء

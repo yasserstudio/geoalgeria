@@ -31,7 +31,7 @@ import fp from "@geoalgeria/formation-professionnelle";
 const all = fp.establishments();                    // 1,932
 const byWilaya = fp.establishmentsByWilaya(16);     // مؤسسات الولاية 16
 const cfpas = fp.establishmentsByType("cfpa");      // جميع مراكز CFPA
-const one = fp.establishmentById(1);                // سجل واحد حسب المعرف
+const one = fp.establishmentById("00001");          // سجل واحد حسب المعرف
 
 // 1,375 سجلا تحتوي على إحداثيات — الترتيب حسب المسافة، الخرائط، أو أقرب مركز في بضعة أسطر.
 ```
@@ -87,7 +87,7 @@ const all: Establishment[] = fp.establishments();
 ```
 data/
   establishments.json      # 1,932 مؤسسة (مصفوفة)
-  metadata.json            # المصدر، الأعداد، by_type، by_secteur، geocoded، generated_at
+  metadata.json            # المصادر، الأعداد، by_type، by_secteur، geocoded، license، updated
   csv/                     # تصدير CSV (المستودع + حزمة الإصدار، غير مضمن في tarball npm)
   geojson/                 # معالم GeoJSON (1,375 نقطة محددة الإحداثيات)
 ```
@@ -96,18 +96,22 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "00001",
   "name": "مديرية التكوينو التعليم المهنيينأدرار",
   "name_fr": "DFEPADRAR",
+  "wilaya_code": "01",
+  "commune_code": null,
+  "commune": "أدرار",
+  "lat": null,
+  "lng": null,
+  "geo_precision": null,
+  "geo_method": null,
+  "source": "mfep",
   "type": "dfep",
   "type_label": "مديرية التكوين والتعليم المهنيين",
   "abreviation": "DFEP ADRAR",
   "code": "0100",
   "secteur": "public",
-  "commune": "أدرار",
-  "wilaya_code": "01",
-  "lat": null,
-  "lng": null,
   "adresse": "حي 103مسكن أدرار",
   "adresse_fr": "Cité 103 logtAdrar",
   "telephone": "049364333",
@@ -120,18 +124,20 @@ data/
   "surface_m2": 2443.42,
   "internat": false,
   "capacite_internat": null,
-  "vocations": null,
-  "source": "takwin.dz (MFEP)"
+  "vocations": null
 }
 ```
 
-`id` هو عدد صحيح ثابت يبدأ من 1. الأسماء ثنائية اللغة — `name` بالعربية (موجود دائما)،
+`id` سلسلة نصية غير قابلة للتفسير مكونة من تسلسل مكمل بأصفار (مثل `"00001"`)، فريدة داخل
+`establishments.json` — لا تحلّلها. الأسماء ثنائية اللغة — `name` بالعربية (موجود دائما)،
 `name_fr` بالفرنسية (قد يكون `null`). `type` هو رمز يطابق أحد أنواع المؤسسات العشرة
 المذكورة أعلاه. `secteur` إما `"public"` أو `"prive"`. `wilaya_code` مكمل بصفر إلى رقمين
-في مخطط 58 ولاية. `lat`/`lng` قيمتهما `null` للـ 29% من السجلات غير المحددة الإحداثيات
-بعد. `capacite` (النظرية) و`capacite_reelle` (الفعلية) هما عدد المقاعد؛ `internat` يشير
-إلى توفر الإقامة الداخلية مع `capacite_internat` اختياري. `vocations` مصفوفة تخصصات عند
-توفرها.
+في مخطط 58 ولاية؛ `commune_code` حاليا دائما `null` في هذا المصدر (لا يوجد رمز ONS منشور
+من طرف takwin.dz). `lat`/`lng`، وكذلك `geo_precision`/`geo_method` معهما، قيمتها `null`
+للـ 29% من السجلات غير المحددة الإحداثيات بعد؛ عند وجودها، `geo_precision` تكون
+`"exact"` أو `"approximate"` و`geo_method` تسجل مصدر الإحداثية (مثل `takwin`). `capacite`
+(النظرية) و`capacite_reelle` (الفعلية) هما عدد المقاعد؛ `internat` يشير إلى توفر الإقامة
+الداخلية مع `capacite_internat` اختياري. `vocations` مصفوفة تخصصات عند توفرها.
 
 ## هل تحتاج التقسيمات الإدارية أيضا؟
 

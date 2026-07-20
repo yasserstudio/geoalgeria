@@ -56,7 +56,7 @@ metadata().wilayas_covered; // 63
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| `stores` | 572 | all 572 (`exact`) | Ooredoo locator API, wilaya/commune-linked |
+| `stores` | 572 | all 572 (553 `exact`, 19 `approximate`) | Ooredoo locator API, wilaya/commune-linked |
 
 **By type (`type`)**
 
@@ -87,7 +87,7 @@ Pulled from Ooredoo Algérie's public *Trouvez-nous* locator API (a Liferay Head
 
 ## On accuracy
 
-> Store names, types and coordinates are **from the operator** (`geo_precision: "exact"`). Wilaya is effectively exact (from the surveyed point); commune is a nearest-centroid best-effort. A **few** operator points carry inaccurate coordinates in the source, so their derived wilaya/commune can be wrong — the `operator_wilaya` field preserves Ooredoo's own declared wilaya in those cases. This is Ooredoo's own store directory as exposed by its locator; a store may occasionally be a partner point rather than a company-owned space.
+> Store names, types and coordinates are **from the operator** (`geo_method: "operator_api"`). Coordinates are `geo_precision: "exact"` for 553 stores and `"approximate"` for 19 whose source coordinate has fewer than 3 decimal places. Wilaya is effectively exact (from the operator point); commune is a nearest-centroid best-effort. A **few** operator points carry inaccurate coordinates in the source, so their derived wilaya/commune can be wrong — the `operator_wilaya` field preserves Ooredoo's own declared wilaya in those cases. This is Ooredoo's own store directory as exposed by its locator; a store may occasionally be a partner point rather than a company-owned space.
 
 ## Source & license
 

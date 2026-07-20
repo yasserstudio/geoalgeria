@@ -27,7 +27,7 @@ npm install @geoalgeria/jeunesse
 ```js
 import jeunesse from "@geoalgeria/jeunesse";
 
-const all = jeunesse.institutions();                 // ~2 334
+const all = jeunesse.institutions();                 // 2 334
 const inAlgiers = jeunesse.institutionsByWilaya(16);  // institutions de la wilaya 16
 const houses = jeunesse.institutionsByType("MJ");     // toutes les maisons de jeunes
 
@@ -81,8 +81,8 @@ const all: Institution[] = jeunesse.institutions();
 
 ```
 data/
-  institutions.json            # ~2 334 institutions (tableau)
-  metadata.json                # source, comptages, by_type, generated_at
+  institutions.json            # 2 334 institutions (tableau)
+  metadata.json                # sources, comptages, by_type, license, updated
   csv/institutions.csv         # dépôt + bundle Release (pas dans le tarball npm)
   geojson/institutions.geojson # Entités Point (toutes géocodées)
 ```
@@ -91,38 +91,47 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "00001",
   "name": "Auberge de jeunes El amir Abdelkader, Sbaa",
-  "name_ar": "دار الشباب الأمير عبد القادر",
-  "type_code": "AJ",
-  "type_fr": "Auberge de jeunes",
-  "type_ar": "نزل الشباب",
-  "address": "sabaa, tsabit, adrar",
-  "commune": "SEBAA",
-  "daira": "TSABIT",
+  "name_ar": null,
   "wilaya_code": "01",
-  "wilaya_name": "ADRAR",
+  "commune_code": null,
+  "commune": "SEBAA",
+  "lat": 28.2186,
+  "lng": -0.173,
+  "geo_precision": "exact",
+  "geo_method": "sig_mjs",
+  "source": "mjs",
+  "type": "AJ",
+  "type_label_fr": "Auberge de jeunes",
+  "type_label_ar": "نزل الشباب",
+  "daira": "TSABIT",
+  "address": "sabaa, tsabit, adrar",
   "capacity": 50,
   "year": 2012,
   "operational": true,
   "pmr": true,
   "surface_built_m2": 3600,
-  "surface_land_m2": 3600,
-  "lat": 28.2186,
-  "lng": -0.173,
-  "source": "https://sig.mjs.gov.dz/dashboard/viewer"
+  "surface_land_m2": 3600
 }
 ```
 
-Le SIG publie les noms en **français** ; `name_ar` est le nom arabe **complété** à partir de la
-carte publique historique du ministère par appariement géographique au plus proche (≤ 200 m, et vérifié par
-type pour ne jamais greffer le nom d'un bâtiment voisin) — présent sur ~59 % des
-enregistrements, `null` où aucune correspondance de confiance n'existe. `name` est `null` pour les ~5 % que
-la source laisse vides ; `commune`, `daira` et `wilaya_name` sont en français (majuscules, comme publiés). Pour
-l'ensemble complet des divisions wilaya/commune en français, joignez `wilaya_code` avec le jeu de données
-[`geoalgeria`](https://www.npmjs.com/package/geoalgeria). `wilaya_code` est complété avec un zéro
-sur deux chiffres et est `≤ 58` (la source est antérieure à la réforme des 69 wilayas) ; il reste
-compatible avec le modèle wilaya de GeoAlgeria.
+`id` est une chaîne opaque à séquence complétée par des zéros, unique dans
+`institutions.json` — ne pas la parser. Le SIG publie les noms en **français** ; `name_ar`
+est le nom arabe **complété** à partir de la carte publique historique du ministère par
+appariement géographique au plus proche (≤ 200 m, et vérifié par type pour ne jamais greffer
+le nom d'un bâtiment voisin) — présent sur ~59 % des enregistrements, `null` où aucune
+correspondance de confiance n'existe (comme ci-dessus). `name` est `null` pour les ~5 % que
+la source laisse vides ; `commune` et `daira` sont en français (majuscules, comme publiés) ;
+`commune_code` est actuellement toujours `null` (le SIG du MJS ne fournit qu'un nom de
+commune). Pour l'ensemble complet des divisions wilaya/commune en français, joignez
+`wilaya_code` avec le jeu de données [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+`wilaya_code` est complété avec un zéro sur deux chiffres et est `≤ 58` (la source est
+antérieure à la réforme des 69 wilayas) ; il reste compatible avec le modèle wilaya de
+GeoAlgeria. `geo_precision` vaut `"exact"` pour 2 244 enregistrements et `"approximate"` pour
+90 (le point du SIG est trop grossier, ou partagé avec un autre établissement, pour compter
+comme un point propre à l'établissement) ; tous les enregistrements sont géocodés, donc
+`null` n'apparaît pas ici.
 
 ## Infrastructures sportives aussi ?
 
@@ -144,7 +153,7 @@ Les données proviennent du **Ministère de la Jeunesse et des Sports**, via son
 (<https://sig.mjs.gov.dz/dashboard/viewer>). Exécutez `npm run fetch` pour régénérer
 toutes les sorties depuis le système en ligne ; le build résout chaque nom de wilaya français au code wilaya officiel,
 répare les enregistrements avec des coordonnées transposées, complète les noms arabes à partir de la carte historique, et
-supprime les quelques enregistrements avec des coordonnées de remplissage/hors limites (`metadata.dropped`). Il échoue bruyamment
+supprime les quelques enregistrements avec des coordonnées de remplissage/hors limites. Il échoue bruyamment
 si le nombre d'institutions s'effondre ou si un type inconnu apparaît.
 
 ## Licence et attribution

@@ -68,17 +68,18 @@ Les fichiers **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et inc
 data/
   postoffices.json            # 3 908 bureaux (tableau)
   atms.json                   # 2 026 DAB (tableau)
-  metadata.json               # source, comptages, generated_at
+  metadata.json               # comptages, sources, licence, updated
   csv/postoffices.csv         # dépôt + bundle Release (pas dans le tarball npm)
   csv/atms.csv
   geojson/postoffices.geojson # Entités Point (enregistrements avec coordonnées)
   geojson/atms.geojson
 ```
 
-> Le GeoJSON n'inclut que les enregistrements ayant des coordonnées — quelques
-> bureaux et DAB ne rapportent pas de `lat`/`lng` et en sont absents (mais
-> restent dans JSON/CSV). Les enregistrements de DAB n'ont pas de `commune_code`
-> (l'API source ne le fournit pas).
+> Le GeoJSON n'inclut que les enregistrements ayant des coordonnées — 16
+> bureaux et 5 DAB ne rapportent pas de `lat`/`lng` et en sont absents (mais
+> restent dans JSON/CSV, avec `geo_precision`/`geo_method` à `null`). Les
+> enregistrements de DAB portent `commune_code` à `null` (l'API source ne
+> résout pas de code commune pour les DAB).
 
 ## Structure des enregistrements
 
@@ -86,28 +87,34 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "1",
   "name": "ADRAR RP",
   "name_ar": "أدرار م ر",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "ADRAR",
+  "commune_ar": "أدرار",
+  "lat": 27.8708439,
+  "lng": -0.2871417,
+  "geo_precision": "exact",
+  "geo_method": "baridimap",
+  "source": "baridimap",
   "class": "CE",
   "postal_code": "01000",
-  "address": "ADRAR CENTRE RUE DES MARYTIM",
-  "commune_code": "0101",
-  "commune_fr": "ADRAR",
-  "commune_ar": "أدرار",
-  "wilaya_code": "01",
-  "wilaya_fr": "ADRAR",
-  "wilaya_ar": "أدرار",
-  "lat": 27.8708439,
-  "lng": -0.2871417
+  "postal_code_old": null,
+  "address": "ADRAR CENTRE RUE DES MARYTIM"
 }
 ```
 
 `class` est la catégorie du bureau (`CE`, `R1`–`R4`, `HC`, `GA`). `commune_code`
 est le code commune à 4 chiffres d'Algérie Poste, qui se joint au `code_commune`
-de GeoAlgeria.
+de GeoAlgeria. `geo_precision` vaut `"exact"` (ou `null` avec `lat`/`lng` quand
+le bureau n'est pas géocodé) ; `geo_method` indique comment le point a été obtenu.
 
-**DAB** — même structure, identifié par `id`/`name`/`postal_code`/`wilaya_*` avec `lat`/`lng` ; pas de `commune_code`.
+**DAB** — même structure, identifié par `id`/`name`/`wilaya_code`/`postal_code`
+avec `lat`/`lng`, plus un champ `status` (`"OPEN"`, `"CLOSED (OFFLINE)"`, ou la
+valeur source non documentée `"1"`) ; `commune_code` et `address` sont toujours
+`null` (la source ne les résout pas pour les DAB).
 
 ## Besoin des divisions administratives ?
 

@@ -52,7 +52,7 @@ const named = all.filter((m) => m.name_fr);
 | المصدر | العدد | المعنى |
 | --- | --- | --- |
 | `wikidata` | 13٬200 | من Wikidata فقط |
-| `wikidata+osm` | 5٬897 | في الاثنين، مُطابَق ضمن ~150 م (يضيف OSM اسمًا فرنسيًا / مذهبًا / `osm_id`) |
+| `wikidata+osm` | 5٬897 | في الاثنين، مُطابَق ضمن ~150 م (يضيف OSM اسمًا فرنسيًا / مذهبًا / `refs.osm`) |
 | `osm` | 1٬662 | مُسجَّل في OpenStreetMap وليس بعد في Wikidata |
 
 > **هذا تجميعٌ وليس سجلًّا رسميًّا.** يوفّر Wikidata تغطيةً وطنيةً شبه كاملة (~19 ألف
@@ -83,7 +83,7 @@ const all: Mosquee[] = mosquees.mosquees();
 ```
 data/
   mosquees.json              # 20٬759 مسجدًا (مصفوفة)
-  metadata.json              # المصادر، الأعداد، التغطية، generated_at
+  metadata.json              # المصادر، الأعداد، التغطية، updated
   csv/mosquees.csv           # المستودع + الإصدار (ليس في حزمة npm)
   geojson/mosquees.geojson   # معالم نقطية
 ```
@@ -93,25 +93,29 @@ data/
 ```json
 {
   "id": "16-0914",
-  "source": "wikidata+osm",
-  "wikidata": "Q28717404",
-  "osm_id": "relation/15870867",
   "name": "مسجد عبد الحميد بن باديس",
-  "name_ar": "مسجد عبد الحميد بن باديس",
   "name_fr": "Mosquée Ibn Badis",
-  "denomination": "sunni",
+  "name_ar": "مسجد عبد الحميد بن باديس",
   "wilaya_code": "16",
-  "commune_code": 1607,
+  "commune_code": "1607",
   "commune": "Casbah",
   "lat": 36.779365,
-  "lng": 3.05949
+  "lng": 3.05949,
+  "geo_precision": "approximate",
+  "geo_method": "osm_relation",
+  "source": "wikidata+osm",
+  "refs": {
+    "wikidata": "Q28717404",
+    "osm": "relation/15870867"
+  },
+  "denomination": "sunni"
 }
 ```
 
-`id` مفتاح ثابت `{wilaya_code}-{seq}` يولّده GeoAlgeria. يربط `wikidata` و`osm_id`
-بالكائنات المصدرية. `name` هو أفضل اسم عرضٍ متاح (الفرنسية أولًا، وإلا العربية)
-ويكون `null` للنقاط غير المُسمّاة من OSM. يرتبط `wilaya_code` بـ `wilaya_code` في
-GeoAlgeria.
+`id` مفتاح ثابت `{wilaya_code}-{seq}` يولّده GeoAlgeria، وهو فريد ضمن
+`mosquees.json`. يربط `refs.wikidata` و`refs.osm` بالكائنات المصدرية. `name`
+هو أفضل اسم عرضٍ متاح (الفرنسية أولًا، وإلا العربية) ويكون `null` للنقاط غير
+المُسمّاة من OSM. يرتبط `wilaya_code` بـ `wilaya_code` في GeoAlgeria.
 
 > **الربط بالبلدية/الولاية مُستنتَج وليس من المصادر.** لا يحمل Wikidata ولا OSM
 > الرموز الإدارية الجزائرية. يُضيف GeoAlgeria حقول `wilaya_code` و`commune_code`
@@ -135,7 +139,7 @@ GeoAlgeria.
 2. استعلام **OpenStreetMap** (Overpass) عن `amenity=place_of_worship` +
    `religion=muslim` داخل الجزائر؛
 3. **دمجهما** — أي مسجد OSM ضمن ~150 م من مسجد Wikidata يُدمَج في ذلك السجل
-   (مضيفًا اسمه الفرنسي ومذهبه و`osm_id`)؛ ومساجد OSM بلا تطابق تصبح سجلاتٍ مستقلة؛
+   (مضيفًا اسمه الفرنسي ومذهبه و`refs.osm`)؛ ومساجد OSM بلا تطابق تصبح سجلاتٍ مستقلة؛
 4. إلحاق البلدية/الولاية بأقرب مركز ثقل بلدية.
 
 تُحفظ عمليات السحب الخام ضمن

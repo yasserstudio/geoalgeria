@@ -72,8 +72,9 @@ const piscines = sports.facilitiesByType("P25");     // toutes les piscines 25 m
 | Grand stade | `GS` | 1 |
 | **Total** | | **5 141** |
 
-Couvrant **58 wilayas**, chaque infrastructure géolocalisée. `wilaya_code` est relié au
-modèle de wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+Couvrant **58 wilayas**, chaque infrastructure géolocalisée — 5 008 sur un point
+`exact`, les 133 restantes `approximate`. `wilaya_code` est relié au modèle de
+wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ## Source
 

@@ -74,7 +74,8 @@ const pools = sports.facilitiesByType("P25");       // every 25 m pool
 | Grand stade | `GS` | 1 |
 | **Total** | | **5,141** |
 
-Spanning **58 wilayas**, every facility geocoded. `wilaya_code` is linked against the
+Spanning **58 wilayas**, every facility geocoded — 5,008 to an `exact` point, the
+remaining 133 `approximate`. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model.
 
 ## Formats
@@ -100,7 +101,7 @@ const all: Facility[] = sports.facilities();
 ```
 data/
   facilities.json            # 5,141 facilities (array)
-  metadata.json              # source, counts, by_type, generated_at
+  metadata.json              # sources, counts, by_type, updated
   csv/facilities.csv         # repo + Release bundle (not in npm tarball)
   geojson/facilities.geojson # Point features (all 5,141 are geocoded)
 ```
@@ -109,30 +110,38 @@ data/
 
 ```json
 {
-  "id": 6,
+  "id": "00006",
   "name": "Bassin de natation T'sabit",
-  "type_code": "BN",
-  "type_fr": "Bassin de natation",
-  "address": "Tsabit. Adrar",
-  "commune": "TSABIT",
-  "daira": "TSABIT",
   "wilaya_code": "01",
-  "wilaya_name": "ADRAR",
+  "commune_code": null,
+  "commune": "TSABIT",
+  "lat": 28.3057,
+  "lng": -0.2446,
+  "geo_precision": "exact",
+  "geo_method": "sig_mjs",
+  "source": "mjs",
+  "type": "BN",
+  "type_label_fr": "Bassin de natation",
+  "daira": "TSABIT",
+  "address": "Tsabit. Adrar",
   "capacity": 80,
   "year": 2005,
   "operational": false,
   "pmr": false,
   "surface_built_m2": 504,
-  "surface_land_m2": 504,
-  "lat": 28.3057,
-  "lng": -0.2446,
-  "source": "https://sig.mjs.gov.dz/dashboard/viewer"
+  "surface_land_m2": 504
 }
 ```
 
-Names, communes, daïras and wilaya names are French (as published by the ministry's GIS).
-`wilaya_code` is zero-padded to two digits. For Arabic wilaya and commune names, join
-`wilaya_code` against the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset.
+Names, communes and daïras are French (as published by the ministry's GIS). `name`
+is `null` for 1,752 facilities the ministry lists with no name (their `type_label_fr`
+still identifies them). `wilaya_code` is zero-padded to two digits; `commune_code`
+is always `null` (the ministry's GIS resolves a commune name but no ONS code).
+`geo_precision` is `"exact"` or `"approximate"` (every facility is geocoded, so
+neither is ever `null` here); `geo_method` is always `"sig_mjs"`. `source` is
+`"mjs"`, a key into `metadata.sources[]` (see *Source*, below, for the live GIS
+URL). For Arabic wilaya and commune names, join `wilaya_code` against the
+[`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset.
 
 ## Need the administrative divisions too?
 

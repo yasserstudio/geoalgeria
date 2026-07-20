@@ -60,7 +60,7 @@ institutionsByWilaya(16).map((r) => r.name);
 | `groupe_public` | 10 | Groupes publics (GVAPRO, AGROLOG, GIPLAIT…) |
 | `office_public` | 4 | Offices publics (OAIC, ONIL, ONILEV, ONTA) |
 
-**Par précision des coordonnées** (`geo_precision`)
+**Par méthode de géocodage** (`geo_method`)
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
@@ -82,7 +82,7 @@ Extraites de l'annuaire du MADR (`madr.gov.dz/contact/دليل-الهاتف/`, a
 
 ## Sur la précision
 
-> Les noms, la wilaya, l'adresse et le tél./fax sont **officiels** (annuaire du MADR). L'annuaire ne contient **aucune coordonnée** : chaque enregistrement est placé au centroïde de la commune nommée dans son adresse, ou — à défaut — au centroïde du chef-lieu de wilaya (voir `geo_precision`). Ce sont des emplacements approximatifs de la *wilaya/commune*, pas des points de bâtiments relevés.
+> Les noms, la wilaya, l'adresse et le tél./fax sont **officiels** (annuaire du MADR). L'annuaire ne contient **aucune coordonnée** : chaque enregistrement est placé au centroïde de la commune nommée dans son adresse, ou — à défaut — au centroïde du chef-lieu de wilaya (voir `geo_method`; `geo_precision` vaut `"approximate"` pour chaque enregistrement — aucun de ces points n'est relevé sur le terrain). Ce sont des emplacements approximatifs de la *wilaya/commune*, pas des points de bâtiments relevés.
 
 ## Source & licence
 

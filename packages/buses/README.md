@@ -50,23 +50,30 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
 {
   "id": "etusa-1",
   "name": "Ligne 1 — El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
+  "wilaya_code": "16",
+  "commune_code": null,
+  "commune": null,
+  "lat": null,
+  "lng": null,
+  "geo_precision": null,
+  "geo_method": null,
+  "source": "wikipedia",
   "operator": "ETUSA",
   "network": "Alger",
   "line": "1",
   "terminus1": "El Harrach",
   "terminus2": "Place Aïssat Idir, via Haï El Badr",
   "stops": 16,
-  "communes_served": ["El Harrach", "Bachdjerrah", "Hussein Dey", "..."],
-  "stations_served": ["El Harrach Centre", "Haï El Badr", "Les Fusillés", "..."],
-  "wilaya_code": "16",
-  "lat": null,
-  "lng": null,
-  "geo_precision": null,
-  "geo_method": null,
-  "source": "wikipedia",
+  "communes_served": ["El Harrach", "Bachdjerrah", "Hussein Dey (Gare routière du Caroubier)", "El Magharia", "Belouizdad", "Sidi M'Hamed"],
+  "stations_served": ["El Harrach Centre", "Haï El Badr", "Cité Mer et Soleil", "Cité Amirouche", "Les Fusillés", "Aïssat Idir"],
   "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
 }
 ```
+
+`commune_code` and `commune` are always `null` for this dataset — a line spans several
+communes (see `communes_served`), so no single commune applies. `lat`/`lng`/`geo_precision`/
+`geo_method` are always `null` too: these are line records with no per-line geometry (see
+Scope below).
 
 ## Source & license
 

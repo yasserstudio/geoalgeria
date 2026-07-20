@@ -14,8 +14,9 @@
 
 **695 public health establishments** across all **58 wilayas** with health
 directorates — public hospitals (EPH), proximity-health establishments (EPSP),
-specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **600 geocoded** via OpenStreetMap
-and Wikidata with commune/wilaya linkage. Shipped as JSON, CSV, GeoJSON, and
+specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **600 geocoded** (124 to a precise
+OpenStreetMap/Wikidata point, 476 to a commune centroid) with commune/wilaya
+linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -63,10 +64,18 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Value | Count | Meaning |
 | --- | --- | --- |
+| `exact` | 124 | precise point from an OSM or Wikidata facility in the commune |
+| `approximate` | 476 | the establishment's commune centroid |
+| `null` | 95 | locality not resolved to a commune — no coordinates (`lat`/`lng` also `null`) |
+
+**By coordinate method** (`geo_method`)
+
+| Value | Count | Meaning |
+| --- | --- | --- |
 | `osm_point` | 121 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
 | `commune_centroid` | 476 | the establishment's commune centroid (approximate) |
-| `none` | 95 | locality not resolved to a commune — no coordinates |
+| `null` | 95 | no method — record has no coordinate |
 
 > **The registry is official; the coordinates are best-effort.** Names, type and
 > wilaya come from the Ministry of Health. The MoH publishes no coordinates,
@@ -97,7 +106,7 @@ const all: HealthEstablishment[] = sante.sante();
 ```
 data/
   sante.json              # 695 establishments (array)
-  metadata.json           # sources, counts, coverage, generated_at
+  metadata.json           # sources, counts, coverage, updated
   csv/sante.csv           # repo + Release bundle (not in npm tarball)
   geojson/sante.geojson   # Point features (geocoded records only)
 ```
@@ -108,35 +117,41 @@ data/
 {
   "id": "01-ehs-02",
   "name": "Etablissement Hospitalier Spécialisé Psychiatrie Adrar",
-  "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية أدرار",
   "name_fr": "Etablissement Hospitalier Spécialisé Psychiatrie Adrar",
+  "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية أدرار",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "Adrar",
+  "lat": 27.875834,
+  "lng": -0.307533,
+  "geo_precision": "exact",
+  "geo_method": "osm_point",
+  "source": "msp",
+  "refs": {
+    "osm": "way/432370657",
+    "msp": "3588"
+  },
   "type": "ehs",
   "type_label_fr": "Établissement Hospitalier Spécialisé",
   "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
   "sector": "public",
-  "wilaya": "Adrar",
-  "wilaya_ar": "أدرار",
-  "wilaya_code": "01",
-  "commune": "Adrar",
-  "commune_code": 101,
-  "source": "msp+osm",
-  "geo_precision": "osm_point",
-  "wikidata": null,
-  "osm_id": "way/432370657",
-  "msp_id": 3588,
-  "slug": "etablissement-hospitalier-specialise-psychiatrie-adrar",
-  "lat": 27.875834,
-  "lng": -0.307533
+  "slug": "etablissement-hospitalier-specialise-psychiatrie-adrar"
 }
 ```
 
 `id` is a stable `{wilaya_code}-{type}-{seq}` key synthesized by GeoAlgeria (the
-MoH publishes no establishment code). `name` is the French name where available,
-else Arabic. `type` is derived from the establishment's title; `wilaya` from the
-MoH's wilaya tag. `sector` is `"public"` for the whole MoH registry (private
-clinics, when added, will carry `"private"`). `source` records which registries
-contributed; `geo_precision` records where the coordinate came from. `lat`/`lng`
-are `null` for the 95 records whose locality could not be matched to a commune.
+MoH publishes no establishment code) — opaque, unique within `sante.json`.
+`name` is the French name where available, else Arabic. `type` is derived from
+the establishment's title; `wilaya_code` from the MoH's wilaya tag. `sector` is
+`"public"` for the whole MoH registry (private clinics, when added, will carry
+`"private"`). `source` is always `"msp"` (the Ministry of Health registry);
+`refs` carries the per-provenance ids that contributed the record — `msp`
+always, plus `osm` or `wikidata` when the coordinate was upgraded to a precise
+point. `geo_precision` is `"exact"`, `"approximate"`, or `null`; `geo_method`
+names how the coordinate was obtained (`osm_point`, `wikidata_point`,
+`commune_centroid`, or `null`). `lat`/`lng`/`geo_precision`/`geo_method` are all
+`null` together for the 95 records whose locality could not be matched to a
+commune.
 
 > **Coordinates and commune are derived, not from the MoH.** The Ministry of
 > Health lists names, type and wilaya only. GeoAlgeria matches each

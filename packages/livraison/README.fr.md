@@ -96,7 +96,7 @@ data/
   carriers.json             # 16 transporteurs (registre)
   stopdesks.json            # 411 bureaux de retrait géocodés (tableau)
   coverage.json             # 9 lignes de couverture par transporteur
-  metadata.json             # sources, comptages, generated_at
+  metadata.json             # sources, comptages, updated
   csv/                      # dépôt + bundle Release (pas dans le tarball npm)
     carriers.csv
     stopdesks.csv
@@ -110,13 +110,17 @@ data/
 // stopdesks.json
 {
   "id": "160101",
-  "operator": "guepex",
   "name": "Agence Sacré-Cœur",
-  "address": "116 Didouche Mourad, Sacré Cœur, Alger",
+  "wilaya_code": "16",
+  "commune_code": null,
   "commune": "Alger Centre",
-  "wilaya_code": 16,
   "lat": 36.7635831801555,
   "lng": 3.0471151913967005,
+  "geo_precision": "exact",
+  "geo_method": "carrier_relay",
+  "source": "guepex",
+  "operator": "guepex",
+  "address": "116 Didouche Mourad, Sacré Cœur, Alger",
   "sources": ["guepex", "yalidine"]
 }
 ```
@@ -132,17 +136,18 @@ data/
   "scope": "domestic",
   "open_agency_data": "geocoded",
   "api": "documented",
+  "notes": "Largest COD network; publishes an open geocoded stop-desk table that also lists partner operators (federated relay). Documented developer API (centers/communes/wilayas) is merchant-key gated.",
   "in_stopdesks": true,
   "stopdesk_count": 93,
-  "stopdesk_wilaya_count": 54,
-  "notes": "Largest COD network; publishes an open geocoded stop-desk table."
+  "stopdesk_wilaya_count": 54
 }
 ```
 
-`operator` sur un bureau de retrait fait la jointure avec `carriers[].id`. `wilaya_code`
-fait la jointure avec les wilayas de GeoAlgeria. `sources` liste les flux ouverts qui
-référencent le bureau — `["yalidine","guepex"]` quand les cartes relais concordent, ou
-`["anderson"]` pour une agence Anderson.
+`operator` sur un bureau de retrait fait la jointure avec `carriers[].id`. `commune_code`
+est toujours `null` — les flux relais des transporteurs ne publient qu'un nom de commune,
+jamais un code ONS. `wilaya_code` fait la jointure avec les wilayas de GeoAlgeria.
+`sources` liste les flux ouverts qui référencent le bureau — `["yalidine","guepex"]`
+quand les cartes relais concordent, ou `["anderson"]` pour une agence Anderson.
 
 ## Besoin aussi des divisions administratives ?
 

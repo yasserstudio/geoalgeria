@@ -68,17 +68,18 @@ const offices: PostOffice[] = poste.postOffices();
 data/
   postoffices.json            # 3,908 مكتب (مصفوفة)
   atms.json                   # 2,026 صراف آلي (مصفوفة)
-  metadata.json               # المصدر، الأعداد، generated_at
+  metadata.json               # الأعداد، المصادر، الترخيص، updated
   csv/postoffices.csv         # المستودع + حزمة الإصدار (غير مضمن في حزمة npm)
   csv/atms.csv
   geojson/postoffices.geojson # كيانات نقطية (سجلات ذات إحداثيات)
   geojson/atms.geojson
 ```
 
-> GeoJSON يتضمن فقط السجلات التي تحتوي على إحداثيات — عدد قليل من المكاتب
-> وأجهزة الصراف الآلي لا تُبلّغ عن `lat`/`lng` وتُحذف منه (لكنها تبقى في
-> JSON/CSV). سجلات أجهزة الصراف الآلي لا تحتوي على `commune_code`
-> (واجهة API المصدر لا توفره).
+> GeoJSON يتضمن فقط السجلات التي تحتوي على إحداثيات — 16 مكتبًا و5 أجهزة صراف
+> آلي لا تُبلّغ عن `lat`/`lng` وتُحذف منه (لكنها تبقى في JSON/CSV، مع
+> `geo_precision`/`geo_method` بقيمة `null`). سجلات أجهزة الصراف الآلي تحمل
+> `commune_code` بقيمة `null` (واجهة API المصدر لا تحلّ كود بلدية لأجهزة
+> الصراف الآلي).
 
 ## أشكال السجلات
 
@@ -86,28 +87,35 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "1",
   "name": "ADRAR RP",
   "name_ar": "أدرار م ر",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "ADRAR",
+  "commune_ar": "أدرار",
+  "lat": 27.8708439,
+  "lng": -0.2871417,
+  "geo_precision": "exact",
+  "geo_method": "baridimap",
+  "source": "baridimap",
   "class": "CE",
   "postal_code": "01000",
-  "address": "ADRAR CENTRE RUE DES MARYTIM",
-  "commune_code": "0101",
-  "commune_fr": "ADRAR",
-  "commune_ar": "أدرار",
-  "wilaya_code": "01",
-  "wilaya_fr": "ADRAR",
-  "wilaya_ar": "أدرار",
-  "lat": 27.8708439,
-  "lng": -0.2871417
+  "postal_code_old": null,
+  "address": "ADRAR CENTRE RUE DES MARYTIM"
 }
 ```
 
 `class` هو تصنيف المكتب (`CE`، `R1`–`R4`، `HC`، `GA`). `commune_code` هو
 كود البلدية المكون من 4 أرقام الخاص ببريد الجزائر، والذي يرتبط بـ `code_commune`
-الخاص بـ GeoAlgeria.
+الخاص بـ GeoAlgeria. `geo_precision` تكون `"exact"` (أو `null` إلى جانب
+`lat`/`lng` عندما لا يكون المكتب مُرمّزًا جغرافيًا)؛ `geo_method` يحدد كيفية
+الحصول على الإحداثية.
 
-**جهاز صراف آلي** — نفس الشكل، مُعرّف بـ `id`/`name`/`postal_code`/`wilaya_*` مع `lat`/`lng`؛ بدون `commune_code`.
+**جهاز صراف آلي** — نفس الشكل، مُعرّف بـ `id`/`name`/`wilaya_code`/`postal_code`
+مع `lat`/`lng`، بالإضافة إلى حقل `status` (‏`"OPEN"`، ‏`"CLOSED (OFFLINE)"`، أو
+قيمة المصدر غير الموثقة `"1"`)؛ `commune_code` و`address` تكون دائمًا `null`
+(المصدر لا يحلّهما لأجهزة الصراف الآلي).
 
 ## هل تحتاج التقسيمات الإدارية أيضًا؟
 

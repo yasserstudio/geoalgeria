@@ -73,7 +73,7 @@ const stations: Station[] = gares.stations();
 ```
 data/
   stations.json            # 74 stations (array)
-  metadata.json            # source, counts, generated_at
+  metadata.json            # sources, counts, license, updated
   csv/stations.csv
   geojson/stations.geojson # Point features (all 74 are geocoded)
 ```
@@ -83,27 +83,30 @@ data/
 ```json
 {
   "id": "16-01",
-  "sogral_id": 1,
-  "sogral_code": "213-000016000",
   "name": "ALGER",
-  "official_name": "La gare routière des Grands Invalides de la guerre de libération nationale",
-  "address": "Avenue de L’ALN B.P n°412 – 16040 – Hussein Dey (Alger)",
   "wilaya_code": "16",
+  "commune_code": "1631",
   "commune": "El Magharia",
-  "commune_code": 1631,
   "lat": 36.7425,
   "lng": 3.108,
   "geo_precision": "exact",
+  "geo_method": "exact",
+  "source": "sogral",
+  "refs": {
+    "sogral": "213-000016000"
+  },
+  "official_name": "La gare routière des Grands Invalides de la guerre de libération nationale",
+  "address": "Avenue de L’ALN B.P n°412 – 16040 – Hussein Dey (Alger)",
   "surface_total_m2": 13000,
-  "surface_built_m2": 8000,
-  "source": "https://live.sogral.com/api/live/agencies"
+  "surface_built_m2": 8000
 }
 ```
 
-`id` is `{wilaya_code}-{seq}`. `wilaya_code`/`commune` come from a nearest-centroid join
-against `geoalgeria` (which also reconciles SOGRAL's legacy 48-wilaya codes). `geo_precision`
-is `"exact"` except Guelma (`"approx"`, from its commune centroid). `sogral_id`/`sogral_code`
-are kept for provenance.
+`id` is an opaque string, `{wilaya_code}-{seq}`-shaped but unique within `stations.json` —
+don't parse it. `wilaya_code`/`commune` come from a nearest-centroid join against
+`geoalgeria` (which also reconciles SOGRAL's legacy 48-wilaya codes). 71 of 74 stations
+are `geo_precision: "exact"`; 3 are `"approximate"` (Guelma, Illizi, Aïn Oussara). The
+SOGRAL location code lives under `refs.sogral`.
 
 ## Need the administrative divisions too?
 

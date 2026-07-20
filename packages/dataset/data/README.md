@@ -91,9 +91,9 @@ data/
 | `wilaya_code` | integer | Parent wilaya code (1–69) |
 | `daira` | string | Parent daira name (French) |
 | `postal_code` | string | Commune postal code |
-| `latitude` | number | Latitude (null for 20 communes pending verification) |
-| `longitude` | number | Longitude (null for 20 communes pending verification) |
-| `code_commune` | integer | Official administrative code (null for 20 communes) |
+| `latitude` | number | Latitude (100% geocoded — no nulls) |
+| `longitude` | number | Longitude (100% geocoded — no nulls) |
+| `code_commune` | integer | Official administrative code (null for 10 communes) |
 
 ### Commune (e-commerce)
 

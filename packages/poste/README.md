@@ -68,16 +68,17 @@ const offices: PostOffice[] = poste.postOffices();
 data/
   postoffices.json            # 3,908 offices (array)
   atms.json                   # 2,026 ATMs (array)
-  metadata.json               # source, counts, generated_at
+  metadata.json               # counts, sources, license, updated
   csv/postoffices.csv         # repo + Release bundle (not in npm tarball)
   csv/atms.csv
   geojson/postoffices.geojson # Point features (records with coordinates)
   geojson/atms.geojson
 ```
 
-> GeoJSON includes only records that have coordinates — a handful of offices and
-> ATMs report no `lat`/`lng` and are omitted there (but remain in JSON/CSV). ATM
-> records have no `commune_code` (the source API doesn't provide one).
+> GeoJSON includes only records that have coordinates — 16 offices and 5 ATMs
+> report no `lat`/`lng` and are omitted there (but remain in JSON/CSV, with
+> `geo_precision`/`geo_method` both `null`). ATM records carry `commune_code`
+> as `null` (the source API doesn't resolve ATMs to a commune code).
 
 ## Record shapes
 
@@ -85,27 +86,34 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "1",
   "name": "ADRAR RP",
   "name_ar": "أدرار م ر",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "ADRAR",
+  "commune_ar": "أدرار",
+  "lat": 27.8708439,
+  "lng": -0.2871417,
+  "geo_precision": "exact",
+  "geo_method": "baridimap",
+  "source": "baridimap",
   "class": "CE",
   "postal_code": "01000",
-  "address": "ADRAR CENTRE RUE DES MARYTIM",
-  "commune_code": "0101",
-  "commune_fr": "ADRAR",
-  "commune_ar": "أدرار",
-  "wilaya_code": "01",
-  "wilaya_fr": "ADRAR",
-  "wilaya_ar": "أدرار",
-  "lat": 27.8708439,
-  "lng": -0.2871417
+  "postal_code_old": null,
+  "address": "ADRAR CENTRE RUE DES MARYTIM"
 }
 ```
 
 `class` is the office category (`CE`, `R1`–`R4`, `HC`, `GA`). `commune_code` is
 Algérie Poste's 4-digit commune code, which joins to GeoAlgeria's `code_commune`.
+`geo_precision` is `"exact"` (or `null` alongside `lat`/`lng` when the office
+isn't geocoded); `geo_method` names how the point was obtained.
 
-**ATM** — same shape, keyed by `id`/`name`/`postal_code`/`wilaya_*` with `lat`/`lng`; no `commune_code`.
+**ATM** — same shape, keyed by `id`/`name`/`wilaya_code`/`postal_code` with
+`lat`/`lng`, plus a `status` field (`"OPEN"`, `"CLOSED (OFFLINE)"`, or the
+undocumented source value `"1"`); `commune_code` and `address` are always
+`null` (the source doesn't resolve them for ATMs).
 
 ## Need the administrative divisions too?
 
