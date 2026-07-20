@@ -117,38 +117,82 @@ declare namespace algeriaGeodata {
     zones: DeliveryZone[];
   }
 
+  /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
+   *  `null` when the record has no coordinate at all. */
+  export type GeoPrecision = "exact" | "approximate" | null;
+
+  /** How the coordinate was obtained. `null` on an ungeocoded record — no
+   *  method produced a point, so none can be named. */
+  export type GeoMethod = "baridimap" | null;
+
+  /** Office class/category as published by Algérie Poste. */
+  export type OfficeClass = "CE" | "GA" | "HC" | "R1" | "R2" | "R3" | "R4";
+
+  /** ATM operational status as published by Algérie Poste. `"1"` is an
+   *  undocumented source value carried through verbatim rather than guessed at. */
+  export type AtmStatus = "OPEN" | "CLOSED (OFFLINE)" | "1";
+
+  /** A post office (bureau de poste). Mirrored from @geoalgeria/poste. */
   export interface PostOffice {
-    id: number;
-    name: string | null;
-    name_ar: string | null;
-    class: string | null;
-    postal_code: string | null;
-    postal_code_old: string | null;
-    address: string | null;
-    commune_code: string | null;
-    commune_fr: string | null;
-    commune_ar: string | null;
-    wilaya_code: string | null;
-    wilaya_fr: string | null;
-    wilaya_ar: string | null;
+    /** Stable id, unique within this file. Opaque — do not parse. */
+    id: string;
+    name: string;
+    name_ar: string;
+    /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
+    wilaya_code: string;
+    /** Commune (ONS) code as a 4-digit string. */
+    commune_code: string;
+    /** Commune name (French). */
+    commune: string;
+    /** Commune name in Arabic. */
+    commune_ar: string;
+    /** Latitude, or null when the office is not geocoded. */
     lat: number | null;
+    /** Longitude, or null. Both coordinates are set, or both are null. */
     lng: number | null;
+    /** `null` when `lat`/`lng` are null — a record with no point asserts no
+     *  precision. */
+    geo_precision: GeoPrecision;
+    /** How `lat`/`lng` were obtained; null when there are none. */
+    geo_method: GeoMethod;
+    source: "baridimap";
+    class: OfficeClass;
+    postal_code: string;
+    /** Previous postal code, or null when the office was never renumbered. */
+    postal_code_old: string | null;
+    address: string;
   }
 
+  /** An ATM (GAB). Mirrored from @geoalgeria/poste. */
   export interface Atm {
+    /** Stable id, unique within this file. Opaque — do not parse. */
     id: string;
-    name: string | null;
-    status: string | null;
-    postal_code: string | null;
-    postal_code_old: string | null;
-    address: string | null;
-    commune_fr: string | null;
-    commune_ar: string | null;
-    wilaya_code: string | null;
-    wilaya_fr: string | null;
-    wilaya_ar: string | null;
+    name: string;
+    /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
+    wilaya_code: string;
+    /** Commune (ONS) code. Currently null for every ATM (the source resolves
+     *  ATMs to a commune name only); typed as `string | null` for the future. */
+    commune_code: string | null;
+    /** Commune name (French). */
+    commune: string;
+    /** Commune name in Arabic. */
+    commune_ar: string;
+    /** Latitude, or null when the ATM is not geocoded. */
     lat: number | null;
+    /** Longitude, or null. Both coordinates are set, or both are null. */
     lng: number | null;
+    /** `null` when `lat`/`lng` are null. */
+    geo_precision: GeoPrecision;
+    /** How `lat`/`lng` were obtained; null when there are none. */
+    geo_method: GeoMethod;
+    source: "baridimap";
+    status: AtmStatus;
+    postal_code: string;
+    /** Previous postal code, or null when never renumbered. */
+    postal_code_old: string | null;
+    /** Street address. Currently null for every ATM (the source omits it);
+     *  typed as `string | null` so a future value is not a breaking change. */
+    address: string | null;
   }
 }
 
