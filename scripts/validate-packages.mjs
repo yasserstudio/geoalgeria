@@ -30,7 +30,7 @@
 import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-// v2 contract enforcement (dormant until a package declares schema_version "2.0.0").
+// v2 contract enforcement — required of every package outside V1_HOLDOUTS (see below).
 import {
   validateRecords as validateV2Records,
   validateMetadata as validateV2Metadata,
@@ -43,6 +43,53 @@ const fail = (msg) => {
   errors.push(msg);
   console.error(`  FAIL: ${msg}`);
 };
+
+// Packages that are deliberately still v1, by name. Everything else must declare
+// schema_version "2.0.0".
+//
+// This list exists because the gate is inverted. It used to read
+// `const isV2 = meta.schema_version === "2.0.0"`, and every v2 check hung off it —
+// so a package whose metadata lacked the key was not "v1", it was unvalidated. The
+// generators still emit v1 metadata, which makes that fail-open reachable: re-running
+// any packages/*/scripts/fetch.mjs rewrites its metadata without schema_version, and
+// the same edit that reverts the package also switches off the checks that would
+// catch the revert. CI stays green over v1 data. The migration is complete, so v2 is
+// now the assumed state and a missing or wrong version is an error.
+//
+// telecom is the one real holdout: it keeps a bespoke nested coverage/<tech>/ shape
+// and has its own validateTelecom() below, so the canonical GeoRecord contract does
+// not describe it. `dataset` (the core geoalgeria package) needs no entry — it ships
+// no data/metadata.json at all (dataset-metadata.json is a schema.org descriptor),
+// never reaches this gate, and is validated by packages/dataset/scripts/validate.py.
+const V1_HOLDOUTS = new Set(["telecom"]);
+
+/**
+ * Does this package have to satisfy the v2 contract? Fails the build when it should
+ * and doesn't, rather than quietly skipping every downstream v2 check.
+ *
+ * Returns false after failing, so v1-shaped data does not then cascade hundreds of
+ * contract errors on top of the one that explains them — the build is already red.
+ */
+function requireV2(pkg, meta) {
+  const declared = meta.schema_version;
+  if (V1_HOLDOUTS.has(pkg)) {
+    if (declared === "2.0.0")
+      fail(
+        `${pkg}/metadata.json: declares schema_version "2.0.0" but ${pkg} is listed in ` +
+          `V1_HOLDOUTS — it migrated, so drop it from that list to switch its v2 checks on`,
+      );
+    return false;
+  }
+  if (declared !== "2.0.0") {
+    fail(
+      `${pkg}/metadata.json: schema_version is ${JSON.stringify(declared ?? null)}, expected "2.0.0" — ` +
+        `the package reverted to v1 metadata (a generator re-run overwrites it), or it is a new ` +
+        `v1 holdout that belongs in V1_HOLDOUTS. All v2 contract checks are skipped until this is fixed`,
+    );
+    return false;
+  }
+  return true;
+}
 
 const readJson = (path) => JSON.parse(readFileSync(path, "utf-8"));
 // A coordinate is "present" iff it is a finite number (or numeric string).
@@ -438,7 +485,7 @@ function validateDataset(pkg, spec) {
   }
   // v2 packages carry canonical metadata: multi-file packages track per-file counts in
   // entities[], single-file packages use record_count. v1 uses the package-named key.
-  const isV2 = meta.schema_version === "2.0.0";
+  const isV2 = requireV2(pkg, meta);
   let expected, expectedKey;
   if (isV2) {
     const entity = (meta.entities || []).find((e) => e.file === spec.json);
@@ -990,9 +1037,9 @@ function validateLivraison() {
     return fail(`livraison/metadata.json: cannot read — ${e.message}`);
   }
   // v2 contract: stopdesks.json is the package's only true GeoRecord file (carriers/
-  // coverage have no wilaya_code, so they stay outside the strict contract). Dormant
-  // until metadata.schema_version flips to "2.0.0" — mirrors validateDataset's isV2 gate.
-  const isV2 = meta.schema_version === "2.0.0";
+  // coverage have no wilaya_code, so they stay outside the strict contract). Required,
+  // not dormant — mirrors validateDataset's requireV2 gate.
+  const isV2 = requireV2("livraison", meta);
 
   // carriers (registry — no coordinates, no wilaya_code)
   let carriers = [];
