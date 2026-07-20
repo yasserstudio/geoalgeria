@@ -446,3 +446,30 @@ test("emit: toCSV injection guard + toGeoJSON", () => {
   assert.equal(fc.features.length, 1); // ungeocoded dropped
   assert.deepEqual(fc.features[0].geometry.coordinates, [3.0587, 36.7657]);
 });
+
+// The schema package declares the contract every other package is type-checked
+// against, and nothing type-checks it. Four runtime exports — MIN_EXACT_DECIMALS,
+// fractionDigits, coordDecimals, sharedPoints — shipped with no declaration at
+// all, so a TypeScript consumer importing them got an error against a symbol that
+// exists. This is the cheap half of that gap: names only, no signatures. Signature
+// drift (buildManifest's opts, DatasetEntry's fields) still needs a real `tsc
+// --noEmit`, which would be the repo's first TypeScript dependency.
+test("types/index.d.ts declares every runtime export", async () => {
+  const { readFileSync } = await import("node:fs");
+  const { fileURLToPath } = await import("node:url");
+  const { dirname, join } = await import("node:path");
+  const here = dirname(fileURLToPath(import.meta.url));
+
+  const runtime = Object.keys(await import("../index.js")).sort();
+  const dts = readFileSync(join(here, "..", "types", "index.d.ts"), "utf-8");
+  const declared = new Set(
+    [...dts.matchAll(/^export\s+(?:declare\s+)?(?:function|const|let|var|class|type|interface|enum)\s+(\w+)/gm)].map(
+      (m) => m[1],
+    ),
+  );
+  assert.deepEqual(
+    runtime.filter((name) => !declared.has(name)),
+    [],
+    "runtime exports missing from types/index.d.ts",
+  );
+});

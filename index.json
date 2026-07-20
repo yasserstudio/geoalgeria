@@ -354,7 +354,7 @@
         "exact": 16227,
         "approximate": 4532
       },
-      "coverage": {
+      "ratio": {
         "pct": 112.5,
         "of": 18449,
         "note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it."

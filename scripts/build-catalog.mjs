@@ -162,10 +162,19 @@ const INDEX_PATH = join(ROOT, "index.json");
 const { index, descriptors, v2 } = build();
 
 if (process.argv.includes("--check")) {
+  // Two drift classes with two different remedies. Regenerating fixes a missing or
+  // stale artifact; it does nothing at all for a files[] that omits the descriptor,
+  // because this script does not write package.json. Printing one command for both
+  // sends the reader round a loop that cannot succeed.
+  const REMEDY = {
+    artifact: "node scripts/build-catalog.mjs",
+    files: 'add "dataset-metadata.json" to files[] in the package.json(s) above, by hand',
+  };
   const drift = [];
   const cmp = (path, want) => {
-    if (!existsSync(path)) drift.push(`${path.slice(ROOT.length + 1)} is missing`);
-    else if (readFileSync(path, "utf-8") !== want) drift.push(`${path.slice(ROOT.length + 1)} is stale`);
+    if (!existsSync(path)) drift.push({ cls: "artifact", msg: `${path.slice(ROOT.length + 1)} is missing` });
+    else if (readFileSync(path, "utf-8") !== want)
+      drift.push({ cls: "artifact", msg: `${path.slice(ROOT.length + 1)} is stale` });
   };
   cmp(INDEX_PATH, ser(index));
   for (const d of descriptors) cmp(d.path, ser(d.json));
@@ -173,12 +182,16 @@ if (process.argv.includes("--check")) {
   for (const { pkg } of v2) {
     const files = read(join(ROOT, "packages", pkg, "package.json")).files || [];
     if (!files.includes("dataset-metadata.json"))
-      drift.push(`packages/${pkg}/package.json: files[] omits "dataset-metadata.json" — npm would not publish it`);
+      drift.push({
+        cls: "files",
+        msg: `packages/${pkg}/package.json: files[] omits "dataset-metadata.json" — npm would not publish it`,
+      });
   }
   if (drift.length) {
     console.error(`\nFAILED: the committed catalog does not match the data (${drift.length}):`);
-    for (const d of drift) console.error(`  - ${d}`);
-    console.error(`\nRun: node scripts/build-catalog.mjs`);
+    for (const d of drift) console.error(`  - ${d.msg}`);
+    for (const cls of Object.keys(REMEDY))
+      if (drift.some((d) => d.cls === cls)) console.error(`\nFix: ${REMEDY[cls]}`);
     process.exit(1);
   }
   console.log(`  OK: catalog in sync (index.json + ${descriptors.length} dataset descriptors)`);

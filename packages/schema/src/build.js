@@ -92,6 +92,14 @@ export function buildMetadata(input) {
  * {pct, of, note} or not at all, and a metadata that states a universe without a
  * note is a build error rather than a bare number in a public file.
  *
+ * A ratio over 100% is not coverage and does not travel under that name.
+ * `@geoalgeria/mosquees` is why: 20,759 OSM/Wikidata places of worship against
+ * the MARW's 18,449 built mosques is 112.5%, which its note explains at length —
+ * but a Public API or an answer engine rendering `coverage.pct` drops the
+ * sentence and prints "112.5% coverage", a claim the data cannot support. Above
+ * 100 the same three fields are emitted as `ratio` instead, so a consumer
+ * reaching for `coverage.pct` finds nothing rather than finding a falsehood.
+ *
  * @param {object[]} metadatas
  * @param {{ generated?: string, note?: string }} [opts]
  * @returns {object}
@@ -117,7 +125,13 @@ export function buildManifest(metadatas, opts = {}) {
         geocoded_pct: m.geocoded_pct,
         ...(m.precision ? { precision: m.precision } : {}),
         ...(m.estimated_universe
-          ? { coverage: { pct: m.coverage_pct, of: m.estimated_universe, note: m.coverage_note } }
+          ? {
+              [m.coverage_pct > 100 ? "ratio" : "coverage"]: {
+                pct: m.coverage_pct,
+                of: m.estimated_universe,
+                note: m.coverage_note,
+              },
+            }
           : {}),
         wilayas_covered: m.wilayas_covered,
         bbox: m.bbox ?? null,

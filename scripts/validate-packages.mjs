@@ -229,8 +229,9 @@ const MISLINK_CEILING_PCT = 1.0;
 // a ceiling that clears it.
 const KNOWN_MISLINKS = { "formation-professionnelle": 37 };
 
-function reportBoundaries() {
+function reportBoundaries(full) {
   const rows = [...GEO_TALLY].filter(([, t]) => t.checked > 0).sort((a, b) => b[1].mislinked.length - a[1].mislinked.length);
+  const visited = new Set(rows.map(([pkg]) => pkg));
   let checked = 0,
     outside = 0,
     mislinked = 0;
@@ -267,6 +268,22 @@ function reportBoundaries() {
       );
     if (t.mislinked.length > 5) console.log(`      … ${t.mislinked.length - 5} more`);
   }
+  // The loop above iterates GEO_TALLY and looks KNOWN_MISLINKS up, so it never
+  // iterates KNOWN_MISLINKS itself: a package rename, a PACKAGES typo, or the
+  // package going fully ungeocoded drops its debt entry without a word, and the
+  // ratchet quietly stops ratcheting. A recorded debt that was never visited is
+  // therefore an error in its own right. Only meaningful on a full run — a
+  // single-package run legitimately visits one package.
+  if (full)
+    for (const pkg of Object.keys(KNOWN_MISLINKS))
+      if (!visited.has(pkg))
+        fail(
+          `KNOWN_MISLINKS records ${KNOWN_MISLINKS[pkg]} mislink(s) for "${pkg}", but no geocoded ` +
+            `record of that package was checked — it was renamed, dropped from PACKAGES, or lost ` +
+            `its coordinates. Remove the entry deliberately or restore the package; do not leave ` +
+            `a debt no run can pay down.`,
+        );
+
   console.log(
     `  ${checked} geocoded records checked against 69 polygons — ${outside} outside their declared wilaya ` +
       `(${((100 * outside) / checked).toFixed(2)}%, warnings: the outlines are display-grade), ${mislinked} mislinked`,
@@ -1418,7 +1435,7 @@ for (const pkg of targets) {
   validateDerivedMetadata(pkg, shipped);
 }
 console.log(`\n[geo: every point inside its declared wilaya]`);
-reportBoundaries();
+reportBoundaries(!only);
 
 console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
 validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));

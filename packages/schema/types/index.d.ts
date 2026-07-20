@@ -30,7 +30,9 @@ export type BBox = [number, number, number, number];
 
 /** The canonical facility/point record shared by every sector dataset. */
 export interface GeoRecord {
-  /** Globally-unique stable id, conventionally "{sector}:{wilaya_code}-{seq}". */
+  /** Opaque stable id, unique within its own file — NOT globally unique, and not
+   *  unique across files even within one package (contract decision 10). Treat it
+   *  as a join key scoped by file. */
   id: string;
   /** Best display name (domain default), or null where the source is unnamed. */
   name?: string | null;
@@ -128,15 +130,32 @@ export interface DatasetMetadata {
   updated: string;
 }
 
-/** One row in the repo catalog. */
+/** A coverage figure and the universe it divides by, never a bare percentage. */
+export interface CoverageRatio {
+  pct: number;
+  /** The estimated real-world total the percentage divides by. */
+  of: number;
+  /** The sentence that says what that universe is. Always present. */
+  note: string;
+}
+
+/** One row in the repo catalog, as emitted by `buildManifest`. */
 export interface DatasetEntry {
   package: string;
+  /** null for the packages that predate the v2 contract. */
+  schema_version: string | null;
   title?: string;
   record_count: number;
+  geocoded_count: number | null;
   geocoded_pct: number;
-  coverage_pct?: number | null;
+  precision?: { exact: number; approximate: number };
+  /** Present only when the package states an estimated universe and the ratio is ≤ 100%. */
+  coverage?: CoverageRatio;
+  /** The same three fields when the ratio exceeds 100% — a comparison against an
+   *  official count, not coverage of it (see `buildManifest`). Never both. */
+  ratio?: CoverageRatio;
   wilayas_covered: number;
-  bbox?: BBox | null;
+  bbox: BBox | null;
   license: string;
   updated: string;
 }
@@ -145,6 +164,8 @@ export interface DatasetEntry {
 export interface Manifest {
   schema_version: string;
   generated?: string;
+  /** How to read the catalog — emitted verbatim by scripts/build-catalog.mjs. */
+  note?: string;
   datasets: DatasetEntry[];
 }
 
@@ -172,6 +193,8 @@ export const LIFECYCLE: readonly Lifecycle[];
 export const EVIDENCE_TYPE: readonly EvidenceType[];
 export const WILAYA_CODES: readonly string[];
 export const DZ_BBOX: { minLng: number; maxLng: number; minLat: number; maxLat: number };
+/** Fewest fraction digits a coordinate must carry to be called `exact`. */
+export const MIN_EXACT_DECIMALS: number;
 
 export function wcode(c: string | number | null | undefined): string | null;
 export function round6(n: number | string | null | undefined): number | null;
@@ -213,6 +236,15 @@ export function wilayaNeighbours(featureCollection: {
   features?: { properties?: Record<string, unknown>; geometry: unknown }[];
 }): Map<string, Set<string>>;
 
+/** Fraction digits in a number's shortest round-trip decimal form (0 for integers). */
+export function fractionDigits(n: number): number;
+/** A point is only as precise as its coarser axis → min of the two digit counts. */
+export function coordDecimals(lat: number | null, lng: number | null): number;
+/** Indexes of the rows whose coordinate is carried by at least one other row in the
+ *  same collection — a point several records share is not a per-facility point.
+ *  Ungeocoded rows are never members. */
+export function sharedPoints(rows: GeoRecord[]): Set<number>;
+
 export function validateRecords(records: GeoRecord[], opts?: ValidateOptions): ValidationResult;
 export function validateMetadata(meta: DatasetMetadata): ValidationResult;
 
@@ -231,6 +263,15 @@ export function evidenceForSourceKey(key: string): EvidenceType;
 export function buildMetadata(input: BuildMetadataInput): DatasetMetadata;
 export function buildManifest(
   metadatas: DatasetMetadata[],
-  opts?: { generated?: string },
+  opts?: { generated?: string; note?: string },
 ): Manifest;
-export function buildDcat(meta: DatasetMetadata, opts?: { homepage?: string }): Record<string, unknown>;
+export function buildDcat(
+  meta: DatasetMetadata,
+  opts?: {
+    homepage?: string;
+    /** Repository URL, emitted as schema.org `sameAs`. */
+    repo?: string;
+    /** One `DataDownload` per shipped file. */
+    distributions?: { name: string; format: string; url: string }[];
+  },
+): Record<string, unknown>;
