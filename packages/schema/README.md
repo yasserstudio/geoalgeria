@@ -31,7 +31,7 @@ const meta = buildMetadata({
 
 | field | type | notes |
 |---|---|---|
-| `id` | `string` | globally unique, `"{sector}:{wilaya_code}-{seq}"` |
+| `id` | `string` | opaque, unique **within its file** — not globally unique, not unique across files even within one package |
 | `name` / `name_fr` / `name_ar` | `string \| null` | domain-default `name`; localized variants optional |
 | `wilaya_code` | `string` | zero-padded `"01".."69"` |
 | `commune_code` | `string \| null` | ONS code; first 2 digits === `wilaya_code` |
@@ -42,7 +42,7 @@ const meta = buildMetadata({
 
 ## Boundary checks
 
-`validateRecords` runs the point-in-wilaya check only when you pass `boundaries` (built with `loadBoundaries(featureCollection)`), so the package ships no polygons. Without them, the Algeria-bbox guard still catches gross coordinate errors. This repo's polygons live in `geoalgeria/data/geojson/wilaya-boundaries.geojson` (69 wilayas, OSM/ODbL).
+`validateRecords` runs the point-in-wilaya check only when you pass `boundaries` (built with `loadBoundaries(featureCollection)`), so the package ships no polygons. Without them, the Algeria-bbox guard still catches gross coordinate errors. This repo's polygons live in `packages/dataset/data/geojson/wilaya-boundaries.geojson` (69 wilayas, OSM/ODbL; published in the `geoalgeria` npm package under `data/geojson/`).
 
 `loadBoundaries` **throws** rather than returning an empty or partial index — on no usable features, on any feature it cannot index, and on a duplicate wilaya code. `pointInWilaya` reports a code it has no polygon for as *inside* ("can't disprove, don't flag"), so a degraded index does not weaken the check, it silently switches it off; a load-time throw is the only outcome that cannot be mistaken for a clean run.
 
