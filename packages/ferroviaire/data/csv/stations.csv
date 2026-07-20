@@ -91,7 +91,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 13-007,Akid Abbes,Akid Abbes,زوج بغال,13,1327,Maghnia,34.787222,-1.803889,exact,osm_node,wikidata+osm,"{""wikidata"":""Q120281843"",""osm"":""node/3103272616""}",rail,Ligne d'Akid Abbes à Ghazaouet | ligne de Tabia à Akid Abbes,SNTF,
 13-008,Université de Tlemcen,Université de Tlemcen,,13,1351,Mansourah,34.864166,-1.359121,exact,wikidata,wikidata,"{""wikidata"":""Q120282221""}",rail,ligne de Tabia à Akid Abbes,SNTF,
 13-009,Tralimet,Tralimet,محطة تراليمات,13,1337,Sidi Medjahed,34.781111,-1.671111,exact,osm_way,wikidata+osm,"{""wikidata"":""Q120282238"",""osm"":""way/728240454""}",rail,ligne de Tabia à Akid Abbes,SNTF,
-13-010,Souani,Souani,,13,1308,Souani,34.920833,-1.94,exact,wikidata,wikidata,"{""wikidata"":""Q120282282""}",rail,Ligne d'Akid Abbes à Ghazaouet,SNTF,
+13-010,Souani,Souani,,13,1308,Souani,34.920833,-1.94,approximate,wikidata,wikidata,"{""wikidata"":""Q120282282""}",rail,Ligne d'Akid Abbes à Ghazaouet,SNTF,
 13-011,Sidi Medjahed,Sidi Medjahed,سيدي مجاهد,13,1337,Sidi Medjahed,34.774722,-1.638611,exact,osm_node,wikidata+osm,"{""wikidata"":""Q120282317"",""osm"":""node/2290946722""}",rail,ligne de Tabia à Akid Abbes,SNTF,
 13-012,Imama,Imama,,13,1351,Mansourah,34.877222,-1.334722,exact,wikidata,wikidata,"{""wikidata"":""Q120282326""}",rail,ligne de Tabia à Akid Abbes,SNTF,
 13-013,Ghazaouet,Ghazaouet,الغزوات,13,1307,Ghazaouet,35.096111,-1.860833,exact,osm_node,wikidata+osm,"{""wikidata"":""Q120282351"",""osm"":""node/3415672289""}",rail,Ligne d'Akid Abbes à Ghazaouet,SNTF,
@@ -165,11 +165,11 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-037,Rabia Tahar,Rabia Tahar,رابية الطاهر,16,1621,Bab Ezzouar,36.72011,3.18203,exact,osm_node,wikidata+osm,"{""wikidata"":""Q109312786"",""osm"":""node/12942126791""}",metro,ligne 1,SEMA,Métro d'Alger
 16-038,Université Houari Boumédiène,Université Houari Boumédiène,محطة جامعة هواري بومدين,16,1621,Bab Ezzouar,36.7141,3.17519,exact,osm_node,wikidata+osm,"{""wikidata"":""Q109312787"",""osm"":""node/12942126792""}",metro,ligne 1,SEMA,Métro d'Alger
 16-039,Oued Smar,Oued Smar,محطة المترو وادي السمار,16,1621,Bab Ezzouar,36.70826,3.16796,exact,osm_node,wikidata+osm,"{""wikidata"":""Q109312788"",""osm"":""node/12942126793""}",metro,ligne 1,SEMA,Métro d'Alger
-16-040,Mohamed Belarbi,Mohamed Belarbi,محطة محمد بلعربي,16,1614,Baraki,36.67377,3.0866,exact,osm_node,wikidata+osm,"{""wikidata"":""Q109312809"",""osm"":""node/12942126786""}",metro,ligne 1,SEMA,Métro d'Alger
+16-040,Mohamed Belarbi,Mohamed Belarbi,محطة محمد بلعربي,16,1614,Baraki,36.67377,3.0866,approximate,osm_node,wikidata+osm,"{""wikidata"":""Q109312809"",""osm"":""node/12942126786""}",metro,ligne 1,SEMA,Métro d'Alger
 16-041,Parc Urbain,Parc Urbain,محطة المنتزه الحضري,16,1614,Baraki,36.683987,3.083103,exact,osm_node,wikidata+osm,"{""wikidata"":""Q138493971"",""osm"":""node/12942126784""}",metro,ligne 1,SEMA,Métro d'Alger
 16-042,Aïn Naâdja-Gare,Aïn Naâdja-Gare,محطّة مترو عين النعجة – المحطة,16,1619,Bachedjerah,36.690333,3.080989,exact,osm_node,wikidata+osm,"{""wikidata"":""Q138494010"",""osm"":""node/12942126785""}",metro,ligne 1,SEMA,Métro d'Alger
 16-043,Mohamed Boudiaf,Mohamed Boudiaf,محطّة محمد بوضياف,16,1619,Bachedjerah,36.696365,3.076408,exact,osm_node,wikidata+osm,"{""wikidata"":""Q138494033"",""osm"":""node/3348151668""}",metro,ligne 1,SEMA,Métro d'Alger
-16-044,Jardin,Jardin,,16,1614,Baraki,36.67377,3.0866,exact,wikidata,wikidata,"{""wikidata"":""Q138494132""}",metro,ligne 1,SEMA,Métro d'Alger
+16-044,Jardin,Jardin,,16,1614,Baraki,36.67377,3.0866,approximate,wikidata,wikidata,"{""wikidata"":""Q138494132""}",metro,ligne 1,SEMA,Métro d'Alger
 16-045,Cité 2004 Logements,Cité 2004 Logements,,16,1614,Baraki,36.662269,3.10433,exact,osm_node,wikidata+osm,"{""wikidata"":""Q138494139"",""osm"":""node/13231136207""}",metro,ligne 1,SEMA,Métro d'Alger
 16-046,El Harrach Centre,El Harrach Centre,الحراش وسط,16,1629,Mohammadia,36.722,3.13766,exact,osm_node,wikidata+osm,"{""wikidata"":""Q20669761"",""osm"":""node/6673464970""}",metro,ligne 1,SEMA,Métro d'Alger
 16-047,El Harrach Gare,El Harrach Gare,محطة الحراش,16,1616,Bourouba,36.7219,3.13093,exact,osm_node,wikidata+osm,"{""wikidata"":""Q20669762"",""osm"":""node/6673464971""}",metro,ligne 1,SEMA,Métro d'Alger
@@ -250,7 +250,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 17-003,Hassi Bahbah,Hassi Bahbah,محطة قطار حاسي بحبح,17,1704,Hassi Bahbah,35.054,3.0527,exact,osm_node,wikidata+osm,"{""wikidata"":""Q124312104"",""osm"":""node/11954317205""}",rail,ligne de Boughezoul à Laghouat,SNTF,
 18-001,Jijel,Jijel,محطة قطار جيجل,18,1801,Jijel,36.809383,5.77542,exact,osm_node,wikidata+osm,"{""wikidata"":""Q117546584"",""osm"":""node/3714008182""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
 18-002,Bazoul,Bazoul,محطة قطار بازول,18,1820,El Kennar Nouchfi,36.822222,5.919444,exact,wikidata,wikidata,"{""wikidata"":""Q117548856""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
-18-003,Sidi Abdelaziz,Sidi Abdelaziz,محطة قطار سيدي عبد العزيز,18,1813,Sidi Abdelaziz,36.859722,6.06,exact,wikidata,wikidata,"{""wikidata"":""Q117549040""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
+18-003,Sidi Abdelaziz,Sidi Abdelaziz,محطة قطار سيدي عبد العزيز,18,1813,Sidi Abdelaziz,36.859722,6.06,approximate,wikidata,wikidata,"{""wikidata"":""Q117549040""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
 18-004,El Ancer,El Ancer,محطة قطار العنصر,18,1812,El Ancer,36.803056,6.151944,exact,wikidata,wikidata,"{""wikidata"":""Q117549159""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
 18-005,El Milia,El Milia,محطة قطار الميلية,18,1809,El Milia,36.783228,6.256378,exact,osm_node,wikidata+osm,"{""wikidata"":""Q117552146"",""osm"":""node/2454069068""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
 18-006,Settara,Settara,محطة قطار السطارة,18,1811,Settara,36.735279,6.344914,exact,wikidata,wikidata,"{""wikidata"":""Q118186139""}",rail,ligne de Ramdane Djamel à Jijel,SNTF,
@@ -505,8 +505,8 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 31-010,Haï Es Sabah,Haï Es Sabah,حي الصباح,31,3103,Bir El Djir,35.6903,-0.568,exact,osm_node,wikidata+osm,"{""wikidata"":""Q118225310"",""osm"":""node/1198741588""}",rail,ligne d'Oran à Arzew,SNTF,
 31-011,Oued Tlelat,Oued Tlelat,محطة قطار وادي تليلات,31,3111,Oued Tlelat,35.5463,-0.452,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119071951"",""osm"":""node/3886552760""}",rail,ligne de Oued Tlelat à Béchar | ligne d'Alger à Oran,SNTF,
 31-012,El Kerma,El Kerma,,31,3117,El Kerma,35.6163,-0.5854,exact,wikidata,wikidata,"{""wikidata"":""Q119072149""}",rail,ligne d'Alger à Oran,SNTF,
-31-013,Es Senia,Es Senia,محطة قطار السانية,31,3105,Es Senia,35.65,-0.6075,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119072200"",""osm"":""node/3884932091""}",rail,ligne d'Es Senia à Beni Saf | ligne d'Alger à Oran,SNTF,
-31-014,Arzew,Arzew,محطة قطار أرزيو,31,3106,Arzew,35.8473,-0.32,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119144784"",""osm"":""node/5416215334""}",rail,ligne d'Oran à Arzew,SNTF,
+31-013,Es Senia,Es Senia,محطة قطار السانية,31,3105,Es Senia,35.65,-0.6075,approximate,osm_node,wikidata+osm,"{""wikidata"":""Q119072200"",""osm"":""node/3884932091""}",rail,ligne d'Es Senia à Beni Saf | ligne d'Alger à Oran,SNTF,
+31-014,Arzew,Arzew,محطة قطار أرزيو,31,3106,Arzew,35.8473,-0.32,approximate,osm_node,wikidata+osm,"{""wikidata"":""Q119144784"",""osm"":""node/5416215334""}",rail,ligne d'Oran à Arzew,SNTF,
 31-015,Haï El Ksab,Haï El Ksab,,31,3105,Es Senia,35.636,-0.6159,exact,wikidata,wikidata,"{""wikidata"":""Q119172185""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
 31-016,Misserghin,Misserghin,محطة قطار مسرغين,31,3123,Messerghin,35.6093,-0.7333,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119172391"",""osm"":""node/5322508069""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
 31-017,Boutlélis,Boutlélis,بوتليليس,31,3124,Boutlelis,35.5678,-0.8969,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119172612"",""osm"":""node/3885025884""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
@@ -645,8 +645,8 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 45-012,Dayet El Kerch,Dayet El Kerch,,45,4504,Djenienne Bourezg,32.437579,-0.763043,exact,wikidata,wikidata,"{""wikidata"":""Q123498567""}",rail,,SNTF,
 45-013,Les Oglats,Les Oglats,,45,4506,Moghrar,32.495725,-0.643308,exact,wikidata,wikidata,"{""wikidata"":""Q123498568""}",rail,,SNTF,
 45-014,Dra Es Saâ,Dra Es Saâ,,45,4506,Moghrar,32.542012,-0.496984,exact,wikidata,wikidata,"{""wikidata"":""Q123498569""}",rail,,SNTF,
-45-015,Rouïba,Rouïba,,45,4504,Tiout,32.614138,-0.40639,exact,osm_node,wikidata+osm,"{""wikidata"":""Q123498570"",""osm"":""node/9358330035""}",rail,,SNTF,
-45-016,Aïn El Hadjadi,Aïn El Hadjadi,,45,4504,Tiout,32.614138,-0.40639,exact,wikidata,wikidata,"{""wikidata"":""Q123498571""}",rail,,SNTF,
+45-015,Rouïba,Rouïba,,45,4504,Tiout,32.614138,-0.40639,approximate,osm_node,wikidata+osm,"{""wikidata"":""Q123498570"",""osm"":""node/9358330035""}",rail,,SNTF,
+45-016,Aïn El Hadjadi,Aïn El Hadjadi,,45,4504,Tiout,32.614138,-0.40639,approximate,wikidata,wikidata,"{""wikidata"":""Q123498571""}",rail,,SNTF,
 45-017,Ancienne gare d'El Biod,Ancienne gare d'El Biod,,45,4512,El Biodh,33.766918,-0.125765,exact,wikidata,wikidata,"{""wikidata"":""Q123498572""}",rail,,SNTF,
 45-018,Tirkount,Tirkount,,45,4503,Ain Sefra,32.823939,-0.609197,exact,wikidata,wikidata,"{""wikidata"":""Q123498573""}",rail,,SNTF,
 45-019,Boughelaba,Boughelaba,,45,4503,Ain Sefra,32.937974,-0.568184,exact,wikidata,wikidata,"{""wikidata"":""Q123498574""}",rail,,SNTF,
@@ -661,7 +661,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 46-002,Hassi El Ghella,Hassi El Ghella,محطة قطار حاسي الغلة,46,4620,Hassi El Ghella,35.4528,-1.0392,exact,wikidata,wikidata,"{""wikidata"":""Q119172912""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
 46-003,El Malah,El Malah,محطة قطار المالح,46,4607,El Maleh,35.3959,-1.0828,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119172955"",""osm"":""node/9375782945""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
 46-004,Chaabat El Leham,Chaabat El Leham,محطة قطار شعبة اللحم,46,4605,Chaabat El Ham,35.3419,-1.1043,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119173003"",""osm"":""node/5368531814""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
-46-005,Aïn Témouchent,Aïn Témouchent,محطة قطار عين تموشنت,46,4601,Ain Temouchent,35.2983,-1.14,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119173066"",""osm"":""node/2042157379""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
+46-005,Aïn Témouchent,Aïn Témouchent,محطة قطار عين تموشنت,46,4601,Ain Temouchent,35.2983,-1.14,approximate,osm_node,wikidata+osm,"{""wikidata"":""Q119173066"",""osm"":""node/2042157379""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
 46-006,Béni Saf,Béni Saf,محطة قطار بني صاف,46,4623,Beni Saf,35.3076,-1.3566,exact,osm_node,wikidata+osm,"{""wikidata"":""Q119173153"",""osm"":""node/9372808148""}",rail,ligne d'Es Senia à Beni Saf,SNTF,
 48-001,Relizane,Relizane,محطة قطار غليزان,48,4801,Relizane,35.74769,0.55571,exact,osm_node,wikidata+osm,"{""wikidata"":""Q106873665"",""osm"":""node/2154110828""}",rail,ligne d'Alger à Oran,SNTF,
 48-002,Yellel,Yellel,محطة قطار يلل,48,4825,Yellel,35.7239,0.3516,exact,osm_node,wikidata+osm,"{""wikidata"":""Q118134156"",""osm"":""node/9394705414""}",rail,ligne d'Alger à Oran,SNTF,

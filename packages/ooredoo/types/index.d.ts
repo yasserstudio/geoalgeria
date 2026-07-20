@@ -36,8 +36,9 @@ export interface OoredooStore {
   lat: number;
   /** Longitude (real API point). */
   lng: number;
-  /** Always `"exact"` — every point is a real operator-API coordinate. */
-  geo_precision: "exact";
+  /** `"exact"`, or `"approximate"` where the operator-API coordinate is rounded
+   *  too coarse, or is shared with another store, to be a per-store point. */
+  geo_precision: "exact" | "approximate";
   /** Always `"operator_api"`. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]` — always "ooredoo". */

@@ -23,7 +23,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 05-05,ALEM MEROUANA,05,,,35.63197,5.91378,exact,anem,anem,ALEM,0505,Locaux Commerciaux - Cité el moudjahidine - Merouana,(033) 831 - 718,(033) 831 - 718,alem.merouana@anem.dz,HEMICHE ABDELALI
 05-06,ALEM AIN TOUTA,05,,,35.37818,5.89697,exact,anem,anem,ALEM,0506,Rue Louchene Taher- Ain Touta,(033) 355 - 216,(033) 355 - 216,alem.aintouta@anem.dz,YAHIAOUI ABDELOUAHAB
 05-07,ALEM RAS EL AIOUN,05,,,35.67128,5.65019,exact,anem,anem,ALEM,0507,cité manifestation - Ras EL Aioun,(033) 370 - 357,(033) 370 - 357,alem.raslayoun@anem.dz,GHEBACHE HAROUN
-05-08,ALEM AIN DJASSER,05,,,35.85,6,exact,anem,anem,ALEM,0508,Rue du 1er Novembre - Ain Djasser,(033) 245 - 268,(033) 245 - 268,alem.aindjasser@anem.dz,BENAMARA KAMAL
+05-08,ALEM AIN DJASSER,05,,,35.85,6,approximate,anem,anem,ALEM,0508,Rue du 1er Novembre - Ain Djasser,(033) 245 - 268,(033) 245 - 268,alem.aindjasser@anem.dz,BENAMARA KAMAL
 06-01,ALEM BEJAIA,06,,,36.74492,5.04814,exact,anem,anem,ALEM,0601,"Centre d’affaires ""big center"" - Rez de chaussée - Bd Krim Belkacem - Béjaia",(034) 113 - 256,(034) 113-256,alem.bejaia@anem.dz,BENSALEM MALEK
 06-02,ALEM AKBOU,06,,,36.46261,4.50394,exact,anem,anem,ALEM,0602,"Cité des 120 Lgts ""Ex caserne"" en face de la Sonelgaz",(034) 187 - 951,(034) 187 - 951,alem.akbou@anem.dz,KHELOUI RABAH
 06-03,ALEM SIDI AICH,06,,,36.60817,4.68801,exact,anem,anem,ALEM,0603,15/500 logt RHP maala-sidi Aich,(034) 869 - 113,(034) 869 - 114,alem.sidiaich@anem.dz,SADOUN ZAHIA
@@ -39,11 +39,11 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 08-02,ALEM ABADLA,08,,,31.0255,-2.70478,exact,anem,anem,ALEM,0802,Hai SaLEM - Abadla,(049) 256 - 738,(049) 257 - 971,alem.abadla@anem.dz,BENYAHIA MOHAMMED
 08-03,ALEM TAGHIT,08,,,30.92001,-2.02941,exact,anem,anem,ALEM,0803,Taghit centre - Taghit,(049) 253 - 529,(049) 253 - 466,alem.taghit@anem.dz,BELBOUKHARI SLIMANE
 08-04,ALEM BENI OUNIF,08,,,32.05471,-1.28171,exact,anem,anem,ALEM,0804,Rue Commandant Boucherit – Béni Ounif,(049) 252 - 243,(049) 252 - 243,alem.beniounif@anem.dz,HASSI MOKHTAR
-09-01,ALEM BLIDA,09,,,36.48,2.84,exact,anem,anem,ALEM,0901,"97, rue Yousfi Abdelkader  - Blida",(025) 225 - 777,(025) 225 - 776,alem.blida@anem.dz,BOUMEDANE HICHEM
-09-02,ALEM BOUFARIK,09,,,36.58,2.91,exact,anem,anem,ALEM,0902,"07, rue Si Smail - Boufarik",(025) 481 - 950,(025) 481 - 966,alem.boufarik@anem.dz,BENBEKHMA AMAR
+09-01,ALEM BLIDA,09,,,36.48,2.84,approximate,anem,anem,ALEM,0901,"97, rue Yousfi Abdelkader  - Blida",(025) 225 - 777,(025) 225 - 776,alem.blida@anem.dz,BOUMEDANE HICHEM
+09-02,ALEM BOUFARIK,09,,,36.58,2.91,approximate,anem,anem,ALEM,0902,"07, rue Si Smail - Boufarik",(025) 481 - 950,(025) 481 - 966,alem.boufarik@anem.dz,BENBEKHMA AMAR
 09-03,ALEM EL AFFROUN,09,,,36.47159,2.62617,exact,anem,anem,ALEM,0903,Rue Kaibou Mohammed   El Affroun-blida,(025) 382 - 251,(025) 382 - 251,alem.elaffroun@anem.dz,BOURAHLA MOHAMED
 09-04,ALEM LARBAA,09,,,36.56001,3.15999,exact,anem,anem,ALEM,0904,Cité  des 300 logements - Djiboulou - Larbaa,(025) 340 - 527,(025) 340 - 680,alem.larbaa@anem.dz,KESRI BILEL
-09-05,ALEM BOUINAN,09,,,36.49,2.86,exact,anem,anem,ALEM,0905,Cité des 402 logts - Ouled Yaich- Blida,(025) 435 - 435,(025) 437 - 437,alem.bouinane@anem.dz,BEN AICHA HAMZA
+09-05,ALEM BOUINAN,09,,,36.49,2.86,approximate,anem,anem,ALEM,0905,Cité des 402 logts - Ouled Yaich- Blida,(025) 435 - 435,(025) 437 - 437,alem.bouinane@anem.dz,BEN AICHA HAMZA
 09-06,ALEM MOUZAIA,09,,,36.46545,2.68169,exact,anem,anem,ALEM,0906,cite 200 logements mouzaia-blida,(025) 248 - 514,(025) 248 - 513,alem.mouzaia@anem.dz,TAHIR BILLAL
 10-01,ALEM BOUIRA,10,,,36.37845,3.90231,exact,anem,anem,ALEM,1001,01 rue Med Zammoum - Bouira,(026) 730 - 891,(026) 730 - 890,alem.bouira@anem.dz,BOUDIAF LAMINE
 10-02,ALEM AIN BESSEM,10,,,36.29624,3.68197,exact,anem,anem,ALEM,1002,Cité SAAD MESSILI  – Ain Béssam,(026) 875 - 270,(026) 875 - 270,alem.ainbessam@anem.dz,MEDJRAS HOCINE
@@ -54,7 +54,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 11-01,ALEM TAMANRASSET,11,,,22.7938,5.53933,exact,anem,anem,ALEM,1101,Centre ville Tamanrasset,(029) 303 -122,(029) 303 -122,alem.tamanrasset@anem.dz,DADAOUALI ABDERRAHMANE
 12-01,ALEM TEBESSA,12,,,35.40783,8.10987,exact,anem,anem,ALEM,1201,ex el mohafadha route de constantine tebessa,(037) 591 - 625,(037) 592 - 616,alem.tebessa@anem.dz,ZANAT HOUSSAM EDDINE
 12-02,ALEM BIR EL ATER,12,,,34.75207,8.05845,exact,anem,anem,ALEM,1202,Cité daira - Bir El Ater,(037) 447 - 994,(037) 447 - 994,alem.birelater@anem.dz,HAMZA HICHEM
-12-03,ALEM OUENZA,12,,,35.95,8.11667,exact,anem,anem,ALEM,1203,Cité Centrale - Ex Sonitex- El Ouenza,(037) 671 - 399,(037) 761 - 456,alem.elouenza@anem.dz,MAALEM LATIFA
+12-03,ALEM OUENZA,12,,,35.95,8.11667,approximate,anem,anem,ALEM,1203,Cité Centrale - Ex Sonitex- El Ouenza,(037) 671 - 399,(037) 761 - 456,alem.elouenza@anem.dz,MAALEM LATIFA
 12-04,ALEM CHERIA,12,,,35.26939,7.74998,exact,anem,anem,ALEM,1204,Ex siége social de l,(037) 621 - 415,(037) 622 - 927,alem.cheria@anem.dz,ABID HOUSNI
 12-05,ALEM EL MA LABIODH,12,,,35.20495,8.16633,exact,anem,anem,ALEM,1205,Cité Ben Djedda M’henia – El Ma Labiod,(037) 522 - 719,(037) 525 - 821,alem.elmalabiadh@anem.dz,BETTICHE ABDENNOUR
 13-01,ALEM TLEMCEN,13,,,34.88049,-1.34449,exact,anem,anem,ALEM,1301,Cité 1060 Logts ex Casnos – Imama -Tlemcen,(043) 381 - 687,(043) 381 - 684,alem.tlemcen@anem.dz,CHIKHAOUI ABDELAZIZ
@@ -71,7 +71,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 14-03,ALEM KSAR CHELLALA,14,,,35.21407,2.31744,exact,anem,anem,ALEM,1403,Cité Administrative -  Ksar Chellala,(046) 364 - 735,(046) 364 - 734,alem.ksarchellala@anem.dz,MAZOUZI LAKHDAR
 14-04,ALEM SOUGUEUR,14,,,35.188,1.4983,exact,anem,anem,ALEM,1404,Boulevard Sidi Abed El Ghani - Sougueur,(046) 436 - 795,(046) 436 - 217/(046) 438 - 421,alem.sougueur@anem.dz,BELGACEM KHALED
 14-05,ALEM MAHDIA,14,,,35.42755,1.75179,exact,anem,anem,ALEM,1405,"Rue Si El- Haoués, Ex siège de l’APC - Mahdia",(046) 464 - 545,(046) 464 - 537,alem.mahdia@anem.dz,HASSACI MOKHTAR
-15-01,ALEM TIZI OUZOU,15,,,36.71,4.05,exact,anem,anem,ALEM,1501,01 boulevard  Haddadou Med Arezki – Tizi Ouzou,(026) 127 - 034,(026) 122 - 017,alem.tiziouzou@anem.dz,SI HADJ MOHAND AHMED
+15-01,ALEM TIZI OUZOU,15,,,36.71,4.05,approximate,anem,anem,ALEM,1501,01 boulevard  Haddadou Med Arezki – Tizi Ouzou,(026) 127 - 034,(026) 122 - 017,alem.tiziouzou@anem.dz,SI HADJ MOHAND AHMED
 15-02,ALEM AIN EL HAMMAM,15,,,36.56984,4.31448,exact,anem,anem,ALEM,1502,Rue COLONEL AMIROUCHE AIN EL HAMMAM,(026) 48 40 08,(026) 48 40 08,alem.ainelhammam@anem.dz,NAIT ABDESSELAM LYNDA
 15-03,ALEM AZAZGA,15,,,36.73347,4.37257,exact,anem,anem,ALEM,1503,Cité des 60 Logts EPLF Fontaine Romaine - Azazga,(026) 345 - 345,(026) 345 - 334,alem.azazga@anem.dz,MOUCHACHE SOFIANE
 15-04,ALEM BOGHNI,15,,,36.54444,3.95325,exact,anem,anem,ALEM,1504,Cité des 18 logements  Boghni,026 23 17 11,026 23 17 11,alem.boghni@anem.dz,KHADIR SI ABDELMADJID
@@ -111,10 +111,10 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 19-04,ALEM EL EULMA,19,,,36.15012,5.70201,exact,anem,anem,ALEM,1904,Cité 500 Logts – Tour 07 Thabet Bouzid – El Eulma,(036) 479 - 235,(036) 479 - 407,alem.eleulma@anem.dz,SEDKA FAROUK
 19-05,ALEM AIN AZEL,19,,,35.81596,5.5081,exact,anem,anem,ALEM,1905,Cité lotissement 188 Logements – Ain Azel,(036) 554 - 386,(036) 554 - 659,alem.ainazel@anem.dz,BELHOUT FOUDIL
 19-06,ALEM AIN OULMANE,19,,,35.92631,5.2911,exact,anem,anem,ALEM,1906,Cité Administrative ex siège de la Daïra - Ain Oulméne,(036) 564 - 380,(036) 564 - 380,alem.ainoulmane@anem.dz,DIAFAT RIADH
-20-01,ALEM SAIDA,20,,,34.84,0.15,exact,anem,anem,ALEM,2001,Cité freres seddik  rue boumedienne doumi saida,(048) 429 - 012,,alem.saida@anem.dz,KHELIFA KADDA
+20-01,ALEM SAIDA,20,,,34.84,0.15,approximate,anem,anem,ALEM,2001,Cité freres seddik  rue boumedienne doumi saida,(048) 429 - 012,,alem.saida@anem.dz,KHELIFA KADDA
 20-02,ALEM AIN EL HADJAR,20,,,34.75946,0.1457,exact,anem,anem,ALEM,2002,Rue des Locaux commerciaux Ain El Hadjar,(048) 401-311,(048) 401-311,alem.ainelhadjar@anem.dz,AMEUR MOHAMED ZINE
-20-03,ALEM SIDI BOUBEKEUR,20,,,35.03,0.05,exact,anem,anem,ALEM,2003,"06, Rue Fidah Taieb -  Sidi Boubekeur",(048) 504 - 834,(048) 314 - 734,alem.sidiboubekeur@anem.dz,ADEL ABDELKADER
-20-04,ALEM HASSASNA,20,,,34.83,0.14,exact,anem,anem,ALEM,2004,Rue Emir Abdelkader - Hassasna,(048) 311-118,(048) 311 - 129,alem.hassasna@anem.dz,GOUACEM BENAISSA
+20-03,ALEM SIDI BOUBEKEUR,20,,,35.03,0.05,approximate,anem,anem,ALEM,2003,"06, Rue Fidah Taieb -  Sidi Boubekeur",(048) 504 - 834,(048) 314 - 734,alem.sidiboubekeur@anem.dz,ADEL ABDELKADER
+20-04,ALEM HASSASNA,20,,,34.83,0.14,approximate,anem,anem,ALEM,2004,Rue Emir Abdelkader - Hassasna,(048) 311-118,(048) 311 - 129,alem.hassasna@anem.dz,GOUACEM BENAISSA
 21-01,ALEM SKIKDA,21,,,36.86544,6.90051,exact,anem,anem,ALEM,2101,cité 492 logts pole administratif houari boumedine skikda,(038) 747 - 223,(038) 747 - 223,alem.skikda@anem.dz,NAKHOUL OUALID
 21-02,ALEM AZZABA,21,,,36.74484,7.11179,exact,anem,anem,ALEM,2102,Rue du 1er Novembre 1954 - Azzaba,(038) 969 - 620,,alem.azzaba@anem.dz,DJENDLI MERBOUHA
 21-03,ALEM COLLO,21,,,37.00118,6.55414,exact,anem,anem,ALEM,2103,"cite 12/44 logts - DIDOUCHE Mourad, bt 02 – COLLO",(038) 909 - 401,(038) 909 - 401,alem.collo@anem.dz,RAMMACHE MOURAD
@@ -169,16 +169,16 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 30-04,ALEM HASSI MESSAOUD,30,,,31.71117,6.05546,exact,anem,anem,ALEM,3005,A coté de l’Inspection du Travail -  Hassi Messaoud,(029) 750 - 999,(029) 797 - 599,alem.hassimessaoud@anem.dz,BOUZIANE OTMANE
 30-05,ALEM OUARGLA 2,30,,,31.95299,5.31687,exact,anem,anem,ALEM,3009,El Mekhadma - Ouargla,(029) 712 - 080,(029) 718 - 020,alem.ouargla2@anem.dz,BEN SEDGA YOUCEF
 30-06,ALEM N'GOUSSA,30,,,32.1416,5.31059,exact,anem,anem,ALEM,3011,Siege de l’APC - N’Goussa,(029) 723 - 241,(029) 724 - 124,alem.ngoussa@anem.dz,ABAZ REDOUANE
-30-07,ALEM EL BOURMA,30,,,31.66,9.18,exact,anem,anem,ALEM,3013,Centre ville - El Borma,(029) 753 - 112,(Non renseigné),alem.elborma@anem.dz,KOUICI MAMAR
+30-07,ALEM EL BOURMA,30,,,31.66,9.18,approximate,anem,anem,ALEM,3013,Centre ville - El Borma,(029) 753 - 112,(Non renseigné),alem.elborma@anem.dz,KOUICI MAMAR
 31-01,ALEM ORAN,31,,,35.71372,-0.61378,exact,anem,anem,ALEM,3101,01 Rue Djellat Habib Es- Seddikia -Oran,(041) 590 - 507,(041) 590 - 506,alem.oran@anem.dz,BATOUCHE BENYAHIA
 31-02,ALEM ORAN SUD,31,,,35.70554,-0.57549,exact,anem,anem,ALEM,3102,10 Bd ADDA BENAOUDA- plateaux oran,(041) 400 - 919,(041) 402 - 837,alem.oransud@anem.dz,NEKROUF KARIMA
-31-03,ALEM OUED TLELAT,31,,,35.55,-0.45,exact,anem,anem,ALEM,3103,Rue Zitouni Ahmed â Oued Tlelat,(041) 184 - 444,(041) 184 - 343,alem.ouedtlelat@anem.dz,BENCHEIKH Zoubida
+31-03,ALEM OUED TLELAT,31,,,35.55,-0.45,approximate,anem,anem,ALEM,3103,Rue Zitouni Ahmed â Oued Tlelat,(041) 184 - 444,(041) 184 - 343,alem.ouedtlelat@anem.dz,BENCHEIKH Zoubida
 31-04,ALEM BETHIOUA,31,,,35.67854,-0.08324,exact,anem,anem,ALEM,3104,Rue Sidi AMAR - Béthioua,(041) 769 - 401,(041) 769 - 835,alem.bethioua@anem.dz,KATLIOUI MOHAMMED SALAH EDDINE NOUFEL
-31-05,ALEM ARZEW,31,,,35.86,-0.31,exact,anem,anem,ALEM,3105,Citi les Pins - Rue du stade - Arzew,(041) 771 - 447,(041) 772 - 011,alem.arzew@anem.dz,ZAOUI FETHI
-31-06,ALEM AIN TURK,31,,,35.76,-0.8,exact,anem,anem,ALEM,3106,Bd Khassani Mohamed Cap Falcon – A. El Turck,(041) 105 - 218,(041) 105 - 277,alem.ainturk@anem.dz,SAHNOUNE ABDELHAMID
-31-07,ALEM BIR EL DJIR,31,,,35.73,-0.58,exact,anem,anem,ALEM,3107,"42, Haï Khemisti – Bir El Djir",(041) 739-466,(041) 739 - 389,alem.bireldjir@anem.dz,MEKIDECHE SAMIHA
+31-05,ALEM ARZEW,31,,,35.86,-0.31,approximate,anem,anem,ALEM,3105,Citi les Pins - Rue du stade - Arzew,(041) 771 - 447,(041) 772 - 011,alem.arzew@anem.dz,ZAOUI FETHI
+31-06,ALEM AIN TURK,31,,,35.76,-0.8,approximate,anem,anem,ALEM,3106,Bd Khassani Mohamed Cap Falcon – A. El Turck,(041) 105 - 218,(041) 105 - 277,alem.ainturk@anem.dz,SAHNOUNE ABDELHAMID
+31-07,ALEM BIR EL DJIR,31,,,35.73,-0.58,approximate,anem,anem,ALEM,3107,"42, Haï Khemisti – Bir El Djir",(041) 739-466,(041) 739 - 389,alem.bireldjir@anem.dz,MEKIDECHE SAMIHA
 31-08,ALEM ORAN OUEST,31,,,35.71431,-0.61283,exact,anem,anem,ALEM,3108,01 Rue Djellat Habib Es- Seddikia -Oran,(041) 590 - 452,(041) 590 - 452,alem.oranouest@anem.dz,MECHIKI BOUKHALFA
-31-09,ALEM ES SENIA,31,,,35.65,-0.62,exact,anem,anem,ALEM,3109,Rue Bahi Amar - Es Sénia,(041) 554 - 335,(041) 554 - 338,alem.essenia@anem.dz,MOHAMED Fatma
+31-09,ALEM ES SENIA,31,,,35.65,-0.62,approximate,anem,anem,ALEM,3109,Rue Bahi Amar - Es Sénia,(041) 554 - 335,(041) 554 - 338,alem.essenia@anem.dz,MOHAMED Fatma
 32-01,ALEM EL BAYADH,32,,,33.66855,1.03423,exact,anem,anem,ALEM,3201,Nouvelle ville Administrative  route d’Aflou -  El Bayadh,(049) 604 - 905,(049) 604 - 905,alem.elbayadh@anem.dz,BELKHIRI NASSIRA
 32-02,ALEM BOUGTOB,32,,,34.03956,0.08703,exact,anem,anem,ALEM,3202,"03, Boulevard des Martyrs – Bougtob",(049) 623 - 217,(049) 623 - 211,alem.bougtob@anem.dz,AMARI ABDESSAMAD KAMAL
 32-03,ALEM LABIADH SID CHIKH,32,,,32.89808,0.54628,exact,anem,anem,ALEM,3203,Cité Khaloufi Mohamed – Labiod Sidi Cheikh,(049) 636 - 245,(049) 636 - 250,alem.labiadhsidichikh@anem.dz,AISSAOUI Mohamed
@@ -240,7 +240,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 45-01,ALEM NAAMA,45,,,33.27126,-0.31704,exact,anem,anem,ALEM,4501,Cité Evolutive - Naama,(049) 598 - 241,(049) 598 - 240,alem.naama@anem.dz,MESSAOUDI ABDELKADER
 45-02,ALEM AIN SEFRA,45,,,32.75505,-0.58302,exact,anem,anem,ALEM,4502,Rue Chelali Mohamed – Cité 05 Juillet  - Ain Séfra,(049) 765 - 253,(049) 762 - 223/ 567 - 637,alem.ainsafra@anem.dz,CHABANE FATIMA IMANE
 45-03,ALEM MECHERIA,45,,,33.54793,-0.28034,exact,anem,anem,ALEM,4503,Rue Ben Mostefa Tahar  - Mécheria,(049) 775 - 134,(049) 775 - 028/ 575 - 358,(Non renseigné),BACHIRIO  KHALED
-45-04,ALEM MAKMEN BENAMMAR,45,,,32.26,-0.38,exact,anem,anem,ALEM,4504,Centre ville - Makmen Ben Amar,(049) 783 - 216,(049) 583 - 211,(Non renseigné),CHAFAA BELAID Abdelghani
+45-04,ALEM MAKMEN BENAMMAR,45,,,32.26,-0.38,approximate,anem,anem,ALEM,4504,Centre ville - Makmen Ben Amar,(049) 783 - 216,(049) 583 - 211,(Non renseigné),CHAFAA BELAID Abdelghani
 46-01,ALEM AIN TEMOUCHENT,46,,,35.29861,-1.14791,exact,anem,anem,ALEM,4601,RUE MAACHOU MOHAMED ex casap ain temouchent,(043) 775 - 464,(043) 775 - 465,,HORCH Bilal
 46-02,ALEM BENI SAF,46,,,35.29775,-1.3828,exact,anem,anem,ALEM,4602,Cité  Sonatiba - Galerie Plan 2 – Béni Saf,(043) 695 - 165,(043) 695 - 769,alem.benisaf@anem.dz,KHARFANE MEHDI
 46-03,ALEM EL MALAH,46,,,35.3891,-1.09748,exact,anem,anem,ALEM,4603,Cité Administrative – El Maleh,(043) 658 - 233,(043) 750 - 633,alem.elmalah@anem.dz,BELHIA HAYATE

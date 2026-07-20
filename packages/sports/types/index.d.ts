@@ -36,8 +36,9 @@ export interface Facility {
   lat: number;
   /** Longitude — every facility in this dataset is geocoded. */
   lng: number;
-  /** Always `"exact"` — every point is a real SIG coordinate. */
-  geo_precision: "exact";
+  /** `"exact"`, or `"approximate"` where the SIG coordinate is rounded too coarse,
+   *  or is shared with another facility, to be a per-facility point. */
+  geo_precision: "exact" | "approximate";
   /** Always `"sig_mjs"`. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]` — always "mjs". */

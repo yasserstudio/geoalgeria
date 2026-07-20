@@ -32,6 +32,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS } from "../scripts/migrate-to-v2.mjs";
+import { sharedPoints } from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => JSON.parse(readFileSync(join(ROOT, p), "utf-8"));
@@ -55,9 +56,18 @@ for (const [pkg, file, map] of SPECS) {
     const sample = FIXTURE.packages[pkg].files[file];
     assert.ok(sample.length > 0, `${pkg}/${file}: empty fixture sample`);
 
-    const committed = new Map(read(`packages/${pkg}/data/${file}`).map((r) => [r.id, r]));
+    const rows = read(`packages/${pkg}/data/${file}`);
+    const committed = new Map(rows.map((r) => [r.id, r]));
+    // The runner's demoteSharedPoints() pass is file-level — a per-record map
+    // cannot see that another record carries the same point — so replay it here.
+    // The transform never moves a coordinate, so the clusters in the committed
+    // file are exactly the clusters the runner saw.
+    const shared = new Set([...sharedPoints(rows)].map((i) => `${rows[i].lat},${rows[i].lng}`));
+
     for (const v1 of sample) {
       const produced = map(v1);
+      if (produced.geo_precision === "exact" && shared.has(`${produced.lat},${produced.lng}`))
+        produced.geo_precision = "approximate";
       const shipped = committed.get(produced.id);
       assert.ok(
         shipped,

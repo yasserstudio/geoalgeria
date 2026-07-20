@@ -60,8 +60,9 @@ export interface Station {
   lat: number;
   /** Longitude (WGS84). */
   lng: number;
-  /** Always "exact": every Station carries a real Wikidata/OSM point. */
-  geo_precision: "exact";
+  /** `"exact"`, or `"approximate"` where the Wikidata/OSM coordinate is rounded
+   *  too coarse, or is shared with another station, to be a per-station point. */
+  geo_precision: "exact" | "approximate";
   /** How `lat`/`lng` were obtained. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]`. */

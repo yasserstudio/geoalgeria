@@ -46,7 +46,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 32-02,EL OUED,32,3215,Krakda,33.3774736,1.0276875,exact,exact,sogral,"{""sogral"":""213-000039001""}",Gare routière El Moudjahid Ben Amar Lakhdar,Cité 19 mars 1962,50000,3666
 33-01,TINDOUF,33,3301,Illizi,27.666688,8.125063,exact,exact,sogral,"{""sogral"":""213-000037001""}",Gare routière Bataille de Merkala 1956,Cité El Nasr 37000 Tindouf,8000,2000
 33-02,IN AMENAS,33,3306,In Amenas,28.037812,9.562312,exact,exact,sogral,"{""sogral"":""213-000033006""}",Gare routière Laheza Bobo In Amenas,In Amenas Wilaya d'Illizi,20500,2065
-33-03,ILLIZI,33,3301,Illizi,26.534,8.48,exact,exact,sogral,"{""sogral"":""213-000033001""}",Gare routière d'Illizi,Route de l'aéroport Illizi,30000,6095
+33-03,ILLIZI,33,3301,Illizi,26.534,8.48,approximate,exact,sogral,"{""sogral"":""213-000033001""}",Gare routière d'Illizi,Route de l'aéroport Illizi,30000,6095
 34-01,BBA,34,3401,Bordj Bou Arreridj,36.064063,4.759187,exact,exact,sogral,"{""sogral"":""213-000034001""}",La gare routière Chahid Saoudi Abdelhafid,Route des annassers Bordj Bou Arreridj,50000,800
 36-01,BOUHADJAR,36,3602,Bouhadjar,36.505188,8.103937,exact,exact,sogral,"{""sogral"":""213-000036002""}",Gare routière Bouhadjar,Ville de Bouhadjar,7000,800
 36-02,DREAN,36,3613,Drean,36.68981,7.73531,exact,exact,sogral,"{""sogral"":""213-000036013""}",Gare routière El Moudjahid Klai Tahar,croisée des chemins deux routes nationales 84/16  Dréan El Taref,24000,172019
@@ -69,7 +69,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 57-01,DJAMAA,57,3930,Sidi Amrane,33.551063,5.979688,exact,exact,sogral,"{""sogral"":""213-000039028""}",Gare routière El Moudjahid Lakhdar Ben Amar Djamaa,cité 19 Mars 1962 Djamaa,19760,736
 59-01,AFLOU,59,0319,Aflou,34.097,2.083,exact,exact,sogral,"{""sogral"":""213-000003019""}",Gare routière Hakimi Mohamed Ben Chikh,Route El Bayadh Aflou,46000,6270
 62-01,BIR EL ATER,62,1202,Bir-El-Ater,34.770438,8.059188,exact,exact,sogral,"{""sogral"":""213-000012002""}",Gare routière El Moudjahid Berai Salah Ben Ibrahim,Route nationale n°16 Bir El Ater,10000,1106
-65-01,AIN OUSSARA,65,1731,Aïn Oussera,35.463,2.9,exact,exact,sogral,"{""sogral"":""213-000017031""}",Gare routière Ain Oussara,Cité Ahmed Zabana route nationale n°01 Ain Oussara,35000,1000
+65-01,AIN OUSSARA,65,1731,Aïn Oussera,35.463,2.9,approximate,exact,sogral,"{""sogral"":""213-000017031""}",Gare routière Ain Oussara,Cité Ahmed Zabana route nationale n°01 Ain Oussara,35000,1000
 66-01,MESSAAD,66,1717,Messaad,34.153051451328494,3.472476976422937,exact,exact,sogral,"{""sogral"":""213-000017017""}",Gare routière Messaad,Route Ain El Ibel Messaad,20000,1000
 69-01,AIN SEFRA,69,3207,Labiodh Sidi Cheikh,32.763063,0.596938,exact,exact,sogral,"{""sogral"":""213-000045003""}",Gare routière Echahid Ben Amara Boutkhil,Route nationale n°06 Aïn Sefra,23000,2000
 69-02,NAAMA,69,3219,El Mehara,33.2814375,0.3076875,exact,exact,sogral,"{""sogral"":""213-000045001""}",Gare routière Naâma,Route nationale n°06 Naâma,40000,1500

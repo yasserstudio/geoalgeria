@@ -15,7 +15,17 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { buildMetadata, toCSV, toGeoJSON, wcode, GEO_PRECISION, evidenceForSourceKey } from "../packages/schema/index.js";
+import {
+  buildMetadata,
+  toCSV,
+  toGeoJSON,
+  wcode,
+  GEO_PRECISION,
+  evidenceForSourceKey,
+  coordDecimals,
+  sharedPoints,
+  MIN_EXACT_DECIMALS,
+} from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const TODAY = "2026-07-18"; // cutover date (scripts can't call Date.now deterministically here)
@@ -35,10 +45,28 @@ const refs = (o) => { const r = {}; for (const k in o) if (o[k] != null && o[k] 
  *  no point, so a source-derived method (e.g. r.geo_precision) stays a plain argument. */
 const geoAt = (r, precision, method) => {
   const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
-  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? precision : null, geo_method: has ? method : null };
+  // "exact" was stamped on anything with two finite axes, with no quality test —
+  // which is how three BADR branches in three different towns (M'Sila, Bou Saâda,
+  // Hammam Dhalaa) all came to assert an exact point at (35, 4). A coordinate
+  // rounded coarser than MIN_EXACT_DECIMALS cannot carry the claim, so it is
+  // demoted here, at the one funnel every map goes through. The other half of the
+  // test — a point shared with another record — needs the whole file and runs in
+  // demoteSharedPoints() below. `geo_method` is untouched either way: how the
+  // point was obtained is still true; only the precision claim was not.
+  const p = precision === "exact" && coordDecimals(r.lat, r.lng) < MIN_EXACT_DECIMALS ? "approximate" : precision;
+  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? p : null, geo_method: has ? method : null };
 };
 /** the common case: a real per-facility point. */
 const geoExact = (r, method) => geoAt(r, "exact", method);
+/** A coordinate carried by more than one record in the same file is not a
+ *  *per-facility* point, whichever facility it belongs to — nothing in the data
+ *  says which. Mutates in place; returns the count demoted. */
+function demoteSharedPoints(rows) {
+  let n = 0;
+  for (const i of sharedPoints(rows))
+    if (rows[i].geo_precision === "exact") { rows[i].geo_precision = "approximate"; n++; }
+  return n;
+}
 /** the ungeocoded geo quartet, for datasets that carry no coordinates at all. */
 const geoNone = { lat: null, lng: null, geo_precision: null, geo_method: null };
 /** Records that already carry the canonical v2 geo fields this migration adds.
@@ -215,15 +243,12 @@ export const MIGRATIONS = {
     file: "sante.json",
     map: (r) => {
       const gp = r.geo_precision;
-      const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
       return clean({
         id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
         wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-        lat: has ? r.lat : null, lng: has ? r.lng : null,
         // ungeocoded rows carry no precision and no method — the v1 "none" method
         // named a geocoding attempt that produced nothing.
-        geo_precision: has ? (gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate") : null,
-        geo_method: has ? gp : null,
+        ...geoAt(r, gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate", gp),
         source: "msp",
         refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id }),
         type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
@@ -692,6 +717,7 @@ function migrate(pkg) {
   for (const { spec: s, input } of sources) {
     const base = s.file.replace(/\.json$/, "");
     const rows = input.map(s.map);
+    demoteSharedPoints(rows);
     // Plain codepoint order — localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines. (Byte-identical to the
     // committed order for all 34 current files.)

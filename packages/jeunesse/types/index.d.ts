@@ -34,8 +34,9 @@ export interface Institution {
   lat: number;
   /** Longitude (WGS84). */
   lng: number;
-  /** Always "exact": every Establishment carries a real MJS GIS point. */
-  geo_precision: "exact";
+  /** `"exact"`, or `"approximate"` where the MJS GIS coordinate is rounded too
+   *  coarse, or is shared with another establishment, to be a per-facility point. */
+  geo_precision: "exact" | "approximate";
   /** How `lat`/`lng` were obtained. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]` — always "mjs". */
@@ -85,7 +86,7 @@ export interface Metadata {
   /** Records with coordinates — all of them. */
   geocoded_count: number;
   geocoded_pct: number;
-  /** Count by `geo_precision` — always all-exact for this dataset. */
+  /** Count by `geo_precision`. */
   precision: { exact: number; approximate: number };
   estimated_universe: number | null;
   coverage_pct: number | null;

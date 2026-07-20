@@ -79,7 +79,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00078,"MJ ""CHAIB EDDOUR Ahmed""",دار الشباب الشهيد شايب الدور امحمد,02,,CHLEF,36.1509,1.3421,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHLEF,Hay Es-salem / RN19,200,1989,true,false,600,1500
 00079,"MJ ""El-Cheikh El-Larbi TEBESSI""",دار الشباب الشيخ العربي التبسي,02,,CHLEF,36.1642,1.3269,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHLEF,Centre ville,2000,1962,true,true,9000,12000
 00080,"MJ ""EL-KHEDIM Mohamed""",دار الشباب الشهيد الخديم معمر,02,,OULED FARES,36.2263,1.2361,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED FARES,A coté de pole universitaire/ RN19 / Centre,200,2019,true,true,600,1500
-00081,"MJ ""FELLAGUE ARIOUAT AEK""",دار الشباب الشهيد فلاق عريوات عبد القادر,02,,CHETTIA,36.2036,1.26,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED FARES,Zone 09,200,1999,true,true,600,1900
+00081,"MJ ""FELLAGUE ARIOUAT AEK""",دار الشباب الشهيد فلاق عريوات عبد القادر,02,,CHETTIA,36.2036,1.26,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED FARES,Zone 09,200,1999,true,true,600,1900
 00082,"MJ ""Frère LEZAAR Mamaar et Med""",دار الشباب الشهيدين الإخوة لزعر معمر ومحمد,02,,BOUKADIR,36.063,1.1261,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUKADIR,Rue de la Liberté/ Centre ville,200,1963,true,false,600,1900
 00083,"MJ ""Frère MOKETLI AEK et Bilkacem""",دار الشباب الشهداء الإخوة مقاتلي عبد القادر وبلقاسم,02,,OULED BEN ABDELKADER,36.023,1.2778,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED BEN ABDELKADER,Cité 20 Aout / Centre ville,200,2012,true,false,500,1900
 00084,"MJ ""Frères KADOUR HAMISSI""",دار الشباب الشهيد الإخوة حميسي قدور,02,,SOBHA,36.1116,1.1117,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUKADIR,Hay Mohamed ABBOUCHE n°02 / Centre ville,200,2000,true,true,600,1900
@@ -88,7 +88,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00087,"MJ ""MAAZOUZI Ali""",دار الشباب الشهيد معزوزي علي,02,,OUM DROU,36.1997,1.3867,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHLEF,Centre ville,200,2012,true,true,600,1900
 00088,"MJ ""MARIEM AEK""",دار الشباب الشهيد مريم عبد القادر,02,,TENES,36.5063,1.2898,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TENES,RN 11 / Centre,,2005,false,true,600,1500
 00089,"MJ ""MEHIDI Mohamed"" Rue Hamidi",دار الشباب الشهيد مهيدي محمد,02,,EL KARIMIA,36.1159,1.5512,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL KARIMIA,Centre ville,200,2005,true,false,600,1500
-00090,"MJ ""MENDES bel-mehdi""",دار الشباب الشهيد منداس بلمهدي,02,,TADJENA,36.3239,1.14,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ABOU EL HASSEN,Cité des enseignants / Centre ville,200,,true,false,600,1500
+00090,"MJ ""MENDES bel-mehdi""",دار الشباب الشهيد منداس بلمهدي,02,,TADJENA,36.3239,1.14,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ABOU EL HASSEN,Cité des enseignants / Centre ville,200,,true,false,600,1500
 00091,"MJ ""MESSLOUB Sahnoune""",دار الشباب المجاهد المرحوم مسلوب سحنون,02,,CHLEF,36.1377,1.306,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHLEF,Hay El-badr zone 03 (Chorfa),200,2004,true,false,1500,2500
 00092,"MJ ""Mohamed BOUDIAF""",دار الشباب الشهيد محمد بوضياف,02,,SIDI AKKACHA,36.4627,1.3018,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TENES,Cite Ouled El Aam Delaoui /RN 19 / Centre,200,1992,true,false,600,1900
 00093,"MJ ""NADJI TAHAR""",دار الشباب الشهيد ناجي طاهر,02,,AIN MERANE,36.1575,0.9682,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN MERANE,Hay Bentaleb Boualem Rue Zaoui Othmane Ben Afane / Centre ville,100,2011,true,false,600,1500
@@ -99,7 +99,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00098,Salle Polyvalente,قاعة متعددة الخدمات الشهيد دالي علي,02,,BENARIA,36.3501,1.3768,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,ZEBOUDJA,Centre ville,200,2018,true,true,500,1200
 00099,"Salle Polyvalente ""BOULIF Ibrahim""",قاعة متعددة الخدمات الشهيد بويلف ابراهيم,02,,MOUSSADEK,36.3536,1.0076,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL MARSA,Centre ville,200,2016,true,true,500,1200
 00100,"Salle Polyvalente ""M'hamed DJALID""",قاعة متعددة الخدمات للشباب امحمد جليد,02,,CHLEF,36.1633,1.3321,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,CHLEF,Centre ville,200,2002,true,true,500,1200
-00101,auberge de jeunes bayae rassou aissa,,03,,TADJEMOUT,33.8772,2.52,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,AIN MADHI,tadjmout,50,2018,true,false,2100,4200
+00101,auberge de jeunes bayae rassou aissa,,03,,TADJEMOUT,33.8772,2.52,approximate,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,AIN MADHI,tadjmout,50,2018,true,false,2100,4200
 00102,Auberge de jeunes boudaoued keddour,بيت الشباب بوداود قدور,03,,LAGHOUAT,33.7863,2.8586,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,LAGHOUAT,cité maamoura,443,2005,true,false,1357,1395
 00103,Auberge de jeunes el amir khaled,بيت الشباب الأمير خالد,03,,LAGHOUAT,33.8111,2.8714,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,LAGHOUAT,rue el amir khaled,35,2003,true,false,1356,443
 00104,Auberge de jeunes hachani Mouhamed,,03,,HASSI R'MEL,32.956,3.2759,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,HASSI R'MEL,hassi r'mel,48,2018,true,false,1568,4875
@@ -219,7 +219,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00218,CSP Ichmoul,المركب الرياضي الجواري اشمول,05,,ICHEMOUL,35.3074,6.5003,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,ICHEMOUL,commune ichemoul,130,2010,true,false,920,
 00219,CSP les freres Ben Hachani,المركب الرياضي الجواري حي النصر-باتنة,05,,BATNA,35.5496,6.1594,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BATNA,cité Enasr Batna,130,2004,true,false,868,10000
 00220,CSP Merouana,المركب الياضي الجواري مروانة,05,,MEROUANA,35.628,5.9187,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MEROUANA,"""cite binaa dati fakhera Commune de Merouana""",130,2010,true,false,,
-00221,CSP OULED SI SLIMANE,المركب الرياضي الجواري اولاد سي سليمان,05,,OULED SI SLIMANE,35.61,5.6353,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED SI SLIMANE,Commune de Ouled Si slimane,130,2012,true,false,366,
+00221,CSP OULED SI SLIMANE,المركب الرياضي الجواري اولاد سي سليمان,05,,OULED SI SLIMANE,35.61,5.6353,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED SI SLIMANE,Commune de Ouled Si slimane,130,2012,true,false,366,
 00222,CSP Sassi Moussa,المركب الرياضي الجواري نقاوس,05,,N GAOUS,35.5471,5.6299,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,N'GAOUS,Cite Ras El Ain Commune de N'gaous,130,2010,true,false,2266,5194
 00223,CSP taib mechata ben abdellah,المركب الرياضي الجواري رأس العيون,05,,RAS EL AIOUN,35.6654,5.653,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,RAS EL AIOUN,cite 190 logts Commune de Ras layoune,130,2011,true,false,920,
 00224,CSP zine ahmed ben belkacem,المركب الرياضي الجواري تازولت,05,,TAZOULT,35.4809,6.2474,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAZOULT,cité el amel commune de tazoult,130,2012,true,false,949,4550
@@ -253,10 +253,10 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00252,Salle polyvalente Bouakal,,05,,BATNA,35.5414,6.1718,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BATNA,cité Bouakal 3 Batna,45,,true,false,,
 00253,Salle Polyvalente Boulhilat,القاعة المتعددة النشاطات بولهيلات,05,,BOULHILAT,35.7278,6.6617,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,CHEMORA,commune boulhilet 05062 Batna,45,2005,true,false,244,
 00254,Salle polyvalente Boutaouche lakhedar Ben Massaouda,,05,,AIN DJASSER,35.8033,5.941,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,AIN DJASSER,commune ain djasser Batna,45,2004,true,false,269,893
-00255,Salle polyvalente Bouzina,القاعة المتعددة النشاطات بوزينة,05,,BOUZINA,35.265,6.0995,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BOUZINA,commune de Bouzina,45,,true,false,238,687
+00255,Salle polyvalente Bouzina,القاعة المتعددة النشاطات بوزينة,05,,BOUZINA,35.265,6.0995,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BOUZINA,commune de Bouzina,45,,true,false,238,687
 00256,Salle polyvalente Dhraa Boultif,القاعة المتعددة النشاطات ذراع بولطيف -عين ياقوت,05,,AIN YAGOUT,35.8303,6.3691,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL MADHER,Draa boultif commune ain yagout Batna,45,2003,true,false,232,5623
 00257,Salle polyvalente Doufana,القاعة المتعددة النشاطات دوفانة اولاد فاضل,05,,OULED FADEL,35.4844,6.6221,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,TIMGAD,Doufana commune de ouled fadhel,45,,true,false,236,314
-00258,Salle polyvalente draa lagbour,القاعة المتعددة النشاطات بوزينة,05,,SERIANA,35.265,6.0995,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,SERIANA,commune de seriana,45,,true,false,,
+00258,Salle polyvalente draa lagbour,القاعة المتعددة النشاطات بوزينة,05,,SERIANA,35.265,6.0995,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,SERIANA,commune de seriana,45,,true,false,,
 00259,Salle polyvalente Echahid Ali Hamami,قاعة متعددة النشاطات الزمالة,05,,BATNA,35.5441,6.1751,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BATNA,cité Z'mala Batna,45,2004,true,false,277,1155
 00260,Salle polyvalente echahid khedri mohamed ameziane tifelfel,القاعة المتعددة النشاطات تيفلفال غسيرة,05,,GHASSIRA,35.1175,6.2315,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,TKOUT,tifelfel commune de ghassira,45,2006,true,false,269,
 00261,Salle polyvalente echahidiene kouti mohamed et tahar ben belkacem (20 salles polyvalentes),القاعة المتعددة النشاطات تيغرغار,05,,TIGHARGHAR,35.1608,5.9721,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,MENAA,avenue chahid kherchouche mohamed ben brahim cite enasr commune tigharghar Batna,45,2006,true,false,310,
@@ -340,7 +340,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00339,,الشهيد مسالي علي خراطة,06,,KHERRATA,36.4942,5.2741,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,KHERRATA,,,2004,true,true,17442,
 00340,,,06,,SEDDOUK,36.546014,4.686774,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SEDDOUK,,,,,true,,
 00341,maison de jeune m'cisna,,06,,M'CISNA,36.5612,4.7149,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,SEDDOUK,m'cisna,,,true,false,,
-00342,salle polyvalente beni k'sila,الشهيد بانون أكلي,06,,BENI K'SILA,36.79,4.7485,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,ADEKAR,Djebla,,2015,true,true,,
+00342,salle polyvalente beni k'sila,الشهيد بانون أكلي,06,,BENI K'SILA,36.79,4.7485,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,ADEKAR,Djebla,,2015,true,true,,
 00343,salle polyvalente m'cisna,قاعة متعددة الخدمات مسيسنة,06,,M'CISNA,36.5624,4.7087,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,SEDDOUK,M'cisna,,2017,true,true,3242,
 00344,AUBERGE DE JEUNES,بيت الشباب بن حسيني عبد الرحمان خنقة سيدي ناجي,07,,KHANGAT SIDI NADJI,34.7992,6.7009,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,ZERIBET EL OUED,Chef Lieu,50,2016,true,true,790,3785
 00345,AUBERGE DE JEUNES 19 MARS,بيت الشباب 19 مارس بسكرة,07,,BISKRA,34.8628,5.7135,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,BISKRA,Cité El moudjahdine,50,1996,true,false,669,4320
@@ -365,7 +365,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00364,DHAIFALLAH HOSAINE BEN MED,ضيف الله حسين طولقة,07,,TOLGA,34.7281,5.3809,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TOLGA,boulevard al amir abdelkader,,,true,false,,1000
 00365,ELHADI ELTAYEB,,07,,BISKRA,34.8324,5.7234,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BISKRA,CITE BAB ELDHAREB Biskra elkadima,500,1984,true,false,961,6609
 00366,HASSEN ABDELAALI,حسان عبد العالي أوماش,07,,OUMACHE,34.6891,5.6987,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OURLAL,QUARTIER EL AKID MOHAMED CHAABENE,500,1995,true,false,460,8700
-00367,KHALED CHEBAH,شباح خالد سيدي عقبة,07,,SIDI OKBA,34.75,5.9074,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI OKBA,Sidi okba,300,1989,true,true,565,2933
+00367,KHALED CHEBAH,شباح خالد سيدي عقبة,07,,SIDI OKBA,34.75,5.9074,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI OKBA,Sidi okba,300,1989,true,true,565,2933
 00368,LOUCIF ELSAID,لوصيف السعيد زريبة الوادي,07,,ZERIBET EL OUED,34.6852,6.5067,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ZERIBET EL OUED,EL HARMELIYA NORD,300,1992,true,false,605,4188
 00369,MAISON DE JEUNES 19 MARS,,07,,AIN ZAATOUT,35.1482,5.8386,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL KANTARA,Chef Lieu,500,1994,true,false,342,478
 00370,MAISON DE JEUNES MKHEDMA,بعيسى مغزي بن بلقاسم مخادمة,07,,MEKHADMA,34.6451,5.4715,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OURLAL,88 CITE LES FRERES BAAISSI,,2015,true,true,298,1550
@@ -444,15 +444,15 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00443,EL chahid Amer Ouir,,09,,BLIDA,36.4734,2.8277,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,BLIDA,Rue Didouche Morad,100,,true,true,186,186
 00444,/,المجاهد المتوفي ديلمي عبد القادر,09,,OUED EL ALLEUG,36.5559,2.7926,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUED ALLEUG,route d'alger,200,1971,true,true,679,3630
 00445,/,,09,,CHIFFA,36.4652,2.741,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOUZAIA,Ahl oued chiffa,200,1978,true,true,750,1447
-00446,/,,09,,BOUFARIK,36.57,2.9159,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUFARIK,Cité soumam,200,1989,true,true,800,1800
+00446,/,,09,,BOUFARIK,36.57,2.9159,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUFARIK,Cité soumam,200,1989,true,true,800,1800
 00447,05 juillet 1962,,09,,BENKHELIL,36.6211,2.8753,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUED EL ALLEUG,AIN AICHA BENKHELLIL,200,2014,true,true,900,1000
-00448,El chahid Benzina Mohamed,,09,,BENI MERED,36.52,2.8601,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED YAICH,En Face de la Garre ferroviaire,500,2016,true,false,560,1500
+00448,El chahid Benzina Mohamed,,09,,BENI MERED,36.52,2.8601,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED YAICH,En Face de la Garre ferroviaire,500,2016,true,false,560,1500
 00449,El Chahid Bouzorine Bouziane,,09,,OULED YAICH,36.5068,2.8639,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED YAICH,Route Mellak Ali,100,2014,true,true,960,1250
 00450,El chahid Mohamed Bouacha,الشهيد محمد بوعشة,09,,BOUGARA,36.5434,3.0871,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUGARA,Rue Mohamed ousrir,300,1971,true,true,595,4010
 00451,El chahid Mustapha Benboulaid,,09,,BLIDA,36.4887,2.8355,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BLIDA,cité Benboulaid Mustapha,549,1977,true,true,549,2875
 00452,El chahid Ramdane Mokrane,الشهيد قشوان رمضان,09,,OULED SLAMA,36.5571,3.1083,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUGARA,centre ouled slama,200,2014,true,true,1200,1780
 00453,El chahid wazri mohamed,,09,,BOUINAN,36.5168,3.0065,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUINENE,El Hsainia,300,2013,true,false,700,950
-00454,El Chahida Dilimi Fatima,الشهيدة ديلمي فاطمة الزهراء,09,,EL AFFROUN,36.47,2.625,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL AFFROUN,Rue Allili Ben Youcef,200,1940,true,true,600,900
+00454,El Chahida Dilimi Fatima,الشهيدة ديلمي فاطمة الزهراء,09,,EL AFFROUN,36.47,2.625,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL AFFROUN,Rue Allili Ben Youcef,200,1940,true,true,600,900
 00455,,,09,,GUERROUAOU,36.5241,2.8821,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUFARIK,centre ville,200,2012,true,false,900,1000
 00456,,,09,,LARBAA,36.567,3.1474,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,LARBAA,Rue sebhi Mehdi,400,1972,true,true,700,1176
 00457,,,09,,MOUZAIA,36.5603,2.7148,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOUZAIA,Village béni chougrane,200,1978,true,true,570,1370
@@ -479,10 +479,10 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00478,CSP les FRERES BARR,الاخوة بار,10,,M'CHEDALLAH,36.3537,4.2709,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,M'CHEDELLAH,"Cité Bouaklane, M'chedellah",147,2007,true,false,550,3500
 00479,CSP les FRERES OUALI,الاخوة والي أهل القصر,10,,AHL EL KSAR,36.25395,4.04339,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,Ahl k'sar Centre,80,2011,true,false,600,3500
 00480,CSP MESLEM Said,,10,,RIDANE,36.075725,3.462521,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUR EL GHOZLANE,Ridane Centre,150,2009,true,false,600,2500
-00481,CSP MOKRANE Ahmed,مقراني عمر,10,,EL ADJIBA,36.32591,4.161294,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,El Adjiba,80,2006,true,false,599,3500
+00481,CSP MOKRANE Ahmed,مقراني عمر,10,,EL ADJIBA,36.32591,4.161294,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,El Adjiba,80,2006,true,false,599,3500
 00482,CSP MOKRANE Mohammed,المجاهد مسران محمد,10,,MEZDOUR,36.080156,4.069785,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ OUKHRIS,Mokrane Med Mesdour Centre,60,2010,true,false,597,3500
 00483,CSP ZOUBIR Amer,,10,,AOMAR,36.5002,3.7728,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,KADIRIA,Aomar Centre,120,,true,true,600,2000
-00484,MOKRANE Ahmed,مقراني عمر,10,,EL ADJIBA,36.32591,4.161294,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,El Adjiba Centre,80,2008,true,true,600,3500
+00484,MOKRANE Ahmed,مقراني عمر,10,,EL ADJIBA,36.32591,4.161294,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,El Adjiba Centre,80,2008,true,true,600,3500
 00485,OUCHEN Messaoud,اوشن مسعود,10,,EL ASNAM,36.3185,4.0147,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,Hai Echouhada El Asnam Centre,119,2013,true,false,550,3500
 00486,TAHIR BOUZID,طهير بوزيد,10,,BORDJ OUKHRISS,36.0852,3.9782,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ OUKHRIS,Bordj Okhris centre,79,2005,true,,598,2000
 00487,TAMEZOUGHT Hemouche,,10,,BECHLOUL,36.3091,4.0714,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BECHLOUL,Bechloul Centre 10145,80,1998,true,false,602,3500
@@ -516,7 +516,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00515,auberge Tafsit,بيت الشباب تافسيت,11,,TAMANRASSET,22.8015,5.5282,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,TAMANRASSET,Tafsit,50,2010,true,,944,2047
 00516,,بيت الشباب تاظروك,11,,TAZROUK,23.4144,6.2749,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,TAZROUK,,50,2019,true,,1011,4121
 00517,,بيت الشباب هرويلي احمد,11,,AIN AMGUEL,23.6957,5.1423,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,TAMANRASSET,,50,2017,true,,,
-00518,,,11,,TAMANRASSET,22.78,5.532,exact,sig_mjs,mjs,BA,Bloc d'accueil,كتلة استقبال,TAMANRASSET,amechaoun,50,2011,true,,700,1400
+00518,,,11,,TAMANRASSET,22.78,5.532,approximate,sig_mjs,mjs,BA,Bloc d'accueil,كتلة استقبال,TAMANRASSET,amechaoun,50,2011,true,,700,1400
 00519,,مخيم الشباب ادريان محمد اق اغالي,11,,TAMANRASSET,22.7875,5.5685,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,TAMANRASSET,aderiane,298,2010,true,,2244,28064
 00520,,المركز العلمي الترفيهي داوي محمد,11,,TAMANRASSET,22.8002,5.515,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,TAMANRASSET,tahaggart,248,2014,true,,1200,22820
 00521,,المركب الرياضي المجاور تافسيت,11,,TAMANRASSET,22.8018,5.5287,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAMANRASSET,Tafsit,250,2005,true,,873,14405
@@ -526,7 +526,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00525,,,11,,IDLES,23.8169,5.9403,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAZROUK,,250,2020,true,,1577,20328
 00526,,,11,,ABELSA,22.9006,4.8482,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SILET,,250,2010,true,,,
 00527,,,11,,TAZROUK,23.4147,6.2739,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAZROUK,,250,2020,true,,1557,7341
-00528,,,11,,TAMANRASSET,22.7763,5.53,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAMANRASSET,amechaoun,250,2010,true,,915,5344
+00528,,,11,,TAMANRASSET,22.7763,5.53,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAMANRASSET,amechaoun,250,2010,true,,915,5344
 00529,,المركب الرياضي الجواري اق الخير انكوف,11,,TAMANRASSET,22.7715,5.5484,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAMANRASSET,In Kouf,250,2010,true,,753,7557
 00530,,,11,,TAMANRASSET,22.8226,5.2535,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,TAMANRASSET,Ihelfen,,2010,true,,,
 00531,,,11,,ABELSA,22.9544,5.1307,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,SILET,daghmouli,,2018,true,,,
@@ -601,7 +601,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00600,Bouknadel Mohamed Bensaad,,13,,BENI SNOUS,34.655,-1.5527,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENI SNOUS,Dar Mansoura Commune Beni Snous,900,2005,true,true,703,6300
 00601,Chahid Belabes Ahmed,العريشة,13,,EL ARICHA,34.2245,-1.258,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SEBDOU,Commune El Aricha,500,2011,true,true,2100,6670
 00602,Chahid Belhocini Miloud,,13,,SEBBAA CHIOUKH,35.1538,-1.367,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,REMCHI,Commune Sebbaa Chioukh,1500,2016,true,true,1146,2340
-00603,Chelda Bouneouar,,13,,CHETOUANE,34.91,-1.2908,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHETOUANE,Quartier Ain Defla Chetouane,800,1998,true,true,703,7000
+00603,Chelda Bouneouar,,13,,CHETOUANE,34.91,-1.2908,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHETOUANE,Quartier Ain Defla Chetouane,800,1998,true,true,703,7000
 00604,CSP,,13,,EL GOR,34.6402,-1.1501,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SEBDOU,Commune El Gor,500,2010,true,true,1194,6055
 00605,CSP,أولاد رياح,13,,OULED RIYAH,34.9634,-1.5008,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HENNAYA,Rue Beni Yakoub Commune Ouled Ryah,500,2017,true,true,826,2368
 00606,El Modjahed Dahmane Khaouane,عين يوسف,13,,AIN YOUCEF,35.0481,-1.3681,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,REMCHI,Rue Bousoukaya Ahmed Commune Ain Youcef,300,2015,true,true,1009,17344
@@ -611,14 +611,14 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00610,Hamri Abdellah,حمري عبد الله بن سكران,13,,BENSEKRANE,35.0696,-1.2259,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENSEKRANE,Cité des citroniers Commune Bensekrane,500,2007,true,true,886,5098
 00611,"LE Martyr ""Yousfi Djilali""",يوسفي جيلالي العابد,13,,BOUIHI,34.4666,-1.6851,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI DJILLALI,Village El Abed Commune Bouihi,500,2010,true,true,1410,15000
 00612,Le Martyr Ahmed Zerguit,زرقيط أحمد مرسى بن مهيدي,13,,MARSA BEN M'HIDI,35.0788,-2.2047,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MARSA BEN MEHDI,Cité Oumaki mohamed Commune Marsa Ben M'hidi,200,2006,true,true,703,6000
-00613,Le martyr Benali Kouider,,13,,AIN NEHALA,35.04,-0.9784,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN TELLOUT,Village Ain Nekrouf Cne Ain Nehala,500,2013,true,true,900,6000
+00613,Le martyr Benali Kouider,,13,,AIN NEHALA,35.04,-0.9784,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN TELLOUT,Village Ain Nekrouf Cne Ain Nehala,500,2013,true,true,900,6000
 00614,Le martyr Derouiche Brahim,درويش إبراهيم عين تالوت,13,,AIN TELLOUT,34.9168,-0.9537,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN TELLOUT,Cité Echahid BENOUIS Mohamed Commune Ain tallout,500,2005,true,true,703,5400
 00615,Le martyr Maassoum Mohamed,الشهيد معصوم,13,,M'SIRDA FOUAGA,35.0164,-2.0608,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MARSA BEN MEHDI,Arabouze commune M'sirda Fouaga,500,2018,true,true,754,2000
 00616,Le Martyr Ouhssaine Ahmed,أوحساين أحمد بني بوسعيد,13,,BENI BOUSSAID,34.6456,-1.7565,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENI BOUSSAID,Ezzouia Commune Beni Boussaid,499,2004,true,true,703,5400
 00617,Le Martyr Si Tarek,الشهيد كرزازي عبد الرحمان سي طارق بني وارسوس,13,,BENI OUARSOUS,35.0852,-1.5649,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,REMCHI,Rue 1er Novembre Bordj Arima Beni Ouarsous,500,2016,true,true,1160,2882
 00618,Le martyr Ziani Djilali,زياني جيلالي سيدي سنوسي,13,,SIDI ABDELLI,34.9978,-1.0993,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENSEKRANE,Centre Vilage Sidi Snouci Commune Sidi Abdelli,500,2016,true,true,680,3200
 00619,Les frères Hadjaoui Abdelwahed et Abderrahmane,الإخوة حجاوي سيدي الجيلالي,13,,SIDI DJILLALI,34.4424,-1.5653,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI DJILLALI,Cité 17 Octobre Sidi Djilali,500,2006,true,true,1200,10770
-00620,Les Frères Martyres Daoudi Djilali et Moussa,,13,,SEBDOU,34.65,-1.33,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SEBDOU,Cité Chahid Latti Hadj Ahmed Sebdou,350,2004,true,true,703,6000
+00620,Les Frères Martyres Daoudi Djilali et Moussa,,13,,SEBDOU,34.65,-1.33,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SEBDOU,Cité Chahid Latti Hadj Ahmed Sebdou,350,2004,true,true,703,6000
 00621,Mostefaoui Mohamed Amine,مصطفى محمد الأمين بني صميل,13,,BENI SMIEL,34.8189,-1.0287,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED MIMOUN,Ain Isser Commune Beni Semiel,350,,true,true,2100,5000
 00622,Ouahrani Ahmed,وهراني أحمد صبرة,13,,SABRA,34.8311,-1.5207,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SABRA,Rue Emir Abdelkader Commune Sabra,1000,2007,true,true,776,2596
 00623,Oumbouazza Mohammed,أمبو عزة محمد الرمشي,13,,REMCHI,35.0506,-1.4326,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,REMCHI,BP 345 Route de Zenata commune Remchi,500,1999,true,true,998,49368
@@ -743,7 +743,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00742,Camp de jeunes Yakourene,مخيم الشباب اعكورن,15,,YAKOURENE,36.7325,4.437111,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,AZAZGA,Freres dahmani yakourene,150,1970,true,,1402,28387
 00743,CENTRE DE LOISIRS SCIENTIFIQUE DE TIZI OUZOU,مركز الترفيه العلمي تيزي وزو,15,,TIZI OUZOU,36.7053,4.0372,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,TIZI OUZOU,"Rue Outaleb Amar, Tizi Ouzou",1800,2013,true,,965,965.37
 00744,Complexe Sportif de Proximité,ابي يوسف,15,,ABI-YOUCEF,36.5131,4.3535,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN EL HAMMAM,Abi youcef,200,2016,true,false,1228,1228.31
-00745,Complexe Sportif de Proximité,مركب رياضي جواري الشهيد محند أولونيس بوزقن,15,,BOUZEGUENE,36.620861,4.50075,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BOUZEGUENE,Bouzeguene,150,2008,true,false,922,3304
+00745,Complexe Sportif de Proximité,مركب رياضي جواري الشهيد محند أولونيس بوزقن,15,,BOUZEGUENE,36.620861,4.50075,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BOUZEGUENE,Bouzeguene,150,2008,true,false,922,3304
 00746,Complexe Sportif de Proximité Azazga,مركب رياضي جواري عزازقة,15,,AZAZGA,36.740917,4.355,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AZAZGA,"Route de Tizi Bouchene ,Azazga",150,2018,true,,3650,6000
 00747,Complexe sportif de proximité Beni Douala,المركب الرياضي الجواري بني دوالة,15,,BENI-DOUALA,36.6159,4.0765,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENI DOUALA,Beni douala centre,150,2016,true,false,750,750
 00748,Complexe sportif de proximité Boghni,مركب الرياضي بوغني,15,,BOGHNI,36.547639,3.947222,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BOGHNI,Boghni,200,2016,true,true,1864,14653
@@ -752,7 +752,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00751,Complexe Sportif de Proximité de tizi ouzou,المركب الرياضي الجواري تيزي وزو,15,,TIZI OUZOU,36.705754,4.036902,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TIZI OUZOU,"Rue Outaleb Amar, Tizi Ouzou",400,2009,true,,3749,3749
 00752,Complexe sportif de proximité Freha,فريحة,15,,FRIHA,36.762611,4.313139,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AZAZGA,Chef lieu de freha,400,2003,true,,6738,12000
 00753,Complexe Sportif de Proximité Tizi ghenif,مركب الرياضي الجواري الشهيد عمران بلقاسم تيزي غنيف,15,,TIZI-GHENIF,36.5837,3.7761,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TIZI-GHENIF,Tizi ghenif chef lieu,300,2003,true,false,7690,30000
-00754,Maison de jeunes Bouzeguene,مركب رياضي جواري الشهيد محند أولونيس بوزقن,15,,BOUZEGUENE,36.620861,4.50075,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BOUZEGUENE,Bouzeguene centre,350,1971,true,false,910,3304
+00754,Maison de jeunes Bouzeguene,مركب رياضي جواري الشهيد محند أولونيس بوزقن,15,,BOUZEGUENE,36.620861,4.50075,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BOUZEGUENE,Bouzeguene centre,350,1971,true,false,910,3304
 00755,Foyer de Jeune Abouda,,15,,AIT-OUMALOU,36.666778,4.221361,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,TIZI RACHED,Aboudda Bouadda,60,2006,true,false,250,250
 00756,Foyer de Jeune Ait said,,15,,MIZRANA,36.8429,4.0975,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,TIGZIRT,Ait said centre,100,2007,true,false,326,326
 00757,Foyer de Jeune Ouaguenoune,,15,,OUAGUENOUN,36.773056,4.176639,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,OUAGUENOUN,Ouaguenoune,40,2009,true,false,175,175
@@ -760,7 +760,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00759,Foyer de jeunes Ait Ali,,15,,FRIKAT,36.490444,3.897833,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,DRAA EL MIZAN,Village Ait Ali,60,2007,true,false,387,699.3
 00760,Foyer de jeunes Ait Ouaneche,,15,,BENI ZMENZER,36.648162,4.046689,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,BENI DOUALA,Ait Ouaneche,350,2007,true,,1813,1813
 00761,Foyer de jeunes El madjen,,15,,FRIHA,36.778028,4.299778,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,AZAZGA,Village Ilmadjen,90,2007,false,,375,375
-00762,Foyer de jeunes IBELKISSEN,,15,,IFERHOUNENE,36.57,4.362694,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,IFERHOUNENE,"Ibelkissen, Iferhounene",40,2007,true,false,134,215.92
+00762,Foyer de jeunes IBELKISSEN,,15,,IFERHOUNENE,36.57,4.362694,approximate,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,IFERHOUNENE,"Ibelkissen, Iferhounene",40,2007,true,false,134,215.92
 00763,Foyer de jeunes Tazrart,,15,,MAAKOUDA,36.8183,4.0583,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,MAKOUDA,"Village Tazrart, Nord ouest du chef lieu",50,2007,true,false,642,642.22
 00764,Foyer de jeunes Tifilkout,,15,,ILLILTEN,36.527306,4.404444,exact,sig_mjs,mjs,FJ,Foyer de jeunes,نادي الشباب,IFERHOUNENE,"Tifilkout , Illiten",100,2007,true,false,431,430.79
 00765,Maison de jeune Beni Yenni,دار الشباب بني يني-قداش علي -,15,,BENI YENNI,36.572194,4.21275,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BENI YENI,Beni Yenni centre,500,1974,true,false,350,400
@@ -807,7 +807,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00806,CENTRE CULTUREL AREZKI TABOUDECHTE,,16,,BEN AKNOUN,36.750968,3.014884,exact,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BOUZAREAH,11 RUE DODO MOKHTAR BEN AKNOUN,,,,,,
 00807,CENTRE CULTUREL EL MARSA,,16,,BORDJ EL BAHRI,36.784172,3.257228,exact,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,DAR EL BEIDA,40 BOULVARD COLONEL CHABOU TAMANFOUSTE,,,true,,,
 00808,COMPLEX SPORTIF DE PROXIMITE EL MARSA,,16,,BORDJ EL BAHRI,36.784654,3.247288,exact,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,DAR EL BEIDA,EL MARSA,,,,,,
-00809,,,16,,BOLOGHINE IBNOU ZIRI,36.7155,3.0454,exact,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BAB EL OUED,,,,,,,
+00809,,,16,,BOLOGHINE IBNOU ZIRI,36.7155,3.0454,approximate,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BAB EL OUED,,,,,,,
 00810,COMPLEX SPORTIF DE PROXIMITE BOUROUBA,,16,,BOUROUBA,36.715314,3.114632,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL HARRACH,BOUROUBA,,,,,,
 00811,COMPLEX SPORTIF DE PROXIMITE DERGANA,,16,,BORDJ EL KIFFAN,36.782527,3.247574,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,DAR EL BEIDA,DERGANA,,,,,,
 00812,COMPLEX SPORTIF DE PROXIMITE hai el badr,,16,,BACHEDJERAH,36.719158,3.099998,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL HARRACH,hai el badr bachdjerah,,,,,,
@@ -820,7 +820,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00819,CENTRE CULTUREL EL HARRACHE,,16,,EL HARRACH,36.721487,3.140913,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HARRACH,46 AVENUE BOUALEM GHELBOUB,,,,,,
 00820,maison de jeune casbah mohamed hirech,دار الشباب محمد حيرش - القصبة,16,,CASBAH,36.786069,3.061168,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BAB EL OUED,15 RUE HADJ OMAR CASBAH,,,true,,,
 00821,maison de jeune FENTAZI BELKACEM,,16,,BIR MOURAD RAIS,36.726344,3.050019,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,RUE BANIO LOTISSEMENT BIR MOURAD RAIS,,,,,,
-00822,maison de jeune HASSAN H,دار الشباب بئر خادم,16,,BIR MOURAD RAIS,36.7155,3.0454,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,,,,,,,
+00822,maison de jeune HASSAN H,دار الشباب بئر خادم,16,,BIR MOURAD RAIS,36.7155,3.0454,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,,,,,,,
 00823,maison de jeune HASSAN HASSANI BOUZEREAH,دار الشباب حسان الحساني بوزريعة,16,,BOUZAREAH,36.787417,3.013711,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUZAREAH,CARTIER BEAU SÉJOUR N 18 BOUZAREAH,,,,,,
 00824,maison de jeunes 8 MAI 1945 sorecal,,16,,BORDJ EL KIFFAN,36.7368,3.1899,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,DAR EL BEIDA,CITE 8 MAI 1945 SORECAL BAB EZZOUAR,,,,,,
 00825,MAISON DE JEUNES ABOU BAKER BELKAID,دار الشباب أبو بكر بلقايد - الدار البيضاء,16,,DAR EL BEIDA,36.7177,3.2102,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,DAR EL BEIDA,"12 Frères Abbas, Dar El Beïda 16033",,,true,,,
@@ -830,12 +830,12 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00829,MAISON DE JEUNES BACH DJERAH,دار الشباب باش جراح,16,,BACHEDJERAH,36.723276,3.121356,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HARRACH,cité les EUCALYPTUS BOITE POSTAL 69,,,,,,
 00830,MAISON DE JEUNES BACHIR BADIDI,,16,,RAIS HAMIDOU,36.817211,3.009475,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BAB EL OUED,RUE BACHIR BEDDIDI RAIS HAMIDOU,,,,,,
 00831,maison de jeunes beau lieu,دار الشباب المكان الجميل - واد السمار,16,,OUED SMAR,36.708663,3.16278,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HARRACH,53 ROUTE MEFTAH BEAU LIEU OUED SMAR,,,true,,,
-00832,maison de jeunes BIRKHADEM,دار الشباب بئر خادم,16,,BIRKHADEM,36.7155,3.0454,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,11 RUE AZZAM MEHDI BIRKHADEM,,,true,,,
+00832,maison de jeunes BIRKHADEM,دار الشباب بئر خادم,16,,BIRKHADEM,36.7155,3.0454,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,11 RUE AZZAM MEHDI BIRKHADEM,,,true,,,
 00833,MAISON DE JEUNES CHETAIBI RABEH,,16,,DELY IBRAHIM,36.750824,2.993432,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHERAGA,36 ROUTE NATIONAL DELY BRAHIM,,,,,,
 00834,maison de jeunes dergana,الشهيد ولد موسى محمد درقانة,16,,BAB EZZOUAR,36.775523,3.259479,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,DAR EL BEIDA,CITE DIPLOMATIQUE DERGANA,,,true,,,
 00835,maison de jeunes EL MAGHARIBI bab ezzouar,,16,,BAB EZZOUAR,36.722039,3.182881,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,DAR EL BEIDA,CITE 5 JUILLET BAB EZZOUAR,,,true,,,
-00836,maison de jeunes FETOUL MEKKI,إدريس بلال عين النعجة 02,16,,DJASR KASENTINA,36.703076,3.073481,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,RUE FETOUL MEKKI GUE DE CONSTANTINE,,,true,,,
-00837,maison de jeunes FETOUL MEKKI,إدريس بلال عين النعجة 02,16,,DJASR KASENTINA,36.703076,3.073481,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,RUE FETOUL MEKKI GUÉ DE CONSTANTINE,,,true,,,
+00836,maison de jeunes FETOUL MEKKI,إدريس بلال عين النعجة 02,16,,DJASR KASENTINA,36.703076,3.073481,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,RUE FETOUL MEKKI GUE DE CONSTANTINE,,,true,,,
+00837,maison de jeunes FETOUL MEKKI,إدريس بلال عين النعجة 02,16,,DJASR KASENTINA,36.703076,3.073481,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR MOURAD RAIS,RUE FETOUL MEKKI GUÉ DE CONSTANTINE,,,true,,,
 00838,MAISON DE JEUNES HASSAN BADI EL HARRACH,دار الشباب حسان بادي الحراش,16,,EL HARRACH,36.719561,3.14582,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HARRACH,10 RUE SLIMANE HANAFI BELFORT,,,,,,
 00839,maison de jeunes Houche Mihoube,,16,,SIDI MOUSSA,36.659,3.0898,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BARAKI,cité 568 LOGTS HEY EL MIHOUB BEN TALHA BERAKI,,,,,,
 00840,maison de jeunes IBARI AMEZIANE CHERAGA,,16,,CHERAGA,36.760078,2.962827,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHERAGA,ROUTE MOHAMED AMEZIANE CHERAGA,,,,,,
@@ -1031,22 +1031,22 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01030,complexe sportif de proximité khalifati merzoug saida,,20,,SAIDA,34.8515,0.1411,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SAIDA,rue hamadou ould mohamed cite boukhors,500,2004,true,,1200,35996
 01031,complexe sportif de proximité moulay larbi,المركب الرياضي الجواري الشهيد يعقوبي بلعيد مولاي العربي,20,,MOULAY LARBI,34.649402,0.010065,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN EL HADJAR,moulay larbi,500,2009,true,,1600,3016
 01032,complexe sportif de proximité sidi ahmed,المركب الرياضي الجواري الشهيد داودي ميلود سيدي احمد,20,,SIDI AHMED,34.551673,0.260595,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN EL HADJAR,sidi ahmed,498,2012,true,,3299,20000
-01033,complexe sportif de proximité sidi boubekeur,المركب الرياضي الجواري الشهيد صدوقي بن فريحة,20,,SIDI BOUBEKEUR,35.0279,0.0589,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI BOUBEKEUR,sidi boubkeur,500,2014,true,,3500,6515
-01034,complexe sportif de proximité tircine,المركب الرياضي الجواري الشهيد شرشري الهاشمي تيرسين,20,,TIRCINE,34.9,0.553,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED BRAHIM,tircine,500,2015,true,,1154,6000
+01033,complexe sportif de proximité sidi boubekeur,المركب الرياضي الجواري الشهيد صدوقي بن فريحة,20,,SIDI BOUBEKEUR,35.0279,0.0589,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI BOUBEKEUR,sidi boubkeur,500,2014,true,,3500,6515
+01034,complexe sportif de proximité tircine,المركب الرياضي الجواري الشهيد شرشري الهاشمي تيرسين,20,,TIRCINE,34.9,0.553,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED BRAHIM,tircine,500,2015,true,,1154,6000
 01035,complexe sportif de proximité youb,,20,,YOUB,34.917,-0.207,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,YOUB,youb,500,2007,true,,1600,5000
 01036,maison de jeunes moulay larbi,,20,,EL HASSASNA,34.6485,0.0136,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL HASSASNA,moulay larbi,250,,true,,,
-01037,,المركب الرياضي الجواري الشهيد صدوقي بن فريحة,20,,SIDI BOUBEKEUR,35.0279,0.0589,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI BOUBEKEUR,sidi boubkeur,500,2005,true,false,,
+01037,,المركب الرياضي الجواري الشهيد صدوقي بن فريحة,20,,SIDI BOUBEKEUR,35.0279,0.0589,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI BOUBEKEUR,sidi boubkeur,500,2005,true,false,,
 01038,complexe sportif de proximité ghaouti tidjani el badr,,20,,YOUB,34.8525,0.1592,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,YOUB,cite el badr saida,500,2003,true,,1903,9870
 01039,maison de jeunes 24 Avril saida,دار الشباب 24 افريل سعيدة,20,,SAIDA,34.8308,0.1463,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SAIDA,rue besif ahmed saida,250,,true,,1000,1500
 01040,maison de jeunes abbane ramdan,دار الشباب عبان رمضان سعيدة,20,,SAIDA,34.8359,0.1486,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SAIDA,rue abane ramdane saida,249,,true,,1000,1500
 01041,maison de jeunes ain sekhouna,دار الشباب الشهيد مخطاري محمد عين السخونة,20,,AIN SKHOUNA,34.507951,0.845216,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HASSASNA,ain sekhouna,250,,true,,,
 01042,maison de jeunes doui thabet,,20,,DOUI THABET,34.8934,-0.078,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,YOUB,doui thabet youb,200,2014,true,,,
 01043,maison de jeunes Frères Abdeli,دار الشباب الاخوة عبدلي سعيدة,20,,SAIDA,34.8409,0.1462,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SAIDA,Rue Boukhors Saida,250,2008,true,,1899,3516
-01044,maison de jeunes garçons saida,,20,,SAIDA,34.8261,0.15,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SAIDA,rue ait djaefar saida,250,,true,,2400,2500
-01045,maison de jeunes kharadji mohamed,,20,,AIN EL HADJAR,34.76,0.15,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN EL HADJAR,rue akkal aissa ain el hadjar saida,250,,true,,,
+01044,maison de jeunes garçons saida,,20,,SAIDA,34.8261,0.15,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SAIDA,rue ait djaefar saida,250,,true,,2400,2500
+01045,maison de jeunes kharadji mohamed,,20,,AIN EL HADJAR,34.76,0.15,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN EL HADJAR,rue akkal aissa ain el hadjar saida,250,,true,,,
 01046,maison de jeunes ouled brahim,دار الشباب الشهيد بوذريع مصطفى اولاد ابراهيم,20,,OULED BRAHIM,34.9874,0.4757,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED BRAHIM,ouled brahim,1500,2012,true,,600,3000
 01047,maison de jeunes sidi amar,دار الشباب المجاهد عبد الصمد الحاج سيدي عمر,20,,SIDI AMAR,35.029059,0.105418,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI BOUBEKEUR,sidi amar,150,2015,true,,400,1200
-01048,maison de jeunes youb,,20,,YOUB,34.923,-0.21,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,YOUB,youb,250,2013,true,,486,3060
+01048,maison de jeunes youb,,20,,YOUB,34.923,-0.21,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,YOUB,youb,250,2013,true,,486,3060
 01049,Auberge de jeunes,بيت الشباب مطاطلة أحمد,21,,COLLO,37.0086,6.5673,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,COLLO,Rue Bechikhi Hocine,50,2005,true,false,459,4255
 01050,Auberge de jeunes,بيت الشباب بويمو رابح,21,,EL HARROUCH,36.6581,6.8337,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL HARROUCH,Cité Frères Kafi,50,2016,true,false,,
 01051,El Ayadi Mohamed,بيت الشباب العيادي محمد,21,,SKIKDA,36.8671,6.9073,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,SKIKDA,Cité Frères Saker,50,1997,true,false,,
@@ -1065,7 +1065,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01064,Djennan Lekhmissi,المركب الرياضي الجواري جنان خميسي,21,,BEN AZZOUZ,36.85831,7.289837,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENAZOUZ,Ben Azzouz,,2016,true,false,,
 01065,Dridi Mohamed,المركب الرياضي الجواري دريدي محمد بن يوسف,21,,OULED ATTIA,36.994,6.3283,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED ATTIA,Fatma Feroum,,2014,true,false,,
 01066,Frères Mokhnache,المركب الرياضي الجواري الإخوة مخناش,21,,AZZABA,36.734272,7.102047,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AZZABA,Cité Djeouad Tahar,297,2000,true,false,687,66201
-01067,Houaien Ibrahim,المركب الرياضي الجواري هواين إبراهيم,21,,RAMDANE DJAMEL,36.759558,6.890435,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,RAMDANE DJAMEL,Ramdane Djamel,,2010,true,false,687,10000
+01067,Houaien Ibrahim,المركب الرياضي الجواري هواين إبراهيم,21,,RAMDANE DJAMEL,36.759558,6.890435,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,RAMDANE DJAMEL,Ramdane Djamel,,2010,true,false,687,10000
 01068,Kherfan Ahcen,المركب الرياضي الجواري خرفان أحسن,21,,BEKKOUCHE LAKHDAR,36.742182,7.315333,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENAZOUZ,mekkessa,,2016,true,false,,
 01069,19 mai 56,,21,,EL HADAIEK,36.83045,6.896375,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HADAIK,Cité 08 mai 45,94,2009,true,false,,
 01070,Babori Derradji,,21,,AIN KECHRA,36.745463,6.430459,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Ain kechra,Ain kechera,183,,true,false,,
@@ -1093,7 +1093,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01092,Sehab Rebah,دار الشباب سحاب رابح,21,,EL GHEDIR,36.68718,6.975996,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AZZABA,El Ghedir,50,2013,true,false,,5790
 01093,Serdani Mohamed,دار الشباب حمو سرداني,21,,TAMALOUS,36.836668,6.644634,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TAMALOUS,Tamalous centre,130,1986,true,false,,
 01094,Alouan Chaabane,القاعة متعددة النشاطات علوان شعبان,21,,KERKERA,36.930417,6.584513,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,TAMALOUS,Cité Kerboua Tahar,180,,true,false,,
-01095,Hedjal Ahmed,,21,,RAMDANE DJAMEL,36.759558,6.890435,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,RAMDANE DJAMEL,Village Keleba,,1984,true,false,380,380
+01095,Hedjal Ahmed,,21,,RAMDANE DJAMEL,36.759558,6.890435,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,RAMDANE DJAMEL,Village Keleba,,1984,true,false,380,380
 01096,Lekhal Rebah,القاعة متعددة النشاطات الشهيدان سمراني محمد و أحمد,21,,SIDI MEZGHICHE,36.68417,6.72685,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,SIDI MEZGHICHE,Cité Boulemaiz Ammar,290,2018,true,false,500,
 01097,Ramoul Abdlaziz,القاعة متعددة النشاطات رامول عبد العزيز,21,,COLLO,36.9805,6.5613,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,COLLO,Village Ramoul Abdalaziz,38,1984,true,false,,
 01098,salle polyvalente,القاعة متعددة النشاطات عين الزويت,21,,AIN ZOUIT,36.888766,6.785737,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL HADAIEK,Ain Zouit,50,2023,true,true,350,560
@@ -1115,7 +1115,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01114,COMPLEXE SPORTIF DE PROXIMITE MARTYR OUJDI ABDELKADER,الشهيد وجدي عبد القادر,22,,MARHOUM,34.4433,-0.1945,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MARHOUM,RUE SAOULI KHALIFA,100,2008,true,false,2500,3000
 01115,COMPLEXE SPORTIF DE PROXIMITE MARTYR OURED AHMED,الشهيد أحمد وراد,22,,TESSALA,35.2406,-0.7688,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TESSALA,ROUTE NATIONALE N° 95,150,2010,true,false,2747,2747.6
 01116,COMPLEXE SPORTIF DE PROXIMITE MARTYR SAHOULI MOHAMED,الشهيد سحولي محمد,22,,MERINE,34.7813,-0.4473,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MERINE,"N ° 54, ROUTE DE SAÏDA",100,2005,true,,2747,2747
-01117,COMPLEXE SPORTIF DE PROXIMITE MOSTEFA BEN BRAHIM,الشهيد رايـس يــوب,22,,MOSTEFA BEN BRAHIM,35.19,-0.367,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MOSTAFA BEN BRAHIM,RUE DU COLONEL AMIROUCHE,100,2006,true,true,2747,2747
+01117,COMPLEXE SPORTIF DE PROXIMITE MOSTEFA BEN BRAHIM,الشهيد رايـس يــوب,22,,MOSTEFA BEN BRAHIM,35.19,-0.367,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MOSTAFA BEN BRAHIM,RUE DU COLONEL AMIROUCHE,100,2006,true,true,2747,2747
 01118,COMPLEXE SPORTIF DE PROXIMITE RAS EL MA,الشهيد حموية كبير,22,,RAS EL MA,34.4937,-0.8239,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,RAS EL MA,RUE DES MARTYRES,200,2005,true,false,2747,2747
 01119,MAISON DE JEUNES 08 MAI 1945,08 ماي 1945,22,,SIDI BEL ABBES,35.1936,-0.6338,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI BEL ABBES,RUE DU 08 MAI 1945,200,2006,true,false,848,1300
 01120,MAISON DE JEUNES ADIM FATIHA,الشهيدة عظيم فتيحة,22,,SIDI BEL ABBES,35.1982,-0.6508,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI BEL ABBES,CITE ADIM FATIHA,200,1971,true,false,1500,2500
@@ -1184,7 +1184,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01183,Complexe Sportif de Proximité Sellami Ibrahim à Oued Zenati,المركب الرياضي الجواري سلامي ابراهيم وادي الزناتي,24,,OUED ZENATI,36.3166,7.1707,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OUED ZENATI,oued zenati,250,2005,true,true,860,110000
 01184,CSP Ben Djarrah,المركب الرياضي الجواري الاخوة بن امهاني بن جراح,24,,BENDJARAH,36.4313,7.3774,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,GUELMA,Ben Djarrah,,2022,true,true,,900
 01185,Maison de jeunes Abane Ramdhane,,24,,GUELMA,36.464871,7.44091,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GUELMA,Rue Abane Ramdhane Guelma,,,false,,461,3500
-01186,Maison de Jeunes Abdelhamid Iben Badis à Oued Cheham,دار الشباب عبد الحميد بن باديس واد الشحم,24,,OUED CHEHAM,36.38,7.7648,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HAMMAM N'BAILS,Cité Soualmia Boudjema à Oued Cheham,200,1986,true,false,480,1663
+01186,Maison de Jeunes Abdelhamid Iben Badis à Oued Cheham,دار الشباب عبد الحميد بن باديس واد الشحم,24,,OUED CHEHAM,36.38,7.7648,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HAMMAM N'BAILS,Cité Soualmia Boudjema à Oued Cheham,200,1986,true,false,480,1663
 01187,Maison de Jeunes Ahcene Chetibi à Roknia,دار الشباب الشهيد احسن شطايبي الركنية,24,,ROKNIA,36.5429,7.2357,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HAMMAM DEBAGH,Roknia,200,2005,true,false,1800,3450
 01188,Maison de Jeunes Aissa Dahane à Tamlouka,دار الشباب الاخوة مالكي تاملوكة,24,,TAMLOUKA,36.1621,7.1385,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN MAKHLOUF,Tamlouka,200,1985,true,false,321,1350
 01189,Maison de Jeunes Allouche Belkasseme à Bordj Sabath,دار الشباب علوش بلقاسم برج صباط,24,,BORDJ SABATH,36.4053,7.0439,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUED ZENATI,Bordj Sabath,200,1992,true,false,321,1442
@@ -1243,7 +1243,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01242,BOUROUH GUERMI,,25,,CONSTANTINE,36.3821,6.6432,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CONSTANTINE,RUE BEN NACER CHARAFA CITE SERKINA,300,2009,true,true,580,2636
 01243,BOUSALEM EL-TAHAR,,25,,AIN SMARA,36.2642,6.4894,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL KHAROUB,CITE HARICHA,100,2016,true,false,1200,3100
 01244,CHARGUI ABBOUD,,25,,CONSTANTINE,36.3659,6.6367,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CONSTANTINE,PLATEAU ELMANSOURAH,200,1999,true,true,400,1453
-01245,CHERGUI MOKHTER,,25,,EL KHROUB,36.2505,6.58,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL KHAROUB,UV 01 ALI MENDJELI,300,2018,true,false,1600,3500
+01245,CHERGUI MOKHTER,,25,,EL KHROUB,36.2505,6.58,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL KHAROUB,UV 01 ALI MENDJELI,300,2018,true,false,1600,3500
 01246,CHTAYBI AMAR,,25,,EL KHROUB,36.2577,6.5721,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL KHAROUB,UV 07 ALI MENDJELI,500,2017,true,true,570,2200
 01247,Hidoussi moustapha,,25,,CONSTANTINE,36.3435,6.6053,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CONSTANTINE,CITE LES TERRASSE,500,,true,false,180,200
 01248,SALLE POLYVALENTE DIDOUCHE MOURADE,,25,,DIDOUCHE MOURAD,36.4463,6.6328,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,HAMMA BOUZIANE,LA GAROUTIERE DODOCHE MORADE,100,2017,true,true,250,600
@@ -1272,10 +1272,10 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01271,El Moudjahid Kermali Abd Elhamid,المركب الرياضي الرياضي كرمالي عبد الحميد الشهبونية,26,,CHAHBOUNIA,35.5464,2.6231,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHAHBOUNIA,Nouveau pole Chahbounia,300,2010,true,true,1032,13361
 01272,El Moudjahid Rabah Bentaib,المركب الرياضي الجواري الشهيد رباح بن الطيب,26,,BOUGHZOUL,35.6722,2.8196,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHAHBOUNIA,Pole urbain,300,2010,true,true,1100,8195
 01273,I.N.D,المركب الرياضي الجواري المجاهد بوعبيد سعد,26,,TAFRAOUT,35.971,3.3506,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHALLALET EL ADHAOURA,Tafraout centre,300,2011,true,true,845,2213
-01274,I.N.D,المركب الرياضي الجواري المجاهد محمد بوضياف,26,,CHENIGUEL,35.92,3.567,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHALLALET EL ADHAOURA,Centre ville Cheniguel,300,2012,true,true,845,4740
+01274,I.N.D,المركب الرياضي الجواري المجاهد محمد بوضياف,26,,CHENIGUEL,35.92,3.567,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHALLALET EL ADHAOURA,Centre ville Cheniguel,300,2012,true,true,845,4740
 01275,I.N.D,المركب الرياضي الجواري الشهيد لخضاري محمد,26,,OULED EMAARAF,35.8146,3.0293,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN BOUCIF,Ouled Maaref centre,300,2010,true,true,1032,3557
 01276,I.N.D,المركب الرياضي الجواري الشهيد يحياوي عياش,26,,SOUAGUI,36.1267,3.2647,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUAGUI,Souagui centre,300,2008,true,true,1226,3150
-01277,I.N.D,المركب الرياضي الجواري الشهيد رحيل علال,26,,SIDI ZAHAR,36.07,3.3307,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUAGUI,Sidi Zahar centre,300,2010,true,true,835,3456
+01277,I.N.D,المركب الرياضي الجواري الشهيد رحيل علال,26,,SIDI ZAHAR,36.07,3.3307,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUAGUI,Sidi Zahar centre,300,2010,true,true,835,3456
 01278,08 Mai 1945,,26,,BENI SLIMANE,36.2271,3.3083,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BENI SLIMANE,Quartier 08 Mai 1945,250,1970,true,false,540,1490
 01279,Abdi ostmane,دار الشباب الشهيد حاجب مولود,26,,MEDEA,36.2608,2.7549,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MEDEA,Cité Ouchene Medea,253,2007,true,true,557,1962
 01280,Boumbadji Amar,دار الشباب الشهيد تاني مسعود,26,,BENI SLIMANE,36.233,3.3101,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BENI SLIMANE,Encienne ville Beni Slimane,250,1970,true,false,738,2273
@@ -1305,7 +1305,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01304,,دار الشباب الشهيد عثماني مسعود,26,,MEZERANA,36.371607,3.355009,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TABLAT,Centre ville,250,2025,true,true,505,800
 01305,,دار الشباب الشهيد دحام عمرو,26,,EL GUELBELKEBIR,36.2575,3.4172,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GUELB EL KEBIR,centre ville,250,2025,true,true,426,600
 01306,400 logts,القاعة المتعددة الخدمات الشهيدالعراف الربيع البرواقية,26,,BERROUAGHIA,36.1334,2.9188,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BEROUAGHIA,Cité 400 logements,389,1984,true,true,554,5054
-01307,Chahid Ahmed Maghraoui,,26,,MEDEA,36.25,2.7528,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,MEDEA,Quartier kotitene,59,2015,true,true,430,1094
+01307,Chahid Ahmed Maghraoui,,26,,MEDEA,36.25,2.7528,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,MEDEA,Quartier kotitene,59,2015,true,true,430,1094
 01308,Chahid Ben Hadou Bouhdjar,القاعة المتعددة الخدمات بن حدو بوحجر وزرة,26,,OUZERA,36.253,2.8715,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,OUZERA,Village agricol Ouzera,299,1977,true,false,153,153
 01309,Chahid Benalia Benaissa,القاعة المتعددة الخدمات الشهيد بن عيسى بن علية اوللاد ذايد,26,,OULED DEIDE,36.1137,3.0115,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BEROUAGHIA,Village agricol Ouled daied,379,1984,true,false,432,432
 01310,Chahid Boumaaza Yahia Ben Lakhdar,القاعة متعددة الخدمات الشهيد بومعزة يحيى بن لخضر,26,,SANEG,35.852028,2.838901,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,KSAR EL BOUKHARI,Village agricol Saneg,70,1984,true,false,240,240
@@ -1331,7 +1331,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01330,Camps de jeunes,المجاهد المرحوم سماير مجاهد,27,,MOSTAGANEM,35.920469,0.065596,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,Mostaganem,Route la salamandre,300,2018,true,true,3745,7395
 01331,Echahid: Morcelli MOHAMED,الشهيد مرسلي محمد,27,,MOSTAGANEM,35.9206,0.0668,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,Mostaganem,Route la salamandre,400,2004,true,true,1247,21519
 01332,Complexe sportif de proximité,المجاهد المرحوم بكاي ارحمان,27,,AIN NOUISSI,35.8051,0.0495,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,ain nouissy,Ain Nouissy/centre,250,2018,true,true,1355,4511
-01333,Complexe sportif de proximité,المجاهد المتوفي :عيسى محمد,27,,SOUR,36,0.3333,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Ain tedles,Sour/Centre,200,2018,true,true,1337,4303
+01333,Complexe sportif de proximité,المجاهد المتوفي :عيسى محمد,27,,SOUR,36,0.3333,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Ain tedles,Sour/Centre,200,2018,true,true,1337,4303
 01334,Complexe sportif de proximité,الشهيد بويش أحمد بن الشارف,27,,BOUGUIRAT,35.7516,0.2566,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Bouguiret,Rue Fettouha charef,250,1999,true,false,860,4000
 01335,Complexe sportif de proximité,الشهيد بن طاهر عبد القادر,27,,STIDIA,35.8343,-0.0054,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Hassi maameche,Stidia /centre,250,2018,true,true,703,4511
 01336,Complexe sportif de proximité,,27,,BENABDELMALEK RAMDANE,36.1053,0.2666,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI LAKHDAR,Ben Abdelmalek Ramdane/centre,250,2011,true,true,1032,24076
@@ -1343,7 +1343,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01342,Echahid :Mendas ABDEL KADER,الشهيد منداس عبد القادر,27,,KHADRA,36.253964,0.56762,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Achaacha,Khadra/Centre,300,2009,true,false,1118,23575
 01343,"ECHAHID: ""HAMARID Djillal",,27,,HADJADJ,35.968351,0.369128,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI LAKHDAR,Hadjadj/centre,500,2023,true,true,111,111
 01344,"Echahid:"" Kassous Ahmed""",الشهيد قسوس أحمد,27,,OUED EL KHEIR,35.948754,0.382405,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Ain tedles,Cité 110 lots Oued El Kheir/centre,150,2009,true,true,1118,2353
-01345,"Elchahid : ""BENYATOU ABDEL ALLAH""",الشهيد بن يطو عبد الله,27,,HASSI MAAMECHE,35.86,0.0661,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Hassi maameche,Route vers Ouréah (Hassi Mamech),250,2017,true,true,703,4511
+01345,"Elchahid : ""BENYATOU ABDEL ALLAH""",الشهيد بن يطو عبد الله,27,,HASSI MAAMECHE,35.86,0.0661,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Hassi maameche,Route vers Ouréah (Hassi Mamech),250,2017,true,true,703,4511
 01346,"""ECHAHID : ZERROUALI Bendhiba """,الشهيد زروالي بن ذهيبة,27,,SAYADA,35.953,0.1304,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Kheiredine,Sayada/centre,50,1987,true,true,297,327
 01347,"""ECHAHID BELHAMITI SENOUCI""",الشهيد بلحميتي سنوسي,27,,SIDI ALI,36.099128,0.421157,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Sidi ali,Rue Boucetta Mohamed,400,2017,true,true,723,1412
 01348,"""ECHAHID MENAD Abdelkader""",المجاهد : محمد بوضياف,27,,AIN TEDLES,35.950139,0.380774,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Ain tedles,Rue Meghalet Bendehiba,100,,true,true,229,453
@@ -1359,7 +1359,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01358,ECHAHID: BenbadraI M'hamed,الشهيد بن بدرة امحمد,27,,HADJADJ,36.0968,0.327,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Sidi lakhdar,Rue Haddouche Abdelkader,200,1987,true,true,325,485
 01359,ECHAHID: BENDOULA LARBI,,27,,MOSTAGANEM,35.952008,0.091562,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Mostaganem,CITE 544 LGTS (Sidi El MADJDOUB Kharouba,100,2010,true,true,215,215
 01360,"El Moudjahid décédé""SLIMANE AMIRAT """,المجاهد المرحوم سليمان عميرات,27,,AIN TEDLES,35.998572,0.291719,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Ain tedles,Rue Belatreche hadjel Ain Tedeles/centre,100,1985,true,true,786,1326
-01361,EMIR Abdelkader,,27,,KHEIR EDDINE,35.98,0.1675,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Kheiredine,Kheiredine/centre,100,1987,true,true,689,1028
+01361,EMIR Abdelkader,,27,,KHEIR EDDINE,35.98,0.1675,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Kheiredine,Kheiredine/centre,100,1987,true,true,689,1028
 01362,EMIR Abdelkader,الأمير عبد القادر,27,,AIN BOUDINAR,36.009093,0.185534,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Kheiredine,"Rue ""Boudiaf MED"" Cité Amara Hamida Ain Boudinar/centre",50,1987,true,true,210,330
 01363,Maison de jeunes,,27,,MOSTAGANEM,35.945,0.0964,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Mostaganem,CITE 300 LGTS,80,2010,true,true,180,180
 01364,Maison de jeunes,,27,,MOSTAGANEM,35.9312,0.1107,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Mostaganem,Cité Djebli MED (EX Montplaisir,250,2012,true,true,450,963
@@ -1395,7 +1395,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01394,OUADEH Hemida,,28,,MAGRA,35.613536,5.103789,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MAGRA,Commune de Magra,400,2003,true,true,700,7000
 01395,REBAH Said,المركب الرياضي الجواري الشهيد بباح سعيد الخبانة,28,,KHOUBANA,35.325703,4.434056,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,KHOUBANA,Commune de Khobana,400,2008,true,true,700,10000
 01396,ROUABHI Rabeh,,28,,HAMMAM DHALAA,35.937789,4.373358,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HAMMAM DHALAA,Commune de Hammam Dalaa,400,2006,true,true,700,12000
-01397,05 Juillet,,28,,AIN EL HADJEL,35.6763,3.88,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN EL HADJEL,Commune de Ain El Hadjel,400,,false,true,500,1500
+01397,05 Juillet,,28,,AIN EL HADJEL,35.6763,3.88,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN EL HADJEL,Commune de Ain El Hadjel,400,,false,true,500,1500
 01398,BEN NAOUI Ali,,28,,OULED SLIMANE,34.910722,4.74035,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BEN SROUR,Commune de Ouled Slimane,400,2018,true,true,500,2000
 01399,BERICHE Derradji,,28,,CHELLAL,35.515028,4.387481,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHELLAL,Commune de Chellal,400,2013,true,true,450,3200
 01400,DAOUCEN Tayeb,دار الشباب دوسن الطيب عين الحجل,28,,AIN EL HADJEL,35.671733,3.882919,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN EL HADJEL,Commune de Ain El Hadjel,400,,true,true,400,1000
@@ -1446,7 +1446,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01445,CSP sanae benoumer,صانع بن عومر,29,,TIZI,35.3197,0.0753,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TIZI,cité soudani kada tizi,1100,2014,true,true,2000,8709.12
 01446,CSP seradj mokhtar,سراج مختار,29,,OGGAZ,35.5676,-0.2608,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OGGAZ,route d'arziw oggaz,800,2008,true,true,1120,1500
 01447,CSP souici kada,,29,,SIDI BOUSSAID,35.2897,0.2985,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,GHRISS,sidi boussaid,600,2013,true,true,1200,9000
-01448,Hebib mekki,,29,,MAOUSSA,35.3795,0.2476,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,GHRISS,Maoussa centre,800,2016,true,true,1280,13000
+01448,Hebib mekki,,29,,MAOUSSA,35.3795,0.2476,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,GHRISS,Maoussa centre,800,2016,true,true,1280,13000
 01449,Djidar baghdad,,29,,GHRISS,35.2486,0.1631,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GHRISS,17 rue hamri ghriss,500,1959,true,true,1235,4000
 01450,Maison de Jeunes,غيلاس بن زيان,29,,SIDI ABDELMOUMENE,35.6566,0.0156,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOHAMMADIA,sidi abdelmoumen,300,2013,true,true,380,492
 01451,Maison de Jeunes 08 mai 1945,,29,,EL BORDJ,35.5151,0.2991,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL BORDJ,rue bougherida djilali el bordj,350,1997,true,true,646,2392
@@ -1467,12 +1467,12 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01466,Maison de Jeunes elhadj mohammed thabet,,29,,FROHA,35.303,0.1258,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TIZI,rue aouled ben aouni froha,600,,true,true,1623,2432
 01467,Maison de Jeunes Lagha sadek,لاغا الصادق,29,,MASCARA,35.4053,0.1306,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MASCARA,Rue kadi merahi elhachemi mascara,600,1998,true,true,1474,4311
 01468,Maison de Jeunes mabrek tayeb,مبرك الطيب,29,,EL GHOMRI,35.6691,0.2015,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOHAMMADIA,douar boutefaha ghomri,200,2014,true,true,265,1480
-01469,Maison de Jeunes mohammed boudiaf,,29,,MAOUSSA,35.3795,0.2476,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GHRISS,rue 01 novembre 1954 maoussa,400,1997,true,true,450,800
+01469,Maison de Jeunes mohammed boudiaf,,29,,MAOUSSA,35.3795,0.2476,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GHRISS,rue 01 novembre 1954 maoussa,400,1997,true,true,450,800
 01470,Maison de Jeunes mohammed boumaza,محمد بومعزة,29,,HACINE,35.4615,-0.0074,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOUHANIFIA,rue hadad djilali hacine,300,1996,true,true,1380,4650
 01471,Maison de Jeunes Samach said,صماش سعيد,29,,MASCARA,35.3975,0.1434,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MASCARA,Rue Ghellal zine el abidine mascara,600,,true,true,1623,6030
 01472,Maison de Jeunes taleb mohammed,طالب محمد,29,,KHALOUIA,35.4592,0.2954,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL BORDJ,rue sidi mohamed ben zerga 102 khalouia,600,2011,true,true,550,1000
 01473,Maison de Jeunes taoui taher,طاوي الطاهر,29,,OGGAZ,35.562,-0.257,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OGGAZ,rue mahrez abdelkader oggaz,300,,true,true,320,380
-01474,touileb ali,,29,,MATEMORE,35.3243,0.21,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GHRISS,rue abdelsalem ahmed,200,2014,true,true,500,1000
+01474,touileb ali,,29,,MATEMORE,35.3243,0.21,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GHRISS,rue abdelsalem ahmed,200,2014,true,true,500,1000
 01475,salle polyvalente à ain mansour,,29,,EL HACHEM,35.3932,0.5755,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,HACHEM,village ain mansour,80,,true,true,350,400
 01476,salle polyvalente elhamel mohammed,الهامل محمد,29,,EL KEURT,35.3784,0.0959,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,TIZI,cité ghazi ali elkeurt,100,2015,true,true,280,300
 01477,salle polyvalente mohammed abdelrazek à yalou,,29,,BOU HENNI,35.5708,-0.044,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,SIG,village yaalou à bouhenni,80,2015,true,true,365,400
@@ -1491,7 +1491,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01490,Maison de jeunes 19 Mai 1956,,30,,OUARGLA,31.946427,5.343265,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUARGLA,Cité Bouzid Beni Thour Ogx,230,1986,true,true,440,741
 01491,Maison de jeunes 24 Fevrier,,30,,OUARGLA,31.959087,5.338552,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUARGLA,Cité Selis Ouargla,600,1988,true,true,440,1983
 01492,Maison de Jeunes ben mir mebrouk Ain beida,,30,,AIN BEIDA,31.948347,5.310975,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI KHOUILED,Route si El haouas Ain-Beida,250,1989,true,true,405,4256
-01493,Maison de jeunes Houari Boumedienne,,30,,OUARGLA,31.9666,5.33,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUARGLA,Hey Hassi el bostane OGX,700,1962,true,true,572,1373
+01493,Maison de jeunes Houari Boumedienne,,30,,OUARGLA,31.9666,5.33,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUARGLA,Hey Hassi el bostane OGX,700,1962,true,true,572,1373
 01494,Maison de jeunes med sedik ben yehia,,30,,OUARGLA,31.948428,5.310972,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUARGLA,Cité Mekhadma Ogx,250,1986,true,true,440,750
 01495,Maison de jeunes Mustapha Ben Boulaid,,30,,OUARGLA,31.9497,5.3212,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUARGLA,hey Sidi Abdelkader Ouargla,600,1988,true,true,2242,12176
 01496,Maison de Jeunes Ngoussa,,30,,N'GOUSSA,32.1375,5.3152,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,N'GOUSSA,Mj APC Ngoussa,400,1994,true,true,1964,3183
@@ -1519,7 +1519,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01518,chahid halfaya lakheder,بلحلفاية لخضر,31,,BOUFATIS,35.6854,-0.4141,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OUED TLELAT,Commune de BOUFATIS,500,2020,false,true,1050,3000
 01519,complexe sportif de proximité bousfer,,31,,BOUSFER,35.7042,-0.8155,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN TURK,bousfer Ain el Turck,100,2024,false,true,1455,3400
 01520,csp roche,,31,,ORAN,35.655,-0.7101,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,ORAN,roche,,2021,true,,,
-01521,GELILE TAYEBE,المناضل طيب قليل,31,,HASSI BEN OKBA,35.73,-0.4715,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BIR EL DJIR,Rue Akid Lotfi,350,2012,true,true,1077,4000
+01521,GELILE TAYEBE,المناضل طيب قليل,31,,HASSI BEN OKBA,35.73,-0.4715,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BIR EL DJIR,Rue Akid Lotfi,350,2012,true,true,1077,4000
 01522,I.N.D,بئر الجير,31,,BIR EL DJIR,35.7244,-0.5628,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BIR EL DJIR,Cité 600 logts Boulevard Millenium 2,120,2017,true,false,2300,4000
 01523,I.N.D,قرانين,31,,BETHIOUA,35.7178,-0.2226,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BETHIOUA,"Granine , Commune de Bethioua",500,2018,true,false,1046,2500
 01524,I.N.D,حي الصباح,31,,SIDI CHAMI,35.6968,-0.5627,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,ES SENIA,"Poste 52, hai Sabah",150,2008,true,true,600,2862
@@ -1538,10 +1538,10 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01537,I.N.D,بن براهم محمد,31,,EL ANCOR,35.6848,-0.8757,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN TURK,commune El Ancor,150,2020,true,true,520,900
 01538,I.N.D,بن فريحة,31,,BEN FREHA,35.6973,-0.4199,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GDYEL,"Route nationale, en face la gendarmerie- Benfréha",180,2015,true,false,1110,123452
 01539,I.N.D,,31,,TAFRAOUI,35.4887,-0.5209,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUED TLELAT,"Rue les frères Boubarnasse , Commune de Tafraoui",400,2010,true,true,973,1000
-01540,IBN SINA,ابن سينا,31,,ORAN,35.6828,-0.6232,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,04 rue ouargla hai Ibn sina,350,,true,true,1300,2593
+01540,IBN SINA,ابن سينا,31,,ORAN,35.6828,-0.6232,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,04 rue ouargla hai Ibn sina,350,,true,true,1300,2593
 01541,LES AMANDIERS,المجاهد بوشعيب منتفخ,31,,ORAN,35.6769,-0.6811,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,"Cité El Feth secteur urbain Bouamama , hai El Louz",100,2016,true,false,1100,3000
 01542,M’BAREK EL MILI,مبارك الميلي,31,,ORAN,35.7034,-0.6453,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,11 RUE M’BAREK EL MILI (ex Pière Tabarou),120,,true,false,188,188
-01543,MAISONS DE JEUNE IBN SINA,ابن سينا,31,,ORAN,35.6828,-0.6232,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,04 Rue Ouargla Ibn Sina,350,1997,true,false,1300,2593
+01543,MAISONS DE JEUNE IBN SINA,ابن سينا,31,,ORAN,35.6828,-0.6232,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,04 Rue Ouargla Ibn Sina,350,1997,true,false,1300,2593
 01544,MALEK ABDELKADER,مالك عبد القادر,31,,OUED TLELAT,35.5507,-0.4527,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUED TLELAT,"Rue Boudiaf mohamed, Commune d’Oued Tlélat –Daïra d’Oued Tlélat",150,2014,true,false,1110,1000
 01545,Maoued Ahmed,معواد أحمد,31,,ORAN,35.7027,-0.6338,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ORAN,"19, Rue Aspirant Maoued Ahmed(Ex : Mirauchaux), Oran",500,,true,false,1084,3000
 01546,MEKEDED AHMED ( M’HAMED ),مقداد امحمد,31,,:,35.7289,-0.5706,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BIR EL DJIR,"Hai Khémisti, rue du lycée Belkaid ,Commune de Bir El Djir",350,2009,true,false,1500,4000
@@ -1587,7 +1587,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01586,salle polyvalente Cheguig,القاعة متعددة الخدمات الشقيق,32,,CHEGUIG,34.083303,1.14213,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BOUALEM,COMMUNE DE Cheguig,200,2017,true,true,,
 01587,auberge de jeunes,,33,,BORDJ OMAR DRISS,28.1426,6.8107,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,IN AMENAS,Route zaouïa,50,2010,true,true,920,3250
 01588,auberge de jeunes,,33,,DEBDEB,29.9879,9.436,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,IN AMENAS,CENTRE VILLE,50,,true,true,445,3391
-01589,auberge de jeunes,,33,,BORDJ OMAR DRISS,28.427,7.38,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,IN AMENAS,Tin Foué Tebenkourt BOD,50,2013,true,true,688,3120
+01589,auberge de jeunes,,33,,BORDJ OMAR DRISS,28.427,7.38,approximate,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,IN AMENAS,Tin Foué Tebenkourt BOD,50,2013,true,true,688,3120
 01590,Bouchikhi Cheikh,,33,,ILLIZI,26.5139,8.4823,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,Illizi,Cite el-Wiam,50,2005,true,true,1078,6000
 01591,Mohammed Boudiaf,,33,,IN AMENAS,28.0489,9.5837,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,IN AMENAS,Cite 40 Logement,50,1999,true,true,353,1680
 01592,Mujahid Yosha Idris,,33,,IN AMENAS,28.0393,9.5881,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,IN AMENAS,CENTRE VILLE,50,,true,true,1800,4800
@@ -1598,9 +1598,9 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01597,Mujahid Muhammad Fodil,,33,,IN AMENAS,28.0531,9.5781,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,IN AMENAS,Centre ville In amenas,200,,true,true,1225,49000
 01598,Cheikh Amoud,,33,,ILLIZI,26.4985,8.4721,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Illizi,Cite el-emir abd el kader,120,1992,true,true,490,2352
 01599,Maison de jeunes,,33,,BORDJ OMAR DRISS,28.1213,6.8215,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Centre ville Bordj Omar Driss,100,1985,true,false,290,327
-01600,Maison de jeunes,,33,,BORDJ OMAR DRISS,28.1102,6.76,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,zaouia,100,2000,true,true,210,380
+01600,Maison de jeunes,,33,,BORDJ OMAR DRISS,28.1102,6.76,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,zaouia,100,2000,true,true,210,380
 01601,Maison de jeunes,,33,,IN AMENAS,28.6761,8.8759,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Ouhanet,120,2017,true,true,460,3500
-01602,Maison de jeunes,,33,,BORDJ OMAR DRISS,28.1428,6.81,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Route zaouïa,100,2011,true,true,370,6000
+01602,Maison de jeunes,,33,,BORDJ OMAR DRISS,28.1428,6.81,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Route zaouïa,100,2011,true,true,370,6000
 01603,Maison de jeunes,,33,,DEBDEB,29.9954,9.437,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Centre ville Debdeb,100,2019,true,true,700,3500
 01604,Maison de Jeunes 24 Fabrier,,33,,IN AMENAS,28.0444,9.5769,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Centre ville In amenas,100,1987,true,true,570,2000
 01605,Maison de jeunes DEBDEB,,33,,DEBDEB,29.9667,9.4236,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,IN AMENAS,Centre ville Debdeb,50,,true,true,775,938
@@ -1640,7 +1640,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01639,Salle polyvalent abd el madjid aouchoch,,34,,B. B. ARRERIDJ,36.0748,4.7506,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BORDJ BOU ARRERIDJ,Abd el madjid aouchich,498,2019,true,true,832,832
 01640,Salle polyvalent lasad salem,لسعد سالم,34,,OULED BRAHEM,35.8755,5.0737,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,RAS EL OUED,Ouled brahem,300,2017,true,true,273,1000
 01641,ECHAHID CHUBANI MOHAMED ET SON FILS MOH ESEGHIR,احمد شيباني و اخوه موح الصغير - جنات,35,,DJINET,36.8726,3.7225,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,BORDJ MENAIEL,CAP DJENET PLAGE,50,2010,true,false,432,3884
-01642,ECHAHID MERDASSI ALI,علي مرداس الكرمة بومرداس,35,,BOUMERDES,36.77,3.51,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,Boumerdes,FIGUIER ROUTE N24,50,2013,true,true,598,1000
+01642,ECHAHID MERDASSI ALI,علي مرداس الكرمة بومرداس,35,,BOUMERDES,36.77,3.51,approximate,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,Boumerdes,FIGUIER ROUTE N24,50,2013,true,true,598,1000
 01643,ECHAHID RACHID ZEMMOUR SAID,الشهيد زمور سعيد - قورصو,35,,CORSO,36.7642,3.4503,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,Boumerdes,CORSO PLAGE,50,2015,true,true,598,1000
 01644,ECHAHID SAHEL MOHAMED,ساهل محمد - زموري البحري,35,,ZEMMOURI,36.8038,3.5767,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,BORDJ MENAIEL,ZEMMOURI ELBAHRI,50,,true,false,850,10400
 01645,ELMODJAHED ELMOTAWAFI ADJAL MOHAMED,محمد عجال يسر,35,,ISSER,36.7245,3.6751,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,Isser,LOTISSEMENT 1ER PHASE,50,2016,true,false,800,2500
@@ -1653,7 +1653,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01652,ELMODJAHID TAMCHICHAT BRAHIM,تمشيشيات ابراهيم بومرداس,35,,BOUMERDES,36.7613,3.4695,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,Boumerdes,RUE DES VILLAS ELDER,200,2013,false,false,596,596
 01653,ECHAHID AHMED KHALED ELKBIR,احمد خالد كبير بودواو,35,,BOUDOUAOU,36.7328,3.4111,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Boudouaou,SITE ELMERDJA,200,1998,true,true,6692,17080
 01654,echahid ali djedir,علي جدير بني عمران,35,,BENI AMRANE,36.6768,3.5976,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,thenia,LA ROUTE NATIONAL N°5,200,2005,true,false,4959,16800
-01655,ECHAHID AYAYECHE AHMED,احمد عشايش - قدارة,35,,BOUZEGZA KEDDARA,36.63,3.4839,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Boudouaou,CENTRE VILLE,200,2016,true,true,1550,5000
+01655,ECHAHID AYAYECHE AHMED,احمد عشايش - قدارة,35,,BOUZEGZA KEDDARA,36.63,3.4839,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Boudouaou,CENTRE VILLE,200,2016,true,true,1550,5000
 01656,ECHAHID BEN AYAD MOHAMED,,35,,LEGHATA,36.749,3.6846,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ MENAIEL,CENTRE VILLE,200,,true,true,8745,10000
 01657,ECHAHID CHAABANE MOHAMED,الشهيد شعبان محمد - الأربعطاش,35,,LARBATACHE,36.638885,3.364437,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Khemis el khechna,LA ROUTE N°27 VERS KHEMIS EL KHENCHLA,200,2010,true,true,1324,2000
 01658,ECHAHID GUETITECHE BOUALEM,الشهيد قطيطش بوعلام زموري,35,,ZEMMOURI,36.7841,3.6043,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ MENAIEL,RUE DU STADE,200,1999,true,true,2525,15776
@@ -1666,7 +1666,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01665,ECHAHID BAAZIZE MOHAMED ESEGHIR,محمد بعزيزت خميس الخشنة,35,,KHEMIS EL KHECHNA,36.6517,3.3297,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Khemis el khechna,rue bouziane rabeh,200,1988,true,false,785,2915
 01666,ECHAHID BEN TALEB BRAHIM,,35,,THENIA,36.728,3.5555,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,THENIA,RUE ANOU ALI,200,,true,false,1115,3107
 01667,ECHAHID BOUGHALA MOUSSA,بوغلة موسى - حمادي,35,,HAMMEDI,36.6799,3.2607,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Khemis el khechna,RUE DE L'APC,200,,true,false,500,1300
-01668,ECHAHID BOUIRI BOUALEM,احمد بن منصور برج منايل,35,,BORDJ MENAIEL,36.74,3.72,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BORDJ MENAIEL,RUE BOUIRI BOUALEM,200,,true,false,570,965
+01668,ECHAHID BOUIRI BOUALEM,احمد بن منصور برج منايل,35,,BORDJ MENAIEL,36.74,3.72,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BORDJ MENAIEL,RUE BOUIRI BOUALEM,200,,true,false,570,965
 01669,ECHAHID DORBANE RABEH,الشهيد دربان رابح بني عمران,35,,BENI AMRANE,36.6674,3.5871,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,thenia,CITE N°2 BENI AMRANE,200,2010,true,false,600,2700
 01670,ECHAHID LAMALI ALI,,35,,OULED MOUSSA,36.6548,3.4045,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Khemis el khechna,CHATEAU D'EAU,200,2009,true,false,1631,2000
 01671,ECHAHID RAHMOUNE SAID,الشهيد رحموني سعيد - الناصرية,35,,NACIRIA,36.7496,3.8346,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Naciria,CENTRE VILLE,,,true,,499,1203
@@ -1739,7 +1739,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01738,Maakeb el Djillali,الشهيد معقب الجيلالي,38,,TISSEMSILT,35.6065,1.8114,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,TISSEMSILT,Tissemsilt centre,40,,true,false,1200,1800
 01739,Nakrouf Ahmed,الشهيد نقروف أحمد,38,,:,35.8655,1.6829,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,BORDJ BOUNAAMA,SIDI SLIMANE CENTRE,50,2016,true,false,886,1200
 01740,CLS,مركز الترفيه العلمي تيسمسيلت,38,,TISSEMSILT,35.5964,1.8268,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,TISSEMSILT,ROUTE BOUGARA,150,2019,true,false,400,5000
-01741,Dadoune bekhaira,,38,,TISSEMSILT,35.6,1.793,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,TISSEMSILT,Ain Laura,300,2014,true,false,1445,6457.69
+01741,Dadoune bekhaira,,38,,TISSEMSILT,35.6,1.793,approximate,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,TISSEMSILT,Ain Laura,300,2014,true,false,1445,6457.69
 01742,Akef el Hadj,الشهيد عكاف الحاج,38,,OULED BESSAM,35.6875,1.8638,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TISSEMSILT,Ouled Bessam centre,300,2009,true,false,1830,2400
 01743,Bounouira Djelloul,المركب الرياضي الجواري خميستي,38,,KHEMISTI,35.6674,1.958,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,KHEMISTI,khemisti centre,300,,true,false,2100,2500
 01744,CHAHID EL Arbi Azar,,38,,:,35.8655,1.683,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ BOUNAAMA,SIDI SLIMANE CENTRE,300,2015,true,false,994,2000
@@ -1768,7 +1768,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01767,Mekassi Ali,الشهيد : مقاسي علي,38,,OULED BESSAM,35.6855,1.8608,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TISSEMSILT,Ouled Bessam centre,300,,true,false,450,700
 01768,Merzouk kouider ben Ali,الشهيد: مرزوق قويدر بن علي,38,,LAYOUNE,35.6954,1.9965,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,KHEMISTI,LAAYOUNE CENTRE,150,,true,false,470,600
 01769,Tijani Med,,38,,LAZHARIA,35.9354,1.5619,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,LAZHARIA,LAZHARIA,150,,true,false,450,600
-01770,Zebar Ben Yamina,,38,,AMMARI,35.58,1.6553,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AMMARI,AMMARI,40,,true,false,350,700
+01770,Zebar Ben Yamina,,38,,AMMARI,35.58,1.6553,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AMMARI,AMMARI,40,,true,false,350,700
 01771,Assous Med,الشهيد عسوس محمد,38,,BENI LAHCENE,35.8124,1.6902,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BORDJ BOUNAAMA,Beni Lahcen centre,120,2014,true,false,650,1000
 01772,SALLE POLYVALENTE,القاعة متعددة الخدمات برج الأمير عبد القادر,38,,BORDJ EL EMIR ABDELKADER,35.8661,2.2726,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BORDJ EMIR ABDELKADER,BORDJ EMIR AEK CENTRE,120,,true,false,650,800
 01773,Sokri Ali,الشهيد سكر علي,38,,TISSEMSILT,35.597,1.821,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,TISSEMSILT,500 logts,120,2012,true,false,300,600
@@ -1849,17 +1849,17 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01848,CSP Ain Soltane,,41,,AIN SOLTANE,36.179656,7.368851,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SEDRATA,Ain Soltane,250,2011,true,,,1500
 01849,CSP Benchouia rebai,,41,,SEDRATA,36.135374,7.533308,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SEDRATA,Sedrata,250,2009,true,,,
 01850,CSP Drea,,41,,DREA,36.123656,7.88064,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAOURA,Drea,150,2011,true,,1200,5000
-01851,CSP hadada,,41,,HADDADA,36.23,8.337,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HADDADA,Hadada,250,2006,true,,1200,4500
+01851,CSP hadada,,41,,HADDADA,36.23,8.337,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HADDADA,Hadada,250,2006,true,,1200,4500
 01852,CSP hanacha,,41,,HANANCHA,36.261755,7.788754,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MECHROHA,Hanancha,250,2012,true,,,
 01853,CSP MERAHNA,,41,,MERAHNA,36.1944,8.1487,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MERAHNA,Merahna,250,2006,false,,1200,3000
-01854,CSP OUED KBARIT,,41,,OUED KEBRIT,35.9203,7.9168,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OUM EL ADHAIM,OUED KBARIT,,,true,,,
+01854,CSP OUED KBARIT,,41,,OUED KEBRIT,35.9203,7.9168,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OUM EL ADHAIM,OUED KBARIT,,,true,,,
 01855,CSP Ouled Driss,,41,,OULED DRISS,36.359964,8.02637,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED DRISS,Ouled Idriss,150,2010,false,,,6148
 01856,CSP Ouled Moumen,,41,,OULED MOUMEN,36.344168,8.315321,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HADDADA,Ouled Moumen,250,2016,true,,,
 01857,CSP Oum Ladhaim,,41,,OUM LAADHAM,36.027184,7.60636,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OUM EL ADHAIM,Oum ladheim,250,2011,true,,,5012
 01858,CSP Selatnia ramdhan,,41,,M'DAOUROUCHE,36.083329,7.822498,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,M'DAOUROUCH,M'daourouche,250,2018,true,,,5000
 01859,CSP Sidi Fradj,,41,,SIDI FREDJ,36.152375,8.200497,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,MERAHNA,Sidi Fredj,250,2011,true,,,4900
-01860,CSP Souk Ahras,,41,,SOUK-AHRAS,36.2968,7.934,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUK-AHRAS,Souk Ahras,,2014,true,,820,5000
-01861,CSP SOUK-AHRAS,,41,,SOUK-AHRAS,36.2968,7.934,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUK-AHRAS,SOUK-AHRAS,,2014,true,,820,5000
+01860,CSP Souk Ahras,,41,,SOUK-AHRAS,36.2968,7.934,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUK-AHRAS,Souk Ahras,,2014,true,,820,5000
+01861,CSP SOUK-AHRAS,,41,,SOUK-AHRAS,36.2968,7.934,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SOUK-AHRAS,SOUK-AHRAS,,2014,true,,820,5000
 01862,CSP Taoura,,41,,TAOURA,36.159619,8.048053,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TAOURA,Taoura,250,2009,true,,1200,3000
 01863,MJ Agouni Tidjani,,41,,M'DAOUROUCHE,36.073062,7.826883,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,M'DAOUROUCH,M'daourouche,200,1985,true,,,
 01864,MJ Ain Zana,,41,,AIN ZANA,36.398725,8.190374,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OULED DRISS,Ain Zana,150,2012,true,,406,406
@@ -1870,7 +1870,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01869,MJ Hafsi el Mekki,,41,,TERRAGUELT,35.888143,7.594971,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUM EL ADHAIM,Terraguelt,150,2011,true,,1610,2600
 01870,MJ Khedara,,41,,KHEDARA,36.28218,8.322697,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HADDADA,Khedara,150,2012,true,,600,600
 01871,MJ Laaouar Laid,,41,,SEDRATA,36.127,7.534,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SEDRATA,Sedrata,150,1981,true,,,
-01872,MJ Mehnaoui Tayeb,,41,,OUED KEBRIT,35.9203,7.9168,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUM EL ADHAIM,Oued Kebrit,150,1984,true,,,
+01872,MJ Mehnaoui Tayeb,,41,,OUED KEBRIT,35.9203,7.9168,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,OUM EL ADHAIM,Oued Kebrit,150,1984,true,,,
 01873,MJ Mehtali Seddik,,41,,M'DAOUROUCHE,36.076442,7.818272,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,M'DAOUROUCH,M'daourouche,250,1994,true,,,
 01874,MJ Mohamed Boudiaf,,41,,TAOURA,36.166293,8.034075,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TAOURA,Taoura,250,1985,true,,,
 01875,MJ Mohamed Boudiaf,,41,,SEDRATA,36.13643,7.53293,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SEDRATA,Sedrata,150,1979,true,,,
@@ -1902,9 +1902,9 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01901,,الشهيد رومني الطيب,42,,CHERCHELL,36.60325,2.181704,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,CHERCHEL,Hai el djamil route ouest ténès,80,1995,true,,250,765
 01902,Mada Mohamed,,42,,DAMOUS,36.553244,1.736805,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,DAMOUS,Hai Kostiasse,,2012,true,,,
 01903,Minaoui Abdelkader,,42,,TIPAZA,36.640503,2.328445,exact,sig_mjs,mjs,CLS,Centre de loisirs scientifiques,مركز الترفيه العلمي,TIPAZA,Ga routière de tipaza,250,2013,true,false,1617,2000
-01904,Ahmed Abdelkader Amroun,عبد القادر عمرون,42,,MENACEUR,36.561521,2.533913,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI AMAR,Centre Ville,150,2006,true,,1200,1246
+01904,Ahmed Abdelkader Amroun,عبد القادر عمرون,42,,MENACEUR,36.561521,2.533913,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI AMAR,Centre Ville,150,2006,true,,1200,1246
 01905,Ahmed El Keriat,أحمد الكرياط,42,,NADOR,36.56916,2.394674,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI AMAR,Centre Ville,150,2008,true,,1200,3700
-01906,Ahmed Elchair,المجاهد المتوفي أحمد شعير,42,,CHAIBA,36.627242,2.725429,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,KOLEA,Route de Stade,100,2005,true,,1200,2500
+01906,Ahmed Elchair,المجاهد المتوفي أحمد شعير,42,,CHAIBA,36.627242,2.725429,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,KOLEA,Route de Stade,100,2005,true,,1200,2500
 01907,Ben Djedda Ben Aouda,الشهيد بن جدة بن عودة,42,,ATTATBA,36.570237,2.674918,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,KOLEA,Route national n 67,100,2005,true,,2500,5000
 01908,Hamedani Mohamed,حمداني محمد,42,,BOU ISMAIL,36.643985,2.688175,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BOU ISMAIL,Route de Kolea,200,2008,true,,1500,2500
 01909,Ibrahem Chorfi,,42,,SIDI-AMAR,36.545738,2.305324,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,SIDI AMAR,Rue des écoles,150,2005,true,,1332,2658
@@ -1917,12 +1917,12 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01916,,لايوجد,42,,HADJOUT,36.503264,2.415537,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HADJOUT,Route Meurad,200,2012,true,,,5138
 01917,AEK Hemmissi,المجاهد المتوفي عبد القادر حميسي,42,,CHAIBA,36.614847,2.752114,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,KOLEA,Village Agrécol Berbissa,60,,true,,391,483
 01918,Ahbab Fatima,الشهيدة أحباب فطيمة,42,,AIN TAGOURAIT,36.603594,2.611384,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOU ISMAIL,Route 1 Novembre,275,1987,true,,152,1069
-01919,Ahmed Amran,الشهيد أحمد عمران,42,,MENACEUR,36.561521,2.533913,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI AMAR,Rue 1er Novembre,200,1988,true,,324,994
+01919,Ahmed Amran,الشهيد أحمد عمران,42,,MENACEUR,36.561521,2.533913,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,SIDI AMAR,Rue 1er Novembre,200,1988,true,,324,994
 01920,Ahmed Bouredja,أمحمد بورجة,42,,SIDI GHILES,36.580869,2.127198,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHERCHEL,Centre ville,210,2015,true,,235,241
 01921,Ahmed Boutheldja,أحمد بوثلجة,42,,MERAD,36.476184,2.425839,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HADJOUT,Rue Boudjebroune,184,1986,true,,180,360
 01922,Ali Ferkali,المجاهد فرقاني علي,42,,KHEMISTI,36.628759,2.677544,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOU ISMAIL,Route Mouloud Feraoune,181,1989,true,,261,1167
 01923,Amiziane Djelloul,أمزيان جلول,42,,BOURKIKA,36.492321,2.477332,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AHMAR EL AIN,Hai maamar mohamed,120,1983,true,,493,2404
-01924,Ben Kridja Kadour,الشهيد أحمد عمران,42,,SIDI RACHED,36.561521,2.533913,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AHMAR EL AIN,Rue de stade,150,1987,true,,285,798
+01924,Ben Kridja Kadour,الشهيد أحمد عمران,42,,SIDI RACHED,36.561521,2.533913,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AHMAR EL AIN,Rue de stade,150,1987,true,,285,798
 01925,Bouamama Ahmed,الشهيد أحمد بوعمامة,42,,GOURAYA,36.573056,1.905045,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GOURAYA,Rue du nord,300,2010,true,,511,2632
 01926,Brankia Hamou,المتوفي برانكية حمو,42,,HADJOUT,36.512706,2.410469,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HADJOUT,Rue Lassel Abdel Hamid,400,,true,,1700,2831
 01927,Djelloul Belmiloud,الشهيد جلول بلميلود,42,,MESSELMOUN,36.563539,2.00435,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,GOURAYA,Rue d'APC,110,1990,true,,284,626
@@ -1940,11 +1940,11 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 01939,Zaimi Meama (Hailloula),الشهيد زغمي معمر حلولة الساحيلية,42,,ATTATBA,36.57195,2.63637,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,KOLEA,El Sahilia,150,1979,true,,,
 01940,,المجاهد متوفي عبد القادر المكرطار,42,,BOU HAROUN,36.641933,2.773537,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BOU ISMAIL,Rue Rabia Abderrahman,,,true,,286,312
 01941,,المجاهد المتوفي خالد شوار,42,,KOLEA,36.641933,2.773754,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,KOLEA,Route d'Alger,200,2012,true,,800,5240
-01942,,,42,,HADJOUT,36.504375,2.417621,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HADJOUT,Route Meurad,362,,false,,562,3855
+01942,,,42,,HADJOUT,36.504375,2.417621,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,HADJOUT,Route Meurad,362,,false,,562,3855
 01943,,الشهيد موسى زيتوني,42,,TIPAZA,36.590645,2.44633,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TIPAZA,Rue des écoles,500,1994,true,,3098,3098
 01944,,المجاهد المتوفي شريفي محمد,42,,CHERCHELL,36.603462,2.181713,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHERCHEL,Route de Tinnes,250,,true,,582,2342
-01945,Mohamed Boumedien,,42,,HADJOUT,36.504375,2.417621,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,HADJOUT,Route Meurad,150,2014,true,,,
-01946,,المجاهد المتوفي أحمد شعير,42,,CHAIBA,36.627242,2.725429,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,KOLEA,Route de stade,100,2013,true,,,
+01945,Mohamed Boumedien,,42,,HADJOUT,36.504375,2.417621,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,HADJOUT,Route Meurad,150,2014,true,,,
+01946,,المجاهد المتوفي أحمد شعير,42,,CHAIBA,36.627242,2.725429,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,KOLEA,Route de stade,100,2013,true,,,
 01947,,هاشم عبد القادر,42,,CHERCHELL,36.596659,2.25793,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,CHERCHEL,Elhamedania Douar ben khira,220,2010,true,,1372,5076
 01948,ABDERAHMANE DJAHLI,بيت الشباب الشهيد عبد الرحمان جاهلي تاجنانت,43,,TADJENANET,36.1129,5.9843,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,TADJENANET,Près de Station de bus,50,2010,true,true,650,2000
 01949,CHAHID MAICHE ABDELKADER,بيت الشباب الشهيد معايش عبد القادر,43,,MILA,36.4459,6.2634,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,MILA,Cité Freres Ben si khlifa,50,2005,true,true,600,1800
@@ -2032,7 +2032,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02031,Salle Polyvalente Chahid Hamadouche Ahmed,,44,,MEKHATRIA,36.3044,1.9588,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL AMRA,Salle Polyvalente Chahid Hamadouche Ahmed Mekhatria,170,2015,true,,328,400
 02032,Salle Polyvalente Chahid Kouiche Bouhani,القاعة المتعددة الخدمات الشهيد قعيش بوهني العطاف,44,,EL-ATTAF,36.2137,1.6793,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL ATTAF,Salle Polyvalente Chahid Kouiche Bouhani VSA El Attaf,60,,true,false,250,1000
 02033,Salle Polyvalente Chahid Saedi Ben Aissa,القاعة المتعددة النشاطات الشهيد سعدي بن عيسى عريب,44,,ARIB,36.2904,2.0696,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL AMRA,Salle Polyvalente Chahid Saedi Ben Aissa VSA arib,97,,true,true,210,600
-02034,Salle Polyvalente Chahid Seghir mooh Med,قاعة متعددة الخدمات الشهيد صغير موح محمد سيدي لخضر,44,,SIDI LAKHDAR,36.2646,2.16,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,KHEMIS Miliana,Salle Polyvalente Chahid Seghir mooh Med Ex Aswak el fellah,251,2009,true,,582,611
+02034,Salle Polyvalente Chahid Seghir mooh Med,قاعة متعددة الخدمات الشهيد صغير موح محمد سيدي لخضر,44,,SIDI LAKHDAR,36.2646,2.16,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,KHEMIS Miliana,Salle Polyvalente Chahid Seghir mooh Med Ex Aswak el fellah,251,2009,true,,582,611
 02035,Salle Polyvalente Chahid Tagroute Cherif,,44,,EL-ABADIA,36.2737,1.6742,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL ABADIA,Salle Polyvalente Chahid Tagroute Cherif Hay Sidi Saad,60,,true,true,470,2166
 02036,Salle Polyvalente Chahid Zitouni abdelkader,القاعة المتعددة الخدمات الشهيد سعيد زيتوني عبد القادر جليدة,44,,DJELIDA,36.203,2.0803,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,DJELIDA,Salle Polyvalente Chahid Zitouni abdelkader Aswak el fellah,160,2009,true,,952,952
 02037,Salle Polyvalente Ex Aswak el fellah,قاعة متعددة الخدمات بن علال,44,,BEN ALLAL,36.3103,2.1635,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,MILIANA,Salle Polyvalente Ex Aswak el fellah,80,2009,true,,385,406
@@ -2050,14 +2050,14 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02049,CSP chahid belabdeli mohamed,الشهيد بلعبدلي محمد,45,,MEKMEN BEN AMAR,33.7136,-0.722,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Mokhman ben amer,hai 08 mai RN22,194,2010,true,true,856,15000
 02050,CSP chahid ben yakoub mohamed,الشهيد بن يعقوب محمد,45,,SFISSIFA,32.7203,-0.856,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Ain sefra,rue azrou maamar sfisifa,110,2015,true,true,801,7857
 02051,CSP chahid djamil ali,الشهيد جميل علي,45,,MOGHRAR,32.5152,-0.5732,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Moghrar,hai weam moghrar,120,2011,true,true,896,15000
-02052,CSP chahid larguat mohamed,الشهيد لرقط محمد,45,,ASLA,32.9987,-0.07,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Assila,cite harmek kadour,341,2015,true,true,801,6900
+02052,CSP chahid larguat mohamed,الشهيد لرقط محمد,45,,ASLA,32.9987,-0.07,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,Assila,cite harmek kadour,341,2015,true,true,801,6900
 02053,CSP chahid yazid mohamed,الشهيد يزيد محمد,45,,EL BIOD,33.7615,-0.1338,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,mecheria,cite 70 logts biodh,160,2010,true,true,757,1200
 02054,CSP MECHERIA,المجاهد قبيز عمارة,45,,MECHRIA,33.543,-0.2768,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,mecheria,jardin el maghrib elarabi mecheria,180,2009,true,true,801,17600
 02055,auberge de jeune chahida fendou meriem,الشهيدة فندو مريم,45,,TIOUT,32.7735,-0.4247,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Ain sefra,rue moulay aek hai jedid,150,2013,true,true,370,3661
 02056,maison de jeune,الشهيد درهاب أحمد,45,,MECHRIA,33.5466,-0.2922,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,mecheria,hai moujahid sekine ahmed,425,2016,true,true,878,2000
 02057,maison de jeune CHAABANE MEJDOUB,الشهيد شعباني المجدوب,45,,AIN SEFRA,32.7572,-0.5978,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Ain sefra,Hai essalam mouilah ain sefra,240,2009,true,true,390,1933
 02058,maison de jeune chahid abdelali belhlkiri,الشهيد بلخيري عبد العالي,45,,DJENIENNE BOUREZG,32.3698,-0.8096,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOGHRAR,hai nakhil djenien,190,2013,true,true,367,905
-02059,Maison de jeune chahid ben chiha mohamed,بن شيحة محمد,45,,MOGHRAR,32.5186,-0.58,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOGHRAR,Cité BOUDLAL Mohammed MOGHRAR FOUGHANI,240,,true,true,737,2970
+02059,Maison de jeune chahid ben chiha mohamed,بن شيحة محمد,45,,MOGHRAR,32.5186,-0.58,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,MOGHRAR,Cité BOUDLAL Mohammed MOGHRAR FOUGHANI,240,,true,true,737,2970
 02060,maison de jeune chahid med ben atta,الشهيد بن عطة محمد,45,,AIN SEFRA,32.7442,-0.584,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Ain sefra,hai el kessar sidi boutkhil,521,1997,true,true,1140,4261
 02061,maison de jeune chahid med hechifa,الشهيد حشيفة محمد,45,,ASLA,33.0028,-0.077,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,ASLA,cite 18 février asla,297,1999,true,true,280,730
 02062,maison de jeune chahid miloudi laid,الشهيد ميلودي عبد المولى,45,,KASDIR,33.8877,-0.9893,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,Mokhman ben amer,RN22 abdelmoula,87,2009,true,true,520,2040
@@ -2067,18 +2067,18 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02066,salle polyvalente,,45,,NAAMA,33.2727,-0.3186,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,Naama,cite 100 logts évolutifs naama,350,2014,true,true,466,7670
 02067,"""LES FRERES MEHALI LAKHDAR """,الاخوة محالي,46,,HAMMAM BOU HADJAR,35.3805,-0.9654,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,HAMMAM BOU HADJAR,bv mohamed khemisti,50,1985,true,true,1800,3704
 02068,AGUILI BOUHDJAR,عقيلي بوحجر,46,,HAMMAM BOU HADJAR,35.374,-0.9695,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,HAMMAM BOU HADJAR,RUE LARBI BEN MHIDI,50,2018,true,true,436,495
-02069,"Auberge de jeunes ""Taibi Medeouni""",الطيبي مديوني,46,,EL AMRIA,35.5301,-1.0297,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL AMRIA,el amria Route Plage Bouzedjar,50,2016,true,false,600,2407
+02069,"Auberge de jeunes ""Taibi Medeouni""",الطيبي مديوني,46,,EL AMRIA,35.5301,-1.0297,approximate,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL AMRIA,el amria Route Plage Bouzedjar,50,2016,true,false,600,2407
 02070,"auberge de jeunes 50 lits "" Amira Rayah""",عميرة الرايح,46,,AIN TEMOUCHENT,35.3016,-1.1396,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,AIN TEMOUCHENT,boulevard mohamed boudiaf,50,2022,true,false,726,1673
 02071,IZZA BAHRI,ايزة بحري,46,,TERGA,35.4209,-1.1799,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL MALEH,RUE DE LA PLAGE,50,2005,true,,572,1100
 02072,lehouel khadra,,46,,BENI SAF,35.3005,-1.359,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,BENI SAF,rue plage des puits route de tlemcen,50,2008,true,true,992,3563
 02073,merni el hadj,مريني الحاج,46,,AIN TEMOUCHENT,35.3015,-1.1407,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,AIN TEMOUCHENT,rue ould belaid mohamed,50,1996,true,true,600,2402
-02074,taybi medeouni,الطيبي مديوني,46,,EL AMRIA,35.5301,-1.0297,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL AMRIA,Cité 280 Logt,50,2018,true,false,600,2407
-02075,soussi mohamed,,46,,BENI SAF,35.2962,-1.3834,exact,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BENI SAF,cite el bouhmidi,180,,true,false,700,1775
-02076,SOUSSI MOHAMED,,46,,BENI SAF,35.2962,-1.3834,exact,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BENI SAF,CITE EL BOUHMIDI,180,,true,true,700,1774.8
-02077,ABDI ABEDELKADER,,46,,BENI SAF,35.2962,-1.3834,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,BENI SAF,HAI BOUKOUDOUNE,300,2015,true,false,1056,2100
+02074,taybi medeouni,الطيبي مديوني,46,,EL AMRIA,35.5301,-1.0297,approximate,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL AMRIA,Cité 280 Logt,50,2018,true,false,600,2407
+02075,soussi mohamed,,46,,BENI SAF,35.2962,-1.3834,approximate,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BENI SAF,cite el bouhmidi,180,,true,false,700,1775
+02076,SOUSSI MOHAMED,,46,,BENI SAF,35.2962,-1.3834,approximate,sig_mjs,mjs,CC,Centre culturel,مركز ثقافي,BENI SAF,CITE EL BOUHMIDI,180,,true,true,700,1774.8
+02077,ABDI ABEDELKADER,,46,,BENI SAF,35.2962,-1.3834,approximate,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,BENI SAF,HAI BOUKOUDOUNE,300,2015,true,false,1056,2100
 02078,BEN ALLAL MEISSOUME,,46,,BENI SAF,35.3035,-1.3584,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,BENI SAF,RUE PLAGE DES PUITS,150,2019,true,true,4462,9198
 02079,"Camp de jeunes ""Gourine Abdelkader""",قورين عبد القادر,46,,EL AMRIA,35.5303,-1.0305,exact,sig_mjs,mjs,CJ,Camp de jeunes,مخيم الشباب,EL AMRIA,Route Plage Bouzedjar,200,2018,true,false,4463,9198
-02080,"""BENAISSA RAHAL BOUKHATEM",بن عيسى رحال بوخاتم,46,,HAMMAM BOUHADJAR,35.3754,-0.97,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HAMMAM BOUHADJAR,RUE LARBI BEN MHIDI,300,1997,false,,1015,19484
+02080,"""BENAISSA RAHAL BOUKHATEM",بن عيسى رحال بوخاتم,46,,HAMMAM BOUHADJAR,35.3754,-0.97,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,HAMMAM BOUHADJAR,RUE LARBI BEN MHIDI,300,1997,false,,1015,19484
 02081,08 mai 1945,08 ماي 1945,46,,AIN EL ARBAA,35.4068,-0.8756,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AIN LARBAA,zone industriel,300,2006,true,,956,7.6
 02082,Abdi Abdelkader,العابدي عبد القادر,46,,BENI SAF,35.292,-1.3985,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BENI SAF,HAI BOUKOURDOUNE,300,2015,true,true,1056,2100
 02083,AIHAR BEN YOUCEF,العيهار بن يوسف,46,,EL MALEH,35.3942,-1.0977,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL MALEH,RUE HADOU HOUARI,300,2015,true,,2100,10560
@@ -2094,7 +2094,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02093,"""boulenouar Mohamed""",,46,,AIN TEMOUCHENT,35.2993,-1.1215,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN TEMOUCHENT,cité djawhara,300,2015,true,true,397,800
 02094,abssada ahmed,,46,,EL MALEH,35.3852,-1.0985,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL MALEH,rue miloud ould belaid cite sidi said,150,,true,,540,762
 02095,Attar Elhadi,,46,,BENI SAF,35.308,-1.3692,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BENI SAF,RUE 1er novembre,250,,true,false,436,495
-02096,ben goudifa abd el kader,بن قوذيفة عبد القادر,46,,AIN TEMOUCHENT,35.293,-1.14,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN TEMOUCHENT,boulevard 1er novembre 1954,180,,true,true,200,200
+02096,ben goudifa abd el kader,بن قوذيفة عبد القادر,46,,AIN TEMOUCHENT,35.293,-1.14,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AIN TEMOUCHENT,boulevard 1er novembre 1954,180,,true,true,200,200
 02097,BENSAFI MOHAMED OULD SAFI,بن صافي محمد ولد صافي,46,,SIDI SAFI,35.2764,-1.3384,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BENI SAF,SIDI SAFI AIN LARBAA,250,2012,true,,4075,1026
 02098,bouhamida kouridek cheikh,,46,,EL MALEH,35.3898,-1.0925,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL MALEH,rue mohamed khemisti,180,,true,,458,612
 02099,karra kacem,قارة قاسم,46,,TERGA,35.416,-1.1799,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL MALEH,cite benammeur djebari boumediene,100,2006,true,,964,1100
@@ -2106,7 +2106,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02105,20 aout 1956,,46,,HASSI EL GHELLA,35.4471,-1.0616,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,EL AMRIA,rue 20 aout 1956,,,false,true,,
 02106,"AMARA belkasem""",,46,,HAMMAM BOUHADJAR,35.3766,-0.9686,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,HAMMAM BOUHADJAR,cmmune hammam bouhdjar,100,,true,,400,400
 02107,belharizi boucif,قديد محمد,46,,BENI SAF,35.2249,-1.4006,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,BENI SAF,commune emir abdelkader,200,,true,false,350,500
-02108,benamara bloufa,بن عمارة بلوفة اوراس المائدة,46,,AIN TEMOUCHENT,35.3685,-1.01,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,AIN TEMOUCHENT,aouresse elmaida,100,,true,true,400,400
+02108,benamara bloufa,بن عمارة بلوفة اوراس المائدة,46,,AIN TEMOUCHENT,35.3685,-1.01,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,AIN TEMOUCHENT,aouresse elmaida,100,,true,true,400,400
 02109,betahar mohamed,,46,,AIN TOLBA,35.2612,-1.2617,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,AIN KIHEL,village djujura msalli hadj,150,2016,true,,200,200
 02110,medeouni mohamed,بوكري بن شاعة,46,,AOUBELLIL,35.1351,-0.9891,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,AIN KIHEL,commune aoubelil,150,2016,true,,200,200
 02111,medeouni mohamed,بوكري بن شاعة,46,,AOUBELLIL,35.1364,-0.9897,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,AIN KIHEL,commune aoubelil,100,,true,,140,140
@@ -2198,7 +2198,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02197,"""Auberge de jeunes tamri kada""",تامري قادة,49,,Ouled said,29.4053,0.2464,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,TIMIMOUN,Ouled Said,50,2020,true,true,1271,4800
 02198,"""Complexe sportif de proximité 1er nouvembre 1954""",اول نوفمبر 1954,49,,KSAR KADDOUR,29.5838,0.3782,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TINERKOUK,Ksar Kaddour,150,2017,true,true,380,15000
 02199,"""Complexe sportif de proximité aiachi ramdane""",عياشي رمضان,49,,Ouled said,29.411781,0.229175,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TIMIMOUN,Ouled Said,150,2017,true,true,3,357
-02200,"""Complexe sportif de proximité elchahid dakhli elmoukhtar""",داخلي مختار,49,,AOUGROUT,28.7061,0.34,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AOUGROUT,Aougrout,300,1999,true,false,491,17625
+02200,"""Complexe sportif de proximité elchahid dakhli elmoukhtar""",داخلي مختار,49,,AOUGROUT,28.7061,0.34,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,AOUGROUT,Aougrout,300,1999,true,false,491,17625
 02201,"""Complexe sportif de proximité elmoujahed dehadj abdelaziz""",,49,,CHAROUINE,29.0251,-0.2512,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHAROUINE,Charouine,90,2002,true,false,597,5781
 02202,"""Complexe sportif de proximité elmoujahed eldine slimane""",الدين سليمان,49,,TINERKOUK,29.709,0.724,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,TINERKOUK,Tinerkouk,811,2002,true,false,1440,30600
 02203,"""Complexe sportif de proximité elmoujahed samari ahmed""",,49,,OULED AISSA,29.422,-0.095,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,CHAROUINE,Ouled Aissa,150,2010,true,false,1566,14396
@@ -2207,12 +2207,12 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02206,"""Maison de jeunes ben abdelmalak ramdhan",بن عبد المالك رمضان,49,,AOUGROUT,28.703692,0.340587,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,AOUGROUT,tibelghamin,130,,true,false,,
 02207,"""Maison de jeunes mohamed belagoune""",المجاهد بلعقون محمد بن امحمد,49,,Timimoun,29.2633,0.2354,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TIMIMOUN,hasi anbou,90,1975,true,false,1032,4151
 02208,"""Maison de jeunes romani mohamed""",,49,,CHAROUINE,29.024,-0.256,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,CHAROUINE,Charouine,123,2017,true,true,143,2086
-02209,"""Maison de jeunes tinerkouk""",,49,,TINERKOUK,29.71,0.72,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TINERKOUK,Tinerkouk,300,2020,true,true,1269,6552
+02209,"""Maison de jeunes tinerkouk""",,49,,TINERKOUK,29.71,0.72,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TINERKOUK,Tinerkouk,300,2020,true,true,1269,6552
 02210,Maison de jeunes toutay boubaker,,49,,Timimoun,29.2483,0.2251,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TIMIMOUN,Timimoune,90,2015,false,true,621,3172
-02211,Salle polyvalente Talmine,,49,,TALMINE,29.3,-0.537,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,CHAROUINE,"boukezzine, Talmine, timimoun, Algérie",200,2020,true,false,65,205
-02212,"""Auberge de jeunes Aguojile abdelkader""",,50,,BORDJ BADJI MOKHTAR,21.3277,0.964,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ BADJI MOKHTAR,RN 6 Le nouveau quartier BBM,30,2016,true,true,,
+02211,Salle polyvalente Talmine,,49,,TALMINE,29.3,-0.537,approximate,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,CHAROUINE,"boukezzine, Talmine, timimoun, Algérie",200,2020,true,false,65,205
+02212,"""Auberge de jeunes Aguojile abdelkader""",,50,,BORDJ BADJI MOKHTAR,21.3277,0.964,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ BADJI MOKHTAR,RN 6 Le nouveau quartier BBM,30,2016,true,true,,
 02213,"""Complexe sportif de proximité elchahid ben abdelkrime lahbib""",,50,,BORDJ BADJI MOKHTAR,21.334,0.964,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,BORDJ BADJI MOKHTAR,route nord de la wilaya,700,2012,true,true,1193,18000
-02214,"""Maison de jeunes bordj badji mokhtar""",,50,,BORDJ BADJI MOKHTAR,21.3277,0.964,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BORDJ BADJI MOKHTAR,RN 6 Le nouveau quartier BBM,300,2016,true,true,604,4000
+02214,"""Maison de jeunes bordj badji mokhtar""",,50,,BORDJ BADJI MOKHTAR,21.3277,0.964,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BORDJ BADJI MOKHTAR,RN 6 Le nouveau quartier BBM,300,2016,true,true,604,4000
 02215,"""Maison de jeunes elchahid nouari slimane""",,50,,TIMIAOUINE,20.4266,1.8058,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BORDJ BADJI MOKHTAR,Quartier Abdul Qadir Al-Jilali,300,2017,true,true,,620
 02216,,,50,,BORDJ BADJI MOKHTAR,21.329118,0.961284,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,BORDJ BADJI MOKHTAR,RN 6 Le nouveau quartier BBM,300,2016,true,true,600,4000
 02217,,,51,,OULED DJELLAL,34.4464,5.0699,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,OULED DJELLAL,,,,false,true,,
@@ -2287,11 +2287,11 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02286,maison de jeunes emir khaled,دار الشباب الأمير خالد توقرت,55,,TOUGGOURT,33.102727,6.061902,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TOUGGOURT,hey ezahra touggourt,450,1973,true,true,400,6413
 02287,maison de jeunes fille mojahida b/hamou mebrouka,دار الشباب البنات المجاهدة بن حمو مبروكة,55,,TOUGGOURT,33.1094,6.0683,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TOUGGOURT,hey elkods touggourt,380,1930,true,true,500,762
 02288,maison de jeunes kheir eddine,دار الشباب خير الدين,55,,TOUGGOURT,33.109274,6.070821,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TOUGGOURT,KHEIR EDDINE TOUGGOURT,350,1987,true,true,2276,4212
-02289,maison de jeunes khourara ei ayech mnageur,,55,,M'NAGUER,33.1279,6.35,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TAIBET,mnageur,250,1987,true,true,440,750
+02289,maison de jeunes khourara ei ayech mnageur,,55,,M'NAGUER,33.1279,6.35,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TAIBET,mnageur,250,1987,true,true,440,750
 02290,maison de jeunes LAGRAF el hadjira,دار الشباب المجاهد بيرش لخضر لقراف,55,,EL HADJIRA,32.6211,5.5961,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL HADJIRA,lagraf,463,1990,true,true,401,1315
 02291,maison de jeunes NESRAT bachir tebesbest,دار الشباب الشهيد نصرات بشير تبسبست,55,,TEBESBEST,33.116,6.0836,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TOUGGOURT,hey elkawakibi tebesbest,200,1994,true,true,261,261
 02292,maison de jeunes nezla,دار الشباب النزلة,55,,NEZLA,33.098,6.0628,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TOUGGOURT,nezla.touggourt,500,,true,true,401,5035
-02293,maison de jeunes tijani abdel hamid temacine,دار الشباب عبد الحميد التيجاني تماسين,55,,TEMACINE,33.01,6.0133,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TEMACINE,tamalaht.temacine,450,1987,true,true,350,2270
+02293,maison de jeunes tijani abdel hamid temacine,دار الشباب عبد الحميد التيجاني تماسين,55,,TEMACINE,33.01,6.0133,approximate,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,TEMACINE,tamalaht.temacine,450,1987,true,true,350,2270
 02294,salle polyvalente sidi mehdi nezla,,55,,NEZLA,33.0609,6.1072,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,TOUGGOURT,sidi mehdi.nezla,,2022,true,true,629,2341
 02295,auberge de jeunes,,56,,BORDJ EL HAOUAS,24.8818,8.4448,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,DJANET,Centre ville Bordj El Houas,50,2019,false,true,1786,6000
 02296,auberge de jeunes IFRI,,56,,DJANET,24.4772,9.5031,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,DJANET,IFRI,50,2000,true,true,520,1000
@@ -2327,7 +2327,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 02326,salle polyvalente 970 log,,57,,DJAMAA,33.5599,5.9799,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,DJAMAA,Cite 970 log,150,2015,true,true,400,11000
 02327,,,57,,M'RARA,33.47591,5.66399,exact,sig_mjs,mjs,SPA,Salle polyvalente,قاعة متعددة الرياضات,DJAMAA,morara centre,250,1992,true,true,650,1008
 02328,ben chikh bobakar ben Mohamed,بيت الشباب بلبشير الشهيد بن شيخ بن محمد,58,,EL MENIAA,30.6029,2.8756,exact,sig_mjs,mjs,AJ,Auberge de jeunes,نزل الشباب,EL MENIA,BELBACHIR,50,1997,true,false,494,5795
-02329,nafnouf ali ben abdenabi,مركب الرياضي الجواري حاسي القارة الشهيد نفنوف على بن عبد النبي,58,,EL MENIAA,30.544,2.92,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL MENIA,hassi elgara chargia,1500,2012,true,true,948,7000
+02329,nafnouf ali ben abdenabi,مركب الرياضي الجواري حاسي القارة الشهيد نفنوف على بن عبد النبي,58,,EL MENIAA,30.544,2.92,approximate,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL MENIA,hassi elgara chargia,1500,2012,true,true,948,7000
 02330,الشهيد روابح عبد الرحمان بن قدور,,58,,HASSI FEHAL,31.601,3.673,exact,sig_mjs,mjs,CSP,Complexe sportif de proximité,مركب رياضي جواري,EL MENIA,De proximité la route national N°1,,2017,false,,796,2398
 02331,EL Medjahid dahmani mohamed,دار الشباب المجاهد دحماني محمد,58,,EL MENIAA,30.5875,2.8796,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL MENIA,badriane,1000,1985,true,true,945,3473
 02332,Maison de jeunes,دار الشباب ديدوش مراد,58,,EL MENIAA,30.5847,2.8823,exact,sig_mjs,mjs,MJ,Maison de jeunes,دار الشباب,EL MENIA,center ville,,2011,true,false,297,640

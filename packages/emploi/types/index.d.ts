@@ -28,8 +28,9 @@ export interface Awem {
   lat: number;
   /** Longitude — AWEM agencies are fully geocoded. */
   lng: number;
-  /** Always `"exact"`: every AWEM carries a real point. */
-  geo_precision: "exact";
+  /** `"exact"`, or `"approximate"` where the source coordinate is too coarse
+   *  to be a per-agency point (see `@geoalgeria/schema` MIN_EXACT_DECIMALS). */
+  geo_precision: "exact" | "approximate";
   /** Always `"anem"`: the point comes from the ANEM directory. */
   geo_method: "anem";
   /** Provenance key into `metadata.sources[]` — always "anem". */

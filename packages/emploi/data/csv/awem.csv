@@ -7,7 +7,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 06,AWEM BEJAIA,06,,,36.7451,5.04821,exact,anem,anem,AWEM,0600,Centre d’Affaires « Big Center » 6ème étage - Bd Krim Belkacem Béjaia,(034) 113 - 309,(034) 113 - 147,awem.bejaia@anem.dz,HAMEDI AOUATEF
 07,AWEM BISKRA,07,,,34.84556,5.69976,exact,anem,anem,AWEM,0700,Cité Dalli ALI KHOUDJA - Zgag Ben Ramdane - BISKRA,(033) 619 - 687,(033) 619 - 687,awem.biskra@anem.dz,GUESSAM Zahira
 08,AWEM BECHAR,08,,,31.59196,-2.24117,exact,anem,anem,AWEM,0800,La Zone Bleue B.P 498 RDC - Béchar,(049) 216 - 856,(049) 216 - 856,awem.bechar@anem.dz,CHAFAA BELAID ABDELGHANI
-09,AWEM BLIDA,09,,,36.48,2.84,exact,anem,anem,AWEM,0900,Cité des 402 logt -  Ouled –Yaich - Blida,(025) 225 - 777,(025) 225 - 776,awem.blida@anem.dz,SELLAMI Ahmed
+09,AWEM BLIDA,09,,,36.48,2.84,approximate,anem,anem,AWEM,0900,Cité des 402 logt -  Ouled –Yaich - Blida,(025) 225 - 777,(025) 225 - 776,awem.blida@anem.dz,SELLAMI Ahmed
 10,AWEM BOUIRA,10,,,36.37845,3.90231,exact,anem,anem,AWEM,,01 rue Med Zammoum - Bouira,(026) 730 - 891,(026) 730 - 891,awem.bouira@anem.dz,DIAB DJEFFAL MOURAD
 11,AWEM TAMANRASSET,11,,,22.7938,5.53933,exact,anem,anem,AWEM,,Centre ville Tamanrasset,(029) 303 - 490,(029) 303 - 519,awem.tamanrasset@anem.dz,OUGACEM MOHAMMED SALAH
 12,AWEM TEBESSA,12,,,35.40783,8.09316,exact,anem,anem,AWEM,,hai sekanska - face à la direction de l'environnement,(037) 502 - 149,(037) 502 - 151,awem.tebessa@anem.dz,HEDADJI KHALED
@@ -18,7 +18,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 17,AWEM DJELFA,17,,,34.65882,3.26299,exact,anem,anem,AWEM,,Cité 05 juillet -Cite administratif- Djelfa,(027) 936- 640,(027) 936- 640,awem.djelfa@anem.dz,OUALHI MOHAMED EL MAAMOUNE
 18,AWEM JIJEL,18,,,36.80823,5.7804,exact,anem,anem,AWEM,,3éme Kilomètre – route de Constantine – Jijel,(034) 475 - 050,(034) 473 - 634,awem.jijel@anem.dz,TIZRARINE YAZID
 19,AWEM SETIF,19,,,36.18802,5.43368,exact,anem,anem,AWEM,,Cité Administrative - Ain Tebinet - Sétif,(036) 621 - 009,(036) 621 - 009,awem.setif@anem.dz,AMRANI MEROUANE
-20,AWEM SAIDA,20,,,34.84,0.15,exact,anem,anem,AWEM,,Cité lardjene EX ETRAVIA saida,(048) 431 - 000,(048)431-000,awem.saida@anem.dz,BABEKER HAMZA
+20,AWEM SAIDA,20,,,34.84,0.15,approximate,anem,anem,AWEM,,Cité lardjene EX ETRAVIA saida,(048) 431 - 000,(048)431-000,awem.saida@anem.dz,BABEKER HAMZA
 21,AWEM SKIKDA,21,,,36.86543,6.9007,exact,anem,anem,AWEM,2100,"02, Rue des Freres Soltane - Skikda",(038) 754 - 193,(038) 754 - 193,awem.skikda@anem.dz,LECHKHAB ABDELAZIZ
 22,AWEM SIDI BEL ABBES,22,,,35.20866,-0.6169,exact,anem,anem,AWEM,,CPR –  Sidi BelAbbés,(048) 714 - 213,(048) 714 - 213,awem.sidibelabbes@anem.dz,ZITOUNI SARAH
 23,AWEM ANNABA,23,,,36.88928,7.71869,exact,anem,anem,AWEM,,Cité 500 Lgts Locaux 89/90 Plaine Ouest,(038) 412 - 623,(038) 412 - 623,awem.annaba@anem.dz,ZIROURI MOHAMED LAMINE
@@ -29,7 +29,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 28,AWEM M'SILA,28,,,35.71288,4.53414,exact,anem,anem,AWEM,,Route de Ichbilia en face de la cité 600 logts - M’sila,(035) 338 - 437,(035) 338 - 437,awem.msila@anem.dz,BAAZIZ SAADEDDINE
 29,AWEM MASCARA,29,,,35.39861,0.13938,exact,anem,anem,AWEM,2900,Avenue Bahloul Djillali Mascara,(045) 721-947,(045) 721-947,awem.mascara@anem.dz,ABBAS FETHALLAH
 30,AWEM OUARGLA,30,,,31.94209,5.32694,exact,anem,anem,AWEM,3000,Rue Bensayeh Mohamed - Zone Industrielle - Ouargla,(029) 714 -  228,(Non renseigné),awem.ouargla@anem.dz,KOUICI MAMAR
-31,AWEM ORAN,31,,,35.71,-0.61,exact,anem,anem,AWEM,,Cite Administrative - Aboubakr Belkaid - Bir El Djir,(041) 839 - 303,(041) 839 - 303,awem.oran@anem.dz,CHELEF ABDELKRIM
+31,AWEM ORAN,31,,,35.71,-0.61,approximate,anem,anem,AWEM,,Cite Administrative - Aboubakr Belkaid - Bir El Djir,(041) 839 - 303,(041) 839 - 303,awem.oran@anem.dz,CHELEF ABDELKRIM
 32,AWEM EL BAYADH,32,,,33.66854,1.03422,exact,anem,anem,AWEM,3200,Nouvelle ville Administrative  route Aflou - El Bayadh,(049) 604 - 774,(049) 604 - 787,awem.elbayadh@anem.dz,MEBARKI Boumediene
 33,AWEM ILLIZI,33,,,26.50945,8.47228,exact,anem,anem,AWEM,,Cité de la nouvelle ville - Illizi,(029) 404 - 039,(029) 404 - 038,awem.illizi@anem.dz,BEN OUMHANI ADDERAHMENE
 34,AWEM BORDJ BOU ARRERIDJ,34,,,36.07457,4.76281,exact,anem,anem,AWEM,,Rue Mebarkia Ismail - Bordj Bou Arreridj,(035) 748 - 296,(035) 748 - 356,awem.bba@anem.dz,HAMMOUDI NASREDDINE

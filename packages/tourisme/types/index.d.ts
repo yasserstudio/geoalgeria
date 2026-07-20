@@ -65,8 +65,9 @@ interface Base {
   lat: number;
   /** Longitude — every tourism point in this dataset is geocoded. */
   lng: number;
-  /** Always `"exact"` — every point is a real source coordinate. */
-  geo_precision: "exact";
+  /** `"exact"`, or `"approximate"` where the source coordinate is rounded too
+   *  coarse, or is shared with another record, to be a per-site point. */
+  geo_precision: "exact" | "approximate";
   /** How the coordinate was obtained: `"osm"` for four layers, `"asal"` for
    *  thermal springs. */
   geo_method: GeoMethod;

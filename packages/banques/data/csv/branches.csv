@@ -15,11 +15,11 @@ abc-20,Amirouche,16,,,36.7710384,3.058604800000011,exact,bank_locator,bank_locat
 abc-21,Kouba,16,,,36.7315489,3.088191300000007,exact,bank_locator,bank_locator,abc,"Rue Mohamed Fellah n°28, Rez de chaussée, Kouba",
 abc-22,Dar El Beïda,16,,,36.715001300000004,3.2095725000000064,exact,bank_locator,bank_locator,abc,"Rue Khemisti n°32, Dar El Beïda",
 abc-23,City Center,16,,,36.72947880000001,3.17836970000001,exact,bank_locator,bank_locator,abc,"Centre Commercial City Center, Lotissement Dozi, Section 01, Groupe de Propriété 318, Bab Ezzouar, Dar El Beïda, Algiers",
-abc-24,Staoueli,16,,,36.7602546,2.9872376999999872,exact,bank_locator,bank_locator,abc,"N°21, Rue Ahmed Ouaked, Dely Ibrahim, Algiers",
+abc-24,Staoueli,16,,,36.7602546,2.9872376999999872,approximate,bank_locator,bank_locator,abc,"N°21, Rue Ahmed Ouaked, Dely Ibrahim, Algiers",
 abc-25,Birkhadem,16,,,36.71830640000002,3.050481300000012,exact,bank_locator,bank_locator,abc,"03, Rue des Frères Djillali, Birkhadem",
 abc-3,BOUIRA,10,,,36.38186521126923,3.890415501599597,exact,bank_locator,bank_locator,abc,"94, Lot Grand Boulevard n°29, Bouira",
 abc-4,Bir Mourad Raïs,16,,,36.738483300000006,3.062215299999984,exact,bank_locator,bank_locator,abc,"54, Avenue des Trois Frères Bouadou, Bir Mourad Raïs",
-abc-5,Dely Ibrahim,16,,,36.7602546,2.9872376999999872,exact,bank_locator,bank_locator,abc,"N°21, Rue Ahmed Ouaked, Dely Ibrahim, Algiers",
+abc-5,Dely Ibrahim,16,,,36.7602546,2.9872376999999872,approximate,bank_locator,bank_locator,abc,"N°21, Rue Ahmed Ouaked, Dely Ibrahim, Algiers",
 abc-6,TIZI OUZOU,15,,,36.712296,4.0475935,exact,bank_locator,bank_locator,abc,"05, Rue Haddadou Mohamed Azerki, Tizi Ouzou",
 abc-7,BEJAIA,06,,,36.745531200000016,5.050443200000009,exact,bank_locator,bank_locator,abc,"Cité des 41 Logements, Somacob, rue Nacer Boumedaoui, Bejaia",
 abc-8,BORDJ BOU ARRERIDJ,34,,,36.069779999999994,4.743621200000016,exact,bank_locator,bank_locator,abc,"Lot Bouda Fatima Zohra n°22, route d’Alger BBA",
@@ -49,7 +49,7 @@ agb-bouira,BOUIRA,10,,,36.3755,3.88263,exact,bank_locator,bank_locator,agb,"01, 
 agb-boumerdes,BOUMERDES,35,,,36.750579,3.473218,exact,bank_locator,bank_locator,agb,"Hai Driche, n°8 - Boumerdès.",024 79 96 03 / 024 79 96 04
 agb-chlef,Chlef ,02,,,36.167129,1.334756,exact,bank_locator,bank_locator,agb,"46, Boulevard des Martyrs, Chlef",020 64 23 88 / 020 64 25 23
 agb-chlefelmokrani,Chlef El Mokrani,02,,,36.1574,1.32583,exact,bank_locator,bank_locator,agb,"Rue el mokrani angle rue 1er novembre, lot 60 propriété N°01 Chlef",020 64 30 53 / 020 64 34 12
-agb-constantine,CONSTANTINE,25,,,36.35,6.6,exact,bank_locator,bank_locator,agb,01 cité Essaada Sidi Mabrouk Superieur Constantine.,030 33 69 90 / 030 33 69 64
+agb-constantine,CONSTANTINE,25,,,36.35,6.6,approximate,bank_locator,bank_locator,agb,01 cité Essaada Sidi Mabrouk Superieur Constantine.,030 33 69 90 / 030 33 69 64
 agb-constantinealimendjeli,Constantine Ali Mendjeli,25,,,36.2579851078915,6.59048575074655,exact,bank_locator,bank_locator,agb,Uv 07 Lot n°66 Ali  Mendjeli  El Khroub- Constantine.,031 74 53 72
 agb-delyibrahim,DELY IBRAHIM,16,,,36.753675,2.976194,exact,bank_locator,bank_locator,agb,"211, Bois des Cars 2, Dely Brahim, Alger",020 39 57 16 /  020 39 57 17
 agb-didouchemouradselfbanking,DIDOUCHE MOURAD (Self Banking),16,,,36.77159,3.057602,exact,bank_locator,bank_locator,agb,"Rue Didouche Mourad, Bâtiment A, Lot31.",
@@ -79,12 +79,12 @@ agb-relizane,RELIZANE,48,,,35.740131,0.548957,exact,bank_locator,bank_locator,ag
 agb-rouiba,ROUIBA,16,,,36.7386,3.28697,exact,bank_locator,bank_locator,agb,"Rue du 1er Novembre, N°79. Rouiba, Alger",023 86 04 12 / 023 86 04 13
 agb-saida,SAIDA,20,,,34.844025,0.14375,exact,bank_locator,bank_locator,agb,"Rue Boukhars N°13, Saida",048 43 34 72 / 048 43 36 01
 agb-setif,SETIF,19,,,36.1969,5.41509,exact,bank_locator,bank_locator,agb,"143, Boulevard Coopérative Boutaleb - Sétif.",036 51 46 57 / 036 51 46 58
-agb-sidibelabbes,SIDI BEL ABBES,22,,,35.2,-0.641389,exact,bank_locator,bank_locator,agb,"N° 8, Angle de Av .Cheikh Larbi Tébessi & Colonel Lotfi -Sidi-Bel-Abbés.",048 74 31 49 / 048 74 31 50 / 048 74 31 52
+agb-sidibelabbes,SIDI BEL ABBES,22,,,35.2,-0.641389,approximate,bank_locator,bank_locator,agb,"N° 8, Angle de Av .Cheikh Larbi Tébessi & Colonel Lotfi -Sidi-Bel-Abbés.",048 74 31 49 / 048 74 31 50 / 048 74 31 52
 agb-sidifredjselfbanking,SIDI FREDJ (Self Banking),16,,,36.763114,2.843978,exact,bank_locator,bank_locator,agb,"Hôtel El Manar, Complexe Touristique Sidi Fredj, Staoueli, Alger",
 agb-skikda,Skikda,21,,,36.8713289,6.9102513,exact,bank_locator,bank_locator,agb,"Beni Malek, Lot 02 - Skikda.",038 75 33 08 / 038 75 31 05
-agb-tebessa,Tebessa,12,,,35,8,exact,bank_locator,bank_locator,agb,Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.,037 51 51 14 / 037 51 51 12
+agb-tebessa,Tebessa,12,,,35,8,approximate,bank_locator,bank_locator,agb,Cite Houari Boumediene Lot 183 groupe propriété n°181 -  Tébessa.,037 51 51 14 / 037 51 51 12
 agb-tiaret,TIARET,14,,,35.3674,1.32203,exact,bank_locator,bank_locator,agb,17 Boulevard Ben Badis - Tiaret.,046 20 24 00 / 046 20 24 03
-agb-tiziouzou,TIZI OUZOU,15,,,36.7167,4.05,exact,bank_locator,bank_locator,agb,"Rue Stiti Ali, n°15 - Tizi Ouzou.",026 45 87 70 / 026 45 87 30
+agb-tiziouzou,TIZI OUZOU,15,,,36.7167,4.05,approximate,bank_locator,bank_locator,agb,"Rue Stiti Ali, n°15 - Tizi Ouzou.",026 45 87 70 / 026 45 87 30
 agb-tlemcen,TLEMCEN,13,,,34.883,-1.32577,exact,bank_locator,bank_locator,agb,"N°5 Bd Mohamed V, Hai Bab El Khemis - Tlemcen.",043 41 74 38 / 043 41 74 37 / 043 41 74 40
 agb-zeralda,Zeralda,16,,,36.7150109021026,2.84289566002275,exact,bank_locator,bank_locator,agb,Rue 1er Novembre Ilot 11 Lotissement 24 Zeralda- Alger.,023 32 58 47
 albaraka-1,Agence Rouiba 112,16,,,36.736441,3.282666,exact,bank_locator,bank_locator,albaraka,"Rue HASSIBA BEN BOUALI, section 13, Rouïba, Alger",
@@ -171,7 +171,7 @@ badr-275,EL-KARIMIA,02,,,36.11305,1.55342,exact,bank_locator,bank_locator,badr,R
 badr-276,EL-ABADIA,44,,,36.2750279,1.6854432,exact,bank_locator,bank_locator,badr,RUE DE DJILLALI BOUNAAMA EL ABADIA,
 badr-277,EL AMRA,44,,,36.30693,1.84816,exact,bank_locator,bank_locator,badr,RUE GHEZZOUL MED EL AMRA,
 badr-278,BOUMEDFAA,44,,,36.3700317,2.4732963,exact,bank_locator,bank_locator,badr,RUE FERROUDJI MED BOUMEDFAA,
-badr-279,BOUZGHAIA,02,,,36.33805,1.24,exact,bank_locator,bank_locator,badr,RUE PRINCIPALE BOUZGHAIA,
+badr-279,BOUZGHAIA,02,,,36.33805,1.24,approximate,bank_locator,bank_locator,badr,RUE PRINCIPALE BOUZGHAIA,
 badr-281,EL-KHEMIS II,67,,,35.4050761,2.7048777,exact,bank_locator,bank_locator,badr,92 BOULEVARD COLONEL BOUGARA,
 badr-282,"CHLEF ""B""",03,,,33.791162,2.309422,exact,bank_locator,bank_locator,badr,"48,RUE DES FRERES CHAIEB EDDOUR",
 badr-283,AIN DEFLA II FI,44,,,36.258546,1.953049,exact,bank_locator,bank_locator,badr,"AIN DEFLA ,234 LOGEMENTS EPLF AIN DEFLA",
@@ -282,7 +282,7 @@ badr-572,LARBAA NATH IRATEN,15,,,36.6374918,4.2028466,exact,bank_locator,bank_lo
 badr-573,AIN -EL-HAMMAM,15,,,36.56471,4.30619,exact,bank_locator,bank_locator,badr,RUE COLONEL AMIROUCHE,
 badr-574,DRAA-EL-MIZAN,15,,,,,,,bank_locator,badr,CITE DES FONCTIONNAIRES ROUTE DE BOGHNI BP 168,
 badr-575,DELLYS,35,,,36.91716,3.91311,exact,bank_locator,bank_locator,badr,Intersection Rocade Sud - Dellys -,
-badr-576,DRAA BEN KHEDDA,15,,,36.73436,3.96,exact,bank_locator,bank_locator,badr,CITE DES 62 LOGEMENTS,
+badr-576,DRAA BEN KHEDDA,15,,,36.73436,3.96,approximate,bank_locator,bank_locator,badr,CITE DES 62 LOGEMENTS,
 badr-578,BORDJ MENAIEL,35,,,36.7455247,3.7179732,exact,bank_locator,bank_locator,badr,RUE ALI BENNOUR,
 badr-579,OUACIFS,15,,,36.524949,4.205836,exact,bank_locator,bank_locator,badr,OUACIFS CENTRE,
 badr-580,TIZI-OUZOU,15,,,36.714559,4.0482882,exact,bank_locator,bank_locator,badr,BD MOH SAID OUZEFFOUN,
@@ -296,7 +296,7 @@ badr-618,REGHAIA,16,,,36.73882,3.338435,exact,bank_locator,bank_locator,badr,"CI
 badr-619,ISSERS,35,,,36.6935557,3.6915459,exact,bank_locator,bank_locator,badr,Rue BOUIRI BOUALEM,
 badr-621,EUCALYPTUS,16,,,36.66479,3.144721,exact,bank_locator,bank_locator,badr,416 LOGEMENTS AADL TOUR N°03,
 badr-622,ROUIBA,16,,,36.73685,3.280901,exact,bank_locator,bank_locator,badr,"45,AVENUE DU 1er NOVEMBRE",
-badr-623,BOUMERDES,35,,,36.75,3.66667,exact,bank_locator,bank_locator,badr,CENTRE ADMINISTRATIF AVICAINNE CITE 800 LOGTS FRONT DE MER,
+badr-623,BOUMERDES,35,,,36.75,3.66667,approximate,bank_locator,bank_locator,badr,CENTRE ADMINISTRATIF AVICAINNE CITE 800 LOGTS FRONT DE MER,
 badr-624,RIAD EL FETH,16,,,36.744764,3.071045,exact,bank_locator,bank_locator,badr,104 OFFICE RIADH EL FETH EL REZ DE CHAUSSEE EL MADANIA,
 badr-625,PINS MARITIMES,16,,,36.732344,3.156856,exact,bank_locator,bank_locator,badr,LA SAFEX P.MARITIME,
 badr-626,NACIRIA,35,,,36.74625,3.83163,exact,bank_locator,bank_locator,badr,CITE 60 LOGEMENTS CP 35250,
@@ -395,7 +395,7 @@ badr-841,TELEGHMA,43,,,36.1180204,6.3581086,exact,bank_locator,bank_locator,badr
 badr-842,OUED ENDJA,43,,,36.53903,6.2643,exact,bank_locator,bank_locator,badr,"21,RUE LAMGOUAL YOUCEF",
 badr-843,TADJENANET,43,,,36.122237,5.984526,exact,bank_locator,bank_locator,badr,RUE KHETTAT AHMED,
 badr-844,PALMA,25,,,36.33081,6.59053,exact,bank_locator,bank_locator,badr,ZONE INDUSTRIELLE PALMA,
-badr-846,MEDEA,26,,,36.08333,3,exact,bank_locator,bank_locator,badr,"1, RUE DES FRERES BENTURKIA",
+badr-846,MEDEA,26,,,36.08333,3,approximate,bank_locator,bank_locator,badr,"1, RUE DES FRERES BENTURKIA",
 badr-848,TABLAT,26,,,36.41282,3.31007,exact,bank_locator,bank_locator,badr,Rue SALHI Brahim Tablat,
 badr-850,BENI-SLIMANE,26,,,36.34889,2.75472,exact,bank_locator,bank_locator,badr,CITE NOUVELLE VILLE,
 badr-852,KSAR EL BOUKHARI,67,,,35.8896333,2.7490425,exact,bank_locator,bank_locator,badr,"60, Bd MOHAMED KHEMISTI",
@@ -414,12 +414,12 @@ badr-875,ZEMMORA,48,,,35.721486,0.758775,exact,bank_locator,bank_locator,badr,CI
 badr-876,AMMI MOUSSA,48,,,35.865594,1.112421,exact,bank_locator,bank_locator,badr,CENTRE COMMERCIAL,
 badr-877,YELLEL,48,,,35.718772,0.358072,exact,bank_locator,bank_locator,badr,CITE DES 200 LOGEMENTS,
 badr-878,MESRA,27,,,35.9250844,0.0850417,exact,bank_locator,bank_locator,badr,AVENUE MOHAMED KHEMISTI,
-badr-903,SIDI AISSA,17,,,35,3,exact,bank_locator,bank_locator,badr,RUE 05 JUILLET LOCAL N°01,
-badr-904,M'SILA,68,,,35,4,exact,bank_locator,bank_locator,badr,NOUVELLE CITE ADMINISTRATIVE,
-badr-905,BOU SAADA,68,,,35,4,exact,bank_locator,bank_locator,badr,RUE DE LA PALESTINE BOUSAÂDA,
-badr-906,AIN EL MELH,66,,,34,4,exact,bank_locator,bank_locator,badr,CENTRE COMMERCIAL,
-badr-907,HAMMAM DALAA,68,,,35,4,exact,bank_locator,bank_locator,badr,"Centre ville,place des Martyrs,ville de Hammam el dalaa",
-badr-908,MAGRA,68,,,35,5,exact,bank_locator,bank_locator,badr,CENTRE VILLE DE MAGRA,
+badr-903,SIDI AISSA,17,,,35,3,approximate,bank_locator,bank_locator,badr,RUE 05 JUILLET LOCAL N°01,
+badr-904,M'SILA,68,,,35,4,approximate,bank_locator,bank_locator,badr,NOUVELLE CITE ADMINISTRATIVE,
+badr-905,BOU SAADA,68,,,35,4,approximate,bank_locator,bank_locator,badr,RUE DE LA PALESTINE BOUSAÂDA,
+badr-906,AIN EL MELH,66,,,34,4,approximate,bank_locator,bank_locator,badr,CENTRE COMMERCIAL,
+badr-907,HAMMAM DALAA,68,,,35,4,approximate,bank_locator,bank_locator,badr,"Centre ville,place des Martyrs,ville de Hammam el dalaa",
+badr-908,MAGRA,68,,,35,5,approximate,bank_locator,bank_locator,badr,CENTRE VILLE DE MAGRA,
 badr-921,MASCARA,29,,,35.3962,0.13983,exact,bank_locator,bank_locator,badr,"1,PLACE EMIR A.E.K",
 badr-922,MOHAMADIA,29,,,35.58995,0.06554,exact,bank_locator,bank_locator,badr,"64, RUE BEN ZOHRA A.E.K",
 badr-923,TIGHENNIF,29,,,35.41555,0.3258,exact,bank_locator,bank_locator,badr,RUE LARBI BEN M'HIDI,
@@ -745,25 +745,25 @@ bna-103,Agence BATNA,05,,,35.55460633976267,6.177406651160349,exact,bank_locator
 bna-104,AP BEJAIA,06,,,36.750089977129704,5.071811732918626,exact,bank_locator,bank_locator,bna,Rue Harfi Taous cité tobbal BP 60 - Béjaia Liber- té06000,"(034) 16 07 81 ,(034) 16 07 84 ,(034) 16 07 90"
 bna-105,Agence EL KSEUR,06,,,36.68116630510706,4.852919653296759,exact,bank_locator,bank_locator,bna,"Rue Salhi Hocine et Rue Meziani Himimi ,  (Route de Tizi Ouzou)","(034) 82 20 39 ,(034) 82 20 42"
 bna-106,Agence  TAZMALT,06,,,36.38369325481296,4.402325555442705,exact,bank_locator,bank_locator,bna,Cité des 60 Logts N°15 06270,"(034) 31 70 97 ,(034) 31 71 99"
-bna-107,Agence IHADDADEN,06,,,36.74298827472136,5.0481883143361195,exact,bank_locator,bank_locator,bna,Centre commercial Ritadj Mall,"(034) 08 07 48 ,(034) 08 07 50, (034) 08 08 02"
+bna-107,Agence IHADDADEN,06,,,36.74298827472136,5.0481883143361195,approximate,bank_locator,bank_locator,bna,Centre commercial Ritadj Mall,"(034) 08 07 48 ,(034) 08 07 50, (034) 08 08 02"
 bna-108,Agence SOUK EL TENINE- AOKAS,06,,,36.62565259042176,5.335946426612491,exact,bank_locator,bank_locator,bna,Route National N°9 Souk El Tenine Centre,"(034) 84 74 35, (034) 84 74 36"
 bna-109,Agence BEJAIA,06,,,36.743011268665754,5.048309023313496,exact,bank_locator,bank_locator,bna,Zone Industrielle Bd Krim Belkacem,
 bna-110,Agence AKBOU,06,,,36.4584701,4.5222386,exact,bank_locator,bank_locator,bna,"Rue ""A"" Arafou,centre", (034) 33 06 38/ 15/ 19/29
-bna-111,Agence  BISKRA «A»,07,,,34.845885690541024,5.712313597733499,exact,bank_locator,bank_locator,bna,"27, Rue de la République-Biskra",(033) 53 50 01
-bna-112,Agence BISKRA «C»,07,,,34.845885690541024,5.712313597733499,exact,bank_locator,bank_locator,bna,"sis aux 09,10 cité el amel 1000 logts",(033) 54 10 37
+bna-111,Agence  BISKRA «A»,07,,,34.845885690541024,5.712313597733499,approximate,bank_locator,bank_locator,bna,"27, Rue de la République-Biskra",(033) 53 50 01
+bna-112,Agence BISKRA «C»,07,,,34.845885690541024,5.712313597733499,approximate,bank_locator,bank_locator,bna,"sis aux 09,10 cité el amel 1000 logts",(033) 54 10 37
 bna-113,Agence TOLGA,07,,,34.7253351,5.3749531,exact,bank_locator,bank_locator,bna,Rue MAKHLOUFI Saad Rissota Est -,(033) 57 88 38
 bna-114,Agence Zeribet El Oued,07,,,34.6851432,6.4938229,exact,bank_locator,bank_locator,bna,"Cité 10 logements parti- cipatifs Bat « D » N°29 à 38,",  (033) 63 32 81	 
 bna-115,Agence BENI OUNIF,08,,,32.04825976257285,-1.2472427311676932,exact,bank_locator,bank_locator,bna,Avenue Colonel Lotfi,(049) 25 22 04 
 bna-116,AP BECHAR,08,,,31.616802900567233,-2.213271458157725,exact,bank_locator,bank_locator,bna,Avenue Colonel Lotfi,(049) 22 07 53
 bna-118,Agence BECHAR,08,,,31.6190357,-2.2162285,exact,bank_locator,bank_locator,bna,"28, Avenue Colonel Lotfi",(049) 22-12-37 
-bna-119,Agence LES BANANIERS,09,,,36.48541989194404,2.8083538507326264,exact,bank_locator,bank_locator,bna,Local Zabana - Blida,"(025) 23 59 20 ,(025) 23 59 18"
+bna-119,Agence LES BANANIERS,09,,,36.48541989194404,2.8083538507326264,approximate,bank_locator,bank_locator,bna,Local Zabana - Blida,"(025) 23 59 20 ,(025) 23 59 18"
 bna-120,AP BOUFARIK,09,,,36.5344893,2.8663832,exact,bank_locator,bank_locator,bna,"13, Avenue Souidani Boudjemaa","(025) 48 15 69, (025) 48 19 88"
 bna-121,AP BLIDA,09,,,36.47217412679978,2.8320883057048016,exact,bank_locator,bank_locator,bna,Bd Takarli Abderrezzak,"(025) 21 54 05, (025) 21 54 01, (025) 21 54 03"
 bna-122,Agence BLIDA,09,,,36.4710192,2.8279914,exact,bank_locator,bank_locator,bna,Boulevard des martyrs,"(025) 21 00 20 ,(025) 21 01 65"
 bna-123,Agence EL-AFFROUN,09,,,36.4678419,2.6252467,exact,bank_locator,bank_locator,bna,Rue Mebarek Chérif,"(025) 38 35 60 ,(025) 38 35 55"
 bna-124,Agence BOUIRA,10,,,36.3767315945216,3.8877907266063794,exact,bank_locator,bank_locator,bna,Rue Guettaf Seddik,"(026) 73 92 62, (026) 73 92 67"
 bna-125,Agence LAKHDARIA,10,,,36.5655492,3.5886959,exact,bank_locator,bank_locator,bna,Cité 210 logements,(026) 70 35 11
-bna-126,Agence TAMANRASSET,11,,,22.8011561,5.5049955,exact,bank_locator,bank_locator,bna,Centre Commercial,"(029) 31 15 70,(029) 31 15 74"
+bna-126,Agence TAMANRASSET,11,,,22.8011561,5.5049955,approximate,bank_locator,bank_locator,bna,Centre Commercial,"(029) 31 15 70,(029) 31 15 74"
 bna-127,Agence OUENZA,12,,,35.95170416526012,8.133316468923667,exact,bank_locator,bank_locator,bna,Place du 1er Novembre 1954 12350,(037) 67 82 12
 bna-128,Agence BIR EL ATER,12,,,,,,,bank_locator,bna,"Cité Administrative,","(037) 64 92 51, (037) 64 92 52"
 bna-129,Agence TEBESSA,12,,,35.4056755592981,8.114579368910567,exact,bank_locator,bank_locator,bna,Cité El Intissar Rue 1er Novembre 54 -, (037) 58 28 17
@@ -771,12 +771,12 @@ bna-130,Agence TEBESSA,12,,,35.4057016699939,8.114497607728362,exact,bank_locato
 bna-131,AP TLEMCEN,13,,,34.8838016,-1.3215978,exact,bank_locator,bank_locator,bna,"30, Place Khemisti",(043) 26 40 84 (043) 26 13 27
 bna-132,Agence MAGHNIA,13,,,34.85202720551497,-1.729217499980413,exact,bank_locator,bank_locator,bna,Bd du 1er novembre,(043) 49 38 35 (043) 49 38 36
 bna-133,AP TLEMCEN,13,,,,,,,bank_locator,bna,"29, Place Khemisti","(043) 27 58 76, (043) 27 48 06 ,(043) 27 51 03"
-bna-134,AP ABOU TACHFINE,13,,,34.910099193576805,-1.3239637293512334,exact,bank_locator,bank_locator,bna,Gare Routière,(043) 22 73 03 / (043) 22 73 05
+bna-134,AP ABOU TACHFINE,13,,,34.910099193576805,-1.3239637293512334,approximate,bank_locator,bank_locator,bna,Gare Routière,(043) 22 73 03 / (043) 22 73 05
 bna-135,Agence NEDROMA,13,,,34.885834200400524,-1.3266877729861126,exact,bank_locator,bank_locator,bna,Rue des 5 Martyrs,"(043) 45 61 77 ,(043) 45 69 25"
 bna-136,Agence SEBDOU,13,,,34.8834988,-1.3110005,exact,bank_locator,bank_locator,bna,Centre commercial,"(043) 54 41 79 ,(043) 54 41 82"
-bna-137,Agence HENNAYA,13,,,34.88582978039195,-1.3266877752824946,exact,bank_locator,bank_locator,bna,"07, Rue de la Liberté","(043) 44 45 85, (043) 44 45 87 , (043) 44 45 90"
-bna-138,Agence KIFFAN,13,,,34.88582978039195,-1.3266877752824946,exact,bank_locator,bank_locator,bna,Bd Ain Sebâa,"(043) 56 41 09,(043) 56 41 58"
-bna-139,Agence GHAZAOUET,13,,,35.099641993829636,-1.8585244709529292,exact,bank_locator,bank_locator,bna,Porte de Nedroma 13002,"(043) 47 20 24,(043) 47 20 25"
+bna-137,Agence HENNAYA,13,,,34.88582978039195,-1.3266877752824946,approximate,bank_locator,bank_locator,bna,"07, Rue de la Liberté","(043) 44 45 85, (043) 44 45 87 , (043) 44 45 90"
+bna-138,Agence KIFFAN,13,,,34.88582978039195,-1.3266877752824946,approximate,bank_locator,bank_locator,bna,Bd Ain Sebâa,"(043) 56 41 09,(043) 56 41 58"
+bna-139,Agence GHAZAOUET,13,,,35.099641993829636,-1.8585244709529292,approximate,bank_locator,bank_locator,bna,Porte de Nedroma 13002,"(043) 47 20 24,(043) 47 20 25"
 bna-140,Agence REMCHI,13,,,35.059354,-1.431303,exact,bank_locator,bank_locator,bna,"Rue El Akid Lotfi, groupe de propriété N°01, section 090",043.43.81.14، 043.43.81.10، 043.43.81.11
 bna-141,AP TIARET «A»,14,,,35.3750539,1.314282,exact,bank_locator,bank_locator,bna,"Rue de la victoire N°17,","(046) 20 54 71, (046) 20 54 84"
 bna-142,"Agence TIARET ""SNVI""",14,,,35.35581,1.5053235,exact,bank_locator,bank_locator,bna,Complexe de Carrosserie,"(046) 24 94 12 ,(046) 24 94 10"
@@ -800,8 +800,8 @@ bna-159,AP DIDOUCHE MOURAD,16,,,36.7660446763044,3.0518531820990087,exact,bank_l
 bna-160,AP LIBERTE,16,,,36.77875611139061,3.0604401714996734,exact,bank_locator,bank_locator,bna,08 Rue de la Liberté 16000,(044) 19 65 40
 bna-161,AP ROUIBA,16,,,36.738917116858005,3.2753056260220825,exact,bank_locator,bank_locator,bna,"87, Cite cadat","(044) 02 65 57/72 /62/ 89,(044) 02 66 03/42/ 51/97"
 bna-162,Agence «N»,16,,,36.74758856979966,3.0512929085381817,exact,bank_locator,bank_locator,bna,"15 Chemin Mohamed Gacem, EL Mouradia, Alger",(023) 55 19 92 - 023 55 19 96 - 023 55 15 98  
-bna-163,Agence DAR EL BEIDA,16,,,36.71406331644615,3.212721427134529,exact,bank_locator,bank_locator,bna,"Aéroport Houahi Boumedienne Dar el Beida, Alger",(023) 82 37 81 /84/ 86/ 88
-bna-164,AP BIRKHADEM,16,,,36.727882200170626,3.0580964587304535,exact,bank_locator,bank_locator,bna,siege Sonatrach spa,(023) 41 19 07/35 / 34 /28
+bna-163,Agence DAR EL BEIDA,16,,,36.71406331644615,3.212721427134529,approximate,bank_locator,bank_locator,bna,"Aéroport Houahi Boumedienne Dar el Beida, Alger",(023) 82 37 81 /84/ 86/ 88
+bna-164,AP BIRKHADEM,16,,,36.727882200170626,3.0580964587304535,approximate,bank_locator,bank_locator,bna,siege Sonatrach spa,(023) 41 19 07/35 / 34 /28
 bna-165,Agence BELAHDJEL,16,,,36.76499498320337,3.0448842958518023,exact,bank_locator,bank_locator,bna,"24, Rue Hocine Belahdjet 16000 - Alger",(021) 61 65 88
 bna-166,AP ZIROUT-YOUCEF,16,,,36.7732964,3.060647,exact,bank_locator,bank_locator,bna,12 Bd Zirout Youcef, (023) 50 23 78
 bna-167,Agence AIN-BENIAN,16,,,36.8029147558477,2.912395549307062,exact,bank_locator,bank_locator,bna,"88, Rue Colonel Si M’hamed","(023) 10 39 51 ,(023) 10 39 52 ,(023) 10 48 30"
@@ -810,8 +810,8 @@ bna-169,Agence BORDJ EL-KIFFAN,16,,,36.74784258550836,3.1934586904654845,exact,b
 bna-170,Agence RIADH EL FETH,16,,,36.742888072503725,3.0701425154968747,exact,bank_locator,bank_locator,bna,Centre commercial Riadh El Feth BP 16075,"(021) 67 12 14 ,(021) 67 26 90 ,(021) 67 10 25"
 bna-171,Agence REGHAIA «1»,16,,,36.73800482229669,3.3415268815691963,exact,bank_locator,bank_locator,bna,"04, Rue Med BOUZIDI","(023) 84 71 52, (023) 84 71 54 ,(023) 84 71 56"
 bna-172,Agence AIN TAYA,16,,,36.79332449662801,3.28787909592737,exact,bank_locator,bank_locator,bna,Place Mohamed Khemisti,"(023) 87 56 66 ,(023) 87 56 65 ,(023) 56 66 62"
-bna-173,Agence PINS-MARITIMES,16,,,36.731392671956385,3.155443610454671,exact,bank_locator,bank_locator,bna,Centre commercial El Mohammadia (Les banannier), (023) 79 55 15
-bna-174,AP AGHA,16,,,36.76865164399404,3.0570667186496774,exact,bank_locator,bank_locator,bna,Gare SNTF Agha,(021) 73 35 71
+bna-173,Agence PINS-MARITIMES,16,,,36.731392671956385,3.155443610454671,approximate,bank_locator,bank_locator,bna,Centre commercial El Mohammadia (Les banannier), (023) 79 55 15
+bna-174,AP AGHA,16,,,36.76865164399404,3.0570667186496774,approximate,bank_locator,bank_locator,bna,Gare SNTF Agha,(021) 73 35 71
 bna-175,AP EL HAMIZ,16,,,36.73303793670178,3.2348177999929564,exact,bank_locator,bank_locator,bna,Route Nouvelle n° 5,(021) 85 42 84
 bna-177,Agence STAOUELI,16,,,36.75276481326324,2.8867683535987165,exact,bank_locator,bank_locator,bna,Rue Mellal 42000,(023) 39 17 80/84/88/82/79
 bna-178,Agence PORT SAID,16,,,36.78185549347917,3.0619756591509018,exact,bank_locator,bank_locator,bna,03 Rue des Frères Oukid Port Said 16000,"(021) 43 91 35, (021) 43 91 36"
@@ -831,7 +831,7 @@ bna-191,Agence HUSSEIN DEY,16,,,36.74096611607741,3.098401538883716,exact,bank_l
 bna-192,Agence EL QUODS,16,,,36.759479892719774,2.963964499417641,exact,bank_locator,bank_locator,bna,Centre des affaires,(023) 13 57 51
 bna-193,Agence BORDJ EL BAHRI,16,,,36.7882285,3.2493748,exact,bank_locator,bank_locator,bna,"Lotissement terre familiale nord N°2, Route Nationale N°24 N°31,","(023) 87 22 69, (023) 87 22 89, (023) 87 22 58"
 bna-194,Agence GUE DE CONSTANTINE,16,,,36.7113141,3.1048547,exact,bank_locator,bank_locator,bna,Site SONELGAZ «700 Bureaux» Côté BRN n°38 Gué de Constantine,  (023) 60 86 04
-bna-195,Agence HYDRA,16,,,36.75553758439694,3.029522503612244,exact,bank_locator,bank_locator,bna,Centre commercial de Ben Aknoun,(021) 48 49 81
+bna-195,Agence HYDRA,16,,,36.75553758439694,3.029522503612244,approximate,bank_locator,bank_locator,bna,Centre commercial de Ben Aknoun,(021) 48 49 81
 bna-196,Agence BARAKI,16,,,36.67104179103143,3.0911230873458226,exact,bank_locator,bank_locator,bna,Rue Mohamed BENLARBI, (023) 91 48 90
 bna-197,Agence BIRKHADEM,16,,,36.719247055107466,3.0507360100825953,exact,bank_locator,bank_locator,bna,"30, Rue des frères Djilali",(023) 91 48 90
 bna-198,Agence ROUIBA SNVI,16,,,36.7379849,3.2786292,exact,bank_locator,bank_locator,bna,Route Nationale N°05,"(023) 87 39 57 /45/17/43/04/35 ,(023) 87 38 93"
@@ -845,7 +845,7 @@ bna-205,AP SETIF,19,,,36.18688875038638,5.4067219984309185,exact,bank_locator,ba
 bna-206,Agence EL-EULMA,19,,,36.15594658149874,5.68008293192143,exact,bank_locator,bank_locator,bna,"Groupe N°03, Section 105","036.47.18.94, 036.47.18.72, 036.47.18.64"
 bna-207,Agence SETIF,19,,,36.194984826384996,5.410308853650725,exact,bank_locator,bank_locator,bna,Cité financière Avenue de I’ALN,"(036) 51 22 32, (036) 51 22 28"
 bna-208,Agence AMOUCHA,19,,,36.19739092040367,5.409007028338314,exact,bank_locator,bank_locator,bna,Place du 08 Mai 1945,(036) 71 01 51
-bna-209,Agence PARK MALL,19,,,36.19048525758167,5.409531052606993,exact,bank_locator,bank_locator,bna,AL ALLI,"(036) 81 40 72, (036) 81 60 73, (036) 81 60 74"
+bna-209,Agence PARK MALL,19,,,36.19048525758167,5.409531052606993,approximate,bank_locator,bank_locator,bna,AL ALLI,"(036) 81 40 72, (036) 81 60 73, (036) 81 60 74"
 bna-210,Agence SAIDA,20,,,34.830561,0.155302,exact,bank_locator,bank_locator,bna,Rue Serrai Abdelkrim à côté de la 2ème sûreté urbaine,"048.41.23.63, 048.41.26.19, 048.41.25.53"
 bna-211,Agence SKIKDA,21,,,36.868450245396716,6.915374863294743,exact,bank_locator,bank_locator,bna,"Les Allés, Cité du 20 Août 1955","(038) 70 77 65, (038) 70 28 83"
 bna-212,Agence COLLO,21,,,37.00837463459205,6.558709326619052,exact,bank_locator,bank_locator,bna,Rue de PALESTINE,"(038) 90 53 48, (038) 90 53 49, (038) 90 53 50"
@@ -858,7 +858,7 @@ bna-219,Agence ANNABA,23,,,36.900283057101966,7.76005278051117,exact,bank_locato
 bna-220,AP ANNABA,23,,,36.91695285770848,7.752964368947365,exact,bank_locator,bank_locator,bna,"Bd, Seddik BENYAHIA - Valmascort Lot – 043","(038) 45 97 15 ,(038) 45 97 90 ,(038) 45 97 93"
 bna-221,"Agence ANNABA ""B""",23,,,36.89121694128192,7.736132040110595,exact,bank_locator,bank_locator,bna,7 Rues Tindjoub et Hassiba Beida, (038) 44 02 81
 bna-222,Agence EL BOUNI,23,,,36.85128583365839,7.742270868946116,exact,bank_locator,bank_locator,bna,"19, Cité Aissat Idir 850 logts","(038) 56 94 87,(038) 56 94 88"
-bna-223,Agence ANNABA,23,,,36.8911792505941,7.736149451362798,exact,bank_locator,bank_locator,bna,Hôtel Sheraton,(038) 43 76 78
+bna-223,Agence ANNABA,23,,,36.8911792505941,7.736149451362798,approximate,bank_locator,bank_locator,bna,Hôtel Sheraton,(038) 43 76 78
 bna-224,Agence GUELMA,24,,,36.46593108953484,7.429437018542977,exact,bank_locator,bank_locator,bna,Rue Zedadra Hocine,"(037) 15 00 61, (037) 15 00 59"
 bna-225,Agence OUED ZENATI,24,,,36.31439767020962,7.160723368932546,exact,bank_locator,bank_locator,bna,Cité 50 Logts -BP 02,(037) 18 00 61
 bna-226,AP CONSTANTINE,25,,,36.36554788655168,6.610360463516494,exact,bank_locator,bank_locator,bna,"1, Place du 1er Novembre", (031) 87 31 36
@@ -867,8 +867,8 @@ bna-228,Agence CONSTANTINE PYRAMIDE,25,,,36.361349679053,6.606378807106275,exact
 bna-229,Agence EL-KHROUB,25,,,36.25733649269017,6.696874829407817,exact,bank_locator,bank_locator,bna,"Cité Administrative, n° 761 Partie ''B''","(031) 76 73 23 ,(031) 76 73 73"
 bna-230,Agence FILLALI,25,,,36.34367543701827,6.604242103738905,exact,bank_locator,bank_locator,bna,Cité des Frères Fillali,(031) 92 92 22
 bna-231,Agence HAMMA BOUZIANE,25,,,36.37006419471524,6.642220231520151,exact,bank_locator,bank_locator,bna,191 Ave. de l’ALN, (031) 84 06 44
-bna-232,Agence CONSTANTINE DAKSI,25,,,36.35911113551481,6.637685921800354,exact,bank_locator,bank_locator,bna,Cité Mentouri (ex- Le Bosquet),  (031) 65 01 73
-bna-233,Agence AIN EL BEY,25,,,36.359111903517295,6.63768708231284,exact,bank_locator,bank_locator,bna,Centre commercial Ritadj Mall, (031) 77 67 00
+bna-232,Agence CONSTANTINE DAKSI,25,,,36.35911113551481,6.637685921800354,approximate,bank_locator,bank_locator,bna,Cité Mentouri (ex- Le Bosquet),  (031) 65 01 73
+bna-233,Agence AIN EL BEY,25,,,36.359111903517295,6.63768708231284,approximate,bank_locator,bank_locator,bna,Centre commercial Ritadj Mall, (031) 77 67 00
 bna-234,Agence BERROUAGHIA,26,,,36.13412025623001,2.914645548811472,exact,bank_locator,bank_locator,bna,Cité des 400 Logts,"(025) 77 67 72 ,(025) 77 67 69"
 bna-235,AP MEDEA,26,,,36.258862170380596,2.7599283746888537,exact,bank_locator,bank_locator,bna,"1, Rue des Frères Bachène","(025) 80 40 66 ,(025) 80 40 55"
 bna-237,Agence KSAR EL BOUKHARI,26,,,,,,,bank_locator,bna,Bd Ahmed Zouaoucha,"(025) 69 23 55 ,(025) 69 19 43 ,(025) 69 19 44"
@@ -887,7 +887,7 @@ bna-249,Agence GHRISS,29,,,35.2512259,0.1534485,exact,bank_locator,bank_locator,
 bna-250,AP OUARGLA,30,,,31.95394027578412,5.337383928855742,exact,bank_locator,bank_locator,bna,Avenue de L’ALN,"(029) 70 21 05/19 ,(029) 70 39 27,(029) 70 81 16"
 bna-251,Agence HASSI-MESSAOUD,30,,,31.697380654163087,6.061315906236278,exact,bank_locator,bank_locator,bna,Cité des 1850 Logts -30100, (029) 79 15 03
 bna-253,Agence OUARGLA,30,,,31.95733670721592,5.3351762228494835,exact,bank_locator,bank_locator,bna,Avenue Colonel,"(029) 70 12 47 ,(029) 70 36 77"
-bna-254,AP ORAN  - SOUMMAM,31,,,35.70257887328417,-0.647656899873143,exact,bank_locator,bank_locator,bna,"Zone militaire ECA TAFRAOUI,","(041) 36 21 54 ,(041) 36 21 55"
+bna-254,AP ORAN  - SOUMMAM,31,,,35.70257887328417,-0.647656899873143,approximate,bank_locator,bank_locator,bna,"Zone militaire ECA TAFRAOUI,","(041) 36 21 54 ,(041) 36 21 55"
 bna-255,Agence Oran,31,,,35.740889,-0.566889,exact,bank_locator,bank_locator,bna,"Parcelle 36, HAI KHEMISTI, 17 lots 1,2,3,4,5,6,7 BIR EL DJIR",041.65.09.34 - 041.65.08.69
 bna-256,Agence ARZEW,31,,,35.85845850304489,-0.3087940543554663,exact,bank_locator,bank_locator,bna,Bd Emir AbdelKader,"(041) 77 15 46 ,(041) 77 15 44 ,(041) 77 15 45"
 bna-257,Agence ORAN - LARBI BEN M'HIDI,31,,,35.703128080193636,-0.636423731082312,exact,bank_locator,bank_locator,bna,"Hai El Amir, N°07 Bd Amir Abdelkader, Esc 01 et 02","(041) 36 26 08,(041) 36 29 68"
@@ -915,7 +915,7 @@ bna-278,Agence Tindouf,37,,,27.6718896,-8.1408828,exact,bank_locator,bank_locato
 bna-279,Agence TISSEMSILT,38,,,35.603973403408745,1.8042502535707057,exact,bank_locator,bank_locator,bna,Avenue du 1er Novembre,(046) 57 67 65
 bna-280,Agence EL-OUED,39,,,33.35952282134726,6.856828942598358,exact,bank_locator,bank_locator,bna,Cité des 400 Logts Av du 05 juillet 1962 BT 19 n° 02 El Oued,  (032) 14 11 19
 bna-281,Agence KHENCHELA,40,,,35.43339822200573,7.140985826583518,exact,bank_locator,bank_locator,bna,Avenue du 1er novembre route des poids lourds, (032) 72 61 36
-bna-282,Agence KHENCHELA,40,,,35.4347996,7.1359308,exact,bank_locator,bank_locator,bna,Désinstallé pour redéploiement,(032) 72 75 36
+bna-282,Agence KHENCHELA,40,,,35.4347996,7.1359308,approximate,bank_locator,bank_locator,bna,Désinstallé pour redéploiement,(032) 72 75 36
 bna-283,Agence SOUK-AHRAS,41,,,36.28503602505911,7.956561068931805,exact,bank_locator,bank_locator,bna,Place de l’Indépendance,"(037) 71 80 61,(037) 71 80 62"
 bna-284,Agence CHERCHELL,42,,,36.61011611649897,2.2017274689397923,exact,bank_locator,bank_locator,bna,Route Nationale n°11 - Lot n°91-Partie n°2 Parcelle n°03,"(024) 34 80 42 ,(024) 34 80 44 ,(024) 34 82 27"
 bna-285,AP KOLEA,42,,,36.636214181817756,2.7685254535958155,exact,bank_locator,bank_locator,bna,16 Rue Souidani Boudjemâa 42400,"(024) 38 06 99 ,(024) 38 06 98"
@@ -968,25 +968,25 @@ bna-332,Agence TIZI OUZOU,15,,,36.711689534832274,4.0484549461899375,exact,bank_
 bna-334,Agence GHARDAIA,47,,,32.4815116,3.6787384,exact,bank_locator,bank_locator,bna,Avenue du 1er Novembre,(029) 23 44 18
 bna-335,CAISSE CENTRALE DINARD,16,,,36.78202157238494,3.0619823048629486,exact,bank_locator,bank_locator,bna,08 Bd Emesto Che Guevara,(021) 43 93 38
 bna-336,ANNABA AEROPORT,23,,,,,,,bank_locator,bna,Aéroport Rabah BITAT,038.59.01.76
-bna-337,Agence GHAZAOUET,13,,,35.099641993829636,-1.8585244709529292,exact,bank_locator,bank_locator,bna,Porte de Nedroma 13002,"(043) 47 20 24,(043) 47 20 25"
-bna-338,Agence TAMANRASSET,11,,,22.8011561,5.5049955,exact,bank_locator,bank_locator,bna,Centre Commercial,"(029) 31 15 70,(029) 31 15 74"
-bna-339,Agence HYDRA,16,,,36.75553758439694,3.029522503612244,exact,bank_locator,bank_locator,bna,Résidence Chaabani,(021) 48 49 81
-bna-340,Agence CONSTANTINE DAKSI,25,,,36.35911113551481,6.637685921800354,exact,bank_locator,bank_locator,bna,Cité Mentouri (ex- Le Bosquet),  (031) 65 01 73
+bna-337,Agence GHAZAOUET,13,,,35.099641993829636,-1.8585244709529292,approximate,bank_locator,bank_locator,bna,Porte de Nedroma 13002,"(043) 47 20 24,(043) 47 20 25"
+bna-338,Agence TAMANRASSET,11,,,22.8011561,5.5049955,approximate,bank_locator,bank_locator,bna,Centre Commercial,"(029) 31 15 70,(029) 31 15 74"
+bna-339,Agence HYDRA,16,,,36.75553758439694,3.029522503612244,approximate,bank_locator,bank_locator,bna,Résidence Chaabani,(021) 48 49 81
+bna-340,Agence CONSTANTINE DAKSI,25,,,36.35911113551481,6.637685921800354,approximate,bank_locator,bank_locator,bna,Cité Mentouri (ex- Le Bosquet),  (031) 65 01 73
 bna-341,Agence KSAR EL BOUKHARI,26,,,,,,,bank_locator,bna,Bd Ahmed Zouaoucha,"(025) 69 23 55 ,(025) 69 19 43 ,(025) 69 19 44"
-bna-342,AP AGHA,16,,,36.76865164399404,3.0570667186496774,exact,bank_locator,bank_locator,bna,Gare SNTF Agha,(021) 73 35 71
-bna-343,AP ABOU TACHFINE,13,,,34.910099193576805,-1.3239637293512334,exact,bank_locator,bank_locator,bna,Zone Semi Industrielle,(043) 22 73 03 / (043) 22 73 05
-bna-344,Agence IHADDADEN,06,,,36.74298827472136,5.0481883143361195,exact,bank_locator,bank_locator,bna,Bd Krim Belkacem,"(034) 08 07 48 ,(034) 08 07 50, (034) 08 08 02"
-bna-345,Agence PARK MALL,19,,,36.19048525758167,5.409531052606993,exact,bank_locator,bank_locator,bna,Rue 08 Novembre Park Mall-Sétif,"(036) 81 40 72, (036) 81 60 73, (036) 81 60 74"
-bna-346,Agence AIN EL BEY,25,,,36.359111903517295,6.63768708231284,exact,bank_locator,bank_locator,bna,UV 07 Ali Mendjeli El Khroub, (031) 77 67 00
-bna-347,Agence DAR EL BEIDA,16,,,36.71406331644615,3.212721427134529,exact,bank_locator,bank_locator,bna,22 Rue Mouloud Feraoun,(023) 82 37 81 /84/ 86/ 88
-bna-348,Agence ANNABA,23,,,36.8911792505941,7.736149451362798,exact,bank_locator,bank_locator,bna,"Cité du 08 Mars Lots N°6,",(038) 43 76 78
-bna-349,AP BOUZAREAH,16,,,36.788674622725814,3.021561505095487,exact,bank_locator,bank_locator,bna,Centre commercial Garden City chéraga - Alger, (023) 27 02 34
-bna-350,AP BOUZAREAH,16,,,36.788674622725814,3.021561505095487,exact,bank_locator,bank_locator,bna,Avenue Ali REMLI (Air de France), (023) 27 02 34
-bna-351,AP ORAN  - SOUMMAM,31,,,35.70257887328417,-0.647656899873143,exact,bank_locator,bank_locator,bna,"04, Boulevard de la Soummam Hai El Amir","(041) 36 21 54 ,(041) 36 21 55"
-bna-352,Agence LES BANANIERS,09,,,36.48541989194404,2.8083538507326264,exact,bank_locator,bank_locator,bna,Cité des 680 logements «  les Bananiers »,"(025) 23 59 20 ,(025) 23 59 18"
-bna-353,Agence PINS-MARITIMES,16,,,36.731392671956385,3.155443610454671,exact,bank_locator,bank_locator,bna,Palais des Expositions 16200 Pins Maritimes, (023) 79 55 15
-bna-354,Agence KHENCHELA,40,,,35.4347996,7.1359308,exact,bank_locator,bank_locator,bna,Cité des 90 LOTS BLOC ADMIN KHENCHLA,(032) 72 75 36
-bna-355,AP BIRKHADEM,16,,,36.727882200170626,3.0580964587304535,exact,bank_locator,bank_locator,bna,Direction Générale de SONATRACH,(023) 41 19 07/35 / 34 /28
+bna-342,AP AGHA,16,,,36.76865164399404,3.0570667186496774,approximate,bank_locator,bank_locator,bna,Gare SNTF Agha,(021) 73 35 71
+bna-343,AP ABOU TACHFINE,13,,,34.910099193576805,-1.3239637293512334,approximate,bank_locator,bank_locator,bna,Zone Semi Industrielle,(043) 22 73 03 / (043) 22 73 05
+bna-344,Agence IHADDADEN,06,,,36.74298827472136,5.0481883143361195,approximate,bank_locator,bank_locator,bna,Bd Krim Belkacem,"(034) 08 07 48 ,(034) 08 07 50, (034) 08 08 02"
+bna-345,Agence PARK MALL,19,,,36.19048525758167,5.409531052606993,approximate,bank_locator,bank_locator,bna,Rue 08 Novembre Park Mall-Sétif,"(036) 81 40 72, (036) 81 60 73, (036) 81 60 74"
+bna-346,Agence AIN EL BEY,25,,,36.359111903517295,6.63768708231284,approximate,bank_locator,bank_locator,bna,UV 07 Ali Mendjeli El Khroub, (031) 77 67 00
+bna-347,Agence DAR EL BEIDA,16,,,36.71406331644615,3.212721427134529,approximate,bank_locator,bank_locator,bna,22 Rue Mouloud Feraoun,(023) 82 37 81 /84/ 86/ 88
+bna-348,Agence ANNABA,23,,,36.8911792505941,7.736149451362798,approximate,bank_locator,bank_locator,bna,"Cité du 08 Mars Lots N°6,",(038) 43 76 78
+bna-349,AP BOUZAREAH,16,,,36.788674622725814,3.021561505095487,approximate,bank_locator,bank_locator,bna,Centre commercial Garden City chéraga - Alger, (023) 27 02 34
+bna-350,AP BOUZAREAH,16,,,36.788674622725814,3.021561505095487,approximate,bank_locator,bank_locator,bna,Avenue Ali REMLI (Air de France), (023) 27 02 34
+bna-351,AP ORAN  - SOUMMAM,31,,,35.70257887328417,-0.647656899873143,approximate,bank_locator,bank_locator,bna,"04, Boulevard de la Soummam Hai El Amir","(041) 36 21 54 ,(041) 36 21 55"
+bna-352,Agence LES BANANIERS,09,,,36.48541989194404,2.8083538507326264,approximate,bank_locator,bank_locator,bna,Cité des 680 logements «  les Bananiers »,"(025) 23 59 20 ,(025) 23 59 18"
+bna-353,Agence PINS-MARITIMES,16,,,36.731392671956385,3.155443610454671,approximate,bank_locator,bank_locator,bna,Palais des Expositions 16200 Pins Maritimes, (023) 79 55 15
+bna-354,Agence KHENCHELA,40,,,35.4347996,7.1359308,approximate,bank_locator,bank_locator,bna,Cité des 90 LOTS BLOC ADMIN KHENCHLA,(032) 72 75 36
+bna-355,AP BIRKHADEM,16,,,36.727882200170626,3.0580964587304535,approximate,bank_locator,bank_locator,bna,Direction Générale de SONATRACH,(023) 41 19 07/35 / 34 /28
 bna-625,Agence Oran,31,,,35.7031324,-0.6386017,exact,bank_locator,bank_locator,bna,"N° 90, Rue Larbi BEN M’HIDI",(041) 33 35 59 (041) 33 55 63 (041) 40 98 10
 bna-626,Agence TOSYALI,31,,,35.7728919,-0.2607922,exact,bank_locator,bank_locator,bna,"Pôle Economique Plateau Gourirate, Commune de Bethioua",041 79 30 65
 bna-629,"Agence ""C""  Annaba",23,,,36.9138066,7.6744249,exact,bank_locator,bank_locator,bna,Palais de la culture MOHAMED BOUDIAF,"038 41 27 36 , 038 41 27 13 ,038 41 38 90 "
@@ -1102,7 +1102,7 @@ bnpparibas-constantinebellevue,Constantine Belle Vue,25,,,36.351833,6.604247,exa
 bnpparibas-darelbeida,Dar El Beida,16,,,36.710188,3.209896,exact,bank_locator,bank_locator,bnpparibas,Cité Aissat Idir N°04 -EX-EGSA DAR EL BEIDA 16033 Alger,'+21321981338
 bnpparibas-delyibrahimboisdescars,Dely Ibrahim Bois des Cars,16,,,36.754005,2.980154,exact,bank_locator,bank_locator,bnpparibas,10 Lots Bois des Cars II 16320 Alger,'+21321981188
 bnpparibas-didouchemourad,Didouche Mourad,16,,,36.7702099,3.055979,exact,bank_locator,bank_locator,bnpparibas,"09, RUE DIDOUCHE MOURAD 16002 Alger",'+213 21 98 11 92
-bnpparibas-directiongenerale,Direction Générale,16,,,36.71574312423905,3.2044796989807764,exact,bank_locator,bank_locator,bnpparibas,"Ilot 1, Quartier d'affaires d'Alger 16000 Alger",'+21321 98 53 99
+bnpparibas-directiongenerale,Direction Générale,16,,,36.71574312423905,3.2044796989807764,approximate,bank_locator,bank_locator,bnpparibas,"Ilot 1, Quartier d'affaires d'Alger 16000 Alger",'+21321 98 53 99
 bnpparibas-draria,Draria,16,,,36.720036,2.994843,exact,bank_locator,bank_locator,bnpparibas,"111 ROUTE DE WILAYA, CHEMIN DES CRETES N° 01 16003 Alger",'+21321981196
 bnpparibas-elbiarvaldhydra,El Biar -Val d hydra-,16,,,36.760921,3.0249,exact,bank_locator,bank_locator,bnpparibas,"Immeuble Zammoun Djezzy, Rue 11 Décembre 1960, 16003",'+21321981344
 bnpparibas-hassimessaoud,Hassi Messaoud,30,,,31.697407,6.060711,exact,bank_locator,bank_locator,bnpparibas,"ROUTE NATIONALE 03, CARREFOUR 24 FEVRIER, 30500 Hassi Messaoud",'+21321981162
@@ -1117,12 +1117,12 @@ bnpparibas-oransthubert,Oran St Hubert,31,,,35.672802447412884,-0.63938049225157
 bnpparibas-oranusto,Oran Usto,31,,,35.70146489485303,-0.5999005508820119,exact,bank_locator,bank_locator,bnpparibas,"11 Coopérative Zighout Youcef, 31001 Oran",'+21321981348
 bnpparibas-rostomiaexbouzareah,Rostomia (Ex Bouzareah),16,,,36.769717,3.001204,exact,bank_locator,bank_locator,bnpparibas,"N°11 rue 1er Novembre, 16340 Alger",'+21321981148
 bnpparibas-rouiba,Rouiba,16,,,36.739151,3.276329,exact,bank_locator,bank_locator,bnpparibas,Cité Cadat N° 90 16012 Alger,'+21321 98 13 75
-bnpparibas-setif1ernovembre1954,Sétif 1er Novembre 1954,19,,,36.194765,5.434794,exact,bank_locator,bank_locator,bnpparibas,3 avenue du 1er Novembre 1954 19000 Sétif,'+21321981395
-bnpparibas-setifagence1ernovembre1954,Sétif agence 1er Novembre 1954,19,,,36.194765,5.434794,exact,bank_locator,bank_locator,bnpparibas,"Coopérative 1 novembre 54, Rue N° 8 BENDAIKHA MILOUD 19000 Sétif",'+21321981395
+bnpparibas-setif1ernovembre1954,Sétif 1er Novembre 1954,19,,,36.194765,5.434794,approximate,bank_locator,bank_locator,bnpparibas,3 avenue du 1er Novembre 1954 19000 Sétif,'+21321981395
+bnpparibas-setifagence1ernovembre1954,Sétif agence 1er Novembre 1954,19,,,36.194765,5.434794,approximate,bank_locator,bank_locator,bnpparibas,"Coopérative 1 novembre 54, Rue N° 8 BENDAIKHA MILOUD 19000 Sétif",'+21321981395
 bnpparibas-setifparkmall,Sétif Park Mall,19,,,36.190748,5.410185,exact,bank_locator,bank_locator,bnpparibas,"Rue du 08 novembre, 19000 Sétif",'+21321981307
 bnpparibas-sidibelabbes,Sidi Bel Abbes,22,,,35.18258590777404,-0.6435742288706963,exact,bank_locator,bank_locator,bnpparibas,"22, Boulevard Colonel Athmane Bt A, Sidi Belabes. 22005 Sidi Bel Abbes",'+21321981142
 bnpparibas-sidiyahia,Sidi Yahia,16,,,36.737973,3.043674,exact,bank_locator,bank_locator,bnpparibas,"04, CHEMIN SIDI YAHIA 16300 Alger",'+213 21 98 11 84
-bnpparibas-siegesocial,Siège Social,16,,,36.71574312423905,3.2044796989807764,exact,bank_locator,bank_locator,bnpparibas,"Ilot 1, Quartier d'affaires d'Alger 16000 Alger",'+21321 91 11 30
+bnpparibas-siegesocial,Siège Social,16,,,36.71574312423905,3.2044796989807764,approximate,bank_locator,bank_locator,bnpparibas,"Ilot 1, Quartier d'affaires d'Alger 16000 Alger",'+21321 91 11 30
 bnpparibas-skikda,Skikda,21,,,36.871869,6.91082,exact,bank_locator,bank_locator,bnpparibas,10 Cité Amar Chetaibi 21000 Skikda,'+21321981154
 bnpparibas-staoueli,STAOUELI,16,,,36.74113,2.876347,exact,bank_locator,bank_locator,bnpparibas,"14, Route Berridj 77 N°03 Coopérative Houari Boumediene 16101 Commune de Staouali",'+21321981336
 bnpparibas-tipaza,Tipaza,42,,,36.591403,2.452148,exact,bank_locator,bank_locator,bnpparibas,Route Nationale - Artère principale 42000 Tipaza,'+21321981174
@@ -1130,7 +1130,7 @@ bnpparibas-tiziouzou,Tizi Ouzou,15,,,36.707844,4.034753,exact,bank_locator,bank_
 bnpparibas-tlemcen,Tlemcen,13,,,34.884954,-1.321449,exact,bank_locator,bank_locator,bnpparibas,3 boulevard Abderrahmane Derrar 13000 Tlemcen,'+21321981146
 citibank-alger,Citibank N.A. Algeria,16,,,,,,,bank_locator,citibank,"Immeuble Le Ksar, 34/35 Quartier d'affaires, Bab Ezzouar, 16311 Alger",'+213 21 98 19 00
 cnep-100,Akbou,06,,,36.7548854,5.0774386,exact,bank_locator,bank_locator,cnep,Rue LARBI TOUATI BEJAIA,034 33 60 17
-cnep-101,Liberté,06,,,36.7524241,5.0680805,exact,bank_locator,bank_locator,cnep,"Tour R + 9, Boulevard de la Liberté, BEJAIA",034 16 17 51
+cnep-101,Liberté,06,,,36.7524241,5.0680805,approximate,bank_locator,bank_locator,cnep,"Tour R + 9, Boulevard de la Liberté, BEJAIA",034 16 17 51
 cnep-102,Tichy,06,,,36.7524169,5.0293646,exact,bank_locator,bank_locator,cnep,Route Nationale N° 09 TICHY BEJAIA,"034 81 52 09 , 034 81 53 46/49"
 cnep-103,Bordj Mira,06,,,36.5458967,5.2664529,exact,bank_locator,bank_locator,cnep,"BVD, 11 décembre 1966 Bordj Mira centre",
 cnep-104,Amizour,06,,,36.6465004,4.9004604,exact,bank_locator,bank_locator,cnep,Cité des 98 logements CNEP N°8,034 82 44 36
@@ -1158,10 +1158,10 @@ cnep-125,DJELOUAH,25,,,36.3570653,6.623093,exact,bank_locator,bank_locator,cnep,
 cnep-126,GRAREM,43,,,36.53537,6.3038442,exact,bank_locator,bank_locator,cnep,02 RUE ZERARA SAID  GRAREM GOUGA,031 44 54 89
 cnep-127,TADJNANET,43,,,36.1104935,5.9761599,exact,bank_locator,bank_locator,cnep,RUE SACI MOHAMED TADJENANET,031 48 31 31
 cnep-128,HAMMA BOUZIANE,25,,,36.4280464,6.5146003,exact,bank_locator,bank_locator,cnep,03  DE RUE DE L'ALN  LOCAL N° 258  HAMMA BOUZIANE,031 84 22 47
-cnep-129,DIRECTION DU RÉSEAU ANNABA,23,,,36.902125,7.7445428,exact,bank_locator,bank_locator,cnep,"06, Rue Ahcéne Chaouch Azzedine  Beauséjour","038 45 12 90 , 038 80 19 89"
+cnep-129,DIRECTION DU RÉSEAU ANNABA,23,,,36.902125,7.7445428,approximate,bank_locator,bank_locator,cnep,"06, Rue Ahcéne Chaouch Azzedine  Beauséjour","038 45 12 90 , 038 80 19 89"
 cnep-130,ANNABA W,23,,,36.8978707,7.7580319,exact,bank_locator,bank_locator,cnep,06 Cours de la Révolution Annaba,038 45 92 85
 cnep-131,PLAINE OUEST,23,,,36.8933297,7.7250336,exact,bank_locator,bank_locator,cnep,Rue Plaine Ouest,038 41 68 61
-cnep-132,BEN-BADIS,23,,,36.902125,7.7445428,exact,bank_locator,bank_locator,cnep,"06, Rue Ahcène Chaouch Azzeddine  Beauséjou",038 45 10 35
+cnep-132,BEN-BADIS,23,,,36.902125,7.7445428,approximate,bank_locator,bank_locator,cnep,"06, Rue Ahcène Chaouch Azzeddine  Beauséjou",038 45 10 35
 cnep-133,17 OCTOBRE,23,,,36.9042137,7.7514645,exact,bank_locator,bank_locator,cnep,"02, Rue Abdelhamid Ben-Badis Annaba",038 40 76 55
 cnep-134,EL-HADJAR,23,,,36.8065391,7.7379946,exact,bank_locator,bank_locator,cnep,Cité 436 logts BT01,038 59 20 68
 cnep-135,TEBESSA W,12,,,35.3974558,7.9951914,exact,bank_locator,bank_locator,cnep,Cité TEVESTH Nouvelle agence,037 56 23 45
@@ -1326,9 +1326,9 @@ cnep-63,BABA HASSEN,16,,,36.6960827,2.9570125,exact,bank_locator,bank_locator,cn
 cnep-64,TAHAR IMMALAYENE,16,,,36.7537482,3.0424593,exact,bank_locator,bank_locator,cnep,"61, Boulvard Souidani Boudjâa",023 36 85 53
 cnep-65,EL ACHOUR,16,,,36.7471351,2.9944141,exact,bank_locator,bank_locator,cnep,"Cité 1071 logts EPLF, BT D36",023 15 31 23
 cnep-66,Ain benian,16,,,36.7938767,2.906564,exact,bank_locator,bank_locator,cnep,"05, Boulevard Amour Dris Fayçal","021 10 47 67 , 023 10 34 44"
-cnep-67,DIRECTION DU RÉSEAU BLIDA,16,,,36.7135936,2.996013,exact,bank_locator,bank_locator,cnep,Cité 130 Logts Bp253 Bd Takarli Abderrezak,023 21 53 90
+cnep-67,DIRECTION DU RÉSEAU BLIDA,16,,,36.7135936,2.996013,approximate,bank_locator,bank_locator,cnep,Cité 130 Logts Bp253 Bd Takarli Abderrezak,023 21 53 90
 cnep-68,BLIDA,09,,,36.4735691,2.8295588,exact,bank_locator,bank_locator,cnep,Cité Des 142 Logt Bab Dzair Blida,025 23 30 97
-cnep-69,OULED YAICH,16,,,36.7135936,2.996013,exact,bank_locator,bank_locator,cnep,Cité 130 Logt Bd Takarli Abderrezak,025 21 54 76
+cnep-69,OULED YAICH,16,,,36.7135936,2.996013,approximate,bank_locator,bank_locator,cnep,Cité 130 Logt Bd Takarli Abderrezak,025 21 54 76
 cnep-70,BOUFARIK,42,,,36.5999067,2.6889029,exact,bank_locator,bank_locator,cnep,Bd Suidani Boudjemaa Boufarik,025 20 57 90
 cnep-71,EL AFFROUN,09,,,36.474439,2.6511173,exact,bank_locator,bank_locator,cnep,Rue Mebarek Cherif – El AffrounH H,025 38 35 56
 cnep-72,DJELFA,17,,,34.6660654,3.2523766,exact,bank_locator,bank_locator,cnep,Centre Commerciale H.L.M Djelfa,027 92 37 87
@@ -1337,10 +1337,10 @@ cnep-74,BERROUAGHIA,26,,,36.1532281,2.8301976,exact,bank_locator,bank_locator,cn
 cnep-75,KSAR EL BOUKHARI,67,,,35.8792247,2.7295394,exact,bank_locator,bank_locator,cnep,Bd Mohamed Khemissti Ksar El Boukhari,025 69 17 41
 cnep-76,BANANIERS,09,,,36.4874418,2.830804,exact,bank_locator,bank_locator,cnep,Bd Du 11 decembre  1960 - Blida,025 23 36 55
 cnep-77,AIN OUSSARA,65,,,35.4518527,2.8990679,exact,bank_locator,bank_locator,cnep,Hay Ali  Amar Ain Oussara,027 80 11 77
-cnep-78,DIRECTION DU RÉSEAU TIZI OUZOU,15,,,36.7114351,4.0500444,exact,bank_locator,bank_locator,cnep,Rue ABANE RAMDANE Tizi ouzou,"026 12 14 24, 026 12 78 62 , 026 12 83 08"
-cnep-79,ABANE RAMDANE,15,,,36.7114351,4.0500444,exact,bank_locator,bank_locator,cnep,Rue ABANE RAMDANE Tizi-Ouzou,026 12 23 50
+cnep-78,DIRECTION DU RÉSEAU TIZI OUZOU,15,,,36.7114351,4.0500444,approximate,bank_locator,bank_locator,cnep,Rue ABANE RAMDANE Tizi ouzou,"026 12 14 24, 026 12 78 62 , 026 12 83 08"
+cnep-79,ABANE RAMDANE,15,,,36.7114351,4.0500444,approximate,bank_locator,bank_locator,cnep,Rue ABANE RAMDANE Tizi-Ouzou,026 12 23 50
 cnep-80,BEN M’HIDI,15,,,36.7133262,4.0422132,exact,bank_locator,bank_locator,cnep,Cité 20 AOUT Bt N°01 Tizi-Ouzou,026.19.62.36
-cnep-81,LARBAA NATH IRATHEN,15,,,36.7114351,4.0500444,exact,bank_locator,bank_locator,cnep,Avenue ABANE RAMDANE  Larbaa Nath lrathen,026 49 26 57
+cnep-81,LARBAA NATH IRATHEN,15,,,36.7114351,4.0500444,approximate,bank_locator,bank_locator,cnep,Avenue ABANE RAMDANE  Larbaa Nath lrathen,026 49 26 57
 cnep-82,AIN EL HAMMAM,15,,,36.7114346,4.0422928,exact,bank_locator,bank_locator,cnep,Rue 1er Novembre Ain  EL Hammam,026 48 87 76
 cnep-83,DRAA EL MIZAN,15,,,36.5380032,3.8287072,exact,bank_locator,bank_locator,cnep,Rue COLONEL OUAMAANE Draa El Mizan,026 13 20 57
 cnep-84,AZAZGA,15,,,36.7440258,4.3510474,exact,bank_locator,bank_locator,cnep,Route du Parc APC,026 14 18 96
@@ -1353,7 +1353,7 @@ cnep-90,AIN BESSAM,10,,,36.3300853,3.6294507,exact,bank_locator,bank_locator,cne
 cnep-91,M’CHEDALLAH,10,,,36.3641621,4.2624112,exact,bank_locator,bank_locator,cnep,Cité 200 LOGTS M'Chedellah,026.79.41.90
 cnep-92,BOGHNI,10,,,36.3771783,3.8818072,exact,bank_locator,bank_locator,cnep,Cité 100  LOGTS  Boghni,026.23.18.69
 cnep-93,BORDJ MENAIEL,35,,,36.7402426,3.7063837,exact,bank_locator,bank_locator,cnep,Rue colonel amirouche,024.78.59.58
-cnep-94,DIRECTION DU RÉSEAU BEJAIA,06,,,36.7524241,5.0680805,exact,bank_locator,bank_locator,cnep,"Tour R+9,Boulevard de la  liberté, BEJAIA",034 16 17 40
+cnep-94,DIRECTION DU RÉSEAU BEJAIA,06,,,36.7524241,5.0680805,approximate,bank_locator,bank_locator,cnep,"Tour R+9,Boulevard de la  liberté, BEJAIA",034 16 17 40
 cnep-95,WILAYA,06,,,36.7495241,5.067475,exact,bank_locator,bank_locator,cnep,Rue HARFI TAOUS Cité TOBBAL Bejaia,0234 16 08 00/01
 cnep-96,TAZMALT,06,,,36.385879,4.4011301,exact,bank_locator,bank_locator,cnep,Rue HOCINE Lahlou  TAZMALT,034 31 15 83
 cnep-97,SIDI AICH,06,,,36.6112276,4.6841183,exact,bank_locator,bank_locator,cnep,Cité des 20 logements BOUHLOU Sidi Aich,034 86 00 98
@@ -1503,7 +1503,7 @@ cpa-76,Agence Larbaa Nath Irathen,15,,,36.63555,4.20567,exact,bank_locator,bank_
 cpa-77,Agence Bordj Menail,35,,,36.7448999,3.720191,exact,bank_locator,bank_locator,cpa,"5, Rue Ziane Lounes Bordj Menail, Boumerdes",
 cpa-78,Agence Dellys,35,,,36.9172922,3.8917726,exact,bank_locator,bank_locator,cpa,"Cité 92 logts Bt A N°02, Dellys",
 cpa-79,Agence Draa El Mizan,15,,,36.5394863,3.83999,exact,bank_locator,bank_locator,cpa,"Cité des 80 logements, Draâ El Mizan, Tizi Ouzou",
-cpa-8,Agence EL MILIA,18,,,36.75269,6.27,exact,bank_locator,bank_locator,cpa,Rue Boutala Ahcène-,
+cpa-8,Agence EL MILIA,18,,,36.75269,6.27,approximate,bank_locator,bank_locator,cpa,Rue Boutala Ahcène-,
 cpa-80,Agence Sour El Ghozlane,10,,,36.144,3.68729,exact,bank_locator,bank_locator,cpa,"Cité des 40 Logts BTB, Sour El Ghozlane",
 cpa-81,Agence Lakhdaria,10,,,36.5639879,3.5967646,exact,bank_locator,bank_locator,cpa,"Cité 39 Logts Rue National N° 05, Lakhdaria",
 cpa-82,Agence Bouira,10,,,36.3789297,3.89899,exact,bank_locator,bank_locator,cpa,"Immeuble CPA Gare Routière, Bouira",

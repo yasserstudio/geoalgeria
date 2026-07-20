@@ -105,3 +105,47 @@ export function pointInWilaya(lng, lat, wilayaCode, boundaries) {
   if (!geom) return true;
   return pointInGeometry(lng, lat, geom);
 }
+
+// ---------------------------------------------------------------------------
+// Can this coordinate honestly be called `exact`?
+//
+// `geo_precision` had no quality test behind it: anything with two finite axes
+// was stamped "exact". Two things the numbers themselves can disprove:
+//   - resolution — a value rounded to ≤2 fraction digits locates nothing smaller
+//     than a neighbourhood (see MIN_EXACT_DECIMALS);
+//   - uniqueness — a point carried by more than one record in the same file is
+//     not a *per-facility* point, whichever facility it actually belongs to.
+// Neither replaces judgement about the source; both are checks the data fails on
+// its own terms, so they are contract errors rather than warnings.
+
+/** Fraction digits in a number's shortest round-trip decimal form (0 for integers).
+ *  Exponential forms (1e-7) have no literal fraction digits, so they report the
+ *  exponent instead — never a spurious 0 that would read as whole-degree. */
+export function fractionDigits(n) {
+  if (!Number.isFinite(n)) return 0;
+  const s = String(n);
+  const e = s.match(/e-(\d+)$/i);
+  if (e) return Number(e[1]) + (s.indexOf(".") < 0 ? 0 : s.indexOf("e") - s.indexOf(".") - 1);
+  const dot = s.indexOf(".");
+  return dot < 0 ? 0 : s.length - dot - 1;
+}
+
+/** A point is only as precise as its coarser axis → min of the two digit counts. */
+export function coordDecimals(lat, lng) {
+  return Math.min(fractionDigits(lat), fractionDigits(lng));
+}
+
+/** Indexes of the rows whose coordinate is carried by at least one other row in
+ *  the same collection. Ungeocoded rows are never members. */
+export function sharedPoints(rows) {
+  const byPoint = new Map();
+  rows.forEach((r, i) => {
+    if (!r || !Number.isFinite(r.lat) || !Number.isFinite(r.lng)) return;
+    const k = `${r.lat},${r.lng}`;
+    if (!byPoint.has(k)) byPoint.set(k, []);
+    byPoint.get(k).push(i);
+  });
+  const out = new Set();
+  for (const idxs of byPoint.values()) if (idxs.length > 1) for (const i of idxs) out.add(i);
+  return out;
+}

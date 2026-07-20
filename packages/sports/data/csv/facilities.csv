@@ -52,7 +52,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00051,,01,,REGGANE,26.709871,0.175455,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,REGGANE,"reggane, Adrar",120,2014,true,,1125,1125
 00052,,01,,REGGANE,26.719089,0.185255,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,REGGANE,"reggane, Adrar",120,2007,true,,1125,1125
 00053,,01,,REGGANE,26.716,0.1856,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,REGGANE,"Route de l'aéroport de Reggane, Daïra de Reggane, Adrar, 1004, Algérie",120,2014,true,,1125,1125
-00054,,01,,TIMEKTEN,27.03,1.0389,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AOULEF,Timokten Daira Aoulef,120,2009,true,,1125,1125
+00054,,01,,TIMEKTEN,27.03,1.0389,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AOULEF,Timokten Daira Aoulef,120,2009,true,,1125,1125
 00055,,01,,AKABLI,26.7105,1.3683,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AOULEF,Aoulef Akabli,120,2009,true,,1125,1125
 00056,,01,,REGGANE,26.725833,0.164932,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,REGGANE,"reggane, Adrar",120,2016,true,,1125,1125
 00057,,01,,SALI,26.957391,-0.033224,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,REGGANE,"sali; daira reggane, Adrar",120,2016,true,,1125,1125
@@ -69,7 +69,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00068,,01,,AOULEF,26.976918,1.084599,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AOULEF,Aoulef,120,2007,true,,1125,1125
 00069,,01,,OULED AHMED TIMMI,27.8236,-0.2964,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ADRAR,Ouled Abou hafs Timi,120,2014,true,,1125,1125
 00070,,01,,OULED AHMED TIMMI,27.8358,-0.2913,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ADRAR,Stade communal Ouled Ahmed Timi,120,,true,,1125,1125
-00071,,01,,ADRAR,27.87,-0.2887,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ADRAR,Rue BENSLIMANE Abdelkader,120,,true,,,
+00071,,01,,ADRAR,27.87,-0.2887,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,ADRAR,Rue BENSLIMANE Abdelkader,120,,true,,,
 00072,,01,,ADRAR,27.8755,-0.2866,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ADRAR,بلدية أدرار تقاطع شارع مقدم العربي وشارع سيلا محمد,120,2001,true,,880,880
 00073,,01,,TAMANTIT,27.7556,-0.2643,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,FENOUGHIL,"CSP Tamentit, Daïra de Fenoughil, Adrar, 1038, Algérie",120,2014,,false,1125,1125
 00074,,01,,FENOUGHIL,27.564,-0.2969,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,FENOUGHIL,ksar sidi youcef fenoughil Adrar,120,2014,true,,1125,1125
@@ -233,7 +233,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00232,piscine de proximité achour moktar,03,,SIDI MAKHLOUF,34.1075,2.9995,exact,sig_mjs,mjs,PP,Piscine de proximité,SIDI MAKHLOUF,sidi makhlouf,40,2024,true,true,,
 00233,piscine de proximité bous ahmed,03,,EL GHICHA,33.9306,2.1381,exact,sig_mjs,mjs,PP,Piscine de proximité,EL GHICHA,EL GHICHA,40,2023,true,true,,
 00234,piscine de proximité gachbout mohammed,03,,SIDI BOUZID,34.3453,2.2651,exact,sig_mjs,mjs,PP,Piscine de proximité,AFLOU,SIDI BOUZID,40,2024,true,true,,
-00235,piscine de proximité modjahid ben ali,03,,AIN MADHI,33.7923,2.31,exact,sig_mjs,mjs,PP,Piscine de proximité,AIN MADHI,An madhi,40,2023,true,true,,
+00235,piscine de proximité modjahid ben ali,03,,AIN MADHI,33.7923,2.31,approximate,sig_mjs,mjs,PP,Piscine de proximité,AIN MADHI,An madhi,40,2023,true,true,,
 00236,stade de football,03,,HASSI R'MEL,32.958,3.2748,exact,sig_mjs,mjs,SF,Stade de football,HASSI R'MEL,hassi r'mel,995,,true,false,850,1300
 00237,Terrain combiné,03,,AFLOU,34.1015,2.0848,exact,sig_mjs,mjs,SF,Stade de football,AFLOU,Aflou,1100,2017,true,true,400,1200
 00238,salle omnisport,03,,KSAR EL HIRANE,33.7856,3.1436,exact,sig_mjs,mjs,SOMS,Salle OMS,KSAR EL HIRANE,ksar elhiran,1000,2021,true,true,980,2415
@@ -258,7 +258,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00257,Terrain combiné,03,,HASSI DELAA,33.4153,3.5484,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi delaa,60,,true,false,1000,1000
 00258,Terrain combiné,03,,HASSI DELAA,33.4175,3.5478,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi delaa,60,,true,false,1000,1000
 00259,Terrain combiné,03,,HASSI DELAA,33.4145,3.5462,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi delaa,60,,true,false,1000,1000
-00260,Terrain combiné,03,,LAGHOUAT,33.79,2.8809,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAGHOUAT,Laghouat,60,2006,true,false,1000,1000
+00260,Terrain combiné,03,,LAGHOUAT,33.79,2.8809,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAGHOUAT,Laghouat,60,2006,true,false,1000,1000
 00261,Terrain combiné,03,,LAGHOUAT,33.8053,2.858,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAGHOUAT,Laghouat,60,2006,true,false,1000,1000
 00262,Terrain combiné,03,,LAGHOUAT,33.8093,2.8681,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAGHOUAT,Laghouat,60,2006,true,false,1000,1000
 00263,Terrain combiné,03,,LAGHOUAT,33.7955,2.8483,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAGHOUAT,Laghouat,300,2006,true,false,1800,1800
@@ -269,7 +269,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00268,Terrain combiné,03,,HASSI DELAA,33.4147,3.5457,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi delaa,60,,true,false,1000,1000
 00269,Terrain combiné,03,,LAGHOUAT,33.7851,2.8776,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAGHOUAT,Laghouat,60,,true,false,1000,1000
 00270,Terrain combiné,03,,AFLOU,34.116,2.101,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,Aflou,60,2007,true,false,1000,1000
-00271,Terrain combiné,03,,AFLOU,34.3477,2.27,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,SIDI BOUZID,60,2007,true,false,1000,1000
+00271,Terrain combiné,03,,AFLOU,34.3477,2.27,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,SIDI BOUZID,60,2007,true,false,1000,1000
 00272,Terrain combiné,03,,AFLOU,34.1144,2.0959,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,Aflou,60,2007,true,false,1000,1000
 00273,Terrain combiné,03,,AFLOU,34.1142,2.0891,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,Aflou,60,2007,true,false,1000,1000
 00274,Terrain combiné,03,,AFLOU,34.1148,2.0995,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,Aflou,60,2007,true,false,1000,1000
@@ -288,7 +288,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00287,Terrain combiné,03,,AIN MADHI,33.7938,2.3094,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MADHI,An madhi,60,2008,true,false,1000,1000
 00288,Terrain combiné,03,,AIN MADHI,33.7954,2.302,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MADHI,An madhi,60,2008,true,false,1000,1000
 00289,Terrain combiné,03,,AIN MADHI,33.7947,2.3075,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MADHI,An madhi,60,,true,false,1000,1000
-00290,Terrain combiné,03,,EL GHICHA,33.9245,2.15,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL GHICHA,ELGHICHA,60,,true,false,1000,1000
+00290,Terrain combiné,03,,EL GHICHA,33.9245,2.15,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL GHICHA,ELGHICHA,60,,true,false,1000,1000
 00291,Terrain combiné,03,,HASSI R'MEL,32.936,3.2647,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi r'mel,300,,true,false,1800,1800
 00292,Terrain combiné,03,,HASSI R'MEL,32.9402,3.266,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi r'mel,60,,true,false,1000,1000
 00293,Terrain combiné,03,,HASSI R'MEL,32.9469,3.2601,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI R'MEL,hassi r'mel,60,,true,false,1000,1000
@@ -370,7 +370,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00369,Salle OMS,04,,MESKIANA,35.6296,7.6721,exact,sig_mjs,mjs,SOMS,Salle OMS,MESKIANA,Meskiana,500,2020,false,false,,
 00370,Salle OMS,04,,OUM EL BOUAGHI,35.8702,7.1064,exact,sig_mjs,mjs,SOMS,Salle OMS,OUM EL BOUAGHI,Boulevar Houarie Boumediene OEB,1000,1997,true,false,2900,4150
 00371,Salle OMS,04,,AIN BEIDA,35.8026,7.3948,exact,sig_mjs,mjs,SOMS,Salle OMS,AIN BEIDA,Rue belle Vue Ain Beaid,1000,1999,true,false,2205,5619
-00372,Salle spécialisée,04,,OUM EL BOUAGHI,35.87,7.1415,exact,sig_mjs,mjs,SS,Salle spécialisée,OUM EL BOUAGHI,Lycée sportif,,2015,true,false,1100,
+00372,Salle spécialisée,04,,OUM EL BOUAGHI,35.87,7.1415,approximate,sig_mjs,mjs,SS,Salle spécialisée,OUM EL BOUAGHI,Lycée sportif,,2015,true,false,1100,
 00373,Berrou Abdel Hamid,04,,OUM EL BOUAGHI,35.8571,7.0821,exact,sig_mjs,mjs,STOMS,Stade OMS,OUM EL BOUAGHI,Route de Guelif OEB,7400,2007,false,false,3262,248930
 00374,Khelifi Touhami Zoubir,04,,AIN M'LILA,36.045,6.5577,exact,sig_mjs,mjs,STOMS,Stade OMS,AIN M'LILA,Route d'Alger BP 248 Ain M'lila,7400,2007,true,false,3100,86898
 00375,STADE OMS HAMDI ALLI,04,,AIN BEIDA,35.788456,7.402193,exact,sig_mjs,mjs,STOMS,Stade OMS,AIN BEIDA,AIN BEIDA RUE DE MESKIANA,8400,1980,false,,3460,40000
@@ -472,7 +472,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00471,aire de jeux de football Talkhemt,05,,TALKHAMT,35.6757,5.7846,exact,sig_mjs,mjs,AJF,Aire de jeux football,RAS EL AIOUN,commune de Talkhemt,30,2013,true,false,4750,
 00472,aire de jeux de football Thniet el abed,05,,TENIET EL ABED,35.2564,6.2011,exact,sig_mjs,mjs,AJF,Aire de jeux football,THENIET EL ABED,commune de Thniet el abed,30,2013,true,false,4750,
 00473,aire de jeux El Rahbat,05,,RAHBAT,35.6824,5.6527,exact,sig_mjs,mjs,AJF,Aire de jeux football,RAS EL AIOUN,commune de El Rahbat,30,,true,false,4750,
-00474,aire de jeux Fesdis,05,,FESDIS,35.6229,6.2428,exact,sig_mjs,mjs,AJF,Aire de jeux football,BATNA,commune de Fesdis,30,,true,false,4750,
+00474,aire de jeux Fesdis,05,,FESDIS,35.6229,6.2428,approximate,sig_mjs,mjs,AJF,Aire de jeux football,BATNA,commune de Fesdis,30,,true,false,4750,
 00475,aire de jeux Mdoukal,05,,M DOUKAL,35.1227,5.1845,exact,sig_mjs,mjs,AJF,Aire de jeux football,BARIKA,commune de Mdoukal,30,,true,false,4750,
 00476,aire de jeux Ouled sellam,05,,OULED SELLEM,35.8259,5.8859,exact,sig_mjs,mjs,AJF,Aire de jeux football,RAS EL AIOUN,commune de Ouled sellam,30,,true,false,4750,
 00477,aire de jeux Seggana,05,,SEGGANA,35.3655,5.5783,exact,sig_mjs,mjs,AJF,Aire de jeux football,SEGGANA,commune de Seggana,30,,true,false,4750,
@@ -495,7 +495,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00494,Stade d'athlétisme batna,05,,BATNA,35.5263,6.1859,exact,sig_mjs,mjs,SA,Stade d'athlétisme,BATNA,commune de Batna,5400,2001,true,false,,
 00495,Stade 1500 places Hamla,05,,OUED CHAABA,35.5366,6.0966,exact,sig_mjs,mjs,SF,Stade de football,BATNA,Hamla 3 Oued Chaaba Batna,1500,2022,true,true,,
 00496,Stade 5400 places à Barika,05,,BARIKA,35.4153,5.3685,exact,sig_mjs,mjs,SF,Stade de football,BARIKA,route de Msila commune de Barika,5400,2011,true,false,,20883
-00497,stade 5400 places Arris,05,,ARRIS,35.24,6.3224,exact,sig_mjs,mjs,SF,Stade de football,ARRIS,Dachra Hamra commune de Arris,5400,2011,true,false,,15974
+00497,stade 5400 places Arris,05,,ARRIS,35.24,6.3224,approximate,sig_mjs,mjs,SF,Stade de football,ARRIS,Dachra Hamra commune de Arris,5400,2011,true,false,,15974
 00498,stade de foot 5400 places,05,,RAS EL AIOUN,35.6721,5.6473,exact,sig_mjs,mjs,SF,Stade de football,RAS EL AIOUN,Commune de Ras layoune,5400,2011,true,false,,
 00499,stade intercommunal Timgad,05,,TIMGAD,35.4963,6.479,exact,sig_mjs,mjs,SF,Stade de football,TIMGAD,commune de timgad,1000,2009,true,false,,20020
 00500,Salle OMS,05,,N GAOUS,35.5703,5.6146,exact,sig_mjs,mjs,SOMS,Salle OMS,N'GAOUS,"""route de Ras layoune Commune de N'gaoues""",500,2004,true,false,3782,3794
@@ -515,7 +515,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00514,stade OMS,05,,BATNA,35.5572,6.1879,exact,sig_mjs,mjs,STOMS,Stade OMS,BATNA,opow 1er nov,9000,,true,false,9524,116212.1
 00515,stade OMS Ain Touta,05,,AIN TOUTA,35.3682,5.8881,exact,sig_mjs,mjs,STOMS,Stade OMS,AIN TOUTA,commune ain touta,5400,2001,true,false,,
 00516,Terrainde football Batna,05,,BATNA,35.5414,6.1682,exact,sig_mjs,mjs,TF,Terrain de football,BATNA,commune de Batna,30,,true,false,7140,
-00517,Terrain de proximité 1020 logts Batna,05,,BATNA,35.5489,6.1496,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,cité 1020 commune de Batna,30,2006,true,false,1125,
+00517,Terrain de proximité 1020 logts Batna,05,,BATNA,35.5489,6.1496,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,cité 1020 commune de Batna,30,2006,true,false,1125,
 00518,Terrain de proximité Ain Yagout,05,,AIN YAGOUT,35.8302,6.3674,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MADHER,commune de Dhraa Boultif,30,2006,true,false,1125,
 00519,Terrain de proximité Ain Yagout,05,,AIN YAGOUT,35.7737,6.4111,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MADHER,commune de Ain Yagout,30,2006,true,false,1125,
 00520,Terrain de proximité Arris,05,,ARRIS,35.2681,6.4008,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ARRIS,commune de Arris,30,2006,true,false,1125,
@@ -528,7 +528,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00527,Terrain de proximité Batna,05,,BATNA,35.5573,6.1564,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,kéchida commune de Batna,30,2010,true,false,1125,
 00528,Terrain de proximité Batna,05,,BATNA,35.5467,6.1583,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00529,Terrain de proximité Batna,05,,BATNA,35.5416,6.1612,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,Université de Batna commune de Batna,30,2010,true,false,1125,
-00530,Terrain de proximité Batna,05,,BATNA,35.5489,6.1496,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2012,true,false,1125,
+00530,Terrain de proximité Batna,05,,BATNA,35.5489,6.1496,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2012,true,false,1125,
 00531,Terrain de proximité Batna,05,,BATNA,35.5586,6.1867,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00532,Terrain de proximité Batna,05,,BATNA,35.5314,6.1634,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,,true,false,1125,
 00533,Terrain de proximité Beni Fedala el hakania,05,,BENI FOUDHALA EL HAKANIA,35.3832,6.0484,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TOUTA,commune de Beni Fedala el hakania,30,2006,true,false,1125,
@@ -561,7 +561,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00560,terrain de sport de Ain touta,05,,AIN TOUTA,35.3815,5.9058,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TOUTA,Commune de Ain Touta,30,2006,true,false,1125,
 00561,terrain de sport de Arris,05,,ARRIS,35.2512,6.3532,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ARRIS,Commune de Arris,30,2006,true,false,1125,
 00562,terrain de sport de Barika,05,,BARIKA,35.3875,5.3718,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Barika,30,2006,true,false,1125,
-00563,terrain de sport de Barika,05,,BARIKA,35.41,5.3713,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Barika,30,2010,true,false,1125,
+00563,terrain de sport de Barika,05,,BARIKA,35.41,5.3713,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Barika,30,2010,true,false,1125,
 00564,terrain de sport de Barika,05,,BARIKA,35.4048,5.393,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Barika,30,2010,true,false,1125,
 00565,terrain de sport de Barika,05,,BARIKA,35.3927,5.3499,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Barika,30,2006,true,false,1125,
 00566,terrain de sport de Barika,05,,BARIKA,35.3777,5.3703,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Barika,30,2006,true,false,1125,
@@ -578,7 +578,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00577,terrain de sport de Bitam,05,,BITAM,35.298,5.2998,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Bitam,30,2010,true,false,1125,
 00578,terrain de sport de Bitam,05,,BITAM,35.3122,5.3755,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,commune de Bitam,30,,true,false,1125,
 00579,terrain de sport de Bouzina,05,,BOUZINA,35.2686,6.1006,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUZINA,commune de Bouzina,30,2006,true,false,1125,
-00580,terrain de sport de Bouzina,05,,BOUZINA,35.24,6.0517,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUZINA,commune de Bouzina,30,2010,true,false,1125,
+00580,terrain de sport de Bouzina,05,,BOUZINA,35.24,6.0517,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUZINA,commune de Bouzina,30,2010,true,false,1125,
 00581,terrain de sport de Bouzina,05,,BOUZINA,35.2665,6.0942,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUZINA,commune de Bouzina,30,2006,true,false,1125,
 00582,terrain de sport de Chir,05,,CHIR,35.2179,6.1035,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,commune de chir,30,2006,true,false,1125,
 00583,terrain de sport de El Hassi,05,,EL HASSI,35.803,5.937,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN DJASSER,commune de El Hassi,30,2010,true,false,1125,
@@ -613,7 +613,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00612,terrain de sport de Tazoult,05,,TAZOULT,35.4811,6.2566,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TAZOULT,commune de Tazoult,30,2006,true,false,1125,
 00613,terrain de sport de Tazoult,05,,TAZOULT,35.4759,6.3024,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TAZOULT,commune de Tazoult,30,2010,true,false,1125,
 00614,terrain de sport de Tazoult,05,,TAZOULT,35.4776,6.2609,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TAZOULT,commune de Tazoult,30,2006,true,false,1125,
-00615,terrain de sport de Thniet el abed,05,,TENIET EL ABED,35.2544,6.2,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,commune de Thniet el abed,30,2006,true,false,1125,
+00615,terrain de sport de Thniet el abed,05,,TENIET EL ABED,35.2544,6.2,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,commune de Thniet el abed,30,2006,true,false,1125,
 00616,terrain de sport de Thniet el abed,05,,TENIET EL ABED,35.2573,6.1992,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,commune de Thniet el abed,30,2010,true,false,1125,
 00617,terrain de sport de Thniet el abed,05,,TENIET EL ABED,35.2563,6.2025,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,commune de Thniet el abed,30,2006,true,false,1125,
 00618,terrain de sport de Tilatou,05,,TILATOU,35.3565,5.7086,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGGANA,commune de Tilatou,30,2006,true,false,1125,
@@ -621,7 +621,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00620,terrain de sport de Zana El Beida,05,,ZANET EL BEIDA,35.8096,6.1348,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SERIANA,commune de Zana El Beida,30,2010,true,false,1125,
 00621,terrain de sport des 200 logts Barika,05,,BARIKA,35.383,5.3637,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,200 logements commune de Barika,30,2006,true,false,1125,
 00622,terrain de sport stade scolaire Barika,05,,BARIKA,35.3881,5.366,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BARIKA,stade scolaire commune de Barika,30,2006,true,false,1125,
-00623,Terrain sportif de proximité 800 logts Batna,05,,BATNA,35.5474,6.16,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,800 logements commune de Batna,30,2006,true,false,1125,
+00623,Terrain sportif de proximité 800 logts Batna,05,,BATNA,35.5474,6.16,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,800 logements commune de Batna,30,2006,true,false,1125,
 00624,Terrain sportif de proximité AADL Bouzourane Batna,05,,BATNA,35.5591,6.1958,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,AADL Bouzourane commune de Batna,30,,true,false,1125,
 00625,Terrain sportif de proximité Ain Touta,05,,AIN TOUTA,35.3692,5.9077,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TOUTA,commune de Ain Touta,30,2006,true,false,1125,
 00626,Terrain sportif de proximité Ain Touta,05,,AIN TOUTA,35.3724,5.8892,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TOUTA,commune de Ain Touta,30,2006,true,false,1125,
@@ -631,7 +631,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00630,terrain sportif de proximité Azil Abdelkader,05,,AZIL ABEDELKADER,35.475481,5.063095,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Azil Abdelkader,30,,true,false,1125,
 00631,terrain sportif de proximité Azil Abdelkader,05,,AZIL ABEDELKADER,35.5104,5.0273,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Azil Abdelkader,30,2010,true,false,1125,
 00632,terrain sportif de proximité Azil Abdelkader,05,,AZIL ABEDELKADER,35.4653,5.0949,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Azil Abdelkader,30,,true,false,1125,
-00633,Terrain sportif de proximité Azil Abdelkader 2025,05,,AZIL ABEDELKADER,35.47,5.0615,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,Mechta Guernini commune de Azil Abdelkader,30,2025,true,false,1125,1125
+00633,Terrain sportif de proximité Azil Abdelkader 2025,05,,AZIL ABEDELKADER,35.47,5.0615,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,Mechta Guernini commune de Azil Abdelkader,30,2025,true,false,1125,1125
 00634,Terrain sportif de proximité Batna,05,,BATNA,35.552,6.1625,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00635,Terrain sportif de proximité Batna,05,,BATNA,35.5615,6.1971,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00636,Terrain sportif de proximité Batna,05,,BATNA,35.5626,6.1831,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,,true,false,1125,
@@ -639,7 +639,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00638,Terrain sportif de proximité Batna,05,,BATNA,35.5526,6.1605,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00639,Terrain sportif de proximité Batna,05,,BATNA,35.5526,6.161,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00640,Terrain sportif de proximité Batna,05,,BATNA,35.5334,6.1608,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,Terrain combiné 1200 logements Batna,30,2006,true,false,1125,
-00641,Terrain sportif de proximité Batna,05,,BATNA,35.5467,6.1559,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
+00641,Terrain sportif de proximité Batna,05,,BATNA,35.5467,6.1559,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00642,Terrain sportif de proximité Batna,05,,BATNA,35.5626,6.1863,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00643,Terrain sportif de proximité Batna,05,,BATNA,35.5511,6.179,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00644,Terrain sportif de proximité Batna,05,,BATNA,35.5231,6.1978,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
@@ -647,7 +647,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00646,Terrain sportif de proximité Batna,05,,BATNA,35.5441,6.173,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00647,Terrain sportif de proximité Batna,05,,BATNA,35.5529,6.1608,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00648,Terrain sportif de proximité Batna,05,,BATNA,35.5411,6.1677,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune Batna,30,2012,true,false,1125,
-00649,Terrain sportif de proximité Batna,05,,BATNA,35.5501,6.16,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
+00649,Terrain sportif de proximité Batna,05,,BATNA,35.5501,6.16,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00650,Terrain sportif de proximité Batna,05,,BATNA,35.5413,6.1589,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,Université de Batna commune de Batna,30,2010,true,false,1125,
 00651,Terrain sportif de proximité Batna,05,,BATNA,35.5422,6.1717,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2010,true,false,1125,
 00652,Terrain sportif de proximité Batna,05,,BATNA,35.5493,6.1604,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,Csp Annasr commune de Batna,30,2006,true,false,1125,
@@ -655,7 +655,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00654,Terrain sportif de proximité Batna,05,,BATNA,35.5409,6.168,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune Batna,30,2010,true,false,1125,
 00655,Terrain sportif de proximité Batna,05,,BATNA,35.5628,6.1965,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2012,true,false,1125,
 00656,Terrain sportif de proximité Batna,05,,BATNA,35.5617,6.1846,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,2012,true,false,1125,
-00657,Terrain sportif de proximité Batna,05,,BATNA,35.5467,6.1559,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,,true,false,1125,
+00657,Terrain sportif de proximité Batna,05,,BATNA,35.5467,6.1559,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,,true,false,1125,
 00658,Terrain sportif de proximité Batna,05,,BATNA,35.5384,6.1433,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,Université Batna 1,30,2006,true,false,1125,
 00659,Terrain sportif de proximité Batna,05,,BATNA,35.561,6.1857,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,106 logements commune de Batna,30,2006,true,false,1125,
 00660,Terrain sportif de proximité Batna,05,,BATNA,35.5535,6.162,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Batna,30,,true,false,1125,
@@ -680,7 +680,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00679,terrain sportif de proximité Djezzar,05,,DJEZZAR,35.5093,5.265,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Djezzar,30,2006,true,false,1125,
 00680,terrain sportif de proximité Djezzar,05,,DJEZZAR,35.5164,5.2922,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Djezzar,30,,true,false,1125,
 00681,terrain sportif de proximité Djezzar,05,,DJEZZAR,35.4935,5.2582,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Djezzar,30,2006,true,false,1125,
-00682,terrain sportif de proximité Djezzar,05,,DJEZZAR,35.5702,5.32,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Djezzar,30,2010,true,false,1125,
+00682,terrain sportif de proximité Djezzar,05,,DJEZZAR,35.5702,5.32,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEZZAR,commune de Djezzar,30,2010,true,false,1125,
 00683,terrain sportif de proximité El Madher,05,,EL MADHER,35.6216,6.3672,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MADHER,commune de El Madher,30,2010,true,false,1125,
 00684,terrain sportif de proximité El Madher,05,,EL MADHER,35.6287,6.3747,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MADHER,commune de El Madher,30,2006,true,false,1125,
 00685,Terrain sportif de proximité El Madher,05,,EL MADHER,35.633,6.3662,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MADHER,commune de El Madher,30,2006,true,false,1125,
@@ -689,7 +689,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00688,Terrain sportif de proximité El Madher,05,,DJERMA,35.6629,6.3071,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MADHER,commune de Djerma,30,2010,true,false,1125,
 00689,terrain sportif de proximité Fesdis,05,,FESDIS,35.6391,6.2808,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,cité universitaire Fesdis,30,2006,true,false,1125,
 00690,terrain sportif de proximité Fesdis,05,,FESDIS,35.6387,6.2815,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,cité universitaire Fesdis,30,2010,true,false,1125,
-00691,Terrain sportif de proximité Fesdis,05,,FESDIS,35.6229,6.2428,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Fesdis,30,,true,false,1125,
+00691,Terrain sportif de proximité Fesdis,05,,FESDIS,35.6229,6.2428,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATNA,commune de Fesdis,30,,true,false,1125,
 00692,Terrain sportif de proximité Foum Toub,05,,FOUM TOUB,35.4012,6.5507,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ICHEMOUL,commune de Foum Toub,30,2006,true,false,1125,
 00693,Terrain sportif de proximité Ghassira,05,,GHASSIRA,35.0798,6.2056,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TKOUT,commune de ghassira,30,2006,true,false,1125,
 00694,Terrain sportif de proximité Ghassira,05,,GHASSIRA,35.059,6.1628,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TKOUT,commune de ghassira,30,2006,true,false,1125,
@@ -731,7 +731,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00730,Terrain sportif de proximité Seriana 2025,05,,SERIANA,35.750762,6.212514,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SERIANA,commune de Seriana,30,2025,true,false,1125,1125
 00731,Terrain sportif de proximité Tazoult,05,,TAZOULT,35.4834,6.2529,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TAZOULT,commune de Tazoult,30,2006,true,false,1125,
 00732,Terrain sportif de proximité Tazoult,05,,TAZOULT,35.4853,6.2569,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TAZOULT,commune de Tazoult,30,2006,true,false,1125,
-00733,terrain sportif de proximité Thniet El Abed,05,,TENIET EL ABED,35.2544,6.2,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,lycée technique n87 thniet el abed,30,2010,true,false,1125,
+00733,terrain sportif de proximité Thniet El Abed,05,,TENIET EL ABED,35.2544,6.2,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,lycée technique n87 thniet el abed,30,2010,true,false,1125,
 00734,terrain sportif de proximité Thniet El Abed,05,,TENIET EL ABED,35.2564,6.2025,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIET EL ABED,protection civile Thniet El Abed,30,2006,true,false,1125,
 00735,Terrain sportif de proximité Tighanimine,05,,TIGHANIMINE,35.2292,6.3192,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ARRIS,commune de Tighanimine,30,2006,true,false,1125,
 00736,Terrain sportif de proximité Timgad,05,,TIMGAD,35.4905,6.4677,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TIMGAD,rue des ruines romaine commune de timgad,30,2010,true,false,1125,
@@ -863,7 +863,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00862,terrain sportif de proximité a bejaia,06,,BEJAIA,36.749,5.0443,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BEJAIA,béjaia,,2007,true,false,,
 00863,Aire de jeux de football,07,,OUMACHE,34.6888,5.6988,exact,sig_mjs,mjs,AJF,Aire de jeux football,OURLAL,A coté Maison de Jeunes HASSEN ABDELAALI,,2011,true,false,,1159
 00864,Aire de jeux de football,07,,ZERIBET EL OUED,34.7504,6.6739,exact,sig_mjs,mjs,AJF,Aire de jeux football,ZERIBET EL OUED,Badess,,2015,true,false,,6296
-00865,Aire de jeux de football,07,,BISKRA,34.85,5.7143,exact,sig_mjs,mjs,AJF,Aire de jeux football,BISKRA,Beni Morah,,2015,true,false,,
+00865,Aire de jeux de football,07,,BISKRA,34.85,5.7143,approximate,sig_mjs,mjs,AJF,Aire de jeux football,BISKRA,Beni Morah,,2015,true,false,,
 00866,Aire de jeux de football,07,,BISKRA,34.8504,5.7144,exact,sig_mjs,mjs,AJF,Aire de jeux football,BISKRA,Beni Morah,,2015,true,false,,
 00867,Aire de jeux de football,07,,EL FEIDH,34.6582,6.6949,exact,sig_mjs,mjs,AJF,Aire de jeux football,ZERIBET EL OUED,ZRIBET HAMED,,2015,true,false,,2263
 00868,Aire de jeux de football,07,,BISKRA,34.841,5.755,exact,sig_mjs,mjs,AJF,Aire de jeux football,BISKRA,A Stade OMS 18 Février Rue Zouaoui Chaguar Biskra,,2015,true,false,150,9168
@@ -922,7 +922,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00921,Terrain combine,07,,BISKRA,34.8513,5.7165,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BISKRA,Maison de Jeunes NEDJAR MOHAMED TAHER,,1996,true,false,,1076
 00922,Terrain combine,07,,EL GHROUS,34.7207,5.2854,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,FOUGHALA,Centre culturel AHMED DJAAFER,,2004,true,false,695,695
 00923,Terrain combine,07,,FOUGHALA,34.728,5.2997,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,FOUGHALA,A l'intérieur Du Salle OMS,,2009,true,false,,1125
-00924,Terrain combine,07,,BISKRA,34.8571,5.73,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BISKRA,Suem Des Sœurs Auragh Biskra,,2009,true,false,,279
+00924,Terrain combine,07,,BISKRA,34.8571,5.73,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BISKRA,Suem Des Sœurs Auragh Biskra,,2009,true,false,,279
 00925,Terrain combine,07,,SIDI OKBA,34.7496,5.9074,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI OKBA,Maison de Jeunes KHALED CHEBAH,,2006,true,false,1059,1059
 00926,Terrain combine,07,,MECHOUNECHE,34.9452,5.9938,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MECHOUNECHE,Chef Lieu,,2001,true,false,,943
 00927,Terrain combine,07,,AIN ZAATOUT,35.1442,5.8382,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL KANTARA,Chef Lieu,,2003,true,false,1174,1174
@@ -944,7 +944,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00943,Terrain combine,07,,SIDI OKBA,34.7492,5.9077,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI OKBA,Suem Ben Aamara abdelhafidhe sidi okba,,2011,true,false,,
 00944,Terrain combine,07,,SIDI OKBA,34.7441,5.9141,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI OKBA,COMPLEXE SPORTIF PROXIMITE SIDI OKBA,,2009,true,false,,1125
 00945,Terrain combine,07,,DJEMORAH,35.0688,5.8482,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJEMORAH,C.E.M ELHADEFE AHMED DJEMOURAH,,2013,true,false,,1013
-00946,Terrain combine,07,,M'LILI,34.6697,5.57,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OURLAL,Chef Lieu,,2004,true,false,1125,1125
+00946,Terrain combine,07,,M'LILI,34.6697,5.57,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,OURLAL,Chef Lieu,,2004,true,false,1125,1125
 00947,Terrain combine,07,,EL FEIDH,34.609,6.6522,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ZERIBET EL OUED,École Belqaid Ammar Al OUALADJA,,2005,true,false,1174,1174
 00948,Terrain combine,07,,LIOUA,34.6381,5.3869,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OURLAL,C.E.M KARA ABDALLAH,,2006,true,false,909,909
 00949,Terrain combine,07,,BISKRA,34.8376,5.731,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BISKRA,Institut National de Formation Paramédical Rue HAKIM SADANNE,,2005,true,false,1030,1030
@@ -957,7 +957,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00956,Terrain combine,07,,LICHANA,34.7284,5.4411,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TOLGA,Chef Lieu,,2002,,false,1288,1288
 00957,Terrain combine,07,,BISKRA,34.8365,5.7171,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BISKRA,Piscine El menchi,,2006,true,false,1003,1003
 00958,Terrain combine,07,,EL OUTAYA,35.1213,5.6127,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL OUTAYA,A l'intérieur Du Salle Polyvalente MANBAA EL GHOZLANE,,2011,true,false,,1018
-00959,Terrain combine,07,,LIOUA,34.64,5.4019,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OURLAL,PRET DU STADE,,2002,true,false,1322,1322
+00959,Terrain combine,07,,LIOUA,34.64,5.4019,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,OURLAL,PRET DU STADE,,2002,true,false,1322,1322
 00960,Terrain combine,07,,ZERIBET EL OUED,34.6856,6.5066,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ZERIBET EL OUED,Maison de Jeunes LOUCIF ELSAID,,2006,true,false,1026,1026
 00961,Terrain Sportif De Proximité,07,,ZERIBET EL OUED,34.687,6.4938,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ZERIBET EL OUED,,,2001,true,false,,1155
 00962,Terrain Sportif De Proximité,07,,SIDI OKBA,34.7537,5.9061,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI OKBA,Quartierb134 Logements,,2002,true,false,,1497
@@ -978,7 +978,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 00977,aire de jeux abadla,08,,ABADLA,31.027792,-2.723129,exact,sig_mjs,mjs,AJF,Aire de jeux football,ABADLA,abadla,,,true,,,
 00978,Aire de jeux Fottball,08,,LAHMAR,31.9247,-2.2569,exact,sig_mjs,mjs,AJF,Aire de jeux football,LAHMAR,complex sportif lahmar,,,true,,,
 00979,,08,,BECHAR,31.6055,-2.228,exact,sig_mjs,mjs,BN,Bassin de natation,BECHAR,hai el jihani,,2005,true,false,,
-00980,,08,,TAGHIT,30.92,-2.03,exact,sig_mjs,mjs,BN,Bassin de natation,TAGHIT,dans l'auberge des jeunes taghit,,2005,false,,,
+00980,,08,,TAGHIT,30.92,-2.03,approximate,sig_mjs,mjs,BN,Bassin de natation,TAGHIT,dans l'auberge des jeunes taghit,,2005,false,,,
 00981,,08,,BECHAR,31.6227,-2.2065,exact,sig_mjs,mjs,BN,Bassin de natation,BECHAR,debdaba,,2005,true,false,,
 00982,,08,,ABADLA,31.0274,-2.7127,exact,sig_mjs,mjs,BN,Bassin de natation,ABADLA,abadla centre,15,2005,false,,,
 00983,,08,,BECHAR,31.6221,-2.2196,exact,sig_mjs,mjs,BN,Bassin de natation,BECHAR,hai el salam,,,false,,,
@@ -1098,7 +1098,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01097,,09,,BLIDA,36.469902,2.617761,exact,sig_mjs,mjs,SOMS,Salle OMS,BLIDA,Route National N° 42,500,2012,true,,2200,5000
 01098,El chahid Benyoucef Ahmed,09,,MOUZAIA,36.4658,2.6988,exact,sig_mjs,mjs,SOMS,Salle OMS,MOUZAIA,Route 1er Novembre,300,,true,true,3135,10400
 01099,El chahid Bouralou Mohamed,09,,BOUGARA,36.5403,3.0889,exact,sig_mjs,mjs,SOMS,Salle OMS,BOUGARA,cité Ain Barda,500,2000,true,true,6000,6000
-01100,EL chahid Hocine Chaalane,09,,BLIDA,36.49,2.8505,exact,sig_mjs,mjs,SOMS,Salle OMS,BLIDA,Av. El chahid Hamouch Ahmed,2500,2001,true,false,4000,4000
+01100,EL chahid Hocine Chaalane,09,,BLIDA,36.49,2.8505,approximate,sig_mjs,mjs,SOMS,Salle OMS,BLIDA,Av. El chahid Hamouch Ahmed,2500,2001,true,false,4000,4000
 01101,El chahid maazouz Abdelkader,09,,BLIDA,36.4757,2.8069,exact,sig_mjs,mjs,SOMS,Salle OMS,BLIDA,CENTRE DE ZABANA,500,2006,true,true,2938,4870
 01102,,09,,BOUFARIK,36.6249,3.2261,exact,sig_mjs,mjs,SS,Salle spécialisée,BOUFARIK,cité El morabitine,300,2012,true,true,700,1000
 01103,El chahid Hafssa Tahar,09,,CHIFFA,36.4473,2.7342,exact,sig_mjs,mjs,SS,Salle spécialisée,MOUZAIA,cité oued el karouch,200,2016,true,true,700,800
@@ -1176,7 +1176,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01175,,10,,AIN BESSAM,36.291442,3.666,exact,sig_mjs,mjs,P25,Piscine 25 m,AIN BESSAM,en Face lycée Technique,300,2015,true,,1926,6000
 01176,,10,,BORDJ OUKHRISS,36.083,3.9783,exact,sig_mjs,mjs,P25,Piscine 25 m,BORDJ OUKHRIS,Bordj Okhris Centre,250,2015,true,true,1600,6000
 01177,,10,,HAIZER,36.3968,3.9976,exact,sig_mjs,mjs,P25,Piscine 25 m,HAIZER,Haizer Centre,200,1999,true,true,610,1940
-01178,,10,,LAKHDARIA,36.57,3.5926,exact,sig_mjs,mjs,P25,Piscine 25 m,LAKHDARIA,cité 5 Juillet Lakadaria,250,2015,true,,1600,6000
+01178,,10,,LAKHDARIA,36.57,3.5926,approximate,sig_mjs,mjs,P25,Piscine 25 m,LAKHDARIA,cité 5 Juillet Lakadaria,250,2015,true,,1600,6000
 01179,,10,,BOUIRA,36.381875,3.875229,exact,sig_mjs,mjs,PA,Piste d'athlétisme,BOUIRA,Stade OMS Bouira,8,1989,false,,,
 01180,,10,,BOUIRA,36.405867,3.878415,exact,sig_mjs,mjs,SF,Stade de football,BOUIRA,Forêt ERRICH Bouira,100,2013,true,,4000,5
 01181,,10,,BOUIRA,36.3846,3.872,exact,sig_mjs,mjs,SOMS,Salle OMS,BOUIRA,"Zone Sportive Bouira, Route Ferme Ecole",1000,2004,true,true,3.5,12
@@ -1208,7 +1208,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01207,,10,,AIN LAHDJAR,36.3422,3.8082,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BESSAM,"Rue LARIBI Ali, Ain Lahdjar",,,true,,,
 01208,,10,,BORDJ OUKHRISS,36.08283,3.97015,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ OUKHRIS,en face du parcking Bordj oukhriss,,2007,true,,,
 01209,,10,,KADIRIA,36.5437,3.6677,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAKHDARIA,Tiliouine,,,true,,756,1883
-01210,,10,,AIN BESSAM,36.3,3.67243,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BESSAM,Cité Bachir Ali,,2009,true,,,850
+01210,,10,,AIN BESSAM,36.3,3.67243,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BESSAM,Cité Bachir Ali,,2009,true,,,850
 01211,,10,,KADIRIA,36.536192,3.681913,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KADIRIA,"Cité 100 logements, Kadiria",,2008,true,,1125,1125
 01212,,10,,EL KHABOUZIA,36.3162,3.6033,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BIR GHBALOU,Khebouzia Centre,,,true,true,,
 01213,,10,,EL ASNAM,36.34666,4.095562,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BECHLOUL,Ben Ahmed MOUHIOUB Hamoud TILZDIT,80,2010,true,,,1125
@@ -1222,7 +1222,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01221,,10,,TAGUEDIT,36.015,3.99614,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ OUKHRIS,Taguedit Centre,,2007,true,,1102,1102
 01222,,10,,BIR GHBALOU,36.2647,3.58198,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BIR GHBALOU,Cité Abdou med El karia,,2010,true,,1125,1125
 01223,,10,,GUERROUMA,36.431003,3.430356,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LAKHDARIA,Guerrouma Centre,,2007,true,,1125,1125
-01224,,10,,OUED EL BERDI,36.29,3.91978,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HACHIMIA,Oued El Bardi Centre,,2011,true,,2625,2625
+01224,,10,,OUED EL BERDI,36.29,3.91978,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HACHIMIA,Oued El Bardi Centre,,2011,true,,2625,2625
 01225,,10,,AGHBALOU,36.40768,4.31942,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,M'CHEDELLAH,à coté de la salle de sports BOUSETA KHALED Aghbalou,,2010,true,,,
 01226,,10,,CHORFA,36.36061,4.31877,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,M'CHEDELLAH,Stade communal Chibane Med,,2011,true,,,741
 01227,,10,,BOUIRA,36.382907,3.900377,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUIRA,Château d'eau Bouira,,2011,true,,504,504
@@ -1236,7 +1236,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01235,,10,,OUED EL BERDI,36.27918,3.879952,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HACHIMIA,"Zaouia Sidi Khaled, Oued El Bardi",,2009,true,true,1125,1125
 01236,,10,,SOUR EL GHOZLANE,36.1494,3.70084,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUR EL GHOZLANE,Cité BEN KORTBI Sour El Ghozlane,,2007,true,,950,950
 01237,,10,,MEZDOUR,36.0751,4.0741,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ OUKHRIS,Mesdour Centre,,2007,true,,1125,1125
-01238,,10,,AIN LAHDJAR,36.3385,3.81,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BESSAM,Rue Kheddaria Abderahmane,,2010,true,,1125,1854
+01238,,10,,AIN LAHDJAR,36.3385,3.81,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BESSAM,Rue Kheddaria Abderahmane,,2010,true,,1125,1854
 01239,,10,,AIT LAAZIZ,36.440196,3.869298,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUIRA,Maâla,100,2008,true,,790,800
 01240,,10,,MEZDOUR,36.080412,4.06948,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ OUKHRIS,Mesdour Centre,,2007,true,,1125,1125
 01241,,10,,MAAMORA,36.03355,3.5523,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUR EL GHOZLANE,Maamora centre,,2007,true,,1125,1125
@@ -1250,7 +1250,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01249,,10,,M'CHEDALLAH,36.354,4.28491,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,M'CHEDELLAH,Raffour Centre,,2007,true,,605,605
 01250,,10,,M CHEDALLAH,36.3662,4.2759,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,M'CHEDALLAH,au niveau du stade communal,,,true,true,800,800
 01251,,10,,AGHBALOU,36.4054,4.37224,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,M'CHEDELLAH,BENI HAMDOUNE,,2010,true,,5000,1913
-01252,,10,,OUED EL BERDI,36.29,3.91978,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HACHIMIA,"à coté de la Salle Polyvalente, Oued El berdi",,2009,true,,1125,1125
+01252,,10,,OUED EL BERDI,36.29,3.91978,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HACHIMIA,"à coté de la Salle Polyvalente, Oued El berdi",,2009,true,,1125,1125
 01253,,10,,BOUIRA,36.371478,3.902594,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUIRA,à coté du stade communal BOUROUBA,,2010,true,true,384,384
 01254,,10,,HAIZER,36.3966,3.9974,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAIZER,au niveau de la Piscine de Haizer,,,true,true,1125,1125
 01255,,10,,HAIZER,36.37872,3.97362,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAIZER,Village Agricole Tikboucht,,,true,,,
@@ -1267,7 +1267,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01266,,11,,AIN AMGUEL,23.6954,5.1635,exact,sig_mjs,mjs,BN,Bassin de natation,TAMANRASSET,in amguel,50,2007,false,,,1400
 01267,,11,,IDLES,23.8169,5.9419,exact,sig_mjs,mjs,P25,Piscine 25 m,TAZROUK,,250,2019,true,,1143,2730
 01268,Picsine semi olympique,11,,TAMANRASSET,22.7867,5.5605,exact,sig_mjs,mjs,P25,Piscine 25 m,TAMANRASSET,Aderiane,200,2022,true,true,2800,5000
-01269,,11,,TAMANRASSET,22.78,5.5314,exact,sig_mjs,mjs,PA,Piste d'athlétisme,TAMANRASSET,amechaouan,,2005,true,,,
+01269,,11,,TAMANRASSET,22.78,5.5314,approximate,sig_mjs,mjs,PA,Piste d'athlétisme,TAMANRASSET,amechaouan,,2005,true,,,
 01270,,11,,TAMANRASSET,22.781401,5.571412,exact,sig_mjs,mjs,PP,Piscine de proximité,TAMANRASSET,Aderiane 3,100,2025,true,true,10000,10000
 01271,,11,,ABELSA,22.8955,4.8589,exact,sig_mjs,mjs,PP,Piscine de proximité,SILET,,250,2019,true,,616,2114
 01272,,11,,TAZROUK,23.4151,6.2743,exact,sig_mjs,mjs,PP,Piscine de proximité,TAZROUK,,250,2019,true,,680,2240
@@ -1281,7 +1281,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01280,Hai Essalam,11,,TAMANRASSET,22.7701,5.5152,exact,sig_mjs,mjs,SOMS,Salle OMS,TAMANRASSET,hai essalam,500,2020,true,true,2977,6230
 01281,Mohamed Boudiaf,11,,TAMANRASSET,22.7994,5.5156,exact,sig_mjs,mjs,SOMS,Salle OMS,TAMANRASSET,Tahaggart Tamanrasset,500,1994,true,,2286.9,22820
 01282,,11,,AIN AMGUEL,23.6871,5.1537,exact,sig_mjs,mjs,SS,Salle spécialisée,TAMANRASSET,ain amguel,250,2019,true,true,460,1196
-01283,Tinissa,11,,TAMANRASSET,22.78,5.5307,exact,sig_mjs,mjs,STOMS,Stade OMS,TAMANRASSET,Amechaouan,1500,1998,true,,5500,42000
+01283,Tinissa,11,,TAMANRASSET,22.78,5.5307,approximate,sig_mjs,mjs,STOMS,Stade OMS,TAMANRASSET,Amechaouan,1500,1998,true,,5500,42000
 01284,,11,,TAMANRASSET,22.7853,5.5606,exact,sig_mjs,mjs,TF,Terrain de football,TAMANRASSET,aderiane,500,2009,true,,,10414
 01285,,11,,ABELSA,22.8905,4.848,exact,sig_mjs,mjs,TF,Terrain de football,SILET,,250,2018,true,,,
 01286,,11,,TAZROUK,23.4138,6.2736,exact,sig_mjs,mjs,TF,Terrain de football,TAZROUK,,500,2018,true,,4650,9341
@@ -1436,7 +1436,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01435,IND,12,,EL-AOUINET,35.8748,7.8835,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AOUINET,,,2008,false,,1125,1125
 01436,IND,12,,EL MEZERAA,35.2619,7.5798,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL OGLA,MAZERAA,,2008,true,,1125,1125
 01437,IND,12,,TELIDJEN,35.1175,7.7628,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHERIA,centrer ville,,2021,true,,1125,1125
-01438,,13,,BENI SMIEL,34.8188,-1.03,exact,sig_mjs,mjs,AJF,Aire de jeux football,OULED MIMOUN,N 22 B Commune Beni Smiel,22,2013,true,true,6000,6000
+01438,,13,,BENI SMIEL,34.8188,-1.03,approximate,sig_mjs,mjs,AJF,Aire de jeux football,OULED MIMOUN,N 22 B Commune Beni Smiel,22,2013,true,true,6000,6000
 01439,,13,,HENNAYA,34.9468,-1.3682,exact,sig_mjs,mjs,AJF,Aire de jeux football,HENNAYA,à coté de la salle omnisport Commune Hennaya,22,2015,true,true,1960,8987
 01440,,13,,BENSEKRANE,35.1064,-1.209,exact,sig_mjs,mjs,AJF,Aire de jeux football,BENSEKRANE,Village Takbalet Commune Bensekrane,22,2008,true,true,7073,9164
 01441,,13,,REMCHI,35.0512,-1.4329,exact,sig_mjs,mjs,AJF,Aire de jeux football,REMCHI,A coté complexe sportif de proximité Commune Remchi,22,2008,true,true,24,14055
@@ -1521,7 +1521,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01520,,13,,SOUK TLETA,35.0092,-2.0187,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BAB EL ASSA,Chemin wilaya 108 Commune Souk Tlata,22,2013,true,true,1320,1320
 01521,,13,,BENI BAHDEL,34.6922,-1.5192,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SNOUS,Au niveau maison de jeunes Commune Beni Bahdel,22,2013,true,true,504,2000
 01522,,13,,SOUANI,34.8919,-1.9142,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BAB EL ASSA,M'Ghagha Commune Souani,22,,true,true,1425,1450
-01523,,13,,HENNAYA,34.98,-1.3644,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HENNAYA,Village Mekacem (Ghrassi) Commune Hennaya,22,2011,true,true,1320,1320
+01523,,13,,HENNAYA,34.98,-1.3644,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,HENNAYA,Village Mekacem (Ghrassi) Commune Hennaya,22,2011,true,true,1320,1320
 01524,,13,,REMCHI,35.0734,-1.4721,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,REMCHI,Sidi Bounouar Commune Remchi,22,,true,true,1320,1320
 01525,,13,,M'SIRDA FOUAGA,35.0209,-2.0524,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MARSA BEN MEHDI,Arabouze Commune M'sirda Fouaga,22,2011,true,true,1320,1320
 01526,,13,,SOUAHLIA,35.0004,-1.9031,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GHAZAOUET,Mezaourou Commune Souahlia,22,,true,true,1130,1263
@@ -1588,7 +1588,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01587,AIT ABDERRAHIM,14,,TIARET,35.382,1.3143,exact,sig_mjs,mjs,SF,Stade de football,TIARET,Boulevard Frères SAADI,5800,1987,true,,13240,24041
 01588,Chahid KHELIFA Mohamed Nomé BELKACEM,14,,SOUGUEUR,35.1774,1.4834,exact,sig_mjs,mjs,SF,Stade de football,SOUGUEUR,Route national N° 23 route Tousnina,7000,2004,true,,2400,40965
 01589,Chahid MESSAOUD Abbas,14,,MAHDIA,35.4358,1.772,exact,sig_mjs,mjs,SF,Stade de football,MAHDIA,"Boulevard Emir Abdelkader ""route de HAMADIA""",1600,1997,true,,3100,69400
-01590,Chahid TAHAR CHAOUCHE Mohamed,14,,FRENDA,35.0719,1.06,exact,sig_mjs,mjs,SF,Stade de football,FRENDA,Cité HATTAB Ahmed,2000,1997,true,,12541,50000
+01590,Chahid TAHAR CHAOUCHE Mohamed,14,,FRENDA,35.0719,1.06,approximate,sig_mjs,mjs,SF,Stade de football,FRENDA,Cité HATTAB Ahmed,2000,1997,true,,12541,50000
 01591,,14,,RAHOUIA,35.5334,1.0277,exact,sig_mjs,mjs,SOMS,Salle OMS,RAHOUIA,Rue chahid BERABEH Mohamed,500,2017,true,false,2369,3500
 01592,,14,,MAHDIA,35.436,1.7705,exact,sig_mjs,mjs,SOMS,Salle OMS,MAHDIA,"Boulevard Emir Abdelkader ""route de HAMADIA""",500,1997,true,,1845,1927
 01593,BELARBI Abdellah,14,,TIARET,35.3829,1.342,exact,sig_mjs,mjs,SOMS,Salle OMS,TIARET,Route national N° 14 Route d'Alger,800,,true,,2924,16931
@@ -1834,7 +1834,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01833,Aire de jeux de football,17,,GUERNINI,35.2023,2.6805,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN OUSSERA,commune guernini,,2017,true,false,8214,8214
 01834,Aire de jeux de football,17,,AIN MAABED,34.798,3.1303,exact,sig_mjs,mjs,AJF,Aire de jeux football,HASSI BAHBAH,commune Ain maabed,,2017,true,false,8214,8214
 01835,Aire de jeux de football,17,,MESSAAD,34.082,3.3143,exact,sig_mjs,mjs,AJF,Aire de jeux football,MESSAAD,commune deldoul,,2017,true,false,8214,8214
-01836,Aire de jeux de football,17,,SED RAHAL,33.96,3.2378,exact,sig_mjs,mjs,AJF,Aire de jeux football,MESSAAD,commune sed rahal,,2012,true,false,8214,8214
+01836,Aire de jeux de football,17,,SED RAHAL,33.96,3.2378,approximate,sig_mjs,mjs,AJF,Aire de jeux football,MESSAAD,commune sed rahal,,2012,true,false,8214,8214
 01837,Aire de jeux de football,17,,AMOURAH,34.3446,3.8723,exact,sig_mjs,mjs,AJF,Aire de jeux football,FAIDH EL BOTMA,commune Amoura,,2017,true,false,8214,8214
 01838,Bolodrom,17,,DJELFA,34.665232,3.258853,exact,sig_mjs,mjs,BL,Boulodrome,DJELFA,CSP Brahimi lakhdhar,,2011,true,false,,
 01839,Bassin de natation,17,,HAD SAHARY,35.3605,3.3705,exact,sig_mjs,mjs,BN,Bassin de natation,HAD SAHARY,CSP Had shary,20,2006,true,false,200,200
@@ -1897,7 +1897,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01896,Terrain sportif de proximité,17,,AIN OUSSERA,35.4584,2.9042,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN OUSSERA,commune ain ouessera,,2006,true,false,2400,2400
 01897,Terrain sportif de proximité,17,,DJELFA,34.668,3.2414,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJELFA,Cité ben djerma djelfa,,2008,true,false,2400,2400
 01898,Terrain sportif de proximité,17,,AIN EL IBEL,34.3587,3.2359,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL IBEL,commune ain el ibel,,2006,true,false,2400,2400
-01899,Terrain sportif de proximité,17,,DJELFA,34.68,3.2749,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJELFA,cité sliman amirate,,2007,true,false,2400,2400
+01899,Terrain sportif de proximité,17,,DJELFA,34.68,3.2749,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJELFA,cité sliman amirate,,2007,true,false,2400,2400
 01900,Terrain sportif de proximité,17,,DJELFA,34.6653,3.2466,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJELFA,cité ben djerma,8,2007,true,false,2400,2400
 01901,Terrain sportif de proximité,17,,EL GUEDID,34.645,2.6165,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAREF,commune el guedid,,2010,true,false,2400,2400
 01902,Terrain sportif de proximité,17,,AIN OUSSERA,35.4564,2.9194,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN OUSSERA,commune ain ouessera,,2007,true,false,2400,2400
@@ -1943,7 +1943,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 01942,,18,,TAHER,36.7896,5.905,exact,sig_mjs,mjs,STOMS,Stade OMS,TAHER,Boucherka - taher,5400,2010,true,true,1865,28740
 01943,ملعب المجاهد المتوفى بن الصم بن أ‘عمر بن أحمد,18,,CHEKFA,36.734293,5.951672,exact,sig_mjs,mjs,TF,Terrain de football,CHEKFA,السبت الشقفة,,2025,true,false,1000,1000
 01944,,18,,JIJEL,36.8179,5.7676,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,JIJEL,Rue bibi,,2004,true,true,500,550
-01945,,18,,JIJEL,36.81,5.7512,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,JIJEL,Cite Ayouf (camp chevalier) jijel,,2010,true,true,1100,1200
+01945,,18,,JIJEL,36.81,5.7512,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,JIJEL,Cite Ayouf (camp chevalier) jijel,,2010,true,true,1100,1200
 01946,,18,,JIJEL,36.7933,5.798,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,JIJEL,Harraten,,2010,true,true,800,800
 01947,,18,,JIJEL,36.7918,5.8014,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,JIJEL,Harraten,,2011,true,true,800,1000
 01948,,18,,ERRAGUENE SOUISSI,36.5852,5.5809,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ZIAMAH MANSOURIAH,Erraguene,,2008,true,false,600,800
@@ -2023,12 +2023,12 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02022,Terrain sportif de proximité Ain Arnat,19,,AIN ARNAT,36.1933,5.3146,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN ARNAT,"A proximité Mosquée Abdelhamid Ibnbadis, Ain Arnat",,2012,true,true,1150,1150
 02023,Terrain sportif de proximité Ain Azal,19,,AIN AZAL,35.8145,5.5135,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN AZAL,"A proximité jardin public, de Ain Azal",,2012,true,true,900,900
 02024,Terrain sportif de proximité AIn Roua,19,,AIN ROUA,36.3387,5.1793,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGAA,Ain El Roua centre,,2012,true,true,1150,1150
-02025,Terrain sportif de proximité Ain Sebt,19,,AIN SEBT,36.49,5.7159,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI AZIZ,Commune Ain Sebt,,2009,true,true,1150,1150
+02025,Terrain sportif de proximité Ain Sebt,19,,AIN SEBT,36.49,5.7159,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI AZIZ,Commune Ain Sebt,,2009,true,true,1150,1150
 02026,Terrain sportif de proximité Ait NAOUAL M'ZADA,19,,AIT NAOUAL M'ZADA,36.5455,5.0845,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUANDAS,Commune Ait Naouel M'zeda,,2009,true,true,1050,1050
 02027,Terrain sportif de proximité Amoucha,19,,AMOUCHA,36.3845,5.4202,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMOUCHA,"Amoucha centre, A proximité salle spécialisée Amoucha",,2009,true,true,890,890
 02028,Terrain sportif de proximité Amoucha,19,,AMOUCHA,36.3869,5.4207,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMOUCHA,Commune Amoucha,,2003,true,true,1125,1125
 02029,Terrain sportif de proximité Babor,19,,BABOR,36.4816,5.5893,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BABOR,Commune Babor,,2009,true,true,1400,1400
-02030,Terrain sportif de proximité Beida Bordj,19,,BEIDHA BORDJ,35.8916,5.66,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN AZAL,A proximité nouvel lycée de beida bordj,,2009,true,true,1125,1125
+02030,Terrain sportif de proximité Beida Bordj,19,,BEIDHA BORDJ,35.8916,5.66,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN AZAL,A proximité nouvel lycée de beida bordj,,2009,true,true,1125,1125
 02031,Terrain sportif de proximité Beni Aziz,19,,BENI AZIZ,36.4662,5.6532,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI AZIZ,"El Hadjar, Beni Aziz",,2009,true,true,1050,1050
 02032,Terrain sportif de proximité Beni Chebana,19,,BENI CHEBANA,36.4611,4.9701,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI OURTILANE,"Tnirwakin, beni chebana",,2009,true,true,1150,1150
 02033,Terrain sportif de proximité Beni Ouartilane,19,,BENI OUARTILANE,36.4304,4.8328,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI OURTILANE,"talmath, Beni Ourtilane",,2009,true,true,800,800
@@ -2055,9 +2055,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02054,Terrain sportif de proximité de beni Aziz,19,,BENI AZIZ,36.4629,5.6744,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI AZIZ,"BAHBAHA, Commune Beni Aziz",,2013,true,true,1125,1125
 02055,Terrain sportif de proximité de beni Ouartilane,19,,BENI OUARTILANE,36.4422,4.8623,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI OURTILANE,"Fintikelt, , Beni Ourtilane",,2003,true,true,600,600
 02056,Terrain sportif de proximité de Beni Ourtilane,19,,BENI OUARTILANE,36.4412,4.8078,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI OURTILANE,"talmath vers ait moussa , Beni Ourtilane",,2009,true,true,1150,1150
-02057,Terrain sportif de proximité de Beni Oussine,19,,BENI OUSSINE,36.2846,5.1219,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGAA,"El Kharba, Commune Beni Oucine",,2009,true,true,1125,1125
+02057,Terrain sportif de proximité de Beni Oussine,19,,BENI OUSSINE,36.2846,5.1219,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGAA,"El Kharba, Commune Beni Oucine",,2009,true,true,1125,1125
 02058,Terrain sportif de proximité de Beni Oussine,19,,BENI OUSSINE,36.3088,5.1408,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGAA,"Route de Thenia a Hammama, Beni Oussine",,2013,true,true,1100,1100
-02059,Terrain sportif de proximité de Beni Oussine,19,,BENI OUSSINE,36.2846,5.1219,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGAA,"El Kharba, Commune Beni Oussine",,2009,true,true,1125,1125
+02059,Terrain sportif de proximité de Beni Oussine,19,,BENI OUSSINE,36.2846,5.1219,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGAA,"El Kharba, Commune Beni Oussine",,2009,true,true,1125,1125
 02060,Terrain sportif de proximité de Bir El Arch,19,,BIR EL ARCH,36.127743,5.843884,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BIR EL ARCH,Commune Bir El Arch,,2009,true,true,860,1150
 02061,Terrain sportif de proximité de boutaleb,19,,BOUTALEB,35.6598,5.3202,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SALAH BEY,Commune Boutaleb,,2009,true,true,1050,1050
 02062,Terrain sportif de proximité de El Hamma,19,,EL HAMMA,35.673,5.3602,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SALAH BEY,Commune El Hamma,,2013,true,true,1120,1120
@@ -2085,7 +2085,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02084,Terrain sportif de proximité Maouklane,19,,MAOUKLANE,36.3966,5.084,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MAOUAKLANE,A proximité Stade communal de Maoklane,,2009,true,true,1150,1150
 02085,Terrain sportif de proximité Maouklane,19,,MAOUKLANE,36.414,5.1235,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MAOUAKLANE,"Ain Mergoum, Commune Maoklane",,2003,true,true,1125,1125
 02086,Terrain sportif de proximité Oued El Bared,19,,OUED EL BARED,36.4798,5.404,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMOUCHA,Commune Oued El Bared,,2009,true,true,750,750
-02087,Terrain sportif de proximité Ouled Tebben,19,,OULED TEBBEN,35.8157,5.14,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SALAH BEY,Commune Ouled Tebben,,2013,true,true,1180,1180
+02087,Terrain sportif de proximité Ouled Tebben,19,,OULED TEBBEN,35.8157,5.14,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SALAH BEY,Commune Ouled Tebben,,2013,true,true,1180,1180
 02088,"Terrain sportif de proximité Oum El Ajoul,",19,,TAYA,35.9315,5.8984,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM SOUKHNA,"Oum El Ajoul, commune El Taya",,2009,true,true,1150,1150
 02089,Terrain sportif de proximité Rosfa,19,,ROSFA,35.7595,5.212,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SALAH BEY,Commune El Rasfa,,2009,true,true,1080,1080
 02090,Terrain sportif de proximité Serdj El Ghoul,19,,SERDJ EL GHOUL,36.4827,5.5788,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BABOR,Commune de Serdj El Ghoul,,2009,true,true,1125,1125
@@ -2134,11 +2134,11 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02133,I.N.D,20,,MOULAY LARBI,34.649,0.0122,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL HADJAR,OUM DOUD,,2017,true,true,1125,1125
 02134,I.N.D,20,,SAIDA,34.8344,0.1464,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,stade mellah djillali saida,,2005,true,true,1125,1125
 02135,I.N.D,20,,SAIDA,34.8335,0.1581,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,salle sidi cheikh,,2017,true,false,1125,1125
-02136,I.N.D,20,,SAIDA,34.8455,0.16,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,CITE RIAD,,2023,true,false,1125,1125
+02136,I.N.D,20,,SAIDA,34.8455,0.16,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,CITE RIAD,,2023,true,false,1125,1125
 02137,I.N.D,20,,SAIDA,34.8558,0.1484,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,CITE NASSER,,,true,false,1125,1125
-02138,I.N.D,20,,TIRCINE,34.9541,0.4369,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULED BRAHIM,TIRCINE,,2017,true,true,1125,1125
+02138,I.N.D,20,,TIRCINE,34.9541,0.4369,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULED BRAHIM,TIRCINE,,2017,true,true,1125,1125
 02139,I.N.D,20,,YOUB,34.8698,-0.1332,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,YOUB,berbour youb,,,true,true,1125,1125
-02140,I.N.D,20,,TIRCINE,34.9541,0.4369,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULED BRAHIM,TAGDOURA,,2017,true,true,1125,1125
+02140,I.N.D,20,,TIRCINE,34.9541,0.4369,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULED BRAHIM,TAGDOURA,,2017,true,true,1125,1125
 02141,I.N.D,20,,SAIDA,34.847852,0.148382,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,CITE SOUMAM,,2023,true,false,1125,1125
 02142,I.N.D,20,,SAIDA,34.8478,0.1723,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,cite 2200 logement,,2023,true,true,1125,1125
 02143,I.N.D,20,,SAIDA,34.8614,0.152,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,stade Said Amara,,2005,true,false,1125,1125
@@ -2162,9 +2162,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02161,I.N.D,20,,AIN SEKHOUNA,34.5038,0.8503,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HASSASNA,lycée mohamed belkbir ain skhouna,,2015,true,true,1125,1125
 02162,I.N.D,20,,SIDI BOUBEKEUR,35.0301,0.0571,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI BOUBEKEUR,Sidi boubkeur,,,true,true,1125,1125
 02163,I.N.D,20,,SAIDA,34.834471,0.146115,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SAIDA,CITE BADER,,2023,true,true,1125,1125
-02164,Terrains sportif de proximité,20,,AIN EL HADJAR,34.7642,0.1449,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL HADJAR,cite laabani,,2023,true,true,1125,11250
+02164,Terrains sportif de proximité,20,,AIN EL HADJAR,34.7642,0.1449,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL HADJAR,cite laabani,,2023,true,true,1125,11250
 02165,TSP,20,,OULED BRAHIM,34.8315,0.1616,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULED BRAHIM,OULED BRAHIM,,2017,true,true,1100,1100
-02166,TSP,20,,AIN EL HADJAR,34.7642,0.1449,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL HADJAR,AIN EL HADJAR,,2017,true,true,1125,1125
+02166,TSP,20,,AIN EL HADJAR,34.7642,0.1449,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL HADJAR,AIN EL HADJAR,,2017,true,true,1125,1125
 02167,,21,,SKIKDA,36.850855,6.907109,exact,sig_mjs,mjs,AJF,Aire de jeux football,SKIKDA,Zefzaf,100,2012,true,false,,
 02168,,21,,BEN AZZOUZ,36.876468,7.360391,exact,sig_mjs,mjs,AJF,Aire de jeux football,BENAZOUZ,Zaouia,100,2012,true,false,,
 02169,,21,,AIN KECHRA,36.765033,6.453685,exact,sig_mjs,mjs,AJF,Aire de jeux football,Ain kechra,Ain Kechera,100,2015,true,false,,
@@ -2281,7 +2281,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02280,BASSIN DE NATATION,22,,BELARBI,35.1506,-0.465,exact,sig_mjs,mjs,BN,Bassin de natation,MOSTEFA BEN BRAHIM,BELARBI,20,2003,false,false,83.74,216
 02281,bassin de natation moulay slissen,22,,MOULAY SLISSEN,34.8265,-0.7572,exact,sig_mjs,mjs,BN,Bassin de natation,MOULAY SLISSEN,MOULAY SLISSEN,200,2003,false,false,126.56,3000
 02282,ECOLE DE JEUNES TALENTS,22,,SIDI BEL ABBES,35.2231,-0.6331,exact,sig_mjs,mjs,EJT,École de jeunes talents,SIDI BEL ABBES,SIDI DJILALI,300,2016,true,true,40000,40000
-02283,PISCINE 24 février 1956,22,,SIDI BEL ABBES,35.1854,-0.62,exact,sig_mjs,mjs,P25,Piscine 25 m,SIDI BEL ABBES,OPOW,240,1981,true,,90000,172000
+02283,PISCINE 24 février 1956,22,,SIDI BEL ABBES,35.1854,-0.62,approximate,sig_mjs,mjs,P25,Piscine 25 m,SIDI BEL ABBES,OPOW,240,1981,true,,90000,172000
 02284,PISCINE 25 M ras el ma,22,,RAS EL MA,34.4941,-0.825,exact,sig_mjs,mjs,P25,Piscine 25 m,RAS EL MA,RAS EL MA,200,2018,true,,1650,2500
 02285,PISCINE 25 M sfisef,22,,SFISEF,35.2402,-0.2316,exact,sig_mjs,mjs,P25,Piscine 25 m,SFISEF,sfisef,150,2010,true,,1830,2549
 02286,PISCINE 25 M TELAGH,22,,TELAGH,34.7759,-0.5745,exact,sig_mjs,mjs,P25,Piscine 25 m,TELAGH,TELAGH,300,,true,,3000,3500
@@ -2291,9 +2291,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02290,Salle OMS 24 février 1956,22,,SIDI BEL ABBES,35.1858,-0.6206,exact,sig_mjs,mjs,SOMS,Salle OMS,SIDI BEL ABBES,OPOW 24 février 1956,150,2009,true,,6500,6500
 02291,SALLE OMS AIN EL BERD,22,,AIN EL BERD,35.3655,-0.5166,exact,sig_mjs,mjs,SOMS,Salle OMS,AIN EL BERD,AIN EL BERD,500,,true,,1869,1869
 02292,SALLE OMS ben badis,22,,BEN BADIS,34.9519,-0.9205,exact,sig_mjs,mjs,SOMS,Salle OMS,BEN BADIS,BEN BADIS,500,1995,true,,1869,1869
-02293,salle OMS de sidi lahcen,22,,SIDI LAHCENE,35.1617,-0.7,exact,sig_mjs,mjs,SOMS,Salle OMS,SIDI LAHCENE,SIDI LAHCEN,200,1997,true,,1865,2500
+02293,salle OMS de sidi lahcen,22,,SIDI LAHCENE,35.1617,-0.7,approximate,sig_mjs,mjs,SOMS,Salle OMS,SIDI LAHCENE,SIDI LAHCEN,200,1997,true,,1865,2500
 02294,SALLE OMS oued sefioun,22,,OUED SEFIOUN,35.069,-0.3602,exact,sig_mjs,mjs,SOMS,Salle OMS,TENIRA,OUED SEFIOUN,200,2016,true,,2190,2191.4
-02295,SALLE OMS sfisef,22,,SFISEF,35.233,-0.25,exact,sig_mjs,mjs,SOMS,Salle OMS,SFISEF,sfisef,200,1996,true,,1865,2500
+02295,SALLE OMS sfisef,22,,SFISEF,35.233,-0.25,approximate,sig_mjs,mjs,SOMS,Salle OMS,SFISEF,sfisef,200,1996,true,,1865,2500
 02296,SALLE OMS TEGHALIMET,22,,TEGHALIMET,34.8841,-0.5535,exact,sig_mjs,mjs,SOMS,Salle OMS,TELAGH,TEGHALIMET,200,2010,true,,2190,112094
 02297,SALLE OMS TELAGH,22,,TELAGH,34.7758,-0.5742,exact,sig_mjs,mjs,SOMS,Salle OMS,TELAGH,TELAGH,200,1999,true,,516,1650
 02298,,22,,TELAGH,34.775447,-0.574345,exact,sig_mjs,mjs,SS,Salle spécialisée,TELAGH,,,,true,,,
@@ -2349,9 +2349,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02348,TERRAINS SPORTIF DE PROXIMITE boudjebaa el bordj,22,,BOUDJEBAA EL BORDJ,35.3499,-0.325,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SFISEF,boudjebaa el bordj,20,2010,true,true,1125,1125
 02349,TERRAINS SPORTIF DE PROXIMITE BOUKHANEFIS,22,,BOUKHANEFIS,35.0679,-0.7262,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI ALI BEN YOUB,BOUKHANEFIS,20,2009,true,true,1125,1125
 02350,TERRAINS SPORTIF DE PROXIMITE BOUKHANEFIS,22,,BOUKHANEFIS,35.0666,-0.7264,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI ALI BEN YOUB,BOUKHANEFIS,20,2005,true,true,1125,1125
-02351,TERRAINS SPORTIF DE PROXIMITE DHAYA,22,,DHAYA,34.6731,-0.62,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TELAGH,dhaya,20,2006,true,true,1125,1125
+02351,TERRAINS SPORTIF DE PROXIMITE DHAYA,22,,DHAYA,34.6731,-0.62,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TELAGH,dhaya,20,2006,true,true,1125,1125
 02352,TERRAINS SPORTIF DE PROXIMITE DHAYA,22,,DHAYA,34.6765,-0.6239,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TELAGH,dhaya,20,2009,true,true,1125,1125
-02353,TERRAINS SPORTIF DE PROXIMITE DHAYA,22,,DHAYA,34.68,-0.6198,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TELAGH,DHAYA,20,2010,true,true,1125,1125
+02353,TERRAINS SPORTIF DE PROXIMITE DHAYA,22,,DHAYA,34.68,-0.6198,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TELAGH,DHAYA,20,2010,true,true,1125,1125
 02354,TERRAINS SPORTIF DE PROXIMITE douar beni talla,22,,SFISEF,35.2566,-0.1954,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SFISEF,douar beni talla,20,2010,true,true,1125,1125
 02355,TERRAINS SPORTIF DE PROXIMITE DOUAR JOUAHER,22,,SIDI LAHCENE,35.1955,-0.7123,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI LAHCENE,DOUAR JOUAHER,20,2009,true,true,1125,1125
 02356,TERRAINS SPORTIF DE PROXIMITE el hacaiba,22,,EL HACAIBA,34.6995,-0.7591,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MOULAY SLISSEN,el hacaiba,20,2006,true,true,1125,1125
@@ -2365,7 +2365,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02364,TERRAINS SPORTIF DE PROXIMITE MAKEDRA,22,,MAKEDRA,35.440985,-0.434126,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL BERD,MAKEDRA,20,2010,true,true,1125,1125
 02365,TERRAINS SPORTIF DE PROXIMITE MARHOUM,22,,MARHOUM,34.4425,-0.1935,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MARHOUM,MARHOUM,20,2009,true,true,1125,1125
 02366,TERRAINS SPORTIF DE PROXIMITE MERINE,22,,MERINE,34.783,-0.4454,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MERINE,MERINE,20,2009,true,true,1125,1125
-02367,TERRAINS SPORTIF DE PROXIMITE MERINE,22,,MERINE,34.7832,-0.45,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MERINE,MERINE,20,2011,true,true,1125,1125
+02367,TERRAINS SPORTIF DE PROXIMITE MERINE,22,,MERINE,34.7832,-0.45,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,MERINE,MERINE,20,2011,true,true,1125,1125
 02368,TERRAINS SPORTIF DE PROXIMITE MEZAOUROU,22,,MEZAOUROU,34.8137,-0.6254,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TELAGH,mezaourou,20,2006,true,true,1125,1125
 02369,TERRAINS SPORTIF DE PROXIMITE MOSTAFA BEN BRAHIM,22,,MOSTEFA BEN BRAHIM,35.1873,-0.3669,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MOSTEFA BEN BRAHIM,MOSTAFA BEN BRAHIM,20,2009,true,true,1125,1125
 02370,TERRAINS SPORTIF DE PROXIMITE moulay slissen,22,,MOULAY SLISSEN,34.8274,-0.7561,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MOULAY SLISSEN,MOULAY SLISSEN,20,2009,true,true,1125,1125
@@ -2373,14 +2373,14 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02372,TERRAINS SPORTIF DE PROXIMITE OUED SEBAA,22,,OUED SEBAA,34.5882,-0.7088,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,RAS EL MA,oued sebaa,20,2006,true,true,1125,1125
 02373,TERRAINS SPORTIF DE PROXIMITE OUED SEBAA,22,,OUED SEBAA,34.5889,-0.709,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,RAS EL MA,OUED SEBAA,20,2011,true,true,1125,1125
 02374,TERRAINS SPORTIF DE PROXIMITE oued sefioun,22,,OUED SEFIOUN,35.0689,-0.3593,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TENIRA,oued sefioune,20,2006,true,true,1125,1125
-02375,TERRAINS SPORTIF DE PROXIMITE OUED TAOURIRA,22,,OUED TAOURIRA,34.6202,-0.34,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MERINE,TAOURIRA,20,2006,true,true,1125,1125
+02375,TERRAINS SPORTIF DE PROXIMITE OUED TAOURIRA,22,,OUED TAOURIRA,34.6202,-0.34,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,MERINE,TAOURIRA,20,2006,true,true,1125,1125
 02376,TERRAINS SPORTIF DE PROXIMITE OULED ALI,22,,AIN EL BERD,35.410009,-0.479749,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL BERD,OULED ALI,20,2009,true,true,1125,1125
 02377,TERRAINS SPORTIF DE PROXIMITE RAS EL MA,22,,RAS EL MA,34.4945,-0.833,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,RAS EL MA,RAS EL MA,20,2007,true,true,1125,1125
 02378,TERRAINS SPORTIF DE PROXIMITE redjeme demouche,22,,REDJEM DEMOUCHE,34.4285,-0.8153,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,RAS EL MA,redjeme demouche,20,2009,true,true,1125,1125
 02379,TERRAINS SPORTIF DE PROXIMITE SEHALA thaoura,22,,SEHALA THAOURA,35.1984,-0.8333,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TESSALA,sehala thaoura,20,2009,true,true,1125,1125
 02380,TERRAINS SPORTIF DE PROXIMITE sfisef,22,,SFISEF,35.2368,-0.2314,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SFISEF,sfisef,20,2005,true,true,1125,1125
 02381,TERRAINS SPORTIF DE PROXIMITE sfisef,22,,SFISEF,35.2327,-0.2407,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SFISEF,sfisef,20,2009,true,true,1125,1125
-02382,TERRAINS SPORTIF DE PROXIMITE sfisef,22,,SFISEF,35.2302,-0.26,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SFISEF,sfisef,20,2009,true,true,1125,1125
+02382,TERRAINS SPORTIF DE PROXIMITE sfisef,22,,SFISEF,35.2302,-0.26,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SFISEF,sfisef,20,2009,true,true,1125,1125
 02383,TERRAINS SPORTIF DE PROXIMITE SIDI ALI BOUSSIDI,22,,SIDI ALI BOUSSIDI,35.1032,-0.8374,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI ALI BOUSSIDI,SIDI ALI BOUSSIDI,20,2009,true,true,1125,1125
 02384,TERRAINS SPORTIF DE PROXIMITE sidi brahim,22,,SIDI BRAHIM,35.2537,-0.5712,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL BERD,sidi brahim,20,2009,true,true,1125,1125
 02385,TERRAINS SPORTIF DE PROXIMITE SIDI CHAIB,22,,SIDI CHAIB,34.5939,-0.551,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MARHOUM,SIDI CHAIB,20,2006,true,true,1125,1125
@@ -2507,7 +2507,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02506,Medjez Sfa,24,,MEDJEZ SFA,36.433195,7.788188,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUCHEGOUF,Medjez Sfa,,2013,true,true,,
 02507,Oued fragha,24,,OUED FERRAGHA,36.559686,7.710358,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUCHEGOUF,oued fragha,,2013,true,true,,
 02508,Terrain à Ain Arco,24,,TAMLOUKA,36.097059,7.119942,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MAKHLOUF,Ain Arco à Tamlouka,,2011,true,,,
-02509,Terrain à Ain Arco,24,,TAMLOUKA,36.1,7.1215,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MAKHLOUF,Ain Arco à Tamlouka,,2014,false,,,
+02509,Terrain à Ain Arco,24,,TAMLOUKA,36.1,7.1215,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MAKHLOUF,Ain Arco à Tamlouka,,2014,false,,,
 02510,Terrain à Dahouara,24,,DAHOUARA,36.352118,7.731066,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM N'BAILS,Dahouara,,2013,true,,,
 02511,Terrain Ain Ben Beida,24,,AIN BEN BEIDA,36.6205,7.6985,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUCHEGOUF,Ain Ben Beida,,2014,true,false,,
 02512,Terrain Ain Larbi,24,,AIN LARBI,36.270864,7.394204,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN MAKHLOUF,Ain Larbi,,2013,true,false,,
@@ -2758,7 +2758,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02757,,26,,SI MAHDJOUB,36.1579,2.7203,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SI MAHDJOUB,Centre ville,,2011,true,true,800,924
 02758,,26,,EL OMARIA,36.2634,3.0238,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL OMARIA,à cote du stade communal,,2011,true,true,800,924
 02759,,26,,ZOUBIRIA,36.071,2.9066,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGHOUANE,Centre ville,,2014,true,true,800,924
-02760,,26,,SEGHOUANE,36,2.9032,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGHOUANE,Seghouane centre,,2011,true,true,800,924
+02760,,26,,SEGHOUANE,36,2.9032,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGHOUANE,Seghouane centre,,2011,true,true,800,924
 02761,,26,,BOUCHRAHIL,36.257,3.1629,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI NAAMANE,à cote du stade communal,,2009,true,true,800,924
 02762,,26,,KSAR EL BOUKHARI,35.8805,2.7487,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KSAR EL BOUKHARI,Ksar El Boukhari Centre,,2008,true,true,800,924
 02763,,26,,KSAR EL BOUKHARI,35.8951,2.7527,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KSAR EL BOUKHARI,Romanet,,2008,true,true,800,924
@@ -2785,7 +2785,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02784,,26,,SOUAGUI,36.1094,3.2413,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUAGUI,Fraction Souk El Djemaa,,2011,true,true,800,924
 02785,,26,,MEDEA,36.262,2.767,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Rue de l'ALN,,1982,true,true,620,620
 02786,,26,,MEDEA,36.262,2.7672,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Rue de l'ALN,,1982,true,true,502,502
-02787,,26,,MOUDJEBEUR,35.95,2.8242,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGHOUANE,Centre ville,,2010,true,true,800,924
+02787,,26,,MOUDJEBEUR,35.95,2.8242,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGHOUANE,Centre ville,,2010,true,true,800,924
 02788,,26,,TAMESGUIDA,36.3229,2.6924,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Tamezguida centre,,2015,true,true,800,924
 02789,,26,,BOUGHZOUL,35.672,2.8198,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Dans le CSP,,2008,true,true,800,924
 02790,,26,,KHAMS DJOUAMAA,36.1594,3.1414,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI NAAMANE,Dans le Stade communal,,2010,true,true,800,924
@@ -2800,7 +2800,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02799,,26,,BERROUAGHIA,36.1322,2.9336,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BEROUAGHIA,Quartier 1er Novembre Dumez,,2010,true,true,800,924
 02800,,26,,OULED ANTAR,35.9445,2.6026,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULED ANTAR,Centre ville,,2010,true,true,800,924
 02801,,26,,DJOUAB,36.1365,3.4324,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUAGUI,Dans le CSP,,2008,true,true,800,924
-02802,,26,,EL AOUINET,35.8538,3.05,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Fraction El Kharza,,2008,true,true,800,924
+02802,,26,,EL AOUINET,35.8538,3.05,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Fraction El Kharza,,2008,true,true,800,924
 02803,,26,,KSAR EL BOUKHARI,35.8686,2.7628,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KSAR EL BOUKHARI,Quartier Zobra,,2008,true,true,924,924
 02804,,26,,TAFRAOUT,35.956,3.3649,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHALLALET EL ADHAOURA,Fraction zaatria,,2008,true,true,800,924
 02805,,26,,EL OMARIA,36.2653,3.028,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL OMARIA,Omaria centre,,2011,true,true,800,924
@@ -2849,7 +2849,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02848,ECHAHID :MEKIDECHE MED Benaissa,27,,HADJADJ,36.1013,0.3264,exact,sig_mjs,mjs,SOMS,Salle OMS,SIDI LAKHDAR,Rue de la plage -Hadjadj-,500,,true,true,1500,4576
 02849,ECHAHID :TEFAHI MOHAMED,27,,SIDI-LAKHDAR,36.1665,0.4448,exact,sig_mjs,mjs,SOMS,Salle OMS,SIDI LAKHDAR,Cité les Castors,500,,true,true,1500,6308
 02850,Echahid: BENAIBA Ghali,27,,HASSI MAMECHE,35.8629,0.0759,exact,sig_mjs,mjs,SOMS,Salle OMS,HASSI MAMECHE,Cité Sy deddache Route nationale (h.mameche/centre),500,,true,true,1725.08,1800
-02851,Echahid: Benmeghrouzi Menaouer,27,,MAZAGRAN,35.9,0.0762,exact,sig_mjs,mjs,SOMS,Salle OMS,HASSI MAMECHE,"Rue ""ECHAHID ""Boussouar Lakhdar""",500,,true,true,1500,3242
+02851,Echahid: Benmeghrouzi Menaouer,27,,MAZAGRAN,35.9,0.0762,approximate,sig_mjs,mjs,SOMS,Salle OMS,HASSI MAMECHE,"Rue ""ECHAHID ""Boussouar Lakhdar""",500,,true,true,1500,3242
 02852,"El Moudjahid décédé : ""Charef Khattab""",27,,MOSTAGANEM,35.9233,0.0951,exact,sig_mjs,mjs,SOMS,Salle OMS,MOSTAGANEM,Cité Hammou Boutellilise,500,,true,true,1160,6577
 02853,"El Moudjahid décédé : ""OULD BENZAZA Belkacem""",27,,MOSTAGANEM,35.9639,0.102,exact,sig_mjs,mjs,SOMS,Salle OMS,MOSTAGANEM,Cité Epargne Zone Kharrouba,500,,true,true,1500,2550
 02854,El Moudjahid décédé :BENKERDA Djelloul,27,,MOSTAGANEM,35.9352,0.1114,exact,sig_mjs,mjs,SS,Salle spécialisée,MOSTAGANEM,Cité Laklou AEK (EX :Les castors),50,,true,true,313.81,1201
@@ -2910,7 +2910,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02909,Terrains de sport de proximités,27,,AIN-BOUDINAR,36.0088,0.1904,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEIR EDDINE,Cité 40 logements sociaux,20,,true,true,,2000
 02910,Terrains de sport de proximités,27,,MAZAGRAN,35.8997,0.0727,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI MAMECHE,Cité des oliviers Mazagran,14,,true,true,,684
 02911,Terrains de sport de proximités,27,,AIN-TEDLES,35.9969,0.3035,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEDELES,Ain Tedeles/centre,14,,true,true,,1060
-02912,Terrains de sport de proximités,27,,SIDI-LAKHDAR,36.16,0.4422,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI LAKHDAR,Sidi Lakhdar centre,30,,true,true,,2400
+02912,Terrains de sport de proximités,27,,SIDI-LAKHDAR,36.16,0.4422,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI LAKHDAR,Sidi Lakhdar centre,30,,true,true,,2400
 02913,Terrains de sport de proximités,27,,BOUGUIRAT,35.755,0.2494,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUGUIRAT,Route de Souaflia,14,,true,true,,1060
 02914,Terrains de sport de proximités,27,,BENABDELMALEK RAMDANE,36.1051,0.2663,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI LAKHDAR,Ben Abdelmalek Ramdane/centre,20,,true,true,,1060
 02915,Terrains de sport de proximités,27,,MAZAGRAN,35.8957,0.0749,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI MAMECHE,Cité 100 logements,14,,true,true,,1060
@@ -2999,7 +2999,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 02998,benamra miloud,29,,GHRISS,35.2513,0.1636,exact,sig_mjs,mjs,SOMS,Salle OMS,GHRISS,rue de matemour ghriss,850,2017,true,true,1450,2011
 02999,mostaine bousseta,29,,SIG,35.5254,-0.2094,exact,sig_mjs,mjs,SOMS,Salle OMS,SIG,pole sportif sig,600,2019,true,true,560,920
 03000,salle oms 1000 places mascara,29,,MASCARA,35.4068,0.1225,exact,sig_mjs,mjs,SOMS,Salle OMS,MASCARA,pole sportif djebar mohamed sidi said mascara,1200,2014,true,true,820,2629
-03001,Slle OMS,29,,MOHAMMADIA,35.5888,0.07,exact,sig_mjs,mjs,SOMS,Salle OMS,MOHAMMADIA,rue BELHOUT à mohammadia,600,,true,true,1500,2000
+03001,Slle OMS,29,,MOHAMMADIA,35.5888,0.07,approximate,sig_mjs,mjs,SOMS,Salle OMS,MOHAMMADIA,rue BELHOUT à mohammadia,600,,true,true,1500,2000
 03002,,29,,Chorfa,35.4338,-0.2464,exact,sig_mjs,mjs,SS,Salle spécialisée,SIG,chorfa,450,,true,true,800,3000
 03003,,29,,KHALOUIA,35.460496,0.29407,exact,sig_mjs,mjs,SS,Salle spécialisée,EL BORDJ,khalouia,450,2015,true,true,820,3000
 03004,,29,,SEHAILIA,35.456069,0.392045,exact,sig_mjs,mjs,SS,Salle spécialisée,TIGHENNIF,shailia,840,2012,true,true,800,1200
@@ -3020,7 +3020,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03019,,29,,MASCARA,35.393788,0.151521,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MASCARA,cité 936 logts,200,2011,true,true,800,800
 03020,,29,,MASCARA,35.352227,0.110625,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MASCARA,Centre equestre,200,2011,true,true,800,800
 03021,,29,,MASCARA,35.399434,0.154252,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MASCARA,cité DNC,200,2011,true,true,800,800
-03022,,29,,MAOUSSA,35.38,0.2486,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GHRISS,Maoussa centre,200,2012,true,true,800,800
+03022,,29,,MAOUSSA,35.38,0.2486,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,GHRISS,Maoussa centre,200,2012,true,true,800,800
 03023,,29,,MASCARA,35.377727,0.133901,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MASCARA,VSA Nouari,200,2011,true,true,800,800
 03024,,29,,ZAHANA,35.5169,-0.4088,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ZAHANA,Zahana centre,200,,true,true,800,800
 03025,,29,,OUED EL ABTAL,35.4607,0.6998,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUED EL ABTAL,Oued abtal,200,2012,true,true,800,800
@@ -3117,7 +3117,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03116,,30,,OUARGLA,32.0452,5.3018,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,hassi miloud 20 tsp,,2016,true,true,1125,1125
 03117,,30,,OUARGLA,31.9817,5.2926,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Hey Bamendil ogx,,2016,true,true,1125,1125
 03118,,30,,OUARGLA,31.9449,5.3162,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,460 Lgts,,2016,true,,1125,1125
-03119,,30,,OUARGLA,31.96,5.333,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Lycée Ahmed Khalil Ouargla,,2016,true,true,2545,2545
+03119,,30,,OUARGLA,31.96,5.333,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Lycée Ahmed Khalil Ouargla,,2016,true,true,2545,2545
 03120,,30,,ROUISSAT,31.925,5.3407,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,pres Nouvelle APC Rouissat ziyayna Rouissat,,2016,true,,1125,1125
 03121,,30,,N'GOUSSA,32.1534,5.3474,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,N'GOUSSA,Elbour APC Ngoussa,,2013,true,true,1125,1125
 03122,,30,,OUARGLA,32.0216,5.3298,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Cité Bour Elhaicha ogx,,2016,true,true,1125,1125
@@ -3129,9 +3129,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03128,,30,,OUARGLA,31.9426,5.343,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Hey Bouzid pre du Stade,,2016,true,true,1125,1125
 03129,,30,,OUARGLA,32.0168,5.3343,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Bour Elhaicha Ouargla,,2016,true,true,1125,1125
 03130,,30,,ROUISSAT,31.9298,5.3759,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,pres 113 lgts lehdeb Rouissat,,2016,true,true,1125,1125
-03131,,30,,SIDI KHOUILED,31.9901,5.42,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI KHOUILED,sidi khouiled,,2016,true,true,1125,1125
+03131,,30,,SIDI KHOUILED,31.9901,5.42,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI KHOUILED,sidi khouiled,,2016,true,true,1125,1125
 03132,,30,,OUARGLA,31.9498,5.3415,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Hey Bouzid Pres zergoune,,2016,true,true,1125,1125
-03133,/,30,,OUARGLA,31.95,5.3127,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,/,,2017,true,true,,
+03133,/,30,,OUARGLA,31.95,5.3127,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,/,,2017,true,true,,
 03134,Stade de football Cité Chikh Bouamama,30,,HASSI MESSAOUD,31.6921,6.0789,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI MESSAOUD,Près de la route Cité Chikh Bouamama,120,2020,true,true,8000,10800
 03135,Stade Mohammed El Aid Al-khalifa Hassi messaoud,30,,HASSI MESSAOUD,31.6969,6.0632,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HASSI MESSAOUD,La commune de Hassi messaoud,,,true,true,,
 03136,Terrain de sport de proximité à maison de jeunesse Mustapha Ben Boulaid,30,,OUARGLA,31.949872,5.320993,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUARGLA,Quartier Mustapha Ben Boulaid,,,true,true,,
@@ -3230,10 +3230,10 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03229,I.N.D,31,,SIDI BEN YEBKA,35.8333,-0.3894,exact,sig_mjs,mjs,AJF,Aire de jeux football,ARZEW,commune sidi ben yebka,24,,true,true,1125,1125
 03230,I.N.D,31,,BIR EL DJIR,35.7025,-0.5911,exact,sig_mjs,mjs,AJF,Aire de jeux football,BIR EL DJIR,commune BIR ELDJIR,24,,true,true,1125,1125
 03231,I.N.D,31,,ORAN,35.6994,-0.5864,exact,sig_mjs,mjs,AJF,Aire de jeux football,ORAN,"USTO, commune d'oran",12,,true,true,1125,1125
-03232,I.N.D,31,,AIN TURK,35.7348,-0.74,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN TURK,Commune D’Ain Türck,12,,true,true,1125,1125
+03232,I.N.D,31,,AIN TURK,35.7348,-0.74,approximate,sig_mjs,mjs,AJF,Aire de jeux football,AIN TURK,Commune D’Ain Türck,12,,true,true,1125,1125
 03233,I.N.D,31,,BIR EL DJIR,35.7277,-0.557,exact,sig_mjs,mjs,AJF,Aire de jeux football,BIR EL DJIR,commune Bir el djir,16,,true,true,1125,1125
 03234,I.N.D,31,,ORAN,35.7133,-0.5998,exact,sig_mjs,mjs,AJF,Aire de jeux football,ORAN,commune oran,24,,true,true,1125,1125
-03235,I.N.D,31,,BOUTLELIS,35.58,-0.8988,exact,sig_mjs,mjs,AJF,Aire de jeux football,BOUTLELIS,COMMUNE BOUTLELIS,24,,true,true,8000,8000
+03235,I.N.D,31,,BOUTLELIS,35.58,-0.8988,approximate,sig_mjs,mjs,AJF,Aire de jeux football,BOUTLELIS,COMMUNE BOUTLELIS,24,,true,true,8000,8000
 03236,I.N.D,31,,MESSERGHIN,35.6248,-0.7314,exact,sig_mjs,mjs,AJF,Aire de jeux football,BOUTLELIS,COMMUNE MISSERGHINE,24,,true,true,1125,1125
 03237,I.N.D,31,,AIN TURK,35.734,-0.7729,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN TURK,",COmmune D’Ain Türck",12,,true,true,,1125
 03238,I.N.D,31,,ES SENIA,35.6349,-0.628,exact,sig_mjs,mjs,AJF,Aire de jeux football,ES SENIA,COMMUNE ES SENIA,22,,true,true,,3000
@@ -3254,7 +3254,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03253,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6781,-0.6402,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,"Centre de tennis Saint -Hubert, Hai Es-Salem , Commune d'Oran",200250,,true,true,,16500
 03254,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6783,-0.6399,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,91 avenue de l'ANP Saint Hubert Oran,200250,,true,true,,16500
 03255,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6777,-0.6414,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,91 avenue de l'ANP Saint Hubert Oran,500,,true,true,,16500
-03256,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6782,-0.64,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,"Centre de tennis Saint -Hubert, Hai Es-Salem , Commune d'Oran",200250,,true,true,,16500
+03256,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6782,-0.64,approximate,sig_mjs,mjs,CT,Court de tennis,ORAN,"Centre de tennis Saint -Hubert, Hai Es-Salem , Commune d'Oran",200250,,true,true,,16500
 03257,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6773,-0.6408,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,91 avenue de l'ANP Saint Hubert Oran,,,true,true,,165000
 03258,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6779,-0.6408,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,91 avenue de l'ANP Saint Hubert Oran( GENERAL KHALIL HABIB),200250,,true,true,,16500
 03259,CLUB DE TENNIS GENERAL KHALIL HABIB,31,,ORAN,35.6774,-0.6406,exact,sig_mjs,mjs,CT,Court de tennis,ORAN,91 avenue de l'ANP Saint Hubert Oran,,,true,true,,16500
@@ -3276,7 +3276,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03275,,31,,BIR EL DJIR,35.728419,-0.55305,exact,sig_mjs,mjs,PA,Piste d'athlétisme,BIR EL DJIR,,,,,,,
 03276,,31,,BIR EL DJIR,35.727678,-0.549381,exact,sig_mjs,mjs,PA,Piste d'athlétisme,BIR EL DJIR,,,,,,,
 03277,I.N.D,31,,ORAN,35.6837,-0.6357,exact,sig_mjs,mjs,PA,Piste d'athlétisme,ORAN,"Sise au Stade Ahmed Zabana ,Commune d’Oran",800,,true,true,1125,1125
-03278,I.N.D,31,,ORAN,35.69,-0.6163,exact,sig_mjs,mjs,PA,Piste d'athlétisme,ORAN,stade d'Athlétisme les castors oran,1000,,true,true,1125,2500
+03278,I.N.D,31,,ORAN,35.69,-0.6163,approximate,sig_mjs,mjs,PA,Piste d'athlétisme,ORAN,stade d'Athlétisme les castors oran,1000,,true,true,1125,2500
 03279,I.N.D,31,,AIN TURK,35.7488,-0.778,exact,sig_mjs,mjs,PA,Piste d'athlétisme,AIN TURK,"INFS ,Commune de Ain Türck",,,true,true,1125,1125
 03280,I.N.D,31,,ORAN,35.7194,-0.5931,exact,sig_mjs,mjs,PP,Piscine de proximité,ORAN,"AKID LOTFI, Commune d’Oran",30,2019,true,true,2200,3000
 03281,I.N.D,31,,AIN BIYA,35.8082,-0.2934,exact,sig_mjs,mjs,PP,Piscine de proximité,BETHIOUA,"Camp 05 Ain El Bya,Commune d'Ain Bya",1000,2017,true,true,1180,3000
@@ -3292,7 +3292,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03291,I.N.D,31,,ES SENIA,35.646849,-0.619486,exact,sig_mjs,mjs,SOMS,Salle OMS,ES SENIA,"Avenue Khmisti Es-Sénia,COMMUNEES ES-SENIA",500,,true,,2180,3000
 03292,I.N.D,31,,ES SENIA,35.6654,-0.6378,exact,sig_mjs,mjs,SOMS,Salle OMS,ES SENIA,"CSP ES-SENIA ,COMMUNEES ES-SENIA",500,2021,true,true,1982,4225
 03293,I.N.D,31,,BIR EL DJIR,35.7249,-0.5501,exact,sig_mjs,mjs,SOMS,Salle OMS,BIR EL DJIR,R.N 11 Bir El Djir,1000,2016,true,true,2655,3000
-03294,I.N.D,31,,BOUTLELIS,35.58,-0.902,exact,sig_mjs,mjs,SOMS,Salle OMS,BOUTLELIS,Boulevard 20 Août Boutlélis Oran,1000,2017,true,true,1947,3000
+03294,I.N.D,31,,BOUTLELIS,35.58,-0.902,approximate,sig_mjs,mjs,SOMS,Salle OMS,BOUTLELIS,Boulevard 20 Août Boutlélis Oran,1000,2017,true,true,1947,3000
 03295,,31,,SIDI CHAMI,35.6943,-0.5685,exact,sig_mjs,mjs,SS,Salle spécialisée,ES SENIA,commune SIDI CHAMI,12,,true,true,1125,1125
 03296,,31,,SIDI CHAMI,35.6936,-0.5688,exact,sig_mjs,mjs,SS,Salle spécialisée,ES SENIA,59004,100,2015,true,,832,4000
 03297,I.N.D,31,,OUED TLELAT,35.5534,-0.4469,exact,sig_mjs,mjs,SS,Salle spécialisée,OUED TLELAT,Commune d’Oued Tlélat,50,2002,true,true,660,660
@@ -3328,14 +3328,14 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03327,I.N.D,31,,AIN TURK,35.7501,-0.7771,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TURK,COMMUNE AIN EL TURCK,24,,true,true,1125,1125
 03328,I.N.D,31,,AIN KERMA,35.6301,-0.9293,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUTLELIS,AIN TASSA COMMUNE AIN KERMA,12,,true,true,1000,1000
 03329,I.N.D,31,,SIDI BEN YEBKA,35.829,-0.3973,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ARZEW,commune SIDI BEN YEBKA,112,,true,true,1125,1125
-03330,I.N.D,31,,MARSAT EL HADJADJ,35.79,-0.1693,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BETHIOUA,COMMUNE MERS EL HADJADJE,24,,true,true,,1125
+03330,I.N.D,31,,MARSAT EL HADJADJ,35.79,-0.1693,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BETHIOUA,COMMUNE MERS EL HADJADJE,24,,true,true,,1125
 03331,I.N.D,31,,BOUTLELIS,35.577,-0.8987,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUTLELIS,COMMUNE BOUTLELIS,12,,true,true,1125,1125
 03332,I.N.D,31,,BETHIOUA,35.7997,-0.269,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BETHIOUA,COMMUNE BETHIOUA,22,,true,true,,3000
 03333,I.N.D,31,,ORAN,35.708,-0.6239,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,COMMUNE ORAN,24,,true,true,1125,1125
 03334,I.N.D,31,,BOUFATIS,35.6758,-0.3704,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUED TLELAT,COMMUNE BOUFATIS,,,true,true,,1125
 03335,I.N.D,31,,TAFRAOUI,35.5021,-0.4902,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUED TLELAT,commune de tafraoui,24,,true,true,,1125
 03336,I.N.D,31,,TAFRAOUI,35.4877,-0.523,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUED TLELAT,commune de tafraoui,16,,true,true,1125,1125
-03337,I.N.D,31,,ORAN,35.6828,-0.61,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,commune ORAN,12,2022,true,true,850,850
+03337,I.N.D,31,,ORAN,35.6828,-0.61,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,commune ORAN,12,2022,true,true,850,850
 03338,I.N.D,31,,ARZEW,35.8466,-0.3179,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ARZEW,COMMUNE D'ARZEW,24,,true,true,,1125
 03339,I.N.D,31,,ORAN,35.6791,-0.648,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,COMMUNE ORAN,24,,true,true,,1125
 03340,I.N.D,31,,EL KERMA,35.6282,-0.5744,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ES SENIA,Commune El kerma,14,2022,true,true,1125,1125
@@ -3387,7 +3387,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03386,Terrain de Basketball EPDM,31,,ORAN,35.705501,-0.673035,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,Foret MERDJADJOU,,2024,true,true,589,589
 03387,terrain sportif de proximite,31,,ORAN,35.6785,-0.6547,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,Hai YAGHMORACEN Oran,100,2023,true,true,821,821
 03388,terrain sportif de proximite,31,,BEN FREHA,35.7263,-0.3511,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GDYEL,Menadsia Ben Freha,100,2023,true,true,1125,1125
-03389,terrain sportif de proximite,31,,BIR EL DJIR,35.7127,-0.58,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BIR EL DJIR,commune bir el djir AADL Pépiniere,100,2023,true,true,1125,1125
+03389,terrain sportif de proximite,31,,BIR EL DJIR,35.7127,-0.58,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BIR EL DJIR,commune bir el djir AADL Pépiniere,100,2023,true,true,1125,1125
 03390,terrain sportif de proximite,31,,EL BRAYA,35.6051,-0.4407,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUED TLELAT,Khdaimia El braya,100,2023,true,true,979.8,979.8
 03391,terrain sportif de proximite,31,,ORAN,35.7085,-0.6262,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,La cité Jean de la Fontaine Gambetta,100,2023,true,true,1125,1125
 03392,terrain sportif de proximite en gazon Synthétique,31,,ORAN,35.705778,-0.672734,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ORAN,Commune oran Montagne Merdjajou,,2024,true,true,1392,1392
@@ -3448,7 +3448,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03447,TSP AFRA,33,,ILLIZI,25.335,7.802,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ILLIZI,AFRA,20,2009,true,true,1500,1500
 03448,TSP BELBACHIR,33,,ILLIZI,26.4703,8.4832,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ILLIZI,BELBACHIR,20,2017,true,true,1500,1500
 03449,TSP BOD,33,,Bordj omar driss,28.1433,6.8095,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Bordj omar driss,Route zaouïa,20,,true,true,1500,1500
-03450,TSP BOR,33,,Bordj omar driss,28.13,6.82,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Bordj omar driss,CENTRE VILLE,20,,true,true,1500,1500
+03450,TSP BOR,33,,Bordj omar driss,28.13,6.82,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,Bordj omar driss,CENTRE VILLE,20,,true,true,1500,1500
 03451,TSP DEBDEB,33,,Debdeb,29.9698,9.4247,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Debdeb,CENTRE VILLE,20,,true,true,1500,1500
 03452,TSP FADNOUNE,33,,ILLIZI,25.822,8.188,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ILLIZI,FADNOUNE,20,2009,true,true,1500,1500
 03453,TSP IMIHRO,33,,ILLIZI,25.807,8.683,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ILLIZI,IMIHRO ILLIZI,20,2017,true,true,1500,1500
@@ -3462,19 +3462,19 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03461,TSP Timerouiline,33,,Debdeb,29.335,9.408,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Debdeb,Timerouiline,20,,true,true,1500,1500
 03462,TSP Tin emri,33,,ILLIZI,26.4882,8.4434,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ILLIZI,Tin emri,20,2017,true,true,1500,1500
 03463,TSP TIN TOURHA,33,,ILLIZI,26.5163,8.4446,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,ILLIZI,TIN TOURHA,20,2009,true,true,1125,1125
-03464,TSP ZAOUIA,33,,Bordj omar driss,28.11,6.75,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Bordj omar driss,zaouïa,20,,true,true,1500,1500
+03464,TSP ZAOUIA,33,,Bordj omar driss,28.11,6.75,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,Bordj omar driss,zaouïa,20,,true,true,1500,1500
 03465,,34,,BELIMOUR,35.958056,4.911279,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ GHEDIR,CHANIA,,,true,,1125,
 03466,,34,,B. B. ARRERIDJ,36.0339,4.4537,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,Cité 08 mai 1945,,,true,,,
 03467,,34,,EL KSEUR,35.9967,4.6231,exact,sig_mjs,mjs,AJF,Aire de jeux football,EL HAMMADIA,EL BELDJ,,,true,,1125,
 03468,,34,,EL MHIR,36.1182,4.3812,exact,sig_mjs,mjs,AJF,Aire de jeux football,Mansoura,el mehir,,,true,,2400,2400
-03469,,34,,B. B. ARRERIDJ,36.0403,4.4705,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,L'OPOW,,,true,,,
+03469,,34,,B. B. ARRERIDJ,36.0403,4.4705,approximate,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,L'OPOW,,,true,,,
 03470,,34,,B. B. ARRERIDJ,36.074268,4.750621,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,,,,true,,1125,
 03471,,34,,BORDJ BOU ARRERIDJ,36.079,4.7781,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,City 217 log,,,true,,,
 03472,,34,,EL MHIR,36.0705,4.2252,exact,sig_mjs,mjs,AJF,Aire de jeux football,Mansoura,el mehir,,,true,,,
 03473,,34,,EL MAIN,36.3889,4.7198,exact,sig_mjs,mjs,AJF,Aire de jeux football,DJAAFRA,EL MAIN,,,true,,2400,2400
 03474,,34,,RAS EL OUED,35.9444,5.0358,exact,sig_mjs,mjs,AJF,Aire de jeux football,RAS EL OUED,RAS EL OUED,100,2016,true,true,1680,
 03475,,34,,B. B. ARRERIDJ,36.067594,4.784881,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,L'OPOW,,,true,,,
-03476,,34,,B. B. ARRERIDJ,36.0403,4.4705,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,L'OPOW,,,true,,,
+03476,,34,,B. B. ARRERIDJ,36.0403,4.4705,approximate,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,L'OPOW,,,true,,,
 03477,,34,,BORDJ BOU ARRERIDJ,36.060939,4.760556,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,BORDJ BOU ARRERIDJ,,,true,,,
 03478,,34,,B. B. ARRERIDJ,36.063561,4.768325,exact,sig_mjs,mjs,AJF,Aire de jeux football,BORDJ BOU ARRERIDJ,Lot 1er novembre a l'intérieur de l'auberge,,,true,,,
 03479,,34,,MEDJANA,36.1356,4.6673,exact,sig_mjs,mjs,AJF,Aire de jeux football,MEDJANA,MEDJANA,,,true,,1125,
@@ -3522,8 +3522,8 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03521,pist d'athlétisme,34,,B. B. ARRERIDJ,36.0699,4.7854,exact,sig_mjs,mjs,PA,Piste d'athlétisme,BORDJ BOU ARRERIDJ,L'OPOW,,,true,,4800,
 03522,,34,,BIR KASDALI,36.1444,5.0315,exact,sig_mjs,mjs,PP,Piscine de proximité,BIR KASDALI,BIR KASD ALI,100,2016,true,,1680,5550
 03523,,34,,BORDJ BOU ARRERIDJ,36.0564,4.7913,exact,sig_mjs,mjs,SA,Stade d'athlétisme,BORDJ BOU ARRERIDJ,Village nord cité 1250 lods,,,true,,1125,
-03524,,34,,BORDJ BOU ARRERIDJ,36.065,4.7946,exact,sig_mjs,mjs,SA,Stade d'athlétisme,BORDJ BOU ARRERIDJ,Boumergued,500,2011,true,true,2610,6500
-03525,Stade d'athletisme,34,,BORDJ BOU ARRERIDJ,36.065,4.7946,exact,sig_mjs,mjs,SA,Stade d'athlétisme,BORDJ BOU ARRERIDJ,Boumergued,2610,2014,true,true,72000,65000
+03524,,34,,BORDJ BOU ARRERIDJ,36.065,4.7946,approximate,sig_mjs,mjs,SA,Stade d'athlétisme,BORDJ BOU ARRERIDJ,Boumergued,500,2011,true,true,2610,6500
+03525,Stade d'athletisme,34,,BORDJ BOU ARRERIDJ,36.065,4.7946,approximate,sig_mjs,mjs,SA,Stade d'athlétisme,BORDJ BOU ARRERIDJ,Boumergued,2610,2014,true,true,72000,65000
 03526,,34,,BORDJ BOU ARRERIDJ,36.0349,4.4606,exact,sig_mjs,mjs,SOMS,Salle OMS,BORDJ BOU ARRERIDJ,Lot 17 octobre à l'intérieur du CSP 17 Octobre,,,true,,,
 03527,,34,,RAS EL OUED,35.9396,5.0288,exact,sig_mjs,mjs,SOMS,Salle OMS,RAS EL OUED,18 février,500,,true,true,2250,4000
 03528,,34,,MEDJANA,36.1339,4.6674,exact,sig_mjs,mjs,SOMS,Salle OMS,MEDJANA,MEDJANA,500,2007,true,true,2000,4000
@@ -3535,8 +3535,8 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03534,,34,,BORDJ GHEDIR,35.8905,4.8931,exact,sig_mjs,mjs,STOMS,Stade OMS,BORDJ GHEDIR,BORDJ GHEDIR,1000,,true,true,,
 03535,Aire de jeux,34,,RAS EL OUED,35.9445,5.0354,exact,sig_mjs,mjs,STOMS,Stade OMS,RAS EL OUED,Ras el oued centr,,,true,,1125,
 03536,Stade OMS guidoum tahar,34,,RAS EL OUED,35.9383,5.0286,exact,sig_mjs,mjs,STOMS,Stade OMS,RAS EL OUED,RAS EL OUED,10000,,true,true,5480,10000
-03537,,34,,EL ACHIR,36.0424,4.3718,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDJANA,EL ACHIR,,,true,,,
-03538,,34,,EL ACHIR,36.0424,4.3718,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDJANA,Zenouna kebira,,,true,,,
+03537,,34,,EL ACHIR,36.0424,4.3718,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDJANA,EL ACHIR,,,true,,,
+03538,,34,,EL ACHIR,36.0424,4.3718,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDJANA,Zenouna kebira,,,true,,,
 03539,terrain sportif de proximité,34,,TIXTER,35.999594,5.121871,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TAGHROUT,Bir karma,,2021,true,,1125,
 03540,terrain sportif de proximité,34,,HASNAOUA,36.144217,4.789328,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDJANA,,,,true,,1125,
 03541,terrain sportif de proximité,34,,AIN TAGHROUT,36.1331,5.0736,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TAGHROUT,50 logement,,,true,,1125,
@@ -3648,7 +3648,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03647,NCD,35,,BOUDOUAOU,36.7241,3.4091,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUDOUAOU,HAY HAMDI SLYMANE,150,2010,true,true,1225,1225
 03648,NCD,35,,TIDJELABINE,36.681744,3.527459,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUMERDES,VILLAGE REBARBIA,120,2021,true,true,800,800
 03649,NCD,35,,LARBATACHE,36.638926,3.364981,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMIS EL KHECHNA,COTE CSP,120,2022,true,true,800,800
-03650,NCD,35,,BORDJ MENAIEL,36.7401,3.72,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ MENAIEL,CITE TAHRIR A L'ENCEINTE DE MAISON DE JEUNES,120,2022,true,true,800,800
+03650,NCD,35,,BORDJ MENAIEL,36.7401,3.72,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ MENAIEL,CITE TAHRIR A L'ENCEINTE DE MAISON DE JEUNES,120,2022,true,true,800,800
 03651,NCD,35,,DJINET,36.872586,3.722819,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ MENAIEL,cote auberge,120,2020,true,true,800,800
 03652,NCD,35,,EL KHARROUBA,36.651,3.400638,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUDOUAOU,CENTRE VILLE,,,true,,,
 03653,NCD,35,,BENI AMRANE,36.667021,3.587039,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIA,A L'ENCEINTE DE LA MAISON DE JEUNES,,,true,true,,
@@ -3702,9 +3702,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03701,NCD,35,,BOUDOUAOU,36.738,3.4009,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUDOUAOU,CITE BEN TORKIA,150,2010,true,true,1225,1225
 03702,NCD,35,,BOUDOUAOU,36.7288,3.4126,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUDOUAOU,PLATEAU,120,2021,true,true,,
 03703,NCD,35,,BOUDOUAOU,36.733401,3.3976,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUDOUAOU,MOUSSA IBNO NOSSAEYER,120,2021,true,true,,
-03704,NCD,35,,AFIR,36.8464,3.99,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Dellys,TALA AYACHE,150,2006,true,true,1225,1225
+03704,NCD,35,,AFIR,36.8464,3.99,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,Dellys,TALA AYACHE,150,2006,true,true,1225,1225
 03705,NCD,35,,BENI AMRANE,36.6653,3.5971,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIA,CITE LES CHALETS,100,2008,true,true,1225,1225
-03706,NCD,35,,BORDJ MENAIEL,36.74,3.7194,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ MENAIEL,RUE BOUIRI BOUALEM,200,2009,true,true,800,800
+03706,NCD,35,,BORDJ MENAIEL,36.74,3.7194,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ MENAIEL,RUE BOUIRI BOUALEM,200,2009,true,true,800,800
 03707,NCD,35,,BOUMERDES,36.7749,3.5246,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Boumerdes,170 LOGTS FIGUIER,150,2010,true,true,1500,1500
 03708,NCD,35,,OULED MOUSSA,36.6934,3.371,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,Khemis el khechna,CITE 1700 LOGTS,200,2012,true,true,800,890
 03709,NCD,35,,BENI AMRANE,36.6697,3.5949,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,THENIA,LA ROUTE NATIONAL N°5,100,2012,true,true,800,800
@@ -3726,7 +3726,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03725,kedache belkacem,36,,BOUHADJAR,36.7639,8.3091,exact,sig_mjs,mjs,BN,Bassin de natation,BOUHADJAR,eltarf centre,80,,true,true,875,875
 03726,laabidi saleh,36,,BOUHADJAR,36.512003,8.103243,exact,sig_mjs,mjs,BN,Bassin de natation,BOUHADJAR,bouhadjar centre,20,2005,true,true,128,128
 03727,maison de jeunes Mefdi zakaria,36,,ASFOUR,36.6786,7.9767,exact,sig_mjs,mjs,BN,Bassin de natation,BESBES,ASFOUR,20,,true,false,128,128
-03728,Nouri mohamed,36,,BOUHADJAR,36.51,8.1,exact,sig_mjs,mjs,BN,Bassin de natation,BOUHADJAR,BOUHADJAR,20,,true,true,128,128
+03728,Nouri mohamed,36,,BOUHADJAR,36.51,8.1,approximate,sig_mjs,mjs,BN,Bassin de natation,BOUHADJAR,BOUHADJAR,20,,true,true,128,128
 03729,tahri taher,36,,EL-TARF,36.759534,8.329684,exact,sig_mjs,mjs,BN,Bassin de natation,EL-TARF,eltarf centre,50,2005,true,true,128,128
 03730,Zouaghi amar,36,,EL-TARF,36.7605,8.3291,exact,sig_mjs,mjs,PA,Piste d'athlétisme,EL-TARF,SIDI BELGACEM,8,,true,false,7000,7000
 03731,ABIDETE SADEK,36,,BOUHADJAR,36.763,8.316,exact,sig_mjs,mjs,SF,Stade de football,BOUHADJAR,EL TARF -CENTRE,500,,true,false,9657,13068
@@ -3740,7 +3740,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03739,TAMER ABD ELHADI,36,,BOUTELDJA,36.7865,8.1914,exact,sig_mjs,mjs,SOMS,Salle OMS,BOUTELDJA,BOUTELDJA,20,,true,false,128,128
 03740,Tamer ebd elhadi,36,,BOUTELDJA,36.7865,8.191,exact,sig_mjs,mjs,SOMS,Salle OMS,BOUTELDJA,BOUTELDJA,300,,true,false,2003,7771
 03741,Tamrabet abd elkarim,36,,DREAN,36.685,7.7423,exact,sig_mjs,mjs,SOMS,Salle OMS,DREAN,DREAN,300,,true,true,1680,8288
-03742,touil ali,36,,EL-TARF,36.7642,8.31,exact,sig_mjs,mjs,SOMS,Salle OMS,EL-TARF,ELTARF,500,,true,true,1060,2848
+03742,touil ali,36,,EL-TARF,36.7642,8.31,approximate,sig_mjs,mjs,SOMS,Salle OMS,EL-TARF,ELTARF,500,,true,true,1060,2848
 03743,chemam achour ben bouacha,36,,ASFOUR,36.6706,7.9715,exact,sig_mjs,mjs,SS,Salle spécialisée,BESBES,ASFOUR,100,2019,true,true,609,2350
 03744,salle spécialisée Ain karma,36,,AIN KERMA,36.6008,8.205,exact,sig_mjs,mjs,SS,Salle spécialisée,BOUHADJAR,AIN KARMA,100,2019,true,true,1900,2500
 03745,ZOUAGHI AMAR,36,,EL KALA,36.7612,8.3288,exact,sig_mjs,mjs,STOMS,Stade OMS,EL KALA,SIDI BELGACEM,1000,,true,true,19503,52000
@@ -3756,7 +3756,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03755,CEM BESBES,36,,BESBES,36.704,7.8501,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BESBES,CEM BESBES,12,2003,true,false,1125,1125
 03756,CEM BOUTELDJA,36,,BOUTELDJA,36.7864,8.1977,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUTELDJA,BOUTELDJA,12,2003,true,false,1125,1125
 03757,CEM CHEBAITA MOKHTAR,36,,CHEBAITA MOKHTAR,36.759,7.7406,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DREAN,CHEBAITA MOKHTAR CENTRE,12,2003,true,false,1125,1125
-03758,CEM DAGHOUSSA,36,,BESBES,36.7356,7.8,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BESBES,DAGHOUSSA,12,2003,true,false,1125,1125
+03758,CEM DAGHOUSSA,36,,BESBES,36.7356,7.8,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BESBES,DAGHOUSSA,12,2003,true,false,1125,1125
 03759,CEM DREAN,36,,DREAN,36.6889,7.7446,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DREAN,DREAN,12,2003,true,false,1125,1125
 03760,CEM ECHATT,36,,ECHATT,36.8327,7.8703,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BEN M'HIDI,ECHATT,12,2003,true,false,1125,1125
 03761,CEM LAC DES OISEAUX,36,,LAC DES OISEAUX,36.7752,8.1252,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUTELDJA,CEM LAC DES OISEAUX,12,2003,true,false,1125,1125
@@ -3818,9 +3818,9 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03817,,37,,TINDOUF,27.6415,-8.1188,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Wiam,10,,true,true,1125,1125
 03818,,37,,TINDOUF,27.6706,-8.1537,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Remadin,30,,true,true,1125,1125
 03819,,37,,TINDOUF,27.6792,-8.1385,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Sliman Amirat,60,,true,true,1125,1125
-03820,,37,,OUM EL ASSEL,29.12,-7.3,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Hassi Monir,5,,true,true,1125,1125
+03820,,37,,OUM EL ASSEL,29.12,-7.3,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Hassi Monir,5,,true,true,1125,1125
 03821,,37,,OUM EL ASSEL,28.6216,-6.9825,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Oum El Assel,15,,true,true,1125,1125
-03822,,37,,OUM EL ASSEL,28.61,-6.98,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Oum ElAssel,25,,true,true,1125,1125
+03822,,37,,OUM EL ASSEL,28.61,-6.98,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Oum ElAssel,25,,true,true,1125,1125
 03823,,37,,TINDOUF,27.6672,-8.1497,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Moussani,50,,true,true,1125,1125
 03824,,37,,TINDOUF,27.6674,-8.1495,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Mousani (CSP ),40,,true,true,1125,1125
 03825,,37,,TINDOUF,27.1849,-8.4324,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Point 75,30,,true,true,1125,1125
@@ -3853,7 +3853,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03852,Terrain sportif de proximité,37,,TINDOUF,27.8198,-8.0538,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TINDOUF,Ouad Mhia,10,,true,true,1125,1125
 03853,,38,,TISSEMSILT,35.6069,1.8112,exact,sig_mjs,mjs,P25,Piscine 25 m,TISSEMSILT,Bloc Attoum,500,2004,true,false,3500,7000
 03854,,38,,LARDJEM,35.7529,1.547,exact,sig_mjs,mjs,P25,Piscine 25 m,LARDJEM,Marché hébdomadaire Lardjem,250,2019,true,true,4320,8000
-03855,piste d'athlétisme,38,,TISSEMSILT,35.5992,1.8286,exact,sig_mjs,mjs,PA,Piste d'athlétisme,TISSEMSILT,Route Bougara,,,true,false,,
+03855,piste d'athlétisme,38,,TISSEMSILT,35.5992,1.8286,approximate,sig_mjs,mjs,PA,Piste d'athlétisme,TISSEMSILT,Route Bougara,,,true,false,,
 03856,,38,,THENIET EL HAD,35.8657,2.0275,exact,sig_mjs,mjs,PP,Piscine de proximité,THENIET EL HAD,THENIET EL HAD CENTRE,100,,true,false,1439,2379
 03857,,38,,BORDJ BOUNAAMA,35.8546,1.6123,exact,sig_mjs,mjs,PP,Piscine de proximité,BORDJ BOUNAAMA,Route chelef,100,,,false,1489.1,2816.35
 03858,Azar Rahmani med,38,,KHEMISTI,35.6662,1.9672,exact,sig_mjs,mjs,PP,Piscine de proximité,KHEMISTI,Rue el Chohada,500,,true,false,1895,2350
@@ -3865,10 +3865,10 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03864,Salle OMS Lardjem,38,,LARDJEM,35.7524,1.5464,exact,sig_mjs,mjs,SOMS,Salle OMS,LARDJEM,Commune de Lardjem,500,,true,false,2208.54,2400
 03865,salle spécialisée,38,,THENIET EL HAD,35.8614,2.0275,exact,sig_mjs,mjs,SS,Salle spécialisée,THENIET EL HAD,THENIET EL HAD,150,2019,true,false,1038,1500
 03866,salle spécialisée,38,,TISSEMSILT,35.5979,1.826,exact,sig_mjs,mjs,SS,Salle spécialisée,TISSEMSILT,500 logts,150,2017,,false,1213.13,1500
-03867,Djillali Bounaama,38,,TISSEMSILT,35.5992,1.8286,exact,sig_mjs,mjs,STOMS,Stade OMS,TISSEMSILT,Route Bougara,5472,2007,true,false,9600,166527
-03868,03 TSP EL MERDJA,38,,TISSEMSILT,35.6103,1.8039,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,EL MERDJA,,,true,false,,
-03869,03 TSP EL MERDJA,38,,TISSEMSILT,35.6103,1.8039,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,EL MERDJA,,,true,false,,
-03870,03 TSP EL MERDJA,38,,TISSEMSILT,35.6103,1.8039,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,EL MERDJA,,,true,false,,
+03867,Djillali Bounaama,38,,TISSEMSILT,35.5992,1.8286,approximate,sig_mjs,mjs,STOMS,Stade OMS,TISSEMSILT,Route Bougara,5472,2007,true,false,9600,166527
+03868,03 TSP EL MERDJA,38,,TISSEMSILT,35.6103,1.8039,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,EL MERDJA,,,true,false,,
+03869,03 TSP EL MERDJA,38,,TISSEMSILT,35.6103,1.8039,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,EL MERDJA,,,true,false,,
+03870,03 TSP EL MERDJA,38,,TISSEMSILT,35.6103,1.8039,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,EL MERDJA,,,true,false,,
 03871,TSP,38,,KHEMISTI,35.6696,1.9531,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMISTI,Khemisti Commune,,,true,false,,
 03872,TSP,38,,TISSEMSILT,35.611,1.8241,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
 03873,TSP,38,,MELAAB,35.7108,1.3365,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LARDJEM,Melaab Commune,,,true,false,,
@@ -3884,8 +3884,8 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03883,TSP,38,,TISSEMSILT,35.6001,1.7973,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
 03884,TSP,38,,SIDI ABED,35.7459,1.7055,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMMARI,Sidi Abed,,,true,false,,
 03885,TSP,38,,AMMARI,35.5789,1.6608,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMMARI,Ammari Commune,,,true,false,,
-03886,TSP,38,,MAACEM,35.66,1.5528,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMMARI,Maacem,,,true,false,,
-03887,TSP,38,,LARDJEM,35.75,1.5485,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LARDJEM,Lardjem Commune,,,true,false,,
+03886,TSP,38,,MAACEM,35.66,1.5528,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AMMARI,Maacem,,,true,false,,
+03887,TSP,38,,LARDJEM,35.75,1.5485,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,LARDJEM,Lardjem Commune,,,true,false,,
 03888,TSP,38,,TISSEMSILT,35.6066,1.8147,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
 03889,TSP,38,,BORDJ BOUNAAMA,35.8456,1.6163,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ BOUNAAMA,Bordj Bounaama Commune,,,true,false,,
 03890,TSP,38,,KHEMISTI,35.6936,1.9936,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMISTI,Khemisti Commune,,,true,false,,
@@ -3901,10 +3901,10 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03900,TSP,38,,TISSEMSILT,35.6018,1.8172,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
 03901,TSP,38,,TISSEMSILT,35.5958,1.8264,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
 03902,TSP,38,,TISSEMSILT,35.6082,1.8044,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,,,
-03903,TSP,38,,TISSEMSILT,35.6,1.7948,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
+03903,TSP,38,,TISSEMSILT,35.6,1.7948,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
 03904,TSP,38,,MELAAB,35.7127,1.3324,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,LARDJEM,Melaab Commune,,,true,false,,
 03905,TSP,38,,TISSEMSILT,35.6024,1.8089,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TISSEMSILT,Tissemsilt Commune,,,true,false,,
-03906,TSP,38,,KHEMISTI,35.67,1.9533,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMISTI,Khemisti Commune,,,true,false,,
+03906,TSP,38,,KHEMISTI,35.67,1.9533,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMISTI,Khemisti Commune,,,true,false,,
 03907,TSP,38,,BORDJ BOUNAAMA,35.8466,1.6121,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ BOUNAAMA,Bordj Bounaama Commune,,,true,false,,
 03908,TSP,38,,KHEMISTI,35.6617,1.9646,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMISTI,Khemisti Commune,,,true,false,,
 03909,TSP,38,,LAYOUNE,35.6951,1.9896,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHEMISTI,Selmana,,,true,false,,
@@ -3932,7 +3932,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 03931,,39,,GUEMAR,33.496,6.8222,exact,sig_mjs,mjs,SOMS,Salle OMS,GUEMAR,Cite dhahrawya guemar,500,2017,true,false,2649,10120
 03932,,39,,EL-OUED,33.3854,6.8401,exact,sig_mjs,mjs,SOMS,Salle OMS,EL OUED,CITE TEKSEBET EL OUED,500,1996,true,,1500,1792
 03933,,39,,EL-OUED,33.401,6.8754,exact,sig_mjs,mjs,SOMS,Salle OMS,EL OUED,CITE CHATT EL OUED,3000,2018,true,true,12000,17000
-03934,,39,,HASSANI ABDELKRIM,33.48,6.8987,exact,sig_mjs,mjs,SOMS,Salle OMS,DEBILA,RN16 Hssani abdelkarim,1000,2015,true,false,3335,7900
+03934,,39,,HASSANI ABDELKRIM,33.48,6.8987,approximate,sig_mjs,mjs,SOMS,Salle OMS,DEBILA,RN16 Hssani abdelkarim,1000,2015,true,false,3335,7900
 03935,,39,,ROBBAH,33.2903,6.9044,exact,sig_mjs,mjs,SOMS,Salle OMS,ROBBAH,cite zawya,1000,1994,true,true,2200,2500
 03936,,39,,KOUININE,33.3951,6.8141,exact,sig_mjs,mjs,SS,Salle spécialisée,EL OUED,Cite Larbi Tebessi Kouinine,250,2014,true,false,952,1250
 03937,08 mai el oued,39,,EL-OUED,33.3886,6.889,exact,sig_mjs,mjs,SS,Salle spécialisée,EL OUED,cite 08 mai el oued,250,2016,true,false,420,1200
@@ -4033,8 +4033,8 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04032,,40,,ENSIGHA,35.393423,7.137777,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HAMMA,le groupement urbanisme 400 logements a ensigha,,2021,true,true,2545,
 04033,,40,,EL HAMMA,35.4686,7.088,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HAMMA,elhamma,,2018,true,true,,
 04034,,40,,M'SARA,35.2392,6.572,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUHMAMA,prés de Lycée,,2020,true,,2545,
-04035,,40,,KHENCHELA,35.439792,7.158337,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHENCHELA,la cité adel,,,true,,,
-04036,,40,,KHENCHELA,35.439792,7.158337,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHENCHELA,la cité adel,,,true,,,
+04035,,40,,KHENCHELA,35.439792,7.158337,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHENCHELA,la cité adel,,,true,,,
+04036,,40,,KHENCHELA,35.439792,7.158337,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHENCHELA,la cité adel,,,true,,,
 04037,,40,,BOUHMAMA,35.251687,6.999829,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUHMAMA,60 logements,,2021,true,true,2545,
 04038,,40,,REMILA,35.571257,6.896115,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KAIS,rue de 48 logements,,2021,true,true,2545,
 04039,,40,,KAIS,35.4937,6.9173,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KAIS,citée17 juin prés cem timtchathien,,2021,true,,2545,
@@ -4063,7 +4063,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04062,,40,,BAGHAI,35.521163,7.11163,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HAMMA,la citée 13logements,,2021,true,true,2545,
 04063,,40,,KAIS,35.497286,6.919938,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KAIS,rue de544 logements,,2021,true,true,2545,
 04064,,40,,YABOUS,35.406261,6.646557,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BOUHMAMA,YABOUS,,,true,false,,
-04065,,40,,KHENCHELA,35.439792,7.158337,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHENCHELA,la cité adel,,,true,,,
+04065,,40,,KHENCHELA,35.439792,7.158337,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,KHENCHELA,la cité adel,,,true,,,
 04066,,40,,ENSIGHA,35.39629,7.135583,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL HAMMA,ensigha centre,,2020,true,true,2545,
 04067,,40,,KAIS,35.453958,6.902161,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KAIS,citée eldachera,,,true,true,2545,
 04068,,40,,CHECHAR,35.065795,7.046986,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHECHAR,citée kabraoui abed elhafeid,,2020,true,true,2545,
@@ -4138,8 +4138,8 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04137,salle spécialisée Hamma Loulou,41,,SOUK-AHRAS,36.2887,7.9766,exact,sig_mjs,mjs,SS,Salle spécialisée,SOUK-AHRAS,cCité Barral Dalah Souk-ahras,150,2004,true,,860,
 04138,Stade OMS,41,,SOUK-AHRAS,36.2808,7.9408,exact,sig_mjs,mjs,STOMS,Stade OMS,SOUK-AHRAS,,,,,,,
 04139,,41,,SOUK-AHRAS,36.281572,7.94231,exact,sig_mjs,mjs,TF,Terrain de football,SOUK AHRAS,Souk Ahras,,2012,true,,,
-04140,,41,,SOUK-AHRAS,36.2821,7.9423,exact,sig_mjs,mjs,TF,Terrain de football,SOUK AHRAS,souk ahras,,2006,true,,,
-04141,,41,,SOUK-AHRAS,36.2821,7.9423,exact,sig_mjs,mjs,TF,Terrain de football,SOUK AHRAS,Souk Ahras,,2006,true,,,
+04140,,41,,SOUK-AHRAS,36.2821,7.9423,approximate,sig_mjs,mjs,TF,Terrain de football,SOUK AHRAS,souk ahras,,2006,true,,,
+04141,,41,,SOUK-AHRAS,36.2821,7.9423,approximate,sig_mjs,mjs,TF,Terrain de football,SOUK AHRAS,Souk Ahras,,2006,true,,,
 04142,,41,,SOUK-AHRAS,36.276266,7.946978,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUK AHRAS,Souk Ahras,25000,2012,true,,3161,
 04143,,41,,OUED KEBERIT,35.920342,7.916775,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUM EL ADHAIM,Oued Kebrit,25000,2012,true,,12000,5025
 04144,Terrain combiné,41,,SOUK-AHRAS,36.268757,7.947256,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUK-AHRAS,Souk-Ahras,,,true,,1125,
@@ -4420,7 +4420,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04419,aire de jeux de football,44,,TIBERKANINE,36.1769,1.6272,exact,sig_mjs,mjs,AJF,Aire de jeux football,EL ATTAF,Aire de Jeu de foot ball tiberkanine centre,120,2011,true,,800,800
 04420,aire de jeux de football,44,,DJELIDA,36.2561,1.8949,exact,sig_mjs,mjs,AJF,Aire de jeux football,DJELIDA,aire de jeux de football hay zennadra ain defla,120,2015,true,true,2088,2088
 04421,hay tafrent,44,,BATHIA,35.939911,1.809956,exact,sig_mjs,mjs,AJF,Aire de jeux football,BATHIA,hay tafrent,,,true,true,,
-04422,bouledrome,44,,AIN DEFLA,36.2661,1.97,exact,sig_mjs,mjs,BL,Boulodrome,AIN DEFLA,bouledrome rue emir khaled ain defla centre,120,2006,true,true,342,342
+04422,bouledrome,44,,AIN DEFLA,36.2661,1.97,approximate,sig_mjs,mjs,BL,Boulodrome,AIN DEFLA,bouledrome rue emir khaled ain defla centre,120,2006,true,true,342,342
 04423,Bassin de Natation,44,,KHEMIS-MILIANA,36.2645,2.2351,exact,sig_mjs,mjs,BN,Bassin de natation,KHEMIS Miliana,Hay Souffay Khemis-Miliana,100,2006,true,,200,200
 04424,Bassin de Natation,44,,AIN DEFLA,36.2587,1.9488,exact,sig_mjs,mjs,BN,Bassin de natation,AIN DEFLA,Centre de loisir 19 mars ain defla centre,100,2009,true,true,200,200
 04425,Bassin de Natation,44,,DJENDEL,36.2184,2.4091,exact,sig_mjs,mjs,BN,Bassin de natation,DJENDEL,Bassin de Natation Maison de jeune Chahid ben cherifa mohamed,100,2006,true,true,200,200
@@ -4431,7 +4431,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04430,Bassin de Natation,44,,EL-ABADIA,36.2737,1.6738,exact,sig_mjs,mjs,BN,Bassin de natation,EL ABADIA,Bassin de Natation Salle Polyvalente Chahid Tagroute Cherif Hay Sidi Saad,100,2006,true,true,200,200
 04431,Bassin de Natation,44,,BORDJ-EMIR-KHALED,36.1255,2.2067,exact,sig_mjs,mjs,BN,Bassin de natation,BORDJ EL EMIR KHALED,Bassin de Natation CSP Chahid Faidi Med Bordj Emir Khaled,100,2007,true,,200,200
 04432,Bassin de Natation,44,,ROUINA,36.2304,1.8099,exact,sig_mjs,mjs,BN,Bassin de natation,ROUINA,Bassin de Natation CSP Hay Seaidia Rouina,100,2006,true,true,200,200
-04433,centre equestre,44,,AIN DEFLA,36.27,1.9825,exact,sig_mjs,mjs,CE,Centre équestre,AIN DEFLA,centre equestre cheikh bouamama ain defla centre,500,,true,true,1149,81787
+04433,centre equestre,44,,AIN DEFLA,36.27,1.9825,approximate,sig_mjs,mjs,CE,Centre équestre,AIN DEFLA,centre equestre cheikh bouamama ain defla centre,500,,true,true,1149,81787
 04434,court de tennis,44,,AIN DEFLA,36.2696,1.9829,exact,sig_mjs,mjs,CT,Court de tennis,AIN DEFLA,court de tinnis centre equestre cheikh bouamama ain defla centre,25,2017,true,true,648,648
 04435,court de tinnis,44,,AIN DEFLA,36.2694,1.9827,exact,sig_mjs,mjs,CT,Court de tennis,AIN DEFLA,court de tennis centre equestre cheikh bouamama ain defla centre,25,2017,true,true,648,648
 04436,court de tinnis,44,,AIN DEFLA,36.2696,1.9831,exact,sig_mjs,mjs,CT,Court de tennis,AIN DEFLA,cour de tennis centre equestre cheikh bouamama ain defla centre,25,2017,true,true,648,648
@@ -4489,11 +4489,11 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04488,Terrain sportif de proximité,44,,EL-AMRA,36.3105,1.8513,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRA,TSP hay 200 logts El Amra,120,2011,true,,1050,1050
 04489,Terrain sportif de proximité,44,,TARIK-IBN-ZIAD,35.9919,2.1404,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ EL EMIR KHALED,TSP du stade communal,120,2004,true,,960,960
 04490,Terrain sportif de proximité,44,,BELAAS,35.9879,1.8628,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATHIA,tsp hay khezara belaas,120,2010,true,,1060,1060
-04491,Terrain sportif de proximité,44,,MEKHATRIA,36.3045,1.96,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRA,TSP mekhatria centre,120,2003,true,,960,960
+04491,Terrain sportif de proximité,44,,MEKHATRIA,36.3045,1.96,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRA,TSP mekhatria centre,120,2003,true,,960,960
 04492,Terrain sportif de proximité,44,,AIN-SOLTANE,36.2467,2.2928,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN LECHIAKH,TSP a proximité du stade communal,120,2010,true,,1030,1030
 04493,Terrain sportif de proximité,44,,OUED CHORFA,36.1979,2.5192,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJENDEL,Aire de Jeu hay bounaama oued chorfa,120,2009,true,,1060,1060
 04494,Terrain sportif de proximité,44,,BIR-OULD-KHELIFA,36.1769,2.2279,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BORDJ EL EMIR KHALED,TSP Bir Oueld Khelifa centre,120,2004,true,,960,960
-04495,Terrain sportif de proximité,44,,BOURACHED,36.1688,1.93,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJELIDA,Aire de Jeu bourached centre,120,2004,true,,475,475
+04495,Terrain sportif de proximité,44,,BOURACHED,36.1688,1.93,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJELIDA,Aire de Jeu bourached centre,120,2004,true,,475,475
 04496,Terrain sportif de proximité,44,,AIN DEFLA,36.2633,1.9674,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN DEFLA,TSP Rue 1ere novembre 1954,120,2003,true,,916,916
 04497,Terrain sportif de proximité,44,,EL-ATTAF,36.2224,1.6675,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL ATTAF,TSP CSP Ben Aicha Moeti Ahmed Hay Bouzar El Attaf,120,2004,true,,960,960
 04498,Terrain sportif de proximité,44,,MILIANA,36.3068,2.2587,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MILIANA,TSP ain barda miliana,120,2004,true,,960,960
@@ -4510,7 +4510,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04509,Terrain sportif de proximité,44,,EL-ABADIA,36.2693,1.6814,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL ABADIA,TSP de la Salle Polyvalente Chahid Graya Ahmed Ex Aswak el fellah,120,2011,true,,800,800
 04510,Terrain sportif de proximité,44,,MILIANA,36.304,2.2282,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MILIANA,TSP hay frere belachehab miliana,120,2005,true,,1144,1144
 04511,Terrain sportif de proximité,44,,AIN DEFLA,36.2589,1.9494,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN DEFLA,TSP centre de loisir 19 mars ain defla,120,2010,true,,1167,1167
-04512,Terrain sportif de proximité,44,,AIN-TORKI,36.3317,2.3,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM RIGHA,ain torki centre,120,2009,true,,684,684
+04512,Terrain sportif de proximité,44,,AIN-TORKI,36.3317,2.3,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM RIGHA,ain torki centre,120,2009,true,,684,684
 04513,Terrain sportif de proximité,44,,EL-ABADIA,36.2654,1.6852,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL ABADIA,TSP stade communal,120,2009,true,,1060,1060
 04514,Terrain sportif de proximité,44,,HASSANIA,35.941,1.9159,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BATHIA,TSP hay coperative el hassania centre,120,2009,true,,924,924
 04515,Terrain sportif de proximité,44,,DJENDEL,36.2181,2.4114,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJENDEL,TSP djendel centre,120,2010,true,true,580,580
@@ -4588,7 +4588,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04587,terrain sportif des proximité,45,,NAAMA,33.2739,-0.3148,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,NAAMA,quartier evolutif naama,12,,true,false,1125,1200
 04588,,46,,EL MALEH,35.386636,-1.099234,exact,sig_mjs,mjs,AJF,Aire de jeux football,EL MALEH,,50,,true,,,
 04589,,46,,SIDI BOUMEDIENE,35.3195,-0.875,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN LARBAA,,,,,,,
-04590,,46,,SIDI BOUMEDIENE,35.3196,-0.8739,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN EL ARBAA,sidi boumediene,50,2014,true,,,2400
+04590,,46,,SIDI BOUMEDIENE,35.3196,-0.8739,approximate,sig_mjs,mjs,AJF,Aire de jeux football,AIN EL ARBAA,sidi boumediene,50,2014,true,,,2400
 04591,,46,,OUED SEBBAH,35.3752,-0.8163,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN EL ARBAA,oued sebbah,50,2007,true,,,2400
 04592,air de jeux,46,,EL AMRIA,35.521351,-1.014203,exact,sig_mjs,mjs,AJF,Aire de jeux football,EL AMRIA,el amria,50,2007,true,,,2400
 04593,air de jeux,46,,OULHACA EL GHERABA,35.2316,-1.5093,exact,sig_mjs,mjs,AJF,Aire de jeux football,OULHASSA GHERABA,siga oulhaca,50,2007,true,,,2400
@@ -4612,21 +4612,21 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04611,navro nourbel alber,46,,AIN TEMOUCHENT,35.313,-1.1482,exact,sig_mjs,mjs,P25,Piscine 25 m,AIN TEMOUCHENT,hai omar ibn khatab,500,,true,true,3572,3572
 04612,,46,,BENI SAF,35.292514,-1.379499,exact,sig_mjs,mjs,PA,Piste d'athlétisme,BENI SAF,,,,,,,
 04613,piste d 'athlétisme,46,,Ain temouchent,35.3109,-1.1457,exact,sig_mjs,mjs,PA,Piste d'athlétisme,AIN TEMOUCHENT,commune ain temouchent,50,2002,true,,,5000
-04614,,46,,HAMMAM BOUHADJAR,35.3743,-0.9702,exact,sig_mjs,mjs,SOMS,Salle OMS,HAMMAM BOUHADJAR,COMMUNE HAMMAM BOUHDJAR,500,2016,true,,1893.46,12511
-04615,salle oms,46,,HAMMAM BOUHADJAR,35.3743,-0.9702,exact,sig_mjs,mjs,SOMS,Salle OMS,HAMMAM BOUHADJAR,hay sidi said,50,2011,true,,,1125
+04614,,46,,HAMMAM BOUHADJAR,35.3743,-0.9702,approximate,sig_mjs,mjs,SOMS,Salle OMS,HAMMAM BOUHADJAR,COMMUNE HAMMAM BOUHDJAR,500,2016,true,,1893.46,12511
+04615,salle oms,46,,HAMMAM BOUHADJAR,35.3743,-0.9702,approximate,sig_mjs,mjs,SOMS,Salle OMS,HAMMAM BOUHADJAR,hay sidi said,50,2011,true,,,1125
 04616,salle oms larbi ben jerrid,46,,Ain temouchent,35.3006,-1.1447,exact,sig_mjs,mjs,SOMS,Salle OMS,AIN TEMOUCHENT,rue larbi ben jerrid,500,1991,true,,4238.5,10700
 04617,yousfi said,46,,BENI SAF,35.2894,-1.3592,exact,sig_mjs,mjs,SOMS,Salle OMS,BENI SAF,zhun- beni saf,500,,true,,600,1868
 04618,abid rabah SALLE SPECIALISE,46,,AIN TEMOUCHENT,35.3129,-1.1476,exact,sig_mjs,mjs,SS,Salle spécialisée,AIN TEMOUCHENT,Hay omar iben khatab,100,,true,true,1255.76,1816.36
 04619,ben brahim mohamed,46,,EL MALEH,35.3856,-1.1043,exact,sig_mjs,mjs,SS,Salle spécialisée,EL MALEH,douar djedra,100,2015,true,,832,832
 04620,brik boumedienne,46,,AIN TEMOUCHENT,35.2992,-1.1222,exact,sig_mjs,mjs,SS,Salle spécialisée,AIN TEMOUCHENT,Cite djawhara,200,,true,true,1255.76,1816.16
-04621,fentousse houari,46,,AIN EL ARBAA,35.4015,-0.8741,exact,sig_mjs,mjs,SS,Salle spécialisée,AIN LARBAA,commune Ain El Arbaa,700,2015,true,,1864,1864
+04621,fentousse houari,46,,AIN EL ARBAA,35.4015,-0.8741,approximate,sig_mjs,mjs,SS,Salle spécialisée,AIN LARBAA,commune Ain El Arbaa,700,2015,true,,1864,1864
 04622,SALLE SPECIALISE,46,,EL AMRIA,35.5296,-1.0295,exact,sig_mjs,mjs,SS,Salle spécialisée,EL AMRIA,EL AMRIA,100,2014,true,,823.23,5269
-04623,salles spécialisé,46,,AIN EL ARBAA,35.4015,-0.8741,exact,sig_mjs,mjs,SS,Salle spécialisée,AIN LARBAA,commune ain el arbaa,700,2015,true,,1864,1864
+04623,salles spécialisé,46,,AIN EL ARBAA,35.4015,-0.8741,approximate,sig_mjs,mjs,SS,Salle spécialisée,AIN LARBAA,commune ain el arbaa,700,2015,true,,1864,1864
 04624,stade oms,46,,AIN TEMOUCHENT,35.3116,-1.1468,exact,sig_mjs,mjs,STOMS,Stade OMS,AIN TEMOUCHENT,hai omar ibn khatab,15472,,true,true,10800,158280
 04625,,46,,EL AMRIA,35.523821,-1.024338,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,,,,,,,
 04626,,46,,AIN TEMOUCHENT,35.3094,-1.157,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,commune ain temoouchent,50,,true,true,,1125
-04627,,46,,SIDI SAFI,35.2778,-1.3387,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,rue 50 logt,50,2011,true,,,1125
-04628,,46,,HASSI EL GHELLA,35.4549,-1.0446,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,commune hassi el ghella,50,,true,,,1125
+04627,,46,,SIDI SAFI,35.2778,-1.3387,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,rue 50 logt,50,2011,true,,,1125
+04628,,46,,HASSI EL GHELLA,35.4549,-1.0446,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,commune hassi el ghella,50,,true,,,1125
 04629,,46,,AIN EL ARBAA,35.4013,-0.8876,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL ARBAA,hai sidi bouazza,50,2008,true,,,1125
 04630,,46,,EL AMRIA,35.5289,-1.0173,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,CITE 240 LOGTS,50,2008,true,,,1125
 04631,,46,,OULED KIHAL,35.3687,-1.2289,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MALEH,commune ouled el kihel,50,2013,true,,,1125
@@ -4640,7 +4640,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04639,aire de jeux de football,46,,HAMMAM BOUHADJAR,35.4461,-0.9727,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM BOUHADJAR,douar chafea ain el baida,50,2009,true,,,2400
 04640,aire de jeux de football,46,,OUED SEBBAH,35.3752,-0.8145,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL ARBAA,oued sebbah,50,2007,true,,,2400
 04641,aire de jeux de football,46,,AGHLAL,35.1818,-1.0498,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,v.s.a khellifi slimane,50,2009,false,,,2400
-04642,aire de jeux de football,46,,OULED BOUDJEMAA,35.4739,-1.19,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,rue attari baroudi,50,2014,true,,,2400
+04642,aire de jeux de football,46,,OULED BOUDJEMAA,35.4739,-1.19,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,rue attari baroudi,50,2014,true,,,2400
 04643,terrain sportif de proximité,46,,AIN TEMOUCHENT,35.3102,-1.1345,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,nouvelle ville,50,,true,true,,1125
 04644,terrain sportif de proximité,46,,AIN TEMOUCHENT,35.3092,-1.1569,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,CoMMUNE DE AIN TEMOUCHENT,50,,true,true,,1125
 04645,terrain sportif de proximité,46,,AIN TEMOUCHENT,35.307,-1.1628,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,commune ain temoouchent,50,,true,true,,1125
@@ -4651,7 +4651,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04650,terrain sportif de proximité,46,,BENI SAF,35.3063,-1.363,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,"rue laouadj brahim, sidi sohbi 3eme",50,,true,true,,1125
 04651,terrain sportif de proximité,46,,CHENTOUF,35.3026,-1.0318,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM BOU HADJAR,commune CHENTOUF,50,2013,false,,,1125
 04652,terrain sportif de proximité,46,,AIN TEMOUCHENT,35.3096,-1.1569,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,CoMMUNE DE AIN TEMOUCHENT,50,,true,true,,1125
-04653,terrain sportif de proximité,46,,BENI SAF,35.287,-1.377,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,ecolr fondamental beni khaled,50,2011,true,,,1125
+04653,terrain sportif de proximité,46,,BENI SAF,35.287,-1.377,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,ecolr fondamental beni khaled,50,2011,true,,,1125
 04654,terrain sportif de proximité,46,,EL MALEH,35.3843,-1.095,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MALEH,cite boudiaf,50,2011,true,,,1125
 04655,terrain sportif de proximité,46,,AIN TEMOUCHENT,35.3096,-1.1573,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,école fondamontale akid othmane,50,,true,true,,1125
 04656,terrain sportif de proximité,46,,TERGA,35.4186,-1.1745,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MALEH,école fondamentale,50,2009,true,,,1125
@@ -4659,25 +4659,25 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04658,terrain sportif de proximité,46,,Ain temouchent,35.3166,-1.1277,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,nouvelle ville,50,2008,true,,,1125
 04659,terrain sportif de proximité,46,,OULHACA EL GHERABA,35.271,-1.4596,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULHASSA GHERABA,oulhaça.siga,50,2007,true,,,1125
 04660,terrain sportif de proximité,46,,AIN TOLBA,35.2601,-1.2571,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,village djourdjoura msalli hadj,50,2009,true,,,1125
-04661,terrain sportif de proximité,46,,SIDI BOUMEDIENE,35.3196,-0.8739,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL ARBAA,sidi boumediene,50,2013,true,,,1125
+04661,terrain sportif de proximité,46,,SIDI BOUMEDIENE,35.3196,-0.8739,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL ARBAA,sidi boumediene,50,2013,true,,,1125
 04662,terrain sportif de proximité,46,,AIN TOLBA,35.2501,-1.247,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,hai essada,50,2013,true,,,1125
-04663,terrain sportif de proximité,46,,HASSASNA,35.2779,-0.9885,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM BOU HADJAR,HAY 20 LOGT SOCIALE commune EL HSSASNA,50,2007,true,,,2400
+04663,terrain sportif de proximité,46,,HASSASNA,35.2779,-0.9885,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM BOU HADJAR,HAY 20 LOGT SOCIALE commune EL HSSASNA,50,2007,true,,,2400
 04664,terrain sportif de proximité,46,,AOUBELLIL,35.134,-0.9929,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,rue rahmouni ben attou,50,2015,true,,,1125
 04665,terrain sportif de proximité,46,,OULHACA EL GHERABA,35.243,-1.448,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OULHASSA GHERABA,tadmaya .oulhaça,50,2008,true,,,1125
 04666,terrain sportif de proximité,46,,SIDI BEN ADDA,35.3036,-1.1872,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,rue medah mohamed,50,2011,true,,,1125
 04667,terrain sportif de proximité,46,,BENI SAF,35.2862,-1.3615,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,ECOLE FONDAMENTALE BENI KHALED,50,,true,true,,1125
-04668,terrain sportif de proximité,46,,SIDI SAFI,35.2778,-1.3387,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,école fondamontal,50,2011,true,,,1125
+04668,terrain sportif de proximité,46,,SIDI SAFI,35.2778,-1.3387,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,école fondamontal,50,2011,true,,,1125
 04669,terrain sportif de proximité,46,,Ain temouchent,35.3068,-1.1625,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN TEMOUCHENT,centre medicale pédagogique,50,2009,true,,,1125
 04670,terrain sportif de proximité,46,,AOUBELLIL,35.1385,-0.9963,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,commune aoubellil,50,2007,true,,,1125
 04671,terrain sportif de proximité,46,,OULED KIHAL,35.3688,-1.2382,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MALEH,hai berrabeh djillali,50,2013,true,,,1125
 04672,terrain sportif de proximité,46,,AIN KIHAL,35.1989,-1.196,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,à coté école bailiche mohamed,50,2011,true,,,1125
 04673,terrain sportif de proximité,46,,OULED BOUDJEMAA,35.4701,-1.1942,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,rue belouati abdelkader,50,2011,true,,,1125
-04674,terrain sportif de proximité,46,,BENI SAF,35.287,-1.377,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,CFPA zhun,50,2008,true,,,1125
+04674,terrain sportif de proximité,46,,BENI SAF,35.287,-1.377,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SAF,CFPA zhun,50,2008,true,,,1125
 04675,terrain sportif de proximité,46,,AIN KIHAL,35.1971,-1.2002,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN KIHEL,hai 190 logts,50,2011,true,,,1125
-04676,terrain sportif de proximité,46,,HASSASNA,35.2779,-0.9885,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM BOU HADJAR,hay 20 logts social,50,2007,true,,,2400
+04676,terrain sportif de proximité,46,,HASSASNA,35.2779,-0.9885,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,HAMMAM BOU HADJAR,hay 20 logts social,50,2007,true,,,2400
 04677,terrain sportif de proximité,46,,TAMZOURA,35.4406,-0.6136,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN LARBAA,commune tamazoura:centre khedaida,50,2014,true,,,1125
 04678,terrain sportif de proximité,46,,AIN EL ARBAA,35.3979,-0.8787,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN EL ARBAA,hai khoualef zoubir,50,2008,true,,,1125
-04679,terrain sportif de proximité,46,,HASSI EL GHELLA,35.4549,-1.0446,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,RUE RAHMOUNI EL LARBI,50,2009,true,,,1125
+04679,terrain sportif de proximité,46,,HASSI EL GHELLA,35.4549,-1.0446,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,RUE RAHMOUNI EL LARBI,50,2009,true,,,1125
 04680,terrain sportif de proximité,46,,EL MALEH,35.3945,-1.0856,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MALEH,rue de la republique,50,2011,true,,,1125
 04681,terrain sportif de proximité,46,,EL AMRIA,35.5201,-1.0202,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL AMRIA,CITE 95 LOGTS,50,2011,true,,,1125
 04682,terrain sportif de proximité,46,,OUED SEBBAH,35.3847,-0.8338,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN LARBAA,douar ahelle kaddour,50,2014,true,,,1125
@@ -4991,7 +4991,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 04990,Piscine semi-olympique Ahmed bin Saleh,53,,AIN SALAH,27.1966,2.4797,exact,sig_mjs,mjs,P25,Piscine 25 m,AIN SALAH,"En centre-ville, Ain Saleh",,2009,true,true,,
 04991,,53,,INGHAR,27.0982,1.9037,exact,sig_mjs,mjs,PP,Piscine de proximité,IN GHAR,El Kaser Eldjadid Ingher,,2019,true,false,,
 04992,piscine de proximité,53,,FOGGARET EZZOUA,27.3504,2.8454,exact,sig_mjs,mjs,PP,Piscine de proximité,AIN SALAH,fouggaret El zoua,200,2021,true,false,,14000
-04993,,53,,AIN SALAH,27.1945,2.49,exact,sig_mjs,mjs,SF,Stade de football,AIN SALAH,District administratif d'Ain Saleh,6000,,true,false,,20000
+04993,,53,,AIN SALAH,27.1945,2.49,approximate,sig_mjs,mjs,SF,Stade de football,AIN SALAH,District administratif d'Ain Saleh,6000,,true,false,,20000
 04994,salle oms 500 places Ba Ibrahim Ahmed,53,,AIN SALAH,27.196376,2.490094,exact,sig_mjs,mjs,SOMS,Salle OMS,AIN SALAH,centre ville In salah,500,2023,true,true,4000,7034
 04995,ind,53,,AIN SALAH,27.2757,2.579,exact,sig_mjs,mjs,SS,Salle spécialisée,AIN SALAH,Hassi Lehdjar,300,2017,true,false,564.48,1125
 04996,salle spécialis Bouchikhi Selaimen,53,,FOGGARET EZZOUA,27.360896,2.853347,exact,sig_mjs,mjs,SS,Salle spécialisée,AIN SALAH,Hai 5 juillet fouggaret Elzoua,300,2023,false,false,,1800
@@ -5032,7 +5032,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 05031,piscine de proximité sidi slimane,55,,SIDI SLIMANE,33.2964,6.0913,exact,sig_mjs,mjs,PP,Piscine de proximité,MEGARINE,sidi slimane,,2022,true,true,,12000
 05032,stade dathletisme elmostakbel touggourt,55,,TOUGGOURT,33.1164,6.053,exact,sig_mjs,mjs,SA,Stade d'athlétisme,TOUGGOURT,cité elmostakbel TOUGGOURT,1575,2013,true,,1119.4,89277
 05033,"etude,realisation et equipement de 04 stade de foot ball rouissat,temacine,megarine",55,,TEMACINE,33.028,6.0059,exact,sig_mjs,mjs,SF,Stade de football,TEMACINE,temacine,5000,2022,true,,,32000
-05034,stade de foot ball 5000 place megarine,55,,MEGARINE,33.22,6.1052,exact,sig_mjs,mjs,SF,Stade de football,MEGARINE,megarine,,2022,true,true,,80000
+05034,stade de foot ball 5000 place megarine,55,,MEGARINE,33.22,6.1052,approximate,sig_mjs,mjs,SF,Stade de football,MEGARINE,megarine,,2022,true,true,,80000
 05035,salle OMS kouidri mohamed hamou touggourt,55,,TOUGGOURT,33.1184,6.0537,exact,sig_mjs,mjs,SOMS,Salle OMS,TOUGGOURT,hey elmostakbel TOUGGOURT,500,1995,true,,2025,10060
 05036,salle spécialisé Emir khaled tggt,55,,TOUGGOURT,33.1032,6.0624,exact,sig_mjs,mjs,SS,Salle spécialisée,TOUGGOURT,hey ezzahra tggt,150,1994,true,,,6413
 05037,stade 10000 places touggourt,55,,TOUGGOURT,33.1181,6.0511,exact,sig_mjs,mjs,STOMS,Stade OMS,TOUGGOURT,hey elmostakbel TOUGGOURT,10075,2014,true,true,5371.4,105782
@@ -5085,7 +5085,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 05084,,56,,BORDJ EL HAOUAS,24.8796,8.4473,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,CENTRE VILLE,,,true,true,,
 05085,,56,,BORDJ EL HAOUAS,25.4058,8.4078,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,IHRIR,20,2008,true,true,1500,1500
 05086,,56,,DJANET,24.463,9.5169,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,ifri,,,true,true,,
-05087,,56,,DJANET,24.58,9.46,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,ZELOUAZ,20,2017,true,true,1500,1500
+05087,,56,,DJANET,24.58,9.46,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,ZELOUAZ,20,2017,true,true,1500,1500
 05088,,56,,DJANET,24.527,9.4921,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,Aghoum,,2017,true,true,,
 05089,,56,,DJANET,24.5796,9.4666,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,zelouaz 50 logets,,2017,true,true,,
 05090,,56,,DJANET,24.5547,9.4876,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJANET,Tin khatma,20,2017,true,true,1500,1500
@@ -5111,7 +5111,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 05110,,57,,STILL,34.2638,5.9012,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MEGHAIER,,,,false,,,
 05111,,57,,EL-M'GHAIER,33.95591,5.932717,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MEGHAIER,PROXIMITE ENCIEN SIEGE APC,,,true,,,
 05112,,57,,TENEDLA,33.676384,6.03358,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJAMAA,CITE APC,,,true,,,
-05113,,57,,OUM TOUYOUR,34.154,5.82,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MEGHAIER,ITELOPGI,,,true,,,
+05113,,57,,OUM TOUYOUR,34.154,5.82,approximate,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MEGHAIER,ITELOPGI,,,true,,,
 05114,,57,,TENEDLA,33.658454,5.976092,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJAMAA,LGHEFAIEN,,,true,,,
 05115,,57,,DJAMAA,33.5403,6.024,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,DJAMAA,tigdidine nord,,2014,true,true,1125,1125
 05116,,57,,SIDI KHELIL,33.8523,5.9297,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL MEGHAIER,R N n 03 sidi khalil,,2014,true,true,1125,1125

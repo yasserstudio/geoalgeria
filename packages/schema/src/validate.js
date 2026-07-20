@@ -2,8 +2,15 @@
 // validateRecords enforces the canonical GeoRecord shape; validateMetadata the
 // canonical DatasetMetadata shape. Errors block a release; warnings are advisory.
 
-import { GEO_PRECISION, LIFECYCLE, EVIDENCE_TYPE, DZ_BBOX, WILAYA_CODES } from "./constants.js";
-import { pointInWilaya } from "./geo.js";
+import {
+  GEO_PRECISION,
+  LIFECYCLE,
+  EVIDENCE_TYPE,
+  DZ_BBOX,
+  WILAYA_CODES,
+  MIN_EXACT_DECIMALS,
+} from "./constants.js";
+import { pointInWilaya, coordDecimals, sharedPoints } from "./geo.js";
 
 const WSET = new Set(WILAYA_CODES); // "01".."69" zero-padded — single source of truth
 const isNonEmptyStr = (v) => typeof v === "string" && v.trim() !== "";
@@ -126,6 +133,29 @@ export function validateRecords(records, opts = {}) {
         for (const [k, v] of Object.entries(r.refs))
           if (v != null && typeof v !== "string") warn(i, `refs.${k} should be a string`);
     }
+  });
+
+  // `exact` has to survive two tests the coordinates answer by themselves. Both
+  // need the whole collection (uniqueness does; resolution is per-record but
+  // belongs next to it), so they run after the per-record pass. See geo.js.
+  const shared = sharedPoints(records);
+  records.forEach((r, i) => {
+    if (!r || typeof r !== "object" || r.geo_precision !== "exact") return;
+    if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) return; // already reported
+    const d = coordDecimals(r.lat, r.lng);
+    if (d < MIN_EXACT_DECIMALS)
+      err(
+        i,
+        `geo_precision "exact" on a coordinate rounded to ${d} decimal(s) ` +
+          `(${r.lat}, ${r.lng}) — that is ±${Math.round(0.5 * 10 ** -d * 111320)} m at best, ` +
+          `not a per-facility point; use "approximate"`,
+      );
+    else if (shared.has(i))
+      err(
+        i,
+        `geo_precision "exact" on a coordinate (${r.lat}, ${r.lng}) that another record ` +
+          `in this file also carries — a shared point is not a per-facility point; use "approximate"`,
+      );
   });
 
   return { errors, warnings };

@@ -10,6 +10,9 @@ import {
   loadBoundaries,
   pointInWilaya,
   pointInGeometry,
+  fractionDigits,
+  coordDecimals,
+  sharedPoints,
   wcode,
   round6,
   bbox,
@@ -28,8 +31,8 @@ const rec = (over = {}) => ({
   wilaya_code: "16",
   commune_code: "1601",
   commune: "Sidi M'Hamed",
-  lat: 36.75,
-  lng: 3.06,
+  lat: 36.7657,
+  lng: 3.0587,
   geo_precision: "exact",
   geo_method: "osm_node",
   ...over,
@@ -51,12 +54,12 @@ test("helpers: wcode / round6 / bbox", () => {
   assert.equal(wcode(null), null);
   assert.equal(round6(3.0600001), 3.06);
   assert.equal(round6(""), null);
-  assert.deepEqual(bbox([rec(), rec({ lat: 35, lng: 1 })]), [1, 35, 3.06, 36.75]);
+  assert.deepEqual(bbox([rec(), rec({ lat: 35, lng: 1 })]), [1, 35, 3.0587, 36.7657]);
   assert.equal(bbox([rec({ lat: null, lng: null })]), null);
 });
 
 test("valid records pass", () => {
-  const { errors, warnings } = validateRecords([rec(), rec({ id: "sante:16-00002" })]);
+  const { errors, warnings } = validateRecords([rec(), rec({ id: "sante:16-00002", lat: 36.7658 })]);
   assert.deepEqual(errors, []);
   assert.deepEqual(warnings, []);
 });
@@ -69,7 +72,7 @@ test("wilaya_code must be a zero-padded string", () => {
 });
 
 test("duplicate id is an error", () => {
-  const { errors } = validateRecords([rec(), rec()]);
+  const { errors } = validateRecords([rec(), rec({ lat: 36.7658 })]);
   assert.equal(errors.length, 1);
   assert.match(errors[0], /duplicate id/);
 });
@@ -84,15 +87,56 @@ test("commune_code must be a numeric string; prefix mismatch warns", () => {
 });
 
 test("coordinate sanity guard catches lat/lng swap and sign flip (no polygons needed)", () => {
-  assert.match(validateRecords([rec({ lat: 3.06, lng: 36.75 })]).errors[0], /outside Algeria/); // swapped
-  assert.match(validateRecords([rec({ lat: -36.75 })]).errors[0], /outside Algeria/); // sign flip
+  assert.match(validateRecords([rec({ lat: 3.0587, lng: 36.7657 })]).errors[0], /outside Algeria/); // swapped
+  assert.match(validateRecords([rec({ lat: -36.7657 })]).errors[0], /outside Algeria/); // sign flip
   assert.equal(validateRecords([ungeo()]).errors.length, 0); // ungeocoded ok
-  assert.equal(validateRecords([rec({ lat: 36.75, lng: null })]).errors.length, 1); // half-set
+  assert.equal(validateRecords([rec({ lat: 36.7657, lng: null })]).errors.length, 1); // half-set
 });
 
 test("geo_precision must be from the vocabulary", () => {
   assert.equal(validateRecords([rec({ geo_precision: "osm_node" })]).errors.length, 1);
   assert.equal(validateRecords([rec({ geo_precision: "approximate" })]).errors.length, 0);
+});
+
+test("fractionDigits / coordDecimals read a coordinate's resolution", () => {
+  assert.equal(fractionDigits(35), 0);
+  assert.equal(fractionDigits(36.7657), 4);
+  assert.equal(fractionDigits(36.73849600000001), 14);
+  assert.equal(fractionDigits(1e-7), 7); // exponential form has no literal ".", but is not whole
+  assert.equal(fractionDigits(1.5e-7), 8);
+  assert.equal(fractionDigits(NaN), 0);
+  // a point is only as precise as its coarser axis
+  assert.equal(coordDecimals(35.2, -0.641389), 1);
+  assert.equal(coordDecimals(36.7657, 3.0587), 4);
+});
+
+test("sharedPoints finds the records that are not alone on their coordinate", () => {
+  const rows = [rec(), rec({ id: "b" }), rec({ id: "c", lat: 36.7658 }), rec({ id: "d", lat: null, lng: null })];
+  assert.deepEqual([...sharedPoints(rows)], [0, 1]); // ungeocoded rows are never members
+  assert.equal(sharedPoints([rec()]).size, 0);
+});
+
+test("geo_precision 'exact' must survive the resolution and uniqueness tests", () => {
+  // Resolution: (35, 4) locates nothing finer than ±55 km, so it cannot be a
+  // per-facility point — this is the shape three BADR branches in three different
+  // towns shipped under `exact`.
+  const coarse = validateRecords([rec({ lat: 35, lng: 4 })]);
+  assert.equal(coarse.errors.length, 1);
+  assert.match(coarse.errors[0], /rounded to 0 decimal\(s\)/);
+  assert.match(validateRecords([rec({ lat: 35.2, lng: -0.641389 })]).errors[0], /rounded to 1 decimal\(s\)/);
+  assert.equal(validateRecords([rec({ lat: 36.765, lng: 3.058 })]).errors.length, 0); // 3 dp is the floor
+
+  // …and `approximate` is exactly how a coarse point stays legal.
+  assert.equal(validateRecords([rec({ lat: 35, lng: 4, geo_precision: "approximate" })]).errors.length, 0);
+
+  // Uniqueness: one coordinate, two facilities → not a per-facility point, for either.
+  const twins = validateRecords([rec(), rec({ id: "sante:16-00002" })]);
+  assert.equal(twins.errors.length, 2);
+  assert.match(twins.errors[0], /another record in this file also carries/);
+  // the demoted record is legal; the one still claiming `exact` is not
+  const mixed = validateRecords([rec(), rec({ id: "sante:16-00002", geo_precision: "approximate" })]);
+  assert.equal(mixed.errors.length, 1);
+  assert.match(mixed.errors[0], /sante:16-00001/);
 });
 
 test("geo_precision is null if and only if lat/lng are null", () => {
@@ -168,7 +212,7 @@ test("point-in-wilaya boundary check", () => {
 
   // a point inside Algeria but outside its declared wilaya polygon → advisory warning
   // (boundaries are simplified, so a hard error would false-fail border-adjacent points)
-  const outOfWilaya = validateRecords([rec({ lat: 36, lng: 10 })], { boundaries });
+  const outOfWilaya = validateRecords([rec({ lat: 36.0001, lng: 10.0001 })], { boundaries });
   assert.equal(outOfWilaya.errors.length, 0);
   assert.equal(outOfWilaya.warnings.length, 1);
   assert.match(outOfWilaya.warnings[0], /outside the wilaya 16 boundary/);
@@ -251,7 +295,7 @@ test("validator fails safe on hostile input (returns errors, never throws)", () 
 
 test("coordinates present but non-numeric are rejected", () => {
   assert.match(validateRecords([rec({ lat: "36.75", lng: "3.06" })]).errors[0], /finite numbers/);
-  assert.match(validateRecords([rec({ lat: 36.75, lng: NaN })]).errors[0], /finite numbers/);
+  assert.match(validateRecords([rec({ lat: 36.7657, lng: NaN })]).errors[0], /finite numbers/);
 });
 
 test("CSV formula-injection guard covers leading-whitespace bypass", () => {
@@ -283,7 +327,7 @@ test("buildMetadata computes counts, precision, coverage, bbox", () => {
   assert.equal(meta.wilayas_covered, 2);
   assert.equal(meta.estimated_universe, 6);
   assert.equal(meta.coverage_pct, 50);
-  assert.deepEqual(meta.bbox, [3.06, 36.75, 3.06, 36.75]);
+  assert.deepEqual(meta.bbox, [3.0587, 36.7657, 3.0587, 36.7657]);
   assert.equal(meta.lifecycle, undefined); // no record declared one → field omitted
   assert.deepEqual(validateMetadata(meta).errors, []);
 });
@@ -366,5 +410,5 @@ test("emit: toCSV injection guard + toGeoJSON", () => {
   assert.match(csv, /'=cmd/); // formula-injection prefix
   const fc = toGeoJSON([rec(), rec({ id: "x", lat: null, lng: null })]);
   assert.equal(fc.features.length, 1); // ungeocoded dropped
-  assert.deepEqual(fc.features[0].geometry.coordinates, [3.06, 36.75]);
+  assert.deepEqual(fc.features[0].geometry.coordinates, [3.0587, 36.7657]);
 });
