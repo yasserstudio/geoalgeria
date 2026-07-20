@@ -34,6 +34,9 @@ import { dirname, join } from "node:path";
 import {
   validateRecords as validateV2Records,
   validateMetadata as validateV2Metadata,
+  loadBoundaries,
+  pointInWilaya,
+  pointInGeometry,
   WILAYA_CODES,
 } from "../packages/schema/index.js";
 
@@ -98,6 +101,205 @@ const readJson = (path) => JSON.parse(readFileSync(path, "utf-8"));
 // (features === records-with-coords) would silently diverge.
 const toNum = (v) => (v === "" || v == null ? NaN : Number(v));
 const hasCoord = (r) => Number.isFinite(toNum(r.lat)) && Number.isFinite(toNum(r.lng));
+
+// ---------------------------------------------------------------------------
+// Geo-in-boundary validation (v2 scope addition #1).
+//
+// @geoalgeria/schema has implemented point-in-wilaya since P1 and validateRecords
+// has accepted opts.boundaries since P1 — but nothing ever passed them, so the
+// check was dead for every package. It could not be switched on either: the only
+// wilaya geometry in this repo was dataset/geojson/wilayas.geojson, 69 *Point*
+// features, over which loadBoundaries indexes nothing and pointInWilaya answers
+// "inside" for everything. Wiring that would have produced a false green.
+//
+// The polygons now ship here (dataset/geojson/wilaya-boundaries.geojson, OSM/ODbL
+// — see its .metadata.json). loadBoundaries throws on an empty or partial index,
+// and this file refuses to run without them, so the check cannot go quiet again.
+const BOUNDARIES_FILE = join(ROOT, "packages", "dataset", "data", "geojson", "wilaya-boundaries.geojson");
+let boundaryFc, BOUNDARIES;
+try {
+  boundaryFc = readJson(BOUNDARIES_FILE);
+  BOUNDARIES = loadBoundaries(boundaryFc);
+} catch (e) {
+  console.error(
+    `FAILED: cannot load the wilaya boundaries from packages/dataset/data/geojson/wilaya-boundaries.geojson — ${e.message}\n` +
+      `The geo-in-boundary check is not optional: skipping it would report every package clean over data nothing looked at.`,
+  );
+  process.exit(1);
+}
+if (BOUNDARIES.size !== WILAYA_CODES.length) {
+  console.error(`FAILED: boundaries index has ${BOUNDARIES.size} wilayas, expected ${WILAYA_CODES.length}`);
+  process.exit(1);
+}
+
+// Which wilayas border which. Every boundary in the file comes from one OSM
+// extraction, so neighbours share vertices exactly — no tolerance needed.
+// This is what separates the two kinds of "outside its wilaya":
+//   - lands in a NEIGHBOUR  → could be the coarse geometry (median gap between
+//     kept vertices is 3.4 km), a border-adjacent facility, or a real error;
+//     unprovable either way from here, so it stays a warning per the P1 decision.
+//   - lands in a wilaya that does NOT touch the declared one → nothing about the
+//     geometry can explain it. It is a mislink. Median 93 km, up to 1,290 km.
+// Distance alone cannot make that call: Algeria's Saharan wilayas are hundreds of
+// km across, so "40 km outside" is next-door in the south and three wilayas away
+// in the north. Adjacency is scale-free; distance is not.
+function buildNeighbours(fc) {
+  const atVertex = new Map();
+  for (const f of fc.features) {
+    const code = String(f.properties.code).padStart(2, "0");
+    const polys = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
+    for (const poly of polys)
+      for (const ring of poly)
+        for (const [x, y] of ring) {
+          const k = `${x},${y}`;
+          if (!atVertex.has(k)) atVertex.set(k, new Set());
+          atVertex.get(k).add(code);
+        }
+  }
+  const adj = new Map(WILAYA_CODES.map((c) => [c, new Set()]));
+  for (const shared of atVertex.values())
+    if (shared.size > 1)
+      for (const a of shared) for (const b of shared) if (a !== b) adj.get(a).add(b);
+  return adj;
+}
+const NEIGHBOURS = buildNeighbours(boundaryFc);
+{
+  const isolated = [...NEIGHBOURS].filter(([, s]) => s.size === 0).map(([c]) => c);
+  if (isolated.length) {
+    console.error(
+      `FAILED: wilaya ${isolated.join(", ")} share no boundary vertex with any neighbour — ` +
+        `the adjacency test below would call every outlier a mislink`,
+    );
+    process.exit(1);
+  }
+}
+
+/** Metres from (lng,lat) to the nearest edge of a Polygon/MultiPolygon (report detail only). */
+function metresToGeometry(lng, lat, geom) {
+  const R = 6371000,
+    D = Math.PI / 180,
+    k = Math.cos(lat * D);
+  const px = lng * k * D * R,
+    py = lat * D * R;
+  let best = Infinity;
+  const polys = geom.type === "Polygon" ? [geom.coordinates] : geom.coordinates;
+  for (const poly of polys)
+    for (const ring of poly)
+      for (let i = 1; i < ring.length; i++) {
+        const ax = ring[i - 1][0] * k * D * R,
+          ay = ring[i - 1][1] * D * R,
+          bx = ring[i][0] * k * D * R,
+          by = ring[i][1] * D * R;
+        const dx = bx - ax,
+          dy = by - ay,
+          l2 = dx * dx + dy * dy;
+        const t = l2 ? Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / l2)) : 0;
+        const d = Math.hypot(px - (ax + t * dx), py - (ay + t * dy));
+        if (d < best) best = d;
+      }
+  return best;
+}
+
+// Per-package tally: geocoded records checked, records outside their declared
+// wilaya, and the subset that landed in a non-adjacent wilaya (the mislinks).
+const GEO_TALLY = new Map();
+
+function tallyBoundaries(pkg, label, rows) {
+  const t = GEO_TALLY.get(pkg) || { checked: 0, outside: 0, mislinked: [] };
+  for (const r of rows) {
+    if (typeof r.wilaya_code !== "string" || !BOUNDARIES.has(r.wilaya_code)) continue;
+    if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
+    t.checked++;
+    if (pointInWilaya(r.lng, r.lat, r.wilaya_code, BOUNDARIES)) continue;
+    t.outside++;
+    const inside = [...BOUNDARIES].filter(([, g]) => pointInGeometry(r.lng, r.lat, g)).map(([c]) => c);
+    // No containing wilaya at all = just outside the national outline (coast, desert
+    // frontier). Median 153 m — that is the geometry, not the record.
+    if (!inside.length || inside.some((c) => NEIGHBOURS.get(r.wilaya_code).has(c))) continue;
+    t.mislinked.push({
+      label,
+      id: r.id,
+      name: r.name ?? r.name_fr ?? r.name_ar ?? null,
+      declared: r.wilaya_code,
+      actual: inside.join("+"),
+      km: metresToGeometry(r.lng, r.lat, BOUNDARIES.get(r.wilaya_code)) / 1000,
+      geo_method: r.geo_method ?? null,
+    });
+  }
+  GEO_TALLY.set(pkg, t);
+}
+
+// Ceiling on the mislink rate, per package, taken from the measured distribution
+// (2026-07-20, all 61,334 geocoded records in the repo) and not from a round guess:
+//
+//   formation-professionnelle 2.69% │ emploi 0.61 · culture 0.55 · banques 0.16 ·
+//   ferroviaire 0.14 · mosquees 0.11 · tourisme 0.05 · ecoles 0.03 · 14 others 0.00
+//
+// The band 0.62–2.68% is empty: one package sits 4.4x above every other. Same shape
+// as the capital guard's 10 km ceiling (68 values under 6.74 km, the defect at 22.5).
+// 1.0% leaves 64% headroom over the worst clean package and sits 2.7x under the
+// offender. NOTE the raw "outside its wilaya" rate does NOT support a ceiling — it
+// runs 0.00, 0.66, 0.70 … 5.15, 5.60, 6.13, 7.29, 9.16, 11.73 with no gap anywhere,
+// and its top entry (agriculture, 11.73%) is the cleanest package in the repo by
+// this measure: all 23 of its outliers sit outside the national outline, median
+// 999 m, none in another wilaya at all. A rate ceiling on "outside" would have
+// failed the wrong package.
+const MISLINK_CEILING_PCT = 1.0;
+
+// Mislinks that already shipped, pinned to the exact count measured on 2026-07-20.
+// This is a ratchet, not an exemption: the number may not move in either direction
+// without editing this line, so a 38th mislink fails the build exactly like a first
+// one would in any other package. formation-professionnelle is over the ceiling on
+// real defects — 37 records whose coordinate sits in a wilaya that does not touch
+// the one they declare, up to 1,290 km away, all geo_method "takwin". Correcting
+// them is a data decision (which of the two fields is wrong?), not a validator one,
+// so the debt is recorded here and left visible rather than rounded away by picking
+// a ceiling that clears it.
+const KNOWN_MISLINKS = { "formation-professionnelle": 37 };
+
+function reportBoundaries() {
+  const rows = [...GEO_TALLY].filter(([, t]) => t.checked > 0).sort((a, b) => b[1].mislinked.length - a[1].mislinked.length);
+  let checked = 0,
+    outside = 0,
+    mislinked = 0;
+  for (const [pkg, t] of rows) {
+    checked += t.checked;
+    outside += t.outside;
+    mislinked += t.mislinked.length;
+    const rate = (100 * t.mislinked.length) / t.checked;
+    const line =
+      `${pkg}: ${t.outside}/${t.checked} outside their wilaya (${((100 * t.outside) / t.checked).toFixed(2)}%), ` +
+      `${t.mislinked.length} in a non-adjacent wilaya (${rate.toFixed(2)}%)`;
+    const allowed = KNOWN_MISLINKS[pkg];
+    if (allowed !== undefined) {
+      if (t.mislinked.length !== allowed)
+        fail(
+          `${line} — recorded debt is ${allowed}. ` +
+            (t.mislinked.length > allowed
+              ? `New mislinks have shipped; fix them, do not raise the number.`
+              : `The debt shrank — ratchet KNOWN_MISLINKS down to ${t.mislinked.length} in scripts/validate-packages.mjs.`),
+        );
+      else console.log(`  ⚠ ${line} — over the ${MISLINK_CEILING_PCT}% ceiling, pinned as known debt`);
+    } else if (rate > MISLINK_CEILING_PCT) {
+      fail(`${line} — over the ${MISLINK_CEILING_PCT}% mislink ceiling`);
+    } else if (t.mislinked.length) {
+      console.log(`  ⚠ ${line}`);
+    } else {
+      console.log(`  OK: ${line}`);
+    }
+    for (const m of t.mislinked.sort((a, b) => b.km - a.km).slice(0, 5))
+      console.log(
+        `      ${m.label} id=${m.id} declared=w${m.declared} actual=w${m.actual} ` +
+          `${m.km.toFixed(1)} km outside w${m.declared} geo_method=${m.geo_method}` +
+          (m.name ? ` — ${m.name.slice(0, 40)}` : ""),
+      );
+    if (t.mislinked.length > 5) console.log(`      … ${t.mislinked.length - 5} more`);
+  }
+  console.log(
+    `  ${checked} geocoded records checked against 69 polygons — ${outside} outside their declared wilaya ` +
+      `(${((100 * outside) / checked).toFixed(2)}%, warnings: the outlines are display-grade), ${mislinked} mislinked`,
+  );
+}
 
 // data/<dataset>.json + its metadata key, csv mirror, optional geojson mirror.
 // geojson:null means the dataset is intentionally ungeocoded (e.g. Mobilis PDV).
@@ -503,8 +705,10 @@ function validateDataset(pkg, spec) {
   if (isV2) {
     const { errors: v2errs, warnings: v2warn } = validateV2Records(arr, {
       requireName: spec.required.includes("name"),
+      boundaries: BOUNDARIES,
     });
     for (const m of v2errs) fail(`${label} [v2]: ${m}`);
+    tallyBoundaries(pkg, label, arr);
     const metaRes = validateV2Metadata(meta);
     for (const m of metaRes.errors) fail(`${pkg}/metadata.json [v2]: ${m}`);
     const warnCount = v2warn.length + metaRes.warnings.length;
@@ -1074,8 +1278,12 @@ function validateLivraison() {
   if (deskIds.size !== desks.length) fail(`livraison/stopdesks.json: ${desks.length - deskIds.size} duplicate id(s)`);
 
   if (isV2) {
-    const { errors: v2errs, warnings: v2warn } = validateV2Records(desks, { requireName: true });
+    const { errors: v2errs, warnings: v2warn } = validateV2Records(desks, {
+      requireName: true,
+      boundaries: BOUNDARIES,
+    });
     for (const m of v2errs) fail(`livraison/stopdesks.json [v2]: ${m}`);
+    tallyBoundaries("livraison", "livraison/stopdesks.json", desks);
     const metaRes = validateV2Metadata(meta);
     for (const m of metaRes.errors) fail(`livraison/metadata.json [v2]: ${m}`);
     const warnCount = v2warn.length + metaRes.warnings.length;
@@ -1166,6 +1374,9 @@ for (const pkg of targets) {
   console.log(`\n[@geoalgeria/${pkg}]`);
   for (const spec of PACKAGES[pkg]) validateDataset(pkg, spec);
 }
+console.log(`\n[geo: every point inside its declared wilaya]`);
+reportBoundaries();
+
 console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
 validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
 
