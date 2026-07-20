@@ -44,14 +44,14 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM — [`@geoalgeria/emploi`](packages/emploi) |
 | **Réseau Mobilis** | 12 345 | 165 agences + 12 180 points de vente — [`@geoalgeria/mobilis`](packages/mobilis) |
-| **Couverture 5G** | 1 681 | sites 5G Djezzy + Mobilis + Ooredoo — [`@geoalgeria/telecom`](packages/telecom) |
+| **Couverture 5G** | 2 798 | sites 5G Djezzy + Mobilis + Ooredoo — [`@geoalgeria/telecom`](packages/telecom) |
 | **Aéroports civils** | 33 | ANAC : noms, codes OACI, contacts, coordonnées — [`@geoalgeria/aviation`](packages/aviation) |
 | **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées — [`@geoalgeria/banques`](packages/banques) |
 | **Transporteurs de livraison** | 411 | 16 transporteurs + 411 bureaux de retrait géocodés dans 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
 | **Établissements de jeunesse** | 2 334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, centres culturels et plus dans 58 wilayas (Ministère de la Jeunesse et des Sports) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Installations sportives** | 5 141 | stades, piscines, terrains de proximité, pistes d'athlétisme, terrains de sport et plus (27 types) dans 58 wilayas (Ministère de la Jeunesse et des Sports) — [`@geoalgeria/sports`](packages/sports) |
 | **Enseignement supérieur** | 177 | universités, grandes écoles, ENS, centres + 19 établissements privés et 48 relevant d'autres ministères dans 51 wilayas, avec sites web officiels (MESRS) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
-| **Tourisme** | 4 348 | 995 hôtels, 1 248 attractions, 1 184 sites historiques, 282 sources thermales (ASAL), 32 parcs nationaux — [`@geoalgeria/tourisme`](packages/tourisme) |
+| **Tourisme** | 4 348 | 1 602 hôtels, 1 248 attractions, 1 184 sites historiques, 282 sources thermales (ASAL), 32 parcs nationaux — [`@geoalgeria/tourisme`](packages/tourisme) |
 | **Formation professionnelle** | 1 932 | 856 CFPA + 182 INSFP + 723 établissements privés agréés + 58 DFEP + plus dans 58 wilayas (MFEP / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosquées** | 20 759 | composite Wikidata + OpenStreetMap — noms arabes & français, dénomination, les 69 wilayas — [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |

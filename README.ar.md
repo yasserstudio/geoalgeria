@@ -46,14 +46,14 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **الصرّافات الآلية** | 2,026 | شبكة GAB لبريد الجزائر |
 | **وكالات التشغيل** | 331 | الوكالة الوطنية للتشغيل: 58 AWEM + 273 ALEM — [`@geoalgeria/emploi`](packages/emploi) |
 | **شبكة موبيليس** | 12,345 | 165 وكالة + 12,180 نقطة بيع — [`@geoalgeria/mobilis`](packages/mobilis) |
-| **تغطية 5G** | 1,681 | مواقع 5G لجيزي + موبيليس + أوريدو — [`@geoalgeria/telecom`](packages/telecom) |
+| **تغطية 5G** | 2,798 | مواقع 5G لجيزي + موبيليس + أوريدو — [`@geoalgeria/telecom`](packages/telecom) |
 | **المطارات المدنية** | 33 | ANAC: أسماء، رموز ICAO، معلومات اتصال، إحداثيات — [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات — [`@geoalgeria/banques`](packages/banques) |
 | **شركات التوصيل** | 411 | 16 ناقلًا + 411 نقطة استلام في 61 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro) — [`@geoalgeria/livraison`](packages/livraison) |
 | **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 58 ولاية (وزارة الشباب والرياضة) — [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **منشآت رياضية** | 5,141 | ملاعب، حمامات سباحة، مجالات من الدرجة الأولى، مضمارات العاب القوى، ملاعب وأكثر (27 نوع) في 58 ولاية (وزارة الشباب والرياضة) — [`@geoalgeria/sports`](packages/sports) |
 | **التعليم العالي** | 177 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي) — [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
-| **السياحة** | 4,348 | 995 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية — [`@geoalgeria/tourisme`](packages/tourisme) |
+| **السياحة** | 4,348 | 1,602 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية — [`@geoalgeria/tourisme`](packages/tourisme) |
 | **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في 58 ولاية (وزارة التكوين المهني / takwin.dz) — [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **المساجد** | 20,759 | تجميع Wikidata + OpenStreetMap — أسماء عربية وفرنسية، المذهب، كل الـ69 ولاية — [`@geoalgeria/mosquees`](packages/mosquees) |
 | **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz) — [`@geoalgeria/djezzy`](packages/djezzy) |
