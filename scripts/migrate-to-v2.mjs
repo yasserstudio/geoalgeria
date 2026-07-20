@@ -68,12 +68,27 @@ function colsFor(rows) {
 // upstream ids at "1", so an unprefixed id collides across the files that
 // tourisme.all() merges into one collection. The prefix is per FILE, not per
 // map, which is why it is a parameter and not a constant in the body.
+// The four OSM layers are not OSM-only: 115 records (32 attractions, 75 historic,
+// 8 parks) carry `source: "Wikidata"` upstream and no osm_id at all — they are
+// Wikidata items, CC0, not © OpenStreetMap contributors under ODbL. Hard-coding
+// "osm" here would relicense them and claim their coordinate came from a source it
+// did not. Same shape as the mosquees map above, which already splits the two.
+const tourSource = (r) => {
+  const key = r.source === "Wikidata" ? "wikidata" : "osm";
+  return { ...geoExact(r, key), source: key };
+};
 const tourOsm = (prefix) => (r) => clean({
   id: prefix + String(r.id), name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
   wilaya_code: r.wilaya_code, commune_code: null, commune: null,
-  ...geoExact(r, "osm"),
-  source: "osm", refs: refs({ osm: r.osm_id }),
+  // wikidata/wikipedia are external ids, so they belong in refs (scope addition #3),
+  // not as top-level fields. The rest are domain extras and stay top-level under the
+  // contract's standardized names. Dropping any of them here is a silent data loss:
+  // this transform is the source of truth for a package whose upstream is gone.
+  ...tourSource(r),
+  refs: refs({ osm: r.osm_id, wikidata: r.wikidata, wikipedia: r.wikipedia }),
   type: r.type, category: r.category,
+  description: r.description, address: r.address, phone: r.phone, website: r.website,
+  stars: r.stars, rooms: r.rooms, heritage: r.heritage, heritage_status: r.heritage_status,
 });
 const tourThermal = (prefix) => (r) => clean({
   id: prefix + String(r.id), name: r.name,
@@ -519,9 +534,10 @@ export const MIGRATIONS = {
     meta: {
       sources: [
         { key: "osm", name: "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
+        { key: "wikidata", name: "Wikidata — heritage sites, museums & parks in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
         { key: "asal", name: "ASAL Geoportail — thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: TODAY },
       ],
-      license: "ODbL-1.0 AND factual public listing (ASAL)",
+      license: "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)",
       estimatedUniverse: null,
       coverageNote: "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
       titles: { en: "Algeria tourism", fr: "Tourisme en Algérie", ar: "السياحة في الجزائر" },

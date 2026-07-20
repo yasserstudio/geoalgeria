@@ -26,14 +26,23 @@ export type Layer = "lodging" | "attraction" | "historic" | "thermal_spring" | "
  *  (every tourism point is geocoded), but part of the shared contract vocabulary. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How a point's coordinate was obtained — also the value of `source` for
- *  this dataset (OSM's own point for four layers, ASAL's for thermal springs). */
-export type GeoMethod = "asal" | "osm";
+/** How a point's coordinate was obtained — also the value of `source` for this
+ *  dataset. `"asal"` on thermal springs; on the other four layers `"osm"`, or
+ *  `"wikidata"` for the 115 records that come from a Wikidata item rather than
+ *  an OSM feature (and are CC0, not ODbL — see the licence section of the README). */
+export type GeoMethod = "asal" | "osm" | "wikidata";
 
-/** External identifiers keyed by source system. */
+/** External identifiers keyed by source system. Every record on the four OSM
+ *  layers carries at least one of these, but not necessarily an OSM id — a
+ *  minority of records matched only on Wikidata. */
 export interface Refs {
   /** OSM element id (numeric, without a `node/way/relation` prefix). */
-  osm: string;
+  osm?: string;
+  /** Wikidata QID (e.g. "Q2664184"), present when a Wikidata item matched. */
+  wikidata?: string;
+  /** Wikipedia sitelink as OSM tags it — `"<lang>:<article title>"`
+   *  (e.g. `"fr:Timgad"`), present when the source carried one. */
+  wikipedia?: string;
 }
 
 /** Fields shared by every layer. */
@@ -74,6 +83,16 @@ export interface Lodging extends Base {
   name_ar?: string;
   /** External identifiers — every lodging record carries an OSM id. */
   refs: Refs;
+  /** Street address as tagged in OSM, when published. */
+  address?: string;
+  /** Contact phone, when published. Several numbers are `;`-separated, as OSM tags them. */
+  phone?: string;
+  /** Website URL, when published. */
+  website?: string;
+  /** Star rating, when published. */
+  stars?: number;
+  /** Number of rooms, when published. */
+  rooms?: number;
 }
 
 /** A tourist attraction (viewpoint, museum, artwork, …). */
@@ -83,8 +102,10 @@ export interface Attraction extends Base {
   name_fr?: string;
   /** Arabic name, when known. */
   name_ar?: string;
-  /** External identifiers — absent on a minority of OSM matches. */
-  refs?: Refs;
+  /** External identifiers — an OSM id, a Wikidata QID, or both. */
+  refs: Refs;
+  /** Free-text description carried by the source, when published. */
+  description?: string;
 }
 
 /** A historic site (archaeological site, monument, fort, …). OSM's `historic`
@@ -96,8 +117,13 @@ export interface Historic extends Base {
   name_fr?: string;
   /** Arabic name, when known. */
   name_ar?: string;
-  /** External identifiers — absent on a minority of OSM matches. */
-  refs?: Refs;
+  /** External identifiers — an OSM id, a Wikidata QID, or both. */
+  refs: Refs;
+  /** OSM `heritage` tag — the protection level as a string (e.g. `"1"`). */
+  heritage?: string;
+  /** OSM `heritage:operator`-style status text
+   *  (e.g. `"part of UNESCO World Heritage Site"`). */
+  heritage_status?: string;
 }
 
 /** A thermal spring / hot-water point (ASAL Geoportail). The only layer with
@@ -125,8 +151,8 @@ export interface Park extends Base {
   name_fr?: string;
   /** Arabic name, when known. */
   name_ar?: string;
-  /** External identifiers — absent on a minority of OSM matches. */
-  refs?: Refs;
+  /** External identifiers — an OSM id, a Wikidata QID, or both. */
+  refs: Refs;
 }
 
 /** Any of the five layers, tagged with which one it came from — the shape

@@ -114,8 +114,21 @@ data/
 `type` is one of `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`, `alpine_hut`.
 `name_fr` and `name_ar` are present only where OpenStreetMap carries that language.
 `source` is a short key resolved in `metadata.sources[]`, and external ids live in `refs`
-(`refs.osm` is the OSM id as a string). The four OSM layers carry no commune linkage, so
+(`refs.osm` is the OSM id as a string; `refs.wikidata` a QID; `refs.wikipedia` a
+`"<lang>:<title>"` sitelink). The four OSM layers carry no commune linkage, so
 `commune_code` and `commune` are null throughout.
+
+Optional contact and classification fields are present where the source publishes them, and
+absent otherwise — never null. On lodging: `address` (209 records), `phone` (204, several
+numbers `;`-separated as OSM tags them), `website` (84), `stars` (60) and `rooms` (24). On
+attractions: `description` (26). On historic sites: `heritage_status` (17, e.g.
+`"part of UNESCO World Heritage Site"`) and `heritage` (12, the OSM protection level).
+
+Most records on these four layers come from OpenStreetMap, but 115 come from Wikidata instead
+(32 attractions, 75 historic sites, 8 parks). Those carry `source` and `geo_method` of
+`"wikidata"` and a `refs.wikidata` QID with no `refs.osm` — they are CC0, not ODbL, so filter
+on `source` if the distinction matters for your attribution. In all, 236 records carry a
+Wikidata QID and 100 a Wikipedia sitelink.
 
 **Thermal spring** — ASAL Geoportail sourced, with physical properties:
 

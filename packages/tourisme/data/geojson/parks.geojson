@@ -481,8 +481,11 @@
         "lat": 35.5833333,
         "lng": 6.0333333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2664184"
+        },
         "category": "national_park"
       }
     },
@@ -506,8 +509,11 @@
         "lat": 36.7667,
         "lng": 5.1,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2664193"
+        },
         "category": "national_park"
       }
     },
@@ -531,8 +537,11 @@
         "lat": 36.4,
         "lng": 2.8666667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2671600"
+        },
         "category": "national_park"
       }
     },
@@ -556,8 +565,11 @@
         "lat": 34.706346,
         "lng": -1.459733,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2664197"
+        },
         "category": "national_park"
       }
     },
@@ -581,8 +593,11 @@
         "lat": 36.4667,
         "lng": 4.1333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2580089"
+        },
         "category": "national_park"
       }
     },
@@ -634,8 +649,11 @@
         "lat": 36.7002,
         "lng": 5.5594,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2671615"
+        },
         "category": "national_park"
       }
     },
@@ -659,8 +677,11 @@
         "lat": 36.8166667,
         "lng": 8.4166667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q650992"
+        },
         "category": "national_park"
       }
     },
@@ -684,8 +705,11 @@
         "lat": 32.873,
         "lng": -0.486,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q21484382"
+        },
         "category": "national_park"
       }
     },

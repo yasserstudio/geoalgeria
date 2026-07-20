@@ -2,7 +2,7 @@
   "_readme": "v1 (pre-cutover) input records for scripts/migrate-to-v2.mjs, used by test/migrate-v2-replay.test.mjs. Per package: the data files as they stood at <cutover>^, sampled — K evenly spaced indices plus the first ungeocoded record, deduplicated, original order kept. `_cutover` is the commit that migrated that package, so `git show <sha>^:packages/<pkg>/data/<file>` reproduces the full v1 input.",
   "_sample": {
     "k": 12,
-    "rule": "evenly spaced indices over the v1 array + first record with no lat/lng"
+    "rule": "evenly spaced indices over the v1 array + first record with no lat/lng + (tourisme) the first record carrying each optional field the transform must carry through, so dropping one fails the replay"
   },
   "packages": {
     "mosquees": {
@@ -4870,6 +4870,21 @@
             "id": 114
           },
           {
+            "name": "Aïn El Fouara; عين الفوارة",
+            "name_ar": "عين الفوارة",
+            "name_fr": "Fontaine d'Aïn El Fouara",
+            "type": "artwork",
+            "description": "Statue de marbre blanc surmontant la fontaine d'Aïn El Fouara.",
+            "wikipedia": "ar:نافورة عين الفوارة",
+            "wikidata": "Q3076109",
+            "wilaya_code": "19",
+            "lat": 36.1893325,
+            "lng": 5.4048867,
+            "source": "OpenStreetMap",
+            "osm_id": 4637947041,
+            "id": 115
+          },
+          {
             "name": "حي أولاد فرج",
             "name_ar": "حي أولاد فرج",
             "name_fr": "Cité Ouled Fradj",
@@ -4940,6 +4955,16 @@
             "id": 795
           },
           {
+            "name": "M'Kharig",
+            "type": "cave",
+            "wikidata": "Q23802216",
+            "wilaya_code": "08",
+            "lat": 31.1833333,
+            "lng": -3.75,
+            "source": "Wikidata",
+            "id": 836
+          },
+          {
             "name": "Musée de la Radio Algérienne",
             "name_ar": "متحف الإذاعة الجزائرية",
             "name_fr": "Musée de la Radio Algérienne",
@@ -4997,6 +5022,34 @@
             "source": "OpenStreetMap",
             "osm_id": 4318916905,
             "id": 1
+          },
+          {
+            "name": "Byzantine Fort in Timgad",
+            "name_ar": "القلعة البيزنطية في تيمقاد",
+            "name_fr": "Fort byzantin de Timgad",
+            "type": "archaeological_site",
+            "heritage_status": "part of UNESCO World Heritage Site",
+            "wikidata": "Q87745203",
+            "wilaya_code": "05",
+            "lat": 35.479736,
+            "lng": 6.46852,
+            "source": "Wikidata",
+            "id": 10
+          },
+          {
+            "name": "Ruines Romaines de Timgad",
+            "name_ar": "الآثار الرومانية تيمقاد",
+            "name_fr": "Ruines Romaines de Timgad",
+            "type": "archaeological_site",
+            "heritage": "1",
+            "wikipedia": "fr:Timgad",
+            "wikidata": "Q459629",
+            "wilaya_code": "05",
+            "lat": 35.4837052,
+            "lng": 6.4670134,
+            "source": "OpenStreetMap",
+            "osm_id": 331768105,
+            "id": 30
           },
           {
             "name": "Rusuccuru",
@@ -5130,6 +5183,32 @@
             "source": "OpenStreetMap",
             "osm_id": 8107956617,
             "id": 1
+          },
+          {
+            "name": "Hotel El Boustane",
+            "name_ar": "فندق البستان",
+            "type": "hotel",
+            "stars": 3,
+            "wilaya_code": "03",
+            "lat": 33.8021944,
+            "lng": 2.8582199,
+            "source": "OpenStreetMap",
+            "osm_id": 539149760,
+            "id": 46
+          },
+          {
+            "name": "Hôtel Chélia",
+            "type": "hotel",
+            "stars": 4,
+            "rooms": 71,
+            "phone": "+213 33 80 72 71",
+            "website": "http://www.hotelchelia.com/",
+            "wilaya_code": "05",
+            "lat": 35.5577195,
+            "lng": 6.173815,
+            "source": "OpenStreetMap",
+            "osm_id": 463257885,
+            "id": 108
           },
           {
             "name": "Atlantis",

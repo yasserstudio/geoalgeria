@@ -53,6 +53,14 @@
       "evidence_type": "crowdsourced"
     },
     {
+      "key": "wikidata",
+      "name": "Wikidata — heritage sites, museums & parks in Algeria",
+      "url": "https://www.wikidata.org",
+      "license": "CC0-1.0",
+      "retrieved": "2026-07-18",
+      "evidence_type": "crowdsourced"
+    },
+    {
       "key": "asal",
       "name": "ASAL Geoportail — thermal springs",
       "url": "https://www.asal.dz",
@@ -61,7 +69,7 @@
       "evidence_type": "official"
     }
   ],
-  "license": "ODbL-1.0 AND factual public listing (ASAL)",
+  "license": "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)",
   "updated": "2026-07-18",
   "by_type": {
     "artwork": 244,

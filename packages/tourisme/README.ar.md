@@ -115,8 +115,21 @@ data/
 `type` يأخذ إحدى القيم: `hotel`، `hostel`، `guest_house`، `apartment`، `chalet`، `motel`،
 `alpine_hut`. الحقلان `name_fr` و`name_ar` موجودان فقط حيث يحمل OpenStreetMap تلك اللغة.
 و`source` مفتاح قصير يُحلّ في `metadata.sources[]`، بينما تعيش المعرّفات الخارجية في `refs`
-(`refs.osm` هو معرّف OSM كسلسلة نصية). طبقات OSM الأربع لا تحمل أي ربط بالبلدية، لذا يبقى
+(`refs.osm` هو معرّف OSM كسلسلة نصية، و`refs.wikidata` معرّف QID، و`refs.wikipedia` رابط
+لغوي بالشكل `"<اللغة>:<العنوان>"`). طبقات OSM الأربع لا تحمل أي ربط بالبلدية، لذا يبقى
 `commune_code` و`commune` فارغين فيها.
+
+حقول الاتصال والتصنيف الاختيارية موجودة حيث ينشرها المصدر، وغائبة فيما عدا ذلك — وليست
+فارغة أبدًا. في الإقامة: `address` (209 سجلات)، و`phone` (204، وقد تحوي عدّة أرقام مفصولة
+بـ `;` كما يبوّبها OSM)، و`website` (84)، و`stars` (60)، و`rooms` (24). في المعالم السياحية:
+`description` (26). في المواقع التاريخية: `heritage_status` (17، مثل
+`"part of UNESCO World Heritage Site"`) و`heritage` (12، مستوى الحماية في OSM).
+
+معظم سجلات هذه الطبقات الأربع مصدرها OpenStreetMap، لكن 115 سجلًا مصدرها Wikidata
+(32 معلمًا سياحيًا، و75 موقعًا تاريخيًا، و8 حدائق). هذه السجلات تحمل `source` و`geo_method`
+بقيمة `"wikidata"` ومعرّف QID في `refs.wikidata` دون `refs.osm`، وهي مرخّصة بـ CC0 لا بـ ODbL،
+لذا رشّح حسب `source` إن كان التمييز مهمًّا لإسنادك. إجمالًا، 236 سجلًا تحمل معرّف QID من
+Wikidata و100 سجلّ تحمل رابط Wikipedia.
 
 **ينبوع حراري** — مصدره ASAL Geoportail، مع الخصائص الفيزيائية:
 

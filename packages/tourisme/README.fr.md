@@ -115,8 +115,22 @@ data/
 `type` est l'un des suivants : `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`,
 `alpine_hut`. `name_fr` et `name_ar` ne sont présents que lorsque OpenStreetMap porte cette
 langue. `source` est une clé courte résolue dans `metadata.sources[]`, et les identifiants
-externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de chaîne). Les quatre
+externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de chaîne,
+`refs.wikidata` un QID, `refs.wikipedia` un lien interlangue `"<langue>:<titre>"`). Les quatre
 couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls.
+
+Les champs de contact et de classification optionnels sont présents lorsque la source les
+publie, et absents sinon — jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
+`phone` (204, plusieurs numéros séparés par `;` comme OSM les balise), `website` (84), `stars`
+(60) et `rooms` (24). Sur les attractions : `description` (26). Sur les sites historiques :
+`heritage_status` (17, par exemple `"part of UNESCO World Heritage Site"`) et `heritage`
+(12, le niveau de protection OSM).
+
+La plupart des enregistrements de ces quatre couches proviennent d'OpenStreetMap, mais 115
+proviennent de Wikidata (32 attractions, 75 sites historiques, 8 parcs). Ceux-là portent
+`source` et `geo_method` à `"wikidata"` et un QID `refs.wikidata` sans `refs.osm` : ils sont
+en CC0 et non en ODbL, filtrez donc sur `source` si la distinction compte pour votre
+attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lien Wikipedia.
 
 **Source thermale** — source ASAL Geoportail, avec propriétés physiques :
 

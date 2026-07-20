@@ -47,9 +47,13 @@
         "lat": 35.479736,
         "lng": 6.46852,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q87745203"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -631,7 +635,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "209622856"
+          "osm": "209622856",
+          "wikidata": "Q1952148",
+          "wikipedia": "en:Arch of Caracalla (Djémila)"
         },
         "type": "ruins"
       }
@@ -1443,7 +1449,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "464334607"
+          "osm": "464334607",
+          "wikidata": "Q11936307",
+          "wikipedia": "en:Madauros"
         },
         "type": "ruins"
       }
@@ -1496,7 +1504,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266408729"
+          "osm": "266408729",
+          "wikidata": "Q28969520"
         },
         "type": "ruins"
       }
@@ -1577,7 +1586,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "172032689"
+          "osm": "172032689",
+          "wikidata": "Q1309531",
+          "wikipedia": "fr:Césarée de Maurétanie"
         },
         "type": "ruins"
       }
@@ -1657,7 +1668,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266408727"
+          "osm": "266408727",
+          "wikidata": "Q129992260"
         },
         "type": "ruins"
       }
@@ -1947,7 +1959,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "215927252"
+          "osm": "215927252",
+          "wikidata": "Q1396850",
+          "wikipedia": "en:Tiddis"
         },
         "type": "ruins"
       }
@@ -2395,9 +2409,13 @@
         "lat": 36.8002658,
         "lng": 3.5651722,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q125496468"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "Cultural heritage monuments in Algeria"
       }
     },
     {
@@ -2680,8 +2698,11 @@
         "lat": 36.91285,
         "lng": 3.90964,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q15843385"
+        },
         "type": "archaeological_site"
       }
     },
@@ -2973,7 +2994,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "5434295573"
+          "osm": "5434295573",
+          "wikidata": "Q108449034"
         },
         "type": "archaeological_site"
       }
@@ -3881,7 +3903,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "2662646762"
+          "osm": "2662646762",
+          "wikidata": "Q2058233",
+          "wikipedia": "fr:Hammam Essalihine"
         },
         "type": "archaeological_site"
       }
@@ -4021,7 +4045,8 @@
         "refs": {
           "osm": "1524182618"
         },
-        "type": "tomb"
+        "type": "tomb",
+        "heritage": "4"
       }
     },
     {
@@ -4176,7 +4201,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "318626658"
+          "osm": "318626658",
+          "wikidata": "Q12232982",
+          "wikipedia": "ar:قصر الجازية"
         },
         "type": "archaeological_site"
       }
@@ -4444,7 +4471,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "367499544"
+          "osm": "367499544",
+          "wikidata": "Q3483249",
+          "wikipedia": "fr:Sidi Lakhdar Ben Khlouf"
         },
         "type": "tomb"
       }
@@ -4470,7 +4499,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "1321739924"
+          "osm": "1321739924",
+          "wikidata": "Q2429753"
         },
         "type": "archaeological_site"
       }
@@ -4716,7 +4746,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "243563008"
+          "osm": "243563008",
+          "wikidata": "Q3301866",
+          "wikipedia": "fr:Mausolée royal de Maurétanie"
         },
         "type": "tomb"
       }
@@ -5066,7 +5098,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "284087760"
+          "osm": "284087760",
+          "wikidata": "Q62050969"
         },
         "type": "archaeological_site"
       }
@@ -5146,7 +5179,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "640548439"
+          "osm": "640548439",
+          "wikipedia": "en:Charles de Foucauld"
         },
         "type": "tomb"
       }
@@ -5252,8 +5286,11 @@
         "lat": 35.5588,
         "lng": 6.18466,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3323282"
+        },
         "type": "war_memorial"
       }
     },
@@ -5276,8 +5313,11 @@
         "lat": 35.7333333,
         "lng": 0.55,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q140003785"
+        },
         "type": "war_memorial"
       }
     },
@@ -5519,7 +5559,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "1321739442"
+          "osm": "1321739442",
+          "wikidata": "Q3426859",
+          "wikipedia": "ar:ثيبيرسيكوم"
         },
         "type": "archaeological_site"
       }
@@ -5573,7 +5615,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266409896"
+          "osm": "266409896",
+          "wikidata": "Q28969515"
         },
         "type": "archaeological_site"
       }
@@ -5626,7 +5669,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4832565326"
+          "osm": "4832565326",
+          "wikidata": "Q4785393",
+          "wikipedia": "en:Archaeological Museum of Cherchell"
         },
         "type": "archaeological_site"
       }
@@ -5680,9 +5725,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "171552738"
+          "osm": "171552738",
+          "wikidata": "Q3529269",
+          "wikipedia": "fr:Tipasa de Maurétanie"
         },
-        "type": "archaeological_site"
+        "type": "archaeological_site",
+        "heritage": "1"
       }
     },
     {
@@ -5704,9 +5752,13 @@
         "lat": 36.5929,
         "lng": 2.4546,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q65643680"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -5728,9 +5780,13 @@
         "lat": 36.594,
         "lng": 2.4434,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q65643679"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -5752,8 +5808,11 @@
         "lat": 36.6069444,
         "lng": 2.1966667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q21028732"
+        },
         "type": "archaeological_site"
       }
     },
@@ -5803,8 +5862,11 @@
         "lat": 36.489792,
         "lng": 6.483428,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q84710269"
+        },
         "type": "archaeological_site"
       }
     },
@@ -5828,9 +5890,13 @@
         "lat": 35.485103,
         "lng": 6.4696197,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q108449547"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -5851,8 +5917,11 @@
         "lat": 36.099,
         "lng": 6.131,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q132402139"
+        },
         "type": "archaeological_site"
       }
     },
@@ -5876,8 +5945,11 @@
         "lat": 36.4512765,
         "lng": 6.267698,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q28195180"
+        },
         "type": "archaeological_site"
       }
     },
@@ -5903,7 +5975,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "1268274982"
+          "osm": "1268274982",
+          "wikidata": "Q86725228",
+          "wikipedia": "ar:ضريح لوليوس أربيكيوس"
         },
         "type": "archaeological_site"
       }
@@ -5930,7 +6004,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "3650432490"
+          "osm": "3650432490",
+          "wikidata": "Q1396850",
+          "wikipedia": "en:Tiddis"
         },
         "type": "archaeological_site"
       }
@@ -6007,8 +6083,11 @@
         "lat": 36.3049,
         "lng": 1.8471,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q131348582"
+        },
         "type": "archaeological_site"
       }
     },
@@ -6085,8 +6164,11 @@
         "lat": 35.294322,
         "lng": -1.140089,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2831972"
+        },
         "type": "archaeological_site"
       }
     },
@@ -6136,8 +6218,11 @@
         "lat": 35.45228,
         "lng": -0.618882,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3423451"
+        },
         "type": "archaeological_site"
       }
     },
@@ -6164,7 +6249,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "2719759752"
+          "osm": "2719759752",
+          "wikidata": "Q3483498",
+          "wikipedia": "ar:سيقا"
         },
         "type": "archaeological_site"
       }
@@ -6189,9 +6276,13 @@
         "lat": 32.4872222,
         "lng": 3.6813889,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q724484"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "World Heritage Site"
       }
     },
     {
@@ -6215,7 +6306,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "1244100281"
+          "osm": "1244100281",
+          "wikidata": "Q20726070",
+          "wikipedia": "fr:Ksar el Kaoua"
         },
         "type": "archaeological_site"
       }
@@ -6240,9 +6333,13 @@
         "lat": 35.86667,
         "lng": 1.11667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q109258706"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "Cultural heritage monuments in Algeria"
       }
     },
     {
@@ -6267,7 +6364,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "15441899"
+          "osm": "15441899",
+          "wikidata": "Q136723083",
+          "wikipedia": "en:Ksar Draa"
         },
         "type": "archaeological_site"
       }
@@ -6972,9 +7071,13 @@
         "lat": 35.485052,
         "lng": 6.468737,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q87745332"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -7075,8 +7178,11 @@
         "lat": 24.687,
         "lng": 9.651,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q22689835"
+        },
         "type": "archaeological_site"
       }
     },
@@ -7152,9 +7258,13 @@
         "lat": 24.974,
         "lng": 9.012,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q14629434"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "Cultural heritage monuments in Algeria"
       }
     },
     {
@@ -7255,8 +7365,11 @@
         "lat": 35.049153,
         "lng": 6.16725,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q960102"
+        },
         "type": "archaeological_site"
       }
     },
@@ -7356,8 +7469,11 @@
         "lat": 25.1486444,
         "lng": 8.5059639,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q131825711"
+        },
         "type": "archaeological_site"
       }
     },
@@ -7858,8 +7974,11 @@
         "lat": 35.48744,
         "lng": 6.46773,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q94995286"
+        },
         "type": "archaeological_site"
       }
     },
@@ -8468,8 +8587,11 @@
         "lat": 35.48928,
         "lng": 6.25987,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23846130"
+        },
         "type": "archaeological_site"
       }
     },
@@ -8775,7 +8897,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266446235"
+          "osm": "266446235",
+          "wikidata": "Q1309744",
+          "wikipedia": "ar:لامبايزيس"
         },
         "type": "archaeological_site"
       }
@@ -9275,8 +9399,11 @@
         "lat": 35.233555,
         "lng": 5.701555,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q101243536"
+        },
         "type": "archaeological_site"
       }
     },
@@ -9298,8 +9425,11 @@
         "lat": 34.73,
         "lng": 8.051,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q131928123"
+        },
         "type": "archaeological_site"
       }
     },
@@ -9325,7 +9455,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "385862082"
+          "osm": "385862082",
+          "wikidata": "Q2401317",
+          "wikipedia": "fr:Achir"
         },
         "type": "archaeological_site"
       }
@@ -9376,9 +9508,13 @@
         "lat": 35.4847222,
         "lng": 6.4666667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q140070128"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -9543,7 +9679,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "12471849708"
+          "osm": "12471849708",
+          "wikidata": "Q16931833",
+          "wikipedia": "ar:حصار الأغواط"
         },
         "type": "battlefield"
       }
@@ -9570,7 +9708,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "474802378"
+          "osm": "474802378",
+          "wikipedia": "fr:Guerre d'Algérie"
         },
         "type": "battlefield"
       }
@@ -9598,7 +9737,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "12471558534"
+          "osm": "12471558534",
+          "wikidata": "Q2890049",
+          "wikipedia": "ar:معركة سطاوالي (1830)"
         },
         "type": "battlefield"
       }
@@ -9679,7 +9820,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266446803"
+          "osm": "266446803",
+          "wikidata": "Q1538575",
+          "wikipedia": "fr:Medracen"
         },
         "type": "archaeological_site"
       }
@@ -9761,7 +9904,8 @@
         "refs": {
           "osm": "475450594"
         },
-        "type": "bridge"
+        "type": "bridge",
+        "heritage": "yes"
       }
     },
     {
@@ -9843,7 +9987,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "415866"
+          "osm": "415866",
+          "wikidata": "Q3115007",
+          "wikipedia": "fr:Grande Poste d'Alger"
         },
         "type": "building"
       }
@@ -10594,8 +10740,11 @@
         "lat": 33.8497,
         "lng": 2.34049,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3360974"
+        },
         "type": "castle"
       }
     },
@@ -10863,8 +11012,11 @@
         "lat": 36.3310278,
         "lng": 0.8528333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q125375915"
+        },
         "type": "archaeological_site"
       }
     },
@@ -10891,9 +11043,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "331768105"
+          "osm": "331768105",
+          "wikidata": "Q459629",
+          "wikipedia": "fr:Timgad"
         },
-        "type": "archaeological_site"
+        "type": "archaeological_site",
+        "heritage": "1"
       }
     },
     {
@@ -11000,7 +11155,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "338116028"
+          "osm": "338116028",
+          "wikidata": "Q124425851"
         },
         "type": "castle"
       }
@@ -11028,7 +11184,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "5089539019"
+          "osm": "5089539019",
+          "wikidata": "Q17354602",
+          "wikipedia": "ar:حصن يما قورايا"
         },
         "type": "castle"
       }
@@ -11082,7 +11240,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "309222600"
+          "osm": "309222600",
+          "wikidata": "Q3572154",
+          "wikipedia": "fr:Yemma Gouraya"
         },
         "type": "castle"
       }
@@ -11189,7 +11349,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "188544755"
+          "osm": "188544755",
+          "wikidata": "Q1573776",
+          "wikipedia": "en:Diana Veteranorum"
         },
         "type": "archaeological_site"
       }
@@ -11269,7 +11431,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "504811761"
+          "osm": "504811761",
+          "wikidata": "Q2910763",
+          "wikipedia": "fr:Bordj Flye Sainte Marie"
         },
         "type": "castle"
       }
@@ -11405,7 +11569,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "2682856138"
+          "osm": "2682856138",
+          "wikidata": "Q3621773",
+          "wikipedia": "ar:قوس كاراكالا (تبسة)"
         },
         "type": "castle"
       }
@@ -11569,7 +11735,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "100273033"
+          "osm": "100273033",
+          "wikidata": "Q3360854",
+          "wikipedia": "fr:Palais El Mechouar"
         },
         "type": "castle"
       }
@@ -11758,7 +11926,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "17972296"
+          "osm": "17972296",
+          "wikidata": "Q3078279",
+          "wikipedia": "fr:Fort l'Empereur"
         },
         "type": "castle"
       }
@@ -11945,7 +12115,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "18668624"
+          "osm": "18668624",
+          "wikidata": "Q3330730",
+          "wikipedia": "fr:Musée national du Bardo (Algérie)"
         },
         "type": "castle"
       }
@@ -12053,7 +12225,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "273321488"
+          "osm": "273321488",
+          "wikidata": "Q3558439",
+          "wikipedia": "fr:Villa Abd-el-Tif"
         },
         "type": "castle"
       }
@@ -12080,7 +12254,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "7948637499"
+          "osm": "7948637499",
+          "wikidata": "Q19717113"
         },
         "type": "archaeological_site"
       }
@@ -12162,7 +12337,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "11931096136"
+          "osm": "11931096136",
+          "wikidata": "Q12232990",
+          "wikipedia": "ar:قصر الداي"
         },
         "type": "castle"
       }
@@ -12190,7 +12367,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "6724867"
+          "osm": "6724867",
+          "wikidata": "Q3361082",
+          "wikipedia": "fr:Palais des Raïs"
         },
         "type": "castle"
       }
@@ -12647,9 +12826,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "381561430"
+          "osm": "381561430",
+          "wikidata": "Q500367",
+          "wikipedia": "fr:Kalâa des Béni Hammad"
         },
-        "type": "castle"
+        "type": "castle",
+        "heritage": "1"
       }
     },
     {
@@ -12913,7 +13095,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "12433045874"
+          "osm": "12433045874",
+          "wikidata": "Q524667",
+          "wikipedia": "fr:Fort de Santa-Cruz (Oran)"
         },
         "type": "castle"
       }
@@ -13045,9 +13229,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "368993774"
+          "osm": "368993774",
+          "wikidata": "Q12232976",
+          "wikipedia": "fr:Palais du Bey (Oran)"
         },
-        "type": "castle"
+        "type": "castle",
+        "heritage": "2"
       }
     },
     {
@@ -13256,8 +13443,11 @@
         "lat": 36.636739,
         "lng": 5.246097,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q134438303"
+        },
         "type": "archaeological_site"
       }
     },
@@ -13282,7 +13472,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4947235132"
+          "osm": "4947235132",
+          "wikidata": "Q106097307"
         },
         "type": "castle"
       }
@@ -13555,8 +13746,11 @@
         "lat": 36.75,
         "lng": 5.066667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q1557873"
+        },
         "type": "archaeological_site"
       }
     },
@@ -13881,7 +14075,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4592906446"
+          "osm": "4592906446",
+          "wikidata": "Q3541821",
+          "wikipedia": "fr:Tubusuptu"
         },
         "type": "archaeological_site"
       }
@@ -13934,7 +14130,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "920536213"
+          "osm": "920536213",
+          "wikidata": "Q106098127"
         },
         "type": "castle"
       }
@@ -14123,8 +14320,11 @@
         "lat": 34.8805561,
         "lng": -1.3094603,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q6856865"
+        },
         "type": "church_building"
       }
     },
@@ -14148,8 +14348,11 @@
         "lat": 36.7577,
         "lng": 3.04603,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q15958199"
+        },
         "type": "church_building"
       }
     },
@@ -14174,7 +14377,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "265150071"
+          "osm": "265150071",
+          "wikidata": "Q3759336",
+          "wikipedia": "en:Gemellae"
         },
         "type": "archaeological_site"
       }
@@ -14198,8 +14403,11 @@
         "lat": 35.702788,
         "lng": -0.649256,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q97581076"
+        },
         "type": "church_building"
       }
     },
@@ -14221,8 +14429,11 @@
         "lat": 36.8974,
         "lng": 8.4443,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q128391204"
+        },
         "type": "church_building"
       }
     },
@@ -14245,8 +14456,11 @@
         "lat": 30.6144444,
         "lng": 2.8730556,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q112654039"
+        },
         "type": "church_building"
       }
     },
@@ -14270,8 +14484,11 @@
         "lat": 36.5208,
         "lng": 4.6249,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q131555082"
+        },
         "type": "château"
       }
     },
@@ -14436,7 +14653,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "327665926"
+          "osm": "327665926",
+          "wikidata": "Q16670750",
+          "wikipedia": "fr:Porte dorée (Béjaïa)"
         },
         "type": "city_gate"
       }
@@ -15350,8 +15569,11 @@
         "lat": 35.4091033,
         "lng": 8.1269163,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q60746446"
+        },
         "type": "archaeological_site"
       }
     },
@@ -15620,7 +15842,8 @@
         "refs": {
           "osm": "1452322892"
         },
-        "type": "district"
+        "type": "district",
+        "heritage": "2"
       }
     },
     {
@@ -15643,8 +15866,11 @@
         "lat": 35.4,
         "lng": 8.1166667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q12220954"
+        },
         "type": "archaeological_site"
       }
     },
@@ -15913,7 +16139,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4083823"
+          "osm": "4083823",
+          "wikidata": "Q16303490"
         },
         "type": "fort"
       }
@@ -16101,7 +16328,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "8332176030"
+          "osm": "8332176030",
+          "wikidata": "Q106097108"
         },
         "type": "fort"
       }
@@ -16284,8 +16512,11 @@
         "lat": 29.432863,
         "lng": 3.000512,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q106097214"
+        },
         "type": "fortification"
       }
     },
@@ -16312,9 +16543,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "327666118"
+          "osm": "327666118",
+          "wikidata": "Q21511925",
+          "wikipedia": "fr:Casbah de Béjaïa"
         },
-        "type": "fortress"
+        "type": "fortress",
+        "heritage": "2"
       }
     },
     {
@@ -16392,7 +16626,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "273183546"
+          "osm": "273183546",
+          "wikidata": "Q1195633",
+          "wikipedia": "en:Villa Susini"
         },
         "type": "heritage"
       }
@@ -16420,7 +16656,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "267210976"
+          "osm": "267210976",
+          "wikidata": "Q2471799",
+          "wikipedia": "fr:Mosquée Ketchaoua"
         },
         "type": "heritage"
       }
@@ -16497,8 +16735,11 @@
         "lat": 36.83639,
         "lng": 6.70556,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q139742405"
+        },
         "type": "house"
       }
     },
@@ -16522,8 +16763,11 @@
         "lat": 34.8863889,
         "lng": -1.0247778,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q434703"
+        },
         "type": "archaeological_site"
       }
     },
@@ -16629,7 +16873,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "17800447"
+          "osm": "17800447",
+          "wikidata": "Q20971021",
+          "wikipedia": "fr:Dar Aziza"
         },
         "type": "manor"
       }
@@ -17116,7 +17362,8 @@
         "refs": {
           "osm": "4230260700"
         },
-        "type": "memorial"
+        "type": "memorial",
+        "heritage": "yes"
       }
     },
     {
@@ -18028,7 +18275,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "90639349"
+          "osm": "90639349",
+          "wikidata": "Q12242783",
+          "wikipedia": "en:Mansourah Mosque"
         },
         "type": "archaeological_site"
       }
@@ -18514,7 +18763,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "2687110662"
+          "osm": "2687110662",
+          "wikidata": "Q3046072",
+          "wikipedia": "ar:الخطوط الجوية الجزائرية الرحلة 6289"
         },
         "type": "memorial"
       }
@@ -19499,7 +19750,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "929762754"
+          "osm": "929762754",
+          "wikidata": "Q3032861",
+          "wikipedia": "fr:Djeddar"
         },
         "type": "archaeological_site"
       }
@@ -19978,7 +20231,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "2760492858"
+          "osm": "2760492858",
+          "wikidata": "Q24248463"
         },
         "type": "memorial"
       }
@@ -20406,8 +20660,11 @@
         "lat": 36.677114,
         "lng": 4.424161,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q129760370"
+        },
         "type": "archaeological_site"
       }
     },
@@ -21131,7 +21388,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "5413026959"
+          "osm": "5413026959",
+          "wikipedia": "fr:Berliet T100"
         },
         "type": "memorial"
       }
@@ -21586,9 +21844,13 @@
         "lat": 36.799094,
         "lng": 3.237893,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q125421752"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "Cultural heritage monuments in Algeria"
       }
     },
     {
@@ -22466,8 +22728,11 @@
         "lat": 36.8220833,
         "lng": 5.7664444,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q1657150"
+        },
         "type": "archaeological_site"
       }
     },
@@ -22521,7 +22786,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "315219717"
+          "osm": "315219717",
+          "wikidata": "Q6399400",
+          "wikipedia": "ar:خالد بن سنان بن غيث"
         },
         "type": "memorial"
       }
@@ -22792,8 +23059,11 @@
         "lat": 36.200833,
         "lng": 5.650278,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q60851742"
+        },
         "type": "archaeological_site"
       }
     },
@@ -23086,8 +23356,11 @@
         "lat": 36.2038889,
         "lng": 5.6527778,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2876290"
+        },
         "type": "archaeological_site"
       }
     },
@@ -23384,9 +23657,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "257564804"
+          "osm": "257564804",
+          "wikidata": "Q457362",
+          "wikipedia": "fr:Djemila"
         },
-        "type": "archaeological_site"
+        "type": "archaeological_site",
+        "heritage": "1"
       }
     },
     {
@@ -23863,8 +24139,11 @@
         "lat": 32.1272222,
         "lng": -2.3233333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23812069"
+        },
         "type": "monument"
       }
     },
@@ -24150,8 +24429,11 @@
         "lat": 23.2666667,
         "lng": 6.8833333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23813071"
+        },
         "type": "monument"
       }
     },
@@ -24178,7 +24460,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "570396428"
+          "osm": "570396428",
+          "wikidata": "Q3531165",
+          "wikipedia": "fr:Tombeau de Tin Hinan"
         },
         "type": "monument"
       }
@@ -24400,7 +24684,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "14581869"
+          "osm": "14581869",
+          "wikidata": "Q2989371",
+          "wikipedia": "fr:Grande Mosquée de Tlemcen"
         },
         "type": "monument"
       }
@@ -24669,8 +24955,11 @@
         "lat": 36.7133333,
         "lng": 4.0380556,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q60851448"
+        },
         "type": "monument"
       }
     },
@@ -25436,8 +25725,11 @@
         "lat": 36.906619,
         "lng": 7.765657,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q101095903"
+        },
         "type": "archaeological_site"
       }
     },
@@ -25737,7 +26029,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266444698"
+          "osm": "266444698",
+          "wikidata": "Q28969516"
         },
         "type": "archaeological_site"
       }
@@ -25762,8 +26055,11 @@
         "lat": 36.883651,
         "lng": 7.755129,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q858024"
+        },
         "type": "archaeological_site"
       }
     },
@@ -25846,9 +26142,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4637947041"
+          "osm": "4637947041",
+          "wikidata": "Q3076109",
+          "wikipedia": "ar:نافورة عين الفوارة"
         },
-        "type": "monument"
+        "type": "monument",
+        "heritage": "yes"
       }
     },
     {
@@ -25870,8 +26169,11 @@
         "lat": 35.7875,
         "lng": 5.1230556,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q12208685"
+        },
         "type": "monument"
       }
     },
@@ -26403,7 +26705,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "324456135"
+          "osm": "324456135",
+          "wikidata": "Q21012240"
         },
         "type": "monument"
       }
@@ -26724,8 +27027,11 @@
         "lat": 35.4213889,
         "lng": 0.0622222,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23836514"
+        },
         "type": "monument"
       }
     },
@@ -26856,8 +27162,11 @@
         "lat": 31.4666667,
         "lng": 8.9833333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23816639"
+        },
         "type": "monument"
       }
     },
@@ -26879,8 +27188,11 @@
         "lat": 31.4988889,
         "lng": 8.7744444,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23805155"
+        },
         "type": "monument"
       }
     },
@@ -27819,8 +28131,11 @@
         "lat": 36.3833333,
         "lng": 7.25,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2420610"
+        },
         "type": "archaeological_site"
       }
     },
@@ -27846,7 +28161,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "8454596417"
+          "osm": "8454596417",
+          "wikidata": "Q65643733",
+          "wikipedia": "fr:Mausolée de Beni-Rhénane"
         },
         "type": "monument"
       }
@@ -28118,7 +28435,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "356635599"
+          "osm": "356635599",
+          "wikidata": "Q101116126",
+          "wikipedia": "it:Teatro romano di Guelma"
         },
         "type": "archaeological_site"
       }
@@ -28419,8 +28738,11 @@
         "lat": 36.55,
         "lng": 7.23333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3556388"
+        },
         "type": "archaeological_site"
       }
     },
@@ -28750,8 +29072,11 @@
         "lat": 36.368115,
         "lng": 6.613303,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q1093156"
+        },
         "type": "archaeological_site"
       }
     },
@@ -28855,8 +29180,11 @@
         "lat": 29.7488889,
         "lng": 3.0166667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23805156"
+        },
         "type": "monument"
       }
     },
@@ -28964,7 +29292,8 @@
         "refs": {
           "osm": "523266318"
         },
-        "type": "mosque"
+        "type": "mosque",
+        "heritage": "2"
       }
     },
     {
@@ -28990,7 +29319,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "16270848"
+          "osm": "16270848",
+          "wikidata": "Q12192958",
+          "wikipedia": "fr:Jamaa al-Jdid"
         },
         "type": "mosque"
       }
@@ -29041,8 +29372,11 @@
         "lat": 36.1333306,
         "lng": 3.4333306,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q109626723"
+        },
         "type": "archaeological_site"
       }
     },
@@ -29121,8 +29455,11 @@
         "lat": 33.85,
         "lng": 2.3405639,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q119025676"
+        },
         "type": "palace"
       }
     },
@@ -29146,9 +29483,13 @@
         "lat": 36.787428,
         "lng": 3.062265,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "palace"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q91367534"
+        },
+        "type": "palace",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -29171,9 +29512,13 @@
         "lat": 36.785439,
         "lng": 3.060922,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "palace"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q91369328"
+        },
+        "type": "palace",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -29196,9 +29541,13 @@
         "lat": 36.786025,
         "lng": 3.060759,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "palace"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q91366437"
+        },
+        "type": "palace",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -29221,9 +29570,13 @@
         "lat": 36.785045,
         "lng": 3.061544,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "palace"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q27603011"
+        },
+        "type": "palace",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -29246,9 +29599,13 @@
         "lat": 36.7866667,
         "lng": 3.0608333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "palace"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q28083468"
+        },
+        "type": "palace",
+        "heritage_status": "part of UNESCO World Heritage Site"
       }
     },
     {
@@ -29271,8 +29628,11 @@
         "lat": 36.74625,
         "lng": 3.0495833,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q16510045"
+        },
         "type": "palace"
       }
     },
@@ -29295,8 +29655,11 @@
         "lat": 36.7410547,
         "lng": 3.0957262,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q139766742"
+        },
         "type": "palace"
       }
     },
@@ -29320,8 +29683,11 @@
         "lat": 36.0299,
         "lng": 0.2416,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q7272713"
+        },
         "type": "archaeological_site"
       }
     },
@@ -29345,8 +29711,11 @@
         "lat": 36.7588889,
         "lng": 3.0458333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q86734655"
+        },
         "type": "palace"
       }
     },
@@ -29369,8 +29738,11 @@
         "lat": 36.78501,
         "lng": 3.06376,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q48756590"
+        },
         "type": "palace"
       }
     },
@@ -30383,7 +30755,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "464140824"
+          "osm": "464140824",
+          "wikidata": "Q3541821",
+          "wikipedia": "fr:Tubusuptu"
         },
         "type": "ruins"
       }
@@ -30490,8 +30864,11 @@
         "lat": 35.4152778,
         "lng": 0.3213889,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q7801608"
+        },
         "type": "archaeological_site"
       }
     },
@@ -31080,8 +31457,11 @@
         "lat": 35.804714,
         "lng": -0.260028,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q11934573"
+        },
         "type": "archaeological_site"
       }
     },
@@ -31369,9 +31749,13 @@
         "lat": 25.6666667,
         "lng": 9,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
-        "type": "archaeological_site"
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q190048"
+        },
+        "type": "archaeological_site",
+        "heritage_status": "World Heritage Site"
       }
     },
     {
@@ -31395,7 +31779,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "169843615"
+          "osm": "169843615",
+          "wikidata": "Q113827285",
+          "wikipedia": "ar:ايومنيوم"
         },
         "type": "ruins"
       }
@@ -31526,7 +31912,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "299069052"
+          "osm": "299069052",
+          "wikidata": "Q16303490",
+          "wikipedia": "fr:Bordj de Tamentfoust"
         },
         "type": "ruins"
       }

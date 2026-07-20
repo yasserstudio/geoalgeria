@@ -429,8 +429,11 @@
         "lat": 35.5842706,
         "lng": 0.3283857,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q139556472"
+        },
         "type": "museum"
       }
     },
@@ -485,7 +488,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "1937168048"
+          "osm": "1937168048",
+          "wikidata": "Q3329706",
+          "wikipedia": "en:Beni Abbes Museum"
         },
         "type": "museum"
       }
@@ -701,8 +706,11 @@
         "lat": 35.2226905,
         "lng": 5.7096721,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q6941113"
+        },
         "type": "museum"
       }
     },
@@ -728,7 +736,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4593419690"
+          "osm": "4593419690",
+          "wikidata": "Q16335740",
+          "wikipedia": "fr:Musée Lapidaire d'El Kantara"
         },
         "type": "museum"
       }
@@ -781,8 +791,11 @@
         "lat": 35.21654,
         "lng": 4.18121,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q116984506"
+        },
         "type": "museum"
       }
     },
@@ -805,8 +818,11 @@
         "lat": 35.2161111,
         "lng": 4.1811111,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q131916047"
+        },
         "type": "museum"
       }
     },
@@ -912,7 +928,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "293521599"
+          "osm": "293521599",
+          "wikidata": "Q3258881",
+          "wikipedia": "fr:Lompi Family Park"
         },
         "type": "theme_park"
       }
@@ -1675,7 +1693,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "248872093"
+          "osm": "248872093",
+          "wikidata": "Q3364125",
+          "wikipedia": "ar:الحديقة الوطنية للتسلية (بن عكنون)"
         },
         "type": "theme_park"
       }
@@ -1785,7 +1805,8 @@
         "refs": {
           "osm": "277170491"
         },
-        "type": "theme_park"
+        "type": "theme_park",
+        "description": "Parc de 47 ha comprenant des attractions, un zoo et un lac artificie"
       }
     },
     {
@@ -3186,8 +3207,11 @@
         "lat": 36.75496,
         "lng": 5.08126,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q124427580"
+        },
         "type": "tourist_attraction"
       }
     },
@@ -3211,8 +3235,11 @@
         "lat": 35.707584,
         "lng": -0.647028,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q101243386"
+        },
         "type": "tourist_attraction"
       }
     },
@@ -3236,8 +3263,11 @@
         "lat": 36.7673116,
         "lng": 3.4716116,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q133501994"
+        },
         "type": "tourist_attraction"
       }
     },
@@ -4535,9 +4565,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4637947041"
+          "osm": "4637947041",
+          "wikidata": "Q3076109",
+          "wikipedia": "ar:نافورة عين الفوارة"
         },
-        "type": "artwork"
+        "type": "artwork",
+        "description": "Statue de marbre blanc surmontant la fontaine d'Aïn El Fouara."
       }
     },
     {
@@ -6732,8 +6765,11 @@
         "lat": 35.33,
         "lng": 6.23,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2940872"
+        },
         "type": "waterfall"
       }
     },
@@ -6757,8 +6793,11 @@
         "lat": 36.570475,
         "lng": 5.289992,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2940882"
+        },
         "type": "waterfall"
       }
     },
@@ -6782,8 +6821,11 @@
         "lat": 34.8625567,
         "lng": -1.2672481,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q38428"
+        },
         "type": "waterfall"
       }
     },
@@ -7083,7 +7125,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "248872080"
+          "osm": "248872080",
+          "wikidata": "Q3364125",
+          "wikipedia": "ar:الحديقة الوطنية للتسلية (بن عكنون)"
         },
         "type": "zoo"
       }
@@ -9269,7 +9313,8 @@
         "refs": {
           "osm": "6892930724"
         },
-        "type": "artwork"
+        "type": "artwork",
+        "description": "Le Raïs Baba Arroudj (بابا عرّوج) dit Barberousse est né en 1474 à Lesbos. Proclamé sultan d'Alger après ses faits d'arme contre les Castillans. Fondateur de Al Jazâ'ir, il est mort en défendant Tlemcen contre les Espagnols en 1518 à Chaabat El Leham."
       }
     },
     {
@@ -9963,7 +10008,8 @@
         "refs": {
           "osm": "4212483306"
         },
-        "type": "artwork"
+        "type": "artwork",
+        "description": "قيد الإنشاء"
       }
     },
     {
@@ -11976,7 +12022,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "188544755"
+          "osm": "188544755",
+          "wikidata": "Q1573776",
+          "wikipedia": "en:Diana Veteranorum"
         },
         "type": "attraction"
       }
@@ -12248,7 +12296,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "7566897776"
+          "osm": "7566897776",
+          "wikidata": "Q15166115",
+          "wikipedia": "ar:رأس بواك"
         },
         "type": "attraction"
       }
@@ -12276,9 +12326,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "327666118"
+          "osm": "327666118",
+          "wikidata": "Q21511925",
+          "wikipedia": "fr:Casbah de Béjaïa"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "Citadelle médiévale construite par les Almohades sur des bases hammadides, remaniée par les Espagnols et les Ottomans"
       }
     },
     {
@@ -12548,7 +12601,8 @@
         "refs": {
           "osm": "523266318"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "Lieu où Ibn Khaldoun a enseigné au XIVe siècle"
       }
     },
     {
@@ -12628,7 +12682,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "7684045096"
+          "osm": "7684045096",
+          "wikidata": "Q23802554"
         },
         "type": "attraction"
       }
@@ -12656,7 +12711,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "7567028961"
+          "osm": "7567028961",
+          "wikidata": "Q23800008"
         },
         "type": "attraction"
       }
@@ -12712,7 +12768,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "327665926"
+          "osm": "327665926",
+          "wikidata": "Q16670750",
+          "wikipedia": "fr:Porte dorée (Béjaïa)"
         },
         "type": "attraction"
       }
@@ -12953,7 +13011,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "309222600"
+          "osm": "309222600",
+          "wikidata": "Q3572154",
+          "wikipedia": "fr:Yemma Gouraya"
         },
         "type": "attraction"
       }
@@ -13172,7 +13232,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "490536991"
+          "osm": "490536991",
+          "wikidata": "Q3052604",
+          "wikipedia": "fr:Taghit"
         },
         "type": "attraction"
       }
@@ -13955,7 +14017,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "90639349"
+          "osm": "90639349",
+          "wikidata": "Q12242783",
+          "wikipedia": "en:Mansourah Mosque"
         },
         "type": "attraction"
       }
@@ -14682,7 +14746,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "5945202857"
+          "osm": "5945202857",
+          "wikidata": "Q23803671"
         },
         "type": "attraction"
       }
@@ -14871,7 +14936,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "28511507"
+          "osm": "28511507",
+          "wikidata": "Q608638",
+          "wikipedia": "ar:حديقة التجارب"
         },
         "type": "attraction"
       }
@@ -15721,7 +15788,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "273321488"
+          "osm": "273321488",
+          "wikidata": "Q3558439",
+          "wikipedia": "fr:Villa Abd-el-Tif"
         },
         "type": "attraction"
       }
@@ -16015,9 +16084,12 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "415866"
+          "osm": "415866",
+          "wikidata": "Q3115007",
+          "wikipedia": "fr:Grande Poste d'Alger"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "Édifice de style néo-mauresque abritant les services de la poste algérienne"
       }
     },
     {
@@ -16209,7 +16281,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "17800447"
+          "osm": "17800447",
+          "wikidata": "Q20971021",
+          "wikipedia": "fr:Dar Aziza"
         },
         "type": "attraction"
       }
@@ -16291,7 +16365,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "11931096136"
+          "osm": "11931096136",
+          "wikidata": "Q12232990",
+          "wikipedia": "ar:قصر الداي"
         },
         "type": "attraction"
       }
@@ -16507,7 +16583,8 @@
         "refs": {
           "osm": "12685690055"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "مكان جبلي سياحي صالح للتخييم"
       }
     },
     {
@@ -18374,7 +18451,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "368499974"
+          "osm": "368499974",
+          "wikidata": "Q25389822",
+          "wikipedia": "ar:جسر سيدي مسيد"
         },
         "type": "attraction"
       }
@@ -18402,7 +18481,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "24271655"
+          "osm": "24271655",
+          "wikidata": "Q3368272",
+          "wikipedia": "ar:جسر ملاح سليمان"
         },
         "type": "attraction"
       }
@@ -18853,7 +18934,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "367499544"
+          "osm": "367499544",
+          "wikidata": "Q3483249",
+          "wikipedia": "fr:Sidi Lakhdar Ben Khlouf"
         },
         "type": "attraction"
       }
@@ -18992,7 +19075,8 @@
         "refs": {
           "osm": "4109388756"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "مئذنة المسجد"
       }
     },
     {
@@ -19073,7 +19157,8 @@
         "refs": {
           "osm": "5720117522"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "palms"
       }
     },
     {
@@ -19126,7 +19211,8 @@
         "refs": {
           "osm": "5720151322"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "palms"
       }
     },
     {
@@ -19153,7 +19239,8 @@
         "refs": {
           "osm": "5722419223"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "palms"
       }
     },
     {
@@ -20442,7 +20529,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "368993774"
+          "osm": "368993774",
+          "wikidata": "Q12232976",
+          "wikipedia": "fr:Palais du Bey (Oran)"
         },
         "type": "attraction"
       }
@@ -21293,7 +21382,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266408729"
+          "osm": "266408729",
+          "wikidata": "Q28969520"
         },
         "type": "attraction"
       }
@@ -21349,7 +21439,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "243563008"
+          "osm": "243563008",
+          "wikidata": "Q3301866",
+          "wikipedia": "fr:Mausolée royal de Maurétanie"
         },
         "type": "attraction"
       }
@@ -21376,7 +21468,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "266408727"
+          "osm": "266408727",
+          "wikidata": "Q129992260"
         },
         "type": "attraction"
       }
@@ -21644,7 +21737,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "6256003262"
+          "osm": "6256003262",
+          "wikidata": "Q23820699"
         },
         "type": "attraction"
       }
@@ -21835,7 +21929,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "6720059042"
+          "osm": "6720059042",
+          "wikidata": "Q23813051",
+          "wikipedia": "ar:رأس فيغالو"
         },
         "type": "attraction"
       }
@@ -23133,7 +23229,8 @@
         "refs": {
           "osm": "7077391047"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "int. rock formation"
       }
     },
     {
@@ -23680,7 +23777,8 @@
         "refs": {
           "osm": "7077380979"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "huge rock needle"
       }
     },
     {
@@ -23732,7 +23830,8 @@
         "refs": {
           "osm": "7077800636"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "high dunes"
       }
     },
     {
@@ -23914,7 +24013,8 @@
         "refs": {
           "osm": "7184580413"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "Dune field"
       }
     },
     {
@@ -24257,7 +24357,8 @@
         "refs": {
           "osm": "7077425590"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "high dune with a view"
       }
     },
     {
@@ -24491,7 +24592,8 @@
         "refs": {
           "osm": "7806732383"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "starting point for hikes to neolithic paintings and tourist camp"
       }
     },
     {
@@ -24518,7 +24620,8 @@
         "refs": {
           "osm": "7640459373"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "This is an Archaeological Site an mentioned in literature as Inaouanrhat"
       }
     },
     {
@@ -25146,7 +25249,8 @@
         "refs": {
           "osm": "7077423187"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "int. rock formation"
       }
     },
     {
@@ -25250,7 +25354,8 @@
         "refs": {
           "osm": "316499807"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "neolithic rock paintings"
       }
     },
     {
@@ -25328,7 +25433,8 @@
         "refs": {
           "osm": "7072277641"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "natural arch"
       }
     },
     {
@@ -25751,7 +25857,8 @@
         "refs": {
           "osm": "316499808"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "int. rock formation"
       }
     },
     {
@@ -25777,7 +25884,8 @@
         "refs": {
           "osm": "7104424674"
         },
-        "type": "attraction"
+        "type": "attraction",
+        "description": "natural arch (großer Felsbogen)"
       }
     },
     {
@@ -28595,7 +28703,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "129774037"
+          "osm": "129774037",
+          "wikidata": "Q745975",
+          "wikipedia": "ar:شط الحضنة"
         },
         "type": "attraction"
       }
@@ -28649,7 +28759,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "183627821"
+          "osm": "183627821",
+          "wikidata": "Q745975",
+          "wikipedia": "ar:شط الحضنة"
         },
         "type": "attraction"
       }
@@ -28810,8 +28922,11 @@
         "lat": 31.1833333,
         "lng": -3.75,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23802216"
+        },
         "type": "cave"
       }
     },
@@ -28835,8 +28950,11 @@
         "lat": 34.8536111,
         "lng": -1.2058333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q16640177"
+        },
         "type": "cave"
       }
     },
@@ -28860,8 +28978,11 @@
         "lat": 34.7001,
         "lng": -1.31136,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3104771"
+        },
         "type": "cave"
       }
     },
@@ -28885,8 +29006,11 @@
         "lat": 35.0188056,
         "lng": 1.06775,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q95950658"
+        },
         "type": "cave"
       }
     },
@@ -28936,8 +29060,11 @@
         "lat": 36.4748611,
         "lng": 4.2350833,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q106731203"
+        },
         "type": "cave"
       }
     },
@@ -28961,8 +29088,11 @@
         "lat": 36.4688056,
         "lng": 4.1528056,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q2982311"
+        },
         "type": "cave"
       }
     },
@@ -28985,8 +29115,11 @@
         "lat": 36.5,
         "lng": 4.3333333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23805261"
+        },
         "type": "cave"
       }
     },
@@ -29010,8 +29143,11 @@
         "lat": 36.7483,
         "lng": 3.0668,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3117122"
+        },
         "type": "cave"
       }
     },
@@ -29034,8 +29170,11 @@
         "lat": 36.7025,
         "lng": 5.5408333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23805268"
+        },
         "type": "cave"
       }
     },
@@ -29059,8 +29198,11 @@
         "lat": 36.6827778,
         "lng": 5.5183333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23802378"
+        },
         "type": "cave"
       }
     },
@@ -29082,8 +29224,11 @@
         "lat": 36.6166667,
         "lng": 6.8833333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23790561"
+        },
         "type": "cave"
       }
     },
@@ -29105,8 +29250,11 @@
         "lat": 36.4416667,
         "lng": 7.675,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q138820394"
+        },
         "type": "cave"
       }
     },
@@ -29130,8 +29278,11 @@
         "lat": 36.4333333,
         "lng": 7.6666667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23789926"
+        },
         "type": "cave"
       }
     },
@@ -29153,8 +29304,11 @@
         "lat": 35.2919444,
         "lng": -1.2866667,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23834681"
+        },
         "type": "cave"
       }
     },
@@ -29202,8 +29356,11 @@
         "lat": 32.3766667,
         "lng": 4.4533333,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q23816145"
+        },
         "type": "cave"
       }
     },
@@ -29227,8 +29384,11 @@
         "lat": 35.93085,
         "lng": 0.8699278,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q125495724"
+        },
         "type": "cave"
       }
     },
@@ -29386,8 +29546,11 @@
         "lat": 35.660308,
         "lng": 6.308862,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q3330018"
+        },
         "type": "museum"
       }
     },
@@ -29411,8 +29574,11 @@
         "lat": 35.4882609,
         "lng": 6.4689848,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q86724639"
+        },
         "type": "museum"
       }
     },
@@ -29517,7 +29683,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "193228570"
+          "osm": "193228570",
+          "wikidata": "Q3330448",
+          "wikipedia": "fr:Musée du martyre de la wilaya de Batna"
         },
         "type": "museum"
       }
@@ -29600,9 +29768,11 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "338116028"
+          "osm": "338116028",
+          "wikidata": "Q124425851"
         },
-        "type": "museum"
+        "type": "museum",
+        "description": "Ancien fort espagnol (XVIe siècle), reconverti en musée"
       }
     },
     {
@@ -30195,7 +30365,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4154470512"
+          "osm": "4154470512",
+          "wikidata": "Q124541350",
+          "wikipedia": "ar:المتحف العمومي الوطني للفن والتاريخ لمدينة تلمسان"
         },
         "type": "museum"
       }
@@ -30277,7 +30449,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "419356871"
+          "osm": "419356871",
+          "wikidata": "Q16034377",
+          "wikipedia": "fr:Médersa de Tlemcen"
         },
         "type": "museum"
       }
@@ -30333,7 +30507,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "1101222881"
+          "osm": "1101222881",
+          "wikidata": "Q3324913",
+          "wikipedia": "fr:Mosquée de Sidi Bellahsen"
         },
         "type": "museum"
       }
@@ -30815,7 +30991,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "5674333"
+          "osm": "5674333",
+          "wikidata": "Q30624915"
         },
         "type": "museum"
       }
@@ -31007,7 +31184,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "475383563"
+          "osm": "475383563",
+          "wikidata": "Q3330723",
+          "wikipedia": "fr:Musée national des antiquités et des arts islamiques"
         },
         "type": "museum"
       }
@@ -31035,7 +31214,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "264333156"
+          "osm": "264333156",
+          "wikidata": "Q2912600",
+          "wikipedia": "en:National Museum of Fine Arts of Algiers"
         },
         "type": "museum"
       }
@@ -31090,7 +31271,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "271099555"
+          "osm": "271099555",
+          "wikidata": "Q663776",
+          "wikipedia": "fr:Musée public national d’Art moderne et contemporain d’Alger"
         },
         "type": "museum"
       }
@@ -31169,7 +31352,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "346403805"
+          "osm": "346403805",
+          "wikidata": "Q3330723",
+          "wikipedia": "en:Museum of Antiquities (Algiers)"
         },
         "type": "museum"
       }
@@ -31197,7 +31382,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "4593419689"
+          "osm": "4593419689",
+          "wikidata": "Q3330178",
+          "wikipedia": "ar:المتحف الوطني للفنون والتقاليد الشعبية (الجزائر)"
         },
         "type": "museum"
       }
@@ -31225,7 +31412,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "263223866"
+          "osm": "263223866",
+          "wikidata": "Q3403985",
+          "wikipedia": "fr:Prison de Serkadji"
         },
         "type": "museum"
       }
@@ -31608,7 +31797,8 @@
         "refs": {
           "osm": "1274164072"
         },
-        "type": "museum"
+        "type": "museum",
+        "description": "،تم إنشاؤه سنة 1939 بمبادرة من سكان المدينة وتحت إشراف جمعية العلماء المسلمين الجزائريين بقيادة الشيخ عبد الحميد ابن باديس."
       }
     },
     {
@@ -31739,7 +31929,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "314916286"
+          "osm": "314916286",
+          "wikidata": "Q106834544",
+          "wikipedia": "ar:المتحف الأثري في سطيف"
         },
         "type": "museum"
       }
@@ -32035,7 +32227,8 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "3790232892"
+          "osm": "3790232892",
+          "wikidata": "Q86724218"
         },
         "type": "museum"
       }
@@ -32085,8 +32278,11 @@
         "lat": 36.8819444,
         "lng": 7.7447222,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q30315035"
+        },
         "type": "museum"
       }
     },
@@ -32137,7 +32333,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "312353688"
+          "osm": "312353688",
+          "wikidata": "Q16665606",
+          "wikipedia": "fr:Musée Cirta"
         },
         "type": "museum"
       }
@@ -32373,8 +32571,11 @@
         "lat": 35.9309056,
         "lng": 0.0779056,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q131462139"
+        },
         "type": "museum"
       }
     },
@@ -32669,8 +32870,11 @@
         "lat": 31.962109,
         "lng": 5.339808,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q63485043"
+        },
         "type": "museum"
       }
     },
@@ -32725,7 +32929,9 @@
         "geo_method": "osm",
         "source": "osm",
         "refs": {
-          "osm": "360435681"
+          "osm": "360435681",
+          "wikidata": "Q3329040",
+          "wikipedia": "fr:Musée National Zabana d'Oran"
         },
         "type": "museum"
       }
@@ -32992,8 +33198,11 @@
         "lat": 27.632952,
         "lng": -8.153594,
         "geo_precision": "exact",
-        "geo_method": "osm",
-        "source": "osm",
+        "geo_method": "wikidata",
+        "source": "wikidata",
+        "refs": {
+          "wikidata": "Q7165602"
+        },
         "type": "museum"
       }
     },
