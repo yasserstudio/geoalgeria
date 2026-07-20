@@ -98,6 +98,51 @@ export function loadBoundaries(fc, codeProp) {
   return idx;
 }
 
+/** Which wilayas border which, keyed by zero-padded code.
+ *
+ *  This is what separates the two kinds of "outside its declared wilaya": landing
+ *  in a NEIGHBOUR is explainable by the geometry (the shipped outlines are
+ *  simplified, median gap between kept vertices 3.4 km) or by a border-adjacent
+ *  facility; landing in a wilaya that does not touch the declared one is not.
+ *  Distance cannot make that call — Algeria's Saharan wilayas are hundreds of km
+ *  across, so "40 km outside" is next-door in the south and three wilayas away in
+ *  the north. Adjacency is scale-free.
+ *
+ *  Every boundary comes from one OSM extraction, so neighbours share vertices
+ *  exactly and no tolerance is needed.
+ *
+ *  @param {{features: object[]}} fc  the wilaya-boundaries FeatureCollection
+ *  @returns {Map<string, Set<string>>}
+ *  @throws {Error} if any wilaya shares no vertex with any other — an adjacency
+ *          map that answers "no" everywhere would call every outlier a mislink.
+ */
+export function wilayaNeighbours(fc) {
+  const atVertex = new Map();
+  const codes = [];
+  for (const f of (fc && fc.features) || []) {
+    const code = String(f.properties.code ?? f.properties.wilaya_code).padStart(2, "0");
+    codes.push(code);
+    const polys = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
+    for (const poly of polys)
+      for (const ring of poly)
+        for (const [x, y] of ring) {
+          const k = `${x},${y}`;
+          if (!atVertex.has(k)) atVertex.set(k, new Set());
+          atVertex.get(k).add(code);
+        }
+  }
+  const adj = new Map(codes.map((c) => [c, new Set()]));
+  for (const shared of atVertex.values())
+    if (shared.size > 1) for (const a of shared) for (const b of shared) if (a !== b) adj.get(a).add(b);
+  const isolated = [...adj].filter(([, s]) => s.size === 0).map(([c]) => c);
+  if (isolated.length)
+    throw new Error(
+      `wilayaNeighbours: wilaya ${isolated.join(", ")} share no boundary vertex with any neighbour — ` +
+        `every outlier would then be reported as a mislink`,
+    );
+  return adj;
+}
+
 /** Is (lng,lat) inside the polygon for `wilayaCode`?
  *  Returns true when that wilaya has no boundary in the index (can't disprove → don't flag). */
 export function pointInWilaya(lng, lat, wilayaCode, boundaries) {

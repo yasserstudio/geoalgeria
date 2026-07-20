@@ -37,6 +37,7 @@ import {
   loadBoundaries,
   pointInWilaya,
   pointInGeometry,
+  wilayaNeighbours,
   WILAYA_CODES,
 } from "../packages/schema/index.js";
 
@@ -132,46 +133,16 @@ if (BOUNDARIES.size !== WILAYA_CODES.length) {
   process.exit(1);
 }
 
-// Which wilayas border which. Every boundary in the file comes from one OSM
-// extraction, so neighbours share vertices exactly — no tolerance needed.
-// This is what separates the two kinds of "outside its wilaya":
-//   - lands in a NEIGHBOUR  → could be the coarse geometry (median gap between
-//     kept vertices is 3.4 km), a border-adjacent facility, or a real error;
-//     unprovable either way from here, so it stays a warning per the P1 decision.
-//   - lands in a wilaya that does NOT touch the declared one → nothing about the
-//     geometry can explain it. It is a mislink. Median 93 km, up to 1,290 km.
-// Distance alone cannot make that call: Algeria's Saharan wilayas are hundreds of
-// km across, so "40 km outside" is next-door in the south and three wilayas away
-// in the north. Adjacency is scale-free; distance is not.
-function buildNeighbours(fc) {
-  const atVertex = new Map();
-  for (const f of fc.features) {
-    const code = String(f.properties.code).padStart(2, "0");
-    const polys = f.geometry.type === "Polygon" ? [f.geometry.coordinates] : f.geometry.coordinates;
-    for (const poly of polys)
-      for (const ring of poly)
-        for (const [x, y] of ring) {
-          const k = `${x},${y}`;
-          if (!atVertex.has(k)) atVertex.set(k, new Set());
-          atVertex.get(k).add(code);
-        }
-  }
-  const adj = new Map(WILAYA_CODES.map((c) => [c, new Set()]));
-  for (const shared of atVertex.values())
-    if (shared.size > 1)
-      for (const a of shared) for (const b of shared) if (a !== b) adj.get(a).add(b);
-  return adj;
-}
-const NEIGHBOURS = buildNeighbours(boundaryFc);
-{
-  const isolated = [...NEIGHBOURS].filter(([, s]) => s.size === 0).map(([c]) => c);
-  if (isolated.length) {
-    console.error(
-      `FAILED: wilaya ${isolated.join(", ")} share no boundary vertex with any neighbour — ` +
-        `the adjacency test below would call every outlier a mislink`,
-    );
-    process.exit(1);
-  }
+// Which wilayas border which — see wilayaNeighbours() in @geoalgeria/schema for why
+// adjacency, not distance, is what separates a coarse-geometry warning from a
+// mislink. The same helper backs test/commune-in-boundary.test.mjs, so the two
+// gates cannot answer differently about the same pair of wilayas.
+let NEIGHBOURS;
+try {
+  NEIGHBOURS = wilayaNeighbours(boundaryFc);
+} catch (e) {
+  console.error(`FAILED: ${e.message}`);
+  process.exit(1);
 }
 
 /** Metres from (lng,lat) to the nearest edge of a Polygon/MultiPolygon (report detail only). */

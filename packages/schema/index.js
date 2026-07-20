@@ -16,6 +16,7 @@ export {
   pointInGeometry,
   pointInWilaya,
   loadBoundaries,
+  wilayaNeighbours,
   fractionDigits,
   coordDecimals,
   sharedPoints,

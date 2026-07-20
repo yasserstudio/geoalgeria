@@ -204,6 +204,14 @@ export function loadBoundaries(
   featureCollection: { features?: { properties?: Record<string, unknown>; geometry: unknown }[] },
   codeProp?: string,
 ): BoundaryIndex;
+/**
+ * `wilaya_code → set of bordering wilaya_codes`, from shared boundary vertices.
+ * Throws if any wilaya borders nothing — an adjacency map that answers "no"
+ * everywhere would report every out-of-boundary point as a mislink.
+ */
+export function wilayaNeighbours(featureCollection: {
+  features?: { properties?: Record<string, unknown>; geometry: unknown }[];
+}): Map<string, Set<string>>;
 
 export function validateRecords(records: GeoRecord[], opts?: ValidateOptions): ValidationResult;
 export function validateMetadata(meta: DatasetMetadata): ValidationResult;
