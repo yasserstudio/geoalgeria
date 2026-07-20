@@ -1,5 +1,9 @@
-// Type definitions for @geoalgeria/buses
+// Type definitions for @geoalgeria/buses (schema v2).
 // Algeria's urban bus networks (line-level). Multi-operator; v1: ETUSA (Alger).
+// Records follow the canonical GeoRecord contract from @geoalgeria/schema.
+
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`. */
+export type GeoPrecision = "exact" | "approximate";
 
 /** An urban bus line. */
 export interface BusLine {
@@ -23,8 +27,24 @@ export interface BusLine {
   stations_served: string[];
   /** Wilaya code, zero-padded to 2 digits ("16" for Alger). Joins `geoalgeria`. */
   wilaya_code: string;
-  /** Source URL. */
-  source: string;
+  /** Commune (ONS) code — always null: a line spans several communes, see
+   *  {@link BusLine.communes_served}. */
+  commune_code: string | null;
+  /** Commune name — always null, see `commune_code`. */
+  commune: string | null;
+  /** Always null — this dataset is line-level, with no per-line geometry. */
+  lat: number | null;
+  /** Always null — see `lat`. */
+  lng: number | null;
+  /** Always "approximate": the record carries no point at all. */
+  geo_precision: GeoPrecision;
+  /** Always "ungeocoded". */
+  geo_method: string;
+  /** Provenance key into `metadata.sources[]` — always "wikipedia". Not a URL;
+   *  for that see {@link BusLine.source_url}. */
+  source: "wikipedia";
+  /** URL of the source page the line was read from. */
+  source_url: string;
 }
 
 /** Dataset metadata (data/metadata.json). */

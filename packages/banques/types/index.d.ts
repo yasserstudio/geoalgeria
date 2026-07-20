@@ -1,11 +1,23 @@
-// Type definitions for @geoalgeria/banques
+// Type definitions for @geoalgeria/banques (schema v2).
+// Records follow the canonical GeoRecord contract from @geoalgeria/schema
+// (zero-padded string wilaya_code, geo_precision/geo_method/source) plus the
+// banking-specific fields below.
 
 export type InstitutionType = "bank" | "financial_institution";
 export type Ownership = "public" | "private_foreign" | "private_domestic";
 
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`. */
+export type GeoPrecision = "exact" | "approximate";
+
+/** External identifiers keyed by source system. None are published for this
+ *  sector today, so the field is absent from every record. */
+export type Refs = Record<string, string>;
+
 export interface Institution {
   /** Stable lowercase id, equal to the lowercased acronym (e.g. "bna"). */
   id: string;
+  /** Canonical display name — same value as `name_fr`. */
+  name: string;
   /** Common acronym (e.g. "BNA", "CPA"). */
   acronym: string;
   /** 3-digit Algerian RIB "code banque" (zero-padded, e.g. "001"); null for
@@ -27,8 +39,24 @@ export interface Institution {
   website: string | null;
   hq_address: string | null;
   hq_city: string | null;
-  /** Head-office wilaya code, linked to the geoalgeria 69-wilaya model. */
-  wilaya_code: number;
+  /** Head-office wilaya code, zero-padded 2-digit string ("01".."69"). */
+  wilaya_code: string;
+  /** Commune (ONS) code — always null: the register states a head-office city, not a commune. */
+  commune_code: string | null;
+  /** Commune name — always null, see `commune_code`. */
+  commune: string | null;
+  /** Always null — registry entries are institutions, not geocoded premises. */
+  lat: number | null;
+  /** Always null — see `lat`. */
+  lng: number | null;
+  /** Always "approximate": the record carries no point, only a head-office wilaya. */
+  geo_precision: GeoPrecision;
+  /** Always "ungeocoded". */
+  geo_method: string;
+  /** Provenance key into `metadata.sources[]` — always "boa" (Banque d'Algérie). */
+  source: "boa";
+  /** External identifiers. Absent for this dataset. */
+  refs?: Refs;
   year_established: number | null;
 }
 
@@ -44,11 +72,25 @@ export interface Branch {
   name: string | null;
   address: string | null;
   phone: string | null;
-  /** Wilaya code (1–69), from coordinates (nearest commune) or the stated wilaya. */
-  wilaya_code: number;
+  /** Wilaya code as a zero-padded string ("01".."69"), from coordinates
+   *  (nearest commune) or the stated wilaya. */
+  wilaya_code: string;
+  /** Commune (ONS) code — always null: bank locators publish no commune. */
+  commune_code: string | null;
+  /** Commune name — always null, see `commune_code`. */
+  commune: string | null;
   /** Null when the source gave no usable (in-Algeria) coordinates. */
   lat: number | null;
   lng: number | null;
+  /** "exact" when the locator published a point, "approximate" when it did not
+   *  (those records carry null coordinates). */
+  geo_precision: GeoPrecision;
+  /** Always "bank_locator". */
+  geo_method: string;
+  /** Provenance key into `metadata.sources[]` — always "bank_locator". */
+  source: "bank_locator";
+  /** External identifiers. Absent for this dataset. */
+  refs?: Refs;
 }
 
 export interface Metadata {

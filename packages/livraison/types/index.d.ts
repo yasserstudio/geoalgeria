@@ -1,10 +1,20 @@
-// Type definitions for @geoalgeria/livraison
+// Type definitions for @geoalgeria/livraison (schema v2).
+// Stop-desks follow the canonical GeoRecord contract from @geoalgeria/schema
+// (zero-padded string wilaya_code, geo_precision/geo_method/source). Carriers and
+// coverage are registry/rollup shapes and are not GeoRecords.
 
 export type CarrierType = "stop_desk" | "home" | "both";
 export type CarrierScope = "domestic" | "international";
 /** How openly the carrier publishes its agency locations. */
 export type OpenAgencyData = "geocoded" | "addresses" | "none";
 export type CarrierApi = "documented" | "private" | "licensed" | "aggregator" | "none";
+
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`. */
+export type GeoPrecision = "exact" | "approximate";
+
+/** External identifiers keyed by source system. Carrier relay feeds publish
+ *  none, so the field is absent from every record. */
+export type Refs = Record<string, string>;
 
 /** A delivery carrier in the registry. */
 export interface Carrier {
@@ -46,14 +56,26 @@ export interface StopDesk {
   address: string | null;
   /** Commune name as published by the source, or `null`. */
   commune: string | null;
-  /** Wilaya code (1–69), linked to the `geoalgeria` model. */
-  wilaya_code: number;
-  /** Latitude (WGS84). */
+  /** Commune (ONS) code — always null: relay feeds publish a commune name only. */
+  commune_code: string | null;
+  /** Wilaya code as a zero-padded string (`"01"`..`"69"`), linked to the
+   *  `geoalgeria` model. */
+  wilaya_code: string;
+  /** Latitude (WGS84). Every stop-desk in this dataset is geocoded. */
   lat: number;
-  /** Longitude (WGS84). */
+  /** Longitude (WGS84). Every stop-desk in this dataset is geocoded. */
   lng: number;
+  /** Always `"exact"` — carrier relay feeds publish a real per-desk point. */
+  geo_precision: GeoPrecision;
+  /** Always `"carrier_relay"`. */
+  geo_method: string;
+  /** Authoritative provenance key into `metadata.sources[]` — the first entry of
+   *  {@link StopDesk.sources}. */
+  source: string;
   /** Which open sources list this stop-desk (`"yalidine"`, `"guepex"`). */
   sources: string[];
+  /** External identifiers. Absent for this dataset. */
+  refs?: Refs;
 }
 
 /** Per-carrier stop-desk presence. */

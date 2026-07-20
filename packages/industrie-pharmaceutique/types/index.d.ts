@@ -1,6 +1,7 @@
-// Type definitions for @geoalgeria/industrie-pharmaceutique
+// Type definitions for @geoalgeria/industrie-pharmaceutique (schema v2).
 // Algeria's approved pharmaceutical manufacturers — the Ministry of Pharmaceutical
 // Industry (MIP) fabrication register, geocoded against the geoalgeria commune set.
+// Records follow the canonical GeoRecord contract from @geoalgeria/schema.
 
 /** Manufacturing nature: medicines, medical devices, or both. */
 export type PharmaNature = "pp" | "dm" | "mixte";
@@ -8,11 +9,19 @@ export type PharmaNature = "pp" | "dm" | "mixte";
 /** Establishment role (this layer is the fabrication register). */
 export type PharmaRole = "fabricant";
 
-/** Provenance: MIP register, plus how the location was resolved. */
-export type PharmaSource = "mip" | "mip+2023" | "mip+research";
+/** Provenance key into `metadata.sources[]` — the MIP fabrication register. */
+export type PharmaSource = "mip";
 
-/** How the coordinates were obtained. */
-export type GeoPrecision = "commune_centroid" | "wilaya_centroid" | "none";
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`. */
+export type GeoPrecision = "exact" | "approximate";
+
+/** How the point was resolved. The register publishes no coordinates, so every
+ *  record sits on a commune (or, unresolved, a wilaya) centroid. */
+export type PharmaGeoMethod = "commune_centroid" | "wilaya_centroid";
+
+/** External identifiers keyed by source system. The MIP register publishes none,
+ *  so the field is absent from every record. */
+export type Refs = Record<string, string>;
 
 /** An approved pharmaceutical manufacturing establishment. */
 export interface PharmaManufacturer {
@@ -30,24 +39,24 @@ export interface PharmaManufacturer {
   nature_label_fr: string;
   /** Canonical Arabic label for the nature. */
   nature_label_ar: string;
-  /** Wilaya name (French). */
-  wilaya: string;
-  /** Wilaya name (Arabic). */
-  wilaya_ar: string;
-  /** Wilaya code (1..69). */
-  wilaya_code: number;
+  /** Wilaya code as a zero-padded string ("01".."69"). */
+  wilaya_code: string;
   /** Commune name (French), when resolved. Null when only the wilaya is known. */
   commune: string | null;
-  /** Commune code (geoalgeria code_commune), when resolved. Null otherwise. */
-  commune_code: number | null;
+  /** Commune (ONS) code as a 4-digit string, when resolved. Null otherwise. */
+  commune_code: string | null;
   /** Latitude (commune or wilaya centroid). */
   lat: number | null;
   /** Longitude (commune or wilaya centroid). */
   lng: number | null;
-  /** Provenance of identity + location. */
+  /** Provenance key into `metadata.sources[]`. */
   source: PharmaSource;
-  /** How `lat`/`lng` were obtained. */
+  /** Always "approximate" — a centroid, never a surveyed point. */
   geo_precision: GeoPrecision;
+  /** Which centroid `lat`/`lng` came from. */
+  geo_method: PharmaGeoMethod;
+  /** External identifiers. Absent for this dataset. */
+  refs?: Refs;
   /** URL slug. */
   slug: string;
 }
