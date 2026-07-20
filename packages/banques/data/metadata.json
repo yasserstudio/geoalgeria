@@ -1,11 +1,61 @@
 {
-  "source": "Banque d'Algérie — liste des banques et établissements financiers agréés (Journal Officiel n° 9, 6 février 2026; situation au 4 janvier 2026); branch locations from each bank's official locator",
-  "origin": "https://www.bank-of-algeria.dz/banques-commerciales/",
+  "package": "@geoalgeria/banques",
+  "schema_version": "2.0.0",
+  "title_fr": "Banques et institutions financières d'Algérie",
+  "title_ar": "البنوك والمؤسسات المالية الجزائرية",
+  "title_en": "Algeria banks & financial institutions",
+  "record_count": 1733,
+  "geocoded_count": 1213,
+  "geocoded_pct": 70,
+  "precision": {
+    "exact": 1213,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
+  "wilayas_covered": 67,
+  "bbox": [
+    -8.149472,
+    19.563276,
+    9.577856,
+    37.008375
+  ],
+  "entities": [
+    {
+      "file": "banks.json",
+      "count": 21
+    },
+    {
+      "file": "institutions.json",
+      "count": 8
+    },
+    {
+      "file": "branches.json",
+      "count": 1704
+    }
+  ],
+  "sources": [
+    {
+      "key": "boa",
+      "name": "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)",
+      "url": "https://www.bank-of-algeria.dz/banques-commerciales/",
+      "license": "Factual public regulatory listing (Banque d'Algérie)",
+      "retrieved": "2026-07-18",
+      "evidence_type": "official"
+    },
+    {
+      "key": "bank_locator",
+      "name": "Each licensed bank's own branch locator (site/API/KML)",
+      "license": "Data © respective banks; redistributed for reference",
+      "retrieved": "2026-07-18",
+      "evidence_type": "official"
+    }
+  ],
   "license": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+  "updated": "2026-07-18",
   "banks": 21,
   "institutions": 8,
-  "total": 29,
-  "generated_at": "2026-06-15",
   "branches": 1704,
   "branches_geocoded": 1213,
   "banks_with_branches": 21

@@ -522,6 +522,120 @@ const MIGRATIONS = {
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
   },
+
+  banques: {
+    files: [
+      { file: "banks.json", geojson: false, map: (r) => clean({
+        id: r.id, name: r.name_fr, name_fr: r.name_fr, name_ar: r.name_ar,
+        wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+        lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
+        source: "boa",
+        acronym: r.acronym, bank_code: r.bank_code, type: r.type, ownership: r.ownership,
+        ownership_country: r.ownership_country, parent_company: r.parent_company,
+        swift_bic: r.swift_bic, website: r.website, hq_address: r.hq_address, hq_city: r.hq_city,
+        year_established: r.year_established,
+      }) },
+      { file: "institutions.json", geojson: false, map: (r) => clean({
+        id: r.id, name: r.name_fr, name_fr: r.name_fr, name_ar: r.name_ar,
+        wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+        lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
+        source: "boa",
+        acronym: r.acronym, bank_code: r.bank_code, type: r.type, ownership: r.ownership,
+        ownership_country: r.ownership_country, parent_company: r.parent_company,
+        swift_bic: r.swift_bic, website: r.website, hq_address: r.hq_address, hq_city: r.hq_city,
+        year_established: r.year_established,
+      }) },
+      { file: "branches.json", map: (r) => clean({
+        id: r.id, name: r.name,
+        wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+        ...geoExact(r, "bank_locator"),
+        source: "bank_locator",
+        bank_id: r.bank_id, address: r.address, phone: r.phone,
+      }) },
+    ],
+    meta: {
+      sources: [
+        { key: "boa", name: "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: TODAY, evidence_type: "official" },
+        { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+      ],
+      license: "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+      estimatedUniverse: null,
+      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
+      titles: { en: "Algeria banks & financial institutions", fr: "Banques et institutions financières d'Algérie", ar: "البنوك والمؤسسات المالية الجزائرية" },
+      stats: (rows) => {
+        const registry = rows.filter((r) => r.source === "boa");
+        const branches = rows.filter((r) => r.source === "bank_locator");
+        return {
+          banks: registry.filter((r) => r.type === "bank").length,
+          institutions: registry.filter((r) => r.type === "financial_institution").length,
+          branches: branches.length,
+          branches_geocoded: branches.filter((r) => r.lat != null).length,
+          banks_with_branches: new Set(branches.map((r) => r.bank_id)).size,
+        };
+      },
+    },
+  },
+
+  buses: {
+    file: "lines.json",
+    map: (r) => clean({
+      id: r.id,
+      wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: null,
+      lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
+      source: "wikipedia",
+      operator: r.operator, network: r.network, line: r.line,
+      terminus1: r.terminus1, terminus2: r.terminus2, stops: r.stops,
+      communes_served: r.communes_served, stations_served: r.stations_served,
+      source_url: r.source,
+    }),
+    meta: {
+      sources: [{ key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: TODAY, evidence_type: "crowdsourced" }],
+      license: "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
+      estimatedUniverse: 122,
+      coverageNote: "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
+      titles: { en: "Algeria urban bus lines", fr: "Lignes de bus urbaines d'Algérie", ar: "خطوط الحافلات الحضرية في الجزائر" },
+      stats: (rows) => ({
+        operators: [...new Set(rows.map((r) => r.operator))],
+        by_operator: count(rows, "operator"),
+        with_stop_count: rows.filter((r) => r.stops != null).length,
+      }),
+    },
+  },
+
+  livraison: {
+    file: "stopdesks.json",
+    map: (r) => clean({
+      id: r.id, name: r.name,
+      wilaya_code: String(r.wilaya_code).padStart(2, "0"), commune_code: null, commune: r.commune,
+      ...geoExact(r, "carrier_relay"),
+      source: (r.sources && r.sources[0]) || "carrier_relay",
+      operator: r.operator, address: r.address, sources: r.sources,
+    }),
+    meta: {
+      sources: [
+        { key: "yalidine", name: "Yalidine Express — nos-agences", url: "https://yalidine-express.com.dz/nos-agences/", license: "Data © Yalidine Express; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+        { key: "guepex", name: "Guepex — public agences feed", url: "https://www.guepex.dz/public/data/agences.json", license: "Data © Guepex; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+        { key: "anderson", name: "Anderson Logistics — agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+        { key: "noest", name: "Noest Express — bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+        { key: "maystro", name: "Maystro Delivery — coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+      ],
+      license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
+      estimatedUniverse: null,
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
+      stats: (rows) => {
+        const dataDir = join(ROOT, "packages", "livraison", "data");
+        const carriers = JSON.parse(readFileSync(join(dataDir, "carriers.json"), "utf-8"));
+        const coverage = JSON.parse(readFileSync(join(dataDir, "coverage.json"), "utf-8"));
+        return {
+          carriers: carriers.length,
+          stopdesks: rows.length,
+          coverage: coverage.length,
+          by_operator: count(rows, "operator"),
+        };
+      },
+    },
+  },
 };
 
 // --- runner -----------------------------------------------------------------
