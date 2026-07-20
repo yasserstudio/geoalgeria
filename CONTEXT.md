@@ -146,5 +146,5 @@ The ISO date a source was last pulled (`SourceRef.retrieved`) — distinct from 
 _Avoid_: fetched, scraped, synced
 
 **Geometry confidence**:
-How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot). Coarse-grained in `geo_precision`; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`.
+How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
