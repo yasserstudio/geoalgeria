@@ -27,7 +27,7 @@
 //   - required identity fields present and non-empty on every record
 // Plus a mirror-drift check: dataset/data/poste/*.json must equal packages/poste.
 
-import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 // v2 contract enforcement (dormant until a package declares schema_version "2.0.0").
@@ -488,6 +488,55 @@ function validateMirror() {
   }
 }
 
+// npm's `files` patterns are literal: "data/**/*.json" does NOT match ".geojson".
+// A package that generates CSV/GeoJSON mirrors but forgets the matching glob
+// therefore publishes JSON only — and nothing catches it, because the mirrors are
+// committed and every check above passes on the working tree, not on the tarball.
+// (banques, livraison and buses each shipped that way.) Assert the two stay in sync.
+const DERIVED = [
+  [".csv", "data/**/*.csv"],
+  [".geojson", "data/**/*.geojson"],
+  [".sql", "data/**/*.sql"], // core dataset only (v2 decision #7)
+];
+
+/** Extensions of every file committed under a package's data/ directory. */
+function derivedExtensions(dir) {
+  const found = new Set();
+  const walk = (d) => {
+    for (const e of readdirSync(d, { withFileTypes: true })) {
+      if (e.isDirectory()) walk(join(d, e.name));
+      else found.add(e.name.slice(e.name.lastIndexOf(".")));
+    }
+  };
+  walk(dir);
+  return found;
+}
+
+function validatePackageFiles(pkgs) {
+  for (const pkg of pkgs) {
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    if (!existsSync(dataDir)) continue;
+    let files;
+    try {
+      files = readJson(join(ROOT, "packages", pkg, "package.json")).files || [];
+    } catch (e) {
+      fail(`${pkg}/package.json: cannot read — ${e.message}`);
+      continue;
+    }
+    const exts = derivedExtensions(dataDir);
+    const missing = DERIVED.filter(([ext, glob]) => exts.has(ext) && !files.includes(glob));
+    if (missing.length) {
+      fail(
+        `${pkg}/package.json: data/ ships ${missing.map(([e]) => e).join(" + ")} but files[] omits ${missing
+          .map(([, g]) => `"${g}"`)
+          .join(" + ")} — npm would publish neither`,
+      );
+    } else {
+      console.log(`  OK: ${pkg} files[] covers its derived data`);
+    }
+  }
+}
+
 // telecom has a bespoke shape (coverage namespaced by technology, split into
 // per-operator files, nested metadata) that doesn't fit the flat PACKAGES table,
 // so it gets a dedicated validator — sharing the same fail()/errors/readJson/
@@ -743,6 +792,11 @@ for (const pkg of targets) {
   console.log(`\n[@geoalgeria/${pkg}]`);
   for (const spec of PACKAGES[pkg]) validateDataset(pkg, spec);
 }
+console.log(`\n[package files[] ↔ derived data]`);
+validatePackageFiles(
+  only ? [only] : readdirSync(join(ROOT, "packages")).sort(),
+);
+
 // the mirror is poste-specific — only run it when validating poste (or all)
 if (!only || only === "poste") {
   console.log(`\n[mirror: dataset ↔ poste]`);

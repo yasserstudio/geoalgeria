@@ -13,6 +13,9 @@
   },
   "files": [
     "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "data/**/*.sql",
     "types/",
     "index.js"
   ],
