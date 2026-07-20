@@ -16,7 +16,7 @@ export const institutionsByWilaya = (code) => {
 };
 export const institutionsByType = (code) => {
   const t = String(code).toUpperCase(); // accepts "MJ" or "mj"
-  return institutions().filter((r) => r.type_code === t);
+  return institutions().filter((r) => r.type === t);
 };
 export const metadata = () => load("metadata.json");
 

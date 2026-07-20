@@ -14,7 +14,7 @@ export const facilitiesByWilaya = (code) => {
 };
 export const facilitiesByType = (code) => {
   const t = String(code).toUpperCase();
-  return facilities().filter((r) => r.type_code === t);
+  return facilities().filter((r) => r.type === t);
 };
 export const metadata = () => load("metadata.json");
 

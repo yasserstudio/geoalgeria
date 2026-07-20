@@ -77,3 +77,49 @@ for (const [name, file, fnName] of BY_ID) {
     }
   });
 }
+
+/**
+ * Value lookups: every export that filters the data on one of its own fields.
+ * [package, data file, export name, the record field it claims to filter on]
+ *
+ * Driven by EVERY distinct value in the file, not just the first — a lookup
+ * that reads a renamed field returns [] for every input, and asserting the
+ * per-value totals sum back to the record count catches both that and a
+ * partial mismatch (e.g. a case-normalization that only fits some values).
+ */
+const BY_VALUE = [
+  ["sports", "facilities.json", "facilitiesByType", "type"],
+  ["jeunesse", "institutions.json", "institutionsByType", "type"],
+  ["agriculture", "agriculture.json", "institutionsByType", "type"],
+  ["ferroviaire", "stations.json", "stationsByType", "type"],
+  ["formation-professionnelle", "establishments.json", "establishmentsByType", "type"],
+  ["ooredoo", "stores.json", "storesByType", "type"],
+  ["enseignement-superieur", "institutions.json", "institutionsByType", "type"],
+  ["enseignement-superieur", "institutions.json", "institutionsBySector", "sector"],
+  ["industrie-pharmaceutique", "industrie-pharmaceutique.json", "manufacturersByNature", "nature"],
+  ["livraison", "stopdesks.json", "stopdesksByCarrier", "operator"],
+  ["banques", "branches.json", "branchesByBank", "bank_id"],
+  ["buses", "lines.json", "linesByOperator", "operator"],
+];
+
+for (const [name, file, fnName, field] of BY_VALUE) {
+  test(`${name}: ${fnName} matches every ${field} present in the data`, async () => {
+    const m = await pkg(name);
+    const fn = m[fnName];
+    assert.equal(typeof fn, "function", `${name} exports no ${fnName}`);
+
+    const rows = data(name, file);
+    const values = [...new Set(rows.map((r) => r[field]).filter((v) => v != null))];
+    assert.ok(values.length > 0, `${name}.${file} carries no ${field} values to test with`);
+
+    let matched = 0;
+    for (const v of values) {
+      const hits = fn(v);
+      assert.ok(hits.length > 0, `${fnName}(${JSON.stringify(v)}) returned no records`);
+      matched += hits.length;
+    }
+    // Every record carrying the field must be reachable through the lookup.
+    const withField = rows.filter((r) => r[field] != null).length;
+    assert.equal(matched, withField, `${fnName} reached ${matched} of ${withField} records`);
+  });
+}
