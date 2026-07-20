@@ -2,8 +2,9 @@
 // Algeria's urban bus networks (line-level). Multi-operator; v1: ETUSA (Alger).
 // Records follow the canonical GeoRecord contract from @geoalgeria/schema.
 
-/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`. */
-export type GeoPrecision = "exact" | "approximate";
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
+ *  `null` when the record carries no coordinate at all. */
+export type GeoPrecision = "exact" | "approximate" | null;
 
 /** An urban bus line. */
 export interface BusLine {
@@ -39,10 +40,10 @@ export interface BusLine {
   lat: number | null;
   /** Always null — see `lat`. */
   lng: number | null;
-  /** Always "approximate": the record carries no point at all. */
-  geo_precision: GeoPrecision;
-  /** Always "ungeocoded". */
-  geo_method: string;
+  /** Always null: the record carries no point at all, so it asserts no precision. */
+  geo_precision: null;
+  /** Always null — no geocoding method produced a point. */
+  geo_method: null;
   /** Provenance key into `metadata.sources[]` — always "wikipedia". Not a URL;
    *  for that see {@link BusLine.source_url}. */
   source: "wikipedia";

@@ -3,8 +3,9 @@
 // extra fields); each data/metadata.json conforms to DatasetMetadata; the
 // repo-level catalog (index.json) conforms to Manifest.
 
-/** Coordinate provenance, coarse-grained. Detail (e.g. "osm_node") goes in `geo_method`. */
-export type GeoPrecision = "exact" | "approximate";
+/** Coordinate provenance, coarse-grained. Detail (e.g. "osm_node") goes in `geo_method`.
+ *  `null` when the record carries no coordinate at all — see {@link GeoRecord.geo_precision}. */
+export type GeoPrecision = "exact" | "approximate" | null;
 
 /** Operational status of a facility/asset. Absent means unknown. */
 export type Lifecycle = "operating" | "planned" | "closed" | "unknown";
@@ -49,9 +50,11 @@ export interface GeoRecord {
   lat: number | null;
   /** Longitude (WGS84), or null when ungeocoded. */
   lng: number | null;
-  /** Coordinate provenance. */
+  /** Coordinate provenance. Null if and only if `lat`/`lng` are null: a record with
+   *  no point asserts no precision (and no method). Enforced by `validateRecords`. */
   geo_precision: GeoPrecision;
-  /** Free-form geocoding-method detail, e.g. "osm_node", "commune_centroid". */
+  /** Free-form geocoding-method detail, e.g. "osm_node", "commune_centroid".
+   *  Null on ungeocoded records — no method produced a point. */
   geo_method?: string | null;
   /** Operational status, where the source reports it. Absent means unknown. */
   lifecycle?: Lifecycle;

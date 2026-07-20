@@ -224,7 +224,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 1200,OULED SIDI SLIMANE,أولاد سيدي سليمان,05,0553,OULED SI SLIMANE,أولاد سي سليمان,35.6117188,5.6332318,exact,baridimap,baridimap,R3,05066,,OULED-SIDI-SLIMANE
 1202,RAS EL MAA SAADA,راس الماء/ السعادة,22,2223,RAS EL MA,رأس الماء,34.4948106,-0.8275019,exact,baridimap,baridimap,R3,22069,,RUE DES MARTHYRS
 1203,CHAABNIA,شعابنية,02,0206,TAOUGRITE,تاوقريت,36.2436125,0.9496412,exact,baridimap,baridimap,R4,02072,,CHAABNIA
-1204,ALGER BD DES MARTYRES,الجزائر حي الشهداء,16,1603,EL MADANIA,المدنية,,,approximate,baridimap,baridimap,GA,16072,,"92, BOULVARD DES MARTYRS"
+1204,ALGER BD DES MARTYRES,الجزائر حي الشهداء,16,1603,EL MADANIA,المدنية,,,,,baridimap,GA,16072,,"92, BOULVARD DES MARTYRS"
 1205,EL DJORF,الجرف,06,0641,MELBOU,مالبو,36.6414031,5.3656005,exact,baridimap,baridimap,R3,06076,,MELBOU  CENTRE
 1206,INOUGHISSENE,انوغيسن,05,0511,INOUGHISSENE,إينوغيسن,35.2840656,6.5362742,exact,baridimap,baridimap,R4,05083,,INOUGHISSENE
 1207,IGHIL OUTOUAF,إغيل أوطواف,06,0607,TIMZRIT,تيمزريت,36.6090007,4.7863981,exact,baridimap,baridimap,R4,06083,,IGHIL OUTOUAF
@@ -1591,7 +1591,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 2455,TALA BOUZROU,ت بوزرو شارة علي,15,1509,MAKOUDA,ماكودة,36.807469,4.1005608,exact,baridimap,baridimap,R4,15145,,HOTEL DE LA POSTE
 2456,TAZEROUT,تازروتس,15,1531,ABI YOUCEF,أبي يوسف,36.5397691,4.3413476,exact,baridimap,baridimap,R4,15149,,HOTEL DE LA POSTE
 2457,TIZI LILANE,تزي ليلان,15,1529,MAATKA,المعاتقة,36.6388567,3.99011,exact,baridimap,baridimap,R4,15154,,HOTEL DE LA POSTE
-2458,KRIM BELKACEM,ت وزو كريم بلقاسم,15,1501,TIZI OUZOU,تيزي وزو,,,approximate,baridimap,baridimap,R1,15161,,TIZI OUZOU  KRIM BELKACM
+2458,KRIM BELKACEM,ت وزو كريم بلقاسم,15,1501,TIZI OUZOU,تيزي وزو,,,,,baridimap,R1,15161,,TIZI OUZOU  KRIM BELKACM
 246,BOUHMAMA,بوحمامة,40,4008,BOUHMAMA,بوحمامة,35.3189789,6.7425235,exact,baridimap,baridimap,R2,40007,, BOUHMAMA 
 2460,MOHAMMADIA HABRA,محمدية-هبرة,29,2931,MOHAMMADIA,المحمدية,35.5937138,0.0773078,exact,baridimap,baridimap,R1,29003,,CITE DES 124 LOTS MOHAMMADIA
 2461,MESKIANA,مسكيانة,04,0424,MESKIANA,مسكيانة,35.6333796,7.6667949,exact,baridimap,baridimap,R1,04004,,RUE DU 1ER NOVEMBRE
@@ -2062,7 +2062,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 2892,TIDDA,تيدة,14,1442,TIDDA,تيدة,35.5834039,1.2670142,exact,baridimap,baridimap,R4,14071,,RUE PRINCIPALE
 2893,BENI OUADREN,بني-ودران,02,0219,SENDJAS,السنجاس,36.1240583,1.38187,exact,baridimap,baridimap,R4,02076,,BENI OUDRENE
 2894,BISKRA SIDI KHELIL,سيدي خليل,07,0704,CHETMA,شتمة,34.8424017,5.8712934,exact,baridimap,baridimap,R4,07077,,EL HAY EL DJADIDE SIDI-KHELLIL
-2895,ALGER PORT,الجزائر ميناء,16,1601,ALGER CENTRE,الجزائر الوسطى,,,approximate,baridimap,baridimap,R3,16077,,RUE D'ANGOR
+2895,ALGER PORT,الجزائر ميناء,16,1601,ALGER CENTRE,الجزائر الوسطى,,,,,baridimap,R3,16077,,RUE D'ANGOR
 2896,BENDIAB,بن-دياب,19,1917,GUIDJEL,قجال,36.0478398,5.394965,exact,baridimap,baridimap,R4,19080,,BENDIEB
 2897,KALLOUL,كحلول,02,0222,ABOU EL HASSAN,أبو الحسن,36.4204087,1.2360913,exact,baridimap,baridimap,R4,02081,,KAHLOUL
 2898,SIDI MAAROUF,سيدي معروف,31,3113,SIDI CHAMI,سيدي الشحمي,35.6870717,-0.5403467,exact,baridimap,baridimap,R4,31083,,HAI SIDI MAAROUF 
@@ -2073,7 +2073,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 2901,ZERALDA BD SOUIDANI,زرالدة ب سويداني,16,1646,ZERALDA,زرالدة,36.7084767,2.84471,exact,baridimap,baridimap,R3,16110,,CITE 500 LOGEMENT ZERALDA 
 2903,KOUKOU,كوكو,15,1527,AIT YAHIA,أيت يحي,36.575551,4.3265358,exact,baridimap,baridimap,R4,15123,,HOTEL DE LA POSTE
 2904,OULED ITCHIR,اولاد اشير,15,1511,TIZI GHENIF,تيزي غنيف,36.5995269,3.8064969,exact,baridimap,baridimap,R4,15129,,HOTEL DE LA POSTE
-2905,EL BIAR ALI KHODJA,الأبيار علي خوجة,16,1610,EL BIAR,الأبيار,,,approximate,baridimap,baridimap,R2,16138,,118 BD ALI KHODJA
+2905,EL BIAR ALI KHODJA,الأبيار علي خوجة,16,1610,EL BIAR,الأبيار,,,,,baridimap,R2,16138,,118 BD ALI KHODJA
 2906,BARAKI MED BELARBI,براقي-شارع-محمد-بلعربي,16,1614,BARAKI,براقي,36.6676167,3.0960883,exact,baridimap,baridimap,R2,16139,,01 RUE MOHAMED BELARBI BARAKI
 2907,R U BAB EZZOUAR 1,ا ج باب الزوار 1,16,1621,BAB EZZOUAR,باب الزوار,36.731996,3.1822743,exact,baridimap,baridimap,R4,16168,,RESIDENCE-UNIVERSITAIRE-BAB-EZZOUAR 1
 2908,SIDI MOUSSA EL RAIS,س موسى الرايس,16,1637,SIDI MOUSSA,سيدي موسى,36.6115414,3.1263372,exact,baridimap,baridimap,R4,16189,,RAIS SIDI MOUSSA
@@ -2242,7 +2242,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 306,BORDJ BEN AZZOUZ,برج بن عزوز,07,0727,BORDJ BEN AZZOUZ,برج بن عزوز,34.6973068,5.3607299,exact,baridimap,baridimap,R4,07021,,RUE ALI HAIF  BORDJ BEN AZZOUZ
 3060,ABDELMADJID,عبدالمجيد,17,1734,AMOURAH,عمورة,34.3625811,3.9640158,exact,baridimap,baridimap,R4,17069,,ABDELMADJID
 3061,BOUKADIR A SLIMANI,بوقادير سليماني,02,0212,BOUKADIR,بوقادير,36.0574385,1.1323734,exact,baridimap,baridimap,R3,02086,,DOUAIDIA
-3062,CLUB DES PINS,سطاوالي ن الصنوبر,16,1645,STAOUELI,سطاوالي,,,approximate,baridimap,baridimap,R3,16098,,RESIDENCE D'ETAT CLUB DES PINS
+3062,CLUB DES PINS,سطاوالي ن الصنوبر,16,1645,STAOUELI,سطاوالي,,,,,baridimap,R3,16098,,RESIDENCE D'ETAT CLUB DES PINS
 3063,HELOUANE,هلوان,06,0636,OUZELAGUEN,أوزلاقن,36.5122097,4.5863123,exact,baridimap,baridimap,R4,06121,,HELLOUANE
 3064,TIZRA AISSA,تيزرا عيسى,15,1556,AIT YAHIA MOUSSA,أيت يحى موسى,36.6302971,3.9118822,exact,baridimap,baridimap,R4,15158,,HOTEL DE LA POSTE
 3066,SAID HAMDINE F D,سعيد حمدين-ك-الحقوق,16,1609,BIR MOURAD RAIS,بئر مراد رايس,36.7316981,3.0340964,exact,baridimap,baridimap,R4,16203,,"FACULTE DE DROIT,SAID HAMDINE"
@@ -2860,7 +2860,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 3684,EL BIODH SIDI CHEIKH GARE ROUTIERE,الابيض س ش محطة,32,3207,EL ABIODH SIDI CHEIKH,الأبيض سيدي الشيخ,32.9086083,0.54345,exact,baridimap,baridimap,R4,32038,,GARE-ROUTIERE EL-ABIODH-SIDI-CHEIKH
 3687,BOUGTOB ABDELLI CHEIKH,بوقطب-عبدلي-الشيخ,32,3210,BOUGTOUB,بوقطب,34.0284984,0.0901774,exact,baridimap,baridimap,R3,32041,,HAI WIAM BOUGTOB
 3688,EL ABIODH SIDI CHEIKH DJOUDI BAHOUS,الأبيض-سيدي-الشيخ-جودي-بحوص,32,3207,EL ABIODH SIDI CHEIKH,الأبيض سيدي الشيخ,32.9065192,0.5569507,exact,baridimap,baridimap,R4,32040,,CITE 1360 LOGEMENTS  EL-ABIODH-SIDI-CHEIKH
-3689,ALGER GARE MARITIME,الجزائر-المحطة-البحرية,16,1601,ALGER CENTRE,الجزائر الوسطى,,,approximate,baridimap,baridimap,R3,16216,,GARE D'ALGER RUE D'ANGKOR ALGER CENTRE
+3689,ALGER GARE MARITIME,الجزائر-المحطة-البحرية,16,1601,ALGER CENTRE,الجزائر الوسطى,,,,,baridimap,R3,16216,,GARE D'ALGER RUE D'ANGKOR ALGER CENTRE
 369,BENI MISRA,بني ميسرة,09,0909,HAMMAM MELOUANE,حمام ملوان,36.4669858,3.0130778,exact,baridimap,baridimap,R4,09040,,CENTRE HAMMAM-EL-OUANE
 3690,KHROUB MASSINISSA 19,الخروب ماسينيسا 19 مارس 62,25,2506,EL KHROUB,الخروب,36.2717055,6.7147949,exact,baridimap,baridimap,R4,25063,, ZONE H BT F N 02 CITE MASSINISSA
 3691,MOULAY MUSTAPHA,ع-تموشنت-مولاي-مصطفى,46,4601,AIN TEMOUCHENT,عين تيموشنت,35.3135422,-1.138589,exact,baridimap,baridimap,R4,46063,,siÃ¨ge Annexe APC Moulaya Mustapha
@@ -2992,7 +2992,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 3811,TISSEMSILT GARE ROUTIERE,تيسمسيلت-المحطة-البرية,38,3801,TISSEMSILT,تيسمسيلت,35.5996493,1.7851644,exact,baridimap,baridimap,R4,38042,,GARE-ROUTIERE
 3812,TISSEMSILT ITINERANT 1,تسمسيلت- المكتب -البريدي -المتنقل- 1,38,3801,TISSEMSILT,تيسمسيلت,35.6100357,1.82044,exact,baridimap,baridimap,R4,38043,,TISSEMSILT
 3813,TIPAZA BUREAU DE POSTE ITINERANT N1,تيبازة-المكتب-البريدي-المتنقل-1,42,4201,TIPAZA,تيبازة,36.5886856,2.4573493,exact,baridimap,baridimap,R4,42071,,TIPAZA
-3815,EP ITINERANT 1,الجزائر-غرب-المكتب-البريدي-المتنقل-1,16,1634,BIRTOUTA,بئر توتة,,,approximate,baridimap,baridimap,R4,16230,,ALGER-OUEST
+3815,EP ITINERANT 1,الجزائر-غرب-المكتب-البريدي-المتنقل-1,16,1634,BIRTOUTA,بئر توتة,,,,,baridimap,R4,16230,,ALGER-OUEST
 3818,TAMENRASSET EP ITINERANT 1,تمنراست- المكتب -البريدي -المتنقل-1,11,1101,TAMANRASSET,تامنغست,22.7748897,5.5261596,exact,baridimap,baridimap,R4,11034,,TAMANRASSET
 382,BOUIRA AIN BEIDA,عين-بيضة,10,1003,GUERROUMA,قرومة,36.4493907,3.4679571,exact,baridimap,baridimap,R4,10048,,AIN-BEIDA 10231 
 3820,TIT HAIBAOUI EL WAFI,تيت-هيباوي-الوافي,11,1101,TAMANRASSET,تامنغست,22.964515,5.2295107,exact,baridimap,baridimap,R4,11036,,TIT COMMUNE TAMANRASSET
@@ -3039,7 +3039,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 386,OULED AISSA,أولاد عيسى,49,0127,OULED AISSA,أولاد عيسى,29.4250693,-0.0875166,exact,baridimap,baridimap,R4,49051,01051,APC O/AISSA
 3860,GHEZAL,غزال,28,2801,M'SILA,المسيلة,35.6580269,4.467204,exact,baridimap,baridimap,R4,28093,,Cite GHEZAL M'SILA
 3861,BENI SOUIK,بني-سويك,07,0720,DJEMORAH,جمورة,35.087605,5.8621317,exact,baridimap,baridimap,R4,07094,,20 AOUT BENI SOUIK
-3862,TINDOUF EPI1,تندوف- المكتب -البريدي -المتنقل- 1,37,3701,TINDOUF,تندوف,,,approximate,baridimap,baridimap,R4,37017,,tindouf
+3862,TINDOUF EPI1,تندوف- المكتب -البريدي -المتنقل- 1,37,3701,TINDOUF,تندوف,,,,,baridimap,R4,37017,,tindouf
 3864,MOSTAGANEM ETABLISSEMENT POSTAL ITINERANT 1,مستغانم-المكتب-البريدي-المتنقل-1,27,2701,MOSTAGANEM,مستغانم,35.9198083,0.0829667,exact,baridimap,baridimap,R4,27067,,UPW MOSTAGANEM 
 3867,MOSTAGANEM 1ER NOVEMBRE,مستغانم لحول محمد,27,2701,MOSTAGANEM,مستغانم,35.9157883,0.0584328,exact,baridimap,baridimap,R1,27068,,MOSTAGANEM SALAMANDRE 
 3868,OULED BENDIDA,أولاد-بن-ديدة,22,2207,BOUKHANIFIS,بوخنيفيس,35.0561924,-0.6581465,exact,baridimap,baridimap,R4,22091,,RUE TRIG TLAGH LOUZA BENAICHIBA
@@ -3052,7 +3052,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 3875,CONSTANTINE UNIVERSITE 3,قسنطينة-جامعة-3,25,2506,EL KHROUB,الخروب,36.2803204,6.5888217,exact,baridimap,baridimap,R4,25065,,CONSTANTINE-UNIVERSITE-3
 3876,LAOUINETTES,لعوينات,21,2136,KHENEG MAYOUM,خنق مايون,36.9700291,6.3045988,exact,baridimap,baridimap,R4,21085,,LAOUINETTES
 3878,HASSI BEN OKBA BOUSSOUF ABDEHAFID,حاسي بن عقبة بوصوف عبدالحفيظ,31,3119,HASSI BEN OKBA,حاسي بن عقبة,35.7256425,-0.4663787,exact,baridimap,baridimap,R4,31124,,ROUTE WILAYA HASSI BEN OKBA 
-3879,CONSTANTINE ETABLISSEMENT POSTAL ITINERANT 1,قسنطينة-المكتب-البريدي-المتنقل-1,25,2501,CONSTANTINE,قسنطينة,,,approximate,baridimap,baridimap,R4,25066,,CONSTANTINE
+3879,CONSTANTINE ETABLISSEMENT POSTAL ITINERANT 1,قسنطينة-المكتب-البريدي-المتنقل-1,25,2501,CONSTANTINE,قسنطينة,,,,,baridimap,R4,25066,,CONSTANTINE
 388,ZELGOU,زلقو,02,0203,BENAIRIA,بنايرية,36.3831101,1.3667405,exact,baridimap,baridimap,R4,02052,,ZELGOU
 3880,ES SENIA AIN BEIDA AADL,NULL,31,3105,ES SENIA,السانية,35.6533303,-0.6596365,exact,baridimap,baridimap,R4,31117,,CITE 2500 LOGEMENTS AIN EL BAIDA 
 3883,ORAN BUREAU ITINERANT,وهران-المكتب-البريدي-المتنقل-1,31,3101,ORAN,وهران,35.6951088,-0.6333868,exact,baridimap,baridimap,R4,31118,,ORAN 
@@ -3077,7 +3077,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 3905,OULED BELHADJ,أولاد-بلحاج,16,1657,SAOULA,السحاولة,36.6743504,3.0204522,exact,baridimap,baridimap,R4,16234,,anexe apc ouled bel hadj commune de saoula
 3906,RAHMANIA 300 LOGEMENTS,الرحمانية-300-مسكن,16,1648,RAHMANIA,الرحمانية,36.686802,2.9052979,exact,baridimap,baridimap,R3,16233,,CITE OPGI 300 LOGTS RAHMANIA
 391,BOUMAGUEUR,بومقر,05,0541,BOUMAGUER,بومقر,35.50474,5.5524867,exact,baridimap,baridimap,R4,05057,,BOUMAGUER
-3910,ALGER CENTRE ETABLISSEMENT POSTAL ITINERANT 2,الجزائر-وسط-المكتب-البريدي-المتنقل-2,16,1601,ALGER CENTRE,الجزائر الوسطى,,,approximate,baridimap,baridimap,R4,16250,,ALGER-CENTRE
+3910,ALGER CENTRE ETABLISSEMENT POSTAL ITINERANT 2,الجزائر-وسط-المكتب-البريدي-المتنقل-2,16,1601,ALGER CENTRE,الجزائر الوسطى,,,,,baridimap,R4,16250,,ALGER-CENTRE
 3911,AIN NOUG,عين نوق,34,3406,BEN DAOUD,بن داود,36.027724,4.2299251,exact,baridimap,baridimap,R4,34073,,AIN-NOUG
 3912,LAGHOUAT DHALAA,الأغواط-الضلعة,03,0301,LAGHOUAT,الأغواط,33.807438,2.8861763,exact,baridimap,baridimap,R4,03056,,RUE DHALAA
 3913,LAGHOUAT ETABLISSEMENT POSTAL ITINERANT 1,الأغواط-المكتب-البريدي-المتنقل- 1,03,0301,LAGHOUAT,الأغواط,33.814832,2.8685007,exact,baridimap,baridimap,R4,03055,,LAGHOUAT
@@ -3173,8 +3173,8 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 4045,TIARET ETABLISSEMENT POSTAL ITINERANT 1,تيارت - المكتب -البريدي -المتنقل- 1,14,1401,TIARET,تيارت,35.3532113,1.3269353,exact,baridimap,baridimap,R4,14083,,TIARET
 4046,TIARET GARE ROUTIERE,تيارت-المحطة-البرية,14,1401,TIARET,تيارت,35.344909,1.3282479,exact,baridimap,baridimap,R4,14084,,CITE YATTOUCHE LHADJ ROUTE DE AIN GUESSMA 
 4047,BISKRA ETABLISSEMENT POSTAL ITINERANT 1,بسكرة- المكتب -البريدي -المتنقل- 1,07,0701,BISKRA,بسكرة,34.8479556,5.6999633,exact,baridimap,baridimap,R4,07096,,DUPW BISKRA 
-4048,BECHAR EP ITINERANT 1,بشار- المكتب -البريدي -المتنقل- 1,08,0801,BECHAR,بشار,,,approximate,baridimap,baridimap,R4,08063,,COMPLEX DE LA POSTE HAI GHARASA
-4049,BOUIRA ETABLISSEMENT POSTAL ITINERANT 1,البويرة- المكتب -البريدي -المتنقل- 1,10,1001,BOUIRA,البويرة,,,approximate,baridimap,baridimap,R4,10112,,BOUIRA
+4048,BECHAR EP ITINERANT 1,بشار- المكتب -البريدي -المتنقل- 1,08,0801,BECHAR,بشار,,,,,baridimap,R4,08063,,COMPLEX DE LA POSTE HAI GHARASA
+4049,BOUIRA ETABLISSEMENT POSTAL ITINERANT 1,البويرة- المكتب -البريدي -المتنقل- 1,10,1001,BOUIRA,البويرة,,,,,baridimap,R4,10112,,BOUIRA
 405,NFIDHET RAGMA,نفيضة الرقمة,07,0715,ZERIBET EL OUED,زريبة الوادي,34.6408383,6.3783567,exact,baridimap,baridimap,R4,07069,, RUE APC N'FIDHET-RAGMA
 4050,TIZI OUZOU ETABLISSEMENET POSTAL ITINERANT 1,تيزي وزو - المكتب -البريدي -المتنقل- 1,15,1501,TIZI OUZOU,تيزي وزو,36.7155945,4.0532538,exact,baridimap,baridimap,R4,15169,,DUPW TIZI OUZOU  RUE CHIKHI AMAR 
 4051,MSILA ETABLISSEMENT POSTAL ITINERANT 1,المسيلة - المكتب -البريدي -المتنقل- 1,28,2801,M'SILA,المسيلة,35.7088174,4.5342984,exact,baridimap,baridimap,R4,28094,,M'SILA
@@ -3188,17 +3188,17 @@ id,name,name_ar,wilaya_code,commune_code,commune,commune_ar,lat,lng,geo_precisio
 406,AOUINETTES,العوينات,22,2224,AIN TINDAMINE,عين تندمين,34.7170956,-0.6760351,exact,baridimap,baridimap,R4,22070,,EL AOUINETTE
 4060,BLIDA ETABLISSEMENT POSTAL ITINERANT 2,البليدة-المكتب-البريدي-المتنقل-1,09,0901,BLIDA,البليدة,36.4929471,2.8540679,exact,baridimap,baridimap,R4,09082,,BLIDA
 4061,AMOUCHA TANDJA,عموشة-طانجة,19,1927,AMOUCHA,عموشة,36.3688966,5.4287592,exact,baridimap,baridimap,R4,19147,,CITE BARKET AMOR  AMOUCHA
-4062,SETIF ETABLISSEMENT POSTAL ITINERANT 2,سطيف المكتب البريدي المتنقل 2,19,1901,SETIF,سطيف,,,approximate,baridimap,baridimap,R4,19148,,SETIF
+4062,SETIF ETABLISSEMENT POSTAL ITINERANT 2,سطيف المكتب البريدي المتنقل 2,19,1901,SETIF,سطيف,,,,,baridimap,R4,19148,,SETIF
 4063,TIMIMOUN ETABLISSEMENT POSTAL ITINERANT 1,تيميمون-المكتب-البريدي-المتنقل-1,49,0109,TIMIMOUN,تيميمون,29.2628367,0.2406434,exact,baridimap,baridimap,R4,49078,01078,TIMIMOUN
-4064,BECHAR ETABLISSEMENT POSTAL ITINERANT 2,بشار- المكتب -البريدي -المتنقل-2,08,0801,BECHAR,بشار,,,approximate,baridimap,baridimap,R4,08064,,COMPLEX DE LA POSTE HAI GHARASA
+4064,BECHAR ETABLISSEMENT POSTAL ITINERANT 2,بشار- المكتب -البريدي -المتنقل-2,08,0801,BECHAR,بشار,,,,,baridimap,R4,08064,,COMPLEX DE LA POSTE HAI GHARASA
 4065,OUARGLA ETABLISSEMENT POSTAL ITINERANT 2,ورقلة - المكتب -البريدي -المتنقل- 2,30,3001,OUARGLA,ورقلة,31.9577694,5.3326004,exact,baridimap,baridimap,R4,30065,,OUARGLA
 4066,TOUGGOURT ETABLISSEMENT POSTAL ITINERANT 1,توقرت-المكتب-البريدي-المتنقل-1,55,3013,TOUGGOURT,توقرت,33.1071352,6.0715258,exact,baridimap,baridimap,R4,55066,30066,TOUGGOURT
 4067,EL TARF EPI 1,الطارف- المكتب -البريدي -المتنقل- 1,36,3601,EL TARF,الطارف,36.7656502,8.3227016,exact,baridimap,baridimap,R4,36060,,EL TARF
-4068,OUM EL BOUAGHI EPI 1,أم-البواقي- المكتب -البريدي -المتنقل- 1,04,0401,OUM EL BOUAGHI,أم البواقي,,,approximate,baridimap,baridimap,R4,04070,,DUPW  OUM EL BOUAGHI
+4068,OUM EL BOUAGHI EPI 1,أم-البواقي- المكتب -البريدي -المتنقل- 1,04,0401,OUM EL BOUAGHI,أم البواقي,,,,,baridimap,R4,04070,,DUPW  OUM EL BOUAGHI
 4069,SOUK AHRAS EPI 1,سوق-أهراس- المكتب -البريدي -المتنقل- 1,41,4101,SOUK AHRAS,سوق أهراس,36.2699122,7.9392262,exact,baridimap,baridimap,R4,41054,,SOUK AHRAS
 407,ZANA EL BEIDA,زانة البيضاء,05,0554,ZANAT EL BEIDA,زانة البيضاء,35.8107573,6.1332967,exact,baridimap,baridimap,R4,05071,,ZANA-EL-BEIDA
 4070,TISSEMSILT EPI 2,تسمسيلت- المكتب -البريدي -المتنقل- 2,38,3801,TISSEMSILT,تيسمسيلت,35.6101831,1.8207076,exact,baridimap,baridimap,R4,38046,,TISSEMSILT
-4071,TINDOUF ETABLISSEMENT POSTAL ITINERANT 2,تندوف- المكتب -البريدي -المتنقل- 2,37,3701,TINDOUF,تندوف,,,approximate,baridimap,baridimap,R4,37022,,tindouf
+4071,TINDOUF ETABLISSEMENT POSTAL ITINERANT 2,تندوف- المكتب -البريدي -المتنقل- 2,37,3701,TINDOUF,تندوف,,,,,baridimap,R4,37022,,tindouf
 4072,IN SALAH ETABLISSEMENT POSTAL ITINERANT 1,ان-صالح-المكتب-البريدي-المتنقل-1,53,1108,IN SALAH,عين صالح,27.1841767,2.4909967,exact,baridimap,baridimap,R4,53038,11038,IN SALAH 
 4073,ILLIZI ETABLISSEMENT POSTAL ITINERANT 2,إيليزي- المكتب -البريدي -المتنقل- 2,33,3301,ILLIZI,إليزي,28.034105,9.5754313,exact,baridimap,baridimap,R4,33029,,ILLIZI
 4075,ILLIZI UNIVERSITE,إيليزي- الجامعة,33,3301,ILLIZI,إليزي,26.5219109,8.4822642,exact,baridimap,baridimap,R4,33030,,SIEGE UNIVERSITE ILLIZI

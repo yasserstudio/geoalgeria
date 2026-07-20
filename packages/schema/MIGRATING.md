@@ -23,8 +23,11 @@ hand-editing data — then the outputs are regenerated. A package with no genera
      First 2 digits should equal `wilaya_code`; mismatches for new wilayas 49–69 are a known
      upstream staleness (a **warning**, fixed in P3 — do not paper over them).
    - `lat`/`lng` → numbers or **both** `null`. Never one set and the other null.
-   - `geo_precision` → **`"exact" | "approximate"`**. Put the source-specific method
-     (e.g. `"osm_node"`, `"commune_centroid"`) in `geo_method`.
+   - `geo_precision` → **`"exact" | "approximate"`** on a geocoded record, **`null`** when
+     `lat`/`lng` are null (the validator enforces the iff, both directions). Put the
+     source-specific method (e.g. `"osm_node"`, `"commune_centroid"`) in `geo_method` —
+     and set `geo_method` to `null` too on an ungeocoded record: no method produced a
+     point, so `"ungeocoded"` / `"none"` would be a false claim.
    - External ids (`osm_id`, `wikidata`, `msp_id`, …) → collapse into `refs: { osm, wikidata, msp }`.
    - `source` → a short key that matches a `metadata.sources[].key`.
    - Drop denormalized `wilaya`/`wilaya_ar` name fields — derivable from `wilaya_code`.

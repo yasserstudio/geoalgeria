@@ -6,8 +6,9 @@
 export type InstitutionType = "bank" | "financial_institution";
 export type Ownership = "public" | "private_foreign" | "private_domestic";
 
-/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`. */
-export type GeoPrecision = "exact" | "approximate";
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
+ *  `null` when the record carries no coordinate at all. */
+export type GeoPrecision = "exact" | "approximate" | null;
 
 /** External identifiers keyed by source system. None are published for this
  *  sector today, so the field is absent from every record. */
@@ -49,10 +50,11 @@ export interface Institution {
   lat: number | null;
   /** Always null — see `lat`. */
   lng: number | null;
-  /** Always "approximate": the record carries no point, only a head-office wilaya. */
-  geo_precision: GeoPrecision;
-  /** Always "ungeocoded". */
-  geo_method: string;
+  /** Always null: the record carries no point, only a head-office wilaya, so it
+   *  asserts no coordinate precision. */
+  geo_precision: null;
+  /** Always null — no geocoding method produced a point. */
+  geo_method: null;
   /** Provenance key into `metadata.sources[]` — always "boa" (Banque d'Algérie). */
   source: "boa";
   /** External identifiers. Absent for this dataset. */
@@ -82,11 +84,11 @@ export interface Branch {
   /** Null when the source gave no usable (in-Algeria) coordinates. */
   lat: number | null;
   lng: number | null;
-  /** "exact" when the locator published a point, "approximate" when it did not
-   *  (those records carry null coordinates). */
+  /** "exact" when the locator published a point, `null` when it did not (those
+   *  records carry null coordinates and therefore assert no precision). */
   geo_precision: GeoPrecision;
-  /** Always "bank_locator". */
-  geo_method: string;
+  /** "bank_locator" on a geocoded branch, null on an address-only one. */
+  geo_method: "bank_locator" | null;
   /** Provenance key into `metadata.sources[]` — always "bank_locator". */
   source: "bank_locator";
   /** External identifiers. Absent for this dataset. */

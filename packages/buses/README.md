@@ -61,7 +61,8 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
   "wilaya_code": "16",
   "lat": null,
   "lng": null,
-  "geo_precision": "approximate",
+  "geo_precision": null,
+  "geo_method": null,
   "source": "wikipedia",
   "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
 }

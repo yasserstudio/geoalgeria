@@ -27,12 +27,16 @@ const padC = (c) => (c == null || c === "" ? null : String(c).replace(/\D/g, "")
 const clean = (o) => { const x = {}; for (const k in o) if (o[k] !== undefined) x[k] = o[k]; return x; };
 /** build a refs object of non-empty string ids, or undefined if none. */
 const refs = (o) => { const r = {}; for (const k in o) if (o[k] != null && o[k] !== "") r[k] = String(o[k]); return Object.keys(r).length ? r : undefined; };
-/** atomic lat/lng: both finite → exact point; otherwise ungeocoded (both null, approximate).
+/** atomic lat/lng: both finite → exact point; otherwise ungeocoded — both null, and a
+ *  null geo_precision/geo_method, because no point exists to have a precision and no
+ *  method produced one (the contract enforces precision-null iff coords-null).
  *  Guards against half-coordinate source records (one axis set, the other null). */
 const geoExact = (r, method) => {
   const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
-  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? "exact" : "approximate", geo_method: method };
+  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? "exact" : null, geo_method: has ? method : null };
 };
+/** the ungeocoded geo quartet, for datasets that carry no coordinates at all. */
+const geoNone = { lat: null, lng: null, geo_precision: null, geo_method: null };
 /** Records that already carry the canonical v2 geo fields this migration adds.
  *  `geo_method` is the decisive signal: it is a v2-only field, whereas a few v1
  *  datasets (ferroviaire, ooredoo) already used the value "exact" for geo_precision
@@ -200,8 +204,10 @@ const MIGRATIONS = {
         id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
         wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
         lat: has ? r.lat : null, lng: has ? r.lng : null,
-        geo_precision: gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate",
-        geo_method: gp,
+        // ungeocoded rows carry no precision and no method — the v1 "none" method
+        // named a geocoding attempt that produced nothing.
+        geo_precision: has ? (gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate") : null,
+        geo_method: has ? gp : null,
         source: "msp",
         refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id }),
         type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
@@ -410,9 +416,7 @@ const MIGRATIONS = {
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_fr: r.name_fr,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
-      lat: Number.isFinite(r.lat) ? r.lat : null, lng: Number.isFinite(r.lng) ? r.lng : null,
-      geo_precision: Number.isFinite(r.lat) ? "exact" : "approximate",
-      geo_method: "takwin",
+      ...geoExact(r, "takwin"),
       source: "mfep",
       type: r.type, type_label: r.type_label, abreviation: r.abreviation, code: r.code, secteur: r.secteur,
       adresse: r.adresse, adresse_fr: r.adresse_fr, telephone: r.telephone, fax: r.fax, email: r.email,
@@ -497,8 +501,7 @@ const MIGRATIONS = {
       { file: "pdv.json", geojson: false, map: (r) => clean({
         id: r.id, name: r.name,
         wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
-        lat: null, lng: null,
-        geo_precision: "approximate", geo_method: "ungeocoded",
+        ...geoNone,
         source: "mobilis",
         type: r.type, code: r.code, address: r.address,
       }) },
@@ -539,7 +542,7 @@ const MIGRATIONS = {
       { file: "banks.json", geojson: false, map: (r) => clean({
         id: r.id, name: r.name_fr, name_fr: r.name_fr, name_ar: r.name_ar,
         wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
-        lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
+        ...geoNone,
         source: "boa",
         acronym: r.acronym, bank_code: r.bank_code, type: r.type, ownership: r.ownership,
         ownership_country: r.ownership_country, parent_company: r.parent_company,
@@ -549,7 +552,7 @@ const MIGRATIONS = {
       { file: "institutions.json", geojson: false, map: (r) => clean({
         id: r.id, name: r.name_fr, name_fr: r.name_fr, name_ar: r.name_ar,
         wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
-        lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
+        ...geoNone,
         source: "boa",
         acronym: r.acronym, bank_code: r.bank_code, type: r.type, ownership: r.ownership,
         ownership_country: r.ownership_country, parent_company: r.parent_company,
@@ -596,7 +599,7 @@ const MIGRATIONS = {
       // so the contract's "at least one name" rule is satisfied honestly.
       name: `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`,
       wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
-      lat: null, lng: null, geo_precision: "approximate", geo_method: "ungeocoded",
+      ...geoNone,
       source: "wikipedia",
       operator: r.operator, network: r.network, line: r.line,
       terminus1: r.terminus1, terminus2: r.terminus2, stops: r.stops,

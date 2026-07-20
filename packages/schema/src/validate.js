@@ -7,6 +7,8 @@ import { pointInWilaya } from "./geo.js";
 
 const WSET = new Set(WILAYA_CODES); // "01".."69" zero-padded — single source of truth
 const isNonEmptyStr = (v) => typeof v === "string" && v.trim() !== "";
+// GEO_PRECISION carries a null member; render it readably in error messages.
+const PRECISION_VOCAB = GEO_PRECISION.map((v) => (v === null ? "null" : v)).join("|");
 
 /**
  * Validate an array of GeoRecords against the v2 contract.
@@ -54,28 +56,43 @@ export function validateRecords(records, opts = {}) {
     // coordinates — both null (ungeocoded) or both finite numbers
     const latNull = r.lat == null,
       lngNull = r.lng == null;
+    // true/false once the coordinate pair is well-formed; stays null while it is
+    // malformed (already reported) so the geo_precision rule below doesn't pile on.
+    let geocoded = null;
     if (latNull !== lngNull) {
       err(i, "lat and lng must both be set or both null");
     } else if (!latNull) {
       if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) {
         err(i, `lat/lng must be finite numbers (got ${JSON.stringify(r.lat)}, ${JSON.stringify(r.lng)})`);
-      } else if (
-        r.lat < DZ_BBOX.minLat ||
-        r.lat > DZ_BBOX.maxLat ||
-        r.lng < DZ_BBOX.minLng ||
-        r.lng > DZ_BBOX.maxLng
-      ) {
-        err(i, `coordinate (lng=${r.lng}, lat=${r.lat}) is outside Algeria — likely a lat/lng swap or sign error`);
-      } else if (opts.boundaries && wcodeOk && !pointInWilaya(r.lng, r.lat, r.wilaya_code, opts.boundaries)) {
-        // Advisory: boundaries are simplified (~150 m), so border-adjacent points
-        // can fall on the wrong side. The bbox guard above stays a hard error.
-        warn(i, `coordinate falls outside the wilaya ${r.wilaya_code} boundary (simplified)`);
+      } else {
+        geocoded = true;
+        if (
+          r.lat < DZ_BBOX.minLat ||
+          r.lat > DZ_BBOX.maxLat ||
+          r.lng < DZ_BBOX.minLng ||
+          r.lng > DZ_BBOX.maxLng
+        ) {
+          err(i, `coordinate (lng=${r.lng}, lat=${r.lat}) is outside Algeria — likely a lat/lng swap or sign error`);
+        } else if (opts.boundaries && wcodeOk && !pointInWilaya(r.lng, r.lat, r.wilaya_code, opts.boundaries)) {
+          // Advisory: boundaries are simplified (~150 m), so border-adjacent points
+          // can fall on the wrong side. The bbox guard above stays a hard error.
+          warn(i, `coordinate falls outside the wilaya ${r.wilaya_code} boundary (simplified)`);
+        }
       }
+    } else {
+      geocoded = false;
     }
 
-    // geo_precision — from the fixed vocabulary
+    // geo_precision — from the fixed vocabulary, and null if and only if the record
+    // carries no coordinate. Both directions are errors: "approximate" on a record
+    // with no point claims a precision for a point that does not exist, and a null
+    // precision on a geocoded record drops the point's provenance.
     if (!GEO_PRECISION.includes(r.geo_precision))
-      err(i, `geo_precision must be one of ${GEO_PRECISION.join("|")} (got ${JSON.stringify(r.geo_precision)})`);
+      err(i, `geo_precision must be one of ${PRECISION_VOCAB} (got ${JSON.stringify(r.geo_precision)})`);
+    else if (geocoded === true && r.geo_precision === null)
+      err(i, "geo_precision must not be null on a geocoded record");
+    else if (geocoded === false && r.geo_precision !== null)
+      err(i, `geo_precision must be null when lat/lng are null (got ${JSON.stringify(r.geo_precision)})`);
 
     // lifecycle — optional, but from the fixed vocabulary when present
     if (r.lifecycle != null && !LIFECYCLE.includes(r.lifecycle))
