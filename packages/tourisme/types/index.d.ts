@@ -48,7 +48,7 @@ export type ParkCategory = "national_park" | "nature_reserve" | "protected_area"
 export type Layer = "lodging" | "attraction" | "historic" | "thermal_spring" | "park";
 
 interface Base {
-  id: number;
+  id: string;
   name: string;
   name_ar?: string;
   name_fr?: string;

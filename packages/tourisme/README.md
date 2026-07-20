@@ -103,7 +103,7 @@ data/
   "lng": -0.2620846,
   "source": "OpenStreetMap",
   "osm_id": 8107956617,
-  "id": 1
+  "id": "lodging-1"
 }
 ```
 
@@ -114,7 +114,7 @@ Optional fields: `stars`, `rooms`, `phone`, `website`, `address`, `name_fr`.
 
 ```json
 {
-  "id": 1,
+  "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
   "type": "forage",
   "temperature_c": 32,

@@ -97,7 +97,7 @@ data/
 
 ```json
 {
-  "id": "01-001",
+  "id": "ag-01-001",
   "code": "12237",
   "type": "agence",
   "name": "Agence Commerciale Adrar",
@@ -114,7 +114,7 @@ data/
 
 ```json
 {
-  "id": "01-001",
+  "id": "pdv-01-001",
   "code": "2955",
   "type": "pdv",
   "name": "PDV LIBRAIRIE GAFA ABDERRAHMANE",
@@ -126,10 +126,11 @@ data/
 }
 ```
 
-`id` est une clé stable `{wilaya_code}-{seq}` générée par GeoAlgeria (seq
-ordonnée par l'identifiant source). L'identifiant propre à Mobilis est conservé
-dans `code`. `wilaya_code` permet la jointure avec le `wilaya_code` de
-GeoAlgeria.
+`id` est une clé stable `{prefix}-{wilaya_code}-{seq}` générée par GeoAlgeria
+(`ag-` pour les agences, `pdv-` pour les points de vente ; seq ordonnée par
+l'identifiant source), afin qu'elle reste unique dans la collection fusionnée
+`all()`. L'identifiant propre à Mobilis est conservé dans `code`. `wilaya_code`
+permet la jointure avec le `wilaya_code` de GeoAlgeria.
 
 ## Besoin des divisions administratives ?
 

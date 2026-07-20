@@ -330,6 +330,65 @@ const PACKAGES = {
   ],
 };
 
+// Cross-file id uniqueness. `id` is unique within its file (v2 decision 10), which is
+// only enough where a consumer reads one file at a time. A package whose index.js
+// merges several data files into ONE collection publishes a joint namespace: a
+// duplicate id across those files silently collapses records in any id-keyed lookup
+// built from the merged array. Enforce joint uniqueness across exactly those sets.
+//
+// Derived from each package's export surface, not from "is it multi-file":
+//   banques.all()      = banks + institutions        (branches is a separate collection)
+//   emploi.agencies()  = awem + alem
+//   mobilis.all()      = agences + pdv
+//   tourisme.all()     = the five layer files (tagged with `layer`, ids untouched)
+// Excluded on purpose: poste (postOffices/atms never merge), livraison (carriers/
+// stopdesks/coverage are different entity kinds), telecom (the per-operator files are a
+// partition of sites.json — identical ids are the design, and validateTelecom asserts it).
+const MERGED_ID_NAMESPACES = {
+  banques: ["banks.json", "institutions.json"],
+  emploi: ["awem.json", "alem.json"],
+  mobilis: ["agences.json", "pdv.json"],
+  tourisme: ["lodging.json", "attractions.json", "historic.json", "thermal-springs.json", "parks.json"],
+};
+
+function validateMergedIds(pkgs) {
+  for (const pkg of pkgs) {
+    const files = MERGED_ID_NAMESPACES[pkg];
+    if (!files) continue;
+    const owner = new Map(); // id -> file that claimed it first
+    const collisions = new Map(); // "a.json x b.json" -> count
+    let total = 0;
+    for (const file of files) {
+      let arr;
+      try {
+        arr = readJson(join(ROOT, "packages", pkg, "data", file));
+      } catch (e) {
+        fail(`${pkg}/${file}: cannot read for the merged-id check — ${e.message}`);
+        continue;
+      }
+      total += arr.length;
+      for (const r of arr) {
+        const id = String(r.id);
+        const first = owner.get(id);
+        if (first === undefined) owner.set(id, file);
+        else {
+          const k = `${first} x ${file}`;
+          collisions.set(k, (collisions.get(k) || 0) + 1);
+        }
+      }
+    }
+    const dups = total - owner.size;
+    if (dups > 0) {
+      fail(
+        `${pkg}: ${dups} id(s) collide across the files merged by index.js (${files.join(" + ")}) — ` +
+          [...collisions].map(([k, n]) => `${k}: ${n}`).join(", "),
+      );
+    } else {
+      console.log(`  OK: ${pkg} — ${owner.size} ids unique across ${files.length} merged files`);
+    }
+  }
+}
+
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted
 // fields: newlines inside double-quoted values do not start a new record, and
 // blank lines (including trailing ones) are ignored. A naive split("\n") would
@@ -796,6 +855,9 @@ for (const pkg of targets) {
   console.log(`\n[@geoalgeria/${pkg}]`);
   for (const spec of PACKAGES[pkg]) validateDataset(pkg, spec);
 }
+console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
+validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
+
 console.log(`\n[package files[] ↔ derived data]`);
 validatePackageFiles(
   only ? [only] : readdirSync(join(ROOT, "packages")).sort(),
