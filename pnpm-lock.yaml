@@ -60,7 +60,7 @@ importers:
         version: link:../pharmacies
 
   packages/pharmacies:
-    dependencies:
+    devDependencies:
       '@geoalgeria/schema':
         specifier: workspace:^
         version: link:../schema

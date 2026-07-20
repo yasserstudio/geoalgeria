@@ -648,10 +648,15 @@ function validatePackageFiles(pkgs) {
 //   - every non-optional key is on EVERY record    (required but sometimes missing)
 //   - every key that is ever null admits null      (`lat: number` over null coords)
 //   - a string-literal union covers every value    (`type: "a"|"b"` over a "c")
-// Keys inherited through `extends` from a shared base are exempt from the second
-// rule: a shared contract describes the family, not one dataset. Local `type`
-// aliases are expanded before the null test, so `geo_precision: GeoPrecision`
-// counts as nullable exactly when that alias includes null.
+// The second rule applies to inherited keys too. It used to exempt them, because
+// @geoalgeria/pharmacies extended the shared GeoRecord, which describes the family
+// and so declares fields any one dataset may not carry. No published declaration
+// imports the schema package any more — it is unpublished, so a .d.ts that did
+// would not resolve for consumers — and every remaining `extends` names a base
+// local to its own package, which has no licence to declare a field its data
+// lacks. Local `type` aliases are expanded before the null test, so
+// `geo_precision: GeoPrecision` counts as nullable exactly when that alias
+// includes null.
 //
 // Excluded: telecom (the last v1 holdout — no schema_version, its own nested
 // coverage/<tech>/ shape and validateTelecom above), and the core `geoalgeria`
@@ -800,7 +805,7 @@ function validateTypes(pkgs) {
       }
       const { ever, always, nullable } = keySets(rows);
       const undeclared = [...ever].filter((k) => !props.has(k));
-      const absent = [...props].filter(([k, v]) => !v.inherited && !ever.has(k)).map(([k]) => k);
+      const absent = [...props].filter(([k]) => !ever.has(k)).map(([k]) => k);
       const notAlways = [...props].filter(([k, v]) => !v.optional && ever.has(k) && !always.has(k)).map(([k]) => k);
       const notNullable = [];
       const badEnum = [];
