@@ -36,6 +36,12 @@
     },
     {
       "@type": "DataDownload",
+      "name": "Wilaya boundary polygons (GeoJSON, ODbL — OpenStreetMap)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/wilaya-boundaries.geojson"
+    },
+    {
+      "@type": "DataDownload",
       "name": "E-commerce ready (JSON)",
       "encodingFormat": "application/json",
       "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/ecommerce/communes.json"

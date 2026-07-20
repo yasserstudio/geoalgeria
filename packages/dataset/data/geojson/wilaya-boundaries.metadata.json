@@ -1,0 +1,36 @@
+{
+  "file": "wilaya-boundaries.geojson",
+  "title_en": "Algeria — wilaya boundary polygons (69)",
+  "title_fr": "Algérie — polygones des limites de wilaya (69)",
+  "title_ar": "الجزائر — حدود الولايات (69)",
+  "feature_count": 69,
+  "geometry_types": { "Polygon": 68, "MultiPolygon": 1 },
+  "properties": { "code": "wilaya code as an integer 1–69 (join key to wilayas.json)" },
+  "bbox": [-8.669, 18.968, 11.997, 37.09],
+  "license": "ODbL-1.0",
+  "sources": [
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — administrative boundaries (relation, boundary=administrative, admin_level=4) in Algeria",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-06-21",
+      "evidence_type": "crowdsourced"
+    }
+  ],
+  "simplification": {
+    "method": "mapshaper -simplify dp 2% keep-shapes",
+    "coordinate_precision_dp": 3,
+    "vertices": 7751,
+    "rings": 70,
+    "vertex_spacing_m": { "p25": 2125, "median": 3356, "p75": 5773, "p90": 11792, "max": 158314 }
+  },
+  "provenance_notes": [
+    "Imported verbatim from the GeoAlgeria app repo, commit 300cb85 (main), blob 92642be34c678e243e664a55ca7a373dd1f08e94 — byte-identical, geometry untouched.",
+    "The OSM extraction itself landed in the app repo on 2026-06-21 in commit f107d6a ('fix: replace GADM wilaya boundaries with OSM data (69 wilayas)'), which records the source (OSM admin_level=4 relations), the licence (ODbL) and the simplification (mapshaper dp 2%, keep-shapes). The bytes have not changed since.",
+    "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
+    "The commonly quoted '~150 m' figure describes the COORDINATE QUANTISATION (3 decimal places ≈ 111 m in latitude, ≈ 96 m in longitude at 30°N), not the simplification error. Douglas-Peucker at 2% left a median vertex spacing of 3.4 km, so the polygon can depart from the true border by far more than 150 m along any simplified stretch. Treat these as display-grade boundaries (good to about z11), not as a survey-grade border test.",
+    "Superseded predecessor: the same file was built from GADM 4.1 before f107d6a; app-repo scripts/prepare-boundaries.mjs still builds that version and must never be re-run. An unverified OSM re-extraction is parked on the app-repo branch chore/osm-boundaries and was deliberately NOT used here.",
+    "Data licence is ODbL-1.0 even though the geoalgeria npm package is MIT — the same split the repo already uses for its other OSM-derived packages (ecoles, mosquees, pharmacies, tourisme)."
+  ]
+}

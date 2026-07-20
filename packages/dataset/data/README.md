@@ -8,6 +8,7 @@
 | Address dropdown for my app | `ecommerce/communes.json` |
 | Seed my database | `sql/full.sql` or `ecommerce/communes.sql` |
 | Plot on a map | `geojson/communes.geojson` |
+| Draw wilaya outlines / choropleth | `geojson/wilaya-boundaries.geojson` |
 | Import into Excel/Sheets | `csv/communes.csv` |
 
 ## Files
@@ -25,7 +26,9 @@ data/
 │   └── communes.csv
 ├── geojson/
 │   ├── wilayas.geojson          ← point features
-│   └── communes.geojson         ← point features
+│   ├── communes.geojson         ← point features
+│   ├── wilaya-boundaries.geojson          ← 69 wilaya polygons (OSM, ODbL)
+│   └── wilaya-boundaries.metadata.json    ← its provenance + simplification
 ├── sql/
 │   └── full.sql                 ← normalized (wilayas + communes tables with FK)
 ├── ecommerce/
@@ -162,6 +165,17 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
 
+## Wilaya boundaries
+
+`geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
+`properties.code` joining to `wilayas.json`. Derived from OpenStreetMap `admin_level=4`
+relations (**ODbL 1.0, © OpenStreetMap contributors** — the rest of this package is MIT) and
+simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 decimals.
+
+Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the
+outline can depart from the true border by much more than the ~150 m the coordinate rounding
+implies. Full provenance in `geojson/wilaya-boundaries.metadata.json`.
+
 ## Sources
 
 - Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69
@@ -170,3 +184,4 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 - APS (Algérie Presse Service)
 - Echorouk Online, Awras, Djelfa Info, Aures News, El Moudjahid, France 24 Arabic
 - Algérie Poste for postal codes
+- OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
