@@ -208,12 +208,36 @@ test("malformed geometry never throws (validator fails gracefully)", () => {
     assert.doesNotThrow(() => pointInGeometry(3, 36, g));
     assert.equal(pointInGeometry(3, 36, g), false);
   }
-  // a malformed boundary is skipped by loadBoundaries → its wilaya isn't checked
-  const boundaries = loadBoundaries({
-    features: [{ properties: { code: 16 }, geometry: { type: "Polygon", coordinates: null } }],
-  });
-  assert.equal(boundaries.size, 0);
-  assert.equal(pointInWilaya(3, 36, "16", boundaries), true);
+  // pointInGeometry stays graceful, but loadBoundaries must NOT: an index built
+  // from malformed features would check nothing and report clean. See below.
+});
+
+test("loadBoundaries throws instead of handing back an index that checks nothing", () => {
+  // empty collection
+  assert.throws(() => loadBoundaries({ features: [] }), /indexed 0 wilayas/);
+  assert.throws(() => loadBoundaries({}), /indexed 0 wilayas/);
+
+  // the exact false-green this guard exists for: dataset/geojson/wilayas.geojson is
+  // 69 *Point* features, so every one is unusable and the old code returned an empty
+  // Map that passed every record in the repo.
+  assert.throws(
+    () => loadBoundaries({ features: [{ properties: { code: 16 }, geometry: { type: "Point", coordinates: [3, 36] } }] }),
+    /indexed 0 wilayas/,
+  );
+
+  // one bad feature among good ones — its wilaya would go unchecked, silently
+  const ok = { properties: { code: 16 }, geometry: { type: "Polygon", coordinates: [[[2, 35], [4, 35], [4, 37], [2, 37], [2, 35]]] } };
+  assert.throws(
+    () => loadBoundaries({ features: [ok, { properties: { code: 31 }, geometry: { type: "Polygon", coordinates: null } }] }),
+    /1 of 2 feature\(s\) are unusable/,
+  );
+  assert.throws(() => loadBoundaries({ features: [ok, { properties: {}, geometry: ok.geometry }] }), /no wilaya code/);
+
+  // duplicate code — the second polygon would silently replace the first
+  assert.throws(() => loadBoundaries({ features: [ok, ok] }), /duplicate wilaya code\(s\) 16/);
+
+  // and a well-formed collection still works
+  assert.equal(loadBoundaries({ features: [ok] }).size, 1);
 });
 
 test("validator fails safe on hostile input (returns errors, never throws)", () => {

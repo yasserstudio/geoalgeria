@@ -194,6 +194,12 @@ export function pointInWilaya(
   wilayaCode: string,
   boundaries: BoundaryIndex,
 ): boolean;
+/**
+ * Build a `wilaya_code → geometry` index from a boundary FeatureCollection.
+ * Throws on an empty index, on any unusable feature, and on duplicate codes —
+ * `pointInWilaya` treats an un-indexed code as "inside", so a degraded index
+ * would silently pass every record instead of checking it.
+ */
 export function loadBoundaries(
   featureCollection: { features?: { properties?: Record<string, unknown>; geometry: unknown }[] },
   codeProp?: string,

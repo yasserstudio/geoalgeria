@@ -46,20 +46,55 @@ export function pointInGeometry(lng, lat, geometry) {
 }
 
 /** Build a `wilaya_code → geometry` index from a boundary FeatureCollection.
- *  `codeProp` names the wilaya-code property; when omitted the common ones are tried. */
+ *  `codeProp` names the wilaya-code property; when omitted the common ones are tried.
+ *
+ *  THROWS rather than returning a partial or empty index. pointInWilaya answers
+ *  `true` for any code it has no polygon for — "can't disprove, don't flag" — so a
+ *  degraded index does not weaken the check, it silently switches it off. That is
+ *  how this check stayed dead: point this at the 69 *Point* features of
+ *  dataset/geojson/wilayas.geojson and every feature is skipped, the index comes
+ *  back empty, and the caller reports a clean run over data nothing looked at. A
+ *  loud failure at load time is the only outcome that cannot be mistaken for a pass.
+ *
+ *  @throws {Error} if the index would be empty, if any feature is unusable
+ *          (no code, or geometry that is not a Polygon/MultiPolygon), or if two
+ *          features claim the same wilaya code (the second would replace the first).
+ */
 export function loadBoundaries(fc, codeProp) {
   const idx = new Map();
-  for (const f of fc.features || []) {
-    const p = f.properties || {};
+  const unusable = [];
+  const duplicates = [];
+  const features = (fc && fc.features) || [];
+  features.forEach((f, i) => {
+    const p = (f && f.properties) || {};
     const raw =
       codeProp != null ? p[codeProp] : p.wilaya_code ?? p.code ?? p.WILAYA ?? p.id;
-    if (raw == null) continue;
-    const geom = f.geometry;
-    // Skip malformed geometries so their wilaya simply isn't checked (pointInWilaya
-    // returns true for un-indexed codes) rather than false-flagging every point in it.
-    if (!geom || !Array.isArray(geom.coordinates) || !/Polygon$/.test(geom.type || "")) continue;
-    idx.set(String(raw).padStart(2, "0"), geom);
-  }
+    if (raw == null) return unusable.push(`#${i}: no wilaya code`);
+    const geom = f && f.geometry;
+    if (!geom || !Array.isArray(geom.coordinates) || !/Polygon$/.test(geom.type || ""))
+      return unusable.push(`#${i} (code ${raw}): geometry is ${geom ? geom.type : "missing"}, not a Polygon/MultiPolygon`);
+    const code = String(raw).padStart(2, "0");
+    if (idx.has(code)) return duplicates.push(code);
+    idx.set(code, geom);
+  });
+
+  const detail = (list) => list.slice(0, 5).join("; ") + (list.length > 5 ? ` (+${list.length - 5} more)` : "");
+  if (idx.size === 0)
+    throw new Error(
+      `loadBoundaries: indexed 0 wilayas from ${features.length} feature(s) — ` +
+        `every point would then be reported as inside its wilaya. ` +
+        (unusable.length ? detail(unusable) : "the FeatureCollection has no features"),
+    );
+  if (unusable.length)
+    throw new Error(
+      `loadBoundaries: ${unusable.length} of ${features.length} feature(s) are unusable, so their ` +
+        `wilayas would go unchecked while the run still reported clean — ${detail(unusable)}`,
+    );
+  if (duplicates.length)
+    throw new Error(
+      `loadBoundaries: duplicate wilaya code(s) ${[...new Set(duplicates)].join(", ")} — ` +
+        `the later polygon silently replaces the earlier one`,
+    );
   return idx;
 }
 
