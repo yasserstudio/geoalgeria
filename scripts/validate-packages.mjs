@@ -38,6 +38,7 @@ import {
   pointInWilaya,
   pointInGeometry,
   wilayaNeighbours,
+  buildMetadata,
   WILAYA_CODES,
 } from "../packages/schema/index.js";
 
@@ -749,6 +750,68 @@ function validateDataset(pkg, spec) {
   console.log(
     `  OK: ${label} — ${arr.length} records${spec.geojson ? `, ${withCoord} geocoded` : " (ungeocoded)"}`,
   );
+  return arr;
+}
+
+// ---------------------------------------------------------------------------
+// metadata.json's derived numbers, recomputed from the records that produced them.
+//
+// validateDataset compared `record_count` and the GeoJSON feature count, and
+// nothing else. `geocoded_count`, `precision`, `wilayas_covered` and `bbox` were
+// four published numbers no gate ever looked at — and build-catalog.mjs copies all
+// four into index.json and into every dataset-metadata.json, where bbox becomes
+// the schema.org spatialCoverage box that Google Dataset Search reads.
+//
+// Demonstrated before this check existed: setting packages/aviation/data/metadata.json
+// to precision {exact:1, approximate:32} (real 33/0), geocoded_count 7 (real 33),
+// wilayas_covered 3 (real 31) and bbox [0,0,1,1] left `validate-packages.mjs aviation`
+// PASSING. The only gate that noticed was the catalog drift check — whose printed
+// remedy is to regenerate the catalog *from* the corrupt metadata, i.e. to publish
+// bbox [0,0,1,1] to Google.
+//
+// Recomputed with @geoalgeria/schema's buildMetadata — the same function the
+// generators use to write these blocks — so the check cannot drift from the writer.
+// Multi-file packages are compared once, over the union of their entities.
+function validateDerivedMetadata(pkg, records) {
+  const metaPath = join(ROOT, "packages", pkg, "data", "metadata.json");
+  if (!existsSync(metaPath) || !records.length) return;
+  let meta;
+  try {
+    meta = readJson(metaPath);
+  } catch {
+    return; // already reported by validateDataset
+  }
+  if (meta.schema_version !== "2.0.0") return; // v1 metadata has no derived block
+
+  // entities[] is the per-file breakdown record_count claims to total.
+  if (Array.isArray(meta.entities)) {
+    const sum = meta.entities.reduce((n, e) => n + (e.count || 0), 0);
+    if (sum !== meta.record_count)
+      fail(
+        `${pkg}/metadata.json: entities[] sum ${sum} ≠ record_count ${meta.record_count} — ` +
+          `the catalog publishes record_count`,
+      );
+  }
+
+  const want = buildMetadata({
+    package: meta.package,
+    records,
+    sources: meta.sources || [],
+    license: meta.license,
+    updated: meta.updated,
+    estimatedUniverse: meta.estimated_universe ?? null,
+  });
+
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  for (const key of ["record_count", "geocoded_count", "geocoded_pct", "precision", "wilayas_covered", "bbox"]) {
+    if (meta[key] === undefined) continue; // not declared → nothing published to disagree with
+    if (same(meta[key], want[key])) continue;
+    fail(
+      `${pkg}/metadata.json: ${key} is ${JSON.stringify(meta[key])} but the ${records.length} ` +
+        `shipped record(s) give ${JSON.stringify(want[key])} — regenerate the metadata, ` +
+        `do not edit the number (build-catalog.mjs republishes it verbatim)`,
+    );
+  }
 }
 
 // dataset/data/poste is a mirror of @geoalgeria/poste — guard against drift.
@@ -1316,6 +1379,10 @@ function validateLivraison() {
   if (!existsSync(covCsv)) fail("livraison: missing csv/coverage.csv");
   else if (csvRowCount(covCsv) !== cov.length) fail(`livraison: coverage CSV rows ≠ JSON ${cov.length}`);
 
+  // livraison's metadata describes the stop-desks; carriers.json and coverage.json
+  // are reconciled above and are not GeoRecords.
+  validateDerivedMetadata("livraison", desks);
+
   console.log(
     `  OK: ${carriers.length} carriers, ${desks.length} stop-desks (${withCoord} geocoded, ${meta.wilayas_covered} wilayas), ${cov.length} coverage rows`,
   );
@@ -1343,7 +1410,12 @@ for (const pkg of targets) {
     continue;
   }
   console.log(`\n[@geoalgeria/${pkg}]`);
-  for (const spec of PACKAGES[pkg]) validateDataset(pkg, spec);
+  const shipped = [];
+  for (const spec of PACKAGES[pkg]) {
+    const arr = validateDataset(pkg, spec);
+    if (arr) shipped.push(...arr);
+  }
+  validateDerivedMetadata(pkg, shipped);
 }
 console.log(`\n[geo: every point inside its declared wilaya]`);
 reportBoundaries();
