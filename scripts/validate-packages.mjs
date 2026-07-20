@@ -322,9 +322,10 @@ const PACKAGES = {
       metaKey: "lines",
       csv: "csv/lines.csv",
       // Line-level only (no per-stop geometry yet) — every record is ungeocoded,
-      // so the GeoJSON mirror is a valid, honestly-empty FeatureCollection.
-      geojson: "geojson/lines.geojson",
-      required: ["id", "operator", "wilaya_code"],
+      // so there is nothing to mirror. A 0-feature FeatureCollection is
+      // indistinguishable from a failed download in QGIS/Mapbox, so ship none.
+      geojson: null,
+      required: ["id", "name", "operator", "wilaya_code"],
     },
   ],
 };

@@ -9,6 +9,9 @@ export type GeoPrecision = "exact" | "approximate";
 export interface BusLine {
   /** Stable id, `{operator}-{line}` (e.g. "etusa-1"). */
   id: string;
+  /** Display name derived from the line's own fields:
+   *  `Ligne {line} — {terminus1} ↔ {terminus2}`. */
+  name: string;
   /** Operating company (e.g. "ETUSA"). */
   operator: string;
   /** Network / city (e.g. "Alger"). */

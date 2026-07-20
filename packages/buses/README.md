@@ -49,6 +49,7 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
 ```json
 {
   "id": "etusa-1",
+  "name": "Ligne 1 — El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
   "operator": "ETUSA",
   "network": "Alger",
   "line": "1",
@@ -58,7 +59,11 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
   "communes_served": ["El Harrach", "Bachdjerrah", "Hussein Dey", "..."],
   "stations_served": ["El Harrach Centre", "Haï El Badr", "Les Fusillés", "..."],
   "wilaya_code": "16",
-  "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  "lat": null,
+  "lng": null,
+  "geo_precision": "approximate",
+  "source": "wikipedia",
+  "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
 }
 ```
 
