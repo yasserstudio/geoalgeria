@@ -631,6 +631,232 @@ function validatePackageFiles(pkgs) {
   }
 }
 
+// types/index.d.ts ↔ shipped JSON.
+//
+// Every data package publishes `types/` in files[], so its .d.ts IS the public
+// API for TypeScript consumers — and nothing ever checked it against the data.
+// The v2 migration renamed and added fields in 22 packages and updated five
+// declarations, so the rest kept describing v1: `metadata().airports` typed
+// `number` and `undefined` at runtime, `id: number` against `"00001"` strings,
+// `wilaya_name`/`type_code`/`osm_id` fields that no record carries, and no
+// `geo_method` anywhere. All of it type-checks; all of it is wrong.
+//
+// A .d.ts is not executable, so this checks the two things that can be checked
+// mechanically — which names are declared, and whether a declaration admits null:
+//   - every key in the JSON is declared            (undeclared field)
+//   - every key the .d.ts declares itself occurs   (declared-but-absent)
+//   - every non-optional key is on EVERY record    (required but sometimes missing)
+//   - every key that is ever null admits null      (`lat: number` over null coords)
+//   - a string-literal union covers every value    (`type: "a"|"b"` over a "c")
+// Keys inherited through `extends` from a shared base are exempt from the second
+// rule: a shared contract describes the family, not one dataset. Local `type`
+// aliases are expanded before the null test, so `geo_precision: GeoPrecision`
+// counts as nullable exactly when that alias includes null.
+//
+// Excluded: telecom (the last v1 holdout — no schema_version, its own nested
+// coverage/<tech>/ shape and validateTelecom above), and the core `geoalgeria`
+// dataset (administrative divisions, not GeoRecords; validate.py owns it).
+const TYPED = {
+  agriculture: { "agriculture.json": "AgricultureInstitution" },
+  aviation: { "airports.json": "Airport" },
+  banques: { "banks.json": "Institution", "institutions.json": "Institution", "branches.json": "Branch" },
+  buses: { "lines.json": "BusLine" },
+  culture: { "culture.json": "CulturalSite" },
+  djezzy: { "boutiques.json": "Boutique" },
+  ecoles: { "ecoles.json": "Ecole" },
+  emploi: { "awem.json": "Awem", "alem.json": "Alem" },
+  "enseignement-superieur": { "institutions.json": "Institution" },
+  ferroviaire: { "stations.json": "Station" },
+  "formation-professionnelle": { "establishments.json": "Establishment" },
+  "gares-routieres": { "stations.json": "Station" },
+  "industrie-pharmaceutique": { "industrie-pharmaceutique.json": "PharmaManufacturer" },
+  jeunesse: { "institutions.json": "Institution" },
+  livraison: { "carriers.json": "Carrier", "stopdesks.json": "StopDesk", "coverage.json": "CarrierCoverage" },
+  mobilis: { "agences.json": "Agence", "pdv.json": "Pdv" },
+  mosquees: { "mosquees.json": "Mosquee" },
+  ooredoo: { "stores.json": "OoredooStore" },
+  pharmacies: { "pharmacies.json": "Pharmacy" },
+  poste: { "postoffices.json": "PostOffice", "atms.json": "Atm" },
+  sante: { "sante.json": "HealthEstablishment" },
+  sports: { "facilities.json": "Facility" },
+  tourisme: {
+    "lodging.json": "Lodging",
+    "attractions.json": "Attraction",
+    "historic.json": "Historic",
+    "thermal-springs.json": "ThermalSpring",
+    "parks.json": "Park",
+  },
+};
+const TYPES_EXEMPT = new Set(["telecom", "dataset"]);
+
+/** name → { ext: string[], props: Map<name, {optional}> } for every interface in a .d.ts. */
+function parseInterfaces(src) {
+  const out = new Map();
+  const re = /\binterface\s+([A-Za-z0-9_]+)\s*(?:extends\s+([^{]+?))?\s*\{/g;
+  let m;
+  while ((m = re.exec(src))) {
+    const name = m[1];
+    const ext = (m[2] || "").split(",").map((s) => s.trim()).filter(Boolean);
+    let depth = 1;
+    let i = re.lastIndex;
+    for (; i < src.length && depth > 0; i++) depth += src[i] === "{" ? 1 : src[i] === "}" ? -1 : 0;
+    const body = src.slice(re.lastIndex, i - 1);
+    // Members at brace depth 0 only, so an inline nested object (refs: { osm: string })
+    // contributes `refs` and not `osm`.
+    const props = new Map();
+    let d = 0;
+    for (const line of body.split("\n")) {
+      const pm = d === 0 && line.match(/^\s*(?:readonly\s+)?["']?([A-Za-z_][A-Za-z0-9_]*)["']?(\?)?\s*:(.*)$/);
+      if (pm) props.set(pm[1], { optional: !!pm[2], type: pm[3] });
+      for (const c of line) d += c === "{" ? 1 : c === "}" ? -1 : 0;
+    }
+    out.set(name, { ext, props });
+  }
+  return out;
+}
+
+/** Flatten an interface's own + inherited members, or report the first unresolved parent. */
+function flatten(name, ifaces, seen = new Set()) {
+  const it = ifaces.get(name);
+  if (!it || seen.has(name)) return { missing: name };
+  seen.add(name);
+  const props = new Map();
+  for (const parent of it.ext) {
+    const inh = flatten(parent, ifaces, seen);
+    if (inh.missing) return { missing: inh.missing };
+    for (const [k, v] of inh.props) props.set(k, { ...v, inherited: true });
+  }
+  for (const [k, v] of it.props) props.set(k, { ...v, inherited: false });
+  return { props };
+}
+
+/** Keys seen on at least one record, keys seen on every record, keys ever null. */
+function keySets(rows) {
+  const ever = new Set();
+  const nullable = new Set();
+  const always = new Set(Object.keys(rows[0] || {}));
+  for (const r of rows) {
+    for (const [k, v] of Object.entries(r)) {
+      ever.add(k);
+      if (v === null) nullable.add(k);
+    }
+    for (const k of [...always]) if (!Object.prototype.hasOwnProperty.call(r, k)) always.delete(k);
+  }
+  return { ever, always, nullable };
+}
+
+/** `export type X = …;` aliases, so a field typed by alias can be tested for null. */
+function typeAliases(src) {
+  const out = new Map();
+  for (const m of src.matchAll(/^\s*(?:export\s+)?type\s+([A-Za-z0-9_]+)\s*=\s*([\s\S]*?);\s*$/gm))
+    out.set(m[1], m[2]);
+  return out;
+}
+
+/** A declared type with local aliases substituted in and comments stripped. */
+function expandType(type, aliases) {
+  let t = String(type).replace(/;.*$/, "");
+  for (let i = 0; i < 5; i++) {
+    const next = t.replace(/\b[A-Za-z0-9_]+\b/g, (w) => (aliases.has(w) ? `(${aliases.get(w)})` : w));
+    if (next === t) break;
+    t = next;
+  }
+  return t.replace(/\/\*[\s\S]*?\*\//g, "").replace(/\/\/.*$/gm, "").trim();
+}
+
+/** The literal set of a type that is nothing but string literals (plus null/undefined), else null. */
+function literalUnion(expanded) {
+  const lits = [...expanded.matchAll(/"([^"]*)"/g)].map((m) => m[1]);
+  if (!lits.length) return null;
+  const rest = expanded.replace(/"[^"]*"/g, "").replace(/null|undefined/g, "").replace(/[|()\s]/g, "");
+  return rest ? null : lits;
+}
+
+function validateTypes(pkgs) {
+  for (const pkg of pkgs) {
+    if (TYPES_EXEMPT.has(pkg)) continue;
+    const typesPath = join(ROOT, "packages", pkg, "types", "index.d.ts");
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    if (!existsSync(dataDir) || !existsSync(typesPath)) continue;
+    const files = TYPED[pkg];
+    if (!files) {
+      fail(`${pkg}: ships data/ + types/index.d.ts but has no entry in TYPED — add its record interfaces`);
+      continue;
+    }
+
+    let src = readFileSync(typesPath, "utf-8");
+    // A declaration that inherits from the shared contract needs it parsed too.
+    if (/^import\s[^\n]*@geoalgeria\/schema/m.test(src))
+      src += "\n" + readFileSync(join(ROOT, "packages", "schema", "types", "index.d.ts"), "utf-8");
+    const ifaces = parseInterfaces(src);
+    const aliases = typeAliases(src);
+
+    let problems = 0;
+    const check = (file, iname, rows) => {
+      const { props, missing } = flatten(iname, ifaces);
+      if (missing) {
+        problems++;
+        return fail(`${pkg}/types: ${file} maps to interface ${iname}, but ${missing} is not declared there`);
+      }
+      const { ever, always, nullable } = keySets(rows);
+      const undeclared = [...ever].filter((k) => !props.has(k));
+      const absent = [...props].filter(([k, v]) => !v.inherited && !ever.has(k)).map(([k]) => k);
+      const notAlways = [...props].filter(([k, v]) => !v.optional && ever.has(k) && !always.has(k)).map(([k]) => k);
+      const notNullable = [];
+      const badEnum = [];
+      for (const [k, v] of props) {
+        const t = expandType(v.type || "", aliases);
+        if (nullable.has(k) && !/\bnull\b/.test(t)) notNullable.push(k);
+        const lits = literalUnion(t);
+        if (!lits) continue;
+        const unknown = [...new Set(rows.map((r) => r[k]).filter((x) => typeof x === "string"))]
+          .filter((x) => !lits.includes(x));
+        if (unknown.length) badEnum.push(`${k} (${unknown.map((x) => JSON.stringify(x)).join(", ")})`);
+      }
+      if (undeclared.length) {
+        problems++;
+        fail(`${pkg}/${file}: ${undeclared.length} field(s) ship but ${iname} does not declare them — ${undeclared.join(", ")}`);
+      }
+      if (absent.length) {
+        problems++;
+        fail(`${pkg}/${file}: ${iname} declares ${absent.length} field(s) that no record carries — ${absent.join(", ")}`);
+      }
+      if (notAlways.length) {
+        problems++;
+        fail(`${pkg}/${file}: ${iname} declares ${notAlways.join(", ")} as required, but some records omit it — mark optional`);
+      }
+      if (notNullable.length) {
+        problems++;
+        fail(`${pkg}/${file}: ${iname} declares ${notNullable.join(", ")} as non-nullable, but records carry null — add "| null"`);
+      }
+      if (badEnum.length) {
+        problems++;
+        fail(`${pkg}/${file}: ${iname} declares a string-literal union that the data escapes — ${badEnum.join("; ")}`);
+      }
+    };
+
+    for (const [file, iname] of Object.entries(files)) {
+      let rows;
+      try {
+        rows = readJson(join(dataDir, file));
+      } catch (e) {
+        problems++;
+        fail(`${pkg}/${file}: cannot read for the types check — ${e.message}`);
+        continue;
+      }
+      check(file, iname, rows);
+    }
+    try {
+      check("metadata.json", "Metadata", [readJson(join(dataDir, "metadata.json"))]);
+    } catch (e) {
+      problems++;
+      fail(`${pkg}/metadata.json: cannot read for the types check — ${e.message}`);
+    }
+    if (!problems)
+      console.log(`  OK: ${pkg} types match the shipped data (${Object.keys(files).length + 1} files)`);
+  }
+}
+
 // telecom has a bespoke shape (coverage namespaced by technology, split into
 // per-operator files, nested metadata) that doesn't fit the flat PACKAGES table,
 // so it gets a dedicated validator — sharing the same fail()/errors/readJson/
@@ -895,6 +1121,9 @@ console.log(`\n[package files[] ↔ derived data]`);
 validatePackageFiles(
   only ? [only] : readdirSync(join(ROOT, "packages")).sort(),
 );
+
+console.log(`\n[types/index.d.ts ↔ shipped data]`);
+validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 // the mirror is poste-specific — only run it when validating poste (or all)
 if (!only || only === "poste") {

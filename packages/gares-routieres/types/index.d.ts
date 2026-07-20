@@ -1,56 +1,96 @@
-// Type definitions for @geoalgeria/gares-routieres
-// Algeria's intercity bus stations (gares routières), sourced from SOGRAL.
+// Type definitions for @geoalgeria/gares-routieres (schema v2).
+// Algeria's intercity bus Stations (gares routières), managed by SOGRAL —
+// locations and surface areas from the SOGRAL live API.
 
-/** An intercity bus station (gare routière) operated by SOGRAL. */
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
+ *  `null` when the record has no coordinate at all. */
+export type GeoPrecision = "exact" | "approximate" | null;
+
+/** How the coordinate was obtained: a real SOGRAL point ("exact") or a
+ *  fallback estimate ("approx") for the one station without one. */
+export type GeoMethod = "exact" | "approx";
+
+/** External identifiers keyed by source system. */
+export interface Refs {
+  /** SOGRAL location code (`213-000{wilaya}{commune}`). */
+  sogral: string;
+}
+
+/** An intercity bus Station (gare routière) operated by SOGRAL. */
 export interface Station {
-  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-01"). */
+  /** Stable id, `{wilaya_code}-{seq}` (e.g. "01-01"). Unique within this dataset. */
   id: string;
-  /** SOGRAL agency id (stable upstream key). */
-  sogral_id: number;
-  /** SOGRAL location code `213-000{wilaya}{commune}`. */
-  sogral_code: string | null;
   /** Station display name (distinguishes multiple stations per city). */
   name: string;
-  /** Official gare name, or null. */
-  official_name: string | null;
-  /** Postal address, or null. */
-  address: string | null;
-  /** Wilaya code, zero-padded to 2 digits ("01"–"69"). Joins `geoalgeria` wilayas. */
+  /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune name (French), nearest-centroid join. */
-  commune: string | null;
-  /** Commune code (geoalgeria code_commune), or null. */
-  commune_code: number | null;
+  /** Commune (ONS) code as a 4-digit string. */
+  commune_code: string;
+  /** Commune name (French). */
+  commune: string;
   /** Latitude (WGS84). */
   lat: number;
   /** Longitude (WGS84). */
   lng: number;
-  /** "exact" (from SOGRAL/OSM) or "approx" (commune-centroid fallback). */
-  geo_precision: "exact" | "approx";
-  /** Total surface area in m², or null. */
-  surface_total_m2: number | null;
-  /** Built/covered surface area in m², or null. */
-  surface_built_m2: number | null;
-  /** Source URL. */
-  source: string;
+  /** "exact" for a SOGRAL point, "approximate" for the one fallback estimate. */
+  geo_precision: GeoPrecision;
+  /** How `lat`/`lng` were obtained. */
+  geo_method: GeoMethod;
+  /** Provenance key into `metadata.sources[]` — always "sogral". */
+  source: "sogral";
+  /** External identifiers — the SOGRAL location code. */
+  refs: Refs;
+  /** Official gare name as published by SOGRAL. */
+  official_name: string;
+  /** Postal address. */
+  address: string;
+  /** Total surface area, in m². */
+  surface_total_m2: number;
+  /** Built/covered surface area, in m². */
+  surface_built_m2: number;
 }
 
-/** Dataset provenance and counts (data/metadata.json). */
-export interface Metadata {
-  source: string;
-  origin: string;
+/** One provenance entry in `metadata.sources[]`. */
+export interface SourceRef {
+  key: string;
+  name: string;
+  url?: string;
   license: string;
-  stations: number;
-  wilayas_covered: number;
-  geocoded: number;
-  geo_precision_note: string;
-  linkage_note: string;
-  generated_at: string;
+  retrieved?: string;
+  evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** All intercity bus stations (74). */
+/** Dataset metadata (data/metadata.json) — canonical fields plus gare stats. */
+export interface Metadata {
+  package: "@geoalgeria/gares-routieres";
+  schema_version: string;
+  title_fr: string;
+  title_ar: string;
+  title_en: string;
+  record_count: number;
+  /** Records with coordinates — all of them. */
+  geocoded_count: number;
+  geocoded_pct: number;
+  /** Count by `geo_precision`. */
+  precision: { exact: number; approximate: number };
+  estimated_universe: number | null;
+  coverage_pct: number | null;
+  coverage_note: string;
+  wilayas_covered: number;
+  /** `[minLng, minLat, maxLng, maxLat]`, or null when nothing is geocoded. */
+  bbox: [number, number, number, number] | null;
+  sources: SourceRef[];
+  license: string;
+  /** ISO date (YYYY-MM-DD) the dataset was regenerated. */
+  updated: string;
+  /** Count by `geo_method`. */
+  by_geo_method: Partial<Record<GeoMethod, number>>;
+  linkage_note: string;
+}
+
+/** All intercity bus Stations (74). */
 export function stations(): Station[];
-/** One station by id, or null. */
+/** One Station by id, or null. */
 export function stationById(id: string): Station | null;
 /** Stations in a wilaya — accepts "16", 16, or "01". */
 export function stationsByWilaya(code: string | number): Station[];
