@@ -14,8 +14,8 @@
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { buildMetadata, toCSV, toGeoJSON, wcode, GEO_PRECISION } from "../packages/schema/index.js";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import { buildMetadata, toCSV, toGeoJSON, wcode, GEO_PRECISION, evidenceForSourceKey } from "../packages/schema/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const TODAY = "2026-07-18"; // cutover date (scripts can't call Date.now deterministically here)
@@ -64,15 +64,19 @@ function colsFor(rows) {
 }
 
 // shared tourisme maps (OSM point files share a shape; thermal springs differ).
-const tourOsm = (r) => clean({
-  id: String(r.id), name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
+// Both take the file's id prefix: the five tourisme files each restart their
+// upstream ids at "1", so an unprefixed id collides across the files that
+// tourisme.all() merges into one collection. The prefix is per FILE, not per
+// map, which is why it is a parameter and not a constant in the body.
+const tourOsm = (prefix) => (r) => clean({
+  id: prefix + String(r.id), name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
   wilaya_code: r.wilaya_code, commune_code: null, commune: null,
   ...geoExact(r, "osm"),
   source: "osm", refs: refs({ osm: r.osm_id }),
   type: r.type, category: r.category,
 });
-const tourThermal = (r) => clean({
-  id: String(r.id), name: r.name,
+const tourThermal = (prefix) => (r) => clean({
+  id: prefix + String(r.id), name: r.name,
   wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune_name,
   ...geoExact(r, "asal"),
   source: "asal",
@@ -80,7 +84,7 @@ const tourThermal = (r) => clean({
 });
 
 // --- per-package migrations -------------------------------------------------
-const MIGRATIONS = {
+export const MIGRATIONS = {
   mosquees: {
     file: "mosquees.json",
     map: (r) => {
@@ -477,15 +481,17 @@ const MIGRATIONS = {
 
   mobilis: {
     files: [
+      // agences and pdv both number their upstream ids "{wilaya}-{seq}" from 001,
+      // so 165 ids collided in the mobilis.all() merge until each file took a prefix.
       { file: "agences.json", map: (r) => clean({
-        id: r.id, name: r.name, name_ar: r.name_ar,
+        id: "ag-" + r.id, name: r.name, name_ar: r.name_ar,
         wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
         ...geoExact(r, "mobilis"),
         source: "mobilis",
         type: r.type, code: r.code, address: r.address, address_ar: r.address_ar,
       }) },
       { file: "pdv.json", geojson: false, map: (r) => clean({
-        id: r.id, name: r.name,
+        id: "pdv-" + r.id, name: r.name,
         wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
         ...geoNone,
         source: "mobilis",
@@ -504,11 +510,11 @@ const MIGRATIONS = {
 
   tourisme: {
     files: [
-      { file: "attractions.json", map: tourOsm },
-      { file: "historic.json", map: tourOsm },
-      { file: "lodging.json", map: tourOsm },
-      { file: "parks.json", map: tourOsm },
-      { file: "thermal-springs.json", map: tourThermal },
+      { file: "attractions.json", map: tourOsm("attraction-") },
+      { file: "historic.json", map: tourOsm("historic-") },
+      { file: "lodging.json", map: tourOsm("lodging-") },
+      { file: "parks.json", map: tourOsm("park-") },
+      { file: "thermal-springs.json", map: tourThermal("thermal-spring-") },
     ],
     meta: {
       sources: [
@@ -688,7 +694,11 @@ function migrate(pkg) {
     ...buildMetadata({
       package: `@geoalgeria/${pkg}`,
       records: all,
-      sources: cfg.meta.sources,
+      // evidence_type was stamped onto the committed metadata after the cutover ran,
+      // so the configs below predate it. Default it from the canonical helper and let
+      // a config override stand (buses' `wikipedia` key is crowdsourced, not the
+      // "named registry" the helper assumes for any key it doesn't recognise).
+      sources: cfg.meta.sources.map((s) => ({ ...s, evidence_type: s.evidence_type ?? evidenceForSourceKey(s.key) })),
       license: cfg.meta.license,
       updated: TODAY,
       estimatedUniverse: cfg.meta.estimatedUniverse,
@@ -704,7 +714,11 @@ function migrate(pkg) {
   return true;
 }
 
-const targets = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(MIGRATIONS);
-let ok = true;
-for (const p of targets) ok = migrate(p) && ok;
-process.exit(ok ? 0 : 1);
+// Run only as a CLI. MIGRATIONS is exported so test/migrate-v2-replay.test.mjs can
+// replay each map against the v1 fixture; importing the module must not rewrite data.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  const targets = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(MIGRATIONS);
+  let ok = true;
+  for (const p of targets) ok = migrate(p) && ok;
+  process.exit(ok ? 0 : 1);
+}
