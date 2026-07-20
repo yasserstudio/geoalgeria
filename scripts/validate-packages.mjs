@@ -320,7 +320,9 @@ const PACKAGES = {
       json: "lines.json",
       metaKey: "lines",
       csv: "csv/lines.csv",
-      geojson: null, // line-level v1 (no per-stop geometry yet)
+      // Line-level only (no per-stop geometry yet) — every record is ungeocoded,
+      // so the GeoJSON mirror is a valid, honestly-empty FeatureCollection.
+      geojson: "geojson/lines.geojson",
       required: ["id", "operator", "wilaya_code"],
     },
   ],

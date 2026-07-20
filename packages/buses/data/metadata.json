@@ -1,16 +1,38 @@
 {
-  "source": "ETUSA (Établissement de transport urbain et suburbain d'Alger) — line list via fr.wikipedia",
-  "origin": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99",
+  "package": "@geoalgeria/buses",
+  "schema_version": "2.0.0",
+  "title_fr": "Lignes de bus urbaines d'Algérie",
+  "title_ar": "خطوط الحافلات الحضرية في الجزائر",
+  "title_en": "Algeria urban bus lines",
+  "record_count": 50,
+  "geocoded_count": 0,
+  "geocoded_pct": 0,
+  "precision": {
+    "exact": 0,
+    "approximate": 0
+  },
+  "estimated_universe": 122,
+  "coverage_pct": 41,
+  "coverage_note": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
+  "wilayas_covered": 1,
+  "bbox": null,
+  "sources": [
+    {
+      "key": "wikipedia",
+      "name": "French Wikipedia — Lignes de bus ETUSA de 1 à 99",
+      "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99",
+      "license": "CC BY-SA 4.0",
+      "retrieved": "2026-07-18",
+      "evidence_type": "crowdsourced"
+    }
+  ],
   "license": "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
-  "lines": 50,
+  "updated": "2026-07-18",
   "operators": [
     "ETUSA"
   ],
   "by_operator": {
     "ETUSA": 50
   },
-  "with_stop_count": 44,
-  "wilayas_covered": 1,
-  "coverage_note": "v1 covers 50 ETUSA lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'), of ~122 ETUSA passenger lines. Line-level attributes only — per-stop and per-line GEOMETRY (OSM route=bus) is deferred to v1.1; ETUSA-tagged OSM route coverage is currently thin. More operators/cities to be added.",
-  "generated_at": "2026-07-01"
+  "with_stop_count": 44
 }
