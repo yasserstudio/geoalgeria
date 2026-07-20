@@ -27,14 +27,18 @@ const padC = (c) => (c == null || c === "" ? null : String(c).replace(/\D/g, "")
 const clean = (o) => { const x = {}; for (const k in o) if (o[k] !== undefined) x[k] = o[k]; return x; };
 /** build a refs object of non-empty string ids, or undefined if none. */
 const refs = (o) => { const r = {}; for (const k in o) if (o[k] != null && o[k] !== "") r[k] = String(o[k]); return Object.keys(r).length ? r : undefined; };
-/** atomic lat/lng: both finite → exact point; otherwise ungeocoded — both null, and a
- *  null geo_precision/geo_method, because no point exists to have a precision and no
- *  method produced one (the contract enforces precision-null iff coords-null).
- *  Guards against half-coordinate source records (one axis set, the other null). */
-const geoExact = (r, method) => {
+/** atomic lat/lng: both finite → a point at the given precision; otherwise ungeocoded —
+ *  both null, and a null geo_precision/geo_method, because no point exists to have a
+ *  precision and no method produced one (the contract enforces both iffs, coords-null).
+ *  Guards against half-coordinate source records (one axis set, the other null).
+ *  `precision`/`method` are evaluated by the caller and simply discarded when there is
+ *  no point, so a source-derived method (e.g. r.geo_precision) stays a plain argument. */
+const geoAt = (r, precision, method) => {
   const has = Number.isFinite(r.lat) && Number.isFinite(r.lng);
-  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? "exact" : null, geo_method: has ? method : null };
+  return { lat: has ? r.lat : null, lng: has ? r.lng : null, geo_precision: has ? precision : null, geo_method: has ? method : null };
 };
+/** the common case: a real per-facility point. */
+const geoExact = (r, method) => geoAt(r, "exact", method);
 /** the ungeocoded geo quartet, for datasets that carry no coordinates at all. */
 const geoNone = { lat: null, lng: null, geo_precision: null, geo_method: null };
 /** Records that already carry the canonical v2 geo fields this migration adds.
@@ -63,14 +67,14 @@ function colsFor(rows) {
 const tourOsm = (r) => clean({
   id: String(r.id), name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
   wilaya_code: r.wilaya_code, commune_code: null, commune: null,
-  lat: r.lat, lng: r.lng, geo_precision: "exact", geo_method: "osm",
+  ...geoExact(r, "osm"),
   source: "osm", refs: refs({ osm: r.osm_id }),
   type: r.type, category: r.category,
 });
 const tourThermal = (r) => clean({
   id: String(r.id), name: r.name,
   wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune_name,
-  lat: r.lat, lng: r.lng, geo_precision: "exact", geo_method: "asal",
+  ...geoExact(r, "asal"),
   source: "asal",
   type: r.type, temperature_c: r.temperature_c, debit_l_s: r.debit_l_s, altitude_m: r.altitude_m, minerality: r.minerality,
 });
@@ -85,9 +89,7 @@ const MIGRATIONS = {
       return clean({
         id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
         wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-        lat: r.lat, lng: r.lng,
-        geo_precision: isArea ? "approximate" : "exact",
-        geo_method: method,
+        ...geoAt(r, isArea ? "approximate" : "exact", method),
         source: r.source,
         refs: refs({ wikidata: r.wikidata, osm: r.osm_id }),
         denomination: r.denomination,
@@ -111,9 +113,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: r.geo_precision === "osm_node" ? "exact" : "approximate",
-      geo_method: r.geo_precision,
+      ...geoAt(r, r.geo_precision === "osm_node" ? "exact" : "approximate", r.geo_precision),
       source: r.source, refs: refs({ osm: r.osm_id }),
       cycle: r.cycle, cycle_label_fr: r.cycle_label_fr, cycle_label_ar: r.cycle_label_ar,
       kind: r.kind, kind_label_fr: r.kind_label_fr, kind_label_ar: r.kind_label_ar,
@@ -135,8 +135,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact", geo_method: "source_point",
+      ...geoExact(r, "source_point"),
       source: "patrimoine",
       refs: refs({ patrimoine: r.node_id_ar ?? r.node_id_fr }),
       type: r.type, category: r.category, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
@@ -157,8 +156,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact", geo_method: "operator_point",
+      ...geoExact(r, "operator_point"),
       source: "djezzy",
       refs: refs({ djezzy: r.code }),
       type: r.type, category: r.category, address: r.address, hours: r.hours, code_ouverture: r.code_ouverture,
@@ -178,8 +176,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact", geo_method: "operator_api",
+      ...geoExact(r, "operator_api"),
       source: "ooredoo",
       refs: refs({ ooredoo: r.ooredoo_id }),
       type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
@@ -233,9 +230,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact",
-      geo_method: r.osm_id ? "osm_" + r.osm_id.split("/")[0] : "wikidata",
+      ...geoExact(r, r.osm_id ? "osm_" + r.osm_id.split("/")[0] : "wikidata"),
       source: r.source,
       refs: refs({ wikidata: r.wikidata, osm: r.osm_id }),
       type: r.type, line: r.line, operator: r.operator, network: r.network,
@@ -258,9 +253,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: r.geo_precision === "exact" ? "exact" : "approximate",
-      geo_method: r.geo_precision,
+      ...geoAt(r, r.geo_precision === "exact" ? "exact" : "approximate", r.geo_precision),
       source: "sogral",
       refs: refs({ sogral: r.sogral_code }),
       official_name: r.official_name, address: r.address,
@@ -281,8 +274,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: null, commune: null,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact", geo_method: "source_point",
+      ...geoExact(r, "source_point"),
       source: "anac",
       refs: refs({ icao: r.icao, iata: r.iata }),
       icao: r.icao, iata: r.iata, address: r.address, phone: r.phone, website: r.website,
@@ -302,8 +294,7 @@ const MIGRATIONS = {
     map: (r) => clean({
       id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "approximate", geo_method: r.geo_precision,
+      ...geoAt(r, "approximate", r.geo_precision),
       source: "madr",
       refs: refs({ wikidata: r.wikidata, osm: r.osm_id }),
       type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
@@ -325,8 +316,7 @@ const MIGRATIONS = {
       id: r.id, name: r.name,
       wilaya_code: String(r.wilaya_code).padStart(2, "0"),
       commune_code: padC(r.commune_code), commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "approximate", geo_method: r.geo_precision,
+      ...geoAt(r, "approximate", r.geo_precision),
       source: "mip",
       operateur: r.operateur, role: r.role, nature: r.nature,
       nature_label_fr: r.nature_label_fr, nature_label_ar: r.nature_label_ar, slug: r.slug,
@@ -347,8 +337,7 @@ const MIGRATIONS = {
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact", geo_method: "sig_mjs",
+      ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
       daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
@@ -370,8 +359,7 @@ const MIGRATIONS = {
       id: String(r.id).padStart(5, "0"),
       name: r.name,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: "exact", geo_method: "sig_mjs",
+      ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr,
       daira: r.daira, address: r.address, capacity: r.capacity, year: r.year,
@@ -393,9 +381,7 @@ const MIGRATIONS = {
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_ar: r.name_ar,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
-      lat: r.lat, lng: r.lng,
-      geo_precision: r.geo_precision === "campus" ? "exact" : "approximate",
-      geo_method: r.geo_precision,
+      ...geoAt(r, r.geo_precision === "campus" ? "exact" : "approximate", r.geo_precision),
       source: "mesrs",
       type: r.type, type_label_fr: r.type_fr, sector: r.sector,
       supervisory_ministry: r.supervisory_ministry, website: r.website,
