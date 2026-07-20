@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria airports",
+  "alternateName": "Aéroports d'Algérie",
+  "identifier": "@geoalgeria/aviation",
+  "description": "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
+  "license": "Factual public listing (ANAC)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.563939 -8.165434 36.824416 9.63789"
+    }
+  },
+  "variableMeasured": "33 records, 31 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "airports (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/airports.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "airports (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/csv/airports.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "airports (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/geojson/airports.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "ANAC — Autorité Nationale de l'Aviation Civile — Factual public listing (ANAC)"
+  ]
+}

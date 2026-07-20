@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Mobilis stores (Algeria)",
+  "alternateName": "Points de vente Mobilis",
+  "identifier": "@geoalgeria/mobilis",
+  "description": "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
+  "license": "Data © ATM Mobilis; redistributed for reference",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "21.318254 -8.14066 37.005541 9.578224"
+    }
+  },
+  "variableMeasured": "12345 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "agences (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/agences.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "agences (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/csv/agences.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "agences (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/geojson/agences.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "pdv (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/pdv.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "pdv (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/csv/pdv.csv"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Mobilis — ATM Mobilis (mobilis.dz) — Data © ATM Mobilis; redistributed for reference"
+  ]
+}

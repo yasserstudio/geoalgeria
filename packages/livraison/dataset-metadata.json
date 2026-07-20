@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria delivery stop-desks",
+  "alternateName": "Points relais de livraison d'Algérie",
+  "identifier": "@geoalgeria/livraison",
+  "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "22.784955 -8.143583 37.009471 9.585192"
+    }
+  },
+  "variableMeasured": "411 records, 61 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "carriers (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/carriers.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "carriers (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/csv/carriers.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "coverage (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/coverage.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "coverage (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/csv/coverage.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stopdesks (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/stopdesks.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stopdesks (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/csv/stopdesks.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stopdesks (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/geojson/stopdesks.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Yalidine Express — nos-agences — Data © Yalidine Express; redistributed for reference",
+    "Guepex — public agences feed — Data © Guepex; redistributed for reference",
+    "Anderson Logistics — agency directory — Data © Anderson Logistics; redistributed for reference",
+    "Noest Express — bureaux directory — Data © Noest Express; redistributed for reference",
+    "Maystro Delivery — coverage page — Data © Maystro Delivery; redistributed for reference"
+  ]
+}

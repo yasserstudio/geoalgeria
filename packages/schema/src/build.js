@@ -84,33 +84,62 @@ export function buildMetadata(input) {
 
 /**
  * Build the repo catalog (index.json) from every package's metadata.
+ *
+ * Coverage never travels as a bare percentage. `@geoalgeria/buses` is why: it
+ * reports 41% under the title "Algeria urban bus lines", but 122 is *ETUSA's*
+ * line count in Algiers, so the figure only means anything next to the sentence
+ * that says which universe it divides by. So the catalog emits `coverage` as
+ * {pct, of, note} or not at all, and a metadata that states a universe without a
+ * note is a build error rather than a bare number in a public file.
+ *
  * @param {object[]} metadatas
- * @param {{ generated?: string }} [opts]
+ * @param {{ generated?: string, note?: string }} [opts]
  * @returns {object}
  */
 export function buildManifest(metadatas, opts = {}) {
   return {
     schema_version: SCHEMA_VERSION,
     ...(opts.generated ? { generated: opts.generated } : {}),
-    datasets: metadatas.map((m) => ({
-      package: m.package,
-      ...(m.title_en || m.title_fr ? { title: m.title_en || m.title_fr } : {}),
-      record_count: m.record_count,
-      geocoded_pct: m.geocoded_pct,
-      coverage_pct: m.coverage_pct ?? null,
-      wilayas_covered: m.wilayas_covered,
-      bbox: m.bbox ?? null,
-      license: m.license,
-      updated: m.updated,
-    })),
+    ...(opts.note ? { note: opts.note } : {}),
+    datasets: metadatas.map((m) => {
+      if (m.estimated_universe && !m.coverage_note)
+        throw new Error(
+          `${m.package}: estimated_universe ${m.estimated_universe} without a coverage_note — ` +
+            `a coverage percentage that cannot say what it divides by must not be published`,
+        );
+      return {
+        package: m.package,
+        // null for the packages that predate the v2 contract — see the catalog note.
+        schema_version: m.schema_version ?? null,
+        ...(m.title_en || m.title_fr ? { title: m.title_en || m.title_fr } : {}),
+        record_count: m.record_count,
+        geocoded_count: m.geocoded_count ?? null,
+        geocoded_pct: m.geocoded_pct,
+        ...(m.precision ? { precision: m.precision } : {}),
+        ...(m.estimated_universe
+          ? { coverage: { pct: m.coverage_pct, of: m.estimated_universe, note: m.coverage_note } }
+          : {}),
+        wilayas_covered: m.wilayas_covered,
+        bbox: m.bbox ?? null,
+        license: m.license,
+        updated: m.updated,
+      };
+    }),
   };
 }
 
 /**
  * Build a schema.org/DCAT Dataset descriptor (JSON-LD) for discovery
  * (Google Dataset Search, AI answer engines).
+ *
+ * `description` is the dataset's `coverage_note` verbatim. That note is the one
+ * place each package says what it does and does not contain ("50 of ETUSA's ~122
+ * passenger lines", "1,213 of 1,704 branches carry a point"), and a discovery
+ * descriptor that drops it advertises the title's claim without the caveat.
+ * Google Dataset Search requires a description, so there is nowhere to hide it.
+ *
  * @param {object} meta
- * @param {{ homepage?: string }} [opts]
+ * @param {{ homepage?: string, repo?: string, distributions?: {name:string,format:string,url:string}[] }} [opts]
  * @returns {object}
  */
 export function buildDcat(meta, opts = {}) {
@@ -135,20 +164,26 @@ export function buildDcat(meta, opts = {}) {
     name: meta.title_en || meta.title_fr || meta.package,
     ...(meta.title_fr && meta.title_fr !== meta.title_en ? { alternateName: meta.title_fr } : {}),
     identifier: meta.package,
-    license: meta.sources && meta.sources[0] ? meta.sources[0].license : meta.license,
+    ...(meta.coverage_note ? { description: meta.coverage_note } : {}),
+    // The dataset's own licence, not sources[0]'s: a source licence governs the
+    // upstream feed, and publishing it here would state the wrong terms for the
+    // redistributed dataset. Source terms travel per-source in `citation`.
+    license: meta.license,
     isAccessibleForFree: true,
     creator: { "@type": "Organization", name: "Yasser's Studio", url: "https://yasser.studio" },
     ...geo,
     variableMeasured: `${meta.record_count} records, ${meta.wilayas_covered} wilayas`,
-    distribution: [
-      {
-        "@type": "DataDownload",
-        encodingFormat: "application/json",
-        contentUrl: `https://cdn.jsdelivr.net/npm/${meta.package}/data/`,
-      },
-    ],
+    distribution: (opts.distributions || []).map((d) => ({
+      "@type": "DataDownload",
+      name: d.name,
+      encodingFormat: d.format,
+      contentUrl: d.url,
+    })),
     dateModified: meta.updated,
     url: homepage,
-    ...(meta.sources ? { citation: meta.sources.map((s) => s.name) } : {}),
+    ...(opts.repo ? { sameAs: opts.repo } : {}),
+    ...(meta.sources
+      ? { citation: meta.sources.map((s) => (s.license ? `${s.name} — ${s.license}` : s.name)) }
+      : {}),
   };
 }

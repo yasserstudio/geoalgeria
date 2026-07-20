@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Ooredoo stores (Algeria)",
+  "alternateName": "Boutiques Ooredoo",
+  "identifier": "@geoalgeria/ooredoo",
+  "description": "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record has a real operator coordinate. A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
+  "license": "Data © Ooredoo Algérie; redistributed for reference",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "22.7856 -8.14028 37.0069 9.48333"
+    }
+  },
+  "variableMeasured": "572 records, 63 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "stores (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ooredoo/data/stores.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stores (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ooredoo/data/csv/stores.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stores (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ooredoo/data/geojson/stores.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ooredoo Algérie — retail network (trouvez-nous JSON API) — Data © Ooredoo Algérie; redistributed for reference"
+  ]
+}

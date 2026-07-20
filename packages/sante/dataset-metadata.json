@@ -1,0 +1,52 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria public health establishments",
+  "alternateName": "Établissements de santé publique d'Algérie",
+  "identifier": "@geoalgeria/sante",
+  "description": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+  "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.573539 -8.140085 37.0072 9.635"
+    }
+  },
+  "variableMeasured": "695 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "sante (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/sante/data/sante.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "sante (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/sante/data/csv/sante.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "sante (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/sante/data/geojson/sante.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministry of Health (sante.gov.dz) — health-establishment registry — Official public registry (Ministry of Health)",
+    "OpenStreetMap — geocoding — ODbL 1.0 (© OpenStreetMap contributors)",
+    "Wikidata — geocoding — CC0-1.0"
+  ]
+}

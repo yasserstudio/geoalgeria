@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria post offices & ATMs",
+  "alternateName": "Bureaux de poste et GAB d'Algérie",
+  "identifier": "@geoalgeria/poste",
+  "description": "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
+  "license": "Data © Algérie Poste; redistributed for reference",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.562719 -8.165285 37.067213 10.195022"
+    }
+  },
+  "variableMeasured": "5934 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "postoffices (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/postoffices.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "postoffices (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/csv/postoffices.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "postoffices (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/geojson/postoffices.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "atms (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/atms.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "atms (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/csv/atms.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "atms (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/geojson/atms.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Algérie Poste — baridimap.poste.dz — Data © Algérie Poste; redistributed for reference"
+  ]
+}

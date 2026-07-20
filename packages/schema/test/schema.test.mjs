@@ -398,11 +398,45 @@ test("buildManifest + buildDcat shape", () => {
   assert.equal(manifest.schema_version, "2.0.0");
   assert.equal(manifest.datasets[0].package, "@geoalgeria/sante");
   assert.equal(manifest.datasets[0].title, "Health establishments");
+  assert.equal(manifest.datasets[0].schema_version, "2.0.0");
+  // no stated universe → no coverage claim at all, rather than a null percentage
+  assert.equal("coverage" in manifest.datasets[0], false);
+  // packages that predate the contract are listed, and say so
+  assert.equal(buildManifest([{ ...meta, schema_version: undefined }]).datasets[0].schema_version, null);
 
   const dcat = buildDcat(meta);
   assert.equal(dcat["@type"], "Dataset");
   assert.equal(dcat.identifier, "@geoalgeria/sante");
   assert.equal(dcat.spatialCoverage.geo["@type"], "GeoShape");
+  // the dataset's own licence, not the first source's
+  assert.equal(dcat.license, "MIT");
+  assert.deepEqual(dcat.citation, ["Ministry of Health — official"]);
+});
+
+test("a coverage percentage never travels without the universe it divides by", () => {
+  const meta = (over) =>
+    buildMetadata({
+      package: "@geoalgeria/buses",
+      records: [rec()],
+      sources: [],
+      license: "CC-BY-SA-4.0",
+      updated: "2026-07-18",
+      titles: { en: "ETUSA urban bus lines (Algiers)" },
+      estimatedUniverse: 122,
+      ...over,
+    });
+
+  // The shipped shape: pct, the universe, and the sentence saying what it is.
+  const ok = buildManifest([meta({ coverageNote: "50 of ETUSA's ~122 lines." })]).datasets[0];
+  assert.deepEqual(ok.coverage, { pct: 0.8, of: 122, note: "50 of ETUSA's ~122 lines." });
+
+  // A universe with no note is a build error — "Algeria urban bus lines: 41%"
+  // is exactly the artifact this rule exists to stop.
+  assert.throws(() => buildManifest([meta({})]), /without a coverage_note/);
+
+  // …and the note reaches the discovery descriptor as its description, which is
+  // the only text Google Dataset Search and answer engines actually read.
+  assert.equal(buildDcat(meta({ coverageNote: "50 of ETUSA's ~122 lines." })).description, "50 of ETUSA's ~122 lines.");
 });
 
 test("emit: toCSV injection guard + toGeoJSON", () => {

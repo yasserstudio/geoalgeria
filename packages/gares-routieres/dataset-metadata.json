@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria intercity bus stations",
+  "alternateName": "Gares routières d'Algérie",
+  "identifier": "@geoalgeria/gares-routieres",
+  "description": "SOGRAL-managed intercity bus stations (gares routières) with surface areas, from the SOGRAL live API.",
+  "license": "Data © SOGRAL; redistributed for reference",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "22.817813 -2.199312 36.890589 9.562312"
+    }
+  },
+  "variableMeasured": "74 records, 51 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "stations (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/gares-routieres/data/stations.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/gares-routieres/data/csv/stations.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/gares-routieres/data/geojson/stations.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "SOGRAL — Société de Gestion des Gares Routières d'Algérie — Data © SOGRAL; redistributed for reference"
+  ]
+}

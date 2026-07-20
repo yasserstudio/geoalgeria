@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Djezzy stores (Algeria)",
+  "alternateName": "Boutiques Djezzy",
+  "identifier": "@geoalgeria/djezzy",
+  "description": "Djezzy retail boutiques from djezzy.dz/nos-boutiques. Wilaya/commune linkage is best-effort (nearest-centroid).",
+  "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.569717 -8.14332 36.90625 9.486068"
+    }
+  },
+  "variableMeasured": "128 records, 63 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "boutiques (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/boutiques.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "boutiques (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/csv/boutiques.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "boutiques (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/geojson/boutiques.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Djezzy — Optimum Telecom Algérie (nos-boutiques) — Data © Optimum Telecom Algérie (Djezzy); redistributed for reference"
+  ]
+}

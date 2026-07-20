@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria pharmaceutical manufacturers",
+  "alternateName": "Industrie pharmaceutique d'Algérie",
+  "identifier": "@geoalgeria/industrie-pharmaceutique",
+  "description": "Approved pharmaceutical & medical-device manufacturers from the MIP register, geocoded to commune/wilaya centroids (approximate).",
+  "license": "Factual public register (MIP)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "33.8 -1.316667 36.9 8.317"
+    }
+  },
+  "variableMeasured": "171 records, 25 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "industrie-pharmaceutique (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/industrie-pharmaceutique/data/industrie-pharmaceutique.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "industrie-pharmaceutique (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/industrie-pharmaceutique/data/csv/industrie-pharmaceutique.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "industrie-pharmaceutique (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/industrie-pharmaceutique/data/geojson/industrie-pharmaceutique.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register — Factual public register (MIP)"
+  ]
+}

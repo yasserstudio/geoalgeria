@@ -1,0 +1,124 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria tourism",
+  "alternateName": "Tourisme en Algérie",
+  "identifier": "@geoalgeria/tourisme",
+  "description": "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
+  "license": "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.577869 -8.153594 37.087511 11.242709"
+    }
+  },
+  "variableMeasured": "4348 records, 69 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "attractions (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/attractions.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "attractions (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/csv/attractions.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "attractions (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/geojson/attractions.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "historic (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/historic.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "historic (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/csv/historic.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "historic (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/geojson/historic.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "lodging (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/lodging.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "lodging (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/csv/lodging.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "lodging (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/geojson/lodging.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "parks (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/parks.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "parks (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/csv/parks.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "parks (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/geojson/parks.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "thermal-springs (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/thermal-springs.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "thermal-springs (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/csv/thermal-springs.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "thermal-springs (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/geojson/thermal-springs.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria — ODbL 1.0 (© OpenStreetMap contributors)",
+    "Wikidata — heritage sites, museums & parks in Algeria — CC0-1.0",
+    "ASAL Geoportail — thermal springs — Factual public listing (ASAL)"
+  ]
+}

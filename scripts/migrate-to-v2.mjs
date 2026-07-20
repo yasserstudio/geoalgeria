@@ -149,7 +149,8 @@ export const MIGRATIONS = {
       ],
       license: "CC0-1.0 AND ODbL-1.0",
       estimatedUniverse: 18449,
-      coverageNote: "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry.",
+      coverageNote:
+        "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
       titles: { en: "Algeria mosques", fr: "Mosquées d'Algérie", ar: "مساجد الجزائر" },
       stats: (rows) => ({ named: named(rows), by_source: count(rows, "source"), linkage_note: LINKAGE }),
     },
@@ -644,7 +645,7 @@ export const MIGRATIONS = {
       license: "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
       estimatedUniverse: 122,
       coverageNote: "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-      titles: { en: "Algeria urban bus lines", fr: "Lignes de bus urbaines d'Algérie", ar: "خطوط الحافلات الحضرية في الجزائر" },
+      titles: { en: "ETUSA urban bus lines (Algiers)", fr: "Lignes de bus ETUSA (Alger)", ar: "خطوط حافلات إيتوزا (الجزائر العاصمة)" },
       stats: (rows) => ({
         operators: [...new Set(rows.map((r) => r.operator))],
         by_operator: count(rows, "operator"),

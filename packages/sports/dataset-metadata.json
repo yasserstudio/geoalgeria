@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria sports facilities",
+  "alternateName": "Infrastructures sportives d'Algérie",
+  "identifier": "@geoalgeria/sports",
+  "description": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
+  "license": "Factual public listing (Ministry of Youth and Sports)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.5567 -8.4324 37.035878 10.1953"
+    }
+  },
+  "variableMeasured": "5141 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "facilities (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/sports/data/facilities.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "facilities (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/sports/data/csv/facilities.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "facilities (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/sports/data/geojson/facilities.geojson"
+    }
+  ],
+  "dateModified": "2026-07-18",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministry of Youth and Sports — SIG — Factual public listing (Ministry of Youth and Sports)"
+  ]
+}
