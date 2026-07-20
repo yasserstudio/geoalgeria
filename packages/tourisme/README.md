@@ -95,20 +95,27 @@ data/
 
 ```json
 {
+  "id": "lodging-1",
   "name": "عريان الراس",
   "name_ar": "عريان الراس تسابيت",
-  "type": "alpine_hut",
   "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
   "lat": 28.4162728,
   "lng": -0.2620846,
-  "source": "OpenStreetMap",
-  "osm_id": 8107956617,
-  "id": "lodging-1"
+  "geo_precision": "exact",
+  "geo_method": "osm",
+  "source": "osm",
+  "refs": { "osm": "8107956617" },
+  "type": "alpine_hut"
 }
 ```
 
 `type` is one of `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`, `alpine_hut`.
-Optional fields: `stars`, `rooms`, `phone`, `website`, `address`, `name_fr`.
+`name_fr` and `name_ar` are present only where OpenStreetMap carries that language.
+`source` is a short key resolved in `metadata.sources[]`, and external ids live in `refs`
+(`refs.osm` is the OSM id as a string). The four OSM layers carry no commune linkage, so
+`commune_code` and `commune` are null throughout.
 
 **Thermal spring** — ASAL Geoportail sourced, with physical properties:
 
@@ -116,22 +123,26 @@ Optional fields: `stars`, `rooms`, `phone`, `website`, `address`, `name_fr`.
 {
   "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
+  "wilaya_code": "43",
+  "commune_code": null,
+  "commune": "BENI H'MIDENE",
+  "lat": 36.4625,
+  "lng": 6.4827778,
+  "geo_precision": "exact",
+  "geo_method": "asal",
+  "source": "asal",
   "type": "forage",
   "temperature_c": 32,
   "debit_l_s": 15,
   "altitude_m": 423,
-  "minerality": "BICARBONATEE CALCIQUE",
-  "wilaya_code": "43",
-  "wilaya_name": "CONSTANTINE",
-  "commune_name": "BENI H'MIDENE",
-  "lat": 36.4625,
-  "lng": 6.4827778,
-  "source": "ASAL geoportail"
+  "minerality": "BICARBONATEE CALCIQUE"
 }
 ```
 
 `type` is one of `hammam`, `ain`, `source`, `forage`. Physical properties (`temperature_c`,
-`debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset.
+`debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset; `minerality`
+is the only optional one. This is the one layer that names a commune — as `commune`, a name
+rather than an ONS `commune_code`, which stays null.
 
 `wilaya_code` is zero-padded to two digits across all layers and joins GeoAlgeria's wilayas.
 

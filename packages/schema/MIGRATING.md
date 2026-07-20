@@ -10,11 +10,13 @@ hand-editing data — then the outputs are regenerated. A package with no genera
 
 ## Steps
 
-1. **Declare the dependency.** In the package's `package.json`:
+1. **Declare the dependency.** Only the generator uses the schema package, and `scripts/` is
+   not published, so it is a **dev** dependency — in the package's `package.json`:
    ```json
-   "dependencies": { "@geoalgeria/schema": "workspace:^" }
+   "devDependencies": { "@geoalgeria/schema": "workspace:^" }
    ```
-   Then `pnpm install` (symlinks the workspace package).
+   Then `pnpm install` (symlinks the workspace package). Nothing under `files[]` may import
+   it — see step 6.
 
 2. **Shape records to the canonical `GeoRecord`.** Add a `toV2(rows)` pass that maps the
    package's internal shape to the contract. Field rules:
@@ -33,7 +35,18 @@ hand-editing data — then the outputs are regenerated. A package with no genera
    - `source` → a short key that matches a `metadata.sources[].key`.
    - Drop denormalized `wilaya`/`wilaya_ar` name fields — derivable from `wilaya_code`.
    - Keep domain-specific extras (phone, operator, type/type_label_*, capacity, …) as-is.
-   - `id` — keep the existing stable `{wilaya}-{seq}` form (unique within the dataset).
+   - `id` — an **opaque string, unique within its file** (decision 10). Keep whatever stable
+     form the package already shipped (`"01-001"`, `"16-eph-01"`, `"00042"`, `"daad"`, `"1"`);
+     consumers must treat it as opaque and scope it by file. It is *not* globally unique, and
+     not unique across files even within one package.
+     **A per-file prefix is required when the package's `index.js` merges several files into
+     one collection** — `banques.all()`, `emploi.agencies()`, `mobilis.all()`, `tourisme.all()`.
+     Those files share one id namespace, so an id that is only file-unique silently collapses
+     records in any id-keyed lookup built from the merged array. Prefix each file with a
+     constant naming that file (`ag-`, `pdv-`, `lodging-`, `attraction-`, `historic-`,
+     `thermal-spring-`, `park-`); a constant prefix also preserves the file's committed id
+     sort order. Apply it in the generator, not by editing data — `validate-packages.mjs`
+     enforces per-file uniqueness always and joint uniqueness across those merged sets.
 
 3. **Emit via the schema helpers.** Import `{ toCSV, toGeoJSON, buildMetadata }` from
    `@geoalgeria/schema`; delete any inlined copies. Column order for CSV should lead with the
@@ -50,8 +63,14 @@ hand-editing data — then the outputs are regenerated. A package with no genera
    node scripts/validate-packages.mjs <pkg>        # must PASS; warnings are OK
    ```
 
-6. **Update the types.** `types/index.d.ts`: `import type { GeoRecord, DatasetMetadata }`
-   and `extends` them with the package's specific fields (see pharmacies).
+6. **Update the types.** `types/index.d.ts` must be **self-contained** — declare the canonical
+   fields locally rather than importing `GeoRecord`/`DatasetMetadata`. `types/` is published
+   in `files[]` but `@geoalgeria/schema` is not in `release.yml`'s publish list, so a shipped
+   declaration that imports it makes the package uninstallable. Declare `geo_precision` as
+   `"exact" | "approximate" | null`, make `geo_method` and `lat`/`lng` nullable exactly where
+   the data allows, and give enum-like fields string-literal unions. Worked references:
+   `sante`, `poste`, `mobilis`. `validate-packages.mjs` compares every declared property name
+   against the shipped JSON key set in both directions and fails on a mismatch.
 
 7. **README** field table / examples — align in the docs pass (P6), not per-package.
 

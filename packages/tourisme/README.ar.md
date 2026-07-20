@@ -96,20 +96,27 @@ data/
 
 ```json
 {
+  "id": "lodging-1",
   "name": "عريان الراس",
   "name_ar": "عريان الراس تسابيت",
-  "type": "alpine_hut",
   "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
   "lat": 28.4162728,
   "lng": -0.2620846,
-  "source": "OpenStreetMap",
-  "osm_id": 8107956617,
-  "id": "lodging-1"
+  "geo_precision": "exact",
+  "geo_method": "osm",
+  "source": "osm",
+  "refs": { "osm": "8107956617" },
+  "type": "alpine_hut"
 }
 ```
 
 `type` يأخذ إحدى القيم: `hotel`، `hostel`، `guest_house`، `apartment`، `chalet`، `motel`،
-`alpine_hut`. حقول اختيارية: `stars`، `rooms`، `phone`، `website`، `address`، `name_fr`.
+`alpine_hut`. الحقلان `name_fr` و`name_ar` موجودان فقط حيث يحمل OpenStreetMap تلك اللغة.
+و`source` مفتاح قصير يُحلّ في `metadata.sources[]`، بينما تعيش المعرّفات الخارجية في `refs`
+(`refs.osm` هو معرّف OSM كسلسلة نصية). طبقات OSM الأربع لا تحمل أي ربط بالبلدية، لذا يبقى
+`commune_code` و`commune` فارغين فيها.
 
 **ينبوع حراري** — مصدره ASAL Geoportail، مع الخصائص الفيزيائية:
 
@@ -117,23 +124,26 @@ data/
 {
   "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
+  "wilaya_code": "43",
+  "commune_code": null,
+  "commune": "BENI H'MIDENE",
+  "lat": 36.4625,
+  "lng": 6.4827778,
+  "geo_precision": "exact",
+  "geo_method": "asal",
+  "source": "asal",
   "type": "forage",
   "temperature_c": 32,
   "debit_l_s": 15,
   "altitude_m": 423,
-  "minerality": "BICARBONATEE CALCIQUE",
-  "wilaya_code": "43",
-  "wilaya_name": "CONSTANTINE",
-  "commune_name": "BENI H'MIDENE",
-  "lat": 36.4625,
-  "lng": 6.4827778,
-  "source": "ASAL geoportail"
+  "minerality": "BICARBONATEE CALCIQUE"
 }
 ```
 
 `type` يأخذ إحدى القيم: `hammam`، `ain`، `source`، `forage`. الخصائص الفيزيائية
 (`temperature_c`، `debit_l_s`، `altitude_m`، `minerality`) مأخوذة مباشرة من مجموعة
-بيانات ASAL.
+بيانات ASAL، و`minerality` هي الوحيدة الاختيارية منها. هذه هي الطبقة الوحيدة التي تسمّي
+بلدية — عبر `commune`، أي اسم لا رمز `commune_code` من الديوان الوطني للإحصائيات، الذي يبقى فارغًا.
 
 `wilaya_code` مكمّل بصفر إلى رقمين في جميع الطبقات ويرتبط بولايات GeoAlgeria.
 

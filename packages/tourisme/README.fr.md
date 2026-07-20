@@ -96,20 +96,27 @@ data/
 
 ```json
 {
+  "id": "lodging-1",
   "name": "عريان الراس",
   "name_ar": "عريان الراس تسابيت",
-  "type": "alpine_hut",
   "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
   "lat": 28.4162728,
   "lng": -0.2620846,
-  "source": "OpenStreetMap",
-  "osm_id": 8107956617,
-  "id": "lodging-1"
+  "geo_precision": "exact",
+  "geo_method": "osm",
+  "source": "osm",
+  "refs": { "osm": "8107956617" },
+  "type": "alpine_hut"
 }
 ```
 
 `type` est l'un des suivants : `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`,
-`alpine_hut`. Champs optionnels : `stars`, `rooms`, `phone`, `website`, `address`, `name_fr`.
+`alpine_hut`. `name_fr` et `name_ar` ne sont présents que lorsque OpenStreetMap porte cette
+langue. `source` est une clé courte résolue dans `metadata.sources[]`, et les identifiants
+externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de chaîne). Les quatre
+couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls.
 
 **Source thermale** — source ASAL Geoportail, avec propriétés physiques :
 
@@ -117,23 +124,26 @@ data/
 {
   "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
+  "wilaya_code": "43",
+  "commune_code": null,
+  "commune": "BENI H'MIDENE",
+  "lat": 36.4625,
+  "lng": 6.4827778,
+  "geo_precision": "exact",
+  "geo_method": "asal",
+  "source": "asal",
   "type": "forage",
   "temperature_c": 32,
   "debit_l_s": 15,
   "altitude_m": 423,
-  "minerality": "BICARBONATEE CALCIQUE",
-  "wilaya_code": "43",
-  "wilaya_name": "CONSTANTINE",
-  "commune_name": "BENI H'MIDENE",
-  "lat": 36.4625,
-  "lng": 6.4827778,
-  "source": "ASAL geoportail"
+  "minerality": "BICARBONATEE CALCIQUE"
 }
 ```
 
 `type` est l'un des suivants : `hammam`, `ain`, `source`, `forage`. Les propriétés physiques
 (`temperature_c`, `debit_l_s`, `altitude_m`, `minerality`) proviennent directement du jeu de
-données ASAL.
+données ASAL ; `minerality` est la seule optionnelle. C'est la seule couche qui nomme une
+commune — via `commune`, un nom et non un `commune_code` ONS, qui reste nul.
 
 `wilaya_code` est complété à deux chiffres avec un zéro dans toutes les couches et rejoint les
 wilayas de GeoAlgeria.
