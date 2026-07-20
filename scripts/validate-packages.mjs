@@ -615,6 +615,10 @@ function validateLivraison() {
   } catch (e) {
     return fail(`livraison/metadata.json: cannot read — ${e.message}`);
   }
+  // v2 contract: stopdesks.json is the package's only true GeoRecord file (carriers/
+  // coverage have no wilaya_code, so they stay outside the strict contract). Dormant
+  // until metadata.schema_version flips to "2.0.0" — mirrors validateDataset's isV2 gate.
+  const isV2 = meta.schema_version === "2.0.0";
 
   // carriers (registry — no coordinates, no wilaya_code)
   let carriers = [];
@@ -647,13 +651,24 @@ function validateLivraison() {
   }
   const deskIds = new Set(desks.map((s) => s.id));
   if (deskIds.size !== desks.length) fail(`livraison/stopdesks.json: ${desks.length - deskIds.size} duplicate id(s)`);
+
+  if (isV2) {
+    const { errors: v2errs, warnings: v2warn } = validateV2Records(desks, { requireName: true });
+    for (const m of v2errs) fail(`livraison/stopdesks.json [v2]: ${m}`);
+    const metaRes = validateV2Metadata(meta);
+    for (const m of metaRes.errors) fail(`livraison/metadata.json [v2]: ${m}`);
+    const warnCount = v2warn.length + metaRes.warnings.length;
+    if (warnCount) console.log(`  ⚠ livraison/stopdesks.json [v2]: ${warnCount} warning(s)`);
+  }
   let badWilaya = 0, badCoord = 0, missing = 0, badOp = 0;
   for (const s of desks) {
-    const w = Number(s.wilaya_code);
-    if (!/^\d+$/.test(String(s.wilaya_code)) || w < 1 || w > 69) badWilaya++;
-    if (!inAlgeria(s.lat, s.lng)) badCoord++;
-    for (const f of ["id", "operator", "name", "wilaya_code"]) {
-      if (s[f] === undefined || s[f] === null || s[f] === "") missing++;
+    if (!isV2) {
+      const w = Number(s.wilaya_code);
+      if (!/^\d+$/.test(String(s.wilaya_code)) || w < 1 || w > 69) badWilaya++;
+      if (!inAlgeria(s.lat, s.lng)) badCoord++;
+      for (const f of ["id", "operator", "name", "wilaya_code"]) {
+        if (s[f] === undefined || s[f] === null || s[f] === "") missing++;
+      }
     }
     if (!carrierIds.has(s.operator)) badOp++;
   }
