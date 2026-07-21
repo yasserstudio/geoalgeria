@@ -104,6 +104,14 @@ function nearestCommune(lat, lng, communes) {
   return best;
 }
 
+// Deep-desert protected sites where nearest-commune lands the point in Tabelbala
+// (Béchar, 08) — the only commune centroid for hundreds of km — while the source
+// point sits well inside another wilaya per the boundary polygons (200–390 km from
+// Tabelbala, and Béchar borders neither Adrar nor Tindouf). Pin the wilaya to the
+// containing one, keyed by the stable patrimoine node id (nid_ar); commune is left
+// unresolved (no honest centroid that far out). Ids stay put via carryOverIds.
+const DESERT_FIX = { 1535: 1, 1365: 37, 1539: 37, 1538: 37 };
+
 // --- build -----------------------------------------------------------------
 function build(curated, wilByCode, communes, stats) {
   const rows = [];
@@ -113,13 +121,14 @@ function build(curated, wilByCode, communes, stats) {
     const lat = num(r.lat), lng = num(r.lng);
     if (lat == null || lng == null) { stats.no_coords++; continue; }
     const legacyCode = parseInt(r.wilaya_code, 10);
+    const fixW = DESERT_FIX[Number(r.nid_ar)] ?? DESERT_FIX[Number(r.nid_fr)];
     const nc = nearestCommune(lat, lng, communes);
-    const code = nc ? nc.wilaya_code : legacyCode; // current wilaya scheme (from the matched commune)
+    const code = fixW ?? (nc ? nc.wilaya_code : legacyCode); // current wilaya scheme (from the matched commune)
     const w = wilByCode.get(code);
     if (!w) { stats.unknown_wilaya++; continue; }
     if (code !== legacyCode) stats.rescoped++;
-    const commune = nc ? nc.name_fr : null;
-    const commune_code = nc ? nc.code_commune : null;
+    const commune = fixW ? null : nc ? nc.name_fr : null;
+    const commune_code = fixW ? null : nc ? nc.code_commune : null;
     const name_fr = r.name_fr || null;
     const name_ar = r.name_ar || null;
     const name = name_fr || name_ar;

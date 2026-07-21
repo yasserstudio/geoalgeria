@@ -54,8 +54,8 @@ export interface Station {
   wilaya_code: string;
   /** Commune (ONS) code as a 4-digit string, best-effort. Null when unresolved. */
   commune_code: string | null;
-  /** Commune name (French), nearest-centroid join. */
-  commune: string;
+  /** Commune name (French), nearest-centroid join. Null when unresolved. */
+  commune: string | null;
   /** Latitude (WGS84). */
   lat: number;
   /** Longitude (WGS84). */

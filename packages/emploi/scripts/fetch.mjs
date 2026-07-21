@@ -243,6 +243,13 @@ async function main() {
   if (!alemRaw || alemRaw === awemRaw) throw new Error("Could not distinguish the ALEM from the AWEM block");
 
   const alem = assignAlemIds(alemRaw.map(normAlem));
+  // Upstream ANEM files two Bordj Bou Arreridj (34) local agencies under Illizi's
+  // wilaya_id (33) — their coordinates are correct (Mansourah / Bordj Ghedir, ~36 °N,
+  // 400+ km from Illizi, which BBA does not border). Pin the wilaya to where the
+  // point lands. Keyed by agency name (stable across re-pulls; the {wilaya}-{seq} id
+  // is not) and run after id assignment so the public ids ("33-05", "33-06") hold.
+  const WILAYA_FIX = new Map([["ALEM MANSOURAH", "34"], ["ALEM BORDJ GHEDIR", "34"]]);
+  for (const r of alem) { const w = WILAYA_FIX.get(r.name); if (w) r.wilaya_code = w; }
   const awem = awemRaw.map(normAwem);
   console.log(`  ${awem.length} AWEM (wilaya) + ${alem.length} ALEM (local) agencies`);
 

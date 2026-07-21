@@ -52,8 +52,8 @@ export interface CulturalSite {
   wilaya_code: string;
   /** Commune (ONS) code, nearest-centroid best-effort. Null when unresolved. */
   commune_code: string | null;
-  /** Commune name (French), nearest-centroid best-effort. */
-  commune: string;
+  /** Commune name (French), nearest-centroid best-effort. Null when unresolved. */
+  commune: string | null;
   /** Latitude — every place carries the portal's published point. */
   lat: number;
   /** Longitude. */

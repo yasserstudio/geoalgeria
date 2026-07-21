@@ -162,6 +162,16 @@ for (const r of records) {
   r.id = `${r.wilaya_code}-${String(seq[r.wilaya_code]).padStart(3, "0")}`;
 }
 
+// ---- Wilaya correction (applied after id assignment so the public id is stable) ----
+// Gare de Hassi Khebi (on the Béchar–Tindouf line) sits deep in the Tindouf (37)
+// desert per the boundary polygons, but nearest-commune snaps it to Tabelbala
+// (Béchar, 08) — the only centroid for ~200 km, and Béchar no longer borders
+// Tindouf. Pin it to the containing wilaya; commune is left unresolved. Keyed by
+// the stable Wikidata id, run post-id so the record keeps id "08-016".
+for (const r of records) {
+  if (r.wikidata === "Q138457269") { r.wilaya_code = "37"; r.commune = null; r.commune_code = null; }
+}
+
 // ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
 // Raws are staged (no live fetch), so the dates are always the committed ones.
 const cfg = MIGRATIONS.ferroviaire;
