@@ -29,6 +29,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
+import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -411,11 +412,17 @@ const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  const wdRaw = await fetchWikidata();
+  // Offline replay: rebuild from the committed Wikidata + OSM pulls with no network.
+  const OFFLINE = process.argv.includes("--cache");
+  const wdRaw = OFFLINE
+    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "wikidata-raw.json"), "utf-8")).results.bindings
+    : await fetchWikidata();
   const wd = normWikidata(wdRaw);
   console.log(`  Wikidata: ${wd.length} geocoded mosques (base)`);
 
-  const osmRaw = await fetchOSM();
+  const osmRaw = OFFLINE
+    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "osm-raw.json"), "utf-8")).elements
+    : await fetchOSM();
   const osm = normOSM(osmRaw);
   console.log(`  OSM: ${osm.length} geocoded mosques (enrichment)`);
 
@@ -425,40 +432,27 @@ async function main() {
   console.log(`  ${communes.length} commune centroids loaded`);
   attachCommune(rows, communes);
 
-  // field order: keep id first, coords last
-  const cols = ["id", "source", "wikidata", "osm_id", "name", "name_ar", "name_fr", "denomination", "wilaya_code", "commune_code", "commune", "lat", "lng"];
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);
 
-  const by = (s) => rows.filter((r) => r.source === s).length;
-  const named = rows.filter((r) => r.name).length;
-  const metadata = {
-    source: "Wikidata (CC0) + OpenStreetMap (ODbL) composite — mosques in Algeria",
-    origin: "https://www.wikidata.org, https://www.openstreetmap.org",
-    license:
-      "Wikidata data is CC0. OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README for attribution.",
-    mosquees: rows.length,
-    named,
-    by_source: { wikidata: by("wikidata"), "wikidata+osm": by("wikidata+osm"), osm: by("osm") },
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code).filter(Boolean)).size,
-    mosquees_geocoded: rows.filter((r) => r.lat != null).length,
-    official_total: OFFICIAL_TOTAL,
-    coverage_note: `${rows.length} mosques compiled from Wikidata + OpenStreetMap, against the ~${OFFICIAL_TOTAL} counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry.`,
-    linkage_note:
-      "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("mosquees.json", rows);
-  writeText("csv/mosquees.csv", toCSV(rows, cols));
-  writeJSON("geojson/mosquees.geojson", toGeoJSON(rows));
-  writeJSON("metadata.json", metadata);
-  console.log(
-    `Wrote ${rows.length} mosques (${named} named, ${metadata.wilayas_covered} wilayas) — ` +
-      `${by("wikidata")} WD-only, ${by("wikidata+osm")} WD+OSM, ${by("osm")} OSM-only.`,
+  // Emit v2 via the shared writer. Carry ids over by the stable OSM/Wikidata id so
+  // the commune re-scoping shows up as corrected wilaya/commune, not id churn.
+  const cfg = MIGRATIONS.mosquees;
+  const today = new Date().toISOString().slice(0, 10);
+  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const v2 = rows.map(cfg.map);
+  carryOverIds(v2, readCommitted(OUT_DIR, "mosquees.json"), (r) =>
+    r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null,
   );
+  const { records, metadata } = writePackageV2({
+    pkg: "mosquees",
+    dir: OUT_DIR,
+    files: [{ file: "mosquees.json", rows: v2 }],
+    meta: cfg.meta,
+    updated,
+    retrieved,
+  });
+  console.log(`Wrote ${records.length} mosques → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }
 
 main().catch((e) => {

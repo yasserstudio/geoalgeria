@@ -32,6 +32,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
+import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -491,7 +492,12 @@ const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  const osmRaw = await fetchOSM();
+  // Offline replay: rebuild from the committed OSM pull (research/ecoles/osm-raw.json)
+  // with no network — a dead upstream never blocks re-emission.
+  const OFFLINE = process.argv.includes("--cache");
+  const osmRaw = OFFLINE
+    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "osm-raw.json"), "utf-8")).elements
+    : await fetchOSM();
   let rows = normOSM(osmRaw);
   console.log(`  OSM: ${rows.length} geocoded schools`);
 
@@ -502,66 +508,27 @@ async function main() {
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);
 
-  // field order: id first, coords last (geo_precision after so CSV reads well)
-  const cols = [
-    "id", "source", "osm_id", "name", "name_ar", "name_fr",
-    "cycle", "cycle_label_fr", "cycle_label_ar", "kind", "kind_label_fr", "kind_label_ar",
-    "isced_levels", "sector",
-    "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code", "address",
-    "lat", "lng", "geo_precision",
-  ];
-  rows.sort((a, b) => a.id.localeCompare(b.id));
-
-  const CYCLES = ["primaire", "moyen", "secondaire", "prescolaire", "autre"];
-  const KINDS = ["regular", "langues", "coranique", "conduite", "formation", "special"];
-  const by_cycle = Object.fromEntries(CYCLES.map((c) => [c, rows.filter((r) => r.cycle === c).length]));
-  const by_kind = Object.fromEntries(KINDS.map((k) => [k, rows.filter((r) => r.kind === k).length]));
-  const named = rows.filter((r) => r.name).length;
-  const by_sector = {
-    public: rows.filter((r) => r.sector === "public").length,
-    private: rows.filter((r) => r.sector === "private").length,
-    unknown: rows.filter((r) => r.sector == null).length,
-  };
-  const metadata = {
-    source: "OpenStreetMap (ODbL) — schools (amenity=school) and kindergartens (amenity=kindergarten) in Algeria",
-    origin: "https://www.openstreetmap.org",
-    license:
-      "OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README for attribution.",
-    ecoles: rows.length,
-    named,
-    by_cycle,
-    by_kind,
-    by_sector,
-    with_address: rows.filter((r) => r.address).length,
-    with_isced: rows.filter((r) => r.isced_levels).length,
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code).filter(Boolean)).size,
-    ecoles_geocoded: rows.filter((r) => r.lat != null).length,
-    official_total: OFFICIAL_TOTAL,
-    coverage_note:
-      `${rows.length} schools compiled from OpenStreetMap, against the ~${OFFICIAL_TOTAL} establishments in Algeria's national school network (primaire + moyen + secondaire, Ministry of National Education, approximate). A community-maintained extract, not an official registry — coverage is partial and uneven by wilaya.`,
-    cycle_note:
-      "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
-    kind_note:
-      "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle).",
-    linkage_note:
-      "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("ecoles.json", rows);
-  writeText("csv/ecoles.csv", toCSV(rows, cols));
-  writeJSON("geojson/ecoles.geojson", toGeoJSON(rows));
-  writeJSON("metadata.json", metadata);
-  console.log(
-    `Wrote ${rows.length} schools (${named} named, ${metadata.wilayas_covered} wilayas) — ` +
-      CYCLES.map((c) => `${by_cycle[c]} ${c}`).join(", ") + ".",
-  );
-  console.log(
-    `  kinds: ` + KINDS.filter((k) => by_kind[k]).map((k) => `${by_kind[k]} ${k}`).join(", ") +
-      ` | ${metadata.with_address} with address, ${metadata.with_isced} with isced_levels.`,
-  );
+  // Emit v2 via the shared writer. Carry ids over by the stable OSM id so the root
+  // commune fix (dataset/algeria.json) shows up as corrected wilaya/commune, not as
+  // a re-sequencing of every id in the re-scoped wilayas. The cycle/kind notes are
+  // preserved from the committed metadata (meta.preserve).
+  const cfg = MIGRATIONS.ecoles;
+  const today = new Date().toISOString().slice(0, 10);
+  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const v2 = rows.map(cfg.map);
+  carryOverIds(v2, readCommitted(OUT_DIR, "ecoles.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null));
+  let oldMeta = {};
+  try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
+  const { records, metadata } = writePackageV2({
+    pkg: "ecoles",
+    dir: OUT_DIR,
+    files: [{ file: "ecoles.json", rows: v2 }],
+    meta: cfg.meta,
+    updated,
+    retrieved,
+    oldMeta,
+  });
+  console.log(`Wrote ${records.length} schools → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }
 
 main().catch((e) => {
