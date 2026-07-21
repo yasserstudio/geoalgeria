@@ -88,6 +88,9 @@ export interface Alem {
   email: string | null;
   /** Agency manager/director. */
   manager: string;
+  /** Comma-separated list of the communes this local agency serves (domain extra,
+   *  v2 decision 2). Present on every ALEM record. */
+  communes: string;
 }
 
 /** One provenance entry in `metadata.sources[]`. */

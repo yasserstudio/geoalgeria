@@ -486,7 +486,10 @@ export const MIGRATIONS = {
         wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
         ...geoExact(r, "anem"),
         source: "anem",
-        type: r.type, code: r.code, address: r.address, phone: r.phone, fax: r.fax, email: r.email, manager: r.manager,
+        // `communes` is the comma-string of communes the local agency (ALEM) serves.
+        // Every pre-migration ALEM record carried it (v2 decision 2 kept the domain
+        // plural as an extra); the cutover dropped it, recovered here.
+        type: r.type, code: r.code, address: r.address, phone: r.phone, fax: r.fax, email: r.email, manager: r.manager, communes: r.communes,
       }) },
     ],
     meta: {

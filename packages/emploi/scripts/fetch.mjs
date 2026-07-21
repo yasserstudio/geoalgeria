@@ -26,6 +26,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -276,34 +277,23 @@ async function main() {
   const awem = awemRaw.map(normAwem);
   console.log(`  ${awem.length} AWEM (wilaya) + ${alem.length} ALEM (local) agencies`);
 
-  const alemCols = ["id", "code", "type", "name", "address", "phone", "fax", "email", "manager", "communes", "wilaya_code", "lat", "lng"];
-  const awemCols = ["id", "code", "type", "name", "address", "phone", "fax", "email", "manager", "wilaya_code", "lat", "lng"];
-
-  const alemGeo = toGeoJSON(alem);
-  const awemGeo = toGeoJSON(awem);
-  console.log(`  GeoJSON: ${awemGeo.features.length}/${awem.length} AWEM and ${alemGeo.features.length}/${alem.length} ALEM have coordinates`);
-
-  const metadata = {
-    source: "ANEM — National Employment Agency (anem.dz/#/portail-carto)",
-    origin: ORIGIN,
-    license: "Data © ANEM; redistributed for reference. See README.",
-    awem: awem.length,
-    alem: alem.length,
-    total: awem.length + alem.length,
-    wilayas_covered: new Set([...awem, ...alem].map((a) => a.wilaya_code).filter(Boolean)).size,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("awem.json", awem);
-  writeJSON("alem.json", alem);
-  writeText("csv/awem.csv", toCSV(awem, awemCols));
-  writeText("csv/alem.csv", toCSV(alem, alemCols));
-  writeJSON("geojson/awem.geojson", awemGeo);
-  writeJSON("geojson/alem.geojson", alemGeo);
-  writeJSON("metadata.json", metadata);
-  console.log("Wrote JSON, CSV, and GeoJSON to data/.");
+  // Emit v2 via the shared writer (live-only source, so stamp the run's date). The
+  // alem map keeps the `communes` served-list; awem has none.
+  const cfg = MIGRATIONS.emploi;
+  const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
+  const today = new Date().toISOString().slice(0, 10);
+  writePackageV2({
+    pkg: "emploi",
+    dir: OUT_DIR,
+    files: [
+      { file: "awem.json", rows: awem.map(mapOf("awem.json")) },
+      { file: "alem.json", rows: alem.map(mapOf("alem.json")) },
+    ],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
+  });
+  console.log(`Wrote ${awem.length} AWEM + ${alem.length} ALEM → v2.`);
 }
 
 main().catch((e) => {
