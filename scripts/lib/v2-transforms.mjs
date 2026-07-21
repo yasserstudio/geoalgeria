@@ -748,23 +748,96 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
  * relocated records. A record with no committed match keeps its freshly derived id
  * (a genuinely new record on a live pull).
  *
+ * Growth/shrink/reorder are all handled:
+ *  - reorder — every record matches a committed key, so every id is pinned back.
+ *  - shrink  — a dropped record's key is simply absent; its id retires (a missing
+ *    key is expected, never an error). The retired id stays reserved so a live
+ *    record can never inherit a join key that used to mean a different place.
+ *  - growth  — a genuinely new record keeps its freshly derived id UNLESS that id
+ *    lands on a reserved (pinned-or-retired) committed id; then it is re-homed to
+ *    the next free {prefix}-{seq} slot in its own id space. Without this, the
+ *    sequential assignIds() pass — which runs before carry-over and does not know
+ *    which slots carry-over will pin back — can hand a new record the very slot a
+ *    carried record returns to, minting a duplicate public id (empirically: a live
+ *    ecoles regen produced 20 duplicate-id pairs).
+ *
+ * Fails loud on a duplicated committed carry key (the key cannot pin an id it does
+ * not uniquely identify) and on any residual duplicate id after carry-over.
+ *
  * @param {object[]} rows          the v2 records being emitted (mutated in place)
  * @param {object[]} committed     the committed v2 records (empty on a first build)
  * @param {(r: object) => (string|null)} keyOf  stable upstream key, or null to skip
+ * @param {string} [pkg]           package name, for error messages
  * @returns {object[]} rows
  */
-export function carryOverIds(rows, committed, keyOf) {
+export function carryOverIds(rows, committed, keyOf, pkg = "") {
+  const tag = pkg ? ` [${pkg}]` : "";
+  // Index the committed id each carry key shipped under. A duplicated key means
+  // the key does not uniquely identify a record, so pinning would be arbitrary —
+  // fail the build rather than silently churn the ambiguous records' ids.
   const byKey = new Map();
-  const dup = new Set();
+  const dupKeys = new Set();
   for (const r of committed) {
     const k = keyOf(r);
     if (k == null) continue;
-    if (byKey.has(k)) dup.add(k);
+    if (byKey.has(k)) dupKeys.add(k);
     else byKey.set(k, r.id);
   }
+  if (dupKeys.size)
+    throw new Error(
+      `carryOverIds${tag}: committed data has duplicate carry key(s) ` +
+        `${[...dupKeys].slice(0, 5).map((k) => JSON.stringify(k)).join(", ")}` +
+        `${dupKeys.size > 5 ? ` (+${dupKeys.size - 5} more)` : ""} — the carry key is not ` +
+        `unique, so it cannot pin ids; make keyOf discriminate these records`,
+    );
+
+  // Every id any committed record ever held. A record still present is pinned
+  // back to it below; a record upstream dropped retires its id. Either way a NEW
+  // record must never be handed one of these — reuse would silently repoint a
+  // cached public join key at a different place.
+  const reserved = new Set(committed.map((r) => r.id));
+
+  // 1. Pin each still-present record back to the id it shipped under.
+  const carried = new Set();
   for (const r of rows) {
     const k = keyOf(r);
-    if (k != null && !dup.has(k) && byKey.has(k)) r.id = byKey.get(k);
+    if (k != null && byKey.has(k)) {
+      r.id = byKey.get(k);
+      carried.add(r);
+    }
+  }
+
+  // 2. Re-home any new record whose freshly-derived id collides with a reserved
+  //    id. Deterministic: keep its prefix, take the smallest {prefix}-{seq} not
+  //    already occupied (every reserved id + every live id), matching the width
+  //    of its derived suffix.
+  const occupied = new Set(reserved);
+  for (const r of rows) occupied.add(r.id);
+  for (const r of rows) {
+    if (carried.has(r) || !reserved.has(r.id)) continue;
+    const id = String(r.id);
+    const cut = id.lastIndexOf("-");
+    const prefix = cut >= 0 ? id.slice(0, cut) : id;
+    const width = cut >= 0 ? id.length - cut - 1 : 0;
+    let seq = 1;
+    let next;
+    do {
+      next = `${prefix}-${String(seq++).padStart(width, "0")}`;
+    } while (occupied.has(next));
+    r.id = next;
+    occupied.add(next);
+  }
+
+  // 3. The final id set must be globally unique — two current records sharing one
+  //    upstream key would pin to the same committed id and slip past step 2.
+  const ids = new Set();
+  for (const r of rows) {
+    if (ids.has(r.id))
+      throw new Error(
+        `carryOverIds${tag}: id ${JSON.stringify(r.id)} is duplicated after carry-over ` +
+          `— two records resolve to the same public id`,
+      );
+    ids.add(r.id);
   }
   return rows;
 }

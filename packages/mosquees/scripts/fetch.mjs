@@ -443,6 +443,7 @@ async function main() {
   const v2 = rows.map(cfg.map);
   carryOverIds(v2, readCommitted(OUT_DIR, "mosquees.json"), (r) =>
     r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null,
+    "mosquees",
   );
   const { records, metadata } = writePackageV2({
     pkg: "mosquees",

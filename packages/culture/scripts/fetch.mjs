@@ -202,7 +202,7 @@ function main() {
   // Carry ids over by the stable portal node id so the root commune fix shows up as
   // corrected wilaya/commune, not as a re-sequencing of every id in those wilayas.
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null));
+  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null), "culture");
   const { records, metadata } = writePackageV2({
     pkg: "culture",
     dir: OUT_DIR,

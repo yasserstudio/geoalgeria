@@ -960,6 +960,7 @@ async function main() {
   const v2 = rows.map(cfg.map);
   carryOverIds(v2, readCommitted(OUT_DIR, "sante.json"), (r) =>
     r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : r.refs?.msp ? `msp:${r.refs.msp}` : null,
+    "sante",
   );
   const { records: out, metadata } = writePackageV2({
     pkg: "sante",

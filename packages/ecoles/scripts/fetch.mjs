@@ -516,7 +516,7 @@ async function main() {
   const today = new Date().toISOString().slice(0, 10);
   const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "ecoles.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null));
+  carryOverIds(v2, readCommitted(OUT_DIR, "ecoles.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "ecoles");
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
   const { records, metadata } = writePackageV2({

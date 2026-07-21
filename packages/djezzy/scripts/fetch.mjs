@@ -247,7 +247,7 @@ async function main() {
   // only diffs the records whose wilaya/commune actually changed.
   const cfg = MIGRATIONS.djezzy;
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "boutiques.json"), (r) => (r.refs?.djezzy ? `dz:${r.refs.djezzy}` : null));
+  carryOverIds(v2, readCommitted(OUT_DIR, "boutiques.json"), (r) => (r.refs?.djezzy ? `dz:${r.refs.djezzy}` : null), "djezzy");
   const today = new Date().toISOString().slice(0, 10);
   writePackageV2({
     pkg: "djezzy",
