@@ -1,6 +1,6 @@
 # Releasing
 
-GeoAlgeria publishes twenty-eight packages to npm — **`geoalgeria`** (the dataset, kept
+GeoAlgeria publishes twenty-seven packages to npm — **`geoalgeria`** (the dataset, kept
 unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**,
 **`@geoalgeria/mobilis`**, **`@geoalgeria/telecom`**, **`@geoalgeria/aviation`**,
 **`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`**,
@@ -10,14 +10,17 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 **`@geoalgeria/culture`**, **`@geoalgeria/agriculture`**, **`@geoalgeria/ecoles`**,
 **`@geoalgeria/gares-routieres`**, **`@geoalgeria/ferroviaire`**, **`@geoalgeria/buses`**,
 **`@geoalgeria/transport`**, **`@geoalgeria/industrie-pharmaceutique`**,
-**`@geoalgeria/pharmacies`**, **`@geoalgeria/ooredoo`**, **`@geoalgeria/pharma`** and
-**`@geoalgeria/schema`** (under the `@geoalgeria` org) — using
+**`@geoalgeria/pharmacies`**, **`@geoalgeria/ooredoo`** and **`@geoalgeria/pharma`**
+(under the `@geoalgeria` org) — using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
-monorepo). `@geoalgeria/schema` is the v2 data contract every other package's
-generator depends on — a dev dependency, not a dataset, but still published
-standalone like the rest. The web app lives in the separate **`geoalgeria.com`**
-repo and is not part of this one.
+monorepo). Of these, `release.yml`'s automated staging covers **25** — the flagship
+`geoalgeria`, `@geoalgeria/telecom` and the 23 sector packages; the two umbrellas
+**`@geoalgeria/transport`** and **`@geoalgeria/pharma`** carry `workspace:*` deps and are
+published **manually** with pnpm (see setup, step 2). `@geoalgeria/schema` is the v2 data
+contract every other package's generator depends on — a dev dependency, not a dataset, and
+is **not** published to npm at all (it is absent from the workflow's package list). The web
+app lives in the separate **`geoalgeria.com`** repo and is not part of this one.
 
 The raw `CSV`/`GeoJSON`/`SQL` formats are **not** in the npm tarball (only
 `*.json` is), so each release also cuts a **GitHub Release** with a zipped data
@@ -160,25 +163,50 @@ These are prerequisites the workflow can't do for you:
    ```bash
    cd packages/<new> && npm publish --access public   # one-time
    ```
-   After that, future bumps go through the staged workflow.
+   For a package that will flow through CI, follow the bootstrap with its
+   Trusted Publisher entry (step 3) **before** the first staged release.
    > ⚠️ **Umbrella / any package with `workspace:*` deps** (e.g.
-   > `@geoalgeria/transport`) must be published with **pnpm**, not npm — npm ships
-   > the literal `workspace:^` spec and breaks installs. Bootstrap it with
+   > `@geoalgeria/transport`, `@geoalgeria/pharma`) is **not** in the workflow — it is
+   > published with **pnpm**, not npm, both to bootstrap and for every bump, because
+   > npm ships the literal `workspace:^` spec and breaks installs (pnpm rewrites it to
+   > real semver). Publish it with
    > `cd packages/transport && pnpm publish --access public --no-git-checks`
-   > (verify via `pnpm pack` that deps resolve to `^x.y.z`).
-3. **Trusted Publisher per package** — on npmjs.com, for each of `geoalgeria`,
-   `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`, `@geoalgeria/telecom`,
-   `@geoalgeria/aviation`, `@geoalgeria/banques`, `@geoalgeria/livraison`, `@geoalgeria/jeunesse`,
-   `@geoalgeria/sports`, `@geoalgeria/enseignement-superieur`, `@geoalgeria/tourisme`,
+   > (verify via `pnpm pack` that deps resolve to `^x.y.z`). These umbrellas need no
+   > Trusted Publisher entry.
+3. **Trusted Publisher per package** — for each of the **25** packages the workflow
+   stages (`geoalgeria`, `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`,
+   `@geoalgeria/telecom`, `@geoalgeria/aviation`, `@geoalgeria/banques`,
+   `@geoalgeria/livraison`, `@geoalgeria/jeunesse`, `@geoalgeria/sports`,
+   `@geoalgeria/enseignement-superieur`, `@geoalgeria/tourisme`,
    `@geoalgeria/formation-professionnelle`, `@geoalgeria/djezzy`, `@geoalgeria/mosquees`,
    `@geoalgeria/sante`, `@geoalgeria/culture`, `@geoalgeria/agriculture`,
    `@geoalgeria/ecoles`, `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`,
-   `@geoalgeria/buses`, `@geoalgeria/transport`, `@geoalgeria/industrie-pharmaceutique`,
-   `@geoalgeria/pharmacies`, `@geoalgeria/ooredoo`, `@geoalgeria/pharma` and
-   `@geoalgeria/schema`: *Settings →
-   Trusted Publisher → GitHub Actions*, repo **`yasserstudio/geoalgeria`**,
-   workflow `release.yml`.
-   No `NPM_TOKEN` — auth is the workflow's OIDC `id-token`.
+   `@geoalgeria/buses`, `@geoalgeria/industrie-pharmaceutique`, `@geoalgeria/pharmacies`,
+   `@geoalgeria/ooredoo`). The umbrellas (`transport`, `pharma`) and the unpublished
+   contract package (`@geoalgeria/schema`) get **no** entry. Manage entries with the npm
+   CLI (npm ≥ 12) rather than the web UI:
+   ```bash
+   npm trust github <pkg> --file release.yml --repo yasserstudio/geoalgeria \
+     --allow-publish --allow-stage-publish -y
+   ```
+   Every `npm trust` op is 2FA-gated with browser auth; one auth session covers a batch
+   of consecutive ops, so do them back-to-back. No `NPM_TOKEN` — auth is the workflow's
+   OIDC `id-token`.
+   > ⚠️ **The entry MUST include `--allow-stage-publish`.** Without it the workflow's
+   > `npm stage publish` fails with a **generic E401** that reads like broken auth, not a
+   > missing permission. Entries created through the older npmjs.com web UI lack stage-publish
+   > and hit exactly this — re-create them via the CLI.
+   >
+   > **Entries can't be edited in place.** Re-running `npm trust github` on an existing
+   > entry returns **E409** (`already exists. Please delete and re-create`). To fix one,
+   > revoke then re-create:
+   > ```bash
+   > npm trust list <pkg> --json | jq '[.. | objects | select(has("id")) | .id] | unique'
+   > npm trust revoke <pkg> --id=<id>
+   > npm trust github <pkg> --file release.yml --repo yasserstudio/geoalgeria \
+   >   --allow-publish --allow-stage-publish -y
+   > ```
+   > (the ids are nested in the `list` output — the `jq` filter pulls them out.)
 4. **Enable 2FA** on the npm account (required to approve staged packages).
 5. **Repo → Settings → Actions → General → Workflow permissions**: *Allow GitHub
    Actions to create and approve pull requests* (so the bot can open the Version
