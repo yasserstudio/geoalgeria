@@ -22,7 +22,8 @@
  * attached by nearest-centroid join against the flagship geoalgeria commune set
  * (wilaya effectively exact; commune best-effort).
  *
- * Usage: node scripts/fetch.mjs
+ * Usage: node scripts/fetch.mjs            # live pull
+ *        node scripts/fetch.mjs --cache    # rebuild from research/mosquees/{wikidata,osm}-raw.json
  */
 
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";

@@ -22,7 +22,8 @@
  * Note: sante.gov.dz may be unreachable from non-Algerian networks / sandboxes;
  * run with direct network access if the MoH pull fails.
  *
- * Usage: node scripts/fetch.mjs
+ * Usage: node scripts/fetch.mjs            # live pull
+ *        node scripts/fetch.mjs --cache    # rebuild from research/sante/*-raw.json (+ msp taxonomy)
  */
 
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
