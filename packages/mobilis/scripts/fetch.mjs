@@ -36,10 +36,10 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -228,40 +228,6 @@ function assignIds(rows) {
   return rows;
 }
 
-// --- writers (mirrors @geoalgeria/emploi) ----------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    // Neutralize spreadsheet formula injection on TEXT fields. Numbers pass.
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return {
-          type: "Feature",
-          geometry: { type: "Point", coordinates: [lng, lat] },
-          properties: props,
-        };
-      }),
-  };
-}
-
-const writeJSON = (p, obj) =>
-  writeFileSync(join(OUT_DIR, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
-
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Priming Mobilis session (WAF cookies)…");
@@ -307,33 +273,25 @@ async function main() {
 
   const agences = out.agences.rows;
   const pdv = out.pdv.rows;
-  const agenceCols = ["id", "code", "type", "name", "name_ar", "address", "address_ar", "wilaya_code", "lat", "lng"];
-  const pdvCols = ["id", "code", "type", "name", "address", "commune", "wilaya_code", "lat", "lng"];
 
-  const metadata = {
-    source: "Mobilis — ATM Mobilis (mobilis.dz/mapagence)",
-    origin: ORIGIN,
-    license: "Data © ATM Mobilis; redistributed for reference. See README.",
-    agences: agences.length,
-    pdv: pdv.length,
-    total: agences.length + pdv.length,
-    wilayas_covered: new Set([...agences, ...pdv].map((r) => r.wilaya_code).filter(Boolean)).size,
-    agences_geocoded: out.agences.geocoded,
-    pdv_geocoded: out.pdv.geocoded,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("agences.json", agences);
-  writeJSON("pdv.json", pdv);
-  writeText("csv/agences.csv", toCSV(agences, agenceCols));
-  writeText("csv/pdv.csv", toCSV(pdv, pdvCols));
-  // Only the agencies are geocoded → only they get a GeoJSON. The 12k PDV carry
-  // no coordinates (commune-level only) and ship as JSON/CSV only.
-  writeJSON("geojson/agences.geojson", toGeoJSON(agences));
-  writeJSON("metadata.json", metadata);
-  console.log("Wrote JSON, CSV, and GeoJSON to data/.");
+  // Emit v2 via the shared writer (live-only source, so stamp the run's date).
+  // The map prefixes ids ag-/pdv-. Only the agencies are geocoded → they get a
+  // GeoJSON; the 12k PDV carry no coordinates and ship JSON/CSV only (geojson:false).
+  const cfg = MIGRATIONS.mobilis;
+  const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
+  const today = new Date().toISOString().slice(0, 10);
+  writePackageV2({
+    pkg: "mobilis",
+    dir: OUT_DIR,
+    files: [
+      { file: "agences.json", rows: agences.map(mapOf("agences.json")) },
+      { file: "pdv.json", geojson: false, rows: pdv.map(mapOf("pdv.json")) },
+    ],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
+  });
+  console.log(`Wrote ${agences.length} agences + ${pdv.length} PDV → v2.`);
 }
 
 main().catch((e) => {
