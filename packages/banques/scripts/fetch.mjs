@@ -10,6 +10,7 @@
 // Usage: node scripts/fetch.mjs
 import { execFileSync } from "node:child_process";
 import { readFileSync, writeFileSync } from "node:fs";
+import { MIGRATIONS } from "../../../scripts/lib/v2-transforms.mjs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -526,7 +527,11 @@ for (const r of records) {
   if (n > 0) r.id = `${r.id}-${n}`;
 }
 
-writeFileSync(join(DATA, "branches.json"), "[\n" + records.map((r) => "  " + JSON.stringify(r)).join(",\n") + "\n]\n");
+// Emit branches.json in the canonical v2 GeoRecord shape (the shared branches map).
+// Run `node scripts/build.mjs` afterwards to refresh the CSV/GeoJSON/metadata.
+const branchMap = MIGRATIONS.banques.files.find((f) => f.file === "branches.json").map;
+const v2 = records.map(branchMap).sort((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0));
+writeFileSync(join(DATA, "branches.json"), JSON.stringify(v2, null, 2) + "\n");
 
 // inspection summary
 const byBank = {};
