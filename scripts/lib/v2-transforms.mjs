@@ -41,7 +41,6 @@ function writeAtomic(path, content) {
  *  (constraint: on a real fetch a generator overrides these with the run's date;
  *  on a `--cache` replay it preserves the committed value, which is this). */
 export const CUTOVER_DATE = "2026-07-18";
-const TODAY = CUTOVER_DATE;
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
 // --- shared record helpers --------------------------------------------------
@@ -135,8 +134,8 @@ export const MIGRATIONS = {
     },
     meta: {
       sources: [
-        { key: "wikidata", name: "Wikidata — mosques in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
-        { key: "osm", name: "OpenStreetMap — mosques in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
+        { key: "wikidata", name: "Wikidata — mosques in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0" },
+        { key: "osm", name: "OpenStreetMap — mosques in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
       ],
       license: "CC0-1.0 AND ODbL-1.0",
       estimatedUniverse: 18449,
@@ -159,7 +158,7 @@ export const MIGRATIONS = {
       isced_levels: r.isced_levels, sector: r.sector, address: r.address,
     }),
     meta: {
-      sources: [{ key: "osm", name: "OpenStreetMap — schools & kindergartens in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY }],
+      sources: [{ key: "osm", name: "OpenStreetMap — schools & kindergartens in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" }],
       license: "ODbL-1.0",
       estimatedUniverse: 28000,
       coverageNote: "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya.",
@@ -181,7 +180,7 @@ export const MIGRATIONS = {
       has_virtual_tour: r.has_virtual_tour, url: r.url, slug: r.slug,
     }),
     meta: {
-      sources: [{ key: "patrimoine", name: "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)", url: "https://cartes.patrimoineculturelalgerien.org", license: "Factual public cultural listing (Ministry of Culture)", retrieved: TODAY }],
+      sources: [{ key: "patrimoine", name: "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)", url: "https://cartes.patrimoineculturelalgerien.org", license: "Factual public cultural listing (Ministry of Culture)", retrieved: "2026-06-28" }],
       license: "Factual public listing (Ministry of Culture); commune linkage from the GeoAlgeria set",
       estimatedUniverse: null,
       coverageNote: "Cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
@@ -201,7 +200,7 @@ export const MIGRATIONS = {
       type: r.type, category: r.category, address: r.address, hours: r.hours, code_ouverture: r.code_ouverture,
     }),
     meta: {
-      sources: [{ key: "djezzy", name: "Djezzy — Optimum Telecom Algérie (nos-boutiques)", url: "https://www.djezzy.dz", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference", retrieved: TODAY }],
+      sources: [{ key: "djezzy", name: "Djezzy — Optimum Telecom Algérie (nos-boutiques)", url: "https://www.djezzy.dz", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference" }],
       license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Djezzy retail boutiques from djezzy.dz/nos-boutiques. Wilaya/commune linkage is best-effort (nearest-centroid).",
@@ -222,7 +221,7 @@ export const MIGRATIONS = {
       address: r.address, operator_wilaya: r.operator_wilaya,
     }),
     meta: {
-      sources: [{ key: "ooredoo", name: "Ooredoo Algérie — retail network (trouvez-nous JSON API)", url: "https://www.ooredoo.dz/fr/particuliers/trouvez-nous", license: "Data © Ooredoo Algérie; redistributed for reference", retrieved: TODAY }],
+      sources: [{ key: "ooredoo", name: "Ooredoo Algérie — retail network (trouvez-nous JSON API)", url: "https://www.ooredoo.dz/fr/particuliers/trouvez-nous", license: "Data © Ooredoo Algérie; redistributed for reference" }],
       license: "Data © Ooredoo Algérie; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record has a real operator coordinate. A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
@@ -247,9 +246,9 @@ export const MIGRATIONS = {
     },
     meta: {
       sources: [
-        { key: "msp", name: "Ministry of Health (sante.gov.dz) — health-establishment registry", url: "https://sante.gov.dz", license: "Official public registry (Ministry of Health)", retrieved: TODAY },
-        { key: "osm", name: "OpenStreetMap — geocoding", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
-        { key: "wikidata", name: "Wikidata — geocoding", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
+        { key: "msp", name: "Ministry of Health (sante.gov.dz) — health-establishment registry", url: "https://sante.gov.dz", license: "Official public registry (Ministry of Health)" },
+        { key: "osm", name: "OpenStreetMap — geocoding", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
+        { key: "wikidata", name: "Wikidata — geocoding", url: "https://www.wikidata.org", license: "CC0-1.0" },
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
@@ -271,8 +270,8 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [
-        { key: "wikidata", name: "Wikidata — rail & urban transit stations in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
-        { key: "osm", name: "OpenStreetMap — rail & urban transit stations in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
+        { key: "wikidata", name: "Wikidata — rail & urban transit stations in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-07-01" },
+        { key: "osm", name: "OpenStreetMap — rail & urban transit stations in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-07-01" },
       ],
       license: "CC0-1.0 AND ODbL-1.0",
       estimatedUniverse: null,
@@ -294,7 +293,7 @@ export const MIGRATIONS = {
       surface_total_m2: r.surface_total_m2, surface_built_m2: r.surface_built_m2,
     }),
     meta: {
-      sources: [{ key: "sogral", name: "SOGRAL — Société de Gestion des Gares Routières d'Algérie", url: "https://live.sogral.com", license: "Data © SOGRAL; redistributed for reference", retrieved: TODAY }],
+      sources: [{ key: "sogral", name: "SOGRAL — Société de Gestion des Gares Routières d'Algérie", url: "https://live.sogral.com", license: "Data © SOGRAL; redistributed for reference", retrieved: "2026-07-01" }],
       license: "Data © SOGRAL; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "SOGRAL-managed intercity bus stations (gares routières) with surface areas, from the SOGRAL live API.",
@@ -314,7 +313,7 @@ export const MIGRATIONS = {
       icao: r.icao, iata: r.iata, address: r.address, phone: r.phone, website: r.website,
     }),
     meta: {
-      sources: [{ key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)", retrieved: TODAY }],
+      sources: [{ key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)" }],
       license: "Factual public listing (ANAC)",
       estimatedUniverse: null,
       coverageNote: "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
@@ -335,7 +334,7 @@ export const MIGRATIONS = {
       sector: r.sector, abbreviation: r.abbreviation, address: r.address, phone: r.phone, fax: r.fax, slug: r.slug,
     }),
     meta: {
-      sources: [{ key: "madr", name: "Ministry of Agriculture, Rural Development and Fisheries (MADR)", url: "https://madr.gov.dz", license: "Factual public institutional listing (MADR)", retrieved: TODAY }],
+      sources: [{ key: "madr", name: "Ministry of Agriculture, Rural Development and Fisheries (MADR)", url: "https://madr.gov.dz", license: "Factual public institutional listing (MADR)", retrieved: "2026-06-30" }],
       license: "Factual public institutional listing (MADR)",
       estimatedUniverse: null,
       coverageNote: "Agricultural institutions (training institutes, research, services) from the MADR — all positions are wilaya- or commune-centroid approximations (no surveyed points).",
@@ -356,7 +355,7 @@ export const MIGRATIONS = {
       nature_label_fr: r.nature_label_fr, nature_label_ar: r.nature_label_ar, slug: r.slug,
     }),
     meta: {
-      sources: [{ key: "mip", name: "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register", url: "https://www.miph.gov.dz", license: "Factual public register (MIP)", retrieved: TODAY }],
+      sources: [{ key: "mip", name: "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register", url: "https://www.miph.gov.dz", license: "Factual public register (MIP)", retrieved: "2026-07-05" }],
       license: "Factual public register (MIP)",
       estimatedUniverse: null,
       coverageNote: "Approved pharmaceutical & medical-device manufacturers from the MIP register, geocoded to commune/wilaya centroids (approximate).",
@@ -378,7 +377,7 @@ export const MIGRATIONS = {
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
     }),
     meta: {
-      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)", retrieved: TODAY }],
+      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
       coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
@@ -400,7 +399,7 @@ export const MIGRATIONS = {
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
     }),
     meta: {
-      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)", retrieved: TODAY }],
+      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
       coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
@@ -421,7 +420,7 @@ export const MIGRATIONS = {
       supervisory_ministry: r.supervisory_ministry, website: r.website,
     }),
     meta: {
-      sources: [{ key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)", retrieved: TODAY }],
+      sources: [{ key: "mesrs", name: "Ministry of Higher Education and Scientific Research (MESRS)", url: "https://www.mesrs.dz", license: "Factual public listing (MESRS)" }],
       license: "Factual public listing (MESRS)",
       estimatedUniverse: null,
       coverageNote: "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
@@ -444,7 +443,7 @@ export const MIGRATIONS = {
       surface_m2: r.surface_m2, internat: r.internat, capacite_internat: r.capacite_internat, vocations: r.vocations,
     }),
     meta: {
-      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP) — takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: TODAY }],
+      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP) — takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-06-22" }],
       license: "Factual public listing (MFEP)",
       estimatedUniverse: null,
       coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1375 of 1932 are geocoded.",
@@ -473,7 +472,7 @@ export const MIGRATIONS = {
       }) },
     ],
     meta: {
-      sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference", retrieved: TODAY }],
+      sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference" }],
       license: "Data © Algérie Poste; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
@@ -503,7 +502,7 @@ export const MIGRATIONS = {
       }) },
     ],
     meta: {
-      sources: [{ key: "anem", name: "ANEM — National Employment Agency (anem.dz)", url: "https://www.anem.dz", license: "Factual public listing (ANEM)", retrieved: TODAY }],
+      sources: [{ key: "anem", name: "ANEM — National Employment Agency (anem.dz)", url: "https://www.anem.dz", license: "Factual public listing (ANEM)" }],
       license: "Factual public listing (ANEM)",
       estimatedUniverse: null,
       coverageNote: "Employment agencies — regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
@@ -530,7 +529,7 @@ export const MIGRATIONS = {
       }) },
     ],
     meta: {
-      sources: [{ key: "mobilis", name: "Mobilis — ATM Mobilis (mobilis.dz)", url: "https://www.mobilis.dz", license: "Data © ATM Mobilis; redistributed for reference", retrieved: TODAY }],
+      sources: [{ key: "mobilis", name: "Mobilis — ATM Mobilis (mobilis.dz)", url: "https://www.mobilis.dz", license: "Data © ATM Mobilis; redistributed for reference" }],
       license: "Data © ATM Mobilis; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
@@ -549,9 +548,9 @@ export const MIGRATIONS = {
     ],
     meta: {
       sources: [
-        { key: "osm", name: "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: TODAY },
-        { key: "wikidata", name: "Wikidata — heritage sites, museums & parks in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: TODAY },
-        { key: "asal", name: "ASAL Geoportail — thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: TODAY },
+        { key: "osm", name: "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-06-21" },
+        { key: "wikidata", name: "Wikidata — heritage sites, museums & parks in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-06-21" },
+        { key: "asal", name: "ASAL Geoportail — thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: "2026-06-21" },
       ],
       license: "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)",
       estimatedUniverse: null,
@@ -593,8 +592,8 @@ export const MIGRATIONS = {
     ],
     meta: {
       sources: [
-        { key: "boa", name: "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: TODAY, evidence_type: "official" },
-        { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+        { key: "boa", name: "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: "2026-06-16", evidence_type: "official" },
+        { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
       ],
       license: "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
       estimatedUniverse: null,
@@ -629,7 +628,7 @@ export const MIGRATIONS = {
       source_url: r.source,
     }),
     meta: {
-      sources: [{ key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: TODAY, evidence_type: "crowdsourced" }],
+      sources: [{ key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" }],
       license: "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
       estimatedUniverse: 122,
       coverageNote: "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
@@ -653,11 +652,11 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [
-        { key: "yalidine", name: "Yalidine Express — nos-agences", url: "https://yalidine-express.com.dz/nos-agences/", license: "Data © Yalidine Express; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
-        { key: "guepex", name: "Guepex — public agences feed", url: "https://www.guepex.dz/public/data/agences.json", license: "Data © Guepex; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
-        { key: "anderson", name: "Anderson Logistics — agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
-        { key: "noest", name: "Noest Express — bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
-        { key: "maystro", name: "Maystro Delivery — coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", retrieved: TODAY, evidence_type: "official" },
+        { key: "yalidine", name: "Yalidine Express — nos-agences", url: "https://yalidine-express.com.dz/nos-agences/", license: "Data © Yalidine Express; redistributed for reference", evidence_type: "official" },
+        { key: "guepex", name: "Guepex — public agences feed", url: "https://www.guepex.dz/public/data/agences.json", license: "Data © Guepex; redistributed for reference", evidence_type: "official" },
+        { key: "anderson", name: "Anderson Logistics — agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", evidence_type: "official" },
+        { key: "noest", name: "Noest Express — bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", evidence_type: "official" },
+        { key: "maystro", name: "Maystro Delivery — coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
