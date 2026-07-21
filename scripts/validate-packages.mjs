@@ -227,7 +227,9 @@ const MISLINK_CEILING_PCT = 1.0;
 // them is a data decision (which of the two fields is wrong?), not a validator one,
 // so the debt is recorded here and left visible rather than rounded away by picking
 // a ceiling that clears it.
-const KNOWN_MISLINKS = { "formation-professionnelle": 37 };
+// The 5 relinked packages are pinned at 0: any non-adjacent mislink that reappears
+// fails the build hard (== check below), rather than warning under the 1% ceiling.
+const KNOWN_MISLINKS = { "formation-professionnelle": 37, culture: 0, ferroviaire: 0, emploi: 0, banques: 0, tourisme: 0 };
 
 function reportBoundaries(full) {
   const rows = [...GEO_TALLY].filter(([, t]) => t.checked > 0).sort((a, b) => b[1].mislinked.length - a[1].mislinked.length);
@@ -252,7 +254,8 @@ function reportBoundaries(full) {
               ? `New mislinks have shipped; fix them, do not raise the number.`
               : `The debt shrank — ratchet KNOWN_MISLINKS down to ${t.mislinked.length} in scripts/validate-packages.mjs.`),
         );
-      else console.log(`  ⚠ ${line} — over the ${MISLINK_CEILING_PCT}% ceiling, pinned as known debt`);
+      else if (allowed > 0) console.log(`  ⚠ ${line} — over the ${MISLINK_CEILING_PCT}% ceiling, pinned as known debt`);
+      else console.log(`  OK: ${line} — pinned at 0`);
     } else if (rate > MISLINK_CEILING_PCT) {
       fail(`${line} — over the ${MISLINK_CEILING_PCT}% mislink ceiling`);
     } else if (t.mislinked.length) {

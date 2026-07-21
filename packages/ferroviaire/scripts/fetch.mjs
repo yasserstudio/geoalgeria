@@ -18,6 +18,12 @@ const RESEARCH = join(ROOT, "research/ferroviaire");
 const DEG = Math.PI / 180, M_PER_DEG = 111320, MATCH_M = 150, DEDUP_M = 40;
 const TRAM_NETWORK = { "16": "Alger", "31": "Oran", "25": "Constantine", "19": "Sétif", "30": "Ouargla", "55": "Ouargla", "22": "Sidi Bel Abbès", "27": "Mostaganem" };
 const OPERATOR = { rail: "SNTF", tram: "SETRAM", metro: "SEMA" };
+// Wilaya corrections keyed by stable Wikidata id, applied post-id (see below).
+// Q138457269 = Gare de Hassi Khebi: point-in-polygon places it in Tindouf (37);
+// Wikidata P131 says Béchar, but the point sits outside Béchar's polygon (nearest-
+// commune snaps it to Tabelbala, the only centroid for ~200 km, and Béchar no
+// longer borders Tindouf). commune is left unresolved (no honest centroid out there).
+const WILAYA_FIX = { Q138457269: "37" };
 
 const wdType = (label) => {
   const l = (label || "").toLowerCase();
@@ -163,14 +169,17 @@ for (const r of records) {
 }
 
 // ---- Wilaya correction (applied after id assignment so the public id is stable) ----
-// Gare de Hassi Khebi (on the Béchar–Tindouf line) sits deep in the Tindouf (37)
-// desert per the boundary polygons, but nearest-commune snaps it to Tabelbala
-// (Béchar, 08) — the only centroid for ~200 km, and Béchar no longer borders
-// Tindouf. Pin it to the containing wilaya; commune is left unresolved. Keyed by
-// the stable Wikidata id, run post-id so the record keeps id "08-016".
+// WILAYA_FIX (declared above) pins desert stations the nearest-commune join snaps to
+// the wrong wilaya. Run post-id so a corrected record keeps its id (e.g. "08-016").
+const wilayaFixMatched = new Set();
 for (const r of records) {
-  if (r.wikidata === "Q138457269") { r.wilaya_code = "37"; r.commune = null; r.commune_code = null; }
+  const w = WILAYA_FIX[r.wikidata];
+  if (w) { r.wilaya_code = w; r.commune = null; r.commune_code = null; wilayaFixMatched.add(r.wikidata); }
 }
+// Every WILAYA_FIX key must have hit a record; an unmatched key means the Wikidata
+// id was renamed/retired upstream and the pin silently reverted.
+const unmatchedFix = Object.keys(WILAYA_FIX).filter((k) => !wilayaFixMatched.has(k));
+if (unmatchedFix.length) throw new Error(`ferroviaire: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record — the Wikidata id was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
 
 // ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
 // Raws are staged (no live fetch), so the dates are always the committed ones.

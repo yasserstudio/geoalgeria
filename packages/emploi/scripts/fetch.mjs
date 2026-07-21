@@ -249,7 +249,12 @@ async function main() {
   // point lands. Keyed by agency name (stable across re-pulls; the {wilaya}-{seq} id
   // is not) and run after id assignment so the public ids ("33-05", "33-06") hold.
   const WILAYA_FIX = new Map([["ALEM MANSOURAH", "34"], ["ALEM BORDJ GHEDIR", "34"]]);
-  for (const r of alem) { const w = WILAYA_FIX.get(r.name); if (w) r.wilaya_code = w; }
+  const wilayaFixMatched = new Set();
+  for (const r of alem) { const w = WILAYA_FIX.get(r.name); if (w) { r.wilaya_code = w; wilayaFixMatched.add(r.name); } }
+  // Every WILAYA_FIX key must have hit a record; an unmatched key means ANEM renamed
+  // or retired the agency and the pin silently reverted — update the table, not this.
+  const unmatchedFix = [...WILAYA_FIX.keys()].filter((k) => !wilayaFixMatched.has(k));
+  if (unmatchedFix.length) throw new Error(`emploi: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record — the ANEM agency was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
   const awem = awemRaw.map(normAwem);
   console.log(`  ${awem.length} AWEM (wilaya) + ${alem.length} ALEM (local) agencies`);
 

@@ -110,7 +110,10 @@ function nearestCommune(lat, lng, communes) {
 // Tabelbala, and Béchar borders neither Adrar nor Tindouf). Pin the wilaya to the
 // containing one, keyed by the stable patrimoine node id (nid_ar); commune is left
 // unresolved (no honest centroid that far out). Ids stay put via carryOverIds.
+// Keyed by nid_ar only: the FR/AR node id spaces are disjoint (see header), so a
+// nid_fr fallback could only match by coincidence and misassign an unrelated place.
 const DESERT_FIX = { 1535: 1, 1365: 37, 1539: 37, 1538: 37 };
+const desertFixMatched = new Set(); // guard: every key must hit ≥1 record (see main)
 
 // --- build -----------------------------------------------------------------
 function build(curated, wilByCode, communes, stats) {
@@ -121,7 +124,8 @@ function build(curated, wilByCode, communes, stats) {
     const lat = num(r.lat), lng = num(r.lng);
     if (lat == null || lng == null) { stats.no_coords++; continue; }
     const legacyCode = parseInt(r.wilaya_code, 10);
-    const fixW = DESERT_FIX[Number(r.nid_ar)] ?? DESERT_FIX[Number(r.nid_fr)];
+    const fixW = DESERT_FIX[Number(r.nid_ar)];
+    if (fixW !== undefined) desertFixMatched.add(Number(r.nid_ar));
     const nc = nearestCommune(lat, lng, communes);
     const code = fixW ?? (nc ? nc.wilaya_code : legacyCode); // current wilaya scheme (from the matched commune)
     const w = wilByCode.get(code);
@@ -203,6 +207,10 @@ function main() {
 
   const stats = { unknown_type: 0, unknown_wilaya: 0, no_coords: 0, dropped_dup: 0, rescoped: 0 };
   let rows = build(curated, wilByCode, communes, stats);
+  // Every DESERT_FIX key must have hit a record; an unmatched key means the
+  // patrimoine node id was renamed/retired upstream and the pin silently reverted.
+  const unmatched = Object.keys(DESERT_FIX).filter((k) => !desertFixMatched.has(Number(k)));
+  if (unmatched.length) throw new Error(`culture: DESERT_FIX key(s) [${unmatched.join(", ")}] matched no record — the patrimoine node id was renamed or retired upstream; update DESERT_FIX in scripts/fetch.mjs.`);
   rows = dedupe(rows, stats);
   assignIds(rows);
 
