@@ -8,18 +8,19 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
-## Unreleased — Data v2 (breaking schema overhaul)
-
-**Not published.** This section documents the schema migration completed on
-branch `feat/data-v2`; npm still serves the previous major on every package
-(e.g. `banques@1.1.2`, `tourisme@1.0.0`, `sante@1.0.0`), and the new
-`@geoalgeria/schema` package has never been published. Nothing below is
-installable yet — it lands with the coordinated `2.0.0` release. Consumers on
-`^1` are unaffected until they opt in; read this before bumping.
+## 2.0.0 — 2026-07-21 — Data v2 (breaking schema overhaul)
 
 Unifies every sector package onto one record contract via a new
 `@geoalgeria/schema` dependency, replacing 26 hand-written, drifted
-`types/index.d.ts` shapes.
+`types/index.d.ts` shapes. This is a **breaking schema change** across 25
+packages — the 23 migrated sector packages plus the `@geoalgeria/transport`
+and `@geoalgeria/pharma` umbrellas (whose `workspace:^` member deps now point
+at `2.0.0`). Consumers on `^1` are unaffected until they opt in; read
+[`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md) before bumping.
+The `@geoalgeria/schema` package itself stays a dev dependency and is not
+published. The core `geoalgeria` dataset and `@geoalgeria/telecom` are **not**
+part of this release — both predate the contract and stay on their v1 versions
+(see below).
 
 - **Breaking record shape**: `wilaya_code` is now a zero-padded **string**
   (`"16"`, not `16`); commune linkage is `commune_code` (string ONS code) +
