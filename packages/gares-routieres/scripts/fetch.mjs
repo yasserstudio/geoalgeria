@@ -4,10 +4,11 @@
 // research/gares-routieres/. Here we fix 3 bad coords, spatial-join commune/wilaya
 // against the geoalgeria commune set (which also reconciles SOGRAL's legacy
 // 48-wilaya codes to the 58/69 model), assign ids, and emit JSON/CSV/GeoJSON.
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { toCSV, toGeoJSON, loadCommunes, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { loadCommunes, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { MIGRATIONS, writePackageV2, committedDates } from "../../../scripts/lib/v2-transforms.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..", "..");
@@ -63,28 +64,17 @@ for (const r of records) {
   r.id = `${r.wilaya_code}-${String(seq[r.wilaya_code]).padStart(2, "0")}`;
 }
 
-const wilayas = new Set(records.map((r) => r.wilaya_code));
-const metadata = {
-  source: "SOGRAL — EPE SOGRAL Spa, Société de Gestion des Gares Routières d'Algérie",
-  origin: "https://live.sogral.com/api/live/agencies",
-  license: "Data © SOGRAL; redistributed for reference. See LICENSE.",
-  stations: records.length,
-  wilayas_covered: wilayas.size,
-  geocoded: records.filter((r) => r.lat != null).length,
-  geo_precision_note: "Coordinates from SOGRAL; 3 were fixed (Touggourt/Djanet from OSM; Guelma is the commune centroid, geo_precision=approx).",
-  linkage_note: "wilaya_code/commune are a nearest-centroid join against the geoalgeria commune set; this also reconciles SOGRAL's legacy 48-wilaya codes to the 58/69 model. Join wilaya_code against `geoalgeria` for names.",
-  generated_at: new Date().toISOString().slice(0, 10),
-};
+// ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
+// Raws are staged (no live fetch), so the dates are always the committed ones.
+const cfg = MIGRATIONS["gares-routieres"];
+const { updated, retrieved } = committedDates(DATA);
+const { records: final, metadata } = writePackageV2({
+  pkg: "gares-routieres",
+  dir: DATA,
+  files: [{ file: "stations.json", rows: records.map(cfg.map) }],
+  meta: cfg.meta,
+  updated,
+  retrieved,
+});
 
-const COLS = ["id","sogral_id","sogral_code","name","official_name","address","wilaya_code","commune","commune_code","lat","lng","geo_precision","surface_total_m2","surface_built_m2","source"];
-mkdirSync(join(DATA, "csv"), { recursive: true });
-mkdirSync(join(DATA, "geojson"), { recursive: true });
-writeFileSync(join(DATA, "stations.json"), JSON.stringify(records, null, 2) + "\n");
-writeFileSync(join(DATA, "metadata.json"), JSON.stringify(metadata, null, 2) + "\n");
-writeFileSync(join(DATA, "csv/stations.csv"), toCSV(records, COLS));
-writeFileSync(join(DATA, "geojson/stations.geojson"), JSON.stringify(toGeoJSON(records), null, 2) + "\n");
-
-console.log(`gares-routieres: ${records.length} stations · ${wilayas.size} wilayas · geocoded ${metadata.geocoded}/${records.length}`);
-const byPrec = {}; records.forEach((r) => (byPrec[r.geo_precision] = (byPrec[r.geo_precision] || 0) + 1));
-console.log("geo_precision:", JSON.stringify(byPrec));
-console.log("sample:", JSON.stringify(records.find((r) => r.name === "ALGER")));
+console.log(`gares-routieres: ${final.length} stations → v2 · ${metadata.wilayas_covered} wilayas · geocoded ${metadata.geocoded_count}/${final.length}`);

@@ -22,6 +22,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
+import { MIGRATIONS, writePackageV2, committedDates } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -281,35 +282,21 @@ async function main() {
   }
   if (suspect) console.warn(`  ${suspect} store(s) with suspect source coordinates flagged (operator_wilaya preserves the declared wilaya).`);
 
-  const cols = [
-    "id", "source", "ooredoo_id", "name", "type", "type_label_fr", "type_label_ar",
-    "address", "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code",
-    "operator_wilaya", "lat", "lng", "geo_precision",
-  ];
-  const CODES = ["EO", "CSO", "ESO"];
-  const by_type = Object.fromEntries(CODES.map((c) => [c, rows.filter((r) => r.type === c).length]));
-  const metadata = {
-    source: "Ooredoo Algérie — retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public trouvez-nous JSON API",
-    origin: "https://www.ooredoo.dz/fr/particuliers/trouvez-nous",
-    license: "Data © Ooredoo Algérie; redistributed for reference. See README.",
-    ooredoo: rows.length,
-    by_type,
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code)).size,
-    ooredoo_geocoded: rows.filter((r) => r.lat != null).length,
-    note: "Every record carries a real lat/lng from the operator API (geo_precision \"exact\"). Wilaya/commune are attached by nearest-centroid join against the geoalgeria commune set (current 69-wilaya scheme); the operator's own legacy-48 wilaya label is kept as operator_wilaya. A few operator points carry inaccurate source coordinates, so their derived wilaya/commune may be off — operator_wilaya preserves Ooredoo's declared wilaya in those cases.",
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("stores.json", rows);
-  writeText("csv/stores.csv", toCSV(rows, cols));
-  writeJSON("geojson/stores.geojson", toGeoJSON(rows));
-  writeJSON("metadata.json", metadata);
-  console.log(
-    `Wrote ${rows.length} Ooredoo stores (${CODES.map((c) => `${by_type[c]} ${c}`).join(", ")}), ` +
-      `${metadata.wilayas_covered} wilayas.`,
-  );
+  // Emit v2 via the shared writer. On a `--cache` replay, preserve the committed
+  // retrieved/updated dates; a live pull stamps the run's date.
+  const cfg = MIGRATIONS.ooredoo;
+  const OFFLINE = process.argv.includes("--cache");
+  const today = new Date().toISOString().slice(0, 10);
+  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const { records, metadata } = writePackageV2({
+    pkg: "ooredoo",
+    dir: OUT_DIR,
+    files: [{ file: "stores.json", rows: rows.map(cfg.map) }],
+    meta: cfg.meta,
+    updated,
+    retrieved,
+  });
+  console.log(`Wrote ${records.length} Ooredoo stores → v2, ${metadata.wilayas_covered} wilayas.`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
