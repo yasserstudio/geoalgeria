@@ -34,6 +34,7 @@ const PACKAGES = {
   "@geoalgeria/formation-professionnelle": { dir: "packages/formation-professionnelle", label: "Algeria's vocational training establishments" },
   "@geoalgeria/sports": { dir: "packages/sports", label: "Algeria's sports infrastructure" },
   "@geoalgeria/djezzy": { dir: "packages/djezzy", label: "Djezzy boutiques" },
+  "@geoalgeria/ooredoo": { dir: "packages/ooredoo", label: "Ooredoo retail network (Espaces & City Shops)" },
   "@geoalgeria/mosquees": { dir: "packages/mosquees", label: "Algeria's mosques" },
   "@geoalgeria/sante": { dir: "packages/sante", label: "Algeria's public health establishments" },
   "@geoalgeria/culture": { dir: "packages/culture", label: "Algeria's cultural atlas" },
@@ -43,6 +44,9 @@ const PACKAGES = {
   "@geoalgeria/ferroviaire": { dir: "packages/ferroviaire", label: "Algeria's rail & urban transit (SNTF/SETRAM/SEMA)" },
   "@geoalgeria/buses": { dir: "packages/buses", label: "Algeria's urban bus networks (ETUSA)" },
   "@geoalgeria/transport": { dir: "packages/transport", label: "Algeria's transport sector (umbrella)" },
+  "@geoalgeria/pharmacies": { dir: "packages/pharmacies", label: "Algeria's pharmacies (officines)" },
+  "@geoalgeria/industrie-pharmaceutique": { dir: "packages/industrie-pharmaceutique", label: "Algeria's approved pharmaceutical manufacturers" },
+  "@geoalgeria/pharma": { dir: "packages/pharma", label: "Algeria's pharmaceutical sector (umbrella)" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
