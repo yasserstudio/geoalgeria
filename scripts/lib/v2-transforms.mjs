@@ -733,6 +733,49 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
 }
 
 /**
+ * Carry each record's id over from the committed data, keyed by a stable upstream
+ * identifier, so regeneration reproduces the SAME public join keys (v2 decision 10/11).
+ *
+ * Why the join packages need it: their generators derive ids as `{wilaya}-{seq}`, so
+ * when the root commune fix (5 rows in dataset/algeria.json) re-scopes ~30 records to
+ * the correct wilaya, a naive re-run re-sequences every id in the affected wilayas —
+ * churning the ids of records that did not otherwise change. Keying on the source id
+ * (refs.osm / refs.patrimoine / refs.msp …) pins every record's id to what it shipped,
+ * so the only diff a replay produces is the corrected wilaya_code/commune on the
+ * relocated records. A record with no committed match keeps its freshly derived id
+ * (a genuinely new record on a live pull).
+ *
+ * @param {object[]} rows          the v2 records being emitted (mutated in place)
+ * @param {object[]} committed     the committed v2 records (empty on a first build)
+ * @param {(r: object) => (string|null)} keyOf  stable upstream key, or null to skip
+ * @returns {object[]} rows
+ */
+export function carryOverIds(rows, committed, keyOf) {
+  const byKey = new Map();
+  const dup = new Set();
+  for (const r of committed) {
+    const k = keyOf(r);
+    if (k == null) continue;
+    if (byKey.has(k)) dup.add(k);
+    else byKey.set(k, r.id);
+  }
+  for (const r of rows) {
+    const k = keyOf(r);
+    if (k != null && !dup.has(k) && byKey.has(k)) r.id = byKey.get(k);
+  }
+  return rows;
+}
+
+/** Read a package's committed records for carryOverIds, or [] if none exist yet. */
+export function readCommitted(dir, file) {
+  try {
+    return JSON.parse(readFileSync(join(dir, file), "utf-8"));
+  } catch {
+    return [];
+  }
+}
+
+/**
  * The `updated`/`retrieved` an offline replay must reuse to reproduce the committed
  * data verbatim: the committed metadata's own values (falling back to the cutover
  * date for a package that has none yet). A live run passes the fetch date instead.

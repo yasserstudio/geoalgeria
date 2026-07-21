@@ -23,9 +23,10 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -182,33 +183,9 @@ function assignIds(rows) {
   );
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-const writeJSON = (p, obj) => writeFileSync(join(OUT_DIR, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
-
 // --- main ------------------------------------------------------------------
+// The curated input is committed (no live re-pull), so this always replays offline
+// and preserves the committed retrieved/updated dates.
 function main() {
   const curated = JSON.parse(readFileSync(CURATED, "utf-8"));
   console.log(`Loaded ${curated.length} curated cultural places from ${CURATED.replace(REPO_ROOT + "/", "")}`);
@@ -220,48 +197,24 @@ function main() {
   rows = dedupe(rows, stats);
   assignIds(rows);
 
-  const cols = [
-    "id", "name", "name_ar", "name_fr", "type", "category", "type_label_fr", "type_label_ar",
-    "has_virtual_tour", "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code",
-    "source", "geo_precision", "url", "node_id_fr", "node_id_ar", "slug", "lat", "lng",
-  ];
-  const by = (k, v) => rows.filter((r) => r[k] === v).length;
-  const geocoded = rows.filter((r) => r.lat != null).length;
-  const bilingual = rows.filter((r) => r.name_ar && r.name_fr).length;
-  const virtual_tours = rows.filter((r) => r.has_virtual_tour).length;
-  const by_type = {};
-  for (const k of Object.keys(TYPES)) by_type[k] = by("type", k);
-
-  const metadata = {
-    source: "Cartes du Patrimoine Culturel Algérien (cartes.patrimoineculturelalgerien.org) — the Ministry of Culture's cultural atlas",
-    origin: "https://cartes.patrimoineculturelalgerien.org",
-    license:
-      "Factual public cultural listing from the Ministry of Culture (names, types, coordinates as published by the portal). Commune linkage derived from the GeoAlgeria commune set. See README for attribution.",
-    culture: rows.length,
-    by_type,
-    by_category: { heritage: by("category", "heritage"), establishment: by("category", "establishment") },
-    by_geo_precision: { source_point: by("geo_precision", "source_point") },
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code)).size,
-    geocoded,
-    bilingual,
-    virtual_tours,
-    linkage_note:
-      "Names, type, coordinates and virtual-tour flag are from the Patrimoine Culturel portal (the portal's FR and AR catalogs are disjoint node sets, unioned by coordinate proximity and translated to fill bilingual gaps). Wilaya is exact (from the portal); commune is the nearest GeoAlgeria commune centroid (the repo ships centroids, not boundary polygons), so commune is best-effort.",
-    coverage_note: `${rows.length} cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage sites, museums, theatres, libraries, and cultural establishments (maisons & palais de culture, cinemas, culture directorates, arts schools). Every place carries a source coordinate; wilaya is exact, commune is best-effort. ${virtual_tours} offer a 360° virtual tour.`,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("culture.json", rows);
-  writeText("csv/culture.csv", toCSV(rows, cols));
-  writeJSON("geojson/culture.geojson", toGeoJSON(rows));
-  writeJSON("metadata.json", metadata);
+  const cfg = MIGRATIONS.culture;
+  const { updated, retrieved } = committedDates(OUT_DIR);
+  // Carry ids over by the stable portal node id so the root commune fix shows up as
+  // corrected wilaya/commune, not as a re-sequencing of every id in those wilayas.
+  const v2 = rows.map(cfg.map);
+  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null));
+  const { records, metadata } = writePackageV2({
+    pkg: "culture",
+    dir: OUT_DIR,
+    files: [{ file: "culture.json", rows: v2 }],
+    meta: cfg.meta,
+    updated,
+    retrieved,
+  });
   console.log(
-    `Wrote ${rows.length} cultural places (${metadata.wilayas_covered} wilayas, ${bilingual} bilingual, ${virtual_tours} virtual tours) — ` +
-      `heritage ${metadata.by_category.heritage}, establishment ${metadata.by_category.establishment}; ` +
-      `${stats.rescoped} rescoped to current wilaya; ` +
-      `dropped ${stats.dropped_dup} dup, ${stats.no_coords} no-coords, ${stats.unknown_type} unknown-type, ${stats.unknown_wilaya} unknown-wilaya.`,
+    `Wrote ${records.length} cultural places → v2 (${metadata.wilayas_covered} wilayas); ` +
+      `${stats.rescoped} rescoped; dropped ${stats.dropped_dup} dup, ${stats.no_coords} no-coords, ` +
+      `${stats.unknown_type} unknown-type, ${stats.unknown_wilaya} unknown-wilaya.`,
   );
 }
 
