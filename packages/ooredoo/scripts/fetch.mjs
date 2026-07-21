@@ -22,7 +22,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, committedDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -264,8 +264,7 @@ async function main() {
   // retrieved/updated dates; a live pull stamps the run's date.
   const cfg = MIGRATIONS.ooredoo;
   const OFFLINE = process.argv.includes("--cache");
-  const today = new Date().toISOString().slice(0, 10);
-  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const { records, metadata } = writePackageV2({
     pkg: "ooredoo",
     dir: OUT_DIR,

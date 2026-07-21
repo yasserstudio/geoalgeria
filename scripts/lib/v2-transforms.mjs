@@ -897,3 +897,36 @@ export function committedDates(dir) {
     return { updated: CUTOVER_DATE, retrieved: CUTOVER_DATE };
   }
 }
+
+/**
+ * The {updated, retrieved} a generator stamps: a live pull uses today's date; an
+ * offline `--cache` replay reuses the committed dates so it reproduces them.
+ * (H2: these are only the run-date fallback — each source keeps its own retrieved.)
+ * @param {string} dir       the package's data/ directory
+ * @param {boolean} offline  true on a --cache replay
+ */
+export function resolveDates(dir, offline) {
+  if (offline) return committedDates(dir);
+  const today = new Date().toISOString().slice(0, 10);
+  return { updated: today, retrieved: today };
+}
+
+/**
+ * Read a `--cache` raw file, turning a missing file into an actionable message
+ * (the raw pull only exists after a live run) instead of a bare ENOENT stack.
+ * @param {string} researchDir  the package's research/<pkg>/ directory
+ * @param {string} file         the raw file name
+ * @param {string} pkg          package name, for the message
+ * @returns {string} the file contents (utf-8)
+ */
+export function readCacheFile(researchDir, file, pkg) {
+  try {
+    return readFileSync(join(researchDir, file), "utf-8");
+  } catch (e) {
+    if (e && e.code === "ENOENT")
+      throw new Error(
+        `--cache: ${file} not found under research/${pkg}/ — run once without --cache to populate it`,
+      );
+    throw e;
+  }
+}

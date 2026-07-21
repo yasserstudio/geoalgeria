@@ -33,7 +33,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -471,7 +471,7 @@ async function main() {
   // with no network — a dead upstream never blocks re-emission.
   const OFFLINE = process.argv.includes("--cache");
   const osmRaw = OFFLINE
-    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "osm-raw.json"), "utf-8")).elements
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "osm-raw.json", "ecoles")).elements
     : await fetchOSM();
   let rows = normOSM(osmRaw);
   console.log(`  OSM: ${rows.length} geocoded schools`);
@@ -488,8 +488,7 @@ async function main() {
   // a re-sequencing of every id in the re-scoped wilayas. The cycle/kind notes are
   // preserved from the committed metadata (meta.preserve).
   const cfg = MIGRATIONS.ecoles;
-  const today = new Date().toISOString().slice(0, 10);
-  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
   carryOverIds(v2, readCommitted(OUT_DIR, "ecoles.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "ecoles");
   let oldMeta = {};

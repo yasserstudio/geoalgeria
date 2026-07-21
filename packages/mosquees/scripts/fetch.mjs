@@ -30,7 +30,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -390,13 +390,13 @@ async function main() {
   // Offline replay: rebuild from the committed Wikidata + OSM pulls with no network.
   const OFFLINE = process.argv.includes("--cache");
   const wdRaw = OFFLINE
-    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "wikidata-raw.json"), "utf-8")).results.bindings
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "wikidata-raw.json", "mosquees")).results.bindings
     : await fetchWikidata();
   const wd = normWikidata(wdRaw);
   console.log(`  Wikidata: ${wd.length} geocoded mosques (base)`);
 
   const osmRaw = OFFLINE
-    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "osm-raw.json"), "utf-8")).elements
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "osm-raw.json", "mosquees")).elements
     : await fetchOSM();
   const osm = normOSM(osmRaw);
   console.log(`  OSM: ${osm.length} geocoded mosques (enrichment)`);
@@ -413,8 +413,7 @@ async function main() {
   // Emit v2 via the shared writer. Carry ids over by the stable OSM/Wikidata id so
   // the commune re-scoping shows up as corrected wilaya/commune, not id churn.
   const cfg = MIGRATIONS.mosquees;
-  const today = new Date().toISOString().slice(0, 10);
-  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
   carryOverIds(v2, readCommitted(OUT_DIR, "mosquees.json"), (r) =>
     r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null,

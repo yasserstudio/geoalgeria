@@ -33,7 +33,7 @@ import https from "node:https";
 import http from "node:http";
 import tls from "node:tls";
 import { X509Certificate, createHash } from "node:crypto";
-import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -902,8 +902,8 @@ async function main() {
   const OFFLINE = process.argv.includes("--cache");
   const { records, taxonomy } = OFFLINE
     ? {
-        records: JSON.parse(readFileSync(join(RESEARCH_DIR, "msp-healthinstitution-raw.json"), "utf-8")),
-        taxonomy: JSON.parse(readFileSync(join(RESEARCH_DIR, "msp-wilaya-taxonomy.json"), "utf-8")),
+        records: JSON.parse(readCacheFile(RESEARCH_DIR, "msp-healthinstitution-raw.json", "sante")),
+        taxonomy: JSON.parse(readCacheFile(RESEARCH_DIR, "msp-wilaya-taxonomy.json", "sante")),
       }
     : await fetchMSP();
   const taxMap = new Map(taxonomy.map((t) => [t.id, t.name]));
@@ -915,10 +915,10 @@ async function main() {
   console.log(`  built ${rows.length} establishments (${stats.paired} bilingual pairs, type_fail ${stats.type_fail}, wilaya_fail ${stats.wilaya_fail})`);
 
   const wdRaw = OFFLINE
-    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "wikidata-hospitals-raw.json"), "utf-8")).results.bindings
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "wikidata-hospitals-raw.json", "sante")).results.bindings
     : await fetchWikidata();
   const osmRaw = OFFLINE
-    ? JSON.parse(readFileSync(join(RESEARCH_DIR, "osm-health-raw.json"), "utf-8")).elements
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "osm-health-raw.json", "sante")).elements
     : await fetchOSM();
   const facilities = normFacilities(wdRaw, osmRaw);
   console.log(`  ${facilities.length} OSM/Wikidata health facilities for refinement`);
@@ -930,8 +930,7 @@ async function main() {
   // Emit v2 via the shared writer. Carry ids over by the stable OSM/Wikidata/MSP id
   // so the commune re-scoping shows up as corrected wilaya/commune, not id churn.
   const cfg = MIGRATIONS.sante;
-  const today = new Date().toISOString().slice(0, 10);
-  const { updated, retrieved } = OFFLINE ? committedDates(OUT_DIR) : { updated: today, retrieved: today };
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
   carryOverIds(v2, readCommitted(OUT_DIR, "sante.json"), (r) =>
     r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : r.refs?.msp ? `msp:${r.refs.msp}` : null,
