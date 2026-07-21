@@ -369,18 +369,6 @@ function toCSV(rows, cols) {
   };
   return [cols.join(","), ...rows.map((r) => cols.map((c) => esc(r[c])).join(","))].join("\n") + "\n";
 }
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map(({ lat, lng, ...props }) => ({
-        type: "Feature",
-        geometry: { type: "Point", coordinates: [lng, lat] },
-        properties: props,
-      })),
-  };
-}
 const writeJSON = (p, obj) => writeFileSync(join(DATA, p), JSON.stringify(obj, null, 2) + "\n");
 const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
 

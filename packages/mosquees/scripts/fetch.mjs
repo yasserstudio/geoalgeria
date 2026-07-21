@@ -384,32 +384,6 @@ function assignIds(rows) {
   }
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-const writeJSON = (p, obj) => writeFileSync(join(OUT_DIR, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
-
 // --- main ------------------------------------------------------------------
 async function main() {
   // Offline replay: rebuild from the committed Wikidata + OSM pulls with no network.
