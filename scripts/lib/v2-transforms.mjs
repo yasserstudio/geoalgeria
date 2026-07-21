@@ -629,7 +629,7 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [{ key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" }],
-      license: "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
+      license: "CC-BY-SA-4.0",
       estimatedUniverse: 122,
       coverageNote: "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
       titles: { en: "ETUSA urban bus lines (Algiers)", fr: "Lignes de bus ETUSA (Alger)", ar: "خطوط حافلات إيتوزا (الجزائر العاصمة)" },

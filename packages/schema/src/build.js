@@ -142,6 +142,38 @@ export function buildManifest(metadatas, opts = {}) {
   };
 }
 
+/** Canonical URL for each open licence this repo redistributes under. */
+const LICENSE_URLS = {
+  "ODbL-1.0": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "CC0-1.0": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "CC-BY-SA-4.0": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "MIT": "https://opensource.org/licenses/MIT",
+};
+
+/**
+ * Resolve a dataset licence string for the discovery descriptor.
+ *  - a raw URL → itself.
+ *  - an SPDX id, or an ` AND `-joined expression whose every term is a known
+ *    open SPDX id → the canonical URL of its governing term (the share-alike one,
+ *    ODbL/CC-BY-SA, since redistributing a database that incorporates it binds
+ *    the whole DB to it; else the first term).
+ *  - anything else is prose describing operator-© / factual-listing terms with
+ *    NO open licence → carried as `prose`, never fabricated into a licence URL.
+ * @param {string} license
+ * @returns {{ url?: string, prose?: string }}
+ */
+function licenseInfo(license) {
+  if (!license) return {};
+  if (/^https?:\/\//.test(license)) return { url: license };
+  const terms = license.split(" AND ").map((t) => t.trim());
+  if (terms.every((t) => LICENSE_URLS[t])) {
+    const governing =
+      terms.find((t) => t === "ODbL-1.0") || terms.find((t) => t === "CC-BY-SA-4.0") || terms[0];
+    return { url: LICENSE_URLS[governing] };
+  }
+  return { prose: license };
+}
+
 /**
  * Build a schema.org/DCAT Dataset descriptor (JSON-LD) for discovery
  * (Google Dataset Search, AI answer engines).
@@ -172,6 +204,14 @@ export function buildDcat(meta, opts = {}) {
       }
     : { spatialCoverage: { "@type": "Place", name: "Algeria" } };
 
+  // The dataset's own licence, not sources[0]'s: a source licence governs the
+  // upstream feed, and publishing it here would state the wrong terms for the
+  // redistributed dataset. Source terms travel per-source in `citation`.
+  // An open licence becomes its canonical URL; an operator-© / factual-listing
+  // dataset has no open licence, so its prose moves to `conditionsOfAccess` and
+  // the `license` slot is omitted — a wrong licence URL is worse than none.
+  const lic = licenseInfo(meta.license);
+
   return {
     "@context": "https://schema.org",
     "@type": "Dataset",
@@ -179,10 +219,8 @@ export function buildDcat(meta, opts = {}) {
     ...(meta.title_fr && meta.title_fr !== meta.title_en ? { alternateName: meta.title_fr } : {}),
     identifier: meta.package,
     ...(meta.coverage_note ? { description: meta.coverage_note } : {}),
-    // The dataset's own licence, not sources[0]'s: a source licence governs the
-    // upstream feed, and publishing it here would state the wrong terms for the
-    // redistributed dataset. Source terms travel per-source in `citation`.
-    license: meta.license,
+    ...(lic.url ? { license: lic.url } : {}),
+    ...(lic.prose ? { conditionsOfAccess: lic.prose } : {}),
     isAccessibleForFree: true,
     creator: { "@type": "Organization", name: "Yasser's Studio", url: "https://yasser.studio" },
     ...geo,

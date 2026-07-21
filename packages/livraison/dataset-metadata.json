@@ -5,7 +5,7 @@
   "alternateName": "Points relais de livraison d'Algérie",
   "identifier": "@geoalgeria/livraison",
   "description": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
-  "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
+  "conditionsOfAccess": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",

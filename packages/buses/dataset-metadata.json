@@ -5,7 +5,7 @@
   "alternateName": "Lignes de bus ETUSA (Alger)",
   "identifier": "@geoalgeria/buses",
   "description": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-  "license": "Line data from Wikipedia (CC BY-SA 4.0) — attribution + share-alike. Operator: ETUSA. See README.",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",

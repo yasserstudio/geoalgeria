@@ -5,7 +5,7 @@
   "alternateName": "Boutiques Ooredoo",
   "identifier": "@geoalgeria/ooredoo",
   "description": "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record has a real operator coordinate. A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
-  "license": "Data © Ooredoo Algérie; redistributed for reference",
+  "conditionsOfAccess": "Data © Ooredoo Algérie; redistributed for reference",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",

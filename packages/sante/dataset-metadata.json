@@ -5,7 +5,7 @@
   "alternateName": "Établissements de santé publique d'Algérie",
   "identifier": "@geoalgeria/sante",
   "description": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
-  "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
+  "conditionsOfAccess": "Official registry (Ministry of Health); geocoding ODbL/CC0",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",

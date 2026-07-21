@@ -408,9 +408,23 @@ test("buildManifest + buildDcat shape", () => {
   assert.equal(dcat["@type"], "Dataset");
   assert.equal(dcat.identifier, "@geoalgeria/sante");
   assert.equal(dcat.spatialCoverage.geo["@type"], "GeoShape");
-  // the dataset's own licence, not the first source's
-  assert.equal(dcat.license, "MIT");
+  // the dataset's own licence, not the first source's — an open SPDX id resolves
+  // to its canonical URL, and an open dataset carries no conditionsOfAccess prose.
+  assert.equal(dcat.license, "https://opensource.org/licenses/MIT");
+  assert.equal("conditionsOfAccess" in dcat, false);
   assert.deepEqual(dcat.citation, ["Ministry of Health — official"]);
+
+  // A non-open prose licence is never fabricated into a URL: the `license` slot
+  // is omitted and the prose moves to conditionsOfAccess.
+  const prose = buildDcat({ ...meta, license: "Data © SOGRAL; redistributed for reference" });
+  assert.equal("license" in prose, false);
+  assert.equal(prose.conditionsOfAccess, "Data © SOGRAL; redistributed for reference");
+  // A multi-licence open expression resolves to its governing (share-alike) URL.
+  assert.equal(
+    buildDcat({ ...meta, license: "CC0-1.0 AND ODbL-1.0" }).license,
+    "https://opendatacommons.org/licenses/odbl/1-0/",
+  );
+  assert.equal("conditionsOfAccess" in buildDcat({ ...meta, license: "CC0-1.0 AND ODbL-1.0" }), false);
 });
 
 test("a coverage percentage never travels without the universe it divides by", () => {
