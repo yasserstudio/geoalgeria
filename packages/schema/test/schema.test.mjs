@@ -425,6 +425,16 @@ test("buildManifest + buildDcat shape", () => {
     "https://opendatacommons.org/licenses/odbl/1-0/",
   );
   assert.equal("conditionsOfAccess" in buildDcat({ ...meta, license: "CC0-1.0 AND ODbL-1.0" }), false);
+  // Fail-safe routing: an AND-expression that mixes open SPDX terms with an unknown
+  // (prose) term is NOT all-open, so the whole expression is carried as prose — the
+  // `license` slot is omitted rather than fabricating a URL from the open terms alone.
+  const mixed = buildDcat({ ...meta, license: "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)" });
+  assert.equal("license" in mixed, false);
+  assert.equal(mixed.conditionsOfAccess, "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)");
+  // A falsy licence yields neither slot — no URL, no prose.
+  const empty = buildDcat({ ...meta, license: "" });
+  assert.equal("license" in empty, false);
+  assert.equal("conditionsOfAccess" in empty, false);
 });
 
 test("a coverage percentage never travels without the universe it divides by", () => {

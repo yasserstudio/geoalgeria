@@ -13,7 +13,7 @@
 // OR when its records already carry v2 geo fields — metadata alone can desync.
 // Usage: node scripts/migrate-to-v2.mjs [pkg ...]   (no arg = all configured)
 
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import {
@@ -71,10 +71,36 @@ function migrate(pkg) {
   return true;
 }
 
+// Refuse to run once the cutover has already been applied. The transform stamps
+// `updated`/`retrieved` from CUTOVER_DATE (below), so a second pass would silently
+// reset every package's honest, later-refreshed dates back to the 2026-07-18
+// constant. The per-package skip inside migrate() is a belt; this is the braces —
+// a loud pre-flight abort before anything on disk is touched.
+function refuseIfAlreadyCutover(targets) {
+  const applied = targets.filter((pkg) => {
+    const metaPath = join(ROOT, "packages", pkg, "data", "metadata.json");
+    if (!existsSync(metaPath)) return false;
+    try {
+      return JSON.parse(readFileSync(metaPath, "utf-8")).schema_version === "2.0.0";
+    } catch {
+      return false;
+    }
+  });
+  if (applied.length) {
+    console.error(
+      `refusing to run: cutover already applied to ${applied.join(", ")} — re-running ` +
+        `would re-stamp honest dates back to the cutover constant (${CUTOVER_DATE}). ` +
+        `This script is historical; regenerate via each package's v2 generator instead.`,
+    );
+    process.exit(1);
+  }
+}
+
 // Run only as a CLI. MIGRATIONS is exported so test/migrate-v2-replay.test.mjs can
 // replay each map against the v1 fixture; importing the module must not rewrite data.
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const targets = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(MIGRATIONS);
+  refuseIfAlreadyCutover(targets);
   let ok = true;
   for (const p of targets) ok = migrate(p) && ok;
   process.exit(ok ? 0 : 1);

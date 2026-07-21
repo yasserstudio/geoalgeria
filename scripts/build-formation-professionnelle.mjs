@@ -1,5 +1,12 @@
 #!/usr/bin/env node
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+// PREDATES v2. This is a pre-cutover, v1-era generator: it writes metadata with
+// `new Date()` and a divergent licence string, bypassing the shared v2 writer
+// (writePackageV2 in scripts/lib/v2-transforms.mjs). If run as-is it would clobber
+// formation-professionnelle's correct v2 data/metadata. It is kept as the documented
+// regen path for the package and needs the P3 rework (route through writePackageV2)
+// before it is safe to run — see the P3 follow-ups in the data-v2 plan. Guarded
+// below to refuse to run against already-migrated v2 data.
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -95,6 +102,22 @@ function wilayaCode(iddfep) {
 }
 
 // --- Main ---
+
+// Refuse to run once the package has been migrated to v2: this v1-era generator
+// would overwrite the canonical v2 metadata with `new Date()` + a divergent licence.
+const META_PATH = join(DATA, "metadata.json");
+if (existsSync(META_PATH)) {
+  let sv;
+  try { sv = JSON.parse(readFileSync(META_PATH, "utf-8")).schema_version; } catch { /* unreadable → not v2 */ }
+  if (sv === "2.0.0") {
+    console.error(
+      "refusing to run: formation-professionnelle is already v2 — this v1-era generator " +
+        "bypasses the shared v2 writer and would clobber the canonical metadata. Needs the " +
+        "P3 rework (route through writePackageV2) before it can be run.",
+    );
+    process.exit(1);
+  }
+}
 
 const raw = JSON.parse(readFileSync(RAW_PATH, "utf-8")).data;
 console.log(`Raw records: ${raw.length}`);

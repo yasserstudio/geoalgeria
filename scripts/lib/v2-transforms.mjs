@@ -37,9 +37,10 @@ function writeAtomic(path, content) {
   renameSync(tmp, path);
 }
 
-/** The cutover date, and the default `updated`/`retrieved` for an offline replay
- *  (constraint: on a real fetch a generator overrides these with the run's date;
- *  on a `--cache` replay it preserves the committed value, which is this). */
+/** The cutover date. Since c3e1349 it is only the bootstrap fallback in
+ *  committedDates()'s catch branch — the date used for a package that has no
+ *  committed metadata.json to read a real `updated` from. Live/replay dates come
+ *  from resolveDates()/committedDates(), not from this constant. */
 export const CUTOVER_DATE = "2026-07-18";
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 
@@ -552,7 +553,7 @@ export const MIGRATIONS = {
         { key: "wikidata", name: "Wikidata — heritage sites, museums & parks in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-06-21" },
         { key: "asal", name: "ASAL Geoportail — thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: "2026-06-21" },
       ],
-      license: "ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)",
+      license: "Attractions, historic sites, lodging and parks from OpenStreetMap (ODbL 1.0, © OpenStreetMap contributors) and Wikidata (CC0); thermal springs are a factual public listing (ASAL). Per-source terms in citation.",
       estimatedUniverse: null,
       coverageNote: "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
       titles: { en: "Algeria tourism", fr: "Tourisme en Algérie", ar: "السياحة في الجزائر" },
