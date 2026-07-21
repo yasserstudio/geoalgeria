@@ -2,9 +2,10 @@
 
 This folder is managed by [changesets](https://github.com/changesets/changesets).
 
-Every PR that changes a **published** package (`geoalgeria`, `@geoalgeria/poste`)
-must include a changeset describing the bump. The `web` app is private and
-ignored — it never needs one.
+Every PR that changes **any** published package (the flagship `geoalgeria`, any
+`@geoalgeria/*` dataset, or an umbrella) must include a changeset describing the
+bump. Only the unpublished `@geoalgeria/schema` contract package and the private
+`web` app are exempt — they never need one.
 
 ## Add a changeset
 
