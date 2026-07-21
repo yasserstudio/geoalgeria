@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria vocational-training establishments",
+  "alternateName": "Établissements de formation professionnelle d'Algérie",
+  "identifier": "@geoalgeria/formation-professionnelle",
+  "description": "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1375 of 1932 are geocoded.",
+  "conditionsOfAccess": "Factual public listing (MFEP)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.570418 -8.136773 37.067223 9.57605"
+    }
+  },
+  "variableMeasured": "1932 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "establishments (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/formation-professionnelle/data/establishments.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "establishments (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/formation-professionnelle/data/csv/establishments.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "establishments (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/formation-professionnelle/data/geojson/establishments.geojson"
+    }
+  ],
+  "dateModified": "2026-06-22",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministry of Vocational Training and Education (MFEP) — takwin.dz — Factual public listing (MFEP)"
+  ]
+}

@@ -12,7 +12,7 @@
     "url": "https://yasser.studio"
   },
   "datePublished": "2025-05-05",
-  "dateModified": "2026-06-08",
+  "dateModified": "2026-07-20",
   "version": "1.1.0",
   "inLanguage": ["fr", "ar"],
   "distribution": [
@@ -33,6 +33,12 @@
       "name": "Communes (GeoJSON)",
       "encodingFormat": "application/geo+json",
       "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/communes.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Wilaya boundary polygons (GeoJSON, ODbL — OpenStreetMap)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://github.com/yasserstudio/geoalgeria/raw/main/packages/dataset/data/geojson/wilaya-boundaries.geojson"
     },
     {
       "@type": "DataDownload",

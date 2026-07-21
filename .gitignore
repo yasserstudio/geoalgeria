@@ -42,6 +42,25 @@ out/
 # === Research source PDFs (extract to .txt; never commit the PDF) ===
 research/**/*.pdf
 
+# === Research scratch: raw source dumps & landscape notes ===
+# Per-sector scratch, kept local until promoted to a tracked provenance dir.
+# Never commit the raw contents; promote cleaned outputs into a package instead.
+research/_landscape/
+research/_next-dataset/
+research/formation-professionnelle/
+research/mobilis/
+research/mosquees/
+research/ooredoo/
+research/pharmacies/
+research/sante/
+research/tourisme/
+# _pharma-landscape/ is a tracked provenance dir — ignore only its raw scratch files
+research/_pharma-landscape/mip-distribution-gros.txt
+research/_pharma-landscape/mip-exploitation.txt
+research/_pharma-landscape/mip-importation.txt
+research/_pharma-landscape/mip-promotion.txt
+research/_pharma-landscape/unresolved-for-research.json
+
 # === Logs ===
 *.log
 npm-debug.log*

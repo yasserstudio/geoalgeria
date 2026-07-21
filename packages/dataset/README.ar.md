@@ -103,14 +103,14 @@ dz.getPostOfficesByCommune(1731); // مكاتب البريد في بلدية (ح
 
 ```json
 {
-  "id": 586,
-  "commune_name_fr": "Aïn El Ibel",
+  "id": 541,
+  "commune_name_fr": "Ain El Ibel",
   "commune_name_ar": "عين الإبل",
   "daira_name_fr": "Aïn El Ibel",
   "wilaya_code": 17,
   "wilaya_name_fr": "Djelfa",
   "wilaya_name_ar": "الجلفة",
-  "postal_code": "17001"
+  "postal_code": "17011"
 }
 ```
 
@@ -171,7 +171,7 @@ sqlite3 mydb.sqlite < full.sql
 انظر [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). نرحّب بـ:
 
 - تصحيحات البيانات (مع مصادر رسمية)
-- إحداثيات البلديات الناقصة (20 متبقية)
+- قيم `code_commune` الناقصة (10 متبقية)
 - بيانات مناطق التوصيل من حسابات ناقلين حقيقية (Yalidine، ZR Express، Maystro)
 - صيغ تصدير جديدة (XML، YAML، مصفوفات PHP، إلخ.)
 - تصحيحات الترجمة والكتابة بالحروف اللاتينية

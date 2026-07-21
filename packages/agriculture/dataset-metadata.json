@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria agricultural institutions",
+  "alternateName": "Institutions agricoles d'Algérie",
+  "identifier": "@geoalgeria/agriculture",
+  "description": "Agricultural institutions (training institutes, research, services) from the MADR — all positions are wilaya- or commune-centroid approximations (no surveyed points).",
+  "conditionsOfAccess": "Factual public institutional listing (MADR)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.569671 -8.12724 36.9 9.484194"
+    }
+  },
+  "variableMeasured": "196 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "agriculture (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/agriculture/data/agriculture.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "agriculture (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/agriculture/data/csv/agriculture.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "agriculture (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/agriculture/data/geojson/agriculture.geojson"
+    }
+  ],
+  "dateModified": "2026-06-30",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministry of Agriculture, Rural Development and Fisheries (MADR) — Factual public institutional listing (MADR)"
+  ]
+}

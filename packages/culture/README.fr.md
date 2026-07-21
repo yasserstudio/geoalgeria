@@ -105,7 +105,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 ```
 data/
   culture.json              # 1 083 lieux culturels (tableau)
-  metadata.json             # sources, totaux, couverture, generated_at
+  metadata.json             # sources, totaux, couverture, licence, mise à jour
   csv/culture.csv           # dépôt + Release
   geojson/culture.geojson   # entités Point (chaque enregistrement)
 ```
@@ -116,34 +116,39 @@ data/
 {
   "id": "16-museum-03",
   "name": "Musée national Public d'art moderne et contemporain",
-  "name_ar": "المتحف العمومي الوطني للفن الحديث و المعاصر",
   "name_fr": "Musée national Public d'art moderne et contemporain",
+  "name_ar": "المتحف العمومي الوطني للفن الحديث و المعاصر",
+  "wilaya_code": "16",
+  "commune_code": "1607",
+  "commune": "Casbah",
+  "lat": 36.777301,
+  "lng": 3.057572,
+  "geo_precision": "exact",
+  "geo_method": "source_point",
+  "source": "patrimoine",
+  "refs": {
+    "patrimoine": "817"
+  },
   "type": "museum",
   "category": "heritage",
   "type_label_fr": "Musée",
   "type_label_ar": "متحف",
   "has_virtual_tour": true,
-  "wilaya": "Alger",
-  "wilaya_ar": "الجزائر",
-  "wilaya_code": "16",
-  "commune": "Casbah",
-  "commune_code": 1607,
-  "source": "patrimoineculturel",
-  "geo_precision": "source_point",
   "url": "https://cartes.patrimoineculturelalgerien.org/fr/node/101",
-  "node_id_fr": 101,
-  "node_id_ar": 817,
-  "slug": "musee-national-public-d-art-moderne-et-contemporain",
-  "lat": 36.777301,
-  "lng": 3.057572
+  "slug": "musee-national-public-d-art-moderne-et-contemporain"
 }
 ```
 
-`id` est une clé stable `{wilaya_code}-{type_code}-{seq}` synthétisée par
-GeoAlgeria. `name` est le nom français s'il existe, sinon l'arabe. `type` est la
-couche du lieu sur le portail ; `category` regroupe les 11 types en `heritage` vs
-`establishment`. `has_virtual_tour` vaut `true` pour les 22 lieux dotés d'une
-visite 360°. `geo_precision` vaut `"source_point"` pour chaque enregistrement.
+`id` est une clé stable `{wilaya_code}-{type_code}-{seq}`, unique au sein de ce
+fichier — à traiter comme opaque. `name` est le nom français s'il existe, sinon
+l'arabe. `type` est la couche du lieu sur le portail ; `category` regroupe les
+11 types en `heritage` vs `establishment`. `has_virtual_tour` vaut `true` pour
+les 22 lieux dotés d'une visite 360°. `geo_precision` vaut `"exact"` pour
+1 067 enregistrements et `"approximate"` pour 16 — chaque lieu a une
+coordonnée, mais 16 n'atteignent pas le seuil de précision de `"exact"`.
+`geo_method` vaut `"source_point"` pour chaque enregistrement : la coordonnée
+est le point publié par le portail lui-même, pas un centroïde dérivé.
+`refs.patrimoine` est l'identifiant du lieu sur le portail.
 
 > **La wilaya est exacte ; la commune est dérivée.** Le portail classe encore
 > certains lieux sous d'anciens codes de wilaya ; GeoAlgeria les réaffecte au

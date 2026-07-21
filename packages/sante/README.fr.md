@@ -16,7 +16,8 @@
 direction de la santé — établissements publics hospitaliers (EPH), de santé de
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
 (CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **600
-géolocalisés** via OpenStreetMap et Wikidata avec rattachement commune/wilaya.
+géolocalisés** (124 sur un point précis OpenStreetMap/Wikidata, 476 sur un
+centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -65,10 +66,18 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Valeur | Nombre | Signification |
 | --- | --- | --- |
+| `exact` | 124 | point précis d'un établissement OSM ou Wikidata dans la commune |
+| `approximate` | 476 | centroïde de la commune de l'établissement |
+| `null` | 95 | localité non rattachée à une commune — pas de coordonnées (`lat`/`lng` aussi `null`) |
+
+**Par méthode d'obtention** (`geo_method`)
+
+| Valeur | Nombre | Signification |
+| --- | --- | --- |
 | `osm_point` | 121 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
 | `commune_centroid` | 476 | centroïde de la commune de l'établissement (approximatif) |
-| `none` | 95 | localité non rattachée à une commune — pas de coordonnées |
+| `null` | 95 | aucune méthode — l'enregistrement n'a pas de coordonnées |
 
 > **Le registre est officiel ; les coordonnées sont au mieux.** Les noms, le type
 > et la wilaya proviennent du Ministère de la Santé. Le MSP ne publie pas de
@@ -98,7 +107,7 @@ chaque [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) :
 ```
 data/
   sante.json              # 695 établissements (tableau)
-  metadata.json           # sources, totaux, couverture, generated_at
+  metadata.json           # sources, totaux, couverture, updated
   csv/sante.csv           # dépôt + Release (pas dans le tarball npm)
   geojson/sante.geojson   # entités Point (enregistrements géolocalisés)
 ```
@@ -109,36 +118,41 @@ data/
 {
   "id": "01-ehs-02",
   "name": "Etablissement Hospitalier Spécialisé Psychiatrie Adrar",
-  "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية أدرار",
   "name_fr": "Etablissement Hospitalier Spécialisé Psychiatrie Adrar",
+  "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية أدرار",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "Adrar",
+  "lat": 27.875834,
+  "lng": -0.307533,
+  "geo_precision": "exact",
+  "geo_method": "osm_point",
+  "source": "msp",
+  "refs": {
+    "osm": "way/432370657",
+    "msp": "3588"
+  },
   "type": "ehs",
   "type_label_fr": "Établissement Hospitalier Spécialisé",
   "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
   "sector": "public",
-  "wilaya": "Adrar",
-  "wilaya_ar": "أدرار",
-  "wilaya_code": "01",
-  "commune": "Adrar",
-  "commune_code": 101,
-  "source": "msp+osm",
-  "geo_precision": "osm_point",
-  "wikidata": null,
-  "osm_id": "way/432370657",
-  "msp_id": 3588,
-  "slug": "etablissement-hospitalier-specialise-psychiatrie-adrar",
-  "lat": 27.875834,
-  "lng": -0.307533
+  "slug": "etablissement-hospitalier-specialise-psychiatrie-adrar"
 }
 ```
 
 `id` est une clé stable `{wilaya_code}-{type}-{seq}` synthétisée par GeoAlgeria
-(le MSP ne publie pas de code). `name` est le nom français s'il existe, sinon
-l'arabe. `type` est déduit du titre ; `wilaya` de l'étiquette du MSP. `sector`
-vaut `"public"` pour tout le registre MSP (les cliniques privées, une fois
-ajoutées, porteront `"private"`). `source` indique les registres ayant
-contribué ; `geo_precision` l'origine de la coordonnée. `lat`/`lng` valent
-`null` pour les 95 enregistrements dont la localité n'a pu être rattachée à une
-commune.
+(le MSP ne publie pas de code) — opaque, unique au sein de `sante.json`.
+`name` est le nom français s'il existe, sinon l'arabe. `type` est déduit du
+titre ; `wilaya_code` de l'étiquette du MSP. `sector` vaut `"public"` pour tout
+le registre MSP (les cliniques privées, une fois ajoutées, porteront
+`"private"`). `source` vaut toujours `"msp"` (le registre du Ministère de la
+Santé) ; `refs` porte les identifiants de provenance ayant contribué —
+toujours `msp`, plus `osm` ou `wikidata` quand la coordonnée a été remplacée
+par un point précis. `geo_precision` vaut `"exact"`, `"approximate"` ou
+`null` ; `geo_method` indique comment la coordonnée a été obtenue (`osm_point`,
+`wikidata_point`, `commune_centroid`, ou `null`). `lat`/`lng`/`geo_precision`/
+`geo_method` valent tous `null` ensemble pour les 95 enregistrements dont la
+localité n'a pu être rattachée à une commune.
 
 > **Les coordonnées et la commune sont dérivées, pas issues du MSP.** Le
 > Ministère de la Santé ne liste que noms, type et wilaya. GeoAlgeria rattache la

@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria mosques",
+  "alternateName": "Mosquées d'Algérie",
+  "identifier": "@geoalgeria/mosquees",
+  "description": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.563226 -8.148174 37.074766 10.931214"
+    }
+  },
+  "variableMeasured": "20759 records, 69 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "mosquees (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mosquees/data/mosquees.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "mosquees (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mosquees/data/csv/mosquees.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "mosquees (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/mosquees/data/geojson/mosquees.geojson"
+    }
+  ],
+  "dateModified": "2026-06-25",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Wikidata — mosques in Algeria — CC0-1.0",
+    "OpenStreetMap — mosques in Algeria — ODbL 1.0 (© OpenStreetMap contributors)"
+  ]
+}

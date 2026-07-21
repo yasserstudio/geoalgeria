@@ -105,7 +105,7 @@ const all: CulturalSite[] = culture.culture();
 ```
 data/
   culture.json              # 1,083 cultural places (array)
-  metadata.json             # sources, counts, coverage, generated_at
+  metadata.json             # sources, counts, coverage, license, updated
   csv/culture.csv           # repo + Release bundle
   geojson/culture.geojson   # Point features (every record)
 ```
@@ -116,35 +116,38 @@ data/
 {
   "id": "16-museum-03",
   "name": "Musée national Public d'art moderne et contemporain",
-  "name_ar": "المتحف العمومي الوطني للفن الحديث و المعاصر",
   "name_fr": "Musée national Public d'art moderne et contemporain",
+  "name_ar": "المتحف العمومي الوطني للفن الحديث و المعاصر",
+  "wilaya_code": "16",
+  "commune_code": "1607",
+  "commune": "Casbah",
+  "lat": 36.777301,
+  "lng": 3.057572,
+  "geo_precision": "exact",
+  "geo_method": "source_point",
+  "source": "patrimoine",
+  "refs": {
+    "patrimoine": "817"
+  },
   "type": "museum",
   "category": "heritage",
   "type_label_fr": "Musée",
   "type_label_ar": "متحف",
   "has_virtual_tour": true,
-  "wilaya": "Alger",
-  "wilaya_ar": "الجزائر",
-  "wilaya_code": "16",
-  "commune": "Casbah",
-  "commune_code": 1607,
-  "source": "patrimoineculturel",
-  "geo_precision": "source_point",
   "url": "https://cartes.patrimoineculturelalgerien.org/fr/node/101",
-  "node_id_fr": 101,
-  "node_id_ar": 817,
-  "slug": "musee-national-public-d-art-moderne-et-contemporain",
-  "lat": 36.777301,
-  "lng": 3.057572
+  "slug": "musee-national-public-d-art-moderne-et-contemporain"
 }
 ```
 
-`id` is a stable `{wilaya_code}-{type_code}-{seq}` key synthesized by GeoAlgeria.
-`name` is the French name where available, else Arabic. `type` is the place's
-layer on the portal; `category` groups the 11 types into `heritage` vs.
-`establishment`. `has_virtual_tour` is true for the 22 places with a 360° tour.
-`geo_precision` is `"source_point"` for every record — the portal publishes a
-coordinate for each place.
+`id` is a stable `{wilaya_code}-{type_code}-{seq}` key, unique within this
+file — treat it as opaque. `name` is the French name where available, else
+Arabic. `type` is the place's layer on the portal; `category` groups the 11
+types into `heritage` vs. `establishment`. `has_virtual_tour` is true for the
+22 places with a 360° tour. `geo_precision` is `"exact"` for 1,067 records and
+`"approximate"` for 16 — every place has a coordinate, but 16 don't meet the
+precision bar for `"exact"`. `geo_method` is `"source_point"` for every
+record: the coordinate is the portal's own published point, not a derived
+centroid. `refs.patrimoine` is the place's node id on the portal.
 
 > **Wilaya is exact; commune is derived.** The portal still files some places
 > under pre-2019 wilaya codes; GeoAlgeria rescopes each place to the current

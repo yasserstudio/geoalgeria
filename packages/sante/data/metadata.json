@@ -1,30 +1,69 @@
 {
-  "source": "Ministry of Health (sante.gov.dz) health-establishment registry, geocoded via OpenStreetMap (ODbL) + Wikidata (CC0)",
-  "origin": "https://sante.gov.dz, https://www.openstreetmap.org, https://www.wikidata.org",
-  "license": "MoH registry: factual public-sector listing. OpenStreetMap data © OpenStreetMap contributors, ODbL 1.0; Wikidata data is CC0. See README for attribution.",
-  "sante": 695,
+  "package": "@geoalgeria/sante",
+  "schema_version": "2.0.0",
+  "title_fr": "Établissements de santé publique d'Algérie",
+  "title_ar": "المؤسسات الصحية العمومية الجزائرية",
+  "title_en": "Algeria public health establishments",
+  "record_count": 695,
+  "geocoded_count": 600,
+  "geocoded_pct": 86.3,
+  "precision": {
+    "exact": 124,
+    "approximate": 476
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+  "wilayas_covered": 58,
+  "bbox": [
+    -8.140085,
+    19.573539,
+    9.635,
+    37.0072
+  ],
+  "sources": [
+    {
+      "key": "msp",
+      "name": "Ministry of Health (sante.gov.dz) — health-establishment registry",
+      "url": "https://sante.gov.dz",
+      "license": "Official public registry (Ministry of Health)",
+      "retrieved": "2026-06-27",
+      "evidence_type": "official"
+    },
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — geocoding",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-06-27",
+      "evidence_type": "crowdsourced"
+    },
+    {
+      "key": "wikidata",
+      "name": "Wikidata — geocoding",
+      "url": "https://www.wikidata.org",
+      "license": "CC0-1.0",
+      "retrieved": "2026-06-27",
+      "evidence_type": "crowdsourced"
+    }
+  ],
+  "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
+  "updated": "2026-06-27",
   "by_type": {
+    "ehs": 108,
     "eph": 270,
     "epsp": 292,
-    "ehs": 108,
-    "chu": 20,
-    "clinique": 0,
-    "hopital": 5
+    "hopital": 5,
+    "chu": 20
   },
   "by_sector": {
-    "public": 695,
-    "private": 0
+    "public": 695
   },
-  "by_geo_precision": {
-    "osm_point": 121,
-    "wikidata_point": 3,
+  "by_geo_method": {
     "commune_centroid": 476,
-    "none": 95
+    "osm_point": 121,
+    "wikidata_point": 3
   },
-  "wilayas_covered": 58,
-  "geocoded": 600,
   "bilingual": 563,
-  "linkage_note": "Establishment names + type + wilaya are from the MoH registry; the MoH carries no coordinates. Commune is derived by matching the establishment locality to the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, upgraded to a precise OSM/Wikidata point where one sits in the same commune (see geo_precision).",
-  "coverage_note": "695 public health establishments from the Ministry of Health — 600 geocoded (124 to a precise OSM/Wikidata point, the rest to commune centroid). Names + type + wilaya are official; coordinates are best-effort.",
-  "generated_at": "2026-06-27"
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

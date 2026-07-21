@@ -30,7 +30,7 @@ import fp from "@geoalgeria/formation-professionnelle";
 const all = fp.establishments();                    // 1 932
 const byWilaya = fp.establishmentsByWilaya(16);     // établissements de la wilaya 16
 const cfpas = fp.establishmentsByType("cfpa");      // tous les CFPA
-const one = fp.establishmentById(1);                // un seul enregistrement par id
+const one = fp.establishmentById("00001");          // un seul enregistrement par id
 
 // 1 375 enregistrements ont lat/lng — tri par distance, carte ou centre le plus proche en quelques lignes.
 ```
@@ -86,7 +86,7 @@ Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et incl
 ```
 data/
   establishments.json      # 1 932 établissements (tableau)
-  metadata.json            # source, comptages, by_type, by_secteur, geocoded, generated_at
+  metadata.json            # sources, comptages, by_type, by_secteur, geocoded, license, updated
   csv/                     # Export CSV (dépôt + bundle Release, pas dans le tarball npm)
   geojson/                 # Entités GeoJSON (1 375 points géocodés)
 ```
@@ -95,18 +95,22 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "00001",
   "name": "مديرية التكوينو التعليم المهنيينأدرار",
   "name_fr": "DFEPADRAR",
+  "wilaya_code": "01",
+  "commune_code": null,
+  "commune": "أدرار",
+  "lat": null,
+  "lng": null,
+  "geo_precision": null,
+  "geo_method": null,
+  "source": "mfep",
   "type": "dfep",
   "type_label": "مديرية التكوين والتعليم المهنيين",
   "abreviation": "DFEP ADRAR",
   "code": "0100",
   "secteur": "public",
-  "commune": "أدرار",
-  "wilaya_code": "01",
-  "lat": null,
-  "lng": null,
   "adresse": "حي 103مسكن أدرار",
   "adresse_fr": "Cité 103 logtAdrar",
   "telephone": "049364333",
@@ -119,19 +123,22 @@ data/
   "surface_m2": 2443.42,
   "internat": false,
   "capacite_internat": null,
-  "vocations": null,
-  "source": "takwin.dz (MFEP)"
+  "vocations": null
 }
 ```
 
-`id` est un entier stable commençant à 1. Les noms sont bilingues — `name` est en arabe
+`id` est une chaîne opaque à séquence complétée par des zéros (ex. `"00001"`), unique dans
+`establishments.json` — ne pas la parser. Les noms sont bilingues — `name` est en arabe
 (toujours présent), `name_fr` est en français (peut être `null`). `type` est un slug
 correspondant à l'un des dix types d'établissements listés ci-dessus. `secteur` est
 `"public"` ou `"prive"`. `wilaya_code` est complété à deux chiffres avec un zéro dans le
-schéma à 58 wilayas. `lat`/`lng` sont `null` pour les 29 % d'enregistrements non encore
-géocodés. `capacite` (théorique) et `capacite_reelle` (réalisée) sont des nombres de places ;
-`internat` indique la disponibilité d'un internat avec un `capacite_internat` optionnel.
-`vocations` est un tableau de spécialisations quand disponible.
+schéma à 58 wilayas ; `commune_code` est actuellement toujours `null` pour cette source
+(aucun code ONS publié par takwin.dz). `lat`/`lng`, ainsi que `geo_precision`/`geo_method`,
+sont `null` pour les 29 % d'enregistrements non encore géocodés ; quand ils sont présents,
+`geo_precision` vaut `"exact"` ou `"approximate"` et `geo_method` indique l'origine de la
+coordonnée (ex. `takwin`). `capacite` (théorique) et `capacite_reelle` (réalisée) sont des
+nombres de places ; `internat` indique la disponibilité d'un internat avec un
+`capacite_internat` optionnel. `vocations` est un tableau de spécialisations quand disponible.
 
 ## Besoin aussi des divisions administratives ?
 

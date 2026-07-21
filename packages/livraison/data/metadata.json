@@ -1,18 +1,82 @@
 {
-  "source": "Yalidine + Guepex federated stop-desk relay plus the Anderson, Noest and Maystro agency networks; carrier registry compiled by GeoAlgeria",
-  "origin_stopdesks": [
-    "https://yalidine-express.com.dz/nos-agences/",
-    "https://www.guepex.dz/public/data/agences.json",
-    "https://anderson-ecommerce.com/",
-    "https://noest-dz.com/",
-    "https://maystro-delivery.com/Coverage.html"
+  "package": "@geoalgeria/livraison",
+  "schema_version": "2.0.0",
+  "title_fr": "Points relais de livraison d'Algérie",
+  "title_ar": "نقاط استلام التوصيل في الجزائر",
+  "title_en": "Algeria delivery stop-desks",
+  "record_count": 411,
+  "geocoded_count": 411,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 411,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "wilayas_covered": 61,
+  "bbox": [
+    -8.143583,
+    22.784955,
+    9.585192,
+    37.009471
   ],
-  "carriers_source": "CourierDZ (github.com/PiteurStudio/CourierDZ) + carrier websites + GeoAlgeria recon",
+  "sources": [
+    {
+      "key": "yalidine",
+      "name": "Yalidine Express — nos-agences",
+      "url": "https://yalidine-express.com.dz/nos-agences/",
+      "license": "Data © Yalidine Express; redistributed for reference",
+      "retrieved": "2026-06-18",
+      "evidence_type": "official"
+    },
+    {
+      "key": "guepex",
+      "name": "Guepex — public agences feed",
+      "url": "https://www.guepex.dz/public/data/agences.json",
+      "license": "Data © Guepex; redistributed for reference",
+      "retrieved": "2026-06-18",
+      "evidence_type": "official"
+    },
+    {
+      "key": "anderson",
+      "name": "Anderson Logistics — agency directory",
+      "url": "https://anderson-ecommerce.com/",
+      "license": "Data © Anderson Logistics; redistributed for reference",
+      "retrieved": "2026-06-18",
+      "evidence_type": "official"
+    },
+    {
+      "key": "noest",
+      "name": "Noest Express — bureaux directory",
+      "url": "https://noest-dz.com/",
+      "license": "Data © Noest Express; redistributed for reference",
+      "retrieved": "2026-06-18",
+      "evidence_type": "official"
+    },
+    {
+      "key": "maystro",
+      "name": "Maystro Delivery — coverage page",
+      "url": "https://maystro-delivery.com/Coverage.html",
+      "license": "Data © Maystro Delivery; redistributed for reference",
+      "retrieved": "2026-06-18",
+      "evidence_type": "official"
+    }
+  ],
   "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
+  "updated": "2026-06-18",
   "carriers": 16,
   "stopdesks": 411,
   "coverage": 9,
-  "stopdesks_geocoded": 411,
-  "wilayas_covered": 61,
-  "generated_at": "2026-06-18"
+  "by_operator": {
+    "guepex": 70,
+    "yalidine": 93,
+    "easyandspeed": 14,
+    "wecanservices": 3,
+    "zimou-express": 8,
+    "speedmail": 2,
+    "anderson": 89,
+    "maystro": 38,
+    "noest": 94
+  }
 }

@@ -96,44 +96,68 @@ data/
 
 ```json
 {
+  "id": "lodging-1",
   "name": "عريان الراس",
   "name_ar": "عريان الراس تسابيت",
-  "type": "alpine_hut",
   "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
   "lat": 28.4162728,
   "lng": -0.2620846,
-  "source": "OpenStreetMap",
-  "osm_id": 8107956617,
-  "id": 1
+  "geo_precision": "exact",
+  "geo_method": "osm",
+  "source": "osm",
+  "refs": { "osm": "8107956617" },
+  "type": "alpine_hut"
 }
 ```
 
 `type` est l'un des suivants : `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`,
-`alpine_hut`. Champs optionnels : `stars`, `rooms`, `phone`, `website`, `address`, `name_fr`.
+`alpine_hut`. `name_fr` et `name_ar` ne sont présents que lorsque OpenStreetMap porte cette
+langue. `source` est une clé courte résolue dans `metadata.sources[]`, et les identifiants
+externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de chaîne,
+`refs.wikidata` un QID, `refs.wikipedia` un lien interlangue `"<langue>:<titre>"`). Les quatre
+couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls.
+
+Les champs de contact et de classification optionnels sont présents lorsque la source les
+publie, et absents sinon — jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
+`phone` (204, plusieurs numéros séparés par `;` comme OSM les balise), `website` (84), `stars`
+(60) et `rooms` (24). Sur les attractions : `description` (26). Sur les sites historiques :
+`heritage_status` (17, par exemple `"part of UNESCO World Heritage Site"`) et `heritage`
+(12, le niveau de protection OSM).
+
+La plupart des enregistrements de ces quatre couches proviennent d'OpenStreetMap, mais 115
+proviennent de Wikidata (32 attractions, 75 sites historiques, 8 parcs). Ceux-là portent
+`source` et `geo_method` à `"wikidata"` et un QID `refs.wikidata` sans `refs.osm` : ils sont
+en CC0 et non en ODbL, filtrez donc sur `source` si la distinction compte pour votre
+attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lien Wikipedia.
 
 **Source thermale** — source ASAL Geoportail, avec propriétés physiques :
 
 ```json
 {
-  "id": 1,
+  "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
+  "wilaya_code": "43",
+  "commune_code": null,
+  "commune": "BENI H'MIDENE",
+  "lat": 36.4625,
+  "lng": 6.4827778,
+  "geo_precision": "exact",
+  "geo_method": "asal",
+  "source": "asal",
   "type": "forage",
   "temperature_c": 32,
   "debit_l_s": 15,
   "altitude_m": 423,
-  "minerality": "BICARBONATEE CALCIQUE",
-  "wilaya_code": "43",
-  "wilaya_name": "CONSTANTINE",
-  "commune_name": "BENI H'MIDENE",
-  "lat": 36.4625,
-  "lng": 6.4827778,
-  "source": "ASAL geoportail"
+  "minerality": "BICARBONATEE CALCIQUE"
 }
 ```
 
 `type` est l'un des suivants : `hammam`, `ain`, `source`, `forage`. Les propriétés physiques
 (`temperature_c`, `debit_l_s`, `altitude_m`, `minerality`) proviennent directement du jeu de
-données ASAL.
+données ASAL ; `minerality` est la seule optionnelle. C'est la seule couche qui nomme une
+commune — via `commune`, un nom et non un `commune_code` ONS, qui reste nul.
 
 `wilaya_code` est complété à deux chiffres avec un zéro dans toutes les couches et rejoint les
 wilayas de GeoAlgeria.

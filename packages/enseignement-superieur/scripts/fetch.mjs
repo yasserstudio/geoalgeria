@@ -24,9 +24,10 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 import { PAGE, getHtml, parseInstitutions, instKey, MIN_EXPECTED } from "./mesrs.mjs";
 import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
 
@@ -120,32 +121,6 @@ function nearestCommune(lat, lng) {
   }
   return best;
 }
-
-// --- writers (shared verbatim with the other packages) ----------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-const writeJSON = (p, obj) => writeFileSync(join(DATA, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
 
 // --- main -------------------------------------------------------------------
 async function main() {
@@ -285,14 +260,6 @@ async function main() {
   const overflow = records.filter((r) => Number(r.wilaya_code) < 1 || Number(r.wilaya_code) > 69);
   if (overflow.length) throw new Error(`wilaya_code out of [1,69]: ${overflow.length} record(s)`);
 
-  const byType = {};
-  for (const r of records) byType[r.type] = (byType[r.type] || 0) + 1;
-  const byPrecision = {};
-  for (const r of records) byPrecision[r.geo_precision] = (byPrecision[r.geo_precision] || 0) + 1;
-  const bySector = {};
-  for (const r of records) bySector[r.sector] = (bySector[r.sector] || 0) + 1;
-  const wilayasCovered = new Set(records.map((r) => r.wilaya_code)).size;
-
   // The campus-geocode quality guard applies only to the public MESRS network — the
   // private/other-ministry extras are wilaya-precision by nature (no source coords),
   // so they're excluded from the ratio to keep the guard meaningful.
@@ -305,35 +272,24 @@ async function main() {
     );
   }
 
-  const cols = ["id", "name", "name_ar", "type", "type_fr", "sector", "supervisory_ministry", "website", "commune", "wilaya_code", "wilaya_name", "lat", "lng", "geo_precision", "source"];
-  const ordered = records.map((r) => Object.fromEntries(cols.map((c) => [c, r[c]])));
-  const metadata = {
-    source: "Ministère de l'Enseignement Supérieur et de la Recherche Scientifique (mesrs.dz)",
-    origin: PAGE,
-    license: "Data © MESRS; redistributed for reference. Coordinates are OSM-derived (see README). See README.",
-    institutions: ordered.length,
-    by_type: byType,
-    by_sector: bySector,
-    by_precision: byPrecision,
-    wilayas_covered: wilayasCovered,
-    name_ar_count: records.filter((r) => r.name_ar).length,
-    dropped: dropped.length,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(DATA, "csv"), { recursive: true });
-  mkdirSync(join(DATA, "geojson"), { recursive: true });
-  writeJSON("institutions.json", ordered);
-  writeText("csv/institutions.csv", toCSV(ordered, cols));
-  writeJSON("geojson/institutions.geojson", toGeoJSON(ordered));
-  writeJSON("metadata.json", metadata);
+  // --- emit v2 via the shared writer ---
+  const cfg = MIGRATIONS["enseignement-superieur"];
+  const today = new Date().toISOString().slice(0, 10);
+  const { records: out, metadata } = writePackageV2({
+    pkg: "enseignement-superieur",
+    dir: DATA,
+    files: [{ file: "institutions.json", rows: records.map(cfg.map) }],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
+  });
 
   console.log(`\nType breakdown:`);
-  for (const [k, v] of Object.entries(byType).sort((a, b) => b[1] - a[1])) console.log(`  ${String(v).padStart(4)}  ${k}`);
-  console.log(`Precision: ${Object.entries(byPrecision).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+  for (const [k, v] of Object.entries(metadata.by_type).sort((a, b) => b[1] - a[1])) console.log(`  ${String(v).padStart(4)}  ${k}`);
+  console.log(`Precision: ${Object.entries(metadata.by_geo_method).map(([k, v]) => `${k} ${v}`).join(", ")}`);
   if (nReject) console.log(`Rejected ${nReject} geocode(s) that landed in the wrong wilaya (placed at the named wilaya's centroid).`);
   if (dropped.length) console.log(`Dropped ${dropped.length} unplaceable record(s): ${dropped.join("; ")}`);
-  console.log(`\nWrote ${ordered.length} institutions across ${wilayasCovered} wilayas (all placed; ${campus} campus-geocoded) to ${DATA}.`);
+  console.log(`\nWrote ${out.length} institutions across ${metadata.wilayas_covered} wilayas (all placed; ${campus} campus-geocoded) to ${DATA} (v2).`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

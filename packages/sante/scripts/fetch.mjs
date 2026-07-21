@@ -22,7 +22,8 @@
  * Note: sante.gov.dz may be unreachable from non-Algerian networks / sandboxes;
  * run with direct network access if the MoH pull fails.
  *
- * Usage: node scripts/fetch.mjs
+ * Usage: node scripts/fetch.mjs            # live pull
+ *        node scripts/fetch.mjs --cache    # rebuild from research/sante/*-raw.json (+ msp taxonomy)
  */
 
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
@@ -32,6 +33,7 @@ import https from "node:https";
 import http from "node:http";
 import tls from "node:tls";
 import { X509Certificate, createHash } from "node:crypto";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -892,35 +894,18 @@ function assignIds(rows) {
   );
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-const writeJSON = (p, obj) => writeFileSync(join(OUT_DIR, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
-
 // --- main ------------------------------------------------------------------
 async function main() {
-  const { records, taxonomy } = await fetchMSP();
+  // Offline replay: rebuild from the committed MSP registry + OSM/Wikidata pulls with
+  // no network (the MoH portal is behind broken TLS — see fetchMSP's custom-CA path —
+  // so a live run is fragile; the cache keeps re-emission deterministic and offline).
+  const OFFLINE = process.argv.includes("--cache");
+  const { records, taxonomy } = OFFLINE
+    ? {
+        records: JSON.parse(readCacheFile(RESEARCH_DIR, "msp-healthinstitution-raw.json", "sante")),
+        taxonomy: JSON.parse(readCacheFile(RESEARCH_DIR, "msp-wilaya-taxonomy.json", "sante")),
+      }
+    : await fetchMSP();
   const taxMap = new Map(taxonomy.map((t) => [t.id, t.name]));
   const wil = loadWilayas();
   const communesByWilaya = loadCommunes();
@@ -929,8 +914,12 @@ async function main() {
   const rows = buildEstablishments(records, taxMap, wil, communesByWilaya, stats);
   console.log(`  built ${rows.length} establishments (${stats.paired} bilingual pairs, type_fail ${stats.type_fail}, wilaya_fail ${stats.wilaya_fail})`);
 
-  const wdRaw = await fetchWikidata();
-  const osmRaw = await fetchOSM();
+  const wdRaw = OFFLINE
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "wikidata-hospitals-raw.json", "sante")).results.bindings
+    : await fetchWikidata();
+  const osmRaw = OFFLINE
+    ? JSON.parse(readCacheFile(RESEARCH_DIR, "osm-health-raw.json", "sante")).elements
+    : await fetchOSM();
   const facilities = normFacilities(wdRaw, osmRaw);
   console.log(`  ${facilities.length} OSM/Wikidata health facilities for refinement`);
   refineWithFacilities(rows, facilities, communesByWilaya, wil, stats);
@@ -938,49 +927,25 @@ async function main() {
 
   assignIds(rows);
 
-  const cols = [
-    "id", "name", "name_ar", "name_fr", "type", "type_label_fr", "type_label_ar", "sector",
-    "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code",
-    "source", "geo_precision", "wikidata", "osm_id", "msp_id", "slug", "lat", "lng",
-  ];
-  const by = (k, v) => rows.filter((r) => r[k] === v).length;
-  const geocoded = rows.filter((r) => r.lat != null).length;
-  const bilingual = rows.filter((r) => r.name_ar && r.name_fr).length;
-  const metadata = {
-    source: "Ministry of Health (sante.gov.dz) health-establishment registry, geocoded via OpenStreetMap (ODbL) + Wikidata (CC0)",
-    origin: "https://sante.gov.dz, https://www.openstreetmap.org, https://www.wikidata.org",
-    license:
-      "MoH registry: factual public-sector listing. OpenStreetMap data © OpenStreetMap contributors, ODbL 1.0; Wikidata data is CC0. See README for attribution.",
-    sante: rows.length,
-    by_type: {
-      eph: by("type", "eph"), epsp: by("type", "epsp"), ehs: by("type", "ehs"),
-      chu: by("type", "chu"), clinique: by("type", "clinique"), hopital: by("type", "hopital"),
-    },
-    by_sector: { public: by("sector", "public"), private: by("sector", "private") },
-    by_geo_precision: {
-      osm_point: by("geo_precision", "osm_point"),
-      wikidata_point: by("geo_precision", "wikidata_point"),
-      commune_centroid: by("geo_precision", "commune_centroid"),
-      none: by("geo_precision", "none"),
-    },
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code)).size,
-    geocoded,
-    bilingual,
-    linkage_note:
-      "Establishment names + type + wilaya are from the MoH registry; the MoH carries no coordinates. Commune is derived by matching the establishment locality to the geoalgeria commune set within the wilaya; coordinates are that commune's centroid, upgraded to a precise OSM/Wikidata point where one sits in the same commune (see geo_precision).",
-    coverage_note: `${rows.length} public health establishments from the Ministry of Health — ${geocoded} geocoded (${by("geo_precision", "osm_point") + by("geo_precision", "wikidata_point")} to a precise OSM/Wikidata point, the rest to commune centroid). Names + type + wilaya are official; coordinates are best-effort.`,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("sante.json", rows);
-  writeText("csv/sante.csv", toCSV(rows, cols));
-  writeJSON("geojson/sante.geojson", toGeoJSON(rows));
-  writeJSON("metadata.json", metadata);
+  // Emit v2 via the shared writer. Carry ids over by the stable OSM/Wikidata/MSP id
+  // so the commune re-scoping shows up as corrected wilaya/commune, not id churn.
+  const cfg = MIGRATIONS.sante;
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
+  const v2 = rows.map(cfg.map);
+  carryOverIds(v2, readCommitted(OUT_DIR, "sante.json"), (r) =>
+    r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : r.refs?.msp ? `msp:${r.refs.msp}` : null,
+    "sante",
+  );
+  const { records: out, metadata } = writePackageV2({
+    pkg: "sante",
+    dir: OUT_DIR,
+    files: [{ file: "sante.json", rows: v2 }],
+    meta: cfg.meta,
+    updated,
+    retrieved,
+  });
   console.log(
-    `Wrote ${rows.length} establishments (${metadata.wilayas_covered} wilayas, ${geocoded} geocoded, ${bilingual} bilingual) — ` +
-      `EPH ${metadata.by_type.eph}, EPSP ${metadata.by_type.epsp}, EHS ${metadata.by_type.ehs}, CHU ${metadata.by_type.chu}.`,
+    `Wrote ${out.length} establishments → v2 (${metadata.wilayas_covered} wilayas, ${metadata.geocoded_count} geocoded).`,
   );
 }
 

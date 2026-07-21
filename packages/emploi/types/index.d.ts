@@ -1,16 +1,44 @@
-// Type definitions for @geoalgeria/emploi
-// Data sourced from ANEM (National Employment Agency, anem.dz).
+// Type definitions for @geoalgeria/emploi (schema v2).
+// ANEM employment agencies — AWEM at wilaya level, ALEM at local level (anem.dz).
+// Records follow the canonical GeoRecord contract (zero-padded string
+// wilaya_code, geo_precision/geo_method/source) plus the agency fields below.
+
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
+ *  `null` when the record has no coordinate at all. */
+export type GeoPrecision = "exact" | "approximate" | null;
+
+/** How the coordinate was obtained. `null` on an ungeocoded record — no method
+ *  produced a point, so none can be named. */
+export type GeoMethod = "anem" | null;
 
 /** A wilaya-level employment agency (AWEM). */
 export interface Awem {
-  /** Agency id. */
+  /** Stable id, unique within this file. Opaque — do not parse. */
   id: string;
-  /** Internal ANEM code, if assigned. */
-  code: string | null;
-  /** Record type discriminator (e.g. "awem"). */
-  type: string;
   /** Agency name. */
   name: string;
+  /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
+  wilaya_code: string;
+  /** Commune (ONS) code. Currently null for every AWEM (the source resolves to
+   *  wilaya only); typed as `string | null` so a future value is not a break. */
+  commune_code: string | null;
+  /** Commune name. Currently null for every AWEM; see `commune_code`. */
+  commune: string | null;
+  /** Latitude — AWEM agencies are fully geocoded. */
+  lat: number;
+  /** Longitude — AWEM agencies are fully geocoded. */
+  lng: number;
+  /** `"exact"`, or `"approximate"` where the source coordinate is too coarse
+   *  to be a per-agency point (see `@geoalgeria/schema` MIN_EXACT_DECIMALS). */
+  geo_precision: "exact" | "approximate";
+  /** Always `"anem"`: the point comes from the ANEM directory. */
+  geo_method: "anem";
+  /** Provenance key into `metadata.sources[]` — always "anem". */
+  source: "anem";
+  /** Record type discriminator. */
+  type: "AWEM";
+  /** Internal ANEM code, or null when none is assigned. */
+  code: string | null;
   /** Street address. */
   address: string;
   /** Phone number. */
@@ -21,62 +49,102 @@ export interface Awem {
   email: string;
   /** Agency manager/director. */
   manager: string;
-  /** Wilaya code as a string ("1".."58"). */
-  wilaya_code: string;
-  /** Latitude (AWEM agencies are fully geocoded). */
-  lat: number;
-  /** Longitude (AWEM agencies are fully geocoded). */
-  lng: number;
 }
 
 /** A local employment agency (ALEM). */
 export interface Alem {
-  /** Agency id. */
+  /** Stable id, unique within this file. Opaque — do not parse. */
   id: string;
-  /** Internal ANEM code, if assigned. */
-  code: string | null;
-  /** Record type discriminator (e.g. "alem"). */
-  type: string;
   /** Agency name. */
   name: string;
+  /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
+  wilaya_code: string;
+  /** Commune (ONS) code. Currently null for every ALEM; typed as
+   *  `string | null` so a future populated value is not a breaking change. */
+  commune_code: string | null;
+  /** Commune name. Currently null for every ALEM; see `commune_code`. */
+  commune: string | null;
+  /** Latitude, or null when the agency could not be geocoded. */
+  lat: number | null;
+  /** Longitude, or null. Both coordinates are set, or both are null. */
+  lng: number | null;
+  /** `"exact"` for an ANEM point, `null` when `lat`/`lng` are null. */
+  geo_precision: GeoPrecision;
+  /** How `lat`/`lng` were obtained; null when there are none. */
+  geo_method: GeoMethod;
+  /** Provenance key into `metadata.sources[]` — always "anem". */
+  source: "anem";
+  /** Record type discriminator. */
+  type: "ALEM";
+  /** Internal ANEM code, or null when none is assigned. */
+  code: string | null;
   /** Street address. */
   address: string;
   /** Phone number. */
   phone: string;
-  /** Fax number, if any. */
+  /** Fax number, or null. */
   fax: string | null;
-  /** Contact email, if any. */
+  /** Contact email, or null. */
   email: string | null;
   /** Agency manager/director. */
   manager: string;
-  /** Comma-separated list of communes served. */
+  /** Comma-separated list of the communes this local agency serves (domain extra,
+   *  v2 decision 2). Present on every ALEM record. */
   communes: string;
-  /** Wilaya code as a string ("1".."58"). */
-  wilaya_code: string;
-  /** Latitude, or null when not geocoded. */
-  lat: number | null;
-  /** Longitude. */
-  lng: number;
 }
 
-/** Dataset metadata (data/metadata.json). */
-export interface Metadata {
-  source: string;
-  origin: string;
+/** One provenance entry in `metadata.sources[]`. */
+export interface SourceRef {
+  key: string;
+  name: string;
+  url?: string;
   license: string;
-  awem: number;
-  alem: number;
-  total: number;
+  retrieved?: string;
+  evidence_type?: "official" | "crowdsourced" | "derived";
+}
+
+/** One data file described in `metadata.entities[]`. */
+export interface EntityRef {
+  file: string;
+  count: number;
+}
+
+/** Dataset metadata (data/metadata.json) — canonical fields plus ANEM stats. */
+export interface Metadata {
+  package: "@geoalgeria/emploi";
+  schema_version: string;
+  title_fr: string;
+  title_ar: string;
+  title_en: string;
+  /** AWEM + ALEM. */
+  record_count: number;
+  /** Records with coordinates. */
+  geocoded_count: number;
+  geocoded_pct: number;
+  /** Count by `geo_precision` among geocoded records; ungeocoded records carry none. */
+  precision: { exact: number; approximate: number };
+  estimated_universe: number | null;
+  coverage_pct: number | null;
+  coverage_note: string;
   wilayas_covered: number;
-  /** ISO date (YYYY-MM-DD) the snapshot was generated. */
-  generated_at: string;
+  /** `[minLng, minLat, maxLng, maxLat]`, or null when nothing is geocoded. */
+  bbox: [number, number, number, number] | null;
+  /** Per-file record counts (awem.json, alem.json). */
+  entities: EntityRef[];
+  sources: SourceRef[];
+  license: string;
+  /** ISO date (YYYY-MM-DD) the dataset was regenerated. */
+  updated: string;
+  /** Count by record type. */
+  by_type: { AWEM: number; ALEM: number };
 }
 
 /** All wilaya-level agencies (AWEM). */
 export function awem(): Awem[];
 /** All local agencies (ALEM). */
 export function alem(): Alem[];
-/** AWEM and ALEM combined (AWEM first). */
+/** AWEM and ALEM combined (AWEM first). Ids are unique across the merged set —
+ *  narrow on `type`. */
 export function agencies(): Array<Awem | Alem>;
 /** Dataset metadata. */
 export function metadata(): Metadata;

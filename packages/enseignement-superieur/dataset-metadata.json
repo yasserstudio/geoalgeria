@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria higher-education institutions",
+  "alternateName": "Établissements d'enseignement supérieur d'Algérie",
+  "identifier": "@geoalgeria/enseignement-superieur",
+  "description": "Higher-education institutions (universities, schools, research centres) from the MESRS. 61 are campus-precise; the rest are wilaya/commune centroids (approximate).",
+  "conditionsOfAccess": "Factual public listing (MESRS)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "22.805776 -8.12861 36.912274 8.482"
+    }
+  },
+  "variableMeasured": "177 records, 51 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "institutions (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/enseignement-superieur/data/institutions.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/enseignement-superieur/data/csv/institutions.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/enseignement-superieur/data/geojson/institutions.geojson"
+    }
+  ],
+  "dateModified": "2026-06-23",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministry of Higher Education and Scientific Research (MESRS) — Factual public listing (MESRS)"
+  ]
+}

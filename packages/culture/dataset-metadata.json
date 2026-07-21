@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria cultural heritage",
+  "alternateName": "Patrimoine culturel d'Algérie",
+  "identifier": "@geoalgeria/culture",
+  "description": "Cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
+  "conditionsOfAccess": "Factual public listing (Ministry of Culture); commune linkage from the GeoAlgeria set",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.909475 -8.433817 37.005723 9.575973"
+    }
+  },
+  "variableMeasured": "1083 records, 66 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "culture (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/culture/data/culture.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "culture (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/culture/data/csv/culture.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "culture (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/culture/data/geojson/culture.geojson"
+    }
+  ],
+  "dateModified": "2026-06-28",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Cartes du Patrimoine Culturel Algérien (Ministry of Culture) — Factual public cultural listing (Ministry of Culture)"
+  ]
+}

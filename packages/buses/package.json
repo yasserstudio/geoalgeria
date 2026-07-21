@@ -13,6 +13,7 @@
     "./data/*": "./data/*"
   },
   "files": [
+    "dataset-metadata.json",
     "data/**/*.json",
     "data/**/*.csv",
     "types/",

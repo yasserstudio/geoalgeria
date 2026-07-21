@@ -1,0 +1,51 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria railway & transit stations",
+  "alternateName": "Gares ferroviaires et de transit d'Algérie",
+  "identifier": "@geoalgeria/ferroviaire",
+  "description": "Rail and urban-transit stations (SNTF, metro, tram) compiled from Wikidata + OpenStreetMap.",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "26.8176 -8.1016 36.914478 8.36519"
+    }
+  },
+  "variableMeasured": "692 records, 50 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "stations (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ferroviaire/data/stations.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ferroviaire/data/csv/stations.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ferroviaire/data/geojson/stations.geojson"
+    }
+  ],
+  "dateModified": "2026-07-01",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Wikidata — rail & urban transit stations in Algeria — CC0-1.0",
+    "OpenStreetMap — rail & urban transit stations in Algeria — ODbL 1.0 (© OpenStreetMap contributors)"
+  ]
+}

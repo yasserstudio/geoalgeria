@@ -96,7 +96,7 @@ data/
 
 ```json
 {
-  "id": "01-001",
+  "id": "ag-01-001",
   "code": "12237",
   "type": "agence",
   "name": "Agence Commerciale Adrar",
@@ -113,7 +113,7 @@ data/
 
 ```json
 {
-  "id": "01-001",
+  "id": "pdv-01-001",
   "code": "2955",
   "type": "pdv",
   "name": "PDV LIBRAIRIE GAFA ABDERRAHMANE",
@@ -125,9 +125,10 @@ data/
 }
 ```
 
-`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria (seq ordered
-by the source id). Mobilis' own id is kept as `code`. `wilaya_code` joins to
-GeoAlgeria's `wilaya_code`.
+`id` is a stable `{prefix}-{wilaya_code}-{seq}` key synthesized by GeoAlgeria
+(`ag-` for agencies, `pdv-` for points of sale; seq ordered by the source id), so
+it stays unique across the merged `all()` collection. Mobilis' own id is kept as
+`code`. `wilaya_code` joins to GeoAlgeria's `wilaya_code`.
 
 ## Need the administrative divisions too?
 

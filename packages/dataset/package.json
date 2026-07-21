@@ -12,7 +12,11 @@
     "./data/*": "./data/*"
   },
   "files": [
+    "dataset-metadata.json",
     "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "data/**/*.sql",
     "types/",
     "index.js"
   ],

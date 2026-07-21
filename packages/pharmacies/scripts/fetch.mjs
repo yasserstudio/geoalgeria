@@ -22,6 +22,7 @@
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -339,29 +340,35 @@ function assignIds(rows) {
   }
 }
 
+// Map the internal OSM shape to the canonical @geoalgeria/schema v2 GeoRecord:
+// geo_precision → exact|approximate (raw method kept in geo_method), osm_id → refs.osm,
+// commune_code → 4-digit ONS string (first 2 digits = wilaya_code), denormalized wilaya
+// name fields dropped (derivable from wilaya_code via the geoalgeria core dataset).
+function toV2(rows) {
+  return rows.map((r) => ({
+    id: r.id,
+    name: r.name,
+    name_fr: r.name_fr,
+    name_ar: r.name_ar,
+    wilaya_code: r.wilaya_code,
+    commune_code: r.commune_code == null ? null : String(r.commune_code).padStart(4, "0"),
+    commune: r.commune,
+    lat: r.lat,
+    lng: r.lng,
+    geo_precision: r.geo_precision === "osm_node" ? "exact" : "approximate",
+    geo_method: r.geo_precision,
+    source: "osm",
+    refs: { osm: r.osm_id },
+    operator: r.operator,
+    phone: r.phone,
+    opening_hours: r.opening_hours,
+    dispensing: r.dispensing,
+    address: r.address,
+  }));
+}
+
 // --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && typeof v !== "boolean" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
+// toCSV / toGeoJSON come from @geoalgeria/schema (the canonical emit helpers).
 const writeJSON = (p, obj) => writeFileSync(join(OUT_DIR, p), JSON.stringify(obj, null, 2) + "\n");
 const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
 
@@ -389,35 +396,48 @@ async function main() {
 
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);
-
-  const cols = [
-    "id", "source", "osm_id", "name", "name_ar", "name_fr",
-    "operator", "phone", "opening_hours", "dispensing",
-    "wilaya", "wilaya_ar", "wilaya_code", "commune", "commune_code", "address",
-    "lat", "lng", "geo_precision",
-  ];
+  rows = toV2(rows);
   rows.sort((a, b) => a.id.localeCompare(b.id));
 
+  const cols = [
+    "id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "commune",
+    "lat", "lng", "geo_precision", "geo_method", "source", "refs",
+    "operator", "phone", "opening_hours", "dispensing", "address",
+  ];
+
+  const today = new Date().toISOString().slice(0, 10);
   const named = rows.filter((r) => r.name).length;
   const metadata = {
-    source: "OpenStreetMap (ODbL) — pharmacies (amenity=pharmacy) in Algeria",
-    origin: "https://www.openstreetmap.org",
-    license:
-      "OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README for attribution.",
-    pharmacies: rows.length,
+    ...buildMetadata({
+      package: "@geoalgeria/pharmacies",
+      records: rows,
+      sources: [
+        {
+          key: "osm",
+          name: "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria",
+          url: "https://www.openstreetmap.org",
+          license: "ODbL 1.0 (© OpenStreetMap contributors)",
+          retrieved: today,
+        },
+      ],
+      license: "ODbL-1.0",
+      updated: today,
+      estimatedUniverse: OFFICIAL_TOTAL,
+      coverageNote: `${rows.length} pharmacies compiled from OpenStreetMap, against an estimated ~${OFFICIAL_TOTAL} officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.`,
+      titles: {
+        en: "Algeria pharmacies (officines)",
+        fr: "Pharmacies d'Algérie",
+        ar: "صيدليات الجزائر",
+      },
+    }),
+    // domain-specific enrichment stats (additive to the canonical metadata)
     named,
     with_phone: rows.filter((r) => r.phone).length,
     with_hours: rows.filter((r) => r.opening_hours).length,
     with_address: rows.filter((r) => r.address).length,
     with_dispensing: rows.filter((r) => r.dispensing !== null).length,
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code).filter(Boolean)).size,
-    pharmacies_geocoded: rows.filter((r) => r.lat != null).length,
-    official_total: OFFICIAL_TOTAL,
-    coverage_note:
-      `${rows.length} pharmacies compiled from OpenStreetMap, against an estimated ~${OFFICIAL_TOTAL} officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.`,
     linkage_note:
       "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-    generated_at: new Date().toISOString().slice(0, 10),
   };
 
   mkdirSync(join(OUT_DIR, "csv"), { recursive: true });

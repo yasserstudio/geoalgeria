@@ -20,9 +20,10 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -149,34 +150,6 @@ function parseSurface(v) {
   return Number.isFinite(n) && n > 0 ? n : null;
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-
-const writeJSON = (p, obj) => writeFileSync(join(DATA, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
-
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Fetching MJS sports infrastructure from GeoServer…");
@@ -294,48 +267,27 @@ async function main() {
   // Assign stable sequential ids
   facilities.forEach((f, i) => { f.id = i + 1; });
 
-  // --- summaries ---
-  const byType = {};
-  for (const f of facilities) {
-    const k = f.type_code || "OTHER";
-    byType[k] = (byType[k] || 0) + 1;
-  }
-  const wilayasCovered = new Set(facilities.map((f) => f.wilaya_code).filter(Boolean)).size;
-
-  const cols = [
-    "id", "name", "type_code", "type_fr", "address",
-    "commune", "daira", "wilaya_code", "wilaya_name",
-    "capacity", "year", "operational", "pmr",
-    "surface_built_m2", "surface_land_m2", "lat", "lng", "source",
-  ];
-
-  mkdirSync(join(DATA, "csv"), { recursive: true });
-  mkdirSync(join(DATA, "geojson"), { recursive: true });
-  writeJSON("facilities.json", facilities);
-  writeText("csv/facilities.csv", toCSV(facilities, cols));
-  writeJSON("geojson/facilities.geojson", toGeoJSON(facilities));
-  writeJSON("metadata.json", {
-    source: "Ministry of Youth and Sports — SIG (sig.mjs.gov.dz)",
-    origin: SOURCE,
-    license: "Data © Ministry of Youth and Sports; redistributed for reference. See README.",
-    facilities: facilities.length,
-    by_type: byType,
-    wilayas_covered: wilayasCovered,
-    dropped: dropped.length,
-    generated_at: new Date().toISOString().slice(0, 10),
+  // --- emit v2 via the shared writer ---
+  const cfg = MIGRATIONS.sports;
+  const today = new Date().toISOString().slice(0, 10);
+  const { records: out, metadata } = writePackageV2({
+    pkg: "sports",
+    dir: DATA,
+    files: [{ file: "facilities.json", rows: facilities.map(cfg.map) }],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
   });
 
   console.log(`\nType breakdown:`);
-  for (const [k, v] of Object.entries(byType).sort((a, b) => b[1] - a[1])) {
+  for (const [k, v] of Object.entries(metadata.by_type).sort((a, b) => b[1] - a[1])) {
     const entry = Object.values(TYPE_MAP).find((e) => e.code === k);
     console.log(`  ${String(v).padStart(5)}  ${k.padEnd(6)} ${entry?.fr || k}`);
   }
   if (dropped.length) {
     console.log(`\nDropped ${dropped.length} record(s).`);
   }
-  console.log(
-    `\nWrote ${facilities.length} facilities across ${wilayasCovered} wilayas to ${DATA}.`,
-  );
+  console.log(`\nWrote ${out.length} facilities across ${metadata.wilayas_covered} wilayas to ${DATA} (v2).`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

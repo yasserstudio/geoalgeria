@@ -14,7 +14,7 @@
 
 The **58 AWEM** (wilaya employment agencies) and **273 ALEM** (local employment
 agencies) of Algeria's national employment agency, **ANEM** — each with address,
-phone, fax, email, manager, the communes it serves, and GPS coordinates. Shipped
+phone, fax, email, manager, and GPS coordinates. Shipped
 as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -31,14 +31,13 @@ const all = emploi.agencies();      // all 331 (AWEM first)
 // Agencies in a wilaya (joins GeoAlgeria's wilaya_code)
 const inAlger = all.filter((a) => a.wilaya_code === "16");
 
-// Which local agency serves a commune? `communes` lists the communes served.
-const serving = alem.filter((a) => (a.communes || "").includes("REGGANE"));
+// Find a local agency by name
+const reggane = alem.filter((a) => a.name.includes("REGGANE"));
 ```
 
 ## What you can build
 
 - **Agency locators** — coordinates on (almost) every record, ready for distance sorting or a map.
-- **"Which office covers my commune?"** — ALEM records list the communes they serve.
 - **Contact directories** — phone, fax, email, and manager per agency.
 - **Maps** — drop-in GeoJSON point layers for the whole employment network.
 
@@ -47,7 +46,7 @@ const serving = alem.filter((a) => (a.communes || "").includes("REGGANE"));
 | Dataset | Count | Notes |
 | --- | --- | --- |
 | AWEM (wilaya agencies) | **58** | one per wilaya |
-| ALEM (local agencies) | **273** | each lists the communes it serves |
+| ALEM (local agencies) | **273** | sub-wilaya offices, named by locality |
 
 ## Formats
 
@@ -73,7 +72,7 @@ const local: Alem[] = emploi.alem();
 data/
   awem.json               # 58 wilaya agencies (array)
   alem.json               # 273 local agencies (array)
-  metadata.json           # source, counts, generated_at
+  metadata.json           # sources, counts, updated
   csv/awem.csv            # repo + Release bundle (not in npm tarball)
   csv/alem.csv
   geojson/awem.geojson    # Point features (records with coordinates)
@@ -90,28 +89,34 @@ data/
 ```json
 {
   "id": "01-02",
-  "code": "0102",
-  "type": "ALEM",
   "name": "ALEM REGGANE",
+  "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
+  "lat": 26.71627,
+  "lng": 0.17441,
+  "geo_precision": "exact",
+  "geo_method": "anem",
+  "source": "anem",
+  "type": "ALEM",
+  "code": "0102",
   "address": "Hai Saada - Reggane",
   "phone": "(049) 320 - 373",
   "fax": "(049) 320 - 372",
   "email": "alem.reggane@anem.dz",
-  "manager": "BELHADJ ABBELKADER",
-  "communes": "REGGANE,SALI",
-  "wilaya_code": "01",
-  "lat": 26.71627,
-  "lng": 0.17441
+  "manager": "BELHADJ ABBELKADER"
 }
 ```
 
-`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria — ANEM's own
-`code` is kept too but is missing on a few records and not unique, so prefer `id`.
-`communes` is a comma-separated list of the communes the agency serves.
-`wilaya_code` joins to GeoAlgeria's `wilaya_code`.
+`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria, unique
+across the merged `agencies()` set (AWEM ids never contain a dash, ALEM ids
+always do) — ANEM's own `code` is kept too but is missing on some records and
+not unique, so prefer `id`. `commune_code`/`commune` are currently `null` on
+every record — ANEM's source resolves to wilaya only, not commune. `wilaya_code`
+joins to GeoAlgeria's `wilaya_code`.
 
 **AWEM (wilaya agency)** — same shape, `id` = the 2-digit `wilaya_code`, keyed by
-`name` / `address` / `phone` / `manager` with `lat`/`lng`; no `communes`.
+`name` / `address` / `phone` / `manager` with `lat`/`lng`.
 
 ## Need the administrative divisions too?
 

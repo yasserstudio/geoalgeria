@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria pharmacies (officines)",
+  "alternateName": "Pharmacies d'Algérie",
+  "identifier": "@geoalgeria/pharmacies",
+  "description": "3790 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "21.328501 -8.139568 37.065122 9.574456"
+    }
+  },
+  "variableMeasured": "3790 records, 67 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "pharmacies (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/pharmacies/data/pharmacies.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "pharmacies (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/pharmacies/data/csv/pharmacies.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "pharmacies (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/pharmacies/data/geojson/pharmacies.geojson"
+    }
+  ],
+  "dateModified": "2026-07-05",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria — ODbL 1.0 (© OpenStreetMap contributors)"
+  ]
+}

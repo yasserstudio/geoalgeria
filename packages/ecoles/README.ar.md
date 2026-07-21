@@ -112,7 +112,7 @@ const all: Ecole[] = ecoles.ecoles();
 ```
 data/
   ecoles.json              # 11٬830 مدرسة (مصفوفة)
-  metadata.json            # المصدر، الأعداد، التغطية، generated_at
+  metadata.json            # المصادر، الأعداد، التغطية، updated
   csv/ecoles.csv           # المستودع + حزمة الإصدار (ليست في حزمة npm)
   geojson/ecoles.geojson   # معالم نقطية
 ```
@@ -121,39 +121,41 @@ data/
 
 ```json
 {
-  "id": "16-00042",
+  "id": "16-00275",
+  "name": "Lycée Semrouni 1",
+  "name_fr": "Lycée Semrouni 1",
+  "name_ar": null,
+  "wilaya_code": "16",
+  "commune_code": "1651",
+  "commune": "Ouled Fayet",
+  "lat": 36.729359,
+  "lng": 2.939451,
+  "geo_precision": "approximate",
+  "geo_method": "osm_centroid",
   "source": "osm",
-  "osm_id": "way/292876445",
-  "name": "Lycée El Idrissi",
-  "name_ar": "ثانوية الإدريسي",
-  "name_fr": "Lycée El Idrissi",
+  "refs": {
+    "osm": "way/1041517830"
+  },
   "cycle": "secondaire",
   "cycle_label_fr": "Lycée",
   "cycle_label_ar": "ثانوية",
   "kind": "regular",
   "kind_label_fr": "École ordinaire",
   "kind_label_ar": "مدرسة عادية",
-  "isced_levels": "3",
+  "isced_levels": null,
   "sector": null,
-  "wilaya": "Alger",
-  "wilaya_ar": "الجزائر",
-  "wilaya_code": "16",
-  "commune": "Casbah",
-  "commune_code": 1607,
-  "address": null,
-  "lat": 36.779365,
-  "lng": 3.05949,
-  "geo_precision": "osm_centroid"
+  "address": null
 }
 ```
 
-`id` مفتاحٌ ثابت `{wilaya_code}-{seq}` يُوَلِّده GeoAlgeria؛ و`osm_id` يعود إلى
-الكائن المصدر. `name` يكون `null` للنقاط غير المُسمّاة. `cycle` هو الطور و`kind`
-نوع المؤسسة (انظر أعلاه)، ولكلٍّ منهما تسميتان ثنائيتا اللغة. `isced_levels`
-و`address` يأتيان مباشرةً من OSM (`null` عند غياب الوسوم). `sector` يكون
-`"public"`/`"private"` فقط عند وجود إشارةٍ صريحة، وإلّا `null`. `geo_precision`
-يكون `osm_node` (نقطة مسحية) أو `osm_centroid` (مركز مُخطَّط مبنى). ويُربَط
-`wilaya_code` بِـ`wilaya_code` من GeoAlgeria.
+`id` مفتاحٌ ثابت `{wilaya_code}-{seq}` يُوَلِّده GeoAlgeria، وهو فريد ضمن هذه
+المجموعة؛ ويُحفَظ عنصر OSM المطابق في `refs.osm`. `name` يكون `null` للنقاط غير
+المُسمّاة. `cycle` هو الطور و`kind` نوع المؤسسة (انظر أعلاه)، ولكلٍّ منهما
+تسميتان ثنائيتا اللغة. `isced_levels` و`address` يأتيان مباشرةً من OSM (`null`
+عند غياب الوسوم). `sector` يكون `"public"`/`"private"` فقط عند وجود إشارةٍ
+صريحة، وإلّا `null`. `geo_precision` يكون `"exact"` لنقطة مسحية أو `"approximate"`
+لمركز مُخطَّط مبنى — ويُحدِّد `geo_method` أيّهما (`osm_node`/`osm_centroid`).
+ويُربَط `wilaya_code` بِـ`wilaya_code` من GeoAlgeria.
 
 > **ربط البلدية/الولاية مُستنتَج، لا يأتي من المصدر.** لا يحمل OpenStreetMap الرموز
 > الإدارية الجزائرية. يُلحِق GeoAlgeria `wilaya_code` و`commune_code` و`commune`

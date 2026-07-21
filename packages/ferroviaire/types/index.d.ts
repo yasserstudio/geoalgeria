@@ -1,15 +1,48 @@
-// Type definitions for @geoalgeria/ferroviaire
-// A Wikidata (CC0) + OpenStreetMap (ODbL) composite of Algeria's rail & urban transit.
+// Type definitions for @geoalgeria/ferroviaire (schema v2).
+// Algeria's rail & urban-transit Stations — trains, trams, the Algiers metro,
+// and aerial tramways/gondolas — compiled from Wikidata (CC0) and
+// OpenStreetMap (ODbL).
 
-/** Transit node kind. */
+/** Station kind. Station is the mode-neutral term (see CONTEXT.md) for a
+ *  train station, tram/metro stop, or aerial-tramway/gondola station. */
 export type StationType = "rail" | "tram" | "metro" | "aerial_tram" | "gondola";
 
-/** Where a record came from. */
-export type StationSource = "wikidata" | "wikidata+osm" | "osm";
+/** Operating company. */
+export type Operator = "SNTF" | "SETRAM" | "SEMA";
 
-/** A rail or urban-transit node (station / stop). */
+/** Transit network a Station belongs to (tram/metro city network). */
+export type Network =
+  | "Alger"
+  | "Constantine"
+  | "Mostaganem"
+  | "Métro d'Alger"
+  | "Oran"
+  | "Ouargla"
+  | "Sidi Bel Abbès"
+  | "Sétif";
+
+/** Where a Station's match came from. */
+export type StationSource = "osm" | "wikidata" | "wikidata+osm";
+
+/** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
+ *  `null` when the record has no coordinate at all. */
+export type GeoPrecision = "exact" | "approximate" | null;
+
+/** How the coordinate was obtained — every Station in this dataset carries a
+ *  real Wikidata or OSM point. */
+export type GeoMethod = "osm_node" | "osm_way" | "wikidata";
+
+/** External identifiers keyed by source system. At least one is present. */
+export interface Refs {
+  /** Wikidata QID, present when the Station matched a Wikidata entity. */
+  wikidata?: string;
+  /** OSM element id (e.g. "node/4273180789"), present when the Station matched an OSM element. */
+  osm?: string;
+}
+
+/** A rail or urban-transit Station (train, tram, metro, aerial tramway/gondola). */
 export interface Station {
-  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-001"). */
+  /** Stable id, `{wilaya_code}-{seq}` (e.g. "02-001"). Unique within this dataset. */
   id: string;
   /** Best available display name (French preferred, else Arabic), or null. */
   name: string | null;
@@ -17,56 +50,82 @@ export interface Station {
   name_fr: string | null;
   /** Arabic name, or null. */
   name_ar: string | null;
-  /** Node kind. */
-  type: StationType;
-  /** Line membership where known (Wikidata P81 / OSM), or null. */
-  line: string | null;
-  /** Operating company: "SNTF" (rail), "SETRAM" (tram), "SEMA" (metro), or null. */
-  operator: string | null;
-  /** Network name (tram city network / "Métro d'Alger"), or null. */
-  network: string | null;
-  /** Wilaya code, zero-padded to 2 digits ("01"–"69"). Joins `geoalgeria` wilayas. */
+  /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune name (French), nearest-centroid join. */
+  /** Commune (ONS) code as a 4-digit string, best-effort. Null when unresolved. */
+  commune_code: string | null;
+  /** Commune name (French), nearest-centroid join. Null when unresolved. */
   commune: string | null;
-  /** Commune code (geoalgeria code_commune), or null. */
-  commune_code: number | null;
   /** Latitude (WGS84). */
   lat: number;
   /** Longitude (WGS84). */
   lng: number;
-  /** Geocoding precision (always "exact" for this dataset). */
-  geo_precision: "exact";
-  /** Provenance. */
+  /** `"exact"`, or `"approximate"` where the Wikidata/OSM coordinate is rounded
+   *  too coarse, or is shared with another station, to be a per-station point. */
+  geo_precision: "exact" | "approximate";
+  /** How `lat`/`lng` were obtained. */
+  geo_method: GeoMethod;
+  /** Provenance key into `metadata.sources[]`. */
   source: StationSource;
-  /** Wikidata QID, or null. */
-  wikidata: string | null;
-  /** OSM element id (e.g. "node/123"), or null. */
-  osm_id: string | null;
+  /** External identifiers (Wikidata QID and/or OSM element id). */
+  refs: Refs;
+  /** Station kind. */
+  type: StationType;
+  /** Line name where known (Wikidata P81 / OSM), or null. */
+  line: string | null;
+  /** Operating company, or null when unknown. */
+  operator: Operator | null;
+  /** Transit network (tram/metro city network), or null when not applicable. */
+  network: Network | null;
 }
 
-/** Dataset metadata (data/metadata.json). */
-export interface Metadata {
-  source: string;
-  origin: string;
+/** One provenance entry in `metadata.sources[]`. */
+export interface SourceRef {
+  key: string;
+  name: string;
+  url?: string;
   license: string;
-  stations: number;
-  by_type: Record<string, number>;
-  by_source: Record<string, number>;
-  by_operator: Record<string, number>;
-  wilayas_covered: number;
-  coverage_note: string;
-  linkage_note: string;
-  generated_at: string;
+  retrieved?: string;
+  evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** All transit nodes. */
+/** Dataset metadata (data/metadata.json) — canonical fields plus rail/transit stats. */
+export interface Metadata {
+  package: "@geoalgeria/ferroviaire";
+  schema_version: string;
+  title_fr: string;
+  title_ar: string;
+  title_en: string;
+  record_count: number;
+  /** Records with coordinates — all of them. */
+  geocoded_count: number;
+  geocoded_pct: number;
+  /** Count by `geo_precision`. */
+  precision: { exact: number; approximate: number };
+  estimated_universe: number | null;
+  coverage_pct: number | null;
+  coverage_note: string;
+  wilayas_covered: number;
+  /** `[minLng, minLat, maxLng, maxLat]`, or null when nothing is geocoded. */
+  bbox: [number, number, number, number] | null;
+  sources: SourceRef[];
+  license: string;
+  /** ISO date (YYYY-MM-DD) the dataset was regenerated. */
+  updated: string;
+  /** Count by type; kinds with no records are absent. */
+  by_type: Partial<Record<StationType, number>>;
+  /** Count by operator; operators with no records are absent. */
+  by_operator: Partial<Record<Operator, number>>;
+  linkage_note: string;
+}
+
+/** All rail & urban-transit Stations. */
 export function stations(): Station[];
-/** One node by id, or null. */
+/** One Station by id, or null. */
 export function stationById(id: string): Station | null;
-/** Nodes of a given type ("rail" | "tram" | "metro" | …). */
+/** Stations of a given kind ("rail" | "tram" | "metro" | …). */
 export function stationsByType(type: StationType | string): Station[];
-/** Nodes in a wilaya — accepts "16", 16, or "01". */
+/** Stations in a wilaya — accepts "16", 16, or "01". */
 export function stationsByWilaya(code: string | number): Station[];
 /** Dataset metadata. */
 export function metadata(): Metadata;

@@ -70,7 +70,7 @@ const airports: Airport[] = aviation.airports();
 ```
 data/
   airports.json            # 33 مطارا (مصفوفة)
-  metadata.json            # المصدر، الأعداد، generated_at
+  metadata.json            # المصادر، الأعداد، الترخيص، updated
   csv/airports.csv         # المستودع + حزمة الإصدار (غير مضمّن في tarball npm)
   geojson/airports.geojson # معالم نقطية (جميع الـ 33 محددة الإحداثيات)
 ```
@@ -80,22 +80,31 @@ data/
 ```json
 {
   "id": "daag",
-  "name": "Aéroport d'Alger – Houari Boumediene",
+  "name": "Aéroport d’Alger – Houari Boumediene",
+  "wilaya_code": "16",
+  "commune_code": null,
+  "commune": null,
+  "lat": 36.69951171485545,
+  "lng": 3.210846808533331,
+  "geo_precision": "exact",
+  "geo_method": "source_point",
+  "source": "anac",
+  "refs": { "icao": "DAAG" },
   "icao": "DAAG",
   "iata": null,
   "address": "Alger BP 164 DAR EL BEIDA",
   "phone": "+21323199230",
-  "website": "https://www.aeroportalger.dz/",
-  "wilaya_code": "16",
-  "lat": 36.69951171485545,
-  "lng": 3.210846808533331,
-  "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+  "website": "https://www.aeroportalger.dz/"
 }
 ```
 
-`id` هو رمز OACI بأحرف صغيرة. `icao` يطابق دائما النمط `DA__`. `iata` قيمته `null` — تنشر
+`id` هو رمز OACI بأحرف صغيرة. `icao` يطابق دائما النمط `DA[A-Z]{2}`. `iata` قيمته `null` — تنشر
 ANAC رموز OACI فقط (الحقل محجوز للإثراء لاحقا). `wilaya_code` مكمّل بصفر إلى رقمين ويرتبط
-بولايات GeoAlgeria؛ بعض السجلات قد تحتوي على `phone` بقيمة `null` حيث لا تذكر ANAC رقما.
+بولايات GeoAlgeria؛ هذه المجموعة تغطي مستوى الولاية فقط، لذا `commune_code` و`commune` قيمتهما
+دائما `null`. كل نقطة تأتي مباشرة من الخريطة المنشورة من ANAC، لذا `geo_precision` قيمتها دائما
+`"exact"` و`geo_method` قيمتها دائما `"source_point"` — لا شيء هنا قيمة احتياطية أو تخفيض دقة.
+`source` هو مفتاح قصير يُحلّ في `metadata.sources[]` (دائما `"anac"`)، و`refs.icao` يكرر `icao`
+في المستوى الأعلى. سجل واحد فقط (`dabs`، تبسة) لديه `phone` بقيمة `null` حيث لا تذكر ANAC رقما.
 
 ## هل تحتاج التقسيمات الإدارية أيضا؟
 

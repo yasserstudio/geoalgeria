@@ -103,14 +103,14 @@ Récupérez `data/ecommerce/communes.json` — plat, dénormalisé, sans jointur
 
 ```json
 {
-  "id": 586,
-  "commune_name_fr": "Aïn El Ibel",
+  "id": 541,
+  "commune_name_fr": "Ain El Ibel",
   "commune_name_ar": "عين الإبل",
   "daira_name_fr": "Aïn El Ibel",
   "wilaya_code": 17,
   "wilaya_name_fr": "Djelfa",
   "wilaya_name_ar": "الجلفة",
-  "postal_code": "17001"
+  "postal_code": "17011"
 }
 ```
 
@@ -171,7 +171,7 @@ Voir [`data/README.md`](data/README.md) pour la documentation complète des cham
 Voir [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). Nous accueillons :
 
 - Corrections de données (avec sources officielles)
-- Coordonnées manquantes de communes (20 restantes)
+- Valeurs `code_commune` manquantes (10 restantes)
 - Données de zones de livraison provenant de vrais comptes transporteurs (Yalidine, ZR Express, Maystro)
 - Nouveaux formats d'export (XML, YAML, tableaux PHP, etc.)
 - Corrections de traductions et de translittération

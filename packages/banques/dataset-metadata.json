@@ -1,0 +1,75 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria banks & financial institutions",
+  "alternateName": "Banques et institutions financières d'Algérie",
+  "identifier": "@geoalgeria/banques",
+  "description": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
+  "conditionsOfAccess": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.563276 -8.149472 37.008375 9.577856"
+    }
+  },
+  "variableMeasured": "1733 records, 67 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "banks (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/banks.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "banks (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/csv/banks.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/institutions.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/csv/institutions.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "branches (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/branches.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "branches (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/csv/branches.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "branches (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/geojson/branches.geojson"
+    }
+  ],
+  "dateModified": "2026-06-16",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026) — Factual public regulatory listing (Banque d'Algérie)",
+    "Each licensed bank's own branch locator (site/API/KML) — Data © respective banks; redistributed for reference"
+  ]
+}

@@ -1,18 +1,51 @@
 {
-  "source": "Wikidata (CC0) + OpenStreetMap (ODbL) composite — mosques in Algeria",
-  "origin": "https://www.wikidata.org, https://www.openstreetmap.org",
-  "license": "Wikidata data is CC0. OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README for attribution.",
-  "mosquees": 20759,
+  "package": "@geoalgeria/mosquees",
+  "schema_version": "2.0.0",
+  "title_fr": "Mosquées d'Algérie",
+  "title_ar": "مساجد الجزائر",
+  "title_en": "Algeria mosques",
+  "record_count": 20759,
+  "geocoded_count": 20759,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 16227,
+    "approximate": 4532
+  },
+  "estimated_universe": 18449,
+  "coverage_pct": 112.5,
+  "coverage_note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
+  "wilayas_covered": 69,
+  "bbox": [
+    -8.148174,
+    19.563226,
+    10.931214,
+    37.074766
+  ],
+  "sources": [
+    {
+      "key": "wikidata",
+      "name": "Wikidata — mosques in Algeria",
+      "url": "https://www.wikidata.org",
+      "license": "CC0-1.0",
+      "retrieved": "2026-06-25",
+      "evidence_type": "crowdsourced"
+    },
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — mosques in Algeria",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-06-25",
+      "evidence_type": "crowdsourced"
+    }
+  ],
+  "license": "CC0-1.0 AND ODbL-1.0",
+  "updated": "2026-06-25",
   "named": 19783,
   "by_source": {
+    "osm": 1662,
     "wikidata": 13200,
-    "wikidata+osm": 5897,
-    "osm": 1662
+    "wikidata+osm": 5897
   },
-  "wilayas_covered": 69,
-  "mosquees_geocoded": 20759,
-  "official_total": 18449,
-  "coverage_note": "20759 mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry.",
-  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-  "generated_at": "2026-06-25"
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

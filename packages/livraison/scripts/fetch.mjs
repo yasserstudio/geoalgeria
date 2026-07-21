@@ -31,6 +31,7 @@
 import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -368,18 +369,6 @@ function toCSV(rows, cols) {
   };
   return [cols.join(","), ...rows.map((r) => cols.map((c) => esc(r[c])).join(","))].join("\n") + "\n";
 }
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map(({ lat, lng, ...props }) => ({
-        type: "Feature",
-        geometry: { type: "Point", coordinates: [lng, lat] },
-        properties: props,
-      })),
-  };
-}
 const writeJSON = (p, obj) => writeFileSync(join(DATA, p), JSON.stringify(obj, null, 2) + "\n");
 const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
 
@@ -507,34 +496,33 @@ async function main() {
     .sort((a, b) => b.stopdesk_count - a.stopdesk_count || a.name.localeCompare(b.name));
 
   const wilayasCovered = new Set(stopdesks.map((s) => s.wilaya_code)).size;
-  const metadata = {
-    source: "Yalidine + Guepex federated stop-desk relay plus the Anderson, Noest and Maystro agency networks; carrier registry compiled by GeoAlgeria",
-    origin_stopdesks: [YAL_URL, GUEPEX_URL, ANDERSON_URL, NOEST_URL, MAYSTRO_URL],
-    carriers_source: "CourierDZ (github.com/PiteurStudio/CourierDZ) + carrier websites + GeoAlgeria recon",
-    license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
-    carriers: carriers.length,
-    stopdesks: stopdesks.length,
-    coverage: coverage.length,
-    stopdesks_geocoded: stopdesks.length,
-    wilayas_covered: wilayasCovered,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
 
+  // carriers.json + coverage.json are auxiliary registry files (not GeoRecords),
+  // written as-is. stopdesks.json is the canonical GeoRecord layer: emit it, its
+  // CSV/GeoJSON and the derived metadata.json via the shared v2 writer. Write the
+  // auxiliary files FIRST — the shared metadata's stats read carriers.json/
+  // coverage.json off disk. Live-only source, so stamp the run's date.
   mkdirSync(join(DATA, "csv"), { recursive: true });
-  mkdirSync(join(DATA, "geojson"), { recursive: true });
   writeJSON("carriers.json", carriers);
-  writeJSON("stopdesks.json", stopdesks);
   writeJSON("coverage.json", coverage);
-  writeJSON("metadata.json", metadata);
   writeText("csv/carriers.csv", toCSV(carriers, ["id", "name", "website", "type", "cod", "scope", "open_agency_data", "api", "in_stopdesks", "stopdesk_count", "stopdesk_wilaya_count", "notes"]));
-  writeText("csv/stopdesks.csv", toCSV(stopdesks, ["id", "operator", "name", "address", "commune", "wilaya_code", "lat", "lng", "sources"]));
   writeText("csv/coverage.csv", toCSV(coverage, ["operator", "carrier_name", "stopdesks", "wilaya_count", "wilayas", "commune_count"]));
-  writeJSON("geojson/stopdesks.geojson", toGeoJSON(stopdesks));
+
+  const cfg = MIGRATIONS.livraison;
+  const today = new Date().toISOString().slice(0, 10);
+  writePackageV2({
+    pkg: "livraison",
+    dir: DATA,
+    files: [{ file: "stopdesks.json", rows: stopdesks.map(cfg.map) }],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
+  });
 
   console.log(
-    `\nWrote ${carriers.length} carriers, ${stopdesks.length} stop-desks ` +
+    `\nWrote ${carriers.length} carriers, ${stopdesks.length} stop-desks → v2 ` +
       `(${carriers.filter((c) => c.in_stopdesks).length} carriers with open desks, ${wilayasCovered} wilayas), ` +
-      `${coverage.length} coverage rows to ${DATA}.`
+      `${coverage.length} coverage rows to ${DATA}.`,
   );
 }
 

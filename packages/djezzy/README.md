@@ -73,7 +73,7 @@ const boutiques: Boutique[] = djezzy.boutiques();
 ```
 data/
   boutiques.json              # 128 boutiques (array)
-  metadata.json               # source, counts, generated_at
+  metadata.json               # sources, counts, license, updated
   csv/boutiques.csv           # repo + Release bundle (not in npm tarball)
   geojson/boutiques.geojson   # Point features
 ```
@@ -82,25 +82,32 @@ data/
 
 ```json
 {
-  "id": "16-001",
-  "code": "Z56",
-  "type": "boutique",
+  "id": "01-001",
   "name": "ADRAR",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "Adrar",
+  "lat": 27.87194,
+  "lng": -0.28569,
+  "geo_precision": "exact",
+  "geo_method": "operator_point",
+  "source": "djezzy",
+  "refs": {
+    "djezzy": "Z56"
+  },
+  "type": "boutique",
   "category": "C",
   "address": "Groupe 74, Prés souk Dinar Tayeb, Adrar.",
   "hours": "08H00 - 18H00",
-  "code_ouverture": null,
-  "wilaya_code": "01",
-  "commune_code": 101,
-  "commune": "Adrar",
-  "lat": 27.87194,
-  "lng": -0.28569
+  "code_ouverture": null
 }
 ```
 
 `id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria (seq ordered
-by the source code). Djezzy's own store code is kept as `code`. `wilaya_code`
-joins to GeoAlgeria's `wilaya_code`.
+by the source code), unique within this dataset. Djezzy's own store code is kept
+as `refs.djezzy`. `wilaya_code` joins to GeoAlgeria's `wilaya_code`. `geo_precision`
+is always `"exact"` and `geo_method` always `"operator_point"` — every boutique
+carries a real Djezzy-published coordinate.
 
 > **Commune/wilaya linkage is derived, not from the source.** Djezzy publishes a
 > coordinate pair and an address string but no administrative codes. GeoAlgeria

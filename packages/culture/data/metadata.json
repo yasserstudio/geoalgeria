@@ -1,33 +1,55 @@
 {
-  "source": "Cartes du Patrimoine Culturel Algérien (cartes.patrimoineculturelalgerien.org) — the Ministry of Culture's cultural atlas",
-  "origin": "https://cartes.patrimoineculturelalgerien.org",
-  "license": "Factual public cultural listing from the Ministry of Culture (names, types, coordinates as published by the portal). Commune linkage derived from the GeoAlgeria commune set. See README for attribution.",
-  "culture": 1083,
+  "package": "@geoalgeria/culture",
+  "schema_version": "2.0.0",
+  "title_fr": "Patrimoine culturel d'Algérie",
+  "title_ar": "التراث الثقافي الجزائري",
+  "title_en": "Algeria cultural heritage",
+  "record_count": 1083,
+  "geocoded_count": 1083,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 1067,
+    "approximate": 16
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
+  "wilayas_covered": 66,
+  "bbox": [
+    -8.433817,
+    19.909475,
+    9.575973,
+    37.005723
+  ],
+  "sources": [
+    {
+      "key": "patrimoine",
+      "name": "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)",
+      "url": "https://cartes.patrimoineculturelalgerien.org",
+      "license": "Factual public cultural listing (Ministry of Culture)",
+      "retrieved": "2026-06-28",
+      "evidence_type": "official"
+    }
+  ],
+  "license": "Factual public listing (Ministry of Culture); commune linkage from the GeoAlgeria set",
+  "updated": "2026-06-28",
   "by_type": {
     "protected-cultural-property": 580,
-    "museum": 48,
-    "museum-moudjahid": 13,
-    "theatre": 45,
+    "cultural-center": 15,
     "library": 257,
     "cultural-house": 51,
     "cultural-palace": 6,
-    "cultural-center": 15,
-    "cultural-directorate": 33,
+    "theatre": 45,
     "cinema": 20,
-    "arts-school": 15
+    "arts-school": 15,
+    "museum": 48,
+    "cultural-directorate": 33,
+    "museum-moudjahid": 13
   },
   "by_category": {
     "heritage": 943,
     "establishment": 140
   },
-  "by_geo_precision": {
-    "source_point": 1083
-  },
-  "wilayas_covered": 66,
-  "geocoded": 1083,
-  "bilingual": 1083,
   "virtual_tours": 22,
-  "linkage_note": "Names, type, coordinates and virtual-tour flag are from the Patrimoine Culturel portal (the portal's FR and AR catalogs are disjoint node sets, unioned by coordinate proximity and translated to fill bilingual gaps). Wilaya is exact (from the portal); commune is the nearest GeoAlgeria commune centroid (the repo ships centroids, not boundary polygons), so commune is best-effort.",
-  "coverage_note": "1083 cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage sites, museums, theatres, libraries, and cultural establishments (maisons & palais de culture, cinemas, culture directorates, arts schools). Every place carries a source coordinate; wilaya is exact, commune is best-effort. 22 offer a 360° virtual tour.",
-  "generated_at": "2026-06-29"
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

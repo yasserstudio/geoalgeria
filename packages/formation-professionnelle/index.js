@@ -7,7 +7,7 @@ const load = (p) => JSON.parse(readFileSync(join(DATA, p), "utf-8"));
 
 export const establishments = () => load("establishments.json");
 export const establishmentById = (id) =>
-  establishments().find((r) => r.id === Number(id)) ?? null;
+  establishments().find((r) => r.id === String(id) || Number(r.id) === Number(id)) ?? null;
 export const establishmentsByWilaya = (code) => {
   const w = String(code).padStart(2, "0");
   return establishments().filter((r) => r.wilaya_code === w);

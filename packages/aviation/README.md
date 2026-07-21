@@ -70,7 +70,7 @@ const airports: Airport[] = aviation.airports();
 ```
 data/
   airports.json            # 33 airports (array)
-  metadata.json            # source, counts, generated_at
+  metadata.json            # sources, counts, license, updated
   csv/airports.csv         # repo + Release bundle (not in npm tarball)
   geojson/airports.geojson # Point features (all 33 are geocoded)
 ```
@@ -81,22 +81,31 @@ data/
 {
   "id": "daag",
   "name": "Aéroport d’Alger – Houari Boumediene",
+  "wilaya_code": "16",
+  "commune_code": null,
+  "commune": null,
+  "lat": 36.69951171485545,
+  "lng": 3.210846808533331,
+  "geo_precision": "exact",
+  "geo_method": "source_point",
+  "source": "anac",
+  "refs": { "icao": "DAAG" },
   "icao": "DAAG",
   "iata": null,
   "address": "Alger BP 164 DAR EL BEIDA",
   "phone": "+21323199230",
-  "website": "https://www.aeroportalger.dz/",
-  "wilaya_code": "16",
-  "lat": 36.69951171485545,
-  "lng": 3.210846808533331,
-  "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+  "website": "https://www.aeroportalger.dz/"
 }
 ```
 
-`id` is the ICAO code lowercased. `icao` always matches `DA__`. `iata` is `null` — ANAC
+`id` is the ICAO code lowercased. `icao` always matches `DA[A-Z]{2}`. `iata` is `null` — ANAC
 publishes only ICAO codes (the slot is reserved for later enrichment). `wilaya_code` is
-zero-padded to two digits and joins GeoAlgeria's wilayas; a few records may have a `null`
-`phone` where ANAC lists none.
+zero-padded to two digits and joins GeoAlgeria's wilayas; this dataset is wilaya-level only, so
+`commune_code` and `commune` are always `null`. Every point comes straight from ANAC's own
+published map, so `geo_precision` is always `"exact"` and `geo_method` is always
+`"source_point"` — nothing here is a fallback or a downgrade. `source` is a short key resolved
+in `metadata.sources[]` (always `"anac"`), and `refs.icao` duplicates the top-level `icao`. One
+record (`dabs`, Tébessa) has a `null` `phone` where ANAC lists none.
 
 ## Need the administrative divisions too?
 

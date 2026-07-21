@@ -45,7 +45,9 @@ metadata().wilayas_covered; // 25
 | `dm` | 48 | Dispositifs Médicaux — fabricants de dispositifs |
 | `mixte` | 3 | Les deux (PP + DM) |
 
-**Précision des coordonnées** (`geo_precision`) : `commune_centroid` (126) · `wilaya_centroid` (45).
+**Méthode de géocodage** (`geo_method`) : `commune_centroid` (126) · `wilaya_centroid` (45).
+Les 171 enregistrements portent tous `geo_precision: "approximate"` (le registre n'a pas de
+coordonnées réelles ; chaque point est un centroïde, jamais exact).
 
 ## Formats
 
@@ -56,7 +58,8 @@ metadata().wilayas_covered; // 25
 
 ## Sur la précision
 
-> Les noms d'opérateurs et la nature PP/DM sont **officiels** (registre MIP). Le registre ne comporte **aucune coordonnée** : chaque enregistrement est placé au centroïde de sa commune résolue, ou — lorsque seule la wilaya est connue — au centroïde de la wilaya (voir `geo_precision`). Ce sont des emplacements approximatifs de la *wilaya/commune*, non des points d'usine relevés.
+> Les noms d'opérateurs et la nature PP/DM sont **officiels** (registre MIP). Le registre ne comporte **aucune coordonnée** : chaque enregistrement est placé au centroïde de sa commune résolue, ou — lorsque seule la wilaya est connue — au centroïde de la wilaya (voir `geo_method` ; `geo_precision` vaut `"approximate"` pour
+chaque enregistrement). Ce sont des emplacements approximatifs de la *wilaya/commune*, non des points d'usine relevés.
 >
 > **Couverture :** 171 des ~186 établissements de fabrication agréés sont géocodés ici. Les autres sont des sous-traitants (sans site propre) ou de très petits fabricants de dispositifs sans adresse localisable — omis plutôt que placés arbitrairement. Les importateurs, grossistes, établissements d'exploitation et de promotion sont des registres MIP distincts, non inclus.
 

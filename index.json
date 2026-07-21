@@ -1,0 +1,528 @@
+{
+  "schema_version": "2.0.0",
+  "note": "Every figure is copied from the package's own metadata.json — nothing is computed here. `coverage` appears only where the package states an estimated universe, and always carries the note saying which universe it divides by. Entries with schema_version null predate the v2 data contract (see each package's README).",
+  "datasets": [
+    {
+      "package": "@geoalgeria/agriculture",
+      "schema_version": "2.0.0",
+      "title": "Algeria agricultural institutions",
+      "record_count": 196,
+      "geocoded_count": 196,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 0,
+        "approximate": 196
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.12724,
+        19.569671,
+        9.484194,
+        36.9
+      ],
+      "license": "Factual public institutional listing (MADR)",
+      "updated": "2026-06-30"
+    },
+    {
+      "package": "@geoalgeria/aviation",
+      "schema_version": "2.0.0",
+      "title": "Algeria airports",
+      "record_count": 33,
+      "geocoded_count": 33,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 33,
+        "approximate": 0
+      },
+      "wilayas_covered": 31,
+      "bbox": [
+        -8.165434,
+        19.563939,
+        9.63789,
+        36.824416
+      ],
+      "license": "Factual public listing (ANAC)",
+      "updated": "2026-06-14"
+    },
+    {
+      "package": "@geoalgeria/banques",
+      "schema_version": "2.0.0",
+      "title": "Algeria banks & financial institutions",
+      "record_count": 1733,
+      "geocoded_count": 1213,
+      "geocoded_pct": 70,
+      "precision": {
+        "exact": 1145,
+        "approximate": 68
+      },
+      "wilayas_covered": 67,
+      "bbox": [
+        -8.149472,
+        19.563276,
+        9.577856,
+        37.008375
+      ],
+      "license": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+      "updated": "2026-06-16"
+    },
+    {
+      "package": "@geoalgeria/buses",
+      "schema_version": "2.0.0",
+      "title": "ETUSA urban bus lines (Algiers)",
+      "record_count": 50,
+      "geocoded_count": 0,
+      "geocoded_pct": 0,
+      "precision": {
+        "exact": 0,
+        "approximate": 0
+      },
+      "coverage": {
+        "pct": 41,
+        "of": 122,
+        "note": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly."
+      },
+      "wilayas_covered": 1,
+      "bbox": null,
+      "license": "CC-BY-SA-4.0",
+      "updated": "2026-07-01"
+    },
+    {
+      "package": "@geoalgeria/culture",
+      "schema_version": "2.0.0",
+      "title": "Algeria cultural heritage",
+      "record_count": 1083,
+      "geocoded_count": 1083,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 1067,
+        "approximate": 16
+      },
+      "wilayas_covered": 66,
+      "bbox": [
+        -8.433817,
+        19.909475,
+        9.575973,
+        37.005723
+      ],
+      "license": "Factual public listing (Ministry of Culture); commune linkage from the GeoAlgeria set",
+      "updated": "2026-06-28"
+    },
+    {
+      "package": "@geoalgeria/djezzy",
+      "schema_version": "2.0.0",
+      "title": "Djezzy stores (Algeria)",
+      "record_count": 128,
+      "geocoded_count": 128,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 128,
+        "approximate": 0
+      },
+      "wilayas_covered": 63,
+      "bbox": [
+        -8.14332,
+        19.569717,
+        9.486068,
+        36.90625
+      ],
+      "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
+      "updated": "2026-06-25"
+    },
+    {
+      "package": "@geoalgeria/ecoles",
+      "schema_version": "2.0.0",
+      "title": "Algeria schools",
+      "record_count": 11830,
+      "geocoded_count": 11830,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 2841,
+        "approximate": 8989
+      },
+      "coverage": {
+        "pct": 42.3,
+        "of": 28000,
+        "note": "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya."
+      },
+      "wilayas_covered": 69,
+      "bbox": [
+        -8.133861,
+        19.952582,
+        9.592214,
+        37.085298
+      ],
+      "license": "ODbL-1.0",
+      "updated": "2026-07-03"
+    },
+    {
+      "package": "@geoalgeria/emploi",
+      "schema_version": "2.0.0",
+      "title": "Algeria employment agencies",
+      "record_count": 331,
+      "geocoded_count": 329,
+      "geocoded_pct": 99.4,
+      "precision": {
+        "exact": 310,
+        "approximate": 19
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.13476,
+        19.56506,
+        9.57562,
+        37.00118
+      ],
+      "license": "Factual public listing (ANEM)",
+      "updated": "2026-06-10"
+    },
+    {
+      "package": "@geoalgeria/enseignement-superieur",
+      "schema_version": "2.0.0",
+      "title": "Algeria higher-education institutions",
+      "record_count": 177,
+      "geocoded_count": 177,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 61,
+        "approximate": 116
+      },
+      "wilayas_covered": 51,
+      "bbox": [
+        -8.12861,
+        22.805776,
+        8.482,
+        36.912274
+      ],
+      "license": "Factual public listing (MESRS)",
+      "updated": "2026-06-23"
+    },
+    {
+      "package": "@geoalgeria/ferroviaire",
+      "schema_version": "2.0.0",
+      "title": "Algeria railway & transit stations",
+      "record_count": 692,
+      "geocoded_count": 692,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 683,
+        "approximate": 9
+      },
+      "wilayas_covered": 50,
+      "bbox": [
+        -8.1016,
+        26.8176,
+        8.36519,
+        36.914478
+      ],
+      "license": "CC0-1.0 AND ODbL-1.0",
+      "updated": "2026-07-01"
+    },
+    {
+      "package": "@geoalgeria/formation-professionnelle",
+      "schema_version": "2.0.0",
+      "title": "Algeria vocational-training establishments",
+      "record_count": 1932,
+      "geocoded_count": 1375,
+      "geocoded_pct": 71.2,
+      "precision": {
+        "exact": 1363,
+        "approximate": 12
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.136773,
+        19.570418,
+        9.57605,
+        37.067223
+      ],
+      "license": "Factual public listing (MFEP)",
+      "updated": "2026-06-22"
+    },
+    {
+      "package": "@geoalgeria/gares-routieres",
+      "schema_version": "2.0.0",
+      "title": "Algeria intercity bus stations",
+      "record_count": 74,
+      "geocoded_count": 74,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 71,
+        "approximate": 3
+      },
+      "wilayas_covered": 51,
+      "bbox": [
+        -2.199312,
+        22.817813,
+        9.562312,
+        36.890589
+      ],
+      "license": "Data © SOGRAL; redistributed for reference",
+      "updated": "2026-07-01"
+    },
+    {
+      "package": "@geoalgeria/industrie-pharmaceutique",
+      "schema_version": "2.0.0",
+      "title": "Algeria pharmaceutical manufacturers",
+      "record_count": 171,
+      "geocoded_count": 171,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 0,
+        "approximate": 171
+      },
+      "wilayas_covered": 25,
+      "bbox": [
+        -1.316667,
+        33.8,
+        8.317,
+        36.9
+      ],
+      "license": "Factual public register (MIP)",
+      "updated": "2026-07-05"
+    },
+    {
+      "package": "@geoalgeria/jeunesse",
+      "schema_version": "2.0.0",
+      "title": "Algeria youth institutions",
+      "record_count": 2334,
+      "geocoded_count": 2334,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 2244,
+        "approximate": 90
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.1489,
+        19.5666,
+        9.5881,
+        37.0688
+      ],
+      "license": "Factual public listing (Ministry of Youth and Sports)",
+      "updated": "2026-06-23"
+    },
+    {
+      "package": "@geoalgeria/livraison",
+      "schema_version": "2.0.0",
+      "title": "Algeria delivery stop-desks",
+      "record_count": 411,
+      "geocoded_count": 411,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 411,
+        "approximate": 0
+      },
+      "wilayas_covered": 61,
+      "bbox": [
+        -8.143583,
+        22.784955,
+        9.585192,
+        37.009471
+      ],
+      "license": "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
+      "updated": "2026-06-18"
+    },
+    {
+      "package": "@geoalgeria/mobilis",
+      "schema_version": "2.0.0",
+      "title": "Mobilis stores (Algeria)",
+      "record_count": 12345,
+      "geocoded_count": 165,
+      "geocoded_pct": 1.3,
+      "precision": {
+        "exact": 165,
+        "approximate": 0
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.14066,
+        21.318254,
+        9.578224,
+        37.005541
+      ],
+      "license": "Data © ATM Mobilis; redistributed for reference",
+      "updated": "2026-06-11"
+    },
+    {
+      "package": "@geoalgeria/mosquees",
+      "schema_version": "2.0.0",
+      "title": "Algeria mosques",
+      "record_count": 20759,
+      "geocoded_count": 20759,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 16227,
+        "approximate": 4532
+      },
+      "ratio": {
+        "pct": 112.5,
+        "of": 18449,
+        "note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it."
+      },
+      "wilayas_covered": 69,
+      "bbox": [
+        -8.148174,
+        19.563226,
+        10.931214,
+        37.074766
+      ],
+      "license": "CC0-1.0 AND ODbL-1.0",
+      "updated": "2026-06-25"
+    },
+    {
+      "package": "@geoalgeria/ooredoo",
+      "schema_version": "2.0.0",
+      "title": "Ooredoo stores (Algeria)",
+      "record_count": 572,
+      "geocoded_count": 572,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 553,
+        "approximate": 19
+      },
+      "wilayas_covered": 63,
+      "bbox": [
+        -8.14028,
+        22.7856,
+        9.48333,
+        37.0069
+      ],
+      "license": "Data © Ooredoo Algérie; redistributed for reference",
+      "updated": "2026-07-05"
+    },
+    {
+      "package": "@geoalgeria/pharmacies",
+      "schema_version": "2.0.0",
+      "title": "Algeria pharmacies (officines)",
+      "record_count": 3790,
+      "geocoded_count": 3790,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 3504,
+        "approximate": 286
+      },
+      "coverage": {
+        "pct": 34.5,
+        "of": 11000,
+        "note": "3790 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north."
+      },
+      "wilayas_covered": 67,
+      "bbox": [
+        -8.139568,
+        21.328501,
+        9.574456,
+        37.065122
+      ],
+      "license": "ODbL-1.0",
+      "updated": "2026-07-05"
+    },
+    {
+      "package": "@geoalgeria/poste",
+      "schema_version": "2.0.0",
+      "title": "Algeria post offices & ATMs",
+      "record_count": 5934,
+      "geocoded_count": 5913,
+      "geocoded_pct": 99.6,
+      "precision": {
+        "exact": 5913,
+        "approximate": 0
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.165285,
+        19.562719,
+        10.195022,
+        37.067213
+      ],
+      "license": "Data © Algérie Poste; redistributed for reference",
+      "updated": "2026-06-08"
+    },
+    {
+      "package": "@geoalgeria/sante",
+      "schema_version": "2.0.0",
+      "title": "Algeria public health establishments",
+      "record_count": 695,
+      "geocoded_count": 600,
+      "geocoded_pct": 86.3,
+      "precision": {
+        "exact": 124,
+        "approximate": 476
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.140085,
+        19.573539,
+        9.635,
+        37.0072
+      ],
+      "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
+      "updated": "2026-06-27"
+    },
+    {
+      "package": "@geoalgeria/sports",
+      "schema_version": "2.0.0",
+      "title": "Algeria sports facilities",
+      "record_count": 5141,
+      "geocoded_count": 5141,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 5008,
+        "approximate": 133
+      },
+      "wilayas_covered": 58,
+      "bbox": [
+        -8.4324,
+        19.5567,
+        10.1953,
+        37.035878
+      ],
+      "license": "Factual public listing (Ministry of Youth and Sports)",
+      "updated": "2026-06-23"
+    },
+    {
+      "package": "@geoalgeria/telecom",
+      "schema_version": null,
+      "title": "Algeria 5G coverage points",
+      "record_count": 2798,
+      "geocoded_count": 2798,
+      "geocoded_pct": 100,
+      "wilayas_covered": 58,
+      "bbox": null,
+      "license": "Data © respective operators; redistributed for reference. See README.",
+      "updated": "2026-06-13"
+    },
+    {
+      "package": "@geoalgeria/tourisme",
+      "schema_version": "2.0.0",
+      "title": "Algeria tourism",
+      "record_count": 4348,
+      "geocoded_count": 4348,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 4315,
+        "approximate": 33
+      },
+      "wilayas_covered": 69,
+      "bbox": [
+        -8.153594,
+        19.577869,
+        11.242709,
+        37.087511
+      ],
+      "license": "Attractions, historic sites, lodging and parks from OpenStreetMap (ODbL 1.0, © OpenStreetMap contributors) and Wikidata (CC0); thermal springs are a factual public listing (ASAL). Per-source terms in citation.",
+      "updated": "2026-06-21"
+    },
+    {
+      "package": "geoalgeria",
+      "schema_version": null,
+      "title": "Algeria administrative divisions (wilayas, dairas, communes)",
+      "record_count": 1528,
+      "geocoded_count": 1528,
+      "geocoded_pct": 100,
+      "wilayas_covered": 69,
+      "bbox": null,
+      "license": "https://opensource.org/licenses/MIT",
+      "updated": "2026-07-20"
+    }
+  ]
+}

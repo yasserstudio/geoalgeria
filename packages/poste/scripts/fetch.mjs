@@ -10,22 +10,17 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// Canonical output (this package) + a mirror inside the geoalgeria dataset so
-// postal data also ships under geoalgeria/data/poste (alongside ecommerce,
-// delivery, …). Both are written from this single fetch, so they never drift.
-// The mirror is skipped when the dataset package isn't present (e.g. this
-// package installed standalone), so we never create a stray sibling tree.
-const DESTS = [
-  join(__dirname, "..", "data"),
-  ...(existsSync(join(__dirname, "..", "..", "dataset"))
-    ? [join(__dirname, "..", "..", "dataset", "data", "poste")]
-    : []),
-];
+// Canonical output for this package, plus the byte-identical mirror inside the
+// geoalgeria dataset (dataset/data/poste). validateMirror only *detects* drift —
+// it never re-syncs — so this run must write both trees itself to keep the
+// guarantee the README makes ("the mirror never drifts").
+const OUT_DIR = join(__dirname, "..", "data");
+const MIRROR_DIR = join(__dirname, "..", "..", "dataset", "data", "poste");
 const API = "https://baridimap-api.poste.dz/api";
 const HEADERS = {
   "User-Agent": "Mozilla/5.0 (geoalgeria-poste dataset builder)",
@@ -91,48 +86,6 @@ function normAtm(a) {
   };
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    // Neutralize spreadsheet formula injection on TEXT fields from the external
-    // API. Numbers (e.g. negative longitudes) must pass through untouched.
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-
-const writeJSON = (dir, p, obj) => writeFileSync(join(dir, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (dir, p, txt) => writeFileSync(join(dir, p), txt);
-
-function emit(dir, { offices, atms, officeCols, atmCols, officeGeo, atmGeo, metadata }) {
-  mkdirSync(join(dir, "csv"), { recursive: true });
-  mkdirSync(join(dir, "geojson"), { recursive: true });
-  writeJSON(dir, "postoffices.json", offices);
-  writeJSON(dir, "atms.json", atms);
-  writeText(dir, "csv/postoffices.csv", toCSV(offices, officeCols));
-  writeText(dir, "csv/atms.csv", toCSV(atms, atmCols));
-  writeJSON(dir, "geojson/postoffices.geojson", officeGeo);
-  writeJSON(dir, "geojson/atms.geojson", atmGeo);
-  writeJSON(dir, "metadata.json", metadata);
-}
-
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Fetching post offices…");
@@ -143,26 +96,26 @@ async function main() {
   const atms = (await getJSON("/atms")).map(normAtm);
   console.log(`  ${atms.length} ATMs`);
 
-  const officeCols = ["id","name","name_ar","class","postal_code","postal_code_old","address","commune_code","commune_fr","commune_ar","wilaya_code","wilaya_fr","wilaya_ar","lat","lng"];
-  const atmCols = ["id","name","status","postal_code","postal_code_old","address","commune_fr","commune_ar","wilaya_code","wilaya_fr","wilaya_ar","lat","lng"];
-
-  const officeGeo = toGeoJSON(offices);
-  const atmGeo = toGeoJSON(atms);
-  console.log(`  GeoJSON: ${officeGeo.features.length}/${offices.length} offices and ${atmGeo.features.length}/${atms.length} ATMs have coordinates`);
-
-  const metadata = {
-    source: "Algérie Poste — baridimap.poste.dz",
-    api: API,
-    license: "Data © Algérie Poste; redistributed for reference. See README.",
-    postoffices: offices.length,
-    atms: atms.length,
-    distinct_postal_codes: new Set(offices.map((o) => o.postal_code)).size,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  const payload = { offices, atms, officeCols, atmCols, officeGeo, atmGeo, metadata };
-  for (const dir of DESTS) emit(dir, payload);
-  console.log(`Wrote JSON, CSV, and GeoJSON to ${DESTS.length} destination(s).`);
+  // Emit v2 via the shared writer (live-only source, so stamp the run's date) to
+  // BOTH the package tree and the dataset mirror, so the two stay byte-identical.
+  // Fresh rows per destination — writePackageV2 sorts/demotes in place.
+  const cfg = MIGRATIONS.poste;
+  const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
+  const today = new Date().toISOString().slice(0, 10);
+  for (const dir of [OUT_DIR, MIRROR_DIR]) {
+    writePackageV2({
+      pkg: "poste",
+      dir,
+      files: [
+        { file: "postoffices.json", rows: offices.map(mapOf("postoffices.json")) },
+        { file: "atms.json", rows: atms.map(mapOf("atms.json")) },
+      ],
+      meta: cfg.meta,
+      updated: today,
+      retrieved: today,
+    });
+  }
+  console.log(`Wrote ${offices.length} post offices + ${atms.length} ATMs → v2 (package + dataset mirror).`);
 }
 
 main().catch((e) => {

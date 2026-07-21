@@ -1,6 +1,15 @@
 [
   {
     "id": "etusa-1",
+    "name": "Ligne 1 — El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "1",
@@ -23,11 +32,279 @@
       "Les Fusillés",
       "Aïssat Idir"
     ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-10",
+    "name": "Ligne 10 — Place du Mai ↔ Bouzaréah",
     "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "10",
+    "terminus1": "Place du Mai",
+    "terminus2": "Bouzaréah",
+    "stops": 17,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Alger-Centre",
+      "El Biar",
+      "Bouzaréah"
+    ],
+    "stations_served": [
+      "Mai"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-12",
+    "name": "Ligne 12 — Place des Martyrs ↔ Staoueli",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "12",
+    "terminus1": "Place des Martyrs",
+    "terminus2": "Staoueli",
+    "stops": 33,
+    "communes_served": [
+      "Casbah (Place des Martyrs)",
+      "Bab El Oued",
+      "Bologhine",
+      "Raïs Hamidou",
+      "El Hammamet",
+      "Aïn Benian",
+      "Chéraga",
+      "Staoueli"
+    ],
+    "stations_served": [
+      "Place des Martyrs"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-14",
+    "name": "Ligne 14 — Place du Mai ↔ Bir Mourad Raïs",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "14",
+    "terminus1": "Place du Mai",
+    "terminus2": "Bir Mourad Raïs",
+    "stops": 13,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Belouizdad (Jardin d'Essai)",
+      "El Madania",
+      "Bir Mourad Raïs"
+    ],
+    "stations_served": [
+      "Mai",
+      "Place Aïssat Idir (à proximité)",
+      "Hamma",
+      "Jardin d'Essai",
+      "Les Fusillés"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-15",
+    "name": "Ligne 15 — Place du Mai ↔ Grande Poste",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "15",
+    "terminus1": "Place du Mai",
+    "terminus2": "Grande Poste",
+    "stops": 13,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Alger-Centre (Grande Poste d'Alger)"
+    ],
+    "stations_served": [
+      "Tafourah - Grande Poste",
+      "Mai"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-16",
+    "name": "Ligne 16 — Place du Mai ↔ El Madania",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "16",
+    "terminus1": "Place du Mai",
+    "terminus2": "El Madania",
+    "stops": 11,
+    "communes_served": [
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr)",
+      "El Madania (Diar el Mahçoul)"
+    ],
+    "stations_served": [
+      "Mai"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-18",
+    "name": "Ligne 18 — Bachdjarah ↔ Kouba - Hôpital militaire d'Aïn Naâdja",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "18",
+    "terminus1": "Bachdjarah",
+    "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
+    "stops": 11,
+    "communes_served": [
+      "Bachdjerrah",
+      "Bourouba",
+      "El Magharia",
+      "Kouba (hôpital militaire d'Aïn Naâdja)"
+    ],
+    "stations_served": [
+      "Bachdjarah",
+      "Bachdjarah - Tennis",
+      "Haï El Badr"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-19",
+    "name": "Ligne 19 — Place Aïssat Idir ↔ Bab Ezzouar - Les Hôtels",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "19",
+    "terminus1": "Place Aïssat Idir",
+    "terminus2": "Bab Ezzouar - Les Hôtels",
+    "stops": 16,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Belouizdad",
+      "Hussein Dey (Gare routière du Caroubier)",
+      "Mohammadia",
+      "Bab Ezzouar (USTHB)"
+    ],
+    "stations_served": [
+      "Aïssat Idir"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-21",
+    "name": "Ligne 21 — Bouzaréah ↔ Beni Messous - Sidi Youcef",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "21",
+    "terminus1": "Bouzaréah",
+    "terminus2": "Beni Messous - Sidi Youcef",
+    "stops": 10,
+    "communes_served": [
+      "Bouzaréah",
+      "Beni Messous (Sidi Youcef)"
+    ],
+    "stations_served": [],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-27",
+    "name": "Ligne 27 — Place du Mai ↔ Kouba - Hôpital militaire d'Aïn Naâdja",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "27",
+    "terminus1": "Place du Mai",
+    "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
+    "stops": 13,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Belouizdad (Jardin d'Essai)",
+      "Kouba (hôpital militaire d'Aïn Naâdja)"
+    ],
+    "stations_served": [
+      "Mai",
+      "Place Aïssat Idir (à proximité)",
+      "Hamma",
+      "Jardin d'Essai",
+      "Les Fusillés"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-3",
+    "name": "Ligne 3 — Bouzaréah - Chevalley ↔ Souidania, via Bouchaoui",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "3",
@@ -42,11 +319,243 @@
       "Souidania"
     ],
     "stations_served": [],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-31",
+    "name": "Ligne 31 — Place Maurice Audin ↔ Hydra - Place Al Smaa",
     "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "31",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "Hydra - Place Al Smaa",
+    "stops": 13,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr)",
+      "Hydra (Place Al Smaa)"
+    ],
+    "stations_served": [
+      "Khelifa Boukhalfa (à proximité)"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-32",
+    "name": "Ligne 32 — Place Maurice Audin ↔ El Madania",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "32",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "El Madania",
+    "stops": 9,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr)",
+      "El Madania (Diar el Mahçoul)"
+    ],
+    "stations_served": [
+      "Khelifa Boukhalfa (à proximité)"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-33",
+    "name": "Ligne 33 — Place Maurice Audin ↔ Kouba - Station Kouba, via Bir Mourad Raïs",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "33",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "Kouba - Station Kouba, via Bir Mourad Raïs",
+    "stops": 13,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr)",
+      "Bir Mourad Raïs",
+      "Kouba (Station Kouba)"
+    ],
+    "stations_served": [
+      "Khelifa Boukhalfa (à proximité)"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-34",
+    "name": "Ligne 34 — Place du Mai ↔ Birkhadem",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "34",
+    "terminus1": "Place du Mai",
+    "terminus2": "Birkhadem",
+    "stops": 19,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Belouizdad (Jardin d'Essai)",
+      "El Madania",
+      "Bir Mourad Raïs",
+      "Birkhadem"
+    ],
+    "stations_served": [
+      "Mai",
+      "Place Aïssat Idir (à proximité)",
+      "Hamma",
+      "Jardin d'Essai",
+      "Les Fusillés"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-35",
+    "name": "Ligne 35 — Place Maurice Audin ↔ Birkhadem",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "35",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "Birkhadem",
+    "stops": 11,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr)",
+      "Bir Mourad Raïs",
+      "Birkhadem"
+    ],
+    "stations_served": [
+      "Khelifa Boukhalfa (à proximité)"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-36",
+    "name": "Ligne 36 — Bab El Oued - Basta Ali ↔ Sidi M'Hamed - Palais du Peuple",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "36",
+    "terminus1": "Bab El Oued - Basta Ali",
+    "terminus2": "Sidi M'Hamed - Palais du Peuple",
+    "stops": null,
+    "communes_served": [
+      "Bab El Oued (Basta Ali)",
+      "Sidi M'Hamed (Palais du Peuple)"
+    ],
+    "stations_served": [],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-37",
+    "name": "Ligne 37 — Grande Poste ↔ Oued Koriche",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "37",
+    "terminus1": "Grande Poste",
+    "terminus2": "Oued Koriche",
+    "stops": null,
+    "communes_served": [
+      "Alger-Centre (Grande Poste)",
+      "Oued Koriche"
+    ],
+    "stations_served": [
+      "Tafourah - Grande Poste"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-39",
+    "name": "Ligne 39 — Place Maurice Audin ↔ Aéroport d'Alger",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "39",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "Aéroport d'Alger",
+    "stops": 3,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés)",
+      "Bab Ezzouar",
+      "Dar El Beïda (aéroport d'Alger)"
+    ],
+    "stations_served": [
+      "Gare de l'Aéroport Houari Boumédiène"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-4",
+    "name": "Ligne 4 — Place du Mai ↔ Kouba - Ben Omar",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "4",
@@ -65,11 +574,159 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-40",
+    "name": "Ligne 40 — Place Maurice Audin ↔ Bouzaréah - Chevalley",
     "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "40",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "Bouzaréah - Chevalley",
+    "stops": 13,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr)",
+      "El Biar",
+      "Bouzaréah (Chevalley)"
+    ],
+    "stations_served": [
+      "Khelifa Boukhalfa (à proximité)"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-43",
+    "name": "Ligne 43 — Ben Aknoun ↔ Grande Poste",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "43",
+    "terminus1": "Ben Aknoun",
+    "terminus2": "Grande Poste",
+    "stops": 12,
+    "communes_served": [
+      "Ben Aknoun",
+      "El Biar",
+      "Alger-Centre (Grande Poste d'Alger)"
+    ],
+    "stations_served": [
+      "Tafourah - Grande Poste"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-44",
+    "name": "Ligne 44 — Ben Aknoun ↔ Douera - Gare routière",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "44",
+    "terminus1": "Ben Aknoun",
+    "terminus2": "Douera - Gare routière",
+    "stops": 15,
+    "communes_served": [
+      "Ben Aknoun",
+      "Dely Ibrahim",
+      "El Achour",
+      "Draria",
+      "Baba Hassen",
+      "Douera"
+    ],
+    "stations_served": [],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-45",
+    "name": "Ligne 45 — Place des Martyrs ↔ Bouzaréah",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "45",
+    "terminus1": "Place des Martyrs",
+    "terminus2": "Bouzaréah",
+    "stops": 19,
+    "communes_served": [
+      "Casbah (Place des Martyrs)",
+      "Alger-Centre",
+      "El Biar",
+      "Bouzaréah"
+    ],
+    "stations_served": [
+      "Place des Martyrs"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-48",
+    "name": "Ligne 48 — Place du Mai ↔ Ben Aknoun",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "48",
+    "terminus1": "Place du Mai",
+    "terminus2": "Ben Aknoun",
+    "stops": 14,
+    "communes_served": [
+      "Sidi M'Hamed",
+      "Alger-Centre",
+      "El Biar",
+      "Ben Aknoun"
+    ],
+    "stations_served": [
+      "Mai"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-5",
+    "name": "Ligne 5 — El Harrach ↔ Place des Martyrs",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "5",
@@ -88,11 +745,183 @@
       "Tafourah - Grande Poste",
       "El Harrach Centre"
     ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-50",
+    "name": "Ligne 50 — Ben Aknoun ↔ Place des Martyrs",
     "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "50",
+    "terminus1": "Ben Aknoun",
+    "terminus2": "Place des Martyrs",
+    "stops": 17,
+    "communes_served": [
+      "Ben Aknoun",
+      "El Biar",
+      "Bab El Oued",
+      "Casbah (Place des Martyrs)"
+    ],
+    "stations_served": [
+      "Place des Martyrs"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-51",
+    "name": "Ligne 51 — Bouzaréah - Chevalley ↔ Ouled Fayet - Plateau",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "51",
+    "terminus1": "Bouzaréah - Chevalley",
+    "terminus2": "Ouled Fayet - Plateau",
+    "stops": 20,
+    "communes_served": [
+      "Bouzaréah (Chevalley)",
+      "Dely Ibrahim",
+      "Beni Messous",
+      "Chéraga",
+      "Ouled Fayet"
+    ],
+    "stations_served": [],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-54",
+    "name": "Ligne 54 — Place Maurice Audin ↔ El Mouradia - Lycée Descartes",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "54",
+    "terminus1": "Place Maurice Audin",
+    "terminus2": "El Mouradia - Lycée Descartes",
+    "stops": 7,
+    "communes_served": [
+      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
+      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
+      "El Mouradia (Hôtel El Djazaïr, lycée Descartes)"
+    ],
+    "stations_served": [
+      "Khelifa Boukhalfa (à proximité)"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-57",
+    "name": "Ligne 57 — Grande Poste ↔ Ouled Fayet",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "57",
+    "terminus1": "Grande Poste",
+    "terminus2": "Ouled Fayet",
+    "stops": null,
+    "communes_served": [
+      "Alger-Centre (Grande Poste d'Alger)",
+      "Ben Aknoun",
+      "Dely Ibrahim",
+      "Ouled Fayet"
+    ],
+    "stations_served": [
+      "Tafourah - Grande Poste"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-58",
+    "name": "Ligne 58 — Place des Martyrs ↔ Bouzaréah - Chevalley",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "58",
+    "terminus1": "Place des Martyrs",
+    "terminus2": "Bouzaréah - Chevalley",
+    "stops": 11,
+    "communes_served": [
+      "Casbah (Place des Martyrs)",
+      "Bab El Oued",
+      "Oued Koriche",
+      "Bouzaréah",
+      "El Biar",
+      "Bouzaréah (Chevalley)"
+    ],
+    "stations_served": [
+      "Place des Martyrs"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-59",
+    "name": "Ligne 59 — Bouzaréah - Chevalley ↔ Beni Messous - Sidi Youcef",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "59",
+    "terminus1": "Bouzaréah - Chevalley",
+    "terminus2": "Beni Messous - Sidi Youcef",
+    "stops": 11,
+    "communes_served": [
+      "Bouzaréah (Chevalley)",
+      "Beni Messous (Sidi Youcef)"
+    ],
+    "stations_served": [],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-6",
+    "name": "Ligne 6 — Place des Martyrs ↔ Kouba - Station Kouba, via Place du Mai",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "6",
@@ -115,597 +944,19 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-8",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "8",
-    "terminus1": "Alger-Centre - Station 2 Mai",
-    "terminus2": "Raïs Hamidou",
-    "stops": 10,
-    "communes_served": [
-      "Alger-Centre (Station 2 Mai)",
-      "Casbah",
-      "Bab El Oued",
-      "Bologhine",
-      "Raïs Hamidou"
-    ],
-    "stations_served": [
-      "Tafourah - Grande Poste",
-      "Place des Martyrs"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-10",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "10",
-    "terminus1": "Place du Mai",
-    "terminus2": "Bouzaréah",
-    "stops": 17,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Alger-Centre",
-      "El Biar",
-      "Bouzaréah"
-    ],
-    "stations_served": [
-      "Mai"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-12",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "12",
-    "terminus1": "Place des Martyrs",
-    "terminus2": "Staoueli",
-    "stops": 33,
-    "communes_served": [
-      "Casbah (Place des Martyrs)",
-      "Bab El Oued",
-      "Bologhine",
-      "Raïs Hamidou",
-      "El Hammamet",
-      "Aïn Benian",
-      "Chéraga",
-      "Staoueli"
-    ],
-    "stations_served": [
-      "Place des Martyrs"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-14",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "14",
-    "terminus1": "Place du Mai",
-    "terminus2": "Bir Mourad Raïs",
-    "stops": 13,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Belouizdad (Jardin d'Essai)",
-      "El Madania",
-      "Bir Mourad Raïs"
-    ],
-    "stations_served": [
-      "Mai",
-      "Place Aïssat Idir (à proximité)",
-      "Hamma",
-      "Jardin d'Essai",
-      "Les Fusillés"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-15",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "15",
-    "terminus1": "Place du Mai",
-    "terminus2": "Grande Poste",
-    "stops": 13,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Alger-Centre (Grande Poste d'Alger)"
-    ],
-    "stations_served": [
-      "Tafourah - Grande Poste",
-      "Mai"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-16",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "16",
-    "terminus1": "Place du Mai",
-    "terminus2": "El Madania",
-    "stops": 11,
-    "communes_served": [
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr)",
-      "El Madania (Diar el Mahçoul)"
-    ],
-    "stations_served": [
-      "Mai"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-18",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "18",
-    "terminus1": "Bachdjarah",
-    "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
-    "stops": 11,
-    "communes_served": [
-      "Bachdjerrah",
-      "Bourouba",
-      "El Magharia",
-      "Kouba (hôpital militaire d'Aïn Naâdja)"
-    ],
-    "stations_served": [
-      "Bachdjarah",
-      "Bachdjarah - Tennis",
-      "Haï El Badr"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-19",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "19",
-    "terminus1": "Place Aïssat Idir",
-    "terminus2": "Bab Ezzouar - Les Hôtels",
-    "stops": 16,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Belouizdad",
-      "Hussein Dey (Gare routière du Caroubier)",
-      "Mohammadia",
-      "Bab Ezzouar (USTHB)"
-    ],
-    "stations_served": [
-      "Aïssat Idir"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-21",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "21",
-    "terminus1": "Bouzaréah",
-    "terminus2": "Beni Messous - Sidi Youcef",
-    "stops": 10,
-    "communes_served": [
-      "Bouzaréah",
-      "Beni Messous (Sidi Youcef)"
-    ],
-    "stations_served": [],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-27",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "27",
-    "terminus1": "Place du Mai",
-    "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
-    "stops": 13,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Belouizdad (Jardin d'Essai)",
-      "Kouba (hôpital militaire d'Aïn Naâdja)"
-    ],
-    "stations_served": [
-      "Mai",
-      "Place Aïssat Idir (à proximité)",
-      "Hamma",
-      "Jardin d'Essai",
-      "Les Fusillés"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-31",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "31",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "Hydra - Place Al Smaa",
-    "stops": 13,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr)",
-      "Hydra (Place Al Smaa)"
-    ],
-    "stations_served": [
-      "Khelifa Boukhalfa (à proximité)"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-32",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "32",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "El Madania",
-    "stops": 9,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr)",
-      "El Madania (Diar el Mahçoul)"
-    ],
-    "stations_served": [
-      "Khelifa Boukhalfa (à proximité)"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-33",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "33",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "Kouba - Station Kouba, via Bir Mourad Raïs",
-    "stops": 13,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr)",
-      "Bir Mourad Raïs",
-      "Kouba (Station Kouba)"
-    ],
-    "stations_served": [
-      "Khelifa Boukhalfa (à proximité)"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-34",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "34",
-    "terminus1": "Place du Mai",
-    "terminus2": "Birkhadem",
-    "stops": 19,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Belouizdad (Jardin d'Essai)",
-      "El Madania",
-      "Bir Mourad Raïs",
-      "Birkhadem"
-    ],
-    "stations_served": [
-      "Mai",
-      "Place Aïssat Idir (à proximité)",
-      "Hamma",
-      "Jardin d'Essai",
-      "Les Fusillés"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-35",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "35",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "Birkhadem",
-    "stops": 11,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr)",
-      "Bir Mourad Raïs",
-      "Birkhadem"
-    ],
-    "stations_served": [
-      "Khelifa Boukhalfa (à proximité)"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-36",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "36",
-    "terminus1": "Bab El Oued - Basta Ali",
-    "terminus2": "Sidi M'Hamed - Palais du Peuple",
-    "stops": null,
-    "communes_served": [
-      "Bab El Oued (Basta Ali)",
-      "Sidi M'Hamed (Palais du Peuple)"
-    ],
-    "stations_served": [],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-37",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "37",
-    "terminus1": "Grande Poste",
-    "terminus2": "Oued Koriche",
-    "stops": null,
-    "communes_served": [
-      "Alger-Centre (Grande Poste)",
-      "Oued Koriche"
-    ],
-    "stations_served": [
-      "Tafourah - Grande Poste"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-39",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "39",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "Aéroport d'Alger",
-    "stops": 3,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés)",
-      "Bab Ezzouar",
-      "Dar El Beïda (aéroport d'Alger)"
-    ],
-    "stations_served": [
-      "Gare de l'Aéroport Houari Boumédiène"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-40",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "40",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "Bouzaréah - Chevalley",
-    "stops": 13,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr)",
-      "El Biar",
-      "Bouzaréah (Chevalley)"
-    ],
-    "stations_served": [
-      "Khelifa Boukhalfa (à proximité)"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-43",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "43",
-    "terminus1": "Ben Aknoun",
-    "terminus2": "Grande Poste",
-    "stops": 12,
-    "communes_served": [
-      "Ben Aknoun",
-      "El Biar",
-      "Alger-Centre (Grande Poste d'Alger)"
-    ],
-    "stations_served": [
-      "Tafourah - Grande Poste"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-44",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "44",
-    "terminus1": "Ben Aknoun",
-    "terminus2": "Douera - Gare routière",
-    "stops": 15,
-    "communes_served": [
-      "Ben Aknoun",
-      "Dely Ibrahim",
-      "El Achour",
-      "Draria",
-      "Baba Hassen",
-      "Douera"
-    ],
-    "stations_served": [],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-45",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "45",
-    "terminus1": "Place des Martyrs",
-    "terminus2": "Bouzaréah",
-    "stops": 19,
-    "communes_served": [
-      "Casbah (Place des Martyrs)",
-      "Alger-Centre",
-      "El Biar",
-      "Bouzaréah"
-    ],
-    "stations_served": [
-      "Place des Martyrs"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-48",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "48",
-    "terminus1": "Place du Mai",
-    "terminus2": "Ben Aknoun",
-    "stops": 14,
-    "communes_served": [
-      "Sidi M'Hamed",
-      "Alger-Centre",
-      "El Biar",
-      "Ben Aknoun"
-    ],
-    "stations_served": [
-      "Mai"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-50",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "50",
-    "terminus1": "Ben Aknoun",
-    "terminus2": "Place des Martyrs",
-    "stops": 17,
-    "communes_served": [
-      "Ben Aknoun",
-      "El Biar",
-      "Bab El Oued",
-      "Casbah (Place des Martyrs)"
-    ],
-    "stations_served": [
-      "Place des Martyrs"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-51",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "51",
-    "terminus1": "Bouzaréah - Chevalley",
-    "terminus2": "Ouled Fayet - Plateau",
-    "stops": 20,
-    "communes_served": [
-      "Bouzaréah (Chevalley)",
-      "Dely Ibrahim",
-      "Beni Messous",
-      "Chéraga",
-      "Ouled Fayet"
-    ],
-    "stations_served": [],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-54",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "54",
-    "terminus1": "Place Maurice Audin",
-    "terminus2": "El Mouradia - Lycée Descartes",
-    "stops": 7,
-    "communes_served": [
-      "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
-      "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
-      "El Mouradia (Hôtel El Djazaïr, lycée Descartes)"
-    ],
-    "stations_served": [
-      "Khelifa Boukhalfa (à proximité)"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-57",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "57",
-    "terminus1": "Grande Poste",
-    "terminus2": "Ouled Fayet",
-    "stops": null,
-    "communes_served": [
-      "Alger-Centre (Grande Poste d'Alger)",
-      "Ben Aknoun",
-      "Dely Ibrahim",
-      "Ouled Fayet"
-    ],
-    "stations_served": [
-      "Tafourah - Grande Poste"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-58",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "58",
-    "terminus1": "Place des Martyrs",
-    "terminus2": "Bouzaréah - Chevalley",
-    "stops": 11,
-    "communes_served": [
-      "Casbah (Place des Martyrs)",
-      "Bab El Oued",
-      "Oued Koriche",
-      "Bouzaréah",
-      "El Biar",
-      "Bouzaréah (Chevalley)"
-    ],
-    "stations_served": [
-      "Place des Martyrs"
-    ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-  },
-  {
-    "id": "etusa-59",
-    "operator": "ETUSA",
-    "network": "Alger",
-    "line": "59",
-    "terminus1": "Bouzaréah - Chevalley",
-    "terminus2": "Beni Messous - Sidi Youcef",
-    "stops": 11,
-    "communes_served": [
-      "Bouzaréah (Chevalley)",
-      "Beni Messous (Sidi Youcef)"
-    ],
-    "stations_served": [],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-66",
+    "name": "Ligne 66 — Bachdjerrah ↔ Place Aïssat Idir",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "66",
@@ -731,11 +982,19 @@
       "Hamma",
       "Aïssat Idir"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-67",
+    "name": "Ligne 67 — Haï El Badr ↔ Baraki",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "67",
@@ -751,11 +1010,19 @@
     "stations_served": [
       "Haï El Badr"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-72",
+    "name": "Ligne 72 — Rouiba - Castor ↔ Place des Martyrs",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "72",
@@ -775,11 +1042,19 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-73",
+    "name": "Ligne 73 — Bachdjarah ↔ Kouba - Station Kouba",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "73",
@@ -797,11 +1072,19 @@
       "Bachdjarah",
       "Bachdjarah - Tennis"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-74",
+    "name": "Ligne 74 — Bachdjarah ↔ Place des Martyrs",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "74",
@@ -821,11 +1104,19 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-79",
+    "name": "Ligne 79 — Place du Mai ↔ Djasr Kasentina - Station Aïn Naâdja",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "79",
@@ -846,11 +1137,49 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-8",
+    "name": "Ligne 8 — Alger-Centre - Station 2 Mai ↔ Raïs Hamidou",
     "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "8",
+    "terminus1": "Alger-Centre - Station 2 Mai",
+    "terminus2": "Raïs Hamidou",
+    "stops": 10,
+    "communes_served": [
+      "Alger-Centre (Station 2 Mai)",
+      "Casbah",
+      "Bab El Oued",
+      "Bologhine",
+      "Raïs Hamidou"
+    ],
+    "stations_served": [
+      "Tafourah - Grande Poste",
+      "Place des Martyrs"
+    ],
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-80",
+    "name": "Ligne 80 — El Harrach ↔ Kouba - Station Kouba",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "80",
@@ -868,11 +1197,19 @@
       "Bachdjarah",
       "Bachdjarah - Tennis"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-81",
+    "name": "Ligne 81 — Haï El Badr ↔ Djasr Kasentina - Aïn Naâdja",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "81",
@@ -886,11 +1223,19 @@
     "stations_served": [
       "Haï El Badr"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-82",
+    "name": "Ligne 82 — El Harrach ↔ Kouba - Station Kouba",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "82",
@@ -906,11 +1251,19 @@
     "stations_served": [
       "El Harrach Centre"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-88",
+    "name": "Ligne 88 — Place du Mai ↔ Hydra - Place Al Smaa",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "88",
@@ -925,11 +1278,19 @@
     "stations_served": [
       "Mai"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-89",
+    "name": "Ligne 89 — Place du Mai ↔ Kouba - Vieux Kouba",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "89",
@@ -948,11 +1309,19 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-90",
+    "name": "Ligne 90 — Place du Mai ↔ Bab El Oued - Basta Ali",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "90",
@@ -970,11 +1339,19 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-92",
+    "name": "Ligne 92 — Bab El Oued - Place Ferhani ↔ Kouba - El Annasser",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "92",
@@ -998,11 +1375,19 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-94",
+    "name": "Ligne 94 — Place Aïssat Idir ↔ Mohammadia - Cité Mokhtar Zerhouni",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "94",
@@ -1019,11 +1404,19 @@
     "stations_served": [
       "Aïssat Idir"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-98",
+    "name": "Ligne 98 — Bab Ezzouar ↔ Bab El Oued - Place Ferhani",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "98",
@@ -1043,11 +1436,19 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
     "id": "etusa-99",
+    "name": "Ligne 99 — Place du Mai ↔ Aïn Benian",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "wikipedia",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "99",
@@ -1069,7 +1470,6 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
-    "wilaya_code": "16",
-    "source": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+    "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   }
 ]

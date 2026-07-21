@@ -1,10 +1,40 @@
 {
-  "source": "Djezzy — Optimum Telecom Algérie (djezzy.dz/nos-boutiques)",
-  "origin": "https://www.djezzy.dz",
-  "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference. See README.",
-  "boutiques": 128,
+  "package": "@geoalgeria/djezzy",
+  "schema_version": "2.0.0",
+  "title_fr": "Boutiques Djezzy",
+  "title_ar": "متاجر جيزي",
+  "title_en": "Djezzy stores (Algeria)",
+  "record_count": 128,
+  "geocoded_count": 128,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 128,
+    "approximate": 0
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Djezzy retail boutiques from djezzy.dz/nos-boutiques. Wilaya/commune linkage is best-effort (nearest-centroid).",
   "wilayas_covered": 63,
-  "boutiques_geocoded": 128,
-  "note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-  "generated_at": "2026-06-25"
+  "bbox": [
+    -8.14332,
+    19.569717,
+    9.486068,
+    36.90625
+  ],
+  "sources": [
+    {
+      "key": "djezzy",
+      "name": "Djezzy — Optimum Telecom Algérie (nos-boutiques)",
+      "url": "https://www.djezzy.dz",
+      "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
+      "retrieved": "2026-06-25",
+      "evidence_type": "official"
+    }
+  ],
+  "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
+  "updated": "2026-06-25",
+  "by_type": {
+    "boutique": 128
+  },
+  "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

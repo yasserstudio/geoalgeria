@@ -103,14 +103,14 @@ Grab `data/ecommerce/communes.json` — flat, denormalized, no joins:
 
 ```json
 {
-  "id": 586,
-  "commune_name_fr": "Aïn El Ibel",
+  "id": 541,
+  "commune_name_fr": "Ain El Ibel",
   "commune_name_ar": "عين الإبل",
   "daira_name_fr": "Aïn El Ibel",
   "wilaya_code": 17,
   "wilaya_name_fr": "Djelfa",
   "wilaya_name_ar": "الجلفة",
-  "postal_code": "17001"
+  "postal_code": "17011"
 }
 ```
 
@@ -171,7 +171,7 @@ See [`data/README.md`](data/README.md) for full field documentation.
 See [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). We welcome:
 
 - Data corrections (with official sources)
-- Missing commune coordinates (20 remaining)
+- Missing `code_commune` values (10 remaining)
 - Delivery zone data from real carrier accounts (Yalidine, ZR Express, Maystro)
 - New export formats (XML, YAML, PHP arrays, etc.)
 - Translations and transliteration fixes

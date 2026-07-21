@@ -66,7 +66,8 @@ metadata().wilayas_covered; // 25
 | `dm` | 48 | Dispositifs Médicaux — medical-device manufacturers |
 | `mixte` | 3 | Both (PP + DM) |
 
-**By coordinate precision** (`geo_precision`)
+**By geocoding method** (`geo_method`) — all 171 records carry `geo_precision: "approximate"`
+(the register has no real coordinates; every point is a centroid, never exact):
 
 | Value | Count | Meaning |
 | --- | --- | --- |
@@ -94,7 +95,7 @@ The operator names and PP/DM nature come from the current MIP fabrication regist
 
 ## On accuracy
 
-> Operator names and the PP/DM nature are **official** (the MIP register). The register carries **no coordinates**: each record is placed at the centroid of its resolved commune, or — when only the wilaya is known — at the wilaya centroid (see `geo_precision`). These are approximate locations for the *wilaya/commune*, not surveyed factory points.
+> Operator names and the PP/DM nature are **official** (the MIP register). The register carries **no coordinates**: each record is placed at the centroid of its resolved commune, or — when only the wilaya is known — at the wilaya centroid (see `geo_method`; `geo_precision` is `"approximate"` for every record). These are approximate locations for the *wilaya/commune*, not surveyed factory points.
 >
 > **Coverage:** 171 of the ~186 approved manufacturing establishments are geocoded here. The rest are contract manufacturers listed as *sous-traitance* (no own site) or a few very small device makers with no locatable address — omitted rather than placed speculatively. **Importers, wholesalers, exploitation and promotion** are separate MIP registers, not part of this manufacturers layer.
 

@@ -10,7 +10,7 @@ export const manufacturers = () => load("industrie-pharmaceutique.json"); // MIP
 export const manufacturerById = (id) =>
   manufacturers().find((r) => r.id === String(id)) ?? null;
 export const manufacturersByWilaya = (code) => {
-  const w = Number(code);
+  const w = String(code).padStart(2, "0"); // accepts "16", 16, or 1 / "01"
   return manufacturers().filter((r) => r.wilaya_code === w);
 };
 /** Filter by nature: "pp" (medicines), "dm" (medical devices), or "mixte" (both). */

@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria schools",
+  "alternateName": "Écoles d'Algérie",
+  "identifier": "@geoalgeria/ecoles",
+  "description": "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya.",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.952582 -8.133861 37.085298 9.592214"
+    }
+  },
+  "variableMeasured": "11830 records, 69 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "ecoles (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ecoles/data/ecoles.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "ecoles (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ecoles/data/csv/ecoles.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "ecoles (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ecoles/data/geojson/ecoles.geojson"
+    }
+  ],
+  "dateModified": "2026-07-03",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "OpenStreetMap — schools & kindergartens in Algeria — ODbL 1.0 (© OpenStreetMap contributors)"
+  ]
+}

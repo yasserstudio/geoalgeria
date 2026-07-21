@@ -14,7 +14,7 @@
 
 Les **58 AWEM** (agences de wilaya de l'emploi) et **273 ALEM** (agences locales
 de l'emploi) de l'agence nationale de l'emploi, **ANEM** — chacune avec adresse,
-téléphone, fax, email, responsable, les communes desservies et coordonnées GPS.
+téléphone, fax, email, responsable et coordonnées GPS.
 Livré en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -31,14 +31,13 @@ const all = emploi.agencies();      // les 331 (AWEM en premier)
 // Agences dans une wilaya (jointure sur wilaya_code de GeoAlgeria)
 const inAlger = all.filter((a) => a.wilaya_code === "16");
 
-// Quelle agence locale dessert une commune ? `communes` liste les communes desservies.
-const serving = alem.filter((a) => (a.communes || "").includes("REGGANE"));
+// Trouver une agence locale par son nom
+const reggane = alem.filter((a) => a.name.includes("REGGANE"));
 ```
 
 ## Ce que vous pouvez construire
 
 - **Localisateurs d'agences** — coordonnées sur (presque) chaque enregistrement, prêtes pour le tri par distance ou l'affichage sur carte.
-- **« Quelle agence couvre ma commune ? »** — les enregistrements ALEM listent les communes desservies.
 - **Annuaires de contact** — téléphone, fax, email et responsable par agence.
 - **Cartes** — couches de points GeoJSON prêtes à l'emploi pour tout le réseau de l'emploi.
 
@@ -47,7 +46,7 @@ const serving = alem.filter((a) => (a.communes || "").includes("REGGANE"));
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
 | AWEM (agences de wilaya) | **58** | une par wilaya |
-| ALEM (agences locales) | **273** | chacune liste les communes desservies |
+| ALEM (agences locales) | **273** | bureaux infra-wilaya, nommés par localité |
 
 ## Formats
 
@@ -73,7 +72,7 @@ const local: Alem[] = emploi.alem();
 data/
   awem.json               # 58 agences de wilaya (tableau)
   alem.json               # 273 agences locales (tableau)
-  metadata.json           # source, comptages, generated_at
+  metadata.json           # sources, comptages, updated
   csv/awem.csv            # dépôt + bundle Release (pas dans le tarball npm)
   csv/alem.csv
   geojson/awem.geojson    # Entités ponctuelles (enregistrements avec coordonnées)
@@ -90,29 +89,35 @@ data/
 ```json
 {
   "id": "01-02",
-  "code": "0102",
-  "type": "ALEM",
   "name": "ALEM REGGANE",
+  "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
+  "lat": 26.71627,
+  "lng": 0.17441,
+  "geo_precision": "exact",
+  "geo_method": "anem",
+  "source": "anem",
+  "type": "ALEM",
+  "code": "0102",
   "address": "Hai Saada - Reggane",
   "phone": "(049) 320 - 373",
   "fax": "(049) 320 - 372",
   "email": "alem.reggane@anem.dz",
-  "manager": "BELHADJ ABBELKADER",
-  "communes": "REGGANE,SALI",
-  "wilaya_code": "01",
-  "lat": 26.71627,
-  "lng": 0.17441
+  "manager": "BELHADJ ABBELKADER"
 }
 ```
 
-`id` est une clé stable `{wilaya_code}-{seq}` générée par GeoAlgeria — le `code`
-propre à l'ANEM est conservé mais manque sur quelques enregistrements et n'est pas
-unique, préférez donc `id`.
-`communes` est une liste séparée par des virgules des communes desservies par l'agence.
-`wilaya_code` permet la jointure avec le `wilaya_code` de GeoAlgeria.
+`id` est une clé stable `{wilaya_code}-{seq}` générée par GeoAlgeria, unique
+dans l'ensemble fusionné `agencies()` (les id AWEM ne contiennent jamais de
+tiret, ceux des ALEM en contiennent toujours) — le `code` propre à l'ANEM est
+conservé mais manque sur certains enregistrements et n'est pas unique, préférez
+donc `id`. `commune_code`/`commune` valent actuellement `null` sur tous les
+enregistrements — la source de l'ANEM ne résout qu'au niveau wilaya, pas
+commune. `wilaya_code` permet la jointure avec le `wilaya_code` de GeoAlgeria.
 
 **AWEM (agence de wilaya)** — même structure, `id` = le `wilaya_code` à 2 chiffres,
-avec `name` / `address` / `phone` / `manager` et `lat`/`lng` ; pas de `communes`.
+avec `name` / `address` / `phone` / `manager` et `lat`/`lng`.
 
 ## Besoin des divisions administratives aussi ?
 

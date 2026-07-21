@@ -95,43 +95,67 @@ data/
 
 ```json
 {
+  "id": "lodging-1",
   "name": "عريان الراس",
   "name_ar": "عريان الراس تسابيت",
-  "type": "alpine_hut",
   "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
   "lat": 28.4162728,
   "lng": -0.2620846,
-  "source": "OpenStreetMap",
-  "osm_id": 8107956617,
-  "id": 1
+  "geo_precision": "exact",
+  "geo_method": "osm",
+  "source": "osm",
+  "refs": { "osm": "8107956617" },
+  "type": "alpine_hut"
 }
 ```
 
 `type` is one of `hotel`, `hostel`, `guest_house`, `apartment`, `chalet`, `motel`, `alpine_hut`.
-Optional fields: `stars`, `rooms`, `phone`, `website`, `address`, `name_fr`.
+`name_fr` and `name_ar` are present only where OpenStreetMap carries that language.
+`source` is a short key resolved in `metadata.sources[]`, and external ids live in `refs`
+(`refs.osm` is the OSM id as a string; `refs.wikidata` a QID; `refs.wikipedia` a
+`"<lang>:<title>"` sitelink). The four OSM layers carry no commune linkage, so
+`commune_code` and `commune` are null throughout.
+
+Optional contact and classification fields are present where the source publishes them, and
+absent otherwise — never null. On lodging: `address` (209 records), `phone` (204, several
+numbers `;`-separated as OSM tags them), `website` (84), `stars` (60) and `rooms` (24). On
+attractions: `description` (26). On historic sites: `heritage_status` (17, e.g.
+`"part of UNESCO World Heritage Site"`) and `heritage` (12, the OSM protection level).
+
+Most records on these four layers come from OpenStreetMap, but 115 come from Wikidata instead
+(32 attractions, 75 historic sites, 8 parks). Those carry `source` and `geo_method` of
+`"wikidata"` and a `refs.wikidata` QID with no `refs.osm` — they are CC0, not ODbL, so filter
+on `source` if the distinction matters for your attribution. In all, 236 records carry a
+Wikidata QID and 100 a Wikipedia sitelink.
 
 **Thermal spring** — ASAL Geoportail sourced, with physical properties:
 
 ```json
 {
-  "id": 1,
+  "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
+  "wilaya_code": "43",
+  "commune_code": null,
+  "commune": "BENI H'MIDENE",
+  "lat": 36.4625,
+  "lng": 6.4827778,
+  "geo_precision": "exact",
+  "geo_method": "asal",
+  "source": "asal",
   "type": "forage",
   "temperature_c": 32,
   "debit_l_s": 15,
   "altitude_m": 423,
-  "minerality": "BICARBONATEE CALCIQUE",
-  "wilaya_code": "43",
-  "wilaya_name": "CONSTANTINE",
-  "commune_name": "BENI H'MIDENE",
-  "lat": 36.4625,
-  "lng": 6.4827778,
-  "source": "ASAL geoportail"
+  "minerality": "BICARBONATEE CALCIQUE"
 }
 ```
 
 `type` is one of `hammam`, `ain`, `source`, `forage`. Physical properties (`temperature_c`,
-`debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset.
+`debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset; `minerality`
+is the only optional one. This is the one layer that names a commune — as `commune`, a name
+rather than an ONS `commune_code`, which stays null.
 
 `wilaya_code` is zero-padded to two digits across all layers and joins GeoAlgeria's wilayas.
 

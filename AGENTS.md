@@ -15,6 +15,7 @@ term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's th
 
 | Path | Package | Contents |
 | --- | --- | --- |
+| `packages/schema/` | `@geoalgeria/schema` | shared v2 contract — types, validator, canonical metadata/manifest builders, emit helpers; a dev dependency of every generator, not itself a dataset |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |

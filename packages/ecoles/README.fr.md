@@ -119,7 +119,7 @@ inclus dans chaque
 ```
 data/
   ecoles.json              # 11 830 écoles (tableau)
-  metadata.json            # source, décomptes, couverture, generated_at
+  metadata.json            # sources, décomptes, couverture, updated
   csv/ecoles.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/ecoles.geojson   # entités Point
 ```
@@ -128,39 +128,42 @@ data/
 
 ```json
 {
-  "id": "16-00042",
+  "id": "16-00275",
+  "name": "Lycée Semrouni 1",
+  "name_fr": "Lycée Semrouni 1",
+  "name_ar": null,
+  "wilaya_code": "16",
+  "commune_code": "1651",
+  "commune": "Ouled Fayet",
+  "lat": 36.729359,
+  "lng": 2.939451,
+  "geo_precision": "approximate",
+  "geo_method": "osm_centroid",
   "source": "osm",
-  "osm_id": "way/292876445",
-  "name": "Lycée El Idrissi",
-  "name_ar": "ثانوية الإدريسي",
-  "name_fr": "Lycée El Idrissi",
+  "refs": {
+    "osm": "way/1041517830"
+  },
   "cycle": "secondaire",
   "cycle_label_fr": "Lycée",
   "cycle_label_ar": "ثانوية",
   "kind": "regular",
   "kind_label_fr": "École ordinaire",
   "kind_label_ar": "مدرسة عادية",
-  "isced_levels": "3",
+  "isced_levels": null,
   "sector": null,
-  "wilaya": "Alger",
-  "wilaya_ar": "الجزائر",
-  "wilaya_code": "16",
-  "commune": "Casbah",
-  "commune_code": 1607,
-  "address": null,
-  "lat": 36.779365,
-  "lng": 3.05949,
-  "geo_precision": "osm_centroid"
+  "address": null
 }
 ```
 
-`id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria ;
-`osm_id` renvoie à l'objet source. `name` est `null` pour les points non nommés.
-`cycle` est le niveau et `kind` le type d'établissement (voir ci-dessus), chacun
-avec des libellés bilingues. `isced_levels` et `address` proviennent directement
-d'OSM (`null` si les tags sont absents). `sector` vaut `"public"`/`"private"`
-uniquement en présence d'un signal explicite, sinon `null`. `geo_precision` vaut
-`osm_node` (point relevé) ou `osm_centroid` (centre d'un contour de bâtiment).
+`id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria, unique
+dans ce jeu de données ; l'élément OSM correspondant est conservé dans
+`refs.osm`. `name` est `null` pour les points non nommés. `cycle` est le niveau
+et `kind` le type d'établissement (voir ci-dessus), chacun avec des libellés
+bilingues. `isced_levels` et `address` proviennent directement d'OSM (`null` si
+les tags sont absents). `sector` vaut `"public"`/`"private"` uniquement en
+présence d'un signal explicite, sinon `null`. `geo_precision` vaut `"exact"`
+pour un point OSM relevé ou `"approximate"` pour un centre de contour de
+bâtiment — `geo_method` précise lequel (`osm_node`/`osm_centroid`).
 `wilaya_code` se joint au `wilaya_code` de GeoAlgeria.
 
 > **Le rattachement commune/wilaya est déduit, pas issu de la source.**

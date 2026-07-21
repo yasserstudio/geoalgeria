@@ -1,0 +1,68 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria employment agencies",
+  "alternateName": "Agences pour l'emploi d'Algérie",
+  "identifier": "@geoalgeria/emploi",
+  "description": "Employment agencies — regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
+  "conditionsOfAccess": "Factual public listing (ANEM)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.56506 -8.13476 37.00118 9.57562"
+    }
+  },
+  "variableMeasured": "331 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "awem (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/awem.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "awem (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/csv/awem.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "awem (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/geojson/awem.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "alem (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/alem.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "alem (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/csv/alem.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "alem (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/geojson/alem.geojson"
+    }
+  ],
+  "dateModified": "2026-06-10",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "ANEM — National Employment Agency (anem.dz) — Factual public listing (ANEM)"
+  ]
+}

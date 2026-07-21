@@ -96,44 +96,67 @@ data/
 
 ```json
 {
+  "id": "lodging-1",
   "name": "عريان الراس",
   "name_ar": "عريان الراس تسابيت",
-  "type": "alpine_hut",
   "wilaya_code": "01",
+  "commune_code": null,
+  "commune": null,
   "lat": 28.4162728,
   "lng": -0.2620846,
-  "source": "OpenStreetMap",
-  "osm_id": 8107956617,
-  "id": 1
+  "geo_precision": "exact",
+  "geo_method": "osm",
+  "source": "osm",
+  "refs": { "osm": "8107956617" },
+  "type": "alpine_hut"
 }
 ```
 
 `type` يأخذ إحدى القيم: `hotel`، `hostel`، `guest_house`، `apartment`، `chalet`، `motel`،
-`alpine_hut`. حقول اختيارية: `stars`، `rooms`، `phone`، `website`، `address`، `name_fr`.
+`alpine_hut`. الحقلان `name_fr` و`name_ar` موجودان فقط حيث يحمل OpenStreetMap تلك اللغة.
+و`source` مفتاح قصير يُحلّ في `metadata.sources[]`، بينما تعيش المعرّفات الخارجية في `refs`
+(`refs.osm` هو معرّف OSM كسلسلة نصية، و`refs.wikidata` معرّف QID، و`refs.wikipedia` رابط
+لغوي بالشكل `"<اللغة>:<العنوان>"`). طبقات OSM الأربع لا تحمل أي ربط بالبلدية، لذا يبقى
+`commune_code` و`commune` فارغين فيها.
+
+حقول الاتصال والتصنيف الاختيارية موجودة حيث ينشرها المصدر، وغائبة فيما عدا ذلك — وليست
+فارغة أبدًا. في الإقامة: `address` (209 سجلات)، و`phone` (204، وقد تحوي عدّة أرقام مفصولة
+بـ `;` كما يبوّبها OSM)، و`website` (84)، و`stars` (60)، و`rooms` (24). في المعالم السياحية:
+`description` (26). في المواقع التاريخية: `heritage_status` (17، مثل
+`"part of UNESCO World Heritage Site"`) و`heritage` (12، مستوى الحماية في OSM).
+
+معظم سجلات هذه الطبقات الأربع مصدرها OpenStreetMap، لكن 115 سجلًا مصدرها Wikidata
+(32 معلمًا سياحيًا، و75 موقعًا تاريخيًا، و8 حدائق). هذه السجلات تحمل `source` و`geo_method`
+بقيمة `"wikidata"` ومعرّف QID في `refs.wikidata` دون `refs.osm`، وهي مرخّصة بـ CC0 لا بـ ODbL،
+لذا رشّح حسب `source` إن كان التمييز مهمًّا لإسنادك. إجمالًا، 236 سجلًا تحمل معرّف QID من
+Wikidata و100 سجلّ تحمل رابط Wikipedia.
 
 **ينبوع حراري** — مصدره ASAL Geoportail، مع الخصائص الفيزيائية:
 
 ```json
 {
-  "id": 1,
+  "id": "thermal-spring-1",
   "name": "FORAGE DAR OUAD",
+  "wilaya_code": "43",
+  "commune_code": null,
+  "commune": "BENI H'MIDENE",
+  "lat": 36.4625,
+  "lng": 6.4827778,
+  "geo_precision": "exact",
+  "geo_method": "asal",
+  "source": "asal",
   "type": "forage",
   "temperature_c": 32,
   "debit_l_s": 15,
   "altitude_m": 423,
-  "minerality": "BICARBONATEE CALCIQUE",
-  "wilaya_code": "43",
-  "wilaya_name": "CONSTANTINE",
-  "commune_name": "BENI H'MIDENE",
-  "lat": 36.4625,
-  "lng": 6.4827778,
-  "source": "ASAL geoportail"
+  "minerality": "BICARBONATEE CALCIQUE"
 }
 ```
 
 `type` يأخذ إحدى القيم: `hammam`، `ain`، `source`، `forage`. الخصائص الفيزيائية
 (`temperature_c`، `debit_l_s`، `altitude_m`، `minerality`) مأخوذة مباشرة من مجموعة
-بيانات ASAL.
+بيانات ASAL، و`minerality` هي الوحيدة الاختيارية منها. هذه هي الطبقة الوحيدة التي تسمّي
+بلدية — عبر `commune`، أي اسم لا رمز `commune_code` من الديوان الوطني للإحصائيات، الذي يبقى فارغًا.
 
 `wilaya_code` مكمّل بصفر إلى رقمين في جميع الطبقات ويرتبط بولايات GeoAlgeria.
 

@@ -12,8 +12,8 @@
 
 </div>
 
-**1,681 5G coverage points** across Algeria, published by the operators' own
-coverage maps — **Djezzy (1,001)**, **Mobilis (504)**, and **Ooredoo (176)** —
+**2,798 5G coverage points** across Algeria, published by the operators' own
+coverage maps — **Djezzy (1,001)**, **Mobilis (1,621)**, and **Ooredoo (176)** —
 each with coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
 and TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -24,9 +24,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // all 1,681 points
+const sites = telecom.coverage();                       // all 2,798 points
 const djezzy = telecom.coverageByOperator("djezzy");    // 1,001
-const mobilis = telecom.coverageByOperator("mobilis");  // 504
+const mobilis = telecom.coverageByOperator("mobilis");  // 1,621
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // 5G coverage in a wilaya (joins GeoAlgeria's wilaya_code)
@@ -51,10 +51,10 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Operator | Points | Granularity | Source map |
 | --- | --- | --- | --- |
 | Djezzy | **1,001** | cell site | djezzy5g.dz |
-| Mobilis | **504** | cell site | mobilis.dz/map/5g |
+| Mobilis | **1,621** | cell site | mobilis.dz/map/5g |
 | Ooredoo | **176** | covered commune | ooredoo.dz |
 
-Covering **56 wilayas** (including new wilayas like Timimoun, In Salah,
+Covering **58 wilayas** (including new wilayas like Timimoun, In Salah,
 Touggourt).
 
 > **What a point is:** each record is a point published on the operator's own 5G

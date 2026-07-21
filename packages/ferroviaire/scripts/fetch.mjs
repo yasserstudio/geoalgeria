@@ -4,10 +4,11 @@
 // Operators stamped by mode/wilaya: SNTF (rail), SETRAM (tram), SEMA (metro).
 // Bus stations are out of scope (see @geoalgeria/gares-routieres).
 // Raws staged in research/ferroviaire/. Run: node scripts/fetch.mjs
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { toCSV, toGeoJSON, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { MIGRATIONS, writePackageV2, committedDates } from "../../../scripts/lib/v2-transforms.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..", "..");
@@ -17,6 +18,12 @@ const RESEARCH = join(ROOT, "research/ferroviaire");
 const DEG = Math.PI / 180, M_PER_DEG = 111320, MATCH_M = 150, DEDUP_M = 40;
 const TRAM_NETWORK = { "16": "Alger", "31": "Oran", "25": "Constantine", "19": "Sétif", "30": "Ouargla", "55": "Ouargla", "22": "Sidi Bel Abbès", "27": "Mostaganem" };
 const OPERATOR = { rail: "SNTF", tram: "SETRAM", metro: "SEMA" };
+// Wilaya corrections keyed by stable Wikidata id, applied post-id (see below).
+// Q138457269 = Gare de Hassi Khebi: point-in-polygon places it in Tindouf (37);
+// Wikidata P131 says Béchar, but the point sits outside Béchar's polygon (nearest-
+// commune snaps it to Tabelbala, the only centroid for ~200 km, and Béchar no
+// longer borders Tindouf). commune is left unresolved (no honest centroid out there).
+const WILAYA_FIX = { Q138457269: "37" };
 
 const wdType = (label) => {
   const l = (label || "").toLowerCase();
@@ -161,34 +168,30 @@ for (const r of records) {
   r.id = `${r.wilaya_code}-${String(seq[r.wilaya_code]).padStart(3, "0")}`;
 }
 
-// ---- Emit ----
-const order = ["id", "name", "name_fr", "name_ar", "type", "line", "operator", "network", "wilaya_code", "commune", "commune_code", "lat", "lng", "geo_precision", "source", "wikidata", "osm_id"];
-const final = records.map((r) => { const o = {}; for (const k of order) o[k] = r[k] ?? null; o.geo_precision = "exact"; return o; });
+// ---- Wilaya correction (applied after id assignment so the public id is stable) ----
+// WILAYA_FIX (declared above) pins desert stations the nearest-commune join snaps to
+// the wrong wilaya. Run post-id so a corrected record keeps its id (e.g. "08-016").
+const wilayaFixMatched = new Set();
+for (const r of records) {
+  const w = WILAYA_FIX[r.wikidata];
+  if (w) { r.wilaya_code = w; r.commune = null; r.commune_code = null; wilayaFixMatched.add(r.wikidata); }
+}
+// Every WILAYA_FIX key must have hit a record; an unmatched key means the Wikidata
+// id was renamed/retired upstream and the pin silently reverted.
+const unmatchedFix = Object.keys(WILAYA_FIX).filter((k) => !wilayaFixMatched.has(k));
+if (unmatchedFix.length) throw new Error(`ferroviaire: WILAYA_FIX key(s) [${unmatchedFix.join(", ")}] matched no record — the Wikidata id was renamed or retired upstream; update WILAYA_FIX in scripts/fetch.mjs.`);
 
-const count = (fn) => final.reduce((a, r) => (a[fn(r)] = (a[fn(r)] || 0) + 1, a), {});
-const metadata = {
-  source: "Wikidata (CC0) + OpenStreetMap (ODbL) composite — rail & urban transit in Algeria; operators SNTF / SETRAM / SEMA",
-  origin: "https://query.wikidata.org, https://www.openstreetmap.org",
-  license: "Wikidata data is CC0. OpenStreetMap data is © OpenStreetMap contributors, ODbL 1.0. See README.",
-  stations: final.length,
-  by_type: count((r) => r.type),
-  by_source: count((r) => r.source),
-  by_operator: count((r) => r.operator || "unknown"),
-  wilayas_covered: new Set(final.map((r) => r.wilaya_code)).size,
-  coverage_note: "Node universe from Wikidata + OSM. SETRAM operates 172 tram stations across 7 networks; SEMA's Métro d'Alger has 19 operational stations (Wikidata lists more metro nodes incl. entrances/extensions). Heavy-rail line-status (SNTF) is not yet per-node.",
-  linkage_note: "wilaya_code/commune by nearest-centroid join against the geoalgeria commune set. Join wilaya_code against `geoalgeria` for names.",
-  generated_at: new Date().toISOString().slice(0, 10),
-};
+// ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
+// Raws are staged (no live fetch), so the dates are always the committed ones.
+const cfg = MIGRATIONS.ferroviaire;
+const { updated, retrieved } = committedDates(DATA);
+const { records: final } = writePackageV2({
+  pkg: "ferroviaire",
+  dir: DATA,
+  files: [{ file: "stations.json", rows: records.map(cfg.map) }],
+  meta: cfg.meta,
+  updated,
+  retrieved,
+});
 
-mkdirSync(join(DATA, "csv"), { recursive: true });
-mkdirSync(join(DATA, "geojson"), { recursive: true });
-writeFileSync(join(DATA, "stations.json"), JSON.stringify(final, null, 2) + "\n");
-writeFileSync(join(DATA, "metadata.json"), JSON.stringify(metadata, null, 2) + "\n");
-writeFileSync(join(DATA, "csv/stations.csv"), toCSV(final, order));
-writeFileSync(join(DATA, "geojson/stations.geojson"), JSON.stringify(toGeoJSON(final), null, 2) + "\n");
-
-console.log(`ferroviaire: ${final.length} nodes · ${metadata.wilayas_covered} wilayas`);
-console.log("by_type:", JSON.stringify(metadata.by_type));
-console.log("by_source:", JSON.stringify(metadata.by_source));
-console.log("by_operator:", JSON.stringify(metadata.by_operator));
-console.log("merged OSM↔WD:", merged, "| OSM-only added:", kept.length);
+console.log(`ferroviaire: ${final.length} nodes → v2 · merged OSM↔WD ${merged} · OSM-only added ${kept.length}`);

@@ -114,7 +114,7 @@ const all: Ecole[] = ecoles.ecoles();
 ```
 data/
   ecoles.json              # 11,830 schools (array)
-  metadata.json            # source, counts, coverage, generated_at
+  metadata.json            # sources, counts, coverage, updated
   csv/ecoles.csv           # repo + Release bundle (not in npm tarball)
   geojson/ecoles.geojson   # Point features
 ```
@@ -123,40 +123,43 @@ data/
 
 ```json
 {
-  "id": "16-00042",
+  "id": "16-00275",
+  "name": "Lycée Semrouni 1",
+  "name_fr": "Lycée Semrouni 1",
+  "name_ar": null,
+  "wilaya_code": "16",
+  "commune_code": "1651",
+  "commune": "Ouled Fayet",
+  "lat": 36.729359,
+  "lng": 2.939451,
+  "geo_precision": "approximate",
+  "geo_method": "osm_centroid",
   "source": "osm",
-  "osm_id": "way/292876445",
-  "name": "Lycée El Idrissi",
-  "name_ar": "ثانوية الإدريسي",
-  "name_fr": "Lycée El Idrissi",
+  "refs": {
+    "osm": "way/1041517830"
+  },
   "cycle": "secondaire",
   "cycle_label_fr": "Lycée",
   "cycle_label_ar": "ثانوية",
   "kind": "regular",
   "kind_label_fr": "École ordinaire",
   "kind_label_ar": "مدرسة عادية",
-  "isced_levels": "3",
+  "isced_levels": null,
   "sector": null,
-  "wilaya": "Alger",
-  "wilaya_ar": "الجزائر",
-  "wilaya_code": "16",
-  "commune": "Casbah",
-  "commune_code": 1607,
-  "address": null,
-  "lat": 36.779365,
-  "lng": 3.05949,
-  "geo_precision": "osm_centroid"
+  "address": null
 }
 ```
 
-`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria; `osm_id`
-links back to the upstream object. `name` is the best available display name and
-is `null` for unnamed points. `cycle` is the education level and `kind` the
-establishment type (see above), each with bilingual labels. `isced_levels` and
-`address` come straight from OSM (`null` when the tags are absent). `sector` is
-`"public"`/`"private"` only when the map carries an explicit signal, else `null`.
-`geo_precision` is `osm_node` (a surveyed point) or `osm_centroid` (a building
-outline's centre). `wilaya_code` joins to GeoAlgeria's `wilaya_code`.
+`id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria, unique
+within this dataset; the matched OSM element is kept as `refs.osm`. `name` is the
+best available display name and is `null` for unnamed points. `cycle` is the
+education level and `kind` the establishment type (see above), each with
+bilingual labels. `isced_levels` and `address` come straight from OSM (`null`
+when the tags are absent). `sector` is `"public"`/`"private"` only when the map
+carries an explicit signal, else `null`. `geo_precision` is `"exact"` for a
+surveyed OSM node or `"approximate"` for a building/area centroid — `geo_method`
+records which (`osm_node`/`osm_centroid`). `wilaya_code` joins to GeoAlgeria's
+`wilaya_code`.
 
 > **Commune/wilaya linkage is derived, not from the source.** OpenStreetMap does
 > not carry Algerian administrative codes. GeoAlgeria attaches `wilaya_code`,

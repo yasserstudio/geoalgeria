@@ -72,7 +72,7 @@ const boutiques: Boutique[] = djezzy.boutiques();
 ```
 data/
   boutiques.json              # 128 محلًّا (مصفوفة)
-  metadata.json               # المصدر، الأعداد، generated_at
+  metadata.json               # المصادر، الأعداد، الترخيص، updated
   csv/boutiques.csv           # المستودع + الإصدار (ليس في حزمة npm)
   geojson/boutiques.geojson   # معالم نقطية
 ```
@@ -81,24 +81,31 @@ data/
 
 ```json
 {
-  "id": "16-001",
-  "code": "Z56",
-  "type": "boutique",
+  "id": "01-001",
   "name": "ADRAR",
+  "wilaya_code": "01",
+  "commune_code": "0101",
+  "commune": "Adrar",
+  "lat": 27.87194,
+  "lng": -0.28569,
+  "geo_precision": "exact",
+  "geo_method": "operator_point",
+  "source": "djezzy",
+  "refs": {
+    "djezzy": "Z56"
+  },
+  "type": "boutique",
   "category": "C",
   "address": "Groupe 74, Prés souk Dinar Tayeb, Adrar.",
   "hours": "08H00 - 18H00",
-  "code_ouverture": null,
-  "wilaya_code": "01",
-  "commune_code": 101,
-  "commune": "Adrar",
-  "lat": 27.87194,
-  "lng": -0.28569
+  "code_ouverture": null
 }
 ```
 
-`id` مفتاح ثابت `{wilaya_code}-{seq}` يولّده GeoAlgeria. يُحفظ رمز المحل الخاص
-بجيزي في `code`. يرتبط `wilaya_code` بـ `wilaya_code` في GeoAlgeria.
+`id` مفتاح ثابت `{wilaya_code}-{seq}` يولّده GeoAlgeria، وهو فريد ضمن هذه
+المجموعة. يُحفظ رمز المحل الخاص بجيزي في `refs.djezzy`. يرتبط `wilaya_code`
+بـ `wilaya_code` في GeoAlgeria. قيمة `geo_precision` دائمًا `"exact"` وقيمة
+`geo_method` دائمًا `"operator_point"` — فكل محل يحمل إحداثية حقيقية نشرها المشغّل.
 
 > **الربط بالبلدية/الولاية مُستنتَج وليس من المصدر.** ينشر جيزي إحداثيات وعنوانًا
 > دون أي رموز إدارية. يُضيف GeoAlgeria حقول `wilaya_code` و`commune_code`

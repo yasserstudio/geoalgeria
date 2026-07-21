@@ -1,6 +1,6 @@
 # Releasing
 
-GeoAlgeria publishes seventeen packages to npm — **`geoalgeria`** (the dataset, kept
+GeoAlgeria publishes twenty-eight packages to npm — **`geoalgeria`** (the dataset, kept
 unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**,
 **`@geoalgeria/mobilis`**, **`@geoalgeria/telecom`**, **`@geoalgeria/aviation`**,
 **`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`**,
@@ -8,12 +8,16 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 **`@geoalgeria/tourisme`**, **`@geoalgeria/formation-professionnelle`**,
 **`@geoalgeria/djezzy`**, **`@geoalgeria/mosquees`**, **`@geoalgeria/sante`**,
 **`@geoalgeria/culture`**, **`@geoalgeria/agriculture`**, **`@geoalgeria/ecoles`**,
-**`@geoalgeria/gares-routieres`**, **`@geoalgeria/ferroviaire`**, **`@geoalgeria/buses`** and
-**`@geoalgeria/transport`** (under the `@geoalgeria` org) — using
+**`@geoalgeria/gares-routieres`**, **`@geoalgeria/ferroviaire`**, **`@geoalgeria/buses`**,
+**`@geoalgeria/transport`**, **`@geoalgeria/industrie-pharmaceutique`**,
+**`@geoalgeria/pharmacies`**, **`@geoalgeria/ooredoo`**, **`@geoalgeria/pharma`** and
+**`@geoalgeria/schema`** (under the `@geoalgeria` org) — using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
-monorepo). The web app lives in the separate **`geoalgeria.com`** repo and is
-not part of this one.
+monorepo). `@geoalgeria/schema` is the v2 data contract every other package's
+generator depends on — a dev dependency, not a dataset, but still published
+standalone like the rest. The web app lives in the separate **`geoalgeria.com`**
+repo and is not part of this one.
 
 The raw `CSV`/`GeoJSON`/`SQL` formats are **not** in the npm tarball (only
 `*.json` is), so each release also cuts a **GitHub Release** with a zipped data
@@ -169,7 +173,9 @@ These are prerequisites the workflow can't do for you:
    `@geoalgeria/formation-professionnelle`, `@geoalgeria/djezzy`, `@geoalgeria/mosquees`,
    `@geoalgeria/sante`, `@geoalgeria/culture`, `@geoalgeria/agriculture`,
    `@geoalgeria/ecoles`, `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`,
-   `@geoalgeria/buses`, `@geoalgeria/transport`: *Settings →
+   `@geoalgeria/buses`, `@geoalgeria/transport`, `@geoalgeria/industrie-pharmaceutique`,
+   `@geoalgeria/pharmacies`, `@geoalgeria/ooredoo`, `@geoalgeria/pharma` and
+   `@geoalgeria/schema`: *Settings →
    Trusted Publisher → GitHub Actions*, repo **`yasserstudio/geoalgeria`**,
    workflow `release.yml`.
    No `NPM_TOKEN` — auth is the workflow's OIDC `id-token`.

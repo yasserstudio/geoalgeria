@@ -96,7 +96,7 @@ data/
 
 ```json
 {
-  "id": "01-001",
+  "id": "ag-01-001",
   "code": "12237",
   "type": "agence",
   "name": "Agence Commerciale Adrar",
@@ -113,7 +113,7 @@ data/
 
 ```json
 {
-  "id": "01-001",
+  "id": "pdv-01-001",
   "code": "2955",
   "type": "pdv",
   "name": "PDV LIBRAIRIE GAFA ABDERRAHMANE",
@@ -125,9 +125,10 @@ data/
 }
 ```
 
-`id` هو مفتاح مستقر بصيغة `{wilaya_code}-{seq}` يولّده GeoAlgeria (seq مرتب
-حسب معرّف المصدر). معرّف موبيليس الخاص محفوظ في `code`. يرتبط `wilaya_code`
-بـ`wilaya_code` في GeoAlgeria.
+`id` هو مفتاح مستقر بصيغة `{prefix}-{wilaya_code}-{seq}` يولّده GeoAlgeria
+(`ag-` للوكالات و`pdv-` لنقاط البيع؛ seq مرتب حسب معرّف المصدر)، ليبقى فريدا
+داخل المجموعة المدمجة `all()`. معرّف موبيليس الخاص محفوظ في `code`. يرتبط
+`wilaya_code` بـ`wilaya_code` في GeoAlgeria.
 
 ## هل تحتاج التقسيمات الإدارية أيضًا؟
 

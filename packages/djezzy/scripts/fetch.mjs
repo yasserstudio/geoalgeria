@@ -22,10 +22,11 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
+import { MIGRATIONS, writePackageV2, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -217,38 +218,6 @@ function assignIds(rows) {
   return rows;
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`; // formula-injection guard
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return {
-          type: "Feature",
-          geometry: { type: "Point", coordinates: [lng, lat] },
-          properties: props,
-        };
-      }),
-  };
-}
-
-const writeJSON = (p, obj) => writeFileSync(join(OUT_DIR, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(OUT_DIR, p), txt);
-
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Fetching Djezzy boutiques…");
@@ -271,30 +240,25 @@ async function main() {
 
   assignIds(rows);
 
-  const cols = [
-    "id", "code", "type", "name", "category", "address", "hours",
-    "code_ouverture", "wilaya_code", "commune_code", "commune", "lat", "lng",
-  ];
-
-  const metadata = {
-    source: "Djezzy — Optimum Telecom Algérie (djezzy.dz/nos-boutiques)",
-    origin: ORIGIN,
-    license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference. See README.",
-    boutiques: rows.length,
-    wilayas_covered: new Set(rows.map((r) => r.wilaya_code).filter(Boolean)).size,
-    boutiques_geocoded: rows.filter((r) => r.lat != null).length,
-    note:
-      "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.",
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(OUT_DIR, "csv"), { recursive: true });
-  mkdirSync(join(OUT_DIR, "geojson"), { recursive: true });
-  writeJSON("boutiques.json", rows);
-  writeText("csv/boutiques.csv", toCSV(rows, cols));
-  writeJSON("geojson/boutiques.geojson", toGeoJSON(rows));
-  writeJSON("metadata.json", metadata);
-  console.log(`Wrote ${rows.length} boutiques (${metadata.wilayas_covered} wilayas) to data/.`);
+  // Emit v2 via the shared writer (live-only source, so stamp the run's date).
+  // djezzy nearest-centroid-joins against dataset/algeria.json, so a live re-run
+  // could re-scope records and cascade the {wilaya}-{seq} ids. Carry each id over
+  // from the committed data keyed on the stable Djezzy operator code so a replay
+  // only diffs the records whose wilaya/commune actually changed.
+  const cfg = MIGRATIONS.djezzy;
+  const v2 = rows.map(cfg.map);
+  carryOverIds(v2, readCommitted(OUT_DIR, "boutiques.json"), (r) => (r.refs?.djezzy ? `dz:${r.refs.djezzy}` : null), "djezzy");
+  const today = new Date().toISOString().slice(0, 10);
+  writePackageV2({
+    pkg: "djezzy",
+    dir: OUT_DIR,
+    files: [{ file: "boutiques.json", rows: v2 }],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
+  });
+  const wilayas = new Set(v2.map((r) => r.wilaya_code).filter(Boolean)).size;
+  console.log(`Wrote ${v2.length} boutiques (${wilayas} wilayas) → v2 to data/.`);
 }
 
 main().catch((e) => {

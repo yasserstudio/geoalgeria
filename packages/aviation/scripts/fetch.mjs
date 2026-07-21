@@ -22,9 +22,10 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA = join(__dirname, "..", "data");
@@ -189,35 +190,6 @@ function resolveWilaya(airport, communes) {
   return { code: String(best.wilaya_code).padStart(2, "0"), commune: best.name, km: bestKm };
 }
 
-// --- writers ---------------------------------------------------------------
-function toCSV(rows, cols) {
-  const esc = (v) => {
-    if (v === null || v === undefined) return "";
-    let s = String(v);
-    // Neutralize spreadsheet formula injection on text fields; numbers pass through.
-    if (typeof v !== "number" && /^[=+\-@\t\r]/.test(s)) s = `'${s}`;
-    return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-  };
-  const lines = [cols.join(",")];
-  for (const r of rows) lines.push(cols.map((c) => esc(r[c])).join(","));
-  return lines.join("\n") + "\n";
-}
-
-function toGeoJSON(rows) {
-  return {
-    type: "FeatureCollection",
-    features: rows
-      .filter((r) => r.lat != null && r.lng != null)
-      .map((r) => {
-        const { lat, lng, ...props } = r;
-        return { type: "Feature", geometry: { type: "Point", coordinates: [lng, lat] }, properties: props };
-      }),
-  };
-}
-
-const writeJSON = (p, obj) => writeFileSync(join(DATA, p), JSON.stringify(obj, null, 2) + "\n");
-const writeText = (p, txt) => writeFileSync(join(DATA, p), txt);
-
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Fetching ANAC airports page…");
@@ -255,28 +227,19 @@ async function main() {
     throw new Error(`wilaya_code out of [1,69]: ${overflow.map((a) => `${a.icao}=${a.wilaya_code}`).join(", ")}`);
   }
 
-  const cols = ["id","name","icao","iata","address","phone","website","wilaya_code","lat","lng","source"];
-  const geo = toGeoJSON(airports);
-  const metadata = {
-    source: "ANAC — Autorité Nationale de l'Aviation Civile (anac.dz)",
-    origin: PAGE,
-    license: "Data © ANAC; redistributed for reference. See README.",
-    airports: airports.length,
-    wilayas_covered: new Set(airports.map((a) => a.wilaya_code)).size,
-    generated_at: new Date().toISOString().slice(0, 10),
-  };
-
-  mkdirSync(join(DATA, "csv"), { recursive: true });
-  mkdirSync(join(DATA, "geojson"), { recursive: true });
-  writeJSON("airports.json", airports);
-  writeText("csv/airports.csv", toCSV(airports, cols));
-  writeJSON("geojson/airports.geojson", geo);
-  writeJSON("metadata.json", metadata);
-
-  console.log(
-    `\nWrote ${airports.length} airports across ${metadata.wilayas_covered} wilayas ` +
-      `(${geo.features.length} geocoded) to ${DATA}.`
-  );
+  // Emit v2 via the shared writer (live-only source, so stamp the run's date).
+  const cfg = MIGRATIONS.aviation;
+  const today = new Date().toISOString().slice(0, 10);
+  const { records } = writePackageV2({
+    pkg: "aviation",
+    dir: DATA,
+    files: [{ file: "airports.json", rows: airports.map(cfg.map) }],
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
+  });
+  const wilayas = new Set(records.map((r) => r.wilaya_code)).size;
+  console.log(`\nWrote ${records.length} airports across ${wilayas} wilayas → v2 to ${DATA}.`);
 }
 
 main().catch((e) => {

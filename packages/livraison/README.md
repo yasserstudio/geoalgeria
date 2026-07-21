@@ -93,7 +93,7 @@ data/
   carriers.json             # 16 carriers (registry)
   stopdesks.json            # 411 geocoded stop-desks (array)
   coverage.json             # 9 per-carrier coverage rows
-  metadata.json             # sources, counts, generated_at
+  metadata.json             # sources, counts, updated
   csv/                      # repo + Release bundle (not in npm tarball)
     carriers.csv
     stopdesks.csv
@@ -107,13 +107,17 @@ data/
 // stopdesks.json
 {
   "id": "160101",
-  "operator": "guepex",
   "name": "Agence Sacré-Cœur",
-  "address": "116 Didouche Mourad, Sacré Cœur, Alger",
+  "wilaya_code": "16",
+  "commune_code": null,
   "commune": "Alger Centre",
-  "wilaya_code": 16,
   "lat": 36.7635831801555,
   "lng": 3.0471151913967005,
+  "geo_precision": "exact",
+  "geo_method": "carrier_relay",
+  "source": "guepex",
+  "operator": "guepex",
+  "address": "116 Didouche Mourad, Sacré Cœur, Alger",
   "sources": ["guepex", "yalidine"]
 }
 ```
@@ -129,14 +133,15 @@ data/
   "scope": "domestic",
   "open_agency_data": "geocoded",
   "api": "documented",
+  "notes": "Largest COD network; publishes an open geocoded stop-desk table that also lists partner operators (federated relay). Documented developer API (centers/communes/wilayas) is merchant-key gated.",
   "in_stopdesks": true,
   "stopdesk_count": 93,
-  "stopdesk_wilaya_count": 54,
-  "notes": "Largest COD network; publishes an open geocoded stop-desk table."
+  "stopdesk_wilaya_count": 54
 }
 ```
 
-`operator` on a stop-desk joins `carriers[].id`. `wilaya_code` joins GeoAlgeria's
+`operator` on a stop-desk joins `carriers[].id`. `commune_code` is always `null` — carrier
+relay feeds publish a commune name only, never an ONS code. `wilaya_code` joins GeoAlgeria's
 wilayas. `sources` lists which open feeds carry the desk — `["yalidine","guepex"]` when
 the relay maps agree, or `["anderson"]` for an Anderson agency.
 

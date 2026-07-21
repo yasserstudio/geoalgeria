@@ -103,7 +103,7 @@ const all: CulturalSite[] = culture.culture();
 ```
 data/
   culture.json              # 1083 موقعًا ثقافيًا (مصفوفة)
-  metadata.json             # المصادر، الأعداد، التغطية، generated_at
+  metadata.json             # المصادر، الأعداد، التغطية، الترخيص، تاريخ التحديث
   csv/culture.csv           # المستودع + الإصدار
   geojson/culture.geojson   # معالم نقطية (كل السجلات)
 ```
@@ -114,34 +114,37 @@ data/
 {
   "id": "16-museum-03",
   "name": "Musée national Public d'art moderne et contemporain",
-  "name_ar": "المتحف العمومي الوطني للفن الحديث و المعاصر",
   "name_fr": "Musée national Public d'art moderne et contemporain",
+  "name_ar": "المتحف العمومي الوطني للفن الحديث و المعاصر",
+  "wilaya_code": "16",
+  "commune_code": "1607",
+  "commune": "Casbah",
+  "lat": 36.777301,
+  "lng": 3.057572,
+  "geo_precision": "exact",
+  "geo_method": "source_point",
+  "source": "patrimoine",
+  "refs": {
+    "patrimoine": "817"
+  },
   "type": "museum",
   "category": "heritage",
   "type_label_fr": "Musée",
   "type_label_ar": "متحف",
   "has_virtual_tour": true,
-  "wilaya": "Alger",
-  "wilaya_ar": "الجزائر",
-  "wilaya_code": "16",
-  "commune": "Casbah",
-  "commune_code": 1607,
-  "source": "patrimoineculturel",
-  "geo_precision": "source_point",
   "url": "https://cartes.patrimoineculturelalgerien.org/fr/node/101",
-  "node_id_fr": 101,
-  "node_id_ar": 817,
-  "slug": "musee-national-public-d-art-moderne-et-contemporain",
-  "lat": 36.777301,
-  "lng": 3.057572
+  "slug": "musee-national-public-d-art-moderne-et-contemporain"
 }
 ```
 
-`id` مفتاح ثابت `{wilaya_code}-{type_code}-{seq}` يولّده GeoAlgeria. `name` هو
-الاسم الفرنسي إن وُجد، وإلا العربي. `type` هو طبقة الموقع على البوابة، و`category`
-يجمع الأنواع الـ11 في `heritage` مقابل `establishment`. `has_virtual_tour` يساوي
-`true` للمواقع الـ22 ذات الجولة 360°. `geo_precision` يساوي `"source_point"` لكل
-سجل.
+`id` مفتاح ثابت `{wilaya_code}-{type_code}-{seq}`، فريد ضمن هذا الملف — يُعامَل
+كمعرّف معتم (opaque). `name` هو الاسم الفرنسي إن وُجد، وإلا العربي. `type` هو
+طبقة الموقع على البوابة، و`category` يجمع الأنواع الـ11 في `heritage` مقابل
+`establishment`. `has_virtual_tour` يساوي `true` للمواقع الـ22 ذات الجولة 360°.
+`geo_precision` يساوي `"exact"` لـ1067 سجلًا و`"approximate"` لـ16 — لكل موقع
+إحداثية، لكن 16 منها لا تبلغ عتبة الدقة اللازمة لـ`"exact"`. `geo_method`
+يساوي `"source_point"` لكل سجل: الإحداثية هي النقطة التي تنشرها البوابة نفسها،
+وليست مركز ثقل مُشتقًا. `refs.patrimoine` هو معرّف الموقع على البوابة.
 
 > **الولاية دقيقة؛ أما البلدية فمُستنتَجة.** لا تزال البوابة تصنّف بعض المواقع تحت
 > رموز ولايات ما قبل 2019؛ يعيد GeoAlgeria إسناد كل موقع إلى التقسيم الحالي البالغ

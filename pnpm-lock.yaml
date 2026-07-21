@@ -59,11 +59,17 @@ importers:
         specifier: workspace:^
         version: link:../pharmacies
 
-  packages/pharmacies: {}
+  packages/pharmacies:
+    devDependencies:
+      '@geoalgeria/schema':
+        specifier: workspace:^
+        version: link:../schema
 
   packages/poste: {}
 
   packages/sante: {}
+
+  packages/schema: {}
 
   packages/sports: {}
 

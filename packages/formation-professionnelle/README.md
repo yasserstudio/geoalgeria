@@ -30,7 +30,7 @@ import fp from "@geoalgeria/formation-professionnelle";
 const all = fp.establishments();                    // 1,932
 const byWilaya = fp.establishmentsByWilaya(16);     // establishments in wilaya 16
 const cfpas = fp.establishmentsByType("cfpa");      // every CFPA
-const one = fp.establishmentById(1);                // single record by id
+const one = fp.establishmentById("00001");          // single record by id
 
 // 1,375 records have lat/lng — distance-sort, map, or nearest center in a few lines.
 ```
@@ -86,7 +86,7 @@ const all: Establishment[] = fp.establishments();
 ```
 data/
   establishments.json      # 1,932 establishments (array)
-  metadata.json            # source, counts, by_type, by_secteur, geocoded, generated_at
+  metadata.json            # sources, counts, by_type, by_secteur, geocoded, license, updated
   csv/                     # CSV export (repo + Release bundle, not in npm tarball)
   geojson/                 # GeoJSON features (1,375 geocoded points)
 ```
@@ -95,18 +95,22 @@ data/
 
 ```json
 {
-  "id": 1,
+  "id": "00001",
   "name": "مديرية التكوينو التعليم المهنيينأدرار",
   "name_fr": "DFEPADRAR",
+  "wilaya_code": "01",
+  "commune_code": null,
+  "commune": "أدرار",
+  "lat": null,
+  "lng": null,
+  "geo_precision": null,
+  "geo_method": null,
+  "source": "mfep",
   "type": "dfep",
   "type_label": "مديرية التكوين والتعليم المهنيين",
   "abreviation": "DFEP ADRAR",
   "code": "0100",
   "secteur": "public",
-  "commune": "أدرار",
-  "wilaya_code": "01",
-  "lat": null,
-  "lng": null,
   "adresse": "حي 103مسكن أدرار",
   "adresse_fr": "Cité 103 logtAdrar",
   "telephone": "049364333",
@@ -119,16 +123,19 @@ data/
   "surface_m2": 2443.42,
   "internat": false,
   "capacite_internat": null,
-  "vocations": null,
-  "source": "takwin.dz (MFEP)"
+  "vocations": null
 }
 ```
 
-`id` is a stable 1-based integer. Names are bilingual — `name` is Arabic (always present),
+`id` is an opaque, zero-padded sequence string (e.g. `"00001"`), unique within
+`establishments.json` — don't parse it. Names are bilingual — `name` is Arabic (always present),
 `name_fr` is French (may be `null`). `type` is a slug matching one of the ten establishment
 types listed above. `secteur` is `"public"` or `"prive"`. `wilaya_code` is zero-padded to two
-digits in the 58-wilaya scheme. `lat`/`lng` are `null` for the 29% of records that are not yet
-geocoded. `capacite` (theoretical) and `capacite_reelle` (realized) are seat counts; `internat`
+digits in the 58-wilaya scheme; `commune_code` is currently always `null` for this source (no
+ONS code published by takwin.dz). `lat`/`lng`, and `geo_precision`/`geo_method` with them, are
+`null` for the 29% of records that are not yet geocoded; where present, `geo_precision` is
+`"exact"` or `"approximate"` and `geo_method` records how the coordinate was sourced (e.g.
+`takwin`). `capacite` (theoretical) and `capacite_reelle` (realized) are seat counts; `internat`
 flags boarding availability with an optional `capacite_internat`. `vocations` is an array of
 specialization strings when available.
 

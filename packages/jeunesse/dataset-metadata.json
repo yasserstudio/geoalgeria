@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria youth institutions",
+  "alternateName": "Établissements de jeunesse d'Algérie",
+  "identifier": "@geoalgeria/jeunesse",
+  "description": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
+  "conditionsOfAccess": "Factual public listing (Ministry of Youth and Sports)",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.5666 -8.1489 37.0688 9.5881"
+    }
+  },
+  "variableMeasured": "2334 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "institutions (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/jeunesse/data/institutions.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/jeunesse/data/csv/institutions.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/jeunesse/data/geojson/institutions.geojson"
+    }
+  ],
+  "dateModified": "2026-06-23",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Ministry of Youth and Sports — SIG — Factual public listing (Ministry of Youth and Sports)"
+  ]
+}

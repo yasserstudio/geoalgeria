@@ -8,6 +8,70 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 2.0.0 — 2026-07-21 — Data v2 (breaking schema overhaul)
+
+Unifies every sector package onto one record contract via a new
+`@geoalgeria/schema` dependency, replacing 26 hand-written, drifted
+`types/index.d.ts` shapes. This is a **breaking schema change** across 25
+packages — the 23 migrated sector packages plus the `@geoalgeria/transport`
+and `@geoalgeria/pharma` umbrellas (whose `workspace:^` member deps now point
+at `2.0.0`). Consumers on `^1` are unaffected until they opt in; read
+[`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md) before bumping.
+The `@geoalgeria/schema` package itself stays a dev dependency and is not
+published. The core `geoalgeria` dataset and `@geoalgeria/telecom` are **not**
+part of this release — both predate the contract and stay on their v1 versions
+(see below).
+
+- **Breaking record shape**: `wilaya_code` is now a zero-padded **string**
+  (`"16"`, not `16`); commune linkage is `commune_code` (string ONS code) +
+  `commune`; coordinates are `lat`/`lng`; external ids collapse into
+  `refs: { osm, wikidata, … }` instead of flat `osm_id`/`wikidata`; `id` is an
+  opaque string unique within its file (not a global `{sector}:{WW}-{seq}`
+  form). Update any code keyed on the old shapes before adopting `2.0.0`.
+- **Breaking `geo_precision`**: now strictly `exact | approximate | null`,
+  **null if and only if** the record has no coordinate. The old method
+  vocabulary (`osm_point`, `commune_centroid`, `campus`, `wilaya_centroid`, …)
+  moved to a new `geo_method` field, under the same null-iff rule. `exact` now
+  requires ≥3 decimal places **and** a point unique within its file — 409
+  records across the migrated packages could not carry that claim and were
+  downgraded to `approximate`.
+- **New `@geoalgeria/schema` package**: canonical TypeScript types, a
+  zero-dependency runtime validator (Algeria-bbox + point-in-wilaya-boundary
+  checks, catching coordinate swaps/sign-flips), a canonical `metadata.json`
+  writer, and CSV/GeoJSON emit helpers. CI (`validate-packages.mjs`) now fails
+  the build on any contract violation instead of silently shipping bad data.
+- **New artifacts**: a root `index.json` catalog and a `schema.org/Dataset`
+  descriptor (`dataset-metadata.json`) shipped in 24 packages; the 69 wilaya
+  boundary polygons now ship in the core dataset package as
+  `data/geojson/wilaya-boundaries.geojson` (OSM-derived, ODbL,
+  **display-grade** — median vertex gap 3.36 km, not survey-grade).
+- **Tourisme corrections**: 972 previously-dropped values restored (`address`,
+  `phone`, `website`, `stars`, `rooms`, `description`, `heritage`,
+  `heritage_status`, `refs.wikidata`/`refs.wikipedia`) and 115 records
+  corrected from a false `source: "osm"` to `source: "wikidata"`; the package
+  license is now `ODbL-1.0 AND CC0-1.0 AND factual public listing (ASAL)`.
+- **Id prefixes**: `mobilis` ids are now `ag-…`/`pdv-…`; `tourisme` ids are
+  `lodging-`/`attraction-`/`historic-`/`thermal-spring-`/`park-`, keeping each
+  merged multi-file collection (`.all()`, `.attractions()`, …) unique.
+- **Not included**: two packages predate this contract and are not part of the
+  migration — the core `geoalgeria` dataset package (wilayas/dairas/communes)
+  still ships the v1 shape (`wilaya_code` as an int, `latitude`/`longitude`,
+  `code_commune`, CommonJS); `@geoalgeria/telecom` is close but incomplete
+  (string `wilaya_code` and `lat`/`lng` already, but no `geo_precision` /
+  `geo_method` / `refs`, and `source` is still a bare URL rather than a key
+  into `metadata.sources[]`). The root `index.json` catalog already marks both
+  `schema_version: null`. Their migrations are unscheduled; treat each as a
+  separate breaking change whenever it lands.
+
+Packages: `@geoalgeria/schema` (new), `@geoalgeria/poste`, `/emploi`,
+`/mobilis`, `/aviation`, `/banques`, `/livraison`, `/jeunesse`,
+`/sports`, `/enseignement-superieur`, `/tourisme`,
+`/formation-professionnelle`, `/djezzy`, `/mosquees`, `/sante`, `/culture`,
+`/agriculture`, `/ecoles`, `/gares-routieres`, `/ferroviaire`, `/buses`,
+`/transport`, `/industrie-pharmaceutique`, `/pharmacies`, `/ooredoo`,
+`/pharma`. Not `geoalgeria` (core dataset) or `/telecom` — both predate this
+contract, see above.
+
 ## 1.9.0 — 2026-07-05
 
 Added a new **Pharma sector** — pharmaceutical manufacturers and pharmacies — plus `@geoalgeria/ooredoo`, which completes the telecom retail trio, and a `@geoalgeria/pharma` umbrella.

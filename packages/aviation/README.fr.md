@@ -70,7 +70,7 @@ Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et incl
 ```
 data/
   airports.json            # 33 aéroports (tableau)
-  metadata.json            # source, comptages, generated_at
+  metadata.json            # sources, comptages, licence, updated
   csv/airports.csv         # dépôt + bundle Release (pas dans le tarball npm)
   geojson/airports.geojson # Entités Point (les 33 sont géocodés)
 ```
@@ -80,24 +80,33 @@ data/
 ```json
 {
   "id": "daag",
-  "name": "Aéroport d'Alger – Houari Boumediene",
+  "name": "Aéroport d’Alger – Houari Boumediene",
+  "wilaya_code": "16",
+  "commune_code": null,
+  "commune": null,
+  "lat": 36.69951171485545,
+  "lng": 3.210846808533331,
+  "geo_precision": "exact",
+  "geo_method": "source_point",
+  "source": "anac",
+  "refs": { "icao": "DAAG" },
   "icao": "DAAG",
   "iata": null,
   "address": "Alger BP 164 DAR EL BEIDA",
   "phone": "+21323199230",
-  "website": "https://www.aeroportalger.dz/",
-  "wilaya_code": "16",
-  "lat": 36.69951171485545,
-  "lng": 3.210846808533331,
-  "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+  "website": "https://www.aeroportalger.dz/"
 }
 ```
 
-`id` est le code OACI en minuscules. `icao` correspond toujours au format `DA__`. `iata` est
-`null` — l'ANAC ne publie que les codes OACI (le champ est réservé pour un enrichissement
+`id` est le code OACI en minuscules. `icao` correspond toujours au format `DA[A-Z]{2}`. `iata`
+est `null` — l'ANAC ne publie que les codes OACI (le champ est réservé pour un enrichissement
 ultérieur). `wilaya_code` est complété à deux chiffres avec un zéro et rejoint les wilayas de
-GeoAlgeria ; quelques enregistrements peuvent avoir un `phone` à `null` lorsque l'ANAC n'en
-indique pas.
+GeoAlgeria ; ce jeu de données ne couvre que le niveau wilaya, donc `commune_code` et `commune`
+sont toujours `null`. Chaque point provient directement de la carte publiée par l'ANAC, donc
+`geo_precision` vaut toujours `"exact"` et `geo_method` vaut toujours `"source_point"` — rien
+ici n'est une valeur de repli ou une dégradation. `source` est une clé courte résolue dans
+`metadata.sources[]` (toujours `"anac"`), et `refs.icao` duplique le `icao` de premier niveau.
+Un seul enregistrement (`dabs`, Tébessa) a un `phone` à `null` lorsque l'ANAC n'en indique pas.
 
 ## Besoin aussi des divisions administratives ?
 

@@ -79,7 +79,7 @@ Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), d
 
 > **Coverage is partial.** 3,790 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference — there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north — this is a community-maintained extract, **not an official registry**.
 >
-> Coordinates are OSM node points (surveyed) or building-outline centroids (`geo_precision`). Commune is a nearest-centroid best-effort; wilaya is effectively exact. Names, phones and hours are only present where an OSM contributor tagged them.
+> Coordinates are OSM node points (surveyed) or building-outline centroids (`geo_method`). Commune is a nearest-centroid best-effort; wilaya is effectively exact. Names, phones and hours are only present where an OSM contributor tagged them.
 
 ## Source & license
 
