@@ -713,12 +713,14 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
     ...buildMetadata({
       package: `@geoalgeria/${pkg}`,
       records: all,
-      // Stamp every source's retrieved with the run's value (real fetch time on a
-      // live run, the committed value on an offline replay), and default
-      // evidence_type from the canonical helper unless the config pins it.
+      // Preserve each source's own `retrieved` when it has one (multi-source
+      // packages legitimately pull their feeds on different dates); stamp only the
+      // sources that carry none with the run's value (real fetch time on a live
+      // run, the committed value on an offline replay). Default evidence_type from
+      // the canonical helper unless the config pins it.
       sources: meta.sources.map((s) => ({
         ...s,
-        retrieved: retrieved ?? s.retrieved,
+        retrieved: s.retrieved ?? retrieved,
         evidence_type: s.evidence_type ?? evidenceForSourceKey(s.key),
       })),
       license: meta.license,
@@ -860,8 +862,12 @@ export function readCommitted(dir, file) {
 export function committedDates(dir) {
   try {
     const m = JSON.parse(readFileSync(join(dir, "metadata.json"), "utf-8"));
-    const retrieved = m.sources?.find((s) => s.retrieved)?.retrieved || m.updated || CUTOVER_DATE;
-    return { updated: m.updated || CUTOVER_DATE, retrieved };
+    // H2: the writer now preserves each source's own `retrieved`, so this only
+    // supplies the run-date FALLBACK stamped on sources that carry none. That
+    // fallback is a package-level default — the committed `updated` — not an
+    // arbitrary first source's date (which would misdate every other source).
+    const updated = m.updated || CUTOVER_DATE;
+    return { updated, retrieved: updated };
   } catch {
     return { updated: CUTOVER_DATE, retrieved: CUTOVER_DATE };
   }
