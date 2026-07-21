@@ -12,7 +12,7 @@
 // v1 fixture and asserts it reproduces the committed record byte-for-byte, so a
 // generator importing its own slice inherits that guarantee.
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, renameSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -24,8 +24,18 @@ import {
   evidenceForSourceKey,
   coordDecimals,
   sharedPoints,
+  validateRecords,
   MIN_EXACT_DECIMALS,
 } from "../../packages/schema/index.js";
+
+/** Write via a temp sibling + rename so a reader never sees a torn file. Not a
+ *  whole-directory transaction — a crash between renames can still leave a mix of
+ *  old and new files, but never a truncated one. */
+function writeAtomic(path, content) {
+  const tmp = `${path}.${process.pid}.tmp`;
+  writeFileSync(tmp, content);
+  renameSync(tmp, path);
+}
 
 /** The cutover date, and the default `updated`/`retrieved` for an offline replay
  *  (constraint: on a real fetch a generator overrides these with the run's date;
@@ -689,8 +699,13 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
+  // Phase 1 — prepare + validate every file BEFORE writing anything. A schema
+  // error (a null-vs-geocoded geo mismatch, an id collision, an `exact` claim on a
+  // shared/whole-degree point) aborts the run with the directory untouched, closing
+  // the window where an emit could ship data the release gate would only reject later.
   const all = [];
   const entities = [];
+  const pending = []; // { path, content } queued for the atomic write phase
   for (const f of files) {
     const base = f.file.replace(/\.json$/, "");
     const rows = f.rows;
@@ -698,10 +713,17 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
     // Plain codepoint order — localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines.
     rows.sort((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0));
-    writeFileSync(join(dir, f.file), JSON.stringify(rows, null, 2) + "\n");
-    writeFileSync(join(dir, "csv", `${base}.csv`), toCSV(rows, colsFor(rows)));
+    const { errors } = validateRecords(rows);
+    if (errors.length)
+      throw new Error(
+        `writePackageV2 [${pkg}/${f.file}]: ${errors.length} schema error(s) — refusing to write:\n  ` +
+          errors.slice(0, 20).join("\n  ") +
+          (errors.length > 20 ? `\n  …(+${errors.length - 20} more)` : ""),
+      );
+    pending.push({ path: join(dir, f.file), content: JSON.stringify(rows, null, 2) + "\n" });
+    pending.push({ path: join(dir, "csv", `${base}.csv`), content: toCSV(rows, colsFor(rows)) });
     if (f.geojson !== false)
-      writeFileSync(join(dir, "geojson", `${base}.geojson`), JSON.stringify(toGeoJSON(rows), null, 2) + "\n");
+      pending.push({ path: join(dir, "geojson", `${base}.geojson`), content: JSON.stringify(toGeoJSON(rows), null, 2) + "\n" });
     entities.push({ file: f.file, count: rows.length });
     all.push(...rows);
   }
@@ -733,7 +755,10 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
     ...(meta.stats ? meta.stats(all) : {}),
     ...preserved,
   };
-  writeFileSync(join(dir, "metadata.json"), JSON.stringify(metadata, null, 2) + "\n");
+  pending.push({ path: join(dir, "metadata.json"), content: JSON.stringify(metadata, null, 2) + "\n" });
+
+  // Phase 2 — everything validated; now write each file atomically.
+  for (const { path, content } of pending) writeAtomic(path, content);
   return { records: all, metadata };
 }
 
