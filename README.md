@@ -128,6 +128,22 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 
 [Browse all packages →](https://geoalgeria.com/data) · [API docs & field reference →](https://geoalgeria.com/data/docs)
 
+## Data contract
+
+Since **v2.0.0**, every sector package shares one canonical record contract, defined by the internal [`@geoalgeria/schema`](packages/schema) package — a dev dependency used by each generator, never published to npm.
+
+Every record follows the same shape:
+
+- `wilaya_code` is a zero-padded **string** (`"16"`); commune linkage is `commune_code` + `commune`; coordinates are `lat` / `lng` (both numbers, or both `null`).
+- External ids live under `refs` (`osm`, `wikidata`, …).
+- `geo_precision` is strictly `exact | approximate | null` — `null` exactly when there is no coordinate — with the geocoding method in `geo_method`.
+
+Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each package, and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
+
+Two packages predate the contract and still ship v1 shapes — the core `geoalgeria` dataset and [`@geoalgeria/telecom`](packages/telecom) (marked `schema_version: null` in the catalog).
+
+Migrating a package? See [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
+
 ## Use without npm
 
 ```html

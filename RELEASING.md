@@ -60,6 +60,8 @@ git push         # straight to main, or via a PR
 Bump rules (data semver): **major** = breaking schema change · **minor** = new
 data / format · **patch** = corrections to existing records.
 
+- **Docs parity:** the root READMEs (EN/FR/AR) and any affected package READMEs reflect every contract, artifact, licence, or count change shipping in this release — sweep before tagging, not after.
+
 On push to `main`, the **Release** workflow runs `changesets/action`. If
 unconsumed changesets exist, it opens (or updates) a **`chore: version
 packages`** PR. Review the version bumps and CHANGELOG entries there.
