@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Civil protection units of Algeria",
+  "alternateName": "Unités de la Protection Civile d'Algérie",
+  "identifier": "@geoalgeria/protection-civile",
+  "description": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate (a few coincident points are marked approximate). The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is re-derived by point-in-polygon against the 69 post-reform wilaya boundaries so units in the new wilayas carry their correct code, with the DGPC code preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+  "conditionsOfAccess": "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference. No open licence.",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.570499 -8.15059 37.065201 9.57498"
+    }
+  },
+  "variableMeasured": "880 records, 69 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "protection-civile (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/protection-civile/data/protection-civile.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "protection-civile (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/protection-civile/data/csv/protection-civile.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "protection-civile (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/protection-civile/data/geojson/protection-civile.geojson"
+    }
+  ],
+  "dateModified": "2026-07-22",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Direction Générale de la Protection Civile — Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference"
+  ]
+}

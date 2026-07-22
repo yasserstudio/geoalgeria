@@ -539,6 +539,15 @@ const PACKAGES = {
       required: ["id", "source", "wilaya_code", "lat", "lng"],
     },
   ],
+  "protection-civile": [
+    {
+      json: "protection-civile.json",
+      metaKey: "protection-civile",
+      csv: "csv/protection-civile.csv",
+      geojson: "geojson/protection-civile.geojson",
+      required: ["id", "name", "statut", "wilaya_code", "lat", "lng"],
+    },
+  ],
   "gares-routieres": [
     {
       json: "stations.json",
@@ -987,6 +996,7 @@ const TYPED = {
   ooredoo: { "stores.json": "OoredooStore" },
   pharmacies: { "pharmacies.json": "Pharmacy" },
   poste: { "postoffices.json": "PostOffice", "atms.json": "Atm" },
+  "protection-civile": { "protection-civile.json": "ProtectionCivileUnit" },
   sante: { "sante.json": "HealthEstablishment" },
   sports: { "facilities.json": "Facility" },
   tourisme: {

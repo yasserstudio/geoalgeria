@@ -92,3 +92,7 @@ jobs:
       - name: Smoke test — @geoalgeria/ecoles (ESM)
         working-directory: packages/ecoles
         run: node --input-type=module -e "import('./index.js').then(m=>{const e=m.ecoles(); if(!Array.isArray(e)||!e.length){console.error('empty data');process.exit(1)} console.log('ecoles:',e.length,'schools,',m.metadata().wilayas_covered,'wilayas')})"
+
+      - name: Smoke test — @geoalgeria/protection-civile (ESM)
+        working-directory: packages/protection-civile
+        run: node --input-type=module -e "import('./index.js').then(m=>{const u=m.units(); if(!Array.isArray(u)||!u.length){console.error('empty data');process.exit(1)} console.log('protection-civile:',u.length,'units,',m.metadata().wilayas_covered,'wilayas')})"

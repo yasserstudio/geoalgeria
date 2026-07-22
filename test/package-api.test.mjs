@@ -32,6 +32,7 @@ const BY_WILAYA = [
   ["gares-routieres", "stations.json", "stationsByWilaya"],
   ["ooredoo", "stores.json", "storesByWilaya"],
   ["pharmacies", "pharmacies.json", "pharmaciesByWilaya"],
+  ["protection-civile", "protection-civile.json", "unitsByWilaya"],
   ["tourisme", "lodging.json", "byWilaya"],
 ];
 
@@ -62,6 +63,7 @@ const BY_ID = [
   ["enseignement-superieur", "institutions.json", "institutionById"],
   ["industrie-pharmaceutique", "industrie-pharmaceutique.json", "manufacturerById"],
   ["livraison", "carriers.json", "carrierById"],
+  ["protection-civile", "protection-civile.json", "unitById"],
 ];
 
 for (const [name, file, fnName] of BY_ID) {
@@ -100,6 +102,7 @@ const BY_VALUE = [
   ["livraison", "stopdesks.json", "stopdesksByCarrier", "operator"],
   ["banques", "branches.json", "branchesByBank", "bank_id"],
   ["buses", "lines.json", "linesByOperator", "operator"],
+  ["protection-civile", "protection-civile.json", "unitsByStatut", "statut"],
 ];
 
 for (const [name, file, fnName, field] of BY_VALUE) {

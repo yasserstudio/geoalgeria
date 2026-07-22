@@ -1,0 +1,53 @@
+{
+  "package": "@geoalgeria/protection-civile",
+  "schema_version": "2.0.0",
+  "title_fr": "Unités de la Protection Civile d'Algérie",
+  "title_ar": "وحدات الحماية المدنية الجزائرية",
+  "title_en": "Civil protection units of Algeria",
+  "record_count": 880,
+  "geocoded_count": 880,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 853,
+    "approximate": 27
+  },
+  "estimated_universe": 880,
+  "coverage_pct": 100,
+  "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate (a few coincident points are marked approximate). The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is re-derived by point-in-polygon against the 69 post-reform wilaya boundaries so units in the new wilayas carry their correct code, with the DGPC code preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+  "wilayas_covered": 69,
+  "bbox": [
+    -8.15059,
+    19.570499,
+    9.57498,
+    37.065201
+  ],
+  "sources": [
+    {
+      "key": "dgpc",
+      "name": "Direction Générale de la Protection Civile",
+      "url": "https://dgpc.dz/dgpc2/",
+      "license": "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference",
+      "evidence_type": "official",
+      "retrieved": "2026-07-22"
+    }
+  ],
+  "license": "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference. No open licence.",
+  "updated": "2026-07-22",
+  "by_statut": {
+    "UNITE PRINCIPALE": 62,
+    "UNITE SECONDAIRE": 444,
+    "SIEGE DE DIRECTION WILAYA": 58,
+    "POSTE AVANCE": 146,
+    "UNITE MARINE": 15,
+    "UNITE DE SECTEUR": 132,
+    "POSTE DE SECOURS ROUTIER": 20,
+    "U.N D'INSTRUCTION ET D'INTERVENTION": 1,
+    "DIRECTION GENERALE": 1,
+    "CELLULE DE SECURITE": 1
+  },
+  "with_tel": 880,
+  "with_fax": 880,
+  "with_address": 880,
+  "with_commune": 880,
+  "linkage_note": "wilaya_code is re-derived by point-in-polygon against the 69 post-reform wilaya boundaries (the DGPC's pre-reform cod_wilaya is kept in refs.dgpc_wilaya); commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback)."
+}
