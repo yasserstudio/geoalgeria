@@ -11,10 +11,13 @@
  * (commune_1) and a decimal x/y coordinate. This is the authoritative
  * "this unit exists here" source (evidence_type "official").
  *
- * The DGPC's own cod_wilaya is pre-2026-reform (codes "01".."58"), so it is NOT
- * trusted for wilaya_code: every unit's wilaya is re-derived by point-in-polygon
- * against the repo's 69 post-reform wilaya boundaries, so units now inside the 11
- * new 2026 wilayas (59..69) carry their correct new code. The DGPC's published
+ * The DGPC's own cod_wilaya is pre-2026-reform (codes "01".."58"), so wilaya_code
+ * is derived by point-in-polygon against the repo's 69 post-reform wilaya
+ * boundaries, then reconciled against the DGPC code: units now inside the 11 new
+ * 2026 wilayas (59..69) carry their correct new code, but when geometry and the
+ * DGPC code disagree and BOTH are pre-reform (<= "58") the reform cannot explain
+ * it — a ~150m-simplified boundary has misfiled a border unit — so the DGPC's
+ * authoritative code wins and commune is re-matched there. The DGPC's published
  * code is kept verbatim in refs.dgpc_wilaya as a receipt. Commune is best-effort:
  * the Arabic commune_1 name is matched against the flagship geoalgeria commune set
  * within the derived wilaya (nearest-centroid fallback). The source carries no
@@ -78,16 +81,21 @@ function httpRequest(url, { method = "GET", headers = {}, depth = 0 } = {}) {
           return reject(e);
         }
       }
-      res.setEncoding("utf8");
-      let data = "";
+      // Accumulate raw Buffer chunks and cap on real byte length. (Decoding to a
+      // utf8 string first would count UTF-16 code units, undercounting multi-byte
+      // Arabic content and letting the cap pass more bytes than intended.)
+      const chunks = [];
+      let bytes = 0;
       res.on("data", (c) => {
-        data += c;
-        if (data.length > MAX_BYTES) {
+        bytes += c.length;
+        if (bytes > MAX_BYTES) {
           res.destroy();
           reject(new Error(`${url} -> response exceeds ${MAX_BYTES} bytes`));
+          return;
         }
+        chunks.push(c);
       });
-      res.on("end", () => resolve({ status: res.statusCode, body: data }));
+      res.on("end", () => resolve({ status: res.statusCode, body: Buffer.concat(chunks).toString("utf8") }));
     });
     req.on("error", reject);
     req.setTimeout(120_000, () => req.destroy(new Error(`${url} -> timed out`)));
@@ -120,6 +128,11 @@ function readCache() {
 
 // --- text normalization ----------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
+// A wilaya code as a zero-padded 2-digit string ("5" -> "05"), or null.
+const padWilaya = (v) => {
+  const s = str(String(v ?? ""));
+  return s ? s.padStart(2, "0") : null;
+};
 // The DGPC address joins the street line and the commune with an underscore
 // ("CITE 60LOGEMENTS_AIN TEDLES"); render it as a readable comma-separated line.
 const cleanAddress = (v) => {
@@ -208,6 +221,24 @@ function assignWilaya(lng, lat, boundaries, communes, stats) {
   return nearestWilaya(lng, lat, communes);
 }
 
+// Reconcile the geometry-derived code against the DGPC's own cod_wilaya. The 2026
+// reform is the ONLY legitimate reason they may differ: a unit inside a new 59..69
+// wilaya keeps the DGPC's old (<= "58") code but must carry the new one — those
+// remaps keep the geometry code. When the geometry code is instead ANOTHER
+// pre-reform code (both <= "58"), the reform cannot explain the disagreement, so
+// a ~150m-simplified boundary has misfiled a border unit: the DGPC's authoritative
+// code wins. Every disagreement of either kind is recorded so none is silent.
+function reconcileWilaya(geomCode, codWilaya, objectid, stats) {
+  if (!codWilaya || codWilaya === geomCode) return geomCode;
+  const rec = { objectid, geom: geomCode, dgpc: codWilaya };
+  if (geomCode <= "58" && codWilaya <= "58") {
+    stats.reconciled.push(rec);
+    return codWilaya;
+  }
+  stats.reform.push(rec);
+  return geomCode;
+}
+
 // Commune within the derived wilaya: first an exact folded-Arabic name match on
 // commune_1, else the nearest commune centroid in that wilaya (best-effort).
 function assignCommune(commune1, wcode, lng, lat, communes, stats) {
@@ -242,7 +273,8 @@ function normalize(features, boundaries, communes, stats) {
     if (!inBox(lng, lat) && inBox(lat, lng)) { [lng, lat] = [lat, lng]; stats.swapped++; }
     if (!inBox(lng, lat)) { stats.dropped_oob++; continue; }
 
-    const wilaya_code = assignWilaya(lng, lat, boundaries, communes, stats);
+    const geomCode = assignWilaya(lng, lat, boundaries, communes, stats);
+    const wilaya_code = reconcileWilaya(geomCode, padWilaya(p.cod_wilaya), p.objectid, stats);
     const commune = assignCommune(p.commune_1, wilaya_code, lng, lat, communes, stats);
     rows.push({
       objectid: p.objectid,
@@ -285,7 +317,7 @@ async function main() {
   const communes = loadCommunes();
   const stats = {
     swapped: 0, dropped_oob: 0, wilaya_polygon: 0, wilaya_fallback: 0,
-    commune_name: 0, commune_centroid: 0,
+    commune_name: 0, commune_centroid: 0, reconciled: [], reform: [],
   };
   const rows = normalize(features, boundaries, communes, stats);
   console.log(
@@ -293,6 +325,15 @@ async function main() {
       `${stats.wilaya_fallback} by nearest, ${stats.swapped} coord swap fixed, ${stats.dropped_oob} dropped OOB)`,
   );
   console.log(`  commune: ${stats.commune_name} by name, ${stats.commune_centroid} by nearest centroid`);
+  // Every geometry-vs-DGPC disagreement, so neither category is ever silent.
+  console.log(
+    `  wilaya reconciliation: ${stats.reconciled.length} pre-reform conflict(s) resolved to the DGPC code, ` +
+      `${stats.reform.length} kept as 2026 reform remaps (geometry 59..69)`,
+  );
+  for (const r of stats.reconciled)
+    console.log(`    conflict objectid ${r.objectid}: geometry w${r.geom} → DGPC w${r.dgpc} (border misfile)`);
+  if (stats.reform.length)
+    console.log(`    reform remaps: ${stats.reform.map((r) => `${r.objectid}:w${r.dgpc}→w${r.geom}`).join(", ")}`);
 
   assignIds(rows);
 
@@ -301,10 +342,18 @@ async function main() {
   const cfg = MIGRATIONS["protection-civile"];
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "protection-civile.json"), (r) =>
-    r.refs?.dgpc ? `dgpc:${r.refs.dgpc}` : null,
-    "protection-civile",
-  );
+  // Carry public ids over by the DGPC objectid. KNOWN RISK: objectid is an
+  // ArcGIS-style surrogate the DGPC could renumber server-side; if it ever does, a
+  // whole regeneration silently misses its carry keys and re-mints ids. The
+  // carry-hit count logged below is the tripwire — a sharp drop from ~880 means
+  // diff the ids against the committed data before committing.
+  const committed = readCommitted(OUT_DIR, "protection-civile.json");
+  const carryKey = (r) => (r.refs?.dgpc ? `dgpc:${r.refs.dgpc}` : null);
+  const committedKeys = new Set(committed.map(carryKey).filter(Boolean));
+  const carryHits = v2.filter((r) => committedKeys.has(carryKey(r))).length;
+  carryOverIds(v2, committed, carryKey, "protection-civile");
+  if (committed.length)
+    console.log(`  id carry-over: ${carryHits}/${v2.length} units matched a committed id by dgpc objectid`);
   const { records: out, metadata } = writePackageV2({
     pkg: "protection-civile",
     dir: OUT_DIR,

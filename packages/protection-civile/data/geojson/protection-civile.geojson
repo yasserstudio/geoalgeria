@@ -16188,37 +16188,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.52382,
-          32.602699
-        ]
-      },
-      "properties": {
-        "id": "30-005",
-        "name": "الوحدة الثانوية الحجيرة",
-        "name_ar": "الوحدة الثانوية الحجيرة",
-        "wilaya_code": "30",
-        "commune_code": "3003",
-        "commune": "N'goussa",
-        "lat": 32.602699,
-        "lng": 5.52382,
-        "geo_precision": "exact",
-        "geo_method": "dgpc_map",
-        "source": "dgpc",
-        "refs": {
-          "dgpc": "247",
-          "dgpc_wilaya": "55"
-        },
-        "statut": "UNITE SECONDAIRE",
-        "address": "CW33 CITE 08 MAI 1945, EL HADJIRA",
-        "tel": "029613333",
-        "fax": "029613465"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           6.05678,
           31.691
         ]
@@ -16336,37 +16305,6 @@
         "address": "CITE LARBI BEN M'HIDI, N'GOUSSA",
         "tel": "029724370",
         "fax": "029724371"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          5.84566,
-          32.597698
-        ]
-      },
-      "properties": {
-        "id": "30-010",
-        "name": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
-        "name_ar": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
-        "wilaya_code": "30",
-        "commune_code": "3003",
-        "commune": "N'goussa",
-        "lat": 32.597698,
-        "lng": 5.84566,
-        "geo_precision": "exact",
-        "geo_method": "dgpc_map",
-        "source": "dgpc",
-        "refs": {
-          "dgpc": "612",
-          "dgpc_wilaya": "55"
-        },
-        "statut": "POSTE DE SECOURS ROUTIER",
-        "address": "RN03 HASSI MAAMAR, EL HADJIRA",
-        "tel": "0470002135",
-        "fax": "/"
       }
     },
     {
@@ -24093,6 +24031,37 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.74793,
+          31.9813
+        ]
+      },
+      "properties": {
+        "id": "47-013",
+        "name": "الوحدة الثانوية المنصورة",
+        "name_ar": "الوحدة الثانوية المنصورة",
+        "wilaya_code": "47",
+        "commune_code": "4713",
+        "commune": "Mansoura",
+        "lat": 31.9813,
+        "lng": 3.74793,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "source": "dgpc",
+        "refs": {
+          "dgpc": "644",
+          "dgpc_wilaya": "47"
+        },
+        "statut": "UNITE SECONDAIRE",
+        "address": "RN01 CENTRE VILLE EL MANSOURA, EL MANSOURA",
+        "tel": "029276196",
+        "fax": "029296139"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.917093,
           35.9669
         ]
@@ -25519,6 +25488,68 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.84566,
+          32.597698
+        ]
+      },
+      "properties": {
+        "id": "55-007",
+        "name": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
+        "name_ar": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
+        "wilaya_code": "55",
+        "commune_code": "3014",
+        "commune": "El-Hadjira",
+        "lat": 32.597698,
+        "lng": 5.84566,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "source": "dgpc",
+        "refs": {
+          "dgpc": "612",
+          "dgpc_wilaya": "55"
+        },
+        "statut": "POSTE DE SECOURS ROUTIER",
+        "address": "RN03 HASSI MAAMAR, EL HADJIRA",
+        "tel": "0470002135",
+        "fax": "/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.52382,
+          32.602699
+        ]
+      },
+      "properties": {
+        "id": "55-008",
+        "name": "الوحدة الثانوية الحجيرة",
+        "name_ar": "الوحدة الثانوية الحجيرة",
+        "wilaya_code": "55",
+        "commune_code": "3014",
+        "commune": "El-Hadjira",
+        "lat": 32.602699,
+        "lng": 5.52382,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "source": "dgpc",
+        "refs": {
+          "dgpc": "247",
+          "dgpc_wilaya": "55"
+        },
+        "statut": "UNITE SECONDAIRE",
+        "address": "CW33 CITE 08 MAI 1945, EL HADJIRA",
+        "tel": "029613333",
+        "fax": "029613465"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           9.51415,
           24.476801
         ]
@@ -25884,37 +25915,6 @@
         "address": "RUE ALI LA POINTE CENTRE VILLE MENEAA , MENEAA",
         "tel": "029213591",
         "fax": "029213304"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          3.74793,
-          31.9813
-        ]
-      },
-      "properties": {
-        "id": "58-003",
-        "name": "الوحدة الثانوية المنصورة",
-        "name_ar": "الوحدة الثانوية المنصورة",
-        "wilaya_code": "58",
-        "commune_code": "5802",
-        "commune": "Hassi Fehal",
-        "lat": 31.9813,
-        "lng": 3.74793,
-        "geo_precision": "exact",
-        "geo_method": "dgpc_map",
-        "source": "dgpc",
-        "refs": {
-          "dgpc": "644",
-          "dgpc_wilaya": "47"
-        },
-        "statut": "UNITE SECONDAIRE",
-        "address": "RN01 CENTRE VILLE EL MANSOURA, EL MANSOURA",
-        "tel": "029276196",
-        "fax": "029296139"
       }
     },
     {

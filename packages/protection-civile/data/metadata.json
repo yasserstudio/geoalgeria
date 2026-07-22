@@ -13,7 +13,7 @@
   },
   "estimated_universe": 880,
   "coverage_pct": 100,
-  "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate (a few coincident points are marked approximate). The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is re-derived by point-in-polygon against the 69 post-reform wilaya boundaries so units in the new wilayas carry their correct code, with the DGPC code preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+  "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate (a few coincident points are marked approximate). The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
   "wilayas_covered": 69,
   "bbox": [
     -8.15059,
@@ -49,5 +49,5 @@
   "with_fax": 880,
   "with_address": 880,
   "with_commune": 880,
-  "linkage_note": "wilaya_code is re-derived by point-in-polygon against the 69 post-reform wilaya boundaries (the DGPC's pre-reform cod_wilaya is kept in refs.dgpc_wilaya); commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback)."
+  "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback)."
 }

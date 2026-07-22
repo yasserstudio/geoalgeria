@@ -218,6 +218,7 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو — 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية؛ يُكمل ثلاثي الاتصالات |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة النقل — تثبّت aviation + ferroviaire + gares-routieres + buses في خطوة واحدة |
 | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة الصيدلة — تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
+| [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | وحدات الحماية المدنية — 880 وحدة من المديرية العامة عبر كل الولايات بأسماء عربية وعنوان/هاتف/فاكس ومستوى صفة، مُحدَّدة جغرافيًا، ربط الولاية وفق إصلاح 2026 |
 
 القائمة الكاملة والمستودع الأحادي: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

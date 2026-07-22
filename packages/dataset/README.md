@@ -218,6 +218,7 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Ooredoo stores — 572 EO / City Shop / Espace Services with real coordinates; completes the telecom retail trio |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Transport umbrella — installs aviation + ferroviaire + gares-routieres + buses in one step |
 | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Pharma umbrella — installs industrie-pharmaceutique + pharmacies in one step |
+| [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Civil protection / fire & rescue units — 880 DGPC units across all wilayas with Arabic names, address/phone/fax & a status tier, geocoded, post-2026-reform wilaya linkage |
 
 Full list and the monorepo: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

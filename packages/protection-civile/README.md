@@ -47,7 +47,7 @@ metadata().wilayas_covered; // 69
 
 ## What you can build
 
-- A civil-protection / fire-station locator or map layer for Algeria
+- A civil-protection / fire & rescue locator or map layer for Algeria
 - An emergency-response coverage analysis by wilaya
 - A base layer to join against live DGPC bulletins
 
@@ -59,7 +59,7 @@ metadata().wilayas_covered; // 69
 
 **By status tier (`statut`):** UNITE SECONDAIRE 444 · POSTE AVANCE 146 · UNITE DE SECTEUR 132 · UNITE PRINCIPALE 62 · SIEGE DE DIRECTION WILAYA 58 · POSTE DE SECOURS ROUTIER 20 · UNITE MARINE 15 · U.N D'INSTRUCTION ET D'INTERVENTION 1 · DIRECTION GENERALE 1 · CELLULE DE SECURITE 1
 
-Every unit carries `tel`, `fax` and `address`; **777** communes were matched by name, the rest by nearest centroid.
+Every unit carries `tel`, `fax` and `address`; **780** communes were matched by name, the rest by nearest centroid.
 
 ## Formats
 
@@ -78,17 +78,19 @@ import type { ProtectionCivileUnit } from "@geoalgeria/protection-civile";
 
 ## How the data is built
 
-Downloaded from the DGPC's own GeoJSON (`dgpc.dz/dgpc2/unite.geojson`). Coordinates come from each feature's decimal `x`/`y`. The DGPC's own `cod_wilaya` is **pre-2026-reform** (codes `"01".."58"`), so it is **not** trusted for `wilaya_code`: every unit's wilaya is re-derived by point-in-polygon against the repo's 69 post-reform wilaya boundaries, so units now inside the 11 new 2026 wilayas carry their correct new code. The DGPC code is preserved verbatim in `refs.dgpc_wilaya` as a receipt. Commune is best-effort — the Arabic `commune_1` name is matched against the geoalgeria commune set within the derived wilaya (nearest-centroid fallback). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/protection-civile/` in the monorepo.
+Downloaded from the DGPC's own GeoJSON (`dgpc.dz/dgpc2/unite.geojson`). Coordinates come from each feature's decimal `x`/`y`. `wilaya_code` is derived by point-in-polygon against the repo's 69 post-2026-reform wilaya boundaries, then **reconciled against the DGPC's own `cod_wilaya`** (which is pre-reform, codes `"01".."58"`): units now inside the 11 new 2026 wilayas carry their correct new code (geometry `59..69`), but where geometry and the DGPC code disagree among pre-reform codes — a border unit misfiled by a `~150 m`-simplified outline — the DGPC's official code wins and the commune is re-matched there. The DGPC code is preserved verbatim in `refs.dgpc_wilaya` as a receipt. Commune is best-effort — the Arabic `commune_1` name is matched against the geoalgeria commune set within the resolved wilaya (nearest-centroid fallback). Rebuild with `npm run fetch` (or `--cache` to rebuild from the cached pull). See `research/protection-civile/` in the monorepo.
+
+> **Known risk — carry keys.** Stable public ids are carried across rebuilds by the DGPC `objectid` (`refs.dgpc`), an ArcGIS-style surrogate the DGPC could renumber on their side. The rebuild logs a carry-hit count; a sudden drop from ~880 means the surrogate was renumbered — diff the ids before committing rather than letting them re-mint.
 
 ## On accuracy & coverage
 
-> **This is the DGPC's complete published unit network — 880 units.** Every unit carries a real DGPC coordinate; a few coincident points are honestly marked `approximate` (`geo_precision`), the rest `exact`. There is no French name in the source, so `name_fr` is not derived — nothing is machine-translated. Commune is name-matched best-effort; **wilaya is re-derived from geometry** and is reliable.
+> **This is the DGPC's complete published unit network — 880 units.** Every unit carries a real DGPC coordinate; a few coincident points are honestly marked `approximate` (`geo_precision`), the rest `exact`. There is no French name in the source, so `name_fr` is not derived — nothing is machine-translated. Commune is name-matched best-effort; **wilaya is boundary-derived, then cross-checked against the DGPC's own code** — conflicts among pre-reform codes (a border unit misfiled by a simplified outline) resolve to the DGPC's official code.
 >
 > The DGPC's original `cod_wilaya` is pre-2026-reform and is kept only as `refs.dgpc_wilaya`. Use `wilaya_code` (the geometry-derived, post-reform code) for any wilaya join.
 
 ## Source & license
 
-Data © **Direction Générale de la Protection Civile (DGPC)** — official government content, redistributed here for reference. There is **no open licence**; treat it as a factual public listing and attribute the DGPC. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
+Data © **General Directorate of Civil Protection (DGPC)** — official government content, redistributed here for reference. There is **no open licence**; treat it as a factual public listing and attribute the DGPC. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 
 ## Questions?
 
