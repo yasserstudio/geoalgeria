@@ -67,6 +67,12 @@ importers:
 
   packages/poste: {}
 
+  packages/protection-civile:
+    devDependencies:
+      '@geoalgeria/schema':
+        specifier: workspace:^
+        version: link:../schema
+
   packages/sante: {}
 
   packages/schema: {}

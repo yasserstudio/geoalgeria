@@ -86,6 +86,10 @@ _Avoid_: relay point, pickup point, locker
 A third-party resale partner approved by an operator (e.g. Mobilis approved points of sale) — distinct from the operator's own agencies or stores.
 _Avoid_: reseller, POS, retailer
 
+**Unit**:
+A Protection Civile (civil protection / fire & rescue) facility in the protection-civile sector — an operational site of the DGPC, of some `statut` tier (unité principale/secondaire, poste avancé, unité marine, …). Renders "unité de la protection civile".
+_Avoid_: station, fire station, barracks, caserne
+
 ### Transport
 
 **Station**:

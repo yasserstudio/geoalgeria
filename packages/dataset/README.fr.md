@@ -218,6 +218,7 @@ Ce jeu de données utilise le [versionnement sémantique](https://semver.org/). 
 | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo — 572 EO / City Shop / Espace Services avec coordonnées réelles ; complète le trio télécom |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Ombrelle transport — installe aviation + ferroviaire + gares-routieres + buses en une étape |
 | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Parapluie pharma — installe industrie-pharmaceutique + pharmacies en une fois |
+| [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | Unités de la Protection Civile — 880 unités de la DGPC sur toutes les wilayas, noms arabes, adresse/téléphone/fax & palier de statut, géolocalisées, rattachement wilaya post-réforme 2026 |
 
 Liste complète et monorepo : [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 

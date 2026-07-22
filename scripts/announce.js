@@ -47,6 +47,7 @@ const PACKAGES = {
   "@geoalgeria/pharmacies": { dir: "packages/pharmacies", label: "Algeria's pharmacies (officines)" },
   "@geoalgeria/industrie-pharmaceutique": { dir: "packages/industrie-pharmaceutique", label: "Algeria's approved pharmaceutical manufacturers" },
   "@geoalgeria/pharma": { dir: "packages/pharma", label: "Algeria's pharmaceutical sector (umbrella)" },
+  "@geoalgeria/protection-civile": { dir: "packages/protection-civile", label: "Algeria's civil protection (fire & rescue) units" },
 };
 
 const tag = process.env.GEOALGERIA_TAG || process.argv[2];
