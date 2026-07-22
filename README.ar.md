@@ -130,6 +130,22 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 
+## عقد البيانات
+
+منذ الإصدار **v2.0.0**، تتشارك جميع الحزم القطاعية عقد تسجيل مرجعيًا واحدًا، مُعرّفًا في الحزمة الداخلية [`@geoalgeria/schema`](packages/schema) — وهي تبعية تطوير (dev dependency) يستخدمها مولّد كل حزمة، وغير منشورة على npm إطلاقًا.
+
+كل سجل يتبع الشكل نفسه:
+
+- `wilaya_code` عبارة عن **سلسلة نصية** مُصفَّرة البادئة (`"16"`)؛ والربط بالبلدية يتم عبر `commune_code` + `commune`؛ والإحداثيات هي `lat` / `lng` (رقمان معًا، أو `null` معًا).
+- المعرّفات الخارجية مجمّعة تحت `refs` (`osm`، `wikidata`، …).
+- `geo_precision` يأخذ حصرًا القيم `exact | approximate | null` — و`null` فقط عند غياب الإحداثيات — مع طريقة الترميز الجغرافي في `geo_method`.
+
+تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض).
+
+حزمتان تسبقان العقد ولا تزالان تُصدِّران أشكال v1 — مجموعة البيانات الأساسية `geoalgeria` و[`@geoalgeria/telecom`](packages/telecom) (المميَّزتان بـ `schema_version: null` في الفهرس).
+
+هل تنقل حزمة؟ انظر [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
+
 ## الاستخدام بدون npm
 
 ```html

@@ -128,6 +128,22 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 
+## Contrat de données
+
+Depuis la **v2.0.0**, tous les paquets sectoriels partagent un même contrat d'enregistrement canonique, défini par le paquet interne [`@geoalgeria/schema`](packages/schema) — une dépendance de développement utilisée par chaque générateur, jamais publiée sur npm.
+
+Chaque enregistrement suit la même forme :
+
+- `wilaya_code` est une **chaîne** complétée par des zéros (`"16"`) ; le rattachement à la commune se fait via `commune_code` + `commune` ; les coordonnées sont `lat` / `lng` (deux nombres, ou deux `null`).
+- Les identifiants externes sont regroupés sous `refs` (`osm`, `wikidata`, …).
+- `geo_precision` vaut strictement `exact | approximate | null` — `null` exactement lorsqu'il n'y a pas de coordonnée — avec la méthode de géocodage dans `geo_method`.
+
+Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet, et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+
+Deux paquets sont antérieurs au contrat et livrent encore des formes v1 — le jeu de données principal `geoalgeria` et [`@geoalgeria/telecom`](packages/telecom) (marqués `schema_version: null` dans le catalogue).
+
+Vous migrez un paquet ? Voir [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
+
 ## Utilisation sans npm
 
 ```html
