@@ -124,7 +124,7 @@ Carrying both a French (`Fr`) and an Arabic (`Ar`) name for a record.
 _Avoid_: multilingual, translated, i18n
 
 **Geocoded**:
-Carrying real latitude/longitude coordinates for a record (as opposed to density-only or wilaya-linked-only).
+Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only or wilaya-linked-only).
 _Avoid_: located, mapped, positioned
 
 ### Provenance
