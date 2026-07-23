@@ -42,7 +42,7 @@ jobs:
 
       - name: Dry-run publish
         run: |
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo packages/protection-civile; do
             PKG_NAME=$(node -p "require('./$pkg/package.json').name")
             PKG_VER=$(node -p "require('./$pkg/package.json').version")
             REGISTRY_VER=$(npm view "$PKG_NAME" version 2>/dev/null || echo "")
@@ -81,7 +81,7 @@ jobs:
           # releases; their per-package releases were backfilled 2026-07-05, so
           # future bumps flow through here normally — the tag-existence guard
           # below skips the already-released 1.0.0 tags.)
-          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo; do
+          for pkg in packages/dataset packages/poste packages/emploi packages/mobilis packages/telecom packages/aviation packages/banques packages/livraison packages/jeunesse packages/sports packages/enseignement-superieur packages/tourisme packages/formation-professionnelle packages/djezzy packages/mosquees packages/sante packages/culture packages/agriculture packages/ecoles packages/gares-routieres packages/ferroviaire packages/buses packages/industrie-pharmaceutique packages/pharmacies packages/ooredoo packages/protection-civile; do
             NAME=$(node -p "require('./$pkg/package.json').name")
             VER=$(node -p "require('./$pkg/package.json').version")
             TAG="$NAME@$VER"
