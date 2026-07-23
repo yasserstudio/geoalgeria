@@ -1,6 +1,6 @@
 # GeoAlgeria Data
 
-The shared glossary for the GeoAlgeria data monorepo — the open, install-don't-scrape dataset for Algeria. This file pins the project's canonical vocabulary; it is a glossary only, not a spec. Use these terms (and avoid the listed alternatives) in issue titles, ADRs, package descriptions, and code.
+The shared glossary for the GeoAlgeria data monorepo, the open, install-don't-scrape dataset for Algeria. This file pins the project's canonical vocabulary; it is a glossary only, not a spec. Use these terms (and avoid the listed alternatives) in issue titles, ADRs, package descriptions, and code.
 
 ## Language
 
@@ -31,12 +31,12 @@ _Avoid_: domain, category, vertical
 ### Entities
 
 **Establishment**:
-A single physical premises operated by an institution or ministry — a hospital, youth center, university campus, post office, training center. Maps to établissement / مؤسسة.
+A single physical premises operated by an institution or ministry, a hospital, youth center, university campus, post office, training center. Maps to établissement / مؤسسة.
 _Avoid_: facility, center, site
 
 ### Sector operators
 
-No single umbrella term — the operator of a sector is named per its nature:
+No single umbrella term, the operator of a sector is named per its nature:
 
 **Operator**:
 The organization running a telecom or transport network (Djezzy, Mobilis, Ooredoo; SNTF, ETUSA, SETRAM).
@@ -56,7 +56,7 @@ _Avoid_: department, government body
 
 ### Service points
 
-No single umbrella term — the customer-facing point is named per its sector:
+No single umbrella term, the customer-facing point is named per its sector:
 
 **Office**:
 A post office in the poste sector (Algérie Poste).
@@ -67,7 +67,7 @@ An Algérie Poste self-service cash machine in the poste sector. Displayed in Fr
 _Avoid_: cash machine, distributor, cashpoint
 
 **Agency**:
-A customer-facing branch of ANEM (emploi — AWEM at wilaya level, ALEM at local level) or of Mobilis.
+A customer-facing branch of ANEM (emploi, AWEM at wilaya level, ALEM at local level) or of Mobilis.
 _Avoid_: office, branch
 
 **Branch**:
@@ -83,17 +83,17 @@ A carrier's pickup/drop-off point in the livraison sector.
 _Avoid_: relay point, pickup point, locker
 
 **Point of sale**:
-A third-party resale partner approved by an operator (e.g. Mobilis approved points of sale) — distinct from the operator's own agencies or stores.
+A third-party resale partner approved by an operator (e.g. Mobilis approved points of sale), distinct from the operator's own agencies or stores.
 _Avoid_: reseller, POS, retailer
 
 **Unit**:
-A Protection Civile (civil protection / fire & rescue) facility in the protection-civile sector — an operational site of the DGPC, of some `statut` tier (unité principale/secondaire, poste avancé, unité marine, …). Renders "unité de la protection civile".
+A Protection Civile (civil protection / fire & rescue) facility in the protection-civile sector, an operational site of the DGPC, of some `statut` tier (unité principale/secondaire, poste avancé, unité marine, …). Renders "unité de la protection civile".
 _Avoid_: station, fire station, barracks, caserne
 
 ### Transport
 
 **Station**:
-A single point on a transport network — a train station, tram/metro stop, aerial-tramway/gondola station, or intercity bus station (gare routière). Mode-neutral.
+A single point on a transport network, a train station, tram/metro stop, aerial-tramway/gondola station, or intercity bus station (gare routière). Mode-neutral.
 _Avoid_: node, stop, halt
 _Note_: the ferroviaire dataset currently ships these as `node`; that is a known divergence to reconcile toward this term.
 
@@ -138,15 +138,15 @@ The authoritative origin of a record or dataset (e.g. JORA, ONS, Algérie Poste,
 _Avoid_: provenance, origin, reference
 
 **Evidence type**:
-How a source establishes its records — `official` (a government register or first-party operator feed), `crowdsourced` (community maps: OSM, Wikidata), or `derived` (computed). Declared per source (`SourceRef.evidence_type`), inferred from the source key via `evidenceForSourceKey`.
+How a source establishes its records, `official` (a government register or first-party operator feed), `crowdsourced` (community maps: OSM, Wikidata), or `derived` (computed). Declared per source (`SourceRef.evidence_type`), inferred from the source key via `evidenceForSourceKey`.
 _Avoid_: verification, confidence (that's geometry), trust
 
 **Lifecycle**:
-A facility/asset's operational status — `operating`, `planned`, `closed`, or `unknown`. Optional per record (`GeoRecord.lifecycle`); absent means unknown.
+A facility/asset's operational status, `operating`, `planned`, `closed`, or `unknown`. Optional per record (`GeoRecord.lifecycle`); absent means unknown.
 _Avoid_: status, state, active/inactive
 
 **Retrieved**:
-The ISO date a source was last pulled (`SourceRef.retrieved`) — distinct from `metadata.updated` (when the dataset was regenerated). Together they answer "is this stale because the source didn't change, or because we didn't re-pull?".
+The ISO date a source was last pulled (`SourceRef.retrieved`), distinct from `metadata.updated` (when the dataset was regenerated). Together they answer "is this stale because the source didn't change, or because we didn't re-pull?".
 _Avoid_: fetched, scraped, synced
 
 **Geometry confidence**:
