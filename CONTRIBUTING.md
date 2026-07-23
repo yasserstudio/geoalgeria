@@ -1,7 +1,7 @@
 # Contributing to GeoAlgeria
 
 Thanks for helping! GeoAlgeria aims to be the most complete, accurate, and
-*current* open dataset for Algeria — administrative divisions, postal/banking
+*current* open dataset for Algeria, administrative divisions, postal/banking
 data today, and more kinds of Algeria data over time. Corrections, additions,
 and new-dataset proposals are all welcome.
 
@@ -9,7 +9,7 @@ This is a small monorepo:
 
 | Path | Package | Contents |
 | --- | --- | --- |
-| `packages/schema/` | `@geoalgeria/schema` | shared v2 record/metadata contract — types, runtime validator, canonical metadata + manifest builders, CSV/GeoJSON emit helpers; a dev dependency of every generator, not itself a dataset |
+| `packages/schema/` | `@geoalgeria/schema` | shared v2 record/metadata contract, types, runtime validator, canonical metadata + manifest builders, CSV/GeoJSON emit helpers; a dev dependency of every generator, not itself a dataset |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
@@ -19,24 +19,24 @@ This is a small monorepo:
 | `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministry of Youth and Sports) |
-| `packages/sports/` | `@geoalgeria/sports` | sports facilities — stadiums, pools, courts, tracks (Ministry of Youth and Sports) |
-| `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
-| `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
+| `packages/sports/` | `@geoalgeria/sports` | sports facilities, stadiums, pools, courts, tracks (Ministry of Youth and Sports) |
+| `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network, universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
+| `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure, hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
 | `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training establishments (MFEP / takwin.dz) |
-| `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores (djezzy.dz) |
-| `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite (all 69 wilayas) |
-| `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH/EPSP/EHS/CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
-| `packages/culture/` | `@geoalgeria/culture` | cultural atlas — protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
-| `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions — DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools — 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
-| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations — 74 SOGRAL gares routières, 51 wilayas, geocoded with surfaces (live.sogral.com) |
-| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit — 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
-| `packages/buses/` | `@geoalgeria/buses` | urban bus networks — 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
-| `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers — 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) — 3,790 geocoded, 67 wilayas (OpenStreetMap) |
-| `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores — 572 EO/CSO/ESO with real coordinates (ooredoo.dz); completes the telecom retail trio |
-| `packages/transport/` | `@geoalgeria/transport` | transport umbrella — re-exports aviation + ferroviaire + gares-routieres + buses |
-| `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella — re-exports industrie-pharmaceutique + pharmacies |
+| `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques, geocoded retail stores (djezzy.dz) |
+| `packages/mosquees/` | `@geoalgeria/mosquees` | mosques, Wikidata + OpenStreetMap composite (all 69 wilayas) |
+| `packages/sante/` | `@geoalgeria/sante` | public health establishments, EPH/EPSP/EHS/CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
+| `packages/culture/` | `@geoalgeria/culture` | cultural atlas, protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
+| `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions, DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
+| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 51 wilayas, geocoded with surfaces (live.sogral.com) |
+| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
+| `packages/buses/` | `@geoalgeria/buses` | urban bus networks, 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
+| `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers, 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,790 geocoded, 67 wilayas (OpenStreetMap) |
+| `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores, 572 EO/CSO/ESO with real coordinates (ooredoo.dz); completes the telecom retail trio |
+| `packages/transport/` | `@geoalgeria/transport` | transport umbrella, re-exports aviation + ferroviaire + gares-routieres + buses |
+| `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella, re-exports industrie-pharmaceutique + pharmacies |
 
 ## How to contribute
 
@@ -56,7 +56,7 @@ pnpm install
 - Add a new export format
 
 Data lives under `packages/dataset/data/` and `packages/poste/data/`. The postal
-data in `packages/dataset/data/poste/` is **generated** — edit it in
+data in `packages/dataset/data/poste/` is **generated**: edit it in
 `packages/poste` and run `npm run fetch` there (it mirrors into the dataset), don't
 hand-edit the mirror.
 
@@ -72,14 +72,14 @@ Branch (`git checkout -b fix/commune-name-typo`), commit using
 [Conventional Commits](https://www.conventionalcommits.org)
 (`fix(dataset): correct Béjaïa postal code`), and open a PR against `main`.
 
-You **don't** bump versions — releases are automated. If your change touches
+You **don't** bump versions, releases are automated. If your change touches
 published data, add a changeset so it ends up in the changelog:
 
 ```bash
 pnpm changeset   # pick package(s) + bump type + a one-line note
 ```
 
-(No worries if you skip it — a maintainer will add one.) On merge, a bot opens a
+(No worries if you skip it, a maintainer will add one.) On merge, a bot opens a
 "Version Packages" PR; merging that releases. See [`RELEASING.md`](RELEASING.md).
 
 ## Data guidelines
@@ -115,14 +115,14 @@ facilities, economic indicators, transport…)?
 
 - **Have a concrete, sourced dataset in mind?** Open a
   [**Request a dataset**](https://github.com/yasserstudio/geoalgeria/issues/new/choose)
-  issue — include where the data comes from and whether it's freely available.
+  issue, include where the data comes from and whether it's freely available.
 - **Just an idea or want to discuss/upvote?** Use
   [Discussions](https://github.com/yasserstudio/geoalgeria/discussions).
 
 ## Code of conduct
 
 Be respectful and constructive, assume good intent, focus on accuracy over
-preference, and welcome newcomers — not everyone is fluent in git or JSON.
+preference, and welcome newcomers, not everyone is fluent in git or JSON.
 
 ## Questions?
 
