@@ -18,6 +18,26 @@
 
 </div>
 
+GeoAlgeria is a solo-built, open project with one goal: to become the first and most comprehensive portal for all of Algeria's data. Verifiable, current, and free to use. It comes in two parts: an interactive atlas you explore in the browser, and the datasets behind it, published as npm packages you install instead of scrape.
+
+## The atlas
+
+[![The GeoAlgeria atlas at geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
+
+**[geoalgeria.com](https://geoalgeria.com)** puts 28+ datasets and 77,000+ records on one interactive map, redrawn for the 69 wilayas.
+
+- **[Cross-sector atlas](https://geoalgeria.com):** every sector on a single map, from post offices to mosques to hospitals, with a per-wilaya density view.
+- **[Live wildfire map](https://geoalgeria.com/fires):** NASA FIRMS satellite hotspots alongside official Civil Protection bulletins, updated through the fire season (launched 23 July 2026).
+- **[3,951 per-wilaya pages](https://geoalgeria.com/wilaya):** one page for every wilaya and sector, built to be searchable.
+- **[Layer stacking](https://geoalgeria.com/explore):** switch sectors on and off and read them together on the same map.
+- **Command-K search:** jump to any wilaya or commune straight from the keyboard.
+- **Arabic, French, and English:** the entire interface, fully right-to-left in Arabic.
+- **[Provenance on every record](https://geoalgeria.com/sources):** each point shows where it came from and when it last changed. See the [sources](https://geoalgeria.com/sources) and [changelog](https://geoalgeria.com/changelog).
+
+[![The live wildfire map at geoalgeria.com/fires](assets/screenshots/fires-map.png)](https://geoalgeria.com/fires)
+
+## The data
+
 Most Algeria datasets online still list **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is kept current, with real Algérie Poste postal codes, geographic coordinates, bilingual names, and post offices & ATMs, shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT-licensed, and CI-validated on every commit.
 
 ```bash
