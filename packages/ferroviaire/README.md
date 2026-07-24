@@ -4,7 +4,7 @@
 
 # @geoalgeria/ferroviaire
 
-**Algeria's rail & urban transit — every station and stop, as data you can install.**
+**Algeria's rail & urban transit, every station and stop, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
@@ -12,8 +12,8 @@
 
 </div>
 
-692 rail and urban-transit nodes across Algeria — **train stations, tram stops, metro
-stations, aerial tramways and gondolas** — with bilingual FR/AR names, operator
+692 rail and urban-transit nodes across Algeria, **train stations, tram stops, metro
+stations, aerial tramways and gondolas**, with bilingual FR/AR names, operator
 (SNTF / SETRAM / SEMA), line membership, GPS coordinates, and wilaya/commune linkage.
 A Wikidata + OpenStreetMap composite, shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -35,10 +35,10 @@ const inAlger = ferroviaire.stationsByWilaya(16);  // rail + metro + tram in Alg
 
 ## What you can build
 
-- **Multimodal maps** — one GeoJSON layer with train, tram, metro, and cable-transit nodes.
-- **Nearest-station lookups** — coordinates on every record.
-- **Network views** — filter by `type`, `operator`, or `network` (tram cities, Métro d'Alger).
-- **Bilingual UIs** — French and Arabic names on most records.
+- **Multimodal maps** – one GeoJSON layer with train, tram, metro, and cable-transit nodes.
+- **Nearest-station lookups** – coordinates on every record.
+- **Network views** – filter by `type`, `operator`, or `network` (tram cities, Métro d'Alger).
+- **Bilingual UIs** – French and Arabic names on most records.
 
 ## What's inside
 
@@ -46,9 +46,9 @@ const inAlger = ferroviaire.stationsByWilaya(16);  // rail + metro + tram in Alg
 | --- | --- | --- |
 | Rail (train) | **427** | SNTF |
 | Tram | **190** | SETRAM (7 city networks) |
-| Metro | **41** | SEMA — Métro d'Alger |
-| Aerial tramway | **24** | — |
-| Gondola | **10** | — |
+| Metro | **41** | SEMA – Métro d'Alger |
+| Aerial tramway | **24** | – |
+| Gondola | **10** | – |
 
 Spanning **50 wilayas**, every node geocoded. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -112,7 +112,7 @@ data/
 is `wikidata`, `osm`, or `wikidata+osm` (matched within ~150 m). `name` may be `null`
 for a few OSM-only stops (23 records). `wilaya_code`/`commune` come from a
 nearest-centroid join against `geoalgeria`. `id` is an opaque string, unique within
-`stations.json` — don't parse it. `geo_precision` is `exact` or `approximate` (all 692
+`stations.json`, don't parse it. `geo_precision` is `exact` or `approximate` (all 692
 records are geocoded, so `null` doesn't occur here); `geo_method` records how the
 coordinate was sourced (e.g. `osm_node`, `wikidata`). External ids live under `refs`.
 
@@ -120,7 +120,7 @@ coordinate was sourced (e.g. `osm_node`, `wikidata`). External ids live under `r
 
 A composite of **Wikidata** (CC0) and **OpenStreetMap** (© OpenStreetMap contributors,
 ODbL 1.0), with operators from **SNTF**, **SETRAM**, and **SEMA/EMA**. Code is
-[MIT](LICENSE); OSM-derived data remains under ODbL — keep attribution. Run
+[MIT](LICENSE); OSM-derived data remains under ODbL, keep attribution. Run
 `npm run fetch` to regenerate. For authoritative, real-time information, verify with the
 operators.
 

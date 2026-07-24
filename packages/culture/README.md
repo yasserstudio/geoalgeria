@@ -4,7 +4,7 @@
 
 # @geoalgeria/culture
 
-**Algeria's cultural atlas — as data you can install.**
+**Algeria's cultural atlas, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/culture)](https://www.npmjs.com/package/@geoalgeria/culture)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/culture)](https://www.npmjs.com/package/@geoalgeria/culture)
@@ -12,7 +12,7 @@
 
 </div>
 
-**1,083 cultural places** across **66 of Algeria's 69 wilayas** — protected
+**1,083 cultural places** across **66 of Algeria's 69 wilayas**, protected
 heritage sites, museums, theatres, libraries and cultural establishments (maisons
 & palais de la culture, cinemas, culture directorates, arts schools) from the
 **Ministry of Culture's** *Cartes du Patrimoine Culturel Algérien* atlas,
@@ -41,11 +41,11 @@ const tours = all.filter((p) => p.has_virtual_tour);
 
 ## What you can build
 
-- **Cultural maps & nearest-place search** — every one of the 1,083 places has
+- **Cultural maps & nearest-place search** – every one of the 1,083 places has
   coordinates, ready for a map or a "what's near me" feature.
-- **Bilingual cultural directories** — French and Arabic names, official type and
+- **Bilingual cultural directories** – French and Arabic names, official type and
   wilaya for every place; filter heritage vs. operating establishments.
-- **Heritage & tourism apps** — protected sites, museums and 360° virtual tours,
+- **Heritage & tourism apps** – protected sites, museums and 360° virtual tours,
   linked to commune/wilaya for routing and coverage analysis.
 
 ## What's inside
@@ -65,16 +65,16 @@ const tours = all.filter((p) => p.has_virtual_tour);
 
 | Type | Count | Meaning |
 | --- | --- | --- |
-| `protected-cultural-property` | 580 | Bien culturel protégé — protected monument/site |
-| `library` | 257 | Bibliothèque — public reading library |
-| `museum` | 48 | Musée — museum |
-| `theatre` | 45 | Théâtre — theatre |
-| `museum-moudjahid` | 13 | Musée du Moudjahid — museum of the war of independence |
+| `protected-cultural-property` | 580 | Bien culturel protégé – protected monument/site |
+| `library` | 257 | Bibliothèque – public reading library |
+| `museum` | 48 | Musée – museum |
+| `theatre` | 45 | Théâtre – theatre |
+| `museum-moudjahid` | 13 | Musée du Moudjahid – museum of the war of independence |
 | `cultural-house` | 51 | Maison de la culture |
-| `cultural-directorate` | 33 | Direction de la culture — wilaya culture directorate/office |
-| `cinema` | 20 | Salle de cinéma — cinema / cinematheque |
-| `cultural-center` | 15 | Centre culturel — cultural / research centre |
-| `arts-school` | 15 | École d'art — fine-arts school / conservatory |
+| `cultural-directorate` | 33 | Direction de la culture – wilaya culture directorate/office |
+| `cinema` | 20 | Salle de cinéma – cinema / cinematheque |
+| `cultural-center` | 15 | Centre culturel – cultural / research centre |
+| `arts-school` | 15 | École d'art – fine-arts school / conservatory |
 | `cultural-palace` | 6 | Palais de la culture |
 
 > **The atlas is official; treat the coordinates as best-effort.** Names, type,
@@ -92,7 +92,7 @@ import culture from "@geoalgeria/culture/data/culture.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/culture/data/culture.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import culture, { type CulturalSite } from "@geoalgeria/culture";
@@ -140,11 +140,11 @@ data/
 ```
 
 `id` is a stable `{wilaya_code}-{type_code}-{seq}` key, unique within this
-file — treat it as opaque. `name` is the French name where available, else
+file, treat it as opaque. `name` is the French name where available, else
 Arabic. `type` is the place's layer on the portal; `category` groups the 11
 types into `heritage` vs. `establishment`. `has_virtual_tour` is true for the
 22 places with a 360° tour. `geo_precision` is `"exact"` for 1,067 records and
-`"approximate"` for 16 — every place has a coordinate, but 16 don't meet the
+`"approximate"` for 16, every place has a coordinate, but 16 don't meet the
 precision bar for `"exact"`. `geo_method` is `"source_point"` for every
 record: the coordinate is the portal's own published point, not a derived
 centroid. `refs.patrimoine` is the place's node id on the portal.
@@ -159,7 +159,7 @@ centroid. `refs.patrimoine` is the place's node id on the portal.
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn a place's `commune_code` into a polygon or centroid. Use
 `@geoalgeria/culture` when you *only* need the cultural places.
 
@@ -168,7 +168,7 @@ you turn a place's `commune_code` into a polygon or centroid. Use
 Run `npm run fetch` to regenerate every output. It:
 
 1. reads the curated, bilingual cultural atlas (assembled and translated from the
-   Ministry of Culture's `cartes.patrimoineculturelalgerien.org` portal — the
+   Ministry of Culture's `cartes.patrimoineculturelalgerien.org` portal, the
    portal's French and Arabic catalogs are disjoint node sets, unioned by
    coordinate proximity and translated to fill the bilingual gaps);
 2. **rescopes** each place to the current 69-wilaya scheme and attaches a

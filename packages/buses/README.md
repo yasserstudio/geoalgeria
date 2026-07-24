@@ -4,7 +4,7 @@
 
 # @geoalgeria/buses
 
-**Algeria's urban bus networks — as data you can install.**
+**Algeria's urban bus networks, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/buses)](https://www.npmjs.com/package/@geoalgeria/buses)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/buses)](https://www.npmjs.com/package/@geoalgeria/buses)
@@ -12,11 +12,11 @@
 
 </div>
 
-Urban bus **lines** across Algeria — termini, stop counts, and the communes and transit
+Urban bus **lines** across Algeria, termini, stop counts, and the communes and transit
 stations each line serves. A **multi-operator** dataset; v1 ships **50 ETUSA lines**
 (Alger). Shipped as JSON and CSV. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
-> **Operator (source):** ETUSA — Établissement de transport urbain et suburbain d'Alger.
+> **Operator (source):** ETUSA – Établissement de transport urbain et suburbain d'Alger.
 > More cities/operators will be added under the same schema. For intercity coach stations
 > see [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres);
 > for rail/tram/metro see [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire).
@@ -37,10 +37,10 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
 
 | Dataset | Count | Notes |
 | --- | --- | --- |
-| Urban bus lines | **50** | ETUSA (Alger) — termini, stop count, communes & stations served |
+| Urban bus lines | **50** | ETUSA (Alger) – termini, stop count, communes & stations served |
 
 > **Scope (v1):** line-level attributes only. Per-stop and per-line **geometry**
-> (OSM `route=bus`) is deferred to **v1.1** — ETUSA-tagged OSM route coverage is
+> (OSM `route=bus`) is deferred to **v1.1**, ETUSA-tagged OSM route coverage is
 > currently thin. This covers 50 of ~122 ETUSA passenger lines. `wilaya_code` is `16`
 > (Alger) and joins the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) model.
 
@@ -49,7 +49,7 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
 ```json
 {
   "id": "etusa-1",
-  "name": "Ligne 1 — El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
+  "name": "Ligne 1 – El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
   "wilaya_code": "16",
   "commune_code": null,
   "commune": null,
@@ -70,16 +70,16 @@ const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat I
 }
 ```
 
-`commune_code` and `commune` are always `null` for this dataset — a line spans several
+`commune_code` and `commune` are always `null` for this dataset, a line spans several
 communes (see `communes_served`), so no single commune applies. `lat`/`lng`/`geo_precision`/
 `geo_method` are always `null` too: these are line records with no per-line geometry (see
 Scope below).
 
 ## Source & license
 
-Line data comes from **fr.wikipedia** (the ETUSA line articles) — licensed
+Line data comes from **fr.wikipedia** (the ETUSA line articles), licensed
 **CC BY-SA 4.0** (attribution + share-alike). Operator: **ETUSA**. Package code is
-[MIT](LICENSE); the line data inherits Wikipedia's CC BY-SA — keep attribution and
+[MIT](LICENSE); the line data inherits Wikipedia's CC BY-SA, keep attribution and
 share-alike if you redistribute. Verify with ETUSA for authoritative, current lines.
 
 [Browse all packages →](https://geoalgeria.com/data)

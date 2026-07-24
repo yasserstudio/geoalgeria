@@ -4,7 +4,7 @@
 
 # @geoalgeria/livraison
 
-**Algeria's delivery carriers and their stop-desks — as data you can install.**
+**Algeria's delivery carriers and their stop-desks, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/livraison)](https://www.npmjs.com/package/@geoalgeria/livraison)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/livraison)](https://www.npmjs.com/package/@geoalgeria/livraison)
@@ -30,23 +30,23 @@ const inAlgiers = livraison.stopdesksByWilaya(16);    // stop-desks in wilaya 16
 const guepexDesks = livraison.stopdesksByCarrier("guepex");
 const reach = livraison.coverageByCarrier("yalidine"); // wilayas it serves
 
-// Every stop-desk has lat/lng — nearest-desk, map, or distance-sort in a few lines.
+// Every stop-desk has lat/lng – nearest-desk, map, or distance-sort in a few lines.
 ```
 
 ## What you can build
 
-- **Nearest stop-desk** — coordinates on every stop-desk, ready for distance sorting.
-- **Checkout drop-off pickers** — list a carrier's desks in the buyer's wilaya.
-- **Carrier comparison** — registry of who operates, their model (stop-desk vs home), and COD support.
-- **Maps** — drop-in GeoJSON point layer for the whole open stop-desk network.
+- **Nearest stop-desk** – coordinates on every stop-desk, ready for distance sorting.
+- **Checkout drop-off pickers** – list a carrier's desks in the buyer's wilaya.
+- **Carrier comparison** – registry of who operates, their model (stop-desk vs home), and COD support.
+- **Maps** – drop-in GeoJSON point layer for the whole open stop-desk network.
 
 ## What's inside
 
 | Dataset | Count | Geocoded | Notes |
 | --- | --- | --- | --- |
-| Carriers (`carriers.json`) | **16** | — | registry: name, website, model, COD, scope, data openness, API |
+| Carriers (`carriers.json`) | **16** | – | registry: name, website, model, COD, scope, data openness, API |
 | Stop-desks (`stopdesks.json`) | **411** | ✅ all | id, operator, name, address, commune, `wilaya_code`, lat/lng |
-| Coverage (`coverage.json`) | **9** | — | per-carrier wilaya/commune stop-desk presence |
+| Coverage (`coverage.json`) | **9** | – | per-carrier wilaya/commune stop-desk presence |
 
 Stop-desks span **61 wilayas**, every one geocoded. `wilaya_code` links against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -57,7 +57,7 @@ Algeria has 90+ delivery companies, but only a few publish their agency location
 openly. The **registry** covers the field (the major carriers and what each is); the
 **geocoded layer** covers the carriers that publish locations openly:
 
-- the **Yalidine + Guepex relay ecosystem** — Yalidine, Guepex, and the operators that
+- the **Yalidine + Guepex relay ecosystem** – Yalidine, Guepex, and the operators that
   ride their shared network (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express);
 - **Anderson**, **Noest** and **Maystro**, three independent networks, each geocoded from
   the Google Maps link on its agency cards (agencies whose links are missing, unresolvable,
@@ -78,7 +78,7 @@ import carriers from "@geoalgeria/livraison/data/carriers.json" with { type: "js
 // https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/stopdesks.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import livraison, { type StopDesk } from "@geoalgeria/livraison";
@@ -140,15 +140,15 @@ data/
 }
 ```
 
-`operator` on a stop-desk joins `carriers[].id`. `commune_code` is always `null` — carrier
+`operator` on a stop-desk joins `carriers[].id`. `commune_code` is always `null`, carrier
 relay feeds publish a commune name only, never an ONS code. `wilaya_code` joins GeoAlgeria's
-wilayas. `sources` lists which open feeds carry the desk — `["yalidine","guepex"]` when
+wilayas. `sources` lists which open feeds carry the desk, `["yalidine","guepex"]` when
 the relay maps agree, or `["anderson"]` for an Anderson agency.
 
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 69-wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/livraison`
 when you *only* need delivery data.
 

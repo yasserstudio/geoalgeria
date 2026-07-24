@@ -4,7 +4,7 @@
 
 # @geoalgeria/ecoles
 
-**The schools of Algeria — as data you can install.**
+**The schools of Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ecoles)](https://www.npmjs.com/package/@geoalgeria/ecoles)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ecoles)](https://www.npmjs.com/package/@geoalgeria/ecoles)
@@ -12,7 +12,7 @@
 
 </div>
 
-**11,830 geocoded schools** across all **69 wilayas** of Algeria — every one with
+**11,830 geocoded schools** across all **69 wilayas** of Algeria, every one with
 coordinates, classified by **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), most with Arabic and/or French names, and commune/wilaya linkage.
 Extracted from **OpenStreetMap** and framed honestly against the ~28,000
@@ -37,11 +37,11 @@ const named = all.filter((e) => e.name_fr);
 
 ## What you can build
 
-- **School maps & locators** — coordinates on all 11,830 records, ready for a map
+- **School maps & locators** – coordinates on all 11,830 records, ready for a map
   or nearest-school distance sorting.
-- **Cycle breakdowns** — filter primaire / moyen / secondaire / préscolaire, or
+- **Cycle breakdowns** – filter primaire / moyen / secondaire / préscolaire, or
   rank school density per commune/wilaya across the country.
-- **Bilingual directories** — thousands of Arabic and French names, side by side.
+- **Bilingual directories** – thousands of Arabic and French names, side by side.
 
 ## What's inside
 
@@ -60,18 +60,18 @@ const named = all.filter((e) => e.name_fr);
 | `autre` | 3,591 | school of undetermined cycle (unnamed, or a name with no cycle word) |
 
 > **This is an OpenStreetMap extract, not an official registry.** Coverage is
-> partial and uneven by wilaya — ~11.8k schools mapped against the ~28,000 in the
+> partial and uneven by wilaya, ~11.8k schools mapped against the ~28,000 in the
 > national network (primaire + moyen + secondaire, Ministry of National
 > Education, approximate). Counts move as OpenStreetMap is edited; each rebuild
 > reflects the current state of the map.
 
-**Cycle is inferred.** It comes from `isced:level` and the French/Arabic name — a
+**Cycle is inferred.** It comes from `isced:level` and the French/Arabic name, a
 CEM always names itself متوسطة/collège, a lycée ثانوية/lycée, a maternelle
 روضة/préscolaire. A bare "école"/"مدرسة" with no cycle word is classified
 `primaire` by Algerian convention (a standalone school is a primary school);
 anything unresolved is `autre`. 93% of *named* schools resolve to a specific cycle.
 
-**By kind** — `kind` is the establishment type, *orthogonal* to cycle, so you can
+**By kind** – `kind` is the establishment type, *orthogonal* to cycle, so you can
 filter out (or in) the special-purpose places OSM files under `amenity=school`:
 
 | Kind | Count | Meaning | Cycle |
@@ -84,12 +84,12 @@ filter out (or in) the special-purpose places OSM files under `amenity=school`:
 | `conduite` | 5 | driving school (auto-école) | `autre` |
 
 The four non-K-12 kinds (`formation`/`coranique`/`langues`/`conduite`) carry
-cycle `autre` — they're *not* primary schools even though their name contains
+cycle `autre`, they're *not* primary schools even though their name contains
 "école"; `kind` is what makes them findable instead of buried in `autre`.
 
 **Also on each record:** `isced_levels` (the OSM `isced:level` served, normalized
-to a sorted list like `"1;2"` — on 2,037 records), `address` (from OSM `addr:*`
-tags — on 2,625), and `sector` (`public`/`private` where the map signals it).
+to a sorted list like `"1;2"`, on 2,037 records), `address` (from OSM `addr:*`
+tags, on 2,625), and `sector` (`public`/`private` where the map signals it).
 
 ## Formats
 
@@ -101,7 +101,7 @@ import ecoles from "@geoalgeria/ecoles/data/ecoles.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/ecoles/data/ecoles.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import ecoles, { type Ecole } from "@geoalgeria/ecoles";
@@ -157,7 +157,7 @@ education level and `kind` the establishment type (see above), each with
 bilingual labels. `isced_levels` and `address` come straight from OSM (`null`
 when the tags are absent). `sector` is `"public"`/`"private"` only when the map
 carries an explicit signal, else `null`. `geo_precision` is `"exact"` for a
-surveyed OSM node or `"approximate"` for a building/area centroid — `geo_method`
+surveyed OSM node or `"approximate"` for a building/area centroid, `geo_method`
 records which (`osm_node`/`osm_centroid`). `wilaya_code` joins to GeoAlgeria's
 `wilaya_code`.
 
@@ -171,7 +171,7 @@ records which (`osm_node`/`osm_centroid`). `wilaya_code` joins to GeoAlgeria's
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn a school's `commune_code` into a polygon or centroid. Use
 `@geoalgeria/ecoles` when you *only* need the schools.
 
@@ -190,7 +190,7 @@ Raw source pulls are cached under
 
 ## License & attribution
 
-Package **code** is [MIT](LICENSE). The **data** is from **OpenStreetMap** —
+Package **code** is [MIT](LICENSE). The **data** is from **OpenStreetMap**:
 **© OpenStreetMap contributors**, licensed under the
 **[ODbL 1.0](https://www.openstreetmap.org/copyright)**. If you use or
 redistribute this dataset, you must **attribute OpenStreetMap contributors** and

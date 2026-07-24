@@ -4,7 +4,7 @@
 
 # @geoalgeria/djezzy
 
-**The Djezzy boutique network in Algeria — as data you can install.**
+**The Djezzy boutique network in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/djezzy)](https://www.npmjs.com/package/@geoalgeria/djezzy)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/djezzy)](https://www.npmjs.com/package/@geoalgeria/djezzy)
@@ -13,7 +13,7 @@
 </div>
 
 The **128 boutiques** of **Djezzy** (Optimum Telecom Algérie), one of Algeria's
-three mobile operators — every store geocoded, with its category, address,
+three mobile operators, every store geocoded, with its category, address,
 opening hours, opening code, and commune/wilaya linkage. Shipped as JSON, CSV,
 GeoJSON, and TypeScript. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -36,11 +36,11 @@ const flagships = boutiques.filter((b) => b.category === "A");
 
 ## What you can build
 
-- **Store locators** — coordinates on every one of the 128 boutiques, ready for
+- **Store locators** – coordinates on every one of the 128 boutiques, ready for
   distance sorting or a map.
-- **Coverage by wilaya** — each boutique is tagged with its commune and wilaya,
+- **Coverage by wilaya** – each boutique is tagged with its commune and wilaya,
   so you can count or rank Djezzy presence across the country's 63 covered wilayas.
-- **Operator comparisons** — join against
+- **Operator comparisons** – join against
   [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) on
   `wilaya_code` to compare retail footprints operator by operator.
 
@@ -60,7 +60,7 @@ import boutiques from "@geoalgeria/djezzy/data/boutiques.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/boutiques.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import djezzy, { type Boutique } from "@geoalgeria/djezzy";
@@ -106,7 +106,7 @@ data/
 `id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria (seq ordered
 by the source code), unique within this dataset. Djezzy's own store code is kept
 as `refs.djezzy`. `wilaya_code` joins to GeoAlgeria's `wilaya_code`. `geo_precision`
-is always `"exact"` and `geo_method` always `"operator_point"` — every boutique
+is always `"exact"` and `geo_method` always `"operator_point"`, every boutique
 carries a real Djezzy-published coordinate.
 
 > **Commune/wilaya linkage is derived, not from the source.** Djezzy publishes a
@@ -119,7 +119,7 @@ carries a real Djezzy-published coordinate.
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn a boutique's `commune_code` into a polygon or centroid. Use
 `@geoalgeria/djezzy` when you *only* need the Djezzy network.
 
@@ -127,7 +127,7 @@ you turn a boutique's `commune_code` into a polygon or centroid. Use
 
 Data comes from the **Djezzy** store locator
 (<https://www.djezzy.dz/nos-boutiques/>). The page ships the full boutique list
-inline as an HTML-entity-encoded JSON array — there is no separate API. Run
+inline as an HTML-entity-encoded JSON array, there is no separate API. Run
 `npm run fetch` to regenerate every output: it parses the inline store objects,
 validates the coordinates fall inside Algeria, and attaches the administrative
 linkage by nearest commune centroid.
@@ -137,7 +137,7 @@ linkage by nearest commune centroid.
 Code is [MIT](LICENSE). The underlying data is © **Optimum Telecom Algérie
 (Djezzy)**, redistributed for reference and to power
 [GeoAlgeria](https://geoalgeria.com). Verify against Djezzy for authoritative,
-real-time information. The boutique list changes as stores open and close — each
+real-time information. The boutique list changes as stores open and close, each
 rebuild reflects whatever the locator currently shows.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/djezzy) · [Browse all packages →](https://geoalgeria.com/data)

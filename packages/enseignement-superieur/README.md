@@ -4,7 +4,7 @@
 
 # @geoalgeria/enseignement-superieur
 
-**Every higher-education institution in Algeria — as data you can install.**
+**Every higher-education institution in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/enseignement-superieur)](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/enseignement-superieur)](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur)
@@ -12,9 +12,9 @@
 
 </div>
 
-177 higher-education institutions across Algeria — **universities**, grandes écoles, écoles
+177 higher-education institutions across Algeria, **universities**, grandes écoles, écoles
 normales supérieures, centres universitaires, the **licensed private institutions**, and the
-establishments **under other ministries** (Défense, Santé, Culture…) that MESRS supervises —
+establishments **under other ministries** (Défense, Santé, Culture…) that MESRS supervises,
 each with its name (French and/or Arabic), institution **type**, **sector**, supervising
 ministry, its own **website**, wilaya / commune linkage and coordinates. Sourced from the
 **Ministry of Higher Education and Scientific Research (MESRS)**, shipped as
@@ -32,15 +32,15 @@ const inAlgiers = es.institutionsByWilaya(16);   // institutions in wilaya 16
 const universities = es.institutionsByType("universite"); // every university
 const privates = es.institutionsBySector("private");      // the 19 private institutions
 
-// Everything has lat/lng — distance-sort, map, or nearest-campus in a few lines.
+// Everything has lat/lng – distance-sort, map, or nearest-campus in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest university" lookups** — coordinates on every record, ready for distance sorting.
-- **Student & civic apps** — map the higher-education network per wilaya, split public vs private, link straight to each institution's site.
-- **Maps** — drop-in GeoJSON point layer for the whole higher-education network.
-- **Research & planning** — institution counts by type, sector, supervising ministry and wilaya across the country.
+- **"Nearest university" lookups** – coordinates on every record, ready for distance sorting.
+- **Student & civic apps** – map the higher-education network per wilaya, split public vs private, link straight to each institution's site.
+- **Maps** – drop-in GeoJSON point layer for the whole higher-education network.
+- **Research & planning** – institution counts by type, sector, supervising ministry and wilaya across the country.
 
 ## What's inside
 
@@ -53,7 +53,7 @@ const privates = es.institutionsBySector("private");      // the 19 private inst
 | **Total** | | **177** |
 
 By **sector**: 158 public · 19 licensed private. Of the public institutions, 48 are
-establishments **under other ministries** that MESRS supervises pedagogically — read
+establishments **under other ministries** that MESRS supervises pedagogically, read
 `supervisory_ministry` (e.g. `"Ministère de la Santé"` for the 25 paramedical institutes,
 `"Ministère de la Défense nationale"` for the 16 military schools), which is `null` for the
 MESRS network itself.
@@ -61,12 +61,12 @@ MESRS network itself.
 Spanning **51 wilayas**. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model (69-wilaya scheme).
 
-## Names and coordinates — provenance
+## Names and coordinates: provenance
 
 The **identity** of every record is 100% MESRS. The public network's `name` (French) and
 `website` come from the ministry's listing; the private and other-ministry institutions are
 published in Arabic only, so they carry `name_ar` with `name: null`. `name_ar` is also
-**backfilled** for the public network (joined on website) — present on ~93% of all records.
+**backfilled** for the public network (joined on website), present on ~93% of all records.
 
 The ministry's page carries **no coordinates and no address**, so the **geography is supplied
 here** and labelled honestly on every record via `geo_method` (detail) and `geo_precision`
@@ -75,12 +75,12 @@ here** and labelled honestly on every record via `geo_method` (detail) and `geo_
 | `geo_method` | Count | `geo_precision` | What the coordinate is |
 | --- | --- | --- | --- |
 | `campus` | 61 | `exact` | An OpenStreetMap geocode of the named campus, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
-| `commune` | 16 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship — used where OSM can't find the campus by name. |
-| `wilaya` | 100 | `approximate` | The centroid of the institution's wilaya — the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
+| `commune` | 16 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship – used where OSM can't find the campus by name. |
+| `wilaya` | 100 | `approximate` | The centroid of the institution's wilaya – the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
 
 `wilaya_code` and `commune` are always reconciled to the `geoalgeria` flagship dataset, so they
 are authoritative and in the 69-wilaya scheme (`commune_code` is currently `null` on every
-record — MESRS gives no commune code). Coordinates are an enrichment layer — accurate to the
+record, MESRS gives no commune code). Coordinates are an enrichment layer, accurate to the
 labelled precision, not a surveyed campus position. Regenerate them with `npm run geocode`
 (OpenStreetMap Nominatim), then `npm run fetch`.
 
@@ -94,7 +94,7 @@ import institutions from "@geoalgeria/enseignement-superieur/data/institutions.j
 // https://cdn.jsdelivr.net/npm/@geoalgeria/enseignement-superieur/data/institutions.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import es, { type Institution } from "@geoalgeria/enseignement-superieur";
@@ -137,31 +137,31 @@ data/
 
 `id` is a stable zero-padded string assigned by GeoAlgeria (the MESRS source publishes none),
 unique within this dataset. `name` is French (the MESRS network) or `null` for the Arabic-only
-private/other-ministry institutions — use `name ?? name_ar` for a display label. For Arabic
+private/other-ministry institutions, use `name ?? name_ar` for a display label. For Arabic
 wilaya and commune names, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
 to two digits; `commune_code` is currently `null` on every record. `geo_precision` is `"exact"`
-for a real campus point or `"approximate"` for a commune/wilaya centroid — `geo_method` records
-which. `source` is a fixed provenance key (`"mesrs"`) into `metadata.sources[]`, not a URL — see
+for a real campus point or `"approximate"` for a commune/wilaya centroid, `geo_method` records
+which. `source` is a fixed provenance key (`"mesrs"`) into `metadata.sources[]`, not a URL, see
 **Source** below for the actual listing pages.
 
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full wilaya
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full wilaya
 division dataset that `wilaya_code` here links to. Use `@geoalgeria/enseignement-superieur` when
 you *only* need higher-education institution data.
 
 ## Source
 
-Institution identity comes from the **MESRS**, via the public university-network page — the
+Institution identity comes from the **MESRS**, via the public university-network page, the
 [English listing](https://www.mesrs.dz/en/university-network/) for the network's French names
 and the [Arabic listing](https://www.mesrs.dz/reseau-universitaire-ar/) for Arabic names and the
 private + other-ministry institutions the English page omits. Run `npm run fetch` to regenerate
 every output from the live listings; it reconciles each record's wilaya/commune to the flagship
 dataset and attaches the coordinate seed (`scripts/seeds/coordinates.json`, refreshed with `npm
 run geocode`). It fails loudly if the institution count collapses. Coordinates are
-OpenStreetMap-derived — see **Names and coordinates** above.
+OpenStreetMap-derived, see **Names and coordinates** above.
 
 ## License & attribution
 

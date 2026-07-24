@@ -4,7 +4,7 @@
 
 # @geoalgeria/jeunesse
 
-**Every youth establishment in Algeria — as data you can install.**
+**Every youth establishment in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/jeunesse)](https://www.npmjs.com/package/@geoalgeria/jeunesse)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/jeunesse)](https://www.npmjs.com/package/@geoalgeria/jeunesse)
@@ -12,11 +12,11 @@
 
 </div>
 
-2,334 youth establishments across Algeria — **maisons de jeunes**, complexes sportifs de
+2,334 youth establishments across Algeria, **maisons de jeunes**, complexes sportifs de
 proximité, salles polyvalentes, auberges de jeunes, science & cultural centers, youth camps
-and more — each with its name, **type**, address, capacity, operational status, PMR
+and more, each with its name, **type**, address, capacity, operational status, PMR
 accessibility, built/land area, commune / daïra / wilaya, and GPS coordinates. Sourced from
-the **Ministry of Youth and Sports GIS (sig.mjs.gov.dz)** — the same official
+the **Ministry of Youth and Sports GIS (sig.mjs.gov.dz)**, the same official
 system behind [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports).
 Shipped as JSON, CSV, and GeoJSON. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -32,15 +32,15 @@ const all = jeunesse.institutions();                 // 2,334
 const inAlgiers = jeunesse.institutionsByWilaya(16);  // establishments in wilaya 16
 const houses = jeunesse.institutionsByType("MJ");     // every maison de jeunes
 
-// Everything has lat/lng — distance-sort, map, or nearest-establishment in a few lines.
+// Everything has lat/lng – distance-sort, map, or nearest-establishment in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest youth center" lookups** — coordinates on every record, ready for distance sorting.
-- **Civic & youth apps** — map maisons de jeunes, sports complexes and cultural centers per wilaya, filtered by capacity or operational status.
-- **Maps** — drop-in GeoJSON point layer for the whole youth-establishment network.
-- **Research & planning** — establishment density by type and wilaya, capacity analysis, PMR-accessibility and operational-status audits.
+- **"Nearest youth center" lookups** – coordinates on every record, ready for distance sorting.
+- **Civic & youth apps** – map maisons de jeunes, sports complexes and cultural centers per wilaya, filtered by capacity or operational status.
+- **Maps** – drop-in GeoJSON point layer for the whole youth-establishment network.
+- **Research & planning** – establishment density by type and wilaya, capacity analysis, PMR-accessibility and operational-status audits.
 
 ## What's inside
 
@@ -70,7 +70,7 @@ import institutions from "@geoalgeria/jeunesse/data/institutions.json" with { ty
 // https://cdn.jsdelivr.net/npm/@geoalgeria/jeunesse/data/institutions.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import jeunesse, { type Institution } from "@geoalgeria/jeunesse";
@@ -117,10 +117,10 @@ data/
 }
 ```
 
-`id` is an opaque, zero-padded sequence string, unique within `institutions.json` — don't
+`id` is an opaque, zero-padded sequence string, unique within `institutions.json`, don't
 parse it. The GIS publishes names in **French**; `name_ar` is the Arabic name **backfilled**
 from the ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m, and
-type-checked so a different kind of facility's name is never grafted on) — present on ~59% of
+type-checked so a different kind of facility's name is never grafted on), present on ~59% of
 records, `null` where no confident match exists (as above). `name` is `null` for the ~5% the
 source leaves blank; `commune` and `daira` are French (uppercase, as published); `commune_code`
 is currently always `null` (the MJS GIS gives a commune name only). For the full French
@@ -142,7 +142,7 @@ infrastructure.
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 wilaya division dataset that `wilaya_code` here links to.
 
 ## Source

@@ -4,7 +4,7 @@
 
 # @geoalgeria/poste
 
-**Every Algérie Poste office and ATM — as data you can install.**
+**Every Algérie Poste office and ATM, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/poste)](https://www.npmjs.com/package/@geoalgeria/poste)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/poste)](https://www.npmjs.com/package/@geoalgeria/poste)
@@ -12,7 +12,7 @@
 
 </div>
 
-3,908 post offices and 2,026 ATMs across Algeria — with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3,908 post offices and 2,026 ATMs across Algeria, with **real postal codes**, bilingual (French / Arabic) names, GPS coordinates, and commune/wilaya linkage. Sourced from Algérie Poste, shipped as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -32,10 +32,10 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 ## What you can build
 
-- **Postal-code validation & lookup** — every office carries its real `postal_code`.
-- **Branch / ATM locators** — coordinates on (almost) every record, ready for distance sorting or a map.
-- **Fintech & logistics** — match addresses to the nearest post office or GAB.
-- **Maps** — drop-in GeoJSON point layers for the whole postal network.
+- **Postal-code validation & lookup** – every office carries its real `postal_code`.
+- **Branch / ATM locators** – coordinates on (almost) every record, ready for distance sorting or a map.
+- **Fintech & logistics** – match addresses to the nearest post office or GAB.
+- **Maps** – drop-in GeoJSON point layers for the whole postal network.
 
 ## What's inside
 
@@ -54,7 +54,7 @@ import offices from "@geoalgeria/poste/data/postoffices.json" with { type: "json
 // https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/postoffices.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import poste, { type PostOffice, type Atm } from "@geoalgeria/poste";
@@ -75,7 +75,7 @@ data/
   geojson/atms.geojson
 ```
 
-> GeoJSON includes only records that have coordinates — 16 offices and 5 ATMs
+> GeoJSON includes only records that have coordinates, 16 offices and 5 ATMs
 > report no `lat`/`lng` and are omitted there (but remain in JSON/CSV, with
 > `geo_precision`/`geo_method` both `null`). ATM records carry `commune_code`
 > as `null` (the source API doesn't resolve ATMs to a commune code).
@@ -110,7 +110,7 @@ Algérie Poste's 4-digit commune code, which joins to GeoAlgeria's `code_commune
 `geo_precision` is `"exact"` (or `null` alongside `lat`/`lng` when the office
 isn't geocoded); `geo_method` names how the point was obtained.
 
-**ATM** — same shape, keyed by `id`/`name`/`wilaya_code`/`postal_code` with
+**ATM** – same shape, keyed by `id`/`name`/`wilaya_code`/`postal_code` with
 `lat`/`lng`, plus a `status` field (`"OPEN"`, `"CLOSED (OFFLINE)"`, or the
 undocumented source value `"1"`); `commune_code` and `address` are always
 `null` (the source doesn't resolve them for ATMs).
@@ -118,7 +118,7 @@ undocumented source value `"1"`); `commune_code` and `address` are always
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it mirrors
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it mirrors
 this postal data in and exposes `postOffices` / `atms` alongside the full
 division dataset. Use `@geoalgeria/poste` when you *only* need postal/banking data.
 
@@ -127,8 +127,8 @@ division dataset. Use `@geoalgeria/poste` when you *only* need postal/banking da
 Data comes from **Algérie Poste** via the public BaridiMap API
 (<https://baridimap.poste.dz>). Run `npm run fetch` to regenerate every output
 from the live API; the same run mirrors the data into the `geoalgeria` package so
-the two never drift (this package is the canonical source). Re-fetch periodically
-— BaridiMap still files offices under the 58-wilaya scheme, so new wilayas 59–69
+the two never drift (this package is the canonical source). Re-fetch periodically.
+BaridiMap still files offices under the 58-wilaya scheme, so new wilayas 59–69
 currently appear under their mother wilaya.
 
 ## License & attribution

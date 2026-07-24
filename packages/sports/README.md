@@ -4,7 +4,7 @@
 
 # @geoalgeria/sports
 
-**Every sports facility in Algeria — as data you can install.**
+**Every sports facility in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
@@ -12,9 +12,9 @@
 
 </div>
 
-5,141 sports facilities across Algeria — **proximity fields**, stadiums, swimming pools,
+5,141 sports facilities across Algeria, **proximity fields**, stadiums, swimming pools,
 specialized halls, athletics tracks, tennis courts, equestrian centers, nautical bases and
-more — each with its name, facility **type**, address, commune / daïra / wilaya, capacity,
+more, each with its name, facility **type**, address, commune / daïra / wilaya, capacity,
 operational status, PMR accessibility, built and land area, year of reception, and geographic
 coordinates. Sourced from the **Ministry of Youth and Sports GIS
 (sig.mjs.gov.dz)**, shipped as JSON, CSV, and GeoJSON. Part of
@@ -31,15 +31,15 @@ const all = sports.facilities();                    // 5,141
 const inOran = sports.facilitiesByWilaya(31);       // facilities in wilaya 31
 const pools = sports.facilitiesByType("P25");       // every 25 m pool
 
-// Everything has lat/lng — distance-sort, map, or nearest-facility in a few lines.
+// Everything has lat/lng – distance-sort, map, or nearest-facility in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest pool / stadium" lookups** — coordinates on every record, ready for distance sorting.
-- **Sports & civic apps** — map stadiums, pools and courts per wilaya, filter by type or status.
-- **Maps** — drop-in GeoJSON point layer for the entire sports infrastructure network.
-- **Research & planning** — facility density by type, capacity analysis, operational status audits.
+- **"Nearest pool / stadium" lookups** – coordinates on every record, ready for distance sorting.
+- **Sports & civic apps** – map stadiums, pools and courts per wilaya, filter by type or status.
+- **Maps** – drop-in GeoJSON point layer for the entire sports infrastructure network.
+- **Research & planning** – facility density by type, capacity analysis, operational status audits.
 
 ## What's inside
 
@@ -74,7 +74,7 @@ const pools = sports.facilitiesByType("P25");       // every 25 m pool
 | Grand stade | `GS` | 1 |
 | **Total** | | **5,141** |
 
-Spanning **58 wilayas**, every facility geocoded — 5,008 to an `exact` point, the
+Spanning **58 wilayas**, every facility geocoded, 5,008 to an `exact` point, the
 remaining 133 `approximate`. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model.
 
@@ -88,7 +88,7 @@ import facilities from "@geoalgeria/sports/data/facilities.json" with { type: "j
 // https://cdn.jsdelivr.net/npm/@geoalgeria/sports/data/facilities.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import sports, { type Facility } from "@geoalgeria/sports";
@@ -146,7 +146,7 @@ URL). For Arabic wilaya and commune names, join `wilaya_code` against the
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/sports` when you
 *only* need sports infrastructure data.
 

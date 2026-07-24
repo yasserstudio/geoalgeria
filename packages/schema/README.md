@@ -1,13 +1,13 @@
 # @geoalgeria/schema
 
-> The canonical data contract every GeoAlgeria dataset conforms to — one shared schema, one validator, one metadata shape.
+> The canonical data contract every GeoAlgeria dataset conforms to, one shared schema, one validator, one metadata shape.
 
 This package is the single source of truth for the shape of GeoAlgeria's open datasets (schema **v2**). It ships:
 
-- **TypeScript types** — `GeoRecord`, `DatasetMetadata`, `SourceRef`, `Manifest`, `Refs`, `GeoPrecision`. Each `@geoalgeria/*` dataset's records are a `GeoRecord` plus domain-specific extra fields.
-- **A zero-dependency runtime validator** — `validateRecords` / `validateMetadata`. Enforces the contract (string `wilaya_code`, string ONS `commune_code`, `geo_precision: exact|approximate|null` and `geo_method` — each null if and only if the record has no coordinate, `lat`/`lng`, `refs`), an always-on **Algeria-bbox coordinate guard** that catches lat/lng swaps and sign flips, and an optional **point-in-wilaya** check when you supply boundary polygons.
-- **Canonical builders** — `buildMetadata` (counts, precision breakdown, honest `estimated_universe` coverage, `bbox`), `buildManifest` (the repo catalog / `index.json`), and `buildDcat` (a schema.org `Dataset` descriptor for Google Dataset Search / AI answer engines).
-- **Emit helpers** — `toCSV`, `toGeoJSON`, `wcode`, `round6`, `haversine`, `bbox`.
+- **TypeScript types** – `GeoRecord`, `DatasetMetadata`, `SourceRef`, `Manifest`, `Refs`, `GeoPrecision`. Each `@geoalgeria/*` dataset's records are a `GeoRecord` plus domain-specific extra fields.
+- **A zero-dependency runtime validator** – `validateRecords` / `validateMetadata`. Enforces the contract (string `wilaya_code`, string ONS `commune_code`, `geo_precision: exact|approximate|null` and `geo_method`, each null if and only if the record has no coordinate, `lat`/`lng`, `refs`), an always-on **Algeria-bbox coordinate guard** that catches lat/lng swaps and sign flips, and an optional **point-in-wilaya** check when you supply boundary polygons.
+- **Canonical builders** – `buildMetadata` (counts, precision breakdown, honest `estimated_universe` coverage, `bbox`), `buildManifest` (the repo catalog / `index.json`), and `buildDcat` (a schema.org `Dataset` descriptor for Google Dataset Search / AI answer engines).
+- **Emit helpers** – `toCSV`, `toGeoJSON`, `wcode`, `round6`, `haversine`, `bbox`.
 
 ## Usage
 
@@ -31,7 +31,7 @@ const meta = buildMetadata({
 
 | field | type | notes |
 |---|---|---|
-| `id` | `string` | opaque, unique **within its file** — not globally unique, not unique across files even within one package |
+| `id` | `string` | opaque, unique **within its file** – not globally unique, not unique across files even within one package |
 | `name` / `name_fr` / `name_ar` | `string \| null` | domain-default `name`; localized variants optional |
 | `wilaya_code` | `string` | zero-padded `"01".."69"` |
 | `commune_code` | `string \| null` | ONS code; first 2 digits === `wilaya_code` |
@@ -44,7 +44,7 @@ const meta = buildMetadata({
 
 `validateRecords` runs the point-in-wilaya check only when you pass `boundaries` (built with `loadBoundaries(featureCollection)`), so the package ships no polygons. Without them, the Algeria-bbox guard still catches gross coordinate errors. This repo's polygons live in `packages/dataset/data/geojson/wilaya-boundaries.geojson` (69 wilayas, OSM/ODbL; published in the `geoalgeria` npm package under `data/geojson/`).
 
-`loadBoundaries` **throws** rather than returning an empty or partial index — on no usable features, on any feature it cannot index, and on a duplicate wilaya code. `pointInWilaya` reports a code it has no polygon for as *inside* ("can't disprove, don't flag"), so a degraded index does not weaken the check, it silently switches it off; a load-time throw is the only outcome that cannot be mistaken for a clean run.
+`loadBoundaries` **throws** rather than returning an empty or partial index, on no usable features, on any feature it cannot index, and on a duplicate wilaya code. `pointInWilaya` reports a code it has no polygon for as *inside* ("can't disprove, don't flag"), so a degraded index does not weaken the check, it silently switches it off; a load-time throw is the only outcome that cannot be mistaken for a clean run.
 
 ## License
 
