@@ -4,7 +4,7 @@
 
 # @geoalgeria/telecom
 
-**Algeria mobile-network coverage — as data you can install.**
+**Algeria mobile-network coverage, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
@@ -13,7 +13,7 @@
 </div>
 
 **2,798 5G coverage points** across Algeria, published by the operators' own
-coverage maps — **Djezzy (1,001)**, **Mobilis (1,621)**, and **Ooredoo (176)** —
+coverage maps, **Djezzy (1,001)**, **Mobilis (1,621)**, and **Ooredoo (176)**,
 each with coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
 and TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -42,9 +42,9 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 ## What you can build
 
-- **5G coverage checkers** — "is there 5G near me / in my wilaya?"
-- **Operator comparison** — Djezzy / Mobilis / Ooredoo footprint per wilaya/commune.
-- **Maps** — drop-in GeoJSON point layers for the 5G rollout.
+- **5G coverage checkers** – "is there 5G near me / in my wilaya?"
+- **Operator comparison** – Djezzy / Mobilis / Ooredoo footprint per wilaya/commune.
+- **Maps** – drop-in GeoJSON point layers for the 5G rollout.
 
 ## What's inside
 
@@ -61,18 +61,18 @@ Touggourt).
 > coverage map. Djezzy and Mobilis publish **cell-site** locations; Ooredoo
 > publishes **commune-level** points within covered communes (a few communes
 > carry several). The circles those maps draw are a fixed display radius, **not
-> measured RF coverage** — treat these as 5G *presence* points, not coverage
+> measured RF coverage**, treat these as 5G *presence* points, not coverage
 > polygons.
 
 ## Organization (future-proof)
 
 Coverage is namespaced by **technology**, so adding a new generation later is
-purely additive — nothing renames:
+purely additive, nothing renames:
 
 ```
 data/
   coverage/5g/
-    sites.json          # combined — all operators
+    sites.json          # combined – all operators
     djezzy.json  mobilis.json  ooredoo.json
   csv/coverage/5g/sites.csv          # repo + Release bundle (not in npm tarball)
   geojson/coverage/5g/sites.geojson  # Point features
@@ -110,7 +110,7 @@ FR/AR but no street address; Ooredoo has the commune name only). For Ooredoo,
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn a `wilaya_code` into a polygon or name.
 
 ## Source & regeneration
@@ -128,7 +128,7 @@ failed operator never overwrites good committed data with a partial set.
 
 Code is [MIT](LICENSE). The underlying data is © the respective operators
 (**Djezzy**, **Mobilis**, **Ooredoo**), redistributed for reference and to power
-[GeoAlgeria](https://geoalgeria.com). 5G rollout is ongoing — each rebuild
+[GeoAlgeria](https://geoalgeria.com). 5G rollout is ongoing, each rebuild
 reflects whatever the operators' maps currently show; verify against the
 operators for authoritative, real-time information.
 

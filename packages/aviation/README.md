@@ -4,7 +4,7 @@
 
 # @geoalgeria/aviation
 
-**Every civil airport in Algeria — as data you can install.**
+**Every civil airport in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
@@ -12,7 +12,7 @@
 
 </div>
 
-33 civil airports across Algeria — with official names, **ICAO (OACI) codes**, postal
+33 civil airports across Algeria, with official names, **ICAO (OACI) codes**, postal
 addresses, phone numbers, websites, GPS coordinates, and wilaya linkage. Sourced from
 ANAC (the Autorité Nationale de l'Aviation Civile), shipped as JSON, CSV, and GeoJSON.
 Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -28,15 +28,15 @@ const all = aviation.airports();                 // 33
 const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene
 const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 
-// Everything has lat/lng — distance-sort, map, or nearest-airport in a few lines.
+// Everything has lat/lng – distance-sort, map, or nearest-airport in a few lines.
 ```
 
 ## What you can build
 
-- **Nearest-airport lookups** — coordinates on every record, ready for distance sorting.
-- **ICAO ↔ airport resolution** — map flight-data ICAO codes to names, contacts, and location.
-- **Travel & logistics** — match a wilaya or a point to its serving airport.
-- **Maps** — drop-in GeoJSON point layer for the whole civil-airport network.
+- **Nearest-airport lookups** – coordinates on every record, ready for distance sorting.
+- **ICAO ↔ airport resolution** – map flight-data ICAO codes to names, contacts, and location.
+- **Travel & logistics** – match a wilaya or a point to its serving airport.
+- **Maps** – drop-in GeoJSON point layer for the whole civil-airport network.
 
 ## What's inside
 
@@ -57,7 +57,7 @@ import airports from "@geoalgeria/aviation/data/airports.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/airports.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import aviation, { type Airport } from "@geoalgeria/aviation";
@@ -98,25 +98,25 @@ data/
 }
 ```
 
-`id` is the ICAO code lowercased. `icao` always matches `DA[A-Z]{2}`. `iata` is `null` — ANAC
+`id` is the ICAO code lowercased. `icao` always matches `DA[A-Z]{2}`. `iata` is `null`, ANAC
 publishes only ICAO codes (the slot is reserved for later enrichment). `wilaya_code` is
 zero-padded to two digits and joins GeoAlgeria's wilayas; this dataset is wilaya-level only, so
 `commune_code` and `commune` are always `null`. Every point comes straight from ANAC's own
 published map, so `geo_precision` is always `"exact"` and `geo_method` is always
-`"source_point"` — nothing here is a fallback or a downgrade. `source` is a short key resolved
+`"source_point"`, nothing here is a fallback or a downgrade. `source` is a short key resolved
 in `metadata.sources[]` (always `"anac"`), and `refs.icao` duplicates the top-level `icao`. One
 record (`dabs`, Tébessa) has a `null` `phone` where ANAC lists none.
 
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 69-wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/aviation`
 when you *only* need airport data.
 
 ## Source
 
-Data comes from **ANAC — Autorité Nationale de l'Aviation Civile**, via the public
+Data comes from **ANAC – Autorité Nationale de l'Aviation Civile**, via the public
 airports map (<https://www.anac.dz/en/carte-des-aeroports-3/>). Run `npm run fetch` to
 regenerate every output from the live map; the build follows the map's iframe so an ANAC
 version bump doesn't break it, and it fails loudly if the airport count or ICAO format

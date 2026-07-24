@@ -1,6 +1,6 @@
 # Security Policy
 
-GeoAlgeria ships **data**, not a running service — the main risks are a
+GeoAlgeria ships **data**, not a running service; the main risks are a
 malformed package, a compromised release, or a dependency issue in the tooling.
 
 ## Reporting a Vulnerability
@@ -30,7 +30,7 @@ new release rather than as patches to old versions.
 ## Supply-chain practices
 
 - **No `NPM_TOKEN`.** Publishing uses npm **Trusted Publishing** (OIDC) from the
-  release workflow — there is no long-lived token to leak. See `RELEASING.md`.
+  release workflow; there is no long-lived token to leak. See `RELEASING.md`.
 - **Staged publishing.** Every release is staged on npm and requires a manual
   2FA approval before it goes live, so a rogue push can't auto-publish.
 - **Provenance.** Published packages carry npm provenance attestations.
@@ -40,6 +40,6 @@ new release rather than as patches to old versions.
 ## Data accuracy ≠ security
 
 Wrong or outdated data (a misspelled commune, a stale postal code) is a **data
-correction**, not a security issue — please
+correction**, not a security issue; please
 [open a normal issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose)
 for those.

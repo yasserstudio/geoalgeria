@@ -4,7 +4,7 @@
 
 # @geoalgeria/gares-routieres
 
-**Every intercity bus station in Algeria — as data you can install.**
+**Every intercity bus station in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
@@ -12,7 +12,7 @@
 
 </div>
 
-74 intercity bus stations (**gares routières**) across Algeria — with official names,
+74 intercity bus stations (**gares routières**) across Algeria, with official names,
 postal addresses, GPS coordinates, surface areas, and wilaya/commune linkage. Sourced
 from **SOGRAL** (the state operator of Algeria's coach stations), shipped as JSON, CSV,
 and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -28,18 +28,18 @@ npm install @geoalgeria/gares-routieres
 import gares from "@geoalgeria/gares-routieres";
 
 const all = gares.stations();                 // 74
-const alger = gares.stationById("16-01");      // Alger — Grands Invalides
+const alger = gares.stationById("16-01");      // Alger – Grands Invalides
 const inSetif = gares.stationsByWilaya(19);    // stations in wilaya 19
 
-// Every station has lat/lng — distance-sort, map, or nearest-station in a few lines.
+// Every station has lat/lng – distance-sort, map, or nearest-station in a few lines.
 ```
 
 ## What you can build
 
-- **Nearest-station lookups** — coordinates on every record, ready for distance sorting.
-- **Travel & logistics** — match a wilaya or a point to its serving coach station.
-- **Maps** — drop-in GeoJSON point layer for the national gare-routière network.
-- **Capacity views** — total/built surface areas per station.
+- **Nearest-station lookups** – coordinates on every record, ready for distance sorting.
+- **Travel & logistics** – match a wilaya or a point to its serving coach station.
+- **Maps** – drop-in GeoJSON point layer for the national gare-routière network.
+- **Capacity views** – total/built surface areas per station.
 
 ## What's inside
 
@@ -102,7 +102,7 @@ data/
 }
 ```
 
-`id` is an opaque string, `{wilaya_code}-{seq}`-shaped but unique within `stations.json` —
+`id` is an opaque string, `{wilaya_code}-{seq}`-shaped but unique within `stations.json`,
 don't parse it. `wilaya_code`/`commune` come from a nearest-centroid join against
 `geoalgeria` (which also reconciles SOGRAL's legacy 48-wilaya codes). 71 of 74 stations
 are `geo_precision: "exact"`; 3 are `"approximate"` (Guelma, Illizi, Aïn Oussara). The
@@ -111,12 +111,12 @@ SOGRAL location code lives under `refs.sogral`.
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 69-wilaya division dataset that `wilaya_code` here links to.
 
 ## Source
 
-Data comes from **SOGRAL — EPE SOGRAL Spa** (Société de Gestion des Gares Routières
+Data comes from **SOGRAL – EPE SOGRAL Spa** (Société de Gestion des Gares Routières
 d'Algérie), via its live departures registry (<https://live.sogral.com>). Run
 `npm run fetch` to regenerate every output. `wilaya_code`/`commune` are resolved by
 nearest commune centroid from the `geoalgeria` dataset.

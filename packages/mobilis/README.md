@@ -4,7 +4,7 @@
 
 # @geoalgeria/mobilis
 
-**The Mobilis sales network in Algeria — as data you can install.**
+**The Mobilis sales network in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/mobilis)](https://www.npmjs.com/package/@geoalgeria/mobilis)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/mobilis)](https://www.npmjs.com/package/@geoalgeria/mobilis)
@@ -39,11 +39,11 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 
 ## What you can build
 
-- **Agency locators** — coordinates on every one of the 165 agencies, ready for
+- **Agency locators** – coordinates on every one of the 165 agencies, ready for
   distance sorting or a map.
-- **Coverage by commune** — the points of sale are tagged with their commune, so
+- **Coverage by commune** – the points of sale are tagged with their commune, so
   you can count or rank Mobilis presence per commune/wilaya.
-- **Bilingual directories** — agency name and address in both French and Arabic.
+- **Bilingual directories** – agency name and address in both French and Arabic.
 
 ## What's inside
 
@@ -52,7 +52,7 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 | Agencies (*Agence Mobilis*) | **165** | ✅ all 165 | bilingual FR/AR, 56/58 wilayas |
 | Approved points of sale | **12,180** | ❌ none | FR name + address + commune |
 
-> The points of sale are a **commune-level directory** — the source carries no
+> The points of sale are a **commune-level directory**, the source carries no
 > coordinates for them. To map them, aggregate to commune centroids (join
 > `commune` to the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria)
 > communes) or geocode the addresses yourself.
@@ -67,7 +67,7 @@ import agences from "@geoalgeria/mobilis/data/agences.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/agences.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import mobilis, { type Agence, type Pdv } from "@geoalgeria/mobilis";
@@ -133,20 +133,20 @@ it stays unique across the merged `all()` collection. Mobilis' own id is kept as
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn a point of sale's `commune` into a polygon or centroid. Use
 `@geoalgeria/mobilis` when you *only* need the Mobilis network.
 
 ## Source
 
 Data comes from the **Mobilis** store locator
-(<https://mobilis.dz/mapagence>). There is no documented API — the locator calls
+(<https://mobilis.dz/mapagence>). There is no documented API, the locator calls
 a handful of JSON endpoints behind an `X-Requested-With` header, and the site
 sits behind a WAF. Run `npm run fetch` to regenerate every output: it primes a
 session, walks all 58 wilayas for both categories, parses the `"lat, lng"`
 coordinate strings (handling the comma-decimal rows), and normalizes wilaya
 codes. Mobilis files records under the **58-wilaya scheme**, so new wilayas
-59–69 currently appear under their mother wilaya — same as the Algérie Poste and
+59–69 currently appear under their mother wilaya, same as the Algérie Poste and
 ANEM data.
 
 ## License & attribution
@@ -154,7 +154,7 @@ ANEM data.
 Code is [MIT](LICENSE). The underlying data is © **ATM Mobilis**, redistributed
 for reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against
 Mobilis for authoritative, real-time information. The points-of-sale list churns
-as resellers come and go — each rebuild reflects whatever the locator currently
+as resellers come and go, each rebuild reflects whatever the locator currently
 shows.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/mobilis) · [Browse all packages →](https://geoalgeria.com/data)

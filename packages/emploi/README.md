@@ -4,7 +4,7 @@
 
 # @geoalgeria/emploi
 
-**Every public employment agency in Algeria — as data you can install.**
+**Every public employment agency in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
@@ -13,7 +13,7 @@
 </div>
 
 The **58 AWEM** (wilaya employment agencies) and **273 ALEM** (local employment
-agencies) of Algeria's national employment agency, **ANEM** — each with address,
+agencies) of Algeria's national employment agency, **ANEM**, each with address,
 phone, fax, email, manager, and GPS coordinates. Shipped
 as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -37,9 +37,9 @@ const reggane = alem.filter((a) => a.name.includes("REGGANE"));
 
 ## What you can build
 
-- **Agency locators** — coordinates on (almost) every record, ready for distance sorting or a map.
-- **Contact directories** — phone, fax, email, and manager per agency.
-- **Maps** — drop-in GeoJSON point layers for the whole employment network.
+- **Agency locators** – coordinates on (almost) every record, ready for distance sorting or a map.
+- **Contact directories** – phone, fax, email, and manager per agency.
+- **Maps** – drop-in GeoJSON point layers for the whole employment network.
 
 ## What's inside
 
@@ -58,7 +58,7 @@ import alem from "@geoalgeria/emploi/data/alem.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/alem.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import emploi, { type Awem, type Alem } from "@geoalgeria/emploi";
@@ -79,7 +79,7 @@ data/
   geojson/alem.geojson
 ```
 
-> GeoJSON includes only records that have coordinates — 2 ALEM report no
+> GeoJSON includes only records that have coordinates, 2 ALEM report no
 > `lat`/`lng` and are omitted there (but remain in JSON/CSV).
 
 ## Record shapes
@@ -110,12 +110,12 @@ data/
 
 `id` is a stable `{wilaya_code}-{seq}` key synthesized by GeoAlgeria, unique
 across the merged `agencies()` set (AWEM ids never contain a dash, ALEM ids
-always do) — ANEM's own `code` is kept too but is missing on some records and
+always do), ANEM's own `code` is kept too but is missing on some records and
 not unique, so prefer `id`. `commune_code`/`commune` are currently `null` on
-every record — ANEM's source resolves to wilaya only, not commune. `wilaya_code`
+every record, ANEM's source resolves to wilaya only, not commune. `wilaya_code`
 joins to GeoAlgeria's `wilaya_code`.
 
-**AWEM (wilaya agency)** — same shape, `id` = the 2-digit `wilaya_code`, keyed by
+**AWEM (wilaya agency)** – same shape, `id` = the 2-digit `wilaya_code`, keyed by
 `name` / `address` / `phone` / `manager` with `lat`/`lng`.
 
 ## Need the administrative divisions too?
@@ -127,7 +127,7 @@ For wilayas, dairas, and communes (and postal data), use the main
 ## Source
 
 Data comes from **ANEM** (National Employment Agency) via its cartographic
-portal (<https://www.anem.dz/#/portail-carto>). There is no public API — the
+portal (<https://www.anem.dz/#/portail-carto>). There is no public API, the
 agencies are embedded in the portal's JavaScript bundle. Run `npm run fetch` to
 regenerate every output: it rediscovers the current bundle, extracts both
 datasets, fixes the source's `X`=lat / `Y`=lng inversion, and normalizes wilaya
@@ -141,7 +141,7 @@ reference and to power [GeoAlgeria](https://geoalgeria.com). Verify against ANEM
 for authoritative, real-time information.
 
 The `manager` field is the agency head's name as published, verbatim, on ANEM's
-own public portal — it is not private data. Each rebuild reflects whatever ANEM
+own public portal, it is not private data. Each rebuild reflects whatever ANEM
 currently shows; if they remove it, it drops out here too.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/emploi) · [Browse all packages →](https://geoalgeria.com/data)

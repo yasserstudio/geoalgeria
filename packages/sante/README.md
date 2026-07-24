@@ -4,7 +4,7 @@
 
 # @geoalgeria/sante
 
-**Algeria's public health establishments — as data you can install.**
+**Algeria's public health establishments, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/sante)](https://www.npmjs.com/package/@geoalgeria/sante)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/sante)](https://www.npmjs.com/package/@geoalgeria/sante)
@@ -13,7 +13,7 @@
 </div>
 
 **695 public health establishments** across all **58 wilayas** with health
-directorates — public hospitals (EPH), proximity-health establishments (EPSP),
+directorates, public hospitals (EPH), proximity-health establishments (EPSP),
 specialized hospitals (EHS) and university hospitals (CHU) from the **Ministry of Health (MoH)**, bilingual French/Arabic, **600 geocoded** (124 to a precise
 OpenStreetMap/Wikidata point, 476 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
@@ -37,11 +37,11 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## What you can build
 
-- **Hospital & clinic locators** — coordinates on 600 of 695 records, ready for a
+- **Hospital & clinic locators** – coordinates on 600 of 695 records, ready for a
   map or nearest-facility search.
-- **Bilingual health directories** — French and Arabic names, official type and
+- **Bilingual health directories** – French and Arabic names, official type and
   wilaya for every establishment.
-- **Coverage & planning analysis** — count establishments by type per
+- **Coverage & planning analysis** – count establishments by type per
   commune/wilaya across the whole country.
 
 ## What's inside
@@ -54,10 +54,10 @@ const mappable = all.filter((e) => e.lat != null);
 
 | Type | Count | Meaning |
 | --- | --- | --- |
-| `eph` | 270 | Établissement Public Hospitalier — public hospital |
-| `epsp` | 292 | Établissement Public de Santé de Proximité — proximity health |
-| `ehs` | 108 | Établissement Hospitalier Spécialisé — specialized hospital |
-| `chu` | 20 | Centre Hospitalo-Universitaire — university hospital |
+| `eph` | 270 | Établissement Public Hospitalier – public hospital |
+| `epsp` | 292 | Établissement Public de Santé de Proximité – proximity health |
+| `ehs` | 108 | Établissement Hospitalier Spécialisé – specialized hospital |
+| `chu` | 20 | Centre Hospitalo-Universitaire – university hospital |
 | `hopital` | 5 | other public hospital |
 
 **By coordinate precision** (`geo_precision`)
@@ -66,7 +66,7 @@ const mappable = all.filter((e) => e.lat != null);
 | --- | --- | --- |
 | `exact` | 124 | precise point from an OSM or Wikidata facility in the commune |
 | `approximate` | 476 | the establishment's commune centroid |
-| `null` | 95 | locality not resolved to a commune — no coordinates (`lat`/`lng` also `null`) |
+| `null` | 95 | locality not resolved to a commune – no coordinates (`lat`/`lng` also `null`) |
 
 **By coordinate method** (`geo_method`)
 
@@ -75,11 +75,11 @@ const mappable = all.filter((e) => e.lat != null);
 | `osm_point` | 121 | precise point from an OpenStreetMap facility in the commune |
 | `wikidata_point` | 3 | precise point from a Wikidata facility in the commune |
 | `commune_centroid` | 476 | the establishment's commune centroid (approximate) |
-| `null` | 95 | no method — record has no coordinate |
+| `null` | 95 | no method – record has no coordinate |
 
 > **The registry is official; the coordinates are best-effort.** Names, type and
 > wilaya come from the Ministry of Health. The MoH publishes no coordinates,
-> so GeoAlgeria derives them — see *Source & method* below. Counts move as the
+> so GeoAlgeria derives them, see *Source & method* below. Counts move as the
 > MoH, OpenStreetMap and Wikidata are edited; each rebuild reflects their current
 > state.
 
@@ -93,7 +93,7 @@ import sante from "@geoalgeria/sante/data/sante.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/sante/data/sante.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import sante, { type HealthEstablishment } from "@geoalgeria/sante";
@@ -140,12 +140,12 @@ data/
 ```
 
 `id` is a stable `{wilaya_code}-{type}-{seq}` key synthesized by GeoAlgeria (the
-MoH publishes no establishment code) — opaque, unique within `sante.json`.
+MoH publishes no establishment code), opaque, unique within `sante.json`.
 `name` is the French name where available, else Arabic. `type` is derived from
 the establishment's title; `wilaya_code` from the MoH's wilaya tag. `sector` is
 `"public"` for the whole MoH registry (private clinics, when added, will carry
 `"private"`). `source` is always `"msp"` (the Ministry of Health registry);
-`refs` carries the per-provenance ids that contributed the record — `msp`
+`refs` carries the per-provenance ids that contributed the record, `msp`
 always, plus `osm` or `wikidata` when the coordinate was upgraded to a precise
 point. `geo_precision` is `"exact"`, `"approximate"`, or `null`; `geo_method`
 names how the coordinate was obtained (`osm_point`, `wikidata_point`,
@@ -164,7 +164,7 @@ commune.
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn an establishment's `commune_code` into a polygon or centroid. Use
 `@geoalgeria/sante` when you *only* need the health establishments.
 

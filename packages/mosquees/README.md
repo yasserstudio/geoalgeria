@@ -4,7 +4,7 @@
 
 # @geoalgeria/mosquees
 
-**The mosques of Algeria — as data you can install.**
+**The mosques of Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/mosquees)](https://www.npmjs.com/package/@geoalgeria/mosquees)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/mosquees)](https://www.npmjs.com/package/@geoalgeria/mosquees)
@@ -12,7 +12,7 @@
 
 </div>
 
-**20,759 geocoded mosques** across all **69 wilayas** of Algeria — every one with
+**20,759 geocoded mosques** across all **69 wilayas** of Algeria, every one with
 coordinates, most with Arabic and/or French names, and commune/wilaya linkage.
 A community-maintained **composite of Wikidata and OpenStreetMap**, framed
 honestly against the Ministry of Religious Affairs (MARW) national count of
@@ -37,10 +37,10 @@ const named = all.filter((m) => m.name_fr);
 
 ## What you can build
 
-- **Mosque maps & locators** — coordinates on all 20,759 records, ready for a map
+- **Mosque maps & locators** – coordinates on all 20,759 records, ready for a map
   or distance sorting.
-- **Bilingual directories** — 15k+ Arabic names and 7k+ French names, side by side.
-- **Coverage analysis** — count or rank mosque density per commune/wilaya across
+- **Bilingual directories** – 15k+ Arabic names and 7k+ French names, side by side.
+- **Coverage analysis** – count or rank mosque density per commune/wilaya across
   the whole country.
 
 ## What's inside
@@ -60,7 +60,7 @@ const named = all.filter((m) => m.name_fr);
 > **This is a composite, not an official registry.** Wikidata gives near-complete
 > national coverage (~19k geocoded mosques, close to the MARW figure of ~18,449);
 > OpenStreetMap adds precise coordinates, French names, denomination, and mosques
-> Wikidata lacks. Counts move as both projects are edited — each rebuild reflects
+> Wikidata lacks. Counts move as both projects are edited, each rebuild reflects
 > the current state of the sources.
 
 ## Formats
@@ -73,7 +73,7 @@ import mosquees from "@geoalgeria/mosquees/data/mosquees.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mosquees/data/mosquees.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import mosquees, { type Mosquee } from "@geoalgeria/mosquees";
@@ -131,7 +131,7 @@ GeoAlgeria's `wilaya_code`.
 ## Need the administrative divisions too?
 
 For wilayas, dairas, and communes, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it's how
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it's how
 you turn a mosque's `commune_code` into a polygon or centroid. Use
 `@geoalgeria/mosquees` when you *only* need the mosques.
 
@@ -140,11 +140,11 @@ you turn a mosque's `commune_code` into a polygon or centroid. Use
 Run `npm run fetch` to regenerate every output. It:
 
 1. queries **Wikidata** (SPARQL) for every item that is an instance of a subclass
-   of *mosque* (Q32815) located in Algeria (P17 = Q262) with a coordinate (P625)
-   — the comprehensive base;
+   of *mosque* (Q32815) located in Algeria (P17 = Q262) with a coordinate (P625),
+   the comprehensive base;
 2. queries **OpenStreetMap** (Overpass) for `amenity=place_of_worship` +
    `religion=muslim` inside Algeria;
-3. **merges** them — an OSM mosque within ~150 m of a Wikidata mosque is folded
+3. **merges** them, an OSM mosque within ~150 m of a Wikidata mosque is folded
    into that record (lending its French name, denomination, and `refs.osm`); OSM
    mosques with no match become their own records;
 4. attaches commune/wilaya by nearest commune centroid.

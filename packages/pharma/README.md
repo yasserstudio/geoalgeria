@@ -4,7 +4,7 @@
 
 # @geoalgeria/pharma
 
-**Algeria's pharmaceutical sector — one install.**
+**Algeria's pharmaceutical sector, one install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/pharma)](https://www.npmjs.com/package/@geoalgeria/pharma)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -32,14 +32,14 @@ import { pharmacies } from "@geoalgeria/pharma";
 
 | Namespace | Package | What |
 | --- | --- | --- |
-| `industrie` | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Approved pharmaceutical manufacturers — medicine (PP) & medical-device (DM) makers (Ministry of Pharmaceutical Industry) |
+| `industrie` | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | Approved pharmaceutical manufacturers – medicine (PP) & medical-device (DM) makers (Ministry of Pharmaceutical Industry) |
 | `pharmacies` | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | Pharmacies / officines (OpenStreetMap) |
 
 > More of the sector may join over time (e.g. a medical-laboratories layer once open coverage is adequate). Installing `@geoalgeria/pharma` keeps you on the full set.
 
 ## Source & license
 
-Each member carries its own source and attribution (see its README) — MIP register for `industrie`, OpenStreetMap (ODbL) for `pharmacies`. Package code under MIT (see [LICENSE](LICENSE)).
+Each member carries its own source and attribution (see its README), MIP register for `industrie`, OpenStreetMap (ODbL) for `pharmacies`. Package code under MIT (see [LICENSE](LICENSE)).
 
 ## Questions?
 

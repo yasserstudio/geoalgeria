@@ -4,7 +4,7 @@
 
 # @geoalgeria/agriculture
 
-**Algeria's agriculture-sector institutions — as data you can install.**
+**Algeria's agriculture-sector institutions, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/agriculture)](https://www.npmjs.com/package/@geoalgeria/agriculture)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/agriculture)](https://www.npmjs.com/package/@geoalgeria/agriculture)
@@ -14,7 +14,7 @@
 
 # Overview
 
-196 agriculture-sector institutions from the **Ministry of Agriculture, Rural Development and Fisheries (MADR)** institutional directory — agricultural-services directorates, forest conservations, technical & research institutes, training centres, chambers of agriculture, public offices and groups — bilingual (FR/AR), typed, with wilaya/commune linkage and coordinates.
+196 agriculture-sector institutions from the **Ministry of Agriculture, Rural Development and Fisheries (MADR)** institutional directory, agricultural-services directorates, forest conservations, technical & research institutes, training centres, chambers of agriculture, public offices and groups, bilingual (FR/AR), typed, with wilaya/commune linkage and coordinates.
 
 ## Installation
 
@@ -77,14 +77,14 @@ metadata().wilayas_covered; // 58
 | `commune_centroid` | 89 | Address matched a commune; centroid of that commune |
 | `wilaya_centroid` | 107 | No commune in the address; centroid of the wilaya chief town |
 
-> DSA covers all **58 wilayas**. Conservations des Forêts (48) and Chambres d'Agriculture (49) use the pre-2019 **48-wilaya** division — the southern wilayas fold into their parents there.
+> DSA covers all **58 wilayas**. Conservations des Forêts (48) and Chambres d'Agriculture (49) use the pre-2019 **48-wilaya** division, the southern wilayas fold into their parents there.
 
 ## Formats
 
-- `data/agriculture.json` — full array (typed by `types/index.d.ts`)
-- `data/csv/agriculture.csv` — flat CSV
-- `data/geojson/agriculture.geojson` — `FeatureCollection` (all records)
-- `data/metadata.json` — counts, sources, generated date
+- `data/agriculture.json` – full array (typed by `types/index.d.ts`)
+- `data/csv/agriculture.csv` – flat CSV
+- `data/geojson/agriculture.geojson` – `FeatureCollection` (all records)
+- `data/metadata.json` – counts, sources, generated date
 
 ```js
 import data from "@geoalgeria/agriculture/data/agriculture.json" with { type: "json" };
@@ -96,15 +96,15 @@ import type { AgricultureInstitution } from "@geoalgeria/agriculture";
 
 ## How the data is built
 
-Extracted from the MADR directory (`madr.gov.dz/contact/دليل-الهاتف/`, Arabic — the up-to-date side; `fr.madr.gov.dz/contact/annuaire/` for the bilingual category labels), normalized to official wilaya codes, then geocoded against the geoalgeria commune set. See `research/agriculture/` in the monorepo for the full pipeline (`parse.py` → `normalize.py` → `geocode.py`).
+Extracted from the MADR directory (`madr.gov.dz/contact/دليل-الهاتف/`, Arabic, the up-to-date side; `fr.madr.gov.dz/contact/annuaire/` for the bilingual category labels), normalized to official wilaya codes, then geocoded against the geoalgeria commune set. See `research/agriculture/` in the monorepo for the full pipeline (`parse.py` → `normalize.py` → `geocode.py`).
 
 ## On accuracy
 
-> Names, wilaya, address and phone/fax are **official** (from the MADR directory). The directory carries **no coordinates**: each record is placed at the centroid of the commune named in its address, or — when the address has no recognizable commune — at the centroid of the wilaya chief town (see `geo_method`; `geo_precision` is `"approximate"` for every record here — none of these are surveyed points). These are approximate locations for the *wilaya/commune*, not surveyed building points. Some source rows have minor typos that have been normalized.
+> Names, wilaya, address and phone/fax are **official** (from the MADR directory). The directory carries **no coordinates**: each record is placed at the centroid of the commune named in its address, or, when the address has no recognizable commune, at the centroid of the wilaya chief town (see `geo_method`; `geo_precision` is `"approximate"` for every record here, none of these are surveyed points). These are approximate locations for the *wilaya/commune*, not surveyed building points. Some source rows have minor typos that have been normalized.
 
 ## Source & license
 
-Data from the **Ministry of Agriculture, Rural Development and Fisheries (MADR)** — a factual public-sector listing, redistributed for reference. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
+Data from the **Ministry of Agriculture, Rural Development and Fisheries (MADR)**, a factual public-sector listing, redistributed for reference. Wilaya/commune linkage uses the geoalgeria base dataset. Package code under MIT (see [LICENSE](LICENSE)).
 
 ## Questions?
 

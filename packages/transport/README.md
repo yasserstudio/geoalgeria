@@ -4,7 +4,7 @@
 
 # @geoalgeria/transport
 
-**Algeria's transport sector — one install for every mode.**
+**Algeria's transport sector, one install for every mode.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/transport)](https://www.npmjs.com/package/@geoalgeria/transport)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -44,7 +44,7 @@ whole sector.
 
 ## License
 
-Code is [MIT](LICENSE). Each member carries its own data license and attribution — see the
+Code is [MIT](LICENSE). Each member carries its own data license and attribution, see the
 respective package READMEs.
 
 [Browse all packages →](https://geoalgeria.com/data)

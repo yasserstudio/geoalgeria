@@ -4,7 +4,7 @@
 
 # @geoalgeria/formation-professionnelle
 
-**Every vocational training establishment in Algeria — as data you can install.**
+**Every vocational training establishment in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/formation-professionnelle)](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/formation-professionnelle)](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle)
@@ -12,8 +12,8 @@
 
 </div>
 
-1,932 vocational training establishments across Algeria — **CFPA**, **INSFP**, **IFEP**,
-**IEP**, **DFEP** and private accredited centers — each with its official name (Arabic,
+1,932 vocational training establishments across Algeria, **CFPA**, **INSFP**, **IFEP**,
+**IEP**, **DFEP** and private accredited centers, each with its official name (Arabic,
 with French where available), establishment **type**, **capacity**, **boarding** info, rich
 **contact details** (phone, fax, email, website, Facebook), and GPS coordinates. Sourced
 from the **Ministere de la Formation et de l'Enseignement Professionnels (MFEP)** via
@@ -32,16 +32,16 @@ const byWilaya = fp.establishmentsByWilaya(16);     // establishments in wilaya 
 const cfpas = fp.establishmentsByType("cfpa");      // every CFPA
 const one = fp.establishmentById("00001");          // single record by id
 
-// 1,375 records have lat/lng — distance-sort, map, or nearest center in a few lines.
+// 1,375 records have lat/lng – distance-sort, map, or nearest center in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest training center" lookups** — 1,375 geocoded records, ready for distance sorting.
-- **Vocational training directories** — bilingual names, type, capacity and full contact info on every record.
-- **Maps** — drop-in GeoJSON point layer for the vocational training network (71% geocoded).
-- **Capacity planning** — theoretical and realized capacities, boarding availability and surface area.
-- **Sector analysis** — 1,209 public vs 723 private establishments across 58 wilayas.
+- **"Nearest training center" lookups** – 1,375 geocoded records, ready for distance sorting.
+- **Vocational training directories** – bilingual names, type, capacity and full contact info on every record.
+- **Maps** – drop-in GeoJSON point layer for the vocational training network (71% geocoded).
+- **Capacity planning** – theoretical and realized capacities, boarding availability and surface area.
+- **Sector analysis** – 1,209 public vs 723 private establishments across 58 wilayas.
 
 ## What's inside
 
@@ -60,7 +60,7 @@ const one = fp.establishmentById("00001");          // single record by id
 | **Total** | | **1,932** |
 
 Spanning **58 wilayas** (pre-reform scheme). 1,375 of 1,932 establishments are geocoded
-(71%) — `lat`/`lng` is `null` for the remaining 557. `wilaya_code` uses the 58-wilaya
+(71%), `lat`/`lng` is `null` for the remaining 557. `wilaya_code` uses the 58-wilaya
 scheme as published by the source.
 
 ## Formats
@@ -73,7 +73,7 @@ import establishments from "@geoalgeria/formation-professionnelle/data/establish
 // https://cdn.jsdelivr.net/npm/@geoalgeria/formation-professionnelle/data/establishments.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import fp, { type Establishment } from "@geoalgeria/formation-professionnelle";
@@ -128,7 +128,7 @@ data/
 ```
 
 `id` is an opaque, zero-padded sequence string (e.g. `"00001"`), unique within
-`establishments.json` — don't parse it. Names are bilingual — `name` is Arabic (always present),
+`establishments.json`, don't parse it. Names are bilingual, `name` is Arabic (always present),
 `name_fr` is French (may be `null`). `type` is a slug matching one of the ten establishment
 types listed above. `secteur` is `"public"` or `"prive"`. `wilaya_code` is zero-padded to two
 digits in the 58-wilaya scheme; `commune_code` is currently always `null` for this source (no
@@ -142,13 +142,13 @@ specialization strings when available.
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 69-wilaya division dataset. Use `@geoalgeria/formation-professionnelle` when you *only*
 need vocational training data.
 
 ## Source
 
-Data comes from the **MFEP — Ministere de la Formation et de l'Enseignement Professionnels**,
+Data comes from the **MFEP – Ministere de la Formation et de l'Enseignement Professionnels**,
 via [takwin.dz](https://takwin.dz). The source uses the pre-reform **58-wilaya scheme**.
 Run `npm run fetch` to regenerate every output from the live site. Names, types, contacts,
 capacities and coordinates are as published by the ministry.

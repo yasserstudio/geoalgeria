@@ -4,7 +4,7 @@
 
 # @geoalgeria/tourisme
 
-**Algeria's tourism infrastructure — as data you can install.**
+**Algeria's tourism infrastructure, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
@@ -12,8 +12,8 @@
 
 </div>
 
-4,348 geocoded tourism sites across Algeria's 69 wilayas — **hotels**, attractions, historic
-sites, thermal springs and protected areas — each with coordinates, wilaya linkage and source
+4,348 geocoded tourism sites across Algeria's 69 wilayas, **hotels**, attractions, historic
+sites, thermal springs and protected areas, each with coordinates, wilaya linkage and source
 attribution. Sourced from **ASAL Geoportail** (thermal springs), **OpenStreetMap** (hotels,
 attractions, historic sites, parks) and **Wikidata** (heritage sites, museums, parks). Shipped
 as JSON, CSV, and GeoJSON. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -31,16 +31,16 @@ const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // all tourism sites in wilaya 42
 const ruins = tourisme.byLayer("historic");       // 1,184 historic sites
 
-// Everything has lat/lng — distance-sort, map, or nearest-site in a few lines.
+// Everything has lat/lng – distance-sort, map, or nearest-site in a few lines.
 ```
 
 ## What you can build
 
-- **Tourism apps** — searchable directory of hotels, attractions and historic sites by wilaya.
-- **Nearest-site lookups** — coordinates on every record, ready for distance sorting.
-- **Maps** — drop-in GeoJSON point layers for the full tourism network.
-- **Thermal-spring guides** — temperature, flow rate, altitude and mineral composition data for 282 springs.
-- **Heritage & culture** — Wikipedia/Wikidata-linked historic sites, monuments and archaeological sites.
+- **Tourism apps** – searchable directory of hotels, attractions and historic sites by wilaya.
+- **Nearest-site lookups** – coordinates on every record, ready for distance sorting.
+- **Maps** – drop-in GeoJSON point layers for the full tourism network.
+- **Thermal-spring guides** – temperature, flow rate, altitude and mineral composition data for 282 springs.
+- **Heritage & culture** – Wikipedia/Wikidata-linked historic sites, monuments and archaeological sites.
 
 ## What's inside
 
@@ -66,7 +66,7 @@ import lodging from "@geoalgeria/tourisme/data/lodging.json" with { type: "json"
 // https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/lodging.json
 ```
 
-The loaders and record shapes are fully **typed** — TypeScript definitions ship in the package:
+The loaders and record shapes are fully **typed**, TypeScript definitions ship in the package:
 
 ```ts
 import tourisme, { type Lodging, type ThermalSpring } from "@geoalgeria/tourisme";
@@ -91,7 +91,7 @@ data/
 
 ## Record shape
 
-**Lodging** — hotels, hostels, guest houses:
+**Lodging** – hotels, hostels, guest houses:
 
 ```json
 {
@@ -119,18 +119,18 @@ data/
 `commune_code` and `commune` are null throughout.
 
 Optional contact and classification fields are present where the source publishes them, and
-absent otherwise — never null. On lodging: `address` (209 records), `phone` (204, several
+absent otherwise, never null. On lodging: `address` (209 records), `phone` (204, several
 numbers `;`-separated as OSM tags them), `website` (84), `stars` (60) and `rooms` (24). On
 attractions: `description` (26). On historic sites: `heritage_status` (17, e.g.
 `"part of UNESCO World Heritage Site"`) and `heritage` (12, the OSM protection level).
 
 Most records on these four layers come from OpenStreetMap, but 115 come from Wikidata instead
 (32 attractions, 75 historic sites, 8 parks). Those carry `source` and `geo_method` of
-`"wikidata"` and a `refs.wikidata` QID with no `refs.osm` — they are CC0, not ODbL, so filter
+`"wikidata"` and a `refs.wikidata` QID with no `refs.osm`, they are CC0, not ODbL, so filter
 on `source` if the distinction matters for your attribution. In all, 236 records carry a
 Wikidata QID and 100 a Wikipedia sitelink.
 
-**Thermal spring** — ASAL Geoportail sourced, with physical properties:
+**Thermal spring** – ASAL Geoportail sourced, with physical properties:
 
 ```json
 {
@@ -154,7 +154,7 @@ Wikidata QID and 100 a Wikipedia sitelink.
 
 `type` is one of `hammam`, `ain`, `source`, `forage`. Physical properties (`temperature_c`,
 `debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset; `minerality`
-is the only optional one. This is the one layer that names a commune — as `commune`, a name
+is the only optional one. This is the one layer that names a commune, as `commune`, a name
 rather than an ONS `commune_code`, which stays null.
 
 `wilaya_code` is zero-padded to two digits across all layers and joins GeoAlgeria's wilayas.
@@ -162,7 +162,7 @@ rather than an ONS `commune_code`, which stays null.
 ## Need the administrative divisions too?
 
 If you also need wilayas, dairas, and communes to join against, use the main
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package — it ships the full
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** package, it ships the full
 69-wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/tourisme`
 when you *only* need tourism data.
 
@@ -170,11 +170,11 @@ when you *only* need tourism data.
 
 Data comes from three sources:
 
-- **ASAL Geoportail** — thermal springs (temperature, flow rate, altitude, mineral composition).
+- **ASAL Geoportail** – thermal springs (temperature, flow rate, altitude, mineral composition).
   Public government data.
-- **OpenStreetMap** — hotels, attractions, historic sites, and parks. Licensed under
+- **OpenStreetMap** – hotels, attractions, historic sites, and parks. Licensed under
   [ODbL](https://opendatacommons.org/licenses/odbl/).
-- **Wikidata** — heritage sites, museums, and park metadata. Licensed under
+- **Wikidata** – heritage sites, museums, and park metadata. Licensed under
   [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ## License & attribution
