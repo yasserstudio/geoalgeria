@@ -6,7 +6,7 @@ This file is the short version of how work flows here; deeper docs are linked.
 ## Domain vocabulary
 
 Before writing code, data, copy, package descriptions, or issue/PR titles, read
-[`CONTEXT.md`](CONTEXT.md) — the project's canonical glossary — and use its terms,
+[`CONTEXT.md`](CONTEXT.md), the project's canonical glossary, and use its terms,
 avoiding the synonyms each lists under `_Avoid_`. If a concept is missing or a
 term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's the
 `/domain-modeling` skill).
@@ -15,7 +15,7 @@ term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's th
 
 | Path | Package | Contents |
 | --- | --- | --- |
-| `packages/schema/` | `@geoalgeria/schema` | shared v2 contract — types, validator, canonical metadata/manifest builders, emit helpers; a dev dependency of every generator, not itself a dataset |
+| `packages/schema/` | `@geoalgeria/schema` | shared v2 contract – types, validator, canonical metadata/manifest builders, emit helpers; a dev dependency of every generator, not itself a dataset |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
@@ -25,27 +25,27 @@ term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's th
 | `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministry of Youth and Sports) |
-| `packages/sports/` | `@geoalgeria/sports` | sports facilities — stadiums, pools, courts, tracks (Ministry of Youth and Sports) |
-| `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network — universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
-| `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure — hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
-| `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training — CFPA, INSFP, DFEPs, private centers (MFEP / takwin.dz) |
-| `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques — geocoded retail stores with category & hours (djezzy.dz) |
-| `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores — 572 EO/CSO/ESO with real coordinates & wilaya/commune linkage (ooredoo.dz locator API); completes the telecom retail trio |
-| `packages/mosquees/` | `@geoalgeria/mosquees` | mosques — Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
-| `packages/sante/` | `@geoalgeria/sante` | public health establishments — EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
-| `packages/protection-civile/` | `@geoalgeria/protection-civile` | civil protection (fire & rescue) units — 880 DGPC units nationwide, Arabic-named, address/phone/fax, status tier, geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage |
-| `packages/culture/` | `@geoalgeria/culture` | cultural atlas — protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
-| `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions — services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
-| `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers — 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) — 3,790 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
-| `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella — re-exports industrie-pharmaceutique + pharmacies in one install |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools — 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
-| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations — 74 SOGRAL gares routières, 51 wilayas, geocoded with surfaces (live.sogral.com) |
-| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit — 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
-| `packages/buses/` | `@geoalgeria/buses` | urban bus networks — 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
-| `packages/transport/` | `@geoalgeria/transport` | transport umbrella — re-exports aviation + ferroviaire + gares-routieres + buses |
+| `packages/sports/` | `@geoalgeria/sports` | sports facilities – stadiums, pools, courts, tracks (Ministry of Youth and Sports) |
+| `packages/enseignement-superieur/` | `@geoalgeria/enseignement-superieur` | higher-education network – universities, grandes écoles, ENS, centres + private & other-ministry institutions (MESRS) |
+| `packages/tourisme/` | `@geoalgeria/tourisme` | tourism infrastructure – hotels, attractions, historic sites, thermal springs, parks (ASAL, OSM, Wikidata) |
+| `packages/formation-professionnelle/` | `@geoalgeria/formation-professionnelle` | vocational training – CFPA, INSFP, DFEPs, private centers (MFEP / takwin.dz) |
+| `packages/djezzy/` | `@geoalgeria/djezzy` | Djezzy boutiques – geocoded retail stores with category & hours (djezzy.dz) |
+| `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores – 572 EO/CSO/ESO with real coordinates & wilaya/commune linkage (ooredoo.dz locator API); completes the telecom retail trio |
+| `packages/mosquees/` | `@geoalgeria/mosquees` | mosques – Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
+| `packages/sante/` | `@geoalgeria/sante` | public health establishments – EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
+| `packages/protection-civile/` | `@geoalgeria/protection-civile` | civil protection (fire & rescue) units – 880 DGPC units nationwide, Arabic-named, address/phone/fax, status tier, geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage |
+| `packages/culture/` | `@geoalgeria/culture` | cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
+| `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
+| `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers – 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,790 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
+| `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
+| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 51 wilayas, geocoded with surfaces (live.sogral.com) |
+| `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
+| `packages/buses/` | `@geoalgeria/buses` | urban bus networks – 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
+| `packages/transport/` | `@geoalgeria/transport` | transport umbrella – re-exports aviation + ferroviaire + gares-routieres + buses |
 
-The postal data under `packages/dataset/data/poste/` is a **generated mirror** —
+The postal data under `packages/dataset/data/poste/` is a **generated mirror**;
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.
 
 ## The loop
@@ -53,7 +53,7 @@ edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mir
 1. **Branch** off `main`: `fix/commune-name`, `feat/emploi-coords`, `chore/ci`.
 2. **Edit data**, keeping the rules in [`CONTRIBUTING.md`](CONTRIBUTING.md):
    sorted, UTF-8, sourced (JORA / Algérie Poste / ONS), bilingual FR/AR.
-3. **`pnpm validate`** — schema + integrity checks. Must pass.
+3. **`pnpm validate`**: schema + integrity checks. Must pass.
 4. **Add a changeset** if a published package changed: `pnpm changeset`
    (data semver: **major** = breaking schema · **minor** = new data/format ·
    **patch** = corrections).
@@ -79,20 +79,20 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 
 ## Marketing & announcements
 
-- Strategy, positioning, and launch copy live in **`.agents/`** (gitignored —
+- Strategy, positioning, and launch copy live in **`.agents/`** (gitignored:
   local working files, not published): `product-marketing.md`, `launch-plan.md`,
   `launch-posts.md`, `launch-discussions.md`, `release-notes-templates.md`.
 - The **Announce** workflow turns each release into a Discussion + social drafts.
   Release-note structure: [`.github/RELEASE_TEMPLATE.md`](.github/RELEASE_TEMPLATE.md)
   (committed); the marketing copy built from it: `.agents/release-notes-templates.md`.
 - Publishing public content (social posts, seeded discussions) under the owner's
-  identity needs **explicit human go-ahead** — automation drafts, humans post.
+  identity needs **explicit human go-ahead**; automation drafts, humans post.
 
 ## Don't
 
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
 - Push a bump without a changeset, or a changeset without a source for the data.
-- Commit anything from `.agents/` — it's intentionally local.
+- Commit anything from `.agents/`; it's intentionally local.
 
 ## Agent skills
 
@@ -108,4 +108,4 @@ The five canonical roles (`needs-triage`, `needs-info`, `ready-for-agent`, `read
 
 ### Domain docs
 
-Single-context — one `CONTEXT.md` + `docs/adr/` at the repo root (created lazily by `/domain-modeling`). See `docs/agents/domain.md`.
+Single-context: one `CONTEXT.md` + `docs/adr/` at the repo root (created lazily by `/domain-modeling`). See `docs/agents/domain.md`.

@@ -1,31 +1,31 @@
 # Disclaimer
 
 GeoAlgeria is an independent, community open-data project by Yasser's Studio.
-Please read this before relying on any dataset in this repository — especially
+Please read this before relying on any dataset in this repository, especially
 the bank/financial, postal, employment, telecom, and aviation data.
 
 ## Not official, not affiliated
 
 GeoAlgeria is **not affiliated with, endorsed by, sponsored by, or connected to**
-any government body, regulator, operator, or institution whose data it references —
+any government body, regulator, operator, or institution whose data it references,
 including, without limitation, the **Banque d'Algérie**, any bank or financial
 institution listed, **Algérie Poste**, **ANEM**, **ANAC**, **MFEP**, **Mobilis**,
 **Djezzy**, or **Ooredoo**, or their parent groups. All product, company, and institution names,
 acronyms, logos, **SWIFT/BIC** and bank codes are the property of their respective
-owners and are used here for **identification (nominative) purposes only** — not to
+owners and are used here for **identification (nominative) purposes only**, not to
 imply any association or endorsement.
 
 ## Sources & how the data is made
 
-The datasets are **compiled from publicly available sources** — official regulatory
+The datasets are **compiled from publicly available sources**, official regulatory
 listings (e.g. the Banque d'Algérie's published list of licensed institutions in the
-*Journal Officiel*) and each organisation's own **public** website or locator — and
+*Journal Officiel*) and each organisation's own **public** website or locator, and
 are **redistributed for reference**. Factual information such as names, addresses,
 postal codes, and identifiers is not, in itself, subject to copyright. Where a data
 point could not be confirmed against an official source, it is left empty rather than
 guessed.
 
-## No warranty — verify before you rely on it
+## No warranty – verify before you rely on it
 
 The data and software are provided **"as is", without warranty of any kind**, express
 or implied, including (without limitation) accuracy, completeness, currentness, or
@@ -49,7 +49,7 @@ distributed.
 
 ## Corrections & takedown
 
-Spotted an error — or do you represent an institution and want a record corrected or
+Spotted an error, or do you represent an institution and want a record corrected or
 removed? **[Open an issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose)**
 (or email the address on https://yasser.studio). Corrections and good-faith removal
 requests are handled promptly.
