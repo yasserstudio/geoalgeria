@@ -252,3 +252,144 @@ code alone.
 
 `LOO` (Laghouat) was the one Algerian endpoint missing entirely and blocked the JED-LOO
 arc. It shipped 2026-07-27 alongside `HRM` and `MZW`.
+
+## 14. How big is "done"? (established 2026-07-27)
+
+**The target is 44 to 57 international routes, not 122.** The 122 figure was a
+candidate cross-product of Algerian airports against destination cities. It was
+never a claim about how many routes exist, and treating it as the denominator
+badly understated progress.
+
+Air Algérie states the network size itself, and **contradicts itself on a single
+page**: `airalgerie.dz/decouvrir/nos-destinations/` carries "44 dessertes
+internationales et 33 domestiques" in the page body, and "**57** dessertes
+internationales et 33 domestiques" in the site-wide nav blurb on the same page.
+Both are first-party. Treat the target as a **range, 44 to 57**, and do not quote
+either number as exact without saying which part of the page it came from.
+
+This matters because it is the only completeness check available: when the
+collection reaches the low forties, the map can honestly claim to be near
+complete. An all-carriers dataset would have no such denominator, since nobody
+publishes how many carriers fly nonstop from Algeria, which is a strong argument
+for keeping v1 to one airline.
+
+**The destination city list is not a route list.** The ~62 foreign cities behind
+`nos-destinations` come from the booking form's city picker, which includes every
+city sellable with a connection. That is why it lists more cities than the airline
+has routes. It is a candidate set only, exactly as section 4 says; it is never
+evidence that a nonstop leg exists. `foreign-endpoints.json` is derived from it and
+inherits the same caveat: an endpoint in that file has a coordinate, not a route.
+
+**There is no published timetable to shortcut the collection.**
+`airalgerie.dz/planifier-et-reserver/programme-des-vols/` is a JavaScript booking
+widget: no PDF, no downloadable schedule, no API endpoint in the markup. Checked
+2026-07-27. So the network has to be established pair by pair, and the per-airport
+destination pages of foreign airports (Lyon, Toulouse, Marseille, Lorraine) remain
+the best citable sources, since each names the carriers serving it.
+
+## 15. The airline's own timetable: reachable by hand, defended against automation
+
+Investigated 2026-07-27 with agent-browser, recorded to HAR. Written up so nobody
+spends another evening rediscovering it.
+
+`airalgerie.dz/en/plan-your-trip/flight-schedule/` is the right source in
+principle. It is first-party and therefore **citable**, unlike Soar, and its own
+description promises "the national and international flight schedule (frequency
+of flights per week, time) available in real time" - weekly frequency is exactly
+what a route record needs, and it would mean **one query per direction instead of
+seven**.
+
+The form itself is fully understood, and all four gates below have to be passed
+in order or the submit silently does nothing:
+
+1. **Cookie consent must be accepted.** Without it the results area renders
+   "Vos paramètres peuvent vous empêcher de voir ce contenu".
+2. **`fill` does not work on the airport fields**, which are jQuery UI
+   autocompletes. Real keystrokes do (`agent-browser type`), then ArrowDown +
+   Enter to take the suggestion. The form keeps hidden inputs `depart` and
+   `arrivee` holding plain IATA codes, so state is readable and settable.
+   Note it resolves to **metro codes** by default: typing "Paris" gives
+   `PAR` / "All Paris Airports", not CDG. Type the airport code explicitly.
+3. **The date cannot be set by assigning `.value`.** The picker is easepick,
+   living in a **shadow DOM**, and it ignores an input whose value changed
+   underneath it. A day element inside `shadowRoot` has to receive a real click
+   (`composed: true`).
+4. **The trip type must be switched to one-way.** The form defaults to
+   `aller-Retour`, which requires an `endDate` nobody filled, so validation
+   aborts with no message and no request. This was the actual blocker.
+
+Pass all four and it submits, and that is where it ends:
+
+- It hands off to **Amadeus** at
+  `fly.airalgerie.dz/plnext/AirAlgerie/Override.action?EMBEDDED_TRANSACTION=TimeTable&ENC=...`
+  where `ENC` is a **~2 KB server-generated encrypted blob** carrying the search.
+  There is no URL to construct, so every query must replay the whole form.
+- That host is behind **Akamai bot protection** (an obfuscated sensor endpoint
+  posting alongside the page load), and the result renders **blank**: zero-length
+  body, empty title, no tables.
+
+**Decision: do not automate this.** Reading a public page is one thing;
+working around bot protection deployed on an airline's live booking
+infrastructure is another, and it is not something this project should build. The
+facts are not the problem, the circumvention is. It is also fragile: an encrypted
+parameter and an active bot-detection vendor will break any scraper on their
+schedule, not ours.
+
+**Use foreign airport destination pages instead.** They are public, unprotected,
+official, and each names the carriers serving that airport, so one fetch yields
+every Air Algérie route into it. Lorraine and Lyon already produced `official`
+tier confirmations this way (ORN-ETZ, TLM-LYS). Roughly 40 airports covers most
+of the European network, which is most of the network. Per-airport sourcing also
+scales better than per-leg: the citation is the airport's own page.
+
+## 16. Codeshares are tickets, not routes (found 2026-07-27)
+
+Soar's authenticated responses expose a **`codeshare`** object on an offer:
+
+```jsonc
+{"carrier_iata": "AH", "flight_number": "3016",
+ "codeshare": {"host_iata": "AH", "partner_iatas": ["TK"]}}
+```
+
+That changes what a carrier code on a leg proves. `ALG-IST` returns `AH 3016`,
+`AH 3014` and `AH 3018` sitting beside Turkish Airlines' own `TK 652`, `TK 654`
+and `TK 656` on the same routing and the same duration. An `AH` flight number on
+that leg does **not** mean Air Algérie flies it; it can mean Air Algérie sells a
+seat on Turkish metal.
+
+**A codeshare must never be drawn as an operated route.** The map claims "Air
+Algérie flies this", and a ticket is not a flight. Every leg therefore needs its
+`codeshare` field read before it ships, and where the object is present the leg is
+either dropped or recorded with the operating carrier rather than the marketing
+one.
+
+This retro-justifies the caution in section 8: reading a carrier code off a leg
+settles the *marketing* carrier, which is what a booking system knows. It is
+strong evidence but not proof of operation, and the codeshare field is the thing
+that tells the two apart. Where it is absent, as on `AH 1002` ALG-CDG or
+`AH 1020` ALG-MRS, the leg is Air Algérie's own.
+
+## 17. First authenticated sweep results (2026-07-27)
+
+Soar authenticated: six queries in one burst with no 429, well past the anonymous
+five-per-minute ceiling.
+
+| Pair | Finding | Duration check |
+| --- | --- | --- |
+| `ALG-CDG` | **Air Algérie, many daily**: AH 1002, 1000, 1214, 1534, 1542, 1012, 1230. Air France flies it too (AF 1055/1555/1655/1755/1855), one AF leg codeshared with AH | 150 min vs 133 expected, ratio 1.13 |
+| `CDG-ALG` | **Confirmed both directions**: AH 1013, 1233, 1003, 1001, 1215, 1543, 1231, 1535 | 135 min vs 133, ratio 1.02 |
+| `ALG-MRS` | **Three carriers**: AH 1020/1024, Transavia TO 7323, Volotea V7 2115/2041 | 90 min vs 88, ratio 1.03 |
+| `ALG-IST` | **Codeshare trap**: AH 3014/3016/3018 alongside TK 652/654/656, two of the AH numbers explicitly flagged codeshare with TK | 215 min vs 199, ratio 1.08 |
+| `ALG-FRA` | Empty across six consecutive days, zero raw offers, though Wikipedia lists Frankfurt | - |
+| `ALG-YUL`, `ALG-DXB` | Empty, zero raw offers, though both are listed | - |
+
+The three empties are exactly why two independent sources exist. Per section 7 a
+silence is `unclear`, never a negative, and Montreal and Dubai are both long-haul
+routes a booking API might simply not be selling on the sampled date. They stay
+`unclear` pending a citable source.
+
+**Cost note for planning.** A full 60-pair sweep across both directions and a
+calendar week is ~840 MCP calls, and MCP tool calls cannot be scripted. Use the
+adaptive shape instead: two dates per direction first, escalating to a full week
+only where both come back empty. That concentrates effort on the pairs where the
+answer is actually in doubt.

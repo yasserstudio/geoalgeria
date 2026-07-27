@@ -117,6 +117,8 @@ ENDPOINTS = [
     {"city": "ANTALYA", "iata": "AYT", "country": "TR"},
     # --- North Africa and Middle East ---
     {"city": "TUNIS", "iata": "TUN", "country": "TN"},
+    {"city": "Monastir", "iata": "MIR", "country": "TN",
+     "note": "Not on the airline's booking city list; surfaced by the route sweep."},
     {"city": "CAIRE", "iata": "CAI", "country": "EG"},
     {"city": "AMMAN", "iata": "AMM", "country": "JO"},
     {"city": "BEYROUTH", "iata": "BEY", "country": "LB"},
@@ -127,6 +129,8 @@ ENDPOINTS = [
     {"city": "DUBAI", "iata": "DXB", "country": "AE"},
     # --- Asia ---
     {"city": "Guangzhou", "iata": "CAN", "country": "CN"},
+    {"city": "Shanghai", "iata": "PVG", "country": "CN",
+     "note": "Not on the airline's booking city list; surfaced by the route sweep."},
     {"city": "PEKIN", "iata": "PEK", "country": "CN",
      "note": "Beijing is PEK and PKX. Capital is the default for a foreign flag "
              "carrier; unverified for Air Algerie specifically."},
@@ -142,7 +146,11 @@ ENDPOINTS = [
     {"city": "Douala", "iata": "DLA", "country": "CM"},
     {"city": "Johannesbourg", "iata": "JNB", "country": "ZA"},
     {"city": "Libreville", "iata": "LBV", "country": "GA"},
-    {"city": "Luanda", "iata": "LAD", "country": "AO"},
+    {"city": "Luanda", "iata": "NBJ", "country": "AO",
+     "note": "Dr. António Agostinho Neto International, which replaced Quatro de "
+             "Fevereiro (LAD) as Luanda's airport. Same trap as Dakar's DKR/DSS: "
+             "pinning the familiar code lands on the superseded field. Wikipedia's "
+             "route tables already use NBJ."},
     {"city": "Maputo", "iata": "MPM", "country": "MZ"},
     {"city": "N'Djamena", "iata": "NDJ", "country": "TD"},
     {"city": "NIAMEY", "iata": "NIM", "country": "NE"},

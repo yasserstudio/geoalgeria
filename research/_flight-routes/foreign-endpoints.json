@@ -357,18 +357,6 @@
     "source": "ourairports"
   },
   {
-    "iata": "LAD",
-    "icao": "FNLU",
-    "name": "Quatro de Fevereiro International Airport",
-    "municipality": "Luanda",
-    "country": "AO",
-    "lat": -8.85837,
-    "lng": 13.2312,
-    "type": "large_airport",
-    "airline_city_label": "Luanda",
-    "source": "ourairports"
-  },
-  {
     "iata": "LBV",
     "icao": "FOOL",
     "name": "Libreville Leon M'ba International Airport",
@@ -479,6 +467,19 @@
     "source": "ourairports"
   },
   {
+    "iata": "MIR",
+    "icao": "DTMB",
+    "name": "Monastir Habib Bourguiba International Airport",
+    "municipality": "Monastir",
+    "country": "TN",
+    "lat": 35.75809860229492,
+    "lng": 10.75469970703125,
+    "type": "medium_airport",
+    "airline_city_label": "Monastir",
+    "source": "ourairports",
+    "note": "Not on the airline's booking city list; surfaced by the route sweep."
+  },
+  {
     "iata": "MLH",
     "icao": "LFSB",
     "name": "EuroAirport Basel–Mulhouse–Freiburg",
@@ -540,6 +541,19 @@
     "airline_city_label": "MILAN",
     "source": "ourairports",
     "note": "Milan is three airports (MXP, LIN, BGY). Malpensa is the long-haul and international default; confirm per route before shipping an arc."
+  },
+  {
+    "iata": "NBJ",
+    "icao": "FNBJ",
+    "name": "Dr. Antonio Agostinho Neto International Airport",
+    "municipality": "Luanda (Ícolo e Bengo)",
+    "country": "AO",
+    "lat": -9.050734,
+    "lng": 13.499078,
+    "type": "large_airport",
+    "airline_city_label": "Luanda",
+    "source": "ourairports",
+    "note": "Dr. António Agostinho Neto International, which replaced Quatro de Fevereiro (LAD) as Luanda's airport. Same trap as Dakar's DKR/DSS: pinning the familiar code lands on the superseded field. Wikipedia's route tables already use NBJ."
   },
   {
     "iata": "NCE",
@@ -662,6 +676,19 @@
     "type": "large_airport",
     "airline_city_label": "PALMA MALLORCA",
     "source": "ourairports"
+  },
+  {
+    "iata": "PVG",
+    "icao": "ZSPD",
+    "name": "Shanghai Pudong International Airport",
+    "municipality": "Shanghai (Pudong)",
+    "country": "CN",
+    "lat": 31.1434,
+    "lng": 121.805,
+    "type": "large_airport",
+    "airline_city_label": "Shanghai",
+    "source": "ourairports",
+    "note": "Not on the airline's booking city list; surfaced by the route sweep."
   },
   {
     "iata": "RTM",
