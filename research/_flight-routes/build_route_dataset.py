@@ -1,0 +1,182 @@
+#!/usr/bin/env python3
+"""Merge everything collected into one tiered route dataset.
+
+The map was drawing 11 legs while the collection had evidence for 60 pairs. The
+fix is not to wait for perfect evidence on all of them, it is to ship each claim
+with its confidence attached, which is what every other GeoAlgeria dataset does
+with `geo_precision`. So each route carries an `evidence` tier and the app renders
+the tiers differently.
+
+Two tiers, and the wording of each is deliberate:
+
+  verified  Operator confirmed as OPERATING the leg, direction recorded, and the
+            duration checked against the great circle. These are the legs a human
+            walked through end to end.
+
+  listed    A published table lists Air Algérie serving this pair. This claims
+            SERVICE, not operation, and the distinction is not pedantry: a
+            codeshare puts an AH flight number on another airline's aircraft, so
+            "Air Algérie sells this" and "Air Algérie flies this" are different
+            facts and only the first is supported here.
+
+Nothing is invented. A `listed` route ships the citation Wikipedia's own table
+carries, so a reader can check the claim at its real strength, and it upgrades to
+`verified` the moment a schedule check confirms operation and direction.
+
+Usage: python3 build_route_dataset.py
+"""
+
+import json
+import math
+import os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA = os.path.join(HERE, "..", "..")
+
+# Legs walked end to end: operator confirmed as operating, direction recorded,
+# duration checked. Flight numbers are the operating carrier's own, and none of
+# these came back with a codeshare object.
+VERIFIED = [
+    {"from": "CZL", "to": "TLS", "flight": "AH 1052", "status": "active", "days": ["tue"],
+     "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine"},
+    {"from": "TLS", "to": "CZL", "flight": "AH 1053", "status": "active", "days": ["tue"],
+     "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine"},
+    {"from": "TLM", "to": "LYS", "flight": "AH 1098", "status": "active", "days": ["wed"],
+     "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"},
+    {"from": "ORN", "to": "ETZ", "status": "seasonal",
+     "source": "https://www.lorraineaeroport.com/vols-destinations/oran/"},
+    {"from": "ETZ", "to": "ORN", "flight": "AH 1185", "status": "seasonal",
+     "source": "https://www.lorraineaeroport.com/vols-destinations/oran/"},
+    {"from": "ALG", "to": "CDG", "flight": "AH 1002", "status": "active",
+     "source": "https://www.parisaeroport.fr/"},
+    {"from": "CDG", "to": "ALG", "flight": "AH 1013", "status": "active",
+     "source": "https://www.parisaeroport.fr/"},
+    {"from": "ALG", "to": "MRS", "flight": "AH 1020", "status": "active",
+     "source": "https://www.marseille.aeroport.fr/"},
+    {"from": "BLJ", "to": "CDG", "flight": "AH 1120", "status": "active",
+     "source": "https://www.aeroroutes.com/"},
+    {"from": "TLM", "to": "MRS", "flight": "AH 1092", "status": "active",
+     "source": "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen"},
+    {"from": "SXB", "to": "ALG", "flight": "AH 1453", "status": "seasonal",
+     "source": "https://www.observalgerie.com/"},
+    {"from": "ALG", "to": "BUD", "flight": "AH 2028", "status": "active", "days": ["sat"],
+     "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud"},
+    {"from": "BUD", "to": "ALG", "flight": "AH 2028", "status": "active", "days": ["wed"],
+     "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud"},
+    {"from": "ALG", "to": "HRG", "status": "unclear",
+     "source": "https://www.observalgerie.com/"},
+    {"from": "ORN", "to": "IST", "flight": "AH 3024", "status": "active",
+     "source": "https://www.aeroroutes.com/"},
+]
+
+# Pairs where a booking probe returned an AH flight number that is a CODESHARE on
+# another carrier's aircraft. Air Algérie sells these; it does not fly them, so
+# they must not be drawn. See collection-rules.md section 16.
+# Screened one by one on 2026-08-04, and the three Istanbul pairs gave three
+# different answers, which is the whole argument for checking rather than
+# assuming: ALG-IST returns AH numbers explicitly flagged as codeshares with TK;
+# CZL-IST returns TK 8666 on Turkish metal with AH as the marketing carrier;
+# ORN-IST returns AH 3024 with NO codeshare object at all, so that one is Air
+# Algérie's own and is promoted to verified above (ratio 1.02).
+CODESHARE_ONLY = {("ALG", "IST"), ("CZL", "IST")}
+
+
+def haversine(a, b, c, d):
+    p1, p2 = math.radians(a), math.radians(c)
+    dp, dl = math.radians(c - a), math.radians(d - b)
+    return 2 * 6371 * math.asin(math.sqrt(
+        math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2))
+
+
+def main():
+    airports = json.load(open(os.path.join(DATA, "packages", "aviation", "data", "airports.json"), encoding="utf-8"))
+    foreign = json.load(open(os.path.join(HERE, "foreign-endpoints.json"), encoding="utf-8"))
+    wiki = json.load(open(os.path.join(HERE, "routes-wikipedia.json"), encoding="utf-8"))
+    dest_iata = json.load(open(os.path.join(HERE, "destination-iata-cache.json"), encoding="utf-8"))
+
+    ep = {}
+    for a in airports:
+        if a.get("iata"):
+            ep[a["iata"]] = {"iata": a["iata"], "name": a["name"], "lat": a["lat"], "lng": a["lng"], "country": "DZ"}
+    for f in foreign:
+        ep.setdefault(f["iata"], {"iata": f["iata"], "name": f["name"], "lat": f["lat"], "lng": f["lng"], "country": f["country"]})
+    dz = {a["iata"] for a in airports if a.get("iata")}
+
+    routes, skipped = [], {"no_endpoint": [], "codeshare": [], "domestic": []}
+    seen = set()
+
+    for v in VERIFIED:
+        key = (v["from"], v["to"])
+        if v["from"] not in ep or v["to"] not in ep:
+            skipped["no_endpoint"].append(key); continue
+        seen.add(key)
+        routes.append({
+            "id": f"{v['from'].lower()}-{v['to'].lower()}",
+            "from": v["from"], "to": v["to"], "carrier": "AH",
+            "flight": v.get("flight"), "status": v["status"], "days": v.get("days"),
+            "evidence": "verified", "source": v["source"],
+        })
+
+    for r in wiki:
+        if r["carrier"] != "Air Algérie":
+            continue
+        to = dest_iata.get(r["to_article"])
+        frm = r["from_iata"]
+        if not to:
+            continue
+        if to in dz:
+            skipped["domestic"].append((frm, to)); continue
+        key = (frm, to)
+        if key in seen:
+            continue
+        if key in CODESHARE_ONLY:
+            skipped["codeshare"].append(key); continue
+        if frm not in ep or to not in ep:
+            skipped["no_endpoint"].append(key); continue
+        seen.add(key)
+        status = "unclear"
+        if "seasonal" in r["notes"]:
+            status = "seasonal"
+        elif "charter" in r["notes"]:
+            status = "unclear"
+        routes.append({
+            "id": f"{frm.lower()}-{to.lower()}",
+            "from": frm, "to": to, "carrier": "AH",
+            "flight": None, "status": status, "days": None,
+            "evidence": "listed",
+            "source": r["source_urls"][0] if r["source_urls"] else
+                      "https://en.wikipedia.org/wiki/" + r["from_article"].replace(" ", "_"),
+            "source_is_the_table": not r["source_urls"],
+            "listed_at": r["from_article"],
+        })
+
+    used = sorted({c for r in routes for c in (r["from"], r["to"])})
+    endpoints = [ep[c] for c in used]
+
+    # Sanity: no arc may be zero-length or absurdly long for a nonstop.
+    for r in routes:
+        a, b = ep[r["from"]], ep[r["to"]]
+        km = haversine(a["lat"], a["lng"], b["lat"], b["lng"])
+        r["great_circle_km"] = round(km)
+        if km < 50:
+            raise SystemExit(f"{r['id']}: {km:.0f} km apart, that is not a route")
+
+    out = {"routes": sorted(routes, key=lambda r: r["id"]), "endpoints": endpoints}
+    path = os.path.join(HERE, "route-dataset.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+
+    ver = sum(1 for r in routes if r["evidence"] == "verified")
+    lis = sum(1 for r in routes if r["evidence"] == "listed")
+    unsourced = sum(1 for r in routes if not r["source"])
+    print(f"wrote {len(routes)} routes ({ver} verified, {lis} listed) "
+          f"across {len(endpoints)} endpoints -> {path}")
+    print(f"  listed routes with no citation: {unsourced}")
+    print(f"  skipped: {len(skipped['codeshare'])} codeshare-only, "
+          f"{len(skipped['domestic'])} domestic, {len(skipped['no_endpoint'])} without an endpoint")
+    print(f"  longest arc: {max(r['great_circle_km'] for r in routes)} km")
+
+
+if __name__ == "__main__":
+    main()
