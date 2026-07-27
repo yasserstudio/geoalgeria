@@ -252,3 +252,37 @@ code alone.
 
 `LOO` (Laghouat) was the one Algerian endpoint missing entirely and blocked the JED-LOO
 arc. It shipped 2026-07-27 alongside `HRM` and `MZW`.
+
+## 14. How big is "done"? (established 2026-07-27)
+
+**The target is 44 to 57 international routes, not 122.** The 122 figure was a
+candidate cross-product of Algerian airports against destination cities. It was
+never a claim about how many routes exist, and treating it as the denominator
+badly understated progress.
+
+Air Algérie states the network size itself, and **contradicts itself on a single
+page**: `airalgerie.dz/decouvrir/nos-destinations/` carries "44 dessertes
+internationales et 33 domestiques" in the page body, and "**57** dessertes
+internationales et 33 domestiques" in the site-wide nav blurb on the same page.
+Both are first-party. Treat the target as a **range, 44 to 57**, and do not quote
+either number as exact without saying which part of the page it came from.
+
+This matters because it is the only completeness check available: when the
+collection reaches the low forties, the map can honestly claim to be near
+complete. An all-carriers dataset would have no such denominator, since nobody
+publishes how many carriers fly nonstop from Algeria, which is a strong argument
+for keeping v1 to one airline.
+
+**The destination city list is not a route list.** The ~62 foreign cities behind
+`nos-destinations` come from the booking form's city picker, which includes every
+city sellable with a connection. That is why it lists more cities than the airline
+has routes. It is a candidate set only, exactly as section 4 says; it is never
+evidence that a nonstop leg exists. `foreign-endpoints.json` is derived from it and
+inherits the same caveat: an endpoint in that file has a coordinate, not a route.
+
+**There is no published timetable to shortcut the collection.**
+`airalgerie.dz/planifier-et-reserver/programme-des-vols/` is a JavaScript booking
+widget: no PDF, no downloadable schedule, no API endpoint in the markup. Checked
+2026-07-27. So the network has to be established pair by pair, and the per-airport
+destination pages of foreign airports (Lyon, Toulouse, Marseille, Lorraine) remain
+the best citable sources, since each names the carriers serving it.
