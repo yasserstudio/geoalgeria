@@ -286,3 +286,58 @@ widget: no PDF, no downloadable schedule, no API endpoint in the markup. Checked
 2026-07-27. So the network has to be established pair by pair, and the per-airport
 destination pages of foreign airports (Lyon, Toulouse, Marseille, Lorraine) remain
 the best citable sources, since each names the carriers serving it.
+
+## 15. The airline's own timetable: reachable by hand, defended against automation
+
+Investigated 2026-07-27 with agent-browser, recorded to HAR. Written up so nobody
+spends another evening rediscovering it.
+
+`airalgerie.dz/en/plan-your-trip/flight-schedule/` is the right source in
+principle. It is first-party and therefore **citable**, unlike Soar, and its own
+description promises "the national and international flight schedule (frequency
+of flights per week, time) available in real time" - weekly frequency is exactly
+what a route record needs, and it would mean **one query per direction instead of
+seven**.
+
+The form itself is fully understood, and all four gates below have to be passed
+in order or the submit silently does nothing:
+
+1. **Cookie consent must be accepted.** Without it the results area renders
+   "Vos paramètres peuvent vous empêcher de voir ce contenu".
+2. **`fill` does not work on the airport fields**, which are jQuery UI
+   autocompletes. Real keystrokes do (`agent-browser type`), then ArrowDown +
+   Enter to take the suggestion. The form keeps hidden inputs `depart` and
+   `arrivee` holding plain IATA codes, so state is readable and settable.
+   Note it resolves to **metro codes** by default: typing "Paris" gives
+   `PAR` / "All Paris Airports", not CDG. Type the airport code explicitly.
+3. **The date cannot be set by assigning `.value`.** The picker is easepick,
+   living in a **shadow DOM**, and it ignores an input whose value changed
+   underneath it. A day element inside `shadowRoot` has to receive a real click
+   (`composed: true`).
+4. **The trip type must be switched to one-way.** The form defaults to
+   `aller-Retour`, which requires an `endDate` nobody filled, so validation
+   aborts with no message and no request. This was the actual blocker.
+
+Pass all four and it submits, and that is where it ends:
+
+- It hands off to **Amadeus** at
+  `fly.airalgerie.dz/plnext/AirAlgerie/Override.action?EMBEDDED_TRANSACTION=TimeTable&ENC=...`
+  where `ENC` is a **~2 KB server-generated encrypted blob** carrying the search.
+  There is no URL to construct, so every query must replay the whole form.
+- That host is behind **Akamai bot protection** (an obfuscated sensor endpoint
+  posting alongside the page load), and the result renders **blank**: zero-length
+  body, empty title, no tables.
+
+**Decision: do not automate this.** Reading a public page is one thing;
+working around bot protection deployed on an airline's live booking
+infrastructure is another, and it is not something this project should build. The
+facts are not the problem, the circumvention is. It is also fragile: an encrypted
+parameter and an active bot-detection vendor will break any scraper on their
+schedule, not ours.
+
+**Use foreign airport destination pages instead.** They are public, unprotected,
+official, and each names the carriers serving that airport, so one fetch yields
+every Air Algérie route into it. Lorraine and Lyon already produced `official`
+tier confirmations this way (ORN-ETZ, TLM-LYS). Roughly 40 airports covers most
+of the European network, which is most of the network. Per-airport sourcing also
+scales better than per-leg: the citation is the airport's own page.
