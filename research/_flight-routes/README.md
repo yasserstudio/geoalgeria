@@ -10,6 +10,7 @@ arcs globe on the app side.
 | --- | --- |
 | `collection-rules.md` | **Read this first.** The reproducible procedure: scope, query recipe, the two filters that matter, evidence tiers, and the working protocol. |
 | `verification-2026-07-27.md` | Evidence table for 16 doubtful or candidate pairs, with tier, source URL and frequency per pair. Independently sourced. |
+| `opensky-licence.md` | Why the "observe later" phase is blocked: OpenSky's terms bar commercial use, operational API use, and redistribution. |
 | `soar.py` | Minimal MCP client for the Soar flight-search server (HTTP transport). |
 | `probe_routes.py` | First probe. Superseded, kept because its flaws are instructive (see below). |
 | `probe_week.py` | Full calendar-week probe with the great-circle duration check. |
