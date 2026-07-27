@@ -4,7 +4,7 @@
 
 # @geoalgeria/mosquees
 
-**Les mosquées d'Algérie — sous forme de données prêtes à installer.**
+**Les mosquées d'Algérie, sous forme de données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/mosquees)](https://www.npmjs.com/package/@geoalgeria/mosquees)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/mosquees)](https://www.npmjs.com/package/@geoalgeria/mosquees)
@@ -12,7 +12,7 @@
 
 </div>
 
-**20 759 mosquées géolocalisées** dans les **69 wilayas** d'Algérie — chacune avec
+**20 759 mosquées géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
 ses coordonnées, la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Un **composite communautaire de Wikidata et
 d'OpenStreetMap**, présenté honnêtement face au décompte national du Ministère des
@@ -38,10 +38,10 @@ const named = all.filter((m) => m.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes et localisateurs de mosquées** — des coordonnées sur les 20 759
+- **Cartes et localisateurs de mosquées** – des coordonnées sur les 20 759
   enregistrements, prêtes pour une carte ou un tri par distance.
-- **Annuaires bilingues** — plus de 15 000 noms en arabe et 7 000 en français.
-- **Analyse de couverture** — compter ou classer la densité de mosquées par
+- **Annuaires bilingues** – plus de 15 000 noms en arabe et 7 000 en français.
+- **Analyse de couverture** – compter ou classer la densité de mosquées par
   commune/wilaya sur tout le pays.
 
 ## Contenu
@@ -62,7 +62,7 @@ const named = all.filter((m) => m.name_fr);
 > quasi complète (~19 000 mosquées géolocalisées, proche du chiffre MARW d'environ
 > 18 449) ; OpenStreetMap ajoute des coordonnées précises, des noms français, la
 > dénomination, et des mosquées absentes de Wikidata. Les totaux évoluent au gré
-> des deux projets — chaque reconstruction reflète l'état actuel des sources.
+> des deux projets – chaque reconstruction reflète l'état actuel des sources.
 
 ## Formats
 
@@ -74,7 +74,7 @@ import mosquees from "@geoalgeria/mosquees/data/mosquees.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mosquees/data/mosquees.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** — les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import mosquees, { type Mosquee } from "@geoalgeria/mosquees";
@@ -133,7 +133,7 @@ préférence, sinon arabe) et vaut `null` pour les points OSM sans nom.
 ## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est ce qui
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
 transforme le `commune_code` d'une mosquée en polygone ou centroïde. Utilisez
 `@geoalgeria/mosquees` quand vous n'avez besoin *que* des mosquées.
 
@@ -142,11 +142,11 @@ transforme le `commune_code` d'une mosquée en polygone ou centroïde. Utilisez
 Lancez `npm run fetch` pour régénérer les sorties. Le script :
 
 1. interroge **Wikidata** (SPARQL) pour tout élément instance d'une sous-classe de
-   *mosquée* (Q32815) située en Algérie (P17 = Q262) avec une coordonnée (P625) —
+   *mosquée* (Q32815) située en Algérie (P17 = Q262) avec une coordonnée (P625) –
    la base exhaustive ;
 2. interroge **OpenStreetMap** (Overpass) pour `amenity=place_of_worship` +
    `religion=muslim` en Algérie ;
-3. les **fusionne** — une mosquée OSM à ~150 m d'une mosquée Wikidata est intégrée
+3. les **fusionne** – une mosquée OSM à ~150 m d'une mosquée Wikidata est intégrée
    à cet enregistrement (apportant son nom français, sa dénomination et son
    `refs.osm`) ; les mosquées OSM sans correspondance deviennent leurs propres
    enregistrements ;

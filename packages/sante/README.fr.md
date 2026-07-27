@@ -4,7 +4,7 @@
 
 # @geoalgeria/sante
 
-**Les établissements de santé publics d'Algérie — sous forme de données prêtes à installer.**
+**Les établissements de santé publics d'Algérie, sous forme de données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/sante)](https://www.npmjs.com/package/@geoalgeria/sante)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/sante)](https://www.npmjs.com/package/@geoalgeria/sante)
@@ -13,7 +13,7 @@
 </div>
 
 **695 établissements de santé publics** dans les **58 wilayas** dotées d'une
-direction de la santé — établissements publics hospitaliers (EPH), de santé de
+direction de la santé – établissements publics hospitaliers (EPH), de santé de
 proximité (EPSP), hospitaliers spécialisés (EHS) et centres hospitalo-universitaires
 (CHU) du **Ministère de la Santé (MSP)**, bilingues français/arabe, **600
 géolocalisés** (124 sur un point précis OpenStreetMap/Wikidata, 476 sur un
@@ -39,11 +39,11 @@ const mappable = all.filter((e) => e.lat != null);
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs d'hôpitaux et de cliniques** — des coordonnées sur 600 des 695
+- **Localisateurs d'hôpitaux et de cliniques** – des coordonnées sur 600 des 695
   enregistrements, prêtes pour une carte ou une recherche de proximité.
-- **Annuaires de santé bilingues** — noms français et arabe, type officiel et
+- **Annuaires de santé bilingues** – noms français et arabe, type officiel et
   wilaya pour chaque établissement.
-- **Analyse de couverture & planification** — compter les établissements par type
+- **Analyse de couverture & planification** – compter les établissements par type
   par commune/wilaya sur tout le pays.
 
 ## Contenu
@@ -68,7 +68,7 @@ const mappable = all.filter((e) => e.lat != null);
 | --- | --- | --- |
 | `exact` | 124 | point précis d'un établissement OSM ou Wikidata dans la commune |
 | `approximate` | 476 | centroïde de la commune de l'établissement |
-| `null` | 95 | localité non rattachée à une commune — pas de coordonnées (`lat`/`lng` aussi `null`) |
+| `null` | 95 | localité non rattachée à une commune – pas de coordonnées (`lat`/`lng` aussi `null`) |
 
 **Par méthode d'obtention** (`geo_method`)
 
@@ -77,7 +77,7 @@ const mappable = all.filter((e) => e.lat != null);
 | `osm_point` | 121 | point précis d'un établissement OpenStreetMap dans la commune |
 | `wikidata_point` | 3 | point précis d'un établissement Wikidata dans la commune |
 | `commune_centroid` | 476 | centroïde de la commune de l'établissement (approximatif) |
-| `null` | 95 | aucune méthode — l'enregistrement n'a pas de coordonnées |
+| `null` | 95 | aucune méthode – l'enregistrement n'a pas de coordonnées |
 
 > **Le registre est officiel ; les coordonnées sont au mieux.** Les noms, le type
 > et la wilaya proviennent du Ministère de la Santé. Le MSP ne publie pas de
@@ -94,7 +94,7 @@ import sante from "@geoalgeria/sante/data/sante.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/sante/data/sante.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** — les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import sante, { type HealthEstablishment } from "@geoalgeria/sante";
@@ -141,12 +141,12 @@ data/
 ```
 
 `id` est une clé stable `{wilaya_code}-{type}-{seq}` synthétisée par GeoAlgeria
-(le MSP ne publie pas de code) — opaque, unique au sein de `sante.json`.
+(le MSP ne publie pas de code) – opaque, unique au sein de `sante.json`.
 `name` est le nom français s'il existe, sinon l'arabe. `type` est déduit du
 titre ; `wilaya_code` de l'étiquette du MSP. `sector` vaut `"public"` pour tout
 le registre MSP (les cliniques privées, une fois ajoutées, porteront
 `"private"`). `source` vaut toujours `"msp"` (le registre du Ministère de la
-Santé) ; `refs` porte les identifiants de provenance ayant contribué —
+Santé) ; `refs` porte les identifiants de provenance ayant contribué –
 toujours `msp`, plus `osm` ou `wikidata` quand la coordonnée a été remplacée
 par un point précis. `geo_precision` vaut `"exact"`, `"approximate"` ou
 `null` ; `geo_method` indique comment la coordonnée a été obtenue (`osm_point`,
@@ -166,7 +166,7 @@ localité n'a pu être rattachée à une commune.
 ## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est ce qui
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
 transforme le `commune_code` d'un établissement en polygone ou centroïde.
 Utilisez `@geoalgeria/sante` quand vous n'avez besoin *que* des établissements de
 santé.

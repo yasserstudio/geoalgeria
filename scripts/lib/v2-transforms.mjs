@@ -309,17 +309,30 @@ export const MIGRATIONS = {
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: null, commune: null,
       ...geoExact(r, "source_point"),
-      source: "anac",
+      // Bare passthrough, no `?? "anac"` fallback: aviation is the mosquees/
+      // ferroviaire class, where records genuinely originate from different
+      // sources, and a default would silently stamp an OurAirports record as
+      // ANAC. writePackageV2 now rejects any source key not declared below.
+      source: r.source,
       refs: refs({ icao: r.icao, iata: r.iata }),
       icao: r.icao, iata: r.iata, address: r.address, phone: r.phone, website: r.website,
     }),
     meta: {
-      sources: [{ key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)" }],
-      license: "Factual public listing (ANAC)",
+      sources: [
+        { key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)", evidence_type: "official" },
+        // crowdsourced, pinned: OurAirports is volunteer-edited ("create a free
+        // account" to add or correct an airport), so it is neither a government
+        // register nor a first-party operator feed. Left to infer, it would take
+        // evidenceForSourceKey's fail-open `official` default and the package
+        // would publicly claim register-tier evidence for all 36 IATA codes and
+        // for the three airports whose existence rests on this source alone.
+        { key: "ourairports", name: "OurAirports, global airport database (IATA codes, and the three airports ANAC's map omits)", url: "https://ourairports.com/data/", license: "Public domain (OurAirports)", evidence_type: "crowdsourced" },
+      ],
+      license: "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
       estimatedUniverse: null,
-      coverageNote: "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
+      coverageNote: "Airports from the National Civil Aviation Authority (ANAC), plus Hassi R'Mel (HRM), Mécheria (MZW) and Laghouat (LOO), which ANAC's map omits and which OurAirports supplies. IATA codes are backfilled from OurAirports by ICAO match, each one confirmed by coordinate distance rather than by code alone. Wilaya-level only (no commune linkage).",
       titles: { en: "Algeria airports", fr: "Aéroports d'Algérie", ar: "مطارات الجزائر" },
-      stats: (rows) => ({ with_iata: rows.filter((r) => r.iata).length }),
+      stats: (rows) => ({ with_iata: rows.filter((r) => r.iata).length, by_source: count(rows, "source") }),
     },
   },
 
@@ -727,7 +740,7 @@ export const MIGRATIONS = {
  * }} input
  * @returns {{ records: object[], metadata: object }}
  */
-export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldMeta = {} }) {
+export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snapshots = {}, oldMeta = {} }) {
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
@@ -760,6 +773,23 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
     all.push(...rows);
   }
 
+  // Every record's `source` must key into metadata.sources[]. Nothing else
+  // checks this: validateRecords never inspects `source`, and validate-packages
+  // never cross-references records against sources[]. Without it a package can
+  // ship records pointing at provenance that isn't there, or silently relabel
+  // records under another source's licence, and the release gate stays green.
+  // `a+b` is the documented composite form (mosquees/ferroviaire ship
+  // "wikidata+osm" for a record corroborated by both).
+  const declared = new Set(meta.sources.map((s) => s.key));
+  const undeclared = [...new Set(all.flatMap((r) => String(r.source ?? "").split("+")))]
+    .filter((k) => !declared.has(k));
+  if (undeclared.length)
+    throw new Error(
+      `writePackageV2 [${pkg}]: record source key(s) ${undeclared.map((k) => JSON.stringify(k)).join(", ")} ` +
+        `are not declared in meta.sources[] (declared: ${[...declared].join(", ")}). ` +
+        `a record cannot cite provenance the metadata does not carry`,
+    );
+
   const preserved = {};
   for (const k of meta.preserve || []) if (oldMeta[k] != null) preserved[k] = oldMeta[k];
 
@@ -772,10 +802,17 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
       // sources that carry none with the run's value (real fetch time on a live
       // run, the committed value on an offline replay). Default evidence_type from
       // the canonical helper unless the config pins it.
+      // `snapshot`, when the generator captured one, identifies the exact bytes
+      // this run read: sha256 + size, and the upstream's last-modified where it
+      // publishes one. `retrieved` records when we asked; a live upstream can
+      // change between two runs on the same date, so the date alone cannot say
+      // what a shipped value was derived from. Optional by design: offline and
+      // replay generators have nothing to attest and simply omit it.
       sources: meta.sources.map((s) => ({
         ...s,
         retrieved: s.retrieved ?? retrieved,
         evidence_type: s.evidence_type ?? evidenceForSourceKey(s.key),
+        ...(snapshots[s.key] ? { snapshot: snapshots[s.key] } : {}),
       })),
       license: meta.license,
       updated,

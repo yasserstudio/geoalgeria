@@ -4,7 +4,7 @@
 
 # @geoalgeria/djezzy
 
-**شبكة محلات جيزي في الجزائر — كبيانات قابلة للتثبيت.**
+**شبكة محلات جيزي في الجزائر، كبيانات قابلة للتثبيت.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/djezzy)](https://www.npmjs.com/package/@geoalgeria/djezzy)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/djezzy)](https://www.npmjs.com/package/@geoalgeria/djezzy)
@@ -13,7 +13,7 @@
 </div>
 
 **128 محلًّا** لـ**جيزي** (Optimum Telecom Algérie)، أحد متعاملي الهاتف النقال
-الثلاثة في الجزائر — كل محل بإحداثيات جغرافية، مع فئته وعنوانه وأوقات عمله ورمز
+الثلاثة في الجزائر – كل محل بإحداثيات جغرافية، مع فئته وعنوانه وأوقات عمله ورمز
 الافتتاح وربطه بالبلدية والولاية. متوفر بصيغ JSON وCSV وGeoJSON وTypeScript.
 جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -35,11 +35,11 @@ const flagships = boutiques.filter((b) => b.category === "A");
 
 ## ما يمكنك بناؤه
 
-- **أدلّة المحلات** — إحداثيات على كل محل من المحلات الـ128، جاهزة للترتيب حسب
+- **أدلّة المحلات** – إحداثيات على كل محل من المحلات الـ128، جاهزة للترتيب حسب
   المسافة أو للعرض على خريطة.
-- **التغطية حسب الولاية** — كل محل مرتبط ببلديته وولايته، فيمكنك حساب أو ترتيب
+- **التغطية حسب الولاية** – كل محل مرتبط ببلديته وولايته، فيمكنك حساب أو ترتيب
   حضور جيزي عبر الولايات الـ63 المغطّاة.
-- **مقارنة المتعاملين** — اربط مع
+- **مقارنة المتعاملين** – اربط مع
   [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) عبر
   `wilaya_code` لمقارنة شبكات التوزيع متعاملًا بمتعامل.
 
@@ -59,7 +59,7 @@ import boutiques from "@geoalgeria/djezzy/data/boutiques.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/boutiques.json
 ```
 
-المُحمِّلات وبنية السجلات **مُوثَّقة الأنواع** بالكامل — تعريفات TypeScript مرفقة في الحزمة:
+المُحمِّلات وبنية السجلات **مُوثَّقة الأنواع** بالكامل – تعريفات TypeScript مرفقة في الحزمة:
 
 ```ts
 import djezzy, { type Boutique } from "@geoalgeria/djezzy";
@@ -105,7 +105,7 @@ data/
 `id` مفتاح ثابت `{wilaya_code}-{seq}` يولّده GeoAlgeria، وهو فريد ضمن هذه
 المجموعة. يُحفظ رمز المحل الخاص بجيزي في `refs.djezzy`. يرتبط `wilaya_code`
 بـ `wilaya_code` في GeoAlgeria. قيمة `geo_precision` دائمًا `"exact"` وقيمة
-`geo_method` دائمًا `"operator_point"` — فكل محل يحمل إحداثية حقيقية نشرها المشغّل.
+`geo_method` دائمًا `"operator_point"` – فكل محل يحمل إحداثية حقيقية نشرها المشغّل.
 
 > **الربط بالبلدية/الولاية مُستنتَج وليس من المصدر.** ينشر جيزي إحداثيات وعنوانًا
 > دون أي رموز إدارية. يُضيف GeoAlgeria حقول `wilaya_code` و`commune_code`
@@ -116,7 +116,7 @@ data/
 ## تحتاج التقسيمات الإدارية أيضًا؟
 
 للولايات والدوائر والبلديات، استخدم الحزمة الرئيسية
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — بها تحوّل
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – بها تحوّل
 `commune_code` لمحلٍّ ما إلى مضلّع أو مركز ثقل. استخدم `@geoalgeria/djezzy` عندما
 تحتاج شبكة جيزي *فقط*.
 
@@ -124,7 +124,7 @@ data/
 
 تأتي البيانات من دليل محلات **جيزي**
 (<https://www.djezzy.dz/nos-boutiques/>). تُضمّن الصفحة القائمة الكاملة كمصفوفة
-JSON مُرمّزة بكيانات HTML — دون أي واجهة برمجية منفصلة. شغّل `npm run fetch`
+JSON مُرمّزة بكيانات HTML – دون أي واجهة برمجية منفصلة. شغّل `npm run fetch`
 لإعادة توليد المخرجات: يقرأ السكربت كائنات المحلات، ويتحقق من وقوع الإحداثيات
 داخل الجزائر، ويُلحق الربط الإداري بأقرب مركز ثقل بلدية.
 
@@ -133,7 +133,7 @@ JSON مُرمّزة بكيانات HTML — دون أي واجهة برمجية 
 الشيفرة بترخيص [MIT](LICENSE). البيانات الأساسية © **Optimum Telecom Algérie
 (جيزي)**، يُعاد نشرها للمرجعية ولتشغيل [GeoAlgeria](https://geoalgeria.com). تحقّق
 من جيزي للحصول على المعلومات الرسمية والآنية. تتغيّر قائمة المحلات مع الافتتاحات
-والإغلاقات — وتعكس كل إعادة بناء ما يعرضه الدليل حاليًّا.
+والإغلاقات – وتعكس كل إعادة بناء ما يعرضه الدليل حاليًّا.
 
 [توثيق API والحقول →](https://geoalgeria.com/data/docs/djezzy) · [تصفّح كل الحزم →](https://geoalgeria.com/data)
 

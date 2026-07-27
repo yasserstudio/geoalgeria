@@ -39,7 +39,7 @@ The institutional anchor for the whole sector (oversees every operator below).
 | `ferroviaire/` | **SNTF** (rail) · **SEMA/EMA** (metro) · **SETRAM** (tram) | rail · metro · tram **nodes** | WD 695 nodes · SETRAM 172 tram stations ×7 nets · SEMA 19 metro · SNTF status map | ✅ WD/OSM/setram.dz/metro-eldjazair.dz |
 | `buses/` | **ETUSA** — transport urbain d'Alger *(first of many operators)* | urban **bus lines** + téléphériques | 50 lines parsed (termini, stops, communes) + company facts | ⚠️ via fr.wikipedia (no official feed) |
 
-Also already **shipped** in this sector: `@geoalgeria/aviation` (ANAC, 33 airports).
+Also already **shipped** in this sector: `@geoalgeria/aviation` (ANAC + OurAirports, 36 airports).
 
 ## Sector map (mode → owner/source → GeoAlgeria home)
 

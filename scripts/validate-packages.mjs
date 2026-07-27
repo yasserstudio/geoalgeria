@@ -41,6 +41,10 @@ import {
   buildMetadata,
   WILAYA_CODES,
 } from "../packages/schema/index.js";
+// Each package's own stats() lives here, beside its provenance config. The
+// validator re-runs it so the published stats block is checked against the
+// shipped records rather than trusted.
+import { MIGRATIONS } from "./lib/v2-transforms.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -831,8 +835,28 @@ function validateDerivedMetadata(pkg, records) {
     estimatedUniverse: meta.estimated_universe ?? null,
   });
 
-  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
-  for (const key of ["record_count", "geocoded_count", "geocoded_pct", "precision", "wilayas_covered", "bbox"]) {
+  // The per-package `stats` block (with_iata, by_source, by_type, named, …) is
+  // merged into metadata AFTER buildMetadata, so buildMetadata cannot reproduce
+  // it and this loop never saw it. Those fields are published and consumer-typed
+  // exactly like the derived ones: aviation could ship by_source {anac: 36} over
+  // records that are 33/3 and the gate stayed green. Re-run the package's own
+  // stats() over the shipped records and compare.
+  const stats = MIGRATIONS[pkg]?.meta?.stats;
+  if (typeof stats === "function") Object.assign(want, stats(records));
+
+  // Key order is not meaningful in a count map: tourisme merges five files, so
+  // by_type comes out in a different insertion order than the concatenated
+  // records give, with identical counts. Arrays keep their order (bbox is
+  // positional); object keys are sorted before comparing.
+  const canon = (v) =>
+    Array.isArray(v)
+      ? v.map(canon)
+      : v && typeof v === "object"
+        ? Object.fromEntries(Object.keys(v).sort().map((k) => [k, canon(v[k])]))
+        : v;
+  const same = (a, b) => JSON.stringify(canon(a)) === JSON.stringify(canon(b));
+  const derived = ["record_count", "geocoded_count", "geocoded_pct", "precision", "wilayas_covered", "bbox"];
+  for (const key of [...derived, ...Object.keys(typeof stats === "function" ? stats(records) : {})]) {
     if (meta[key] === undefined) continue; // not declared → nothing published to disagree with
     if (same(meta[key], want[key])) continue;
     fail(

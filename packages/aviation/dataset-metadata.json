@@ -4,8 +4,8 @@
   "name": "Algeria airports",
   "alternateName": "Aéroports d'Algérie",
   "identifier": "@geoalgeria/aviation",
-  "description": "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
-  "conditionsOfAccess": "Factual public listing (ANAC)",
+  "description": "Airports from the National Civil Aviation Authority (ANAC), plus Hassi R'Mel (HRM), Mécheria (MZW) and Laghouat (LOO), which ANAC's map omits and which OurAirports supplies. IATA codes are backfilled from OurAirports by ICAO match, each one confirmed by coordinate distance rather than by code alone. Wilaya-level only (no commune linkage).",
+  "conditionsOfAccess": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",
@@ -20,7 +20,7 @@
       "box": "19.563939 -8.165434 36.824416 9.63789"
     }
   },
-  "variableMeasured": "33 records, 31 wilayas",
+  "variableMeasured": "36 records, 33 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -41,10 +41,11 @@
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/geojson/airports.geojson"
     }
   ],
-  "dateModified": "2026-06-14",
+  "dateModified": "2026-07-27",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
-    "ANAC — Autorité Nationale de l'Aviation Civile — Factual public listing (ANAC)"
+    "ANAC — Autorité Nationale de l'Aviation Civile — Factual public listing (ANAC)",
+    "OurAirports, global airport database (IATA codes, and the three airports ANAC's map omits) — Public domain (OurAirports)"
   ]
 }

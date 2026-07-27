@@ -8,15 +8,24 @@ import { bbox } from "./emit.js";
 const pct = (num, den) => (den ? Math.round((num / den) * 1000) / 10 : 0);
 
 /**
- * Canonical evidence_type for a source key. Community maps (OSM/Wikidata) are
- * crowdsourced; explicitly computed geometry is derived; every other key is a
- * named government registry or first-party operator feed → official.
+ * Canonical evidence_type for a source key. Community maps (OSM/Wikidata/
+ * OurAirports) are crowdsourced; explicitly computed geometry is derived; every
+ * other key is a named government registry or first-party operator feed → official.
+ *
+ * This default FAILS OPEN: an unrecognised key gets the strongest evidence claim
+ * the vocabulary has. That is how `ourairports` shipped as `official` in
+ * aviation's metadata and DCAT descriptor, which is a provenance lie in the one
+ * layer this project sells as its differentiator. So a source that is not a
+ * first-party or government feed MUST pin `evidence_type` in its MIGRATIONS
+ * entry rather than trusting this function to infer it; the community-map list
+ * below is a convenience, not a safety net.
  * @param {string} key
  * @returns {"official"|"crowdsourced"|"derived"}
  */
 export function evidenceForSourceKey(key) {
   const k = String(key || "").toLowerCase();
-  if (k === "osm" || k === "openstreetmap" || k === "wikidata") return "crowdsourced";
+  if (k === "osm" || k === "openstreetmap" || k === "wikidata" || k === "ourairports")
+    return "crowdsourced";
   if (k === "derived" || k === "computed" || k === "centroid" || k === "estimate") return "derived";
   return "official";
 }

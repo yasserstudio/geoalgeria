@@ -4,7 +4,7 @@
 
 # @geoalgeria/tourisme
 
-**L'infrastructure touristique de l'Algérie — sous forme de données installables.**
+**L'infrastructure touristique de l'Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/tourisme)](https://www.npmjs.com/package/@geoalgeria/tourisme)
@@ -12,8 +12,8 @@
 
 </div>
 
-4 348 sites touristiques géocodés à travers les 69 wilayas d'Algérie — **hôtels**, attractions,
-sites historiques, sources thermales et espaces protégés — chacun avec coordonnées, rattachement
+4 348 sites touristiques géocodés à travers les 69 wilayas d'Algérie – **hôtels**, attractions,
+sites historiques, sources thermales et espaces protégés – chacun avec coordonnées, rattachement
 à la wilaya et attribution de la source. Sources : **ASAL Geoportail** (sources thermales),
 **OpenStreetMap** (hôtels, attractions, sites historiques, parcs) et **Wikidata** (sites
 patrimoniaux, musées, parcs). Distribué en JSON, CSV et GeoJSON.
@@ -32,16 +32,16 @@ const springs = tourisme.thermalSprings();        // 282
 const inTipaza = tourisme.byWilaya(42);           // tous les sites touristiques de la wilaya 42
 const ruins = tourisme.byLayer("historic");       // 1 184 sites historiques
 
-// Chaque enregistrement a lat/lng — tri par distance, carte ou site le plus proche en quelques lignes.
+// Chaque enregistrement a lat/lng – tri par distance, carte ou site le plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Applications touristiques** — annuaire consultable d'hôtels, d'attractions et de sites historiques par wilaya.
-- **Recherche du site le plus proche** — coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
-- **Cartes** — couches de points GeoJSON prêtes à l'emploi pour tout le réseau touristique.
-- **Guides thermaux** — température, débit, altitude et composition minérale pour 282 sources.
-- **Patrimoine et culture** — sites historiques, monuments et sites archéologiques liés à Wikipedia/Wikidata.
+- **Applications touristiques** – annuaire consultable d'hôtels, d'attractions et de sites historiques par wilaya.
+- **Recherche du site le plus proche** – coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
+- **Cartes** – couches de points GeoJSON prêtes à l'emploi pour tout le réseau touristique.
+- **Guides thermaux** – température, débit, altitude et composition minérale pour 282 sources.
+- **Patrimoine et culture** – sites historiques, monuments et sites archéologiques liés à Wikipedia/Wikidata.
 
 ## Contenu
 
@@ -67,7 +67,7 @@ import lodging from "@geoalgeria/tourisme/data/lodging.json" with { type: "json"
 // https://cdn.jsdelivr.net/npm/@geoalgeria/tourisme/data/lodging.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** — les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import tourisme, { type Lodging, type ThermalSpring } from "@geoalgeria/tourisme";
@@ -92,7 +92,7 @@ data/
 
 ## Structure d'un enregistrement
 
-**Hébergement** — hôtels, auberges, maisons d'hôtes :
+**Hébergement** – hôtels, auberges, maisons d'hôtes :
 
 ```json
 {
@@ -120,7 +120,7 @@ externes vivent dans `refs` (`refs.osm` est l'identifiant OSM sous forme de cha�
 couches OSM ne portent aucun rattachement communal : `commune_code` et `commune` y sont nuls.
 
 Les champs de contact et de classification optionnels sont présents lorsque la source les
-publie, et absents sinon — jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
+publie, et absents sinon – jamais nuls. Sur l'hébergement : `address` (209 enregistrements),
 `phone` (204, plusieurs numéros séparés par `;` comme OSM les balise), `website` (84), `stars`
 (60) et `rooms` (24). Sur les attractions : `description` (26). Sur les sites historiques :
 `heritage_status` (17, par exemple `"part of UNESCO World Heritage Site"`) et `heritage`
@@ -132,7 +132,7 @@ proviennent de Wikidata (32 attractions, 75 sites historiques, 8 parcs). Ceux-l�
 en CC0 et non en ODbL, filtrez donc sur `source` si la distinction compte pour votre
 attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lien Wikipedia.
 
-**Source thermale** — source ASAL Geoportail, avec propriétés physiques :
+**Source thermale** – source ASAL Geoportail, avec propriétés physiques :
 
 ```json
 {
@@ -157,7 +157,7 @@ attribution. Au total, 236 enregistrements portent un QID Wikidata et 100 un lie
 `type` est l'un des suivants : `hammam`, `ain`, `source`, `forage`. Les propriétés physiques
 (`temperature_c`, `debit_l_s`, `altitude_m`, `minerality`) proviennent directement du jeu de
 données ASAL ; `minerality` est la seule optionnelle. C'est la seule couche qui nomme une
-commune — via `commune`, un nom et non un `commune_code` ONS, qui reste nul.
+commune – via `commune`, un nom et non un `commune_code` ONS, qui reste nul.
 
 `wilaya_code` est complété à deux chiffres avec un zéro dans toutes les couches et rejoint les
 wilayas de GeoAlgeria.
@@ -165,7 +165,7 @@ wilayas de GeoAlgeria.
 ## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, daïras et communes pour des jointures, utilisez
-le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit
+le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit
 le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence ici. Utilisez
 `@geoalgeria/tourisme` quand vous avez *uniquement* besoin des données touristiques.
 
@@ -173,11 +173,11 @@ le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence 
 
 Les données proviennent de trois sources :
 
-- **ASAL Geoportail** — sources thermales (température, débit, altitude, composition minérale).
+- **ASAL Geoportail** – sources thermales (température, débit, altitude, composition minérale).
   Données gouvernementales publiques.
-- **OpenStreetMap** — hôtels, attractions, sites historiques et parcs. Sous licence
+- **OpenStreetMap** – hôtels, attractions, sites historiques et parcs. Sous licence
   [ODbL](https://opendatacommons.org/licenses/odbl/).
-- **Wikidata** — sites patrimoniaux, musées et métadonnées des parcs. Sous licence
+- **Wikidata** – sites patrimoniaux, musées et métadonnées des parcs. Sous licence
   [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
 ## Licence et attribution

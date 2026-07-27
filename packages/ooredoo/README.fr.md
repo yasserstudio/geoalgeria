@@ -4,7 +4,7 @@
 
 # @geoalgeria/ooredoo
 
-**Le réseau de boutiques d'Ooredoo Algérie — sous forme de données installables.**
+**Le réseau de boutiques d'Ooredoo Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ooredoo)](https://www.npmjs.com/package/@geoalgeria/ooredoo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -13,7 +13,7 @@
 
 # Aperçu
 
-572 points de vente Ooredoo répartis sur **63 wilayas** — Espaces Ooredoo (EO), City Shops (CSO) et Espaces Services (ESO) — depuis l'API de localisation de l'opérateur, chacun avec des **coordonnées réelles** et un rattachement wilaya/commune. Complète le trio télécom avec [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) et [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy).
+572 points de vente Ooredoo répartis sur **63 wilayas** – Espaces Ooredoo (EO), City Shops (CSO) et Espaces Services (ESO) – depuis l'API de localisation de l'opérateur, chacun avec des **coordonnées réelles** et un rattachement wilaya/commune. Complète le trio télécom avec [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) et [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy).
 
 ## Installation
 
@@ -44,10 +44,10 @@ Coordonnées : les 572 géocodées (553 en `exact`, 19 en `approximate`).
 
 ## Formats
 
-- `data/stores.json` — tableau complet (typé par `types/index.d.ts`)
-- `data/csv/stores.csv` — CSV à plat
-- `data/geojson/stores.geojson` — `FeatureCollection`
-- `data/metadata.json` — comptes, sources, date de génération
+- `data/stores.json` – tableau complet (typé par `types/index.d.ts`)
+- `data/csv/stores.csv` – CSV à plat
+- `data/geojson/stores.geojson` – `FeatureCollection`
+- `data/metadata.json` – comptes, sources, date de génération
 
 ## Précision
 

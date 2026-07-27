@@ -4,7 +4,7 @@
 
 # @geoalgeria/pharmacies
 
-**Les pharmacies d'Algérie — sous forme de données installables.**
+**Les pharmacies d'Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/pharmacies)](https://www.npmjs.com/package/@geoalgeria/pharmacies)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -13,7 +13,7 @@
 
 # Aperçu
 
-3 790 pharmacies (officines) réparties sur **67 wilayas**, issues d'**OpenStreetMap** — chaque enregistrement géocodé, bilingue (FR/AR) lorsque nommé, avec téléphone, horaires et un indicateur `dispensing` là où OSM les renseigne, plus le rattachement wilaya/commune.
+3 790 pharmacies (officines) réparties sur **67 wilayas**, issues d'**OpenStreetMap** – chaque enregistrement géocodé, bilingue (FR/AR) lorsque nommé, avec téléphone, horaires et un indicateur `dispensing` là où OSM les renseigne, plus le rattachement wilaya/commune.
 
 ## Installation
 
@@ -47,14 +47,14 @@ metadata().wilayas_covered; // 67
 
 ## Formats
 
-- `data/pharmacies.json` — tableau complet (typé par `types/index.d.ts`)
-- `data/csv/pharmacies.csv` — CSV à plat
-- `data/geojson/pharmacies.geojson` — `FeatureCollection`
-- `data/metadata.json` — comptes, sources, date de génération
+- `data/pharmacies.json` – tableau complet (typé par `types/index.d.ts`)
+- `data/csv/pharmacies.csv` – CSV à plat
+- `data/geojson/pharmacies.geojson` – `FeatureCollection`
+- `data/metadata.json` – comptes, sources, date de génération
 
 ## Précision & couverture
 
-> **Couverture partielle.** 3 790 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur — aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord — c'est un extrait communautaire, **pas un registre officiel**.
+> **Couverture partielle.** 3 790 pharmacies sont cartographiées dans OpenStreetMap face à un estimé de **~11 000 officines** à l'échelle nationale (ordre de grandeur – aucun registre officiel ouvert ; le portail de l'Ordre National des Pharmaciens est hors service). La couverture est inégale selon la wilaya et plus dense au nord – c'est un extrait communautaire, **pas un registre officiel**.
 >
 > Les coordonnées sont des points OSM (relevés) ou des centroïdes de bâtiment (`geo_method`). La commune est un rapprochement au centroïde le plus proche (au mieux) ; la wilaya est quasi exacte. Noms, téléphones et horaires ne figurent que là où un contributeur OSM les a renseignés.
 

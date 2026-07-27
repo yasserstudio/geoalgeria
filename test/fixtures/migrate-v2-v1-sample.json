@@ -1976,160 +1976,334 @@
             "id": "daad",
             "name": "Aéroport de BOU SAADA/Ain Eddis",
             "icao": "DAAD",
-            "iata": null,
+            "iata": "BUJ",
             "address": "BP 278/ BOU SAADA",
             "phone": "+213 35 43 47 78",
             "website": "https://aeroports-egsa-alger.dz/fr/1.html",
             "wilaya_code": "68",
             "lat": 35.32449005474226,
             "lng": 4.200126110472756,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "daaj",
             "name": "Aéroport de DJANET / Tiska-DJANET",
             "icao": "DAAJ",
-            "iata": null,
+            "iata": "DJG",
             "address": "Aéroport de DJANET / Tiska BP 29. ‐DJANET",
             "phone": "+213 29481502",
             "website": "https://aeroports-egsa-alger.dz/fr/13.html",
             "wilaya_code": "56",
             "lat": 24.28966075585949,
             "lng": 9.46571858129957,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "daat",
             "name": "Aéroport de Tamanrasset – Aguenar – Hadj Bey Akhamok",
             "icao": "DAAT",
-            "iata": null,
+            "iata": "TMR",
             "address": "Aéroport de TAMENGHASSET/Aguenar-Hadj Bey Akhamok- BP 38/TAMENGHASSET",
             "phone": "+21329330031",
             "website": "https://aeroports-egsa-alger.dz/fr/16.html",
             "wilaya_code": "11",
             "lat": 22.81520178682999,
             "lng": 5.448914008186444,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "dabc",
             "name": "Aéroport de Constantine – Mohamed Boudiaf",
             "icao": "DABC",
-            "iata": null,
+            "iata": "CZL",
             "address": "AVA, Aéroport de CONSTANTINE",
             "phone": "+21331810125",
             "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-constantine-mohamed-boudiaf",
             "wilaya_code": "25",
             "lat": 36.28378418745162,
             "lng": 6.621478825849163,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "daob",
             "name": "Aéroport TIARET - Abdelhafid Boussouf Bou Chekif",
             "icao": "DAOB",
-            "iata": null,
+            "iata": "TID",
             "address": "Aéroport TIARET / Abdelhafid Boussouf Bou Chekif ‐BP 12/Tiaret",
             "phone": "+213 46240005",
             "website": "https://egsa-oran.dz/index.php/aeroport-de-tiaret/",
             "wilaya_code": "14",
             "lat": 35.34579589348178,
             "lng": 1.4698592674102533,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "daon",
             "name": "Aéroport de Tlemcen – Zenata – Messali El Hadj",
             "icao": "DAON",
-            "iata": null,
+            "iata": "TLM",
             "address": "Aéroport de TLEMCEN/Zenata-Messali El Hadj/BP50- ZENATA/TLEMCEN",
             "phone": "+21343403149",
             "website": "https://egsa-oran.dz/index.php/nos-aeroports/",
             "wilaya_code": "13",
             "lat": 35.012480117143284,
             "lng": -1.4480446913865919,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "daor",
             "name": "Aéroport de BECHAR/Boudghene Ben Ali Lotf",
             "icao": "DAOR",
-            "iata": null,
+            "iata": "CBH",
             "address": "Boudghene Ben Ali Lotfi‐ BP: 69/Bechar",
             "phone": "+213 49221909",
             "website": "https://egsa-oran.dz/index.php/aeroport-de-bechar/",
             "wilaya_code": "08",
             "lat": 31.651481919578377,
             "lng": -2.2525513149111935,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "datg",
             "name": "Aéroport d’IN GUEZZAM",
             "icao": "DATG",
-            "iata": null,
+            "iata": "INF",
             "address": "Aéroport d’IN GUEZZAM / IN GUEZZAM",
             "phone": "+213 29 351123",
             "website": "https://aeroports-egsa-alger.dz/fr/7.html",
             "wilaya_code": "54",
             "lat": 19.563939499098094,
             "lng": 5.751815823519952,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "daub",
             "name": "Aéroport de BISKRA/ Mohamed KHIDER",
             "icao": "DAUB",
-            "iata": null,
+            "iata": "BSK",
             "address": "ENNA – Direction de la Sécurité Aéronautique BP 27 star Melouk BISKRA, Biskra",
             "phone": "+213 33543005",
             "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-biskra-mohamed-kheider",
             "wilaya_code": "07",
             "lat": 34.79160974695419,
             "lng": 5.733631154631189,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "dauh",
             "name": "Aéroport de Hassi Messaoud – Oued Irara – Krim Belkacem",
             "icao": "DAUH",
-            "iata": null,
+            "iata": "HME",
             "address": "Aéroport de Hassi Messaoud/Oued Irara‐Krim Belkacem BP 130",
             "phone": "+21329741885",
             "website": "https://aeroports-egsa-alger.dz/fr/10.html",
             "wilaya_code": "30",
             "lat": 31.675453603011896,
             "lng": 6.144544541032298,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "dauo",
             "name": "Aéroport d’El Oued/Guemar",
             "icao": "DAUO",
-            "iata": null,
+            "iata": "ELU",
             "address": "Aéroport d’El Oued/Guemar BP 110 / El Oued",
             "phone": "+213 32101015",
             "website": "https://aeroports-egsa-alger.dz/fr/17.html",
             "wilaya_code": "39",
             "lat": 33.507414582460555,
             "lng": 6.784868996915831,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
           },
           {
             "id": "dauz",
             "name": "Aéroport de Zarzaitine – In Aménas",
             "icao": "DAUZ",
-            "iata": null,
+            "iata": "IAM",
             "address": "Aéroport de In Amenas B.P 51 /IN AMENAS",
             "phone": "+213 29 45 13",
             "website": "https://aeroports-egsa-alger.dz/fr/12.html",
             "wilaya_code": "33",
             "lat": 28.051765839675433,
             "lng": 9.63789046606008,
-            "source": "https://www.anac.dz/en/carte-des-aeroports-3/"
+            "source": "anac"
+          },
+          {
+            "id": "dafh",
+            "name": "Aéroport de Hassi R'Mel – Tilrhemt",
+            "icao": "DAFH",
+            "iata": "HRM",
+            "address": null,
+            "phone": null,
+            "website": null,
+            "wilaya_code": "03",
+            "lat": 32.930401,
+            "lng": 3.31154,
+            "source": "ourairports"
+          },
+          {
+            "id": "daay",
+            "name": "Aéroport de Mécheria",
+            "icao": "DAAY",
+            "iata": "MZW",
+            "address": null,
+            "phone": null,
+            "website": null,
+            "wilaya_code": "45",
+            "lat": 33.535900116,
+            "lng": -0.242353007197,
+            "source": "ourairports"
+          },
+          {
+            "id": "daul",
+            "name": "Aéroport de Laghouat – Moulay Ahmed Medeghri",
+            "icao": "DAUL",
+            "iata": "LOO",
+            "address": null,
+            "phone": null,
+            "website": null,
+            "wilaya_code": "03",
+            "lat": 33.7644,
+            "lng": 2.92834,
+            "source": "ourairports"
           }
         ]
-      }
+      },
+      "_note": "aviation's sample is generator input, not pre-cutover v1: since the IATA backfill the generator feeds the map ANAC rows carrying an OurAirports `iata` plus three airports ANAC's map omits, so `git show <cutover>^` no longer reproduces what the map is handed. `_cutover` is therefore the historical cutover sha only, and does NOT satisfy the file-level `_readme` recipe for this package. `_anacFrozen` restores the lost anchor: the ANAC-owned fields of the same rows as they stood at `<cutover>^`, frozen here so the sample cannot silently drift with the code path it is meant to check.",
+      "_anacFrozen": [
+        {
+          "id": "daad",
+          "name": "Aéroport de BOU SAADA/Ain Eddis",
+          "icao": "DAAD",
+          "lat": 35.32449005474226,
+          "lng": 4.200126110472756,
+          "address": "BP 278/ BOU SAADA",
+          "phone": "+213 35 43 47 78",
+          "website": "https://aeroports-egsa-alger.dz/fr/1.html",
+          "wilaya_code": "68"
+        },
+        {
+          "id": "daaj",
+          "name": "Aéroport de DJANET / Tiska-DJANET",
+          "icao": "DAAJ",
+          "lat": 24.28966075585949,
+          "lng": 9.46571858129957,
+          "address": "Aéroport de DJANET / Tiska BP 29. ‐DJANET",
+          "phone": "+213 29481502",
+          "website": "https://aeroports-egsa-alger.dz/fr/13.html",
+          "wilaya_code": "56"
+        },
+        {
+          "id": "daat",
+          "name": "Aéroport de Tamanrasset – Aguenar – Hadj Bey Akhamok",
+          "icao": "DAAT",
+          "lat": 22.81520178682999,
+          "lng": 5.448914008186444,
+          "address": "Aéroport de TAMENGHASSET/Aguenar-Hadj Bey Akhamok- BP 38/TAMENGHASSET",
+          "phone": "+21329330031",
+          "website": "https://aeroports-egsa-alger.dz/fr/16.html",
+          "wilaya_code": "11"
+        },
+        {
+          "id": "dabc",
+          "name": "Aéroport de Constantine – Mohamed Boudiaf",
+          "icao": "DABC",
+          "lat": 36.28378418745162,
+          "lng": 6.621478825849163,
+          "address": "AVA, Aéroport de CONSTANTINE",
+          "phone": "+21331810125",
+          "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-constantine-mohamed-boudiaf",
+          "wilaya_code": "25"
+        },
+        {
+          "id": "daob",
+          "name": "Aéroport TIARET - Abdelhafid Boussouf Bou Chekif",
+          "icao": "DAOB",
+          "lat": 35.34579589348178,
+          "lng": 1.4698592674102533,
+          "address": "Aéroport TIARET / Abdelhafid Boussouf Bou Chekif ‐BP 12/Tiaret",
+          "phone": "+213 46240005",
+          "website": "https://egsa-oran.dz/index.php/aeroport-de-tiaret/",
+          "wilaya_code": "14"
+        },
+        {
+          "id": "daon",
+          "name": "Aéroport de Tlemcen – Zenata – Messali El Hadj",
+          "icao": "DAON",
+          "lat": 35.012480117143284,
+          "lng": -1.4480446913865919,
+          "address": "Aéroport de TLEMCEN/Zenata-Messali El Hadj/BP50- ZENATA/TLEMCEN",
+          "phone": "+21343403149",
+          "website": "https://egsa-oran.dz/index.php/nos-aeroports/",
+          "wilaya_code": "13"
+        },
+        {
+          "id": "daor",
+          "name": "Aéroport de BECHAR/Boudghene Ben Ali Lotf",
+          "icao": "DAOR",
+          "lat": 31.651481919578377,
+          "lng": -2.2525513149111935,
+          "address": "Boudghene Ben Ali Lotfi‐ BP: 69/Bechar",
+          "phone": "+213 49221909",
+          "website": "https://egsa-oran.dz/index.php/aeroport-de-bechar/",
+          "wilaya_code": "08"
+        },
+        {
+          "id": "datg",
+          "name": "Aéroport d’IN GUEZZAM",
+          "icao": "DATG",
+          "lat": 19.563939499098094,
+          "lng": 5.751815823519952,
+          "address": "Aéroport d’IN GUEZZAM / IN GUEZZAM",
+          "phone": "+213 29 351123",
+          "website": "https://aeroports-egsa-alger.dz/fr/7.html",
+          "wilaya_code": "54"
+        },
+        {
+          "id": "daub",
+          "name": "Aéroport de BISKRA/ Mohamed KHIDER",
+          "icao": "DAUB",
+          "lat": 34.79160974695419,
+          "lng": 5.733631154631189,
+          "address": "ENNA – Direction de la Sécurité Aéronautique BP 27 star Melouk BISKRA, Biskra",
+          "phone": "+213 33543005",
+          "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-biskra-mohamed-kheider",
+          "wilaya_code": "07"
+        },
+        {
+          "id": "dauh",
+          "name": "Aéroport de Hassi Messaoud – Oued Irara – Krim Belkacem",
+          "icao": "DAUH",
+          "lat": 31.675453603011896,
+          "lng": 6.144544541032298,
+          "address": "Aéroport de Hassi Messaoud/Oued Irara‐Krim Belkacem BP 130",
+          "phone": "+21329741885",
+          "website": "https://aeroports-egsa-alger.dz/fr/10.html",
+          "wilaya_code": "30"
+        },
+        {
+          "id": "dauo",
+          "name": "Aéroport d’El Oued/Guemar",
+          "icao": "DAUO",
+          "lat": 33.507414582460555,
+          "lng": 6.784868996915831,
+          "address": "Aéroport d’El Oued/Guemar BP 110 / El Oued",
+          "phone": "+213 32101015",
+          "website": "https://aeroports-egsa-alger.dz/fr/17.html",
+          "wilaya_code": "39"
+        },
+        {
+          "id": "dauz",
+          "name": "Aéroport de Zarzaitine – In Aménas",
+          "icao": "DAUZ",
+          "lat": 28.051765839675433,
+          "lng": 9.63789046606008,
+          "address": "Aéroport de In Amenas B.P 51 /IN AMENAS",
+          "phone": "+213 29 45 13",
+          "website": "https://aeroports-egsa-alger.dz/fr/12.html",
+          "wilaya_code": "33"
+        }
+      ]
     },
     "agriculture": {
       "_cutover": "08595366682d9a25c8e0aa312609bf6fa699ce3e",

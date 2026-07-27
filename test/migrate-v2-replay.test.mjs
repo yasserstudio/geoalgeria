@@ -51,6 +51,43 @@ test("migrate-to-v2 replay: the fixture covers every configured package and file
   assert.deepEqual(have, want, "fixture and MIGRATIONS disagree on which files exist");
 });
 
+// A package whose generator gained a second upstream can no longer be replayed
+// from frozen v1 input: aviation's committed records now carry an OurAirports
+// `iata`, which no v1 row can produce, so its sample had to become generator
+// input instead. That trade quietly costs the guarantee this file exists for.
+// A v1 fixture is frozen in git history and cannot move; a generator-input
+// fixture is derived from the very code path it checks, so changing the id rule
+// in the generator and regenerating the fixture keeps the test green, which is
+// exactly the class of drift the header describes.
+//
+// `_anacFrozen` restores the anchor: the upstream-owned fields of the same rows
+// as they stood at `<cutover>^`, copied in once. `iata` and `source` are
+// excluded because both legitimately changed. It is read from the fixture rather
+// than from git so it still works on CI's depth-1 checkout.
+for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
+  if (!entry._anacFrozen) continue;
+  test(`migrate-v2 fixture: ${pkg}'s sample still matches its frozen upstream rows`, () => {
+    const file = Object.keys(entry.files)[0];
+    const sample = new Map(entry.files[file].map((r) => [r.id, r]));
+    for (const frozen of entry._anacFrozen) {
+      const row = sample.get(frozen.id);
+      assert.ok(
+        row,
+        `${pkg}: frozen upstream row ${JSON.stringify(frozen.id)} is missing from the sample. ` +
+          `the id rule drifted, or the fixture was regenerated against changed upstream data`,
+      );
+      for (const [k, want] of Object.entries(frozen))
+        assert.deepEqual(
+          row[k],
+          want,
+          `${pkg}/${frozen.id}: ${k} is ${JSON.stringify(row[k])} in the sample but ` +
+            `${JSON.stringify(want)} in the frozen pre-cutover row. The generator-input ` +
+            `fixture has drifted from the upstream data it is supposed to represent`,
+        );
+    }
+  });
+}
+
 for (const [pkg, file, map] of SPECS) {
   test(`migrate-to-v2 replay: ${pkg}/${file} reproduces the committed records`, () => {
     const sample = FIXTURE.packages[pkg].files[file];

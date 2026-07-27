@@ -4,7 +4,7 @@
 
 # @geoalgeria/livraison
 
-**Les transporteurs de livraison en Algérie et leurs bureaux de retrait — sous forme de données installables.**
+**Les transporteurs de livraison en Algérie et leurs bureaux de retrait, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/livraison)](https://www.npmjs.com/package/@geoalgeria/livraison)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/livraison)](https://www.npmjs.com/package/@geoalgeria/livraison)
@@ -30,23 +30,23 @@ const inAlgiers = livraison.stopdesksByWilaya(16);    // bureaux de retrait dans
 const guepexDesks = livraison.stopdesksByCarrier("guepex");
 const reach = livraison.coverageByCarrier("yalidine"); // wilayas desservies
 
-// Chaque bureau de retrait a des coordonnées lat/lng — tri par distance, carte ou bureau le plus proche en quelques lignes.
+// Chaque bureau de retrait a des coordonnées lat/lng – tri par distance, carte ou bureau le plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Bureau de retrait le plus proche** — coordonnées sur chaque bureau, prêtes pour le tri par distance.
-- **Sélecteur de point de dépôt au checkout** — lister les bureaux d'un transporteur dans la wilaya de l'acheteur.
-- **Comparaison de transporteurs** — registre indiquant qui opère, leur modèle (bureau de retrait vs domicile) et le support du paiement à la livraison.
-- **Cartes** — couche de points GeoJSON prête à l'emploi pour tout le réseau ouvert de bureaux de retrait.
+- **Bureau de retrait le plus proche** – coordonnées sur chaque bureau, prêtes pour le tri par distance.
+- **Sélecteur de point de dépôt au checkout** – lister les bureaux d'un transporteur dans la wilaya de l'acheteur.
+- **Comparaison de transporteurs** – registre indiquant qui opère, leur modèle (bureau de retrait vs domicile) et le support du paiement à la livraison.
+- **Cartes** – couche de points GeoJSON prête à l'emploi pour tout le réseau ouvert de bureaux de retrait.
 
 ## Contenu
 
 | Jeu de données | Nombre | Géocodé | Notes |
 | --- | --- | --- | --- |
-| Transporteurs (`carriers.json`) | **16** | — | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
+| Transporteurs (`carriers.json`) | **16** | – | registre : nom, site web, modèle, paiement à la livraison, périmètre, ouverture des données, API |
 | Bureaux de retrait (`stopdesks.json`) | **411** | ✅ tous | id, opérateur, nom, adresse, commune, `wilaya_code`, lat/lng |
-| Couverture (`coverage.json`) | **9** | — | présence par transporteur (wilaya/commune) |
+| Couverture (`coverage.json`) | **9** | – | présence par transporteur (wilaya/commune) |
 
 Les bureaux de retrait couvrent **61 wilayas**, tous géocodés. `wilaya_code` se joint au
 modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -58,7 +58,7 @@ leurs emplacements d'agences ouvertement. Le **registre** couvre le paysage (les
 transporteurs et ce que chacun fait) ; la **couche géocodée** couvre les transporteurs qui
 publient leurs emplacements de manière ouverte :
 
-- l'**écosystème relais Yalidine + Guepex** — Yalidine, Guepex, et les opérateurs qui
+- l'**écosystème relais Yalidine + Guepex** – Yalidine, Guepex, et les opérateurs qui
   utilisent leur réseau partagé (EasyAndSpeed, WeCanServices, SpeedMail, Zimou Express) ;
 - **Anderson**, **Noest** et **Maystro**, trois réseaux indépendants, chacun géocodé à
   partir du lien Google Maps sur ses fiches d'agence (les agences dont les liens sont
@@ -81,7 +81,7 @@ import carriers from "@geoalgeria/livraison/data/carriers.json" with { type: "js
 // https://cdn.jsdelivr.net/npm/@geoalgeria/livraison/data/stopdesks.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** — les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import livraison, { type StopDesk } from "@geoalgeria/livraison";
@@ -144,16 +144,16 @@ data/
 ```
 
 `operator` sur un bureau de retrait fait la jointure avec `carriers[].id`. `commune_code`
-est toujours `null` — les flux relais des transporteurs ne publient qu'un nom de commune,
+est toujours `null` – les flux relais des transporteurs ne publient qu'un nom de commune,
 jamais un code ONS. `wilaya_code` fait la jointure avec les wilayas de GeoAlgeria.
-`sources` liste les flux ouverts qui référencent le bureau — `["yalidine","guepex"]`
+`sources` liste les flux ouverts qui référencent le bureau – `["yalidine","guepex"]`
 quand les cartes relais concordent, ou `["anderson"]` pour une agence Anderson.
 
 ## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, daïras et communes pour effectuer des jointures,
 utilisez le package principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit le jeu de données
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit le jeu de données
 complet des 69 wilayas auquel `wilaya_code` se rattache ici. Utilisez `@geoalgeria/livraison`
 quand vous avez *uniquement* besoin des données de livraison.
 

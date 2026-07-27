@@ -12,9 +12,10 @@
 
 </div>
 
-33 civil airports across Algeria, with official names, **ICAO (OACI) codes**, postal
-addresses, phone numbers, websites, GPS coordinates, and wilaya linkage. Sourced from
-ANAC (the Autorité Nationale de l'Aviation Civile), shipped as JSON, CSV, and GeoJSON.
+36 civil airports across Algeria, with official names, **ICAO (OACI) and IATA codes**,
+postal addresses, phone numbers, websites, GPS coordinates, and wilaya linkage. Sourced
+from ANAC (the Autorité Nationale de l'Aviation Civile), with IATA codes and three
+airports ANAC's map omits from OurAirports. Shipped as JSON, CSV, and GeoJSON.
 Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -24,8 +25,9 @@ npm install @geoalgeria/aviation
 ```js
 import aviation from "@geoalgeria/aviation";
 
-const all = aviation.airports();                 // 33
-const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene
+const all = aviation.airports();                 // 36
+const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene, iata "ALG"
+const byIata = aviation.airportByIata("TLM");     // Tlemcen, from a flight feed
 const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 
 // Everything has lat/lng – distance-sort, map, or nearest-airport in a few lines.
@@ -34,7 +36,8 @@ const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 ## What you can build
 
 - **Nearest-airport lookups** – coordinates on every record, ready for distance sorting.
-- **ICAO ↔ airport resolution** – map flight-data ICAO codes to names, contacts, and location.
+- **ICAO/IATA ↔ airport resolution** – map either code from a flight feed, booking system, or
+  timetable to a name, contacts, and a location.
 - **Travel & logistics** – match a wilaya or a point to its serving airport.
 - **Maps** – drop-in GeoJSON point layer for the whole civil-airport network.
 
@@ -42,10 +45,15 @@ const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 
 | Dataset | Count | Notes |
 | --- | --- | --- |
-| Civil airports | **33** | official name, ICAO code, address, phone, website, coordinates |
+| Civil airports | **36** | official name, ICAO + IATA codes, address, phone, website, coordinates |
 
-Spanning **31 wilayas**, every airport geocoded. `wilaya_code` is linked against the
+Spanning **33 wilayas**, every airport geocoded and every one carrying an IATA code.
+`wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
+
+33 of the 36 come from ANAC's own map. The other three, Hassi R'Mel (`HRM`), Mécheria
+(`MZW`) and Laghouat (`LOO`), are absent from it and come from OurAirports, so they carry
+`source: "ourairports"` and no contact fields.
 
 ## Formats
 
@@ -69,10 +77,10 @@ const airports: Airport[] = aviation.airports();
 
 ```
 data/
-  airports.json            # 33 airports (array)
+  airports.json            # 36 airports (array)
   metadata.json            # sources, counts, license, updated
   csv/airports.csv         # repo + Release bundle (not in npm tarball)
-  geojson/airports.geojson # Point features (all 33 are geocoded)
+  geojson/airports.geojson # Point features (all 36 are geocoded)
 ```
 
 ## Record shape
@@ -89,23 +97,25 @@ data/
   "geo_precision": "exact",
   "geo_method": "source_point",
   "source": "anac",
-  "refs": { "icao": "DAAG" },
+  "refs": { "icao": "DAAG", "iata": "ALG" },
   "icao": "DAAG",
-  "iata": null,
+  "iata": "ALG",
   "address": "Alger BP 164 DAR EL BEIDA",
   "phone": "+21323199230",
   "website": "https://www.aeroportalger.dz/"
 }
 ```
 
-`id` is the ICAO code lowercased. `icao` always matches `DA[A-Z]{2}`. `iata` is `null`, ANAC
-publishes only ICAO codes (the slot is reserved for later enrichment). `wilaya_code` is
-zero-padded to two digits and joins GeoAlgeria's wilayas; this dataset is wilaya-level only, so
-`commune_code` and `commune` are always `null`. Every point comes straight from ANAC's own
-published map, so `geo_precision` is always `"exact"` and `geo_method` is always
-`"source_point"`, nothing here is a fallback or a downgrade. `source` is a short key resolved
-in `metadata.sources[]` (always `"anac"`), and `refs.icao` duplicates the top-level `icao`. One
-record (`dabs`, Tébessa) has a `null` `phone` where ANAC lists none.
+`id` is the ICAO code lowercased. `icao` always matches `DA[A-Z]{2}`. `iata` carries the IATA
+code, populated on all 36 records but typed nullable so an airport without one is never a
+breaking change. `wilaya_code` is zero-padded to two digits and joins GeoAlgeria's wilayas;
+this dataset is wilaya-level only, so `commune_code` and `commune` are always `null`. Every
+point comes straight from a source's own published coordinate, so `geo_precision` is always
+`"exact"` and `geo_method` is always `"source_point"`, nothing here is a fallback or a
+downgrade. `source` is a short key resolved in `metadata.sources[]`, `"anac"` or
+`"ourairports"`, and `refs` duplicates the top-level `icao` and `iata`. One ANAC record
+(`dabs`, Tébessa) has a `null` `phone` where ANAC lists none; the three OurAirports records
+have `null` for `address`, `phone` and `website`, which OurAirports does not publish.
 
 ## Need the administrative divisions too?
 
@@ -123,11 +133,27 @@ version bump doesn't break it, and it fails loudly if the airport count or ICAO 
 changes. `wilaya_code` is resolved by nearest commune centroid from the `geoalgeria`
 dataset (the flagship ships centroids, not boundary polygons).
 
+ANAC publishes only ICAO codes and omits three airports, so the same build also reads
+**[OurAirports](https://ourairports.com/data/)**' public-domain `airports.csv`. IATA codes
+are joined on ICAO, and because a matching code is not on its own evidence that two rows
+describe the same place, every join is confirmed against ANAC's own coordinate and the
+build fails on anything more than 5 km away. The observed spread is 0.31 to 2.15 km, the
+far end being Ouargla (`DAUU`/`OGX`), whose OurAirports entry is named for the Ain Beida
+aerodrome rather than the city.
+
+Both upstreams are live documents, so each entry in `metadata.sources[]` carries a
+`snapshot`: the URL actually fetched, the SHA-256 of its bytes, its size, and its
+`Last-Modified` where the upstream publishes one. `retrieved` records when the build
+asked; the snapshot records what it got. Check it yourself with
+`curl -sL <snapshot.url> | shasum -a 256`. It attests rather than pins, so a changed
+upstream never fails the build.
+
 ## License & attribution
 
-Code is [MIT](LICENSE). The underlying data is © **ANAC**, redistributed for reference
-and to power [GeoAlgeria](https://geoalgeria.com). Verify against ANAC for authoritative,
-real-time information.
+Code is [MIT](LICENSE). The ANAC records are © **ANAC**, redistributed for reference and
+to power [GeoAlgeria](https://geoalgeria.com); the IATA codes and the three supplementary
+airports come from OurAirports, which places its data in the public domain. Verify against
+ANAC for authoritative, real-time information.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/aviation) · [Browse all packages →](https://geoalgeria.com/data)
 

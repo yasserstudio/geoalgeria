@@ -4,7 +4,7 @@
 
 # @geoalgeria/emploi
 
-**Toutes les agences publiques de l'emploi en Algérie — sous forme de données installables.**
+**Toutes les agences publiques de l'emploi en Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/emploi)](https://www.npmjs.com/package/@geoalgeria/emploi)
@@ -13,7 +13,7 @@
 </div>
 
 Les **58 AWEM** (agences de wilaya de l'emploi) et **273 ALEM** (agences locales
-de l'emploi) de l'agence nationale de l'emploi, **ANEM** — chacune avec adresse,
+de l'emploi) de l'agence nationale de l'emploi, **ANEM** – chacune avec adresse,
 téléphone, fax, email, responsable et coordonnées GPS.
 Livré en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -37,9 +37,9 @@ const reggane = alem.filter((a) => a.name.includes("REGGANE"));
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs d'agences** — coordonnées sur (presque) chaque enregistrement, prêtes pour le tri par distance ou l'affichage sur carte.
-- **Annuaires de contact** — téléphone, fax, email et responsable par agence.
-- **Cartes** — couches de points GeoJSON prêtes à l'emploi pour tout le réseau de l'emploi.
+- **Localisateurs d'agences** – coordonnées sur (presque) chaque enregistrement, prêtes pour le tri par distance ou l'affichage sur carte.
+- **Annuaires de contact** – téléphone, fax, email et responsable par agence.
+- **Cartes** – couches de points GeoJSON prêtes à l'emploi pour tout le réseau de l'emploi.
 
 ## Contenu
 
@@ -58,7 +58,7 @@ import alem from "@geoalgeria/emploi/data/alem.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/emploi/data/alem.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** — les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import emploi, { type Awem, type Alem } from "@geoalgeria/emploi";
@@ -79,7 +79,7 @@ data/
   geojson/alem.geojson
 ```
 
-> Le GeoJSON inclut uniquement les enregistrements ayant des coordonnées — 2 ALEM
+> Le GeoJSON inclut uniquement les enregistrements ayant des coordonnées – 2 ALEM
 > ne déclarent pas de `lat`/`lng` et sont omis (mais restent dans JSON/CSV).
 
 ## Structure des enregistrements
@@ -110,13 +110,13 @@ data/
 
 `id` est une clé stable `{wilaya_code}-{seq}` générée par GeoAlgeria, unique
 dans l'ensemble fusionné `agencies()` (les id AWEM ne contiennent jamais de
-tiret, ceux des ALEM en contiennent toujours) — le `code` propre à l'ANEM est
+tiret, ceux des ALEM en contiennent toujours) – le `code` propre à l'ANEM est
 conservé mais manque sur certains enregistrements et n'est pas unique, préférez
 donc `id`. `commune_code`/`commune` valent actuellement `null` sur tous les
-enregistrements — la source de l'ANEM ne résout qu'au niveau wilaya, pas
+enregistrements – la source de l'ANEM ne résout qu'au niveau wilaya, pas
 commune. `wilaya_code` permet la jointure avec le `wilaya_code` de GeoAlgeria.
 
-**AWEM (agence de wilaya)** — même structure, `id` = le `wilaya_code` à 2 chiffres,
+**AWEM (agence de wilaya)** – même structure, `id` = le `wilaya_code` à 2 chiffres,
 avec `name` / `address` / `phone` / `manager` et `lat`/`lng`.
 
 ## Besoin des divisions administratives aussi ?
@@ -128,7 +128,7 @@ principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)**. Utilisez
 ## Source
 
 Les données proviennent de l'**ANEM** (Agence Nationale de l'Emploi) via son portail
-cartographique (<https://www.anem.dz/#/portail-carto>). Il n'y a pas d'API publique —
+cartographique (<https://www.anem.dz/#/portail-carto>). Il n'y a pas d'API publique –
 les agences sont intégrées dans le bundle JavaScript du portail. Lancez `npm run fetch`
 pour régénérer toutes les sorties : le script redécouvre le bundle actuel, extrait les
 deux jeux de données, corrige l'inversion `X`=lat / `Y`=lng de la source et normalise
@@ -142,7 +142,7 @@ redistribuées à titre de référence et pour alimenter [GeoAlgeria](https://ge
 Vérifiez auprès de l'ANEM pour des informations officielles et à jour.
 
 Le champ `manager` contient le nom du responsable de l'agence tel que publié, textuellement,
-sur le portail public de l'ANEM — ce n'est pas une donnée privée. Chaque reconstruction
+sur le portail public de l'ANEM – ce n'est pas une donnée privée. Chaque reconstruction
 reflète ce que l'ANEM affiche actuellement ; s'ils le retirent, il disparaît ici aussi.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/emploi) · [Parcourir tous les paquets →](https://geoalgeria.com/data)

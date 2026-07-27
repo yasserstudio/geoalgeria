@@ -4,7 +4,7 @@
 
 # @geoalgeria/culture
 
-**L'atlas culturel de l'Algérie — sous forme de données prêtes à installer.**
+**L'atlas culturel de l'Algérie, sous forme de données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/culture)](https://www.npmjs.com/package/@geoalgeria/culture)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/culture)](https://www.npmjs.com/package/@geoalgeria/culture)
@@ -12,7 +12,7 @@
 
 </div>
 
-**1 083 lieux culturels** dans **66 des 69 wilayas d'Algérie** — biens culturels
+**1 083 lieux culturels** dans **66 des 69 wilayas d'Algérie** – biens culturels
 protégés, musées, théâtres, bibliothèques et établissements culturels (maisons et
 palais de la culture, salles de cinéma, directions de la culture, écoles d'art) de
 l'atlas *Cartes du Patrimoine Culturel Algérien* du **Ministère de la Culture**,
@@ -41,11 +41,11 @@ const visites = all.filter((p) => p.has_virtual_tour);
 
 ## Ce que vous pouvez construire
 
-- **Cartes culturelles & recherche de proximité** — chacun des 1 083 lieux a des
+- **Cartes culturelles & recherche de proximité** – chacun des 1 083 lieux a des
   coordonnées, prêtes pour une carte ou une fonction « à proximité ».
-- **Annuaires culturels bilingues** — noms français et arabe, type officiel et
+- **Annuaires culturels bilingues** – noms français et arabe, type officiel et
   wilaya pour chaque lieu ; filtrer patrimoine vs établissements en activité.
-- **Applications patrimoine & tourisme** — sites protégés, musées et visites
+- **Applications patrimoine & tourisme** – sites protégés, musées et visites
   virtuelles à 360°, rattachés à la commune/wilaya pour l'itinéraire et l'analyse.
 
 ## Contenu
@@ -65,7 +65,7 @@ const visites = all.filter((p) => p.has_virtual_tour);
 
 | Type | Nombre | Signification |
 | --- | --- | --- |
-| `protected-cultural-property` | 580 | Bien culturel protégé — monument/site protégé |
+| `protected-cultural-property` | 580 | Bien culturel protégé – monument/site protégé |
 | `library` | 257 | Bibliothèque de lecture publique |
 | `museum` | 48 | Musée |
 | `theatre` | 45 | Théâtre |
@@ -74,7 +74,7 @@ const visites = all.filter((p) => p.has_virtual_tour);
 | `cultural-directorate` | 33 | Direction de la culture / office |
 | `cinema` | 20 | Salle de cinéma / cinémathèque |
 | `cultural-center` | 15 | Centre culturel / de recherche |
-| `arts-school` | 15 | École d'art — beaux-arts / conservatoire |
+| `arts-school` | 15 | École d'art – beaux-arts / conservatoire |
 | `cultural-palace` | 6 | Palais de la culture |
 
 > **L'atlas est officiel ; les coordonnées sont au mieux.** Les noms, le type, les
@@ -92,7 +92,7 @@ import culture from "@geoalgeria/culture/data/culture.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/culture/data/culture.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** — les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import culture, { type CulturalSite } from "@geoalgeria/culture";
@@ -140,11 +140,11 @@ data/
 ```
 
 `id` est une clé stable `{wilaya_code}-{type_code}-{seq}`, unique au sein de ce
-fichier — à traiter comme opaque. `name` est le nom français s'il existe, sinon
+fichier – à traiter comme opaque. `name` est le nom français s'il existe, sinon
 l'arabe. `type` est la couche du lieu sur le portail ; `category` regroupe les
 11 types en `heritage` vs `establishment`. `has_virtual_tour` vaut `true` pour
 les 22 lieux dotés d'une visite 360°. `geo_precision` vaut `"exact"` pour
-1 067 enregistrements et `"approximate"` pour 16 — chaque lieu a une
+1 067 enregistrements et `"approximate"` pour 16 – chaque lieu a une
 coordonnée, mais 16 n'atteignent pas le seuil de précision de `"exact"`.
 `geo_method` vaut `"source_point"` pour chaque enregistrement : la coordonnée
 est le point publié par le portail lui-même, pas un centroïde dérivé.
@@ -160,7 +160,7 @@ est le point publié par le portail lui-même, pas un centroïde dérivé.
 ## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est ce qui
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
 transforme le `commune_code` d'un lieu en polygone ou centroïde. Utilisez
 `@geoalgeria/culture` quand vous n'avez besoin *que* des lieux culturels.
 
@@ -169,7 +169,7 @@ transforme le `commune_code` d'un lieu en polygone ou centroïde. Utilisez
 Lancez `npm run fetch` pour régénérer les sorties. Le script :
 
 1. lit l'atlas culturel bilingue curé (assemblé et traduit depuis le portail
-   `cartes.patrimoineculturelalgerien.org` du Ministère de la Culture — les
+   `cartes.patrimoineculturelalgerien.org` du Ministère de la Culture – les
    catalogues français et arabe du portail sont des ensembles de nœuds disjoints,
    unis par proximité de coordonnées et traduits pour combler les manques
    bilingues) ;

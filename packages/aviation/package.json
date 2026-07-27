@@ -2,7 +2,7 @@
   "name": "@geoalgeria/aviation",
   "version": "2.0.0",
   "type": "module",
-  "description": "Algeria's 33 civil airports — official names, ICAO (OACI) codes, addresses, phones, websites, coordinates, and wilaya linkage. Sourced from ANAC (anac.dz). JSON, CSV, GeoJSON, TypeScript.",
+  "description": "Algeria's 36 civil airports: official names, ICAO (OACI) and IATA codes, addresses, phones, websites, coordinates, and wilaya linkage. Sourced from ANAC (anac.dz) and OurAirports. JSON, CSV, GeoJSON, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
