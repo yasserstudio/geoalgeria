@@ -173,8 +173,36 @@ source and the operator recorded as confirmed-by-carrier-code, exactly like
 TLM-MRS. One citable source naming Air Algérie on this pair would upgrade it to
 a clean Official.
 
-**Still missing:** the search date, so the day of week and the frequency are
-unknown. Worth a full-week sweep before the record claims a schedule.
+**Flight number and day now known** (week sweep, Mon 3 to Sun 9 Aug 2026):
+
+| Date | Day | CZL to TLS nonstop |
+| --- | --- | --- |
+| 2026-08-03 | Mon | none (1 offer, all with a connection) |
+| **2026-08-04** | **Tue** | **`AH 1052`, 14:45 to 17:25, PT1H40M, one segment** |
+| 2026-08-05 | Wed | none |
+| 2026-08-06 | Thu | none |
+| 2026-08-07 | Fri | none |
+| 2026-08-08 | Sat | none (1 offer, with a connection) |
+| 2026-08-09 | Sun | none (2 offers, with a connection) |
+
+Friday came back empty too, so CZL to TLS is **1x weekly, Tuesdays, on `AH 1052`**.
+
+**The return leg is the same day.** `TLS to CZL` on Tue 2026-08-04 is `AH 1053`,
+18:25 to 18:55, PT1H30M, one segment. Wednesday is empty. So this pair is a
+**same-day out-and-back on Tuesdays**, not a triangle like ALG-BUD: both directions
+are genuinely nonstop on the same day, and the record carries two directional legs
+with the same frequency.
+
+Both legs duration-check clean against the 931 km great circle (expected ~100 min):
+`AH 1052` at 100 min is a ratio of 1.00, `AH 1053` at 90 min is 0.90. The westbound
+clock reads 18:25 CEST to 18:55 UTC+1, which is 1h30 in the air. The days that returned nothing nonstop mostly did return connecting
+offers, which is the expected shape for a once-weekly route rather than a coverage
+hole. The return direction TLS to CZL is still uncollected.
+
+Note the `raw_offer_count` vs `result_count` split is the useful signal here: a day
+with raw offers but zero after filtering is a day the pair is sold with a
+connection, which is evidence the route exists and simply does not fly nonstop that
+day. A day with zero raw offers is less informative.
 
 # ORN-BRU and ALG-BUD: manual Soar checks came back empty (2026-07-27)
 
