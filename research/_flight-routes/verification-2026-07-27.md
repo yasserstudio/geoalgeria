@@ -137,3 +137,60 @@ fare and never names the carrier, and its airline directory page is empty; Stras
 lists Algiers as a destination with an empty airline section. The Soar carrier code is
 the only remaining lever and it needs either an authenticated account or a wait for
 the hourly window to reset.
+
+---
+
+# CZL-TLS operator: RESOLVED (manual check, 2026-07-27)
+
+**Constantine (CZL) to Toulouse (TLS) is operated by Air Algérie, nonstop.**
+
+Found by hand on the Soar website (same Duffel backend as the MCP, which was
+rate-limited out). One result: Air Algérie, "Direct", 14:45 CZL to 17:25 TLS,
+1h40m, $172 one-way.
+
+Duration-checked and it passes cleanly:
+
+| Check | Value |
+| --- | --- |
+| Great circle CZL-TLS | 931 km |
+| Expected (`gc/800 kph + 30 min`) | ~100 min |
+| Observed | 100 min |
+| Ratio | **1.00** (flag threshold 1.35) |
+
+The clock times look like 2h40 elapsed, which is the timezone: Algeria is UTC+1
+year-round, France is UTC+2 in July, so 14:45+01 to 17:25+02 is 1h40 in the air.
+The card's own duration agrees. No room for a technical stop.
+
+**This closes the last open operator question.** Toulouse airport's site publishes
+"Vol direct Toulouse to Constantine" with a fare but has never named the carrier,
+and every other official avenue was exhausted. The carrier code on the leg
+answered it, which is the same way TLM-MRS was resolved.
+
+**Provenance status.** The route itself has an official source
+(toulouse.aeroport.fr); the operator attribution rests on booking data, and Soar
+never goes in a `source_url`. So this ships with the Toulouse airport URL as its
+source and the operator recorded as confirmed-by-carrier-code, exactly like
+TLM-MRS. One citable source naming Air Algérie on this pair would upgrade it to
+a clean Official.
+
+**Still missing:** the search date, so the day of week and the frequency are
+unknown. Worth a full-week sweep before the record claims a schedule.
+
+# ORN-BRU and ALG-BUD: manual Soar checks came back empty (2026-07-27)
+
+Both searched nonstop on the Soar website. Neither is recorded as a negative.
+
+- **ALG-BUD stays as it is.** The nonstop ALG->BUD leg only runs Saturdays, and
+  the filing was for the winter season (effective 29 Oct / 1 Nov 2025). A July
+  search cannot see it whichever way the route is doing. Same shape as ALG-SXB,
+  which was silent across a whole August week and then confirmed on 8 December.
+  To actually test it: ALG->BUD on a **Saturday in December**, BUD->ALG on a
+  **Wednesday in December**.
+- **ORN-BRU stays out of v1.** Nothing citable ever put Air Algérie on it, so it
+  fails the inclusion test for want of positive evidence. That is not the same as
+  asserting Air Algérie does not fly it, and it is not recorded as one.
+
+Both searches used the Soar website, which is the same Duffel backend as the
+probe, so they are a re-run of the same query surface rather than independent
+corroboration. Run 1 and run 2 of the original probe already disagreed with each
+other on a nonstop leg 30 minutes apart.
