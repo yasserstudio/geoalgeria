@@ -341,3 +341,55 @@ every Air Algérie route into it. Lorraine and Lyon already produced `official`
 tier confirmations this way (ORN-ETZ, TLM-LYS). Roughly 40 airports covers most
 of the European network, which is most of the network. Per-airport sourcing also
 scales better than per-leg: the citation is the airport's own page.
+
+## 16. Codeshares are tickets, not routes (found 2026-07-27)
+
+Soar's authenticated responses expose a **`codeshare`** object on an offer:
+
+```jsonc
+{"carrier_iata": "AH", "flight_number": "3016",
+ "codeshare": {"host_iata": "AH", "partner_iatas": ["TK"]}}
+```
+
+That changes what a carrier code on a leg proves. `ALG-IST` returns `AH 3016`,
+`AH 3014` and `AH 3018` sitting beside Turkish Airlines' own `TK 652`, `TK 654`
+and `TK 656` on the same routing and the same duration. An `AH` flight number on
+that leg does **not** mean Air Algérie flies it; it can mean Air Algérie sells a
+seat on Turkish metal.
+
+**A codeshare must never be drawn as an operated route.** The map claims "Air
+Algérie flies this", and a ticket is not a flight. Every leg therefore needs its
+`codeshare` field read before it ships, and where the object is present the leg is
+either dropped or recorded with the operating carrier rather than the marketing
+one.
+
+This retro-justifies the caution in section 8: reading a carrier code off a leg
+settles the *marketing* carrier, which is what a booking system knows. It is
+strong evidence but not proof of operation, and the codeshare field is the thing
+that tells the two apart. Where it is absent, as on `AH 1002` ALG-CDG or
+`AH 1020` ALG-MRS, the leg is Air Algérie's own.
+
+## 17. First authenticated sweep results (2026-07-27)
+
+Soar authenticated: six queries in one burst with no 429, well past the anonymous
+five-per-minute ceiling.
+
+| Pair | Finding | Duration check |
+| --- | --- | --- |
+| `ALG-CDG` | **Air Algérie, many daily**: AH 1002, 1000, 1214, 1534, 1542, 1012, 1230. Air France flies it too (AF 1055/1555/1655/1755/1855), one AF leg codeshared with AH | 150 min vs 133 expected, ratio 1.13 |
+| `CDG-ALG` | **Confirmed both directions**: AH 1013, 1233, 1003, 1001, 1215, 1543, 1231, 1535 | 135 min vs 133, ratio 1.02 |
+| `ALG-MRS` | **Three carriers**: AH 1020/1024, Transavia TO 7323, Volotea V7 2115/2041 | 90 min vs 88, ratio 1.03 |
+| `ALG-IST` | **Codeshare trap**: AH 3014/3016/3018 alongside TK 652/654/656, two of the AH numbers explicitly flagged codeshare with TK | 215 min vs 199, ratio 1.08 |
+| `ALG-FRA` | Empty across six consecutive days, zero raw offers, though Wikipedia lists Frankfurt | - |
+| `ALG-YUL`, `ALG-DXB` | Empty, zero raw offers, though both are listed | - |
+
+The three empties are exactly why two independent sources exist. Per section 7 a
+silence is `unclear`, never a negative, and Montreal and Dubai are both long-haul
+routes a booking API might simply not be selling on the sampled date. They stay
+`unclear` pending a citable source.
+
+**Cost note for planning.** A full 60-pair sweep across both directions and a
+calendar week is ~840 MCP calls, and MCP tool calls cannot be scripted. Use the
+adaptive shape instead: two dates per direction first, escalating to a full week
+only where both come back empty. That concentrates effort on the pairs where the
+answer is actually in doubt.
