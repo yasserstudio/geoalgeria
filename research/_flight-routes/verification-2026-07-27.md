@@ -87,3 +87,53 @@ covering the same date, did not return it at all. Nothing about the schedule cha
 in between, so **a Soar silence is weak evidence and must never be recorded as a
 negative finding.** Absence justifies leaving a pair `unclear`; it never justifies
 deleting a route that a citable source supports.
+
+---
+
+# December probe: rate-limited, mostly unusable
+
+A third run swept Mon 7 to Sun 13 December 2026 for the pairs whose operator no
+official source would name. It hit the Soar anonymous cap partway through:
+
+```
+HTTP 429  "Anonymous Soar search hourly limit exceeded. Sign in for account-based limits."
+```
+
+**The run must not be read as evidence.** The probe's retry logic treated an exhausted
+query as an empty result, so `CZL-TLS`, `TLS-CZL`, `ORN-BRU`, `BRU-ORN`, `ORN-ETZ`,
+`ETZ-ORN` and `ALG-SXB` all printed "nothing all week" when the truthful answer is
+"never successfully asked". `probe_week.py` has since been fixed to record
+`failed_queries` per pair and print `NO USABLE DATA` rather than a silent zero.
+
+The tell was timing: 56 queries took over 16 minutes against roughly 3.5 seconds per
+query in the August run, because each failure burned three attempts and two 5 second
+sleeps.
+
+**The August run is not affected.** Nine of its pairs returned nothing, and had those
+been rate-limited the retry sleeps alone would have added about 16 minutes to a run
+that finished in 7.
+
+## The one result that did land before the cap
+
+| Leg | Observed | Reading |
+| --- | --- | --- |
+| SXB to ALG, Tue 8 Dec 2026 | `AH 1453`, 135 min vs 132 expected | **Air Algerie confirmed on Strasbourg.** Nonstop |
+| SXB to ALG, Fri 11 Dec 2026 | `TO 7314`, 140 min | Transavia also serves the pair |
+
+This answers the question the August week raised. Press had Air Algerie relaunching
+Algiers to Strasbourg on 2025-12-01, 2x/week, through 26 Mar 2026, and the August
+silence looked like the route having lapsed. It had not: the service is running again
+in the 2026/27 winter season, a full year after the relaunch. **The route is winter
+seasonal, and the August absence was out-of-season rather than discontinued.**
+
+The `ALG-SXB` direction was never successfully queried, so its silence says nothing.
+
+## Still unresolved
+
+`ORN-BRU` and `CZL-TLS` operators. Every avenue is now exhausted or blocked:
+Brussels Airport returns Access Denied to real Chromium as well as to curl, most
+likely a geo-block; Toulouse publishes "Vol direct Toulouse to Constantine" with a
+fare and never names the carrier, and its airline directory page is empty; Strasbourg
+lists Algiers as a destination with an empty airline section. The Soar carrier code is
+the only remaining lever and it needs either an authenticated account or a wait for
+the hourly window to reset.

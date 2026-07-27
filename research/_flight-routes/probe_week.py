@@ -24,9 +24,9 @@ DATES=["2026-08-%02d"%d for d in range(10,17)]   # Mon 10 Aug .. Sun 16 Aug 2026
 
 out={}; sid=m.session()
 for (o,d) in PAIRS:
-    rows=[]
+    rows=[]; errors=[]
     for date in DATES:
-        legs=None
+        legs=None; err=None
         for attempt in range(3):
             try:
                 r=m.call("soar_search_flights",{"origin":o,"destination":d,"date":date,"passengers":1,
@@ -41,12 +41,23 @@ for (o,d) in PAIRS:
                 break
             except urllib.error.HTTPError as e:
                 if e.code in (400,404): legs=[]; break
+                if e.code==429:
+                    # Anonymous hourly search limit. Never silently degrade to "no route":
+                    # a rate-limited query is unknown, not empty.
+                    err="rate_limited"; break
+                err="http_%d"%e.code
                 time.sleep(5)
                 try: sid=m.session()
                 except Exception: pass
-            except Exception:
+            except Exception as e:
+                err=type(e).__name__
                 time.sleep(5)
-        if legs is None: legs=[]
+        if legs is None:
+            # Query never succeeded. Record it as unknown so it can never be read
+            # as an absence of service.
+            errors.append({"date":date,"reason":err or "unknown"})
+            print(f"  !! {o}-{d} {date}: QUERY FAILED ({err}) - unknown, NOT a negative")
+            continue
         seen=set()
         for l in legs:
             key=(l["carrier"],l["fn"])
@@ -57,12 +68,14 @@ for (o,d) in PAIRS:
             l["verdict"]="nonstop" if l["dur_min"]<=exp*1.35 else "LIKELY TECH STOP"
             l["date"]=date; rows.append(l)
         time.sleep(1.5)
-    out[f"{o}-{d}"]=rows
-    if rows:
+    out[f"{o}-{d}"]={"legs":rows,"failed_queries":errors,"dates_attempted":len(DATES)}
+    if errors and not rows:
+        print(f"{o}-{d}: NO USABLE DATA - {len(errors)}/{len(DATES)} queries failed")
+    elif rows:
         print(f"{o}-{d}:")
         for r in sorted(rows,key=lambda x:(x['carrier'] or '',x['fn'] or '')):
             print(f"   {r['date']} {r['carrier']}{r['fn']} {r['dur_min']}min (exp ~{r['expected_min']}) {r['verdict']}")
     else:
-        print(f"{o}-{d}: nothing all week")
+        print(f"{o}-{d}: nothing all week ({len(errors)} failed queries)")
 json.dump(out,open("soar-week-probe.json","w"),indent=1)
 print("\nWROTE soar-week-probe.json")
