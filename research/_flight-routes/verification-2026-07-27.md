@@ -39,3 +39,51 @@
 - No official Lisbon airport (ANA Aeroportos) destinations page could be located/fetched for Oran–Lisbon cross-check.
 - No official Paris aéroport (ADP/parisaeroport.fr) destination page could be located for Tlemcen or Batna to resolve CDG-vs-Orly.
 - airalgerie.dz/decouvrir/nos-destinations/ fetched twice: confirms the overall network size (44 international / 33 domestic routes) and destination city list, but the page structure does not expose explicit city-pair routes (e.g., does not say "Tlemcen–Lyon" as a discrete line item), so it could not be used to confirm or deny individual pairs beyond corroborating that Budapest, Vienna, Zurich, Istanbul appear somewhere in the network.
+
+---
+
+# Soar probe cross-check (added 2026-07-27, after the table above)
+
+Two probe runs against the Soar/Duffel search API. Run 1 sampled 2026-08-12 and
+2026-11-18; run 2 swept the full week Mon 2026-08-10 to Sun 2026-08-16. Every leg is
+filtered to `stops: 0` with exactly one segment, then duration-checked against
+`great_circle / 800 kph + 30 min`.
+
+Soar is not a citable source and appears in no `source_url`. This section records what
+it generated as hypotheses and which way it moved confidence.
+
+## Merged verdicts
+
+| Pair | Probe result | Merged verdict | Changed? |
+| --- | --- | --- | --- |
+| TLM-MRS | `AH 1092` nonstop 13, 15, 16 Aug (115 min vs 112 expected), alongside `V7 2679` | **Air Algerie DOES operate it.** Both carriers fly the pair | **Yes.** Upgraded from "unclear, probably Volotea" |
+| TLM-LYS | `TO 7319` only across the August week; `AH 1098` only on 18 Nov | Air Algerie serves it, but not in the sampled August week. Operating pattern unresolved | **Yes.** Not the simple year-round confirmation first read |
+| ETZ-ORN | `AH 1185` nonstop Wed 12 Aug (140 min vs 149 expected) | **Air Algerie confirmed on the Metz route.** ORN-ETZ direction silent all week, a coverage gap rather than absence | **Yes.** Operator now confirmed, not just the route |
+| BLJ-CDG | `AH 1120` nonstop Wed 12 Aug (145 min vs 143 expected); BLJ-ORY silent all week | **CDG confirmed, Orly excluded.** Conflict closed | **Yes.** Was an unresolved CDG-vs-Orly conflict |
+| TLM-ORY | `TO` only, 8 rotations across the week, no `AH` | Transavia. Excluded from an Air Algerie dataset | No, confirms |
+| ALG-SXB | `TO 7315` on 11 and 15 Aug, no `AH` | Air Algerie absent in August. Consistent with the winter season having ended 26 Mar 2026. Needs its own check | New question |
+| TLM-CDG, ORN-BRU, ORN-LIS, CZL-ADB, ALG-SSH, BLJ-ORY | silent all week | No change. Silence here is weak evidence, not a negative | No |
+| CZL-TLS | silent all week | Toulouse airport confirms a direct route exists, so this is a coverage gap. Operator still unattributed | No |
+| ALG-HRG | silent all week | Expected: charters are not normally sold through GDS. Not evidence against | No |
+
+## ALG-BUD triangle: three of four legs directly observed
+
+Aeroroutes describes Wed `ALG-VIE-BUD-ALG` and Sat `ALG-BUD-VIE-ALG`. Observed:
+
+| Leg | Observed | Matches filing? |
+| --- | --- | --- |
+| Wed ALG to BUD | `AH 2028`, 280 min vs 163 expected, so via Vienna | Yes |
+| Wed BUD to ALG | `AH 2028`, 180 min, nonstop (run 1 only) | Yes |
+| Sat BUD to ALG | `AH 2028`, 285 min vs 163 expected, so via Vienna | Yes |
+| Sat ALG to BUD | predicted nonstop, **not observed in either run** | Unconfirmed |
+
+The same flight number covers both a nonstop and a one-stop routing depending on the
+day, which is exactly why `stops: 0` cannot be trusted on its own.
+
+## Offers are volatile between runs
+
+Run 1 found the Wed BUD-ALG nonstop at 180 min. Run 2, roughly 30 minutes later and
+covering the same date, did not return it at all. Nothing about the schedule changed
+in between, so **a Soar silence is weak evidence and must never be recorded as a
+negative finding.** Absence justifies leaving a pair `unclear`; it never justifies
+deleting a route that a citable source supports.
