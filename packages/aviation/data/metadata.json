@@ -28,7 +28,13 @@
       "url": "https://www.anac.dz",
       "license": "Factual public listing (ANAC)",
       "evidence_type": "official",
-      "retrieved": "2026-07-27"
+      "retrieved": "2026-07-27",
+      "snapshot": {
+        "url": "https://www.anac.dz/carte_aeroports_algerie_fusion-1.21.html",
+        "sha256": "14c3d5cc2897bc1657ba79d195140177ea898e7683b47845c49f1e4e2b58aa8f",
+        "bytes": 4046427,
+        "last_modified": "2025-02-12"
+      }
     },
     {
       "key": "ourairports",
@@ -36,7 +42,13 @@
       "url": "https://ourairports.com/data/",
       "license": "Public domain (OurAirports)",
       "evidence_type": "crowdsourced",
-      "retrieved": "2026-07-27"
+      "retrieved": "2026-07-27",
+      "snapshot": {
+        "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+        "sha256": "d227336ea37704fbdf721c5b85be2f456661f39f55f0b2489dd2fb54c2f44ba1",
+        "bytes": 12687335,
+        "last_modified": "2026-07-27"
+      }
     }
   ],
   "license": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",

@@ -740,7 +740,7 @@ export const MIGRATIONS = {
  * }} input
  * @returns {{ records: object[], metadata: object }}
  */
-export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldMeta = {} }) {
+export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snapshots = {}, oldMeta = {} }) {
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
@@ -802,10 +802,17 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
       // sources that carry none with the run's value (real fetch time on a live
       // run, the committed value on an offline replay). Default evidence_type from
       // the canonical helper unless the config pins it.
+      // `snapshot`, when the generator captured one, identifies the exact bytes
+      // this run read: sha256 + size, and the upstream's last-modified where it
+      // publishes one. `retrieved` records when we asked; a live upstream can
+      // change between two runs on the same date, so the date alone cannot say
+      // what a shipped value was derived from. Optional by design: offline and
+      // replay generators have nothing to attest and simply omit it.
       sources: meta.sources.map((s) => ({
         ...s,
         retrieved: s.retrieved ?? retrieved,
         evidence_type: s.evidence_type ?? evidenceForSourceKey(s.key),
+        ...(snapshots[s.key] ? { snapshot: snapshots[s.key] } : {}),
       })),
       license: meta.license,
       updated,

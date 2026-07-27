@@ -70,7 +70,28 @@ export interface SourceRef {
   url?: string;
   license: string;
   retrieved?: string;
+  /** "official" for ANAC, "crowdsourced" for OurAirports, which is
+   *  volunteer-edited and so is neither a government register nor a
+   *  first-party operator feed. */
   evidence_type?: "official" | "crowdsourced" | "derived";
+  /** The exact upstream bytes this build read. Both of this package's sources
+   *  are live documents, and OurAirports regenerates continuously, so
+   *  `retrieved` alone cannot say what a shipped value came from. */
+  snapshot?: SourceSnapshot;
+}
+
+/** An attestation of the upstream artifact a build read. Records what was
+ *  fetched; it is not a pin and never rejects a changed upstream. */
+export interface SourceSnapshot {
+  /** The artifact actually fetched, which may be more specific than
+   *  `SourceRef.url`: ANAC's is the versioned map file, not the page. */
+  url: string;
+  /** SHA-256 of the fetched bytes, lowercase hex. */
+  sha256: string;
+  /** Size of the fetched bytes. */
+  bytes: number;
+  /** The upstream's own `Last-Modified` as an ISO date, where it publishes one. */
+  last_modified?: string;
 }
 
 /** Dataset metadata (data/metadata.json). */

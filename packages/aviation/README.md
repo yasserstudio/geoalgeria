@@ -140,6 +140,13 @@ build fails on anything more than 5 km away. The observed spread is 0.31 to 2.15
 far end being Ouargla (`DAUU`/`OGX`), whose OurAirports entry is named for the Ain Beida
 aerodrome rather than the city.
 
+Both upstreams are live documents, so each entry in `metadata.sources[]` carries a
+`snapshot`: the URL actually fetched, the SHA-256 of its bytes, its size, and its
+`Last-Modified` where the upstream publishes one. `retrieved` records when the build
+asked; the snapshot records what it got. Check it yourself with
+`curl -sL <snapshot.url> | shasum -a 256`. It attests rather than pins, so a changed
+upstream never fails the build.
+
 ## License & attribution
 
 Code is [MIT](LICENSE). The ANAC records are © **ANAC**, redistributed for reference and

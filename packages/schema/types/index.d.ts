@@ -89,6 +89,26 @@ export interface SourceRef {
   retrieved?: string;
   /** How this source establishes its records. */
   evidence_type?: EvidenceType;
+  /** The exact upstream bytes this package was built from, when the generator
+   *  fetched them live. `retrieved` records when we asked; a live upstream can
+   *  change between two runs on the same date, so the date alone cannot say what
+   *  a shipped value was derived from. Absent for offline and replay generators,
+   *  which have nothing to attest. */
+  snapshot?: SourceSnapshot;
+}
+
+/** An attestation of the upstream artifact a build read. Records what was
+ *  fetched; it is not a pin and never rejects a changed upstream. */
+export interface SourceSnapshot {
+  /** The artifact actually fetched, which may be more specific than
+   *  `SourceRef.url` (a versioned file rather than the page linking to it). */
+  url: string;
+  /** SHA-256 of the fetched bytes, lowercase hex. */
+  sha256: string;
+  /** Size of the fetched bytes. */
+  bytes: number;
+  /** The upstream's own `Last-Modified` as an ISO date, where it publishes one. */
+  last_modified?: string;
 }
 
 /** Canonical data/metadata.json shape. */

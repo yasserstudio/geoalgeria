@@ -33,6 +33,7 @@
  */
 
 import { readFileSync, existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
@@ -125,14 +126,42 @@ function haversine(aLat, aLng, bLat, bLng) {
   return 2 * 6371 * Math.asin(Math.sqrt(s)); // km
 }
 
-async function getText(url, referer) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Referer: referer, Accept: "text/html" },
-    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
-  });
+/** Read a response once, as bytes, and return both the decoded text and an
+ *  attestation of exactly what was read.
+ *
+ *  Why attest at all: `retrieved` records when we asked, not what we got. Both
+ *  upstreams are live documents and OurAirports regenerates continuously, so a
+ *  shipped IATA code would otherwise be traceable to a date and nothing else,
+ *  and a regeneration diff could not be explained ("did upstream change, or did
+ *  we?"). Hash-pinning is the wrong control for a file that legitimately changes
+ *  daily, so this attests rather than pins: it records what was read and never
+ *  rejects it.
+ *
+ *  Hashing the raw bytes rather than the decoded string matters. The published
+ *  claim is "sha256 of the fetched bytes", and for anything not already UTF-8
+ *  the two differ, which would make the attestation itself a false claim in the
+ *  one layer that exists to be trustworthy. Bytes also let a reader verify it
+ *  the obvious way: download the URL, run `shasum -a 256`. */
+async function readAttested(url, init) {
+  const res = await fetch(url, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS), ...init });
   if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
-  return res.text();
+  const bytes = Buffer.from(await res.arrayBuffer());
+  const snapshot = {
+    url,
+    sha256: createHash("sha256").update(bytes).digest("hex"),
+    bytes: bytes.length,
+  };
+  const lastModified = res.headers.get("last-modified");
+  const parsed = lastModified && new Date(lastModified);
+  if (parsed && !Number.isNaN(parsed.valueOf()))
+    snapshot.last_modified = parsed.toISOString().slice(0, 10);
+  return { text: new TextDecoder("utf-8").decode(bytes), snapshot };
 }
+
+const getText = (url, referer) =>
+  readAttested(url, {
+    headers: { "User-Agent": UA, Referer: referer, Accept: "text/html" },
+  });
 
 // --- parse -----------------------------------------------------------------
 // Field value sits between the bold label and the next <br> (Site web is a link).
@@ -256,13 +285,11 @@ function parseCSV(text) {
  *  would let a stale row shadow the live one at the same airport, where the
  *  distance guard cannot tell them apart. */
 async function loadOurAirports() {
-  const res = await fetch(OURAIRPORTS, {
+  const { text: csv, snapshot } = await readAttested(OURAIRPORTS, {
     headers: { "User-Agent": UA },
-    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
   });
-  if (!res.ok) throw new Error(`${OURAIRPORTS} -> HTTP ${res.status}`);
   const byIcao = new Map();
-  for (const r of parseCSV(await res.text())) {
+  for (const r of parseCSV(csv)) {
     if (r.iso_country !== "DZ" || r.type === "closed") continue;
     const lat = Number(r.latitude_deg);
     const lng = Number(r.longitude_deg);
@@ -284,7 +311,7 @@ async function loadOurAirports() {
       `OurAirports gives the same IATA code to more than one Algerian airport: ` +
         `${clashing.join(", ")}. An IATA code is a published join key and must be unique`
     );
-  return byIcao;
+  return { byIcao, snapshot };
 }
 
 /** Backfill `iata` on ANAC's records. An ICAO code matching is not on its own
@@ -387,13 +414,15 @@ function resolveWilaya(airport, communes) {
 async function main() {
   console.log("Fetching ANAC airports page…");
   const page = await getText(PAGE, "https://www.anac.dz/");
-  const iframe = page.match(/<iframe[^>]*src=["']([^"']*carte_aeroports[^"']*)["']/i);
+  const iframe = page.text.match(/<iframe[^>]*src=["']([^"']*carte_aeroports[^"']*)["']/i);
   if (!iframe) throw new Error("could not find the airports map iframe on the ANAC page");
   const mapUrl = new URL(iframe[1], PAGE).href;
   console.log(`  map: ${mapUrl}`);
 
-  const mapHtml = await getText(mapUrl, PAGE);
-  const anacAirports = parseAirports(mapHtml);
+  // The versioned map file, not the wrapper page, is the artifact the records
+  // actually come from, so it is the one worth attesting.
+  const map = await getText(mapUrl, PAGE);
+  const anacAirports = parseAirports(map.text);
 
   // Guards — fail loudly if ANAC reshapes the map.
   if (anacAirports.length !== ANAC_EXPECTED) {
@@ -405,7 +434,7 @@ async function main() {
   if (missing.length) throw new Error(`malformed records: ${missing.map((a) => a.icao).join(", ")}`);
 
   console.log("Fetching OurAirports and backfilling IATA codes…");
-  const byIcao = await loadOurAirports();
+  const { byIcao, snapshot: oaSnapshot } = await loadOurAirports();
   backfillIata(anacAirports, byIcao);
   console.log("Appending the airports ANAC's map omits…");
   // `airports` is the merged set from here on, matching what the package's own
@@ -447,6 +476,7 @@ async function main() {
     meta: cfg.meta,
     updated: today,
     retrieved: today,
+    snapshots: { anac: map.snapshot, ourairports: oaSnapshot },
   });
   const wilayas = new Set(records.map((r) => r.wilaya_code)).size;
   console.log(`\nWrote ${records.length} airports across ${wilayas} wilayas → v2 to ${DATA}.`);

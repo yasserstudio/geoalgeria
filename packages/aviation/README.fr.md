@@ -141,6 +141,13 @@ l'ANAC et le build échoue au-delà de 5 km. L'écart observé va de 0,31 à 2,1
 étant Ouargla (`DAUU`/`OGX`), dont l'entrée OurAirports porte le nom de l'aérodrome d'Ain Beida
 plutôt que celui de la ville.
 
+Les deux sources sont des documents vivants, donc chaque entrée de `metadata.sources[]`
+porte un `snapshot` : l'URL réellement récupérée, le SHA-256 de ses octets, sa taille et
+son `Last-Modified` lorsque la source en publie un. `retrieved` indique quand le build a
+demandé ; le snapshot indique ce qu'il a obtenu. Vérifiez-le vous-même avec
+`curl -sL <snapshot.url> | shasum -a 256`. Il atteste, il n'épingle pas : une source
+modifiée ne fait jamais échouer le build.
+
 ## Licence et attribution
 
 Le code est sous licence [MIT](LICENSE). Les enregistrements ANAC sont © **ANAC**, redistribués
