@@ -222,3 +222,33 @@ Both searches used the Soar website, which is the same Duffel backend as the
 probe, so they are a re-run of the same query surface rather than independent
 corroboration. Run 1 and run 2 of the original probe already disagreed with each
 other on a nonstop leg 30 minutes apart.
+
+---
+
+# TLM-LYS: RESOLVED, Air Algérie confirmed (2026-07-27)
+
+Was recorded as `unclear` because the first probe found `AH 1098` only on 18 Nov and
+`TO` (Transavia) only across the sampled August week. A fresh week sweep, Mon 3 to
+Fri 7 Aug 2026, settles it.
+
+| Date | Day | TLM to LYS nonstop |
+| --- | --- | --- |
+| 2026-08-03 | Mon | none (2 offers, all with a connection) |
+| 2026-08-04 | Tue | `TO 7319` Transavia, 18:10 to 21:25, PT2H15M |
+| **2026-08-05** | **Wed** | **`AH 1098` Air Algérie, 07:55 to 11:00, PT2H5M** |
+| 2026-08-06 | Thu | none (7 offers, all with a connection) |
+| 2026-08-07 | Fri | `TO 7319` Transavia, 14:05 to 17:20, PT2H15M |
+
+**Air Algérie does operate TLM-LYS in August**, on Wednesdays, so the earlier
+"Transavia only in the August week" reading was wrong. The first probe's August week
+was 10 to 16 Aug and returned only `TO`; this one is 3 to 7 Aug and returns `AH 1098`
+on the Wednesday. Either the route does not run every Wednesday, or it is the offer
+volatility already documented in this file. Either way the operator question is
+answered: **both carriers serve the pair**, the same shape as TLM-MRS.
+
+Duration checks against the 1313 km great circle (expected ~128 min): `AH 1098` at
+125 min is a ratio of 0.97, `TO 7319` at 135 min is 1.05. Both clean, no technical
+stop. The clock reads 07:55 UTC+1 to 11:00 UTC+2, which is 2h05 in the air.
+
+Weekend (Sat 8, Sun 9 Aug) not swept: anonymous rate budget. The frequency claim
+should say "at least Wednesdays" until it is.
