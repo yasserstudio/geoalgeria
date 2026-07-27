@@ -12,9 +12,10 @@
 
 </div>
 
-33 مطارا مدنيا عبر الجزائر — بالأسماء الرسمية، **رموز OACI (ICAO)**، العناوين البريدية،
+36 مطارا مدنيا عبر الجزائر، بالأسماء الرسمية، **رموز OACI (ICAO) وIATA**، العناوين البريدية،
 أرقام الهاتف، المواقع الإلكترونية، الإحداثيات الجغرافية (GPS)، والربط بالولاية. المصدر:
-ANAC (السلطة الوطنية للطيران المدني)، متوفر بصيغ JSON وCSV وGeoJSON.
+ANAC (السلطة الوطنية للطيران المدني)، مع رموز IATA وثلاثة مطارات غائبة عن خريطة ANAC مأخوذة
+من OurAirports. متوفر بصيغ JSON وCSV وGeoJSON.
 جزء من [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -24,8 +25,8 @@ npm install @geoalgeria/aviation
 ```js
 import aviation from "@geoalgeria/aviation";
 
-const all = aviation.airports();                 // 33
-const algiers = aviation.airportByIcao("DAAG");  // هواري بومدين
+const all = aviation.airports();                 // 36
+const algiers = aviation.airportByIcao("DAAG");  // هواري بومدين، iata "ALG"
 const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية 31
 
 // كل سجل يحتوي على إحداثيات — الترتيب حسب المسافة، الخرائط، أو أقرب مطار في بضعة أسطر.
@@ -34,7 +35,7 @@ const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية
 ## ما يمكنك بناؤه
 
 - **البحث عن أقرب مطار** — إحداثيات في كل سجل، جاهزة للترتيب حسب المسافة.
-- **تحويل OACI ↔ مطار** — ربط رموز OACI من بيانات الرحلات بالأسماء وجهات الاتصال والمواقع.
+- **تحويل OACI/IATA ↔ مطار**: ربط أي من الرمزين، من تدفق رحلات أو نظام حجز أو جدول مواعيد، بالأسماء وجهات الاتصال والمواقع.
 - **السفر والنقل** — ربط ولاية أو نقطة بالمطار الذي يخدمها.
 - **الخرائط** — طبقة نقاط GeoJSON جاهزة للاستخدام لشبكة المطارات المدنية بالكامل.
 
@@ -42,10 +43,14 @@ const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية
 
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
-| المطارات المدنية | **33** | الاسم الرسمي، رمز OACI، العنوان، الهاتف، الموقع الإلكتروني، الإحداثيات |
+| المطارات المدنية | **36** | الاسم الرسمي، رمزا OACI وIATA، العنوان، الهاتف، الموقع الإلكتروني، الإحداثيات |
 
-تغطي **31 ولاية**، كل مطار محدد الإحداثيات. `wilaya_code` مرتبط بنموذج الـ 69 ولاية في
-[`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+تغطي **33 ولاية**، كل مطار محدد الإحداثيات ويحمل رمز IATA. `wilaya_code` مرتبط بنموذج الـ 69
+ولاية في [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+
+33 من أصل 36 مأخوذة من خريطة ANAC نفسها. أما الثلاثة الأخرى، حاسي الرمل (`HRM`) والمشرية
+(`MZW`) والأغواط (`LOO`)، فهي غائبة عنها ومأخوذة من OurAirports، لذا تحمل
+`source: "ourairports"` وبدون حقول اتصال.
 
 ## الصيغ
 
@@ -69,10 +74,10 @@ const airports: Airport[] = aviation.airports();
 
 ```
 data/
-  airports.json            # 33 مطارا (مصفوفة)
+  airports.json            # 36 مطارا (مصفوفة)
   metadata.json            # المصادر، الأعداد، الترخيص، updated
   csv/airports.csv         # المستودع + حزمة الإصدار (غير مضمّن في tarball npm)
-  geojson/airports.geojson # معالم نقطية (جميع الـ 33 محددة الإحداثيات)
+  geojson/airports.geojson # معالم نقطية (جميع الـ 36 محددة الإحداثيات)
 ```
 
 ## شكل السجل
@@ -89,22 +94,25 @@ data/
   "geo_precision": "exact",
   "geo_method": "source_point",
   "source": "anac",
-  "refs": { "icao": "DAAG" },
+  "refs": { "icao": "DAAG", "iata": "ALG" },
   "icao": "DAAG",
-  "iata": null,
+  "iata": "ALG",
   "address": "Alger BP 164 DAR EL BEIDA",
   "phone": "+21323199230",
   "website": "https://www.aeroportalger.dz/"
 }
 ```
 
-`id` هو رمز OACI بأحرف صغيرة. `icao` يطابق دائما النمط `DA[A-Z]{2}`. `iata` قيمته `null` — تنشر
-ANAC رموز OACI فقط (الحقل محجوز للإثراء لاحقا). `wilaya_code` مكمّل بصفر إلى رقمين ويرتبط
-بولايات GeoAlgeria؛ هذه المجموعة تغطي مستوى الولاية فقط، لذا `commune_code` و`commune` قيمتهما
-دائما `null`. كل نقطة تأتي مباشرة من الخريطة المنشورة من ANAC، لذا `geo_precision` قيمتها دائما
-`"exact"` و`geo_method` قيمتها دائما `"source_point"` — لا شيء هنا قيمة احتياطية أو تخفيض دقة.
-`source` هو مفتاح قصير يُحلّ في `metadata.sources[]` (دائما `"anac"`)، و`refs.icao` يكرر `icao`
-في المستوى الأعلى. سجل واحد فقط (`dabs`، تبسة) لديه `phone` بقيمة `null` حيث لا تذكر ANAC رقما.
+`id` هو رمز OACI بأحرف صغيرة. `icao` يطابق دائما النمط `DA[A-Z]{2}`. `iata` يحمل رمز IATA،
+مملوءا في السجلات الـ 36 كلها لكنه يبقى من نوع nullable حتى لا يكون مطار بلا رمز مخصص كسرا
+للعقد. `wilaya_code` مكمّل بصفر إلى رقمين ويرتبط بولايات GeoAlgeria؛ هذه المجموعة تغطي مستوى
+الولاية فقط، لذا `commune_code` و`commune` قيمتهما دائما `null`. كل نقطة تأتي مباشرة من
+الإحداثية التي ينشرها مصدرها، لذا `geo_precision` قيمتها دائما `"exact"` و`geo_method` قيمتها
+دائما `"source_point"`: لا شيء هنا قيمة احتياطية أو تخفيض دقة. `source` هو مفتاح قصير يُحلّ في
+`metadata.sources[]`، إما `"anac"` أو `"ourairports"`، و`refs` يكرر `icao` و`iata` في المستوى
+الأعلى. سجل ANAC واحد (`dabs`، تبسة) لديه `phone` بقيمة `null` حيث لا تذكر ANAC رقما؛ وسجلات
+OurAirports الثلاثة لديها `address` و`phone` و`website` بقيمة `null`، وهي حقول لا ينشرها
+OurAirports.
 
 ## هل تحتاج التقسيمات الإدارية أيضا؟
 
@@ -122,10 +130,19 @@ ANAC، وتفشل بوضوح إذا تغيّر عدد المطارات أو تن
 مركز بلدية من مجموعة بيانات `geoalgeria` (الحزمة الرئيسية توفر مراكز البلديات وليس مضلعات
 الحدود).
 
+لا تنشر ANAC سوى رموز OACI وتغفل ثلاثة مطارات، لذا تقرأ عملية البناء نفسها أيضا ملف
+`airports.csv` الخاص بـ**[OurAirports](https://ourairports.com/data/)** والموضوع في الملك
+العام. تُربط رموز IATA عبر رمز OACI، ولأن تطابق الرمز وحده ليس دليلا على أن السطرين يصفان
+المكان نفسه، تُؤكَّد كل عملية ربط مقابل إحداثية ANAC نفسها وتفشل عملية البناء عند تجاوز 5 كم.
+الفارق المرصود يتراوح بين 0.31 و2.15 كم، وأقصاه ورقلة (`DAUU`/`OGX`)، التي يحمل مدخلها في
+OurAirports اسم مطار عين البيضاء بدل اسم المدينة.
+
 ## الترخيص والإسناد
 
-الكود مرخّص بموجب [MIT](LICENSE). البيانات الأساسية © **ANAC**، معاد توزيعها كمرجع ولتشغيل
-[GeoAlgeria](https://geoalgeria.com). تحقق من ANAC للحصول على معلومات رسمية ومحدّثة.
+الكود مرخّص بموجب [MIT](LICENSE). سجلات ANAC © **ANAC**، معاد توزيعها كمرجع ولتشغيل
+[GeoAlgeria](https://geoalgeria.com)؛ أما رموز IATA والمطارات الثلاثة الإضافية فمن
+OurAirports، التي تضع بياناتها في الملك العام. تحقق من ANAC للحصول على معلومات رسمية
+ومحدّثة.
 
 [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs/aviation) · [تصفح جميع الحزم →](https://geoalgeria.com/data)
 

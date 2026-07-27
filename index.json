@@ -27,22 +27,22 @@
       "package": "@geoalgeria/aviation",
       "schema_version": "2.0.0",
       "title": "Algeria airports",
-      "record_count": 33,
-      "geocoded_count": 33,
+      "record_count": 36,
+      "geocoded_count": 36,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 33,
+        "exact": 36,
         "approximate": 0
       },
-      "wilayas_covered": 31,
+      "wilayas_covered": 33,
       "bbox": [
         -8.165434,
         19.563939,
         9.63789,
         36.824416
       ],
-      "license": "Factual public listing (ANAC)",
-      "updated": "2026-06-14"
+      "license": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
+      "updated": "2026-07-27"
     },
     {
       "package": "@geoalgeria/banques",

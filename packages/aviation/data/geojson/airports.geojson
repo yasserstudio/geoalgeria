@@ -22,10 +22,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAD"
+          "icao": "DAAD",
+          "iata": "BUJ"
         },
         "icao": "DAAD",
-        "iata": null,
+        "iata": "BUJ",
         "address": "BP 278/ BOU SAADA",
         "phone": "+213 35 43 47 78",
         "website": "https://aeroports-egsa-alger.dz/fr/1.html"
@@ -52,10 +53,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAE"
+          "icao": "DAAE",
+          "iata": "BJA"
         },
         "icao": "DAAE",
-        "iata": null,
+        "iata": "BJA",
         "address": "Soummam‐Abane Ramdane‐ Bejaia",
         "phone": "+213 34183036",
         "website": "https://aeroports-egsa-alger.dz/fr/11.html"
@@ -82,10 +84,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAG"
+          "icao": "DAAG",
+          "iata": "ALG"
         },
         "icao": "DAAG",
-        "iata": null,
+        "iata": "ALG",
         "address": "Alger BP 164 DAR EL BEIDA",
         "phone": "+21323199230",
         "website": "https://www.aeroportalger.dz/"
@@ -112,10 +115,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAJ"
+          "icao": "DAAJ",
+          "iata": "DJG"
         },
         "icao": "DAAJ",
-        "iata": null,
+        "iata": "DJG",
         "address": "Aéroport de DJANET / Tiska BP 29. ‐DJANET",
         "phone": "+213 29481502",
         "website": "https://aeroports-egsa-alger.dz/fr/13.html"
@@ -142,10 +146,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAP"
+          "icao": "DAAP",
+          "iata": "VVZ"
         },
         "icao": "DAAP",
-        "iata": null,
+        "iata": "VVZ",
         "address": "Aéroport de ILLIZI/TAKHAMALT BP 39 ‐ILLIZI",
         "phone": "+213 29413013",
         "website": "https://aeroports-egsa-alger.dz/fr/5.html"
@@ -172,10 +177,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAS"
+          "icao": "DAAS",
+          "iata": "QSF"
         },
         "icao": "DAAS",
-        "iata": null,
+        "iata": "QSF",
         "address": "Aéroport de SETIF /8 Mai 45 ‐ BP 219 /Sétif",
         "phone": "+213 36 543135",
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-setif-08-mai-1945"
@@ -202,10 +208,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAT"
+          "icao": "DAAT",
+          "iata": "TMR"
         },
         "icao": "DAAT",
-        "iata": null,
+        "iata": "TMR",
         "address": "Aéroport de TAMENGHASSET/Aguenar-Hadj Bey Akhamok- BP 38/TAMENGHASSET",
         "phone": "+21329330031",
         "website": "https://aeroports-egsa-alger.dz/fr/16.html"
@@ -232,13 +239,45 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAAV"
+          "icao": "DAAV",
+          "iata": "GJL"
         },
         "icao": "DAAV",
-        "iata": null,
+        "iata": "GJL",
         "address": "Aéroport de JIJEL/FERHAT ABBAS BP :37- TAHER / JIJEL",
         "phone": "+213 34 544408",
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-jijel-ferhat-abbas"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.242353007197,
+          33.535900116
+        ]
+      },
+      "properties": {
+        "id": "daay",
+        "name": "Aéroport de Mécheria",
+        "wilaya_code": "45",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.535900116,
+        "lng": -0.242353007197,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "ourairports",
+        "refs": {
+          "icao": "DAAY",
+          "iata": "MZW"
+        },
+        "icao": "DAAY",
+        "iata": "MZW",
+        "address": null,
+        "phone": null,
+        "website": null
       }
     },
     {
@@ -262,10 +301,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DABB"
+          "icao": "DABB",
+          "iata": "AAE"
         },
         "icao": "DABB",
-        "iata": null,
+        "iata": "AAE",
         "address": "Rabah Bitat BP 296‐ Annaba",
         "phone": "+21338529071",
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat"
@@ -292,10 +332,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DABC"
+          "icao": "DABC",
+          "iata": "CZL"
         },
         "icao": "DABC",
-        "iata": null,
+        "iata": "CZL",
         "address": "AVA, Aéroport de CONSTANTINE",
         "phone": "+21331810125",
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-constantine-mohamed-boudiaf"
@@ -322,10 +363,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DABS"
+          "icao": "DABS",
+          "iata": "TEE"
         },
         "icao": "DABS",
-        "iata": null,
+        "iata": "TEE",
         "address": "Aéroport de TEBESSA/Cheikh Larbi Tébessi BP 78‐Tebessa",
         "phone": null,
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-tebessa-cheikh-larbi-tebessi"
@@ -352,13 +394,45 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DABT"
+          "icao": "DABT",
+          "iata": "BLJ"
         },
         "icao": "DABT",
-        "iata": null,
+        "iata": "BLJ",
         "address": "Batna-Mostepha Ben BOULAID aeroport",
         "phone": "+213 33 870152",
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-batna-mostefa-ben-boulaid"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.31154,
+          32.930401
+        ]
+      },
+      "properties": {
+        "id": "dafh",
+        "name": "Aéroport de Hassi R'Mel – Tilrhemt",
+        "wilaya_code": "03",
+        "commune_code": null,
+        "commune": null,
+        "lat": 32.930401,
+        "lng": 3.31154,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "ourairports",
+        "refs": {
+          "icao": "DAFH",
+          "iata": "HRM"
+        },
+        "icao": "DAFH",
+        "iata": "HRM",
+        "address": null,
+        "phone": null,
+        "website": null
       }
     },
     {
@@ -382,10 +456,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOB"
+          "icao": "DAOB",
+          "iata": "TID"
         },
         "icao": "DAOB",
-        "iata": null,
+        "iata": "TID",
         "address": "Aéroport TIARET / Abdelhafid Boussouf Bou Chekif ‐BP 12/Tiaret",
         "phone": "+213 46240005",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-tiaret/"
@@ -412,10 +487,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOF"
+          "icao": "DAOF",
+          "iata": "TIN"
         },
         "icao": "DAOF",
-        "iata": null,
+        "iata": "TIN",
         "address": "AVA, Direction de la Sécurité Aéronautique BP 72 /TINDOUF",
         "phone": "+213 49370017",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-tindouf/"
@@ -442,10 +518,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOI"
+          "icao": "DAOI",
+          "iata": "CFK"
         },
         "icao": "DAOI",
-        "iata": null,
+        "iata": "CFK",
         "address": "Aboubakr Belkaid Airport, Chlef",
         "phone": "+213 27728032",
         "website": "https://aeroports-egsa-alger.dz/fr/15.html"
@@ -472,10 +549,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAON"
+          "icao": "DAON",
+          "iata": "TLM"
         },
         "icao": "DAON",
-        "iata": null,
+        "iata": "TLM",
         "address": "Aéroport de TLEMCEN/Zenata-Messali El Hadj/BP50- ZENATA/TLEMCEN",
         "phone": "+21343403149",
         "website": "https://egsa-oran.dz/index.php/nos-aeroports/"
@@ -502,10 +580,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOO"
+          "icao": "DAOO",
+          "iata": "ORN"
         },
         "icao": "DAOO",
-        "iata": null,
+        "iata": "ORN",
         "address": "Aéroportd’ORAN/Ahmed BenbellaBP13 -Oran",
         "phone": "+21341591067",
         "website": "https://egsa-oran.dz/index.php/aeroport-doran/"
@@ -532,10 +611,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOR"
+          "icao": "DAOR",
+          "iata": "CBH"
         },
         "icao": "DAOR",
-        "iata": null,
+        "iata": "CBH",
         "address": "Boudghene Ben Ali Lotfi‐ BP: 69/Bechar",
         "phone": "+213 49221909",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-bechar/"
@@ -562,10 +642,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOV"
+          "icao": "DAOV",
+          "iata": "MUW"
         },
         "icao": "DAOV",
-        "iata": null,
+        "iata": "MUW",
         "address": "Aéroport de GHRISS BP 12 - GHRISS",
         "phone": "+213 45715911",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-mascara/"
@@ -592,10 +673,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAOY"
+          "icao": "DAOY",
+          "iata": "EBH"
         },
         "icao": "DAOY",
-        "iata": null,
+        "iata": "EBH",
         "address": "Aéroport d’El Bayadh BP 209 RP/ El Bayadh",
         "phone": "+213 49667806",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-el-bayadh/"
@@ -622,10 +704,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DATG"
+          "icao": "DATG",
+          "iata": "INF"
         },
         "icao": "DATG",
-        "iata": null,
+        "iata": "INF",
         "address": "Aéroport d’IN GUEZZAM / IN GUEZZAM",
         "phone": "+213 29 351123",
         "website": "https://aeroports-egsa-alger.dz/fr/7.html"
@@ -652,10 +735,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DATM"
+          "icao": "DATM",
+          "iata": "BMW"
         },
         "icao": "DATM",
-        "iata": null,
+        "iata": "BMW",
         "address": "BORDJ MOKHTAR",
         "phone": "+213 49329304",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-bordj-badji-mokhtar/"
@@ -682,10 +766,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUA"
+          "icao": "DAUA",
+          "iata": "AZR"
         },
         "icao": "DAUA",
-        "iata": null,
+        "iata": "AZR",
         "address": "Touat‐Cheikh Sidi Mohamed Belkebir BP15‐Adrar",
         "phone": "+21349358003",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-adrar/"
@@ -712,10 +797,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUB"
+          "icao": "DAUB",
+          "iata": "BSK"
         },
         "icao": "DAUB",
-        "iata": null,
+        "iata": "BSK",
         "address": "ENNA – Direction de la Sécurité Aéronautique BP 27 star Melouk BISKRA, Biskra",
         "phone": "+213 33543005",
         "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-de-biskra-mohamed-kheider"
@@ -742,10 +828,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUE"
+          "icao": "DAUE",
+          "iata": "ELG"
         },
         "icao": "DAUE",
-        "iata": null,
+        "iata": "ELG",
         "address": "Aéroport d’El GOLEA BP 30- El GOLEA",
         "phone": "+213 29210735",
         "website": "https://aeroports-egsa-alger.dz/fr/6.html"
@@ -772,10 +859,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUG"
+          "icao": "DAUG",
+          "iata": "GHA"
         },
         "icao": "DAUG",
-        "iata": null,
+        "iata": "GHA",
         "address": "Aéroport de GHARDAIA/Noumérat‐Moufdi Zakaria BP 123/Ghardaia",
         "phone": "+21329295555",
         "website": "https://aeroports-egsa-alger.dz/fr/14.html"
@@ -802,10 +890,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUH"
+          "icao": "DAUH",
+          "iata": "HME"
         },
         "icao": "DAUH",
-        "iata": null,
+        "iata": "HME",
         "address": "Aéroport de Hassi Messaoud/Oued Irara‐Krim Belkacem BP 130",
         "phone": "+21329741885",
         "website": "https://aeroports-egsa-alger.dz/fr/10.html"
@@ -832,10 +921,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUI"
+          "icao": "DAUI",
+          "iata": "INZ"
         },
         "icao": "DAUI",
-        "iata": null,
+        "iata": "INZ",
         "address": "Aéroport de In Salah BP 23 - IN SALAH",
         "phone": "+213 29366103",
         "website": "https://aeroports-egsa-alger.dz/fr/4.html"
@@ -862,13 +952,45 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUK"
+          "icao": "DAUK",
+          "iata": "TGR"
         },
         "icao": "DAUK",
-        "iata": null,
+        "iata": "TGR",
         "address": "Aéroport de TOUGGOURT /Sidi Mahdi ‐BP 47 / TOUGGOURT",
         "phone": "+213 29 69 31 45",
         "website": "https://aeroports-egsa-alger.dz/fr/8.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.92834,
+          33.7644
+        ]
+      },
+      "properties": {
+        "id": "daul",
+        "name": "Aéroport de Laghouat – Moulay Ahmed Medeghri",
+        "wilaya_code": "03",
+        "commune_code": null,
+        "commune": null,
+        "lat": 33.7644,
+        "lng": 2.92834,
+        "geo_precision": "exact",
+        "geo_method": "source_point",
+        "source": "ourairports",
+        "refs": {
+          "icao": "DAUL",
+          "iata": "LOO"
+        },
+        "icao": "DAUL",
+        "iata": "LOO",
+        "address": null,
+        "phone": null,
+        "website": null
       }
     },
     {
@@ -892,10 +1014,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUO"
+          "icao": "DAUO",
+          "iata": "ELU"
         },
         "icao": "DAUO",
-        "iata": null,
+        "iata": "ELU",
         "address": "Aéroport d’El Oued/Guemar BP 110 / El Oued",
         "phone": "+213 32101015",
         "website": "https://aeroports-egsa-alger.dz/fr/17.html"
@@ -922,10 +1045,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUT"
+          "icao": "DAUT",
+          "iata": "TMX"
         },
         "icao": "DAUT",
-        "iata": null,
+        "iata": "TMX",
         "address": "Aéroport de TIMIMOUN ‐ BP 440/ TIMIMOUN",
         "phone": "+213 49305706",
         "website": "https://egsa-oran.dz/index.php/aeroport-de-timimoun/"
@@ -952,10 +1076,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUU"
+          "icao": "DAUU",
+          "iata": "OGX"
         },
         "icao": "DAUU",
-        "iata": null,
+        "iata": "OGX",
         "address": "Aéroport de Ouargla‐ BP 11 /OUARGLA",
         "phone": "+213 29774906",
         "website": "https://aeroports-egsa-alger.dz/fr/2.html"
@@ -982,10 +1107,11 @@
         "geo_method": "source_point",
         "source": "anac",
         "refs": {
-          "icao": "DAUZ"
+          "icao": "DAUZ",
+          "iata": "IAM"
         },
         "icao": "DAUZ",
-        "iata": null,
+        "iata": "IAM",
         "address": "Aéroport de In Amenas B.P 51 /IN AMENAS",
         "phone": "+213 29 45 13",
         "website": "https://aeroports-egsa-alger.dz/fr/12.html"

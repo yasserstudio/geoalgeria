@@ -12,10 +12,11 @@
 
 </div>
 
-33 aéroports civils à travers l'Algérie — avec les noms officiels, les **codes OACI (ICAO)**,
-les adresses postales, numéros de téléphone, sites web, coordonnées GPS et rattachement
-à la wilaya. Source : ANAC (Autorité Nationale de l'Aviation Civile), distribué en JSON,
-CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+36 aéroports civils à travers l'Algérie, avec les noms officiels, les **codes OACI (ICAO)
+et IATA**, les adresses postales, numéros de téléphone, sites web, coordonnées GPS et
+rattachement à la wilaya. Source : ANAC (Autorité Nationale de l'Aviation Civile), avec les
+codes IATA et trois aéroports absents de la carte de l'ANAC repris d'OurAirports. Distribué
+en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/aviation
@@ -24,8 +25,8 @@ npm install @geoalgeria/aviation
 ```js
 import aviation from "@geoalgeria/aviation";
 
-const all = aviation.airports();                 // 33
-const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene
+const all = aviation.airports();                 // 36
+const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene, iata "ALG"
 const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 
 // Chaque enregistrement a lat/lng — tri par distance, carte ou aéroport le plus proche en quelques lignes.
@@ -34,7 +35,7 @@ const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 ## Ce que vous pouvez construire
 
 - **Recherche de l'aéroport le plus proche** — coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
-- **Résolution OACI ↔ aéroport** — associer les codes OACI des données de vol aux noms, contacts et localisations.
+- **Résolution OACI/IATA ↔ aéroport** : associer l'un ou l'autre code, venu d'un flux de vols, d'un système de réservation ou d'un horaire, à un nom, des contacts et une localisation.
 - **Voyage et logistique** — associer une wilaya ou un point à son aéroport desservant.
 - **Cartes** — couche de points GeoJSON prête à l'emploi pour tout le réseau d'aéroports civils.
 
@@ -42,10 +43,14 @@ const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Aéroports civils | **33** | nom officiel, code OACI, adresse, téléphone, site web, coordonnées |
+| Aéroports civils | **36** | nom officiel, codes OACI et IATA, adresse, téléphone, site web, coordonnées |
 
-Couvrant **31 wilayas**, chaque aéroport est géocodé. `wilaya_code` est lié au modèle
-69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+Couvrant **33 wilayas**, chaque aéroport est géocodé et porte un code IATA. `wilaya_code`
+est lié au modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
+
+33 des 36 viennent de la carte de l'ANAC. Les trois autres, Hassi R'Mel (`HRM`), Mécheria
+(`MZW`) et Laghouat (`LOO`), en sont absents et viennent d'OurAirports : ils portent
+`source: "ourairports"` et aucun champ de contact.
 
 ## Formats
 
@@ -69,10 +74,10 @@ Les formats **CSV et GeoJSON** sont dans le dépôt sous [`data/`](data) et incl
 
 ```
 data/
-  airports.json            # 33 aéroports (tableau)
+  airports.json            # 36 aéroports (tableau)
   metadata.json            # sources, comptages, licence, updated
   csv/airports.csv         # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/airports.geojson # Entités Point (les 33 sont géocodés)
+  geojson/airports.geojson # Entités Point (les 36 sont géocodés)
 ```
 
 ## Structure d'un enregistrement
@@ -89,9 +94,9 @@ data/
   "geo_precision": "exact",
   "geo_method": "source_point",
   "source": "anac",
-  "refs": { "icao": "DAAG" },
+  "refs": { "icao": "DAAG", "iata": "ALG" },
   "icao": "DAAG",
-  "iata": null,
+  "iata": "ALG",
   "address": "Alger BP 164 DAR EL BEIDA",
   "phone": "+21323199230",
   "website": "https://www.aeroportalger.dz/"
@@ -99,14 +104,17 @@ data/
 ```
 
 `id` est le code OACI en minuscules. `icao` correspond toujours au format `DA[A-Z]{2}`. `iata`
-est `null` — l'ANAC ne publie que les codes OACI (le champ est réservé pour un enrichissement
-ultérieur). `wilaya_code` est complété à deux chiffres avec un zéro et rejoint les wilayas de
-GeoAlgeria ; ce jeu de données ne couvre que le niveau wilaya, donc `commune_code` et `commune`
-sont toujours `null`. Chaque point provient directement de la carte publiée par l'ANAC, donc
-`geo_precision` vaut toujours `"exact"` et `geo_method` vaut toujours `"source_point"` — rien
-ici n'est une valeur de repli ou une dégradation. `source` est une clé courte résolue dans
-`metadata.sources[]` (toujours `"anac"`), et `refs.icao` duplique le `icao` de premier niveau.
-Un seul enregistrement (`dabs`, Tébessa) a un `phone` à `null` lorsque l'ANAC n'en indique pas.
+porte le code IATA, renseigné sur les 36 enregistrements mais typé nullable pour qu'un aéroport
+sans code assigné ne soit jamais une rupture de contrat. `wilaya_code` est complété à deux
+chiffres avec un zéro et rejoint les wilayas de GeoAlgeria ; ce jeu de données ne couvre que le
+niveau wilaya, donc `commune_code` et `commune` sont toujours `null`. Chaque point provient
+directement de la coordonnée publiée par sa source, donc `geo_precision` vaut toujours
+`"exact"` et `geo_method` vaut toujours `"source_point"` : rien ici n'est une valeur de repli
+ou une dégradation. `source` est une clé courte résolue dans `metadata.sources[]`, `"anac"` ou
+`"ourairports"`, et `refs` duplique les `icao` et `iata` de premier niveau. Un enregistrement
+ANAC (`dabs`, Tébessa) a un `phone` à `null` lorsque l'ANAC n'en indique pas ; les trois
+enregistrements OurAirports ont `address`, `phone` et `website` à `null`, qu'OurAirports ne
+publie pas.
 
 ## Besoin aussi des divisions administratives ?
 
@@ -125,11 +133,20 @@ nombre d'aéroports ou le format OACI change. `wilaya_code` est résolu par le c
 le plus proche à partir du jeu de données `geoalgeria` (le package principal fournit des
 centroïdes, pas des polygones de limites).
 
+L'ANAC ne publie que les codes OACI et omet trois aéroports, donc le même build lit aussi le
+fichier `airports.csv` du domaine public d'**[OurAirports](https://ourairports.com/data/)**. Les
+codes IATA sont joints sur l'OACI et, puisqu'un code identique ne prouve pas à lui seul que deux
+lignes décrivent le même lieu, chaque jointure est confirmée par rapport à la coordonnée de
+l'ANAC et le build échoue au-delà de 5 km. L'écart observé va de 0,31 à 2,15 km, le maximum
+étant Ouargla (`DAUU`/`OGX`), dont l'entrée OurAirports porte le nom de l'aérodrome d'Ain Beida
+plutôt que celui de la ville.
+
 ## Licence et attribution
 
-Le code est sous licence [MIT](LICENSE). Les données sous-jacentes sont © **ANAC**, redistribuées
-à titre de référence et pour alimenter [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès de
-l'ANAC pour des informations officielles et en temps réel.
+Le code est sous licence [MIT](LICENSE). Les enregistrements ANAC sont © **ANAC**, redistribués
+à titre de référence et pour alimenter [GeoAlgeria](https://geoalgeria.com) ; les codes IATA et
+les trois aéroports supplémentaires viennent d'OurAirports, qui place ses données dans le
+domaine public. Vérifiez auprès de l'ANAC pour des informations officielles et en temps réel.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/aviation) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
 

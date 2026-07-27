@@ -17,7 +17,15 @@
  * wilaya_code is resolved by nearest commune centroid (haversine) from the
  * flagship geoalgeria commune data — the flagship ships only centroids, not
  * boundary polygons, so true point-in-polygon isn't possible. The build prints
- * all 33 `name -> wilaya_code` rows for a one-time eyeball.
+ * every `name -> wilaya_code` row for a one-time eyeball.
+ *
+ * Second source (public domain): OurAirports' airports.csv, which does two jobs
+ * ANAC cannot. ANAC publishes only OACI/ICAO, so every IATA code is backfilled
+ * from OurAirports on an ICAO join; and ANAC's map omits three airports that the
+ * route network needs as endpoints (Hassi R'Mel HRM, Mécheria MZW, Laghouat LOO),
+ * which are appended from the same file. An ICAO join is not self-verifying, so
+ * each match is confirmed by coordinate distance against ANAC's own point and the
+ * build fails on anything past IATA_MAX_KM.
  *
  * Usage: node scripts/fetch.mjs
  */
@@ -38,6 +46,25 @@ const UA =
 
 const EXPECTED = 33; // ANAC lists 33 civil airports; fail loudly if that changes.
 const ICAO_RE = /^DA[A-Z]{2}$/; // every Algerian OACI code is DAxx.
+
+const OURAIRPORTS = "https://davidmegginson.github.io/ourairports-data/airports.csv";
+// ANAC's marker is a terminal pin, OurAirports' is the aerodrome reference point,
+// so the two never coincide exactly. Observed spread across all 33 is 0.31-2.15 km,
+// the far end being Ouargla (DAUU/OGX), whose OurAirports entry is named after the
+// Ain Beida aerodrome rather than the city. 5 km is comfortably past that and still
+// far inside any plausible "wrong airport" gap.
+const IATA_MAX_KM = 5;
+
+// Airports absent from ANAC's map that the route network needs as endpoints. Only
+// the ICAO and the French name are pinned here: coordinates, IATA and everything
+// else come from OurAirports at build time, so this table cannot drift from its
+// source. Laghouat is the one that matters most: it is the Algerian end of the
+// JED-LOO arc.
+const SUPPLEMENTS = [
+  { icao: "DAFH", name: "Aéroport de Hassi R'Mel – Tilrhemt" },
+  { icao: "DAAY", name: "Aéroport de Mécheria" },
+  { icao: "DAUL", name: "Aéroport de Laghouat – Moulay Ahmed Medeghri" },
+];
 
 // --- helpers ---------------------------------------------------------------
 const ENTITIES = {
@@ -149,11 +176,98 @@ function parseAirports(mapHtml) {
       wilaya_code: null, // filled by resolveWilaya()
       lat,
       lng,
-      source: PAGE,
+      source: "anac", // provenance key into metadata.sources[], not a URL
     });
   }
   airports.sort((a, b) => a.icao.localeCompare(b.icao));
   return airports;
+}
+
+// --- OurAirports -----------------------------------------------------------
+/** Minimal RFC4180 reader. OurAirports quotes any field containing a comma and
+ *  escapes an inner quote by doubling it; airport names do both. */
+function parseCSV(text) {
+  const rows = [];
+  let row = [];
+  let field = "";
+  let quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (quoted) {
+      if (c !== '"') field += c;
+      else if (text[i + 1] === '"') { field += '"'; i++; }
+      else quoted = false;
+    } else if (c === '"') quoted = true;
+    else if (c === ",") { row.push(field); field = ""; }
+    else if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
+    else if (c !== "\r") field += c;
+  }
+  if (field !== "" || row.length) { row.push(field); rows.push(row); }
+  const [header, ...body] = rows;
+  return body
+    .filter((r) => r.length === header.length)
+    .map((r) => Object.fromEntries(header.map((h, i) => [h, r[i]])));
+}
+
+/** Algerian entries keyed by ICAO. `gps_code` is folded in because a handful of
+ *  OurAirports rows carry the code there and leave `icao_code` empty. */
+async function loadOurAirports() {
+  const res = await fetch(OURAIRPORTS, { headers: { "User-Agent": UA } });
+  if (!res.ok) throw new Error(`${OURAIRPORTS} -> HTTP ${res.status}`);
+  const byIcao = new Map();
+  for (const r of parseCSV(await res.text())) {
+    if (r.iso_country !== "DZ") continue;
+    const lat = Number(r.latitude_deg);
+    const lng = Number(r.longitude_deg);
+    if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
+    for (const code of new Set([r.icao_code, r.gps_code])) {
+      const k = (code || "").trim().toUpperCase();
+      if (ICAO_RE.test(k) && !byIcao.has(k))
+        byIcao.set(k, { icao: k, iata: orNull(r.iata_code), name: r.name, lat, lng });
+    }
+  }
+  return byIcao;
+}
+
+/** Backfill `iata` on ANAC's records. An ICAO code matching is not on its own
+ *  evidence that the two rows describe the same place, so every join is confirmed
+ *  by distance against ANAC's published point. */
+function backfillIata(airports, byIcao) {
+  const unmatched = [];
+  const far = [];
+  for (const a of airports) {
+    const oa = byIcao.get(a.icao);
+    if (!oa || !oa.iata) { unmatched.push(a.icao); continue; }
+    const km = haversine(a.lat, a.lng, oa.lat, oa.lng);
+    if (km > IATA_MAX_KM) { far.push(`${a.icao}/${oa.iata} ${km.toFixed(2)} km`); continue; }
+    a.iata = oa.iata;
+    console.log(`  ${a.icao} -> ${oa.iata}  (${km.toFixed(2)} km from ANAC's point)`);
+  }
+  if (far.length)
+    throw new Error(
+      `OurAirports ICAO join lands too far from ANAC's own coordinate ` +
+        `(> ${IATA_MAX_KM} km), so it is probably a different place: ${far.join(", ")}`
+    );
+  if (unmatched.length)
+    throw new Error(`no OurAirports IATA code for ${unmatched.join(", ")}`);
+}
+
+/** The three airports ANAC's map omits, shaped like the ANAC records. They carry
+ *  `source: "ourairports"` so the mixed provenance is legible per record rather
+ *  than only in metadata.sources[]. ANAC's contact fields have no counterpart
+ *  upstream, hence the nulls. */
+function supplements(byIcao) {
+  return SUPPLEMENTS.map(({ icao, name }) => {
+    const oa = byIcao.get(icao);
+    if (!oa) throw new Error(`${icao} is no longer in OurAirports' Algerian rows`);
+    if (!oa.iata) throw new Error(`${icao} has no IATA code in OurAirports`);
+    console.log(`  + ${icao}/${oa.iata}  ${name}`);
+    return {
+      id: icao.toLowerCase(), name, icao, iata: oa.iata,
+      address: null, phone: null, website: null,
+      wilaya_code: null, lat: oa.lat, lng: oa.lng, source: "ourairports",
+    };
+  });
 }
 
 // --- wilaya resolution -----------------------------------------------------
@@ -211,9 +325,17 @@ async function main() {
   const missing = airports.filter((a) => !a.name || !ICAO_RE.test(a.icao));
   if (missing.length) throw new Error(`malformed records: ${missing.map((a) => a.icao).join(", ")}`);
 
+  console.log("Fetching OurAirports and backfilling IATA codes…");
+  const byIcao = await loadOurAirports();
+  backfillIata(airports, byIcao);
+  console.log("Appending the airports ANAC's map omits…");
+  const all = [...airports, ...supplements(byIcao)];
+  const allIds = new Set(all.map((a) => a.id));
+  if (allIds.size !== all.length) throw new Error("a supplement collides with an ANAC airport");
+
   console.log("Resolving wilaya_code by nearest commune centroid…");
   const communes = loadCommunes();
-  for (const a of airports) {
+  for (const a of all) {
     const w = resolveWilaya(a, communes);
     a.wilaya_code = w.code;
     console.log(
@@ -222,7 +344,7 @@ async function main() {
   }
   // Algeria now has 69 wilayas (Law 26-06, Apr 2026 — codes 59-69 promoted from
   // delegated). The flagship geoalgeria models all 69, so derived codes can reach 69.
-  const overflow = airports.filter((a) => Number(a.wilaya_code) < 1 || Number(a.wilaya_code) > 69);
+  const overflow = all.filter((a) => Number(a.wilaya_code) < 1 || Number(a.wilaya_code) > 69);
   if (overflow.length) {
     throw new Error(`wilaya_code out of [1,69]: ${overflow.map((a) => `${a.icao}=${a.wilaya_code}`).join(", ")}`);
   }
@@ -233,7 +355,7 @@ async function main() {
   const { records } = writePackageV2({
     pkg: "aviation",
     dir: DATA,
-    files: [{ file: "airports.json", rows: airports.map(cfg.map) }],
+    files: [{ file: "airports.json", rows: all.map(cfg.map) }],
     meta: cfg.meta,
     updated: today,
     retrieved: today,

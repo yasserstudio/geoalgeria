@@ -4,17 +4,17 @@
   "title_fr": "Aéroports d'Algérie",
   "title_ar": "مطارات الجزائر",
   "title_en": "Algeria airports",
-  "record_count": 33,
-  "geocoded_count": 33,
+  "record_count": 36,
+  "geocoded_count": 36,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 33,
+    "exact": 36,
     "approximate": 0
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Airports from the National Civil Aviation Authority (ANAC). Wilaya-level only (no commune linkage).",
-  "wilayas_covered": 31,
+  "coverage_note": "Airports from the National Civil Aviation Authority (ANAC), plus Hassi R'Mel (HRM), Mécheria (MZW) and Laghouat (LOO), which ANAC's map omits and which OurAirports supplies. IATA codes are backfilled from OurAirports by ICAO match, each one confirmed by coordinate distance rather than by code alone. Wilaya-level only (no commune linkage).",
+  "wilayas_covered": 33,
   "bbox": [
     -8.165434,
     19.563939,
@@ -27,11 +27,23 @@
       "name": "ANAC — Autorité Nationale de l'Aviation Civile",
       "url": "https://www.anac.dz",
       "license": "Factual public listing (ANAC)",
-      "retrieved": "2026-06-14",
+      "retrieved": "2026-07-27",
+      "evidence_type": "official"
+    },
+    {
+      "key": "ourairports",
+      "name": "OurAirports, global airport database (IATA codes, and the three airports ANAC's map omits)",
+      "url": "https://ourairports.com/data/",
+      "license": "Public domain (OurAirports)",
+      "retrieved": "2026-07-27",
       "evidence_type": "official"
     }
   ],
-  "license": "Factual public listing (ANAC)",
-  "updated": "2026-06-14",
-  "with_iata": 0
+  "license": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
+  "updated": "2026-07-27",
+  "with_iata": 36,
+  "by_source": {
+    "anac": 33,
+    "ourairports": 3
+  }
 }
