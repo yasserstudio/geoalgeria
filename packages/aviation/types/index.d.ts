@@ -127,6 +127,10 @@ export interface Metadata {
 export function airports(): Airport[];
 /** One airport by ICAO code (case-insensitive), or null if none matches. */
 export function airportByIcao(code: string): Airport | null;
+/** One airport by IATA code (case-insensitive), or null if none matches.
+ *  All 36 records carry a code today; a record with a null `iata` would simply
+ *  be unreachable through this lookup, and `airportByIcao` still finds it. */
+export function airportByIata(code: string): Airport | null;
 /** Airports in a wilaya — accepts "16", 16, or "01". */
 export function airportsByWilaya(code: string | number): Airport[];
 /** Dataset metadata (counts, source, generated_at). */
@@ -135,6 +139,7 @@ export function metadata(): Metadata;
 declare const _default: {
   airports: typeof airports;
   airportByIcao: typeof airportByIcao;
+  airportByIata: typeof airportByIata;
   airportsByWilaya: typeof airportsByWilaya;
   metadata: typeof metadata;
 };

@@ -10,10 +10,16 @@ const load = (p) => JSON.parse(readFileSync(join(DATA, p), "utf-8"));
 export const airports = () => load("airports.json"); // 36 civil airports
 export const airportByIcao = (code) =>
   airports().find((a) => a.icao === String(code).toUpperCase()) ?? null;
+// The other natural key. Flight feeds, booking systems and timetables speak IATA,
+// not ICAO, so this is the lookup most callers coming from schedule data want.
+// `iata` is typed nullable, but no extra null guard is needed: String(code) is
+// always a non-empty string, so a null code cannot match a null value.
+export const airportByIata = (code) =>
+  airports().find((a) => a.iata === String(code).toUpperCase()) ?? null;
 export const airportsByWilaya = (code) => {
   const w = String(code).padStart(2, "0"); // accepts "16", 16, or "01"
   return airports().filter((a) => a.wilaya_code === w);
 };
 export const metadata = () => load("metadata.json");
 
-export default { airports, airportByIcao, airportsByWilaya, metadata };
+export default { airports, airportByIcao, airportByIata, airportsByWilaya, metadata };

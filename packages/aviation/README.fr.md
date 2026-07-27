@@ -27,6 +27,7 @@ import aviation from "@geoalgeria/aviation";
 
 const all = aviation.airports();                 // 36
 const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene, iata "ALG"
+const byIata = aviation.airportByIata("TLM");     // Tlemcen, depuis un flux de vols
 const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 
 // Chaque enregistrement a lat/lng – tri par distance, carte ou aéroport le plus proche en quelques lignes.

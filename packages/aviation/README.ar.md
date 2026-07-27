@@ -27,6 +27,7 @@ import aviation from "@geoalgeria/aviation";
 
 const all = aviation.airports();                 // 36
 const algiers = aviation.airportByIcao("DAAG");  // هواري بومدين، iata "ALG"
+const byIata = aviation.airportByIata("TLM");     // تلمسان، من تدفق رحلات
 const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية 31
 
 // كل سجل يحتوي على إحداثيات – الترتيب حسب المسافة، الخرائط، أو أقرب مطار في بضعة أسطر.

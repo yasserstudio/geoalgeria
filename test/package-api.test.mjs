@@ -126,3 +126,25 @@ for (const [name, file, fnName, field] of BY_VALUE) {
     assert.equal(matched, withField, `${fnName} reached ${matched} of ${withField} records`);
   });
 }
+
+// aviation gained a second natural key when IATA codes were backfilled. Both
+// lookups must reach every record, and neither may be fooled by a null code:
+// `iata` is typed nullable on purpose, so an unguarded `a.iata === code` would
+// hand back the first uncoded airport for airportByIata(null).
+test("aviation: airportByIcao and airportByIata reach every record, and null matches nothing", async () => {
+  const m = await pkg("aviation");
+  const rows = data("aviation", "airports.json");
+
+  for (const [fn, field] of [[m.airportByIcao, "icao"], [m.airportByIata, "iata"]]) {
+    assert.equal(typeof fn, "function", `aviation exports no lookup for ${field}`);
+    const coded = rows.filter((r) => r[field] != null);
+    assert.ok(coded.length > 0, `no ${field} values to test with`);
+    for (const r of coded) {
+      assert.equal(fn(r[field])?.id, r.id, `${field} lookup missed ${r[field]}`);
+      assert.equal(fn(r[field].toLowerCase())?.id, r.id, `${field} lookup is case-sensitive`);
+    }
+    for (const empty of [null, undefined, ""])
+      assert.equal(fn(empty), null, `${field} lookup returned a record for ${JSON.stringify(empty)}`);
+    assert.equal(fn("ZZZ"), null, `${field} lookup returned a record for a code that does not exist`);
+  }
+});
