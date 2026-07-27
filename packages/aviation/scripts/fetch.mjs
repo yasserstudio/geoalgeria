@@ -25,7 +25,9 @@
  * route network needs as endpoints (Hassi R'Mel HRM, Mécheria MZW, Laghouat LOO),
  * which are appended from the same file. An ICAO join is not self-verifying, so
  * each match is confirmed by coordinate distance against ANAC's own point and the
- * build fails on anything past IATA_MAX_KM.
+ * build fails on anything past IATA_MAX_KM. The three supplements have no ANAC
+ * point to check against, so they are checked against a coarse pinned anchor
+ * instead (ANCHOR_MAX_KM). See SUPPLEMENTS for why that is not optional.
  *
  * Usage: node scripts/fetch.mjs
  */
@@ -44,8 +46,10 @@ const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/120.0 Safari/537.36";
 
-const EXPECTED = 33; // ANAC lists 33 civil airports; fail loudly if that changes.
+const ANAC_EXPECTED = 33; // ANAC's map lists 33 civil airports; fail loudly if that changes.
 const ICAO_RE = /^DA[A-Z]{2}$/; // every Algerian OACI code is DAxx.
+const IATA_RE = /^[A-Z0-9]{3}$/; // IATA location codes are three alphanumerics.
+const FETCH_TIMEOUT_MS = 60_000; // neither upstream should ever take this long.
 
 const OURAIRPORTS = "https://davidmegginson.github.io/ourairports-data/airports.csv";
 // ANAC's marker is a terminal pin, OurAirports' is the aerodrome reference point,
@@ -55,16 +59,27 @@ const OURAIRPORTS = "https://davidmegginson.github.io/ourairports-data/airports.
 // far inside any plausible "wrong airport" gap.
 const IATA_MAX_KM = 5;
 
-// Airports absent from ANAC's map that the route network needs as endpoints. Only
-// the ICAO and the French name are pinned here: coordinates, IATA and everything
-// else come from OurAirports at build time, so this table cannot drift from its
-// source. Laghouat is the one that matters most: it is the Algerian end of the
-// JED-LOO arc.
+// Airports absent from ANAC's map that the route network needs as endpoints.
+// Laghouat is the one that matters most: it is the Algerian end of the JED-LOO arc.
+//
+// The shipped coordinate still comes from OurAirports at build time, so the table
+// cannot drift from its source. But `anchor` pins roughly where each airport is,
+// because these three records are the only ones in the package with no second
+// witness: an ANAC row can be checked against ANAC's own point, and a supplement
+// has nothing to check against. Without an anchor, a volunteer re-keying DAUL
+// upstream would emit the pinned French name on a foreign coordinate and the build
+// would stay green, since wilaya_code is derived from that same coordinate and so
+// agrees with the wrong point. The anchors are deliberately coarse (see
+// ANCHOR_MAX_KM): they exist to catch an identity swap, not to second-guess a
+// published coordinate.
 const SUPPLEMENTS = [
-  { icao: "DAFH", name: "Aéroport de Hassi R'Mel – Tilrhemt" },
-  { icao: "DAAY", name: "Aéroport de Mécheria" },
-  { icao: "DAUL", name: "Aéroport de Laghouat – Moulay Ahmed Medeghri" },
+  { icao: "DAFH", name: "Aéroport de Hassi R'Mel – Tilrhemt", anchor: [32.93, 3.31] },
+  { icao: "DAAY", name: "Aéroport de Mécheria", anchor: [33.53, -0.24] },
+  { icao: "DAUL", name: "Aéroport de Laghouat – Moulay Ahmed Medeghri", anchor: [33.76, 2.93] },
 ];
+// Generous on purpose. An airport does not move; a wrong airport is tens or
+// hundreds of km away. This only has to separate those two cases.
+const ANCHOR_MAX_KM = 25;
 
 // --- helpers ---------------------------------------------------------------
 const ENTITIES = {
@@ -113,6 +128,7 @@ function haversine(aLat, aLng, bLat, bLng) {
 async function getText(url, referer) {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Referer: referer, Accept: "text/html" },
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`${url} -> HTTP ${res.status}`);
   return res.text();
@@ -185,47 +201,89 @@ function parseAirports(mapHtml) {
 
 // --- OurAirports -----------------------------------------------------------
 /** Minimal RFC4180 reader. OurAirports quotes any field containing a comma and
- *  escapes an inner quote by doubling it; airport names do both. */
+ *  escapes an inner quote by doubling it; airport names do both.
+ *
+ *  A quote only opens a quoted field at the START of a field, which is what
+ *  RFC4180 says and what a naive reader gets wrong: treating a quote anywhere as
+ *  significant means one stray unpaired `"` in an unquoted field swallows
+ *  everything to the next quote or to EOF, and 85k rows come back as a handful.
+ *  Inside an unquoted field a quote is just a character. */
 function parseCSV(text) {
   const rows = [];
   let row = [];
   let field = "";
   let quoted = false;
+  let atFieldStart = true;
+  const endField = () => { row.push(field); field = ""; atFieldStart = true; };
   for (let i = 0; i < text.length; i++) {
     const c = text[i];
     if (quoted) {
-      if (c !== '"') field += c;
+      if (c !== '"') field += c === "\r" ? "" : c;
       else if (text[i + 1] === '"') { field += '"'; i++; }
       else quoted = false;
-    } else if (c === '"') quoted = true;
-    else if (c === ",") { row.push(field); field = ""; }
-    else if (c === "\n") { row.push(field); rows.push(row); row = []; field = ""; }
-    else if (c !== "\r") field += c;
+    } else if (c === '"' && atFieldStart) { quoted = true; atFieldStart = false; }
+    else if (c === ",") endField();
+    else if (c === "\n") { endField(); rows.push(row); row = []; }
+    else if (c !== "\r") { field += c; atFieldStart = false; }
   }
   if (field !== "" || row.length) { row.push(field); rows.push(row); }
+
   const [header, ...body] = rows;
-  return body
-    .filter((r) => r.length === header.length)
-    .map((r) => Object.fromEntries(header.map((h, i) => [h, r[i]])));
+  const out = [];
+  for (const [i, r] of body.entries()) {
+    if (r.length === 1 && r[0] === "") continue; // blank line
+    if (r.length !== header.length)
+      throw new Error(
+        `airports.csv row ${i + 2} has ${r.length} fields, header has ${header.length}. ` +
+          `OurAirports changed the file's shape, or the download was truncated`
+      );
+    out.push(Object.fromEntries(header.map((h, j) => [h, r[j]])));
+  }
+  return out;
 }
 
-/** Algerian entries keyed by ICAO. `gps_code` is folded in because a handful of
- *  OurAirports rows carry the code there and leave `icao_code` empty. */
+/** Algerian entries keyed by ICAO.
+ *
+ *  Only `icao_code` is read. An earlier version also folded in `gps_code` for the
+ *  rows that leave `icao_code` empty, but that indexes a row under a code it does
+ *  not claim as its ICAO: OurAirports' "Oum El Bouaghi Air Base" has an empty
+ *  `icao_code`, `ident` DABO and `gps_code` DAEO, so the fold filed it under DAEO.
+ *  Every airport this package needs carries a real `icao_code`, so the fold bought
+ *  nothing and risked resolving a join to the wrong row.
+ *
+ *  Closed fields are skipped and a duplicate key is an error rather than
+ *  first-wins: elsewhere this file throws on ambiguity, and a silent first-wins
+ *  would let a stale row shadow the live one at the same airport, where the
+ *  distance guard cannot tell them apart. */
 async function loadOurAirports() {
-  const res = await fetch(OURAIRPORTS, { headers: { "User-Agent": UA } });
+  const res = await fetch(OURAIRPORTS, {
+    headers: { "User-Agent": UA },
+    signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
+  });
   if (!res.ok) throw new Error(`${OURAIRPORTS} -> HTTP ${res.status}`);
   const byIcao = new Map();
   for (const r of parseCSV(await res.text())) {
-    if (r.iso_country !== "DZ") continue;
+    if (r.iso_country !== "DZ" || r.type === "closed") continue;
     const lat = Number(r.latitude_deg);
     const lng = Number(r.longitude_deg);
     if (!Number.isFinite(lat) || !Number.isFinite(lng)) continue;
-    for (const code of new Set([r.icao_code, r.gps_code])) {
-      const k = (code || "").trim().toUpperCase();
-      if (ICAO_RE.test(k) && !byIcao.has(k))
-        byIcao.set(k, { icao: k, iata: orNull(r.iata_code), name: r.name, lat, lng });
-    }
+    const k = (r.icao_code || "").trim().toUpperCase();
+    if (!ICAO_RE.test(k)) continue;
+    const prev = byIcao.get(k);
+    if (prev)
+      throw new Error(
+        `OurAirports has two open Algerian rows claiming ICAO ${k}: ` +
+          `"${prev.name}" and "${r.name}". The join key is ambiguous, pick one deliberately`
+      );
+    byIcao.set(k, { icao: k, iata: orNull(r.iata_code), name: r.name, lat, lng });
   }
+  const dupes = [...byIcao.values()].filter((v) => v.iata).reduce((m, v) => m.set(v.iata, (m.get(v.iata) || 0) + 1), new Map());
+  const clashing = [...dupes].filter(([, n]) => n > 1).map(([code]) => code);
+  if (clashing.length)
+    throw new Error(
+      `OurAirports gives the same IATA code to more than one Algerian airport: ` +
+        `${clashing.join(", ")}. An IATA code is a published join key and must be unique`
+    );
   return byIcao;
 }
 
@@ -233,35 +291,56 @@ async function loadOurAirports() {
  *  evidence that the two rows describe the same place, so every join is confirmed
  *  by distance against ANAC's published point. */
 function backfillIata(airports, byIcao) {
-  const unmatched = [];
-  const far = [];
+  const absent = [];   // ICAO not in OurAirports' Algerian rows at all
+  const noIata = [];   // row is there, but its iata_code is empty
+  const badIata = [];  // row is there, but the code is not a plausible IATA code
+  const far = [];      // row is there, but it is somewhere else
   for (const a of airports) {
     const oa = byIcao.get(a.icao);
-    if (!oa || !oa.iata) { unmatched.push(a.icao); continue; }
+    if (!oa) { absent.push(a.icao); continue; }
+    if (!oa.iata) { noIata.push(a.icao); continue; }
+    if (!IATA_RE.test(oa.iata)) { badIata.push(`${a.icao}/${JSON.stringify(oa.iata)}`); continue; }
     const km = haversine(a.lat, a.lng, oa.lat, oa.lng);
     if (km > IATA_MAX_KM) { far.push(`${a.icao}/${oa.iata} ${km.toFixed(2)} km`); continue; }
     a.iata = oa.iata;
     console.log(`  ${a.icao} -> ${oa.iata}  (${km.toFixed(2)} km from ANAC's point)`);
   }
-  if (far.length)
-    throw new Error(
-      `OurAirports ICAO join lands too far from ANAC's own coordinate ` +
-        `(> ${IATA_MAX_KM} km), so it is probably a different place: ${far.join(", ")}`
-    );
-  if (unmatched.length)
-    throw new Error(`no OurAirports IATA code for ${unmatched.join(", ")}`);
+  // Report every failure the run found, not just the first kind: each names a
+  // different thing to go and look at, and surfacing them one build at a time
+  // sends whoever hits this back to the same wall three times.
+  const problems = [
+    absent.length && `not in OurAirports' Algerian rows: ${absent.join(", ")}`,
+    noIata.length && `no IATA code in OurAirports: ${noIata.join(", ")}`,
+    badIata.length && `IATA code is not three alphanumerics: ${badIata.join(", ")}`,
+    far.length && `join lands more than ${IATA_MAX_KM} km from ANAC's own coordinate, ` +
+      `so it is probably a different place: ${far.join(", ")}`,
+  ].filter(Boolean);
+  if (problems.length)
+    throw new Error(`OurAirports ICAO join failed :\n  ${problems.join("\n  ")}`);
 }
 
 /** The three airports ANAC's map omits, shaped like the ANAC records. They carry
  *  `source: "ourairports"` so the mixed provenance is legible per record rather
  *  than only in metadata.sources[]. ANAC's contact fields have no counterpart
- *  upstream, hence the nulls. */
+ *  upstream, hence the nulls.
+ *
+ *  Each is checked against its pinned anchor, because these are the only records
+ *  in the package with nothing else to check against. See SUPPLEMENTS. */
 function supplements(byIcao) {
-  return SUPPLEMENTS.map(({ icao, name }) => {
+  return SUPPLEMENTS.map(({ icao, name, anchor }) => {
     const oa = byIcao.get(icao);
     if (!oa) throw new Error(`${icao} is no longer in OurAirports' Algerian rows`);
     if (!oa.iata) throw new Error(`${icao} has no IATA code in OurAirports`);
-    console.log(`  + ${icao}/${oa.iata}  ${name}`);
+    if (!IATA_RE.test(oa.iata))
+      throw new Error(`${icao}'s OurAirports IATA code ${JSON.stringify(oa.iata)} is not three alphanumerics`);
+    const km = haversine(anchor[0], anchor[1], oa.lat, oa.lng);
+    if (km > ANCHOR_MAX_KM)
+      throw new Error(
+        `${icao} ("${oa.name}") sits ${km.toFixed(1)} km from where this table says ` +
+          `${name} is (max ${ANCHOR_MAX_KM} km). OurAirports has probably re-keyed the ` +
+          `code onto a different airport. Confirm which is right before moving the anchor`
+      );
+    console.log(`  + ${icao}/${oa.iata}  ${name}  (${km.toFixed(1)} km from its anchor)`);
     return {
       id: icao.toLowerCase(), name, icao, iata: oa.iata,
       address: null, phone: null, website: null,
@@ -314,28 +393,37 @@ async function main() {
   console.log(`  map: ${mapUrl}`);
 
   const mapHtml = await getText(mapUrl, PAGE);
-  const airports = parseAirports(mapHtml);
+  const anacAirports = parseAirports(mapHtml);
 
   // Guards — fail loudly if ANAC reshapes the map.
-  if (airports.length !== EXPECTED) {
-    throw new Error(`expected ${EXPECTED} airports, parsed ${airports.length}`);
+  if (anacAirports.length !== ANAC_EXPECTED) {
+    throw new Error(`expected ${ANAC_EXPECTED} airports on ANAC's map, parsed ${anacAirports.length}`);
   }
-  const ids = new Set(airports.map((a) => a.id));
-  if (ids.size !== airports.length) throw new Error("duplicate ICAO codes parsed");
-  const missing = airports.filter((a) => !a.name || !ICAO_RE.test(a.icao));
+  const ids = new Set(anacAirports.map((a) => a.id));
+  if (ids.size !== anacAirports.length) throw new Error("duplicate ICAO codes parsed");
+  const missing = anacAirports.filter((a) => !a.name || !ICAO_RE.test(a.icao));
   if (missing.length) throw new Error(`malformed records: ${missing.map((a) => a.icao).join(", ")}`);
 
   console.log("Fetching OurAirports and backfilling IATA codes…");
   const byIcao = await loadOurAirports();
-  backfillIata(airports, byIcao);
+  backfillIata(anacAirports, byIcao);
   console.log("Appending the airports ANAC's map omits…");
-  const all = [...airports, ...supplements(byIcao)];
-  const allIds = new Set(all.map((a) => a.id));
-  if (allIds.size !== all.length) throw new Error("a supplement collides with an ANAC airport");
+  // `airports` is the merged set from here on, matching what the package's own
+  // airports() export means. The ANAC-only slice keeps its own name above.
+  const airports = [...anacAirports, ...supplements(byIcao)];
+  const allIds = new Set(airports.map((a) => a.id));
+  if (allIds.size !== airports.length) throw new Error("a supplement collides with an ANAC airport");
+  // The published record count lives here, where it is produced, rather than only
+  // in the hand-written .d.ts and README that quote it.
+  if (airports.length !== ANAC_EXPECTED + SUPPLEMENTS.length)
+    throw new Error(
+      `expected ${ANAC_EXPECTED + SUPPLEMENTS.length} airports after merging ` +
+        `(${ANAC_EXPECTED} from ANAC + ${SUPPLEMENTS.length} supplements), got ${airports.length}`
+    );
 
   console.log("Resolving wilaya_code by nearest commune centroid…");
   const communes = loadCommunes();
-  for (const a of all) {
+  for (const a of airports) {
     const w = resolveWilaya(a, communes);
     a.wilaya_code = w.code;
     console.log(
@@ -344,7 +432,7 @@ async function main() {
   }
   // Algeria now has 69 wilayas (Law 26-06, Apr 2026 — codes 59-69 promoted from
   // delegated). The flagship geoalgeria models all 69, so derived codes can reach 69.
-  const overflow = all.filter((a) => Number(a.wilaya_code) < 1 || Number(a.wilaya_code) > 69);
+  const overflow = airports.filter((a) => Number(a.wilaya_code) < 1 || Number(a.wilaya_code) > 69);
   if (overflow.length) {
     throw new Error(`wilaya_code out of [1,69]: ${overflow.map((a) => `${a.icao}=${a.wilaya_code}`).join(", ")}`);
   }
@@ -355,7 +443,7 @@ async function main() {
   const { records } = writePackageV2({
     pkg: "aviation",
     dir: DATA,
-    files: [{ file: "airports.json", rows: all.map(cfg.map) }],
+    files: [{ file: "airports.json", rows: airports.map(cfg.map) }],
     meta: cfg.meta,
     updated: today,
     retrieved: today,

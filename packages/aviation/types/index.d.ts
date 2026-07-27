@@ -14,8 +14,12 @@ export type GeoMethod = "source_point";
 export interface Refs {
   /** ICAO (OACI) code, duplicated from the top-level `icao` field. */
   icao: string;
-  /** IATA code, duplicated from the top-level `iata` field. */
-  iata: string;
+  /** IATA code, duplicated from the top-level `iata` field. Optional because
+   *  `refs` omits null values entirely: an airport with no assigned IATA code
+   *  ships `refs: { icao }`, with no `iata` key at all. Typing it required would
+   *  make `refs.iata.length` compile and then throw on the first such record,
+   *  which is exactly the case the top-level `iata` promises is non-breaking. */
+  iata?: string;
 }
 
 /** A civil airport. */

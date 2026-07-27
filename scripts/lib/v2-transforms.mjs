@@ -309,14 +309,24 @@ export const MIGRATIONS = {
       id: r.id, name: r.name,
       wilaya_code: r.wilaya_code, commune_code: null, commune: null,
       ...geoExact(r, "source_point"),
-      source: r.source ?? "anac",
+      // Bare passthrough, no `?? "anac"` fallback: aviation is the mosquees/
+      // ferroviaire class, where records genuinely originate from different
+      // sources, and a default would silently stamp an OurAirports record as
+      // ANAC. writePackageV2 now rejects any source key not declared below.
+      source: r.source,
       refs: refs({ icao: r.icao, iata: r.iata }),
       icao: r.icao, iata: r.iata, address: r.address, phone: r.phone, website: r.website,
     }),
     meta: {
       sources: [
-        { key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)" },
-        { key: "ourairports", name: "OurAirports, global airport database (IATA codes, and the three airports ANAC's map omits)", url: "https://ourairports.com/data/", license: "Public domain (OurAirports)" },
+        { key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)", evidence_type: "official" },
+        // crowdsourced, pinned: OurAirports is volunteer-edited ("create a free
+        // account" to add or correct an airport), so it is neither a government
+        // register nor a first-party operator feed. Left to infer, it would take
+        // evidenceForSourceKey's fail-open `official` default and the package
+        // would publicly claim register-tier evidence for all 36 IATA codes and
+        // for the three airports whose existence rests on this source alone.
+        { key: "ourairports", name: "OurAirports, global airport database (IATA codes, and the three airports ANAC's map omits)", url: "https://ourairports.com/data/", license: "Public domain (OurAirports)", evidence_type: "crowdsourced" },
       ],
       license: "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
       estimatedUniverse: null,
@@ -762,6 +772,23 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, oldM
     entities.push({ file: f.file, count: rows.length });
     all.push(...rows);
   }
+
+  // Every record's `source` must key into metadata.sources[]. Nothing else
+  // checks this: validateRecords never inspects `source`, and validate-packages
+  // never cross-references records against sources[]. Without it a package can
+  // ship records pointing at provenance that isn't there, or silently relabel
+  // records under another source's licence, and the release gate stays green.
+  // `a+b` is the documented composite form (mosquees/ferroviaire ship
+  // "wikidata+osm" for a record corroborated by both).
+  const declared = new Set(meta.sources.map((s) => s.key));
+  const undeclared = [...new Set(all.flatMap((r) => String(r.source ?? "").split("+")))]
+    .filter((k) => !declared.has(k));
+  if (undeclared.length)
+    throw new Error(
+      `writePackageV2 [${pkg}]: record source key(s) ${undeclared.map((k) => JSON.stringify(k)).join(", ")} ` +
+        `are not declared in meta.sources[] (declared: ${[...declared].join(", ")}). ` +
+        `a record cannot cite provenance the metadata does not carry`,
+    );
 
   const preserved = {};
   for (const k of meta.preserve || []) if (oldMeta[k] != null) preserved[k] = oldMeta[k];

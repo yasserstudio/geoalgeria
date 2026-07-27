@@ -27,16 +27,16 @@
       "name": "ANAC — Autorité Nationale de l'Aviation Civile",
       "url": "https://www.anac.dz",
       "license": "Factual public listing (ANAC)",
-      "retrieved": "2026-07-27",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-07-27"
     },
     {
       "key": "ourairports",
       "name": "OurAirports, global airport database (IATA codes, and the three airports ANAC's map omits)",
       "url": "https://ourairports.com/data/",
       "license": "Public domain (OurAirports)",
-      "retrieved": "2026-07-27",
-      "evidence_type": "official"
+      "evidence_type": "crowdsourced",
+      "retrieved": "2026-07-27"
     }
   ],
   "license": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",

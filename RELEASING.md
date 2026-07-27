@@ -66,6 +66,15 @@ git push         # straight to main, or via a PR
 Bump rules (data semver): **major** = breaking schema change · **minor** = new
 data / format · **patch** = corrections to existing records.
 
+- **Widening a published field to nullable is a minor, with a migration note.**
+  It reads like a break, because a consumer doing `r.website.trim()` throws once
+  a record ships `null`. But these are data packages: new records routinely
+  arrive without a field the existing ones all had, and majoring for each one
+  would major constantly. So it stays a minor, and the changeset must open with
+  a **Migration** paragraph naming the field, the count that changed, and the
+  guarded form to use. Precedent: `@geoalgeria/enseignement-superieur` 1.1.0
+  (`name` nullable), `@geoalgeria/aviation` 2.1.0 (`address`/`website`).
+
 - **Docs parity:** the root READMEs (EN/FR/AR) and any affected package READMEs reflect every contract, artifact, licence, or count change shipping in this release, sweep before tagging, not after.
 
 On push to `main`, the **Release** workflow runs `changesets/action`. If
