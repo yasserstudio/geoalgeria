@@ -102,7 +102,8 @@ def main():
         ep.setdefault(f["iata"], {"iata": f["iata"], "name": f["name"], "lat": f["lat"], "lng": f["lng"], "country": f["country"]})
     dz = {a["iata"] for a in airports if a.get("iata")}
 
-    routes, skipped = [], {"no_endpoint": [], "codeshare": [], "domestic": []}
+    routes, planned_routes = [], []
+    skipped = {"no_endpoint": [], "codeshare": [], "domestic": []}
     seen = set()
 
     for v in VERIFIED:
@@ -134,12 +135,16 @@ def main():
         if frm not in ep or to not in ep:
             skipped["no_endpoint"].append(key); continue
         seen.add(key)
+        # "begins"/"resumes" means announced but not yet flying, which the locked
+        # scope says is a SEPARATE collection rather than a status: a planned
+        # route must never be drawn like an operating one, and must never count
+        # toward the destination figure. Without this the Shanghai launch was
+        # being drawn as a solid arc alongside routes that actually fly.
+        planned = any(n in r["notes"] for n in ("begins", "resumes"))
         status = "unclear"
         if "seasonal" in r["notes"]:
             status = "seasonal"
-        elif "charter" in r["notes"]:
-            status = "unclear"
-        routes.append({
+        (planned_routes if planned else routes).append({
             "id": f"{frm.lower()}-{to.lower()}",
             "from": frm, "to": to, "carrier": "AH",
             "flight": None, "status": status, "days": None,
@@ -150,18 +155,22 @@ def main():
             "listed_at": r["from_article"],
         })
 
-    used = sorted({c for r in routes for c in (r["from"], r["to"])})
+    used = sorted({c for r in routes + planned_routes for c in (r["from"], r["to"])})
     endpoints = [ep[c] for c in used]
 
     # Sanity: no arc may be zero-length or absurdly long for a nonstop.
-    for r in routes:
+    for r in routes + planned_routes:
         a, b = ep[r["from"]], ep[r["to"]]
         km = haversine(a["lat"], a["lng"], b["lat"], b["lng"])
         r["great_circle_km"] = round(km)
         if km < 50:
             raise SystemExit(f"{r['id']}: {km:.0f} km apart, that is not a route")
 
-    out = {"routes": sorted(routes, key=lambda r: r["id"]), "endpoints": endpoints}
+    out = {
+        "routes": sorted(routes, key=lambda r: r["id"]),
+        "planned": sorted(planned_routes, key=lambda r: r["id"]),
+        "endpoints": endpoints,
+    }
     path = os.path.join(HERE, "route-dataset.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
@@ -175,6 +184,8 @@ def main():
     print(f"  listed routes with no citation: {unsourced}")
     print(f"  skipped: {len(skipped['codeshare'])} codeshare-only, "
           f"{len(skipped['domestic'])} domestic, {len(skipped['no_endpoint'])} without an endpoint")
+    print(f"  planned (announced, not yet flying): {len(planned_routes)}"
+          + (f" -> {', '.join(r['id'] for r in planned_routes)}" if planned_routes else ""))
     print(f"  longest arc: {max(r['great_circle_km'] for r in routes)} km")
 
 

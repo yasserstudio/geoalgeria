@@ -345,20 +345,6 @@
       "great_circle_km": 1228
     },
     {
-      "id": "alg-pvg",
-      "from": "ALG",
-      "to": "PVG",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
-      "great_circle_km": 10131
-    },
-    {
       "id": "alg-ssh",
       "from": "ALG",
       "to": "SSH",
@@ -945,6 +931,22 @@
       "evidence": "verified",
       "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
       "great_circle_km": 931
+    }
+  ],
+  "planned": [
+    {
+      "id": "alg-pvg",
+      "from": "ALG",
+      "to": "PVG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 10131
     }
   ],
   "endpoints": [
