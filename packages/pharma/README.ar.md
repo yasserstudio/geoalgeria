@@ -4,7 +4,7 @@
 
 # @geoalgeria/pharma
 
-**القطاع الصيدلاني في الجزائر — بتثبيت واحد.**
+**القطاع الصيدلاني في الجزائر، بتثبيت واحد.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/pharma)](https://www.npmjs.com/package/@geoalgeria/pharma)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -38,7 +38,7 @@ import { pharmacies } from "@geoalgeria/pharma";
 
 ## المصدر والترخيص
 
-كل عضو يحمل مصدره ونسبته الخاصة (انظر README الخاص به) — سجل الوزارة لـ `industrie`، وOpenStreetMap (ODbL) لـ `pharmacies`. شيفرة الحزمة تحت رخصة MIT (انظر [LICENSE](LICENSE)).
+كل عضو يحمل مصدره ونسبته الخاصة (انظر README الخاص به) – سجل الوزارة لـ `industrie`، وOpenStreetMap (ODbL) لـ `pharmacies`. شيفرة الحزمة تحت رخصة MIT (انظر [LICENSE](LICENSE)).
 
 ## أسئلة؟
 

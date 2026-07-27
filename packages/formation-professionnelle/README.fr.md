@@ -4,7 +4,7 @@
 
 # @geoalgeria/formation-professionnelle
 
-**Tous les établissements de formation professionnelle d'Algérie — sous forme de données installables.**
+**Tous les établissements de formation professionnelle d'Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/formation-professionnelle)](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/formation-professionnelle)](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle)
@@ -12,8 +12,8 @@
 
 </div>
 
-1 932 établissements de formation professionnelle à travers l'Algérie — **CFPA**, **INSFP**,
-**IFEP**, **IEP**, **DFEP** et centres privés agréés — chacun avec son nom officiel (arabe,
+1 932 établissements de formation professionnelle à travers l'Algérie – **CFPA**, **INSFP**,
+**IFEP**, **IEP**, **DFEP** et centres privés agréés – chacun avec son nom officiel (arabe,
 avec le français quand disponible), **type** d'établissement, **capacité**, informations
 d'**internat**, **coordonnées de contact** détaillées (téléphone, fax, email, site web,
 Facebook) et coordonnées GPS. Source : **Ministère de la Formation et de l'Enseignement
@@ -32,16 +32,16 @@ const byWilaya = fp.establishmentsByWilaya(16);     // établissements de la wil
 const cfpas = fp.establishmentsByType("cfpa");      // tous les CFPA
 const one = fp.establishmentById("00001");          // un seul enregistrement par id
 
-// 1 375 enregistrements ont lat/lng — tri par distance, carte ou centre le plus proche en quelques lignes.
+// 1 375 enregistrements ont lat/lng – tri par distance, carte ou centre le plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Recherche du centre de formation le plus proche** — 1 375 enregistrements géocodés, prêts pour le tri par distance.
-- **Annuaires de formation professionnelle** — noms bilingues, type, capacité et coordonnées de contact complètes.
-- **Cartes** — couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (71 % géocodés).
-- **Planification des capacités** — capacités théoriques et réelles, disponibilité d'internat et superficie.
-- **Analyse sectorielle** — 1 209 établissements publics contre 723 privés à travers 58 wilayas.
+- **Recherche du centre de formation le plus proche** – 1 375 enregistrements géocodés, prêts pour le tri par distance.
+- **Annuaires de formation professionnelle** – noms bilingues, type, capacité et coordonnées de contact complètes.
+- **Cartes** – couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (71 % géocodés).
+- **Planification des capacités** – capacités théoriques et réelles, disponibilité d'internat et superficie.
+- **Analyse sectorielle** – 1 209 établissements publics contre 723 privés à travers 58 wilayas.
 
 ## Contenu
 
@@ -60,7 +60,7 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 | **Total** | | **1 932** |
 
 Couvrant **58 wilayas** (schéma pré-réforme). 1 375 des 1 932 établissements sont géocodés
-(71 %) — `lat`/`lng` est `null` pour les 557 restants. `wilaya_code` utilise le schéma
+(71 %) – `lat`/`lng` est `null` pour les 557 restants. `wilaya_code` utilise le schéma
 à 58 wilayas tel que publié par la source.
 
 ## Formats
@@ -73,7 +73,7 @@ import establishments from "@geoalgeria/formation-professionnelle/data/establish
 // https://cdn.jsdelivr.net/npm/@geoalgeria/formation-professionnelle/data/establishments.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** — les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import fp, { type Establishment } from "@geoalgeria/formation-professionnelle";
@@ -128,7 +128,7 @@ data/
 ```
 
 `id` est une chaîne opaque à séquence complétée par des zéros (ex. `"00001"`), unique dans
-`establishments.json` — ne pas la parser. Les noms sont bilingues — `name` est en arabe
+`establishments.json` – ne pas la parser. Les noms sont bilingues – `name` est en arabe
 (toujours présent), `name_fr` est en français (peut être `null`). `type` est un slug
 correspondant à l'un des dix types d'établissements listés ci-dessus. `secteur` est
 `"public"` ou `"prive"`. `wilaya_code` est complété à deux chiffres avec un zéro dans le
@@ -143,13 +143,13 @@ nombres de places ; `internat` indique la disponibilité d'un internat avec un
 ## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, daïras et communes pour des jointures, utilisez
-le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit
+le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit
 le jeu de données complet des 69 wilayas. Utilisez `@geoalgeria/formation-professionnelle`
 quand vous avez *uniquement* besoin des données de formation professionnelle.
 
 ## Source
 
-Les données proviennent du **MFEP — Ministère de la Formation et de l'Enseignement
+Les données proviennent du **MFEP – Ministère de la Formation et de l'Enseignement
 Professionnels**, via [takwin.dz](https://takwin.dz). La source utilise le **schéma
 pré-réforme à 58 wilayas**. Exécutez `npm run fetch` pour régénérer toutes les sorties à
 partir du site en direct. Les noms, types, contacts, capacités et coordonnées sont tels

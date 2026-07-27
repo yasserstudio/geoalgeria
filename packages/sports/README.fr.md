@@ -4,7 +4,7 @@
 
 # @geoalgeria/sports
 
-**Toutes les infrastructures sportives d'Algérie — en données installables.**
+**Toutes les infrastructures sportives d'Algérie, en données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/sports)](https://www.npmjs.com/package/@geoalgeria/sports)
@@ -12,9 +12,9 @@
 
 </div>
 
-5 141 infrastructures sportives à travers l'Algérie — **terrains de proximité**, stades,
+5 141 infrastructures sportives à travers l'Algérie – **terrains de proximité**, stades,
 piscines, salles spécialisées, pistes d'athlétisme, courts de tennis, centres équestres,
-bases nautiques et plus — chacune avec son nom, **type** d'infrastructure, adresse,
+bases nautiques et plus – chacune avec son nom, **type** d'infrastructure, adresse,
 commune / daïra / wilaya, capacité, état de fonctionnement, accessibilité PMR, surfaces
 bâtie et foncière, année de réception et coordonnées géographiques. Source : le **SIG du Ministère de
 la Jeunesse et des Sports (sig.mjs.gov.dz)**. Livré en JSON, CSV et GeoJSON. Fait partie de
@@ -34,10 +34,10 @@ const piscines = sports.facilitiesByType("P25");     // toutes les piscines 25 m
 
 ## Ce que vous pouvez construire
 
-- **Recherche « piscine / stade le plus proche »** — coordonnées sur chaque enregistrement.
-- **Applications sportives et civiques** — cartographier les stades, piscines et terrains par wilaya.
-- **Cartes** — couche GeoJSON de points prête à l'emploi pour tout le réseau sportif.
-- **Recherche et planification** — densité par type, analyse de capacité, audits d'état opérationnel.
+- **Recherche « piscine / stade le plus proche »** – coordonnées sur chaque enregistrement.
+- **Applications sportives et civiques** – cartographier les stades, piscines et terrains par wilaya.
+- **Cartes** – couche GeoJSON de points prête à l'emploi pour tout le réseau sportif.
+- **Recherche et planification** – densité par type, analyse de capacité, audits d'état opérationnel.
 
 ## Contenu
 
@@ -72,7 +72,7 @@ const piscines = sports.facilitiesByType("P25");     // toutes les piscines 25 m
 | Grand stade | `GS` | 1 |
 | **Total** | | **5 141** |
 
-Couvrant **58 wilayas**, chaque infrastructure géolocalisée — 5 008 sur un point
+Couvrant **58 wilayas**, chaque infrastructure géolocalisée – 5 008 sur un point
 `exact`, les 133 restantes `approximate`. `wilaya_code` est relié au modèle de
 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 

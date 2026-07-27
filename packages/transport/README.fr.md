@@ -2,7 +2,7 @@
 
 # @geoalgeria/transport
 
-**Le secteur des transports d'Algérie — une seule installation pour tous les modes.**
+**Le secteur des transports d'Algérie, une seule installation pour tous les modes.**
 
 Paquet parapluie qui ré-exporte tous les jeux de données transport de GeoAlgeria.
 
@@ -29,7 +29,7 @@ transport.buses.lines();              // réseaux de bus urbains (ETUSA)
 
 ## Licence
 
-Le code est sous [MIT](LICENSE). Chaque membre porte sa propre licence de données — voir
+Le code est sous [MIT](LICENSE). Chaque membre porte sa propre licence de données – voir
 les README respectifs.
 
 ---

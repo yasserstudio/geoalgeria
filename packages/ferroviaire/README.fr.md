@@ -4,7 +4,7 @@
 
 # @geoalgeria/ferroviaire
 
-**Le transport ferroviaire et urbain d'Algérie — chaque station et arrêt, en données prêtes à installer.**
+**Le transport ferroviaire et urbain d'Algérie, chaque station et arrêt, en données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
@@ -12,8 +12,8 @@
 
 </div>
 
-692 nœuds ferroviaires et de transport urbain en Algérie — **gares, arrêts de tramway,
-stations de métro, téléphériques et télécabines** — avec noms bilingues FR/AR, exploitant
+692 nœuds ferroviaires et de transport urbain en Algérie – **gares, arrêts de tramway,
+stations de métro, téléphériques et télécabines** – avec noms bilingues FR/AR, exploitant
 (SNTF / SETRAM / SEMA), ligne, coordonnées GPS et rattachement wilaya/commune. Composite
 Wikidata + OpenStreetMap, en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -39,9 +39,9 @@ const alger = ferroviaire.stationsByWilaya(16);    // rail + métro + tram à Al
 | --- | --- | --- |
 | Rail (train) | **427** | SNTF |
 | Tramway | **190** | SETRAM (7 réseaux) |
-| Métro | **41** | SEMA — Métro d'Alger |
-| Téléphérique | **24** | — |
-| Télécabine | **10** | — |
+| Métro | **41** | SEMA – Métro d'Alger |
+| Téléphérique | **24** | – |
+| Télécabine | **10** | – |
 
 Couvrant **50 wilayas**, tous géocodés. `wilaya_code` est lié au modèle à 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -64,7 +64,7 @@ import stations from "@geoalgeria/ferroviaire/data/stations.json" with { type: "
 
 Composite de **Wikidata** (CC0) et **OpenStreetMap** (© contributeurs OpenStreetMap,
 ODbL 1.0), avec exploitants **SNTF**, **SETRAM**, **SEMA/EMA**. Le code est sous
-[MIT](LICENSE) ; les données issues d'OSM restent sous ODbL — conservez l'attribution.
+[MIT](LICENSE) ; les données issues d'OSM restent sous ODbL – conservez l'attribution.
 Vérifiez auprès des exploitants pour toute information officielle.
 
 [Voir tous les paquets →](https://geoalgeria.com/data)

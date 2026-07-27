@@ -4,7 +4,7 @@
 
 # @geoalgeria/ooredoo
 
-**شبكة نقاط بيع أوريدو الجزائر — كبيانات قابلة للتثبيت.**
+**شبكة نقاط بيع أوريدو الجزائر، كبيانات قابلة للتثبيت.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ooredoo)](https://www.npmjs.com/package/@geoalgeria/ooredoo)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -13,7 +13,7 @@
 
 # نظرة عامة
 
-572 نقطة بيع لأوريدو موزّعة على **63 ولاية** — فضاءات أوريدو (EO)، ومتاجر المدينة (CSO)، وفضاءات الخدمات (ESO) — من واجهة تحديد المواقع الخاصة بالمتعامل، لكلٍّ منها **إحداثيات حقيقية** وربط بالولاية/البلدية. يكمل ثلاثي الاتصالات مع [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) و[`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy).
+572 نقطة بيع لأوريدو موزّعة على **63 ولاية** – فضاءات أوريدو (EO)، ومتاجر المدينة (CSO)، وفضاءات الخدمات (ESO) – من واجهة تحديد المواقع الخاصة بالمتعامل، لكلٍّ منها **إحداثيات حقيقية** وربط بالولاية/البلدية. يكمل ثلاثي الاتصالات مع [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) و[`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy).
 
 ## التثبيت
 
@@ -44,10 +44,10 @@ metadata().wilayas_covered; // 63
 
 ## الصيغ
 
-- `data/stores.json` — المصفوفة الكاملة (مُنمّطة عبر `types/index.d.ts`)
-- `data/csv/stores.csv` — CSV مسطّح
-- `data/geojson/stores.geojson` — `FeatureCollection`
-- `data/metadata.json` — الأعداد والمصادر وتاريخ التوليد
+- `data/stores.json` – المصفوفة الكاملة (مُنمّطة عبر `types/index.d.ts`)
+- `data/csv/stores.csv` – CSV مسطّح
+- `data/geojson/stores.geojson` – `FeatureCollection`
+- `data/metadata.json` – الأعداد والمصادر وتاريخ التوليد
 
 ## الدقة
 

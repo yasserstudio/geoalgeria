@@ -2,9 +2,9 @@
 
 # GeoAlgeria
 
-> حزمة البيانات الجغرافية الجزائرية — 69 ولاية، 555 دائرة، 1,528 بلدية. بأمر `npm install` واحد.
+> حزمة البيانات الجغرافية الجزائرية – 69 ولاية، 555 دائرة، 1,528 بلدية. بأمر `npm install` واحد.
 
-هل لا زلت تنسخ قوائم الولايات من ملفات PDF؟ هل لا زلت تستخدم بيانات عالقة عند 48 ولاية؟ GeoAlgeria هي أول بيانات جغرافية جزائرية قابلة للتثبيت عبر npm ومُتحقق منها بالتكامل المستمر — محدّثة وفق إصلاح 2026. JSON، CSV، GeoJSON، SQL، TypeScript.
+هل لا زلت تنسخ قوائم الولايات من ملفات PDF؟ هل لا زلت تستخدم بيانات عالقة عند 48 ولاية؟ GeoAlgeria هي أول بيانات جغرافية جزائرية قابلة للتثبيت عبر npm ومُتحقق منها بالتكامل المستمر – محدّثة وفق إصلاح 2026. JSON، CSV، GeoJSON، SQL، TypeScript.
 
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
@@ -46,12 +46,12 @@
 
 ## لمن هذه الحزمة؟
 
-- **مطورو التجارة الإلكترونية** — نماذج العناوين، تكوين مناطق الشحن، التحقق من الرموز البريدية
-- **مهندسو الواجهة الخلفية** — أنشئ قاعدة بياناتك بملف SQL واحد
-- **مطورو الواجهة الأمامية** — قوائم منسدلة متتالية (ولاية ← دائرة ← بلدية)
-- **محللو نظم المعلومات الجغرافية / البيانات** — GeoJSON مع 1,528 معلماً نقطياً
-- **مطورو التكنولوجيا المدنية** — تطبيقات حكومية، بوابات المواطنين
-- **الطلبة والباحثون** — بيانات نظيفة، منظمة وموثّقة جيداً
+- **مطورو التجارة الإلكترونية** – نماذج العناوين، تكوين مناطق الشحن، التحقق من الرموز البريدية
+- **مهندسو الواجهة الخلفية** – أنشئ قاعدة بياناتك بملف SQL واحد
+- **مطورو الواجهة الأمامية** – قوائم منسدلة متتالية (ولاية ← دائرة ← بلدية)
+- **محللو نظم المعلومات الجغرافية / البيانات** – GeoJSON مع 1,528 معلماً نقطياً
+- **مطورو التكنولوجيا المدنية** – تطبيقات حكومية، بوابات المواطنين
+- **الطلبة والباحثون** – بيانات نظيفة، منظمة وموثّقة جيداً
 
 ---
 
@@ -81,7 +81,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب البريد في بلدية (ح
 
 أنواع TypeScript مضمّنة مباشرة.
 
-**تستخدم هذه البيانات في الإنتاج؟** [أخبرنا](https://github.com/yasserstudio/geoalgeria/discussions) — نعرض مشاريع المجتمع في الـ README.
+**تستخدم هذه البيانات في الإنتاج؟** [أخبرنا](https://github.com/yasserstudio/geoalgeria/discussions) – نعرض مشاريع المجتمع في الـ README.
 
 ---
 
@@ -99,7 +99,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب البريد في بلدية (ح
 
 ### التجارة الإلكترونية / نماذج العناوين
 
-احصل على `data/ecommerce/communes.json` — مسطّح، غير مُطبّع، بدون عمليات ربط:
+احصل على `data/ecommerce/communes.json` – مسطّح، غير مُطبّع، بدون عمليات ربط:
 
 ```json
 {
@@ -131,7 +131,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ### نظم المعلومات الجغرافية / الخرائط
 
-حمّل `data/geojson/communes.geojson` من هذا المستودع — GeoJSON قياسي، يعمل مع Leaflet، Mapbox، QGIS، إلخ.
+حمّل `data/geojson/communes.geojson` من هذا المستودع – GeoJSON قياسي، يعمل مع Leaflet، Mapbox، QGIS، إلخ.
 
 > **ملاحظة:** حزمة npm تحتوي على ملفات JSON فقط (للحفاظ على خفة الحجم). تصديرات **CSV وGeoJSON وSQL** موجودة في المستودع تحت `data/` ومرفقة كملف zip مع كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
@@ -156,7 +156,7 @@ sqlite3 mydb.sqlite < full.sql
 | `data/delivery/*.json` | JSON | 69 لكل ناقل | حساب مناطق التوصيل |
 | `data/poste/postoffices.json` | JSON | 3,908 | مكاتب البريد (رموز حقيقية، إحداثيات) |
 | `data/poste/atms.json` | JSON | 2,026 | مواقع الصرافات الآلية |
-| `data/poste/csv/*`، `data/poste/geojson/*` | CSV/GeoJSON | — | بيانات بريدية لجداول البيانات / الخرائط |
+| `data/poste/csv/*`، `data/poste/geojson/*` | CSV/GeoJSON | – | بيانات بريدية لجداول البيانات / الخرائط |
 
 > `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). `commune_code` يرتبط بـ `code_commune` لكل بلدية.
 
@@ -176,7 +176,7 @@ sqlite3 mydb.sqlite < full.sql
 - صيغ تصدير جديدة (XML، YAML، مصفوفات PHP، إلخ.)
 - تصحيحات الترجمة والكتابة بالحروف اللاتينية
 
-**أول مساهمة لك؟** ابحث عن المشاكل المُعلّمة بـ `good first issue` — كثير منها يتطلب فقط إضافة إحداثيات بلدية واحدة.
+**أول مساهمة لك؟** ابحث عن المشاكل المُعلّمة بـ `good first issue` – كثير منها يتطلب فقط إضافة إحداثيات بلدية واحدة.
 
 ---
 
@@ -200,25 +200,25 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/banques`](https://www.npmjs.com/package/@geoalgeria/banques) | البنوك المرخّصة والمؤسسات والفروع (RIB/SWIFT) |
 | [`@geoalgeria/livraison`](https://www.npmjs.com/package/@geoalgeria/livraison) | شركات التوصيل ونقاط الاستلام المُرمّزة جغرافياً |
 | [`@geoalgeria/jeunesse`](https://www.npmjs.com/package/@geoalgeria/jeunesse) | مؤسسات الشباب والرياضة (وزارة الشباب) |
-| [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي — جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز (وزارة التعليم العالي) |
-| [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية — فنادق، معالم سياحية، مواقع تاريخية، منابع حرارية، حدائق وطنية (ASAL، OSM، Wikidata) |
-| [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني — CFPA، INSFP، IFEP، مراكز خاصة (وزارة التكوين المهني / takwin.dz) |
-| [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | منشآت رياضية — ملاعب، مسابح، ميادين، مضامير (وزارة الشباب والرياضة) |
-| [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي — نقاط بيع مُرمّزة جغرافياً مع الفئة وأوقات العمل (djezzy.dz) |
-| [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد — تجميع Wikidata + OpenStreetMap، ثنائي اللغة، كل الـ69 ولاية |
-| [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية — EPH، EPSP، EHS، CHU (وزارة الصحة)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata |
-| [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي — مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية (وزارة الثقافة)، ثنائي اللغة، كامل الإحداثيات |
-| [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية — مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية (وزارة الفلاحة)، ثنائي اللغة، بإحداثيات |
-| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس — 11,830 مدرسة ابتدائية ومتوسطة وثانوية وتحضيرية مُصنَّفة حسب الطور، ثنائية اللغة، كل الـ69 ولاية (OpenStreetMap) |
-| [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية — 74 محطة SOGRAL عبر 51 ولاية، بإحداثيات مع المساحات وربط بالبلدية/الولاية |
-| [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري — 692 عقدة قطار/ترام/مترو/تلفريك/قمرة (SNTF/SETRAM/SEMA)، تجميع Wikidata + OpenStreetMap، ثنائي اللغة |
-| [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية — 50 خط ETUSA (الجزائر) مع المحطات الطرفية وعدد المواقف والبلديات والمحطات المخدومة (مستوى الخط v1) |
-| [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية — 171 مصنّعًا معتمدًا للأدوية والأجهزة الطبية من وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون جغرافيًا |
-| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) — 3٬790 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
-| [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو — 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية؛ يُكمل ثلاثي الاتصالات |
-| [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة النقل — تثبّت aviation + ferroviaire + gares-routieres + buses في خطوة واحدة |
-| [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة الصيدلة — تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
-| [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | وحدات الحماية المدنية — 880 وحدة من المديرية العامة عبر كل الولايات بأسماء عربية وعنوان/هاتف/فاكس ومستوى صفة، مُحدَّدة جغرافيًا، ربط الولاية وفق إصلاح 2026 |
+| [`@geoalgeria/enseignement-superieur`](https://www.npmjs.com/package/@geoalgeria/enseignement-superieur) | شبكة التعليم العالي – جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز (وزارة التعليم العالي) |
+| [`@geoalgeria/tourisme`](https://www.npmjs.com/package/@geoalgeria/tourisme) | البنية التحتية السياحية – فنادق، معالم سياحية، مواقع تاريخية، منابع حرارية، حدائق وطنية (ASAL، OSM، Wikidata) |
+| [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني – CFPA، INSFP، IFEP، مراكز خاصة (وزارة التكوين المهني / takwin.dz) |
+| [`@geoalgeria/sports`](https://www.npmjs.com/package/@geoalgeria/sports) | منشآت رياضية – ملاعب، مسابح، ميادين، مضامير (وزارة الشباب والرياضة) |
+| [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي – نقاط بيع مُرمّزة جغرافياً مع الفئة وأوقات العمل (djezzy.dz) |
+| [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد – تجميع Wikidata + OpenStreetMap، ثنائي اللغة، كل الـ69 ولاية |
+| [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية – EPH، EPSP، EHS، CHU (وزارة الصحة)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata |
+| [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي – مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية (وزارة الثقافة)، ثنائي اللغة، كامل الإحداثيات |
+| [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية – مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية (وزارة الفلاحة)، ثنائي اللغة، بإحداثيات |
+| [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس – 11,830 مدرسة ابتدائية ومتوسطة وثانوية وتحضيرية مُصنَّفة حسب الطور، ثنائية اللغة، كل الـ69 ولاية (OpenStreetMap) |
+| [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية – 74 محطة SOGRAL عبر 51 ولاية، بإحداثيات مع المساحات وربط بالبلدية/الولاية |
+| [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري – 692 عقدة قطار/ترام/مترو/تلفريك/قمرة (SNTF/SETRAM/SEMA)، تجميع Wikidata + OpenStreetMap، ثنائي اللغة |
+| [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية – 50 خط ETUSA (الجزائر) مع المحطات الطرفية وعدد المواقف والبلديات والمحطات المخدومة (مستوى الخط v1) |
+| [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية – 171 مصنّعًا معتمدًا للأدوية والأجهزة الطبية من وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون جغرافيًا |
+| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3٬790 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
+| [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو – 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية؛ يُكمل ثلاثي الاتصالات |
+| [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة النقل – تثبّت aviation + ferroviaire + gares-routieres + buses في خطوة واحدة |
+| [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة الصيدلة – تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
+| [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | وحدات الحماية المدنية – 880 وحدة من المديرية العامة عبر كل الولايات بأسماء عربية وعنوان/هاتف/فاكس ومستوى صفة، مُحدَّدة جغرافيًا، ربط الولاية وفق إصلاح 2026 |
 
 القائمة الكاملة والمستودع الأحادي: [github.com/yasserstudio/geoalgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -234,13 +234,13 @@ sqlite3 mydb.sqlite < full.sql
 
 كل نجمة تساعد المطور الجزائري التالي في إيجاد بيانات نظيفة بدلاً من ملفات PDF معطّلة. **[ضع نجمة لهذا المستودع](https://github.com/yasserstudio/geoalgeria)** إذا وفّر لك الوقت.
 
-وجدت بيانات خاطئة؟ [افتح مشكلة](https://github.com/yasserstudio/geoalgeria/issues/new/choose) — نصلحها خلال 48 ساعة، مضمون.
+وجدت بيانات خاطئة؟ [افتح مشكلة](https://github.com/yasserstudio/geoalgeria/issues/new/choose) – نصلحها خلال 48 ساعة، مضمون.
 
 ---
 
 ## الرعاية
 
-GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) — الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -256,25 +256,25 @@ GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [
 69. الولايات الـ 48 الأصلية، بالإضافة إلى 10 أُضيفت في 2019 (القانون 19-12)، و11 أصبحت رسمية في أبريل 2026 ([القانون رقم 26-06، *الجريدة الرسمية* رقم 25 بتاريخ 5 أبريل 2026](https://www.joradp.dz/FTP/jo-arabe/2026/A2026040.pdf)). تنتهي الفترة الانتقالية في 31 ديسمبر 2026؛ الاستقلالية الكاملة اعتباراً من 1 يناير 2027.
 
 **أين أجد قائمة بجميع بلديات الجزائر بصيغة JSON؟**
-هنا — `data/ecommerce/communes.json` يحتوي على جميع البلديات الـ 1,528 بصيغة مسطّحة جاهزة للاستخدام.
+هنا – `data/ecommerce/communes.json` يحتوي على جميع البلديات الـ 1,528 بصيغة مسطّحة جاهزة للاستخدام.
 
 **ما هي الولايات الجديدة المضافة في 2026؟**
 الولايات 59 إلى 69 (مرقّمة حسب ترتيب رمز الولاية الأم): 59 أفلو (من الأغواط)، 60 بريكة (من باتنة)، 61 القنطرة (من بسكرة)، 62 بئر العاتر (من تبسة)، 63 العريشة (من تلمسان)، 64 قصر الشلالة (من تيارت)، 65 عين وسارة (من الجلفة)، 66 مسعد (من الجلفة)، 67 قصر البخاري (من المدية)، 68 بوسعادة (من المسيلة)، 69 الأبيض سيدي الشيخ (من البيض).
 
 **كيف أحصل على الرموز البريدية الجزائرية بصيغة JSON؟**
-ثبّت `geoalgeria` عبر npm أو حمّل `data/ecommerce/communes.json` مباشرة — يحتوي على 1,528 رمز بريدي مرتبط بأسماء البلديات بالفرنسية والعربية.
+ثبّت `geoalgeria` عبر npm أو حمّل `data/ecommerce/communes.json` مباشرة – يحتوي على 1,528 رمز بريدي مرتبط بأسماء البلديات بالفرنسية والعربية.
 
 **ما هي أفضل حزمة بيانات جغرافية جزائرية للمطورين؟**
-GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 — هي حزمة npm الوحيدة التي تضم جميع الولايات الـ 69، والرموز البريدية، والإحداثيات، والدوائر، وقوالب مناطق التوصيل في تثبيت واحد. مُتحقق منها بالتكامل المستمر عند كل commit.
+GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي حزمة npm الوحيدة التي تضم جميع الولايات الـ 69، والرموز البريدية، والإحداثيات، والدوائر، وقوالب مناطق التوصيل في تثبيت واحد. مُتحقق منها بالتكامل المستمر عند كل commit.
 
-**قائمة ولايات الجزائر 2026 — أين أجدها؟**
+**قائمة ولايات الجزائر 2026، أين أجدها؟**
 يحتوي GeoAlgeria على 69 ولاية بالأسماء الفرنسية والعربية، والرموز البريدية، والإحداثيات الجغرافية. متوفر بصيغ JSON، CSV، GeoJSON، وSQL. `npm install geoalgeria`
 
 ---
 
 ## الرخصة
 
-MIT — مجاني للاستخدام الشخصي والتجاري.
+MIT – مجاني للاستخدام الشخصي والتجاري.
 
 صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

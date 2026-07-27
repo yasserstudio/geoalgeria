@@ -4,7 +4,7 @@
 
 # @geoalgeria/telecom
 
-**La couverture des réseaux mobiles en Algérie — sous forme de données installables.**
+**La couverture des réseaux mobiles en Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/telecom)](https://www.npmjs.com/package/@geoalgeria/telecom)
@@ -13,8 +13,8 @@
 </div>
 
 **2 798 points de couverture 5G** à travers l'Algérie, publiés à partir des
-cartes de couverture des opérateurs — **Djezzy (1 001)**, **Mobilis (1 621)** et
-**Ooredoo (176)** — chacun avec ses coordonnées et son rattachement
+cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (1 621)** et
+**Ooredoo (176)** – chacun avec ses coordonnées et son rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -43,9 +43,9 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 ## Ce que vous pouvez construire
 
-- **Vérificateurs de couverture 5G** — « y a-t-il de la 5G près de chez moi / dans ma wilaya ? »
-- **Comparaison entre opérateurs** — empreinte Djezzy / Mobilis / Ooredoo par wilaya/commune.
-- **Cartes** — couches de points GeoJSON prêtes à l'emploi pour le déploiement 5G.
+- **Vérificateurs de couverture 5G** – « y a-t-il de la 5G près de chez moi / dans ma wilaya ? »
+- **Comparaison entre opérateurs** – empreinte Djezzy / Mobilis / Ooredoo par wilaya/commune.
+- **Cartes** – couches de points GeoJSON prêtes à l'emploi pour le déploiement 5G.
 
 ## Contenu
 
@@ -63,18 +63,18 @@ Touggourt).
 > emplacements de **sites cellulaires** ; Ooredoo publie des points au **niveau
 > communal** dans les communes couvertes (quelques communes en comportent
 > plusieurs). Les cercles affichés sur ces cartes ont un rayon fixe d'affichage,
-> **pas une mesure de couverture RF** — considérez-les comme des points de
+> **pas une mesure de couverture RF** – considérez-les comme des points de
 > *présence* 5G, et non comme des polygones de couverture.
 
 ## Organisation (évolutive)
 
 La couverture est organisée par **technologie**, de sorte que l'ajout d'une
-nouvelle génération est purement additif — rien n'est renommé :
+nouvelle génération est purement additif – rien n'est renommé :
 
 ```
 data/
   coverage/5g/
-    sites.json          # combiné — tous les opérateurs
+    sites.json          # combiné – tous les opérateurs
     djezzy.json  mobilis.json  ooredoo.json
   csv/coverage/5g/sites.csv          # dépôt + bundle Release (pas dans le tarball npm)
   geojson/coverage/5g/sites.geojson  # Entités Point
@@ -112,7 +112,7 @@ que le nom de la commune). Pour Ooredoo, `name` est la commune couverte.
 ## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est lui qui
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est lui qui
 vous permet de convertir un `wilaya_code` en polygone ou en nom.
 
 ## Source et régénération
@@ -134,7 +134,7 @@ commitées avec un jeu partiel.
 Le code est sous [MIT](LICENSE). Les données sous-jacentes sont la propriété des
 opérateurs respectifs (**Djezzy**, **Mobilis**, **Ooredoo**), redistribuées à
 titre de référence et pour alimenter
-[GeoAlgeria](https://geoalgeria.com). Le déploiement 5G est en cours — chaque
+[GeoAlgeria](https://geoalgeria.com). Le déploiement 5G est en cours – chaque
 reconstruction reflète ce que les cartes des opérateurs montrent à ce moment ;
 vérifiez auprès des opérateurs pour des informations officielles et en temps
 réel.

@@ -4,7 +4,7 @@
 
 # @geoalgeria/poste
 
-**Chaque bureau et distributeur d'Algérie Poste — sous forme de données installables.**
+**Chaque bureau et distributeur d'Algérie Poste, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/poste)](https://www.npmjs.com/package/@geoalgeria/poste)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/poste)](https://www.npmjs.com/package/@geoalgeria/poste)
@@ -12,7 +12,7 @@
 
 </div>
 
-3 908 bureaux de poste et 2 026 distributeurs automatiques (DAB) à travers l'Algérie — avec de **vrais codes postaux**, des noms bilingues (français / arabe), des coordonnées GPS et un rattachement commune/wilaya. Données issues d'Algérie Poste, distribuées en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
+3 908 bureaux de poste et 2 026 distributeurs automatiques (DAB) à travers l'Algérie – avec de **vrais codes postaux**, des noms bilingues (français / arabe), des coordonnées GPS et un rattachement commune/wilaya. Données issues d'Algérie Poste, distribuées en JSON, CSV et GeoJSON. Fait partie de [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
 npm install @geoalgeria/poste
@@ -32,10 +32,10 @@ const inAdrar = offices.filter((o) => o.commune_code === "0101");
 
 ## Ce que vous pouvez construire
 
-- **Validation et recherche de codes postaux** — chaque bureau porte son vrai `postal_code`.
-- **Localisateurs de bureaux / DAB** — coordonnées sur (presque) chaque enregistrement, prêtes pour le tri par distance ou l'affichage sur carte.
-- **Fintech et logistique** — faites correspondre les adresses au bureau de poste ou au GAB le plus proche.
-- **Cartes** — couches de points GeoJSON prêtes à l'emploi pour l'ensemble du réseau postal.
+- **Validation et recherche de codes postaux** – chaque bureau porte son vrai `postal_code`.
+- **Localisateurs de bureaux / DAB** – coordonnées sur (presque) chaque enregistrement, prêtes pour le tri par distance ou l'affichage sur carte.
+- **Fintech et logistique** – faites correspondre les adresses au bureau de poste ou au GAB le plus proche.
+- **Cartes** – couches de points GeoJSON prêtes à l'emploi pour l'ensemble du réseau postal.
 
 ## Contenu
 
@@ -54,7 +54,7 @@ import offices from "@geoalgeria/poste/data/postoffices.json" with { type: "json
 // https://cdn.jsdelivr.net/npm/@geoalgeria/poste/data/postoffices.json
 ```
 
-Les chargeurs et les structures d'enregistrements sont entièrement **typés** — les définitions TypeScript sont incluses dans le paquet :
+Les chargeurs et les structures d'enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses dans le paquet :
 
 ```ts
 import poste, { type PostOffice, type Atm } from "@geoalgeria/poste";
@@ -75,7 +75,7 @@ data/
   geojson/atms.geojson
 ```
 
-> Le GeoJSON n'inclut que les enregistrements ayant des coordonnées — 16
+> Le GeoJSON n'inclut que les enregistrements ayant des coordonnées – 16
 > bureaux et 5 DAB ne rapportent pas de `lat`/`lng` et en sont absents (mais
 > restent dans JSON/CSV, avec `geo_precision`/`geo_method` à `null`). Les
 > enregistrements de DAB portent `commune_code` à `null` (l'API source ne
@@ -111,7 +111,7 @@ est le code commune à 4 chiffres d'Algérie Poste, qui se joint au `code_commun
 de GeoAlgeria. `geo_precision` vaut `"exact"` (ou `null` avec `lat`/`lng` quand
 le bureau n'est pas géocodé) ; `geo_method` indique comment le point a été obtenu.
 
-**DAB** — même structure, identifié par `id`/`name`/`wilaya_code`/`postal_code`
+**DAB** – même structure, identifié par `id`/`name`/`wilaya_code`/`postal_code`
 avec `lat`/`lng`, plus un champ `status` (`"OPEN"`, `"CLOSED (OFFLINE)"`, ou la
 valeur source non documentée `"1"`) ; `commune_code` et `address` sont toujours
 `null` (la source ne les résout pas pour les DAB).
@@ -119,7 +119,7 @@ valeur source non documentée `"1"`) ; `commune_code` et `address` sont toujours
 ## Besoin des divisions administratives ?
 
 Si vous avez aussi besoin des wilayas, dairas et communes, utilisez le paquet
-principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il
+principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il
 intègre ces données postales et expose `postOffices` / `atms` aux côtés du jeu
 de données complet des divisions. Utilisez `@geoalgeria/poste` quand vous
 n'avez besoin *que* des données postales/bancaires.
@@ -130,7 +130,7 @@ Les données proviennent d'**Algérie Poste** via l'API publique BaridiMap
 (<https://baridimap.poste.dz>). Exécutez `npm run fetch` pour régénérer toutes
 les sorties à partir de l'API en direct ; la même exécution reflète les données
 dans le paquet `geoalgeria` pour que les deux ne divergent jamais (ce paquet est
-la source canonique). Relancez périodiquement — BaridiMap classe toujours les
+la source canonique). Relancez périodiquement – BaridiMap classe toujours les
 bureaux selon le schéma à 58 wilayas, donc les nouvelles wilayas 59–69
 apparaissent actuellement sous leur wilaya mère.
 

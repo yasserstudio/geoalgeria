@@ -4,7 +4,7 @@
 
 # @geoalgeria/gares-routieres
 
-**Toutes les gares routières d'Algérie — sous forme de données prêtes à installer.**
+**Toutes les gares routières d'Algérie, sous forme de données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
@@ -12,7 +12,7 @@
 
 </div>
 
-74 gares routières à travers l'Algérie — avec noms officiels, adresses, coordonnées GPS,
+74 gares routières à travers l'Algérie – avec noms officiels, adresses, coordonnées GPS,
 superficies et rattachement wilaya/commune. Données issues de **SOGRAL** (l'exploitant
 public des gares routières), livrées en JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -28,16 +28,16 @@ npm install @geoalgeria/gares-routieres
 import gares from "@geoalgeria/gares-routieres";
 
 const tout = gares.stations();                 // 74
-const alger = gares.stationById("16-01");      // Alger — Grands Invalides
+const alger = gares.stationById("16-01");      // Alger – Grands Invalides
 const setif = gares.stationsByWilaya(19);      // gares de la wilaya 19
 ```
 
 ## Ce que vous pouvez construire
 
-- **Recherche de la gare la plus proche** — coordonnées sur chaque enregistrement.
-- **Voyage & logistique** — associer une wilaya ou un point à sa gare routière.
-- **Cartes** — couche GeoJSON de points, prête à l'emploi.
-- **Capacités** — superficies totale/bâtie par gare.
+- **Recherche de la gare la plus proche** – coordonnées sur chaque enregistrement.
+- **Voyage & logistique** – associer une wilaya ou un point à sa gare routière.
+- **Cartes** – couche GeoJSON de points, prête à l'emploi.
+- **Capacités** – superficies totale/bâtie par gare.
 
 ## Contenu
 
@@ -64,7 +64,7 @@ data/
 
 ## Source
 
-Données de **SOGRAL — EPE SOGRAL Spa** (Société de Gestion des Gares Routières d'Algérie),
+Données de **SOGRAL – EPE SOGRAL Spa** (Société de Gestion des Gares Routières d'Algérie),
 via son registre en temps réel (<https://live.sogral.com>). `wilaya_code`/`commune` sont
 résolus par centroïde de commune le plus proche à partir du jeu `geoalgeria`.
 

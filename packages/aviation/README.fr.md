@@ -4,7 +4,7 @@
 
 # @geoalgeria/aviation
 
-**Tous les aéroports civils d'Algérie — sous forme de données installables.**
+**Tous les aéroports civils d'Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
@@ -29,15 +29,15 @@ const all = aviation.airports();                 // 36
 const algiers = aviation.airportByIcao("DAAG");  // Houari Boumediene, iata "ALG"
 const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 
-// Chaque enregistrement a lat/lng — tri par distance, carte ou aéroport le plus proche en quelques lignes.
+// Chaque enregistrement a lat/lng – tri par distance, carte ou aéroport le plus proche en quelques lignes.
 ```
 
 ## Ce que vous pouvez construire
 
-- **Recherche de l'aéroport le plus proche** — coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
+- **Recherche de l'aéroport le plus proche** – coordonnées sur chaque enregistrement, prêtes pour le tri par distance.
 - **Résolution OACI/IATA ↔ aéroport** : associer l'un ou l'autre code, venu d'un flux de vols, d'un système de réservation ou d'un horaire, à un nom, des contacts et une localisation.
-- **Voyage et logistique** — associer une wilaya ou un point à son aéroport desservant.
-- **Cartes** — couche de points GeoJSON prête à l'emploi pour tout le réseau d'aéroports civils.
+- **Voyage et logistique** – associer une wilaya ou un point à son aéroport desservant.
+- **Cartes** – couche de points GeoJSON prête à l'emploi pour tout le réseau d'aéroports civils.
 
 ## Contenu
 
@@ -62,7 +62,7 @@ import airports from "@geoalgeria/aviation/data/airports.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/airports.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** — les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import aviation, { type Airport } from "@geoalgeria/aviation";
@@ -119,13 +119,13 @@ publie pas.
 ## Besoin aussi des divisions administratives ?
 
 Si vous avez également besoin des wilayas, dairas et communes pour des jointures, utilisez
-le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — il fournit
+le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – il fournit
 le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence ici. Utilisez
 `@geoalgeria/aviation` quand vous avez *uniquement* besoin des données aéroportuaires.
 
 ## Source
 
-Les données proviennent de l'**ANAC — Autorité Nationale de l'Aviation Civile**, via la carte
+Les données proviennent de l'**ANAC – Autorité Nationale de l'Aviation Civile**, via la carte
 publique des aéroports (<https://www.anac.dz/en/carte-des-aeroports-3/>). Exécutez `npm run fetch`
 pour régénérer toutes les sorties à partir de la carte en direct ; le build suit l'iframe de la
 carte, donc une mise à jour de version par l'ANAC ne le casse pas, et il échoue bruyamment si le

@@ -4,7 +4,7 @@
 
 # @geoalgeria/mobilis
 
-**Le réseau commercial de Mobilis en Algérie — sous forme de données installables.**
+**Le réseau commercial de Mobilis en Algérie, sous forme de données installables.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/mobilis)](https://www.npmjs.com/package/@geoalgeria/mobilis)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/mobilis)](https://www.npmjs.com/package/@geoalgeria/mobilis)
@@ -39,11 +39,11 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs d'agences** — coordonnées de chacune des 165 agences, prêtes
+- **Localisateurs d'agences** – coordonnées de chacune des 165 agences, prêtes
   pour un tri par distance ou un affichage sur carte.
-- **Couverture par commune** — les points de vente sont associés à leur commune,
+- **Couverture par commune** – les points de vente sont associés à leur commune,
   ce qui permet de compter ou classer la présence de Mobilis par commune/wilaya.
-- **Annuaires bilingues** — nom et adresse des agences en français et en arabe.
+- **Annuaires bilingues** – nom et adresse des agences en français et en arabe.
 
 ## Contenu
 
@@ -52,7 +52,7 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 | Agences (*Agence Mobilis*) | **165** | ✅ les 165 | bilingue FR/AR, 56/58 wilayas |
 | Points de vente agréés | **12 180** | ❌ aucune | nom FR + adresse + commune |
 
-> Les points de vente constituent un **annuaire au niveau communal** — la source
+> Les points de vente constituent un **annuaire au niveau communal** – la source
 > ne fournit pas de coordonnées pour eux. Pour les cartographier, agrégez-les
 > aux centroïdes des communes (jointure de `commune` avec les communes de
 > [`geoalgeria`](https://www.npmjs.com/package/geoalgeria)) ou géocodez les
@@ -68,7 +68,7 @@ import agences from "@geoalgeria/mobilis/data/agences.json" with { type: "json" 
 // https://cdn.jsdelivr.net/npm/@geoalgeria/mobilis/data/agences.json
 ```
 
-Les chargeurs et les structures d'enregistrement sont entièrement **typés** — les définitions TypeScript sont incluses dans le package :
+Les chargeurs et les structures d'enregistrement sont entièrement **typés** – les définitions TypeScript sont incluses dans le package :
 
 ```ts
 import mobilis, { type Agence, type Pdv } from "@geoalgeria/mobilis";
@@ -135,7 +135,7 @@ permet la jointure avec le `wilaya_code` de GeoAlgeria.
 ## Besoin des divisions administratives ?
 
 Pour les wilayas, daïras et communes, utilisez le package principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est ainsi que
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ainsi que
 vous transformez la `commune` d'un point de vente en polygone ou centroïde.
 Utilisez `@geoalgeria/mobilis` si vous avez *uniquement* besoin du réseau
 Mobilis.
@@ -143,14 +143,14 @@ Mobilis.
 ## Source
 
 Les données proviennent du localisateur de magasins de **Mobilis**
-(<https://mobilis.dz/mapagence>). Il n'existe pas d'API documentée — le
+(<https://mobilis.dz/mapagence>). Il n'existe pas d'API documentée – le
 localisateur appelle quelques endpoints JSON derrière un en-tête
 `X-Requested-With`, et le site est protégé par un WAF. Exécutez `npm run fetch`
 pour régénérer toutes les sorties : il initialise une session, parcourt les 58
 wilayas pour les deux catégories, analyse les chaînes de coordonnées
 `"lat, lng"` (en gérant les lignes avec virgule décimale) et normalise les codes
 de wilaya. Mobilis enregistre les données selon le **schéma à 58 wilayas**, donc
-les nouvelles wilayas 59–69 apparaissent actuellement sous leur wilaya mère —
+les nouvelles wilayas 59–69 apparaissent actuellement sous leur wilaya mère –
 comme pour les données d'Algérie Poste et de l'ANEM.
 
 ## Licence et attribution
@@ -159,7 +159,7 @@ Le code est sous licence [MIT](LICENSE). Les données sous-jacentes sont
 © **ATM Mobilis**, redistribuées à titre de référence et pour alimenter
 [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès de Mobilis pour des
 informations officielles et en temps réel. La liste des points de vente évolue
-au fil des arrivées et départs de revendeurs — chaque reconstruction reflète ce
+au fil des arrivées et départs de revendeurs – chaque reconstruction reflète ce
 que le localisateur affiche à ce moment-là.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/mobilis) · [Parcourir tous les paquets →](https://geoalgeria.com/data)

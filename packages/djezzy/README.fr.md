@@ -4,7 +4,7 @@
 
 # @geoalgeria/djezzy
 
-**Le réseau de boutiques Djezzy en Algérie — sous forme de données prêtes à installer.**
+**Le réseau de boutiques Djezzy en Algérie, sous forme de données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/djezzy)](https://www.npmjs.com/package/@geoalgeria/djezzy)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/djezzy)](https://www.npmjs.com/package/@geoalgeria/djezzy)
@@ -13,7 +13,7 @@
 </div>
 
 Les **128 boutiques** de **Djezzy** (Optimum Telecom Algérie), l'un des trois
-opérateurs mobiles d'Algérie — chaque point de vente géolocalisé, avec sa
+opérateurs mobiles d'Algérie – chaque point de vente géolocalisé, avec sa
 catégorie, son adresse, ses horaires, son code d'ouverture et son rattachement
 commune/wilaya. Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -36,11 +36,11 @@ const flagships = boutiques.filter((b) => b.category === "A");
 
 ## Ce que vous pouvez construire
 
-- **Localisateurs de boutiques** — des coordonnées sur chacune des 128 boutiques,
+- **Localisateurs de boutiques** – des coordonnées sur chacune des 128 boutiques,
   prêtes pour le tri par distance ou une carte.
-- **Couverture par wilaya** — chaque boutique est rattachée à sa commune et sa
+- **Couverture par wilaya** – chaque boutique est rattachée à sa commune et sa
   wilaya, pour compter ou classer la présence de Djezzy sur les 63 wilayas couvertes.
-- **Comparaisons d'opérateurs** — jointure avec
+- **Comparaisons d'opérateurs** – jointure avec
   [`@geoalgeria/mobilis`](https://www.npmjs.com/package/@geoalgeria/mobilis) sur
   `wilaya_code` pour comparer les réseaux de distribution opérateur par opérateur.
 
@@ -60,7 +60,7 @@ import boutiques from "@geoalgeria/djezzy/data/boutiques.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/djezzy/data/boutiques.json
 ```
 
-Les chargeurs et les enregistrements sont entièrement **typés** — les définitions TypeScript sont incluses :
+Les chargeurs et les enregistrements sont entièrement **typés** – les définitions TypeScript sont incluses :
 
 ```ts
 import djezzy, { type Boutique } from "@geoalgeria/djezzy";
@@ -106,7 +106,7 @@ data/
 `id` est une clé stable `{wilaya_code}-{seq}` synthétisée par GeoAlgeria, unique
 dans ce jeu de données. Le code interne de Djezzy est conservé dans `refs.djezzy`.
 `wilaya_code` se joint au `wilaya_code` de GeoAlgeria. `geo_precision` vaut
-toujours `"exact"` et `geo_method` toujours `"operator_point"` — chaque boutique
+toujours `"exact"` et `geo_method` toujours `"operator_point"` – chaque boutique
 porte une vraie coordonnée publiée par l'opérateur.
 
 > **Le rattachement commune/wilaya est dérivé, pas issu de la source.** Djezzy
@@ -120,7 +120,7 @@ porte une vraie coordonnée publiée par l'opérateur.
 ## Besoin des divisions administratives ?
 
 Pour les wilayas, dairas et communes, utilisez le paquet principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est ce qui
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ce qui
 transforme le `commune_code` d'une boutique en polygone ou centroïde. Utilisez
 `@geoalgeria/djezzy` quand vous n'avez besoin *que* du réseau Djezzy.
 
@@ -128,7 +128,7 @@ transforme le `commune_code` d'une boutique en polygone ou centroïde. Utilisez
 
 Les données proviennent du localisateur de boutiques **Djezzy**
 (<https://www.djezzy.dz/nos-boutiques/>). La page intègre la liste complète sous
-forme de tableau JSON encodé en entités HTML — il n'y a pas d'API séparée. Lancez
+forme de tableau JSON encodé en entités HTML – il n'y a pas d'API séparée. Lancez
 `npm run fetch` pour régénérer les sorties : le script lit les objets boutique,
 vérifie que les coordonnées tombent en Algérie, et attache le rattachement
 administratif par commune la plus proche.
@@ -139,7 +139,7 @@ Le code est sous [MIT](LICENSE). Les données sont © **Optimum Telecom Algérie
 (Djezzy)**, redistribuées à titre de référence et pour alimenter
 [GeoAlgeria](https://geoalgeria.com). Vérifiez auprès de Djezzy pour toute
 information officielle et en temps réel. La liste des boutiques évolue au fil des
-ouvertures et fermetures — chaque reconstruction reflète l'état actuel du
+ouvertures et fermetures – chaque reconstruction reflète l'état actuel du
 localisateur.
 
 [Docs API & champs →](https://geoalgeria.com/data/docs/djezzy) · [Tous les paquets →](https://geoalgeria.com/data)

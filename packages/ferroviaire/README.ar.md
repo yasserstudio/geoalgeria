@@ -4,7 +4,7 @@
 
 # @geoalgeria/ferroviaire
 
-**النقل بالسكك الحديدية والحضري في الجزائر — كل محطة وموقف، كبيانات جاهزة للتثبيت.**
+**النقل بالسكك الحديدية والحضري في الجزائر، كل محطة وموقف، كبيانات جاهزة للتثبيت.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ferroviaire)](https://www.npmjs.com/package/@geoalgeria/ferroviaire)
@@ -14,8 +14,8 @@
 
 <div dir="rtl">
 
-692 عقدة للنقل بالسكك الحديدية والنقل الحضري في الجزائر — **محطات القطار، محطات الترامواي،
-محطات المترو، التلفريك والتلفريك المعلّق** — مع أسماء ثنائية اللغة (فر/عر)، المُشغّل
+692 عقدة للنقل بالسكك الحديدية والنقل الحضري في الجزائر – **محطات القطار، محطات الترامواي،
+محطات المترو، التلفريك والتلفريك المعلّق** – مع أسماء ثنائية اللغة (فر/عر)، المُشغّل
 (SNTF / SETRAM / SEMA)، الخط، الإحداثيات، والربط بالولاية/البلدية. تجميعة من Wikidata و
 OpenStreetMap، بصيغ JSON و CSV و GeoJSON. جزء من
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -45,9 +45,9 @@ const alger = ferroviaire.stationsByWilaya(16);
 | --- | --- | --- |
 | سكك حديدية (قطار) | **427** | SNTF |
 | ترامواي | **190** | SETRAM (7 شبكات) |
-| مترو | **41** | SEMA — مترو الجزائر |
-| تلفريك | **24** | — |
-| تلفريك معلّق | **10** | — |
+| مترو | **41** | SEMA – مترو الجزائر |
+| تلفريك | **24** | – |
+| تلفريك معلّق | **10** | – |
 
 تغطي **50 ولاية**، وكلها مُحدّدة جغرافيًا. يرتبط `wilaya_code` بنموذج الـ69 ولاية في
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -56,7 +56,7 @@ const alger = ferroviaire.stationsByWilaya(16);
 
 تجميعة من **Wikidata** (CC0) و**OpenStreetMap** (© مساهمو OpenStreetMap، ODbL 1.0)، مع
 المشغّلين **SNTF** و**SETRAM** و**SEMA/EMA**. الشيفرة تحت [MIT](LICENSE)؛ وتبقى بيانات
-OSM تحت ODbL — احتفظ بالإسناد. تحقّق من المشغّلين للمعلومات الرسمية.
+OSM تحت ODbL – احتفظ بالإسناد. تحقّق من المشغّلين للمعلومات الرسمية.
 
 [تصفّح كل الحزم →](https://geoalgeria.com/data)
 

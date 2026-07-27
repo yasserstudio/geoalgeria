@@ -4,7 +4,7 @@
 
 # @geoalgeria/gares-routieres
 
-**كل المحطات البرية للحافلات في الجزائر — كبيانات جاهزة للتثبيت.**
+**كل المحطات البرية للحافلات في الجزائر، كبيانات جاهزة للتثبيت.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/gares-routieres)](https://www.npmjs.com/package/@geoalgeria/gares-routieres)
@@ -14,7 +14,7 @@
 
 <div dir="rtl">
 
-74 محطة برية للنقل بين الولايات عبر الجزائر — مع الأسماء الرسمية والعناوين والإحداثيات
+74 محطة برية للنقل بين الولايات عبر الجزائر – مع الأسماء الرسمية والعناوين والإحداثيات
 والمساحات والربط بالولاية/البلدية. المصدر **سوقرال (SOGRAL)**، المؤسسة العمومية المسيّرة
 للمحطات البرية، بصيغ JSON و CSV و GeoJSON. جزء من
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -49,7 +49,7 @@ const setif = gares.stationsByWilaya(19);
 
 ## المصدر
 
-البيانات من **سوقرال — EPE SOGRAL Spa** عبر سجلّها الآني (<https://live.sogral.com>).
+البيانات من **سوقرال – EPE SOGRAL Spa** عبر سجلّها الآني (<https://live.sogral.com>).
 يُحدّد `wilaya_code`/`commune` عبر أقرب مركز بلدية من مجموعة `geoalgeria`.
 
 ## الرخصة والإسناد

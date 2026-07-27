@@ -4,7 +4,7 @@
 
 # @geoalgeria/ecoles
 
-**Les écoles d'Algérie — sous forme de données prêtes à installer.**
+**Les écoles d'Algérie, sous forme de données prêtes à installer.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/ecoles)](https://www.npmjs.com/package/@geoalgeria/ecoles)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/ecoles)](https://www.npmjs.com/package/@geoalgeria/ecoles)
@@ -12,7 +12,7 @@
 
 </div>
 
-**11 830 écoles géolocalisées** dans les **69 wilayas** d'Algérie — chacune avec
+**11 830 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
 ses coordonnées, classée par **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Extraites d'**OpenStreetMap** et présentées
@@ -38,11 +38,11 @@ const named = all.filter((e) => e.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes & annuaires d'écoles** — coordonnées sur les 11 830 enregistrements,
+- **Cartes & annuaires d'écoles** – coordonnées sur les 11 830 enregistrements,
   prêtes pour une carte ou un tri par école la plus proche.
-- **Répartitions par cycle** — filtrez primaire / moyen / secondaire /
+- **Répartitions par cycle** – filtrez primaire / moyen / secondaire /
   préscolaire, ou classez la densité scolaire par commune/wilaya.
-- **Annuaires bilingues** — des milliers de noms en arabe et en français, côte à côte.
+- **Annuaires bilingues** – des milliers de noms en arabe et en français, côte à côte.
 
 ## Contenu
 
@@ -61,18 +61,18 @@ const named = all.filter((e) => e.name_fr);
 | `autre` | 3 591 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
 
 > **Il s'agit d'un extrait OpenStreetMap, pas d'un registre officiel.** La
-> couverture est partielle et inégale selon les wilayas — ~11,8k écoles
+> couverture est partielle et inégale selon les wilayas – ~11,8k écoles
 > cartographiées face aux ~28 000 du réseau national (primaire + moyen +
 > secondaire, Ministère de l'Éducation Nationale, approximatif). Les nombres
 > évoluent au fil des contributions à OpenStreetMap.
 
-**Le cycle est déduit.** Il provient d'`isced:level` et du nom français/arabe —
+**Le cycle est déduit.** Il provient d'`isced:level` et du nom français/arabe –
 un CEM se nomme toujours متوسطة/collège, un lycée ثانوية/lycée, une maternelle
 روضة/préscolaire. Une simple « école »/« مدرسة » sans mot de cycle est classée
 `primaire` par convention algérienne ; le reste est `autre`. 93 % des écoles
 *nommées* obtiennent un cycle précis.
 
-**Par type (`kind`)** — le `kind` est le type d'établissement, *orthogonal* au
+**Par type (`kind`)** – le `kind` est le type d'établissement, *orthogonal* au
 cycle, pour filtrer (ou isoler) les lieux particuliers qu'OSM classe sous
 `amenity=school` :
 
@@ -86,12 +86,12 @@ cycle, pour filtrer (ou isoler) les lieux particuliers qu'OSM classe sous
 | `conduite` | 5 | auto-école | `autre` |
 
 Les quatre types hors K-12 (`formation`/`coranique`/`langues`/`conduite`) portent
-le cycle `autre` — ce ne sont pas des écoles primaires même si leur nom contient
+le cycle `autre` – ce ne sont pas des écoles primaires même si leur nom contient
 « école » ; le `kind` les rend repérables au lieu de les noyer dans `autre`.
 
 **Aussi sur chaque enregistrement :** `isced_levels` (les niveaux `isced:level`
-d'OSM, normalisés en liste triée comme `"1;2"` — sur 2 037 enregistrements),
-`address` (depuis les tags OSM `addr:*` — sur 2 625) et `sector`
+d'OSM, normalisés en liste triée comme `"1;2"` – sur 2 037 enregistrements),
+`address` (depuis les tags OSM `addr:*` – sur 2 625) et `sector`
 (`public`/`private` là où la carte le signale).
 
 ## Formats
@@ -104,7 +104,7 @@ import ecoles from "@geoalgeria/ecoles/data/ecoles.json" with { type: "json" };
 // https://cdn.jsdelivr.net/npm/@geoalgeria/ecoles/data/ecoles.json
 ```
 
-Les chargeurs et les formes d'enregistrement sont entièrement **typés** — les
+Les chargeurs et les formes d'enregistrement sont entièrement **typés** – les
 définitions TypeScript sont incluses dans le paquet :
 
 ```ts
@@ -163,7 +163,7 @@ bilingues. `isced_levels` et `address` proviennent directement d'OSM (`null` si
 les tags sont absents). `sector` vaut `"public"`/`"private"` uniquement en
 présence d'un signal explicite, sinon `null`. `geo_precision` vaut `"exact"`
 pour un point OSM relevé ou `"approximate"` pour un centre de contour de
-bâtiment — `geo_method` précise lequel (`osm_node`/`osm_centroid`).
+bâtiment – `geo_method` précise lequel (`osm_node`/`osm_centroid`).
 `wilaya_code` se joint au `wilaya_code` de GeoAlgeria.
 
 > **Le rattachement commune/wilaya est déduit, pas issu de la source.**
@@ -177,7 +177,7 @@ bâtiment — `geo_method` précise lequel (`osm_node`/`osm_centroid`).
 ## Besoin aussi des divisions administratives ?
 
 Pour les wilayas, daïras et communes, utilisez le paquet principal
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — c'est ainsi que
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – c'est ainsi que
 vous transformez le `commune_code` d'une école en polygone ou centroïde. Utilisez
 `@geoalgeria/ecoles` lorsque vous ne voulez *que* les écoles.
 
@@ -197,7 +197,7 @@ Les extractions brutes sont mises en cache sous
 ## Licence & attribution
 
 Le **code** du paquet est sous [MIT](LICENSE). Les **données** proviennent
-d'**OpenStreetMap** — **© les contributeurs d'OpenStreetMap**, sous licence
+d'**OpenStreetMap** – **© les contributeurs d'OpenStreetMap**, sous licence
 **[ODbL 1.0](https://www.openstreetmap.org/copyright)**. Si vous utilisez ou
 redistribuez ce jeu de données, vous devez **attribuer les contributeurs
 d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.

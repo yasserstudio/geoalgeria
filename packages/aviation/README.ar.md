@@ -4,7 +4,7 @@
 
 # @geoalgeria/aviation
 
-**كل مطار مدني في الجزائر — كبيانات يمكنك تثبيتها.**
+**كل مطار مدني في الجزائر، كبيانات يمكنك تثبيتها.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
 [![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/aviation)](https://www.npmjs.com/package/@geoalgeria/aviation)
@@ -29,15 +29,15 @@ const all = aviation.airports();                 // 36
 const algiers = aviation.airportByIcao("DAAG");  // هواري بومدين، iata "ALG"
 const inOran = aviation.airportsByWilaya(31);     // مطارات الولاية 31
 
-// كل سجل يحتوي على إحداثيات — الترتيب حسب المسافة، الخرائط، أو أقرب مطار في بضعة أسطر.
+// كل سجل يحتوي على إحداثيات – الترتيب حسب المسافة، الخرائط، أو أقرب مطار في بضعة أسطر.
 ```
 
 ## ما يمكنك بناؤه
 
-- **البحث عن أقرب مطار** — إحداثيات في كل سجل، جاهزة للترتيب حسب المسافة.
+- **البحث عن أقرب مطار** – إحداثيات في كل سجل، جاهزة للترتيب حسب المسافة.
 - **تحويل OACI/IATA ↔ مطار**: ربط أي من الرمزين، من تدفق رحلات أو نظام حجز أو جدول مواعيد، بالأسماء وجهات الاتصال والمواقع.
-- **السفر والنقل** — ربط ولاية أو نقطة بالمطار الذي يخدمها.
-- **الخرائط** — طبقة نقاط GeoJSON جاهزة للاستخدام لشبكة المطارات المدنية بالكامل.
+- **السفر والنقل** – ربط ولاية أو نقطة بالمطار الذي يخدمها.
+- **الخرائط** – طبقة نقاط GeoJSON جاهزة للاستخدام لشبكة المطارات المدنية بالكامل.
 
 ## المحتوى
 
@@ -62,7 +62,7 @@ import airports from "@geoalgeria/aviation/data/airports.json" with { type: "jso
 // https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/airports.json
 ```
 
-أدوات التحميل وأشكال السجلات **مصنّفة بالكامل** — تعريفات TypeScript مضمّنة في الحزمة:
+أدوات التحميل وأشكال السجلات **مصنّفة بالكامل** – تعريفات TypeScript مضمّنة في الحزمة:
 
 ```ts
 import aviation, { type Airport } from "@geoalgeria/aviation";
@@ -117,13 +117,13 @@ OurAirports.
 ## هل تحتاج التقسيمات الإدارية أيضا؟
 
 إذا كنت تحتاج أيضا الولايات والدوائر والبلديات للربط، استخدم الحزمة الرئيسية
-**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** — توفر مجموعة بيانات التقسيم
+**[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)** – توفر مجموعة بيانات التقسيم
 الكاملة للـ 69 ولاية التي يشير إليها `wilaya_code` هنا. استخدم `@geoalgeria/aviation`
 عندما تحتاج *فقط* بيانات المطارات.
 
 ## المصدر
 
-البيانات من **ANAC — السلطة الوطنية للطيران المدني**، عبر خريطة المطارات العامة
+البيانات من **ANAC – السلطة الوطنية للطيران المدني**، عبر خريطة المطارات العامة
 (<https://www.anac.dz/en/carte-des-aeroports-3/>). شغّل `npm run fetch` لإعادة توليد جميع
 المخرجات من الخريطة الحية؛ عملية البناء تتبع iframe الخريطة لذا لن تتعطل عند تحديث إصدار
 ANAC، وتفشل بوضوح إذا تغيّر عدد المطارات أو تنسيق OACI. يتم تحديد `wilaya_code` عبر أقرب
