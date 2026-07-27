@@ -148,15 +148,31 @@ winter seasonal, and the August silence meant out-of-season, not discontinued.
 A Soar silence justifies leaving a pair `unclear`. It **never** justifies recording a
 negative, and never justifies deleting a leg a citable source supports.
 
-Three independent reasons, all observed:
+Four independent reasons, all observed:
 
 - **Charters are invisible.** ALG-HRG flew its first rotation in late July 2026 and the
   probe returned nothing all week. Charters are not normally sold through the GDS.
 - **Coverage has gaps.** ORN-ETZ has an official published 2026 schedule on Lorraine
-  airport's own site and the probe is silent in that direction. CZL-TLS likewise.
+  airport's own site and the probe is silent in that direction.
 - **Offers are volatile.** Run 1 found the Wednesday BUD-ALG nonstop at 180 minutes. Run
   2, about thirty minutes later and covering the same date, did not return it at all.
   Nothing about the schedule changed in between.
+- **A full-week sweep can still miss a real weekly route.** This is the one that should
+  change how you read a negative. The first probe swept Mon 10 to Sun 16 Aug 2026 and
+  found CZL-TLS silent on every day, which was written up as a coverage gap. It was not:
+  CZL-TLS runs `AH 1052` on **Tuesdays**, and that week contained Tuesday 11 August. The
+  sweep covered the operating day and returned nothing anyway.
+
+So the week sweep raises confidence, it does not make a silence conclusive. Treat "swept
+a full week, found nothing" as **`unclear`**, never as a negative. Only a citable source
+saying a route ended, or a published forward schedule that omits it, is a negative.
+
+**The `raw_offer_count` vs `result_count` split is the signal to read instead.** A day
+with raw offers but zero after filtering is a day the pair *is* sold, just with a
+connection: positive evidence the city pair is served and simply has no nonstop that day.
+A day with zero raw offers at all is much weaker and may mean nothing. CZL-TLS showed
+exactly this shape, connecting offers on the non-operating days and one nonstop on the
+Tuesday.
 
 ## 8. Carrier codes
 

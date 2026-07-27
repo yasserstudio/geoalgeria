@@ -1,17 +1,39 @@
 # Air Algérie nonstop route verification - findings
 
+## CURRENT STATUS (read this first)
+
+The tables further down are the **historical record**, in the order the evidence
+arrived. Where they disagree with this section, this section wins. They are kept
+because how a belief changed is part of the provenance, and two of them were wrong
+in instructive ways.
+
+| Pair | Verdict as of 2026-07-27 |
+| --- | --- |
+| **CZL-TLS** | **RESOLVED.** Air Algérie, `AH 1052` out / `AH 1053` back, same-day **Tuesdays**. Both directions nonstop and duration-checked. |
+| **TLM-LYS** | **RESOLVED.** Air Algérie `AH 1098`, at least **Wednesdays**. Transavia `TO 7319` also flies the pair (Tue/Fri). Both carriers serve it. |
+| **ORN-ETZ** | Confirmed, official Lorraine airport 2026 schedule. |
+| **BLJ-CDG** | Confirmed, `AH 1120`. CDG-vs-Orly conflict closed. |
+| **TLM-MRS** | Confirmed, `AH 1092`, alongside Volotea. |
+| **ALG-SXB** | Confirmed, winter seasonal. |
+| **ALG-BUD** | Confirmed, two-rotation triangle. Nonstop ALG->BUD Saturdays, BUD->ALG Wednesdays. |
+| **ALG-HRG** | Charter, inaugurated ~24-26 Jul 2026, not proven recurring. |
+| **ORN-BRU** | **Out of v1.** No positive evidence for Air Algérie. Not recorded as a negative. |
+| **ALG-ZRH, ORN-LIS, TLM-ORY** | Negative or out of scope for an Air Algérie dataset. |
+| **TLM-CDG, CZL-ADB, ALG-SSH** | Insufficient. Do not ship. |
+
+
 ## GROUP A - ex-Tassili regional-France cluster
 
 | # | Pair | Nonstop exists? | Operator | Status | Direction | Evidence tier | Source | Frequency | Note |
 |---|------|-----------------|----------|--------|-----------|---------------|--------|-----------|------|
-| 1 | Tlemcen (TLM) – Lyon (LYS) | Yes | Air Algérie | Active | Both | Official | lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie (Air Algérie listed as operator to Tlemcen among Lyon's 9 Algerian destinations) | ~2x/week (per secondary press, not on official page) | Official airport page names Air Algérie + Tlemcen but no schedule; frequency claim is aggregator-sourced, so treat frequency as unconfirmed |
+| 1 **[SUPERSEDED, see CURRENT STATUS]** | Tlemcen (TLM) – Lyon (LYS) | Yes | Air Algérie | Active | Both | Official | lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie (Air Algérie listed as operator to Tlemcen among Lyon's 9 Algerian destinations) | ~2x/week (per secondary press, not on official page) | Official airport page names Air Algérie + Tlemcen but no schedule; frequency claim is aggregator-sourced, so treat frequency as unconfirmed |
 | 2 | Tlemcen (TLM) – Marseille (MRS) | Unclear | Unclear - Air Algérie AND Volotea both claimed by aggregators | Unclear | - | Insufficient | marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen (fetched: airline not named on the page itself) | Aggregator claims ~3/week split Air Algérie/Volotea - not citable | Official Marseille airport page does not name an operator; cannot confirm Air Algérie specifically operates this leg vs. Volotea only |
 | 3 | Tlemcen (TLM) – Paris CDG | No / insufficient | - | Unclear | - | Insufficient | - | - | No official or press source found naming a Tlemcen–CDG nonstop specifically; only generic "Paris–Tlemcen" aggregator hits which don't disambiguate CDG vs Orly and name Transavia, not Air Algérie, as the Orly operator (see #4) |
 | 4 | Tlemcen (TLM) – Paris Orly (ORY) | Likely no (Air Algérie) | Transavia (not Air Algérie) per aggregator search | N/A for this dataset's scope | - | Insufficient (for an Air Algérie leg) | search snippet: "Transavia Airlines operates flights from Paris Orly to Tlemcen" | 5x/week (Transavia, aggregator-sourced) | No evidence found of an Air Algérie Paris–Tlemcen nonstop in either direction; do not include as Air Algérie route without further confirmation |
 | 5 | Oran (ORN) – Brussels (BRU) | Unclear - likely lapsed for Air Algérie | Currently TUI Fly per aggregators; Air Algérie described only as historical/pre-COVID operator | Unclear / possibly suspended for Air Algérie | - | Insufficient | brusselsairport.be/fr/passenger/destinations/oran - 403 Forbidden, could not access (WAF/geo-block) | Pre-COVID: 5x/week claimed | Official Brussels Airport destination page is blocked to this tool. Cannot confirm current Air Algérie operation independently; aggregator signal points to TUI Fly as current operator, Air Algérie status unclear |
 | 6 | Oran (ORN) – Lisbon (LIS) | No (nonstop), on Air Algérie | Air Algérie flies this pair only via Algiers (connection) | N/A (not nonstop on AH) | - | Insufficient/Negative | Aggregator search explicitly states Air Algérie flights are "indirect ... with a stopover in Algiers" | - | Could not reach an official Lisbon airport (ANA/Aeroportos de Portugal) destinations page to cross-check. Working finding is negative for a nonstop AH leg, but only aggregator-sourced - flag as needing an official check before shipping either way |
 | 7 | Oran (ORN) – Metz/Nancy Lorraine (ETZ) | Yes | Air Algérie | Active, seasonal, forward schedule published | Both (round-trip rotation) | Official | lorraineaeroport.com/vols-destinations/oran/ (official airport site, fetched directly) | 29 Mar–24 Oct 2026: Thu (29 Mar–13 Jun), Wed (14 Jun–12 Sep), Thu (13 Sep–24 Oct); ~2h20 flight time | Cleanest official confirmation in this whole cluster - forward schedule for the 2026 season, named operator, explicit days |
-| 8 | Constantine (CZL) – Toulouse (TLS) | Yes (route exists) but operator unconfirmed on official page | Unconfirmed on official source (aggregators say Air Algérie) | Active per aggregators | - | Reported (not official) | toulouse.aeroport.fr/vols-et-destinations/constantine (fetched: confirms "Vol direct Toulouse → Constantine" but does NOT name the airline) | ~4x/week pre-COVID per aggregator, not confirmed current | Official Toulouse airport page confirms the nonstop route exists but is silent on operator; only aggregators attribute it to Air Algérie - treat operator attribution as reported, not official |
+| 8 **[SUPERSEDED, see CURRENT STATUS]** | Constantine (CZL) – Toulouse (TLS) | Yes (route exists) but operator unconfirmed on official page | Unconfirmed on official source (aggregators say Air Algérie) | Active per aggregators | - | Reported (not official) | toulouse.aeroport.fr/vols-et-destinations/constantine (fetched: confirms "Vol direct Toulouse → Constantine" but does NOT name the airline) | ~4x/week pre-COVID per aggregator, not confirmed current | Official Toulouse airport page confirms the nonstop route exists but is silent on operator; only aggregators attribute it to Air Algérie - treat operator attribution as reported, not official |
 | 9 | Batna (BLJ) – Paris CDG | Conflicting airport designation | Air Algérie (only carrier cited) | Active | One-way-ish, ~1x/week | Reported, with an unresolved CDG-vs-Orly conflict | Aeroroutes-style aggregator citing CDG-BLJ; a separate search returned "Air Algérie offers direct flights from Paris-Orly (ORY) to Batna" | 1x/week, Sun ~14:55–15:35 CDG-side claim | Two aggregator-derived claims disagree on which Paris airport (CDG vs Orly) is actually used. Could not resolve with an official source (Paris aéroport / ADP site returned no on-point results). Flag this conflict explicitly - do not ship a CDG or Orly claim without resolving |
 
 **Additional ex-Tassili-era regional France pairs found** (from press on Tassili's summer 2025 program, which is the actual documented set, not identical to the 9 named pairs above):
@@ -57,13 +79,13 @@ it generated as hypotheses and which way it moved confidence.
 | Pair | Probe result | Merged verdict | Changed? |
 | --- | --- | --- | --- |
 | TLM-MRS | `AH 1092` nonstop 13, 15, 16 Aug (115 min vs 112 expected), alongside `V7 2679` | **Air Algerie DOES operate it.** Both carriers fly the pair | **Yes.** Upgraded from "unclear, probably Volotea" |
-| TLM-LYS | `TO 7319` only across the August week; `AH 1098` only on 18 Nov | Air Algerie serves it, but not in the sampled August week. Operating pattern unresolved | **Yes.** Not the simple year-round confirmation first read |
+| TLM-LYS **[SUPERSEDED]** | `TO 7319` only across the August week; `AH 1098` only on 18 Nov | Read at the time as "not in the August week". A different August week returns `AH 1098` on the Wednesday | **Yes**, then superseded again |
 | ETZ-ORN | `AH 1185` nonstop Wed 12 Aug (140 min vs 149 expected) | **Air Algerie confirmed on the Metz route.** ORN-ETZ direction silent all week, a coverage gap rather than absence | **Yes.** Operator now confirmed, not just the route |
 | BLJ-CDG | `AH 1120` nonstop Wed 12 Aug (145 min vs 143 expected); BLJ-ORY silent all week | **CDG confirmed, Orly excluded.** Conflict closed | **Yes.** Was an unresolved CDG-vs-Orly conflict |
 | TLM-ORY | `TO` only, 8 rotations across the week, no `AH` | Transavia. Excluded from an Air Algerie dataset | No, confirms |
 | ALG-SXB | `TO 7315` on 11 and 15 Aug, no `AH` | Air Algerie absent in August. Consistent with the winter season having ended 26 Mar 2026. Needs its own check | New question |
 | TLM-CDG, ORN-BRU, ORN-LIS, CZL-ADB, ALG-SSH, BLJ-ORY | silent all week | No change. Silence here is weak evidence, not a negative | No |
-| CZL-TLS | silent all week | Toulouse airport confirms a direct route exists, so this is a coverage gap. Operator still unattributed | No |
+| CZL-TLS **[SUPERSEDED]** | silent all week | Read at the time as a coverage gap. It was not: the route runs Tuesdays and the probe's week included a Tuesday. See the volatility note below | No |
 | ALG-HRG | silent all week | Expected: charters are not normally sold through GDS. Not evidence against | No |
 
 ## ALG-BUD triangle: three of four legs directly observed
@@ -87,6 +109,16 @@ covering the same date, did not return it at all. Nothing about the schedule cha
 in between, so **a Soar silence is weak evidence and must never be recorded as a
 negative finding.** Absence justifies leaving a pair `unclear`; it never justifies
 deleting a route that a citable source supports.
+
+**A full week sweep is not enough either, proven on CZL-TLS.** That probe swept Mon 10
+to Sun 16 Aug 2026 and found CZL-TLS silent on every day, which this file originally
+wrote up as a coverage gap. It was not. CZL-TLS runs `AH 1052` on **Tuesdays**, and
+that week contained Tuesday 11 August. The sweep covered the operating day and still
+returned nothing.
+
+That is the strongest evidence in this file for how weak a booking-API silence is: not
+only can it miss a route, it can miss it on the exact day the route flies. Anything
+built on "we swept a week and found nothing" is `unclear`, never a negative.
 
 ---
 

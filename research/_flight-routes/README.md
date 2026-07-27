@@ -9,7 +9,7 @@ arcs globe on the app side.
 | File | What it is |
 | --- | --- |
 | `collection-rules.md` | **Read this first.** The reproducible procedure: scope, query recipe, the two filters that matter, evidence tiers, and the working protocol. |
-| `verification-2026-07-27.md` | Evidence table for 16 doubtful or candidate pairs, with tier, source URL and frequency per pair. Independently sourced. |
+| `verification-2026-07-27.md` | Per-pair evidence: tier, source URL, operator, direction and frequency. **Opens with a CURRENT STATUS table that supersedes everything below it**; the tables under it are the historical record, kept because two of them were wrong in instructive ways. |
 | `opensky-licence.md` | Why the "observe later" phase is blocked: OpenSky's terms bar commercial use, operational API use, and redistribution. |
 | `resolve_endpoints.py` | Resolves Air Algérie's foreign destination cities to specific airports and coordinates. The city-to-airport decision is pinned in the script, one IATA per row, so it is reviewable; OurAirports supplies only the coordinate. |
 | `foreign-endpoints.json` | Its output: 64 foreign endpoints across 37 countries. A **candidate** set, not a route list. |
@@ -49,9 +49,13 @@ not, which is why it is superseded rather than deleted.
 **Sweep a full calendar week.** The first probe used 2026-08-12 and 2026-11-18, which
 are both Wednesdays. Much of this network is 1-2x weekly, so a Thu/Sat route was
 invisible on both dates and every "no nonstop" result was uninformative rather than
-negative. A booking-API silence is weak evidence at the best of times: `ORN-ETZ` is
-confirmed by Lorraine airport's own published 2026 schedule yet returns nothing from
-the probe, for reasons not yet established.
+negative.
+
+**And a full week still is not conclusive.** A later sweep of Mon 10 to Sun 16 Aug found
+`CZL-TLS` silent every day. The route runs `AH 1052` on Tuesdays and that week contained
+Tuesday 11 August, so the sweep covered the operating day and returned nothing anyway.
+`ORN-ETZ` behaves the same way: confirmed by Lorraine airport's own published 2026
+schedule, silent to the probe. Read a silence as `unclear`, never as a negative.
 
 **Other traps that have produced real errors:** a booking list is not a route; a
 fare-sale window is not a route-operating window; an aircraft sighting is not a route
