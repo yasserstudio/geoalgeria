@@ -98,8 +98,18 @@ _Avoid_: node, stop, halt
 _Note_: the ferroviaire dataset currently ships these as `node`; that is a known divergence to reconcile toward this term.
 
 **Line**:
-A route on a transport network (bus, rail, tram).
+A named service on a **ground** transport network (bus, rail, tram), running over many Stations.
 _Avoid_: route, service
+_Note_: "route" is reserved for aviation, below. A Line is a service with many stops; a Route is one nonstop leg between two airports. The `_Avoid_` above is scoped to ground transport and does not apply to `@geoalgeria/aviation`.
+
+**Route**:
+One **directional** nonstop leg between two airports, as shipped by `@geoalgeria/aviation`'s `routes()`. Direction is data, not presentation: `ALG->BUD` flies nonstop on Saturdays and `BUD->ALG` on Wednesdays, and there is never a same-day nonstop round trip, so they are two records and neither implies the other. A Route that is announced but not yet operating is a **Planned route**, in a separate collection reached by `plannedRoutes()`, never a `status` value.
+_Avoid_: flight, line, connection, city pair
+_Translations_: FR **liaison** (not "ligne", which is the ground-transport term above); AR **خط جوي** (qualified with جوي, so it cannot be read as a ground خط).
+
+**Evidence tier**:
+How strongly one Route is established: `verified` (the operator was confirmed as *operating* the leg, with direction and a great-circle duration check) or `listed` (a published source lists the carrier serving the pair, which claims *service* rather than operation). A per-record field, distinct from **Evidence type**, which describes the authority of a Source.
+_Avoid_: confidence, quality, certainty, evidence level
 
 ### Telecom
 
