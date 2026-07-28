@@ -444,6 +444,19 @@
     "great_circle_km": 2584
   },
   {
+    "id": "alg-nkc",
+    "from": "ALG",
+    "to": "NKC",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 2774
+  },
+  {
     "id": "alg-nte",
     "from": "ALG",
     "to": "NTE",
@@ -1187,6 +1200,19 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 845
+  },
+  {
+    "id": "nkc-alg",
+    "from": "NKC",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 2774
   },
   {
     "id": "nte-alg",

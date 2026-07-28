@@ -176,6 +176,13 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
     {"from": "BRU", "to": "ALG", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Nouakchott, both ways, Air Algérie the only carrier on either. The
+    # asymmetry is real rather than an error: 4h15 south against 3h35 north over
+    # the same 2,774 km, which is what a headwind down the Atlantic coast does.
+    {"from": "ALG", "to": "NKC", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "NKC", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
