@@ -8534,11 +8534,11 @@
         "to": "OUA",
         "carrier": "AH",
         "flight": null,
-        "status": "unclear",
+        "status": "active",
         "days": null,
-        "evidence": "listed",
+        "evidence": "verified",
         "planned": false,
-        "source": "https://www.elespanol.com/invertia/empresas/turismo/20231030/argelia-restablece-linea-aerea-palma-complacer-ciudadanos-pese-crisis-espana/805669505_0.html",
+        "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
         "great_circle_km": 2748,
         "from_name": "Aéroport d’Alger – Houari Boumediene",
         "to_name": "Ouagadougou Thomas Sankara International Airport"
@@ -18620,6 +18620,225 @@
         "great_circle_km": 1989,
         "from_name": "İstanbul Airport",
         "to_name": "Aéroport de Constantine – Mohamed Boudiaf"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            28.2468,
+            -26.14008
+          ],
+          [
+            27.67939,
+            -24.83899
+          ],
+          [
+            27.12379,
+            -23.5358
+          ],
+          [
+            26.57911,
+            -22.23068
+          ],
+          [
+            26.04448,
+            -20.92378
+          ],
+          [
+            25.5191,
+            -19.61525
+          ],
+          [
+            25.00221,
+            -18.30521
+          ],
+          [
+            24.49309,
+            -16.99381
+          ],
+          [
+            23.99105,
+            -15.68115
+          ],
+          [
+            23.49543,
+            -14.36737
+          ],
+          [
+            23.00559,
+            -13.05257
+          ],
+          [
+            22.52095,
+            -11.73686
+          ],
+          [
+            22.04091,
+            -10.42034
+          ],
+          [
+            21.56491,
+            -9.10311
+          ],
+          [
+            21.0924,
+            -7.78527
+          ],
+          [
+            20.62286,
+            -6.46691
+          ],
+          [
+            20.15577,
+            -5.14811
+          ],
+          [
+            19.6906,
+            -3.82898
+          ],
+          [
+            19.22687,
+            -2.5096
+          ],
+          [
+            18.76408,
+            -1.19006
+          ],
+          [
+            18.30172,
+            0.12956
+          ],
+          [
+            17.83932,
+            1.44918
+          ],
+          [
+            17.37638,
+            2.7687
+          ],
+          [
+            16.91241,
+            4.08804
+          ],
+          [
+            16.4469,
+            5.40711
+          ],
+          [
+            15.97937,
+            6.72582
+          ],
+          [
+            15.50929,
+            8.04409
+          ],
+          [
+            15.03614,
+            9.36182
+          ],
+          [
+            14.55939,
+            10.67892
+          ],
+          [
+            14.07849,
+            11.99529
+          ],
+          [
+            13.59287,
+            13.31083
+          ],
+          [
+            13.10195,
+            14.62543
+          ],
+          [
+            12.60512,
+            15.939
+          ],
+          [
+            12.10174,
+            17.25142
+          ],
+          [
+            11.59114,
+            18.56256
+          ],
+          [
+            11.07265,
+            19.87232
+          ],
+          [
+            10.54552,
+            21.18054
+          ],
+          [
+            10.00898,
+            22.48711
+          ],
+          [
+            9.46222,
+            23.79186
+          ],
+          [
+            8.90437,
+            25.09465
+          ],
+          [
+            8.33453,
+            26.39531
+          ],
+          [
+            7.75171,
+            27.69366
+          ],
+          [
+            7.15487,
+            28.98951
+          ],
+          [
+            6.5429,
+            30.28266
+          ],
+          [
+            5.9146,
+            31.57288
+          ],
+          [
+            5.26868,
+            32.85995
+          ],
+          [
+            4.60376,
+            34.1436
+          ],
+          [
+            3.91835,
+            35.42355
+          ],
+          [
+            3.21085,
+            36.69951
+          ]
+        ]
+      },
+      "properties": {
+        "id": "jnb-alg",
+        "from": "JNB",
+        "to": "ALG",
+        "carrier": "AH",
+        "flight": null,
+        "status": "active",
+        "days": null,
+        "evidence": "verified",
+        "planned": false,
+        "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+        "great_circle_km": 7463,
+        "from_name": "O.R. Tambo International Airport",
+        "to_name": "Aéroport d’Alger – Houari Boumediene"
       }
     },
     {

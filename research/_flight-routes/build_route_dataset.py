@@ -190,6 +190,15 @@ VERIFIED = [
     # first time the Vienna leg has been seen directly.
     {"from": "ALG", "to": "VIE", "status": "active",
      "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud"},
+    # Ouagadougou, promoted from listed. Air Algérie the only carrier, 4h30,
+    # ratio 1.14.
+    {"from": "ALG", "to": "OUA", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Johannesburg northbound, completing the pair. The outbound was verified
+    # earlier at 9h20 and the return runs 9h15, ratios 0.95 and 0.94: the
+    # longest route in the network in both directions.
+    {"from": "JNB", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie

@@ -501,11 +501,11 @@
     "to": "OUA",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "active",
     "days": null,
-    "evidence": "listed",
+    "evidence": "verified",
     "planned": false,
-    "source": "https://www.elespanol.com/invertia/empresas/turismo/20231030/argelia-restablece-linea-aerea-palma-complacer-ciudadanos-pese-crisis-espana/805669505_0.html",
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 2748
   },
   {
@@ -1109,6 +1109,19 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 1989
+  },
+  {
+    "id": "jnb-alg",
+    "from": "JNB",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 7463
   },
   {
     "id": "lhr-alg",
