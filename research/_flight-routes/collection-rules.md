@@ -410,6 +410,7 @@ enough error rate that no long-haul `listed` route should reach the map unscreen
 | `ALG-DLA` | `AH 5350`, 5h05, no codeshare object | **verified**, ratio 0.99 |
 | `ALG-DOH` | `QR 1380` on Qatar metal, AH as marketing carrier | **codeshare, excluded** |
 | `ALG-JED` | `SV 0340` / `SV 0342`, Saudia, no AH leg at all | **flown by another airline, excluded** |
+| `ALG-JED` **(2nd date)** | 14 Aug, independently: two flights, both Saudia, still no AH leg | exclusion **corroborated** |
 | `ALG-AMM` | `RJ 0518`, Royal Jordanian, no AH leg at all | **flown by another airline, excluded** |
 | `ALG-ABJ`, `ALG-BEY`, `ALG-DXB`, `ALG-NBJ`, `ALG-ABV`, `ALG-BKO`, `ALG-NIM` | empty | unresolved, stay `listed` |
 

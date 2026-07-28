@@ -107,6 +107,10 @@ CODESHARE_ONLY = {("ALG", "IST"), ("CZL", "IST"), ("ALG", "DOH")}
 # and nothing of Air Algérie's. They may be seasonal, Hajj-period or simply a
 # table error, and either way an arc here would assert something unsupported.
 OPERATED_BY_OTHERS = {
+    # Checked on two independent dates, 4 and 14 August, both returning only
+    # Saudia and no Air Algérie leg whatsoever. A single empty probe would be
+    # weak evidence per section 7; two on different dates, both showing another
+    # airline actually flying the pair, is a different thing entirely.
     ("ALG", "JED"),   # SV 0340 / SV 0342, Saudia
     ("ALG", "AMM"),   # RJ 0518, Royal Jordanian
 }
