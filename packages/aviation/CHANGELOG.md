@@ -6,7 +6,11 @@
 
 - a8c1952: Air Algérie's nonstop route network, as data you can install.
 
-  `routes()` returns 70 directional legs; `plannedRoutes()` returns the announced-but-not-yet-flying ones; `routeEndpoints()` gives both ends of every arc, including the foreign airports `airports()` does not carry; `routesFrom(iata)` gives departures from one airport.
+  `routes()` returns 122 directional legs; `plannedRoutes()` returns the announced-but-not-yet-flying ones; `routeEndpoints()` gives both ends of every arc, including the foreign airports `airports()` does not carry; `routesFrom(iata)` gives departures from one airport.
+
+  > Corrected 2026-07-28: this entry originally said 70 legs. The 2.2.0 tarball
+  > shipped 122; the changeset text was written mid-collection and the dataset
+  > grew before release. The number above is what 2.2.0 actually contains.
 
   - **Directional, not pair-shaped.** `ALG->BUD` flies nonstop on Saturdays and `BUD->ALG` on Wednesdays, and there is never a same-day nonstop round trip, so they are two records and neither implies the other. A pair-shaped dataset would describe a route nobody can fly on a given day.
   - **Every route carries an `evidence` tier.** `verified` means the operator was confirmed as _operating_ the leg, with direction and a great-circle duration check. `listed` means a published source lists the carrier serving the pair, which claims _service_ rather than operation. Both carry a `source` URL you can open; there are no uncited routes.
