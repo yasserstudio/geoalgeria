@@ -188,7 +188,7 @@ Watch or ⭐ the repo to follow along, and [open a discussion](https://github.co
 
 ## Contributing
 
-Corrections and additions are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md). Good first issues usually just need a source link or a missing commune coordinate. Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
+Corrections and additions are welcome, see [CONTRIBUTING.md](CONTRIBUTING.md). What is planned and what is still open is in [`ROADMAP.md`](ROADMAP.md). Good first issues usually just need a source link or a missing commune coordinate. Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/issues/new/choose).
 
 ## Versioning & releases
 
