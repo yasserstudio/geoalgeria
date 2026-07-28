@@ -621,3 +621,39 @@ contain Oran is a fact about the network.
 `ALG-BRU` is verified in both directions and enters the dataset for the first
 time. Brussels was never a doubtful route; the doubt was always about which
 Algerian city.
+
+## 25. Three kinds of absence, and only two are negatives
+
+Country probes for Morocco, Libya, Mali and Niger returned nothing, and the four
+do not mean the same thing. This section exists because treating them alike would
+be wrong in both directions.
+
+**1. Another airline flies it. A negative.**
+`ALG-DOH` (Qatar), `ALG-JED` (Saudia), `ALG-AMM` (Royal Jordanian), `ALG-FCO`
+(ITA). The probe returns a complete answer that simply does not include Air
+Algérie. Excluded, and the exclusion is evidence-backed.
+
+**2. The route cannot exist, for a reason outside aviation. A negative.**
+**Morocco.** There are no direct Algeria-Morocco flights, and the cause is the
+closure of Algerian airspace to Moroccan aircraft in September 2021, not a gap in
+anyone's data. No Morocco pair is in the dataset and none should be added; if one
+ever appears in a published table, that table is out of date rather than ahead of
+us. This is the only structural negative on the track, and it needs a citable
+source attached before it is ever used to remove something.
+
+**3. Nothing came back, and nothing is known. NOT a negative.**
+**Libya, Mali, Niger.** Wikipedia lists Air Algérie on Bamako and Niamey, with
+citations, and the probes return nothing at all. Per section 23 that says almost
+nothing: six empty days did not disprove Frankfurt, and `ALG-YUL` returned zero
+offers on a route flying twice daily. These are also exactly the markets where a
+booking API's coverage is thinnest, the same reason the `ALG-HRG` charter was
+invisible.
+
+`ALG-BKO` and `ALG-NIM` therefore stay **`listed`**, which is what the tier is
+for: a published source says the carrier serves the pair, and nothing has
+confirmed or refuted it. Recording them as negatives would be inventing a fact;
+promoting them would be inventing a different one.
+
+The distinction in one line: **a negative needs a positive finding behind it**,
+either another airline flying the route or a reason it cannot be flown. Silence
+is not a finding.
