@@ -67,6 +67,12 @@ VERIFIED = [
      "source": "https://www.observalgerie.com/"},
     {"from": "ORN", "to": "IST", "flight": "AH 3024", "status": "active",
      "source": "https://www.aeroroutes.com/"},
+    # The African long-haul block, AH 53xx, on Air Algérie's own metal: neither
+    # returned a codeshare object.
+    {"from": "ALG", "to": "JNB", "flight": "AH 5360", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ALG", "to": "DLA", "flight": "AH 5350", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs where a booking probe returned an AH flight number that is a CODESHARE on
@@ -78,7 +84,17 @@ VERIFIED = [
 # CZL-IST returns TK 8666 on Turkish metal with AH as the marketing carrier;
 # ORN-IST returns AH 3024 with NO codeshare object at all, so that one is Air
 # Algérie's own and is promoted to verified above (ratio 1.02).
-CODESHARE_ONLY = {("ALG", "IST"), ("CZL", "IST")}
+CODESHARE_ONLY = {("ALG", "IST"), ("CZL", "IST"), ("ALG", "DOH")}
+
+# Screened and found to be flown by ANOTHER airline entirely, with no Air Algérie
+# leg at all, not even a codeshare. A published table listing Air Algérie on these
+# is not enough to draw them: the probe returns Saudia and Royal Jordanian metal
+# and nothing of Air Algérie's. They may be seasonal, Hajj-period or simply a
+# table error, and either way an arc here would assert something unsupported.
+OPERATED_BY_OTHERS = {
+    ("ALG", "JED"),   # SV 0340 / SV 0342, Saudia
+    ("ALG", "AMM"),   # RJ 0518, Royal Jordanian
+}
 
 
 def haversine(a, b, c, d):
@@ -130,7 +146,7 @@ def main():
         key = (frm, to)
         if key in seen:
             continue
-        if key in CODESHARE_ONLY:
+        if key in CODESHARE_ONLY or key in OPERATED_BY_OTHERS:
             skipped["codeshare"].append(key); continue
         if frm not in ep or to not in ep:
             skipped["no_endpoint"].append(key); continue

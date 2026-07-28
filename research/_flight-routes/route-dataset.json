@@ -71,20 +71,6 @@
       "great_circle_km": 3106
     },
     {
-      "id": "alg-amm",
-      "from": "ALG",
-      "to": "AMM",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://www.air-journal.fr/2025-08-17-air-algerie-relance-ses-vols-vers-beyrouth-et-amman-devoile-la-livree-de-sa-filiale-domestic-airlines-5264784.html",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
-      "great_circle_km": 3050
-    },
-    {
       "id": "alg-ayt",
       "from": "ALG",
       "to": "AYT",
@@ -157,28 +143,12 @@
       "from": "ALG",
       "to": "DLA",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
+      "flight": "AH 5350",
+      "status": "active",
       "days": null,
-      "evidence": "listed",
-      "source": "https://www.algerie360.com/air-algerie-lance-2-nouvelles-liaisons-interieures-des-la-semaine-prochain/",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 3696
-    },
-    {
-      "id": "alg-doh",
-      "from": "ALG",
-      "to": "DOH",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://www.algerie360.com/air-algerie-se-transforme-deux-nouvelles-filiales-pour-les-services-au-sol-et-la-formation-des-2026/",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
-      "great_circle_km": 4733
     },
     {
       "id": "alg-dxb",
@@ -221,31 +191,15 @@
       "great_circle_km": 3058
     },
     {
-      "id": "alg-jed",
-      "from": "ALG",
-      "to": "JED",
-      "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
-      "days": null,
-      "evidence": "listed",
-      "source": "https://www.dzair-tube.dz/fr/saison-du-hadj-2026-air-algerie-mobilise-ses-grands-moyens-pour-le-transport-des-pelerins/",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
-      "great_circle_km": 3838
-    },
-    {
       "id": "alg-jnb",
       "from": "ALG",
       "to": "JNB",
       "carrier": "AH",
-      "flight": null,
-      "status": "unclear",
+      "flight": "AH 5360",
+      "status": "active",
       "days": null,
-      "evidence": "listed",
-      "source": "https://www.algerie360.com/air-algerie-reprend-ses-vols-vers-cette-destination-internationale/",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 7463
     },
     {
@@ -986,13 +940,6 @@
       "country": "DZ"
     },
     {
-      "iata": "AMM",
-      "name": "Queen Alia International Airport",
-      "lat": 31.7226009369,
-      "lng": 35.9931983948,
-      "country": "JO"
-    },
-    {
       "iata": "AYT",
       "name": "Antalya International Airport",
       "lat": 36.898701,
@@ -1082,13 +1029,6 @@
       "lat": 4.00608,
       "lng": 9.71948,
       "country": "CM"
-    },
-    {
-      "iata": "DOH",
-      "name": "Hamad International Airport",
-      "lat": 25.273056,
-      "lng": 51.608056,
-      "country": "QA"
     },
     {
       "iata": "DXB",

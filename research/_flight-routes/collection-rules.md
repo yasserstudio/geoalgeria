@@ -393,3 +393,40 @@ calendar week is ~840 MCP calls, and MCP tool calls cannot be scripted. Use the
 adaptive shape instead: two dates per direction first, escalating to a full week
 only where both come back empty. That concentrates effort on the pairs where the
 answer is actually in doubt.
+
+## 18. Codeshare screening results, first pass (2026-07-28)
+
+Twelve of the highest-risk `listed` routes screened, chosen by great-circle
+distance on the reasoning that Air Algérie's own metal realistically covers
+Europe, the Maghreb, the Sahel and the near Middle East, so the far ones are where
+another airline is likely to be flying.
+
+**Five of twelve should not be drawn as Air Algérie routes.** That is a high
+enough error rate that no long-haul `listed` route should reach the map unscreened.
+
+| Pair | Probe | Verdict |
+| --- | --- | --- |
+| `ALG-JNB` | `AH 5360`, 9h20, no codeshare object | **verified**, ratio 0.95 |
+| `ALG-DLA` | `AH 5350`, 5h05, no codeshare object | **verified**, ratio 0.99 |
+| `ALG-DOH` | `QR 1380` on Qatar metal, AH as marketing carrier | **codeshare, excluded** |
+| `ALG-JED` | `SV 0340` / `SV 0342`, Saudia, no AH leg at all | **flown by another airline, excluded** |
+| `ALG-AMM` | `RJ 0518`, Royal Jordanian, no AH leg at all | **flown by another airline, excluded** |
+| `ALG-ABJ`, `ALG-BEY`, `ALG-DXB`, `ALG-NBJ`, `ALG-ABV`, `ALG-BKO`, `ALG-NIM` | empty | unresolved, stay `listed` |
+
+Note the third category, which the codeshare rule did not anticipate. `ALG-JED`
+and `ALG-AMM` return **no Air Algérie leg whatsoever**, only Saudia and Royal
+Jordanian. A published table listing Air Algérie on those pairs is not enough to
+draw them. They may be seasonal, Hajj-period, or simply a table error; whichever
+it is, an arc would assert something the evidence does not support. So there are
+now two exclusion sets, not one: `CODESHARE_ONLY` and `OPERATED_BY_OTHERS`.
+
+Air Algérie's own long-haul African flights appear in an `AH 53xx` block
+(`5350` Douala, `5360` Johannesburg), which is a useful smell test but not a rule:
+confirm each leg rather than inferring from the number.
+
+**41 `listed` routes remain unscreened**, mostly short-haul France, Spain and the
+Maghreb where Air Algérie's own operation is far more likely. They are not
+risk-free, though: `ALG-CDG` returned an Air France leg codeshared with AH
+alongside Air Algérie's own metal, so European pairs carry codeshares too. The
+difference is that there the codeshare sits beside a genuine AH flight rather
+than replacing it.
