@@ -686,3 +686,32 @@ Worth stating plainly because it cuts against the caution elsewhere in this file
 seeing them.** Trade filings are `Reported` tier rather than `Official`, but they
 model the network better than any booking probe, which only ever answers about
 one day at a time.
+
+## 27. The duration heuristic is biased short-haul, and that is fine
+
+`great_circle_km / 800 kph + 30 min` was chosen to catch a technical stop
+masquerading as a nonstop, which it does: the Budapest trap showed up at 1.72x.
+Worth writing down what it does NOT do, now that the network reaches Kuala
+Lumpur.
+
+**Long-haul legs score below 1.0 by construction.** The fixed 30-minute allowance
+is a large share of a 90-minute hop and a rounding error on a 12-hour one, and
+real cruise exceeds 800 kph. So:
+
+| Leg | km | Observed | Ratio | Implied ground speed |
+| --- | --- | --- | --- | --- |
+| `ALG-KUL` | 10,580 | 12h35 | **0.92** | 841 kph |
+| `ALG-JNB` | 7,463 | 9h20 | 0.95 | 800 kph |
+| `ALG-CAN` | 10,106 | 12h50 | 0.98 | 787 kph |
+| `MRS-CZL` | 805 | 1h30 | 1.00 | 537 kph |
+| `MRS-ALG` | 768 | 1h40 | 1.14 | 461 kph |
+
+A short hop spends proportionally far longer climbing and descending, so its
+implied ground speed looks slow and its ratio runs high; a long haul is almost
+all cruise. Nothing here is wrong, and no threshold needs adjusting: the test is
+one-sided, and only a ratio far ABOVE 1.35 means anything.
+
+The practical rule: **do not read a low ratio as suspicious.** A 12-hour flight
+scoring 0.92 is a 12-hour flight, not a data error. And do not tighten the
+threshold to catch short-haul anomalies, because `MRS-ALG` at 1.14 is a perfectly
+ordinary 768 km flight.

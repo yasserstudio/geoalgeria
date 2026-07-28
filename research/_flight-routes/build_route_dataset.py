@@ -199,6 +199,12 @@ VERIFIED = [
     # longest route in the network in both directions.
     {"from": "JNB", "to": "ALG", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Kuala Lumpur, promoted from listed. At 10,580 km it is the longest arc in
+    # the network, flown in 12h35 for an implied 841 kph, which is ordinary
+    # long-haul cruise. Ratio 0.92: see the note below on why long-haul legs
+    # always score under 1 against this heuristic.
+    {"from": "ALG", "to": "KUL", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
