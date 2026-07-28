@@ -715,3 +715,36 @@ The practical rule: **do not read a low ratio as suspicious.** A 12-hour flight
 scoring 0.92 is a 12-hour flight, not a data error. And do not tighten the
 threshold to catch short-haul anomalies, because `MRS-ALG` at 1.14 is a perfectly
 ordinary 768 km flight.
+
+## 28. Probed and not found: an audit trail, not a downgrade
+
+A growing set of `listed` routes have now had a country-form probe run against
+them and returned no Air Algérie leg, without any other airline appearing either.
+Under section 25 that is category 3, so they stay `listed`. This section records
+which, because "nobody has checked" and "checked twice, found nothing" are
+different states even when they carry the same tier.
+
+Probed, nothing found, still `listed`:
+
+| Route | Probe |
+| --- | --- |
+| `ALG-BEY` | Lebanon, and an earlier pair probe |
+| `ALG-DXB` | UAE, and two earlier pair probes |
+| `ALG-OPO` | Portugal |
+| `CZL-MED` | Medina |
+| `ALG-ABJ`, `ALG-ABV`, `ALG-BKO`, `ALG-NIM`, `ALG-NBJ` | pair probes |
+| `AAE-IST` | pair probe |
+
+**Why none of these is demoted.** Two routes on this exact list turned out to be
+real: `ALG-FRA` survived six consecutive empty days and `ALG-YUL` returned nothing
+on a route flying twice daily, both later confirmed inbound. A booking API not
+selling a seat today is not the airline not flying the route, and the Hurghada
+charter showed the same thing from the other end.
+
+**Why it is still worth recording.** Effort spent is information. Without this, a
+later session re-probes the same pairs and re-learns the same nothing. And if one
+of these ever DOES surface, the fact that it was invisible across several probes
+is itself worth knowing about the source.
+
+The honest reading of a route on this list: a published table says Air Algérie
+serves it, no probe has yet seen it, and neither statement outranks the other.
