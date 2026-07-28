@@ -657,3 +657,32 @@ promoting them would be inventing a different one.
 The distinction in one line: **a negative needs a positive finding behind it**,
 either another airline flying the route or a reason it cannot be flown. Silence
 is not a finding.
+
+## 26. The Budapest triangle, confirmed on the right days (2026-07-28)
+
+The most contested finding on this track, and now the best supported.
+
+It entered the dataset wrongly, was thrown out entirely, then was reconstructed
+from a trade schedule filing as a two-rotation triangle: Wednesday flies
+`ALG-VIE-BUD-ALG`, Saturday flies `ALG-BUD-VIE-ALG`. That is why nonstop
+`ALG-BUD` exists **only on Saturdays** and nonstop `BUD-ALG` **only on
+Wednesdays**, and it is the reason every route in this dataset is directional
+rather than pair-shaped.
+
+All of that was inference from a filing. Two independent booking-screen
+observations now confirm it:
+
+| Observation | Predicted by the triangle | Match |
+| --- | --- | --- |
+| `ALG-VIE` nonstop, 2h45 | The Wednesday rotation's first leg must exist | yes |
+| `BUD-ALG` nonstop on **Wed 16 Sep 2026**, 3h00 | Wednesday-only, and 180 min was the recorded duration | yes, on both day and duration |
+
+The duration figure had been carried since the first probe and was never
+re-measured; it came back identical. And the day is the sharp test: a
+Saturday sighting of `BUD-ALG` would have broken the model outright.
+
+Worth stating plainly because it cuts against the caution elsewhere in this file:
+**a schedule filing, read carefully, predicted observations months ahead of
+seeing them.** Trade filings are `Reported` tier rather than `Official`, but they
+model the network better than any booking probe, which only ever answers about
+one day at a time.
