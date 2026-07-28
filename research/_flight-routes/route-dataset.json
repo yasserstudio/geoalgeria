@@ -673,6 +673,18 @@
       "great_circle_km": 1478
     },
     {
+      "id": "bod-alg",
+      "from": "BOD",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 962
+    },
+    {
       "id": "bsk-lys",
       "from": "BSK",
       "to": "LYS",
@@ -737,6 +749,30 @@
       "evidence": "verified",
       "source": "https://www.parisaeroport.fr/",
       "great_circle_km": 1370
+    },
+    {
+      "id": "cdg-czl",
+      "from": "CDG",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1453
+    },
+    {
+      "id": "cdg-orn",
+      "from": "CDG",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1511
     },
     {
       "id": "cfk-cdg",
@@ -1013,6 +1049,102 @@
       "great_circle_km": 1668
     },
     {
+      "id": "lys-alg",
+      "from": "LYS",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1016
+    },
+    {
+      "id": "lys-czl",
+      "from": "LYS",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1058
+    },
+    {
+      "id": "lys-orn",
+      "from": "LYS",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1222
+    },
+    {
+      "id": "mrs-alg",
+      "from": "MRS",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 768
+    },
+    {
+      "id": "mrs-czl",
+      "from": "MRS",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 805
+    },
+    {
+      "id": "mrs-orn",
+      "from": "MRS",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1002
+    },
+    {
+      "id": "nce-alg",
+      "from": "NCE",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 845
+    },
+    {
+      "id": "nte-alg",
+      "from": "NTE",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1228
+    },
+    {
       "id": "orn-alc",
       "from": "ORN",
       "to": "ALC",
@@ -1131,6 +1263,30 @@
       "source_is_the_table": false,
       "listed_at": "Ahmed Ben Bella Airport",
       "great_circle_km": 3396
+    },
+    {
+      "id": "ory-alg",
+      "from": "ORY",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1339
+    },
+    {
+      "id": "ory-orn",
+      "from": "ORY",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1478
     },
     {
       "id": "qsf-lil",
@@ -1279,6 +1435,18 @@
       "evidence": "verified",
       "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
       "great_circle_km": 931
+    },
+    {
+      "id": "tls-orn",
+      "from": "TLS",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 907
     },
     {
       "id": "tun-alg",

@@ -122,6 +122,43 @@ VERIFIED = [
     # back with zero offers earlier the same day.
     {"from": "YUL", "to": "ALG", "status": "active",
      "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/"},
+    # France inbound, the largest single market. Every Air Algérie leg on a
+    # France-to-Algeria country probe, 14 Aug, all duration-checked between 0.97
+    # and 1.15 with nothing flagged. Note Paris resolves to BOTH airports here,
+    # which is exactly why the scope insists on airport-level arcs: CDG and ORY
+    # each fly to Algiers, Oran and Constantine, and they are different routes.
+    #
+    # Only INBOUND is verified. The same probe in the opposite direction returned
+    # 26 flights with no Air Algérie leg at all, which per section 23 says
+    # nothing either way, so the outbound legs stay as they were.
+    {"from": "MRS", "to": "CZL", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "NCE", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "TLS", "to": "ORN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "MRS", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "BOD", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "MRS", "to": "ORN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "LYS", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "LYS", "to": "CZL", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "LYS", "to": "ORN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ORY", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "CDG", "to": "CZL", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "NTE", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ORY", "to": "ORN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "CDG", "to": "ORN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs where a booking probe returned an AH flight number that is a CODESHARE on
