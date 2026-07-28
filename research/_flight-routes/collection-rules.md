@@ -460,3 +460,37 @@ infobox of its own, so the IATA resolver returned `None` and every Tunis row was
 dropped without a word, including the Nouvelair and Tunisair ones. The resolver
 now follows `#REDIRECT` before reading the infobox. A destination silently
 vanishing is worse than one that fails loudly, and this one vanished.
+
+## 20. Search country to country, not airport to airport (found 2026-07-28)
+
+Soar resolves a country as an origin or destination: `Algeria (any)` to
+`Qatar (any)` returns every nonstop between the two, from any Algerian airport.
+
+That is a much better screening probe than a pair query, and it was in front of me
+the whole time:
+
+- **One query replaces many.** Screening whether Air Algérie flies anywhere in a
+  country takes one call instead of one per Algerian origin. The 41 unscreened
+  `listed` routes collapse to roughly 25 country probes.
+- **It answers a stronger question.** A pair query says "not on this pair"; a
+  country query says "not from anywhere in Algeria". `ALG-DOH` came back Qatar
+  Airways only on both, but the country form rules out every other Algerian
+  origin at the same time.
+- **It cannot be defeated by picking the wrong airport.** Metro codes and
+  multi-airport cities stop mattering, which is where `PAR` versus `CDG`
+  repeatedly caused trouble.
+
+Corroborations obtained this way, both on 14 August and both independent of the
+earlier pair probes:
+
+| Probe | Result | Effect |
+| --- | --- | --- |
+| Algeria to Qatar | Two flights, **both Qatar Airways**, no Air Algérie | `ALG-DOH` exclusion **corroborated** |
+| Algiers to Saudi Arabia | Two flights, **both Saudia**, no Air Algérie | `ALG-JED` exclusion **corroborated** |
+
+Both had been excluded on a single pair probe. Section 7 says one empty result is
+weak evidence, so a second independent probe, in a form that also widens the
+question, is what makes those exclusions safe rather than presumptuous.
+
+Use the country form first when screening, and fall back to the pair form only to
+pin down which airport and which direction.
