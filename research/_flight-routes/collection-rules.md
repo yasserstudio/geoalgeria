@@ -734,6 +734,8 @@ Probed, nothing found, still `listed`:
 | `CZL-MED` | Medina |
 | `ALG-ABJ`, `ALG-ABV`, `ALG-BKO`, `ALG-NIM`, `ALG-NBJ` | pair probes |
 | `AAE-IST` | pair probe |
+| Switzerland (`GVA`, `ZRH`) | country probe; nothing in the dataset either way |
+| Côte d'Ivoire (`ALG-ABJ`) | country probe, plus an earlier pair probe |
 
 **Why none of these is demoted.** Two routes on this exact list turned out to be
 real: `ALG-FRA` survived six consecutive empty days and `ALG-YUL` returned nothing

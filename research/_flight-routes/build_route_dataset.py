@@ -205,6 +205,11 @@ VERIFIED = [
     # always score under 1 against this heuristic.
     {"from": "ALG", "to": "KUL", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Dakar, and it lands on DSS exactly as the endpoint table pinned it. Blaise
+    # Diagne replaced Leopold Sedar Senghor (DKR) in 2017, and pinning the
+    # familiar code would have put this arc on a closed field.
+    {"from": "ALG", "to": "DSS", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie

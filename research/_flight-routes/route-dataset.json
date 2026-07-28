@@ -277,6 +277,18 @@
       "great_circle_km": 3696
     },
     {
+      "id": "alg-dss",
+      "from": "ALG",
+      "to": "DSS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 3168
+    },
+    {
       "id": "alg-dxb",
       "from": "ALG",
       "to": "DXB",
@@ -1782,6 +1794,13 @@
       "lat": 4.00608,
       "lng": 9.71948,
       "country": "CM"
+    },
+    {
+      "iata": "DSS",
+      "name": "Blaise Diagne International Airport",
+      "lat": 14.670878,
+      "lng": -17.072829,
+      "country": "SN"
     },
     {
       "iata": "DXB",
