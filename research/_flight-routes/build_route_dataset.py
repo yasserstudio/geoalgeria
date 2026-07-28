@@ -183,6 +183,13 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
     {"from": "NKC", "to": "ALG", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Vienna, and it independently corroborates the Budapest triangle. The
+    # schedule filing has the Wednesday rotation flying ALG-VIE-BUD-ALG, so a
+    # nonstop ALG-VIE leg has to exist, and here it is at 2h45, ratio 1.06.
+    # The triangle was reconstructed from a trade filing months ago; this is the
+    # first time the Vienna leg has been seen directly.
+    {"from": "ALG", "to": "VIE", "status": "active",
+     "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie

@@ -573,6 +573,18 @@
       "great_circle_km": 625
     },
     {
+      "id": "alg-vie",
+      "from": "ALG",
+      "to": "VIE",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+      "great_circle_km": 1672
+    },
+    {
       "id": "alg-vlc",
       "from": "ALG",
       "to": "VLC",
@@ -2014,6 +2026,13 @@
       "lat": 36.851002,
       "lng": 10.2272,
       "country": "TN"
+    },
+    {
+      "iata": "VIE",
+      "name": "Vienna International Airport",
+      "lat": 48.110298,
+      "lng": 16.5697,
+      "country": "AT"
     },
     {
       "iata": "VLC",
