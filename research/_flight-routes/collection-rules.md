@@ -430,3 +430,32 @@ risk-free, though: `ALG-CDG` returned an Air France leg codeshared with AH
 alongside Air Algérie's own metal, so European pairs carry codeshares too. The
 difference is that there the codeshare sits beside a genuine AH flight rather
 than replacing it.
+
+## 19. Wikipedia under-reports Air Algérie on North Africa (found 2026-07-28)
+
+Two independent spot-checks against a live booking screen, two misses, and both
+the same shape.
+
+| Pair | What Wikipedia's Algiers table lists | What actually flies |
+| --- | --- | --- |
+| `ALG-TUN` | Nouvelair, Tunisair | **`AH 4002` out, `AH 4001`/`AH 4003` back**, no codeshare |
+| `ALG-CAI` | EgyptAir | **`AH 4039`** CAI-ALG, no codeshare, plus the outbound on a booking screen |
+
+Neither route was in the dataset at all. Both are Air Algérie's own metal, in
+both directions, on a `AH 40xx` block that looks like the North Africa network.
+
+**So the `listed` tier is a floor, not a ceiling.** The sweep finds routes
+Wikipedia records; it cannot find routes Wikipedia omits, and it omits Air
+Algérie on at least two neighbouring-country pairs where a competitor is listed
+instead. Any claim that the collection is "most of the network" has to be read
+against that, and the honest framing is that the count is a lower bound.
+
+Worth checking next, on the same suspicion: Casablanca, Tripoli, Nouakchott and
+the other Maghreb and Sahel pairs, where the same competitor-listed-instead
+pattern is most likely.
+
+**Second bug this exposed.** `Tunis Airport` is a Wikipedia **redirect** with no
+infobox of its own, so the IATA resolver returned `None` and every Tunis row was
+dropped without a word, including the Nouvelair and Tunisair ones. The resolver
+now follows `#REDIRECT` before reading the infobox. A destination silently
+vanishing is worse than one that fails loudly, and this one vanished.

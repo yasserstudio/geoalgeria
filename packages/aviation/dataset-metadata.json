@@ -39,9 +39,33 @@
       "name": "airports (GeoJSON)",
       "encodingFormat": "application/geo+json",
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/geojson/airports.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "route-endpoints (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/route-endpoints.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "routes (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/routes.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "routes (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/csv/routes.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "routes (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/aviation/data/geojson/routes.geojson"
     }
   ],
-  "dateModified": "2026-07-27",
+  "dateModified": "2026-07-28",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [

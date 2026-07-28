@@ -12,7 +12,7 @@
 
 </div>
 
-36 civil airports across Algeria, with official names, **ICAO (OACI) and IATA codes**,
+36 civil airports and Air Algérie's nonstop route network. Official names, **ICAO (OACI) and IATA codes**,
 postal addresses, phone numbers, websites, GPS coordinates, and wilaya linkage. Sourced
 from ANAC (the Autorité Nationale de l'Aviation Civile), with IATA codes and three
 airports ANAC's map omits from OurAirports. Shipped as JSON, CSV, and GeoJSON.
@@ -46,6 +46,7 @@ const inOran = aviation.airportsByWilaya(31);     // airports in wilaya 31
 | Dataset | Count | Notes |
 | --- | --- | --- |
 | Civil airports | **36** | official name, ICAO + IATA codes, address, phone, website, coordinates |
+| Nonstop routes | **70** | directional legs with operator, status, evidence tier and a source |
 
 Spanning **33 wilayas**, every airport geocoded and every one carrying an IATA code.
 `wilaya_code` is linked against the

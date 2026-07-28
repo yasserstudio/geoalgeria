@@ -73,6 +73,21 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
     {"from": "ALG", "to": "DLA", "flight": "AH 5350", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Missed entirely by the Wikipedia sweep: the Algiers article lists Tunis
+    # under Nouvelair and Tunisair but NOT Air Algérie, even though AH 4001,
+    # 4002 and 4003 fly it in both directions with no codeshare. Proof that the
+    # `listed` tier is a floor and not a ceiling.
+    {"from": "ALG", "to": "TUN", "flight": "AH 4002", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "TUN", "to": "ALG", "flight": "AH 4001", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Missed the same way as Tunis: the Algiers article lists Cairo under
+    # EgyptAir only. AH 4039 flies CAI-ALG with no codeshare, and the outbound
+    # was seen on a booking screen the same day.
+    {"from": "ALG", "to": "CAI", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "CAI", "to": "ALG", "flight": "AH 4039", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs where a booking probe returned an AH flight number that is a CODESHARE on

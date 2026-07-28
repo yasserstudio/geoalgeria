@@ -269,6 +269,13 @@ def resolve_destination_iatas(rows, cache_path):
         try:
             w = api(action="parse", page=t, prop="wikitext", section=0)
             text = w["parse"]["wikitext"]["*"]
+            # Follow a redirect. "Tunis Airport" is a redirect with no infobox of
+            # its own, so reading it directly returned no IATA and every Tunis
+            # row was dropped without a word.
+            redir = re.match(r"\s*#REDIRECT\s*\[\[([^\]|]+)", text, re.I)
+            if redir:
+                w = api(action="parse", page=redir.group(1).strip(), prop="wikitext", section=0)
+                text = w["parse"]["wikitext"]["*"]
             m = IATA_INFOBOX_RE.search(text)
             cache[t] = m.group(1).upper() if m else None
         except Exception:

@@ -332,7 +332,10 @@ export const MIGRATIONS = {
       estimatedUniverse: null,
       coverageNote: "Airports from the National Civil Aviation Authority (ANAC), plus Hassi R'Mel (HRM), Mécheria (MZW) and Laghouat (LOO), which ANAC's map omits and which OurAirports supplies. IATA codes are backfilled from OurAirports by ICAO match, each one confirmed by coordinate distance rather than by code alone. Wilaya-level only (no commune linkage).",
       titles: { en: "Algeria airports", fr: "Aéroports d'Algérie", ar: "مطارات الجزائر" },
-      stats: (rows) => ({ with_iata: rows.filter((r) => r.iata).length, by_source: count(rows, "source") }),
+      // `routes` is the relation file's own count, kept out of entities[] and
+      // record_count because those describe places. Injected by the generator,
+      // which reads the file build-routes.mjs writes.
+      stats: (rows, extra = {}) => ({ with_iata: rows.filter((r) => r.iata).length, by_source: count(rows, "source"), ...extra }),
     },
   },
 
@@ -740,7 +743,7 @@ export const MIGRATIONS = {
  * }} input
  * @returns {{ records: object[], metadata: object }}
  */
-export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snapshots = {}, oldMeta = {} }) {
+export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snapshots = {}, stats = {}, oldMeta = {} }) {
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
@@ -752,6 +755,18 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snap
   const entities = [];
   const pending = []; // { path, content } queued for the atomic write phase
   for (const f of files) {
+    // A file this writer does not own. A package can legitimately have more than
+    // one generator: aviation's airports come from a live ANAC+OurAirports pull,
+    // its routes from a reviewed research dataset, and only the first belongs to
+    // this writer. Declaring the second here keeps entities[] complete (the
+    // release gate requires every data file to appear) without pretending to
+    // emit or validate rows it was never given.
+    if (f.rows == null) {
+      if (typeof f.count !== "number")
+        throw new Error(`writePackageV2 [${pkg}/${f.file}]: no rows and no count — cannot declare it`);
+      entities.push({ file: f.file, count: f.count });
+      continue;
+    }
     const base = f.file.replace(/\.json$/, "");
     const rows = f.rows;
     demoteSharedPoints(rows);
@@ -821,7 +836,9 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snap
       titles: meta.titles,
       entities: files.length > 1 ? entities : undefined,
     }),
-    ...(meta.stats ? meta.stats(all) : {}),
+    // `stats` carries values the caller computed that this writer cannot: a
+    // relation file's count, for instance, which it never sees rows for.
+    ...(meta.stats ? meta.stats(all, stats) : {}),
     ...preserved,
   };
   pending.push({ path: join(dir, "metadata.json"), content: JSON.stringify(metadata, null, 2) + "\n" });

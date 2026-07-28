@@ -374,6 +374,18 @@ const PACKAGES = {
       geojson: "geojson/airports.geojson",
       required: ["id", "name", "icao", "wilaya_code"],
     },
+    {
+      // A RELATION, not a GeoRecord collection: a route links two airports, so
+      // it has two endpoints and a path rather than one point. `records: false`
+      // skips only the GeoRecord contract; counts, CSV, GeoJSON and unique ids
+      // are still enforced.
+      json: "routes.json",
+      metaKey: "routes",
+      csv: "csv/routes.csv",
+      geojson: "geojson/routes.geojson",
+      required: ["id", "from", "to", "carrier", "status", "evidence", "source"],
+      records: false,
+    },
   ],
   mosquees: [
     {
@@ -694,7 +706,12 @@ function validateDataset(pkg, spec) {
   // entities[], single-file packages use record_count. v1 uses the package-named key.
   const isV2 = requireV2(pkg, meta);
   let expected, expectedKey;
-  if (isV2) {
+  if (isV2 && spec.records === false) {
+    // Not in entities[]: that array totals record_count, and a relation is not
+    // part of that total. It carries its own count in the stats block instead.
+    expected = meta[spec.metaKey];
+    expectedKey = spec.metaKey;
+  } else if (isV2) {
     const entity = (meta.entities || []).find((e) => e.file === spec.json);
     if (entity) { expected = entity.count; expectedKey = `entities[${spec.json}]`; }
     else { expected = meta.record_count; expectedKey = "record_count"; }
@@ -706,8 +723,22 @@ function validateDataset(pkg, spec) {
     fail(`${label}: count ${arr.length} ≠ metadata.${expectedKey} ${expected}`);
   }
 
+  // A RELATION file is not a collection of GeoRecords. `routes.json` describes
+  // links BETWEEN records, so it has two endpoints and a path rather than one
+  // point, and the GeoRecord contract (lat/lng/geo_precision/geo_method, one
+  // point per row) simply does not apply. Everything else still does: counts,
+  // the CSV mirror, the GeoJSON mirror, unique ids. The existing escape hatches
+  // were per-package, and exempting all of aviation would have switched off the
+  // v2 checks on airports.json too, which is a real GeoRecord set.
+  const isRelation = spec.records === false;
+  if (isRelation) {
+    const ids = arr.map((r) => r.id);
+    if (ids.length !== new Set(ids).size)
+      fail(`${label}: duplicate id(s) in a relation file`);
+  }
+
   // v2 contract: enforce the canonical GeoRecord + metadata shape via @geoalgeria/schema.
-  if (isV2) {
+  if (isV2 && !isRelation) {
     const { errors: v2errs, warnings: v2warn } = validateV2Records(arr, {
       requireName: spec.required.includes("name"),
       boundaries: BOUNDARIES,
@@ -731,8 +762,9 @@ function validateDataset(pkg, spec) {
     }
   }
 
-  // geojson mirror === records with coordinates
-  const withCoord = arr.filter(hasCoord).length;
+  // geojson mirror === records with coordinates. For a relation every row is a
+  // path, so every row has a feature.
+  const withCoord = isRelation ? arr.length : arr.filter(hasCoord).length;
   if (spec.geojson) {
     const gPath = join(dataDir, spec.geojson);
     if (!existsSync(gPath)) {
@@ -1001,7 +1033,7 @@ function validatePackageFiles(pkgs) {
 // dataset (administrative divisions, not GeoRecords; validate.py owns it).
 const TYPED = {
   agriculture: { "agriculture.json": "AgricultureInstitution" },
-  aviation: { "airports.json": "Airport" },
+  aviation: { "airports.json": "Airport", "routes.json": "Route" },
   banques: { "banks.json": "Institution", "institutions.json": "Institution", "branches.json": "Branch" },
   buses: { "lines.json": "BusLine" },
   culture: { "culture.json": "CulturalSite" },
@@ -1464,10 +1496,14 @@ for (const pkg of targets) {
     continue;
   }
   console.log(`\n[@geoalgeria/${pkg}]`);
+  // Only GeoRecord files feed the derived metadata. record_count, geocoded_pct,
+  // precision, bbox and by_source all describe PLACES, and a relation row is not
+  // one: folding routes.json in dropped aviation's geocoded_pct to 35% and blew
+  // by_source out into forty source URLs.
   const shipped = [];
   for (const spec of PACKAGES[pkg]) {
     const arr = validateDataset(pkg, spec);
-    if (arr) shipped.push(...arr);
+    if (arr && spec.records !== false) shipped.push(...arr);
   }
   validateDerivedMetadata(pkg, shipped);
 }

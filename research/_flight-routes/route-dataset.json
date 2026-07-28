@@ -127,6 +127,18 @@
       "great_circle_km": 1777
     },
     {
+      "id": "alg-cai",
+      "from": "ALG",
+      "to": "CAI",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2706
+    },
+    {
       "id": "alg-cdg",
       "from": "ALG",
       "to": "CDG",
@@ -327,6 +339,18 @@
       "great_circle_km": 1365
     },
     {
+      "id": "alg-tun",
+      "from": "ALG",
+      "to": "TUN",
+      "carrier": "AH",
+      "flight": "AH 4002",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 625
+    },
+    {
       "id": "alg-vlc",
       "from": "ALG",
       "to": "VLC",
@@ -449,6 +473,18 @@
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
       "great_circle_km": 1777
+    },
+    {
+      "id": "cai-alg",
+      "from": "CAI",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 4039",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2706
     },
     {
       "id": "cdg-alg",
@@ -885,6 +921,18 @@
       "evidence": "verified",
       "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
       "great_circle_km": 931
+    },
+    {
+      "id": "tun-alg",
+      "from": "TUN",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 4001",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 625
     }
   ],
   "planned": [
@@ -994,6 +1042,13 @@
       "lat": 47.43018,
       "lng": 19.262393,
       "country": "HU"
+    },
+    {
+      "iata": "CAI",
+      "name": "Cairo International Airport",
+      "lat": 30.111534,
+      "lng": 31.396694,
+      "country": "EG"
     },
     {
       "iata": "CDG",
@@ -1211,6 +1266,13 @@
       "lat": 43.629101,
       "lng": 1.36382,
       "country": "FR"
+    },
+    {
+      "iata": "TUN",
+      "name": "Tunis Carthage International Airport",
+      "lat": 36.851002,
+      "lng": 10.2272,
+      "country": "TN"
     },
     {
       "iata": "VLC",
