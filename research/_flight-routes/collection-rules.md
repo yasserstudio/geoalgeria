@@ -494,3 +494,54 @@ question, is what makes those exclusions safe rather than presumptuous.
 
 Use the country form first when screening, and fall back to the pair form only to
 pin down which airport and which direction.
+
+## 21. The redirect fix was incomplete: a cache is state, not just a speed-up
+
+Section 19 recorded that `Tunis Airport` is a Wikipedia redirect with no infobox,
+so the IATA resolver returned `None` and every Tunis row was dropped. The
+resolver was fixed to follow `#REDIRECT`.
+
+**That fix did nothing, and the reason is worth writing down.** The resolver
+caches its answers to disk, and the cache still held the `None` values from the
+run before the fix. A cached wrong answer is indistinguishable from a cached
+right one, so the corrected code was never consulted: **49 of 109 destination
+articles were still `None`, and every route through them stayed invisible.**
+
+It surfaced because a booking screen showed Air Algérie flying `ALG-ALC` and
+`ALG-BCN`, neither of which was in the dataset, and both had been dropped exactly
+this way:
+
+```
+Alicante–Elche Airport                    -> None   (redirect, poisoned)
+Alicante–Elche Miguel Hernández Airport   -> ALC    (real article)
+Barcelona–El Prat Airport                 -> None   (redirect, poisoned)
+```
+
+Clearing the `None` entries and re-running took resolution from **60/109 to
+106/109** and the dataset from 70 routes to 89 in one step.
+
+**Rule: when a resolver is fixed, invalidate the entries it got wrong.** A cache
+that only ever adds is a cache that preserves every bug it saw. Cache negative
+results with more suspicion than positive ones, or do not cache them at all: a
+`None` here means "not found", which is exactly the answer most likely to be the
+code's fault rather than the data's.
+
+## 22. Screening results, country-form probes (2026-07-28)
+
+| Probe | Air Algérie legs seen | Effect |
+| --- | --- | --- |
+| Algeria to Spain | `ORN-ALC` x2, `ALG-ALC` x2, `ALG-BCN` | 5 legs **verified** |
+| Spain to Algeria | `ALC-ORN` x2, `ALC-ALG` x2, `BCN-ALG` | return legs **verified** |
+| United Kingdom to Algeria | `STN-ALG`, `LHR-ALG` | 2 legs **verified** |
+| Algeria to Italy | none: one flight, ITA Airways | `ALG-FCO` **excluded** |
+| Algeria to Qatar | none: both Qatar Airways | `ALG-DOH` exclusion corroborated |
+| Algiers to Saudi Arabia | none: both Saudia | `ALG-JED` exclusion corroborated |
+
+Every verified leg duration-checked between 0.94 and 1.16 against its great
+circle. Vueling flies the Spanish pairs and BA Euroflyer flies Gatwick, neither of
+which changes what Air Algérie itself operates.
+
+Rome is the third case of a route a published table lists and no probe supports,
+after Jeddah and Amman. The pattern is now clear enough to state: **a `listed`
+route to a country with a strong national carrier deserves a country-form probe
+before it is drawn.**

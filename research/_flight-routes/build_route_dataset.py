@@ -88,6 +88,26 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
     {"from": "CAI", "to": "ALG", "flight": "AH 4039", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Spain and the UK, seen operating on booking screens in both directions on
+    # 14 Aug, every leg duration-checked between 0.94 and 1.16. Vueling flies the
+    # Spanish pairs too and BA Euroflyer flies Gatwick, none of which changes
+    # what Air Algérie itself operates.
+    {"from": "ORN", "to": "ALC", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ALC", "to": "ORN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ALG", "to": "ALC", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ALC", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "ALG", "to": "BCN", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "BCN", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "STN", "to": "ALG", "status": "active",
+     "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"},
+    {"from": "LHR", "to": "ALG", "status": "active",
+     "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"},
 ]
 
 # Pairs where a booking probe returned an AH flight number that is a CODESHARE on
@@ -113,6 +133,10 @@ OPERATED_BY_OTHERS = {
     # airline actually flying the pair, is a different thing entirely.
     ("ALG", "JED"),   # SV 0340 / SV 0342, Saudia
     ("ALG", "AMM"),   # RJ 0518, Royal Jordanian
+    # Algeria to Italy on 14 Aug returned ONE flight, ITA Airways, and no Air
+    # Algérie leg from any Algerian airport. The country-form probe of section 20
+    # makes that a statement about the whole country, not just this pair.
+    ("ALG", "FCO"),   # ITA Airways
 }
 
 

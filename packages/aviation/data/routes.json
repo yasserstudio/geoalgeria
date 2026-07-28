@@ -26,6 +26,19 @@
     "great_circle_km": 1867
   },
   {
+    "id": "aae-lys",
+    "from": "AAE",
+    "to": "LYS",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+    "great_circle_km": 1016
+  },
+  {
     "id": "aae-mrs",
     "from": "AAE",
     "to": "MRS",
@@ -37,6 +50,45 @@
     "planned": false,
     "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
     "great_circle_km": 768
+  },
+  {
+    "id": "aae-ory",
+    "from": "AAE",
+    "to": "ORY",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+    "great_circle_km": 1396
+  },
+  {
+    "id": "alc-alg",
+    "from": "ALC",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 376
+  },
+  {
+    "id": "alc-orn",
+    "from": "ALC",
+    "to": "ORN",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 296
   },
   {
     "id": "alg-abj",
@@ -65,6 +117,32 @@
     "great_circle_km": 3106
   },
   {
+    "id": "alg-add",
+    "from": "ALG",
+    "to": "ADD",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/",
+    "great_circle_km": 4726
+  },
+  {
+    "id": "alg-alc",
+    "from": "ALG",
+    "to": "ALC",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 376
+  },
+  {
     "id": "alg-ayt",
     "from": "ALG",
     "to": "AYT",
@@ -76,6 +154,19 @@
     "planned": false,
     "source": "https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/",
     "great_circle_km": 2448
+  },
+  {
+    "id": "alg-bcn",
+    "from": "ALG",
+    "to": "BCN",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 520
   },
   {
     "id": "alg-bey",
@@ -210,6 +301,32 @@
     "great_circle_km": 7463
   },
   {
+    "id": "alg-kul",
+    "from": "ALG",
+    "to": "KUL",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.airlineinformation.com/AH/KUL",
+    "great_circle_km": 10580
+  },
+  {
+    "id": "alg-lbv",
+    "from": "ALG",
+    "to": "LBV",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://voyagerdz.com/air-algerie-inaugure-sa-nouvelle-ligne-vers-libreville-et-renforce-son-reseau-africain/",
+    "great_circle_km": 4080
+  },
+  {
     "id": "alg-lil",
     "from": "ALG",
     "to": "LIL",
@@ -301,6 +418,45 @@
     "great_circle_km": 1228
   },
   {
+    "id": "alg-opo",
+    "from": "ALG",
+    "to": "OPO",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/",
+    "great_circle_km": 1144
+  },
+  {
+    "id": "alg-ory",
+    "from": "ALG",
+    "to": "ORY",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&",
+    "great_circle_km": 1339
+  },
+  {
+    "id": "alg-oua",
+    "from": "ALG",
+    "to": "OUA",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.elespanol.com/invertia/empresas/turismo/20231030/argelia-restablece-linea-aerea-palma-complacer-ciudadanos-pese-crisis-espana/805669505_0.html",
+    "great_circle_km": 2748
+  },
+  {
     "id": "alg-ssh",
     "from": "ALG",
     "to": "SSH",
@@ -312,6 +468,19 @@
     "planned": false,
     "source": "https://en.wikipedia.org/wiki/Houari_Boumediene_Airport",
     "great_circle_km": 3070
+  },
+  {
+    "id": "alg-stn",
+    "from": "ALG",
+    "to": "STN",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://web.archive.org/web/20250709164335/https://www.algerianewsgate.com/post/air-alg%C3%A9rie-expands-services-to-the-uk-with-new-algiers-london-stansted-route",
+    "great_circle_km": 1705
   },
   {
     "id": "alg-sxb",
@@ -353,6 +522,32 @@
     "great_circle_km": 448
   },
   {
+    "id": "bcn-alg",
+    "from": "BCN",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 520
+  },
+  {
+    "id": "bja-cdg",
+    "from": "BJA",
+    "to": "CDG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/ah",
+    "great_circle_km": 1382
+  },
+  {
     "id": "bja-lys",
     "from": "BJA",
     "to": "LYS",
@@ -379,6 +574,19 @@
     "great_circle_km": 748
   },
   {
+    "id": "bja-ory",
+    "from": "BJA",
+    "to": "ORY",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+    "great_circle_km": 1354
+  },
+  {
     "id": "blj-cdg",
     "from": "BLJ",
     "to": "CDG",
@@ -390,6 +598,19 @@
     "planned": false,
     "source": "https://www.aeroroutes.com/",
     "great_circle_km": 1505
+  },
+  {
+    "id": "blj-lys",
+    "from": "BLJ",
+    "to": "LYS",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+    "great_circle_km": 1113
   },
   {
     "id": "blj-mrs",
@@ -524,6 +745,19 @@
     "great_circle_km": 1453
   },
   {
+    "id": "czl-etz",
+    "from": "CZL",
+    "to": "ETZ",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+    "great_circle_km": 1412
+  },
+  {
     "id": "czl-jed",
     "from": "CZL",
     "to": "JED",
@@ -548,6 +782,19 @@
     "planned": false,
     "source": "https://www.routesonline.com/news/38/airlineroute/285075/air-algerie-adds-constantine-lille-from-late-oct-2019/",
     "great_circle_km": 1613
+  },
+  {
+    "id": "czl-lys",
+    "from": "CZL",
+    "to": "LYS",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+    "great_circle_km": 1058
   },
   {
     "id": "czl-med",
@@ -682,9 +929,48 @@
     "great_circle_km": 1588
   },
   {
+    "id": "gjl-mrs",
+    "from": "GJL",
+    "to": "MRS",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport",
+    "great_circle_km": 741
+  },
+  {
+    "id": "lhr-alg",
+    "from": "LHR",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+    "great_circle_km": 1668
+  },
+  {
     "id": "orn-alc",
     "from": "ORN",
     "to": "ALC",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 296
+  },
+  {
+    "id": "orn-bcn",
+    "from": "ORN",
+    "to": "BCN",
     "carrier": "AH",
     "flight": null,
     "status": "unclear",
@@ -692,7 +978,7 @@
     "evidence": "listed",
     "planned": false,
     "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
-    "great_circle_km": 296
+    "great_circle_km": 673
   },
   {
     "id": "orn-bod",
@@ -747,6 +1033,19 @@
     "great_circle_km": 1689
   },
   {
+    "id": "orn-lys",
+    "from": "ORN",
+    "to": "LYS",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+    "great_circle_km": 1222
+  },
+  {
     "id": "orn-mrs",
     "from": "ORN",
     "to": "MRS",
@@ -786,6 +1085,19 @@
     "great_circle_km": 1610
   },
   {
+    "id": "qsf-lys",
+    "from": "QSF",
+    "to": "LYS",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": false,
+    "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
+    "great_circle_km": 1062
+  },
+  {
     "id": "qsf-ory",
     "from": "QSF",
     "to": "ORY",
@@ -797,6 +1109,19 @@
     "planned": false,
     "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
     "great_circle_km": 1417
+  },
+  {
+    "id": "stn-alg",
+    "from": "STN",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+    "great_circle_km": 1705
   },
   {
     "id": "sxb-alg",
@@ -918,5 +1243,18 @@
     "planned": true,
     "source": "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
     "great_circle_km": 10131
+  },
+  {
+    "id": "alg-svo",
+    "from": "ALG",
+    "to": "SVO",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
+    "great_circle_km": 3332
   }
 ]
