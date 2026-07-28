@@ -108,6 +108,15 @@ VERIFIED = [
      "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"},
     {"from": "LHR", "to": "ALG", "status": "active",
      "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes"},
+    # Guangzhou: the longest leg in the network at 10,106 km, 12h50 nonstop.
+    {"from": "ALG", "to": "CAN", "status": "active",
+     "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html"},
+    # Frankfurt inbound. Only this direction is verified: the outbound was probed
+    # over six consecutive days and returned nothing, so it stays `listed` until
+    # something actually shows it. Direction is established per leg, never
+    # inferred from the opposite one.
+    {"from": "FRA", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs where a booking probe returned an AH flight number that is a CODESHARE on

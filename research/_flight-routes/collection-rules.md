@@ -545,3 +545,30 @@ Rome is the third case of a route a published table lists and no probe supports,
 after Jeddah and Amman. The pattern is now clear enough to state: **a `listed`
 route to a country with a strong national carrier deserves a country-form probe
 before it is drawn.**
+
+## 23. Six empty days did not mean the route was not there
+
+The strongest case yet for section 7, and it is worth stating on its own because
+it is more extreme than anything before it.
+
+`ALG-FRA` was probed on **six consecutive days**, 3 to 8 August. Every one came
+back with zero offers and zero raw offers. Written up at the time as "unresolved,
+stays listed", which was the right call and only just.
+
+A booking screen then showed **Air Algérie flying `FRA-ALG` nonstop in 2h50**,
+ratio 1.17. The route is real, Lufthansa flies it too, and six consecutive empty
+days said nothing about any of it.
+
+Earlier evidence for this rule was a single week sweep missing a Tuesday-only
+route (section 15). This is six days of silence over a route that exists, so:
+
+- **A booking-API silence carries almost no information.** Not "weak evidence",
+  close to none. Six samples did not distinguish a real route from a nonexistent
+  one.
+- **Never convert silence into a negative**, no matter how many empty days
+  accumulate. What justifies excluding a route is a probe that returns ANOTHER
+  AIRLINE flying it, as with Jeddah, Amman, Doha and Rome, not a probe that
+  returns nothing.
+- **Direction is established per leg.** `FRA-ALG` is verified and `ALG-FRA`
+  stays `listed`, because the evidence is for one direction only. The Budapest
+  triangle is the standing reminder that the reverse does not follow.

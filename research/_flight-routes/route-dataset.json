@@ -229,6 +229,18 @@
       "great_circle_km": 2706
     },
     {
+      "id": "alg-can",
+      "from": "ALG",
+      "to": "CAN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+      "great_circle_km": 10106
+    },
+    {
       "id": "alg-cdg",
       "from": "ALG",
       "to": "CDG",
@@ -963,6 +975,18 @@
       "great_circle_km": 1588
     },
     {
+      "id": "fra-alg",
+      "from": "FRA",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1543
+    },
+    {
       "id": "gjl-mrs",
       "from": "GJL",
       "to": "MRS",
@@ -1411,6 +1435,13 @@
       "lat": 30.111534,
       "lng": 31.396694,
       "country": "EG"
+    },
+    {
+      "iata": "CAN",
+      "name": "Guangzhou Baiyun International Airport",
+      "lat": 23.392401,
+      "lng": 113.299004,
+      "country": "CN"
     },
     {
       "iata": "CDG",

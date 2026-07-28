@@ -223,6 +223,19 @@
     "great_circle_km": 2706
   },
   {
+    "id": "alg-can",
+    "from": "ALG",
+    "to": "CAN",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+    "great_circle_km": 10106
+  },
+  {
     "id": "alg-cdg",
     "from": "ALG",
     "to": "CDG",
@@ -927,6 +940,19 @@
     "planned": false,
     "source": "https://www.lorraineaeroport.com/vols-destinations/oran/",
     "great_circle_km": 1588
+  },
+  {
+    "id": "fra-alg",
+    "from": "FRA",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 1543
   },
   {
     "id": "gjl-mrs",
