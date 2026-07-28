@@ -29,6 +29,20 @@
       "great_circle_km": 1867
     },
     {
+      "id": "aae-lys",
+      "from": "AAE",
+      "to": "LYS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Rabah Bitat Airport",
+      "great_circle_km": 1016
+    },
+    {
       "id": "aae-mrs",
       "from": "AAE",
       "to": "MRS",
@@ -41,6 +55,44 @@
       "source_is_the_table": true,
       "listed_at": "Rabah Bitat Airport",
       "great_circle_km": 768
+    },
+    {
+      "id": "aae-ory",
+      "from": "AAE",
+      "to": "ORY",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Rabah_Bitat_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Rabah Bitat Airport",
+      "great_circle_km": 1396
+    },
+    {
+      "id": "alc-alg",
+      "from": "ALC",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 376
+    },
+    {
+      "id": "alc-orn",
+      "from": "ALC",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 296
     },
     {
       "id": "alg-abj",
@@ -71,6 +123,32 @@
       "great_circle_km": 3106
     },
     {
+      "id": "alg-add",
+      "from": "ALG",
+      "to": "ADD",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://al24news.dz/fr/transport-aerien-lancement-du-premier-vol-de-la-ligne-directe-alger-addis-abeba/",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 4726
+    },
+    {
+      "id": "alg-alc",
+      "from": "ALG",
+      "to": "ALC",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 376
+    },
+    {
       "id": "alg-ayt",
       "from": "ALG",
       "to": "AYT",
@@ -83,6 +161,18 @@
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
       "great_circle_km": 2448
+    },
+    {
+      "id": "alg-bcn",
+      "from": "ALG",
+      "to": "BCN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 520
     },
     {
       "id": "alg-bey",
@@ -113,6 +203,18 @@
       "great_circle_km": 2909
     },
     {
+      "id": "alg-bru",
+      "from": "ALG",
+      "to": "BRU",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1582
+    },
+    {
       "id": "alg-bud",
       "from": "ALG",
       "to": "BUD",
@@ -125,6 +227,30 @@
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
       "great_circle_km": 1777
+    },
+    {
+      "id": "alg-cai",
+      "from": "ALG",
+      "to": "CAI",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2706
+    },
+    {
+      "id": "alg-can",
+      "from": "ALG",
+      "to": "CAN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html",
+      "great_circle_km": 10106
     },
     {
       "id": "alg-cdg",
@@ -149,6 +275,18 @@
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 3696
+    },
+    {
+      "id": "alg-dss",
+      "from": "ALG",
+      "to": "DSS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 3168
     },
     {
       "id": "alg-dxb",
@@ -191,6 +329,18 @@
       "great_circle_km": 3058
     },
     {
+      "id": "alg-ist",
+      "from": "ALG",
+      "to": "IST",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2255
+    },
+    {
       "id": "alg-jnb",
       "from": "ALG",
       "to": "JNB",
@@ -201,6 +351,32 @@
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 7463
+    },
+    {
+      "id": "alg-kul",
+      "from": "ALG",
+      "to": "KUL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 10580
+    },
+    {
+      "id": "alg-lbv",
+      "from": "ALG",
+      "to": "LBV",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://voyagerdz.com/air-algerie-inaugure-sa-nouvelle-ligne-vers-libreville-et-renforce-son-reseau-africain/",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 4080
     },
     {
       "id": "alg-lil",
@@ -285,6 +461,18 @@
       "great_circle_km": 2584
     },
     {
+      "id": "alg-nkc",
+      "from": "ALG",
+      "to": "NKC",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2774
+    },
+    {
       "id": "alg-nte",
       "from": "ALG",
       "to": "NTE",
@@ -297,6 +485,46 @@
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
       "great_circle_km": 1228
+    },
+    {
+      "id": "alg-opo",
+      "from": "ALG",
+      "to": "OPO",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.dzairdaily.com/une-nouvelle-ville-deurope-bientot-desservie-par-air-algerie/",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 1144
+    },
+    {
+      "id": "alg-ory",
+      "from": "ALG",
+      "to": "ORY",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/airline?airline=AH&",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 1339
+    },
+    {
+      "id": "alg-oua",
+      "from": "ALG",
+      "to": "OUA",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2748
     },
     {
       "id": "alg-ssh",
@@ -313,6 +541,20 @@
       "great_circle_km": 3070
     },
     {
+      "id": "alg-stn",
+      "from": "ALG",
+      "to": "STN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://web.archive.org/web/20250709164335/https://www.algerianewsgate.com/post/air-alg%C3%A9rie-expands-services-to-the-uk-with-new-algiers-london-stansted-route",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 1705
+    },
+    {
       "id": "alg-sxb",
       "from": "ALG",
       "to": "SXB",
@@ -327,6 +569,30 @@
       "great_circle_km": 1365
     },
     {
+      "id": "alg-tun",
+      "from": "ALG",
+      "to": "TUN",
+      "carrier": "AH",
+      "flight": "AH 4002",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 625
+    },
+    {
+      "id": "alg-vie",
+      "from": "ALG",
+      "to": "VIE",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.aeroroutes.com/eng/250728-ahnw25bud",
+      "great_circle_km": 1672
+    },
+    {
       "id": "alg-vlc",
       "from": "ALG",
       "to": "VLC",
@@ -339,6 +605,32 @@
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
       "great_circle_km": 448
+    },
+    {
+      "id": "bcn-alg",
+      "from": "BCN",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 520
+    },
+    {
+      "id": "bja-cdg",
+      "from": "BJA",
+      "to": "CDG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.parisaeroport.fr/en/passengers/flights/airlines/ah",
+      "source_is_the_table": false,
+      "listed_at": "Abane Ramdane Airport",
+      "great_circle_km": 1382
     },
     {
       "id": "bja-lys",
@@ -369,6 +661,20 @@
       "great_circle_km": 748
     },
     {
+      "id": "bja-ory",
+      "from": "BJA",
+      "to": "ORY",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Abane_Ramdane_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Abane Ramdane Airport",
+      "great_circle_km": 1354
+    },
+    {
       "id": "blj-cdg",
       "from": "BLJ",
       "to": "CDG",
@@ -379,6 +685,20 @@
       "evidence": "verified",
       "source": "https://www.aeroroutes.com/",
       "great_circle_km": 1505
+    },
+    {
+      "id": "blj-lys",
+      "from": "BLJ",
+      "to": "LYS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Mostépha Ben Boulaid Airport",
+      "great_circle_km": 1113
     },
     {
       "id": "blj-mrs",
@@ -407,6 +727,30 @@
       "source_is_the_table": true,
       "listed_at": "Mostépha Ben Boulaid Airport",
       "great_circle_km": 1478
+    },
+    {
+      "id": "bod-alg",
+      "from": "BOD",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 962
+    },
+    {
+      "id": "bru-alg",
+      "from": "BRU",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1582
     },
     {
       "id": "bsk-lys",
@@ -451,6 +795,18 @@
       "great_circle_km": 1777
     },
     {
+      "id": "cai-alg",
+      "from": "CAI",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 4039",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2706
+    },
+    {
       "id": "cdg-alg",
       "from": "CDG",
       "to": "ALG",
@@ -461,6 +817,30 @@
       "evidence": "verified",
       "source": "https://www.parisaeroport.fr/",
       "great_circle_km": 1370
+    },
+    {
+      "id": "cdg-czl",
+      "from": "CDG",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1453
+    },
+    {
+      "id": "cdg-orn",
+      "from": "CDG",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1511
     },
     {
       "id": "cfk-cdg",
@@ -505,6 +885,34 @@
       "great_circle_km": 1453
     },
     {
+      "id": "czl-etz",
+      "from": "CZL",
+      "to": "ETZ",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Mohamed Boudiaf International Airport",
+      "great_circle_km": 1412
+    },
+    {
+      "id": "czl-ist",
+      "from": "CZL",
+      "to": "IST",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Mohamed Boudiaf International Airport",
+      "great_circle_km": 1989
+    },
+    {
       "id": "czl-jed",
       "from": "CZL",
       "to": "JED",
@@ -531,6 +939,20 @@
       "source_is_the_table": false,
       "listed_at": "Mohamed Boudiaf International Airport",
       "great_circle_km": 1613
+    },
+    {
+      "id": "czl-lys",
+      "from": "CZL",
+      "to": "LYS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Mohamed Boudiaf International Airport",
+      "great_circle_km": 1058
     },
     {
       "id": "czl-med",
@@ -671,9 +1093,203 @@
       "great_circle_km": 1588
     },
     {
+      "id": "fra-alg",
+      "from": "FRA",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1543
+    },
+    {
+      "id": "gjl-mrs",
+      "from": "GJL",
+      "to": "MRS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Jijel_Ferhat_Abbas_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Jijel Ferhat Abbas Airport",
+      "great_circle_km": 741
+    },
+    {
+      "id": "ist-alg",
+      "from": "IST",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2255
+    },
+    {
+      "id": "ist-czl",
+      "from": "IST",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1989
+    },
+    {
+      "id": "jnb-alg",
+      "from": "JNB",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 7463
+    },
+    {
+      "id": "lhr-alg",
+      "from": "LHR",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+      "great_circle_km": 1668
+    },
+    {
+      "id": "lys-alg",
+      "from": "LYS",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1016
+    },
+    {
+      "id": "lys-czl",
+      "from": "LYS",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1058
+    },
+    {
+      "id": "lys-orn",
+      "from": "LYS",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1222
+    },
+    {
+      "id": "mrs-alg",
+      "from": "MRS",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 768
+    },
+    {
+      "id": "mrs-czl",
+      "from": "MRS",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 805
+    },
+    {
+      "id": "mrs-orn",
+      "from": "MRS",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1002
+    },
+    {
+      "id": "nce-alg",
+      "from": "NCE",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 845
+    },
+    {
+      "id": "nkc-alg",
+      "from": "NKC",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2774
+    },
+    {
+      "id": "nte-alg",
+      "from": "NTE",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1228
+    },
+    {
       "id": "orn-alc",
       "from": "ORN",
       "to": "ALC",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 296
+    },
+    {
+      "id": "orn-bcn",
+      "from": "ORN",
+      "to": "BCN",
       "carrier": "AH",
       "flight": null,
       "status": "unclear",
@@ -682,7 +1298,7 @@
       "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
       "source_is_the_table": true,
       "listed_at": "Ahmed Ben Bella Airport",
-      "great_circle_km": 296
+      "great_circle_km": 673
     },
     {
       "id": "orn-bod",
@@ -737,6 +1353,20 @@
       "great_circle_km": 1689
     },
     {
+      "id": "orn-lys",
+      "from": "ORN",
+      "to": "LYS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Ahmed Ben Bella Airport",
+      "great_circle_km": 1222
+    },
+    {
       "id": "orn-mrs",
       "from": "ORN",
       "to": "MRS",
@@ -765,6 +1395,30 @@
       "great_circle_km": 3396
     },
     {
+      "id": "ory-alg",
+      "from": "ORY",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1339
+    },
+    {
+      "id": "ory-orn",
+      "from": "ORY",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1478
+    },
+    {
       "id": "qsf-lil",
       "from": "QSF",
       "to": "LIL",
@@ -779,6 +1433,20 @@
       "great_circle_km": 1610
     },
     {
+      "id": "qsf-lys",
+      "from": "QSF",
+      "to": "LYS",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Ain_Arnat_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Ain Arnat Airport",
+      "great_circle_km": 1062
+    },
+    {
       "id": "qsf-ory",
       "from": "QSF",
       "to": "ORY",
@@ -791,6 +1459,18 @@
       "source_is_the_table": true,
       "listed_at": "Ain Arnat Airport",
       "great_circle_km": 1417
+    },
+    {
+      "id": "stn-alg",
+      "from": "STN",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.aps.dz/en/economy/trade-services/mm0cvuxi-air-algerie-expands-its-uk-presence-with-heathrow-stansted-routes",
+      "great_circle_km": 1705
     },
     {
       "id": "sxb-alg",
@@ -885,6 +1565,42 @@
       "evidence": "verified",
       "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine",
       "great_circle_km": 931
+    },
+    {
+      "id": "tls-orn",
+      "from": "TLS",
+      "to": "ORN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 907
+    },
+    {
+      "id": "tun-alg",
+      "from": "TUN",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 4001",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 625
+    },
+    {
+      "id": "yul-alg",
+      "from": "YUL",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/",
+      "great_circle_km": 6275
     }
   ],
   "planned": [
@@ -901,6 +1617,20 @@
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
       "great_circle_km": 10131
+    },
+    {
+      "id": "alg-svo",
+      "from": "ALG",
+      "to": "SVO",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
+      "source_is_the_table": false,
+      "listed_at": "Houari Boumediene Airport",
+      "great_circle_km": 3332
     }
   ],
   "endpoints": [
@@ -926,6 +1656,13 @@
       "country": "NG"
     },
     {
+      "iata": "ADD",
+      "name": "Addis Ababa Bole International Airport",
+      "lat": 8.97789,
+      "lng": 38.799301,
+      "country": "ET"
+    },
+    {
       "iata": "ALC",
       "name": "Alicante-Elche Miguel Hernández Airport",
       "lat": 38.2822,
@@ -945,6 +1682,13 @@
       "lat": 36.898701,
       "lng": 30.800501,
       "country": "TR"
+    },
+    {
+      "iata": "BCN",
+      "name": "Josep Tarradellas Barcelona-El Prat Airport",
+      "lat": 41.2971,
+      "lng": 2.07846,
+      "country": "ES"
     },
     {
       "iata": "BEY",
@@ -982,6 +1726,13 @@
       "country": "FR"
     },
     {
+      "iata": "BRU",
+      "name": "Brussels Airport",
+      "lat": 50.901402,
+      "lng": 4.48444,
+      "country": "BE"
+    },
+    {
       "iata": "BSK",
       "name": "Aéroport de BISKRA/ Mohamed KHIDER",
       "lat": 34.79160974695419,
@@ -994,6 +1745,20 @@
       "lat": 47.43018,
       "lng": 19.262393,
       "country": "HU"
+    },
+    {
+      "iata": "CAI",
+      "name": "Cairo International Airport",
+      "lat": 30.111534,
+      "lng": 31.396694,
+      "country": "EG"
+    },
+    {
+      "iata": "CAN",
+      "name": "Guangzhou Baiyun International Airport",
+      "lat": 23.392401,
+      "lng": 113.299004,
+      "country": "CN"
     },
     {
       "iata": "CDG",
@@ -1031,6 +1796,13 @@
       "country": "CM"
     },
     {
+      "iata": "DSS",
+      "name": "Blaise Diagne International Airport",
+      "lat": 14.670878,
+      "lng": -17.072829,
+      "country": "SN"
+    },
+    {
       "iata": "DXB",
       "name": "Dubai International Airport",
       "lat": 25.24979,
@@ -1059,6 +1831,13 @@
       "country": "DE"
     },
     {
+      "iata": "GJL",
+      "name": "Aéroport de JIJEL/FERHAT ABBAS",
+      "lat": 36.79340595973765,
+      "lng": 5.877778649666695,
+      "country": "DZ"
+    },
+    {
       "iata": "HRG",
       "name": "Hurghada International Airport",
       "lat": 27.176776,
@@ -1085,6 +1864,27 @@
       "lat": -26.140081,
       "lng": 28.246801,
       "country": "ZA"
+    },
+    {
+      "iata": "KUL",
+      "name": "Kuala Lumpur International Airport",
+      "lat": 2.74558,
+      "lng": 101.709999,
+      "country": "MY"
+    },
+    {
+      "iata": "LBV",
+      "name": "Libreville Leon M'ba International Airport",
+      "lat": 0.458951,
+      "lng": 9.41214,
+      "country": "GA"
+    },
+    {
+      "iata": "LHR",
+      "name": "London Heathrow Airport",
+      "lat": 51.470748,
+      "lng": -0.459909,
+      "country": "GB"
     },
     {
       "iata": "LIL",
@@ -1150,11 +1950,25 @@
       "country": "NE"
     },
     {
+      "iata": "NKC",
+      "name": "Nouakchott–Oumtounsy International Airport",
+      "lat": 18.31,
+      "lng": -15.969722,
+      "country": "MR"
+    },
+    {
       "iata": "NTE",
       "name": "Nantes Atlantique Airport",
       "lat": 47.153198,
       "lng": -1.61073,
       "country": "FR"
+    },
+    {
+      "iata": "OPO",
+      "name": "Francisco de Sá Carneiro Airport",
+      "lat": 41.2481002808,
+      "lng": -8.68138980865,
+      "country": "PT"
     },
     {
       "iata": "ORN",
@@ -1169,6 +1983,13 @@
       "lat": 48.729499,
       "lng": 2.358963,
       "country": "FR"
+    },
+    {
+      "iata": "OUA",
+      "name": "Ouagadougou Thomas Sankara International Airport",
+      "lat": 12.3532,
+      "lng": -1.51242,
+      "country": "BF"
     },
     {
       "iata": "PVG",
@@ -1192,6 +2013,20 @@
       "country": "EG"
     },
     {
+      "iata": "STN",
+      "name": "London Stansted Airport",
+      "lat": 51.884998,
+      "lng": 0.235,
+      "country": "GB"
+    },
+    {
+      "iata": "SVO",
+      "name": "Sheremetyevo International Airport",
+      "lat": 55.976858,
+      "lng": 37.41121,
+      "country": "RU"
+    },
+    {
       "iata": "SXB",
       "name": "Strasbourg Airport",
       "lat": 48.5383,
@@ -1213,11 +2048,32 @@
       "country": "FR"
     },
     {
+      "iata": "TUN",
+      "name": "Tunis Carthage International Airport",
+      "lat": 36.851002,
+      "lng": 10.2272,
+      "country": "TN"
+    },
+    {
+      "iata": "VIE",
+      "name": "Vienna International Airport",
+      "lat": 48.110298,
+      "lng": 16.5697,
+      "country": "AT"
+    },
+    {
       "iata": "VLC",
       "name": "Valencia Airport",
       "lat": 39.489162,
       "lng": -0.480961,
       "country": "ES"
+    },
+    {
+      "iata": "YUL",
+      "name": "Montreal / Pierre Elliott Trudeau International Airport",
+      "lat": 45.467837,
+      "lng": -73.742294,
+      "country": "CA"
     }
   ]
 }

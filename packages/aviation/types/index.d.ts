@@ -121,6 +121,70 @@ export interface Metadata {
   with_iata: number;
   /** Record count per `source` key, e.g. `{ anac: 33, ourairports: 3 }`. */
   by_source: Record<string, number>;
+  /** Rows in `routes.json`, including planned ones. Kept out of `record_count`
+   *  and `entities[]` on purpose: those count PLACES, and a route is a link
+   *  between two places rather than a place of its own. */
+  routes: number;
+}
+
+/** Operating state of a route. The network is described structurally, so
+ *  `suspended` is a route that exists and is not currently running, not a
+ *  deleted one. */
+export type RouteStatus = "active" | "seasonal" | "suspended" | "unclear";
+
+/** How well the route is known.
+ *  - `verified`: the operator was confirmed as OPERATING the leg, its direction
+ *    recorded, and its flight time checked against the great-circle distance.
+ *  - `listed`: a published source lists the carrier serving the pair. That is a
+ *    claim about SERVICE, not operation. A codeshare puts a carrier's flight
+ *    number on another airline's aircraft, so "sells it" and "flies it" are
+ *    different facts and only the first is supported. */
+export type RouteEvidence = "verified" | "listed";
+
+/** One DIRECTIONAL nonstop leg between two airports.
+ *
+ *  Direction is not decoration. Algiers→Budapest flies nonstop on Saturdays and
+ *  Budapest→Algiers on Wednesdays, and there is never a same-day nonstop round
+ *  trip, so they are two routes and neither implies the other.
+ *
+ *  Known codeshares are excluded rather than marked: this file says a carrier
+ *  FLIES these, and a codeshare would make that false. */
+export interface Route {
+  /** Stable id, `{from}-{to}` lowercased, e.g. "alg-cdg". */
+  id: string;
+  /** Origin airport IATA code. */
+  from: string;
+  /** Destination airport IATA code. */
+  to: string;
+  /** Operating carrier's IATA code, e.g. "AH". */
+  carrier: string;
+  /** Flight number where a schedule check established one, else null. */
+  flight: string | null;
+  status: RouteStatus;
+  /** Operating days as three-letter lowercase codes ("tue"), where a full-week
+   *  sweep established them. Null means the frequency is not pinned down; it
+   *  never means daily. */
+  days: string[] | null;
+  evidence: RouteEvidence;
+  /** True for announced-but-not-yet-operating routes. `routes()` excludes these
+   *  and `plannedRoutes()` returns only them. */
+  planned: boolean;
+  /** A URL a reader can open to check the claim. Never a booking API: those are
+   *  used to establish facts, not to cite them. */
+  source: string;
+  /** Great-circle distance between the endpoints, kilometres. */
+  great_circle_km: number;
+}
+
+/** Either end of a route. Includes foreign airports, which `airports()` does not
+ *  carry since that is Algeria only. */
+export interface RouteEndpoint {
+  iata: string;
+  name: string;
+  lat: number;
+  lng: number;
+  /** ISO country code. "DZ" marks the Algerian end. */
+  country: string;
 }
 
 /** All civil airports (36). */
@@ -135,6 +199,17 @@ export function airportByIata(code: string): Airport | null;
 export function airportsByWilaya(code: string | number): Airport[];
 /** Dataset metadata (counts, source, generated_at). */
 export function metadata(): Metadata;
+/** Nonstop routes that are flying, seasonal, suspended or of unclear cadence.
+ *  Excludes announced-but-not-yet-operating ones: see `plannedRoutes()`. */
+export function routes(): Route[];
+/** Announced but not yet operating. A separate collection on purpose, so an
+ *  announcement can never be counted as a destination the carrier serves. */
+export function plannedRoutes(): Route[];
+/** Both ends of every route, including the foreign airports. */
+export function routeEndpoints(): RouteEndpoint[];
+/** Routes DEPARTING an airport, by IATA code (case-insensitive). Directional:
+ *  returns departures, not every route touching the airport. */
+export function routesFrom(code: string): Route[];
 
 declare const _default: {
   airports: typeof airports;
@@ -142,5 +217,9 @@ declare const _default: {
   airportByIata: typeof airportByIata;
   airportsByWilaya: typeof airportsByWilaya;
   metadata: typeof metadata;
+  routes: typeof routes;
+  plannedRoutes: typeof plannedRoutes;
+  routeEndpoints: typeof routeEndpoints;
+  routesFrom: typeof routesFrom;
 };
 export default _default;

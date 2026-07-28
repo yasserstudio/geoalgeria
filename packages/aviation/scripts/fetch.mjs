@@ -466,6 +466,18 @@ async function main() {
     throw new Error(`wilaya_code out of [1,69]: ${overflow.map((a) => `${a.icao}=${a.wilaya_code}`).join(", ")}`);
   }
 
+  // Routes come from the research dataset, not from either live source, and are
+  // emitted by scripts/build-routes.mjs. They are COUNTED here because the shared
+  // writer owns metadata.json. They are deliberately NOT in entities[]: that
+  // array totals record_count, which counts places, and a route is a link between
+  // two places rather than a place. It gets its own key in the stats block.
+  let routeCount = 0;
+  try {
+    routeCount = JSON.parse(readFileSync(join(DATA, "routes.json"), "utf8")).length;
+  } catch {
+    console.log("  (no routes.json yet — run scripts/build-routes.mjs to emit it)");
+  }
+
   // Emit v2 via the shared writer (live-only source, so stamp the run's date).
   const cfg = MIGRATIONS.aviation;
   const today = new Date().toISOString().slice(0, 10);
@@ -477,6 +489,7 @@ async function main() {
     updated: today,
     retrieved: today,
     snapshots: { anac: map.snapshot, ourairports: oaSnapshot },
+    stats: routeCount ? { routes: routeCount } : {},
   });
   const wilayas = new Set(records.map((r) => r.wilaya_code)).size;
   console.log(`\nWrote ${records.length} airports across ${wilayas} wilayas → v2 to ${DATA}.`);

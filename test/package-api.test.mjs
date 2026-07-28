@@ -148,3 +148,36 @@ test("aviation: airportByIcao and airportByIata reach every record, and null mat
     assert.equal(fn("ZZZ"), null, `${field} lookup returned a record for a code that does not exist`);
   }
 });
+
+// Routes are a RELATION, not a place collection, so they get their own checks:
+// every route must resolve to two real endpoints, be directional, carry a source,
+// and never be a codeshare (those are excluded at build time, not marked).
+test("aviation: routes resolve to endpoints, are directional, and carry a source", async () => {
+  const m = await pkg("aviation");
+  const routes = m.routes();
+  const planned = m.plannedRoutes();
+  const endpoints = new Set(m.routeEndpoints().map((e) => e.iata));
+
+  assert.ok(routes.length > 0, "aviation ships no routes");
+  for (const r of [...routes, ...planned]) {
+    assert.ok(endpoints.has(r.from), `${r.id}: origin ${r.from} is not in routeEndpoints()`);
+    assert.ok(endpoints.has(r.to), `${r.id}: destination ${r.to} is not in routeEndpoints()`);
+    assert.notEqual(r.from, r.to, `${r.id}: starts and ends at the same airport`);
+    assert.ok(r.source && /^https?:\/\//.test(r.source), `${r.id}: no checkable source`);
+    assert.ok(["verified", "listed"].includes(r.evidence), `${r.id}: bad evidence tier`);
+    assert.ok(r.great_circle_km > 50, `${r.id}: ${r.great_circle_km} km is not a route`);
+  }
+
+  // The two collections must not overlap: an announced route is never also a
+  // flying one, which is the whole reason they are separate.
+  const flying = new Set(routes.map((r) => r.id));
+  for (const p of planned)
+    assert.ok(!flying.has(p.id), `${p.id} is in both routes() and plannedRoutes()`);
+  assert.ok(routes.every((r) => r.planned === false), "routes() leaked a planned route");
+  assert.ok(planned.every((r) => r.planned === true), "plannedRoutes() leaked a flying route");
+
+  // routesFrom is departures only, not everything touching the airport.
+  const alg = m.routesFrom("alg");
+  assert.ok(alg.length > 0, "no routes from ALG");
+  assert.ok(alg.every((r) => r.from === "ALG"), "routesFrom returned arrivals");
+});

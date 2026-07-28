@@ -363,6 +363,27 @@ Algérie flies this", and a ticket is not a flight. Every leg therefore needs it
 either dropped or recorded with the operating carrier rather than the marketing
 one.
 
+> **CORRECTION, 2026-07-28. `host_iata` is the OPERATING carrier**, and
+> `partner_iatas` are the airlines selling seats on it. This section originally
+> read it the other way round and excluded two real Air Algérie routes.
+>
+> `CZL-IST` returns `carrier_iata: "TK"`, `flight_number: "8666"`, with
+> `codeshare: {host_iata: "AH", partner_iatas: ["TK"]}`. That is **Turkish
+> marketing an Air Algérie flight**, not Air Algérie selling a Turkish one, and
+> TK's 8xxx range is exactly where marketing numbers live. `ALG-IST` likewise:
+> `AH 3014` carries no codeshare object at all, and `AH 3016`/`3018` are hosted
+> by AH.
+>
+> A country probe settled it: Air Algérie flies Istanbul **four times a day in
+> each direction** at 3h30/3h35, against Turkish's own 3h45/3h50 on the same
+> pair, plus `IST-CZL` at 3h00.
+>
+> So: **read the host, never the flight number.** The exclusions that survive are
+> the ones where the host is another airline (`ALG-DOH`, host `QR`) or where no
+> Air Algérie leg appears at all (`ALG-JED`, `ALG-AMM`, `ALG-FCO`). The lesson
+> that a carrier code does not prove operation still stands; what changed is
+> which field answers the question.
+
 This retro-justifies the caution in section 8: reading a carrier code off a leg
 settles the *marketing* carrier, which is what a booking system knows. It is
 strong evidence but not proof of operation, and the codeshare field is the thing
@@ -410,6 +431,7 @@ enough error rate that no long-haul `listed` route should reach the map unscreen
 | `ALG-DLA` | `AH 5350`, 5h05, no codeshare object | **verified**, ratio 0.99 |
 | `ALG-DOH` | `QR 1380` on Qatar metal, AH as marketing carrier | **codeshare, excluded** |
 | `ALG-JED` | `SV 0340` / `SV 0342`, Saudia, no AH leg at all | **flown by another airline, excluded** |
+| `ALG-JED` **(2nd date)** | 14 Aug, independently: two flights, both Saudia, still no AH leg | exclusion **corroborated** |
 | `ALG-AMM` | `RJ 0518`, Royal Jordanian, no AH leg at all | **flown by another airline, excluded** |
 | `ALG-ABJ`, `ALG-BEY`, `ALG-DXB`, `ALG-NBJ`, `ALG-ABV`, `ALG-BKO`, `ALG-NIM` | empty | unresolved, stay `listed` |
 
@@ -430,3 +452,301 @@ risk-free, though: `ALG-CDG` returned an Air France leg codeshared with AH
 alongside Air Algérie's own metal, so European pairs carry codeshares too. The
 difference is that there the codeshare sits beside a genuine AH flight rather
 than replacing it.
+
+## 19. Wikipedia under-reports Air Algérie on North Africa (found 2026-07-28)
+
+Two independent spot-checks against a live booking screen, two misses, and both
+the same shape.
+
+| Pair | What Wikipedia's Algiers table lists | What actually flies |
+| --- | --- | --- |
+| `ALG-TUN` | Nouvelair, Tunisair | **`AH 4002` out, `AH 4001`/`AH 4003` back**, no codeshare |
+| `ALG-CAI` | EgyptAir | **`AH 4039`** CAI-ALG, no codeshare, plus the outbound on a booking screen |
+
+Neither route was in the dataset at all. Both are Air Algérie's own metal, in
+both directions, on a `AH 40xx` block that looks like the North Africa network.
+
+**So the `listed` tier is a floor, not a ceiling.** The sweep finds routes
+Wikipedia records; it cannot find routes Wikipedia omits, and it omits Air
+Algérie on at least two neighbouring-country pairs where a competitor is listed
+instead. Any claim that the collection is "most of the network" has to be read
+against that, and the honest framing is that the count is a lower bound.
+
+Worth checking next, on the same suspicion: Casablanca, Tripoli, Nouakchott and
+the other Maghreb and Sahel pairs, where the same competitor-listed-instead
+pattern is most likely.
+
+**Second bug this exposed.** `Tunis Airport` is a Wikipedia **redirect** with no
+infobox of its own, so the IATA resolver returned `None` and every Tunis row was
+dropped without a word, including the Nouvelair and Tunisair ones. The resolver
+now follows `#REDIRECT` before reading the infobox. A destination silently
+vanishing is worse than one that fails loudly, and this one vanished.
+
+## 20. Search country to country, not airport to airport (found 2026-07-28)
+
+Soar resolves a country as an origin or destination: `Algeria (any)` to
+`Qatar (any)` returns every nonstop between the two, from any Algerian airport.
+
+That is a much better screening probe than a pair query, and it was in front of me
+the whole time:
+
+- **One query replaces many.** Screening whether Air Algérie flies anywhere in a
+  country takes one call instead of one per Algerian origin. The 41 unscreened
+  `listed` routes collapse to roughly 25 country probes.
+- **It answers a stronger question.** A pair query says "not on this pair"; a
+  country query says "not from anywhere in Algeria". `ALG-DOH` came back Qatar
+  Airways only on both, but the country form rules out every other Algerian
+  origin at the same time.
+- **It cannot be defeated by picking the wrong airport.** Metro codes and
+  multi-airport cities stop mattering, which is where `PAR` versus `CDG`
+  repeatedly caused trouble.
+
+Corroborations obtained this way, both on 14 August and both independent of the
+earlier pair probes:
+
+| Probe | Result | Effect |
+| --- | --- | --- |
+| Algeria to Qatar | Two flights, **both Qatar Airways**, no Air Algérie | `ALG-DOH` exclusion **corroborated** |
+| Algiers to Saudi Arabia | Two flights, **both Saudia**, no Air Algérie | `ALG-JED` exclusion **corroborated** |
+
+Both had been excluded on a single pair probe. Section 7 says one empty result is
+weak evidence, so a second independent probe, in a form that also widens the
+question, is what makes those exclusions safe rather than presumptuous.
+
+Use the country form first when screening, and fall back to the pair form only to
+pin down which airport and which direction.
+
+## 21. The redirect fix was incomplete: a cache is state, not just a speed-up
+
+Section 19 recorded that `Tunis Airport` is a Wikipedia redirect with no infobox,
+so the IATA resolver returned `None` and every Tunis row was dropped. The
+resolver was fixed to follow `#REDIRECT`.
+
+**That fix did nothing, and the reason is worth writing down.** The resolver
+caches its answers to disk, and the cache still held the `None` values from the
+run before the fix. A cached wrong answer is indistinguishable from a cached
+right one, so the corrected code was never consulted: **49 of 109 destination
+articles were still `None`, and every route through them stayed invisible.**
+
+It surfaced because a booking screen showed Air Algérie flying `ALG-ALC` and
+`ALG-BCN`, neither of which was in the dataset, and both had been dropped exactly
+this way:
+
+```
+Alicante–Elche Airport                    -> None   (redirect, poisoned)
+Alicante–Elche Miguel Hernández Airport   -> ALC    (real article)
+Barcelona–El Prat Airport                 -> None   (redirect, poisoned)
+```
+
+Clearing the `None` entries and re-running took resolution from **60/109 to
+106/109** and the dataset from 70 routes to 89 in one step.
+
+**Rule: when a resolver is fixed, invalidate the entries it got wrong.** A cache
+that only ever adds is a cache that preserves every bug it saw. Cache negative
+results with more suspicion than positive ones, or do not cache them at all: a
+`None` here means "not found", which is exactly the answer most likely to be the
+code's fault rather than the data's.
+
+## 22. Screening results, country-form probes (2026-07-28)
+
+| Probe | Air Algérie legs seen | Effect |
+| --- | --- | --- |
+| Algeria to Spain | `ORN-ALC` x2, `ALG-ALC` x2, `ALG-BCN` | 5 legs **verified** |
+| Spain to Algeria | `ALC-ORN` x2, `ALC-ALG` x2, `BCN-ALG` | return legs **verified** |
+| United Kingdom to Algeria | `STN-ALG`, `LHR-ALG` | 2 legs **verified** |
+| Algeria to Italy | none: one flight, ITA Airways | `ALG-FCO` **excluded** |
+| Algeria to Qatar | none: both Qatar Airways | `ALG-DOH` exclusion corroborated |
+| Algiers to Saudi Arabia | none: both Saudia | `ALG-JED` exclusion corroborated |
+
+Every verified leg duration-checked between 0.94 and 1.16 against its great
+circle. Vueling flies the Spanish pairs and BA Euroflyer flies Gatwick, neither of
+which changes what Air Algérie itself operates.
+
+Rome is the third case of a route a published table lists and no probe supports,
+after Jeddah and Amman. The pattern is now clear enough to state: **a `listed`
+route to a country with a strong national carrier deserves a country-form probe
+before it is drawn.**
+
+## 23. Six empty days did not mean the route was not there
+
+The strongest case yet for section 7, and it is worth stating on its own because
+it is more extreme than anything before it.
+
+`ALG-FRA` was probed on **six consecutive days**, 3 to 8 August. Every one came
+back with zero offers and zero raw offers. Written up at the time as "unresolved,
+stays listed", which was the right call and only just.
+
+A booking screen then showed **Air Algérie flying `FRA-ALG` nonstop in 2h50**,
+ratio 1.17. The route is real, Lufthansa flies it too, and six consecutive empty
+days said nothing about any of it.
+
+Earlier evidence for this rule was a single week sweep missing a Tuesday-only
+route (section 15). This is six days of silence over a route that exists, so:
+
+- **A booking-API silence carries almost no information.** Not "weak evidence",
+  close to none. Six samples did not distinguish a real route from a nonexistent
+  one.
+- **Never convert silence into a negative**, no matter how many empty days
+  accumulate. What justifies excluding a route is a probe that returns ANOTHER
+  AIRLINE flying it, as with Jeddah, Amman, Doha and Rome, not a probe that
+  returns nothing.
+- **Direction is established per leg.** `FRA-ALG` is verified and `ALG-FRA`
+  stays `listed`, because the evidence is for one direction only. The Budapest
+  triangle is the standing reminder that the reverse does not follow.
+
+## 24. ORN-BRU, closed at last (2026-07-28)
+
+The first unresolved question on this track, open since the first session: does
+Air Algérie fly Oran to Brussels? It could not be settled because
+`brusselsairport.be` returns Access Denied to tooling and to a real browser
+alike, and the aggregators claimed TUI Fly had taken the route over.
+
+A country probe answers it, and not by finding the route:
+
+- **Belgium to Algeria returned exactly ONE flight**, `BRU-ALG` on Air Algérie,
+  2h35, ratio 1.04.
+- **Algeria to Belgium returned exactly ONE flight**, `ALG-BRU` on Air Algérie,
+  2h45, ratio 1.11.
+
+Air Algérie is the only carrier on either, so the TUI Fly claim is wrong for
+Brussels-Algiers. And **no Belgium-Oran flight exists on any carrier**, which is
+what settles the original question. `ORN-BRU` stays out, now on positive evidence
+about the whole country rather than on absence.
+
+This is the difference the country form makes, as section 20 argued: an
+airport-pair probe returning nothing for `ORN-BRU` would have been another
+uninformative silence. A country probe returning a complete list that does not
+contain Oran is a fact about the network.
+
+`ALG-BRU` is verified in both directions and enters the dataset for the first
+time. Brussels was never a doubtful route; the doubt was always about which
+Algerian city.
+
+## 25. Three kinds of absence, and only two are negatives
+
+Country probes for Morocco, Libya, Mali and Niger returned nothing, and the four
+do not mean the same thing. This section exists because treating them alike would
+be wrong in both directions.
+
+**1. Another airline flies it. A negative.**
+`ALG-DOH` (Qatar), `ALG-JED` (Saudia), `ALG-AMM` (Royal Jordanian), `ALG-FCO`
+(ITA). The probe returns a complete answer that simply does not include Air
+Algérie. Excluded, and the exclusion is evidence-backed.
+
+**2. The route cannot exist, for a reason outside aviation. A negative.**
+**Morocco.** There are no direct Algeria-Morocco flights, and the cause is the
+closure of Algerian airspace to Moroccan aircraft in September 2021, not a gap in
+anyone's data. No Morocco pair is in the dataset and none should be added; if one
+ever appears in a published table, that table is out of date rather than ahead of
+us. This is the only structural negative on the track, and it needs a citable
+source attached before it is ever used to remove something.
+
+**3. Nothing came back, and nothing is known. NOT a negative.**
+**Libya, Mali, Niger.** Wikipedia lists Air Algérie on Bamako and Niamey, with
+citations, and the probes return nothing at all. Per section 23 that says almost
+nothing: six empty days did not disprove Frankfurt, and `ALG-YUL` returned zero
+offers on a route flying twice daily. These are also exactly the markets where a
+booking API's coverage is thinnest, the same reason the `ALG-HRG` charter was
+invisible.
+
+`ALG-BKO` and `ALG-NIM` therefore stay **`listed`**, which is what the tier is
+for: a published source says the carrier serves the pair, and nothing has
+confirmed or refuted it. Recording them as negatives would be inventing a fact;
+promoting them would be inventing a different one.
+
+The distinction in one line: **a negative needs a positive finding behind it**,
+either another airline flying the route or a reason it cannot be flown. Silence
+is not a finding.
+
+## 26. The Budapest triangle, confirmed on the right days (2026-07-28)
+
+The most contested finding on this track, and now the best supported.
+
+It entered the dataset wrongly, was thrown out entirely, then was reconstructed
+from a trade schedule filing as a two-rotation triangle: Wednesday flies
+`ALG-VIE-BUD-ALG`, Saturday flies `ALG-BUD-VIE-ALG`. That is why nonstop
+`ALG-BUD` exists **only on Saturdays** and nonstop `BUD-ALG` **only on
+Wednesdays**, and it is the reason every route in this dataset is directional
+rather than pair-shaped.
+
+All of that was inference from a filing. Two independent booking-screen
+observations now confirm it:
+
+| Observation | Predicted by the triangle | Match |
+| --- | --- | --- |
+| `ALG-VIE` nonstop, 2h45 | The Wednesday rotation's first leg must exist | yes |
+| `BUD-ALG` nonstop on **Wed 16 Sep 2026**, 3h00 | Wednesday-only, and 180 min was the recorded duration | yes, on both day and duration |
+
+The duration figure had been carried since the first probe and was never
+re-measured; it came back identical. And the day is the sharp test: a
+Saturday sighting of `BUD-ALG` would have broken the model outright.
+
+Worth stating plainly because it cuts against the caution elsewhere in this file:
+**a schedule filing, read carefully, predicted observations months ahead of
+seeing them.** Trade filings are `Reported` tier rather than `Official`, but they
+model the network better than any booking probe, which only ever answers about
+one day at a time.
+
+## 27. The duration heuristic is biased short-haul, and that is fine
+
+`great_circle_km / 800 kph + 30 min` was chosen to catch a technical stop
+masquerading as a nonstop, which it does: the Budapest trap showed up at 1.72x.
+Worth writing down what it does NOT do, now that the network reaches Kuala
+Lumpur.
+
+**Long-haul legs score below 1.0 by construction.** The fixed 30-minute allowance
+is a large share of a 90-minute hop and a rounding error on a 12-hour one, and
+real cruise exceeds 800 kph. So:
+
+| Leg | km | Observed | Ratio | Implied ground speed |
+| --- | --- | --- | --- | --- |
+| `ALG-KUL` | 10,580 | 12h35 | **0.92** | 841 kph |
+| `ALG-JNB` | 7,463 | 9h20 | 0.95 | 800 kph |
+| `ALG-CAN` | 10,106 | 12h50 | 0.98 | 787 kph |
+| `MRS-CZL` | 805 | 1h30 | 1.00 | 537 kph |
+| `MRS-ALG` | 768 | 1h40 | 1.14 | 461 kph |
+
+A short hop spends proportionally far longer climbing and descending, so its
+implied ground speed looks slow and its ratio runs high; a long haul is almost
+all cruise. Nothing here is wrong, and no threshold needs adjusting: the test is
+one-sided, and only a ratio far ABOVE 1.35 means anything.
+
+The practical rule: **do not read a low ratio as suspicious.** A 12-hour flight
+scoring 0.92 is a 12-hour flight, not a data error. And do not tighten the
+threshold to catch short-haul anomalies, because `MRS-ALG` at 1.14 is a perfectly
+ordinary 768 km flight.
+
+## 28. Probed and not found: an audit trail, not a downgrade
+
+A growing set of `listed` routes have now had a country-form probe run against
+them and returned no Air Algérie leg, without any other airline appearing either.
+Under section 25 that is category 3, so they stay `listed`. This section records
+which, because "nobody has checked" and "checked twice, found nothing" are
+different states even when they carry the same tier.
+
+Probed, nothing found, still `listed`:
+
+| Route | Probe |
+| --- | --- |
+| `ALG-BEY` | Lebanon, and an earlier pair probe |
+| `ALG-DXB` | UAE, and two earlier pair probes |
+| `ALG-OPO` | Portugal |
+| `CZL-MED` | Medina |
+| `ALG-ABJ`, `ALG-ABV`, `ALG-BKO`, `ALG-NIM`, `ALG-NBJ` | pair probes |
+| `AAE-IST` | pair probe |
+| Switzerland (`GVA`, `ZRH`) | country probe; nothing in the dataset either way |
+| Côte d'Ivoire (`ALG-ABJ`) | country probe, plus an earlier pair probe |
+
+**Why none of these is demoted.** Two routes on this exact list turned out to be
+real: `ALG-FRA` survived six consecutive empty days and `ALG-YUL` returned nothing
+on a route flying twice daily, both later confirmed inbound. A booking API not
+selling a seat today is not the airline not flying the route, and the Hurghada
+charter showed the same thing from the other end.
+
+**Why it is still worth recording.** Effort spent is information. Without this, a
+later session re-probes the same pairs and re-learns the same nothing. And if one
+of these ever DOES surface, the fact that it was invisible across several probes
+is itself worth knowing about the source.
+
+The honest reading of a route on this list: a published table says Air Algérie
+serves it, no probe has yet seen it, and neither statement outranks the other.
