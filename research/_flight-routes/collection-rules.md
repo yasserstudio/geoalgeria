@@ -363,6 +363,27 @@ Algérie flies this", and a ticket is not a flight. Every leg therefore needs it
 either dropped or recorded with the operating carrier rather than the marketing
 one.
 
+> **CORRECTION, 2026-07-28. `host_iata` is the OPERATING carrier**, and
+> `partner_iatas` are the airlines selling seats on it. This section originally
+> read it the other way round and excluded two real Air Algérie routes.
+>
+> `CZL-IST` returns `carrier_iata: "TK"`, `flight_number: "8666"`, with
+> `codeshare: {host_iata: "AH", partner_iatas: ["TK"]}`. That is **Turkish
+> marketing an Air Algérie flight**, not Air Algérie selling a Turkish one, and
+> TK's 8xxx range is exactly where marketing numbers live. `ALG-IST` likewise:
+> `AH 3014` carries no codeshare object at all, and `AH 3016`/`3018` are hosted
+> by AH.
+>
+> A country probe settled it: Air Algérie flies Istanbul **four times a day in
+> each direction** at 3h30/3h35, against Turkish's own 3h45/3h50 on the same
+> pair, plus `IST-CZL` at 3h00.
+>
+> So: **read the host, never the flight number.** The exclusions that survive are
+> the ones where the host is another airline (`ALG-DOH`, host `QR`) or where no
+> Air Algérie leg appears at all (`ALG-JED`, `ALG-AMM`, `ALG-FCO`). The lesson
+> that a carrier code does not prove operation still stands; what changed is
+> which field answers the question.
+
 This retro-justifies the caution in section 8: reading a carrier code off a leg
 settles the *marketing* carrier, which is what a booking system knows. It is
 strong evidence but not proof of operation, and the codeshare field is the thing

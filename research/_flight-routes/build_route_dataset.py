@@ -159,18 +159,31 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
     {"from": "CDG", "to": "ORN", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Istanbul, on Air Algérie's own metal: four flights each way daily at
+    # 3h30/3h35, against Turkish's own 3h45/3h50 on the same pair, plus IST-CZL
+    # at 3h00. Previously excluded here by misreading codeshare.host_iata.
+    {"from": "ALG", "to": "IST", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "IST", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "IST", "to": "CZL", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
-# Pairs where a booking probe returned an AH flight number that is a CODESHARE on
-# another carrier's aircraft. Air Algérie sells these; it does not fly them, so
-# they must not be drawn. See collection-rules.md section 16.
-# Screened one by one on 2026-08-04, and the three Istanbul pairs gave three
-# different answers, which is the whole argument for checking rather than
-# assuming: ALG-IST returns AH numbers explicitly flagged as codeshares with TK;
-# CZL-IST returns TK 8666 on Turkish metal with AH as the marketing carrier;
-# ORN-IST returns AH 3024 with NO codeshare object at all, so that one is Air
-# Algérie's own and is promoted to verified above (ratio 1.02).
-CODESHARE_ONLY = {("ALG", "IST"), ("CZL", "IST"), ("ALG", "DOH")}
+# Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
+# only selling seats on it. See collection-rules.md section 16.
+#
+# `codeshare.host_iata` is the OPERATING carrier; `partner_iatas` are the airlines
+# marketing it. Read the host, never the flight number. ALG-IST and CZL-IST were
+# excluded here on the opposite reading and were wrong: CZL-IST comes back as
+# `TK 8666` with `host: "AH"`, which is Turkish marketing an Air Algérie flight,
+# and TK's 8xxx range is exactly where marketing numbers live. A country probe
+# then showed Air Algérie flying Istanbul four times a day each way. Both are
+# restored to verified above.
+#
+# What survives is the case the rule was actually for: ALG-DOH returns QR 1380
+# with `host: "QR"`, so Qatar flies it and Air Algérie merely sells it.
+CODESHARE_ONLY = {("ALG", "DOH")}
 
 # Screened and found to be flown by ANOTHER airline entirely, with no Air Algérie
 # leg at all, not even a codeshare. A published table listing Air Algérie on these

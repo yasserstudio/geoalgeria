@@ -305,6 +305,18 @@
       "great_circle_km": 3058
     },
     {
+      "id": "alg-ist",
+      "from": "ALG",
+      "to": "IST",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2255
+    },
+    {
       "id": "alg-jnb",
       "from": "ALG",
       "to": "JNB",
@@ -831,6 +843,20 @@
       "great_circle_km": 1412
     },
     {
+      "id": "czl-ist",
+      "from": "CZL",
+      "to": "IST",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://en.wikipedia.org/wiki/Mohamed_Boudiaf_International_Airport",
+      "source_is_the_table": true,
+      "listed_at": "Mohamed Boudiaf International Airport",
+      "great_circle_km": 1989
+    },
+    {
       "id": "czl-jed",
       "from": "CZL",
       "to": "JED",
@@ -1035,6 +1061,30 @@
       "source_is_the_table": true,
       "listed_at": "Jijel Ferhat Abbas Airport",
       "great_circle_km": 741
+    },
+    {
+      "id": "ist-alg",
+      "from": "IST",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 2255
+    },
+    {
+      "id": "ist-czl",
+      "from": "IST",
+      "to": "CZL",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1989
     },
     {
       "id": "lhr-alg",
