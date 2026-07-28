@@ -195,6 +195,19 @@
     "great_circle_km": 2909
   },
   {
+    "id": "alg-bru",
+    "from": "ALG",
+    "to": "BRU",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 1582
+  },
+  {
     "id": "alg-bud",
     "from": "ALG",
     "to": "BUD",
@@ -676,6 +689,19 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 962
+  },
+  {
+    "id": "bru-alg",
+    "from": "BRU",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+    "great_circle_km": 1582
   },
   {
     "id": "bsk-lys",

@@ -168,6 +168,14 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
     {"from": "IST", "to": "CZL", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Brussels, both directions, and Air Algérie is the ONLY carrier on either.
+    # This closes the oldest open question on the track: it was ORN-BRU that
+    # could not be settled because brusselsairport.be blocks tooling, and the
+    # aggregators claimed TUI Fly had taken the route over.
+    {"from": "ALG", "to": "BRU", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    {"from": "BRU", "to": "ALG", "status": "active",
+     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie

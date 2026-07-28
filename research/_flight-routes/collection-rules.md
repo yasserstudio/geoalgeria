@@ -593,3 +593,31 @@ route (section 15). This is six days of silence over a route that exists, so:
 - **Direction is established per leg.** `FRA-ALG` is verified and `ALG-FRA`
   stays `listed`, because the evidence is for one direction only. The Budapest
   triangle is the standing reminder that the reverse does not follow.
+
+## 24. ORN-BRU, closed at last (2026-07-28)
+
+The first unresolved question on this track, open since the first session: does
+Air Algérie fly Oran to Brussels? It could not be settled because
+`brusselsairport.be` returns Access Denied to tooling and to a real browser
+alike, and the aggregators claimed TUI Fly had taken the route over.
+
+A country probe answers it, and not by finding the route:
+
+- **Belgium to Algeria returned exactly ONE flight**, `BRU-ALG` on Air Algérie,
+  2h35, ratio 1.04.
+- **Algeria to Belgium returned exactly ONE flight**, `ALG-BRU` on Air Algérie,
+  2h45, ratio 1.11.
+
+Air Algérie is the only carrier on either, so the TUI Fly claim is wrong for
+Brussels-Algiers. And **no Belgium-Oran flight exists on any carrier**, which is
+what settles the original question. `ORN-BRU` stays out, now on positive evidence
+about the whole country rather than on absence.
+
+This is the difference the country form makes, as section 20 argued: an
+airport-pair probe returning nothing for `ORN-BRU` would have been another
+uninformative silence. A country probe returning a complete list that does not
+contain Oran is a fact about the network.
+
+`ALG-BRU` is verified in both directions and enters the dataset for the first
+time. Brussels was never a doubtful route; the doubt was always about which
+Algerian city.

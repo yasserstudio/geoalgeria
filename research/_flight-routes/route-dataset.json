@@ -203,6 +203,18 @@
       "great_circle_km": 2909
     },
     {
+      "id": "alg-bru",
+      "from": "ALG",
+      "to": "BRU",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1582
+    },
+    {
       "id": "alg-bud",
       "from": "ALG",
       "to": "BUD",
@@ -695,6 +707,18 @@
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 962
+    },
+    {
+      "id": "bru-alg",
+      "from": "BRU",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
+      "great_circle_km": 1582
     },
     {
       "id": "bsk-lys",
@@ -1644,6 +1668,13 @@
       "lat": 44.82865,
       "lng": -0.715356,
       "country": "FR"
+    },
+    {
+      "iata": "BRU",
+      "name": "Brussels Airport",
+      "lat": 50.901402,
+      "lng": 4.48444,
+      "country": "BE"
     },
     {
       "iata": "BSK",
