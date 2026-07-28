@@ -1291,6 +1291,18 @@
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 625
+    },
+    {
+      "id": "yul-alg",
+      "from": "YUL",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/",
+      "great_circle_km": 6275
     }
   ],
   "planned": [
@@ -1729,6 +1741,13 @@
       "lat": 39.489162,
       "lng": -0.480961,
       "country": "ES"
+    },
+    {
+      "iata": "YUL",
+      "name": "Montreal / Pierre Elliott Trudeau International Airport",
+      "lat": 45.467837,
+      "lng": -73.742294,
+      "country": "CA"
     }
   ]
 }

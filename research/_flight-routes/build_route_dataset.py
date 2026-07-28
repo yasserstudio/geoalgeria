@@ -117,6 +117,11 @@ VERIFIED = [
     # inferred from the opposite one.
     {"from": "FRA", "to": "ALG", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Montreal inbound, twice daily at 7h50. The only transatlantic leg in the
+    # network, and another route an empty probe said nothing about: ALG-YUL came
+    # back with zero offers earlier the same day.
+    {"from": "YUL", "to": "ALG", "status": "active",
+     "source": "https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/"},
 ]
 
 # Pairs where a booking probe returned an AH flight number that is a CODESHARE on
