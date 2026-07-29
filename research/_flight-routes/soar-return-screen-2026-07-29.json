@@ -1,0 +1,48 @@
+{
+  "screened_at": "2026-07-29",
+  "method": "soar_get_live_flight_status (in-session MCP), flight-number candidates derived from the recorded leg's number +/-1. The raw mcp.flysoar.ai endpoint exposes only search/book, and the service 502'd mid-screen, so only the 5 numbered verified legs were probed, not the full 70.",
+  "note": "HYPOTHESES ONLY. Soar/airlabs is never a source_url. A found flight is a lead to confirm against a citable source; a miss is not a negative (a numbered candidate can be wrong without the route being absent).",
+  "results": [
+    {
+      "dep": "ORY",
+      "arr": "BLJ",
+      "candidate_for": "return of blj-cdg (AH1120)",
+      "flight_iata": "AH1121",
+      "status": "en-route at screen time",
+      "scheduled": "14:55 -> 16:10 local",
+      "finding": "STRONG: the Paris->Batna return operates from ORY, not CDG. The silent cdg-blj direction may genuinely not exist; ory-blj is a candidate NEW route (airport-level split, the exact reason endpoints are airport-level)."
+    },
+    {
+      "dep": "IST",
+      "arr": "ORN",
+      "candidate_for": "return of orn-ist (AH3024)",
+      "flight_iata": "AH3025",
+      "status": "en-route at screen time",
+      "scheduled": "17:20 -> 19:55 local",
+      "finding": "STRONG: the silent IST->ORN return operates."
+    },
+    {
+      "dep": "DLA",
+      "arr": "ALG",
+      "candidate_for": "return of alg-dla (AH5350)",
+      "flight_iata": "AH5351",
+      "status": "no live match",
+      "finding": "miss, not a negative"
+    },
+    {
+      "dep": "LYS",
+      "arr": "TLM",
+      "candidate_for": "return of tlm-lys (AH1098)",
+      "flight_iata": "AH1099",
+      "status": "not probed (service outage)"
+    },
+    {
+      "dep": "MRS",
+      "arr": "TLM",
+      "candidate_for": "return of tlm-mrs (AH1092)",
+      "flight_iata": "AH1093",
+      "status": "not probed (service outage)"
+    }
+  ],
+  "remaining": "13 verified-outbound returns have no recorded flight number to derive candidates from; the 52 listed-pair returns are unscreened. Rerun screen_returns_soar.py when the service recovers, or probe via the in-session tool."
+}
