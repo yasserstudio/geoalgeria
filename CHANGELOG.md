@@ -8,6 +8,18 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 2.2.0 – 2026-07-29 – The commune table is complete
+
+- **`geoalgeria` 1.2.0**: 1,528 to 1,541 communes, Algeria's official count.
+  The 13 that were missing are the name-twin communes of the reform wilayas,
+  each sharing a name with a commune elsewhere, which is how they were lost.
+  All Wikidata-sourced, coordinate-verified, and field-identical to the rows
+  the site serves. Dairas 555 to 556 (Zmalet El Emir Abdelkader, w64). Nulls
+  where no citable value exists rather than plausible fills.
+- **`@geoalgeria/aviation` 2.4.0**: first product of the return-leg
+  screen-then-confirm pipeline: LYS to TLM (AH 1099) verified on Lyon
+  airport's own page, routes 123 (59 verified), `routes_as_of` 2026-07-29.
+
 ## 2.1.0 – 2026-07-29 – Trilingual route endpoints, dated route network
 
 - **`@geoalgeria/aviation` 2.3.0**: every route endpoint (both ends of every
