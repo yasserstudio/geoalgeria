@@ -4424,6 +4424,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Ain Turk",
+        "name_ar": "عين الترك",
+        "wilaya_code": 10,
+        "postal_code": "10120",
+        "daira": "Bouira"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.824722,
+          36.393333
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Ain-Bessem",
         "name_ar": "عين بسام",
         "wilaya_code": 10,
@@ -7971,6 +7988,23 @@
         "coordinates": [
           4.3438623,
           36.637553
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Souk-El-Tenine",
+        "name_ar": "سوق الاثنين",
+        "wilaya_code": 15,
+        "postal_code": "15071",
+        "daira": "Mâatkas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.008551,
+          36.594099
         ]
       }
     },
@@ -12839,6 +12873,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "El Eulma",
+        "name_ar": "العلمة",
+        "wilaya_code": 23,
+        "postal_code": null,
+        "daira": "Aïn Berda"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.46163,
+          36.73875
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "El Hadjar",
         "name_ar": "الحجار",
         "wilaya_code": 23,
@@ -13530,6 +13581,23 @@
         "coordinates": [
           6.50147,
           36.2675
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ben Badis",
+        "name_ar": "ابن باديس",
+        "wilaya_code": 25,
+        "postal_code": "25102",
+        "daira": "Aïn Abid"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.83195,
+          36.3173
         ]
       }
     },
@@ -16318,6 +16386,23 @@
         "coordinates": [
           -0.2816754,
           35.816667
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Ain Kerma",
+        "name_ar": "عين الكرمة",
+        "wilaya_code": 31,
+        "postal_code": null,
+        "daira": "Boutlelis"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.975702,
+          35.648979
         ]
       }
     },
@@ -22223,6 +22308,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Emir Abdelkader",
+        "name_ar": "الأمير عبد القادر",
+        "wilaya_code": 46,
+        "postal_code": null,
+        "daira": "Beni Saf"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.403,
+          35.224
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Hammam Bou Hadjar",
         "name_ar": "حمام بوحجر",
         "wilaya_code": 46,
@@ -23498,6 +23600,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Chaiba",
+        "name_ar": "الشعيبة",
+        "wilaya_code": 51,
+        "postal_code": null,
+        "daira": "Ouled Djellal"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.92218,
+          34.8408
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Doucen",
         "name_ar": "الدوسن",
         "wilaya_code": 51,
@@ -23917,6 +24036,23 @@
         "coordinates": [
           6.050833333,
           33.10527
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Sidi Slimane",
+        "name_ar": "سيدي سليمان",
+        "wilaya_code": 55,
+        "postal_code": "55008",
+        "daira": "Megarine"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.09254,
+          33.28886
         ]
       }
     },
@@ -24790,6 +24926,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Bougara",
+        "name_ar": "بوقرة",
+        "wilaya_code": 64,
+        "postal_code": "14018",
+        "daira": "Zmalet El Emir Abdelkader"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.967282,
+          35.553353
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Hamadia",
         "name_ar": "حمادية",
         "wilaya_code": 64,
@@ -25056,6 +25209,23 @@
         "coordinates": [
           3.87083333,
           34.354444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Deldoul",
+        "name_ar": "دلدول",
+        "wilaya_code": 66,
+        "postal_code": "17415",
+        "daira": "Messaad"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.25311,
+          34.20519
         ]
       }
     },
@@ -25742,6 +25912,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Menaa",
+        "name_ar": "مناعة",
+        "wilaya_code": 68,
+        "postal_code": "28016",
+        "daira": "Medjedel"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.694444,
+          35.144444
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "Mohamed Boudiaf",
         "name_ar": "محمد بوضياف",
         "wilaya_code": 68,
@@ -25804,6 +25991,40 @@
         "coordinates": [
           5.3360215,
           35.0350816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Sidi Ameur",
+        "name_ar": "سيدي عامر",
+        "wilaya_code": 68,
+        "postal_code": "28035",
+        "daira": "Sidi Ameur"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.9,
+          35.367
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name_fr": "Sidi M'hamed",
+        "name_ar": "سيدي محمد",
+        "wilaya_code": 68,
+        "postal_code": null,
+        "daira": "Aïn El Melh"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.285833,
+          34.735833
         ]
       }
     },

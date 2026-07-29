@@ -58,8 +58,8 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | | Count | |
 |---|---|---|
 | **Wilayas** | 69 | provinces (2019 + 2026 reforms) |
-| **Dairas** | 555 | districts, as first-class entities |
-| **Communes** | 1,528 | bilingual FR/AR, postal codes, coordinates |
+| **Dairas** | 556 | districts, as first-class entities |
+| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates |
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,026 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -112,7 +112,7 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 ## Who it's for
 
 - **E-commerce / COD**: wilaya → daira → commune address cascades, postal-code validation, and shipping-zone config that matches what carriers actually use.
-- **Maps & GIS**: drop-in GeoJSON with 1,528 commune features, modeled correctly through both reforms.
+- **Maps & GIS**: drop-in GeoJSON with 1,541 commune features, modeled correctly through both reforms.
 - **Research, open data & civic projects**: clean, structured, sourced, and versioned reference data instead of PDFs.
 - **Any project using Algerian data**: one install, types included.
 

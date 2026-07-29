@@ -63,17 +63,6 @@ reads as further along than it is.
 
 ## Core dataset (geoalgeria)
 
-- [ ] **The package ships 1,528 of Algeria's 1,541 communes.** The 13 absent
-  ones each share a name with a commune elsewhere in the country (their
-  wilayas span the eras: 64/66/68 are 2026 wilayas, 51/55 are 2019, and 10,
-  15, 23, 25, 31, 46 are unchanged pre-reform wilayas); sourced
-  records with Wikidata QIDs exist from the 2026-07-29 reconciliation (the app
-  repo's algeria.json rows were repaired from them; this package still needs
-  the additions plus a version bump and README count updates in all locales).
-  Open sub-questions: Menaa's wilaya assignment (Medjedel daira's transfer to
-  wilaya 68 is unconfirmed against the decree) and 5 missing postal codes.
-  _(logged 2026-07-29)_
-
 - [ ] **`code_commune` duplicates are ingestion corruption, not a scheme.**
   34 duplicated code groups (79 rows); in 33 of them every colliding row also
   shares one identical postal_code, the signature of a forward-fill bug in the
@@ -99,6 +88,22 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **The core package now ships all 1,541 communes** (was 1,528). The 13
+  name-twin communes of the reform wilayas were added from the sourced records
+  in `research/_communes-reconcile/communes-13-records.json`, field-identical to
+  the app repo's repaired `algeria.json` rows, into every representation the
+  package ships (three split files, `algeria.json`, CSV, GeoJSON, both SQL
+  dumps, the e-commerce mirror); `dairas.json` gained the one daira the set
+  needed, Zmalet El Emir Abdelkader (w64), taking it to 556 rows. Closed
+  2026-07-29. Still open, deliberately: the `code_commune` forward-fill
+  corruption and the 4 coordinate disagreements (both below); Bougara's postal
+  code 14018 keeps the pre-reform Tiaret (14) prefix and one aggregator claims
+  14190 instead, so the w14-prefixed column stays unadjudicated; and Menaa
+  ships matching the app, under wilaya 68 with daira Medjedel, on the strength
+  of `wilayas.json`'s decree-derived commune list for Bou Saâda plus a point
+  inside the w68 polygon, but the transfer itself is still unconfirmed against
+  the decree text, as the dossier records.
 
 - **Foreign airport names, in every language**: shipped in the pending 2.3.0.
   Every route endpoint carries `name_en` / `name_ar` from Wikidata (IATA-matched,
