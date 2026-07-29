@@ -8,6 +8,24 @@ Bumps: **major** = breaking change to the project's shape (a package removed/ren
 schema break) · **minor** = a new dataset/package or a substantial data expansion ·
 **patch** = corrections and small refreshes.
 
+## 2.1.0 – 2026-07-29 – Trilingual route endpoints, dated route network
+
+- **`@geoalgeria/aviation` 2.3.0**: every route endpoint (both ends of every
+  arc, foreign airports included) now carries `name` (French), `name_en` and
+  `name_ar`, matched on Wikidata by IATA code and coordinate-checked; and
+  `metadata.routes_as_of` stamps the date the network was last checked against
+  schedules, so the seasonal route network reads as a dated snapshot rather
+  than an evergreen fact. Migration note: the foreign endpoints' `name` field
+  flips from mislabelled OurAirports English to the Wikidata French label.
+- **Commune reconciliation dossier** (`research/_communes-reconcile/`): the
+  core package ships 1,528 of Algeria's 1,541 communes; the 13 missing ones
+  are name-twins of communes elsewhere, and sourced records (Wikidata QIDs,
+  coordinate-verified) now exist for all 13. Their addition to the core
+  package, plus the diagnosed `code_commune` forward-fill corruption, are
+  tracked in [ROADMAP.md](ROADMAP.md).
+- Root `package.json` version realigned with this changelog (it had stayed at
+  1.8.0 through v2.0.0).
+
 ## 2.0.0 – 2026-07-21 – Data v2 (breaking schema overhaul)
 
 Unifies every sector package onto one record contract via a new
