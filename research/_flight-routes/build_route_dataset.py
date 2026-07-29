@@ -38,7 +38,7 @@ DATA = os.path.join(HERE, "..", "..")
 # dataset, so the package carries this as a validity stamp (`routes_as_of` in
 # metadata.json) rather than reading as evergreen. Bump it only after a real
 # collection/verification pass (see verification-YYYY-MM-DD.md).
-AS_OF = "2026-07-27"
+AS_OF = "2026-07-29"
 
 # Legs walked end to end: operator confirmed as operating, direction recorded,
 # duration checked. Flight numbers are the operating carrier's own, and none of
@@ -49,6 +49,14 @@ VERIFIED = [
     {"from": "TLS", "to": "CZL", "flight": "AH 1053", "status": "active", "days": ["tue"],
      "source": "https://www.toulouse.aeroport.fr/vols-et-destinations/constantine"},
     {"from": "TLM", "to": "LYS", "flight": "AH 1098", "status": "active", "days": ["wed"],
+     "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"},
+    # The return of the leg above, from the same page: Lyon airport's own Air
+    # Algerie page lists Tlemcen among the cities AH serves FROM Lyon (2h10
+    # flight time), which is the departure direction. Flight number and times
+    # from the 2026-07-29 schedule check (AH1099, 17:30->18:40, a 2h10 block
+    # across the one-hour timezone step, matching the page's stated duration
+    # exactly). No day-of-week is published on the page, so days stays null.
+    {"from": "LYS", "to": "TLM", "flight": "AH 1099", "status": "active",
      "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie"},
     {"from": "ORN", "to": "ETZ", "status": "seasonal",
      "source": "https://www.lorraineaeroport.com/vols-destinations/oran/"},

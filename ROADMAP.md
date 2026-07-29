@@ -31,12 +31,29 @@ reads as further along than it is.
   scheduled block times collected per route from a citable source.
   _(logged 2026-07-28)_
 
-- [ ] **64 routes are `listed` rather than `verified`,** and some pairs are
-  one-directional (an outbound leg with no recorded return). `listed` means a
-  published table names the carrier serving the pair without confirming Air
-  Algérie operates it. Open-ended collection work with no natural finish line;
-  better run as background than as a track.
-  _(logged 2026-07-28)_
+- [ ] **64 routes are `listed` rather than `verified`,** and 69 pairs are
+  one-directional (an outbound leg with no recorded return; was 70 before the
+  LYS -> TLM return verified on 2026-07-29). `listed` means a published table
+  names the carrier serving the pair without confirming Air Algérie operates
+  it. The screen + confirm pipeline exists now
+  (`research/_flight-routes/screen_returns_soar.py`, hypotheses only, then
+  citable confirmation); open-ended collection, better run as background.
+  _(logged 2026-07-28, updated 2026-07-29)_
+
+- [ ] **Disputed: `blj-cdg` may actually serve Orly.** The verified record
+  cites aeroroutes' homepage (which names nothing by itself), and 2026-07-29
+  live operations showed AH1120 landing at ORY and AH1121 flying ORY -> BLJ.
+  parisaeroport.fr sits behind a bot-check that blocks automated fetches; a
+  human browser session on its Batna flight search settles it in a minute. If
+  Orly confirms: correct blj-cdg to blj-ory, add ory-blj, and replace the
+  citation with the page that names the airport. Detail in
+  `research/_flight-routes/verification-2026-07-29.md`.
+  _(logged 2026-07-29)_
+
+- [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
+  en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
+  has no article). One departures-board row upgrades it.
+  _(logged 2026-07-29)_
 
 - [ ] **Carriers beyond Air Algérie.** v1 is deliberately one operator, which the
   app's title and copy now have to caveat, since other carriers do fly nonstop

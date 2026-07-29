@@ -68,7 +68,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **شبكة موبيليس** | 12,345 | 165 وكالة + 12,180 نقطة بيع. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **تغطية 5G** | 2,798 | مواقع 5G لجيزي + موبيليس + أوريدو. [`@geoalgeria/telecom`](packages/telecom) |
 | **المطارات المدنية** | 36 | ANAC + OurAirports: أسماء، رموز ICAO + IATA، معلومات اتصال، إحداثيات. [`@geoalgeria/aviation`](packages/aviation) |
-| **الخطوط الجوية المباشرة** | 122 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات ومصدر. [`@geoalgeria/aviation`](packages/aviation) |
+| **الخطوط الجوية المباشرة** | 123 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات ومصدر. [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات. [`@geoalgeria/banques`](packages/banques) |
 | **شركات التوصيل** | 411 | 16 ناقلًا + 411 نقطة استلام في 61 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 58 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/jeunesse`](packages/jeunesse) |
