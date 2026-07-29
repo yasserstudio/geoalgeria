@@ -66,7 +66,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Réseau Mobilis** | 12 345 | 165 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **Couverture 5G** | 2 798 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
 | **Aéroports civils** | 36 | ANAC + OurAirports : noms, codes OACI + IATA, contacts, coordonnées. [`@geoalgeria/aviation`](packages/aviation) |
-| **Liaisons directes** | 122 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une source. [`@geoalgeria/aviation`](packages/aviation) |
+| **Liaisons directes** | 123 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une source. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées. [`@geoalgeria/banques`](packages/banques) |
 | **Transporteurs de livraison** | 411 | 16 transporteurs + 411 bureaux de retrait géocodés dans 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **Établissements de jeunesse** | 2 334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, centres culturels et plus dans 58 wilayas (Ministère de la Jeunesse et des Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |

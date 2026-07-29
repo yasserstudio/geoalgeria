@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-27",
+  "as_of": "2026-07-29",
   "routes": [
     {
       "id": "aae-cdg",
@@ -1202,6 +1202,18 @@
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 1222
+    },
+    {
+      "id": "lys-tlm",
+      "from": "LYS",
+      "to": "TLM",
+      "carrier": "AH",
+      "flight": "AH 1099",
+      "status": "active",
+      "days": null,
+      "evidence": "verified",
+      "source": "https://www.lyonaeroports.com/en/flight-and-destinations/airlines-tour-operators/air-algerie",
+      "great_circle_km": 1313
     },
     {
       "id": "mrs-alg",
