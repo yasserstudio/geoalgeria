@@ -472,8 +472,12 @@ async function main() {
   // array totals record_count, which counts places, and a route is a link between
   // two places rather than a place. It gets its own key in the stats block.
   let routeCount = 0;
+  let routesAsOf = null;
   try {
     routeCount = JSON.parse(readFileSync(join(DATA, "routes.json"), "utf8")).length;
+    // The validity stamp build-routes.mjs patched in: a live ANAC pull says
+    // nothing about the route network, so regenerating must not drop it.
+    routesAsOf = JSON.parse(readFileSync(join(DATA, "metadata.json"), "utf8")).routes_as_of ?? null;
   } catch {
     console.log("  (no routes.json yet — run scripts/build-routes.mjs to emit it)");
   }
@@ -489,7 +493,7 @@ async function main() {
     updated: today,
     retrieved: today,
     snapshots: { anac: map.snapshot, ourairports: oaSnapshot },
-    stats: routeCount ? { routes: routeCount } : {},
+    stats: routeCount ? { routes: routeCount, ...(routesAsOf && { routes_as_of: routesAsOf }) } : {},
   });
   const wilayas = new Set(records.map((r) => r.wilaya_code)).size;
   console.log(`\nWrote ${records.length} airports across ${wilayas} wilayas → v2 to ${DATA}.`);

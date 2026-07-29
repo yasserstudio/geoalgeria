@@ -129,6 +129,20 @@ function main() {
   // ones are not in airports.json, which is Algeria only.
   writeFileSync(join(DATA, "route-endpoints.json"), JSON.stringify(endpoints, null, 2) + "\n");
 
+  // Routes churn seasonally, so the package carries a validity stamp instead of
+  // reading as evergreen: `as_of` is the date the network was last checked
+  // against schedules, set in the research dataset by a real verification pass.
+  // Patched into metadata.json here (fetch.mjs preserves it), because the shared
+  // writer that owns metadata.json runs from a live ANAC pull this script must
+  // not trigger.
+  const asOf = JSON.parse(readFileSync(SRC, "utf-8")).as_of;
+  if (!asOf) throw new Error("route-dataset.json carries no as_of; rebuild it");
+  const metaPath = join(DATA, "metadata.json");
+  const meta = JSON.parse(readFileSync(metaPath, "utf-8"));
+  meta.routes = rows.length;
+  meta.routes_as_of = asOf;
+  writeFileSync(metaPath, JSON.stringify(meta, null, 2) + "\n");
+
   const verified = rows.filter((r) => r.evidence === "verified").length;
   console.log(
     `routes: ${rows.length} rows (${verified} verified, ` +

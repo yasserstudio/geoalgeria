@@ -51,6 +51,12 @@ const inOran = aviation.airportsByWilaya(31);     // aéroports de la wilaya 31
 Couvrant **33 wilayas**, chaque aéroport est géocodé et porte un code IATA. `wilaya_code`
 est lié au modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
+Chaque extrémité de route (les deux bouts de chaque arc, aéroports étrangers compris)
+porte un nom en trois langues : `name` (français), `name_en` et `name_ar`, appariés sur
+Wikidata par code IATA et vérifiés contre la coordonnée livrée. Les routes changent au fil
+des saisons, donc `metadata.routes_as_of` date la dernière vérification du réseau contre
+les horaires : un instantané daté, pas un fait permanent.
+
 33 des 36 viennent de la carte de l'ANAC. Les trois autres, Hassi R'Mel (`HRM`), Mécheria
 (`MZW`) et Laghouat (`LOO`), en sont absents et viennent d'OurAirports : ils portent
 `source: "ourairports"` et aucun champ de contact.

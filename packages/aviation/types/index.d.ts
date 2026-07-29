@@ -125,6 +125,10 @@ export interface Metadata {
    *  and `entities[]` on purpose: those count PLACES, and a route is a link
    *  between two places rather than a place of its own. */
   routes: number;
+  /** ISO date (YYYY-MM-DD) the route network was last checked against
+   *  schedules. Routes churn seasonally, so this is a validity stamp: treat the
+   *  network as a dated snapshot, not an evergreen fact. */
+  routes_as_of: string;
 }
 
 /** Operating state of a route. The network is described structurally, so
@@ -180,7 +184,13 @@ export interface Route {
  *  carry since that is Algeria only. */
 export interface RouteEndpoint {
   iata: string;
+  /** French display name. Algerian ends keep the aviation package's house
+   *  style; foreign ends carry the Wikidata French label. */
   name: string;
+  /** English name (Wikidata label, IATA-matched and coordinate-checked). */
+  name_en: string;
+  /** Arabic name (Wikidata label, IATA-matched and coordinate-checked). */
+  name_ar: string;
   lat: number;
   lng: number;
   /** ISO country code. "DZ" marks the Algerian end. */

@@ -33,6 +33,13 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "..", "..")
 
+# The date the network claim was last checked against schedules, NOT the date
+# this script last ran. Routes churn seasonally, unlike every other GeoAlgeria
+# dataset, so the package carries this as a validity stamp (`routes_as_of` in
+# metadata.json) rather than reading as evergreen. Bump it only after a real
+# collection/verification pass (see verification-YYYY-MM-DD.md).
+AS_OF = "2026-07-27"
+
 # Legs walked end to end: operator confirmed as operating, direction recorded,
 # duration checked. Flight numbers are the operating carrier's own, and none of
 # these came back with a codeshare object.
@@ -258,13 +265,31 @@ def main():
     foreign = json.load(open(os.path.join(HERE, "foreign-endpoints.json"), encoding="utf-8"))
     wiki = json.load(open(os.path.join(HERE, "routes-wikipedia.json"), encoding="utf-8"))
     dest_iata = json.load(open(os.path.join(HERE, "destination-iata-cache.json"), encoding="utf-8"))
+    # Per-language names from Wikidata (localize_endpoint_names.py). Every
+    # endpoint must have one: shipping a single-language name is the bug this
+    # file exists to fix, so a missing entry fails the build rather than
+    # falling back to it.
+    names = json.load(open(os.path.join(HERE, "endpoint-names.json"), encoding="utf-8"))
+
+    def named(iata, name_fr, lat, lng, country):
+        n = names.get(iata)
+        if not n:
+            raise SystemExit(f"{iata}: not in endpoint-names.json; run localize_endpoint_names.py")
+        return {"iata": iata, "name": name_fr, "name_en": n["name_en"], "name_ar": n["name_ar"],
+                "lat": lat, "lng": lng, "country": country}
 
     ep = {}
     for a in airports:
         if a.get("iata"):
-            ep[a["iata"]] = {"iata": a["iata"], "name": a["name"], "lat": a["lat"], "lng": a["lng"], "country": "DZ"}
+            # The Algerian ends keep the aviation package's French house style
+            # as `name`; only en/ar come from Wikidata.
+            ep[a["iata"]] = named(a["iata"], a["name"], a["lat"], a["lng"], "DZ")
     for f in foreign:
-        ep.setdefault(f["iata"], {"iata": f["iata"], "name": f["name"], "lat": f["lat"], "lng": f["lng"], "country": f["country"]})
+        if f["iata"] in ep:
+            continue
+        # Foreign `name` was OurAirports English pretending to be the French
+        # display field; the Wikidata French label replaces it.
+        ep[f["iata"]] = named(f["iata"], names[f["iata"]]["name_fr"], f["lat"], f["lng"], f["country"])
     dz = {a["iata"] for a in airports if a.get("iata")}
 
     routes, planned_routes = [], []
@@ -332,6 +357,7 @@ def main():
             raise SystemExit(f"{r['id']}: {km:.0f} km apart, that is not a route")
 
     out = {
+        "as_of": AS_OF,
         "routes": sorted(routes, key=lambda r: r["id"]),
         "planned": sorted(planned_routes, key=lambda r: r["id"]),
         "endpoints": endpoints,
