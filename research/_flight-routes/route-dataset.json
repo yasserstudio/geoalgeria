@@ -1,4 +1,5 @@
 {
+  "as_of": "2026-07-27",
   "routes": [
     {
       "id": "aae-cdg",
@@ -1637,34 +1638,44 @@
     {
       "iata": "AAE",
       "name": "Aéroport Annaba – Rabah Bitat",
+      "name_en": "Annaba Rabah Bitat Airport",
+      "name_ar": "مطار عنابة - رابح بيطاط",
       "lat": 36.82441556514175,
       "lng": 7.821324125869026,
       "country": "DZ"
     },
     {
       "iata": "ABJ",
-      "name": "Félix-Houphouët-Boigny International Airport",
+      "name": "Aéroport international Félix-Houphouët-Boigny",
+      "name_en": "Port Bouet Airport",
+      "name_ar": "مطار فيليكس أوفوي بوانيي الدولي",
       "lat": 5.26139,
       "lng": -3.92629,
       "country": "CI"
     },
     {
       "iata": "ABV",
-      "name": "Nnamdi Azikiwe International Airport",
+      "name": "Aéroport international Nnamdi Azikiwe",
+      "name_en": "Nnamdi Azikiwe International Airport",
+      "name_ar": "مطار نامدي أزيكيوي الدولي",
       "lat": 9.00679,
       "lng": 7.26317,
       "country": "NG"
     },
     {
       "iata": "ADD",
-      "name": "Addis Ababa Bole International Airport",
+      "name": "Aéroport international de Bole",
+      "name_en": "Addis Ababa Bole International Airport",
+      "name_ar": "مطار أديس أبابا بولي الدولي",
       "lat": 8.97789,
       "lng": 38.799301,
       "country": "ET"
     },
     {
       "iata": "ALC",
-      "name": "Alicante-Elche Miguel Hernández Airport",
+      "name": "Aéroport d'Alicante",
+      "name_en": "Alicante Airport",
+      "name_ar": "مطار أليكانتي",
       "lat": 38.2822,
       "lng": -0.558156,
       "country": "ES"
@@ -1672,27 +1683,35 @@
     {
       "iata": "ALG",
       "name": "Aéroport d’Alger – Houari Boumediene",
+      "name_en": "Algiers Houari Boumediene Airport",
+      "name_ar": "مطار هواري بومدين الدولي",
       "lat": 36.69951171485545,
       "lng": 3.210846808533331,
       "country": "DZ"
     },
     {
       "iata": "AYT",
-      "name": "Antalya International Airport",
+      "name": "Aéroport d'Antalya",
+      "name_en": "Antalya Airport",
+      "name_ar": "مطار أنطاليا",
       "lat": 36.898701,
       "lng": 30.800501,
       "country": "TR"
     },
     {
       "iata": "BCN",
-      "name": "Josep Tarradellas Barcelona-El Prat Airport",
+      "name": "Aéroport international de Barcelone-El Prat",
+      "name_en": "Josep Tarradellas Airport Barcelona-El Prat",
+      "name_ar": "مطار برشلونة الدولي",
       "lat": 41.2971,
       "lng": 2.07846,
       "country": "ES"
     },
     {
       "iata": "BEY",
-      "name": "Beirut Rafic Hariri International Airport",
+      "name": "Aéroport international de Beyrouth - Rafic Hariri",
+      "name_en": "Beirut–Rafic Hariri International Airport",
+      "name_ar": "مطار بيروت رفيق الحريري الدولي",
       "lat": 33.819833,
       "lng": 35.487443,
       "country": "LB"
@@ -1700,13 +1719,17 @@
     {
       "iata": "BJA",
       "name": "Aéroport de BEJAIA/Soummam ‐Abane Ramdane",
+      "name_en": "Bejaia Soummam – Abane Ramdane Airport",
+      "name_ar": "مطار بجاية - صومام - عبان رمضان",
       "lat": 36.7158254808996,
       "lng": 5.071032952852189,
       "country": "DZ"
     },
     {
       "iata": "BKO",
-      "name": "Modibo Keita International Airport",
+      "name": "Aéroport international de Bamako-Sénou",
+      "name_en": "Bamako-Sénou International Airport",
+      "name_ar": "مطار باماكو موديبو كيتا الدولي",
       "lat": 12.5335,
       "lng": -7.94994,
       "country": "ML"
@@ -1714,20 +1737,26 @@
     {
       "iata": "BLJ",
       "name": "Aéroport BATNA/ Mostepha Ben BOULAID",
+      "name_en": "Mostépha Ben Boulaid Airport",
+      "name_ar": "مطار باتنة - مصطفى بن بولعيد",
       "lat": 35.75767824581629,
       "lng": 6.308248427678342,
       "country": "DZ"
     },
     {
       "iata": "BOD",
-      "name": "Bordeaux–Mérignac Airport",
+      "name": "Aéroport de Bordeaux-Mérignac",
+      "name_en": "Bordeaux–Mérignac Airport",
+      "name_ar": "مطار بوردو ميرينياك",
       "lat": 44.82865,
       "lng": -0.715356,
       "country": "FR"
     },
     {
       "iata": "BRU",
-      "name": "Brussels Airport",
+      "name": "Aéroport de Bruxelles",
+      "name_en": "Brussels Airport",
+      "name_ar": "مطار بروكسل الدولي",
       "lat": 50.901402,
       "lng": 4.48444,
       "country": "BE"
@@ -1735,34 +1764,44 @@
     {
       "iata": "BSK",
       "name": "Aéroport de BISKRA/ Mohamed KHIDER",
+      "name_en": "Biskra Mohamed Khider Airport",
+      "name_ar": "مطار بسكرة - محمد خيضر",
       "lat": 34.79160974695419,
       "lng": 5.733631154631189,
       "country": "DZ"
     },
     {
       "iata": "BUD",
-      "name": "Budapest Liszt Ferenc International Airport",
+      "name": "Aéroport international de Budapest-Ferenc Liszt",
+      "name_en": "Budapest Ferenc Liszt International Airport",
+      "name_ar": "مطار بودابست فرانز ليست الدولي",
       "lat": 47.43018,
       "lng": 19.262393,
       "country": "HU"
     },
     {
       "iata": "CAI",
-      "name": "Cairo International Airport",
+      "name": "Aéroport international du Caire",
+      "name_en": "Cairo International Airport",
+      "name_ar": "مطار القاهرة الدولي",
       "lat": 30.111534,
       "lng": 31.396694,
       "country": "EG"
     },
     {
       "iata": "CAN",
-      "name": "Guangzhou Baiyun International Airport",
+      "name": "Aéroport international de Canton Baiyun",
+      "name_en": "Guangzhou Baiyun International Airport",
+      "name_ar": "مطار قوانغتشو باييون الدولي",
       "lat": 23.392401,
       "lng": 113.299004,
       "country": "CN"
     },
     {
       "iata": "CDG",
-      "name": "Charles de Gaulle International Airport",
+      "name": "Aéroport Paris-Charles-de-Gaulle",
+      "name_en": "Paris-Charles de Gaulle Airport",
+      "name_ar": "مطار باريس شارل ديغول",
       "lat": 49.00896,
       "lng": 2.554117,
       "country": "FR"
@@ -1770,6 +1809,8 @@
     {
       "iata": "CFK",
       "name": "Aéroport de CHLEF",
+      "name_en": "Chlef International Airport",
+      "name_ar": "مطار الشلف - أبو بكر بلقايد",
       "lat": 36.21763410012118,
       "lng": 1.3246854393403855,
       "country": "DZ"
@@ -1777,6 +1818,8 @@
     {
       "iata": "CZL",
       "name": "Aéroport de Constantine – Mohamed Boudiaf",
+      "name_en": "Mohamed Boudiaf International Airport",
+      "name_ar": "مطار قسنطينة - محمد بوضياف",
       "lat": 36.28378418745162,
       "lng": 6.621478825849163,
       "country": "DZ"
@@ -1784,27 +1827,35 @@
     {
       "iata": "DJG",
       "name": "Aéroport de DJANET / Tiska-DJANET",
+      "name_en": "Djanet Inedbirene Airport",
+      "name_ar": "مطار جانت تيسكا",
       "lat": 24.28966075585949,
       "lng": 9.46571858129957,
       "country": "DZ"
     },
     {
       "iata": "DLA",
-      "name": "Douala International Airport",
+      "name": "Aéroport international de Douala",
+      "name_en": "Douala International Airport",
+      "name_ar": "مطار دوالا الدولي",
       "lat": 4.00608,
       "lng": 9.71948,
       "country": "CM"
     },
     {
       "iata": "DSS",
-      "name": "Blaise Diagne International Airport",
+      "name": "Aéroport international Blaise-Diagne",
+      "name_en": "Blaise Diagne International Airport",
+      "name_ar": "مطار بليز دياغني الدولي",
       "lat": 14.670878,
       "lng": -17.072829,
       "country": "SN"
     },
     {
       "iata": "DXB",
-      "name": "Dubai International Airport",
+      "name": "Aéroport international de Dubaï",
+      "name_en": "Dubai International Airport",
+      "name_ar": "مطار دبي الدولي",
       "lat": 25.24979,
       "lng": 55.370992,
       "country": "AE"
@@ -1812,20 +1863,26 @@
     {
       "iata": "ELU",
       "name": "Aéroport d’El Oued/Guemar",
+      "name_en": "Guemar Airport",
+      "name_ar": "مطار الوادي - قمار",
       "lat": 33.507414582460555,
       "lng": 6.784868996915831,
       "country": "DZ"
     },
     {
       "iata": "ETZ",
-      "name": "Metz-Nancy-Lorraine Airport",
+      "name": "Aéroport de Metz-Nancy-Lorraine",
+      "name_en": "Metz-Nancy-Lorraine Airport",
+      "name_ar": "مطار ميتز نانسي لورين",
       "lat": 48.982101,
       "lng": 6.25132,
       "country": "FR"
     },
     {
       "iata": "FRA",
-      "name": "Frankfurt Main Airport",
+      "name": "Aéroport de Francfort-sur-le-Main",
+      "name_en": "Frankfurt Airport",
+      "name_ar": "مطار فرانكفورت",
       "lat": 50.026706,
       "lng": 8.55835,
       "country": "DE"
@@ -1833,139 +1890,179 @@
     {
       "iata": "GJL",
       "name": "Aéroport de JIJEL/FERHAT ABBAS",
+      "name_en": "Jijel Ferhat Abbas Airport",
+      "name_ar": "مطار جيجل - فرحات عباس",
       "lat": 36.79340595973765,
       "lng": 5.877778649666695,
       "country": "DZ"
     },
     {
       "iata": "HRG",
-      "name": "Hurghada International Airport",
+      "name": "Aéroport international de Hurghada",
+      "name_en": "Hurghada International Airport",
+      "name_ar": "مطار الغردقة الدولي",
       "lat": 27.176776,
       "lng": 33.796692,
       "country": "EG"
     },
     {
       "iata": "IST",
-      "name": "İstanbul Airport",
+      "name": "Aéroport d'Istanbul",
+      "name_en": "Istanbul Airport",
+      "name_ar": "مطار إسطنبول الدولي",
       "lat": 41.274874,
       "lng": 28.732136,
       "country": "TR"
     },
     {
       "iata": "JED",
-      "name": "King Abdulaziz International Airport",
+      "name": "Aéroport international Roi-Abdelaziz",
+      "name_en": "King Abdulaziz International Airport",
+      "name_ar": "مطار الملك عبد العزيز الدولي",
       "lat": 21.680241,
       "lng": 39.157436,
       "country": "SA"
     },
     {
       "iata": "JNB",
-      "name": "O.R. Tambo International Airport",
+      "name": "Aéroport international OR Tambo",
+      "name_en": "OR Tambo International Airport",
+      "name_ar": "مطار أوليفر ريجنالد تامبو",
       "lat": -26.140081,
       "lng": 28.246801,
       "country": "ZA"
     },
     {
       "iata": "KUL",
-      "name": "Kuala Lumpur International Airport",
+      "name": "Aéroport international de Kuala Lumpur",
+      "name_en": "Kuala Lumpur International Airport",
+      "name_ar": "مطار كوالالمبور الدولي",
       "lat": 2.74558,
       "lng": 101.709999,
       "country": "MY"
     },
     {
       "iata": "LBV",
-      "name": "Libreville Leon M'ba International Airport",
+      "name": "Aéroport international Léon-Mba",
+      "name_en": "Libreville International Airport",
+      "name_ar": "مطار ليون مبا الدولي",
       "lat": 0.458951,
       "lng": 9.41214,
       "country": "GA"
     },
     {
       "iata": "LHR",
-      "name": "London Heathrow Airport",
+      "name": "Aéroport de Londres Heathrow",
+      "name_en": "London Heathrow Airport",
+      "name_ar": "مطار لندن هيثرو",
       "lat": 51.470748,
       "lng": -0.459909,
       "country": "GB"
     },
     {
       "iata": "LIL",
-      "name": "Lille Airport",
+      "name": "Aéroport de Lille-Lesquin",
+      "name_en": "Lille Airport",
+      "name_ar": "مطار ليل",
       "lat": 50.566564,
       "lng": 3.102429,
       "country": "FR"
     },
     {
       "iata": "LYS",
-      "name": "Lyon Saint-Exupéry Airport",
+      "name": "Aéroport Lyon-Saint-Exupéry",
+      "name_en": "Lyon–Saint-Exupéry Airport",
+      "name_ar": "مطار ليون سانت إكسوبيري",
       "lat": 45.725996,
       "lng": 5.090139,
       "country": "FR"
     },
     {
       "iata": "MAN",
-      "name": "Manchester Airport",
+      "name": "Aéroport de Manchester",
+      "name_en": "Manchester Airport",
+      "name_ar": "مطار مانشستر",
       "lat": 53.349375,
       "lng": -2.279521,
       "country": "GB"
     },
     {
       "iata": "MED",
-      "name": "Prince Mohammad Bin Abdulaziz Airport",
+      "name": "Aéroport international Prince Mohammad Bin Abdulaziz",
+      "name_en": "Prince Mohammad Bin Abdulaziz International Airport",
+      "name_ar": "مطار الأمير محمد بن عبد العزيز الدولي",
       "lat": 24.5534,
       "lng": 39.705101,
       "country": "SA"
     },
     {
       "iata": "MIR",
-      "name": "Monastir Habib Bourguiba International Airport",
+      "name": "Aéroport international de Monastir Habib-Bourguiba",
+      "name_en": "Monastir Habib Bourguiba International Airport",
+      "name_ar": "مطار الحبيب بورقيبة الدولي",
       "lat": 35.75809860229492,
       "lng": 10.75469970703125,
       "country": "TN"
     },
     {
       "iata": "MRS",
-      "name": "Marseille Provence Airport",
+      "name": "Aéroport Marseille-Provence",
+      "name_en": "Marseille Provence Airport",
+      "name_ar": "مطار مرسيليا",
       "lat": 43.438088,
       "lng": 5.2125,
       "country": "FR"
     },
     {
       "iata": "NBJ",
-      "name": "Dr. Antonio Agostinho Neto International Airport",
+      "name": "Aéroport Internacional Dr. António Agostinho Neto",
+      "name_en": "Dr. Antonio Agostinho Neto International Airport",
+      "name_ar": "مطار أنغولا الدولي",
       "lat": -9.050734,
       "lng": 13.499078,
       "country": "AO"
     },
     {
       "iata": "NCE",
-      "name": "Nice-Côte d'Azur Airport",
+      "name": "Aéroport de Nice-Côte d'Azur",
+      "name_en": "Nice Côte d'Azur Airport",
+      "name_ar": "مطار نيس كوت دازور",
       "lat": 43.658401,
       "lng": 7.21587,
       "country": "FR"
     },
     {
       "iata": "NIM",
-      "name": "Diori Hamani International Airport",
+      "name": "Aéroport international Diori-Hamani",
+      "name_en": "Diori Hamani International Airport",
+      "name_ar": "مطار ديوري حماني",
       "lat": 13.4815,
       "lng": 2.18361,
       "country": "NE"
     },
     {
       "iata": "NKC",
-      "name": "Nouakchott–Oumtounsy International Airport",
+      "name": "Aéroport international de Nouakchott-Oumtounsy",
+      "name_en": "Nouakchott–Oumtounsy International Airport",
+      "name_ar": "مطار نواكشوط الدولي",
       "lat": 18.31,
       "lng": -15.969722,
       "country": "MR"
     },
     {
       "iata": "NTE",
-      "name": "Nantes Atlantique Airport",
+      "name": "Aéroport de Nantes Atlantique",
+      "name_en": "Nantes Atlantique Airport",
+      "name_ar": "مطار نانت",
       "lat": 47.153198,
       "lng": -1.61073,
       "country": "FR"
     },
     {
       "iata": "OPO",
-      "name": "Francisco de Sá Carneiro Airport",
+      "name": "Aéroport de Porto",
+      "name_en": "Francisco de Sá Carneiro Airport",
+      "name_ar": "مطار بورتو الدولي",
       "lat": 41.2481002808,
       "lng": -8.68138980865,
       "country": "PT"
@@ -1973,27 +2070,35 @@
     {
       "iata": "ORN",
       "name": "Aéroport d’Oran – Ahmed Benbella",
+      "name_en": "Oran Ahmed Ben Bella Airport",
+      "name_ar": "مطار وهران - أحمد بن بلة",
       "lat": 35.61833150995104,
       "lng": -0.6109085969987015,
       "country": "DZ"
     },
     {
       "iata": "ORY",
-      "name": "Paris-Orly Airport",
+      "name": "Aéroport de Paris-Orly",
+      "name_en": "Orly Airport",
+      "name_ar": "مطار باريس أورلي",
       "lat": 48.729499,
       "lng": 2.358963,
       "country": "FR"
     },
     {
       "iata": "OUA",
-      "name": "Ouagadougou Thomas Sankara International Airport",
+      "name": "Aéroport international de Ouagadougou",
+      "name_en": "Ouagadougou Airport",
+      "name_ar": "مطار واغادوغو",
       "lat": 12.3532,
       "lng": -1.51242,
       "country": "BF"
     },
     {
       "iata": "PVG",
-      "name": "Shanghai Pudong International Airport",
+      "name": "Aéroport international de Shanghai-Pudong",
+      "name_en": "Shanghai Pudong International Airport",
+      "name_ar": "مطار شانغهاي بودنغ الدولي",
       "lat": 31.1434,
       "lng": 121.805,
       "country": "CN"
@@ -2001,34 +2106,44 @@
     {
       "iata": "QSF",
       "name": "Aéroport de SETIF /8 Mai 45",
+      "name_en": "Ain Arnat Airport",
+      "name_ar": "مطار سطيف - 8 ماي 1945",
       "lat": 36.17553448867715,
       "lng": 5.330306679093995,
       "country": "DZ"
     },
     {
       "iata": "SSH",
-      "name": "Sharm El Sheikh International Airport",
+      "name": "Aéroport international de Charm el-Cheikh",
+      "name_en": "Sharm el-Sheikh International Airport",
+      "name_ar": "مطار شرم الشيخ الدولي",
       "lat": 27.977272,
       "lng": 34.394717,
       "country": "EG"
     },
     {
       "iata": "STN",
-      "name": "London Stansted Airport",
+      "name": "Aéroport de Londres Stansted",
+      "name_en": "London Stansted Airport",
+      "name_ar": "مطار لندن ستانستد",
       "lat": 51.884998,
       "lng": 0.235,
       "country": "GB"
     },
     {
       "iata": "SVO",
-      "name": "Sheremetyevo International Airport",
+      "name": "Aéroport de Moscou-Chérémétiévo",
+      "name_en": "Sheremetyevo International Airport",
+      "name_ar": "مطار شيريميتييفو الدولي",
       "lat": 55.976858,
       "lng": 37.41121,
       "country": "RU"
     },
     {
       "iata": "SXB",
-      "name": "Strasbourg Airport",
+      "name": "Aéroport de Strasbourg-Entzheim",
+      "name_en": "Strasbourg Airport",
+      "name_ar": "مطار ستراسبورغ",
       "lat": 48.5383,
       "lng": 7.62823,
       "country": "FR"
@@ -2036,41 +2151,53 @@
     {
       "iata": "TLM",
       "name": "Aéroport de Tlemcen – Zenata – Messali El Hadj",
+      "name_en": "Zenata – Messali El Hadj Airport",
+      "name_ar": "مطار تلمسان - زناتة - مصالي الحاج",
       "lat": 35.012480117143284,
       "lng": -1.4480446913865919,
       "country": "DZ"
     },
     {
       "iata": "TLS",
-      "name": "Toulouse-Blagnac Airport",
+      "name": "Aéroport de Toulouse-Blagnac",
+      "name_en": "Toulouse-Blagnac",
+      "name_ar": "مطار تولوز بلانياك",
       "lat": 43.629101,
       "lng": 1.36382,
       "country": "FR"
     },
     {
       "iata": "TUN",
-      "name": "Tunis Carthage International Airport",
+      "name": "Aéroport international de Tunis-Carthage",
+      "name_en": "Tunis–Carthage International Airport",
+      "name_ar": "مطار تونس قرطاج الدولي",
       "lat": 36.851002,
       "lng": 10.2272,
       "country": "TN"
     },
     {
       "iata": "VIE",
-      "name": "Vienna International Airport",
+      "name": "Aéroport de Vienne-Schwechat",
+      "name_en": "Wien-Schwechat Airport",
+      "name_ar": "مطار فيينا الدولي",
       "lat": 48.110298,
       "lng": 16.5697,
       "country": "AT"
     },
     {
       "iata": "VLC",
-      "name": "Valencia Airport",
+      "name": "Aéroport de Valence",
+      "name_en": "Valencia Airport",
+      "name_ar": "مطار بلنسية",
       "lat": 39.489162,
       "lng": -0.480961,
       "country": "ES"
     },
     {
       "iata": "YUL",
-      "name": "Montreal / Pierre Elliott Trudeau International Airport",
+      "name": "Aéroport international Montréal-Trudeau",
+      "name_en": "Montréal–Trudeau International Airport",
+      "name_ar": "مطار مونتريال الدولي",
       "lat": 45.467837,
       "lng": -73.742294,
       "country": "CA"

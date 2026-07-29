@@ -23,14 +23,6 @@ reads as further along than it is.
 
 ## Aviation
 
-- [ ] **Foreign airport names, in every language.** `route-endpoints.json` carries
-  one `name` per airport and it is French, so the app renders "Aéroport d'Alger"
-  inside an Arabic card. The 13 Algerian origins are worked around with app-side
-  strings; the **50 foreign endpoints** are not, and should not be, since names
-  belong in the data. Wants `name_en` / `name_ar` on the endpoint records, then a
-  minor bump. Bounded, and the highest-value item on this list.
-  _(logged 2026-07-28)_
-
 - [ ] **Scheduled flight duration per route.** Asked for on the route card and
   refused, correctly: there is no duration field, and **0 of 122** routes in
   `research/_flight-routes/route-dataset.json` carry one. The great-circle
@@ -52,10 +44,33 @@ reads as further along than it is.
   already falls back to a bare code for any carrier with no mark on file.
   _(logged 2026-07-28)_
 
-- [ ] **Dated-snapshot framing.** Routes churn seasonally, unlike every other
-  dataset here, so the package should carry a validity window rather than reading
-  as evergreen. Affects the descriptor, not the records.
-  _(logged 2026-07-27)_
+## Core dataset (geoalgeria)
+
+- [ ] **The package ships 1,528 of Algeria's 1,541 communes.** The 13 absent
+  ones each share a name with a commune elsewhere in the country (their
+  wilayas span the eras: 64/66/68 are 2026 wilayas, 51/55 are 2019, and 10,
+  15, 23, 25, 31, 46 are unchanged pre-reform wilayas); sourced
+  records with Wikidata QIDs exist from the 2026-07-29 reconciliation (the app
+  repo's algeria.json rows were repaired from them; this package still needs
+  the additions plus a version bump and README count updates in all locales).
+  Open sub-questions: Menaa's wilaya assignment (Medjedel daira's transfer to
+  wilaya 68 is unconfirmed against the decree) and 5 missing postal codes.
+  _(logged 2026-07-29)_
+
+- [ ] **`code_commune` duplicates are ingestion corruption, not a scheme.**
+  34 duplicated code groups (79 rows); in 33 of them every colliding row also
+  shares one identical postal_code, the signature of a forward-fill bug in the
+  original ingestion. The code is the pre-2026 ONS code and was never meant to
+  collide. Needs a per-row re-derivation against an ONS table, and the same
+  pass should settle the postal-code wilaya-prefix inconsistency (some new-
+  wilaya communes carry new-prefix postals, some keep the parent's).
+  _(logged 2026-07-29)_
+
+- [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
+  Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
+  coordinates ~1 degree apart. Which side is right is unresolved; verify
+  against Wikidata/OSM before touching either.
+  _(logged 2026-07-29)_
 
 ## Releases
 
@@ -64,18 +79,25 @@ reads as further along than it is.
   meaningful group of bumps rather than on its own.
   _(logged 2026-07-22)_
 
-## Verification
-
-- [ ] **`gares-routieres` geo precision.** 71 records are `exact` and 3 are
-  `approximate`. An earlier note recorded a precision mismatch on 2 records;
-  whether those are among the 3 approximate ones, or a separate disagreement
-  between the declared precision and the source, has not been re-checked since.
-  **Confirm the finding before acting on it** rather than trusting the note.
-  _(logged 2026-07-22, unverified)_
-
 ---
 
 ## Recently closed
+
+- **Foreign airport names, in every language**: shipped in the pending 2.3.0.
+  Every route endpoint carries `name_en` / `name_ar` from Wikidata (IATA-matched,
+  coordinate-checked, air-base homonyms excluded), and the foreign `name` field
+  now carries the Wikidata French label instead of OurAirports English. Pipeline:
+  `research/_flight-routes/localize_endpoint_names.py`. Closed 2026-07-29.
+- **Dated-snapshot framing**: shipped in the pending 2.3.0 as
+  `metadata.routes_as_of`, stamped from the research dataset's `as_of` (set only
+  by a real verification pass, currently 2026-07-27). Closed 2026-07-29.
+
+- **`gares-routieres` geo precision**: verified, nothing to fix. The 2 records
+  behind the note (33-03 Illizi, 65-01 Ain Oussara) were already downgraded to
+  `geo_precision: "approximate"` by the 409-record sweep (`99f6f27`,
+  2026-07-20); `geo_method: "exact"` was kept on purpose per that commit
+  (method records how the point was obtained; only the precision claim was
+  wrong). The note predated the sweep. Verified 2026-07-29.
 
 - **Em-dash sweep of the package READMEs**: done. Grepping every
   `packages/*/README*.md` for the character returns nothing, so the sweep tracked

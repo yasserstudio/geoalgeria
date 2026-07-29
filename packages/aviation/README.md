@@ -53,6 +53,14 @@ Spanning **33 wilayas**, every airport geocoded and every one carrying an IATA c
 `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
 
+Every route endpoint (both ends of every arc, foreign airports included) carries a
+name in three languages: `name` (French; the Wikidata French label for foreign
+airports, the ANAC house style for the Algerian ones), plus `name_en` and
+`name_ar`, matched on Wikidata by IATA code and cross-checked against the
+shipped coordinate. Routes
+churn seasonally, so `metadata.routes_as_of` stamps the date the network was last
+checked against schedules: treat it as a dated snapshot, not an evergreen fact.
+
 33 of the 36 come from ANAC's own map. The other three, Hassi R'Mel (`HRM`), Mécheria
 (`MZW`) and Laghouat (`LOO`), are absent from it and come from OurAirports, so they carry
 `source: "ourairports"` and no contact fields.
