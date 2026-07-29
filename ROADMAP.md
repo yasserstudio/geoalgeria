@@ -23,14 +23,6 @@ reads as further along than it is.
 
 ## Aviation
 
-- [ ] **Foreign airport names, in every language.** `route-endpoints.json` carries
-  one `name` per airport and it is French, so the app renders "Aéroport d'Alger"
-  inside an Arabic card. The 13 Algerian origins are worked around with app-side
-  strings; the **50 foreign endpoints** are not, and should not be, since names
-  belong in the data. Wants `name_en` / `name_ar` on the endpoint records, then a
-  minor bump. Bounded, and the highest-value item on this list.
-  _(logged 2026-07-28)_
-
 - [ ] **Scheduled flight duration per route.** Asked for on the route card and
   refused, correctly: there is no duration field, and **0 of 122** routes in
   `research/_flight-routes/route-dataset.json` carry one. The great-circle
@@ -52,11 +44,6 @@ reads as further along than it is.
   already falls back to a bare code for any carrier with no mark on file.
   _(logged 2026-07-28)_
 
-- [ ] **Dated-snapshot framing.** Routes churn seasonally, unlike every other
-  dataset here, so the package should carry a validity window rather than reading
-  as evergreen. Affects the descriptor, not the records.
-  _(logged 2026-07-27)_
-
 ## Releases
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
@@ -67,6 +54,15 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Foreign airport names, in every language**: shipped in the pending 2.3.0.
+  Every route endpoint carries `name_en` / `name_ar` from Wikidata (IATA-matched,
+  coordinate-checked, air-base homonyms excluded), and the foreign `name` field
+  now carries the Wikidata French label instead of OurAirports English. Pipeline:
+  `research/_flight-routes/localize_endpoint_names.py`. Closed 2026-07-29.
+- **Dated-snapshot framing**: shipped in the pending 2.3.0 as
+  `metadata.routes_as_of`, stamped from the research dataset's `as_of` (set only
+  by a real verification pass, currently 2026-07-27). Closed 2026-07-29.
 
 - **`gares-routieres` geo precision**: verified, nothing to fix. The 2 records
   behind the note (33-03 Illizi, 65-01 Ain Oussara) were already downgraded to
