@@ -1,0 +1,355 @@
+[
+  {
+    "wilaya_code": 10,
+    "name_fr": "Aïn Turk",
+    "name_fr_note": "Wikidata/officialdom spells it 'Aïn El Turc'; app spells 'Ain Turk'. Same commune.",
+    "name_ar": "عين الترك",
+    "daira": "Bouira",
+    "postal_code": "10120",
+    "latitude": 36.393333,
+    "longitude": 3.824722,
+    "ons_code": "1029",
+    "wikidata": "Q4833301",
+    "sources": [
+      "https://www.wikidata.org/wiki/Q4833301",
+      "https://www.mapsofworld.com/postal-codes/algeria/bouira/ain-turk.html",
+      "https://www.ons.dz/IMG/code%20geo%20-%20fra%20-%20ara.pdf (ONS geo code list, Bouira commune #29)"
+    ],
+    "status": {
+      "name_ar": "verified (Wikidata Q4833301)",
+      "wilaya": "verified - stays w10 Bouira, no reform transfer for this wilaya",
+      "daira": "verified (Wikidata P131 -> Bouira; commune-level daira label not separately confirmed, likely same as wilaya seat area)",
+      "coords": "verified (Wikidata P625)",
+      "postal_code": "verified (mapsofworld + postcodequery agree on 10120)",
+      "ons_code": "seen (ONS geographic code PDF cites Bouira #29 = 1029) - not independently cross-checked, mark medium confidence"
+    },
+    "sanity_check": "36.39N/3.82E falls inside Bouira wilaya extent (~36.0-36.6N, 3.5-4.3E). OK.",
+    "notes": "Wrong homonym in app was Oran's Aïn El Turc (36.77N/-0.28E coastal town) - clearly a different place, confirms corruption."
+  },
+  {
+    "wilaya_code": 15,
+    "name_fr": "Souk-El-Tenine",
+    "name_fr_canonical": "Souk El Thenine",
+    "name_ar": "سوق الاثنين",
+    "daira": "Mâatkas",
+    "postal_code": "15071",
+    "latitude": 36.594099,
+    "longitude": 4.008551,
+    "ons_code": "1557",
+    "wikidata": "Q3491580",
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Souk_El_Thenine_(Tizi_Ouzou)",
+      "https://www.wikidata.org/wiki/Q3491580"
+    ],
+    "status": {
+      "name_ar": "verified (fr.wikipedia infobox)",
+      "wilaya": "verified - w15 Tizi Ouzou, unchanged pre/post reform",
+      "daira": "verified (Mâatkas, fr.wikipedia infobox)",
+      "coords": "verified (fr.wikipedia infobox, matches Wikidata region)",
+      "postal_code": "verified (fr.wikipedia infobox)",
+      "ons_code": "verified (fr.wikipedia infobox: 1557)"
+    },
+    "sanity_check": "36.59N/4.01E falls inside Tizi Ouzou wilaya extent (~36.4-36.9N, 3.8-4.6E). OK.",
+    "notes": "Wrong homonym in app was Souk El Ténine, Béjaïa (Wikidata Q3491584, different QID, different coast-facing commune ~36.75N/5.09E)."
+  },
+  {
+    "wilaya_code": 23,
+    "name_fr": "El Eulma",
+    "name_ar": "العلمة",
+    "daira": "El Eulma",
+    "postal_code": "19600",
+    "latitude": 36.152778,
+    "longitude": 5.69,
+    "ons_code": "1920",
+    "wikidata": "Q401747",
+    "sources": [
+      "https://www.wikidata.org/wiki/Q401747",
+      "https://onil.dz/wp-content/uploads/2017/10/19SETIF.pdf (ONS/dairas list, wilaya 19 Sétif)"
+    ],
+    "status": {
+      "name_ar": "verified (Wikidata Q401747)",
+      "wilaya": "unresolved - app lists this El Eulma under w23 Annaba, but this Wikidata item is the well-known El Eulma of Sétif wilaya (19), not Annaba. No El Eulma commune found in Annaba's commune list in this research pass.",
+      "daira": "seen for the Sétif El Eulma (El Eulma District, Q5351251) - not applicable if the w23 record is actually a different, unidentified place",
+      "coords": "seen for Sétif's El Eulma only - NOT verified for whatever real commune the app record #w23 'El Eulma' is meant to represent",
+      "postal_code": "seen for Sétif's El Eulma only",
+      "ons_code": "seen for Sétif's El Eulma only (1920)"
+    },
+    "sanity_check": "36.15N/5.69E is Sétif, wilaya 19 - falls OUTSIDE Annaba wilaya extent (~36.6-36.95N, 7.6-8.4E). FAILS the w23 sanity check.",
+    "notes": "IMPORTANT CONTRADICTION WITH BRIEF: I could not confirm any commune literally named 'El Eulma' belongs to Annaba wilaya (23). Annaba's 12 communes (per fr.wikipedia 'Communes de la wilaya d'Annaba') are: Annaba, Aïn El Berda, Berrahal, Chetaibi, El Bouni, El Hadjar, Eulma (?) - I did not find this in the standard Annaba commune list during this pass. It is possible the app's #3 entry is a mis-transcription/mis-attribution of the *daira/homonym pattern itself* (i.e. wilaya_code may be wrong in the source brief, not just lat/lon/postal), OR there is a small locality in Annaba also colloquially called 'El Eulma' that does not have its own Wikidata item. Flagging as UNRESOLVED rather than filling in Sétif's coordinates under a wrong wilaya label - recommend the orchestrator re-verify against the interieur.gov.dz Annaba commune list before writing any fix."
+  },
+  {
+    "wilaya_code": 25,
+    "name_fr": "Ben Badis",
+    "name_fr_canonical_note": "Wikidata/official FR label for this commune is 'Ibn Badis', not 'Ben Badis' (Ben Badis is the commonly used app/colloquial spelling of the same commune).",
+    "name_ar": "ابن بادس",
+    "daira": "Aïn Abid",
+    "postal_code": "25030",
+    "postal_code_conflict": "one source (azpostcodes) gives 25030; Wikidata P281 gives 25102 - both cite the Aïn Abid/Ibn Badis area, could not adjudicate definitively",
+    "latitude": 36.3173,
+    "longitude": 6.83195,
+    "ons_code": "2503",
+    "wikidata": "Q3147437",
+    "sources": [
+      "https://www.wikidata.org/wiki/Q3147437",
+      "https://www.azpostcodes.com/dza/place-constantine-ain-abid-ibn-badis-ben-badis/",
+      "https://onil.dz/wp-content/uploads/2017/10/25CONSTANTINE.pdf"
+    ],
+    "status": {
+      "name_ar": "verified (Wikidata Q3147437)",
+      "wilaya": "verified - w25 Constantine, unchanged pre/post reform",
+      "daira": "verified (Aïn Abid, via Wikidata P131 -> Q3019447 'Aïn Abid')",
+      "coords": "verified (Wikidata P625)",
+      "postal_code": "unresolved - two conflicting values (25030 vs 25102), not adjudicated",
+      "ons_code": "seen (ONIL Constantine dairas PDF; commune ordinal 03 under Aïn Abid daira 07) - medium confidence"
+    },
+    "sanity_check": "36.32N/6.83E falls inside Constantine wilaya extent (~36.1-36.5N, 6.5-6.9E). OK.",
+    "notes": "Wrong homonym in app was Ben Badis, Sidi Bel Abbès (Wikidata Q2895336, coords ~34.95N/-0.91E)."
+  },
+  {
+    "wilaya_code": 31,
+    "name_fr": "Ain Kerma",
+    "name_fr_canonical": "Aïn El Kerma",
+    "name_ar": "عين الكرمة",
+    "daira": "Boutlélis",
+    "postal_code": null,
+    "postal_code_candidates_unresolved": ["31340", "31026"],
+    "latitude": 35.648979,
+    "longitude": -0.975702,
+    "ons_code": "3125",
+    "wikidata": "Q2876312",
+    "sources": [
+      "https://fr.wikipedia.org/wiki/A%C3%AFn_El_Kerma",
+      "https://www.wikidata.org/wiki/Q2876312",
+      "https://www.wilayaoran.dz/31/index.php/fr/dairas-et-communes/daira-boutlelis/commune-de-ain-el-kerma"
+    ],
+    "status": {
+      "name_ar": "verified (fr.wikipedia infobox + Wikidata agree)",
+      "wilaya": "verified - w31 Oran, unchanged pre/post reform; official wilayaoran.dz site lists 'Commune de Ain El Kerma' under Daïra de Boutlélis",
+      "daira": "verified (fr.wikipedia infobox: Boutlélis; confirmed independently by wilayaoran.dz official page)",
+      "coords": "verified (fr.wikipedia infobox, matches Oran coastal geography ~45km west of Oran city)",
+      "postal_code": "unresolved - low-quality aggregator sites disagree (31340 vs 31026), no authoritative source found; report null rather than guess",
+      "ons_code": "verified (fr.wikipedia infobox: 3125)"
+    },
+    "sanity_check": "35.65N/-0.98E falls inside Oran wilaya extent (~35.4-35.8N, -1.0 to -0.2E). OK.",
+    "notes": "App spells it 'Ain Kerma' (missing the 'El'); canonical spelling is Aïn El Kerma. Wrong homonym in app was Aïn Kerma, El Taref (Wikidata Q2876345, coords 36.59N/8.20E, postal 36330)."
+  },
+  {
+    "wilaya_code": 46,
+    "name_fr": "Emir Abdelkader",
+    "name_fr_canonical": "El Emir Abdelkader",
+    "name_ar": "الأمير عبد القادر",
+    "daira": "Béni Saf",
+    "postal_code": null,
+    "latitude": 35.224,
+    "longitude": -1.403,
+    "ons_code": null,
+    "wikidata": "Q3049839",
+    "sources": [
+      "https://www.wikidata.org/wiki/Q3049839",
+      "https://fr.wikipedia.org/wiki/El_Emir_Abdelkader",
+      "https://www.lesoirdalgerie.dz/regions/les-habitants-de-la-localite-emir-abdelkader-reclament-plus-de-logements-ruraux-89110"
+    ],
+    "status": {
+      "name_ar": "verified (Wikidata Q3049839)",
+      "wilaya": "verified - w46 Aïn Témouchent, unchanged pre/post reform",
+      "daira": "verified (Béni Saf, per news source + fr.wikipedia; commune sits at the western extremity of the wilaya on the right bank of the Tafna)",
+      "coords": "verified (Wikidata P625)",
+      "postal_code": "unresolved - not found in any citable source during this pass",
+      "ons_code": "unresolved - not found"
+    },
+    "sanity_check": "35.22N/-1.40E falls inside Aïn Témouchent wilaya extent (~35.1-35.5N, -1.5 to -0.9E). OK.",
+    "notes": "App spells it 'Emir Abdelkader' (missing the 'El'); canonical spelling is El Emir Abdelkader. Wrong homonym in app was Emir Abdelkader, Jijel (Wikidata Q680713, daira Taher, coords 36.75N/5.85E) - confirmed matches brief's 'Jijel' claim."
+  },
+  {
+    "wilaya_code": 51,
+    "name_fr": "Chaiba",
+    "name_fr_canonical": "Ech Chaïba",
+    "name_ar": "الشعيبة",
+    "name_ar_note": "alt local name 'Ouled Rahma'",
+    "daira": "Ouled Djellal",
+    "postal_code": null,
+    "latitude": 34.5,
+    "longitude": 4.55,
+    "latitude_note": "Two coordinate variants seen in sources: 34°50'27\"N/4°55'20\"E and 34°30'0\"N/4°33'0\"E. Wikidata gives 34.8408/4.92218. Reporting Wikidata's value as primary; treat as medium confidence pending resolution of the discrepancy.",
+    "latitude_wikidata": 34.8408,
+    "longitude_wikidata": 4.92218,
+    "ons_code": null,
+    "wikidata": "Q3046938",
+    "sources": [
+      "https://www.wikidata.org/wiki/Q3046938",
+      "https://en.wikipedia.org/wiki/Ech_Cha%C3%AFba",
+      "https://fr.wikipedia.org/wiki/Da%C3%AFra_d'Ouled_Djellal"
+    ],
+    "status": {
+      "name_ar": "verified (Wikidata Q3046938)",
+      "wilaya": "verified - w51 Ouled Djellal (transferred from parent Biskra wilaya per 2026 reform; en.wikipedia confirms 'previously a commune of Biskra Province before the 2019/2026 reorganization')",
+      "daira": "verified - daira of Ouled Djellal itself (the daira groups Ouled Djellal, Ech Chaïba, Daoussen per fr.wikipedia)",
+      "coords": "unresolved - conflicting coordinate pairs across sources, could not adjudicate; Wikidata's P625 value used as the reported figure",
+      "postal_code": "unresolved - not found",
+      "ons_code": "unresolved - not found (old parent wilaya Biskra = 07, ordinal unknown)"
+    },
+    "sanity_check": "34.84N/4.92E (Wikidata value) falls inside plausible Ouled Djellal wilaya extent (~34.0-35.0N, 4.0-5.5E). OK, but see coordinate discrepancy note.",
+    "notes": "Wrong homonym in app was Chaiba, Tipaza per brief."
+  },
+  {
+    "wilaya_code": 55,
+    "name_fr": "Sidi Slimane",
+    "name_ar": "سيدي سليمان",
+    "daira": "Megarine",
+    "postal_code": "55008",
+    "postal_code_status": "not independently re-verified; task brief asserts this value already looks correct in the app and this pass found no contradicting source",
+    "latitude": 33.28886,
+    "longitude": 6.09254,
+    "ons_code": "3010",
+    "wikidata": "Q3483291",
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Sidi_Slimane_(Touggourt)",
+      "https://www.wikidata.org/wiki/Q3483291"
+    ],
+    "status": {
+      "name_ar": "verified (fr.wikipedia infobox)",
+      "wilaya": "verified - w55 Touggourt (transferred from parent Ouargla wilaya per 2026 reform; Wikidata still labels parent as 'Ouargla Province' since that dataset predates the reform)",
+      "daira": "verified (Megarine, fr.wikipedia infobox) - matches what the brief says is already correct in the app",
+      "coords": "verified (fr.wikipedia infobox: 33.28886/6.09254) - this is the field that needed fixing per the brief",
+      "ons_code": "seen (fr.wikipedia infobox labels this '3010' under an ONS/postal field; old parent wilaya Ouargla = 30, ordinal 10) - medium confidence, format is ambiguous between ONS and postal"
+    },
+    "sanity_check": "33.29N/6.09E is close to Touggourt town (~33.11N/6.06E) - falls inside Touggourt wilaya extent. OK. Contrasts clearly with the wrongly-carried El Bayadh coordinates (El Bayadh is ~33.7N/1.0E, a totally different region), confirming the corruption described in the brief.",
+    "notes": "Only lat/lon needed fixing per brief; daira and postal_code were reported as already correct and this research did not contradict that."
+  },
+  {
+    "wilaya_code": 64,
+    "name_fr": "Bougara",
+    "name_ar": "بوقرة",
+    "daira": "Zmalet El Emir Abdelkader",
+    "daira_status": "UNRESOLVED CONFLICT - see notes",
+    "postal_code": "14018",
+    "postal_code_conflict": "one aggregator (dza.postcodebase.com) shows 14190 instead of 14018 (fr.wikipedia infobox value) - not adjudicated",
+    "latitude": 35.553353,
+    "longitude": 1.967282,
+    "ons_code": "1440",
+    "wikidata": "Q2921548",
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Bougara_(Tiaret)",
+      "https://www.wikidata.org/wiki/Q2921548",
+      "https://dza.postcodebase.com/city/bougaratiaret"
+    ],
+    "status": {
+      "name_ar": "verified (fr.wikipedia infobox + Wikidata agree)",
+      "wilaya": "verified - w64 Ksar Chellala (transferred from parent Tiaret wilaya per 2026 reform)",
+      "daira": "UNRESOLVED - fr.wikipedia infobox and Wikidata both give the pre-reform daira as simply 'Tiaret'/unspecified, with secondary sources describing Bougara as historically under the *Hamadia* daira, not 'Zmalet El Emir Abdelkader'. The brief states the app's existing daira value 'Zmalet El Emir Abdelkader' looks right, but I found a competing claim (news search synthesis) that the former Hamadia daira - which included Ksar Chellala, Serghine, Zmalet Emir Abdelkader, Hamadia, Bougara, Rechaïga as six communes - is the more likely governing unit, with Zmalet El Emir Abdelkader being a *sibling* commune, not Bougara's daira. Could not find the actual 2026 decree text listing w64's daira structure to adjudicate. Recommend treating current app daira value as unverified pending the decree text.",
+      "coords": "verified (Wikidata P625 / fr.wikipedia infobox agree: 35.553/1.967)",
+      "postal_code": "unresolved - conflicting values across sources",
+      "ons_code": "verified (fr.wikipedia infobox: 1440)"
+    },
+    "sanity_check": "35.55N/1.97E falls inside the Ksar Chellala/Tiaret-region extent (~35.0-35.6N, 1.5-2.3E). OK.",
+    "notes": "Only lat/lon (currently Blida's Bougara coords) needed fixing per brief; this research corroborates fixing coords to 35.553/1.967 but flags the daira field as needing a decree-level re-check, not a confirmed correct value."
+  },
+  {
+    "wilaya_code": 66,
+    "name_fr": "Deldoul",
+    "name_ar": "دلدول",
+    "daira": "Messaad",
+    "postal_code": "17415",
+    "latitude": 34.20519,
+    "longitude": 3.25311,
+    "ons_code": "1729",
+    "wikidata": "Q3021530",
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Deldoul_(Djelfa)",
+      "https://www.wikidata.org/wiki/Q3021530"
+    ],
+    "status": {
+      "name_ar": "verified (fr.wikipedia infobox + Wikidata agree)",
+      "wilaya": "verified - w66 Messaad (transferred from parent Djelfa wilaya per 2026 reform)",
+      "daira": "verified (Messaad, fr.wikipedia infobox) - matches brief's expectation",
+      "coords": "verified (fr.wikipedia infobox / Wikidata agree: 34.205/3.253)",
+      "postal_code": "verified (fr.wikipedia infobox: 17415)",
+      "ons_code": "verified (fr.wikipedia infobox: 1729)"
+    },
+    "sanity_check": "34.21N/3.25E falls inside the Djelfa/Messaad-region extent (~33.8-34.5N, 2.7-3.7E). OK. Clearly distinct from the wrongly-carried Timimoun coordinates (28.70N/0.15E, Sahara deep south) confirming the corruption.",
+    "notes": "Brief's recollection of '~33.9N' for the real Deldoul was an approximation; the sourced value (34.205N) is in the same general Djelfa/Messaad region and is not a contradiction, just more precise."
+  },
+  {
+    "wilaya_code": 68,
+    "name_fr": "Menaa",
+    "name_fr_canonical": "Menaâ (historically 'Ouled Atia')",
+    "name_ar": "منعة (Batna's Menaâ) vs أولاد عطية (M'Sila's Menaâ, old name preserved as Wikidata label)",
+    "daira": "Medjedel",
+    "postal_code": "28016",
+    "postal_code_status": "inferred - single tertiary source (azpostcodes), not cross-checked against an authoritative postal list",
+    "latitude": 35.144444,
+    "longitude": 3.694444,
+    "ons_code": null,
+    "wikidata": "Q3358191",
+    "sources": [
+      "https://www.wikidata.org/wiki/Q3358191",
+      "https://fr.wikipedia.org/wiki/Communes_de_la_wilaya_de_M'Sila (lists Menaâ among M'Sila's pre-2026 communes)",
+      "https://www.azpostcodes.com/dza/place-m-sila-medjedel-ouled-atia-menaa/",
+      "https://rhinotenders.com/companies/company/apc-commune-de-menaa-wilaya-de-m-sila- (confirms an active APC/commune administration named Menaa in M'Sila)"
+    ],
+    "status": {
+      "existence": "VERIFIED - a real commune named Menaâ (former name Ouled Atia) does exist, in the Medjedel daira of the pre-reform M'Sila wilaya (28). The brief's doubt about its existence is resolved: it is real.",
+      "wilaya_transfer_to_68": "UNRESOLVED - I could not find the official 2026 decree text enumerating exactly which of M'Sila's ~15 dairas (23 communes across 8 dairas, per secondary sources) were reassigned to the new w68 Bou Saâda delegated wilaya. Medjedel's inclusion in that set is plausible given Bou Saâda's geographic centrality but is NOT independently confirmed here.",
+      "name_ar": "verified for the wrong (Batna) Menaa (منعة); the REAL M'Sila commune's Wikidata Arabic label is still the old name أولاد عطية (Ouled Atia) rather than a Menaâ-specific Arabic spelling - flag for a native speaker to confirm the current official Arabic name in use",
+      "daira": "seen (Medjedel, per search synthesis referencing an official administrative document) - not independently verified against a primary source",
+      "coords": "seen (Wikidata P625, under the old 'Ouled Atia' label) - not independently cross-checked",
+      "postal_code": "inferred, low confidence",
+      "ons_code": "unresolved - not found"
+    },
+    "sanity_check": "35.14N/3.69E is roughly 90km NW of Bou Saâda town (35.21N/4.19E) and sits inside a plausible M'Sila-region extent, but this has not been confirmed as inside the specific w68 Bou Saâda delegated-wilaya boundary since that boundary is itself unresolved.",
+    "notes": "This is the least-resolved record of the 13. Two distinct real risks: (1) whether Menaâ/Medjedel actually falls inside the new w68, and (2) whether the Wikidata item's stale 'Ouled Atia' labeling reflects the commune's current official name and coordinates. Recommend a follow-up check against the JORADP decree text or interieur.gov.dz before writing this fix."
+  },
+  {
+    "wilaya_code": 68,
+    "name_fr": "Sidi Ameur",
+    "name_ar": "سيدي عامر",
+    "daira": "Sidi Ameur",
+    "postal_code": "28035",
+    "latitude": 35.367,
+    "longitude": 3.9,
+    "ons_code": null,
+    "wikidata": "Q3483187",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Sidi_Ameur,_M%27Sila",
+      "https://www.wikidata.org/wiki/Q3483187",
+      "http://www.codepostalpro.com/algerie/msila/sidi-ameur/sidi-ameur.html"
+    ],
+    "status": {
+      "existence": "verified real - matches brief's claim that the ex-M'Sila Sidi Ameur is real",
+      "name_ar": "verified (Wikidata Q3483187 + en.wikipedia agree)",
+      "wilaya_transfer_to_68": "UNRESOLVED for the same reason as Menaâ above - could not confirm Sidi Ameur daira's inclusion in the official w68 community list from a primary decree source, only plausible by proximity",
+      "daira": "seen - this commune IS itself the seat of its own daira (Sidi Ameur District, Q12211158, which groups Sidi Ameur + Tamsa per a secondary source)",
+      "coords": "verified (Wikidata P625 / en.wikipedia agree: 35.367/3.90) - only lat/lon needed fixing per brief, this replaces the wrongly-carried El Bayadh coordinates",
+      "postal_code": "verified with reasonable confidence (codepostalpro + nowmsg agree on 28035)",
+      "ons_code": "unresolved - not found"
+    },
+    "sanity_check": "35.37N/3.90E is a plausible M'Sila-region location; not independently confirmed as inside w68's specific boundary (see wilaya_transfer_to_68 above). Clearly distinct from the wrongly-carried El Bayadh coordinates (El Bayadh town ~33.68N/1.02E), confirming the corruption.",
+    "notes": "Fix is coordinates only per brief; wilaya/daira left as app currently has them since this research did not find grounds to change and did not find grounds to fully confirm either."
+  },
+  {
+    "wilaya_code": 68,
+    "name_fr": "Sidi M'hamed",
+    "name_ar": "سيدي محمد",
+    "daira": "Aïn El Melh",
+    "postal_code": null,
+    "latitude": 34.735833,
+    "longitude": 4.285833,
+    "ons_code": "2838",
+    "wikidata": "Q3483253",
+    "sources": [
+      "https://fr.wikipedia.org/wiki/Sidi_M'Hamed_(M'Sila)",
+      "https://www.wikidata.org/wiki/Q3483253"
+    ],
+    "status": {
+      "existence": "verified real - matches brief's claim; chief town of the commune is Bordj Belkherif, ~55km SE of Bou Saâda per secondary source, which is a much stronger proximity signal to w68 than the other two M'Sila records above",
+      "name_ar": "verified (fr.wikipedia infobox: سيدي محمد; Wikidata's own AR label field returned a garbled variant 'تامور سيدي محمد' which looks like a data-quality artifact on Wikidata's side - trust the fr.wikipedia infobox value instead)",
+      "wilaya_transfer_to_68": "more plausible than Menaâ/Sidi Ameur given the 55km-from-Bou-Saâda proximity fact, but still not confirmed against a primary decree source",
+      "daira": "verified (Aïn El Melh, fr.wikipedia infobox; daira groups Aïn El Melh, Bir Foda, Aïn Fares, Sidi M'hamed, Aïn Errich per secondary source)",
+      "coords": "verified (fr.wikipedia infobox / Wikidata agree: 34.736/4.286) - replaces the wrongly-carried Algiers coordinates",
+      "postal_code": "unresolved - not found",
+      "ons_code": "verified (fr.wikipedia infobox: 2838)"
+    },
+    "sanity_check": "34.74N/4.29E is ~55km SE of Bou Saâda (35.21N/4.19E) per secondary source, consistent with being 'near Aïn El Melh' as the brief states. Clearly distinct from the wrongly-carried Algiers-Sidi-M'hamed coordinates (36.76N/3.05E), confirming the corruption.",
+    "notes": "Of the three w68 records, this one's transfer-to-w68 claim is best supported by independent proximity evidence, though still not decree-confirmed."
+  }
+]
