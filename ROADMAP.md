@@ -44,6 +44,33 @@ reads as further along than it is.
   already falls back to a bare code for any carrier with no mark on file.
   _(logged 2026-07-28)_
 
+## Core dataset (geoalgeria)
+
+- [ ] **The package ships 1,528 of Algeria's 1,541 communes.** The 13 absent
+  ones are communes of the 2026 wilayas (10, 15, 23, 25, 31, 46, 51, 55, 64,
+  66, 68) that share a name with a commune elsewhere in the country; sourced
+  records with Wikidata QIDs exist from the 2026-07-29 reconciliation (the app
+  repo's algeria.json rows were repaired from them; this package still needs
+  the additions plus a version bump and README count updates in all locales).
+  Open sub-questions: Menaa's wilaya assignment (Medjedel daira's transfer to
+  wilaya 68 is unconfirmed against the decree) and 4 missing postal codes.
+  _(logged 2026-07-29)_
+
+- [ ] **`code_commune` duplicates are ingestion corruption, not a scheme.**
+  34 duplicated code groups (79 rows); in 33 of them every colliding row also
+  shares one identical postal_code, the signature of a forward-fill bug in the
+  original ingestion. The code is the pre-2026 ONS code and was never meant to
+  collide. Needs a per-row re-derivation against an ONS table, and the same
+  pass should settle the postal-code wilaya-prefix inconsistency (some new-
+  wilaya communes carry new-prefix postals, some keep the parent's).
+  _(logged 2026-07-29)_
+
+- [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
+  Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
+  coordinates ~1 degree apart. Which side is right is unresolved; verify
+  against Wikidata/OSM before touching either.
+  _(logged 2026-07-29)_
+
 ## Releases
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
