@@ -1,3 +1,26 @@
+# ERRATUM (read first, 2026-07-29)
+
+The report below was a first pass and its headline framing is WRONG. It matched
+the app's 13 new-wilaya commune rows to package rows by coordinates and
+concluded "stale wilaya_code in the package". The truth is the inverse, proven
+by inspecting the app rows directly (dairas, postal codes): the 13 app rows are
+REAL communes of their stated wilayas whose coordinates/postal codes were
+filled from same-named communes elsewhere by a bad name-based join, and the
+package is genuinely missing all 13 (it ships 1,528 of 1,541). The coordinate
+"matches" the report celebrates are exactly the corruption. Two examples that
+settle it: the app's (w10 Bouira, Ain Turk) row carries daira "Ain El Turk",
+postal 31300 and Oran coastal coordinates, all Oran's; the app's (w55
+Touggourt, Sidi Slimane) row carries the correct Touggourt daira Megarine and
+postal 55008 but El Bayadh's coordinates.
+
+What below REMAINS valid: the code_commune scheme identification (pre-2026 ONS
+code), the forward-fill duplicate diagnosis (section 4), the 4
+coordinate-disagreement communes (section 3), and the Deldoul flag. The
+corrected, sourced records live in communes-13-records.json (El Eulma corrected
+2026-07-29 to Annaba's Q3060336 after the second pass also missed it).
+
+---
+
 # Communes reconciliation: package (1,528) vs app (1,541)
 
 Sources compared directly (both read in full, no sampling):

@@ -56,15 +56,14 @@
     "wilaya_code": 23,
     "name_fr": "El Eulma",
     "name_ar": "العلمة",
-    "daira": "El Eulma",
-    "postal_code": "19600",
-    "latitude": 36.152778,
-    "longitude": 5.69,
-    "ons_code": "1920",
-    "wikidata": "Q401747",
+    "daira": "Aïn El Berda",
+    "postal_code": null,
+    "latitude": 36.73875,
+    "longitude": 7.46163,
+    "ons_code": null,
+    "wikidata": "Q3060336",
     "sources": [
-      "https://www.wikidata.org/wiki/Q401747",
-      "https://onil.dz/wp-content/uploads/2017/10/19SETIF.pdf (ONS/dairas list, wilaya 19 Sétif)"
+      "https://www.wikidata.org/wiki/Q3060336"
     ],
     "status": {
       "name_ar": "verified (Wikidata Q401747)",
@@ -75,7 +74,7 @@
       "ons_code": "seen for Sétif's El Eulma only (1920)"
     },
     "sanity_check": "36.15N/5.69E is Sétif, wilaya 19 - falls OUTSIDE Annaba wilaya extent (~36.6-36.95N, 7.6-8.4E). FAILS the w23 sanity check.",
-    "notes": "IMPORTANT CONTRADICTION WITH BRIEF: I could not confirm any commune literally named 'El Eulma' belongs to Annaba wilaya (23). Annaba's 12 communes (per fr.wikipedia 'Communes de la wilaya d'Annaba') are: Annaba, Aïn El Berda, Berrahal, Chetaibi, El Bouni, El Hadjar, Eulma (?) - I did not find this in the standard Annaba commune list during this pass. It is possible the app's #3 entry is a mis-transcription/mis-attribution of the *daira/homonym pattern itself* (i.e. wilaya_code may be wrong in the source brief, not just lat/lon/postal), OR there is a small locality in Annaba also colloquially called 'El Eulma' that does not have its own Wikidata item. Flagging as UNRESOLVED rather than filling in Sétif's coordinates under a wrong wilaya label - recommend the orchestrator re-verify against the interieur.gov.dz Annaba commune list before writing any fix."
+    "notes": "CORRECTED 2026-07-29: the research pass filled this with Setif's El Eulma (Q401747), concluding no Annaba commune of that name exists. It does: Q3060336 'Eulma', commune of Annaba, daira Ain El Berda, coords 36.73875/7.46163, ar العلمة. Found by querying items labeled Eulma with P131 chains instead of name search. Postal and ONS codes still unresolved."
   },
   {
     "wilaya_code": 25,
@@ -112,7 +111,10 @@
     "name_ar": "عين الكرمة",
     "daira": "Boutlélis",
     "postal_code": null,
-    "postal_code_candidates_unresolved": ["31340", "31026"],
+    "postal_code_candidates_unresolved": [
+      "31340",
+      "31026"
+    ],
     "latitude": 35.648979,
     "longitude": -0.975702,
     "ons_code": "3125",
