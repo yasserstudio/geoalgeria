@@ -3,7 +3,7 @@
 // Why this file exists, and why it is a test rather than a line in
 // validate-packages.mjs: `dataset` ships no data/metadata.json, never reaches that
 // script's v2 gate, and is a declared V1 holdout — so the geo-in-boundary check
-// that now runs over all 24 scoped packages ran over none of the 1,528 commune
+// that now runs over all 24 scoped packages ran over none of the 1,541 commune
 // centroids they are all derived from. The table was the one file exempt from the
 // standard its consumers are held to.
 //
@@ -45,7 +45,7 @@ const DATA = join(ROOT, "packages", "dataset", "data");
 const readText = (...p) => readFileSync(join(DATA, ...p), "utf-8");
 const readJson = (...p) => JSON.parse(readText(...p));
 
-const COMMUNE_COUNT = 1528;
+const COMMUNE_COUNT = 1541;
 
 // Commune rows whose point cannot be asked about, pinned per file so a second one
 // cannot appear unnoticed. Stidia (w27) carries longitude 0 in every JSON/CSV/
@@ -107,10 +107,13 @@ const COPIES = [
     // …, wilaya_code, 'daira', 'postal', latitude, longitude, code_commune)
     // Anchored at the end of the row: commune names carry SQL-escaped apostrophes
     // (M''fatha), so a left-anchored quoted-field pattern drops them silently.
+    // postal_code matches NULL as well as a quoted value: five of the 13 communes
+    // added in the 1,541 completion have no citable postal code, and a pattern that
+    // only accepted '\d+' would drop exactly those rows instead of checking them.
     "data/sql/full.sql",
     () => {
       const re =
-        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', '\d+', (-?[\d.]+|NULL), (-?[\d.]+|NULL), (?:\d+|NULL)\)[,;]$/;
+        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (?:\d+|NULL)\)[,;]$/;
       const num = (s) => (s === "NULL" ? NaN : Number(s));
       const out = [];
       for (const line of readText("sql", "full.sql").split("\n")) {

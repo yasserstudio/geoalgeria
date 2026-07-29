@@ -17,7 +17,7 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
-├── dairas.json                  ← 555 dairas
+├── dairas.json                  ← 556 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
@@ -90,10 +90,10 @@ data/
 | `name_ar` | string | Arabic name |
 | `wilaya_code` | integer | Parent wilaya code (1–69) |
 | `daira` | string | Parent daira name (French) |
-| `postal_code` | string | Commune postal code |
+| `postal_code` | string \| null | Commune postal code (null for 5 communes with no citable code) |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
-| `code_commune` | integer | Official administrative code (null for 10 communes) |
+| `code_commune` | integer \| null | Official administrative code (null for 15 communes) |
 
 ### Commune (e-commerce)
 
@@ -119,7 +119,7 @@ data/
 | `wilaya_code` | integer | Wilaya number |
 | `wilaya_name_fr` | string | Wilaya French name (denormalized) |
 | `wilaya_name_ar` | string | Wilaya Arabic name (denormalized) |
-| `postal_code` | string | Postal code |
+| `postal_code` | string \| null | Postal code (null for the same 5 communes) |
 
 ### Daira
 
@@ -160,8 +160,8 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 ## Coverage
 
 - **69 wilayas** — complete (original 48 + 2019 reform + 2025 reform)
-- **555 dairas**
-- **1,528 communes** (deduplicated; reconciliation toward the official 1,541 in progress — see the changelog)
+- **556 dairas**
+- **1,541 communes** (complete; the 13 name-twin communes of the reform wilayas were added 2026-07-29 from `research/_communes-reconcile/`)
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
 

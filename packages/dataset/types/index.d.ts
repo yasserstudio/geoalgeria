@@ -73,9 +73,13 @@ declare namespace algeriaGeodata {
     name_ar: string;
     wilaya_code: number;
     daira: string | null;
+    /** `null` on the 5 communes for which no citable postal code was found. */
     postal_code: string | null;
     latitude: number | null;
     longitude: number | null;
+    /** Pre-2026 ONS commune code. `null` on the 15 communes with no sourced
+     *  value; it is not renumbered for the 2026 reform, so it cannot be used to
+     *  look up a commune's current wilaya. */
     code_commune: number | null;
   }
 
@@ -94,6 +98,7 @@ declare namespace algeriaGeodata {
     wilaya_code: number;
     wilaya_name_fr: string;
     wilaya_name_ar: string;
+    /** `null` on the same 5 communes as `Commune.postal_code`. */
     postal_code: string | null;
   }
 

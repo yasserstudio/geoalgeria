@@ -58,8 +58,8 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | | Nombre | |
 |---|---|---|
 | **Wilayas** | 69 | provinces (réformes 2019 + 2026) |
-| **Daïras** | 555 | districts, comme entités de premier niveau |
-| **Communes** | 1 528 | bilingues FR/AR, codes postaux, coordonnées |
+| **Daïras** | 556 | districts, comme entités de premier niveau |
+| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -112,7 +112,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 ## À qui ça s'adresse
 
 - **E-commerce / COD**: cascades d'adresses wilaya → daïra → commune, validation des codes postaux et configuration des zones de livraison correspondant à ce que les transporteurs utilisent réellement.
-- **Cartes et SIG**: GeoJSON prêt à l'emploi avec 1 528 features communes, modélisé correctement à travers les deux réformes.
+- **Cartes et SIG**: GeoJSON prêt à l'emploi avec 1 541 features communes, modélisé correctement à travers les deux réformes.
 - **Recherche, données publiques et projets civiques**: données de référence propres, structurées, sourcées et versionnées au lieu de PDF.
 - **Tout projet utilisant des données algériennes**: un seul install, types inclus.
 

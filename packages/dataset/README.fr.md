@@ -2,7 +2,7 @@
 
 # GeoAlgeria
 
-> Le package de géodonnées algériennes – 69 wilayas, 555 daïras, 1 528 communes. À un `npm install` près.
+> Le package de géodonnées algériennes – 69 wilayas, 556 daïras, 1 541 communes. À un `npm install` près.
 
 Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez encore des jeux de données bloqués à 48 wilayas ? GeoAlgeria est la première géodonnée algérienne installable via npm et validée par CI – mise à jour pour la réforme de 2026. JSON, CSV, GeoJSON, SQL, TypeScript.
 
@@ -15,7 +15,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 
 ## En bref
 
-L'Algérie compte **69 wilayas** (provinces), **564 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient **1 528 enregistrements de communes** et **555 daïras** : un ensemble d'enregistrements présentant des problèmes de données sources a été retiré, et la réconciliation vers les 1 541 officielles est en cours (voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juin 2026.
+L'Algérie compte **69 wilayas** (provinces), **564 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
 
 ---
 
@@ -49,7 +49,7 @@ Prêt à essayer ? Allez à [Installation](#installation) ou récupérez directe
 - **Développeurs e-commerce** – formulaires d'adresse, configuration des zones de livraison, validation des codes postaux
 - **Ingénieurs backend** – alimentez votre base de données avec un seul fichier SQL
 - **Développeurs frontend** – menus déroulants en cascade (wilaya → daïra → commune)
-- **Analystes SIG / données** – GeoJSON avec 1 528 entités ponctuelles
+- **Analystes SIG / données** – GeoJSON avec 1 541 entités ponctuelles
 - **Développeurs civic tech** – applications gouvernementales, portails citoyens
 - **Étudiants et chercheurs** – données propres, structurées et bien documentées
 
@@ -65,8 +65,8 @@ npm install geoalgeria
 const dz = require('geoalgeria');
 
 dz.wilayas;                    // les 69 wilayas
-dz.communes;                   // les 1 528 communes
-dz.dairas;                     // les 555 daïras
+dz.communes;                   // les 1 541 communes
+dz.dairas;                     // les 556 daïras
 dz.ecommerce;                  // jeu de données plat pour formulaires d'adresse
 dz.postOffices;                // 3 908 bureaux Algérie Poste
 dz.atms;                       // 2 026 distributeurs automatiques
@@ -143,16 +143,16 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 |---------|--------|-----------------|------------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Utilisation en fichier unique |
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
-| `data/dairas.json` | JSON | 555 | Liste des daïras avec nombre de communes |
-| `data/communes_w*.json` | JSON | 1 528 | Données détaillées des communes |
+| `data/dairas.json` | JSON | 556 | Liste des daïras avec nombre de communes |
+| `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
 | `data/csv/wilayas.csv` | CSV | 69 | Tableurs, imports |
-| `data/csv/communes.csv` | CSV | 1 528 | Tableurs, imports |
+| `data/csv/communes.csv` | CSV | 1 541 | Tableurs, imports |
 | `data/geojson/wilayas.geojson` | GeoJSON | 69 | Cartes, SIG |
-| `data/geojson/communes.geojson` | GeoJSON | 1 528 | Cartes, SIG |
-| `data/sql/full.sql` | SQL | 69 + 1 528 | Base de données normalisée |
-| `data/ecommerce/communes.json` | JSON | 1 528 | Formulaires d'adresse, menus déroulants |
-| `data/ecommerce/communes.csv` | CSV | 1 528 | Import plat |
-| `data/ecommerce/communes.sql` | SQL | 1 528 | Base de données mono-table |
+| `data/geojson/communes.geojson` | GeoJSON | 1 541 | Cartes, SIG |
+| `data/sql/full.sql` | SQL | 69 + 1 541 | Base de données normalisée |
+| `data/ecommerce/communes.json` | JSON | 1 541 | Formulaires d'adresse, menus déroulants |
+| `data/ecommerce/communes.csv` | CSV | 1 541 | Import plat |
+| `data/ecommerce/communes.sql` | SQL | 1 541 | Base de données mono-table |
 | `data/delivery/*.json` | JSON | 69 par transporteur | Calcul de zones de livraison |
 | `data/poste/postoffices.json` | JSON | 3 908 | Bureaux de poste (codes réels, coordonnées) |
 | `data/poste/atms.json` | JSON | 2 026 | Emplacements des distributeurs |
@@ -256,13 +256,13 @@ Visualisez les 69 wilayas sur une carte : [`algeria.geojson`](algeria.geojson) (
 69. Les 48 d'origine, plus 10 ajoutées en 2019 (loi 19-12), plus 11 officialisées en avril 2026 ([loi n° 26-06, *Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf)). La période de transition se termine le 31 décembre 2026 ; pleine autonomie à compter du 1er janvier 2027.
 
 **Où trouver une liste de toutes les communes algériennes en JSON ?**
-Ici même – `data/ecommerce/communes.json` contient les 1 528 communes dans un format plat, prêt à l'emploi.
+Ici même – `data/ecommerce/communes.json` contient les 1 541 communes dans un format plat, prêt à l'emploi.
 
 **Quelles sont les nouvelles wilayas ajoutées en 2026 ?**
 Les wilayas 59 à 69 (numérotées par ordre de code de la wilaya mère) : 59 Aflou (depuis Laghouat), 60 Barika (depuis Batna), 61 El Kantara (depuis Biskra), 62 Bir El Ater (depuis Tébessa), 63 El Aricha (depuis Tlemcen), 64 Ksar Chellala (depuis Tiaret), 65 Aïn Oussara (depuis Djelfa), 66 Messaad (depuis Djelfa), 67 Ksar El Boukhari (depuis Médéa), 68 Bou Saâda (depuis M'sila), 69 El Abiodh Sidi Cheikh (depuis El Bayadh).
 
 **Comment obtenir les codes postaux algériens au format JSON ?**
-Installez `geoalgeria` via npm ou téléchargez directement `data/ecommerce/communes.json` – il contient les 1 528 codes postaux associés aux noms de communes en français et en arabe.
+Installez `geoalgeria` via npm ou téléchargez directement `data/ecommerce/communes.json` – il associe les noms de communes en français et en arabe à leur code postal sur les 1 541 communes (5 n'ont pas encore de code sourçable).
 
 **Quel est le meilleur package de géodonnées algériennes pour les développeurs ?**
 GeoAlgeria est l'option la plus complète en 2026 – c'est le seul package npm avec les 69 wilayas, codes postaux, coordonnées, daïras et modèles de zones de livraison en une seule installation. Validé par CI à chaque commit.

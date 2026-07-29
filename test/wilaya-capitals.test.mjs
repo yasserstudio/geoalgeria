@@ -8,7 +8,7 @@
 //
 // The check: the commune table (data/communes_w*.json) carries its own
 // lat/lng + wilaya_code and is built independently of the capital points. So a
-// capital's nearest commune centroid, over all 1,528 communes, must belong to
+// capital's nearest commune centroid, over all 1,541 communes, must belong to
 // that capital's own wilaya. A permutation moves a capital into someone else's
 // territory and fails immediately.
 //
@@ -110,7 +110,7 @@ function km([lngA, latA], [lngB, latB]) {
   return Math.hypot(x, (latA - latB) * 110.57);
 }
 
-test("wilaya capitals: 1,528 commune centroids loaded", () => {
+test("wilaya capitals: 1,541 commune centroids loaded", () => {
   assert.ok(communes.length > 1500, `only ${communes.length} commune centroids`);
 });
 
