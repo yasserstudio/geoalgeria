@@ -64,18 +64,16 @@ reads as further along than it is.
   meaningful group of bumps rather than on its own.
   _(logged 2026-07-22)_
 
-## Verification
-
-- [ ] **`gares-routieres` geo precision.** 71 records are `exact` and 3 are
-  `approximate`. An earlier note recorded a precision mismatch on 2 records;
-  whether those are among the 3 approximate ones, or a separate disagreement
-  between the declared precision and the source, has not been re-checked since.
-  **Confirm the finding before acting on it** rather than trusting the note.
-  _(logged 2026-07-22, unverified)_
-
 ---
 
 ## Recently closed
+
+- **`gares-routieres` geo precision**: verified, nothing to fix. The 2 records
+  behind the note (33-03 Illizi, 65-01 Ain Oussara) were already downgraded to
+  `geo_precision: "approximate"` by the 409-record sweep (`99f6f27`,
+  2026-07-20); `geo_method: "exact"` was kept on purpose per that commit
+  (method records how the point was obtained; only the precision claim was
+  wrong). The note predated the sweep. Verified 2026-07-29.
 
 - **Em-dash sweep of the package READMEs**: done. Grepping every
   `packages/*/README*.md` for the character returns nothing, so the sweep tracked
