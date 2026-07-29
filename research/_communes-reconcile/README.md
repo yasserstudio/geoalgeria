@@ -15,7 +15,7 @@ postal 55008 but El Bayadh's coordinates.
 
 What below REMAINS valid: the code_commune scheme identification (pre-2026 ONS
 code), the forward-fill duplicate diagnosis (section 4), the 4
-coordinate-disagreement communes (section 3), and the Deldoul flag. The
+coordinate-disagreement communes (section 3). The
 corrected, sourced records live in communes-13-records.json (El Eulma corrected
 2026-07-29 to Annaba's Q3060336 after the second pass also missed it).
 
@@ -83,7 +83,7 @@ wilaya_code, is stale in one of the two files.
 
 ## 2. "Genuinely missing" list
 
-**Empty.** All 14 target communes exist in the package. No new records needed to be
+**SUPERSEDED by the erratum: the package is missing all 13.** (Original text kept below for the record.) All 14 target communes exist in the package. No new records needed to be
 compiled from Wikidata/JO/ONS, because there is nothing missing — only wilaya_code needs
 correcting on 13 rows (mechanical: old code → new code per the reform's own wilaya
 renumbering table), and one name needs an accent added (Ain Oussera → Aïn Oussera, or

@@ -40,6 +40,11 @@ SPARQL = "https://query.wikidata.org/sparql"
 UA = "GeoAlgeria-data/1.0 (https://github.com/yasserstudio/geoalgeria)"
 MAX_KM = 15.0
 
+# Explicit item pins for IATA codes the automatic disambiguation cannot settle.
+# When the ambiguity SystemExit below fires, the fix is one line here, with the
+# QID a reviewer can open, not a code change.
+PINNED: dict[str, str] = {}
+
 
 def haversine_km(lat1, lng1, lat2, lng2):
     rad = math.pi / 180
@@ -101,19 +106,33 @@ def main():
     by_iata = {}
     for r in rows:
         iata = r["iata"]["value"]
+        qid = r["item"]["value"].rsplit("/", 1)[1]
+        if iata in PINNED and PINNED[iata] != qid:
+            continue
         en = r.get("en", {}).get("value")
+        # Label test, deliberately NOT a P31/P279* taxonomy walk: joint
+        # civil-military airports (DXB, NDJ, NIM, ...) legitimately descend
+        # from the air-base class and a class filter drops them wholesale
+        # (tried 2026-07-29, it killed 5 real airports). An item this misses
+        # trips the ambiguity guard below, whose fix is one PINNED line.
         if en and "air base" in en.lower():
             continue
         cand = {
-            "qid": r["item"]["value"].rsplit("/", 1)[1],
+            "qid": qid,
             "name_en": norm(en),
             "name_ar": norm(r.get("ar", {}).get("value")),
             "name_fr": cap_first(norm(r.get("fr", {}).get("value"))),
             "coord": r.get("coord", {}).get("value"),
         }
-        if iata in by_iata and by_iata[iata]["qid"] != cand["qid"]:
+        prev = by_iata.get(iata)
+        if prev and prev["qid"] != cand["qid"]:
             raise SystemExit(f"{iata}: ambiguous after the air-base filter "
-                             f"({by_iata[iata]['qid']} vs {cand['qid']}); pin one explicitly")
+                             f"({prev['qid']} vs {cand['qid']}); add the right QID to PINNED")
+        if prev and prev["coord"] != cand["coord"]:
+            # One item, two P625 statements: last-row-wins would make the 15 km
+            # guard nondeterministic between runs. Refuse instead.
+            raise SystemExit(f"{iata}: {qid} carries conflicting coordinates on Wikidata; "
+                             f"resolve there or pin the item and drop the extra statement")
         by_iata[iata] = cand
 
     problems = []

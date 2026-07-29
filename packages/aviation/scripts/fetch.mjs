@@ -475,11 +475,17 @@ async function main() {
   let routesAsOf = null;
   try {
     routeCount = JSON.parse(readFileSync(join(DATA, "routes.json"), "utf8")).length;
-    // The validity stamp build-routes.mjs patched in: a live ANAC pull says
-    // nothing about the route network, so regenerating must not drop it.
-    routesAsOf = JSON.parse(readFileSync(join(DATA, "metadata.json"), "utf8")).routes_as_of ?? null;
   } catch {
     console.log("  (no routes.json yet — run scripts/build-routes.mjs to emit it)");
+  }
+  if (routeCount) {
+    // The validity stamp build-routes.mjs patched in: a live ANAC pull says
+    // nothing about the route network, so regenerating must not drop it.
+    // Deliberately OUTSIDE the try: routes exist, so an unreadable
+    // metadata.json is a real error, and swallowing it would silently ship a
+    // metadata.json whose routes_as_of contradicts the non-optional type.
+    routesAsOf = JSON.parse(readFileSync(join(DATA, "metadata.json"), "utf8")).routes_as_of ?? null;
+    if (!routesAsOf) throw new Error("metadata.json has routes but no routes_as_of; run scripts/build-routes.mjs first");
   }
 
   // Emit v2 via the shared writer (live-only source, so stamp the run's date).

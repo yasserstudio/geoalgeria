@@ -921,6 +921,38 @@ function walkFiles(dir, base = dir, out = []) {
   return out.sort();
 }
 
+// route-endpoints.json is published and typed (name/name_en/name_ar
+// non-optional) but fits neither spec shape: it is not a GeoRecord set (no
+// wilaya_code on foreign airports) and not a counted relation (no CSV mirror).
+// This gate keeps the type claims honest: every endpoint fully named, iata
+// unique, every routes.json terminal present, and the routes_as_of stamp real.
+function validateRouteEndpoints() {
+  const dataDir = join(ROOT, "packages", "aviation", "data");
+  const label = "aviation/route-endpoints.json";
+  let eps, routes, meta;
+  try {
+    eps = readJson(join(dataDir, "route-endpoints.json"));
+    routes = readJson(join(dataDir, "routes.json"));
+    meta = readJson(join(dataDir, "metadata.json"));
+  } catch (e) {
+    return fail(`${label}: cannot read — ${e.message}`);
+  }
+  let missing = 0;
+  for (const e of eps) {
+    for (const f of ["iata", "name", "name_en", "name_ar", "lat", "lng", "country"]) {
+      if (e[f] === undefined || e[f] === null || e[f] === "") missing++;
+    }
+  }
+  if (missing > 0) fail(`${label}: ${missing} missing required field value(s)`);
+  const iatas = new Set(eps.map((e) => e.iata));
+  if (iatas.size !== eps.length) fail(`${label}: duplicate iata`);
+  const unresolved = routes.flatMap((r) => [r.from, r.to]).filter((c) => !iatas.has(c));
+  if (unresolved.length) fail(`${label}: routes reference absent endpoint(s) ${[...new Set(unresolved)].join(", ")}`);
+  if (meta.routes && !/^\d{4}-\d{2}-\d{2}$/.test(meta.routes_as_of ?? ""))
+    fail(`aviation/metadata.json: routes present but routes_as_of is not a YYYY-MM-DD date`);
+  console.log(`  OK: ${label} — ${eps.length} endpoints, fully named (fr/en/ar), all route terminals resolve`);
+}
+
 function validateMirror() {
   const sourceDir = join(ROOT, "packages", "poste", "data");
   const mirrorDir = join(ROOT, "packages", "dataset", "data", "poste");
@@ -1525,6 +1557,11 @@ validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 if (!only || only === "poste") {
   console.log(`\n[mirror: dataset ↔ poste]`);
   validateMirror();
+}
+
+if (!only || only === "aviation") {
+  console.log(`\n[aviation route endpoints]`);
+  validateRouteEndpoints();
 }
 
 console.log("\n" + "=".repeat(40));

@@ -66,23 +66,23 @@
       "https://www.wikidata.org/wiki/Q3060336"
     ],
     "status": {
-      "name_ar": "verified (Wikidata Q401747)",
-      "wilaya": "unresolved - app lists this El Eulma under w23 Annaba, but this Wikidata item is the well-known El Eulma of Sétif wilaya (19), not Annaba. No El Eulma commune found in Annaba's commune list in this research pass.",
-      "daira": "seen for the Sétif El Eulma (El Eulma District, Q5351251) - not applicable if the w23 record is actually a different, unidentified place",
-      "coords": "seen for Sétif's El Eulma only - NOT verified for whatever real commune the app record #w23 'El Eulma' is meant to represent",
-      "postal_code": "seen for Sétif's El Eulma only",
-      "ons_code": "seen for Sétif's El Eulma only (1920)"
+      "name_ar": "verified (Wikidata Q3060336 label)",
+      "wilaya": "verified - Q3060336 is a commune of Annaba (P131 Ain El Berda District)",
+      "coords": "verified (Q3060336 P625, 36.73875/7.46163)",
+      "daira": "verified (Q3060336 P131 Ain El Berda District)",
+      "postal_code": "unresolved",
+      "ons_code": "unresolved"
     },
-    "sanity_check": "36.15N/5.69E is Sétif, wilaya 19 - falls OUTSIDE Annaba wilaya extent (~36.6-36.95N, 7.6-8.4E). FAILS the w23 sanity check.",
+    "sanity_check": "36.73875N/7.46163E falls inside wilaya 23 Annaba: OK (verified against the app repo's wilaya boundaries, 5.4 km inside).",
     "notes": "CORRECTED 2026-07-29: the research pass filled this with Setif's El Eulma (Q401747), concluding no Annaba commune of that name exists. It does: Q3060336 'Eulma', commune of Annaba, daira Ain El Berda, coords 36.73875/7.46163, ar العلمة. Found by querying items labeled Eulma with P131 chains instead of name search. Postal and ONS codes still unresolved."
   },
   {
     "wilaya_code": 25,
     "name_fr": "Ben Badis",
     "name_fr_canonical_note": "Wikidata/official FR label for this commune is 'Ibn Badis', not 'Ben Badis' (Ben Badis is the commonly used app/colloquial spelling of the same commune).",
-    "name_ar": "ابن بادس",
+    "name_ar": "ابن باديس",
     "daira": "Aïn Abid",
-    "postal_code": "25030",
+    "postal_code": "25102",
     "postal_code_conflict": "one source (azpostcodes) gives 25030; Wikidata P281 gives 25102 - both cite the Aïn Abid/Ibn Badis area, could not adjudicate definitively",
     "latitude": 36.3173,
     "longitude": 6.83195,
@@ -94,11 +94,11 @@
       "https://onil.dz/wp-content/uploads/2017/10/25CONSTANTINE.pdf"
     ],
     "status": {
-      "name_ar": "verified (Wikidata Q3147437)",
+      "name_ar": "verified (Wikidata Q3147437 label ابن باديس; the earlier ابن بادس dropped the yaa of Badis)",
       "wilaya": "verified - w25 Constantine, unchanged pre/post reform",
       "daira": "verified (Aïn Abid, via Wikidata P131 -> Q3019447 'Aïn Abid')",
       "coords": "verified (Wikidata P625)",
-      "postal_code": "unresolved - two conflicting values (25030 vs 25102), not adjudicated",
+      "postal_code": "verified (Wikidata P281 and fr.wikipedia agree on 25102; azpostcodes' 25030 rejected as single-aggregator)",
       "ons_code": "seen (ONIL Constantine dairas PDF; commune ordinal 03 under Aïn Abid daira 07) - medium confidence"
     },
     "sanity_check": "36.32N/6.83E falls inside Constantine wilaya extent (~36.1-36.5N, 6.5-6.9E). OK.",
@@ -170,9 +170,9 @@
     "name_ar_note": "alt local name 'Ouled Rahma'",
     "daira": "Ouled Djellal",
     "postal_code": null,
-    "latitude": 34.5,
-    "longitude": 4.55,
-    "latitude_note": "Two coordinate variants seen in sources: 34°50'27\"N/4°55'20\"E and 34°30'0\"N/4°33'0\"E. Wikidata gives 34.8408/4.92218. Reporting Wikidata's value as primary; treat as medium confidence pending resolution of the discrepancy.",
+    "latitude": 34.8408,
+    "longitude": 4.92218,
+    "latitude_note": "Wikidata P625 (34.8408/4.92218) is primary and is now the reported value; the round 34.5/4.55 variant from the aggregator was rejected (50.9 km away).",
     "latitude_wikidata": 34.8408,
     "longitude_wikidata": 4.92218,
     "ons_code": null,

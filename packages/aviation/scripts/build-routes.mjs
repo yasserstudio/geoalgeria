@@ -64,7 +64,11 @@ function greatCircle([lng1, lat1], [lng2, lat2], steps = 48) {
 }
 
 function main() {
-  const { routes, planned, endpoints } = JSON.parse(readFileSync(SRC, "utf-8"));
+  const { routes, planned, endpoints, as_of: asOf } = JSON.parse(readFileSync(SRC, "utf-8"));
+  // Validated BEFORE any write, same discipline as writePackageV2: a dataset
+  // regenerated without a validity stamp must abort with the directory
+  // untouched, not after four files are already on disk.
+  if (!asOf) throw new Error("route-dataset.json carries no as_of; rebuild it");
   const ep = Object.fromEntries(endpoints.map((e) => [e.iata, e]));
 
   // One flat table: planned routes are marked rather than split into a second
@@ -126,7 +130,15 @@ function main() {
   writeFileSync(join(DATA, "geojson", "routes.geojson"), JSON.stringify(fc, null, 2) + "\n");
 
   // Endpoints ship too: a consumer drawing arcs needs both ends, and the foreign
-  // ones are not in airports.json, which is Algeria only.
+  // ones are not in airports.json, which is Algeria only. The types declare the
+  // three names non-optional, so a dataset regenerated without them (a checkout
+  // predating localize_endpoint_names.py) must fail here, not in a consumer.
+  for (const e of endpoints) {
+    for (const f of ["iata", "name", "name_en", "name_ar", "lat", "lng", "country"]) {
+      if (e[f] === undefined || e[f] === null || e[f] === "")
+        throw new Error(`route-endpoints: ${e.iata ?? "?"} missing ${f}; rebuild route-dataset.json`);
+    }
+  }
   writeFileSync(join(DATA, "route-endpoints.json"), JSON.stringify(endpoints, null, 2) + "\n");
 
   // Routes churn seasonally, so the package carries a validity stamp instead of
@@ -135,8 +147,6 @@ function main() {
   // Patched into metadata.json here (fetch.mjs preserves it), because the shared
   // writer that owns metadata.json runs from a live ANAC pull this script must
   // not trigger.
-  const asOf = JSON.parse(readFileSync(SRC, "utf-8")).as_of;
-  if (!asOf) throw new Error("route-dataset.json carries no as_of; rebuild it");
   const metaPath = join(DATA, "metadata.json");
   const meta = JSON.parse(readFileSync(metaPath, "utf-8"));
   meta.routes = rows.length;

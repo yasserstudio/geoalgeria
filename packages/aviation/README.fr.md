@@ -52,8 +52,9 @@ Couvrant **33 wilayas**, chaque aéroport est géocodé et porte un code IATA. `
 est lié au modèle 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 Chaque extrémité de route (les deux bouts de chaque arc, aéroports étrangers compris)
-porte un nom en trois langues : `name` (français), `name_en` et `name_ar`, appariés sur
-Wikidata par code IATA et vérifiés contre la coordonnée livrée. Les routes changent au fil
+porte un nom en trois langues : `name` (français ; le libellé français de Wikidata pour
+les aéroports étrangers, le style ANAC pour les algériens), plus `name_en` et `name_ar`,
+appariés sur Wikidata par code IATA et vérifiés contre la coordonnée livrée. Les routes changent au fil
 des saisons, donc `metadata.routes_as_of` date la dernière vérification du réseau contre
 les horaires : un instantané daté, pas un fait permanent.
 

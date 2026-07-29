@@ -47,13 +47,14 @@ reads as further along than it is.
 ## Core dataset (geoalgeria)
 
 - [ ] **The package ships 1,528 of Algeria's 1,541 communes.** The 13 absent
-  ones are communes of the 2026 wilayas (10, 15, 23, 25, 31, 46, 51, 55, 64,
-  66, 68) that share a name with a commune elsewhere in the country; sourced
+  ones each share a name with a commune elsewhere in the country (their
+  wilayas span the eras: 64/66/68 are 2026 wilayas, 51/55 are 2019, and 10,
+  15, 23, 25, 31, 46 are unchanged pre-reform wilayas); sourced
   records with Wikidata QIDs exist from the 2026-07-29 reconciliation (the app
   repo's algeria.json rows were repaired from them; this package still needs
   the additions plus a version bump and README count updates in all locales).
   Open sub-questions: Menaa's wilaya assignment (Medjedel daira's transfer to
-  wilaya 68 is unconfirmed against the decree) and 4 missing postal codes.
+  wilaya 68 is unconfirmed against the decree) and 5 missing postal codes.
   _(logged 2026-07-29)_
 
 - [ ] **`code_commune` duplicates are ingestion corruption, not a scheme.**

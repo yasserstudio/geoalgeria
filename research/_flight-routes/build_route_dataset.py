@@ -275,7 +275,8 @@ def main():
         n = names.get(iata)
         if not n:
             raise SystemExit(f"{iata}: not in endpoint-names.json; run localize_endpoint_names.py")
-        return {"iata": iata, "name": name_fr, "name_en": n["name_en"], "name_ar": n["name_ar"],
+        return {"iata": iata, "name": name_fr if name_fr is not None else n["name_fr"],
+                "name_en": n["name_en"], "name_ar": n["name_ar"],
                 "lat": lat, "lng": lng, "country": country}
 
     ep = {}
@@ -288,8 +289,10 @@ def main():
         if f["iata"] in ep:
             continue
         # Foreign `name` was OurAirports English pretending to be the French
-        # display field; the Wikidata French label replaces it.
-        ep[f["iata"]] = named(f["iata"], names[f["iata"]]["name_fr"], f["lat"], f["lng"], f["country"])
+        # display field; the Wikidata French label replaces it. The lookup
+        # happens inside named() so a missing IATA gets the actionable error,
+        # not a bare KeyError evaluated before the call.
+        ep[f["iata"]] = named(f["iata"], None, f["lat"], f["lng"], f["country"])
     dz = {a["iata"] for a in airports if a.get("iata")}
 
     routes, planned_routes = [], []
