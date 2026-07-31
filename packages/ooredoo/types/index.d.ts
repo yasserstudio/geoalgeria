@@ -10,9 +10,12 @@ export type OoredooType = "CSO" | "EO" | "ESO";
  *  (every store is geocoded), but part of the shared contract vocabulary. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. Always `"operator_api"`: every point
- *  comes straight from the Ooredoo locator API. */
-export type GeoMethod = "operator_api";
+/** How the coordinate was obtained. `"operator_api"` for a point that comes
+ *  straight from the Ooredoo locator API (all but one store), and
+ *  `"commune_centroid"` where the API's own coordinate is known to be wrong and
+ *  the record is pinned to its commune's centroid instead (COORD_FIX in
+ *  scripts/fetch.mjs). */
+export type GeoMethod = "operator_api" | "commune_centroid";
 
 /** External identifiers keyed by source system. */
 export interface Refs {
@@ -32,14 +35,15 @@ export interface OoredooStore {
   commune_code: string;
   /** Commune name (French), nearest-centroid match. */
   commune: string;
-  /** Latitude (real API point). */
+  /** Latitude (real API point, or the commune centroid on a corrected record). */
   lat: number;
-  /** Longitude (real API point). */
+  /** Longitude (real API point, or the commune centroid on a corrected record). */
   lng: number;
   /** `"exact"`, or `"approximate"` where the operator-API coordinate is rounded
-   *  too coarse, or is shared with another store, to be a per-store point. */
+   *  too coarse, or is shared with another store, to be a per-store point, or
+   *  where a known-bad API point was replaced by the commune centroid. */
   geo_precision: "exact" | "approximate";
-  /** Always `"operator_api"`. */
+  /** `"operator_api"`, or `"commune_centroid"` on a corrected record. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]` — always "ooredoo". */
   source: "ooredoo";

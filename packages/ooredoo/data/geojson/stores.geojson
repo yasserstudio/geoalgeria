@@ -11736,8 +11736,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.634848,
-          36.2477
+          -0.394722,
+          35.82972
         ]
       },
       "properties": {
@@ -11746,10 +11746,10 @@
         "wilaya_code": "31",
         "commune_code": "3122",
         "commune": "Sidi Ben Yebka",
-        "lat": 36.2477,
-        "lng": -0.634848,
-        "geo_precision": "exact",
-        "geo_method": "operator_api",
+        "lat": 35.82972,
+        "lng": -0.394722,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "ooredoo",
         "refs": {
           "ooredoo": "1422892"

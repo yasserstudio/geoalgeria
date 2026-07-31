@@ -12,17 +12,18 @@
  *   - stores: GET  /o/c/stores/?pageSize=…&page=…  (Bearer token)
  *   Each record carries a real lat/lng and the operator's own villaya/commune
  *   codes; we reconcile the wilaya to the flagship geoalgeria scheme by name and
- *   best-effort a commune code. geo_precision is "exact" (surveyed API points).
+ *   best-effort a commune code. geo_precision is "exact" (surveyed API points),
+ *   except for the handful of points COORD_FIX pins to a commune centroid.
  *
  * Usage: node scripts/fetch.mjs            # live pull
  *        node scripts/fetch.mjs --cache    # rebuild from research/ooredoo/stores-raw.json
  */
 
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, padC } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -37,6 +38,63 @@ const CLIENT_SECRET = "secret-51784c2a-3c2f-ea38-586b-7283faae14d";
 const UA = "geoalgeria-data/1.0 (+https://geoalgeria.com)";
 const MIN_STORES = 300; // sanity floor — reject a truncated pull
 const MAX_BYTES = 64 * 1024 * 1024;
+
+// --- known-bad source coordinates ------------------------------------------
+// Corrections for API points that are demonstrably not where the store is, keyed
+// by Ooredoo's own store id (the one identifier that survives a re-pull; the
+// public `{wilaya}-{seq}` id is derived). The ferroviaire WILAYA_FIX pattern: a
+// small pinned map, applied by the generator so a live re-fetch cannot silently
+// reimport the bad value, plus a hard error when a key matches nothing.
+//
+// Coordinates are never typed here, only a commune (the enseignement-superieur
+// overrides convention): the point is resolved to that commune's centroid in the
+// flagship set and the record is demoted to approximate/commune_centroid, so the
+// data claims a commune-level placement and not a per-store point we don't have.
+//
+// 1422892 = ESO000810 "CTE.SEFSSAFA" (public id 31-001). The API returns
+// lat 36.2477 / lng -0.634848, a point in the Mediterranean roughly 50 km off the
+// Oran coast, with no land under it; reported by a reader who saw the marker at
+// sea on geoalgeria.com. It is filed here under the commune the nearest-centroid
+// join gave it. Note the record's own operator_wilaya is "Batna", so the true
+// store may be elsewhere entirely; the commune pin is the conservative reading
+// (it makes the point agree with the commune the record ships), not a claim to
+// have located the store.
+const COORD_FIX = {
+  1422892: { commune_code: "3122" }, // Sidi Ben Yebka (Oran)
+};
+
+/**
+ * Apply COORD_FIX to canonical v2 records, in place. Runs after the map (so it
+ * edits the shipped record shape) and after id assignment (so a corrected record
+ * keeps its public id). Exported so the offline regeneration path applies exactly
+ * the same correction as a live pull.
+ */
+export function applyCoordFix(records, communes = loadCommunes()) {
+  const matched = new Set();
+  for (const r of records) {
+    const fix = COORD_FIX[r.refs?.ooredoo];
+    if (!fix) continue;
+    const c = communes.find((x) => padC(x.code_commune) === fix.commune_code);
+    if (!c) throw new Error(`ooredoo: COORD_FIX commune ${fix.commune_code} is not in the flagship commune set`);
+    r.wilaya_code = wcode(c.wilaya_code);
+    r.commune_code = padC(c.code_commune);
+    r.commune = c.commune_fr;
+    r.lat = Number(c.lat.toFixed(6));
+    r.lng = Number(c.lng.toFixed(6));
+    r.geo_precision = "approximate";
+    r.geo_method = "commune_centroid";
+    matched.add(String(r.refs.ooredoo));
+  }
+  const unmatched = Object.keys(COORD_FIX).filter((k) => !matched.has(k));
+  if (unmatched.length) {
+    throw new Error(
+      `ooredoo: COORD_FIX key(s) [${unmatched.join(", ")}] matched no record — the operator store id was ` +
+        `retired or renumbered upstream, so the bad coordinate would silently come back. Re-check the ` +
+        `store and update COORD_FIX in scripts/fetch.mjs.`,
+    );
+  }
+  return matched.size;
+}
 
 // Store type: API `type.key` (eO/cSO/eSO) -> code + bilingual label.
 const TYPES = {
@@ -265,10 +323,13 @@ async function main() {
   const cfg = MIGRATIONS.ooredoo;
   const OFFLINE = process.argv.includes("--cache");
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
+  const v2 = rows.map(cfg.map);
+  const fixed = applyCoordFix(v2, communes);
+  if (fixed) console.log(`  ${fixed} known-bad source coordinate(s) pinned to their commune centroid`);
   const { records, metadata } = writePackageV2({
     pkg: "ooredoo",
     dir: OUT_DIR,
-    files: [{ file: "stores.json", rows: rows.map(cfg.map) }],
+    files: [{ file: "stores.json", rows: v2 }],
     meta: cfg.meta,
     updated,
     retrieved,
@@ -276,4 +337,9 @@ async function main() {
   console.log(`Wrote ${records.length} Ooredoo stores → v2, ${metadata.wilayas_covered} wilayas.`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// Run only as a CLI. COORD_FIX/applyCoordFix are importable so an offline
+// regeneration applies the same correction; importing must not trigger a live pull
+// (same guard as scripts/migrate-to-v2.mjs).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => { console.error(e); process.exit(1); });
+}
