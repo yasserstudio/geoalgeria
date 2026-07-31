@@ -41,9 +41,11 @@ function migrate(pkg) {
 
   // Read every source file before touching anything on disk, so the double-run
   // guard can veto the whole package rather than half-rewriting it.
+  // `from` lets a package's v2 file name differ from its committed v1 path
+  // (telecom flattens data/coverage/5g/<op>.json into data/5g-<op>.json).
   const sources = specs.map((s) => ({
     spec: s,
-    input: JSON.parse(readFileSync(join(dir, s.file), "utf-8")),
+    input: JSON.parse(readFileSync(join(dir, s.from ?? s.file), "utf-8")),
   }));
   if (oldMeta.schema_version === "2.0.0" || sources.some(({ input }) => isV2Shaped(input))) {
     console.log(`  ${pkg}: already v2 — skipped`);
@@ -60,8 +62,10 @@ function migrate(pkg) {
     dir,
     files,
     meta: cfg.meta,
-    updated: CUTOVER_DATE,
-    retrieved: CUTOVER_DATE,
+    // A package migrated after the 2026-07-18 cutover keeps its honest snapshot
+    // date when its entry pins one (telecom's data is the 2026-06-13 capture).
+    updated: cfg.updated ?? CUTOVER_DATE,
+    retrieved: cfg.updated ?? CUTOVER_DATE,
     oldMeta,
   });
   console.log(

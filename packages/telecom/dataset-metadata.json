@@ -1,0 +1,88 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria 5G coverage points",
+  "alternateName": "Points de couverture 5G en Algérie",
+  "identifier": "@geoalgeria/telecom",
+  "description": "5G presence points from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
+  "conditionsOfAccess": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "19.570311 -8.16521 37.026438 10.027122"
+    }
+  },
+  "variableMeasured": "2798 records, 58 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "5g-djezzy (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/5g-djezzy.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-djezzy (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/csv/5g-djezzy.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-djezzy (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/geojson/5g-djezzy.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-mobilis (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/5g-mobilis.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-mobilis (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/csv/5g-mobilis.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-mobilis (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/geojson/5g-mobilis.geojson"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-ooredoo (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/5g-ooredoo.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-ooredoo (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/csv/5g-ooredoo.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "5g-ooredoo (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/geojson/5g-ooredoo.geojson"
+    }
+  ],
+  "dateModified": "2026-06-13",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "Djezzy — published 5G coverage map (Optimum Telecom Algérie) — Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
+    "Mobilis — published 5G coverage map (ATM Mobilis) — Data © ATM Mobilis; redistributed for reference",
+    "Ooredoo Algérie — published 5G covered communes — Data © Ooredoo Algérie; redistributed for reference"
+  ]
+}

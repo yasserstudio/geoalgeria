@@ -79,7 +79,11 @@ importers:
 
   packages/sports: {}
 
-  packages/telecom: {}
+  packages/telecom:
+    devDependencies:
+      '@geoalgeria/schema':
+        specifier: workspace:^
+        version: link:../schema
 
   packages/tourisme: {}
 

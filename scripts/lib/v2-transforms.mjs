@@ -117,6 +117,18 @@ const tourThermal = (prefix) => (r) => clean({
   type: r.type, temperature_c: r.temperature_c, debit_l_s: r.debit_l_s, altitude_m: r.altitude_m, minerality: r.minerality,
 });
 
+// telecom 5G presence points share one row shape; only the geo treatment differs
+// per operator (Djezzy/Mobilis publish cell sites, Ooredoo covered communes).
+const telecom5g = (geo) => (r) =>
+  clean({
+    id: r.id, name: r.name,
+    wilaya_code: wcode(r.wilaya_code), commune_code: null,
+    commune: r.commune, commune_ar: r.commune_ar,
+    ...geo(r),
+    source: r.operator,
+    operator: r.operator, technology: r.technology, address: r.address,
+  });
+
 // --- per-package migrations -------------------------------------------------
 export const MIGRATIONS = {
   mosquees: {
@@ -721,6 +733,44 @@ export const MIGRATIONS = {
         with_commune: rows.filter((r) => r.commune).length,
         linkage_note:
           "wilaya_code is derived by point-in-polygon against the 69 post-reform wilaya boundaries and reconciled with the DGPC's own code: reform remaps into the new 59..69 wilayas keep the geometry code, but where geometry and DGPC disagree among pre-reform codes (a border unit misfiled by a simplified outline) the DGPC's official cod_wilaya wins. The DGPC code is kept in refs.dgpc_wilaya; commune is best-effort (Arabic commune-name match against the geoalgeria commune set, nearest-centroid fallback).",
+      }),
+    },
+  },
+
+  telecom: {
+    // Committed v1 data lives under data/coverage/5g/; v2 flattens to the
+    // sibling-standard data/<name>.json layout. The union file (sites.json) is
+    // dropped: it was a pure concatenation of the three operator files, and v2's
+    // entities[] must sum to record_count. `technology` rides in the file name
+    // (5g-*) AND on every record, so a future 4G is purely additive.
+    files: [
+      { file: "5g-djezzy.json", from: "coverage/5g/djezzy.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
+      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
+      // Ooredoo publishes covered communes, not cell sites — points are placed
+      // within the commune, so they are approximate by construction.
+      { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
+    ],
+    // The committed data is the 2026-06-13 operator-map capture; keep that date
+    // rather than the generic cutover constant (see migrate-to-v2.mjs).
+    updated: "2026-06-13",
+    meta: {
+      sources: [
+        { key: "djezzy", name: "Djezzy — published 5G coverage map (Optimum Telecom Algérie)", url: "https://www.djezzy5g.dz/map.html", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference", retrieved: "2026-06-13", evidence_type: "official" },
+        { key: "mobilis", name: "Mobilis — published 5G coverage map (ATM Mobilis)", url: "https://mobilis.dz/map/5g", license: "Data © ATM Mobilis; redistributed for reference", retrieved: "2026-06-13", evidence_type: "official" },
+        { key: "ooredoo", name: "Ooredoo Algérie — published 5G covered communes", url: "https://www.ooredoo.dz/fr/particuliers/internet/5g", license: "Data © Ooredoo Algérie; redistributed for reference", retrieved: "2026-06-13", evidence_type: "official" },
+      ],
+      // No open licence — operator-published coverage claims, so the prose moves
+      // to conditionsOfAccess in the discovery descriptor (buildDcat) rather than
+      // a fabricated licence URL.
+      license: "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
+      estimatedUniverse: null,
+      coverageNote:
+        "5G presence points from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
+      titles: { en: "Algeria 5G coverage points", fr: "Points de couverture 5G en Algérie", ar: "نقاط تغطية الجيل الخامس في الجزائر" },
+      stats: (rows) => ({
+        technologies: [...new Set(rows.map((r) => r.technology))].sort(),
+        by_technology: count(rows, "technology"),
+        by_operator: count(rows, "operator"),
       }),
     },
   },

@@ -8,22 +8,21 @@
 //           browser session (the site self-authenticates; see fetchOoredoo).
 //           Requires the `agent-browser` CLI on PATH.
 //
-// Output (data/coverage/5g/, + csv/ + geojson/ mirrors + metadata.json):
-//   sites.json   combined, all operators
-//   <operator>.json per source
+// Output (via the shared v2 writer): data/5g-<operator>.json + csv/ + geojson/
+// mirrors + canonical metadata.json.
 // Writes are all-or-nothing: if any operator fetch fails, nothing is overwritten
 // (so a partial fetch can't silently clobber good committed data).
 // Run: node scripts/fetch.mjs   (or: npm run fetch)
 
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
+import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(PKG, "data");
-const COVERAGE_5G = join(DATA, "coverage", "5g");
 const TECH = "5G";
 
 // ── wilaya name → zero-padded code, from the geoalgeria flagship ────────────
@@ -257,32 +256,6 @@ async function fetchOoredoo() {
 }
 
 // ── outputs ───────────────────────────────────────────────────────────────────
-const FIELDS = [
-  "id", "technology", "operator", "name", "address",
-  "commune", "commune_ar", "commune_code", "wilaya_code", "lat", "lng", "source",
-];
-const csvCell = (v) => {
-  if (v == null) return "";
-  const s = String(v);
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
-};
-const toCsv = (rows) =>
-  [FIELDS.join(","), ...rows.map((r) => FIELDS.map((f) => csvCell(r[f])).join(","))].join("\n") + "\n";
-const toGeoJSON = (rows) => ({
-  type: "FeatureCollection",
-  features: rows
-    .filter((r) => r.lat != null && r.lng != null)
-    .map((r) => ({
-      type: "Feature",
-      geometry: { type: "Point", coordinates: [r.lng, r.lat] },
-      properties: { ...r, lat: undefined, lng: undefined },
-    })),
-});
-const writeJson = (p, obj) => {
-  mkdirSync(dirname(p), { recursive: true });
-  writeFileSync(p, JSON.stringify(obj, null, 2) + "\n");
-};
-
 async function main() {
   const extractors = { djezzy: fetchDjezzy, mobilis: fetchMobilis, ooredoo: fetchOoredoo };
   const perOperator = {};
@@ -302,33 +275,25 @@ async function main() {
     process.exit(1);
   }
 
-  mkdirSync(COVERAGE_5G, { recursive: true });
-  const all = [];
-  for (const [op, sites] of Object.entries(perOperator)) {
-    writeJson(join(COVERAGE_5G, `${op}.json`), sites);
-    all.push(...sites);
-  }
-  writeJson(join(COVERAGE_5G, "sites.json"), all);
-  mkdirSync(join(DATA, "csv", "coverage", "5g"), { recursive: true });
-  writeFileSync(join(DATA, "csv", "coverage", "5g", "sites.csv"), toCsv(all));
-  writeJson(join(DATA, "geojson", "coverage", "5g", "sites.geojson"), toGeoJSON(all));
-
-  const byOperator = Object.fromEntries(Object.entries(perOperator).map(([k, v]) => [k, v.length]));
-  const wilayas_covered = new Set(all.map((r) => r.wilaya_code).filter(Boolean)).size;
-  writeJson(join(DATA, "metadata.json"), {
-    license: "Data © respective operators; redistributed for reference. See README.",
-    technologies: [TECH],
-    sources: {
-      djezzy: "https://www.djezzy5g.dz/map.html",
-      mobilis: "https://mobilis.dz/map/5g",
-      ooredoo: "https://www.ooredoo.dz/fr/particuliers/internet/5g",
-    },
-    coverage: { [TECH]: { total: all.length, by_operator: byOperator, wilayas_covered } },
-    generated_at: new Date().toISOString().slice(0, 10),
-    note: "5G presence points from each operator's published coverage map. Djezzy and Mobilis are cell-site level; Ooredoo is commune level (points within covered communes — a few communes carry several). Source-map circles are display-only, not measured RF coverage.",
+  // Emit v2 via the shared writer, mapping each operator's v1-shaped rows
+  // through the same per-file maps the cutover used (ids are content-
+  // deterministic, so no carry-over pass is needed).
+  const cfg = MIGRATIONS.telecom;
+  const files = cfg.files.map((s) => {
+    const op = s.file.replace(/^5g-/, "").replace(/\.json$/, "");
+    return { file: s.file, rows: perOperator[op].map(s.map) };
+  });
+  const today = new Date().toISOString().slice(0, 10);
+  const { records, metadata } = writePackageV2({
+    pkg: "telecom",
+    dir: DATA,
+    files,
+    meta: cfg.meta,
+    updated: today,
+    retrieved: today,
   });
 
-  console.log(`  combined: ${all.length} sites across ${wilayas_covered} wilayas`);
+  console.log(`  combined: ${records.length} sites across ${metadata.wilayas_covered} wilayas`);
   if (unmatched.size) console.warn(`  ⚠ unmatched wilaya names: ${[...unmatched].join(", ")}`);
   const totalDropped = dropped.djezzy + dropped.mobilis + dropped.ooredoo;
   if (totalDropped)

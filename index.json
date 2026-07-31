@@ -507,14 +507,23 @@
     },
     {
       "package": "@geoalgeria/telecom",
-      "schema_version": null,
+      "schema_version": "2.0.0",
       "title": "Algeria 5G coverage points",
       "record_count": 2798,
       "geocoded_count": 2798,
       "geocoded_pct": 100,
+      "precision": {
+        "exact": 2613,
+        "approximate": 185
+      },
       "wilayas_covered": 58,
-      "bbox": null,
-      "license": "Data © respective operators; redistributed for reference. See README.",
+      "bbox": [
+        -8.16521,
+        19.570311,
+        10.027122,
+        37.026438
+      ],
+      "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
       "updated": "2026-06-13"
     },
     {
