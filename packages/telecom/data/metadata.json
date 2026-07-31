@@ -1,24 +1,77 @@
 {
-  "license": "Data © respective operators; redistributed for reference. See README.",
+  "package": "@geoalgeria/telecom",
+  "schema_version": "2.0.0",
+  "title_fr": "Points de couverture 5G en Algérie",
+  "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
+  "title_en": "Algeria 5G coverage points",
+  "record_count": 2798,
+  "geocoded_count": 2798,
+  "geocoded_pct": 100,
+  "precision": {
+    "exact": 2613,
+    "approximate": 185
+  },
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "5G presence points from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
+  "wilayas_covered": 58,
+  "bbox": [
+    -8.16521,
+    19.570311,
+    10.027122,
+    37.026438
+  ],
+  "entities": [
+    {
+      "file": "5g-djezzy.json",
+      "count": 1001
+    },
+    {
+      "file": "5g-mobilis.json",
+      "count": 1621
+    },
+    {
+      "file": "5g-ooredoo.json",
+      "count": 176
+    }
+  ],
+  "sources": [
+    {
+      "key": "djezzy",
+      "name": "Djezzy — published 5G coverage map (Optimum Telecom Algérie)",
+      "url": "https://www.djezzy5g.dz/map.html",
+      "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
+      "retrieved": "2026-06-13",
+      "evidence_type": "official"
+    },
+    {
+      "key": "mobilis",
+      "name": "Mobilis — published 5G coverage map (ATM Mobilis)",
+      "url": "https://mobilis.dz/map/5g",
+      "license": "Data © ATM Mobilis; redistributed for reference",
+      "retrieved": "2026-06-13",
+      "evidence_type": "official"
+    },
+    {
+      "key": "ooredoo",
+      "name": "Ooredoo Algérie — published 5G covered communes",
+      "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
+      "license": "Data © Ooredoo Algérie; redistributed for reference",
+      "retrieved": "2026-06-13",
+      "evidence_type": "official"
+    }
+  ],
+  "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
+  "updated": "2026-06-13",
   "technologies": [
     "5G"
   ],
-  "sources": {
-    "djezzy": "https://www.djezzy5g.dz/map.html",
-    "mobilis": "https://mobilis.dz/map/5g",
-    "ooredoo": "https://www.ooredoo.dz/fr/particuliers/internet/5g"
+  "by_technology": {
+    "5G": 2798
   },
-  "coverage": {
-    "5G": {
-      "total": 2798,
-      "by_operator": {
-        "djezzy": 1001,
-        "mobilis": 1621,
-        "ooredoo": 176
-      },
-      "wilayas_covered": 58
-    }
-  },
-  "generated_at": "2026-06-13",
-  "note": "5G presence points from each operator's published coverage map. Djezzy and Mobilis are cell-site level; Ooredoo is commune level (points within covered communes — a few communes carry several). Source-map circles are display-only, not measured RF coverage."
+  "by_operator": {
+    "djezzy": 1001,
+    "mobilis": 1621,
+    "ooredoo": 176
+  }
 }

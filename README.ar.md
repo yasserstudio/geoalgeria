@@ -165,7 +165,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 
 تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض).
 
-حزمتان تسبقان العقد ولا تزالان تُصدِّران أشكال v1، مجموعة البيانات الأساسية `geoalgeria` و[`@geoalgeria/telecom`](packages/telecom) (المميَّزتان بـ `schema_version: null` في الفهرس).
+حزمة واحدة تسبق العقد، مجموعة البيانات الأساسية `geoalgeria` (تقسيمات إدارية وليست GeoRecords؛ مميَّزة بـ `schema_version: null` في الفهرس).
 
 هل تنقل حزمة؟ انظر [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
 

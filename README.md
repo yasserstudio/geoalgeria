@@ -163,7 +163,7 @@ Every record follows the same shape:
 
 Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each package, and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
 
-Two packages predate the contract and still ship v1 shapes, the core `geoalgeria` dataset and [`@geoalgeria/telecom`](packages/telecom) (marked `schema_version: null` in the catalog).
+One package predates the contract, the core `geoalgeria` dataset (administrative divisions, not GeoRecords; marked `schema_version: null` in the catalog).
 
 Migrating a package? See [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
 

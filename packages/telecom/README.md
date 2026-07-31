@@ -66,38 +66,44 @@ Touggourt).
 
 ## Organization (future-proof)
 
-Coverage is namespaced by **technology**, so adding a new generation later is
-purely additive, nothing renames:
+Files are named by **technology and operator**, so adding a new generation later
+is purely additive, nothing renames:
 
 ```
 data/
-  coverage/5g/
-    sites.json          # combined – all operators
-    djezzy.json  mobilis.json  ooredoo.json
-  csv/coverage/5g/sites.csv          # repo + Release bundle (not in npm tarball)
-  geojson/coverage/5g/sites.geojson  # Point features
-  metadata.json         # sources, technologies, per-operator counts, generated_at
+  5g-djezzy.json  5g-mobilis.json  5g-ooredoo.json
+  csv/5g-djezzy.csv  ...             # CSV mirror per file
+  geojson/5g-djezzy.geojson  ...     # Point features per file
+  metadata.json                      # canonical v2 metadata (schema_version, sources[], entities[], by_operator)
 ```
 
-The npm package ships the **JSON**; CSV/GeoJSON ride in every
-[GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+The npm package ships **JSON, CSV and GeoJSON**; the same files also ride in
+every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+`coverage()` concatenates the per-operator files (ids are operator-prefixed, so
+the union is collision-free).
 
 ## Record shape
+
+Records follow the canonical GeoAlgeria v2 contract (`geo_precision`,
+`geo_method`, `source` as a key into `metadata.sources[]`), plus the
+coverage-specific fields:
 
 ```json
 {
   "id": "djezzy-ba5a8250cb",
-  "technology": "5G",
-  "operator": "djezzy",
   "name": "Ain benian ville",
-  "address": "AIN BENIAN",
+  "wilaya_code": "16",
+  "commune_code": null,
   "commune": null,
   "commune_ar": null,
-  "commune_code": null,
-  "wilaya_code": "16",
   "lat": 36.7898,
   "lng": 2.91341,
-  "source": "https://www.djezzy5g.dz/map.html"
+  "geo_precision": "exact",
+  "geo_method": "operator_map",
+  "source": "djezzy",
+  "operator": "djezzy",
+  "technology": "5G",
+  "address": "AIN BENIAN"
 }
 ```
 
@@ -105,7 +111,8 @@ The npm package ships the **JSON**; CSV/GeoJSON ride in every
 re-fetches. `wilaya_code` joins to GeoAlgeria's `wilaya_code`. Fields a given
 operator doesn't provide are `null` (Djezzy has no commune; Mobilis has commune
 FR/AR but no street address; Ooredoo has the commune name only). For Ooredoo,
-`name` is the covered commune.
+`name` is the covered commune and points are `approximate`
+(`operator_commune_point`), one point per covered commune, not a cell site.
 
 ## Need the administrative divisions too?
 

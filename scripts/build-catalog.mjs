@@ -37,32 +37,14 @@ const HOMEPAGE = "https://geoalgeria.com";
 const read = (p) => JSON.parse(readFileSync(p, "utf-8"));
 
 // Packages that do not meet the v2 metadata contract, listed by name so a new one
-// cannot fall through unnoticed (see the guard in collect()). Both are real,
-// published datasets, so they belong in the catalog — with the figures their own
-// files actually carry, and schema_version null so the entry says it is not v2.
+// cannot fall through unnoticed (see the guard in collect()). A real, published
+// dataset belongs in the catalog — with the figures its own files actually carry,
+// and schema_version null so the entry says it is not v2.
 //
-//   telecom  — bespoke nested coverage/<tech>/ shape, no canonical metadata.json;
-//              its numbers come from data/metadata.json's coverage["5G"] block.
 //   dataset  — the core `geoalgeria` package: administrative divisions, not
 //              GeoRecords. It ships no data/metadata.json at all and keeps its own
 //              hand-written dataset-metadata.json, which this script does not touch.
 const V1_HOLDOUTS = {
-  telecom: () => {
-    const m = read(join(ROOT, "packages", "telecom", "data", "metadata.json"));
-    const c = m.coverage["5G"];
-    return {
-      package: "@geoalgeria/telecom",
-      schema_version: null,
-      title_en: "Algeria 5G coverage points",
-      record_count: c.total,
-      geocoded_count: c.total,
-      geocoded_pct: 100,
-      wilayas_covered: c.wilayas_covered,
-      bbox: null,
-      license: m.license,
-      updated: m.generated_at,
-    };
-  },
   dataset: () => {
     const a = read(join(ROOT, "packages", "dataset", "data", "algeria.json"));
     const d = read(join(ROOT, "packages", "dataset", "dataset-metadata.json"));

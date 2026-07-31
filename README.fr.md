@@ -163,7 +163,7 @@ Chaque enregistrement suit la même forme :
 
 Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet, et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
 
-Deux paquets sont antérieurs au contrat et livrent encore des formes v1, le jeu de données principal `geoalgeria` et [`@geoalgeria/telecom`](packages/telecom) (marqués `schema_version: null` dans le catalogue).
+Un paquet est antérieur au contrat, le jeu de données principal `geoalgeria` (divisions administratives, pas des GeoRecords ; marqué `schema_version: null` dans le catalogue).
 
 Vous migrez un paquet ? Voir [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).
 
