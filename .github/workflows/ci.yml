@@ -67,7 +67,7 @@ jobs:
 
       - name: Smoke test — @geoalgeria/telecom (ESM)
         working-directory: packages/telecom
-        run: node --input-type=module -e "import('./index.js').then(m=>{const s=m.coverage(); if(!Array.isArray(s)||!s.length){console.error('empty data');process.exit(1)} console.log('telecom:',s.length,'5G sites,',m.metadata().coverage['5G'].wilayas_covered,'wilayas')})"
+        run: node --input-type=module -e "import('./index.js').then(m=>{const s=m.coverage(); if(!Array.isArray(s)||!s.length){console.error('empty data');process.exit(1)} console.log('telecom:',s.length,'5G sites,',m.metadata().wilayas_covered,'wilayas')})"
 
       - name: Smoke test — @geoalgeria/aviation (ESM)
         working-directory: packages/aviation
