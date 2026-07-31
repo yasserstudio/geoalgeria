@@ -165,7 +165,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 15-012,ESO000722,15,1548,Ouacif,36.5235,4.205,exact,operator_api,ooredoo,"{""ooredoo"":""1423082""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,"local N°5 , Commune de Ouacif , Wilaya de Tizi Ouzou",Tizi Ouzou
 15-013,ESO000751,15,1550,Mekla,36.686,4.26731,exact,operator_api,ooredoo,"{""ooredoo"":""1423084""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,LOCAL N°02 MEKLA CENTRE,Tizi Ouzou
 15-014,ESO001010,15,1524,Ouaguenoun,36.7704,4.17676,exact,operator_api,ooredoo,"{""ooredoo"":""1467391""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,LOCAL N°68 BT11B CITE 140 LOGTS TAMDA,Tizi Ouzou
-16-001,EO TIZI OUZOU 2,16,1631,El Magharia,36.7426,3.11966,exact,operator_api,ooredoo,"{""ooredoo"":""1423058""}",EO,Espace Ooredoo,فضاء أوريدو,TIZI OUZOU,Tizi Ouzou
+16-001,EO TIZI OUZOU 2,15,1501,Tizi-Ouzou,36.733333,4.05,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1423058""}",EO,Espace Ooredoo,فضاء أوريدو,TIZI OUZOU,Tizi Ouzou
 16-002,ESO000795,16,1605,Bab El Oued,36.7912,3.05707,exact,operator_api,ooredoo,"{""ooredoo"":""1423086""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,R. MOHAMED AIT AMAR ENTREE 07 RUE MOHAMED OURIF,Alger
 16-003,ESO000721,16,1607,Casbah,36.7853,3.06139,exact,operator_api,ooredoo,"{""ooredoo"":""1423088""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,01 Rue Maaoun a cote de bat N°1,Alger
 16-004,ESO000684,16,1609,Bir Mourad Rais,36.7395,3.05161,exact,operator_api,ooredoo,"{""ooredoo"":""1423090""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,R. des trois frères Bouadou local N°01 N 12,Alger
@@ -216,7 +216,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 16-049,EO DELY-BRAHIM,16,1623,Dely Ibrahim,36.7539,2.9788,exact,operator_api,ooredoo,"{""ooredoo"":""1467342""}",EO,Espace Ooredoo,فضاء أوريدو,"Parcelle N03, Bois des Cars - DELY BRAHIM",Alger
 16-050,EO AUDIN,16,1602,Sidi M'hamed,36.7704,3.05579,exact,operator_api,ooredoo,"{""ooredoo"":""1467345""}",EO,Espace Ooredoo,فضاء أوريدو,02 Rue Didouche Mourad-Alger,Alger
 16-051,EO OULED FAYET,16,1651,Ouled Fayet,36.7443,2.94969,exact,operator_api,ooredoo,"{""ooredoo"":""1467383""}",EO,Espace Ooredoo,فضاء أوريدو,"66, R de Ouled Fayet - Chéraga",Alger
-16-052,EO BEJAIA,16,1620,Dar El Beida,36.6999,3.21164,exact,operator_api,ooredoo,"{""ooredoo"":""1467386""}",EO,Espace Ooredoo,فضاء أوريدو,"24, Ch des Cretes - BEJAIA",Bejaia
+16-052,EO BEJAIA,06,0601,Bejaia,36.75089,5.056733,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1467386""}",EO,Espace Ooredoo,فضاء أوريدو,"24, Ch des Cretes - BEJAIA",Bejaia
 16-053,EO GARDEN CITY,16,1651,Ouled Fayet,36.75,2.95215,approximate,operator_api,ooredoo,"{""ooredoo"":""1467389""}",EO,Espace Ooredoo,فضاء أوريدو,"Parcelle N03, Bois des Cars - DELY BRAHIM",Alger
 16-054,EO DIDOUCHE MOURAD,16,1602,Sidi M'hamed,36.768521,3.054275,exact,operator_api,ooredoo,"{""ooredoo"":""1467390""}",EO,Espace Ooredoo,فضاء أوريدو,02 Rue Didouche Mourad-Alger,Alger
 16-055,ESO000091,16,1616,Bourouba,36.7047,3.0975,exact,operator_api,ooredoo,"{""ooredoo"":""1467392""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,COOP IMMOB EL OUSSRA CTE.E SONELGAZ LOT1,Alger
@@ -390,7 +390,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 30-001,EO HASSI MESSAOUD,30,3004,Hassi Messaoud,31.686,6.06639,exact,operator_api,ooredoo,"{""ooredoo"":""1423454""}",EO,Espace Ooredoo,فضاء أوريدو,HASSI MESSAOUD,Ouargla
 30-002,ESO000744,30,3001,Ouargla,31.9468,5.31895,exact,operator_api,ooredoo,"{""ooredoo"":""1423460""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,LOCAL N°: 05 A RUE LARBI BEN M'HIDI,Ouargla
 30-003,EO OUARGLA,30,3001,Ouargla,31.9594,5.33321,exact,operator_api,ooredoo,"{""ooredoo"":""1467581""}",EO,Espace Ooredoo,فضاء أوريدو,Cte 150 logts - Ouargla,Ouargla
-31-001,ESO000810,31,3122,Sidi Ben Yebka,35.82972,-0.394722,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1422892""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE.SEFSSAFA,Batna
+31-001,ESO000810,05,0524,Sefiane,35.4414,5.5581,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1422892""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE.SEFSSAFA,Batna
 31-002,ESO000389,31,3111,Oued Tlelat,35.5186,-0.408889,exact,operator_api,ooredoo,"{""ooredoo"":""1423442""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,R. HADJAM KADOUR N 44 LOCAL N 2,Mascara
 31-003,EO ES SENIA,31,3105,Es Senia,35.6526,-0.626472,exact,operator_api,ooredoo,"{""ooredoo"":""1423468""}",EO,Espace Ooredoo,فضاء أوريدو,ES SENIA,Oran
 31-004,ESO000359,31,3101,Oran,35.7114,-0.603525,exact,operator_api,ooredoo,"{""ooredoo"":""1423476""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE.IBN ROCH POINT DU JOUR R. B 19 ENTREE 19,Oran
@@ -531,7 +531,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 47-001,EO GHARDAIA,47,4701,Ghardaia,32.4876,3.67833,exact,operator_api,ooredoo,"{""ooredoo"":""1423686""}",EO,Espace Ooredoo,فضاء أوريدو,GHARDAIA,Ghardaia
 47-002,ESO000768,47,4701,Ghardaia,32.4928,3.64896,exact,operator_api,ooredoo,"{""ooredoo"":""1423688""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE. EL KARTI COTE BELAGHNEM,Ghardaia
 47-003,ESO000544,47,4712,El Atteuf,32.4745,3.74635,exact,operator_api,ooredoo,"{""ooredoo"":""1423690""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,AVE. Aissa Amieur,Ghardaia
-48-001,EO PLATEAU,48,4832,Dar Ben Abdelah,35.6461,0.6983,exact,operator_api,ooredoo,"{""ooredoo"":""1423470""}",EO,Espace Ooredoo,فضاء أوريدو,ORAN,Oran
+48-001,EO PLATEAU,31,3101,Oran,35.708333,-0.6331,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1423470""}",EO,Espace Ooredoo,فضاء أوريدو,ORAN,Oran
 48-002,ESO000264,48,4801,Relizane,35.7344,0.557222,exact,operator_api,ooredoo,"{""ooredoo"":""1423692""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,RTE. DE SIDI M'HAMED BEN AOUDA LOCAL N1,Relizane
 48-003,ESO001017,48,4801,Relizane,35.71283,0.57209,exact,operator_api,ooredoo,"{""ooredoo"":""1423694""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CITE BERMADIA 651 TRANCHE N°03,Relizane
 48-004,ESO000337,48,4801,Relizane,35.7439,0.553333,exact,operator_api,ooredoo,"{""ooredoo"":""1423696""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,AV. DOCTOR BOUKHALOUA ZAOUIA R. REPUBLIQUE,Relizane
@@ -564,7 +564,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 65-002,ESO000161,65,1731,Aïn Oussera,35.4556,2.90389,exact,operator_api,ooredoo,"{""ooredoo"":""1467411""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE. DE L'HOPITAL ALI AMMEURLOT N1279 N02,Djelfa
 66-001,ESO000745,66,1717,Messaad,34.1548,3.49025,exact,operator_api,ooredoo,"{""ooredoo"":""1423172""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,R.Tahiri Abderahmane BAT 314 porte 29,Djelfa
 67-001,ESO000519,67,2638,Chabounia,35.5414,2.60028,exact,operator_api,ooredoo,"{""ooredoo"":""1423380""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,N°02 CHAHBOUNIA,Medea
-67-002,EO BOUMERDES,67,2641,Ain Ouksir,35.7535,3.47341,exact,operator_api,ooredoo,"{""ooredoo"":""1423550""}",EO,Espace Ooredoo,فضاء أوريدو,BOUMERDES,Boumerdes
+67-002,EO BOUMERDES,35,3501,Boumerdes,36.766,3.477,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1423550""}",EO,Espace Ooredoo,فضاء أوريدو,BOUMERDES,Boumerdes
 67-003,ESO000163,67,2618,Chelalet El Adhaoura,35.9386,3.4125,exact,operator_api,ooredoo,"{""ooredoo"":""1467447""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,COMMUNE-CHELALET EL ADHAOURA CENTRE,Medea
 67-004,ESO000386,67,2635,Ksar El Boukhari,35.8861,2.74722,exact,operator_api,ooredoo,"{""ooredoo"":""1467449""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE. JINI,Medea
 68-001,ESO000813,68,2841,Ain El Melh,34.8465,4.16257,exact,operator_api,ooredoo,"{""ooredoo"":""1423426""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,LOCAL N°52 BOUARIR,M'Sila

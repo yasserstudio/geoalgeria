@@ -11,7 +11,7 @@ export type OoredooType = "CSO" | "EO" | "ESO";
 export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How the coordinate was obtained. `"operator_api"` for a point that comes
- *  straight from the Ooredoo locator API (all but one store), and
+ *  straight from the Ooredoo locator API (all but five stores), and
  *  `"commune_centroid"` where the API's own coordinate is known to be wrong and
  *  the record is pinned to its commune's centroid instead (COORD_FIX in
  *  scripts/fetch.mjs). */
@@ -25,7 +25,10 @@ export interface Refs {
 
 /** An Ooredoo store. */
 export interface OoredooStore {
-  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-004"). Unique within this file. */
+  /** Stable id, `{wilaya_code}-{seq}` (e.g. "16-004"). Unique within this file.
+   *  The id is assigned before the COORD_FIX corrections and is never rewritten,
+   *  so on the five corrected records the prefix is the wilaya the bad API point
+   *  fell in, not `wilaya_code`. Treat the id as opaque and read `wilaya_code`. */
   id: string;
   /** Store name / code (e.g. "EO ROUIBA", "ESO000717"). */
   name: string;
