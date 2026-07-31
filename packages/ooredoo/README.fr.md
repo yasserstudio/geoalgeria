@@ -40,7 +40,7 @@ metadata().wilayas_covered; // 63
 | `ESO` | 436 | Espace Services Ooredoo |
 | `CSO` | 36 | City Shop Ooredoo |
 
-Coordonnées : les 572 géocodées (553 en `exact`, 19 en `approximate`).
+Coordonnées : les 572 géocodées (552 en `exact`, 20 en `approximate`).
 
 ## Formats
 
@@ -51,7 +51,7 @@ Coordonnées : les 572 géocodées (553 en `exact`, 19 en `approximate`).
 
 ## Précision
 
-> Noms, types et coordonnées proviennent de **l'opérateur** (`geo_method : "operator_api"`). Les coordonnées sont en `geo_precision : "exact"` pour 553 points de vente et en `"approximate"` pour 19 dont la coordonnée source a moins de 3 décimales. La wilaya est quasi exacte (issue du point relevé) ; la commune est un rapprochement au centroïde le plus proche. L'API classant les points selon l'ancien découpage à 48 wilayas, la wilaya/commune est recalculée depuis les coordonnées vers le découpage actuel à 69 wilayas ; la wilaya déclarée par l'opérateur est conservée dans `operator_wilaya`.
+> Noms, types et coordonnées proviennent de **l'opérateur** (`geo_method : "operator_api"`). Les coordonnées sont en `geo_precision : "exact"` pour 552 points de vente et en `"approximate"` pour 20 : 19 dont la coordonnée source a moins de 3 décimales, et un (`31-001`) dont le point de l'API tombe en mer et qui est ramené au centroïde de sa commune (`geo_method : "commune_centroid"`). La wilaya est quasi exacte (issue du point relevé) ; la commune est un rapprochement au centroïde le plus proche. L'API classant les points selon l'ancien découpage à 48 wilayas, la wilaya/commune est recalculée depuis les coordonnées vers le découpage actuel à 69 wilayas ; la wilaya déclarée par l'opérateur est conservée dans `operator_wilaya`.
 
 ## Source & licence
 

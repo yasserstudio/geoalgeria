@@ -390,7 +390,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 30-001,EO HASSI MESSAOUD,30,3004,Hassi Messaoud,31.686,6.06639,exact,operator_api,ooredoo,"{""ooredoo"":""1423454""}",EO,Espace Ooredoo,فضاء أوريدو,HASSI MESSAOUD,Ouargla
 30-002,ESO000744,30,3001,Ouargla,31.9468,5.31895,exact,operator_api,ooredoo,"{""ooredoo"":""1423460""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,LOCAL N°: 05 A RUE LARBI BEN M'HIDI,Ouargla
 30-003,EO OUARGLA,30,3001,Ouargla,31.9594,5.33321,exact,operator_api,ooredoo,"{""ooredoo"":""1467581""}",EO,Espace Ooredoo,فضاء أوريدو,Cte 150 logts - Ouargla,Ouargla
-31-001,ESO000810,31,3122,Sidi Ben Yebka,36.2477,-0.634848,exact,operator_api,ooredoo,"{""ooredoo"":""1422892""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE.SEFSSAFA,Batna
+31-001,ESO000810,31,3122,Sidi Ben Yebka,35.82972,-0.394722,approximate,commune_centroid,ooredoo,"{""ooredoo"":""1422892""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE.SEFSSAFA,Batna
 31-002,ESO000389,31,3111,Oued Tlelat,35.5186,-0.408889,exact,operator_api,ooredoo,"{""ooredoo"":""1423442""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,R. HADJAM KADOUR N 44 LOCAL N 2,Mascara
 31-003,EO ES SENIA,31,3105,Es Senia,35.6526,-0.626472,exact,operator_api,ooredoo,"{""ooredoo"":""1423468""}",EO,Espace Ooredoo,فضاء أوريدو,ES SENIA,Oran
 31-004,ESO000359,31,3101,Oran,35.7114,-0.603525,exact,operator_api,ooredoo,"{""ooredoo"":""1423476""}",ESO,Espace Services Ooredoo,فضاء خدمات أوريدو,CTE.IBN ROCH POINT DU JOUR R. B 19 ENTREE 19,Oran

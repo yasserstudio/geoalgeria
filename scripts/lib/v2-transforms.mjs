@@ -237,7 +237,7 @@ export const MIGRATIONS = {
       sources: [{ key: "ooredoo", name: "Ooredoo Algérie — retail network (trouvez-nous JSON API)", url: "https://www.ooredoo.dz/fr/particuliers/trouvez-nous", license: "Data © Ooredoo Algérie; redistributed for reference" }],
       license: "Data © Ooredoo Algérie; redistributed for reference",
       estimatedUniverse: null,
-      coverageNote: "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record has a real operator coordinate. A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
+      coverageNote: "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record but one carries a real operator coordinate; the exception is a store whose API point falls in the sea, pinned to its commune centroid instead (geo_method commune_centroid). A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
       titles: { en: "Ooredoo stores (Algeria)", fr: "Boutiques Ooredoo", ar: "متاجر أوريدو" },
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
