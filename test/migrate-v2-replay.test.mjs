@@ -14,8 +14,8 @@
 // that id today. A dropped prefix makes the id unfindable; any other field drift
 // fails the deep-equal.
 //
-// What this asserts: the per-record transform, for all 23 configured packages
-// and all 37 of their data files, over the fixture sample (408 records — 12
+// What this asserts: the per-record transform, for all 24 configured packages
+// and all 35 of their data files, over the fixture sample (429 records — 12
 // evenly spaced per file plus the first ungeocoded one).
 // What it does NOT assert: the file-level behaviour of the runner — id sort
 // order, the CSV/GeoJSON emit, or metadata.json. Those are checked by replaying

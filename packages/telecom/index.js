@@ -16,9 +16,10 @@ const file = (technology, operator) => `${String(technology).toLowerCase()}-${op
 export const coverage = (technology = "5G") =>
   OPERATORS.flatMap((op) => load(file(technology, op)));
 
-// Coverage sites for a single operator.
+// Coverage sites for a single operator. An unknown operator returns [] (the
+// v1 filter-over-union behavior), not an fs error from a fabricated path.
 export const coverageByOperator = (operator, technology = "5G") =>
-  load(file(technology, operator));
+  OPERATORS.includes(operator) ? load(file(technology, operator)) : [];
 
 // Technologies present in this release (e.g. ["5G"]).
 export const technologies = () => metadata().technologies;
