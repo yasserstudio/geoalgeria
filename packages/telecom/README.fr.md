@@ -68,38 +68,44 @@ Touggourt).
 
 ## Organisation (évolutive)
 
-La couverture est organisée par **technologie**, de sorte que l'ajout d'une
-nouvelle génération est purement additif – rien n'est renommé :
+Les fichiers sont nommés par **technologie et opérateur**, de sorte que l'ajout
+d'une nouvelle génération est purement additif – rien n'est renommé :
 
 ```
 data/
-  coverage/5g/
-    sites.json          # combiné – tous les opérateurs
-    djezzy.json  mobilis.json  ooredoo.json
-  csv/coverage/5g/sites.csv          # dépôt + bundle Release (pas dans le tarball npm)
-  geojson/coverage/5g/sites.geojson  # Entités Point
-  metadata.json         # sources, technologies, comptages par opérateur, generated_at
+  5g-djezzy.json  5g-mobilis.json  5g-ooredoo.json
+  csv/5g-djezzy.csv  ...             # miroir CSV par fichier
+  geojson/5g-djezzy.geojson  ...     # entités Point par fichier
+  metadata.json                      # métadonnées v2 canoniques (schema_version, sources[], entities[], by_operator)
 ```
 
-Le paquet npm contient le **JSON** ; les fichiers CSV/GeoJSON sont inclus dans
-chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+Le paquet npm contient le **JSON, le CSV et le GeoJSON** ; les mêmes fichiers
+sont inclus dans chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+`coverage()` concatène les fichiers par opérateur (les ids sont préfixés par
+l'opérateur, l'union est donc sans collision).
 
 ## Structure d'un enregistrement
+
+Les enregistrements suivent le contrat canonique GeoAlgeria v2 (`geo_precision`,
+`geo_method`, `source` comme clé vers `metadata.sources[]`), plus les champs
+propres à la couverture :
 
 ```json
 {
   "id": "djezzy-ba5a8250cb",
-  "technology": "5G",
-  "operator": "djezzy",
   "name": "Ain benian ville",
-  "address": "AIN BENIAN",
+  "wilaya_code": "16",
+  "commune_code": null,
   "commune": null,
   "commune_ar": null,
-  "commune_code": null,
-  "wilaya_code": "16",
   "lat": 36.7898,
   "lng": 2.91341,
-  "source": "https://www.djezzy5g.dz/map.html"
+  "geo_precision": "exact",
+  "geo_method": "operator_map",
+  "source": "djezzy",
+  "operator": "djezzy",
+  "technology": "5G",
+  "address": "AIN BENIAN"
 }
 ```
 
@@ -107,7 +113,9 @@ chaque [Release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code` de
 GeoAlgeria. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
 n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
-que le nom de la commune). Pour Ooredoo, `name` est la commune couverte.
+que le nom de la commune). Pour Ooredoo, `name` est la commune couverte et les
+points sont `approximate` (`operator_commune_point`) : un point par commune
+couverte, pas un site cellulaire.
 
 ## Besoin des divisions administratives ?
 

@@ -66,38 +66,43 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 
 ## التنظيم (قابل للتوسع)
 
-التغطية مُنظمة حسب **التقنية**، بحيث تكون إضافة جيل جديد عملية إضافية
-بحتة – لا إعادة تسمية:
+الملفات مُسماة حسب **التقنية والمشغل**، بحيث تكون إضافة جيل جديد عملية
+إضافية بحتة – لا إعادة تسمية:
 
 ```
 data/
-  coverage/5g/
-    sites.json          # مدمج – جميع المشغلين
-    djezzy.json  mobilis.json  ooredoo.json
-  csv/coverage/5g/sites.csv          # المستودع + حزمة الإصدار (غير مضمن في حزمة npm)
-  geojson/coverage/5g/sites.geojson  # كيانات نقطية
-  metadata.json         # المصادر، التقنيات، عدد النقاط لكل مشغل، generated_at
+  5g-djezzy.json  5g-mobilis.json  5g-ooredoo.json
+  csv/5g-djezzy.csv  ...             # مرآة CSV لكل ملف
+  geojson/5g-djezzy.geojson  ...     # كيانات نقطية لكل ملف
+  metadata.json                      # البيانات الوصفية القياسية v2 (schema_version، sources[]، entities[]، by_operator)
 ```
 
-حزمة npm تحتوي على **JSON**؛ ملفات CSV/GeoJSON مضمنة في كل
+حزمة npm تحتوي على **JSON وCSV وGeoJSON**؛ الملفات نفسها مضمنة في كل
 [إصدار على GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+الدالة `coverage()` تدمج ملفات المشغلين (المعرفات مسبوقة باسم المشغل، لذا
+الدمج خالٍ من التصادمات).
 
 ## شكل السجل
+
+تتبع السجلات عقد GeoAlgeria القياسي v2 (`geo_precision` و`geo_method`
+و`source` كمفتاح إلى `metadata.sources[]`)، إضافة إلى حقول التغطية:
 
 ```json
 {
   "id": "djezzy-ba5a8250cb",
-  "technology": "5G",
-  "operator": "djezzy",
   "name": "Ain benian ville",
-  "address": "AIN BENIAN",
+  "wilaya_code": "16",
+  "commune_code": null,
   "commune": null,
   "commune_ar": null,
-  "commune_code": null,
-  "wilaya_code": "16",
   "lat": 36.7898,
   "lng": 2.91341,
-  "source": "https://www.djezzy5g.dz/map.html"
+  "geo_precision": "exact",
+  "geo_method": "operator_map",
+  "source": "djezzy",
+  "operator": "djezzy",
+  "technology": "5G",
+  "address": "AIN BENIAN"
 }
 ```
 
@@ -105,7 +110,8 @@ data/
 إعادة الجلب. `wilaya_code` يرتبط بـ `wilaya_code` الخاص بـ GeoAlgeria.
 الحقول التي لا يوفرها مشغل معين تكون `null` (جيزي ليس لديه بلدية؛ موبيليس
 لديه البلدية بالفرنسية/العربية لكن بدون عنوان؛ أوريدو لديه اسم البلدية
-فقط). بالنسبة لأوريدو، `name` هو اسم البلدية المغطاة.
+فقط). بالنسبة لأوريدو، `name` هو اسم البلدية المغطاة والنقاط `approximate`
+(`operator_commune_point`): نقطة واحدة لكل بلدية مغطاة، وليست موقع خلية.
 
 ## هل تحتاج التقسيمات الإدارية أيضًا؟
 

@@ -12,14 +12,11 @@ reads as further along than it is.
 
 ## Contract
 
-- [ ] **`@geoalgeria/telecom` still predates the v2 contract.** Its
-  `data/metadata.json` carries no `schema_version` at all and it is absent from
-  the `MIGRATIONS` config in `scripts/lib/v2-transforms.mjs`, so it never went
-  through the v2 pass every other package did. Coverage polygons are not a
-  `GeoRecord` collection, which is why it was skipped and why the migration is a
-  design question rather than a mechanical one: decide whether coverage is a
-  relation file (like `routes.json`) or its own shape, then migrate.
-  _(logged 2026-07-28)_
+- [x] **`@geoalgeria/telecom` migrated to the v2 contract** (2.0.0): the
+  coverage points ARE GeoRecords (operator-published presence points, every one
+  geocoded), so the flat contract fit once the layout flattened to
+  `data/5g-<operator>.json` and the union file was dropped in favour of
+  `entities[]`. _(logged 2026-07-28, resolved 2026-07-31)_
 
 ## Aviation
 
