@@ -8,12 +8,12 @@
   "geocoded_count": 572,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 552,
-    "approximate": 20
+    "exact": 548,
+    "approximate": 24
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record but one carries a real operator coordinate; the exception is a store whose API point falls in the sea, pinned to its commune centroid instead (geo_method commune_centroid). A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
+  "coverage_note": "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API. 567 of the 572 records carry the operator's own coordinate; the other 5 are placed on their commune's point instead (geo_precision approximate, geo_method commune_centroid) because the API coordinate contradicts both the wilaya Ooredoo declares for the store and the store's own name and address. 3 further records keep their operator coordinate but a derived wilaya/commune the wilaya outlines disagree with (the nearest-centroid join filed a near-boundary point one wilaya over). operator_wilaya preserves the operator's declared wilaya on every record.",
   "wilayas_covered": 63,
   "bbox": [
     -8.14028,

@@ -50,17 +50,41 @@ const MAX_BYTES = 64 * 1024 * 1024;
 // overrides convention): the point is resolved to that commune's centroid in the
 // flagship set and the record is demoted to approximate/commune_centroid, so the
 // data claims a commune-level placement and not a per-store point we don't have.
+// The commune also carries the wilaya, so a pinned record's wilaya_code moves with
+// it; the public id was already assigned from the pre-fix join and is deliberately
+// left alone, so a correction never breaks a deep link.
 //
-// 1422892 = ESO000810 "CTE.SEFSSAFA" (public id 31-001). The API returns
-// lat 36.2477 / lng -0.634848, a point in the Mediterranean roughly 50 km off the
-// Oran coast, with no land under it; reported by a reader who saw the marker at
-// sea on geoalgeria.com. It is filed here under the commune the nearest-centroid
-// join gave it. Note the record's own operator_wilaya is "Batna", so the true
-// store may be elsewhere entirely; the commune pin is the conservative reading
-// (it makes the point agree with the commune the record ships), not a claim to
-// have located the store.
+// Entries below are the five records where the API coordinate contradicts the
+// operator's own declared wilaya AND the store's name/address. Everything else
+// that disagreed is the 2019/2026 wilaya reform (the API still files stores under
+// the 48-wilaya scheme, so a Timimoun store is tagged "Adrar") and is correct as
+// derived. Evidence per record:
+//
+// 1422892 = ESO000810 "CTE.SEFSSAFA". API lat 36.2477 / lng -0.634848 is in the
+//   Mediterranean ~50 km off the Oran coast, no land under it. It is the longitude
+//   of its neighbour ESO000811 ("ACHAACHA CENTRE", 36.2477 / +0.63486) with the
+//   sign flipped, so the field is a copy of the adjacent record, not a measurement.
+//   Declared Batna / SEFIANE, and the record sits inside the Batna block of the
+//   pull, between two Batna city stores.
+// 1423058 = "EO TIZI OUZOU 2", address "TIZI OUZOU", declared Tizi Ouzou. API
+//   36.7426 / 3.11966 is central Algiers, 111 km away. Pinned to Tizi Ouzou and not
+//   to the declared commune "ABI YOUCEF": that commune is the batch placeholder for
+//   the whole Tizi Ouzou block (it is also on "EO AZAZGA"), while the store's own
+//   name and address name the chef-lieu.
+// 1467386 = "EO BEJAIA", address "24, Ch des Cretes - BEJAIA", declared Bejaia. API
+//   36.6999 / 3.21164 is Algiers airport, 0.4 km from "EO AEROPORT INTERNATIONAL",
+//   i.e. a default point. The separate "EO BEJAIA 2" sits in Bejaia normally.
+// 1423470 = "EO PLATEAU", address "ORAN", declared Oran. API 35.6461 / +0.6983 is a
+//   longitude sign flip: 35.6461 / -0.6983 lands 7 km from Es Senia, in Oran.
+// 1423550 = "EO BOUMERDES", address "BOUMERDES", declared Boumerdes. API 35.7535 /
+//   3.47341 is exactly one degree of latitude south of Boumerdes (36.7535 / 3.47341
+//   is 0.5 km from Corso, and the neighbouring Boumerdes stores sit at 36.75x).
 const COORD_FIX = {
-  1422892: { commune_code: "3122" }, // Sidi Ben Yebka (Oran)
+  1422892: { commune_code: "0524" }, // Sefiane (Batna)
+  1423058: { commune_code: "1501" }, // Tizi-Ouzou (Tizi Ouzou)
+  1423470: { commune_code: "3101" }, // Oran (Oran)
+  1423550: { commune_code: "3501" }, // Boumerdes (Boumerdès)
+  1467386: { commune_code: "0601" }, // Bejaia (Béjaïa)
 };
 
 /**

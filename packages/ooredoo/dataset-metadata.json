@@ -4,7 +4,7 @@
   "name": "Ooredoo stores (Algeria)",
   "alternateName": "Boutiques Ooredoo",
   "identifier": "@geoalgeria/ooredoo",
-  "description": "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API — every record but one carries a real operator coordinate; the exception is a store whose API point falls in the sea, pinned to its commune centroid instead (geo_method commune_centroid). A few points carry inaccurate source coords, so their derived wilaya/commune may be off; operator_wilaya preserves the operator's declared wilaya.",
+  "description": "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API. 567 of the 572 records carry the operator's own coordinate; the other 5 are placed on their commune's point instead (geo_precision approximate, geo_method commune_centroid) because the API coordinate contradicts both the wilaya Ooredoo declares for the store and the store's own name and address. 3 further records keep their operator coordinate but a derived wilaya/commune the wilaya outlines disagree with (the nearest-centroid join filed a near-boundary point one wilaya over). operator_wilaya preserves the operator's declared wilaya on every record.",
   "conditionsOfAccess": "Data © Ooredoo Algérie; redistributed for reference",
   "isAccessibleForFree": true,
   "creator": {
