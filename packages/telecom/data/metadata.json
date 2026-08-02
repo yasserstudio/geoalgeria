@@ -4,11 +4,11 @@
   "title_fr": "Points de couverture 5G en Algérie",
   "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
   "title_en": "Algeria 5G coverage points",
-  "record_count": 2798,
-  "geocoded_count": 2798,
+  "record_count": 3096,
+  "geocoded_count": 3096,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 2613,
+    "exact": 2911,
     "approximate": 185
   },
   "estimated_universe": null,
@@ -17,7 +17,7 @@
   "wilayas_covered": 58,
   "bbox": [
     -8.16521,
-    19.570311,
+    19.562361,
     10.027122,
     37.026438
   ],
@@ -28,7 +28,7 @@
     },
     {
       "file": "5g-mobilis.json",
-      "count": 1621
+      "count": 1919
     },
     {
       "file": "5g-ooredoo.json",
@@ -41,37 +41,37 @@
       "name": "Djezzy — published 5G coverage map (Optimum Telecom Algérie)",
       "url": "https://www.djezzy5g.dz/map.html",
       "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
-      "retrieved": "2026-06-13",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-08-02"
     },
     {
       "key": "mobilis",
       "name": "Mobilis — published 5G coverage map (ATM Mobilis)",
       "url": "https://mobilis.dz/map/5g",
       "license": "Data © ATM Mobilis; redistributed for reference",
-      "retrieved": "2026-06-13",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-08-02"
     },
     {
       "key": "ooredoo",
       "name": "Ooredoo Algérie — published 5G covered communes",
       "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
       "license": "Data © Ooredoo Algérie; redistributed for reference",
-      "retrieved": "2026-06-13",
-      "evidence_type": "official"
+      "evidence_type": "official",
+      "retrieved": "2026-08-02"
     }
   ],
   "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-  "updated": "2026-06-13",
+  "updated": "2026-08-02",
   "technologies": [
     "5G"
   ],
   "by_technology": {
-    "5G": 2798
+    "5G": 3096
   },
   "by_operator": {
     "djezzy": 1001,
-    "mobilis": 1621,
+    "mobilis": 1919,
     "ooredoo": 176
   }
 }

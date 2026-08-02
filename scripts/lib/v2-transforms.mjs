@@ -750,14 +750,15 @@ export const MIGRATIONS = {
       // within the commune, so they are approximate by construction.
       { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
     ],
-    // The committed data is the 2026-06-13 operator-map capture; keep that date
-    // rather than the generic cutover constant (see migrate-to-v2.mjs).
+    // Cutover replayed the 2026-06-13 operator-map capture; fetch.mjs refreshes
+    // pass their own capture date, so this pin only covers the (now dormant)
+    // v1→v2 migration path.
     updated: "2026-06-13",
     meta: {
       sources: [
-        { key: "djezzy", name: "Djezzy — published 5G coverage map (Optimum Telecom Algérie)", url: "https://www.djezzy5g.dz/map.html", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference", retrieved: "2026-06-13", evidence_type: "official" },
-        { key: "mobilis", name: "Mobilis — published 5G coverage map (ATM Mobilis)", url: "https://mobilis.dz/map/5g", license: "Data © ATM Mobilis; redistributed for reference", retrieved: "2026-06-13", evidence_type: "official" },
-        { key: "ooredoo", name: "Ooredoo Algérie — published 5G covered communes", url: "https://www.ooredoo.dz/fr/particuliers/internet/5g", license: "Data © Ooredoo Algérie; redistributed for reference", retrieved: "2026-06-13", evidence_type: "official" },
+        { key: "djezzy", name: "Djezzy — published 5G coverage map (Optimum Telecom Algérie)", url: "https://www.djezzy5g.dz/map.html", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference", evidence_type: "official" },
+        { key: "mobilis", name: "Mobilis — published 5G coverage map (ATM Mobilis)", url: "https://mobilis.dz/map/5g", license: "Data © ATM Mobilis; redistributed for reference", evidence_type: "official" },
+        { key: "ooredoo", name: "Ooredoo Algérie — published 5G covered communes", url: "https://www.ooredoo.dz/fr/particuliers/internet/5g", license: "Data © Ooredoo Algérie; redistributed for reference", evidence_type: "official" },
       ],
       // No open licence — operator-published coverage claims, so the prose moves
       // to conditionsOfAccess in the discovery descriptor (buildDcat) rather than

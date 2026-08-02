@@ -56,6 +56,7 @@ const ALIASES = {
 };
 const unmatched = new Set();
 const dropped = { djezzy: 0, mobilis: 0, ooredoo: 0 };
+const duplicates = { mobilis: 0 };
 
 function wilayaCode(name) {
   let code = NAME_TO_CODE.get(norm(name));
@@ -98,7 +99,7 @@ async function get(url, headers = {}) {
 // Requires the `agent-browser` CLI on PATH.
 async function fetchDjezzy() {
   const base = "https://www.djezzy5g.dz";
-  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 60000 });
+  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 180000 });
   let byWilaya;
   try {
     ab("open", `${base}/map.html`);
@@ -154,6 +155,9 @@ async function fetchMobilis() {
   });
   const rows = await res.json();
   const sites = [];
+  // The 2026-08 re-import ships exact duplicate rows (same coords + commune);
+  // keep the first of each — they hash to the same id and the writer rejects dupes.
+  const seen = new Set();
   for (const r of rows) {
     const [latS, lngS] = String(r.coordonnes || "").split(",");
     const lat = Number(latS),
@@ -162,8 +166,14 @@ async function fetchMobilis() {
       dropped.mobilis++;
       continue;
     }
+    const siteId = id("mobilis", lat, lng, r.commune || "");
+    if (seen.has(siteId)) {
+      duplicates.mobilis++;
+      continue;
+    }
+    seen.add(siteId);
     sites.push({
-      id: id("mobilis", lat, lng, r.commune || ""),
+      id: siteId,
       technology: TECH,
       operator: "mobilis",
       name: r.commune || null,
@@ -210,7 +220,7 @@ function abEval(js) {
 
 async function fetchOoredoo() {
   const url = "https://www.ooredoo.dz/fr/particuliers/internet/5g";
-  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 60000 });
+  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 180000 });
   let rows;
   try {
     ab("open", url);
@@ -300,6 +310,8 @@ async function main() {
     console.warn(
       `  ⚠ dropped ${totalDropped} out-of-Algeria point(s) (djezzy ${dropped.djezzy}, mobilis ${dropped.mobilis}, ooredoo ${dropped.ooredoo})`,
     );
+  if (duplicates.mobilis)
+    console.warn(`  ⚠ skipped ${duplicates.mobilis} exact duplicate Mobilis row(s) (same coords + commune)`);
 }
 
 main().catch((e) => {

@@ -64,7 +64,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Réseau Mobilis** | 12 345 | 165 agences + 12 180 points de vente. [`@geoalgeria/mobilis`](packages/mobilis) |
-| **Couverture 5G** | 2 798 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
+| **Couverture 5G** | 3 096 | sites 5G Djezzy + Mobilis + Ooredoo. [`@geoalgeria/telecom`](packages/telecom) |
 | **Aéroports civils** | 36 | ANAC + OurAirports : noms, codes OACI + IATA, contacts, coordonnées. [`@geoalgeria/aviation`](packages/aviation) |
 | **Liaisons directes** | 123 | Le réseau international d'Air Algérie en trajets directionnels, chacun avec un exploitant, un niveau de preuve et une source. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banques et agences** | 1 704 | les 21 banques agréées + 8 institutions ; agences avec codes RIB/SWIFT, propriété, coordonnées. [`@geoalgeria/banques`](packages/banques) |

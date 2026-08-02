@@ -17,10 +17,10 @@
     "name": "Algeria",
     "geo": {
       "@type": "GeoShape",
-      "box": "19.570311 -8.16521 37.026438 10.027122"
+      "box": "19.562361 -8.16521 37.026438 10.027122"
     }
   },
-  "variableMeasured": "2798 records, 58 wilayas",
+  "variableMeasured": "3096 records, 58 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -77,7 +77,7 @@
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/telecom/data/geojson/5g-ooredoo.geojson"
     }
   ],
-  "dateModified": "2026-06-13",
+  "dateModified": "2026-08-02",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [

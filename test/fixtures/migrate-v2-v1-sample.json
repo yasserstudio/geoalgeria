@@ -6945,7 +6945,7 @@
     },
     "telecom": {
       "_cutover": "5e61e4e6270b3451e520a5a609af74a91bdfd555",
-      "_note": "v1 inputs lived at data/coverage/5g/<op>.json; the v2 files rename them (MIGRATIONS.telecom files[].from)",
+      "_note": "v1 inputs lived at data/coverage/5g/<op>.json; the v2 files rename them (MIGRATIONS.telecom files[].from); the 2026-08-02 Mobilis re-fetch removed 2 sampled sites upstream (mobilis-9417756874, mobilis-1600f63220) — dropped from the sample rather than resampled, so every remaining row stays frozen pre-cutover input",
       "files": {
         "5g-djezzy.json": [
           {
@@ -7186,34 +7186,6 @@
             "wilaya_code": "35",
             "lat": 36.758661,
             "lng": 3.455575,
-            "source": "https://mobilis.dz/map/5g"
-          },
-          {
-            "id": "mobilis-9417756874",
-            "technology": "5G",
-            "operator": "mobilis",
-            "name": "ARZEW",
-            "address": null,
-            "commune": "ARZEW",
-            "commune_ar": "أرزيو",
-            "commune_code": null,
-            "wilaya_code": "31",
-            "lat": 35.888881,
-            "lng": -0.32671,
-            "source": "https://mobilis.dz/map/5g"
-          },
-          {
-            "id": "mobilis-1600f63220",
-            "technology": "5G",
-            "operator": "mobilis",
-            "name": "TAMALOUS",
-            "address": null,
-            "commune": "TAMALOUS",
-            "commune_ar": "تمالوس",
-            "commune_code": null,
-            "wilaya_code": "21",
-            "lat": 36.836611,
-            "lng": 6.630087,
             "source": "https://mobilis.dz/map/5g"
           },
           {
