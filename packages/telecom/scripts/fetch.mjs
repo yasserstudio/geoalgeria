@@ -82,6 +82,10 @@ const id = (operator, lat, lng, extra = "") =>
 const inAlgeria = (lat, lng) =>
   Number.isFinite(lat) && Number.isFinite(lng) && lat >= 18 && lat <= 38 && lng >= -9 && lng <= 12;
 
+// ooredoo.dz and djezzy5g.dz can take well over a minute to load or answer;
+// every agent-browser call shares this ceiling so the sites cannot drift apart.
+const AB_TIMEOUT_MS = 180_000;
+
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.0 Safari/605.1.15";
 async function get(url, headers = {}) {
@@ -99,7 +103,7 @@ async function get(url, headers = {}) {
 // Requires the `agent-browser` CLI on PATH.
 async function fetchDjezzy() {
   const base = "https://www.djezzy5g.dz";
-  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 180000 });
+  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: AB_TIMEOUT_MS });
   let byWilaya;
   try {
     ab("open", `${base}/map.html`);
@@ -202,7 +206,7 @@ async function fetchMobilis() {
 function abEval(js) {
   const out = execFileSync("agent-browser", ["eval", js], {
     encoding: "utf8",
-    timeout: 60000,
+    timeout: AB_TIMEOUT_MS,
     maxBuffer: 64 * 1024 * 1024,
   });
   for (const line of out.split("\n").map((s) => s.trim()).reverse()) {
@@ -220,7 +224,7 @@ function abEval(js) {
 
 async function fetchOoredoo() {
   const url = "https://www.ooredoo.dz/fr/particuliers/internet/5g";
-  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: 180000 });
+  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: AB_TIMEOUT_MS });
   let rows;
   try {
     ab("open", url);

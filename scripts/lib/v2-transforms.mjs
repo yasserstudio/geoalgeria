@@ -874,12 +874,19 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snap
       // change between two runs on the same date, so the date alone cannot say
       // what a shipped value was derived from. Optional by design: offline and
       // replay generators have nothing to attest and simply omit it.
-      sources: meta.sources.map((s) => ({
+      sources: meta.sources.map((s) => {
+        // A source with no pinned `retrieved` inherits the run's date; if the
+        // caller forgot to pass one, fail the build rather than silently
+        // shipping a source entry with no retrieval date at all.
+        if (s.retrieved == null && !retrieved)
+          throw new Error(`${pkg}: source "${s.key}" has no retrieved date and none was passed to writePackageV2`);
+        return {
         ...s,
         retrieved: s.retrieved ?? retrieved,
         evidence_type: s.evidence_type ?? evidenceForSourceKey(s.key),
         ...(snapshots[s.key] ? { snapshot: snapshots[s.key] } : {}),
-      })),
+        };
+      }),
       license: meta.license,
       updated,
       estimatedUniverse: meta.estimatedUniverse,
