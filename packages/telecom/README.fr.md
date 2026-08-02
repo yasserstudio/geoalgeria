@@ -12,8 +12,8 @@
 
 </div>
 
-**2 798 points de couverture 5G** à travers l'Algérie, publiés à partir des
-cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (1 621)** et
+**3 096 points de couverture 5G** à travers l'Algérie, publiés à partir des
+cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (1 919)** et
 **Ooredoo (176)** – chacun avec ses coordonnées et son rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
@@ -25,9 +25,9 @@ npm install @geoalgeria/telecom
 ```js
 import telecom from "@geoalgeria/telecom";
 
-const sites = telecom.coverage();                       // les 2 798 points
+const sites = telecom.coverage();                       // les 3 096 points
 const djezzy = telecom.coverageByOperator("djezzy");    // 1 001
-const mobilis = telecom.coverageByOperator("mobilis");  // 1 621
+const mobilis = telecom.coverageByOperator("mobilis");  // 1 919
 const ooredoo = telecom.coverageByOperator("ooredoo");  // 176
 
 // Couverture 5G dans une wilaya (jointure sur wilaya_code de GeoAlgeria)
@@ -52,7 +52,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Opérateur | Points | Granularité | Carte source |
 | --- | --- | --- | --- |
 | Djezzy | **1 001** | site cellulaire | djezzy5g.dz |
-| Mobilis | **1 621** | site cellulaire | mobilis.dz/map/5g |
+| Mobilis | **1 919** | site cellulaire | mobilis.dz/map/5g |
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
 Couvrant **58 wilayas** (y compris les nouvelles wilayas comme Timimoun, In Salah,

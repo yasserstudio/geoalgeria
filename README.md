@@ -64,7 +64,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **ATMs** | 2,026 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
 | **Mobilis network** | 12,345 | 165 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
-| **5G coverage** | 2,798 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
+| **5G coverage** | 3,096 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 36 | ANAC + OurAirports: names, ICAO + IATA codes, contacts, coordinates. [`@geoalgeria/aviation`](packages/aviation) |
 | **Nonstop routes** | 123 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates. [`@geoalgeria/banques`](packages/banques) |
