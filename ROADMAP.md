@@ -75,6 +75,15 @@ reads as further along than it is.
   against Wikidata/OSM before touching either.
   _(logged 2026-07-29)_
 
+## Generators
+
+- [ ] **Nearest-centroid fallback can cross a boundary.** The ooredoo
+  reconciliation (PR #151) pinned 5 provable upstream coordinate errors to
+  commune points but left 3 records whose nearest-centroid assignment lands in
+  a neighbouring commune; the fix is a point-in-polygon pass in the shared
+  commune-point helper so a fallback point is only accepted inside its own
+  commune. _(logged 2026-08-01)_
+
 ## Releases
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
@@ -85,6 +94,17 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Telecom 2.1.0, the August Mobilis re-survey** (2026-08-02): Mobilis
+  rebuilt its published 5G map (1,621 -> 1,919 sites; first points in Beni
+  Abbes and In Guezzam), taking the package to 3,096 coverage points. The new
+  feed ships 77 exact duplicate rows and 4 out-of-Algeria points; the fetcher
+  now dedupes with its own logged counter, all three agent-browser call sites
+  share one 180s timeout, per-source `retrieved` dates track each fetch run,
+  and `writePackageV2` fails the build if a source would ship with no
+  retrieval date. Truncation of the exactly-2,000-row response was ruled out
+  (the operator map's own JS does one unpaginated fetch; Alger, at the start
+  of the contiguous id block, grew). PRs #152/#153.
 
 - **The core package now ships all 1,541 communes** (was 1,528). The 13
   name-twin communes of the reform wilayas were added from the sourced records
