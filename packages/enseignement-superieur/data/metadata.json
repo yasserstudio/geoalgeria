@@ -8,8 +8,8 @@
   "geocoded_count": 177,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 61,
-    "approximate": 116
+    "exact": 67,
+    "approximate": 110
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -27,12 +27,12 @@
       "name": "Ministry of Higher Education and Scientific Research (MESRS)",
       "url": "https://www.mesrs.dz",
       "license": "Factual public listing (MESRS)",
-      "retrieved": "2026-06-23",
+      "retrieved": "2026-08-03",
       "evidence_type": "official"
     }
   ],
   "license": "Factual public listing (MESRS)",
-  "updated": "2026-06-23",
+  "updated": "2026-08-03",
   "by_type": {
     "universite": 58,
     "grande_ecole": 102,
@@ -44,8 +44,8 @@
     "private": 19
   },
   "by_geo_method": {
-    "campus": 61,
-    "wilaya": 100,
-    "commune": 16
+    "campus": 67,
+    "wilaya": 95,
+    "commune": 15
   }
 }

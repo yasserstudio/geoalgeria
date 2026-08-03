@@ -19,10 +19,18 @@ export const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 " +
   "(KHTML, like Gecko) Chrome/124.0 Safari/537.36";
 
+// Raw listing HTML is captured to sources/enseignement-superieur/ (see
+// sources/README.md); `--cache` on any entry script replays from the capture.
+import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+const OFFLINE = process.argv.includes("--cache");
+
 export async function getHtmlAr() {
+  if (OFFLINE) return readCapture("enseignement-superieur", "mesrs-ar").html;
   const res = await fetch(PAGE_AR, { headers: { "User-Agent": UA, Accept: "text/html" } });
   if (!res.ok) throw new Error(`${PAGE_AR} -> HTTP ${res.status}`);
-  return res.text();
+  const html = await res.text();
+  writeCapture("enseignement-superieur", "mesrs-ar", { url: PAGE_AR, html }, { url: PAGE_AR });
+  return html;
 }
 
 const ENTITIES = { "&amp;": "&", "&#038;": "&", "&#8211;": "–", "&#8212;": "—", "&#8217;": "’", "&#8216;": "‘", "&#039;": "'", "&nbsp;": " " };
