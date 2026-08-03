@@ -44,7 +44,9 @@ research/**/*.pdf
 
 # === Research scratch: raw source dumps & landscape notes ===
 # Per-sector scratch, kept local until promoted to a tracked provenance dir.
-# Never commit the raw contents; promote cleaned outputs into a package instead.
+# Since 2026-08-03 canonical raw captures are COMMITTED under sources/ (see
+# sources/README.md); packages migrate there as they are touched. Until a
+# package migrates, its raw pulls stay in these ignored research/ dirs.
 research/_landscape/
 research/_next-dataset/
 research/formation-professionnelle/

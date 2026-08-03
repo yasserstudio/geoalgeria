@@ -191,8 +191,8 @@ Lancez `npm run fetch` pour régénérer toutes les sorties. Le script :
 3. déduplique la même école cartographiée à la fois comme nœud et comme bâtiment ;
 4. attache commune/wilaya par centroïde de commune le plus proche.
 
-Les extractions brutes sont mises en cache sous
-[`research/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/research/ecoles).
+L'extraction brute est conservée sous
+[`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).
 
 ## Licence & attribution
 

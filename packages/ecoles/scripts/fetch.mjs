@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Build Algeria's schools dataset from OpenStreetMap and emit JSON, CSV, and
- * GeoJSON to ../data. The raw source pull is cached under research/ecoles/.
+ * GeoJSON to ../data. The raw source pull is captured to sources/ecoles/.
  *
  * Source:
  *   - OpenStreetMap (ODbL): amenity=school + amenity=kindergarten in Algeria.
@@ -26,19 +26,19 @@
  * effectively exact; commune best-effort).
  *
  * Usage: node scripts/fetch.mjs            # live pull
- *        node scripts/fetch.mjs --cache    # rebuild from research/ecoles/osm-raw.json
+ *        node scripts/fetch.mjs --cache    # rebuild from sources/ecoles/osm.json
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
 const REPO_ROOT = join(__dirname, "..", "..", "..");
-const RESEARCH_DIR = join(REPO_ROOT, "research", "ecoles");
 // Approximate size of the national school network (primaire + moyen +
 // secondaire) per the Ministry of National Education, for honest coverage
 // framing. Deliberately round — it is a reference order-of-magnitude, not a
@@ -138,8 +138,19 @@ async function fetchOSM() {
         }
         const json = JSON.parse(out);
         if (Array.isArray(json.elements) && json.elements.length >= OSM_MIN) {
-          mkdirSync(RESEARCH_DIR, { recursive: true });
-          writeFileSync(join(RESEARCH_DIR, "osm-raw.json"), JSON.stringify(json) + "\n");
+          // Elements are an unordered set; sort the capture (type then id) so
+          // mirror-to-mirror ordering drift never shows up in the git diff.
+          writeCapture(
+            "ecoles",
+            "osm",
+            {
+              ...json,
+              elements: [...json.elements].sort(
+                (a, b) => a.type.localeCompare(b.type) || a.id - b.id,
+              ),
+            },
+            { url: ep, records: json.elements.length },
+          );
           return json.elements;
         }
         console.warn(`  only ${json.elements?.length ?? 0} elements (< ${OSM_MIN}); treating as partial, trying next…`);
@@ -467,12 +478,10 @@ function assignIds(rows) {
 
 // --- main ------------------------------------------------------------------
 async function main() {
-  // Offline replay: rebuild from the committed OSM pull (research/ecoles/osm-raw.json)
+  // Offline replay: rebuild from the committed capture (sources/ecoles/osm.json)
   // with no network — a dead upstream never blocks re-emission.
   const OFFLINE = process.argv.includes("--cache");
-  const osmRaw = OFFLINE
-    ? JSON.parse(readCacheFile(RESEARCH_DIR, "osm-raw.json", "ecoles")).elements
-    : await fetchOSM();
+  const osmRaw = OFFLINE ? readCapture("ecoles", "osm").elements : await fetchOSM();
   let rows = normOSM(osmRaw);
   console.log(`  OSM: ${rows.length} geocoded schools`);
 

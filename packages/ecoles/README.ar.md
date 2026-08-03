@@ -180,8 +180,8 @@ data/
 3. إزالة تكرار المدرسة نفسها المُخرَّطة كنقطةٍ ومبنى معًا؛
 4. إلحاق البلدية/الولاية بأقرب مركز ثقل بلدية.
 
-تُخزَّن الاستخراجات الخام مؤقتًا ضمن
-[`research/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/research/ecoles).
+يُحفَظ الاستخراج الخام ضمن
+[`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).
 
 ## الرخصة والإسناد
 
