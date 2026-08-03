@@ -77,12 +77,26 @@ reads as further along than it is.
 
 ## Generators
 
-- [ ] **Nearest-centroid fallback can cross a boundary.** The ooredoo
-  reconciliation (PR #151) pinned 5 provable upstream coordinate errors to
-  commune points but left 3 records whose nearest-centroid assignment lands in
-  a neighbouring commune; the fix is a point-in-polygon pass in the shared
-  commune-point helper so a fallback point is only accepted inside its own
-  commune. _(logged 2026-08-01)_
+- [x] **Nearest-centroid fallback can cross a boundary** — fixed in the shared
+  helper: `attachCommune` now resolves the containing wilaya by point-in-polygon
+  against the 69 boundaries first and restricts the centroid search to it, so
+  the join can never cross a wilaya boundary (commune-level containment stays
+  best-effort; commune polygons don't exist). Data effects land at each
+  package's next refresh — the 3 known ooredoo records (documented in their
+  coverageNote) repair themselves on the next ooredoo fetch. Per-package local
+  copies of `nearestCommune` (djezzy, ooredoo, culture, ecoles,
+  enseignement-superieur) converge on the shared helper as those packages are
+  touched. _(logged 2026-08-01, fixed 2026-08-03)_
+
+- [ ] **Ferroviaire regeneration drifts from the committed dataset.** Discovered
+  while testing the fix above: re-running `packages/ferroviaire/scripts/fetch.mjs`
+  on today's committed research/ferroviaire raws produces 233 coordinate
+  changes, 232 name changes and 18 id add/removes against the committed data —
+  the OSM↔Wikidata merge no longer reproduces what shipped, and the per-wilaya
+  sequential ids reshuffle (the id-churn class the v2 generator rework
+  eliminated elsewhere). Until diagnosed, do NOT regenerate ferroviaire; the
+  regeneration was reverted and only the helper fix shipped.
+  _(logged 2026-08-03)_
 
 ## Releases
 
