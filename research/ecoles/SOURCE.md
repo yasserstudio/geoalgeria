@@ -27,9 +27,9 @@ out center tags;
 
 Live sizing (2026-07-03): **11,633** `amenity=school` + **242** `amenity=kindergarten`
 → **11,830** after de-dup. Endpoints tried in order: `overpass-api.de`,
-`overpass.kumi.systems`, `maps.mail.ru`. The raw pull is cached to
-`research/ecoles/osm-raw.json` at build time (not committed — ~2 MB, reproducible
-via `npm run fetch`).
+`overpass.kumi.systems`, `maps.mail.ru`. The raw pull is captured to
+`sources/ecoles/osm.json` at build time (committed, per `sources/README.md`;
+offline rebuild via `npm run fetch -- --cache`).
 
 ## Method
 

@@ -48,6 +48,13 @@ term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's th
 The postal data under `packages/dataset/data/poste/` is a **generated mirror**;
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.
 
+`sources/` holds the **committed raw captures** the fetchers build from — one
+canonical latest capture per (package, source), written only via
+`scripts/lib/source-store.mjs`, so refreshes are reviewable git diffs and every
+converted package rebuilds offline (`--cache`). Rules in
+[`sources/README.md`](sources/README.md). Unconverted packages still cache raw
+pulls in gitignored `research/<pkg>/` until they are next touched.
+
 ## The loop
 
 1. **Branch** off `main`: `fix/commune-name`, `feat/emploi-coords`, `chore/ci`.

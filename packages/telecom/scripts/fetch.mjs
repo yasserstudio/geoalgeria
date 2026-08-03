@@ -11,8 +11,11 @@
 // Output (via the shared v2 writer): data/5g-<operator>.json + csv/ + geojson/
 // mirrors + canonical metadata.json.
 // Writes are all-or-nothing: if any operator fetch fails, nothing is overwritten
-// (so a partial fetch can't silently clobber good committed data).
-// Run: node scripts/fetch.mjs   (or: npm run fetch)
+// (so a partial fetch can't silently clobber good committed data). Raw payloads
+// are the exception: each operator's response is captured to sources/telecom/
+// the moment it arrives, so the evidence survives even an aborted run.
+// Run: node scripts/fetch.mjs            # live pull (captures to sources/telecom/)
+//      node scripts/fetch.mjs --cache    # offline rebuild from sources/telecom/
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -20,6 +23,11 @@ import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+
+// Offline replay: rebuild from the committed captures with no network — a dead
+// or WAF-blocked operator site never blocks re-emission.
+const OFFLINE = process.argv.includes("--cache");
 
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(PKG, "data");
@@ -103,21 +111,30 @@ async function get(url, headers = {}) {
 // Requires the `agent-browser` CLI on PATH.
 async function fetchDjezzy() {
   const base = "https://www.djezzy5g.dz";
-  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: AB_TIMEOUT_MS });
   let byWilaya;
-  try {
-    ab("open", `${base}/map.html`);
-    ab("wait", "8000"); // let the .enc fetch + decrypt populate `wilayas`
-    // `wilayas` is a top-level `let` (global lexical binding, not a window prop).
-    byWilaya = abEval(
-      "JSON.stringify((typeof wilayas !== 'undefined' && wilayas) || window.wilayas || {})",
-    );
-  } finally {
+  if (OFFLINE) {
+    byWilaya = readCapture("telecom", "djezzy-5g");
+  } else {
+    const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: AB_TIMEOUT_MS });
     try {
-      ab("close", "--all");
-    } catch {
-      /* ignore */
+      ab("open", `${base}/map.html`);
+      ab("wait", "8000"); // let the .enc fetch + decrypt populate `wilayas`
+      // `wilayas` is a top-level `let` (global lexical binding, not a window prop).
+      byWilaya = abEval(
+        "JSON.stringify((typeof wilayas !== 'undefined' && wilayas) || window.wilayas || {})",
+      );
+    } finally {
+      try {
+        ab("close", "--all");
+      } catch {
+        /* ignore */
+      }
     }
+    // Raw capture before validation, so the evidence survives an aborted run.
+    writeCapture("telecom", "djezzy-5g", byWilaya, {
+      url: `${base}/map.html`,
+      records: Object.values(byWilaya).reduce((n, w) => n + (w.markers?.length ?? 0), 0),
+    });
   }
 
   const sites = [];
@@ -152,12 +169,18 @@ async function fetchDjezzy() {
 
 // ── Mobilis ───────────────────────────────────────────────────────────────────
 async function fetchMobilis() {
-  const res = await get("https://mobilis.dz/map/5g/data", {
-    "X-Requested-With": "XMLHttpRequest",
-    Referer: "https://mobilis.dz/map/5g",
-    Accept: "application/json, text/plain, */*",
-  });
-  const rows = await res.json();
+  let rows;
+  if (OFFLINE) {
+    rows = readCapture("telecom", "mobilis-5g");
+  } else {
+    const res = await get("https://mobilis.dz/map/5g/data", {
+      "X-Requested-With": "XMLHttpRequest",
+      Referer: "https://mobilis.dz/map/5g",
+      Accept: "application/json, text/plain, */*",
+    });
+    rows = await res.json();
+    writeCapture("telecom", "mobilis-5g", rows, { url: "https://mobilis.dz/map/5g/data" });
+  }
   const sites = [];
   // The 2026-08 re-import ships exact duplicate rows (same coords + commune);
   // keep the first of each — they hash to the same id and the writer rejects dupes.
@@ -224,24 +247,36 @@ function abEval(js) {
 
 async function fetchOoredoo() {
   const url = "https://www.ooredoo.dz/fr/particuliers/internet/5g";
-  const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: AB_TIMEOUT_MS });
-  let rows;
-  try {
-    ab("open", url);
-    ab("wait", "5000");
-    rows = abEval(
-      "fetch(location.origin+'/o/c/communes?pageSize=3000&filter='+encodeURIComponent('(latitude ne 0 or longitude ne 0)')," +
-        "{headers:{Authorization:sessionStorage.getItem('tokenbearer'),Accept:'application/json'}})" +
-        ".then(r=>r.json()).then(d=>JSON.stringify(d.items.map(it=>({" +
-        "w:it.villayaId&&it.villayaId.key,c:it.communeId&&it.communeId.name,lat:it.latitude,lng:it.longitude}))))",
-    );
-  } finally {
+  let items;
+  if (OFFLINE) {
+    items = readCapture("telecom", "ooredoo-5g");
+  } else {
+    const ab = (...args) => execFileSync("agent-browser", args, { encoding: "utf8", timeout: AB_TIMEOUT_MS });
     try {
-      ab("close", "--all");
-    } catch {
-      /* ignore */
+      ab("open", url);
+      ab("wait", "5000");
+      items = abEval(
+        "fetch(location.origin+'/o/c/communes?pageSize=3000&filter='+encodeURIComponent('(latitude ne 0 or longitude ne 0)')," +
+          "{headers:{Authorization:sessionStorage.getItem('tokenbearer'),Accept:'application/json'}})" +
+          ".then(r=>r.json()).then(d=>JSON.stringify(d.items))",
+      );
+    } finally {
+      try {
+        ab("close", "--all");
+      } catch {
+        /* ignore */
+      }
     }
+    writeCapture("telecom", "ooredoo-5g", items, { url });
   }
+  // Projection happens here, in reviewable Node code, not in the browser eval —
+  // the capture keeps the items as received.
+  const rows = items.map((it) => ({
+    w: it.villayaId && it.villayaId.key,
+    c: it.communeId && it.communeId.name,
+    lat: it.latitude,
+    lng: it.longitude,
+  }));
   const sites = [];
   for (const r of rows) {
     const lat = Number(r.lat),

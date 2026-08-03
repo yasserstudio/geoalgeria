@@ -185,8 +185,8 @@ Run `npm run fetch` to regenerate every output. It:
 3. de-duplicates the same school mapped as both a node and a building;
 4. attaches commune/wilaya by nearest commune centroid.
 
-Raw source pulls are cached under
-[`research/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/research/ecoles).
+The raw source pull is captured under
+[`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).
 
 ## License & attribution
 
