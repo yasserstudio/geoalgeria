@@ -52,10 +52,19 @@ export function cleanName(name) {
     .trim();
 }
 
+// Raw listing HTML is captured to sources/enseignement-superieur/ (see
+// sources/README.md); `--cache` on any entry script replays from the capture
+// with no network.
+import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+const OFFLINE = process.argv.includes("--cache");
+
 export async function getHtml() {
+  if (OFFLINE) return readCapture("enseignement-superieur", "mesrs-en").html;
   const res = await fetch(PAGE, { headers: { "User-Agent": UA, Accept: "text/html" } });
   if (!res.ok) throw new Error(`${PAGE} -> HTTP ${res.status}`);
-  return res.text();
+  const html = await res.text();
+  writeCapture("enseignement-superieur", "mesrs-en", { url: PAGE, html }, { url: PAGE });
+  return html;
 }
 
 // Classify an institution from its (French) name into a stable code + label.
