@@ -105,12 +105,12 @@ jobs:
             # never in the title — both are already in the release tag chip + URL.
             RN="node scripts/release-notes.mjs $pkg/CHANGELOG.md $VER $TAG"
 
-            # Patches (docs/corrections) don't get a GitHub Release — the npm version
-            # and the repo's committed data cover them, and the feed stays meaningful.
-            if [ "$($RN is-patch)" = "yes" ]; then
-              echo "skip release: $TAG is a patch — no GitHub Release"
-              continue
-            fi
+            # Patches get a GitHub Release too (decision 2026-08-03): the app's
+            # /changelog ledger is synced from these releases, and a patch that
+            # moves the data date (a correction pass is a live rebuild) left the
+            # ledger provably behind the installed data. The Announce workflow
+            # still only opens Discussions for minor/major, so the feed cost is
+            # one quiet release entry.
 
             NOTES="$RUNNER_TEMP/$(basename "$NAME")-notes.md"  # basename: scoped names contain '/'
             $RN body > "$NOTES" || true
