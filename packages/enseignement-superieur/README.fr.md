@@ -75,9 +75,9 @@ fournie ici** et étiquetée honnêtement sur chaque enregistrement via `geo_met
 
 | `geo_method` | Nombre | `geo_precision` | Ce que représente la coordonnée |
 | --- | --- | --- | --- |
-| `campus` | 61 | `exact` | Un géocodage OpenStreetMap du campus nommé, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
-| `commune` | 16 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria` – utilisé quand OSM ne trouve pas le campus par son nom. |
-| `wilaya` | 100 | `approximate` | Le centroïde de la wilaya de l'établissement – solution de repli quand seule la wilaya est connue. Chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
+| `campus` | 67 | `exact` | Un géocodage OpenStreetMap du campus nommé, vérifié : un géocodage qui atterrit dans une wilaya différente de celle du nom de l'établissement est rejeté. |
+| `commune` | 15 | `approximate` | Le centroïde de la commune de l'établissement, issu du jeu de données principal `geoalgeria` – utilisé quand OSM ne trouve pas le campus par son nom. |
+| `wilaya` | 95 | `approximate` | Le centroïde de la wilaya de l'établissement – solution de repli quand seule la wilaya est connue. Chaque établissement privé/relevant d'autres ministères s'y trouve, car la source ne publie pas d'adresse pour eux. |
 
 `wilaya_code` et `commune` sont toujours réconciliés avec le jeu de données principal
 `geoalgeria`, ils font donc autorité et suivent le schéma à 69 wilayas (`commune_code` vaut
