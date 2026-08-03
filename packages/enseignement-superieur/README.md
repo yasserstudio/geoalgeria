@@ -74,9 +74,9 @@ here** and labelled honestly on every record via `geo_method` (detail) and `geo_
 
 | `geo_method` | Count | `geo_precision` | What the coordinate is |
 | --- | --- | --- | --- |
-| `campus` | 61 | `exact` | An OpenStreetMap geocode of the named campus, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
-| `commune` | 16 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship – used where OSM can't find the campus by name. |
-| `wilaya` | 100 | `approximate` | The centroid of the institution's wilaya – the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
+| `campus` | 67 | `exact` | An OpenStreetMap geocode of the named campus, cross-checked: a geocode that lands in a different wilaya than the institution's name is rejected. |
+| `commune` | 15 | `approximate` | The centroid of the institution's commune (city), from the `geoalgeria` flagship – used where OSM can't find the campus by name. |
+| `wilaya` | 95 | `approximate` | The centroid of the institution's wilaya – the fallback when only the wilaya is known. Every private/other-ministry institution lands here, as the source publishes no address for them. |
 
 `wilaya_code` and `commune` are always reconciled to the `geoalgeria` flagship dataset, so they
 are authoritative and in the 69-wilaya scheme (`commune_code` is currently `null` on every
@@ -109,7 +109,7 @@ data/
   institutions.json            # 177 institutions (array)
   metadata.json                # sources, counts, by_type, by_sector, by_geo_method, updated
   csv/institutions.csv         # repo + Release bundle (not in npm tarball)
-  geojson/institutions.geojson # Point features (all 177 placed; 61 campus-geocoded, see geo_method)
+  geojson/institutions.geojson # Point features (all 177 placed; 67 campus-geocoded, see geo_method)
 ```
 
 ## Record shape
