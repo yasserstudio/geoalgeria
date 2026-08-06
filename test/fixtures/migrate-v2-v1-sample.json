@@ -3590,6 +3590,7 @@
     },
     "formation-professionnelle": {
       "_cutover": "284b9cb741786491533ff19671054f8021d55e20",
+      "_note": "The 3 rows below that carry geo_precision \"approximate\" are generator input, not raw v1: takwin.dz publishes no coordinate for them, so the generator places them on a flagship commune centroid. Every other row is the untouched v1 record. The v1 originals had lat/lng null and no geo fields.",
       "files": {
         "establishments.json": [
           {
@@ -3603,8 +3604,8 @@
             "secteur": "public",
             "commune": "أدرار",
             "wilaya_code": "01",
-            "lat": null,
-            "lng": null,
+            "lat": 27.87429,
+            "lng": -0.297222,
             "adresse": "حي 103مسكن أدرار",
             "adresse_fr": "Cité 103 logtAdrar",
             "telephone": "049364333",
@@ -3618,7 +3619,9 @@
             "internat": false,
             "capacite_internat": null,
             "vocations": null,
-            "source": "takwin.dz (MFEP)"
+            "source": "takwin.dz (MFEP)",
+            "geo_precision": "approximate",
+            "geo_method": "commune"
           },
           {
             "id": 177,
@@ -3715,8 +3718,8 @@
             "secteur": "prive",
             "commune": "بنيمسوس",
             "wilaya_code": "16",
-            "lat": null,
-            "lng": null,
+            "lat": 36.73962,
+            "lng": 2.974444,
             "adresse": null,
             "adresse_fr": null,
             "telephone": null,
@@ -3730,7 +3733,9 @@
             "internat": false,
             "capacite_internat": null,
             "vocations": null,
-            "source": "takwin.dz (MFEP)"
+            "source": "takwin.dz (MFEP)",
+            "geo_precision": "approximate",
+            "geo_method": "commune"
           },
           {
             "id": 879,
@@ -3928,8 +3933,8 @@
             "secteur": "public",
             "commune": "حاسيالفحل",
             "wilaya_code": "58",
-            "lat": null,
-            "lng": null,
+            "lat": 31.605278,
+            "lng": 3.676268,
             "adresse": "الطريق الوطني رقم 01حي قيلال حاسي لفحلولاية المنيعة",
             "adresse_fr": "ROUTENATIONALE N°01 CITE GUILAL HASSI FEHAL W DEMENIAA",
             "telephone": "029278254",
@@ -3943,7 +3948,9 @@
             "internat": true,
             "capacite_internat": 60,
             "vocations": null,
-            "source": "takwin.dz (MFEP)"
+            "source": "takwin.dz (MFEP)",
+            "geo_precision": "approximate",
+            "geo_method": "commune"
           }
         ]
       }
