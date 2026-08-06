@@ -1,0 +1,8 @@
+{
+  "_comment": "Commune-label corrections for campus-precise geocodes. The pipeline labels each campus point by the NEAREST commune centre (no commune polygons exist in the repo, so true containment is not computable), which mislabels a campus that sits inside a commune whose centre is farther away than a neighbour's. Each entry re-labels the commune WITHOUT moving the point or downgrading geo_precision, and may never change the wilaya (fetch.mjs enforces this). Keyed by instKey (website host); every entry is verified against the institution's own published address.",
+  "esi.dz": {
+    "commune": "Oued Smar",
+    "wilaya_code": 16,
+    "why": "ESI's own address is BP 68M, 16270 Oued Smar; the campus lies in Oued Smar but nearer to Bab Ezzouar's centre. Reported by a user 2026-08-06."
+  }
+}

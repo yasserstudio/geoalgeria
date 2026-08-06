@@ -27,7 +27,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import { PAGE, getHtml, parseInstitutions, instKey, MIN_EXPECTED } from "./mesrs.mjs";
 import { getHtmlAr, anchoredNamesAr, parseExtras, buildResolver, classifyTypeAr, PAGE_AR } from "./mesrs-ar.mjs";
 
@@ -37,6 +37,7 @@ const REF = join(__dirname, "..", "..", "dataset", "data", "geojson");
 const DATASET = join(__dirname, "..", "..", "dataset", "data");
 const SEED = join(__dirname, "seeds", "coordinates.json");
 const OVERRIDES_FILE = join(__dirname, "seeds", "overrides.json");
+const COMMUNE_LABELS_FILE = join(__dirname, "seeds", "commune-labels.json");
 
 // At least this share of records must carry a real campus geocode, else the build
 // is assumed degraded (a missing/empty coordinate seed, or a geocode regression)
@@ -141,6 +142,10 @@ async function main() {
   // asserts a commune (resolved to its flagship centroid) or, where the exact
   // commune is uncertain, just a wilaya. Keyed by instKey (website host).
   const overrides = readSeed(OVERRIDES_FILE);
+  // Commune-label corrections for campus-precise geocodes: the nearest-centre
+  // join below can label a campus with the neighbouring commune when its own
+  // commune's centre is farther away. These re-label without moving the point.
+  const communeLabels = readSeed(COMMUNE_LABELS_FILE);
 
   // Arabic listing: the Arabic name for the network (joined on website host) plus
   // the private + other-ministry institutions the English page omits entirely.
@@ -182,6 +187,18 @@ async function main() {
       const nc = nearestCommune(g.lat, g.lng);
       if (nc && (!nameW || nameW === nc.code)) {
         lat = g.lat; lng = g.lng; wilaya_code = nc.code; commune = nc.name; precision = "campus";
+        // Hand-verified commune label (seeds/commune-labels.json): keeps the
+        // exact campus point and its precision, only the label changes, and
+        // never across a wilaya boundary.
+        const cl = communeLabels[key];
+        if (cl) {
+          const c = communeByName(cl.commune, cl.wilaya_code);
+          if (c && c.code === wilaya_code) {
+            commune = c.name;
+          } else {
+            console.warn(`  ⚠️  commune-label for ${key} ignored: ${cl.commune} (${cl.wilaya_code}) does not resolve inside wilaya ${wilaya_code}`);
+          }
+        }
       } else if (nc && nameW && nameW !== nc.code) {
         nReject++; // geocode disagrees with the named wilaya → don't trust it
       }
@@ -274,14 +291,20 @@ async function main() {
 
   // --- emit v2 via the shared writer ---
   const cfg = MIGRATIONS["enseignement-superieur"];
-  const today = new Date().toISOString().slice(0, 10);
+  // A --cache replay reproduces the committed dates: the source was NOT
+  // re-fetched, so claiming today as `retrieved` would be a false receipt.
+  // Only a live pull moves the dates (resolveDates, the shared rule).
+  const { updated, retrieved } = resolveDates(
+    DATA,
+    process.argv.includes("--cache"),
+  );
   const { records: out, metadata } = writePackageV2({
     pkg: "enseignement-superieur",
     dir: DATA,
     files: [{ file: "institutions.json", rows: records.map(cfg.map) }],
     meta: cfg.meta,
-    updated: today,
-    retrieved: today,
+    updated,
+    retrieved,
   });
 
   console.log(`\nType breakdown:`);

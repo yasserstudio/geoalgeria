@@ -88,6 +88,20 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
   });
 }
 
+// Post-migration corrections: fields the CURRENT pipeline legitimately fixes
+// relative to the migration-era input, each verified by hand and carried by a
+// pipeline seed (so a regeneration reproduces it). The replay applies them to
+// its own output before comparing, so the guard keeps watching every OTHER
+// field of the same record instead of being silenced record-wide.
+const CORRECTIONS = {
+  "enseignement-superieur": {
+    // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
+    // nearest-centroid join had labelled it Bab Ezzouar. Corrected via
+    // scripts/seeds/commune-labels.json, user report 2026-08-06.
+    "00065": { commune: "Oued Smar" },
+  },
+};
+
 for (const [pkg, file, map] of SPECS) {
   test(`migrate-to-v2 replay: ${pkg}/${file} reproduces the committed records`, () => {
     const sample = FIXTURE.packages[pkg].files[file];
@@ -105,6 +119,8 @@ for (const [pkg, file, map] of SPECS) {
       const produced = map(v1);
       if (produced.geo_precision === "exact" && shared.has(`${produced.lat},${produced.lng}`))
         produced.geo_precision = "approximate";
+      const fix = CORRECTIONS[pkg]?.[produced.id];
+      if (fix) Object.assign(produced, fix);
       const shipped = committed.get(produced.id);
       assert.ok(
         shipped,
