@@ -4,16 +4,16 @@
   "title_fr": "Écoles d'Algérie",
   "title_ar": "مدارس الجزائر",
   "title_en": "Algeria schools",
-  "record_count": 11830,
-  "geocoded_count": 11830,
+  "record_count": 11855,
+  "geocoded_count": 11855,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 2841,
-    "approximate": 8989
+    "exact": 2843,
+    "approximate": 9012
   },
-  "estimated_universe": 28000,
-  "coverage_pct": 42.3,
-  "coverage_note": "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya.",
+  "estimated_universe": 29702,
+  "coverage_pct": 39.9,
+  "coverage_note": "Schools compiled from OpenStreetMap, against the 29,702 educational institutions the Ministry of National Education reports on education.gov.dz (2024-2025 school year). A community-maintained extract, coverage partial and uneven by wilaya.",
   "wilayas_covered": 69,
   "bbox": [
     -8.133861,
@@ -27,23 +27,23 @@
       "name": "OpenStreetMap — schools & kindergartens in Algeria",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-07-03",
+      "retrieved": "2026-08-06",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "ODbL-1.0",
-  "updated": "2026-07-03",
-  "named": 8640,
+  "updated": "2026-08-06",
+  "named": 8635,
   "by_cycle": {
-    "primaire": 4020,
-    "moyen": 2377,
-    "secondaire": 1574,
-    "autre": 3591,
+    "primaire": 4019,
+    "moyen": 2378,
+    "secondaire": 1576,
+    "autre": 3614,
     "prescolaire": 268
   },
   "by_kind": {
-    "regular": 11640,
-    "formation": 91,
+    "regular": 11664,
+    "formation": 92,
     "coranique": 40,
     "special": 30,
     "langues": 24,
@@ -51,9 +51,9 @@
   },
   "by_sector": {
     "private": 48,
-    "public": 313
+    "public": 315
   },
-  "with_address": 2625,
+  "with_address": 2626,
   "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",
   "kind_note": "Kind is the establishment type, orthogonal to cycle: most are \"regular\"; \"langues\"/\"coranique\"/\"conduite\"/\"formation\" are special-purpose places OSM files under amenity=school but that sit outside the K-12 ladder (they carry cycle \"autre\"); \"special\" are adapted/special-needs schools (which keep a cycle)."
 }

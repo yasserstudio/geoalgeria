@@ -39,11 +39,9 @@ import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
 const REPO_ROOT = join(__dirname, "..", "..", "..");
-// Approximate size of the national school network (primaire + moyen +
-// secondaire) per the Ministry of National Education, for honest coverage
-// framing. Deliberately round — it is a reference order-of-magnitude, not a
-// claim of an exact registry.
-const OFFICIAL_TOTAL = 28000;
+// The coverage denominator lives with the rest of the package metadata in
+// scripts/lib/v2-transforms.mjs (MIGRATIONS.ecoles.meta.estimatedUniverse):
+// 29,702 institutions per the Ministry of National Education's own aggregate.
 // Sanity floor: a truncated upstream response parses fine and would otherwise be
 // silently accepted as the whole dataset. Algeria has ~11.6k schools in OSM;
 // reject anything grossly below that and fall through to the next endpoint.

@@ -60,9 +60,32 @@ offline rebuild via `npm run fetch -- --cache`).
 
 ## Coverage framing
 
-~11.8k mapped against the ~28,000 establishments of the national school network
-(primaire + moyen + secondaire, MEN, approximate) → ~40%. A community-maintained
-OSM extract, not an official registry; uneven by wilaya.
+11,855 mapped against the **29,702** educational institutions the Ministry of
+National Education reports on `education.gov.dz` ("Education in numbers"
+homepage block, 2024-2025 school-year figures alongside 11,275,424 students;
+retrieved 2026-08-06) → **39.9%**. This replaces the earlier ~28,000
+order-of-magnitude estimate with the ministry's own exact aggregate; same
+honest-denominator role. A community-maintained OSM extract, not an official
+registry; uneven by wilaya.
+
+## Refresh, 2026-08-06 (rentrée 2026 campaign, Stage B)
+
+Fresh live pull for the rentrée re-release:
+
+- Mirror: `overpass-api.de` (first mirror 504'd once, second attempt succeeded);
+  `timestamp_osm_base` **2026-08-06T14:37:32Z**, same-day fresh, no mirror drift.
+- **11,855 schools** (was 11,830 on 2026-07-03): de-dup 41 same-name-within-40m
+  + 3 exact-coincident; 8,635 named; all 69 wilayas.
+- Id churn: **11,829 of 11,830 kept** (carryOverIds), 26 added, 1 dropped
+  (`16-00454` "École pour Enfants Ali Remili", Ben Aknoun: no longer in the
+  extract, either deleted upstream or merged into a sibling record by de-dup).
+- Precision: 2,843 exact / 9,012 approximate (was 2,841 / 8,989).
+- Cycle tallies stable: primaire 4,019 (-1), moyen 2,378 (+1), secondaire
+  1,576 (+2), préscolaire 268 (=), autre 3,614 (+23; most of the growth is
+  new unnamed/uncycled records, consistent with the known `autre` bucket).
+- Commune join now runs under the point-in-polygon wilaya-containment guard
+  (generators fix, data PR #158): a commune match can no longer cross a
+  wilaya boundary.
 
 ## Next (roadmap)
 
