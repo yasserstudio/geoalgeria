@@ -1,0 +1,10 @@
+{
+  "takwin-etab": {
+    "bytes": 3035002,
+    "note": "Retroactively committed historical capture: the original 2026-06-22-era pull the shipped 1,932 records were built from, moved out of gitignored research/ into the source store. No re-fetch occurred - takwin.dz and ibtikar.takwin.dz both answer the API with a WAF block page. Concatenation of the per-IDDFEP endpoint over codes 1-58 plus 99.",
+    "records": 1933,
+    "retrieved": "2026-06-22",
+    "sha256": "3c4b2d74139321056495e3abbc70165d9383acea00bc0827be2f96504238a1c2",
+    "url": "https://takwin.dz/tachbik/api/getlistofalletab_byiddfep_puball/"
+  }
+}
