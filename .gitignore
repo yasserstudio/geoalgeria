@@ -90,3 +90,7 @@ MEMORY.md
 
 # === Local-markdown issue tracker (mattpocock/skills workflow — specs & tickets) ===
 .scratch/
+
+# Service-account keys live in the workspace-level keys/ folder; never in a repo
+keys/
+*.iam.gserviceaccount.json
