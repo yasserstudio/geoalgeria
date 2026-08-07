@@ -469,7 +469,11 @@ export const MIGRATIONS = {
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_fr: r.name_fr,
       wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
-      ...geoExact(r, "takwin"),
+      // Per-row placement, not a blanket `exact`: a coordinate the portal supplied
+      // stays exact/takwin, while a record the portal left at 0 is placed on its
+      // commune's (or wilaya's) flagship centroid and says so. A v1 row carries
+      // neither field, so it still maps to exact/takwin as it always did.
+      ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "takwin"),
       source: "mfep",
       type: r.type, type_label: r.type_label, abreviation: r.abreviation, code: r.code, secteur: r.secteur,
       adresse: r.adresse, adresse_fr: r.adresse_fr, telephone: r.telephone, fax: r.fax, email: r.email,
@@ -480,7 +484,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP) — takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-06-22" }],
       license: "Factual public listing (MFEP)",
       estimatedUniverse: null,
-      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1375 of 1932 are geocoded.",
+      coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
       titles: { en: "Algeria vocational-training establishments", fr: "Établissements de formation professionnelle d'Algérie", ar: "مؤسسات التكوين المهني الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_secteur: count(rows, "secteur") }),
     },

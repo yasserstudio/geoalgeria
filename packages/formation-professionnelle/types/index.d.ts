@@ -25,8 +25,13 @@ export type Secteur = "public" | "prive";
 export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How the coordinate was obtained. `null` on an ungeocoded record — no method
- *  produced a point, so none can be named. */
-export type GeoMethod = "takwin" | null;
+ *  produced a point, so none can be named.
+ *  - `"takwin"`: the point the MFEP portal publishes for the establishment.
+ *  - `"commune"`: the portal left the coordinate empty, so the record sits on
+ *    the centroid of the commune it names (always `"approximate"`).
+ *  - `"wilaya"`: the portal's commune field names the wilaya rather than a
+ *    commune, so only the wilaya centroid can be claimed (always `"approximate"`). */
+export type GeoMethod = "takwin" | "commune" | "wilaya" | null;
 
 /** A vocational training establishment, as published by the MFEP via takwin.dz. */
 export interface Establishment {
@@ -48,8 +53,9 @@ export interface Establishment {
   lat: number | null;
   /** Longitude (WGS84), or `null`. Both coordinates are set, or both are null. */
   lng: number | null;
-  /** `"exact"` for a takwin.dz point, `null` when `lat`/`lng` are null —
-   *  a record with no point asserts no precision. */
+  /** `"exact"` for a takwin.dz point, `"approximate"` for a commune or wilaya
+   *  centroid, `null` when `lat`/`lng` are null; a record with no point
+   *  asserts no precision. */
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;

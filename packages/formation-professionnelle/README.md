@@ -32,14 +32,14 @@ const byWilaya = fp.establishmentsByWilaya(16);     // establishments in wilaya 
 const cfpas = fp.establishmentsByType("cfpa");      // every CFPA
 const one = fp.establishmentById("00001");          // single record by id
 
-// 1,375 records have lat/lng – distance-sort, map, or nearest center in a few lines.
+// 1,920 records have lat/lng – distance-sort, map, or nearest center in a few lines.
 ```
 
 ## What you can build
 
-- **"Nearest training center" lookups** – 1,375 geocoded records, ready for distance sorting.
+- **"Nearest training center" lookups** – 1,920 geocoded records, ready for distance sorting.
 - **Vocational training directories** – bilingual names, type, capacity and full contact info on every record.
-- **Maps** – drop-in GeoJSON point layer for the vocational training network (71% geocoded).
+- **Maps** – drop-in GeoJSON point layer for the vocational training network (99% geocoded).
 - **Capacity planning** – theoretical and realized capacities, boarding availability and surface area.
 - **Sector analysis** – 1,209 public vs 723 private establishments across 58 wilayas.
 
@@ -59,9 +59,12 @@ const one = fp.establishmentById("00001");          // single record by id
 | Institut National de la Formation et de l'Enseignement Professionnels | `infep` | 1 |
 | **Total** | | **1,932** |
 
-Spanning **58 wilayas** (pre-reform scheme). 1,375 of 1,932 establishments are geocoded
-(71%), `lat`/`lng` is `null` for the remaining 557. `wilaya_code` uses the 58-wilaya
-scheme as published by the source.
+Spanning **58 wilayas** (pre-reform scheme). 1,920 of 1,932 establishments are geocoded
+(99%), `lat`/`lng` is `null` for the remaining 12. Of the geocoded records, 1,375 carry the
+point takwin.dz publishes (`geo_precision` `"exact"`); the portal leaves the coordinate empty
+on the rest, so 510 sit on their commune's centroid and 35 on their wilaya's, both
+`"approximate"` and labelled in `geo_method`. `wilaya_code` uses the 58-wilaya scheme as
+published by the source.
 
 ## Formats
 
@@ -88,7 +91,7 @@ data/
   establishments.json      # 1,932 establishments (array)
   metadata.json            # sources, counts, by_type, by_secteur, geocoded, license, updated
   csv/                     # CSV export (repo + Release bundle, not in npm tarball)
-  geojson/                 # GeoJSON features (1,375 geocoded points)
+  geojson/                 # GeoJSON features (1,920 geocoded points)
 ```
 
 ## Record shape
@@ -101,10 +104,10 @@ data/
   "wilaya_code": "01",
   "commune_code": null,
   "commune": "أدرار",
-  "lat": null,
-  "lng": null,
-  "geo_precision": null,
-  "geo_method": null,
+  "lat": 27.87429,
+  "lng": -0.297222,
+  "geo_precision": "approximate",
+  "geo_method": "commune",
   "source": "mfep",
   "type": "dfep",
   "type_label": "مديرية التكوين والتعليم المهنيين",
@@ -133,9 +136,10 @@ data/
 types listed above. `secteur` is `"public"` or `"prive"`. `wilaya_code` is zero-padded to two
 digits in the 58-wilaya scheme; `commune_code` is currently always `null` for this source (no
 ONS code published by takwin.dz). `lat`/`lng`, and `geo_precision`/`geo_method` with them, are
-`null` for the 29% of records that are not yet geocoded; where present, `geo_precision` is
-`"exact"` or `"approximate"` and `geo_method` records how the coordinate was sourced (e.g.
-`takwin`). `capacite` (theoretical) and `capacite_reelle` (realized) are seat counts; `internat`
+`null` for the 12 records that are not yet geocoded; where present, `geo_precision` is
+`"exact"` or `"approximate"` and `geo_method` records how the coordinate was sourced:
+`takwin` for a published point, `commune` or `wilaya` for a centroid standing in for one the
+portal never filled in. `capacite` (theoretical) and `capacite_reelle` (realized) are seat counts; `internat`
 flags boarding availability with an optional `capacite_internat`. `vocations` is an array of
 specialization strings when available.
 
