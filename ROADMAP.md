@@ -62,12 +62,15 @@ reads as further along than it is.
 
 - [ ] **`code_commune` duplicates are ingestion corruption, not a scheme.**
   34 duplicated code groups (79 rows); in 33 of them every colliding row also
-  shares one identical postal_code, the signature of a forward-fill bug in the
+  shared one identical postal_code, the signature of a forward-fill bug in the
   original ingestion. The code is the pre-2026 ONS code and was never meant to
-  collide. Needs a per-row re-derivation against an ONS table, and the same
-  pass should settle the postal-code wilaya-prefix inconsistency (some new-
-  wilaya communes carry new-prefix postals, some keep the parent's).
-  _(logged 2026-07-29)_
+  collide. Needs a per-row re-derivation against an ONS table. The POSTAL half
+  of this item shipped 2026-08-07 (1.3.0, PR #168): codes are now derived from
+  each commune's own Algérie Poste offices (`scripts/fix-commune-postal-codes.mjs`,
+  rerunnable), zero duplicate postal codes remain, and the wilaya-prefix
+  question resolved itself by policy: the operator keeps mother-wilaya
+  prefixes for reform daughters, so we do too. `code_commune` itself is still
+  the open half. _(logged 2026-07-29; postal half shipped 2026-08-07)_
 
 - [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
