@@ -4,7 +4,7 @@
   "name": "Algeria schools",
   "alternateName": "Écoles d'Algérie",
   "identifier": "@geoalgeria/ecoles",
-  "description": "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya.",
+  "description": "Schools compiled from OpenStreetMap, against the 29,702 educational institutions the Ministry of National Education reports on education.gov.dz (2024-2025 school year). A community-maintained extract, coverage partial and uneven by wilaya.",
   "license": "https://opendatacommons.org/licenses/odbl/1-0/",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.952582 -8.133861 37.085298 9.592214"
     }
   },
-  "variableMeasured": "11830 records, 69 wilayas",
+  "variableMeasured": "11855 records, 69 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -41,7 +41,7 @@
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/ecoles/data/geojson/ecoles.geojson"
     }
   ],
-  "dateModified": "2026-07-03",
+  "dateModified": "2026-08-06",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [

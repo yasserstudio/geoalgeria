@@ -132,17 +132,17 @@
       "package": "@geoalgeria/ecoles",
       "schema_version": "2.0.0",
       "title": "Algeria schools",
-      "record_count": 11830,
-      "geocoded_count": 11830,
+      "record_count": 11855,
+      "geocoded_count": 11855,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 2841,
-        "approximate": 8989
+        "exact": 2843,
+        "approximate": 9012
       },
       "coverage": {
-        "pct": 42.3,
-        "of": 28000,
-        "note": "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya."
+        "pct": 39.9,
+        "of": 29702,
+        "note": "Schools compiled from OpenStreetMap, against the 29,702 educational institutions the Ministry of National Education reports on education.gov.dz (2024-2025 school year). A community-maintained extract, coverage partial and uneven by wilaya."
       },
       "wilayas_covered": 69,
       "bbox": [
@@ -152,7 +152,7 @@
         37.085298
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-07-03"
+      "updated": "2026-08-06"
     },
     {
       "package": "@geoalgeria/emploi",

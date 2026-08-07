@@ -173,8 +173,13 @@ export const MIGRATIONS = {
     meta: {
       sources: [{ key: "osm", name: "OpenStreetMap — schools & kindergartens in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" }],
       license: "ODbL-1.0",
-      estimatedUniverse: 28000,
-      coverageNote: "Schools compiled from OpenStreetMap, against the ~28000 establishments in Algeria's national school network (Ministry of National Education, approximate). A community-maintained extract, coverage partial and uneven by wilaya.",
+      // 29,702 is the Ministry of National Education's own headline aggregate
+      // ("Education in numbers" block on education.gov.dz, 2024-2025 school
+      // year figures alongside 11,275,424 students; retrieved 2026-08-06).
+      // It replaces the earlier ~28,000 order-of-magnitude estimate: same
+      // honest-denominator role, now an exact sourced figure.
+      estimatedUniverse: 29702,
+      coverageNote: "Schools compiled from OpenStreetMap, against the 29,702 educational institutions the Ministry of National Education reports on education.gov.dz (2024-2025 school year). A community-maintained extract, coverage partial and uneven by wilaya.",
       titles: { en: "Algeria schools", fr: "Écoles d'Algérie", ar: "مدارس الجزائر" },
       stats: (rows) => ({ named: named(rows), by_cycle: count(rows, "cycle"), by_kind: count(rows, "kind"), by_sector: count(rows, "sector"), with_address: rows.filter((r) => r.address).length }),
       preserve: ["cycle_note", "kind_note"],

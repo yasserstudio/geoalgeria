@@ -12,11 +12,12 @@
 
 </div>
 
-**11 830 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
+**11 855 écoles géolocalisées** dans les **69 wilayas** d'Algérie – chacune avec
 ses coordonnées, classée par **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), la plupart avec un nom en arabe et/ou en français, et un
 rattachement commune/wilaya. Extraites d'**OpenStreetMap** et présentées
-honnêtement face aux ~28 000 établissements du réseau scolaire national. Livré en
+honnêtement face aux 29 702 établissements d'enseignement que le Ministère de
+l'Éducation Nationale publie lui-même pour l'année scolaire 2024-2025. Livré en
 JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -27,7 +28,7 @@ npm install @geoalgeria/ecoles
 ```js
 import ecoles from "@geoalgeria/ecoles";
 
-const all = ecoles.ecoles();   // 11 830 écoles géolocalisées
+const all = ecoles.ecoles();   // 11 855 écoles géolocalisées
 
 // Lycées d'une wilaya (jointure sur wilaya_code de GeoAlgeria)
 const lyceesSetif = all.filter((e) => e.wilaya_code === "19" && e.cycle === "secondaire");
@@ -38,7 +39,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## Ce que vous pouvez construire
 
-- **Cartes & annuaires d'écoles** – coordonnées sur les 11 830 enregistrements,
+- **Cartes & annuaires d'écoles** – coordonnées sur les 11 855 enregistrements,
   prêtes pour une carte ou un tri par école la plus proche.
 - **Répartitions par cycle** – filtrez primaire / moyen / secondaire /
   préscolaire, ou classez la densité scolaire par commune/wilaya.
@@ -48,23 +49,26 @@ const named = all.filter((e) => e.name_fr);
 
 | Jeu de données | Nombre | Coordonnées | Notes |
 | --- | --- | --- | --- |
-| Écoles | **11 830** | ✅ toutes | 8 640 nommées, 69 wilayas |
+| Écoles | **11 855** | ✅ toutes | 8 635 nommées, 69 wilayas |
 
 **Par cycle**
 
 | Cycle | Nombre | Signification |
 | --- | --- | --- |
-| `primaire` | 4 020 | école primaire (CITE 1) |
-| `moyen` | 2 377 | collège d'enseignement moyen / CEM (CITE 2) |
-| `secondaire` | 1 574 | lycée (CITE 3) |
+| `primaire` | 4 019 | école primaire (CITE 1) |
+| `moyen` | 2 378 | collège d'enseignement moyen / CEM (CITE 2) |
+| `secondaire` | 1 576 | lycée (CITE 3) |
 | `prescolaire` | 268 | préscolaire / maternelle / روضة (CITE 0) |
-| `autre` | 3 591 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
+| `autre` | 3 614 | école de cycle indéterminé (non nommée, ou nom sans mot de cycle) |
 
 > **Il s'agit d'un extrait OpenStreetMap, pas d'un registre officiel.** La
-> couverture est partielle et inégale selon les wilayas – ~11,8k écoles
-> cartographiées face aux ~28 000 du réseau national (primaire + moyen +
-> secondaire, Ministère de l'Éducation Nationale, approximatif). Les nombres
-> évoluent au fil des contributions à OpenStreetMap.
+> couverture est partielle et inégale selon les wilayas – 11 855 écoles
+> cartographiées face aux 29 702 établissements d'enseignement que le Ministère
+> de l'Éducation Nationale publie sur
+> [education.gov.dz](https://www.education.gov.dz) pour l'année scolaire
+> 2024-2025, soit environ 40 %. Ce dénominateur est l'agrégat officiel du
+> ministère, pas une estimation de notre part. Les nombres évoluent au fil des
+> contributions à OpenStreetMap.
 
 **Le cycle est déduit.** Il provient d'`isced:level` et du nom français/arabe –
 un CEM se nomme toujours متوسطة/collège, un lycée ثانوية/lycée, une maternelle
@@ -78,8 +82,8 @@ cycle, pour filtrer (ou isoler) les lieux particuliers qu'OSM classe sous
 
 | Type | Nombre | Signification | Cycle |
 | --- | --- | --- | --- |
-| `regular` | 11 640 | école / CEM / lycée / maternelle ordinaire | son cycle réel |
-| `formation` | 91 | centre de formation professionnelle | `autre` |
+| `regular` | 11 664 | école / CEM / lycée / maternelle ordinaire | son cycle réel |
+| `formation` | 92 | centre de formation professionnelle | `autre` |
 | `coranique` | 40 | école coranique | `autre` |
 | `langues` | 24 | école / institut de langues | `autre` |
 | `special` | 30 | école spécialisée (sourds, aveugles…) | garde son cycle |
@@ -90,8 +94,8 @@ le cycle `autre` – ce ne sont pas des écoles primaires même si leur nom cont
 « école » ; le `kind` les rend repérables au lieu de les noyer dans `autre`.
 
 **Aussi sur chaque enregistrement :** `isced_levels` (les niveaux `isced:level`
-d'OSM, normalisés en liste triée comme `"1;2"` – sur 2 037 enregistrements),
-`address` (depuis les tags OSM `addr:*` – sur 2 625) et `sector`
+d'OSM, normalisés en liste triée comme `"1;2"` – sur 2 048 enregistrements),
+`address` (depuis les tags OSM `addr:*` – sur 2 626) et `sector`
 (`public`/`private` là où la carte le signale).
 
 ## Formats
@@ -118,7 +122,7 @@ inclus dans chaque
 
 ```
 data/
-  ecoles.json              # 11 830 écoles (tableau)
+  ecoles.json              # 11 855 écoles (tableau)
   metadata.json            # sources, décomptes, couverture, updated
   csv/ecoles.csv           # dépôt + bundle Release (pas dans le tarball npm)
   geojson/ecoles.geojson   # entités Point
