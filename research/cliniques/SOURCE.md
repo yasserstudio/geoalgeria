@@ -51,38 +51,76 @@ captured to `sources/cliniques/osm.json` at build time (committed, per
 
 ## Method
 
-1. **Classification**: over the normalized FR+AR name (Latin accents folded,
+0. **Registry-overlap guard, before any name is read.** @geoalgeria/sante
+   references 121 OSM elements by id (`refs.osm`, all `geo_method: osm_point`).
+   An element in that set IS a registry record already published there, whatever
+   it calls itself here, so it is excluded as `sante_overlap`. This is the only
+   exclusion in the pipeline that no unusual name can defeat, and it is what
+   makes the disjointness claim mechanical rather than a hope: 120 of the 121
+   appear in this pull and all 120 are dropped. It is deliberately narrow, and
+   the README says so: sante's other 574 records carry no OSM reference, so the
+   same physical establishment can still appear in both packages under different
+   coordinates, with nothing able to detect it.
+1. **Classification** over the normalized FR+AR name (Latin accents folded,
    Arabic hamza/alef/harakat folded), in this order:
-   1. `chu` and the named registry tiers (`EPH`, `EHS`, "établissement public
-      hospitalier") exclude unconditionally;
-   2. `paramedical` (école paramédicale) and `cabinet` exclude;
-   3. the facility types match: `polyclinique` → `salle_de_soins` →
-      `centre_sante`;
-   4. the **bare** word hôpital/hospital/مستشفى then excludes;
-   5. `maternite`;
-   6. the EPSP administrative entity excludes;
-   7. everything left is `clinique`.
-   Steps 3 and 4 are split on purpose. The bare word is used colloquially for
-   proximity structures, and 10 records name themselves both ways (e.g.
-   `way/414758997` "Polyclinique des consultations spécialisées Boudghène" with
-   `name:ar=مستشفى بودغن`; `node/4449247890` "المستشفى الجواري متعدد الخدمات" with
-   `name:fr=Polyclinique`). An explicit polyclinique/مستوصف/centre de santé word
-   settles what the place is; without the split those 10 real proximity
-   facilities would be dropped as hospitals they are not. Conversely a
-   mother-child hospital (مستشفى الأمومة والتوليد) carries no facility word, so
-   step 4 still drops it before `maternite` can claim it.
-   Step 6 is last so a facility that merely names its parent EPSP
-   ("Polyclinique EPSP", "قاعة العلاج الخلوفي جيلالي (EPSP)") keeps its own type.
-2. **Sector**: `public` from `operator:type`, or structurally for
-   `polyclinique`/`salle_de_soins` (public structures by definition in the
-   Algerian system); `private` from `operator:type=private` or a privé/خاصة name;
-   `مصحة` is checked **last** and only as a fallback, because it is also just the
-   word for "clinic" and appears in public names (المصحة الجوارية المتعددة الخدمات).
-   Otherwise `null`: most cliniques are private in practice, but the map does not
-   say so.
-3. **Enrichment**: `speciality` (`healthcare:speciality`, 190), `address` from
-   `addr:*` (699), `phone` (125), `opening_hours` (192), `emergency` (`true` on
-   the 91 tagged `emergency=yes`, never `false`). Names are strictly
+   1. `chu` excludes unconditionally.
+   2. out of scope whoever owns them: `paramedical` (école paramédicale),
+      `pharmacie` (belongs to @geoalgeria/pharmacies), `institut_pasteur`,
+      `cabinet` (the literal word), `hospital_subfeature` (an entrance, a ward,
+      "Service de radiologie", "bloc opératoire", a bare "urgences"), and
+      `cabinet` again for practices named only for their practitioner
+      ("Dr X Dentiste", الطبيب …).
+   3. an explicitly **private** establishment is KEPT, before any registry
+      pattern runs.
+   4. the named registry tiers exclude: `EPH` written `\be\.?p\.?h\.?p?\b` so
+      "E.P.H" and "EPHP" are caught too, `EHS`, `EHU`, and the centres
+      anti-cancer, which are EHS by statute however they name themselves.
+   5. the facility types match: `polyclinique` → `salle_de_soins` →
+      `centre_sante`, then the weaker bare word "clinique"/عيادة/مصحة.
+   6. the **bare** word hôpital/hospital/مستشفى, plus the folded Arabic stem
+      `استشفاي` (الاستشفائية/الاستشفائي, the Arabic name of the same EPH/EHS
+      establishments) and the live typo `hoplital`, then excludes.
+   7. `maternite`, then the EPSP administrative entity, then `clinique`.
+
+   Three orderings carry the weight, and each exists because of real records:
+
+   - **Steps 5 and 6 are split.** The bare hospital word is used colloquially for
+     proximity structures, and 10 records name themselves both ways (e.g.
+     `way/414758997` "Polyclinique des consultations spécialisées Boudghène" with
+     `name:ar=مستشفى بودغن`; `node/4449247890` "المستشفى الجواري متعدد الخدمات"
+     with `name:fr=Polyclinique`). An explicit facility word settles what the
+     place is. Conversely a mother-child hospital (مستشفى الأمومة والتوليد)
+     carries no facility word, so step 6 still drops it before `maternite` can
+     claim it.
+   - **Step 3 runs before step 4.** An "EHP" (établissement hospitalier privé) is
+     a *clinique privée*, exactly this package's population, and must never be
+     read as an "EPH" (public). 5 records come in this way:
+     `node/13337090629` (EHP Hasnaoui), `way/981696649` (المؤسسة الاستشفائية
+     الخاصة عبير الكوثر), `way/783039982` (les Amandiers), `way/186941040`
+     (Hôpital privé), `node/4772483821` (المؤسسة الاستشفائية الخاصة البسمة).
+   - **The EPSP entity check is last**, so a facility that merely names its parent
+     EPSP ("Polyclinique EPSP", "قاعة العلاج الخلوفي جيلالي (EPSP)") keeps its
+     own type.
+
+   The practitioner and sub-feature patterns are guarded: they only fire when no
+   facility word is present, so "Polyclinique Dr Benali dentaire" and "Urgences
+   médicales El Achour" survive, and the practitioner pattern additionally skips
+   anything carrying the hospital word so "Hôpital Docteur Benzarjeb" is filed as
+   a hospital rather than as a doctor's practice.
+2. **Sector**: `public` from `operator:type` (including `university`: an EHU is a
+   public teaching operator), or structurally for `polyclinique`/`salle_de_soins`
+   (public structures by definition in the Algerian system); `private` from
+   `operator:type=private` or a privé/خاصة name, read over the **full** name
+   haystack because a record can carry its only ownership signal in `name:en`
+   ("Hasnaoui Private Hospital"). The phrase الاحتياجات الخاصة (special needs) is
+   stripped first: it contains the ownership word خاص and says nothing about
+   ownership (`37-00005`). `مصحة` is checked **last** and only as a fallback,
+   because it is also just the word for "clinic" and appears in public names
+   (المصحة الجوارية المتعددة الخدمات). Otherwise `null`: most cliniques are
+   private in practice, but the map does not say so.
+3. **Enrichment**: `speciality` (`healthcare:speciality`, 158), `address` from
+   `addr:*` (634), `phone` (106), `opening_hours` (166), `emergency` (`true` on
+   the 68 tagged `emergency=yes`, never `false`). Names are strictly
    script-routed (name_ar always Arabic, name_fr always Latin).
 4. **De-dup**: the same facility mapped as both a node and a building outline is
    collapsed (identical name within ~40 m, then an exact-coordinate pass).
@@ -94,16 +132,17 @@ captured to `sources/cliniques/osm.json` at build time (committed, per
 
 ## First build, 2026-08-08
 
-- **2,936** elements pulled → **801** excluded → 2,135 classified in → **2,059**
-  after de-dup (76 same-name-within-40m, 0 exact-coincident).
-- Excluded: `hopital` 416, `unnamed_hospital` 242, `epsp_entity` 107,
-  `cabinet` 18, `chu` 16, `paramedical` 2.
-- Types: `clinique` 1,257 · `polyclinique` 419 · `salle_de_soins` 210 ·
-  `centre_sante` 140 · `maternite` 33.
-- Sector: 643 public, 64 private, 1,352 unasserted.
-- 1,780 named / 279 unnamed; 66 wilayas (54 In Guezzam, 62 Bir El Ater and
+- **2,936** elements pulled → **990** excluded → 1,946 classified in → **1,880**
+  after de-dup (66 same-name-within-40m, 0 exact-coincident).
+- Excluded: `hopital` 359, `unnamed_hospital` 239, `sante_overlap` 120,
+  `cabinet` 96, `epsp_entity` 92, `hospital_subfeature` 58, `chu` 15,
+  `pharmacie` 6, `institut_pasteur` 3, `paramedical` 2.
+- Types: `clinique` 1,098 · `polyclinique` 411 · `salle_de_soins` 206 ·
+  `centre_sante` 137 · `maternite` 28.
+- Sector: 629 public, 67 private, 1,184 unasserted.
+- 1,604 named / 276 unnamed; 66 wilayas (54 In Guezzam, 62 Bir El Ater and
   63 El Aricha have no mapped facility).
-- Precision: 1,189 exact (surveyed node) / 870 approximate (building centroid).
+- Precision: 1,059 exact (surveyed node) / 821 approximate (building centroid).
 
 ## Coverage framing
 
@@ -116,7 +155,7 @@ locales instead of inventing a denominator.
 
 ## Next (roadmap)
 
-The `clinique` residual (1,257) still mixes genuinely different things: private
+The `clinique` residual (1,098) still mixes genuinely different things: private
 clinics, dialysis and imaging centres, medical laboratories, school-health units.
 A sub-type pass would need either richer `healthcare:speciality` tagging upstream
 or a reviewed list. Coverage growth depends on OSM contributions; the wilayas at

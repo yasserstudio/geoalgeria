@@ -296,7 +296,7 @@ export const MIGRATIONS = {
       // divide by a universe that does not describe these records.
       estimatedUniverse: null,
       coverageNote:
-        "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here; the two describe different populations and must not be summed.",
+        "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here. Every OSM element @geoalgeria/sante itself references is excluded from this package by construction, so no place is published twice under the same OSM element; sante's remaining records carry no OSM reference, so the same physical establishment can still appear in both packages under different coordinates. The two describe different tiers and must never be summed.",
       titles: { en: "Algeria clinics & care facilities", fr: "Cliniques et structures de soins d'Algérie", ar: "عيادات ومرافق الرعاية الصحية في الجزائر" },
       stats: (rows) => ({
         named: named(rows),
