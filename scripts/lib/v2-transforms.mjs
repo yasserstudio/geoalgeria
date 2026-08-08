@@ -276,6 +276,40 @@ export const MIGRATIONS = {
     },
   },
 
+  cliniques: {
+    file: "cliniques.json",
+    map: (r) => clean({
+      id: r.id, name: r.name, name_fr: r.name_fr, name_ar: r.name_ar,
+      wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
+      ...geoAt(r, r.geo_precision === "osm_node" ? "exact" : "approximate", r.geo_precision),
+      source: r.source, refs: refs({ osm: r.osm_id }),
+      type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
+      sector: r.sector, speciality: r.speciality, address: r.address,
+      phone: r.phone, opening_hours: r.opening_hours, emergency: r.emergency,
+    }),
+    meta: {
+      sources: [{ key: "osm", name: "OpenStreetMap: clinics & proximity-care facilities in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" }],
+      license: "ODbL-1.0",
+      // No denominator: the Ministry of Health publishes counts for the registry
+      // tier (EPH/EPSP/EHS/CHU), which this package deliberately excludes, and
+      // nothing official enumerates private clinics. A coverage percentage would
+      // divide by a universe that does not describe these records.
+      estimatedUniverse: null,
+      coverageNote:
+        "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here; the two describe different populations and must not be summed.",
+      titles: { en: "Algeria clinics & care facilities", fr: "Cliniques et structures de soins d'Algérie", ar: "عيادات ومرافق الرعاية الصحية في الجزائر" },
+      stats: (rows) => ({
+        named: named(rows),
+        by_type: count(rows, "type"),
+        by_sector: count(rows, "sector"),
+        with_phone: rows.filter((r) => r.phone).length,
+        with_address: rows.filter((r) => r.address).length,
+        linkage_note:
+          "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort.",
+      }),
+    },
+  },
+
   ferroviaire: {
     file: "stations.json",
     map: (r) => clean({
