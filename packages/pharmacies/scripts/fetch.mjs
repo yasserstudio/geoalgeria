@@ -23,7 +23,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
-import { carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { carryOverIds, readCommitted, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -326,8 +326,8 @@ function attachCommune(rows, communes) {
 
 // Derive `{wilaya_code}-{seq}`, seq ordered by osm_id so a build is deterministic.
 // The sequence is positional, so an upstream insert shifts every later record.
-// carryOverIds (in main) pins still-present records back to the id they shipped
-// under, so this only mints ids for genuinely new pharmacies.
+// carryOverIds, called in main(), pins still-present records back to the id they
+// shipped under, so this only mints ids for genuinely new pharmacies.
 function assignIds(rows) {
   const byWilaya = new Map();
   for (const r of rows) {
@@ -336,7 +336,9 @@ function assignIds(rows) {
     byWilaya.get(w).push(r);
   }
   for (const [w, list] of byWilaya) {
-    list.sort((a, b) => a.osm_id.localeCompare(b.osm_id));
+    // Plain codepoint order: localeCompare() reads the ambient ICU and can
+    // reorder committed output between machines.
+    list.sort((a, b) => (a.osm_id < b.osm_id ? -1 : a.osm_id > b.osm_id ? 1 : 0));
     list.forEach((r, i) => {
       r.id = `${w}-${String(i + 1).padStart(5, "0")}`;
     });
@@ -389,7 +391,8 @@ function readCache() {
 }
 
 async function main() {
-  const osmRaw = process.argv.includes("--cache") ? readCache() : await fetchOSM();
+  const OFFLINE = process.argv.includes("--cache");
+  const osmRaw = OFFLINE ? readCache() : await fetchOSM();
   let rows = normOSM(osmRaw);
   console.log(`  OSM: ${rows.length} geocoded pharmacies`);
 
@@ -404,7 +407,7 @@ async function main() {
   // stable OSM id. Without this a single new pharmacy re-sequences every later
   // record in its wilaya, so a re-survey would churn ids that are public join keys.
   carryOverIds(rows, readCommitted(OUT_DIR, "pharmacies.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies");
-  rows.sort((a, b) => a.id.localeCompare(b.id));
+  rows.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 
   const cols = [
     "id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "commune",
@@ -412,7 +415,9 @@ async function main() {
     "operator", "phone", "opening_hours", "dispensing", "address",
   ];
 
-  const today = new Date().toISOString().slice(0, 10);
+  // A live pull stamps today; a --cache replay reuses the committed dates so it
+  // reproduces the committed metadata instead of flipping it to the replay date.
+  const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const named = rows.filter((r) => r.name).length;
   const metadata = {
     ...buildMetadata({
@@ -424,16 +429,16 @@ async function main() {
           name: "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria",
           url: "https://www.openstreetmap.org",
           license: "ODbL 1.0 (© OpenStreetMap contributors)",
-          retrieved: today,
+          retrieved,
           // Pinned, not inferred: buildMetadata passes sources through verbatim, so
           // leaving it off drops the claim the committed metadata already carries.
           evidence_type: "crowdsourced",
         },
       ],
       license: "ODbL-1.0",
-      updated: today,
+      updated,
       estimatedUniverse: OFFICIAL_TOTAL,
-      coverageNote: `${rows.length} pharmacies compiled from OpenStreetMap, against an estimated ~${OFFICIAL_TOTAL} officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.`,
+      coverageNote: `${rows.length} pharmacies compiled from OpenStreetMap, against an estimated ~${OFFICIAL_TOTAL} officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north.`,
       titles: {
         en: "Algeria pharmacies (officines)",
         fr: "Pharmacies d'Algérie",
