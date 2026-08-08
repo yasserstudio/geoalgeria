@@ -68,6 +68,99 @@ test("the registry tier is excluded, in French and in Arabic", () => {
   }
 });
 
+test("the registry abbreviation is caught in every spelling the map carries", () => {
+  // Each of these shipped as a `clinique` before: a word-bounded Latin-only
+  // \beph\b sees none of them.
+  const cases = [
+    [{ name: "E.P.H Thenia" }, "hopital"], // dots defeat the word boundary
+    [{ name: "EPHP Ain Taya" }, "hopital"], // trailing letter defeats it
+    [{ name: "EHU 1er Novembre Oran" }, "hopital"], // university-hospital form
+    [{ name: "Hoplital Lakhdaria" }, "hopital"], // live typo in the map
+    // the Arabic name of the same establishments. normalizeName NFD-folds
+    // الاستشفائية to الاستشفايية, so the stem matched is استشفاي.
+    [{ name: "المؤسسة العمومية الاستشفائية هواري بومدين" }, "hopital"],
+    [{ name: "المؤسسة الاستشفائية المتخصصة في طب النساء" }, "hopital"],
+    // centres anti-cancer are EHS by statute however they name themselves
+    [{ name: "Centre Anti Cancer" }, "hopital"],
+    [{ name: "Centre anti-cancereux de Batna" }, "hopital"],
+    [{ name: "مركز مكافحة السرطان" }, "hopital"],
+  ];
+  for (const [tags, reason] of cases) {
+    assert.deepEqual(classify(tags), { excluded: reason }, `${tags.name} should exclude as ${reason}`);
+  }
+});
+
+test("an explicitly private establishment is kept, and is never read as an EPH", () => {
+  // The cliniques privées are this package's population. Both directions of the
+  // abbreviation matter: EHP (hospitalier privé) must not be caught by the EPH
+  // pattern, which is why the privacy check runs first.
+  const cases = [
+    { name: "Etablissement Hospitalier Privé Hasnaoui" },
+    { name: "Etablissement hospitalier privé les Amandiers" },
+    { name: "Hôpital privé" },
+    { name: "المؤسسة الاستشفائية الخاصة (عبير الكوثر)" },
+    { name: "EHP Abir El Kaouther" },
+  ];
+  for (const tags of cases) {
+    assert.deepEqual(classify(tags), { type: "clinique" }, `${tags.name} should be kept as a private clinique`);
+    assert.equal(classifySector(tags, "clinique"), "private", `${tags.name} should be sector private`);
+  }
+  // and a public EPH is still excluded
+  assert.deepEqual(classify({ name: "EPH Sougueur" }), { excluded: "hopital" });
+});
+
+test("the explicit word clinique outranks a colloquial hopital in another tag", () => {
+  assert.deepEqual(
+    classify({ name: "Clinique obstetrique", "name:ar": "مستشفى" }),
+    { type: "clinique" },
+  );
+  // but maternite still loses to it, so a mother-child hospital stays excluded
+  assert.deepEqual(classify({ name: "مستشفى الأمومة والتوليد" }), { excluded: "hopital" });
+  // while a clinic that is a maternity keeps the more specific type
+  assert.deepEqual(classify({ name: "Clinique maternité Linda" }), { type: "maternite" });
+});
+
+test("out-of-scope places are excluded, each in its own class", () => {
+  const cases = [
+    [{ name: "Pharmacie Cherfi" }, "pharmacie"],
+    [{ name: "صيدلية بوجاهم" }, "pharmacie"],
+    [{ name: "Institut Pasteur d'Algérie" }, "institut_pasteur"],
+    [{ name: "معهد باستور" }, "institut_pasteur"],
+    [{ name: "Service de radiologie" }, "hospital_subfeature"],
+    [{ name: "bloc opératoire" }, "hospital_subfeature"],
+    [{ name: "Entree des Urgence" }, "hospital_subfeature"],
+    [{ name: "Urgences" }, "hospital_subfeature"],
+    [{ name: "Medecine du travail" }, "hospital_subfeature"],
+    [{ name: "الطب المدرسي" }, "hospital_subfeature"],
+    // practitioner practices with no "cabinet" in the name
+    [{ name: "Dr BEKKOUCHE Dentiste" }, "cabinet"],
+    [{ name: "Docteur Nezzar" }, "cabinet"],
+    [{ name: "طبيب الأسنان" }, "cabinet"],
+    [{ name: "طبيب عام" }, "cabinet"],
+  ];
+  for (const [tags, reason] of cases) {
+    assert.deepEqual(classify(tags), { excluded: reason }, `${tags.name} should exclude as ${reason}`);
+  }
+  // the guards: a facility word protects the record, and a hospital named after
+  // a doctor is a hospital, not a practice
+  assert.deepEqual(classify({ name: "Polyclinique Dr Benali dentaire" }), { type: "polyclinique" });
+  assert.deepEqual(classify({ name: "Urgences médicales El Achour" }), { type: "centre_sante" });
+  assert.deepEqual(classify({ name: "Hôpital Docteur Benzarjeb" }), { excluded: "hopital" });
+  // and the literal word cabinet beats the sub-feature patterns
+  assert.deepEqual(classify({ name: "Cabinet médical d'urgence" }), { excluded: "cabinet" });
+});
+
+test("an element sante already ships is excluded by id, whatever it is named", () => {
+  const ids = new Set(["way/193228566"]);
+  // way/193228566 is sante 05-ehs-01; its OSM name alone reads as a clinique
+  assert.deepEqual(
+    classify({ name: "Centre de santé" }, "way/193228566", ids),
+    { excluded: "sante_overlap" },
+  );
+  // the same name with an id sante does not carry is kept
+  assert.deepEqual(classify({ name: "Centre de santé" }, "way/999", ids), { type: "centre_sante" });
+});
+
 test("an unnamed hospital-tagged record is dropped, an unnamed clinic-tagged one is kept", () => {
   assert.deepEqual(classify({ amenity: "hospital" }), { excluded: "unnamed_hospital" });
   assert.deepEqual(classify({ healthcare: "hospital" }), { excluded: "unnamed_hospital" });
@@ -133,6 +226,16 @@ test("sector is asserted only on signal, in the documented precedence", () => {
   assert.equal(classifySector({ name: "مصحة الشفاء" }, "clinique"), "private");
   // nothing to go on
   assert.equal(classifySector({ name: "Clinique El Hidhab" }, "clinique"), null);
+  // "الاحتياجات الخاصة" (special needs) carries the ownership word خاص and says
+  // nothing about ownership, so the phrase is stripped before the privacy test
+  assert.equal(classifySector({ name: "ذوي الاحتياجات الخاصة \"كاسترو\"" }, "clinique"), null);
+  // the signal can live in any name tag, not just name/name:fr/name:ar
+  assert.equal(
+    classifySector({ name: "Hasnaoui", "name:en": "Hasnaoui Private Hospital" }, "clinique"),
+    "private",
+  );
+  // an EHU is a public teaching operator, not a third category
+  assert.equal(classifySector({ "operator:type": "university" }, "clinique"), "public");
 });
 
 test("the shipped records match the classifier and its labels", () => {
@@ -142,13 +245,26 @@ test("the shipped records match the classifier and its labels", () => {
     assert.equal(r.type_label_fr, TYPE_LABELS[r.type].fr, `label_fr drift on ${r.id}`);
     assert.equal(r.type_label_ar, TYPE_LABELS[r.type].ar, `label_ar drift on ${r.id}`);
   }
-  // no record classified here may read as registry tier: that is the whole
-  // contract with @geoalgeria/sante.
-  const leaked = records.filter((r) => {
-    const v = classify({ name: r.name, "name:fr": r.name_fr, "name:ar": r.name_ar });
-    return !!v.excluded;
-  });
-  assert.deepEqual(leaked.map((r) => r.id), [], "shipped records that the classifier would exclude");
+});
+
+test("no shipped record is an OSM element @geoalgeria/sante already ships", () => {
+  // The contract with the registry tier, checked against the two shipped data
+  // files rather than by re-running the classifier: sante references 121 OSM
+  // elements by id, and any of them appearing here would be the SAME mapped
+  // object published twice under two different ids. A name-based check cannot
+  // see this (the two packages name the same place differently), which is why
+  // the generator excludes on the id set instead.
+  const sante = JSON.parse(
+    readFileSync(join(ROOT, "packages", "sante", "data", "sante.json"), "utf-8"),
+  );
+  const santeOsm = new Set(sante.map((r) => r.refs?.osm).filter(Boolean));
+  assert.ok(santeOsm.size > 100, `sante carries only ${santeOsm.size} OSM refs; the guard would be vacuous`);
+  const shared = records.filter((r) => santeOsm.has(r.refs.osm));
+  assert.deepEqual(
+    shared.map((r) => `${r.id} ${r.refs.osm}`),
+    [],
+    "records shipped by BOTH cliniques and sante for the same OSM element",
+  );
 });
 
 test("ids are unique and shaped {wilaya_code}-{seq}", () => {
@@ -205,7 +321,7 @@ test("cliniques is registered everywhere a package must be", () => {
   }
   // the root README tables carry the shipped count in the documented row shape
   for (const f of ["README.md", "README.fr.md", "README.ar.md"]) {
-    const count = f === "README.fr.md" ? "2 059" : "2,059";
+    const count = f === "README.fr.md" ? "1 880" : "1,880";
     assert.ok(read(f).includes(count), `${f} does not carry the ${count} record count`);
   }
 });
