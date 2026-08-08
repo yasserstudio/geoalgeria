@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria clinics & care facilities",
+  "alternateName": "Cliniques et structures de soins d'Algérie",
+  "identifier": "@geoalgeria/cliniques",
+  "description": "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here; the two describe different populations and must not be summed.",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "21.330553 -8.081602 37.063002 9.573802"
+    }
+  },
+  "variableMeasured": "2059 records, 66 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "cliniques (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/cliniques/data/cliniques.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "cliniques (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/cliniques/data/csv/cliniques.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "cliniques (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/cliniques/data/geojson/cliniques.geojson"
+    }
+  ],
+  "dateModified": "2026-08-08",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "OpenStreetMap: clinics & proximity-care facilities in Algeria — ODbL 1.0 (© OpenStreetMap contributors)"
+  ]
+}
