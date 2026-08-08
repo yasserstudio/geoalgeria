@@ -23,6 +23,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
+import { carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -323,8 +324,10 @@ function attachCommune(rows, communes) {
   }
 }
 
-// Stable id `{wilaya_code}-{seq}`, seq ordered by osm_id so re-fetches are
-// deterministic and ids stay put across rebuilds.
+// Derive `{wilaya_code}-{seq}`, seq ordered by osm_id so a build is deterministic.
+// The sequence is positional, so an upstream insert shifts every later record.
+// carryOverIds (in main) pins still-present records back to the id they shipped
+// under, so this only mints ids for genuinely new pharmacies.
 function assignIds(rows) {
   const byWilaya = new Map();
   for (const r of rows) {
@@ -397,6 +400,10 @@ async function main() {
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);
   rows = toV2(rows);
+  // Pin every still-present pharmacy back to the id it shipped under, keyed on the
+  // stable OSM id. Without this a single new pharmacy re-sequences every later
+  // record in its wilaya, so a re-survey would churn ids that are public join keys.
+  carryOverIds(rows, readCommitted(OUT_DIR, "pharmacies.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies");
   rows.sort((a, b) => a.id.localeCompare(b.id));
 
   const cols = [
@@ -418,6 +425,9 @@ async function main() {
           url: "https://www.openstreetmap.org",
           license: "ODbL 1.0 (© OpenStreetMap contributors)",
           retrieved: today,
+          // Pinned, not inferred: buildMetadata passes sources through verbatim, so
+          // leaving it off drops the claim the committed metadata already carries.
+          evidence_type: "crowdsourced",
         },
       ],
       license: "ODbL-1.0",
