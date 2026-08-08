@@ -4,16 +4,16 @@
   "title_fr": "Pharmacies d'Algérie",
   "title_ar": "صيدليات الجزائر",
   "title_en": "Algeria pharmacies (officines)",
-  "record_count": 3790,
-  "geocoded_count": 3790,
+  "record_count": 3797,
+  "geocoded_count": 3797,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 3504,
-    "approximate": 286
+    "exact": 3509,
+    "approximate": 288
   },
   "estimated_universe": 11000,
   "coverage_pct": 34.5,
-  "coverage_note": "3790 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.",
+  "coverage_note": "3797 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract — coverage is partial and uneven by wilaya, denser in the north.",
   "wilayas_covered": 67,
   "bbox": [
     -8.139568,
@@ -27,16 +27,16 @@
       "name": "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-07-05",
+      "retrieved": "2026-08-08",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "ODbL-1.0",
-  "updated": "2026-07-05",
-  "named": 2459,
+  "updated": "2026-08-08",
+  "named": 2461,
   "with_phone": 146,
-  "with_hours": 255,
-  "with_address": 1159,
-  "with_dispensing": 524,
+  "with_hours": 257,
+  "with_address": 1163,
+  "with_dispensing": 526,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }
