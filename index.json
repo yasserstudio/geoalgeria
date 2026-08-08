@@ -87,6 +87,27 @@
       "updated": "2026-07-01"
     },
     {
+      "package": "@geoalgeria/cliniques",
+      "schema_version": "2.0.0",
+      "title": "Algeria clinics & care facilities",
+      "record_count": 2059,
+      "geocoded_count": 2059,
+      "geocoded_pct": 100,
+      "precision": {
+        "exact": 1189,
+        "approximate": 870
+      },
+      "wilayas_covered": 66,
+      "bbox": [
+        -8.081602,
+        21.330553,
+        9.573802,
+        37.063002
+      ],
+      "license": "ODbL-1.0",
+      "updated": "2026-08-08"
+    },
+    {
       "package": "@geoalgeria/culture",
       "schema_version": "2.0.0",
       "title": "Algeria cultural heritage",

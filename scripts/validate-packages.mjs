@@ -2,7 +2,7 @@
 // Validate the scoped data packages (@geoalgeria/poste, /mobilis, /emploi,
 // /telecom, /aviation, /banques, /livraison, /jeunesse, /sports,
 // /enseignement-superieur, /tourisme, /formation-professionnelle, /djezzy,
-// /mosquees, /sante, /culture, /agriculture, /ecoles, /gares-routieres,
+// /mosquees, /sante, /cliniques, /culture, /agriculture, /ecoles, /gares-routieres,
 // /ferroviaire, /buses)
 // for integrity and cross-format consistency. The flagship
 // `geoalgeria` dataset has its own Python validator
@@ -13,7 +13,7 @@
 // livraison keeps a dedicated validator for its mixed entity kinds, sharing the
 // same error accumulator + helpers.
 //
-// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|culture|agriculture|ecoles|gares-routieres|ferroviaire|buses]
+// Usage: node scripts/validate-packages.mjs [poste|mobilis|emploi|aviation|banques|livraison|jeunesse|sports|enseignement-superieur|tourisme|formation-professionnelle|djezzy|mosquees|sante|cliniques|culture|agriculture|ecoles|gares-routieres|ferroviaire|buses]
 //        (no arg = validate all)
 //
 // Checks, per dataset:
@@ -586,6 +586,18 @@ const PACKAGES = {
       required: ["id", "name", "statut", "wilaya_code", "lat", "lng"],
     },
   ],
+  cliniques: [
+    {
+      json: "cliniques.json",
+      metaKey: "cliniques",
+      csv: "csv/cliniques.csv",
+      geojson: "geojson/cliniques.geojson",
+      // name is intentionally nullable (279 clinic-tagged OSM points are unnamed)
+      // and sector is often unknown, so the required set guards identity + type
+      // + geocoding.
+      required: ["id", "source", "type", "wilaya_code", "lat", "lng"],
+    },
+  ],
   "gares-routieres": [
     {
       json: "stations.json",
@@ -1089,6 +1101,7 @@ const TYPED = {
   aviation: { "airports.json": "Airport", "routes.json": "Route" },
   banques: { "banks.json": "Institution", "institutions.json": "Institution", "branches.json": "Branch" },
   buses: { "lines.json": "BusLine" },
+  cliniques: { "cliniques.json": "Clinique" },
   culture: { "culture.json": "CulturalSite" },
   djezzy: { "boutiques.json": "Boutique" },
   ecoles: { "ecoles.json": "Ecole" },
