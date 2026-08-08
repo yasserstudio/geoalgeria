@@ -14,29 +14,49 @@
  * (CHU/EPH/EHS/EPSP from the Ministry of Health), so every record that classifies
  * as one is dropped here with a logged count. The two packages must not be summed.
  *
- * Classification runs over the normalized FR+AR name (Latin accents folded,
+ * The first guard is not a name test at all: @geoalgeria/sante references 121 OSM
+ * elements by id, and any element in that set IS a registry record already
+ * shipped there, whatever it calls itself. Those are excluded by construction
+ * (sante_overlap), which is the only exclusion in this file that cannot be
+ * defeated by an unusual name.
+ *
+ * Classification then runs over the normalized FR+AR name (Latin accents folded,
  * Arabic hamza/alef variants folded). Order is deliberate:
- *   1. hard registry markers (CHU, EPH, EHS, "établissement public hospitalier")
- *      exclude unconditionally: nothing outranks a named registry establishment.
- *   2. paramedical schools and cabinets are out of scope.
- *   3. the facility types (polyclinique / salle de soins / centre de santé) are
+ *   1. CHU excludes unconditionally.
+ *   2. out of scope, whoever owns them: paramedical schools, pharmacies
+ *      (@geoalgeria/pharmacies), the Institut Pasteur, hospital sub-features
+ *      (an entrance, a ward, "Service de radiologie", a bare "urgences"), and
+ *      cabinets, including practices named only for their practitioner
+ *      ("Dr X Dentiste", الطبيب ...) when nothing says the place is a facility.
+ *   3. an explicitly PRIVATE establishment is kept, before any registry pattern
+ *      runs. The cliniques privées are exactly this package's population, and
+ *      "EHP"/"établissement hospitalier privé" must never be read as an "EPH".
+ *   4. the named registry tiers then exclude: EPH (with its E.P.H / EPHP
+ *      spellings), EHS, EHU, and the centres anti-cancer, which are EHS by
+ *      statute however they name themselves.
+ *   5. the facility types (polyclinique / salle de soins / centre de santé) are
  *      matched BEFORE the bare "hôpital"/مستشفى word, because that word is used
  *      colloquially for proximity facilities: 10 records name themselves both
  *      ("Polyclinique des consultations spécialisées" with name:ar مستشفى بودغن,
- *      "المستشفى الجواري متعدد الخدمات" with name:fr Polyclinique). An explicit
- *      polyclinique/مستوصف/centre de santé word settles what the place is.
- *   4. the bare hôpital word then excludes, so a mother-child hospital
+ *      "المستشفى الجواري متعدد الخدمات" with name:fr Polyclinique). The bare word
+ *      "clinique"/عيادة/مصحة counts here too, one rank below the three types.
+ *   6. the bare hôpital word then excludes, together with the Arabic استشفاي stem
+ *      that names the same establishments, so a mother-child hospital
  *      (مستشفى الأمومة والتوليد) is dropped as registry tier before `maternite`
  *      can claim it.
- *   5. the EPSP administrative entity is excluded LAST, so a facility that merely
+ *   7. the EPSP administrative entity is excluded LAST, so a facility that merely
  *      names its parent EPSP ("Polyclinique EPSP", "قاعة العلاج ... (EPSP)")
  *      keeps its own type and stays.
  *
- * Sector: "public" when operator:type says so, or when the type is polyclinique
- * or salle de soins (both are public structures by definition in the Algerian
- * system); "private" on operator:type=private or a privé/خاصة/مصحة name;
- * otherwise null. Most cliniques are private in practice, but the map does not
- * say so, so this stays unasserted rather than assumed.
+ * Sector: "public" when operator:type says so (including university, an EHU
+ * being a public teaching operator), or when the type is polyclinique or salle
+ * de soins (both are public structures by definition in the Algerian system);
+ * "private" on operator:type=private or a privé/خاصة/مصحة name, read over the
+ * full name haystack because a record can carry its only ownership signal in
+ * name:en. "الاحتياجات الخاصة" (special needs) is stripped first: it contains the
+ * ownership word خاص and says nothing about ownership. Otherwise null. Most
+ * cliniques are private in practice, but the map does not say so, so this stays
+ * unasserted rather than assumed.
  *
  * Commune/wilaya linkage uses the shared boundary-safe attachCommune (wilaya by
  * point-in-polygon, commune by nearest centroid WITHIN that wilaya), so the join
@@ -247,43 +267,104 @@ export function nameHay(t) {
 export const RE = {
   // Teaching hospitals. @geoalgeria/sante owns them.
   chu: /\bchu\b|centre hospitalo|hospitalo.universitaire|centre hospitalier universitaire|المستشفي الجامعي|الاستشفايي الجامعي/,
-  // The named registry tiers. Unconditional: nothing outranks an EPH/EHS.
-  registry: /\beph\b|\behs\b|etablissement public hospitalier/,
-  // The bare word. Checked only after the facility types, because Algerian
-  // mappers use it for polycliniques too.
-  hopital: /hopital|hospital|مستشفي/,
+  // The named registry tiers. Unconditional: nothing outranks a named EPH/EHS.
+  // The abbreviation is written with optional dots and an optional trailing
+  // letter because the map carries all of them ("EPH", "E.P.H", "EPHP"); a bare
+  // \beph\b missed both variants and shipped the records as cliniques. `ehu` is
+  // the university-hospital form. Centres anti-cancer are EHS by statute, so
+  // they are registry tier however they name themselves.
+  registry: /\be\.?p\.?h\.?p?\b|\behs\b|\behu\b|etablissement public hospitalier|centre anti.?cancer|anticancereu|مكافحة السرطان/,
+  // The bare word, checked only when no facility word is present (see classify).
+  // `استشفاي` is the folded stem of الاستشفائية/الاستشفائي, the Arabic name of the
+  // same establishments the Latin EPH/EHS abbreviations cover; `hoplital` is a
+  // live typo in the map.
+  hopital: /hopital|hoplital|hospital|مستشفي|استشفاي/,
+  // Explicitly private establishments. These are the cliniques privées tier and
+  // belong IN this package, so this is checked BEFORE the registry patterns: an
+  // "EHP" (établissement hospitalier privé) must not be read as an "EPH".
+  private_marker: /\bprivee?s?\b|\bprivate\b|\behp\b|etablissement hospitalier prive|خاص/,
   // Paramedical training schools: education, not care.
   paramedical: /paramedic|شبه الطبي/,
-  // Single-practitioner cabinets. Deliberately narrow (the literal word only):
-  // an ambiguous عيادة is kept as a clinique rather than guessed away.
+  // Pharmacies belong to @geoalgeria/pharmacies.
+  pharmacie: /pharmacie|صيدلية/,
+  // Research institute, not a care facility.
+  institut_pasteur: /institut pasteur|معهد باستور/,
+  // Parts of a hospital mapped as their own point (an entrance, a ward, a
+  // department), plus a bare "urgences" with nothing saying it is a standalone
+  // centre. Only applied when no facility word is present.
+  subfeature: /\bentrees?\b|bloc operatoire|services? de |medecine du travail|الطب المدرسي|\burgences?\b/,
+  // Single-practitioner cabinets: the literal word, or a named practitioner.
   cabinet: /\bcabinet\b/,
+  practitioner: /\bdr\b|\bdocteurs?\b|dentiste|طبيب/,
   // The EPSP administrative entity (its facilities stay; see classify()).
   epsp: /\bepsp\b|\be\.p\.s\.p\b|etablissements? publics? de sante|etablissement de sante de proximite|للصحة الجوارية/,
   polyclinique: /polycliniq|polyclinq|policliniq|polcliniq|عيادة متعددة|العيادة المتعددة|متعدد الخدمات|متعددة الخدمات/,
   salle_de_soins: /salles? de soins?|dispensaire|قاعة العلاج|قاعة علاج|قاعات العلاج|مستوصف/,
   centre_sante: /centre de sante|centre de soins?|centre medico|centre de reeducation|\bpmi\b|protection maternelle|urgences? medicale|استعجالات طبية|مركز صحي|المركز الصحي|مركز الصحة/,
+  // The bare word "clinic". Weaker than the three types above, but still an
+  // explicit facility word, so it outranks a colloquial "hôpital" too.
+  clinique_word: /\bcliniqu|\bclinics?\b|عيادة|مصحة/,
   maternite: /maternite|accouchement|mere.{0,3}enfant|امومة/,
 };
+
+// "الاحتياجات الخاصة" (special needs) contains the private-ownership word خاص and
+// says nothing about ownership. Drop the phrase before any privacy test.
+const SPECIAL_NEEDS = /ذوي الاحتياجات الخاصة|الاحتياجات الخاصة/g;
+const ownershipHay = (hay) => hay.replace(SPECIAL_NEEDS, " ");
+
+const NO_IDS = new Set();
 
 /**
  * Decide what a record is: `{ type }` to keep it, `{ excluded }` to drop it with
  * a logged reason. See the header for why the order is what it is.
+ *
+ * `santeOsmIds` is the set of OSM elements @geoalgeria/sante already ships. An
+ * element in that set is the SAME mapped object as a registry record, so it is
+ * excluded by construction rather than by reading its name.
  */
-export function classify(t) {
+export function classify(t, osmId = null, santeOsmIds = NO_IDS) {
+  if (osmId && santeOsmIds.has(osmId)) return { excluded: "sante_overlap" };
   const hay = nameHay(t);
   const hospitalTagged = t.amenity === "hospital" || t.healthcare === "hospital";
   // An unnamed record tagged as a hospital cannot be told apart from the registry
   // tier, so it is dropped; an unnamed clinic-tagged one is kept (type clinique,
   // name null) because its tag already says what it is.
   if (!hay) return hospitalTagged ? { excluded: "unnamed_hospital" } : { type: "clinique" };
+
+  // The facility words, resolved once: `facility` is a real type, `cliniqueWord`
+  // is the weaker bare "clinic". Either one means the name says what the place
+  // is, which is what the guards below key on.
+  const facility = RE.polyclinique.test(hay) ? "polyclinique"
+    : RE.salle_de_soins.test(hay) ? "salle_de_soins"
+    : RE.centre_sante.test(hay) ? "centre_sante"
+    : null;
+  const cliniqueWord = RE.clinique_word.test(hay);
+  const anyFacilityWord = facility !== null || cliniqueWord;
+  // The type a kept record gets when no specific facility word decided it.
+  const fallbackType = () => facility ?? (RE.maternite.test(hay) ? "maternite" : "clinique");
+
   if (RE.chu.test(hay)) return { excluded: "chu" };
-  if (RE.registry.test(hay)) return { excluded: "hopital" };
   if (RE.paramedical.test(hay)) return { excluded: "paramedical" };
+  if (RE.pharmacie.test(hay)) return { excluded: "pharmacie" };
+  if (RE.institut_pasteur.test(hay)) return { excluded: "institut_pasteur" };
+  // The literal word wins over the sub-feature patterns: a "cabinet médical
+  // d'urgence" is a cabinet, not a hospital emergency department.
   if (RE.cabinet.test(hay)) return { excluded: "cabinet" };
-  if (RE.polyclinique.test(hay)) return { type: "polyclinique" };
-  if (RE.salle_de_soins.test(hay)) return { type: "salle_de_soins" };
-  if (RE.centre_sante.test(hay)) return { type: "centre_sante" };
-  if (RE.hopital.test(hay)) return { excluded: "hopital" };
+  if (!anyFacilityWord && RE.subfeature.test(hay)) return { excluded: "hospital_subfeature" };
+  // A named practitioner is a cabinet even without the word, but only when
+  // nothing else says the place is a facility ("Polyclinique ... Dr X" stays)
+  // and the name does not say hospital ("Hôpital Docteur Benzarjeb" is a
+  // hospital named after a doctor, not a doctor's practice).
+  if (!anyFacilityWord && !RE.hopital.test(hay) && RE.practitioner.test(hay))
+    return { excluded: "cabinet" };
+  // Private ownership outranks every hospital pattern below: an explicitly
+  // private hospital establishment is the cliniques privées tier, which is
+  // exactly this package.
+  if (RE.private_marker.test(ownershipHay(hay))) return { type: fallbackType() };
+  if (RE.registry.test(hay)) return { excluded: "hopital" };
+  if (facility) return { type: facility };
+  // The colloquial word only decides when the name offers nothing better.
+  if (!anyFacilityWord && RE.hopital.test(hay)) return { excluded: "hopital" };
   if (RE.maternite.test(hay)) return { type: "maternite" };
   if (RE.epsp.test(hay)) return { excluded: "epsp_entity" };
   return { type: "clinique" };
@@ -293,12 +374,15 @@ export function classify(t) {
 export function classifySector(t, type) {
   const op = (t["operator:type"] || "").toLowerCase();
   if (/private/.test(op)) return "private";
-  if (/public|government|state/.test(op)) return "public";
-  const hay = normalizeName(
-    [t.name, t["name:fr"], t["name:ar"], t.operator, t["operator:ar"]].filter(Boolean).join(" "),
+  // `university` is a public teaching operator (an EHU), not a third category.
+  if (/public|government|state|university/.test(op)) return "public";
+  // The full name haystack, not just name/name:fr/name:ar: "Hasnaoui Private
+  // Hospital" carries its only ownership signal in name:en.
+  const hay = ownershipHay(
+    nameHay(t) + " " + normalizeName([t.operator, t["operator:ar"]].filter(Boolean).join(" ")),
   );
   // An explicit privacy word is decisive whatever the type says.
-  if (/\bprivee?\b|private|خاصة|خاص/.test(hay)) return "private";
+  if (RE.private_marker.test(hay)) return "private";
   // Structural, not inferred: a polyclinique and a salle de soins are public
   // structures of the Algerian proximity-care system by definition.
   if (type === "polyclinique" || type === "salle_de_soins") return "public";
@@ -307,6 +391,14 @@ export function classifySector(t, type) {
   // proximity structures (المصحة الجوارية المتعددة الخدمات).
   if (/مصحة/.test(hay)) return "private";
   return null;
+}
+
+/** The OSM elements @geoalgeria/sante already ships, as a `type/id` set. */
+export function loadSanteOsmIds() {
+  const sante = JSON.parse(
+    readFileSync(join(__dirname, "..", "..", "sante", "data", "sante.json"), "utf-8"),
+  );
+  return new Set(sante.map((r) => r.refs?.osm).filter(Boolean));
 }
 
 // A single-line address from OSM addr:* tags, or null when none are present.
@@ -319,7 +411,7 @@ function parseAddress(t) {
   return parts.length ? parts.join(", ") : null;
 }
 
-function normOSM(elements) {
+function normOSM(elements, santeOsmIds) {
   // Five selectors over one area: an element matching more than one of them comes
   // back once per match, so collapse by osm type/id before anything else.
   const seen = new Set();
@@ -333,7 +425,7 @@ function normOSM(elements) {
     const lng = el.lon ?? el.center?.lon;
     if (!inAlgeria(lat, lng)) continue;
     const t = el.tags || {};
-    const verdict = classify(t);
+    const verdict = classify(t, key, santeOsmIds);
     if (verdict.excluded) {
       excluded[verdict.excluded] = (excluded[verdict.excluded] || 0) + 1;
       continue;
@@ -436,7 +528,9 @@ async function main() {
   const OFFLINE = process.argv.includes("--cache");
   const osmRaw = OFFLINE ? readCapture("cliniques", "osm").elements : await fetchOSM();
   console.log(`  OSM: ${osmRaw.length} elements pulled`);
-  let { rows, excluded } = normOSM(osmRaw);
+  const santeOsmIds = loadSanteOsmIds();
+  console.log(`  ${santeOsmIds.size} OSM element(s) already shipped by @geoalgeria/sante`);
+  let { rows, excluded } = normOSM(osmRaw, santeOsmIds);
   const excludedTotal = Object.values(excluded).reduce((a, b) => a + b, 0);
   console.log(`  excluded ${excludedTotal}: ` + Object.entries(excluded).sort().map(([k, v]) => `${k}=${v}`).join(", "));
   console.log(`  OSM: ${rows.length} care facilities kept`);
