@@ -186,3 +186,12 @@ clinics, dialysis and imaging centres, medical laboratories, school-health units
 A sub-type pass would need either richer `healthcare:speciality` tagging upstream
 or a reviewed list. Coverage growth depends on OSM contributions; the wilayas at
 zero are the obvious first target.
+
+## Publish postscript, 2026-08-09
+
+`@geoalgeria/cliniques` 1.0.0 published to npm, its first release, with a
+GitHub Release. The Trusted Publisher entry was created with stage-publish, but
+this first publish itself was done by hand per RELEASING.md's bootstrap step,
+so the package existed before the staged flow could take it. Noted here so
+this dossier's "unpublished" framing above does not mislead a future reader:
+the package is live, the dossier stays as the build record.
