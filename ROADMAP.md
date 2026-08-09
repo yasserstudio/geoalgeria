@@ -78,6 +78,18 @@ reads as further along than it is.
   against Wikidata/OSM before touching either.
   _(logged 2026-07-29)_
 
+- [ ] **39 records across packages sit geographically inside El Aricha (63)
+  but still carry wilaya_code 13 or 22**, the boundary warnings the El Aricha
+  fix surfaced (measured 2026-08-09, pre-fix): sports 16, jeunesse 9, poste 9,
+  mosquees 3, formation-professionnelle 2, telecom 1. The packages whose
+  wilaya is derived from coordinates self-correct at their next regeneration
+  now that the boundary is fixed, `containingWilayaCode` resolves them to 63
+  automatically. sports, jeunesse and poste instead take the wilaya their
+  ministry source declares, and those sources still say the pre-reform
+  wilaya, so a rebuild alone will not fix them; they need a deliberate
+  reconciliation pass against El Aricha's new extent. Not fixed in this PR.
+  _(logged 2026-08-09)_
+
 ## Generators
 
 - [x] **Nearest-centroid fallback can cross a boundary** — fixed in the shared
@@ -117,7 +129,10 @@ reads as further along than it is.
   at `v2-transforms.mjs:978`, plus a run N+1 case in
   `test/carry-over-ids.test.mjs`. The current shrink test only models run N, so
   it asserts the retired id is not reused within a single run and cannot catch
-  this. _(logged 2026-08-08)_
+  this. The 2.1.0 pharmacies release retired ids `44-00029` and `47-00001`, so
+  the next pharmacies re-survey WILL reuse them unless retirements are
+  persisted first; this item now gates that re-survey.
+  _(logged 2026-08-08)_
 
 - [ ] **pharmacies is the last generator bypassing `writePackageV2`.**
   `packages/pharmacies/scripts/fetch.mjs` hand-rolls `buildMetadata` + `toCSV` +
@@ -131,6 +146,13 @@ reads as further along than it is.
   which the `evidence_type` pin becomes redundant but harmless. Its local
   `attachCommune` also predates the boundary guard in the entry above.
   _(logged 2026-08-08)_
+
+- [ ] **The schema `build.js` citation template joins name and licence with an
+  em dash character** (`packages/schema/src/build.js:247`), which regenerates
+  into every package's `dataset-metadata.json` descriptor.
+  Deferred out of the cliniques branch on purpose. A repo-wide 3-line sweep,
+  worth doing at the next coordinated bump rather than alone.
+  _(logged 2026-08-09)_
 
 ## Transport
 
@@ -222,11 +244,29 @@ reads as further along than it is.
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
   kept up; the project-level tag has not. Manual, and worth doing at the next
   meaningful group of bumps rather than on its own.
-  _(logged 2026-07-22)_
+  _(logged 2026-07-22; 2026-08-09 is that group: a new package (cliniques) plus
+  the app's health batch; pending the user cutting the tag per RELEASING.md)_
 
 ---
 
 ## Recently closed
+
+- **The health batch, 2026-08-09**: `@geoalgeria/cliniques` 1.0.0 published,
+  its first release, 1,894 care facilities across 66 wilayas from
+  OpenStreetMap, with a GitHub Release; the Trusted Publisher entry was
+  created with stage-publish and the first publish was done by hand per
+  RELEASING.md's bootstrap step. `@geoalgeria/pharmacies` 2.1.0 published,
+  3,797 pharmacies, `carryOverIds` now keyed on OSM id, with a GitHub Release.
+  The release workflow's GitHub Release titles are now clamped to 120
+  characters (PR #177); the cliniques changeset title had failed the run at
+  256+. And the one overlapping pair among the 69 wilaya boundaries was
+  corrected: El Aricha (63) subtracted from Tlemcen (13), area conserved
+  (9,098 = 6,083 + 3,015 km2), guarded going forward by
+  `test/wilaya-boundaries-disjoint.test.mjs` (PR #172,
+  `scripts/fix-wilaya-overlap.mjs`); the correction is documented in the
+  boundary metadata's provenance notes, and the upstream OSM edit (relation
+  1280702) is still owed. The app-side health batch (care surface + pharmacies
+  redesign) shipped the same day on geoalgeria.com.
 
 - **Telecom 2.1.0, the August Mobilis re-survey** (2026-08-02): Mobilis
   rebuilt its published 5G map (1,621 -> 1,919 sites; first points in Beni
