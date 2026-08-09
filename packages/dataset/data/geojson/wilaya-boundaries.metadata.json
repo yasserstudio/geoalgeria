@@ -21,11 +21,12 @@
   "simplification": {
     "method": "mapshaper -simplify dp 2% keep-shapes",
     "coordinate_precision_dp": 3,
-    "vertices": 7751,
+    "vertices": 7759,
     "rings": 70,
     "vertex_spacing_m": { "p25": 2125, "median": 3356, "p75": 5773, "p90": 11792, "max": 158314 }
   },
   "provenance_notes": [
+    "CORRECTION 2026-08-09, the one place this file deliberately departs from upstream OSM: El Aricha (63) was subtracted from Tlemcen (13). El Aricha became its own wilaya in the 2026 reform, carved out of Tlemcen; OSM added the new relation (20815946, ref 63) but never shrank the parent relation (1280702, ref 13), which still spans its pre-reform extent, so 100% of El Aricha also fell inside Tlemcen and a third of the area Tlemcen drew was really El Aricha. Verified against a live Overpass pull on 2026-08-09 (timestamp_osm_base 2026-08-08T16:16:37Z): re-sourcing from OSM reproduces the defect rather than fixing it, which is why the correction lives here. Computed as a polygon difference by scripts/fix-wilaya-overlap.mjs (polygon-clipping), reusing the 24 vertices the two rings already shared, so no sliver was introduced and no territory was lost or gained: Tlemcen 9,098 km2 to 6,083 km2 and El Aricha 3,015 km2 sum back to the original 9,098 km2. Tlemcen went from 127 to 135 vertices; every other feature is byte-identical. Reported by Karim OA (konfo.net) from the Sismoo mobile app, and submitted upstream to OSM. Guarded by test/wilaya-boundaries-disjoint.test.mjs, which fails on the pre-correction geometry.",
     "Imported verbatim from the GeoAlgeria app repo, commit 300cb85 (main), blob 92642be34c678e243e664a55ca7a373dd1f08e94 — byte-identical, geometry untouched.",
     "The OSM extraction itself landed in the app repo on 2026-06-21 in commit f107d6a ('fix: replace GADM wilaya boundaries with OSM data (69 wilayas)'), which records the source (OSM admin_level=4 relations), the licence (ODbL) and the simplification (mapshaper dp 2%, keep-shapes). The bytes have not changed since.",
     "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
