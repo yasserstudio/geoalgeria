@@ -1,0 +1,57 @@
+{
+  "name": "@geoalgeria/cliniques",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Clinics & proximity-care facilities of Algeria: polycliniques, salles de soins, centres de santé, maternités and private clinics from OpenStreetMap, classified by type, with Arabic & French names, sector, commune/wilaya linkage and GPS coordinates. The OSM community tier of the health sector, complementing @geoalgeria/sante. JSON, CSV, GeoJSON, TypeScript.",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    },
+    "./data/*": "./data/*"
+  },
+  "files": [
+    "dataset-metadata.json",
+    "data/**/*.json",
+    "data/**/*.csv",
+    "data/**/*.geojson",
+    "types/",
+    "index.js"
+  ],
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "test": "node ../../scripts/validate-packages.mjs cliniques"
+  },
+  "keywords": [
+    "algeria",
+    "clinics",
+    "cliniques",
+    "polyclinique",
+    "sante",
+    "health",
+    "healthcare",
+    "openstreetmap",
+    "geojson",
+    "geoalgeria",
+    "dz"
+  ],
+  "author": "Yasser's Studio (https://yasser.studio)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/yasserstudio/geoalgeria/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasserstudio/geoalgeria.git",
+    "directory": "packages/cliniques"
+  },
+  "homepage": "https://geoalgeria.com",
+  "engines": {
+    "node": ">=18"
+  }
+}

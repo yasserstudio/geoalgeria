@@ -6,7 +6,7 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 **`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`**,
 **`@geoalgeria/sports`**, **`@geoalgeria/enseignement-superieur`**,
 **`@geoalgeria/tourisme`**, **`@geoalgeria/formation-professionnelle`**,
-**`@geoalgeria/djezzy`**, **`@geoalgeria/mosquees`**, **`@geoalgeria/sante`**,
+**`@geoalgeria/djezzy`**, **`@geoalgeria/mosquees`**, **`@geoalgeria/sante`**, **`@geoalgeria/cliniques`**,
 **`@geoalgeria/culture`**, **`@geoalgeria/agriculture`**, **`@geoalgeria/ecoles`**,
 **`@geoalgeria/gares-routieres`**, **`@geoalgeria/ferroviaire`**, **`@geoalgeria/buses`**,
 **`@geoalgeria/transport`**, **`@geoalgeria/industrie-pharmaceutique`**,
@@ -55,6 +55,15 @@ You never bump versions by hand. The bot does it; you merge and approve.
         ▼
 6. pnpm purge-cdn           ← refresh jsDelivr's @latest cache
 ```
+
+### Rebuild order between coupled packages
+
+One package reads another's shipped data at generate time:
+`packages/cliniques/scripts/fetch.mjs` reads `packages/sante/data/sante.json` to
+exclude the OSM elements sante's hospital-tier records already publish. So
+regenerating `sante` can change `cliniques` output with nothing in
+`packages/cliniques` having changed. When a release touches both, rebuild
+`sante` first, then `cliniques`, and review the two diffs together.
 
 ### 1–2. Add a changeset, let the bot open the PR
 
@@ -196,7 +205,8 @@ These are prerequisites the workflow can't do for you:
    `@geoalgeria/livraison`, `@geoalgeria/jeunesse`, `@geoalgeria/sports`,
    `@geoalgeria/enseignement-superieur`, `@geoalgeria/tourisme`,
    `@geoalgeria/formation-professionnelle`, `@geoalgeria/djezzy`, `@geoalgeria/mosquees`,
-   `@geoalgeria/sante`, `@geoalgeria/culture`, `@geoalgeria/agriculture`,
+   `@geoalgeria/sante`, `@geoalgeria/cliniques`, `@geoalgeria/culture`,
+   `@geoalgeria/agriculture`,
    `@geoalgeria/ecoles`, `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`,
    `@geoalgeria/buses`, `@geoalgeria/industrie-pharmaceutique`, `@geoalgeria/pharmacies`,
    `@geoalgeria/ooredoo`, `@geoalgeria/protection-civile`). The umbrellas (`transport`,

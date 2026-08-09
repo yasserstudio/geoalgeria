@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Algeria clinics & care facilities",
+  "alternateName": "Cliniques et structures de soins d'Algérie",
+  "identifier": "@geoalgeria/cliniques",
+  "description": "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here. Every OSM element a @geoalgeria/sante hospital-tier record (CHU/EPH/EHS) references is excluded from this package by construction, so no hospital is published twice under the same OSM element. Elements referenced by a sante EPSP record are kept on purpose: there the reference is a geocoding anchor on the entity's seat and the element is usually one of the facilities that EPSP runs, which is this package's population (entity in sante, facility here). sante's remaining records carry no OSM reference at all, so the same physical establishment can still appear in both packages under different coordinates. The two describe different tiers and must never be summed.",
+  "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "isAccessibleForFree": true,
+  "creator": {
+    "@type": "Organization",
+    "name": "Yasser's Studio",
+    "url": "https://yasser.studio"
+  },
+  "spatialCoverage": {
+    "@type": "Place",
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "21.330553 -8.081602 37.063002 9.573802"
+    }
+  },
+  "variableMeasured": "1894 records, 66 wilayas",
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "cliniques (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/cliniques/data/cliniques.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "cliniques (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/cliniques/data/csv/cliniques.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "cliniques (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/cliniques/data/geojson/cliniques.geojson"
+    }
+  ],
+  "dateModified": "2026-08-08",
+  "url": "https://geoalgeria.com",
+  "sameAs": "https://github.com/yasserstudio/geoalgeria",
+  "citation": [
+    "OpenStreetMap: clinics & proximity-care facilities in Algeria — ODbL 1.0 (© OpenStreetMap contributors)"
+  ]
+}

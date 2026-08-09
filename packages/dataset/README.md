@@ -207,6 +207,7 @@ This dataset uses [Semantic Versioning](https://semver.org/). See [CHANGELOG.md]
 | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques – geocoded retail stores with category & hours (djezzy.dz) |
 | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques – Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments – EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
+| [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities – 1,894 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas |
 | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools – 11,830 primaires, CEM, lycées & préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |

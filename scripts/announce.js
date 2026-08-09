@@ -37,6 +37,7 @@ const PACKAGES = {
   "@geoalgeria/ooredoo": { dir: "packages/ooredoo", label: "Ooredoo retail network (Espaces & City Shops)" },
   "@geoalgeria/mosquees": { dir: "packages/mosquees", label: "Algeria's mosques" },
   "@geoalgeria/sante": { dir: "packages/sante", label: "Algeria's public health establishments" },
+  "@geoalgeria/cliniques": { dir: "packages/cliniques", label: "Algeria's clinics & proximity-care facilities" },
   "@geoalgeria/culture": { dir: "packages/culture", label: "Algeria's cultural atlas" },
   "@geoalgeria/agriculture": { dir: "packages/agriculture", label: "Algeria's agriculture-sector institutions" },
   "@geoalgeria/ecoles": { dir: "packages/ecoles", label: "Algeria's schools" },
