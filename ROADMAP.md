@@ -155,11 +155,32 @@ reads as further along than it is.
   the framing most likely to land: publish once, every transit app can consume
   it, including MAHATATI's competitors and this atlas.
 
-  `live.sogral.com` ("Departs en temps reel", linked from sogral.dz) is the one
-  public web surface found; it refused connections on both HTTPS and HTTP on
-  2026-08-09, so whether it is dead or WAF-blocked is unresolved. Worth one
-  real-browser check before any conversation, since a public web endpoint would
-  change what is reasonable to ask for.
+  **The web surface is `mahatati.sogral.com`** (`live.sogral.com` refused
+  connections on both HTTPS and HTTP; treat it as dead). It is a public page
+  with no login, backed by an undocumented but unauthenticated JSON API:
+
+  - `api/live/summary` and `api/live/summary/{agencyId}`: live counters
+    (planned / open / completed / cancelled departures, reservations).
+  - `api/live/destinations/{agencyId}`: destinations served from a station.
+  - `api/live/departures/infos/route/{agencyId}/{headOfLineId}/{routeId}`: the
+    itinerary, each stop's commune and wilaya plus the **fare in DA**.
+
+  The page's own selects carry 73 departure stations and about 180 destinations,
+  and the results table carries departure time, operator, zone, seats available
+  and status.
+
+  So extraction is technically trivial, and that changes nothing about the
+  answer: the footer reads "Copyright (c) 2021 EPE SOGRAL Spa, tous droits
+  reserves", there is no licence under which this repo could restate the data,
+  and every record here has to carry one. What it does change is the ask. SOGRAL
+  has already built the API; the request is now to document it and licence it,
+  or emit GTFS from it, rather than to build anything. That is a much cheaper
+  yes. Contact is on the page: contact@sogral.dz, 021.77.00.77.
+
+  Legitimate without any permission, and worth doing: cross-check the 74
+  stations in `@geoalgeria/gares-routieres` against the 73 their page lists, to
+  catch renames, closures and new stations. That is reference use of a public
+  page on exactly the basis this repo already redistributes their station list.
   _(logged 2026-08-09)_
 
 ## Releases
