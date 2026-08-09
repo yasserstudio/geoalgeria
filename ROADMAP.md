@@ -133,6 +133,35 @@ reads as further along than it is.
   planning a move to an unfamiliar area with no way to see what serves it.
   _(logged 2026-08-09)_
 
+- [ ] **Intercity coach schedules are a licence problem, not a scraping
+  problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction
+  above cannot answer the question a person moving to another wilaya actually
+  asks. The intercity network belongs to **SOGRAL**, the state operator of the
+  gares routieres, whose own app **MAHATATI** (`com.sogral.mobile`) already
+  carries departures, times, fares, operator names and itineraries, and since
+  May 2026 sells tickets through it with CIB / EDAHABIA payment.
+
+  Do **not** extract it. SOGRAL's schedules carry no open licence, so
+  republishing them as a package under MIT or ODbL would be a false licence
+  claim, the same objection that ruled out Google Places for `cliniques`. The
+  app now fronts a payment flow, which makes reverse-engineering its API a
+  different risk class entirely. And a dataset built on a private app API rots
+  silently when the API moves.
+
+  The path is to **ask SOGRAL for a feed, ideally GTFS**. This repo already
+  publishes their 74 gares routieres (`@geoalgeria/gares-routieres`, "Data (c)
+  SOGRAL; redistributed for reference"), so the ask comes from a project
+  already carrying their network with attribution, not from a stranger. GTFS is
+  the framing most likely to land: publish once, every transit app can consume
+  it, including MAHATATI's competitors and this atlas.
+
+  `live.sogral.com` ("Departs en temps reel", linked from sogral.dz) is the one
+  public web surface found; it refused connections on both HTTPS and HTTP on
+  2026-08-09, so whether it is dead or WAF-blocked is unresolved. Worth one
+  real-browser check before any conversation, since a public web endpoint would
+  change what is reasonable to ask for.
+  _(logged 2026-08-09)_
+
 ## Releases
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
