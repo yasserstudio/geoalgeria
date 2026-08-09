@@ -101,6 +101,37 @@ reads as further along than it is.
   regeneration was reverted and only the helper fix shipped.
   _(logged 2026-08-03)_
 
+- [ ] **`carryOverIds` does not persist retirements, so a retired id becomes
+  reusable one survey later.** The reserve set is built from the committed file
+  alone (`scripts/lib/v2-transforms.mjs:978`), so an id only stays protected
+  while the record that held it is still in the data. Once a release that drops
+  a record merges, that id is absent from the next run's `committed`, and the
+  re-home loop preferentially fills the lowest free slot, so it actively hands
+  the gap to an unrelated new record. Reproduced end to end on pharmacies: with
+  the 2026-08 data committed, a synthetic new Ghardaïa pharmacy is assigned
+  `47-00001`, the id that belonged to a different pharmacy removed in that same
+  release. Latent gaps already sit in the committed data: `16-00454` in ecoles,
+  and `30-005`, `30-010`, `58-003` in protection-civile. Note the widths, these
+  are the real committed ids. Fix shape: persist retirements, either a
+  per-package `retired-ids.json` or a `reserved` parameter seeded into the set
+  at `v2-transforms.mjs:978`, plus a run N+1 case in
+  `test/carry-over-ids.test.mjs`. The current shrink test only models run N, so
+  it asserts the retired id is not reused within a single run and cannot catch
+  this. _(logged 2026-08-08)_
+
+- [ ] **pharmacies is the last generator bypassing `writePackageV2`.**
+  `packages/pharmacies/scripts/fetch.mjs` hand-rolls `buildMetadata` + `toCSV` +
+  `toGeoJSON` and has no `writeCapture` source capture, so it skips
+  `validateRecords`, `demoteSharedPoints`, the source-declared check, atomic
+  writes and `colsFor`. Two defects traced to exactly that during the 2026-08
+  re-survey: ids churned because nothing called `carryOverIds`, and
+  `evidence_type` silently vanished from the OpenStreetMap source because
+  `buildMetadata` passes `sources[]` through verbatim. Both were patched in
+  place; the durable fix is to migrate the package onto the shared writer, after
+  which the `evidence_type` pin becomes redundant but harmless. Its local
+  `attachCommune` also predates the boundary guard in the entry above.
+  _(logged 2026-08-08)_
+
 ## Transport
 
 - [ ] **`@geoalgeria/buses` re-extracted from OSM route relations (breaking,
