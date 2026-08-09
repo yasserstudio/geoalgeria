@@ -98,6 +98,41 @@ reads as further along than it is.
   regeneration was reverted and only the helper fix shipped.
   _(logged 2026-08-03)_
 
+## Transport
+
+- [ ] **`@geoalgeria/buses` re-extracted from OSM route relations (breaking,
+  3.0.0).** The package today is 50 ETUSA lines scraped from Wikipedia with
+  **no coordinates at all**: line-level attributes, `lat`/`lng` null on every
+  record, `geocoded_pct` 0. Its coverage note says OSM `route=bus` coverage
+  tagged ETUSA "is currently thin", and **that is now stale**. Measured against
+  a live Overpass pull on 2026-08-09 (`timestamp_osm_base`
+  2026-08-09T10:51:50Z):
+
+  - **215 bus route relations in Algeria**, of which **100 are ETUSA** (network
+    `إيتوزا` / `ETUSA`), plus Tiaret 28 (ETUS TIARET + the wilaya transport
+    directorate), Setif 5, and smaller sets in Ain Defla, Jijel and elsewhere.
+  - **All 100 ETUSA relations carry drawable geometry**, 1,250 km of route in
+    total; 99 are named, 99 carry `from`/`to`, 48 carry `via`, 53 carry an
+    official line `colour`, and **78 carry stop or platform members**.
+
+  So the deferral reason recorded in the coverage note no longer holds, and the
+  package can go from attribute-only to geometry-bearing with real stops. That
+  is a breaking change (records gain geometry, the id scheme changes from
+  Wikipedia line numbers to OSM relation ids), hence 3.0.0.
+
+  **What the data still cannot support, and must not be claimed:** there are
+  **zero** `interval`, `duration` and `frequency` tags across the 100 ETUSA
+  relations, and only 25 carry `opening_hours`. So the package can answer which
+  lines exist, where they run and where they stop, but never how long a trip
+  takes. Journey planning needs timetables Algeria does not publish openly (no
+  GTFS), and deriving a duration from route length would put a fabricated
+  number beside sourced ones, the same call already made for flight durations
+  in the Aviation section.
+
+  Demand signal: a user on Reddit (2026-08-09) describing exactly this gap,
+  planning a move to an unfamiliar area with no way to see what serves it.
+  _(logged 2026-08-09)_
+
 ## Releases
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
