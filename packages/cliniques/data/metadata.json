@@ -4,16 +4,16 @@
   "title_fr": "Cliniques et structures de soins d'Algérie",
   "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
   "title_en": "Algeria clinics & care facilities",
-  "record_count": 1880,
-  "geocoded_count": 1880,
+  "record_count": 1894,
+  "geocoded_count": 1894,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 1059,
-    "approximate": 821
+    "exact": 1064,
+    "approximate": 830
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here. Every OSM element @geoalgeria/sante itself references is excluded from this package by construction, so no place is published twice under the same OSM element; sante's remaining records carry no OSM reference, so the same physical establishment can still appear in both packages under different coordinates. The two describe different tiers and must never be summed.",
+  "coverage_note": "Clinics and proximity-care facilities from OpenStreetMap. A community-maintained extract, NOT an official registry: it mixes the public proximity tier (polycliniques, salles de soins, centres de santé) with private clinics and maternities, and coverage is partial and uneven by wilaya. It complements @geoalgeria/sante, which carries the Ministry of Health registry tier (CHU/EPH/EHS/EPSP) that is excluded here. Every OSM element a @geoalgeria/sante hospital-tier record (CHU/EPH/EHS) references is excluded from this package by construction, so no hospital is published twice under the same OSM element. Elements referenced by a sante EPSP record are kept on purpose: there the reference is a geocoding anchor on the entity's seat and the element is usually one of the facilities that EPSP runs, which is this package's population (entity in sante, facility here). sante's remaining records carry no OSM reference at all, so the same physical establishment can still appear in both packages under different coordinates. The two describe different tiers and must never be summed.",
   "wilayas_covered": 66,
   "bbox": [
     -8.081602,
@@ -33,19 +33,19 @@
   ],
   "license": "ODbL-1.0",
   "updated": "2026-08-08",
-  "named": 1604,
+  "named": 1617,
   "by_type": {
-    "polyclinique": 411,
-    "clinique": 1098,
-    "salle_de_soins": 206,
+    "polyclinique": 418,
+    "clinique": 1101,
+    "salle_de_soins": 210,
     "maternite": 28,
     "centre_sante": 137
   },
   "by_sector": {
-    "public": 629,
+    "public": 640,
     "private": 67
   },
   "with_phone": 106,
-  "with_address": 634,
+  "with_address": 640,
   "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
 }

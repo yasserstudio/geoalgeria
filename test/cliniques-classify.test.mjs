@@ -150,6 +150,23 @@ test("out-of-scope places are excluded, each in its own class", () => {
   assert.deepEqual(classify({ name: "Cabinet médical d'urgence" }), { excluded: "cabinet" });
 });
 
+test("an emergency service whose name says hospital is bucketed as hopital", () => {
+  // Both are excluded either way; what is asserted is that the REASON is true.
+  // A hospital's emergency wing is the registry tier, not an anonymous ward.
+  assert.deepEqual(classify({ name: "Service Urgences Hôpital Akbou" }), { excluded: "hopital" });
+  assert.deepEqual(classify({ name: "Hôpital Bernez - Urgence et maternité" }), { excluded: "hopital" });
+  // a ward with no hospital word in its name stays a sub-feature
+  assert.deepEqual(classify({ name: "Service de radiologie" }), { excluded: "hospital_subfeature" });
+  assert.deepEqual(classify({ name: "Entrée des urgences" }), { excluded: "hospital_subfeature" });
+  // and a standalone emergency centre is still a care facility, not either
+  assert.deepEqual(classify({ name: "Urgences médicales El Achour" }), { type: "centre_sante" });
+});
+
+test("the pre-2007 secteur sanitaire is registry tier", () => {
+  assert.deepEqual(classify({ name: "القطاع الصحي سيدي سليمان" }), { excluded: "hopital" });
+  assert.deepEqual(classify({ name: "Secteur sanitaire de Ténès" }), { excluded: "hopital" });
+});
+
 test("an element sante already ships is excluded by id, whatever it is named", () => {
   const ids = new Set(["way/193228566"]);
   // way/193228566 is sante 05-ehs-01; its OSM name alone reads as a clinique
@@ -247,24 +264,47 @@ test("the shipped records match the classifier and its labels", () => {
   }
 });
 
-test("no shipped record is an OSM element @geoalgeria/sante already ships", () => {
+test("no shipped record is an OSM element a sante HOSPITAL-tier record ships", () => {
   // The contract with the registry tier, checked against the two shipped data
-  // files rather than by re-running the classifier: sante references 121 OSM
-  // elements by id, and any of them appearing here would be the SAME mapped
-  // object published twice under two different ids. A name-based check cannot
-  // see this (the two packages name the same place differently), which is why
-  // the generator excludes on the id set instead.
+  // files rather than by re-running the classifier: any hospital-tier element
+  // appearing here would be the SAME mapped object published twice under two
+  // different ids. A name-based check cannot see this (the two packages name the
+  // same place differently), which is why the generator excludes on the id set.
+  //
+  // Hospital tiers only, on purpose. An EPSP's refs.osm is a geocoding anchor on
+  // the entity's seat and usually points at one of the polycliniques or salles
+  // de soins it runs, which this package is meant to carry: entity in sante,
+  // facility here. Widening this assertion back to every sante record would
+  // demand the deletion of 15 real proximity facilities.
   const sante = JSON.parse(
     readFileSync(join(ROOT, "packages", "sante", "data", "sante.json"), "utf-8"),
   );
-  const santeOsm = new Set(sante.map((r) => r.refs?.osm).filter(Boolean));
-  assert.ok(santeOsm.size > 100, `sante carries only ${santeOsm.size} OSM refs; the guard would be vacuous`);
+  const hospitalTiers = new Set(["chu", "eph", "ehs", "hopital"]);
+  const santeOsm = new Set(
+    sante.filter((r) => hospitalTiers.has(r.type)).map((r) => r.refs?.osm).filter(Boolean),
+  );
+  assert.ok(santeOsm.size > 50, `sante carries only ${santeOsm.size} hospital-tier OSM refs; the guard would be vacuous`);
   const shared = records.filter((r) => santeOsm.has(r.refs.osm));
   assert.deepEqual(
     shared.map((r) => `${r.id} ${r.refs.osm}`),
     [],
     "records shipped by BOTH cliniques and sante for the same OSM element",
   );
+});
+
+test("a facility sante's EPSP entities merely anchor on is kept", () => {
+  // The other side of the guard's scope: these are elements a sante EPSP record
+  // references, and they are real proximity facilities, not the EPSP entity. Two
+  // of them do not even share a place name with the EPSP that anchors on them.
+  const byOsm = new Map(records.map((r) => [r.refs.osm, r]));
+  for (const [osm, type] of [
+    ["way/305803295", "polyclinique"], // Polyclinique de Djimla / EPSP Djimla
+    ["way/441598555", "polyclinique"], // Polyclinique Hai Chouhadas / EPSP Hai Bouamama
+    ["way/1172492225", "salle_de_soins"], // Salle de soins Aftis / EPSP Ziama Mansouriah
+    ["node/7707545064", "clinique"], // Clinique Gouafria / EPSP Drean
+  ]) {
+    assert.equal(byOsm.get(osm)?.type, type, `${osm} should ship as ${type}`);
+  }
 });
 
 test("ids are unique and shaped {wilaya_code}-{seq}", () => {
@@ -298,6 +338,7 @@ test("the emitted metadata stats agree with the records", () => {
 
 test("cliniques is registered everywhere a package must be", () => {
   const read = (p) => readFileSync(join(ROOT, p), "utf-8");
+  const metadata = JSON.parse(read("packages/cliniques/data/metadata.json"));
   const mustMention = [
     "README.md",
     "README.fr.md",
@@ -319,9 +360,18 @@ test("cliniques is registered everywhere a package must be", () => {
   for (const f of mustMention) {
     assert.match(read(f), /cliniques/, `${f} does not register @geoalgeria/cliniques`);
   }
-  // the root README tables carry the shipped count in the documented row shape
-  for (const f of ["README.md", "README.fr.md", "README.ar.md"]) {
-    const count = f === "README.fr.md" ? "1 880" : "1,880";
-    assert.ok(read(f).includes(count), `${f} does not carry the ${count} record count`);
+  // The root README tables carry the shipped count in the documented row shape.
+  // Derived from the emitted metadata, not hardcoded: a hardcoded literal here
+  // fails on every refresh for the wrong reason and teaches the next person to
+  // edit the test rather than the docs.
+  const n = metadata.record_count;
+  const groups = { "README.md": ",", "README.ar.md": ",", "README.fr.md": " " };
+  for (const [f, sep] of Object.entries(groups)) {
+    const count = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+    const plain = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    assert.ok(
+      read(f).includes(count) || read(f).includes(plain),
+      `${f} does not carry the ${count} record count`,
+    );
   }
 });

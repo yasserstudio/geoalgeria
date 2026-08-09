@@ -53,14 +53,40 @@ captured to `sources/cliniques/osm.json` at build time (committed, per
 
 0. **Registry-overlap guard, before any name is read.** @geoalgeria/sante
    references 121 OSM elements by id (`refs.osm`, all `geo_method: osm_point`).
-   An element in that set IS a registry record already published there, whatever
-   it calls itself here, so it is excluded as `sante_overlap`. This is the only
-   exclusion in the pipeline that no unusual name can defeat, and it is what
-   makes the disjointness claim mechanical rather than a hope: 120 of the 121
-   appear in this pull and all 120 are dropped. It is deliberately narrow, and
-   the README says so: sante's other 574 records carry no OSM reference, so the
-   same physical establishment can still appear in both packages under different
-   coordinates, with nothing able to detect it.
+   The guard uses the **hospital tiers only** (CHU / EPH / EHS / hopital: 90 of
+   those references). An element referenced by one of those records IS the
+   registry record already published there, whatever it calls itself here, so it
+   is excluded as `sante_overlap`. This is the only exclusion in the pipeline
+   that no unusual name can defeat, and it is what makes the disjointness claim
+   mechanical rather than a hope: 89 of the 90 appear in this pull and all 89 are
+   dropped.
+
+   **Why EPSP references are deliberately not in the guard.** For an EPSP the
+   `refs.osm` value is a geocoding anchor on the entity's seat, and the element
+   it points at is usually one of the polycliniques or salles de soins that EPSP
+   runs, which is a facility this package is meant to carry. Four of those pairs
+   do not even share a place name (Polyclinique Hai Chouhadas anchored on EPSP
+   Hai Bouamama; Salle de soins Aftis on EPSP Ziama Mansouriah; Clinique
+   Gouafria on EPSP Drean; Polyclinique Douera on CHU Douera, whose polyclinique
+   is separately mapped 5 m away). Including them cost 15 real proximity
+   facilities and contradicted the `epsp_entity` rule, which promises that an
+   EPSP's facilities stay.
+
+   **What the guard costs.** It is an identity test on the OSM element, not on
+   the establishment. It removes every element a hospital-tier record points at,
+   including the handful that a mapper attached to the wrong object. And it is
+   deliberately narrow in the other direction, as the README says: sante's other
+   records carry no OSM reference, so the same physical establishment can still
+   appear in both packages under different coordinates, with nothing able to
+   detect it. Neither direction is silent: both are stated in the README and in
+   the coverage note.
+
+   **Build-order coupling.** `scripts/fetch.mjs` reads
+   `packages/sante/data/sante.json` at generate time, so regenerating `sante`
+   can change this package's output without anything in `packages/cliniques`
+   changing. Rebuild `sante` first, then `cliniques`, and review both diffs
+   together.
+
 1. **Classification** over the normalized FR+AR name (Latin accents folded,
    Arabic hamza/alef/harakat folded), in this order:
    1. `chu` excludes unconditionally.
@@ -132,17 +158,17 @@ captured to `sources/cliniques/osm.json` at build time (committed, per
 
 ## First build, 2026-08-08
 
-- **2,936** elements pulled → **990** excluded → 1,946 classified in → **1,880**
-  after de-dup (66 same-name-within-40m, 0 exact-coincident).
-- Excluded: `hopital` 359, `unnamed_hospital` 239, `sante_overlap` 120,
-  `cabinet` 96, `epsp_entity` 92, `hospital_subfeature` 58, `chu` 15,
+- **2,936** elements pulled -> **977** excluded -> 1,959 classified in -> **1,894**
+  after de-dup (65 same-name-within-40m, 0 exact-coincident).
+- Excluded: `hopital` 369, `unnamed_hospital` 241, `epsp_entity` 102,
+  `cabinet` 96, `sante_overlap` 89, `hospital_subfeature` 54, `chu` 15,
   `pharmacie` 6, `institut_pasteur` 3, `paramedical` 2.
-- Types: `clinique` 1,098 · `polyclinique` 411 · `salle_de_soins` 206 ·
-  `centre_sante` 137 · `maternite` 28.
-- Sector: 629 public, 67 private, 1,184 unasserted.
-- 1,604 named / 276 unnamed; 66 wilayas (54 In Guezzam, 62 Bir El Ater and
+- Types: `clinique` 1,101 - `polyclinique` 418 - `salle_de_soins` 210 -
+  `centre_sante` 137 - `maternite` 28.
+- Sector: 640 public, 67 private, 1,187 unasserted.
+- 1,617 named / 277 unnamed; 66 wilayas (54 In Guezzam, 62 Bir El Ater and
   63 El Aricha have no mapped facility).
-- Precision: 1,059 exact (surveyed node) / 821 approximate (building centroid).
+- Precision: 1,064 exact (surveyed node) / 830 approximate (building centroid).
 
 ## Coverage framing
 

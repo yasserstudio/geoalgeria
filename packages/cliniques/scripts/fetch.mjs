@@ -272,8 +272,9 @@ export const RE = {
   // letter because the map carries all of them ("EPH", "E.P.H", "EPHP"); a bare
   // \beph\b missed both variants and shipped the records as cliniques. `ehu` is
   // the university-hospital form. Centres anti-cancer are EHS by statute, so
-  // they are registry tier however they name themselves.
-  registry: /\be\.?p\.?h\.?p?\b|\behs\b|\behu\b|etablissement public hospitalier|centre anti.?cancer|anticancereu|مكافحة السرطان/,
+  // they are registry tier however they name themselves. `secteur sanitaire` /
+  // القطاع الصحي is the pre-2007 registry unit, still carried by a few records.
+  registry: /\be\.?p\.?h\.?p?\b|\behs\b|\behu\b|etablissement public hospitalier|centre anti.?cancer|anticancereu|مكافحة السرطان|secteurs? sanitaires?|ال?قطاع ال?صحي/,
   // The bare word, checked only when no facility word is present (see classify).
   // `استشفاي` is the folded stem of الاستشفائية/الاستشفائي, the Arabic name of the
   // same establishments the Latin EPH/EHS abbreviations cover; `hoplital` is a
@@ -350,7 +351,14 @@ export function classify(t, osmId = null, santeOsmIds = NO_IDS) {
   // The literal word wins over the sub-feature patterns: a "cabinet médical
   // d'urgence" is a cabinet, not a hospital emergency department.
   if (RE.cabinet.test(hay)) return { excluded: "cabinet" };
-  if (!anyFacilityWord && RE.subfeature.test(hay)) return { excluded: "hospital_subfeature" };
+  // A ward, entrance or emergency service mapped inside a hospital's grounds.
+  // When the name also says hospital, the record belongs to the registry tier
+  // whatever part of it this node maps, so it is reported as `hopital`: the
+  // outcome is the same exclusion either way, but the bucket stays truthful.
+  if (!anyFacilityWord && RE.subfeature.test(hay))
+    return RE.hopital.test(hay) && !RE.private_marker.test(ownershipHay(hay))
+      ? { excluded: "hopital" }
+      : { excluded: "hospital_subfeature" };
   // A named practitioner is a cabinet even without the word, but only when
   // nothing else says the place is a facility ("Polyclinique ... Dr X" stays)
   // and the name does not say hospital ("Hôpital Docteur Benzarjeb" is a
@@ -393,12 +401,27 @@ export function classifySector(t, type) {
   return null;
 }
 
-/** The OSM elements @geoalgeria/sante already ships, as a `type/id` set. */
+/**
+ * The OSM elements @geoalgeria/sante's HOSPITAL-tier records reference, as a
+ * `type/id` set.
+ *
+ * Deliberately not every sante record. For a CHU/EPH/EHS the referenced element
+ * is the hospital itself, so the two packages would ship one object twice. For
+ * an EPSP the reference is a geocoding anchor on the entity's seat, and the
+ * element it points at is usually one of the polycliniques or salles de soins
+ * the EPSP runs, which is a facility this package is supposed to carry (four of
+ * those pairs do not even share a place name). Anchoring the guard on the
+ * hospital tiers keeps the duplicate-object guarantee without silently deleting
+ * the proximity facilities the epsp_entity rule promises to keep.
+ */
+const SANTE_HOSPITAL_TYPES = new Set(["chu", "eph", "ehs", "hopital"]);
 export function loadSanteOsmIds() {
   const sante = JSON.parse(
     readFileSync(join(__dirname, "..", "..", "sante", "data", "sante.json"), "utf-8"),
   );
-  return new Set(sante.map((r) => r.refs?.osm).filter(Boolean));
+  return new Set(
+    sante.filter((r) => SANTE_HOSPITAL_TYPES.has(r.type)).map((r) => r.refs?.osm).filter(Boolean),
+  );
 }
 
 // A single-line address from OSM addr:* tags, or null when none are present.

@@ -91,7 +91,7 @@ A Protection Civile (civil protection / fire & rescue) facility in the protectio
 _Avoid_: station, fire station, barracks, caserne
 
 **Care facility**:
-A clinic or proximity-care place in the cliniques sector (polyclinique, salle de soins, centre de santé, maternité, clinique), the OSM community tier of health. Distinct from the registry-tier **Health establishment** of the sante sector (CHU/EPH/EHS/EPSP), which this sector excludes, along with every OSM element sante references; the two tiers are never summed.
+A clinic or proximity-care place in the cliniques sector (polyclinique, salle de soins, centre de santé, maternité, clinique), the OSM community tier of health. Distinct from the registry-tier **Health establishment** of the sante sector (CHU/EPH/EHS/EPSP), which this sector excludes, along with every OSM element a sante hospital-tier record (CHU/EPH/EHS) references; elements a sante EPSP record references stay, because there the reference is a geocoding anchor on the entity's seat and the element is one of the facilities it runs. The two tiers are never summed.
 _Avoid_: health centre (ambiguous with the `centre_sante` type), infirmary, medical office
 
 ### Transport

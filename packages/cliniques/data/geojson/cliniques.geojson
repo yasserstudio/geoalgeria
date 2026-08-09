@@ -10050,6 +10050,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.568342,
+          36.422154
+        ]
+      },
+      "properties": {
+        "id": "09-00014",
+        "name": "قاعة علاج",
+        "name_fr": null,
+        "name_ar": "قاعة علاج",
+        "wilaya_code": "09",
+        "commune_code": "0918",
+        "commune": "Oued Djer",
+        "lat": 36.422154,
+        "lng": 2.568342,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/4452098893"
+        },
+        "type": "salle_de_soins",
+        "type_label_fr": "Salle de soins / dispensaire",
+        "type_label_ar": "قاعة علاج / مستوصف",
+        "sector": "public",
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.794836,
           36.482907
         ]
@@ -15440,6 +15476,42 @@
         "sector": null,
         "speciality": null,
         "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.885517,
+          35.055802
+        ]
+      },
+      "properties": {
+        "id": "14-00004",
+        "name": "polyclinique",
+        "name_fr": "polyclinique",
+        "name_ar": null,
+        "wilaya_code": "14",
+        "commune_code": "1418",
+        "commune": "Ain El Hadid",
+        "lat": 35.055802,
+        "lng": 0.885517,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/13040019631"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": "general;paediatrics;dentistry;biology;gynaecology;radiology;orthodontics",
+        "address": "حي اوكيل محمد, Aïn El Hadid ⵄⵉⵏ ⵍⴻⵃⴷⵉⴷ عين الحديد 14008",
         "phone": null,
         "opening_hours": null,
         "emergency": null
@@ -31902,6 +31974,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.551499,
+          36.712339
+        ]
+      },
+      "properties": {
+        "id": "18-00021",
+        "name": "قاعة العلاج أفتيس",
+        "name_fr": "Salle de soins Aftis",
+        "name_ar": "قاعة العلاج أفتيس",
+        "wilaya_code": "18",
+        "commune_code": "1804",
+        "commune": "Ziama Mansouriah",
+        "lat": 36.712339,
+        "lng": 5.551499,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/1172492225"
+        },
+        "type": "salle_de_soins",
+        "type_label_fr": "Salle de soins / dispensaire",
+        "type_label_ar": "قاعة علاج / مستوصف",
+        "sector": "public",
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.169185,
           36.599918
         ]
@@ -31931,6 +32039,42 @@
         "phone": null,
         "opening_hours": null,
         "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.88397,
+          36.578185
+        ]
+      },
+      "properties": {
+        "id": "18-00023",
+        "name": "Polyclinique de Djimla",
+        "name_fr": "Polyclinique de Djimla",
+        "name_ar": "عيادة م\\خ جيملة",
+        "wilaya_code": "18",
+        "commune_code": "1817",
+        "commune": "Djimla",
+        "lat": 36.578185,
+        "lng": 5.88397,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/305803295"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": true
       }
     },
     {
@@ -40146,6 +40290,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.625348,
+          36.374147
+        ]
+      },
+      "properties": {
+        "id": "25-00003",
+        "name": "Consultation psychiatrique externe - Chihani Bachir",
+        "name_fr": "Consultation psychiatrique externe - Chihani Bachir",
+        "name_ar": null,
+        "wilaya_code": "25",
+        "commune_code": "2501",
+        "commune": "Constantine",
+        "lat": 36.374147,
+        "lng": 6.625348,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/5889185885"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": "Boulevard Chihani Bachir",
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.715447,
           36.53695
         ]
@@ -40386,6 +40566,42 @@
         "type_label_fr": "Clinique",
         "type_label_ar": "عيادة / مصحة",
         "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.599085,
+          36.42156
+        ]
+      },
+      "properties": {
+        "id": "25-00011",
+        "name": "Dispensaire Hamma Bouziane",
+        "name_fr": "Dispensaire Hamma Bouziane",
+        "name_ar": null,
+        "wilaya_code": "25",
+        "commune_code": "2502",
+        "commune": "Hamma Bouziane",
+        "lat": 36.42156,
+        "lng": 6.599085,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/456778611"
+        },
+        "type": "salle_de_soins",
+        "type_label_fr": "Salle de soins / dispensaire",
+        "type_label_ar": "قاعة علاج / مستوصف",
+        "sector": "public",
         "speciality": null,
         "address": null,
         "phone": null,
@@ -46050,6 +46266,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.619003,
+          35.686161
+        ]
+      },
+      "properties": {
+        "id": "31-00005",
+        "name": "عيادة الغوالم",
+        "name_fr": "Polyclinique Ghoualem",
+        "name_ar": "عيادة الغوالم",
+        "wilaya_code": "31",
+        "commune_code": "3101",
+        "commune": "Oran",
+        "lat": 35.686161,
+        "lng": -0.619003,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/11407580837"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": null,
+        "address": "وهران",
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.645608,
           35.687203
         ]
@@ -46374,6 +46626,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.62284,
+          35.691412
+        ]
+      },
+      "properties": {
+        "id": "31-00015",
+        "name": "Polyclinique Hai Chouhadas",
+        "name_fr": "Polyclinique Hai Chouhadas",
+        "name_ar": null,
+        "wilaya_code": "31",
+        "commune_code": "3101",
+        "commune": "Oran",
+        "lat": 35.691412,
+        "lng": -0.62284,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/441598555"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.576538,
           35.608821
         ]
@@ -46580,6 +46868,42 @@
         "sector": "public",
         "speciality": null,
         "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.901484,
+          35.5775
+        ]
+      },
+      "properties": {
+        "id": "31-00022",
+        "name": "Polyclinique",
+        "name_fr": "Polyclinique",
+        "name_ar": "عيادة متعددة الخدمات",
+        "wilaya_code": "31",
+        "commune_code": "3124",
+        "commune": "Boutlelis",
+        "lat": 35.5775,
+        "lng": -0.901484,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/604269810"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": null,
+        "address": "Boutlelis",
         "phone": null,
         "opening_hours": null,
         "emergency": null
@@ -52314,6 +52638,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.752241,
+          36.686521
+        ]
+      },
+      "properties": {
+        "id": "36-00002",
+        "name": "عيادة غوافرية",
+        "name_fr": "Clinique GOUAFRIA",
+        "name_ar": "عيادة غوافرية",
+        "wilaya_code": "36",
+        "commune_code": "3613",
+        "commune": "Drean",
+        "lat": 36.686521,
+        "lng": 7.752241,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/7707545064"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           8.437392,
           36.888036
         ]
@@ -55158,6 +55518,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.639246,
+          35.402518
+        ]
+      },
+      "properties": {
+        "id": "40-00010",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "40",
+        "commune_code": "4019",
+        "commune": "Yabous",
+        "lat": 35.402518,
+        "lng": 6.639246,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/1160785040"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.737357,
           35.317569
         ]
@@ -55328,6 +55724,42 @@
         "sector": null,
         "speciality": null,
         "address": "شارع يوغرطة, سوق أهراس 41000",
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          7.83077,
+          36.076954
+        ]
+      },
+      "properties": {
+        "id": "41-00002",
+        "name": "Centre de dialyse",
+        "name_fr": "Centre de dialyse",
+        "name_ar": "مركز تصفية الكلى",
+        "wilaya_code": "41",
+        "commune_code": "4115",
+        "commune": "M'daourouche",
+        "lat": 36.076954,
+        "lng": 7.83077,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/569325575"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": "M'Daourouch 41002",
         "phone": null,
         "opening_hours": null,
         "emergency": null
@@ -56012,6 +56444,42 @@
         "sector": "public",
         "speciality": null,
         "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.707773,
+          36.549924
+        ]
+      },
+      "properties": {
+        "id": "42-00005",
+        "name": "Polyclinique",
+        "name_fr": "Polyclinique",
+        "name_ar": null,
+        "wilaya_code": "42",
+        "commune_code": "4223",
+        "commune": "Damous",
+        "lat": 36.549924,
+        "lng": 1.707773,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/1172250843"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": null,
+        "address": "Damous 42014",
         "phone": null,
         "opening_hours": null,
         "emergency": null
@@ -57632,6 +58100,42 @@
         "sector": "public",
         "speciality": null,
         "address": "Aïn Tagourait",
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.894395,
+          36.394314
+        ]
+      },
+      "properties": {
+        "id": "43-00001",
+        "name": "Salle de soins",
+        "name_fr": "Salle de soins",
+        "name_ar": null,
+        "wilaya_code": "43",
+        "commune_code": "4319",
+        "commune": "Ain Beida Harriche",
+        "lat": 36.394314,
+        "lng": 5.894395,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/3548686939"
+        },
+        "type": "salle_de_soins",
+        "type_label_fr": "Salle de soins / dispensaire",
+        "type_label_ar": "قاعة علاج / مستوصف",
+        "sector": "public",
+        "speciality": null,
+        "address": null,
         "phone": null,
         "opening_hours": null,
         "emergency": null
@@ -59682,6 +60186,42 @@
         "type_label_fr": "Clinique",
         "type_label_ar": "عيادة / مصحة",
         "sector": "private",
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.474034,
+          36.371877
+        ]
+      },
+      "properties": {
+        "id": "44-00023",
+        "name": "La polyclinique de Boumedfaâ",
+        "name_fr": "La polyclinique de Boumedfaâ",
+        "name_ar": null,
+        "wilaya_code": "44",
+        "commune_code": "4403",
+        "commune": "Boumedfaa",
+        "lat": 36.371877,
+        "lng": 2.474034,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/309813146"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
         "speciality": null,
         "address": null,
         "phone": null,
@@ -66913,42 +67453,6 @@
         "source": "osm",
         "refs": {
           "osm": "node/5238034326"
-        },
-        "type": "clinique",
-        "type_label_fr": "Clinique",
-        "type_label_ar": "عيادة / مصحة",
-        "sector": null,
-        "speciality": null,
-        "address": null,
-        "phone": null,
-        "opening_hours": null,
-        "emergency": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.156115,
-          35.190781
-        ]
-      },
-      "properties": {
-        "id": "68-00007",
-        "name": "القطاع الصحي سيدي سليمان",
-        "name_fr": null,
-        "name_ar": "القطاع الصحي سيدي سليمان",
-        "wilaya_code": "68",
-        "commune_code": "2820",
-        "commune": "Bou Saada",
-        "lat": 35.190781,
-        "lng": 4.156115,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/5348983622"
         },
         "type": "clinique",
         "type_label_fr": "Clinique",

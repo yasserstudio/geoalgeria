@@ -56,6 +56,15 @@ You never bump versions by hand. The bot does it; you merge and approve.
 6. pnpm purge-cdn           ← refresh jsDelivr's @latest cache
 ```
 
+### Rebuild order between coupled packages
+
+One package reads another's shipped data at generate time:
+`packages/cliniques/scripts/fetch.mjs` reads `packages/sante/data/sante.json` to
+exclude the OSM elements sante's hospital-tier records already publish. So
+regenerating `sante` can change `cliniques` output with nothing in
+`packages/cliniques` having changed. When a release touches both, rebuild
+`sante` first, then `cliniques`, and review the two diffs together.
+
 ### 1–2. Add a changeset, let the bot open the PR
 
 ```bash
