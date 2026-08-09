@@ -15436,8 +15436,8 @@
       },
       "properties": {
         "id": "06-00087",
-        "name": "Pharmacie",
-        "name_fr": "Pharmacie",
+        "name": null,
+        "name_fr": null,
         "name_ar": null,
         "wilaya_code": "06",
         "commune_code": "0625",
@@ -23532,8 +23532,8 @@
       },
       "properties": {
         "id": "10-00060",
-        "name": "Pharmacie",
-        "name_fr": "Pharmacie",
+        "name": null,
+        "name_fr": null,
         "name_ar": null,
         "wilaya_code": "10",
         "commune_code": "1005",
@@ -24646,8 +24646,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.110928,
-          35.402
+          8.11093,
+          35.402041
         ]
       },
       "properties": {
@@ -24658,8 +24658,8 @@
         "wilaya_code": "12",
         "commune_code": "1201",
         "commune": "Tebessa",
-        "lat": 35.402,
-        "lng": 8.110928,
+        "lat": 35.402041,
+        "lng": 8.11093,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -24934,8 +24934,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.126173,
-          35.408066
+          8.126043,
+          35.408152
         ]
       },
       "properties": {
@@ -24946,8 +24946,8 @@
         "wilaya_code": "12",
         "commune_code": "1201",
         "commune": "Tebessa",
-        "lat": 35.408066,
-        "lng": 8.126173,
+        "lat": 35.408152,
+        "lng": 8.126043,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -29222,8 +29222,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.509758,
-          35.356078
+          1.510074,
+          35.35681
         ]
       },
       "properties": {
@@ -29234,8 +29234,8 @@
         "wilaya_code": "14",
         "commune_code": "1403",
         "commune": "Ain Bouchekif",
-        "lat": 35.356078,
-        "lng": 1.509758,
+        "lat": 35.35681,
+        "lng": 1.510074,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -29245,7 +29245,7 @@
         "operator": null,
         "phone": null,
         "opening_hours": null,
-        "dispensing": null,
+        "dispensing": true,
         "address": null
       }
     },
@@ -31238,6 +31238,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.511215,
+          35.355485
+        ]
+      },
+      "properties": {
+        "id": "14-00103",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "14",
+        "commune_code": "1403",
+        "commune": "Ain Bouchekif",
+        "lat": 35.355485,
+        "lng": 1.511215,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/14000418385"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": null,
+        "dispensing": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           4.31437,
           36.570342
         ]
@@ -32172,8 +32204,8 @@
       },
       "properties": {
         "id": "15-00030",
-        "name": "Pharmacie CHAIBI A.",
-        "name_fr": "Pharmacie CHAIBI A.",
+        "name": "Pharmacie Chaïbi A.",
+        "name_fr": "Pharmacie Chaïbi A.",
         "name_ar": null,
         "wilaya_code": "15",
         "commune_code": "1562",
@@ -35910,8 +35942,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.012028,
-          36.759033
+          3.011999,
+          36.759024
         ]
       },
       "properties": {
@@ -35922,8 +35954,8 @@
         "wilaya_code": "16",
         "commune_code": "1622",
         "commune": "Ben Aknoun",
-        "lat": 36.759033,
-        "lng": 3.012028,
+        "lat": 36.759024,
+        "lng": 3.011999,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
@@ -58502,6 +58534,102 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.998129,
+          36.730915
+        ]
+      },
+      "properties": {
+        "id": "16-00748",
+        "name": "Pharmacy de draria",
+        "name_fr": "Pharmacy de draria",
+        "name_ar": null,
+        "wilaya_code": "16",
+        "commune_code": "1654",
+        "commune": "El Achour",
+        "lat": 36.730915,
+        "lng": 2.998129,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/14064594002"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": null,
+        "dispensing": null,
+        "address": "Chemin Benamara Abdelkader"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.027293,
+          36.806388
+        ]
+      },
+      "properties": {
+        "id": "16-00749",
+        "name": "Pharmacy de zghara",
+        "name_fr": "Pharmacy de zghara",
+        "name_ar": null,
+        "wilaya_code": "16",
+        "commune_code": null,
+        "commune": "Bologhine Ibnou Ziri",
+        "lat": 36.806388,
+        "lng": 3.027293,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/14064594101"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": "Mo-Su 06:30-21:00",
+        "dispensing": null,
+        "address": "Rue Mohamed Mehenni شارع محمد مهني"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.92583,
+          36.762299
+        ]
+      },
+      "properties": {
+        "id": "16-00750",
+        "name": "Benmesbah Pharmacie",
+        "name_fr": "Benmesbah Pharmacie",
+        "name_ar": null,
+        "wilaya_code": "16",
+        "commune_code": "1645",
+        "commune": "Staoueli",
+        "lat": 36.762299,
+        "lng": 2.92583,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/14077467958"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": null,
+        "dispensing": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.275648,
           34.675748
         ]
@@ -66348,8 +66476,8 @@
       },
       "properties": {
         "id": "21-00010",
-        "name": "pharmacie",
-        "name_fr": "pharmacie",
+        "name": null,
+        "name_fr": null,
         "name_ar": null,
         "wilaya_code": "21",
         "commune_code": "2117",
@@ -68447,6 +68575,70 @@
         "opening_hours": null,
         "dispensing": null,
         "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.578803,
+          36.690835
+        ]
+      },
+      "properties": {
+        "id": "21-00076",
+        "name": "Pharmacie Kaddouri El Oulmi",
+        "name_fr": "Pharmacie Kaddouri El Oulmi",
+        "name_ar": null,
+        "wilaya_code": "21",
+        "commune_code": "2128",
+        "commune": "Oum Toub",
+        "lat": 36.690835,
+        "lng": 6.578803,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/1497868242"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": null,
+        "dispensing": null,
+        "address": "Oum Toub ⵓⵎ ⵟⵟⵓⴱ أم الطوب"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.55439,
+          36.672091
+        ]
+      },
+      "properties": {
+        "id": "21-00077",
+        "name": "Pharmacie Bouafia Abdelhak",
+        "name_fr": "Pharmacie Bouafia Abdelhak",
+        "name_ar": null,
+        "wilaya_code": "21",
+        "commune_code": "2128",
+        "commune": "Oum Toub",
+        "lat": 36.672091,
+        "lng": 6.55439,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/1545097711"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": null,
+        "dispensing": true,
+        "address": "Souk Elhad Oum toub"
       }
     },
     {
@@ -87526,6 +87718,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.659349,
+          35.687217
+        ]
+      },
+      "properties": {
+        "id": "31-00137",
+        "name": "Pharmacie Henni",
+        "name_fr": "Pharmacie Henni",
+        "name_ar": null,
+        "wilaya_code": "31",
+        "commune_code": "3101",
+        "commune": "Oran",
+        "lat": 35.687217,
+        "lng": -0.659349,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/14010775301"
+        },
+        "operator": null,
+        "phone": "040560699",
+        "opening_hours": "Mo-Su 08:00-03:00",
+        "dispensing": null,
+        "address": "63 نهج مصطفى بن بولعيد"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           1.020245,
           33.677187
         ]
@@ -99118,7 +99342,7 @@
         "id": "42-00042",
         "name": "Pharmacie 5187",
         "name_fr": "Pharmacie 5187",
-        "name_ar": "pharmacie صيدلية",
+        "name_ar": null,
         "wilaya_code": "42",
         "commune_code": "4235",
         "commune": "Kolea",
@@ -101742,7 +101966,7 @@
         "id": "42-00124",
         "name": "pharmacie nekach صيدلية نقاش",
         "name_fr": "Pharmacie Nekach",
-        "name_ar": "pharmacie nekach صيدلية نقاش",
+        "name_ar": "نقاش",
         "wilaya_code": "42",
         "commune_code": "4235",
         "commune": "Kolea",
@@ -105638,6 +105862,38 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.173531,
+          36.468447
+        ]
+      },
+      "properties": {
+        "id": "43-00110",
+        "name": "Pharmacie ayeche nouredinne صيدلية عياش نور الدين",
+        "name_fr": null,
+        "name_ar": "Pharmacie ayeche nouredinne صيدلية عياش نور الدين",
+        "wilaya_code": "43",
+        "commune_code": "4328",
+        "commune": "Zeghaia",
+        "lat": 36.468447,
+        "lng": 6.173531,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/14049585515"
+        },
+        "operator": null,
+        "phone": null,
+        "opening_hours": null,
+        "dispensing": null,
+        "address": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.30336,
           36.334872
         ]
@@ -106527,38 +106783,6 @@
         "opening_hours": null,
         "dispensing": null,
         "address": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          2.211716,
-          36.259808
-        ]
-      },
-      "properties": {
-        "id": "44-00029",
-        "name": "Pharmacie Barça Toufiq",
-        "name_fr": "Pharmacie Barça Toufiq",
-        "name_ar": "برصة توفيق",
-        "wilaya_code": "44",
-        "commune_code": "4404",
-        "commune": "Khemis-Miliana",
-        "lat": 36.259808,
-        "lng": 2.211716,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/4810583123"
-        },
-        "operator": null,
-        "phone": null,
-        "opening_hours": "Sa-Th 08:30-21:00",
-        "dispensing": null,
-        "address": "15 Rue Larbi Bouamran Abdallah, 44225"
       }
     },
     {
@@ -109222,31 +109446,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.226038,
-          32.400984
+          -0.654713,
+          35.412112
         ]
       },
       "properties": {
-        "id": "47-00001",
-        "name": "غزة",
-        "name_fr": "Pharmacie GAZA",
-        "name_ar": "غزة",
-        "wilaya_code": "47",
-        "commune_code": "4708",
-        "commune": "Zelfana",
-        "lat": 32.400984,
-        "lng": 4.226038,
+        "id": "46-00062",
+        "name": "Pharmacie Tamazoura",
+        "name_fr": "Pharmacie Tamazoura",
+        "name_ar": null,
+        "wilaya_code": "46",
+        "commune_code": "4610",
+        "commune": "Tamzoura",
+        "lat": 35.412112,
+        "lng": -0.654713,
         "geo_precision": "exact",
         "geo_method": "osm_node",
         "source": "osm",
         "refs": {
-          "osm": "node/2590265853"
+          "osm": "node/14072738766"
         },
         "operator": null,
-        "phone": "00213",
-        "opening_hours": null,
+        "phone": null,
+        "opening_hours": "08:30-21:00",
         "dispensing": null,
-        "address": "زلفانة"
+        "address": "Tamzoura 46240"
       }
     },
     {
@@ -114732,7 +114956,7 @@
       },
       "properties": {
         "id": "49-00002",
-        "name": "بكري",
+        "name": "Pharmacie Bakri;صيدلية بكري",
         "name_fr": "Pharmacie Bakri",
         "name_ar": "بكري",
         "wilaya_code": "49",
@@ -114860,7 +115084,7 @@
       },
       "properties": {
         "id": "50-00002",
-        "name": "خليفي",
+        "name": "Pharmacie Khelifi;صيدلية خليفي",
         "name_fr": "Pharmacie Khelifi",
         "name_ar": "خليفي",
         "wilaya_code": "50",
@@ -115500,8 +115724,8 @@
       },
       "properties": {
         "id": "51-00020",
-        "name": "pharmacie",
-        "name_fr": "pharmacie",
+        "name": null,
+        "name_fr": null,
         "name_ar": null,
         "wilaya_code": "51",
         "commune_code": "0705",
@@ -119503,9 +119727,9 @@
         "name": "Pharmacie Pin",
         "name_fr": "Pharmacie Pin",
         "name_ar": "بين",
-        "wilaya_code": "65",
-        "commune_code": "1709",
-        "commune": "Bouira Lahdab",
+        "wilaya_code": "68",
+        "commune_code": null,
+        "commune": "Menaa",
         "lat": 35.149133,
         "lng": 3.677984,
         "geo_precision": "exact",
@@ -119532,7 +119756,7 @@
       },
       "properties": {
         "id": "65-00021",
-        "name": "Pharmacie Begaa",
+        "name": "الحياة",
         "name_fr": "Pharmacie Begaa",
         "name_ar": "الحياة",
         "wilaya_code": "65",
@@ -119628,7 +119852,7 @@
       },
       "properties": {
         "id": "65-00024",
-        "name": "Pharmacie Sidi Ladjel",
+        "name": "سيدي لعجال",
         "name_fr": "Pharmacie Sidi Ladjel",
         "name_ar": "سيدي لعجال",
         "wilaya_code": "65",
@@ -119663,9 +119887,9 @@
         "name": null,
         "name_fr": null,
         "name_ar": null,
-        "wilaya_code": "65",
-        "commune_code": "1709",
-        "commune": "Bouira Lahdab",
+        "wilaya_code": "68",
+        "commune_code": null,
+        "commune": "Menaa",
         "lat": 35.146294,
         "lng": 3.682922,
         "geo_precision": "exact",
@@ -120464,8 +120688,8 @@
         "name_fr": "pharmacie driss A",
         "name_ar": null,
         "wilaya_code": "68",
-        "commune_code": "2820",
-        "commune": "Bou Saada",
+        "commune_code": "2821",
+        "commune": "Ouled Sidi Brahim",
         "lat": 35.321765,
         "lng": 4.162846,
         "geo_precision": "exact",
@@ -120496,8 +120720,8 @@
         "name_fr": "pharmacie gagui oussama",
         "name_ar": null,
         "wilaya_code": "68",
-        "commune_code": "2820",
-        "commune": "Bou Saada",
+        "commune_code": "2821",
+        "commune": "Ouled Sidi Brahim",
         "lat": 35.297223,
         "lng": 4.17389,
         "geo_precision": "exact",

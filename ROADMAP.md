@@ -62,12 +62,15 @@ reads as further along than it is.
 
 - [ ] **`code_commune` duplicates are ingestion corruption, not a scheme.**
   34 duplicated code groups (79 rows); in 33 of them every colliding row also
-  shares one identical postal_code, the signature of a forward-fill bug in the
+  shared one identical postal_code, the signature of a forward-fill bug in the
   original ingestion. The code is the pre-2026 ONS code and was never meant to
-  collide. Needs a per-row re-derivation against an ONS table, and the same
-  pass should settle the postal-code wilaya-prefix inconsistency (some new-
-  wilaya communes carry new-prefix postals, some keep the parent's).
-  _(logged 2026-07-29)_
+  collide. Needs a per-row re-derivation against an ONS table. The POSTAL half
+  of this item shipped 2026-08-07 (1.3.0, PR #168): codes are now derived from
+  each commune's own Algérie Poste offices (`scripts/fix-commune-postal-codes.mjs`,
+  rerunnable), zero duplicate postal codes remain, and the wilaya-prefix
+  question resolved itself by policy: the operator keeps mother-wilaya
+  prefixes for reform daughters, so we do too. `code_commune` itself is still
+  the open half. _(logged 2026-07-29; postal half shipped 2026-08-07)_
 
 - [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
@@ -97,6 +100,122 @@ reads as further along than it is.
   eliminated elsewhere). Until diagnosed, do NOT regenerate ferroviaire; the
   regeneration was reverted and only the helper fix shipped.
   _(logged 2026-08-03)_
+
+- [ ] **`carryOverIds` does not persist retirements, so a retired id becomes
+  reusable one survey later.** The reserve set is built from the committed file
+  alone (`scripts/lib/v2-transforms.mjs:978`), so an id only stays protected
+  while the record that held it is still in the data. Once a release that drops
+  a record merges, that id is absent from the next run's `committed`, and the
+  re-home loop preferentially fills the lowest free slot, so it actively hands
+  the gap to an unrelated new record. Reproduced end to end on pharmacies: with
+  the 2026-08 data committed, a synthetic new Ghardaïa pharmacy is assigned
+  `47-00001`, the id that belonged to a different pharmacy removed in that same
+  release. Latent gaps already sit in the committed data: `16-00454` in ecoles,
+  and `30-005`, `30-010`, `58-003` in protection-civile. Note the widths, these
+  are the real committed ids. Fix shape: persist retirements, either a
+  per-package `retired-ids.json` or a `reserved` parameter seeded into the set
+  at `v2-transforms.mjs:978`, plus a run N+1 case in
+  `test/carry-over-ids.test.mjs`. The current shrink test only models run N, so
+  it asserts the retired id is not reused within a single run and cannot catch
+  this. _(logged 2026-08-08)_
+
+- [ ] **pharmacies is the last generator bypassing `writePackageV2`.**
+  `packages/pharmacies/scripts/fetch.mjs` hand-rolls `buildMetadata` + `toCSV` +
+  `toGeoJSON` and has no `writeCapture` source capture, so it skips
+  `validateRecords`, `demoteSharedPoints`, the source-declared check, atomic
+  writes and `colsFor`. Two defects traced to exactly that during the 2026-08
+  re-survey: ids churned because nothing called `carryOverIds`, and
+  `evidence_type` silently vanished from the OpenStreetMap source because
+  `buildMetadata` passes `sources[]` through verbatim. Both were patched in
+  place; the durable fix is to migrate the package onto the shared writer, after
+  which the `evidence_type` pin becomes redundant but harmless. Its local
+  `attachCommune` also predates the boundary guard in the entry above.
+  _(logged 2026-08-08)_
+
+## Transport
+
+- [ ] **`@geoalgeria/buses` re-extracted from OSM route relations (breaking,
+  3.0.0).** The package today is 50 ETUSA lines scraped from Wikipedia with
+  **no coordinates at all**: line-level attributes, `lat`/`lng` null on every
+  record, `geocoded_pct` 0. Its coverage note says OSM `route=bus` coverage
+  tagged ETUSA "is currently thin", and **that is now stale**. Measured against
+  a live Overpass pull on 2026-08-09 (`timestamp_osm_base`
+  2026-08-09T10:51:50Z):
+
+  - **215 bus route relations in Algeria**, of which **100 are ETUSA** (network
+    `إيتوزا` / `ETUSA`), plus Tiaret 28 (ETUS TIARET + the wilaya transport
+    directorate), Setif 5, and smaller sets in Ain Defla, Jijel and elsewhere.
+  - **All 100 ETUSA relations carry drawable geometry**, 1,250 km of route in
+    total; 99 are named, 99 carry `from`/`to`, 48 carry `via`, 53 carry an
+    official line `colour`, and **78 carry stop or platform members**.
+
+  So the deferral reason recorded in the coverage note no longer holds, and the
+  package can go from attribute-only to geometry-bearing with real stops. That
+  is a breaking change (records gain geometry, the id scheme changes from
+  Wikipedia line numbers to OSM relation ids), hence 3.0.0.
+
+  **What the data still cannot support, and must not be claimed:** there are
+  **zero** `interval`, `duration` and `frequency` tags across the 100 ETUSA
+  relations, and only 25 carry `opening_hours`. So the package can answer which
+  lines exist, where they run and where they stop, but never how long a trip
+  takes. Journey planning needs timetables Algeria does not publish openly (no
+  GTFS), and deriving a duration from route length would put a fabricated
+  number beside sourced ones, the same call already made for flight durations
+  in the Aviation section.
+
+  Demand signal: a user on Reddit (2026-08-09) describing exactly this gap,
+  planning a move to an unfamiliar area with no way to see what serves it.
+  _(logged 2026-08-09)_
+
+- [ ] **Intercity coach schedules are a licence problem, not a scraping
+  problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction
+  above cannot answer the question a person moving to another wilaya actually
+  asks. The intercity network belongs to **SOGRAL**, the state operator of the
+  gares routieres, whose own app **MAHATATI** (`com.sogral.mobile`) already
+  carries departures, times, fares, operator names and itineraries, and since
+  May 2026 sells tickets through it with CIB / EDAHABIA payment.
+
+  Do **not** extract it. SOGRAL's schedules carry no open licence, so
+  republishing them as a package under MIT or ODbL would be a false licence
+  claim, the same objection that ruled out Google Places for `cliniques`. The
+  app now fronts a payment flow, which makes reverse-engineering its API a
+  different risk class entirely. And a dataset built on a private app API rots
+  silently when the API moves.
+
+  The path is to **ask SOGRAL for a feed, ideally GTFS**. This repo already
+  publishes their 74 gares routieres (`@geoalgeria/gares-routieres`, "Data (c)
+  SOGRAL; redistributed for reference"), so the ask comes from a project
+  already carrying their network with attribution, not from a stranger. GTFS is
+  the framing most likely to land: publish once, every transit app can consume
+  it, including MAHATATI's competitors and this atlas.
+
+  **The web surface is `mahatati.sogral.com`** (`live.sogral.com` refused
+  connections on both HTTPS and HTTP; treat it as dead). It is a public page
+  with no login, backed by an undocumented but unauthenticated JSON API:
+
+  - `api/live/summary` and `api/live/summary/{agencyId}`: live counters
+    (planned / open / completed / cancelled departures, reservations).
+  - `api/live/destinations/{agencyId}`: destinations served from a station.
+  - `api/live/departures/infos/route/{agencyId}/{headOfLineId}/{routeId}`: the
+    itinerary, each stop's commune and wilaya plus the **fare in DA**.
+
+  The page's own selects carry 73 departure stations and about 180 destinations,
+  and the results table carries departure time, operator, zone, seats available
+  and status.
+
+  So extraction is technically trivial, and that changes nothing about the
+  answer: the footer reads "Copyright (c) 2021 EPE SOGRAL Spa, tous droits
+  reserves", there is no licence under which this repo could restate the data,
+  and every record here has to carry one. What it does change is the ask. SOGRAL
+  has already built the API; the request is now to document it and licence it,
+  or emit GTFS from it, rather than to build anything. That is a much cheaper
+  yes. Contact is on the page: contact@sogral.dz, 021.77.00.77.
+
+  Legitimate without any permission, and worth doing: cross-check the 74
+  stations in `@geoalgeria/gares-routieres` against the 73 their page lists, to
+  catch renames, closures and new stations. That is reference use of a public
+  page on exactly the basis this repo already redistributes their station list.
+  _(logged 2026-08-09)_
 
 ## Releases
 
