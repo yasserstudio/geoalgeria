@@ -24,7 +24,7 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : de
 
 [![L'atlas GeoAlgeria sur geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
 
-**[geoalgeria.com](https://geoalgeria.com)** réunit 28+ jeux de données et 77 000+ enregistrements sur une seule carte interactive, redessinée pour les 69 wilayas.
+**[geoalgeria.com](https://geoalgeria.com)** réunit 28+ jeux de données et 80 000+ enregistrements sur une seule carte interactive, redessinée pour les 69 wilayas.
 
 - **[Atlas multisectoriel](https://geoalgeria.com) :** tous les secteurs sur une même carte, des bureaux de poste aux mosquées et aux hôpitaux, avec une vue de densité par wilaya.
 - **[Carte des feux en direct](https://geoalgeria.com/fires) :** les points chauds satellite NASA FIRMS aux côtés des bulletins officiels de la Protection Civile, mis à jour tout au long de la saison des feux (lancée le 23 juillet 2026).

@@ -24,7 +24,7 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 [![The GeoAlgeria atlas at geoalgeria.com](assets/screenshots/atlas-home.png)](https://geoalgeria.com)
 
-**[geoalgeria.com](https://geoalgeria.com)** puts 28+ datasets and 77,000+ records on one interactive map, redrawn for the 69 wilayas.
+**[geoalgeria.com](https://geoalgeria.com)** puts 28+ datasets and 80,000+ records on one interactive map, redrawn for the 69 wilayas.
 
 - **[Cross-sector atlas](https://geoalgeria.com):** every sector on a single map, from post offices to mosques to hospitals, with a per-wilaya density view.
 - **[Live wildfire map](https://geoalgeria.com/fires):** NASA FIRMS satellite hotspots alongside official Civil Protection bulletins, updated through the fire season (launched 23 July 2026).

@@ -21,6 +21,16 @@ centroïde de commune) avec rattachement commune/wilaya.
 Livré en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
+> **Le volet communautaire vit dans [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), et les deux ne doivent jamais être additionnés.**
+> Ce paquet est le volet *registre* : les établissements publics que gère le
+> ministère de la Santé, officiel et clos. `cliniques` est le volet
+> *communautaire* : 1 894 polycliniques, salles de soins, centres de santé,
+> maternités et cliniques cartographiés par les contributeurs OpenStreetMap,
+> partiel par nature. Tout élément OSM référencé par un enregistrement d'ici en
+> est exclu par construction, donc aucun lieu n'est publié deux fois sous le
+> même élément, mais les deux décrivent des volets différents d'un système de
+> santé : additionner 695 et 1 894 ne compte rien de réel.
+
 ```bash
 npm install @geoalgeria/sante
 ```
@@ -144,8 +154,10 @@ data/
 (le MSP ne publie pas de code) – opaque, unique au sein de `sante.json`.
 `name` est le nom français s'il existe, sinon l'arabe. `type` est déduit du
 titre ; `wilaya_code` de l'étiquette du MSP. `sector` vaut `"public"` pour tout
-le registre MSP (les cliniques privées, une fois ajoutées, porteront
-`"private"`). `source` vaut toujours `"msp"` (le registre du Ministère de la
+le registre MSP, qui ne liste aucun établissement privé ; les structures privées
+que cartographie OpenStreetMap vivent dans
+[`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques).
+`source` vaut toujours `"msp"` (le registre du Ministère de la
 Santé) ; `refs` porte les identifiants de provenance ayant contribué –
 toujours `msp`, plus `osm` ou `wikidata` quand la coordonnée a été remplacée
 par un point précis. `geo_precision` vaut `"exact"`, `"approximate"` ou
