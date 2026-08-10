@@ -19,6 +19,15 @@ OpenStreetMap/Wikidata point, 476 to a commune centroid) with commune/wilaya
 linkage. Shipped as JSON, CSV, GeoJSON, and
 TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
+> **The community tier lives in [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques), and the two must not be summed.**
+> This package is the *registry* tier: the public establishments the Ministry of
+> Health runs, official and closed. `cliniques` is the *community* tier: 1,894
+> polycliniques, salles de soins, centres de santé, maternités and clinics
+> mapped by OpenStreetMap volunteers, partial by nature. Every OSM element a
+> record here references is excluded there by construction, so no place is
+> published twice under the same element, but the two describe different tiers
+> of a health system and adding 695 to 1,894 counts nothing real.
+
 ```bash
 npm install @geoalgeria/sante
 ```
@@ -143,8 +152,10 @@ data/
 MoH publishes no establishment code), opaque, unique within `sante.json`.
 `name` is the French name where available, else Arabic. `type` is derived from
 the establishment's title; `wilaya_code` from the MoH's wilaya tag. `sector` is
-`"public"` for the whole MoH registry (private clinics, when added, will carry
-`"private"`). `source` is always `"msp"` (the Ministry of Health registry);
+`"public"` for the whole MoH registry, which lists no private establishment at
+all; the private facilities OpenStreetMap records live in
+[`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques).
+`source` is always `"msp"` (the Ministry of Health registry);
 `refs` carries the per-provenance ids that contributed the record, `msp`
 always, plus `osm` or `wikidata` when the coordinate was upgraded to a precise
 point. `geo_precision` is `"exact"`, `"approximate"`, or `null`; `geo_method`
