@@ -17,11 +17,17 @@
     "name": "Algeria",
     "geo": {
       "@type": "GeoShape",
-      "box": "22.817813 -2.199312 36.890589 9.562312"
+      "box": "22.817813 -8.1254 36.890589 9.562312"
     }
   },
-  "variableMeasured": "74 records, 51 wilayas",
+  "variableMeasured": "74 records, 52 wilayas",
   "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "retired-ids (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/gares-routieres/data/retired-ids.json"
+    },
     {
       "@type": "DataDownload",
       "name": "stations (JSON)",

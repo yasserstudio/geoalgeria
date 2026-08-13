@@ -72,6 +72,16 @@ reads as further along than it is.
   prefixes for reform daughters, so we do too. `code_commune` itself is still
   the open half. _(logged 2026-07-29; postal half shipped 2026-08-07)_
 
+- [ ] **Arabic name hygiene surfaced by the 2026-08-13 snippet audit.** 22
+  commune `name_ar` values in wilaya 15 carry decorative tatweel/kashida
+  characters (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken
+  typography in search snippets; the app stripped them in its committed copy,
+  so the next core regeneration must strip them at source or the lockstep
+  resurrects the artifact. Separately, dairas have NO Arabic name field at
+  all, so Arabic commune pages either showed the French daira name in Latin
+  script (fixed app-side by omitting the daira clause in Arabic) or nothing;
+  an `name_ar` for dairas would let the clause return. _(logged 2026-08-13)_
+
 - [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
   coordinates ~1 degree apart. Which side is right is unresolved; verify

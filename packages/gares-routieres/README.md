@@ -47,7 +47,7 @@ const inSetif = gares.stationsByWilaya(19);    // stations in wilaya 19
 | --- | --- | --- |
 | Intercity bus stations | **74** | official name, address, coordinates, surface areas |
 
-Spanning **51 wilayas**, every station geocoded. `wilaya_code` is linked against the
+Spanning **52 wilayas**, every station geocoded. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
 
 ## Formats
@@ -93,7 +93,8 @@ data/
   "geo_method": "exact",
   "source": "sogral",
   "refs": {
-    "sogral": "213-000016000"
+    "sogral": "213-000016000",
+    "mahatati_agency": "1"
   },
   "official_name": "La gare routière des Grands Invalides de la guerre de libération nationale",
   "address": "Avenue de L’ALN B.P n°412 – 16040 – Hussein Dey (Alger)",
@@ -106,7 +107,13 @@ data/
 don't parse it. `wilaya_code`/`commune` come from a nearest-centroid join against
 `geoalgeria` (which also reconciles SOGRAL's legacy 48-wilaya codes). 71 of 74 stations
 are `geo_precision: "exact"`; 3 are `"approximate"` (Guelma, Illizi, Aïn Oussara). The
-SOGRAL location code lives under `refs.sogral`.
+SOGRAL location code lives under `refs.sogral`; it is a **town-level** id shared by
+twin stations of one town (Annaba and Sidi Brahim, the three Constantine gares), so
+never treat it as a station key. `refs.mahatati_agency` is the per-station MAHATATI
+departure-agency id (absent only for In Saleh, which is not a departure agency).
+Retired ids are listed in `data/retired-ids.json` and are never reassigned:
+`33-01` belonged to Tindouf while a sign-flipped source longitude placed it in
+Illizi; the corrected station is `37-01`.
 
 ## Need the administrative divisions too?
 

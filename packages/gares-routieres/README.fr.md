@@ -45,7 +45,7 @@ const setif = gares.stationsByWilaya(19);      // gares de la wilaya 19
 | --- | --- | --- |
 | Gares routières | **74** | nom officiel, adresse, coordonnées, superficies |
 
-Couvrant **51 wilayas**, toutes géocodées. `wilaya_code` est lié au modèle à 69 wilayas de
+Couvrant **52 wilayas**, toutes géocodées. `wilaya_code` est lié au modèle à 69 wilayas de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ## Formats

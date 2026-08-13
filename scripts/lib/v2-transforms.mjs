@@ -340,7 +340,10 @@ export const MIGRATIONS = {
       wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
       ...geoAt(r, r.geo_precision === "exact" ? "exact" : "approximate", r.geo_precision),
       source: "sogral",
-      refs: refs({ sogral: r.sogral_code }),
+      // `sogral` is a TOWN-level place id shared by twin stations (Annaba and
+      // Sidi Brahim, the three Constantine gares): never treat it as a station
+      // key. `mahatati_agency` is the per-station MAHATATI departure-agency id.
+      refs: refs({ sogral: r.sogral_code, mahatati_agency: r.mahatati_agency }),
       official_name: r.official_name, address: r.address,
       surface_total_m2: r.surface_total_m2, surface_built_m2: r.surface_built_m2,
     }),
