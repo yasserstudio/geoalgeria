@@ -94,6 +94,24 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  "gares-routieres": {
+    // NAAMA is one of six stations SOGRAL ships with a corrupted longitude. The
+    // migration-era input carries the bad point, and because wilaya and commune
+    // are derived from the point, it also carries the wilaya and commune that
+    // point fell in, and therefore an id in the wrong wilaya. The current
+    // pipeline corrects the coordinate in fetch.mjs (OSM way 304431817, the
+    // source's own latitude with the longitude's sign restored), so everything
+    // downstream of it moves with it. This is the correction, not id-rule
+    // drift: 69-02 is retired in retired-ids.json and can never be reissued.
+    "69-02": {
+      id: "45-03",
+      wilaya_code: "45",
+      commune_code: "4501",
+      commune: "Naama",
+      lat: 33.2814,
+      lng: -0.3072,
+    },
+  },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
     // nearest-centroid join had labelled it Bab Ezzouar. Corrected via

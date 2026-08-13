@@ -576,18 +576,18 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.308187,
-          34.656563
+          -1.3082,
+          34.6566
         ]
       },
       "properties": {
-        "id": "14-01",
+        "id": "13-02",
         "name": "SEBDOU",
-        "wilaya_code": "14",
-        "commune_code": "1420",
-        "commune": "Naima",
-        "lat": 34.656563,
-        "lng": 1.308187,
+        "wilaya_code": "13",
+        "commune_code": "1335",
+        "commune": "Sebdou",
+        "lat": 34.6566,
+        "lng": -1.3082,
         "geo_precision": "exact",
         "geo_method": "exact",
         "source": "sogral",
@@ -599,6 +599,36 @@
         "address": "Cité Tebouda Sebdou",
         "surface_total_m2": 45000,
         "surface_built_m2": 292
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.7734,
+          34.8415
+        ]
+      },
+      "properties": {
+        "id": "13-03",
+        "name": "MAGHENIA",
+        "wilaya_code": "13",
+        "commune_code": "1327",
+        "commune": "Maghnia",
+        "lat": 34.8415,
+        "lng": -1.7734,
+        "geo_precision": "exact",
+        "geo_method": "exact",
+        "source": "sogral",
+        "refs": {
+          "sogral": "213-000013027",
+          "mahatati_agency": "81"
+        },
+        "official_name": "Gare routière Maghnia",
+        "address": "Cité djerba Maghnia",
+        "surface_total_m2": 63513,
+        "surface_built_m2": 545492
       }
     },
     {
@@ -629,36 +659,6 @@
         "address": "Route de Ain Guessam Tiaret",
         "surface_total_m2": 40000,
         "surface_built_m2": 3000
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.773312,
-          34.841313
-        ]
-      },
-      "properties": {
-        "id": "14-03",
-        "name": "MAGHENIA",
-        "wilaya_code": "14",
-        "commune_code": "1441",
-        "commune": "Faidja",
-        "lat": 34.841313,
-        "lng": 1.773312,
-        "geo_precision": "exact",
-        "geo_method": "exact",
-        "source": "sogral",
-        "refs": {
-          "sogral": "213-000013027",
-          "mahatati_agency": "81"
-        },
-        "official_name": "Gare routière Maghnia",
-        "address": "Cité djerba Maghnia",
-        "surface_total_m2": 63513,
-        "surface_built_m2": 545492
       }
     },
     {
@@ -1266,36 +1266,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.2214949,
-          35.7216235
-        ]
-      },
-      "properties": {
-        "id": "31-01",
-        "name": "RELIZANE",
-        "wilaya_code": "31",
-        "commune_code": "3108",
-        "commune": "Marsat El Hadjadj",
-        "lat": 35.7216235,
-        "lng": -0.2214949,
-        "geo_precision": "exact",
-        "geo_method": "exact",
-        "source": "sogral",
-        "refs": {
-          "sogral": "213-000048001",
-          "mahatati_agency": "64"
-        },
-        "official_name": "Gare routière Ben Daoued Relizane",
-        "address": "Commune de Ben Daoud Relizane",
-        "surface_total_m2": 80000,
-        "surface_built_m2": 14800
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           1.0276875,
           33.6701875
         ]
@@ -1319,36 +1289,6 @@
         "address": "Rue d’Aflou El Bayadh",
         "surface_total_m2": 19370,
         "surface_built_m2": 600
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.0276875,
-          33.3774736
-        ]
-      },
-      "properties": {
-        "id": "32-02",
-        "name": "EL OUED",
-        "wilaya_code": "32",
-        "commune_code": "3215",
-        "commune": "Krakda",
-        "lat": 33.3774736,
-        "lng": 1.0276875,
-        "geo_precision": "exact",
-        "geo_method": "exact",
-        "source": "sogral",
-        "refs": {
-          "sogral": "213-000039001",
-          "mahatati_agency": "46"
-        },
-        "official_name": "Gare routière El Moudjahid Ben Amar Lakhdar",
-        "address": "Cité 19 mars 1962",
-        "surface_total_m2": 50000,
-        "surface_built_m2": 3666
       }
     },
     {
@@ -1566,6 +1506,36 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          6.8612,
+          33.3362
+        ]
+      },
+      "properties": {
+        "id": "39-01",
+        "name": "EL OUED",
+        "wilaya_code": "39",
+        "commune_code": "3904",
+        "commune": "Bayadha",
+        "lat": 33.3362,
+        "lng": 6.8612,
+        "geo_precision": "exact",
+        "geo_method": "exact",
+        "source": "sogral",
+        "refs": {
+          "sogral": "213-000039001",
+          "mahatati_agency": "46"
+        },
+        "official_name": "Gare routière El Moudjahid Ben Amar Lakhdar",
+        "address": "Cité 19 mars 1962",
+        "surface_total_m2": 50000,
+        "surface_built_m2": 3666
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           7.1379556,
           35.4383692
         ]
@@ -1746,6 +1716,66 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.5963,
+          32.7636
+        ]
+      },
+      "properties": {
+        "id": "45-02",
+        "name": "AIN SEFRA",
+        "wilaya_code": "45",
+        "commune_code": "4503",
+        "commune": "Ain Sefra",
+        "lat": 32.7636,
+        "lng": -0.5963,
+        "geo_precision": "exact",
+        "geo_method": "exact",
+        "source": "sogral",
+        "refs": {
+          "sogral": "213-000045003",
+          "mahatati_agency": "26"
+        },
+        "official_name": "Gare routière Echahid Ben Amara Boutkhil",
+        "address": "Route nationale n°06 Aïn Sefra",
+        "surface_total_m2": 23000,
+        "surface_built_m2": 2000
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3072,
+          33.2814
+        ]
+      },
+      "properties": {
+        "id": "45-03",
+        "name": "NAAMA",
+        "wilaya_code": "45",
+        "commune_code": "4501",
+        "commune": "Naama",
+        "lat": 33.2814,
+        "lng": -0.3072,
+        "geo_precision": "exact",
+        "geo_method": "exact",
+        "source": "sogral",
+        "refs": {
+          "sogral": "213-000045001",
+          "mahatati_agency": "59"
+        },
+        "official_name": "Gare routière Naâma",
+        "address": "Route nationale n°06 Naâma",
+        "surface_total_m2": 40000,
+        "surface_built_m2": 1500
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.149688,
           35.313063
         ]
@@ -1829,6 +1859,36 @@
         "address": "Bouheraoua commune de ghardaia",
         "surface_total_m2": 40000,
         "surface_built_m2": 3200
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.525,
+          35.7228
+        ]
+      },
+      "properties": {
+        "id": "48-01",
+        "name": "RELIZANE",
+        "wilaya_code": "48",
+        "commune_code": "4835",
+        "commune": "Bendaoud",
+        "lat": 35.7228,
+        "lng": 0.525,
+        "geo_precision": "exact",
+        "geo_method": "exact",
+        "source": "sogral",
+        "refs": {
+          "sogral": "213-000048001",
+          "mahatati_agency": "64"
+        },
+        "official_name": "Gare routière Ben Daoued Relizane",
+        "address": "Commune de Ben Daoud Relizane",
+        "surface_total_m2": 80000,
+        "surface_built_m2": 14800
       }
     },
     {
@@ -2158,66 +2218,6 @@
         "address": "Route Ain El Ibel Messaad",
         "surface_total_m2": 20000,
         "surface_built_m2": 1000
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.596938,
-          32.763063
-        ]
-      },
-      "properties": {
-        "id": "69-01",
-        "name": "AIN SEFRA",
-        "wilaya_code": "69",
-        "commune_code": "3207",
-        "commune": "Labiodh Sidi Cheikh",
-        "lat": 32.763063,
-        "lng": 0.596938,
-        "geo_precision": "exact",
-        "geo_method": "exact",
-        "source": "sogral",
-        "refs": {
-          "sogral": "213-000045003",
-          "mahatati_agency": "26"
-        },
-        "official_name": "Gare routière Echahid Ben Amara Boutkhil",
-        "address": "Route nationale n°06 Aïn Sefra",
-        "surface_total_m2": 23000,
-        "surface_built_m2": 2000
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          0.3076875,
-          33.2814375
-        ]
-      },
-      "properties": {
-        "id": "69-02",
-        "name": "NAAMA",
-        "wilaya_code": "69",
-        "commune_code": "3219",
-        "commune": "El Mehara",
-        "lat": 33.2814375,
-        "lng": 0.3076875,
-        "geo_precision": "exact",
-        "geo_method": "exact",
-        "source": "sogral",
-        "refs": {
-          "sogral": "213-000045001",
-          "mahatati_agency": "59"
-        },
-        "official_name": "Gare routière Naâma",
-        "address": "Route nationale n°06 Naâma",
-        "surface_total_m2": 40000,
-        "surface_built_m2": 1500
       }
     }
   ]

@@ -27,7 +27,19 @@ const AGENCIES = JSON.parse(
   readFileSync(join(ROOT, "research/gares-routieres/mahatati-agency-ids.json"), "utf-8"),
 ).agencies;
 
-// OSM-verified coordinate fixes for the 4 records SOGRAL ships broken.
+// OSM-verified coordinate fixes for the records SOGRAL ships broken.
+//
+// A wrong coordinate is never only a wrong dot here: `attachCommune` below
+// derives wilaya and commune from the point and overwrites the source's own
+// wilaya_code with them, so a station lands in the wrong wilaya AND is renamed
+// after whatever commune it fell in. SOGRAL's EL OUED was published as
+// "Krakda", 540 km away. In every case below the source's own wilaya_code,
+// official_name and address already said where the station is; only the
+// coordinate disagreed.
+//
+// The recurring corruption is a longitude that lost its sign. Where OSM has the
+// gare mapped, it sits at the source's own latitude with the longitude negated,
+// which is what confirms the diagnosis rather than merely fitting it.
 const COORD_FIX = {
   86: { lat: 33.1064, lng: 6.0721, geo_precision: "exact" }, // TOUGGOURT
   87: { lat: 24.5532, lng: 9.4841, geo_precision: "exact" }, // DJANET
@@ -36,6 +48,35 @@ const COORD_FIX = {
   // 8.13°W), which also mis-derived wilaya 33/Illizi from the wrong point.
   // OSM node 4593158192 (سوقرال محطة تندوف).
   23: { lat: 27.6664, lng: -8.1254, geo_precision: "exact" },
+
+  // Sign-flipped longitudes, all four confirmed against the source's own
+  // wilaya_code (13, 13, 45, 45) which the bad points overrode.
+  // MAGHENIA: OSM way 1214562347 "Maghnia Bus Station", the source's latitude
+  // to 4 dp with the longitude negated. Published as "Faidja", 320 km away.
+  81: { lat: 34.8415, lng: -1.7734, geo_precision: "exact" },
+  // AIN SEFRA: OSM way 307745928 "Gare routière". Same latitude, negated
+  // longitude. Published as "Labiodh Sidi Cheikh", 110 km away.
+  26: { lat: 32.7636, lng: -0.5963, geo_precision: "exact" },
+  // NAAMA: OSM way 304431817 "Gare routière de Nâama". Same latitude, negated
+  // longitude. Published as "El Mehara", 58 km away.
+  59: { lat: 33.2814, lng: -0.3072, geo_precision: "exact" },
+  // SEBDOU: the one flip OSM cannot corroborate, because no gare is mapped at
+  // Sebdou at all. This is the source's own coordinate with the sign restored,
+  // which lands 2 km north of Sebdou town on the Cité Tebouda side its address
+  // names. Published as "Naima", 241 km away.
+  66: { lat: 34.6566, lng: -1.3082, geo_precision: "exact" },
+
+  // Not sign flips: these two carry a longitude unrelated to the station.
+  // EL OUED: OSM way 433835302 "المحطة البرية لنقل المسافرين المجاهد لخضر بن عمر",
+  // which is this record's official_name. Source longitude 1.0277 for a station
+  // at 6.86°E. Published as "Krakda", 542 km away.
+  46: { lat: 33.3362, lng: 6.8612, geo_precision: "exact" },
+  // RELIZANE: OSM way 293130423 "Gare routière Ouest Relizane", 600 m from OSM
+  // node 869351826 "Bendaoud", the commune this record's address names ("Commune
+  // de Ben Daoud Relizane"); Relizane's other gare, "Est", is not it. The source
+  // kept the latitude and lost the longitude entirely (-0.2215 for 0.52°E).
+  // Published as "Marsat El Hadjadj", 70 km away.
+  64: { lat: 35.7228, lng: 0.5250, geo_precision: "exact" },
 };
 
 const raw = JSON.parse(readFileSync(SRC, "utf-8"));
