@@ -207,42 +207,52 @@ reads as further along than it is.
   carries departures, times, fares, operator names and itineraries, and since
   May 2026 sells tickets through it with CIB / EDAHABIA payment.
 
-  Do **not publish or repackage** it. SOGRAL's schedules carry no open licence,
-  so republishing them as a package under MIT or ODbL would be a false licence
-  claim, the same objection that ruled out Google Places for `cliniques`. The
-  app now fronts a payment flow, which makes reverse-engineering its API a
-  different risk class entirely. And a dataset built on a private app API rots
-  silently when the API moves.
+  Do **not package** it. SOGRAL's schedules carry no open licence, so shipping
+  them as a package under MIT or ODbL would be a false licence claim, the same
+  objection that ruled out Google Places for `cliniques`. The app now fronts a
+  payment flow, which makes reverse-engineering its API a different risk class
+  entirely. And a dataset built on a private app API rots silently when the API
+  moves.
+
+  Since 2026-08-13 the boundary is drawn one level finer, and the split is
+  between the network and the schedule rather than between local and public.
+  The **observed connection graph** is published on the app's `/departures` map
+  as app-served data with attribution, an observation date and no licence claim
+  (see `research/sogral/README.md`): which towns a public bus service connects,
+  and roughly how long the journey takes, are observation-grade facts reported
+  with attribution. The **timetable** is not published in any form and is not
+  waiting on permission to be, because we are not asking for any. It cannot be
+  kept true, and a stale departure time strands a traveller. This changes
+  nothing for npm: no capture, and no derivation of one, becomes an
+  `@geoalgeria` package.
 
   A local, gitignored **research capture** now exists in `research/sogral/`.
   It preserves the public station directory and live aggregate counters, can
   build the station-to-destination matrix, submits the public anti-forgery form
   sequentially for one declared service date, and enriches only the observed
   route variants from the unauthenticated route-detail endpoint. It never
-  enters the booking or payment flow. It is evidence for the SOGRAL/GTFS
-  discussion and a development-only Atlas preview, not a product feed or an
-  open dataset. The capture README records the source, observed endpoint
+  enters the booking or payment flow. It is the source of the published network
+  graph and the home of everything that stays unpublished, not a product feed or
+  an open dataset. The capture README records the source, observed endpoint
   schema, refresh limits and the distinction between departure time, SOGRAL's
   segment estimates and the page's separate Google driving estimate.
 
-  At the next `gares-routieres` bump, three fixes from the research belong in
-  the package: add a per-station `refs.mahatati_agency` (the MAHATATI agency
-  id observed for each departure station, so downstream joins stop depending
-  on name normalization); document that the existing `refs.sogral` is a
-  **town-level** place id shared by twin stations (Annaba and Sidi Brahim,
-  the three Constantine gares), so consumers must never treat it as a station
-  key; and repair station `33-01 TINDOUF`, whose longitude lost its sign
-  (+8.125 instead of about -8.15 at Tindouf's latitude 27.667), landing it in
-  the empty Illizi desert and deriving the wrong wilaya/commune (33/3301
-  instead of Tindouf's 37) from the flipped point. The public map draws it
-  there today.
+  Three fixes the research found shipped in `gares-routieres` 2.1.0: the
+  per-station `refs.mahatati_agency` (the MAHATATI agency id observed for each
+  departure station, so downstream joins stop depending on name normalization);
+  documentation that the existing `refs.sogral` is a **town-level** place id
+  shared by twin stations (Annaba and Sidi Brahim, the three Constantine
+  gares), which consumers must never treat as a station key; and station
+  `33-01 TINDOUF`, whose longitude had lost its sign (+8.125 instead of about
+  -8.15 at latitude 27.667), landing it in the empty Illizi desert and deriving
+  wilaya/commune 33/3301 instead of Tindouf's 37. It is now `37-01`, drawn in
+  Tindouf, with the old id retired.
 
-  The path is to **ask SOGRAL for a feed, ideally GTFS**. This repo already
-  publishes their 74 gares routieres (`@geoalgeria/gares-routieres`, "Data (c)
-  SOGRAL; redistributed for reference"), so the ask comes from a project
-  already carrying their network with attribution, not from a stranger. GTFS is
-  the framing most likely to land: publish once, every transit app can consume
-  it, including MAHATATI's competitors and this atlas.
+  A feed from SOGRAL, ideally GTFS, remains the only thing that would make the
+  timetable publishable: publish once, every transit app consumes it, including
+  MAHATATI's competitors and this atlas. **We are not asking for one**, by
+  project decision, so this is recorded as the shape of a solution rather than
+  as a plan. Nothing in this repo is blocked waiting on a reply.
 
   **The web surface is `mahatati.sogral.com`** (`live.sogral.com` refused
   connections on both HTTPS and HTTP; treat it as dead). It is a public page
