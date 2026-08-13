@@ -189,7 +189,7 @@ reads as further along than it is.
   planning a move to an unfamiliar area with no way to see what serves it.
   _(logged 2026-08-09)_
 
-- [ ] **Intercity coach schedules are a licence problem, not a scraping
+- [ ] **Intercity bus schedules are a licence problem, not a scraping
   problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction
   above cannot answer the question a person moving to another wilaya actually
   asks. The intercity network belongs to **SOGRAL**, the state operator of the
@@ -197,12 +197,35 @@ reads as further along than it is.
   carries departures, times, fares, operator names and itineraries, and since
   May 2026 sells tickets through it with CIB / EDAHABIA payment.
 
-  Do **not** extract it. SOGRAL's schedules carry no open licence, so
-  republishing them as a package under MIT or ODbL would be a false licence
+  Do **not publish or repackage** it. SOGRAL's schedules carry no open licence,
+  so republishing them as a package under MIT or ODbL would be a false licence
   claim, the same objection that ruled out Google Places for `cliniques`. The
   app now fronts a payment flow, which makes reverse-engineering its API a
   different risk class entirely. And a dataset built on a private app API rots
   silently when the API moves.
+
+  A local, gitignored **research capture** now exists in `research/sogral/`.
+  It preserves the public station directory and live aggregate counters, can
+  build the station-to-destination matrix, submits the public anti-forgery form
+  sequentially for one declared service date, and enriches only the observed
+  route variants from the unauthenticated route-detail endpoint. It never
+  enters the booking or payment flow. It is evidence for the SOGRAL/GTFS
+  discussion and a development-only Atlas preview, not a product feed or an
+  open dataset. The capture README records the source, observed endpoint
+  schema, refresh limits and the distinction between departure time, SOGRAL's
+  segment estimates and the page's separate Google driving estimate.
+
+  At the next `gares-routieres` bump, three fixes from the research belong in
+  the package: add a per-station `refs.mahatati_agency` (the MAHATATI agency
+  id observed for each departure station, so downstream joins stop depending
+  on name normalization); document that the existing `refs.sogral` is a
+  **town-level** place id shared by twin stations (Annaba and Sidi Brahim,
+  the three Constantine gares), so consumers must never treat it as a station
+  key; and repair station `33-01 TINDOUF`, whose longitude lost its sign
+  (+8.125 instead of about -8.15 at Tindouf's latitude 27.667), landing it in
+  the empty Illizi desert and deriving the wrong wilaya/commune (33/3301
+  instead of Tindouf's 37) from the flipped point. The public map draws it
+  there today.
 
   The path is to **ask SOGRAL for a feed, ideally GTFS**. This repo already
   publishes their 74 gares routieres (`@geoalgeria/gares-routieres`, "Data (c)
@@ -221,9 +244,13 @@ reads as further along than it is.
   - `api/live/departures/infos/route/{agencyId}/{headOfLineId}/{routeId}`: the
     itinerary, each stop's commune and wilaya plus the **fare in DA**.
 
-  The page's own selects carry 73 departure stations and about 180 destinations,
-  and the results table carries departure time, operator, zone, seats available
-  and status.
+  The 2026-08-12 matrix carries 73 departure stations and 9,077 station/
+  destination pairs. The completed local receipt checked all 9,077 pairs,
+  found 3,990 with at least one departure (25,959 returned rows), and enriched
+  all 1,268 unique observed route variants with zero unresolved failures. Those
+  figures are a dated collector receipt, not a lasting service-coverage claim.
+  The results table carries departure time, operator, zone, seats available and
+  status; seat availability stays private and is never exposed by the Atlas.
 
   So extraction is technically trivial, and that changes nothing about the
   answer: the footer reads "Copyright (c) 2021 EPE SOGRAL Spa, tous droits
