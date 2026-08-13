@@ -102,6 +102,20 @@ const CORRECTIONS = {
   },
 };
 
+// Post-migration enrichments: whole-file fields the CURRENT pipeline joins
+// from a committed seed the migration-era input predates. The replay copies
+// the shipped value onto its own output before comparing, so the guard keeps
+// watching every other field of the same record.
+const ENRICHMENTS = {
+  "gares-routieres": (produced, shipped) => {
+    // refs.mahatati_agency joins from research/gares-routieres/
+    // mahatati-agency-ids.json (staged 2026-08-13 from the public MAHATATI
+    // departure-station list); the migration-era input has no such field.
+    if (shipped?.refs?.mahatati_agency)
+      produced.refs = { ...produced.refs, mahatati_agency: shipped.refs.mahatati_agency };
+  },
+};
+
 for (const [pkg, file, map] of SPECS) {
   test(`migrate-to-v2 replay: ${pkg}/${file} reproduces the committed records`, () => {
     const sample = FIXTURE.packages[pkg].files[file];
@@ -127,6 +141,7 @@ for (const [pkg, file, map] of SPECS) {
         `${pkg}/${file}: the transform produced id ${JSON.stringify(produced.id)}, which is not ` +
           `in the committed data — the id rule drifted (v1 id was ${JSON.stringify(v1.id)})`,
       );
+      ENRICHMENTS[pkg]?.(produced, shipped);
       assert.deepEqual(produced, shipped, `${pkg}/${file}: transform output differs from the committed record ${produced.id}`);
     }
   });

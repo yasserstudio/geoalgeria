@@ -12,8 +12,14 @@ export type GeoMethod = "exact" | "approx";
 
 /** External identifiers keyed by source system. */
 export interface Refs {
-  /** SOGRAL location code (`213-000{wilaya}{commune}`). */
+  /** SOGRAL location code (`213-000{wilaya}{commune}`). TOWN-level: twin
+   *  stations of one town share it (Annaba and Sidi Brahim, the three
+   *  Constantine gares), so never treat it as a station key. */
   sogral: string;
+  /** MAHATATI departure-agency id for this station, absent for the one
+   *  station (In Saleh) that is not a MAHATATI departure agency. Unlike
+   *  `sogral`, this one is per-station. */
+  mahatati_agency?: string;
 }
 
 /** An intercity bus Station (gare routière) operated by SOGRAL. */
