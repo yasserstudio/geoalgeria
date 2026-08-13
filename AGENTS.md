@@ -41,7 +41,7 @@ term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's th
 | `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,797 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,830 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
-| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 51 wilayas, geocoded with surfaces (live.sogral.com) |
+| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces (live.sogral.com) |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban bus networks – 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella – re-exports aviation + ferroviaire + gares-routieres + buses |
