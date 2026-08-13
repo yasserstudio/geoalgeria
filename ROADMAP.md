@@ -102,6 +102,23 @@ reads as further along than it is.
 
 ## Generators
 
+- [ ] **A corrupt source coordinate silently rewrites a record's identity, and
+  nothing asserts against it.** `attachCommune` derives wilaya and commune from
+  the point, overwriting whatever the source declared, and for packages whose
+  ids encode the wilaya it then decides the id too. So one bad longitude moves a
+  record to the wrong wilaya, renames it after the commune it landed in, and
+  changes its public join key, all without a warning. Seven `gares-routieres`
+  stations shipped that way: Tindouf (2.1.0), then SEBDOU, MAGHENIA, EL OUED,
+  AIN SEFRA, NAAMA and RELIZANE. Every one of the seven was detectable from data
+  already in the record: `refs.sogral` encodes SOGRAL's own wilaya, and it
+  disagreed with the derived `wilaya_code` in all seven. The guard is a test
+  asserting that agreement, allow-listing the 11 records where the disagreement
+  is legitimate (SOGRAL ids predate the 2019/2021/2026 reforms, so Touggourt is
+  coded 30, Timimoun 01, Aïn Oussara 17). The same shape generalizes: any
+  package whose source declares an administrative code should fail when the
+  spatial join contradicts it, rather than silently preferring the point.
+  _(logged 2026-08-13)_
+
 - [x] **Nearest-centroid fallback can cross a boundary** — fixed in the shared
   helper: `attachCommune` now resolves the containing wilaya by point-in-polygon
   against the 69 boundaries first and restricts the centroid search to it, so
