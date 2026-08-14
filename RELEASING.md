@@ -1,6 +1,6 @@
 # Releasing
 
-GeoAlgeria publishes twenty-eight packages to npm, **`geoalgeria`** (the dataset, kept
+GeoAlgeria publishes twenty-nine packages to npm, **`geoalgeria`** (the dataset, kept
 unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**,
 **`@geoalgeria/mobilis`**, **`@geoalgeria/telecom`**, **`@geoalgeria/aviation`**,
 **`@geoalgeria/banques`**, **`@geoalgeria/livraison`**, **`@geoalgeria/jeunesse`**,
@@ -15,8 +15,8 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 (under the `@geoalgeria` org), using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
-monorepo). Of these, `release.yml`'s automated staging covers **26**: the flagship
-`geoalgeria`, `@geoalgeria/telecom` and the 24 sector packages; the two umbrellas
+monorepo). Of these, `release.yml`'s automated staging covers **27**: the flagship
+`geoalgeria`, `@geoalgeria/telecom` and the 25 sector packages; the two umbrellas
 **`@geoalgeria/transport`** and **`@geoalgeria/pharma`** carry `workspace:*` deps and are
 published **manually** with pnpm (see setup, step 2). `@geoalgeria/schema` is the v2 data
 contract every other package's generator depends on, a dev dependency, not a dataset, and
@@ -199,7 +199,7 @@ These are prerequisites the workflow can't do for you:
    > `cd packages/transport && pnpm publish --access public --no-git-checks`
    > (verify via `pnpm pack` that deps resolve to `^x.y.z`). These umbrellas need no
    > Trusted Publisher entry.
-3. **Trusted Publisher per package**: for each of the **26** packages the workflow
+3. **Trusted Publisher per package**: for each of the **27** packages the workflow
    stages (`geoalgeria`, `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`,
    `@geoalgeria/telecom`, `@geoalgeria/aviation`, `@geoalgeria/banques`,
    `@geoalgeria/livraison`, `@geoalgeria/jeunesse`, `@geoalgeria/sports`,
