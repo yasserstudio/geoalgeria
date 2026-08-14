@@ -119,6 +119,21 @@ reads as further along than it is.
   spatial join contradicts it, rather than silently preferring the point.
   _(logged 2026-08-13)_
 
+- [ ] **The commune join has the same silent-rewrite problem one level down,
+  with a correct coordinate.** Communes have no polygons, so `attachCommune`
+  assigns the nearest commune centre within the containing wilaya, and a
+  station between two centres lands on the wrong one without a warning:
+  GHERDAIA published as "Dhayet Bendhahoua" on a 110 m margin until a reader
+  reported it (four such labels fixed in the PR that logs this). The tell is
+  again data already in the record: the source's own `city` field named the
+  correct commune in all four. The guard is the wilaya one's sibling: flag any
+  record whose joined commune disagrees with a commune the source itself
+  names, then reconcile against OSM's admin_level-8 boundary and override only
+  when boundary and source agree against the join. Four three-way cases
+  (BISKRA, ALGER, ALI MENDJILI, BOUHNIFIFIA) are documented next to
+  `COMMUNE_FIX` in the gares-routieres fetch as deliberately unresolved.
+  _(logged 2026-08-14)_
+
 - [x] **Nearest-centroid fallback can cross a boundary** — fixed in the shared
   helper: `attachCommune` now resolves the containing wilaya by point-in-polygon
   against the 69 boundaries first and restricts the centroid search to it, so
