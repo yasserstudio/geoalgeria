@@ -201,8 +201,8 @@ permanent route coverage, current availability or permission to redistribute.
 
 The published network file carries **3,955** of those connections (the
 remainder resolve to no usable destination, or to the origin's own station),
-from **59** origin stations to **785** distinct destination places, holding
-**24,237** observed departures, with a duration on 79% of connections. Not one
+from **59** origin stations to **779** distinct destination places, holding
+**24,237** observed departures, with a duration on 73% of connections. Not one
 of the 25,959 departure rows is in it.
 
 ## Relation to the transport work
