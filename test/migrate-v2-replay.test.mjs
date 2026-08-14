@@ -111,6 +111,13 @@ const CORRECTIONS = {
       lat: 33.2814,
       lng: -0.3072,
     },
+    // GHERDAIA's coordinate was always right: the new gare at Bouhraoua, the
+    // northern entrance of Ghardaïa (OSM's admin boundary contains the point,
+    // and the source's own address says "Bouheraoua commune de ghardaia").
+    // The nearest-centroid join had labelled it Dhayet Bendhahoua, whose
+    // centre is 110 m closer than Ghardaïa's. Corrected in fetch.mjs
+    // COMMUNE_FIX; reader report on r/algeria, 2026-08-13.
+    "47-01": { commune_code: "4701", commune: "Ghardaia" },
   },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the

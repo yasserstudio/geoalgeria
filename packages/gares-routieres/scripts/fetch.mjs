@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { loadCommunes, attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { loadCommunes, attachCommune, round6, wcode } from "../../../scripts/lib/build-utils.mjs";
 import {
   MIGRATIONS,
   writePackageV2,
@@ -108,6 +108,31 @@ const records = raw.map((r) => {
 
 // Spatial-join commune + wilaya (reconciles legacy wilaya codes to geoalgeria).
 attachCommune(records, communes);
+
+// Commune overrides for stations the centroid join mislabels. Communes have no
+// polygons here, so `attachCommune` assigns the nearest commune centre within
+// the containing wilaya, and a station sitting between two centres can land on
+// the wrong one even with a correct coordinate. Each case below is confirmed by
+// OSM's admin_level-8 boundary containing the point, and in each the source's
+// own record already named the commune the join contradicted.
+// GHERDAIA: the new gare at Bouhraoua, the northern entrance of Ghardaïa on the
+// RN1 (OSM maps a "Gare routière" 100 m from the point). 6.46 km from Dhayet
+// Bendhahoua's centre vs 6.57 km from Ghardaïa's, so a 110 m margin published
+// it as "Dhayet Bendhahoua" while the source's address says "Bouheraoua commune
+// de ghardaia" and its city says GHARDAIA. Reader-reported (r/algeria,
+// 2026-08-13).
+// EL OUED: 2.6 km from Bayadha's centre vs 2.8 km from El-Oued's; OSM puts the
+// point in El-Oued commune, where the source's own city field puts it too.
+const COMMUNE_FIX = { 47: "Ghardaia", 46: "El-Oued" };
+for (const r of records) {
+  const name = COMMUNE_FIX[r.sogral_id];
+  if (!name) continue;
+  const c = communes.find((x) => x.name_fr === name && wcode(x.wilaya_code) === r.wilaya_code);
+  if (!c) throw new Error(`COMMUNE_FIX: no commune "${name}" in wilaya ${r.wilaya_code}`);
+  r.commune = c.name_fr;
+  r.commune_code = c.code_commune ?? null;
+}
+
 // Fail loudly on any ungeocoded station — never ship an un-reconciled wilaya_code.
 const ungeocoded = records.filter((r) => !Number.isFinite(r.lat) || !Number.isFinite(r.lng));
 if (ungeocoded.length) {
