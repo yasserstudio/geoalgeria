@@ -9,7 +9,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 07-01,BISKRA,07,0704,Chetma,34.8277188,5.680813,exact,exact,sogral,"{""sogral"":""213-000007001"",""mahatati_agency"":""21""}",Gare routière 05 juillet 1962,Commune El Hadjeb Biskra,93194,687975
 07-02,TOLGA,07,0721,Tolga,34.734813,5.400813,exact,exact,sogral,"{""sogral"":""213-000007021"",""mahatati_agency"":""75""}",Gare routière Tolga,Route nationale N°46 Tolga Biskra,20000,91154
 08-01,BECHAR,08,0801,Bechar,31.6376875,-2.1993125,exact,exact,sogral,"{""sogral"":""213-000008001"",""mahatati_agency"":""17""}",Gare routière Rezoug Mohamed Béchar,Route nationale n°06 debdaba Béchar,29400,6370
-09-01,BLIDA,09,0905,Ouled Yaich,36.497688,2.830688,exact,exact,sogral,"{""sogral"":""213-000009001"",""mahatati_agency"":""32""}",Gare routière Chahid Farouk Baila Blida,Cité Ramoul Blida,56000,1200
+09-01,BLIDA,09,0901,Blida,36.497688,2.830688,exact,exact,sogral,"{""sogral"":""213-000009001"",""mahatati_agency"":""32""}",Gare routière Chahid Farouk Baila Blida,Cité Ramoul Blida,56000,1200
 09-02,LARBAA,09,0917,Larbaa,36.565938,3.149312,exact,exact,sogral,"{""sogral"":""213-000009021"",""mahatati_agency"":""55""}",Gare routière Echahid Tetbirt Mohamed,Rue Kebir Mohamed Larbaa,14000,500
 10-01,BOUIRA,10,1001,Bouira,36.3676875,3.8710625,exact,exact,sogral,"{""sogral"":""213-000010001"",""mahatati_agency"":""5""}",Gare routière Aigoune Mohamed Dit Antar,Route nationale N°18 Vers Aïn Bessem Bouira.,41300,1290
 10-02,SOUR EL GHOZLANE,10,1038,Sour El Ghozlane,36.134812,3.694187,exact,exact,sogral,"{""sogral"":""213-000010038"",""mahatati_agency"":""70""}",Gare routière Mansouri El Mougafi,Route nationale n°08 Sour El Ghozlane,15000,723
@@ -68,7 +68,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 53-01,IN SALEH,53,1108,Ain Salah,27.199438,2.478187,exact,exact,sogral,"{""sogral"":""213-000011008""}",Gare routière Ain Salah,Zone Industrielle Ain Salah,30000,1420
 55-01,TOUGGOURT,55,3013,Touggourt,33.1064,6.0721,exact,exact,sogral,"{""sogral"":""213-000030013"",""mahatati_agency"":""86""}",Gare routière Didouche Mourad TOUGGOURT,Rue les dunes 01 commune Touggourt,60000,2500
 56-01,DJANET,56,3302,Djanet,24.5532,9.4841,exact,exact,sogral,"{""sogral"":""213-000033002"",""mahatati_agency"":""87""}",Djanet,Djanet,0,0
-57-01,DJAMAA,57,3930,Sidi Amrane,33.551063,5.979688,exact,exact,sogral,"{""sogral"":""213-000039028"",""mahatati_agency"":""41""}",Gare routière El Moudjahid Lakhdar Ben Amar Djamaa,cité 19 Mars 1962 Djamaa,19760,736
+57-01,DJAMAA,57,3928,Djamaa,33.551063,5.979688,exact,exact,sogral,"{""sogral"":""213-000039028"",""mahatati_agency"":""41""}",Gare routière El Moudjahid Lakhdar Ben Amar Djamaa,cité 19 Mars 1962 Djamaa,19760,736
 59-01,AFLOU,59,0319,Aflou,34.097,2.083,exact,exact,sogral,"{""sogral"":""213-000003019"",""mahatati_agency"":""24""}",Gare routière Hakimi Mohamed Ben Chikh,Route El Bayadh Aflou,46000,6270
 62-01,BIR EL ATER,62,1202,Bir-El-Ater,34.770438,8.059188,exact,exact,sogral,"{""sogral"":""213-000012002"",""mahatati_agency"":""31""}",Gare routière El Moudjahid Berai Salah Ben Ibrahim,Route nationale n°16 Bir El Ater,10000,1106
 65-01,AIN OUSSARA,65,1731,Aïn Oussera,35.463,2.9,approximate,exact,sogral,"{""sogral"":""213-000017031"",""mahatati_agency"":""25""}",Gare routière Ain Oussara,Cité Ahmed Zabana route nationale n°01 Ain Oussara,35000,1000

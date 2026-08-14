@@ -123,7 +123,14 @@ attachCommune(records, communes);
 // 2026-08-13).
 // EL OUED: 2.6 km from Bayadha's centre vs 2.8 km from El-Oued's; OSM puts the
 // point in El-Oued commune, where the source's own city field puts it too.
-const COMMUNE_FIX = { 47: "Ghardaia", 46: "El-Oued" };
+// BLIDA: published as "Ouled Yaich" on a 200 m margin. The source's city says
+// BLIDA, its address says "Cité Ramoul Blida", and OSM's boundary agrees.
+// DJAMAA: published as "Sidi Amrane". The source's city says DJAMAA, its
+// address says "cité 19 Mars 1962 Djamaa", and OSM's boundary agrees.
+// (An OSM sweep of every knife-edge join also disputes BISKRA, ALGER,
+// ALI MENDJILI and BOUHNIFIFIA, but there OSM contradicts the source's own
+// city field too, so those stay as joined until better evidence exists.)
+const COMMUNE_FIX = { 47: "Ghardaia", 46: "El-Oued", 32: "Blida", 41: "Djamaa" };
 for (const r of records) {
   const name = COMMUNE_FIX[r.sogral_id];
   if (!name) continue;
