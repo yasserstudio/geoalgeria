@@ -62,8 +62,60 @@ published.
 ## Korea dataset decision
 
 - Add `ALG-ICN` and `ICN-ALG` as two directional planned records so the map
-  renders the announced connection as a dashed line.
+  renders the announced route as a dashed line.
 - Keep `evidence` as `listed` and `status` as `unclear`; the route is announced,
   not bookable or schedule-verified.
 - Leave `flight` and `days` unset. Re-check the carrier and exact airport pair
   when an operator schedule or booking result appears.
+
+## Newer schedule sweep
+
+The same-day news scan found four additional sources with route-level changes:
+
+- [Four international routes opened for sale](https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/),
+  corroborated by [AeroRoutes' Africa filing](https://www.aeroroutes.com/eng/260820-ahnw26af).
+- [Shanghai bookings, flight numbers and operating days](https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/),
+  corroborated by [AeroRoutes' booking update](https://www.aeroroutes.com/eng/260814-ahnw26pvg).
+- [Delhi launch confirmation](https://www.visa-algerie.com/air-algerie-louverture-dune-nouvelle-ligne-internationale-confirmee/),
+  with both directional schedules in [AeroRoutes' filing](https://www.aeroroutes.com/eng/260619-ahnw26as).
+- [Doha booking resumption](https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/)
+  from 29 September.
+
+Production Soar searches returned the following bookable nonstop Air Algérie
+segments. Times are deliberately omitted because the route package stores
+direction, carrier, flight, days and lifecycle rather than becoming a departure
+board.
+
+| Route | Flight | Date checked | Duration | Dataset result |
+| --- | --- | --- | --- | --- |
+| `ALG-PVG` | `AH 3082` | 26, 28, 31 Oct | 14h00 | planned, verified; Mon/Wed/Sat |
+| `PVG-ALG` | `AH 3083` | 27, 29 Oct; 1 Nov | 15h00 | planned, verified; Tue/Thu/Sun |
+| `ALG-BZV` | `AH 5390` | 26 Oct | 6h10 | planned, verified |
+| `BZV-ALG` | `AH 5391` | 27 Oct | 6h20 | planned, verified |
+| `ALG-CKY` | `AH 5358` | 25 Oct | 5h15 | planned, verified |
+| `CKY-ALG` | `AH 5359` | 26 Oct | 4h45 | planned, verified |
+| `ALG-LOS` | `AH 5354` | 29 Oct | 4h55 | planned, verified; Thu |
+| `LOS-ALG` | `AH 5354` | 27 Oct | 4h50 | planned, verified; Tue |
+| `ALG-ABV` | `AH 5354` | 26 Oct | 4h25 | operating route upgraded; Mon |
+| `ABV-ALG` | `AH 5354` | 30 Oct | 4h25 | planned, verified; Fri |
+| `ALG-DOH` | `AH 4078` | 29 Sep | 6h05 | planned resumption, verified; Tue/Fri |
+| `DOH-ALG` | `AH 4079` | 29 Sep | 6h35 | planned resumption, verified; Tue/Fri |
+
+Delhi did not return a Soar offer for the filed launch rotation, so `ALG-DEL`
+and `DEL-ALG` remain `listed`. The AeroRoutes filing still supplies the
+directional flight numbers and days: `AH3104` Tue/Thu/Sun and `AH3105`
+Mon/Wed/Fri.
+
+## Operating summer routes
+
+Two July reports improve the operating collection without inventing a return
+direction:
+
+- [`ALG-DJE`](https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/)
+  resumed on 17 July as `AH4708`; add it as seasonal and verified.
+- [`CZL-SSH`](https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/)
+  operated its first 2026 service on 29 July; promote it to seasonal and
+  verified.
+
+Tripoli remains out. Recent reporting calls it a year-end objective, but no
+filed schedule, sale inventory or operator booking result was found.

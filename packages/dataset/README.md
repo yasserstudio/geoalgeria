@@ -158,7 +158,9 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/poste/atms.json` | JSON | 2,026 | ATM locations |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Postal data for spreadsheets / maps |
 
-> `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` joins to each commune's `code_commune`.
+> `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
+
+`code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
 
 ## Schema
 
@@ -171,7 +173,7 @@ See [`data/README.md`](data/README.md) for full field documentation.
 See [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). We welcome:
 
 - Data corrections (with official sources)
-- Missing `code_commune` values (10 remaining)
+- Commune-code corrections backed by an official source
 - Delivery zone data from real carrier accounts (Yalidine, ZR Express, Maystro)
 - New export formats (XML, YAML, PHP arrays, etc.)
 - Translations and transliteration fixes

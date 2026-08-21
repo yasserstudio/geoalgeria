@@ -139,7 +139,37 @@ const ENRICHMENTS = {
     if (shipped?.refs?.mahatati_agency)
       produced.refs = { ...produced.refs, mahatati_agency: shipped.refs.mahatati_agency };
   },
+  "formation-professionnelle": (produced, shipped) => {
+    // The frozen v1 sample carries the source's pre-reform directorate code.
+    // The package generator now derives the current wilaya from exact point
+    // containment or its resolved commune, a file-level spatial operation the
+    // per-record v2 map cannot reproduce. Dedicated formation-current-wilayas
+    // tests guard that join; replay continues to guard every other field here.
+    if (shipped) produced.wilaya_code = shipped.wilaya_code;
+  },
 };
+
+// The ONS 2021 repair is a file-level administrative join: its source-aware
+// reconciliation and repository-wide FK tests guard the mapping, while this
+// replay remains responsible for every other field produced from frozen v1
+// input. The original provider code is likewise copied only for Poste rows
+// where normalization had to preserve it separately.
+const COMMUNE_CODE_ENRICHED = new Set([
+  "agriculture",
+  "cliniques",
+  "culture",
+  "djezzy",
+  "ecoles",
+  "ferroviaire",
+  "gares-routieres",
+  "industrie-pharmaceutique",
+  "mosquees",
+  "ooredoo",
+  "pharmacies",
+  "poste",
+  "protection-civile",
+  "sante",
+]);
 
 for (const [pkg, file, map] of SPECS) {
   test(`migrate-to-v2 replay: ${pkg}/${file} reproduces the committed records`, () => {
@@ -167,6 +197,12 @@ for (const [pkg, file, map] of SPECS) {
           `in the committed data — the id rule drifted (v1 id was ${JSON.stringify(v1.id)})`,
       );
       ENRICHMENTS[pkg]?.(produced, shipped);
+      if (COMMUNE_CODE_ENRICHED.has(pkg)) {
+        produced.commune_code = shipped.commune_code;
+        if ("source_commune_code" in shipped)
+          produced.source_commune_code = shipped.source_commune_code;
+        else delete produced.source_commune_code;
+      }
       assert.deepEqual(produced, shipped, `${pkg}/${file}: transform output differs from the committed record ${produced.id}`);
     }
   });

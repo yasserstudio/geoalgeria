@@ -786,3 +786,22 @@ The map therefore carries `ALG-ICN` and `ICN-ALG` only in `plannedRoutes()` so
 they render as dashed arcs. Both stay `listed` / `unclear`, with null flight and
 days, until an operator schedule or booking result resolves the remaining
 details. Do not promote them to operating routes from traffic rights alone.
+
+## 31. New inventory can retire an old codeshare exclusion (2026-08-21)
+
+Doha was previously excluded because every probe returned only Qatar Airways
+metal with Air Algérie marketing. New Air Algérie inventory now exposes
+`AH4078` and `AH4079` from 29 September, so the old codeshare finding remains
+historically true but no longer describes the forward schedule. Both directions
+move into `plannedRoutes()` until the resumption date.
+
+The same pass confirms new October inventory for Shanghai, Brazzaville, Conakry
+and the Lagos/Abuja triangles. Record only Algeria-touching nonstop legs of a
+triangle, and record each direction separately: `AH5354` produces different
+direct legs on the Monday and Thursday rotations.
+
+Delhi demonstrates the lower boundary. A diplomatic confirmation and filed
+directional schedule are enough for `listed` planned rows, but an empty booking
+probe is not enough to upgrade them. Tripoli remains below the inclusion bar
+because the current report states only an objective and supplies no filed
+schedule or sale inventory.

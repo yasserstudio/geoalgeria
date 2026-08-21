@@ -84,7 +84,7 @@ export const named = (rows) => rows.filter((r) => r.name).length;
 export const LINKAGE = "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.";
 
 // canonical leading columns for CSV; domain extras are appended in first-seen order.
-const BASE_COLS = ["id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "commune", "commune_ar", "lat", "lng", "geo_precision", "geo_method", "source", "refs"];
+const BASE_COLS = ["id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "source_commune_code", "commune", "commune_ar", "lat", "lng", "geo_precision", "geo_method", "source", "refs"];
 export function colsFor(rows) {
   const base = BASE_COLS.filter((c) => rows.some((r) => c in r));
   const extra = [];
@@ -532,6 +532,7 @@ export const MIGRATIONS = {
       { file: "postoffices.json", map: (r) => clean({
         id: String(r.id), name: r.name, name_ar: r.name_ar,
         wilaya_code: r.wilaya_code, commune_code: r.commune_code || null,
+        source_commune_code: r.source_commune_code,
         commune: r.commune_fr, commune_ar: r.commune_ar,
         ...geoExact(r, "baridimap"),
         source: "baridimap",

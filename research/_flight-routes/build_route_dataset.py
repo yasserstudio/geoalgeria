@@ -225,6 +225,18 @@ VERIFIED = [
     # familiar code would have put this arc on a closed field.
     {"from": "ALG", "to": "DSS", "status": "active",
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
+    # Abuja has operated since 2025. The NW26 booking inventory confirms the
+    # outbound direction, Air Algerie metal and the Monday AH5354 leg before it
+    # continues to Lagos.
+    {"from": "ALG", "to": "ABV", "flight": "AH 5354", "status": "active",
+     "days": ["mon"],
+     "source": "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja"},
+    # Two 2026 summer launches observed operating. Only the directly evidenced
+    # outbound legs are promoted; the return directions are not inferred.
+    {"from": "ALG", "to": "DJE", "flight": "AH 4708", "status": "seasonal",
+     "source": "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/"},
+    {"from": "CZL", "to": "SSH", "status": "seasonal",
+     "source": "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/"},
 ]
 
 # Explicitly announced, but not operating on AS_OF. These stay separate from
@@ -235,13 +247,52 @@ PLANNED = [
     {"from": "ALG", "to": "BER", "flight": "AH 2072", "status": "unclear",
      "days": ["mon"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/"},
+    {"from": "ALG", "to": "BZV", "flight": "AH 5390", "status": "unclear",
+     "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+    {"from": "ALG", "to": "CKY", "flight": "AH 5358", "status": "unclear",
+     "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+    {"from": "ALG", "to": "DEL", "flight": "AH 3104", "status": "unclear",
+     "days": ["tue", "thu", "sun"], "evidence": "listed",
+     "source": "https://www.aeroroutes.com/eng/260619-ahnw26as"},
+    {"from": "ALG", "to": "DOH", "flight": "AH 4078", "status": "unclear",
+     "days": ["tue", "fri"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/"},
     {"from": "ALG", "to": "ICN", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
+    {"from": "ALG", "to": "LOS", "flight": "AH 5354", "status": "unclear",
+     "days": ["thu"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+    {"from": "ALG", "to": "PVG", "flight": "AH 3082", "status": "unclear",
+     "days": ["mon", "wed", "sat"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/"},
+    {"from": "ABV", "to": "ALG", "flight": "AH 5354", "status": "unclear",
+     "days": ["fri"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
     {"from": "BER", "to": "ALG", "flight": "AH 2073", "status": "unclear",
      "days": ["mon"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/"},
+    {"from": "BZV", "to": "ALG", "flight": "AH 5391", "status": "unclear",
+     "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+    {"from": "CKY", "to": "ALG", "flight": "AH 5359", "status": "unclear",
+     "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+    {"from": "DEL", "to": "ALG", "flight": "AH 3105", "status": "unclear",
+     "days": ["mon", "wed", "fri"], "evidence": "listed",
+     "source": "https://www.aeroroutes.com/eng/260619-ahnw26as"},
+    {"from": "DOH", "to": "ALG", "flight": "AH 4079", "status": "unclear",
+     "days": ["tue", "fri"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/"},
     {"from": "ICN", "to": "ALG", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
+    {"from": "LOS", "to": "ALG", "flight": "AH 5354", "status": "unclear",
+     "days": ["tue"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
+    {"from": "PVG", "to": "ALG", "flight": "AH 3083", "status": "unclear",
+     "days": ["tue", "thu", "sun"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/"},
 ]
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
@@ -257,7 +308,10 @@ PLANNED = [
 #
 # What survives is the case the rule was actually for: ALG-DOH returns QR 1380
 # with `host: "QR"`, so Qatar flies it and Air Algérie merely sells it.
-CODESHARE_ONLY = {("ALG", "DOH")}
+# ALG-DOH used to return only Qatar Airways metal. AH4078/AH4079 are now in
+# Air Algerie's own forward inventory from 29 Sep 2026, so Doha moved to the
+# explicit planned list above and no current pair remains excluded here.
+CODESHARE_ONLY = set()
 
 # Screened and found to be flown by ANOTHER airline entirely, with no Air Algérie
 # leg at all, not even a codeshare. A published table listing Air Algérie on these
@@ -324,29 +378,24 @@ def main():
     skipped = {"no_endpoint": [], "codeshare": [], "domestic": []}
     seen = set()
 
-    for v in VERIFIED:
-        key = (v["from"], v["to"])
-        if v["from"] not in ep or v["to"] not in ep:
-            skipped["no_endpoint"].append(key); continue
+    def add_curated_route(record, destination, evidence):
+        key = (record["from"], record["to"])
+        if record["from"] not in ep or record["to"] not in ep:
+            skipped["no_endpoint"].append(key)
+            return
         seen.add(key)
-        routes.append({
-            "id": f"{v['from'].lower()}-{v['to'].lower()}",
-            "from": v["from"], "to": v["to"], "carrier": "AH",
-            "flight": v.get("flight"), "status": v["status"], "days": v.get("days"),
-            "evidence": "verified", "source": v["source"],
+        destination.append({
+            "id": f"{record['from'].lower()}-{record['to'].lower()}",
+            "from": record["from"], "to": record["to"], "carrier": "AH",
+            "flight": record.get("flight"), "status": record["status"], "days": record.get("days"),
+            "evidence": evidence, "source": record["source"],
         })
 
-    for p in PLANNED:
-        key = (p["from"], p["to"])
-        if p["from"] not in ep or p["to"] not in ep:
-            skipped["no_endpoint"].append(key); continue
-        seen.add(key)
-        planned_routes.append({
-            "id": f"{p['from'].lower()}-{p['to'].lower()}",
-            "from": p["from"], "to": p["to"], "carrier": "AH",
-            "flight": p.get("flight"), "status": p["status"], "days": p.get("days"),
-            "evidence": p["evidence"], "source": p["source"],
-        })
+    for record in VERIFIED:
+        add_curated_route(record, routes, "verified")
+
+    for record in PLANNED:
+        add_curated_route(record, planned_routes, record["evidence"])
 
     for r in wiki:
         if r["carrier"] != "Air Algérie":

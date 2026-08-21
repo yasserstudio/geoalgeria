@@ -34,7 +34,7 @@ const meta = buildMetadata({
 | `id` | `string` | opaque, unique **within its file** – not globally unique, not unique across files even within one package |
 | `name` / `name_fr` / `name_ar` | `string \| null` | domain-default `name`; localized variants optional |
 | `wilaya_code` | `string` | zero-padded `"01".."69"` |
-| `commune_code` | `string \| null` | ONS code; first 2 digits === `wilaya_code` |
+| `commune_code` | `string \| null` | ONS 2021 code; communes moved by later reforms retain their mother-wilaya prefix |
 | `lat` / `lng` | `number \| null` | both set or both null |
 | `geo_precision` | `"exact" \| "approximate" \| null` | detail in `geo_method`; **null iff `lat`/`lng` are null** |
 | `geo_method` | `string \| null` | how the point was obtained (`"osm_node"`, …); **null iff `lat`/`lng` are null** |

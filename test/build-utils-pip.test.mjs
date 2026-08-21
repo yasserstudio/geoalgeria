@@ -45,3 +45,18 @@ test("attachCommune stamps the containing wilaya on real data", () => {
     assert.equal(r.wilaya_code, containingWilayaCode(r.lat, r.lng));
   }
 });
+
+test("attachCommune keeps the three reported Boumerdes schools out of El Harrach", () => {
+  const rows = [
+    { lat: 36.683448, lng: 3.744465 },
+    { lat: 36.695802, lng: 3.757353 },
+    { lat: 36.716474, lng: 3.707157 },
+  ];
+
+  attachCommune(rows, loadCommunes());
+
+  for (const row of rows) {
+    assert.equal(row.wilaya_code, "35");
+    assert.notEqual(row.commune, "El Harrach");
+  }
+});

@@ -107,8 +107,9 @@ data/
 ```
 
 `class` est la catégorie du bureau (`CE`, `R1`–`R4`, `HC`, `GA`). `commune_code`
-est le code commune à 4 chiffres d'Algérie Poste, qui se joint au `code_commune`
-de GeoAlgeria. `geo_precision` vaut `"exact"` (ou `null` avec `lat`/`lng` quand
+est le code ONS normalisé à 4 chiffres qui se joint au `code_commune` de
+GeoAlgeria. Quand Algérie Poste publie une valeur native différente, le champ
+facultatif `source_commune_code` la conserve sans modification. `geo_precision` vaut `"exact"` (ou `null` avec `lat`/`lng` quand
 le bureau n'est pas géocodé) ; `geo_method` indique comment le point a été obtenu.
 
 **DAB** – même structure, identifié par `id`/`name`/`wilaya_code`/`postal_code`

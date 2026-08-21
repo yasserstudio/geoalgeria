@@ -41,8 +41,8 @@ def validate_wilayas(data):
     return codes
 
 
-def validate_communes(data, filename):
-    required = {"name_fr", "name_ar", "wilaya_code", "daira", "postal_code"}
+def validate_communes(data, filename, commune_codes):
+    required = {"name_fr", "name_ar", "wilaya_code", "daira", "postal_code", "code_commune"}
     seen = set()
     for i, c in enumerate(data):
         missing = required - set(c.keys())
@@ -52,6 +52,18 @@ def validate_communes(data, filename):
         if key in seen:
             error(f"{filename}[{i}]: duplicate commune {key}")
         seen.add(key)
+        code = c.get("code_commune")
+        if not isinstance(code, int) or isinstance(code, bool):
+            error(f"{filename}[{i}]: code_commune must be a non-null integer, got {code!r}")
+        elif code // 100 not in range(1, 59) or code % 100 not in range(1, 100):
+            error(f"{filename}[{i}]: invalid ONS WWCC code_commune {code}")
+        elif code in commune_codes:
+            error(
+                f"{filename}[{i}]: duplicate code_commune {code}; "
+                f"already used by {commune_codes[code]}"
+            )
+        else:
+            commune_codes[code] = f"{c.get('wilaya_code')}|{c.get('name_fr')}"
     return len(data)
 
 
@@ -133,13 +145,19 @@ def main():
 
     # Communes
     total_communes = 0
+    commune_codes = {}
     for fname in ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"]:
         print(f"[{fname}]")
         data = validate_json(ROOT / fname)
         if data:
-            n = validate_communes(data, fname)
+            n = validate_communes(data, fname, commune_codes)
             total_communes += n
             print(f"  OK: {n} communes")
+    if len(commune_codes) != total_communes:
+        error(
+            f"commune codes: expected {total_communes} unique non-null values, "
+            f"got {len(commune_codes)}"
+        )
 
     # Dairas
     print("[dairas.json]")

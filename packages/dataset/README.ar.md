@@ -158,7 +158,9 @@ sqlite3 mydb.sqlite < full.sql
 | `data/poste/atms.json` | JSON | 2,026 | مواقع الصرافات الآلية |
 | `data/poste/csv/*`، `data/poste/geojson/*` | CSV/GeoJSON | – | بيانات بريدية لجداول البيانات / الخرائط |
 
-> `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). `commune_code` يرتبط بـ `code_commune` لكل بلدية.
+> `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). يُوحَّد `commune_code` ليرتبط بـ `code_commune` لكل بلدية، ويحتفظ `source_commune_code` بقيمة المزوّد الأصلية عندما تختلف.
+
+الحقل `code_commune` هو المعرّف الفريد `WWCC` الوارد في [الرمز الجغرافي الوطني لسنة 2021 الصادر عن الديوان الوطني للإحصائيات](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). وتحتفظ البلديات التي رُقّيت إلى الولايات 59–69 ببادئة ولايتها الأم وفق تقسيم 2021.
 
 ## المخطط
 
@@ -171,7 +173,7 @@ sqlite3 mydb.sqlite < full.sql
 انظر [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). نرحّب بـ:
 
 - تصحيحات البيانات (مع مصادر رسمية)
-- قيم `code_commune` الناقصة (10 متبقية)
+- تصحيحات رموز البلديات المدعومة بمصدر رسمي
 - بيانات مناطق التوصيل من حسابات ناقلين حقيقية (Yalidine، ZR Express، Maystro)
 - صيغ تصدير جديدة (XML، YAML، مصفوفات PHP، إلخ.)
 - تصحيحات الترجمة والكتابة بالحروف اللاتينية

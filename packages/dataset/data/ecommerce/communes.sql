@@ -244,7 +244,7 @@ INSERT INTO communes (id, commune_name_fr, commune_name_ar, daira_name_fr, wilay
   (227, 'Machraa-Houari-Boumediene', 'مشرع هواري بومدين', 'Abadla', 8, 'Béchar', 'بشار', '08027'),
   (228, 'Meridja', 'المريجة', 'Kenadsa', 8, 'Béchar', 'بشار', '08041'),
   (229, 'Mogheul', 'موغل', 'Lahmar', 8, 'Béchar', 'بشار', '08042'),
-  (230, 'Tabelbala', 'تبلبالة', 'Tabelbala', 8, 'Béchar', 'بشار', '52029'),
+  (230, 'Tabelbala', 'تبلبالة', 'Tabelbala', 52, 'Béni Abbès', 'بني عباس', '52029'),
   (231, 'Taghit', 'تاغيت', 'Taghit', 8, 'Béchar', 'بشار', '08030'),
   (232, 'Ain Romana', 'عين الرمانة', 'Mouzaïa', 9, 'Blida', 'البليدة', '09028'),
   (233, 'Beni Mered', 'بني مراد', 'Ouled Yaïch', 9, 'Blida', 'البليدة', '09003'),

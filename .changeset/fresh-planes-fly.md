@@ -2,4 +2,4 @@
 "@geoalgeria/aviation": minor
 ---
 
-Add the confirmed Algiers–Berlin service and the reported Algiers–Incheon connection to the planned Air Algérie network.
+Expand the Air Algérie network with newly confirmed and reported routes across Europe, Africa, Asia, and the Gulf.

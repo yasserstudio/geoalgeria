@@ -13,6 +13,7 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import { normalizeProviderCommune } from "../../../scripts/lib/commune-index.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Canonical output for this package, plus the byte-identical mirror inside the
@@ -49,6 +50,12 @@ async function getJSON(path) {
 function normPostOffice(o) {
   const c = o.commune || {};
   const w = c.wilaya || {};
+  const communeCodes = normalizeProviderCommune({
+    wilayaCode: w.id,
+    commune: c.name_fr,
+    communeAr: c.name_ar,
+    sourceCode: c.code,
+  });
   return {
     id: o.id,
     name: o.nom ?? null,
@@ -57,7 +64,7 @@ function normPostOffice(o) {
     postal_code: o.cp ?? null,
     postal_code_old: o.cp_old ?? null,
     address: o.adresse ?? null,
-    commune_code: c.code ?? null,
+    ...communeCodes,
     commune_fr: c.name_fr ?? null,
     commune_ar: c.name_ar ?? null,
     wilaya_code: w.id ?? null,

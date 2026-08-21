@@ -158,7 +158,9 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/poste/atms.json` | JSON | 2 026 | Emplacements des distributeurs |
 | `data/poste/csv/*`, `data/poste/geojson/*` | CSV/GeoJSON | – | Données postales pour tableurs / cartes |
 
-> `data/poste/` provient d'[Algérie Poste](https://baridimap.poste.dz). `commune_code` se joint au `code_commune` de chaque commune.
+> `data/poste/` provient d'[Algérie Poste](https://baridimap.poste.dz). `commune_code` est normalisé pour se joindre au `code_commune` de chaque commune ; `source_commune_code` conserve une valeur native différente du fournisseur.
+
+`code_commune` est l'identifiant unique `WWCC` du [Code géographique national 2021 de l'ONS](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Les communes promues dans les wilayas 59 à 69 conservent le préfixe de leur wilaya mère de 2021.
 
 ## Schéma
 
@@ -171,7 +173,7 @@ Voir [`data/README.md`](data/README.md) pour la documentation complète des cham
 Voir [CONTRIBUTING.md](https://github.com/yasserstudio/geoalgeria/blob/main/CONTRIBUTING.md). Nous accueillons :
 
 - Corrections de données (avec sources officielles)
-- Valeurs `code_commune` manquantes (10 restantes)
+- Corrections de codes communaux appuyées par une source officielle
 - Données de zones de livraison provenant de vrais comptes transporteurs (Yalidine, ZR Express, Maystro)
 - Nouveaux formats d'export (XML, YAML, tableaux PHP, etc.)
 - Corrections de traductions et de translittération

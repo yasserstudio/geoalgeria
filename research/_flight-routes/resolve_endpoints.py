@@ -120,6 +120,8 @@ ENDPOINTS = [
     {"city": "ANTALYA", "iata": "AYT", "country": "TR"},
     # --- North Africa and Middle East ---
     {"city": "TUNIS", "iata": "TUN", "country": "TN"},
+    {"city": "Djerba", "iata": "DJE", "country": "TN",
+     "note": "Seasonal ALG-DJE service resumed on 17 Jul 2026 as AH4708."},
     {"city": "Monastir", "iata": "MIR", "country": "TN",
      "note": "Not on the airline's booking city list; surfaced by the route sweep."},
     {"city": "CAIRE", "iata": "CAI", "country": "EG"},
@@ -132,6 +134,8 @@ ENDPOINTS = [
     {"city": "DUBAI", "iata": "DXB", "country": "AE"},
     # --- Asia ---
     {"city": "Guangzhou", "iata": "CAN", "country": "CN"},
+    {"city": "New Delhi", "iata": "DEL", "country": "IN",
+     "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026."},
     {"city": "Incheon", "iata": "ICN", "country": "KR",
      "note": "Planned Korea-Algeria link. July 2026 traffic-rights coverage names "
              "Incheon-Algiers, but the bilateral agreement permits regional airports."},
@@ -146,12 +150,19 @@ ENDPOINTS = [
     {"city": "Abuja", "iata": "ABV", "country": "NG"},
     {"city": "Addis Abeba", "iata": "ADD", "country": "ET"},
     {"city": "BAMAKO", "iata": "BKO", "country": "ML"},
+    {"city": "Brazzaville", "iata": "BZV", "country": "CG",
+     "note": "Bookings opened for three weekly ALG-BZV rotations from 26 Oct 2026."},
+    {"city": "Conakry", "iata": "CKY", "country": "GN",
+     "note": "Bookings opened for three weekly ALG-CKY rotations from 25 Oct 2026."},
     {"city": "DAKAR", "iata": "DSS", "country": "SN",
      "note": "Blaise Diagne, which replaced Leopold Sedar Senghor (DKR) as Dakar's "
              "airport in 2017. Pinning DKR would land on a closed field."},
     {"city": "Douala", "iata": "DLA", "country": "CM"},
     {"city": "Johannesbourg", "iata": "JNB", "country": "ZA"},
     {"city": "Libreville", "iata": "LBV", "country": "GA"},
+    {"city": "Lagos", "iata": "LOS", "country": "NG",
+     "note": "Bookings opened for two weekly triangular rotations via Abuja from "
+             "26 Oct 2026; Algeria-touching legs are recorded directionally."},
     {"city": "Luanda", "iata": "NBJ", "country": "AO",
      "note": "Dr. António Agostinho Neto International, which replaced Quatro de "
              "Fevereiro (LAD) as Luanda's airport. Same trap as Dakar's DKR/DSS: "

@@ -44,6 +44,7 @@ import {
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
 import { MIGRATIONS } from "./lib/v2-transforms.mjs";
+import { canonicalCommuneCodes } from "./lib/commune-index.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -221,18 +222,10 @@ function tallyBoundaries(pkg, label, rows) {
 // failed the wrong package.
 const MISLINK_CEILING_PCT = 1.0;
 
-// Mislinks that already shipped, pinned to the exact count measured on 2026-07-20.
-// This is a ratchet, not an exemption: the number may not move in either direction
-// without editing this line, so a 38th mislink fails the build exactly like a first
-// one would in any other package. formation-professionnelle is over the ceiling on
-// real defects — 37 records whose coordinate sits in a wilaya that does not touch
-// the one they declare, up to 1,290 km away, all geo_method "takwin". Correcting
-// them is a data decision (which of the two fields is wrong?), not a validator one,
-// so the debt is recorded here and left visible rather than rounded away by picking
-// a ceiling that clears it.
-// The 5 relinked packages are pinned at 0: any non-adjacent mislink that reappears
+// Previously shipped mislinks are a ratchet, not an exemption: each relinked
+// package is now pinned at 0, so any non-adjacent mislink that reappears
 // fails the build hard (== check below), rather than warning under the 1% ceiling.
-const KNOWN_MISLINKS = { "formation-professionnelle": 37, culture: 0, ferroviaire: 0, emploi: 0, banques: 0, tourisme: 0 };
+const KNOWN_MISLINKS = { "formation-professionnelle": 0, culture: 0, ferroviaire: 0, emploi: 0, banques: 0, tourisme: 0 };
 
 function reportBoundaries(full) {
   const rows = [...GEO_TALLY].filter(([, t]) => t.checked > 0).sort((a, b) => b[1].mislinked.length - a[1].mislinked.length);
@@ -727,6 +720,24 @@ function validateDataset(pkg, spec) {
   }
   if (!Array.isArray(arr) || arr.length === 0) {
     return fail(`${label}: expected a non-empty array`);
+  }
+
+  // Every populated commune_code is a foreign key into the flagship commune
+  // table. Format-only validation allowed thousands of stale-but-well-formed
+  // values to survive an ONS crosswalk repair, breaking code-keyed joins while
+  // every individual package still passed.
+  const orphaned = arr.filter(
+    (record) => record?.commune_code != null && !canonicalCommuneCodes.has(record.commune_code),
+  );
+  if (orphaned.length) {
+    const sample = orphaned
+      .slice(0, 5)
+      .map((record) => `${record.id}:${JSON.stringify(record.commune_code)}`)
+      .join(", ");
+    fail(
+      `${label}: ${orphaned.length} commune_code foreign key(s) are absent from the canonical commune set` +
+        (sample ? ` (sample ${sample})` : ""),
+    );
   }
 
   // count vs metadata
