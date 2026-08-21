@@ -108,11 +108,16 @@ Configuration for the [mattpocock/skills](https://github.com/mattpocock/skills) 
 
 ### Issue tracker
 
-Issues & specs live as local markdown under `.scratch/<feature>/`. See `docs/agents/issue-tracker.md`.
+Internal issues for both GeoAlgeria repositories live in the private
+`yasserstudio/geoalgeria.com` GitHub repository. This public repository's issue
+tracker is community intake only. Local `.scratch/` files are temporary planning
+artifacts, not the durable backlog. See `docs/agents/issue-tracker.md`.
 
 ### Triage labels
 
-The five canonical roles (`needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`), recorded on a `Status:` line per issue file. See `docs/agents/triage-labels.md`.
+The five canonical roles (`needs-triage`, `needs-info`, `ready-for-agent`,
+`ready-for-human`, `wontfix`) are GitHub labels on the private tracker. See
+`docs/agents/triage-labels.md`.
 
 ### Domain docs
 
