@@ -1,26 +1,42 @@
-# Issue tracker: Local Markdown
+# Issue tracker: Private GitHub
 
-Issues and specs (you may know a spec as a PRD) for this repo live as markdown files in `.scratch/`.
+The canonical internal issue tracker for both GeoAlgeria repositories is GitHub
+Issues in the private `yasserstudio/geoalgeria.com` repository.
 
-## Conventions
+This public repository's issue tracker is a community intake surface for
+user-submitted bug reports, data corrections and dataset requests. Never publish
+maintainer-generated audits, implementation backlog or internal research here.
 
-- One feature per directory: `.scratch/<feature-slug>/`
-- The spec is `.scratch/<feature-slug>/spec.md`
-- Implementation issues are one file per ticket at `.scratch/<feature-slug>/issues/<NN>-<slug>.md`, numbered from `01`, never a single combined tickets file
-- Triage state is recorded as a `Status:` line near the top of each issue file (see `triage-labels.md` for the role strings)
-- Comments and conversation history append to the bottom of the file under a `## Comments` heading
+## Routing
+
+- Data-repository work goes to the private tracker with a `Data:` title prefix;
+  name the affected package or path in the body.
+- App and cross-repository work also goes to the private tracker.
+- Keep a community-authored public issue public. If it needs internal follow-up,
+  create a private issue that references the public report without copying
+  sensitive context back into the public thread.
+- If an internal issue is accidentally created here, transfer it to
+  `yasserstudio/geoalgeria.com` instead of duplicating it.
+- Specs and short-lived execution maps may live under `.scratch/<feature-slug>/`,
+  but `.scratch/` is ignored and is not the durable backlog.
 
 ## When a skill says "publish to the issue tracker"
 
-Create a new file under `.scratch/<feature-slug>/` (creating the directory if needed).
+Create a GitHub issue in `yasserstudio/geoalgeria.com`. Include acceptance
+criteria, the owning repository (`app` or `data`), relevant paths and links to
+any public report or pull request.
 
 ## When a skill says "fetch the relevant ticket"
 
-Read the file at the referenced path. The user will normally pass the path or the issue number directly.
+Read the issue from `yasserstudio/geoalgeria.com`. Treat a bare issue number as
+belonging to that private repository unless the user explicitly provides a
+different repository or URL.
 
 ## Wayfinding operations
 
-Used by `/wayfinder`. The **map** is a file with one **child** file per ticket.
+Used by `/wayfinder` for temporary execution coordination. The **map** is a file
+with one **child** file per work item; any unresolved durable work must be
+published to the private tracker before the effort ends.
 
 - **Map**: `.scratch/<effort>/map.md` – the Notes / Decisions-so-far / Fog body.
 - **Child ticket**: `.scratch/<effort>/issues/NN-<slug>.md`, numbered from `01`, with the question in the body. A `Type:` line records the ticket type (`research`/`prototype`/`grilling`/`task`); a `Status:` line records `claimed`/`resolved`.
