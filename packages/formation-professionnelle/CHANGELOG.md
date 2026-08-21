@@ -1,5 +1,11 @@
 # @geoalgeria/formation-professionnelle
 
+## 2.1.1
+
+### Patch Changes
+
+- 64b10a1: Map establishments from the source's pre-reform directorates to the current 69-wilaya division through exact coordinate containment and commune resolution.
+
 ## 2.1.0
 
 ### Minor Changes
