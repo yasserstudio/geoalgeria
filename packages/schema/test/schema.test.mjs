@@ -77,13 +77,12 @@ test("duplicate id is an error", () => {
   assert.match(errors[0], /duplicate id/);
 });
 
-test("commune_code must be a numeric string; prefix mismatch warns", () => {
+test("commune_code must be a numeric string; later wilaya assignments may retain an older prefix", () => {
   assert.equal(validateRecords([rec({ commune_code: 1601 })]).errors.length, 1); // integer rejected
   assert.equal(validateRecords([rec({ commune_code: null })]).errors.length, 0); // null ok
   const { errors, warnings } = validateRecords([rec({ commune_code: "3101" })]); // wilaya 16
   assert.equal(errors.length, 0);
-  assert.equal(warnings.length, 1);
-  assert.match(warnings[0], /does not start with wilaya_code/);
+  assert.equal(warnings.length, 0);
 });
 
 test("coordinate sanity guard catches lat/lng swap and sign flip (no polygons needed)", () => {

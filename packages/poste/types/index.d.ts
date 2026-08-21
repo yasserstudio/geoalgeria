@@ -31,6 +31,9 @@ export interface PostOffice {
   wilaya_code: string;
   /** Commune (ONS) code as a 4-digit string. */
   commune_code: string;
+  /** Algérie Poste's provider-native commune code when it differs from the
+   *  normalized ONS join. Omitted when both values agree. */
+  source_commune_code?: string;
   /** Commune name (French). */
   commune: string;
   /** Commune name in Arabic. */

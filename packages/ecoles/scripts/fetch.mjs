@@ -22,8 +22,8 @@
  * are public, but this leaves it honest rather than assumed).
  *
  * OSM carries no commune/wilaya codes, so administrative linkage is attached by
- * nearest-centroid join against the flagship geoalgeria commune set (wilaya
- * effectively exact; commune best-effort).
+ * point-in-polygon for the wilaya, then nearest-centroid join within that wilaya
+ * for the commune (wilaya effectively exact; commune best-effort).
  *
  * Usage: node scripts/fetch.mjs            # live pull
  *        node scripts/fetch.mjs --cache    # rebuild from sources/ecoles/osm.json
@@ -34,11 +34,11 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { attachCommune, loadCommunes } from "../../../scripts/lib/build-utils.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
-const REPO_ROOT = join(__dirname, "..", "..", "..");
 // The coverage denominator lives with the rest of the package metadata in
 // scripts/lib/v2-transforms.mjs (MIGRATIONS.ecoles.meta.estimatedUniverse):
 // 29,702 institutions per the Ministry of National Education's own aggregate.
@@ -51,6 +51,75 @@ const MAX_BYTES = 128 * 1024 * 1024;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const DEG = Math.PI / 180;
 const M_PER_DEG = 111_320;
+
+// OSM occasionally replaces a building way with a relation at the same place.
+// Those are representation migrations, not new schools: keep the public id and
+// the richer descriptive fields we already published while updating refs.osm to
+// the current primitive. Keep this list explicit so coordinate coincidence can
+// never merge unrelated nearby schools.
+const OSM_REF_MIGRATIONS = new Map([
+  ["relation/9109456", {
+    previousRef: "way/655239149",
+    id: "16-01241",
+    published: {
+      name: null, name_fr: null, name_ar: null,
+      cycle: "autre", cycle_label_fr: "École (cycle non précisé)", cycle_label_ar: "مدرسة (المستوى غير محدّد)",
+      kind: "regular", kind_label_fr: "École ordinaire", kind_label_ar: "مدرسة عادية",
+      isced_levels: null, sector: null, address: null,
+    },
+  }],
+  ["relation/5553815", {
+    previousRef: "way/374162879",
+    id: "44-00236",
+    published: {
+      name: "Ecole Primaire 1er November", name_fr: "Ecole Primaire 1er November", name_ar: "المدرسة الإبتدائية 1 نوفمبر 1954",
+      cycle: "primaire", cycle_label_fr: "École primaire", cycle_label_ar: "مدرسة ابتدائية",
+      kind: "regular", kind_label_fr: "École ordinaire", kind_label_ar: "مدرسة عادية",
+      isced_levels: null, sector: null, address: null,
+    },
+  }],
+  ["relation/5553817", {
+    previousRef: "way/374162880",
+    id: "44-00237",
+    published: {
+      name: "Ecole primaire Snouci Abdelkader", name_fr: "Ecole primaire Snouci Abdelkader", name_ar: null,
+      cycle: "primaire", cycle_label_fr: "École primaire", cycle_label_ar: "مدرسة ابتدائية",
+      kind: "regular", kind_label_fr: "École ordinaire", kind_label_ar: "مدرسة عادية",
+      isced_levels: null, sector: null, address: "44000",
+    },
+  }],
+  ["relation/5548568", {
+    previousRef: "way/458573013",
+    id: "44-00246",
+    published: {
+      name: "Lycée Malek Ben Nabi", name_fr: "Lycée Malek Ben Nabi", name_ar: "ثانوية مالك ابن نبي",
+      cycle: "secondaire", cycle_label_fr: "Lycée", cycle_label_ar: "ثانوية",
+      kind: "regular", kind_label_fr: "École ordinaire", kind_label_ar: "مدرسة عادية",
+      isced_levels: null, sector: null, address: "Rue du 24 Fevrier, Aïn Defla 44000",
+    },
+  }],
+]);
+
+const canonicalOsmRef = (ref) => OSM_REF_MIGRATIONS.get(ref)?.previousRef || ref;
+const PRESERVED_OSM_FIELDS = [
+  "name", "name_fr", "name_ar",
+  "cycle", "cycle_label_fr", "cycle_label_ar",
+  "kind", "kind_label_fr", "kind_label_ar",
+  "isced_levels", "sector", "address",
+];
+
+function preservePublishedOsmMigrations(rows, committed) {
+  const committedByRef = new Map(
+    committed.filter((r) => r.refs?.osm).map((r) => [r.refs.osm, r]),
+  );
+  for (const row of rows) {
+    const migration = OSM_REF_MIGRATIONS.get(row.refs?.osm);
+    if (!migration) continue;
+    const published = committedByRef.get(migration.previousRef) || migration.published;
+    for (const field of PRESERVED_OSM_FIELDS) row[field] = published[field];
+    row.id = migration.id;
+  }
+}
 
 // --- generic HTTP ----------------------------------------------------------
 const MAX_REDIRECTS = 5;
@@ -163,7 +232,6 @@ async function fetchOSM() {
 
 // --- helpers ---------------------------------------------------------------
 const str = (v) => (typeof v === "string" && v.trim() !== "" ? v.trim() : null);
-const wcode = (n) => (Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null);
 // True only for actual Arabic *letters* — excludes combining marks/punctuation,
 // so a Latin string carrying a stray harakat (e.g. "ُÉcole") is not "Arabic".
 const isArabic = (s) => typeof s === "string" && /[ء-يٱ-ۓۺ-ۿ]/.test(s);
@@ -413,50 +481,6 @@ function normOSM(elements) {
   return deduped;
 }
 
-// --- commune centroids + wilaya names (flagship geoalgeria) ----------------
-function loadCommunes() {
-  const wilayas = JSON.parse(
-    readFileSync(join(REPO_ROOT, "packages", "dataset", "data", "algeria.json"), "utf-8"),
-  );
-  const communes = [];
-  for (const w of wilayas) {
-    for (const c of w.communes || []) {
-      if (Number.isFinite(c.latitude) && Number.isFinite(c.longitude)) {
-        communes.push({
-          wilaya_code: c.wilaya_code,
-          wilaya_fr: w.name_fr,
-          wilaya_ar: w.name_ar,
-          commune_fr: c.name_fr,
-          code_commune: c.code_commune,
-          lat: c.latitude,
-          lng: c.longitude,
-        });
-      }
-    }
-  }
-  if (!communes.length) throw new Error("no commune centroids loaded — check packages/dataset/data/algeria.json");
-  return communes;
-}
-
-function attachCommune(rows, communes) {
-  for (const r of rows) {
-    let best = null;
-    let bestD = Infinity;
-    const cosLat = Math.cos(r.lat * DEG);
-    for (const c of communes) {
-      const dx = (c.lng - r.lng) * cosLat;
-      const dy = c.lat - r.lat;
-      const d = dx * dx + dy * dy;
-      if (d < bestD) { bestD = d; best = c; }
-    }
-    r.wilaya_code = wcode(best.wilaya_code);
-    r.wilaya = best.wilaya_fr;
-    r.wilaya_ar = best.wilaya_ar;
-    r.commune = best.commune_fr;
-    r.commune_code = best.code_commune;
-  }
-}
-
 // Stable id `{wilaya_code}-{seq}`, seq ordered by osm_id so re-fetches are
 // deterministic and ids stay put even if cycle logic is later refined.
 function assignIds(rows) {
@@ -497,7 +521,22 @@ async function main() {
   const cfg = MIGRATIONS.ecoles;
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "ecoles.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "ecoles");
+  const committed = readCommitted(OUT_DIR, "ecoles.json");
+  // Normalize both sides of known OSM primitive migrations for id carry-over.
+  // A synthetic committed row also makes this deterministic when rebuilding on
+  // top of an already-regenerated worktree rather than the last release.
+  const migratedRefs = new Set([...OSM_REF_MIGRATIONS.values()].map((m) => m.previousRef));
+  const carryCommitted = committed.filter((r) => !migratedRefs.has(canonicalOsmRef(r.refs?.osm)));
+  for (const [currentRef, migration] of OSM_REF_MIGRATIONS) {
+    carryCommitted.push({ id: migration.id, refs: { osm: currentRef } });
+  }
+  carryOverIds(
+    v2,
+    carryCommitted,
+    (r) => (r.refs?.osm ? `osm:${canonicalOsmRef(r.refs.osm)}` : null),
+    "ecoles",
+  );
+  preservePublishedOsmMigrations(v2, committed);
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
   const { records, metadata } = writePackageV2({

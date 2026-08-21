@@ -106,7 +106,9 @@ data/
 ```
 
 `class` is the office category (`CE`, `R1`–`R4`, `HC`, `GA`). `commune_code` is
-Algérie Poste's 4-digit commune code, which joins to GeoAlgeria's `code_commune`.
+the normalized 4-digit ONS code that joins to GeoAlgeria's `code_commune`.
+When Algérie Poste publishes a different native value, the optional
+`source_commune_code` preserves it unchanged.
 `geo_precision` is `"exact"` (or `null` alongside `lat`/`lng` when the office
 isn't geocoded); `geo_method` names how the point was obtained.
 

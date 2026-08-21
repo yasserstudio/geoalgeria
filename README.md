@@ -66,14 +66,14 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Mobilis network** | 12,345 | 165 agencies + 12,180 points of sale. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **5G coverage** | 3,096 | Djezzy + Mobilis + Ooredoo 5G sites. [`@geoalgeria/telecom`](packages/telecom) |
 | **Civil airports** | 36 | ANAC + OurAirports: names, ICAO + IATA codes, contacts, coordinates. [`@geoalgeria/aviation`](packages/aviation) |
-| **Nonstop routes** | 123 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
+| **Nonstop routes** | 124 | Air Algérie's international network as directional legs, each with an operator, an evidence tier and a source. [`@geoalgeria/aviation`](packages/aviation) |
 | **Banks & branches** | 1,704 | all 21 licensed banks + 8 institutions; branches with RIB/SWIFT codes, ownership, coordinates. [`@geoalgeria/banques`](packages/banques) |
 | **Delivery carriers** | 411 | 16-carrier registry + 411 geocoded stop-desks across 61 wilayas (Yalidine, Guepex, Anderson, Noest, Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **Youth establishments** | 2,334 | maisons de jeunes, complexes sportifs de proximité, salles polyvalentes, auberges, cultural & science centers & more across 58 wilayas (Ministry of Youth and Sports). [`@geoalgeria/jeunesse`](packages/jeunesse) |
 | **Sports facilities** | 5,141 | stadiums, pools, proximity fields, athletics tracks, courts & more (27 types) across 58 wilayas (Ministry of Youth and Sports). [`@geoalgeria/sports`](packages/sports) |
 | **Higher education** | 177 | universities, grandes écoles, ENS, centres + 19 private & 48 other-ministry institutions across 51 wilayas, with official websites (MESRS). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **Tourism** | 4,348 | 1,602 hotels, 1,248 attractions, 1,184 historic sites, 282 thermal springs (ASAL), 32 national parks. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across 58 wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across all 69 current wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosques** | 20,759 | Wikidata + OpenStreetMap composite, Arabic & French names, denomination, all 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Djezzy boutiques** | 128 | geocoded retail stores with category, hours & commune/wilaya linkage (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
 | **Health establishments** | 695 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 600 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |

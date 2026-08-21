@@ -84,6 +84,19 @@
     "source": "ourairports"
   },
   {
+    "iata": "BER",
+    "icao": "EDDB",
+    "name": "Berlin Brandenburg Airport",
+    "municipality": "Berlin",
+    "country": "DE",
+    "lat": 52.361738,
+    "lng": 13.502341,
+    "type": "large_airport",
+    "airline_city_label": "Berlin",
+    "source": "ourairports",
+    "note": "Berlin Brandenburg. Air Algerie's booking engine opened the first weekly ALG-BER rotation for 14 Sep 2026."
+  },
+  {
     "iata": "BEY",
     "icao": "OLBA",
     "name": "Beirut Rafic Hariri International Airport",
@@ -146,6 +159,19 @@
     "note": "Two-rotation triangle: nonstop ALG->BUD Saturdays, nonstop BUD->ALG Wednesdays, never a same-day nonstop round trip."
   },
   {
+    "iata": "BZV",
+    "icao": "FCBB",
+    "name": "Maya-Maya International Airport",
+    "municipality": "Brazzaville",
+    "country": "CG",
+    "lat": -4.2517,
+    "lng": 15.253,
+    "type": "large_airport",
+    "airline_city_label": "Brazzaville",
+    "source": "ourairports",
+    "note": "Bookings opened for three weekly ALG-BZV rotations from 26 Oct 2026."
+  },
+  {
     "iata": "CAI",
     "icao": "HECA",
     "name": "Cairo International Airport",
@@ -182,6 +208,19 @@
     "source": "ourairports"
   },
   {
+    "iata": "CKY",
+    "icao": "GUCY",
+    "name": "Ahmed Sékou Touré International Airport",
+    "municipality": "Conakry",
+    "country": "GN",
+    "lat": 9.57689,
+    "lng": -13.612,
+    "type": "large_airport",
+    "airline_city_label": "Conakry",
+    "source": "ourairports",
+    "note": "Bookings opened for three weekly ALG-CKY rotations from 25 Oct 2026."
+  },
+  {
     "iata": "CRL",
     "icao": "EBCI",
     "name": "Brussels South Charleroi Airport",
@@ -193,6 +232,32 @@
     "airline_city_label": "CHARLEROI - BRUXELLES SUD",
     "source": "ourairports",
     "note": "Air Algerie's own list treats Charleroi as a destination distinct from Brussels, which matches the airport-level rule."
+  },
+  {
+    "iata": "DEL",
+    "icao": "VIDP",
+    "name": "Indira Gandhi International Airport",
+    "municipality": "New Delhi",
+    "country": "IN",
+    "lat": 28.55563,
+    "lng": 77.09519,
+    "type": "large_airport",
+    "airline_city_label": "New Delhi",
+    "source": "ourairports",
+    "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026."
+  },
+  {
+    "iata": "DJE",
+    "icao": "DTTJ",
+    "name": "Djerba Zarzis International Airport",
+    "municipality": "Mellita",
+    "country": "TN",
+    "lat": 33.873719,
+    "lng": 10.7773,
+    "type": "large_airport",
+    "airline_city_label": "Djerba",
+    "source": "ourairports",
+    "note": "Seasonal ALG-DJE service resumed on 17 Jul 2026 as AH4708."
   },
   {
     "iata": "DLA",
@@ -307,6 +372,19 @@
     "note": "Charter. First rotation flown ~24-26 Jul 2026 per three independent Algerian outlets. Absent from the airline's destination page and invisible to booking probes, as charters generally are."
   },
   {
+    "iata": "ICN",
+    "icao": "RKSI",
+    "name": "Incheon International Airport",
+    "municipality": "Seoul",
+    "country": "KR",
+    "lat": 37.469101,
+    "lng": 126.450996,
+    "type": "large_airport",
+    "airline_city_label": "Incheon",
+    "source": "ourairports",
+    "note": "Planned Korea-Algeria link. July 2026 traffic-rights coverage names Incheon-Algiers, but the bilateral agreement permits regional airports."
+  },
+  {
     "iata": "IST",
     "icao": "LTFM",
     "name": "İstanbul Airport",
@@ -417,6 +495,19 @@
     "airline_city_label": "LISBONNE",
     "source": "ourairports",
     "note": "Air Algerie serves ORN-LIS via Algiers, not nonstop."
+  },
+  {
+    "iata": "LOS",
+    "icao": "DNMM",
+    "name": "Murtala Muhammed International Airport",
+    "municipality": "Lagos",
+    "country": "NG",
+    "lat": 6.57737,
+    "lng": 3.32116,
+    "type": "large_airport",
+    "airline_city_label": "Lagos",
+    "source": "ourairports",
+    "note": "Bookings opened for two weekly triangular rotations via Abuja from 26 Oct 2026; Algeria-touching legs are recorded directionally."
   },
   {
     "iata": "LYS",

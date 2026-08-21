@@ -77,10 +77,10 @@ declare namespace algeriaGeodata {
     postal_code: string | null;
     latitude: number | null;
     longitude: number | null;
-    /** Pre-2026 ONS commune code. `null` on the 15 communes with no sourced
-     *  value; it is not renumbered for the 2026 reform, so it cannot be used to
-     *  look up a commune's current wilaya. */
-    code_commune: number | null;
+    /** Unique ONS 2021 WWCC commune code. Communes promoted into wilayas
+     *  59-69 retain their 2021 mother-wilaya prefix, so the prefix does not
+     *  necessarily equal `wilaya_code`. */
+    code_commune: number;
   }
 
   export interface Daira {
@@ -147,6 +147,9 @@ declare namespace algeriaGeodata {
     wilaya_code: string;
     /** Commune (ONS) code as a 4-digit string. */
     commune_code: string;
+    /** Algérie Poste's provider-native commune code when it differs from the
+     *  normalized ONS join. Omitted when both values agree. */
+    source_commune_code?: string;
     /** Commune name (French). */
     commune: string;
     /** Commune name in Arabic. */

@@ -52,12 +52,12 @@ export function validateRecords(records, opts = {}) {
     if (!wcodeOk)
       err(i, `wilaya_code must be a zero-padded string "01".."69" (got ${JSON.stringify(r.wilaya_code)})`);
 
-    // commune_code — numeric string or null; prefix should match wilaya_code
+    // commune_code — numeric string or null. Its prefix can differ from the
+    // current wilaya: communes promoted in later reforms retain their ONS 2021
+    // mother-wilaya code. Repository validation checks the actual FK set.
     if (r.commune_code != null) {
       if (typeof r.commune_code !== "string" || !/^\d+$/.test(r.commune_code))
         err(i, `commune_code must be a numeric string or null (got ${JSON.stringify(r.commune_code)})`);
-      else if (wcodeOk && !r.commune_code.startsWith(r.wilaya_code))
-        warn(i, `commune_code "${r.commune_code}" does not start with wilaya_code "${r.wilaya_code}"`);
     }
 
     // coordinates — both null (ungeocoded) or both finite numbers

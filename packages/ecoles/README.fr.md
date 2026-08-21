@@ -172,11 +172,12 @@ bâtiment – `geo_method` précise lequel (`osm_node`/`osm_centroid`).
 
 > **Le rattachement commune/wilaya est déduit, pas issu de la source.**
 > OpenStreetMap ne porte pas les codes administratifs algériens. GeoAlgeria
-> attache `wilaya_code`, `commune_code` et `commune` par une **jointure au
-> centroïde le plus proche** contre le jeu de communes
-> [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est
-> quasi exacte ; la commune est au mieux (proximité de centroïde, pas
-> d'inclusion polygonale).
+> attache `wilaya_code`, `commune_code` et `commune` en localisant d'abord le
+> polygone de wilaya contenant le point, puis le centroïde de commune le plus
+> proche **dans cette wilaya**, depuis le jeu de communes
+> [`geoalgeria`](https://www.npmjs.com/package/geoalgeria). La wilaya est issue
+> de l'inclusion polygonale ; la commune reste une proximité de centroïde au
+> sein de cette limite.
 
 ## Besoin aussi des divisions administratives ?
 
@@ -193,7 +194,8 @@ Lancez `npm run fetch` pour régénérer toutes les sorties. Le script :
    `amenity=kindergarten` en Algérie ;
 2. **classe le cycle** à partir d'`isced:level` et du nom français/arabe ;
 3. déduplique la même école cartographiée à la fois comme nœud et comme bâtiment ;
-4. attache commune/wilaya par centroïde de commune le plus proche.
+4. localise le polygone de wilaya contenant le point, puis attache le centroïde
+   de commune le plus proche dans cette wilaya.
 
 L'extraction brute est conservée sous
 [`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).

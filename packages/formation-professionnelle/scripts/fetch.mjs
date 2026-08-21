@@ -25,8 +25,10 @@
  * our capture, so no re-pull can close them. Rather than ship them unplaceable,
  * each is placed on the centroid of the commune its own `CommunnNom` names,
  * joined against the flagship geoalgeria commune set by normalized Arabic name
- * within the record's own wilaya (geo_precision "approximate", geo_method
- * "commune"). Where the commune field names the wilaya rather than a commune
+ * within the source wilaya and its post-2026 daughters (geo_precision
+ * "approximate", geo_method "commune"). The same match assigns the current
+ * 69-wilaya code to every establishment, including records whose source
+ * coordinate is complete. Where the commune field names the wilaya rather than a commune
  * (31 Algiers records reading "الجزائر"), the wilaya centroid is used instead
  * (geo_method "wilaya"). Records whose commune cannot be resolved confidently
  * keep their null coordinates: an unresolved name is left unplaced, never
@@ -46,6 +48,7 @@ import {
   carryOverIds,
   readCommitted,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
 import { readCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -123,6 +126,15 @@ const normAr = (s) =>
     .replace(/ة/g, "ه")
     .replace(/[^\p{L}\p{N}]/gu, "");
 
+// Confirmed Takwin spellings that normalize differently from the flagship
+// commune registry. Keep these explicit and scoped to the source name: fuzzy
+// matching could silently move an establishment across a real boundary.
+const COMMUNE_NAME_ALIASES = new Map([
+  [normAr("مجدل"), normAr("امجدل")],
+  [normAr("جبلمسعد"), normAr("جبل مساعد")],
+  [normAr("أمسيف"), normAr("مسيف")],
+]);
+
 function loadGeoReference() {
   const communeFC = JSON.parse(readFileSync(join(REF, "geojson", "communes.geojson"), "utf-8"));
   const wilayas = JSON.parse(readFileSync(join(REF, "wilayas.json"), "utf-8")).wilayas;
@@ -192,6 +204,12 @@ function resolveCommune(commune, wilaya, ref) {
   const exact = lookup(key);
   if (exact) return { ...exact, how: "exact" };
 
+  const alias = COMMUNE_NAME_ALIASES.get(key);
+  if (alias) {
+    const hit = lookup(alias);
+    if (hit) return { ...hit, how: "variant" };
+  }
+
   const variants = [];
   if (key.startsWith("ال")) variants.push(key.slice(2));
   else variants.push("ال" + key);
@@ -218,37 +236,55 @@ function main() {
   console.log(`  ${filtered.length} after excluding the ministry HQ`);
 
   const ref = loadGeoReference();
-  const stats = { takwin: 0, commune: 0, wilaya: 0, unplaced: 0, viaVariant: 0 };
+  const stats = {
+    takwin: 0,
+    commune: 0,
+    wilaya: 0,
+    unplaced: 0,
+    viaVariant: 0,
+    reassignedWilaya: 0,
+    coordinateCommuneConflicts: 0,
+  };
   const unresolved = new Map();
 
   const records = filtered.map((r) => {
     const { lat, lng } = cleanCoords(r);
     const commune = parseCommune(r.CommunnNom);
-    const wilaya_code = wilayaCode(r.IDDFEP);
+    const sourceWilayaCode = wilayaCode(r.IDDFEP);
+    const sourceWilaya = Number(sourceWilayaCode);
+    const communeHit = resolveCommune(commune, sourceWilaya, ref);
+    // A source coordinate is stronger evidence than a contradictory commune
+    // string. Use containment for exact points, and commune resolution for the
+    // records whose source coordinate is missing.
+    const coordinateWilaya = lat != null ? containingWilayaCode(lat, lng) : null;
+    if (coordinateWilaya && communeHit && Number(coordinateWilaya) !== communeHit.wilaya) {
+      stats.coordinateCommuneConflicts++;
+    }
+    const wilaya_code = coordinateWilaya
+      || (communeHit ? String(communeHit.wilaya).padStart(2, "0") : sourceWilayaCode);
+    if (wilaya_code !== sourceWilayaCode) stats.reassignedWilaya++;
 
     let geo = { lat, lng, geo_precision: null, geo_method: null };
     if (lat != null) {
       geo = { lat, lng, geo_precision: "exact", geo_method: "takwin" };
       stats.takwin++;
     } else {
-      const w = Number(wilaya_code);
-      const hit = resolveCommune(commune, w, ref);
-      if (hit) {
-        geo = { lat: round6(hit.lat), lng: round6(hit.lng), geo_precision: "approximate", geo_method: "commune" };
+      if (communeHit) {
+        geo = { lat: round6(communeHit.lat), lng: round6(communeHit.lng), geo_precision: "approximate", geo_method: "commune" };
         stats.commune++;
-        if (hit.how === "variant") stats.viaVariant++;
-      } else if (commune && normAr(commune) === ref.wilayaNameKey.get(w)) {
+        if (communeHit.how === "variant") stats.viaVariant++;
+      } else if (commune && normAr(commune) === ref.wilayaNameKey.get(sourceWilaya)) {
         // The commune field repeats the wilaya name and no commune of that name
         // exists (Algiers: "الجزائر" is the wilaya, its communes are named
         // otherwise). Nothing finer than the wilaya is being claimed here.
         // Most wilaya names DO also name their seat commune, which the lookup
         // above resolves first, so this branch is the genuine remainder.
-        const c = ref.wilayaCentroid.get(w);
+        const c = ref.wilayaCentroid.get(sourceWilaya);
         if (c) { geo = { lat: round6(c.lat), lng: round6(c.lng), geo_precision: "approximate", geo_method: "wilaya" }; stats.wilaya++; }
       }
       if (geo.lat == null) {
         stats.unplaced++;
-        const k = `${wilaya_code}|${commune}`;
+        const k = `${sourceWilayaCode}|${commune}`;
         unresolved.set(k, (unresolved.get(k) || 0) + 1);
       }
     }
@@ -311,6 +347,10 @@ function main() {
     `Placement: ${stats.takwin} takwin (exact), ${stats.commune} commune centroid` +
       ` (${stats.viaVariant} via a spelling variant), ${stats.wilaya} wilaya centroid, ${stats.unplaced} unplaced`,
   );
+  console.log(`  ${stats.reassignedWilaya} establishment(s) reassigned from a source wilaya to its post-2026 daughter`);
+  if (stats.coordinateCommuneConflicts) {
+    console.log(`  ${stats.coordinateCommuneConflicts} exact coordinate(s) overrode a contradictory commune-derived wilaya`);
+  }
   if (residuals.length)
     console.log(`  single-axis cross-check on ${residuals.length} placed records: median ${pct(0.5)} km, p90 ${pct(0.9)} km, max ${residuals[residuals.length - 1].toFixed(1)} km`);
   if (unresolved.size) {
@@ -325,9 +365,10 @@ function main() {
   const cfg = MIGRATIONS["formation-professionnelle"];
   const { updated, retrieved } = resolveDates(OUT_DIR, true);
   const v2 = records.map(cfg.map);
-  // `code` alone repeats on 5 records, so the carry key adds the fields that make
-  // it unique across all 1,932.
-  const carryKey = (r) => [r.code, r.wilaya_code, r.type, r.name].join("|");
+  // `code` alone repeats on 5 records, so type and name make the carry key unique
+  // without depending on wilaya_code. That preserves ids when a commune moves
+  // from its source's pre-reform wilaya to the current daughter wilaya.
+  const carryKey = (r) => [r.code, r.type, r.name].join("|");
   carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKey, "formation-professionnelle");
 
   let oldMeta = {};

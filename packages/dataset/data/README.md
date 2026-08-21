@@ -93,7 +93,7 @@ data/
 | `postal_code` | string \| null | Commune postal code (null for 5 communes with no citable code) |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
-| `code_commune` | integer \| null | Official administrative code (null for 15 communes) |
+| `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2025 retain their 2021 mother-wilaya prefix |
 
 ### Commune (e-commerce)
 

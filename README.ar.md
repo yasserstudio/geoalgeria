@@ -75,7 +75,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **منشآت رياضية** | 5,141 | ملاعب، حمامات سباحة، مجالات من الدرجة الأولى، مضمارات العاب القوى، ملاعب وأكثر (27 نوع) في 58 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/sports`](packages/sports) |
 | **التعليم العالي** | 177 | جامعات، مدارس عليا، مدارس عليا للأساتذة، مراكز + 19 مؤسسة خاصة و48 تابعة لوزارات أخرى في 51 ولاية، مع المواقع الرسمية (وزارة التعليم العالي). [`@geoalgeria/enseignement-superieur`](packages/enseignement-superieur) |
 | **السياحة** | 4,348 | 1,602 فندق، 1,248 معلم سياحي، 1,184 موقع تاريخي، 282 منبع حراري (ASAL)، 32 حديقة وطنية. [`@geoalgeria/tourisme`](packages/tourisme) |
-| **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في 58 ولاية (وزارة التكوين المهني / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
+| **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في الولايات الحالية الـ69 (وزارة التكوين المهني / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **المساجد** | 20,759 | تجميع Wikidata + OpenStreetMap، أسماء عربية وفرنسية، المذهب، كل الـ69 ولاية. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
 | **المؤسسات الصحية** | 695 | EPH · EPSP · EHS · CHU من وزارة الصحة، ثنائية اللغة، 600 بإحداثيات عبر OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |

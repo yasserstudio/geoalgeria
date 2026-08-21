@@ -41,7 +41,7 @@ const one = fp.establishmentById("00001");          // single record by id
 - **Vocational training directories** – bilingual names, type, capacity and full contact info on every record.
 - **Maps** – drop-in GeoJSON point layer for the vocational training network (99% geocoded).
 - **Capacity planning** – theoretical and realized capacities, boarding availability and surface area.
-- **Sector analysis** – 1,209 public vs 723 private establishments across 58 wilayas.
+- **Sector analysis** – 1,209 public vs 723 private establishments across all 69 current wilayas.
 
 ## What's inside
 
@@ -59,12 +59,13 @@ const one = fp.establishmentById("00001");          // single record by id
 | Institut National de la Formation et de l'Enseignement Professionnels | `infep` | 1 |
 | **Total** | | **1,932** |
 
-Spanning **58 wilayas** (pre-reform scheme). 1,920 of 1,932 establishments are geocoded
+Spanning **all 69 current wilayas**. The source is keyed by the pre-reform 58-wilaya
+scheme, so the generator matches source coordinates and communes to the current division and assigns 134
+establishments to their post-2026 daughter wilaya. 1,920 of 1,932 establishments are geocoded
 (99%), `lat`/`lng` is `null` for the remaining 12. Of the geocoded records, 1,375 carry the
 point takwin.dz publishes (`geo_precision` `"exact"`); the portal leaves the coordinate empty
 on the rest, so 510 sit on their commune's centroid and 35 on their wilaya's, both
-`"approximate"` and labelled in `geo_method`. `wilaya_code` uses the 58-wilaya scheme as
-published by the source.
+`"approximate"` and labelled in `geo_method`.
 
 ## Formats
 
@@ -134,8 +135,8 @@ data/
 `establishments.json`, don't parse it. Names are bilingual, `name` is Arabic (always present),
 `name_fr` is French (may be `null`). `type` is a slug matching one of the ten establishment
 types listed above. `secteur` is `"public"` or `"prive"`. `wilaya_code` is zero-padded to two
-digits in the 58-wilaya scheme; `commune_code` is currently always `null` for this source (no
-ONS code published by takwin.dz). `lat`/`lng`, and `geo_precision`/`geo_method` with them, are
+digits in the current 69-wilaya scheme, derived by matching the source commune; `commune_code`
+is currently always `null` for this source (no ONS code published by takwin.dz). `lat`/`lng`, and `geo_precision`/`geo_method` with them, are
 `null` for the 12 records that are not yet geocoded; where present, `geo_precision` is
 `"exact"` or `"approximate"` and `geo_method` records how the coordinate was sourced:
 `takwin` for a published point, `commune` or `wilaya` for a centroid standing in for one the
@@ -154,8 +155,9 @@ need vocational training data.
 
 Data comes from the **MFEP – Ministere de la Formation et de l'Enseignement Professionnels**,
 via [takwin.dz](https://takwin.dz). The source uses the pre-reform **58-wilaya scheme**.
-Run `npm run fetch` to regenerate every output from the live site. Names, types, contacts,
-capacities and coordinates are as published by the ministry.
+The generator maps its commune names to GeoAlgeria's current 69-wilaya division. Run
+`npm run fetch` to replay the committed source capture. Names, types, contacts, capacities
+and coordinates are as published by the ministry.
 
 ## License & attribution
 

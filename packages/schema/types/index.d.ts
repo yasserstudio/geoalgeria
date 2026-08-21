@@ -42,7 +42,8 @@ export interface GeoRecord {
   name_ar?: string | null;
   /** Wilaya code, zero-padded 2-digit string "01".."69". */
   wilaya_code: string;
-  /** Commune (ONS) code as a string, or null when unknown. First 2 digits === wilaya_code. */
+  /** Commune (ONS 2021) code as a string, or null when unknown. Communes moved
+   *  into later wilayas retain their mother-wilaya prefix. */
   commune_code?: string | null;
   /** Commune name (French). */
   commune?: string | null;

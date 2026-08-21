@@ -750,3 +750,58 @@ is itself worth knowing about the source.
 
 The honest reading of a route on this list: a published table says Air Algérie
 serves it, no probe has yet seen it, and neither statement outranks the other.
+
+## 29. Berlin is bookable in both directions, but still planned (2026-08-21)
+
+Air Algérie's own booking results now expose both legs of the new Berlin
+rotation for Monday 14 September 2026:
+
+| Route | Flight | Local schedule | Block time |
+| --- | --- | --- | --- |
+| `ALG-BER` | `AH 2072` | 14:00–18:00 | 3h00 |
+| `BER-ALG` | `AH 2073` | 19:00–21:05 | 3h05 |
+
+The booking results name Air Algérie, label both as direct, and show fares for
+the launch date. A public schedule report independently says reservations opened
+on 20 August, with one Monday rotation per week from 14 September through at
+least 19 October. The two legs therefore enter `plannedRoutes()` separately at
+the `verified` evidence tier: carrier, direction, flight number and duration are
+confirmed, while `planned` remains true because neither leg was operating on the
+21 August snapshot date. See `verification-2026-08-21.md` for the receipts and
+the decision record.
+
+An independent production search through the official Soar Flights MCP matched
+both legs exactly on the same date. Use that search as a live confirmation, not
+as the published `source`: offer IDs, fares and expiries are transient, so a
+stable public report still belongs in each route record.
+
+## 30. Korea has traffic rights, not a filed schedule (2026-08-21)
+
+The Korea–Algeria bilateral announcement permits up to four weekly passenger and
+cargo flights. Contemporary coverage describes an Algiers–Incheon link, but the
+agreement itself permits any airport in either country and publishes no launch
+date, flight number or operating day.
+
+The map therefore carries `ALG-ICN` and `ICN-ALG` only in `plannedRoutes()` so
+they render as dashed arcs. Both stay `listed` / `unclear`, with null flight and
+days, until an operator schedule or booking result resolves the remaining
+details. Do not promote them to operating routes from traffic rights alone.
+
+## 31. New inventory can retire an old codeshare exclusion (2026-08-21)
+
+Doha was previously excluded because every probe returned only Qatar Airways
+metal with Air Algérie marketing. New Air Algérie inventory now exposes
+`AH4078` and `AH4079` from 29 September, so the old codeshare finding remains
+historically true but no longer describes the forward schedule. Both directions
+move into `plannedRoutes()` until the resumption date.
+
+The same pass confirms new October inventory for Shanghai, Brazzaville, Conakry
+and the Lagos/Abuja triangles. Record only Algeria-touching nonstop legs of a
+triangle, and record each direction separately: `AH5354` produces different
+direct legs on the Monday and Thursday rotations.
+
+Delhi demonstrates the lower boundary. A diplomatic confirmation and filed
+directional schedule are enough for `listed` planned rows, but an empty booking
+probe is not enough to upgrade them. Tripoli remains below the inclusion bar
+because the current report states only an objective and supplies no filed
+schedule or sale inventory.

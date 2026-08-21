@@ -184,3 +184,214 @@ test("aviation: routes resolve to endpoints, are directional, and carry a source
   assert.ok(alg.length > 0, "no routes from ALG");
   assert.ok(alg.every((r) => r.from === "ALG"), "routesFrom returned arrivals");
 });
+
+test("aviation: the confirmed Berlin launch stays directional and planned", async () => {
+  const m = await pkg("aviation");
+  const berlin = m
+    .plannedRoutes()
+    .filter((r) => r.from === "BER" || r.to === "BER");
+
+  assert.deepEqual(
+    berlin.map((r) => ({
+      id: r.id,
+      flight: r.flight,
+      status: r.status,
+      days: r.days,
+      evidence: r.evidence,
+    })),
+    [
+      {
+        id: "alg-ber",
+        flight: "AH 2072",
+        status: "unclear",
+        days: ["mon"],
+        evidence: "verified",
+      },
+      {
+        id: "ber-alg",
+        flight: "AH 2073",
+        status: "unclear",
+        days: ["mon"],
+        evidence: "verified",
+      },
+    ],
+  );
+  assert.ok(
+    !m.routes().some((r) => r.from === "BER" || r.to === "BER"),
+    "Berlin leaked into the operating-route collection before launch",
+  );
+  assert.deepEqual(
+    m.routeEndpoints().find((e) => e.iata === "BER"),
+    {
+      iata: "BER",
+      name: "Aéroport de Berlin-Brandebourg",
+      name_en: "Berlin Brandenburg Airport",
+      name_ar: "مطار برلين براندنبرغ",
+      lat: 52.361738,
+      lng: 13.502341,
+      country: "DE",
+    },
+  );
+});
+
+test("aviation: the reported Korea route stays directional and planned", async () => {
+  const m = await pkg("aviation");
+  const korea = m
+    .plannedRoutes()
+    .filter((r) => r.from === "ICN" || r.to === "ICN");
+
+  assert.deepEqual(
+    korea.map((r) => ({
+      id: r.id,
+      carrier: r.carrier,
+      flight: r.flight,
+      status: r.status,
+      days: r.days,
+      evidence: r.evidence,
+    })),
+    [
+      {
+        id: "alg-icn",
+        carrier: "AH",
+        flight: null,
+        status: "unclear",
+        days: null,
+        evidence: "listed",
+      },
+      {
+        id: "icn-alg",
+        carrier: "AH",
+        flight: null,
+        status: "unclear",
+        days: null,
+        evidence: "listed",
+      },
+    ],
+  );
+  assert.ok(
+    !m.routes().some((r) => r.from === "ICN" || r.to === "ICN"),
+    "Korea leaked into the operating-route collection before launch",
+  );
+  assert.deepEqual(
+    m.routeEndpoints().find((e) => e.iata === "ICN"),
+    {
+      iata: "ICN",
+      name: "Aéroport international d'Incheon",
+      name_en: "Incheon International Airport",
+      name_ar: "مطار إنتشون الدولي",
+      lat: 37.469101,
+      lng: 126.450996,
+      country: "KR",
+    },
+  );
+});
+
+test("aviation: the newer schedule sweep preserves direction and lifecycle", async () => {
+  const m = await pkg("aviation");
+  const byId = new Map(
+    [...m.routes(), ...m.plannedRoutes()].map((r) => [r.id, r]),
+  );
+  const pick = (id) => {
+    const r = byId.get(id);
+    assert.ok(r, `${id}: route missing`);
+    return {
+      flight: r.flight,
+      status: r.status,
+      days: r.days,
+      evidence: r.evidence,
+      planned: r.planned,
+    };
+  };
+
+  assert.deepEqual(pick("alg-pvg"), {
+    flight: "AH 3082",
+    status: "unclear",
+    days: ["mon", "wed", "sat"],
+    evidence: "verified",
+    planned: true,
+  });
+  assert.deepEqual(pick("pvg-alg"), {
+    flight: "AH 3083",
+    status: "unclear",
+    days: ["tue", "thu", "sun"],
+    evidence: "verified",
+    planned: true,
+  });
+  assert.deepEqual(pick("alg-del"), {
+    flight: "AH 3104",
+    status: "unclear",
+    days: ["tue", "thu", "sun"],
+    evidence: "listed",
+    planned: true,
+  });
+  assert.deepEqual(pick("del-alg"), {
+    flight: "AH 3105",
+    status: "unclear",
+    days: ["mon", "wed", "fri"],
+    evidence: "listed",
+    planned: true,
+  });
+
+  for (const id of ["alg-bzv", "bzv-alg", "alg-cky", "cky-alg"])
+    assert.deepEqual(
+      { evidence: pick(id).evidence, planned: pick(id).planned },
+      { evidence: "verified", planned: true },
+      `${id}: new Africa booking is not a verified planned leg`,
+    );
+
+  assert.deepEqual(
+    ["alg-los", "los-alg", "alg-doh", "doh-alg"].map((id) => ({
+      id,
+      ...pick(id),
+    })),
+    [
+      { id: "alg-los", flight: "AH 5354", status: "unclear", days: ["thu"], evidence: "verified", planned: true },
+      { id: "los-alg", flight: "AH 5354", status: "unclear", days: ["tue"], evidence: "verified", planned: true },
+      { id: "alg-doh", flight: "AH 4078", status: "unclear", days: ["tue", "fri"], evidence: "verified", planned: true },
+      { id: "doh-alg", flight: "AH 4079", status: "unclear", days: ["tue", "fri"], evidence: "verified", planned: true },
+    ],
+  );
+
+  assert.deepEqual(pick("alg-abv"), {
+    flight: "AH 5354",
+    status: "active",
+    days: ["mon"],
+    evidence: "verified",
+    planned: false,
+  });
+  assert.deepEqual(pick("abv-alg"), {
+    flight: "AH 5354",
+    status: "unclear",
+    days: ["fri"],
+    evidence: "verified",
+    planned: true,
+  });
+  assert.deepEqual(pick("alg-dje"), {
+    flight: "AH 4708",
+    status: "seasonal",
+    days: null,
+    evidence: "verified",
+    planned: false,
+  });
+  assert.deepEqual(pick("czl-ssh"), {
+    flight: null,
+    status: "seasonal",
+    days: null,
+    evidence: "verified",
+    planned: false,
+  });
+
+  assert.deepEqual(
+    m
+      .routeEndpoints()
+      .filter((e) => ["BZV", "CKY", "DEL", "DJE", "LOS"].includes(e.iata))
+      .map((e) => [e.iata, e.country]),
+    [
+      ["BZV", "CG"],
+      ["CKY", "GN"],
+      ["DEL", "IN"],
+      ["DJE", "TN"],
+      ["LOS", "NG"],
+    ],
+  );
+});

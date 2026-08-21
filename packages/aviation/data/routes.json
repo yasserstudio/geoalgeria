@@ -108,10 +108,12 @@
     "from": "ALG",
     "to": "ABV",
     "carrier": "AH",
-    "flight": null,
-    "status": "unclear",
-    "days": null,
-    "evidence": "listed",
+    "flight": "AH 5354",
+    "status": "active",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
     "planned": false,
     "source": "https://www.agenceecofin.com/actualites-services/0704-127328-air-algerie-a-lance-sa-ligne-alger-abuja",
     "great_circle_km": 3106
@@ -260,6 +262,19 @@
     "planned": false,
     "source": "https://www.parisaeroport.fr/",
     "great_circle_km": 1370
+  },
+  {
+    "id": "alg-dje",
+    "from": "ALG",
+    "to": "DJE",
+    "carrier": "AH",
+    "flight": "AH 4708",
+    "status": "seasonal",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/",
+    "great_circle_km": 755
   },
   {
     "id": "alg-dla",
@@ -1010,11 +1025,11 @@
     "to": "SSH",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "seasonal",
     "days": null,
-    "evidence": "listed",
+    "evidence": "verified",
     "planned": false,
-    "source": "https://www.aeroroutes.com/eng/250722-ah3q25eg",
+    "source": "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/",
     "great_circle_km": 2762
   },
   {
@@ -1609,16 +1624,137 @@
     "great_circle_km": 6275
   },
   {
-    "id": "alg-pvg",
+    "id": "abv-alg",
+    "from": "ABV",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5354",
+    "status": "unclear",
+    "days": [
+      "fri"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 3106
+  },
+  {
+    "id": "alg-ber",
     "from": "ALG",
-    "to": "PVG",
+    "to": "BER",
+    "carrier": "AH",
+    "flight": "AH 2072",
+    "status": "unclear",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
+    "great_circle_km": 1919
+  },
+  {
+    "id": "alg-bzv",
+    "from": "ALG",
+    "to": "BZV",
+    "carrier": "AH",
+    "flight": "AH 5390",
+    "status": "unclear",
+    "days": null,
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 4722
+  },
+  {
+    "id": "alg-cky",
+    "from": "ALG",
+    "to": "CKY",
+    "carrier": "AH",
+    "flight": "AH 5358",
+    "status": "unclear",
+    "days": null,
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 3459
+  },
+  {
+    "id": "alg-del",
+    "from": "ALG",
+    "to": "DEL",
+    "carrier": "AH",
+    "flight": "AH 3104",
+    "status": "unclear",
+    "days": [
+      "tue",
+      "thu",
+      "sun"
+    ],
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
+    "great_circle_km": 6810
+  },
+  {
+    "id": "alg-doh",
+    "from": "ALG",
+    "to": "DOH",
+    "carrier": "AH",
+    "flight": "AH 4078",
+    "status": "unclear",
+    "days": [
+      "tue",
+      "fri"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/",
+    "great_circle_km": 4733
+  },
+  {
+    "id": "alg-icn",
+    "from": "ALG",
+    "to": "ICN",
     "carrier": "AH",
     "flight": null,
     "status": "unclear",
     "days": null,
     "evidence": "listed",
     "planned": true,
-    "source": "https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/",
+    "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+    "great_circle_km": 9914
+  },
+  {
+    "id": "alg-los",
+    "from": "ALG",
+    "to": "LOS",
+    "carrier": "AH",
+    "flight": "AH 5354",
+    "status": "unclear",
+    "days": [
+      "thu"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 3349
+  },
+  {
+    "id": "alg-pvg",
+    "from": "ALG",
+    "to": "PVG",
+    "carrier": "AH",
+    "flight": "AH 3082",
+    "status": "unclear",
+    "days": [
+      "mon",
+      "wed",
+      "sat"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
     "great_circle_km": 10131
   },
   {
@@ -1633,5 +1769,124 @@
     "planned": true,
     "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
     "great_circle_km": 3332
+  },
+  {
+    "id": "ber-alg",
+    "from": "BER",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2073",
+    "status": "unclear",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
+    "great_circle_km": 1919
+  },
+  {
+    "id": "bzv-alg",
+    "from": "BZV",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5391",
+    "status": "unclear",
+    "days": null,
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 4722
+  },
+  {
+    "id": "cky-alg",
+    "from": "CKY",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5359",
+    "status": "unclear",
+    "days": null,
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 3459
+  },
+  {
+    "id": "del-alg",
+    "from": "DEL",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 3105",
+    "status": "unclear",
+    "days": [
+      "mon",
+      "wed",
+      "fri"
+    ],
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
+    "great_circle_km": 6810
+  },
+  {
+    "id": "doh-alg",
+    "from": "DOH",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 4079",
+    "status": "unclear",
+    "days": [
+      "tue",
+      "fri"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/",
+    "great_circle_km": 4733
+  },
+  {
+    "id": "icn-alg",
+    "from": "ICN",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+    "great_circle_km": 9914
+  },
+  {
+    "id": "los-alg",
+    "from": "LOS",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 5354",
+    "status": "unclear",
+    "days": [
+      "tue"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+    "great_circle_km": 3349
+  },
+  {
+    "id": "pvg-alg",
+    "from": "PVG",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 3083",
+    "status": "unclear",
+    "days": [
+      "tue",
+      "thu",
+      "sun"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
+    "great_circle_km": 10131
   }
 ]

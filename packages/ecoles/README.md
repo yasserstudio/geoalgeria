@@ -166,10 +166,11 @@ records which (`osm_node`/`osm_centroid`). `wilaya_code` joins to GeoAlgeria's
 
 > **Commune/wilaya linkage is derived, not from the source.** OpenStreetMap does
 > not carry Algerian administrative codes. GeoAlgeria attaches `wilaya_code`,
-> `commune_code`, and `commune` by a **nearest-centroid join** against the
+> `commune_code`, and `commune` by first locating the containing wilaya polygon,
+> then choosing the nearest commune centroid **within that wilaya** from the
 > [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) commune set. Wilaya
-> assignment is effectively exact; commune is best-effort (centroid proximity,
-> not polygon containment).
+> assignment is polygon-based; commune is best-effort centroid proximity within
+> that boundary.
 
 ## Need the administrative divisions too?
 
@@ -186,7 +187,8 @@ Run `npm run fetch` to regenerate every output. It:
    `amenity=kindergarten` inside Algeria;
 2. **classifies the cycle** from `isced:level` and the French/Arabic name;
 3. de-duplicates the same school mapped as both a node and a building;
-4. attaches commune/wilaya by nearest commune centroid.
+4. locates the containing wilaya polygon, then attaches the nearest commune
+   centroid within that wilaya.
 
 The raw source pull is captured under
 [`sources/ecoles/`](https://github.com/yasserstudio/geoalgeria/tree/main/sources/ecoles).

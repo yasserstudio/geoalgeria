@@ -41,7 +41,7 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 - **Annuaires de formation professionnelle** – noms bilingues, type, capacité et coordonnées de contact complètes.
 - **Cartes** – couche de points GeoJSON prête à l'emploi pour le réseau de formation professionnelle (99 % géocodés).
 - **Planification des capacités** – capacités théoriques et réelles, disponibilité d'internat et superficie.
-- **Analyse sectorielle** – 1 209 établissements publics contre 723 privés à travers 58 wilayas.
+- **Analyse sectorielle** – 1 209 établissements publics contre 723 privés dans les 69 wilayas actuelles.
 
 ## Contenu
 
@@ -59,12 +59,13 @@ const one = fp.establishmentById("00001");          // un seul enregistrement pa
 | Institut National de la Formation et de l'Enseignement Professionnels | `infep` | 1 |
 | **Total** | | **1 932** |
 
-Couvrant **58 wilayas** (schéma pré-réforme). 1 920 des 1 932 établissements sont géocodés
+Couvrant **les 69 wilayas actuelles**. La source est indexée selon l'ancien schéma à 58
+wilayas ; le générateur rattache donc les coordonnées et communes au découpage actuel et affecte 134
+établissements à leur nouvelle wilaya issue de la réforme de 2026. 1 920 des 1 932 établissements sont géocodés
 (99 %) – `lat`/`lng` est `null` pour les 12 restants. Parmi les enregistrements géocodés,
 1 375 portent le point publié par takwin.dz (`geo_precision` `"exact"`) ; le portail laisse
 la coordonnée vide pour les autres, donc 510 sont placés sur le centroïde de leur commune et
 35 sur celui de leur wilaya, tous deux `"approximate"` et signalés dans `geo_method`.
-`wilaya_code` utilise le schéma à 58 wilayas tel que publié par la source.
 
 ## Formats
 
@@ -135,7 +136,7 @@ data/
 (toujours présent), `name_fr` est en français (peut être `null`). `type` est un slug
 correspondant à l'un des dix types d'établissements listés ci-dessus. `secteur` est
 `"public"` ou `"prive"`. `wilaya_code` est complété à deux chiffres avec un zéro dans le
-schéma à 58 wilayas ; `commune_code` est actuellement toujours `null` pour cette source
+schéma actuel à 69 wilayas, dérivé par rapprochement avec la commune source ; `commune_code` est actuellement toujours `null` pour cette source
 (aucun code ONS publié par takwin.dz). `lat`/`lng`, ainsi que `geo_precision`/`geo_method`,
 sont `null` pour les 12 enregistrements non encore géocodés ; quand ils sont présents,
 `geo_precision` vaut `"exact"` ou `"approximate"` et `geo_method` indique l'origine de la
@@ -155,9 +156,9 @@ quand vous avez *uniquement* besoin des données de formation professionnelle.
 
 Les données proviennent du **MFEP – Ministère de la Formation et de l'Enseignement
 Professionnels**, via [takwin.dz](https://takwin.dz). La source utilise le **schéma
-pré-réforme à 58 wilayas**. Exécutez `npm run fetch` pour régénérer toutes les sorties à
-partir du site en direct. Les noms, types, contacts, capacités et coordonnées sont tels
-que publiés par le ministère.
+pré-réforme à 58 wilayas**. Le générateur associe les communes au découpage actuel à 69
+wilayas. Exécutez `npm run fetch` pour rejouer la capture source enregistrée. Les noms,
+types, contacts, capacités et coordonnées sont tels que publiés par le ministère.
 
 ## Licence et attribution
 

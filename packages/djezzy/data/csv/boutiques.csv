@@ -14,8 +14,8 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 07-001,BISKRA - Centre commercial El Khir,07,0701,Biskra,34.85636,5.72389,exact,operator_point,djezzy,"{""djezzy"":""Z31""}",boutique,B,Centre commercial El Khir sis 03 avenue frères Saouli Biskra,08H00-19H00,C07B001
 08-001,BECHAR,08,0801,Bechar,31.61366,-2.21709,exact,operator_point,djezzy,"{""djezzy"":""Z44""}",boutique,B,"56, Rue Slimane Belkhedim, Béchar.",08H00 - 18H00,O08B001
 09-001,Blida - place Zabana,09,0901,Blida,36.47498,2.82818,exact,operator_point,djezzy,"{""djezzy"":""Z17""}",boutique,A,"38, Boulevard Larbi Tebessi, place Zabana, Blida.",08H00-19H30,A09B001
-09-002,Blida - Boufarik,09,0916,Boufarik,36.57347,2.91213,exact,operator_point,djezzy,"{""djezzy"":""Z73""}",boutique,,"31, BOULEVARD MOUKHTARI, BOUFARIK, BLIDA.",08H00-18H00,
-09-003,Larbâa - Blida,09,0917,Larbaa,36.56654,3.15288,exact,operator_point,djezzy,"{""djezzy"":""ZF7""}",boutique,,"73 Avenue Mohamed Kébir, Larbâa - Blida",08H30-17H00,
+09-002,Blida - Boufarik,09,0920,Boufarik,36.57347,2.91213,exact,operator_point,djezzy,"{""djezzy"":""Z73""}",boutique,,"31, BOULEVARD MOUKHTARI, BOUFARIK, BLIDA.",08H00-18H00,
+09-003,Larbâa - Blida,09,0921,Larbaa,36.56654,3.15288,exact,operator_point,djezzy,"{""djezzy"":""ZF7""}",boutique,,"73 Avenue Mohamed Kébir, Larbâa - Blida",08H30-17H00,
 10-001,Bouira - Zighout youcef,10,1001,Bouira,36.37334,3.89606,exact,operator_point,djezzy,"{""djezzy"":""Z42""}",boutique,,"Division Lakhdar Chaouche, Classe 63   72 (Rue Zighout youcef) Bouira",08H00-18H00,
 10-002,LAKHDARIA,10,1013,Lakhdaria,36.56336,3.59823,exact,operator_point,djezzy,"{""djezzy"":""Z90""}",boutique,,86 Rue Si LAKHDAR Commune LAKHDARIA -Wilaya Bouira,08H00-18H00,
 11-001,TAMANRASSET,11,1101,Tamanrasset,22.79821,5.52697,exact,operator_point,djezzy,"{""djezzy"":""Z65""}",boutique,C,"Quartier Sersouf, Tamanrasset.",08H00 -18H30,
@@ -34,14 +34,14 @@ Maghnia-Wilaya Tlemcen,",08H00 - 18H00,
 16-004,Alger - Kouba (Ex Lavigerie),16,1603,El Madania,36.72947,3.07893,exact,operator_point,djezzy,"{""djezzy"":""Z09""}",boutique,A,"86, Avenue des frères Abdeslami (Ex Lavigerie), Vieux Kouba, Alger.",08H00 -20H00,A16B003
 16-005,Alger - Audin,16,1602,Sidi M'hamed,36.76921,3.05506,exact,operator_point,djezzy,"{""djezzy"":""Z11""}",boutique,A,"23, Rue Didouche Mourad, Place Audin, Alger.",08H00 -20H00,A16B004
 16-006,Alger - Dar El Beida,16,1620,Dar El Beida,36.71529,3.20854,exact,operator_point,djezzy,"{""djezzy"":""Z48""}",boutique,B,"Rue Mohamed KHEMISTI N°14 & N°16 Lot N°18 propriété N°13 – Commune Dar El Beida, Alger.",08H00 -20H00,A16T033
-16-007,Alger - Rouiba,16,1638,Rouiba,36.73778,3.28249,exact,operator_point,djezzy,"{""djezzy"":""Z50""}",boutique,A,"5, Boulevard Colonel Amirouche, Rouiba, Alger.",08H00 -20H00,A16B006
+16-007,Alger - Rouiba,16,1642,Rouiba,36.73778,3.28249,exact,operator_point,djezzy,"{""djezzy"":""Z50""}",boutique,A,"5, Boulevard Colonel Amirouche, Rouiba, Alger.",08H00 -20H00,A16B006
 16-008,Alger - Bab El Oued,16,1605,Bab El Oued,36.79212,3.05714,exact,operator_point,djezzy,"{""djezzy"":""Z52""}",boutique,B,"06, Boulevard Abderrahmane Mira, BEO, Alger.",08H00 -20H00,A16B007
 16-009,Alger - El Harrach,16,1629,Mohammadia,36.72321,3.14839,exact,operator_point,djezzy,"{""djezzy"":""Z68""}",boutique,B+,"03, Rue Ouled Sidi Cheikh, Belfort, El Harrach, Alger.",08H00 -18H00,A16B012
 16-010,Alger - Staouéli,16,1645,Staoueli,36.75085,2.88701,exact,operator_point,djezzy,"{""djezzy"":""Z71""}",boutique,B,"C.E.M Lychly, Staouéli, Alger.",08H00 -20H00,A16B009
 16-011,Alger - Bab Ezzouar / Centre commercial,16,1621,Bab Ezzouar,36.71258,3.1966,exact,operator_point,djezzy,"{""djezzy"":""Z79""}",boutique,B,"Centre commercial et des loisirs -Quartier des affaires- Bab Ezzouar, Alger.",09H00 -22H00,A16X955
 16-012,Alger - Zéralda,16,1646,Zeralda,36.71211,2.84071,exact,operator_point,djezzy,"{""djezzy"":""ZE2""}",boutique,,Local N° 02 118 rue 01 Novembre Zéralda,08H00-18H00,
 16-013,Alger - Birkhadem,16,1612,Birkhadem,36.71569,3.0493,exact,operator_point,djezzy,"{""djezzy"":""ZE9""}",boutique,,"Place Taleb Mohamed Ameziane, Bir khadem, Alger",08H00-18H00,Ouvert
-16-014,Alger - Draria,16,1649,Draria,36.71011,2.99773,exact,operator_point,djezzy,"{""djezzy"":""ZF2""}",boutique,,"573 Lot Guéssas, Route de Baba Hassen, Draria - Alger",08H00-18H00,
+16-014,Alger - Draria,16,1653,Draria,36.71011,2.99773,exact,operator_point,djezzy,"{""djezzy"":""ZF2""}",boutique,,"573 Lot Guéssas, Route de Baba Hassen, Draria - Alger",08H00-18H00,
 16-015,Baraki,16,1614,Baraki,36.67147,3.09011,exact,operator_point,djezzy,"{""djezzy"":""ZH22""}",boutique,,658 Rue MOHAMED LARBI  - BARAKI  /Wilaya Alger,08H00-18H00,
 16-016,Sidi Abdellah,16,1646,Zeralda,36.690639,2.853361,exact,operator_point,djezzy,"{""djezzy"":""ZH24""}",boutique,,"Rue Mohamed khider Bt:07-9 Sidi Abdellah,wilaya Alger",08H00 -20H00,
 16-017,Nouvel Aéroport International d’ALGER,16,1620,Dar El Beida,36.699681,3.201221,exact,operator_point,djezzy,"{""djezzy"":""ZH7""}",boutique,,"Aéroport Houari Boumediene, Terminal 04, Hall Central, Alger.",24h / 24h,
@@ -93,7 +93,7 @@ Maghnia-Wilaya Tlemcen,",08H00 - 18H00,
 32-001,EL BAYADH,32,3201,El Bayadh,33.68269,1.01499,exact,operator_point,djezzy,"{""djezzy"":""Z61""}",boutique,C,"Rue Brahim Belkacem, Place Emir Abdelkader, El Bayadh.",08H00 - 18H00,O32B001
 33-001,Illizi - Centre Ville,33,3301,Illizi,26.499959,8.475434,exact,operator_point,djezzy,"{""djezzy"":""Z67""}",boutique,,"Centre-ville, Illizi",08H00 - 18H00,
 34-001,BORDJ BOU ARRÉRIDJ,34,3401,Bordj Bou Arreridj,36.07344,4.75651,exact,operator_point,djezzy,"{""djezzy"":""Z34""}",boutique,B+,"07, Rue Ramache Aïssa, Bordj Bou Arréridj.",08h00-19h00,C34B001
-35-001,BOUMERDES,35,3516,Corso,36.75038,3.47381,exact,operator_point,djezzy,"{""djezzy"":""Z12""}",boutique,B,"Cité Deriche N°24, Lot N°06, Boumerdes.",08H00-18H00,A35B001
+35-001,BOUMERDES,35,3519,Corso,36.75038,3.47381,exact,operator_point,djezzy,"{""djezzy"":""Z12""}",boutique,B,"Cité Deriche N°24, Lot N°06, Boumerdes.",08H00-18H00,A35B001
 36-001,El Taref,36,3601,El Tarf,36.76686,8.31395,exact,operator_point,djezzy,"{""djezzy"":""Z55""}",boutique,,"Centre Commercial CITY CENTER ZAIDI, RN 44, El Taref 36000",08H00 - 19H00,
 37-001,TINDOUF,37,3701,Tindouf,27.67362,-8.14332,exact,operator_point,djezzy,"{""djezzy"":""Z60""}",boutique,C,"Cité El Kassabi, N°05, Tindouf.",08H30- 19H00,O37B001
 38-001,Tissemsilt,38,3801,Tissemsilt,35.60439,1.8045,exact,operator_point,djezzy,"{""djezzy"":""Z59""}",boutique,,"Cité des 132 Logements, N° 133, Tissemesilt.",08H00-18H00,
@@ -113,15 +113,15 @@ Maghnia-Wilaya Tlemcen,",08H00 - 18H00,
 47-001,GHARDAIA,47,4701,Ghardaia,32.48026,3.68153,exact,operator_point,djezzy,"{""djezzy"":""Z47""}",boutique,B,"Rue du 1er Novembre, Thniyet El Makhzen, Ghardaia",08H00 - 18H30,C47B001
 48-001,Relizane - Aoued Ben Djebbar,48,4801,Relizane,35.73992,0.54834,exact,operator_point,djezzy,"{""djezzy"":""Z46""}",boutique,,"08, Boulevard Aoued Ben Djebbar, Relizane.",08H00-18H00,
 48-002,Relizane - Oued Rhiou,48,4802,Oued-Rhiou,35.96163,0.91777,exact,operator_point,djezzy,"{""djezzy"":""ZD1""}",boutique,,Avenue des Martyrs - Oued Rhiou - Relizane,08H00-18H00,
-49-001,Timimoun,49,0109,Timimoun,29.2627,0.23166,exact,operator_point,djezzy,"{""djezzy"":""ZH10""}",boutique,,"Rue Zita Miloud, TIMIMOUN.",08h00 -18H00,
-50-001,Bordj Badji Mokhtar - Nouvelle Ville,50,0125,Bordj Badji Mokhtar,21.328055,0.954765,exact,operator_point,djezzy,"{""djezzy"":""ZH11""}",boutique,,"Nouvelle Ville Bordj Badji Mokhtar,",08H00 -18H30,
-51-001,Ouled Djellal - 1er Novembre,51,0705,Ouled Djellal,34.425104,5.065105,exact,operator_point,djezzy,"{""djezzy"":""ZG8""}",boutique,,"Rue 1er Novembre, Ouled DJELLAL.",08H00-18H00,
-52-001,Béni Abbés - Aissat IDIR,52,0807,Beni-Abbes,30.131216,-2.168388,exact,operator_point,djezzy,"{""djezzy"":""ZH13""}",boutique,,"Lotissement Aissat IDIR,",08H00 - 18H00,
-53-001,In Salah - K'ser EL Mourabitine,53,1108,Ain Salah,27.195471,2.479,exact,operator_point,djezzy,"{""djezzy"":""ZH15""}",boutique,,Lotissement AKBOUR - K'ser EL Mourabitine. In Salah,08h00 -18H00,
-54-001,In Guezzam - APC,54,1104,Ain Guezzam,19.569717,5.772027,exact,operator_point,djezzy,"{""djezzy"":""ZH14""}",boutique,,Centre-Ville /APC IN Guezzam,08H00 - 18H00,
-55-001,Touggourt,55,3013,Touggourt,33.10562,6.06691,exact,operator_point,djezzy,"{""djezzy"":""Z92""}",boutique,C,"Place El Houria, Lot N°746, Touggourt, Ouargla.",08H00 -18H30,C30B004
-56-001,Djanet - Centre Ville,56,3302,Djanet,24.553839,9.486068,exact,operator_point,djezzy,"{""djezzy"":""ZH19""}",boutique,,"Boulevard principale cité nouvelle ville IDFRI, DJANET",08H00 - 18H00,
-57-001,EL MEGHIER - EL SAADA,57,3927,El-M'ghaier,33.950244,5.925707,exact,operator_point,djezzy,"{""djezzy"":""ZH16""}",boutique,,Lot 425 Cité EL SAADA -En Face la poste principale. Wilaya El Mghaier,08H00 - 18H00,
+49-001,Timimoun,49,4901,Timimoun,29.2627,0.23166,exact,operator_point,djezzy,"{""djezzy"":""ZH10""}",boutique,,"Rue Zita Miloud, TIMIMOUN.",08h00 -18H00,
+50-001,Bordj Badji Mokhtar - Nouvelle Ville,50,5001,Bordj Badji Mokhtar,21.328055,0.954765,exact,operator_point,djezzy,"{""djezzy"":""ZH11""}",boutique,,"Nouvelle Ville Bordj Badji Mokhtar,",08H00 -18H30,
+51-001,Ouled Djellal - 1er Novembre,51,5101,Ouled Djellal,34.425104,5.065105,exact,operator_point,djezzy,"{""djezzy"":""ZG8""}",boutique,,"Rue 1er Novembre, Ouled DJELLAL.",08H00-18H00,
+52-001,Béni Abbés - Aissat IDIR,52,5201,Beni-Abbes,30.131216,-2.168388,exact,operator_point,djezzy,"{""djezzy"":""ZH13""}",boutique,,"Lotissement Aissat IDIR,",08H00 - 18H00,
+53-001,In Salah - K'ser EL Mourabitine,53,5301,Ain Salah,27.195471,2.479,exact,operator_point,djezzy,"{""djezzy"":""ZH15""}",boutique,,Lotissement AKBOUR - K'ser EL Mourabitine. In Salah,08h00 -18H00,
+54-001,In Guezzam - APC,54,5401,Ain Guezzam,19.569717,5.772027,exact,operator_point,djezzy,"{""djezzy"":""ZH14""}",boutique,,Centre-Ville /APC IN Guezzam,08H00 - 18H00,
+55-001,Touggourt,55,5501,Touggourt,33.10562,6.06691,exact,operator_point,djezzy,"{""djezzy"":""Z92""}",boutique,C,"Place El Houria, Lot N°746, Touggourt, Ouargla.",08H00 -18H30,C30B004
+56-001,Djanet - Centre Ville,56,5601,Djanet,24.553839,9.486068,exact,operator_point,djezzy,"{""djezzy"":""ZH19""}",boutique,,"Boulevard principale cité nouvelle ville IDFRI, DJANET",08H00 - 18H00,
+57-001,EL MEGHIER - EL SAADA,57,5701,El-M'ghaier,33.950244,5.925707,exact,operator_point,djezzy,"{""djezzy"":""ZH16""}",boutique,,Lot 425 Cité EL SAADA -En Face la poste principale. Wilaya El Mghaier,08H00 - 18H00,
 58-001,El Menia,58,5801,El Meniaa,30.583041,2.883548,exact,operator_point,djezzy,"{""djezzy"":""ZH12""}",boutique,,Centre-Ville EL MENIAA,08H00 -18H30,
 59-001,Laghouat- Aflou,59,0319,Aflou,34.11407,2.10169,exact,operator_point,djezzy,"{""djezzy"":""ZE3""}",boutique,,"Ilot 23 Boulvard Emir Abdelkader, Aflou - Laghouat",08H00 - 18H00,
 60-001,Batna - Barika,60,0515,Azil Abedelkader,35.38422,5.22912,exact,operator_point,djezzy,"{""djezzy"":""Z85""}",boutique,C,"Barika-centre, Barika, Batna.",08H00-19H00,C05B003
