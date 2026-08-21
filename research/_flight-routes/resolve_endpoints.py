@@ -93,6 +93,9 @@ ENDPOINTS = [
      "note": "Milan is three airports (MXP, LIN, BGY). Malpensa is the long-haul "
              "and international default; confirm per route before shipping an arc."},
     {"city": "ROME", "iata": "FCO", "country": "IT"},
+    {"city": "Berlin", "iata": "BER", "country": "DE",
+     "note": "Berlin Brandenburg. Air Algerie's booking engine opened the first "
+             "weekly ALG-BER rotation for 14 Sep 2026."},
     {"city": "FRANCFORT", "iata": "FRA", "country": "DE"},
     {"city": "GENEVE", "iata": "GVA", "country": "CH",
      "note": "Geneva is served; Zurich is not. ALG-ZRH is a clean negative."},
@@ -129,6 +132,9 @@ ENDPOINTS = [
     {"city": "DUBAI", "iata": "DXB", "country": "AE"},
     # --- Asia ---
     {"city": "Guangzhou", "iata": "CAN", "country": "CN"},
+    {"city": "Incheon", "iata": "ICN", "country": "KR",
+     "note": "Planned Korea-Algeria link. July 2026 traffic-rights coverage names "
+             "Incheon-Algiers, but the bilateral agreement permits regional airports."},
     {"city": "Shanghai", "iata": "PVG", "country": "CN",
      "note": "Not on the airline's booking city list; surfaced by the route sweep."},
     {"city": "PEKIN", "iata": "PEK", "country": "CN",

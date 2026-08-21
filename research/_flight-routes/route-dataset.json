@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-07-29",
+  "as_of": "2026-08-21",
   "routes": [
     {
       "id": "aae-cdg",
@@ -1618,6 +1618,32 @@
   ],
   "planned": [
     {
+      "id": "alg-ber",
+      "from": "ALG",
+      "to": "BER",
+      "carrier": "AH",
+      "flight": "AH 2072",
+      "status": "unclear",
+      "days": [
+        "mon"
+      ],
+      "evidence": "verified",
+      "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
+      "great_circle_km": 1919
+    },
+    {
+      "id": "alg-icn",
+      "from": "ALG",
+      "to": "ICN",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+      "great_circle_km": 9914
+    },
+    {
       "id": "alg-pvg",
       "from": "ALG",
       "to": "PVG",
@@ -1644,6 +1670,32 @@
       "source_is_the_table": false,
       "listed_at": "Houari Boumediene Airport",
       "great_circle_km": 3332
+    },
+    {
+      "id": "ber-alg",
+      "from": "BER",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 2073",
+      "status": "unclear",
+      "days": [
+        "mon"
+      ],
+      "evidence": "verified",
+      "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
+      "great_circle_km": 1919
+    },
+    {
+      "id": "icn-alg",
+      "from": "ICN",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+      "great_circle_km": 9914
     }
   ],
   "endpoints": [
@@ -1718,6 +1770,15 @@
       "lat": 41.2971,
       "lng": 2.07846,
       "country": "ES"
+    },
+    {
+      "iata": "BER",
+      "name": "Aéroport de Berlin-Brandebourg",
+      "name_en": "Berlin Brandenburg Airport",
+      "name_ar": "مطار برلين براندنبرغ",
+      "lat": 52.361738,
+      "lng": 13.502341,
+      "country": "DE"
     },
     {
       "iata": "BEY",
@@ -1916,6 +1977,15 @@
       "lat": 27.176776,
       "lng": 33.796692,
       "country": "EG"
+    },
+    {
+      "iata": "ICN",
+      "name": "Aéroport international d'Incheon",
+      "name_en": "Incheon International Airport",
+      "name_ar": "مطار إنتشون الدولي",
+      "lat": 37.469101,
+      "lng": 126.450996,
+      "country": "KR"
     },
     {
       "iata": "IST",

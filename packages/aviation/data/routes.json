@@ -1609,6 +1609,34 @@
     "great_circle_km": 6275
   },
   {
+    "id": "alg-ber",
+    "from": "ALG",
+    "to": "BER",
+    "carrier": "AH",
+    "flight": "AH 2072",
+    "status": "unclear",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
+    "great_circle_km": 1919
+  },
+  {
+    "id": "alg-icn",
+    "from": "ALG",
+    "to": "ICN",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+    "great_circle_km": 9914
+  },
+  {
     "id": "alg-pvg",
     "from": "ALG",
     "to": "PVG",
@@ -1633,5 +1661,33 @@
     "planned": true,
     "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
     "great_circle_km": 3332
+  },
+  {
+    "id": "ber-alg",
+    "from": "BER",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2073",
+    "status": "unclear",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
+    "great_circle_km": 1919
+  },
+  {
+    "id": "icn-alg",
+    "from": "ICN",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
+    "great_circle_km": 9914
   }
 ]

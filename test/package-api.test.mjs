@@ -184,3 +184,104 @@ test("aviation: routes resolve to endpoints, are directional, and carry a source
   assert.ok(alg.length > 0, "no routes from ALG");
   assert.ok(alg.every((r) => r.from === "ALG"), "routesFrom returned arrivals");
 });
+
+test("aviation: the confirmed Berlin launch stays directional and planned", async () => {
+  const m = await pkg("aviation");
+  const berlin = m
+    .plannedRoutes()
+    .filter((r) => r.from === "BER" || r.to === "BER");
+
+  assert.deepEqual(
+    berlin.map((r) => ({
+      id: r.id,
+      flight: r.flight,
+      status: r.status,
+      days: r.days,
+      evidence: r.evidence,
+    })),
+    [
+      {
+        id: "alg-ber",
+        flight: "AH 2072",
+        status: "unclear",
+        days: ["mon"],
+        evidence: "verified",
+      },
+      {
+        id: "ber-alg",
+        flight: "AH 2073",
+        status: "unclear",
+        days: ["mon"],
+        evidence: "verified",
+      },
+    ],
+  );
+  assert.ok(
+    !m.routes().some((r) => r.from === "BER" || r.to === "BER"),
+    "Berlin leaked into the operating-route collection before launch",
+  );
+  assert.deepEqual(
+    m.routeEndpoints().find((e) => e.iata === "BER"),
+    {
+      iata: "BER",
+      name: "Aéroport de Berlin-Brandebourg",
+      name_en: "Berlin Brandenburg Airport",
+      name_ar: "مطار برلين براندنبرغ",
+      lat: 52.361738,
+      lng: 13.502341,
+      country: "DE",
+    },
+  );
+});
+
+test("aviation: the reported Korea connection stays directional and planned", async () => {
+  const m = await pkg("aviation");
+  const korea = m
+    .plannedRoutes()
+    .filter((r) => r.from === "ICN" || r.to === "ICN");
+
+  assert.deepEqual(
+    korea.map((r) => ({
+      id: r.id,
+      carrier: r.carrier,
+      flight: r.flight,
+      status: r.status,
+      days: r.days,
+      evidence: r.evidence,
+    })),
+    [
+      {
+        id: "alg-icn",
+        carrier: "AH",
+        flight: null,
+        status: "unclear",
+        days: null,
+        evidence: "listed",
+      },
+      {
+        id: "icn-alg",
+        carrier: "AH",
+        flight: null,
+        status: "unclear",
+        days: null,
+        evidence: "listed",
+      },
+    ],
+  );
+  assert.ok(
+    !m.routes().some((r) => r.from === "ICN" || r.to === "ICN"),
+    "Korea leaked into the operating-route collection before launch",
+  );
+  assert.deepEqual(
+    m.routeEndpoints().find((e) => e.iata === "ICN"),
+    {
+      iata: "ICN",
+      name: "Aéroport international d'Incheon",
+      name_en: "Incheon International Airport",
+      name_ar: "مطار إنتشون الدولي",
+      lat: 37.469101,
+      lng: 126.450996,
+      country: "KR",
+    },
+  );
+});

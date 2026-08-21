@@ -84,6 +84,19 @@
     "source": "ourairports"
   },
   {
+    "iata": "BER",
+    "icao": "EDDB",
+    "name": "Berlin Brandenburg Airport",
+    "municipality": "Berlin",
+    "country": "DE",
+    "lat": 52.361738,
+    "lng": 13.502341,
+    "type": "large_airport",
+    "airline_city_label": "Berlin",
+    "source": "ourairports",
+    "note": "Berlin Brandenburg. Air Algerie's booking engine opened the first weekly ALG-BER rotation for 14 Sep 2026."
+  },
+  {
     "iata": "BEY",
     "icao": "OLBA",
     "name": "Beirut Rafic Hariri International Airport",
@@ -305,6 +318,19 @@
     "airline_city_label": "Hurghada",
     "source": "ourairports",
     "note": "Charter. First rotation flown ~24-26 Jul 2026 per three independent Algerian outlets. Absent from the airline's destination page and invisible to booking probes, as charters generally are."
+  },
+  {
+    "iata": "ICN",
+    "icao": "RKSI",
+    "name": "Incheon International Airport",
+    "municipality": "Seoul",
+    "country": "KR",
+    "lat": 37.469101,
+    "lng": 126.450996,
+    "type": "large_airport",
+    "airline_city_label": "Incheon",
+    "source": "ourairports",
+    "note": "Planned Korea-Algeria link. July 2026 traffic-rights coverage names Incheon-Algiers, but the bilateral agreement permits regional airports."
   },
   {
     "iata": "IST",

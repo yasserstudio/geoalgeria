@@ -38,7 +38,7 @@ DATA = os.path.join(HERE, "..", "..")
 # dataset, so the package carries this as a validity stamp (`routes_as_of` in
 # metadata.json) rather than reading as evergreen. Bump it only after a real
 # collection/verification pass (see verification-YYYY-MM-DD.md).
-AS_OF = "2026-07-29"
+AS_OF = "2026-08-21"
 
 # Legs walked end to end: operator confirmed as operating, direction recorded,
 # duration checked. Flight numbers are the operating carrier's own, and none of
@@ -227,6 +227,23 @@ VERIFIED = [
      "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/"},
 ]
 
+# Explicitly announced, but not operating on AS_OF. These stay separate from
+# VERIFIED because `plannedRoutes()` is the package's lifecycle boundary. A
+# booking result can establish carrier, direction, flight number and duration;
+# a reported announcement stays `listed` until those details are confirmed.
+PLANNED = [
+    {"from": "ALG", "to": "BER", "flight": "AH 2072", "status": "unclear",
+     "days": ["mon"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/"},
+    {"from": "ALG", "to": "ICN", "status": "unclear", "evidence": "listed",
+     "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
+    {"from": "BER", "to": "ALG", "flight": "AH 2073", "status": "unclear",
+     "days": ["mon"], "evidence": "verified",
+     "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/"},
+    {"from": "ICN", "to": "ALG", "status": "unclear", "evidence": "listed",
+     "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
+]
+
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
 # only selling seats on it. See collection-rules.md section 16.
 #
@@ -317,6 +334,18 @@ def main():
             "from": v["from"], "to": v["to"], "carrier": "AH",
             "flight": v.get("flight"), "status": v["status"], "days": v.get("days"),
             "evidence": "verified", "source": v["source"],
+        })
+
+    for p in PLANNED:
+        key = (p["from"], p["to"])
+        if p["from"] not in ep or p["to"] not in ep:
+            skipped["no_endpoint"].append(key); continue
+        seen.add(key)
+        planned_routes.append({
+            "id": f"{p['from'].lower()}-{p['to'].lower()}",
+            "from": p["from"], "to": p["to"], "carrier": "AH",
+            "flight": p.get("flight"), "status": p["status"], "days": p.get("days"),
+            "evidence": p["evidence"], "source": p["source"],
         })
 
     for r in wiki:
