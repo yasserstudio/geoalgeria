@@ -1,5 +1,12 @@
 # @geoalgeria/culture
 
+## 2.0.1
+
+### Patch Changes
+
+- 64b10a1: Replace duplicated and missing `code_commune` values with the 1,541 unique codes from the official ONS 2021 Code Géographique National. Cascade the corrected foreign keys through every linked dataset, preserve Algérie Poste's differing provider-native values, enforce the SQL and repository-wide FK contracts, retain the 2021 mother-wilaya prefix for communes promoted in later reforms, and document the code contract.
+- 64b10a1: Move Tabelbala and its daïra from Béchar to Béni Abbès across all administrative carriers while preserving public ids, and update linked cultural, rail, and mosque records to the corrected current wilaya.
+
 ## 2.0.0
 
 ### Major Changes

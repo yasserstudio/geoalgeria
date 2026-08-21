@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.5.0
+
+### Minor Changes
+
+- d4debb5: Expand the Air Algérie network with newly confirmed and reported routes across Europe, Africa, Asia, and the Gulf.
+
 ## 2.4.0
 
 ### Minor Changes

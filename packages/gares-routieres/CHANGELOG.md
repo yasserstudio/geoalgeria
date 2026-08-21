@@ -1,5 +1,11 @@
 # @geoalgeria/gares-routieres
 
+## 2.2.2
+
+### Patch Changes
+
+- 64b10a1: Replace duplicated and missing `code_commune` values with the 1,541 unique codes from the official ONS 2021 Code Géographique National. Cascade the corrected foreign keys through every linked dataset, preserve Algérie Poste's differing provider-native values, enforce the SQL and repository-wide FK contracts, retain the 2021 mother-wilaya prefix for communes promoted in later reforms, and document the code contract.
+
 ## 2.2.1
 
 ### Patch Changes
