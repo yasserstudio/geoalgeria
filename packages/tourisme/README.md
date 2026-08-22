@@ -166,6 +166,15 @@ If you also need wilayas, dairas, and communes to join against, use the main
 69-wilaya division dataset that `wilaya_code` here links to. Use `@geoalgeria/tourisme`
 when you *only* need tourism data.
 
+## Quality floor
+
+The repository test suite guards this snapshot against silent regressions:
+bilingual French + Arabic naming must stay at or above 28.8%, every geocoded
+record must keep `geo_precision` and `geo_method`, the currently sourced lodging
+contact/detail fields cannot shrink, and cross-category OpenStreetMap references
+stay explicitly bounded. These are regression floors, not completeness claims;
+a larger verified refresh may raise them.
+
 ## Source
 
 Data comes from three sources:

@@ -169,6 +169,16 @@ le package principal **[`geoalgeria`](https://www.npmjs.com/package/geoalgeria)*
 le jeu de données complet des 69 wilayas auquel `wilaya_code` fait référence ici. Utilisez
 `@geoalgeria/tourisme` quand vous avez *uniquement* besoin des données touristiques.
 
+## Seuil de qualité
+
+La suite de tests du dépôt protège cet instantané contre les régressions
+silencieuses : la couverture bilingue français + arabe doit rester au moins à
+28,8 %, chaque enregistrement géocodé doit conserver `geo_precision` et
+`geo_method`, les champs de contact et de détail d'hébergement déjà sourcés ne
+peuvent pas diminuer, et les références OpenStreetMap présentes dans plusieurs
+catégories restent explicitement bornées. Ce sont des seuils de régression, pas
+des affirmations d'exhaustivité ; une actualisation vérifiée peut les relever.
+
 ## Source
 
 Les données proviennent de trois sources :
