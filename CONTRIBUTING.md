@@ -29,7 +29,7 @@ This is a small monorepo:
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas, protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions, DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,855 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
-| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces (live.sogral.com) |
+| `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban bus networks, 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers, 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |

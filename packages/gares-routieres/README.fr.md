@@ -65,8 +65,13 @@ data/
 ## Source
 
 Données de **SOGRAL – EPE SOGRAL Spa** (Société de Gestion des Gares Routières d'Algérie),
-via son registre en temps réel (<https://live.sogral.com>). `wilaya_code`/`commune` sont
-résolus par centroïde de commune le plus proche à partir du jeu `geoalgeria`.
+issues de l'instantané du registre SOGRAL récupéré sur `live.sogral.com` le
+01/07/2026 ; cet hôte est désormais retiré. Les 73 valeurs
+`refs.mahatati_agency` renseignées ont été revérifiées le 28/08/2026 avec une
+correspondance exacte dans la liste publique des gares de départ de
+[MAHATATI](https://mahatati.sogral.com/) ; In Saleh est la seule gare qui n'y
+figure pas comme gare de départ. `wilaya_code`/`commune` sont résolus par
+centroïde de commune le plus proche à partir du jeu `geoalgeria`.
 
 ## Licence & attribution
 
