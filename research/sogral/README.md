@@ -15,6 +15,19 @@ The research also lets us inspect the public surface, compare its stations to
 `@geoalgeria/gares-routieres`, and prepare a properly licensed integration if
 SOGRAL ever provides one.
 
+## Latest station-directory audit
+
+The 2026-08-28 refresh found **73 unique departure agencies** and **9,077 unique
+agency/destination pairs** on MAHATATI. The agency ids are an exact set match
+for the 73 populated `refs.mahatati_agency` values in the 74-station
+`@geoalgeria/gares-routieres` package. Station `53-01 IN SALEH` remains the one
+intentional exception because it is not offered as a MAHATATI departure agency.
+
+The package still passes its 74/74 geocoding and station-link integrity test,
+with no out-of-country or mislinked station. The audit therefore produced no
+semantic data change: it confirmed the shipped references rather than replacing
+them.
+
 ## What the public page exposes
 
 `https://mahatati.sogral.com/` is a no-login live-departure page. Its HTML
