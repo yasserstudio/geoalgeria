@@ -165,6 +165,13 @@ Every record follows the same shape:
 
 Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each package, and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
 
+Human-reviewed corrections use the same contract across packages. A package can
+add `quality/overrides/<package>.json`; the canonical writer checks the expected
+old values, requires public evidence for changes or exclusions, applies the
+decision, and then runs the ordinary schema gate. See
+[`quality/overrides/README.md`](quality/overrides/README.md). Health data is the
+first pilot.
+
 One package predates the contract, the core `geoalgeria` dataset (administrative divisions, not GeoRecords; marked `schema_version: null` in the catalog).
 
 Migrating a package? See [`packages/schema/MIGRATING.md`](packages/schema/MIGRATING.md).

@@ -55,6 +55,12 @@ pnpm install
 - Improve Arabic transliterations
 - Add a new export format
 
+For generated sector packages, do not hand-edit an emitted JSON/CSV/GeoJSON
+file. Put an evidence-backed correction in
+[`quality/overrides/`](quality/overrides/README.md) instead. The ledger keeps the
+review finding separate from the publication action and stops regeneration if
+the upstream record no longer matches the reviewed value.
+
 Data lives under `packages/dataset/data/` and `packages/poste/data/`. The postal
 data in `packages/dataset/data/poste/` is **generated**: edit it in
 `packages/poste` and run `npm run fetch` there (it mirrors into the dataset), don't
