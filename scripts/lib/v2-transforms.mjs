@@ -12,7 +12,7 @@
 // v1 fixture and asserts it reproduces the committed record byte-for-byte, so a
 // generator importing its own slice inherits that guarantee.
 
-import { readFileSync, writeFileSync, renameSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -26,6 +26,8 @@ import {
   sharedPoints,
   validateRecords,
   MIN_EXACT_DECIMALS,
+  validateReviewLedger,
+  applyReviewedOverrides,
 } from "../../packages/schema/index.js";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
@@ -43,6 +45,17 @@ function writeAtomic(path, content) {
  *  from resolveDates()/committedDates(), not from this constant. */
 export const CUTOVER_DATE = "2026-07-18";
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
+
+/** A package opts into reviewed corrections by adding one committed ledger. */
+export function loadReviewLedger(pkg) {
+  const path = join(REPO_ROOT, "quality", "overrides", `${pkg}.json`);
+  if (!existsSync(path)) return null;
+  try {
+    return JSON.parse(readFileSync(path, "utf8"));
+  } catch (error) {
+    throw new Error(`writePackageV2 [${pkg}]: cannot read review ledger ${path}: ${error.message}`);
+  }
+}
 
 // --- shared record helpers --------------------------------------------------
 /** commune_code (int|str) → 4-digit ONS string ("1607", "0105"), or null. */
@@ -837,11 +850,53 @@ export const MIGRATIONS = {
  *   meta: { sources: object[], license: string, estimatedUniverse?: number|null,
  *           coverageNote?: string, titles?: object, preserve?: string[],
  *           stats?: (rows: object[]) => object },
- *   oldMeta?: object,
+ *   oldMeta?: object, reviewLedger?: object|null,
  * }} input
- * @returns {{ records: object[], metadata: object }}
+ * @returns {{ records: object[], metadata: object, review: object }}
  */
-export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snapshots = {}, stats = {}, oldMeta = {} }) {
+export function writePackageV2({
+  pkg,
+  dir,
+  files,
+  meta,
+  updated,
+  retrieved,
+  snapshots = {},
+  stats = {},
+  oldMeta = {},
+  reviewLedger = undefined,
+}) {
+  const effectiveReviewLedger =
+    reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
+  if (effectiveReviewLedger) {
+    const { errors } = validateReviewLedger(effectiveReviewLedger);
+    if (errors.length) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: invalid review ledger:\n  ${errors.join("\n  ")}`,
+      );
+    }
+    if (effectiveReviewLedger.dataset !== pkg) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: review ledger dataset is ${JSON.stringify(effectiveReviewLedger.dataset)}`,
+      );
+    }
+    const ownedFiles = new Set(
+      files.filter((file) => file.rows != null).map((file) => file.file),
+    );
+    const unknownFiles = [
+      ...new Set(
+        effectiveReviewLedger.decisions
+          .map((decision) => decision.file)
+          .filter((file) => !ownedFiles.has(file)),
+      ),
+    ];
+    if (unknownFiles.length) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: review ledger targets file(s) not owned by this writer: ${unknownFiles.join(", ")}`,
+      );
+    }
+  }
+
   mkdirSync(join(dir, "csv"), { recursive: true });
   mkdirSync(join(dir, "geojson"), { recursive: true });
 
@@ -852,6 +907,7 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snap
   const all = [];
   const entities = [];
   const pending = []; // { path, content } queued for the atomic write phase
+  const review = { reviewed: 0, patched: 0, excluded: 0, kept: 0 };
   for (const f of files) {
     // A file this writer does not own. A package can legitimately have more than
     // one generator: aviation's airports come from a live ANAC+OurAirports pull,
@@ -866,7 +922,14 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snap
       continue;
     }
     const base = f.file.replace(/\.json$/, "");
-    const rows = f.rows;
+    const reviewed = effectiveReviewLedger
+      ? applyReviewedOverrides(f.rows, effectiveReviewLedger, { file: f.file })
+      : {
+          records: f.rows,
+          stats: { reviewed: 0, patched: 0, excluded: 0, kept: 0 },
+        };
+    for (const key of Object.keys(review)) review[key] += reviewed.stats[key];
+    const rows = reviewed.records;
     demoteSharedPoints(rows);
     // Plain codepoint order — localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines.
@@ -950,7 +1013,7 @@ export function writePackageV2({ pkg, dir, files, meta, updated, retrieved, snap
 
   // Phase 2 — everything validated; now write each file atomically.
   for (const { path, content } of pending) writeAtomic(path, content);
-  return { records: all, metadata };
+  return { records: all, metadata, review };
 }
 
 /**

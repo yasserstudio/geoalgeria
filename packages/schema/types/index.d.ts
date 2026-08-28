@@ -203,6 +203,50 @@ export interface ValidateOptions {
   boundaries?: BoundaryIndex;
 }
 
+export type ReviewStatus =
+  | "verified"
+  | "corrected"
+  | "duplicate"
+  | "not-found"
+  | "field-check";
+
+export type ReviewPublishAction = "keep" | "patch" | "exclude";
+
+export interface ReviewEvidence {
+  url: string;
+  checked_at: string;
+  note?: string;
+}
+
+export interface ReviewDecision {
+  file: string;
+  record_id: string;
+  status: ReviewStatus;
+  publish_action: ReviewPublishAction;
+  /** Old values that must still match. Patches require every patched field; exclusions require the full record. */
+  expect: Record<string, unknown>;
+  /** Patched optional fields that were absent from the baseline record. */
+  expect_absent?: string[];
+  /** Flat scalar changes to existing baseline fields. `id`, `source`, and `refs` cannot be patched. */
+  patch?: Record<string, string | number | boolean | null>;
+  evidence?: ReviewEvidence[];
+  notes?: string;
+  /** Per-decision reviewer, preserved when ledgers are merged. */
+  reviewer?: string;
+  /** Per-decision ISO review time, preserved when ledgers are merged. */
+  reviewed_at?: string;
+}
+
+export interface ReviewLedger {
+  schema_version: 1;
+  dataset: string;
+  /** Default provenance for decisions that do not carry their own reviewer. */
+  reviewer: string;
+  /** Default provenance for decisions that do not carry their own review time. */
+  reviewed_at: string;
+  decisions: ReviewDecision[];
+}
+
 /** A `wilaya_code → GeoJSON geometry` lookup for boundary checks. */
 export type BoundaryIndex = Map<string, { type: string; coordinates: unknown }>;
 
@@ -216,6 +260,8 @@ export const WILAYA_CODES: readonly string[];
 export const DZ_BBOX: { minLng: number; maxLng: number; minLat: number; maxLat: number };
 /** Fewest fraction digits a coordinate must carry to be called `exact`. */
 export const MIN_EXACT_DECIMALS: number;
+export const REVIEW_STATUSES: readonly ReviewStatus[];
+export const REVIEW_PUBLISH_ACTIONS: readonly ReviewPublishAction[];
 
 export function wcode(c: string | number | null | undefined): string | null;
 export function round6(n: number | string | null | undefined): number | null;
@@ -268,6 +314,15 @@ export function sharedPoints(rows: GeoRecord[]): Set<number>;
 
 export function validateRecords(records: GeoRecord[], opts?: ValidateOptions): ValidationResult;
 export function validateMetadata(meta: DatasetMetadata): ValidationResult;
+export function validateReviewLedger(ledger: unknown): ValidationResult;
+export function applyReviewedOverrides(
+  records: Record<string, unknown>[],
+  ledger: ReviewLedger,
+  options: { file: string },
+): {
+  records: Record<string, unknown>[];
+  stats: { reviewed: number; patched: number; excluded: number; kept: number };
+};
 
 export interface BuildMetadataInput {
   package: string;
