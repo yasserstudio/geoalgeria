@@ -48,5 +48,6 @@ capturing, so reordering noise never reaches the diff.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03). Remaining packages convert as they are next touched — their raw
-pulls still land in gitignored `research/<pkg>/` until then.
+2026-08-03), and `protection-civile`. Remaining packages convert as they are
+next touched — their raw pulls still land in gitignored `research/<pkg>/`
+until then.

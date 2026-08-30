@@ -147,6 +147,13 @@ const ENRICHMENTS = {
     // tests guard that join; replay continues to guard every other field here.
     if (shipped) produced.wilaya_code = shipped.wilaya_code;
   },
+  "protection-civile": (produced, shipped) => {
+    // Commune is assigned by the package generator from the current Arabic
+    // name/centroid index. The frozen v1 row can carry an older nearest-commune
+    // label even after its ONS code has been reconciled, so replay the generated
+    // label here while the dedicated repository-wide FK tests guard the join.
+    if (shipped) produced.commune = shipped.commune;
+  },
 };
 
 // The ONS 2021 repair is a file-level administrative join: its source-aware

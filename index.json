@@ -466,13 +466,13 @@
       "geocoded_count": 880,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 853,
-        "approximate": 27
+        "exact": 857,
+        "approximate": 23
       },
       "coverage": {
         "pct": 100,
         "of": 880,
-        "note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate (a few coincident points are marked approximate). The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback)."
+        "note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback)."
       },
       "wilayas_covered": 69,
       "bbox": [
@@ -481,8 +481,8 @@
         9.57498,
         37.065201
       ],
-      "license": "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference. No open licence.",
-      "updated": "2026-07-22"
+      "license": "DGPC records © Direction Générale de la Protection Civile; redistributed for reference with no stated open licence. Reviewed OpenStreetMap coordinate evidence © OpenStreetMap contributors, ODbL 1.0.",
+      "updated": "2026-08-30"
     },
     {
       "package": "@geoalgeria/sante",

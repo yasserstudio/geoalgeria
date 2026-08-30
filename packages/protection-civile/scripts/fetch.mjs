@@ -2,7 +2,7 @@
 /**
  * Build Algeria's Protection Civile (civil protection / fire & rescue) units
  * dataset from the DGPC's own published GeoJSON and emit JSON, CSV, and GeoJSON
- * to ../data. The raw source pull is cached under research/protection-civile/.
+ * to ../data. The raw source pull is committed under sources/protection-civile/.
  *
  * Source (official-primary): the Direction Générale de la Protection Civile
  * publishes its national unit network as a point GeoJSON at
@@ -24,10 +24,10 @@
  * French name, so name_fr is left unset — nothing is machine-translated.
  *
  * Usage: node scripts/fetch.mjs            # live pull from dgpc.dz
- *        node scripts/fetch.mjs --cache    # rebuild from research/protection-civile/dgpc-unite-raw.geojson
+ *        node scripts/fetch.mjs --cache    # rebuild from sources/protection-civile/dgpc-units.json
  */
 
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
@@ -39,15 +39,14 @@ import {
   carryOverIds,
   readCommitted,
   readRetiredIds,
-  readCacheFile,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { readCapture, writeCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
 const REPO_ROOT = join(__dirname, "..", "..", "..");
-const RESEARCH_DIR = join(REPO_ROOT, "research", "protection-civile");
 const SRC_URL = "https://dgpc.dz/dgpc2/unite.geojson";
-const RAW_FILE = "dgpc-unite-raw.geojson";
+const CAPTURE_NAME = "dgpc-units";
 // Sanity floor: a truncated response parses fine and would otherwise be accepted
 // as the whole network. The published set is 880 units — reject anything well below.
 const MIN_FEATURES = 700;
@@ -113,17 +112,19 @@ async function fetchDGPC() {
   const json = JSON.parse(body);
   if (!Array.isArray(json.features) || json.features.length < MIN_FEATURES)
     throw new Error(`DGPC returned ${json.features?.length ?? 0} features (< ${MIN_FEATURES}); treating as partial`);
-  mkdirSync(RESEARCH_DIR, { recursive: true });
-  writeFileSync(join(RESEARCH_DIR, RAW_FILE), JSON.stringify(json) + "\n");
+  writeCapture("protection-civile", CAPTURE_NAME, json, {
+    url: SRC_URL,
+    records: json.features.length,
+  });
   console.log(`  ${json.features.length} unit features`);
   return json.features;
 }
 
 function readCache() {
-  const json = JSON.parse(readCacheFile(RESEARCH_DIR, RAW_FILE, "protection-civile"));
+  const json = readCapture("protection-civile", CAPTURE_NAME);
   if (!Array.isArray(json.features) || json.features.length < MIN_FEATURES)
-    throw new Error(`cache ${RAW_FILE} missing or too small — run without --cache to refetch`);
-  console.log(`Using cached DGPC pull: ${json.features.length} unit features`);
+    throw new Error(`capture ${CAPTURE_NAME} missing or too small — run without --cache to refetch`);
+  console.log(`Using stored DGPC capture: ${json.features.length} unit features`);
   return json.features;
 }
 

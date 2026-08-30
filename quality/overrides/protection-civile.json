@@ -1,0 +1,186 @@
+{
+  "schema_version": 1,
+  "dataset": "protection-civile",
+  "reviewer": "GeoAlgeria data review",
+  "reviewed_at": "2026-08-30",
+  "decisions": [
+    {
+      "file": "protection-civile.json",
+      "record_id": "03-004",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 33.803799,
+        "lng": 2.31,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 33.803864,
+        "lng": 2.30995,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/4271529989",
+          "checked_at": "2026-08-30",
+          "note": "Named Ain Madhi Protection Civile node, 9 m from the coarse DGPC point."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-08-30",
+          "note": "Official DGPC objectid 424 confirms the unit identity and coarse source point."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "13-016",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 35.061001,
+        "lng": -1.43,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 35.061129,
+        "lng": -1.430106,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/1712552456",
+          "checked_at": "2026-08-30",
+          "note": "Protection Civile node in Remchi, 17 m from the coarse DGPC point."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-08-30",
+          "note": "Official DGPC objectid 574 confirms the Remchi unit identity and coarse source point."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "17-006",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 34.4575,
+        "lng": 2.53,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 34.457602,
+        "lng": 2.530282,
+        "geo_method": "osm_centroid_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/382398957",
+          "checked_at": "2026-08-30",
+          "note": "Mapped Protection Civile unit in El Idrissia, 28 m from the coarse DGPC point."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-08-30",
+          "note": "Official DGPC objectid 268 confirms the El Idrissia unit identity and coarse source point."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "27-002",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.16,
+        "lng": 0.436667,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 36.159824,
+        "lng": 0.43684,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/4493416489",
+          "checked_at": "2026-08-30",
+          "note": "Protection Civile node in Sidi Lakhdar, 25 m from the coarse DGPC point."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-08-30",
+          "note": "Official DGPC objectid 2 confirms the Sidi Lakhdar unit identity and coarse source point."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "33-005",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 26.51,
+        "lng": 8.47046,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 26.510006,
+        "lng": 8.470251,
+        "geo_method": "osm_centroid_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/way/313553549",
+          "checked_at": "2026-08-30",
+          "note": "Mapped Protection Civile unit in Illizi, 21 m from the coarse DGPC point."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-08-30",
+          "note": "Official DGPC objectid 389 confirms the Illizi unit identity and coarse source point."
+        }
+      ]
+    },
+    {
+      "file": "protection-civile.json",
+      "record_id": "42-016",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.57,
+        "lng": 2.66892,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map"
+      },
+      "patch": {
+        "lat": 36.570152,
+        "lng": 2.668771,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org/node/3953934387",
+          "checked_at": "2026-08-30",
+          "note": "Protection Civile node in Attatba, 21 m from the coarse DGPC point."
+        },
+        {
+          "url": "https://dgpc.dz/dgpc2/unite.geojson",
+          "checked_at": "2026-08-30",
+          "note": "Official DGPC objectid 397 confirms the Attatba unit identity and coarse source point."
+        }
+      ]
+    }
+  ]
+}

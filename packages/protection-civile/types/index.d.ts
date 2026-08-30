@@ -14,8 +14,12 @@
  *  units the DGPC publishes at a coincident (shared) coordinate. */
 export type GeoPrecision = "exact" | "approximate";
 
-/** How the point was obtained — always the DGPC's published coordinate. */
-export type GeoMethod = "dgpc_map";
+/** How the point was obtained. Reviewed OSM methods refine a coarse DGPC point
+ *  without changing the DGPC's authority for the unit identity. */
+export type GeoMethod = "dgpc_map" | "osm_node_review" | "osm_centroid_review";
+
+/** A human-reviewed correction applied through the guarded evidence ledger. */
+export type ReviewStatus = "corrected";
 
 /** The DGPC status tier of a unit (verbatim from the source `statut`). */
 export type Statut =
@@ -74,6 +78,14 @@ export interface ProtectionCivileUnit {
   tel: string | null;
   /** Fax number, or null. */
   fax: string | null;
+  /** Present only when a reviewed correction was applied. */
+  review_status?: ReviewStatus;
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Reviewer recorded by the correction ledger. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

@@ -8,6 +8,7 @@
   "scripts": {
     "validate": "pnpm --filter ./packages/dataset validate && node scripts/validate-packages.mjs && node scripts/build-catalog.mjs --check && pnpm test",
     "build-catalog": "node scripts/build-catalog.mjs",
+    "review:protection-civile": "node scripts/build-protection-civile-review.mjs",
     "test": "node --test test/*.test.mjs packages/*/test/*.test.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version",

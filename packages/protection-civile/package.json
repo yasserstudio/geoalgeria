@@ -25,6 +25,7 @@
   },
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
+    "review": "node ../../scripts/build-protection-civile-review.mjs",
     "test": "node ../../scripts/validate-packages.mjs protection-civile"
   },
   "keywords": [

@@ -1184,8 +1184,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.31,
-          33.803799
+          2.30995,
+          33.803864
         ]
       },
       "properties": {
@@ -1195,10 +1195,10 @@
         "wilaya_code": "03",
         "commune_code": "0307",
         "commune": "Ain Madhi",
-        "lat": 33.803799,
-        "lng": 2.31,
-        "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "lat": 33.803864,
+        "lng": 2.30995,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "424",
@@ -1207,7 +1207,14 @@
         "statut": "UNITE SECONDAIRE",
         "address": "CW231 ENTREE VILLE AIN MADHI, AIN MADHI",
         "tel": "029130802",
-        "fax": "029130801"
+        "fax": "029130801",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/4271529989",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -3115,7 +3122,7 @@
         "name": "الوحدة الثانوية بني معوش",
         "name_ar": "الوحدة الثانوية بني معوش",
         "wilaya_code": "06",
-        "commune_code": null,
+        "commune_code": "0650",
         "commune": "Benimaouche",
         "lat": 36.507,
         "lng": 4.75846,
@@ -5440,7 +5447,7 @@
         "name": "الوحدة الثانوية سيلت",
         "name_ar": "الوحدة الثانوية سيلت",
         "wilaya_code": "11",
-        "commune_code": null,
+        "commune_code": "1102",
         "commune": "Abelsa",
         "lat": 22.656799,
         "lng": 4.57067,
@@ -6454,8 +6461,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.43,
-          35.061001
+          -1.430106,
+          35.061129
         ]
       },
       "properties": {
@@ -6465,10 +6472,10 @@
         "wilaya_code": "13",
         "commune_code": "1304",
         "commune": "Remchi",
-        "lat": 35.061001,
-        "lng": -1.43,
-        "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "lat": 35.061129,
+        "lng": -1.430106,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "574",
@@ -6477,7 +6484,14 @@
         "statut": "POSTE AVANCE",
         "address": "RUE COLONEL LOTFI CENTRE VILLE REMCHI, REMCHI",
         "tel": "043438005",
-        "fax": "043438007"
+        "fax": "043438007",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/1712552456",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -8106,7 +8120,7 @@
         "name": "وحدة القطاع محمد بلوزداد",
         "name_ar": "وحدة القطاع محمد بلوزداد",
         "wilaya_code": "16",
-        "commune_code": null,
+        "commune_code": "1604",
         "commune": "Mohamed Belouzdad",
         "lat": 36.754299,
         "lng": 3.06442,
@@ -8757,7 +8771,7 @@
         "name": "الوحدة الثانوية بولوغين ابن زيري",
         "name_ar": "الوحدة الثانوية بولوغين ابن زيري",
         "wilaya_code": "16",
-        "commune_code": null,
+        "commune_code": "1606",
         "commune": "Bologhine Ibnou Ziri",
         "lat": 36.809101,
         "lng": 3.0349,
@@ -9492,8 +9506,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.53,
-          34.4575
+          2.530282,
+          34.457602
         ]
       },
       "properties": {
@@ -9503,10 +9517,10 @@
         "wilaya_code": "17",
         "commune_code": "1714",
         "commune": "El Idrissia",
-        "lat": 34.4575,
-        "lng": 2.53,
+        "lat": 34.457602,
+        "lng": 2.530282,
         "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "geo_method": "osm_centroid_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "268",
@@ -9515,7 +9529,14 @@
         "statut": "UNITE SECONDAIRE",
         "address": "CITE FATH, EL IDRISSIA",
         "tel": "027889288",
-        "fax": "027889287"
+        "fax": "027889287",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/382398957",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -12663,8 +12684,8 @@
         "name": "وحدة القطاع العلمة",
         "name_ar": "وحدة القطاع العلمة",
         "wilaya_code": "23",
-        "commune_code": "2307",
-        "commune": "Cheurfa",
+        "commune_code": "2304",
+        "commune": "El Eulma",
         "lat": 36.737801,
         "lng": 7.46396,
         "geo_precision": "exact",
@@ -14545,8 +14566,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.436667,
-          36.16
+          0.43684,
+          36.159824
         ]
       },
       "properties": {
@@ -14556,10 +14577,10 @@
         "wilaya_code": "27",
         "commune_code": "2716",
         "commune": "Sidi-Lakhdar",
-        "lat": 36.16,
-        "lng": 0.436667,
-        "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "lat": 36.159824,
+        "lng": 0.43684,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "2",
@@ -14568,7 +14589,14 @@
         "statut": "UNITE SECONDAIRE",
         "address": "CENTRE VILLE SIDI LAKHDAR, SIDI LAKHDAR",
         "tel": "045447092",
-        "fax": "045447092"
+        "fax": "045447092",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/4493416489",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -17282,8 +17310,8 @@
         "name": "وحدة القطاع عين الكرمة(ليست في الخدمة)",
         "name_ar": "وحدة القطاع عين الكرمة(ليست في الخدمة)",
         "wilaya_code": "31",
-        "commune_code": "3110",
-        "commune": "El Ancor",
+        "commune_code": "3125",
+        "commune": "Ain Kerma",
         "lat": 35.6464,
         "lng": -0.979944,
         "geo_precision": "exact",
@@ -17831,8 +17859,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          8.47046,
-          26.51
+          8.470251,
+          26.510006
         ]
       },
       "properties": {
@@ -17842,10 +17870,10 @@
         "wilaya_code": "33",
         "commune_code": "3301",
         "commune": "Illizi",
-        "lat": 26.51,
-        "lng": 8.47046,
+        "lat": 26.510006,
+        "lng": 8.470251,
         "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "geo_method": "osm_centroid_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "389",
@@ -17854,7 +17882,14 @@
         "statut": "UNITE PRINCIPALE",
         "address": "ZONE D'ACTIVITES INDUSTRIELLE, ILLIZI",
         "tel": "029404115/22/25",
-        "fax": "029404137"
+        "fax": "029404137",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/313553549",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -21582,8 +21617,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.66892,
-          36.57
+          2.668771,
+          36.570152
         ]
       },
       "properties": {
@@ -21593,10 +21628,10 @@
         "wilaya_code": "42",
         "commune_code": "4236",
         "commune": "Attatba",
-        "lat": 36.57,
-        "lng": 2.66892,
-        "geo_precision": "approximate",
-        "geo_method": "dgpc_map",
+        "lat": 36.570152,
+        "lng": 2.668771,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
         "source": "dgpc",
         "refs": {
           "dgpc": "397",
@@ -21605,7 +21640,14 @@
         "statut": "UNITE DE SECTEUR",
         "address": "RN67 ENTREE OUEST HATTATBA, HATTATBA",
         "tel": "024386666",
-        "fax": "024386666"
+        "fax": "024386666",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/3953934387",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
       }
     },
     {
@@ -24908,8 +24950,8 @@
         "name": "الوحدة الثانوية تبلبلة",
         "name_ar": "الوحدة الثانوية تبلبلة",
         "wilaya_code": "52",
-        "commune_code": "5201",
-        "commune": "Beni-Abbes",
+        "commune_code": "5206",
+        "commune": "Tabelbala",
         "lat": 29.408199,
         "lng": -3.25514,
         "geo_precision": "exact",
@@ -24939,8 +24981,8 @@
         "name": "المركز المتقدم تبلبلة",
         "name_ar": "المركز المتقدم تبلبلة",
         "wilaya_code": "52",
-        "commune_code": "5205",
-        "commune": "Igli",
+        "commune_code": "5206",
+        "commune": "Tabelbala",
         "lat": 29.774401,
         "lng": -4.00917,
         "geo_precision": "exact",
@@ -26923,8 +26965,8 @@
         "name": "الوحدة الثانوية مجدل",
         "name_ar": "الوحدة الثانوية مجدل",
         "wilaya_code": "68",
-        "commune_code": "2842",
-        "commune": "Medjedel",
+        "commune_code": "2839",
+        "commune": "Menaa",
         "lat": 35.143398,
         "lng": 3.68326,
         "geo_precision": "exact",
@@ -27047,8 +27089,8 @@
         "name": "الوحدة الثانوية سيدي عامر",
         "name_ar": "الوحدة الثانوية سيدي عامر",
         "wilaya_code": "68",
-        "commune_code": "2823",
-        "commune": "Tamsa",
+        "commune_code": "2822",
+        "commune": "Sidi Ameur",
         "lat": 35.372898,
         "lng": 3.89902,
         "geo_precision": "exact",
