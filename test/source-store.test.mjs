@@ -9,7 +9,13 @@ import { fileURLToPath } from "node:url";
 
 // The store roots itself at the repo's sources/; use a throwaway package name
 // so tests never touch real captures.
-import { stableStringify, writeCapture, readCapture, captureMeta } from "../scripts/lib/source-store.mjs";
+import {
+  captureMeta,
+  captureSha256,
+  readCapture,
+  stableStringify,
+  writeCapture,
+} from "../scripts/lib/source-store.mjs";
 
 const REPO = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = `test-tmp-${process.pid}`;
@@ -21,6 +27,14 @@ test("stableStringify sorts keys at every depth and leaves array order alone", (
   assert.equal(a, b);
   assert.ok(a.indexOf('"a"') < a.indexOf('"b"'));
   assert.deepEqual(JSON.parse(a).a.z, [3, 1, 2]);
+});
+
+test("captureSha256 ignores object key order but preserves array order", () => {
+  assert.equal(
+    captureSha256({ b: 1, a: [{ z: 2, y: 1 }] }),
+    captureSha256({ a: [{ y: 1, z: 2 }], b: 1 }),
+  );
+  assert.notEqual(captureSha256([1, 2]), captureSha256([2, 1]));
 });
 
 test("writeCapture/readCapture round-trip, manifest fields, byte stability", (t) => {

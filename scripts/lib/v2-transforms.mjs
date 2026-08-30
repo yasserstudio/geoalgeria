@@ -64,6 +64,9 @@ export const padC = (c) => (c == null || c === "" ? null : String(c).replace(/\D
 export const clean = (o) => { const x = {}; for (const k in o) if (o[k] !== undefined) x[k] = o[k]; return x; };
 /** build a refs object of non-empty string ids, or undefined if none. */
 export const refs = (o) => { const r = {}; for (const k in o) if (o[k] != null && o[k] !== "") r[k] = String(o[k]); return Object.keys(r).length ? r : undefined; };
+/** Keep published contact strings only when they contain a dialable digit. */
+export const dialableContact = (value) =>
+  typeof value === "string" && /\d/.test(value) ? value : null;
 /** atomic lat/lng: both finite → a point at the given precision; otherwise ungeocoded —
  *  both null, and a null geo_precision/geo_method (the contract enforces both iffs).
  *  `exact` is demoted to `approximate` when the coordinate is coarser than
@@ -773,7 +776,8 @@ export const MIGRATIONS = {
       ...geoExact(r, "dgpc_map"),
       source: "dgpc",
       refs: refs({ dgpc: r.objectid, dgpc_wilaya: r.cod_wilaya }),
-      statut: r.statut, address: r.address, tel: r.tel, fax: r.fax,
+      statut: r.statut, address: r.address,
+      tel: dialableContact(r.tel), fax: dialableContact(r.fax),
     }),
     meta: {
       sources: [
@@ -786,7 +790,7 @@ export const MIGRATIONS = {
       license: "DGPC records © Direction Générale de la Protection Civile; redistributed for reference with no stated open licence. Reviewed OpenStreetMap coordinate evidence © OpenStreetMap contributors, ODbL 1.0.",
       estimatedUniverse: 880,
       coverageNote:
-        "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+        "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
       titles: { en: "Civil protection units of Algeria", fr: "Unités de la Protection Civile d'Algérie", ar: "وحدات الحماية المدنية الجزائرية" },
       stats: (rows) => ({
         by_statut: count(rows, "statut"),
