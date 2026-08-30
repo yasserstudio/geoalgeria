@@ -38,6 +38,7 @@ import {
   resolveDates,
   carryOverIds,
   readCommitted,
+  readRetiredIds,
   readCacheFile,
 } from "../../../scripts/lib/v2-transforms.mjs";
 
@@ -351,7 +352,8 @@ async function main() {
   const carryKey = (r) => (r.refs?.dgpc ? `dgpc:${r.refs.dgpc}` : null);
   const committedKeys = new Set(committed.map(carryKey).filter(Boolean));
   const carryHits = v2.filter((r) => committedKeys.has(carryKey(r))).length;
-  carryOverIds(v2, committed, carryKey, "protection-civile");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, committed, carryKey, "protection-civile", retiredIds);
   if (committed.length)
     console.log(`  id carry-over: ${carryHits}/${v2.length} units matched a committed id by dgpc objectid`);
   const { records: out, metadata } = writePackageV2({
@@ -361,6 +363,7 @@ async function main() {
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
   console.log(
     `Wrote ${out.length} units → v2 (${metadata.wilayas_covered} wilayas, ` +

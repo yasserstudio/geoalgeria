@@ -70,7 +70,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
 import { attachCommune } from "../../../scripts/lib/build-utils.mjs";
 
@@ -568,7 +568,8 @@ async function main() {
   const cfg = MIGRATIONS.cliniques;
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "cliniques.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "cliniques");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, readCommitted(OUT_DIR, "cliniques.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "cliniques", retiredIds);
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
   const { records, metadata } = writePackageV2({
@@ -579,6 +580,7 @@ async function main() {
     updated,
     retrieved,
     oldMeta,
+    retiredIds,
   });
   console.log(`Wrote ${records.length} care facilities → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }

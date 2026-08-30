@@ -155,7 +155,7 @@ reads as further along than it is.
   regeneration was reverted and only the helper fix shipped.
   _(logged 2026-08-03)_
 
-- [ ] **`carryOverIds` does not persist retirements, so a retired id becomes
+- [x] **`carryOverIds` does not persist retirements, so a retired id becomes
   reusable one survey later.** The reserve set is built from the committed file
   alone (`scripts/lib/v2-transforms.mjs:978`), so an id only stays protected
   while the record that held it is still in the data. Once a release that drops
@@ -174,7 +174,9 @@ reads as further along than it is.
   this. The 2.1.0 pharmacies release retired ids `44-00029` and `47-00001`, so
   the next pharmacies re-survey WILL reuse them unless retirements are
   persisted first; this item now gates that re-survey.
-  _(logged 2026-08-08)_
+  Fixed with persistent `retired-ids.json` ledgers, a run N+1 regression test,
+  and a release gate that rejects any retired id appearing in live data.
+  _(logged 2026-08-08, fixed 2026-08-30)_
 
 - [ ] **pharmacies is the last generator bypassing `writePackageV2`.**
   `packages/pharmacies/scripts/fetch.mjs` hand-rolls `buildMetadata` + `toCSV` +

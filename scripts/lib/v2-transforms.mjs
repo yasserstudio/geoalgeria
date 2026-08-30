@@ -851,6 +851,7 @@ export const MIGRATIONS = {
  *           coverageNote?: string, titles?: object, preserve?: string[],
  *           stats?: (rows: object[]) => object },
  *   oldMeta?: object, reviewLedger?: object|null,
+ *   retiredIds?: Set<string>|null,
  * }} input
  * @returns {{ records: object[], metadata: object, review: object }}
  */
@@ -865,6 +866,7 @@ export function writePackageV2({
   stats = {},
   oldMeta = {},
   reviewLedger = undefined,
+  retiredIds = null,
 }) {
   const effectiveReviewLedger =
     reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
@@ -1010,6 +1012,19 @@ export function writePackageV2({
     ...preserved,
   };
   pending.push({ path: join(dir, "metadata.json"), content: JSON.stringify(metadata, null, 2) + "\n" });
+  if (retiredIds) {
+    const liveIds = new Set(all.map((record) => String(record.id)));
+    const overlap = [...retiredIds].filter((id) => liveIds.has(String(id)));
+    if (overlap.length) {
+      throw new Error(
+        `writePackageV2 [${pkg}]: retired id(s) are still live: ${overlap.slice(0, 5).join(", ")}`,
+      );
+    }
+    pending.push({
+      path: join(dir, "retired-ids.json"),
+      content: retiredIdsContent(retiredIds),
+    });
+  }
 
   // Phase 2 — everything validated; now write each file atomically.
   for (const { path, content } of pending) writeAtomic(path, content);
@@ -1049,10 +1064,23 @@ export function writePackageV2({
  * @param {object[]} committed     the committed v2 records (empty on a first build)
  * @param {(r: object) => (string|null)} keyOf  stable upstream key, or null to skip
  * @param {string} [pkg]           package name, for error messages
+ * @param {Set<string>} retiredIds ids retired by an earlier run; mutated with
+ *                                 ids retired by this run
  * @returns {object[]} rows
  */
-export function carryOverIds(rows, committed, keyOf, pkg = "") {
+export function carryOverIds(
+  rows,
+  committed,
+  keyOf,
+  pkg = "",
+  retiredIds,
+) {
   const tag = pkg ? ` [${pkg}]` : "";
+  if (!(retiredIds instanceof Set)) {
+    throw new Error(
+      `carryOverIds${tag}: a persistent retiredIds Set is required`,
+    );
+  }
   // Index the committed id each carry key shipped under. A duplicated key means
   // the key does not uniquely identify a record, so pinning would be arbitrary —
   // fail the build rather than silently churn the ambiguous records' ids.
@@ -1072,11 +1100,21 @@ export function carryOverIds(rows, committed, keyOf, pkg = "") {
         `unique, so it cannot pin ids; make keyOf discriminate these records`,
     );
 
-  // Every id any committed record ever held. A record still present is pinned
+  const liveKeys = new Set(rows.map(keyOf).filter((key) => key != null));
+  for (const record of committed) {
+    const key = keyOf(record);
+    if (key != null && !liveKeys.has(key)) retiredIds.add(String(record.id));
+  }
+
+  // Every id any committed record ever held, plus ids retired by earlier runs.
+  // A record still present is pinned
   // back to it below; a record upstream dropped retires its id. Either way a NEW
   // record must never be handed one of these — reuse would silently repoint a
   // cached public join key at a different place.
-  const reserved = new Set(committed.map((r) => r.id));
+  const reserved = new Set([
+    ...retiredIds,
+    ...committed.map((record) => String(record.id)),
+  ]);
 
   // 1. Pin each still-present record back to the id it shipped under.
   const carried = new Set();
@@ -1121,6 +1159,38 @@ export function carryOverIds(rows, committed, keyOf, pkg = "") {
     ids.add(r.id);
   }
   return rows;
+}
+
+const RETIRED_IDS_NOTE =
+  "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.";
+
+function retiredIdsContent(ids) {
+  return `${JSON.stringify({
+    note: RETIRED_IDS_NOTE,
+    ids: [...ids].map(String).sort(),
+  }, null, 2)}\n`;
+}
+
+/** Read and validate a package's persistent retired-id ledger. */
+export function readRetiredIds(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return new Set();
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  if (
+    !Array.isArray(document.ids) ||
+    document.ids.some((id) => typeof id !== "string" || !id)
+  ) {
+    throw new Error(`${path}: expected a non-empty string array at ids`);
+  }
+  if (new Set(document.ids).size !== document.ids.length) {
+    throw new Error(`${path}: duplicate retired id`);
+  }
+  return new Set(document.ids);
+}
+
+/** Persist a ledger for a generator that has not moved to writePackageV2 yet. */
+export function writeRetiredIds(dir, ids) {
+  writeAtomic(join(dir, "retired-ids.json"), retiredIdsContent(ids));
 }
 
 /** Read a package's committed records for carryOverIds, or [] if none exist yet. */

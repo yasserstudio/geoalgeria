@@ -33,7 +33,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { attachCommune, loadCommunes } from "../../../scripts/lib/build-utils.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
 
@@ -530,11 +530,13 @@ async function main() {
   for (const [currentRef, migration] of OSM_REF_MIGRATIONS) {
     carryCommitted.push({ id: migration.id, refs: { osm: currentRef } });
   }
+  const retiredIds = readRetiredIds(OUT_DIR);
   carryOverIds(
     v2,
     carryCommitted,
     (r) => (r.refs?.osm ? `osm:${canonicalOsmRef(r.refs.osm)}` : null),
     "ecoles",
+    retiredIds,
   );
   preservePublishedOsmMigrations(v2, committed);
   let oldMeta = {};
@@ -547,6 +549,7 @@ async function main() {
     updated,
     retrieved,
     oldMeta,
+    retiredIds,
   });
   console.log(`Wrote ${records.length} schools → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }

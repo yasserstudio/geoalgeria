@@ -47,6 +47,7 @@ import {
   resolveDates,
   carryOverIds,
   readCommitted,
+  readRetiredIds,
 } from "../../../scripts/lib/v2-transforms.mjs";
 import { containingWilayaCode } from "../../../scripts/lib/build-utils.mjs";
 import { readCapture } from "../../../scripts/lib/source-store.mjs";
@@ -369,7 +370,8 @@ function main() {
   // without depending on wilaya_code. That preserves ids when a commune moves
   // from its source's pre-reform wilaya to the current daughter wilaya.
   const carryKey = (r) => [r.code, r.type, r.name].join("|");
-  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKey, "formation-professionnelle");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, readCommitted(OUT_DIR, "establishments.json"), carryKey, "formation-professionnelle", retiredIds);
 
   let oldMeta = {};
   try { oldMeta = JSON.parse(readFileSync(join(OUT_DIR, "metadata.json"), "utf-8")); } catch {}
@@ -381,6 +383,7 @@ function main() {
     updated,
     retrieved,
     oldMeta,
+    retiredIds,
   });
   console.log(`Wrote ${out.length} establishments → v2 (${metadata.geocoded_count} geocoded, ${metadata.wilayas_covered} wilayas).`);
 }

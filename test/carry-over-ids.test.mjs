@@ -1,6 +1,6 @@
-// carryOverIds is the id-stability contract for the five join packages (culture,
-// djezzy, ecoles, mosquees, sante): regenerating must reproduce the SAME public
-// ids, pinning each record back to what it shipped by a stable upstream key.
+// carryOverIds is the shared id-stability contract for every generator with a
+// stable upstream key: regenerating must reproduce the SAME public ids, pinning
+// each record back to what it shipped as and persisting retired ids across runs.
 //
 // The bug this guards (empirically: a live ecoles regen minted 20 duplicate-id
 // pairs): the sequential assignIds() pass runs BEFORE carry-over and cannot know
@@ -12,7 +12,14 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { carryOverIds } from "../scripts/lib/v2-transforms.mjs";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import {
+  carryOverIds,
+  readRetiredIds,
+  writeRetiredIds,
+} from "../scripts/lib/v2-transforms.mjs";
 
 // A committed record + the same {wilaya}-{seq} id scheme the join packages use.
 const rec = (id, key) => ({ id, refs: { osm: key } });
@@ -43,7 +50,7 @@ test("carryOverIds: reorder alone churns nothing", () => {
     { wilaya: "06", refs: { osm: "A" } },
     { wilaya: "06", refs: { osm: "B" } },
   ]);
-  carryOverIds(rows, committed, keyOf, "t");
+  carryOverIds(rows, committed, keyOf, "t", new Set());
   const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
   assert.deepEqual(byKey, { A: "06-00001", B: "06-00002", C: "06-00003" });
   assert.ok(uniqueIds(rows));
@@ -65,7 +72,7 @@ test("carryOverIds: growth — a new record inserted mid-sequence never steals a
     `expected A0 to derive onto a committed slot, got ${a0Derived}`,
   );
 
-  carryOverIds(rows, committed, keyOf, "t");
+  carryOverIds(rows, committed, keyOf, "t", new Set());
   const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
   // carried ids unchanged
   assert.equal(byKey.A, "06-00001");
@@ -84,7 +91,7 @@ test("carryOverIds: shrink — a dropped record's id retires and a new record ca
     { wilaya: "06", refs: { osm: "C" } },
     { wilaya: "06", refs: { osm: "D" } }, // NEW
   ]);
-  carryOverIds(rows, committed, keyOf, "t");
+  carryOverIds(rows, committed, keyOf, "t", new Set());
   const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
   assert.equal(byKey.A, "06-00001"); // carried, unchanged
   assert.equal(byKey.C, "06-00003"); // carried, unchanged (NOT re-sequenced to 02)
@@ -95,13 +102,41 @@ test("carryOverIds: shrink — a dropped record's id retires and a new record ca
   // a missing committed key is expected — it must not throw
 });
 
+test("carryOverIds: a persisted run N retirement stays reserved in run N+1", (t) => {
+  const dir = mkdtempSync(join(tmpdir(), "geoalgeria-retired-ids-"));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const retired = new Set();
+  const committedN = [rec("06-00001", "A"), rec("06-00002", "B"), rec("06-00003", "C")];
+  const rowsN = assignIds([
+    { wilaya: "06", refs: { osm: "A" } },
+    { wilaya: "06", refs: { osm: "C" } },
+  ]);
+  carryOverIds(rowsN, committedN, keyOf, "t", retired);
+  assert.deepEqual([...retired], ["06-00002"]);
+  writeRetiredIds(dir, retired);
+
+  // A real N+1 generator starts in a fresh process and must reload the ledger.
+  const reloaded = readRetiredIds(dir);
+  assert.notEqual(reloaded, retired);
+  const committedN1 = structuredClone(rowsN);
+  const rowsN1 = assignIds([
+    { wilaya: "06", refs: { osm: "A" } },
+    { wilaya: "06", refs: { osm: "C" } },
+    { wilaya: "06", refs: { osm: "D" } },
+  ]);
+  carryOverIds(rowsN1, committedN1, keyOf, "t", reloaded);
+  const byKey = Object.fromEntries(rowsN1.map((row) => [row.refs.osm, row.id]));
+  assert.equal(byKey.D, "06-00004");
+  assert.ok(!ids(rowsN1).includes("06-00002"));
+});
+
 test("carryOverIds: genuinely-new wilaya keeps its freshly derived ids", () => {
   const committed = [rec("06-00001", "A")];
   const rows = assignIds([
     { wilaya: "06", refs: { osm: "A" } },
     { wilaya: "31", refs: { osm: "Z" } }, // NEW wilaya, no committed ids
   ]);
-  carryOverIds(rows, committed, keyOf, "t");
+  carryOverIds(rows, committed, keyOf, "t", new Set());
   const byKey = Object.fromEntries(rows.map((r) => [r.refs.osm, r.id]));
   assert.equal(byKey.A, "06-00001");
   assert.equal(byKey.Z, "31-00001");
@@ -116,7 +151,10 @@ test("carryOverIds: growth + duplicated committed carry key throws loud", () => 
     { wilaya: "06", refs: { osm: "C" } },
     { wilaya: "06", refs: { osm: "NEW" } },
   ]);
-  assert.throws(() => carryOverIds(rows, committed, keyOf, "dup-pkg"), /dup-pkg.*duplicate carry key/s);
+  assert.throws(
+    () => carryOverIds(rows, committed, keyOf, "dup-pkg", new Set()),
+    /dup-pkg.*duplicate carry key/s,
+  );
 });
 
 test("carryOverIds: two current records under one key surface as a duplicate-id throw", () => {
@@ -125,5 +163,15 @@ test("carryOverIds: two current records under one key surface as a duplicate-id 
     { id: "06-00001", wilaya: "06", refs: { osm: "A" } },
     { id: "06-00002", wilaya: "06", refs: { osm: "A" } }, // same key → both pin to 06-00001
   ];
-  assert.throws(() => carryOverIds(rows, committed, keyOf, "t"), /duplicated after carry-over/);
+  assert.throws(
+    () => carryOverIds(rows, committed, keyOf, "t", new Set()),
+    /duplicated after carry-over/,
+  );
+});
+
+test("carryOverIds: refuses an ephemeral missing ledger", () => {
+  assert.throws(
+    () => carryOverIds([], [], keyOf, "t"),
+    /persistent retiredIds Set is required/,
+  );
 });

@@ -89,7 +89,9 @@ function distributions(pkg, meta) {
 
 /** Single-entity packages don't list `entities` — take the one data/*.json file. */
 const defaultEntityFiles = (dir) =>
-  readdirSync(dir).filter((f) => f.endsWith(".json") && f !== "metadata.json");
+  readdirSync(dir).filter(
+    (f) => f.endsWith(".json") && f !== "metadata.json" && f !== "retired-ids.json",
+  );
 
 /** Every package directory that ships data, split into v2 and declared holdouts. */
 function collect() {

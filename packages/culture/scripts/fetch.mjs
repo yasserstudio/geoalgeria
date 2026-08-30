@@ -26,7 +26,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, committedDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -219,7 +219,8 @@ function main() {
   // Carry ids over by the stable portal node id so the root commune fix shows up as
   // corrected wilaya/commune, not as a re-sequencing of every id in those wilayas.
   const v2 = rows.map(cfg.map);
-  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null), "culture");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(v2, readCommitted(OUT_DIR, "culture.json"), (r) => (r.refs?.patrimoine ? `p:${r.refs.patrimoine}` : null), "culture", retiredIds);
   const { records, metadata } = writePackageV2({
     pkg: "culture",
     dir: OUT_DIR,
@@ -227,6 +228,7 @@ function main() {
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
   console.log(
     `Wrote ${records.length} cultural places → v2 (${metadata.wilayas_covered} wilayas); ` +

@@ -30,7 +30,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -415,9 +415,11 @@ async function main() {
   const cfg = MIGRATIONS.mosquees;
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
+  const retiredIds = readRetiredIds(OUT_DIR);
   carryOverIds(v2, readCommitted(OUT_DIR, "mosquees.json"), (r) =>
     r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null,
     "mosquees",
+    retiredIds,
   );
   const { records, metadata } = writePackageV2({
     pkg: "mosquees",
@@ -426,6 +428,7 @@ async function main() {
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
   console.log(`Wrote ${records.length} mosques → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }

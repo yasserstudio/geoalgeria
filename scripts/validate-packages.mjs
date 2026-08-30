@@ -1078,6 +1078,54 @@ function validatePackageFiles(pkgs) {
   }
 }
 
+function validateRetiredIds(pkgs) {
+  for (const pkg of pkgs) {
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    const ledgerPath = join(dataDir, "retired-ids.json");
+    if (!existsSync(ledgerPath)) continue;
+    let document;
+    try {
+      document = readJson(ledgerPath);
+    } catch (error) {
+      fail(`${pkg}/retired-ids.json: cannot read — ${error.message}`);
+      continue;
+    }
+    const ids = document?.ids;
+    if (!Array.isArray(ids) || ids.some((id) => typeof id !== "string" || !id)) {
+      fail(`${pkg}/retired-ids.json: ids must be an array of non-empty strings`);
+      continue;
+    }
+    if (new Set(ids).size !== ids.length) {
+      fail(`${pkg}/retired-ids.json: duplicate id(s)`);
+    }
+    if (JSON.stringify(ids) !== JSON.stringify([...ids].sort())) {
+      fail(`${pkg}/retired-ids.json: ids must be sorted`);
+    }
+
+    const live = new Set();
+    for (const file of readdirSync(dataDir)) {
+      if (!file.endsWith(".json") || file === "metadata.json" || file === "retired-ids.json") continue;
+      let value;
+      try {
+        value = readJson(join(dataDir, file));
+      } catch {
+        continue; // the dataset validator reports malformed JSON with context
+      }
+      if (Array.isArray(value)) {
+        for (const record of value) if (record?.id != null) live.add(String(record.id));
+      }
+    }
+    const reused = ids.filter((id) => live.has(id));
+    if (reused.length) {
+      fail(
+        `${pkg}/retired-ids.json: retired id(s) are live again: ${reused.slice(0, 5).join(", ")}`,
+      );
+    } else {
+      console.log(`  OK: ${pkg} — ${ids.length} retired ids remain reserved`);
+    }
+  }
+}
+
 // types/index.d.ts ↔ shipped JSON.
 //
 // Every data package publishes `types/` in files[], so its .d.ts IS the public
@@ -1473,6 +1521,9 @@ reportBoundaries(!only);
 
 console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
 validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
+
+console.log(`\n[retired ids never become live again]`);
+validateRetiredIds(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[package files[] ↔ derived data]`);
 validatePackageFiles(
