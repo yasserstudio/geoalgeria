@@ -4,12 +4,12 @@
   "title_fr": "Cliniques et structures de soins d'Algérie",
   "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
   "title_en": "Algeria clinics & care facilities",
-  "record_count": 1894,
-  "geocoded_count": 1894,
+  "record_count": 1913,
+  "geocoded_count": 1913,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 1064,
-    "approximate": 830
+    "exact": 1080,
+    "approximate": 833
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -27,25 +27,25 @@
       "name": "OpenStreetMap: clinics & proximity-care facilities in Algeria",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-08-08",
+      "retrieved": "2026-08-31",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "ODbL-1.0",
-  "updated": "2026-08-08",
-  "named": 1617,
+  "updated": "2026-08-31",
+  "named": 1608,
   "by_type": {
-    "polyclinique": 418,
-    "clinique": 1101,
-    "salle_de_soins": 210,
-    "maternite": 28,
-    "centre_sante": 137
+    "polyclinique": 405,
+    "clinique": 1142,
+    "salle_de_soins": 199,
+    "maternite": 26,
+    "centre_sante": 141
   },
   "by_sector": {
-    "public": 640,
+    "public": 615,
     "private": 67
   },
-  "with_phone": 106,
-  "with_address": 640,
+  "with_phone": 116,
+  "with_address": 655,
   "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
 }

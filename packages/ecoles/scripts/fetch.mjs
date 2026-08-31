@@ -206,19 +206,23 @@ async function fetchOSM() {
         const json = JSON.parse(out);
         if (Array.isArray(json.elements) && json.elements.length >= OSM_MIN) {
           // Elements are an unordered set; sort the capture (type then id) so
-          // mirror-to-mirror ordering drift never shows up in the git diff.
+          // mirror-to-mirror ordering drift never shows up in the git diff. Use
+          // that same order for this run: exact-coordinate de-duplication keeps
+          // the first equally rich primitive, so returning the unsorted response
+          // would make a way/relation migration depend on the Overpass mirror.
+          const elements = [...json.elements].sort(
+            (a, b) => a.type.localeCompare(b.type) || a.id - b.id,
+          );
           writeCapture(
             "ecoles",
             "osm",
             {
               ...json,
-              elements: [...json.elements].sort(
-                (a, b) => a.type.localeCompare(b.type) || a.id - b.id,
-              ),
+              elements,
             },
             { url: ep, records: json.elements.length },
           );
-          return json.elements;
+          return elements;
         }
         console.warn(`  only ${json.elements?.length ?? 0} elements (< ${OSM_MIN}); treating as partial, trying next…`);
       } catch (e) {

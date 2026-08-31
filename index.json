@@ -90,12 +90,12 @@
       "package": "@geoalgeria/cliniques",
       "schema_version": "2.0.0",
       "title": "Algeria clinics & care facilities",
-      "record_count": 1894,
-      "geocoded_count": 1894,
+      "record_count": 1913,
+      "geocoded_count": 1913,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 1064,
-        "approximate": 830
+        "exact": 1080,
+        "approximate": 833
       },
       "wilayas_covered": 66,
       "bbox": [
@@ -105,7 +105,7 @@
         37.063002
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-08"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/culture",
@@ -147,18 +147,18 @@
         36.90625
       ],
       "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
-      "updated": "2026-06-25"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/ecoles",
       "schema_version": "2.0.0",
       "title": "Algeria schools",
-      "record_count": 11855,
-      "geocoded_count": 11855,
+      "record_count": 11858,
+      "geocoded_count": 11858,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 2843,
-        "approximate": 9012
+        "exact": 2840,
+        "approximate": 9018
       },
       "coverage": {
         "pct": 39.9,
@@ -173,7 +173,7 @@
         37.085298
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-06"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/emploi",
@@ -194,7 +194,7 @@
         37.00118
       ],
       "license": "Factual public listing (ANEM)",
-      "updated": "2026-06-10"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/enseignement-superieur",
@@ -347,14 +347,14 @@
       "package": "@geoalgeria/mobilis",
       "schema_version": "2.0.0",
       "title": "Mobilis stores (Algeria)",
-      "record_count": 12345,
-      "geocoded_count": 165,
+      "record_count": 12344,
+      "geocoded_count": 164,
       "geocoded_pct": 1.3,
       "precision": {
-        "exact": 165,
-        "approximate": 0
+        "exact": 163,
+        "approximate": 1
       },
-      "wilayas_covered": 58,
+      "wilayas_covered": 67,
       "bbox": [
         -8.14066,
         21.318254,
@@ -362,7 +362,7 @@
         37.005541
       ],
       "license": "Data © ATM Mobilis; redistributed for reference",
-      "updated": "2026-06-11"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/mosquees",
@@ -409,23 +409,23 @@
         37.0069
       ],
       "license": "Data © Ooredoo Algérie; redistributed for reference",
-      "updated": "2026-07-05"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/pharmacies",
       "schema_version": "2.0.0",
       "title": "Algeria pharmacies (officines)",
-      "record_count": 3797,
-      "geocoded_count": 3797,
+      "record_count": 3807,
+      "geocoded_count": 3807,
       "geocoded_pct": 100,
       "precision": {
         "exact": 3509,
-        "approximate": 288
+        "approximate": 298
       },
       "coverage": {
-        "pct": 34.5,
+        "pct": 34.6,
         "of": 11000,
-        "note": "3797 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
+        "note": "3807 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -435,7 +435,7 @@
         37.065122
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-08"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/poste",

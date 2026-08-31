@@ -607,8 +607,8 @@ export const MIGRATIONS = {
     files: [
       { file: "agences.json", map: (r) => clean({
         id: "ag-" + r.id, name: r.name, name_ar: r.name_ar,
-        wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune ?? null,
-        ...geoExact(r, "mobilis"),
+        wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune ?? null,
+        ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "mobilis"),
         source: "mobilis",
         type: r.type, code: r.code, address: r.address, address_ar: r.address_ar,
       }) },

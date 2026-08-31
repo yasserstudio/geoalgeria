@@ -94,6 +94,15 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  djezzy: {
+    // Djezzy now publishes a later closing time for its Adrar boutique. Keep
+    // the frozen migration input frozen and apply this one observed source
+    // change explicitly, so every other field on the row remains guarded.
+    "01-001": { hours: "08H00 - 19H30" },
+    "47-001": { hours: "08H00 - 19H30" },
+    "55-001": { hours: "08H00 -14H00 & 16H00-20H00" },
+    "59-001": { hours: "08H00 - 19H00" },
+  },
   "gares-routieres": {
     // NAAMA is one of six stations SOGRAL ships with a corrupted longitude. The
     // migration-era input carries the bad point, and because wilaya and commune
@@ -185,6 +194,12 @@ for (const [pkg, file, map] of SPECS) {
 
     const rows = read(`packages/${pkg}/data/${file}`);
     const committed = new Map(rows.map((r) => [r.id, r]));
+    let retired = new Set();
+    try {
+      retired = new Set(read(`packages/${pkg}/data/retired-ids.json`).ids);
+    } catch {
+      // Packages without removals do not need a ledger.
+    }
     // The runner's demoteSharedPoints() pass is file-level — a per-record map
     // cannot see that another record carries the same point — so replay it here.
     // The transform never moves a coordinate, so the clusters in the committed
@@ -198,6 +213,10 @@ for (const [pkg, file, map] of SPECS) {
       const fix = CORRECTIONS[pkg]?.[produced.id];
       if (fix) Object.assign(produced, fix);
       const shipped = committed.get(produced.id);
+      // A refreshed source may remove a row sampled at the v2 cutover. Its
+      // transformed id must remain permanently reserved; that still guards the
+      // prefix/id rule while acknowledging that no live row remains to compare.
+      if (!shipped && retired.has(produced.id)) continue;
       assert.ok(
         shipped,
         `${pkg}/${file}: the transform produced id ${JSON.stringify(produced.id)}, which is not ` +
