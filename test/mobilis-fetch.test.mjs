@@ -1,8 +1,8 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
+import { applyReviewedOverrides } from "../packages/schema/src/review.js";
 import {
-  applyMobilisCoordFix,
   canonicalWilayaCodes,
 } from "../packages/mobilis/scripts/fetch.mjs";
 
@@ -55,34 +55,45 @@ test("Mobilis wilaya joins fail closed on an unmatched label", () => {
   assert.throws(() => canonicalWilayaCodes(source), /unmatched Mobilis wilaya 69/);
 });
 
-test("the known Constantine source outlier is demoted to its commune centroid", () => {
-  const record = {
-    code: "12346",
+test("the reviewed Constantine outlier patch is pinned to the exact upstream point", () => {
+  const ledger = JSON.parse(
+    readFileSync(new URL("../quality/overrides/mobilis.json", import.meta.url), "utf8"),
+  );
+  const baseline = {
+    id: "ag-25-009",
+    name: "Proxishop Constantine",
     wilaya_code: "66",
     commune_code: null,
     commune: null,
-    lat: 34.125448,
-    lng: 3.464264,
+    lat: 34.125447565116126,
+    lng: 3.46426436415428,
     geo_precision: "exact",
     geo_method: "mobilis",
-  };
-  const communes = [{
-    code_commune: 2501,
-    wilaya_code: 25,
-    name_fr: "Constantine",
-    latitude: 36.35,
-    longitude: 6.6,
-  }];
-
-  assert.equal(applyMobilisCoordFix([record], communes), 1);
-  assert.deepEqual(record, {
+    source: "mobilis",
+    type: "agence",
     code: "12346",
-    wilaya_code: "25",
-    commune_code: "2501",
-    commune: "Constantine",
-    lat: 36.35,
-    lng: 6.6,
-    geo_precision: "approximate",
-    geo_method: "commune_centroid",
-  });
+  };
+
+  const result = applyReviewedOverrides([baseline], ledger, { file: "agences.json" });
+  assert.deepEqual(result.stats, { reviewed: 1, patched: 1, excluded: 0, kept: 0 });
+  assert.deepEqual(
+    {
+      wilaya_code: result.records[0].wilaya_code,
+      commune_code: result.records[0].commune_code,
+      commune: result.records[0].commune,
+      lat: result.records[0].lat,
+      lng: result.records[0].lng,
+      geo_precision: result.records[0].geo_precision,
+      geo_method: result.records[0].geo_method,
+    },
+    {
+      wilaya_code: "25",
+      commune_code: "2506",
+      commune: "El Khroub",
+      lat: 36.26333,
+      lng: 6.69361,
+      geo_precision: "approximate",
+      geo_method: "commune_centroid",
+    },
+  );
 });

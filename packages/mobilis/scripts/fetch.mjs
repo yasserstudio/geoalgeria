@@ -49,8 +49,6 @@ import {
 } from "../../../scripts/lib/v2-transforms.mjs";
 import {
   containingWilayaCode,
-  loadCommunes,
-  round6,
 } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -294,38 +292,6 @@ function assignIds(rows) {
   return rows;
 }
 
-const COORD_FIX = new Map([
-  // The operator lists this as "Proxishop Constantine" at Université Salah
-  // Boubnider in Constantine, but publishes a point near Messaad, 359 km away.
-  // We know the commune, not the storefront point, so use its canonical centroid.
-  ["12346", "2501"],
-]);
-
-export function applyMobilisCoordFix(records, communes = loadCommunes()) {
-  const matched = new Set();
-  for (const record of records) {
-    const communeCode = COORD_FIX.get(record.code);
-    if (!communeCode) continue;
-    const commune = communes.find(
-      (candidate) => String(candidate.code_commune).padStart(4, "0") === communeCode,
-    );
-    if (!commune) throw new Error(`Mobilis coordinate fix commune ${communeCode} is missing`);
-    record.wilaya_code = wcode(commune.wilaya_code);
-    record.commune_code = communeCode;
-    record.commune = commune.name_fr;
-    record.lat = round6(commune.latitude);
-    record.lng = round6(commune.longitude);
-    record.geo_precision = "approximate";
-    record.geo_method = "commune_centroid";
-    matched.add(record.code);
-  }
-  const unmatched = [...COORD_FIX.keys()].filter((code) => !matched.has(code));
-  if (unmatched.length) {
-    throw new Error(`Mobilis coordinate fix code(s) matched no agency: ${unmatched.join(", ")}`);
-  }
-  return matched.size;
-}
-
 // --- main ------------------------------------------------------------------
 async function main() {
   console.log("Priming Mobilis session (WAF cookies)…");
@@ -384,8 +350,6 @@ async function main() {
   const today = new Date().toISOString().slice(0, 10);
   const agencesV2 = agences.map(mapOf("agences.json"));
   const pdvV2 = pdv.map(mapOf("pdv.json"));
-  const fixed = applyMobilisCoordFix(agencesV2);
-  if (fixed) console.log(`  ${fixed} known-bad agency coordinate pinned to its commune centroid`);
   const retiredIds = readRetiredIds(OUT_DIR);
   carryOverIds(
     agencesV2,

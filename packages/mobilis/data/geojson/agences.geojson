@@ -2598,8 +2598,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.642433,
-          36.365
+          6.69361,
+          36.26333
         ]
       },
       "properties": {
@@ -2607,17 +2607,24 @@
         "name": "Proxishop Constantine",
         "name_ar": "الوكالة التجارية قسنطينة",
         "wilaya_code": "25",
-        "commune_code": "2501",
-        "commune": "Constantine",
-        "lat": 36.365,
-        "lng": 6.642433,
+        "commune_code": "2506",
+        "commune": "El Khroub",
+        "lat": 36.26333,
+        "lng": 6.69361,
         "geo_precision": "approximate",
         "geo_method": "commune_centroid",
         "source": "mobilis",
         "type": "agence",
         "code": "12346",
         "address": "Université « 03 » Salah Boubnider constantine",
-        "address_ar": "الجامعة رقم 3 صالح بوبنيدر قسنطينة"
+        "address_ar": "الجامعة رقم 3 صالح بوبنيدر قسنطينة",
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-31",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://mobilis.dz/mapagence?type_agence=Mobilis+Agency",
+          "https://univ-constantine3.dz/pdfs/formulaire%20%20de%20%20reservationvisiofinal-converti.pdf"
+        ]
       }
     },
     {

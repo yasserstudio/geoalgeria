@@ -171,7 +171,7 @@ test("stale decisions fail instead of landing on changed upstream data", () => {
         ]),
         { file: "sante.json" },
       ),
-    /stale decision/,
+    /stale decision;.*expect=\{"name":"Old name"\}; actual=\{"name":"Upstream changed"\}/,
   );
 });
 

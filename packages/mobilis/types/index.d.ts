@@ -12,6 +12,9 @@ export type GeoPrecision = "exact" | "approximate" | null;
  *  produced a point, so none can be named. */
 export type GeoMethod = "mobilis" | "commune_centroid" | null;
 
+/** A human-reviewed correction applied through the guarded evidence ledger. */
+export type ReviewStatus = "corrected";
+
 /** A geocoded Mobilis commercial agency. */
 export interface Agence {
   /** Stable id, prefixed `ag-` to stay unique alongside {@link Pdv} inside
@@ -46,6 +49,14 @@ export interface Agence {
   address: string;
   /** Street address in Arabic. */
   address_ar: string;
+  /** Present only when a reviewed correction was applied. */
+  review_status?: ReviewStatus;
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Reviewer recorded by the correction ledger. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** An approved point of sale — a third-party resale partner, listed at commune
