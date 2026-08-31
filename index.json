@@ -90,12 +90,12 @@
       "package": "@geoalgeria/cliniques",
       "schema_version": "2.0.0",
       "title": "Algeria clinics & care facilities",
-      "record_count": 1894,
-      "geocoded_count": 1894,
+      "record_count": 1913,
+      "geocoded_count": 1913,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 1064,
-        "approximate": 830
+        "exact": 1080,
+        "approximate": 833
       },
       "wilayas_covered": 66,
       "bbox": [
@@ -105,7 +105,7 @@
         37.063002
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-08"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/culture",
@@ -147,18 +147,18 @@
         36.90625
       ],
       "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
-      "updated": "2026-06-25"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/ecoles",
       "schema_version": "2.0.0",
       "title": "Algeria schools",
-      "record_count": 11855,
-      "geocoded_count": 11855,
+      "record_count": 11858,
+      "geocoded_count": 11858,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 2843,
-        "approximate": 9012
+        "exact": 2840,
+        "approximate": 9018
       },
       "coverage": {
         "pct": 39.9,
@@ -173,7 +173,7 @@
         37.085298
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-06"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/emploi",
@@ -194,7 +194,7 @@
         37.00118
       ],
       "license": "Factual public listing (ANEM)",
-      "updated": "2026-06-10"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/enseignement-superieur",
@@ -347,14 +347,14 @@
       "package": "@geoalgeria/mobilis",
       "schema_version": "2.0.0",
       "title": "Mobilis stores (Algeria)",
-      "record_count": 12345,
-      "geocoded_count": 165,
+      "record_count": 12344,
+      "geocoded_count": 164,
       "geocoded_pct": 1.3,
       "precision": {
-        "exact": 165,
-        "approximate": 0
+        "exact": 163,
+        "approximate": 1
       },
-      "wilayas_covered": 58,
+      "wilayas_covered": 67,
       "bbox": [
         -8.14066,
         21.318254,
@@ -362,7 +362,7 @@
         37.005541
       ],
       "license": "Data © ATM Mobilis; redistributed for reference",
-      "updated": "2026-06-11"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/mosquees",
@@ -409,23 +409,23 @@
         37.0069
       ],
       "license": "Data © Ooredoo Algérie; redistributed for reference",
-      "updated": "2026-07-05"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/pharmacies",
       "schema_version": "2.0.0",
       "title": "Algeria pharmacies (officines)",
-      "record_count": 3797,
-      "geocoded_count": 3797,
+      "record_count": 3807,
+      "geocoded_count": 3807,
       "geocoded_pct": 100,
       "precision": {
         "exact": 3509,
-        "approximate": 288
+        "approximate": 298
       },
       "coverage": {
-        "pct": 34.5,
+        "pct": 34.6,
         "of": 11000,
-        "note": "3797 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
+        "note": "3807 pharmacies compiled from OpenStreetMap, against an estimated ~11000 officines nationally (order-of-magnitude, no open official registry). A community-maintained extract, so coverage is partial and uneven by wilaya, denser in the north."
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -435,7 +435,7 @@
         37.065122
       ],
       "license": "ODbL-1.0",
-      "updated": "2026-08-08"
+      "updated": "2026-08-31"
     },
     {
       "package": "@geoalgeria/poste",
@@ -466,13 +466,13 @@
       "geocoded_count": 880,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 853,
-        "approximate": 27
+        "exact": 857,
+        "approximate": 23
       },
       "coverage": {
         "pct": 100,
         "of": 880,
-        "note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, phone/fax and a status tier. Every unit carries a real DGPC coordinate (a few coincident points are marked approximate). The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback)."
+        "note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback)."
       },
       "wilayas_covered": 69,
       "bbox": [
@@ -481,8 +481,8 @@
         9.57498,
         37.065201
       ],
-      "license": "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference. No open licence.",
-      "updated": "2026-07-22"
+      "license": "DGPC records © Direction Générale de la Protection Civile; redistributed for reference with no stated open licence. Reviewed OpenStreetMap coordinate evidence © OpenStreetMap contributors, ODbL 1.0.",
+      "updated": "2026-08-30"
     },
     {
       "package": "@geoalgeria/sante",

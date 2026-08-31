@@ -36,13 +36,29 @@
  * Usage: node scripts/fetch.mjs
  */
 
-import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  MIGRATIONS,
+  carryOverIds,
+  readCommitted,
+  readRetiredIds,
+  writePackageV2,
+} from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  containingWilayaCode,
+} from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
+const WILAYAS = JSON.parse(
+  readFileSync(
+    join(__dirname, "..", "..", "dataset", "data", "wilayas.json"),
+    "utf8",
+  ),
+).wilayas;
 const ORIGIN = "https://mobilis.dz";
 const REFERER = `${ORIGIN}/mapagence?type_agence=Approved+Agency`;
 const UA =
@@ -141,6 +157,51 @@ const wcode = (v) => {
   return Number.isInteger(n) && n > 0 ? String(n).padStart(2, "0") : null;
 };
 
+const arabicKey = (value) =>
+  String(value ?? "")
+    .normalize("NFKD")
+    .replace(/[\u064b-\u065f\u0670]/g, "")
+    .replace(/[إأآ]/g, "ا")
+    .replace(/ة/g, "ه")
+    .replace(/ى/g, "ي")
+    .replace(/\s+/g, "")
+    .replace(/^ال/, "");
+
+// Mobilis uses a few long-standing spellings that differ from the canonical
+// Arabic wilaya names. Its numeric ids are not official codes after 59, so the
+// source label is the stable join key and every unmatched label is fatal.
+const WILAYA_ALIASES = new Map([
+  [arabicKey("تمنغست"), "11"],
+  [arabicKey("الجزائر العاصمة"), "16"],
+  [arabicKey("ايليزي"), "33"],
+  [arabicKey("تيندوف"), "37"],
+  [arabicKey("عين الدفلة"), "44"],
+  [arabicKey("عين تيموشنت"), "46"],
+  [arabicKey("غيليزان"), "48"],
+  [arabicKey("برج باجي المختار"), "50"],
+  [arabicKey("تقرت"), "55"],
+]);
+
+export function canonicalWilayaCodes(sourceWilayas) {
+  const canonical = new Map(
+    WILAYAS.map((wilaya) => [arabicKey(wilaya.name_ar), wcode(wilaya.code)]),
+  );
+  const result = new Map();
+  for (const wilaya of sourceWilayas) {
+    const key = arabicKey(wilaya.name);
+    const code = canonical.get(key) ?? WILAYA_ALIASES.get(key);
+    if (!code) throw new Error(`unmatched Mobilis wilaya ${wilaya.id}: ${wilaya.name}`);
+    result.set(Number(wilaya.id), code);
+  }
+  const canonicalCount = new Set(result.values()).size;
+  if (result.size !== 69 || canonicalCount !== 69) {
+    throw new Error(
+      `Mobilis wilaya join is not one-to-one (source=${result.size}, canonical=${canonicalCount})`,
+    );
+  }
+  return result;
+}
+
 /**
  * Parse Mobilis' `xy` field. It is "lat, lng" (lat first), and the decimal
  * separator is inconsistent: dot ("36.76, 3.05") or comma
@@ -171,8 +232,9 @@ function parseXY(xy) {
 // --- normalizers -----------------------------------------------------------
 // Mobilis' own `id` is unique & stable → kept as `code`. `id` is synthesized
 // downstream as `{wilaya_code}-{seq}` for parity with the other packages.
-function normAgence(a) {
+function normAgence(a, wilayaCodes) {
   const [lat, lng] = parseXY(a.xy);
+  const sourceWilayaCode = wilayaCodes.get(Number(a.wilaya_id)) ?? null;
   return {
     id: null, // assigned in assignIds()
     code: a.id != null ? String(a.id) : null,
@@ -181,13 +243,15 @@ function normAgence(a) {
     name_ar: str(a.name_ar),
     address: str(a.adress), // source spells it "adress"
     address_ar: str(a.adress_ar),
-    wilaya_code: wcode(a.wilaya_id),
+    wilaya_code: containingWilayaCode(lat, lng) ?? sourceWilayaCode,
     lat,
     lng,
+    geo_precision: "exact",
+    geo_method: "mobilis",
   };
 }
 
-function normPdv(a) {
+function normPdv(a, wilayaCodes) {
   const [lat, lng] = parseXY(a.xy); // always null for PDV, but parse defensively
   return {
     id: null,
@@ -196,7 +260,7 @@ function normPdv(a) {
     name: str(a.name),
     address: str(a.adress),
     commune: str(a.communes),
-    wilaya_code: wcode(a.wilaya_id),
+    wilaya_code: wilayaCodes.get(Number(a.wilaya_id)) ?? null,
     lat,
     lng,
   };
@@ -234,11 +298,11 @@ async function main() {
   await prime();
   console.log(`  cookies: ${[...jar.keys()].join(", ") || "(none)"}`);
 
-  // The endpoint returns the full wilaya list (currently 69 under the 2019/2026
-  // reforms); Mobilis only files records under codes 1–58, so 59–69 come back
-  // empty. We still walk every returned id so new wilayas are picked up if/when
-  // Mobilis starts populating them.
+  // The endpoint returns the full wilaya list, but its ids 59–69 use Mobilis's
+  // own ordering rather than Algeria's official codes. Resolve the Arabic labels
+  // against the canonical dataset before any record is normalized.
   const wilayas = await getJSON("wilayas");
+  const wilayaCodes = canonicalWilayaCodes(wilayas);
   const ids = wilayas.map((w) => w.id).filter((n) => Number.isInteger(n)).sort((a, b) => a - b);
   console.log(`  ${ids.length} wilayas`);
 
@@ -260,7 +324,11 @@ async function main() {
       for (const a of data) {
         if (a.id == null || seen.has(a.id)) continue;
         seen.add(a.id);
-        rows.push(type === "agence" ? normAgence(a) : normPdv(a));
+        rows.push(
+          type === "agence"
+            ? normAgence(a, wilayaCodes)
+            : normPdv(a, wilayaCodes),
+        );
       }
       process.stdout.write(`\r  [${file}] wilaya ${wil}/${ids.at(-1)} — ${rows.length} records   `);
     }
@@ -280,21 +348,41 @@ async function main() {
   const cfg = MIGRATIONS.mobilis;
   const mapOf = (f) => cfg.files.find((s) => s.file === f).map;
   const today = new Date().toISOString().slice(0, 10);
+  const agencesV2 = agences.map(mapOf("agences.json"));
+  const pdvV2 = pdv.map(mapOf("pdv.json"));
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(
+    agencesV2,
+    readCommitted(OUT_DIR, "agences.json"),
+    (record) => record.code,
+    "mobilis/agences",
+    retiredIds,
+  );
+  carryOverIds(
+    pdvV2,
+    readCommitted(OUT_DIR, "pdv.json"),
+    (record) => record.code,
+    "mobilis/pdv",
+    retiredIds,
+  );
   writePackageV2({
     pkg: "mobilis",
     dir: OUT_DIR,
     files: [
-      { file: "agences.json", rows: agences.map(mapOf("agences.json")) },
-      { file: "pdv.json", geojson: false, rows: pdv.map(mapOf("pdv.json")) },
+      { file: "agences.json", rows: agencesV2 },
+      { file: "pdv.json", geojson: false, rows: pdvV2 },
     ],
     meta: cfg.meta,
     updated: today,
     retrieved: today,
+    retiredIds,
   });
   console.log(`Wrote ${agences.length} agences + ${pdv.length} PDV → v2.`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

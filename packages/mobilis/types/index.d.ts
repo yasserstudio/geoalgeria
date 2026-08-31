@@ -10,7 +10,10 @@ export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How the coordinate was obtained. `null` on an ungeocoded record — no method
  *  produced a point, so none can be named. */
-export type GeoMethod = "mobilis" | null;
+export type GeoMethod = "mobilis" | "commune_centroid" | null;
+
+/** A human-reviewed correction applied through the guarded evidence ledger. */
+export type ReviewStatus = "corrected";
 
 /** A geocoded Mobilis commercial agency. */
 export interface Agence {
@@ -23,19 +26,19 @@ export interface Agence {
   name_ar: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code. Currently null for every agency (the locator gives no
-   *  commune); typed as `string | null` so a future value is not a break. */
+  /** Commune (ONS) code when an operator point needs a reviewed commune-level
+   *  correction; otherwise null because the locator gives no commune id. */
   commune_code: string | null;
-  /** Commune name. Currently null for every agency; see `commune_code`. */
+  /** Commune name when `commune_code` is available. */
   commune: string | null;
   /** Latitude — agencies are fully geocoded. */
   lat: number;
   /** Longitude — agencies are fully geocoded. */
   lng: number;
-  /** Always `"exact"`: every agency carries a real locator point. */
-  geo_precision: "exact";
-  /** Always `"mobilis"`: the point comes from the operator's own locator. */
-  geo_method: "mobilis";
+  /** Exact for operator points, approximate for a reviewed commune centroid. */
+  geo_precision: "exact" | "approximate";
+  /** Operator point or reviewed commune-centroid fallback. */
+  geo_method: "mobilis" | "commune_centroid";
   /** Provenance key into `metadata.sources[]` — always "mobilis". */
   source: "mobilis";
   /** Record type discriminator. */
@@ -46,6 +49,14 @@ export interface Agence {
   address: string;
   /** Street address in Arabic. */
   address_ar: string;
+  /** Present only when a reviewed correction was applied. */
+  review_status?: ReviewStatus;
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Reviewer recorded by the correction ledger. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** An approved point of sale — a third-party resale partner, listed at commune

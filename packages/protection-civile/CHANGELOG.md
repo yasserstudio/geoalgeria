@@ -1,5 +1,14 @@
 # @geoalgeria/protection-civile
 
+## Unreleased
+
+- Cross-checked all 36 precision/boundary risk records against the current DGPC
+  snapshot and OpenStreetMap unit evidence.
+- Corrected six coarse unit coordinates with public review evidence, raising
+  exact coverage from 853 to 857 while retaining 23 unresolved points as
+  approximate.
+- Added a reproducible review corpus and guarded correction ledger.
+
 ## 1.0.1
 
 ### Patch Changes

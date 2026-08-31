@@ -33,7 +33,7 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { attachCommune, loadCommunes } from "../../../scripts/lib/build-utils.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
 
@@ -206,19 +206,23 @@ async function fetchOSM() {
         const json = JSON.parse(out);
         if (Array.isArray(json.elements) && json.elements.length >= OSM_MIN) {
           // Elements are an unordered set; sort the capture (type then id) so
-          // mirror-to-mirror ordering drift never shows up in the git diff.
+          // mirror-to-mirror ordering drift never shows up in the git diff. Use
+          // that same order for this run: exact-coordinate de-duplication keeps
+          // the first equally rich primitive, so returning the unsorted response
+          // would make a way/relation migration depend on the Overpass mirror.
+          const elements = [...json.elements].sort(
+            (a, b) => a.type.localeCompare(b.type) || a.id - b.id,
+          );
           writeCapture(
             "ecoles",
             "osm",
             {
               ...json,
-              elements: [...json.elements].sort(
-                (a, b) => a.type.localeCompare(b.type) || a.id - b.id,
-              ),
+              elements,
             },
             { url: ep, records: json.elements.length },
           );
-          return json.elements;
+          return elements;
         }
         console.warn(`  only ${json.elements?.length ?? 0} elements (< ${OSM_MIN}); treating as partial, trying next…`);
       } catch (e) {
@@ -530,11 +534,13 @@ async function main() {
   for (const [currentRef, migration] of OSM_REF_MIGRATIONS) {
     carryCommitted.push({ id: migration.id, refs: { osm: currentRef } });
   }
+  const retiredIds = readRetiredIds(OUT_DIR);
   carryOverIds(
     v2,
     carryCommitted,
     (r) => (r.refs?.osm ? `osm:${canonicalOsmRef(r.refs.osm)}` : null),
     "ecoles",
+    retiredIds,
   );
   preservePublishedOsmMigrations(v2, committed);
   let oldMeta = {};
@@ -547,6 +553,7 @@ async function main() {
     updated,
     retrieved,
     oldMeta,
+    retiredIds,
   });
   console.log(`Wrote ${records.length} schools → v2 (${metadata.named} named, ${metadata.wilayas_covered} wilayas).`);
 }

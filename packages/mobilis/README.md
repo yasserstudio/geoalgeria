@@ -12,7 +12,7 @@
 
 </div>
 
-The **165 commercial agencies** (*Agence Mobilis*) and **12,180 approved points
+The **164 commercial agencies** (*Agence Mobilis*) and **12,180 approved points
 of sale** (*points de vente agréés*) of **Mobilis** (ATM Mobilis), Algeria's
 state-owned mobile operator. Agencies come with bilingual FR/AR name and
 address and GPS coordinates; points of sale come with name, address, and the
@@ -26,7 +26,7 @@ npm install @geoalgeria/mobilis
 ```js
 import mobilis from "@geoalgeria/mobilis";
 
-const agences = mobilis.agences();   // 165 geocoded Mobilis agencies
+const agences = mobilis.agences();   // 164 geocoded Mobilis agencies
 const pdv = mobilis.pdv();           // 12,180 approved points of sale
 const all = mobilis.all();           // everything (agencies first)
 
@@ -39,7 +39,7 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 
 ## What you can build
 
-- **Agency locators** – coordinates on every one of the 165 agencies, ready for
+- **Agency locators** – coordinates on every one of the 164 agencies, ready for
   distance sorting or a map.
 - **Coverage by commune** – the points of sale are tagged with their commune, so
   you can count or rank Mobilis presence per commune/wilaya.
@@ -49,7 +49,7 @@ const inBabEzzouar = pdv.filter((p) => p.commune === "BAB EZZOUAR");
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| Agencies (*Agence Mobilis*) | **165** | ✅ all 165 | bilingual FR/AR, 56/58 wilayas |
+| Agencies (*Agence Mobilis*) | **164** | ✅ all 164 | bilingual FR/AR, 65/69 wilayas |
 | Approved points of sale | **12,180** | ❌ none | FR name + address + commune |
 
 > The points of sale are a **commune-level directory**, the source carries no
@@ -79,7 +79,7 @@ const agences: Agence[] = mobilis.agences();
 
 ```
 data/
-  agences.json              # 165 agencies (array)
+  agences.json              # 164 agencies (array)
   pdv.json                  # 12,180 points of sale (array)
   metadata.json             # source, counts, generated_at
   csv/agences.csv           # repo + Release bundle (not in npm tarball)
@@ -143,11 +143,11 @@ Data comes from the **Mobilis** store locator
 (<https://mobilis.dz/mapagence>). There is no documented API, the locator calls
 a handful of JSON endpoints behind an `X-Requested-With` header, and the site
 sits behind a WAF. Run `npm run fetch` to regenerate every output: it primes a
-session, walks all 58 wilayas for both categories, parses the `"lat, lng"`
-coordinate strings (handling the comma-decimal rows), and normalizes wilaya
-codes. Mobilis files records under the **58-wilaya scheme**, so new wilayas
-59–69 currently appear under their mother wilaya, same as the Algérie Poste and
-ANEM data.
+session, walks all 69 source wilayas for both categories, parses the
+`"lat, lng"` coordinate strings (handling the comma-decimal rows), and joins
+Mobilis's Arabic wilaya labels to GeoAlgeria's canonical codes. That name join
+is required because Mobilis's numeric ids 59–69 use a different ordering from
+the official codes.
 
 ## License & attribution
 

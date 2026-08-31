@@ -4,17 +4,17 @@
   "title_fr": "Points de vente Mobilis",
   "title_ar": "نقاط بيع موبيليس",
   "title_en": "Mobilis stores (Algeria)",
-  "record_count": 12345,
-  "geocoded_count": 165,
+  "record_count": 12344,
+  "geocoded_count": 164,
   "geocoded_pct": 1.3,
   "precision": {
-    "exact": 165,
-    "approximate": 0
+    "exact": 163,
+    "approximate": 1
   },
   "estimated_universe": null,
   "coverage_pct": null,
   "coverage_note": "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
-  "wilayas_covered": 58,
+  "wilayas_covered": 67,
   "bbox": [
     -8.14066,
     21.318254,
@@ -24,7 +24,7 @@
   "entities": [
     {
       "file": "agences.json",
-      "count": 165
+      "count": 164
     },
     {
       "file": "pdv.json",
@@ -37,14 +37,14 @@
       "name": "Mobilis — ATM Mobilis (mobilis.dz)",
       "url": "https://www.mobilis.dz",
       "license": "Data © ATM Mobilis; redistributed for reference",
-      "retrieved": "2026-06-11",
+      "retrieved": "2026-08-31",
       "evidence_type": "official"
     }
   ],
   "license": "Data © ATM Mobilis; redistributed for reference",
-  "updated": "2026-06-11",
+  "updated": "2026-08-31",
   "by_type": {
-    "agence": 165,
+    "agence": 164,
     "pdv": 12180
   }
 }

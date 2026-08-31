@@ -56,6 +56,13 @@ export function stableStringify(value, indent = 2) {
   return JSON.stringify(sort(value), null, indent);
 }
 
+/** SHA-256 of the exact canonical body writeCapture() persists. */
+export function captureSha256(payload) {
+  return createHash("sha256")
+    .update(`${stableStringify(payload)}\n`)
+    .digest("hex");
+}
+
 function manifestPath(pkg) {
   return join(STORE_ROOT, pkg, "manifest.json");
 }
@@ -97,7 +104,7 @@ export function writeCapture(pkg, source, payload, meta) {
     url: meta.url,
     retrieved: meta.retrieved ?? new Date().toISOString().slice(0, 10),
     records: meta.records ?? (Array.isArray(payload) ? payload.length : undefined),
-    sha256: createHash("sha256").update(body).digest("hex"),
+    sha256: captureSha256(payload),
     bytes: Buffer.byteLength(body),
     ...(meta.note ? { note: meta.note } : {}),
   };

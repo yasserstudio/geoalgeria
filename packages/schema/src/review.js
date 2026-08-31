@@ -362,9 +362,13 @@ export function applyReviewedOverrides(records, ledger, { file } = {}) {
       );
     }
     if (!matchesExpected(match.record, decision.expect)) {
+      const actual = Object.fromEntries(
+        Object.keys(decision.expect).map((field) => [field, match.record[field]]),
+      );
       throw new Error(
         `review overrides [${file}/${decision.record_id}]: stale decision; ` +
-          `the current record no longer matches expect=${JSON.stringify(decision.expect)}`,
+          `the current record no longer matches expect=${JSON.stringify(decision.expect)}; ` +
+          `actual=${JSON.stringify(actual)}`,
       );
     }
     if (decision.publish_action === "exclude") {

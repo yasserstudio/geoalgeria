@@ -23,7 +23,7 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
-import { carryOverIds, readCommitted, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
+import { carryOverIds, readCommitted, readRetiredIds, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -406,7 +406,8 @@ async function main() {
   // Pin every still-present pharmacy back to the id it shipped under, keyed on the
   // stable OSM id. Without this a single new pharmacy re-sequences every later
   // record in its wilaya, so a re-survey would churn ids that are public join keys.
-  carryOverIds(rows, readCommitted(OUT_DIR, "pharmacies.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies");
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(rows, readCommitted(OUT_DIR, "pharmacies.json"), (r) => (r.refs?.osm ? `osm:${r.refs.osm}` : null), "pharmacies", retiredIds);
   rows.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 
   const cols = [
@@ -461,6 +462,7 @@ async function main() {
   writeText("csv/pharmacies.csv", toCSV(rows, cols));
   writeJSON("geojson/pharmacies.geojson", toGeoJSON(rows));
   writeJSON("metadata.json", metadata);
+  writeRetiredIds(OUT_DIR, retiredIds);
   console.log(
     `Wrote ${rows.length} pharmacies (${named} named, ${metadata.wilayas_covered} wilayas) — ` +
       `${metadata.with_phone} with phone, ${metadata.with_hours} with hours, ${metadata.with_address} with address.`,

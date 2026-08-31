@@ -34,6 +34,17 @@ capturing, so reordering noise never reaches the diff.
 3. Review the delta; commit the capture together with the regenerated package.
 4. Offline rebuild: the package's `--cache` mode reads from here, no network.
 
+### Guarded scheduled promotion
+
+The low-churn DGPC Protection Civile directory has an approved zero-touch
+exception to step 3. Its monthly workflow may promote a changed capture only
+after deterministic sorting, schema/package validation, review-queue rebuild,
+stable-id retention, bounded record-count change, and bounded material field
+change all pass. Any failed gate leaves `main` and the published snapshot
+unchanged; the resulting bot commit keeps the accepted source delta reviewable
+in git history. Larger or structural publisher changes require a manual run and
+human review.
+
 ## Rules
 
 - Latest capture only — history lives in git. Never `<source>-2026-08.json`
@@ -48,5 +59,6 @@ capturing, so reordering noise never reaches the diff.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03). Remaining packages convert as they are next touched — their raw
-pulls still land in gitignored `research/<pkg>/` until then.
+2026-08-03), and `protection-civile`. Remaining packages convert as they are
+next touched — their raw pulls still land in gitignored `research/<pkg>/`
+until then.

@@ -1,0 +1,88 @@
+name: Sync Protection Civile units
+
+# The DGPC unit directory changes infrequently. Check its canonical hash once a
+# month, and run the heavier rebuild only when the official payload changed.
+on:
+  schedule:
+    - cron: "17 5 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: sync-protection-civile
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+
+      - name: Check and rebuild the official DGPC snapshot
+        run: pnpm --filter @geoalgeria/protection-civile run fetch -- --if-changed
+
+      - name: Detect a new source snapshot
+        id: source
+        shell: bash
+        run: |
+          if git diff --quiet -- sources/protection-civile packages/protection-civile; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rebuild the deterministic review queue
+        if: steps.source.outputs.changed == 'true'
+        run: pnpm review:protection-civile
+
+      - name: Detect public package changes
+        if: steps.source.outputs.changed == 'true'
+        id: package
+        shell: bash
+        run: |
+          if git diff --quiet -- packages/protection-civile; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Describe the package update
+        if: steps.package.outputs.changed == 'true'
+        run: pnpm changeset:protection-civile
+
+      - name: Validate all datasets
+        if: steps.source.outputs.changed == 'true'
+        run: pnpm validate
+
+      - name: Verify the generated diff
+        if: steps.source.outputs.changed == 'true'
+        run: git diff --check
+
+      - name: Commit the new snapshot
+        if: steps.source.outputs.changed == 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sources/protection-civile packages/protection-civile \
+            research/protection-civile/review-candidates.json .changeset
+          git commit -m "chore(protection-civile): refresh DGPC snapshot"
+          git push
+
+      - name: Start the package release workflow
+        if: steps.package.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run release.yml --ref main

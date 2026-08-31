@@ -14,6 +14,7 @@ import {
   committedDates,
   carryOverIds,
   readCommitted,
+  readRetiredIds,
 } from "../../../scripts/lib/v2-transforms.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -159,14 +160,13 @@ for (const r of records) {
 // correction moves a station to its real wilaya (TINDOUF, 33-01 → 37-01),
 // the old id is added to retired-ids.json so no future wilaya-33 station can
 // silently inherit it.
-const retired = JSON.parse(readFileSync(join(DATA, "retired-ids.json"), "utf-8")).ids;
+const retiredIds = readRetiredIds(DATA);
 carryOverIds(
   records,
-  readCommitted(DATA, "stations.json")
-    .filter((r) => !retired.includes(r.id))
-    .concat(retired.map((id) => ({ id }))),
+  readCommitted(DATA, "stations.json"),
   (r) => r.name,
   "gares-routieres",
+  retiredIds,
 );
 
 // ---- Emit v2 via the shared writer (map → canonical GeoRecord + metadata) ----
@@ -180,6 +180,7 @@ const { records: final, metadata } = writePackageV2({
   meta: cfg.meta,
   updated,
   retrieved,
+  retiredIds,
 });
 
 console.log(`gares-routieres: ${final.length} stations → v2 · ${metadata.wilayas_covered} wilayas · geocoded ${metadata.geocoded_count}/${final.length}`);

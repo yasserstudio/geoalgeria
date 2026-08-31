@@ -12,7 +12,7 @@
 
 </div>
 
-**11,855 geocoded schools** across all **69 wilayas** of Algeria, every one with
+**11,858 geocoded schools** across all **69 wilayas** of Algeria, every one with
 coordinates, classified by **cycle** (primaire · moyen/CEM · secondaire/lycée ·
 préscolaire), most with Arabic and/or French names, and commune/wilaya linkage.
 Extracted from **OpenStreetMap** and framed honestly against the 29,702
@@ -27,7 +27,7 @@ npm install @geoalgeria/ecoles
 ```js
 import ecoles from "@geoalgeria/ecoles";
 
-const all = ecoles.ecoles();   // 11,855 geocoded schools
+const all = ecoles.ecoles();   // 11,858 geocoded schools
 
 // Lycées in a wilaya (joins GeoAlgeria's wilaya_code)
 const lyceesSetif = all.filter((e) => e.wilaya_code === "19" && e.cycle === "secondaire");
@@ -38,7 +38,7 @@ const named = all.filter((e) => e.name_fr);
 
 ## What you can build
 
-- **School maps & locators** – coordinates on all 11,855 records, ready for a map
+- **School maps & locators** – coordinates on all 11,858 records, ready for a map
   or nearest-school distance sorting.
 - **Cycle breakdowns** – filter primaire / moyen / secondaire / préscolaire, or
   rank school density per commune/wilaya across the country.
@@ -48,20 +48,20 @@ const named = all.filter((e) => e.name_fr);
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| Schools | **11,855** | ✅ all | 8,635 named, 69 wilayas |
+| Schools | **11,858** | ✅ all | 8,213 named, 69 wilayas |
 
 **By cycle**
 
 | Cycle | Count | Meaning |
 | --- | --- | --- |
-| `primaire` | 4,019 | école primaire (ISCED 1) |
-| `moyen` | 2,378 | collège d'enseignement moyen / CEM (ISCED 2) |
-| `secondaire` | 1,576 | lycée (ISCED 3) |
+| `primaire` | 3,784 | école primaire (ISCED 1) |
+| `moyen` | 2,359 | collège d'enseignement moyen / CEM (ISCED 2) |
+| `secondaire` | 1,496 | lycée (ISCED 3) |
 | `prescolaire` | 268 | préscolaire / maternelle / روضة (ISCED 0) |
-| `autre` | 3,614 | school of undetermined cycle (unnamed, or a name with no cycle word) |
+| `autre` | 3,951 | school of undetermined cycle (unnamed, or a name with no cycle word) |
 
 > **This is an OpenStreetMap extract, not an official registry.** Coverage is
-> partial and uneven by wilaya, 11,855 schools mapped against the 29,702
+> partial and uneven by wilaya, 11,858 schools mapped against the 29,702
 > educational institutions the Ministry of National Education publishes on
 > [education.gov.dz](https://www.education.gov.dz) for the 2024-2025 school year,
 > about 40%. That denominator is the ministry's own aggregate, not our estimate.
@@ -79,12 +79,12 @@ filter out (or in) the special-purpose places OSM files under `amenity=school`:
 
 | Kind | Count | Meaning | Cycle |
 | --- | --- | --- | --- |
-| `regular` | 11,664 | a standard école / CEM / lycée / maternelle | its real cycle |
-| `formation` | 92 | vocational / training centre | `autre` |
-| `coranique` | 40 | Quranic school | `autre` |
-| `langues` | 24 | language school / institute | `autre` |
+| `regular` | 11,680 | a standard école / CEM / lycée / maternelle | its real cycle |
+| `formation` | 88 | vocational / training centre | `autre` |
+| `coranique` | 36 | Quranic school | `autre` |
+| `langues` | 20 | language school / institute | `autre` |
 | `special` | 30 | adapted / special-needs school (deaf, blind…) | keeps its cycle |
-| `conduite` | 5 | driving school (auto-école) | `autre` |
+| `conduite` | 4 | driving school (auto-école) | `autre` |
 
 The four non-K-12 kinds (`formation`/`coranique`/`langues`/`conduite`) carry
 cycle `autre`, they're *not* primary schools even though their name contains
@@ -116,7 +116,7 @@ const all: Ecole[] = ecoles.ecoles();
 
 ```
 data/
-  ecoles.json              # 11,855 schools (array)
+  ecoles.json              # 11,858 schools (array)
   metadata.json            # sources, counts, coverage, updated
   csv/ecoles.csv           # repo + Release bundle (not in npm tarball)
   geojson/ecoles.geojson   # Point features

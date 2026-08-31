@@ -161,6 +161,7 @@ _Avoid_: status, state, active/inactive
 
 **Retrieved**:
 The ISO date a source was last pulled (`SourceRef.retrieved`), distinct from `metadata.updated` (when the dataset was regenerated). Together they answer "is this stale because the source didn't change, or because we didn't re-pull?".
+For hash-only scheduled checks that deliberately avoid date-only commits, `retrieved` remains the date of the canonical payload capture; the newer no-change check is recorded by the successful scheduled workflow run.
 _Avoid_: fetched, scraped, synced
 
 **Geometry confidence**:

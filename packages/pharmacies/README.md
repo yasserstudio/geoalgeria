@@ -14,7 +14,7 @@
 
 # Overview
 
-3,797 pharmacies (officines) across **67 wilayas**, from **OpenStreetMap**, every record geocoded, bilingual (FR/AR) where named, with phone, opening hours and a `dispensing` flag where OSM has them, plus wilaya/commune linkage.
+3,807 pharmacies (officines) across **67 wilayas**, from **OpenStreetMap**, every record geocoded, bilingual (FR/AR) where named, with phone, opening hours and a `dispensing` flag where OSM has them, plus wilaya/commune linkage.
 
 ## Installation
 
@@ -32,7 +32,7 @@ import {
   metadata,
 } from "@geoalgeria/pharmacies";
 
-pharmacies().length; // 3797
+pharmacies().length; // 3807
 
 // Everything in Alger (code 16)
 pharmaciesByWilaya(16).length;
@@ -52,9 +52,9 @@ metadata().wilayas_covered; // 67
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| `pharmacies` | 3,797 | all 3,797 | OpenStreetMap, geocoded, wilaya/commune-linked |
+| `pharmacies` | 3,807 | all 3,807 | OpenStreetMap, geocoded, wilaya/commune-linked |
 
-- **Named:** 2,461 · **with phone:** 146 · **with opening hours:** 257 · **with address:** 1,163 · **with `dispensing`:** 526
+- **Named:** 2,467 · **with phone:** 146 · **with opening hours:** 257 · **with address:** 1,164 · **with `dispensing`:** 529
 
 ## Formats
 
@@ -77,7 +77,7 @@ Extracted from OpenStreetMap via Overpass (`amenity=pharmacy` across Algeria), d
 
 ## On accuracy & coverage
 
-> **Coverage is partial.** 3,797 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference, there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north, this is a community-maintained extract, **not an official registry**.
+> **Coverage is partial.** 3,807 pharmacies are mapped in OpenStreetMap against an estimated **~11,000 officines** nationally (an order-of-magnitude reference, there is no open official registry; the Ordre National des Pharmaciens portal is down). Coverage is uneven by wilaya and denser in the north, this is a community-maintained extract, **not an official registry**.
 >
 > Coordinates are OSM node points (surveyed) or building-outline centroids (`geo_method`). Commune is a nearest-centroid best-effort; wilaya is effectively exact. Names, phones and hours are only present where an OSM contributor tagged them.
 

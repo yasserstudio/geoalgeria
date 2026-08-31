@@ -1,0 +1,1558 @@
+{
+  "schema_version": 1,
+  "dataset": "protection-civile",
+  "checked_at": "2026-08-30",
+  "source_snapshot": {
+    "url": "https://dgpc.dz/dgpc2/unite.geojson",
+    "retrieved": "2026-08-30",
+    "feature_count": 880,
+    "sha256": "ac66bc1e3abd8e3dd79ecef7efa08102139320afe256503948d05615291fe2e4"
+  },
+  "summary": {
+    "total_records": 880,
+    "candidates": 36,
+    "reviewed_candidates": 6,
+    "unreviewed_candidates": 30,
+    "reasons": {
+      "approximate_coordinate": 23,
+      "outside_all_wilaya_boundaries": 6,
+      "outside_declared_wilaya": 9,
+      "reviewed_coordinate_override": 6,
+      "shared_coordinate": 18
+    }
+  },
+  "candidates": [
+    {
+      "record": {
+        "id": "03-004",
+        "name_ar": "الوحدة الثانوية عين ماضي",
+        "statut": "UNITE SECONDAIRE",
+        "wilaya_code": "03",
+        "commune_code": "0307",
+        "commune": "Ain Madhi",
+        "lat": 33.803864,
+        "lng": 2.30995,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
+        "refs": {
+          "dgpc": "424",
+          "dgpc_wilaya": "03"
+        },
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/4271529989",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
+      },
+      "reasons": [
+        "reviewed_coordinate_override"
+      ],
+      "boundary": {
+        "declared_wilaya": "03",
+        "containing_wilayas": [
+          "03"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "424",
+        "cod_wilaya": "03",
+        "name_ar": "الوحدة الثانوية عين ماضي",
+        "statut": "UNITE SECONDAIRE",
+        "commune_ar": "عين ماضي",
+        "address": "CW231 ENTREE VILLE AIN MADHI_AIN MADHI",
+        "lat": 33.803799,
+        "lng": 2.31
+      }
+    },
+    {
+      "record": {
+        "id": "07-008",
+        "name_ar": "وحدة القطاع شتمة",
+        "statut": "UNITE DE SECTEUR",
+        "wilaya_code": "07",
+        "commune_code": "0704",
+        "commune": "Chetma",
+        "lat": 34.8489,
+        "lng": 5.78,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "824",
+          "dgpc_wilaya": "07"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "07",
+        "containing_wilayas": [
+          "07"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "824",
+        "cod_wilaya": "07",
+        "name_ar": "وحدة القطاع شتمة",
+        "statut": "UNITE DE SECTEUR",
+        "commune_ar": "شتمة",
+        "address": "RN31 A PROXIMITE DE POLE UNIVERSITAIRE_CHETMA",
+        "lat": 34.8489,
+        "lng": 5.78
+      }
+    },
+    {
+      "record": {
+        "id": "08-008",
+        "name_ar": "المركز المتقدم حماقير_عرق فراج",
+        "statut": "POSTE AVANCE",
+        "wilaya_code": "08",
+        "commune_code": "0802",
+        "commune": "Erg-Ferradj",
+        "lat": 30.8986,
+        "lng": -3.02,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "534",
+          "dgpc_wilaya": "08"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "08",
+        "containing_wilayas": [
+          "08"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "534",
+        "cod_wilaya": "08",
+        "name_ar": "المركز المتقدم حماقير_عرق فراج",
+        "statut": "POSTE AVANCE",
+        "commune_ar": "عرق فراج",
+        "address": "RN50 HAMMAGUIR_ERG FERRADJ",
+        "lat": 30.8986,
+        "lng": -3.02
+      }
+    },
+    {
+      "record": {
+        "id": "13-016",
+        "name_ar": "المركز المتقدم الرمشي",
+        "statut": "POSTE AVANCE",
+        "wilaya_code": "13",
+        "commune_code": "1304",
+        "commune": "Remchi",
+        "lat": 35.061129,
+        "lng": -1.430106,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
+        "refs": {
+          "dgpc": "574",
+          "dgpc_wilaya": "13"
+        },
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/1712552456",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
+      },
+      "reasons": [
+        "reviewed_coordinate_override"
+      ],
+      "boundary": {
+        "declared_wilaya": "13",
+        "containing_wilayas": [
+          "13"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "574",
+        "cod_wilaya": "13",
+        "name_ar": "المركز المتقدم الرمشي",
+        "statut": "POSTE AVANCE",
+        "commune_ar": "الرمشي",
+        "address": "RUE COLONEL LOTFI CENTRE VILLE REMCHI_REMCHI",
+        "lat": 35.061001,
+        "lng": -1.43
+      }
+    },
+    {
+      "record": {
+        "id": "15-013",
+        "name_ar": "الوحدة البحرية تقزيرت",
+        "statut": "UNITE MARINE",
+        "wilaya_code": "15",
+        "commune_code": "1538",
+        "commune": "Tigzirt",
+        "lat": 36.8937,
+        "lng": 4.12225,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "291",
+          "dgpc_wilaya": "15"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya",
+        "outside_all_wilaya_boundaries"
+      ],
+      "boundary": {
+        "declared_wilaya": "15",
+        "containing_wilayas": []
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "291",
+        "cod_wilaya": "15",
+        "name_ar": "الوحدة البحرية تقزيرت",
+        "statut": "UNITE MARINE",
+        "commune_ar": "تقزرت",
+        "address": "ROUTE AHMED CHAFAA_TIGZIRT",
+        "lat": 36.8937,
+        "lng": 4.12225
+      }
+    },
+    {
+      "record": {
+        "id": "16-011",
+        "name_ar": "الوحدة البحرية سيدي فرج_سطاوالي",
+        "statut": "UNITE MARINE",
+        "wilaya_code": "16",
+        "commune_code": "1645",
+        "commune": "Staoueli",
+        "lat": 36.764599,
+        "lng": 2.84667,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "707",
+          "dgpc_wilaya": "16"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya",
+        "outside_all_wilaya_boundaries"
+      ],
+      "boundary": {
+        "declared_wilaya": "16",
+        "containing_wilayas": []
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "707",
+        "cod_wilaya": "16",
+        "name_ar": "الوحدة البحرية سيدي فرج_سطاوالي",
+        "statut": "UNITE MARINE",
+        "commune_ar": "سطاوالي",
+        "address": "PORT SIDI FREDJ_STAOUELI",
+        "lat": 36.764599,
+        "lng": 2.84667
+      }
+    },
+    {
+      "record": {
+        "id": "16-025",
+        "name_ar": "الوحدة البحرية ميناء الجزائر_الجزائر الوسطى",
+        "statut": "UNITE MARINE",
+        "wilaya_code": "16",
+        "commune_code": "1601",
+        "commune": "Alger Centre",
+        "lat": 36.7658,
+        "lng": 3.06905,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "721",
+          "dgpc_wilaya": "16"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya",
+        "outside_all_wilaya_boundaries"
+      ],
+      "boundary": {
+        "declared_wilaya": "16",
+        "containing_wilayas": []
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "721",
+        "cod_wilaya": "16",
+        "name_ar": "الوحدة البحرية ميناء الجزائر_الجزائر الوسطى",
+        "statut": "UNITE MARINE",
+        "commune_ar": "الجزائر الوسطى",
+        "address": "PORT D'ALGER_ALGER CENTRE",
+        "lat": 36.7658,
+        "lng": 3.06905
+      }
+    },
+    {
+      "record": {
+        "id": "16-034",
+        "name_ar": "الوحدة الثانوية بولوغين ابن زيري",
+        "statut": "UNITE SECONDAIRE",
+        "wilaya_code": "16",
+        "commune_code": "1606",
+        "commune": "Bologhine Ibnou Ziri",
+        "lat": 36.809101,
+        "lng": 3.0349,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "730",
+          "dgpc_wilaya": "16"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya",
+        "outside_all_wilaya_boundaries"
+      ],
+      "boundary": {
+        "declared_wilaya": "16",
+        "containing_wilayas": []
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "730",
+        "cod_wilaya": "16",
+        "name_ar": "الوحدة الثانوية بولوغين ابن زيري",
+        "statut": "UNITE SECONDAIRE",
+        "commune_ar": "بولوغين ابن زيري",
+        "address": "176 AVENUE ZIAR ABDELKADER_BOLOGHINE IBN ZIRI",
+        "lat": 36.809101,
+        "lng": 3.0349
+      }
+    },
+    {
+      "record": {
+        "id": "17-006",
+        "name_ar": "الوحدة الثانوية الإدريسية",
+        "statut": "UNITE SECONDAIRE",
+        "wilaya_code": "17",
+        "commune_code": "1714",
+        "commune": "El Idrissia",
+        "lat": 34.457602,
+        "lng": 2.530282,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid_review",
+        "refs": {
+          "dgpc": "268",
+          "dgpc_wilaya": "17"
+        },
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/382398957",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "reviewed_coordinate_override"
+      ],
+      "boundary": {
+        "declared_wilaya": "17",
+        "containing_wilayas": [
+          "17"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "268",
+        "cod_wilaya": "17",
+        "name_ar": "الوحدة الثانوية الإدريسية",
+        "statut": "UNITE SECONDAIRE",
+        "commune_ar": "الإدريسية",
+        "address": "CITE FATH_EL IDRISSIA",
+        "lat": 34.4575,
+        "lng": 2.53
+      }
+    },
+    {
+      "record": {
+        "id": "23-010",
+        "name_ar": "الوحدة البحرية عنابة",
+        "statut": "UNITE MARINE",
+        "wilaya_code": "23",
+        "commune_code": "2301",
+        "commune": "Annaba",
+        "lat": 36.897999,
+        "lng": 7.76463,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "333",
+          "dgpc_wilaya": "23"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya",
+        "outside_all_wilaya_boundaries"
+      ],
+      "boundary": {
+        "declared_wilaya": "23",
+        "containing_wilayas": []
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "333",
+        "cod_wilaya": "23",
+        "name_ar": "الوحدة البحرية عنابة",
+        "statut": "UNITE MARINE",
+        "commune_ar": "عنابة",
+        "address": "ROUTE DE L'AVANT PORT ANNABA_ANNABA",
+        "lat": 36.897999,
+        "lng": 7.76463
+      }
+    },
+    {
+      "record": {
+        "id": "27-002",
+        "name_ar": "الوحدة الثانوية سيدي الاخضر",
+        "statut": "UNITE SECONDAIRE",
+        "wilaya_code": "27",
+        "commune_code": "2716",
+        "commune": "Sidi-Lakhdar",
+        "lat": 36.159824,
+        "lng": 0.43684,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
+        "refs": {
+          "dgpc": "2",
+          "dgpc_wilaya": "27"
+        },
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/4493416489",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
+      },
+      "reasons": [
+        "reviewed_coordinate_override"
+      ],
+      "boundary": {
+        "declared_wilaya": "27",
+        "containing_wilayas": [
+          "27"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "2",
+        "cod_wilaya": "27",
+        "name_ar": "الوحدة الثانوية سيدي الاخضر",
+        "statut": "UNITE SECONDAIRE",
+        "commune_ar": "سيدي الاخضر",
+        "address": "CENTRE VILLE SIDI LAKHDAR_SIDI LAKHDAR",
+        "lat": 36.16,
+        "lng": 0.436667
+      }
+    },
+    {
+      "record": {
+        "id": "33-005",
+        "name_ar": "الوحدة الرئيسية إيليزي",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "33",
+        "commune_code": "3301",
+        "commune": "Illizi",
+        "lat": 26.510006,
+        "lng": 8.470251,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid_review",
+        "refs": {
+          "dgpc": "389",
+          "dgpc_wilaya": "33"
+        },
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/way/313553549",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "reviewed_coordinate_override"
+      ],
+      "boundary": {
+        "declared_wilaya": "33",
+        "containing_wilayas": [
+          "33"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "389",
+        "cod_wilaya": "33",
+        "name_ar": "الوحدة الرئيسية إيليزي",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "إيليزي",
+        "address": "ZONE D'ACTIVITES INDUSTRIELLE_ILLIZI",
+        "lat": 26.51,
+        "lng": 8.47046
+      }
+    },
+    {
+      "record": {
+        "id": "36-007",
+        "name_ar": "الوحدة البحرية القالة",
+        "statut": "UNITE MARINE",
+        "wilaya_code": "36",
+        "commune_code": "3605",
+        "commune": "El Kala",
+        "lat": 36.895699,
+        "lng": 8.43325,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "99",
+          "dgpc_wilaya": "36"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya",
+        "outside_all_wilaya_boundaries"
+      ],
+      "boundary": {
+        "declared_wilaya": "36",
+        "containing_wilayas": []
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "99",
+        "cod_wilaya": "36",
+        "name_ar": "الوحدة البحرية القالة",
+        "statut": "UNITE MARINE",
+        "commune_ar": "القالة",
+        "address": "PLAGE MARJANE_EL KALA",
+        "lat": 36.895699,
+        "lng": 8.43325
+      }
+    },
+    {
+      "record": {
+        "id": "42-009",
+        "name_ar": "المركز المتقدم تيبازة",
+        "statut": "POSTE AVANCE",
+        "wilaya_code": "42",
+        "commune_code": "4201",
+        "commune": "Tipaza",
+        "lat": 36.59,
+        "lng": 2.44163,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "390",
+          "dgpc_wilaya": "42"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "42",
+        "containing_wilayas": [
+          "42"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "390",
+        "cod_wilaya": "42",
+        "name_ar": "المركز المتقدم تيبازة",
+        "statut": "POSTE AVANCE",
+        "commune_ar": "تيبازة",
+        "address": "RUE MOHAMED AYOUNA CENTRE VILLE TIPAZA_TIPAZA",
+        "lat": 36.59,
+        "lng": 2.44163
+      }
+    },
+    {
+      "record": {
+        "id": "42-016",
+        "name_ar": "وحدة القطاع الحطاطبة",
+        "statut": "UNITE DE SECTEUR",
+        "wilaya_code": "42",
+        "commune_code": "4236",
+        "commune": "Attatba",
+        "lat": 36.570152,
+        "lng": 2.668771,
+        "geo_precision": "exact",
+        "geo_method": "osm_node_review",
+        "refs": {
+          "dgpc": "397",
+          "dgpc_wilaya": "42"
+        },
+        "review_status": "corrected",
+        "reviewed_at": "2026-08-30",
+        "reviewed_by": "GeoAlgeria data review",
+        "review_evidence": [
+          "https://www.openstreetmap.org/node/3953934387",
+          "https://dgpc.dz/dgpc2/unite.geojson"
+        ]
+      },
+      "reasons": [
+        "reviewed_coordinate_override"
+      ],
+      "boundary": {
+        "declared_wilaya": "42",
+        "containing_wilayas": [
+          "42"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "397",
+        "cod_wilaya": "42",
+        "name_ar": "وحدة القطاع الحطاطبة",
+        "statut": "UNITE DE SECTEUR",
+        "commune_ar": "الحطاطبة",
+        "address": "RN67 ENTREE OUEST HATTATBA_HATTATBA",
+        "lat": 36.57,
+        "lng": 2.66892
+      }
+    },
+    {
+      "record": {
+        "id": "47-013",
+        "name_ar": "الوحدة الثانوية المنصورة",
+        "statut": "UNITE SECONDAIRE",
+        "wilaya_code": "47",
+        "commune_code": "4713",
+        "commune": "Mansoura",
+        "lat": 31.9813,
+        "lng": 3.74793,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "644",
+          "dgpc_wilaya": "47"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya"
+      ],
+      "boundary": {
+        "declared_wilaya": "47",
+        "containing_wilayas": [
+          "58"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "644",
+        "cod_wilaya": "47",
+        "name_ar": "الوحدة الثانوية المنصورة",
+        "statut": "UNITE SECONDAIRE",
+        "commune_ar": "المنصورة",
+        "address": "RN01 CENTRE VILLE EL MANSOURA_EL MANSOURA",
+        "lat": 31.9813,
+        "lng": 3.74793
+      }
+    },
+    {
+      "record": {
+        "id": "49-001",
+        "name_ar": "الوحدة الرئيسية تيميمون",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "49",
+        "commune_code": "4901",
+        "commune": "Timimoun",
+        "lat": 29.2752,
+        "lng": 0.24019,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "349",
+          "dgpc_wilaya": "49"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "49",
+        "containing_wilayas": [
+          "49"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "49-005",
+          "name_ar": "مديرية الحماية المدنية تيميمون",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "349",
+        "cod_wilaya": "49",
+        "name_ar": "الوحدة الرئيسية تيميمون",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "تيميمون",
+        "address": "RN118-ROUTE MASSINE_TIMIMOUN",
+        "lat": 29.2752,
+        "lng": 0.24019
+      }
+    },
+    {
+      "record": {
+        "id": "49-005",
+        "name_ar": "مديرية الحماية المدنية تيميمون",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "49",
+        "commune_code": "4901",
+        "commune": "Timimoun",
+        "lat": 29.2752,
+        "lng": 0.24019,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "830",
+          "dgpc_wilaya": "49"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "49",
+        "containing_wilayas": [
+          "49"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "49-001",
+          "name_ar": "الوحدة الرئيسية تيميمون",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "830",
+        "cod_wilaya": "49",
+        "name_ar": "مديرية الحماية المدنية تيميمون",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "تيميمون",
+        "address": "RN118-ROUTE MASSINE_TIMIMOUN",
+        "lat": 29.2752,
+        "lng": 0.24019
+      }
+    },
+    {
+      "record": {
+        "id": "50-001",
+        "name_ar": "الوحدة الرئيسية برج باجي مختار",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "50",
+        "commune_code": "5001",
+        "commune": "Bordj Badji Mokhtar",
+        "lat": 21.3335,
+        "lng": 0.958699,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "352",
+          "dgpc_wilaya": "50"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "50",
+        "containing_wilayas": [
+          "50"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "50-003",
+          "name_ar": "مديرية الحماية المدنية برج باجي مختار",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "352",
+        "cod_wilaya": "50",
+        "name_ar": "الوحدة الرئيسية برج باجي مختار",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "برج باجي مختار",
+        "address": "RN06_BORDJ BADI MOKHTAR",
+        "lat": 21.3335,
+        "lng": 0.958699
+      }
+    },
+    {
+      "record": {
+        "id": "50-003",
+        "name_ar": "مديرية الحماية المدنية برج باجي مختار",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "50",
+        "commune_code": "5001",
+        "commune": "Bordj Badji Mokhtar",
+        "lat": 21.3335,
+        "lng": 0.958699,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "831",
+          "dgpc_wilaya": "50"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "50",
+        "containing_wilayas": [
+          "50"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "50-001",
+          "name_ar": "الوحدة الرئيسية برج باجي مختار",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "831",
+        "cod_wilaya": "50",
+        "name_ar": "مديرية الحماية المدنية برج باجي مختار",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "برج باجي مختار",
+        "address": "NOUVELLE CITE ADMINISTRATIVE_BORDJ BADI MOKHTAR",
+        "lat": 21.3335,
+        "lng": 0.958699
+      }
+    },
+    {
+      "record": {
+        "id": "51-001",
+        "name_ar": "الوحدة الرئيسية أولاد جلال",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "51",
+        "commune_code": "5101",
+        "commune": "Ouled Djellal",
+        "lat": 34.436001,
+        "lng": 5.06884,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "476",
+          "dgpc_wilaya": "51"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "51",
+        "containing_wilayas": [
+          "51"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "51-003",
+          "name_ar": "مديرية الحماية المدنية أولاد جلال",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "476",
+        "cod_wilaya": "51",
+        "name_ar": "الوحدة الرئيسية أولاد جلال",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "أولاد جلال",
+        "address": "RUE DE L'INDEPENDANCE OULED DJELLAL_OULED DJELLAL",
+        "lat": 34.436001,
+        "lng": 5.06884
+      }
+    },
+    {
+      "record": {
+        "id": "51-003",
+        "name_ar": "مديرية الحماية المدنية أولاد جلال",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "51",
+        "commune_code": "5101",
+        "commune": "Ouled Djellal",
+        "lat": 34.436001,
+        "lng": 5.06884,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "832",
+          "dgpc_wilaya": "51"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "51",
+        "containing_wilayas": [
+          "51"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "51-001",
+          "name_ar": "الوحدة الرئيسية أولاد جلال",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "832",
+        "cod_wilaya": "51",
+        "name_ar": "مديرية الحماية المدنية أولاد جلال",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "أولاد جلال",
+        "address": "CITE ADMINISTRATIVE NOUVELLE VILLE_OULED DJELLAL",
+        "lat": 34.436001,
+        "lng": 5.06884
+      }
+    },
+    {
+      "record": {
+        "id": "52-001",
+        "name_ar": "الوحدة الرئيسية بني عباس",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "52",
+        "commune_code": "5201",
+        "commune": "Beni-Abbes",
+        "lat": 30.129299,
+        "lng": -2.15437,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "528",
+          "dgpc_wilaya": "52"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "52",
+        "containing_wilayas": [
+          "52"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "52-008",
+          "name_ar": "مديرية الحماية المدنية بني عباس",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "528",
+        "cod_wilaya": "52",
+        "name_ar": "الوحدة الرئيسية بني عباس",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "بني عباس",
+        "address": "RUE 20 AOUT_BENI ABBES",
+        "lat": 30.129299,
+        "lng": -2.15437
+      }
+    },
+    {
+      "record": {
+        "id": "52-008",
+        "name_ar": "مديرية الحماية المدنية بني عباس",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "52",
+        "commune_code": "5201",
+        "commune": "Beni-Abbes",
+        "lat": 30.129299,
+        "lng": -2.15437,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "833",
+          "dgpc_wilaya": "52"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "52",
+        "containing_wilayas": [
+          "52"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "52-001",
+          "name_ar": "الوحدة الرئيسية بني عباس",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "833",
+        "cod_wilaya": "52",
+        "name_ar": "مديرية الحماية المدنية بني عباس",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "بني عباس",
+        "address": "RUE 20 AOUT_BENI ABBES",
+        "lat": 30.129299,
+        "lng": -2.15437
+      }
+    },
+    {
+      "record": {
+        "id": "53-002",
+        "name_ar": "الوحدة الرئيسية إن صالح",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "53",
+        "commune_code": "5301",
+        "commune": "Ain Salah",
+        "lat": 27.200001,
+        "lng": 2.48974,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "413",
+          "dgpc_wilaya": "53"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "53",
+        "containing_wilayas": [
+          "53"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "53-004",
+          "name_ar": "مديرية الحماية المدنية إن صالح",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "413",
+        "cod_wilaya": "53",
+        "name_ar": "الوحدة الرئيسية إن صالح",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "إن صالح",
+        "address": "RN01 ZONE INDUSTRIELLE_IN SALAH",
+        "lat": 27.200001,
+        "lng": 2.48974
+      }
+    },
+    {
+      "record": {
+        "id": "53-004",
+        "name_ar": "مديرية الحماية المدنية إن صالح",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "53",
+        "commune_code": "5301",
+        "commune": "Ain Salah",
+        "lat": 27.200001,
+        "lng": 2.48974,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "834",
+          "dgpc_wilaya": "53"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "53",
+        "containing_wilayas": [
+          "53"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "53-002",
+          "name_ar": "الوحدة الرئيسية إن صالح",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "834",
+        "cod_wilaya": "53",
+        "name_ar": "مديرية الحماية المدنية إن صالح",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "إن صالح",
+        "address": "RN01 ZONE INDUSTRIELLE_IN SALAH",
+        "lat": 27.200001,
+        "lng": 2.48974
+      }
+    },
+    {
+      "record": {
+        "id": "54-001",
+        "name_ar": "الوحدة الرئيسية إن قزام",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "54",
+        "commune_code": "5401",
+        "commune": "Ain Guezzam",
+        "lat": 19.570499,
+        "lng": 5.7723,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "162",
+          "dgpc_wilaya": "54"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "54",
+        "containing_wilayas": [
+          "54"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "54-003",
+          "name_ar": "مديرية الحماية المدنية إن قزام",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "162",
+        "cod_wilaya": "54",
+        "name_ar": "الوحدة الرئيسية إن قزام",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "إن قزام",
+        "address": "RN01 CENTRE VILLE IN GUEZAM_IN GUEZAM",
+        "lat": 19.570499,
+        "lng": 5.7723
+      }
+    },
+    {
+      "record": {
+        "id": "54-003",
+        "name_ar": "مديرية الحماية المدنية إن قزام",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "54",
+        "commune_code": "5401",
+        "commune": "Ain Guezzam",
+        "lat": 19.570499,
+        "lng": 5.7723,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "835",
+          "dgpc_wilaya": "54"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "54",
+        "containing_wilayas": [
+          "54"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "54-001",
+          "name_ar": "الوحدة الرئيسية إن قزام",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "835",
+        "cod_wilaya": "54",
+        "name_ar": "مديرية الحماية المدنية إن قزام",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "إن قزام",
+        "address": "RN01 CENTRE VILLE IN GUEZAM_IN GUEZAM",
+        "lat": 19.570499,
+        "lng": 5.7723
+      }
+    },
+    {
+      "record": {
+        "id": "55-007",
+        "name_ar": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
+        "statut": "POSTE DE SECOURS ROUTIER",
+        "wilaya_code": "55",
+        "commune_code": "5507",
+        "commune": "El-Hadjira",
+        "lat": 32.597698,
+        "lng": 5.84566,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "612",
+          "dgpc_wilaya": "55"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya"
+      ],
+      "boundary": {
+        "declared_wilaya": "55",
+        "containing_wilayas": [
+          "30"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "612",
+        "cod_wilaya": "55",
+        "name_ar": "مركز إسعاف الطرقات حاسي معمر_الحجيرة",
+        "statut": "POSTE DE SECOURS ROUTIER",
+        "commune_ar": "الحجيرة",
+        "address": "RN03 HASSI MAAMAR_EL HADJIRA",
+        "lat": 32.597698,
+        "lng": 5.84566
+      }
+    },
+    {
+      "record": {
+        "id": "55-008",
+        "name_ar": "الوحدة الثانوية الحجيرة",
+        "statut": "UNITE SECONDAIRE",
+        "wilaya_code": "55",
+        "commune_code": "5507",
+        "commune": "El-Hadjira",
+        "lat": 32.602699,
+        "lng": 5.52382,
+        "geo_precision": "exact",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "247",
+          "dgpc_wilaya": "55"
+        }
+      },
+      "reasons": [
+        "outside_declared_wilaya"
+      ],
+      "boundary": {
+        "declared_wilaya": "55",
+        "containing_wilayas": [
+          "30"
+        ]
+      },
+      "coordinate_peers": [],
+      "dgpc_source": {
+        "objectid": "247",
+        "cod_wilaya": "55",
+        "name_ar": "الوحدة الثانوية الحجيرة",
+        "statut": "UNITE SECONDAIRE",
+        "commune_ar": "الحجيرة",
+        "address": "CW33 CITE 08 MAI 1945_EL HADJIRA",
+        "lat": 32.602699,
+        "lng": 5.52382
+      }
+    },
+    {
+      "record": {
+        "id": "56-001",
+        "name_ar": "الوحدة الرئيسية جانت",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "56",
+        "commune_code": "5601",
+        "commune": "Djanet",
+        "lat": 24.476801,
+        "lng": 9.51415,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "403",
+          "dgpc_wilaya": "56"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "56",
+        "containing_wilayas": [
+          "56"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "56-004",
+          "name_ar": "مديرية الحماية المدنية جانت",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "403",
+        "cod_wilaya": "56",
+        "name_ar": "الوحدة الرئيسية جانت",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "جانت",
+        "address": "CITE IFRI_DJANET",
+        "lat": 24.476801,
+        "lng": 9.51415
+      }
+    },
+    {
+      "record": {
+        "id": "56-004",
+        "name_ar": "مديرية الحماية المدنية جانت",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "56",
+        "commune_code": "5601",
+        "commune": "Djanet",
+        "lat": 24.476801,
+        "lng": 9.51415,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "837",
+          "dgpc_wilaya": "56"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "56",
+        "containing_wilayas": [
+          "56"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "56-001",
+          "name_ar": "الوحدة الرئيسية جانت",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "837",
+        "cod_wilaya": "56",
+        "name_ar": "مديرية الحماية المدنية جانت",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "جانت",
+        "address": "CITE IFRI_DJANET",
+        "lat": 24.476801,
+        "lng": 9.51415
+      }
+    },
+    {
+      "record": {
+        "id": "57-001",
+        "name_ar": "الوحدة الرئيسية المغير",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "57",
+        "commune_code": "5701",
+        "commune": "El-M'ghaier",
+        "lat": 33.9505,
+        "lng": 5.92483,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "485",
+          "dgpc_wilaya": "57"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "57",
+        "containing_wilayas": [
+          "57"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "57-006",
+          "name_ar": "مديرية الحماية المدنية المغير",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "485",
+        "cod_wilaya": "57",
+        "name_ar": "الوحدة الرئيسية المغير",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "المغير",
+        "address": "RUE BLRACHED ABD ERREZAK CITE EL SAADA_EL MGHAIR",
+        "lat": 33.9505,
+        "lng": 5.92483
+      }
+    },
+    {
+      "record": {
+        "id": "57-006",
+        "name_ar": "مديرية الحماية المدنية المغير",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "57",
+        "commune_code": "5701",
+        "commune": "El-M'ghaier",
+        "lat": 33.9505,
+        "lng": 5.92483,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "838",
+          "dgpc_wilaya": "57"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "57",
+        "containing_wilayas": [
+          "57"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "57-001",
+          "name_ar": "الوحدة الرئيسية المغير",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "838",
+        "cod_wilaya": "57",
+        "name_ar": "مديرية الحماية المدنية المغير",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "المغير",
+        "address": "RUE BLRACHED ABD ERREZAK CITE EL SAADA_EL MGHAIR",
+        "lat": 33.9505,
+        "lng": 5.92483
+      }
+    },
+    {
+      "record": {
+        "id": "58-002",
+        "name_ar": "الوحدة الرئيسية المنيعة",
+        "statut": "UNITE PRINCIPALE",
+        "wilaya_code": "58",
+        "commune_code": "5801",
+        "commune": "El Meniaa",
+        "lat": 30.5868,
+        "lng": 2.88,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "462",
+          "dgpc_wilaya": "58"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "58",
+        "containing_wilayas": [
+          "58"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "58-005",
+          "name_ar": "مديرية الحماية المدنية المنيعة",
+          "statut": "SIEGE DE DIRECTION WILAYA"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "462",
+        "cod_wilaya": "58",
+        "name_ar": "الوحدة الرئيسية المنيعة",
+        "statut": "UNITE PRINCIPALE",
+        "commune_ar": "المنيعة",
+        "address": "RUE ALI LA POINTE CENTRE VILLE MENEAA _MENEAA",
+        "lat": 30.5868,
+        "lng": 2.88
+      }
+    },
+    {
+      "record": {
+        "id": "58-005",
+        "name_ar": "مديرية الحماية المدنية المنيعة",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "wilaya_code": "58",
+        "commune_code": "5801",
+        "commune": "El Meniaa",
+        "lat": 30.5868,
+        "lng": 2.88,
+        "geo_precision": "approximate",
+        "geo_method": "dgpc_map",
+        "refs": {
+          "dgpc": "839",
+          "dgpc_wilaya": "58"
+        }
+      },
+      "reasons": [
+        "approximate_coordinate",
+        "shared_coordinate"
+      ],
+      "boundary": {
+        "declared_wilaya": "58",
+        "containing_wilayas": [
+          "58"
+        ]
+      },
+      "coordinate_peers": [
+        {
+          "id": "58-002",
+          "name_ar": "الوحدة الرئيسية المنيعة",
+          "statut": "UNITE PRINCIPALE"
+        }
+      ],
+      "dgpc_source": {
+        "objectid": "839",
+        "cod_wilaya": "58",
+        "name_ar": "مديرية الحماية المدنية المنيعة",
+        "statut": "SIEGE DE DIRECTION WILAYA",
+        "commune_ar": "المنيعة",
+        "address": "RUE ALI LA POINTE_MENAA",
+        "lat": 30.5868,
+        "lng": 2.88
+      }
+    }
+  ]
+}

@@ -4,12 +4,12 @@
   "title_fr": "Écoles d'Algérie",
   "title_ar": "مدارس الجزائر",
   "title_en": "Algeria schools",
-  "record_count": 11855,
-  "geocoded_count": 11855,
+  "record_count": 11858,
+  "geocoded_count": 11858,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 2843,
-    "approximate": 9012
+    "exact": 2840,
+    "approximate": 9018
   },
   "estimated_universe": 29702,
   "coverage_pct": 39.9,
@@ -27,31 +27,31 @@
       "name": "OpenStreetMap — schools & kindergartens in Algeria",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
-      "retrieved": "2026-08-06",
+      "retrieved": "2026-08-31",
       "evidence_type": "crowdsourced"
     }
   ],
   "license": "ODbL-1.0",
-  "updated": "2026-08-06",
-  "named": 8635,
+  "updated": "2026-08-31",
+  "named": 8213,
   "by_cycle": {
-    "primaire": 4019,
-    "moyen": 2378,
-    "secondaire": 1576,
-    "autre": 3614,
+    "primaire": 3784,
+    "moyen": 2359,
+    "secondaire": 1496,
+    "autre": 3951,
     "prescolaire": 268
   },
   "by_kind": {
-    "regular": 11664,
-    "formation": 92,
-    "coranique": 40,
+    "regular": 11680,
+    "formation": 88,
+    "coranique": 36,
     "special": 30,
-    "langues": 24,
-    "conduite": 5
+    "langues": 20,
+    "conduite": 4
   },
   "by_sector": {
-    "private": 48,
-    "public": 315
+    "private": 44,
+    "public": 316
   },
   "with_address": 2626,
   "cycle_note": "Cycle is inferred from isced:level and the French/Arabic name (CEM→moyen, lycée→secondaire, maternelle/روضة→préscolaire); a bare \"école\"/\"مدرسة\" with no cycle word is classified primaire per Algerian convention, and anything unresolved is \"autre\".",

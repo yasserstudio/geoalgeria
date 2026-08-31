@@ -85,8 +85,8 @@ voyager`.
   station snapshot: it is much more volatile.
 - `collect-schedules.mjs` is resumable collection for a single service date.
   First run `node collect-schedules.mjs --date YYYY-MM-DD --probe`; it must
-  successfully return the known ADRAR → ALGER example before the matrix is
-  allowed. Then use `--run` (or `--run --limit N`) to visit the station-
+  successfully return at least one of the pinned, previously high-volume
+  examples before the matrix is allowed. Then use `--run` (or `--run --limit N`) to visit the station-
   destination matrix one request at a time. Both its data and checkpoints are
   local and ignored by git. Failed requests are logged as failures, never
   interpreted as no scheduled service.
