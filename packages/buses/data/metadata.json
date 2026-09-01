@@ -4,31 +4,31 @@
   "title_fr": "Lignes de bus urbaines et suburbaines d'Algérie",
   "title_ar": "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر",
   "title_en": "Algeria urban and suburban bus lines",
-  "record_count": 1105,
-  "geocoded_count": 1046,
-  "geocoded_pct": 94.7,
+  "record_count": 1122,
+  "geocoded_count": 1061,
+  "geocoded_pct": 94.6,
   "precision": {
-    "exact": 1042,
+    "exact": 1057,
     "approximate": 4
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Reviewed first urban/suburban release: 50 retained ETUSA lines plus 8 ETUS Tiaret and 1 ETUS Mostaganem line. OSM shapes are available for 33 exact-ref ETUSA lines and all 9 added lines. Excludes unresolved, taxi, cross/inter-wilaya, ETUSTO, Setif, ETUAD, and validation-only official geometry.",
-  "wilayas_covered": 3,
+  "coverage_note": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 3 ETUSTO Lines and 1 ETUS Mostaganem Line. Shapes are available for 33 exact-ref ETUSA Lines and all 11 added Lines. Excludes the stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD and validation-only official geometry.",
+  "wilayas_covered": 4,
   "bbox": [
     0.078075,
     35.290352,
-    3.285756,
+    4.076705,
     36.817264
   ],
   "entities": [
     {
       "file": "lines.json",
-      "count": 59
+      "count": 61
     },
     {
       "file": "stations.json",
-      "count": 1046
+      "count": 1061
     }
   ],
   "sources": [
@@ -54,16 +54,18 @@
   "operators": [
     "ETUS Mostaganem",
     "ETUS Tiaret",
-    "ETUSA"
+    "ETUSA",
+    "ETUSTO"
   ],
   "by_operator": {
     "ETUS Mostaganem": 1,
-    "ETUS Tiaret": 8,
-    "ETUSA": 50
+    "ETUS Tiaret": 7,
+    "ETUSA": 50,
+    "ETUSTO": 3
   },
   "with_stop_count": 44,
-  "shapes": 42,
-  "directions": 75,
-  "stations": 1046,
-  "station_memberships": 1878
+  "shapes": 44,
+  "directions": 79,
+  "stations": 1061,
+  "station_memberships": 1869
 }

@@ -1,0 +1,560 @@
+{
+  "updated": "2026-09-01",
+  "scope": "wilayas_01_23_urban_suburban_bus_source_audit",
+  "status": "completed_research_batch",
+  "methodology": {
+    "finding_labels": {
+      "seen": "Directly observed in the cited source or response.",
+      "inferred": "A bounded interpretation of observed evidence, explicitly not a sourced fact.",
+      "not_found": "No qualifying public source was identified in this audit; this does not prove non-existence."
+    },
+    "source_policy": "Operator-owned and government sources are preferred. App-store and secondary sources remain discovery or validation evidence unless the Operator and reuse terms are verified.",
+    "telemetry_policy": "Vehicle positions and GPS report traces are not treated as authoritative transit Line geometry or ordered passenger Stations.",
+    "private_operator_limit": "No searchable national or Wilaya-level public register of licensed private urban/suburban carriers was found. Private-company coverage is therefore not exhaustive, and every affected Wilaya has an explicit private-network status.",
+    "import_policy": "Protected, unlicensed, app-internal and validation-only material must not be imported without permission."
+  },
+  "common_legal_source": {
+    "url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+    "source_type": "official_legal_gazette",
+    "finding": "seen",
+    "claim": "Executive Decree 10-92 establishes or consolidates public urban and suburban transport establishments for Wilayas 01-48.",
+    "reuse_status": "legal_identity_reference_only"
+  },
+  "summary": {
+    "wilaya_count": 23,
+    "wilayas_with_structured_operator_line_data": 1,
+    "wilayas_with_official_geometry_validation": 1,
+    "wilayas_with_official_raster_line_facts": 1,
+    "wilayas_with_live_app_or_tracker_leads": 5,
+    "wilayas_with_no_qualifying_network_data": 12,
+    "best_structured_source": "etus-tiaret-official-lines"
+  },
+  "wilayas": [
+    {
+      "wilaya_code": 1,
+      "wilaya_fr": "Adrar",
+      "wilaya_ar": "أدرار",
+      "operator": {
+        "name": "Établissement public de transport urbain et suburbain d'Adrar",
+        "operator_id": "etus-adrar",
+        "kind": "public_epic",
+        "identity_status": "seen",
+        "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"
+      },
+      "sources": [
+        {
+          "id": "adrar-radioalgerie-2024",
+          "url": "https://news.radioalgerie.dz/ar/node/44173",
+          "source_type": "government_media_aps_report",
+          "finding": "seen",
+          "freshness": "2024-04-20",
+          "claims": ["operator_activity", "35_new_buses_announced"],
+          "access_status": "public_html",
+          "reuse_status": "no_open_data_license_found"
+        }
+      ],
+      "available_data": {
+        "line_refs": null,
+        "ordered_stations": null,
+        "geometry": null,
+        "schedules": null,
+        "live_endpoints": null
+      },
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No operator-owned digital network source found", "No open reuse grant"]
+    },
+    {
+      "wilaya_code": 2,
+      "wilaya_fr": "Chlef",
+      "wilaya_ar": "الشلف",
+      "operator": {
+        "name": "Entreprise de transport urbain de Chlef",
+        "operator_id": "etuc-chlef",
+        "aliases": ["ETUC", "Chlef Bus", "حافلات الشلف"],
+        "kind": "public_epic",
+        "identity_status": "seen",
+        "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"
+      },
+      "sources": [
+        {
+          "id": "chlef-secondary-line-table",
+          "url": "https://fr.wikipedia.org/wiki/Chlef",
+          "source_type": "secondary_community_line_table",
+          "finding": "seen",
+          "freshness": "approximately_2019_line_material",
+          "claims": ["five_line_refs", "termini_and_selected_via_points"],
+          "access_status": "public_html",
+          "reuse_status": "source_license_applies_validation_only_for_currentness"
+        }
+      ],
+      "available_data": {
+        "line_refs": ["1", "2", "3", "4", "5"],
+        "line_facts": [
+          {"ref": "1", "from": "Hay Nasr", "to": "Gare ferroviaire"},
+          {"ref": "2", "from": "Hay Hassania", "to": "Gare ferroviaire", "via": ["Nouvelle ville"]},
+          {"ref": "3", "from": "Hay Bradai", "to": "Gare ferroviaire"},
+          {"ref": "4", "from": "Gare routière SOGRAL", "to": "Gare ferroviaire", "via": ["Station du 05 juillet", "Station de Tazgaït"]},
+          {"ref": "5", "from": "Hay El Houria", "to": "Gare ferroviaire"}
+        ],
+        "ordered_stations": "partial_via_points_only",
+        "geometry": null,
+        "schedules": null,
+        "live_endpoints": null
+      },
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "private_carriers_exist_but_identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["Line table is not operator-owned", "Currentness is unverified", "No geometry or open operator feed"]
+    },
+    {
+      "wilaya_code": 3,
+      "wilaya_fr": "Laghouat",
+      "wilaya_ar": "الأغواط",
+      "operator": {
+        "name": "Établissement public de transport urbain et suburbain de Laghouat",
+        "operator_id": "etusl-laghouat",
+        "aliases": ["ETUSL"],
+        "kind": "public_epic",
+        "identity_status": "seen",
+        "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"
+      },
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned web, social, app, tracker or network source found"]
+    },
+    {
+      "wilaya_code": 4,
+      "wilaya_fr": "Oum El Bouaghi",
+      "wilaya_ar": "أم البواقي",
+      "operator": {
+        "name": "Établissement public de transport urbain et suburbain d'Oum El Bouaghi",
+        "operator_id": "etus-oeb",
+        "kind": "public_epic",
+        "identity_status": "seen",
+        "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"
+      },
+      "sources": [
+        {
+          "id": "oeb-2023-service-report",
+          "url": "https://lecourrier-dalgerie.com/wp-content/uploads/2023/07/Le-Courrier-dAlge%CC%81rie-du-mercredi-12-juillet-2023.pdf",
+          "source_type": "secondary_aps_derived_report",
+          "finding": "seen",
+          "freshness": "2023-07-12",
+          "claims": ["operator_activity", "service_in_oum_el_bouaghi_ain_beida_ain_mlila", "ten_new_buses"],
+          "access_status": "public_pdf",
+          "reuse_status": "no_open_data_license_found"
+        }
+      ],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No named current Lines or operator-owned network source"]
+    },
+    {
+      "wilaya_code": 5,
+      "wilaya_fr": "Batna",
+      "wilaya_ar": "باتنة",
+      "operator": {
+        "name": "Établissement public de transport urbain et suburbain de Batna",
+        "operator_id": "etu-batna",
+        "kind": "public_epic",
+        "identity_status": "seen",
+        "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+        "additional_legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2007/F2007001.PDF"
+      },
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 6,
+      "wilaya_fr": "Béjaïa",
+      "wilaya_ar": "بجاية",
+      "operator": {
+        "name": "Établissement public de transport urbain et suburbain de Béjaïa",
+        "operator_id": "etus-bejaia",
+        "aliases": ["ETUS Béjaïa", "ETUSB"],
+        "kind": "public_epic",
+        "identity_status": "seen",
+        "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"
+      },
+      "sources": [
+        {
+          "id": "etus-bejaia-site",
+          "url": "https://etusbejaia.dz/",
+          "source_type": "official_operator_site",
+          "finding": "seen",
+          "freshness": "reachable_and_rechecked_2026-09-01",
+          "claims": ["44_buses", "five_operator_lines"],
+          "access_status": "public_html",
+          "reuse_status": "no_open_license_found"
+        },
+        {
+          "id": "etus-bejaia-line-pages",
+          "url_pattern": "https://etusbejaia.dz/ligne{1-5}/",
+          "source_type": "official_operator_line_pages_with_embedded_maps",
+          "finding": "seen",
+          "freshness": "retrieved_2026-09-01",
+          "claims": ["five_line_refs", "five_terminus_pairs", "five_embedded_line_geometries", "two_to_five_waypoints_per_line"],
+          "access_status": "public_html_and_fetchable_kml",
+          "reuse_status": "validation_only_no_open_license_found"
+        },
+        {
+          "id": "bejaiaway-play",
+          "url": "https://play.google.com/store/apps/details?id=com.cleversoft.bejaiaway",
+          "source_type": "operator_branded_app_listing",
+          "finding": "seen",
+          "freshness": "listing_published_2025_and_visible_2026",
+          "claims": ["live_bus_positions", "line_status"],
+          "access_status": "app_only_no_public_feed_identified",
+          "reuse_status": "protected_no_open_feed_found"
+        }
+      ],
+      "available_data": {
+        "line_refs": ["1", "2", "3", "4", "5"],
+        "line_facts": [
+          {"ref": "1", "from": "Gare routière", "to": "Adrar Oufarnou"},
+          {"ref": "2", "from": "Gare routière", "to": "Université"},
+          {"ref": "3", "from": "Gare routière", "to": "Boulevard Amirouche"},
+          {"ref": "4", "from": "Gare routière", "to": "Sidi Ahmed"},
+          {"ref": "5", "from": "Gare routière", "to": "Igher Ouzarif"}
+        ],
+        "ordered_stations": "not_available_only_two_to_five_map_waypoints_per_line",
+        "geometry": "five_validation_only_linestrings_from_officially_embedded_maps",
+        "schedules": null,
+        "live_endpoints": "claimed_in_app_but_no_public_endpoint_identified"
+      },
+      "logo": {
+        "url": "https://etusbejaia.dz/wp-content/uploads/2024/01/logosite-removebg-preview.png",
+        "verification": "verified_on_official_operator_site"
+      },
+      "private_network_status": "secondary_reporting_mentions_many_private_carriers_but_identities_not_publicly_enumerable",
+      "conflicts": ["Official ETUS site describes five Operator Lines while secondary city-wide sources describe a broader mixed public/private network"],
+      "blockers": ["No open geometry licence", "Map Points are not a complete ordered Station inventory", "App live feed is not public"]
+    },
+    {
+      "wilaya_code": 7,
+      "wilaya_fr": "Biskra",
+      "wilaya_ar": "بسكرة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Biskra", "operator_id": "etu-biskra", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 8,
+      "wilaya_fr": "Béchar",
+      "wilaya_ar": "بشار",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Béchar", "operator_id": "etu-bechar", "aliases": ["ETUB"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 9,
+      "wilaya_fr": "Blida",
+      "wilaya_ar": "البليدة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Blida", "operator_id": "etu-blida", "aliases": ["ETUB"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No operator-owned current network source", "Third-party routing products are not authority feeds"]
+    },
+    {
+      "wilaya_code": 10,
+      "wilaya_fr": "Bouira",
+      "wilaya_ar": "البويرة",
+      "operator": {"name": "Entreprise de transport urbain de Bouira", "operator_id": "etub-bouira", "aliases": ["ETUB"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {
+          "id": "bouira-etub-launch-2011",
+          "url": "https://www.depechedekabylie.com/91758-lentreprise-de-transport-urbain-prochainement-operationnelle/",
+          "source_type": "secondary_historical_report",
+          "finding": "seen",
+          "freshness": "2011-02-05",
+          "claims": ["public_operator_identity", "historical_line_3_via_points"],
+          "access_status": "public_html",
+          "reuse_status": "historical_validation_only"
+        },
+        {
+          "id": "bouira-private-tikjda",
+          "url": "https://www.depechedekabylie.com/181121-le-ticket-passe-a-20-da/",
+          "source_type": "secondary_private_operator_report",
+          "finding": "seen",
+          "freshness": "2017-10-05",
+          "claims": ["private_company_tikjda_operated_urban_service"],
+          "access_status": "public_html",
+          "reuse_status": "identity_validation_only"
+        }
+      ],
+      "available_data": {
+        "line_refs": ["3_historical"],
+        "ordered_stations": ["Gare nouvelle", "Lotissement Amar Khodja", "Harkat", "Lycée Med Seddik", "Ex ITE", "Gare ferroviaire", "Gare ancienne"],
+        "geometry": null,
+        "schedules": "historical_global_06:30_to_19:30_claim",
+        "live_endpoints": null
+      },
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "one_named_historical_company_tikjda_other_identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["Network evidence is historical and not operator-owned", "No current geometry or feed"]
+    },
+    {
+      "wilaya_code": 11,
+      "wilaya_fr": "Tamanrasset",
+      "wilaya_ar": "تمنراست",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Tamanrasset", "operator_id": "etus-tamanrasset", "kind": "public_epic", "identity_status": "seen_legal_only", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "no_qualifying_source_found",
+      "conflicts": [],
+      "blockers": ["No reliably identified Operator digital property or private network register", "No network data source found"]
+    },
+    {
+      "wilaya_code": 12,
+      "wilaya_fr": "Tébessa",
+      "wilaya_ar": "تبسة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Tébessa", "operator_id": "etu-tebessa", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 13,
+      "wilaya_fr": "Tlemcen",
+      "wilaya_ar": "تلمسان",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Tlemcen", "operator_id": "etu-tlemcen", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 14,
+      "wilaya_fr": "Tiaret",
+      "wilaya_ar": "تيارت",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Tiaret", "operator_id": "etus-tiaret", "aliases": ["ETUS Tiaret", "ETUST"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {
+          "id": "etus-tiaret-official-lines",
+          "url": "https://www.etus-tiaret.dz/ar/lines",
+          "source_type": "official_operator_structured_html_inertia_props",
+          "finding": "seen",
+          "freshness": "retrieved_2026-09-01_site_and_news_current_2026",
+          "claims": ["seven_current_line_refs", "directional_line_lengths", "190_ordered_station_memberships", "136_unique_arabic_station_names"],
+          "access_status": "public_html_no_separate_api_required",
+          "reuse_status": "validation_only_all_rights_reserved"
+        }
+      ],
+      "available_data": {
+        "line_refs": ["26", "27", "28", "29", "30", "31", "32"],
+        "line_lengths_km": [
+          {"ref": "26", "outbound": 10.86, "inbound": 10.86},
+          {"ref": "27", "outbound": 14.0, "inbound": 14.0},
+          {"ref": "28", "outbound": 10.1, "inbound": 10.1},
+          {"ref": "29", "outbound": 10.1, "inbound": 10.1},
+          {"ref": "30", "outbound": 10.2, "inbound": 10.2},
+          {"ref": "31", "outbound": 14.0, "inbound": 14.0},
+          {"ref": "32", "outbound": 15.0, "inbound": 15.0}
+        ],
+        "ordered_station_membership_counts": {"26": 24, "27": 40, "28": 26, "29": 25, "30": 29, "31": 27, "32": 19},
+        "ordered_station_memberships_total": 190,
+        "unique_station_names": 136,
+        "station_language": "ar",
+        "geometry": null,
+        "coordinates": null,
+        "schedules": null,
+        "live_endpoints": null
+      },
+      "logo": {"url": "https://www.etus-tiaret.dz/build/assets/logo-DnUZV0nQ.svg", "verification": "verified_in_official_operator_site_bundle"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [
+        {
+          "type": "current_line_count_reconciliation",
+          "finding": "seen",
+          "official_current_count": 7,
+          "official_refs": ["26", "27", "28", "29", "30", "31", "32"],
+          "geoalgeria_retained_snapshot_count": 8,
+          "action": "Reconcile the retained eight-Line snapshot against the seven-Line official page before any refresh or currentness claim."
+        }
+      ],
+      "blockers": ["All rights reserved and no open data licence", "No coordinates or geometry", "No current schedule feed"]
+    },
+    {
+      "wilaya_code": 15,
+      "wilaya_fr": "Tizi Ouzou",
+      "wilaya_ar": "تيزي وزو",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Tizi Ouzou", "operator_id": "etusto", "aliases": ["ETUSTO"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "etusto-home", "url": "http://etusto.dz/", "source_type": "official_operator_site", "finding": "seen", "freshness": "reachable_2026_with_2025_notices", "claims": ["operator_identity", "service_hours", "fare"], "access_status": "public_html", "reuse_status": "no_open_license_found"},
+        {"id": "etusto-passenger-lines", "url": "http://etusto.dz/espv.html", "source_type": "official_operator_line_page", "finding": "seen", "freshness": "retrieved_2026-09-01", "claims": ["five_line_refs", "five_terminus_pairs", "raster_line_maps"], "access_status": "public_html", "reuse_status": "validation_only_no_open_license_found"}
+      ],
+      "available_data": {
+        "line_refs": ["1", "7", "1A", "9", "6"],
+        "line_facts": [
+          {"ref": "1", "from": "Timizart Loghbar", "to": "ST Boukhalfa"},
+          {"ref": "7", "from": "Timizart Loghbar", "to": "Oued Fali"},
+          {"ref": "1A", "from": "Timizart Loghbar", "to": "AADL"},
+          {"ref": "9", "from": "ST Boukhalfa", "to": "Gare Kaf Naaja"},
+          {"ref": "6", "from": "ST Boukhalfa", "to": "Beni Douala"}
+        ],
+        "ordered_stations": null,
+        "geometry": "raster_maps_only",
+        "schedules": {"global_service_window": "05:30-19:25", "fare_dzd": 15},
+        "live_endpoints": null
+      },
+      "logo": {"url": "http://etusto.dz/img/etusto.jpg", "verification": "verified_on_official_operator_site"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["Raster geometry is not a reusable vector Line", "No ordered Station inventory", "No open licence"]
+    },
+    {
+      "wilaya_code": 16,
+      "wilaya_fr": "Alger",
+      "wilaya_ar": "الجزائر",
+      "operator": {"name": "Établissement public de transport urbain et suburbain d'Alger", "operator_id": "etusa", "aliases": ["ETUSA", "إيتوزا"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "etusa-official-site", "url": "https://www.etusa.dz/", "source_type": "official_operator_site", "finding": "seen", "freshness": "connection_reset_on_2026-09-01", "claims": ["operator_domain"], "access_status": "unreachable_connection_reset", "reuse_status": "not_assessable"},
+        {"id": "etusa-mob-play", "url": "https://play.google.com/store/apps/details?id=dz.etusa.etusa_mob", "source_type": "third_party_developed_operator_branded_app_listing", "finding": "seen", "freshness": "updated_2025-07-13", "claims": ["line_search", "nearby_stations", "itineraries", "departure_times"], "access_status": "app_only_no_public_feed_identified", "reuse_status": "protected_no_open_feed_found"},
+        {"id": "etusa-ramadan-2026-programme", "url": "https://news.radioalgerie.dz/fr/node/79833", "source_type": "government_media_aps_report", "finding": "seen", "freshness": "2026-02-15", "claims": ["186_daytime_lines", "70_night_lines", "temporary_service_windows_and_frequencies"], "access_status": "public_html", "reuse_status": "programme_fact_validation_not_static_feed"}
+      ],
+      "available_data": {
+        "line_refs": "fragmentary_and_changing_not_available_as_current_operator_export",
+        "ordered_stations": "claimed_in_app_no_public_export",
+        "geometry": "no_operator_owned_open_geometry_found",
+        "schedules": "temporary_programmes_and_app_claims_only",
+        "live_endpoints": null
+      },
+      "additional_named_operator_leads": [
+        {"name": "TRANSUB", "kind": "historical_public_economic_company", "finding": "seen_secondary", "claim": "Historically reported as operating two urban and eight suburban Lines", "currentness": "unverified"}
+      ],
+      "logo": {"url": null, "verification": "official_site_unreachable_no_stable_asset_verified"},
+      "private_network_status": "large_private_sector_known_but_carrier_identities_and_assignments_not_publicly_enumerable",
+      "conflicts": ["Current 2026 programme counts exceed the retained structured GeoAlgeria ETUSA subset and must not be represented as complete coverage"],
+      "blockers": ["Official site unreachable", "App data is protected and accuracy is disputed in user reviews", "No current open Operator feed"]
+    },
+    {
+      "wilaya_code": 17,
+      "wilaya_fr": "Djelfa",
+      "wilaya_ar": "الجلفة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Djelfa", "operator_id": "etu-djelfa", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No qualifying operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 18,
+      "wilaya_fr": "Jijel",
+      "wilaya_ar": "جيجل",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Jijel", "operator_id": "etus-jijel", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "kotama-mob-current-play", "url": "https://play.google.com/store/apps/details?id=org.busjijel.manager&hl=fr", "source_type": "third_party_app_listing", "finding": "seen", "freshness": "retrieved_2026-09-01", "claims": ["live_etus_bus_positions"], "access_status": "app_only_no_public_feed_identified", "reuse_status": "protected_no_open_feed_found"},
+        {"id": "kotama-mob-old-deeper", "url": "https://play.google.com/store/apps/details?id=com.deeper.etus.jijel", "source_type": "historical_third_party_app_listing", "finding": "seen", "freshness": "removed_from_play_2025-01-14_last_update_2022-12-24", "claims": ["route_following", "ticket_purchase"], "access_status": "removed", "reuse_status": "not_reusable"}
+      ],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": "claimed_in_current_app_no_public_endpoint_identified"},
+      "logo": {"url": null, "verification": "no_operator_hosted_logo_verified"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": ["Old and current KOTAMA Mob packages are distinct products and must not be conflated"],
+      "blockers": ["App claims do not expose a reusable feed", "No stable Line or Station data", "No reuse grant"]
+    },
+    {
+      "wilaya_code": 19,
+      "wilaya_fr": "Sétif",
+      "wilaya_ar": "سطيف",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Sétif", "operator_id": "etus-setif", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "setifis-bus-play", "url": "https://play.google.com/store/apps/details?id=org.bussetif.manager&hl=fr", "source_type": "third_party_app_listing", "finding": "seen", "freshness": "updated_2026-07-15_retrieved_2026-09-01", "claims": ["real_time_etus_setif_positions"], "access_status": "app_only_no_public_feed_identified", "reuse_status": "protected_no_open_feed_found"}
+      ],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": "claimed_in_app_no_public_endpoint_identified"},
+      "logo": {"url": null, "verification": "user_supplied_local_logo_exists_but_no_operator_hosted_url_verified"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["Live vehicle claim is not stable Line geometry", "No public feed or reuse grant"]
+    },
+    {
+      "wilaya_code": 20,
+      "wilaya_fr": "Saïda",
+      "wilaya_ar": "سعيدة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Saïda", "operator_id": "etus-saida", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "etus-saida-2025-tender", "url": "https://www.dztenders.com/en/archive/459972/acquisition-dhabillement/", "source_type": "secondary_tender_reproduction", "finding": "seen", "freshness": "2025-06-10", "claims": ["operator_identity_and_contact_block"], "access_status": "public_html", "reuse_status": "identity_validation_only"}
+      ],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["No current operator-owned network source found"]
+    },
+    {
+      "wilaya_code": 21,
+      "wilaya_fr": "Skikda",
+      "wilaya_ar": "سكيكدة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Skikda", "operator_id": "etus-skikda", "aliases": ["ETUS Skikda", "Rusicada"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "bus-rusicada-current-play", "url": "https://play.google.com/store/apps/details?id=org.skikdabus.manager&hl=fr", "source_type": "third_party_app_listing", "finding": "seen", "freshness": "updated_2026-07-11_retrieved_2026-09-01", "claims": ["real_time_etus_skikda_positions"], "access_status": "app_only_no_public_feed_identified", "reuse_status": "protected_no_open_feed_found"},
+        {"id": "rusicada-old-deeper", "url": "https://play.google.com/store/apps/details?id=com.deeper.etus.skikda", "source_type": "historical_third_party_app_listing", "finding": "seen", "freshness": "last_known_update_2024-05-21", "claims": ["route_following"], "access_status": "archive_or_old_listing", "reuse_status": "not_reusable"}
+      ],
+      "available_data": {"line_refs": null, "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": "claimed_in_app_no_public_endpoint_identified"},
+      "logo": {"url": null, "verification": "no_operator_hosted_logo_verified"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": ["Old and current Rusicada packages are distinct products"],
+      "blockers": ["No public API or static Line data", "No reuse grant"]
+    },
+    {
+      "wilaya_code": 22,
+      "wilaya_fr": "Sidi Bel Abbès",
+      "wilaya_ar": "سيدي بلعباس",
+      "operator": {"name": "Établissement public de transport urbain et suburbain de Sidi Bel Abbès", "operator_id": "etu-sidi-bel-abbes", "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf"},
+      "sources": [
+        {"id": "sidi-bel-abbes-launch-2010", "url": "https://www.algerie-dz.com/forums/economie/178572-mise-en-service-de-l-entreprise-de-transport-urbain-de-sidi-bel-abb%C3%A8s", "source_type": "secondary_historical_aps_report", "finding": "seen", "freshness": "2010-07-06", "claims": ["three_initial_lines_serving_rocher_ben_hammouda_404_logements", "nine_more_lines_planned"], "access_status": "public_html", "reuse_status": "historical_validation_only"}
+      ],
+      "available_data": {"line_refs": "three_unnumbered_historical_lines", "ordered_stations": null, "geometry": null, "schedules": null, "live_endpoints": null},
+      "logo": {"url": null, "verification": "not_found"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": [],
+      "blockers": ["2010 launch facts are too old for a current network claim", "No ordered Stations, geometry or current feed"]
+    },
+    {
+      "wilaya_code": 23,
+      "wilaya_fr": "Annaba",
+      "wilaya_ar": "عنابة",
+      "operator": {"name": "Établissement public de transport urbain et suburbain d'Annaba", "operator_id": "etus-annaba", "aliases": ["ETUS Annaba", "ETA"], "kind": "public_epic", "identity_status": "seen", "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf", "additional_legal_source_url": "https://www.joradp.dz/TRV/F2004B14.pdf"},
+      "sources": [
+        {"id": "bouna-bus-play", "url": "https://play.google.com/store/apps/details?id=org.busannaba.manager&hl=fr", "source_type": "operator_branded_app_listing", "finding": "seen", "freshness": "retrieved_2026-09-01", "claims": ["real_time_bus_positions", "line_list", "itineraries"], "access_status": "app_only_no_public_feed_identified", "reuse_status": "protected_no_open_feed_found"},
+        {"id": "bouna-bus-launch-report", "url": "https://seybousetimes.dz/actualite/region/2025/12/02/annaba-transport-commun-bouna-bus-une-nouvelle-application-pour-le-suivi-des-bus-en-temps-reel/", "source_type": "local_media_operator_app_report", "finding": "seen", "freshness": "2025-12-02", "claims": ["described_as_official_etus_annaba_app", "complete_line_list_claim", "itinerary_and_live_position_claims"], "access_status": "public_html", "reuse_status": "discovery_validation_only"
+        }
+      ],
+      "available_data": {"line_refs": "claimed_complete_in_app_no_public_export", "ordered_stations": null, "geometry": "claimed_in_app_no_downloadable_stable_geometry", "schedules": null, "live_endpoints": "claimed_in_app_no_unauthenticated_reusable_endpoint_identified"},
+      "logo": {"url": null, "verification": "no_operator_hosted_logo_verified"},
+      "private_network_status": "identities_not_publicly_enumerable",
+      "conflicts": ["Local reporting inconsistently uses ETUSA when referring to the Annaba Operator; canonical identity remains ETUS Annaba/ETA"],
+      "blockers": ["App content is protected", "No public endpoint or reuse licence", "Live telemetry is not stable Line geometry"]
+    }
+  ]
+}

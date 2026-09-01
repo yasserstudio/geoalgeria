@@ -69,18 +69,18 @@
       "package": "@geoalgeria/buses",
       "schema_version": "2.0.0",
       "title": "Algeria urban and suburban bus lines",
-      "record_count": 1105,
-      "geocoded_count": 1046,
-      "geocoded_pct": 94.7,
+      "record_count": 1122,
+      "geocoded_count": 1061,
+      "geocoded_pct": 94.6,
       "precision": {
-        "exact": 1042,
+        "exact": 1057,
         "approximate": 4
       },
-      "wilayas_covered": 3,
+      "wilayas_covered": 4,
       "bbox": [
         0.078075,
         35.290352,
-        3.285756,
+        4.076705,
         36.817264
       ],
       "license": "CC-BY-SA-4.0 AND ODbL-1.0",

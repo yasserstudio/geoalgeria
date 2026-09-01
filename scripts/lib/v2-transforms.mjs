@@ -734,7 +734,7 @@ export const MIGRATIONS = {
       ],
       license: "CC-BY-SA-4.0 AND ODbL-1.0",
       estimatedUniverse: null,
-      coverageNote: "Reviewed first urban/suburban release: 50 retained ETUSA lines plus 8 ETUS Tiaret and 1 ETUS Mostaganem line. OSM shapes are available for 33 exact-ref ETUSA lines and all 9 added lines. Excludes unresolved, taxi, cross/inter-wilaya, ETUSTO, Setif, ETUAD, and validation-only official geometry.",
+      coverageNote: "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 3 ETUSTO Lines and 1 ETUS Mostaganem Line. Shapes are available for 33 exact-ref ETUSA Lines and all 11 added Lines. Excludes the stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD and validation-only official geometry.",
       titles: { en: "Algeria urban and suburban bus lines", fr: "Lignes de bus urbaines et suburbaines d'Algérie", ar: "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر" },
       stats: (rows) => {
         const lines = rows.filter((r) => r.line != null);

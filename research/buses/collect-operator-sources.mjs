@@ -25,6 +25,15 @@ const sourceSpecSha256 = (source) => sha256(stableStringify(source));
 
 const sources = [
   {
+    id: "etus-tiaret-lines",
+    operator_id: "etus-tiaret",
+    kind: "official_page",
+    url: "https://www.etus-tiaret.dz/ar/lines",
+    filename: "etus-tiaret-lines.html",
+    expected_text: "data-page=",
+    reuse_status: "validation_only_all_rights_reserved",
+  },
+  {
     id: "etusto-home",
     operator_id: "etusto",
     kind: "official_page",
@@ -67,6 +76,38 @@ const sources = [
       expected_text: destination,
     },
   ]),
+  {
+    id: "etus-mascara-lines",
+    operator_id: "etus-mascara",
+    kind: "official_page",
+    url: "http://etusmascara.dz/exploi.html",
+    filename: "etus-mascara-lines.html",
+    expected_text: "1tmHKvSMzC04PYwZt2r_VG6XJwN-qZfs",
+  },
+  ...[
+    ["08", "1tmHKvSMzC04PYwZt2r_VG6XJwN-qZfs"],
+    ["02", "1PMwuGBYJVHV88V_oSxgRgQVUFtL-vyg"],
+    ["16", "15KGgyUDuLcWrYoxMz1kCtz8x8t8bAdg"],
+    ["01", "1yX3CZ7j9YHPzUcu9_8DDiCrg6OJcvlg"],
+    ["17", "1ZuSudpU1FQHw3d6c3NLXUSCxIKp2viQ"],
+    ["05", "1tPlHDmps5ta7q6vtL-xxorfkIgg6g4I"],
+  ].map(([ref, mapId]) => ({
+    id: `etus-mascara-line-${ref}-kml`,
+    operator_id: "etus-mascara",
+    kind: "official_embedded_map_export",
+    url: `https://www.google.com/maps/d/kml?mid=${mapId}&forcekml=1`,
+    filename: `etus-mascara-line-${ref}.kml`,
+    line_ref: ref,
+    map_id: mapId,
+  })),
+  {
+    id: "etus-souk-ahras-network",
+    operator_id: "etus-souk-ahras",
+    kind: "official_page",
+    url: "http://etus-soukahras.dz/#chabaka",
+    filename: "etus-souk-ahras-network.html",
+    expected_text: "شبكة الخطوط",
+  },
   {
     id: "etus-oran-server",
     operator_id: "etus-oran",
@@ -173,7 +214,7 @@ async function capture(source) {
     local_compression: source.compression ?? null,
     source_spec_sha256: sourceSpecSha256(source),
     payload_validated: true,
-    reuse_status: "no_open_license_found",
+    reuse_status: source.reuse_status ?? "no_open_license_found",
   };
 }
 

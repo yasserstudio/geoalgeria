@@ -12,9 +12,9 @@
 
 </div>
 
-Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **59 lignes**,
-**42 tracés**, **75 directions** et **1 046 stations** pour ETUSA (Alger), ETUS Tiaret
-et ETUS Mostaganem. En JSON, CSV et GeoJSON. Fait partie de
+Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **61 lignes**,
+**44 tracés**, **79 directions** et **1 061 stations** pour ETUSA (Alger), ETUS Tiaret,
+ETUSTO (Tizi Ouzou) et ETUS Mostaganem. En JSON, CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > Pour les gares routières inter-wilayas voir
@@ -27,7 +27,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 59
+const all = buses.lines();                    // 61
 const etusa = buses.linesByOperator("ETUSA"); // 50
 const trace = buses.shapeForLine("etusa-1");
 ```
@@ -36,11 +36,11 @@ const trace = buses.shapeForLine("etusa-1");
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Lignes | **59** | ETUSA 50, ETUS Tiaret 8, ETUS Mostaganem 1 |
-| Tracés OSM | **42** | 33 ETUSA + les 9 nouvelles lignes |
-| Stations | **1 046** | Nœuds OSM, noms nuls conservés |
+| Lignes | **61** | ETUSA 50, ETUS Tiaret 7, ETUSTO 3, ETUS Mostaganem 1 |
+| Tracés OSM | **44** | 33 ETUSA + les 11 lignes ajoutées |
+| Stations | **1 061** | Nœuds OSM, noms nuls conservés |
 
-L'ordre des 1 878 appartenances est l'ordre brut des membres OSM, marqué
+L'ordre des 1 869 appartenances est l'ordre brut des membres OSM, marqué
 `osm_member_order_unvalidated` : il ne constitue pas un ordre voyageurs validé et aucun
 terminus n'est déduit automatiquement.
 

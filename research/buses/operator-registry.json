@@ -141,14 +141,17 @@
       "scope": "urban_suburban",
       "aliases": ["ETUS ORAN", "ETO Oran"],
       "sources": [
-        {"id": "etus-oran-tracker", "url": "https://gps.etusoran.dz/", "evidence_type": "official", "kind": "operator_tracker", "claims": ["protected_live_devices"], "reuse_status": "operator_access_required"},
+        {"id": "etus-oran-tracker", "url": "https://gps.etusoran.dz/", "evidence_type": "official", "kind": "operator_tracker", "claims": ["protected_live_devices", "operator_logo"], "reuse_status": "operator_access_required"},
         {"id": "etus-oran-server", "url": "https://gps.etusoran.dz/api/server", "evidence_type": "official", "kind": "public_tracker_metadata", "claims": ["public_tracker_metadata"], "reuse_status": "no_open_license_found"}
       ],
-      "available_data": ["public_tracker_metadata", "protected_live_devices"],
+      "available_data": ["public_tracker_metadata", "protected_live_devices", "operator_logo"],
       "discovery_leads": [
-        {"id": "etus-oran-pay-play", "url": "https://play.google.com/store/apps/details?id=oran.routes.devcloud", "kind": "third_party_app_claim", "claims": ["third_party_line_schedule_claims"], "reuse_status": "no_open_feed_found"}
+        {"id": "etus-oran-pay-play", "url": "https://play.google.com/store/apps/details?id=oran.routes.devcloud", "kind": "third_party_app_claim", "claims": ["third_party_line_schedule_claims"], "reuse_status": "no_open_feed_found"},
+        {"id": "etus-oran-current-lines-capdz", "url": "https://capdz.dz/archives/16261", "kind": "secondary_current_line_report", "claims": ["two_current_line_facts"], "reuse_status": "no_open_license_found"},
+        {"id": "etus-oran-current-lines-lexpression", "url": "https://www.lexpression.dz/societe/mise-en-service-de-deux-nouvelles-lignes-de-transport-urbain-407130", "kind": "secondary_current_line_report", "claims": ["two_current_line_facts"], "reuse_status": "no_open_license_found"},
+        {"id": "etus-oran-historical-study", "url": "https://di.univ-blida.dz/xmlui/bitstream/handle/123456789/15306/4.720.1770.pdf?isAllowed=y&sequence=1", "kind": "historical_academic_line_table", "claims": ["ten_historical_line_refs"], "reuse_status": "no_open_license_found"}
       ],
-      "discovery_findings": ["third_party_line_schedule_claims"],
+      "discovery_findings": ["third_party_line_schedule_claims", "two_current_line_facts", "ten_historical_line_refs"],
       "reuse_status": "operator_access_required"
     },
     {

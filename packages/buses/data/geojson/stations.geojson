@@ -1806,8 +1806,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -1849,8 +1848,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -1893,8 +1891,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -1937,8 +1934,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -1981,8 +1977,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -2558,213 +2553,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-28",
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.359749,
-          35.379588
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10814254970",
-        "name": null,
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.379588,
-        "lng": 1.359749,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10814254970,
-        "refs": {
-          "osm": "node/10814254970"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.362164,
-          35.379131
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10814254973",
-        "name": null,
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.379131,
-        "lng": 1.362164,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10814254973,
-        "refs": {
-          "osm": "node/10814254973"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.363644,
-          35.379154
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10814254976",
-        "name": "حي 500 سكن",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.379154,
-        "lng": 1.363644,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10814254976,
-        "refs": {
-          "osm": "node/10814254976"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.361394,
-          35.382139
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10814254977",
-        "name": null,
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.382139,
-        "lng": 1.361394,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10814254977,
-        "refs": {
-          "osm": "node/10814254977"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.359876,
-          35.382497
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10814254982",
-        "name": "حي 1204 سكن عدل",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.382497,
-        "lng": 1.359876,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10814254982,
-        "refs": {
-          "osm": "node/10814254982"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
+          "etus-tiaret-28"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -2806,8 +2595,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -2849,8 +2637,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -2892,8 +2679,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -2935,8 +2721,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -2978,8 +2763,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -3021,8 +2805,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -7752,8 +7535,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -11211,8 +10993,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -11253,8 +11034,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -11884,334 +11664,6 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.319363,
-          35.374775
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049375",
-        "name": "مطحنة الريجينة",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.374775,
-        "lng": 1.319363,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049375,
-        "refs": {
-          "osm": "node/10882049375"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.319475,
-          35.374786
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049376",
-        "name": "مطحنة الريجينة",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.374786,
-        "lng": 1.319475,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049376,
-        "refs": {
-          "osm": "node/10882049376"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.319371,
-          35.374866
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049377",
-        "name": "معهد الموسيقى",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.374866,
-        "lng": 1.319371,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049377,
-        "refs": {
-          "osm": "node/10882049377"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.319466,
-          35.374873
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049378",
-        "name": "معهد الموسيقى",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.374873,
-        "lng": 1.319466,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049378,
-        "refs": {
-          "osm": "node/10882049378"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.319416,
-          35.37487
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049379",
-        "name": "معهد الموسيقى",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.37487,
-        "lng": 1.319416,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049379,
-        "refs": {
-          "osm": "node/10882049379"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.359757,
-          35.379617
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049381",
-        "name": null,
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.379617,
-        "lng": 1.359757,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049381,
-        "refs": {
-          "osm": "node/10882049381"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.362174,
-          35.379151
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049383",
-        "name": null,
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.379151,
-        "lng": 1.362174,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049383,
-        "refs": {
-          "osm": "node/10882049383"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.363767,
-          35.37911
-        ]
-      },
-      "properties": {
-        "id": "osm-node-10882049385",
-        "name": "حي 500 سكن",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.37911,
-        "lng": 1.363767,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 10882049385,
-        "refs": {
-          "osm": "node/10882049385"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "platform"
-        ],
-        "highway": "bus_stop",
-        "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
           3.042398,
           36.774441
         ]
@@ -12831,6 +12283,549 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.045153,
+          36.693372
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12823735716",
+        "name": "Kef Naâdja",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.693372,
+        "lng": 4.045153,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12823735716,
+        "refs": {
+          "osm": "node/12823735716"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_exit_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.021335,
+          36.725147
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12823735717",
+        "name": "Station Boukhalfa",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.725147,
+        "lng": 4.021335,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12823735717,
+        "refs": {
+          "osm": "node/12823735717"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1",
+          "etusto-6",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_entry_only",
+          "stop_exit_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.021397,
+          36.7251
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12823735718",
+        "name": "Station Boukhalfa",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.7251,
+        "lng": 4.021397,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12823735718,
+        "refs": {
+          "osm": "node/12823735718"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1",
+          "etusto-6",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_entry_only",
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.044376,
+          36.713808
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12823735719",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.713808,
+        "lng": 4.044376,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12823735719,
+        "refs": {
+          "osm": "node/12823735719"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05255,
+          36.70093
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12823735723",
+        "name": "La Tour",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.70093,
+        "lng": 4.05255,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12823735723,
+        "refs": {
+          "osm": "node/12823735723"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.05258,
+          36.701071
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12823735724",
+        "name": "La Tour",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.701071,
+        "lng": 4.05258,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12823735724,
+        "refs": {
+          "osm": "node/12823735724"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.045142,
+          36.693317
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12828900859",
+        "name": "Kef Naâdja",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.693317,
+        "lng": 4.045142,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12828900859,
+        "refs": {
+          "osm": "node/12828900859"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.07665,
+          36.715391
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12828902110",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.715391,
+        "lng": 4.07665,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12828902110,
+        "refs": {
+          "osm": "node/12828902110"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_entry_only",
+          "stop_exit_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052324,
+          36.711025
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12833776157",
+        "name": "Casorale : Vers la tour / Beni-Douala / nouvelles gare",
+        "name_fr": "Casorale : Vers la tour / Beni-Douala / nouvelles gare",
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.711025,
+        "lng": 4.052324,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12833776157,
+        "refs": {
+          "osm": "node/12833776157"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052271,
+          36.710995
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12833776158",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.710995,
+        "lng": 4.052271,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12833776158,
+        "refs": {
+          "osm": "node/12833776158"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.043979,
+          36.713731
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12833776159",
+        "name": "Arrêt la mairie",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.713731,
+        "lng": 4.043979,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12833776159,
+        "refs": {
+          "osm": "node/12833776159"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.043932,
+          36.713789
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12833776160",
+        "name": "la mairie",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.713789,
+        "lng": 4.043932,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12833776160,
+        "refs": {
+          "osm": "node/12833776160"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.076705,
+          36.715371
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12833776161",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.715371,
+        "lng": 4.076705,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12833776161,
+        "refs": {
+          "osm": "node/12833776161"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_entry_only",
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.042093,
           36.743261
         ]
@@ -12867,6 +12862,297 @@
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.033118,
+          36.714302
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798143896",
+        "name": "Salle des fêtes Yazourenne",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.714302,
+        "lng": 4.033118,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798143896,
+        "refs": {
+          "osm": "node/13798143896"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.033026,
+          36.714223
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798143897",
+        "name": "Salle des fêtes Yazourenne",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.714223,
+        "lng": 4.033026,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798143897,
+        "refs": {
+          "osm": "node/13798143897"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.033048,
+          36.714251
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798143898",
+        "name": "Salle des fêtes Yazourenne",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.714251,
+        "lng": 4.033048,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798143898,
+        "refs": {
+          "osm": "node/13798143898"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.033103,
+          36.714285
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798143899",
+        "name": "Salle des fêtes Yazourenne",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.714285,
+        "lng": 4.033103,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798143899,
+        "refs": {
+          "osm": "node/13798143899"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.07414,
+          36.696021
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798143900",
+        "name": "Station Beni Douala",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.696021,
+        "lng": 4.07414,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798143900,
+        "refs": {
+          "osm": "node/13798143900"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_entry_only",
+          "stop_exit_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.074174,
+          36.696028
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798151101",
+        "name": "Arrêt Station Beni Douala",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.696028,
+        "lng": 4.074174,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798151101,
+        "refs": {
+          "osm": "node/13798151101"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_entry_only",
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052699,
+          36.702745
+        ]
+      },
+      "properties": {
+        "id": "osm-node-13798187850",
+        "name": "La Tour",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.702745,
+        "lng": 4.052699,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 13798187850,
+        "refs": {
+          "osm": "node/13798187850"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
       }
     },
     {
@@ -13203,6 +13489,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.05252,
+          36.70259
+        ]
+      },
+      "properties": {
+        "id": "osm-node-1855608553",
+        "name": "Tour",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.70259,
+        "lng": 4.05252,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 1855608553,
+        "refs": {
+          "osm": "node/1855608553"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.06526,
           36.742165
         ]
@@ -13436,8 +13763,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -14230,8 +14556,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-28",
-          "etus-tiaret-33"
+          "etus-tiaret-28"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -16603,6 +16928,47 @@
           "etusa-99"
         ],
         "wilaya_method": "operator_scope",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.053926,
+          36.707212
+        ]
+      },
+      "properties": {
+        "id": "osm-node-291956605",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.707212,
+        "lng": 4.053926,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 291956605,
+        "refs": {
+          "osm": "node/291956605"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
         "roles": [
           "stop"
         ],
@@ -22345,6 +22711,88 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.052782,
+          36.702627
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4196127594",
+        "name": "La Tour : Vers Beni-Douala / Oued Aissi",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.702627,
+        "lng": 4.052782,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4196127594,
+        "refs": {
+          "osm": "node/4196127594"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052706,
+          36.702792
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4196211289",
+        "name": "La Tour : Vers centre-ville / station Boukhalfa",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.702792,
+        "lng": 4.052706,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4196211289,
+        "refs": {
+          "osm": "node/4196211289"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.085565,
           36.71222
         ]
@@ -22593,6 +23041,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.051167,
+          36.70406
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4279100592",
+        "name": "Hasnaoua",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.70406,
+        "lng": 4.051167,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4279100592,
+        "refs": {
+          "osm": "node/4279100592"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.944124,
           36.807231
         ]
@@ -22742,8 +23231,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -22828,6 +23316,214 @@
         ],
         "line_ids": [
           "etusa-12"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052515,
+          36.700945
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4532791890",
+        "name": "Vers Station multimodale / nouvelle gare routière",
+        "name_fr": "Vers Station multimodale / nouvelle gare routière",
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.700945,
+        "lng": 4.052515,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4532791890,
+        "refs": {
+          "osm": "node/4532791890"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052045,
+          36.711143
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4532791891",
+        "name": "Casorale : Vers la tour / Beni-Douala / nouvelles gare",
+        "name_fr": "Casorale : Vers la tour / Beni-Douala / nouvelles gare",
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.711143,
+        "lng": 4.052045,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4532791891,
+        "refs": {
+          "osm": "node/4532791891"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.04436,
+          36.713916
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4532791892",
+        "name": "Arrêt la mairie",
+        "name_fr": "Arrêt la mairie",
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.713916,
+        "lng": 4.04436,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4532791892,
+        "refs": {
+          "osm": "node/4532791892"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-1",
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform",
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.052617,
+          36.701062
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4532823389",
+        "name": "Vers centre-ville / Artisanat",
+        "name_fr": "Vers centre-ville / Artisanat",
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.701062,
+        "lng": 4.052617,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4532823389,
+        "refs": {
+          "osm": "node/4532823389"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-9"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_entry_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.054053,
+          36.707252
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4532828089",
+        "name": "Stade 1er Novembre Vers centre-ville / station Boukhalfa",
+        "name_fr": "Stade 1er Novembre",
+        "name_ar": null,
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.707252,
+        "lng": 4.054053,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4532828089,
+        "refs": {
+          "osm": "node/4532828089"
+        },
+        "operator_ids": [
+          "etusto"
+        ],
+        "line_ids": [
+          "etusto-6",
+          "etusto-9"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -22959,47 +23655,6 @@
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.319425,
-          35.374781
-        ]
-      },
-      "properties": {
-        "id": "osm-node-462695050",
-        "name": "مطحنة الريجينة",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.374781,
-        "lng": 1.319425,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 462695050,
-        "refs": {
-          "osm": "node/462695050"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
       }
     },
     {
@@ -23286,8 +23941,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -38119,8 +38773,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -38203,8 +38856,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -38494,8 +39146,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -38537,8 +39188,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -38664,8 +39314,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-29",
-          "etus-tiaret-33"
+          "etus-tiaret-29"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -39513,8 +40162,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -39557,8 +40205,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -39601,8 +40248,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -39645,8 +40291,7 @@
         "line_ids": [
           "etus-tiaret-26",
           "etus-tiaret-29",
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -40313,8 +40958,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -40355,8 +40999,7 @@
           "etus-tiaret"
         ],
         "line_ids": [
-          "etus-tiaret-31",
-          "etus-tiaret-33"
+          "etus-tiaret-31"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -40730,8 +41373,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -40773,8 +41415,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -40816,8 +41457,7 @@
         ],
         "line_ids": [
           "etus-tiaret-27",
-          "etus-tiaret-30",
-          "etus-tiaret-33"
+          "etus-tiaret-30"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -43275,8 +43915,7 @@
         ],
         "line_ids": [
           "etus-tiaret-26",
-          "etus-tiaret-29",
-          "etus-tiaret-33"
+          "etus-tiaret-29"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [
@@ -43284,47 +43923,6 @@
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          1.359894,
-          35.382531
-        ]
-      },
-      "properties": {
-        "id": "osm-node-9069675094",
-        "name": "حي 1204 سكن عدل",
-        "name_fr": null,
-        "name_ar": null,
-        "wilaya_code": "14",
-        "commune_code": null,
-        "commune": null,
-        "lat": 35.382531,
-        "lng": 1.359894,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "osm_type": "node",
-        "osm_id": 9069675094,
-        "refs": {
-          "osm": "node/9069675094"
-        },
-        "operator_ids": [
-          "etus-tiaret"
-        ],
-        "line_ids": [
-          "etus-tiaret-33"
-        ],
-        "wilaya_method": "point_in_wilaya",
-        "roles": [
-          "stop"
-        ],
-        "highway": null,
-        "public_transport": "stop_position"
       }
     },
     {

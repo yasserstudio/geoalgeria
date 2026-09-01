@@ -1,0 +1,666 @@
+{
+  "updated": "2026-09-01",
+  "scope": "urban_suburban_bus_operators_by_wilaya",
+  "status": "source_audit_complete",
+  "summary": {
+    "wilaya_count": 69,
+    "operators_established_by_reviewed_decree": 58,
+      "transitional_wilayas_without_separate_operator_evidence": 11,
+    "wilayas_with_existing_source_registry_records": 13
+  },
+  "legal_notes": [
+    "Decree 10-92 created or consolidated public urban/suburban transport establishments in Wilayas 01-48.",
+    "Decree 23-402 extended the framework to Wilayas 49-58.",
+    "Wilayas 59-69 were named and coded by Law 26-06 in 2026. Parent Wilayas retain service responsibilities through 2026-12-31, and no separate public urban/suburban Operator was established by the reviewed sources.",
+    "Legal establishment proves Operator identity only. It does not prove that a current public Line dataset or open reuse licence exists."
+  ],
+  "wilayas": [
+    {
+      "wilaya_code": 1,
+      "wilaya_fr": "Adrar",
+      "wilaya_ar": "أدرار",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 2,
+      "wilaya_fr": "Chlef",
+      "wilaya_ar": "الشلف",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 3,
+      "wilaya_fr": "Laghouat",
+      "wilaya_ar": "الأغواط",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 4,
+      "wilaya_fr": "Oum El Bouaghi",
+      "wilaya_ar": "أم البواقي",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 5,
+      "wilaya_fr": "Batna",
+      "wilaya_ar": "باتنة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 6,
+      "wilaya_fr": "Béjaïa",
+      "wilaya_ar": "بجاية",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-bejaia"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 7,
+      "wilaya_fr": "Biskra",
+      "wilaya_ar": "بسكرة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 8,
+      "wilaya_fr": "Béchar",
+      "wilaya_ar": "بشار",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 9,
+      "wilaya_fr": "Blida",
+      "wilaya_ar": "البليدة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 10,
+      "wilaya_fr": "Bouira",
+      "wilaya_ar": "البويرة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 11,
+      "wilaya_fr": "Tamanrasset",
+      "wilaya_ar": "تمنراست",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 12,
+      "wilaya_fr": "Tébessa",
+      "wilaya_ar": "تبسة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 13,
+      "wilaya_fr": "Tlemcen",
+      "wilaya_ar": "تلمسان",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 14,
+      "wilaya_fr": "Tiaret",
+      "wilaya_ar": "تيارت",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-tiaret"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 15,
+      "wilaya_fr": "Tizi Ouzou",
+      "wilaya_ar": "تيزي وزو",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etusto"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 16,
+      "wilaya_fr": "Alger",
+      "wilaya_ar": "الجزائر",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etusa"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 17,
+      "wilaya_fr": "Djelfa",
+      "wilaya_ar": "الجلفة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 18,
+      "wilaya_fr": "Jijel",
+      "wilaya_ar": "جيجل",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-jijel"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 19,
+      "wilaya_fr": "Sétif",
+      "wilaya_ar": "سطيف",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-setif"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 20,
+      "wilaya_fr": "Saïda",
+      "wilaya_ar": "سعيدة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 21,
+      "wilaya_fr": "Skikda",
+      "wilaya_ar": "سكيكدة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-skikda"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 22,
+      "wilaya_fr": "Sidi Bel Abbès",
+      "wilaya_ar": "سيدي بلعباس",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 23,
+      "wilaya_fr": "Annaba",
+      "wilaya_ar": "عنابة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-annaba"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 24,
+      "wilaya_fr": "Guelma",
+      "wilaya_ar": "قالمة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 25,
+      "wilaya_fr": "Constantine",
+      "wilaya_ar": "قسنطينة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etusc-constantine"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 26,
+      "wilaya_fr": "Médéa",
+      "wilaya_ar": "المدية",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 27,
+      "wilaya_fr": "Mostaganem",
+      "wilaya_ar": "مستغانم",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-mostaganem"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 28,
+      "wilaya_fr": "M'sila",
+      "wilaya_ar": "المسيلة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 29,
+      "wilaya_fr": "Mascara",
+      "wilaya_ar": "معسكر",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 30,
+      "wilaya_fr": "Ouargla",
+      "wilaya_ar": "ورقلة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-ouargla"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 31,
+      "wilaya_fr": "Oran",
+      "wilaya_ar": "وهران",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etus-oran"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 32,
+      "wilaya_fr": "El Bayadh",
+      "wilaya_ar": "البيض",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 33,
+      "wilaya_fr": "Illizi",
+      "wilaya_ar": "إليزي",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 34,
+      "wilaya_fr": "Bordj Bou Arreridj",
+      "wilaya_ar": "برج بوعريريج",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 35,
+      "wilaya_fr": "Boumerdès",
+      "wilaya_ar": "بومرداس",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 36,
+      "wilaya_fr": "El Tarf",
+      "wilaya_ar": "الطارف",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 37,
+      "wilaya_fr": "Tindouf",
+      "wilaya_ar": "تندوف",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 38,
+      "wilaya_fr": "Tissemsilt",
+      "wilaya_ar": "تيسمسيلت",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 39,
+      "wilaya_fr": "El Oued",
+      "wilaya_ar": "الوادي",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 40,
+      "wilaya_fr": "Khenchela",
+      "wilaya_ar": "خنشلة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 41,
+      "wilaya_fr": "Souk Ahras",
+      "wilaya_ar": "سوق أهراس",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 42,
+      "wilaya_fr": "Tipaza",
+      "wilaya_ar": "تيبازة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 43,
+      "wilaya_fr": "Mila",
+      "wilaya_ar": "ميلة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 44,
+      "wilaya_fr": "Aïn Defla",
+      "wilaya_ar": "عين الدفلى",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [
+        "etuad"
+      ],
+      "source_audit_status": "known_sources_in_registry"
+    },
+    {
+      "wilaya_code": 45,
+      "wilaya_fr": "Naâma",
+      "wilaya_ar": "النعامة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 46,
+      "wilaya_fr": "Aïn Témouchent",
+      "wilaya_ar": "عين تموشنت",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 47,
+      "wilaya_fr": "Ghardaïa",
+      "wilaya_ar": "غرداية",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 48,
+      "wilaya_fr": "Relizane",
+      "wilaya_ar": "غليزان",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2010/F2010018.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 49,
+      "wilaya_fr": "Timimoun",
+      "wilaya_ar": "تيميمون",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 50,
+      "wilaya_fr": "Bordj Badji Mokhtar",
+      "wilaya_ar": "برج باجي مختار",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 51,
+      "wilaya_fr": "Ouled Djellal",
+      "wilaya_ar": "أولاد جلال",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 52,
+      "wilaya_fr": "Béni Abbès",
+      "wilaya_ar": "بني عباس",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 53,
+      "wilaya_fr": "In Salah",
+      "wilaya_ar": "عين صالح",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 54,
+      "wilaya_fr": "In Guezzam",
+      "wilaya_ar": "عين قزام",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 55,
+      "wilaya_fr": "Touggourt",
+      "wilaya_ar": "توقرت",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 56,
+      "wilaya_fr": "Djanet",
+      "wilaya_ar": "جانت",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 57,
+      "wilaya_fr": "El M'Ghair",
+      "wilaya_ar": "المغير",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 58,
+      "wilaya_fr": "El Meniaa",
+      "wilaya_ar": "المنيعة",
+      "legal_operator_status": "established_by_reviewed_decree",
+      "legal_source_url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 59,
+      "wilaya_fr": "Aflou",
+      "wilaya_ar": "آفلو",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 60,
+      "wilaya_fr": "Barika",
+      "wilaya_ar": "بريكة",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 61,
+      "wilaya_fr": "El Kantara",
+      "wilaya_ar": "القنطرة",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 62,
+      "wilaya_fr": "Bir El Ater",
+      "wilaya_ar": "بئر العاتر",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 63,
+      "wilaya_fr": "El Aricha",
+      "wilaya_ar": "العريشة",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 64,
+      "wilaya_fr": "Ksar Chellala",
+      "wilaya_ar": "قصر الشلالة",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 65,
+      "wilaya_fr": "Aïn Oussera",
+      "wilaya_ar": "عين وسارة",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 66,
+      "wilaya_fr": "Messaad",
+      "wilaya_ar": "مسعد",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 67,
+      "wilaya_fr": "Ksar El Boukhari",
+      "wilaya_ar": "قصر البخاري",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 68,
+      "wilaya_fr": "Bou Saâda",
+      "wilaya_ar": "بوسعادة",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    },
+    {
+      "wilaya_code": 69,
+      "wilaya_fr": "El Abiodh Sidi Cheikh",
+      "wilaya_ar": "الأبيض سيدي الشيخ",
+      "legal_operator_status": "not_covered_by_reviewed_decrees",
+      "legal_source_url": null,
+      "registry_operator_ids": [],
+      "source_audit_status": "research_in_progress"
+    }
+  ]
+}

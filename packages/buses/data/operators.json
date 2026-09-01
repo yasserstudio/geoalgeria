@@ -23,8 +23,8 @@
       "14"
     ],
     "scope": "urban_suburban",
-    "line_count": 8,
-    "shape_count": 8,
+    "line_count": 7,
+    "shape_count": 7,
     "source_refs": [
       "osm"
     ]
@@ -42,6 +42,21 @@
     "shape_count": 33,
     "source_refs": [
       "wikipedia",
+      "osm"
+    ]
+  },
+  {
+    "id": "etusto",
+    "name": "ETUSTO",
+    "name_fr": "Établissement public de transport urbain et suburbain de Tizi Ouzou",
+    "name_ar": null,
+    "wilaya_codes": [
+      "15"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 3,
+    "shape_count": 3,
+    "source_refs": [
       "osm"
     ]
   }

@@ -2,8 +2,8 @@
 
 # @geoalgeria/buses
 
-Reviewed urban and suburban bus data for Algeria. This release contains **59 Lines**
-from three Operators, **42 drawable shapes**, **75 Directions**, and **1,046 Stations**.
+Reviewed urban and suburban bus data for Algeria. This release contains **61 Lines**
+from four Operators, **44 drawable shapes**, **79 Directions**, and **1,061 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -12,7 +12,7 @@ npm install @geoalgeria/buses
 ```js
 import buses from "@geoalgeria/buses";
 
-const lines = buses.lines();                  // 59
+const lines = buses.lines();                  // 61
 const shape = buses.shapeForLine("etusa-1");
 const stops = buses.stationsByLine("etusa-1");
 const directions = buses.directionsByLine("etusa-1");
@@ -23,22 +23,24 @@ const directions = buses.directionsByLine("etusa-1");
 | Operator | Lines | Shapes |
 | --- | ---: | ---: |
 | ETUSA (Alger) | 50 | 33 |
-| ETUS Tiaret | 8 | 8 |
+| ETUS Tiaret | 7 | 7 |
+| ETUSTO (Tizi Ouzou) | 3 | 3 |
 | ETUS Mostaganem | 1 | 1 |
 
 The 50 existing ETUSA Line ids are preserved (`etusa-1`, etc.). New ids use
-`{operator-id}-{ref}`. Shapes are reconciled only where an ETUSA OSM candidate has an
-exact retained Line ref. Unresolved, taxi, cross/inter-wilaya, ETUSTO, Sétif, ETUAD,
-and validation-only official geometry are not published.
+`{operator-id}-{ref}`. Shapes are reconciled only where a reusable candidate matches
+a reviewed Line identity. Tiaret ref 33 is excluded because the current official page
+lists refs 26–32. Unresolved, taxi, cross/inter-wilaya, Sétif, ETUAD, and
+validation-only official geometry are not published.
 
 ## Files
 
-- `data/lines.json` and `data/csv/lines.csv` — 59 Lines
-- `data/shapes.json` and `data/geojson/shapes.geojson` — 42 MultiLineString shapes
-- `data/directions.json` — 75 source OSM Direction relations
-- `data/stations.json`, CSV and GeoJSON — 1,046 Station nodes
-- `data/station-memberships.json` — 1,878 ordered relation memberships
-- `data/operators.json` — three Operators
+- `data/lines.json` and `data/csv/lines.csv` — 61 Lines
+- `data/shapes.json` and `data/geojson/shapes.geojson` — 44 MultiLineString shapes
+- `data/directions.json` — 79 source OSM Direction relations
+- `data/stations.json`, CSV and GeoJSON — 1,061 Station nodes
+- `data/station-memberships.json` — 1,869 ordered relation memberships
+- `data/operators.json` — four Operators
 
 Membership order is the raw OSM relation member order and carries
 `sequence_status: "osm_member_order_unvalidated"`. It is **not** a validated passenger

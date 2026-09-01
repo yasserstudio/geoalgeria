@@ -14,8 +14,8 @@
 
 <div dir="rtl">
 
-بيانات مراجعة لخطوط الحافلات الحضرية وشبه الحضرية: **59 خطًا** و**42 مسارًا** و**75 اتجاهًا**
-و**1,046 محطة** لدى ETUSA وETUS Tiaret وETUS Mostaganem. بصيغ JSON وCSV وGeoJSON. جزء من
+بيانات مراجعة لخطوط الحافلات الحضرية وشبه الحضرية: **61 خطًا** و**44 مسارًا** و**79 اتجاهًا**
+و**1,061 محطة** لدى ETUSA وETUS Tiaret وETUSTO وETUS Mostaganem. بصيغ JSON وCSV وGeoJSON. جزء من
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > **المشغّل (المصدر):** ETUSA – مؤسسة النقل الحضري وشبه الحضري لمدينة الجزائر. ستُضاف مدن/
@@ -31,7 +31,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 59
+const all = buses.lines();                    // 61
 const etusa = buses.linesByOperator("ETUSA"); // 50
 ```
 
@@ -41,11 +41,11 @@ const etusa = buses.linesByOperator("ETUSA"); // 50
 
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
-| الخطوط | **59** | 50 ETUSA و8 ETUS Tiaret وخط ETUS Mostaganem |
-| المسارات | **42** | مسارات OSM مراجعة |
-| المحطات | **1,046** | عقد OSM مع الحفاظ على الأسماء الفارغة |
+| الخطوط | **61** | 50 ETUSA و7 ETUS Tiaret و3 ETUSTO وخط ETUS Mostaganem |
+| المسارات | **44** | مسارات OSM مراجعة |
+| المحطات | **1,061** | عقد OSM مع الحفاظ على الأسماء الفارغة |
 
-ترتيب العضويات البالغ عددها 1,878 هو ترتيب أعضاء علاقة OSM الخام ويحمل القيمة
+ترتيب العضويات البالغ عددها 1,869 هو ترتيب أعضاء علاقة OSM الخام ويحمل القيمة
 `osm_member_order_unvalidated`؛ وليس ترتيب ركوب متحققًا ولا نستنتج منه المحطات الطرفية.
 
 ## المصدر والرخصة

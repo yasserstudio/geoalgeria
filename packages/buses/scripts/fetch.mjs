@@ -16,6 +16,7 @@ const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operat
 const operatorLabels = {
   etusa: { operator: "ETUSA", network: "Alger" },
   "etus-tiaret": { operator: "ETUS Tiaret", network: "Tiaret" },
+  etusto: { operator: "ETUSTO", network: "Tizi Ouzou" },
   "etus-mostaganem": { operator: "ETUS Mostaganem", network: "Mostaganem" },
 };
 const coordinateDecimals = (value) => {
@@ -123,7 +124,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 59, shapes: 42, directions: 75, stations: 1046, memberships: 1878 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 61, shapes: 44, directions: 79, stations: 1061, memberships: 1869 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -165,4 +166,4 @@ write(join(DATA, "geojson", "shapes.geojson"), {
   features: shapes.map(({ geometry, ...properties }) => ({ type: "Feature", id: properties.id, geometry, properties })),
 });
 
-console.log("buses: 59 lines, 42 shapes, 75 directions, 1,046 stations, 1,878 ordered memberships → v3");
+console.log("buses: 61 lines, 44 shapes, 79 directions, 1,061 stations, 1,869 ordered memberships → v3");

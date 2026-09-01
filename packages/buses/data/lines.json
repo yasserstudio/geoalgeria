@@ -239,36 +239,6 @@
     "source_url": "https://www.openstreetmap.org/relation/15737071"
   },
   {
-    "id": "etus-tiaret-33",
-    "name": "ETUS 33",
-    "wilaya_code": "14",
-    "commune_code": null,
-    "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
-    "source": "osm",
-    "operator_id": "etus-tiaret",
-    "operator": "ETUS Tiaret",
-    "network": "Tiaret",
-    "line": "33",
-    "terminus1": null,
-    "terminus2": null,
-    "stops": null,
-    "communes_served": [],
-    "stations_served": [],
-    "shape_id": "shape-etus-tiaret-33",
-    "osm_relation_ids": [
-      13122754,
-      15831983
-    ],
-    "source_refs": [
-      "osm"
-    ],
-    "source_url": "https://www.openstreetmap.org/relation/13122754"
-  },
-  {
     "id": "etusa-1",
     "name": "Ligne 1 — El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
     "wilaya_code": "16",
@@ -2164,5 +2134,95 @@
       "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusto-1",
+    "name": "Ligne de Timiziart vers Boukhalfa",
+    "wilaya_code": "15",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusto",
+    "operator": "ETUSTO",
+    "network": "Tizi Ouzou",
+    "line": "1",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusto-1",
+    "osm_relation_ids": [
+      19119123,
+      19119124
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/19119123"
+  },
+  {
+    "id": "etusto-6",
+    "name": "6 : Boukhalfa -> Beni Douala",
+    "wilaya_code": "15",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusto",
+    "operator": "ETUSTO",
+    "network": "Tizi Ouzou",
+    "line": "6",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusto-6",
+    "osm_relation_ids": [
+      20629703,
+      20629704
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/20629703"
+  },
+  {
+    "id": "etusto-9",
+    "name": "Ligne de Bus de la Gare Boukhalfa à Kaf Naâdja",
+    "wilaya_code": "15",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusto",
+    "operator": "ETUSTO",
+    "network": "Tizi Ouzou",
+    "line": "9",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusto-9",
+    "osm_relation_ids": [
+      19108800,
+      19119196
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/19108800"
   }
 ]

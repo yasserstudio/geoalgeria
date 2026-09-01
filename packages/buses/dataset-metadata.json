@@ -4,7 +4,7 @@
   "name": "Algeria urban and suburban bus lines",
   "alternateName": "Lignes de bus urbaines et suburbaines d'Algérie",
   "identifier": "@geoalgeria/buses",
-  "description": "Reviewed first urban/suburban release: 50 retained ETUSA lines plus 8 ETUS Tiaret and 1 ETUS Mostaganem line. OSM shapes are available for 33 exact-ref ETUSA lines and all 9 added lines. Excludes unresolved, taxi, cross/inter-wilaya, ETUSTO, Setif, ETUAD, and validation-only official geometry.",
+  "description": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 3 ETUSTO Lines and 1 ETUS Mostaganem Line. Shapes are available for 33 exact-ref ETUSA Lines and all 11 added Lines. Excludes the stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD and validation-only official geometry.",
   "license": [
     "https://creativecommons.org/licenses/by-sa/4.0/",
     "https://opendatacommons.org/licenses/odbl/1-0/"
@@ -20,10 +20,10 @@
     "name": "Algeria",
     "geo": {
       "@type": "GeoShape",
-      "box": "35.290352 0.078075 36.817264 3.285756"
+      "box": "35.290352 0.078075 36.817264 4.076705"
     }
   },
-  "variableMeasured": "1105 records, 3 wilayas",
+  "variableMeasured": "1122 records, 4 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
