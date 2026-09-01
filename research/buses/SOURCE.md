@@ -78,6 +78,22 @@ partnership leads unless they expose a lawful reusable feed.
 candidate label is deliberately weaker than a publication decision: geometry,
 identity, station coverage, operator scope, and reuse rights remain separate.
 
+### Local review artifact
+
+Run:
+
+```sh
+pnpm review:buses
+```
+
+This builds the standalone offline atlas at
+`research/buses/osm/artifact/index.html`. The generated HTML stays in the
+ignored research cache, while its tracked source lives in
+`research/buses/artifact/`. It embeds the current candidate Lines, Line
+geometry, Station members, Operator and Wilaya filters, individual OSM relation
+links, and a source-access inventory. It is a review surface only and does not
+promote any candidate into `@geoalgeria/buses`.
+
 ## Operator and discovery source access — 2026-09-01
 
 `collect-operator-sources.mjs` captured 23 public responses into the ignored
