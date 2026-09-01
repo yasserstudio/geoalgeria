@@ -106,6 +106,14 @@ A named service on a **ground** transport network (bus, rail, tram), running ove
 _Avoid_: route, service
 _Note_: "route" is reserved for aviation, below. A Line is a service with many stops; a Route is one nonstop leg between two airports. The `_Avoid_` above is scoped to ground transport and does not apply to `@geoalgeria/aviation`.
 
+**Direction**:
+One directional realization of a ground-transport Line. In `@geoalgeria/buses`, each Direction preserves one source OSM relation and its `from`/`to`/`via` labels; those labels do not by themselves establish passenger termini.
+_Avoid_: route, trip, branch
+
+**Membership**:
+The link placing one Station member in one Direction at its raw source relation-member index. A Membership may repeat the same Station and preserves the source role. `osm_member_order_unvalidated` means source order is retained but has not been validated as passenger stop order.
+_Avoid_: stop sequence, call, terminus
+
 **Route**:
 One **directional** nonstop leg between two airports, as shipped by `@geoalgeria/aviation`'s `routes()`. Direction is data, not presentation: `ALG->BUD` flies nonstop on Saturdays and `BUD->ALG` on Wednesdays, and there is never a same-day nonstop round trip, so they are two records and neither implies the other. A Route that is announced but not yet operating is a **Planned route**, in a separate collection reached by `plannedRoutes()`, never a `status` value.
 _Avoid_: flight, line, connection, city pair

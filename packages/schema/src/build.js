@@ -163,9 +163,9 @@ const LICENSE_URLS = {
  * Resolve a dataset licence string for the discovery descriptor.
  *  - a raw URL → itself.
  *  - an SPDX id, or an ` AND `-joined expression whose every term is a known
- *    open SPDX id → the canonical URL of its governing term (the share-alike one,
- *    ODbL/CC-BY-SA, since redistributing a database that incorporates it binds
- *    the whole DB to it; else the first term).
+ *    open SPDX id → the canonical URL of its governing term. When both ODbL and
+ *    CC-BY-SA govern distinct parts, both URLs are returned rather than hiding
+ *    either attribution/share-alike regime.
  *  - anything else is prose describing operator-© / factual-listing terms with
  *    NO open licence → carried as `prose`, never fabricated into a licence URL.
  * @param {string} license
@@ -176,6 +176,9 @@ function licenseInfo(license) {
   if (/^https?:\/\//.test(license)) return { url: license };
   const terms = license.split(" AND ").map((t) => t.trim());
   if (terms.every((t) => LICENSE_URLS[t])) {
+    if (terms.includes("ODbL-1.0") && terms.includes("CC-BY-SA-4.0")) {
+      return { url: [LICENSE_URLS["CC-BY-SA-4.0"], LICENSE_URLS["ODbL-1.0"]] };
+    }
     const governing =
       terms.find((t) => t === "ODbL-1.0") || terms.find((t) => t === "CC-BY-SA-4.0") || terms[0];
     return { url: LICENSE_URLS[governing] };

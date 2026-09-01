@@ -1,21 +1,36 @@
 {
   "package": "@geoalgeria/buses",
   "schema_version": "2.0.0",
-  "title_fr": "Lignes de bus ETUSA (Alger)",
-  "title_ar": "خطوط حافلات إيتوزا (الجزائر العاصمة)",
-  "title_en": "ETUSA urban bus lines (Algiers)",
-  "record_count": 50,
-  "geocoded_count": 0,
-  "geocoded_pct": 0,
+  "title_fr": "Lignes de bus urbaines et suburbaines d'Algérie",
+  "title_ar": "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر",
+  "title_en": "Algeria urban and suburban bus lines",
+  "record_count": 1105,
+  "geocoded_count": 1046,
+  "geocoded_pct": 94.7,
   "precision": {
-    "exact": 0,
-    "approximate": 0
+    "exact": 1042,
+    "approximate": 4
   },
-  "estimated_universe": 122,
-  "coverage_pct": 41,
-  "coverage_note": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-  "wilayas_covered": 1,
-  "bbox": null,
+  "estimated_universe": null,
+  "coverage_pct": null,
+  "coverage_note": "Reviewed first urban/suburban release: 50 retained ETUSA lines plus 8 ETUS Tiaret and 1 ETUS Mostaganem line. OSM shapes are available for 33 exact-ref ETUSA lines and all 9 added lines. Excludes unresolved, taxi, cross/inter-wilaya, ETUSTO, Setif, ETUAD, and validation-only official geometry.",
+  "wilayas_covered": 3,
+  "bbox": [
+    0.078075,
+    35.290352,
+    3.285756,
+    36.817264
+  ],
+  "entities": [
+    {
+      "file": "lines.json",
+      "count": 59
+    },
+    {
+      "file": "stations.json",
+      "count": 1046
+    }
+  ],
   "sources": [
     {
       "key": "wikipedia",
@@ -24,15 +39,31 @@
       "license": "CC BY-SA 4.0",
       "retrieved": "2026-07-01",
       "evidence_type": "crowdsourced"
+    },
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — reviewed urban bus relations",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-09-01",
+      "evidence_type": "crowdsourced"
     }
   ],
-  "license": "CC-BY-SA-4.0",
-  "updated": "2026-07-01",
+  "license": "CC-BY-SA-4.0 AND ODbL-1.0",
+  "updated": "2026-09-01",
   "operators": [
+    "ETUS Mostaganem",
+    "ETUS Tiaret",
     "ETUSA"
   ],
   "by_operator": {
+    "ETUS Mostaganem": 1,
+    "ETUS Tiaret": 8,
     "ETUSA": 50
   },
-  "with_stop_count": 44
+  "with_stop_count": 44,
+  "shapes": 42,
+  "directions": 75,
+  "stations": 1046,
+  "station_memberships": 1878
 }

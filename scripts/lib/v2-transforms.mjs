@@ -707,29 +707,43 @@ export const MIGRATIONS = {
 
   buses: {
     file: "lines.json",
-    geojson: false, // line-level only: an empty FeatureCollection reads as a failed download
+    geojson: false, // line geometry is emitted separately as shapes.geojson
     map: (r) => clean({
       id: r.id,
-      name: `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`,
+      name: r.name ?? (
+        r.terminus1 != null && r.terminus2 != null
+          ? `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`
+          : null
+      ),
       wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
       ...geoNone,
-      source: "wikipedia",
+      source: typeof r.source === "string" && r.source.startsWith("http") ? "wikipedia" : (r.source ?? "wikipedia"),
+      operator_id: r.operator_id ?? (r.operator === "ETUSA" ? "etusa" : undefined),
       operator: r.operator, network: r.network, line: r.line,
       terminus1: r.terminus1, terminus2: r.terminus2, stops: r.stops,
       communes_served: r.communes_served, stations_served: r.stations_served,
-      source_url: r.source,
+      shape_id: r.shape_id ?? null,
+      osm_relation_ids: r.osm_relation_ids ?? [],
+      source_refs: r.source_refs ?? [typeof r.source === "string" && r.source.startsWith("http") ? "wikipedia" : (r.source ?? "wikipedia")],
+      source_url: r.source_url ?? r.source,
     }),
     meta: {
-      sources: [{ key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" }],
-      license: "CC-BY-SA-4.0",
-      estimatedUniverse: 122,
-      coverageNote: "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-      titles: { en: "ETUSA urban bus lines (Algiers)", fr: "Lignes de bus ETUSA (Alger)", ar: "خطوط حافلات إيتوزا (الجزائر العاصمة)" },
-      stats: (rows) => ({
-        operators: [...new Set(rows.map((r) => r.operator))],
-        by_operator: count(rows, "operator"),
-        with_stop_count: rows.filter((r) => r.stops != null).length,
-      }),
+      sources: [
+        { key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" },
+        { key: "osm", name: "OpenStreetMap — reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
+      ],
+      license: "CC-BY-SA-4.0 AND ODbL-1.0",
+      estimatedUniverse: null,
+      coverageNote: "Reviewed first urban/suburban release: 50 retained ETUSA lines plus 8 ETUS Tiaret and 1 ETUS Mostaganem line. OSM shapes are available for 33 exact-ref ETUSA lines and all 9 added lines. Excludes unresolved, taxi, cross/inter-wilaya, ETUSTO, Setif, ETUAD, and validation-only official geometry.",
+      titles: { en: "Algeria urban and suburban bus lines", fr: "Lignes de bus urbaines et suburbaines d'Algérie", ar: "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر" },
+      stats: (rows) => {
+        const lines = rows.filter((r) => r.line != null);
+        return {
+        operators: [...new Set(lines.map((r) => r.operator))],
+        by_operator: count(lines, "operator"),
+        with_stop_count: lines.filter((r) => r.stops != null).length,
+        };
+      },
     },
   },
 

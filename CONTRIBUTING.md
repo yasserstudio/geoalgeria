@@ -31,7 +31,7 @@ This is a small monorepo:
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,855 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
-| `packages/buses/` | `@geoalgeria/buses` | urban bus networks, 50 ETUSA (Alger) lines, line-level v1 (fr.wikipedia) |
+| `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks, 59 Lines, 42 OSM shapes, 75 Directions and 1,046 Stations across 3 Operators |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | pharmaceutical manufacturers, 171 medicine & medical-device makers (Ministry of Pharmaceutical Industry), bilingual, geocoded |
 | `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines), 3,797 geocoded, 67 wilayas (OpenStreetMap) |
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores, 572 EO/CSO/ESO with real coordinates (ooredoo.dz); completes the telecom retail trio |

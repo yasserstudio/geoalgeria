@@ -1,5 +1,274 @@
 [
   {
+    "id": "etus-mostaganem-1",
+    "name": "Cité 5 Juillet, Salamandre",
+    "wilaya_code": "27",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-mostaganem",
+    "operator": "ETUS Mostaganem",
+    "network": "Mostaganem",
+    "line": "1",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-mostaganem-1",
+    "osm_relation_ids": [
+      8745749
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8745749"
+  },
+  {
+    "id": "etus-tiaret-26",
+    "name": "ETUS 26 504 logs, Karman",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "26",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-26",
+    "osm_relation_ids": [
+      13123782,
+      15740436
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13123782"
+  },
+  {
+    "id": "etus-tiaret-27",
+    "name": "ETUS 27",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "27",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-27",
+    "osm_relation_ids": [
+      13131828,
+      15748010
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13131828"
+  },
+  {
+    "id": "etus-tiaret-28",
+    "name": "ETUS 28",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "28",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-28",
+    "osm_relation_ids": [
+      13126846,
+      15814690
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13126846"
+  },
+  {
+    "id": "etus-tiaret-29",
+    "name": "ETUS 29 Reverse",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "29",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-29",
+    "osm_relation_ids": [
+      13125127,
+      13125128
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13125127"
+  },
+  {
+    "id": "etus-tiaret-30",
+    "name": "ETUS 30",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "30",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-30",
+    "osm_relation_ids": [
+      13130866,
+      15817800
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13130866"
+  },
+  {
+    "id": "etus-tiaret-31",
+    "name": "ETUS 31",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "31",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-31",
+    "osm_relation_ids": [
+      13129621,
+      15828581
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13129621"
+  },
+  {
+    "id": "etus-tiaret-32",
+    "name": "ETUS 32",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "32",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-32",
+    "osm_relation_ids": [
+      15737071,
+      15737082
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/15737071"
+  },
+  {
+    "id": "etus-tiaret-33",
+    "name": "ETUS 33",
+    "wilaya_code": "14",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etus-tiaret",
+    "operator": "ETUS Tiaret",
+    "network": "Tiaret",
+    "line": "33",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etus-tiaret-33",
+    "osm_relation_ids": [
+      13122754,
+      15831983
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/13122754"
+  },
+  {
     "id": "etusa-1",
     "name": "Ligne 1 — El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
     "wilaya_code": "16",
@@ -9,7 +278,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "1",
@@ -32,6 +302,15 @@
       "Les Fusillés",
       "Aïssat Idir"
     ],
+    "shape_id": "shape-etusa-1",
+    "osm_relation_ids": [
+      3106213,
+      11273121
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -44,7 +323,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "10",
@@ -60,6 +340,15 @@
     "stations_served": [
       "Mai"
     ],
+    "shape_id": "shape-etusa-10",
+    "osm_relation_ids": [
+      7998869,
+      7999026
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -72,7 +361,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "12",
@@ -92,6 +382,15 @@
     "stations_served": [
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-12",
+    "osm_relation_ids": [
+      2881745,
+      7936377
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -104,7 +403,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "14",
@@ -124,6 +424,15 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": "shape-etusa-14",
+    "osm_relation_ids": [
+      3101476,
+      7936576
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -136,7 +445,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "15",
@@ -151,6 +461,15 @@
       "Tafourah - Grande Poste",
       "Mai"
     ],
+    "shape_id": "shape-etusa-15",
+    "osm_relation_ids": [
+      2865635,
+      7937507
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -163,7 +482,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "16",
@@ -178,6 +498,15 @@
     "stations_served": [
       "Mai"
     ],
+    "shape_id": "shape-etusa-16",
+    "osm_relation_ids": [
+      8006784,
+      8006787
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -190,7 +519,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "18",
@@ -208,6 +538,14 @@
       "Bachdjarah - Tennis",
       "Haï El Badr"
     ],
+    "shape_id": "shape-etusa-18",
+    "osm_relation_ids": [
+      8086697
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -220,7 +558,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "19",
@@ -237,6 +576,15 @@
     "stations_served": [
       "Aïssat Idir"
     ],
+    "shape_id": "shape-etusa-19",
+    "osm_relation_ids": [
+      7937923,
+      8061132
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -249,7 +597,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "21",
@@ -261,6 +610,15 @@
       "Beni Messous (Sidi Youcef)"
     ],
     "stations_served": [],
+    "shape_id": "shape-etusa-21",
+    "osm_relation_ids": [
+      3105911,
+      7937708
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -273,7 +631,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "27",
@@ -292,6 +651,15 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": "shape-etusa-27",
+    "osm_relation_ids": [
+      7968277,
+      7968313
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -305,6 +673,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "3",
@@ -319,6 +688,11 @@
       "Souidania"
     ],
     "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -331,7 +705,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "31",
@@ -347,6 +722,15 @@
     "stations_served": [
       "Khelifa Boukhalfa (à proximité)"
     ],
+    "shape_id": "shape-etusa-31",
+    "osm_relation_ids": [
+      8086826,
+      8086827
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -359,7 +743,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "32",
@@ -375,6 +760,14 @@
     "stations_served": [
       "Khelifa Boukhalfa (à proximité)"
     ],
+    "shape_id": "shape-etusa-32",
+    "osm_relation_ids": [
+      2865633
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -388,6 +781,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "33",
@@ -404,6 +798,11 @@
     "stations_served": [
       "Khelifa Boukhalfa (à proximité)"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -416,7 +815,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "34",
@@ -437,6 +837,15 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": "shape-etusa-34",
+    "osm_relation_ids": [
+      7996214,
+      7996275
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -450,6 +859,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "35",
@@ -466,6 +876,11 @@
     "stations_served": [
       "Khelifa Boukhalfa (à proximité)"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -479,6 +894,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "36",
@@ -490,6 +906,11 @@
       "Sidi M'Hamed (Palais du Peuple)"
     ],
     "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -502,7 +923,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "37",
@@ -515,6 +937,14 @@
     ],
     "stations_served": [
       "Tafourah - Grande Poste"
+    ],
+    "shape_id": "shape-etusa-37",
+    "osm_relation_ids": [
+      2847141
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
@@ -529,6 +959,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "39",
@@ -543,6 +974,11 @@
     "stations_served": [
       "Gare de l'Aéroport Houari Boumédiène"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -555,7 +991,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "4",
@@ -574,6 +1011,14 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": "shape-etusa-4",
+    "osm_relation_ids": [
+      2849252
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -587,6 +1032,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "40",
@@ -603,6 +1049,11 @@
     "stations_served": [
       "Khelifa Boukhalfa (à proximité)"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -616,6 +1067,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "43",
@@ -630,6 +1082,11 @@
     "stations_served": [
       "Tafourah - Grande Poste"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -643,6 +1100,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "44",
@@ -658,6 +1116,11 @@
       "Douera"
     ],
     "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -670,7 +1133,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "45",
@@ -686,6 +1150,15 @@
     "stations_served": [
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-45",
+    "osm_relation_ids": [
+      7941445,
+      8005583
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -698,7 +1171,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "48",
@@ -714,6 +1188,15 @@
     "stations_served": [
       "Mai"
     ],
+    "shape_id": "shape-etusa-48",
+    "osm_relation_ids": [
+      2865617,
+      11267140
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -727,6 +1210,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "5",
@@ -745,6 +1229,11 @@
       "Tafourah - Grande Poste",
       "El Harrach Centre"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -757,7 +1246,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "50",
@@ -773,6 +1263,15 @@
     "stations_served": [
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-50",
+    "osm_relation_ids": [
+      7966489,
+      7966499
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -786,6 +1285,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "51",
@@ -800,6 +1300,11 @@
       "Ouled Fayet"
     ],
     "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -812,7 +1317,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "54",
@@ -827,6 +1333,15 @@
     "stations_served": [
       "Khelifa Boukhalfa (à proximité)"
     ],
+    "shape_id": "shape-etusa-54",
+    "osm_relation_ids": [
+      3112924,
+      7935973
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -840,6 +1355,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "57",
@@ -855,6 +1371,11 @@
     "stations_served": [
       "Tafourah - Grande Poste"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -867,7 +1388,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "58",
@@ -885,6 +1407,15 @@
     "stations_served": [
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-58",
+    "osm_relation_ids": [
+      7953670,
+      7953809
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -897,7 +1428,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "59",
@@ -909,6 +1441,15 @@
       "Beni Messous (Sidi Youcef)"
     ],
     "stations_served": [],
+    "shape_id": "shape-etusa-59",
+    "osm_relation_ids": [
+      3105899,
+      11267137
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -922,6 +1463,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "6",
@@ -944,6 +1486,11 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -956,7 +1503,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "66",
@@ -982,6 +1530,15 @@
       "Hamma",
       "Aïssat Idir"
     ],
+    "shape_id": "shape-etusa-66",
+    "osm_relation_ids": [
+      7980541,
+      7980628
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -994,7 +1551,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "67",
@@ -1010,6 +1568,14 @@
     "stations_served": [
       "Haï El Badr"
     ],
+    "shape_id": "shape-etusa-67",
+    "osm_relation_ids": [
+      2865798
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1022,7 +1588,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "72",
@@ -1042,6 +1609,15 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-72",
+    "osm_relation_ids": [
+      8086283,
+      8086416
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1055,6 +1631,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "73",
@@ -1072,6 +1649,11 @@
       "Bachdjarah",
       "Bachdjarah - Tennis"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1084,7 +1666,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "74",
@@ -1104,6 +1687,15 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-74",
+    "osm_relation_ids": [
+      7980785,
+      7980872
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1116,7 +1708,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "79",
@@ -1137,6 +1730,14 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": "shape-etusa-79",
+    "osm_relation_ids": [
+      2865717
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1150,6 +1751,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "8",
@@ -1167,6 +1769,11 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1180,6 +1787,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "80",
@@ -1197,6 +1805,11 @@
       "Bachdjarah",
       "Bachdjarah - Tennis"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1210,6 +1823,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "81",
@@ -1223,6 +1837,11 @@
     "stations_served": [
       "Haï El Badr"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1235,7 +1854,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "82",
@@ -1251,6 +1871,15 @@
     "stations_served": [
       "El Harrach Centre"
     ],
+    "shape_id": "shape-etusa-82",
+    "osm_relation_ids": [
+      7980943,
+      7982428
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1263,7 +1892,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "88",
@@ -1278,6 +1908,15 @@
     "stations_served": [
       "Mai"
     ],
+    "shape_id": "shape-etusa-88",
+    "osm_relation_ids": [
+      7996003,
+      7996006
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1291,6 +1930,7 @@
     "geo_precision": null,
     "geo_method": null,
     "source": "wikipedia",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "89",
@@ -1309,6 +1949,11 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "wikipedia"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1321,7 +1966,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "90",
@@ -1339,6 +1985,15 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-90",
+    "osm_relation_ids": [
+      8082020,
+      8082021
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1351,7 +2006,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "92",
@@ -1375,6 +2031,15 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
+    "shape_id": "shape-etusa-92",
+    "osm_relation_ids": [
+      5597409,
+      11273123
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1387,7 +2052,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "94",
@@ -1404,6 +2070,14 @@
     "stations_served": [
       "Aïssat Idir"
     ],
+    "shape_id": "shape-etusa-94",
+    "osm_relation_ids": [
+      3122700
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1416,7 +2090,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "98",
@@ -1436,6 +2111,15 @@
       "Tafourah - Grande Poste",
       "Place des Martyrs"
     ],
+    "shape_id": "shape-etusa-98",
+    "osm_relation_ids": [
+      8086495,
+      8086496
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
@@ -1448,7 +2132,8 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
+    "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
     "line": "99",
@@ -1469,6 +2154,14 @@
       "Mai",
       "Tafourah - Grande Poste",
       "Place des Martyrs"
+    ],
+    "shape_id": "shape-etusa-99",
+    "osm_relation_ids": [
+      7996705
+    ],
+    "source_refs": [
+      "wikipedia",
+      "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   }

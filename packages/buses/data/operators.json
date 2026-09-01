@@ -1,0 +1,48 @@
+[
+  {
+    "id": "etus-mostaganem",
+    "name": "ETUS Mostaganem",
+    "name_fr": "Entreprise de transport urbain et suburbain de Mostaganem",
+    "name_ar": null,
+    "wilaya_codes": [
+      "27"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 1,
+    "shape_count": 1,
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "etus-tiaret",
+    "name": "ETUS Tiaret",
+    "name_fr": "Entreprise de transport urbain et suburbain de Tiaret",
+    "name_ar": null,
+    "wilaya_codes": [
+      "14"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 8,
+    "shape_count": 8,
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "etusa",
+    "name": "ETUSA",
+    "name_fr": "Entreprise de transport urbain et suburbain d'Alger",
+    "name_ar": "مؤسسة النقل الحضري وشبه الحضري لمدينة الجزائر",
+    "wilaya_codes": [
+      "16"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 50,
+    "shape_count": 33,
+    "source_refs": [
+      "wikipedia",
+      "osm"
+    ]
+  }
+]

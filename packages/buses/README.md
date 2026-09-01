@@ -1,25 +1,9 @@
 **English** | [Français](README.fr.md) | [العربية](README.ar.md)
 
-<div align="center">
-
 # @geoalgeria/buses
 
-**Algeria's urban bus networks, as data you can install.**
-
-[![npm](https://img.shields.io/npm/v/@geoalgeria/buses)](https://www.npmjs.com/package/@geoalgeria/buses)
-[![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/buses)](https://www.npmjs.com/package/@geoalgeria/buses)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-</div>
-
-Urban bus **lines** across Algeria, termini, stop counts, and the communes and transit
-stations each line serves. A **multi-operator** dataset; v1 ships **50 ETUSA lines**
-(Alger). Shipped as JSON and CSV. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
-
-> **Operator (source):** ETUSA – Établissement de transport urbain et suburbain d'Alger.
-> More cities/operators will be added under the same schema. For intercity coach stations
-> see [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres);
-> for rail/tram/metro see [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire).
+Reviewed urban and suburban bus data for Algeria. This release contains **59 Lines**
+from three Operators, **42 drawable shapes**, **75 Directions**, and **1,046 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -28,62 +12,52 @@ npm install @geoalgeria/buses
 ```js
 import buses from "@geoalgeria/buses";
 
-const all = buses.lines();                    // 50
-const etusa = buses.linesByOperator("ETUSA"); // 50
-const l1 = buses.lineById("etusa-1");          // El Harrach ↔ Place Aïssat Idir
+const lines = buses.lines();                  // 59
+const shape = buses.shapeForLine("etusa-1");
+const stops = buses.stationsByLine("etusa-1");
+const directions = buses.directionsByLine("etusa-1");
 ```
 
-## What's inside
+## Coverage
 
-| Dataset | Count | Notes |
-| --- | --- | --- |
-| Urban bus lines | **50** | ETUSA (Alger) – termini, stop count, communes & stations served |
+| Operator | Lines | Shapes |
+| --- | ---: | ---: |
+| ETUSA (Alger) | 50 | 33 |
+| ETUS Tiaret | 8 | 8 |
+| ETUS Mostaganem | 1 | 1 |
 
-> **Scope (v1):** line-level attributes only. Per-stop and per-line **geometry**
-> (OSM `route=bus`) is deferred to **v1.1**, ETUSA-tagged OSM route coverage is
-> currently thin. This covers 50 of ~122 ETUSA passenger lines. `wilaya_code` is `16`
-> (Alger) and joins the [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) model.
+The 50 existing ETUSA Line ids are preserved (`etusa-1`, etc.). New ids use
+`{operator-id}-{ref}`. Shapes are reconciled only where an ETUSA OSM candidate has an
+exact retained Line ref. Unresolved, taxi, cross/inter-wilaya, ETUSTO, Sétif, ETUAD,
+and validation-only official geometry are not published.
 
-## Record shape
+## Files
 
-```json
-{
-  "id": "etusa-1",
-  "name": "Ligne 1 – El Harrach ↔ Place Aïssat Idir, via Haï El Badr",
-  "wilaya_code": "16",
-  "commune_code": null,
-  "commune": null,
-  "lat": null,
-  "lng": null,
-  "geo_precision": null,
-  "geo_method": null,
-  "source": "wikipedia",
-  "operator": "ETUSA",
-  "network": "Alger",
-  "line": "1",
-  "terminus1": "El Harrach",
-  "terminus2": "Place Aïssat Idir, via Haï El Badr",
-  "stops": 16,
-  "communes_served": ["El Harrach", "Bachdjerrah", "Hussein Dey (Gare routière du Caroubier)", "El Magharia", "Belouizdad", "Sidi M'Hamed"],
-  "stations_served": ["El Harrach Centre", "Haï El Badr", "Cité Mer et Soleil", "Cité Amirouche", "Les Fusillés", "Aïssat Idir"],
-  "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
-}
-```
+- `data/lines.json` and `data/csv/lines.csv` — 59 Lines
+- `data/shapes.json` and `data/geojson/shapes.geojson` — 42 MultiLineString shapes
+- `data/directions.json` — 75 source OSM Direction relations
+- `data/stations.json`, CSV and GeoJSON — 1,046 Station nodes
+- `data/station-memberships.json` — 1,878 ordered relation memberships
+- `data/operators.json` — three Operators
 
-`commune_code` and `commune` are always `null` for this dataset, a line spans several
-communes (see `communes_served`), so no single commune applies. `lat`/`lng`/`geo_precision`/
-`geo_method` are always `null` too: these are line records with no per-line geometry (see
-Scope below).
+Membership order is the raw OSM relation member order and carries
+`sequence_status: "osm_member_order_unvalidated"`. It is **not** a validated passenger
+stop sequence. Repeated members are retained, Direction order is never reversed, and
+terminus roles are not inferred. OSM `from`, `to`, and `via` remain source labels only.
 
-## Source & license
+Unnamed OSM Stations keep `name`, `name_fr`, and `name_ar` as `null`. Twelve ETUSA
+Station nodes without a spatial Wilaya assignment are explicitly derived to Wilaya 16
+through the reviewed ETUSA Operator scope and marked `wilaya_method: "operator_scope"`.
 
-Line data comes from **fr.wikipedia** (the ETUSA line articles), licensed
-**CC BY-SA 4.0** (attribution + share-alike). Operator: **ETUSA**. Package code is
-[MIT](LICENSE); the line data inherits Wikipedia's CC BY-SA, keep attribution and
-share-alike if you redistribute. Verify with ETUSA for authoritative, current lines.
+## Sources and licences
+
+ETUSA Line attributes come from French Wikipedia under **CC BY-SA 4.0**. Shapes,
+Directions, Stations, and memberships come from a reviewed OpenStreetMap snapshot under
+**ODbL 1.0** with attribution **© OpenStreetMap contributors**. The tracked source
+includes the Overpass queries, retrieval interval, upstream response hashes, and a hash
+of the promoted selection, so regeneration is offline and reproducible.
+
+Package code is MIT. Data licences and attribution requirements are detailed in
+[NOTICE](NOTICE); verify current service with the relevant Operator.
 
 [Browse all packages →](https://geoalgeria.com/data)
-
----
-
-Made by [Yasser's Studio](https://yasser.studio) · [LinkedIn](https://www.linkedin.com/in/yasserberrehail/) · [X](https://x.com/yassersstudio) · [hello@yasser.studio](mailto:hello@yasser.studio)

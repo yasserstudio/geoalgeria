@@ -59,6 +59,7 @@ human review.
 ## Status
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
-2026-08-03), and `protection-civile`. Remaining packages convert as they are
+2026-08-03), `protection-civile`, and `buses`. The buses capture is a reviewed,
+trimmed OSM projection with its non-atomic Overpass receipts preserved. Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`
 until then.

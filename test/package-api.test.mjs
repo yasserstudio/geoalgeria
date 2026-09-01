@@ -30,6 +30,7 @@ const BY_WILAYA = [
   ["agriculture", "agriculture.json", "institutionsByWilaya"],
   ["ferroviaire", "stations.json", "stationsByWilaya"],
   ["gares-routieres", "stations.json", "stationsByWilaya"],
+  ["buses", "stations.json", "stationsByWilaya"],
   ["ooredoo", "stores.json", "storesByWilaya"],
   ["pharmacies", "pharmacies.json", "pharmaciesByWilaya"],
   ["protection-civile", "protection-civile.json", "unitsByWilaya"],
@@ -66,6 +67,7 @@ const BY_ID = [
   ["livraison", "carriers.json", "carrierById"],
   ["protection-civile", "protection-civile.json", "unitById"],
   ["cliniques", "cliniques.json", "cliniqueById"],
+  ["buses", "stations.json", "stationById"],
 ];
 
 for (const [name, file, fnName] of BY_ID) {

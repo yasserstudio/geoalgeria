@@ -424,6 +424,13 @@ test("buildManifest + buildDcat shape", () => {
     "https://opendatacommons.org/licenses/odbl/1-0/",
   );
   assert.equal("conditionsOfAccess" in buildDcat({ ...meta, license: "CC0-1.0 AND ODbL-1.0" }), false);
+  assert.deepEqual(
+    buildDcat({ ...meta, license: "CC-BY-SA-4.0 AND ODbL-1.0" }).license,
+    [
+      "https://creativecommons.org/licenses/by-sa/4.0/",
+      "https://opendatacommons.org/licenses/odbl/1-0/",
+    ],
+  );
   // Fail-safe routing: an AND-expression that mixes open SPDX terms with an unknown
   // (prose) term is NOT all-open, so the whole expression is carried as prose — the
   // `license` slot is omitted rather than fabricating a URL from the open terms alone.

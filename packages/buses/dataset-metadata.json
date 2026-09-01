@@ -1,11 +1,14 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "ETUSA urban bus lines (Algiers)",
-  "alternateName": "Lignes de bus ETUSA (Alger)",
+  "name": "Algeria urban and suburban bus lines",
+  "alternateName": "Lignes de bus urbaines et suburbaines d'Algérie",
   "identifier": "@geoalgeria/buses",
-  "description": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "description": "Reviewed first urban/suburban release: 50 retained ETUSA lines plus 8 ETUS Tiaret and 1 ETUS Mostaganem line. OSM shapes are available for 33 exact-ref ETUSA lines and all 9 added lines. Excludes unresolved, taxi, cross/inter-wilaya, ETUSTO, Setif, ETUAD, and validation-only official geometry.",
+  "license": [
+    "https://creativecommons.org/licenses/by-sa/4.0/",
+    "https://opendatacommons.org/licenses/odbl/1-0/"
+  ],
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",
@@ -14,9 +17,13 @@
   },
   "spatialCoverage": {
     "@type": "Place",
-    "name": "Algeria"
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "35.290352 0.078075 36.817264 3.285756"
+    }
   },
-  "variableMeasured": "50 records, 1 wilayas",
+  "variableMeasured": "1105 records, 3 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -29,12 +36,31 @@
       "name": "lines (CSV)",
       "encodingFormat": "text/csv",
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/csv/lines.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/stations.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/csv/stations.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/geojson/stations.geojson"
     }
   ],
-  "dateModified": "2026-07-01",
+  "dateModified": "2026-09-01",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
-    "French Wikipedia — Lignes de bus ETUSA de 1 à 99 — CC BY-SA 4.0"
+    "French Wikipedia — Lignes de bus ETUSA de 1 à 99 — CC BY-SA 4.0",
+    "OpenStreetMap — reviewed urban bus relations — ODbL 1.0 (© OpenStreetMap contributors)"
   ]
 }
