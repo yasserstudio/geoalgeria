@@ -55,13 +55,15 @@ retrieval time, OSM timestamp, and hash. Because public mirrors can have
 different replication lag, the derived snapshot is explicitly a non-atomic
 collection interval rather than one OSM revision.
 
-- **215 directional OSM relations**, representing an estimated **153 candidate
-  Lines** after obvious opposite directions are grouped.
+- **215 directional OSM relations**. A controlled operator/ref/termini pass
+  groups these into **147 candidate Lines**: 83 operator-backed urban/suburban,
+  two long inter-wilaya candidates, one shorter cross-wilaya review item, eight
+  taxi exclusions, and 53 unresolved candidates.
 - **202 relations (94%)** carry complete, map-drawable member-way geometry.
 - **1,979 unique station members** are referenced; 166 relations carry at least
   one, so station completeness is materially weaker than geometry coverage.
-- **108 ETUSA relations / 65 unique refs**; 36 of the existing package's 50
-  Wikipedia refs match an OSM ETUSA ref.
+- **109 ETUSA-matched relations / 66 candidate Lines**; 36 of the existing
+  package's 50 Wikipedia refs match an OSM ETUSA ref.
 - Only **7 relations** carry interval or duration. Service hours exist on 64,
   but there is no departure timetable or live-vehicle feed.
 - **12 relations are explicitly taxi-labelled despite `route=bus`**, and seven
@@ -70,6 +72,47 @@ collection interval rather than one OSM revision.
 This snapshot is research evidence only. It has not changed the published
 package or app. OSM data is ODbL; operator pages/apps remain validation or
 partnership leads unless they expose a lawful reusable feed.
+
+`analyze-candidates.mjs` produces the ignored `candidate-lines.json`, GeoJSON,
+`readiness.json`, and `READINESS.md` audit files from that local snapshot. A
+candidate label is deliberately weaker than a publication decision: geometry,
+identity, station coverage, operator scope, and reuse rights remain separate.
+
+## Operator and discovery source access — 2026-09-01
+
+`collect-operator-sources.mjs` captured 23 public responses into the ignored
+local evidence cache, with retrieval timestamps, byte counts, content types,
+and SHA-256 hashes:
+
+- **ETUS Béjaïa:** five official line pages embed five fetchable Google My Maps
+  KML exports. Each contains one LineString geometry and only 2–5 waypoint Points,
+  so this is useful path/termini evidence but not a full stop inventory. No open
+  reuse license was found, so the KML is validation-only and is not copied into
+  the package.
+- **ETUSTO (Tizi Ouzou):** the official passenger page exposes five line refs
+  and termini (1, 7, 1A, 9, 6), plus a 05:30–19:25 service window and 15 DA fare.
+  Its Line maps are raster images, and no open reuse license was found.
+- **ETUS Oran:** `/api/server` publicly exposes Traccar server metadata, while
+  device and position resources require operator access. It is a partnership
+  lead, not a public live-data feed.
+- **Sétif, Constantine, Annaba, Jijel, Skikda and Ouargla:** the supplied
+  third-party Play listings advertise live positions, but no reusable public
+  endpoint or reuse grant was identified. The second Ouargla app additionally
+  advertises schedules and Line information, but those remain app claims rather
+  than a public feed. The assessed listings are retained as timestamped, hashed
+  discovery evidence in the ignored cache.
+- **[DzairTransport](https://www.dzairtransport.com/):** the public Algiers journey-planning page still exposes a
+  departure/destination interface, but the site itself warns that the web
+  version is no longer updated and redirects users to Android. It is a legacy
+  comparison source, not a freshness source; its assessed page is also retained
+  in the ignored evidence cache. A bounded public station-search probe returned
+  10 suggestions with station code, name, commune and transport mode, but no
+  coordinates; the response is cached as endpoint-shape evidence, not a dataset.
+
+The official Béjaïa refs/termini do not match the nine current Béjaïa OSM
+candidate relations closely enough for an automatic operator assignment. Those
+OSM relations remain unresolved instead of being relabelled from numeric refs
+alone.
 
 ## Cleaned data — `etusa-lines-clean.json` (50 lines)
 Parser: `parse-etusa.mjs` (kept here). Per line:
@@ -103,7 +146,7 @@ Parser: `parse-etusa.mjs` (kept here). Per line:
 ## Scope & structure
 `@geoalgeria/buses` = a **multi-operator** package: each operator is a source
 (ETUSA first), all normalized to a shared line schema (`line`, `terminus1/2`,
-`stops`, `communes_served`, …) + an operator field. Because it's line/route data
+`stops`, `communes_served`, …) + an operator field. Because it's Line data
 (not points), it needs an OSM-geometry step (`route=bus` relations) the point
 packages don't — a **later, heavier build** than `gares-routieres`/`ferroviaire`.
 Téléphériques (ETUSA-run) are guided transport → likely fold into `ferroviaire`

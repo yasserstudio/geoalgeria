@@ -1,0 +1,231 @@
+{
+  "updated": "2026-09-01",
+  "note": "Research-only Operator identity registry. Aliases normalize Source labels; they do not prove that a relation belongs to an Operator. Each Source carries the canonical evidence_type, while proprietary third-party app claims stay outside Source evidence under discovery_leads. Operator records deliberately have no aggregate evidence type because their Sources can differ. No Source or discovery lead below grants an open license unless reuse_status says otherwise.",
+  "local_evidence_collector": {
+    "script": "research/buses/collect-operator-sources.mjs",
+    "output": "research/buses/osm/operator-sources/",
+    "tracked": false,
+    "note": "Ignored validation cache with per-response timestamps and SHA-256 hashes; not a package input."
+  },
+  "relation_operator_matches": [
+    {"osm_relation_id": 19119124, "operator_id": "etusto", "reason": "Official ETUSTO Line 1 ref and termini match"},
+    {"osm_relation_id": 19119196, "operator_id": "etusto", "reason": "Official ETUSTO Line 9 ref and termini match"},
+    {"osm_relation_id": 20629703, "operator_id": "etusto", "reason": "Official ETUSTO Line 6 ref and termini match"},
+    {"osm_relation_id": 20629704, "operator_id": "etusto", "reason": "Official ETUSTO Line 6 name and termini match"}
+  ],
+  "operators": [
+    {
+      "id": "etusa",
+      "name_fr": "Entreprise de transport urbain et suburbain d'Alger",
+      "name_ar": "مؤسسة النقل الحضري وشبه الحضري لمدينة الجزائر",
+      "wilaya_codes": ["16"],
+      "scope": "urban_suburban",
+      "candidate_grouping": "ref",
+      "aliases": ["ETUSA", "Etusa", "إيتوزا", "مؤسسة النقل الحضري وشبه الحضري لمدينة الجزائر"],
+      "sources": [
+        {"id": "etusa-osm", "url": "https://www.openstreetmap.org/", "evidence_type": "crowdsourced", "kind": "community_map", "claims": ["osm_relations"], "reuse_status": "odbl"},
+        {"id": "etusa-wikidata", "url": "https://www.wikidata.org/wiki/Q3055259", "evidence_type": "crowdsourced", "kind": "knowledge_graph", "claims": ["operator_identity"], "reuse_status": "cc0"},
+        {"id": "etusa-wikipedia-lines", "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", "evidence_type": "crowdsourced", "kind": "secondary_line_list", "claims": ["wikipedia_line_attributes"], "reuse_status": "cc_by_sa"}
+      ],
+      "available_data": ["osm_relations", "wikipedia_line_attributes"],
+      "reuse_status": "source_licenses_apply"
+    },
+    {
+      "id": "etus-tiaret",
+      "name_fr": "Entreprise de transport urbain et suburbain de Tiaret",
+      "name_ar": null,
+      "wilaya_codes": ["14"],
+      "scope": "urban_suburban",
+      "candidate_grouping": "ref",
+      "aliases": ["ETUS TIARET", "ETUST"],
+      "sources": [
+        {"id": "etus-tiaret-osm", "url": "https://www.openstreetmap.org/", "evidence_type": "crowdsourced", "kind": "community_map", "claims": ["osm_relations"], "reuse_status": "odbl"}
+      ],
+      "available_data": ["osm_relations"],
+      "reuse_status": "odbl"
+    },
+    {
+      "id": "etusto",
+      "name_fr": "Établissement public de transport urbain et suburbain de Tizi Ouzou",
+      "name_ar": null,
+      "wilaya_codes": ["15"],
+      "scope": "urban_suburban",
+      "candidate_grouping": "ref",
+      "aliases": ["ETUSTO"],
+      "sources": [
+        {"id": "etusto-home", "url": "http://etusto.dz/", "evidence_type": "official", "kind": "operator_page", "claims": ["service_hours", "fare"], "reuse_status": "no_open_license_found"},
+        {"id": "etusto-passenger-lines", "url": "http://etusto.dz/espv.html", "evidence_type": "official", "kind": "operator_line_page", "claims": ["five_line_facts", "raster_line_maps"], "reuse_status": "no_open_license_found"}
+      ],
+      "available_data": ["five_line_facts", "raster_line_maps", "service_hours", "fare"],
+      "official_lines": [
+        {"ref": "1", "from": "TIMIZART LOGHBAR", "to": "ST BOUKHALFA", "geometry": "raster"},
+        {"ref": "7", "from": "TIMIZART LOGHBAR", "to": "OUED FALI", "geometry": "raster"},
+        {"ref": "1A", "from": "TIMIZART LOGHBAR", "to": "AADL", "geometry": "raster"},
+        {"ref": "9", "from": "ST BOUKHALFA", "to": "GARE KAF NAAJA", "geometry": "raster"},
+        {"ref": "6", "from": "ST BOUKHALFA", "to": "BENI DOUALA", "geometry": "raster"}
+      ],
+      "reuse_status": "no_open_license_found"
+    },
+    {
+      "id": "etus-setif",
+      "name_fr": "Entreprise de transport urbain et suburbain de Sétif",
+      "name_ar": "المؤسسة العمومية للنقل الحضري وشبه الحضري بسطيف",
+      "wilaya_codes": ["19"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS SETIF", "المؤسسة العمومية للنقل الحضري وشبه الحضري بسطيف"],
+      "sources": [
+        {"id": "etus-setif-osm", "url": "https://www.openstreetmap.org/", "evidence_type": "crowdsourced", "kind": "community_map", "claims": ["osm_relations"], "reuse_status": "odbl"}
+      ],
+      "available_data": ["osm_relations"],
+      "discovery_leads": [
+        {"id": "setifis-bus-play", "url": "https://play.google.com/store/apps/details?id=org.bussetif.manager&hl=fr", "kind": "third_party_app_claim", "claims": ["live_positions_in_third_party_app"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["live_positions_in_third_party_app"],
+      "reuse_status": "no_open_feed_found"
+    },
+    {
+      "id": "etuad",
+      "name_fr": "Entreprise de transport urbain et suburbain d'Aïn Defla",
+      "name_ar": null,
+      "wilaya_codes": ["44"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUAD", "Transport_Urbain_Ain_Defla"],
+      "sources": [
+        {"id": "etuad-osm", "url": "https://www.openstreetmap.org/", "evidence_type": "crowdsourced", "kind": "community_map", "claims": ["osm_relations"], "reuse_status": "odbl"}
+      ],
+      "available_data": ["osm_relations"],
+      "reuse_status": "odbl"
+    },
+    {
+      "id": "etus-mostaganem",
+      "name_fr": "Entreprise de transport urbain et suburbain de Mostaganem",
+      "name_ar": null,
+      "wilaya_codes": ["27"],
+      "scope": "urban_suburban",
+      "aliases": ["Etus Mostaganem", "ETUS Mostaganem"],
+      "sources": [
+        {"id": "etus-mostaganem-osm", "url": "https://www.openstreetmap.org/", "evidence_type": "crowdsourced", "kind": "community_map", "claims": ["osm_relations"], "reuse_status": "odbl"}
+      ],
+      "available_data": ["osm_relations"],
+      "reuse_status": "odbl"
+    },
+    {
+      "id": "etus-bejaia",
+      "name_fr": "Entreprise de transport urbain et suburbain de Béjaïa",
+      "name_ar": null,
+      "wilaya_codes": ["06"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS BEJAIA", "ETUS Béjaïa"],
+      "sources": [
+        {"id": "etus-bejaia-line-1", "url": "https://etusbejaia.dz/ligne1/", "evidence_type": "official", "kind": "operator_line_page_with_embedded_map", "claims": ["five_line_pages", "five_line_geometries", "two_to_five_waypoints_per_line"], "reuse_status": "no_open_license_found"},
+        {"id": "etus-bejaia-line-2", "url": "https://etusbejaia.dz/ligne2/", "evidence_type": "official", "kind": "operator_line_page_with_embedded_map", "claims": [], "reuse_status": "no_open_license_found"},
+        {"id": "etus-bejaia-line-3", "url": "https://etusbejaia.dz/ligne3/", "evidence_type": "official", "kind": "operator_line_page_with_embedded_map", "claims": [], "reuse_status": "no_open_license_found"},
+        {"id": "etus-bejaia-line-4", "url": "https://etusbejaia.dz/ligne4/", "evidence_type": "official", "kind": "operator_line_page_with_embedded_map", "claims": [], "reuse_status": "no_open_license_found"},
+        {"id": "etus-bejaia-line-5", "url": "https://etusbejaia.dz/ligne5/", "evidence_type": "official", "kind": "operator_line_page_with_embedded_map", "claims": [], "reuse_status": "no_open_license_found"}
+      ],
+      "available_data": ["five_line_pages", "five_line_geometries", "two_to_five_waypoints_per_line"],
+      "official_lines": [
+        {"ref": "1", "from": "GARE ROUTIERE", "to": "ADRAR OUFARNOU", "map_id": "1lSsQzOo8pZY7ayY3y97O_X5Pn1_LkCc"},
+        {"ref": "2", "from": "GARE ROUTIERE", "to": "UNIVERSITE", "map_id": "1VK-8bdLxv9AC0zifGTHiTNpYkadihcc"},
+        {"ref": "3", "from": "GARE ROUTIERE", "to": "BVD AMIROUCHE", "map_id": "1sTCj6svdW1NKRiplo19ZnBAxfB_N5C4"},
+        {"ref": "4", "from": "GARE ROUTIERE", "to": "SIDI AHMED", "map_id": "1_hnbjP6GLHh9pMQHiO7l5eiaTtkE8jw"},
+        {"ref": "5", "from": "GARE ROUTIERE", "to": "IGHER OUZARIF", "map_id": "1YX4Zd8vFfkPXSMeXOfuo1IlDtcmSe-4"}
+      ],
+      "reuse_status": "no_open_license_found"
+    },
+    {
+      "id": "etus-oran",
+      "name_fr": "Entreprise de transport urbain et suburbain d'Oran",
+      "name_ar": null,
+      "wilaya_codes": ["31"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS ORAN", "ETO Oran"],
+      "sources": [
+        {"id": "etus-oran-tracker", "url": "https://gps.etusoran.dz/", "evidence_type": "official", "kind": "operator_tracker", "claims": ["protected_live_devices"], "reuse_status": "operator_access_required"},
+        {"id": "etus-oran-server", "url": "https://gps.etusoran.dz/api/server", "evidence_type": "official", "kind": "public_tracker_metadata", "claims": ["public_tracker_metadata"], "reuse_status": "no_open_license_found"}
+      ],
+      "available_data": ["public_tracker_metadata", "protected_live_devices"],
+      "discovery_leads": [
+        {"id": "etus-oran-pay-play", "url": "https://play.google.com/store/apps/details?id=oran.routes.devcloud", "kind": "third_party_app_claim", "claims": ["third_party_line_schedule_claims"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["third_party_line_schedule_claims"],
+      "reuse_status": "operator_access_required"
+    },
+    {
+      "id": "etusc-constantine",
+      "name_fr": "Entreprise de transport urbain et suburbain de Constantine",
+      "name_ar": null,
+      "wilaya_codes": ["25"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUSC", "ETUSC Constantine"],
+      "sources": [],
+      "available_data": [],
+      "discovery_leads": [
+        {"id": "cirta-bus-play", "url": "https://play.google.com/store/apps/details?id=org.buscirta.manager&hl=fr", "kind": "third_party_app_claim", "claims": ["live_positions_in_third_party_app"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["live_positions_in_third_party_app"],
+      "reuse_status": "no_open_feed_found"
+    },
+    {
+      "id": "etus-annaba",
+      "name_fr": "Entreprise de transport urbain et suburbain d'Annaba",
+      "name_ar": null,
+      "wilaya_codes": ["23"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS Annaba"],
+      "sources": [],
+      "available_data": [],
+      "discovery_leads": [
+        {"id": "bouna-bus-play", "url": "https://play.google.com/store/apps/details?id=org.busannaba.manager&hl=fr", "kind": "third_party_app_claim", "claims": ["live_positions_in_third_party_app"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["live_positions_in_third_party_app"],
+      "reuse_status": "no_open_feed_found"
+    },
+    {
+      "id": "etus-jijel",
+      "name_fr": "Entreprise de transport urbain et suburbain de Jijel",
+      "name_ar": null,
+      "wilaya_codes": ["18"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS Jijel"],
+      "sources": [],
+      "available_data": [],
+      "discovery_leads": [
+        {"id": "kotama-mob-play", "url": "https://play.google.com/store/apps/details?id=org.busjijel.manager&hl=fr", "kind": "third_party_app_claim", "claims": ["live_positions_in_third_party_app"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["live_positions_in_third_party_app"],
+      "reuse_status": "no_open_feed_found"
+    },
+    {
+      "id": "etus-skikda",
+      "name_fr": "Entreprise de transport urbain et suburbain de Skikda",
+      "name_ar": null,
+      "wilaya_codes": ["21"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS Skikda"],
+      "sources": [],
+      "available_data": [],
+      "discovery_leads": [
+        {"id": "bus-rusicada-play", "url": "https://play.google.com/store/apps/details?id=org.skikdabus.manager&hl=fr", "kind": "third_party_app_claim", "claims": ["live_positions_in_third_party_app"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["live_positions_in_third_party_app"],
+      "reuse_status": "no_open_feed_found"
+    },
+    {
+      "id": "etus-ouargla",
+      "name_fr": "Entreprise de transport urbain et suburbain de Ouargla",
+      "name_ar": null,
+      "wilaya_codes": ["30"],
+      "scope": "urban_suburban",
+      "aliases": ["ETUS Ouargla", "ETUS Ouaregla"],
+      "sources": [],
+      "available_data": [],
+      "discovery_leads": [
+        {"id": "ouargla-bus-play", "url": "https://play.google.com/store/apps/details?id=org.ouareglabus.manager&hl=en", "kind": "third_party_app_claim", "claims": ["live_positions_in_third_party_app"], "reuse_status": "no_open_feed_found"},
+        {"id": "etus-ouargla-pay-play", "url": "https://play.google.com/store/apps/details?id=ouargla.routes.devcloud&hl=en", "kind": "third_party_app_claim", "claims": ["third_party_line_schedule_claims"], "reuse_status": "no_open_feed_found"}
+      ],
+      "discovery_findings": ["live_positions_in_third_party_app", "third_party_line_schedule_claims"],
+      "reuse_status": "no_open_feed_found"
+    }
+  ]
+}
