@@ -45,6 +45,32 @@ the user 2026-07-01.
 3. **No official ETUSA open data.** Site `etusa.dz`; no known JSON/GTFS feed.
    Community source ⇒ Wikipedia is **CC BY-SA** (attribution required), not official.
 
+## OpenStreetMap feasibility snapshot — 2026-09-01
+
+`collect-osm.mjs` now captures every Algeria `type=route + route=bus` relation
+through the Overpass API in resumable batches. The local artifacts live in
+`research/buses/osm/`; `COVERAGE.md` is the human-readable audit. Every raw
+response has a receipt in `osm/raw/manifest.json` with its query, endpoint,
+retrieval time, OSM timestamp, and hash. Because public mirrors can have
+different replication lag, the derived snapshot is explicitly a non-atomic
+collection interval rather than one OSM revision.
+
+- **215 directional OSM relations**, representing an estimated **153 candidate
+  Lines** after obvious opposite directions are grouped.
+- **202 relations (94%)** carry complete, map-drawable member-way geometry.
+- **1,979 unique station members** are referenced; 166 relations carry at least
+  one, so station completeness is materially weaker than geometry coverage.
+- **108 ETUSA relations / 65 unique refs**; 36 of the existing package's 50
+  Wikipedia refs match an OSM ETUSA ref.
+- Only **7 relations** carry interval or duration. Service hours exist on 64,
+  but there is no departure timetable or live-vehicle feed.
+- **12 relations are explicitly taxi-labelled despite `route=bus`**, and seven
+  cross a wilaya boundary. Both are review flags, not publishable scope labels.
+
+This snapshot is research evidence only. It has not changed the published
+package or app. OSM data is ODbL; operator pages/apps remain validation or
+partnership leads unless they expose a lawful reusable feed.
+
 ## Cleaned data — `etusa-lines-clean.json` (50 lines)
 Parser: `parse-etusa.mjs` (kept here). Per line:
 ```jsonc
@@ -64,9 +90,9 @@ Parser: `parse-etusa.mjs` (kept here). Per line:
 ```
 
 ## Data-quality notes
-- **Line-level attributes only — no geometry, no coordinates.** For a geocoded
-  dataset, pull OSM route relations (`route=bus`, `operator=ETUSA`/`network=ETUSA`)
-  for polylines, and geocode termini/stops via OSM/Wikidata.
+- The **Wikipedia seed** is line-level only and has no geometry or coordinates.
+  The separate 2026-09-01 OSM research snapshot now supplies feasibility
+  geometry and station members, but it is not yet reconciled or published.
 - **Partial coverage:** 50 of ~122 lines (only the 1–99 page, and only lines with
   a template). Many attribute fields (length, duration, depot, ridership) are blank
   on Wikipedia.
