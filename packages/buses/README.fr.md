@@ -13,7 +13,7 @@
 </div>
 
 Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **85 lignes**,
-**45 tracés**, **80 directions** et **1 168 stations** pour huit exploitants : ETUSA
+**47 tracés**, **83 directions** et **1 290 stations** pour huit exploitants : ETUSA
 (Alger), ETUS Tiaret, ETUSTO (Tizi Ouzou), ETUS Béjaïa, ETUS M'Sila,
 ETUS Sidi Bel Abbès, ETUS Setif et ETUS Mostaganem. En JSON,
 CSV et GeoJSON. Fait partie de
@@ -39,10 +39,10 @@ const trace = buses.shapeForLine("etusa-1");
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
 | Lignes | **85** | ETUSA 50, ETUS Sidi Bel Abbès 8, ETUS Tiaret 7, ETUSTO 5, ETUS Béjaïa 5, ETUS Setif 5, ETUS M'Sila 4, ETUS Mostaganem 1 |
-| Tracés OSM | **45** | 33 ETUSA + 12 lignes des autres exploitants |
-| Stations | **1 168** | Nœuds OSM, noms nuls conservés |
+| Tracés OSM | **47** | 33 ETUSA + 14 lignes des autres exploitants |
+| Stations | **1 290** | Nœuds OSM, noms nuls conservés |
 
-L'ordre des 1 982 appartenances est l'ordre brut des membres OSM, marqué
+L'ordre des 2 105 appartenances est l'ordre brut des membres OSM, marqué
 `osm_member_order_unvalidated` : il ne constitue pas un ordre voyageurs validé et aucun
 terminus n'est déduit automatiquement.
 

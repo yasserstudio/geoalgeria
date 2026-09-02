@@ -23,16 +23,16 @@ const officialSetif = read("sources/buses/etus-setif-lines.json");
 
 test("buses v3 ships only the reviewed release boundary", () => {
   assert.equal(lines.length, 85);
-  assert.equal(shapes.length, 45);
-  assert.equal(directions.length, 80);
-  assert.equal(stations.length, 1168);
-  assert.equal(memberships.length, 1982);
+  assert.equal(shapes.length, 47);
+  assert.equal(directions.length, 83);
+  assert.equal(stations.length, 1290);
+  assert.equal(memberships.length, 2105);
   assert.equal(operators.length, 8);
-  assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 79);
+  assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 82);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 1);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [50, 33], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 1], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
+    { etusa: [50, 33], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
   assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto"]));
   assert.ok(lines.every((line, index) => index === 0
@@ -57,6 +57,8 @@ test("buses v3 ships only the reviewed release boundary", () => {
       && line.source_refs.join("+") === "etus-sidi-bel-abbes" && line.shape_id === null));
   assert.deepEqual(lines.filter((line) => line.operator_id === "etus-setif").map((line) => line.line), ["101", "104", "105", "106A", "106B"]);
   const setif101 = lines.find((line) => line.id === "etus-setif-101");
+  const setif104 = lines.find((line) => line.id === "etus-setif-104");
+  const setif106B = lines.find((line) => line.id === "etus-setif-106B");
   assert.equal(setif101?.source_refs.join("+"), "etus-setif+osm");
   assert.deepEqual(
     [setif101?.terminus1_fr, setif101?.terminus1_ar, setif101?.terminus2_fr, setif101?.terminus2_ar],
@@ -67,8 +69,14 @@ test("buses v3 ships only the reviewed release boundary", () => {
       .map((direction) => [direction.from, direction.to, direction.source, direction.source_refs]),
     [["Gare routière", "Cité Les Tours", "etus-setif+osm", ["etus-setif", "osm"]]],
   );
-  assert.ok(lines.filter((line) => line.operator_id === "etus-setif" && line.line !== "101")
+  assert.ok([setif104, setif106B].every((line) => line?.shape_id && line.source_refs.join("+") === "etus-setif+osm"));
+  assert.ok(lines.filter((line) => line.operator_id === "etus-setif" && ["105", "106A"].includes(line.line))
     .every((line) => line.shape_id === null && line.source_refs.join("+") === "etus-setif"));
+  assert.deepEqual(
+    directions.filter((direction) => direction.line_id === "etus-setif-106B")
+      .map((direction) => [direction.from, direction.to]),
+    [["Centre-ville", "Cité Aïn Romane"], ["Cité Aïn Romane", "Centre-ville"]],
+  );
   assert.ok(lines.every((line) => Array.isArray(line.departure_schedules)));
 });
 
@@ -80,14 +88,14 @@ test("Line and Station public ids and shape references are stable", () => {
   assert.equal(new Set(lines.map((line) => line.id)).size, lines.length);
   assert.equal(new Set(stations.map((station) => station.id)).size, stations.length);
   const shapeIds = new Set(shapes.map((shape) => shape.id));
-  assert.equal(lines.filter((line) => line.shape_id != null).length, 45);
+  assert.equal(lines.filter((line) => line.shape_id != null).length, 47);
   assert.ok(lines.every((line) => line.shape_id == null || shapeIds.has(line.shape_id)));
 });
 
 test("shape GeoJSON mirrors every reviewed shape", () => {
   const geojson = read("packages/buses/data/geojson/shapes.geojson");
   assert.equal(geojson.type, "FeatureCollection");
-  assert.equal(geojson.features.length, 45);
+  assert.equal(geojson.features.length, 47);
   assert.ok(geojson.features.every((feature) => feature.geometry.type === "MultiLineString"));
   assert.deepEqual(new Set(geojson.features.map((feature) => feature.properties.line_id)), new Set(shapes.map((shape) => shape.line_id)));
 });
@@ -103,7 +111,7 @@ test("ordered memberships reproduce raw OSM member positions without collapsing 
       });
     }
   }
-  assert.equal(expected.length, 1982);
+  assert.equal(expected.length, 2105);
   const actual = memberships.map((membership) => ({
     relation: membership.osm_relation_id,
     osmMemberIndex: membership.osm_member_index,
@@ -179,7 +187,10 @@ test("official Operator Sources define the reviewed Line sets", () => {
   assert.deepEqual(officialSetif.lines.map((line) => line.ref), ["101", "104", "105", "106A", "106B"]);
   assert.equal(officialSetif.lines.find((line) => line.ref === "101")?.terminus2_ar, "حي الأبراج");
   assert.equal(officialSetif.lines.find((line) => line.ref === "101")?.terminus2_fr, "Cité Les Tours");
-  assert.equal(officialSetif.evidence.geometry_validation.osm_relation_id, 14608521);
+  assert.deepEqual(
+    Object.fromEntries(officialSetif.evidence.geometry_validations.map((validation) => [validation.line, validation.osm_relation_ids])),
+    { "101": [14608521], "104": [14596722], "106B": [14616622, 14618940] },
+  );
   assert.match(officialSetif.evidence.supplied_image_sha256, /^[a-f0-9]{64}$/);
 });
 
@@ -195,13 +206,15 @@ test("tracked official Source bytes match their receipts", () => {
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
   assert.equal(api.operatorRecords().length, 8);
-  assert.equal(api.shapes().length, 45);
-  assert.equal(api.directions().length, 80);
-  assert.equal(api.stations().length, 1168);
-  assert.equal(api.stationMemberships().length, 1982);
+  assert.equal(api.shapes().length, 47);
+  assert.equal(api.directions().length, 83);
+  assert.equal(api.stations().length, 1290);
+  assert.equal(api.stationMemberships().length, 2105);
   assert.equal(api.shapeForLine("etus-tiaret-32")?.line_id, "etus-tiaret-32");
   assert.equal(api.shapeForLine("etusto-9")?.line_id, "etusto-9");
   assert.equal(api.shapeForLine("etus-setif-101")?.line_id, "etus-setif-101");
+  assert.equal(api.shapeForLine("etus-setif-104")?.line_id, "etus-setif-104");
+  assert.equal(api.shapeForLine("etus-setif-106B")?.line_id, "etus-setif-106B");
   const sidiLine = api.lineById("etus-sidi-bel-abbes-3B");
   assert.equal(sidiLine?.route_diagram_url, "https://etus22.dz/assets/image/3.jpg");
   assert.deepEqual(sidiLine?.departure_schedules?.map((schedule) => schedule.departures.length), [25, 25]);

@@ -4,7 +4,7 @@
   "name": "Algeria urban and suburban bus lines",
   "alternateName": "Lignes de bus urbaines et suburbaines d'Algérie",
   "identifier": "@geoalgeria/buses",
-  "description": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Line 101 has reusable OSM geometry matched to the announced terminal at حي الأبراج (Les Tours). Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou, 1 Setif and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
+  "description": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
   "conditionsOfAccess": "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
   "isAccessibleForFree": true,
   "creator": {
@@ -17,10 +17,10 @@
     "name": "Algeria",
     "geo": {
       "@type": "GeoShape",
-      "box": "35.290352 0.078075 36.817264 5.443601"
+      "box": "35.290352 0.078075 36.817264 5.495723"
     }
   },
-  "variableMeasured": "1253 records, 8 wilayas",
+  "variableMeasured": "1375 records, 8 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",

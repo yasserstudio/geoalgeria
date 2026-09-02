@@ -143,16 +143,27 @@ const memberships = [];
 const linesByStation = new Map();
 const operatorsByStation = new Map();
 
+const setifDirectionEndpoints = (line, relation) => {
+  if (!line) return { from: null, to: null };
+  const reverse = line.line === "106B" && relation.id === 14618940;
+  return reverse
+    ? { from: line.terminus2_fr, to: line.terminus1_fr }
+    : { from: line.terminus1_fr, to: line.terminus2_fr };
+};
+
 for (const shape of osm.line_shapes) {
   const currentLineId = lineId(shape.operator_id, shape.ref);
   const currentLine = lines.find((line) => line.id === currentLineId);
   for (const relation of shape.relations) {
     const directionId = `osm-relation-${relation.id}`;
+    const setifEndpoints = shape.operator_id === "etus-setif"
+      ? setifDirectionEndpoints(currentLine, relation)
+      : null;
     directions.push({
       id: directionId, line_id: currentLineId, shape_id: shapeId(shape.operator_id, shape.ref),
       osm_relation_id: relation.id,
-      from: shape.operator_id === "etus-setif" ? currentLine?.terminus1_fr ?? null : relation.tags?.from ?? null,
-      to: shape.operator_id === "etus-setif" ? currentLine?.terminus2_fr ?? null : relation.tags?.to ?? null,
+      from: setifEndpoints?.from ?? relation.tags?.from ?? null,
+      to: setifEndpoints?.to ?? relation.tags?.to ?? null,
       via: relation.tags?.via ?? null,
       public_transport_version: relation.tags?.["public_transport:version"] === "2" ? 2 : null,
       sequence_status: "osm_member_order_unvalidated",
@@ -215,7 +226,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 85, shapes: 45, directions: 80, stations: 1168, memberships: 1982 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 85, shapes: 47, directions: 83, stations: 1290, memberships: 2105 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -283,4 +294,4 @@ write(join(DATA, "geojson", "shapes.geojson"), {
   features: shapes.map(({ geometry, ...properties }) => ({ type: "Feature", id: properties.id, geometry, properties })),
 });
 
-console.log("buses: 85 lines, 45 shapes, 80 directions, 1,168 stations, 1,982 ordered memberships → v3");
+console.log("buses: 85 lines, 47 shapes, 83 directions, 1,290 stations, 2,105 ordered memberships → v3");

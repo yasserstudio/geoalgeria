@@ -990,12 +990,60 @@
     ]
   },
   {
+    "id": "osm-relation-14596722",
+    "line_id": "etus-setif-104",
+    "shape_id": "shape-etus-setif-104",
+    "osm_relation_id": 14596722,
+    "from": "Gare routière",
+    "to": "Cité El Hidhab",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "etus-setif+osm",
+    "source_refs": [
+      "etus-setif",
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-14608521",
     "line_id": "etus-setif-101",
     "shape_id": "shape-etus-setif-101",
     "osm_relation_id": 14608521,
     "from": "Gare routière",
     "to": "Cité Les Tours",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "etus-setif+osm",
+    "source_refs": [
+      "etus-setif",
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-14616622",
+    "line_id": "etus-setif-106B",
+    "shape_id": "shape-etus-setif-106B",
+    "osm_relation_id": 14616622,
+    "from": "Centre-ville",
+    "to": "Cité Aïn Romane",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "etus-setif+osm",
+    "source_refs": [
+      "etus-setif",
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-14618940",
+    "line_id": "etus-setif-106B",
+    "shape_id": "shape-etus-setif-106B",
+    "osm_relation_id": 14618940,
+    "from": "Cité Aïn Romane",
+    "to": "Centre-ville",
     "via": null,
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",

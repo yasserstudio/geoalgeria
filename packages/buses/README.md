@@ -3,7 +3,7 @@
 # @geoalgeria/buses
 
 Reviewed urban and suburban bus data for Algeria. This release contains **85 Lines**
-from eight Operators, **45 drawable shapes**, **80 Directions**, and **1,168 Stations**.
+from eight Operators, **47 drawable shapes**, **83 Directions**, and **1,290 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -28,7 +28,7 @@ const directions = buses.directionsByLine("etusa-1");
 | ETUS Béjaïa | 5 | 0 |
 | ETUS M'Sila | 4 | 0 |
 | ETUS Sidi Bel Abbès | 8 | 0 |
-| ETUS Setif | 5 | 1 |
+| ETUS Setif | 5 | 3 |
 | ETUS Mostaganem | 1 | 1 |
 
 The 50 existing ETUSA Line ids are preserved (`etusa-1`, etc.). New ids use
@@ -41,10 +41,10 @@ validation-only official geometry are not published as shapes.
 ## Files
 
 - `data/lines.json` and `data/csv/lines.csv` — 85 Lines
-- `data/shapes.json` and `data/geojson/shapes.geojson` — 45 MultiLineString shapes
-- `data/directions.json` — 80 source OSM Direction relations
-- `data/stations.json`, CSV and GeoJSON — 1,168 Station nodes
-- `data/station-memberships.json` — 1,982 ordered relation memberships
+- `data/shapes.json` and `data/geojson/shapes.geojson` — 47 MultiLineString shapes
+- `data/directions.json` — 83 source OSM Direction relations
+- `data/stations.json`, CSV and GeoJSON — 1,290 Station nodes
+- `data/station-memberships.json` — 2,105 ordered relation memberships
 - `data/operators.json` — eight Operators
 
 Membership order is the raw OSM relation member order and carries

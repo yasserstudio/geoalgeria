@@ -2888,10 +2888,13 @@
     "route_diagram_url": null,
     "communes_served": [],
     "stations_served": [],
-    "shape_id": null,
-    "osm_relation_ids": [],
+    "shape_id": "shape-etus-setif-104",
+    "osm_relation_ids": [
+      14596722
+    ],
     "source_refs": [
-      "etus-setif"
+      "etus-setif",
+      "osm"
     ],
     "source_url": "etus-setif"
   },
@@ -2993,10 +2996,14 @@
     "route_diagram_url": null,
     "communes_served": [],
     "stations_served": [],
-    "shape_id": null,
-    "osm_relation_ids": [],
+    "shape_id": "shape-etus-setif-106B",
+    "osm_relation_ids": [
+      14616622,
+      14618940
+    ],
     "source_refs": [
-      "etus-setif"
+      "etus-setif",
+      "osm"
     ],
     "source_url": "etus-setif"
   },

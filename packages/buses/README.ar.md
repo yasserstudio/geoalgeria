@@ -14,8 +14,8 @@
 
 <div dir="rtl">
 
-بيانات مراجعة لخطوط الحافلات الحضرية وشبه الحضرية: **85 خطًا** و**45 مسارًا** و**80 اتجاهًا**
-و**1,168 محطة** لدى ثمانية مشغّلين: ETUSA وETUS Tiaret وETUSTO وETUS Béjaïa وETUS M'Sila وETUS Sidi Bel Abbès وETUS Setif وETUS Mostaganem.
+بيانات مراجعة لخطوط الحافلات الحضرية وشبه الحضرية: **85 خطًا** و**47 مسارًا** و**83 اتجاهًا**
+و**1,290 محطة** لدى ثمانية مشغّلين: ETUSA وETUS Tiaret وETUSTO وETUS Béjaïa وETUS M'Sila وETUS Sidi Bel Abbès وETUS Setif وETUS Mostaganem.
 بصيغ JSON وCSV وGeoJSON. جزء من
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -43,10 +43,10 @@ const etusa = buses.linesByOperator("ETUSA"); // 50
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
 | الخطوط | **85** | 50 ETUSA و8 ETUS Sidi Bel Abbès و7 ETUS Tiaret و5 ETUSTO و5 ETUS Béjaïa و5 ETUS Setif و4 ETUS M'Sila وخط ETUS Mostaganem |
-| المسارات | **45** | مسارات OSM مراجعة |
-| المحطات | **1,168** | عقد OSM مع الحفاظ على الأسماء الفارغة |
+| المسارات | **47** | مسارات OSM مراجعة |
+| المحطات | **1,290** | عقد OSM مع الحفاظ على الأسماء الفارغة |
 
-ترتيب العضويات البالغ عددها 1,982 هو ترتيب أعضاء علاقة OSM الخام ويحمل القيمة
+ترتيب العضويات البالغ عددها 2,105 هو ترتيب أعضاء علاقة OSM الخام ويحمل القيمة
 `osm_member_order_unvalidated`؛ وليس ترتيب ركوب متحققًا ولا نستنتج منه المحطات الطرفية.
 
 ## المصدر والرخصة

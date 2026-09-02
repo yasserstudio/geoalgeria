@@ -20,7 +20,12 @@ const registry = read(join(HERE, "operator-registry.json"));
 const officialTiaret = read(join(ROOT, "sources", "buses", "etus-tiaret-lines.json"));
 const officialEtusto = read(join(ROOT, "sources", "buses", "etusto-lines.json"));
 const officialSetif = read(join(ROOT, "sources", "buses", "etus-setif-lines.json"));
-const approvedSetifRelationId = officialSetif.evidence.geometry_validation.osm_relation_id;
+const approvedSetifRelations = new Map(
+  officialSetif.evidence.geometry_validations.map((validation) => [
+    validation.line,
+    validation.osm_relation_ids,
+  ]),
+);
 
 const etusaRefs = new Set(etusa.lines.map((line) => line.line));
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
@@ -32,8 +37,9 @@ const selected = candidates.filter((candidate) =>
     (candidate.operator_id === "etusa" && etusaRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
-    (candidate.operator_id === "etus-setif" && reviewedSetifRefs.has(candidate.ref)
-      && candidate.relation_ids.length === 1 && candidate.relation_ids[0] === approvedSetifRelationId) ||
+    (candidate.operator_id === "etus-setif" && [...approvedSetifRelations.values()].some((relationIds) =>
+      relationIds.length === candidate.relation_ids.length
+      && relationIds.every((id, index) => id === candidate.relation_ids[index]))) ||
     candidate.operator_id === "etus-mostaganem"
   ),
 );
@@ -44,9 +50,9 @@ const byOperator = Object.fromEntries(
     selected.filter((candidate) => candidate.operator_id === id).length,
   ]),
 );
-if (selected.length !== 45 || byOperator.etusa !== 33 || byOperator["etus-tiaret"] !== 7
+if (selected.length !== 47 || byOperator.etusa !== 33 || byOperator["etus-tiaret"] !== 7
   || byOperator.etusto !== 3 || byOperator["etus-mostaganem"] !== 1
-  || byOperator["etus-setif"] !== 1) {
+  || byOperator["etus-setif"] !== 3) {
   throw new Error(`Selection drifted: ${JSON.stringify({ total: selected.length, byOperator })}`);
 }
 
@@ -61,9 +67,14 @@ const lineShapes = selected
     if (!feature?.geometry) throw new Error(`Missing geometry for ${candidate.id}`);
     const relations = candidate.relation_ids.map((id) => relationById.get(id));
     if (relations.some((relation) => !relation)) throw new Error(`Missing relation for ${candidate.id}`);
+    const ref = candidate.operator_id === "etus-setif"
+      ? [...approvedSetifRelations.entries()].find(([, relationIds]) =>
+        relationIds.length === candidate.relation_ids.length
+        && relationIds.every((id, index) => id === candidate.relation_ids[index]))?.[0] ?? candidate.ref
+      : candidate.ref;
     return {
       operator_id: candidate.operator_id,
-      ref: candidate.ref,
+      ref,
       name: candidate.name ?? null,
       wilaya_code: candidate.wilaya_codes[0] ?? null,
       directions: candidate.directions,
@@ -107,7 +118,7 @@ const source = {
   source: "OpenStreetMap via Overpass API",
   license: "ODbL-1.0",
   attribution: "© OpenStreetMap contributors",
-  selection_note: "Reviewed urban/suburban geometry subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 1 ETUS Setif Line matched to official Operator endpoints, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
+  selection_note: "Reviewed urban/suburban geometry subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
   membership_note: "Station memberships preserve raw OSM relation-member order and roles. This order is unvalidated as a passenger stop sequence, and no terminus status is inferred.",
   selection_counts: {
     shape_candidates: lineShapes.length,
