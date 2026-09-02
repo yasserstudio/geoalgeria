@@ -1,5 +1,20 @@
 [
   {
+    "id": "etus-bejaia",
+    "name": "ETUS Béjaïa",
+    "name_fr": "Entreprise de Transport Urbain et Suburbain de Béjaïa",
+    "name_ar": null,
+    "wilaya_codes": [
+      "06"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 5,
+    "shape_count": 0,
+    "source_refs": [
+      "etus-bejaia"
+    ]
+  },
+  {
     "id": "etus-mostaganem",
     "name": "ETUS Mostaganem",
     "name_fr": "Entreprise de transport urbain et suburbain de Mostaganem",
@@ -15,6 +30,21 @@
     ]
   },
   {
+    "id": "etus-msila",
+    "name": "ETUS M'Sila",
+    "name_fr": "Entreprise de Transport Urbain et Suburbain de M'Sila",
+    "name_ar": "المؤسسة العمومية للنقل الحضري وشبه الحضري بالمسيلة",
+    "wilaya_codes": [
+      "28"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 4,
+    "shape_count": 0,
+    "source_refs": [
+      "etus-msila"
+    ]
+  },
+  {
     "id": "etus-tiaret",
     "name": "ETUS Tiaret",
     "name_fr": "Entreprise de transport urbain et suburbain de Tiaret",
@@ -26,6 +56,7 @@
     "line_count": 7,
     "shape_count": 7,
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ]
   },
@@ -54,9 +85,10 @@
       "15"
     ],
     "scope": "urban_suburban",
-    "line_count": 3,
+    "line_count": 5,
     "shape_count": 3,
     "source_refs": [
+      "etusto",
       "osm"
     ]
   }

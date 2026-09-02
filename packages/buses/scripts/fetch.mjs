@@ -11,8 +11,16 @@ const DATA = join(HERE, "..", "data");
 const read = (path) => JSON.parse(readFileSync(path, "utf8"));
 const write = (path, value) => writeFileSync(path, JSON.stringify(value, null, 2) + "\n");
 const osm = readCapture("buses", "osm-urban-selected");
+const officialTiaret = readCapture("buses", "etus-tiaret-lines");
+const officialEtusto = readCapture("buses", "etusto-lines");
+const officialBejaia = readCapture("buses", "etus-bejaia-lines");
+const officialMsila = readCapture("buses", "etus-msila-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
+const officialLineByKey = new Map([
+  ...officialTiaret.map((line) => [`etus-tiaret|${line.ref}`, { ...line, source: "etus-tiaret", source_url: "https://www.etus-tiaret.dz/ar/lines" }]),
+  ...officialEtusto.map((line) => [`etusto|${line.ref}`, { ...line, source: "etusto", source_url: "http://etusto.dz/espv.html" }]),
+]);
 const operatorLabels = {
   etusa: { operator: "ETUSA", network: "Alger" },
   "etus-tiaret": { operator: "ETUS Tiaret", network: "Tiaret" },
@@ -40,15 +48,56 @@ const lines = etusa.lines.map((line) => {
   };
 });
 
-for (const shape of osm.line_shapes.filter((item) => item.operator_id !== "etusa")) {
+for (const official of officialBejaia) {
+  lines.push({
+    id: lineId("etus-bejaia", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-bejaia", operator: "ETUS Béjaïa", network: "Béjaïa",
+    line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2,
+    stops: official.stop_count_kind === "total" ? official.stop_count : null,
+    major_stops: official.stop_count_kind === "major" ? official.stop_count : null,
+    service_hours: official.service_hours,
+    communes_served: [], stations_served: [], wilaya_code: "06",
+    source: "etus-bejaia", source_refs: ["etus-bejaia"], source_url: official.page_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
+for (const official of officialMsila) {
+  lines.push({
+    id: lineId("etus-msila", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-msila", operator: "ETUS M'Sila", network: "M'Sila",
+    line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2,
+    stops: official.stop_count, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "28",
+    source: "etus-msila", source_refs: ["etus-msila"], source_url: official.page_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
+for (const official of officialEtusto) {
+  const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
+  lines.push({
+    id: lineId("etusto", official.ref), name: shape?.name ?? `Ligne ${official.ref}`,
+    operator_id: "etusto", operator: "ETUSTO", network: "Tizi Ouzou",
+    line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2, stops: null,
+    communes_served: [], stations_served: [], wilaya_code: "15",
+    source: "etusto", source_refs: shape ? ["etusto", "osm"] : ["etusto"],
+    source_url: "http://etusto.dz/espv.html",
+    shape_id: shape ? shapeId("etusto", official.ref) : null,
+    osm_relation_ids: shape?.relation_ids ?? [],
+  });
+}
+
+for (const shape of osm.line_shapes.filter((item) => item.operator_id !== "etusa" && item.operator_id !== "etusto")) {
   const labels = operatorLabels[shape.operator_id];
+  const official = officialLineByKey.get(`${shape.operator_id}|${shape.ref}`);
   lines.push({
     id: lineId(shape.operator_id, shape.ref), name: shape.name,
     operator_id: shape.operator_id, operator: labels.operator, network: labels.network,
-    line: shape.ref, terminus1: null, terminus2: null, stops: null,
+    line: shape.ref, terminus1: official?.terminus1 ?? null, terminus2: official?.terminus2 ?? null, stops: null,
     communes_served: [], stations_served: [], wilaya_code: shape.wilaya_code,
-    source: "osm", source_refs: ["osm"],
-    source_url: `https://www.openstreetmap.org/relation/${shape.relation_ids[0]}`,
+    source: official?.source ?? "osm", source_refs: official ? [official.source, "osm"] : ["osm"],
+    source_url: official?.source_url ?? `https://www.openstreetmap.org/relation/${shape.relation_ids[0]}`,
     shape_id: shapeId(shape.operator_id, shape.ref), osm_relation_ids: shape.relation_ids,
   });
 }
@@ -124,7 +173,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 61, shapes: 44, directions: 79, stations: 1061, memberships: 1869 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 72, shapes: 44, directions: 79, stations: 1061, memberships: 1869 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -138,7 +187,7 @@ const { metadata } = writePackageV2({
     { file: "lines.json", geojson: false, rows: lines.map(cfg.map) },
     { file: "stations.json", rows: stations },
   ],
-  meta: cfg.meta, updated: "2026-09-01", retrieved: "2026-09-01",
+  meta: cfg.meta, updated: "2026-09-02", retrieved: "2026-09-02",
   stats: { shapes: shapes.length, directions: directions.length, stations: stations.length, station_memberships: memberships.length },
 });
 write(join(DATA, "metadata.json"), {
@@ -150,14 +199,29 @@ write(join(DATA, "metadata.json"), {
 });
 
 mkdirSync(join(DATA, "geojson"), { recursive: true });
-write(join(DATA, "operators.json"), osm.operators.map((operator) => ({
+const operatorRows = osm.operators.map((operator) => ({
   id: operator.id, name: operatorLabels[operator.id].operator,
   name_fr: operator.name_fr, name_ar: operator.name_ar,
   wilaya_codes: operator.wilaya_codes, scope: operator.scope,
   line_count: lines.filter((line) => line.operator_id === operator.id).length,
   shape_count: shapes.filter((shape) => shape.operator_id === operator.id).length,
-  source_refs: operator.id === "etusa" ? ["wikipedia", "osm"] : ["osm"],
-})).sort((a, b) => a.id.localeCompare(b.id)));
+  source_refs: operator.id === "etusa" ? ["wikipedia", "osm"]
+    : operator.id === "etus-tiaret" ? ["etus-tiaret", "osm"]
+      : operator.id === "etusto" ? ["etusto", "osm"] : ["osm"],
+}));
+operatorRows.push({
+  id: "etus-bejaia", name: "ETUS Béjaïa",
+  name_fr: "Entreprise de Transport Urbain et Suburbain de Béjaïa", name_ar: null,
+  wilaya_codes: ["06"], scope: "urban_suburban",
+  line_count: officialBejaia.length, shape_count: 0, source_refs: ["etus-bejaia"],
+});
+operatorRows.push({
+  id: "etus-msila", name: "ETUS M'Sila",
+  name_fr: "Entreprise de Transport Urbain et Suburbain de M'Sila", name_ar: "المؤسسة العمومية للنقل الحضري وشبه الحضري بالمسيلة",
+  wilaya_codes: ["28"], scope: "urban_suburban",
+  line_count: officialMsila.length, shape_count: 0, source_refs: ["etus-msila"],
+});
+write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));
 write(join(DATA, "directions.json"), directions.sort((a, b) => a.osm_relation_id - b.osm_relation_id));
 write(join(DATA, "station-memberships.json"), memberships.sort((a, b) => a.osm_relation_id - b.osm_relation_id || a.osm_member_index - b.osm_member_index));
 write(join(DATA, "shapes.json"), shapes);
@@ -166,4 +230,4 @@ write(join(DATA, "geojson", "shapes.geojson"), {
   features: shapes.map(({ geometry, ...properties }) => ({ type: "Feature", id: properties.id, geometry, properties })),
 });
 
-console.log("buses: 61 lines, 44 shapes, 79 directions, 1,061 stations, 1,869 ordered memberships → v3");
+console.log("buses: 72 lines, 44 shapes, 79 directions, 1,061 stations, 1,869 ordered memberships → v3");

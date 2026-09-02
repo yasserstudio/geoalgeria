@@ -12,9 +12,10 @@
 
 </div>
 
-Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **61 lignes**,
-**44 tracés**, **79 directions** et **1 061 stations** pour ETUSA (Alger), ETUS Tiaret,
-ETUSTO (Tizi Ouzou) et ETUS Mostaganem. En JSON, CSV et GeoJSON. Fait partie de
+Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **72 lignes**,
+**44 tracés**, **79 directions** et **1 061 stations** pour six exploitants : ETUSA
+(Alger), ETUS Tiaret, ETUSTO (Tizi Ouzou), ETUS Béjaïa, ETUS M'Sila et ETUS Mostaganem. En JSON,
+CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 > Pour les gares routières inter-wilayas voir
@@ -27,7 +28,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 61
+const all = buses.lines();                    // 72
 const etusa = buses.linesByOperator("ETUSA"); // 50
 const trace = buses.shapeForLine("etusa-1");
 ```
@@ -36,8 +37,8 @@ const trace = buses.shapeForLine("etusa-1");
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Lignes | **61** | ETUSA 50, ETUS Tiaret 7, ETUSTO 3, ETUS Mostaganem 1 |
-| Tracés OSM | **44** | 33 ETUSA + les 11 lignes ajoutées |
+| Lignes | **72** | ETUSA 50, ETUS Tiaret 7, ETUSTO 5, ETUS Béjaïa 5, ETUS M'Sila 4, ETUS Mostaganem 1 |
+| Tracés OSM | **44** | 33 ETUSA + 11 lignes des autres exploitants |
 | Stations | **1 061** | Nœuds OSM, noms nuls conservés |
 
 L'ordre des 1 869 appartenances est l'ordre brut des membres OSM, marqué
@@ -48,7 +49,10 @@ terminus n'est déduit automatiquement.
 
 Les attributs ETUSA issus de **fr.wikipedia** sont sous **CC BY-SA 4.0**. Les tracés,
 directions et stations OpenStreetMap sont sous **ODbL 1.0**, attribution
-**© OpenStreetMap contributors**. Le code est sous [MIT](LICENSE) ; voir [NOTICE](NOTICE).
+**© OpenStreetMap contributors**. Les faits ETUS Tiaret, ETUSTO, ETUS Béjaïa et ETUS M'Sila sont
+extraits de sources officielles sans licence ouverte déclarée ; les cartes Google de
+Béjaïa et les schémas de M'Sila servent uniquement à la validation et leur géométrie n'est pas redistribuée.
+Le code est sous [MIT](LICENSE) ; voir [NOTICE](NOTICE).
 
 [Voir tous les paquets →](https://geoalgeria.com/data)
 

@@ -14,24 +14,40 @@ const stations = read("packages/buses/data/stations.json");
 const memberships = read("packages/buses/data/station-memberships.json");
 const operators = read("packages/buses/data/operators.json");
 const source = read("sources/buses/osm-urban-selected.json");
+const officialTiaret = read("sources/buses/etus-tiaret-lines.json");
+const officialEtusto = read("sources/buses/etusto-lines.json");
+const officialBejaia = read("sources/buses/etus-bejaia-lines.json");
+const officialMsila = read("sources/buses/etus-msila-lines.json");
 
 test("buses v3 ships only the reviewed release boundary", () => {
-  assert.equal(lines.length, 61);
+  assert.equal(lines.length, 72);
   assert.equal(shapes.length, 44);
   assert.equal(directions.length, 79);
   assert.equal(stations.length, 1061);
   assert.equal(memberships.length, 1869);
-  assert.equal(operators.length, 4);
+  assert.equal(operators.length, 6);
   assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 78);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 1);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [50, 33], "etus-mostaganem": [1, 1], "etus-tiaret": [7, 7], etusto: [3, 3] },
+    { etusa: [50, 33], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
-  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-tiaret", "etus-mostaganem", "etusto"]));
+  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-tiaret", "etus-mostaganem", "etusto"]));
   assert.ok(lines.every((line) => !line.id.includes("setif") && !line.id.includes("etuad")));
   assert.ok(!lines.some((line) => line.id === "etus-tiaret-33"));
-  assert.deepEqual(lines.filter((line) => line.operator_id === "etusto").map((line) => line.line), ["1", "6", "9"]);
+  assert.deepEqual(lines.filter((line) => line.operator_id === "etusto").map((line) => line.line), ["1", "1A", "6", "7", "9"]);
+  assert.ok(lines.filter((line) => line.operator_id === "etus-tiaret")
+    .every((line) => line.source === "etus-tiaret" && line.source_refs.join("+") === "etus-tiaret+osm"));
+  assert.ok(lines.filter((line) => line.operator_id === "etusto")
+    .every((line) => line.source === "etusto"));
+  assert.ok(lines.filter((line) => line.operator_id === "etusto" && line.shape_id)
+    .every((line) => line.source_refs.join("+") === "etusto+osm"));
+  assert.ok(lines.filter((line) => line.operator_id === "etusto" && !line.shape_id)
+    .every((line) => line.source_refs.join("+") === "etusto"));
+  assert.ok(lines.filter((line) => line.operator_id === "etus-bejaia")
+    .every((line) => line.source === "etus-bejaia" && line.source_refs.join("+") === "etus-bejaia" && line.shape_id === null));
+  assert.ok(lines.filter((line) => line.operator_id === "etus-msila")
+    .every((line) => line.source === "etus-msila" && line.source_refs.join("+") === "etus-msila" && line.shape_id === null));
 });
 
 test("Line and Station public ids and shape references are stable", () => {
@@ -93,9 +109,45 @@ test("tracked OSM Source bytes match their receipt", () => {
   assert.equal(source.receipt.collection_mode, "non-atomic-batched");
 });
 
+test("official Operator Sources define the reviewed Tiaret, Tizi Ouzou, Béjaïa and M'Sila Line sets", () => {
+  assert.deepEqual(officialTiaret.map((line) => line.ref), ["26", "27", "28", "29", "30", "31", "32"]);
+  assert.deepEqual(officialEtusto.map((line) => line.ref), ["1", "7", "1A", "9", "6"]);
+  assert.ok(officialTiaret.every((line) => line.terminus1 && line.terminus2 && line.source_receipt.payload_sha256));
+  assert.ok(officialEtusto.every((line) => line.terminus1 && line.terminus2));
+  assert.deepEqual(officialBejaia.map((line) => line.ref), ["1", "2", "3", "4", "5"]);
+  assert.ok(officialBejaia.every((line) => line.terminus1 && line.terminus2 && line.stop_count > 0 && line.map_id));
+  assert.equal(officialBejaia.find((line) => line.ref === "1").stop_count_kind, "major");
+  assert.ok(officialBejaia.filter((line) => line.ref !== "1").every((line) => line.stop_count_kind === "total"));
+  assert.ok(officialBejaia.every((line) => line.page_receipt.payload_sha256 && line.map_receipt.payload_sha256));
+  assert.ok(officialBejaia.every((line) => line.timetable_receipts.length >= 3
+    && line.timetable_receipts.every((receipt) => receipt.payload_sha256)));
+  assert.equal(officialBejaia.find((line) => line.ref === "5").service_hours.length, 4);
+  assert.ok(officialBejaia.every((line) => line.service_hours.every((hours) => hours.days.length > 0)));
+  assert.equal(officialBejaia.find((line) => line.ref === "4").source_title, "LIGNE 4 : GERE ROUTIERE / SIDI AHMED");
+  assert.equal(officialBejaia.find((line) => line.ref === "4").terminus1, "GARE ROUTIERE");
+  assert.equal(officialBejaia.find((line) => line.ref === "5").source_title, "LIGNE 5 : GARE ROUTIERE / IGHER OUZARIF");
+  assert.equal(officialBejaia.find((line) => line.ref === "5").terminus2, "IGHZER OUZARIF");
+  assert.deepEqual(officialMsila.map((line) => line.ref), ["17", "11", "12", "16"]);
+  assert.ok(officialMsila.every((line) => line.terminus1 && line.terminus2
+    && line.stop_count > 0 && line.stop_count_kind === "total"));
+  assert.ok(officialMsila.every((line) => line.geometry === "official_route_diagram_reference"
+    && line.page_receipt.payload_sha256
+    && line.diagram_receipts.length > 0
+    && line.diagram_receipts.every((receipt) => receipt.payload_sha256)));
+});
+
+test("tracked official Source bytes match their receipts", () => {
+  const manifest = read("sources/buses/manifest.json");
+  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines"]) {
+    const text = readFileSync(join(ROOT, `sources/buses/${name}.json`), "utf8");
+    assert.equal(createHash("sha256").update(text).digest("hex"), manifest[name].sha256);
+    assert.equal(manifest[name].bytes, Buffer.byteLength(text));
+  }
+});
+
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
-  assert.equal(api.operatorRecords().length, 4);
+  assert.equal(api.operatorRecords().length, 6);
   assert.equal(api.shapes().length, 44);
   assert.equal(api.directions().length, 79);
   assert.equal(api.stations().length, 1061);

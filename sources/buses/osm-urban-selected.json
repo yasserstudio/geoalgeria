@@ -182111,7 +182111,7 @@
     "shape_candidates": 44,
     "stations": 1061
   },
-  "selection_note": "Reviewed urban/suburban subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, the 7 current ETUS Tiaret Lines validated by the official Operator page, 3 ETUSTO Lines whose refs and endpoints match the official Operator page, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD, and validation-only official geometry are excluded.",
+  "selection_note": "Reviewed urban/suburban geometry subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD, and validation-only official geometry are excluded.",
   "source": "OpenStreetMap via Overpass API",
   "stations": [
     {

@@ -1,5 +1,309 @@
 [
   {
+    "id": "etus-bejaia-1",
+    "name": "Ligne 1",
+    "wilaya_code": "06",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-bejaia",
+    "operator_id": "etus-bejaia",
+    "operator": "ETUS Béjaïa",
+    "network": "Béjaïa",
+    "line": "1",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "ADRAR OUFARNOU",
+    "stops": null,
+    "major_stops": 6,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "06:30",
+        "last_departure": "18:20",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": null,
+        "last_departure": null,
+        "operates": false,
+        "period": "friday"
+      }
+    ],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-bejaia"
+    ],
+    "source_url": "https://etusbejaia.dz/ligne1/"
+  },
+  {
+    "id": "etus-bejaia-2",
+    "name": "Ligne 2",
+    "wilaya_code": "06",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-bejaia",
+    "operator_id": "etus-bejaia",
+    "operator": "ETUS Béjaïa",
+    "network": "Béjaïa",
+    "line": "2",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "UNIVERSITE",
+    "stops": 12,
+    "major_stops": null,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "05:50",
+        "last_departure": "18:50",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": "06:15",
+        "last_departure": "18:05",
+        "operates": true,
+        "period": "friday"
+      }
+    ],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-bejaia"
+    ],
+    "source_url": "https://etusbejaia.dz/ligne2/"
+  },
+  {
+    "id": "etus-bejaia-3",
+    "name": "Ligne 3",
+    "wilaya_code": "06",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-bejaia",
+    "operator_id": "etus-bejaia",
+    "operator": "ETUS Béjaïa",
+    "network": "Béjaïa",
+    "line": "3",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "BVD AMIROUCHE",
+    "stops": 10,
+    "major_stops": null,
+    "service_hours": [
+      {
+        "days": [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "05:50",
+        "last_departure": "18:50",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": "06:15",
+        "last_departure": "18:05",
+        "operates": true,
+        "period": "friday"
+      },
+      {
+        "days": [
+          "saturday"
+        ],
+        "first_departure": "06:00",
+        "last_departure": "18:50",
+        "operates": true,
+        "period": "saturday"
+      }
+    ],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-bejaia"
+    ],
+    "source_url": "https://etusbejaia.dz/ligne3/"
+  },
+  {
+    "id": "etus-bejaia-4",
+    "name": "Ligne 4",
+    "wilaya_code": "06",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-bejaia",
+    "operator_id": "etus-bejaia",
+    "operator": "ETUS Béjaïa",
+    "network": "Béjaïa",
+    "line": "4",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "SIDI AHMED",
+    "stops": 14,
+    "major_stops": null,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "first_departure": "05:50",
+        "last_departure": "18:30",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "first_departure": "07:00",
+        "last_departure": "18:30",
+        "operates": true,
+        "period": "friday"
+      }
+    ],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-bejaia"
+    ],
+    "source_url": "https://etusbejaia.dz/ligne4/"
+  },
+  {
+    "id": "etus-bejaia-5",
+    "name": "Ligne 5",
+    "wilaya_code": "06",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-bejaia",
+    "operator_id": "etus-bejaia",
+    "operator": "ETUS Béjaïa",
+    "network": "Béjaïa",
+    "line": "5",
+    "terminus1": "GARE ROUTIERE",
+    "terminus2": "IGHZER OUZARIF",
+    "stops": 11,
+    "major_stops": null,
+    "service_hours": [
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "direction_from": "GARE ROUTIERE",
+        "direction_to": "IGHZER OUZARIF",
+        "first_departure": "06:30",
+        "last_departure": "20:00",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "direction_from": "GARE ROUTIERE",
+        "direction_to": "IGHZER OUZARIF",
+        "first_departure": "06:30",
+        "last_departure": "17:30",
+        "operates": true,
+        "period": "friday"
+      },
+      {
+        "days": [
+          "saturday",
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday"
+        ],
+        "direction_from": "IGHZER OUZARIF",
+        "direction_to": "GARE ROUTIERE",
+        "first_departure": "05:10",
+        "last_departure": "20:45",
+        "operates": true,
+        "period": "regular"
+      },
+      {
+        "days": [
+          "friday"
+        ],
+        "direction_from": "IGHZER OUZARIF",
+        "direction_to": "GARE ROUTIERE",
+        "first_departure": "06:45",
+        "last_departure": "17:30",
+        "operates": true,
+        "period": "friday"
+      }
+    ],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-bejaia"
+    ],
+    "source_url": "https://etusbejaia.dz/ligne5/"
+  },
+  {
     "id": "etus-mostaganem-1",
     "name": "Cité 5 Juillet, Salamandre",
     "wilaya_code": "27",
@@ -17,6 +321,8 @@
     "terminus1": null,
     "terminus2": null,
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-mostaganem-1",
@@ -29,6 +335,122 @@
     "source_url": "https://www.openstreetmap.org/relation/8745749"
   },
   {
+    "id": "etus-msila-11",
+    "name": "Ligne 11",
+    "wilaya_code": "28",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-msila",
+    "operator_id": "etus-msila",
+    "operator": "ETUS M'Sila",
+    "network": "M'Sila",
+    "line": "11",
+    "terminus1": "محطة القطب الجامعي",
+    "terminus2": "محطة المسافرين الجديدة",
+    "stops": 27,
+    "major_stops": null,
+    "service_hours": [],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-msila"
+    ],
+    "source_url": "https://etus-msila.dz/page/la-ligne-11"
+  },
+  {
+    "id": "etus-msila-12",
+    "name": "Ligne 12",
+    "wilaya_code": "28",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-msila",
+    "operator_id": "etus-msila",
+    "operator": "ETUS M'Sila",
+    "network": "M'Sila",
+    "line": "12",
+    "terminus1": "محطة القطب الجامعي",
+    "terminus2": "موقف أولاد أحمد",
+    "stops": 26,
+    "major_stops": null,
+    "service_hours": [],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-msila"
+    ],
+    "source_url": "https://etus-msila.dz/page/la-ligne-12"
+  },
+  {
+    "id": "etus-msila-16",
+    "name": "Ligne 16",
+    "wilaya_code": "28",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-msila",
+    "operator_id": "etus-msila",
+    "operator": "ETUS M'Sila",
+    "network": "M'Sila",
+    "line": "16",
+    "terminus1": "محطة لوكاد",
+    "terminus2": "موقف المويلحة",
+    "stops": 23,
+    "major_stops": null,
+    "service_hours": [],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-msila"
+    ],
+    "source_url": "https://etus-msila.dz/page/la-ligne-16"
+  },
+  {
+    "id": "etus-msila-17",
+    "name": "Ligne 17",
+    "wilaya_code": "28",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etus-msila",
+    "operator_id": "etus-msila",
+    "operator": "ETUS M'Sila",
+    "network": "M'Sila",
+    "line": "17",
+    "terminus1": "محطة القطب الجامعي",
+    "terminus2": "محطة حي 800 مسكن",
+    "stops": 29,
+    "major_stops": null,
+    "service_hours": [],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etus-msila"
+    ],
+    "source_url": "https://etus-msila.dz/page/la-ligne-10"
+  },
+  {
     "id": "etus-tiaret-26",
     "name": "ETUS 26 504 logs, Karman",
     "wilaya_code": "14",
@@ -38,14 +460,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "26",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "حي 504 سكن",
+    "terminus2": "الثانوية الجديدة",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-26",
@@ -54,9 +478,10 @@
       15740436
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/13123782"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etus-tiaret-27",
@@ -68,14 +493,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "27",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "حي 220 سكن",
+    "terminus2": "حي الشارة",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-27",
@@ -84,9 +511,10 @@
       15748010
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/13131828"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etus-tiaret-28",
@@ -98,14 +526,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "28",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "حي 504 سكن",
+    "terminus2": "جامعة كارمان",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-28",
@@ -114,9 +544,10 @@
       15814690
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/13126846"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etus-tiaret-29",
@@ -128,14 +559,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "29",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "محطة نقل المسافرين (عين قاسمة)",
+    "terminus2": "الثانوية الجديدة (كارمان)",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-29",
@@ -144,9 +577,10 @@
       13125128
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/13125127"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etus-tiaret-30",
@@ -158,14 +592,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "30",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "علي معاشي",
+    "terminus2": "حي1500 سكن AADL",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-30",
@@ -174,9 +610,10 @@
       15817800
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/13130866"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etus-tiaret-31",
@@ -188,14 +625,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "31",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "المجمعات السكنية (زعرورة)",
+    "terminus2": "حي خروبي الميلود 1900 سكن",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-31",
@@ -204,9 +643,10 @@
       15828581
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/13129621"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etus-tiaret-32",
@@ -218,14 +658,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etus-tiaret",
     "operator_id": "etus-tiaret",
     "operator": "ETUS Tiaret",
     "network": "Tiaret",
     "line": "32",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "حي 40 سكن",
+    "terminus2": "ببان مصباح",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etus-tiaret-32",
@@ -234,9 +676,10 @@
       15737082
     ],
     "source_refs": [
+      "etus-tiaret",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/15737071"
+    "source_url": "https://www.etus-tiaret.dz/ar/lines"
   },
   {
     "id": "etusa-1",
@@ -256,6 +699,8 @@
     "terminus1": "El Harrach",
     "terminus2": "Place Aïssat Idir, via Haï El Badr",
     "stops": 16,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "El Harrach",
       "Bachdjerrah",
@@ -301,6 +746,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Bouzaréah",
     "stops": 17,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Alger-Centre",
@@ -339,6 +786,8 @@
     "terminus1": "Place des Martyrs",
     "terminus2": "Staoueli",
     "stops": 33,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Casbah (Place des Martyrs)",
       "Bab El Oued",
@@ -381,6 +830,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Bir Mourad Raïs",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad (Jardin d'Essai)",
@@ -423,6 +874,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Grande Poste",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Alger-Centre (Grande Poste d'Alger)"
@@ -460,6 +913,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "El Madania",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
       "El Mouradia (Hôtel El Djazaïr)",
@@ -497,6 +952,8 @@
     "terminus1": "Bachdjarah",
     "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bachdjerrah",
       "Bourouba",
@@ -536,6 +993,8 @@
     "terminus1": "Place Aïssat Idir",
     "terminus2": "Bab Ezzouar - Les Hôtels",
     "stops": 16,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad",
@@ -575,6 +1034,8 @@
     "terminus1": "Bouzaréah",
     "terminus2": "Beni Messous - Sidi Youcef",
     "stops": 10,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bouzaréah",
       "Beni Messous (Sidi Youcef)"
@@ -609,6 +1070,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Kouba - Hôpital militaire d'Aïn Naâdja",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad (Jardin d'Essai)",
@@ -650,6 +1113,8 @@
     "terminus1": "Bouzaréah - Chevalley",
     "terminus2": "Souidania, via Bouchaoui",
     "stops": 22,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bouzaréah (Chevalley)",
       "Dely Ibrahim",
@@ -683,6 +1148,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "Hydra - Place Al Smaa",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
@@ -721,6 +1188,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "El Madania",
     "stops": 9,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
@@ -758,6 +1227,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "Kouba - Station Kouba, via Bir Mourad Raïs",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
@@ -793,6 +1264,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Birkhadem",
     "stops": 19,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad (Jardin d'Essai)",
@@ -836,6 +1309,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "Birkhadem",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
@@ -871,6 +1346,8 @@
     "terminus1": "Bab El Oued - Basta Ali",
     "terminus2": "Sidi M'Hamed - Palais du Peuple",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bab El Oued (Basta Ali)",
       "Sidi M'Hamed (Palais du Peuple)"
@@ -901,6 +1378,8 @@
     "terminus1": "Grande Poste",
     "terminus2": "Oued Koriche",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Grande Poste)",
       "Oued Koriche"
@@ -936,6 +1415,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "Aéroport d'Alger",
     "stops": 3,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés)",
       "Bab Ezzouar",
@@ -969,6 +1450,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Kouba - Ben Omar",
     "stops": 12,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad (Jardin d'Essai)",
@@ -1009,6 +1492,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "Bouzaréah - Chevalley",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
@@ -1044,6 +1529,8 @@
     "terminus1": "Ben Aknoun",
     "terminus2": "Grande Poste",
     "stops": 12,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Ben Aknoun",
       "El Biar",
@@ -1077,6 +1564,8 @@
     "terminus1": "Ben Aknoun",
     "terminus2": "Douera - Gare routière",
     "stops": 15,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Ben Aknoun",
       "Dely Ibrahim",
@@ -1111,6 +1600,8 @@
     "terminus1": "Place des Martyrs",
     "terminus2": "Bouzaréah",
     "stops": 19,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Casbah (Place des Martyrs)",
       "Alger-Centre",
@@ -1149,6 +1640,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Ben Aknoun",
     "stops": 14,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Alger-Centre",
@@ -1187,6 +1680,8 @@
     "terminus1": "El Harrach",
     "terminus2": "Place des Martyrs",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Casbah (Place des Martyrs)",
       "Alger-Centre (Grande Poste d'Alger)",
@@ -1224,6 +1719,8 @@
     "terminus1": "Ben Aknoun",
     "terminus2": "Place des Martyrs",
     "stops": 17,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Ben Aknoun",
       "El Biar",
@@ -1262,6 +1759,8 @@
     "terminus1": "Bouzaréah - Chevalley",
     "terminus2": "Ouled Fayet - Plateau",
     "stops": 20,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bouzaréah (Chevalley)",
       "Dely Ibrahim",
@@ -1295,6 +1794,8 @@
     "terminus1": "Place Maurice Audin",
     "terminus2": "El Mouradia - Lycée Descartes",
     "stops": 7,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Place Maurice Audin, faculté d'Alger, tunnel des Facultés, cathédrale du Sacré-Cœur)",
       "Sidi M'Hamed (Musée du Bardo, Palais du Peuple)",
@@ -1332,6 +1833,8 @@
     "terminus1": "Grande Poste",
     "terminus2": "Ouled Fayet",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Grande Poste d'Alger)",
       "Ben Aknoun",
@@ -1366,6 +1869,8 @@
     "terminus1": "Place des Martyrs",
     "terminus2": "Bouzaréah - Chevalley",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Casbah (Place des Martyrs)",
       "Bab El Oued",
@@ -1406,6 +1911,8 @@
     "terminus1": "Bouzaréah - Chevalley",
     "terminus2": "Beni Messous - Sidi Youcef",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bouzaréah (Chevalley)",
       "Beni Messous (Sidi Youcef)"
@@ -1440,6 +1947,8 @@
     "terminus1": "Place des Martyrs",
     "terminus2": "Kouba - Station Kouba, via Place du Mai",
     "stops": 21,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Casbah (Place des Martyrs)",
       "Alger-Centre (Grande Poste d'Alger)",
@@ -1481,6 +1990,8 @@
     "terminus1": "Bachdjerrah",
     "terminus2": "Place Aïssat Idir",
     "stops": 12,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bachdjerrah",
       "Bourouba",
@@ -1529,6 +2040,8 @@
     "terminus1": "Haï El Badr",
     "terminus2": "Baraki",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "El Magharia",
       "Kouba",
@@ -1566,6 +2079,8 @@
     "terminus1": "Rouiba - Castor",
     "terminus2": "Place des Martyrs",
     "stops": 26,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Rouïba",
       "Dar El Beida",
@@ -1608,6 +2123,8 @@
     "terminus1": "Bachdjarah",
     "terminus2": "Kouba - Station Kouba",
     "stops": 18,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bachdjerrah",
       "Bourouba",
@@ -1644,6 +2161,8 @@
     "terminus1": "Bachdjarah",
     "terminus2": "Place des Martyrs",
     "stops": 14,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bachdjerrah",
       "El Harrach",
@@ -1686,6 +2205,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Djasr Kasentina - Station Aïn Naâdja",
     "stops": 9,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad (Jardin d'Essai)",
@@ -1728,6 +2249,8 @@
     "terminus1": "Alger-Centre - Station 2 Mai",
     "terminus2": "Raïs Hamidou",
     "stops": 10,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Alger-Centre (Station 2 Mai)",
       "Casbah",
@@ -1764,6 +2287,8 @@
     "terminus1": "El Harrach",
     "terminus2": "Kouba - Station Kouba",
     "stops": 11,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "El Harrach",
       "Bourouba",
@@ -1800,6 +2325,8 @@
     "terminus1": "Haï El Badr",
     "terminus2": "Djasr Kasentina - Aïn Naâdja",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "El Magharia",
       "Djasr Kasentina"
@@ -1832,6 +2359,8 @@
     "terminus1": "El Harrach",
     "terminus2": "Kouba - Station Kouba",
     "stops": 16,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "El Harrach",
       "Bourouba",
@@ -1870,6 +2399,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Hydra - Place Al Smaa",
     "stops": 8,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "El Mouradia",
@@ -1907,6 +2438,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Kouba - Vieux Kouba",
     "stops": 14,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad (Jardin d'Essai)",
@@ -1944,6 +2477,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Bab El Oued - Basta Ali",
     "stops": 9,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Alger-Centre (Grande Poste d'Alger)",
@@ -1984,6 +2519,8 @@
     "terminus1": "Bab El Oued - Place Ferhani",
     "terminus2": "Kouba - El Annasser",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bab El Oued (Place des Martyrs)",
       "Alger-Centre (Grande Poste d'Alger)",
@@ -2030,6 +2567,8 @@
     "terminus1": "Place Aïssat Idir",
     "terminus2": "Mohammadia - Cité Mokhtar Zerhouni",
     "stops": 13,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Belouizdad",
@@ -2068,6 +2607,8 @@
     "terminus1": "Bab Ezzouar",
     "terminus2": "Bab El Oued - Place Ferhani",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Bab Ezzouar",
       "Mohammadia",
@@ -2110,6 +2651,8 @@
     "terminus1": "Place du Mai",
     "terminus2": "Aïn Benian",
     "stops": 32,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [
       "Sidi M'Hamed",
       "Alger-Centre (Grande Poste d'Alger)",
@@ -2145,14 +2688,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etusto",
     "operator_id": "etusto",
     "operator": "ETUSTO",
     "network": "Tizi Ouzou",
     "line": "1",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "TIMIZART LOGHBAR",
+    "terminus2": "ST BOUKHALFA",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etusto-1",
@@ -2161,9 +2706,39 @@
       19119124
     ],
     "source_refs": [
+      "etusto",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/19119123"
+    "source_url": "http://etusto.dz/espv.html"
+  },
+  {
+    "id": "etusto-1A",
+    "name": "Ligne 1A",
+    "wilaya_code": "15",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etusto",
+    "operator_id": "etusto",
+    "operator": "ETUSTO",
+    "network": "Tizi Ouzou",
+    "line": "1A",
+    "terminus1": "TIMIZART LOGHBAR",
+    "terminus2": "AADL",
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etusto"
+    ],
+    "source_url": "http://etusto.dz/espv.html"
   },
   {
     "id": "etusto-6",
@@ -2175,14 +2750,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etusto",
     "operator_id": "etusto",
     "operator": "ETUSTO",
     "network": "Tizi Ouzou",
     "line": "6",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "ST BOUKHALFA",
+    "terminus2": "BENI DOUALA",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etusto-6",
@@ -2191,9 +2768,39 @@
       20629704
     ],
     "source_refs": [
+      "etusto",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/20629703"
+    "source_url": "http://etusto.dz/espv.html"
+  },
+  {
+    "id": "etusto-7",
+    "name": "Ligne 7",
+    "wilaya_code": "15",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "etusto",
+    "operator_id": "etusto",
+    "operator": "ETUSTO",
+    "network": "Tizi Ouzou",
+    "line": "7",
+    "terminus1": "TIMIZART LOGHBAR",
+    "terminus2": "OUED FALI",
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": null,
+    "osm_relation_ids": [],
+    "source_refs": [
+      "etusto"
+    ],
+    "source_url": "http://etusto.dz/espv.html"
   },
   {
     "id": "etusto-9",
@@ -2205,14 +2812,16 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "osm",
+    "source": "etusto",
     "operator_id": "etusto",
     "operator": "ETUSTO",
     "network": "Tizi Ouzou",
     "line": "9",
-    "terminus1": null,
-    "terminus2": null,
+    "terminus1": "ST BOUKHALFA",
+    "terminus2": "GARE KAF NAAJA",
     "stops": null,
+    "major_stops": null,
+    "service_hours": [],
     "communes_served": [],
     "stations_served": [],
     "shape_id": "shape-etusto-9",
@@ -2221,8 +2830,9 @@
       19119196
     ],
     "source_refs": [
+      "etusto",
       "osm"
     ],
-    "source_url": "https://www.openstreetmap.org/relation/19108800"
+    "source_url": "http://etusto.dz/espv.html"
   }
 ]

@@ -25,6 +25,15 @@ const sourceSpecSha256 = (source) => sha256(stableStringify(source));
 
 const sources = [
   {
+    id: "etus-bejaia-lines-api",
+    operator_id: "etus-bejaia",
+    kind: "official_api",
+    url: "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes&_fields=id,modified,link,content",
+    filename: "etus-bejaia-lines-api.json",
+    expected_text: "ligne5",
+    reuse_status: "factual_reference_no_open_license",
+  },
+  {
     id: "etus-tiaret-lines",
     operator_id: "etus-tiaret",
     kind: "official_page",
@@ -59,11 +68,12 @@ const sources = [
     {
       id: `etus-bejaia-line-${ref}-page`,
       operator_id: "etus-bejaia",
-      kind: "official_page",
-      url: `https://etusbejaia.dz/ligne${ref}/`,
-      filename: `etus-bejaia-line-${ref}.html`,
+      kind: "official_api",
+      url: `https://etusbejaia.dz/wp-json/wp/v2/pages?slug=ligne${ref}&_fields=id,modified,link,title,content`,
+      filename: `etus-bejaia-line-${ref}.json`,
       line_ref: ref,
       expected_text: mapId,
+      reuse_status: "factual_reference_no_open_license",
     },
     {
       id: `etus-bejaia-line-${ref}-kml`,
@@ -76,6 +86,79 @@ const sources = [
       expected_text: destination,
     },
   ]),
+  ...[
+    ["1", "circulation", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/1.png"],
+    ["1", "weekday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/9.png"],
+    ["1", "friday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/10.png"],
+    ["2", "circulation", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/0.png"],
+    ["2", "weekday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/10-1.png"],
+    ["2", "friday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/13.png"],
+    ["3", "circulation", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/8.png"],
+    ["3", "weekday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/10-2.png"],
+    ["3", "friday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/13-1.png"],
+    ["3", "saturday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/15.png"],
+    ["4", "circulation", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/8-1.png"],
+    ["4", "weekday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/11.png"],
+    ["4", "friday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/14.png"],
+    ["5", "outbound-circulation", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/8.png"],
+    ["5", "outbound-weekday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/11.png"],
+    ["5", "outbound-friday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/13.png"],
+    ["5", "inbound-circulation", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/8_(1).png"],
+    ["5", "inbound-weekday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/imported_from_media_libray/Circulation-1.png"],
+    ["5", "inbound-friday", "https://etusbejaia.dz/wp-content/uploads/photo-gallery/13_(1).png"],
+  ].map(([ref, panel, url]) => ({
+    id: `etus-bejaia-line-${ref}-timetable-${panel}`,
+    operator_id: "etus-bejaia",
+    kind: "official_timetable_image",
+    url,
+    filename: `etus-bejaia-line-${ref}-timetable-${panel}.png`,
+    line_ref: ref,
+    reuse_status: "validation_only_all_rights_reserved",
+  })),
+  {
+    id: "etus-msila-home",
+    operator_id: "etus-msila",
+    kind: "official_page",
+    url: "https://etus-msila.dz/",
+    filename: "etus-msila-home.html",
+    expected_text: "la-ligne-16",
+    reuse_status: "validation_only_all_rights_reserved",
+  },
+  ...[
+    ["17", "la-ligne-10", "1704874759-1778.png"],
+    ["11", "la-ligne-11", "1707397788-ligne11.png"],
+    ["12", "la-ligne-12", "1707397652-lgn%2012.png"],
+    ["16", "la-ligne-16", "1707397946-ligne16.png"],
+  ].flatMap(([ref, slug, image]) => [
+    {
+      id: `etus-msila-line-${ref}-page`,
+      operator_id: "etus-msila",
+      kind: "official_page",
+      url: `https://etus-msila.dz/page/${slug}`,
+      filename: `etus-msila-line-${ref}.html`,
+      line_ref: ref,
+      expected_text: `La ligne ${ref}`,
+      reuse_status: "validation_only_all_rights_reserved",
+    },
+    {
+      id: `etus-msila-line-${ref}-diagram`,
+      operator_id: "etus-msila",
+      kind: "official_route_diagram",
+      url: `https://etus-msila.dz/uploads/img/photo/${image}`,
+      filename: `etus-msila-line-${ref}-diagram.png`,
+      line_ref: ref,
+      reuse_status: "validation_only_all_rights_reserved",
+    },
+  ]),
+  {
+    id: "etus-msila-line-17-stop-diagram",
+    operator_id: "etus-msila",
+    kind: "official_route_diagram",
+    url: "https://etus-msila.dz/uploads/img/photo/1704873204-17.png",
+    filename: "etus-msila-line-17-stop-diagram.png",
+    line_ref: "17",
+    reuse_status: "validation_only_all_rights_reserved",
+  },
   {
     id: "etus-mascara-lines",
     operator_id: "etus-mascara",
@@ -153,8 +236,18 @@ const sources = [
 function validatePayload(source, body) {
   if (body.length === 0) throw new Error(`${source.id}: empty response`);
   const text = body.toString("utf8");
+  if (["official_timetable_image", "official_route_diagram"].includes(source.kind)
+    && !body.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) {
+    throw new Error(`${source.id}: response is not PNG`);
+  }
   if (["official_page", "third_party_app_listing", "legacy_journey_planner_page"].includes(source.kind) && !/<html\b/i.test(text)) {
     throw new Error(`${source.id}: response is not HTML`);
+  }
+  if (source.kind === "official_api") {
+    const rows = JSON.parse(text);
+    if (!Array.isArray(rows) || rows.length !== 1 || !rows[0]?.link || !rows[0]?.content?.rendered) {
+      throw new Error(`${source.id}: unexpected WordPress REST payload`);
+    }
   }
   if (source.kind === "official_embedded_map_export" && !/<kml\b/i.test(text)) {
     throw new Error(`${source.id}: response is not KML`);

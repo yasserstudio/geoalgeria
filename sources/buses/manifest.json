@@ -1,10 +1,42 @@
 {
+  "etus-bejaia-lines": {
+    "bytes": 14292,
+    "note": "Rights-safe projection of Line identities, endpoints, round-trip distances, typed stop counts and timetable-image transcriptions linked by the official WordPress REST API. Embedded KML maps validate identity but their geometry is not retained. Per-record receipts preserve upstream URLs, retrieval timestamps, byte counts and payload SHA-256 hashes for the API, maps and timetable panels.",
+    "records": 5,
+    "retrieved": "2026-09-02",
+    "sha256": "df8c6ca38c68564a430b5905074b6213ccf1116bc22d08e0daaa3541bd9e080c",
+    "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes&_fields=id,modified,link,content"
+  },
+  "etus-msila-lines": {
+    "bytes": 3690,
+    "note": "Rights-safe projection of Line identities, endpoints and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
+    "records": 4,
+    "retrieved": "2026-09-02",
+    "sha256": "90251715cb1f732b42bec54c2badd70c04bcb5a44946b086831c5e791c7c5bb5",
+    "url": "https://etus-msila.dz/"
+  },
+  "etus-tiaret-lines": {
+    "bytes": 2624,
+    "note": "Structured Inertia props extracted from the official Operator Lines page. Source content is used for identity validation; no open reuse license was found.",
+    "records": 7,
+    "retrieved": "2026-09-02",
+    "sha256": "dae3df746c8736add7f1356360a165d7d180115cb1e1ae8db32547c9780881ec",
+    "url": "https://www.etus-tiaret.dz/ar/lines"
+  },
+  "etusto-lines": {
+    "bytes": 1881,
+    "note": "Line identities and endpoints extracted from the official Operator page. Raster maps are validation references only and are not redistributed.",
+    "records": 5,
+    "retrieved": "2026-09-02",
+    "sha256": "9515740c3742c20efc4bbfdd9ac965af03c76548b9762dd57e8761204cfb6a96",
+    "url": "http://etusto.dz/espv.html"
+  },
   "osm-urban-selected": {
-    "bytes": 4087345,
+    "bytes": 4087354,
     "note": "Reviewed trimmed OSM projection. Non-atomic retrieval and snapshot intervals, queries, endpoint URLs, and upstream response hashes are embedded in the capture receipt.",
     "records": 44,
     "retrieved": "2026-09-01",
-    "sha256": "257fc9f2328080c5b2d68608c5ed70fd94e81a56a52f255fc041c275e537cdf1",
+    "sha256": "d1fd1dbc187751cf2954f547119573cc91cdf8e57d1a7224dbe26357506f6ee9",
     "url": "https://overpass-api.de/api/interpreter"
   }
 }

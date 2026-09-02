@@ -1,6 +1,18 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila";
 export type SequenceStatus = "osm_member_order_unvalidated";
+export type ServicePeriod = "regular" | "friday" | "saturday";
+export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
+
+export interface BusServiceHours {
+  period: ServicePeriod;
+  days: ServiceDay[];
+  direction_from?: string;
+  direction_to?: string;
+  first_departure: string | null;
+  last_departure: string | null;
+  operates: boolean;
+}
 
 export interface BusLine {
   id: string;
@@ -20,11 +32,13 @@ export interface BusLine {
   terminus1: string | null;
   terminus2: string | null;
   stops: number | null;
+  major_stops: number | null;
+  service_hours: BusServiceHours[];
   communes_served: string[];
   stations_served: string[];
   shape_id: string | null;
   osm_relation_ids: number[];
-  source_refs: ("wikipedia" | "osm")[];
+  source_refs: SourceKey[];
   source_url: string;
 }
 
@@ -61,7 +75,7 @@ export interface BusOperator {
   scope: "urban_suburban";
   line_count: number;
   shape_count: number;
-  source_refs: ("wikipedia" | "osm")[];
+  source_refs: SourceKey[];
 }
 
 export interface MultiLineStringGeometry { type: "MultiLineString"; coordinates: number[][][]; }
@@ -141,6 +155,8 @@ export interface Metadata {
   operators: string[];
   by_operator: Record<string, number>;
   with_stop_count: number;
+  with_major_stop_count: number;
+  with_service_hours: number;
   shapes: number;
   directions: number;
   stations: number;

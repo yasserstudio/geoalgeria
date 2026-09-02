@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { stableStringify } from "../../scripts/lib/source-store.mjs";
+import { canonicalBusRef } from "./candidate-identity.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..");
@@ -109,9 +110,7 @@ function matchOperator(relation) {
 }
 
 function canonicalRef(relation) {
-  const raw = relation.ref ?? relation.name?.match(/^\s*(\d+[A-Za-z]?)\b/)?.[1] ?? null;
-  if (!raw) return null;
-  return String(raw).trim().replace(/\s+(?:r|reverse|aller|retour)$/i, "").trim() || null;
+  return canonicalBusRef(relation);
 }
 
 function endpointPair(relation) {

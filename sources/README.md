@@ -60,6 +60,11 @@ human review.
 
 Converted so far: `telecom`, `ecoles` (reference implementations,
 2026-08-03), `protection-civile`, and `buses`. The buses capture is a reviewed,
-trimmed OSM projection with its non-atomic Overpass receipts preserved. Remaining packages convert as they are
+trimmed OSM projection with its non-atomic Overpass receipts preserved. Bus
+Operator captures are rights-safe projections: they retain only factual fields
+used by the package plus upstream URLs, retrieval timestamps, byte counts and
+SHA-256 hashes for the ignored raw HTML, API and map responses. This keeps the
+evidence auditable without committing or relicensing full all-rights-reserved
+pages and KML files. Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`
 until then.

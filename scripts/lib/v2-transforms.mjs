@@ -721,6 +721,8 @@ export const MIGRATIONS = {
       operator_id: r.operator_id ?? (r.operator === "ETUSA" ? "etusa" : undefined),
       operator: r.operator, network: r.network, line: r.line,
       terminus1: r.terminus1, terminus2: r.terminus2, stops: r.stops,
+      major_stops: r.major_stops ?? null,
+      service_hours: r.service_hours ?? [],
       communes_served: r.communes_served, stations_served: r.stations_served,
       shape_id: r.shape_id ?? null,
       osm_relation_ids: r.osm_relation_ids ?? [],
@@ -730,11 +732,15 @@ export const MIGRATIONS = {
     meta: {
       sources: [
         { key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" },
+        { key: "etus-tiaret", name: "ETUS Tiaret — current Lines", url: "https://www.etus-tiaret.dz/ar/lines", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etusto", name: "ETUSTO — passenger Lines", url: "http://etusto.dz/espv.html", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-bejaia", name: "ETUS Béjaïa — WordPress REST itineraries and Line maps", url: "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-msila", name: "ETUS M'Sila — official Line pages and diagrams", url: "https://etus-msila.dz/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap — reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
       ],
-      license: "CC-BY-SA-4.0 AND ODbL-1.0",
+      license: "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
       estimatedUniverse: null,
-      coverageNote: "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 3 ETUSTO Lines and 1 ETUS Mostaganem Line. Shapes are available for 33 exact-ref ETUSA Lines and all 11 added Lines. Excludes the stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD and validation-only official geometry.",
+      coverageNote: "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. Tiaret and Tizi Ouzou identities are also corroborated by official Operator pages, while OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Sétif, ETUAD and validation-only geometry.",
       titles: { en: "Algeria urban and suburban bus lines", fr: "Lignes de bus urbaines et suburbaines d'Algérie", ar: "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر" },
       stats: (rows) => {
         const lines = rows.filter((r) => r.line != null);
@@ -742,6 +748,8 @@ export const MIGRATIONS = {
         operators: [...new Set(lines.map((r) => r.operator))],
         by_operator: count(lines, "operator"),
         with_stop_count: lines.filter((r) => r.stops != null).length,
+        with_major_stop_count: lines.filter((r) => r.major_stops != null).length,
+        with_service_hours: lines.filter((r) => r.service_hours?.length > 0).length,
         };
       },
     },
