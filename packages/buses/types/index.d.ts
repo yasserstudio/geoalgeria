@@ -44,7 +44,11 @@ export interface BusLine {
   network: string;
   line: string;
   terminus1: string | null;
+  terminus1_fr?: string;
+  terminus1_ar?: string;
   terminus2: string | null;
+  terminus2_fr?: string;
+  terminus2_ar?: string;
   stops: number | null;
   major_stops: number | null;
   service_hours: BusServiceHours[];
@@ -106,7 +110,11 @@ export interface BusShape {
   name: string | null;
   wilaya_code: string;
   terminus1: string | null;
+  terminus1_fr?: string;
+  terminus1_ar?: string;
   terminus2: string | null;
+  terminus2_fr?: string;
+  terminus2_ar?: string;
   source: "osm";
   osm_relation_ids: number[];
   geometry: MultiLineStringGeometry;

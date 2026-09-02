@@ -20,6 +20,7 @@ const registry = read(join(HERE, "operator-registry.json"));
 const officialTiaret = read(join(ROOT, "sources", "buses", "etus-tiaret-lines.json"));
 const officialEtusto = read(join(ROOT, "sources", "buses", "etusto-lines.json"));
 const officialSetif = read(join(ROOT, "sources", "buses", "etus-setif-lines.json"));
+const approvedSetifRelationId = officialSetif.evidence.geometry_validation.osm_relation_id;
 
 const etusaRefs = new Set(etusa.lines.map((line) => line.line));
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
@@ -32,7 +33,7 @@ const selected = candidates.filter((candidate) =>
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-setif" && reviewedSetifRefs.has(candidate.ref)
-      && candidate.relation_ids.length === 1 && candidate.relation_ids[0] === 14608521) ||
+      && candidate.relation_ids.length === 1 && candidate.relation_ids[0] === approvedSetifRelationId) ||
     candidate.operator_id === "etus-mostaganem"
   ),
 );

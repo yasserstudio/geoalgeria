@@ -97,7 +97,9 @@ for (const official of officialSetif.lines) {
   lines.push({
     id: lineId("etus-setif", official.ref), name: `Ligne ${official.ref}`,
     operator_id: "etus-setif", operator: "ETUS Setif", network: "Setif",
-    line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2,
+    line: official.ref,
+    terminus1: official.terminus1_fr, terminus1_fr: official.terminus1_fr, terminus1_ar: official.terminus1_ar,
+    terminus2: official.terminus2_fr, terminus2_fr: official.terminus2_fr, terminus2_ar: official.terminus2_ar,
     stops: null, major_stops: null, service_hours: [],
     communes_served: [], stations_served: [], wilaya_code: "19",
     source: "etus-setif", source_refs: shape ? ["etus-setif", "osm"] : ["etus-setif"],
@@ -143,11 +145,14 @@ const operatorsByStation = new Map();
 
 for (const shape of osm.line_shapes) {
   const currentLineId = lineId(shape.operator_id, shape.ref);
+  const currentLine = lines.find((line) => line.id === currentLineId);
   for (const relation of shape.relations) {
     const directionId = `osm-relation-${relation.id}`;
     directions.push({
       id: directionId, line_id: currentLineId, shape_id: shapeId(shape.operator_id, shape.ref),
-      osm_relation_id: relation.id, from: relation.tags?.from ?? null, to: relation.tags?.to ?? null,
+      osm_relation_id: relation.id,
+      from: shape.operator_id === "etus-setif" ? currentLine?.terminus1_fr ?? null : relation.tags?.from ?? null,
+      to: shape.operator_id === "etus-setif" ? currentLine?.terminus2_fr ?? null : relation.tags?.to ?? null,
       via: relation.tags?.via ?? null,
       public_transport_version: relation.tags?.["public_transport:version"] === "2" ? 2 : null,
       sequence_status: "osm_member_order_unvalidated", source: "osm",
@@ -200,7 +205,9 @@ const shapes = osm.line_shapes.map((shape) => {
     id: shapeId(shape.operator_id, shape.ref), line_id: line.id,
     operator_id: shape.operator_id, operator: labels.operator, network: labels.network,
     line: shape.ref, name: line.name ?? shape.name ?? null, wilaya_code: shape.wilaya_code,
-    terminus1: line.terminus1, terminus2: line.terminus2, source: "osm",
+    terminus1: line.terminus1, terminus1_fr: line.terminus1_fr, terminus1_ar: line.terminus1_ar,
+    terminus2: line.terminus2, terminus2_fr: line.terminus2_fr, terminus2_ar: line.terminus2_ar,
+    source: "osm",
     osm_relation_ids: shape.relation_ids, geometry: shape.geometry,
   };
 });
@@ -217,7 +224,10 @@ const cfg = MIGRATIONS.buses;
 const { metadata } = writePackageV2({
   pkg: "buses", dir: DATA,
   files: [
-    { file: "lines.json", geojson: false, rows: lines.map(cfg.map) },
+    { file: "lines.json", geojson: false, rows: lines
+      .toSorted((a, b) => Number(a.wilaya_code) - Number(b.wilaya_code)
+        || (a.name ?? a.line).localeCompare(b.name ?? b.line, "fr", { numeric: true }))
+      .map(cfg.map) },
     { file: "stations.json", rows: stations },
   ],
   meta: cfg.meta, updated: "2026-09-02", retrieved: "2026-09-02",

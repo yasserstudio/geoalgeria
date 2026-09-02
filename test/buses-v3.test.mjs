@@ -54,7 +54,17 @@ test("buses v3 ships only the reviewed release boundary", () => {
     .every((line) => line.source === "etus-sidi-bel-abbes"
       && line.source_refs.join("+") === "etus-sidi-bel-abbes" && line.shape_id === null));
   assert.deepEqual(lines.filter((line) => line.operator_id === "etus-setif").map((line) => line.line), ["101", "104", "105", "106A", "106B"]);
-  assert.equal(lines.find((line) => line.id === "etus-setif-101")?.source_refs.join("+"), "etus-setif+osm");
+  const setif101 = lines.find((line) => line.id === "etus-setif-101");
+  assert.equal(setif101?.source_refs.join("+"), "etus-setif+osm");
+  assert.deepEqual(
+    [setif101?.terminus1_fr, setif101?.terminus1_ar, setif101?.terminus2_fr, setif101?.terminus2_ar],
+    ["Gare routière", "المحطة البرية", "Cité Les Tours", "حي الأبراج"],
+  );
+  assert.deepEqual(
+    directions.filter((direction) => direction.line_id === "etus-setif-101")
+      .map((direction) => [direction.from, direction.to]),
+    [["Gare routière", "Cité Les Tours"]],
+  );
   assert.ok(lines.filter((line) => line.operator_id === "etus-setif" && line.line !== "101")
     .every((line) => line.shape_id === null && line.source_refs.join("+") === "etus-setif"));
   assert.ok(lines.every((line) => Array.isArray(line.departure_schedules)));
@@ -165,7 +175,8 @@ test("official Operator Sources define the reviewed Line sets", () => {
   assert.equal(officialSidiBelAbbes.evidence.tracker_url, "https://gps.etus22.dz:8082/");
   assert.match(officialSidiBelAbbes.evidence.tracker_recheck, /timed out/i);
   assert.deepEqual(officialSetif.lines.map((line) => line.ref), ["101", "104", "105", "106A", "106B"]);
-  assert.equal(officialSetif.lines.find((line) => line.ref === "101")?.terminus2, "حي الأبراج");
+  assert.equal(officialSetif.lines.find((line) => line.ref === "101")?.terminus2_ar, "حي الأبراج");
+  assert.equal(officialSetif.lines.find((line) => line.ref === "101")?.terminus2_fr, "Cité Les Tours");
   assert.equal(officialSetif.evidence.geometry_validation.osm_relation_id, 14608521);
   assert.match(officialSetif.evidence.supplied_image_sha256, /^[a-f0-9]{64}$/);
 });

@@ -6,11 +6,11 @@ import { writeCapture } from "../../scripts/lib/source-store.mjs";
 
 const sourceUrl = "https://www.govserv.org/DZ/S%C3%A9tif/111330534776381/ETUS-S%C3%89TIF";
 const lines = [
-  { ref: "101", terminus1: "المحطة البرية", terminus2: "حي الأبراج" },
-  { ref: "104", terminus1: "المحطة البرية", terminus2: "حي الهضاب" },
-  { ref: "105", terminus1: "المحطة البرية", terminus2: "حي الهضاب" },
-  { ref: "106A", terminus1: "وسط المدينة", terminus2: "حي 5 جويلية 1962" },
-  { ref: "106B", terminus1: "وسط المدينة", terminus2: "حي عين الرمان" },
+  { ref: "101", terminus1_fr: "Gare routière", terminus1_ar: "المحطة البرية", terminus2_fr: "Cité Les Tours", terminus2_ar: "حي الأبراج" },
+  { ref: "104", terminus1_fr: "Gare routière", terminus1_ar: "المحطة البرية", terminus2_fr: "Cité El Hidhab", terminus2_ar: "حي الهضاب" },
+  { ref: "105", terminus1_fr: "Gare routière", terminus1_ar: "المحطة البرية", terminus2_fr: "Cité El Hidhab", terminus2_ar: "حي الهضاب" },
+  { ref: "106A", terminus1_fr: "Centre-ville", terminus1_ar: "وسط المدينة", terminus2_fr: "Cité 5 Juillet 1962", terminus2_ar: "حي 5 جويلية 1962" },
+  { ref: "106B", terminus1_fr: "Centre-ville", terminus1_ar: "وسط المدينة", terminus2_fr: "Cité Aïn Romane", terminus2_ar: "حي عين الرمان" },
 ];
 
 writeCapture("buses", "etus-setif-lines", {
@@ -35,7 +35,7 @@ writeCapture("buses", "etus-setif-lines", {
   url: sourceUrl,
   retrieved: "2026-09-02",
   records: lines.length,
-  note: "Rights-safe Line identities and Arabic endpoints transcribed from official ETUS Setif artwork supplied by the project owner and independently matched to the Operator's public 2026 announcement mirror. Artwork is validation-only and is not redistributed. Line 101 geometry is separately sourced from OSM under ODbL.",
+  note: "Rights-safe bilingual Line identities transcribed from ETUS Setif artwork supplied by the project owner and independently matched to a public 2026 announcement mirror. The mirror is corroboration, not a first-party Source. Artwork is validation-only and is not redistributed. Line 101 geometry is separately sourced from OSM under ODbL.",
 });
 
 console.log(`promoted ${lines.length} ETUS Setif Lines`);
