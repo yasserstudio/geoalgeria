@@ -14,8 +14,8 @@
 
 <div dir="rtl">
 
-بيانات مراجعة لخطوط الحافلات الحضرية وشبه الحضرية: **72 خطًا** و**44 مسارًا** و**79 اتجاهًا**
-و**1,061 محطة** لدى ستة مشغّلين: ETUSA وETUS Tiaret وETUSTO وETUS Béjaïa وETUS M'Sila وETUS Mostaganem.
+بيانات مراجعة لخطوط الحافلات الحضرية وشبه الحضرية: **80 خطًا** و**44 مسارًا** و**79 اتجاهًا**
+و**1,061 محطة** لدى سبعة مشغّلين: ETUSA وETUS Tiaret وETUSTO وETUS Béjaïa وETUS M'Sila وETUS Sidi Bel Abbès وETUS Mostaganem.
 بصيغ JSON وCSV وGeoJSON. جزء من
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -32,7 +32,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 72
+const all = buses.lines();                    // 80
 const etusa = buses.linesByOperator("ETUSA"); // 50
 ```
 
@@ -42,7 +42,7 @@ const etusa = buses.linesByOperator("ETUSA"); // 50
 
 | مجموعة البيانات | العدد | ملاحظات |
 | --- | --- | --- |
-| الخطوط | **72** | 50 ETUSA و7 ETUS Tiaret و5 ETUSTO و5 ETUS Béjaïa و4 ETUS M'Sila وخط ETUS Mostaganem |
+| الخطوط | **80** | 50 ETUSA و8 ETUS Sidi Bel Abbès و7 ETUS Tiaret و5 ETUSTO و5 ETUS Béjaïa و4 ETUS M'Sila وخط ETUS Mostaganem |
 | المسارات | **44** | مسارات OSM مراجعة |
 | المحطات | **1,061** | عقد OSM مع الحفاظ على الأسماء الفارغة |
 
@@ -53,8 +53,9 @@ const etusa = buses.linesByOperator("ETUSA"); // 50
 
 خصائص خطوط ETUSA من **fr.wikipedia** برخصة **CC BY-SA 4.0**. المسارات والاتجاهات والمحطات
 من OpenStreetMap برخصة **ODbL 1.0** مع الإسناد **© OpenStreetMap contributors**.
-حقائق خطوط ETUS Tiaret وETUSTO وETUS Béjaïa وETUS M'Sila مستخرجة من مصادر المشغلين الرسمية التي لا
-تعلن رخصة مفتوحة. تُستخدم خرائط Google الخاصة ببجاية ومخططات المسيلة للتحقق فقط ولا نعيد نشر هندستها.
+حقائق خطوط ETUS Tiaret وETUSTO وETUS Béjaïa وETUS M'Sila وETUS Sidi Bel Abbès مستخرجة من مصادر المشغلين الرسمية التي لا
+تعلن رخصة مفتوحة. تُستخدم خرائط Google الخاصة ببجاية ومخططات المسيلة وصور مسارات سيدي بلعباس للتحقق فقط ولا نعيد نشر هندستها.
+تتضمن بيانات سيدي بلعباس قوائم الانطلاق الكاملة المنسوخة من HTML الرسمي المقدم، وتبقى أيام الخدمة غير المذكورة بقيمة `null`.
 الشيفرة تحت [MIT](LICENSE)، والتفاصيل في [NOTICE](NOTICE).
 
 [تصفّح كل الحزم →](https://geoalgeria.com/data)

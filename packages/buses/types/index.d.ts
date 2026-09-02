@@ -1,5 +1,5 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes";
 export type SequenceStatus = "osm_member_order_unvalidated";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
@@ -12,6 +12,20 @@ export interface BusServiceHours {
   first_departure: string | null;
   last_departure: string | null;
   operates: boolean;
+}
+
+export interface BusDeparture {
+  time: string;
+  note: string | null;
+}
+
+export interface BusDepartureSchedule {
+  direction_from: string;
+  direction_to: string;
+  /** Null when the official page does not state which service days apply. */
+  days: ServiceDay[] | null;
+  days_note: string | null;
+  departures: BusDeparture[];
 }
 
 export interface BusLine {
@@ -34,6 +48,8 @@ export interface BusLine {
   stops: number | null;
   major_stops: number | null;
   service_hours: BusServiceHours[];
+  departure_schedules?: BusDepartureSchedule[];
+  route_diagram_url?: string | null;
   communes_served: string[];
   stations_served: string[];
   shape_id: string | null;
@@ -157,6 +173,7 @@ export interface Metadata {
   with_stop_count: number;
   with_major_stop_count: number;
   with_service_hours: number;
+  with_departure_schedules: number;
   shapes: number;
   directions: number;
   stations: number;

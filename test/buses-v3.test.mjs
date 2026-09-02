@@ -18,21 +18,22 @@ const officialTiaret = read("sources/buses/etus-tiaret-lines.json");
 const officialEtusto = read("sources/buses/etusto-lines.json");
 const officialBejaia = read("sources/buses/etus-bejaia-lines.json");
 const officialMsila = read("sources/buses/etus-msila-lines.json");
+const officialSidiBelAbbes = read("sources/buses/etus-sidi-bel-abbes-lines.json");
 
 test("buses v3 ships only the reviewed release boundary", () => {
-  assert.equal(lines.length, 72);
+  assert.equal(lines.length, 80);
   assert.equal(shapes.length, 44);
   assert.equal(directions.length, 79);
   assert.equal(stations.length, 1061);
   assert.equal(memberships.length, 1869);
-  assert.equal(operators.length, 6);
+  assert.equal(operators.length, 7);
   assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 78);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 1);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [50, 33], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
+    { etusa: [50, 33], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
-  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-tiaret", "etus-mostaganem", "etusto"]));
+  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto"]));
   assert.ok(lines.every((line) => !line.id.includes("setif") && !line.id.includes("etuad")));
   assert.ok(!lines.some((line) => line.id === "etus-tiaret-33"));
   assert.deepEqual(lines.filter((line) => line.operator_id === "etusto").map((line) => line.line), ["1", "1A", "6", "7", "9"]);
@@ -48,6 +49,10 @@ test("buses v3 ships only the reviewed release boundary", () => {
     .every((line) => line.source === "etus-bejaia" && line.source_refs.join("+") === "etus-bejaia" && line.shape_id === null));
   assert.ok(lines.filter((line) => line.operator_id === "etus-msila")
     .every((line) => line.source === "etus-msila" && line.source_refs.join("+") === "etus-msila" && line.shape_id === null));
+  assert.ok(lines.filter((line) => line.operator_id === "etus-sidi-bel-abbes")
+    .every((line) => line.source === "etus-sidi-bel-abbes"
+      && line.source_refs.join("+") === "etus-sidi-bel-abbes" && line.shape_id === null));
+  assert.ok(lines.every((line) => Array.isArray(line.departure_schedules)));
 });
 
 test("Line and Station public ids and shape references are stable", () => {
@@ -109,7 +114,7 @@ test("tracked OSM Source bytes match their receipt", () => {
   assert.equal(source.receipt.collection_mode, "non-atomic-batched");
 });
 
-test("official Operator Sources define the reviewed Tiaret, Tizi Ouzou, Béjaïa and M'Sila Line sets", () => {
+test("official Operator Sources define the reviewed Tiaret, Tizi Ouzou, Béjaïa, M'Sila and Sidi Bel Abbès Line sets", () => {
   assert.deepEqual(officialTiaret.map((line) => line.ref), ["26", "27", "28", "29", "30", "31", "32"]);
   assert.deepEqual(officialEtusto.map((line) => line.ref), ["1", "7", "1A", "9", "6"]);
   assert.ok(officialTiaret.every((line) => line.terminus1 && line.terminus2 && line.source_receipt.payload_sha256));
@@ -134,11 +139,31 @@ test("official Operator Sources define the reviewed Tiaret, Tizi Ouzou, Béjaïa
     && line.page_receipt.payload_sha256
     && line.diagram_receipts.length > 0
     && line.diagram_receipts.every((receipt) => receipt.payload_sha256)));
+  assert.deepEqual(officialSidiBelAbbes.lines.map((line) => line.ref), ["3B", "09", "16", "11", "25", "26", "27", "28"]);
+  assert.ok(officialSidiBelAbbes.lines.every((line) => line.terminus1 && line.terminus2
+    && line.route_diagram_url && line.departure_schedules.length === 2));
+  assert.deepEqual(Object.fromEntries(officialSidiBelAbbes.lines.map((line) => [
+    line.ref,
+    line.departure_schedules.map((schedule) => schedule.departures.length),
+  ])), {
+    "3B": [25, 25],
+    "09": [28, 30],
+    "16": [35, 36],
+    "11": [32, 34],
+    "25": [43, 46],
+    "26": [19, 20],
+    "27": [25, 26],
+    "28": [31, 32],
+  });
+  assert.ok(officialSidiBelAbbes.lines.every((line) => line.departure_schedules
+    .every((schedule) => schedule.days === null && schedule.days_note && schedule.departures.length > 0)));
+  assert.equal(officialSidiBelAbbes.evidence.tracker_url, "https://gps.etus22.dz:8082/");
+  assert.match(officialSidiBelAbbes.evidence.tracker_recheck, /timed out/i);
 });
 
 test("tracked official Source bytes match their receipts", () => {
   const manifest = read("sources/buses/manifest.json");
-  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines"]) {
+  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines", "etus-sidi-bel-abbes-lines"]) {
     const text = readFileSync(join(ROOT, `sources/buses/${name}.json`), "utf8");
     assert.equal(createHash("sha256").update(text).digest("hex"), manifest[name].sha256);
     assert.equal(manifest[name].bytes, Buffer.byteLength(text));
@@ -147,13 +172,16 @@ test("tracked official Source bytes match their receipts", () => {
 
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
-  assert.equal(api.operatorRecords().length, 6);
+  assert.equal(api.operatorRecords().length, 7);
   assert.equal(api.shapes().length, 44);
   assert.equal(api.directions().length, 79);
   assert.equal(api.stations().length, 1061);
   assert.equal(api.stationMemberships().length, 1869);
   assert.equal(api.shapeForLine("etus-tiaret-32")?.line_id, "etus-tiaret-32");
   assert.equal(api.shapeForLine("etusto-9")?.line_id, "etusto-9");
+  const sidiLine = api.lineById("etus-sidi-bel-abbes-3B");
+  assert.equal(sidiLine?.route_diagram_url, "https://etus22.dz/assets/image/3.jpg");
+  assert.deepEqual(sidiLine?.departure_schedules?.map((schedule) => schedule.departures.length), [25, 25]);
   const direction = api.directionsByLine("etus-mostaganem-1")[0];
   assert.ok(direction);
   assert.ok(api.membershipsByDirection(direction.id).length > 0);

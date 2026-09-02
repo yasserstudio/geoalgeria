@@ -4,7 +4,7 @@
   "name": "Algeria urban and suburban bus lines",
   "alternateName": "Lignes de bus urbaines et suburbaines d'Algérie",
   "identifier": "@geoalgeria/buses",
-  "description": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. Tiaret and Tizi Ouzou identities are also corroborated by official Operator pages, while OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Sétif, ETUAD and validation-only geometry.",
+  "description": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Sétif, ETUAD and validation-only geometry.",
   "conditionsOfAccess": "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "35.290352 0.078075 36.817264 4.076705"
     }
   },
-  "variableMeasured": "1133 records, 6 wilayas",
+  "variableMeasured": "1141 records, 7 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -62,6 +62,7 @@
     "ETUSTO — passenger Lines — Proprietary factual reference data; no open reuse license",
     "ETUS Béjaïa — WordPress REST itineraries and Line maps — Proprietary factual reference data; no open reuse license",
     "ETUS M'Sila — official Line pages and diagrams — Proprietary factual reference data; no open reuse license",
+    "ETUS Sidi Bel Abbès — network and timetable pages — Proprietary factual reference data; no open reuse license",
     "OpenStreetMap — reviewed urban bus relations — ODbL 1.0 (© OpenStreetMap contributors)"
   ]
 }

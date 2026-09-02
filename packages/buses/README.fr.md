@@ -12,9 +12,10 @@
 
 </div>
 
-Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **72 lignes**,
-**44 tracés**, **79 directions** et **1 061 stations** pour six exploitants : ETUSA
-(Alger), ETUS Tiaret, ETUSTO (Tizi Ouzou), ETUS Béjaïa, ETUS M'Sila et ETUS Mostaganem. En JSON,
+Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **80 lignes**,
+**44 tracés**, **79 directions** et **1 061 stations** pour sept exploitants : ETUSA
+(Alger), ETUS Tiaret, ETUSTO (Tizi Ouzou), ETUS Béjaïa, ETUS M'Sila,
+ETUS Sidi Bel Abbès et ETUS Mostaganem. En JSON,
 CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -28,7 +29,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 72
+const all = buses.lines();                    // 80
 const etusa = buses.linesByOperator("ETUSA"); // 50
 const trace = buses.shapeForLine("etusa-1");
 ```
@@ -37,7 +38,7 @@ const trace = buses.shapeForLine("etusa-1");
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Lignes | **72** | ETUSA 50, ETUS Tiaret 7, ETUSTO 5, ETUS Béjaïa 5, ETUS M'Sila 4, ETUS Mostaganem 1 |
+| Lignes | **80** | ETUSA 50, ETUS Sidi Bel Abbès 8, ETUS Tiaret 7, ETUSTO 5, ETUS Béjaïa 5, ETUS M'Sila 4, ETUS Mostaganem 1 |
 | Tracés OSM | **44** | 33 ETUSA + 11 lignes des autres exploitants |
 | Stations | **1 061** | Nœuds OSM, noms nuls conservés |
 
@@ -49,9 +50,12 @@ terminus n'est déduit automatiquement.
 
 Les attributs ETUSA issus de **fr.wikipedia** sont sous **CC BY-SA 4.0**. Les tracés,
 directions et stations OpenStreetMap sont sous **ODbL 1.0**, attribution
-**© OpenStreetMap contributors**. Les faits ETUS Tiaret, ETUSTO, ETUS Béjaïa et ETUS M'Sila sont
+**© OpenStreetMap contributors**. Les faits ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila et ETUS Sidi Bel Abbès sont
 extraits de sources officielles sans licence ouverte déclarée ; les cartes Google de
-Béjaïa et les schémas de M'Sila servent uniquement à la validation et leur géométrie n'est pas redistribuée.
+Béjaïa, les schémas de M'Sila et les images de tracé de Sidi Bel Abbès servent uniquement
+à la validation et leur géométrie n'est pas redistribuée. Les départs complets de Sidi
+Bel Abbès sont transcrits du HTML officiel fourni par le propriétaire du projet ; les
+jours non indiqués restent explicitement inconnus.
 Le code est sous [MIT](LICENSE) ; voir [NOTICE](NOTICE).
 
 [Voir tous les paquets →](https://geoalgeria.com/data)

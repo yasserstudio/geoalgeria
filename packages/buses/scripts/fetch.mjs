@@ -15,6 +15,7 @@ const officialTiaret = readCapture("buses", "etus-tiaret-lines");
 const officialEtusto = readCapture("buses", "etusto-lines");
 const officialBejaia = readCapture("buses", "etus-bejaia-lines");
 const officialMsila = readCapture("buses", "etus-msila-lines");
+const officialSidiBelAbbes = readCapture("buses", "etus-sidi-bel-abbes-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -70,6 +71,21 @@ for (const official of officialMsila) {
     stops: official.stop_count, major_stops: null, service_hours: [],
     communes_served: [], stations_served: [], wilaya_code: "28",
     source: "etus-msila", source_refs: ["etus-msila"], source_url: official.page_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
+for (const official of officialSidiBelAbbes.lines) {
+  lines.push({
+    id: lineId("etus-sidi-bel-abbes", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-sidi-bel-abbes", operator: "ETUS Sidi Bel Abbès", network: "Sidi Bel Abbès",
+    line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2,
+    stops: null, major_stops: null, service_hours: [],
+    departure_schedules: official.departure_schedules,
+    route_diagram_url: official.route_diagram_url,
+    communes_served: [], stations_served: [], wilaya_code: "22",
+    source: "etus-sidi-bel-abbes", source_refs: ["etus-sidi-bel-abbes"],
+    source_url: officialSidiBelAbbes.evidence.timetable_url,
     shape_id: null, osm_relation_ids: [],
   });
 }
@@ -173,7 +189,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 72, shapes: 44, directions: 79, stations: 1061, memberships: 1869 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 80, shapes: 44, directions: 79, stations: 1061, memberships: 1869 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -221,6 +237,14 @@ operatorRows.push({
   wilaya_codes: ["28"], scope: "urban_suburban",
   line_count: officialMsila.length, shape_count: 0, source_refs: ["etus-msila"],
 });
+operatorRows.push({
+  id: "etus-sidi-bel-abbes", name: "ETUS Sidi Bel Abbès",
+  name_fr: "Entreprise de Transport Urbain et Suburbain de Sidi Bel Abbès",
+  name_ar: "المؤسسة العمومية للنقل الحضري وشبه الحضري سيدي بلعباس",
+  wilaya_codes: ["22"], scope: "urban_suburban",
+  line_count: officialSidiBelAbbes.lines.length, shape_count: 0,
+  source_refs: ["etus-sidi-bel-abbes"],
+});
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));
 write(join(DATA, "directions.json"), directions.sort((a, b) => a.osm_relation_id - b.osm_relation_id));
 write(join(DATA, "station-memberships.json"), memberships.sort((a, b) => a.osm_relation_id - b.osm_relation_id || a.osm_member_index - b.osm_member_index));
@@ -230,4 +254,4 @@ write(join(DATA, "geojson", "shapes.geojson"), {
   features: shapes.map(({ geometry, ...properties }) => ({ type: "Feature", id: properties.id, geometry, properties })),
 });
 
-console.log("buses: 72 lines, 44 shapes, 79 directions, 1,061 stations, 1,869 ordered memberships → v3");
+console.log("buses: 80 lines, 44 shapes, 79 directions, 1,061 stations, 1,869 ordered memberships → v3");

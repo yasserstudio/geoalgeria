@@ -4,17 +4,17 @@
   "title_fr": "Lignes de bus urbaines et suburbaines d'Algérie",
   "title_ar": "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر",
   "title_en": "Algeria urban and suburban bus lines",
-  "record_count": 1133,
+  "record_count": 1141,
   "geocoded_count": 1061,
-  "geocoded_pct": 93.6,
+  "geocoded_pct": 93,
   "precision": {
     "exact": 1057,
     "approximate": 4
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. Tiaret and Tizi Ouzou identities are also corroborated by official Operator pages, while OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Sétif, ETUAD and validation-only geometry.",
-  "wilayas_covered": 6,
+  "coverage_note": "Reviewed urban/suburban release: 50 retained ETUSA Lines, 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 4 official ETUS M'Sila Lines and 1 ETUS Mostaganem Line. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 33 ETUSA, 7 Tiaret, 3 Tizi Ouzou and 1 Mostaganem Lines. Excludes stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Sétif, ETUAD and validation-only geometry.",
+  "wilayas_covered": 7,
   "bbox": [
     0.078075,
     35.290352,
@@ -24,7 +24,7 @@
   "entities": [
     {
       "file": "lines.json",
-      "count": 72
+      "count": 80
     },
     {
       "file": "stations.json",
@@ -73,6 +73,14 @@
       "evidence_type": "official"
     },
     {
+      "key": "etus-sidi-bel-abbes",
+      "name": "ETUS Sidi Bel Abbès — network and timetable pages",
+      "url": "https://etus22.dz/Horaires.php",
+      "license": "Proprietary factual reference data; no open reuse license",
+      "retrieved": "2026-09-02",
+      "evidence_type": "official"
+    },
+    {
       "key": "osm",
       "name": "OpenStreetMap — reviewed urban bus relations",
       "url": "https://www.openstreetmap.org/copyright",
@@ -87,6 +95,7 @@
     "ETUS Béjaïa",
     "ETUS Mostaganem",
     "ETUS M'Sila",
+    "ETUS Sidi Bel Abbès",
     "ETUS Tiaret",
     "ETUSA",
     "ETUSTO"
@@ -95,6 +104,7 @@
     "ETUS Béjaïa": 5,
     "ETUS Mostaganem": 1,
     "ETUS M'Sila": 4,
+    "ETUS Sidi Bel Abbès": 8,
     "ETUS Tiaret": 7,
     "ETUSA": 50,
     "ETUSTO": 5
@@ -102,6 +112,7 @@
   "with_stop_count": 52,
   "with_major_stop_count": 1,
   "with_service_hours": 5,
+  "with_departure_schedules": 8,
   "shapes": 44,
   "directions": 79,
   "stations": 1061,

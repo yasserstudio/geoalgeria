@@ -65,6 +65,8 @@ Operator captures are rights-safe projections: they retain only factual fields
 used by the package plus upstream URLs, retrieval timestamps, byte counts and
 SHA-256 hashes for the ignored raw HTML, API and map responses. This keeps the
 evidence auditable without committing or relicensing full all-rights-reserved
-pages and KML files. Remaining packages convert as they are
+pages and KML files. The Sidi Bel Abbès projection is explicitly marked as
+owner-supplied official HTML because its PHP pages returned 404 during the live
+recheck; it does not claim a live-response hash. Remaining packages convert as they are
 next touched — their raw pulls still land in gitignored `research/<pkg>/`
 until then.

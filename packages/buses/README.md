@@ -2,8 +2,8 @@
 
 # @geoalgeria/buses
 
-Reviewed urban and suburban bus data for Algeria. This release contains **72 Lines**
-from six Operators, **44 drawable shapes**, **79 Directions**, and **1,061 Stations**.
+Reviewed urban and suburban bus data for Algeria. This release contains **80 Lines**
+from seven Operators, **44 drawable shapes**, **79 Directions**, and **1,061 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -12,7 +12,7 @@ npm install @geoalgeria/buses
 ```js
 import buses from "@geoalgeria/buses";
 
-const lines = buses.lines();                  // 72
+const lines = buses.lines();                  // 80
 const shape = buses.shapeForLine("etusa-1");
 const stops = buses.stationsByLine("etusa-1");
 const directions = buses.directionsByLine("etusa-1");
@@ -27,6 +27,7 @@ const directions = buses.directionsByLine("etusa-1");
 | ETUSTO (Tizi Ouzou) | 5 | 3 |
 | ETUS Béjaïa | 5 | 0 |
 | ETUS M'Sila | 4 | 0 |
+| ETUS Sidi Bel Abbès | 8 | 0 |
 | ETUS Mostaganem | 1 | 1 |
 
 The 50 existing ETUSA Line ids are preserved (`etusa-1`, etc.). New ids use
@@ -38,12 +39,12 @@ validation-only official geometry are not published as shapes.
 
 ## Files
 
-- `data/lines.json` and `data/csv/lines.csv` — 72 Lines
+- `data/lines.json` and `data/csv/lines.csv` — 80 Lines
 - `data/shapes.json` and `data/geojson/shapes.geojson` — 44 MultiLineString shapes
 - `data/directions.json` — 79 source OSM Direction relations
 - `data/stations.json`, CSV and GeoJSON — 1,061 Station nodes
 - `data/station-memberships.json` — 1,869 ordered relation memberships
-- `data/operators.json` — six Operators
+- `data/operators.json` — seven Operators
 
 Membership order is the raw OSM relation member order and carries
 `sequence_status: "osm_member_order_unvalidated"`. It is **not** a validated passenger
@@ -62,10 +63,11 @@ Directions, Stations, and memberships come from a reviewed OpenStreetMap snapsho
 includes the Overpass queries, retrieval interval, upstream response hashes, and a hash
 of the promoted selection, so regeneration is offline and reproducible.
 
-ETUS Tiaret, ETUSTO, ETUS Béjaïa, and ETUS M'Sila Line facts come from extracted official
-Operator pages/APIs. Béjaïa service hours are transcribed from the Operator's timetable
-panels. Béjaïa embedded maps and M'Sila route diagrams are validation-only; their
-geometry is not redistributed.
+ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila, and ETUS Sidi Bel Abbès Line facts come
+from official Operator pages/APIs. Sidi Bel Abbès includes complete bidirectional
+departure lists from owner-supplied official HTML; the page did not state their service
+days, so `days` remains `null`. Béjaïa embedded maps, M'Sila route diagrams, and Sidi Bel
+Abbès route images are validation-only; their geometry is not redistributed.
 The official source materials do not state an open reuse licence.
 
 Package code is MIT. Data licences and attribution requirements are detailed in
