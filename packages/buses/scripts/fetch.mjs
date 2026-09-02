@@ -103,7 +103,7 @@ for (const official of officialSetif.lines) {
     stops: null, major_stops: null, service_hours: [],
     communes_served: [], stations_served: [], wilaya_code: "19",
     source: "etus-setif", source_refs: shape ? ["etus-setif", "osm"] : ["etus-setif"],
-    source_url: officialSetif.evidence.announcement_url,
+    source_url: undefined,
     shape_id: shape ? shapeId("etus-setif", official.ref) : null,
     osm_relation_ids: shape?.relation_ids ?? [],
   });
@@ -155,7 +155,9 @@ for (const shape of osm.line_shapes) {
       to: shape.operator_id === "etus-setif" ? currentLine?.terminus2_fr ?? null : relation.tags?.to ?? null,
       via: relation.tags?.via ?? null,
       public_transport_version: relation.tags?.["public_transport:version"] === "2" ? 2 : null,
-      sequence_status: "osm_member_order_unvalidated", source: "osm",
+      sequence_status: "osm_member_order_unvalidated",
+      source: shape.operator_id === "etus-setif" ? "etus-setif+osm" : "osm",
+      source_refs: shape.operator_id === "etus-setif" ? ["etus-setif", "osm"] : ["osm"],
     });
     let sourceSequence = 0;
     relation.members.forEach((member, osmMemberIndex) => {
@@ -224,10 +226,9 @@ const cfg = MIGRATIONS.buses;
 const { metadata } = writePackageV2({
   pkg: "buses", dir: DATA,
   files: [
-    { file: "lines.json", geojson: false, rows: lines
-      .toSorted((a, b) => Number(a.wilaya_code) - Number(b.wilaya_code)
-        || (a.name ?? a.line).localeCompare(b.name ?? b.line, "fr", { numeric: true }))
-      .map(cfg.map) },
+    { file: "lines.json", geojson: false, rows: lines.map(cfg.map),
+      sortRows: (a, b) => Number(a.wilaya_code) - Number(b.wilaya_code)
+        || String(a.name_fr ?? a.id).localeCompare(String(b.name_fr ?? b.id), "fr", { numeric: true }) },
     { file: "stations.json", rows: stations },
   ],
   meta: cfg.meta, updated: "2026-09-02", retrieved: "2026-09-02",

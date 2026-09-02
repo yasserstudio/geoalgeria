@@ -1,5 +1,5 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm";
 export type SequenceStatus = "osm_member_order_unvalidated";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
@@ -59,7 +59,7 @@ export interface BusLine {
   shape_id: string | null;
   osm_relation_ids: number[];
   source_refs: SourceKey[];
-  source_url: string;
+  source_url?: string;
 }
 
 export interface BusStation {
@@ -130,7 +130,8 @@ export interface BusDirection {
   via: string | null;
   public_transport_version: 2 | null;
   sequence_status: SequenceStatus;
-  source: "osm";
+  source: "osm" | "etus-setif+osm";
+  source_refs: SourceKey[];
 }
 
 export interface StationMembership {

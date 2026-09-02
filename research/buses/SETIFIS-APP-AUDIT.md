@@ -66,10 +66,12 @@ The app is evidence that an ETUS Sétif **live-vehicle service exists**, but it 
   `GR ↔ University of Sétif` candidate with 107 Station members and a 0.8 km
   `Les Tours ↔ GR` candidate with no Station members. Source:
   [`candidate-lines.json`](./osm/candidate-lines.json).
-- **inferred:** The diagram is useful identity evidence, but it does not validate
-  the 22.1 km candidate as the current Line 101. The 0.8 km relation is plainly
-  incomplete for the depicted route. Reconstruct or reconcile the complete
-  Boussekine–Les Tours path before promoting ref 101.
+- **inferred:** The supplied diagram alone was insufficient to choose between
+  the two candidates. The subsequently supplied OpenAlfa station directory and
+  road geometry resolve the 22.1 km relation as the complete GR ETUS–Les Tours
+  path, despite its stale `to=University of Setif` tag; the 0.8 km relation is
+  excluded as incomplete. The published Direction therefore records mixed
+  ETUS Sétif identity and OSM geometry provenance explicitly.
 
 ## Repository cross-check
 

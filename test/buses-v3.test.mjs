@@ -35,6 +35,8 @@ test("buses v3 ships only the reviewed release boundary", () => {
     { etusa: [50, 33], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 1], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
   assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto"]));
+  assert.ok(lines.every((line, index) => index === 0
+    || Number(lines[index - 1].wilaya_code) <= Number(line.wilaya_code)));
   assert.ok(lines.every((line) => !line.id.includes("etuad")));
   assert.ok(!lines.some((line) => line.id === "etus-tiaret-33"));
   assert.deepEqual(lines.filter((line) => line.operator_id === "etusto").map((line) => line.line), ["1", "1A", "6", "7", "9"]);
@@ -62,8 +64,8 @@ test("buses v3 ships only the reviewed release boundary", () => {
   );
   assert.deepEqual(
     directions.filter((direction) => direction.line_id === "etus-setif-101")
-      .map((direction) => [direction.from, direction.to]),
-    [["Gare routière", "Cité Les Tours"]],
+      .map((direction) => [direction.from, direction.to, direction.source, direction.source_refs]),
+    [["Gare routière", "Cité Les Tours", "etus-setif+osm", ["etus-setif", "osm"]]],
   );
   assert.ok(lines.filter((line) => line.operator_id === "etus-setif" && line.line !== "101")
     .every((line) => line.shape_id === null && line.source_refs.join("+") === "etus-setif"));

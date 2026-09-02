@@ -741,7 +741,7 @@ export const MIGRATIONS = {
         { key: "etus-bejaia", name: "ETUS Béjaïa — WordPress REST itineraries and Line maps", url: "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
         { key: "etus-msila", name: "ETUS M'Sila — official Line pages and diagrams", url: "https://etus-msila.dz/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
         { key: "etus-sidi-bel-abbes", name: "ETUS Sidi Bel Abbès — network and timetable pages", url: "https://etus22.dz/Horaires.php", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etus-setif", name: "Project-supplied ETUS Setif 2026 artwork — public mirror corroboration", url: "https://www.govserv.org/DZ/S%C3%A9tif/111330534776381/ETUS-S%C3%89TIF", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "derived" },
+        { key: "etus-setif", name: "ETUS Setif — 2026 Line artwork supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap — reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
       ],
       license: "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
@@ -971,7 +971,7 @@ export function writePackageV2({
     demoteSharedPoints(rows);
     // Plain codepoint order — localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines.
-    rows.sort((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0));
+    rows.sort(f.sortRows ?? ((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0)));
     const { errors } = validateRecords(rows);
     if (errors.length)
       throw new Error(

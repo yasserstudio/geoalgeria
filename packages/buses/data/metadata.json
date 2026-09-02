@@ -82,11 +82,10 @@
     },
     {
       "key": "etus-setif",
-      "name": "Project-supplied ETUS Setif 2026 artwork — public mirror corroboration",
-      "url": "https://www.govserv.org/DZ/S%C3%A9tif/111330534776381/ETUS-S%C3%89TIF",
+      "name": "ETUS Setif — 2026 Line artwork supplied by project owner",
       "license": "Proprietary factual reference data; no open reuse license",
       "retrieved": "2026-09-02",
-      "evidence_type": "derived"
+      "evidence_type": "official"
     },
     {
       "key": "osm",
@@ -101,23 +100,23 @@
   "updated": "2026-09-02",
   "operators": [
     "ETUS Béjaïa",
-    "ETUS Mostaganem",
-    "ETUS M'Sila",
+    "ETUS Tiaret",
+    "ETUSTO",
+    "ETUSA",
     "ETUS Setif",
     "ETUS Sidi Bel Abbès",
-    "ETUS Tiaret",
-    "ETUSA",
-    "ETUSTO"
+    "ETUS Mostaganem",
+    "ETUS M'Sila"
   ],
   "by_operator": {
     "ETUS Béjaïa": 5,
-    "ETUS Mostaganem": 1,
-    "ETUS M'Sila": 4,
+    "ETUS Tiaret": 7,
+    "ETUSTO": 5,
+    "ETUSA": 50,
     "ETUS Setif": 5,
     "ETUS Sidi Bel Abbès": 8,
-    "ETUS Tiaret": 7,
-    "ETUSA": 50,
-    "ETUSTO": 5
+    "ETUS Mostaganem": 1,
+    "ETUS M'Sila": 4
   },
   "with_stop_count": 52,
   "with_major_stop_count": 1,
