@@ -27,6 +27,20 @@ const approvedSetifRelations = new Map(
   ]),
 );
 
+const dedupeMultiLineString = (geometry) => {
+  if (geometry.type !== "MultiLineString") return geometry;
+  const seen = new Set();
+  return {
+    ...geometry,
+    coordinates: geometry.coordinates.filter((coordinates) => {
+      const key = JSON.stringify(coordinates);
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    }),
+  };
+};
+
 const etusaRefs = new Set(etusa.lines.map((line) => line.line));
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
 const reviewedEtustoRefs = new Set(officialEtusto.map((line) => line.ref));
@@ -80,7 +94,7 @@ const lineShapes = selected
       directions: candidate.directions,
       relation_ids: candidate.relation_ids,
       relations,
-      geometry: feature.geometry,
+      geometry: ref === "106B" ? dedupeMultiLineString(feature.geometry) : feature.geometry,
     };
   })
   .sort((a, b) => a.operator_id.localeCompare(b.operator_id) || a.ref.localeCompare(b.ref, undefined, { numeric: true }));
