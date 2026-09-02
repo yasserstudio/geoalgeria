@@ -143,27 +143,16 @@ const memberships = [];
 const linesByStation = new Map();
 const operatorsByStation = new Map();
 
-const setifDirectionEndpoints = (line, relation) => {
-  if (!line) return { from: null, to: null };
-  const reverse = line.line === "106B" && relation.id === 14618940;
-  return reverse
-    ? { from: line.terminus2_fr, to: line.terminus1_fr }
-    : { from: line.terminus1_fr, to: line.terminus2_fr };
-};
-
 for (const shape of osm.line_shapes) {
   const currentLineId = lineId(shape.operator_id, shape.ref);
   const currentLine = lines.find((line) => line.id === currentLineId);
   for (const relation of shape.relations) {
     const directionId = `osm-relation-${relation.id}`;
-    const setifEndpoints = shape.operator_id === "etus-setif"
-      ? setifDirectionEndpoints(currentLine, relation)
-      : null;
     directions.push({
       id: directionId, line_id: currentLineId, shape_id: shapeId(shape.operator_id, shape.ref),
       osm_relation_id: relation.id,
-      from: setifEndpoints?.from ?? relation.tags?.from ?? null,
-      to: setifEndpoints?.to ?? relation.tags?.to ?? null,
+      from: relation.tags?.from ?? null,
+      to: relation.tags?.to ?? null,
       via: relation.tags?.via ?? null,
       public_transport_version: relation.tags?.["public_transport:version"] === "2" ? 2 : null,
       sequence_status: "osm_member_order_unvalidated",

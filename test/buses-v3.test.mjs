@@ -67,7 +67,7 @@ test("buses v3 ships only the reviewed release boundary", () => {
   assert.deepEqual(
     directions.filter((direction) => direction.line_id === "etus-setif-101")
       .map((direction) => [direction.from, direction.to, direction.source, direction.source_refs]),
-    [["Gare routière", "Cité Les Tours", "etus-setif+osm", ["etus-setif", "osm"]]],
+    [["GR", "University of Setif", "etus-setif+osm", ["etus-setif", "osm"]]],
   );
   assert.ok([setif104, setif106B].every((line) => line?.shape_id && line.source_refs.join("+") === "etus-setif+osm"));
   assert.ok(lines.filter((line) => line.operator_id === "etus-setif" && ["105", "106A"].includes(line.line))
@@ -75,7 +75,7 @@ test("buses v3 ships only the reviewed release boundary", () => {
   assert.deepEqual(
     directions.filter((direction) => direction.line_id === "etus-setif-106B")
       .map((direction) => [direction.from, direction.to]),
-    [["Centre-ville", "Cité Aïn Romane"], ["Cité Aïn Romane", "Centre-ville"]],
+    [["arret 5", "AADL 2"], ["AADL 2", "arret 5"]],
   );
   assert.ok(lines.every((line) => Array.isArray(line.departure_schedules)));
 });
