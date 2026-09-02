@@ -12,10 +12,10 @@
 
 </div>
 
-Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **80 lignes**,
-**44 tracés**, **79 directions** et **1 061 stations** pour sept exploitants : ETUSA
+Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **85 lignes**,
+**45 tracés**, **80 directions** et **1 168 stations** pour huit exploitants : ETUSA
 (Alger), ETUS Tiaret, ETUSTO (Tizi Ouzou), ETUS Béjaïa, ETUS M'Sila,
-ETUS Sidi Bel Abbès et ETUS Mostaganem. En JSON,
+ETUS Sidi Bel Abbès, ETUS Setif et ETUS Mostaganem. En JSON,
 CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -29,7 +29,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 80
+const all = buses.lines();                    // 85
 const etusa = buses.linesByOperator("ETUSA"); // 50
 const trace = buses.shapeForLine("etusa-1");
 ```
@@ -38,11 +38,11 @@ const trace = buses.shapeForLine("etusa-1");
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Lignes | **80** | ETUSA 50, ETUS Sidi Bel Abbès 8, ETUS Tiaret 7, ETUSTO 5, ETUS Béjaïa 5, ETUS M'Sila 4, ETUS Mostaganem 1 |
-| Tracés OSM | **44** | 33 ETUSA + 11 lignes des autres exploitants |
-| Stations | **1 061** | Nœuds OSM, noms nuls conservés |
+| Lignes | **85** | ETUSA 50, ETUS Sidi Bel Abbès 8, ETUS Tiaret 7, ETUSTO 5, ETUS Béjaïa 5, ETUS Setif 5, ETUS M'Sila 4, ETUS Mostaganem 1 |
+| Tracés OSM | **45** | 33 ETUSA + 12 lignes des autres exploitants |
+| Stations | **1 168** | Nœuds OSM, noms nuls conservés |
 
-L'ordre des 1 869 appartenances est l'ordre brut des membres OSM, marqué
+L'ordre des 1 982 appartenances est l'ordre brut des membres OSM, marqué
 `osm_member_order_unvalidated` : il ne constitue pas un ordre voyageurs validé et aucun
 terminus n'est déduit automatiquement.
 
@@ -50,7 +50,7 @@ terminus n'est déduit automatiquement.
 
 Les attributs ETUSA issus de **fr.wikipedia** sont sous **CC BY-SA 4.0**. Les tracés,
 directions et stations OpenStreetMap sont sous **ODbL 1.0**, attribution
-**© OpenStreetMap contributors**. Les faits ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila et ETUS Sidi Bel Abbès sont
+**© OpenStreetMap contributors**. Les faits ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila, ETUS Sidi Bel Abbès et ETUS Setif sont
 extraits de sources officielles sans licence ouverte déclarée ; les cartes Google de
 Béjaïa, les schémas de M'Sila et les images de tracé de Sidi Bel Abbès servent uniquement
 à la validation et leur géométrie n'est pas redistribuée. Les départs complets de Sidi

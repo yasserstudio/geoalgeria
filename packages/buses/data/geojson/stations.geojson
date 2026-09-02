@@ -1072,6 +1072,3819 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.392108,
+          36.185405
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10035219305",
+        "name": "GR ETUS",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185405,
+        "lng": 5.392108,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10035219305,
+        "refs": {
+          "osm": "node/10035219305"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_entry_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.398524,
+          36.181595
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10035219306",
+        "name": "Samu ETUS",
+        "name_fr": "Samu ETUS",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.181595,
+        "lng": 5.398524,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10035219306,
+        "refs": {
+          "osm": "node/10035219306"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.39866,
+          36.181595
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10035219307",
+        "name": "Samu bus stop",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.181595,
+        "lng": 5.39866,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10035219307,
+        "refs": {
+          "osm": "node/10035219307"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.39169,
+          36.185405
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10035232567",
+        "name": "GR ETUS",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185405,
+        "lng": 5.39169,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10035232567,
+        "refs": {
+          "osm": "node/10035232567"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.398728,
+          36.181586
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10035232568",
+        "name": "Samu ETUS",
+        "name_fr": "Samu ETUS",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.181586,
+        "lng": 5.398728,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10035232568,
+        "refs": {
+          "osm": "node/10035232568"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.423478,
+          36.206984
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547684",
+        "name": "Stade 500 logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206984,
+        "lng": 5.423478,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547684,
+        "refs": {
+          "osm": "node/10043547684"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.423498,
+          36.207056
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547685",
+        "name": "Stade 500 logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.207056,
+        "lng": 5.423498,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547685,
+        "refs": {
+          "osm": "node/10043547685"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.423563,
+          36.20724
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547686",
+        "name": "Stade 500 logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.20724,
+        "lng": 5.423563,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547686,
+        "refs": {
+          "osm": "node/10043547686"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.425815,
+          36.206519
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547687",
+        "name": "Ecole Primaire",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206519,
+        "lng": 5.425815,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547687,
+        "refs": {
+          "osm": "node/10043547687"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.425904,
+          36.206756
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547688",
+        "name": "Ecole Primaire",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206756,
+        "lng": 5.425904,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547688,
+        "refs": {
+          "osm": "node/10043547688"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.425841,
+          36.206584
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547689",
+        "name": "Ecole Primaire",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206584,
+        "lng": 5.425841,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547689,
+        "refs": {
+          "osm": "node/10043547689"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.425881,
+          36.206692
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547690",
+        "name": "Ecole Primaire",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206692,
+        "lng": 5.425881,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547690,
+        "refs": {
+          "osm": "node/10043547690"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.428507,
+          36.205392
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547691",
+        "name": "407 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.205392,
+        "lng": 5.428507,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547691,
+        "refs": {
+          "osm": "node/10043547691"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.42874,
+          36.205553
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547692",
+        "name": "407 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.205553,
+        "lng": 5.42874,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547692,
+        "refs": {
+          "osm": "node/10043547692"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.430745,
+          36.203166
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547693",
+        "name": "Htatba",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.203166,
+        "lng": 5.430745,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547693,
+        "refs": {
+          "osm": "node/10043547693"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.430805,
+          36.203182
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547695",
+        "name": "Htatba",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.203182,
+        "lng": 5.430805,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547695,
+        "refs": {
+          "osm": "node/10043547695"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.43096,
+          36.203241
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547696",
+        "name": "Htatba",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.203241,
+        "lng": 5.43096,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547696,
+        "refs": {
+          "osm": "node/10043547696"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.433946,
+          36.198641
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547699",
+        "name": "1006 Logts 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.198641,
+        "lng": 5.433946,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547699,
+        "refs": {
+          "osm": "node/10043547699"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.434122,
+          36.198703
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547700",
+        "name": "1006 Logts 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.198703,
+        "lng": 5.434122,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547700,
+        "refs": {
+          "osm": "node/10043547700"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.43398,
+          36.198643
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547701",
+        "name": "1006 Logts 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.198643,
+        "lng": 5.43398,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547701,
+        "refs": {
+          "osm": "node/10043547701"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.434099,
+          36.198693
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547702",
+        "name": "1006 Logts 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.198693,
+        "lng": 5.434099,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547702,
+        "refs": {
+          "osm": "node/10043547702"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.435114,
+          36.196713
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547703",
+        "name": "1006 Logts 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.196713,
+        "lng": 5.435114,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547703,
+        "refs": {
+          "osm": "node/10043547703"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.435396,
+          36.196817
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547704",
+        "name": "1006 Logts 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.196817,
+        "lng": 5.435396,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547704,
+        "refs": {
+          "osm": "node/10043547704"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.435208,
+          36.196744
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547705",
+        "name": "1006 Logts 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.196744,
+        "lng": 5.435208,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547705,
+        "refs": {
+          "osm": "node/10043547705"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.435335,
+          36.196799
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547706",
+        "name": "1006 Logts 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.196799,
+        "lng": 5.435335,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547706,
+        "refs": {
+          "osm": "node/10043547706"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.436687,
+          36.194514
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547707",
+        "name": "1014 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.194514,
+        "lng": 5.436687,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547707,
+        "refs": {
+          "osm": "node/10043547707"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.436851,
+          36.194575
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547708",
+        "name": "1014 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.194575,
+        "lng": 5.436851,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547708,
+        "refs": {
+          "osm": "node/10043547708"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.436724,
+          36.194527
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547709",
+        "name": "1014 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.194527,
+        "lng": 5.436724,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547709,
+        "refs": {
+          "osm": "node/10043547709"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.43681,
+          36.19456
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547710",
+        "name": "1014 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.19456,
+        "lng": 5.43681,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547710,
+        "refs": {
+          "osm": "node/10043547710"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.438164,
+          36.192317
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547711",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.192317,
+        "lng": 5.438164,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547711,
+        "refs": {
+          "osm": "node/10043547711"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.438363,
+          36.192395
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547712",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.192395,
+        "lng": 5.438363,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547712,
+        "refs": {
+          "osm": "node/10043547712"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.438197,
+          36.192331
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547714",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.192331,
+        "lng": 5.438197,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547714,
+        "refs": {
+          "osm": "node/10043547714"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.438309,
+          36.192379
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547715",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.192379,
+        "lng": 5.438309,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547715,
+        "refs": {
+          "osm": "node/10043547715"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.439493,
+          36.190342
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043547716",
+        "name": "5 eme Arrondissment",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.190342,
+        "lng": 5.439493,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043547716,
+        "refs": {
+          "osm": "node/10043547716"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.439717,
+          36.190433
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613817",
+        "name": "5 eme Arrondissment",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.190433,
+        "lng": 5.439717,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613817,
+        "refs": {
+          "osm": "node/10043613817"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.439547,
+          36.190362
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613818",
+        "name": "5 eme Arrondissment",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.190362,
+        "lng": 5.439547,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613818,
+        "refs": {
+          "osm": "node/10043613818"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.439655,
+          36.190413
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613819",
+        "name": "5 eme Arrondissment",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.190413,
+        "lng": 5.439655,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613819,
+        "refs": {
+          "osm": "node/10043613819"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.441332,
+          36.187614
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613820",
+        "name": "Aldjazzar",
+        "name_fr": "Aldjazzar",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.187614,
+        "lng": 5.441332,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613820,
+        "refs": {
+          "osm": "node/10043613820"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.441392,
+          36.187647
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613821",
+        "name": "Aldjazzar",
+        "name_fr": "Aldjazzar",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.187647,
+        "lng": 5.441392,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613821,
+        "refs": {
+          "osm": "node/10043613821"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.44154,
+          36.187712
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613822",
+        "name": "Aldjazzar",
+        "name_fr": "Aldjazzar",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.187712,
+        "lng": 5.44154,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613822,
+        "refs": {
+          "osm": "node/10043613822"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.441494,
+          36.18769
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613823",
+        "name": "Aldjazzar",
+        "name_fr": "Aldjazzar",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.18769,
+        "lng": 5.441494,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613823,
+        "refs": {
+          "osm": "node/10043613823"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.443338,
+          36.184612
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613824",
+        "name": "Les tours",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184612,
+        "lng": 5.443338,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613824,
+        "refs": {
+          "osm": "node/10043613824"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_exit_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.443601,
+          36.184687
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613825",
+        "name": "Les tours",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184687,
+        "lng": 5.443601,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613825,
+        "refs": {
+          "osm": "node/10043613825"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform_entry_only"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.443533,
+          36.184657
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10043613826",
+        "name": "Les tours",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184657,
+        "lng": 5.443533,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10043613826,
+        "refs": {
+          "osm": "node/10043613826"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_entry_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.394728,
+          36.185624
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422191",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185624,
+        "lng": 5.394728,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422191,
+        "refs": {
+          "osm": "node/10044422191"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.394725,
+          36.185853
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422192",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185853,
+        "lng": 5.394725,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422192,
+        "refs": {
+          "osm": "node/10044422192"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.39473,
+          36.185677
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422193",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185677,
+        "lng": 5.39473,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422193,
+        "refs": {
+          "osm": "node/10044422193"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.39473,
+          36.185747
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422194",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185747,
+        "lng": 5.39473,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422194,
+        "refs": {
+          "osm": "node/10044422194"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.398695,
+          36.184992
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422195",
+        "name": "Stop",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184992,
+        "lng": 5.398695,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422195,
+        "refs": {
+          "osm": "node/10044422195"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.398746,
+          36.184992
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422196",
+        "name": "Stop",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184992,
+        "lng": 5.398746,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422196,
+        "refs": {
+          "osm": "node/10044422196"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.39882,
+          36.18499
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422197",
+        "name": "Stop",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.18499,
+        "lng": 5.39882,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422197,
+        "refs": {
+          "osm": "node/10044422197"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403176,
+          36.178663
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422198",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.178663,
+        "lng": 5.403176,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422198,
+        "refs": {
+          "osm": "node/10044422198"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403194,
+          36.178737
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422200",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.178737,
+        "lng": 5.403194,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422200,
+        "refs": {
+          "osm": "node/10044422200"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.406731,
+          36.178499
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422201",
+        "name": "1000 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.178499,
+        "lng": 5.406731,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422201,
+        "refs": {
+          "osm": "node/10044422201"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.40673,
+          36.17834
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422202",
+        "name": "1000 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.17834,
+        "lng": 5.40673,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422202,
+        "refs": {
+          "osm": "node/10044422202"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.408909,
+          36.181185
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422203",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.181185,
+        "lng": 5.408909,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422203,
+        "refs": {
+          "osm": "node/10044422203"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.409058,
+          36.181203
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422204",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.181203,
+        "lng": 5.409058,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422204,
+        "refs": {
+          "osm": "node/10044422204"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.408973,
+          36.181192
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422205",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.181192,
+        "lng": 5.408973,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422205,
+        "refs": {
+          "osm": "node/10044422205"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.409352,
+          36.179246
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422206",
+        "name": "Bizard",
+        "name_fr": "Bizard",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.179246,
+        "lng": 5.409352,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422206,
+        "refs": {
+          "osm": "node/10044422206"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.409468,
+          36.17926
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422207",
+        "name": "Bizard",
+        "name_fr": "Bizard",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.17926,
+        "lng": 5.409468,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422207,
+        "refs": {
+          "osm": "node/10044422207"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.409405,
+          36.179251
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422208",
+        "name": "Bizard",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.179251,
+        "lng": 5.409405,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422208,
+        "refs": {
+          "osm": "node/10044422208"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.407263,
+          36.1844
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422209",
+        "name": "Souk",
+        "name_fr": "Souk",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.1844,
+        "lng": 5.407263,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422209,
+        "refs": {
+          "osm": "node/10044422209"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.407342,
+          36.184507
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422210",
+        "name": "Souk",
+        "name_fr": "Souk",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184507,
+        "lng": 5.407342,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422210,
+        "refs": {
+          "osm": "node/10044422210"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.407303,
+          36.184448
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422211",
+        "name": "Souk",
+        "name_fr": "Souk",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184448,
+        "lng": 5.407303,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422211,
+        "refs": {
+          "osm": "node/10044422211"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.40366,
+          36.188632
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422212",
+        "name": "Rempart",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.188632,
+        "lng": 5.40366,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422212,
+        "refs": {
+          "osm": "node/10044422212"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403433,
+          36.18862
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422213",
+        "name": "Rempart",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.18862,
+        "lng": 5.403433,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422213,
+        "refs": {
+          "osm": "node/10044422213"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403591,
+          36.188628
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422214",
+        "name": "Rempart",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.188628,
+        "lng": 5.403591,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422214,
+        "refs": {
+          "osm": "node/10044422214"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403481,
+          36.188621
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422215",
+        "name": "Rempart",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.188621,
+        "lng": 5.403481,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422215,
+        "refs": {
+          "osm": "node/10044422215"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403521,
+          36.19174
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044422216",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.19174,
+        "lng": 5.403521,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044422216,
+        "refs": {
+          "osm": "node/10044422216"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403272,
+          36.19174
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455617",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.19174,
+        "lng": 5.403272,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455617,
+        "refs": {
+          "osm": "node/10044455617"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403336,
+          36.191742
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455620",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.191742,
+        "lng": 5.403336,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455620,
+        "refs": {
+          "osm": "node/10044455620"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.404517,
+          36.200696
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455633",
+        "name": "Maternite",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.200696,
+        "lng": 5.404517,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455633,
+        "refs": {
+          "osm": "node/10044455633"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.404736,
+          36.200747
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455634",
+        "name": "Maternite",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.200747,
+        "lng": 5.404736,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455634,
+        "refs": {
+          "osm": "node/10044455634"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.404575,
+          36.200711
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455635",
+        "name": "Maternite",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.200711,
+        "lng": 5.404575,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455635,
+        "refs": {
+          "osm": "node/10044455635"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.404682,
+          36.200728
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455636",
+        "name": "Maternite",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.200728,
+        "lng": 5.404682,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455636,
+        "refs": {
+          "osm": "node/10044455636"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.402824,
+          36.204307
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455637",
+        "name": "Kaaboub",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.204307,
+        "lng": 5.402824,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455637,
+        "refs": {
+          "osm": "node/10044455637"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.402633,
+          36.204249
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455638",
+        "name": "Kaaboub",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.204249,
+        "lng": 5.402633,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455638,
+        "refs": {
+          "osm": "node/10044455638"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.402774,
+          36.204295
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455639",
+        "name": "Kaaboub",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.204295,
+        "lng": 5.402774,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455639,
+        "refs": {
+          "osm": "node/10044455639"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.402669,
+          36.204267
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455640",
+        "name": "Kaaboub",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.204267,
+        "lng": 5.402669,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455640,
+        "refs": {
+          "osm": "node/10044455640"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.41674,
+          36.206152
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455641",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206152,
+        "lng": 5.41674,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455641,
+        "refs": {
+          "osm": "node/10044455641"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.416692,
+          36.206368
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455642",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206368,
+        "lng": 5.416692,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455642,
+        "refs": {
+          "osm": "node/10044455642"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.412778,
+          36.206047
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455643",
+        "name": "Gaoua 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206047,
+        "lng": 5.412778,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455643,
+        "refs": {
+          "osm": "node/10044455643"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.412747,
+          36.206259
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455644",
+        "name": "Gaoua 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206259,
+        "lng": 5.412747,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455644,
+        "refs": {
+          "osm": "node/10044455644"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.412772,
+          36.206091
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455645",
+        "name": "Gaoua 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206091,
+        "lng": 5.412772,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455645,
+        "refs": {
+          "osm": "node/10044455645"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.412752,
+          36.206215
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455646",
+        "name": "Gaoua 2",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206215,
+        "lng": 5.412752,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455646,
+        "refs": {
+          "osm": "node/10044455646"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.406987,
+          36.206557
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455647",
+        "name": "Gaoua 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206557,
+        "lng": 5.406987,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455647,
+        "refs": {
+          "osm": "node/10044455647"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.406987,
+          36.20668
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455648",
+        "name": "Gaoua 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.20668,
+        "lng": 5.406987,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455648,
+        "refs": {
+          "osm": "node/10044455648"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403021,
+          36.206507
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455649",
+        "name": "Boussekine",
+        "name_fr": "Boussekine",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206507,
+        "lng": 5.403021,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455649,
+        "refs": {
+          "osm": "node/10044455649"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403019,
+          36.206602
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455650",
+        "name": "Boussekine",
+        "name_fr": "Boussekine",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206602,
+        "lng": 5.403019,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455650,
+        "refs": {
+          "osm": "node/10044455650"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403021,
+          36.206526
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455651",
+        "name": "Boussekine",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206526,
+        "lng": 5.403021,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455651,
+        "refs": {
+          "osm": "node/10044455651"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.403019,
+          36.206586
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455652",
+        "name": "Boussekine",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206586,
+        "lng": 5.403019,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455652,
+        "refs": {
+          "osm": "node/10044455652"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.420176,
+          36.206942
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455653",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206942,
+        "lng": 5.420176,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455653,
+        "refs": {
+          "osm": "node/10044455653"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.420157,
+          36.207198
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10044455654",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.207198,
+        "lng": 5.420157,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10044455654,
+        "refs": {
+          "osm": "node/10044455654"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.102991,
           36.730176
         ]
@@ -1106,6 +4919,88 @@
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.391781,
+          36.185467
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10751048813",
+        "name": "GR bus stop",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185467,
+        "lng": 5.391781,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10751048813,
+        "refs": {
+          "osm": "node/10751048813"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_exit_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.392051,
+          36.185422
+        ]
+      },
+      "properties": {
+        "id": "osm-node-10751672551",
+        "name": "GR bus stop",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.185422,
+        "lng": 5.392051,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 10751672551,
+        "refs": {
+          "osm": "node/10751672551"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_entry_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
       }
     },
     {
@@ -22380,6 +26275,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.443411,
+          36.184628
+        ]
+      },
+      "properties": {
+        "id": "osm-node-3805698045",
+        "name": "Les tours",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.184628,
+        "lng": 5.443411,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 3805698045,
+        "refs": {
+          "osm": "node/3805698045"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop_exit_only"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.014243,
           36.759954
         ]
@@ -23246,6 +27182,47 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.403452,
+          36.191739
+        ]
+      },
+      "properties": {
+        "id": "osm-node-443157679",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.191739,
+        "lng": 5.403452,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 443157679,
+        "refs": {
+          "osm": "node/443157679"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.184363,
           36.725957
         ]
@@ -23282,6 +27259,88 @@
         ],
         "highway": "bus_stop",
         "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.406988,
+          36.206603
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4473592985",
+        "name": "Gaoua 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206603,
+        "lng": 5.406988,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4473592985,
+        "refs": {
+          "osm": "node/4473592985"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.406986,
+          36.206658
+        ]
+      },
+      "properties": {
+        "id": "osm-node-4473596689",
+        "name": "Gaoua 1",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206658,
+        "lng": 5.406986,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 4473596689,
+        "refs": {
+          "osm": "node/4473596689"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
       }
     },
     {
@@ -38110,6 +42169,334 @@
         ],
         "highway": null,
         "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.428564,
+          36.205444
+        ]
+      },
+      "properties": {
+        "id": "osm-node-659056385",
+        "name": "407 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.205444,
+        "lng": 5.428564,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 659056385,
+        "refs": {
+          "osm": "node/659056385"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.428666,
+          36.205514
+        ]
+      },
+      "properties": {
+        "id": "osm-node-659056388",
+        "name": "407 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.205514,
+        "lng": 5.428666,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 659056388,
+        "refs": {
+          "osm": "node/659056388"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.40673,
+          36.178403
+        ]
+      },
+      "properties": {
+        "id": "osm-node-661076873",
+        "name": "1000 Logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.178403,
+        "lng": 5.40673,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 661076873,
+        "refs": {
+          "osm": "node/661076873"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.42353,
+          36.207166
+        ]
+      },
+      "properties": {
+        "id": "osm-node-662528488",
+        "name": "Stade 500 logts",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.207166,
+        "lng": 5.42353,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 662528488,
+        "refs": {
+          "osm": "node/662528488"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.420168,
+          36.207119
+        ]
+      },
+      "properties": {
+        "id": "osm-node-662528497",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.207119,
+        "lng": 5.420168,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 662528497,
+        "refs": {
+          "osm": "node/662528497"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.420178,
+          36.207014
+        ]
+      },
+      "properties": {
+        "id": "osm-node-662528570",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.207014,
+        "lng": 5.420178,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 662528570,
+        "refs": {
+          "osm": "node/662528570"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.416704,
+          36.206312
+        ]
+      },
+      "properties": {
+        "id": "osm-node-663470213",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206312,
+        "lng": 5.416704,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 663470213,
+        "refs": {
+          "osm": "node/663470213"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.416726,
+          36.206218
+        ]
+      },
+      "properties": {
+        "id": "osm-node-663470267",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.206218,
+        "lng": 5.416726,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 663470267,
+        "refs": {
+          "osm": "node/663470267"
+        },
+        "operator_ids": [
+          "etus-setif"
+        ],
+        "line_ids": [
+          "etus-setif-101"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
       }
     },
     {

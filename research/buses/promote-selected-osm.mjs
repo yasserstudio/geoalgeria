@@ -19,28 +19,33 @@ const rawManifest = read(join(CACHE, "raw", "manifest.json"));
 const registry = read(join(HERE, "operator-registry.json"));
 const officialTiaret = read(join(ROOT, "sources", "buses", "etus-tiaret-lines.json"));
 const officialEtusto = read(join(ROOT, "sources", "buses", "etusto-lines.json"));
+const officialSetif = read(join(ROOT, "sources", "buses", "etus-setif-lines.json"));
 
 const etusaRefs = new Set(etusa.lines.map((line) => line.line));
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
 const reviewedEtustoRefs = new Set(officialEtusto.map((line) => line.ref));
+const reviewedSetifRefs = new Set(officialSetif.lines.map((line) => line.ref));
 const selected = candidates.filter((candidate) =>
   candidate.classification?.value === "urban_suburban_candidate" &&
   candidate.map_readiness === "geometry_candidate" && (
     (candidate.operator_id === "etusa" && etusaRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
+    (candidate.operator_id === "etus-setif" && reviewedSetifRefs.has(candidate.ref)
+      && candidate.relation_ids.length === 1 && candidate.relation_ids[0] === 14608521) ||
     candidate.operator_id === "etus-mostaganem"
   ),
 );
 
 const byOperator = Object.fromEntries(
-  ["etusa", "etus-tiaret", "etusto", "etus-mostaganem"].map((id) => [
+  ["etusa", "etus-tiaret", "etusto", "etus-mostaganem", "etus-setif"].map((id) => [
     id,
     selected.filter((candidate) => candidate.operator_id === id).length,
   ]),
 );
-if (selected.length !== 44 || byOperator.etusa !== 33 || byOperator["etus-tiaret"] !== 7
-  || byOperator.etusto !== 3 || byOperator["etus-mostaganem"] !== 1) {
+if (selected.length !== 45 || byOperator.etusa !== 33 || byOperator["etus-tiaret"] !== 7
+  || byOperator.etusto !== 3 || byOperator["etus-mostaganem"] !== 1
+  || byOperator["etus-setif"] !== 1) {
   throw new Error(`Selection drifted: ${JSON.stringify({ total: selected.length, byOperator })}`);
 }
 
@@ -101,7 +106,7 @@ const source = {
   source: "OpenStreetMap via Overpass API",
   license: "ODbL-1.0",
   attribution: "© OpenStreetMap contributors",
-  selection_note: "Reviewed urban/suburban geometry subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, Setif, ETUAD, and validation-only official geometry are excluded.",
+  selection_note: "Reviewed urban/suburban geometry subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 1 ETUS Setif Line matched to official Operator endpoints, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
   membership_note: "Station memberships preserve raw OSM relation-member order and roles. This order is unvalidated as a passenger stop sequence, and no terminus status is inferred.",
   selection_counts: {
     shape_candidates: lineShapes.length,
@@ -115,7 +120,7 @@ const source = {
     responses: relevantResponses,
   },
   operators: registry.operators
-    .filter((operator) => ["etusa", "etus-tiaret", "etusto", "etus-mostaganem"].includes(operator.id))
+    .filter((operator) => ["etusa", "etus-tiaret", "etusto", "etus-mostaganem", "etus-setif"].includes(operator.id))
     .map(({ id, name_fr, name_ar, wilaya_codes, scope }) => ({ id, name_fr, name_ar, wilaya_codes, scope })),
   line_shapes: lineShapes,
   stations: selectedStations,

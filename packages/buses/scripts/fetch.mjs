@@ -16,6 +16,7 @@ const officialEtusto = readCapture("buses", "etusto-lines");
 const officialBejaia = readCapture("buses", "etus-bejaia-lines");
 const officialMsila = readCapture("buses", "etus-msila-lines");
 const officialSidiBelAbbes = readCapture("buses", "etus-sidi-bel-abbes-lines");
+const officialSetif = readCapture("buses", "etus-setif-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -27,6 +28,7 @@ const operatorLabels = {
   "etus-tiaret": { operator: "ETUS Tiaret", network: "Tiaret" },
   etusto: { operator: "ETUSTO", network: "Tizi Ouzou" },
   "etus-mostaganem": { operator: "ETUS Mostaganem", network: "Mostaganem" },
+  "etus-setif": { operator: "ETUS Setif", network: "Setif" },
 };
 const coordinateDecimals = (value) => {
   const text = String(value);
@@ -90,6 +92,21 @@ for (const official of officialSidiBelAbbes.lines) {
   });
 }
 
+for (const official of officialSetif.lines) {
+  const shape = shapeSourceByKey.get(`etus-setif|${official.ref}`);
+  lines.push({
+    id: lineId("etus-setif", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-setif", operator: "ETUS Setif", network: "Setif",
+    line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2,
+    stops: null, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "19",
+    source: "etus-setif", source_refs: shape ? ["etus-setif", "osm"] : ["etus-setif"],
+    source_url: officialSetif.evidence.announcement_url,
+    shape_id: shape ? shapeId("etus-setif", official.ref) : null,
+    osm_relation_ids: shape?.relation_ids ?? [],
+  });
+}
+
 for (const official of officialEtusto) {
   const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
   lines.push({
@@ -104,7 +121,7 @@ for (const official of officialEtusto) {
   });
 }
 
-for (const shape of osm.line_shapes.filter((item) => item.operator_id !== "etusa" && item.operator_id !== "etusto")) {
+for (const shape of osm.line_shapes.filter((item) => !["etusa", "etusto", "etus-setif"].includes(item.operator_id))) {
   const labels = operatorLabels[shape.operator_id];
   const official = officialLineByKey.get(`${shape.operator_id}|${shape.ref}`);
   lines.push({
@@ -189,7 +206,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 80, shapes: 44, directions: 79, stations: 1061, memberships: 1869 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 85, shapes: 45, directions: 80, stations: 1168, memberships: 1982 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -223,7 +240,8 @@ const operatorRows = osm.operators.map((operator) => ({
   shape_count: shapes.filter((shape) => shape.operator_id === operator.id).length,
   source_refs: operator.id === "etusa" ? ["wikipedia", "osm"]
     : operator.id === "etus-tiaret" ? ["etus-tiaret", "osm"]
-      : operator.id === "etusto" ? ["etusto", "osm"] : ["osm"],
+      : operator.id === "etusto" ? ["etusto", "osm"]
+        : operator.id === "etus-setif" ? ["etus-setif", "osm"] : ["osm"],
 }));
 operatorRows.push({
   id: "etus-bejaia", name: "ETUS Béjaïa",
@@ -254,4 +272,4 @@ write(join(DATA, "geojson", "shapes.geojson"), {
   features: shapes.map(({ geometry, ...properties }) => ({ type: "Feature", id: properties.id, geometry, properties })),
 });
 
-console.log("buses: 80 lines, 44 shapes, 79 directions, 1,061 stations, 1,869 ordered memberships → v3");
+console.log("buses: 85 lines, 45 shapes, 80 directions, 1,168 stations, 1,982 ordered memberships → v3");

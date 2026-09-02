@@ -45,6 +45,22 @@
     ]
   },
   {
+    "id": "etus-setif",
+    "name": "ETUS Setif",
+    "name_fr": "Entreprise de transport urbain et suburbain de Sétif",
+    "name_ar": "المؤسسة العمومية للنقل الحضري وشبه الحضري بسطيف",
+    "wilaya_codes": [
+      "19"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 5,
+    "shape_count": 1,
+    "source_refs": [
+      "etus-setif",
+      "osm"
+    ]
+  },
+  {
     "id": "etus-sidi-bel-abbes",
     "name": "ETUS Sidi Bel Abbès",
     "name_fr": "Entreprise de Transport Urbain et Suburbain de Sidi Bel Abbès",

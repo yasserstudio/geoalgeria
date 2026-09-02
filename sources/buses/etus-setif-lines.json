@@ -1,0 +1,48 @@
+{
+  "evidence": {
+    "announcement_date": "2026-05-26",
+    "announcement_url": "https://www.govserv.org/DZ/S%C3%A9tif/111330534776381/ETUS-S%C3%89TIF",
+    "geometry_validation": {
+      "historical_announcement_url": "https://sawtsetif.dz/v/3801/",
+      "line": "101",
+      "note": "The complete OSM relation runs GR ETUS to Les Tours (حي الأبراج) through the extension stops named by the Operator diagram. Its stale OSM to=University of Setif tag is not used as a passenger terminus.",
+      "osm_relation_id": 14608521,
+      "osm_url": "https://www.openstreetmap.org/relation/14608521",
+      "station_directory_url": "https://rues-algerie.openalfa.com/lignes-de-bus/etus-setif-101-14608521"
+    },
+    "mode": "operator_artwork_supplied_by_project_owner",
+    "supplied_at": "2026-09-02",
+    "supplied_image_dimensions": {
+      "height": 1446,
+      "width": 2048
+    },
+    "supplied_image_sha256": "504eefe7f850a0600363b7110050e4f1d030701eb9d29194d10089e811e7561e"
+  },
+  "lines": [
+    {
+      "ref": "101",
+      "terminus1": "المحطة البرية",
+      "terminus2": "حي الأبراج"
+    },
+    {
+      "ref": "104",
+      "terminus1": "المحطة البرية",
+      "terminus2": "حي الهضاب"
+    },
+    {
+      "ref": "105",
+      "terminus1": "المحطة البرية",
+      "terminus2": "حي الهضاب"
+    },
+    {
+      "ref": "106A",
+      "terminus1": "وسط المدينة",
+      "terminus2": "حي 5 جويلية 1962"
+    },
+    {
+      "ref": "106B",
+      "terminus1": "وسط المدينة",
+      "terminus2": "حي عين الرمان"
+    }
+  ]
+}
