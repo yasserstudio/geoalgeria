@@ -41,6 +41,11 @@ const dedupeMultiLineString = (geometry) => {
   };
 };
 
+const approvedSetifLineFor = (relationIds) =>
+  [...approvedSetifRelations.entries()].find(([, approvedIds]) =>
+    approvedIds.length === relationIds.length
+    && approvedIds.every((id, index) => id === relationIds[index]))?.[0] ?? null;
+
 const etusaRefs = new Set(etusa.lines.map((line) => line.line));
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
 const reviewedEtustoRefs = new Set(officialEtusto.map((line) => line.ref));
@@ -51,9 +56,7 @@ const selected = candidates.filter((candidate) =>
     (candidate.operator_id === "etusa" && etusaRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
-    (candidate.operator_id === "etus-setif" && [...approvedSetifRelations.values()].some((relationIds) =>
-      relationIds.length === candidate.relation_ids.length
-      && relationIds.every((id, index) => id === candidate.relation_ids[index]))) ||
+    (candidate.operator_id === "etus-setif" && approvedSetifLineFor(candidate.relation_ids) != null) ||
     candidate.operator_id === "etus-mostaganem"
   ),
 );
@@ -82,9 +85,7 @@ const lineShapes = selected
     const relations = candidate.relation_ids.map((id) => relationById.get(id));
     if (relations.some((relation) => !relation)) throw new Error(`Missing relation for ${candidate.id}`);
     const ref = candidate.operator_id === "etus-setif"
-      ? [...approvedSetifRelations.entries()].find(([, relationIds]) =>
-        relationIds.length === candidate.relation_ids.length
-        && relationIds.every((id, index) => id === candidate.relation_ids[index]))?.[0] ?? candidate.ref
+      ? approvedSetifLineFor(candidate.relation_ids) ?? candidate.ref
       : candidate.ref;
     return {
       operator_id: candidate.operator_id,
