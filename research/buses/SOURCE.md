@@ -69,9 +69,12 @@ collection interval rather than one OSM revision.
 - **12 relations are explicitly taxi-labelled despite `route=bus`**, and seven
   cross a wilaya boundary. Both are review flags, not publishable scope labels.
 
-This snapshot is research evidence only. It has not changed the published
-package or app. OSM data is ODbL; operator pages/apps remain validation or
-partnership leads unless they expose a lawful reusable feed.
+The full candidate snapshot remains research evidence only. Reviewed subsets
+have since been promoted into the package and app: the current release contains
+85 operator-backed Lines, 47 matched OSM shapes, 83 Directions, and 1,290
+Stations across eight Operators. A candidate is not promoted merely because it
+has drawable geometry. OSM data is ODbL; operator pages/apps remain validation
+or partnership leads unless they expose a lawful reusable feed.
 
 `analyze-candidates.mjs` produces the ignored `candidate-lines.json`, GeoJSON,
 `readiness.json`, and `READINESS.md` audit files from that local snapshot. A

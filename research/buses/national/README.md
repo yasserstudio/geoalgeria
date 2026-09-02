@@ -24,10 +24,10 @@ node research/buses/national/build-national-inventory.mjs
 - wilayas with open reuse grants in audited operator sources: 0
 - wilayas with conflicts: 16
 - wilayas with blockers: 69
-- wilayas in reusable package: 4
-- reusable package lines: 61
-- reusable package shapes: 44
-- reusable package stations: 1061
+- wilayas in reusable package: 8
+- reusable package lines: 85
+- reusable package shapes: 47
+- reusable package stations: 1290
 
 “yes” means observed structured evidence, “lead” means partial, claimed, validation-only, or protected evidence, “no” means unavailable in this audit, and “?” means unknown. Evidence does not imply reuse permission; see each JSON record’s sources, blockers, conflicts, and retained raw evidence.
 
@@ -40,7 +40,7 @@ Code | Wilaya | Operator ID | Audited sources | Source Line facts | Reusable Lin
 03 | Laghouat | etusl-laghouat | 0 | — | — | — | — | ? | ? | ? | no | no | 1
 04 | Oum El Bouaghi | etus-oeb | 1 | — | — | — | — | ? | ? | ? | no | no | 1
 05 | Batna | etu-batna | 0 | — | — | — | — | ? | ? | ? | no | no | 1
-06 | Béjaïa | etus-bejaia | 3 | 5 | — | — | — | no | lead | ? | lead | yes | 3
+06 | Béjaïa | etus-bejaia | 3 | 5 | 5 | — | — | no | lead | ? | lead | yes | 3
 07 | Biskra | etu-biskra | 0 | — | — | — | — | ? | ? | ? | no | no | 1
 08 | Béchar | etu-bechar | 0 | — | — | — | — | ? | ? | ? | no | no | 1
 09 | Blida | etu-blida | 0 | — | — | — | — | ? | ? | ? | no | no | 2
@@ -49,20 +49,20 @@ Code | Wilaya | Operator ID | Audited sources | Source Line facts | Reusable Lin
 12 | Tébessa | etu-tebessa | 0 | — | — | — | — | ? | ? | ? | no | no | 1
 13 | Tlemcen | etu-tlemcen | 0 | — | — | — | — | ? | ? | ? | no | no | 1
 14 | Tiaret | etus-tiaret | 1 | 7 | 7 | 7 | 405 | yes | ? | ? | no | yes | 3
-15 | Tizi Ouzou | etusto | 2 | 5 | 3 | 3 | 30 | ? | lead | yes | no | yes | 3
+15 | Tizi Ouzou | etusto | 2 | 5 | 5 | 3 | 30 | ? | lead | yes | no | yes | 3
 16 | Alger | etusa | 3 | — | 50 | 33 | 593 | no | no | lead | no | no | 3
 17 | Djelfa | etu-djelfa | 0 | — | — | — | — | ? | ? | ? | no | no | 1
 18 | Jijel | etus-jijel | 2 | — | — | — | — | ? | ? | ? | lead | no | 3
-19 | Sétif | etus-setif | 1 | — | — | — | — | ? | ? | ? | lead | no | 2
+19 | Sétif | etus-setif | 1 | — | 5 | 3 | 229 | ? | ? | ? | lead | no | 2
 20 | Saïda | etus-saida | 1 | — | — | — | — | ? | ? | ? | no | no | 1
 21 | Skikda | etus-skikda | 2 | — | — | — | — | ? | ? | ? | lead | no | 2
-22 | Sidi Bel Abbès | etu-sidi-bel-abbes | 1 | — | — | — | — | ? | ? | ? | no | no | 2
+22 | Sidi Bel Abbès | etu-sidi-bel-abbes | 1 | — | 8 | — | — | ? | ? | ? | no | no | 2
 23 | Annaba | etus-annaba | 2 | — | — | — | — | ? | no | ? | lead | no | 3
 24 | Guelma | etus-guelma | 3 | — | — | — | — | no | no | no | no | no | 2
 25 | Constantine | etusc-constantine | 2 | — | — | — | — | no | no | no | no | no | 2
 26 | Médéa | etus-medea | 1 | — | — | — | — | no | no | no | no | no | 2
 27 | Mostaganem | etus-mostaganem | 0 | — | 1 | 1 | 33 | no | no | no | no | no | 2
-28 | M'sila | etus-msila | 1 | — | — | — | — | no | no | no | no | no | 2
+28 | M'sila | etus-msila | 1 | — | 4 | — | — | no | no | no | no | no | 2
 29 | Mascara | etus-mascara | 3 | 6 | — | — | — | yes | yes | no | no | yes | 3
 30 | Ouargla | etus-ouargla | 3 | — | — | — | — | no | no | no | no | no | 2
 31 | Oran | etus-oran | 6 | 4 | — | — | — | no | no | no | no | yes | 3

@@ -9,24 +9,23 @@ recommended action derived from those observations.
 
 ## Current directory and map coverage
 
-- **[seen]** The published working tree currently has **80 Lines across seven
-  Operators/Wilayas**, not the 61 Lines/four Wilayas still reported by the older
-  national inventory: Alger 50, Tiaret 7, Tizi Ouzou 5, Béjaïa 5, M'Sila 4,
-  Sidi Bel Abbès 8, and Mostaganem 1. Source:
+- **[seen]** The published working tree currently has **85 Lines across eight
+  Operators/Wilayas**: Alger 50, Sidi Bel Abbès 8, Tiaret 7, Tizi Ouzou 5,
+  Béjaïa 5, Sétif 5, M'Sila 4, and Mostaganem 1. Source:
   [`packages/buses/data/lines.json`](../../packages/buses/data/lines.json),
   [`packages/buses/data/operators.json`](../../packages/buses/data/operators.json).
-- **[seen]** Only **44 of the 80 Lines have drawable shapes**: Alger 33, Tiaret
-  7, Tizi Ouzou 3, and Mostaganem 1. Béjaïa, M'Sila, and Sidi Bel Abbès are
-  directory/timetable coverage only at present. Source:
+- **[seen]** **47 of the 85 Lines have drawable shapes**: Alger 33, Tiaret 7,
+  Tizi Ouzou 3, Sétif 3, and Mostaganem 1. Béjaïa, M'Sila, and Sidi Bel Abbès
+  are directory/timetable coverage only at present. Sétif Lines 105 and 106A
+  are also directory-only. Source:
   [`packages/buses/data/lines.json`](../../packages/buses/data/lines.json),
   [`packages/buses/data/shapes.json`](../../packages/buses/data/shapes.json).
-- **[seen]** The committed Station layer contains 1,061 Stations and the Line
-  membership file contains 1,869 memberships. Source:
+- **[seen]** The committed Station layer contains 1,290 Stations and the Line
+  membership file contains 2,105 memberships. Source:
   [`packages/buses/data/stations.json`](../../packages/buses/data/stations.json),
   [`packages/buses/data/station-memberships.json`](../../packages/buses/data/station-memberships.json).
-- **[seen]** The national research summary is stale relative to the package: it
-  reports 61 Lines, four reusable Wilayas, and omits the subsequently promoted
-  M'Sila and Sidi Bel Abbès coverage. Source:
+- **[seen]** The national research summary was regenerated on 2026-09-02 and
+  now agrees with the package totals and all eight represented Wilayas. Source:
   [`research/buses/national/README.md`](./national/README.md).
 
 ## User-supplied official sources
@@ -80,33 +79,29 @@ recommended action derived from those observations.
 
 ## Next concrete geometry priorities
 
-1. **[inferred] Sétif — next new Wilaya.** The OSM audit has four controlled
-   ETUS Sétif geometry candidates from five directional relations. All four have
-   complete geometry; three have Station members. Start with refs **106**
-   (two directions, 44 Station members), **104** (one direction, 79 members),
-   and the long **101** direction (107 members). Manually resolve the separate
-   0.8 km Line 101 fragment before promotion. Source:
-   [`research/buses/osm/candidate-lines.json`](./osm/candidate-lines.json),
-   [`research/buses/osm/READINESS.md`](./osm/READINESS.md).
-2. **[inferred] Sidi Bel Abbès — fill the largest structured shape gap.** Eight
+1. **[inferred] Sidi Bel Abbès — fill the largest structured shape gap.** Eight
    official timetable Lines already exist; obtain vector paths and ordered
    Stations for those exact refs. This improves the map without inventing new
    Line identity.
-3. **[inferred] M'Sila — vectorize through an authorized source.** Four official
+2. **[inferred] M'Sila — vectorize through an authorized source.** Four official
    Line identities and diagrams exist, but neither reusable vectors nor ordered
    Station data are committed.
-4. **[inferred] Béjaïa — resolve licensing and identity.** Five official Line
+3. **[inferred] Béjaïa — resolve licensing and identity.** Five official Line
    pages expose fetchable Google My Maps KML, but no open reuse licence was
    found, and nine Béjaïa OSM candidates do not safely match the official refs.
    Use the official KML for validation only until permission is obtained; do a
    manual termini/ref reconciliation against OSM. Source:
    [`research/buses/SOURCE.md`](./SOURCE.md),
    [`research/buses/osm/READINESS.md`](./osm/READINESS.md).
-5. **[inferred] Aïn Defla — identity audit after Sétif.** Two ETUAD OSM
+4. **[inferred] Aïn Defla — identity audit.** Two ETUAD OSM
    relations have complete paths and 3/5 Station members, but both remain
    `needs_identity`; they are not ready for automatic promotion. Verify Line X
    and Line 2 termini with an Operator-owned source. Source:
    [`research/buses/osm/candidate-lines.json`](./osm/candidate-lines.json).
+5. **[inferred] Oran — establish a publishable static network before any live
+   pilot.** The operator tracker is an authorization lead, not a Line dataset.
+   Request current Line identities, termini, shapes, and reuse terms; do not
+   derive a public network from authenticated vehicles or exposed tokens.
 
 ## Promotion gate
 
@@ -114,6 +109,8 @@ recommended action derived from those observations.
   Operator identity, Line ref/termini, reusable geometry rights, and ordered
   Station evidence are each explicit. Live GPS, raster diagrams, and app-store
   claims are validation leads, not substitutes for those four gates.
-- **[inferred]** On current committed evidence, **Sétif is the only immediate
-  new-Wilaya geometry review candidate**. Sidi Bel Abbès, M'Sila, and Béjaïa are
-  better treated as enrichment/licensing work; Aïn Defla still needs identity.
+- **[inferred]** Sétif's safe promotion is complete: Lines 101, 104, and 106B
+  have reviewed shapes, while 105 and 106A correctly remain directory-only.
+  No further Wilaya is ready for automatic promotion today. Sidi Bel Abbès,
+  M'Sila, and Béjaïa need geometry/licensing work; Aïn Defla needs identity;
+  Oran needs an authorized static network source before a live pilot.
