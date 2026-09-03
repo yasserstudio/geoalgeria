@@ -1,0 +1,268 @@
+{
+  "evidence": {
+    "announcement_note": "Line route artwork (two collages, Google Earth base, © 2025 Airbus imagery) and the Eid al-Adha 2025 service program (6-8 June 2025) published by the Operator; read by the project owner on the Operator page and supplied as images.",
+    "announcement_url": "https://www.facebook.com/ETUS44/",
+    "eid_al_adha_2025_program": {
+      "buses_per_period": {
+        "AD-1": [
+          2,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "AD-2": [
+          2,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "AD-3": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "AD-4": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "AD-5": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "AD-9": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "AT-1": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "AT-3": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "KM-1": [
+          2,
+          3,
+          2,
+          2,
+          2,
+          2
+        ],
+        "KM-2": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "KM-3": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        "KM-4": [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ]
+      },
+      "night_service_note": "Two buses on night duty in Aïn Defla city until 23:00 during the holiday.",
+      "note": "Holiday service, not regular hours; kept as evidence of Line identity and scale only.",
+      "periods": {
+        "2025-06-06": [
+          "07:00-12:40",
+          "13:40-20:15"
+        ],
+        "2025-06-07": [
+          "06:50-13:30",
+          "13:30-20:15"
+        ],
+        "2025-06-08": [
+          "06:50-13:30",
+          "13:30-20:15"
+        ]
+      }
+    },
+    "geometry_validations": [
+      {
+        "line": "AD-2",
+        "note": "OSM 'Ligne 2' (operator=ETUAD) runs 19.6 km round trip between 36.240N 1.921E, which Nominatim resolves as the Mazouni suburb of Aïn Defla, and the gare routière side of town at 36.276N 2.001E, passing the Zone industrielle. Same ref, same city, same orientation and both endpoints as the Operator's AD-02 artwork.",
+        "osm_relation_ids": [
+          16022861
+        ],
+        "osm_url": "https://www.openstreetmap.org/relation/16022861"
+      }
+    ],
+    "mode": "operator_artwork_supplied_by_project_owner",
+    "supplied_at": "2026-09-03",
+    "supplied_images": [
+      {
+        "height": 2835,
+        "role": "khemis_miliana_lines_01_05",
+        "sha256": "03ef65baa819b73b4b3da00c3ed84ba9873c18cecbe13c7f507088ca16910dd4",
+        "width": 1205
+      },
+      {
+        "height": 2835,
+        "role": "ain_defla_lines_01_02_06_07_08",
+        "sha256": "2f0da167f2da1d0937c17e624b63c1cf022e1cfbb2ec6e5020d778f721b1fd02",
+        "width": 1205
+      },
+      {
+        "height": 1755,
+        "role": "eid_al_adha_2025_service_program",
+        "sha256": "f7782523abf21ac93a10336dac15e0019508ec6b5157b5bf27bd2a63c308060d",
+        "width": 1241
+      }
+    ],
+    "unmatched_osm": [
+      {
+        "name": "الخط س",
+        "note": "operator=ETUAD, 13 km, Aïn Defla city; no numbered counterpart in the 2025 artwork or program. Left unpromoted.",
+        "osm_relation_id": 7107372,
+        "ref": "X"
+      }
+    ]
+  },
+  "lines": [
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-1",
+      "terminus1_ar": "حي مازوني (فونال)",
+      "terminus1_fr": "Haï Mazouni (Fonal)",
+      "terminus2_ar": "المحطة البرية (الوكالة العقارية)",
+      "terminus2_fr": "Gare routière (Agence foncière)"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-2",
+      "terminus1_ar": "حي مازوني (حي 150 مسكن)",
+      "terminus1_fr": "Haï Mazouni (Cité 150 Logements)",
+      "terminus2_ar": "المحطة البرية",
+      "terminus2_fr": "Gare routière"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-3"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-4"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-5"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-6",
+      "terminus1_ar": "حي الشلال (المدخل الشرقي)",
+      "terminus1_fr": "Haï Echellal (entrée est)",
+      "terminus2_ar": "المنطقة الصناعية",
+      "terminus2_fr": "Zone industrielle"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-7",
+      "terminus1_ar": "حي الشلال (وسط المدينة)",
+      "terminus1_fr": "Haï Echellal (centre-ville)",
+      "terminus2_ar": "المنطقة الصناعية",
+      "terminus2_fr": "Zone industrielle"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-8",
+      "terminus1_ar": "حي الشلال على حي عين البيضاء",
+      "terminus1_fr": "Haï Echellal via Haï Aïn El Beïda",
+      "terminus2_ar": "المحطة البرية (الوكالة العقارية)",
+      "terminus2_fr": "Gare routière (Agence foncière)"
+    },
+    {
+      "network": "Aïn Defla",
+      "ref": "AD-9"
+    },
+    {
+      "network": "Khemis Miliana",
+      "ref": "KM-1",
+      "terminus1_ar": "حي 250 مسكن - حي 400 مسكن",
+      "terminus1_fr": "Cité 250 - Cité 400 Logements",
+      "terminus2_ar": "المحطة البرية",
+      "terminus2_fr": "Gare routière"
+    },
+    {
+      "network": "Khemis Miliana",
+      "ref": "KM-2",
+      "terminus1_ar": "حي عاجة",
+      "terminus1_fr": "Haï Adja",
+      "terminus2_ar": "محطة القطار",
+      "terminus2_fr": "Gare ferroviaire"
+    },
+    {
+      "network": "Khemis Miliana",
+      "ref": "KM-3",
+      "terminus1_ar": "حي 950 مسكن",
+      "terminus1_fr": "Cité 950 Logements",
+      "terminus2_ar": "مقبرة الشهداء",
+      "terminus2_fr": "Cimetière des Martyrs"
+    },
+    {
+      "network": "Khemis Miliana",
+      "ref": "KM-4",
+      "terminus1_ar": "حي عدل الجديد",
+      "terminus1_fr": "Cité AADL (nouvelle)",
+      "terminus2_ar": "حي السلام",
+      "terminus2_fr": "Haï Es-Salam"
+    },
+    {
+      "network": "Khemis Miliana",
+      "ref": "KM-5",
+      "terminus1_ar": "حي الونام",
+      "terminus1_fr": "Haï El Ouanam",
+      "terminus2_ar": "محطة القطار",
+      "terminus2_fr": "Gare ferroviaire"
+    },
+    {
+      "network": "El Attaf",
+      "ref": "AT-1"
+    },
+    {
+      "network": "El Attaf",
+      "ref": "AT-3"
+    }
+  ]
+}

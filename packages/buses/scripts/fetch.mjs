@@ -17,6 +17,7 @@ const officialBejaia = readCapture("buses", "etus-bejaia-lines");
 const officialMsila = readCapture("buses", "etus-msila-lines");
 const officialSidiBelAbbes = readCapture("buses", "etus-sidi-bel-abbes-lines");
 const officialSetif = readCapture("buses", "etus-setif-lines");
+const officialAinDefla = readCapture("buses", "etus-ain-defla-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -29,6 +30,7 @@ const operatorLabels = {
   etusto: { operator: "ETUSTO", network: "Tizi Ouzou" },
   "etus-mostaganem": { operator: "ETUS Mostaganem", network: "Mostaganem" },
   "etus-setif": { operator: "ETUS Setif", network: "Setif" },
+  etuad: { operator: "ETUS Aïn Defla", network: "Aïn Defla" },
 };
 const coordinateDecimals = (value) => {
   const text = String(value);
@@ -130,6 +132,26 @@ for (const official of officialSetif.lines) {
   });
 }
 
+// ETUS Aïn Defla: identities from the Operator's own artwork and program, one
+// city per Line (Aïn Defla, Khemis Miliana, El Attaf); shape only where a
+// reviewed OSM relation was matched to the official identity (AD-2).
+for (const official of officialAinDefla.lines) {
+  const shape = shapeSourceByKey.get(`etuad|${official.ref}`);
+  lines.push({
+    id: lineId("etuad", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etuad", operator: "ETUS Aïn Defla", network: official.network,
+    line: official.ref,
+    terminus1: official.terminus1_fr ?? null, terminus1_fr: official.terminus1_fr, terminus1_ar: official.terminus1_ar,
+    terminus2: official.terminus2_fr ?? null, terminus2_fr: official.terminus2_fr, terminus2_ar: official.terminus2_ar,
+    stops: null, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "44",
+    source: "etus-ain-defla", source_refs: shape ? ["etus-ain-defla", "osm"] : ["etus-ain-defla"],
+    source_url: undefined,
+    shape_id: shape ? shapeId("etuad", official.ref) : null,
+    osm_relation_ids: shape?.relation_ids ?? [],
+  });
+}
+
 for (const official of officialEtusto) {
   const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
   lines.push({
@@ -144,7 +166,7 @@ for (const official of officialEtusto) {
   });
 }
 
-for (const shape of osm.line_shapes.filter((item) => !["etusa", "etusto", "etus-setif"].includes(item.operator_id))) {
+for (const shape of osm.line_shapes.filter((item) => !["etusa", "etusto", "etus-setif", "etuad"].includes(item.operator_id))) {
   const labels = operatorLabels[shape.operator_id];
   const official = officialLineByKey.get(`${shape.operator_id}|${shape.ref}`);
   lines.push({
@@ -177,8 +199,8 @@ for (const shape of osm.line_shapes) {
       via: relation.tags?.via ?? null,
       public_transport_version: relation.tags?.["public_transport:version"] === "2" ? 2 : null,
       sequence_status: "osm_member_order_unvalidated",
-      source: shape.operator_id === "etus-setif" ? "etus-setif+osm" : "osm",
-      source_refs: shape.operator_id === "etus-setif" ? ["etus-setif", "osm"] : ["osm"],
+      source: shape.operator_id === "etus-setif" ? "etus-setif+osm" : shape.operator_id === "etuad" ? "etus-ain-defla+osm" : "osm",
+      source_refs: shape.operator_id === "etus-setif" ? ["etus-setif", "osm"] : shape.operator_id === "etuad" ? ["etus-ain-defla", "osm"] : ["osm"],
     });
     let sourceSequence = 0;
     relation.members.forEach((member, osmMemberIndex) => {
@@ -242,7 +264,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 111, shapes: 75, directions: 127, stations: 1598, memberships: 2680 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 127, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -279,7 +301,8 @@ const operatorRows = osm.operators.map((operator) => ({
   source_refs: operator.id === "etusa" ? ["wikipedia", "osm"]
     : operator.id === "etus-tiaret" ? ["etus-tiaret", "osm"]
       : operator.id === "etusto" ? ["etusto", "osm"]
-        : operator.id === "etus-setif" ? ["etus-setif", "osm"] : ["osm"],
+        : operator.id === "etus-setif" ? ["etus-setif", "osm"]
+          : operator.id === "etuad" ? ["etus-ain-defla", "osm"] : ["osm"],
 }));
 operatorRows.push({
   id: "etus-bejaia", name: "ETUS Béjaïa",

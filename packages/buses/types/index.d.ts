@@ -1,5 +1,5 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm";
 export type SequenceStatus = "osm_member_order_unvalidated";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
@@ -131,7 +131,7 @@ export interface BusDirection {
   via: string | null;
   public_transport_version: 2 | null;
   sequence_status: SequenceStatus;
-  source: "osm" | "etus-setif+osm";
+  source: "osm" | "etus-setif+osm" | "etus-ain-defla+osm";
   source_refs: SourceKey[];
 }
 

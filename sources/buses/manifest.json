@@ -1,4 +1,12 @@
 {
+  "etus-ain-defla-lines": {
+    "bytes": 6860,
+    "note": "Rights-safe bilingual Line identities transcribed from ETUS Aïn Defla artwork and its Eid al-Adha 2025 service program, supplied by the project owner from the Operator's page. French endpoint labels are transliterations of the Arabic artwork. Artwork is validation-only and is not redistributed. AD-2 geometry is separately sourced from OSM under ODbL.",
+    "records": 16,
+    "retrieved": "2026-09-03",
+    "sha256": "587ca610428c7f6669563be5cba96539502d180cd33b96b93e3bb894cd82f4f3",
+    "url": "https://www.facebook.com/ETUS44/"
+  },
   "etus-bejaia-lines": {
     "bytes": 14292,
     "note": "Rights-safe projection of Line identities, endpoints, round-trip distances, typed stop counts and timetable-image transcriptions linked by the official WordPress REST API. Embedded KML maps validate identity but their geometry is not retained. Per-record receipts preserve upstream URLs, retrieval timestamps, byte counts and payload SHA-256 hashes for the API, maps and timetable panels.",
@@ -48,11 +56,11 @@
     "url": "http://etusto.dz/espv.html"
   },
   "osm-urban-selected": {
-    "bytes": 6716748,
+    "bytes": 6785874,
     "note": "Reviewed trimmed OSM projection. Non-atomic retrieval and snapshot intervals, queries, endpoint URLs, and upstream response hashes are embedded in the capture receipt.",
-    "records": 75,
+    "records": 76,
     "retrieved": "2026-09-01",
-    "sha256": "8d5bf7c2de95f5bf581267be9aa8488b4492f574b1560b9080a38cd13195838e",
+    "sha256": "a35b78871e1f32c58cd776959886ac46b951df3618df4a888966d74ca4882bba",
     "url": "https://overpass-api.de/api/interpreter"
   }
 }

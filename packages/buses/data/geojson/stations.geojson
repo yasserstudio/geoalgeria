@@ -19660,6 +19660,129 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          1.959496,
+          36.256636
+        ]
+      },
+      "properties": {
+        "id": "osm-node-11006722206",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.256636,
+        "lng": 1.959496,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 11006722206,
+        "refs": {
+          "osm": "node/11006722206"
+        },
+        "operator_ids": [
+          "etuad"
+        ],
+        "line_ids": [
+          "etuad-AD-2"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.968736,
+          36.260413
+        ]
+      },
+      "properties": {
+        "id": "osm-node-11011320019",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.260413,
+        "lng": 1.968736,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 11011320019,
+        "refs": {
+          "osm": "node/11011320019"
+        },
+        "operator_ids": [
+          "etuad"
+        ],
+        "line_ids": [
+          "etuad-AD-2"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.968793,
+          36.260431
+        ]
+      },
+      "properties": {
+        "id": "osm-node-11011320020",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.260431,
+        "lng": 1.968793,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 11011320020,
+        "refs": {
+          "osm": "node/11011320020"
+        },
+        "operator_ids": [
+          "etuad"
+        ],
+        "line_ids": [
+          "etuad-AD-2"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "stop"
+        ],
+        "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.258039,
           36.803425
         ]
@@ -20769,6 +20892,47 @@
           "stop"
         ],
         "highway": null,
+        "public_transport": "stop_position"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.952323,
+          36.253918
+        ]
+      },
+      "properties": {
+        "id": "osm-node-12532183259",
+        "name": "Arrêt El-khadhar",
+        "name_fr": null,
+        "name_ar": "موقف الخضّار",
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.253918,
+        "lng": 1.952323,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 12532183259,
+        "refs": {
+          "osm": "node/12532183259"
+        },
+        "operator_ids": [
+          "etuad"
+        ],
+        "line_ids": [
+          "etuad-AD-2"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "bus_stop"
+        ],
+        "highway": "bus_stop",
         "public_transport": "stop_position"
       }
     },
@@ -31999,6 +32163,47 @@
         "line_ids": [
           "etusa-14",
           "etusa-34"
+        ],
+        "wilaya_method": "point_in_wilaya",
+        "roles": [
+          "platform"
+        ],
+        "highway": "bus_stop",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          1.959486,
+          36.256708
+        ]
+      },
+      "properties": {
+        "id": "osm-node-3765232757",
+        "name": "Arrêt l'escadron",
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "44",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.256708,
+        "lng": 1.959486,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "osm_type": "node",
+        "osm_id": 3765232757,
+        "refs": {
+          "osm": "node/3765232757"
+        },
+        "operator_ids": [
+          "etuad"
+        ],
+        "line_ids": [
+          "etuad-AD-2"
         ],
         "wilaya_method": "point_in_wilaya",
         "roles": [

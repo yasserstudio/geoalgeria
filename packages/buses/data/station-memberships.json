@@ -31272,6 +31272,66 @@
     "source": "osm"
   },
   {
+    "id": "osm-relation-16022861-member-0",
+    "direction_id": "osm-relation-16022861",
+    "line_id": "etuad-AD-2",
+    "station_id": "osm-node-11006722206",
+    "osm_relation_id": 16022861,
+    "osm_member_index": 0,
+    "source_sequence": 1,
+    "role": "stop",
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm"
+  },
+  {
+    "id": "osm-relation-16022861-member-1",
+    "direction_id": "osm-relation-16022861",
+    "line_id": "etuad-AD-2",
+    "station_id": "osm-node-3765232757",
+    "osm_relation_id": 16022861,
+    "osm_member_index": 1,
+    "source_sequence": 2,
+    "role": "platform",
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm"
+  },
+  {
+    "id": "osm-relation-16022861-member-2",
+    "direction_id": "osm-relation-16022861",
+    "line_id": "etuad-AD-2",
+    "station_id": "osm-node-11011320019",
+    "osm_relation_id": 16022861,
+    "osm_member_index": 2,
+    "source_sequence": 3,
+    "role": "platform",
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm"
+  },
+  {
+    "id": "osm-relation-16022861-member-3",
+    "direction_id": "osm-relation-16022861",
+    "line_id": "etuad-AD-2",
+    "station_id": "osm-node-11011320020",
+    "osm_relation_id": 16022861,
+    "osm_member_index": 3,
+    "source_sequence": 4,
+    "role": "stop",
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm"
+  },
+  {
+    "id": "osm-relation-16022861-member-90",
+    "direction_id": "osm-relation-16022861",
+    "line_id": "etuad-AD-2",
+    "station_id": "osm-node-12532183259",
+    "osm_relation_id": 16022861,
+    "osm_member_index": 90,
+    "source_sequence": 5,
+    "role": "bus_stop",
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm"
+  },
+  {
     "id": "osm-relation-16541421-member-0",
     "direction_id": "osm-relation-16541421",
     "line_id": "etusa-L615",

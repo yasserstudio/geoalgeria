@@ -20,6 +20,13 @@ const registry = read(join(HERE, "operator-registry.json"));
 const officialTiaret = read(join(ROOT, "sources", "buses", "etus-tiaret-lines.json"));
 const officialEtusto = read(join(ROOT, "sources", "buses", "etusto-lines.json"));
 const officialSetif = read(join(ROOT, "sources", "buses", "etus-setif-lines.json"));
+const officialAinDefla = read(join(ROOT, "sources", "buses", "etus-ain-defla-lines.json"));
+const approvedAinDeflaRelations = new Map(
+  officialAinDefla.evidence.geometry_validations.map((validation) => [
+    validation.line,
+    validation.osm_relation_ids,
+  ]),
+);
 const approvedSetifRelations = new Map(
   officialSetif.evidence.geometry_validations.map((validation) => [
     validation.line,
@@ -50,6 +57,11 @@ const approvedSetifLineFor = (relationIds) =>
 // form so a published Line is not silently denied its geometry, and carry the
 // PUBLISHED spelling forward so the shape still keys to its Line downstream.
 const normRef = (ref) => String(ref ?? "").trim().toUpperCase().replace(/^0+(?=\d)/, "");
+const approvedAinDeflaLineFor = (relationIds) =>
+  [...approvedAinDeflaRelations.entries()].find(([, approvedIds]) =>
+    approvedIds.length === relationIds.length
+    && approvedIds.every((id, index) => id === relationIds[index]))?.[0] ?? null;
+
 const publishedEtusaRefByNorm = new Map(etusa.lines.map((line) => [normRef(line.line), line.line]));
 const canonicalEtusaRef = (ref) => publishedEtusaRefByNorm.get(normRef(ref)) ?? ref;
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
@@ -57,7 +69,11 @@ const reviewedEtustoRefs = new Set(officialEtusto.map((line) => line.ref));
 const reviewedSetifRefs = new Set(officialSetif.lines.map((line) => line.ref));
 const selected = candidates.filter((candidate) =>
   candidate.classification?.value === "urban_suburban_candidate" &&
-  candidate.map_readiness === "geometry_candidate" && (
+  // A relation the pipeline could not name (needs_identity: operator tagged,
+  // network and termini missing) still qualifies when an official Operator
+  // source names it explicitly; the approval list carries that identity.
+  (candidate.map_readiness === "geometry_candidate"
+    || (candidate.operator_id === "etuad" && approvedAinDeflaLineFor(candidate.relation_ids) != null)) && (
     // ETUSA identity is accepted from OSM itself, not only from the retained
     // 50-Line registry: the registry covers Lines 1-99 from one crowdsourced
     // list and omits the 6xx/7xx suburban network entirely. The operator match
@@ -72,17 +88,18 @@ const selected = candidates.filter((candidate) =>
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-setif" && approvedSetifLineFor(candidate.relation_ids) != null) ||
+    (candidate.operator_id === "etuad" && approvedAinDeflaLineFor(candidate.relation_ids) != null) ||
     candidate.operator_id === "etus-mostaganem"
   ),
 );
 
 const byOperator = Object.fromEntries(
-  ["etusa", "etus-tiaret", "etusto", "etus-mostaganem", "etus-setif"].map((id) => [
+  ["etusa", "etus-tiaret", "etusto", "etus-mostaganem", "etus-setif", "etuad"].map((id) => [
     id,
     selected.filter((candidate) => candidate.operator_id === id).length,
   ]),
 );
-if (selected.length !== 75 || byOperator.etusa !== 61 || byOperator["etus-tiaret"] !== 7
+if (selected.length !== 76 || byOperator.etusa !== 61 || byOperator.etuad !== 1 || byOperator["etus-tiaret"] !== 7
   || byOperator.etusto !== 3 || byOperator["etus-mostaganem"] !== 1
   || byOperator["etus-setif"] !== 3) {
   throw new Error(`Selection drifted: ${JSON.stringify({ total: selected.length, byOperator })}`);
@@ -103,7 +120,9 @@ const lineShapes = selected
       ? approvedSetifLineFor(candidate.relation_ids) ?? candidate.ref
       : candidate.operator_id === "etusa"
         ? canonicalEtusaRef(candidate.ref)
-        : candidate.ref;
+        : candidate.operator_id === "etuad"
+          ? approvedAinDeflaLineFor(candidate.relation_ids) ?? candidate.ref
+          : candidate.ref;
     return {
       operator_id: candidate.operator_id,
       ref,
@@ -150,7 +169,7 @@ const source = {
   source: "OpenStreetMap via Overpass API",
   license: "ODbL-1.0",
   attribution: "© OpenStreetMap contributors",
-  selection_note: "Reviewed urban/suburban geometry subset only: 61 ETUSA shapes, of which 35 carry a ref from the retained 50-line registry and 26 take their Line identity from the evidenced OSM operator match alone (the registry lists only Lines 1-99 and omits the 6xx/7xx suburban network; three of these, 604, 630 and 747, are suburban runs into Boumerdes and Tipaza within ETUSA's remit); 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
+  selection_note: "Reviewed urban/suburban geometry subset only: 61 ETUSA shapes, of which 35 carry a ref from the retained 50-line registry and 26 take their Line identity from the evidenced OSM operator match alone (the registry lists only Lines 1-99 and omits the 6xx/7xx suburban network; three of these, 604, 630 and 747, are suburban runs into Boumerdes and Tipaza within ETUSA's remit); 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, 1 ETUS Aïn Defla Line matched to the official AD-2 identity, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, unmatched ETUAD, and validation-only official geometry are excluded.",
   membership_note: "Station memberships preserve raw OSM relation-member order and roles. This order is unvalidated as a passenger stop sequence, and no terminus status is inferred.",
   selection_counts: {
     shape_candidates: lineShapes.length,
@@ -164,7 +183,7 @@ const source = {
     responses: relevantResponses,
   },
   operators: registry.operators
-    .filter((operator) => ["etusa", "etus-tiaret", "etusto", "etus-mostaganem", "etus-setif"].includes(operator.id))
+    .filter((operator) => ["etusa", "etus-tiaret", "etusto", "etus-mostaganem", "etus-setif", "etuad"].includes(operator.id))
     .map(({ id, name_fr, name_ar, wilaya_codes, scope }) => ({ id, name_fr, name_ar, wilaya_codes, scope })),
   line_shapes: lineShapes,
   stations: selectedStations,

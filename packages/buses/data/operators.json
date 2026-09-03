@@ -1,5 +1,21 @@
 [
   {
+    "id": "etuad",
+    "name": "ETUS Aïn Defla",
+    "name_fr": "Entreprise de transport urbain et suburbain d'Aïn Defla",
+    "name_ar": null,
+    "wilaya_codes": [
+      "44"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 16,
+    "shape_count": 1,
+    "source_refs": [
+      "etus-ain-defla",
+      "osm"
+    ]
+  },
+  {
     "id": "etus-bejaia",
     "name": "ETUS Béjaïa",
     "name_fr": "Entreprise de Transport Urbain et Suburbain de Béjaïa",
