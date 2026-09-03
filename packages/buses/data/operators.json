@@ -139,6 +139,23 @@
     "facebook_url": null
   },
   {
+    "id": "etus-tlemcen",
+    "name": "ETUS Tlemcen",
+    "name_fr": "Entreprise de transport urbain et suburbain de Tlemcen",
+    "name_ar": "المؤسسة العمومية للنقل الحضري وشبه الحضري تلمسان",
+    "wilaya_codes": [
+      "13"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 10,
+    "shape_count": 0,
+    "source_refs": [
+      "etus-tlemcen"
+    ],
+    "website_url": "https://www.etus-tlemcen.dz/",
+    "facebook_url": "https://www.facebook.com/etustlemcen13/"
+  },
+  {
     "id": "etusa",
     "name": "ETUSA",
     "name_fr": "Entreprise de transport urbain et suburbain d'Alger",

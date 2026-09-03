@@ -116,3 +116,7 @@ All four rank below the thesis here because none of them contains a single line 
 thesis is recorded as `press` with the real nature spelled out in `notes`. If more wilayas
 turn out to depend on university theses, and Algerian transport theses very often carry
 exactly these directorate-supplied tables, adding an `academic` kind would be worth it.
+
+## Addendum, 2026-09-03 (reviewer)
+
+The Operator's own Eid al-Adha 2026 program, supplied by the project owner the same day, lists refs 2A, 2B, 2C, 03, 4B, 4C, 4E, 11, 44 and H with termini. The lettered refs this dossier judged "likely generated" on lemagvoyage.fr are therefore genuine Operator refs; the site remains unsourced for everything else. Ten Lines were promoted directory-only from the program; the six OSM verdicts above stand.

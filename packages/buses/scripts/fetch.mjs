@@ -19,6 +19,7 @@ const officialSidiBelAbbes = readCapture("buses", "etus-sidi-bel-abbes-lines");
 const officialSetif = readCapture("buses", "etus-setif-lines");
 const officialAinDefla = readCapture("buses", "etus-ain-defla-lines");
 const officialAnnaba = readCapture("buses", "etus-annaba-lines");
+const officialTlemcen = readCapture("buses", "etus-tlemcen-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -170,6 +171,23 @@ for (const official of officialAnnaba.lines) {
   });
 }
 
+// ETUS Tlemcen: the ten Lines of its 2026 service program. Directory-only: the
+// wilaya 13 OSM routes are a private corridor pair and university shuttles.
+for (const official of officialTlemcen.lines) {
+  lines.push({
+    id: lineId("etus-tlemcen", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-tlemcen", operator: "ETUS Tlemcen", network: "Tlemcen",
+    line: official.ref,
+    terminus1: official.terminus1_fr, terminus1_fr: official.terminus1_fr, terminus1_ar: official.terminus1_ar,
+    terminus2: official.terminus2_fr, terminus2_fr: official.terminus2_fr, terminus2_ar: official.terminus2_ar,
+    stops: null, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "13",
+    source: "etus-tlemcen", source_refs: ["etus-tlemcen"],
+    source_url: officialTlemcen.evidence.announcement_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
 for (const official of officialEtusto) {
   const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
   lines.push({
@@ -282,7 +300,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 133, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 143, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -329,6 +347,12 @@ operatorRows.push({
   line_count: officialAnnaba.lines.length, shape_count: 0, source_refs: ["etus-annaba"],
 });
 operatorRows.push({
+  id: "etus-tlemcen", name: "ETUS Tlemcen",
+  name_fr: "Entreprise de transport urbain et suburbain de Tlemcen", name_ar: "المؤسسة العمومية للنقل الحضري وشبه الحضري تلمسان",
+  wilaya_codes: ["13"], scope: "urban_suburban",
+  line_count: officialTlemcen.lines.length, shape_count: 0, source_refs: ["etus-tlemcen"],
+});
+operatorRows.push({
   id: "etus-bejaia", name: "ETUS Béjaïa",
   name_fr: "Entreprise de Transport Urbain et Suburbain de Béjaïa", name_ar: null,
   wilaya_codes: ["06"], scope: "urban_suburban",
@@ -361,6 +385,7 @@ const operatorContacts = {
   "etus-sidi-bel-abbes": { website_url: "https://etus22.dz/", facebook_url: null },
   etuad: { website_url: null, facebook_url: "https://www.facebook.com/ETUS44/" },
   "etus-annaba": { website_url: null, facebook_url: "https://www.facebook.com/100063517660926/" },
+  "etus-tlemcen": { website_url: "https://www.etus-tlemcen.dz/", facebook_url: "https://www.facebook.com/etustlemcen13/" },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));

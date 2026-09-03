@@ -140,7 +140,9 @@ a fetcher and exposed nothing but its title.
   the official app's static API host is dead and the third-party app is a Traccar login wall.
 - **[seen]** Tlemcen: etus-tlemcen.dz has no line list (30 buses, 2017 ridership only);
   facebook.com/etustlemcen13 login-walled. OSM A42/B42 are tagged Prive; the Chetouane
-  routes are university shuttles. **Decision: exclude.**
+  routes are university shuttles. **Decision: exclude the OSM routes.** Resolved 2026-09-03 the Aïn Defla way:
+  the project owner supplied the Operator's Eid al-Adha 2026 program; ten Lines (2A, 2B, 2C, 03, 4B, 4C, 4E,
+  11, 44, H) transcribed directory-only (`sources/buses/etus-tlemcen-lines.json`).
 - **[seen]** Bechar: ETUSB exists (etus-bechar.dz, DNS dead at check time); OSM Line 1
   Bechar - Kenadsa in both directions with 26 stops but no operator tag. **Decision: not yet.**
   Lead: ETUSB site when it returns.
