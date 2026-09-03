@@ -133,7 +133,9 @@ a fetcher and exposed nothing but its title.
   **Decision: keep 604, 630, 747.**
 - **[seen]** ETUAD Ain Defla: official page exists at facebook.com/ETUS44 (login-walled);
   no site, no line list; tracking apps only. OSM relations X and 2 carry operator=ETUAD
-  but no from/to. **Decision: not yet.** Lead: the ETUS44 page, or the Etus AinDefla app.
+  but no from/to. **Decision: not yet.** Lead: the ETUS44 page. Both Aïn Defla apps were
+  audited statically the same day, see [AIN-DEFLA-APP-AUDIT.md](./AIN-DEFLA-APP-AUDIT.md):
+  the official app's static API host is dead and the third-party app is a Traccar login wall.
 - **[seen]** Tlemcen: etus-tlemcen.dz has no line list (30 buses, 2017 ridership only);
   facebook.com/etustlemcen13 login-walled. OSM A42/B42 are tagged Prive; the Chetouane
   routes are university shuttles. **Decision: exclude.**
