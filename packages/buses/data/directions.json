@@ -945,6 +945,21 @@
     ]
   },
   {
+    "id": "osm-relation-8003185",
+    "line_id": "etusa-747",
+    "shape_id": "shape-etusa-747",
+    "osm_relation_id": 8003185,
+    "from": "Zéralda S.M.M",
+    "to": "Ain Tagourait",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-8003366",
     "line_id": "etusa-601",
     "shape_id": "shape-etusa-601",
@@ -1057,6 +1072,21 @@
     "from": "Station 2 Mai",
     "to": "Dergana",
     "via": "Souachette",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8066402",
+    "line_id": "etusa-604",
+    "shape_id": "shape-etusa-604",
+    "osm_relation_id": 8066402,
+    "from": "Dergana",
+    "to": "El Kerrouche Reghaia",
+    "via": "Reghaia",
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -1326,6 +1356,21 @@
     "osm_relation_id": 8409730,
     "from": "Zéralda G. R.",
     "to": "Staouéli",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8731260",
+    "line_id": "etusa-630",
+    "shape_id": "shape-etusa-630",
+    "osm_relation_id": 8731260,
+    "from": "Hammadi",
+    "to": "El Harrach",
     "via": null,
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",

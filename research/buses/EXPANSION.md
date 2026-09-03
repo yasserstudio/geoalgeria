@@ -114,3 +114,38 @@ recommended action derived from those observations.
   No further Wilaya is ready for automatic promotion today. Sidi Bel Abbès,
   M'Sila, and Béjaïa need geometry/licensing work; Aïn Defla needs identity;
   Oran needs an authorized static network source before a live pilot.
+
+
+## Operator-source check, 2026-09-03
+
+Reviewed before deciding which OSM-only routes outside Alger to publish. Web and
+official-site sources only; every operator Facebook page found is login-walled to
+a fetcher and exposed nothing but its title.
+
+- **[seen]** ETUSA 604 (Dergana - Reghaia El Kerrouche) and 630 (Hammedi - El
+  Harrach) appear with matching termini in the AOTU-A/ETUSA plan-derived
+  600-series list; 747 (Zeralda - Ain Tagourait) does not appear in the 700-series
+  list but carries the same ETUSA operator and network tags in OSM. Source:
+  [fr.wikipedia 600-699](https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_600_%C3%A0_699),
+  [fr.wikipedia 700-799](https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_700_%C3%A0_799).
+  The same list corroborates 601, 606, 643, 701 and 707 among the OSM-identified Alger Lines.
+  etusa.dz exposes no line list (only "186 lignes"); aotu-alger.dz/etusa.html fails TLS.
+  **Decision: keep 604, 630, 747.**
+- **[seen]** ETUAD Ain Defla: official page exists at facebook.com/ETUS44 (login-walled);
+  no site, no line list; tracking apps only. OSM relations X and 2 carry operator=ETUAD
+  but no from/to. **Decision: not yet.** Lead: the ETUS44 page, or the Etus AinDefla app.
+- **[seen]** Tlemcen: etus-tlemcen.dz has no line list (30 buses, 2017 ridership only);
+  facebook.com/etustlemcen13 login-walled. OSM A42/B42 are tagged Prive; the Chetouane
+  routes are university shuttles. **Decision: exclude.**
+- **[seen]** Bechar: ETUSB exists (etus-bechar.dz, DNS dead at check time); OSM Line 1
+  Bechar - Kenadsa in both directions with 26 stops but no operator tag. **Decision: not yet.**
+  Lead: ETUSB site when it returns.
+- **[seen]** Oran: fr.wikipedia "Reseau de bus d'Oran" (Ministry of Interior + GuideOran)
+  lists line 39 Palais des Sports (M'dina Jdida) - Hai Nedjma; OSM "Line 39" has
+  to=Medina Jdida, 0 stop members, no operator. **Decision: not yet.** Lead: that table.
+- **[seen]** Ghardaia (ETU-G, press only; OSM ref 32 named "Bus 1"), Khenchela, Batna
+  (ETUB, press only), Annaba (facebook page 100063517660926, login-walled; OSM routes have
+  no ref, name or stops), Ouled Djellal: no official line list found. **Decision: exclude.**
+- **[seen]** Bejaia OSM cluster is Sidi Aich private routes, not ETUS Bejaia. **Decision: exclude.**
+- **[inferred]** Publishing untagged routes as "operator not stated" would change what the
+  dataset claims to be. Not done. Revisit per operator when an official list surfaces.

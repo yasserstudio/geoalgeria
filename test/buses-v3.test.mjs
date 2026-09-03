@@ -22,17 +22,17 @@ const officialSidiBelAbbes = read("sources/buses/etus-sidi-bel-abbes-lines.json"
 const officialSetif = read("sources/buses/etus-setif-lines.json");
 
 test("buses v3 ships only the reviewed release boundary", () => {
-  assert.equal(lines.length, 108);
-  assert.equal(shapes.length, 72);
-  assert.equal(directions.length, 124);
-  assert.equal(stations.length, 1540);
-  assert.equal(memberships.length, 2609);
+  assert.equal(lines.length, 111);
+  assert.equal(shapes.length, 75);
+  assert.equal(directions.length, 127);
+  assert.equal(stations.length, 1598);
+  assert.equal(memberships.length, 2680);
   assert.equal(operators.length, 8);
-  assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 122);
+  assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 125);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 2);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [73, 58], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
+    { etusa: [76, 61], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
   assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto"]));
   assert.ok(lines.every((line, index) => index === 0
@@ -81,7 +81,7 @@ test("buses v3 ships only the reviewed release boundary", () => {
 });
 
 test("Line and Station public ids and shape references are stable", () => {
-  assert.equal(lines.filter((line) => line.operator_id === "etusa").length, 73);
+  assert.equal(lines.filter((line) => line.operator_id === "etusa").length, 76);
   assert.ok(lines.filter((line) => line.operator_id === "etusa").every((line) => line.id === `etusa-${line.line}`));
   assert.ok(lines.filter((line) => line.operator_id !== "etusa").every((line) => line.id === `${line.operator_id}-${line.line}`));
   // A stop mapped as a way keeps the way in its id, so the id stays a
@@ -90,14 +90,14 @@ test("Line and Station public ids and shape references are stable", () => {
   assert.equal(new Set(lines.map((line) => line.id)).size, lines.length);
   assert.equal(new Set(stations.map((station) => station.id)).size, stations.length);
   const shapeIds = new Set(shapes.map((shape) => shape.id));
-  assert.equal(lines.filter((line) => line.shape_id != null).length, 72);
+  assert.equal(lines.filter((line) => line.shape_id != null).length, 75);
   assert.ok(lines.every((line) => line.shape_id == null || shapeIds.has(line.shape_id)));
 });
 
 test("shape GeoJSON mirrors every reviewed shape", () => {
   const geojson = read("packages/buses/data/geojson/shapes.geojson");
   assert.equal(geojson.type, "FeatureCollection");
-  assert.equal(geojson.features.length, 72);
+  assert.equal(geojson.features.length, 75);
   assert.ok(geojson.features.every((feature) => feature.geometry.type === "MultiLineString"));
   assert.deepEqual(new Set(geojson.features.map((feature) => feature.properties.line_id)), new Set(shapes.map((shape) => shape.line_id)));
 });
@@ -113,7 +113,7 @@ test("ordered memberships reproduce raw OSM member positions without collapsing 
       });
     }
   }
-  assert.equal(expected.length, 2609);
+  assert.equal(expected.length, 2680);
   const actual = memberships.map((membership) => ({
     relation: membership.osm_relation_id,
     osmMemberIndex: membership.osm_member_index,
@@ -208,10 +208,10 @@ test("tracked official Source bytes match their receipts", () => {
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
   assert.equal(api.operatorRecords().length, 8);
-  assert.equal(api.shapes().length, 72);
-  assert.equal(api.directions().length, 124);
-  assert.equal(api.stations().length, 1540);
-  assert.equal(api.stationMemberships().length, 2609);
+  assert.equal(api.shapes().length, 75);
+  assert.equal(api.directions().length, 127);
+  assert.equal(api.stations().length, 1598);
+  assert.equal(api.stationMemberships().length, 2680);
   assert.equal(api.shapeForLine("etus-tiaret-32")?.line_id, "etus-tiaret-32");
   assert.equal(api.shapeForLine("etusto-9")?.line_id, "etusto-9");
   assert.equal(api.shapeForLine("etus-setif-101")?.line_id, "etus-setif-101");

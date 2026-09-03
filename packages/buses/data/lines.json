@@ -3303,6 +3303,39 @@
     "source_url": "https://www.openstreetmap.org/relation/8003366"
   },
   {
+    "id": "etusa-604",
+    "name": "Bus: Dergana -> El Kerrouche Reghaia",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "604",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-604",
+    "osm_relation_ids": [
+      8066402
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8066402"
+  },
+  {
     "id": "etusa-606",
     "name": "Bus: Dergana => Aïn Taya",
     "wilaya_code": "16",
@@ -3334,6 +3367,39 @@
       "osm"
     ],
     "source_url": "https://www.openstreetmap.org/relation/8003403"
+  },
+  {
+    "id": "etusa-630",
+    "name": "Bus: Hammadi => El Harrach",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "630",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-630",
+    "osm_relation_ids": [
+      8731260
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8731260"
   },
   {
     "id": "etusa-643",
@@ -3536,6 +3602,39 @@
       "osm"
     ],
     "source_url": "https://www.openstreetmap.org/relation/8409730"
+  },
+  {
+    "id": "etusa-747",
+    "name": "Bus: Zéralda S.M.M-> Ain Tagourait",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "747",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-747",
+    "osm_relation_ids": [
+      8003185
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8003185"
   },
   {
     "id": "etusa-D105",

@@ -242,7 +242,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 108, shapes: 72, directions: 124, stations: 1540, memberships: 2609 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 111, shapes: 75, directions: 127, stations: 1598, memberships: 2680 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {

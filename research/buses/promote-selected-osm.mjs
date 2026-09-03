@@ -63,10 +63,12 @@ const selected = candidates.filter((candidate) =>
     // list and omits the 6xx/7xx suburban network entirely. The operator match
     // is already evidenced (operator/network tag or Wikidata QID) before a
     // candidate reaches here, and every published Line links its OSM relations
-    // so a reader can report or fix a wrong route at the origin. Cross-wilaya
-    // routes stay excluded; that is a separate, still-open decision.
-    (candidate.operator_id === "etusa"
-      && !(candidate.quality_flags ?? []).includes("cross_wilaya")) ||
+    // so a reader can report or fix a wrong route at the origin. ETUSA's remit
+    // is urban AND suburban Alger, so its runs into Boumerdes and Tipaza are
+    // kept: 604 and 630 match the AOTU-A plan termini (Dergana-Reghaia El
+    // Kerrouche, Hammedi-El Harrach) and 747 carries the same operator tag.
+    // Cross-wilaya routes of any OTHER operator remain excluded.
+    candidate.operator_id === "etusa" ||
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-setif" && approvedSetifLineFor(candidate.relation_ids) != null) ||
@@ -80,7 +82,7 @@ const byOperator = Object.fromEntries(
     selected.filter((candidate) => candidate.operator_id === id).length,
   ]),
 );
-if (selected.length !== 72 || byOperator.etusa !== 58 || byOperator["etus-tiaret"] !== 7
+if (selected.length !== 75 || byOperator.etusa !== 61 || byOperator["etus-tiaret"] !== 7
   || byOperator.etusto !== 3 || byOperator["etus-mostaganem"] !== 1
   || byOperator["etus-setif"] !== 3) {
   throw new Error(`Selection drifted: ${JSON.stringify({ total: selected.length, byOperator })}`);
@@ -148,7 +150,7 @@ const source = {
   source: "OpenStreetMap via Overpass API",
   license: "ODbL-1.0",
   attribution: "© OpenStreetMap contributors",
-  selection_note: "Reviewed urban/suburban geometry subset only: 58 ETUSA shapes, of which 35 carry a ref from the retained 50-line registry and 23 take their Line identity from the evidenced OSM operator match alone (the registry lists only Lines 1-99 and omits the 6xx/7xx suburban network); 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
+  selection_note: "Reviewed urban/suburban geometry subset only: 61 ETUSA shapes, of which 35 carry a ref from the retained 50-line registry and 26 take their Line identity from the evidenced OSM operator match alone (the registry lists only Lines 1-99 and omits the 6xx/7xx suburban network; three of these, 604, 630 and 747, are suburban runs into Boumerdes and Tipaza within ETUSA's remit); 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
   membership_note: "Station memberships preserve raw OSM relation-member order and roles. This order is unvalidated as a passenger stop sequence, and no terminus status is inferred.",
   selection_counts: {
     shape_candidates: lineShapes.length,
