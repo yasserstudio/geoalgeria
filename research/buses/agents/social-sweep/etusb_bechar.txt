@@ -1,0 +1,58 @@
+I'll search public Facebook, X, Instagram, and YouTube posts from ETUSB Béchar about bus lines, then transcribe any line numbers and termini exactly as posted. First I'm checking the local sweep notes and current social indexes.The last-30-days engine is the wrong window here. I'll use the existing sweep files and search Facebook, X, Instagram, and YouTube for ETUSB Béchar line posts since March 2025.Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 437855,
+    "outputTokens": 1264,
+    "totalTokens": 439119,
+    "cachedReadTokens": 255488,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 815,
+    "modelCalls": 3,
+    "apiDurationMs": 180774,
+    "costUsdTicks": 1200105400,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 437855,
+        "outputTokens": 1264,
+        "totalTokens": 439119,
+        "cachedReadTokens": 255488,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 815,
+        "modelCalls": 3,
+        "apiDurationMs": 180774,
+        "costUsdTicks": 1200105400
+      }
+    },
+    "numTurns": 3
+  }
+}
+Error: Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 437855,
+    "outputTokens": 1264,
+    "totalTokens": 439119,
+    "cachedReadTokens": 255488,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 815,
+    "modelCalls": 3,
+    "apiDurationMs": 180774,
+    "costUsdTicks": 1200105400,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 437855,
+        "outputTokens": 1264,
+        "totalTokens": 439119,
+        "cachedReadTokens": 255488,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 815,
+        "modelCalls": 3,
+        "apiDurationMs": 180774,
+        "costUsdTicks": 1200105400
+      }
+    },
+    "numTurns": 3
+  }
+}

@@ -1,0 +1,401 @@
+[
+  {
+    "patternId": "pt_ligne-101_place-mokrani-ex-valero-cnl-millenium",
+    "lineId": "ln_ligne-101",
+    "name": "Place Mokrani (ex Valero) ? CNL Millenium",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-101_cnl-millenium-place-mokrani-ex-valero",
+    "lineId": "ln_ligne-101",
+    "name": "CNL Millenium ? Place Mokrani (ex Valero)",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-102_mdina-jdida-hai-yasmine",
+    "lineId": "ln_ligne-102",
+    "name": "Mdina jdida ? Hai Yasmine",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-11_place-mokrani-ex-valero-hai-sabah",
+    "lineId": "ln_ligne-11",
+    "name": "Place Mokrani (ex Valero) ? Hai Sabah",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-11_hai-sabah-rond-point-place-mokrani-ex-valero",
+    "lineId": "ln_ligne-11",
+    "name": "Hai Sabah Rond point ? Place Mokrani (ex Valero)",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-17_coca-kouka-houha-tlemcen",
+    "lineId": "ln_ligne-17",
+    "name": "Coca Kouka ? Houha Tlemcen",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-18_sid-el-houari-place-kleber-aadl-ain-beida-approx",
+    "lineId": "ln_ligne-18",
+    "name": "Sid el Houari Place Kleber ? AADL Ain Beida (approx)",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-18_aadl-ain-beida-approx-sid-el-houari-place-kleber",
+    "lineId": "ln_ligne-18",
+    "name": "AADL Ain Beida (approx) ? Sid el Houari Place Kleber",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-28_ain-beida-terminus-salanas",
+    "lineId": "ln_ligne-28",
+    "name": "Ain Beida Terminus ? Salanas",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-34_place-mokrani-ex-valero-es-senia-200-logements",
+    "lineId": "ln_ligne-34",
+    "name": "Place Mokrani (ex Valero) ? Es Senia 200 logements",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-37_rocher-rochi-terminus-houha-tlemcen",
+    "lineId": "ln_ligne-37",
+    "name": "Rocher Terminus ? Houha Tlemcen",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-38_misserghin-hai-si-rabah-el-bahia-gare-routiere",
+    "lineId": "ln_ligne-38",
+    "name": "Misserghin Hai Si Rabah ? el Bahia Gare routière",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-39_chtaibo-centre-mdina-jdida",
+    "lineId": "ln_ligne-39",
+    "name": "Chtaibo Centre ? Mdina jdida",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-41_les-hlm-shalam-sidi-bachir-place",
+    "lineId": "ln_ligne-41",
+    "name": "les HLM (shalam) ? Sidi bachir Place",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-42_hassi-bounif-les-hlm-shalam",
+    "lineId": "ln_ligne-42",
+    "name": "Hassi bounif ? les HLM (shalam)",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-4g_yaghmoracen-parc-universite-usto",
+    "lineId": "ln_ligne-4g",
+    "name": "Yaghmoracen Parc ? Université USTO",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-4g_universite-usto-yaghmoracen-parc",
+    "lineId": "ln_ligne-4g",
+    "name": "Université USTO ? Yaghmoracen Parc",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-51_mdina-jdida-hai-sabah",
+    "lineId": "ln_ligne-51",
+    "name": "Mdina jdida ? Hai Sabah",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-51_hai-sabah-rond-point-mdina-jdida",
+    "lineId": "ln_ligne-51",
+    "name": "Hai Sabah Rond point ? Mdina jdida",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-53_cnl-millenium-mdina-jdida",
+    "lineId": "ln_ligne-53",
+    "name": "CNL Millenium ? Mdina jdida",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-58_el-bahia-gare-routiere-ain-beida-terminus",
+    "lineId": "ln_ligne-58",
+    "name": "el Bahia Gare routière ? Ain Beida Terminus",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-62_hai-sabah-rond-point-oued-tlelat-la-serra-terminus-62",
+    "lineId": "ln_ligne-62",
+    "name": "Hai Sabah Rond point ? Oued Tlelat La Serra Terminus 62",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-69_mdina-jdida-el-braya-poste",
+    "lineId": "ln_ligne-69",
+    "name": "Mdina jdida ? El Braya Poste",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-79_gare-d-oran-oued-tlilat-cite-en-nasr",
+    "lineId": "ln_ligne-79",
+    "name": "Gare d'Oran ? Oued Tlilat Cité en Nasr",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-b_hai-luz-lizamondi-les-amandiers-seddikia",
+    "lineId": "ln_ligne-b",
+    "name": "Les Amandiers ? Seddikia",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-c_palais-des-sports-canastel-foret",
+    "lineId": "ln_ligne-c",
+    "name": "Palais des sports ? Canastel Forêt",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-g1_universite-belgaid-gare-routiere-el-bahia",
+    "lineId": "ln_ligne-g1",
+    "name": "Université Belgaid ? Gare routière el Bahia",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-g3_residence-hasnaoui-el-ryad-tribunal-d-oran",
+    "lineId": "ln_ligne-g3",
+    "name": "Résidence Hasnaoui (el Ryad) ? Tribunal d'Oran",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-h_rocher-rochi-terminus-rond-point-canastel",
+    "lineId": "ln_ligne-h",
+    "name": "Rocher Terminus ? Rond point Canastel",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-p1_lycee-akid-lotfi-universite-belgaid",
+    "lineId": "ln_ligne-p1",
+    "name": "Lycée Akid Lotfi ? Université Belgaid",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-p1_universite-belgaid-lycee-akid-lotfi",
+    "lineId": "ln_ligne-p1",
+    "name": "Université Belgaid ? Lycée Akid Lotfi",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-s_dar-el-hayat-universite-belgaid",
+    "lineId": "ln_ligne-s",
+    "name": "Dar el Hayat ? Université Belgaid",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-t_gare-d-oran-oued-tlilat-station-service",
+    "lineId": "ln_ligne-t",
+    "name": "Gare d'Oran ? Oued Tlilat station service",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-u_place-mokrani-ex-valero-universite-senia-institut-de-maintenance-et-de-securite-industrielle",
+    "lineId": "ln_ligne-u",
+    "name": "Place Mokrani (ex Valero) ? Institut de Maintenance et de Sécurité Industrielle",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-z_place-1er-novembre-ex-place-d-armes-aadl-misserghine-terminus",
+    "lineId": "ln_ligne-z",
+    "name": "Place 1er Novembre (ex. Place d'armes) ? Aadl Misserghine Terminus",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-z_aadl-misserghine-terminus-place-1er-novembre-ex-place-d-armes",
+    "lineId": "ln_ligne-z",
+    "name": "Aadl Misserghine Terminus ? Place 1er Novembre (ex. Place d'armes)",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_tramway_es-senia-terminus-gare-routiere-sidi-ma-arouf-terminus",
+    "lineId": "ln_tramway",
+    "name": "Es Senia Terminus ? Gare routière Sidi Ma'arouf",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-3_es-senia-kara-tribunal-d-oran",
+    "lineId": "ln_ligne-3",
+    "name": "Es Senia Kara → Tribunal d'Oran",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-3_tribunal-d-oran-es-senia-kara",
+    "lineId": "ln_ligne-3",
+    "name": "Tribunal d'Oran → Es Senia Kara",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-41_rond-point-el-morchid-sidi-el-bachir-nord",
+    "lineId": "ln_ligne-41",
+    "name": "Rond point El Morchid → Sidi el Bachir Nord",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-41_sidi-el-bachir-nord-rond-point-el-morchid",
+    "lineId": "ln_ligne-41",
+    "name": "Sidi el Bachir Nord → Rond point El Morchid",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-42_les-hlm-shalam-hassi-bounif-stade",
+    "lineId": "ln_ligne-42",
+    "name": "les HLM (shalam) → Hassi Bounif Stade",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-42_hassi-bounif-stade-les-hlm-shalam",
+    "lineId": "ln_ligne-42",
+    "name": "Hassi Bounif Stade → les HLM (shalam)",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-49_el-bahia-gare-routiere-mdina-jdida-place-roux",
+    "lineId": "ln_ligne-49",
+    "name": "el Bahia Gare routière → Mdina Jdida Place roux",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-49_mdina-jdida-place-roux-el-bahia-gare-routiere",
+    "lineId": "ln_ligne-49",
+    "name": "Mdina Jdida Place roux → el Bahia Gare routière",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-59_mdina-jdida-el-braya-poste",
+    "lineId": "ln_ligne-59",
+    "name": "Mdina jdida → El Braya Poste",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-61_universite-belgaid-hai-sabah",
+    "lineId": "ln_ligne-61",
+    "name": "Université Belgaid → Hai Sabah",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-61_hai-sabah-universite-belgaid",
+    "lineId": "ln_ligne-61",
+    "name": "Hai Sabah → Université Belgaid",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-62_universite-usto-oued-tlelat-la-serra-terminus-62",
+    "lineId": "ln_ligne-62",
+    "name": "Université Usto → Oued Tlelat La Serra Terminus 62",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-62_oued-tlelat-la-serra-terminus-62-universite-usto",
+    "lineId": "ln_ligne-62",
+    "name": "Oued Tlelat La Serra Terminus 62 → Université Usto",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-90_rond-point-hopital-1er-novembre-boufatis-centre",
+    "lineId": "ln_ligne-90",
+    "name": "Rond point Hopital 1er novembre → Boufatis - Centre",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-90_boufatis-centre-rond-point-hopital-1er-novembre",
+    "lineId": "ln_ligne-90",
+    "name": "Boufatis - Centre → Rond point Hopital 1er novembre",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-92_rond-point-hopital-1er-novembre-hassi-ben-okba-terminus",
+    "lineId": "ln_ligne-92",
+    "name": "Rond point Hopital 1er novembre → Hassi ben Okba - Terminus",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-92_hassi-ben-okba-gendarmerie-rond-point-hopital-1er-novembre",
+    "lineId": "ln_ligne-92",
+    "name": "Hassi ben 'Okba - Gendarmerie → Rond point Hopital 1er novembre",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-ain-el-turk_sonelgaz-centre-ville-ain-el-turk-place-centrale",
+    "lineId": "ln_ligne-ain-el-turk",
+    "name": "Sonelgaz (centre ville) → Ain el Turk - Place centrale",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-d_es-senia-tribunal-rond-point-atlas",
+    "lineId": "ln_ligne-d",
+    "name": "Es Senia Tribunal → Rond Point Atlas",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-d_rond-point-atlas-es-senia-tribunal",
+    "lineId": "ln_ligne-d",
+    "name": "Rond Point Atlas → Es Senia Tribunal",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-g1_gare-routiere-el-bahia-village-mediterranneen",
+    "lineId": "ln_ligne-g1",
+    "name": "Gare routière el Bahia → Village Méditerrannéen",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-g1_village-mediterranneen-gare-routiere-el-bahia",
+    "lineId": "ln_ligne-g1",
+    "name": "Village Méditerrannéen → Gare routière el Bahia",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-10_sonelgaz-centre-ville-les-andalouses-unconfirmed",
+    "lineId": "ln_ligne-10",
+    "name": "Sonelgaz (centre ville) → Les Andalouses (unconfirmed)",
+    "direction": null
+  },
+  {
+    "patternId": "pt_ligne-25_place-1er-novembre-ex-place-d-armes-les-planteurs-si-salah",
+    "lineId": "ln_ligne-25",
+    "name": "Place 1er Novembre (ex. Place d'armes) → Les Planteurs - Si Salah",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-25_les-planteurs-si-salah-place-1er-novembre-ex-place-d-armes",
+    "lineId": "ln_ligne-25",
+    "name": "Les Planteurs - Si Salah → Place 1er Novembre (ex. Place d'armes)",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_ligne-kristel_kristel-marche-belgaid-station-kristel",
+    "lineId": "ln_ligne-kristel",
+    "name": "Kristel - Marché → Belgaid - Station Kristel",
+    "direction": "outbound"
+  },
+  {
+    "patternId": "pt_ligne-kristel_belgaid-station-kristel-1-kristel-marche",
+    "lineId": "ln_ligne-kristel",
+    "name": "Belgaid - Station Kristel 1 → Kristel - Marché",
+    "direction": "inbound"
+  },
+  {
+    "patternId": "pt_telepherique_hai-ennasr-telepherique-murdjadjo-santa-cruz-telepherique",
+    "lineId": "ln_telepherique",
+    "name": "Hai Ennasr (Téléphérique) → Murdjadjo - Santa Cruz (Téléphérique)",
+    "direction": null
+  },
+  {
+    "patternId": "pt_telepherique_murdjadjo-santa-cruz-telepherique-hai-ennasr-telepherique",
+    "lineId": "ln_telepherique",
+    "name": "Murdjadjo - Santa Cruz (Téléphérique) → Hai Ennasr (Téléphérique)",
+    "direction": "inbound",
+    "shapeId": "sh_pt_telepherique_murdjadjo-santa-cruz-telepherique-hai-ennasr-telepherique",
+    "sourcePatternId": "md_line_275_reverse",
+    "sourceType": "manual_reverse"
+  }
+]

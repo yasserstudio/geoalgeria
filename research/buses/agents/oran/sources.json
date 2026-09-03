@@ -1,0 +1,128 @@
+[
+  {
+    "url": "https://www.guideoran.com/informations-utiles/ligne-bus-wilaya-oran.html",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Local Oran city guide. Two HTML tables: 35 city Line rows (Ligne / Depart / Arret 1 / Arret 2 / Terminus, French/local place names) and 7 'Destination gare routiere Bahia' rows (G1, G2, G3, S, H, 13, 103). Carries the only per-Operator statement found anywhere: the footnote 'Les lignes ETO : 101 - 37 - U - 102 - 23 - 69 - 2 - 53 - 23'. This page is the source both Wikipedia articles cite for their Line tables.",
+    "licence_or_terms_seen": "None. Footer reads (c) 2010-2026 Guide Oran. No reuse or open-data statement; no robots/licence page linked from the article."
+  },
+  {
+    "url": "https://fr.wikipedia.org/wiki/R%C3%A9seau_de_bus_d%27Oran",
+    "kind": "wikipedia",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Article 'Reseau de bus d'Oran'. Infobox: operator ETO, 42 lines, 175 km, 10 million passengers/year, 20 DA short / 30 DA long fare. Two tables: 35 city rows (one duplicated 'H') and 7 gare routiere El Bahia rows. Content is a near-copy of the GuideOran table. Last edited 3 September 2025.",
+    "licence_or_terms_seen": "CC BY-SA 4.0 (Wikipedia default). The underlying facts are not the Operator's publication."
+  },
+  {
+    "url": "https://ar.wikipedia.org/wiki/%D8%B4%D8%A8%D9%83%D8%A9_%D8%AE%D8%B7%D9%88%D8%B7_%D8%AD%D8%A7%D9%81%D9%84%D8%A7%D8%AA_%D9%88%D9%87%D8%B1%D8%A7%D9%86",
+    "kind": "wikipedia",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Article 'شبكة خطوط حافلات وهران'. Much richer than the French one: about 52 city rows given as full Arabic corridor strings (ref + ordered place list + note), plus a 7-row Bahia-station table cited to GuideOran. Six rows carry an explicit ETO marker in the ref column ('2 ETO', '10 ETO', '23 ETO', '53 ETO', 'ETO 54', '69 ETO'); four of those refs (2, 23, 53, 69) ALSO appear as separate non-ETO rows with different corridors. Row 79 is annotated 'run by a private company'. This is the only Arabic-language Line naming found.",
+    "licence_or_terms_seen": "CC BY-SA 4.0. The city-lines table rows carry no per-row citation; only the Bahia-station table is referenced (to GuideOran)."
+  },
+  {
+    "url": "https://capdz.dz/archives/16261",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "CapDZ, 9 August 2026, 'Transport urbain a Oran - Deux nouvelles lignes renforcent la desserte d'El Braya et Gdyel'. Two current ETO service facts: line 69 now runs El Hamri - El Braya; a second, unnumbered line runs from station El Morchid to Gdyel with the gare routiere as terminus. Also: about 200 new buses allocated to the wilaya, part still idle pending driver/conductor recruitment; users asking ETO to publish timetables.",
+    "licence_or_terms_seen": "None found; standard newspaper copyright, no reuse grant."
+  },
+  {
+    "url": "https://www.guideoran.com/nouvelles-oran/291-21-nouvelles-lignes-de-transport-urbain-et-sburbain-operationnelles.html",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Undated GuideOran news item (by H. Maalem): line 6 reactivated centre-ville - Maraval with ETUSO buses, line 16 reactivated shortly before, 21 urban/suburban lines put into service after about 100 new buses. Uses the older Operator name ETUSO.",
+    "licence_or_terms_seen": "None; (c) Guide Oran."
+  },
+  {
+    "url": "https://ouest-tribune.dz/transport-mise-en-service-de-lapplication-oran-bus/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Ouest Tribune, 7 July 2023: 'L'etablissement de transport d'Oran ETO' launched a Play Store app named 'Oran bus' for real-time tracking of ETO buses, alongside about fifty new buses. Confirms the Operator's full French name and that a tracking app is Operator-endorsed. No Line list, no package id.",
+    "licence_or_terms_seen": "None; newspaper copyright."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=com.deeper.etobus",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Lead only. 'Oran Bus' by Deeper Tech, the app matching the Ouest Tribune description of the ETO tracking app. The Play Store listing returns HTTP 404 at check time, i.e. the app is unpublished or region-restricted; nothing could be read from it.",
+    "licence_or_terms_seen": "Not reachable."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=oran.routes.devcloud",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Lead already in operator-registry.json. Listing resolves (HTTP 200) but is rendered client-side; the only readable identity is the developer, 'DevCloud automate solutions'. A third-party developer, not ETO. Not audited further; no static extraction attempted.",
+    "licence_or_terms_seen": "Play Store terms; no open feed stated."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=com.karim.busoran",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Lead. 'حافلات النقل وهران'. Listing resolves; developer is an individual account id, not ETO. Third-party crowdsourced app claim.",
+    "licence_or_terms_seen": "Play Store terms; no reuse grant."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=com.yasser.transportoran",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Lead. 'Transport Oran'. Listing resolves; developer 'Tahar Chaouch Yasser', an individual, not ETO. Third-party crowdsourced app claim.",
+    "licence_or_terms_seen": "Play Store terms; no reuse grant."
+  },
+  {
+    "url": "https://www.facebook.com/p/ETO-100093054514209/",
+    "kind": "official_facebook",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Candidate Operator page 'ETO | Oran' surfaced by search. Fetched: the server returned an error/interstitial page (title 'Error', ~1.5 KB) with no content. Login-walled to a fetcher; page ownership could NOT be verified and no Line list was read. Recorded as a lead only.",
+    "licence_or_terms_seen": "Not readable."
+  },
+  {
+    "url": "https://www.facebook.com/OranVilleOfficiel/photos/a.1481531388731023/1922392214644936/",
+    "kind": "official_facebook",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Community page 'Oran Ville Officiel' (a city page, NOT the Operator) with a widely reshared post listing Oran bus lines and marking some as ETO (e.g. '_23 eto'). Same shape as the GuideOran/Wikipedia data. Not fetched beyond the search snippet; Facebook is login-walled.",
+    "licence_or_terms_seen": "Not readable; user-generated."
+  },
+  {
+    "url": "https://gps.etusoran.dz/",
+    "kind": "official_site",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Operator Traccar tracker, already recorded in operator-registry.json as etus-oran-tracker with reuse_status operator_access_required. NOT re-fetched in this pass and no vehicle/position endpoint was called, per the research rules. It is an authorisation lead, not a Line dataset.",
+    "licence_or_terms_seen": "No open licence; operator access required (per the existing registry entry)."
+  },
+  {
+    "url": "https://interieur.gov.dz/Monographie/article_detail.php?lien=336&wilaya=20",
+    "kind": "official_site",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "The Ministry of Interior 'Infrastructures' monograph page cited by BOTH Wikipedia articles for the 175 km / network-size claim. Fetched: the site returns 'الصفحة غير موجودة' (page not found). The claim is therefore no longer verifiable at its cited URL; ar.wikipedia keeps a web.archive.org snapshot dated 2024-05-11. The URL's wilaya=20 parameter is also inconsistent with Oran being wilaya 31, so even the archived page needs checking before being trusted as an Oran source.",
+    "licence_or_terms_seen": "Dead URL; nothing seen."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/19393432",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "OSM relation 'Line 39', route=bus, from='bus 39', to='Medina Jdida', roundtrip=yes, public_transport:version=2, 26 way members, 0 stop/platform members. No operator, network or ref tag. Created v1 on 2025-07-26 by user AllelXR. Geometry endpoints reverse-geocode to Nedjma (Hassi Labiod, Sidi Chahmi) and Boulevard Colonel Lotfi in central Oran.",
+    "licence_or_terms_seen": "ODbL 1.0 (OpenStreetMap)."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/19393433",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "OSM relation 'Line Hai Nedjma - Hai Sabah', route=bus, roundtrip=yes, 14 way members plus 2 named stop/platform members ('Cite Sabah', 'Station saint remy'). No operator, network, ref, from or to tag. Created v1 on 2025-07-26 by the same user. Endpoints reverse-geocode to Nedjma and Cite Essabah.",
+    "licence_or_terms_seen": "ODbL 1.0 (OpenStreetMap)."
+  },
+  {
+    "url": "https://nominatim.openstreetmap.org/reverse",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Reverse geocoding of the four OSM relation endpoints, used only to name the termini of the two wilaya-31 candidates.",
+    "licence_or_terms_seen": "ODbL 1.0; Nominatim usage policy (1 req/s, identifying User-Agent) respected."
+  },
+  {
+    "url": "https://guide-oran.com/en/lignes-de-bus-oran/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Different site from guideoran.com, despite the near-identical name. Fetched: the 'Lignes de bus d'Oran' page renders only site chrome (nav, events, weather) and a single bus icon; no Line table, no list. Nothing usable.",
+    "licence_or_terms_seen": "None seen; no data to reuse."
+  }
+]

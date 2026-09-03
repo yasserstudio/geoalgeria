@@ -1,0 +1,60 @@
+{
+  "wilaya_code": "47",
+  "wilaya_name_fr": "Ghardaia",
+  "operator_abbr": "ETU-G",
+  "operator_name_ar": "المؤسسة العمومية للنقل الحضري بغرداية",
+  "operator_name_fr": "Entreprise de transport urbain de Ghardaia",
+  "retrieved": "2026-09-03",
+  "sources": [
+    {
+      "url": "https://www.algerie360.com/ghardaia-une-trentaine-de-bus-renforcent-la-flotte-de-lentreprise-de-transport-urbain/",
+      "kind": "press",
+      "published": "2015-04-02",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "\"Crée en juillet 2010 avec une dizaine de bus et une cinquantaine d employés\" / \"pour desservir, dans une première phase, les quartiers de la vallée du M zab (quatre communes)\" / \"a connu un premier déploiement de ses activités dans la région d El-Menea en mai 2013 avec une dizaine de bus\" / \"connaitra donc un prochain déploiement dans les localités de Berriane, Guerrara et Métlili\". 31 new buses. NO line numbers."
+    },
+    {
+      "url": "https://www.lejourdalgerie.com/ghardaia-une-dizaine-de-nouveaux-bus-pour-ameliorer-le-transport-urbain/",
+      "kind": "press",
+      "published": "2022-08-22",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "\"L entreprise (ETUG) compte actuellement une cinquantaine de bus et emploie plus de trois cents travailleurs.\" / deployment in \"Berriane, Guerrara et Metlili, Zelfana Mansourah\" / new services \"assurer la liaison entre la capitale du M zab, Ghardaïa, et les nouveaux pôles urbains de Oued N chou et Noumerat, situés respectivement à 10 km et 20 km du chef-lieu de wilaya\". NO line numbers."
+    },
+    {
+      "url": "https://africanews.dz/9-%D8%AD%D8%A7%D9%81%D9%84%D8%A7%D8%AA-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9-%D9%84%D8%AA%D8%B9%D8%B2%D9%8A%D8%B2-%D8%A7%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A/",
+      "kind": "press",
+      "published": "2022-08-23",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "Arabic counterpart of the same fleet story. Operator named المؤسسة العمومية للنقل الحضري بغرداية; serves \"كواد نشو ونومرات\". NO line numbers, no line count."
+    },
+    {
+      "url": "https://www.facebook.com/p/%D9%85%D8%AF%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%82%D9%84-%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9-%D8%BA%D8%B1%D8%AF%D8%A7%D9%8A%D8%A9-100082854393114/",
+      "kind": "government_facebook",
+      "status": "login_walled",
+      "retrieved": "2026-09-03",
+      "finding": "Direction des transports de la wilaya de Ghardaia (id 100082854393114). Login-walled. Not read."
+    },
+    {
+      "url": "https://www.openstreetmap.org/relation/13145030",
+      "kind": "osm",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "ref=32, name \"Bus 1\", from موقف حافلة 1 - مركز المدينة والسوق to موقف حافلة 1 - الأقواس, operator tag holds \"Bus Ghardaia ville 1\" (a route name), network missing."
+    },
+    {
+      "url": "https://www.openstreetmap.org/relation/13145031",
+      "kind": "osm",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "Reverse direction of the same route. 56 stop members across the pair, 4.1-4.2 km."
+    }
+  ],
+  "searched_without_result": [
+    "official ETU-G / ETUG website (none found; etug.pt is a Portuguese operator, unrelated)",
+    "غرداية خط رقم حافلة بونورة / العطف / المنيعة",
+    "Google Play com.deeper.etus.* Ghardaia variant (does not exist)"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "wilaya_code": "05",
+  "wilaya_name_fr": "Batna",
+  "operator_abbr": "ETUB",
+  "operator_name_fr": "Etablissement public de transport urbain et suburbain de la wilaya de Batna",
+  "retrieved": "2026-09-03",
+  "sources": [
+    {
+      "url": "https://www.awras.net/transport-urbain-batna-receptionne-35-nouveaux-bus.html",
+      "kind": "press",
+      "published": "2026-08-24",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "ETUB receives 35 buses of 100-passenger capacity under the national 10,000-bus renewal. NO lines, NO routes, NO line count."
+    },
+    {
+      "url": "https://rhinotenders.com/companies/company/etusb-etablissement-public-de-transport-urbain-et-sub-",
+      "kind": "tender_directory",
+      "status": "ok_via_search_snippet",
+      "retrieved": "2026-09-03",
+      "finding": "Company listing: \"ETUSB - Etablissement public de Transport Urbain et Suburbain de la wilaya de Batna\". NOTE the abbreviation collision: this directory calls the Batna operator ETUSB, which is also the Bechar abbreviation. Press uses ETUB for Batna. Directory listing only, no line list."
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.deeper.etus.batna",
+      "kind": "app_store",
+      "status": "404_on_fetch",
+      "retrieved": "2026-09-03",
+      "finding": "Listed in search results as \"Etus Batna - Apps on Google Play\" but the direct fetch 404s. Mirror apkcombo.com/etus-batna/com.deeper.etus.batna/ confirms: Etus Batna, developer Deeper Tech (third party, not the operator), v1.0.0, updated 2024-12-25, description only \"BATNA Urban Transport App\". No lines listed. Same Deeper Tech family as Setif/Blida/Ain Defla/Souk Ahras."
+    },
+    {
+      "url": "https://apkcombo.com/etus-batna/com.deeper.etus.batna/",
+      "kind": "app_store_mirror",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "See above. Mirror used only to confirm the package exists and who publishes it."
+    },
+    {
+      "url": "https://fr.wikipedia.org/wiki/Transport_%C3%A0_Batna",
+      "kind": "wikipedia",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "Stub. Urban bus content is one sentence about buses at the old station and a 10-15 DZD fare, sourced to Lonely Planet p.124 (2011). NO lines, NO operator named. Separately documents a planned tramway Bouzourane <-> new town of Hamla via the city centre, 15 km, 24 stations."
+    },
+    {
+      "url": "https://www.openstreetmap.org/relation/18591051",
+      "kind": "osm",
+      "status": "ok",
+      "retrieved": "2026-09-03",
+      "finding": "ref=03, no name, from Parc a Fourage to Hamla 3, 16 stop members all unnamed, 14.5 km, no operator, no network."
+    }
+  ],
+  "searched_without_result": [
+    "official ETUB website (none found)",
+    "ETUB lignes urbaines / nombre de lignes / Kechida / Bouzourane / Parc a fourrage",
+    "official ETUB Facebook page (a third-party \"Batna Bus App\" page id 61550685430150 exists; not the operator, not read)"
+  ]
+}
