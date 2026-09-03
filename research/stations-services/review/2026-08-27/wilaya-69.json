@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-69",
+    "wilaya_code": 69,
+    "name": "El Abiodh Sidi Cheikh",
+    "name_ar": "الأبيض سيدي الشيخ",
+    "center": [
+      0.8200000000000001,
+      32.1865
+    ],
+    "bounds": [
+      -0.416,
+      30.702,
+      2.056,
+      33.671
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 11,
+    "osm_records": 8,
+    "tariki_records": 10,
+    "cross_source": 5,
+    "multiple_tariki": 1,
+    "osm_only": 2,
+    "tariki_only": 3,
+    "nearby_osm_pairs": 1,
+    "conflicts": 6
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-8851417336",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-240978989",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-341498191",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13671",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2575",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2897",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-2486619099",
+      "coordinates": [
+        0.545314,
+        32.8971332
+      ],
+      "osm": {
+        "id": "node/2486619099",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.545314,
+          32.8971332
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6253",
+          "route_id": "2683",
+          "name_fr": "Station de services berzoug",
+          "name_ar": "محطة برزوق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.545,
+            32.897
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة برزوق"
+    },
+    {
+      "id": "osm-node-3905477488",
+      "coordinates": [
+        0.0528906,
+        33.0295373
+      ],
+      "osm": {
+        "id": "node/3905477488",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0528906,
+          33.0295373
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5844",
+          "route_id": "10724",
+          "name_fr": "Station de services BAKI FOUAD",
+          "name_ar": "محطة الخدمات باقي فؤاد",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.053,
+            33.029
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات باقي فؤاد"
+    },
+    {
+      "id": "osm-node-3921213251",
+      "coordinates": [
+        0.2448152,
+        32.3065892
+      ],
+      "osm": {
+        "id": "node/3921213251",
+        "name": "Station Service",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2448152,
+          32.3065892
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13933",
+          "route_id": "20278",
+          "name_fr": null,
+          "name_ar": "محطة الوقود منصوري يوسف بالبنود",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.245,
+            32.307
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-5027287465",
+      "coordinates": [
+        0.5834408,
+        33.1916913
+      ],
+      "osm": {
+        "id": "node/5027287465",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5834408,
+          33.1916913
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13672",
+          "route_id": "2683",
+          "name_fr": "Station de services CARREFOUR",
+          "name_ar": "محطة مفترق الطرق",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            0.584,
+            33.192
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 62
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services CARREFOUR",
+      "display_name_ar": "محطة مفترق الطرق"
+    },
+    {
+      "id": "osm-node-6813299149",
+      "coordinates": [
+        0.9066984,
+        33.6558495
+      ],
+      "osm": {
+        "id": "node/6813299149",
+        "name": "محطة خدمات أولاد جميلة",
+        "name_ar": "محطة خدمات أولاد جميلة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9066984,
+          33.6558495
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13947",
+          "route_id": "20349",
+          "name_fr": "//",
+          "name_ar": "محطة البنزين  المنظر الجميل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.907,
+            33.655
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 98
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة خدمات أولاد جميلة",
+      "display_name_ar": "محطة خدمات أولاد جميلة"
+    },
+    {
+      "id": "osm-node-8851417336",
+      "coordinates": [
+        0.5432032,
+        32.9098751
+      ],
+      "osm": {
+        "id": "node/8851417336",
+        "name": "غاز السيرات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "GPL",
+        "operator": "SONATRACH",
+        "opening_hours": null,
+        "coordinates": [
+          0.5432032,
+          32.9098751
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-341498191",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "غاز السيرات",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-240978989",
+      "coordinates": [
+        0.5459611499999999,
+        32.90856935
+      ],
+      "osm": {
+        "id": "way/240978989",
+        "name": "محطة الوقود نافطال - Station Naftal",
+        "name_ar": "محطة الوقود نافطال",
+        "name_fr": "Station Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5459611499999999,
+          32.90856935
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13673",
+          "route_id": "19287",
+          "name_fr": "//",
+          "name_ar": "محطة نفطال بلدية الأبيض سيدي الشيخ",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.546,
+            32.908
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 63
+        },
+        {
+          "id": "14315",
+          "route_id": "2686",
+          "name_fr": "//",
+          "name_ar": "محطة نفطال بالأبيض سيدي الشيخ",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.546,
+            32.908
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": 63
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Naftal",
+      "display_name_ar": "محطة الوقود نافطال"
+    },
+    {
+      "id": "osm-way-341498191",
+      "coordinates": [
+        0.5432695,
+        32.90979995
+      ],
+      "osm": {
+        "id": "way/341498191",
+        "name": "غاز السيارات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.5432695,
+          32.90979995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-8851417336",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "غاز السيارات",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13671",
+      "coordinates": [
+        0.551,
+        32.943
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13671",
+          "route_id": "2683",
+          "name_fr": "Station de services BOURNAN",
+          "name_ar": "محطة بورنان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.551,
+            32.943
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOURNAN",
+      "display_name_ar": "محطة بورنان"
+    },
+    {
+      "id": "tariki-2575",
+      "coordinates": [
+        0.757,
+        33.293
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2575",
+          "route_id": "6005",
+          "name_fr": "station de services Karzazi Mohamed",
+          "name_ar": "محطة متعددة الخدمات النفطية كرزازي محمد",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            0.757,
+            33.293
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Karzazi Mohamed",
+      "display_name_ar": "محطة متعددة الخدمات النفطية كرزازي محمد"
+    },
+    {
+      "id": "tariki-2897",
+      "coordinates": [
+        0.297,
+        33.464
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2897",
+          "route_id": "6275",
+          "name_fr": "Station de services Touifza",
+          "name_ar": "محطة الوقود التويفزة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.297,
+            33.464
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 69,
+          "wilaya_fr": "El Abiodh Sidi Cheikh",
+          "wilaya_ar": "الأبيض سيدي الشيخ",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Touifza",
+      "display_name_ar": "محطة الوقود التويفزة"
+    }
+  ]
+}

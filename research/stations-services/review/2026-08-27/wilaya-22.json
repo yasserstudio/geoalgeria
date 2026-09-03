@@ -1,0 +1,2539 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-22",
+    "wilaya_code": 22,
+    "name": "Sidi Bel Abbès",
+    "name_ar": "سيدي بلعباس",
+    "center": [
+      -0.542,
+      34.682500000000005
+    ],
+    "bounds": [
+      -1.125,
+      33.908,
+      0.041,
+      35.457
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 63,
+    "osm_records": 44,
+    "tariki_records": 47,
+    "cross_source": 28,
+    "multiple_tariki": 0,
+    "osm_only": 16,
+    "tariki_only": 19,
+    "nearby_osm_pairs": 3,
+    "conflicts": 25
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-10152075834",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1829262841",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3407523701",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-242019306",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-437706273",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-744927672",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12192",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1239",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12573",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12740",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1292",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13006",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1591",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1635",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4876",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5466",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5500",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5683",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5695",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5783",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5839",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6049",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6501",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6814",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7568",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10152075834",
+      "coordinates": [
+        -0.2245745,
+        35.2430879
+      ],
+      "osm": {
+        "id": "node/10152075834",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2245745,
+          35.2430879
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-242019306",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1327028697",
+      "coordinates": [
+        -0.8255296,
+        35.1046216
+      ],
+      "osm": {
+        "id": "node/1327028697",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.8255296,
+          35.1046216
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1327030581",
+      "coordinates": [
+        -0.6245772,
+        35.1885458
+      ],
+      "osm": {
+        "id": "node/1327030581",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.6245772,
+          35.1885458
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1327030645",
+      "coordinates": [
+        -0.499534,
+        35.3776037
+      ],
+      "osm": {
+        "id": "node/1327030645",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.499534,
+          35.3776037
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5498",
+          "route_id": "2177",
+          "name_fr": "Station de services ZABLEH",
+          "name_ar": "محطة زبلاح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.5,
+            35.378
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة زبلاح"
+    },
+    {
+      "id": "osm-node-1829227490",
+      "coordinates": [
+        -0.8008499,
+        35.1296537
+      ],
+      "osm": {
+        "id": "node/1829227490",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.8008499,
+          35.1296537
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5694",
+          "route_id": "5019",
+          "name_fr": "Station de services SIDI YAAKOUB",
+          "name_ar": "محطة الخدمات سيدي يعقوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.801,
+            35.129
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 74
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات سيدي يعقوب"
+    },
+    {
+      "id": "osm-node-1829227770",
+      "coordinates": [
+        -0.7984678,
+        35.1268428
+      ],
+      "osm": {
+        "id": "node/1829227770",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.7984678,
+          35.1268428
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1829262841",
+      "coordinates": [
+        -0.9192697,
+        34.9426842
+      ],
+      "osm": {
+        "id": "node/1829262841",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.9192697,
+          34.9426842
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-437706273",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1870189059",
+      "coordinates": [
+        -0.6296695,
+        35.2007802
+      ],
+      "osm": {
+        "id": "node/1870189059",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.6296695,
+          35.2007802
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5541",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -0.6296,
+            35.2008
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-1873800939",
+      "coordinates": [
+        -0.6346312,
+        35.1970508
+      ],
+      "osm": {
+        "id": "node/1873800939",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6346312,
+          35.1970508
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5539",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -0.6346,
+            35.197
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-1873801019",
+      "coordinates": [
+        -0.6309459,
+        35.2001653
+      ],
+      "osm": {
+        "id": "node/1873801019",
+        "name": "محطة وقود ضباب",
+        "name_ar": "محطة وقود ضباب",
+        "name_fr": "Station service Debab",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6309459,
+          35.2001653
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5540",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -0.631,
+            35.2002
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Debab",
+      "display_name_ar": "محطة وقود ضباب"
+    },
+    {
+      "id": "osm-node-2240063555",
+      "coordinates": [
+        -0.7757189,
+        35.2400264
+      ],
+      "osm": {
+        "id": "node/2240063555",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.7757189,
+          35.2400264
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1560",
+          "route_id": "4431",
+          "name_fr": "Station de services Ben Khada",
+          "name_ar": "محطة الخدمات بن خدة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.776,
+            35.24
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بن خدة"
+    },
+    {
+      "id": "osm-node-2270524457",
+      "coordinates": [
+        -0.646528,
+        35.1872752
+      ],
+      "osm": {
+        "id": "node/2270524457",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.646528,
+          35.1872752
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5980",
+          "route_id": "3532",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.646,
+            35.187
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-2270525296",
+      "coordinates": [
+        -0.6397353,
+        35.1904574
+      ],
+      "osm": {
+        "id": "node/2270525296",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6397353,
+          35.1904574
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5542",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal VILLAGE TYAR",
+          "name_ar": "محطة نفطال فلاج تيار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.6397,
+            35.1904
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال فلاج تيار"
+    },
+    {
+      "id": "osm-node-2270526970",
+      "coordinates": [
+        -0.6406875,
+        35.1934144
+      ],
+      "osm": {
+        "id": "node/2270526970",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6406875,
+          35.1934144
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5543",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal VILLAGE BIRA",
+          "name_ar": "محطة نفطال فلاج بيرة",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.6407,
+            35.1934
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال فلاج بيرة"
+    },
+    {
+      "id": "osm-node-2270567956",
+      "coordinates": [
+        -0.5896341,
+        35.2465188
+      ],
+      "osm": {
+        "id": "node/2270567956",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.5896341,
+          35.2465188
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2270592062",
+      "coordinates": [
+        -0.2456636,
+        35.2327048
+      ],
+      "osm": {
+        "id": "node/2270592062",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2456636,
+          35.2327048
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal نفطال",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2320526360",
+      "coordinates": [
+        -0.8059417,
+        35.1082919
+      ],
+      "osm": {
+        "id": "node/2320526360",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8059417,
+          35.1082919
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3190904310",
+      "coordinates": [
+        -0.6370608,
+        35.1794794
+      ],
+      "osm": {
+        "id": "node/3190904310",
+        "name": "Station Tires",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.6370608,
+          35.1794794
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5537",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal en face Iden",
+          "name_ar": "محطة  نفطال مقابل نزل ايدن",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.637,
+            35.1795
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Tires",
+      "display_name_ar": "محطة  نفطال مقابل نزل ايدن"
+    },
+    {
+      "id": "osm-node-3192139135",
+      "coordinates": [
+        -0.6900765,
+        35.1639112
+      ],
+      "osm": {
+        "id": "node/3192139135",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6900765,
+          35.1639112
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1108",
+          "route_id": "3473",
+          "name_fr": "Station de services Petroser",
+          "name_ar": "محطة وقود بتروسور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.69,
+            35.164
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود بتروسور"
+    },
+    {
+      "id": "osm-node-3212159118",
+      "coordinates": [
+        -0.5754408,
+        34.9880896
+      ],
+      "osm": {
+        "id": "node/3212159118",
+        "name": "Station de Service Laidi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.5754408,
+          34.9880896
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5631",
+          "route_id": "3074",
+          "name_fr": "Station de services OULED ZIAD",
+          "name_ar": "محطة اولاد زياد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -0.576,
+            34.988
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de Service Laidi",
+      "display_name_ar": "محطة اولاد زياد"
+    },
+    {
+      "id": "osm-node-3212171334",
+      "coordinates": [
+        -0.5478087,
+        34.8805151
+      ],
+      "osm": {
+        "id": "node/3212171334",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.5478087,
+          34.8805151
+        ]
+      },
+      "tariki": [
+        {
+          "id": "786",
+          "route_id": "2462",
+          "name_fr": "Station de services Tighalimete",
+          "name_ar": "محطة خدمات تيغاليمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.548,
+            34.881
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات تيغاليمات"
+    },
+    {
+      "id": "osm-node-3407523701",
+      "coordinates": [
+        -0.574004,
+        34.7742695
+      ],
+      "osm": {
+        "id": "node/3407523701",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.574004,
+          34.7742695
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1595",
+          "route_id": "4551",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.574,
+            34.7742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-744927672",
+          "offset_m": 5
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3721542125",
+      "coordinates": [
+        -0.4571956,
+        35.4311565
+      ],
+      "osm": {
+        "id": "node/3721542125",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.4571956,
+          35.4311565
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5693",
+          "route_id": "5019",
+          "name_fr": "Station de services TESSALA",
+          "name_ar": "محطة الخدمات تسالة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.457,
+            35.431
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات تسالة"
+    },
+    {
+      "id": "osm-node-3721542126",
+      "coordinates": [
+        -0.4565277,
+        35.4336217
+      ],
+      "osm": {
+        "id": "node/3721542126",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.4565277,
+          35.4336217
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5692",
+          "route_id": "5019",
+          "name_fr": "Station de services TESSALA",
+          "name_ar": "محطة الخدمات تسالة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.456,
+            35.433
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 84
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات تسالة"
+    },
+    {
+      "id": "osm-node-4141951989",
+      "coordinates": [
+        -0.7154808,
+        35.0723416
+      ],
+      "osm": {
+        "id": "node/4141951989",
+        "name": "station",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "Mo-Su 06:00-22:00",
+        "coordinates": [
+          -0.7154808,
+          35.0723416
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4604832802",
+      "coordinates": [
+        -0.6186774,
+        34.8173856
+      ],
+      "osm": {
+        "id": "node/4604832802",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station-service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6186774,
+          34.8173856
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1581",
+          "route_id": "4495",
+          "name_fr": "Station de services Semahate",
+          "name_ar": "محطة خدمات سماحات",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.619,
+            34.818
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 74
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-5252202827",
+      "coordinates": [
+        -0.5733452,
+        34.7848756
+      ],
+      "osm": {
+        "id": "node/5252202827",
+        "name": "محطة وقود \"تاج\"",
+        "name_ar": "محطة وقود \"تاج\"",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "coordinates": [
+          -0.5733452,
+          34.7848756
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5481",
+          "route_id": "4551",
+          "name_fr": "Station de services Taj",
+          "name_ar": "محطة تاج",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.5732,
+            34.7849
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة وقود \"تاج\"",
+      "display_name_ar": "محطة وقود \"تاج\""
+    },
+    {
+      "id": "osm-node-5252204722",
+      "coordinates": [
+        -0.5727652,
+        34.7869568
+      ],
+      "osm": {
+        "id": "node/5252204722",
+        "name": "محطة وقود \"حجار\"",
+        "name_ar": "محطة وقود \"حجار\"",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "Mo-Su 08:00-22:00",
+        "coordinates": [
+          -0.5727652,
+          34.7869568
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1594",
+          "route_id": "4551",
+          "name_fr": "Station de services Hedjar",
+          "name_ar": "حجار",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.5728,
+            34.7869
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة وقود \"حجار\"",
+      "display_name_ar": "محطة وقود \"حجار\""
+    },
+    {
+      "id": "osm-node-5512678433",
+      "coordinates": [
+        -0.1927223,
+        34.4393728
+      ],
+      "osm": {
+        "id": "node/5512678433",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.1927223,
+          34.4393728
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5947985142",
+      "coordinates": [
+        -0.4514681,
+        35.1791764
+      ],
+      "osm": {
+        "id": "node/5947985142",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.4514681,
+          35.1791764
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8487",
+          "route_id": "13437",
+          "name_fr": "Station de services  EL MAGHRIB ARABI",
+          "name_ar": "محطة الخدمات المغرب العربي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.451,
+            35.179
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات المغرب العربي"
+    },
+    {
+      "id": "osm-node-7885237785",
+      "coordinates": [
+        -0.8126767,
+        34.4988872
+      ],
+      "osm": {
+        "id": "node/7885237785",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          -0.8126767,
+          34.4988872
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6817",
+          "route_id": "10201",
+          "name_fr": "Station de services Naftal GDR 2222",
+          "name_ar": "محطة الخدمات نفطال GDR 2222",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.813,
+            34.499
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة وقود نفطال",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-node-9063269748",
+      "coordinates": [
+        -0.6117113,
+        35.1829357
+      ],
+      "osm": {
+        "id": "node/9063269748",
+        "name": "Station Service Souass",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6117113,
+          35.1829357
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5523",
+          "route_id": "3532",
+          "name_fr": "Station de services SOUASS",
+          "name_ar": "محطة السواس",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.612,
+            35.183
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Souass",
+      "display_name_ar": "محطة السواس"
+    },
+    {
+      "id": "osm-way-1027460666",
+      "coordinates": [
+        -0.62587915,
+        35.150428500000004
+      ],
+      "osm": {
+        "id": "way/1027460666",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.62587915,
+          35.150428500000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1175754065",
+      "coordinates": [
+        -0.75193,
+        35.10247175
+      ],
+      "osm": {
+        "id": "way/1175754065",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.75193,
+          35.10247175
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-218889462",
+      "coordinates": [
+        -0.56835755,
+        35.261881900000006
+      ],
+      "osm": {
+        "id": "way/218889462",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.56835755,
+          35.261881900000006
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-219524701",
+      "coordinates": [
+        -0.6446874,
+        35.177854800000006
+      ],
+      "osm": {
+        "id": "way/219524701",
+        "name": "Station Lekmeche",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -0.6446874,
+          35.177854800000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5536",
+          "route_id": "10344",
+          "name_fr": "Station de services LAKMECHE",
+          "name_ar": "محطة لكمش",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.6446,
+            35.1778
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Lekmeche",
+      "display_name_ar": "محطة لكمش"
+    },
+    {
+      "id": "osm-way-219628529",
+      "coordinates": [
+        -0.8831804000000001,
+        35.02751945
+      ],
+      "osm": {
+        "id": "way/219628529",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8831804000000001,
+          35.02751945
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5982",
+          "route_id": "7466",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.883,
+            35.028
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-219766272",
+      "coordinates": [
+        -0.8271838499999999,
+        35.09948435
+      ],
+      "osm": {
+        "id": "way/219766272",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8271838499999999,
+          35.09948435
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-225901275",
+      "coordinates": [
+        -0.613873,
+        35.214375200000006
+      ],
+      "osm": {
+        "id": "way/225901275",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.613873,
+          35.214375200000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5524",
+          "route_id": "3532",
+          "name_fr": "Station de services NAFTAL cite Rouchi",
+          "name_ar": "محطة نفطال حي الروشي",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.614,
+            35.214
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL cite Rouchi",
+      "display_name_ar": "محطة نفطال حي الروشي"
+    },
+    {
+      "id": "osm-way-242019306",
+      "coordinates": [
+        -0.22459210000000002,
+        35.24310065
+      ],
+      "osm": {
+        "id": "way/242019306",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.22459210000000002,
+          35.24310065
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2126",
+          "route_id": "4799",
+          "name_fr": "Station de services ABDELLI",
+          "name_ar": "محطة وقود عبدلي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.225,
+            35.243
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-10152075834",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود عبدلي"
+    },
+    {
+      "id": "osm-way-312974149",
+      "coordinates": [
+        -0.23769045,
+        35.2311167
+      ],
+      "osm": {
+        "id": "way/312974149",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          -0.23769045,
+          35.2311167
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-437706273",
+      "coordinates": [
+        -0.91925905,
+        34.94275395
+      ],
+      "osm": {
+        "id": "way/437706273",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.91925905,
+          34.94275395
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6005",
+          "route_id": "2785",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.919,
+            34.943
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1829262841",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-way-744927672",
+      "coordinates": [
+        -0.57397135,
+        34.77430615
+      ],
+      "osm": {
+        "id": "way/744927672",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.57397135,
+          34.77430615
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3407523701",
+          "offset_m": 5
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-979777595",
+      "coordinates": [
+        -0.6343364,
+        35.19350545
+      ],
+      "osm": {
+        "id": "way/979777595",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6343364,
+          35.19350545
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5538",
+          "route_id": "10344",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.6344,
+            35.1935
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-12192",
+      "coordinates": [
+        -0.627,
+        34.67
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12192",
+          "route_id": "16481",
+          "name_fr": "STATION SERVISE barousse mohamed",
+          "name_ar": "محطة الوقود بروس محمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.627,
+            34.67
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVISE barousse mohamed",
+      "display_name_ar": "محطة الوقود بروس محمد"
+    },
+    {
+      "id": "tariki-1239",
+      "coordinates": [
+        -0.46,
+        35.148
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1239",
+          "route_id": "3668",
+          "name_fr": "station de services BELARBI",
+          "name_ar": "محطة بلعربي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.46,
+            35.148
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services BELARBI",
+      "display_name_ar": "محطة بلعربي"
+    },
+    {
+      "id": "tariki-12573",
+      "coordinates": [
+        -0.4911,
+        35.2261
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12573",
+          "route_id": "2534",
+          "name_fr": "station lehfa",
+          "name_ar": "محطة بنزين الحفى بلحضري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.4911,
+            35.2261
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station lehfa",
+      "display_name_ar": "محطة بنزين الحفى بلحضري"
+    },
+    {
+      "id": "tariki-12740",
+      "coordinates": [
+        -0.235,
+        35.23
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12740",
+          "route_id": "4799",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.235,
+            35.23
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "tariki-1292",
+      "coordinates": [
+        -0.781,
+        35.084
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1292",
+          "route_id": "3874",
+          "name_fr": "station de services Adida Djawed",
+          "name_ar": "محطة الخدمات عديدة جواد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.781,
+            35.084
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Adida Djawed",
+      "display_name_ar": "محطة الخدمات عديدة جواد"
+    },
+    {
+      "id": "tariki-13006",
+      "coordinates": [
+        -0.626,
+        35.148
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13006",
+          "route_id": "3459",
+          "name_fr": "STATION DE SERVICE BEN GAMRA",
+          "name_ar": "محطة الخدمات بن قمرة عبد القادر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.626,
+            35.148
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICE BEN GAMRA",
+      "display_name_ar": "محطة الخدمات بن قمرة عبد القادر"
+    },
+    {
+      "id": "tariki-1591",
+      "coordinates": [
+        -0.5717,
+        34.7973
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1591",
+          "route_id": "4551",
+          "name_fr": "Station de services Chahi",
+          "name_ar": "محطة شاحي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.5717,
+            34.7973
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Chahi",
+      "display_name_ar": "محطة شاحي"
+    },
+    {
+      "id": "tariki-1635",
+      "coordinates": [
+        -0.737,
+        35.012
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1635",
+          "route_id": "4628",
+          "name_fr": "station de services LAKHAL ZOHRA",
+          "name_ar": "لكحل زهرة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.737,
+            35.012
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services LAKHAL ZOHRA",
+      "display_name_ar": "لكحل زهرة"
+    },
+    {
+      "id": "tariki-4876",
+      "coordinates": [
+        -0.362,
+        35.19
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4876",
+          "route_id": "3581",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.362,
+            35.19
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-5466",
+      "coordinates": [
+        -0.5718,
+        34.7946
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5466",
+          "route_id": "2790",
+          "name_fr": "Station de services CHAHI",
+          "name_ar": "محطة وقود شاحي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.5718,
+            34.7946
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services CHAHI",
+      "display_name_ar": "محطة وقود شاحي"
+    },
+    {
+      "id": "tariki-5500",
+      "coordinates": [
+        -0.512,
+        35.364
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5500",
+          "route_id": "2177",
+          "name_fr": "Station de services de la commune",
+          "name_ar": "محطة البلدية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.512,
+            35.364
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services de la commune",
+      "display_name_ar": "محطة البلدية"
+    },
+    {
+      "id": "tariki-5683",
+      "coordinates": [
+        -0.561,
+        34.966
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5683",
+          "route_id": "6436",
+          "name_fr": "Station de services MOULAY HASSEN",
+          "name_ar": "محطة الخدمات مولاي حسان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.561,
+            34.966
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services MOULAY HASSEN",
+      "display_name_ar": "محطة الخدمات مولاي حسان"
+    },
+    {
+      "id": "tariki-5695",
+      "coordinates": [
+        -0.798,
+        35.128
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5695",
+          "route_id": "5019",
+          "name_fr": "Station de services SIDI YAAKOUB",
+          "name_ar": "محطة الخدمات سيدي يعقوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.798,
+            35.128
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services SIDI YAAKOUB",
+      "display_name_ar": "محطة الخدمات سيدي يعقوب"
+    },
+    {
+      "id": "tariki-5783",
+      "coordinates": [
+        -0.733,
+        34.968
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5783",
+          "route_id": "7568",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.733,
+            34.968
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة نافطال"
+    },
+    {
+      "id": "tariki-5839",
+      "coordinates": [
+        -0.757,
+        34.826
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5839",
+          "route_id": "10708",
+          "name_fr": "Station de services SAHANINE BOUMEDIENE",
+          "name_ar": "محطة الوقود سحنين بومدين",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.757,
+            34.826
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services SAHANINE BOUMEDIENE",
+      "display_name_ar": "محطة الوقود سحنين بومدين"
+    },
+    {
+      "id": "tariki-6049",
+      "coordinates": [
+        -0.7208,
+        35.0602
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6049",
+          "route_id": "9021",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.7208,
+            35.0602
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-6501",
+      "coordinates": [
+        -0.915,
+        34.956
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6501",
+          "route_id": "2785",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.915,
+            34.956
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-6814",
+      "coordinates": [
+        -0.82,
+        34.496
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6814",
+          "route_id": "10201",
+          "name_fr": "Station de servicesAit Sidhoum Youcef",
+          "name_ar": "محطة الخدماة ( الوقود )ايت سيدهم يوسف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.82,
+            34.496
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de servicesAit Sidhoum Youcef",
+      "display_name_ar": "محطة الخدماة ( الوقود )ايت سيدهم يوسف"
+    },
+    {
+      "id": "tariki-7568",
+      "coordinates": [
+        -0.62,
+        34.818
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7568",
+          "route_id": "4495",
+          "name_fr": "Station de services Cafe communal",
+          "name_ar": "مقهى  البلدية",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -0.62,
+            34.818
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 22,
+          "wilaya_fr": "Sidi Bel Abbès",
+          "wilaya_ar": "سيدي بلعباس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Cafe communal",
+      "display_name_ar": "مقهى  البلدية"
+    }
+  ]
+}

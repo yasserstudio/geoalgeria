@@ -1,0 +1,1275 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-01",
+    "wilaya_code": 1,
+    "name": "Adrar",
+    "name_ar": "أدرار",
+    "center": [
+      -1.8335000000000001,
+      26.488
+    ],
+    "bounds": [
+      -5.668,
+      23.995,
+      2.001,
+      28.981
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 32,
+    "osm_records": 20,
+    "tariki_records": 22,
+    "cross_source": 10,
+    "multiple_tariki": 0,
+    "osm_only": 10,
+    "tariki_only": 12,
+    "nearby_osm_pairs": 2,
+    "conflicts": 16
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-11092510536",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-12635776578",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4320122651",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-433126603",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12376",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13299",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1383",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14289",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14290",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14291",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14437",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14470",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14478",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14481",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5205",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5328",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11092510536",
+      "coordinates": [
+        -0.2809882,
+        27.6853926
+      ],
+      "osm": {
+        "id": "node/11092510536",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2809882,
+          27.6853926
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-12635776578",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-12635776578",
+      "coordinates": [
+        -0.2809936,
+        27.6854056
+      ],
+      "osm": {
+        "id": "node/12635776578",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2809936,
+          27.6854056
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-11092510536",
+          "offset_m": 2
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13939065098",
+      "coordinates": [
+        -0.2257267,
+        27.854271
+      ],
+      "osm": {
+        "id": "node/13939065098",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2257267,
+          27.854271
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3013355583",
+      "coordinates": [
+        1.0797067,
+        26.978897
+      ],
+      "osm": {
+        "id": "node/3013355583",
+        "name": "Station Service NAFTAL",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": "24/7",
+        "coordinates": [
+          1.0797067,
+          26.978897
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service NAFTAL",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-3124844304",
+      "coordinates": [
+        -0.2880432,
+        27.9024786
+      ],
+      "osm": {
+        "id": "node/3124844304",
+        "name": "محطة تمسلقلوت",
+        "name_ar": "محطة تمسلقلوت",
+        "name_fr": "Station service temslgout",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2880432,
+          27.9024786
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7055",
+          "route_id": "10874",
+          "name_fr": "station de services  Garrout",
+          "name_ar": "محطة الخدمات قروط",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            -0.288,
+            27.902
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service temslgout",
+      "display_name_ar": "محطة تمسلقلوت"
+    },
+    {
+      "id": "osm-node-3163656822",
+      "coordinates": [
+        -0.2878295,
+        27.8969455
+      ],
+      "osm": {
+        "id": "node/3163656822",
+        "name": "محطة دحماني",
+        "name_ar": "محطة دحماني",
+        "name_fr": "Station Dahmani",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2878295,
+          27.8969455
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7054",
+          "route_id": "10874",
+          "name_fr": "station de services Dahmani",
+          "name_ar": "محطة الخدمات دحماني",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            -0.288,
+            27.897
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Dahmani",
+      "display_name_ar": "محطة دحماني"
+    },
+    {
+      "id": "osm-node-3165372640",
+      "coordinates": [
+        0.1547981,
+        26.7310895
+      ],
+      "osm": {
+        "id": "node/3165372640",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.1547981,
+          26.7310895
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14479",
+          "route_id": "13735",
+          "name_fr": "//",
+          "name_ar": "محطة توزيع الوقود قصر تعرابت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.155,
+            26.731
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3903509857",
+      "coordinates": [
+        -0.2897793,
+        27.878825
+      ],
+      "osm": {
+        "id": "node/3903509857",
+        "name": "Station service NAFTAL",
+        "name_ar": "محطة الوقود",
+        "name_fr": "Station-service",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2897793,
+          27.878825
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-4318874200",
+      "coordinates": [
+        -0.3077814,
+        27.8502905
+      ],
+      "osm": {
+        "id": "node/4318874200",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.3077814,
+          27.8502905
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4320122651",
+      "coordinates": [
+        -0.2743804,
+        27.8615574
+      ],
+      "osm": {
+        "id": "node/4320122651",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.2743804,
+          27.8615574
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-433126603",
+          "offset_m": 15
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4320138301",
+      "coordinates": [
+        -0.2704399,
+        27.7531799
+      ],
+      "osm": {
+        "id": "node/4320138301",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.2704399,
+          27.7531799
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5469695154",
+      "coordinates": [
+        -0.2885513,
+        27.9152117
+      ],
+      "osm": {
+        "id": "node/5469695154",
+        "name": "Station Service Elhamel",
+        "name_ar": "محطة الحدمات الهامل",
+        "name_fr": null,
+        "brand": null,
+        "operator": "مجمع سيدي موسى Groupe Sidi Moussa",
+        "opening_hours": null,
+        "coordinates": [
+          -0.2885513,
+          27.9152117
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7056",
+          "route_id": "10874",
+          "name_fr": "station de services  El Hamel",
+          "name_ar": "محطة الخدمات الهامل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.289,
+            27.915
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Elhamel",
+      "display_name_ar": "محطة الحدمات الهامل"
+    },
+    {
+      "id": "osm-node-5531753598",
+      "coordinates": [
+        -0.1713193,
+        28.2662064
+      ],
+      "osm": {
+        "id": "node/5531753598",
+        "name": "Station Service",
+        "name_ar": "محطة خدمات للسيارات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.1713193,
+          28.2662064
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7491",
+          "route_id": "12369",
+          "name_fr": "Station de services TSABIT",
+          "name_ar": "محطة تسابيت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.171,
+            28.266
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات للسيارات"
+    },
+    {
+      "id": "osm-node-6875992087",
+      "coordinates": [
+        -0.8898103,
+        28.927966
+      ],
+      "osm": {
+        "id": "node/6875992087",
+        "name": "NAFTAL gas station",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8898103,
+          28.927966
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL gas station",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8255958221",
+      "coordinates": [
+        0.14853,
+        26.7355164
+      ],
+      "osm": {
+        "id": "node/8255958221",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.14853,
+          26.7355164
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14480",
+          "route_id": "13735",
+          "name_fr": "//",
+          "name_ar": "محطة توزيع الوقود المحور الدوار قصر تيمادانين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.148,
+            26.736
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 75
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "//",
+      "display_name_ar": "محطة توزيع الوقود المحور الدوار قصر تيمادانين"
+    },
+    {
+      "id": "osm-relation-4034854",
+      "coordinates": [
+        1.08877175,
+        26.959127549999998
+      ],
+      "osm": {
+        "id": "relation/4034854",
+        "name": "Station Service BAYA",
+        "name_ar": "محطة الوقود بــايا",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.08877175,
+          26.959127549999998
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3629",
+          "route_id": "7635",
+          "name_fr": "Station de services BAYA",
+          "name_ar": "محطة بايا",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            1.0886,
+            26.9592
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service BAYA",
+      "display_name_ar": "محطة الوقود بــايا"
+    },
+    {
+      "id": "osm-way-1173371973",
+      "coordinates": [
+        -0.17557355000000002,
+        28.18153905
+      ],
+      "osm": {
+        "id": "way/1173371973",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.17557355000000002,
+          28.18153905
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-332253563",
+      "coordinates": [
+        -0.1845229,
+        27.222938900000003
+      ],
+      "osm": {
+        "id": "way/332253563",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -0.1845229,
+          27.222938900000003
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1384",
+          "route_id": "4121",
+          "name_fr": "Station de services Zaouia Konta",
+          "name_ar": "محطة خدمات زاوية كنتة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.185,
+            27.223
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-431232226",
+      "coordinates": [
+        1.04062315,
+        27.038425349999997
+      ],
+      "osm": {
+        "id": "way/431232226",
+        "name": "Station de service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.04062315,
+          27.038425349999997
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3614",
+          "route_id": "7616",
+          "name_fr": "Station de services INER",
+          "name_ar": "محطة إينر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.0411,
+            27.0377
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 93
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de service NAFTAL",
+      "display_name_ar": "محطة إينر"
+    },
+    {
+      "id": "osm-way-433126603",
+      "coordinates": [
+        -0.27426335,
+        27.86164235
+      ],
+      "osm": {
+        "id": "way/433126603",
+        "name": "Station Bouanji",
+        "name_ar": "محطة الخدمات بوانجي",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.27426335,
+          27.86164235
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7108",
+          "route_id": "10874",
+          "name_fr": "station de services bouandji",
+          "name_ar": "محطة الخدمات بوانجي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            -0.274,
+            27.862
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4320122651",
+          "offset_m": 15
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station Bouanji",
+      "display_name_ar": "محطة الخدمات بوانجي"
+    },
+    {
+      "id": "tariki-12376",
+      "coordinates": [
+        0.015,
+        26.95
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12376",
+          "route_id": "16874",
+          "name_fr": "STATION ESSENCE",
+          "name_ar": "محطة وقود منبع السلام باعربي أحمد",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.015,
+            26.95
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ESSENCE",
+      "display_name_ar": "محطة وقود منبع السلام باعربي أحمد"
+    },
+    {
+      "id": "tariki-13299",
+      "coordinates": [
+        -0.103,
+        28.105
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13299",
+          "route_id": "12369",
+          "name_fr": "Station de services SBAA",
+          "name_ar": "محطة السبع",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.103,
+            28.105
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services SBAA",
+      "display_name_ar": "محطة السبع"
+    },
+    {
+      "id": "tariki-1383",
+      "coordinates": [
+        -0.087,
+        27.053
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1383",
+          "route_id": "4121",
+          "name_fr": "Station de services Anezdjamir",
+          "name_ar": "محطة خدمات انزجمير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.087,
+            27.053
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Anezdjamir",
+      "display_name_ar": "محطة خدمات انزجمير"
+    },
+    {
+      "id": "tariki-14289",
+      "coordinates": [
+        0.32,
+        27.899
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14289",
+          "route_id": "21454",
+          "name_fr": "station servis dahmani",
+          "name_ar": "محطة خدمات دحماني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.32,
+            27.899
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station servis dahmani",
+      "display_name_ar": "محطة خدمات دحماني"
+    },
+    {
+      "id": "tariki-14290",
+      "coordinates": [
+        0.324,
+        27.888
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14290",
+          "route_id": "21454",
+          "name_fr": "ioualen servis",
+          "name_ar": "محطة الخدمات إيولن",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.324,
+            27.888
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "ioualen servis",
+      "display_name_ar": "محطة الخدمات إيولن"
+    },
+    {
+      "id": "tariki-14291",
+      "coordinates": [
+        0.293,
+        27.947
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14291",
+          "route_id": "17203",
+          "name_fr": "servis naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.293,
+            27.947
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "servis naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "tariki-14437",
+      "coordinates": [
+        0.324,
+        27.888
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14437",
+          "route_id": "21963",
+          "name_fr": "إيولن خدمات",
+          "name_ar": "محطة إيولن خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            0.324,
+            27.888
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "إيولن خدمات",
+      "display_name_ar": "محطة إيولن خدمات"
+    },
+    {
+      "id": "tariki-14470",
+      "coordinates": [
+        0.025,
+        26.986
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14470",
+          "route_id": "16874",
+          "name_fr": "STATION ESSENCE",
+          "name_ar": "محطة وقود الذهبي عبد الله",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.025,
+            26.986
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ESSENCE",
+      "display_name_ar": "محطة وقود الذهبي عبد الله"
+    },
+    {
+      "id": "tariki-14478",
+      "coordinates": [
+        0.185,
+        26.675
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14478",
+          "route_id": "13735",
+          "name_fr": "//",
+          "name_ar": "محطة توزيع الوقود بقصر زاوية الرقاني (ط و رقم 06 المؤدي الى بلدية برج باجي مختار)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.185,
+            26.675
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة توزيع الوقود بقصر زاوية الرقاني (ط و رقم 06 المؤدي الى بلدية برج باجي مختار)"
+    },
+    {
+      "id": "tariki-14481",
+      "coordinates": [
+        0.585,
+        25.029
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14481",
+          "route_id": "13735",
+          "name_fr": "//",
+          "name_ar": "محطة البنزين النقطة الكيلومترية 200 الطريق رقم 06",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.585,
+            25.029
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة البنزين النقطة الكيلومترية 200 الطريق رقم 06"
+    },
+    {
+      "id": "tariki-5205",
+      "coordinates": [
+        -0.27,
+        27.752
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5205",
+          "route_id": "6027",
+          "name_fr": "station de services TAMANTIT",
+          "name_ar": "محطة البنزين تمنطيط",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.27,
+            27.752
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services TAMANTIT",
+      "display_name_ar": "محطة البنزين تمنطيط"
+    },
+    {
+      "id": "tariki-5328",
+      "coordinates": [
+        -0.303,
+        27.601
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5328",
+          "route_id": "6027",
+          "name_fr": "station de services  FENOUGHIL",
+          "name_ar": "محطة البنزين فنوغيل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.303,
+            27.601
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 1,
+          "wilaya_fr": "Adrar",
+          "wilaya_ar": "أدرار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services  FENOUGHIL",
+      "display_name_ar": "محطة البنزين فنوغيل"
+    }
+  ]
+}

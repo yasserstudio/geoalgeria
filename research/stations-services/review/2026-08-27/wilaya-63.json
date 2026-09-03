@@ -1,0 +1,361 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-63",
+    "wilaya_code": 63,
+    "name": "El Aricha",
+    "name_ar": "العريشة",
+    "center": [
+      -1.314,
+      34.4105
+    ],
+    "bounds": [
+      -1.783,
+      34.097,
+      -0.845,
+      34.724
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 8,
+    "osm_records": 5,
+    "tariki_records": 5,
+    "cross_source": 2,
+    "multiple_tariki": 0,
+    "osm_only": 3,
+    "tariki_only": 3,
+    "nearby_osm_pairs": 1,
+    "conflicts": 5
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4705693415",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-914107965",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4132",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6176",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9095",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-4705693415",
+      "coordinates": [
+        -1.2526235,
+        34.2244814
+      ],
+      "osm": {
+        "id": "node/4705693415",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2526235,
+          34.2244814
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6172",
+          "route_id": "5858",
+          "name_fr": "Station de services  cite el-NASRE Laricha",
+          "name_ar": "محطة نفطال حي النصر بلدية العريشة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.2527,
+            34.2245
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 63,
+          "wilaya_fr": "El Aricha",
+          "wilaya_ar": "العريشة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-914107965",
+          "offset_m": 15
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services  cite el-NASRE Laricha",
+      "display_name_ar": "محطة نفطال حي النصر بلدية العريشة"
+    },
+    {
+      "id": "osm-node-6420841941",
+      "coordinates": [
+        -1.2417155,
+        34.2096154
+      ],
+      "osm": {
+        "id": "node/6420841941",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2417155,
+          34.2096154
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8416019994",
+      "coordinates": [
+        -1.270817,
+        34.4837655
+      ],
+      "osm": {
+        "id": "node/8416019994",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.270817,
+          34.4837655
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-565869729",
+      "coordinates": [
+        -0.85134575,
+        34.49929735
+      ],
+      "osm": {
+        "id": "way/565869729",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.85134575,
+          34.49929735
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9101",
+          "route_id": "8312",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.8517,
+            34.4994
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 63,
+          "wilaya_fr": "El Aricha",
+          "wilaya_ar": "العريشة",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-914107965",
+      "coordinates": [
+        -1.2524912000000001,
+        34.2244089
+      ],
+      "osm": {
+        "id": "way/914107965",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2524912000000001,
+          34.2244089
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4705693415",
+          "offset_m": 15
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-4132",
+      "coordinates": [
+        -1.572,
+        34.443
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4132",
+          "route_id": "7333",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الوقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.572,
+            34.443
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 63,
+          "wilaya_fr": "El Aricha",
+          "wilaya_ar": "العريشة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "tariki-6176",
+      "coordinates": [
+        -1.2683,
+        34.4825
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6176",
+          "route_id": "5858",
+          "name_fr": "Station de services  Belhadji Boussif",
+          "name_ar": "محطة وقود بلحاجي بوسيف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.2683,
+            34.4825
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 63,
+          "wilaya_fr": "El Aricha",
+          "wilaya_ar": "العريشة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  Belhadji Boussif",
+      "display_name_ar": "محطة وقود بلحاجي بوسيف"
+    },
+    {
+      "id": "tariki-9095",
+      "coordinates": [
+        -1.157,
+        34.6383
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9095",
+          "route_id": "8312",
+          "name_fr": "station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.157,
+            34.6383
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 63,
+          "wilaya_fr": "El Aricha",
+          "wilaya_ar": "العريشة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services",
+      "display_name_ar": "محطة خدمات"
+    }
+  ]
+}

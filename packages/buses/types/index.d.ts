@@ -73,9 +73,10 @@ export interface BusStation {
   lat: number;
   lng: number;
   geo_precision: Exclude<GeoPrecision, null>;
-  geo_method: "osm_node";
+  /** `osm_way_center` is a derived centre, never a mapped node position. */
+  geo_method: "osm_node" | "osm_way_center";
   source: "osm";
-  osm_type: "node";
+  osm_type: "node" | "way";
   osm_id: number;
   refs: { osm: string };
   operator_ids: string[];

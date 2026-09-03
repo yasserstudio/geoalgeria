@@ -1,0 +1,5602 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-16",
+    "wilaya_code": 16,
+    "name": "Alger",
+    "name_ar": "الجزائر",
+    "center": [
+      3.09,
+      36.7005
+    ],
+    "bounds": [
+      2.8,
+      36.58,
+      3.38,
+      36.821
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 141,
+    "osm_records": 130,
+    "tariki_records": 91,
+    "cross_source": 64,
+    "multiple_tariki": 7,
+    "osm_only": 59,
+    "tariki_only": 11,
+    "nearby_osm_pairs": 11,
+    "conflicts": 38
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-1001134586",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1001134587",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1087937818",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-13227805651",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1337269304",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1723923500",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-2403451016",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-2565227525",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3003272523",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3150325830",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3233328170",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-326715485",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4317759190",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-446470040",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-446470041",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-446470068",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-446470069",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4943169221",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5640124908",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5641635841",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6673631989",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-943320754",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-943320755",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-261967564",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-364692363",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-438662132",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-475150577",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10071",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-11162",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13232",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6190",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6778",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7345",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8990",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9062",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9330",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9342",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9864",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1001134586",
+      "coordinates": [
+        3.0891658,
+        36.7290996
+      ],
+      "osm": {
+        "id": "node/1001134586",
+        "name": "Kouba Centre",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0891658,
+          36.7290996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1001134587",
+          "offset_m": 37
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Kouba Centre",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1001134587",
+      "coordinates": [
+        3.0895401,
+        36.7289467
+      ],
+      "osm": {
+        "id": "node/1001134587",
+        "name": "Kouba Stade",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0895401,
+          36.7289467
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9744",
+          "route_id": "14568",
+          "name_fr": "Station de services STADE DE KOUBA 01",
+          "name_ar": "محطة ملعب القبة 01",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0895,
+            36.7289
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1001134586",
+          "offset_m": 37
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Kouba Stade",
+      "display_name_ar": "محطة ملعب القبة 01"
+    },
+    {
+      "id": "osm-node-1001134589",
+      "coordinates": [
+        3.0890921,
+        36.7295948
+      ],
+      "osm": {
+        "id": "node/1001134589",
+        "name": "Omar ben hadad Koubz",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0890921,
+          36.7295948
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9747",
+          "route_id": "14568",
+          "name_fr": "Station de services OMAR BEN HADAD KOUBA",
+          "name_ar": "محطة خدمات عمر بن حداد القبة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0891,
+            36.7295
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Omar ben hadad Koubz",
+      "display_name_ar": "محطة خدمات عمر بن حداد القبة"
+    },
+    {
+      "id": "osm-node-1001136215",
+      "coordinates": [
+        3.0880568,
+        36.7317884
+      ],
+      "osm": {
+        "id": "node/1001136215",
+        "name": "Kouba Centre",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0880568,
+          36.7317884
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9749",
+          "route_id": "14572",
+          "name_fr": "Station de services FELLAH MOHAMED",
+          "name_ar": "محطة خدمات شارع محمد فلاح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0881,
+            36.7317
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Kouba Centre",
+      "display_name_ar": "محطة خدمات شارع محمد فلاح"
+    },
+    {
+      "id": "osm-node-10146646398",
+      "coordinates": [
+        3.0512617,
+        36.7883643
+      ],
+      "osm": {
+        "id": "node/10146646398",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0512617,
+          36.7883643
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1087937818",
+      "coordinates": [
+        3.0999337,
+        36.7340306
+      ],
+      "osm": {
+        "id": "node/1087937818",
+        "name": "محطة خدمة البحر والشمس",
+        "name_ar": "محطة خدمة البحر والشمس",
+        "name_fr": "Station service Mer et Soleil",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0999337,
+          36.7340306
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4943169221",
+          "offset_m": 37
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station service Mer et Soleil",
+      "display_name_ar": "محطة خدمة البحر والشمس"
+    },
+    {
+      "id": "osm-node-1087945222",
+      "coordinates": [
+        3.093041,
+        36.7203028
+      ],
+      "osm": {
+        "id": "node/1087945222",
+        "name": "City Badr",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.093041,
+          36.7203028
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9743",
+          "route_id": "14568",
+          "name_fr": "Station de services cite ELBADR BACHDJERAH",
+          "name_ar": "محطة حي البدر باش جراح",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0929,
+            36.7201
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "City Badr",
+      "display_name_ar": "محطة حي البدر باش جراح"
+    },
+    {
+      "id": "osm-node-1088007314",
+      "coordinates": [
+        3.0077648,
+        36.7553729
+      ],
+      "osm": {
+        "id": "node/1088007314",
+        "name": "Ben Aknoun",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0077648,
+          36.7553729
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13251",
+          "route_id": "18250",
+          "name_fr": "STATIO-SERVICE NAFTAL BEN AKNOUN",
+          "name_ar": "محطة الخدمات نفطال بن عكنون",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0079,
+            36.7554
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ben Aknoun",
+      "display_name_ar": "محطة الخدمات نفطال بن عكنون"
+    },
+    {
+      "id": "osm-node-1088995354",
+      "coordinates": [
+        3.0475473,
+        36.7139466
+      ],
+      "osm": {
+        "id": "node/1088995354",
+        "name": "Birkhadem 3",
+        "name_ar": "بئر خادم 3",
+        "name_fr": "Birkhadem 3",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0475473,
+          36.7139466
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Birkhadem 3",
+      "display_name_ar": "بئر خادم 3"
+    },
+    {
+      "id": "osm-node-1088995358",
+      "coordinates": [
+        3.0501008,
+        36.7268291
+      ],
+      "osm": {
+        "id": "node/1088995358",
+        "name": "Les Vergers",
+        "name_ar": null,
+        "name_fr": "Les Vergers",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0501008,
+          36.7268291
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Les Vergers",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1089005117",
+      "coordinates": [
+        3.0010304,
+        36.6459258
+      ],
+      "osm": {
+        "id": "node/1089005117",
+        "name": "Birtouta 2",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0010304,
+          36.6459258
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Birtouta 2",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1242624608",
+      "coordinates": [
+        3.1032986,
+        36.7018914
+      ],
+      "osm": {
+        "id": "node/1242624608",
+        "name": "Station Service",
+        "name_ar": "سمار",
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1032986,
+          36.7018914
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": "سمار"
+    },
+    {
+      "id": "osm-node-12458934302",
+      "coordinates": [
+        3.1814821,
+        36.7254508
+      ],
+      "osm": {
+        "id": "node/12458934302",
+        "name": null,
+        "name_ar": "محطة الوقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1814821,
+          36.7254508
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6159",
+          "route_id": "10981",
+          "name_fr": "Station de services cite Rabia Tahar",
+          "name_ar": "محطة حي رابية الطاهر بجانب الطريق الوطني رقم 05",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1814,
+            36.7255
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services cite Rabia Tahar",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-1312803383",
+      "coordinates": [
+        3.045095,
+        36.7657782
+      ],
+      "osm": {
+        "id": "node/1312803383",
+        "name": "Aérobabitat",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.045095,
+          36.7657782
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Aérobabitat",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-13227805651",
+      "coordinates": [
+        2.9094528,
+        36.8016617
+      ],
+      "osm": {
+        "id": "node/13227805651",
+        "name": "Pompe a essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9094528,
+          36.8016617
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1723923500",
+          "offset_m": 34
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Pompe a essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1337246373",
+      "coordinates": [
+        3.0400615,
+        36.7479286
+      ],
+      "osm": {
+        "id": "node/1337246373",
+        "name": "Place Hydra",
+        "name_ar": "ساحة حيدرة",
+        "name_fr": "Place Hydra",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0400615,
+          36.7479286
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Place Hydra",
+      "display_name_ar": "ساحة حيدرة"
+    },
+    {
+      "id": "osm-node-1337269304",
+      "coordinates": [
+        3.0482769,
+        36.7520032
+      ],
+      "osm": {
+        "id": "node/1337269304",
+        "name": "El Mouradia المرادية",
+        "name_ar": "المرادية",
+        "name_fr": "El Mouradia",
+        "brand": "Naftal نفطال",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0482769,
+          36.7520032
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6829",
+          "route_id": "11685",
+          "name_fr": "station de services  BEN BOULAID",
+          "name_ar": "محطة توزيع البنزين بن بولعيد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.048,
+            36.752
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5640124908",
+          "offset_m": 25
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "El Mouradia",
+      "display_name_ar": "المرادية"
+    },
+    {
+      "id": "osm-node-1368831453",
+      "coordinates": [
+        3.0160208,
+        36.6992184
+      ],
+      "osm": {
+        "id": "node/1368831453",
+        "name": "Station Service la caps",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0160208,
+          36.6992184
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service la caps",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1368831454",
+      "coordinates": [
+        3.0335305,
+        36.7037698
+      ],
+      "osm": {
+        "id": "node/1368831454",
+        "name": "Station El Gantra",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0335305,
+          36.7037698
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station El Gantra",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1624210434",
+      "coordinates": [
+        3.2783476,
+        36.7359931
+      ],
+      "osm": {
+        "id": "node/1624210434",
+        "name": "Rouiba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2783476,
+          36.7359931
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Rouiba",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1624210438",
+      "coordinates": [
+        3.2820871,
+        36.7407139
+      ],
+      "osm": {
+        "id": "node/1624210438",
+        "name": "Castors Rouiba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2820871,
+          36.7407139
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Castors Rouiba",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1624210450",
+      "coordinates": [
+        3.2863384,
+        36.7370448
+      ],
+      "osm": {
+        "id": "node/1624210450",
+        "name": "Rouiba Hôpital",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2863384,
+          36.7370448
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Rouiba Hôpital",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1624210452",
+      "coordinates": [
+        3.2794998,
+        36.73616
+      ],
+      "osm": {
+        "id": "node/1624210452",
+        "name": "Rouiba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2794998,
+          36.73616
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Rouiba",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1626615593",
+      "coordinates": [
+        3.2773921,
+        36.7356078
+      ],
+      "osm": {
+        "id": "node/1626615593",
+        "name": "Rouiba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "Mo-Su,PH 07:00-21:00",
+        "coordinates": [
+          3.2773921,
+          36.7356078
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Rouiba",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1667395665",
+      "coordinates": [
+        2.8445148,
+        36.7161139
+      ],
+      "osm": {
+        "id": "node/1667395665",
+        "name": "Zéralda Centre 2",
+        "name_ar": null,
+        "name_fr": "Zéralda Centre 2",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.8445148,
+          36.7161139
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7935",
+          "route_id": "12897",
+          "name_fr": "Station Rabia Mohamed",
+          "name_ar": "محطة  رابية محمد",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.8445,
+            36.7161
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Zéralda Centre 2",
+      "display_name_ar": "محطة  رابية محمد"
+    },
+    {
+      "id": "osm-node-1723923500",
+      "coordinates": [
+        2.9097676,
+        36.8014847
+      ],
+      "osm": {
+        "id": "node/1723923500",
+        "name": "Ain Banian",
+        "name_ar": null,
+        "name_fr": "Ain Banian",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9097676,
+          36.8014847
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6020",
+          "route_id": "10872",
+          "name_fr": "Station de services AIN BENIANE 2",
+          "name_ar": "محطة خدمات عين البنيان 2",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.9098,
+            36.8015
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-13227805651",
+          "offset_m": 34
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Ain Banian",
+      "display_name_ar": "محطة خدمات عين البنيان 2"
+    },
+    {
+      "id": "osm-node-1727712629",
+      "coordinates": [
+        3.0511737,
+        36.7961239
+      ],
+      "osm": {
+        "id": "node/1727712629",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0511737,
+          36.7961239
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4238",
+          "route_id": "8673",
+          "name_fr": "Station de services Mlakouf Bouloughine",
+          "name_ar": "محطـــة الخدمـــــات ملاكوف بولوغين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0512,
+            36.7961
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطـــة الخدمـــــات ملاكوف بولوغين"
+    },
+    {
+      "id": "osm-node-1866349400",
+      "coordinates": [
+        3.0405092,
+        36.747
+      ],
+      "osm": {
+        "id": "node/1866349400",
+        "name": "Place Hydra",
+        "name_ar": "ساحة حيدرة",
+        "name_fr": "Place Hydra",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0405092,
+          36.747
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Place Hydra",
+      "display_name_ar": "ساحة حيدرة"
+    },
+    {
+      "id": "osm-node-2208801190",
+      "coordinates": [
+        3.0515626,
+        36.7397331
+      ],
+      "osm": {
+        "id": "node/2208801190",
+        "name": "Bir Mourad Raïs 2",
+        "name_ar": "بئر مراد رايس 2",
+        "name_fr": "Bir Mourad Raïs 2",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0515626,
+          36.7397331
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bir Mourad Raïs 2",
+      "display_name_ar": "بئر مراد رايس 2"
+    },
+    {
+      "id": "osm-node-2209210346",
+      "coordinates": [
+        3.0824613,
+        36.7088491
+      ],
+      "osm": {
+        "id": "node/2209210346",
+        "name": "Aïn Naâdja",
+        "name_ar": "عين النعجة",
+        "name_fr": "Aïn Naâdja",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0824613,
+          36.7088491
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13196",
+          "route_id": "18184",
+          "name_fr": "AIN NAJA",
+          "name_ar": "عين النعجة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0825,
+            36.7088
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Aïn Naâdja",
+      "display_name_ar": "عين النعجة"
+    },
+    {
+      "id": "osm-node-2268789099",
+      "coordinates": [
+        2.8914213,
+        36.7590003
+      ],
+      "osm": {
+        "id": "node/2268789099",
+        "name": "Naftal Staoueli",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.8914213,
+          36.7590003
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9725",
+          "route_id": "14422",
+          "name_fr": "Station de services CHISA STAOUALI",
+          "name_ar": "محطة بنزين شيزة أسطاوالي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.891,
+            36.759
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal Staoueli",
+      "display_name_ar": "محطة بنزين شيزة أسطاوالي"
+    },
+    {
+      "id": "osm-node-2403451016",
+      "coordinates": [
+        3.0878137,
+        36.6724403
+      ],
+      "osm": {
+        "id": "node/2403451016",
+        "name": "Naftal",
+        "name_ar": "نفطال براقي 2",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0878137,
+          36.6724403
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6103",
+          "route_id": "10967",
+          "name_fr": "Station de services NAFTAL BARRAKI",
+          "name_ar": "نفطال براقي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.088,
+            36.672
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 52
+        },
+        {
+          "id": "14228",
+          "route_id": "16013",
+          "name_fr": "STATION SERVICE NAFTAL",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.088,
+            36.672
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-364692363",
+          "offset_m": 16
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال براقي 2"
+    },
+    {
+      "id": "osm-node-2565227525",
+      "coordinates": [
+        3.2694121,
+        36.7175703
+      ],
+      "osm": {
+        "id": "node/2565227525",
+        "name": "Haouch Khachba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2694121,
+          36.7175703
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9190",
+          "route_id": "14061",
+          "name_fr": "Station de services Naftel hawche elkhachba",
+          "name_ar": "محطة نفطال للوقود حوش الخشبة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.2694,
+            36.7176
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        },
+        {
+          "id": "9336",
+          "route_id": "14179",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.2692,
+            36.7178
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Haouch Khachba",
+      "display_name_ar": "محطة نفطال للوقود حوش الخشبة"
+    },
+    {
+      "id": "osm-node-2664740830",
+      "coordinates": [
+        3.0220747,
+        36.7690343
+      ],
+      "osm": {
+        "id": "node/2664740830",
+        "name": "Naftal 2 Château-neuf",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0220747,
+          36.7690343
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13231",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL KHALEF FARIDA",
+          "name_ar": "محطة الخدمات نفطال خالف فريدة",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.022,
+            36.769
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal 2 Château-neuf",
+      "display_name_ar": "محطة الخدمات نفطال خالف فريدة"
+    },
+    {
+      "id": "osm-node-2684139282",
+      "coordinates": [
+        3.0387252,
+        36.7646463
+      ],
+      "osm": {
+        "id": "node/2684139282",
+        "name": "Station service Jenint Tounis",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0387252,
+          36.7646463
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13243",
+          "route_id": "18248",
+          "name_fr": "STATION SERVICE NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0387,
+            36.7646
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Jenint Tounis",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-2692483854",
+      "coordinates": [
+        3.0472255,
+        36.755115
+      ],
+      "osm": {
+        "id": "node/2692483854",
+        "name": "Hôtel El Djazaïr",
+        "name_ar": "فندق الجزائر",
+        "name_fr": "Hôtel El Djazaïr",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0472255,
+          36.755115
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6830",
+          "route_id": "11685",
+          "name_fr": "station de services  AMAOUCHE",
+          "name_ar": "محطة توزيع البنزين أماعوش",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.047,
+            36.755
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Hôtel El Djazaïr",
+      "display_name_ar": "فندق الجزائر"
+    },
+    {
+      "id": "osm-node-2754535581",
+      "coordinates": [
+        3.031401,
+        36.7686464
+      ],
+      "osm": {
+        "id": "node/2754535581",
+        "name": "El Biar",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.031401,
+          36.7686464
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13239",
+          "route_id": "18248",
+          "name_fr": "STATION SERVICE EL BIAR PLACE KENNEDY",
+          "name_ar": "محطة الخدمات الأبيار ساحة كيندي",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0312,
+            36.7687
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "El Biar",
+      "display_name_ar": "محطة الخدمات الأبيار ساحة كيندي"
+    },
+    {
+      "id": "osm-node-2826123619",
+      "coordinates": [
+        3.0341805,
+        36.7692755
+      ],
+      "osm": {
+        "id": "node/2826123619",
+        "name": "St Raphaël",
+        "name_ar": null,
+        "name_fr": "St Raphaël",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0341805,
+          36.7692755
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13227",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL GD",
+          "name_ar": "محطة الخدمات نفطال تسيير مباشر",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.034,
+            36.7693
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "St Raphaël",
+      "display_name_ar": "محطة الخدمات نفطال تسيير مباشر"
+    },
+    {
+      "id": "osm-node-2842935074",
+      "coordinates": [
+        2.9314151,
+        36.7487191
+      ],
+      "osm": {
+        "id": "node/2842935074",
+        "name": "سوفاك",
+        "name_ar": "سوفاك",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.9314151,
+          36.7487191
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9407",
+          "route_id": "13301",
+          "name_fr": "Station de services  SOVAC",
+          "name_ar": "محطة متعددة الخدمات صوفاك",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.9314,
+            36.7487
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "سوفاك"
+    },
+    {
+      "id": "osm-node-2867705359",
+      "coordinates": [
+        3.0470592,
+        36.7557393
+      ],
+      "osm": {
+        "id": "node/2867705359",
+        "name": "Saint-George 1 سان جورج",
+        "name_ar": "سان جورج 1",
+        "name_fr": "Saint George 1",
+        "brand": "Naftal نفطال",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0470592,
+          36.7557393
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6837",
+          "route_id": "11685",
+          "name_fr": "station de services",
+          "name_ar": "محطة توزيع البنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.047,
+            36.756
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Saint George 1",
+      "display_name_ar": "سان جورج 1"
+    },
+    {
+      "id": "osm-node-287467691",
+      "coordinates": [
+        3.0572963,
+        36.7612384
+      ],
+      "osm": {
+        "id": "node/287467691",
+        "name": "Station-Service Naftal 1er Mai",
+        "name_ar": "نفطال قاعة العرض 1 ماي",
+        "name_fr": "Station-Service Naftal 1er Mai",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0572963,
+          36.7612384
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10080",
+          "route_id": "14929",
+          "name_fr": "01 mai",
+          "name_ar": "01ماي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0574,
+            36.7612
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Naftal 1er Mai",
+      "display_name_ar": "نفطال قاعة العرض 1 ماي"
+    },
+    {
+      "id": "osm-node-2903544643",
+      "coordinates": [
+        2.9453448,
+        36.6305467
+      ],
+      "osm": {
+        "id": "node/2903544643",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9453448,
+          36.6305467
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3003272523",
+      "coordinates": [
+        3.0966088,
+        36.7460222
+      ],
+      "osm": {
+        "id": "node/3003272523",
+        "name": "Station service Kharouba 1",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.0966088,
+          36.7460222
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11230",
+          "route_id": "15780",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0967,
+            36.746
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 8
+        },
+        {
+          "id": "11232",
+          "route_id": "15785",
+          "name_fr": "STATION DE SERVICES KHAROUBA",
+          "name_ar": "محطة الوقود بالخروبة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0967,
+            36.746
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 8
+        },
+        {
+          "id": "11238",
+          "route_id": "15796",
+          "name_fr": "STATION DE SERVICES KHAROUBA ALGER",
+          "name_ar": "محطة الوقود بالخروبة الجزائر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0966,
+            36.746
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station service Kharouba 1",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3133834323",
+      "coordinates": [
+        3.0209302,
+        36.7690361
+      ],
+      "osm": {
+        "id": "node/3133834323",
+        "name": "Chateauneuf",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0209302,
+          36.7690361
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Chateauneuf",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3150325830",
+      "coordinates": [
+        3.0474288,
+        36.7636764
+      ],
+      "osm": {
+        "id": "node/3150325830",
+        "name": "القلب المقدس",
+        "name_ar": "القلب المقدس",
+        "name_fr": "Sacré Cœur",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0474288,
+          36.7636764
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6673631989",
+          "offset_m": 43
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Sacré Cœur",
+      "display_name_ar": "القلب المقدس"
+    },
+    {
+      "id": "osm-node-318466644",
+      "coordinates": [
+        3.0480838,
+        36.7661342
+      ],
+      "osm": {
+        "id": "node/318466644",
+        "name": "Naftal Mohamed V",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0480838,
+          36.7661342
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9865",
+          "route_id": "14087",
+          "name_fr": "Station de services NAFTAL TELEMLI",
+          "name_ar": "محطة الخدمات نفطال تيليملي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0481,
+            36.7661
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal Mohamed V",
+      "display_name_ar": "محطة الخدمات نفطال تيليملي"
+    },
+    {
+      "id": "osm-node-3195853104",
+      "coordinates": [
+        2.9965867,
+        36.7465099
+      ],
+      "osm": {
+        "id": "node/3195853104",
+        "name": "Station service Oued El Roman",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9965867,
+          36.7465099
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Oued El Roman",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-319843890",
+      "coordinates": [
+        3.0491562,
+        36.756426
+      ],
+      "osm": {
+        "id": "node/319843890",
+        "name": "Station service Djenan Mahydine",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0491562,
+          36.756426
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Djenan Mahydine",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-320950289",
+      "coordinates": [
+        3.0132953,
+        36.7688804
+      ],
+      "osm": {
+        "id": "node/320950289",
+        "name": "Gé Soleil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0132953,
+          36.7688804
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13233",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL MITOUCHI",
+          "name_ar": "محطة الخدمات نفطال ميتوشي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0132,
+            36.7689
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Gé Soleil",
+      "display_name_ar": "محطة الخدمات نفطال ميتوشي"
+    },
+    {
+      "id": "osm-node-3220011167",
+      "coordinates": [
+        3.2498132,
+        36.7884807
+      ],
+      "osm": {
+        "id": "node/3220011167",
+        "name": "Alger plages 2",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2498132,
+          36.7884807
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Alger plages 2",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3220014361",
+      "coordinates": [
+        3.2497172,
+        36.787019
+      ],
+      "osm": {
+        "id": "node/3220014361",
+        "name": "Alger plage",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2497172,
+          36.787019
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Alger plage",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3233328170",
+      "coordinates": [
+        3.1537828,
+        36.7277599
+      ],
+      "osm": {
+        "id": "node/3233328170",
+        "name": "Madania",
+        "name_ar": "مدنية",
+        "name_fr": "Madania",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1537828,
+          36.7277599
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9308",
+          "route_id": "14152",
+          "name_fr": "Station de services Cinq Maison",
+          "name_ar": "محطة البنزين الديار الخمس",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1538,
+            36.7278
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 5
+        },
+        {
+          "id": "9313",
+          "route_id": "14157",
+          "name_fr": "Station de services Cinq Maison",
+          "name_ar": "محطة الخدمات بنزين الديار الخمس",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1538,
+            36.7277
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Madania",
+      "display_name_ar": "مدنية"
+    },
+    {
+      "id": "osm-node-326375340",
+      "coordinates": [
+        3.081437,
+        36.7172041
+      ],
+      "osm": {
+        "id": "node/326375340",
+        "name": "City Badr - Autoroute",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.081437,
+          36.7172041
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "City Badr - Autoroute",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-326715485",
+      "coordinates": [
+        3.1031753,
+        36.7304068
+      ],
+      "osm": {
+        "id": "node/326715485",
+        "name": "Station service City maya",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1031753,
+          36.7304068
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6107",
+          "route_id": "10965",
+          "name_fr": "Station de services à la cité Maya",
+          "name_ar": "محطة التزود بالوقود بحي مايا بلدية المقرية",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1022,
+            36.7298
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 110
+        },
+        {
+          "id": "11235",
+          "route_id": "15788",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1032,
+            36.7304
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station service City maya",
+      "display_name_ar": "محطة التزود بالوقود بحي مايا بلدية المقرية"
+    },
+    {
+      "id": "osm-node-326859133",
+      "coordinates": [
+        3.1349772,
+        36.7357415
+      ],
+      "osm": {
+        "id": "node/326859133",
+        "name": "Madania Auto-route",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "Sa-Th 06:00-23:00; Fr 06:00-12:00, 14:00-23:00",
+        "coordinates": [
+          3.1349772,
+          36.7357415
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9299",
+          "route_id": "14144",
+          "name_fr": "Station de services el-ghobrini",
+          "name_ar": "محطة البنزين الغبريني",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.135,
+            36.7357
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Madania Auto-route",
+      "display_name_ar": "محطة البنزين الغبريني"
+    },
+    {
+      "id": "osm-node-346915018",
+      "coordinates": [
+        3.1864708,
+        36.7427987
+      ],
+      "osm": {
+        "id": "node/346915018",
+        "name": "محطة الوقود برج الكيفان",
+        "name_ar": "محطة الوقود برج الكيفان",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1864708,
+          36.7427987
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10223",
+          "route_id": "15067",
+          "name_fr": "STATION DE SERVICES BORDJ ELKIFFEN",
+          "name_ar": "محطة الوقود ببلدية برج الكيفان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.187,
+            36.743
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة الوقود برج الكيفان",
+      "display_name_ar": "محطة الوقود برج الكيفان"
+    },
+    {
+      "id": "osm-node-3603124342",
+      "coordinates": [
+        3.1827013,
+        36.7260217
+      ],
+      "osm": {
+        "id": "node/3603124342",
+        "name": "Station Bab Ezzouar Nord",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1827013,
+          36.7260217
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6162",
+          "route_id": "10981",
+          "name_fr": "Station de services cite Bab zouar a côté de la route N° 05",
+          "name_ar": "محطة حي باب الزوار مركز بجانب الطريق الوطني رقم 05",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1828,
+            36.726
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Bab Ezzouar Nord",
+      "display_name_ar": "محطة حي باب الزوار مركز بجانب الطريق الوطني رقم 05"
+    },
+    {
+      "id": "osm-node-3700251829",
+      "coordinates": [
+        3.166193,
+        36.7284825
+      ],
+      "osm": {
+        "id": "node/3700251829",
+        "name": "El Bahdja Safex",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.166193,
+          36.7284825
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9305",
+          "route_id": "14146",
+          "name_fr": "Station de services cite les bannaniers",
+          "name_ar": "محطة بنزين حي الموز",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            3.1662,
+            36.7285
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "El Bahdja Safex",
+      "display_name_ar": "محطة بنزين حي الموز"
+    },
+    {
+      "id": "osm-node-374522205",
+      "coordinates": [
+        3.0505514,
+        36.7201559
+      ],
+      "osm": {
+        "id": "node/374522205",
+        "name": "Birkhadem 1",
+        "name_ar": "بئر خادم 1",
+        "name_fr": "Birkhadem 1",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0505514,
+          36.7201559
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Birkhadem 1",
+      "display_name_ar": "بئر خادم 1"
+    },
+    {
+      "id": "osm-node-3778449189",
+      "coordinates": [
+        2.9420661,
+        36.6249496
+      ],
+      "osm": {
+        "id": "node/3778449189",
+        "name": "Quatre Chemins Autoroute",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9420661,
+          36.6249496
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9210",
+          "route_id": "10343",
+          "name_fr": "Station de services  Tessala el-Merdja",
+          "name_ar": "محطة تسالة المرجة",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            2.9418,
+            36.6243
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 76
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Quatre Chemins Autoroute",
+      "display_name_ar": "محطة تسالة المرجة"
+    },
+    {
+      "id": "osm-node-3778450151",
+      "coordinates": [
+        3.0213859,
+        36.65588
+      ],
+      "osm": {
+        "id": "node/3778450151",
+        "name": "Sovac",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0213859,
+          36.65588
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7550",
+          "route_id": "11012",
+          "name_fr": "STATION DE SERVICES RN 01  HAOUCHE EL GAZOUZ",
+          "name_ar": "محطة البنزين ط و 1  بحوش القازوز",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            3.0216,
+            36.6559
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Sovac",
+      "display_name_ar": "محطة البنزين ط و 1  بحوش القازوز"
+    },
+    {
+      "id": "osm-node-3787089720",
+      "coordinates": [
+        2.9498935,
+        36.6723595
+      ],
+      "osm": {
+        "id": "node/3787089720",
+        "name": "Douera",
+        "name_ar": "Benzinkik Douera",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9498935,
+          36.6723595
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7506",
+          "route_id": "12418",
+          "name_fr": "STATION DE SERVICES SACHE",
+          "name_ar": "محطة  متعددة الخدمات صاس الدويرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.9498,
+            36.6723
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Douera",
+      "display_name_ar": "Benzinkik Douera"
+    },
+    {
+      "id": "osm-node-3787104503",
+      "coordinates": [
+        3.024652,
+        36.7690582
+      ],
+      "osm": {
+        "id": "node/3787104503",
+        "name": "El biar 3",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.024652,
+          36.7690582
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13230",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL HEDAD",
+          "name_ar": "محطة الخدمات نفطال حداد",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0246,
+            36.7691
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "El biar 3",
+      "display_name_ar": "محطة الخدمات نفطال حداد"
+    },
+    {
+      "id": "osm-node-3808794837",
+      "coordinates": [
+        3.0493654,
+        36.7279182
+      ],
+      "osm": {
+        "id": "node/3808794837",
+        "name": "Station Service Les Vergers",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0493654,
+          36.7279182
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Les Vergers",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3811146198",
+      "coordinates": [
+        3.1531602,
+        36.7240141
+      ],
+      "osm": {
+        "id": "node/3811146198",
+        "name": "Station Service Cité La Radieuse",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1531602,
+          36.7240141
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Cité La Radieuse",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4103133289",
+      "coordinates": [
+        3.0886846,
+        36.6046285
+      ],
+      "osm": {
+        "id": "node/4103133289",
+        "name": "Station-service Nechadi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0886846,
+          36.6046285
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9650",
+          "route_id": "14496",
+          "name_fr": "Station de services Nechadi",
+          "name_ar": "محطة وقود نشادي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0887,
+            36.6046
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Nechadi",
+      "display_name_ar": "محطة وقود نشادي"
+    },
+    {
+      "id": "osm-node-4193285426",
+      "coordinates": [
+        3.1456618,
+        36.6598506
+      ],
+      "osm": {
+        "id": "node/4193285426",
+        "name": "محطة الوقود بقاح",
+        "name_ar": "محطة الوقود بقاح",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1456618,
+          36.6598506
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود بقاح"
+    },
+    {
+      "id": "osm-node-4202597862",
+      "coordinates": [
+        3.1420007,
+        36.679008
+      ],
+      "osm": {
+        "id": "node/4202597862",
+        "name": "طلحا",
+        "name_ar": "طلحا",
+        "name_fr": "Talha",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1420007,
+          36.679008
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6786",
+          "route_id": "11610",
+          "name_fr": "station de services TALHA",
+          "name_ar": "محطة خدمات توزيع الوقود طلحة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1411,
+            36.6788
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 84
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Talha",
+      "display_name_ar": "طلحا"
+    },
+    {
+      "id": "osm-node-4309822383",
+      "coordinates": [
+        2.8752925,
+        36.686406
+      ],
+      "osm": {
+        "id": "node/4309822383",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station belle vue",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.8752925,
+          36.686406
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station belle vue",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4317759190",
+      "coordinates": [
+        3.111236,
+        36.6416388
+      ],
+      "osm": {
+        "id": "node/4317759190",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "Mo-Su 05:00-22:00",
+        "coordinates": [
+          3.111236,
+          36.6416388
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-475150577",
+          "offset_m": 15
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-446470039",
+      "coordinates": [
+        3.0973278,
+        36.7448177
+      ],
+      "osm": {
+        "id": "node/446470039",
+        "name": "Station service Kharouba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.0973278,
+          36.7448177
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11233",
+          "route_id": "15786",
+          "name_fr": "STATION DE SERVICES KHAROUBA ALGER",
+          "name_ar": "محطة الوقود بالخروبة الجزائر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0974,
+            36.7448
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Kharouba",
+      "display_name_ar": "محطة الوقود بالخروبة الجزائر"
+    },
+    {
+      "id": "osm-node-446470040",
+      "coordinates": [
+        3.0965607,
+        36.7437165
+      ],
+      "osm": {
+        "id": "node/446470040",
+        "name": "Station service Tripoli Hossein Dey",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0965607,
+          36.7437165
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11163",
+          "route_id": "15755",
+          "name_fr": "RUE AMRAOUI AHMAD",
+          "name_ar": "شارع عمراوي أحمد  محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0966,
+            36.7437
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5641635841",
+          "offset_m": 39
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station service Tripoli Hossein Dey",
+      "display_name_ar": "شارع عمراوي أحمد  محطة وقود"
+    },
+    {
+      "id": "osm-node-446470041",
+      "coordinates": [
+        3.0956742,
+        36.7402855
+      ],
+      "osm": {
+        "id": "node/446470041",
+        "name": "Station Service Hussein Dey",
+        "name_ar": "محطة وقود حسين داي",
+        "name_fr": "Station Service Hussein Dey",
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0956742,
+          36.7402855
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11237",
+          "route_id": "15795",
+          "name_fr": "AVENUE DJOUDI ZITOUNI",
+          "name_ar": "شارع جودي زيتوني",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0957,
+            36.7403
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-438662132",
+          "offset_m": 4
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station Service Hussein Dey",
+      "display_name_ar": "محطة وقود حسين داي"
+    },
+    {
+      "id": "osm-node-446470042",
+      "coordinates": [
+        3.0897734,
+        36.7405026
+      ],
+      "osm": {
+        "id": "node/446470042",
+        "name": "Station service La Résidence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0897734,
+          36.7405026
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service La Résidence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-446470047",
+      "coordinates": [
+        3.0840058,
+        36.7411936
+      ],
+      "osm": {
+        "id": "node/446470047",
+        "name": "Station service Les fusillés",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0840058,
+          36.7411936
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Les fusillés",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-446470057",
+      "coordinates": [
+        3.0675475,
+        36.7387546
+      ],
+      "osm": {
+        "id": "node/446470057",
+        "name": "Station service Madania",
+        "name_ar": "المدنية",
+        "name_fr": "El Madania",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0675475,
+          36.7387546
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "El Madania",
+      "display_name_ar": "المدنية"
+    },
+    {
+      "id": "osm-node-446470060",
+      "coordinates": [
+        3.0691914,
+        36.7382871
+      ],
+      "osm": {
+        "id": "node/446470060",
+        "name": "Station service Naftal Madania 2",
+        "name_ar": "المدنية 2",
+        "name_fr": "El Madania 2",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0691914,
+          36.7382871
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "El Madania 2",
+      "display_name_ar": "المدنية 2"
+    },
+    {
+      "id": "osm-node-446470061",
+      "coordinates": [
+        3.0701935,
+        36.7478981
+      ],
+      "osm": {
+        "id": "node/446470061",
+        "name": "Belcourt بلكور",
+        "name_ar": "بلكور",
+        "name_fr": "Belcourt",
+        "brand": "Naftal نفطال",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0701935,
+          36.7478981
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Belcourt",
+      "display_name_ar": "بلكور"
+    },
+    {
+      "id": "osm-node-446470062",
+      "coordinates": [
+        3.0694639,
+        36.7485515
+      ],
+      "osm": {
+        "id": "node/446470062",
+        "name": "Belcourt 2 بلكور",
+        "name_ar": "بلكور 2",
+        "name_fr": "Belcourt 2",
+        "brand": "Naftal نفطال",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0694639,
+          36.7485515
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Belcourt 2",
+      "display_name_ar": "بلكور 2"
+    },
+    {
+      "id": "osm-node-446470064",
+      "coordinates": [
+        3.0688202,
+        36.7529666
+      ],
+      "osm": {
+        "id": "node/446470064",
+        "name": "Station service El Hamma محطة وقود الحامة",
+        "name_ar": "محطة وقود الحامة",
+        "name_fr": "Station service El Hamma",
+        "brand": "Naftal نفطال",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0688202,
+          36.7529666
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service El Hamma",
+      "display_name_ar": "محطة وقود الحامة"
+    },
+    {
+      "id": "osm-node-446470066",
+      "coordinates": [
+        3.0621171,
+        36.7583642
+      ],
+      "osm": {
+        "id": "node/446470066",
+        "name": "Station service Aissat Idir",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0621171,
+          36.7583642
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10081",
+          "route_id": "14931",
+          "name_fr": "STATION AISSAT IDIR",
+          "name_ar": "محطة عيسات ايدير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0621,
+            36.7582
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Aissat Idir",
+      "display_name_ar": "محطة عيسات ايدير"
+    },
+    {
+      "id": "osm-node-446470068",
+      "coordinates": [
+        3.0643353,
+        36.7471677
+      ],
+      "osm": {
+        "id": "node/446470068",
+        "name": "المدنيةStation service",
+        "name_ar": "المدنيةStation service",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0643353,
+          36.7471677
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9231",
+          "route_id": "14087",
+          "name_fr": "Station de services  CONFORT",
+          "name_ar": "محطة الكونفور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0643,
+            36.7472
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-446470069",
+          "offset_m": 32
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "المدنيةStation service"
+    },
+    {
+      "id": "osm-node-446470069",
+      "coordinates": [
+        3.0641015,
+        36.7469452
+      ],
+      "osm": {
+        "id": "node/446470069",
+        "name": "Station service Makam El Chahid",
+        "name_ar": "مقام الشهيد",
+        "name_fr": "Makam El Chahid",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0641015,
+          36.7469452
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9863",
+          "route_id": "14087",
+          "name_fr": "Station de services Confort",
+          "name_ar": "محطة الكونفور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0641,
+            36.7469
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-446470068",
+          "offset_m": 32
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Makam El Chahid",
+      "display_name_ar": "مقام الشهيد"
+    },
+    {
+      "id": "osm-node-4564222613",
+      "coordinates": [
+        3.0483718,
+        36.7674479
+      ],
+      "osm": {
+        "id": "node/4564222613",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0483718,
+          36.7674479
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4582471098",
+      "coordinates": [
+        3.3161204,
+        36.7699331
+      ],
+      "osm": {
+        "id": "node/4582471098",
+        "name": null,
+        "name_ar": "بياضة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3161204,
+          36.7699331
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "بياضة"
+    },
+    {
+      "id": "osm-node-4943169221",
+      "coordinates": [
+        3.1001491,
+        36.7337475
+      ],
+      "osm": {
+        "id": "node/4943169221",
+        "name": "Naftal",
+        "name_ar": "محطة خدمة البحر والشمس",
+        "name_fr": "Mer et Soleil",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1001491,
+          36.7337475
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1087937818",
+          "offset_m": 37
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Mer et Soleil",
+      "display_name_ar": "محطة خدمة البحر والشمس"
+    },
+    {
+      "id": "osm-node-4974196217",
+      "coordinates": [
+        3.0428394,
+        36.773289
+      ],
+      "osm": {
+        "id": "node/4974196217",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.0428394,
+          36.773289
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13225",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL SCALA",
+          "name_ar": "محطة الخدمات نفطال (سكالة)",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0424,
+            36.7734
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال (سكالة)"
+    },
+    {
+      "id": "osm-node-503587814",
+      "coordinates": [
+        3.2496931,
+        36.7680492
+      ],
+      "osm": {
+        "id": "node/503587814",
+        "name": "Harraga benzerga",
+        "name_ar": "الحراقة بن زرقة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2496931,
+          36.7680492
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Harraga benzerga",
+      "display_name_ar": "الحراقة بن زرقة"
+    },
+    {
+      "id": "osm-node-529666994",
+      "coordinates": [
+        3.0072713,
+        36.6480036
+      ],
+      "osm": {
+        "id": "node/529666994",
+        "name": "Birtouta",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0072713,
+          36.6480036
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Birtouta",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-539650588",
+      "coordinates": [
+        2.9610515,
+        36.7690392
+      ],
+      "osm": {
+        "id": "node/539650588",
+        "name": "Chéraga-Centre",
+        "name_ar": "الشراڤة وسط",
+        "name_fr": "Chéraga-Centre",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9610515,
+          36.7690392
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5456",
+          "route_id": "10247",
+          "name_fr": "station de services CHERAGA CENTRE",
+          "name_ar": "محطة خدمات شراقة مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.9611,
+            36.769
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Chéraga-Centre",
+      "display_name_ar": "الشراڤة وسط"
+    },
+    {
+      "id": "osm-node-561129723",
+      "coordinates": [
+        2.9655218,
+        36.732849
+      ],
+      "osm": {
+        "id": "node/561129723",
+        "name": "أولاد فايت",
+        "name_ar": "أولاد فايت",
+        "name_fr": "Ouled Fayet",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9655218,
+          36.732849
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5964",
+          "route_id": "10753",
+          "name_fr": "Station de services OULED FAYET",
+          "name_ar": "محطة خدمات اولاد فايت",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.9655,
+            36.7328
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ouled Fayet",
+      "display_name_ar": "أولاد فايت"
+    },
+    {
+      "id": "osm-node-5640124908",
+      "coordinates": [
+        3.0485336,
+        36.7519106
+      ],
+      "osm": {
+        "id": "node/5640124908",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0485336,
+          36.7519106
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1337269304",
+          "offset_m": 25
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5641635841",
+      "coordinates": [
+        3.0961376,
+        36.7436254
+      ],
+      "osm": {
+        "id": "node/5641635841",
+        "name": "Station service Tripoli Hossein Dey",
+        "name_ar": null,
+        "name_fr": "Station de service Naftal",
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": "Mo-Su 07:00-19:00",
+        "coordinates": [
+          3.0961376,
+          36.7436254
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11167",
+          "route_id": "15755",
+          "name_fr": "STATION DE SERVICES A COTE ALGERIE POSTE",
+          "name_ar": "محطة وقود بجانب البريد والمواصلات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0957,
+            36.7437
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-446470040",
+          "offset_m": 39
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de service Naftal",
+      "display_name_ar": "محطة وقود بجانب البريد والمواصلات"
+    },
+    {
+      "id": "osm-node-5652229326",
+      "coordinates": [
+        3.0560175,
+        36.7599054
+      ],
+      "osm": {
+        "id": "node/5652229326",
+        "name": "Station-Service Naftal 1er Mai",
+        "name_ar": "نفطال قاعة العرض 1 ماي",
+        "name_fr": "Station-Service Naftal 1er Mai",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0560175,
+          36.7599054
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service Naftal 1er Mai",
+      "display_name_ar": "نفطال قاعة العرض 1 ماي"
+    },
+    {
+      "id": "osm-node-582818916",
+      "coordinates": [
+        2.9118624,
+        36.8030654
+      ],
+      "osm": {
+        "id": "node/582818916",
+        "name": "Ain Benian 2",
+        "name_ar": null,
+        "name_fr": "Ain Benian 2",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9118624,
+          36.8030654
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6015",
+          "route_id": "10866",
+          "name_fr": "Station de services AIN BENIANE",
+          "name_ar": "محطة خدمات عين البنيان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.9119,
+            36.803
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ain Benian 2",
+      "display_name_ar": "محطة خدمات عين البنيان"
+    },
+    {
+      "id": "osm-node-5961186591",
+      "coordinates": [
+        3.1041619,
+        36.740202
+      ],
+      "osm": {
+        "id": "node/5961186591",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1041619,
+          36.740202
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-650336912",
+      "coordinates": [
+        3.0322328,
+        36.7480236
+      ],
+      "osm": {
+        "id": "node/650336912",
+        "name": "Station service Paradou Hydra",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0322328,
+          36.7480236
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Paradou Hydra",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6673631989",
+      "coordinates": [
+        3.0469791,
+        36.7635275
+      ],
+      "osm": {
+        "id": "node/6673631989",
+        "name": "محطة نفطال",
+        "name_ar": "محطة نفطال",
+        "name_fr": "Station naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0469791,
+          36.7635275
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3150325830",
+          "offset_m": 43
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-691111694",
+      "coordinates": [
+        3.2084155,
+        36.7158731
+      ],
+      "osm": {
+        "id": "node/691111694",
+        "name": "دار البيضاء مركز المدينة",
+        "name_ar": "دار البيضاء مركز المدينة",
+        "name_fr": "Dar El Baida centre-ville",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2084155,
+          36.7158731
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7223",
+          "route_id": "949",
+          "name_fr": "Station de services BERRABAH",
+          "name_ar": "محطة البنزين برابح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.208,
+            36.716
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Dar El Baida centre-ville",
+      "display_name_ar": "دار البيضاء مركز المدينة"
+    },
+    {
+      "id": "osm-node-7067426885",
+      "coordinates": [
+        2.9585576,
+        36.7724452
+      ],
+      "osm": {
+        "id": "node/7067426885",
+        "name": "Station-service Chéraga",
+        "name_ar": "محطة خدمات الشراقة",
+        "name_fr": null,
+        "brand": null,
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9585576,
+          36.7724452
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5374",
+          "route_id": "10167",
+          "name_fr": "Station de services CHERAGA",
+          "name_ar": "محطة خدمات شراقة",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.9586,
+            36.7719
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Chéraga",
+      "display_name_ar": "محطة خدمات الشراقة"
+    },
+    {
+      "id": "osm-node-943320754",
+      "coordinates": [
+        2.8455234,
+        36.7171803
+      ],
+      "osm": {
+        "id": "node/943320754",
+        "name": "Zéralda",
+        "name_ar": null,
+        "name_fr": "Zéralda",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.8455234,
+          36.7171803
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9019",
+          "route_id": "13860",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات مختلفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.8455,
+            36.7172
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-943320755",
+          "offset_m": 34
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Zéralda",
+      "display_name_ar": "محطة خدمات مختلفة"
+    },
+    {
+      "id": "osm-node-943320755",
+      "coordinates": [
+        2.8458979,
+        36.7171493
+      ],
+      "osm": {
+        "id": "node/943320755",
+        "name": "Zéralda 3",
+        "name_ar": null,
+        "name_fr": "Zéralda 3",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          2.8458979,
+          36.7171493
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9020",
+          "route_id": "13860",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.8459,
+            36.7171
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-943320754",
+          "offset_m": 34
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Zéralda 3",
+      "display_name_ar": "محطة الخدمات"
+    },
+    {
+      "id": "osm-node-945339187",
+      "coordinates": [
+        2.9200888,
+        36.7040553
+      ],
+      "osm": {
+        "id": "node/945339187",
+        "name": "Naftal Souidania",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9200888,
+          36.7040553
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal Souidania",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-950614139",
+      "coordinates": [
+        3.224144,
+        36.7557855
+      ],
+      "osm": {
+        "id": "node/950614139",
+        "name": "Bateau Cassé",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.224144,
+          36.7557855
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10221",
+          "route_id": "15067",
+          "name_fr": "STATION D ESSENSE BAKALEM",
+          "name_ar": "محطة الوقود بقالم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.225,
+            36.756
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 80
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Bateau Cassé",
+      "display_name_ar": "محطة الوقود بقالم"
+    },
+    {
+      "id": "osm-node-958646000",
+      "coordinates": [
+        3.0487061,
+        36.737646
+      ],
+      "osm": {
+        "id": "node/958646000",
+        "name": "Bir Mourad Raïs",
+        "name_ar": "بئر مراد رايس",
+        "name_fr": "Bir Mourad Raïs",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0487061,
+          36.737646
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bir Mourad Raïs",
+      "display_name_ar": "بئر مراد رايس"
+    },
+    {
+      "id": "osm-node-975645741",
+      "coordinates": [
+        2.8206968,
+        36.6992554
+      ],
+      "osm": {
+        "id": "node/975645741",
+        "name": "Mazafran",
+        "name_ar": "مزفران",
+        "name_fr": "Mazafran",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.8206968,
+          36.6992554
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8120",
+          "route_id": "13104",
+          "name_fr": "Station de services STATION MAZAFRAN 02",
+          "name_ar": "محطة الخدمات مزفران رقم 02",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.8207,
+            36.6992
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Mazafran",
+      "display_name_ar": "مزفران"
+    },
+    {
+      "id": "osm-node-975645742",
+      "coordinates": [
+        2.8204393,
+        36.7000296
+      ],
+      "osm": {
+        "id": "node/975645742",
+        "name": "Mazafran",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.8204393,
+          36.7000296
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8118",
+          "route_id": "13104",
+          "name_fr": "STATION DE SERVICES MAZAFRAN 01",
+          "name_ar": "محطة الخدمات مزفران رقم 01",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            2.8205,
+            36.7
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Mazafran",
+      "display_name_ar": "محطة الخدمات مزفران رقم 01"
+    },
+    {
+      "id": "osm-way-1171780344",
+      "coordinates": [
+        2.95194825,
+        36.747534200000004
+      ],
+      "osm": {
+        "id": "way/1171780344",
+        "name": "محطة وقود البهجة",
+        "name_ar": "محطة وقود البهجة",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.95194825,
+          36.747534200000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود البهجة"
+    },
+    {
+      "id": "osm-way-1171819184",
+      "coordinates": [
+        3.01057,
+        36.817262299999996
+      ],
+      "osm": {
+        "id": "way/1171819184",
+        "name": "الرئيس حميدو",
+        "name_ar": "الرئيس حميدو",
+        "name_fr": "Raïs Hamidou",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.01057,
+          36.817262299999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4227",
+          "route_id": "8673",
+          "name_fr": "Station de services Benghanem",
+          "name_ar": "محطـــة الخدمـــــات بـــن غانــــــــم",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0106,
+            36.8172
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Raïs Hamidou",
+      "display_name_ar": "الرئيس حميدو"
+    },
+    {
+      "id": "osm-way-1171827036",
+      "coordinates": [
+        3.02968155,
+        36.76405285
+      ],
+      "osm": {
+        "id": "way/1171827036",
+        "name": "البشير الإبراهيمي الأبيار",
+        "name_ar": "البشير الإبراهيمي الأبيار",
+        "name_fr": "Bachir el ibrahimi el biar",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.02968155,
+          36.76405285
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13235",
+          "route_id": "18245",
+          "name_fr": "STATIO-SERVICE NAFTAL EL BIAR",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0297,
+            36.764
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Bachir el ibrahimi el biar",
+      "display_name_ar": "البشير الإبراهيمي الأبيار"
+    },
+    {
+      "id": "osm-way-1172801193",
+      "coordinates": [
+        3.0797724,
+        36.72922055
+      ],
+      "osm": {
+        "id": "way/1172801193",
+        "name": "Jolie Vue",
+        "name_ar": "المنظر الجميل",
+        "name_fr": "Station Bâtiment Blanc",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0797724,
+          36.72922055
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9754",
+          "route_id": "14575",
+          "name_fr": "Station de services  AVENUE FRERES ABDESLAMI",
+          "name_ar": "محطة خدمات شارع عبد السلامي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0798,
+            36.7291
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Bâtiment Blanc",
+      "display_name_ar": "المنظر الجميل"
+    },
+    {
+      "id": "osm-way-241176577",
+      "coordinates": [
+        3.1203602,
+        36.7220985
+      ],
+      "osm": {
+        "id": "way/241176577",
+        "name": "Eucalyptus",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1203602,
+          36.7220985
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9325",
+          "route_id": "14174",
+          "name_fr": "Station de services En face de centre commercial hamza",
+          "name_ar": "محطة للتزود بالوقود المقابل المركز التجاري حمزة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1204,
+            36.722
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Eucalyptus",
+      "display_name_ar": "محطة للتزود بالوقود المقابل المركز التجاري حمزة"
+    },
+    {
+      "id": "osm-way-241181652",
+      "coordinates": [
+        3.1129915500000003,
+        36.7085804
+      ],
+      "osm": {
+        "id": "way/241181652",
+        "name": "Bourouba",
+        "name_ar": "بوروبة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1129915500000003,
+          36.7085804
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8892",
+          "route_id": "13782",
+          "name_fr": "Station de services NEGUACHE",
+          "name_ar": "محطة متعددة الخدمات نقاش",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.113,
+            36.7086
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Bourouba",
+      "display_name_ar": "بوروبة"
+    },
+    {
+      "id": "osm-way-241183051",
+      "coordinates": [
+        3.1333303,
+        36.72116735
+      ],
+      "osm": {
+        "id": "way/241183051",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1333303,
+          36.72116735
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-241184315",
+      "coordinates": [
+        3.1365372000000002,
+        36.725374099999996
+      ],
+      "osm": {
+        "id": "way/241184315",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1365372000000002,
+          36.725374099999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10068",
+          "route_id": "14916",
+          "name_fr": "STATION DE SERVICES KHETTAB BENYOUCEF",
+          "name_ar": "محطة الخدمات خطاب بن يوسف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1366,
+            36.7254
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات خطاب بن يوسف"
+    },
+    {
+      "id": "osm-way-241186462",
+      "coordinates": [
+        3.0363065000000002,
+        36.766581900000006
+      ],
+      "osm": {
+        "id": "way/241186462",
+        "name": "NAFTAL service station Mekhazni",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0363065000000002,
+          36.766581900000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13242",
+          "route_id": "18248",
+          "name_fr": "STATION SERVICE BOUGARA 1",
+          "name_ar": "محطة الخدمات بوقرة 1",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0365,
+            36.7665
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL service station Mekhazni",
+      "display_name_ar": "محطة الخدمات بوقرة 1"
+    },
+    {
+      "id": "osm-way-241186463",
+      "coordinates": [
+        3.03252165,
+        36.768013749999994
+      ],
+      "osm": {
+        "id": "way/241186463",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.03252165,
+          36.768013749999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13241",
+          "route_id": "18248",
+          "name_fr": "STATION D'ESSENCE BOUGARA",
+          "name_ar": "محطة الوقود بوقرة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0323,
+            36.7681
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود بوقرة"
+    },
+    {
+      "id": "osm-way-251247179",
+      "coordinates": [
+        3.1247695999999996,
+        36.72327405
+      ],
+      "osm": {
+        "id": "way/251247179",
+        "name": "Station service Djenan Mabrouk",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1247695999999996,
+          36.72327405
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9585",
+          "route_id": "14408",
+          "name_fr": "Station de services DJNAN MABROUK BACH-DJERAH",
+          "name_ar": "محطة خدمات جنان مبروك باش جراح",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1247,
+            36.7232
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Djenan Mabrouk",
+      "display_name_ar": "محطة خدمات جنان مبروك باش جراح"
+    },
+    {
+      "id": "osm-way-261967564",
+      "coordinates": [
+        3.1848358,
+        36.6958414
+      ],
+      "osm": {
+        "id": "way/261967564",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1848358,
+          36.6958414
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5235",
+          "route_id": "10006",
+          "name_fr": "station de services Elsalem",
+          "name_ar": "محطة السلام",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.185,
+            36.696
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 23
+        },
+        {
+          "id": "13554",
+          "route_id": "5777",
+          "name_fr": null,
+          "name_ar": "نفطال واد السمار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.185,
+            36.696
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة السلام"
+    },
+    {
+      "id": "osm-way-263217365",
+      "coordinates": [
+        3.01075875,
+        36.76855735
+      ],
+      "osm": {
+        "id": "way/263217365",
+        "name": "نفطال شوفالي",
+        "name_ar": "نفطال شوفالي",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.01075875,
+          36.76855735
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13250",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL chevalley",
+          "name_ar": "محطة الخدمات نفطال (شوفالي)",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0109,
+            36.7685
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال شوفالي"
+    },
+    {
+      "id": "osm-way-296623555",
+      "coordinates": [
+        2.9129972,
+        36.7369086
+      ],
+      "osm": {
+        "id": "way/296623555",
+        "name": "Station Carrefour Bouchaoui",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.9129972,
+          36.7369086
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6205",
+          "route_id": "11008",
+          "name_fr": "Station de services CARFOUR BOUCHAOUI",
+          "name_ar": "محطة خدمات مفترق الطرق بوشاوي2",
+          "services": [
+            "fuel",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.9131,
+            36.7368
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Carrefour Bouchaoui",
+      "display_name_ar": "محطة خدمات مفترق الطرق بوشاوي2"
+    },
+    {
+      "id": "osm-way-297708669",
+      "coordinates": [
+        2.87482105,
+        36.7406802
+      ],
+      "osm": {
+        "id": "way/297708669",
+        "name": "Station Service El Bridja",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          2.87482105,
+          36.7406802
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9593",
+          "route_id": "14422",
+          "name_fr": "Station de services BRIDJA",
+          "name_ar": "محطة البنزين البريجة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.875,
+            36.741
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service El Bridja",
+      "display_name_ar": "محطة البنزين البريجة نفطال"
+    },
+    {
+      "id": "osm-way-304148833",
+      "coordinates": [
+        3.0977716500000003,
+        36.745631700000004
+      ],
+      "osm": {
+        "id": "way/304148833",
+        "name": "Station service Kharouba 2",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.0977716500000003,
+          36.745631700000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Kharouba 2",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-313682930",
+      "coordinates": [
+        2.9898628,
+        36.7244806
+      ],
+      "osm": {
+        "id": "way/313682930",
+        "name": "Station Essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          2.9898628,
+          36.7244806
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7548",
+          "route_id": "11012",
+          "name_fr": "STATION DE SERVICES Draria",
+          "name_ar": "محطة النزين الدرارية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.9899,
+            36.7244
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Essence",
+      "display_name_ar": "محطة النزين الدرارية"
+    },
+    {
+      "id": "osm-way-350931857",
+      "coordinates": [
+        3.2151215,
+        36.725236300000006
+      ],
+      "osm": {
+        "id": "way/350931857",
+        "name": "Bab Echerk",
+        "name_ar": "باب الشرق",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2151215,
+          36.725236300000006
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bab Echerk",
+      "display_name_ar": "باب الشرق"
+    },
+    {
+      "id": "osm-way-364692363",
+      "coordinates": [
+        3.0876387000000003,
+        36.67246875
+      ],
+      "osm": {
+        "id": "way/364692363",
+        "name": "نفطال براقي 2",
+        "name_ar": "نفطال براقي 2",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0876387000000003,
+          36.67246875
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-2403451016",
+          "offset_m": 16
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال براقي 2"
+    },
+    {
+      "id": "osm-way-373695006",
+      "coordinates": [
+        3.04547395,
+        36.72573655
+      ],
+      "osm": {
+        "id": "way/373695006",
+        "name": "Les Vergers",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.04547395,
+          36.72573655
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Les Vergers",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-390220351",
+      "coordinates": [
+        3.34087135,
+        36.73848575
+      ],
+      "osm": {
+        "id": "way/390220351",
+        "name": "Regaia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.34087135,
+          36.73848575
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10054",
+          "route_id": "14908",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.3409,
+            36.7384
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Regaia",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-way-438662132",
+      "coordinates": [
+        3.0956571999999998,
+        36.740247600000004
+      ],
+      "osm": {
+        "id": "way/438662132",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.0956571999999998,
+          36.740247600000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-446470041",
+          "offset_m": 4
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-475150577",
+      "coordinates": [
+        3.1113903499999997,
+        36.64168755
+      ],
+      "osm": {
+        "id": "way/475150577",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.1113903499999997,
+          36.64168755
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9390",
+          "route_id": "14230",
+          "name_fr": "Station de services Amirat",
+          "name_ar": "محطة خدمات عميرات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1114,
+            36.6419
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 24
+        },
+        {
+          "id": "12850",
+          "route_id": "17648",
+          "name_fr": "route 115",
+          "name_ar": "الطريق الولائي رقم 115",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1119,
+            36.6409
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 99
+        },
+        {
+          "id": "13260",
+          "route_id": "13432",
+          "name_fr": null,
+          "name_ar": "محطة العميرات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.112,
+            36.6416
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4317759190",
+          "offset_m": 15
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات عميرات"
+    },
+    {
+      "id": "tariki-10071",
+      "coordinates": [
+        3.1349,
+        36.7199
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10071",
+          "route_id": "14917",
+          "name_fr": "STATION DE SERVICES PONT 08 MAI",
+          "name_ar": "محطة البنزين جسر 08 ماي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1349,
+            36.7199
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES PONT 08 MAI",
+      "display_name_ar": "محطة البنزين جسر 08 ماي"
+    },
+    {
+      "id": "tariki-11162",
+      "coordinates": [
+        3.1093,
+        36.739
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "11162",
+          "route_id": "15755",
+          "name_fr": "STATION DE SERVICES HAMADOUCH TRIBOULI",
+          "name_ar": "محطة البنزين طرابلس حمادوش",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1093,
+            36.739
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES HAMADOUCH TRIBOULI",
+      "display_name_ar": "محطة البنزين طرابلس حمادوش"
+    },
+    {
+      "id": "tariki-13232",
+      "coordinates": [
+        3.0269,
+        36.7699
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13232",
+          "route_id": "18238",
+          "name_fr": "STATIO-SERVICE NAFTAL HAMIZI",
+          "name_ar": "محطة الخدمات نفطال حميزي",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.0269,
+            36.7699
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATIO-SERVICE NAFTAL HAMIZI",
+      "display_name_ar": "محطة الخدمات نفطال حميزي"
+    },
+    {
+      "id": "tariki-6190",
+      "coordinates": [
+        2.9935,
+        36.8145
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6190",
+          "route_id": "11003",
+          "name_fr": "Station de services EL HAMAMETE",
+          "name_ar": "محطة خدمات الحمامات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.9935,
+            36.8145
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services EL HAMAMETE",
+      "display_name_ar": "محطة خدمات الحمامات"
+    },
+    {
+      "id": "tariki-6778",
+      "coordinates": [
+        3.1455,
+        36.6581
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6778",
+          "route_id": "11610",
+          "name_fr": "station de services  BAGAH",
+          "name_ar": "محطة خدمات توزيع الوقود بقاح",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1455,
+            36.6581
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services  BAGAH",
+      "display_name_ar": "محطة خدمات توزيع الوقود بقاح"
+    },
+    {
+      "id": "tariki-7345",
+      "coordinates": [
+        3.08,
+        36.7179
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7345",
+          "route_id": "12225",
+          "name_fr": "STATION DE SERVICES GARIDI AUTO ROUTE KOUBA ALGER",
+          "name_ar": "محطة البنزين قاريدي للطريق السريع الجنوبي القبة الجزائر",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.08,
+            36.7179
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES GARIDI AUTO ROUTE KOUBA ALGER",
+      "display_name_ar": "محطة البنزين قاريدي للطريق السريع الجنوبي القبة الجزائر"
+    },
+    {
+      "id": "tariki-8990",
+      "coordinates": [
+        3.1157,
+        36.6337
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8990",
+          "route_id": "13847",
+          "name_fr": "Station de services El-Amirat",
+          "name_ar": "محطة العميرات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.1157,
+            36.6337
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services El-Amirat",
+      "display_name_ar": "محطة العميرات"
+    },
+    {
+      "id": "tariki-9062",
+      "coordinates": [
+        2.8353,
+        36.7013
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9062",
+          "route_id": "13909",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات مختلفة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.8353,
+            36.7013
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات مختلفة"
+    },
+    {
+      "id": "tariki-9330",
+      "coordinates": [
+        3.1478,
+        36.7222
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9330",
+          "route_id": "14177",
+          "name_fr": "Station de services   belfort",
+          "name_ar": "محطة بنزين بلفور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1478,
+            36.7222
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services   belfort",
+      "display_name_ar": "محطة بنزين بلفور"
+    },
+    {
+      "id": "tariki-9342",
+      "coordinates": [
+        3.1371,
+        36.7153
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9342",
+          "route_id": "14184",
+          "name_fr": "Station de services boumaati",
+          "name_ar": "محطة الخدمات بومعطي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.1371,
+            36.7153
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services boumaati",
+      "display_name_ar": "محطة الخدمات بومعطي"
+    },
+    {
+      "id": "tariki-9864",
+      "coordinates": [
+        3.0601,
+        36.7492
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9864",
+          "route_id": "14087",
+          "name_fr": "Station de services GOLF 2",
+          "name_ar": "محطة الخدمات الغولف 2",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.0601,
+            36.7492
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 16,
+          "wilaya_fr": "Alger",
+          "wilaya_ar": "الجزائر",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services GOLF 2",
+      "display_name_ar": "محطة الخدمات الغولف 2"
+    }
+  ]
+}

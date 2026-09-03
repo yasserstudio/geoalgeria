@@ -1,0 +1,752 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-61",
+    "wilaya_code": 61,
+    "name": "El Kantara",
+    "name_ar": "القنطرة",
+    "center": [
+      5.7125,
+      35.046
+    ],
+    "bounds": [
+      5.459,
+      34.806,
+      5.966,
+      35.286
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 15,
+    "osm_records": 13,
+    "tariki_records": 13,
+    "cross_source": 5,
+    "multiple_tariki": 3,
+    "osm_only": 5,
+    "tariki_only": 2,
+    "nearby_osm_pairs": 2,
+    "conflicts": 8
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3450728773",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4464849414",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6637648948",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-288534411",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-288561959",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-315665590",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12116",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3164",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-3450728773",
+      "coordinates": [
+        5.659111,
+        34.9353041
+      ],
+      "osm": {
+        "id": "node/3450728773",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.659111,
+          34.9353041
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-315665590",
+          "offset_m": 19
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4242712089",
+      "coordinates": [
+        5.7030201,
+        35.2088801
+      ],
+      "osm": {
+        "id": "node/4242712089",
+        "name": "Station El Kantara",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7030201,
+          35.2088801
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station El Kantara",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4326815264",
+      "coordinates": [
+        5.6055506,
+        35.1096287
+      ],
+      "osm": {
+        "id": "node/4326815264",
+        "name": "Petro Baraka",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6055506,
+          35.1096287
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12126",
+          "route_id": "16546",
+          "name_fr": "station services issansse saadi hammam sidi elhadj loutaya",
+          "name_ar": "محطة الخدمات للبنزين سعدي مفترق الطرق قرية حمام سيدي الحاج بلدية الوطاية.",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            5.605,
+            35.11
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 65
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Petro Baraka",
+      "display_name_ar": "محطة الخدمات للبنزين سعدي مفترق الطرق قرية حمام سيدي الحاج بلدية الوطاية."
+    },
+    {
+      "id": "osm-node-4383601297",
+      "coordinates": [
+        5.6124739,
+        35.1278944
+      ],
+      "osm": {
+        "id": "node/4383601297",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6124739,
+          35.1278944
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12125",
+          "route_id": "16546",
+          "name_fr": "station services issansse torchi manbaa elghozlane loutaya",
+          "name_ar": "محطة الخدمات للبنزين طرشي قرية منبع الغزلان من الجهة الشمالية  بلدية الوطاية.",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            5.613,
+            35.127
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 110
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station",
+      "display_name_ar": "محطة الخدمات للبنزين طرشي قرية منبع الغزلان من الجهة الشمالية  بلدية الوطاية."
+    },
+    {
+      "id": "osm-node-4464849414",
+      "coordinates": [
+        5.6125402,
+        35.1233129
+      ],
+      "osm": {
+        "id": "node/4464849414",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6125402,
+          35.1233129
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5800",
+          "route_id": "10659",
+          "name_fr": "Station de services OURAMI SASSI",
+          "name_ar": "محطة خدمات عورامي ساسي",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            5.613,
+            35.123
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 54
+        },
+        {
+          "id": "12124",
+          "route_id": "16546",
+          "name_fr": "station services ourami manbaa elghozlane loutaya",
+          "name_ar": "محطة الخدمات للبنزين عورامي قرية منبع الغزلان بلدية الوطاية.",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            5.612,
+            35.123
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات عورامي ساسي"
+    },
+    {
+      "id": "osm-node-4888918621",
+      "coordinates": [
+        5.6035855,
+        35.0245321
+      ],
+      "osm": {
+        "id": "node/4888918621",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6035855,
+          35.0245321
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6032571685",
+      "coordinates": [
+        5.6885272,
+        35.2068616
+      ],
+      "osm": {
+        "id": "node/6032571685",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6885272,
+          35.2068616
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6251236135",
+      "coordinates": [
+        5.7922921,
+        35.060905
+      ],
+      "osm": {
+        "id": "node/6251236135",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7922921,
+          35.060905
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1944",
+          "route_id": "4981",
+          "name_fr": "Station de services ARAMI Faycel",
+          "name_ar": "محطة التزويد بالوقود عرامي فيصل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.792,
+            35.06
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 104
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services ARAMI Faycel",
+      "display_name_ar": "محطة التزويد بالوقود عرامي فيصل"
+    },
+    {
+      "id": "osm-node-6637648948",
+      "coordinates": [
+        5.6808685,
+        34.9227811
+      ],
+      "osm": {
+        "id": "node/6637648948",
+        "name": "Station service Barbari",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6808685,
+          34.9227811
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1954",
+          "route_id": "5011",
+          "name_fr": "Station de services Barbari",
+          "name_ar": "محطة خدمات برباري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.681,
+            34.923
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-288561959",
+          "offset_m": 7
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station service Barbari",
+      "display_name_ar": "محطة خدمات برباري"
+    },
+    {
+      "id": "osm-way-288373564",
+      "coordinates": [
+        5.69390135,
+        35.19846795
+      ],
+      "osm": {
+        "id": "way/288373564",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.69390135,
+          35.19846795
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5066",
+          "route_id": "4820",
+          "name_fr": "naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.694,
+            35.199
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-288534411",
+      "coordinates": [
+        5.58587115,
+        35.0422652
+      ],
+      "osm": {
+        "id": "way/288534411",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.58587115,
+          35.0422652
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5803",
+          "route_id": "10662",
+          "name_fr": "Station de services BENBRAHIM",
+          "name_ar": "محطة خدمات بن براهيم",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.586,
+            35.042
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 32
+        },
+        {
+          "id": "12117",
+          "route_id": "16546",
+          "name_fr": "station services issansse benbrahim loutaya centre",
+          "name_ar": "محطة الخدمات للبنزين بن براهيمي بلدية الوطاية مركز",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.585,
+            35.042
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 85
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services BENBRAHIM",
+      "display_name_ar": "محطة خدمات بن براهيم"
+    },
+    {
+      "id": "osm-way-288561959",
+      "coordinates": [
+        5.6809352,
+        34.92275085
+      ],
+      "osm": {
+        "id": "way/288561959",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6809352,
+          34.92275085
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6637648948",
+          "offset_m": 7
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-315665590",
+      "coordinates": [
+        5.65926135,
+        34.93519125
+      ],
+      "osm": {
+        "id": "way/315665590",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.65926135,
+          34.93519125
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12115",
+          "route_id": "16545",
+          "name_fr": "station services issansse driss ammar loutaya",
+          "name_ar": "محطة الخدمات للبنزين زواوي بقرية دريس عمر بلدية الوطاية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.659,
+            34.935
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 32
+        },
+        {
+          "id": "12123",
+          "route_id": "16546",
+          "name_fr": "station services issanssezouaoui driss ammar  loutaya",
+          "name_ar": "محطة الخدمات للبنزين زواوي قرية درس عمر بلدية الوطاية.",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.659,
+            34.935
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3450728773",
+          "offset_m": 19
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات للبنزين زواوي بقرية دريس عمر بلدية الوطاية"
+    },
+    {
+      "id": "tariki-12116",
+      "coordinates": [
+        5.601,
+        35.025
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12116",
+          "route_id": "16546",
+          "name_fr": "station services issansse razik loutaya centre",
+          "name_ar": "محطة الخدمات للبنزين رزيقي بلدية الوطاية مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.601,
+            35.025
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station services issansse razik loutaya centre",
+      "display_name_ar": "محطة الخدمات للبنزين رزيقي بلدية الوطاية مركز"
+    },
+    {
+      "id": "tariki-3164",
+      "coordinates": [
+        5.583,
+        35.035
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3164",
+          "route_id": "1903",
+          "name_fr": "Station de services Koussa Lakdher",
+          "name_ar": "محطة متعددة  الخدمات كوسة لخضر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.583,
+            35.035
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 61,
+          "wilaya_fr": "El Kantara",
+          "wilaya_ar": "القنطرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Koussa Lakdher",
+      "display_name_ar": "محطة متعددة  الخدمات كوسة لخضر"
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-54",
+    "wilaya_code": 54,
+    "name": "In Guezzam",
+    "name_ar": "عين قزام",
+    "center": [
+      4.785,
+      20.436
+    ],
+    "bounds": [
+      1.776,
+      18.968,
+      7.794,
+      21.904
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 7,
+    "osm_records": 2,
+    "tariki_records": 5,
+    "cross_source": 0,
+    "multiple_tariki": 0,
+    "osm_only": 2,
+    "tariki_only": 5,
+    "nearby_osm_pairs": 0,
+    "conflicts": 5
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-12692",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2873",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4333",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4335",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4336",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-way-744794426",
+      "coordinates": [
+        5.7710442,
+        19.55790205
+      ],
+      "osm": {
+        "id": "way/744794426",
+        "name": "بلوافي القائم",
+        "name_ar": "بلوافي القائم",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "بلوافي القائم",
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.7710442,
+          19.55790205
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "بلوافي القائم"
+    },
+    {
+      "id": "osm-way-744794427",
+      "coordinates": [
+        5.7723426,
+        19.56459445
+      ],
+      "osm": {
+        "id": "way/744794427",
+        "name": "Gas station Naftal محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7723426,
+          19.56459445
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "tariki-12692",
+      "coordinates": [
+        2.972,
+        19.96
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12692",
+          "route_id": "6404",
+          "name_fr": "STATION BARHOUSSE",
+          "name_ar": "محطة برهوس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.972,
+            19.96
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 54,
+          "wilaya_fr": "In Guezzam",
+          "wilaya_ar": "عين قزام",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION BARHOUSSE",
+      "display_name_ar": "محطة برهوس"
+    },
+    {
+      "id": "tariki-2873",
+      "coordinates": [
+        2.972,
+        19.959
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2873",
+          "route_id": "6464",
+          "name_fr": "Station de services Idi Boucha",
+          "name_ar": "ايدي بوشة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.972,
+            19.959
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 54,
+          "wilaya_fr": "In Guezzam",
+          "wilaya_ar": "عين قزام",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Idi Boucha",
+      "display_name_ar": "ايدي بوشة"
+    },
+    {
+      "id": "tariki-4333",
+      "coordinates": [
+        5.771,
+        19.578
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4333",
+          "route_id": "8909",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.771,
+            19.578
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 54,
+          "wilaya_fr": "In Guezzam",
+          "wilaya_ar": "عين قزام",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-4335",
+      "coordinates": [
+        5.772,
+        19.561
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4335",
+          "route_id": "8909",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.772,
+            19.561
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 54,
+          "wilaya_fr": "In Guezzam",
+          "wilaya_ar": "عين قزام",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-4336",
+      "coordinates": [
+        5.771,
+        19.565
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4336",
+          "route_id": "8909",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.771,
+            19.565
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 54,
+          "wilaya_fr": "In Guezzam",
+          "wilaya_ar": "عين قزام",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    }
+  ]
+}

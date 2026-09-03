@@ -14884,6 +14884,378 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-11281591036",
+    "name": "Les Castors",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.803425,
+    "lng": 3.258039,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591036,
+    "refs": {
+      "osm": "node/11281591036"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591038",
+    "name": "Cité Chabou",
+    "name_fr": null,
+    "name_ar": "حي شابو",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.777206,
+    "lng": 3.269884,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591038,
+    "refs": {
+      "osm": "node/11281591038"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591039",
+    "name": "DOMAINE SI BOUALEM",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.770908,
+    "lng": 3.286623,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591039,
+    "refs": {
+      "osm": "node/11281591039"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591040",
+    "name": "Diar El Gharb 1",
+    "name_fr": "Diar El Gharb 1",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.800649,
+    "lng": 3.257803,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591040,
+    "refs": {
+      "osm": "node/11281591040"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591041",
+    "name": "Diar El Gharb 2",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.795106,
+    "lng": 3.257315,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591041,
+    "refs": {
+      "osm": "node/11281591041"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": null
+  },
+  {
+    "id": "osm-node-11281591042",
+    "name": "Diar El Gharb 2",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.79525,
+    "lng": 3.257189,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591042,
+    "refs": {
+      "osm": "node/11281591042"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": null
+  },
+  {
+    "id": "osm-node-11281591043",
+    "name": "CFPA Ain Taya",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.798729,
+    "lng": 3.269261,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591043,
+    "refs": {
+      "osm": "node/11281591043"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-11281591045",
+    "name": "Souk El Fellah",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.788961,
+    "lng": 3.289091,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591045,
+    "refs": {
+      "osm": "node/11281591045"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591046",
+    "name": "École Houari Boumediène",
+    "name_fr": null,
+    "name_ar": "مدرسة هواري بومدين",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.781229,
+    "lng": 3.288624,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591046,
+    "refs": {
+      "osm": "node/11281591046"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591047",
+    "name": "El Karia",
+    "name_fr": null,
+    "name_ar": "حي 108 مسكن",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.777831,
+    "lng": 3.288434,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591047,
+    "refs": {
+      "osm": "node/11281591047"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591048",
+    "name": "قسمة السي بوعلام",
+    "name_fr": null,
+    "name_ar": "حي 700 مسكن",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.773173,
+    "lng": 3.288104,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591048,
+    "refs": {
+      "osm": "node/11281591048"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-11281591049",
+    "name": "CITE BOUALEM EL ALOUI",
+    "name_fr": null,
+    "name_ar": "حي بوعلام العلوي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.774965,
+    "lng": 3.277728,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 11281591049,
+    "refs": {
+      "osm": "node/11281591049"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-1166443206",
     "name": "Scala",
     "name_fr": null,
@@ -15093,7 +15465,10 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-58"
+      "etusa-3",
+      "etusa-58",
+      "etusa-701",
+      "etusa-731"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -15225,6 +15600,39 @@
     "roles": [
       "platform",
       "stop"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1185935485",
+    "name": null,
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743051,
+    "lng": 3.109239,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1185935485,
+    "refs": {
+      "osm": "node/1185935485"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-113",
+      "etusa-178"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_entry_only",
+      "platform_exit_only"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -16020,6 +16428,349 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-1468889925",
+    "name": "Aïn Allah",
+    "name_fr": null,
+    "name_ar": "عين الله",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.75071,
+    "lng": 2.991694,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468889925,
+    "refs": {
+      "osm": "node/1468889925"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1468889926",
+    "name": "HAÏ EL BINA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.76024,
+    "lng": 2.987245,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468889926,
+    "refs": {
+      "osm": "node/1468889926"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1468889927",
+    "name": "Bois des Cars",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.754223,
+    "lng": 2.981748,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468889927,
+    "refs": {
+      "osm": "node/1468889927"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1468889928",
+    "name": "Fédération Algérienne du Football",
+    "name_fr": "Fédération",
+    "name_ar": "الفيديرالية",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.762276,
+    "lng": 2.99313,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468889928,
+    "refs": {
+      "osm": "node/1468889928"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1468889929",
+    "name": "La faculté",
+    "name_fr": null,
+    "name_ar": "الجامعة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.758028,
+    "lng": 2.981344,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468889929,
+    "refs": {
+      "osm": "node/1468889929"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1468889931",
+    "name": "RUE AHMED OUAKED",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.765616,
+    "lng": 2.992958,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468889931,
+    "refs": {
+      "osm": "node/1468889931"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1468894839",
+    "name": "Station de bus chevalley",
+    "name_fr": null,
+    "name_ar": "محطة شوفالي الحافلات",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.769486,
+    "lng": 3.006971,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1468894839,
+    "refs": {
+      "osm": "node/1468894839"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "platform_entry_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "station"
+  },
+  {
+    "id": "osm-node-1469251516",
+    "name": "bois des cars",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.753817,
+    "lng": 2.981777,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1469251516,
+    "refs": {
+      "osm": "node/1469251516"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1469251524",
+    "name": "UNIVERSITE DELY BRAHIM",
+    "name_fr": null,
+    "name_ar": "الجامعة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.758245,
+    "lng": 2.982055,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1469251524,
+    "refs": {
+      "osm": "node/1469251524"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1469251527",
+    "name": "Aïn Allah",
+    "name_fr": "Aïn Allah",
+    "name_ar": "عين الله",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.75203,
+    "lng": 2.990576,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1469251527,
+    "refs": {
+      "osm": "node/1469251527"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1474259121",
+    "name": "Baba Ali",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.672252,
+    "lng": 3.049311,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1474259121,
+    "refs": {
+      "osm": "node/1474259121"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-1492357913",
     "name": "LES PINS EL BIAR",
     "name_fr": null,
@@ -16074,6 +16825,37 @@
     ],
     "line_ids": [
       "etusa-72"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-1669297522",
+    "name": "ITFC",
+    "name_fr": "ITFC",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.751373,
+    "lng": 3.013823,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 1669297522,
+    "refs": {
+      "osm": "node/1669297522"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -16603,7 +17385,8 @@
     ],
     "line_ids": [
       "etusa-37",
-      "etusa-45"
+      "etusa-45",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -16634,7 +17417,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-37"
+      "etusa-37",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -16643,6 +17427,37 @@
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2255925447",
+    "name": "GUE DE CONSTANTINE STATION DE BUS",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.697056,
+    "lng": 3.091468,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2255925447,
+    "refs": {
+      "osm": "node/2255925447"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
   },
   {
     "id": "osm-node-2268754433",
@@ -16666,7 +17481,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-12"
+      "etusa-12",
+      "etusa-744"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -16708,6 +17524,38 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-2268895854",
+    "name": "Vieux Kouba",
+    "name_fr": "Vieux Kouba",
+    "name_ar": "Vieux Kouba ETUSA",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729619,
+    "lng": 3.075052,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2268895854,
+    "refs": {
+      "osm": "node/2268895854"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_entry_only",
+      "platform_exit_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-2274503073",
     "name": "Gare routière Bachdjerrah 2 -ETUSA-",
     "name_fr": null,
@@ -16729,9 +17577,11 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-105",
       "etusa-66",
       "etusa-74",
-      "etusa-82"
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -16833,6 +17683,39 @@
     "roles": [
       "platform",
       "stop"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2398209928",
+    "name": "ETUSA El Harrach",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.721573,
+    "lng": 3.13595,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2398209928,
+    "refs": {
+      "osm": "node/2398209928"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "platform_entry_only",
+      "platform_exit_only"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -17905,6 +18788,37 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-2691906122",
+    "name": "Gare routière de Ain Allah - Oued El Romane-",
+    "name_fr": "Gare routière de Ain Allah - Oued El Romane -",
+    "name_ar": "العاشور",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.747593,
+    "lng": 2.99438,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2691906122,
+    "refs": {
+      "osm": "node/2691906122"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": null,
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-2692608110",
     "name": "Avenue Ahmed Ghermoul",
     "name_fr": "Avenue Ahmed Ghermoul",
@@ -17958,7 +18872,11 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
       "etusa-12",
+      "etusa-46",
+      "etusa-6",
       "etusa-72",
       "etusa-90",
       "etusa-98"
@@ -17967,6 +18885,37 @@
     "roles": [
       "platform",
       "platform_entry_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2712536510",
+    "name": "\"la côte\"",
+    "name_fr": "Arrêt de bus \"la côte\"",
+    "name_ar": "ديار رحمة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.727394,
+    "lng": 3.044543,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2712536510,
+    "refs": {
+      "osm": "node/2712536510"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -18189,6 +19138,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-2767339846",
+    "name": "Les Sources",
+    "name_fr": null,
+    "name_ar": "الينابيع",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.732365,
+    "lng": 3.054303,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2767339846,
+    "refs": {
+      "osm": "node/2767339846"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-2793290211",
     "name": "Horizons Bleus",
     "name_fr": "Horizons Bleus",
@@ -18305,6 +19285,37 @@
     ],
     "line_ids": [
       "etusa-27"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2804815548",
+    "name": "Oued Kniss",
+    "name_fr": "Oued Kniss",
+    "name_ar": "وادي كنيس",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741138,
+    "lng": 3.084386,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2804815548,
+    "refs": {
+      "osm": "node/2804815548"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -18531,6 +19542,161 @@
     ],
     "highway": null,
     "public_transport": null
+  },
+  {
+    "id": "osm-node-2860029703",
+    "name": "APC Kouba",
+    "name_fr": "APC Kouba",
+    "name_ar": "بلدية القبة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.734007,
+    "lng": 3.086697,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2860029703,
+    "refs": {
+      "osm": "node/2860029703"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2860034767",
+    "name": "Calvaire",
+    "name_fr": "Calvaire",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.737166,
+    "lng": 3.091534,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2860034767,
+    "refs": {
+      "osm": "node/2860034767"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2860034768",
+    "name": "Calvaire",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.737094,
+    "lng": 3.091424,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2860034768,
+    "refs": {
+      "osm": "node/2860034768"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2860034770",
+    "name": "Oasis",
+    "name_fr": "Oasis",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.739108,
+    "lng": 3.088544,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2860034770,
+    "refs": {
+      "osm": "node/2860034770"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-2860034771",
+    "name": "Oasis",
+    "name_fr": "Oasis",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.739064,
+    "lng": 3.088214,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 2860034771,
+    "refs": {
+      "osm": "node/2860034771"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
   },
   {
     "id": "osm-node-2867674894",
@@ -18952,6 +20118,68 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-288636713",
+    "name": "Basilique",
+    "name_fr": "Basilique",
+    "name_ar": "كاتدرائية",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.800479,
+    "lng": 3.042748,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 288636713,
+    "refs": {
+      "osm": "node/288636713"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-38"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-288637570",
+    "name": "Seminaire",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.802224,
+    "lng": 3.036033,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 288637570,
+    "refs": {
+      "osm": "node/288637570"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-38"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-291956605",
     "name": null,
     "name_fr": null,
@@ -19037,7 +20265,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -19162,8 +20391,11 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
       "etusa-19",
+      "etusa-601",
       "etusa-72",
+      "etusa-732",
       "etusa-74",
       "etusa-98"
     ],
@@ -19230,6 +20462,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
       "etusa-19",
       "etusa-72",
       "etusa-74",
@@ -19265,6 +20498,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
       "etusa-19",
       "etusa-98"
     ],
@@ -19298,6 +20532,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-601",
       "etusa-72"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -19330,6 +20565,37 @@
     ],
     "line_ids": [
       "etusa-72"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3036044495",
+    "name": "HOTEL LE BEAU FAYET",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.732406,
+    "lng": 2.923638,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3036044495,
+    "refs": {
+      "osm": "node/3036044495"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -19517,7 +20783,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -19580,6 +20847,38 @@
     ],
     "line_ids": [
       "etusa-72"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3068220343",
+    "name": "El Annasser",
+    "name_fr": null,
+    "name_ar": "العناصر",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743971,
+    "lng": 3.088734,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3068220343,
+    "refs": {
+      "osm": "node/3068220343"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101",
+      "etusa-732"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -19672,6 +20971,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-56",
       "etusa-58"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -19734,7 +21034,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-45"
+      "etusa-45",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -19765,7 +21066,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-45"
+      "etusa-45",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -19797,6 +21099,7 @@
     ],
     "line_ids": [
       "etusa-45",
+      "etusa-46",
       "etusa-50"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -19921,6 +21224,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-38",
       "etusa-58"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -20016,6 +21320,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-601",
       "etusa-72"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -20079,7 +21384,9 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-82"
+      "etusa-105",
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -20175,7 +21482,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -20209,6 +21517,7 @@
       "etusa-14",
       "etusa-27",
       "etusa-34",
+      "etusa-6",
       "etusa-66"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -20275,7 +21584,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -20430,6 +21740,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90",
       "etusa-99"
     ],
@@ -20590,6 +21901,7 @@
     ],
     "line_ids": [
       "etusa-12",
+      "etusa-38",
       "etusa-58"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -20875,6 +22187,7 @@
     ],
     "line_ids": [
       "etusa-12",
+      "etusa-38",
       "etusa-58"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -20939,6 +22252,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-707",
       "etusa-99"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -21046,6 +22360,39 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-3195853156",
+    "name": "Cercle national de l'armée - 2 -",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.770118,
+    "lng": 2.993534,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3195853156,
+    "refs": {
+      "osm": "node/3195853156"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701",
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-319619368",
     "name": "El Madania",
     "name_fr": "El Madania",
@@ -21101,6 +22448,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90",
       "etusa-99"
     ],
@@ -21143,6 +22491,102 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-3228177317",
+    "name": "CERCLE NATIONAL DE L'ARMEE - 2 -",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.76908,
+    "lng": 2.984104,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3228177317,
+    "refs": {
+      "osm": "node/3228177317"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3228184540",
+    "name": "Rue Ahmed Ouaked",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.765716,
+    "lng": 2.993064,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3228184540,
+    "refs": {
+      "osm": "node/3228184540"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3228186997",
+    "name": "Dar Diaf",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.772056,
+    "lng": 2.965073,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3228186997,
+    "refs": {
+      "osm": "node/3228186997"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701",
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-3240830221",
     "name": "EL HAMIZ - CITE EN-NASER -",
     "name_fr": null,
@@ -21164,6 +22608,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-601",
       "etusa-72"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -21195,11 +22640,76 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-601",
       "etusa-72"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
       "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-326421421",
+    "name": "Vieux Kouba",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729634,
+    "lng": 3.075048,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 326421421,
+    "refs": {
+      "osm": "node/326421421"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-3266800497",
+    "name": "Aïn Taya",
+    "name_fr": "Aïn Taya",
+    "name_ar": "عين طاية",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.792881,
+    "lng": 3.292923,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3266800497,
+    "refs": {
+      "osm": "node/3266800497"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "platform_exit_only"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -21384,6 +22894,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-178",
       "etusa-98"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -21416,7 +22927,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-37"
+      "etusa-37",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -21545,6 +23057,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-100",
+      "etusa-6",
       "etusa-74",
       "etusa-90",
       "etusa-99"
@@ -21578,6 +23092,9 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90",
@@ -21709,7 +23226,8 @@
     ],
     "line_ids": [
       "etusa-14",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22053,7 +23571,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-37"
+      "etusa-37",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22085,7 +23604,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-37"
+      "etusa-37",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22118,12 +23638,45 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-37"
+      "etusa-37",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
       "platform",
       "stop"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3670328313",
+    "name": "Station Souidania",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.708854,
+    "lng": 2.910691,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3670328313,
+    "refs": {
+      "osm": "node/3670328313"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_entry_only",
+      "platform_exit_only"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -22316,6 +23869,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-3766186850",
+    "name": "قريدي 2",
+    "name_fr": "Garidi 2",
+    "name_ar": "قريدي 2",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733434,
+    "lng": 3.062613,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3766186850,
+    "refs": {
+      "osm": "node/3766186850"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-3778056946",
     "name": "Drid Hocine",
     "name_fr": "Drid Hocine",
@@ -22337,7 +23921,9 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-27"
+      "etusa-101",
+      "etusa-27",
+      "etusa-732"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22368,6 +23954,9 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90",
@@ -22404,7 +23993,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22499,7 +24089,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22532,7 +24123,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -22628,7 +24220,8 @@
     ],
     "line_ids": [
       "etusa-14",
-      "etusa-27"
+      "etusa-27",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -23040,6 +24633,7 @@
       "etusa-14",
       "etusa-27",
       "etusa-34",
+      "etusa-6",
       "etusa-66"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -23071,7 +24665,39 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3791500960",
+    "name": "1er Mai",
+    "name_fr": "1er Mai",
+    "name_ar": "أول ماي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.760356,
+    "lng": 3.056141,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3791500960,
+    "refs": {
+      "osm": "node/3791500960"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -23103,7 +24729,9 @@
     ],
     "line_ids": [
       "etusa-12",
+      "etusa-38",
       "etusa-45",
+      "etusa-46",
       "etusa-50",
       "etusa-58",
       "etusa-74"
@@ -23142,6 +24770,7 @@
     ],
     "line_ids": [
       "etusa-12",
+      "etusa-38",
       "etusa-58",
       "etusa-99"
     ],
@@ -23206,7 +24835,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-18"
+      "etusa-18",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -23237,7 +24867,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-18"
+      "etusa-18",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -23335,6 +24966,40 @@
     "wilaya_method": "point_in_wilaya",
     "roles": [
       "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-3860942614",
+    "name": "DERGANA",
+    "name_fr": null,
+    "name_ar": "درقانة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.772252,
+    "lng": 3.260088,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 3860942614,
+    "refs": {
+      "osm": "node/3860942614"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601",
+      "etusa-606"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "platform_entry_only",
+      "platform_exit_only"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -23518,6 +25183,7 @@
     ],
     "line_ids": [
       "etusa-12",
+      "etusa-38",
       "etusa-58",
       "etusa-98"
     ],
@@ -23893,7 +25559,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-12"
+      "etusa-12",
+      "etusa-707"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -23996,6 +25663,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-4312147830",
+    "name": "la Concorde",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733356,
+    "lng": 3.044804,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 4312147830,
+    "refs": {
+      "osm": "node/4312147830"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-4314129592",
     "name": "MARCHER AIN NAADJA",
     "name_fr": null,
@@ -24056,6 +25754,38 @@
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-4374702225",
+    "name": "Z'Ghara زغارة",
+    "name_fr": "Z'Ghara",
+    "name_ar": "زغارة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.805835,
+    "lng": 3.028958,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 4374702225,
+    "refs": {
+      "osm": "node/4374702225"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-38"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_entry_only",
+      "platform_exit_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "station"
   },
   {
     "id": "osm-node-442957876",
@@ -24241,6 +25971,69 @@
     "wilaya_method": "point_in_wilaya",
     "roles": [
       "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-4516824889",
+    "name": "Arret de bus",
+    "name_fr": "Arret de bus ONAB",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.70938,
+    "lng": 3.094371,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 4516824889,
+    "refs": {
+      "osm": "node/4516824889"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-4527029581",
+    "name": "Birtouta",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.64103,
+    "lng": 3.000862,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 4527029581,
+    "refs": {
+      "osm": "node/4527029581"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_exit_only"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -24436,6 +26229,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-4577894391",
+    "name": "RUE KACI AMEUR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.750607,
+    "lng": 2.886802,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 4577894391,
+    "refs": {
+      "osm": "node/4577894391"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-4581805717",
     "name": "La Glacière",
     "name_fr": null,
@@ -24527,6 +26351,37 @@
     ],
     "highway": null,
     "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-4734308833",
+    "name": "Frères El Sellami",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729288,
+    "lng": 3.079793,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 4734308833,
+    "refs": {
+      "osm": "node/4734308833"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
   },
   {
     "id": "osm-node-4876709921",
@@ -24644,6 +26499,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-38",
       "etusa-58",
       "etusa-98",
       "etusa-99"
@@ -24652,6 +26508,70 @@
     "roles": [
       "platform",
       "platform_exit_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-503578286",
+    "name": "STATION SERVICES Harraga",
+    "name_fr": null,
+    "name_ar": "محطات الخدمة الحراقة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.767921,
+    "lng": 3.250044,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 503578286,
+    "refs": {
+      "osm": "node/503578286"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5045336761",
+    "name": "Hôtel Dar Diaf",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.771711,
+    "lng": 2.965575,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5045336761,
+    "refs": {
+      "osm": "node/5045336761"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "stop"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -24689,6 +26609,69 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-5130875391",
+    "name": "Aéroport Terminal International",
+    "name_fr": "Aéroport Terminal International",
+    "name_ar": "المطار المحطة الدولية",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.698919,
+    "lng": 3.206833,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5130875391,
+    "refs": {
+      "osm": "node/5130875391"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-100"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5176251303",
+    "name": "DOMAINE HADJERI AHMED",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.740106,
+    "lng": 2.866591,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5176251303,
+    "refs": {
+      "osm": "node/5176251303"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-519403164",
     "name": "صيدلية عمارات عدل",
     "name_fr": null,
@@ -24720,6 +26703,38 @@
     ],
     "highway": null,
     "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5206802522",
+    "name": "Brise Marine",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.783428,
+    "lng": 3.249288,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5206802522,
+    "refs": {
+      "osm": "node/5206802522"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
   },
   {
     "id": "osm-node-5232903522",
@@ -24775,6 +26790,37 @@
     ],
     "line_ids": [
       "etusa-72"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5294635527",
+    "name": "Diar El Gharb 1",
+    "name_fr": "Diar El Gharb 1",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.800618,
+    "lng": 3.258031,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5294635527,
+    "refs": {
+      "osm": "node/5294635527"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-L615"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -24908,6 +26954,99 @@
     "wilaya_method": "point_in_wilaya",
     "roles": [
       "stop"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5363362129",
+    "name": "Oukba",
+    "name_fr": null,
+    "name_ar": "عقبة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.789158,
+    "lng": 3.055984,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5363362129,
+    "refs": {
+      "osm": "node/5363362129"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-46"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5363362130",
+    "name": "Re maison",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.788174,
+    "lng": 3.050925,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5363362130,
+    "refs": {
+      "osm": "node/5363362130"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-46"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5363378536",
+    "name": "Secoutto",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.785516,
+    "lng": 3.043993,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5363378536,
+    "refs": {
+      "osm": "node/5363378536"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-46"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -25415,6 +27554,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-5364197628",
+    "name": "AEROPORT D'ALGER H.B",
+    "name_fr": "Aéroport d'Alger",
+    "name_ar": "AEROPORT D'ALGER H.B ligne 100",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.702576,
+    "lng": 3.208677,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5364197628,
+    "refs": {
+      "osm": "node/5364197628"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-178"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_exit_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-5364327701",
     "name": "EL ALIA",
     "name_fr": null,
@@ -25635,6 +27805,7 @@
     ],
     "line_ids": [
       "etusa-12",
+      "etusa-38",
       "etusa-45",
       "etusa-50",
       "etusa-58",
@@ -25869,6 +28040,70 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-5366946370",
+    "name": "Cercle National de l'Armée 2",
+    "name_fr": "Cercle National de l'Armée 2",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.769248,
+    "lng": 2.986154,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5366946370,
+    "refs": {
+      "osm": "node/5366946370"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5367126111",
+    "name": "EL KERMA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.755194,
+    "lng": 2.931322,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5367126111,
+    "refs": {
+      "osm": "node/5367126111"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
     "id": "osm-node-5367697859",
     "name": "CARREFOUR SOUIDANI",
     "name_fr": null,
@@ -25985,6 +28220,9 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-90"
     ],
@@ -26176,7 +28414,10 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-58"
+      "etusa-3",
+      "etusa-58",
+      "etusa-701",
+      "etusa-731"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -26272,7 +28513,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-12"
+      "etusa-12",
+      "etusa-744"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27195,7 +29437,9 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-27"
+      "etusa-101",
+      "etusa-27",
+      "etusa-732"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27259,7 +29503,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27292,7 +29537,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27325,7 +29571,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27357,7 +29604,8 @@
     ],
     "line_ids": [
       "etusa-14",
-      "etusa-27"
+      "etusa-27",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27390,7 +29638,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27423,7 +29672,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27494,7 +29744,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27527,7 +29778,8 @@
     "line_ids": [
       "etusa-14",
       "etusa-27",
-      "etusa-34"
+      "etusa-34",
+      "etusa-6"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27561,6 +29813,7 @@
       "etusa-14",
       "etusa-27",
       "etusa-34",
+      "etusa-6",
       "etusa-66"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -27592,6 +29845,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-178",
       "etusa-98"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -27601,6 +29855,101 @@
     ],
     "highway": null,
     "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5383645081",
+    "name": null,
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743056,
+    "lng": 3.10939,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5383645081,
+    "refs": {
+      "osm": "node/5383645081"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-113",
+      "etusa-178"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5383645082",
+    "name": "AEROPORT D'ALGER H.B",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.70263,
+    "lng": 3.208612,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5383645082,
+    "refs": {
+      "osm": "node/5383645082"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-178"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5386836322",
+    "name": "قهوة شرڤي",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.776202,
+    "lng": 3.252157,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5386836322,
+    "refs": {
+      "osm": "node/5386836322"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
   },
   {
     "id": "osm-node-5387202968",
@@ -27693,8 +30042,10 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-105",
       "etusa-66",
-      "etusa-82"
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27725,8 +30076,10 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-105",
       "etusa-66",
-      "etusa-82"
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -27757,9 +30110,11 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-105",
       "etusa-66",
       "etusa-74",
-      "etusa-82"
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -28865,6 +31220,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
       "etusa-72",
       "etusa-74"
     ],
@@ -28897,6 +31254,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
       "etusa-72",
       "etusa-74",
       "etusa-98"
@@ -28930,6 +31289,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90"
@@ -28963,6 +31324,9 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90",
@@ -28997,6 +31361,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90"
@@ -29030,6 +31396,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-74",
       "etusa-90",
       "etusa-99"
@@ -29063,6 +31430,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90",
@@ -29098,6 +31467,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90",
@@ -29133,6 +31504,8 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
+      "etusa-6",
       "etusa-72",
       "etusa-74",
       "etusa-90",
@@ -29200,6 +31573,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
       "etusa-19",
       "etusa-72",
       "etusa-74",
@@ -29235,6 +31609,8 @@
     ],
     "line_ids": [
       "etusa-19",
+      "etusa-601",
+      "etusa-732",
       "etusa-74"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -29266,6 +31642,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-113",
       "etusa-19",
       "etusa-74"
     ],
@@ -29769,7 +32146,9 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-82"
+      "etusa-105",
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -29800,7 +32179,9 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-82"
+      "etusa-105",
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -29831,7 +32212,9 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-82"
+      "etusa-105",
+      "etusa-82",
+      "etusa-D105"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -30277,6 +32660,414 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-5389073466",
+    "name": "PONT SMAR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.694989,
+    "lng": 3.089296,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073466,
+    "refs": {
+      "osm": "node/5389073466"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073468",
+    "name": "BIOTIC",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.691397,
+    "lng": 3.090836,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073468,
+    "refs": {
+      "osm": "node/5389073468"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073469",
+    "name": "BIOTIC",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.691386,
+    "lng": 3.090736,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073469,
+    "refs": {
+      "osm": "node/5389073469"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5389073470",
+    "name": "FOYER",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.684191,
+    "lng": 3.091449,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073470,
+    "refs": {
+      "osm": "node/5389073470"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073471",
+    "name": "FOYER",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.684217,
+    "lng": 3.091316,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073471,
+    "refs": {
+      "osm": "node/5389073471"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5389073472",
+    "name": "GUE DE CONSTANTINE STATION DE BUS",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.697111,
+    "lng": 3.091434,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073472,
+    "refs": {
+      "osm": "node/5389073472"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5389073473",
+    "name": "Gue de Constantine",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.698819,
+    "lng": 3.09523,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073473,
+    "refs": {
+      "osm": "node/5389073473"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073474",
+    "name": "Gue de Constantine",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.698835,
+    "lng": 3.095161,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073474,
+    "refs": {
+      "osm": "node/5389073474"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5389073475",
+    "name": "CITE TAHER EL AYEB",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.702583,
+    "lng": 3.092987,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073475,
+    "refs": {
+      "osm": "node/5389073475"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073476",
+    "name": "CITE TAHER EL AYEB",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.702632,
+    "lng": 3.092946,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073476,
+    "refs": {
+      "osm": "node/5389073476"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5389073477",
+    "name": "CITE EL HAYET",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.705174,
+    "lng": 3.094654,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073477,
+    "refs": {
+      "osm": "node/5389073477"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073479",
+    "name": null,
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.709396,
+    "lng": 3.094454,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073479,
+    "refs": {
+      "osm": "node/5389073479"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5389073480",
+    "name": "Le Fleuriste",
+    "name_fr": "Le Fleuriste",
+    "name_ar": "لو فلوريست",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.711407,
+    "lng": 3.093908,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5389073480,
+    "refs": {
+      "osm": "node/5389073480"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
     "id": "osm-node-5389229544",
     "name": "Bouskour",
     "name_fr": null,
@@ -30512,6 +33303,1020 @@
     ],
     "line_ids": [
       "etusa-19"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507837",
+    "name": "Chevalley",
+    "name_fr": null,
+    "name_ar": "شوفالي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.769439,
+    "lng": 3.007036,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507837,
+    "refs": {
+      "osm": "node/5390507837"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701",
+      "etusa-707",
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop",
+      "stop_entry_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390507838",
+    "name": "CERCLE NATIONAL DE L'ARMEE - 2 -",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.769124,
+    "lng": 2.984092,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507838,
+    "refs": {
+      "osm": "node/5390507838"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390507839",
+    "name": "Cercle National de l'Armée 2",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.769321,
+    "lng": 2.986157,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507839,
+    "refs": {
+      "osm": "node/5390507839"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701",
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507841",
+    "name": "Cercle national de l'armée",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.77011,
+    "lng": 2.992384,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507841,
+    "refs": {
+      "osm": "node/5390507841"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701",
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507842",
+    "name": "SOUK EL FELLAH",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.765984,
+    "lng": 2.942448,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507842,
+    "refs": {
+      "osm": "node/5390507842"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507846",
+    "name": "El Karia (Les Dunes)",
+    "name_fr": "Les Dunes",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.758428,
+    "lng": 2.934415,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507846,
+    "refs": {
+      "osm": "node/5390507846"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390507847",
+    "name": "EL KARIA ( LES DUNES)",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.758472,
+    "lng": 2.934408,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507847,
+    "refs": {
+      "osm": "node/5390507847"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507848",
+    "name": "EL KERMA",
+    "name_fr": null,
+    "name_ar": "الكرمة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.75527,
+    "lng": 2.931129,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507848,
+    "refs": {
+      "osm": "node/5390507848"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507849",
+    "name": "BOUCHAOUI CNR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.745671,
+    "lng": 2.916788,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507849,
+    "refs": {
+      "osm": "node/5390507849"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507850",
+    "name": "SORTIE BOUCHAOUI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.737463,
+    "lng": 2.914804,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507850,
+    "refs": {
+      "osm": "node/5390507850"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390507851",
+    "name": null,
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743858,
+    "lng": 2.914402,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507851,
+    "refs": {
+      "osm": "node/5390507851"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": null
+  },
+  {
+    "id": "osm-node-5390507852",
+    "name": "Bouchaoui École Mouloud Feraoun",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743834,
+    "lng": 2.914346,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507852,
+    "refs": {
+      "osm": "node/5390507852"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507853",
+    "name": "SORTIE BOUCHAOUI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.73747,
+    "lng": 2.914698,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507853,
+    "refs": {
+      "osm": "node/5390507853"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507855",
+    "name": "HOTEL LE BEAU FAYET",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733115,
+    "lng": 2.923484,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507855,
+    "refs": {
+      "osm": "node/5390507855"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390507856",
+    "name": "HOTEL LE BEAU FAYET",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733083,
+    "lng": 2.923474,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507856,
+    "refs": {
+      "osm": "node/5390507856"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507857",
+    "name": "LA COTE BLANCHE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.714396,
+    "lng": 2.907814,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507857,
+    "refs": {
+      "osm": "node/5390507857"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390507858",
+    "name": "LA COTE BLANCHE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.714439,
+    "lng": 2.907748,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507858,
+    "refs": {
+      "osm": "node/5390507858"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390507859",
+    "name": "Station Souidania",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.708835,
+    "lng": 2.910664,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390507859,
+    "refs": {
+      "osm": "node/5390507859"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390530415",
+    "name": "Dar Diaf",
+    "name_fr": "Dar Diaf",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.771977,
+    "lng": 2.965069,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390530415,
+    "refs": {
+      "osm": "node/5390530415"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701",
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390542102",
+    "name": "Bouchaoui CNR",
+    "name_fr": "Centre National de Recherche de Bouchaoui",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.745584,
+    "lng": 2.916821,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390542102,
+    "refs": {
+      "osm": "node/5390542102"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390542103",
+    "name": "SOUK EL FELLAH",
+    "name_fr": "Souk El Fellah",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.765877,
+    "lng": 2.942462,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390542103,
+    "refs": {
+      "osm": "node/5390542103"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390542104",
+    "name": "Chéraga-Gare routière",
+    "name_fr": "Chéraga-Gare routière",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.767262,
+    "lng": 2.951482,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390542104,
+    "refs": {
+      "osm": "node/5390542104"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5390542105",
+    "name": "Chéraga-Gare routière",
+    "name_fr": "Chéraga-Gare routière",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.767305,
+    "lng": 2.951468,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390542105,
+    "refs": {
+      "osm": "node/5390542105"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579063",
+    "name": "Chéraga-Gare routière",
+    "name_fr": "Chéraga-Gare routière",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.767146,
+    "lng": 2.953761,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579063,
+    "refs": {
+      "osm": "node/5390579063"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579064",
+    "name": "Souk El Fellah",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.765876,
+    "lng": 2.942598,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579064,
+    "refs": {
+      "osm": "node/5390579064"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579065",
+    "name": "EL KARIA ( LES DUNES)",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.758399,
+    "lng": 2.93464,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579065,
+    "refs": {
+      "osm": "node/5390579065"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579066",
+    "name": "El Kerma",
+    "name_fr": null,
+    "name_ar": "الكرمة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.755137,
+    "lng": 2.931451,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579066,
+    "refs": {
+      "osm": "node/5390579066"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579067",
+    "name": "Bouchaoui CNR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.745541,
+    "lng": 2.916878,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579067,
+    "refs": {
+      "osm": "node/5390579067"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579068",
+    "name": "Bouchaoui École Mouloud Feraoun",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743857,
+    "lng": 2.914441,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579068,
+    "refs": {
+      "osm": "node/5390579068"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579069",
+    "name": "SORTIE BOUCHAOUI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.737556,
+    "lng": 2.914888,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579069,
+    "refs": {
+      "osm": "node/5390579069"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579070",
+    "name": "CITE SOUIDANI BOUDJEMAA",
+    "name_fr": null,
+    "name_ar": "حي سويداني بوجمعة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.721489,
+    "lng": 2.915618,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579070,
+    "refs": {
+      "osm": "node/5390579070"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5390579071",
+    "name": "LA COTE BLANCHE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.714406,
+    "lng": 2.907908,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5390579071,
+    "refs": {
+      "osm": "node/5390579071"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -31458,6 +35263,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-101",
       "etusa-34"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -31834,6 +35640,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90",
       "etusa-99"
     ],
@@ -31866,6 +35673,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90",
       "etusa-99"
     ],
@@ -31874,6 +35682,409 @@
       "stop",
       "stop_entry_only",
       "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260854",
+    "name": "Oued Kniss",
+    "name_fr": "Oued Kniss",
+    "name_ar": "وادي كنيس",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741124,
+    "lng": 3.08437,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260854,
+    "refs": {
+      "osm": "node/5394260854"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260855",
+    "name": "Oasis",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.739047,
+    "lng": 3.088516,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260855,
+    "refs": {
+      "osm": "node/5394260855"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260856",
+    "name": "APC Kouba",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733889,
+    "lng": 3.086807,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260856,
+    "refs": {
+      "osm": "node/5394260856"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260857",
+    "name": "La Croix",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729914,
+    "lng": 3.084125,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260857,
+    "refs": {
+      "osm": "node/5394260857"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5394260858",
+    "name": "FRERES EL SELAMI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729302,
+    "lng": 3.0798,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260858,
+    "refs": {
+      "osm": "node/5394260858"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260859",
+    "name": "FRERES EL SELAMI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729432,
+    "lng": 3.079384,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260859,
+    "refs": {
+      "osm": "node/5394260859"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260860",
+    "name": "La Croix",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.729953,
+    "lng": 3.084071,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260860,
+    "refs": {
+      "osm": "node/5394260860"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260861",
+    "name": "APC Kouba",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.734021,
+    "lng": 3.086745,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260861,
+    "refs": {
+      "osm": "node/5394260861"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260862",
+    "name": "Calvaire",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.737115,
+    "lng": 3.091436,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260862,
+    "refs": {
+      "osm": "node/5394260862"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260863",
+    "name": "Oasis",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.739134,
+    "lng": 3.088266,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260863,
+    "refs": {
+      "osm": "node/5394260863"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260864",
+    "name": "Oued Kniss",
+    "name_fr": "Oued Kniss",
+    "name_ar": "وادي كنيس",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741726,
+    "lng": 3.08322,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260864,
+    "refs": {
+      "osm": "node/5394260864"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5394260865",
+    "name": "Oued Kniss",
+    "name_fr": "Oued Kniss",
+    "name_ar": "وادي كنيس",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741685,
+    "lng": 3.083181,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260865,
+    "refs": {
+      "osm": "node/5394260865"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5394260866",
+    "name": "1er Mai",
+    "name_fr": "1er Mai",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.760349,
+    "lng": 3.056167,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5394260866,
+    "refs": {
+      "osm": "node/5394260866"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
     ],
     "highway": null,
     "public_transport": "stop_position"
@@ -31900,6 +36111,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90",
       "etusa-99"
     ],
@@ -31932,6 +36144,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90",
       "etusa-99"
     ],
@@ -31964,6 +36177,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-6",
       "etusa-90"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -32560,6 +36774,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-707",
       "etusa-99"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -32684,6 +36899,7 @@
       "etusa"
     ],
     "line_ids": [
+      "etusa-707",
       "etusa-99"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -33376,6 +37592,2092 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-5397813379",
+    "name": "AIN ALLAH STATION DE BUS",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.74754,
+    "lng": 2.994333,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813379,
+    "refs": {
+      "osm": "node/5397813379"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5397813380",
+    "name": "Nouvelle cité 11 décembre 1960",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.697348,
+    "lng": 2.867273,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813380,
+    "refs": {
+      "osm": "node/5397813380"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813381",
+    "name": "PLACE 11 DECEMBRE 1960",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.683783,
+    "lng": 2.878708,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813381,
+    "refs": {
+      "osm": "node/5397813381"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813382",
+    "name": "CITE UNIVERSITAIRE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.690395,
+    "lng": 2.87079,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813382,
+    "refs": {
+      "osm": "node/5397813382"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813383",
+    "name": "Centre cynégétique de Zéralda",
+    "name_fr": "Centre cynégétique de Zéralda",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.700706,
+    "lng": 2.857934,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813383,
+    "refs": {
+      "osm": "node/5397813383"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5397813384",
+    "name": "Centre cynégétique de Zéralda",
+    "name_fr": "Centre cynégétique de Zéralda",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.700967,
+    "lng": 2.858141,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813384,
+    "refs": {
+      "osm": "node/5397813384"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813385",
+    "name": "Mahelma",
+    "name_fr": "Mahelma",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.682106,
+    "lng": 2.877788,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813385,
+    "refs": {
+      "osm": "node/5397813385"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5397813386",
+    "name": "MAHELMA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.682043,
+    "lng": 2.877939,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813386,
+    "refs": {
+      "osm": "node/5397813386"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813387",
+    "name": "Mosquée Okba Ibn Nafaa",
+    "name_fr": "Mosquée Okba Ibn Nafaa",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.677803,
+    "lng": 2.880738,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813387,
+    "refs": {
+      "osm": "node/5397813387"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5397813388",
+    "name": "Mosquée Okba Ibn Nafaa",
+    "name_fr": "Mosquée Okba Ibn Nafaa",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.677849,
+    "lng": 2.880658,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813388,
+    "refs": {
+      "osm": "node/5397813388"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813389",
+    "name": "Cité AADL Sidi Abdellah",
+    "name_fr": "Cité AADL Sidi Abdellah",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.674976,
+    "lng": 2.885433,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813389,
+    "refs": {
+      "osm": "node/5397813389"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5397813390",
+    "name": "CITE AADL SIDI ABD ALLAH",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.675063,
+    "lng": 2.885409,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813390,
+    "refs": {
+      "osm": "node/5397813390"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397813391",
+    "name": "SIDI ABD ALLAH",
+    "name_fr": "Sidi Abdellah",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.673385,
+    "lng": 2.891137,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397813391,
+    "refs": {
+      "osm": "node/5397813391"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5397854228",
+    "name": "CITE AADL SIDI ABD ALLAH",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.67474,
+    "lng": 2.885632,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854228,
+    "refs": {
+      "osm": "node/5397854228"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397854229",
+    "name": "Mosquée Okba Ibn Nafaa",
+    "name_fr": "Mosquée Okba Ibn Nafaa",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.677663,
+    "lng": 2.880489,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854229,
+    "refs": {
+      "osm": "node/5397854229"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397854230",
+    "name": "MAHELMA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.681959,
+    "lng": 2.877643,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854230,
+    "refs": {
+      "osm": "node/5397854230"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397854231",
+    "name": "PLACE 11 DECEMBRE 1960",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.683933,
+    "lng": 2.878472,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854231,
+    "refs": {
+      "osm": "node/5397854231"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397854232",
+    "name": "CITE UNIVERSITAIRE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.690248,
+    "lng": 2.870508,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854232,
+    "refs": {
+      "osm": "node/5397854232"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397854233",
+    "name": "Nouvelle cité 11 décembre 1960",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.696438,
+    "lng": 2.868059,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854233,
+    "refs": {
+      "osm": "node/5397854233"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5397854235",
+    "name": "HAÏ EL BINA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.760348,
+    "lng": 2.987192,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5397854235,
+    "refs": {
+      "osm": "node/5397854235"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740336",
+    "name": "RUE KACI AMEUR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.752923,
+    "lng": 2.889656,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740336,
+    "refs": {
+      "osm": "node/5398740336"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740337",
+    "name": "BOUCHAOUI POLYCLINIQUE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.744782,
+    "lng": 2.915148,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740337,
+    "refs": {
+      "osm": "node/5398740337"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740338",
+    "name": "BOUCHAOUI MOSQUEE EN-NASR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.742908,
+    "lng": 2.909679,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740338,
+    "refs": {
+      "osm": "node/5398740338"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740339",
+    "name": "CITE MAURIACE - STAOUELI -",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.750209,
+    "lng": 2.89357,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740339,
+    "refs": {
+      "osm": "node/5398740339"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740340",
+    "name": "CEM LES FRERES BOUDOUARA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.751518,
+    "lng": 2.891073,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740340,
+    "refs": {
+      "osm": "node/5398740340"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740342",
+    "name": "CITE FELLAG MOHAMED ( MIMOSA)",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.745526,
+    "lng": 2.882777,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740342,
+    "refs": {
+      "osm": "node/5398740342"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740343",
+    "name": "RESIDENCE EL BARAKA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.740832,
+    "lng": 2.87649,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740343,
+    "refs": {
+      "osm": "node/5398740343"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740344",
+    "name": "LA BRIDJA البريجة",
+    "name_fr": "LA BRIDJA",
+    "name_ar": "البريجة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.742082,
+    "lng": 2.871042,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740344,
+    "refs": {
+      "osm": "node/5398740344"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740345",
+    "name": "PALM BEACH",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741966,
+    "lng": 2.868228,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740345,
+    "refs": {
+      "osm": "node/5398740345"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740346",
+    "name": "COMPLEXE TOURISTIQUE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.71886,
+    "lng": 2.841041,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740346,
+    "refs": {
+      "osm": "node/5398740346"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740347",
+    "name": "Zéralda - Protection civile",
+    "name_fr": "Zéralda - Protection civile",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.719544,
+    "lng": 2.850086,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740347,
+    "refs": {
+      "osm": "node/5398740347"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398740349",
+    "name": "Gare Routière de Zéralda",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.71294,
+    "lng": 2.834557,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398740349,
+    "refs": {
+      "osm": "node/5398740349"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701",
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5398805089",
+    "name": "COMPLEXE TOURISTIQUE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.719427,
+    "lng": 2.841522,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805089,
+    "refs": {
+      "osm": "node/5398805089"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805090",
+    "name": "Zéralda Protection Civile",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.719412,
+    "lng": 2.849673,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805090,
+    "refs": {
+      "osm": "node/5398805090"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805091",
+    "name": "Azure Plage",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.727163,
+    "lng": 2.854133,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805091,
+    "refs": {
+      "osm": "node/5398805091"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805092",
+    "name": "DOMAINE HADJERI AHMED",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.740367,
+    "lng": 2.866402,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805092,
+    "refs": {
+      "osm": "node/5398805092"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805093",
+    "name": "Palm Beach",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741567,
+    "lng": 2.867645,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805093,
+    "refs": {
+      "osm": "node/5398805093"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805094",
+    "name": "LA BRIDJA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741913,
+    "lng": 2.871726,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805094,
+    "refs": {
+      "osm": "node/5398805094"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805095",
+    "name": "POLYCLINIQUE PHTISIOLOGIE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.75294,
+    "lng": 2.88983,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805095,
+    "refs": {
+      "osm": "node/5398805095"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805096",
+    "name": "CEM LES FRERES BOUDOUARA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.751601,
+    "lng": 2.891282,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805096,
+    "refs": {
+      "osm": "node/5398805096"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805097",
+    "name": "BOUCHAOUI MOSQUEE EN-NASR",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743008,
+    "lng": 2.909668,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805097,
+    "refs": {
+      "osm": "node/5398805097"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805098",
+    "name": "CITE MAURIACE - STAOUELI -",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.750264,
+    "lng": 2.893744,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805098,
+    "refs": {
+      "osm": "node/5398805098"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805099",
+    "name": "Résidence El Baraka",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.741053,
+    "lng": 2.876371,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805099,
+    "refs": {
+      "osm": "node/5398805099"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805100",
+    "name": "CITE FELLAG MOHAMED ( MIMOSA)",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.74562,
+    "lng": 2.882651,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805100,
+    "refs": {
+      "osm": "node/5398805100"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5398805101",
+    "name": "Polyclinique de Bouchaoui",
+    "name_fr": "Polyclinique de Bouchaoui",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.744842,
+    "lng": 2.915112,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805101,
+    "refs": {
+      "osm": "node/5398805101"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5398805102",
+    "name": "BOUCHAOUI POLYCLINIQUE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.744871,
+    "lng": 2.915093,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5398805102,
+    "refs": {
+      "osm": "node/5398805102"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-701"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399926681",
+    "name": "SOUACHETTE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.744249,
+    "lng": 3.252275,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926681,
+    "refs": {
+      "osm": "node/5399926681"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399926682",
+    "name": "CITE 1540 Logts",
+    "name_fr": null,
+    "name_ar": "حي 1540 مسكن",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.756634,
+    "lng": 3.249563,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926682,
+    "refs": {
+      "osm": "node/5399926682"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399926683",
+    "name": "DOUAR BEN ZIANE",
+    "name_fr": null,
+    "name_ar": "دوار بن زيان",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.761244,
+    "lng": 3.24838,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926683,
+    "refs": {
+      "osm": "node/5399926683"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399926685",
+    "name": "STATION SERVICES",
+    "name_fr": null,
+    "name_ar": "محطات الخدمة الحراقة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.767993,
+    "lng": 3.249885,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926685,
+    "refs": {
+      "osm": "node/5399926685"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399926686",
+    "name": "Gare Routiére - Café Chergui -",
+    "name_fr": null,
+    "name_ar": "محطة الحافلات - قهوة شرقي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.776703,
+    "lng": 3.250883,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926686,
+    "refs": {
+      "osm": "node/5399926686"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5399926687",
+    "name": "محطة الحافلات - قهوة شرقي",
+    "name_fr": "Gare Routiére - Café Chergui -",
+    "name_ar": "محطة الحافلات - قهوة شرقي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.776686,
+    "lng": 3.250827,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926687,
+    "refs": {
+      "osm": "node/5399926687"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399926688",
+    "name": "DERGANA",
+    "name_fr": null,
+    "name_ar": "درقانة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.772282,
+    "lng": 3.260091,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926688,
+    "refs": {
+      "osm": "node/5399926688"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601",
+      "etusa-606"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop",
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5399926689",
+    "name": "STATION 2 MAI",
+    "name_fr": null,
+    "name_ar": "محطة 2 مايو",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.764754,
+    "lng": 3.059048,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926689,
+    "refs": {
+      "osm": "node/5399926689"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5399926690",
+    "name": "STATION 1 MAI",
+    "name_fr": null,
+    "name_ar": "محطة 2 مايو",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.764782,
+    "lng": 3.059022,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399926690,
+    "refs": {
+      "osm": "node/5399926690"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "station"
+  },
+  {
+    "id": "osm-node-5399987377",
+    "name": "Lycée Diplomatique Dergana",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.777713,
+    "lng": 3.262929,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987377,
+    "refs": {
+      "osm": "node/5399987377"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987378",
+    "name": "Café Chergui",
+    "name_fr": null,
+    "name_ar": "قهوة شرقي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.778061,
+    "lng": 3.25029,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987378,
+    "refs": {
+      "osm": "node/5399987378"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987379",
+    "name": "برج البحري",
+    "name_fr": "BORDJ EL BAHRI",
+    "name_ar": "برج البحري",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.789491,
+    "lng": 3.249942,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987379,
+    "refs": {
+      "osm": "node/5399987379"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987380",
+    "name": "مسجد البشير الإبراهيمي",
+    "name_fr": "MOSQUEE EL BACHIR EL IBRAHIMI",
+    "name_ar": "مسجد البشير الإبراهيمي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.793035,
+    "lng": 3.250298,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987380,
+    "refs": {
+      "osm": "node/5399987380"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987381",
+    "name": "Les Castors",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.803506,
+    "lng": 3.258142,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987381,
+    "refs": {
+      "osm": "node/5399987381"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987382",
+    "name": "Zerzouria",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.802451,
+    "lng": 3.263047,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987382,
+    "refs": {
+      "osm": "node/5399987382"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987383",
+    "name": "Boussekloul",
+    "name_fr": null,
+    "name_ar": "بوسقلول",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.800306,
+    "lng": 3.266501,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987383,
+    "refs": {
+      "osm": "node/5399987383"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987384",
+    "name": "Carrefour El Marsa",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.803954,
+    "lng": 3.251607,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987384,
+    "refs": {
+      "osm": "node/5399987384"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987385",
+    "name": "Bibliothèque Communale",
+    "name_fr": "École Ben Badis",
+    "name_ar": "مدرسة بن باديس",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.793065,
+    "lng": 3.287117,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987385,
+    "refs": {
+      "osm": "node/5399987385"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5399987386",
+    "name": "Aïn Taya",
+    "name_fr": "Aïn Taya",
+    "name_ar": "عين طاية",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.792911,
+    "lng": 3.292925,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987386,
+    "refs": {
+      "osm": "node/5399987386"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5399987388",
+    "name": "Lycée Tarik Ibn Ziad",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.796261,
+    "lng": 3.282222,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5399987388,
+    "refs": {
+      "osm": "node/5399987388"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-606",
+      "etusa-L615"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-5400070055",
     "name": "Lycée Bouamama",
     "name_fr": null,
@@ -33554,7 +39856,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-45"
+      "etusa-45",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -33898,7 +40201,8 @@
       "etusa"
     ],
     "line_ids": [
-      "etusa-45"
+      "etusa-45",
+      "etusa-46"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -33930,6 +40234,7 @@
     ],
     "line_ids": [
       "etusa-45",
+      "etusa-46",
       "etusa-50"
     ],
     "wilaya_method": "point_in_wilaya",
@@ -34316,6 +40621,40 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-5422040731",
+    "name": "GARE ROUTIERE DE BARAKI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.672917,
+    "lng": 3.085858,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5422040731,
+    "refs": {
+      "osm": "node/5422040731"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-643",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
     "id": "osm-node-5437109960",
     "name": "FITAL",
     "name_fr": null,
@@ -34511,6 +40850,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-5445150271",
+    "name": "Aïn Benian - Gare routière",
+    "name_fr": "Aïn Benian - Gare routière",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.801857,
+    "lng": 2.910237,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5445150271,
+    "refs": {
+      "osm": "node/5445150271"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-544525403",
     "name": "قريدي 1",
     "name_fr": "Garidi 1",
@@ -34533,6 +40903,260 @@
     ],
     "line_ids": [
       "etusa-18"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5448089865",
+    "name": "Douar Ben Ziane",
+    "name_fr": null,
+    "name_ar": "دوار بن زيان",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.761349,
+    "lng": 3.248574,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448089865,
+    "refs": {
+      "osm": "node/5448089865"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5448089866",
+    "name": "Cité 1540 logements",
+    "name_fr": null,
+    "name_ar": "حي 1540 مسكن",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.756679,
+    "lng": 3.249802,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448089866,
+    "refs": {
+      "osm": "node/5448089866"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5448089867",
+    "name": "Souachette",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.744403,
+    "lng": 3.252502,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448089867,
+    "refs": {
+      "osm": "node/5448089867"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5448089870",
+    "name": "STATION 2 MAI",
+    "name_fr": null,
+    "name_ar": "محطة 2 مايو",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.764881,
+    "lng": 3.058416,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448089870,
+    "refs": {
+      "osm": "node/5448089870"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop",
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5448089871",
+    "name": "STATION 1 MAI",
+    "name_fr": null,
+    "name_ar": "محطة 2 مايو",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.764879,
+    "lng": 3.05839,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448089871,
+    "refs": {
+      "osm": "node/5448089871"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-601",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "platform_entry_only",
+      "platform_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "station"
+  },
+  {
+    "id": "osm-node-5448423936",
+    "name": "Château Boumediene",
+    "name_fr": "Château Boumediene",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.800576,
+    "lng": 2.929418,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448423936,
+    "refs": {
+      "osm": "node/5448423936"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5448423937",
+    "name": "Plateau",
+    "name_fr": "Plateau, Bologhine",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.791622,
+    "lng": 2.939918,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448423937,
+    "refs": {
+      "osm": "node/5448423937"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-707"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5448423939",
+    "name": "Rond-point Chéraga",
+    "name_fr": "Rond-point Chéraga",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.771216,
+    "lng": 2.953541,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5448423939,
+    "refs": {
+      "osm": "node/5448423939"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-707"
     ],
     "wilaya_method": "point_in_wilaya",
     "roles": [
@@ -34921,6 +41545,37 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-5460097707",
+    "name": "STATION DE TAXI INTER-WILAYA",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.745105,
+    "lng": 3.100793,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5460097707,
+    "refs": {
+      "osm": "node/5460097707"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-113"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-5460208516",
     "name": "Cité El Bahia",
     "name_fr": null,
@@ -35105,6 +41760,195 @@
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5465122825",
+    "name": "Bir Khadem Marché",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.714319,
+    "lng": 3.044586,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5465122825,
+    "refs": {
+      "osm": "node/5465122825"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5465122826",
+    "name": "Bir Khadem Stade",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.719623,
+    "lng": 3.044865,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5465122826,
+    "refs": {
+      "osm": "node/5465122826"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5465122827",
+    "name": "Les sources",
+    "name_fr": null,
+    "name_ar": "الينابيع",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.73231,
+    "lng": 3.054299,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5465122827,
+    "refs": {
+      "osm": "node/5465122827"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5465122828",
+    "name": "قريدي 2",
+    "name_fr": "Garidi 2",
+    "name_ar": "قريدي 2",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733362,
+    "lng": 3.062634,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5465122828,
+    "refs": {
+      "osm": "node/5465122828"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5465122829",
+    "name": "El Annasser",
+    "name_fr": null,
+    "name_ar": "العناصر",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.743931,
+    "lng": 3.088823,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5465122829,
+    "refs": {
+      "osm": "node/5465122829"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-101",
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5465191124",
+    "name": "ETUSA El Harrach",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.721579,
+    "lng": 3.135982,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5465191124,
+    "refs": {
+      "osm": "node/5465191124"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop",
+      "stop_entry_only",
+      "stop_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
   },
   {
     "id": "osm-node-5465219171",
@@ -35293,6 +42137,504 @@
     "public_transport": "stop_position"
   },
   {
+    "id": "osm-node-5531758797",
+    "name": "CITE YOUCEF BOUBAYA (SOBIMAF)",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.676416,
+    "lng": 3.092038,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5531758797,
+    "refs": {
+      "osm": "node/5531758797"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5531759906",
+    "name": "MOSQUEE BENGHAZI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.683593,
+    "lng": 3.101081,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5531759906,
+    "refs": {
+      "osm": "node/5531759906"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5531760163",
+    "name": null,
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.695171,
+    "lng": 3.115147,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5531760163,
+    "refs": {
+      "osm": "node/5531760163"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825878",
+    "name": "BOUMATI",
+    "name_fr": null,
+    "name_ar": "بومعطي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.714775,
+    "lng": 3.137544,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825878,
+    "refs": {
+      "osm": "node/5533825878"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825879",
+    "name": "BOUMATI",
+    "name_fr": null,
+    "name_ar": "بومعطي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.714989,
+    "lng": 3.136776,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825879,
+    "refs": {
+      "osm": "node/5533825879"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825880",
+    "name": "CITE YOUCEF BOUBAYA (SOBIMAF)",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.676336,
+    "lng": 3.092222,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825880,
+    "refs": {
+      "osm": "node/5533825880"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825881",
+    "name": "CENTRE MOKHTAR BELKACEM",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.711734,
+    "lng": 3.133059,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825881,
+    "refs": {
+      "osm": "node/5533825881"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825882",
+    "name": "CENTRE MOKHTAR BELKACEM",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.711816,
+    "lng": 3.132936,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825882,
+    "refs": {
+      "osm": "node/5533825882"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825883",
+    "name": "ECOTEH *",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.70898,
+    "lng": 3.13043,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825883,
+    "refs": {
+      "osm": "node/5533825883"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825884",
+    "name": "ECOTEH *",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.709134,
+    "lng": 3.130181,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825884,
+    "refs": {
+      "osm": "node/5533825884"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825885",
+    "name": "MOSQUEE BENGHAZI",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.683472,
+    "lng": 3.101188,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825885,
+    "refs": {
+      "osm": "node/5533825885"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825886",
+    "name": "SIDI REZINE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.689986,
+    "lng": 3.109337,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825886,
+    "refs": {
+      "osm": "node/5533825886"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825887",
+    "name": "SIDI REZINE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.690098,
+    "lng": 3.109144,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825887,
+    "refs": {
+      "osm": "node/5533825887"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825888",
+    "name": null,
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.694993,
+    "lng": 3.115386,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825888,
+    "refs": {
+      "osm": "node/5533825888"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825889",
+    "name": "HOPITAL Z'MIRLI",
+    "name_fr": null,
+    "name_ar": "مستشفى زميرلي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.704365,
+    "lng": 3.125567,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825889,
+    "refs": {
+      "osm": "node/5533825889"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5533825890",
+    "name": "HOPITAL Z'MIRLI",
+    "name_fr": null,
+    "name_ar": "مستشفى زميرلي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.70427,
+    "lng": 3.125777,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5533825890,
+    "refs": {
+      "osm": "node/5533825890"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-643"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-5598411353",
     "name": "Place des Martyrs",
     "name_fr": "Place des Martyrs",
@@ -35357,6 +42699,378 @@
     ],
     "highway": null,
     "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5718180655",
+    "name": "Saïd Hamdine",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733679,
+    "lng": 3.038461,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5718180655,
+    "refs": {
+      "osm": "node/5718180655"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5718180656",
+    "name": "ITFC",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.751367,
+    "lng": 3.013846,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5718180656,
+    "refs": {
+      "osm": "node/5718180656"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719738410",
+    "name": "Nouvelle cité 11 décembre 1960",
+    "name_fr": "Nouvelle cité 11 décembre 1960",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.69647,
+    "lng": 2.868083,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719738410,
+    "refs": {
+      "osm": "node/5719738410"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719738411",
+    "name": "Saïd Hamdine",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733998,
+    "lng": 3.035933,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719738411,
+    "refs": {
+      "osm": "node/5719738411"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719738412",
+    "name": "la Concorde",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733335,
+    "lng": 3.044793,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719738412,
+    "refs": {
+      "osm": "node/5719738412"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719891827",
+    "name": "Polyclinique de Phtysiologie",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.754086,
+    "lng": 2.888495,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891827,
+    "refs": {
+      "osm": "node/5719891827"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5719891828",
+    "name": "PALM BEACH",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.742415,
+    "lng": 2.868593,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891828,
+    "refs": {
+      "osm": "node/5719891828"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719891830",
+    "name": "Azure Plage",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.72684,
+    "lng": 2.853829,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891830,
+    "refs": {
+      "osm": "node/5719891830"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719891831",
+    "name": "Azure Plage",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.726739,
+    "lng": 2.85387,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891831,
+    "refs": {
+      "osm": "node/5719891831"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-5719891832",
+    "name": "Zéralda - Protection civile",
+    "name_fr": "Zéralda - Protection civile",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.719564,
+    "lng": 2.849996,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891832,
+    "refs": {
+      "osm": "node/5719891832"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719891833",
+    "name": "COMPLEXE TOURISTIQUE",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.718915,
+    "lng": 2.841013,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891833,
+    "refs": {
+      "osm": "node/5719891833"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "stop"
+    ],
+    "highway": null,
+    "public_transport": "stop_position"
+  },
+  {
+    "id": "osm-node-5719891834",
+    "name": "Zéralda S.M.M",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.713013,
+    "lng": 2.834559,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 5719891834,
+    "refs": {
+      "osm": "node/5719891834"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-744"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_entry_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
   },
   {
     "id": "osm-node-5932813647",
@@ -36329,6 +44043,68 @@
     "roles": [
       "platform",
       "platform_exit_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-7684878552",
+    "name": "Basilique كاتدرائية",
+    "name_fr": "Basilique",
+    "name_ar": "كاتدرائية",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.800441,
+    "lng": 3.042659,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 7684878552,
+    "refs": {
+      "osm": "node/7684878552"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-38"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-7684878554",
+    "name": "Seminaire",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.802315,
+    "lng": 3.035976,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 7684878554,
+    "refs": {
+      "osm": "node/7684878554"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-38"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
@@ -40546,6 +48322,103 @@
     "public_transport": null
   },
   {
+    "id": "osm-node-958556420",
+    "name": "Saïd Hamdine",
+    "name_fr": "Gare routière de Saïd Hamdine",
+    "name_ar": "سعيد حمدين",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733626,
+    "lng": 3.038468,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 958556420,
+    "refs": {
+      "osm": "node/958556420"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-958556423",
+    "name": "Saïd Hamdine",
+    "name_fr": "Gare routière de Saïd Hamdine",
+    "name_ar": "سعيد حمدين",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733983,
+    "lng": 3.035933,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 958556423,
+    "refs": {
+      "osm": "node/958556423"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-732"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-node-960842059",
+    "name": "Chevalley",
+    "name_fr": "Chevalley",
+    "name_ar": "شوفالي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.769509,
+    "lng": 3.006913,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 960842059,
+    "refs": {
+      "osm": "node/960842059"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-3",
+      "etusa-707",
+      "etusa-731"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform",
+      "platform_entry_only",
+      "platform_exit_only"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-960842108",
     "name": "Secouto",
     "name_fr": "Secouto",
@@ -40674,6 +48547,37 @@
     "public_transport": "platform"
   },
   {
+    "id": "osm-node-967403938",
+    "name": "APC Kouba",
+    "name_fr": null,
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.733921,
+    "lng": 3.086912,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
+    "source": "osm",
+    "osm_type": "node",
+    "osm_id": 967403938,
+    "refs": {
+      "osm": "node/967403938"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-6"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "bus_stop",
+    "public_transport": "platform"
+  },
+  {
     "id": "osm-node-991957515",
     "name": "Place El Qos",
     "name_fr": null,
@@ -40704,5 +48608,101 @@
     ],
     "highway": "bus_stop",
     "public_transport": "platform"
+  },
+  {
+    "id": "osm-way-527848021",
+    "name": "Hôtel Es-Safir",
+    "name_fr": "Hôtel Es-Safir",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.777681,
+    "lng": 3.060402,
+    "geo_precision": "approximate",
+    "geo_method": "osm_way_center",
+    "source": "osm",
+    "osm_type": "way",
+    "osm_id": 527848021,
+    "refs": {
+      "osm": "way/527848021"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-100"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": null,
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-way-527848025",
+    "name": "Aéroport Terminal International",
+    "name_fr": "Aéroport Terminal International",
+    "name_ar": null,
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.698949,
+    "lng": 3.206841,
+    "geo_precision": "approximate",
+    "geo_method": "osm_way_center",
+    "source": "osm",
+    "osm_type": "way",
+    "osm_id": 527848025,
+    "refs": {
+      "osm": "way/527848025"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-100"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform"
+    ],
+    "highway": "service",
+    "public_transport": "platform"
+  },
+  {
+    "id": "osm-way-579389961",
+    "name": "محطة النقل البري براقي",
+    "name_fr": "Gare routière de Baraki",
+    "name_ar": "محطة النقل البري براقي",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": 36.672655,
+    "lng": 3.08574,
+    "geo_precision": "approximate",
+    "geo_method": "osm_way_center",
+    "source": "osm",
+    "osm_type": "way",
+    "osm_id": 579389961,
+    "refs": {
+      "osm": "way/579389961"
+    },
+    "operator_ids": [
+      "etusa"
+    ],
+    "line_ids": [
+      "etusa-105",
+      "etusa-643",
+      "etusa-D105"
+    ],
+    "wilaya_method": "point_in_wilaya",
+    "roles": [
+      "platform_entry_only",
+      "platform_exit_only"
+    ],
+    "highway": null,
+    "public_transport": "station"
   }
 ]

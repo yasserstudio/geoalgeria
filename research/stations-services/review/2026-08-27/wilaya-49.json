@@ -1,0 +1,581 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-49",
+    "wilaya_code": 49,
+    "name": "Timimoun",
+    "name_ar": "تيميمون",
+    "center": [
+      0.5855000000000001,
+      30.021
+    ],
+    "bounds": [
+      -0.92,
+      28.382,
+      2.091,
+      31.66
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 14,
+    "osm_records": 4,
+    "tariki_records": 12,
+    "cross_source": 2,
+    "multiple_tariki": 0,
+    "osm_only": 2,
+    "tariki_only": 10,
+    "nearby_osm_pairs": 0,
+    "conflicts": 10
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-13806",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14279",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14462",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14463",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14465",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14473",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14496",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1783",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1800",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6946",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-2356932684",
+      "coordinates": [
+        0.231269,
+        29.2546887
+      ],
+      "osm": {
+        "id": "node/2356932684",
+        "name": "Naftal;نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.231269,
+          29.2546887
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5248",
+          "route_id": "4768",
+          "name_fr": "Station de services cité Elhechmi hechmi",
+          "name_ar": "محطة البنزين حي الهاشمي هاشمي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.231,
+            29.255
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3331424081",
+      "coordinates": [
+        0.7005044,
+        29.6977876
+      ],
+      "osm": {
+        "id": "node/3331424081",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": "Station Service Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.7005044,
+          29.6977876
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6577",
+          "route_id": "4940",
+          "name_fr": "station de services tinerkouk",
+          "name_ar": "محطة الوقود لبلدية تينركوك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.7,
+            29.698
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة الوقود لبلدية تينركوك"
+    },
+    {
+      "id": "osm-node-4569335122",
+      "coordinates": [
+        0.3336204,
+        28.7199351
+      ],
+      "osm": {
+        "id": "node/4569335122",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          0.3336204,
+          28.7199351
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5278242633",
+      "coordinates": [
+        0.2432549,
+        29.2764794
+      ],
+      "osm": {
+        "id": "node/5278242633",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.2432549,
+          29.2764794
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13806",
+      "coordinates": [
+        0.245,
+        29.248
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13806",
+          "route_id": "19844",
+          "name_fr": "STATION DE SERVICES GAS DESERT",
+          "name_ar": "محطة البنزين غاز الصحراء",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.245,
+            29.248
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES GAS DESERT",
+      "display_name_ar": "محطة البنزين غاز الصحراء"
+    },
+    {
+      "id": "tariki-14279",
+      "coordinates": [
+        0.245,
+        29.248
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14279",
+          "route_id": "21431",
+          "name_fr": "STASION SERVICE EL HAMEL",
+          "name_ar": "محطة الخدمات الهامل",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            0.245,
+            29.248
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STASION SERVICE EL HAMEL",
+      "display_name_ar": "محطة الخدمات الهامل"
+    },
+    {
+      "id": "tariki-14462",
+      "coordinates": [
+        0.331,
+        28.721
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14462",
+          "route_id": "7975",
+          "name_fr": "sangel abdelmalek",
+          "name_ar": "صنجل عبد المالك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.331,
+            28.721
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "sangel abdelmalek",
+      "display_name_ar": "صنجل عبد المالك"
+    },
+    {
+      "id": "tariki-14463",
+      "coordinates": [
+        0.355,
+        28.68
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14463",
+          "route_id": "22033",
+          "name_fr": "STATION LISENCE AAMIRA MOHAMMED",
+          "name_ar": "محطة الوقود أعميرة محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.355,
+            28.68
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION LISENCE AAMIRA MOHAMMED",
+      "display_name_ar": "محطة الوقود أعميرة محمد"
+    },
+    {
+      "id": "tariki-14465",
+      "coordinates": [
+        0.398,
+        28.83
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14465",
+          "route_id": "12369",
+          "name_fr": "Station de services TSABIT",
+          "name_ar": "محطة تسابيت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.398,
+            28.83
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TSABIT",
+      "display_name_ar": "محطة تسابيت"
+    },
+    {
+      "id": "tariki-14473",
+      "coordinates": [
+        0.4,
+        29.445
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14473",
+          "route_id": "4940",
+          "name_fr": "station de services tinerkouk",
+          "name_ar": "محطة الوقود لبلدية تينركوك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.4,
+            29.445
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services tinerkouk",
+      "display_name_ar": "محطة الوقود لبلدية تينركوك"
+    },
+    {
+      "id": "tariki-14496",
+      "coordinates": [
+        0.415,
+        29.413
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14496",
+          "route_id": "22092",
+          "name_fr": "//",
+          "name_ar": "دار الصيانة لبلدية تينركوك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.415,
+            29.413
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "دار الصيانة لبلدية تينركوك"
+    },
+    {
+      "id": "tariki-1783",
+      "coordinates": [
+        0.333,
+        28.71
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1783",
+          "route_id": "4785",
+          "name_fr": "Station de services Guarout",
+          "name_ar": "محطة القاروط",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.333,
+            28.71
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Guarout",
+      "display_name_ar": "محطة القاروط"
+    },
+    {
+      "id": "tariki-1800",
+      "coordinates": [
+        0.25,
+        29.284
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1800",
+          "route_id": "4838",
+          "name_fr": "Station de services LOTO",
+          "name_ar": "محطة البنزين اللوطو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.25,
+            29.284
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services LOTO",
+      "display_name_ar": "محطة البنزين اللوطو"
+    },
+    {
+      "id": "tariki-6946",
+      "coordinates": [
+        -0.2452,
+        29.0279
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6946",
+          "route_id": "11804",
+          "name_fr": "station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.2452,
+            29.0279
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 49,
+          "wilaya_fr": "Timimoun",
+          "wilaya_ar": "تيميمون",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services",
+      "display_name_ar": "محطة خدمات"
+    }
+  ]
+}

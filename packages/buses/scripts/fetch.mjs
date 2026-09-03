@@ -51,6 +51,27 @@ const lines = etusa.lines.map((line) => {
   };
 });
 
+// ETUSA Lines the retained registry never listed. That registry is one
+// crowdsourced list of Lines 1-99, so the whole 6xx/7xx suburban network and
+// several city Lines are absent from it while OSM carries them with an
+// evidenced operator match. Their identity is OSM's, and `source` says so:
+// terminus text stays null rather than borrowing the relation's from/to, which
+// names a direction's endpoints and not the Line's published termini.
+const publishedEtusaRefs = new Set(etusa.lines.map((line) => line.line));
+for (const shape of osm.line_shapes.filter(
+  (item) => item.operator_id === "etusa" && !publishedEtusaRefs.has(item.ref),
+)) {
+  lines.push({
+    id: lineId("etusa", shape.ref), name: shape.name, operator_id: "etusa",
+    operator: "ETUSA", network: "Alger", line: shape.ref,
+    terminus1: null, terminus2: null, stops: null,
+    communes_served: [], stations_served: [], wilaya_code: "16",
+    source: "osm", source_refs: ["osm"],
+    source_url: `https://www.openstreetmap.org/relation/${shape.relation_ids[0]}`,
+    shape_id: shapeId("etusa", shape.ref), osm_relation_ids: shape.relation_ids,
+  });
+}
+
 for (const official of officialBejaia) {
   lines.push({
     id: lineId("etus-bejaia", official.ref), name: `Ligne ${official.ref}`,
@@ -190,8 +211,14 @@ const stations = osm.stations.map((station) => {
     id, name: station.name, name_fr: station.name_fr, name_ar: station.name_ar,
     wilaya_code: derivedWilaya ? "16" : station.wilaya_code,
     commune_code: null, commune: null, lat: station.lat, lng: station.lng,
-    geo_precision: Math.min(coordinateDecimals(station.lat), coordinateDecimals(station.lng)) >= 4 ? "exact" : "approximate",
-    geo_method: "osm_node", source: "osm",
+    // A stop mapped as a way (a platform or shelter footprint) has no node
+    // position: Overpass hands back the way's centre. That is a derived point,
+    // so it is approximate however many decimals it carries, and it must not
+    // claim the osm_node method.
+    geo_precision: station.osm_type === "way"
+      ? "approximate"
+      : Math.min(coordinateDecimals(station.lat), coordinateDecimals(station.lng)) >= 4 ? "exact" : "approximate",
+    geo_method: station.osm_type === "way" ? "osm_way_center" : "osm_node", source: "osm",
     osm_type: station.osm_type, osm_id: station.osm_id,
     refs: { osm: `${station.osm_type}/${station.osm_id}` }, operator_ids: operatorIds,
     line_ids: [...(linesByStation.get(id) ?? [])].sort(),
@@ -215,7 +242,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 85, shapes: 47, directions: 83, stations: 1290, memberships: 2105 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 108, shapes: 72, directions: 124, stations: 1540, memberships: 2609 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -283,4 +310,10 @@ write(join(DATA, "geojson", "shapes.geojson"), {
   features: shapes.map(({ geometry, ...properties }) => ({ type: "Feature", id: properties.id, geometry, properties })),
 });
 
-console.log("buses: 85 lines, 47 shapes, 83 directions, 1,290 stations, 2,105 ordered memberships → v3");
+// Report the counts actually written; a hardcoded summary here silently kept
+// printing the previous release's numbers through a real change.
+const n = (value) => value.toLocaleString("en-US");
+console.log(
+  `buses: ${n(counts.lines)} lines, ${n(counts.shapes)} shapes, ${n(counts.directions)} directions, ` +
+    `${n(counts.stations)} stations, ${n(counts.memberships)} ordered memberships → v3`,
+);

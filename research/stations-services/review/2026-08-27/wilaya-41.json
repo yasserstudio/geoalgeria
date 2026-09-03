@@ -1,0 +1,1442 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-41",
+    "wilaya_code": 41,
+    "name": "Souk Ahras",
+    "name_ar": "سوق أهراس",
+    "center": [
+      7.845,
+      36.138
+    ],
+    "bounds": [
+      7.282,
+      35.806,
+      8.408,
+      36.47
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 35,
+    "osm_records": 21,
+    "tariki_records": 30,
+    "cross_source": 14,
+    "multiple_tariki": 1,
+    "osm_only": 6,
+    "tariki_only": 14,
+    "nearby_osm_pairs": 0,
+    "conflicts": 15
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-way-1186088101",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12916",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3183",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3190",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3194",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3535",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3671",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4046",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4168",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4214",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4218",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4229",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4424",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6451",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7262",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10989013898",
+      "coordinates": [
+        7.7799833,
+        36.1873297
+      ],
+      "osm": {
+        "id": "node/10989013898",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.7799833,
+          36.1873297
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11044359833",
+      "coordinates": [
+        8.1338735,
+        36.1810268
+      ],
+      "osm": {
+        "id": "node/11044359833",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.1338735,
+          36.1810268
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1817029327",
+      "coordinates": [
+        7.8215417,
+        36.0691645
+      ],
+      "osm": {
+        "id": "node/1817029327",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          7.8215417,
+          36.0691645
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12964",
+          "route_id": "17811",
+          "name_fr": "C E N NAFTALOUAALI",
+          "name_ar": "محطة الوقود واعلي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.8217,
+            36.0693
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود واعلي"
+    },
+    {
+      "id": "osm-node-3173784139",
+      "coordinates": [
+        7.8802867,
+        35.9119028
+      ],
+      "osm": {
+        "id": "node/3173784139",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8802867,
+          35.9119028
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2812",
+          "route_id": "3358",
+          "name_fr": "Station de service toumari zidane",
+          "name_ar": "محطة خدمات توماري زيدان",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.88,
+            35.912
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات توماري زيدان"
+    },
+    {
+      "id": "osm-node-3216665664",
+      "coordinates": [
+        7.9386336,
+        36.2776499
+      ],
+      "osm": {
+        "id": "node/3216665664",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.9386336,
+          36.2776499
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4198",
+          "route_id": "8194",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.939,
+            36.278
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-4361829791",
+      "coordinates": [
+        7.5391142,
+        36.1354921
+      ],
+      "osm": {
+        "id": "node/4361829791",
+        "name": "station de service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5391142,
+          36.1354921
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3420",
+          "route_id": "7384",
+          "name_fr": "Station de services Allab",
+          "name_ar": "محطة علاب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.539,
+            36.135
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de service",
+      "display_name_ar": "محطة علاب"
+    },
+    {
+      "id": "osm-node-4364640492",
+      "coordinates": [
+        7.6016935,
+        36.1553537
+      ],
+      "osm": {
+        "id": "node/4364640492",
+        "name": "station ounissi",
+        "name_ar": "station ounissi",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.6016935,
+          36.1553537
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3898",
+          "route_id": "8053",
+          "name_fr": "Station de services OUNISSI",
+          "name_ar": "محطة أونيسي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.602,
+            36.155
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station ounissi",
+      "display_name_ar": "station ounissi"
+    },
+    {
+      "id": "osm-node-4467527989",
+      "coordinates": [
+        7.8968474,
+        36.2673304
+      ],
+      "osm": {
+        "id": "node/4467527989",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8968474,
+          36.2673304
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4470266226",
+      "coordinates": [
+        8.0502569,
+        36.2267438
+      ],
+      "osm": {
+        "id": "node/4470266226",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.0502569,
+          36.2267438
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3352",
+          "route_id": "7233",
+          "name_fr": "Station de services MSAADIA",
+          "name_ar": "محطة مساعدية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.051,
+            36.227
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة مساعدية"
+    },
+    {
+      "id": "osm-node-4594551678",
+      "coordinates": [
+        7.8943206,
+        36.1277862
+      ],
+      "osm": {
+        "id": "node/4594551678",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8943206,
+          36.1277862
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4594555610",
+      "coordinates": [
+        7.8098912,
+        36.0712675
+      ],
+      "osm": {
+        "id": "node/4594555610",
+        "name": null,
+        "name_ar": "محطة الوقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8098912,
+          36.0712675
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3300",
+          "route_id": "7108",
+          "name_fr": "station de services Ain",
+          "name_ar": "محطة محل عين للوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.8093,
+            36.0716
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 65
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services Ain",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-4714307824",
+      "coordinates": [
+        7.8547125,
+        36.3515683
+      ],
+      "osm": {
+        "id": "node/4714307824",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8547125,
+          36.3515683
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4739553222",
+      "coordinates": [
+        7.9758741,
+        36.2932635
+      ],
+      "osm": {
+        "id": "node/4739553222",
+        "name": "station boughalem",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          7.9758741,
+          36.2932635
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4184",
+          "route_id": "4800",
+          "name_fr": "Station de services BOUGHALEM OMAR",
+          "name_ar": "محطة خدمات بوغالم عمر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.976,
+            36.293
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station boughalem",
+      "display_name_ar": "محطة خدمات بوغالم عمر"
+    },
+    {
+      "id": "osm-node-6448633787",
+      "coordinates": [
+        7.8809532,
+        36.3059704
+      ],
+      "osm": {
+        "id": "node/6448633787",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8809532,
+          36.3059704
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1056708730",
+      "coordinates": [
+        7.497636,
+        36.0797345
+      ],
+      "osm": {
+        "id": "way/1056708730",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.497636,
+          36.0797345
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2876",
+          "route_id": "6466",
+          "name_fr": "station de services Zouai Abderahmane",
+          "name_ar": "محطة خدمات زواي عبد الرحمان",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.497,
+            36.08
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 64
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services Zouai Abderahmane",
+      "display_name_ar": "محطة خدمات زواي عبد الرحمان"
+    },
+    {
+      "id": "osm-way-1056708731",
+      "coordinates": [
+        7.527502950000001,
+        36.1153492
+      ],
+      "osm": {
+        "id": "way/1056708731",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.527502950000001,
+          36.1153492
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3440",
+          "route_id": "7431",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.527,
+            36.116
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 85
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-way-1186088101",
+      "coordinates": [
+        7.819875550000001,
+        36.0741827
+      ],
+      "osm": {
+        "id": "way/1186088101",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.819875550000001,
+          36.0741827
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3301",
+          "route_id": "7108",
+          "name_fr": "station de services Talbi",
+          "name_ar": "محطة طالبي للوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.8204,
+            36.0747
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 74
+        },
+        {
+          "id": "12780",
+          "route_id": "17548",
+          "name_fr": "MAHATET TAHLBI OUALI ILL",
+          "name_ar": "محطة الوقود طالبي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.8195,
+            36.0742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "station de services Talbi",
+      "display_name_ar": "محطة طالبي للوقود"
+    },
+    {
+      "id": "osm-way-1206340908",
+      "coordinates": [
+        7.9383985,
+        36.290856950000006
+      ],
+      "osm": {
+        "id": "way/1206340908",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.9383985,
+          36.290856950000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4204",
+          "route_id": "8194",
+          "name_fr": "Station de services HOCINE  BEN DJDID",
+          "name_ar": "محطة خدمات بن جديد حسين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.939,
+            36.291
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بن جديد حسين"
+    },
+    {
+      "id": "osm-way-319714448",
+      "coordinates": [
+        7.6046349499999994,
+        36.024612950000005
+      ],
+      "osm": {
+        "id": "way/319714448",
+        "name": "Station ( Essence et du carburant diesel )",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.6046349499999994,
+          36.024612950000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3284",
+          "route_id": "6985",
+          "name_fr": "Station de services Zaoui Lazhar",
+          "name_ar": "محطة الخدمات زاوي لزهر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.604,
+            36.025
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station ( Essence et du carburant diesel )",
+      "display_name_ar": "محطة الخدمات زاوي لزهر"
+    },
+    {
+      "id": "osm-way-693334105",
+      "coordinates": [
+        7.4188451,
+        35.99103875
+      ],
+      "osm": {
+        "id": "way/693334105",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4188451,
+          35.99103875
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13781",
+          "route_id": "5605",
+          "name_fr": "staion d'essence de herakta",
+          "name_ar": "محطة الحراكتة",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.418,
+            35.991
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 76
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "staion d'essence de herakta",
+      "display_name_ar": "محطة الحراكتة"
+    },
+    {
+      "id": "osm-way-760728592",
+      "coordinates": [
+        8.19590015,
+        36.3997225
+      ],
+      "osm": {
+        "id": "way/760728592",
+        "name": "محطة الوقود نفطال",
+        "name_ar": "محطة الوقود نفطال",
+        "name_fr": "Station-Service Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.19590015,
+          36.3997225
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3158",
+          "route_id": "6843",
+          "name_fr": "Station de services HMAIDIA MOHAMED SALAH",
+          "name_ar": "حمايدية محمد الصالح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.195,
+            36.4
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": 86
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Naftal",
+      "display_name_ar": "محطة الوقود نفطال"
+    },
+    {
+      "id": "tariki-12916",
+      "coordinates": [
+        7.782,
+        36.189
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12916",
+          "route_id": "7072",
+          "name_fr": "DJAAFRI  AAMAR",
+          "name_ar": "محطة الخدمات جعفري عمار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.782,
+            36.189
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "DJAAFRI  AAMAR",
+      "display_name_ar": "محطة الخدمات جعفري عمار"
+    },
+    {
+      "id": "tariki-3183",
+      "coordinates": [
+        7.893,
+        36.127
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3183",
+          "route_id": "6862",
+          "name_fr": "Station de services mzahdia ammar",
+          "name_ar": "محطة مزاهدية عمار",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.893,
+            36.127
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services mzahdia ammar",
+      "display_name_ar": "محطة مزاهدية عمار"
+    },
+    {
+      "id": "tariki-3190",
+      "coordinates": [
+        7.882,
+        36.307
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3190",
+          "route_id": "6898",
+          "name_fr": "STATION ESENCE LES FRER RAFAA",
+          "name_ar": "محطة الخدمات الإخوة رافع",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.882,
+            36.307
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ESENCE LES FRER RAFAA",
+      "display_name_ar": "محطة الخدمات الإخوة رافع"
+    },
+    {
+      "id": "tariki-3194",
+      "coordinates": [
+        7.855,
+        36.353
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3194",
+          "route_id": "6898",
+          "name_fr": "Station de services Hamaidia",
+          "name_ar": "محطة الخدمات حمايدية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.855,
+            36.353
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Hamaidia",
+      "display_name_ar": "محطة الخدمات حمايدية"
+    },
+    {
+      "id": "tariki-3535",
+      "coordinates": [
+        8.15,
+        36.201
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3535",
+          "route_id": "7477",
+          "name_fr": "Station de services Bouhanchir",
+          "name_ar": "محطة بوهنشير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.15,
+            36.201
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bouhanchir",
+      "display_name_ar": "محطة بوهنشير"
+    },
+    {
+      "id": "tariki-3671",
+      "coordinates": [
+        8.34,
+        36.29
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3671",
+          "route_id": "7704",
+          "name_fr": "Station de services KHEDARA",
+          "name_ar": "محطة البنزين بالخضارة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.34,
+            36.29
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KHEDARA",
+      "display_name_ar": "محطة البنزين بالخضارة"
+    },
+    {
+      "id": "tariki-4046",
+      "coordinates": [
+        8.165,
+        36.2
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4046",
+          "route_id": "7477",
+          "name_fr": "Station de services NASSIM EL YASSAMINE",
+          "name_ar": "محطة نسيم الياسمين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.165,
+            36.2
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NASSIM EL YASSAMINE",
+      "display_name_ar": "محطة نسيم الياسمين"
+    },
+    {
+      "id": "tariki-4168",
+      "coordinates": [
+        8.282,
+        36.209
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4168",
+          "route_id": "8575",
+          "name_fr": "Station de services NASRI ABD ELKARIM",
+          "name_ar": "محطة بير لوحيشي نصري عبد الكريم",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.282,
+            36.209
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NASRI ABD ELKARIM",
+      "display_name_ar": "محطة بير لوحيشي نصري عبد الكريم"
+    },
+    {
+      "id": "tariki-4214",
+      "coordinates": [
+        7.952,
+        36.288
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4214",
+          "route_id": "4800",
+          "name_fr": "Station de services  YALFOUFE RACHID",
+          "name_ar": "محطة خدمات يلفوف رشيد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.952,
+            36.288
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  YALFOUFE RACHID",
+      "display_name_ar": "محطة خدمات يلفوف رشيد"
+    },
+    {
+      "id": "tariki-4218",
+      "coordinates": [
+        7.955,
+        36.277
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4218",
+          "route_id": "8194",
+          "name_fr": "Station de services BEN DJDIDE IBRAHIM",
+          "name_ar": "محطة خدمات بن جديد ابراهيم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.955,
+            36.277
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BEN DJDIDE IBRAHIM",
+      "display_name_ar": "محطة خدمات بن جديد ابراهيم"
+    },
+    {
+      "id": "tariki-4229",
+      "coordinates": [
+        8.009,
+        36.35
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4229",
+          "route_id": "8682",
+          "name_fr": "Station de services BEDAIRIA",
+          "name_ar": "محطة بدايرية",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.009,
+            36.35
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BEDAIRIA",
+      "display_name_ar": "محطة بدايرية"
+    },
+    {
+      "id": "tariki-4424",
+      "coordinates": [
+        7.89,
+        36.267
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4424",
+          "route_id": "9035",
+          "name_fr": "Station de services DJOUAMAA",
+          "name_ar": "محطة الوقود جوامع",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.89,
+            36.267
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services DJOUAMAA",
+      "display_name_ar": "محطة الوقود جوامع"
+    },
+    {
+      "id": "tariki-6451",
+      "coordinates": [
+        8.0425,
+        36.1661
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6451",
+          "route_id": "8540",
+          "name_fr": "station de services  mohanad oussaid saleh",
+          "name_ar": "محطة محند أو السعيد صالح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.0425,
+            36.1661
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services  mohanad oussaid saleh",
+      "display_name_ar": "محطة محند أو السعيد صالح"
+    },
+    {
+      "id": "tariki-7262",
+      "coordinates": [
+        7.373,
+        36.179
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7262",
+          "route_id": "4928",
+          "name_fr": "Station de services les freres Mensouri",
+          "name_ar": "محطة الإخوة منصوري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.373,
+            36.179
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 41,
+          "wilaya_fr": "Souk Ahras",
+          "wilaya_ar": "سوق أهراس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services les freres Mensouri",
+      "display_name_ar": "محطة الإخوة منصوري"
+    }
+  ]
+}

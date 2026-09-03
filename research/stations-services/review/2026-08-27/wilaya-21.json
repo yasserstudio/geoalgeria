@@ -1,0 +1,2259 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-21",
+    "wilaya_code": 21,
+    "name": "Skikda",
+    "name_ar": "سكيكدة",
+    "center": [
+      6.8215,
+      36.7545
+    ],
+    "bounds": [
+      6.239,
+      36.419,
+      7.404,
+      37.09
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 56,
+    "osm_records": 39,
+    "tariki_records": 42,
+    "cross_source": 21,
+    "multiple_tariki": 2,
+    "osm_only": 16,
+    "tariki_only": 17,
+    "nearby_osm_pairs": 3,
+    "conflicts": 24
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3232727078",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3715786618",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3925390590",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1113592962",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1534199273",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-352695338",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-352695345",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10035",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10042",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10043",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10045",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10258",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10804",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12741",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13113",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13289",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13760",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14137",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14323",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14583",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3372",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3518",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8553",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9773",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1829981438",
+      "coordinates": [
+        6.9566982,
+        36.8358783
+      ],
+      "osm": {
+        "id": "node/1829981438",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9566982,
+          36.8358783
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5825",
+          "route_id": "10701",
+          "name_fr": "Station de services Othmeni",
+          "name_ar": "محطة الوقود عثماني",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.957,
+            36.836
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 30
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود عثماني"
+    },
+    {
+      "id": "osm-node-1829981443",
+      "coordinates": [
+        6.9526319,
+        36.8464051
+      ],
+      "osm": {
+        "id": "node/1829981443",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9526319,
+          36.8464051
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5827",
+          "route_id": "10701",
+          "name_fr": "Station de services Hamrouche hamoudi",
+          "name_ar": "محطة الوقود حمروش حمودي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.952,
+            36.846
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود حمروش حمودي"
+    },
+    {
+      "id": "osm-node-2570312489",
+      "coordinates": [
+        6.632204,
+        36.8352511
+      ],
+      "osm": {
+        "id": "node/2570312489",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.632204,
+          36.8352511
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9836",
+          "route_id": "14649",
+          "name_fr": "Station de services Aiouaz",
+          "name_ar": "محطة عيواز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.6323,
+            36.8352
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة عيواز"
+    },
+    {
+      "id": "osm-node-2571168772",
+      "coordinates": [
+        6.6419559,
+        36.8357111
+      ],
+      "osm": {
+        "id": "node/2571168772",
+        "name": "محطة بنزين لعور",
+        "name_ar": "محطة بنزين لعور",
+        "name_fr": "Station service Laouar",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6419559,
+          36.8357111
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9837",
+          "route_id": "14649",
+          "name_fr": "Station de services Ali laouar",
+          "name_ar": "محطة علي لعور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.642,
+            36.8356
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Laouar",
+      "display_name_ar": "محطة بنزين لعور"
+    },
+    {
+      "id": "osm-node-2574200283",
+      "coordinates": [
+        6.7202346,
+        36.652854
+      ],
+      "osm": {
+        "id": "node/2574200283",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7202346,
+          36.652854
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2844049017",
+      "coordinates": [
+        6.5683229,
+        36.971981
+      ],
+      "osm": {
+        "id": "node/2844049017",
+        "name": "talzza",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5683229,
+          36.971981
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6959",
+          "route_id": "11747",
+          "name_fr": "Station de services GDR 21 el-Kol",
+          "name_ar": "محطة التسير المباشر القل 21 نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.568,
+            36.972
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "talzza",
+      "display_name_ar": "محطة التسير المباشر القل 21 نفطال"
+    },
+    {
+      "id": "osm-node-2846083304",
+      "coordinates": [
+        6.5688423,
+        37.0065813
+      ],
+      "osm": {
+        "id": "node/2846083304",
+        "name": "Station Kherbache",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5688423,
+          37.0065813
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6898",
+          "route_id": "11747",
+          "name_fr": "Station de services (CHERIFI.O)",
+          "name_ar": "محطة الخدمات شريفي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.569,
+            37.007
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Kherbache",
+      "display_name_ar": "محطة الخدمات شريفي"
+    },
+    {
+      "id": "osm-node-3232727078",
+      "coordinates": [
+        7.1052402,
+        36.7379313
+      ],
+      "osm": {
+        "id": "node/3232727078",
+        "name": "Station-Service El Hachmi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Hamada",
+        "opening_hours": null,
+        "coordinates": [
+          7.1052402,
+          36.7379313
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10046",
+          "route_id": "14898",
+          "name_fr": "STATION DE SERVICES NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1052,
+            36.7379
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1113592962",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station-Service El Hachmi",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-3233061453",
+      "coordinates": [
+        7.124236,
+        36.7413398
+      ],
+      "osm": {
+        "id": "node/3233061453",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          7.124236,
+          36.7413398
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10041",
+          "route_id": "14898",
+          "name_fr": "STATION DE SERVICES HAMDA SAAID",
+          "name_ar": "محطة الخدمات حمادة السعيد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.1237,
+            36.741
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات حمادة السعيد"
+    },
+    {
+      "id": "osm-node-3273061831",
+      "coordinates": [
+        6.5780944,
+        36.9327642
+      ],
+      "osm": {
+        "id": "node/3273061831",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5780944,
+          36.9327642
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3835",
+          "route_id": "7958",
+          "name_fr": "Station de services BOUCHREK TAYEB",
+          "name_ar": "محطة متعددة الخدمات  بوالشرك الطيب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.5781,
+            36.9327
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة متعددة الخدمات  بوالشرك الطيب"
+    },
+    {
+      "id": "osm-node-3273061832",
+      "coordinates": [
+        6.5619503,
+        36.9922533
+      ],
+      "osm": {
+        "id": "node/3273061832",
+        "name": "محطة خدمات بعزيز",
+        "name_ar": "محطة خدمات بعزيز",
+        "name_fr": "Station Service BAAZIZ",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5619503,
+          36.9922533
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6880",
+          "route_id": "11747",
+          "name_fr": "Station de services  AKRAMINA",
+          "name_ar": "محطة متعددة الخدمات  اكرمينا",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.562,
+            36.992
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service BAAZIZ",
+      "display_name_ar": "محطة خدمات بعزيز"
+    },
+    {
+      "id": "osm-node-3283786345",
+      "coordinates": [
+        6.3860287,
+        36.7401595
+      ],
+      "osm": {
+        "id": "node/3283786345",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3860287,
+          36.7401595
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3374",
+          "route_id": "7283",
+          "name_fr": "Station de services kiouasse",
+          "name_ar": "محطة وقود قيواص",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.386,
+            36.74
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود قيواص"
+    },
+    {
+      "id": "osm-node-3316183080",
+      "coordinates": [
+        6.7543316,
+        36.7067822
+      ],
+      "osm": {
+        "id": "node/3316183080",
+        "name": "Station service bouhalbes",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7543316,
+          36.7067822
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service bouhalbes",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3482001311",
+      "coordinates": [
+        7.2276111,
+        36.7346943
+      ],
+      "osm": {
+        "id": "node/3482001311",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2276111,
+          36.7346943
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7001",
+          "route_id": "11886",
+          "name_fr": "Station de services",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.228,
+            36.735
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3715786618",
+      "coordinates": [
+        6.8981298,
+        36.7510157
+      ],
+      "osm": {
+        "id": "node/3715786618",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8981298,
+          36.7510157
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9772",
+          "route_id": "14603",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.898,
+            36.751
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 12
+        },
+        {
+          "id": "13769",
+          "route_id": "19696",
+          "name_fr": null,
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.898,
+            36.751
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-node-3925390590",
+      "coordinates": [
+        6.5857352,
+        36.6849209
+      ],
+      "osm": {
+        "id": "node/3925390590",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5857352,
+          36.6849209
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8824",
+          "route_id": "1266",
+          "name_fr": "Station de services Ahmed said",
+          "name_ar": "محطة الخدمات أحمد سعيد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.586,
+            36.685
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1534199273",
+          "offset_m": 3
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات أحمد سعيد"
+    },
+    {
+      "id": "osm-node-4412984392",
+      "coordinates": [
+        6.4495751,
+        36.7679533
+      ],
+      "osm": {
+        "id": "node/4412984392",
+        "name": "Station Service",
+        "name_ar": "محطة الوقود",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4495751,
+          36.7679533
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-4464904759",
+      "coordinates": [
+        7.1562523,
+        36.7430722
+      ],
+      "osm": {
+        "id": "node/4464904759",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1562523,
+          36.7430722
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4565454191",
+      "coordinates": [
+        7.2887532,
+        36.8617679
+      ],
+      "osm": {
+        "id": "node/4565454191",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.2887532,
+          36.8617679
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6744",
+          "route_id": "7520",
+          "name_fr": "Station de servicesNAFTAL BEN AZZOUZ",
+          "name_ar": "محطة الوقود لمؤسسة نفطال بلدية بن عزوز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.289,
+            36.862
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "نفطال",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5145722821",
+      "coordinates": [
+        7.0718966,
+        36.7237774
+      ],
+      "osm": {
+        "id": "node/5145722821",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.0718966,
+          36.7237774
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10051",
+          "route_id": "14902",
+          "name_fr": "STATION DE SERVICES NAFTAL ZAOUIA",
+          "name_ar": "محطة الخدمات نفطال بالزاوية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.0718,
+            36.7244
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 70
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES NAFTAL ZAOUIA",
+      "display_name_ar": "محطة الخدمات نفطال بالزاوية"
+    },
+    {
+      "id": "osm-node-8553402417",
+      "coordinates": [
+        6.8593883,
+        36.634719
+      ],
+      "osm": {
+        "id": "node/8553402417",
+        "name": "boukaroun",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8593883,
+          36.634719
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "boukaroun",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8581776362",
+      "coordinates": [
+        7.2682252,
+        36.7465718
+      ],
+      "osm": {
+        "id": "node/8581776362",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2682252,
+          36.7465718
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7025",
+          "route_id": "11886",
+          "name_fr": "Station de services Belkahla",
+          "name_ar": "محطة بلكحلة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.269,
+            36.747
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 84
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Belkahla",
+      "display_name_ar": "محطة بلكحلة"
+    },
+    {
+      "id": "osm-way-1023084591",
+      "coordinates": [
+        7.2227312,
+        36.72018955
+      ],
+      "osm": {
+        "id": "way/1023084591",
+        "name": "Station service Russicad",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2227312,
+          36.72018955
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Russicad",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1035743003",
+      "coordinates": [
+        6.52529955,
+        37.0068409
+      ],
+      "osm": {
+        "id": "way/1035743003",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.52529955,
+          37.0068409
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1087867763",
+      "coordinates": [
+        6.84620385,
+        36.636831400000005
+      ],
+      "osm": {
+        "id": "way/1087867763",
+        "name": "Station service Ras Bougaroun",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.84620385,
+          36.636831400000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Ras Bougaroun",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1113592962",
+      "coordinates": [
+        7.10518335,
+        36.7380063
+      ],
+      "osm": {
+        "id": "way/1113592962",
+        "name": "Hammada",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.10518335,
+          36.7380063
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3232727078",
+          "offset_m": 10
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Hammada",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1118594154",
+      "coordinates": [
+        7.10854015,
+        36.739666650000004
+      ],
+      "osm": {
+        "id": "way/1118594154",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.10854015,
+          36.739666650000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1150325044",
+      "coordinates": [
+        7.22734625,
+        36.7272456
+      ],
+      "osm": {
+        "id": "way/1150325044",
+        "name": "Station service Russicad",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.22734625,
+          36.7272456
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Russicad",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1534199273",
+      "coordinates": [
+        6.5857418,
+        36.684890100000004
+      ],
+      "osm": {
+        "id": "way/1534199273",
+        "name": "El-Anfal Gas Station",
+        "name_ar": null,
+        "name_fr": "Pompe de l essence Ahmed Said",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5857418,
+          36.684890100000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3925390590",
+          "offset_m": 3
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Pompe de l essence Ahmed Said",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-214448692",
+      "coordinates": [
+        6.83728475,
+        36.65198635
+      ],
+      "osm": {
+        "id": "way/214448692",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.83728475,
+          36.65198635
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8556",
+          "route_id": "13537",
+          "name_fr": "Station de services Toumi",
+          "name_ar": "محطة تومي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8368,
+            36.6518
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Toumi",
+      "display_name_ar": "محطة تومي"
+    },
+    {
+      "id": "osm-way-214448712",
+      "coordinates": [
+        6.826398299999999,
+        36.64476555
+      ],
+      "osm": {
+        "id": "way/214448712",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.826398299999999,
+          36.64476555
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-272691990",
+      "coordinates": [
+        6.85976675,
+        36.69612705
+      ],
+      "osm": {
+        "id": "way/272691990",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.85976675,
+          36.69612705
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-283532938",
+      "coordinates": [
+        6.9167541,
+        36.862126
+      ],
+      "osm": {
+        "id": "way/283532938",
+        "name": "Station Service les Frères Douch",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9167541,
+          36.862126
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10801",
+          "route_id": "15478",
+          "name_fr": "STATION  SERVICE DOUCHE TEYAB",
+          "name_ar": "محطة متعددة الخدمات دوش الطيب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.9169,
+            36.8619
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service les Frères Douch",
+      "display_name_ar": "محطة متعددة الخدمات دوش الطيب"
+    },
+    {
+      "id": "osm-way-283532940",
+      "coordinates": [
+        6.9282141500000005,
+        36.8627882
+      ],
+      "osm": {
+        "id": "way/283532940",
+        "name": "Station Service Aliout",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9282141500000005,
+          36.8627882
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Aliout",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-283717012",
+      "coordinates": [
+        6.90392045,
+        36.8576054
+      ],
+      "osm": {
+        "id": "way/283717012",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.90392045,
+          36.8576054
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9770",
+          "route_id": "14604",
+          "name_fr": "Station de services SISAL",
+          "name_ar": "محطة متعددة الخدمات  السيسال تابعة لنفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.9041,
+            36.8575
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة متعددة الخدمات  السيسال تابعة لنفطال"
+    },
+    {
+      "id": "osm-way-335839532",
+      "coordinates": [
+        6.98037455,
+        36.882558450000005
+      ],
+      "osm": {
+        "id": "way/335839532",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.98037455,
+          36.882558450000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5652",
+          "route_id": "10490",
+          "name_fr": "Station de services Khezan",
+          "name_ar": "محطة خدمات خزان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.98,
+            36.883
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 59
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Khezan",
+      "display_name_ar": "محطة خدمات خزان"
+    },
+    {
+      "id": "osm-way-352695338",
+      "coordinates": [
+        6.96337115,
+        36.820017050000004
+      ],
+      "osm": {
+        "id": "way/352695338",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.96337115,
+          36.820017050000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9825",
+          "route_id": "14638",
+          "name_fr": "Station de services el-alia ben djaouahdou",
+          "name_ar": "محطة العاليا ( بن جا وحدو )",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.9635,
+            36.8198
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 27
+        },
+        {
+          "id": "12790",
+          "route_id": "8305",
+          "name_fr": "STATION ALIA",
+          "name_ar": "محطة العاليا",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.963,
+            36.82
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-352695345",
+          "offset_m": 29
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services el-alia ben djaouahdou",
+      "display_name_ar": "محطة العاليا ( بن جا وحدو )"
+    },
+    {
+      "id": "osm-way-352695345",
+      "coordinates": [
+        6.96369285,
+        36.820038049999994
+      ],
+      "osm": {
+        "id": "way/352695345",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.96369285,
+          36.820038049999994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-352695338",
+          "offset_m": 29
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-353903835",
+      "coordinates": [
+        7.04571155,
+        36.903864999999996
+      ],
+      "osm": {
+        "id": "way/353903835",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.04571155,
+          36.903864999999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5389",
+          "route_id": "10177",
+          "name_fr": "Station de services YASSER DERBAL",
+          "name_ar": "محطة خدمات ياسر دربال",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.046,
+            36.904
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": 30
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services YASSER DERBAL",
+      "display_name_ar": "محطة خدمات ياسر دربال"
+    },
+    {
+      "id": "tariki-10035",
+      "coordinates": [
+        7.1631,
+        36.7415
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10035",
+          "route_id": "14898",
+          "name_fr": "STATION DE SERVICES OUELHASSI BRIK",
+          "name_ar": "محطة الخدمات ولهاصي بريك",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.1631,
+            36.7415
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES OUELHASSI BRIK",
+      "display_name_ar": "محطة الخدمات ولهاصي بريك"
+    },
+    {
+      "id": "tariki-10042",
+      "coordinates": [
+        7.113,
+        36.7408
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10042",
+          "route_id": "14898",
+          "name_fr": "STATION DE SERVICES BOUGDAH ELZAHRA",
+          "name_ar": "محطة الخدمات بوقدح الزهرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.113,
+            36.7408
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES BOUGDAH ELZAHRA",
+      "display_name_ar": "محطة الخدمات بوقدح الزهرة"
+    },
+    {
+      "id": "tariki-10043",
+      "coordinates": [
+        7.1107,
+        36.7403
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10043",
+          "route_id": "14898",
+          "name_fr": "STATION DE SERVICES LAARABA HOCEN",
+          "name_ar": "محطة الخدمات لعرابة حسين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1107,
+            36.7403
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES LAARABA HOCEN",
+      "display_name_ar": "محطة الخدمات لعرابة حسين"
+    },
+    {
+      "id": "tariki-10045",
+      "coordinates": [
+        7.1105,
+        36.7409
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10045",
+          "route_id": "14898",
+          "name_fr": "STATION DE SERVICES FRIKHA",
+          "name_ar": "محطة الخدمات فريخة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1105,
+            36.7409
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES FRIKHA",
+      "display_name_ar": "محطة الخدمات فريخة"
+    },
+    {
+      "id": "tariki-10258",
+      "coordinates": [
+        6.8523,
+        36.6962
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10258",
+          "route_id": "15090",
+          "name_fr": "STATION DE MULTI SERVICE",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.8523,
+            36.6962
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE MULTI SERVICE",
+      "display_name_ar": "محطة متعددة الخدمات"
+    },
+    {
+      "id": "tariki-10804",
+      "coordinates": [
+        6.9172,
+        36.8661
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10804",
+          "route_id": "15479",
+          "name_fr": "STATION  SERVICE ALYOUT",
+          "name_ar": "محطة متعددة الخدمات عليوط",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.9172,
+            36.8661
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION  SERVICE ALYOUT",
+      "display_name_ar": "محطة متعددة الخدمات عليوط"
+    },
+    {
+      "id": "tariki-12741",
+      "coordinates": [
+        6.6411,
+        36.6278
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12741",
+          "route_id": "17437",
+          "name_fr": "POMPA ESSANCE ET GAZOAL",
+          "name_ar": "محطة خدمات للتزويد بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.6411,
+            36.6278
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "POMPA ESSANCE ET GAZOAL",
+      "display_name_ar": "محطة خدمات للتزويد بالوقود"
+    },
+    {
+      "id": "tariki-13113",
+      "coordinates": [
+        6.811,
+        36.717
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13113",
+          "route_id": "18056",
+          "name_fr": "STATIONE D'ECANSSE EL BARAKA",
+          "name_ar": "محطة الوقود البركة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.811,
+            36.717
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATIONE D'ECANSSE EL BARAKA",
+      "display_name_ar": "محطة الوقود البركة"
+    },
+    {
+      "id": "tariki-13289",
+      "coordinates": [
+        7.076,
+        36.667
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13289",
+          "route_id": "18356",
+          "name_fr": "STATION POMPE ESSANCE MEZLINI",
+          "name_ar": "محطة مزليني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.076,
+            36.667
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION POMPE ESSANCE MEZLINI",
+      "display_name_ar": "محطة مزليني"
+    },
+    {
+      "id": "tariki-13760",
+      "coordinates": [
+        7.263,
+        36.742
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13760",
+          "route_id": "19656",
+          "name_fr": null,
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.263,
+            36.742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة وقود",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-14137",
+      "coordinates": [
+        7.076,
+        36.667
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14137",
+          "route_id": "21051",
+          "name_fr": "STATION  MEZLINI",
+          "name_ar": "محطة مزليني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.076,
+            36.667
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION  MEZLINI",
+      "display_name_ar": "محطة مزليني"
+    },
+    {
+      "id": "tariki-14323",
+      "coordinates": [
+        6.644,
+        36.633
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14323",
+          "route_id": "21558",
+          "name_fr": "POMPA ESSANCE",
+          "name_ar": "محطة كحل الراس محمد الصالح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.644,
+            36.633
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "POMPA ESSANCE",
+      "display_name_ar": "محطة كحل الراس محمد الصالح"
+    },
+    {
+      "id": "tariki-14583",
+      "coordinates": [
+        6.41,
+        36.999
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14583",
+          "route_id": "22361",
+          "name_fr": "//",
+          "name_ar": "بدون تسمية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.41,
+            36.999
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "بدون تسمية"
+    },
+    {
+      "id": "tariki-3372",
+      "coordinates": [
+        6.44,
+        36.76
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3372",
+          "route_id": "7283",
+          "name_fr": "Station de services Djeghader ELhadi",
+          "name_ar": "محطة وقود جغادر الهادي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.44,
+            36.76
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Djeghader ELhadi",
+      "display_name_ar": "محطة وقود جغادر الهادي"
+    },
+    {
+      "id": "tariki-3518",
+      "coordinates": [
+        6.527,
+        37.007
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3518",
+          "route_id": "7474",
+          "name_fr": "Station de services ELAMRI",
+          "name_ar": "العامري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.527,
+            37.007
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ELAMRI",
+      "display_name_ar": "العامري"
+    },
+    {
+      "id": "tariki-8553",
+      "coordinates": [
+        6.8341,
+        36.6624
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8553",
+          "route_id": "13535",
+          "name_fr": "Station de services Miloudi",
+          "name_ar": "محطة ميلودي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.8341,
+            36.6624
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Miloudi",
+      "display_name_ar": "محطة ميلودي"
+    },
+    {
+      "id": "tariki-9773",
+      "coordinates": [
+        7.179,
+        36.778
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9773",
+          "route_id": "14119",
+          "name_fr": "Station de services hadef  ali",
+          "name_ar": "هادف علي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.179,
+            36.778
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 21,
+          "wilaya_fr": "Skikda",
+          "wilaya_ar": "سكيكدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services hadef  ali",
+      "display_name_ar": "هادف علي"
+    }
+  ]
+}

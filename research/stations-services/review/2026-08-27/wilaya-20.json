@@ -1,0 +1,862 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-20",
+    "wilaya_code": 20,
+    "name": "Saïda",
+    "name_ar": "سعيدة",
+    "center": [
+      0.29250000000000004,
+      34.7435
+    ],
+    "bounds": [
+      -0.348,
+      34.32,
+      0.933,
+      35.167
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 23,
+    "osm_records": 13,
+    "tariki_records": 14,
+    "cross_source": 4,
+    "multiple_tariki": 0,
+    "osm_only": 9,
+    "tariki_only": 10,
+    "nearby_osm_pairs": 0,
+    "conflicts": 10
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-12778",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12789",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13992",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13996",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14639",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14643",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14663",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2476",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3299",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7733",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10647998785",
+      "coordinates": [
+        -0.1518486,
+        34.880672
+      ],
+      "osm": {
+        "id": "node/10647998785",
+        "name": "Station naftal + cafe + mosque",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.1518486,
+          34.880672
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station naftal + cafe + mosque",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3397629630",
+      "coordinates": [
+        0.316748,
+        34.825878
+      ],
+      "osm": {
+        "id": "node/3397629630",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.316748,
+          34.825878
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2582",
+          "route_id": "6019",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.317,
+            34.826
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-3422203686",
+      "coordinates": [
+        0.1474748,
+        34.6723512
+      ],
+      "osm": {
+        "id": "node/3422203686",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1474748,
+          34.6723512
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3476",
+          "route_id": "7418",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            0.147,
+            34.672
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-3865556381",
+      "coordinates": [
+        0.4862207,
+        34.9908953
+      ],
+      "osm": {
+        "id": "node/3865556381",
+        "name": "Station Service de Balloul محطة خدمة بلول",
+        "name_ar": "محطة خدمة بلول",
+        "name_fr": "Station Service de Balloul",
+        "brand": "E.Leclerc أي.لكلير",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.4862207,
+          34.9908953
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service de Balloul",
+      "display_name_ar": "محطة خدمة بلول"
+    },
+    {
+      "id": "osm-node-3985929218",
+      "coordinates": [
+        0.0797934,
+        34.4777816
+      ],
+      "osm": {
+        "id": "node/3985929218",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "station service",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0797934,
+          34.4777816
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3487",
+          "route_id": "7418",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.08,
+            34.478
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4358040789",
+      "coordinates": [
+        0.016992,
+        34.6512521
+      ],
+      "osm": {
+        "id": "node/4358040789",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.016992,
+          34.6512521
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4403272289",
+      "coordinates": [
+        0.1149635,
+        34.8216117
+      ],
+      "osm": {
+        "id": "node/4403272289",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1149635,
+          34.8216117
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5306034121",
+      "coordinates": [
+        0.0425517,
+        34.8108318
+      ],
+      "osm": {
+        "id": "node/5306034121",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0425517,
+          34.8108318
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة بنزين",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-8213584975",
+      "coordinates": [
+        0.0700666,
+        35.0273857
+      ],
+      "osm": {
+        "id": "node/8213584975",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0700666,
+          35.0273857
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-303856191",
+      "coordinates": [
+        0.1482121,
+        34.837461149999996
+      ],
+      "osm": {
+        "id": "way/303856191",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.1482121,
+          34.837461149999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-304237382",
+      "coordinates": [
+        0.1500681,
+        34.71256765
+      ],
+      "osm": {
+        "id": "way/304237382",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.1500681,
+          34.71256765
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3439",
+          "route_id": "7418",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            0.15,
+            34.712
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": 63
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-315292544",
+      "coordinates": [
+        0.15970375,
+        34.8406835
+      ],
+      "osm": {
+        "id": "way/315292544",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.15970375,
+          34.8406835
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-315346503",
+      "coordinates": [
+        0.156468,
+        34.81910255
+      ],
+      "osm": {
+        "id": "way/315346503",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          0.156468,
+          34.81910255
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12778",
+      "coordinates": [
+        0.303,
+        34.907
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12778",
+          "route_id": "3245",
+          "name_fr": "sabah",
+          "name_ar": "منطقة الصباح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.303,
+            34.907
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "sabah",
+      "display_name_ar": "منطقة الصباح"
+    },
+    {
+      "id": "tariki-12789",
+      "coordinates": [
+        0.101,
+        35.027
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12789",
+          "route_id": "17570",
+          "name_fr": "//",
+          "name_ar": "محطة الخدمات لعزيزي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.101,
+            35.027
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة الخدمات لعزيزي"
+    },
+    {
+      "id": "tariki-13992",
+      "coordinates": [
+        0.193,
+        34.439
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13992",
+          "route_id": "3162",
+          "name_fr": "STATION DAGHAOUI SLIMEN",
+          "name_ar": "محطة درقاوي سليمان مرحوم",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            0.193,
+            34.439
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DAGHAOUI SLIMEN",
+      "display_name_ar": "محطة درقاوي سليمان مرحوم"
+    },
+    {
+      "id": "tariki-13996",
+      "coordinates": [
+        0.191,
+        34.455
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13996",
+          "route_id": "20478",
+          "name_fr": "STATION HADJ MEHAMED MIR",
+          "name_ar": "حاج محمد مير",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.191,
+            34.455
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION HADJ MEHAMED MIR",
+      "display_name_ar": "حاج محمد مير"
+    },
+    {
+      "id": "tariki-14639",
+      "coordinates": [
+        0.814,
+        34.499
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14639",
+          "route_id": "22575",
+          "name_fr": "STATION CARBURANT AIT SIDHOUM",
+          "name_ar": "محطة وقود نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.814,
+            34.499
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION CARBURANT AIT SIDHOUM",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "tariki-14643",
+      "coordinates": [
+        0.83,
+        34.495
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14643",
+          "route_id": "22577",
+          "name_fr": "STATION CARBURENT AIT SIDHOUM",
+          "name_ar": "محطة وقود ايت سيدهم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.83,
+            34.495
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION CARBURENT AIT SIDHOUM",
+      "display_name_ar": "محطة وقود ايت سيدهم"
+    },
+    {
+      "id": "tariki-14663",
+      "coordinates": [
+        0.142,
+        34.621
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14663",
+          "route_id": "22658",
+          "name_fr": "//",
+          "name_ar": "محطة شهروري حفيظ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.142,
+            34.621
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة شهروري حفيظ"
+    },
+    {
+      "id": "tariki-2476",
+      "coordinates": [
+        0.041,
+        34.811
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2476",
+          "route_id": "5827",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            0.041,
+            34.811
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-3299",
+      "coordinates": [
+        0.329,
+        34.822
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3299",
+          "route_id": "6091",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.329,
+            34.822
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "tariki-7733",
+      "coordinates": [
+        0.191,
+        34.438
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7733",
+          "route_id": "9961",
+          "name_fr": "sarl hrs",
+          "name_ar": "مجموعة hrs",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            0.191,
+            34.438
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 20,
+          "wilaya_fr": "Saïda",
+          "wilaya_ar": "سعيدة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "sarl hrs",
+      "display_name_ar": "مجموعة hrs"
+    }
+  ]
+}

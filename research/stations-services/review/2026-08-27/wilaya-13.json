@@ -1,0 +1,2765 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-13",
+    "wilaya_code": 13,
+    "name": "Tlemcen",
+    "name_ar": "تلمسان",
+    "center": [
+      -1.4909999999999999,
+      34.8655
+    ],
+    "bounds": [
+      -2.219,
+      34.493,
+      -0.763,
+      35.238
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 73,
+    "osm_records": 59,
+    "tariki_records": 46,
+    "cross_source": 27,
+    "multiple_tariki": 2,
+    "osm_only": 30,
+    "tariki_only": 14,
+    "nearby_osm_pairs": 2,
+    "conflicts": 20
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3989110748",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4385359949",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1091957596",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1216226098",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-430401787",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-93233870",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12700",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13178",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2647",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3659",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4038",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4248",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4785",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5410",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5412",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5413",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5862",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6425",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7112",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9897",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1103497525",
+      "coordinates": [
+        -1.3631202,
+        34.9431447
+      ],
+      "osm": {
+        "id": "node/1103497525",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3631202,
+          34.9431447
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11405024772",
+      "coordinates": [
+        -1.025781,
+        34.9048457
+      ],
+      "osm": {
+        "id": "node/11405024772",
+        "name": "محطة الوقود نفطال",
+        "name_ar": null,
+        "name_fr": "NAFTAL",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.025781,
+          34.9048457
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11405376672",
+      "coordinates": [
+        -1.0365354,
+        34.9095516
+      ],
+      "osm": {
+        "id": "node/11405376672",
+        "name": "مضخة طيبي",
+        "name_ar": null,
+        "name_fr": "Pompe Taibi",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0365354,
+          34.9095516
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Pompe Taibi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1172285152",
+      "coordinates": [
+        -1.3204493,
+        34.8756728
+      ],
+      "osm": {
+        "id": "node/1172285152",
+        "name": "Bendi",
+        "name_ar": null,
+        "name_fr": "Bendi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3204493,
+          34.8756728
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bendi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-12830266595",
+      "coordinates": [
+        -1.2002054,
+        34.8705941
+      ],
+      "osm": {
+        "id": "node/12830266595",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2002054,
+          34.8705941
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1327026775",
+      "coordinates": [
+        -1.7169311,
+        34.8430178
+      ],
+      "osm": {
+        "id": "node/1327026775",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -1.7169311,
+          34.8430178
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4720",
+          "route_id": "9145",
+          "name_fr": "Station de services rond point de chebikia",
+          "name_ar": "محور الدوران بقرية الشبيكية",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            -1.717,
+            34.843
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محور الدوران بقرية الشبيكية"
+    },
+    {
+      "id": "osm-node-1327027911",
+      "coordinates": [
+        -1.6424753,
+        34.889376
+      ],
+      "osm": {
+        "id": "node/1327027911",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -1.6424753,
+          34.889376
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1955413885",
+      "coordinates": [
+        -1.2200182,
+        34.9845659
+      ],
+      "osm": {
+        "id": "node/1955413885",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -1.2200182,
+          34.9845659
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3200291700",
+      "coordinates": [
+        -1.0516936,
+        34.8991431
+      ],
+      "osm": {
+        "id": "node/3200291700",
+        "name": "محطة رزوڨ",
+        "name_ar": null,
+        "name_fr": "Station Rezzoug",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0516936,
+          34.8991431
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9898",
+          "route_id": "14697",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.0517,
+            34.8991
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Rezzoug",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3205271985",
+      "coordinates": [
+        -1.5386505,
+        34.8250444
+      ],
+      "osm": {
+        "id": "node/3205271985",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.5386505,
+          34.8250444
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5375",
+          "route_id": "5352",
+          "name_fr": "station de services  AISSAT",
+          "name_ar": "محطة توزيع الوقود  عيسات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.539,
+            34.825
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة توزيع الوقود  عيسات"
+    },
+    {
+      "id": "osm-node-3211284557",
+      "coordinates": [
+        -1.8811787,
+        34.8683958
+      ],
+      "osm": {
+        "id": "node/3211284557",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -1.8811787,
+          34.8683958
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3265051168",
+      "coordinates": [
+        -1.2378888,
+        34.980809
+      ],
+      "osm": {
+        "id": "node/3265051168",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2378888,
+          34.980809
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3325164457",
+      "coordinates": [
+        -1.1349921,
+        35.0602415
+      ],
+      "osm": {
+        "id": "node/3325164457",
+        "name": "Station Carburant Sidi Abdelli",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1349921,
+          35.0602415
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Carburant Sidi Abdelli",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3667387564",
+      "coordinates": [
+        -1.7781453,
+        34.8386721
+      ],
+      "osm": {
+        "id": "node/3667387564",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -1.7781453,
+          34.8386721
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5577",
+          "route_id": "9421",
+          "name_fr": "Station de services zone N 05 Maghnia",
+          "name_ar": "المنطقة  05 مغنية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.778,
+            34.839
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3797547861",
+      "coordinates": [
+        -1.3539625,
+        34.7954121
+      ],
+      "osm": {
+        "id": "node/3797547861",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3539625,
+          34.7954121
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3097",
+          "route_id": "5977",
+          "name_fr": "Station de services",
+          "name_ar": "محطة التزود بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.354,
+            34.7954
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة التزود بالوقود"
+    },
+    {
+      "id": "osm-node-3931522211",
+      "coordinates": [
+        -1.0915313,
+        34.9959263
+      ],
+      "osm": {
+        "id": "node/3931522211",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0915313,
+          34.9959263
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3989110748",
+      "coordinates": [
+        -1.7998934,
+        35.0845611
+      ],
+      "osm": {
+        "id": "node/3989110748",
+        "name": "NAFTAL Bab Khroufa",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.7998934,
+          35.0845611
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3410",
+          "route_id": "98",
+          "name_fr": "Station de services BAB KHROUFA",
+          "name_ar": "محطة الوقود باب خروفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.8,
+            35.085
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1216226098",
+          "offset_m": 11
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL Bab Khroufa",
+      "display_name_ar": "محطة الوقود باب خروفة"
+    },
+    {
+      "id": "osm-node-4346725889",
+      "coordinates": [
+        -1.2930517,
+        34.9120555
+      ],
+      "osm": {
+        "id": "node/4346725889",
+        "name": "خدمات طوطال كورتس",
+        "name_ar": "خدمات طوطال كورتس",
+        "name_fr": "Total Quartz Services",
+        "brand": "Naftal",
+        "operator": "طوطال",
+        "opening_hours": "Sa-We 08:30-17:00; Th 08:30-12:30",
+        "coordinates": [
+          -1.2930517,
+          34.9120555
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Total Quartz Services",
+      "display_name_ar": "خدمات طوطال كورتس"
+    },
+    {
+      "id": "osm-node-4385359949",
+      "coordinates": [
+        -1.5217469,
+        34.8307087
+      ],
+      "osm": {
+        "id": "node/4385359949",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.5217469,
+          34.8307087
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5376",
+          "route_id": "5352",
+          "name_fr": "station de services  Sabra",
+          "name_ar": "محطة توزيع الوقود العمومية بصبرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.522,
+            34.831
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 40
+        },
+        {
+          "id": "12679",
+          "route_id": "5352",
+          "name_fr": "station de services  naftal",
+          "name_ar": "محطة توزيع الوقود نفطار العمومية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.521,
+            34.831
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 75
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة توزيع الوقود العمومية بصبرة"
+    },
+    {
+      "id": "osm-node-4465585389",
+      "coordinates": [
+        -2.1002044,
+        34.9692044
+      ],
+      "osm": {
+        "id": "node/4465585389",
+        "name": "محطة بنزين زدازي",
+        "name_ar": "محطة بنزين زدازي",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.1002044,
+          34.9692044
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2638",
+          "route_id": "6131",
+          "name_fr": "Station de services ZDAZI",
+          "name_ar": "محطة توزيع الوقود زدازي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.1,
+            34.97
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 90
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة بنزين زدازي",
+      "display_name_ar": "محطة بنزين زدازي"
+    },
+    {
+      "id": "osm-node-4672143390",
+      "coordinates": [
+        -1.3712028,
+        35.0446548
+      ],
+      "osm": {
+        "id": "node/4672143390",
+        "name": "محطة التزود بالوقود عين يوسف",
+        "name_ar": "محطة التزود بالوقود عين يوسف",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3712028,
+          35.0446548
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة التزود بالوقود عين يوسف",
+      "display_name_ar": "محطة التزود بالوقود عين يوسف"
+    },
+    {
+      "id": "osm-node-4693783843",
+      "coordinates": [
+        -2.026533,
+        34.9596269
+      ],
+      "osm": {
+        "id": "node/4693783843",
+        "name": "Station-service Naftal",
+        "name_ar": "محطة خدمة نفطال",
+        "name_fr": "Station-service Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -2.026533,
+          34.9596269
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5867",
+          "route_id": "9218",
+          "name_fr": "Station de services Bou Aizem",
+          "name_ar": "محطة بوعيزم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.027,
+            34.96
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 59
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة خدمة نفطال"
+    },
+    {
+      "id": "osm-node-472898028",
+      "coordinates": [
+        -1.5038289,
+        35.0480131
+      ],
+      "osm": {
+        "id": "node/472898028",
+        "name": "NAFTAL RN 35",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          -1.5038289,
+          35.0480131
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10412",
+          "route_id": "15212",
+          "name_fr": "STATION DE SERVICES R N 35",
+          "name_ar": "محطة التزود بالوقود  طريق 35",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.5042,
+            35.0475
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 66
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL RN 35",
+      "display_name_ar": "محطة التزود بالوقود  طريق 35"
+    },
+    {
+      "id": "osm-node-4737208286",
+      "coordinates": [
+        -1.3326755,
+        34.6373476
+      ],
+      "osm": {
+        "id": "node/4737208286",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3326755,
+          34.6373476
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3280",
+          "route_id": "6684",
+          "name_fr": "Station de services LACHEGAR",
+          "name_ar": "محطة توزيع الوقود لاشقر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.333,
+            34.637
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services LACHEGAR",
+      "display_name_ar": "محطة توزيع الوقود لاشقر"
+    },
+    {
+      "id": "osm-node-4737240498",
+      "coordinates": [
+        -1.3417616,
+        34.6302916
+      ],
+      "osm": {
+        "id": "node/4737240498",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3417616,
+          34.6302916
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4860",
+          "route_id": "7915",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة توزيع الغاز نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -1.3424,
+            34.6299
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 73
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة توزيع الغاز نفطال"
+    },
+    {
+      "id": "osm-node-4848434327",
+      "coordinates": [
+        -1.3492887,
+        34.8787652
+      ],
+      "osm": {
+        "id": "node/4848434327",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3492887,
+          34.8787652
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4848434328",
+      "coordinates": [
+        -1.341531,
+        34.8638815
+      ],
+      "osm": {
+        "id": "node/4848434328",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.341531,
+          34.8638815
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4988930023",
+      "coordinates": [
+        -1.3091743,
+        34.8947566
+      ],
+      "osm": {
+        "id": "node/4988930023",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3091743,
+          34.8947566
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5139687222",
+      "coordinates": [
+        -1.302948,
+        34.8823814
+      ],
+      "osm": {
+        "id": "node/5139687222",
+        "name": "Hôtel Stambouli",
+        "name_ar": null,
+        "name_fr": "Hôtel Stambouli",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.302948,
+          34.8823814
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Hôtel Stambouli",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5139687223",
+      "coordinates": [
+        -1.3024376,
+        34.8820685
+      ],
+      "osm": {
+        "id": "node/5139687223",
+        "name": "Station Services Chekchou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3024376,
+          34.8820685
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Services Chekchou",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5930850891",
+      "coordinates": [
+        -1.2275416,
+        35.0689605
+      ],
+      "osm": {
+        "id": "node/5930850891",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2275416,
+          35.0689605
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6886254022",
+      "coordinates": [
+        -1.4525516,
+        35.1508907
+      ],
+      "osm": {
+        "id": "node/6886254022",
+        "name": "Station-service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.4525516,
+          35.1508907
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10404",
+          "route_id": "8662",
+          "name_fr": "STATION DE SERVICES  LOCALE",
+          "name_ar": "محطة التزود بالوقود  محلية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            -1.452,
+            35.151
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة التزود بالوقود  محلية"
+    },
+    {
+      "id": "osm-node-6886254023",
+      "coordinates": [
+        -1.4162343,
+        35.2129841
+      ],
+      "osm": {
+        "id": "node/6886254023",
+        "name": "Station-service Naftal Ghorzi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.4162343,
+          35.2129841
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10403",
+          "route_id": "8662",
+          "name_fr": "STATION DE SERVICES EL GUERZI 2",
+          "name_ar": "محطة التزود بالوقود  الغرزي 2",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            -1.416,
+            35.213
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal Ghorzi",
+      "display_name_ar": "محطة التزود بالوقود  الغرزي 2"
+    },
+    {
+      "id": "osm-way-1080147134",
+      "coordinates": [
+        -1.3274592,
+        34.900679350000004
+      ],
+      "osm": {
+        "id": "way/1080147134",
+        "name": "Naftal",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3274592,
+          34.900679350000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-1087727123",
+      "coordinates": [
+        -1.3483716000000001,
+        34.915428649999996
+      ],
+      "osm": {
+        "id": "way/1087727123",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3483716000000001,
+          34.915428649999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1090308520",
+      "coordinates": [
+        -1.1857201000000002,
+        34.86783509999999
+      ],
+      "osm": {
+        "id": "way/1090308520",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1857201000000002,
+          34.86783509999999
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2095",
+          "route_id": "5245",
+          "name_fr": "Station de services beni add commune de ain Fezza",
+          "name_ar": "محطة قرية عين بني عاد بلدية عين فزة",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.1858,
+            34.8679
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services beni add commune de ain Fezza",
+      "display_name_ar": "محطة قرية عين بني عاد بلدية عين فزة"
+    },
+    {
+      "id": "osm-way-1091957596",
+      "coordinates": [
+        -1.4205475,
+        34.8659582
+      ],
+      "osm": {
+        "id": "way/1091957596",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.4205475,
+          34.8659582
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2494",
+          "route_id": "5913",
+          "name_fr": "station de services Hebri",
+          "name_ar": "محطة هبري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.4208,
+            34.8659
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 24
+        },
+        {
+          "id": "8422",
+          "route_id": "12936",
+          "name_fr": "hebri abed alhek",
+          "name_ar": "هبري عبد الحق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.4202,
+            34.8654
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 70
+        },
+        {
+          "id": "13176",
+          "route_id": "3005",
+          "name_fr": "station d essence",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.421,
+            34.866
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "station de services Hebri",
+      "display_name_ar": "محطة هبري"
+    },
+    {
+      "id": "osm-way-1093252289",
+      "coordinates": [
+        -1.3095939,
+        34.8941188
+      ],
+      "osm": {
+        "id": "way/1093252289",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3095939,
+          34.8941188
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1098636489",
+      "coordinates": [
+        -1.2956434,
+        35.11293485
+      ],
+      "osm": {
+        "id": "way/1098636489",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2956434,
+          35.11293485
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1148195073",
+      "coordinates": [
+        -1.67933775,
+        34.85952315
+      ],
+      "osm": {
+        "id": "way/1148195073",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -1.67933775,
+          34.85952315
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1172403718",
+      "coordinates": [
+        -1.8349666500000001,
+        35.0926496
+      ],
+      "osm": {
+        "id": "way/1172403718",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.8349666500000001,
+          35.0926496
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3191",
+          "route_id": "98",
+          "name_fr": "Station de services elaachi",
+          "name_ar": "محطة الوقود العشي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.835,
+            35.093
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود العشي"
+    },
+    {
+      "id": "osm-way-1216226098",
+      "coordinates": [
+        -1.7999101,
+        35.084462099999996
+      ],
+      "osm": {
+        "id": "way/1216226098",
+        "name": "Station service Bab Khroufa",
+        "name_ar": null,
+        "name_fr": "Station service Bab Khroufa",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.7999101,
+          35.084462099999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3989110748",
+          "offset_m": 11
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station service Bab Khroufa",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-314962138",
+      "coordinates": [
+        -1.7324231499999998,
+        34.8559076
+      ],
+      "osm": {
+        "id": "way/314962138",
+        "name": "Pompe à essence chiger",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.7324231499999998,
+          34.8559076
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4787",
+          "route_id": "9451",
+          "name_fr": "Station de services centre ville maghnia",
+          "name_ar": "وسط مدينة مغنية ( طريق الشيقر)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.732,
+            34.856
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Pompe à essence chiger",
+      "display_name_ar": "وسط مدينة مغنية ( طريق الشيقر)"
+    },
+    {
+      "id": "osm-way-413709981",
+      "coordinates": [
+        -1.3493613,
+        34.87780255
+      ],
+      "osm": {
+        "id": "way/413709981",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3493613,
+          34.87780255
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-413709982",
+      "coordinates": [
+        -1.3419949999999998,
+        34.90731425
+      ],
+      "osm": {
+        "id": "way/413709982",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3419949999999998,
+          34.90731425
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-419587764",
+      "coordinates": [
+        -1.2956262,
+        34.9193348
+      ],
+      "osm": {
+        "id": "way/419587764",
+        "name": "Station Service E. Leclerc",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2956262,
+          34.9193348
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5495",
+          "route_id": "7273",
+          "name_fr": "Station de services BELAARBI Chetouane",
+          "name_ar": "محطة الوقود بلعربي شتوان",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.295,
+            34.919
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service E. Leclerc",
+      "display_name_ar": "محطة الوقود بلعربي شتوان"
+    },
+    {
+      "id": "osm-way-420529238",
+      "coordinates": [
+        -1.42473965,
+        35.05092355
+      ],
+      "osm": {
+        "id": "way/420529238",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.42473965,
+          35.05092355
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10411",
+          "route_id": "8662",
+          "name_fr": "STATION DE SERVICES REMCHI",
+          "name_ar": "محطة التزود بالوقود  الرمشي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.424,
+            35.051
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة التزود بالوقود  الرمشي"
+    },
+    {
+      "id": "osm-way-420529262",
+      "coordinates": [
+        -1.4329125500000002,
+        35.07209695
+      ],
+      "osm": {
+        "id": "way/420529262",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.4329125500000002,
+          35.07209695
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10410",
+          "route_id": "8662",
+          "name_fr": "STATION DE SERVICES  EL GHOURZI 01",
+          "name_ar": "محطة التزود بالوقود الغرزي 01",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.433,
+            35.072
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة التزود بالوقود الغرزي 01"
+    },
+    {
+      "id": "osm-way-430401787",
+      "coordinates": [
+        -1.87126925,
+        35.0976606
+      ],
+      "osm": {
+        "id": "way/430401787",
+        "name": "Station Service Taher",
+        "name_ar": null,
+        "name_fr": "Station Service Taher",
+        "brand": "E.Leclerc",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.87126925,
+          35.0976606
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4534",
+          "route_id": "9170",
+          "name_fr": "Station de services TAHIR",
+          "name_ar": "محطة طاهير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.8713,
+            35.0977
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-93233870",
+          "offset_m": 0
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station Service Taher",
+      "display_name_ar": "محطة طاهير"
+    },
+    {
+      "id": "osm-way-437387142",
+      "coordinates": [
+        -0.95504225,
+        34.92361485
+      ],
+      "osm": {
+        "id": "way/437387142",
+        "name": "محطه وقود",
+        "name_ar": "محطه وقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.95504225,
+          34.92361485
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6383",
+          "route_id": "6303",
+          "name_fr": "station service hadouche  sofian",
+          "name_ar": "محطة الخدمات حدوش سفيان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.955,
+            34.924
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطه وقود",
+      "display_name_ar": "محطه وقود"
+    },
+    {
+      "id": "osm-way-720373064",
+      "coordinates": [
+        -2.2115627,
+        35.07303285
+      ],
+      "osm": {
+        "id": "way/720373064",
+        "name": "محطة بنزين نفطال",
+        "name_ar": "محطة بنزين نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2115627,
+          35.07303285
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة بنزين نفطال",
+      "display_name_ar": "محطة بنزين نفطال"
+    },
+    {
+      "id": "osm-way-720566946",
+      "coordinates": [
+        -2.0351411500000003,
+        34.9710427
+      ],
+      "osm": {
+        "id": "way/720566946",
+        "name": "Naftal",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -2.0351411500000003,
+          34.9710427
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5868",
+          "route_id": "9218",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.035,
+            34.97
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 117
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-735237046",
+      "coordinates": [
+        -1.439877,
+        35.109203949999994
+      ],
+      "osm": {
+        "id": "way/735237046",
+        "name": "محطة خدمة نفطال",
+        "name_ar": "محطة خدمة نفطال",
+        "name_fr": "Station Service Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -1.439877,
+          35.109203949999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10409",
+          "route_id": "8662",
+          "name_fr": "STATION DE SERVICES KAYBOUA",
+          "name_ar": "محطة التزود بالوقود  قيبوع",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop"
+          ],
+          "coordinates": [
+            -1.44,
+            35.11
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 89
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة خدمة نفطال"
+    },
+    {
+      "id": "osm-way-87265977",
+      "coordinates": [
+        -2.2109271,
+        35.072609549999996
+      ],
+      "osm": {
+        "id": "way/87265977",
+        "name": "نفطال مرسى بن مهيدي",
+        "name_ar": "نفطال مرسى بن مهيدي",
+        "name_fr": "NAFTAL Marsa Benmhidi",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -2.2109271,
+          35.072609549999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2694",
+          "route_id": "6203",
+          "name_fr": "Station de services MARSA BEN MHIDI",
+          "name_ar": "محطة توزيع الوقود مرسى بن مهيدي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -2.211,
+            35.072
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL Marsa Benmhidi",
+      "display_name_ar": "نفطال مرسى بن مهيدي"
+    },
+    {
+      "id": "osm-way-87999707",
+      "coordinates": [
+        -1.7656252000000001,
+        35.0273311
+      ],
+      "osm": {
+        "id": "way/87999707",
+        "name": "NAFTAL de Khouriba",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          -1.7656252000000001,
+          35.0273311
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12862",
+          "route_id": "17660",
+          "name_fr": "//",
+          "name_ar": "محطة نفطال بالخريبة بلدية ندرومة",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.765,
+            35.027
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL de Khouriba",
+      "display_name_ar": "محطة نفطال بالخريبة بلدية ندرومة"
+    },
+    {
+      "id": "osm-way-89554993",
+      "coordinates": [
+        -1.8878431,
+        35.041554500000004
+      ],
+      "osm": {
+        "id": "way/89554993",
+        "name": "NAFTAL Tounane",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          -1.8878431,
+          35.041554500000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5407",
+          "route_id": "6555",
+          "name_fr": "Station de services Tounane",
+          "name_ar": "محطة نافطال تونان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.888,
+            35.042
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL Tounane",
+      "display_name_ar": "محطة نافطال تونان"
+    },
+    {
+      "id": "osm-way-90606895",
+      "coordinates": [
+        -1.38281975,
+        34.953323499999996
+      ],
+      "osm": {
+        "id": "way/90606895",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.38281975,
+          34.953323499999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5414",
+          "route_id": "2375",
+          "name_fr": "Station de services azzouni mohamed village ouled Kada",
+          "name_ar": "محطة عزوني محمد قرية أولاد قادة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.383,
+            34.953
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة عزوني محمد قرية أولاد قادة"
+    },
+    {
+      "id": "osm-way-90626015",
+      "coordinates": [
+        -1.4584584,
+        34.98466905
+      ],
+      "osm": {
+        "id": "way/90626015",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.4584584,
+          34.98466905
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-93233870",
+      "coordinates": [
+        -1.87126925,
+        35.0976606
+      ],
+      "osm": {
+        "id": "way/93233870",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.87126925,
+          35.0976606
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-430401787",
+          "offset_m": 0
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12700",
+      "coordinates": [
+        -1.5397,
+        34.6627
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12700",
+          "route_id": "17354",
+          "name_fr": "station gazane",
+          "name_ar": "محطة قزان الطيب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.5397,
+            34.6627
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station gazane",
+      "display_name_ar": "محطة قزان الطيب"
+    },
+    {
+      "id": "tariki-13178",
+      "coordinates": [
+        -1.545,
+        34.662
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13178",
+          "route_id": "16217",
+          "name_fr": "STATION DESSENCE",
+          "name_ar": "محطة البنزين بقرية الفحص",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.545,
+            34.662
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DESSENCE",
+      "display_name_ar": "محطة البنزين بقرية الفحص"
+    },
+    {
+      "id": "tariki-2647",
+      "coordinates": [
+        -2.132,
+        35.001
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2647",
+          "route_id": "6131",
+          "name_fr": "Station de services OUKBEDANE",
+          "name_ar": "محطة توزيع الوقود أوكبدان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -2.132,
+            35.001
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services OUKBEDANE",
+      "display_name_ar": "محطة توزيع الوقود أوكبدان"
+    },
+    {
+      "id": "tariki-3659",
+      "coordinates": [
+        -1.9034,
+        34.9987
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3659",
+          "route_id": "7605",
+          "name_fr": "Station de services NFTAL",
+          "name_ar": "محطة نفطال للفلاحين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.9034,
+            34.9987
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NFTAL",
+      "display_name_ar": "محطة نفطال للفلاحين"
+    },
+    {
+      "id": "tariki-4038",
+      "coordinates": [
+        -1.6058,
+        34.956
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4038",
+          "route_id": "7076",
+          "name_fr": "Station de services",
+          "name_ar": "مجطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.6058,
+            34.956
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "مجطة بنزين"
+    },
+    {
+      "id": "tariki-4248",
+      "coordinates": [
+        -1.6374,
+        34.9655
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4248",
+          "route_id": "8632",
+          "name_fr": "Station de services AIN FETAH CENTRE",
+          "name_ar": "بلدية عين فتاح مركز",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.6374,
+            34.9655
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AIN FETAH CENTRE",
+      "display_name_ar": "بلدية عين فتاح مركز"
+    },
+    {
+      "id": "tariki-4785",
+      "coordinates": [
+        -1.678,
+        34.864
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4785",
+          "route_id": "9449",
+          "name_fr": "lagfaf maghnia",
+          "name_ar": "قرية لقفاف مغنية",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            -1.678,
+            34.864
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "lagfaf maghnia",
+      "display_name_ar": "قرية لقفاف مغنية"
+    },
+    {
+      "id": "tariki-5410",
+      "coordinates": [
+        -1.46,
+        34.987
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5410",
+          "route_id": "10203",
+          "name_fr": "Station de services Serir Abd Hamid",
+          "name_ar": "محطة سرير عبد الحميد",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.46,
+            34.987
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Serir Abd Hamid",
+      "display_name_ar": "محطة سرير عبد الحميد"
+    },
+    {
+      "id": "tariki-5412",
+      "coordinates": [
+        -1.513,
+        34.9467
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5412",
+          "route_id": "10208",
+          "name_fr": "Station de services Abd ALLAH Yakhlef",
+          "name_ar": "محطة عبد الله يخلف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.513,
+            34.9467
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Abd ALLAH Yakhlef",
+      "display_name_ar": "محطة عبد الله يخلف"
+    },
+    {
+      "id": "tariki-5413",
+      "coordinates": [
+        -1.366,
+        34.944
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5413",
+          "route_id": "2270",
+          "name_fr": "Station de services Khemar Chouaib",
+          "name_ar": "محطة خمار شعيب المدعو شاعة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.366,
+            34.944
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Khemar Chouaib",
+      "display_name_ar": "محطة خمار شعيب المدعو شاعة"
+    },
+    {
+      "id": "tariki-5862",
+      "coordinates": [
+        -1.921,
+        34.906
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5862",
+          "route_id": "9218",
+          "name_fr": "Station de services Hamdoune",
+          "name_ar": "محطة حمدون",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.921,
+            34.906
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Hamdoune",
+      "display_name_ar": "محطة حمدون"
+    },
+    {
+      "id": "tariki-6425",
+      "coordinates": [
+        -1.218,
+        34.985
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6425",
+          "route_id": "5876",
+          "name_fr": "STATION ZIANIYINE",
+          "name_ar": "محطة الزيانيين",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            -1.218,
+            34.985
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ZIANIYINE",
+      "display_name_ar": "محطة الزيانيين"
+    },
+    {
+      "id": "tariki-7112",
+      "coordinates": [
+        -1.346,
+        34.865
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7112",
+          "route_id": "7913",
+          "name_fr": "station d'essence",
+          "name_ar": "محطةوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.346,
+            34.865
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station d'essence",
+      "display_name_ar": "محطةوقود"
+    },
+    {
+      "id": "tariki-9897",
+      "coordinates": [
+        -1.0191,
+        34.9065
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9897",
+          "route_id": "14697",
+          "name_fr": "Station de services  RAZOUG",
+          "name_ar": "محطة رزوق",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.0191,
+            34.9065
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 13,
+          "wilaya_fr": "Tlemcen",
+          "wilaya_ar": "تلمسان",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  RAZOUG",
+      "display_name_ar": "محطة رزوق"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 53,
+  "records": [
+    {
+      "id": "node/1159237783",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal Bouhraoua",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.5419212,
+        28.4687801
+      ]
+    },
+    {
+      "id": "node/3090318903",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.8832861,
+        27.0866197
+      ]
+    },
+    {
+      "id": "node/3888311744",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.5067879,
+        27.2744256
+      ]
+    },
+    {
+      "id": "node/4566437690",
+      "amenity": "fuel",
+      "name": "تي إي جي عين صالح",
+      "name_ar": "تي إي جي عين صالح",
+      "name_fr": "TEG I-nSalah",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.524485,
+        28.4653218
+      ]
+    },
+    {
+      "id": "node/4583334690",
+      "amenity": "fuel",
+      "name": "مركز التطهير باينغر",
+      "name_ar": "مركز التطهير باينغر",
+      "name_fr": "Centre d'assainaissement",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.9095833,
+        27.1076792
+      ]
+    },
+    {
+      "id": "node/5435202622",
+      "amenity": "fuel",
+      "name": "بتروماق",
+      "name_ar": "بتروماق",
+      "name_fr": "PETROMAG",
+      "brand": "بتروماق",
+      "operator": "بتروماق",
+      "opening_hours": null,
+      "coordinates": [
+        2.5007283,
+        27.1749054
+      ]
+    },
+    {
+      "id": "node/5646603522",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.1640067,
+        26.0825804
+      ]
+    },
+    {
+      "id": "way/1361736303",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.16422385,
+        26.082473450000002
+      ]
+    },
+    {
+      "id": "way/266865960",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.4876382,
+        27.2050882
+      ]
+    }
+  ]
+}

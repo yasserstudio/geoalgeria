@@ -775,6 +775,39 @@
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
+    "id": "etusa-2",
+    "name": "Place des Martyrs - El Annasser",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "2",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-2",
+    "osm_relation_ids": [
+      5596708
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/5596708"
+  },
+  {
     "id": "etusa-3",
     "name": "Ligne 3 — Bouzaréah - Chevalley ↔ Souidania, via Bouchaoui",
     "wilaya_code": "16",
@@ -784,7 +817,7 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
     "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
@@ -804,10 +837,14 @@
       "Souidania"
     ],
     "stations_served": [],
-    "shape_id": null,
-    "osm_relation_ids": [],
+    "shape_id": "shape-etusa-3",
+    "osm_relation_ids": [
+      7986853,
+      7986887
+    ],
     "source_refs": [
-      "wikipedia"
+      "wikipedia",
+      "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
@@ -906,7 +943,7 @@
     "lng": null,
     "geo_precision": null,
     "geo_method": null,
-    "source": "wikipedia",
+    "source": "wikipedia+osm",
     "operator_id": "etusa",
     "operator": "ETUSA",
     "network": "Alger",
@@ -934,12 +971,50 @@
       "Jardin d'Essai",
       "Les Fusillés"
     ],
-    "shape_id": null,
-    "osm_relation_ids": [],
+    "shape_id": "shape-etusa-6",
+    "osm_relation_ids": [
+      7996451,
+      7996457
+    ],
     "source_refs": [
-      "wikipedia"
+      "wikipedia",
+      "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-7",
+    "name": "Place des Martyrs - 1e Mai",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "7",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-7",
+    "osm_relation_ids": [
+      3101360,
+      11273124
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/3101360"
   },
   {
     "id": "etusa-8",
@@ -1367,6 +1442,39 @@
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
+    "id": "etusa-28",
+    "name": "El Harrach - Hai El Badr (par Bachdjerrah)",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "28",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-28",
+    "osm_relation_ids": [
+      3106214
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/3106214"
+  },
+  {
     "id": "etusa-31",
     "name": "Ligne 31 — Place Maurice Audin ↔ Hydra - Place Al Smaa",
     "wilaya_code": "16",
@@ -1648,6 +1756,40 @@
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
+    "id": "etusa-38",
+    "name": "Bus: Place des Martyrs -> Z'Ghara / حافلة: ساحة الشهداء -> زغارة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "38",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-38",
+    "osm_relation_ids": [
+      2840538,
+      7939837
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/2840538"
+  },
+  {
     "id": "etusa-39",
     "name": "Ligne 39 — Place Maurice Audin ↔ Aéroport d'Alger",
     "wilaya_code": "16",
@@ -1841,6 +1983,40 @@
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
+    "id": "etusa-46",
+    "name": "Bus: Place des Martyrs -> Tarek Ibn Ziad",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "46",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-46",
+    "osm_relation_ids": [
+      3112820,
+      7936294
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/3112820"
+  },
+  {
     "id": "etusa-48",
     "name": "Ligne 48 — Place du Mai ↔ Ben Aknoun",
     "wilaya_code": "16",
@@ -2001,6 +2177,40 @@
       "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-56",
+    "name": "Chevalley - Zéralda (par Chéraga)",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "56",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-56",
+    "osm_relation_ids": [
+      3109487,
+      11267136
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/3109487"
   },
   {
     "id": "etusa-57",
@@ -2730,6 +2940,40 @@
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
   },
   {
+    "id": "etusa-96",
+    "name": "Hai El Badr - Djnane Sfari",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "96",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-96",
+    "osm_relation_ids": [
+      3105891,
+      11275870
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/3105891"
+  },
+  {
     "id": "etusa-98",
     "name": "Ligne 98 — Bab Ezzouar ↔ Bab El Oued - Place Ferhani",
     "wilaya_code": "16",
@@ -2821,6 +3065,543 @@
       "osm"
     ],
     "source_url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99"
+  },
+  {
+    "id": "etusa-100",
+    "name": "حافلة: ساحة الشهداء -> المطار",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "100",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-100",
+    "osm_relation_ids": [
+      7608188,
+      11273930
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/7608188"
+  },
+  {
+    "id": "etusa-101",
+    "name": "Place des Martyrs ساحة الشهداء - Birtouta بئر توتة",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "101",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-101",
+    "osm_relation_ids": [
+      2881556,
+      8093276,
+      11273122
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/2881556"
+  },
+  {
+    "id": "etusa-102",
+    "name": "El Harrach - Birtouta",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "102",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-102",
+    "osm_relation_ids": [
+      3114066
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/3114066"
+  },
+  {
+    "id": "etusa-105",
+    "name": "Bus: Bach Djarah => Gare Routiere De Baraki",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "105",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-105",
+    "osm_relation_ids": [
+      7982528
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/7982528"
+  },
+  {
+    "id": "etusa-113",
+    "name": "Bus: Gare Routiere -> Place Des Martyrs",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "113",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-113",
+    "osm_relation_ids": [
+      8086568,
+      8086569
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8086568"
+  },
+  {
+    "id": "etusa-178",
+    "name": "Bus: Gare Routiere -> Aéroport D'Alger H.B",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "178",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-178",
+    "osm_relation_ids": [
+      7937889
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/7937889"
+  },
+  {
+    "id": "etusa-601",
+    "name": "Bus: Dergana => Station 2 Mai",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "601",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-601",
+    "osm_relation_ids": [
+      8003366,
+      8066120
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8003366"
+  },
+  {
+    "id": "etusa-606",
+    "name": "Bus: Dergana => Aïn Taya",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "606",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-606",
+    "osm_relation_ids": [
+      8003403
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8003403"
+  },
+  {
+    "id": "etusa-643",
+    "name": "Bus: Baraki -> El Harrach",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "643",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-643",
+    "osm_relation_ids": [
+      8186188,
+      8186196
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8186188"
+  },
+  {
+    "id": "etusa-701",
+    "name": "Bus: Zéralda G.R -> Chevalley",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "701",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-701",
+    "osm_relation_ids": [
+      8001650,
+      8001677
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8001650"
+  },
+  {
+    "id": "etusa-707",
+    "name": "Bus: Chevalley -> Ain Benian",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "707",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-707",
+    "osm_relation_ids": [
+      8066555
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8066555"
+  },
+  {
+    "id": "etusa-731",
+    "name": "Bus: Sidi Abd Allah -> Chevalley",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "731",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-731",
+    "osm_relation_ids": [
+      8000586,
+      8000607
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8000586"
+  },
+  {
+    "id": "etusa-732",
+    "name": "Bus: Sidi Abd Allah -> Station 2 Mai",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "732",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-732",
+    "osm_relation_ids": [
+      8408345,
+      8409605
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8408345"
+  },
+  {
+    "id": "etusa-744",
+    "name": "Bus: Zéralda G. R. -> Staouéli",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "744",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-744",
+    "osm_relation_ids": [
+      8409730
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8409730"
+  },
+  {
+    "id": "etusa-D105",
+    "name": "Bus D: Bach Djarah => Gare Routiere De Baraki",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "D105",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-D105",
+    "osm_relation_ids": [
+      8034447
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/8034447"
+  },
+  {
+    "id": "etusa-L615",
+    "name": "Bus: Diar El Gharb 2 => Diar El Gharb 2",
+    "wilaya_code": "16",
+    "commune_code": null,
+    "commune": null,
+    "lat": null,
+    "lng": null,
+    "geo_precision": null,
+    "geo_method": null,
+    "source": "osm",
+    "operator_id": "etusa",
+    "operator": "ETUSA",
+    "network": "Alger",
+    "line": "L615",
+    "terminus1": null,
+    "terminus2": null,
+    "stops": null,
+    "major_stops": null,
+    "service_hours": [],
+    "departure_schedules": [],
+    "route_diagram_url": null,
+    "communes_served": [],
+    "stations_served": [],
+    "shape_id": "shape-etusa-L615",
+    "osm_relation_ids": [
+      16541421
+    ],
+    "source_refs": [
+      "osm"
+    ],
+    "source_url": "https://www.openstreetmap.org/relation/16541421"
   },
   {
     "id": "etus-setif-101",

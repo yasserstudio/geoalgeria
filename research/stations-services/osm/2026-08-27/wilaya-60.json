@@ -1,0 +1,153 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 60,
+  "records": [
+    {
+      "id": "node/10313557457",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.3847857,
+        35.3801331
+      ]
+    },
+    {
+      "id": "node/12511899243",
+      "amenity": "fuel",
+      "name": "محطة بنزين",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.2207173,
+        35.4865514
+      ]
+    },
+    {
+      "id": "node/4462348089",
+      "amenity": "fuel",
+      "name": "Station de Service",
+      "name_ar": null,
+      "name_fr": "Station de Service",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.7799064,
+        35.3492667
+      ]
+    },
+    {
+      "id": "node/4695551296",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.1779979,
+        35.1498106
+      ]
+    },
+    {
+      "id": "node/5419911857",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.3173909,
+        35.4280262
+      ]
+    },
+    {
+      "id": "way/358450525",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.37122575,
+        35.38841165
+      ]
+    },
+    {
+      "id": "way/370291801",
+      "amenity": "fuel",
+      "name": "Station Missaoui",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.4000526,
+        35.40835815
+      ]
+    },
+    {
+      "id": "way/370291803",
+      "amenity": "fuel",
+      "name": "Ben Yahiya",
+      "name_ar": "ابن يحيى",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.36288545,
+        35.36919895
+      ]
+    },
+    {
+      "id": "way/370291805",
+      "amenity": "fuel",
+      "name": "Ben Aoune",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.3569139,
+        35.394164700000005
+      ]
+    },
+    {
+      "id": "way/803510048",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.58718995,
+        35.3672751
+      ]
+    }
+  ]
+}

@@ -1,0 +1,621 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-51",
+    "wilaya_code": 51,
+    "name": "Ouled Djellal",
+    "name_ar": "أولاد جلال",
+    "center": [
+      4.75,
+      34.1085
+    ],
+    "bounds": [
+      4.131,
+      33.355,
+      5.369,
+      34.862
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 16,
+    "osm_records": 15,
+    "tariki_records": 8,
+    "cross_source": 5,
+    "multiple_tariki": 1,
+    "osm_only": 9,
+    "tariki_only": 1,
+    "nearby_osm_pairs": 0,
+    "conflicts": 2
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-way-442389437",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13720",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-13426744913",
+      "coordinates": [
+        5.2103595,
+        34.3643185
+      ],
+      "osm": {
+        "id": "node/13426744913",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2103595,
+          34.3643185
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1935539634",
+      "coordinates": [
+        5.0822208,
+        34.4360141
+      ],
+      "osm": {
+        "id": "node/1935539634",
+        "name": "محطة خدمات مختاري",
+        "name_ar": "محطة خدمات مختاري",
+        "name_fr": "station de services Mokhtari",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0822208,
+          34.4360141
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station de services Mokhtari",
+      "display_name_ar": "محطة خدمات مختاري"
+    },
+    {
+      "id": "osm-node-3121381226",
+      "coordinates": [
+        5.107108,
+        34.7562589
+      ],
+      "osm": {
+        "id": "node/3121381226",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.107108,
+          34.7562589
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2629",
+          "route_id": "6090",
+          "name_fr": "Station de services Chennoufi",
+          "name_ar": "محطة شنوفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.107,
+            34.756
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 30
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة شنوفي"
+    },
+    {
+      "id": "osm-node-3122475169",
+      "coordinates": [
+        5.0145563,
+        34.3984084
+      ],
+      "osm": {
+        "id": "node/3122475169",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "station Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0145563,
+          34.3984084
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-3213704394",
+      "coordinates": [
+        4.980488,
+        34.3920671
+      ],
+      "osm": {
+        "id": "node/3213704394",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.980488,
+          34.3920671
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-3229633033",
+      "coordinates": [
+        5.0985094,
+        34.5802788
+      ],
+      "osm": {
+        "id": "node/3229633033",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0985094,
+          34.5802788
+        ]
+      },
+      "tariki": [
+        {
+          "id": "133",
+          "route_id": "625",
+          "name_fr": "Station de services Hassayan Omar",
+          "name_ar": "محطة خدمات حساين عمر",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.099,
+            34.58
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات حساين عمر"
+    },
+    {
+      "id": "osm-node-3889610185",
+      "coordinates": [
+        5.1009569,
+        34.5828948
+      ],
+      "osm": {
+        "id": "node/3889610185",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1009569,
+          34.5828948
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5744",
+          "route_id": "625",
+          "name_fr": "Station de services Hassayan Omar",
+          "name_ar": "محطة خدمات حساين عمر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.101,
+            34.583
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات حساين عمر"
+    },
+    {
+      "id": "osm-node-4247637714",
+      "coordinates": [
+        5.0077671,
+        34.1798509
+      ],
+      "osm": {
+        "id": "node/4247637714",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0077671,
+          34.1798509
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2670",
+          "route_id": "6164",
+          "name_fr": "Station de services ELBESBES",
+          "name_ar": "محطة وقود بالبسباس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.007,
+            34.18
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود بالبسباس"
+    },
+    {
+      "id": "osm-node-6720671195",
+      "coordinates": [
+        5.0981446,
+        34.7611768
+      ],
+      "osm": {
+        "id": "node/6720671195",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0981446,
+          34.7611768
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-288952976",
+      "coordinates": [
+        5.070600799999999,
+        34.4406645
+      ],
+      "osm": {
+        "id": "way/288952976",
+        "name": "محطة خدمات نفطال",
+        "name_ar": "محطة خدمات نفطال",
+        "name_fr": "Station Service Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.070600799999999,
+          34.4406645
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4668",
+          "route_id": "9341",
+          "name_fr": "Station de services Naftal OULED DJALAL R 0724",
+          "name_ar": "محطة نفطال أولاد جلال R0724",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.071,
+            34.441
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-way-288954152",
+      "coordinates": [
+        5.06673805,
+        34.44969885
+      ],
+      "osm": {
+        "id": "way/288954152",
+        "name": "محطة خدمات الشهيد بن بوزيد محمد",
+        "name_ar": "محطة خدمات الشهيد بن بوزيد محمد",
+        "name_fr": "Station Service Ben Bouzid Mohamed",
+        "brand": "Independent",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.06673805,
+          34.44969885
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Ben Bouzid Mohamed",
+      "display_name_ar": "محطة خدمات الشهيد بن بوزيد محمد"
+    },
+    {
+      "id": "osm-way-310487714",
+      "coordinates": [
+        5.228630600000001,
+        34.3622421
+      ],
+      "osm": {
+        "id": "way/310487714",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.228630600000001,
+          34.3622421
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-442389437",
+      "coordinates": [
+        5.0051132,
+        34.40855955
+      ],
+      "osm": {
+        "id": "way/442389437",
+        "name": "بترو بركة",
+        "name_ar": "بترو بركة",
+        "name_fr": null,
+        "brand": "Petro-Baraka",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0051132,
+          34.40855955
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14337",
+          "route_id": "10117",
+          "name_fr": "station service selami",
+          "name_ar": "محطة الخدمات سلامي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.005,
+            34.408
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 63
+        },
+        {
+          "id": "14370",
+          "route_id": "21676",
+          "name_fr": "station traka",
+          "name_ar": "محطة الخدمات تراكة",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.005,
+            34.408
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": 63
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "بترو بركة",
+      "display_name_ar": "بترو بركة"
+    },
+    {
+      "id": "osm-way-468563295",
+      "coordinates": [
+        5.10711895,
+        34.64676245
+      ],
+      "osm": {
+        "id": "way/468563295",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.10711895,
+          34.64676245
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-836329926",
+      "coordinates": [
+        4.4712887,
+        34.179707949999994
+      ],
+      "osm": {
+        "id": "way/836329926",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4712887,
+          34.179707949999994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13720",
+      "coordinates": [
+        5.1,
+        34.76
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13720",
+          "route_id": "6090",
+          "name_fr": "PETRO BARAKA",
+          "name_ar": "محطة الخدمات بيتروبركة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.1,
+            34.76
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 51,
+          "wilaya_fr": "Ouled Djellal",
+          "wilaya_ar": "أولاد جلال",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "PETRO BARAKA",
+      "display_name_ar": "محطة الخدمات بيتروبركة"
+    }
+  ]
+}

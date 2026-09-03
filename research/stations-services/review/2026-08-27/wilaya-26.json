@@ -1,0 +1,1601 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-26",
+    "wilaya_code": 26,
+    "name": "Médéa",
+    "name_ar": "المدية",
+    "center": [
+      3.0389999999999997,
+      36.206500000000005
+    ],
+    "bounds": [
+      2.488,
+      35.908,
+      3.59,
+      36.505
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 38,
+    "osm_records": 27,
+    "tariki_records": 30,
+    "cross_source": 15,
+    "multiple_tariki": 2,
+    "osm_only": 10,
+    "tariki_only": 11,
+    "nearby_osm_pairs": 1,
+    "conflicts": 15
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-1983734071",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-2295761520",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4226539289",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-516717423",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12534",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13640",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14443",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14675",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4346",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4352",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4358",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4361",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4422",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5668",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7319",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-14068499101",
+      "coordinates": [
+        3.2499137,
+        36.0366366
+      ],
+      "osm": {
+        "id": "node/14068499101",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.2499137,
+          36.0366366
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1983734071",
+      "coordinates": [
+        2.9020216,
+        36.006672
+      ],
+      "osm": {
+        "id": "node/1983734071",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9020216,
+          36.006672
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4340",
+          "route_id": "8923",
+          "name_fr": "Station de services SEGHOUANE",
+          "name_ar": "محطة خدمات سغوان",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.902,
+            36.007
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 37
+        },
+        {
+          "id": "14448",
+          "route_id": "12646",
+          "name_fr": "STATIONMENT ESSENS",
+          "name_ar": "محطة الخدمات بسغوان",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            2.902,
+            36.007
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات سغوان"
+    },
+    {
+      "id": "osm-node-1988546480",
+      "coordinates": [
+        2.9019379,
+        36.14932
+      ],
+      "osm": {
+        "id": "node/1988546480",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9019379,
+          36.14932
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2002011271",
+      "coordinates": [
+        2.5601125,
+        36.2318611
+      ],
+      "osm": {
+        "id": "node/2002011271",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.5601125,
+          36.2318611
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4328",
+          "route_id": "8911",
+          "name_fr": "Station de services DOUI HASNI OUAMERI",
+          "name_ar": "محطة خدمات دوي حسني وامري",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.56,
+            36.232
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات دوي حسني وامري"
+    },
+    {
+      "id": "osm-node-2006877071",
+      "coordinates": [
+        2.7765334,
+        36.2780997
+      ],
+      "osm": {
+        "id": "node/2006877071",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7765334,
+          36.2780997
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4318",
+          "route_id": "8900",
+          "name_fr": "Station de services TLEMCENI",
+          "name_ar": "محطة خدمات تلمساني",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.776,
+            36.278
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات تلمساني"
+    },
+    {
+      "id": "osm-node-2009359989",
+      "coordinates": [
+        2.7365369,
+        36.2732635
+      ],
+      "osm": {
+        "id": "node/2009359989",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7365369,
+          36.2732635
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4320",
+          "route_id": "8900",
+          "name_fr": "Station de services OUEST RN 18 MEDEA",
+          "name_ar": "الطريق الوطني رقم  18 الخرجة الغربية لمدينة المدية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.736,
+            36.273
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "الطريق الوطني رقم  18 الخرجة الغربية لمدينة المدية"
+    },
+    {
+      "id": "osm-node-2010118929",
+      "coordinates": [
+        2.7543463,
+        36.2640201
+      ],
+      "osm": {
+        "id": "node/2010118929",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7543463,
+          36.2640201
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4323",
+          "route_id": "8900",
+          "name_fr": "Station de services FRERES BOUROUIS",
+          "name_ar": "محطة خدمات شارع الاخوة بورويس باب لقواس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.754,
+            36.264
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات شارع الاخوة بورويس باب لقواس"
+    },
+    {
+      "id": "osm-node-2010118979",
+      "coordinates": [
+        2.7525141,
+        36.2612313
+      ],
+      "osm": {
+        "id": "node/2010118979",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.7525141,
+          36.2612313
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2295000104",
+      "coordinates": [
+        3.2043765,
+        36.2083553
+      ],
+      "osm": {
+        "id": "node/2295000104",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2043765,
+          36.2083553
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4419",
+          "route_id": "9032",
+          "name_fr": "Station de services BOUAICHAOUI",
+          "name_ar": "محطة خدمات بوعيشاوي بوسكن",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.204,
+            36.208
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بوعيشاوي بوسكن"
+    },
+    {
+      "id": "osm-node-2295761520",
+      "coordinates": [
+        3.3170106,
+        36.2336203
+      ],
+      "osm": {
+        "id": "node/2295761520",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": "24/7",
+        "coordinates": [
+          3.3170106,
+          36.2336203
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-516717423",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2463708211",
+      "coordinates": [
+        3.1383502,
+        36.2058643
+      ],
+      "osm": {
+        "id": "node/2463708211",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1383502,
+          36.2058643
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4423",
+          "route_id": "9038",
+          "name_fr": "Station de services Hamidouche",
+          "name_ar": "محطة خدمات حميدوش سيدي نعمان",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.138,
+            36.206
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة خدمات حميدوش سيدي نعمان"
+    },
+    {
+      "id": "osm-node-3290891681",
+      "coordinates": [
+        2.8386839,
+        36.2557176
+      ],
+      "osm": {
+        "id": "node/3290891681",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.8386839,
+          36.2557176
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4332",
+          "route_id": "8914",
+          "name_fr": "Station de services ZEHAF OUEZRA",
+          "name_ar": "محطة خدمات زحاف وزرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.839,
+            36.256
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات زحاف وزرة"
+    },
+    {
+      "id": "osm-node-3354035756",
+      "coordinates": [
+        2.7718429,
+        36.274796
+      ],
+      "osm": {
+        "id": "node/3354035756",
+        "name": "Station service Zatch",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "zatch pomp",
+        "operator": "zatch",
+        "opening_hours": null,
+        "coordinates": [
+          2.7718429,
+          36.274796
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Zatch",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3514809326",
+      "coordinates": [
+        3.3115547,
+        36.4421338
+      ],
+      "osm": {
+        "id": "node/3514809326",
+        "name": "Deux Bassins",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.3115547,
+          36.4421338
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4421",
+          "route_id": "9033",
+          "name_fr": "Station de services ZEMALA",
+          "name_ar": "محطة خدمات فرقة الزمالة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.312,
+            36.442
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 43
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Deux Bassins",
+      "display_name_ar": "محطة خدمات فرقة الزمالة"
+    },
+    {
+      "id": "osm-node-3514809327",
+      "coordinates": [
+        3.3191641,
+        36.4076565
+      ],
+      "osm": {
+        "id": "node/3514809327",
+        "name": "Sonatrach",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.3191641,
+          36.4076565
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4420",
+          "route_id": "9033",
+          "name_fr": "Station de services OUED EL HAD",
+          "name_ar": "محطة خدمات واد الحد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.319,
+            36.408
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Sonatrach",
+      "display_name_ar": "محطة خدمات واد الحد"
+    },
+    {
+      "id": "osm-node-3514809905",
+      "coordinates": [
+        3.3632033,
+        36.3745979
+      ],
+      "osm": {
+        "id": "node/3514809905",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3632033,
+          36.3745979
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4429",
+          "route_id": "9048",
+          "name_fr": "Station de services GHEFAR Mezghena",
+          "name_ar": "محطة خدمات غفار مزغنة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.363,
+            36.375
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات غفار مزغنة"
+    },
+    {
+      "id": "osm-node-4226539289",
+      "coordinates": [
+        2.6318496,
+        36.2249291
+      ],
+      "osm": {
+        "id": "node/4226539289",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.6318496,
+          36.2249291
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4327",
+          "route_id": "8907",
+          "name_fr": "Station de services SLIMANI ABDELAZIZ OUED HARBIL RN18",
+          "name_ar": "محطة خدمات سليماني عبد العزيز وادي حربيل الطريق الوطني رقم 18",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.632,
+            36.224
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 104
+        },
+        {
+          "id": "13547",
+          "route_id": "17905",
+          "name_fr": null,
+          "name_ar": "محطة الربط سليماني",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.633,
+            36.225
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 103
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات سليماني عبد العزيز وادي حربيل الطريق الوطني رقم 18"
+    },
+    {
+      "id": "osm-node-4285644689",
+      "coordinates": [
+        3.3110097,
+        36.4130953
+      ],
+      "osm": {
+        "id": "node/4285644689",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.3110097,
+          36.4130953
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4729394392",
+      "coordinates": [
+        3.0222942,
+        36.2669982
+      ],
+      "osm": {
+        "id": "node/4729394392",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.0222942,
+          36.2669982
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4376",
+          "route_id": "8954",
+          "name_fr": "Station de services EL OMARIA",
+          "name_ar": "محطة خدمات العمارية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.022,
+            36.267
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services EL OMARIA",
+      "display_name_ar": "محطة خدمات العمارية"
+    },
+    {
+      "id": "osm-node-4821300823",
+      "coordinates": [
+        3.1561435,
+        36.2507512
+      ],
+      "osm": {
+        "id": "node/4821300823",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.1561435,
+          36.2507512
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5492275166",
+      "coordinates": [
+        3.2561159,
+        36.1218412
+      ],
+      "osm": {
+        "id": "node/5492275166",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2561159,
+          36.1218412
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7275590089",
+      "coordinates": [
+        2.921247,
+        36.1390435
+      ],
+      "osm": {
+        "id": "node/7275590089",
+        "name": "حسناوي",
+        "name_ar": "حسناوي",
+        "name_fr": "Hasnaoui",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.921247,
+          36.1390435
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Hasnaoui",
+      "display_name_ar": "حسناوي"
+    },
+    {
+      "id": "osm-way-340960569",
+      "coordinates": [
+        2.76218035,
+        36.263267600000006
+      ],
+      "osm": {
+        "id": "way/340960569",
+        "name": "Bentourkia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.76218035,
+          36.263267600000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9265",
+          "route_id": "8900",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.762,
+            36.263
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Bentourkia",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-way-416477765",
+      "coordinates": [
+        2.9221265499999998,
+        36.1293287
+      ],
+      "osm": {
+        "id": "way/416477765",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.9221265499999998,
+          36.1293287
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4349",
+          "route_id": "8926",
+          "name_fr": "Station de services CHORFA BERROUAGHIA NORD",
+          "name_ar": "محطة خدمات الشرفة البرواقية شمال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.922,
+            36.129
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services CHORFA BERROUAGHIA NORD",
+      "display_name_ar": "محطة خدمات الشرفة البرواقية شمال"
+    },
+    {
+      "id": "osm-way-516717423",
+      "coordinates": [
+        3.31713495,
+        36.2335693
+      ],
+      "osm": {
+        "id": "way/516717423",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.31713495,
+          36.2335693
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4362",
+          "route_id": "8943",
+          "name_fr": "Station de services l'ancien cyté RN 18",
+          "name_ar": "محطة خدمات الحي القديم ط و 18",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.317,
+            36.233
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 64
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-2295761520",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services l'ancien cyté RN 18",
+      "display_name_ar": "محطة خدمات الحي القديم ط و 18"
+    },
+    {
+      "id": "osm-way-654577906",
+      "coordinates": [
+        2.79119405,
+        36.265715650000004
+      ],
+      "osm": {
+        "id": "way/654577906",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          2.79119405,
+          36.265715650000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4319",
+          "route_id": "8900",
+          "name_fr": "Station de services KHELIF AHMED",
+          "name_ar": "محطة خدمات خليف احمد",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            2.791,
+            36.266
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": 36
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات خليف احمد"
+    },
+    {
+      "id": "osm-way-715090650",
+      "coordinates": [
+        3.2382912,
+        36.1091028
+      ],
+      "osm": {
+        "id": "way/715090650",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.2382912,
+          36.1091028
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12534",
+      "coordinates": [
+        3.253,
+        36.119
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12534",
+          "route_id": "11633",
+          "name_fr": "STATION DE SERVICE MERZOUG",
+          "name_ar": "محطة الخدمات مرزوق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.253,
+            36.119
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICE MERZOUG",
+      "display_name_ar": "محطة الخدمات مرزوق"
+    },
+    {
+      "id": "tariki-13640",
+      "coordinates": [
+        3,
+        36
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13640",
+          "route_id": "18154",
+          "name_fr": "//",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3,
+            36
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة متعددة الخدمات"
+    },
+    {
+      "id": "tariki-14443",
+      "coordinates": [
+        3.357,
+        36.364
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14443",
+          "route_id": "4135",
+          "name_fr": "GHEFFAR",
+          "name_ar": "غفار",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.357,
+            36.364
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "GHEFFAR",
+      "display_name_ar": "غفار"
+    },
+    {
+      "id": "tariki-14675",
+      "coordinates": [
+        3,
+        36
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14675",
+          "route_id": "18154",
+          "name_fr": "station multi service",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3,
+            36
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station multi service",
+      "display_name_ar": "محطة متعددة الخدمات"
+    },
+    {
+      "id": "tariki-4346",
+      "coordinates": [
+        2.92,
+        36.132
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4346",
+          "route_id": "8926",
+          "name_fr": "Station de services CITE 800 LOGT BERROUAGHIA",
+          "name_ar": "محطة خدمات حي 800 مسكن البرواقية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.92,
+            36.132
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services CITE 800 LOGT BERROUAGHIA",
+      "display_name_ar": "محطة خدمات حي 800 مسكن البرواقية"
+    },
+    {
+      "id": "tariki-4352",
+      "coordinates": [
+        2.921,
+        36.144
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4352",
+          "route_id": "8929",
+          "name_fr": "Station de services HASNAOUI FETHI",
+          "name_ar": "محطة خدمات حسناوي فتحي البرواقية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.921,
+            36.144
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HASNAOUI FETHI",
+      "display_name_ar": "محطة خدمات حسناوي فتحي البرواقية"
+    },
+    {
+      "id": "tariki-4358",
+      "coordinates": [
+        2.863,
+        36.144
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4358",
+          "route_id": "8935",
+          "name_fr": "Station de services LAKHEL MAHIEDDINE",
+          "name_ar": "محطة خدمات لكحل محي الدين البرواقية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            2.863,
+            36.144
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services LAKHEL MAHIEDDINE",
+      "display_name_ar": "محطة خدمات لكحل محي الدين البرواقية"
+    },
+    {
+      "id": "tariki-4361",
+      "coordinates": [
+        3.361,
+        36.255
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4361",
+          "route_id": "8943",
+          "name_fr": "Station de services BRAHIMI RN 18",
+          "name_ar": "محطة خدمات براهيمي  ط و 18",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.361,
+            36.255
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BRAHIMI RN 18",
+      "display_name_ar": "محطة خدمات براهيمي  ط و 18"
+    },
+    {
+      "id": "tariki-4422",
+      "coordinates": [
+        3.442,
+        36.137
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4422",
+          "route_id": "9037",
+          "name_fr": "Station de services DJAOUEB",
+          "name_ar": "محطة خدمات جواب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.442,
+            36.137
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services DJAOUEB",
+      "display_name_ar": "محطة خدمات جواب"
+    },
+    {
+      "id": "tariki-5668",
+      "coordinates": [
+        3.214,
+        36.432
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5668",
+          "route_id": "10499",
+          "name_fr": "Station de services HOUCH MAKHFI",
+          "name_ar": "محطة الوقود حوش المخفي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.214,
+            36.432
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HOUCH MAKHFI",
+      "display_name_ar": "محطة الوقود حوش المخفي"
+    },
+    {
+      "id": "tariki-7319",
+      "coordinates": [
+        3.21,
+        36.43
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7319",
+          "route_id": "10500",
+          "name_fr": "STATION D'ESSENCE ADJRID",
+          "name_ar": "محطة الوقود عجريد",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            3.21,
+            36.43
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 26,
+          "wilaya_fr": "Médéa",
+          "wilaya_ar": "المدية",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE ADJRID",
+      "display_name_ar": "محطة الوقود عجريد"
+    }
+  ]
+}

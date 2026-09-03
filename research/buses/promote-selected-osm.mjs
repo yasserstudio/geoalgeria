@@ -46,14 +46,27 @@ const approvedSetifLineFor = (relationIds) =>
     approvedIds.length === relationIds.length
     && approvedIds.every((id, index) => id === relationIds[index]))?.[0] ?? null;
 
-const etusaRefs = new Set(etusa.lines.map((line) => line.line));
+// OSM writes some ETUSA refs zero-padded ("03" for Line 3). Join on a canonical
+// form so a published Line is not silently denied its geometry, and carry the
+// PUBLISHED spelling forward so the shape still keys to its Line downstream.
+const normRef = (ref) => String(ref ?? "").trim().toUpperCase().replace(/^0+(?=\d)/, "");
+const publishedEtusaRefByNorm = new Map(etusa.lines.map((line) => [normRef(line.line), line.line]));
+const canonicalEtusaRef = (ref) => publishedEtusaRefByNorm.get(normRef(ref)) ?? ref;
 const reviewedTiaretRefs = new Set(officialTiaret.map((line) => line.ref));
 const reviewedEtustoRefs = new Set(officialEtusto.map((line) => line.ref));
 const reviewedSetifRefs = new Set(officialSetif.lines.map((line) => line.ref));
 const selected = candidates.filter((candidate) =>
   candidate.classification?.value === "urban_suburban_candidate" &&
   candidate.map_readiness === "geometry_candidate" && (
-    (candidate.operator_id === "etusa" && etusaRefs.has(candidate.ref)) ||
+    // ETUSA identity is accepted from OSM itself, not only from the retained
+    // 50-Line registry: the registry covers Lines 1-99 from one crowdsourced
+    // list and omits the 6xx/7xx suburban network entirely. The operator match
+    // is already evidenced (operator/network tag or Wikidata QID) before a
+    // candidate reaches here, and every published Line links its OSM relations
+    // so a reader can report or fix a wrong route at the origin. Cross-wilaya
+    // routes stay excluded; that is a separate, still-open decision.
+    (candidate.operator_id === "etusa"
+      && !(candidate.quality_flags ?? []).includes("cross_wilaya")) ||
     (candidate.operator_id === "etus-tiaret" && reviewedTiaretRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etusto" && reviewedEtustoRefs.has(candidate.ref)) ||
     (candidate.operator_id === "etus-setif" && approvedSetifLineFor(candidate.relation_ids) != null) ||
@@ -67,7 +80,7 @@ const byOperator = Object.fromEntries(
     selected.filter((candidate) => candidate.operator_id === id).length,
   ]),
 );
-if (selected.length !== 47 || byOperator.etusa !== 33 || byOperator["etus-tiaret"] !== 7
+if (selected.length !== 72 || byOperator.etusa !== 58 || byOperator["etus-tiaret"] !== 7
   || byOperator.etusto !== 3 || byOperator["etus-mostaganem"] !== 1
   || byOperator["etus-setif"] !== 3) {
   throw new Error(`Selection drifted: ${JSON.stringify({ total: selected.length, byOperator })}`);
@@ -86,7 +99,9 @@ const lineShapes = selected
     if (relations.some((relation) => !relation)) throw new Error(`Missing relation for ${candidate.id}`);
     const ref = candidate.operator_id === "etus-setif"
       ? approvedSetifLineFor(candidate.relation_ids) ?? candidate.ref
-      : candidate.ref;
+      : candidate.operator_id === "etusa"
+        ? canonicalEtusaRef(candidate.ref)
+        : candidate.ref;
     return {
       operator_id: candidate.operator_id,
       ref,
@@ -133,7 +148,7 @@ const source = {
   source: "OpenStreetMap via Overpass API",
   license: "ODbL-1.0",
   attribution: "© OpenStreetMap contributors",
-  selection_note: "Reviewed urban/suburban geometry subset only: 33 exact-ref ETUSA shapes for the retained 50-line registry, 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
+  selection_note: "Reviewed urban/suburban geometry subset only: 58 ETUSA shapes, of which 35 carry a ref from the retained 50-line registry and 23 take their Line identity from the evidenced OSM operator match alone (the registry lists only Lines 1-99 and omits the 6xx/7xx suburban network); 7 ETUS Tiaret Lines selected from the extracted official Operator Line set, 3 ETUSTO Lines selected from the extracted official Operator Line set, 3 ETUS Setif Lines matched to official Operator identities, and the single ETUS Mostaganem candidate. The stale Tiaret ref 33 plus unresolved, taxi, cross/inter-wilaya, unmatched Setif, ETUAD, and validation-only official geometry are excluded.",
   membership_note: "Station memberships preserve raw OSM relation-member order and roles. This order is unvalidated as a passenger stop sequence, and no terminus status is inferred.",
   selection_counts: {
     shape_candidates: lineShapes.length,

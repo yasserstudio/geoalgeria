@@ -1,0 +1,1783 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-07",
+    "wilaya_code": 7,
+    "name": "Biskra",
+    "name_ar": "بسكرة",
+    "center": [
+      5.849,
+      34.6905
+    ],
+    "bounds": [
+      4.925,
+      34.283,
+      6.773,
+      35.098
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 51,
+    "osm_records": 44,
+    "tariki_records": 22,
+    "cross_source": 13,
+    "multiple_tariki": 1,
+    "osm_only": 30,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 2,
+    "conflicts": 12
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4247649823",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6638270213",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6638270254",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-288671487",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-338004089",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1538",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1828",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2283",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2287",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4693",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4705",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4996",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10694949278",
+      "coordinates": [
+        5.8410589,
+        34.8471125
+      ],
+      "osm": {
+        "id": "node/10694949278",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8410589,
+          34.8471125
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3121198666",
+      "coordinates": [
+        5.5754396,
+        34.6716496
+      ],
+      "osm": {
+        "id": "node/3121198666",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5754396,
+          34.6716496
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3123633316",
+      "coordinates": [
+        5.7011275,
+        34.8409328
+      ],
+      "osm": {
+        "id": "node/3123633316",
+        "name": "Boularbah",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7011275,
+          34.8409328
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Boularbah",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3144612800",
+      "coordinates": [
+        5.3957574,
+        34.6661622
+      ],
+      "osm": {
+        "id": "node/3144612800",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3957574,
+          34.6661622
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-3145084271",
+      "coordinates": [
+        5.6990015,
+        34.6752829
+      ],
+      "osm": {
+        "id": "node/3145084271",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": "Station service",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6990015,
+          34.6752829
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4702",
+          "route_id": "9393",
+          "name_fr": "Station de services Guidoum Sahraoui",
+          "name_ar": "قيدوم صحراوي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.699,
+            34.675
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service",
+      "display_name_ar": "قيدوم صحراوي"
+    },
+    {
+      "id": "osm-node-3163722309",
+      "coordinates": [
+        5.367112,
+        34.7292501
+      ],
+      "osm": {
+        "id": "node/3163722309",
+        "name": "محطة الخدمات بن صالح فاروق",
+        "name_ar": "محطة الخدمات بن صالح فاروق",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.367112,
+          34.7292501
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة الخدمات بن صالح فاروق",
+      "display_name_ar": "محطة الخدمات بن صالح فاروق"
+    },
+    {
+      "id": "osm-node-3163722312",
+      "coordinates": [
+        5.3824542,
+        34.7294545
+      ],
+      "osm": {
+        "id": "node/3163722312",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3824542,
+          34.7294545
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3910009763",
+      "coordinates": [
+        5.4462024,
+        34.7280169
+      ],
+      "osm": {
+        "id": "node/3910009763",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4462024,
+          34.7280169
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4247640027",
+      "coordinates": [
+        6.029,
+        34.569
+      ],
+      "osm": {
+        "id": "node/4247640027",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.029,
+          34.569
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1715",
+          "route_id": "4690",
+          "name_fr": "Station de services Sayeh Essadek",
+          "name_ar": "محطة الخدمات سايح  الصادق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.029,
+            34.569
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 0
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات سايح  الصادق"
+    },
+    {
+      "id": "osm-node-4247640066",
+      "coordinates": [
+        6.2697694,
+        34.7066181
+      ],
+      "osm": {
+        "id": "node/4247640066",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2697694,
+          34.7066181
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4247649823",
+      "coordinates": [
+        6.4960436,
+        34.6844793
+      ],
+      "osm": {
+        "id": "node/4247649823",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4960436,
+          34.6844793
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1517",
+          "route_id": "4336",
+          "name_fr": "station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.496,
+            34.684
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 53
+        },
+        {
+          "id": "1518",
+          "route_id": "4336",
+          "name_fr": "station de services Baraka",
+          "name_ar": "محطة خدمات البركة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.496,
+            34.685
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4326775889",
+      "coordinates": [
+        5.9776039,
+        34.9339048
+      ],
+      "osm": {
+        "id": "node/4326775889",
+        "name": "محطة خدمات حمروني",
+        "name_ar": "محطة خدمات حمروني",
+        "name_fr": "Hamrouni services station",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9776039,
+          34.9339048
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13733",
+          "route_id": "19449",
+          "name_fr": "STATION SERVICES HAMRONI",
+          "name_ar": "محطة الخدمات حمروني",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.978,
+            34.934
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Hamrouni services station",
+      "display_name_ar": "محطة خدمات حمروني"
+    },
+    {
+      "id": "osm-node-5121228828",
+      "coordinates": [
+        5.7330884,
+        34.7694527
+      ],
+      "osm": {
+        "id": "node/5121228828",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7330884,
+          34.7694527
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5121239021",
+      "coordinates": [
+        5.7071064,
+        34.6546076
+      ],
+      "osm": {
+        "id": "node/5121239021",
+        "name": "Station Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7071064,
+          34.6546076
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5121239321",
+      "coordinates": [
+        5.6871543,
+        34.8243924
+      ],
+      "osm": {
+        "id": "node/5121239321",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6871543,
+          34.8243924
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6343563562",
+      "coordinates": [
+        5.7648793,
+        34.8283665
+      ],
+      "osm": {
+        "id": "node/6343563562",
+        "name": "محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": "Petro Baraka",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7648793,
+          34.8283665
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-6638270213",
+      "coordinates": [
+        5.7143653,
+        34.8797848
+      ],
+      "osm": {
+        "id": "node/6638270213",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7143653,
+          34.8797848
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-338004089",
+          "offset_m": 16
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6638270254",
+      "coordinates": [
+        5.715558,
+        34.7997267
+      ],
+      "osm": {
+        "id": "node/6638270254",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.715558,
+          34.7997267
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-288671487",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6638487627",
+      "coordinates": [
+        5.7960872,
+        34.5988312
+      ],
+      "osm": {
+        "id": "node/6638487627",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7960872,
+          34.5988312
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6707654096",
+      "coordinates": [
+        5.978523,
+        34.9521599
+      ],
+      "osm": {
+        "id": "node/6707654096",
+        "name": "محطة خدمات البنزين الجديدة مشونش",
+        "name_ar": "محطة خدمات البنزين الجديدة مشونش",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.978523,
+          34.9521599
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13734",
+          "route_id": "19449",
+          "name_fr": "STATION SERVICES SEFIONA",
+          "name_ar": "محطة الخدمات سفيونة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.978,
+            34.953
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 105
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة خدمات البنزين الجديدة مشونش",
+      "display_name_ar": "محطة خدمات البنزين الجديدة مشونش"
+    },
+    {
+      "id": "osm-node-7019074945",
+      "coordinates": [
+        5.6833099,
+        34.8448089
+      ],
+      "osm": {
+        "id": "node/7019074945",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6833099,
+          34.8448089
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7723525294",
+      "coordinates": [
+        6.5297228,
+        34.6193137
+      ],
+      "osm": {
+        "id": "node/7723525294",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Petro Baraka",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5297228,
+          34.6193137
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Petro Baraka",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1473786013",
+      "coordinates": [
+        5.86732955,
+        34.497313199999994
+      ],
+      "osm": {
+        "id": "way/1473786013",
+        "name": "Houhou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.86732955,
+          34.497313199999994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Houhou",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-288628068",
+      "coordinates": [
+        5.6904821000000005,
+        34.821510599999996
+      ],
+      "osm": {
+        "id": "way/288628068",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6904821000000005,
+          34.821510599999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-288671487",
+      "coordinates": [
+        5.7154919500000005,
+        34.7996787
+      ],
+      "osm": {
+        "id": "way/288671487",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7154919500000005,
+          34.7996787
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1486",
+          "route_id": "4277",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.715,
+            34.8
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6638270254",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-way-307273381",
+      "coordinates": [
+        5.48621425,
+        34.7409058
+      ],
+      "osm": {
+        "id": "way/307273381",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.48621425,
+          34.7409058
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-307273382",
+      "coordinates": [
+        5.63881645,
+        34.8048484
+      ],
+      "osm": {
+        "id": "way/307273382",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.63881645,
+          34.8048484
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1885",
+          "route_id": "4692",
+          "name_fr": "Station de services Zaatcha Ben Boulaid",
+          "name_ar": "محطة خدمات الزعاطشة بن بولعيد /الحاجب",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.639,
+            34.805
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Zaatcha Ben Boulaid",
+      "display_name_ar": "محطة خدمات الزعاطشة بن بولعيد /الحاجب"
+    },
+    {
+      "id": "osm-way-307273383",
+      "coordinates": [
+        5.3994432,
+        34.730388000000005
+      ],
+      "osm": {
+        "id": "way/307273383",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.3994432,
+          34.730388000000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-307273384",
+      "coordinates": [
+        5.3371188499999995,
+        34.750965300000004
+      ],
+      "osm": {
+        "id": "way/307273384",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3371188499999995,
+          34.750965300000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11878",
+          "route_id": "9454",
+          "name_fr": "STATION ESSENCE AKSA MESSAOUD",
+          "name_ar": "محطة البنزين عكسة مسعود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.337,
+            34.751
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION ESSENCE AKSA MESSAOUD",
+      "display_name_ar": "محطة البنزين عكسة مسعود"
+    },
+    {
+      "id": "osm-way-307273385",
+      "coordinates": [
+        5.414419349999999,
+        34.73437965
+      ],
+      "osm": {
+        "id": "way/307273385",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.414419349999999,
+          34.73437965
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-307273386",
+      "coordinates": [
+        5.28289695,
+        34.733113349999996
+      ],
+      "osm": {
+        "id": "way/307273386",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.28289695,
+          34.733113349999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-336097968",
+      "coordinates": [
+        5.7213554,
+        34.8513596
+      ],
+      "osm": {
+        "id": "way/336097968",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7213554,
+          34.8513596
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-337361031",
+      "coordinates": [
+        5.727672,
+        34.85398175
+      ],
+      "osm": {
+        "id": "way/337361031",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.727672,
+          34.85398175
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-337361033",
+      "coordinates": [
+        5.73114695,
+        34.85272465
+      ],
+      "osm": {
+        "id": "way/337361033",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.73114695,
+          34.85272465
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-337361853",
+      "coordinates": [
+        5.5431132000000005,
+        34.7679829
+      ],
+      "osm": {
+        "id": "way/337361853",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5431132000000005,
+          34.7679829
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1904",
+          "route_id": "4692",
+          "name_fr": "Station de services AIN ELKARMA",
+          "name_ar": "محطة عين الكرمة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.543,
+            34.768
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة عين الكرمة"
+    },
+    {
+      "id": "osm-way-337980101",
+      "coordinates": [
+        5.3731625,
+        34.695523
+      ],
+      "osm": {
+        "id": "way/337980101",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3731625,
+          34.695523
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4688",
+          "route_id": "4553",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.373,
+            34.696
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-337987833",
+      "coordinates": [
+        5.8702036,
+        34.7662105
+      ],
+      "osm": {
+        "id": "way/337987833",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8702036,
+          34.7662105
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1771",
+          "route_id": "4770",
+          "name_fr": "Station de services Ouled Assous",
+          "name_ar": "محطة الخدمات أولاد عسعوس",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.87,
+            34.766
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 30
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Ouled Assous",
+      "display_name_ar": "محطة الخدمات أولاد عسعوس"
+    },
+    {
+      "id": "osm-way-337988898",
+      "coordinates": [
+        5.78035005,
+        34.816046650000004
+      ],
+      "osm": {
+        "id": "way/337988898",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Ets Tahraoui",
+        "opening_hours": null,
+        "coordinates": [
+          5.78035005,
+          34.816046650000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5157",
+          "route_id": "9935",
+          "name_fr": "Station de services Tahraoui",
+          "name_ar": "محطة طهرواي للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.78,
+            34.816
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Tahraoui",
+      "display_name_ar": "محطة طهرواي للخدمات"
+    },
+    {
+      "id": "osm-way-337990277",
+      "coordinates": [
+        5.9228480999999995,
+        34.738527000000005
+      ],
+      "osm": {
+        "id": "way/337990277",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9228480999999995,
+          34.738527000000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1830",
+          "route_id": "4770",
+          "name_fr": "Station de services YAHYAOUI",
+          "name_ar": "محطة الخدمات يحياوي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.923,
+            34.738
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services YAHYAOUI",
+      "display_name_ar": "محطة الخدمات يحياوي"
+    },
+    {
+      "id": "osm-way-337996413",
+      "coordinates": [
+        6.490323249999999,
+        34.68643285
+      ],
+      "osm": {
+        "id": "way/337996413",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Petro Baraka",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.490323249999999,
+          34.68643285
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Petro Baraka",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-337996882",
+      "coordinates": [
+        6.7002117000000005,
+        34.79748445
+      ],
+      "osm": {
+        "id": "way/337996882",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7002117000000005,
+          34.79748445
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3314",
+          "route_id": "7053",
+          "name_fr": "Station de services BOUGHDIRI",
+          "name_ar": "محطة الخدمات بوغديري",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.7,
+            34.798
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BOUGHDIRI",
+      "display_name_ar": "محطة الخدمات بوغديري"
+    },
+    {
+      "id": "osm-way-338004089",
+      "coordinates": [
+        5.7142415,
+        34.879682849999995
+      ],
+      "osm": {
+        "id": "way/338004089",
+        "name": "نفطال",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7142415,
+          34.879682849999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6638270213",
+          "offset_m": 16
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "نفطال",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-338157965",
+      "coordinates": [
+        5.74080335,
+        34.8339821
+      ],
+      "osm": {
+        "id": "way/338157965",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.74080335,
+          34.8339821
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-526095259",
+      "coordinates": [
+        5.7065364,
+        34.8882519
+      ],
+      "osm": {
+        "id": "way/526095259",
+        "name": "staion de service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Petro-Baraka",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7065364,
+          34.8882519
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "staion de service",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-1538",
+      "coordinates": [
+        5.784,
+        34.848
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1538",
+          "route_id": "4391",
+          "name_fr": "Station de services Elzir",
+          "name_ar": "محطة خدمات الزير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.784,
+            34.848
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elzir",
+      "display_name_ar": "محطة خدمات الزير"
+    },
+    {
+      "id": "tariki-1828",
+      "coordinates": [
+        5.898,
+        34.764
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1828",
+          "route_id": "4770",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.898,
+            34.764
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "tariki-2283",
+      "coordinates": [
+        6.054,
+        34.693
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2283",
+          "route_id": "5573",
+          "name_fr": "Station de services ZAIM",
+          "name_ar": "محطة تزويد بالوقود الزعيم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.054,
+            34.693
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ZAIM",
+      "display_name_ar": "محطة تزويد بالوقود الزعيم"
+    },
+    {
+      "id": "tariki-2287",
+      "coordinates": [
+        6.271,
+        34.707
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2287",
+          "route_id": "5574",
+          "name_fr": "Station de services RAFRAFI",
+          "name_ar": "محطة تزويد بالوقود رفرافي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.271,
+            34.707
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services RAFRAFI",
+      "display_name_ar": "محطة تزويد بالوقود رفرافي"
+    },
+    {
+      "id": "tariki-4693",
+      "coordinates": [
+        5.691,
+        34.678
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4693",
+          "route_id": "9390",
+          "name_fr": "Station de services Saifi",
+          "name_ar": "محطة الخدمات صيفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.691,
+            34.678
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Saifi",
+      "display_name_ar": "محطة الخدمات صيفي"
+    },
+    {
+      "id": "tariki-4705",
+      "coordinates": [
+        5.716,
+        34.653
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4705",
+          "route_id": "9393",
+          "name_fr": "Station de services Frères Chamekh",
+          "name_ar": "الاخوة الشامخ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.716,
+            34.653
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Frères Chamekh",
+      "display_name_ar": "الاخوة الشامخ"
+    },
+    {
+      "id": "tariki-4996",
+      "coordinates": [
+        5.419,
+        34.731
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4996",
+          "route_id": "5523",
+          "name_fr": "Station de services Boukhalfa",
+          "name_ar": "محطة بوخالفة للتزويد بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.419,
+            34.731
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 7,
+          "wilaya_fr": "Biskra",
+          "wilaya_ar": "بسكرة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Boukhalfa",
+      "display_name_ar": "محطة بوخالفة للتزويد بالوقود"
+    }
+  ]
+}

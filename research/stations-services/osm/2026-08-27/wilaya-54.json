@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 54,
+  "records": [
+    {
+      "id": "way/744794426",
+      "amenity": "fuel",
+      "name": "بلوافي القائم",
+      "name_ar": "بلوافي القائم",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "بلوافي القائم",
+      "opening_hours": "24/7",
+      "coordinates": [
+        5.7710442,
+        19.55790205
+      ]
+    },
+    {
+      "id": "way/744794427",
+      "amenity": "fuel",
+      "name": "Gas station Naftal محطة الوقود نفطال",
+      "name_ar": "محطة الوقود نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.7723426,
+        19.56459445
+      ]
+    }
+  ]
+}

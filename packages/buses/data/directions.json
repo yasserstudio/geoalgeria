@@ -1,5 +1,20 @@
 [
   {
+    "id": "osm-relation-2840538",
+    "line_id": "etusa-38",
+    "shape_id": "shape-etusa-38",
+    "osm_relation_id": 2840538,
+    "from": "ساحة الشهداء",
+    "to": "زغارة",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-2847141",
     "line_id": "etusa-37",
     "shape_id": "shape-etusa-37",
@@ -105,6 +120,21 @@
     ]
   },
   {
+    "id": "osm-relation-2881556",
+    "line_id": "etusa-101",
+    "shape_id": "shape-etusa-101",
+    "osm_relation_id": 2881556,
+    "from": "Place des Martyrs ساحة الشهداء",
+    "to": "Birtouta بئر توتة",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-2881745",
     "line_id": "etusa-12",
     "shape_id": "shape-etusa-12",
@@ -120,6 +150,21 @@
     ]
   },
   {
+    "id": "osm-relation-3101360",
+    "line_id": "etusa-7",
+    "shape_id": "shape-etusa-7",
+    "osm_relation_id": 3101360,
+    "from": "Place des Martyrs",
+    "to": "1e Mai",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-3101476",
     "line_id": "etusa-14",
     "shape_id": "shape-etusa-14",
@@ -127,6 +172,21 @@
     "from": "1er Mai",
     "to": "Bir Mourad Rais",
     "via": "El Annassers",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-3105891",
+    "line_id": "etusa-96",
+    "shape_id": "shape-etusa-96",
+    "osm_relation_id": 3105891,
+    "from": "Hai El Badr",
+    "to": "Djnane Sfari",
+    "via": null,
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -180,6 +240,51 @@
     ]
   },
   {
+    "id": "osm-relation-3106214",
+    "line_id": "etusa-28",
+    "shape_id": "shape-etusa-28",
+    "osm_relation_id": 3106214,
+    "from": "El Harrach",
+    "to": "Hai El Badr",
+    "via": "Bachdjerrah",
+    "public_transport_version": null,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-3109487",
+    "line_id": "etusa-56",
+    "shape_id": "shape-etusa-56",
+    "osm_relation_id": 3109487,
+    "from": "Chevalley",
+    "to": "Zéralda",
+    "via": "Chéraga",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-3112820",
+    "line_id": "etusa-46",
+    "shape_id": "shape-etusa-46",
+    "osm_relation_id": 3112820,
+    "from": "Place des Martyrs",
+    "to": "Tarek Ibn Ziad",
+    "via": "Louni Arezki",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-3112924",
     "line_id": "etusa-54",
     "shape_id": "shape-etusa-54",
@@ -195,12 +300,42 @@
     ]
   },
   {
+    "id": "osm-relation-3114066",
+    "line_id": "etusa-102",
+    "shape_id": "shape-etusa-102",
+    "osm_relation_id": 3114066,
+    "from": "El Harrach",
+    "to": "Birtouta",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-3122700",
     "line_id": "etusa-94",
     "shape_id": "shape-etusa-94",
     "osm_relation_id": 3122700,
     "from": "Place Aissat Idir",
     "to": "Cité 8 Mai 1945",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-5596708",
+    "line_id": "etusa-2",
+    "shape_id": "shape-etusa-2",
+    "osm_relation_id": 5596708,
+    "from": "Place des Martyrs",
+    "to": "El Annasser",
     "via": null,
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
@@ -225,6 +360,21 @@
     ]
   },
   {
+    "id": "osm-relation-7608188",
+    "line_id": "etusa-100",
+    "shape_id": "shape-etusa-100",
+    "osm_relation_id": 7608188,
+    "from": "ساحة الشهداء",
+    "to": "المطار",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-7935973",
     "line_id": "etusa-54",
     "shape_id": "shape-etusa-54",
@@ -232,6 +382,21 @@
     "from": "Place Audin",
     "to": "El Mouradia",
     "via": "Krim Belkacem",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-7936294",
+    "line_id": "etusa-46",
+    "shape_id": "shape-etusa-46",
+    "osm_relation_id": 7936294,
+    "from": "Tarek Ibn Ziad",
+    "to": "Place des Martyrs",
+    "via": "Louni Arezki",
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -300,6 +465,21 @@
     ]
   },
   {
+    "id": "osm-relation-7937889",
+    "line_id": "etusa-178",
+    "shape_id": "shape-etusa-178",
+    "osm_relation_id": 7937889,
+    "from": "Gare Routiere",
+    "to": "Aéroport D'Alger H.B",
+    "via": "Cite 05 Juillet - Bab ezzouar",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-7937923",
     "line_id": "etusa-19",
     "shape_id": "shape-etusa-19",
@@ -307,6 +487,21 @@
     "from": "Place Aissat Idir",
     "to": "Bab Ezzouar",
     "via": "EL Mohamadia",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-7939837",
+    "line_id": "etusa-38",
+    "shape_id": "shape-etusa-38",
+    "osm_relation_id": 7939837,
+    "from": "زغارة",
+    "to": "ساحة الشهداء",
+    "via": null,
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -510,6 +705,51 @@
     ]
   },
   {
+    "id": "osm-relation-7982528",
+    "line_id": "etusa-105",
+    "shape_id": "shape-etusa-105",
+    "osm_relation_id": 7982528,
+    "from": "Bach Djarah",
+    "to": "Gare Routiere De Baraki",
+    "via": "Cité El Hayet",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-7986853",
+    "line_id": "etusa-3",
+    "shape_id": "shape-etusa-3",
+    "osm_relation_id": 7986853,
+    "from": "Chevalley",
+    "to": "Souidania",
+    "via": "Cheraga",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-7986887",
+    "line_id": "etusa-3",
+    "shape_id": "shape-etusa-3",
+    "osm_relation_id": 7986887,
+    "from": "Souidania",
+    "to": "Chevalley",
+    "via": "Cheraga",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-7996003",
     "line_id": "etusa-88",
     "shape_id": "shape-etusa-88",
@@ -570,6 +810,36 @@
     ]
   },
   {
+    "id": "osm-relation-7996451",
+    "line_id": "etusa-6",
+    "shape_id": "shape-etusa-6",
+    "osm_relation_id": 7996451,
+    "from": "Vieux Kouba",
+    "to": "Place des Martyrs",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-7996457",
+    "line_id": "etusa-6",
+    "shape_id": "shape-etusa-6",
+    "osm_relation_id": 7996457,
+    "from": "Place des Martyrs",
+    "to": "Vieux Kouba",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-7996705",
     "line_id": "etusa-99",
     "shape_id": "shape-etusa-99",
@@ -607,6 +877,96 @@
     "from": "1er Mai => Bouzareah",
     "to": "1er Mai => Bouzareah",
     "via": "Chevalley",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8000586",
+    "line_id": "etusa-731",
+    "shape_id": "shape-etusa-731",
+    "osm_relation_id": 8000586,
+    "from": "Sidi Abd Allah",
+    "to": "Chevalley",
+    "via": "DELY BRAHIM",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8000607",
+    "line_id": "etusa-731",
+    "shape_id": "shape-etusa-731",
+    "osm_relation_id": 8000607,
+    "from": "Chevalley",
+    "to": "Sidi Abd Allah",
+    "via": "DELY BRAHIM",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8001650",
+    "line_id": "etusa-701",
+    "shape_id": "shape-etusa-701",
+    "osm_relation_id": 8001650,
+    "from": "Zéralda G.R",
+    "to": "Chevalley",
+    "via": "BOUCHAOUI",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8001677",
+    "line_id": "etusa-701",
+    "shape_id": "shape-etusa-701",
+    "osm_relation_id": 8001677,
+    "from": "Chevalley",
+    "to": "Zéralda G.R",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8003366",
+    "line_id": "etusa-601",
+    "shape_id": "shape-etusa-601",
+    "osm_relation_id": 8003366,
+    "from": "Dergana",
+    "to": "Station 2 Mai",
+    "via": "EL HAMIZ",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8003403",
+    "line_id": "etusa-606",
+    "shape_id": "shape-etusa-606",
+    "osm_relation_id": 8003403,
+    "from": "Dergana",
+    "to": "Aïn Taya",
+    "via": "BORDJ EL BAHRI",
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -660,6 +1020,21 @@
     ]
   },
   {
+    "id": "osm-relation-8034447",
+    "line_id": "etusa-D105",
+    "shape_id": "shape-etusa-D105",
+    "osm_relation_id": 8034447,
+    "from": "Bach Djarah",
+    "to": "Gare Routiere De Baraki",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-8061132",
     "line_id": "etusa-19",
     "shape_id": "shape-etusa-19",
@@ -667,6 +1042,36 @@
     "from": "Bab Ezzouar LES HOTELS",
     "to": "Place Aissat Idir",
     "via": "CITE 5 JUIELLET",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8066120",
+    "line_id": "etusa-601",
+    "shape_id": "shape-etusa-601",
+    "osm_relation_id": 8066120,
+    "from": "Station 2 Mai",
+    "to": "Dergana",
+    "via": "Souachette",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8066555",
+    "line_id": "etusa-707",
+    "shape_id": "shape-etusa-707",
+    "osm_relation_id": 8066555,
+    "from": "Chevalley",
+    "to": "Ain Benian",
+    "via": "Plateau",
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -765,6 +1170,36 @@
     ]
   },
   {
+    "id": "osm-relation-8086568",
+    "line_id": "etusa-113",
+    "shape_id": "shape-etusa-113",
+    "osm_relation_id": 8086568,
+    "from": "Gare Routiere",
+    "to": "Place Des Martyrs",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8086569",
+    "line_id": "etusa-113",
+    "shape_id": "shape-etusa-113",
+    "osm_relation_id": 8086569,
+    "from": "Place Des Martyrs",
+    "to": "Gare Routiere",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-8086697",
     "line_id": "etusa-18",
     "shape_id": "shape-etusa-18",
@@ -810,6 +1245,96 @@
     ]
   },
   {
+    "id": "osm-relation-8093276",
+    "line_id": "etusa-101",
+    "shape_id": "shape-etusa-101",
+    "osm_relation_id": 8093276,
+    "from": "Place des Martyrs",
+    "to": "Birtouta",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8186188",
+    "line_id": "etusa-643",
+    "shape_id": "shape-etusa-643",
+    "osm_relation_id": 8186188,
+    "from": "Baraki",
+    "to": "El Harrach",
+    "via": "Hopital Zmirli",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8186196",
+    "line_id": "etusa-643",
+    "shape_id": "shape-etusa-643",
+    "osm_relation_id": 8186196,
+    "from": null,
+    "to": null,
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8408345",
+    "line_id": "etusa-732",
+    "shape_id": "shape-etusa-732",
+    "osm_relation_id": 8408345,
+    "from": "Sidi Abd Allah",
+    "to": "Station 2 Mai",
+    "via": "Said Hamdie",
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8409605",
+    "line_id": "etusa-732",
+    "shape_id": "shape-etusa-732",
+    "osm_relation_id": 8409605,
+    "from": "Station 2 Mai",
+    "to": "Sidi Abd Allah",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-8409730",
+    "line_id": "etusa-744",
+    "shape_id": "shape-etusa-744",
+    "osm_relation_id": 8409730,
+    "from": "Zéralda G. R.",
+    "to": "Staouéli",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-8745749",
     "line_id": "etus-mostaganem-1",
     "shape_id": "shape-etus-mostaganem-1",
@@ -817,6 +1342,21 @@
     "from": "Université de Mostaganem",
     "to": "Cheikh Ibn Eddine",
     "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-11267136",
+    "line_id": "etusa-56",
+    "shape_id": "shape-etusa-56",
+    "osm_relation_id": 11267136,
+    "from": "Zéralda",
+    "to": "Chevalley",
+    "via": "Chéraga",
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",
@@ -870,12 +1410,72 @@
     ]
   },
   {
+    "id": "osm-relation-11273122",
+    "line_id": "etusa-101",
+    "shape_id": "shape-etusa-101",
+    "osm_relation_id": 11273122,
+    "from": "Birtouta",
+    "to": "Place des Martyrs",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
     "id": "osm-relation-11273123",
     "line_id": "etusa-92",
     "shape_id": "shape-etusa-92",
     "osm_relation_id": 11273123,
     "from": "El Annasser",
     "to": "Stade Ferhani",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-11273124",
+    "line_id": "etusa-7",
+    "shape_id": "shape-etusa-7",
+    "osm_relation_id": 11273124,
+    "from": "1e Mai",
+    "to": "Place des Martyrs",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-11273930",
+    "line_id": "etusa-100",
+    "shape_id": "shape-etusa-100",
+    "osm_relation_id": 11273930,
+    "from": "المطار",
+    "to": "ساحة الشهداء",
+    "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-11275870",
+    "line_id": "etusa-96",
+    "shape_id": "shape-etusa-96",
+    "osm_relation_id": 11275870,
+    "from": "Djnane Sfari",
+    "to": "Hai El Badr",
     "via": null,
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
@@ -1151,6 +1751,21 @@
     "from": "المجمعات السكنية (زعرورة)",
     "to": "حي خروبي الميلود 1900 سكن",
     "via": null,
+    "public_transport_version": 2,
+    "sequence_status": "osm_member_order_unvalidated",
+    "source": "osm",
+    "source_refs": [
+      "osm"
+    ]
+  },
+  {
+    "id": "osm-relation-16541421",
+    "line_id": "etusa-L615",
+    "shape_id": "shape-etusa-L615",
+    "osm_relation_id": 16541421,
+    "from": "Diar El Gharb 2",
+    "to": "Diar El Gharb 2",
+    "via": "El Karia",
     "public_transport_version": 2,
     "sequence_status": "osm_member_order_unvalidated",
     "source": "osm",

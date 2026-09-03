@@ -1,0 +1,1582 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-36",
+    "wilaya_code": 36,
+    "name": "El Tarf",
+    "name_ar": "الطارف",
+    "center": [
+      8.1695,
+      36.671499999999995
+    ],
+    "bounds": [
+      7.658,
+      36.391,
+      8.681,
+      36.952
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 36,
+    "osm_records": 21,
+    "tariki_records": 34,
+    "cross_source": 17,
+    "multiple_tariki": 1,
+    "osm_only": 3,
+    "tariki_only": 15,
+    "nearby_osm_pairs": 0,
+    "conflicts": 16
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4225734689",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10660",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12832",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13038",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14041",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14615",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14621",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4678",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5655",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6409",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6639",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8776",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8878",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8915",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9058",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9301",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1944371269",
+      "coordinates": [
+        7.7346963,
+        36.6866912
+      ],
+      "osm": {
+        "id": "node/1944371269",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.7346963,
+          36.6866912
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10796",
+          "route_id": "15468",
+          "name_fr": null,
+          "name_ar": null,
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.734,
+            36.687
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 71
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3482428160",
+      "coordinates": [
+        7.8447637,
+        36.7089756
+      ],
+      "osm": {
+        "id": "node/3482428160",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8447637,
+          36.7089756
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7636",
+          "route_id": "12555",
+          "name_fr": null,
+          "name_ar": null,
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.8448,
+            36.7089
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-3751981834",
+      "coordinates": [
+        7.891276,
+        36.7751346
+      ],
+      "osm": {
+        "id": "node/3751981834",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.891276,
+          36.7751346
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8771",
+          "route_id": "9507",
+          "name_fr": "Station de services NAFTALL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.891,
+            36.775
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-4223910700",
+      "coordinates": [
+        7.9108824,
+        36.7632871
+      ],
+      "osm": {
+        "id": "node/4223910700",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.9108824,
+          36.7632871
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8763",
+          "route_id": "9507",
+          "name_fr": "Station de services BOUBIR",
+          "name_ar": "محطة خدمات بوبير",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.912,
+            36.763
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 105
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بوبير"
+    },
+    {
+      "id": "osm-node-4225722500",
+      "coordinates": [
+        8.2019861,
+        36.6016618
+      ],
+      "osm": {
+        "id": "node/4225722500",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.2019861,
+          36.6016618
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4791",
+          "route_id": "9457",
+          "name_fr": "Station de services Djedid",
+          "name_ar": "محطة جديد",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.203,
+            36.602
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 98
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service",
+      "display_name_ar": "محطة جديد"
+    },
+    {
+      "id": "osm-node-4225734689",
+      "coordinates": [
+        8.2304564,
+        36.6651356
+      ],
+      "osm": {
+        "id": "node/4225734689",
+        "name": "Station services",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.2304564,
+          36.6651356
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12839",
+          "route_id": "17639",
+          "name_fr": "STASION DE SIRVICES",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.231,
+            36.665
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 51
+        },
+        {
+          "id": "14439",
+          "route_id": "21966",
+          "name_fr": "STASION DE SIRVICES",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.231,
+            36.665
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-4253329484",
+      "coordinates": [
+        8.445402,
+        36.8961094
+      ],
+      "osm": {
+        "id": "node/4253329484",
+        "name": "Naftal;نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.445402,
+          36.8961094
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12593",
+          "route_id": "2605",
+          "name_fr": "Station ESSENSE",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.4455,
+            36.8961
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4253358511",
+      "coordinates": [
+        8.5603335,
+        36.8830809
+      ],
+      "osm": {
+        "id": "node/4253358511",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.5603335,
+          36.8830809
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12713",
+          "route_id": "17366",
+          "name_fr": "NEFTAL GPL",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.5604,
+            36.8831
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4260590160",
+      "coordinates": [
+        8.4407607,
+        36.886359
+      ],
+      "osm": {
+        "id": "node/4260590160",
+        "name": "Naftal; نفطال (غاز البترول المسال)",
+        "name_ar": "نفطال (غاز البترول المسال)",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.4407607,
+          36.886359
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2912",
+          "route_id": "2605",
+          "name_fr": "Station ESSENSE",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.4408,
+            36.8863
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال (غاز البترول المسال)"
+    },
+    {
+      "id": "osm-node-4321997252",
+      "coordinates": [
+        8.1434766,
+        36.7811861
+      ],
+      "osm": {
+        "id": "node/4321997252",
+        "name": "محطة الخدمة",
+        "name_ar": "محطة الخدمة",
+        "name_fr": "Station de services",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.1434766,
+          36.7811861
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14040",
+          "route_id": "14486",
+          "name_fr": null,
+          "name_ar": "محطة تزويد الوقود شايبي يوسف",
+          "services": [
+            "fuel",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.143,
+            36.781
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الخدمة"
+    },
+    {
+      "id": "osm-node-4580407791",
+      "coordinates": [
+        7.8903964,
+        36.731321
+      ],
+      "osm": {
+        "id": "node/4580407791",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8903964,
+          36.731321
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5654",
+          "route_id": "10423",
+          "name_fr": "Station de services biwuqfat eabd alllah",
+          "name_ar": "محطة بنزين  بوقفة عبد الله",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.89,
+            36.731
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4738774524",
+      "coordinates": [
+        7.8931306,
+        36.7288207
+      ],
+      "osm": {
+        "id": "node/4738774524",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.8931306,
+          36.7288207
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4880305623",
+      "coordinates": [
+        8.4218557,
+        36.8296449
+      ],
+      "osm": {
+        "id": "node/4880305623",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          8.4218557,
+          36.8296449
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9304",
+          "route_id": "14149",
+          "name_fr": "Station de services  DOUISSI EL HADI BOUTELLA ABD ALLAH AIN ASSAL /TAREF",
+          "name_ar": "محطة الخدمات المتعددة دويسي الهادي بوتلة عبد الله بلدية عين العسل ولاية الطارف",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.423,
+            36.83
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 109
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة وقود نفطال",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-node-5138577588",
+      "coordinates": [
+        7.9827505,
+        36.7585318
+      ],
+      "osm": {
+        "id": "node/5138577588",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.9827505,
+          36.7585318
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8785",
+          "route_id": "9507",
+          "name_fr": "Station de services DERRAJ",
+          "name_ar": "محطة الخدمات دراج",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.982,
+            36.759
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 85
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services DERRAJ",
+      "display_name_ar": "محطة الخدمات دراج"
+    },
+    {
+      "id": "osm-node-5172898125",
+      "coordinates": [
+        8.2041851,
+        36.7861422
+      ],
+      "osm": {
+        "id": "node/5172898125",
+        "name": "نفطال بوثلجة",
+        "name_ar": "نفطال بوثلجة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.2041851,
+          36.7861422
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9035",
+          "route_id": "13837",
+          "name_fr": "Station de services Dhaoui",
+          "name_ar": "محطة الضاوي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.204,
+            36.786
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "نفطال بوثلجة",
+      "display_name_ar": "نفطال بوثلجة"
+    },
+    {
+      "id": "osm-node-6143491593",
+      "coordinates": [
+        8.3402112,
+        36.7648918
+      ],
+      "osm": {
+        "id": "node/6143491593",
+        "name": "محطة الوقود",
+        "name_ar": "محطة الوقود",
+        "name_fr": "Station essence",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.3402112,
+          36.7648918
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station essence",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-6143491594",
+      "coordinates": [
+        8.3561029,
+        36.7636187
+      ],
+      "osm": {
+        "id": "node/6143491594",
+        "name": "محطة الوقود",
+        "name_ar": "محطة الوقود",
+        "name_fr": "Station essence",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.3561029,
+          36.7636187
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8914",
+          "route_id": "13799",
+          "name_fr": "Station de services  AUZROUT",
+          "name_ar": "محطة الوقود اوزروت",
+          "services": [
+            "fuel",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.3559,
+            36.7636
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station essence",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-way-1060333249",
+      "coordinates": [
+        7.85906225,
+        36.82845245
+      ],
+      "osm": {
+        "id": "way/1060333249",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.85906225,
+          36.82845245
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5994",
+          "route_id": "1286",
+          "name_fr": "Station de services BOKAZOLA FARID",
+          "name_ar": "محطة الوقود بوقزولة فريد",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.859,
+            36.828
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود بوقزولة فريد"
+    },
+    {
+      "id": "osm-way-1176713274",
+      "coordinates": [
+        8.30596995,
+        36.7663229
+      ],
+      "osm": {
+        "id": "way/1176713274",
+        "name": "محطة الوقود زايدي",
+        "name_ar": "محطة الوقود زايدي",
+        "name_fr": "Station essence zaidi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.30596995,
+          36.7663229
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8911",
+          "route_id": "13797",
+          "name_fr": "Station de services ZAIDI",
+          "name_ar": "محطة الوقود  زايدي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.306,
+            36.7663
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station essence zaidi",
+      "display_name_ar": "محطة الوقود زايدي"
+    },
+    {
+      "id": "osm-way-232219918",
+      "coordinates": [
+        8.10995665,
+        36.51276315
+      ],
+      "osm": {
+        "id": "way/232219918",
+        "name": "Station essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.10995665,
+          36.51276315
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4975",
+          "route_id": "9756",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة الخدمات  نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            8.11,
+            36.513
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station essence",
+      "display_name_ar": "محطة الخدمات  نفطال"
+    },
+    {
+      "id": "osm-way-807917826",
+      "coordinates": [
+        8.09355225,
+        36.839139349999996
+      ],
+      "osm": {
+        "id": "way/807917826",
+        "name": "محطة خدمة بن جديد",
+        "name_ar": "محطة خدمة بن جديد",
+        "name_fr": "Station Service Ben Djedid",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": "24/7",
+        "coordinates": [
+          8.09355225,
+          36.839139349999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Ben Djedid",
+      "display_name_ar": "محطة خدمة بن جديد"
+    },
+    {
+      "id": "tariki-10660",
+      "coordinates": [
+        7.742,
+        36.752
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "10660",
+          "route_id": "13561",
+          "name_fr": null,
+          "name_ar": null,
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.742,
+            36.752
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12832",
+      "coordinates": [
+        7.975,
+        36.673
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12832",
+          "route_id": "17372",
+          "name_fr": "STATION CARBURON ASFOUR",
+          "name_ar": "مجطة عياد لزهر لتوزيع الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.975,
+            36.673
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION CARBURON ASFOUR",
+      "display_name_ar": "مجطة عياد لزهر لتوزيع الوقود"
+    },
+    {
+      "id": "tariki-13038",
+      "coordinates": [
+        8.243,
+        36.671
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13038",
+          "route_id": "17639",
+          "name_fr": "STASION DE SIRVICES",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.243,
+            36.671
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STASION DE SIRVICES",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-14041",
+      "coordinates": [
+        8.072,
+        36.75
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14041",
+          "route_id": "14486",
+          "name_fr": null,
+          "name_ar": "محطة تزويد الوقود الزعيم",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.072,
+            36.75
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة تزويد الوقود الزعيم",
+      "display_name_ar": "محطة تزويد الوقود الزعيم"
+    },
+    {
+      "id": "tariki-14615",
+      "coordinates": [
+        7.824,
+        36.805
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14615",
+          "route_id": "22497",
+          "name_fr": "//",
+          "name_ar": "محطة البنزين بئر حنش",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.824,
+            36.805
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة البنزين بئر حنش"
+    },
+    {
+      "id": "tariki-14621",
+      "coordinates": [
+        7.924,
+        36.828
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14621",
+          "route_id": "22509",
+          "name_fr": "/",
+          "name_ar": "محطة نافطال الإخوة خروف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.924,
+            36.828
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "/",
+      "display_name_ar": "محطة نافطال الإخوة خروف"
+    },
+    {
+      "id": "tariki-4678",
+      "coordinates": [
+        8.195,
+        36.595
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4678",
+          "route_id": "9366",
+          "name_fr": "Station de services NOURI BILAL",
+          "name_ar": "محطة وقود نوري بلال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.195,
+            36.595
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NOURI BILAL",
+      "display_name_ar": "محطة وقود نوري بلال"
+    },
+    {
+      "id": "tariki-5655",
+      "coordinates": [
+        7.889,
+        36.73
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5655",
+          "route_id": "10423",
+          "name_fr": "Station de services awlad alrbye",
+          "name_ar": "محطة بنزين أولاد الربيع",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.889,
+            36.73
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services awlad alrbye",
+      "display_name_ar": "محطة بنزين أولاد الربيع"
+    },
+    {
+      "id": "tariki-6409",
+      "coordinates": [
+        7.7969,
+        36.7323
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6409",
+          "route_id": "11252",
+          "name_fr": "dagousa",
+          "name_ar": "قرية داغوسة بلدية البسباس",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.7969,
+            36.7323
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "dagousa",
+      "display_name_ar": "قرية داغوسة بلدية البسباس"
+    },
+    {
+      "id": "tariki-6639",
+      "coordinates": [
+        7.823,
+        36.806
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6639",
+          "route_id": "11448",
+          "name_fr": "Station de services ALAMIRE   BIRE HENACHE Chet",
+          "name_ar": "محطة الوقود (الامير) بمفترق الطرق ببئر حنش بلدية الشط",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.823,
+            36.806
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ALAMIRE   BIRE HENACHE Chet",
+      "display_name_ar": "محطة الوقود (الامير) بمفترق الطرق ببئر حنش بلدية الشط"
+    },
+    {
+      "id": "tariki-8776",
+      "coordinates": [
+        7.925,
+        36.828
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8776",
+          "route_id": "9507",
+          "name_fr": "Station de services AKHROUF",
+          "name_ar": "محطة الخدمات اخروف",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.925,
+            36.828
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AKHROUF",
+      "display_name_ar": "محطة الخدمات اخروف"
+    },
+    {
+      "id": "tariki-8878",
+      "coordinates": [
+        8.278,
+        36.716
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8878",
+          "route_id": "13760",
+          "name_fr": "Station de services Cheloufi",
+          "name_ar": "محطمة الوقود شلوفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            8.278,
+            36.716
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Cheloufi",
+      "display_name_ar": "محطمة الوقود شلوفي"
+    },
+    {
+      "id": "tariki-8915",
+      "coordinates": [
+        8.342,
+        36.7645
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8915",
+          "route_id": "13799",
+          "name_fr": "Station de services GHENASSE",
+          "name_ar": "محطة الوقود غناس",
+          "services": [
+            "fuel",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.342,
+            36.7645
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services GHENASSE",
+      "display_name_ar": "محطة الوقود غناس"
+    },
+    {
+      "id": "tariki-9058",
+      "coordinates": [
+        7.801,
+        36.734
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9058",
+          "route_id": "13910",
+          "name_fr": "STATION EL HOURIA",
+          "name_ar": "محطة الحرية",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.801,
+            36.734
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION EL HOURIA",
+      "display_name_ar": "محطة الحرية"
+    },
+    {
+      "id": "tariki-9301",
+      "coordinates": [
+        8.374,
+        36.776
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9301",
+          "route_id": "14147",
+          "name_fr": "Station de services  DINNE MED ALI COMUNE AIN ASSAL WILAYA DE TAREF",
+          "name_ar": "محطة الخدمات المتعددة دين محمد علي بلدية عين العسل ولاية الطارف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            8.374,
+            36.776
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 36,
+          "wilaya_fr": "El Tarf",
+          "wilaya_ar": "الطارف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  DINNE MED ALI COMUNE AIN ASSAL WILAYA DE TAREF",
+      "display_name_ar": "محطة الخدمات المتعددة دين محمد علي بلدية عين العسل ولاية الطارف"
+    }
+  ]
+}

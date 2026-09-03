@@ -1,0 +1,3618 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-04",
+    "wilaya_code": 4,
+    "name": "Oum El Bouaghi",
+    "name_ar": "أم البواقي",
+    "center": [
+      7.011,
+      35.81
+    ],
+    "bounds": [
+      6.154,
+      35.422,
+      7.868,
+      36.198
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 90,
+    "osm_records": 49,
+    "tariki_records": 74,
+    "cross_source": 25,
+    "multiple_tariki": 4,
+    "osm_only": 20,
+    "tariki_only": 41,
+    "nearby_osm_pairs": 1,
+    "conflicts": 47
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-4325314338",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5584700044",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6354560142",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1053451747",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1053675917",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1376558590",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1094",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1222",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12395",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1253",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12559",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12596",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12622",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12875",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12897",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13010",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13022",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13047",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1308",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13088",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1310",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13580",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13700",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14085",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14666",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14678",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14683",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1603",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1670",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1840",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1847",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2227",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2230",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2237",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2243",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2246",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2247",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2340",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2399",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2447",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2512",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2740",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2818",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2914",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2939",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2954",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2958",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1925431634",
+      "coordinates": [
+        7.3595707,
+        35.8047806
+      ],
+      "osm": {
+        "id": "node/1925431634",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3595707,
+          35.8047806
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3118",
+          "route_id": "6812",
+          "name_fr": "Station de services NAFTAL R0423",
+          "name_ar": "محطة الخدمات نفطال R0423",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.36,
+            35.805
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 46
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال R0423"
+    },
+    {
+      "id": "osm-node-1925431648",
+      "coordinates": [
+        7.3205878,
+        35.8173102
+      ],
+      "osm": {
+        "id": "node/1925431648",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3205878,
+          35.8173102
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3122",
+          "route_id": "6812",
+          "name_fr": "Station de services SALEM FATEH",
+          "name_ar": "محطة الخدمات سالم فاتح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.321,
+            35.818
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 85
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات سالم فاتح"
+    },
+    {
+      "id": "osm-node-2810201448",
+      "coordinates": [
+        6.5754366,
+        36.0522591
+      ],
+      "osm": {
+        "id": "node/2810201448",
+        "name": "Boulgarne",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5754366,
+          36.0522591
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2898",
+          "route_id": "6512",
+          "name_fr": "Station de services Bouguern osama et Abdrahim Elrahmen",
+          "name_ar": "محطة متعددة الخدمات بوقرن أسامة وعبد الرحيم الرحمن",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.575,
+            36.052
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Boulgarne",
+      "display_name_ar": "محطة متعددة الخدمات بوقرن أسامة وعبد الرحيم الرحمن"
+    },
+    {
+      "id": "osm-node-4325314338",
+      "coordinates": [
+        6.5017243,
+        35.9067362
+      ],
+      "osm": {
+        "id": "node/4325314338",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5017243,
+          35.9067362
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13085",
+          "route_id": "5535",
+          "name_fr": "station service hadak abdelali",
+          "name_ar": "محطة الخدمات حداق عبد العالي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.502,
+            35.906
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 86
+        },
+        {
+          "id": "13807",
+          "route_id": "18049",
+          "name_fr": "station el baraka",
+          "name_ar": "محطة متعددة الخدمات البركة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.502,
+            35.906
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 86
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات حداق عبد العالي"
+    },
+    {
+      "id": "osm-node-4326966746",
+      "coordinates": [
+        6.5569826,
+        35.9964746
+      ],
+      "osm": {
+        "id": "node/4326966746",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5569826,
+          35.9964746
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4326994367",
+      "coordinates": [
+        6.5748481,
+        36.0414591
+      ],
+      "osm": {
+        "id": "node/4326994367",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5748481,
+          36.0414591
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2900",
+          "route_id": "6512",
+          "name_fr": "Station de services GOUAOURA",
+          "name_ar": "محطة متعددة الخدمات قواورة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.575,
+            36.041
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة متعددة الخدمات قواورة"
+    },
+    {
+      "id": "osm-node-4352514326",
+      "coordinates": [
+        7.4537985,
+        35.7861211
+      ],
+      "osm": {
+        "id": "node/4352514326",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4537985,
+          35.7861211
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2593",
+          "route_id": "6010",
+          "name_fr": "Station de services Gueraza Mbarek",
+          "name_ar": "محطة الخدمات قرازة لمبارك",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.455,
+            35.786
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 109
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات قرازة لمبارك"
+    },
+    {
+      "id": "osm-node-4353229348",
+      "coordinates": [
+        7.3882426,
+        35.7961383
+      ],
+      "osm": {
+        "id": "node/4353229348",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station Laaribi",
+        "brand": "Laribi",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3882426,
+          35.7961383
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3350",
+          "route_id": "7213",
+          "name_fr": "Station de services LAARIBI MOHAMED",
+          "name_ar": "محطة الخدمات لعريبي محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.3882,
+            35.7964
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Laaribi",
+      "display_name_ar": "محطة الخدمات لعريبي محمد"
+    },
+    {
+      "id": "osm-node-4401317791",
+      "coordinates": [
+        6.5598937,
+        36.0461113
+      ],
+      "osm": {
+        "id": "node/4401317791",
+        "name": "station chahra",
+        "name_ar": null,
+        "name_fr": "station chahra",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5598937,
+          36.0461113
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station chahra",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4460533149",
+      "coordinates": [
+        6.4949544,
+        35.8621328
+      ],
+      "osm": {
+        "id": "node/4460533149",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4949544,
+          35.8621328
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4521218515",
+      "coordinates": [
+        6.5821629,
+        36.0273404
+      ],
+      "osm": {
+        "id": "node/4521218515",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5821629,
+          36.0273404
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5523717964",
+      "coordinates": [
+        7.5910014,
+        35.7405842
+      ],
+      "osm": {
+        "id": "node/5523717964",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.5910014,
+          35.7405842
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5584700044",
+      "coordinates": [
+        7.3024784,
+        35.6692558
+      ],
+      "osm": {
+        "id": "node/5584700044",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3024784,
+          35.6692558
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1728",
+          "route_id": "1506",
+          "name_fr": "Station de services Halou Rabie",
+          "name_ar": "محطة خدمات هلو الربيع",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.302,
+            35.669
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1376558590",
+          "offset_m": 7
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services Halou Rabie",
+      "display_name_ar": "محطة خدمات هلو الربيع"
+    },
+    {
+      "id": "osm-node-5625499023",
+      "coordinates": [
+        7.2610581,
+        35.8376014
+      ],
+      "osm": {
+        "id": "node/5625499023",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2610581,
+          35.8376014
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5860148685",
+      "coordinates": [
+        6.5558633,
+        36.0431719
+      ],
+      "osm": {
+        "id": "node/5860148685",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "STATION FRIDJA",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5558633,
+          36.0431719
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2934",
+          "route_id": "6544",
+          "name_fr": "Station de services Feridja Ares",
+          "name_ar": "محطة متعددة الخدمات فريجة عراس",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.555,
+            36.043
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 80
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION FRIDJA",
+      "display_name_ar": "محطة متعددة الخدمات فريجة عراس"
+    },
+    {
+      "id": "osm-node-6354560142",
+      "coordinates": [
+        7.6030321,
+        35.7137198
+      ],
+      "osm": {
+        "id": "node/6354560142",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.6030321,
+          35.7137198
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1964",
+          "route_id": "4983",
+          "name_fr": "Station de services Abdelli Lkhmissi",
+          "name_ar": "محطة الخدمات عبدلي لخميسي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.603,
+            35.714
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 31
+        },
+        {
+          "id": "14665",
+          "route_id": "22667",
+          "name_fr": "STATION DE SERVICES ABDELLI KHEMMISSI",
+          "name_ar": "محطة الخدمات عبدلي خميسي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.603,
+            35.714
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services Abdelli Lkhmissi",
+      "display_name_ar": "محطة الخدمات عبدلي لخميسي"
+    },
+    {
+      "id": "osm-node-6354561193",
+      "coordinates": [
+        7.635916,
+        35.6771635
+      ],
+      "osm": {
+        "id": "node/6354561193",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.635916,
+          35.6771635
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1579",
+          "route_id": "4488",
+          "name_fr": "Station de services Radjia MaatAllah",
+          "name_ar": "محطة الخدمات رجعي معطا الله",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.636,
+            35.678
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 93
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Radjia MaatAllah",
+      "display_name_ar": "محطة الخدمات رجعي معطا الله"
+    },
+    {
+      "id": "osm-node-6354699245",
+      "coordinates": [
+        7.4251375,
+        35.791599
+      ],
+      "osm": {
+        "id": "node/6354699245",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4251375,
+          35.791599
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6508899655",
+      "coordinates": [
+        7.3711369,
+        35.7794158
+      ],
+      "osm": {
+        "id": "node/6508899655",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3711369,
+          35.7794158
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3292",
+          "route_id": "7082",
+          "name_fr": "Station de services SAIDIA",
+          "name_ar": "محطة الخدمات سعيدية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.37,
+            35.779
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 112
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services SAIDIA",
+      "display_name_ar": "محطة الخدمات سعيدية"
+    },
+    {
+      "id": "osm-node-6634869432",
+      "coordinates": [
+        6.5752661,
+        36.0576124
+      ],
+      "osm": {
+        "id": "node/6634869432",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5752661,
+          36.0576124
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2903",
+          "route_id": "6512",
+          "name_fr": "Station de services frères Ermene Achour",
+          "name_ar": "محطة متعددة الخدمات الإخوة زرمان عاشور",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.576,
+            36.057
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 95
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services frères Ermene Achour",
+      "display_name_ar": "محطة متعددة الخدمات الإخوة زرمان عاشور"
+    },
+    {
+      "id": "osm-way-1045118425",
+      "coordinates": [
+        7.10922665,
+        35.85782639999999
+      ],
+      "osm": {
+        "id": "way/1045118425",
+        "name": "محطة خدمات قالي نجيب",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "kali NAJIB",
+        "opening_hours": null,
+        "coordinates": [
+          7.10922665,
+          35.85782639999999
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات قالي نجيب",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1045125170",
+      "coordinates": [
+        7.1189735,
+        35.8592461
+      ],
+      "osm": {
+        "id": "way/1045125170",
+        "name": "station service el baraka",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1189735,
+          35.8592461
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service el baraka",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1046311032",
+      "coordinates": [
+        7.01434605,
+        35.7175964
+      ],
+      "osm": {
+        "id": "way/1046311032",
+        "name": "محطة الخدمات بورصاص",
+        "name_ar": "محطة الخدمات بورصاص",
+        "name_fr": null,
+        "brand": null,
+        "operator": "بورصاص",
+        "opening_hours": null,
+        "coordinates": [
+          7.01434605,
+          35.7175964
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13188",
+          "route_id": "5693",
+          "name_fr": "STATION D'ESSENCE BOURSSAS SABTI",
+          "name_ar": "محطة الوقود بورصاص  السبتي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.014,
+            35.717
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 73
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة الخدمات بورصاص",
+      "display_name_ar": "محطة الخدمات بورصاص"
+    },
+    {
+      "id": "osm-way-1050101046",
+      "coordinates": [
+        7.2123849,
+        36.0500184
+      ],
+      "osm": {
+        "id": "way/1050101046",
+        "name": "محطة خدمات بلغالم",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2123849,
+          36.0500184
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات بلغالم",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1051688086",
+      "coordinates": [
+        7.3917684999999995,
+        35.81349245
+      ],
+      "osm": {
+        "id": "way/1051688086",
+        "name": "محطة وقود بوراحلي",
+        "name_ar": null,
+        "name_fr": "Station Bourahli",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3917684999999995,
+          35.81349245
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Bourahli",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1053451747",
+      "coordinates": [
+        6.857764250000001,
+        36.00406515
+      ],
+      "osm": {
+        "id": "way/1053451747",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.857764250000001,
+          36.00406515
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2727",
+          "route_id": "6245",
+          "name_fr": "Station de services MEGHIAZ ABD EL HAMID",
+          "name_ar": "محطة  متعددة الخدمات مغياز عبد الحميد",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.8573,
+            36.0045
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 64
+        },
+        {
+          "id": "13268",
+          "route_id": "6279",
+          "name_fr": "Station de services MEGHIAZE",
+          "name_ar": "محطة الخدمات مغياز",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.858,
+            36.004
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services MEGHIAZ ABD EL HAMID",
+      "display_name_ar": "محطة  متعددة الخدمات مغياز عبد الحميد"
+    },
+    {
+      "id": "osm-way-1053675917",
+      "coordinates": [
+        6.8835906,
+        35.966071400000004
+      ],
+      "osm": {
+        "id": "way/1053675917",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8835906,
+          35.966071400000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12383",
+          "route_id": "6245",
+          "name_fr": "Station de services GAAGAA TAREK",
+          "name_ar": "محطة متعددة الخدمات قعقاع طارق",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.8838,
+            35.9659
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 27
+        },
+        {
+          "id": "13266",
+          "route_id": "6279",
+          "name_fr": "Station de services GAAGAA",
+          "name_ar": "محطة الخدمات قعقاع",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.884,
+            35.966
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services GAAGAA TAREK",
+      "display_name_ar": "محطة متعددة الخدمات قعقاع طارق"
+    },
+    {
+      "id": "osm-way-1055213907",
+      "coordinates": [
+        7.1919466,
+        35.85622415
+      ],
+      "osm": {
+        "id": "way/1055213907",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1919466,
+          35.85622415
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12592",
+          "route_id": "4384",
+          "name_fr": "station de servise naftal",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1924,
+            35.8564
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de servise naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-way-1056465359",
+      "coordinates": [
+        6.8487907,
+        35.9664204
+      ],
+      "osm": {
+        "id": "way/1056465359",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8487907,
+          35.9664204
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1056695622",
+      "coordinates": [
+        6.93450165,
+        36.1030926
+      ],
+      "osm": {
+        "id": "way/1056695622",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.93450165,
+          36.1030926
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1180866319",
+      "coordinates": [
+        6.8143750999999995,
+        36.0675225
+      ],
+      "osm": {
+        "id": "way/1180866319",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8143750999999995,
+          36.0675225
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1376558590",
+      "coordinates": [
+        7.3025494,
+        35.6692666
+      ],
+      "osm": {
+        "id": "way/1376558590",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3025494,
+          35.6692666
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5584700044",
+          "offset_m": 7
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1376876315",
+      "coordinates": [
+        7.095466699999999,
+        35.8642818
+      ],
+      "osm": {
+        "id": "way/1376876315",
+        "name": "محطة خدمات مخلوف",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "مخلوف فوزي",
+        "opening_hours": null,
+        "coordinates": [
+          7.095466699999999,
+          35.8642818
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات مخلوف",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-256399030",
+      "coordinates": [
+        6.4697244000000005,
+        36.083213
+      ],
+      "osm": {
+        "id": "way/256399030",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4697244000000005,
+          36.083213
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1307",
+          "route_id": "3861",
+          "name_fr": "Station de services Salhi Khaled",
+          "name_ar": "محطةالخدمات صالحي خالد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.47,
+            36.083
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Salhi Khaled",
+      "display_name_ar": "محطةالخدمات صالحي خالد"
+    },
+    {
+      "id": "osm-way-310309367",
+      "coordinates": [
+        7.13029675,
+        35.87291805
+      ],
+      "osm": {
+        "id": "way/310309367",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": "24/7",
+        "coordinates": [
+          7.13029675,
+          35.87291805
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1864",
+          "route_id": "4384",
+          "name_fr": "Station de services Naftal R0420",
+          "name_ar": "محطة نفطال  R0420",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1304,
+            35.8728
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال  R0420"
+    },
+    {
+      "id": "osm-way-418972803",
+      "coordinates": [
+        6.5718533,
+        36.0244598
+      ],
+      "osm": {
+        "id": "way/418972803",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5718533,
+          36.0244598
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2901",
+          "route_id": "6512",
+          "name_fr": "Station de services NAFTAL R0426",
+          "name_ar": "محطة متعددة الخدمات  نفطال R0426",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.572,
+            36.024
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL R0426",
+      "display_name_ar": "محطة متعددة الخدمات  نفطال R0426"
+    },
+    {
+      "id": "osm-way-431836652",
+      "coordinates": [
+        7.545170499999999,
+        35.467314599999995
+      ],
+      "osm": {
+        "id": "way/431836652",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.545170499999999,
+          35.467314599999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12558",
+          "route_id": "3736",
+          "name_fr": "STATION MULTI SERVISES SAHRAN BOUAZIZ",
+          "name_ar": "محطة متعددة الخدمات صهران بوعزيز",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.545,
+            35.467
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION MULTI SERVISES SAHRAN BOUAZIZ",
+      "display_name_ar": "محطة متعددة الخدمات صهران بوعزيز"
+    },
+    {
+      "id": "osm-way-560300478",
+      "coordinates": [
+        7.02930755,
+        35.8980831
+      ],
+      "osm": {
+        "id": "way/560300478",
+        "name": "محطة وقود و مقهى",
+        "name_ar": null,
+        "name_fr": "station service naftal - cafee",
+        "brand": null,
+        "operator": "حجام",
+        "opening_hours": null,
+        "coordinates": [
+          7.02930755,
+          35.8980831
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1863",
+          "route_id": "4384",
+          "name_fr": "Station de services Hadam Elyamine",
+          "name_ar": "محطة الخدمات حجام اليمين",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.0292,
+            35.898
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service naftal - cafee",
+      "display_name_ar": "محطة الخدمات حجام اليمين"
+    },
+    {
+      "id": "osm-way-560697704",
+      "coordinates": [
+        6.9379873,
+        35.6842419
+      ],
+      "osm": {
+        "id": "way/560697704",
+        "name": "محطة خدمات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "sid",
+        "opening_hours": null,
+        "coordinates": [
+          6.9379873,
+          35.6842419
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2359",
+          "route_id": "5671",
+          "name_fr": "station de services KHLIFA",
+          "name_ar": "محطة الخدمات خليفة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.938,
+            35.684
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة خدمات",
+      "display_name_ar": "محطة الخدمات خليفة"
+    },
+    {
+      "id": "osm-way-575043274",
+      "coordinates": [
+        7.107358250000001,
+        35.860696700000005
+      ],
+      "osm": {
+        "id": "way/575043274",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station Service",
+        "brand": null,
+        "operator": "Kali",
+        "opening_hours": null,
+        "coordinates": [
+          7.107358250000001,
+          35.860696700000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1558",
+          "route_id": "4424",
+          "name_fr": "Station de services Kali Mohamed Elcherif",
+          "name_ar": "محطة الخدمات قالي محمد الشريف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.1076,
+            35.8606
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة الخدمات قالي محمد الشريف"
+    },
+    {
+      "id": "osm-way-582381045",
+      "coordinates": [
+        7.25427695,
+        36.08229065
+      ],
+      "osm": {
+        "id": "way/582381045",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.25427695,
+          36.08229065
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2455",
+          "route_id": "4624",
+          "name_fr": "Station de services NAFTAL R0427",
+          "name_ar": "محطة الخدمات  نفطال R0427",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.255,
+            36.082
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 73
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL R0427",
+      "display_name_ar": "محطة الخدمات  نفطال R0427"
+    },
+    {
+      "id": "osm-way-583905587",
+      "coordinates": [
+        7.170840699999999,
+        35.908782849999994
+      ],
+      "osm": {
+        "id": "way/583905587",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "شبيلي محمد",
+        "opening_hours": null,
+        "coordinates": [
+          7.170840699999999,
+          35.908782849999994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-583941279",
+      "coordinates": [
+        7.191050499999999,
+        35.9456066
+      ],
+      "osm": {
+        "id": "way/583941279",
+        "name": "محطة وقود / بغو",
+        "name_ar": "محطة وقود / بغو",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.191050499999999,
+          35.9456066
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة وقود / بغو",
+      "display_name_ar": "محطة وقود / بغو"
+    },
+    {
+      "id": "osm-way-636345310",
+      "coordinates": [
+        6.8755954,
+        35.960893049999996
+      ],
+      "osm": {
+        "id": "way/636345310",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8755954,
+          35.960893049999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2757",
+          "route_id": "6283",
+          "name_fr": "Station de services SAMAILI ET BOUHALATA",
+          "name_ar": "محطة متعددة الخدمات سمايلي و  بوحلاتة",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.876,
+            35.961
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services SAMAILI ET BOUHALATA",
+      "display_name_ar": "محطة متعددة الخدمات سمايلي و  بوحلاتة"
+    },
+    {
+      "id": "osm-way-642939062",
+      "coordinates": [
+        7.675493299999999,
+        35.62932725
+      ],
+      "osm": {
+        "id": "way/642939062",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.675493299999999,
+          35.62932725
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1584",
+          "route_id": "4488",
+          "name_fr": "Station de services Naftal R0422",
+          "name_ar": "محطة الخدمات نفطال R0422",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.675,
+            35.63
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 87
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal R0422",
+      "display_name_ar": "محطة الخدمات نفطال R0422"
+    },
+    {
+      "id": "osm-way-647843926",
+      "coordinates": [
+        6.47907865,
+        36.077346750000004
+      ],
+      "osm": {
+        "id": "way/647843926",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.47907865,
+          36.077346750000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1306",
+          "route_id": "3861",
+          "name_fr": "Station de services Anana Noudjema",
+          "name_ar": "محطةالخدمات عنانة بوجمعة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.479,
+            36.078
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 73
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Anana Noudjema",
+      "display_name_ar": "محطةالخدمات عنانة بوجمعة"
+    },
+    {
+      "id": "osm-way-687226269",
+      "coordinates": [
+        6.8720666999999995,
+        35.981789199999994
+      ],
+      "osm": {
+        "id": "way/687226269",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8720666999999995,
+          35.981789199999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2732",
+          "route_id": "6245",
+          "name_fr": "Station de services NAFTAL R0425",
+          "name_ar": "محطة نفطال R0425",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.872,
+            35.982
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL R0425",
+      "display_name_ar": "محطة نفطال R0425"
+    },
+    {
+      "id": "osm-way-687228899",
+      "coordinates": [
+        6.8067201,
+        36.097803299999995
+      ],
+      "osm": {
+        "id": "way/687228899",
+        "name": "station ziad",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8067201,
+          36.097803299999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station ziad",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-690676448",
+      "coordinates": [
+        6.812943499999999,
+        36.079364600000005
+      ],
+      "osm": {
+        "id": "way/690676448",
+        "name": "Station-service kaabi Abdelali",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.812943499999999,
+          36.079364600000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service kaabi Abdelali",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-1094",
+      "coordinates": [
+        7.763,
+        35.592
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1094",
+          "route_id": "3351",
+          "name_fr": "Station de services Kasri Abou Talleb",
+          "name_ar": "محطة الخدمات قصري أبو طالب",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.763,
+            35.592
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Kasri Abou Talleb",
+      "display_name_ar": "محطة الخدمات قصري أبو طالب"
+    },
+    {
+      "id": "tariki-1222",
+      "coordinates": [
+        6.287,
+        35.898
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1222",
+          "route_id": "3675",
+          "name_fr": "Station de services Saasdaoui Elhechmi",
+          "name_ar": "محطة خدمات سعداوي الهاشمي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.287,
+            35.898
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Saasdaoui Elhechmi",
+      "display_name_ar": "محطة خدمات سعداوي الهاشمي"
+    },
+    {
+      "id": "tariki-12395",
+      "coordinates": [
+        6.5,
+        35.906
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12395",
+          "route_id": "5535",
+          "name_fr": "station service ouchen laid",
+          "name_ar": "محطة الخدمات أوشن العيد",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.5,
+            35.906
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station service ouchen laid",
+      "display_name_ar": "محطة الخدمات أوشن العيد"
+    },
+    {
+      "id": "tariki-1253",
+      "coordinates": [
+        7.543,
+        35.465
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1253",
+          "route_id": "3681",
+          "name_fr": "Station de services Sehrane Bouaziz",
+          "name_ar": "محطة خدمات صهران بوعزيز",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.543,
+            35.465
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Sehrane Bouaziz",
+      "display_name_ar": "محطة خدمات صهران بوعزيز"
+    },
+    {
+      "id": "tariki-12559",
+      "coordinates": [
+        7.591,
+        35.742
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12559",
+          "route_id": "4983",
+          "name_fr": "Station de services Hawem Mounir",
+          "name_ar": "محطة الخدمات هوام منير",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.591,
+            35.742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Hawem Mounir",
+      "display_name_ar": "محطة الخدمات هوام منير"
+    },
+    {
+      "id": "tariki-12596",
+      "coordinates": [
+        7.427,
+        35.792
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12596",
+          "route_id": "6010",
+          "name_fr": "Station de services amara yasmina",
+          "name_ar": "محطة الخدمات و التزويد بالوقود عمارة يسمينة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.427,
+            35.792
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services amara yasmina",
+      "display_name_ar": "محطة الخدمات و التزويد بالوقود عمارة يسمينة"
+    },
+    {
+      "id": "tariki-12622",
+      "coordinates": [
+        7.652,
+        35.649
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12622",
+          "route_id": "4488",
+          "name_fr": "Station de services mchakra",
+          "name_ar": "محطة الخدمات مشاكرة",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.652,
+            35.649
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services mchakra",
+      "display_name_ar": "محطة الخدمات مشاكرة"
+    },
+    {
+      "id": "tariki-12875",
+      "coordinates": [
+        7.3528,
+        35.5737
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12875",
+          "route_id": "3881",
+          "name_fr": "STATION MULTI SERVICES SABEG ABD EL HAKIM",
+          "name_ar": "محطة متعددة الخدمات سابق عبد الحكيم",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.3528,
+            35.5737
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION MULTI SERVICES SABEG ABD EL HAKIM",
+      "display_name_ar": "محطة متعددة الخدمات سابق عبد الحكيم"
+    },
+    {
+      "id": "tariki-12897",
+      "coordinates": [
+        7.749,
+        35.761
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12897",
+          "route_id": "5481",
+          "name_fr": "STATION SERVICE GHRIB",
+          "name_ar": "محطة الخدمات غريب",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.749,
+            35.761
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE GHRIB",
+      "display_name_ar": "محطة الخدمات غريب"
+    },
+    {
+      "id": "tariki-13010",
+      "coordinates": [
+        7.767,
+        35.646
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13010",
+          "route_id": "3153",
+          "name_fr": "station de services abad bacha",
+          "name_ar": "محطة عباد باشا",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.767,
+            35.646
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services abad bacha",
+      "display_name_ar": "محطة عباد باشا"
+    },
+    {
+      "id": "tariki-13022",
+      "coordinates": [
+        7.508,
+        35.66
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13022",
+          "route_id": "3805",
+          "name_fr": "STATIO BOUZZAYA",
+          "name_ar": "محطة الخدمات بوزغاية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.508,
+            35.66
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATIO BOUZZAYA",
+      "display_name_ar": "محطة الخدمات بوزغاية"
+    },
+    {
+      "id": "tariki-13047",
+      "coordinates": [
+        7.623,
+        35.573
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13047",
+          "route_id": "3736",
+          "name_fr": "STATION MULTI SERVISES MECHTAT REGADA",
+          "name_ar": "محطة متعددة الخدمات  مشتة الرقادة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.623,
+            35.573
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION MULTI SERVISES MECHTAT REGADA",
+      "display_name_ar": "محطة متعددة الخدمات  مشتة الرقادة"
+    },
+    {
+      "id": "tariki-1308",
+      "coordinates": [
+        6.468,
+        36.084
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1308",
+          "route_id": "3861",
+          "name_fr": "Station de services Mansouri Ammara",
+          "name_ar": "محطةالخدمات منصوري عمارة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.468,
+            36.084
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Mansouri Ammara",
+      "display_name_ar": "محطةالخدمات منصوري عمارة"
+    },
+    {
+      "id": "tariki-13088",
+      "coordinates": [
+        6.493,
+        35.86
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13088",
+          "route_id": "5535",
+          "name_fr": "station service AKACHAT ABDEL HAFID",
+          "name_ar": "محطة الخدمات عكاشة عبد الحفيظ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.493,
+            35.86
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station service AKACHAT ABDEL HAFID",
+      "display_name_ar": "محطة الخدمات عكاشة عبد الحفيظ"
+    },
+    {
+      "id": "tariki-1310",
+      "coordinates": [
+        6.467,
+        36.084
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1310",
+          "route_id": "3861",
+          "name_fr": "Station de services Nahal",
+          "name_ar": "محطةالخدمات نحال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.467,
+            36.084
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Nahal",
+      "display_name_ar": "محطةالخدمات نحال"
+    },
+    {
+      "id": "tariki-13580",
+      "coordinates": [
+        7.359,
+        35.76
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13580",
+          "route_id": "4196",
+          "name_fr": "RIA NEFT",
+          "name_ar": "غيا نفط",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.359,
+            35.76
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "RIA NEFT",
+      "display_name_ar": "غيا نفط"
+    },
+    {
+      "id": "tariki-13700",
+      "coordinates": [
+        7.197,
+        36.058
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13700",
+          "route_id": "4581",
+          "name_fr": "tayba",
+          "name_ar": "محطة الخدمات طيبة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.197,
+            36.058
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "tayba",
+      "display_name_ar": "محطة الخدمات طيبة"
+    },
+    {
+      "id": "tariki-14085",
+      "coordinates": [
+        6.287,
+        35.898
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14085",
+          "route_id": "20834",
+          "name_fr": "station-service saadaoui",
+          "name_ar": "محطة وقود سعداوي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.287,
+            35.898
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station-service saadaoui",
+      "display_name_ar": "محطة وقود سعداوي"
+    },
+    {
+      "id": "tariki-14666",
+      "coordinates": [
+        7.591,
+        35.742
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14666",
+          "route_id": "22667",
+          "name_fr": "STATION DE SERVICES HAWEM MOUNIR",
+          "name_ar": "مخطة الخدمات هوام منير",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.591,
+            35.742
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES HAWEM MOUNIR",
+      "display_name_ar": "مخطة الخدمات هوام منير"
+    },
+    {
+      "id": "tariki-14678",
+      "coordinates": [
+        6.5,
+        35.907
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14678",
+          "route_id": "5520",
+          "name_fr": "statin ouchan",
+          "name_ar": "محطة الخدمات أوشن",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.5,
+            35.907
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "statin ouchan",
+      "display_name_ar": "محطة الخدمات أوشن"
+    },
+    {
+      "id": "tariki-14683",
+      "coordinates": [
+        6.935,
+        36.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14683",
+          "route_id": "22771",
+          "name_fr": "/",
+          "name_ar": "محطة البنزين  حشاشنة",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.935,
+            36.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "/",
+      "display_name_ar": "محطة البنزين  حشاشنة"
+    },
+    {
+      "id": "tariki-1603",
+      "coordinates": [
+        7.655,
+        35.62
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1603",
+          "route_id": "4569",
+          "name_fr": "station de services HABES NADJIB",
+          "name_ar": "محطة الخدمات حابس نجيب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.655,
+            35.62
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services HABES NADJIB",
+      "display_name_ar": "محطة الخدمات حابس نجيب"
+    },
+    {
+      "id": "tariki-1670",
+      "coordinates": [
+        7.179,
+        35.924
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1670",
+          "route_id": "4639",
+          "name_fr": "Station de services Chebili Mohamed",
+          "name_ar": "محطة خدمات شبيلي محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.179,
+            35.924
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Chebili Mohamed",
+      "display_name_ar": "محطة خدمات شبيلي محمد"
+    },
+    {
+      "id": "tariki-1840",
+      "coordinates": [
+        6.708,
+        35.924
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1840",
+          "route_id": "4070",
+          "name_fr": "Station de services Ouchen AbdElmadjid",
+          "name_ar": "محطة الخدمات أوشن عبد المجيد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.708,
+            35.924
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ouchen AbdElmadjid",
+      "display_name_ar": "محطة الخدمات أوشن عبد المجيد"
+    },
+    {
+      "id": "tariki-1847",
+      "coordinates": [
+        6.692,
+        35.933
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1847",
+          "route_id": "4070",
+          "name_fr": "Station de services Rebhi Belkacem",
+          "name_ar": "محطة الخدمات رابحي بلقاسم",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.692,
+            35.933
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Rebhi Belkacem",
+      "display_name_ar": "محطة الخدمات رابحي بلقاسم"
+    },
+    {
+      "id": "tariki-2227",
+      "coordinates": [
+        6.816,
+        36.066
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2227",
+          "route_id": "5272",
+          "name_fr": "STATION BOUGHAZI BOUJAMAA",
+          "name_ar": "محطة بوغازي بوجمعة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.816,
+            36.066
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION BOUGHAZI BOUJAMAA",
+      "display_name_ar": "محطة بوغازي بوجمعة"
+    },
+    {
+      "id": "tariki-2230",
+      "coordinates": [
+        6.804,
+        36.1
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2230",
+          "route_id": "5272",
+          "name_fr": "STATION ZIAD",
+          "name_ar": "محطة زياد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.804,
+            36.1
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ZIAD",
+      "display_name_ar": "محطة زياد"
+    },
+    {
+      "id": "tariki-2237",
+      "coordinates": [
+        6.811,
+        36.082
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2237",
+          "route_id": "5272",
+          "name_fr": "Station de services KAABI ABDELALI",
+          "name_ar": "محطة كعبي عبد العالي",
+          "services": [
+            "fuel",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.811,
+            36.082
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KAABI ABDELALI",
+      "display_name_ar": "محطة كعبي عبد العالي"
+    },
+    {
+      "id": "tariki-2243",
+      "coordinates": [
+        6.396,
+        35.894
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2243",
+          "route_id": "3488",
+          "name_fr": "Station de services BEN SEGHIR HEMANA",
+          "name_ar": "بن الصغير حمانة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.396,
+            35.894
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BEN SEGHIR HEMANA",
+      "display_name_ar": "بن الصغير حمانة"
+    },
+    {
+      "id": "tariki-2246",
+      "coordinates": [
+        6.391,
+        35.899
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2246",
+          "route_id": "3488",
+          "name_fr": "Station de services GHENIE MEAOUIA",
+          "name_ar": "غناي معاوية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.391,
+            35.899
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services GHENIE MEAOUIA",
+      "display_name_ar": "غناي معاوية"
+    },
+    {
+      "id": "tariki-2247",
+      "coordinates": [
+        6.378,
+        35.897
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2247",
+          "route_id": "3488",
+          "name_fr": "Station de services BAKHOUCHE MOHAMED",
+          "name_ar": "بخوش محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.378,
+            35.897
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BAKHOUCHE MOHAMED",
+      "display_name_ar": "بخوش محمد"
+    },
+    {
+      "id": "tariki-2340",
+      "coordinates": [
+        7.014,
+        35.716
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2340",
+          "route_id": "5654",
+          "name_fr": "Station de services BOURSASSE ABDALLAH",
+          "name_ar": "محطة الخدمات بورصاص عبد الله",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            7.014,
+            35.716
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOURSASSE ABDALLAH",
+      "display_name_ar": "محطة الخدمات بورصاص عبد الله"
+    },
+    {
+      "id": "tariki-2399",
+      "coordinates": [
+        7.263,
+        35.837
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2399",
+          "route_id": "4562",
+          "name_fr": "station de services SALEM YOUCEF",
+          "name_ar": "محطة الخدمات سالم يوسف",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.263,
+            35.837
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services SALEM YOUCEF",
+      "display_name_ar": "محطة الخدمات سالم يوسف"
+    },
+    {
+      "id": "tariki-2447",
+      "coordinates": [
+        7.377,
+        35.914
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2447",
+          "route_id": "4105",
+          "name_fr": "Station de services TORKI ABD EL HAFID",
+          "name_ar": "محطة الخدمات تركي عبد الحفيظ",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.377,
+            35.914
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TORKI ABD EL HAFID",
+      "display_name_ar": "محطة الخدمات تركي عبد الحفيظ"
+    },
+    {
+      "id": "tariki-2512",
+      "coordinates": [
+        6.935,
+        36.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2512",
+          "route_id": "5716",
+          "name_fr": "Station de services HECHACHENA YOUCEF",
+          "name_ar": "حشاشنة يوسف",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.935,
+            36.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HECHACHENA YOUCEF",
+      "display_name_ar": "حشاشنة يوسف"
+    },
+    {
+      "id": "tariki-2740",
+      "coordinates": [
+        7.19,
+        35.944
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2740",
+          "route_id": "4639",
+          "name_fr": "Station de services BAGOU EL AIECHI",
+          "name_ar": "محطة متعددة الخدمات بغو العياشي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.19,
+            35.944
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BAGOU EL AIECHI",
+      "display_name_ar": "محطة متعددة الخدمات بغو العياشي"
+    },
+    {
+      "id": "tariki-2818",
+      "coordinates": [
+        6.786,
+        36.126
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2818",
+          "route_id": "5272",
+          "name_fr": "Station de services AMANI LAMINE",
+          "name_ar": "أماني لمين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.786,
+            36.126
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AMANI LAMINE",
+      "display_name_ar": "أماني لمين"
+    },
+    {
+      "id": "tariki-2914",
+      "coordinates": [
+        6.549,
+        35.991
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2914",
+          "route_id": "6512",
+          "name_fr": "Station de services ADADI AMMAR",
+          "name_ar": "محطة متعددة الخدمات عدادي عمار",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.549,
+            35.991
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ADADI AMMAR",
+      "display_name_ar": "محطة متعددة الخدمات عدادي عمار"
+    },
+    {
+      "id": "tariki-2939",
+      "coordinates": [
+        6.581,
+        36.028
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2939",
+          "route_id": "6567",
+          "name_fr": "Station de services AMICHE 1",
+          "name_ar": "محطة متعددة الخدمات عميش العلمي و اخوانه1",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.581,
+            36.028
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AMICHE 1",
+      "display_name_ar": "محطة متعددة الخدمات عميش العلمي و اخوانه1"
+    },
+    {
+      "id": "tariki-2954",
+      "coordinates": [
+        6.587,
+        36.021
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2954",
+          "route_id": "6567",
+          "name_fr": "Station de services AMICHE 2",
+          "name_ar": "محطة متعددة الخدمات عميش العلمي و اخوانه2",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            6.587,
+            36.021
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AMICHE 2",
+      "display_name_ar": "محطة متعددة الخدمات عميش العلمي و اخوانه2"
+    },
+    {
+      "id": "tariki-2958",
+      "coordinates": [
+        6.611,
+        35.985
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2958",
+          "route_id": "6567",
+          "name_fr": "Station de services Daoudi Hocine",
+          "name_ar": "محطة متعددة الخدمات داودي حسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.611,
+            35.985
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 4,
+          "wilaya_fr": "Oum El Bouaghi",
+          "wilaya_ar": "أم البواقي",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Daoudi Hocine",
+      "display_name_ar": "محطة متعددة الخدمات داودي حسين"
+    }
+  ]
+}
