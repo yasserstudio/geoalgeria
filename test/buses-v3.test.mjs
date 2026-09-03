@@ -22,19 +22,19 @@ const officialSidiBelAbbes = read("sources/buses/etus-sidi-bel-abbes-lines.json"
 const officialSetif = read("sources/buses/etus-setif-lines.json");
 
 test("buses v3 ships only the reviewed release boundary", () => {
-  assert.equal(lines.length, 127);
+  assert.equal(lines.length, 133);
   assert.equal(shapes.length, 76);
   assert.equal(directions.length, 128);
   assert.equal(stations.length, 1603);
   assert.equal(memberships.length, 2685);
-  assert.equal(operators.length, 9);
+  assert.equal(operators.length, 10);
   assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 125);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 3);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [76, 61], etuad: [16, 1], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
+    { etusa: [76, 61], etuad: [16, 1], "etus-annaba": [6, 0], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
-  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto", "etuad"]));
+  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto", "etuad", "etus-annaba"]));
   assert.ok(lines.every((line, index) => index === 0
     || Number(lines[index - 1].wilaya_code) <= Number(line.wilaya_code)));
   // ETUS Aïn Defla entered with the Operator's 2025 artwork: 16 Lines, one reviewed shape.
@@ -209,7 +209,7 @@ test("tracked official Source bytes match their receipts", () => {
 
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
-  assert.equal(api.operatorRecords().length, 9);
+  assert.equal(api.operatorRecords().length, 10);
   // Every Operator carries its contact links, verified or explicitly null; never a bare source key.
   for (const operator of api.operatorRecords()) {
     for (const key of ["website_url", "facebook_url"]) {

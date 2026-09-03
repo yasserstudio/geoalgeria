@@ -7,6 +7,14 @@
     "sha256": "587ca610428c7f6669563be5cba96539502d180cd33b96b93e3bb894cd82f4f3",
     "url": "https://www.facebook.com/ETUS44/"
   },
+  "etus-annaba-lines": {
+    "bytes": 4339,
+    "note": "Rights-safe bilingual Line identities transcribed from ETUS Annaba's Eid al-Adha 2026 service program supplied by the project owner from the Operator's page. French endpoint labels are transliterations of the Arabic. Only routes the Operator numbers are Lines; unnumbered services are kept as evidence. Artwork is validation-only and is not redistributed. No geometry.",
+    "records": 6,
+    "retrieved": "2026-09-03",
+    "sha256": "b4e6b0bbefc56acaa7960cd94aa79618a887560aa218c61975825fd2628ea7c9",
+    "url": "https://www.facebook.com/p/%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%88-%D8%A7%D9%84%D8%B4%D8%A8%D9%87-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D8%B9%D9%86%D8%A7%D8%A8%D8%A9-ETUS-Annaba-100063517660926/"
+  },
   "etus-bejaia-lines": {
     "bytes": 14292,
     "note": "Rights-safe projection of Line identities, endpoints, round-trip distances, typed stop counts and timetable-image transcriptions linked by the official WordPress REST API. Embedded KML maps validate identity but their geometry is not retained. Per-record receipts preserve upstream URLs, retrieval timestamps, byte counts and payload SHA-256 hashes for the API, maps and timetable panels.",

@@ -147,6 +147,10 @@ a fetcher and exposed nothing but its title.
 - **[seen]** Oran: fr.wikipedia "Reseau de bus d'Oran" (Ministry of Interior + GuideOran)
   lists line 39 Palais des Sports (M'dina Jdida) - Hai Nedjma; OSM "Line 39" has
   to=Medina Jdida, 0 stop members, no operator. **Decision: not yet.** Lead: that table.
+- **[seen]** Annaba, resolved 2026-09-03 the Aïn Defla way: the project owner read the ETUS Annaba page and
+  supplied its Eid al-Adha 2026 service program; six numbered Lines (05, 25, 26, 30, 33, 41) transcribed,
+  nineteen unnumbered services kept as evidence (`sources/buses/etus-annaba-lines.json`). Directory-only:
+  wilaya 23 OSM relations carry no identity.
 - **[seen]** Ghardaia (ETU-G, press only; OSM ref 32 named "Bus 1"), Khenchela, Batna
   (ETUB, press only), Annaba (facebook page 100063517660926, login-walled; OSM routes have
   no ref, name or stops), Ouled Djellal: no official line list found. **Decision: exclude.**

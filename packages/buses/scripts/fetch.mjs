@@ -18,6 +18,7 @@ const officialMsila = readCapture("buses", "etus-msila-lines");
 const officialSidiBelAbbes = readCapture("buses", "etus-sidi-bel-abbes-lines");
 const officialSetif = readCapture("buses", "etus-setif-lines");
 const officialAinDefla = readCapture("buses", "etus-ain-defla-lines");
+const officialAnnaba = readCapture("buses", "etus-annaba-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -152,6 +153,23 @@ for (const official of officialAinDefla.lines) {
   });
 }
 
+// ETUS Annaba: the six Lines the Operator numbers in its 2026 service program.
+// Directory-only: wilaya 23's OSM relations carry no identity to match.
+for (const official of officialAnnaba.lines) {
+  lines.push({
+    id: lineId("etus-annaba", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-annaba", operator: "ETUS Annaba", network: "Annaba",
+    line: official.ref,
+    terminus1: official.terminus1_fr, terminus1_fr: official.terminus1_fr, terminus1_ar: official.terminus1_ar,
+    terminus2: official.terminus2_fr, terminus2_fr: official.terminus2_fr, terminus2_ar: official.terminus2_ar,
+    stops: null, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "23",
+    source: "etus-annaba", source_refs: ["etus-annaba"],
+    source_url: officialAnnaba.evidence.announcement_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
 for (const official of officialEtusto) {
   const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
   lines.push({
@@ -264,7 +282,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 127, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 133, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -305,6 +323,12 @@ const operatorRows = osm.operators.map((operator) => ({
           : operator.id === "etuad" ? ["etus-ain-defla", "osm"] : ["osm"],
 }));
 operatorRows.push({
+  id: "etus-annaba", name: "ETUS Annaba",
+  name_fr: "Entreprise de transport urbain et suburbain d'Annaba", name_ar: "المؤسسة العمومية للنقل الحضري وشبه الحضري عنابة",
+  wilaya_codes: ["23"], scope: "urban_suburban",
+  line_count: officialAnnaba.lines.length, shape_count: 0, source_refs: ["etus-annaba"],
+});
+operatorRows.push({
   id: "etus-bejaia", name: "ETUS Béjaïa",
   name_fr: "Entreprise de Transport Urbain et Suburbain de Béjaïa", name_ar: null,
   wilaya_codes: ["06"], scope: "urban_suburban",
@@ -336,6 +360,7 @@ const operatorContacts = {
   "etus-msila": { website_url: "https://etus-msila.dz/", facebook_url: null },
   "etus-sidi-bel-abbes": { website_url: "https://etus22.dz/", facebook_url: null },
   etuad: { website_url: null, facebook_url: "https://www.facebook.com/ETUS44/" },
+  "etus-annaba": { website_url: null, facebook_url: "https://www.facebook.com/100063517660926/" },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));
