@@ -210,6 +210,14 @@ test("tracked official Source bytes match their receipts", () => {
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
   assert.equal(api.operatorRecords().length, 9);
+  // Every Operator carries its contact links, verified or explicitly null; never a bare source key.
+  for (const operator of api.operatorRecords()) {
+    for (const key of ["website_url", "facebook_url"]) {
+      assert.ok(operator[key] === null || /^https?:\/\//.test(operator[key]), `${operator.id}.${key}`);
+    }
+    assert.ok(operator.website_url || operator.facebook_url, `${operator.id} has no official link`);
+  }
+  assert.ok(api.lines().every((line) => line.source_url == null || /^https?:\/\//.test(line.source_url)));
   assert.equal(api.shapes().length, 76);
   assert.equal(api.directions().length, 128);
   assert.equal(api.stations().length, 1603);

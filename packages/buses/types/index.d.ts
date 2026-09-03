@@ -97,6 +97,10 @@ export interface BusOperator {
   line_count: number;
   shape_count: number;
   source_refs: SourceKey[];
+  /** The Operator's own site, when one is published and was reachable at capture. */
+  website_url: string | null;
+  /** The Operator's official Facebook page, verified by title; null when not verified. */
+  facebook_url: string | null;
 }
 
 export interface MultiLineStringGeometry { type: "MultiLineString"; coordinates: number[][][]; }

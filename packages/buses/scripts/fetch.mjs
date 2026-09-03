@@ -126,7 +126,7 @@ for (const official of officialSetif.lines) {
     stops: null, major_stops: null, service_hours: [],
     communes_served: [], stations_served: [], wilaya_code: "19",
     source: "etus-setif", source_refs: shape ? ["etus-setif", "osm"] : ["etus-setif"],
-    source_url: undefined,
+    source_url: "https://www.facebook.com/111330534776381/",
     shape_id: shape ? shapeId("etus-setif", official.ref) : null,
     osm_relation_ids: shape?.relation_ids ?? [],
   });
@@ -146,7 +146,7 @@ for (const official of officialAinDefla.lines) {
     stops: null, major_stops: null, service_hours: [],
     communes_served: [], stations_served: [], wilaya_code: "44",
     source: "etus-ain-defla", source_refs: shape ? ["etus-ain-defla", "osm"] : ["etus-ain-defla"],
-    source_url: undefined,
+    source_url: "https://www.facebook.com/ETUS44/",
     shape_id: shape ? shapeId("etuad", official.ref) : null,
     osm_relation_ids: shape?.relation_ids ?? [],
   });
@@ -324,6 +324,20 @@ operatorRows.push({
   line_count: officialSidiBelAbbes.lines.length, shape_count: 0,
   source_refs: ["etus-sidi-bel-abbes"],
 });
+// Where a reader can confirm a Line with the Operator itself. Only pages whose
+// title was verified in review; a missing page is null, never guessed.
+const operatorContacts = {
+  etusa: { website_url: "https://www.etusa.dz/", facebook_url: null },
+  "etus-tiaret": { website_url: "https://www.etus-tiaret.dz/", facebook_url: null },
+  etusto: { website_url: "http://etusto.dz/", facebook_url: null },
+  "etus-setif": { website_url: null, facebook_url: "https://www.facebook.com/111330534776381/" },
+  "etus-mostaganem": { website_url: null, facebook_url: "https://www.facebook.com/100048728689041/" },
+  "etus-bejaia": { website_url: "https://etusbejaia.dz/", facebook_url: null },
+  "etus-msila": { website_url: "https://etus-msila.dz/", facebook_url: null },
+  "etus-sidi-bel-abbes": { website_url: "https://etus22.dz/", facebook_url: null },
+  etuad: { website_url: null, facebook_url: "https://www.facebook.com/ETUS44/" },
+};
+for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));
 write(join(DATA, "directions.json"), directions.sort((a, b) => a.osm_relation_id - b.osm_relation_id));
 write(join(DATA, "station-memberships.json"), memberships.sort((a, b) => a.osm_relation_id - b.osm_relation_id || a.osm_member_index - b.osm_member_index));
