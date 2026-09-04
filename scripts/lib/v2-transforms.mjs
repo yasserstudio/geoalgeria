@@ -712,7 +712,7 @@ export const MIGRATIONS = {
       id: r.id,
       name: r.name ?? (
         r.terminus1 != null && r.terminus2 != null
-          ? `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`
+          ? `Ligne ${r.line}: ${r.terminus1} ↔ ${r.terminus2}`
           : null
       ),
       name_fr: r.name_fr,
