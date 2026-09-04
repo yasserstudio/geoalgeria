@@ -101,7 +101,7 @@ test("buses v3 ships only the reviewed release boundary", () => {
       && line.shape_id === null && line.source_url === null && line.terminus1 === null && line.terminus2 === null));
   assert.deepEqual(
     [lines.find((line) => line.id === "etusl-laghouat-02")?.name_fr, lines.find((line) => line.id === "etusl-laghouat-02")?.name_ar],
-    ["Ligne 02 — Cité El Mousalaha", "الخط رقم 02 — حي المصالحة"],
+    ["Ligne 02: Cité El Mousalaha", "الخط رقم 02: حي المصالحة"],
   );
   assert.deepEqual(lines.filter((line) => line.operator_id === "etus-setif").map((line) => line.line), ["101", "104", "105", "106A", "106B"]);
   const setif101 = lines.find((line) => line.id === "etus-setif-101");
