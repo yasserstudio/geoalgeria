@@ -1,5 +1,13 @@
 # @geoalgeria/ooredoo
 
+## 2.0.3
+
+### Patch Changes
+
+- 586c0cc: Refresh the public OSM, ANEM, and mobile-operator sources through 2026-08-31,
+  including updated records, opening hours, labels, and canonical Mobilis wilaya
+  assignments.
+
 ## 2.0.2
 
 ### Patch Changes
