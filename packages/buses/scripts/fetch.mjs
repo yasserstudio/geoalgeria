@@ -22,6 +22,7 @@ const officialAnnaba = readCapture("buses", "etus-annaba-lines");
 const officialTlemcen = readCapture("buses", "etus-tlemcen-lines");
 const officialOran = readCapture("buses", "eto-oran-lines");
 const officialOeb = readCapture("buses", "etus-oeb-lines");
+const officialLaghouat = readCapture("buses", "etul-laghouat-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -48,6 +49,12 @@ const oebTerminiFr = {
   "03": ["Station urbaine", "Gare routière"],
   "04": ["Station urbaine", "Maison de jeunes"],
   "05": ["Station urbaine", "Cité Mohamed Lakhdar (Bir Terch)"],
+};
+const laghouatRouteNamesFr = {
+  "02": "Cité El Mousalaha",
+  "04": "El Wahat Ech Chamalia",
+  "05": "El Wiam",
+  "07": "Boukhenfous",
 };
 
 const lines = etusa.lines.map((line) => {
@@ -234,6 +241,28 @@ for (const official of officialOeb.lines) {
   });
 }
 
+// ETUL Laghouat: repeated public route refs from two dated operating programs.
+// The tables' 01-06 values are duty assignments, not Lines, and their vehicle
+// and timetable fields are date-specific. No stable endpoint pair or reusable
+// geometry is asserted from the artwork.
+for (const official of officialLaghouat.lines) {
+  const routeNameFr = laghouatRouteNamesFr[official.ref];
+  lines.push({
+    id: lineId("etusl-laghouat", official.ref),
+    name: `Ligne ${official.ref} — ${routeNameFr}`,
+    name_fr: `Ligne ${official.ref} — ${routeNameFr}`,
+    name_ar: `الخط رقم ${official.ref} — ${official.route_name_ar}`,
+    operator_id: "etusl-laghouat", operator: "ETUL Laghouat", network: "Laghouat",
+    line: official.ref,
+    terminus1: null, terminus2: null,
+    stops: null, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "03",
+    source: "etul-laghouat", source_refs: ["etul-laghouat"],
+    source_url: officialLaghouat.evidence.line_source_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
 for (const official of officialEtusto) {
   const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
   lines.push({
@@ -346,7 +375,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 149, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 153, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -431,6 +460,13 @@ operatorRows.push({
   wilaya_codes: ["04"], scope: "urban_suburban",
   line_count: officialOeb.lines.length, shape_count: 0, source_refs: ["etus-oeb"],
 });
+operatorRows.push({
+  id: "etusl-laghouat", name: "ETUL Laghouat",
+  name_fr: "Entreprise publique de transport urbain et suburbain de Laghouat",
+  name_ar: officialLaghouat.evidence.operator_name_ar,
+  wilaya_codes: ["03"], scope: "urban_suburban",
+  line_count: officialLaghouat.lines.length, shape_count: 0, source_refs: ["etul-laghouat"],
+});
 // Where a reader can confirm a Line with the Operator itself. Only pages whose
 // title was verified in review; a missing page is null, never guessed.
 const operatorContacts = {
@@ -447,6 +483,7 @@ const operatorContacts = {
   "etus-tlemcen": { website_url: "https://www.etus-tlemcen.dz/", facebook_url: "https://www.facebook.com/etustlemcen13/" },
   "etus-oran": { website_url: null, facebook_url: "https://www.facebook.com/p/ETO-100093054514209/" },
   "etus-oeb": { website_url: null, facebook_url: null },
+  "etusl-laghouat": { website_url: null, facebook_url: null },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));

@@ -208,6 +208,23 @@
     "facebook_url": null
   },
   {
+    "id": "etusl-laghouat",
+    "name": "ETUL Laghouat",
+    "name_fr": "Entreprise publique de transport urbain et suburbain de Laghouat",
+    "name_ar": "المؤسسة العمومية للنقل الحضري و الشبه الحضري بالأغواط",
+    "wilaya_codes": [
+      "03"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 4,
+    "shape_count": 0,
+    "source_refs": [
+      "etul-laghouat"
+    ],
+    "website_url": null,
+    "facebook_url": null
+  },
+  {
     "id": "etusto",
     "name": "ETUSTO",
     "name_fr": "Établissement public de transport urbain et suburbain de Tizi Ouzou",

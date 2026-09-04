@@ -79,7 +79,9 @@ function readManifest(pkg) {
  * @param {string} pkg     package name (directory under sources/)
  * @param {string} source  capture name, kebab-case, no extension (e.g. "osm", "mobilis-5g")
  * @param {*}      payload the raw payload as received (post-parse, pre-transform)
- * @param {object} meta    { url, retrieved?, records?, note? } — url is required;
+ * @param {object} meta    { url?, provenance?, retrieved?, records?, note? } —
+ *                         url is required unless provenance is the explicit
+ *                         `owner_supplied_artifact` value;
  *                         retrieved defaults to today; records defaults to
  *                         payload.length when the payload is an array.
  * @returns {string} the path written
@@ -87,7 +89,16 @@ function readManifest(pkg) {
 export function writeCapture(pkg, source, payload, meta) {
   checkName("pkg", pkg);
   checkName("source", source);
-  if (!meta || !meta.url) throw new Error(`writeCapture(${pkg}/${source}): meta.url is required`);
+  const ownerSupplied = meta?.provenance === "owner_supplied_artifact";
+  if (!meta || (!meta.url && !ownerSupplied)) {
+    throw new Error(`writeCapture(${pkg}/${source}): meta.url or owner-supplied provenance is required`);
+  }
+  if (meta.provenance != null && !ownerSupplied) {
+    throw new Error(`writeCapture(${pkg}/${source}): unsupported provenance "${meta.provenance}"`);
+  }
+  if (ownerSupplied && meta.url != null) {
+    throw new Error(`writeCapture(${pkg}/${source}): owner-supplied provenance requires a null URL`);
+  }
   const dir = join(STORE_ROOT, pkg);
   mkdirSync(dir, { recursive: true });
 
@@ -101,7 +112,8 @@ export function writeCapture(pkg, source, payload, meta) {
 
   const manifest = readManifest(pkg);
   manifest[source] = {
-    url: meta.url,
+    url: meta.url ?? null,
+    ...(ownerSupplied ? { provenance: "owner_supplied_artifact" } : {}),
     retrieved: meta.retrieved ?? new Date().toISOString().slice(0, 10),
     records: meta.records ?? (Array.isArray(payload) ? payload.length : undefined),
     sha256: captureSha256(payload),

@@ -15,7 +15,7 @@ directory exists so that:
 
 ```
 sources/<pkg>/<source>.json   # raw payload as received (post-parse, pre-transform)
-sources/<pkg>/manifest.json   # per-source: url, retrieved, records, sha256, bytes
+sources/<pkg>/manifest.json   # per-source: provenance, url, retrieved, records, sha256, bytes
 ```
 
 Written only through `scripts/lib/source-store.mjs` (`writeCapture` /
@@ -51,6 +51,10 @@ human review.
   date-suffixed siblings.
 - Capture the payload **as received** (post-parse, pre-transform). Cleaning
   belongs in the fetcher's transform step, visible in code review.
+- A capture needs an upstream `url`. When the project owner supplies an
+  official artifact without its original post URL, use the explicit
+  `owner_supplied_artifact` provenance and a null URL; never substitute a
+  guessed page or generic search URL.
 - Captures are not published: nothing here ships to npm or the CDN.
 - Size: captures of a few MB are fine. For an unusually large pull (>20 MB),
   capture the trimmed projection the build actually consumes and record the

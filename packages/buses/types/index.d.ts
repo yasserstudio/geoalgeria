@@ -1,5 +1,5 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etul-laghouat";
 export type SequenceStatus = "osm_member_order_unvalidated";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
@@ -31,6 +31,8 @@ export interface BusDepartureSchedule {
 export interface BusLine {
   id: string;
   name: string | null;
+  name_fr?: string;
+  name_ar?: string;
   wilaya_code: string;
   commune_code: null;
   commune: null;

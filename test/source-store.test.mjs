@@ -84,7 +84,18 @@ test("hardening: names are validated, non-plain payloads refused, hand edits det
   assert.throws(() => readCapture(pkg, "ok"), /does not match its manifest sha256/);
 });
 
-test("writeCapture requires a source url", () => {
-  assert.throws(() => writeCapture(PKG, "x", {}, {}), /meta\.url is required/);
-  assert.ok(!existsSync(join(DIR, "x.json")));
+test("writeCapture requires a source URL or explicit supplied-artifact provenance", (t) => {
+  const pkg = `${PKG}-supplied`;
+  t.after(() => rmSync(join(REPO, "sources", pkg), { recursive: true, force: true }));
+
+  assert.throws(() => writeCapture(pkg, "x", {}, {}), /meta\.url or owner-supplied provenance is required/);
+  assert.throws(
+    () => writeCapture(pkg, "x", {}, { url: "https://example.dz/search", provenance: "owner_supplied_artifact" }),
+    /owner-supplied provenance requires a null URL/,
+  );
+  writeCapture(pkg, "x", {}, { provenance: "owner_supplied_artifact", retrieved: "2026-09-04" });
+  assert.deepEqual(
+    { url: captureMeta(pkg, "x").url, provenance: captureMeta(pkg, "x").provenance },
+    { url: null, provenance: "owner_supplied_artifact" },
+  );
 });
