@@ -250,9 +250,9 @@ for (const official of officialLaghouat.lines) {
   const routeNameFr = laghouatRouteNamesFr[official.ref];
   lines.push({
     id: lineId("etusl-laghouat", official.ref),
-    name: `Ligne ${official.ref} — ${routeNameFr}`,
-    name_fr: `Ligne ${official.ref} — ${routeNameFr}`,
-    name_ar: `الخط رقم ${official.ref} — ${official.route_name_ar}`,
+    name: `Ligne ${official.ref}: ${routeNameFr}`,
+    name_fr: `Ligne ${official.ref}: ${routeNameFr}`,
+    name_ar: `الخط رقم ${official.ref}: ${official.route_name_ar}`,
     operator_id: "etusl-laghouat", operator: "ETUL Laghouat", network: "Laghouat",
     line: official.ref,
     terminus1: null, terminus2: null,
