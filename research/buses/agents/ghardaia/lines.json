@@ -1,0 +1,16 @@
+[
+  {
+    "network": null,
+    "ref": "32",
+    "terminus1_ar": "الأقواس",
+    "terminus1_fr": "Lakwass",
+    "terminus2_ar": "مركز المدينة والسوق",
+    "terminus2_fr": "Centre ville / Souk (Lablad)",
+    "via": "Marghoub universitaire, Actel/Baladia/Lycee, BNA, Muhafada, OPGI/Baladia, Marakchi, al Ateuf rond-point",
+    "source_url": "https://www.openstreetmap.org/relation/13145030",
+    "source_kind": "osm",
+    "evidence_type": "osm_only_unattributed",
+    "retrieved": "2026-09-03",
+    "notes": "NOT PROMOTABLE. OSM ref=32 but the relation name is \"Bus 1\" and the operator tag holds a route name (\"Bus Ghardaia ville 1\"), not an operator; network is missing. Two relations, 13145030 and 13145031, are the two directions; 56 stop members, 4.1-4.2 km. The ref/name conflict (32 vs 1) cannot be resolved: no ETU-G line list, numbered or otherwise, was found on 2026-09-03. network left null deliberately."
+  }
+]

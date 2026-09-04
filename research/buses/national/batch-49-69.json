@@ -1,0 +1,221 @@
+{
+  "schema_version": 1,
+  "updated": "2026-09-01",
+  "scope": {
+    "wilaya_codes": ["49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69"],
+    "modes": ["urban_bus", "suburban_bus"],
+    "source_policy": "Official legislation and operator-controlled sources are preferred. Reporting, academic works, directories, and third-party apps are discovery evidence only; they do not establish current completeness, operator authorization, or data-reuse rights."
+  },
+  "common_sources": [
+    {
+      "id": "executive-decree-23-402",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2023/F2023072.pdf",
+      "source_type": "official_legislation",
+      "evidence_status": "seen",
+      "freshness": "2023-11-09",
+      "access_status": "public",
+      "reuse_status": "public_factual_record_not_a_transport_data_license",
+      "claims": ["creation_of_public_urban_and_suburban_transport_enterprises_for_wilayas_49_to_58"]
+    },
+    {
+      "id": "territorial-law-26-06",
+      "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+      "source_type": "official_legislation",
+      "evidence_status": "seen",
+      "freshness": "2026-05-25",
+      "access_status": "public",
+      "reuse_status": "public_factual_record_not_a_transport_data_license",
+      "claims": ["official_names_and_codes_for_wilayas_59_to_69"]
+    },
+    {
+      "id": "new-wilaya-transition",
+      "url": "https://interieur.gov.dz/2025/12/18/le-ministre-de-linterieur-des-collectivites-locales-et-des-transports-presente-le-projet-de-loi-relatif-a-lorganisation-territoriale-du-pays-devant-la-commission-competente-du-conse/",
+      "source_type": "official_ministry_statement",
+      "evidence_status": "seen",
+      "freshness": "2025-12-18",
+      "access_status": "public",
+      "reuse_status": "public_factual_record_not_a_transport_data_license",
+      "claims": ["wilayas_59_to_69_transition_through_2026", "parent_wilayas_retain_service_responsibilities_until_2026_12_31", "full_operation_planned_from_2027_01_01"]
+    }
+  ],
+  "wilayas": [
+    {
+      "wilaya_code": "49",
+      "wilaya_name": "Timimoun",
+      "operator": {"id": "etus-timimoun", "name": "Entreprise de transport urbain de la wilaya de Timimoun", "identity_status": "reported_active", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [
+        {"url": "https://www.eldjoumhouria.dz/article/24749/", "source_type": "APS_syndicated_reporting", "evidence_status": "seen", "freshness": "2024-03-24", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["active_urban_services", "east_and_west_ksour_axes"]},
+        {"url": "https://www.sogral.dz/index.php/fr/28-nos-agences/92-timimoune", "source_type": "official_station_profile", "evidence_status": "seen", "freshness": "retrieved_2026-09-01", "access_status": "public", "reuse_status": "facts_only", "claims": ["Timimoun_station_has_urban_platforms_but_reports_zero_urban_shuttles"]}
+      ],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [["Timimoun", "Casbah"], ["Timimoun", "Zeggour"], ["Timimoun", "Badriane"], ["Timimoun", "El Ouedjda"], ["Timimoun", "Tourrest"]], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": ["SOGRAL_profile_reports_zero_urban_shuttles_while_2024_reporting_describes_active_urban_services", "ETUA_Adrar_vehicle_seen_at_Timimoun_does_not_prove_current_operator_identity"],
+      "blockers": ["no_numbered_line_list", "no_station_sequence", "no_geometry", "no_open_license"]
+    },
+    {
+      "wilaya_code": "50", "wilaya_name": "Bordj Badji Mokhtar",
+      "operator": {"id": "etus-bordj-badji-mokhtar", "name": "Planned urban transport enterprise of Bordj Badji Mokhtar", "identity_status": "creation_reported_not_verified_operational", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [{"url": "https://eldjanoubelkabir.dz/%D8%A8%D8%B1%D8%AC-%D8%A8%D8%A7%D8%AC%D9%8A-%D9%85%D8%AE%D8%AA%D8%A7%D8%B1-%D8%A7%D8%B3%D8%AA%D9%84%D8%A7%D9%85-10-%D8%AD%D8%A7%D9%81%D9%84%D8%A7%D8%AA-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84/", "source_type": "APS_syndicated_reporting", "evidence_status": "seen", "freshness": "2025-01-14", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["enterprise_creation_in_progress", "30_bus_allocation", "first_10_buses_expected_2025_Q1", "transport_sites_at_Bordj_Badji_Mokhtar_and_Timiaouine"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": [],
+      "blockers": ["current_operational_status_not_verified", "transport_plan_not_published", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "51", "wilaya_name": "Ouled Djellal",
+      "operator": {"id": "etus-ouled-djellal", "name": "Urban transport enterprise of Ouled Djellal", "identity_status": "created_fleet_pending_in_latest_report", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [{"url": "https://www.annasronline.com/%D9%85%D8%AD%D9%84%D9%8A%D8%A7%D8%AA/266818-%D8%A3%D9%88%D9%84%D8%A7%D8%AF-%D8%AC%D9%84%D8%A7%D9%84-%D8%AA%D8%B1%D9%82%D8%A8-%D8%A7%D8%B3%D8%AA%D9%84%D8%A7%D9%85-%D8%AD%D8%A7%D9%81%D9%84%D8%A7%D8%AA-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%88%D9%85%D8%AD%D8%B7%D8%A9-%D8%A8%D8%B1%D9%8A%D8%A9-%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9", "source_type": "local_reporting", "evidence_status": "seen", "freshness": "2026-01-16", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["fleet_delivery_pending", "planned_coverage_Ouled_Djellal_and_Sidi_Khaled", "named_service_areas"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [["Ouled Djellal", "Sidi Khaled"]], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null, "named_areas": ["Difel", "Chaoua", "En Nedjara", "El Moudjahidine", "self-build housing districts"]},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": [],
+      "blockers": ["network_is_planned_not_verified_in_service", "no_numbered_lines", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "52", "wilaya_name": "Beni Abbes",
+      "operator": {"id": "etus-beni-abbes", "name": "Entreprise de transport urbain et suburbain de la wilaya de Beni Abbes", "identity_status": "created_administratively_operations_not_verified", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [{"url": "https://www.apn.dz/documents/JOD/9_legislature/jod_9leg_270.pdf", "source_type": "official_parliamentary_record", "evidence_status": "seen", "freshness": "2024", "access_status": "public", "reuse_status": "public_factual_record_not_a_transport_data_license", "claims": ["headquarters_allocated_2024_01_11", "buses_and_general_director_pending"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": [],
+      "blockers": ["operations_not_verified", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "53", "wilaya_name": "In Salah",
+      "operator": {"id": "etus-in-salah", "name": "Entreprise de transport urbain et suburbain de la wilaya d'In Salah", "identity_status": "legally_created_operations_not_verified", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": [], "blockers": ["no_operational_source_found", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "54", "wilaya_name": "In Guezzam",
+      "operator": {"id": "etus-in-guezzam", "name": "Entreprise de transport urbain et suburbain de la wilaya d'In Guezzam", "identity_status": "legally_created_operations_not_verified", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": [], "blockers": ["no_operational_source_found", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "55", "wilaya_name": "Touggourt",
+      "operator": {"id": "etus-touggourt", "name": "Touggourt exploitation unit of ETUO Ouargla / legally created Wilaya enterprise", "identity_status": "historical_unit_seen_current_structure_ambiguous", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [
+        {"url": "https://dspace.univ-ouargla.dz/jspui/bitstream/123456789/39342/1/neciri%20-hamoudi.pdf", "source_type": "academic_secondary_source", "evidence_status": "seen", "freshness": "2025", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["ETUO_has_Touggourt_exploitation_unit"]},
+        {"url": "https://dspace.univ-ouargla.dz/jspui/bitstream/123456789/32981/1/jadi-saadamou.pdf", "source_type": "academic_secondary_source", "evidence_status": "seen", "freshness": "2022", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["Touggourt_line_refs_21_22_27"]},
+        {"url": "https://play.google.com/store/apps/details?id=org.ouareglabus.manager&hl=en", "source_type": "third_party_app_listing", "evidence_status": "seen", "freshness": "updated_2025-08-28_removed_reported_2026-02-18", "access_status": "public_listing", "reuse_status": "no_open_feed_or_reuse_grant_found", "claims": ["ETUS_Ouargla_live_positions"]},
+        {"url": "https://chrome-stats.com/d/ouargla.routes.devcloud", "source_type": "third_party_app_index", "evidence_status": "seen", "freshness": "app_updated_2025-12-09_index_2026-08-23", "access_status": "public_listing", "reuse_status": "no_open_feed_or_reuse_grant_found", "claims": ["Ouargla_live_tracking_schedules_and_routes_claimed"]}
+      ],
+      "available": {"line_refs": ["21", "22", "27"], "line_count": 3, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": ["decree_creates_Wilaya_enterprise_but_recent_academic_source_still_describes_ETUO_Ouargla_Touggourt_unit", "Ouargla_apps_do_not_establish_Touggourt_coverage"],
+      "blockers": ["line_endpoints_not_reliably_readable", "no_station_sequences", "no_geometry", "third_party_apps_expose_no_reusable_public_feed"]
+    },
+    {
+      "wilaya_code": "56", "wilaya_name": "Djanet",
+      "operator": {"id": "etus-djanet", "name": "Entreprise de transport urbain et suburbain de la wilaya de Djanet", "identity_status": "legally_created_current_operations_not_verified", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [{"url": "https://www.ennaharonline.com/%D8%AC%D9%87%D9%88%D8%AF-%D9%84%D9%84%D8%AA%D9%83%D9%81%D9%84-%D8%A8%D8%A7%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D9%85%D8%AF%D8%B1%D8%B3%D9%8A-%D8%A8%D8%A5%D9%8A%D9%84%D9%8A%D8%B2%D9%8A-%D9%84%D8%AA/", "source_type": "historical_reporting", "evidence_status": "seen", "freshness": "2013", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["urban_transport_buses_operated_in_Djanet_under_former_Illizi_structure"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": ["historical_parent_structure_does_not_verify_current_operator_or_network"],
+      "blockers": ["no_current_operational_source", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "57", "wilaya_name": "El M'Ghair",
+      "operator": {"id": "etus-el-mghair", "name": "Entreprise de transport urbain et suburbain de la wilaya d'El M'Ghair", "identity_status": "legally_created_implementation_uncertain", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [{"url": "https://www.majliselouma.dz/userfiles/files/documents/2025/07/JOD%2024%20-%2025/PDF/03.pdf", "source_type": "official_parliamentary_record", "evidence_status": "seen", "freshness": "2024-11-14", "access_status": "public", "reuse_status": "public_factual_record_not_a_transport_data_license", "claims": ["request_to_accelerate_creation_of_urban_transport_enterprise"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": ["legal_creation_precedes_parliamentary_request_to_accelerate_practical_creation"],
+      "blockers": ["active_operation_not_verified", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "58", "wilaya_name": "El Meniaa",
+      "operator": {"id": "etus-el-meniaa", "name": "Urban transport enterprise of El Meniaa", "identity_status": "reported_active", "identity_source_ids": ["executive-decree-23-402"]},
+      "sources": [
+        {"url": "https://barakanews.dz/posts/almnyaa-tstkbl-mftshy-ozar-alnkl-lbhth-afak-ttoyr-alktaaa", "source_type": "local_reporting", "evidence_status": "seen", "freshness": "2025", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["fleet_reinforcement_requested", "urban_terminals_proposed_at_Hassi_El_Gara_and_Hassi_Lefhal"]},
+        {"url": "https://www.ennaharonline.com/%D8%A8%D8%A7%D9%84%D8%B5%D9%88%D8%B1-%D8%B9%D9%85%D8%A7%D9%84-%D9%85%D8%A4%D8%B3%D8%A9-%D8%A7%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D8%A8%D8%A7%D9%84%D9%85%D9%86%D9%8A/", "source_type": "historical_reporting", "evidence_status": "seen", "freshness": "2018-10-11", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["operational_urban_transport_branch"]}
+      ],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null, "proposed_terminals": ["Hassi El Gara new urban pole", "Hassi Lefhal"]},
+      "logo": {"url": null, "verification": "not_verified"}, "conflicts": [],
+      "blockers": ["proposals_are_not_active_lines", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "59", "wilaya_name": "Aflou",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_operator_source_found", "do_not_infer_ETUS_Laghouat_coverage", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "60", "wilaya_name": "Barika",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_operator_source_found", "do_not_infer_ETUS_Batna_coverage", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "61", "wilaya_name": "El Kantara",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_operator_source_found", "do_not_infer_ETUS_Biskra_coverage", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "62", "wilaya_name": "Bir El Ater",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_operator_source_found", "do_not_infer_ETUS_Tebessa_coverage", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "63", "wilaya_name": "El Aricha",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_operator_source_found", "do_not_infer_ETUS_Tlemcen_coverage", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "64", "wilaya_name": "Ksar Chellala",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_local_network_source_found", "ETUS_Tiaret_exists_but_local_coverage_not_verified", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "65", "wilaya_name": "Ain Oussera",
+      "operator": {"id": null, "name": null, "identity_status": "future_parent_operator_allocation_reported", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [
+        {"url": "https://www.eldjoumhouria.dz/article/45986/", "source_type": "local_reporting", "evidence_status": "seen", "freshness": "2026-08-29", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["later_Djelfa_public_bus_allocation_expected_for_Ain_Oussera"]},
+        {"url": "https://www.djazairess.com/djelfa/14", "source_type": "historical_reporting", "evidence_status": "seen", "freshness": "2008", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["historical_local_urban_vehicles_between_city_centre_El_Wiam_and_Tahtaha"]}
+      ],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [["city centre", "El Wiam"], ["city centre", "Tahtaha"]], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": ["historical_endpoints_do_not_establish_current_service"], "blockers": ["fleet_allocation_not_verified_delivered", "no_current_line_source", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "66", "wilaya_name": "Messaad",
+      "operator": {"id": null, "name": null, "identity_status": "future_parent_operator_allocation_reported", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [{"url": "https://www.eldjoumhouria.dz/article/45986/", "source_type": "local_reporting", "evidence_status": "seen", "freshness": "2026-08-29", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["later_Djelfa_public_bus_allocation_expected_for_Messaad"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["fleet_allocation_not_verified_delivered", "no_current_line_source", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "67", "wilaya_name": "Ksar El Boukhari",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [{"url": "https://www.ech-chaab.com/new/2020/01/05/140438/", "source_type": "historical_reporting", "evidence_status": "seen", "freshness": "2020-01-05", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["residents_requested_ETUS_Medea_service_extension"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": ["service_request_does_not_prove_service_operation"], "blockers": ["explicit_no_current_operator_or_network_source_found", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "68", "wilaya_name": "Bou Saada",
+      "operator": {"id": null, "name": null, "identity_status": "no_named_public_operator_found_private_or_informal_service_reported_historically", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [{"url": "https://www.djazairess.com/alseyassi/19779", "source_type": "historical_reporting", "evidence_status": "seen", "freshness": "2014", "access_status": "public", "reuse_status": "facts_only_no_transport_data_license", "claims": ["historical_urban_transport_shortage", "named_underserved_areas_24_Fevrier_Dechra_Gueblia_Maitar"]}],
+      "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null, "named_areas": ["24 Fevrier", "Dechra Gueblia", "Maitar"]}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["historical_evidence_not_current", "no_named_private_operator_registry", "no_public_network_data"]
+    },
+    {
+      "wilaya_code": "69", "wilaya_name": "El Abiodh Sidi Cheikh",
+      "operator": {"id": null, "name": null, "identity_status": "no_separate_operator_found_transitional_parent_responsibility", "identity_source_ids": ["territorial-law-26-06", "new-wilaya-transition"]},
+      "sources": [], "available": {"line_refs": [], "line_count": null, "endpoints": [], "ordered_stations": false, "geometry": false, "schedules": false, "live_endpoint": null}, "logo": {"url": null, "verification": "not_verified"},
+      "conflicts": [], "blockers": ["explicit_no_operator_source_found", "do_not_infer_ETUS_El_Bayadh_coverage", "no_public_network_data"]
+    }
+  ],
+  "private_network_result": {
+    "evidence_status": "seen_negative_result",
+    "result": "No named private urban/suburban Operator registry or reusable private Line network source was found for Wilayas 49-69 during this audit.",
+    "limitation": "This is a source-discovery result, not proof that private Operators do not exist."
+  },
+  "audit_summary": {
+    "wilaya_count": 21,
+    "legal_transition": "Wilayas 59-69 were created in 2026 and remain in a transition during which parent Wilayas retain service responsibilities through 2026-12-31; separate local operator coverage must not be inferred.",
+    "strongest_network_facts": ["Timimoun named eastern and western ksour service axes", "Touggourt historical ETUO Line references 21, 22, and 27", "Ouled Djellal planned Ouled Djellal-Sidi Khaled coverage"],
+    "reusable_network_candidate": null,
+    "license_result": "No audited source publishes an explicit open transport-data license.",
+    "endpoint_result": "No documented public unauthenticated transport-data API, GTFS feed, reusable live endpoint, ordered Station list, or geometry source was found.",
+    "logo_result": "No operator-controlled verified logo URL was found. Third-party app icons must not be treated as official logos.",
+    "publication_rule": "Do not publish planned, historical, or parent-Wilaya coverage as current local Lines without newer operator-controlled confirmation."
+  }
+}

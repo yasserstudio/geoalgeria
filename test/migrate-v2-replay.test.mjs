@@ -141,6 +141,16 @@ const CORRECTIONS = {
 // the shipped value onto its own output before comparing, so the guard keeps
 // watching every other field of the same record.
 const ENRICHMENTS = {
+  buses: (produced, shipped) => {
+    // The frozen v1 fixture predates the reviewed OSM shape join. The package
+    // generator now attaches these fields from sources/buses; buses-v3.test.mjs
+    // independently guards the exact-ref selection and every relation id.
+    if (!shipped) return;
+    produced.source = shipped.source;
+    produced.source_refs = shipped.source_refs;
+    produced.shape_id = shipped.shape_id;
+    produced.osm_relation_ids = shipped.osm_relation_ids;
+  },
   "gares-routieres": (produced, shipped) => {
     // refs.mahatati_agency joins from research/gares-routieres/
     // mahatati-agency-ids.json (staged 2026-08-13 from the public MAHATATI

@@ -1,0 +1,97 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 56,
+  "records": [
+    {
+      "id": "node/1073011370",
+      "amenity": "fuel",
+      "name": "Station Service NAFTAL",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "NAFTAL",
+      "opening_hours": null,
+      "coordinates": [
+        9.4928776,
+        24.5122893
+      ]
+    },
+    {
+      "id": "node/3254220439",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal نفطال",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        9.4868347,
+        24.5529232
+      ]
+    },
+    {
+      "id": "node/5964348904",
+      "amenity": "fuel",
+      "name": "NAFTAL محطة وقود",
+      "name_ar": "محطة وقود",
+      "name_fr": "NAFTAL",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        9.4865008,
+        24.5375603
+      ]
+    },
+    {
+      "id": "node/7111006548",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        9.4925871,
+        24.5129004
+      ]
+    },
+    {
+      "id": "node/8396874817",
+      "amenity": "fuel",
+      "name": "تنالكوم جانت",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        10.2145547,
+        24.5946012
+      ]
+    },
+    {
+      "id": "node/9724930670",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.4500177,
+        24.8734136
+      ]
+    }
+  ]
+}

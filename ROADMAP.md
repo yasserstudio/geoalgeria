@@ -200,8 +200,11 @@ reads as further along than it is.
 
 ## Transport
 
-- [ ] **`@geoalgeria/buses` re-extracted from OSM route relations (breaking,
-  3.0.0).** The package today is 50 ETUSA lines scraped from Wikipedia with
+- [x] **`@geoalgeria/buses` reviewed OSM route release (completed 2026-09-01).**
+  The additive release preserves the 50 ETUSA Line ids and publishes the safe reviewed
+  subset: 42 shapes, 75 Directions, 1,046 Stations and 1,878 raw ordered memberships,
+  plus 8 ETUS Tiaret and 1 ETUS Mostaganem Line. The original investigation follows.
+  The package previously was 50 ETUSA lines scraped from Wikipedia with
   **no coordinates at all**: line-level attributes, `lat`/`lng` null on every
   record, `geocoded_pct` 0. Its coverage note says OSM `route=bus` coverage
   tagged ETUSA "is currently thin", and **that is now stale**. Measured against

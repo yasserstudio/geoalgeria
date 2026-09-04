@@ -1,0 +1,2923 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-15",
+    "wilaya_code": 15,
+    "name": "Tizi Ouzou",
+    "name_ar": "تيزي وزو",
+    "center": [
+      4.183999999999999,
+      36.682
+    ],
+    "bounds": [
+      3.715,
+      36.453,
+      4.653,
+      36.911
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 86,
+    "osm_records": 69,
+    "tariki_records": 36,
+    "cross_source": 15,
+    "multiple_tariki": 2,
+    "osm_only": 52,
+    "tariki_only": 17,
+    "nearby_osm_pairs": 3,
+    "conflicts": 25
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-2065642483",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-2333684931",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3644101397",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3644102640",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4374564096",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-9230066117",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1174661100",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1530060816",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13467",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13595",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13637",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14751",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14752",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5479",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5510",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5597",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5635",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5640",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5643",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5644",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5689",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6340",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7438",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7513",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7875",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11816666926",
+      "coordinates": [
+        4.4169238,
+        36.8938293
+      ],
+      "osm": {
+        "id": "node/11816666926",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4169238,
+          36.8938293
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2065639698",
+      "coordinates": [
+        4.049174,
+        36.712925
+      ],
+      "osm": {
+        "id": "node/2065639698",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.049174,
+          36.712925
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5615",
+          "route_id": "9654",
+          "name_fr": "station de services NAFTAL Tizi ouzou",
+          "name_ar": "محطة نفطال تيزي وزو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.0495,
+            36.7129
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال تيزي وزو"
+    },
+    {
+      "id": "osm-node-2065639762",
+      "coordinates": [
+        4.0497909,
+        36.7127294
+      ],
+      "osm": {
+        "id": "node/2065639762",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0497909,
+          36.7127294
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2065642483",
+      "coordinates": [
+        4.0238946,
+        36.7237566
+      ],
+      "osm": {
+        "id": "node/2065642483",
+        "name": "Le Mistral",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          4.0238946,
+          36.7237566
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5639",
+          "route_id": "9654",
+          "name_fr": "Station de services Mestral  Tizi Ouzou",
+          "name_ar": "محطة مسترال تيزي وزو",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.0239,
+            36.7237
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 6
+        },
+        {
+          "id": "9662",
+          "route_id": "14510",
+          "name_fr": "Station de services mistral",
+          "name_ar": "محطة خدمات مسترال",
+          "services": [
+            "fuel",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.0239,
+            36.7237
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Le Mistral",
+      "display_name_ar": "محطة مسترال تيزي وزو"
+    },
+    {
+      "id": "osm-node-2065653574",
+      "coordinates": [
+        4.054225,
+        36.7096092
+      ],
+      "osm": {
+        "id": "node/2065653574",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.054225,
+          36.7096092
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2065657195",
+      "coordinates": [
+        4.1055184,
+        36.7049657
+      ],
+      "osm": {
+        "id": "node/2065657195",
+        "name": "Station Services Bellouar",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1055184,
+          36.7049657
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Services Bellouar",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2328332230",
+      "coordinates": [
+        4.3071318,
+        36.7359979
+      ],
+      "osm": {
+        "id": "node/2328332230",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3071318,
+          36.7359979
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5622",
+          "route_id": "9654",
+          "name_fr": "station de services Ghilam freha",
+          "name_ar": "محطة غيلام فريحة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.3066,
+            36.7362
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة غيلام فريحة"
+    },
+    {
+      "id": "osm-node-2333684931",
+      "coordinates": [
+        4.3134013,
+        36.8172813
+      ],
+      "osm": {
+        "id": "node/2333684931",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          4.3134013,
+          36.8172813
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5625",
+          "route_id": "9672",
+          "name_fr": "Station de services Aghrib",
+          "name_ar": "محطة أغريب",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.3134,
+            36.8173
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 2
+        },
+        {
+          "id": "13768",
+          "route_id": "12014",
+          "name_fr": "station d essence",
+          "name_ar": "محطة الخدمات أقني شرقي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.313,
+            36.817
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة أغريب"
+    },
+    {
+      "id": "osm-node-2381145741",
+      "coordinates": [
+        4.4623604,
+        36.6341587
+      ],
+      "osm": {
+        "id": "node/2381145741",
+        "name": "Naftal",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4623604,
+          36.6341587
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-2736732936",
+      "coordinates": [
+        4.4768076,
+        36.6174063
+      ],
+      "osm": {
+        "id": "node/2736732936",
+        "name": "Mettouchi",
+        "name_ar": "مطوشي",
+        "name_fr": "Mettouchi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4768076,
+          36.6174063
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Mettouchi",
+      "display_name_ar": "مطوشي"
+    },
+    {
+      "id": "osm-node-2914902006",
+      "coordinates": [
+        4.0648957,
+        36.7570121
+      ],
+      "osm": {
+        "id": "node/2914902006",
+        "name": "Station Service Soltani",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "SOLTANI",
+        "opening_hours": null,
+        "coordinates": [
+          4.0648957,
+          36.7570121
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Soltani",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2924056020",
+      "coordinates": [
+        4.0972129,
+        36.728625
+      ],
+      "osm": {
+        "id": "node/2924056020",
+        "name": "Station Service Mahiout",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0972129,
+          36.728625
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Mahiout",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2928455784",
+      "coordinates": [
+        4.191255,
+        36.6978946
+      ],
+      "osm": {
+        "id": "node/2928455784",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.191255,
+          36.6978946
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3058089700",
+      "coordinates": [
+        4.4379206,
+        36.5833461
+      ],
+      "osm": {
+        "id": "node/3058089700",
+        "name": "Tizi Vart",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4379206,
+          36.5833461
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Tizi Vart",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3058093356",
+      "coordinates": [
+        4.432288,
+        36.5452836
+      ],
+      "osm": {
+        "id": "node/3058093356",
+        "name": "Pompe à gazoil Alimarina",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.432288,
+          36.5452836
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Pompe à gazoil Alimarina",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3058146017",
+      "coordinates": [
+        4.3753926,
+        36.63943
+      ],
+      "osm": {
+        "id": "node/3058146017",
+        "name": "Fitas",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Station lavage graissage",
+        "opening_hours": null,
+        "coordinates": [
+          4.3753926,
+          36.63943
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Fitas",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3410097358",
+      "coordinates": [
+        4.3201697,
+        36.5733376
+      ],
+      "osm": {
+        "id": "node/3410097358",
+        "name": "Station Service d'Aït Yahia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3201697,
+          36.5733376
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service d'Aït Yahia",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3412336071",
+      "coordinates": [
+        4.1062447,
+        36.5561456
+      ],
+      "osm": {
+        "id": "node/3412336071",
+        "name": "Station-service Ouadhias Est",
+        "name_ar": null,
+        "name_fr": "Station-service Ouadhias Est",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1062447,
+          36.5561456
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service Ouadhias Est",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3443407223",
+      "coordinates": [
+        4.1215321,
+        36.6792887
+      ],
+      "osm": {
+        "id": "node/3443407223",
+        "name": "Station service Adni",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1215321,
+          36.6792887
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Adni",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3613494141",
+      "coordinates": [
+        4.3975816,
+        36.6794156
+      ],
+      "osm": {
+        "id": "node/3613494141",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3975816,
+          36.6794156
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12506",
+          "route_id": "13986",
+          "name_fr": "staton service",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.398,
+            36.679
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 59
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-3644101397",
+      "coordinates": [
+        4.0412243,
+        36.6388836
+      ],
+      "osm": {
+        "id": "node/3644101397",
+        "name": "Station du gasoil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0412243,
+          36.6388836
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3644102640",
+          "offset_m": 23
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station du gasoil",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3644102640",
+      "coordinates": [
+        4.040971,
+        36.6388716
+      ],
+      "osm": {
+        "id": "node/3644102640",
+        "name": "Stations-service Kahil",
+        "name_ar": "محطة وقود الكحيل",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.040971,
+          36.6388716
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3644101397",
+          "offset_m": 23
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Stations-service Kahil",
+      "display_name_ar": "محطة وقود الكحيل"
+    },
+    {
+      "id": "osm-node-3669279162",
+      "coordinates": [
+        4.0644749,
+        36.703667
+      ],
+      "osm": {
+        "id": "node/3669279162",
+        "name": "Zidane",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0644749,
+          36.703667
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Zidane",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3702119205",
+      "coordinates": [
+        4.2287887,
+        36.6191028
+      ],
+      "osm": {
+        "id": "node/3702119205",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2287887,
+          36.6191028
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7789",
+          "route_id": "12743",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.2285,
+            36.6192
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-3702805273",
+      "coordinates": [
+        4.1740839,
+        36.7045392
+      ],
+      "osm": {
+        "id": "node/3702805273",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1740839,
+          36.7045392
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3703227684",
+      "coordinates": [
+        3.9534132,
+        36.6971251
+      ],
+      "osm": {
+        "id": "node/3703227684",
+        "name": "Station Service NAftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.9534132,
+          36.6971251
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service NAftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3703227686",
+      "coordinates": [
+        3.9911215,
+        36.6304468
+      ],
+      "osm": {
+        "id": "node/3703227686",
+        "name": "NAFTAL Bouarfa",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9911215,
+          36.6304468
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7891",
+          "route_id": "12853",
+          "name_fr": "STATION DAF YAHIA",
+          "name_ar": "محطة الوقود داف يحي",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.9911,
+            36.6304
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "NAFTAL Bouarfa",
+      "display_name_ar": "محطة الوقود داف يحي"
+    },
+    {
+      "id": "osm-node-3868754261",
+      "coordinates": [
+        3.8369417,
+        36.5398902
+      ],
+      "osm": {
+        "id": "node/3868754261",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8369417,
+          36.5398902
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8804",
+          "route_id": "13648",
+          "name_fr": "Station de services naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.837,
+            36.54
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-4039938420",
+      "coordinates": [
+        4.2838539,
+        36.5982683
+      ],
+      "osm": {
+        "id": "node/4039938420",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2838539,
+          36.5982683
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8641",
+          "route_id": "13359",
+          "name_fr": "Station de services Azrou kolel",
+          "name_ar": "محطة خدمات أزرو قلال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.284,
+            36.598
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات أزرو قلال"
+    },
+    {
+      "id": "osm-node-4121963421",
+      "coordinates": [
+        4.2202912,
+        36.8608236
+      ],
+      "osm": {
+        "id": "node/4121963421",
+        "name": "Station de service - Iflissen",
+        "name_ar": "إفليسن",
+        "name_fr": "Station de service Iflissen",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "Mo-Su 06:30-22:30",
+        "coordinates": [
+          4.2202912,
+          36.8608236
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de service Iflissen",
+      "display_name_ar": "إفليسن"
+    },
+    {
+      "id": "osm-node-4245136937",
+      "coordinates": [
+        3.9415735,
+        36.7415383
+      ],
+      "osm": {
+        "id": "node/4245136937",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9415735,
+          36.7415383
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4374563700",
+      "coordinates": [
+        4.2047764,
+        36.5245388
+      ],
+      "osm": {
+        "id": "node/4374563700",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2047764,
+          36.5245388
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4374564096",
+      "coordinates": [
+        4.2064555,
+        36.5282694
+      ],
+      "osm": {
+        "id": "node/4374564096",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2064555,
+          36.5282694
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1530060816",
+          "offset_m": 5
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4377660196",
+      "coordinates": [
+        4.1086663,
+        36.6880335
+      ],
+      "osm": {
+        "id": "node/4377660196",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1086663,
+          36.6880335
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4424427590",
+      "coordinates": [
+        3.7751132,
+        36.5860718
+      ],
+      "osm": {
+        "id": "node/4424427590",
+        "name": "Station-service Tizi Ghennif",
+        "name_ar": null,
+        "name_fr": "Station-service Tizi Ghennif",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7751132,
+          36.5860718
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service Tizi Ghennif",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6814818049",
+      "coordinates": [
+        4.3415397,
+        36.5393911
+      ],
+      "osm": {
+        "id": "node/6814818049",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3415397,
+          36.5393911
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9230066117",
+      "coordinates": [
+        4.0735468,
+        36.7108252
+      ],
+      "osm": {
+        "id": "node/9230066117",
+        "name": "Chabani",
+        "name_ar": null,
+        "name_fr": "Chabani",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0735468,
+          36.7108252
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1174661100",
+          "offset_m": 19
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Chabani",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1174661100",
+      "coordinates": [
+        4.07357215,
+        36.7106534
+      ],
+      "osm": {
+        "id": "way/1174661100",
+        "name": "Station Service Chabane",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.07357215,
+          36.7106534
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-9230066117",
+          "offset_m": 19
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Service Chabane",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1176787807",
+      "coordinates": [
+        4.1513519,
+        36.8199869
+      ],
+      "osm": {
+        "id": "way/1176787807",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1513519,
+          36.8199869
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1176788218",
+      "coordinates": [
+        4.134600000000001,
+        36.8320629
+      ],
+      "osm": {
+        "id": "way/1176788218",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          4.134600000000001,
+          36.8320629
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9247",
+          "route_id": "13091",
+          "name_fr": "Station de services  Boukhroube",
+          "name_ar": "محطة الخدمات بوخروب",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1347,
+            36.8321
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service",
+      "display_name_ar": "محطة الخدمات بوخروب"
+    },
+    {
+      "id": "osm-way-1176801698",
+      "coordinates": [
+        4.0780919,
+        36.82833895
+      ],
+      "osm": {
+        "id": "way/1176801698",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          4.0780919,
+          36.82833895
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7524",
+          "route_id": "9183",
+          "name_fr": "station naftal lakret",
+          "name_ar": "محطة نفطال لاكريط",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.0781,
+            36.8283
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال لاكريط"
+    },
+    {
+      "id": "osm-way-1189664711",
+      "coordinates": [
+        4.329369,
+        36.744453449999995
+      ],
+      "osm": {
+        "id": "way/1189664711",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.329369,
+          36.744453449999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1189665722",
+      "coordinates": [
+        4.31136535,
+        36.761169100000004
+      ],
+      "osm": {
+        "id": "way/1189665722",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.31136535,
+          36.761169100000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5623",
+          "route_id": "9674",
+          "name_fr": "Station de services Ait Kassi Freha",
+          "name_ar": "محطة أيت قاسي فريحة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.3109,
+            36.7614
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة أيت قاسي فريحة"
+    },
+    {
+      "id": "osm-way-1203451150",
+      "coordinates": [
+        4.0698447,
+        36.70928075
+      ],
+      "osm": {
+        "id": "way/1203451150",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0698447,
+          36.70928075
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1206146678",
+      "coordinates": [
+        3.8718703,
+        36.7546428
+      ],
+      "osm": {
+        "id": "way/1206146678",
+        "name": "Kef el Aogab",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8718703,
+          36.7546428
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Kef el Aogab",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1356183693",
+      "coordinates": [
+        4.2028461,
+        36.5352521
+      ],
+      "osm": {
+        "id": "way/1356183693",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2028461,
+          36.5352521
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1530060816",
+      "coordinates": [
+        4.2064308,
+        36.52830915
+      ],
+      "osm": {
+        "id": "way/1530060816",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2064308,
+          36.52830915
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4374564096",
+          "offset_m": 5
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-231436745",
+      "coordinates": [
+        4.46505495,
+        36.65883805
+      ],
+      "osm": {
+        "id": "way/231436745",
+        "name": "Station-Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          4.46505495,
+          36.65883805
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-238103984",
+      "coordinates": [
+        4.3653697000000005,
+        36.536702149999996
+      ],
+      "osm": {
+        "id": "way/238103984",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3653697000000005,
+          36.536702149999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-252383525",
+      "coordinates": [
+        4.084322950000001,
+        36.68777405
+      ],
+      "osm": {
+        "id": "way/252383525",
+        "name": "Pompe à essence Sogemetal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.084322950000001,
+          36.68777405
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Pompe à essence Sogemetal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-252689070",
+      "coordinates": [
+        4.07991395,
+        36.618683250000004
+      ],
+      "osm": {
+        "id": "way/252689070",
+        "name": "NAFTAL At Dwala",
+        "name_ar": "نفطال بني دوالة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          4.07991395,
+          36.618683250000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL At Dwala",
+      "display_name_ar": "نفطال بني دوالة"
+    },
+    {
+      "id": "osm-way-286612803",
+      "coordinates": [
+        4.1426201,
+        36.73669065
+      ],
+      "osm": {
+        "id": "way/286612803",
+        "name": "Station Service de Tiplakine",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1426201,
+          36.73669065
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service de Tiplakine",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-307896477",
+      "coordinates": [
+        3.9424651500000003,
+        36.545171
+      ],
+      "osm": {
+        "id": "way/307896477",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9424651500000003,
+          36.545171
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-307896479",
+      "coordinates": [
+        3.9627909499999996,
+        36.543649900000005
+      ],
+      "osm": {
+        "id": "way/307896479",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.9627909499999996,
+          36.543649900000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-315608554",
+      "coordinates": [
+        4.0109793,
+        36.739117300000004
+      ],
+      "osm": {
+        "id": "way/315608554",
+        "name": "Station services Aït Benamara",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.0109793,
+          36.739117300000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station services Aït Benamara",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-315608555",
+      "coordinates": [
+        4.01099875,
+        36.7374977
+      ],
+      "osm": {
+        "id": "way/315608555",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          4.01099875,
+          36.7374977
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5482",
+          "route_id": "9654",
+          "name_fr": "station de services  AIT AMMARA Boukhalfa",
+          "name_ar": "محطة أيت عمارة بوخالفة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            4.012,
+            36.7382
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 119
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة أيت عمارة بوخالفة"
+    },
+    {
+      "id": "osm-way-361389728",
+      "coordinates": [
+        4.1359790499999995,
+        36.89166665
+      ],
+      "osm": {
+        "id": "way/361389728",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1359790499999995,
+          36.89166665
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-365702063",
+      "coordinates": [
+        4.3443397,
+        36.5370939
+      ],
+      "osm": {
+        "id": "way/365702063",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3443397,
+          36.5370939
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-368481868",
+      "coordinates": [
+        4.1985036000000004,
+        36.640213900000006
+      ],
+      "osm": {
+        "id": "way/368481868",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.1985036000000004,
+          36.640213900000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7988",
+          "route_id": "12942",
+          "name_fr": "STATION DE SERVICES DE LARBAA NATH IRATHEN",
+          "name_ar": "محطة الوقود بمدينة الاربعاء ناث إيراثن",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.1978,
+            36.6405
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 70
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service",
+      "display_name_ar": "محطة الوقود بمدينة الاربعاء ناث إيراثن"
+    },
+    {
+      "id": "osm-way-368494362",
+      "coordinates": [
+        4.24819645,
+        36.69636465
+      ],
+      "osm": {
+        "id": "way/368494362",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.24819645,
+          36.69636465
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-368494364",
+      "coordinates": [
+        4.2729362,
+        36.68248665
+      ],
+      "osm": {
+        "id": "way/368494364",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "messaoudéne",
+        "opening_hours": null,
+        "coordinates": [
+          4.2729362,
+          36.68248665
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-373692686",
+      "coordinates": [
+        4.4084302,
+        36.889318700000004
+      ],
+      "osm": {
+        "id": "way/373692686",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.4084302,
+          36.889318700000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-380313208",
+      "coordinates": [
+        3.8297045499999998,
+        36.535861499999996
+      ],
+      "osm": {
+        "id": "way/380313208",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8297045499999998,
+          36.535861499999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8716",
+          "route_id": "13648",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.83,
+            36.536
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-way-381758162",
+      "coordinates": [
+        4.2449449999999995,
+        36.7081608
+      ],
+      "osm": {
+        "id": "way/381758162",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2449449999999995,
+          36.7081608
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-387799514",
+      "coordinates": [
+        4.31565935,
+        36.81954055
+      ],
+      "osm": {
+        "id": "way/387799514",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.31565935,
+          36.81954055
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7752",
+          "route_id": "12014",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة الخدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.316,
+            36.819
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 67
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES",
+      "display_name_ar": "محطة الخدمات"
+    },
+    {
+      "id": "osm-way-443074587",
+      "coordinates": [
+        3.96075905,
+        36.73815495
+      ],
+      "osm": {
+        "id": "way/443074587",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.96075905,
+          36.73815495
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5512",
+          "route_id": "9654",
+          "name_fr": "Station de services frères Hamek  DRAA BEN KHADA",
+          "name_ar": "محطة الإخوة حامق ذراع بن خدة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            3.9606,
+            36.7386
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services frères Hamek  DRAA BEN KHADA",
+      "display_name_ar": "محطة الإخوة حامق ذراع بن خدة"
+    },
+    {
+      "id": "osm-way-772182908",
+      "coordinates": [
+        4.2621177,
+        36.550512749999996
+      ],
+      "osm": {
+        "id": "way/772182908",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2621177,
+          36.550512749999996
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-772183982",
+      "coordinates": [
+        4.2537405,
+        36.55116045
+      ],
+      "osm": {
+        "id": "way/772183982",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.2537405,
+          36.55116045
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-772184407",
+      "coordinates": [
+        4.3219274,
+        36.5678797
+      ],
+      "osm": {
+        "id": "way/772184407",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.3219274,
+          36.5678797
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-13467",
+      "coordinates": [
+        4.021,
+        36.549
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13467",
+          "route_id": "18839",
+          "name_fr": "STATION DJOUDIR HCEN",
+          "name_ar": "محطة جودير احسن",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.021,
+            36.549
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DJOUDIR HCEN",
+      "display_name_ar": "محطة جودير احسن"
+    },
+    {
+      "id": "tariki-13595",
+      "coordinates": [
+        3.96,
+        36.73
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13595",
+          "route_id": "13929",
+          "name_fr": "station de service hameg freres",
+          "name_ar": "محطة الخدمات حامق و احوانه",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.96,
+            36.73
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de service hameg freres",
+      "display_name_ar": "محطة الخدمات حامق و احوانه"
+    },
+    {
+      "id": "tariki-13637",
+      "coordinates": [
+        4.398,
+        36.681
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13637",
+          "route_id": "19207",
+          "name_fr": null,
+          "name_ar": "محطة البنزين بحوص",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.398,
+            36.681
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة البنزين بحوص",
+      "display_name_ar": "محطة البنزين بحوص"
+    },
+    {
+      "id": "tariki-14751",
+      "coordinates": [
+        4.248,
+        36.776
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14751",
+          "route_id": "20335",
+          "name_fr": "snc oussaid station service tighilt farhat",
+          "name_ar": "ش ت أوسعيد و شركائه محطة الخدمات أوسعيد أب و ابن تيميزار",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.248,
+            36.776
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "snc oussaid station service tighilt farhat",
+      "display_name_ar": "ش ت أوسعيد و شركائه محطة الخدمات أوسعيد أب و ابن تيميزار"
+    },
+    {
+      "id": "tariki-14752",
+      "coordinates": [
+        4.249,
+        36.777
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14752",
+          "route_id": "20335",
+          "name_fr": "pompe a essence ikharban djamal",
+          "name_ar": "محطة الوقود ايخربان جمال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.249,
+            36.777
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "pompe a essence ikharban djamal",
+      "display_name_ar": "محطة الوقود ايخربان جمال"
+    },
+    {
+      "id": "tariki-5479",
+      "coordinates": [
+        4.0114,
+        36.7363
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5479",
+          "route_id": "9654",
+          "name_fr": "station de services  NAFTAL Boukhalfa",
+          "name_ar": "محطة نفطال بوخالفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.0114,
+            36.7363
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services  NAFTAL Boukhalfa",
+      "display_name_ar": "محطة نفطال بوخالفة"
+    },
+    {
+      "id": "tariki-5510",
+      "coordinates": [
+        3.9402,
+        36.7421
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5510",
+          "route_id": "9654",
+          "name_fr": "Station de services NAFTAL DRAA BEN KHADA",
+          "name_ar": "محطة نفطال ذراع بن خدة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.9402,
+            36.7421
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL DRAA BEN KHADA",
+      "display_name_ar": "محطة نفطال ذراع بن خدة"
+    },
+    {
+      "id": "tariki-5597",
+      "coordinates": [
+        4.0744,
+        36.7129
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5597",
+          "route_id": "9654",
+          "name_fr": "Station de services Ali Chaaban",
+          "name_ar": "محطة علي شعبان تيزي وزو",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.0744,
+            36.7129
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ali Chaaban",
+      "display_name_ar": "محطة علي شعبان تيزي وزو"
+    },
+    {
+      "id": "tariki-5635",
+      "coordinates": [
+        4.4845,
+        36.7389
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5635",
+          "route_id": "9654",
+          "name_fr": "Station de services Tamlihet Yakourene",
+          "name_ar": "محطة تامليحت ياكوران",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.4845,
+            36.7389
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Tamlihet Yakourene",
+      "display_name_ar": "محطة تامليحت ياكوران"
+    },
+    {
+      "id": "tariki-5640",
+      "coordinates": [
+        4.435,
+        36.748
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5640",
+          "route_id": "9654",
+          "name_fr": "station de services El Hadjej Yakourene",
+          "name_ar": "محطة الحجاج ياكوران",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.435,
+            36.748
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services El Hadjej Yakourene",
+      "display_name_ar": "محطة الحجاج ياكوران"
+    },
+    {
+      "id": "tariki-5643",
+      "coordinates": [
+        3.7751,
+        36.5839
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5643",
+          "route_id": "9671",
+          "name_fr": "Station de services NAFTAL Tizi ghenif",
+          "name_ar": "محطة نفطال تيزي  غنيف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7751,
+            36.5839
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL Tizi ghenif",
+      "display_name_ar": "محطة نفطال تيزي  غنيف"
+    },
+    {
+      "id": "tariki-5644",
+      "coordinates": [
+        3.8003,
+        36.5708
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5644",
+          "route_id": "9671",
+          "name_fr": "Station de services Boudaoud Tizi Ghenif",
+          "name_ar": "محطة بوداود تيزي غنيف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.8003,
+            36.5708
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Boudaoud Tizi Ghenif",
+      "display_name_ar": "محطة بوداود تيزي غنيف"
+    },
+    {
+      "id": "tariki-5689",
+      "coordinates": [
+        4.3946,
+        36.5997
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5689",
+          "route_id": "9750",
+          "name_fr": "station de services Amirat Illoula oumalou",
+          "name_ar": "محطة عميرات إيلولة أومالو",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            4.3946,
+            36.5997
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services Amirat Illoula oumalou",
+      "display_name_ar": "محطة عميرات إيلولة أومالو"
+    },
+    {
+      "id": "tariki-6340",
+      "coordinates": [
+        4.148,
+        36.66
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6340",
+          "route_id": "11155",
+          "name_fr": "Station de services HOUAMDI",
+          "name_ar": "محطة حوامدي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.148,
+            36.66
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HOUAMDI",
+      "display_name_ar": "محطة حوامدي"
+    },
+    {
+      "id": "tariki-7438",
+      "coordinates": [
+        4.069,
+        36.55
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7438",
+          "route_id": "12312",
+          "name_fr": "STATION  D'ESSENCE HADJ BELKACEM MADJID",
+          "name_ar": "محطة البنزين حاج بلقاسم مجيد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.069,
+            36.55
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION  D'ESSENCE HADJ BELKACEM MADJID",
+      "display_name_ar": "محطة البنزين حاج بلقاسم مجيد"
+    },
+    {
+      "id": "tariki-7513",
+      "coordinates": [
+        4.1324,
+        36.8882
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7513",
+          "route_id": "9181",
+          "name_fr": "Station de services Naftal tigzirt",
+          "name_ar": "محطة نفطال تيقزيرت",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            4.1324,
+            36.8882
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Naftal tigzirt",
+      "display_name_ar": "محطة نفطال تيقزيرت"
+    },
+    {
+      "id": "tariki-7875",
+      "coordinates": [
+        4.0069,
+        36.5954
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7875",
+          "route_id": "12837",
+          "name_fr": "Station de services Manssour Souk elthnine",
+          "name_ar": "محطة منصور سوق الإثنين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.0069,
+            36.5954
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 15,
+          "wilaya_fr": "Tizi Ouzou",
+          "wilaya_ar": "تيزي وزو",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Manssour Souk elthnine",
+      "display_name_ar": "محطة منصور سوق الإثنين"
+    }
+  ]
+}

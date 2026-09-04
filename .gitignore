@@ -56,6 +56,9 @@ research/ooredoo/
 research/pharmacies/
 research/sante/
 research/tourisme/
+# Local bus feasibility pulls stay scratch until reviewed and promoted through
+# the canonical sources/buses source-store workflow.
+research/buses/osm/
 # _pharma-landscape/ is a tracked provenance dir — ignore only its raw scratch files
 research/_pharma-landscape/mip-distribution-gros.txt
 research/_pharma-landscape/mip-exploitation.txt

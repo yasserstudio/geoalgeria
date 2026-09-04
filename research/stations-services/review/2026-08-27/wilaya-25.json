@@ -1,0 +1,1864 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-25",
+    "wilaya_code": 25,
+    "name": "Constantine",
+    "name_ar": "قسنطينة",
+    "center": [
+      6.679,
+      36.35850000000001
+    ],
+    "bounds": [
+      6.31,
+      36.093,
+      7.048,
+      36.624
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 44,
+    "osm_records": 35,
+    "tariki_records": 34,
+    "cross_source": 19,
+    "multiple_tariki": 3,
+    "osm_only": 13,
+    "tariki_only": 9,
+    "nearby_osm_pairs": 2,
+    "conflicts": 16
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-2054099313",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-266505056",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5934892527",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6634802376",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-317573388",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-584019070",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-687877294",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14087",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14088",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14592",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4225",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5429",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5450",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5594",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5603",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7409",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10213766498",
+      "coordinates": [
+        6.3703081,
+        36.3793655
+      ],
+      "osm": {
+        "id": "node/10213766498",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3703081,
+          36.3793655
+        ]
+      },
+      "tariki": [
+        {
+          "id": "157",
+          "route_id": "697",
+          "name_fr": "Station de services Same",
+          "name_ar": "محطة الخدمات صام",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.371,
+            36.379
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 74
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Same",
+      "display_name_ar": "محطة الخدمات صام"
+    },
+    {
+      "id": "osm-node-11727834108",
+      "coordinates": [
+        6.6312391,
+        36.3487234
+      ],
+      "osm": {
+        "id": "node/11727834108",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6312391,
+          36.3487234
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2054099313",
+      "coordinates": [
+        6.6794728,
+        36.301263
+      ],
+      "osm": {
+        "id": "node/2054099313",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.6794728,
+          36.301263
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5578",
+          "route_id": "10387",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة توزيع الوقود نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.6796,
+            36.3014
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 19
+        },
+        {
+          "id": "6297",
+          "route_id": "10399",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة توزيع الوقود نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.68,
+            36.301
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "station service",
+      "display_name_ar": "محطة توزيع الوقود نافطال"
+    },
+    {
+      "id": "osm-node-2054104946",
+      "coordinates": [
+        6.5945272,
+        36.2587559
+      ],
+      "osm": {
+        "id": "node/2054104946",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.5945272,
+          36.2587559
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2054161621",
+      "coordinates": [
+        6.6106044,
+        36.2818145
+      ],
+      "osm": {
+        "id": "node/2054161621",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.6106044,
+          36.2818145
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5593",
+          "route_id": "1019",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.611,
+            36.282
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-2464435077",
+      "coordinates": [
+        6.7035894,
+        36.5243827
+      ],
+      "osm": {
+        "id": "node/2464435077",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7035894,
+          36.5243827
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2585011693",
+      "coordinates": [
+        6.6254874,
+        36.4408456
+      ],
+      "osm": {
+        "id": "node/2585011693",
+        "name": "Didouche Mourad",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6254874,
+          36.4408456
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14086",
+          "route_id": "20833",
+          "name_fr": null,
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.626,
+            36.441
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Didouche Mourad",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-2586564351",
+      "coordinates": [
+        6.6085419,
+        36.3873401
+      ],
+      "osm": {
+        "id": "node/2586564351",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6085419,
+          36.3873401
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5406",
+          "route_id": "4982",
+          "name_fr": "station de services  BEKIRA",
+          "name_ar": "محطة خدمات بكيرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.609,
+            36.387
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بكيرة"
+    },
+    {
+      "id": "osm-node-2586564353",
+      "coordinates": [
+        6.6097475,
+        36.4193804
+      ],
+      "osm": {
+        "id": "node/2586564353",
+        "name": "Station multi-service MEHARZI AZIZ",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          6.6097475,
+          36.4193804
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2288",
+          "route_id": "4982",
+          "name_fr": "Station de services MEHARZI",
+          "name_ar": "محطة خدمات محرزي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.61,
+            36.419
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station multi-service MEHARZI AZIZ",
+      "display_name_ar": "محطة خدمات محرزي"
+    },
+    {
+      "id": "osm-node-2641415894",
+      "coordinates": [
+        6.7306092,
+        36.2463981
+      ],
+      "osm": {
+        "id": "node/2641415894",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7306092,
+          36.2463981
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-266505045",
+      "coordinates": [
+        6.6160302,
+        36.3718714
+      ],
+      "osm": {
+        "id": "node/266505045",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.6160302,
+          36.3718714
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-266505056",
+      "coordinates": [
+        6.6218962,
+        36.3557158
+      ],
+      "osm": {
+        "id": "node/266505056",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.6218962,
+          36.3557158
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5934892527",
+          "offset_m": 36
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-266505057",
+      "coordinates": [
+        6.625463,
+        36.3518401
+      ],
+      "osm": {
+        "id": "node/266505057",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Aachour",
+        "opening_hours": null,
+        "coordinates": [
+          6.625463,
+          36.3518401
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5628",
+          "route_id": "10441",
+          "name_fr": "Station de services  OIL DJANANE ELZITOUNE",
+          "name_ar": "محطة توزيع الوقود بجتات الزيتون",
+          "services": [
+            "fuel",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.626,
+            36.3514
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 69
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة توزيع الوقود بجتات الزيتون"
+    },
+    {
+      "id": "osm-node-2953652117",
+      "coordinates": [
+        6.9311871,
+        36.225847
+      ],
+      "osm": {
+        "id": "node/2953652117",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9311871,
+          36.225847
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5449",
+          "route_id": "10235",
+          "name_fr": "Station de services BOUABID",
+          "name_ar": "محطة تزويد الوقود بوعبيد",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.931,
+            36.226
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة تزويد الوقود بوعبيد"
+    },
+    {
+      "id": "osm-node-3264224973",
+      "coordinates": [
+        6.4674735,
+        36.3872399
+      ],
+      "osm": {
+        "id": "node/3264224973",
+        "name": "PETROGEL MEDJROUBI",
+        "name_ar": "PETROGEL MEDJROUBI",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4674735,
+          36.3872399
+        ]
+      },
+      "tariki": [
+        {
+          "id": "159",
+          "route_id": "697",
+          "name_fr": "Station de services Madjroubi",
+          "name_ar": "محطة الخدمات مجروبي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.4675,
+            36.3872
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "PETROGEL MEDJROUBI",
+      "display_name_ar": "PETROGEL MEDJROUBI"
+    },
+    {
+      "id": "osm-node-3736629174",
+      "coordinates": [
+        6.6075536,
+        36.3443371
+      ],
+      "osm": {
+        "id": "node/3736629174",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6075536,
+          36.3443371
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4301076319",
+      "coordinates": [
+        6.5801362,
+        36.3263345
+      ],
+      "osm": {
+        "id": "node/4301076319",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5801362,
+          36.3263345
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5572",
+          "route_id": "948",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.5809,
+            36.3268
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 86
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-node-4591183029",
+      "coordinates": [
+        6.5898122,
+        36.330366
+      ],
+      "osm": {
+        "id": "node/4591183029",
+        "name": "Rhummel",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5898122,
+          36.330366
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Rhummel",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5934892527",
+      "coordinates": [
+        6.6219949,
+        36.3560327
+      ],
+      "osm": {
+        "id": "node/5934892527",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.6219949,
+          36.3560327
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-266505056",
+          "offset_m": 36
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6634802376",
+      "coordinates": [
+        6.7123033,
+        36.2479786
+      ],
+      "osm": {
+        "id": "node/6634802376",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7123033,
+          36.2479786
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-687877294",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8680951217",
+      "coordinates": [
+        6.6128134,
+        36.2637217
+      ],
+      "osm": {
+        "id": "node/8680951217",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6128134,
+          36.2637217
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1057720864",
+      "coordinates": [
+        6.60877355,
+        36.1424473
+      ],
+      "osm": {
+        "id": "way/1057720864",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.60877355,
+          36.1424473
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2102",
+          "route_id": "5249",
+          "name_fr": "Station de services",
+          "name_ar": null,
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.609,
+            36.142
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1311112487",
+      "coordinates": [
+        6.60998455,
+        36.28159665
+      ],
+      "osm": {
+        "id": "way/1311112487",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.60998455,
+          36.28159665
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-276140431",
+      "coordinates": [
+        6.60051325,
+        36.12663875
+      ],
+      "osm": {
+        "id": "way/276140431",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.60051325,
+          36.12663875
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2107",
+          "route_id": "5249",
+          "name_fr": "Station de services",
+          "name_ar": null,
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.6,
+            36.127
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-317573388",
+      "coordinates": [
+        6.6175953,
+        36.30485515
+      ],
+      "osm": {
+        "id": "way/317573388",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6175953,
+          36.30485515
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3466",
+          "route_id": "2272",
+          "name_fr": "Station de services BELHADJ",
+          "name_ar": "محطة البنزين بلحاج",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.618,
+            36.305
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 40
+        },
+        {
+          "id": "5624",
+          "route_id": "10439",
+          "name_fr": "Station de services BEL HADJ",
+          "name_ar": "محطة بلحاج",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.6177,
+            36.3049
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services BELHADJ",
+      "display_name_ar": "محطة البنزين بلحاج"
+    },
+    {
+      "id": "osm-way-407680055",
+      "coordinates": [
+        6.5236465500000005,
+        36.28549285
+      ],
+      "osm": {
+        "id": "way/407680055",
+        "name": "Station Service Cirta",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5236465500000005,
+          36.28549285
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4292",
+          "route_id": "8831",
+          "name_fr": "Station de services CIRTA",
+          "name_ar": "محطة خدمات سيرتا",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.523,
+            36.285
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 80
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Cirta",
+      "display_name_ar": "محطة خدمات سيرتا"
+    },
+    {
+      "id": "osm-way-413446398",
+      "coordinates": [
+        6.6105659,
+        36.2616692
+      ],
+      "osm": {
+        "id": "way/413446398",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.6105659,
+          36.2616692
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5591",
+          "route_id": "1019",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.611,
+            36.262
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station service",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-way-417679271",
+      "coordinates": [
+        6.592524,
+        36.3537691
+      ],
+      "osm": {
+        "id": "way/417679271",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.592524,
+          36.3537691
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5574",
+          "route_id": "961",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.5924,
+            36.3538
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services  NAFTAL",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-way-417679272",
+      "coordinates": [
+        6.47590765,
+        36.25782135
+      ],
+      "osm": {
+        "id": "way/417679272",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.47590765,
+          36.25782135
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4295",
+          "route_id": "8844",
+          "name_fr": "Station de services BEN IDIR",
+          "name_ar": "محطة الخدمات بن إيدير",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.476,
+            36.258
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BEN IDIR",
+      "display_name_ar": "محطة الخدمات بن إيدير"
+    },
+    {
+      "id": "osm-way-417679273",
+      "coordinates": [
+        6.5906703,
+        36.3785919
+      ],
+      "osm": {
+        "id": "way/417679273",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5906703,
+          36.3785919
+        ]
+      },
+      "tariki": [
+        {
+          "id": "317",
+          "route_id": "961",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.5906,
+            36.3787
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-way-417679274",
+      "coordinates": [
+        6.585706050000001,
+        36.40241965
+      ],
+      "osm": {
+        "id": "way/417679274",
+        "name": "Station Essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.585706050000001,
+          36.40241965
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5336",
+          "route_id": "10130",
+          "name_fr": "station de services cité des sociétés",
+          "name_ar": "محطة خدمات حي الشركات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.5859,
+            36.4024
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 17
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Essence",
+      "display_name_ar": "محطة خدمات حي الشركات"
+    },
+    {
+      "id": "osm-way-417679275",
+      "coordinates": [
+        6.58882545,
+        36.3813294
+      ],
+      "osm": {
+        "id": "way/417679275",
+        "name": "Station Essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.58882545,
+          36.3813294
+        ]
+      },
+      "tariki": [
+        {
+          "id": "318",
+          "route_id": "961",
+          "name_fr": "Station de services El Bey",
+          "name_ar": "محطة خدمات الباي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.589,
+            36.3813
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Essence",
+      "display_name_ar": "محطة خدمات الباي"
+    },
+    {
+      "id": "osm-way-456781737",
+      "coordinates": [
+        6.5977385,
+        36.41611225
+      ],
+      "osm": {
+        "id": "way/456781737",
+        "name": "Rahmouni",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5977385,
+          36.41611225
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Rahmouni",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-584019070",
+      "coordinates": [
+        6.7436076,
+        36.1441181
+      ],
+      "osm": {
+        "id": "way/584019070",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7436076,
+          36.1441181
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2238",
+          "route_id": "5272",
+          "name_fr": "Station de services LAOUAR KHLIFA",
+          "name_ar": "محطة لعور خليفة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.743,
+            36.145
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 112
+        },
+        {
+          "id": "14568",
+          "route_id": "5406",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات لعور",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.744,
+            36.145
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 104
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services LAOUAR KHLIFA",
+      "display_name_ar": "محطة لعور خليفة"
+    },
+    {
+      "id": "osm-way-687877294",
+      "coordinates": [
+        6.7123563,
+        36.247908699999996
+      ],
+      "osm": {
+        "id": "way/687877294",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7123563,
+          36.247908699999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5478",
+          "route_id": "8283",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.7124,
+            36.2479
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6634802376",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "tariki-14087",
+      "coordinates": [
+        6.644,
+        36.486
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14087",
+          "route_id": "20833",
+          "name_fr": null,
+          "name_ar": "محطة للتزود بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.644,
+            36.486
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة للتزود بالوقود",
+      "display_name_ar": "محطة للتزود بالوقود"
+    },
+    {
+      "id": "tariki-14088",
+      "coordinates": [
+        6.646,
+        36.49
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14088",
+          "route_id": "20833",
+          "name_fr": null,
+          "name_ar": "محطة للتزود بالوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.646,
+            36.49
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة للتزود بالوقود",
+      "display_name_ar": "محطة للتزود بالوقود"
+    },
+    {
+      "id": "tariki-14592",
+      "coordinates": [
+        6.452,
+        36.422
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14592",
+          "route_id": "21564",
+          "name_fr": "//",
+          "name_ar": "محطة الخدمات خنتوش مصطفى كمال بقرية علي هزيلة رمضان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.452,
+            36.422
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة الخدمات خنتوش مصطفى كمال بقرية علي هزيلة رمضان"
+    },
+    {
+      "id": "tariki-4225",
+      "coordinates": [
+        6.51,
+        36.506
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4225",
+          "route_id": "4067",
+          "name_fr": "Station de services MECHTAT OULED ENNIA",
+          "name_ar": "محطة خدمات مشتة اولاد النية",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.51,
+            36.506
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services MECHTAT OULED ENNIA",
+      "display_name_ar": "محطة خدمات مشتة اولاد النية"
+    },
+    {
+      "id": "tariki-5429",
+      "coordinates": [
+        6.734,
+        36.244
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5429",
+          "route_id": "5549",
+          "name_fr": "Station de services  ZOUAOUI",
+          "name_ar": "محطة الخدمات زواوي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.734,
+            36.244
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  ZOUAOUI",
+      "display_name_ar": "محطة الخدمات زواوي"
+    },
+    {
+      "id": "tariki-5450",
+      "coordinates": [
+        6.951,
+        36.235
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5450",
+          "route_id": "10235",
+          "name_fr": "Station de services SONATRACH",
+          "name_ar": "محطة خدمات سونطراك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.951,
+            36.235
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services SONATRACH",
+      "display_name_ar": "محطة خدمات سونطراك"
+    },
+    {
+      "id": "tariki-5594",
+      "coordinates": [
+        6.937,
+        36.231
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5594",
+          "route_id": "4160",
+          "name_fr": "Station de services ABID FERHAT",
+          "name_ar": "محطة الخدمات عبيد فرحات",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            6.937,
+            36.231
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ABID FERHAT",
+      "display_name_ar": "محطة الخدمات عبيد فرحات"
+    },
+    {
+      "id": "tariki-5603",
+      "coordinates": [
+        6.5525,
+        36.2391
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5603",
+          "route_id": "1768",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.5525,
+            36.2391
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "tariki-7409",
+      "coordinates": [
+        6.836,
+        36.266
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7409",
+          "route_id": "3640",
+          "name_fr": "Station de services frères alalta",
+          "name_ar": "محطة البنزين الاخوة علالطة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.836,
+            36.266
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 25,
+          "wilaya_fr": "Constantine",
+          "wilaya_ar": "قسنطينة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services frères alalta",
+      "display_name_ar": "محطة البنزين الاخوة علالطة"
+    }
+  ]
+}

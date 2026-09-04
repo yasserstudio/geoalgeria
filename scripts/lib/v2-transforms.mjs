@@ -707,29 +707,68 @@ export const MIGRATIONS = {
 
   buses: {
     file: "lines.json",
-    geojson: false, // line-level only: an empty FeatureCollection reads as a failed download
+    geojson: false, // line geometry is emitted separately as shapes.geojson
     map: (r) => clean({
       id: r.id,
-      name: `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`,
+      name: r.name ?? (
+        r.terminus1 != null && r.terminus2 != null
+          ? `Ligne ${r.line} — ${r.terminus1} ↔ ${r.terminus2}`
+          : null
+      ),
+      name_fr: r.name_fr,
+      name_ar: r.name_ar,
       wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
       ...geoNone,
-      source: "wikipedia",
+      source: typeof r.source === "string" && r.source.startsWith("http") ? "wikipedia" : (r.source ?? "wikipedia"),
+      operator_id: r.operator_id ?? (r.operator === "ETUSA" ? "etusa" : undefined),
       operator: r.operator, network: r.network, line: r.line,
-      terminus1: r.terminus1, terminus2: r.terminus2, stops: r.stops,
+      terminus1: r.terminus1, terminus1_fr: r.terminus1_fr, terminus1_ar: r.terminus1_ar,
+      terminus2: r.terminus2, terminus2_fr: r.terminus2_fr, terminus2_ar: r.terminus2_ar,
+      stops: r.stops,
+      major_stops: r.major_stops ?? null,
+      service_hours: r.service_hours ?? [],
+      departure_schedules: r.departure_schedules ?? [],
+      route_diagram_url: r.route_diagram_url ?? null,
       communes_served: r.communes_served, stations_served: r.stations_served,
-      source_url: r.source,
+      shape_id: r.shape_id ?? null,
+      osm_relation_ids: r.osm_relation_ids ?? [],
+      source_refs: r.source_refs ?? [typeof r.source === "string" && r.source.startsWith("http") ? "wikipedia" : (r.source ?? "wikipedia")],
+      // An explicit null means the factual Source was supplied without a
+      // durable public page. Do not turn its internal source key into a URL.
+      source_url: Object.hasOwn(r, "source_url") ? r.source_url : r.source,
     }),
     meta: {
-      sources: [{ key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" }],
-      license: "CC-BY-SA-4.0",
-      estimatedUniverse: 122,
-      coverageNote: "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-      titles: { en: "ETUSA urban bus lines (Algiers)", fr: "Lignes de bus ETUSA (Alger)", ar: "خطوط حافلات إيتوزا (الجزائر العاصمة)" },
-      stats: (rows) => ({
-        operators: [...new Set(rows.map((r) => r.operator))],
-        by_operator: count(rows, "operator"),
-        with_stop_count: rows.filter((r) => r.stops != null).length,
-      }),
+      sources: [
+        { key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" },
+        { key: "etus-tiaret", name: "ETUS Tiaret — current Lines", url: "https://www.etus-tiaret.dz/ar/lines", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etusto", name: "ETUSTO — passenger Lines", url: "http://etusto.dz/espv.html", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-bejaia", name: "ETUS Béjaïa — WordPress REST itineraries and Line maps", url: "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-msila", name: "ETUS M'Sila — official Line pages and diagrams", url: "https://etus-msila.dz/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-sidi-bel-abbes", name: "ETUS Sidi Bel Abbès — network and timetable pages", url: "https://etus22.dz/Horaires.php", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-setif", name: "ETUS Setif — 2026 Line artwork supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-ain-defla", name: "ETUS Aïn Defla — 2025 Line artwork and Eid service program supplied by project owner", url: "https://www.facebook.com/ETUS44/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
+        { key: "etus-annaba", name: "ETUS Annaba — Eid al-Adha 2026 service program supplied by project owner", url: "https://www.facebook.com/100063517660926/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
+        { key: "etus-tlemcen", name: "ETUS Tlemcen — Eid al-Adha 2026 service program supplied by project owner", url: "https://www.facebook.com/etustlemcen13/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
+        { key: "eto-oran", name: "ETO Oran — route drawings published on the Operator page, supplied by project owner", url: "https://www.facebook.com/p/ETO-100093054514209/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
+        { key: "etus-oeb", name: "ETUS Oum El Bouaghi — numbered Line diagrams supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
+        { key: "etul-laghouat", name: "ETUL Laghouat — dated operating programs supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
+        { key: "osm", name: "OpenStreetMap — reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
+      ],
+      license: "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
+      estimatedUniverse: null,
+      coverageNote: "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
+      titles: { en: "Algeria urban and suburban bus lines", fr: "Lignes de bus urbaines et suburbaines d'Algérie", ar: "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر" },
+      stats: (rows) => {
+        const lines = rows.filter((r) => r.line != null);
+        return {
+        operators: [...new Set(lines.map((r) => r.operator))],
+        by_operator: count(lines, "operator"),
+        with_stop_count: lines.filter((r) => r.stops != null).length,
+        with_major_stop_count: lines.filter((r) => r.major_stops != null).length,
+        with_service_hours: lines.filter((r) => r.service_hours?.length > 0).length,
+        with_departure_schedules: lines.filter((r) => r.departure_schedules?.length > 0).length,
+        };
+      },
     },
   },
 
@@ -942,7 +981,7 @@ export function writePackageV2({
     demoteSharedPoints(rows);
     // Plain codepoint order — localeCompare() without a locale reads the ambient
     // ICU and can reorder committed JSON between machines.
-    rows.sort((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0));
+    rows.sort(f.sortRows ?? ((a, b) => (String(a.id) < String(b.id) ? -1 : String(a.id) > String(b.id) ? 1 : 0)));
     const { errors } = validateRecords(rows);
     if (errors.length)
       throw new Error(

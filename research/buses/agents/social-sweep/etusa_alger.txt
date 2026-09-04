@@ -1,0 +1,58 @@
+I'll search official ETUSA Alger channels for 2026 posts that actually publish a new line list or route map, and only report those if they exist.This is a 2026 first-party source hunt, not a last-30-days community brief. I’ll identify official ETUSA accounts, then search only those platforms for a new line list or route map.Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 482953,
+    "outputTokens": 1257,
+    "totalTokens": 484210,
+    "cachedReadTokens": 321536,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 948,
+    "modelCalls": 4,
+    "apiDurationMs": 183999,
+    "costUsdTicks": 1034944800,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 482953,
+        "outputTokens": 1257,
+        "totalTokens": 484210,
+        "cachedReadTokens": 321536,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 948,
+        "modelCalls": 4,
+        "apiDurationMs": 183999,
+        "costUsdTicks": 1034944800
+      }
+    },
+    "numTurns": 4
+  }
+}
+Error: Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 482953,
+    "outputTokens": 1257,
+    "totalTokens": 484210,
+    "cachedReadTokens": 321536,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 948,
+    "modelCalls": 4,
+    "apiDurationMs": 183999,
+    "costUsdTicks": 1034944800,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 482953,
+        "outputTokens": 1257,
+        "totalTokens": 484210,
+        "cachedReadTokens": 321536,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 948,
+        "modelCalls": 4,
+        "apiDurationMs": 183999,
+        "costUsdTicks": 1034944800
+      }
+    },
+    "numTurns": 4
+  }
+}

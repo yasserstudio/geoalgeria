@@ -1,0 +1,2434 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-46",
+    "wilaya_code": 46,
+    "name": "Aïn Témouchent",
+    "name_ar": "عين تموشنت",
+    "center": [
+      -1.085,
+      35.36450000000001
+    ],
+    "bounds": [
+      -1.588,
+      35.09,
+      -0.582,
+      35.639
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 59,
+    "osm_records": 47,
+    "tariki_records": 42,
+    "cross_source": 22,
+    "multiple_tariki": 4,
+    "osm_only": 21,
+    "tariki_only": 12,
+    "nearby_osm_pairs": 5,
+    "conflicts": 25
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-2059610087",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3068837872",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3389495221",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5299528920",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-5314892046",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6256002715",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-195534704",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-238911258",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-254130652",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-550263601",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-550396175",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-741733610",
+      "reasons": [
+        "multiple-tariki",
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-93576202",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1986",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2000",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-274",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3351",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5123",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5130",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5439",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5501",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5586",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5858",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6379",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7456",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1602222757",
+      "coordinates": [
+        -0.8101458,
+        35.3765759
+      ],
+      "osm": {
+        "id": "node/1602222757",
+        "name": "Station service Sidi Boudia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8101458,
+          35.3765759
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Sidi Boudia",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1686557272",
+      "coordinates": [
+        -1.0247001,
+        35.5211296
+      ],
+      "osm": {
+        "id": "node/1686557272",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          -1.0247001,
+          35.5211296
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2059610087",
+      "coordinates": [
+        -1.0334151,
+        35.3033779
+      ],
+      "osm": {
+        "id": "node/2059610087",
+        "name": "Station-service Chentouf (fermée temporairement)",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0334151,
+          35.3033779
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-195534704",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station-service Chentouf (fermée temporairement)",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3068837872",
+      "coordinates": [
+        -1.284027,
+        35.2442479
+      ],
+      "osm": {
+        "id": "node/3068837872",
+        "name": "Station-service Carbu-Sud",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.284027,
+          35.2442479
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-741733610",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station-service Carbu-Sud",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3373759071",
+      "coordinates": [
+        -0.8832902,
+        35.407608
+      ],
+      "osm": {
+        "id": "node/3373759071",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.8832902,
+          35.407608
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5117",
+          "route_id": "9893",
+          "name_fr": "Station de services AIN ARBIAA",
+          "name_ar": "محطة الخدمات عين الاربعاء",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.8832,
+            35.4076
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات عين الاربعاء"
+    },
+    {
+      "id": "osm-node-3389486588",
+      "coordinates": [
+        -1.1432971,
+        35.2911062
+      ],
+      "osm": {
+        "id": "node/3389486588",
+        "name": "Station service Bendahma",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1432971,
+          35.2911062
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7460",
+          "route_id": "9728",
+          "name_fr": "STATION DE SERVICES SOUNATRAK",
+          "name_ar": "محطة خدمات سونطراك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.1433,
+            35.2911
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Bendahma",
+      "display_name_ar": "محطة خدمات سونطراك"
+    },
+    {
+      "id": "osm-node-3389492193",
+      "coordinates": [
+        -1.1438808,
+        35.2988209
+      ],
+      "osm": {
+        "id": "node/3389492193",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "SONATRACH",
+        "opening_hours": null,
+        "coordinates": [
+          -1.1438808,
+          35.2988209
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7457",
+          "route_id": "9728",
+          "name_fr": "STATION DE SERVICES  NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.1439,
+            35.2989
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-3389493763",
+      "coordinates": [
+        -1.1438621,
+        35.2983635
+      ],
+      "osm": {
+        "id": "node/3389493763",
+        "name": "Station Service Gala Oil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "GALA OIL",
+        "opening_hours": null,
+        "coordinates": [
+          -1.1438621,
+          35.2983635
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7458",
+          "route_id": "9728",
+          "name_fr": "STATION DE SERVICES EL 3ARBI  BEN MHIDY",
+          "name_ar": "محطة  خدمات العربي بن مهيدي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.1439,
+            35.2984
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Gala Oil",
+      "display_name_ar": "محطة  خدمات العربي بن مهيدي"
+    },
+    {
+      "id": "osm-node-3389495221",
+      "coordinates": [
+        -1.1292142,
+        35.3021855
+      ],
+      "osm": {
+        "id": "node/3389495221",
+        "name": "Station Service Mouadène",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1292142,
+          35.3021855
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-550396175",
+          "offset_m": 44
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Service Mouadène",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3389504021",
+      "coordinates": [
+        -1.1546356,
+        35.3034111
+      ],
+      "osm": {
+        "id": "node/3389504021",
+        "name": "Station de Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1546356,
+          35.3034111
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7453",
+          "route_id": "9709",
+          "name_fr": "STATION DE SERVICES  ALPEROU",
+          "name_ar": "محطة خدمات سي البشير (ألبترو )",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.1547,
+            35.3035
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de Service",
+      "display_name_ar": "محطة خدمات سي البشير (ألبترو )"
+    },
+    {
+      "id": "osm-node-3934799718",
+      "coordinates": [
+        -1.1377098,
+        35.322496
+      ],
+      "osm": {
+        "id": "node/3934799718",
+        "name": "Station service Sirgaz (GPL)",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1377098,
+          35.322496
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2117",
+          "route_id": "5274",
+          "name_fr": "Station de services ben dahma",
+          "name_ar": "محطة خدمات بن دهمة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.138,
+            35.322
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Sirgaz (GPL)",
+      "display_name_ar": "محطة خدمات بن دهمة"
+    },
+    {
+      "id": "osm-node-4043414528",
+      "coordinates": [
+        -1.2395836,
+        35.3421026
+      ],
+      "osm": {
+        "id": "node/4043414528",
+        "name": "Station-Service Naftal",
+        "name_ar": "محطة وقود",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.2395836,
+          35.3421026
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service Naftal",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-node-4333650740",
+      "coordinates": [
+        -1.0109735,
+        35.3729271
+      ],
+      "osm": {
+        "id": "node/4333650740",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station d'essence El Maïda",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0109735,
+          35.3729271
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5127",
+          "route_id": "9893",
+          "name_fr": "Station de services  EL OULHASSI/ AOURAS ELMAIDA",
+          "name_ar": "محطة الخدمات  الولهاصي اوراس المايدة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.0107,
+            35.3728
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 29
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station d'essence El Maïda",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-4746117927",
+      "coordinates": [
+        -0.9721232,
+        35.382754
+      ],
+      "osm": {
+        "id": "node/4746117927",
+        "name": "Station-service Naftal",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Station-service Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.9721232,
+          35.382754
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5132",
+          "route_id": "9894",
+          "name_fr": "Station de services HAMAM BOUHADJAR/ VERS AIN ELBAIDA",
+          "name_ar": "محطة الخدمات حمام بوحجر /باتجاع قرية عين البيضاء",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.9721,
+            35.3827
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-5161853022",
+      "coordinates": [
+        -1.1811382,
+        35.2994598
+      ],
+      "osm": {
+        "id": "node/5161853022",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Station D'essence",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1811382,
+          35.2994598
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6872",
+          "route_id": "3852",
+          "name_fr": "Station de services ALPETRO",
+          "name_ar": "ألبيترو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.181,
+            35.2993
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station D'essence",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-5299528920",
+      "coordinates": [
+        -1.1489028,
+        35.2991848
+      ],
+      "osm": {
+        "id": "node/5299528920",
+        "name": "Station d'essence Maaroufi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "PH,Mo-Su 06:00-22:00",
+        "coordinates": [
+          -1.1489028,
+          35.2991848
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-238911258",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station d'essence Maaroufi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5314892046",
+      "coordinates": [
+        -1.1203488,
+        35.316943
+      ],
+      "osm": {
+        "id": "node/5314892046",
+        "name": "Naftal - Branche GPL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1203488,
+          35.316943
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-550263601",
+          "offset_m": 34
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal - Branche GPL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5319194694",
+      "coordinates": [
+        -1.0996125,
+        35.346347
+      ],
+      "osm": {
+        "id": "node/5319194694",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0996125,
+          35.346347
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5376136454",
+      "coordinates": [
+        -1.0910071,
+        35.3960434
+      ],
+      "osm": {
+        "id": "node/5376136454",
+        "name": "Station Service Gourinet",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0910071,
+          35.3960434
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12564",
+          "route_id": "817",
+          "name_fr": "station de services ghourinet",
+          "name_ar": "محطة الخدمات قورينات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.091,
+            35.395
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 116
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Gourinet",
+      "display_name_ar": "محطة الخدمات قورينات"
+    },
+    {
+      "id": "osm-node-5810742154",
+      "coordinates": [
+        -1.1846142,
+        35.415193
+      ],
+      "osm": {
+        "id": "node/5810742154",
+        "name": "Station-service Petrolium",
+        "name_ar": "محطة بنزين",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1846142,
+          35.415193
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5387",
+          "route_id": "5353",
+          "name_fr": "station de services  ALPTRO TERGA",
+          "name_ar": "محطة الخدمات ALPTRO بلدية تارقة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.1845,
+            35.4153
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Petrolium",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-6218994602",
+      "coordinates": [
+        -1.0596026,
+        35.4469405
+      ],
+      "osm": {
+        "id": "node/6218994602",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0596026,
+          35.4469405
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6256002713",
+      "coordinates": [
+        -1.5165415,
+        35.2417101
+      ],
+      "osm": {
+        "id": "node/6256002713",
+        "name": "Station-service Naftal",
+        "name_ar": "محطة الخدمة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.5165415,
+          35.2417101
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3665",
+          "route_id": "2511",
+          "name_fr": "Station de services Benhadda Boucif",
+          "name_ar": "محطة بن حدة بوسيف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.5159,
+            35.242
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 67
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Naftal",
+      "display_name_ar": "محطة الخدمة"
+    },
+    {
+      "id": "osm-node-6256002715",
+      "coordinates": [
+        -1.5079338,
+        35.2420436
+      ],
+      "osm": {
+        "id": "node/6256002715",
+        "name": "Station Service Naftal",
+        "name_ar": "المحطة الخدمة نفطال",
+        "name_fr": "Station Service Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -1.5079338,
+          35.2420436
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1909",
+          "route_id": "2511",
+          "name_fr": "Station de services Alpetro",
+          "name_ar": "محطة خدمات ألبترو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.508,
+            35.242
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 8
+        },
+        {
+          "id": "13218",
+          "route_id": "18217",
+          "name_fr": "//",
+          "name_ar": "المحطة المتعددة الخدمات ألبيترو",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.5083,
+            35.2419
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "المحطة الخدمة نفطال"
+    },
+    {
+      "id": "osm-node-6313475586",
+      "coordinates": [
+        -0.8727184,
+        35.4040209
+      ],
+      "osm": {
+        "id": "node/6313475586",
+        "name": "محطة وقود السيارات قادرة",
+        "name_ar": "محطة وقود السيارات قادرة",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": "GADRA",
+        "opening_hours": "24/7",
+        "coordinates": [
+          -0.8727184,
+          35.4040209
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وقود السيارات قادرة"
+    },
+    {
+      "id": "osm-node-6318035639",
+      "coordinates": [
+        -0.6547491,
+        35.4113933
+      ],
+      "osm": {
+        "id": "node/6318035639",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.6547491,
+          35.4113933
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6775837054",
+      "coordinates": [
+        -1.1917539,
+        35.4709468
+      ],
+      "osm": {
+        "id": "node/6775837054",
+        "name": "أحمد بلواتي",
+        "name_ar": "أحمد بلواتي",
+        "name_fr": null,
+        "brand": null,
+        "operator": "أحمد بلواتي",
+        "opening_hours": "Mo,Su 08:00-18:00",
+        "coordinates": [
+          -1.1917539,
+          35.4709468
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "أحمد بلواتي",
+      "display_name_ar": "أحمد بلواتي"
+    },
+    {
+      "id": "osm-node-8302791793",
+      "coordinates": [
+        -1.0956537,
+        35.3695387
+      ],
+      "osm": {
+        "id": "node/8302791793",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0956537,
+          35.3695387
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1080399238",
+      "coordinates": [
+        -0.9397299,
+        35.19501075
+      ],
+      "osm": {
+        "id": "way/1080399238",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -0.9397299,
+          35.19501075
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1195352653",
+      "coordinates": [
+        -1.0258281999999999,
+        35.4796086
+      ],
+      "osm": {
+        "id": "way/1195352653",
+        "name": "Station service Alpétro",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0258281999999999,
+          35.4796086
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Alpétro",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-159056266",
+      "coordinates": [
+        -0.96493685,
+        35.54635625
+      ],
+      "osm": {
+        "id": "way/159056266",
+        "name": "Station service En-Nakhil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/24 - 7/7",
+        "coordinates": [
+          -0.96493685,
+          35.54635625
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service En-Nakhil",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-195534704",
+      "coordinates": [
+        -1.0334146,
+        35.303484499999996
+      ],
+      "osm": {
+        "id": "way/195534704",
+        "name": "Station services Chentouf (fermée temporairement)",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0334146,
+          35.303484499999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5115",
+          "route_id": "9883",
+          "name_fr": "Station de services CHENTOUF",
+          "name_ar": "محطة الخدمات شنتوف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.0334,
+            35.3035
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-2059610087",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station services Chentouf (fermée temporairement)",
+      "display_name_ar": "محطة الخدمات شنتوف"
+    },
+    {
+      "id": "osm-way-235464516",
+      "coordinates": [
+        -1.3844140999999999,
+        35.302686699999995
+      ],
+      "osm": {
+        "id": "way/235464516",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3844140999999999,
+          35.302686699999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6548",
+          "route_id": "795",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نافطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.384,
+            35.303
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة نافطال"
+    },
+    {
+      "id": "osm-way-235470500",
+      "coordinates": [
+        -1.3310918,
+        35.3190473
+      ],
+      "osm": {
+        "id": "way/235470500",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.3310918,
+          35.3190473
+        ]
+      },
+      "tariki": [
+        {
+          "id": "207",
+          "route_id": "96",
+          "name_fr": "Station de services SIAD SAID FOUCHOUI",
+          "name_ar": "محطة سياد سيدي سعيد فوشوي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.331,
+            35.319
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة سياد سيدي سعيد فوشوي"
+    },
+    {
+      "id": "osm-way-235479652",
+      "coordinates": [
+        -1.40691875,
+        35.29862385
+      ],
+      "osm": {
+        "id": "way/235479652",
+        "name": "Station-Service Naftal",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.40691875,
+          35.29862385
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3051",
+          "route_id": "795",
+          "name_fr": "Station de services BOUDALI",
+          "name_ar": "محطة بودالي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.407,
+            35.299
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-238911258",
+      "coordinates": [
+        -1.14897195,
+        35.29922345
+      ],
+      "osm": {
+        "id": "way/238911258",
+        "name": "Station d'essence Maaroufi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": "PH,Mo-Su 06:00-22:00",
+        "coordinates": [
+          -1.14897195,
+          35.29922345
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7454",
+          "route_id": "9708",
+          "name_fr": "STATION DE SERVICES  MA3ROUFI",
+          "name_ar": "محطة بنزين معروفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.149,
+            35.2993
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5299528920",
+          "offset_m": 8
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station d'essence Maaroufi",
+      "display_name_ar": "محطة بنزين معروفي"
+    },
+    {
+      "id": "osm-way-253260484",
+      "coordinates": [
+        -1.34171225,
+        35.28367514999999
+      ],
+      "osm": {
+        "id": "way/253260484",
+        "name": "Station Service E. Leclerc",
+        "name_ar": "محطة خدمات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.34171225,
+          35.28367514999999
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3488",
+          "route_id": "800",
+          "name_fr": "Station de services Hadj BOUDINAR",
+          "name_ar": "محطة حاج بودينار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.3417,
+            35.2837
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service E. Leclerc",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-254130652",
+      "coordinates": [
+        -1.18632605,
+        35.294492500000004
+      ],
+      "osm": {
+        "id": "way/254130652",
+        "name": "Station Service Benadla",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.18632605,
+          35.294492500000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5437",
+          "route_id": "1067",
+          "name_fr": "Station de services  sidi ban adla",
+          "name_ar": "محطة سيدي بن عدة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.1859,
+            35.2947
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 45
+        },
+        {
+          "id": "12581",
+          "route_id": "3827",
+          "name_fr": "BEN ADLA",
+          "name_ar": "محطة بن عدلة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.186,
+            35.294
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 62
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service Benadla",
+      "display_name_ar": "محطة سيدي بن عدة"
+    },
+    {
+      "id": "osm-way-254322940",
+      "coordinates": [
+        -1.1478743,
+        35.29320645
+      ],
+      "osm": {
+        "id": "way/254322940",
+        "name": "Station Service محطات خدمات",
+        "name_ar": "Station Service محطات خدمات",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "PH,Mo-Su 06:00-21:00",
+        "coordinates": [
+          -1.1478743,
+          35.29320645
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7459",
+          "route_id": "9725",
+          "name_fr": "STATION DE SERVICES BEN DAHMA",
+          "name_ar": "محطة خدمات بن دهمة",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -1.1478,
+            35.2933
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service محطات خدمات",
+      "display_name_ar": "Station Service محطات خدمات"
+    },
+    {
+      "id": "osm-way-548626213",
+      "coordinates": [
+        -1.12230925,
+        35.326624249999995
+      ],
+      "osm": {
+        "id": "way/548626213",
+        "name": "Station service Lalla Maghnia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.12230925,
+          35.326624249999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Lalla Maghnia",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-550263601",
+      "coordinates": [
+        -1.1206449,
+        35.3167614
+      ],
+      "osm": {
+        "id": "way/550263601",
+        "name": "Station service Sirgaz",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1206449,
+          35.3167614
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-5314892046",
+          "offset_m": 34
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station service Sirgaz",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-550396175",
+      "coordinates": [
+        -1.1287967,
+        35.30239225
+      ],
+      "osm": {
+        "id": "way/550396175",
+        "name": "Station service Mouaden",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1287967,
+          35.30239225
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7455",
+          "route_id": "9710",
+          "name_fr": "Station de services MOUDHEN",
+          "name_ar": "محطة بنزين موذن",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.1289,
+            35.303
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 68
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3389495221",
+          "offset_m": 44
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Station service Mouaden",
+      "display_name_ar": "محطة بنزين موذن"
+    },
+    {
+      "id": "osm-way-557436834",
+      "coordinates": [
+        -1.1020854,
+        35.39315345
+      ],
+      "osm": {
+        "id": "way/557436834",
+        "name": "Station Service Matalah",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.1020854,
+          35.39315345
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5367",
+          "route_id": "817",
+          "name_fr": "Station de services MAATA ALLAH",
+          "name_ar": "محطة الخدمات معطى الله",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            -1.102,
+            35.393
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Matalah",
+      "display_name_ar": "محطة الخدمات معطى الله"
+    },
+    {
+      "id": "osm-way-664447892",
+      "coordinates": [
+        -1.0665018499999999,
+        35.4405343
+      ],
+      "osm": {
+        "id": "way/664447892",
+        "name": "Relais routier Riahi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.0665018499999999,
+          35.4405343
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Relais routier Riahi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-719503717",
+      "coordinates": [
+        -1.530557,
+        35.22036265
+      ],
+      "osm": {
+        "id": "way/719503717",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.530557,
+          35.22036265
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-719503720",
+      "coordinates": [
+        -1.408191,
+        35.220637249999996
+      ],
+      "osm": {
+        "id": "way/719503720",
+        "name": "Station-service Emir Abdelkader",
+        "name_ar": "محطة التزود بالوقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.408191,
+          35.220637249999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5378",
+          "route_id": "9681",
+          "name_fr": "Station de services AMIR ABD ELKADER",
+          "name_ar": "محطة الخدمات بالامير عبد القادر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.408,
+            35.221
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 44
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-service Emir Abdelkader",
+      "display_name_ar": "محطة التزود بالوقود"
+    },
+    {
+      "id": "osm-way-741733610",
+      "coordinates": [
+        -1.284106,
+        35.2441499
+      ],
+      "osm": {
+        "id": "way/741733610",
+        "name": "Carbu Sud (Relai routier Aïn Tolba)",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.284106,
+          35.2441499
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1985",
+          "route_id": "3591",
+          "name_fr": "Station de services Laaredj",
+          "name_ar": "محطة الخدمات لعرج",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.284,
+            35.244
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 19
+        },
+        {
+          "id": "10322",
+          "route_id": "35",
+          "name_fr": "STATION LAAREDJ",
+          "name_ar": "محطة لعرج",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            -1.285,
+            35.244
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 83
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3068837872",
+          "offset_m": 13
+        }
+      ],
+      "source_state": "multiple-tariki",
+      "display_name": "Carbu Sud (Relai routier Aïn Tolba)",
+      "display_name_ar": "محطة الخدمات لعرج"
+    },
+    {
+      "id": "osm-way-93576202",
+      "coordinates": [
+        -1.47643145,
+        35.29021865
+      ],
+      "osm": {
+        "id": "way/93576202",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -1.47643145,
+          35.29021865
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5856",
+          "route_id": "10731",
+          "name_fr": "Station de services  bel-arrej",
+          "name_ar": "محطة توزيع الوقود بلعرج",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.4764,
+            35.2903
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 9
+        },
+        {
+          "id": "13217",
+          "route_id": "18216",
+          "name_fr": "///",
+          "name_ar": "المحطة المتعددة الخدمات بلعرج",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.4762,
+            35.2902
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة توزيع الوقود بلعرج"
+    },
+    {
+      "id": "tariki-1986",
+      "coordinates": [
+        -1.329,
+        35.235
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1986",
+          "route_id": "3591",
+          "name_fr": "Station de services AIN ALAM",
+          "name_ar": "محطة الخدمات عين العلام",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            -1.329,
+            35.235
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AIN ALAM",
+      "display_name_ar": "محطة الخدمات عين العلام"
+    },
+    {
+      "id": "tariki-2000",
+      "coordinates": [
+        -1.2559,
+        35.2554
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2000",
+          "route_id": "365",
+          "name_fr": "Station de services Bouaza Elhadj",
+          "name_ar": "بوعزة الحاج",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.2559,
+            35.2554
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bouaza Elhadj",
+      "display_name_ar": "بوعزة الحاج"
+    },
+    {
+      "id": "tariki-274",
+      "coordinates": [
+        -0.939,
+        35.194
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "274",
+          "route_id": "978",
+          "name_fr": "Station de services HAMAINA",
+          "name_ar": "محطة خدمات الحماينة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            -0.939,
+            35.194
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HAMAINA",
+      "display_name_ar": "محطة خدمات الحماينة"
+    },
+    {
+      "id": "tariki-3351",
+      "coordinates": [
+        -1.189,
+        35.233
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3351",
+          "route_id": "7219",
+          "name_fr": "Station de services sidi zidour",
+          "name_ar": "محطة الوقود بسدي زيدور",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -1.189,
+            35.233
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services sidi zidour",
+      "display_name_ar": "محطة الوقود بسدي زيدور"
+    },
+    {
+      "id": "tariki-5123",
+      "coordinates": [
+        -0.8165,
+        35.3766
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5123",
+          "route_id": "9893",
+          "name_fr": "Station de services OUED SEBBAH",
+          "name_ar": "محطة الخدمات واد الصباح",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.8165,
+            35.3766
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services OUED SEBBAH",
+      "display_name_ar": "محطة الخدمات واد الصباح"
+    },
+    {
+      "id": "tariki-5130",
+      "coordinates": [
+        -0.9611,
+        35.3811
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5130",
+          "route_id": "9893",
+          "name_fr": "Station de services HAMAM BOUHADJAR/RAHEL/ VERS AIN ARBIAA",
+          "name_ar": "محطة الخدمات رحال/حمام بوحجر/ باتجاه عين الاربعاء",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -0.9611,
+            35.3811
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HAMAM BOUHADJAR/RAHEL/ VERS AIN ARBIAA",
+      "display_name_ar": "محطة الخدمات رحال/حمام بوحجر/ باتجاه عين الاربعاء"
+    },
+    {
+      "id": "tariki-5439",
+      "coordinates": [
+        -1.1001,
+        35.3474
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5439",
+          "route_id": "1082",
+          "name_fr": "Station de services Chaabate elham",
+          "name_ar": "محطة شعبة اللحم",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.1001,
+            35.3474
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Chaabate elham",
+      "display_name_ar": "محطة شعبة اللحم"
+    },
+    {
+      "id": "tariki-5501",
+      "coordinates": [
+        -1.057,
+        35.451
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5501",
+          "route_id": "938",
+          "name_fr": "Station de services TASSALA MEDJDOUB",
+          "name_ar": "محطة الخدمات تسالة مجدوب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.057,
+            35.451
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TASSALA MEDJDOUB",
+      "display_name_ar": "محطة الخدمات تسالة مجدوب"
+    },
+    {
+      "id": "tariki-5586",
+      "coordinates": [
+        -1.0908,
+        35.3944
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5586",
+          "route_id": "10411",
+          "name_fr": "Station de services Gourinete",
+          "name_ar": "محطة الخدمات قورينات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.0908,
+            35.3944
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Gourinete",
+      "display_name_ar": "محطة الخدمات قورينات"
+    },
+    {
+      "id": "tariki-5858",
+      "coordinates": [
+        -1.5312,
+        35.2217
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5858",
+          "route_id": "10733",
+          "name_fr": "Station de services BEN SNOUSSI",
+          "name_ar": "محطة توزيع الوقود بن سنوسي",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.5312,
+            35.2217
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BEN SNOUSSI",
+      "display_name_ar": "محطة توزيع الوقود بن سنوسي"
+    },
+    {
+      "id": "tariki-6379",
+      "coordinates": [
+        -1.3505,
+        35.3065
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6379",
+          "route_id": "797",
+          "name_fr": "Station de service Benterari",
+          "name_ar": "محطة بن تراري",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            -1.3505,
+            35.3065
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de service Benterari",
+      "display_name_ar": "محطة بن تراري"
+    },
+    {
+      "id": "tariki-7456",
+      "coordinates": [
+        -1.12,
+        35.3184
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7456",
+          "route_id": "9710",
+          "name_fr": "Station de services la Zone Industiel",
+          "name_ar": "محطة سير غاز بالمنطقة الصناعية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -1.12,
+            35.3184
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 46,
+          "wilaya_fr": "Aïn Témouchent",
+          "wilaya_ar": "عين تموشنت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services la Zone Industiel",
+      "display_name_ar": "محطة سير غاز بالمنطقة الصناعية"
+    }
+  ]
+}

@@ -1,0 +1,2144 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-35",
+    "wilaya_code": 35,
+    "name": "Boumerdès",
+    "name_ar": "بومرداس",
+    "center": [
+      3.6289999999999996,
+      36.735
+    ],
+    "bounds": [
+      3.219,
+      36.548,
+      4.039,
+      36.922
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 52,
+    "osm_records": 45,
+    "tariki_records": 39,
+    "cross_source": 26,
+    "multiple_tariki": 3,
+    "osm_only": 16,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 1,
+    "conflicts": 12
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-2328543371",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3012894429",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3599700542",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3787089719",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1174056573",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13411",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13413",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13414",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3515",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3927",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7282",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7285",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11089085985",
+      "coordinates": [
+        3.3554707,
+        36.759863
+      ],
+      "osm": {
+        "id": "node/11089085985",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.3554707,
+          36.759863
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13205",
+          "route_id": "18202",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.3553,
+            36.7605
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 72
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-11990145769",
+      "coordinates": [
+        3.3674507,
+        36.6487204
+      ],
+      "osm": {
+        "id": "node/11990145769",
+        "name": "محطة خدمات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.3674507,
+          36.6487204
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1351707107",
+      "coordinates": [
+        3.4069178,
+        36.7611428
+      ],
+      "osm": {
+        "id": "node/1351707107",
+        "name": "Boudouaou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4069178,
+          36.7611428
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5817",
+          "route_id": "10681",
+          "name_fr": "station de services EL YASSAMINE",
+          "name_ar": "محطة الخدمات الياسمين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.4069,
+            36.7611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Boudouaou",
+      "display_name_ar": "محطة الخدمات الياسمين"
+    },
+    {
+      "id": "osm-node-1423972947",
+      "coordinates": [
+        3.3625245,
+        36.7231142
+      ],
+      "osm": {
+        "id": "node/1423972947",
+        "name": "Hawech el makheffi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3625245,
+          36.7231142
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Hawech el makheffi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2175819879",
+      "coordinates": [
+        3.2599724,
+        36.710782
+      ],
+      "osm": {
+        "id": "node/2175819879",
+        "name": "Station service Ben Chouban",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "E.Leclerc",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2599724,
+          36.710782
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7276",
+          "route_id": "8515",
+          "name_fr": "STATION D'ESSENCE BEN AMAR",
+          "name_ar": "محطة البنزين بن عمار",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.26,
+            36.7108
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Ben Chouban",
+      "display_name_ar": "محطة البنزين بن عمار"
+    },
+    {
+      "id": "osm-node-2326825961",
+      "coordinates": [
+        3.4803424,
+        36.7564764
+      ],
+      "osm": {
+        "id": "node/2326825961",
+        "name": "Boumerdès",
+        "name_ar": "بومرداس",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4803424,
+          36.7564764
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7268",
+          "route_id": "7114",
+          "name_fr": "Station de services BOUMERDES CENTRE",
+          "name_ar": "محطة الخدمات بومرداس مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.48,
+            36.756
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Boumerdès",
+      "display_name_ar": "بومرداس"
+    },
+    {
+      "id": "osm-node-2328335215",
+      "coordinates": [
+        3.8623259,
+        36.9018657
+      ],
+      "osm": {
+        "id": "node/2328335215",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8623259,
+          36.9018657
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3879",
+          "route_id": "7982",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.8624,
+            36.9018
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-2328356881",
+      "coordinates": [
+        3.913363,
+        36.9140411
+      ],
+      "osm": {
+        "id": "node/2328356881",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.913363,
+          36.9140411
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3882",
+          "route_id": "7982",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.913,
+            36.914
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-2328358377",
+      "coordinates": [
+        3.9124,
+        36.9132262
+      ],
+      "osm": {
+        "id": "node/2328358377",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          3.9124,
+          36.9132262
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7271",
+          "route_id": "7982",
+          "name_fr": "STATION DE SERVICES BOURIVAGE",
+          "name_ar": "محطة الخدمات بوريفاج",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.9126,
+            36.9133
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات بوريفاج"
+    },
+    {
+      "id": "osm-node-2328359666",
+      "coordinates": [
+        3.9151187,
+        36.9081932
+      ],
+      "osm": {
+        "id": "node/2328359666",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          3.9151187,
+          36.9081932
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4033",
+          "route_id": "8016",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.9151,
+            36.908
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-2328513142",
+      "coordinates": [
+        3.8586667,
+        36.8228939
+      ],
+      "osm": {
+        "id": "node/2328513142",
+        "name": "Baghlia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.8586667,
+          36.8228939
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7476",
+          "route_id": "10231",
+          "name_fr": "STATION DE SERVICES OUMELLAL HOUCINE",
+          "name_ar": "محطة الخدمات أوملال حسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.8587,
+            36.8228
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Baghlia",
+      "display_name_ar": "محطة الخدمات أوملال حسين"
+    },
+    {
+      "id": "osm-node-2328543371",
+      "coordinates": [
+        3.705544,
+        36.8468619
+      ],
+      "osm": {
+        "id": "node/2328543371",
+        "name": "NAFTAL Douar Mendil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          3.705544,
+          36.8468619
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4085",
+          "route_id": "8361",
+          "name_fr": "Station de services",
+          "name_ar": "محطة التزود بالوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7056,
+            36.8468
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 8
+        },
+        {
+          "id": "7006",
+          "route_id": "4900",
+          "name_fr": "Station de services cite EL-CHAHID MOHAMED BOUSAA",
+          "name_ar": "محطة الخدمات حي الشهيد محمد بوصاع",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7052,
+            36.8471
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "NAFTAL Douar Mendil",
+      "display_name_ar": "محطة التزود بالوقود"
+    },
+    {
+      "id": "osm-node-2332095708",
+      "coordinates": [
+        3.4475718,
+        36.7552224
+      ],
+      "osm": {
+        "id": "node/2332095708",
+        "name": "Station Service Corso-Boumerdès",
+        "name_ar": null,
+        "name_fr": "Station Service Corso-Boumerdès",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4475718,
+          36.7552224
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7500",
+          "route_id": "12297",
+          "name_fr": "Station de services",
+          "name_ar": "محطة البنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.448,
+            36.755
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Corso-Boumerdès",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-2332353369",
+      "coordinates": [
+        3.9506496,
+        36.8943085
+      ],
+      "osm": {
+        "id": "node/2332353369",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          3.9506496,
+          36.8943085
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3884",
+          "route_id": "7982",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.9506,
+            36.8943
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-2523367259",
+      "coordinates": [
+        3.3296908,
+        36.6571381
+      ],
+      "osm": {
+        "id": "node/2523367259",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3296908,
+          36.6571381
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8517",
+          "route_id": "12153",
+          "name_fr": "Station de services Oued el-Hamiz",
+          "name_ar": "محطة بنزين واد الحميز",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            3.3299,
+            36.6571
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين واد الحميز"
+    },
+    {
+      "id": "osm-node-2526716939",
+      "coordinates": [
+        3.4135938,
+        36.7243697
+      ],
+      "osm": {
+        "id": "node/2526716939",
+        "name": "خروج بودواو",
+        "name_ar": "خروج بودواو",
+        "name_fr": "Sortie Boudouaou",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4135938,
+          36.7243697
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Sortie Boudouaou",
+      "display_name_ar": "خروج بودواو"
+    },
+    {
+      "id": "osm-node-2526716944",
+      "coordinates": [
+        3.4066629,
+        36.728205
+      ],
+      "osm": {
+        "id": "node/2526716944",
+        "name": "Boudouaou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4066629,
+          36.728205
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Boudouaou",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2529670775",
+      "coordinates": [
+        3.3526553,
+        36.6669638
+      ],
+      "osm": {
+        "id": "node/2529670775",
+        "name": "Oulad el Ghalia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3526553,
+          36.6669638
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8526",
+          "route_id": "12153",
+          "name_fr": "Station de services OULAD GHALIA",
+          "name_ar": "محطة أولاد غالية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.3527,
+            36.6669
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Oulad el Ghalia",
+      "display_name_ar": "محطة أولاد غالية"
+    },
+    {
+      "id": "osm-node-2739030992",
+      "coordinates": [
+        3.3263765,
+        36.6529693
+      ],
+      "osm": {
+        "id": "node/2739030992",
+        "name": "Khemis 1",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3263765,
+          36.6529693
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Khemis 1",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2739030993",
+      "coordinates": [
+        3.3285143,
+        36.6523678
+      ],
+      "osm": {
+        "id": "node/2739030993",
+        "name": "Khemis 2",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3285143,
+          36.6523678
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8536",
+          "route_id": "12394",
+          "name_fr": "Station de services RADJI NADIR",
+          "name_ar": "محطة بنزين راجي نذير",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.3285,
+            36.6525
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Khemis 2",
+      "display_name_ar": "محطة بنزين راجي نذير"
+    },
+    {
+      "id": "osm-node-3012403086",
+      "coordinates": [
+        3.5947931,
+        36.6977059
+      ],
+      "osm": {
+        "id": "node/3012403086",
+        "name": "Souk El Hade",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5947931,
+          36.6977059
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5417",
+          "route_id": "6785",
+          "name_fr": "Station de services  HAMMADI",
+          "name_ar": "محطة الوقود حمادي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.5951,
+            36.6979
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Souk El Hade",
+      "display_name_ar": "محطة الوقود حمادي"
+    },
+    {
+      "id": "osm-node-3012894388",
+      "coordinates": [
+        3.5882116,
+        36.6619005
+      ],
+      "osm": {
+        "id": "node/3012894388",
+        "name": "Beni Amrane",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5882116,
+          36.6619005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5391",
+          "route_id": "10178",
+          "name_fr": "Station de services Bouaziz",
+          "name_ar": "محطة البنزين بوعزيز",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.5884,
+            36.662
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Beni Amrane",
+      "display_name_ar": "محطة البنزين بوعزيز"
+    },
+    {
+      "id": "osm-node-3012894422",
+      "coordinates": [
+        3.5947372,
+        36.6530989
+      ],
+      "osm": {
+        "id": "node/3012894422",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5947372,
+          36.6530989
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5507",
+          "route_id": "10178",
+          "name_fr": "Station de services  Zegunoune",
+          "name_ar": "محطة البنزين زقنون",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.5948,
+            36.6527
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين زقنون"
+    },
+    {
+      "id": "osm-node-3012894429",
+      "coordinates": [
+        3.5916607,
+        36.6479171
+      ],
+      "osm": {
+        "id": "node/3012894429",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5916607,
+          36.6479171
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5393",
+          "route_id": "10178",
+          "name_fr": "Station de services Attou",
+          "name_ar": "محطة البنزين عــــــطو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.5924,
+            36.6483
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 79
+        },
+        {
+          "id": "13415",
+          "route_id": "8864",
+          "name_fr": "STATIOUN POUIN DE JOUR BNI AMRAN",
+          "name_ar": "محطة نقطة اليوم بني عمران",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.593,
+            36.648
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 120
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين عــــــطو"
+    },
+    {
+      "id": "osm-node-3020959647",
+      "coordinates": [
+        3.5369821,
+        36.7308086
+      ],
+      "osm": {
+        "id": "node/3020959647",
+        "name": "Thenia1",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.5369821,
+          36.7308086
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3059",
+          "route_id": "6666",
+          "name_fr": "Station de services Thenia   Ouest",
+          "name_ar": "محطة بنزين بالخرجة الغربية لبلدية الثنية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.537,
+            36.7308
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Thenia1",
+      "display_name_ar": "محطة بنزين بالخرجة الغربية لبلدية الثنية"
+    },
+    {
+      "id": "osm-node-3392707984",
+      "coordinates": [
+        3.2439313,
+        36.6632632
+      ],
+      "osm": {
+        "id": "node/3392707984",
+        "name": "oulad brahim",
+        "name_ar": "أولاد إبراهيم",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2439313,
+          36.6632632
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7277",
+          "route_id": "8515",
+          "name_fr": "STATION D'ESSENCE OULED BRAHIM 01",
+          "name_ar": "محطة البنزين حي اولاد إبراهيم 01",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.2439,
+            36.6633
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "oulad brahim",
+      "display_name_ar": "أولاد إبراهيم"
+    },
+    {
+      "id": "osm-node-3392708127",
+      "coordinates": [
+        3.2475068,
+        36.6676668
+      ],
+      "osm": {
+        "id": "node/3392708127",
+        "name": "Ouled Brahim 2",
+        "name_ar": "أولاد إبراهيم 2",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2475068,
+          36.6676668
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7281",
+          "route_id": "8515",
+          "name_fr": "Station de services OULED BRAHIM 02",
+          "name_ar": "محطة البنزين حي اولاد إبراهيم 02",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.2475,
+            36.6676
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Ouled Brahim 2",
+      "display_name_ar": "أولاد إبراهيم 2"
+    },
+    {
+      "id": "osm-node-3599655512",
+      "coordinates": [
+        3.6734992,
+        36.7322632
+      ],
+      "osm": {
+        "id": "node/3599655512",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6734992,
+          36.7322632
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3926",
+          "route_id": "8104",
+          "name_fr": "Station de services OUED DJAMAA",
+          "name_ar": "محطة واد جمعة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.6735,
+            36.7323
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة واد جمعة"
+    },
+    {
+      "id": "osm-node-3599700542",
+      "coordinates": [
+        3.581445,
+        36.7178436
+      ],
+      "osm": {
+        "id": "node/3599700542",
+        "name": "محطة سالم عبيد للخدمات البترولية",
+        "name_ar": "محطة سالم عبيد للخدمات البترولية",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.581445,
+          36.7178436
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3050",
+          "route_id": "6666",
+          "name_fr": "Station de services Thenia Est",
+          "name_ar": "محطة بنزين بالخرجة الشرقية لبلدية الثنية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.581,
+            36.718
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 43
+        },
+        {
+          "id": "13412",
+          "route_id": "8864",
+          "name_fr": "STATION TROI DOI THENIA",
+          "name_ar": "محطة 3 اصابع الثنية",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            3.582,
+            36.717
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 106
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "محطة سالم عبيد للخدمات البترولية",
+      "display_name_ar": "محطة سالم عبيد للخدمات البترولية"
+    },
+    {
+      "id": "osm-node-3600006896",
+      "coordinates": [
+        3.5673529,
+        36.7229026
+      ],
+      "osm": {
+        "id": "node/3600006896",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.5673529,
+          36.7229026
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3600065850",
+      "coordinates": [
+        3.4640304,
+        36.7245235
+      ],
+      "osm": {
+        "id": "node/3600065850",
+        "name": "Ouled ben Kassem",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4640304,
+          36.7245235
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Ouled ben Kassem",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3683504626",
+      "coordinates": [
+        3.6044094,
+        36.7861008
+      ],
+      "osm": {
+        "id": "node/3683504626",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.6044094,
+          36.7861008
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7252",
+          "route_id": "12079",
+          "name_fr": "Station de services Zemmouri centre",
+          "name_ar": "محطة بنزين زموري مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.604,
+            36.786
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين زموري مركز"
+    },
+    {
+      "id": "osm-node-3694988833",
+      "coordinates": [
+        3.5971704,
+        36.7866468
+      ],
+      "osm": {
+        "id": "node/3694988833",
+        "name": "Zemmouri 2 زموري",
+        "name_ar": "زموري 2",
+        "name_fr": "Zemmouri 2",
+        "brand": "Naftal نفطال",
+        "operator": "Naftal نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.5971704,
+          36.7866468
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Zemmouri 2",
+      "display_name_ar": "زموري 2"
+    },
+    {
+      "id": "osm-node-3787089719",
+      "coordinates": [
+        3.374099,
+        36.6867767
+      ],
+      "osm": {
+        "id": "node/3787089719",
+        "name": "محطة الخدمات بالهادي",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.374099,
+          36.6867767
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1174056573",
+          "offset_m": 32
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "محطة الخدمات بالهادي",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4245130711",
+      "coordinates": [
+        3.7085465,
+        36.7457765
+      ],
+      "osm": {
+        "id": "node/4245130711",
+        "name": "Station Boudio",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7085465,
+          36.7457765
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Boudio",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4368015711",
+      "coordinates": [
+        3.457142,
+        36.750945
+      ],
+      "osm": {
+        "id": "node/4368015711",
+        "name": "Station de Service Rocher Noir",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.457142,
+          36.750945
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7239",
+          "route_id": "7114",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة الخدمات الفواعبص",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.457,
+            36.751
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de Service Rocher Noir",
+      "display_name_ar": "محطة الخدمات الفواعبص"
+    },
+    {
+      "id": "osm-node-5327656824",
+      "coordinates": [
+        3.2967555,
+        36.6457132
+      ],
+      "osm": {
+        "id": "node/5327656824",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.2967555,
+          36.6457132
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5341101222",
+      "coordinates": [
+        3.3506917,
+        36.7168583
+      ],
+      "osm": {
+        "id": "node/5341101222",
+        "name": "Station de services El Hadja",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3506917,
+          36.7168583
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de services El Hadja",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7464447985",
+      "coordinates": [
+        3.396324,
+        36.7285046
+      ],
+      "osm": {
+        "id": "node/7464447985",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Pompe à essence",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.396324,
+          36.7285046
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Pompe à essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1173623642",
+      "coordinates": [
+        3.4768092,
+        36.7216322
+      ],
+      "osm": {
+        "id": "way/1173623642",
+        "name": "Tidjelabine",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.4768092,
+          36.7216322
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Tidjelabine",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1174056364",
+      "coordinates": [
+        3.3751447,
+        36.68913355
+      ],
+      "osm": {
+        "id": "way/1174056364",
+        "name": "Station d'essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.3751447,
+          36.68913355
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station d'essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1174056573",
+      "coordinates": [
+        3.37375815,
+        36.686869200000004
+      ],
+      "osm": {
+        "id": "way/1174056573",
+        "name": "محطة بالهادي",
+        "name_ar": null,
+        "name_fr": "Station Bel Hadi",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          3.37375815,
+          36.686869200000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3787089719",
+          "offset_m": 32
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Bel Hadi",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1176825785",
+      "coordinates": [
+        3.68688605,
+        36.640915750000005
+      ],
+      "osm": {
+        "id": "way/1176825785",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.68688605,
+          36.640915750000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3546",
+          "route_id": "7473",
+          "name_fr": "Station de services MANSOURI",
+          "name_ar": "محطة نفطال منصوري",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.688,
+            36.641
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 100
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال منصوري"
+    },
+    {
+      "id": "osm-way-307650018",
+      "coordinates": [
+        3.7331092,
+        36.74795585
+      ],
+      "osm": {
+        "id": "way/307650018",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          3.7331092,
+          36.74795585
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3928",
+          "route_id": "8104",
+          "name_fr": "Station de services BOUSBAA",
+          "name_ar": "محطة بوصبع",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7331,
+            36.7479
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BOUSBAA",
+      "display_name_ar": "محطة بوصبع"
+    },
+    {
+      "id": "osm-way-307747438",
+      "coordinates": [
+        3.8284222999999997,
+        36.74805175
+      ],
+      "osm": {
+        "id": "way/307747438",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          3.8284222999999997,
+          36.74805175
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7318",
+          "route_id": "7291",
+          "name_fr": "STAION D'ESSENCE DE NACIRIA",
+          "name_ar": "محطة البنزين الناصرية",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.828,
+            36.748
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STAION D'ESSENCE DE NACIRIA",
+      "display_name_ar": "محطة البنزين الناصرية"
+    },
+    {
+      "id": "tariki-13411",
+      "coordinates": [
+        3.538,
+        36.73
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13411",
+          "route_id": "8864",
+          "name_fr": "STATION ADEM LOHAMED THENIA",
+          "name_ar": "محطة ادم محمد الثنية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.538,
+            36.73
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ADEM LOHAMED THENIA",
+      "display_name_ar": "محطة ادم محمد الثنية"
+    },
+    {
+      "id": "tariki-13413",
+      "coordinates": [
+        3.596,
+        36.693
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13413",
+          "route_id": "8864",
+          "name_fr": "STATION HAMADI SOUK ELHAD",
+          "name_ar": "محطة حمادي سوق الاحد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.596,
+            36.693
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION HAMADI SOUK ELHAD",
+      "display_name_ar": "محطة حمادي سوق الاحد"
+    },
+    {
+      "id": "tariki-13414",
+      "coordinates": [
+        3.588,
+        36.66
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13414",
+          "route_id": "8864",
+          "name_fr": "STATION SOLIDARETE HAMID BNI AMRAN",
+          "name_ar": "محطة التضامن حميد  بني عمران",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.588,
+            36.66
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SOLIDARETE HAMID BNI AMRAN",
+      "display_name_ar": "محطة التضامن حميد  بني عمران"
+    },
+    {
+      "id": "tariki-3515",
+      "coordinates": [
+        3.679,
+        36.665
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3515",
+          "route_id": "7473",
+          "name_fr": "Station de services BOURNANE",
+          "name_ar": "محطة نفطال بورنان",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            3.679,
+            36.665
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOURNANE",
+      "display_name_ar": "محطة نفطال بورنان"
+    },
+    {
+      "id": "tariki-3927",
+      "coordinates": [
+        3.7096,
+        36.7482
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3927",
+          "route_id": "8104",
+          "name_fr": "Station de services BOUDIO",
+          "name_ar": "محطة بوديو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.7096,
+            36.7482
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUDIO",
+      "display_name_ar": "محطة بوديو"
+    },
+    {
+      "id": "tariki-7282",
+      "coordinates": [
+        3.4827,
+        36.7217
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7282",
+          "route_id": "12091",
+          "name_fr": "STATION DE SERVICES CITE MAHSAS",
+          "name_ar": "محطة الخدمات حي محساس",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.4827,
+            36.7217
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES CITE MAHSAS",
+      "display_name_ar": "محطة الخدمات حي محساس"
+    },
+    {
+      "id": "tariki-7285",
+      "coordinates": [
+        3.4911,
+        36.7238
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7285",
+          "route_id": "12091",
+          "name_fr": "STATION DE SERVICES EL SAFASF",
+          "name_ar": "محطة الخدمات حي الصفصاف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            3.4911,
+            36.7238
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 35,
+          "wilaya_fr": "Boumerdès",
+          "wilaya_ar": "بومرداس",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES EL SAFASF",
+      "display_name_ar": "محطة الخدمات حي الصفصاف"
+    }
+  ]
+}

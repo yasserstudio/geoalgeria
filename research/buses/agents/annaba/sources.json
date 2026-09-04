@@ -1,0 +1,58 @@
+[
+  {
+    "url": "https://www.facebook.com/p/%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%88-%D8%A7%D9%84%D8%B4%D8%A8%D9%87-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D8%B9%D9%86%D8%A7%D8%A8%D8%A9-ETUS-Annaba-100063517660926/",
+    "kind": "official_facebook",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "The ETUS Annaba page (id 100063517660926). Page name confirmed: الشركة الوطنية للنقل الحضري و الشبه الحضري عنابة / ETUS Annaba. Login-walled to a fetcher - title only came back, no posts, no line list, no contacts. Same wall as on the 2026-09-03 operator-source check.",
+    "licence_or_terms_seen": "Facebook terms; nothing operator-specific visible."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=com.deeper.etus.annaba",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "**New finding, not in the registry.** 'Etus Annaba', package **com.deeper.etus.annaba**, developer **Deeper Tech (deepertech.dz)**, v1.0.0, updated 2024-06-19, 10,000+ installs. Deeper Tech is the vendor of the com.deeper.etus.* family that androydi documents as the OFFICIAL public-urban-transport apps (e.g. com.deeper.etus.souk for Souk Ahras, com.deeper.etus.aindf for Aïn Defla). Description says it shows ETUS Annaba bus positions and supports fare payment. The Play page itself returned 404 to a fetcher on two URL forms; details come from the search index, APKPure and apkcombo mirrors. NO line list in the store text.",
+    "licence_or_terms_seen": "None. No open feed advertised. Live-position endpoints deliberately NOT called."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=org.busannaba.manager",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "'Annaba BUS', the registry's existing third_party_app_claim lead. Same org.<city>.manager family as Constantine's Cirta Bus. Confirmed to still exist; no line list retrieved. Secondary to com.deeper.etus.annaba.",
+    "licence_or_terms_seen": "None seen."
+  },
+  {
+    "url": "https://n-safer-dz.en.aptoide.com/app",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "'Safer Annaba - سافر عنابة', developer Safer DZ, v1.0, 2021-03-27. Self-described verbatim: 'سافر عنابة، خدمة الية لتسيير النقل العمومي لمدينة عنابة بخرائط طرق ذكية / Service Informatique de Gestion de Transport de la ville de Annaba par des Maps interactifs'. A third-party Annaba public-transport routing product with interactive maps - the only artefact found that plausibly holds an Annaba line graph. Does not name ETUS Annaba as operator. Aptoide does not expose the package id.",
+    "licence_or_terms_seen": "None stated. Third-party; no reuse grant."
+  },
+  {
+    "url": "https://saferdz.com/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Checked because searches conflate it with 'Safer Annaba'. It is NOT the Annaba urban product: it is a national multimodal intercity booking platform (carpooling, intercity coach, train). Annaba appears only as an intercity destination with fares. No urban line data. Recorded so the next researcher does not re-check it.",
+    "licence_or_terms_seen": "General terms, privacy and refund pages exist; no data licence."
+  },
+  {
+    "url": "https://www.facebook.com/p/%D8%A7%D9%84%D8%B5%D9%81%D8%AD%D8%A9-%D8%A7%D9%84%D8%B1%D8%B3%D9%85%D9%8A%D8%A9-%D9%84%D9%85%D8%AF%D9%8A%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D9%86%D9%82%D9%84-%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A9-%D8%B9%D9%86%D8%A7%D8%A8%D8%A9-61553735315894/",
+    "kind": "official_facebook",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Direction des transports de la wilaya d'Annaba, official page, id **61553735315894**. Found via search; login-walled like every other operator page. Lead: the DTW publishes line-opening decisions, which is what the Aïn Defla and Constantine breakthroughs looked like.",
+    "licence_or_terms_seen": "Facebook terms."
+  },
+  {
+    "url": "https://akhersaa.net/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Akher Saa / local Annaba press. Gives network CONTEXT, not lines: three station upgrade operations funded by the local-authorities fund, of which **Kouche Noureddine (كوش نور الدين) station serves the semi-urban routes toward Sidi Amar, El Hadjar and Dhraa Errich**, and **Souidani Boudjemaa station serves the urban buses**. This is what lets the OSM candidates be interpreted at all - see osm-match.md.",
+    "licence_or_terms_seen": "None stated."
+  },
+  {
+    "url": "https://www.etus23.dz/CF/Horaires.php",
+    "kind": "official_site",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Nothing. Checked on the etus22.dz pattern (Sidi Bel Abbès serves a real line-and-times page at that exact path). DNS does not resolve: there is no etus23.dz. No ETUS Annaba website was found by any search.",
+    "licence_or_terms_seen": "n/a"
+  }
+]

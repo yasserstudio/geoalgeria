@@ -1,0 +1,58 @@
+I'll search public posts from ETU-G Ghardaïa about bus lines, starting with the research workflow and any existing notes in this workspace.The workspace already has a Ghardaïa notes file and sibling operator reports. I’ll match that format, then search Facebook, X, Instagram, and YouTube for ETU-G line posts.Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 371729,
+    "outputTokens": 1098,
+    "totalTokens": 372827,
+    "cachedReadTokens": 234496,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 726,
+    "modelCalls": 3,
+    "apiDurationMs": 180040,
+    "costUsdTicks": 677113400,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 371729,
+        "outputTokens": 1098,
+        "totalTokens": 372827,
+        "cachedReadTokens": 234496,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 726,
+        "modelCalls": 3,
+        "apiDurationMs": 180040,
+        "costUsdTicks": 677113400
+      }
+    },
+    "numTurns": 3
+  }
+}
+Error: Internal error: {
+  "message": "API error (status 402 Payment Required): Grok Build usage balance exhausted",
+  "http_status": 402,
+  "promptUsage": {
+    "inputTokens": 371729,
+    "outputTokens": 1098,
+    "totalTokens": 372827,
+    "cachedReadTokens": 234496,
+    "cacheCreationTokens": 0,
+    "reasoningTokens": 726,
+    "modelCalls": 3,
+    "apiDurationMs": 180040,
+    "costUsdTicks": 677113400,
+    "modelUsage": {
+      "grok-4.6-build": {
+        "inputTokens": 371729,
+        "outputTokens": 1098,
+        "totalTokens": 372827,
+        "cachedReadTokens": 234496,
+        "cacheCreationTokens": 0,
+        "reasoningTokens": 726,
+        "modelCalls": 3,
+        "apiDurationMs": 180040,
+        "costUsdTicks": 677113400
+      }
+    },
+    "numTurns": 3
+  }
+}

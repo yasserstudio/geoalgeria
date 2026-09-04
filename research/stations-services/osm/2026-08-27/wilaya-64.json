@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 64,
+  "records": [
+    {
+      "id": "node/2978182661",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.9717317,
+        35.4137886
+      ]
+    },
+    {
+      "id": "node/2978708277",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.3079115,
+        35.2319243
+      ]
+    },
+    {
+      "id": "node/3242005668",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.3009334,
+        35.2202066
+      ]
+    },
+    {
+      "id": "node/4758845851",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": "محطة المقراني",
+      "name_fr": "Station service de Makrani",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.3150866,
+        35.2180633
+      ]
+    },
+    {
+      "id": "node/5246512112",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.3067453,
+        34.9102967
+      ]
+    },
+    {
+      "id": "node/5312472523",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        2.3072249,
+        34.9014701
+      ]
+    },
+    {
+      "id": "node/5969316658",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.9647392,
+        35.4122999
+      ]
+    },
+    {
+      "id": "way/252835479",
+      "amenity": "fuel",
+      "name": "Station Service E. Leclerc",
+      "name_ar": "محطة خدمات",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.875695,
+        35.4460692
+      ]
+    },
+    {
+      "id": "way/254524018",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": "محطة خدمات",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        1.86617175,
+        35.457845899999995
+      ]
+    }
+  ]
+}

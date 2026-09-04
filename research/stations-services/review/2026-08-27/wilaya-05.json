@@ -1,0 +1,2864 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-05",
+    "wilaya_code": 5,
+    "name": "Batna",
+    "name_ar": "باتنة",
+    "center": [
+      6.0885,
+      35.338499999999996
+    ],
+    "bounds": [
+      5.384,
+      34.754,
+      6.793,
+      35.923
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 75,
+    "osm_records": 56,
+    "tariki_records": 50,
+    "cross_source": 26,
+    "multiple_tariki": 2,
+    "osm_only": 28,
+    "tariki_only": 19,
+    "nearby_osm_pairs": 1,
+    "conflicts": 23
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-2359444700",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3986529876",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1326486239",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1328576187",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12288",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12407",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13044",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13644",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14677",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-171",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2786",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3511",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-386",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-387",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4105",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4113",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4290",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5007",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7570",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7807",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8251",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8570",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8929",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10281707509",
+      "coordinates": [
+        5.6364827,
+        35.6196476
+      ],
+      "osm": {
+        "id": "node/10281707509",
+        "name": "محطة خدمات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.6364827,
+          35.6196476
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10579022972",
+      "coordinates": [
+        6.2897721,
+        35.3042185
+      ],
+      "osm": {
+        "id": "node/10579022972",
+        "name": "Maalem frères",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2897721,
+          35.3042185
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Maalem frères",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10785393131",
+      "coordinates": [
+        6.5247416,
+        35.3156691
+      ],
+      "osm": {
+        "id": "node/10785393131",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5247416,
+          35.3156691
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13122",
+          "route_id": "18066",
+          "name_fr": "STATION MULTI SERVUCE FRERE ZEROUALI ICHEMOUL",
+          "name_ar": "محطة خدمات لتخزين وتوزيع الوقود الإخوة زروالي بلدية إشمول",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.5246,
+            35.3154
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION MULTI SERVUCE FRERE ZEROUALI ICHEMOUL",
+      "display_name_ar": "محطة خدمات لتخزين وتوزيع الوقود الإخوة زروالي بلدية إشمول"
+    },
+    {
+      "id": "osm-node-10798147630",
+      "coordinates": [
+        6.5480286,
+        35.4015435
+      ],
+      "osm": {
+        "id": "node/10798147630",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5480286,
+          35.4015435
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3860",
+          "route_id": "993",
+          "name_fr": "Station de services Saadna",
+          "name_ar": "محطة خدمات سعادنة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.548,
+            35.402
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Saadna",
+      "display_name_ar": "محطة خدمات سعادنة"
+    },
+    {
+      "id": "osm-node-12864170701",
+      "coordinates": [
+        5.5460324,
+        35.7521449
+      ],
+      "osm": {
+        "id": "node/12864170701",
+        "name": null,
+        "name_ar": "محطة وقود شاوي مسعود",
+        "name_fr": "Station Service Hadj Messaoud Chaoui",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.5460324,
+          35.7521449
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Hadj Messaoud Chaoui",
+      "display_name_ar": "محطة وقود شاوي مسعود"
+    },
+    {
+      "id": "osm-node-14124648839",
+      "coordinates": [
+        5.659172,
+        35.6722719
+      ],
+      "osm": {
+        "id": "node/14124648839",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.659172,
+          35.6722719
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1991685606",
+      "coordinates": [
+        6.1307775,
+        35.8062525
+      ],
+      "osm": {
+        "id": "node/1991685606",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1307775,
+          35.8062525
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1991685697",
+      "coordinates": [
+        6.1215829,
+        35.8114643
+      ],
+      "osm": {
+        "id": "node/1991685697",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1215829,
+          35.8114643
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2035727795",
+      "coordinates": [
+        6.1632257,
+        35.5277956
+      ],
+      "osm": {
+        "id": "node/2035727795",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1632257,
+          35.5277956
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8881",
+          "route_id": "13764",
+          "name_fr": "Station de services Abd el-Baki cite Tamchit",
+          "name_ar": "محطة توزيع الوقود عبد الباقي حي تامشيط باتنة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1632,
+            35.5277
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة توزيع الوقود عبد الباقي حي تامشيط باتنة"
+    },
+    {
+      "id": "osm-node-2037380748",
+      "coordinates": [
+        6.1958685,
+        35.527217
+      ],
+      "osm": {
+        "id": "node/2037380748",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.1958685,
+          35.527217
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2357915655",
+      "coordinates": [
+        5.8749281,
+        35.3667925
+      ],
+      "osm": {
+        "id": "node/2357915655",
+        "name": "محطة وقود يزّه",
+        "name_ar": "محطة وقود مازوز",
+        "name_fr": "Station-Service Yezza",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8749281,
+          35.3667925
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service Yezza",
+      "display_name_ar": "محطة وقود مازوز"
+    },
+    {
+      "id": "osm-node-2359434053",
+      "coordinates": [
+        6.1032303,
+        35.2626376
+      ],
+      "osm": {
+        "id": "node/2359434053",
+        "name": "محطة خدمات",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1032303,
+          35.2626376
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2359441247",
+      "coordinates": [
+        6.3801139,
+        35.6289131
+      ],
+      "osm": {
+        "id": "node/2359441247",
+        "name": "Station Service d'El Madher",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.3801139,
+          35.6289131
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service d'El Madher",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2359444700",
+      "coordinates": [
+        6.640889,
+        35.7054421
+      ],
+      "osm": {
+        "id": "node/2359444700",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.640889,
+          35.7054421
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3329",
+          "route_id": "7153",
+          "name_fr": "Station de services MAASSEM EDARRADJI",
+          "name_ar": "محطة خدمات معصم الدراجي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.641,
+            35.705
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 50
+        },
+        {
+          "id": "12835",
+          "route_id": "6460",
+          "name_fr": "STATION ESSENCE BOULHILET",
+          "name_ar": "محطة بنزين بولهيلات",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.641,
+            35.705
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 50
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات معصم الدراجي"
+    },
+    {
+      "id": "osm-node-2359449738",
+      "coordinates": [
+        6.3548557,
+        35.6303661
+      ],
+      "osm": {
+        "id": "node/2359449738",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3548557,
+          35.6303661
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2388925527",
+      "coordinates": [
+        5.9205935,
+        35.6370202
+      ],
+      "osm": {
+        "id": "node/2388925527",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9205935,
+          35.6370202
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11901",
+          "route_id": "13122",
+          "name_fr": "station carbiron a boukhenchouche",
+          "name_ar": "محطة البنزين الخاصة بوخنشوش لعلى",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.92,
+            35.637
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين الخاصة بوخنشوش لعلى"
+    },
+    {
+      "id": "osm-node-2388928625",
+      "coordinates": [
+        5.9147999,
+        35.6347487
+      ],
+      "osm": {
+        "id": "node/2388928625",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9147999,
+          35.6347487
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11902",
+          "route_id": "13122",
+          "name_fr": "unite naftal a merouana",
+          "name_ar": "وحدة  نفطال مروانة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.915,
+            35.635
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "وحدة  نفطال مروانة"
+    },
+    {
+      "id": "osm-node-3048741959",
+      "coordinates": [
+        6.1735736,
+        35.5592478
+      ],
+      "osm": {
+        "id": "node/3048741959",
+        "name": "station Service Naftal a b b",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1735736,
+          35.5592478
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12404",
+          "route_id": "914",
+          "name_fr": "station nafta  AOURASIAl",
+          "name_ar": "محطة الخدمات نفطال الأـوراسية",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1736,
+            35.5592
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station Service Naftal a b b",
+      "display_name_ar": "محطة الخدمات نفطال الأـوراسية"
+    },
+    {
+      "id": "osm-node-3048741961",
+      "coordinates": [
+        6.1739074,
+        35.5597419
+      ],
+      "osm": {
+        "id": "node/3048741961",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1739074,
+          35.5597419
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12405",
+          "route_id": "914",
+          "name_fr": "station naftal charmoti",
+          "name_ar": "محطة نفطال الشرموطي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1739,
+            35.5597
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال الشرموطي"
+    },
+    {
+      "id": "osm-node-3048741963",
+      "coordinates": [
+        6.1762685,
+        35.5636119
+      ],
+      "osm": {
+        "id": "node/3048741963",
+        "name": "Station Service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1762685,
+          35.5636119
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12406",
+          "route_id": "914",
+          "name_fr": "station naftal RN 03",
+          "name_ar": "محطة الخدمات نفطال الطريق الوطني رقم 03",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1763,
+            35.5636
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service NAFTAL",
+      "display_name_ar": "محطة الخدمات نفطال الطريق الوطني رقم 03"
+    },
+    {
+      "id": "osm-node-3360170544",
+      "coordinates": [
+        5.593933,
+        35.5353776
+      ],
+      "osm": {
+        "id": "node/3360170544",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.593933,
+          35.5353776
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3645",
+          "route_id": "775",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.594,
+            35.535
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-node-3640037474",
+      "coordinates": [
+        6.192729,
+        35.6899504
+      ],
+      "osm": {
+        "id": "node/3640037474",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.192729,
+          35.6899504
+        ]
+      },
+      "tariki": [
+        {
+          "id": "384",
+          "route_id": "1270",
+          "name_fr": "Station de services  BENSACI",
+          "name_ar": "محطة خدمات بن ساسي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1928,
+            35.6899
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات بن ساسي"
+    },
+    {
+      "id": "osm-node-3796989411",
+      "coordinates": [
+        6.3443463,
+        35.7175376
+      ],
+      "osm": {
+        "id": "node/3796989411",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3443463,
+          35.7175376
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4388",
+          "route_id": "4408",
+          "name_fr": "Station de services Zagrar",
+          "name_ar": "محطة تزويد بالوقود زقرار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.344,
+            35.717
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 67
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة تزويد بالوقود زقرار"
+    },
+    {
+      "id": "osm-node-3978546410",
+      "coordinates": [
+        6.0068377,
+        35.6390958
+      ],
+      "osm": {
+        "id": "node/3978546410",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0068377,
+          35.6390958
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3505",
+          "route_id": "6731",
+          "name_fr": "Station de services DAIF ALLAH",
+          "name_ar": "محطة الوقود ضيف الله",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.007,
+            35.639
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 18
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود ضيف الله"
+    },
+    {
+      "id": "osm-node-3986529876",
+      "coordinates": [
+        5.9680213,
+        35.8612516
+      ],
+      "osm": {
+        "id": "node/3986529876",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9680213,
+          35.8612516
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7809",
+          "route_id": "1867",
+          "name_fr": "STATION DE SERVICES CHERIFI",
+          "name_ar": "محطة الخدمات شريفي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.9679,
+            35.8611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 20
+        },
+        {
+          "id": "8807",
+          "route_id": "13691",
+          "name_fr": "Station de services CHERIFI",
+          "name_ar": "محطة الخدمات شريفي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.968,
+            35.8611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 17
+        },
+        {
+          "id": "10261",
+          "route_id": "13991",
+          "name_fr": "STATION DE SERVICES CHERIFFI",
+          "name_ar": "محطة الخدمات شريفي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.968,
+            35.861
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات شريفي"
+    },
+    {
+      "id": "osm-node-4068270140",
+      "coordinates": [
+        6.2508693,
+        35.4940879
+      ],
+      "osm": {
+        "id": "node/4068270140",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2508693,
+          35.4940879
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4401863889",
+      "coordinates": [
+        5.9290462,
+        35.4021851
+      ],
+      "osm": {
+        "id": "node/4401863889",
+        "name": "محطة وقود بن تومي",
+        "name_ar": "محطة وقود بن تومي",
+        "name_fr": "Station-Service Ben Toumi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9290462,
+          35.4021851
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6499",
+          "route_id": "9627",
+          "name_fr": "Station de services  Ben Toumi",
+          "name_ar": "محطة الخدمات بن تومي",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.9289,
+            35.402
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station-Service Ben Toumi",
+      "display_name_ar": "محطة وقود بن تومي"
+    },
+    {
+      "id": "osm-node-4419254798",
+      "coordinates": [
+        5.9049335,
+        35.3861894
+      ],
+      "osm": {
+        "id": "node/4419254798",
+        "name": "محطة وقود جاب الله",
+        "name_ar": "محطة وقود جاب الله",
+        "name_fr": "Station-Service Djaballah",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9049335,
+          35.3861894
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service Djaballah",
+      "display_name_ar": "محطة وقود جاب الله"
+    },
+    {
+      "id": "osm-node-4419395393",
+      "coordinates": [
+        5.8805264,
+        35.3823279
+      ],
+      "osm": {
+        "id": "node/4419395393",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8805264,
+          35.3823279
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4419424194",
+      "coordinates": [
+        5.890546,
+        35.3826753
+      ],
+      "osm": {
+        "id": "node/4419424194",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.890546,
+          35.3826753
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4424869990",
+      "coordinates": [
+        5.9003553,
+        35.6350305
+      ],
+      "osm": {
+        "id": "node/4424869990",
+        "name": "سوناطراك",
+        "name_ar": "سوناطراك",
+        "name_fr": "SONATRACH",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "Su-Th 08:00-05:00",
+        "coordinates": [
+          5.9003553,
+          35.6350305
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "SONATRACH",
+      "display_name_ar": "سوناطراك"
+    },
+    {
+      "id": "osm-node-4463319827",
+      "coordinates": [
+        6.2642526,
+        35.4840145
+      ],
+      "osm": {
+        "id": "node/4463319827",
+        "name": "Station Koulib",
+        "name_ar": "محطة البنزين كليب",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2642526,
+          35.4840145
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Koulib",
+      "display_name_ar": "محطة البنزين كليب"
+    },
+    {
+      "id": "osm-node-4510066292",
+      "coordinates": [
+        5.5512613,
+        35.4483887
+      ],
+      "osm": {
+        "id": "node/4510066292",
+        "name": "محطة البنزين لمبارك",
+        "name_ar": "محطة البنزين لمبارك",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5512613,
+          35.4483887
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7734",
+          "route_id": "674",
+          "name_fr": "STATION MAKHLOUFI MBAREK",
+          "name_ar": "محطة مخلوفي مبارك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.5511,
+            35.4484
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة البنزين لمبارك",
+      "display_name_ar": "محطة البنزين لمبارك"
+    },
+    {
+      "id": "osm-node-4593303593",
+      "coordinates": [
+        6.1649175,
+        35.5316847
+      ],
+      "osm": {
+        "id": "node/4593303593",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1649175,
+          35.5316847
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4593303594",
+      "coordinates": [
+        6.3684958,
+        35.2502092
+      ],
+      "osm": {
+        "id": "node/4593303594",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "M'Sameh",
+        "opening_hours": null,
+        "coordinates": [
+          6.3684958,
+          35.2502092
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4739855023",
+      "coordinates": [
+        5.6384357,
+        35.6820144
+      ],
+      "osm": {
+        "id": "node/4739855023",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6384357,
+          35.6820144
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12286",
+          "route_id": "16700",
+          "name_fr": "STATION SERVICE CITE SONATRACH",
+          "name_ar": "محطة الخدمات حي سوناطراك",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            5.6386,
+            35.6812
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 92
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION SERVICE CITE SONATRACH",
+      "display_name_ar": "محطة الخدمات حي سوناطراك"
+    },
+    {
+      "id": "osm-node-4755855722",
+      "coordinates": [
+        5.8866054,
+        35.8243615
+      ],
+      "osm": {
+        "id": "node/4755855722",
+        "name": "محطة خدمات وتعبئة",
+        "name_ar": "محطة خدمات وتعبئة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "Mo-Su 06:00-20:00",
+        "coordinates": [
+          5.8866054,
+          35.8243615
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7965",
+          "route_id": "7395",
+          "name_fr": "Station de services ben radhi",
+          "name_ar": "محطة الخدمات بن راضي",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.887,
+            35.825
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 79
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة خدمات وتعبئة",
+      "display_name_ar": "محطة خدمات وتعبئة"
+    },
+    {
+      "id": "osm-node-4768948126",
+      "coordinates": [
+        6.1573164,
+        35.5530717
+      ],
+      "osm": {
+        "id": "node/4768948126",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1573164,
+          35.5530717
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4870091921",
+      "coordinates": [
+        6.4678347,
+        35.4914626
+      ],
+      "osm": {
+        "id": "node/4870091921",
+        "name": "Bouzidi",
+        "name_ar": "Bouzidi",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.4678347,
+          35.4914626
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bouzidi",
+      "display_name_ar": "Bouzidi"
+    },
+    {
+      "id": "osm-node-6206582607",
+      "coordinates": [
+        6.6300014,
+        35.4867259
+      ],
+      "osm": {
+        "id": "node/6206582607",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6300014,
+          35.4867259
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8343",
+          "route_id": "1288",
+          "name_fr": "STATION DE SERVICES ABBAS AMMAR ET SES FILS",
+          "name_ar": "محطة خدمات عباس عمار و أبناءه",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.6289,
+            35.4862
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 116
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION DE SERVICES ABBAS AMMAR ET SES FILS",
+      "display_name_ar": "محطة خدمات عباس عمار و أبناءه"
+    },
+    {
+      "id": "osm-node-7280351952",
+      "coordinates": [
+        6.1292127,
+        35.2728868
+      ],
+      "osm": {
+        "id": "node/7280351952",
+        "name": "محطة خدمات بايع راسو",
+        "name_ar": "محطة خدمات بايع راسو",
+        "name_fr": null,
+        "brand": "naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1292127,
+          35.2728868
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات بايع راسو",
+      "display_name_ar": "محطة خدمات بايع راسو"
+    },
+    {
+      "id": "osm-way-1326486239",
+      "coordinates": [
+        6.536838550000001,
+        35.490465150000006
+      ],
+      "osm": {
+        "id": "way/1326486239",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.536838550000001,
+          35.490465150000006
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1328576187",
+          "offset_m": 40
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1328576187",
+      "coordinates": [
+        6.53651645,
+        35.4907118
+      ],
+      "osm": {
+        "id": "way/1328576187",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.53651645,
+          35.4907118
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1326486239",
+          "offset_m": 40
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1396546991",
+      "coordinates": [
+        6.2297876,
+        35.533552900000004
+      ],
+      "osm": {
+        "id": "way/1396546991",
+        "name": "Benbellat Gas Station",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2297876,
+          35.533552900000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Benbellat Gas Station",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-194995716",
+      "coordinates": [
+        6.324283299999999,
+        35.24235005
+      ],
+      "osm": {
+        "id": "way/194995716",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.324283299999999,
+          35.24235005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-196930885",
+      "coordinates": [
+        6.40840485,
+        35.268390749999995
+      ],
+      "osm": {
+        "id": "way/196930885",
+        "name": "El Hudjaj",
+        "name_ar": "شارع الحجاج",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          6.40840485,
+          35.268390749999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13119",
+          "route_id": "3507",
+          "name_fr": "station dessense torech elhadjaje commune de ichemoul",
+          "name_ar": "محطة البنزين طورش الحجاج بلدية إشمول",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.408,
+            35.268
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "El Hudjaj",
+      "display_name_ar": "شارع الحجاج"
+    },
+    {
+      "id": "osm-way-256386949",
+      "coordinates": [
+        6.1331150999999995,
+        35.5377771
+      ],
+      "osm": {
+        "id": "way/256386949",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1331150999999995,
+          35.5377771
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-256497280",
+      "coordinates": [
+        6.41698595,
+        35.778715950000006
+      ],
+      "osm": {
+        "id": "way/256497280",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.41698595,
+          35.778715950000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4344",
+          "route_id": "8925",
+          "name_fr": "Station de services Elsessi",
+          "name_ar": "محطة الوقود بلولة الساسي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.417,
+            35.779
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Elsessi",
+      "display_name_ar": "محطة الوقود بلولة الساسي"
+    },
+    {
+      "id": "osm-way-267847326",
+      "coordinates": [
+        6.382229349999999,
+        35.5208406
+      ],
+      "osm": {
+        "id": "way/267847326",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.382229349999999,
+          35.5208406
+        ]
+      },
+      "tariki": [
+        {
+          "id": "167",
+          "route_id": "710",
+          "name_fr": "Station de services Ibrir",
+          "name_ar": "محطة خدمات ابرير بسيدي معنصر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.382,
+            35.521
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Ibrir",
+      "display_name_ar": "محطة خدمات ابرير بسيدي معنصر"
+    },
+    {
+      "id": "osm-way-276462509",
+      "coordinates": [
+        6.19491355,
+        35.5812985
+      ],
+      "osm": {
+        "id": "way/276462509",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.19491355,
+          35.5812985
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12397",
+          "route_id": "914",
+          "name_fr": "station naftal cite arar batna",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1949,
+            35.5813
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station naftal cite arar batna",
+      "display_name_ar": "محطة الخدمات نفطال"
+    },
+    {
+      "id": "osm-way-281908201",
+      "coordinates": [
+        6.07865715,
+        35.50655275
+      ],
+      "osm": {
+        "id": "way/281908201",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.07865715,
+          35.50655275
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2676",
+          "route_id": "2151",
+          "name_fr": "Station de services RAHMANI",
+          "name_ar": "محطة البنزين رحماني بقرية لمبريدي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.079,
+            35.507
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 59
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services RAHMANI",
+      "display_name_ar": "محطة البنزين رحماني بقرية لمبريدي"
+    },
+    {
+      "id": "osm-way-281916935",
+      "coordinates": [
+        6.02834555,
+        35.46560135
+      ],
+      "osm": {
+        "id": "way/281916935",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.02834555,
+          35.46560135
+        ]
+      },
+      "tariki": [
+        {
+          "id": "659",
+          "route_id": "2151",
+          "name_fr": "Station de services ben yahia Ammar",
+          "name_ar": "محطة الخدمات بن يحي عمار",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.028,
+            35.466
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 54
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services ben yahia Ammar",
+      "display_name_ar": "محطة الخدمات بن يحي عمار"
+    },
+    {
+      "id": "osm-way-281935284",
+      "coordinates": [
+        5.91013495,
+        35.3872852
+      ],
+      "osm": {
+        "id": "way/281935284",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.91013495,
+          35.3872852
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-356344882",
+      "coordinates": [
+        5.440314450000001,
+        35.688669250000004
+      ],
+      "osm": {
+        "id": "way/356344882",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.440314450000001,
+          35.688669250000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12289",
+          "route_id": "16742",
+          "name_fr": "Station service frères Benyekhlef",
+          "name_ar": "محطة الخدمات الإخوة بن يخلف",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.44,
+            35.689
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 46
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Nafatl",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-way-443017473",
+      "coordinates": [
+        6.75603005,
+        35.5152411
+      ],
+      "osm": {
+        "id": "way/443017473",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.75603005,
+          35.5152411
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8366",
+          "route_id": "1288",
+          "name_fr": "STATION DE SERVICES MACHREK",
+          "name_ar": "محطة خدمات مشرق (معزوزي)",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.7559,
+            35.5155
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات مشرق (معزوزي)"
+    },
+    {
+      "id": "osm-way-902691060",
+      "coordinates": [
+        6.0959819500000005,
+        35.519253
+      ],
+      "osm": {
+        "id": "way/902691060",
+        "name": "محطة وقود - بن فليس",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0959819500000005,
+          35.519253
+        ]
+      },
+      "tariki": [
+        {
+          "id": "658",
+          "route_id": "2151",
+          "name_fr": "Station de services Benflis Touhami",
+          "name_ar": "محطة الخدمات بن فليس التوهامي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.095,
+            35.519
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": 93
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة وقود - بن فليس",
+      "display_name_ar": "محطة الخدمات بن فليس التوهامي"
+    },
+    {
+      "id": "tariki-12288",
+      "coordinates": [
+        5.485,
+        35.723
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12288",
+          "route_id": "16742",
+          "name_fr": "Station service El sayeh",
+          "name_ar": "محطة الخدمات السايح",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.485,
+            35.723
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station service El sayeh",
+      "display_name_ar": "محطة الخدمات السايح"
+    },
+    {
+      "id": "tariki-12407",
+      "coordinates": [
+        6.16,
+        35.5691
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12407",
+          "route_id": "914",
+          "name_fr": "STATIO? NAFTAL KACHIDA",
+          "name_ar": "محطة الخدمات نفطال كشيدة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.16,
+            35.5691
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATIO? NAFTAL KACHIDA",
+      "display_name_ar": "محطة الخدمات نفطال كشيدة"
+    },
+    {
+      "id": "tariki-13044",
+      "coordinates": [
+        5.8628,
+        35.8514
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13044",
+          "route_id": "17932",
+          "name_fr": "STATION-SERVICE BEN SAADI",
+          "name_ar": "محطة الخدمات بن السعدي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.8628,
+            35.8514
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION-SERVICE BEN SAADI",
+      "display_name_ar": "محطة الخدمات بن السعدي"
+    },
+    {
+      "id": "tariki-13644",
+      "coordinates": [
+        5.859,
+        35.853
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13644",
+          "route_id": "7410",
+          "name_fr": "Station service Bensaadi",
+          "name_ar": "محطة الخدمات بن السعدي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.859,
+            35.853
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station service Bensaadi",
+      "display_name_ar": "محطة الخدمات بن السعدي"
+    },
+    {
+      "id": "tariki-14677",
+      "coordinates": [
+        6.301,
+        35.542
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14677",
+          "route_id": "3658",
+          "name_fr": "station el baraka",
+          "name_ar": "محطة الخدمات البركة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.301,
+            35.542
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station el baraka",
+      "display_name_ar": "محطة الخدمات البركة"
+    },
+    {
+      "id": "tariki-171",
+      "coordinates": [
+        6.293,
+        35.553
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "171",
+          "route_id": "713",
+          "name_fr": "Station de services village Ayoun Assafir",
+          "name_ar": "محطة خدمات لقرية عيون العصافير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.293,
+            35.553
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services village Ayoun Assafir",
+      "display_name_ar": "محطة خدمات لقرية عيون العصافير"
+    },
+    {
+      "id": "tariki-2786",
+      "coordinates": [
+        6.227,
+        35.101
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2786",
+          "route_id": "6309",
+          "name_fr": "Station de services TAZDAIAT",
+          "name_ar": "محطة تازدايت",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.227,
+            35.101
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TAZDAIAT",
+      "display_name_ar": "محطة تازدايت"
+    },
+    {
+      "id": "tariki-3511",
+      "coordinates": [
+        5.998,
+        35.645
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3511",
+          "route_id": "6731",
+          "name_fr": "Station de services LES FRERES DOUAKI",
+          "name_ar": "محطة الوقود  شركة الإخوة دواقي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.998,
+            35.645
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services LES FRERES DOUAKI",
+      "display_name_ar": "محطة الوقود  شركة الإخوة دواقي"
+    },
+    {
+      "id": "tariki-386",
+      "coordinates": [
+        6.2467,
+        35.7192
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "386",
+          "route_id": "1265",
+          "name_fr": "Station de services ELHACEN",
+          "name_ar": "محطة خدمات الحسن",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.2467,
+            35.7192
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ELHACEN",
+      "display_name_ar": "محطة خدمات الحسن"
+    },
+    {
+      "id": "tariki-387",
+      "coordinates": [
+        6.1761,
+        35.7425
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "387",
+          "route_id": "1265",
+          "name_fr": "Station de services AYACHE",
+          "name_ar": "محطة خدمات العياش",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1761,
+            35.7425
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AYACHE",
+      "display_name_ar": "محطة خدمات العياش"
+    },
+    {
+      "id": "tariki-4105",
+      "coordinates": [
+        5.819,
+        35.657
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4105",
+          "route_id": "86",
+          "name_fr": "Station de services KHANFOUSI",
+          "name_ar": "محطة خنفوسي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.819,
+            35.657
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KHANFOUSI",
+      "display_name_ar": "محطة خنفوسي"
+    },
+    {
+      "id": "tariki-4113",
+      "coordinates": [
+        5.747,
+        35.581
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4113",
+          "route_id": "40",
+          "name_fr": "Station de services ZAABOUB",
+          "name_ar": "محطة زعبوب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.747,
+            35.581
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ZAABOUB",
+      "display_name_ar": "محطة زعبوب"
+    },
+    {
+      "id": "tariki-4290",
+      "coordinates": [
+        6.2,
+        35.254
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4290",
+          "route_id": "80",
+          "name_fr": "pompa ésonsse",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.2,
+            35.254
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "pompa ésonsse",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-5007",
+      "coordinates": [
+        5.614,
+        35.722
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5007",
+          "route_id": "9821",
+          "name_fr": "Station de services BOUGHRARA",
+          "name_ar": "محطة خدمات بوغرارة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.614,
+            35.722
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUGHRARA",
+      "display_name_ar": "محطة خدمات بوغرارة"
+    },
+    {
+      "id": "tariki-7570",
+      "coordinates": [
+        5.945,
+        35.51
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7570",
+          "route_id": "8903",
+          "name_fr": "STATION DE SERVICES NAFTAL",
+          "name_ar": "محطة متعددة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.945,
+            35.51
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES NAFTAL",
+      "display_name_ar": "محطة متعددة الخدمات نفطال"
+    },
+    {
+      "id": "tariki-7807",
+      "coordinates": [
+        6.0251,
+        35.8575
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7807",
+          "route_id": "75",
+          "name_fr": "STATION DE SERVICES HEDJIDJ ABDELWAHAB",
+          "name_ar": "محطة الخدمات حجيج عبد الوهاب",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.0251,
+            35.8575
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES HEDJIDJ ABDELWAHAB",
+      "display_name_ar": "محطة الخدمات حجيج عبد الوهاب"
+    },
+    {
+      "id": "tariki-8251",
+      "coordinates": [
+        6.5321,
+        35.49
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8251",
+          "route_id": "88",
+          "name_fr": "STATION D'ESSENCE BAADACHE RBAE Commune de TIMGAD",
+          "name_ar": "محطة توزيع الوقود بعداش بالربع بلدية تيمقاد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.5321,
+            35.49
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE BAADACHE RBAE Commune de TIMGAD",
+      "display_name_ar": "محطة توزيع الوقود بعداش بالربع بلدية تيمقاد"
+    },
+    {
+      "id": "tariki-8570",
+      "coordinates": [
+        6.4658,
+        35.4906
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8570",
+          "route_id": "87",
+          "name_fr": "Station de services BOUZIDI TIMGAD",
+          "name_ar": "محطة توزيع الوقود بوزيدي بتيمقاد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.4658,
+            35.4906
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUZIDI TIMGAD",
+      "display_name_ar": "محطة توزيع الوقود بوزيدي بتيمقاد"
+    },
+    {
+      "id": "tariki-8929",
+      "coordinates": [
+        6.3,
+        35.551
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8929",
+          "route_id": "13810",
+          "name_fr": "Station de services mehira",
+          "name_ar": "محطة مهيرة للخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.3,
+            35.551
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 5,
+          "wilaya_fr": "Batna",
+          "wilaya_ar": "باتنة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services mehira",
+      "display_name_ar": "محطة مهيرة للخدمات"
+    }
+  ]
+}

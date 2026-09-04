@@ -1,0 +1,135 @@
+[
+  {
+    "url": "https://www.etus-tlemcen.dz/",
+    "kind": "official_site",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "ETUS Tlemcen official one-page site. Sections: Accueil, Presentation, Les employes, Photos, 'Etus en chiffre', Contact. Figures quoted verbatim: 30 buses, 11826700 places offered (2017), 5876383 passengers (2017), 174 employees (166 in the prose). NO line list, no refs, no termini, no schedules, no map, no PDF. Only outbound link is the developer, innodev.dz.",
+    "licence_or_terms_seen": "None stated. No terms of use or licence page."
+  },
+  {
+    "url": "https://www.etus-tlemcen.dz/lignes , /lignes.html , /horaires , /horaires.html , /itineraires , /itineraires.html , /reseau.html , /robots.txt , /sitemap.xml",
+    "kind": "official_site",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Direct probe of likely line/schedule paths on the official host. All nine returned HTTP 404; only '/' returns 200. Confirms the site is a single page with no hidden line inventory, no robots.txt and no sitemap to enumerate.",
+    "licence_or_terms_seen": "n/a"
+  },
+  {
+    "url": "https://www.facebook.com/etustlemcen13/",
+    "kind": "official_facebook",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Official operator page, 'الصفحة الرسمية للمؤسسة النقل الحضري و شبه الحضري تلمسان'. Login-walled to a fetcher: only the page title is exposed, no post text. Search engines index post URLs (e.g. /posts/486984037189552, an Independence Day parade post) but the indexed snippets carry no line inventory. Noted and moved on.",
+    "licence_or_terms_seen": "Facebook terms; content not retrievable without login."
+  },
+  {
+    "url": "https://play.google.com/store/apps/details?id=nano.dz.etustlemcen",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Play Store listing for the official 'Etus Tlemcen' app (package nano.dz.etustlemcen, developer 'Etus Tlemcen'). Play returned HTTP 404 to the fetcher; only the data-safety URL surfaced in search. Mirror listing on Uptodown gives version 1.1, updated 14 August 2025, and a description promising 'access to detailed bus schedules', electronic payment and monthly subscription. NO line numbers or termini in any listing text. Lines are presumably behind the app's API, which was not called.",
+    "licence_or_terms_seen": "Play Store terms; app content not public."
+  },
+  {
+    "url": "https://etus-tlemcen.en.uptodown.com/android",
+    "kind": "official_app",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Third-party mirror of the official app listing. Confirms developer 'Etus Tlemcen', version 1.1, last update 14 August 2025. No line data.",
+    "licence_or_terms_seen": "Uptodown terms; no data licence."
+  },
+  {
+    "url": "http://dspace.univ-tlemcen.dz/bitstream/112/12959/1/Ms.Eln.Forloul+Serbouk.pdf",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "THE BEST LINE SOURCE FOUND. Master II Genie Industriel thesis, FORLOUL Charef and SERBOUK Nesrine, 'Restructuration du reseau de transport urbain de la ville de Tlemcen', Universite Abou Bekr Belkaid Tlemcen, defended 25 June 2018. Tableau 3.1 p.50 lists 13 'lignes independantes' (private) with ref, both termini, bus count and stop count, service 06h00-20h00. Tableau 3.2 p.50 lists 6 'lignes publiques' (Ligne 01-06) with termini and bus count, service 06h00-23h00. Authors state the data came from the Direction des Transports of the wilaya of Tlemcen. Stop sequences exist only as ArcGIS map figures, not as text, so no stop lists are recoverable. WARNING: Figures 3.18-3.29 present a PROPOSED restructured network also numbered 'ligne 01'..'ligne 10'; that numbering collides with Tableau 3.2 and must not be conflated with the real network.",
+    "licence_or_terms_seen": "None stated. Open-access institutional repository (DSpace, Universite de Tlemcen). No explicit reuse licence on the file."
+  },
+  {
+    "url": "https://dspace.univ-tlemcen.dz/server/api/core/bitstreams/c851fd47-2b2e-4e05-93f0-ca8488911907/content",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "DSpace REST bitstream URL. Byte-identical (md5 232070fe2dbf58be4076e1965e59c59a) to the /bitstream/112/12959/ path above; same thesis, not a second source.",
+    "licence_or_terms_seen": "None stated."
+  },
+  {
+    "url": "https://www.expressdz.dz/2026/08/26/transport-urbain-a-tlemcen-entree-en-service-de-20-nouveaux-bus/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "L'Express DZ, 26 August 2026. 20 new 100-seat buses entered service, assigned to reinforce NINE urban transport lines of the 'Etablissement public de transport urbain et suburbain' of Tlemcen, serving El Koudia, Boudjlida and Oudjlida (Tlemcen commune), Bouhenak and AADL (Mansourah), Ouzidane (Chetouane). A second batch of 20+ buses is planned for Hennaya and Beni Mester. NO line numbers, NO termini pairs. Useful only as a 2026 scale check: the public network is now nine lines, versus six in 2018.",
+    "licence_or_terms_seen": "All rights reserved, no reuse licence."
+  },
+  {
+    "url": "https://lavoiedalgerie.dz/tlemcen-renforcement-des-lignes-de-transport-de-la-wilaya-avec-32-bus/2025/26/00/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "La Voie d'Algerie, 26 November 2025. 32 buses distributed across mostly INTERURBAN wilaya lines (Tlemcen-Maghnia 5, Tlemcen-Chetouane / Tlemcen-Sebdou / Tlemcen-Ouled Mimoun 3 each, Tlemcen-Bensakrane / Tlemcen-Nedroma 2 each, Ghazaouet-Souahlia 2, Tlemcen-Ain Fettah 1, Tlemcen-Tindouf 4). The only urban item: 'ligne urbaine 44' in Tlemcen city reinforced with four buses, two from the public urban and suburban transport enterprise and two from the private sector. Corroborates that line 44 exists and is mixed public/private.",
+    "licence_or_terms_seen": "All rights reserved."
+  },
+  {
+    "url": "https://www.auto-utilitaire.com/tlemcen-20-nouveaux-bus-mis-en-service-pour-renforcer-le-transport-urbain",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Trade-press restatement of the same August 2026 20-bus announcement. Surfaced in search only, not independently fetched; adds no line refs.",
+    "licence_or_terms_seen": "All rights reserved."
+  },
+  {
+    "url": "https://www.lemagvoyage.fr/algerie/comment-se-deplacer-a-algerie-tlemcen-metro-pass-cartes/",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "REJECTED AS EVIDENCE. Travel blog claiming Tlemcen lines '2A, 2B, 3, 3A, 4A, 4B et 4C' connecting the centre to Oudjlida, Koudia, Bouhanak, 400 Logts, Chetouane, Ouzidane and Ain Elhout. It cites no source, assigns no line to any destination, and shows generated-content markers (repeated disclaimers, no contacts, no links). Its ref set matches NO other source found, including the wilaya-sourced 2018 table. Do not use.",
+    "licence_or_terms_seen": "All rights reserved."
+  },
+  {
+    "url": "https://dta-tlemcen.dz/catalogue_detail.php?id=78&lg=ar&r=transport_et_accessibilite_dans_la_wilaya_de_tlemcen",
+    "kind": "official_site",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Direction du Tourisme et de l'Artisanat de Tlemcen, 'Transport and mobility in the wilaya of Tlemcen'. Has headings for air, port, rail, road and cable-car networks but the body content did not render to the fetcher; no urban bus lines, no PDF links. Dead end at this retrieval.",
+    "licence_or_terms_seen": "None stated."
+  },
+  {
+    "url": "https://rhinotenders.com/companies/company/etust-etablissement-de-transport-urbain-et-suburbain-de-tlemcen-",
+    "kind": "press",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Tender aggregator entry confirming the legal name variant 'ETUST - Etablissement de Transport Urbain et Suburbain de Tlemcen'. Surfaced in search only. Procurement notices, no line data.",
+    "licence_or_terms_seen": "Commercial aggregator terms."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/7848044",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Route relation ref=A42, name 'A42', network='bus number', operator='name here', route_ref='ref here' (all three are unedited JOSM/iD placeholder strings), 65 stop members, 23.2 km, no from/to.",
+    "licence_or_terms_seen": "ODbL 1.0."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/7848086",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Route relation ref=B42, name '(B42)Oujlida-Aboutachfine-Tlemcen', network='Oujlida-Aboutachfine-Tlemcen', operator='Prive', 28 stop members, 18.0 km, no from/to.",
+    "licence_or_terms_seen": "ODbL 1.0."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/7876088",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Route relation '(univ)Chetouane-Imama', operator='Public', 18.4 km, 0 stop members.",
+    "licence_or_terms_seen": "ODbL 1.0."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/7876089",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Route relation '(univ)Chetouane-Medecine', operator='Public', 14.5 km, 8 stop members (all unnamed).",
+    "licence_or_terms_seen": "ODbL 1.0."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/7876090",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Route relation '(univ)Chetouane-LaGare', operator='Public', 4.3 km, 0 stop members.",
+    "licence_or_terms_seen": "ODbL 1.0."
+  },
+  {
+    "url": "https://www.openstreetmap.org/relation/7848106",
+    "kind": "osm",
+    "retrieved": "2026-09-03",
+    "what_it_provides": "Route relation '(univ)Chetouane-LaRocade', operator:type='public' only (no operator tag), 13.6 km, 0 stop members.",
+    "licence_or_terms_seen": "ODbL 1.0."
+  }
+]

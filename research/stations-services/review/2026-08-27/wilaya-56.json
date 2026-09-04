@@ -1,0 +1,351 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-56",
+    "wilaya_code": 56,
+    "name": "Djanet",
+    "name_ar": "جانت",
+    "center": [
+      9.29,
+      24.072
+    ],
+    "bounds": [
+      6.583,
+      22.496,
+      11.997,
+      25.648
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 8,
+    "osm_records": 6,
+    "tariki_records": 5,
+    "cross_source": 3,
+    "multiple_tariki": 0,
+    "osm_only": 3,
+    "tariki_only": 2,
+    "nearby_osm_pairs": 0,
+    "conflicts": 2
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-5138",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6010",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-1073011370",
+      "coordinates": [
+        9.4928776,
+        24.5122893
+      ],
+      "osm": {
+        "id": "node/1073011370",
+        "name": "Station Service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          9.4928776,
+          24.5122893
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10178",
+          "route_id": "10839",
+          "name_fr": "Station de services naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            9.493,
+            24.512
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 56,
+          "wilaya_fr": "Djanet",
+          "wilaya_ar": "جانت",
+          "offset_m": 34
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service NAFTAL",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3254220439",
+      "coordinates": [
+        9.4868347,
+        24.5529232
+      ],
+      "osm": {
+        "id": "node/3254220439",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal نفطال",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          9.4868347,
+          24.5529232
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9252",
+          "route_id": "14107",
+          "name_fr": "Station de services Choabat lous Djanet",
+          "name_ar": "شعبة لوص بجانت - اعادة ترميم -",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            9.4869,
+            24.5528
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 56,
+          "wilaya_fr": "Djanet",
+          "wilaya_ar": "جانت",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-5964348904",
+      "coordinates": [
+        9.4865008,
+        24.5375603
+      ],
+      "osm": {
+        "id": "node/5964348904",
+        "name": "NAFTAL محطة وقود",
+        "name_ar": "محطة وقود",
+        "name_fr": "NAFTAL",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          9.4865008,
+          24.5375603
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NAFTAL",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-node-7111006548",
+      "coordinates": [
+        9.4925871,
+        24.5129004
+      ],
+      "osm": {
+        "id": "node/7111006548",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          9.4925871,
+          24.5129004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5680",
+          "route_id": "10507",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            9.4923,
+            24.5136
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 56,
+          "wilaya_fr": "Djanet",
+          "wilaya_ar": "جانت",
+          "offset_m": 83
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-8396874817",
+      "coordinates": [
+        10.2145547,
+        24.5946012
+      ],
+      "osm": {
+        "id": "node/8396874817",
+        "name": "تنالكوم جانت",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          10.2145547,
+          24.5946012
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "تنالكوم جانت",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9724930670",
+      "coordinates": [
+        8.4500177,
+        24.8734136
+      ],
+      "osm": {
+        "id": "node/9724930670",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          8.4500177,
+          24.8734136
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-5138",
+      "coordinates": [
+        8.443,
+        24.878
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5138",
+          "route_id": "9735",
+          "name_fr": "Station de services PETROLIQUE",
+          "name_ar": "محطة الخدمات البترولية",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            8.443,
+            24.878
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 56,
+          "wilaya_fr": "Djanet",
+          "wilaya_ar": "جانت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services PETROLIQUE",
+      "display_name_ar": "محطة الخدمات البترولية"
+    },
+    {
+      "id": "tariki-6010",
+      "coordinates": [
+        9.5129,
+        24.4779
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6010",
+          "route_id": "10856",
+          "name_fr": "Station de services cité ifri",
+          "name_ar": "حي ايفري",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            9.5129,
+            24.4779
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 56,
+          "wilaya_fr": "Djanet",
+          "wilaya_ar": "جانت",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services cité ifri",
+      "display_name_ar": "حي ايفري"
+    }
+  ]
+}

@@ -68,23 +68,23 @@
     {
       "package": "@geoalgeria/buses",
       "schema_version": "2.0.0",
-      "title": "ETUSA urban bus lines (Algiers)",
-      "record_count": 50,
-      "geocoded_count": 0,
-      "geocoded_pct": 0,
+      "title": "Algeria urban and suburban bus lines",
+      "record_count": 1756,
+      "geocoded_count": 1603,
+      "geocoded_pct": 91.3,
       "precision": {
-        "exact": 0,
-        "approximate": 0
+        "exact": 1596,
+        "approximate": 7
       },
-      "coverage": {
-        "pct": 41,
-        "of": 122,
-        "note": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly."
-      },
-      "wilayas_covered": 1,
-      "bbox": null,
-      "license": "CC-BY-SA-4.0",
-      "updated": "2026-07-01"
+      "wilayas_covered": 16,
+      "bbox": [
+        0.078075,
+        35.290352,
+        5.495723,
+        36.817264
+      ],
+      "license": "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
+      "updated": "2026-09-04"
     },
     {
       "package": "@geoalgeria/cliniques",

@@ -620,6 +620,13 @@ const PACKAGES = {
       geojson: null,
       required: ["id", "name", "operator", "wilaya_code"],
     },
+    {
+      json: "stations.json",
+      metaKey: "stations",
+      csv: "csv/stations.csv",
+      geojson: "geojson/stations.geojson",
+      required: ["id", "wilaya_code", "lat", "lng"],
+    },
   ],
 };
 
@@ -1159,7 +1166,7 @@ const TYPED = {
   agriculture: { "agriculture.json": "AgricultureInstitution" },
   aviation: { "airports.json": "Airport", "routes.json": "Route" },
   banques: { "banks.json": "Institution", "institutions.json": "Institution", "branches.json": "Branch" },
-  buses: { "lines.json": "BusLine" },
+  buses: { "lines.json": "BusLine", "stations.json": "BusStation" },
   cliniques: { "cliniques.json": "Clinique" },
   culture: { "culture.json": "CulturalSite" },
   djezzy: { "boutiques.json": "Boutique" },

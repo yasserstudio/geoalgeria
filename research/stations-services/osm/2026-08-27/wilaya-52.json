@@ -1,0 +1,125 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 52,
+  "records": [
+    {
+      "id": "node/3163378791",
+      "amenity": "fuel",
+      "name": "محطة البنزين بربوشي",
+      "name_ar": "محطة البنزين بربوشي",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": "24/7",
+      "coordinates": [
+        -1.4913035,
+        29.4799049
+      ]
+    },
+    {
+      "id": "node/3754732477",
+      "amenity": "fuel",
+      "name": "محطة وقود أحمد كدا",
+      "name_ar": "محطة وقود أحمد كدا",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "أحمد كدا",
+      "opening_hours": null,
+      "coordinates": [
+        -3.2619152,
+        29.40725
+      ]
+    },
+    {
+      "id": "node/3978096729",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "station service NAFTAL",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -2.2436949,
+        30.012331
+      ]
+    },
+    {
+      "id": "node/4010123028",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -2.1791095,
+        30.1223446
+      ]
+    },
+    {
+      "id": "node/4456100891",
+      "amenity": "fuel",
+      "name": "محطة البنزين نفطال",
+      "name_ar": "محطة البنزين نفطال",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": "24/7",
+      "coordinates": [
+        -1.4403115,
+        29.4547962
+      ]
+    },
+    {
+      "id": "node/4578026638",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -2.2996255,
+        30.4689881
+      ]
+    },
+    {
+      "id": "node/6910595587",
+      "amenity": "fuel",
+      "name": "محطة بنزين بولعظام",
+      "name_ar": "برشمة تبلبالا",
+      "name_fr": "Station d'essence boulaadam",
+      "brand": null,
+      "operator": null,
+      "opening_hours": "24/7",
+      "coordinates": [
+        -4.0095383,
+        29.773741
+      ]
+    },
+    {
+      "id": "way/394921036",
+      "amenity": "fuel",
+      "name": "المحطة الوقود نفطال",
+      "name_ar": "المحطة الوقود نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -2.2436546,
+        30.012255699999997
+      ]
+    }
+  ]
+}

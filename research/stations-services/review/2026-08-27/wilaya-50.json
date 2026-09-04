@@ -1,0 +1,539 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-50",
+    "wilaya_code": 50,
+    "name": "Bordj Badji Mokhtar",
+    "name_ar": "برج باجي مختار",
+    "center": [
+      -1.167,
+      22.6355
+    ],
+    "bounds": [
+      -4.833,
+      20.028,
+      2.499,
+      25.243
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 15,
+    "osm_records": 7,
+    "tariki_records": 8,
+    "cross_source": 0,
+    "multiple_tariki": 0,
+    "osm_only": 7,
+    "tariki_only": 8,
+    "nearby_osm_pairs": 0,
+    "conflicts": 8
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-12661",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12662",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12663",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12667",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6021",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6887",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6889",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8816",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-5039813069",
+      "coordinates": [
+        0.9544345,
+        21.3333277
+      ],
+      "osm": {
+        "id": "node/5039813069",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9544345,
+          21.3333277
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5068497558",
+      "coordinates": [
+        1.002084,
+        23.3868131
+      ],
+      "osm": {
+        "id": "node/5068497558",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.002084,
+          23.3868131
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8301075518",
+      "coordinates": [
+        0.972771,
+        21.3115487
+      ],
+      "osm": {
+        "id": "node/8301075518",
+        "name": "Station Naftal;صحراء عين بدون",
+        "name_ar": "صحراء عين بدون",
+        "name_fr": "Station Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.972771,
+          21.3115487
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Naftal",
+      "display_name_ar": "صحراء عين بدون"
+    },
+    {
+      "id": "osm-node-8301095817",
+      "coordinates": [
+        0.9717977,
+        21.3164644
+      ],
+      "osm": {
+        "id": "node/8301095817",
+        "name": "Ouled El Moulat;محطة اولاد المولات",
+        "name_ar": null,
+        "name_fr": "Ouled El Moulat",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9717977,
+          21.3164644
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Ouled El Moulat",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8301098817",
+      "coordinates": [
+        0.9753459,
+        21.3095539
+      ],
+      "osm": {
+        "id": "node/8301098817",
+        "name": "Bab El Baraka;محطة باب البركة",
+        "name_ar": "محطة بن مخاطري",
+        "name_fr": "Bab El Baraka",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9753459,
+          21.3095539
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Bab El Baraka",
+      "display_name_ar": "محطة بن مخاطري"
+    },
+    {
+      "id": "osm-node-8314567017",
+      "coordinates": [
+        0.9848833,
+        21.7618788
+      ],
+      "osm": {
+        "id": "node/8314567017",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9848833,
+          21.7618788
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8364342917",
+      "coordinates": [
+        1.1128797,
+        22.2983526
+      ],
+      "osm": {
+        "id": "node/8364342917",
+        "name": "محطة خدمات عين بيدون",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1128797,
+          22.2983526
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة خدمات عين بيدون",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12661",
+      "coordinates": [
+        0.951,
+        21.332
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12661",
+          "route_id": "17304",
+          "name_fr": "STATION SERVISSE 05 JEULLET",
+          "name_ar": "محطة 05جويلية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.951,
+            21.332
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVISSE 05 JEULLET",
+      "display_name_ar": "محطة 05جويلية"
+    },
+    {
+      "id": "tariki-12662",
+      "coordinates": [
+        0.973,
+        21.315
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12662",
+          "route_id": "17304",
+          "name_fr": "STATION ROUTETIMIAOUNE",
+          "name_ar": "محطة طريق تيمياوين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.973,
+            21.315
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION ROUTETIMIAOUNE",
+      "display_name_ar": "محطة طريق تيمياوين"
+    },
+    {
+      "id": "tariki-12663",
+      "coordinates": [
+        1.114,
+        22.318
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12663",
+          "route_id": "17304",
+          "name_fr": "BIDON5",
+          "name_ar": "محطة بدون 5",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.114,
+            22.318
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "BIDON5",
+      "display_name_ar": "محطة بدون 5"
+    },
+    {
+      "id": "tariki-12667",
+      "coordinates": [
+        1.011,
+        23.816
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12667",
+          "route_id": "17304",
+          "name_fr": "STATION PK400",
+          "name_ar": "محطة النقطة الكيلومترية 400",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.011,
+            23.816
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION PK400",
+      "display_name_ar": "محطة النقطة الكيلومترية 400"
+    },
+    {
+      "id": "tariki-6021",
+      "coordinates": [
+        1.8095,
+        20.4344
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6021",
+          "route_id": "10862",
+          "name_fr": "Station de services TIMIAOUINE",
+          "name_ar": "محطة وقود تيمياوين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.8095,
+            20.4344
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TIMIAOUINE",
+      "display_name_ar": "محطة وقود تيمياوين"
+    },
+    {
+      "id": "tariki-6887",
+      "coordinates": [
+        0.9509,
+        21.3319
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6887",
+          "route_id": "11725",
+          "name_fr": "Station de services 05 juillet",
+          "name_ar": "05 محطة جويلية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.9509,
+            21.3319
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services 05 juillet",
+      "display_name_ar": "05 محطة جويلية"
+    },
+    {
+      "id": "tariki-6889",
+      "coordinates": [
+        0.9729,
+        21.3148
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6889",
+          "route_id": "11725",
+          "name_fr": "Station de services Route de TIMIAOUIN",
+          "name_ar": "محطة طريق تيمياوين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.9729,
+            21.3148
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Route de TIMIAOUIN",
+      "display_name_ar": "محطة طريق تيمياوين"
+    },
+    {
+      "id": "tariki-8816",
+      "coordinates": [
+        1.1139,
+        22.3181
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8816",
+          "route_id": "11725",
+          "name_fr": "Station de services Bidon5",
+          "name_ar": "بدون 5",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.1139,
+            22.3181
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 50,
+          "wilaya_fr": "Bordj Badji Mokhtar",
+          "wilaya_ar": "برج باجي مختار",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bidon5",
+      "display_name_ar": "بدون 5"
+    }
+  ]
+}

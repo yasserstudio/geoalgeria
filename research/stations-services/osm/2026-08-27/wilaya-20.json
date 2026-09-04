@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 20,
+  "records": [
+    {
+      "id": "node/10647998785",
+      "amenity": "fuel",
+      "name": "Station naftal + cafe + mosque",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.1518486,
+        34.880672
+      ]
+    },
+    {
+      "id": "node/3397629630",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.316748,
+        34.825878
+      ]
+    },
+    {
+      "id": "node/3422203686",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.1474748,
+        34.6723512
+      ]
+    },
+    {
+      "id": "node/3865556381",
+      "amenity": "fuel",
+      "name": "Station Service de Balloul محطة خدمة بلول",
+      "name_ar": "محطة خدمة بلول",
+      "name_fr": "Station Service de Balloul",
+      "brand": "E.Leclerc أي.لكلير",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.4862207,
+        34.9908953
+      ]
+    },
+    {
+      "id": "node/3985929218",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "station service",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.0797934,
+        34.4777816
+      ]
+    },
+    {
+      "id": "node/4358040789",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.016992,
+        34.6512521
+      ]
+    },
+    {
+      "id": "node/4403272289",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.1149635,
+        34.8216117
+      ]
+    },
+    {
+      "id": "node/5306034121",
+      "amenity": "fuel",
+      "name": "محطة بنزين",
+      "name_ar": "محطة بنزين",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.0425517,
+        34.8108318
+      ]
+    },
+    {
+      "id": "node/8213584975",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.0700666,
+        35.0273857
+      ]
+    },
+    {
+      "id": "way/303856191",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        0.1482121,
+        34.837461149999996
+      ]
+    },
+    {
+      "id": "way/304237382",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.1500681,
+        34.71256765
+      ]
+    },
+    {
+      "id": "way/315292544",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        0.15970375,
+        34.8406835
+      ]
+    },
+    {
+      "id": "way/315346503",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        0.156468,
+        34.81910255
+      ]
+    }
+  ]
+}

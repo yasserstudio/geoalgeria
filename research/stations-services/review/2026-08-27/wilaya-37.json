@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-37",
+    "wilaya_code": 37,
+    "name": "Tindouf",
+    "name_ar": "تندوف",
+    "center": [
+      -5.8260000000000005,
+      27.5605
+    ],
+    "bounds": [
+      -8.669,
+      25.513,
+      -2.983,
+      29.608
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 11,
+    "osm_records": 9,
+    "tariki_records": 8,
+    "cross_source": 6,
+    "multiple_tariki": 0,
+    "osm_only": 3,
+    "tariki_only": 2,
+    "nearby_osm_pairs": 0,
+    "conflicts": 2
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-8449",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8450",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-3752973397",
+      "coordinates": [
+        -6.9819912,
+        28.6244845
+      ],
+      "osm": {
+        "id": "node/3752973397",
+        "name": "محطة خدمات أم العسل",
+        "name_ar": "محطة خدمات أم العسل",
+        "name_fr": "Station Service Oum El Assel",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -6.9819912,
+          28.6244845
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6742",
+          "route_id": "2337",
+          "name_fr": "Station de services OUM LAASEL",
+          "name_ar": "محطة خدمات أم العسل",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -6.982,
+            28.6245
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": 2
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Oum El Assel",
+      "display_name_ar": "محطة خدمات أم العسل"
+    },
+    {
+      "id": "osm-node-3936255133",
+      "coordinates": [
+        -8.1065971,
+        27.6089097
+      ],
+      "osm": {
+        "id": "node/3936255133",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -8.1065971,
+          27.6089097
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6689",
+          "route_id": "7160",
+          "name_fr": "Station de services cité Elhikma",
+          "name_ar": "حي الحكمة",
+          "services": [
+            "fuel",
+            "shop"
+          ],
+          "coordinates": [
+            -8.1067,
+            27.6088
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": 16
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4577820553",
+      "coordinates": [
+        -8.1382244,
+        27.6564232
+      ],
+      "osm": {
+        "id": "node/4577820553",
+        "name": "محطة الخدمات توهامي",
+        "name_ar": "محطة الخدمات توهامي",
+        "name_fr": "Station service touhami",
+        "brand": "Naftal",
+        "operator": "توهامي",
+        "opening_hours": null,
+        "coordinates": [
+          -8.1382244,
+          27.6564232
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6854",
+          "route_id": "7160",
+          "name_fr": "Station de services TOUHAMI",
+          "name_ar": "محطة الخدمات توهامي",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            -8.1374,
+            27.6558
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": 107
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service touhami",
+      "display_name_ar": "محطة الخدمات توهامي"
+    },
+    {
+      "id": "osm-node-4577820554",
+      "coordinates": [
+        -8.1493536,
+        27.6779549
+      ],
+      "osm": {
+        "id": "node/4577820554",
+        "name": "محطة الخدمات شارع الطيب بولحروف",
+        "name_ar": "محطة الخدمات شارع الطيب بولحروف",
+        "name_fr": "Station service Tayeb boulehrouf",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -8.1493536,
+          27.6779549
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6851",
+          "route_id": "7160",
+          "name_fr": "Station de services RUE TAYEB BOULAHROUF",
+          "name_ar": "محطة الخدمات شارع الطيب بولحروف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -8.1497,
+            27.6774
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": 71
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Tayeb boulehrouf",
+      "display_name_ar": "محطة الخدمات شارع الطيب بولحروف"
+    },
+    {
+      "id": "osm-node-4577820555",
+      "coordinates": [
+        -8.1201688,
+        27.6803483
+      ],
+      "osm": {
+        "id": "node/4577820555",
+        "name": "محطة الخدمات حي البناء",
+        "name_ar": "محطة الخدمات حي البناء",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -8.1201688,
+          27.6803483
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6853",
+          "route_id": "7160",
+          "name_fr": "Station de services cite AUTO CONSTRUCTION",
+          "name_ar": "محطة الخدمات حي البناء الذاتي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            -8.1196,
+            27.6808
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": 75
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات حي البناء"
+    },
+    {
+      "id": "osm-node-4577885342",
+      "coordinates": [
+        -8.1496702,
+        27.7421137
+      ],
+      "osm": {
+        "id": "node/4577885342",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -8.1496702,
+          27.7421137
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6690",
+          "route_id": "7160",
+          "name_fr": "Station de services Route Merkala",
+          "name_ar": "طريق مركالة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            -8.1501,
+            27.7419
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Route Merkala",
+      "display_name_ar": "طريق مركالة"
+    },
+    {
+      "id": "osm-node-4577991330",
+      "coordinates": [
+        -5.0714287,
+        29.1875142
+      ],
+      "osm": {
+        "id": "node/4577991330",
+        "name": "محطة الخدمات حاسي خبي",
+        "name_ar": "محطة الخدمات حاسي خبي",
+        "name_fr": "Station-Service Hassi Khebi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -5.0714287,
+          29.1875142
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-Service Hassi Khebi",
+      "display_name_ar": "محطة الخدمات حاسي خبي"
+    },
+    {
+      "id": "osm-node-8033935160",
+      "coordinates": [
+        -7.2398327,
+        28.5586415
+      ],
+      "osm": {
+        "id": "node/8033935160",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          -7.2398327,
+          28.5586415
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9929791718",
+      "coordinates": [
+        -7.4511592,
+        28.5026092
+      ],
+      "osm": {
+        "id": "node/9929791718",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          -7.4511592,
+          28.5026092
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-8449",
+      "coordinates": [
+        -5.073,
+        29.186
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8449",
+          "route_id": "2333",
+          "name_fr": "Station de services HASSI KHEBBI",
+          "name_ar": "محطة الخدمات حاسي خبي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -5.073,
+            29.186
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services HASSI KHEBBI",
+      "display_name_ar": "محطة الخدمات حاسي خبي"
+    },
+    {
+      "id": "tariki-8450",
+      "coordinates": [
+        -5.081,
+        29.185
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8450",
+          "route_id": "2333",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            -5.081,
+            29.185
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 37,
+          "wilaya_fr": "Tindouf",
+          "wilaya_ar": "تندوف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services NAFTAL",
+      "display_name_ar": "محطة الخدمات نفطال"
+    }
+  ]
+}

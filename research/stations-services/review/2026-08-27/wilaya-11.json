@@ -1,0 +1,748 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-11",
+    "wilaya_code": 11,
+    "name": "Tamanrasset",
+    "name_ar": "تمنراست",
+    "center": [
+      5.844,
+      23.927999999999997
+    ],
+    "bounds": [
+      1.417,
+      20.444,
+      10.271,
+      27.412
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 19,
+    "osm_records": 12,
+    "tariki_records": 13,
+    "cross_source": 6,
+    "multiple_tariki": 0,
+    "osm_only": 6,
+    "tariki_only": 7,
+    "nearby_osm_pairs": 0,
+    "conflicts": 7
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-12174",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12773",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12774",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12775",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2836",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5040",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6999",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11416824869",
+      "coordinates": [
+        5.5116037,
+        22.8217361
+      ],
+      "osm": {
+        "id": "node/11416824869",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.5116037,
+          22.8217361
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1159237848",
+      "coordinates": [
+        5.225563,
+        22.9951199
+      ],
+      "osm": {
+        "id": "node/1159237848",
+        "name": "محطة وقود بناني",
+        "name_ar": "محطة وقود بناني",
+        "name_fr": "Station service Bennani",
+        "brand": "Naftal",
+        "operator": "بناني",
+        "opening_hours": null,
+        "coordinates": [
+          5.225563,
+          22.9951199
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Bennani",
+      "display_name_ar": "محطة وقود بناني"
+    },
+    {
+      "id": "osm-node-13508157058",
+      "coordinates": [
+        5.5266208,
+        22.7713888
+      ],
+      "osm": {
+        "id": "node/13508157058",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": "Station Service Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5266208,
+          22.7713888
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2853",
+          "route_id": "6429",
+          "name_fr": "Station de services NAFTAL 2",
+          "name_ar": "نفطال 2",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.526,
+            22.772
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": 93
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "نفطال 2"
+    },
+    {
+      "id": "osm-node-3280952911",
+      "coordinates": [
+        5.5173142,
+        22.7958766
+      ],
+      "osm": {
+        "id": "node/3280952911",
+        "name": "Naftal;نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.5173142,
+          22.7958766
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2852",
+          "route_id": "6429",
+          "name_fr": "Station de services NAFTAL1",
+          "name_ar": "نفطال 1",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.517,
+            22.796
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4202912901",
+      "coordinates": [
+        5.1409486,
+        23.6977616
+      ],
+      "osm": {
+        "id": "node/4202912901",
+        "name": "Naftal",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1409486,
+          23.6977616
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9151",
+          "route_id": "6368",
+          "name_fr": "Station de services NAFTAL commune Ain amguel",
+          "name_ar": "محطة الوقود ببلدية عين امقل",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.141,
+            23.698
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4757851023",
+      "coordinates": [
+        5.4886327,
+        22.8184567
+      ],
+      "osm": {
+        "id": "node/4757851023",
+        "name": "Station-service Khouine Naftal;محطة وقود خوين تمنراست",
+        "name_ar": "محطة وقود خوين تمنراست",
+        "name_fr": "Khouine Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.4886327,
+          22.8184567
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12254",
+          "route_id": "16703",
+          "name_fr": "station khamouine 2",
+          "name_ar": "محطة خموين 2",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.4885,
+            22.8182
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Khouine Naftal",
+      "display_name_ar": "محطة وقود خوين تمنراست"
+    },
+    {
+      "id": "osm-node-4757851027",
+      "coordinates": [
+        5.4863587,
+        22.8204339
+      ],
+      "osm": {
+        "id": "node/4757851027",
+        "name": "PETROMAG;بيتروماق",
+        "name_ar": "بيتروماق",
+        "name_fr": "PETROMAG",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.4863587,
+          22.8204339
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12253",
+          "route_id": "16703",
+          "name_fr": "station khamouine",
+          "name_ar": "محطة خموين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.4862,
+            22.8201
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": 41
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "PETROMAG",
+      "display_name_ar": "بيتروماق"
+    },
+    {
+      "id": "osm-node-6603998148",
+      "coordinates": [
+        5.5710799,
+        22.7861763
+      ],
+      "osm": {
+        "id": "node/6603998148",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5710799,
+          22.7861763
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-7343499045",
+      "coordinates": [
+        5.9378051,
+        23.8199204
+      ],
+      "osm": {
+        "id": "node/7343499045",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.9378051,
+          23.8199204
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12235",
+          "route_id": "5911",
+          "name_fr": "Station de services commune Idles",
+          "name_ar": "محطة الوقود لبلدية إدلس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.9367,
+            23.8201
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": 114
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-7983432463",
+      "coordinates": [
+        5.0823922,
+        24.0207173
+      ],
+      "osm": {
+        "id": "node/7983432463",
+        "name": "نفطال عين أكر",
+        "name_ar": "نفطال عين أكر",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.0823922,
+          24.0207173
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال عين أكر"
+    },
+    {
+      "id": "osm-node-9706700053",
+      "coordinates": [
+        5.4252785,
+        22.8154117
+      ],
+      "osm": {
+        "id": "node/9706700053",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4252785,
+          22.8154117
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-744794409",
+      "coordinates": [
+        4.58019505,
+        22.66331825
+      ],
+      "osm": {
+        "id": "way/744794409",
+        "name": "محطة الوقود سيلت",
+        "name_ar": "محطة الوقود سيلت",
+        "name_fr": "Nafatl",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "06:30-21:00",
+        "coordinates": [
+          4.58019505,
+          22.66331825
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nafatl",
+      "display_name_ar": "محطة الوقود سيلت"
+    },
+    {
+      "id": "tariki-12174",
+      "coordinates": [
+        6.264,
+        23.423
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12174",
+          "route_id": "6404",
+          "name_fr": "Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.264,
+            23.423
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-12773",
+      "coordinates": [
+        5.133,
+        22.931
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12773",
+          "route_id": "6422",
+          "name_fr": "TITE",
+          "name_ar": "محطة الخدمات بتيت",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            5.133,
+            22.931
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "TITE",
+      "display_name_ar": "محطة الخدمات بتيت"
+    },
+    {
+      "id": "tariki-12774",
+      "coordinates": [
+        5.292,
+        22.492
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12774",
+          "route_id": "6422",
+          "name_fr": "PETROMEG",
+          "name_ar": "محطة الخدمات بيتروماق",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.292,
+            22.492
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "PETROMEG",
+      "display_name_ar": "محطة الخدمات بيتروماق"
+    },
+    {
+      "id": "tariki-12775",
+      "coordinates": [
+        5.293,
+        22.491
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12775",
+          "route_id": "6422",
+          "name_fr": "KHAMOINE",
+          "name_ar": "محطة الخدمات خموين",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            5.293,
+            22.491
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "KHAMOINE",
+      "display_name_ar": "محطة الخدمات خموين"
+    },
+    {
+      "id": "tariki-2836",
+      "coordinates": [
+        3.771,
+        25.259
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2836",
+          "route_id": "6401",
+          "name_fr": "Station de services Arak",
+          "name_ar": "محطة الوقود اراك",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            3.771,
+            25.259
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Arak",
+      "display_name_ar": "محطة الوقود اراك"
+    },
+    {
+      "id": "tariki-5040",
+      "coordinates": [
+        4.571,
+        22.658
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5040",
+          "route_id": "9842",
+          "name_fr": "Station de servicesNAFTAL",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.571,
+            22.658
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de servicesNAFTAL",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-6999",
+      "coordinates": [
+        4.867,
+        22.899
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6999",
+          "route_id": "8033",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.867,
+            22.899
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 11,
+          "wilaya_fr": "Tamanrasset",
+          "wilaya_ar": "تمنراست",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الوقود"
+    }
+  ]
+}

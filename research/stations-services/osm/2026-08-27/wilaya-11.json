@@ -1,0 +1,181 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 11,
+  "records": [
+    {
+      "id": "node/11416824869",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": "24/7",
+      "coordinates": [
+        5.5116037,
+        22.8217361
+      ]
+    },
+    {
+      "id": "node/1159237848",
+      "amenity": "fuel",
+      "name": "محطة وقود بناني",
+      "name_ar": "محطة وقود بناني",
+      "name_fr": "Station service Bennani",
+      "brand": "Naftal",
+      "operator": "بناني",
+      "opening_hours": null,
+      "coordinates": [
+        5.225563,
+        22.9951199
+      ]
+    },
+    {
+      "id": "node/13508157058",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": null,
+      "name_fr": "Station Service Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.5266208,
+        22.7713888
+      ]
+    },
+    {
+      "id": "node/3280952911",
+      "amenity": "fuel",
+      "name": "Naftal;نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.5173142,
+        22.7958766
+      ]
+    },
+    {
+      "id": "node/4202912901",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.1409486,
+        23.6977616
+      ]
+    },
+    {
+      "id": "node/4757851023",
+      "amenity": "fuel",
+      "name": "Station-service Khouine Naftal;محطة وقود خوين تمنراست",
+      "name_ar": "محطة وقود خوين تمنراست",
+      "name_fr": "Khouine Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.4886327,
+        22.8184567
+      ]
+    },
+    {
+      "id": "node/4757851027",
+      "amenity": "fuel",
+      "name": "PETROMAG;بيتروماق",
+      "name_ar": "بيتروماق",
+      "name_fr": "PETROMAG",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.4863587,
+        22.8204339
+      ]
+    },
+    {
+      "id": "node/6603998148",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.5710799,
+        22.7861763
+      ]
+    },
+    {
+      "id": "node/7343499045",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.9378051,
+        23.8199204
+      ]
+    },
+    {
+      "id": "node/7983432463",
+      "amenity": "fuel",
+      "name": "نفطال عين أكر",
+      "name_ar": "نفطال عين أكر",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        5.0823922,
+        24.0207173
+      ]
+    },
+    {
+      "id": "node/9706700053",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        5.4252785,
+        22.8154117
+      ]
+    },
+    {
+      "id": "way/744794409",
+      "amenity": "fuel",
+      "name": "محطة الوقود سيلت",
+      "name_ar": "محطة الوقود سيلت",
+      "name_fr": "Nafatl",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": "06:30-21:00",
+      "coordinates": [
+        4.58019505,
+        22.66331825
+      ]
+    }
+  ]
+}

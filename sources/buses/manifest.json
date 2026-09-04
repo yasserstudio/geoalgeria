@@ -1,0 +1,107 @@
+{
+  "eto-oran-lines": {
+    "bytes": 4143,
+    "note": "Rights-safe Line identity transcribed from route drawings ETO published on its official page, supplied by the project owner. French endpoint labels are transliterations of the Arabic. Five destination-named services are recorded as evidence, not as Lines. Drawings are validation-only and are not redistributed. No geometry.",
+    "records": 1,
+    "retrieved": "2026-09-04",
+    "sha256": "9bc0db175745a7b7a4fb362c1be787c3262c4e5a91ad31c4edab64bd73794d4d",
+    "url": "https://www.facebook.com/p/ETO-100093054514209/"
+  },
+  "etul-laghouat-lines": {
+    "bytes": 3168,
+    "note": "Rights-safe Arabic Line identities transcribed from two dated ETUL Laghouat operating programs supplied by the project owner. The original post URL was not supplied, so the receipt uses explicit owner-supplied-artifact provenance and no URL. Duty allocations, times and ambiguous ADL code remain evidence-only. Artwork is not redistributed. No geometry.",
+    "provenance": "owner_supplied_artifact",
+    "records": 4,
+    "retrieved": "2026-09-04",
+    "sha256": "887b052182a0344abd4cdfc6abaa7644b88b44188d1da5fb7dfe3ceb47fdccd2",
+    "url": null
+  },
+  "etus-ain-defla-lines": {
+    "bytes": 6860,
+    "note": "Rights-safe bilingual Line identities transcribed from ETUS Aïn Defla artwork and its Eid al-Adha 2025 service program, supplied by the project owner from the Operator's page. French endpoint labels are transliterations of the Arabic artwork. Artwork is validation-only and is not redistributed. AD-2 geometry is separately sourced from OSM under ODbL.",
+    "records": 16,
+    "retrieved": "2026-09-03",
+    "sha256": "587ca610428c7f6669563be5cba96539502d180cd33b96b93e3bb894cd82f4f3",
+    "url": "https://www.facebook.com/ETUS44/"
+  },
+  "etus-annaba-lines": {
+    "bytes": 4339,
+    "note": "Rights-safe bilingual Line identities transcribed from ETUS Annaba's Eid al-Adha 2026 service program supplied by the project owner from the Operator's page. French endpoint labels are transliterations of the Arabic. Only routes the Operator numbers are Lines; unnumbered services are kept as evidence. Artwork is validation-only and is not redistributed. No geometry.",
+    "records": 6,
+    "retrieved": "2026-09-03",
+    "sha256": "b4e6b0bbefc56acaa7960cd94aa79618a887560aa218c61975825fd2628ea7c9",
+    "url": "https://www.facebook.com/p/%D8%A7%D9%84%D8%B4%D8%B1%D9%83%D8%A9-%D8%A7%D9%84%D9%88%D8%B7%D9%86%D9%8A%D8%A9-%D9%84%D9%84%D9%86%D9%82%D9%84-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D9%88-%D8%A7%D9%84%D8%B4%D8%A8%D9%87-%D8%A7%D9%84%D8%AD%D8%B6%D8%B1%D9%8A-%D8%B9%D9%86%D8%A7%D8%A8%D8%A9-ETUS-Annaba-100063517660926/"
+  },
+  "etus-bejaia-lines": {
+    "bytes": 14292,
+    "note": "Rights-safe projection of Line identities, endpoints, round-trip distances, typed stop counts and timetable-image transcriptions linked by the official WordPress REST API. Embedded KML maps validate identity but their geometry is not retained. Per-record receipts preserve upstream URLs, retrieval timestamps, byte counts and payload SHA-256 hashes for the API, maps and timetable panels.",
+    "records": 5,
+    "retrieved": "2026-09-02",
+    "sha256": "df8c6ca38c68564a430b5905074b6213ccf1116bc22d08e0daaa3541bd9e080c",
+    "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes&_fields=id,modified,link,content"
+  },
+  "etus-msila-lines": {
+    "bytes": 7586,
+    "note": "Rights-safe projection of Line identities, endpoints, ordered Arabic stop names and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
+    "records": 4,
+    "retrieved": "2026-09-02",
+    "sha256": "cb3db1747ca225d566c443d05c7f9ce78fa02756a68754ae2621fe5d51c8cc6c",
+    "url": "https://etus-msila.dz/"
+  },
+  "etus-oeb-lines": {
+    "bytes": 7530,
+    "note": "Rights-safe Arabic Line identities transcribed from five numbered ETUS Oum El Bouaghi diagrams supplied by the project owner. The Play URL identifies the Operator's WASLAYA app but does not host the Line artwork. French translations are applied in the package transform, not recorded as source facts. Artwork is validation-only and is not redistributed. No geometry.",
+    "records": 5,
+    "retrieved": "2026-09-04",
+    "sha256": "0e2a114985968dda60cc2a920df0f470503dcd9589556bfcf17e92f002fcaf42",
+    "url": "https://play.google.com/store/apps/details?id=com.deeper.etus.oeb"
+  },
+  "etus-setif-lines": {
+    "bytes": 3320,
+    "note": "Rights-safe bilingual Line identities transcribed from ETUS Setif artwork supplied by the project owner and independently matched to a public 2026 announcement mirror. The mirror is corroboration, not a first-party Source. Artwork is validation-only and is not redistributed. Lines 101, 104, and 106B geometry are separately sourced from OSM under ODbL.",
+    "records": 5,
+    "retrieved": "2026-09-02",
+    "sha256": "7c9fd9e2d2cc0145239bb8513ab563f8fb87707148660d3b2047a1764d10bc7e",
+    "url": "https://www.govserv.org/DZ/S%C3%A9tif/111330534776381/ETUS-S%C3%89TIF"
+  },
+  "etus-sidi-bel-abbes-lines": {
+    "bytes": 49417,
+    "note": "Rights-safe structured projection transcribed from the official Operator network and timetable HTML supplied by the project owner. The source pages returned HTTP 404 and the public tracker endpoint timed out during independent recheck, so no live-response or tracker receipt is claimed. The tracker share token is intentionally not stored. Route diagrams are references only and their geometry is not redistributed.",
+    "records": 8,
+    "retrieved": "2026-09-02",
+    "sha256": "a51df096db62083b51d9a4668f299b697a5dcfc3071d9f3a8f46abf74c0d0a40",
+    "url": "https://etus22.dz/Horaires.php"
+  },
+  "etus-tiaret-lines": {
+    "bytes": 2624,
+    "note": "Structured Inertia props extracted from the official Operator Lines page. Source content is used for identity validation; no open reuse license was found.",
+    "records": 7,
+    "retrieved": "2026-09-02",
+    "sha256": "dae3df746c8736add7f1356360a165d7d180115cb1e1ae8db32547c9780881ec",
+    "url": "https://www.etus-tiaret.dz/ar/lines"
+  },
+  "etus-tlemcen-lines": {
+    "bytes": 3692,
+    "note": "Rights-safe bilingual Line identities transcribed from ETUS Tlemcen's Eid al-Adha 2026 service program supplied by the project owner from the Operator's page. French endpoint labels are transliterations of the Arabic. Artwork is validation-only and is not redistributed. No geometry.",
+    "records": 10,
+    "retrieved": "2026-09-03",
+    "sha256": "e4d801f4807dbf5b1c59d2fec123a6968049af2977133527158fdefb4a0f4234",
+    "url": "https://www.facebook.com/etustlemcen13/"
+  },
+  "etusto-lines": {
+    "bytes": 1881,
+    "note": "Line identities and endpoints extracted from the official Operator page. Raster maps are validation references only and are not redistributed.",
+    "records": 5,
+    "retrieved": "2026-09-02",
+    "sha256": "9515740c3742c20efc4bbfdd9ac965af03c76548b9762dd57e8761204cfb6a96",
+    "url": "http://etusto.dz/espv.html"
+  },
+  "osm-urban-selected": {
+    "bytes": 6785874,
+    "note": "Reviewed trimmed OSM projection. Non-atomic retrieval and snapshot intervals, queries, endpoint URLs, and upstream response hashes are embedded in the capture receipt.",
+    "records": 76,
+    "retrieved": "2026-09-01",
+    "sha256": "a35b78871e1f32c58cd776959886ac46b951df3618df4a888966d74ca4882bba",
+    "url": "https://overpass-api.de/api/interpreter"
+  }
+}

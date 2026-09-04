@@ -1,11 +1,11 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "ETUSA urban bus lines (Algiers)",
-  "alternateName": "Lignes de bus ETUSA (Alger)",
+  "name": "Algeria urban and suburban bus lines",
+  "alternateName": "Lignes de bus urbaines et suburbaines d'Algérie",
   "identifier": "@geoalgeria/buses",
-  "description": "50 of ETUSA's ~122 passenger lines (fr.wikipedia 'Lignes de bus ETUSA de 1 à 99'). Line-level attributes only; per-stop and per-line geometry deferred (OSM route=bus coverage tagged ETUSA is currently thin). No coordinates exist for this dataset — lat/lng are null and geo_precision reflects that honestly.",
-  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "description": "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
+  "conditionsOfAccess": "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",
@@ -14,9 +14,13 @@
   },
   "spatialCoverage": {
     "@type": "Place",
-    "name": "Algeria"
+    "name": "Algeria",
+    "geo": {
+      "@type": "GeoShape",
+      "box": "35.290352 0.078075 36.817264 5.495723"
+    }
   },
-  "variableMeasured": "50 records, 1 wilayas",
+  "variableMeasured": "1756 records, 16 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",
@@ -29,12 +33,43 @@
       "name": "lines (CSV)",
       "encodingFormat": "text/csv",
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/csv/lines.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (JSON)",
+      "encodingFormat": "application/json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/stations.json"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (CSV)",
+      "encodingFormat": "text/csv",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/csv/stations.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "stations (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/buses/data/geojson/stations.geojson"
     }
   ],
-  "dateModified": "2026-07-01",
+  "dateModified": "2026-09-04",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
-    "French Wikipedia — Lignes de bus ETUSA de 1 à 99 — CC BY-SA 4.0"
+    "French Wikipedia — Lignes de bus ETUSA de 1 à 99 — CC BY-SA 4.0",
+    "ETUS Tiaret — current Lines — Proprietary factual reference data; no open reuse license",
+    "ETUSTO — passenger Lines — Proprietary factual reference data; no open reuse license",
+    "ETUS Béjaïa — WordPress REST itineraries and Line maps — Proprietary factual reference data; no open reuse license",
+    "ETUS M'Sila — official Line pages and diagrams — Proprietary factual reference data; no open reuse license",
+    "ETUS Sidi Bel Abbès — network and timetable pages — Proprietary factual reference data; no open reuse license",
+    "ETUS Setif — 2026 Line artwork supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "ETUS Aïn Defla — 2025 Line artwork and Eid service program supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "ETUS Annaba — Eid al-Adha 2026 service program supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "ETUS Tlemcen — Eid al-Adha 2026 service program supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "ETO Oran — route drawings published on the Operator page, supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "ETUS Oum El Bouaghi — numbered Line diagrams supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "ETUL Laghouat — dated operating programs supplied by project owner — Proprietary factual reference data; no open reuse license",
+    "OpenStreetMap — reviewed urban bus relations — ODbL 1.0 (© OpenStreetMap contributors)"
   ]
 }

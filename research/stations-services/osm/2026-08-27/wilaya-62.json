@@ -1,0 +1,111 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 62,
+  "records": [
+    {
+      "id": "node/4547125789",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.0575116,
+        34.765438
+      ]
+    },
+    {
+      "id": "node/6539157883",
+      "amenity": "fuel",
+      "name": "محطة خدمات خالد أحمد",
+      "name_ar": "محطة خدمات خالد أحمد",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "خالد أحمد",
+      "opening_hours": null,
+      "coordinates": [
+        7.5110865,
+        34.4910643
+      ]
+    },
+    {
+      "id": "node/6539183190",
+      "amenity": "fuel",
+      "name": "المحطة نفطال",
+      "name_ar": "المحطة نفطال",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        7.5378951,
+        34.4862437
+      ]
+    },
+    {
+      "id": "node/6764678402",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.055141,
+        34.723007
+      ]
+    },
+    {
+      "id": "node/7085807224",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.0600944,
+        34.7943254
+      ]
+    },
+    {
+      "id": "node/7085807237",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.0609447,
+        34.7905875
+      ]
+    },
+    {
+      "id": "way/695916289",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        8.08494575,
+        34.7573314
+      ]
+    }
+  ]
+}

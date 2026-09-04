@@ -1,0 +1,4092 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-19",
+    "wilaya_code": 19,
+    "name": "Sétif",
+    "name_ar": "سطيف",
+    "center": [
+      5.377,
+      36.105000000000004
+    ],
+    "bounds": [
+      4.728,
+      35.615,
+      6.026,
+      36.595
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 106,
+    "osm_records": 78,
+    "tariki_records": 74,
+    "cross_source": 32,
+    "multiple_tariki": 7,
+    "osm_only": 39,
+    "tariki_only": 28,
+    "nearby_osm_pairs": 0,
+    "conflicts": 35
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-1917587128",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-2983038600",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6539439250",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-663879968",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-299712749",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-375375816",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-477000677",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12066",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12070",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12240",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-132",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1345",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14285",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-166",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-262",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-270",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-279",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2832",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2933",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3605",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3617",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3643",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3815",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4079",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4147",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4172",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4567",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-504",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-505",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-576",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-577",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-647",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6675",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8306",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-942",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10629346342",
+      "coordinates": [
+        5.4775751,
+        36.0859197
+      ],
+      "osm": {
+        "id": "node/10629346342",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4775751,
+          36.0859197
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11579625071",
+      "coordinates": [
+        5.4732732,
+        36.3310448
+      ],
+      "osm": {
+        "id": "node/11579625071",
+        "name": "محطة الوقود",
+        "name_ar": null,
+        "name_fr": "naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4732732,
+          36.3310448
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3495",
+          "route_id": "585",
+          "name_fr": "Station de services BENI FOUDA",
+          "name_ar": "محطة سيرغاز تابعة لبلدية بني فودة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.473,
+            36.331
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 25
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "naftal",
+      "display_name_ar": "محطة سيرغاز تابعة لبلدية بني فودة"
+    },
+    {
+      "id": "osm-node-12759386873",
+      "coordinates": [
+        5.4729778,
+        36.3305333
+      ],
+      "osm": {
+        "id": "node/12759386873",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4729778,
+          36.3305333
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-12864156001",
+      "coordinates": [
+        5.5006991,
+        35.8753098
+      ],
+      "osm": {
+        "id": "node/12864156001",
+        "name": null,
+        "name_ar": "محطة وقود سيرغاز بن صوشة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5006991,
+          35.8753098
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": "محطة وقود سيرغاز بن صوشة"
+    },
+    {
+      "id": "osm-node-12864162701",
+      "coordinates": [
+        5.5014758,
+        35.86979
+      ],
+      "osm": {
+        "id": "node/12864162701",
+        "name": null,
+        "name_ar": "محطة وقود ذياب",
+        "name_fr": "Station Service DIAB",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5014758,
+          35.86979
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service DIAB",
+      "display_name_ar": "محطة وقود ذياب"
+    },
+    {
+      "id": "osm-node-1340070906",
+      "coordinates": [
+        5.9037521,
+        36.1242071
+      ],
+      "osm": {
+        "id": "node/1340070906",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.9037521,
+          36.1242071
+        ]
+      },
+      "tariki": [
+        {
+          "id": "146",
+          "route_id": "654",
+          "name_fr": "Station de services Lahwa Abd Rahmen",
+          "name_ar": "محطة الوقود بقرية لهوى عبد الرحمان",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.904,
+            36.124
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود بقرية لهوى عبد الرحمان"
+    },
+    {
+      "id": "osm-node-1340070908",
+      "coordinates": [
+        5.8499059,
+        36.1256138
+      ],
+      "osm": {
+        "id": "node/1340070908",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.8499059,
+          36.1256138
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1917541882",
+      "coordinates": [
+        5.6910185,
+        36.1639433
+      ],
+      "osm": {
+        "id": "node/1917541882",
+        "name": "Station Baliti",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6910185,
+          36.1639433
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6668",
+          "route_id": "2952",
+          "name_fr": "Station de services BLITY",
+          "name_ar": "محطة خدمات بليطي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.6909,
+            36.164
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Baliti",
+      "display_name_ar": "محطة خدمات بليطي"
+    },
+    {
+      "id": "osm-node-1917586933",
+      "coordinates": [
+        5.6691758,
+        36.1536497
+      ],
+      "osm": {
+        "id": "node/1917586933",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6691758,
+          36.1536497
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1917587128",
+      "coordinates": [
+        5.6690619,
+        36.1542899
+      ],
+      "osm": {
+        "id": "node/1917587128",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6690619,
+          36.1542899
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6664",
+          "route_id": "2939",
+          "name_fr": "Station de services entre ouest de la ville",
+          "name_ar": "محطة خدمات المدخل الغربي للمدينة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.669,
+            36.154
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 33
+        },
+        {
+          "id": "12332",
+          "route_id": "16806",
+          "name_fr": "station de services hotel elrif",
+          "name_ar": "محطة خدمات فندق الريف",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.6691,
+            36.1543
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات المدخل الغربي للمدينة"
+    },
+    {
+      "id": "osm-node-1917634512",
+      "coordinates": [
+        5.6970239,
+        36.1507937
+      ],
+      "osm": {
+        "id": "node/1917634512",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6970239,
+          36.1507937
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2442085679",
+      "coordinates": [
+        5.3929219,
+        36.1688808
+      ],
+      "osm": {
+        "id": "node/2442085679",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.3929219,
+          36.1688808
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2504392711",
+      "coordinates": [
+        5.2955041,
+        35.9093877
+      ],
+      "osm": {
+        "id": "node/2504392711",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2955041,
+          35.9093877
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2504410082",
+      "coordinates": [
+        5.300147,
+        35.9638408
+      ],
+      "osm": {
+        "id": "node/2504410082",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station service",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.300147,
+          35.9638408
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2504410083",
+      "coordinates": [
+        5.2543724,
+        35.8008302
+      ],
+      "osm": {
+        "id": "node/2504410083",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2543724,
+          35.8008302
+        ]
+      },
+      "tariki": [
+        {
+          "id": "233",
+          "route_id": "599",
+          "name_fr": "Station de services Loukia Mustapha",
+          "name_ar": "محطة توزيع الوقود لوكية مصطفى",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.254,
+            35.801
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة توزيع الوقود لوكية مصطفى"
+    },
+    {
+      "id": "osm-node-2504410085",
+      "coordinates": [
+        5.2998567,
+        35.8684795
+      ],
+      "osm": {
+        "id": "node/2504410085",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2998567,
+          35.8684795
+        ]
+      },
+      "tariki": [
+        {
+          "id": "125",
+          "route_id": "612",
+          "name_fr": "Station de services Maeyouf",
+          "name_ar": "محطة خدمات معيوف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.2999,
+            35.8686
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات معيوف"
+    },
+    {
+      "id": "osm-node-2570573903",
+      "coordinates": [
+        5.4545985,
+        36.1361589
+      ],
+      "osm": {
+        "id": "node/2570573903",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4545985,
+          36.1361589
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2592717355",
+      "coordinates": [
+        4.8397176,
+        36.3176943
+      ],
+      "osm": {
+        "id": "node/2592717355",
+        "name": "Station service Guenzet",
+        "name_ar": "محطة وقود",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8397176,
+          36.3176943
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3750",
+          "route_id": "76",
+          "name_fr": "Station de servicesNAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.84,
+            36.318
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Guenzet",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "osm-node-2935638998",
+      "coordinates": [
+        5.4071507,
+        36.1861512
+      ],
+      "osm": {
+        "id": "node/2935638998",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4071507,
+          36.1861512
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9266",
+          "route_id": "1970",
+          "name_fr": "Station de services Bab Biskra",
+          "name_ar": "محطة الخدمات باب بسكرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.4072,
+            36.1861
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات باب بسكرة"
+    },
+    {
+      "id": "osm-node-2971262371",
+      "coordinates": [
+        5.9434906,
+        35.9009706
+      ],
+      "osm": {
+        "id": "node/2971262371",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9434906,
+          35.9009706
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2974078868",
+      "coordinates": [
+        5.1129391,
+        36.3306587
+      ],
+      "osm": {
+        "id": "node/2974078868",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1129391,
+          36.3306587
+        ]
+      },
+      "tariki": [
+        {
+          "id": "278",
+          "route_id": "988",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.113,
+            36.331
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-2979044992",
+      "coordinates": [
+        5.3082911,
+        36.3026512
+      ],
+      "osm": {
+        "id": "node/2979044992",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3082911,
+          36.3026512
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2830",
+          "route_id": "554",
+          "name_fr": "Station de services ZAEBAR",
+          "name_ar": "محطة الوقود زعبار",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.308,
+            36.303
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 47
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود زعبار"
+    },
+    {
+      "id": "osm-node-2983038600",
+      "coordinates": [
+        5.365177,
+        36.429533
+      ],
+      "osm": {
+        "id": "node/2983038600",
+        "name": "Station service Mekharif NAFTAL",
+        "name_ar": "محطة الوقود ميخاريف نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.365177,
+          36.429533
+        ]
+      },
+      "tariki": [
+        {
+          "id": "177",
+          "route_id": "753",
+          "name_fr": "Station de services Mekharif",
+          "name_ar": "محطة مخاريف للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.3652,
+            36.4295
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 4
+        },
+        {
+          "id": "13811",
+          "route_id": "1716",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات ميخاريف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.365,
+            36.429
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station service Mekharif NAFTAL",
+      "display_name_ar": "محطة الوقود ميخاريف نفطال"
+    },
+    {
+      "id": "osm-node-3024143238",
+      "coordinates": [
+        5.1997722,
+        36.1659305
+      ],
+      "osm": {
+        "id": "node/3024143238",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1997722,
+          36.1659305
+        ]
+      },
+      "tariki": [
+        {
+          "id": "502",
+          "route_id": "1576",
+          "name_fr": "Station de services frères Taarkoubet Ain Zada",
+          "name_ar": "محطة خدمات الاخوة تاعرقوبت بعين زادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.2,
+            36.166
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات الاخوة تاعرقوبت بعين زادة"
+    },
+    {
+      "id": "osm-node-3221624985",
+      "coordinates": [
+        5.4876942,
+        36.0930777
+      ],
+      "osm": {
+        "id": "node/3221624985",
+        "name": "Statoil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4876942,
+          36.0930777
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Statoil",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3722853215",
+      "coordinates": [
+        5.4180043,
+        36.1895689
+      ],
+      "osm": {
+        "id": "node/3722853215",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4180043,
+          36.1895689
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12068",
+          "route_id": "1970",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات الشيمينو",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.418,
+            36.1895
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات الشيمينو"
+    },
+    {
+      "id": "osm-node-3790679739",
+      "coordinates": [
+        5.4162459,
+        36.1808811
+      ],
+      "osm": {
+        "id": "node/3790679739",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4162459,
+          36.1808811
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10815",
+          "route_id": "1471",
+          "name_fr": "STATION DE SERVICES BEAU MARCHE",
+          "name_ar": "محطة البنزين بومرشي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.416,
+            36.181
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين بومرشي"
+    },
+    {
+      "id": "osm-node-3791593939",
+      "coordinates": [
+        5.0239601,
+        36.3505775
+      ],
+      "osm": {
+        "id": "node/3791593939",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0239601,
+          36.3505775
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3805760897",
+      "coordinates": [
+        5.0881892,
+        36.3324519
+      ],
+      "osm": {
+        "id": "node/3805760897",
+        "name": "Belghoul",
+        "name_ar": "بلغول",
+        "name_fr": "Belghoul",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0881892,
+          36.3324519
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4548",
+          "route_id": "2319",
+          "name_fr": "Station de services",
+          "name_ar": "محطة توزيغ الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.088,
+            36.332
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Belghoul",
+      "display_name_ar": "بلغول"
+    },
+    {
+      "id": "osm-node-3973296674",
+      "coordinates": [
+        5.1752118,
+        36.3367793
+      ],
+      "osm": {
+        "id": "node/3973296674",
+        "name": "Station service Harbili",
+        "name_ar": "محطة الكوثر حربيلي",
+        "name_fr": "Station service Harbili",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1752118,
+          36.3367793
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service Harbili",
+      "display_name_ar": "محطة الكوثر حربيلي"
+    },
+    {
+      "id": "osm-node-4077503826",
+      "coordinates": [
+        5.3937116,
+        36.1684811
+      ],
+      "osm": {
+        "id": "node/4077503826",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3937116,
+          36.1684811
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4370179620",
+      "coordinates": [
+        5.4061432,
+        36.1860728
+      ],
+      "osm": {
+        "id": "node/4370179620",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4061432,
+          36.1860728
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4370179625",
+      "coordinates": [
+        5.4065115,
+        36.1855644
+      ],
+      "osm": {
+        "id": "node/4370179625",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4065115,
+          36.1855644
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4456926689",
+      "coordinates": [
+        5.1308384,
+        36.3013807
+      ],
+      "osm": {
+        "id": "node/4456926689",
+        "name": "الثنية",
+        "name_ar": "الثنية",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          5.1308384,
+          36.3013807
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4435",
+          "route_id": "1598",
+          "name_fr": "Stations DES sevice Thniet Megssem",
+          "name_ar": "محطة الوقود بثنية المقسم بلدية بني وسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.131,
+            36.302
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 70
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "الثنية"
+    },
+    {
+      "id": "osm-node-4457715194",
+      "coordinates": [
+        5.131726,
+        36.3042134
+      ],
+      "osm": {
+        "id": "node/4457715194",
+        "name": "محطة الثنية",
+        "name_ar": "محطة الثنية",
+        "name_fr": "Nafatl",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.131726,
+          36.3042134
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nafatl",
+      "display_name_ar": "محطة الثنية"
+    },
+    {
+      "id": "osm-node-4555927495",
+      "coordinates": [
+        5.588178,
+        36.0378698
+      ],
+      "osm": {
+        "id": "node/4555927495",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.588178,
+          36.0378698
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3633",
+          "route_id": "1555",
+          "name_fr": "Station de services KOUSSA LAKHLOUFI",
+          "name_ar": "محطة متعدد الخدمات كوسة لخلوفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.589,
+            36.038
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 75
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-node-4555942793",
+      "coordinates": [
+        5.5837545,
+        36.0363582
+      ],
+      "osm": {
+        "id": "node/4555942793",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": "station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5837545,
+          36.0363582
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service",
+      "display_name_ar": "محطة وقود نفطال"
+    },
+    {
+      "id": "osm-node-4555974489",
+      "coordinates": [
+        5.4504056,
+        36.1436123
+      ],
+      "osm": {
+        "id": "node/4555974489",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4504056,
+          36.1436123
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4750384125",
+      "coordinates": [
+        5.3827107,
+        35.6774482
+      ],
+      "osm": {
+        "id": "node/4750384125",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3827107,
+          35.6774482
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4824306021",
+      "coordinates": [
+        5.6117056,
+        36.2830287
+      ],
+      "osm": {
+        "id": "node/4824306021",
+        "name": "Station Service Maiza",
+        "name_ar": "محطة الخدمات معيزة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6117056,
+          36.2830287
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4402",
+          "route_id": "8999",
+          "name_fr": "Station de services",
+          "name_ar": "محطة تزود بالوقود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.612,
+            36.283
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Maiza",
+      "display_name_ar": "محطة الخدمات معيزة"
+    },
+    {
+      "id": "osm-node-4862191877",
+      "coordinates": [
+        5.2961659,
+        35.9333099
+      ],
+      "osm": {
+        "id": "node/4862191877",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2961659,
+          35.9333099
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10292",
+          "route_id": "15122",
+          "name_fr": "STATIONT DE SERVICES NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.2962,
+            35.9333
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "osm-node-5145688323",
+      "coordinates": [
+        5.5074241,
+        36.0749634
+      ],
+      "osm": {
+        "id": "node/5145688323",
+        "name": "محطة الخدمات جواد",
+        "name_ar": "محطة الخدمات جواد",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5074241,
+          36.0749634
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطة الخدمات جواد",
+      "display_name_ar": "محطة الخدمات جواد"
+    },
+    {
+      "id": "osm-node-5308591326",
+      "coordinates": [
+        5.7494794,
+        36.3101037
+      ],
+      "osm": {
+        "id": "node/5308591326",
+        "name": "Gasmia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.7494794,
+          36.3101037
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13009",
+          "route_id": "1582",
+          "name_fr": "STATION ESSENCE GASEMIA ABDELMALEK",
+          "name_ar": "محطة الوقود قاسمية عبد المالك",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.75,
+            36.31
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Gasmia",
+      "display_name_ar": "محطة الوقود قاسمية عبد المالك"
+    },
+    {
+      "id": "osm-node-5488799023",
+      "coordinates": [
+        5.6846419,
+        36.1524195
+      ],
+      "osm": {
+        "id": "node/5488799023",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6846419,
+          36.1524195
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6665",
+          "route_id": "2939",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.685,
+            36.152
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-5584127628",
+      "coordinates": [
+        5.6442588,
+        36.4569138
+      ],
+      "osm": {
+        "id": "node/5584127628",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.6442588,
+          36.4569138
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-node-5622288721",
+      "coordinates": [
+        5.1996366,
+        36.117097
+      ],
+      "osm": {
+        "id": "node/5622288721",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.1996366,
+          36.117097
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5926937485",
+      "coordinates": [
+        5.8307834,
+        36.1304335
+      ],
+      "osm": {
+        "id": "node/5926937485",
+        "name": "محطة خدمات زراري +رقابة تقنية للسيارات",
+        "name_ar": "محطة خدمات زراري +رقابة تقنية للسيارات",
+        "name_fr": "Station service Zerari + contrôle technique des voitures",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.8307834,
+          36.1304335
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6761",
+          "route_id": "11604",
+          "name_fr": "Station de services ZERARI",
+          "name_ar": "محطة زراري",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.831,
+            36.131
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 66
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Zerari + contrôle technique des voitures",
+      "display_name_ar": "محطة خدمات زراري +رقابة تقنية للسيارات"
+    },
+    {
+      "id": "osm-node-6168326590",
+      "coordinates": [
+        5.3482415,
+        35.9302875
+      ],
+      "osm": {
+        "id": "node/6168326590",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station service KAALOUL",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3482415,
+          35.9302875
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service KAALOUL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6539439250",
+      "coordinates": [
+        5.4142588,
+        36.3744504
+      ],
+      "osm": {
+        "id": "node/6539439250",
+        "name": "Station service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station service NAFTAL محطة الوقود نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4142588,
+          36.3744504
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3540",
+          "route_id": "7497",
+          "name_fr": "Station de services KHANTER ABDELOUAHEB",
+          "name_ar": "محطة خدمات خنتر عبد الوهاب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.4141,
+            36.3745
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 15
+        },
+        {
+          "id": "10174",
+          "route_id": "7701",
+          "name_fr": "Station de services KHANTER",
+          "name_ar": "محطة متعددة الخدمات خنتر عبد الوهاب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.414,
+            36.374
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Nafatl",
+      "display_name_ar": "Station service NAFTAL محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-6539733578",
+      "coordinates": [
+        5.410894,
+        36.2919304
+      ],
+      "osm": {
+        "id": "node/6539733578",
+        "name": "Station service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station service NAFTAL محطة الوقود نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.410894,
+          36.2919304
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nafatl",
+      "display_name_ar": "Station service NAFTAL محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-6540167774",
+      "coordinates": [
+        5.4106821,
+        36.2796813
+      ],
+      "osm": {
+        "id": "node/6540167774",
+        "name": "Station service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station service NAFTAL محطة الوقود نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4106821,
+          36.2796813
+        ]
+      },
+      "tariki": [
+        {
+          "id": "269",
+          "route_id": "975",
+          "name_fr": "Station de servicesKechichi",
+          "name_ar": "محطة خدمات قشيشي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.411,
+            36.279
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 81
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Nafatl",
+      "display_name_ar": "Station service NAFTAL محطة الوقود نفطال"
+    },
+    {
+      "id": "osm-node-6564887202",
+      "coordinates": [
+        5.2646777,
+        36.1484912
+      ],
+      "osm": {
+        "id": "node/6564887202",
+        "name": "Station Service Ain Zada NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2646777,
+          36.1484912
+        ]
+      },
+      "tariki": [
+        {
+          "id": "253",
+          "route_id": "953",
+          "name_fr": "Station de services BABOUR",
+          "name_ar": "محطة بابور",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.2647,
+            36.1484
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 10
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Ain Zada NAFTAL",
+      "display_name_ar": "محطة بابور"
+    },
+    {
+      "id": "osm-node-6564952661",
+      "coordinates": [
+        5.2663392,
+        36.1541546
+      ],
+      "osm": {
+        "id": "node/6564952661",
+        "name": "Station Service Ain Zada NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.2663392,
+          36.1541546
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Ain Zada NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-663879968",
+      "coordinates": [
+        5.414804,
+        36.1809578
+      ],
+      "osm": {
+        "id": "node/663879968",
+        "name": "Zitouni",
+        "name_ar": "زيتوني",
+        "name_fr": "Zitouni",
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.414804,
+          36.1809578
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10811",
+          "route_id": "1471",
+          "name_fr": "BUREAU TABAC",
+          "name_ar": "محل تبغ",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.415,
+            36.181
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 18
+        },
+        {
+          "id": "10835",
+          "route_id": "15496",
+          "name_fr": "STATION DE SERVICES ZITOUNI",
+          "name_ar": "محطة زيتوني",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.4144,
+            36.181
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Zitouni",
+      "display_name_ar": "زيتوني"
+    },
+    {
+      "id": "osm-node-951274269",
+      "coordinates": [
+        4.9116129,
+        36.4141511
+      ],
+      "osm": {
+        "id": "node/951274269",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          4.9116129,
+          36.4141511
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2778",
+          "route_id": "863",
+          "name_fr": "Station de services KAZZAR BOUZID",
+          "name_ar": "كزار بوزيد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.912,
+            36.414
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "كزار بوزيد"
+    },
+    {
+      "id": "osm-node-959434971",
+      "coordinates": [
+        4.8675637,
+        36.4373162
+      ],
+      "osm": {
+        "id": "node/959434971",
+        "name": "bichebiche",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          4.8675637,
+          36.4373162
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3891",
+          "route_id": "2356",
+          "name_fr": "Station de services Latache Mohamed Cherif",
+          "name_ar": "محطة الوقود لطاش محمد الشريف",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.867,
+            36.437
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "bichebiche",
+      "display_name_ar": "محطة الوقود لطاش محمد الشريف"
+    },
+    {
+      "id": "osm-node-9761809983",
+      "coordinates": [
+        5.5968475,
+        35.8632915
+      ],
+      "osm": {
+        "id": "node/9761809983",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5968475,
+          35.8632915
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9772324024",
+      "coordinates": [
+        5.4971123,
+        35.8261994
+      ],
+      "osm": {
+        "id": "node/9772324024",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4971123,
+          35.8261994
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-9792104262",
+      "coordinates": [
+        5.5381876,
+        35.9450893
+      ],
+      "osm": {
+        "id": "node/9792104262",
+        "name": "لحسن باروشي",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.5381876,
+          35.9450893
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3655",
+          "route_id": "1569",
+          "name_fr": "Station de services Berouchi Lahcen",
+          "name_ar": "محطة متعددة الخدمات بروشي لحسن",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.538,
+            35.945
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 20
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "لحسن باروشي",
+      "display_name_ar": "محطة متعددة الخدمات بروشي لحسن"
+    },
+    {
+      "id": "osm-node-9803706098",
+      "coordinates": [
+        5.3370514,
+        36.0318068
+      ],
+      "osm": {
+        "id": "node/9803706098",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "كبيش",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3370514,
+          36.0318068
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12626",
+          "route_id": "17265",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات الإخوة كبيش",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.337,
+            36.0321
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "كبيش",
+      "display_name_ar": "محطة الخدمات الإخوة كبيش"
+    },
+    {
+      "id": "osm-way-1093364353",
+      "coordinates": [
+        5.3341841500000005,
+        36.41136565
+      ],
+      "osm": {
+        "id": "way/1093364353",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3341841500000005,
+          36.41136565
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-257565720",
+      "coordinates": [
+        5.81608415,
+        35.97588705
+      ],
+      "osm": {
+        "id": "way/257565720",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.81608415,
+          35.97588705
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3257",
+          "route_id": "7055",
+          "name_fr": "Station de services Hamam Sokhna",
+          "name_ar": "محطة متعددة الخدمات حمام السخنة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.816,
+            35.976
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-257845862",
+      "coordinates": [
+        5.2871058,
+        35.84629395
+      ],
+      "osm": {
+        "id": "way/257845862",
+        "name": "الأخ كباب",
+        "name_ar": "الأخ كباب",
+        "name_fr": "Frère Kebbab",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.2871058,
+          35.84629395
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6410",
+          "route_id": "612",
+          "name_fr": "Station de services Kebeb",
+          "name_ar": "محطة كباب",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.2871,
+            35.8463
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Frère Kebbab",
+      "display_name_ar": "الأخ كباب"
+    },
+    {
+      "id": "osm-way-258580832",
+      "coordinates": [
+        5.50614165,
+        35.82971455
+      ],
+      "osm": {
+        "id": "way/258580832",
+        "name": "Station service",
+        "name_ar": "محطة الوقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.50614165,
+          35.82971455
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-way-277170478",
+      "coordinates": [
+        5.4988515499999995,
+        36.177826350000004
+      ],
+      "osm": {
+        "id": "way/277170478",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4988515499999995,
+          36.177826350000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-299213789",
+      "coordinates": [
+        5.44709645,
+        36.1829058
+      ],
+      "osm": {
+        "id": "way/299213789",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.44709645,
+          36.1829058
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9269",
+          "route_id": "1970",
+          "name_fr": "Station de services El-Hassi",
+          "name_ar": "محطة الخدمات الحاسي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.4476,
+            36.1825
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 64
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-299712749",
+      "coordinates": [
+        5.3851214,
+        36.1889238
+      ],
+      "osm": {
+        "id": "way/299712749",
+        "name": "Fouara",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.3851214,
+          36.1889238
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9273",
+          "route_id": "1970",
+          "name_fr": "Station de services El-Fouara",
+          "name_ar": "محطة الخدمات الفوارة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.3851,
+            36.1889
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 3
+        },
+        {
+          "id": "10847",
+          "route_id": "15514",
+          "name_fr": "STATION ESSENCE",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3851,
+            36.1889
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Fouara",
+      "display_name_ar": "محطة الخدمات الفوارة"
+    },
+    {
+      "id": "osm-way-317468329",
+      "coordinates": [
+        5.510052249999999,
+        35.80262645
+      ],
+      "osm": {
+        "id": "way/317468329",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.510052249999999,
+          35.80262645
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nafatl",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-way-375375816",
+      "coordinates": [
+        5.3974855,
+        36.22964845
+      ],
+      "osm": {
+        "id": "way/375375816",
+        "name": "Station Service Cheikh Laifa",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.3974855,
+          36.22964845
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5802",
+          "route_id": "10660",
+          "name_fr": "Station de services Chikh Laifa",
+          "name_ar": "محطة البنزين بحي الشيخ العيفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3982,
+            36.2303
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 97
+        },
+        {
+          "id": "9495",
+          "route_id": "1969",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.3971,
+            36.2295
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service Cheikh Laifa",
+      "display_name_ar": "محطة البنزين بحي الشيخ العيفة"
+    },
+    {
+      "id": "osm-way-378043957",
+      "coordinates": [
+        5.4035738,
+        36.2022953
+      ],
+      "osm": {
+        "id": "way/378043957",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4035738,
+          36.2022953
+        ]
+      },
+      "tariki": [
+        {
+          "id": "11047",
+          "route_id": "1969",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.4035,
+            36.2022
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 12
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "osm-way-434818209",
+      "coordinates": [
+        5.30576945,
+        36.1832449
+      ],
+      "osm": {
+        "id": "way/434818209",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": "off",
+        "coordinates": [
+          5.30576945,
+          36.1832449
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-438775242",
+      "coordinates": [
+        5.40080745,
+        36.18892
+      ],
+      "osm": {
+        "id": "way/438775242",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.40080745,
+          36.18892
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-441397152",
+      "coordinates": [
+        5.4394107,
+        35.95578715
+      ],
+      "osm": {
+        "id": "way/441397152",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4394107,
+          35.95578715
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3640",
+          "route_id": "2127",
+          "name_fr": "Station de services Chouar saad",
+          "name_ar": "محطة بنزين شوار ساعد",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.44,
+            35.955
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 102
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة بنزين شوار ساعد"
+    },
+    {
+      "id": "osm-way-441397154",
+      "coordinates": [
+        5.44134535,
+        35.954919149999995
+      ],
+      "osm": {
+        "id": "way/441397154",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.44134535,
+          35.954919149999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3636",
+          "route_id": "2127",
+          "name_fr": "Station de services Rebih Mohamed",
+          "name_ar": "محطة بنزين ربيح محمد",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.441,
+            35.955
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 32
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service",
+      "display_name_ar": "محطة بنزين ربيح محمد"
+    },
+    {
+      "id": "osm-way-441397155",
+      "coordinates": [
+        5.4105963,
+        35.973664549999995
+      ],
+      "osm": {
+        "id": "way/441397155",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.4105963,
+          35.973664549999995
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-477000677",
+      "coordinates": [
+        5.50165095,
+        36.36298185
+      ],
+      "osm": {
+        "id": "way/477000677",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.50165095,
+          36.36298185
+        ]
+      },
+      "tariki": [
+        {
+          "id": "500",
+          "route_id": "1567",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.5014,
+            36.3631
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 26
+        },
+        {
+          "id": "6456",
+          "route_id": "1606",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.5014,
+            36.3631
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-way-802071742",
+      "coordinates": [
+        5.3934382,
+        36.1900443
+      ],
+      "osm": {
+        "id": "way/802071742",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          5.3934382,
+          36.1900443
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-815034406",
+      "coordinates": [
+        5.0002298,
+        36.50096565
+      ],
+      "osm": {
+        "id": "way/815034406",
+        "name": "Station essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.0002298,
+          36.50096565
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station essence",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12066",
+      "coordinates": [
+        5.415,
+        36.1899
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12066",
+          "route_id": "1970",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات حي الشيمينو",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.415,
+            36.1899
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة الخدمات حي الشيمينو",
+      "display_name_ar": "محطة الخدمات حي الشيمينو"
+    },
+    {
+      "id": "tariki-12070",
+      "coordinates": [
+        5.428,
+        36.1978
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12070",
+          "route_id": "16502",
+          "name_fr": null,
+          "name_ar": "محطة حي طنجة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.428,
+            36.1978
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة حي طنجة",
+      "display_name_ar": "محطة حي طنجة"
+    },
+    {
+      "id": "tariki-12240",
+      "coordinates": [
+        5.6083,
+        36.2842
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12240",
+          "route_id": "16691",
+          "name_fr": "station de services maiza nacir",
+          "name_ar": "محطة خدمات معيزة نصير",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.6083,
+            36.2842
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services maiza nacir",
+      "display_name_ar": "محطة خدمات معيزة نصير"
+    },
+    {
+      "id": "tariki-132",
+      "coordinates": [
+        5.54,
+        36.487
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "132",
+          "route_id": "620",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.54,
+            36.487
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "tariki-1345",
+      "coordinates": [
+        4.969,
+        36.501
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1345",
+          "route_id": "647",
+          "name_fr": "Station de services Tizi Neblat Kadou",
+          "name_ar": "محطة خدمات تيزي نبلاط قدو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            4.969,
+            36.501
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Tizi Neblat Kadou",
+      "display_name_ar": "محطة خدمات تيزي نبلاط قدو"
+    },
+    {
+      "id": "tariki-14285",
+      "coordinates": [
+        5.279,
+        36.272
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14285",
+          "route_id": "21441",
+          "name_fr": "STATION SERVICE NAFTAL",
+          "name_ar": "محطة وقود نافطال بخراطة مركز",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.279,
+            36.272
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE NAFTAL",
+      "display_name_ar": "محطة وقود نافطال بخراطة مركز"
+    },
+    {
+      "id": "tariki-166",
+      "coordinates": [
+        5.503,
+        35.862
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "166",
+          "route_id": "705",
+          "name_fr": "Station de services frères Bensoucha",
+          "name_ar": "محطة الخدمات العرش الاخوة بن صوشة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.503,
+            35.862
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services frères Bensoucha",
+      "display_name_ar": "محطة الخدمات العرش الاخوة بن صوشة"
+    },
+    {
+      "id": "tariki-262",
+      "coordinates": [
+        5.412,
+        36.291
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "262",
+          "route_id": "975",
+          "name_fr": "Station de services Slayem",
+          "name_ar": "محطة خدمات سلايم",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.412,
+            36.291
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Slayem",
+      "display_name_ar": "محطة خدمات سلايم"
+    },
+    {
+      "id": "tariki-270",
+      "coordinates": [
+        5.658,
+        35.886
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "270",
+          "route_id": "979",
+          "name_fr": "Station de services Belhout",
+          "name_ar": "محطة الخدمات بلحوت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.658,
+            35.886
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Belhout",
+      "display_name_ar": "محطة الخدمات بلحوت"
+    },
+    {
+      "id": "tariki-279",
+      "coordinates": [
+        4.883,
+        36.431
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "279",
+          "route_id": "989",
+          "name_fr": "Station de services Lateche",
+          "name_ar": "محطة الخدمات لتاش",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.883,
+            36.431
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Lateche",
+      "display_name_ar": "محطة الخدمات لتاش"
+    },
+    {
+      "id": "tariki-2832",
+      "coordinates": [
+        5.143,
+        36.523
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2832",
+          "route_id": "1545",
+          "name_fr": "Station de services TRARISTE",
+          "name_ar": "محطة خدمات تراريست",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.143,
+            36.523
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services TRARISTE",
+      "display_name_ar": "محطة خدمات تراريست"
+    },
+    {
+      "id": "tariki-2933",
+      "coordinates": [
+        5.535,
+        36.257
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2933",
+          "route_id": "6540",
+          "name_fr": "Station de services BOUROUHE",
+          "name_ar": "محطة بوروح مشتة اولاد عاشور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.535,
+            36.257
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOUROUHE",
+      "display_name_ar": "محطة بوروح مشتة اولاد عاشور"
+    },
+    {
+      "id": "tariki-3605",
+      "coordinates": [
+        5.645,
+        36.458
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3605",
+          "route_id": "1901",
+          "name_fr": "Station de services Beni Azziz",
+          "name_ar": "محطة الخدمات ببني عزيز",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.645,
+            36.458
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Beni Azziz",
+      "display_name_ar": "محطة الخدمات ببني عزيز"
+    },
+    {
+      "id": "tariki-3617",
+      "coordinates": [
+        5.532,
+        35.928
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3617",
+          "route_id": "1569",
+          "name_fr": "Station de services  LATRECHE EL BACHIR",
+          "name_ar": "محطة متعددة الخدمات لطرش البشير",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.532,
+            35.928
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  LATRECHE EL BACHIR",
+      "display_name_ar": "محطة متعددة الخدمات لطرش البشير"
+    },
+    {
+      "id": "tariki-3643",
+      "coordinates": [
+        5.402,
+        35.978
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3643",
+          "route_id": "2127",
+          "name_fr": "Station de services Ziani Ali",
+          "name_ar": "محطة بنزين زياني علي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.402,
+            35.978
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ziani Ali",
+      "display_name_ar": "محطة بنزين زياني علي"
+    },
+    {
+      "id": "tariki-3815",
+      "coordinates": [
+        5.501,
+        35.816
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3815",
+          "route_id": "705",
+          "name_fr": "Station de services BENCHOULA",
+          "name_ar": "محطة الخدمات بن شولة عين أزال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.501,
+            35.816
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BENCHOULA",
+      "display_name_ar": "محطة الخدمات بن شولة عين أزال"
+    },
+    {
+      "id": "tariki-4079",
+      "coordinates": [
+        5.1,
+        36.434
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4079",
+          "route_id": "2117",
+          "name_fr": "Station de services Gachetal et ses frères",
+          "name_ar": "محطة الوقود قشطال و إخوانه",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.1,
+            36.434
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Gachetal et ses frères",
+      "display_name_ar": "محطة الوقود قشطال و إخوانه"
+    },
+    {
+      "id": "tariki-4147",
+      "coordinates": [
+        5.942,
+        35.902
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4147",
+          "route_id": "8516",
+          "name_fr": "Station de services AICHOUR",
+          "name_ar": "محطة عيشور",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.942,
+            35.902
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AICHOUR",
+      "display_name_ar": "محطة عيشور"
+    },
+    {
+      "id": "tariki-4172",
+      "coordinates": [
+        5.965,
+        35.956
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4172",
+          "route_id": "8576",
+          "name_fr": "Station de services MAHROUCH ET BILFAN",
+          "name_ar": "محطة محروش و بيلفان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.965,
+            35.956
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services MAHROUCH ET BILFAN",
+      "display_name_ar": "محطة محروش و بيلفان"
+    },
+    {
+      "id": "tariki-4567",
+      "coordinates": [
+        5.296,
+        35.932
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4567",
+          "route_id": "9208",
+          "name_fr": "Station de services naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.296,
+            35.932
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-504",
+      "coordinates": [
+        5.3856,
+        35.6744
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "504",
+          "route_id": "632",
+          "name_fr": "Station de services Dekiche Zohra",
+          "name_ar": "محطة خدمات دقيش الزهرة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.3856,
+            35.6744
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Dekiche Zohra",
+      "display_name_ar": "محطة خدمات دقيش الزهرة"
+    },
+    {
+      "id": "tariki-505",
+      "coordinates": [
+        5.204,
+        36.125
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "505",
+          "route_id": "1576",
+          "name_fr": "Station de services frères Bouchachia Melha",
+          "name_ar": "محطة خدمات الاخوة بوشاشية بالمالحة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.204,
+            36.125
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services frères Bouchachia Melha",
+      "display_name_ar": "محطة خدمات الاخوة بوشاشية بالمالحة"
+    },
+    {
+      "id": "tariki-576",
+      "coordinates": [
+        5.096,
+        36.495
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "576",
+          "route_id": "1884",
+          "name_fr": "station de services ARAAR",
+          "name_ar": "محطة متعددة الخدمات عرعار",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            5.096,
+            36.495
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services ARAAR",
+      "display_name_ar": "محطة متعددة الخدمات عرعار"
+    },
+    {
+      "id": "tariki-577",
+      "coordinates": [
+        5.113,
+        36.489
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "577",
+          "route_id": "1884",
+          "name_fr": "station de services BOUADJIL",
+          "name_ar": "محطة متعددة الخدمات بوعجيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.113,
+            36.489
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services BOUADJIL",
+      "display_name_ar": "محطة متعددة الخدمات بوعجيل"
+    },
+    {
+      "id": "tariki-647",
+      "coordinates": [
+        5.169,
+        36.409
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "647",
+          "route_id": "2117",
+          "name_fr": "Station de services BEN CHOUDAR ET SES FRERES",
+          "name_ar": "محطة الوقود بن شودار و إخوانه",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.169,
+            36.409
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BEN CHOUDAR ET SES FRERES",
+      "display_name_ar": "محطة الوقود بن شودار و إخوانه"
+    },
+    {
+      "id": "tariki-6675",
+      "coordinates": [
+        5.7009,
+        36.1324
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6675",
+          "route_id": "2959",
+          "name_fr": "Station de services Zone Industriel",
+          "name_ar": "محطة خدما ت المنطقة الصناعية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.7009,
+            36.1324
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Zone Industriel",
+      "display_name_ar": "محطة خدما ت المنطقة الصناعية"
+    },
+    {
+      "id": "tariki-8306",
+      "coordinates": [
+        4.996,
+        36.439
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8306",
+          "route_id": "13288",
+          "name_fr": null,
+          "name_ar": null,
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            4.996,
+            36.439
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-942",
+      "coordinates": [
+        5.722,
+        36.141
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "942",
+          "route_id": "2939",
+          "name_fr": "Station de services Dedjla",
+          "name_ar": "محطة خدمات دجلة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.722,
+            36.141
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 19,
+          "wilaya_fr": "Sétif",
+          "wilaya_ar": "سطيف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Dedjla",
+      "display_name_ar": "محطة خدمات دجلة"
+    }
+  ]
+}

@@ -1,0 +1,5038 @@
+{
+  "schema_version": 1,
+  "batch_id": "stations-full-2026-08-27-06",
+  "usage": "advisory-semantic-triage-only",
+  "items": [
+    {
+      "candidate_id": "osm-node-1917587128",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "node/1917587128",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6664",
+          "name_fr": "Station de services entre ouest de la ville",
+          "name_ar": "محطة خدمات المدخل الغربي للمدينة",
+          "services": [
+            "fuel"
+          ]
+        },
+        {
+          "source_id": "12332",
+          "name_fr": "station de services hotel elrif",
+          "name_ar": "محطة خدمات فندق الريف",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2983038600",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "node/2983038600",
+        "name": "Station service Mekharif NAFTAL",
+        "name_ar": "محطة الوقود ميخاريف نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "177",
+          "name_fr": "Station de services Mekharif",
+          "name_ar": "محطة مخاريف للخدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ]
+        },
+        {
+          "source_id": "13811",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات ميخاريف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-6539439250",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "node/6539439250",
+        "name": "Station service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station service NAFTAL محطة الوقود نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3540",
+          "name_fr": "Station de services KHANTER ABDELOUAHEB",
+          "name_ar": "محطة خدمات خنتر عبد الوهاب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        },
+        {
+          "source_id": "10174",
+          "name_fr": "Station de services KHANTER",
+          "name_ar": "محطة متعددة الخدمات خنتر عبد الوهاب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-663879968",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "node/663879968",
+        "name": "Zitouni",
+        "name_ar": "زيتوني",
+        "name_fr": "Zitouni",
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10811",
+          "name_fr": "BUREAU TABAC",
+          "name_ar": "محل تبغ",
+          "services": [
+            "fuel"
+          ]
+        },
+        {
+          "source_id": "10835",
+          "name_fr": "STATION DE SERVICES ZITOUNI",
+          "name_ar": "محطة زيتوني",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-299712749",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "way/299712749",
+        "name": "Fouara",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9273",
+          "name_fr": "Station de services El-Fouara",
+          "name_ar": "محطة الخدمات الفوارة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        },
+        {
+          "source_id": "10847",
+          "name_fr": "STATION ESSENCE",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-375375816",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "way/375375816",
+        "name": "Station Service Cheikh Laifa",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5802",
+          "name_fr": "Station de services Chikh Laifa",
+          "name_ar": "محطة البنزين بحي الشيخ العيفة",
+          "services": [
+            "fuel"
+          ]
+        },
+        {
+          "source_id": "9495",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-477000677",
+      "wilaya_code": 19,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "way/477000677",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "500",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        },
+        {
+          "source_id": "6456",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12066",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12066",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات حي الشيمينو",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12070",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12070",
+          "name_fr": null,
+          "name_ar": "محطة حي طنجة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12240",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12240",
+          "name_fr": "station de services maiza nacir",
+          "name_ar": "محطة خدمات معيزة نصير",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-132",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "132",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-1345",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "1345",
+          "name_fr": "Station de services Tizi Neblat Kadou",
+          "name_ar": "محطة خدمات تيزي نبلاط قدو",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14285",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14285",
+          "name_fr": "STATION SERVICE NAFTAL",
+          "name_ar": "محطة وقود نافطال بخراطة مركز",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-166",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "166",
+          "name_fr": "Station de services frères Bensoucha",
+          "name_ar": "محطة الخدمات العرش الاخوة بن صوشة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-262",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "262",
+          "name_fr": "Station de services Slayem",
+          "name_ar": "محطة خدمات سلايم",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-270",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "270",
+          "name_fr": "Station de services Belhout",
+          "name_ar": "محطة الخدمات بلحوت",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-279",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "279",
+          "name_fr": "Station de services Lateche",
+          "name_ar": "محطة الخدمات لتاش",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-2832",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "2832",
+          "name_fr": "Station de services TRARISTE",
+          "name_ar": "محطة خدمات تراريست",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-2933",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "2933",
+          "name_fr": "Station de services BOUROUHE",
+          "name_ar": "محطة بوروح مشتة اولاد عاشور",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3605",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3605",
+          "name_fr": "Station de services Beni Azziz",
+          "name_ar": "محطة الخدمات ببني عزيز",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3617",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3617",
+          "name_fr": "Station de services  LATRECHE EL BACHIR",
+          "name_ar": "محطة متعددة الخدمات لطرش البشير",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3643",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3643",
+          "name_fr": "Station de services Ziani Ali",
+          "name_ar": "محطة بنزين زياني علي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3815",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3815",
+          "name_fr": "Station de services BENCHOULA",
+          "name_ar": "محطة الخدمات بن شولة عين أزال",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-4079",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "4079",
+          "name_fr": "Station de services Gachetal et ses frères",
+          "name_ar": "محطة الوقود قشطال و إخوانه",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-4147",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "4147",
+          "name_fr": "Station de services AICHOUR",
+          "name_ar": "محطة عيشور",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-4172",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "4172",
+          "name_fr": "Station de services MAHROUCH ET BILFAN",
+          "name_ar": "محطة محروش و بيلفان",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-4567",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "4567",
+          "name_fr": "Station de services naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-504",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "504",
+          "name_fr": "Station de services Dekiche Zohra",
+          "name_ar": "محطة خدمات دقيش الزهرة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-505",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "505",
+          "name_fr": "Station de services frères Bouchachia Melha",
+          "name_ar": "محطة خدمات الاخوة بوشاشية بالمالحة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-576",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "576",
+          "name_fr": "station de services ARAAR",
+          "name_ar": "محطة متعددة الخدمات عرعار",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-577",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "577",
+          "name_fr": "station de services BOUADJIL",
+          "name_ar": "محطة متعددة الخدمات بوعجيل",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-647",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "647",
+          "name_fr": "Station de services BEN CHOUDAR ET SES FRERES",
+          "name_ar": "محطة الوقود بن شودار و إخوانه",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-6675",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "6675",
+          "name_fr": "Station de services Zone Industriel",
+          "name_ar": "محطة خدما ت المنطقة الصناعية",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-8306",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "8306",
+          "name_fr": null,
+          "name_ar": null,
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-942",
+      "wilaya_code": 19,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "942",
+          "name_fr": "Station de services Dedjla",
+          "name_ar": "محطة خدمات دجلة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-11579625071",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/11579625071",
+        "name": "محطة الوقود",
+        "name_ar": null,
+        "name_fr": "naftal",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3495",
+          "name_fr": "Station de services BENI FOUDA",
+          "name_ar": "محطة سيرغاز تابعة لبلدية بني فودة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1340070906",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1340070906",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "146",
+          "name_fr": "Station de services Lahwa Abd Rahmen",
+          "name_ar": "محطة الوقود بقرية لهوى عبد الرحمان",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1917541882",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1917541882",
+        "name": "Station Baliti",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6668",
+          "name_fr": "Station de services BLITY",
+          "name_ar": "محطة خدمات بليطي",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2504410083",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2504410083",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "233",
+          "name_fr": "Station de services Loukia Mustapha",
+          "name_ar": "محطة توزيع الوقود لوكية مصطفى",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2504410085",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2504410085",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "125",
+          "name_fr": "Station de services Maeyouf",
+          "name_ar": "محطة خدمات معيوف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2592717355",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2592717355",
+        "name": "Station service Guenzet",
+        "name_ar": "محطة وقود",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3750",
+          "name_fr": "Station de servicesNAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2935638998",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2935638998",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9266",
+          "name_fr": "Station de services Bab Biskra",
+          "name_ar": "محطة الخدمات باب بسكرة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2974078868",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2974078868",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "278",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2979044992",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2979044992",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "2830",
+          "name_fr": "Station de services ZAEBAR",
+          "name_ar": "محطة الوقود زعبار",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3024143238",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3024143238",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "502",
+          "name_fr": "Station de services frères Taarkoubet Ain Zada",
+          "name_ar": "محطة خدمات الاخوة تاعرقوبت بعين زادة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3722853215",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3722853215",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "12068",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات الشيمينو",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3790679739",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3790679739",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10815",
+          "name_fr": "STATION DE SERVICES BEAU MARCHE",
+          "name_ar": "محطة البنزين بومرشي",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3805760897",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3805760897",
+        "name": "Belghoul",
+        "name_ar": "بلغول",
+        "name_fr": "Belghoul",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "4548",
+          "name_fr": "Station de services",
+          "name_ar": "محطة توزيغ الوقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4456926689",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/4456926689",
+        "name": "الثنية",
+        "name_ar": "الثنية",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "4435",
+          "name_fr": "Stations DES sevice Thniet Megssem",
+          "name_ar": "محطة الوقود بثنية المقسم بلدية بني وسين",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4555927495",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/4555927495",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3633",
+          "name_fr": "Station de services KOUSSA LAKHLOUFI",
+          "name_ar": "محطة متعدد الخدمات كوسة لخلوفي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4824306021",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/4824306021",
+        "name": "Station Service Maiza",
+        "name_ar": "محطة الخدمات معيزة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "4402",
+          "name_fr": "Station de services",
+          "name_ar": "محطة تزود بالوقود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4862191877",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/4862191877",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10292",
+          "name_fr": "STATIONT DE SERVICES NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5308591326",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5308591326",
+        "name": "Gasmia",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "13009",
+          "name_fr": "STATION ESSENCE GASEMIA ABDELMALEK",
+          "name_ar": "محطة الوقود قاسمية عبد المالك",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5488799023",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5488799023",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6665",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5926937485",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5926937485",
+        "name": "محطة خدمات زراري +رقابة تقنية للسيارات",
+        "name_ar": "محطة خدمات زراري +رقابة تقنية للسيارات",
+        "name_fr": "Station service Zerari + contrôle technique des voitures",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6761",
+          "name_fr": "Station de services ZERARI",
+          "name_ar": "محطة زراري",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-6540167774",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/6540167774",
+        "name": "Station service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station service NAFTAL محطة الوقود نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "269",
+          "name_fr": "Station de servicesKechichi",
+          "name_ar": "محطة خدمات قشيشي",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-6564887202",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/6564887202",
+        "name": "Station Service Ain Zada NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "253",
+          "name_fr": "Station de services BABOUR",
+          "name_ar": "محطة بابور",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-951274269",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/951274269",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "2778",
+          "name_fr": "Station de services KAZZAR BOUZID",
+          "name_ar": "كزار بوزيد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-959434971",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/959434971",
+        "name": "bichebiche",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3891",
+          "name_fr": "Station de services Latache Mohamed Cherif",
+          "name_ar": "محطة الوقود لطاش محمد الشريف",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-9792104262",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/9792104262",
+        "name": "لحسن باروشي",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3655",
+          "name_fr": "Station de services Berouchi Lahcen",
+          "name_ar": "محطة متعددة الخدمات بروشي لحسن",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-9803706098",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/9803706098",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "كبيش",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "12626",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات الإخوة كبيش",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-257565720",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/257565720",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3257",
+          "name_fr": "Station de services Hamam Sokhna",
+          "name_ar": "محطة متعددة الخدمات حمام السخنة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-257845862",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/257845862",
+        "name": "الأخ كباب",
+        "name_ar": "الأخ كباب",
+        "name_fr": "Frère Kebbab",
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6410",
+          "name_fr": "Station de services Kebeb",
+          "name_ar": "محطة كباب",
+          "services": [
+            "fuel",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-299213789",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/299213789",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9269",
+          "name_fr": "Station de services El-Hassi",
+          "name_ar": "محطة الخدمات الحاسي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-378043957",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/378043957",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "11047",
+          "name_fr": "STATION DE SERVICES",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-441397152",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/441397152",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3640",
+          "name_fr": "Station de services Chouar saad",
+          "name_ar": "محطة بنزين شوار ساعد",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-441397154",
+      "wilaya_code": 19,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/441397154",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3636",
+          "name_fr": "Station de services Rebih Mohamed",
+          "name_ar": "محطة بنزين ربيح محمد",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-10629346342",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/10629346342",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-12759386873",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/12759386873",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-12864156001",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/12864156001",
+        "name": null,
+        "name_ar": "محطة وقود سيرغاز بن صوشة",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-12864162701",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/12864162701",
+        "name": null,
+        "name_ar": "محطة وقود ذياب",
+        "name_fr": "Station Service DIAB",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1340070908",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1340070908",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1917586933",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1917586933",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1917634512",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1917634512",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2442085679",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2442085679",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2504392711",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2504392711",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2504410082",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2504410082",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station service",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2570573903",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2570573903",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2971262371",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2971262371",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3221624985",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/3221624985",
+        "name": "Statoil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3791593939",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/3791593939",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3973296674",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/3973296674",
+        "name": "Station service Harbili",
+        "name_ar": "محطة الكوثر حربيلي",
+        "name_fr": "Station service Harbili",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4077503826",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4077503826",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4370179620",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4370179620",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4370179625",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4370179625",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4457715194",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4457715194",
+        "name": "محطة الثنية",
+        "name_ar": "محطة الثنية",
+        "name_fr": "Nafatl",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4555942793",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4555942793",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": "station service",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4555974489",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4555974489",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4750384125",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4750384125",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5145688323",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/5145688323",
+        "name": "محطة الخدمات جواد",
+        "name_ar": "محطة الخدمات جواد",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5584127628",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/5584127628",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Station service",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5622288721",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/5622288721",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-6168326590",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/6168326590",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Station service KAALOUL",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-6539733578",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/6539733578",
+        "name": "Station service NAFTAL محطة الوقود نفطال",
+        "name_ar": "Station service NAFTAL محطة الوقود نفطال",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-6564952661",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/6564952661",
+        "name": "Station Service Ain Zada NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-9761809983",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/9761809983",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-9772324024",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/9772324024",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1093364353",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1093364353",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-258580832",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/258580832",
+        "name": "Station service",
+        "name_ar": "محطة الوقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-277170478",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/277170478",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-317468329",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/317468329",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": "Nafatl",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-434818209",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/434818209",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-438775242",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/438775242",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-441397155",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/441397155",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-802071742",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/802071742",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-815034406",
+      "wilaya_code": 19,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/815034406",
+        "name": "Station essence",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12778",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12778",
+          "name_fr": "sabah",
+          "name_ar": "منطقة الصباح",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12789",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12789",
+          "name_fr": "//",
+          "name_ar": "محطة الخدمات لعزيزي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-13992",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "13992",
+          "name_fr": "STATION DAGHAOUI SLIMEN",
+          "name_ar": "محطة درقاوي سليمان مرحوم",
+          "services": [
+            "fuel",
+            "shop"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-13996",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "13996",
+          "name_fr": "STATION HADJ MEHAMED MIR",
+          "name_ar": "حاج محمد مير",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14639",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14639",
+          "name_fr": "STATION CARBURANT AIT SIDHOUM",
+          "name_ar": "محطة وقود نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14643",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14643",
+          "name_fr": "STATION CARBURENT AIT SIDHOUM",
+          "name_ar": "محطة وقود ايت سيدهم",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14663",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14663",
+          "name_fr": "//",
+          "name_ar": "محطة شهروري حفيظ",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-2476",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "2476",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3299",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3299",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-7733",
+      "wilaya_code": 20,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "7733",
+          "name_fr": "sarl hrs",
+          "name_ar": "مجموعة hrs",
+          "services": [
+            "fuel",
+            "shop"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3397629630",
+      "wilaya_code": 20,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3397629630",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "2582",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3422203686",
+      "wilaya_code": 20,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3422203686",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3476",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3985929218",
+      "wilaya_code": 20,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3985929218",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "station service",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3487",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-304237382",
+      "wilaya_code": 20,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/304237382",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3439",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-10647998785",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/10647998785",
+        "name": "Station naftal + cafe + mosque",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3865556381",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/3865556381",
+        "name": "Station Service de Balloul محطة خدمة بلول",
+        "name_ar": "محطة خدمة بلول",
+        "name_fr": "Station Service de Balloul",
+        "brand": "E.Leclerc أي.لكلير",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4358040789",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4358040789",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4403272289",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4403272289",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5306034121",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/5306034121",
+        "name": "محطة بنزين",
+        "name_ar": "محطة بنزين",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-8213584975",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/8213584975",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-303856191",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/303856191",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-315292544",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/315292544",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-315346503",
+      "wilaya_code": 20,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/315346503",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3232727078",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3232727078",
+        "name": "Station-Service El Hachmi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Hamada"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10046",
+          "name_fr": "STATION DE SERVICES NAFTAL",
+          "name_ar": "محطة الخدمات نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-1113592962"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3715786618",
+      "wilaya_code": 21,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "node/3715786618",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9772",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ]
+        },
+        {
+          "source_id": "13769",
+          "name_fr": null,
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3925390590",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3925390590",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "8824",
+          "name_fr": "Station de services Ahmed said",
+          "name_ar": "محطة الخدمات أحمد سعيد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-1534199273"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1113592962",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1113592962",
+        "name": "Hammada",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": [
+        "osm-node-3232727078"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1534199273",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1534199273",
+        "name": "El-Anfal Gas Station",
+        "name_ar": null,
+        "name_fr": "Pompe de l essence Ahmed Said",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": [
+        "osm-node-3925390590"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-352695338",
+      "wilaya_code": 21,
+      "source_state": "multiple-tariki",
+      "osm": {
+        "source_id": "way/352695338",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9825",
+          "name_fr": "Station de services el-alia ben djaouahdou",
+          "name_ar": "محطة العاليا ( بن جا وحدو )",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ]
+        },
+        {
+          "source_id": "12790",
+          "name_fr": "STATION ALIA",
+          "name_ar": "محطة العاليا",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-352695345"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-352695345",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/352695345",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-352695338"
+      ]
+    },
+    {
+      "candidate_id": "tariki-10035",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "10035",
+          "name_fr": "STATION DE SERVICES OUELHASSI BRIK",
+          "name_ar": "محطة الخدمات ولهاصي بريك",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-10042",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "10042",
+          "name_fr": "STATION DE SERVICES BOUGDAH ELZAHRA",
+          "name_ar": "محطة الخدمات بوقدح الزهرة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-10043",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "10043",
+          "name_fr": "STATION DE SERVICES LAARABA HOCEN",
+          "name_ar": "محطة الخدمات لعرابة حسين",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-10045",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "10045",
+          "name_fr": "STATION DE SERVICES FRIKHA",
+          "name_ar": "محطة الخدمات فريخة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-10258",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "10258",
+          "name_fr": "STATION DE MULTI SERVICE",
+          "name_ar": "محطة متعددة الخدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-10804",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "10804",
+          "name_fr": "STATION  SERVICE ALYOUT",
+          "name_ar": "محطة متعددة الخدمات عليوط",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12741",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12741",
+          "name_fr": "POMPA ESSANCE ET GAZOAL",
+          "name_ar": "محطة خدمات للتزويد بالوقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-13113",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "13113",
+          "name_fr": "STATIONE D'ECANSSE EL BARAKA",
+          "name_ar": "محطة الوقود البركة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-13289",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "13289",
+          "name_fr": "STATION POMPE ESSANCE MEZLINI",
+          "name_ar": "محطة مزليني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-13760",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "13760",
+          "name_fr": null,
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14137",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14137",
+          "name_fr": "STATION  MEZLINI",
+          "name_ar": "محطة مزليني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14323",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14323",
+          "name_fr": "POMPA ESSANCE",
+          "name_ar": "محطة كحل الراس محمد الصالح",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-14583",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "14583",
+          "name_fr": "//",
+          "name_ar": "بدون تسمية",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3372",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3372",
+          "name_fr": "Station de services Djeghader ELhadi",
+          "name_ar": "محطة وقود جغادر الهادي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-3518",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "3518",
+          "name_fr": "Station de services ELAMRI",
+          "name_ar": "العامري",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-8553",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "8553",
+          "name_fr": "Station de services Miloudi",
+          "name_ar": "محطة ميلودي",
+          "services": [
+            "fuel",
+            "cafe"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-9773",
+      "wilaya_code": 21,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "9773",
+          "name_fr": "Station de services hadef  ali",
+          "name_ar": "هادف علي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1829981438",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1829981438",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5825",
+          "name_fr": "Station de services Othmeni",
+          "name_ar": "محطة الوقود عثماني",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1829981443",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1829981443",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5827",
+          "name_fr": "Station de services Hamrouche hamoudi",
+          "name_ar": "محطة الوقود حمروش حمودي",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2570312489",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2570312489",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9836",
+          "name_fr": "Station de services Aiouaz",
+          "name_ar": "محطة عيواز",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2571168772",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2571168772",
+        "name": "محطة بنزين لعور",
+        "name_ar": "محطة بنزين لعور",
+        "name_fr": "Station service Laouar",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9837",
+          "name_fr": "Station de services Ali laouar",
+          "name_ar": "محطة علي لعور",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2844049017",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2844049017",
+        "name": "talzza",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6959",
+          "name_fr": "Station de services GDR 21 el-Kol",
+          "name_ar": "محطة التسير المباشر القل 21 نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2846083304",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2846083304",
+        "name": "Station Kherbache",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6898",
+          "name_fr": "Station de services (CHERIFI.O)",
+          "name_ar": "محطة الخدمات شريفي",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3233061453",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3233061453",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10041",
+          "name_fr": "STATION DE SERVICES HAMDA SAAID",
+          "name_ar": "محطة الخدمات حمادة السعيد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3273061831",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3273061831",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3835",
+          "name_fr": "Station de services BOUCHREK TAYEB",
+          "name_ar": "محطة متعددة الخدمات  بوالشرك الطيب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3273061832",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3273061832",
+        "name": "محطة خدمات بعزيز",
+        "name_ar": "محطة خدمات بعزيز",
+        "name_fr": "Station Service BAAZIZ",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6880",
+          "name_fr": "Station de services  AKRAMINA",
+          "name_ar": "محطة متعددة الخدمات  اكرمينا",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3283786345",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3283786345",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "3374",
+          "name_fr": "Station de services kiouasse",
+          "name_ar": "محطة وقود قيواص",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3482001311",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3482001311",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "7001",
+          "name_fr": "Station de services",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4565454191",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/4565454191",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6744",
+          "name_fr": "Station de servicesNAFTAL BEN AZZOUZ",
+          "name_ar": "محطة الوقود لمؤسسة نفطال بلدية بن عزوز",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5145722821",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5145722821",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10051",
+          "name_fr": "STATION DE SERVICES NAFTAL ZAOUIA",
+          "name_ar": "محطة الخدمات نفطال بالزاوية",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-8581776362",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/8581776362",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "7025",
+          "name_fr": "Station de services Belkahla",
+          "name_ar": "محطة بلكحلة",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-214448692",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/214448692",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "8556",
+          "name_fr": "Station de services Toumi",
+          "name_ar": "محطة تومي",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-283532938",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/283532938",
+        "name": "Station Service les Frères Douch",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "10801",
+          "name_fr": "STATION  SERVICE DOUCHE TEYAB",
+          "name_ar": "محطة متعددة الخدمات دوش الطيب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-283717012",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/283717012",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "9770",
+          "name_fr": "Station de services SISAL",
+          "name_ar": "محطة متعددة الخدمات  السيسال تابعة لنفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-335839532",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/335839532",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5652",
+          "name_fr": "Station de services Khezan",
+          "name_ar": "محطة خدمات خزان",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-353903835",
+      "wilaya_code": 21,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/353903835",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5389",
+          "name_fr": "Station de services YASSER DERBAL",
+          "name_ar": "محطة خدمات ياسر دربال",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2574200283",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2574200283",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3316183080",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/3316183080",
+        "name": "Station service bouhalbes",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4412984392",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4412984392",
+        "name": "Station Service",
+        "name_ar": "محطة الوقود",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4464904759",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4464904759",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-8553402417",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/8553402417",
+        "name": "boukaroun",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1023084591",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1023084591",
+        "name": "Station service Russicad",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1035743003",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1035743003",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1087867763",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1087867763",
+        "name": "Station service Ras Bougaroun",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1118594154",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1118594154",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1150325044",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1150325044",
+        "name": "Station service Russicad",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-214448712",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/214448712",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-272691990",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/272691990",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-283532940",
+      "wilaya_code": 21,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/283532940",
+        "name": "Station Service Aliout",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-10152075834",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/10152075834",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-242019306"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1829262841",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1829262841",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-437706273"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3407523701",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3407523701",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "1595",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": [
+        "osm-way-744927672"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-242019306",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/242019306",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "2126",
+          "name_fr": "Station de services ABDELLI",
+          "name_ar": "محطة وقود عبدلي",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": [
+        "osm-node-10152075834"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-437706273",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/437706273",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6005",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": [
+        "osm-node-1829262841"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-744927672",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/744927672",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": [
+        "osm-node-3407523701"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12192",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12192",
+          "name_fr": "STATION SERVISE barousse mohamed",
+          "name_ar": "محطة الوقود بروس محمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-1239",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "1239",
+          "name_fr": "station de services BELARBI",
+          "name_ar": "محطة بلعربي",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12573",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12573",
+          "name_fr": "station lehfa",
+          "name_ar": "محطة بنزين الحفى بلحضري",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-12740",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "12740",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-1292",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "1292",
+          "name_fr": "station de services Adida Djawed",
+          "name_ar": "محطة الخدمات عديدة جواد",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-13006",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "13006",
+          "name_fr": "STATION DE SERVICE BEN GAMRA",
+          "name_ar": "محطة الخدمات بن قمرة عبد القادر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-1591",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "1591",
+          "name_fr": "Station de services Chahi",
+          "name_ar": "محطة شاحي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-1635",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "1635",
+          "name_fr": "station de services LAKHAL ZOHRA",
+          "name_ar": "لكحل زهرة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-4876",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "4876",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-5466",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "5466",
+          "name_fr": "Station de services CHAHI",
+          "name_ar": "محطة وقود شاحي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-5500",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "5500",
+          "name_fr": "Station de services de la commune",
+          "name_ar": "محطة البلدية",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-5683",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "5683",
+          "name_fr": "Station de services MOULAY HASSEN",
+          "name_ar": "محطة الخدمات مولاي حسان",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-5695",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "5695",
+          "name_fr": "Station de services SIDI YAAKOUB",
+          "name_ar": "محطة الخدمات سيدي يعقوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-5783",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "5783",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نافطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-5839",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "5839",
+          "name_fr": "Station de services SAHANINE BOUMEDIENE",
+          "name_ar": "محطة الوقود سحنين بومدين",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-6049",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "6049",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-6501",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "6501",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-6814",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "6814",
+          "name_fr": "Station de servicesAit Sidhoum Youcef",
+          "name_ar": "محطة الخدماة ( الوقود )ايت سيدهم يوسف",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "tariki-7568",
+      "wilaya_code": 22,
+      "source_state": "tariki-only",
+      "osm": null,
+      "tariki_leads": [
+        {
+          "source_id": "7568",
+          "name_fr": "Station de services Cafe communal",
+          "name_ar": "مقهى  البلدية",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1327030645",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1327030645",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5498",
+          "name_fr": "Station de services ZABLEH",
+          "name_ar": "محطة زبلاح",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1829227490",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1829227490",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5694",
+          "name_fr": "Station de services SIDI YAAKOUB",
+          "name_ar": "محطة الخدمات سيدي يعقوب",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1870189059",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1870189059",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5541",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1873800939",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1873800939",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5539",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1873801019",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/1873801019",
+        "name": "محطة وقود ضباب",
+        "name_ar": "محطة وقود ضباب",
+        "name_fr": "Station service Debab",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5540",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel",
+            "shop"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2240063555",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2240063555",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "1560",
+          "name_fr": "Station de services Ben Khada",
+          "name_ar": "محطة الخدمات بن خدة",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2270524457",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2270524457",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5980",
+          "name_fr": "Station de services  NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2270525296",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2270525296",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5542",
+          "name_fr": "Station de services Naftal VILLAGE TYAR",
+          "name_ar": "محطة نفطال فلاج تيار",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2270526970",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/2270526970",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5543",
+          "name_fr": "Station de services Naftal VILLAGE BIRA",
+          "name_ar": "محطة نفطال فلاج بيرة",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3190904310",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3190904310",
+        "name": "Station Tires",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5537",
+          "name_fr": "Station de services Naftal en face Iden",
+          "name_ar": "محطة  نفطال مقابل نزل ايدن",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3192139135",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3192139135",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "1108",
+          "name_fr": "Station de services Petroser",
+          "name_ar": "محطة وقود بتروسور",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3212159118",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3212159118",
+        "name": "Station de Service Laidi",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5631",
+          "name_fr": "Station de services OULED ZIAD",
+          "name_ar": "محطة اولاد زياد",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3212171334",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3212171334",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "786",
+          "name_fr": "Station de services Tighalimete",
+          "name_ar": "محطة خدمات تيغاليمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3721542125",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3721542125",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5693",
+          "name_fr": "Station de services TESSALA",
+          "name_ar": "محطة الخدمات تسالة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-3721542126",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/3721542126",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5692",
+          "name_fr": "Station de services TESSALA",
+          "name_ar": "محطة الخدمات تسالة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4604832802",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/4604832802",
+        "name": "محطة البنزين",
+        "name_ar": "محطة البنزين",
+        "name_fr": "Station-service",
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "1581",
+          "name_fr": "Station de services Semahate",
+          "name_ar": "محطة خدمات سماحات",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5252202827",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5252202827",
+        "name": "محطة وقود \"تاج\"",
+        "name_ar": "محطة وقود \"تاج\"",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5481",
+          "name_fr": "Station de services Taj",
+          "name_ar": "محطة تاج",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5252204722",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5252204722",
+        "name": "محطة وقود \"حجار\"",
+        "name_ar": "محطة وقود \"حجار\"",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "1594",
+          "name_fr": "Station de services Hedjar",
+          "name_ar": "حجار",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5947985142",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/5947985142",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "8487",
+          "name_fr": "Station de services  EL MAGHRIB ARABI",
+          "name_ar": "محطة الخدمات المغرب العربي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-7885237785",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/7885237785",
+        "name": "محطة وقود نفطال",
+        "name_ar": "محطة وقود نفطال",
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "6817",
+          "name_fr": "Station de services Naftal GDR 2222",
+          "name_ar": "محطة الخدمات نفطال GDR 2222",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-9063269748",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "node/9063269748",
+        "name": "Station Service Souass",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5523",
+          "name_fr": "Station de services SOUASS",
+          "name_ar": "محطة السواس",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-219524701",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/219524701",
+        "name": "Station Lekmeche",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal"
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5536",
+          "name_fr": "Station de services LAKMECHE",
+          "name_ar": "محطة لكمش",
+          "services": [
+            "fuel",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-219628529",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/219628529",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5982",
+          "name_fr": "Station de services",
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-225901275",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/225901275",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5524",
+          "name_fr": "Station de services NAFTAL cite Rouchi",
+          "name_ar": "محطة نفطال حي الروشي",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-979777595",
+      "wilaya_code": 22,
+      "source_state": "cross-source",
+      "osm": {
+        "source_id": "way/979777595",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [
+        {
+          "source_id": "5538",
+          "name_fr": "Station de services Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ]
+        }
+      ],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1327028697",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1327028697",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1327030581",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1327030581",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-1829227770",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/1829227770",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal"
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2270567956",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2270567956",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2270592062",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2270592062",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal نفطال",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-2320526360",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/2320526360",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-4141951989",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/4141951989",
+        "name": "station",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-node-5512678433",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "node/5512678433",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1027460666",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1027460666",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-1175754065",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/1175754065",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-218889462",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/218889462",
+        "name": "Station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-219766272",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/219766272",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    },
+    {
+      "candidate_id": "osm-way-312974149",
+      "wilaya_code": 22,
+      "source_state": "osm-only",
+      "osm": {
+        "source_id": "way/312974149",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null
+      },
+      "tariki_leads": [],
+      "suspected_duplicate_candidate_ids": []
+    }
+  ]
+}

@@ -1,0 +1,2869 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-43",
+    "wilaya_code": 43,
+    "name": "Mila",
+    "name_ar": "ميلة",
+    "center": [
+      6.141,
+      36.25
+    ],
+    "bounds": [
+      5.736,
+      35.876,
+      6.546,
+      36.624
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 71,
+    "osm_records": 51,
+    "tariki_records": 53,
+    "cross_source": 25,
+    "multiple_tariki": 4,
+    "osm_only": 22,
+    "tariki_only": 20,
+    "nearby_osm_pairs": 2,
+    "conflicts": 28
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-1770113295",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-1816904658",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3285665250",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3843299060",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4109759918",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4382563392",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-387881155",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-438296270",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12992",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13340",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13347",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13358",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13885",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4634",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6494",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-6497",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7434",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7440",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7588",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7615",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7681",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-7795",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8560",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8621",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9339",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9345",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9661",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-9669",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10608535387",
+      "coordinates": [
+        6.1973675,
+        36.5610886
+      ],
+      "osm": {
+        "id": "node/10608535387",
+        "name": "Station Service Chigara",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1973675,
+          36.5610886
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Chigara",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10654938602",
+      "coordinates": [
+        6.1205577,
+        36.5260746
+      ],
+      "osm": {
+        "id": "node/10654938602",
+        "name": "Station Service Hamoudi - Bardou",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1205577,
+          36.5260746
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Hamoudi - Bardou",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-10916149219",
+      "coordinates": [
+        5.9078684,
+        36.4652788
+      ],
+      "osm": {
+        "id": "node/10916149219",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9078684,
+          36.4652788
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6360",
+          "route_id": "11173",
+          "name_fr": "Station de services Derradji Abd Rezzak",
+          "name_ar": "محطة الوقود دراجي عبد الرزاق",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.908,
+            36.465
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Derradji Abd Rezzak",
+      "display_name_ar": "محطة الوقود دراجي عبد الرزاق"
+    },
+    {
+      "id": "osm-node-10966402606",
+      "coordinates": [
+        6.162183,
+        36.1534899
+      ],
+      "osm": {
+        "id": "node/10966402606",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "station-service barkate",
+        "brand": null,
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          6.162183,
+          36.1534899
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station-service barkate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1765757938",
+      "coordinates": [
+        6.3501316,
+        36.2494661
+      ],
+      "osm": {
+        "id": "node/1765757938",
+        "name": "Station Ounis",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.3501316,
+          36.2494661
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7191",
+          "route_id": "4968",
+          "name_fr": "Station Multi-services OUNISS ESSEBTI",
+          "name_ar": "محطة متعددة الخدمات أونيس السبتي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.35,
+            36.249
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 53
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Ounis",
+      "display_name_ar": "محطة متعددة الخدمات أونيس السبتي"
+    },
+    {
+      "id": "osm-node-1770113295",
+      "coordinates": [
+        6.09618,
+        36.1254062
+      ],
+      "osm": {
+        "id": "node/1770113295",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.09618,
+          36.1254062
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9664",
+          "route_id": "14182",
+          "name_fr": "Station de services  Saidi",
+          "name_ar": "محطة سعيدي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.0961,
+            36.1254
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 7
+        },
+        {
+          "id": "13359",
+          "route_id": "18506",
+          "name_fr": "station saidi",
+          "name_ar": "محطة الوقود سعيدي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.096,
+            36.125
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 48
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة سعيدي"
+    },
+    {
+      "id": "osm-node-1810756265",
+      "coordinates": [
+        5.9333413,
+        36.4008039
+      ],
+      "osm": {
+        "id": "node/1810756265",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          5.9333413,
+          36.4008039
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-1816904658",
+      "coordinates": [
+        6.2383287,
+        36.4549895
+      ],
+      "osm": {
+        "id": "node/1816904658",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.2383287,
+          36.4549895
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9038",
+          "route_id": "13874",
+          "name_fr": "Station de services SWIKI",
+          "name_ar": "محطة سويكي",
+          "services": [
+            "fuel",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.2383,
+            36.455
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3843299060",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة سويكي"
+    },
+    {
+      "id": "osm-node-2421377840",
+      "coordinates": [
+        6.2641089,
+        36.4504612
+      ],
+      "osm": {
+        "id": "node/2421377840",
+        "name": "Station Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "BENMAHDJOUB",
+        "opening_hours": null,
+        "coordinates": [
+          6.2641089,
+          36.4504612
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9485",
+          "route_id": "12563",
+          "name_fr": "Station de services Centre ville",
+          "name_ar": "محطة وسط المدينة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.264,
+            36.45
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 52
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Naftal",
+      "display_name_ar": "محطة وسط المدينة"
+    },
+    {
+      "id": "osm-node-2514997622",
+      "coordinates": [
+        6.3848111,
+        36.1103901
+      ],
+      "osm": {
+        "id": "node/2514997622",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3848111,
+          36.1103901
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3144994351",
+      "coordinates": [
+        6.3390661,
+        36.1065979
+      ],
+      "osm": {
+        "id": "node/3144994351",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3390661,
+          36.1065979
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13475",
+          "route_id": "11051",
+          "name_fr": "limouni",
+          "name_ar": "محطة الوقود ليموني",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.338,
+            36.106
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 117
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود ليموني"
+    },
+    {
+      "id": "osm-node-3156122007",
+      "coordinates": [
+        5.9706974,
+        36.1224937
+      ],
+      "osm": {
+        "id": "node/3156122007",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9706974,
+          36.1224937
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9262",
+          "route_id": "3484",
+          "name_fr": "Station de services Moussaoui",
+          "name_ar": "محطة موساوي للوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.971,
+            36.123
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 63
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة موساوي للوقود"
+    },
+    {
+      "id": "osm-node-3239348822",
+      "coordinates": [
+        6.2505795,
+        36.1811573
+      ],
+      "osm": {
+        "id": "node/3239348822",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2505795,
+          36.1811573
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9348",
+          "route_id": "14183",
+          "name_fr": "Station de services Milaf en direction de Constantine",
+          "name_ar": "محطة ميلاف باتجاه مدينة قسنطينة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.2506,
+            36.1811
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 7
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة ميلاف باتجاه مدينة قسنطينة"
+    },
+    {
+      "id": "osm-node-3285665250",
+      "coordinates": [
+        6.2430405,
+        36.4021064
+      ],
+      "osm": {
+        "id": "node/3285665250",
+        "name": "Station Service SAIDANI",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2430405,
+          36.4021064
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-387881155",
+          "offset_m": 14
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station Service SAIDANI",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3332511714",
+      "coordinates": [
+        6.2848332,
+        36.3516814
+      ],
+      "osm": {
+        "id": "node/3332511714",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2848332,
+          36.3516814
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5811",
+          "route_id": "10682",
+          "name_fr": "station de services chninba",
+          "name_ar": "محطة الخدمات شنينبة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.285,
+            36.3517
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الخدمات شنينبة"
+    },
+    {
+      "id": "osm-node-3843299060",
+      "coordinates": [
+        6.2383586,
+        36.4549078
+      ],
+      "osm": {
+        "id": "node/3843299060",
+        "name": "STATION SOUIKI",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2383586,
+          36.4549078
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-1816904658",
+          "offset_m": 9
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "STATION SOUIKI",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3914977218",
+      "coordinates": [
+        6.2643158,
+        36.439754
+      ],
+      "osm": {
+        "id": "node/3914977218",
+        "name": "Total Access",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2643158,
+          36.439754
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Total Access",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3921963297",
+      "coordinates": [
+        6.2660293,
+        36.4486596
+      ],
+      "osm": {
+        "id": "node/3921963297",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "BenAbdelarahman",
+        "opening_hours": null,
+        "coordinates": [
+          6.2660293,
+          36.4486596
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7648",
+          "route_id": "12563",
+          "name_fr": "STATION DE SERVICES CENTRE VILLE MOSQUEE EL FATH",
+          "name_ar": "محطة وسط المدينة مسجد الفتح",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.266,
+            36.449
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وسط المدينة مسجد الفتح"
+    },
+    {
+      "id": "osm-node-4109759918",
+      "coordinates": [
+        5.9818464,
+        36.1234792
+      ],
+      "osm": {
+        "id": "node/4109759918",
+        "name": "Station Service",
+        "name_ar": "حمو بن ذباح",
+        "name_fr": "Hammou Ben Dhebbah",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9818464,
+          36.1234792
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7433",
+          "route_id": "3484",
+          "name_fr": "GHARZOULI",
+          "name_ar": "الغرزولي",
+          "services": [
+            "fuel",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.982,
+            36.124
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 60
+        },
+        {
+          "id": "9260",
+          "route_id": "3484",
+          "name_fr": "Station de services El-Amri",
+          "name_ar": "محطة العمري للوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.982,
+            36.123
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 55
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Hammou Ben Dhebbah",
+      "display_name_ar": "حمو بن ذباح"
+    },
+    {
+      "id": "osm-node-4148787794",
+      "coordinates": [
+        6.1771388,
+        36.1621123
+      ],
+      "osm": {
+        "id": "node/4148787794",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Oucherif",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "05:00-21:00",
+        "coordinates": [
+          6.1771388,
+          36.1621123
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9666",
+          "route_id": "14182",
+          "name_fr": "Station de services  Ouchrif",
+          "name_ar": "محطة اوشريف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1773,
+            36.1621
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 15
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Oucherif",
+      "display_name_ar": "محطة اوشريف"
+    },
+    {
+      "id": "osm-node-4148787797",
+      "coordinates": [
+        6.1257941,
+        36.142578
+      ],
+      "osm": {
+        "id": "node/4148787797",
+        "name": "Station service Ben Jab Allah",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": "24/7",
+        "coordinates": [
+          6.1257941,
+          36.142578
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9655",
+          "route_id": "14182",
+          "name_fr": "Station de services  Nakaa",
+          "name_ar": "محطة نكاع",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1268,
+            36.1427
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 91
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Ben Jab Allah",
+      "display_name_ar": "محطة نكاع"
+    },
+    {
+      "id": "osm-node-4148788590",
+      "coordinates": [
+        6.1561223,
+        36.0899088
+      ],
+      "osm": {
+        "id": "node/4148788590",
+        "name": "cafétéria & gasoil",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1561223,
+          36.0899088
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9341",
+          "route_id": "14182",
+          "name_fr": "Station de services Ben sghir Mechta El-Arbi",
+          "name_ar": "محطة بن صغير بمشتى العربي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1553,
+            36.0898
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 75
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "cafétéria & gasoil",
+      "display_name_ar": "محطة بن صغير بمشتى العربي"
+    },
+    {
+      "id": "osm-node-4301076303",
+      "coordinates": [
+        6.1481233,
+        36.1536727
+      ],
+      "osm": {
+        "id": "node/4301076303",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "Nekaa",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1481233,
+          36.1536727
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Nekaa",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4301076312",
+      "coordinates": [
+        6.1484657,
+        36.1531699
+      ],
+      "osm": {
+        "id": "node/4301076312",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1484657,
+          36.1531699
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4382563392",
+      "coordinates": [
+        5.9429701,
+        36.4092094
+      ],
+      "osm": {
+        "id": "node/4382563392",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9429701,
+          36.4092094
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7594",
+          "route_id": "3403",
+          "name_fr": "STATION D'ESSENCE BAOUTA",
+          "name_ar": "محطة البنزين بعوطة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.943,
+            36.409
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 23
+        },
+        {
+          "id": "7793",
+          "route_id": "12747",
+          "name_fr": "STATION ESSENCE EL M'ZABI",
+          "name_ar": "محطة البنزين المزابي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            5.943,
+            36.4089
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين بعوطة"
+    },
+    {
+      "id": "osm-node-4563369944",
+      "coordinates": [
+        5.9555576,
+        36.4083226
+      ],
+      "osm": {
+        "id": "node/4563369944",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9555576,
+          36.4083226
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4599712291",
+      "coordinates": [
+        5.9397363,
+        36.3648868
+      ],
+      "osm": {
+        "id": "node/4599712291",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9397363,
+          36.3648868
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4620372393",
+      "coordinates": [
+        6.1298421,
+        36.3926333
+      ],
+      "osm": {
+        "id": "node/4620372393",
+        "name": "محطو الوقود المعطلة بنور",
+        "name_ar": "بنور",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1298421,
+          36.3926333
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطو الوقود المعطلة بنور",
+      "display_name_ar": "بنور"
+    },
+    {
+      "id": "osm-node-4642269637",
+      "coordinates": [
+        6.0345707,
+        36.3061043
+      ],
+      "osm": {
+        "id": "node/4642269637",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.0345707,
+          36.3061043
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6589",
+          "route_id": "240240",
+          "name_fr": "Station de services Fridj (Tarmast)",
+          "name_ar": "محطة فريج للخدمات ( تارماست",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0346,
+            36.3057
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 45
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Fridj (Tarmast)",
+      "display_name_ar": "محطة فريج للخدمات ( تارماست"
+    },
+    {
+      "id": "osm-node-5108590046",
+      "coordinates": [
+        6.2946655,
+        36.5369027
+      ],
+      "osm": {
+        "id": "node/5108590046",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2946655,
+          36.5369027
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6498",
+          "route_id": "11360",
+          "name_fr": "Station de services BOUCHTAT",
+          "name_ar": "محطة الخدمات بوشطاط",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.294,
+            36.537
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 60
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BOUCHTAT",
+      "display_name_ar": "محطة الخدمات بوشطاط"
+    },
+    {
+      "id": "osm-node-5160302122",
+      "coordinates": [
+        6.12741,
+        36.0661267
+      ],
+      "osm": {
+        "id": "node/5160302122",
+        "name": "محطه وقود",
+        "name_ar": "محطه وقود",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.12741,
+          36.0661267
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "محطه وقود",
+      "display_name_ar": "محطه وقود"
+    },
+    {
+      "id": "osm-node-5314477970",
+      "coordinates": [
+        6.3692164,
+        36.1369909
+      ],
+      "osm": {
+        "id": "node/5314477970",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3692164,
+          36.1369909
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6073",
+          "route_id": "10945",
+          "name_fr": "mazaach",
+          "name_ar": "محطة مزعاش",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.369,
+            36.137
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة مزعاش"
+    },
+    {
+      "id": "osm-node-6125710000",
+      "coordinates": [
+        6.3636187,
+        36.1313933
+      ],
+      "osm": {
+        "id": "node/6125710000",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3636187,
+          36.1313933
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13330",
+          "route_id": "10945",
+          "name_fr": "taouali",
+          "name_ar": "محطة طوالي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.364,
+            36.131
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 56
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "taouali",
+      "display_name_ar": "محطة طوالي"
+    },
+    {
+      "id": "osm-node-7387799685",
+      "coordinates": [
+        5.9611054,
+        36.3607611
+      ],
+      "osm": {
+        "id": "node/7387799685",
+        "name": "محطة خدمات قويسم",
+        "name_ar": "محطة خدمات قويسم",
+        "name_fr": "Station service kouissem",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9611054,
+          36.3607611
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station service kouissem",
+      "display_name_ar": "محطة خدمات قويسم"
+    },
+    {
+      "id": "osm-way-1395058602",
+      "coordinates": [
+        6.29309075,
+        36.24687365
+      ],
+      "osm": {
+        "id": "way/1395058602",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.29309075,
+          36.24687365
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-234047842",
+      "coordinates": [
+        6.12219215,
+        36.43110195
+      ],
+      "osm": {
+        "id": "way/234047842",
+        "name": "Station service Douza",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.12219215,
+          36.43110195
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10461",
+          "route_id": "15239",
+          "name_fr": "STATION DE SERVICES DOUZA",
+          "name_ar": "محطة دوزة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.122,
+            36.431
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 21
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service Douza",
+      "display_name_ar": "محطة دوزة"
+    },
+    {
+      "id": "osm-way-248764415",
+      "coordinates": [
+        6.040418300000001,
+        36.42150695
+      ],
+      "osm": {
+        "id": "way/248764415",
+        "name": "Station Sevice Fara",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.040418300000001,
+          36.42150695
+        ]
+      },
+      "tariki": [
+        {
+          "id": "43",
+          "route_id": "276",
+          "name_fr": "Station de services FARA",
+          "name_ar": "محطة الوقود فارة",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.04,
+            36.422
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 66
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Sevice Fara",
+      "display_name_ar": "محطة الوقود فارة"
+    },
+    {
+      "id": "osm-way-248764579",
+      "coordinates": [
+        6.093647450000001,
+        36.33373565
+      ],
+      "osm": {
+        "id": "way/248764579",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.093647450000001,
+          36.33373565
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6981",
+          "route_id": "11816",
+          "name_fr": "Station de services Ain el-Kahla",
+          "name_ar": "محطة العين للخدمات ( عين الكحلة )",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0937,
+            36.3339
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Ain el-Kahla",
+      "display_name_ar": "محطة العين للخدمات ( عين الكحلة )"
+    },
+    {
+      "id": "osm-way-262448488",
+      "coordinates": [
+        6.1570452499999995,
+        36.1571761
+      ],
+      "osm": {
+        "id": "way/262448488",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.1570452499999995,
+          36.1571761
+        ]
+      },
+      "tariki": [
+        {
+          "id": "9663",
+          "route_id": "14182",
+          "name_fr": "Station de services  Ben jab ALLAH Kamel",
+          "name_ar": "محطة بن جاب الله كمال",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1569,
+            36.1573
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services  Ben jab ALLAH Kamel",
+      "display_name_ar": "محطة بن جاب الله كمال"
+    },
+    {
+      "id": "osm-way-387881155",
+      "coordinates": [
+        6.24299435,
+        36.40222815
+      ],
+      "osm": {
+        "id": "way/387881155",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": "SAIDANI ET FILS",
+        "opening_hours": "24/7",
+        "coordinates": [
+          6.24299435,
+          36.40222815
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3285665250",
+          "offset_m": 14
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-389037234",
+      "coordinates": [
+        6.2920317,
+        36.43203245
+      ],
+      "osm": {
+        "id": "way/389037234",
+        "name": "STATION NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "SPA NAFTAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.2920317,
+          36.43203245
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "STATION NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-435873916",
+      "coordinates": [
+        6.3156397,
+        36.517674400000004
+      ],
+      "osm": {
+        "id": "way/435873916",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.3156397,
+          36.517674400000004
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-435875189",
+      "coordinates": [
+        6.329648300000001,
+        36.51328055
+      ],
+      "osm": {
+        "id": "way/435875189",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.329648300000001,
+          36.51328055
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-438178582",
+      "coordinates": [
+        6.46901415,
+        36.51028065
+      ],
+      "osm": {
+        "id": "way/438178582",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.46901415,
+          36.51028065
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-438294522",
+      "coordinates": [
+        6.17841915,
+        36.4660253
+      ],
+      "osm": {
+        "id": "way/438294522",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": "privé ALLAL",
+        "opening_hours": null,
+        "coordinates": [
+          6.17841915,
+          36.4660253
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7989",
+          "route_id": "12831",
+          "name_fr": "Station de services ALLAL",
+          "name_ar": "محطة بنزين علال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.178,
+            36.466
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 38
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين علال"
+    },
+    {
+      "id": "osm-way-438294608",
+      "coordinates": [
+        6.165145,
+        36.46458995
+      ],
+      "osm": {
+        "id": "way/438294608",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": "PRIVE",
+        "opening_hours": null,
+        "coordinates": [
+          6.165145,
+          36.46458995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7992",
+          "route_id": "12831",
+          "name_fr": "Station de services BOUSSOUF",
+          "name_ar": "محطة بنزين بوالصوف",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.166,
+            36.465
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 89
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بنزين بوالصوف"
+    },
+    {
+      "id": "osm-way-438296270",
+      "coordinates": [
+        6.101229200000001,
+        36.49908105
+      ],
+      "osm": {
+        "id": "way/438296270",
+        "name": "STATION SERVICE BOUKEDJANI",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.101229200000001,
+          36.49908105
+        ]
+      },
+      "tariki": [
+        {
+          "id": "6315",
+          "route_id": "11123",
+          "name_fr": "station boukadjani abd  rahmane",
+          "name_ar": "محطة الوقود بوقجاني عبد الرحمان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1015,
+            36.4989
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 31
+        },
+        {
+          "id": "13916",
+          "route_id": "16303",
+          "name_fr": "STATION SERVISE",
+          "name_ar": "محطة الخدمــــــات (وقود + بنزين+ قارورات غاز البوتان) بوقجاني عبد الرحمان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.101,
+            36.499
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 22
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "STATION SERVICE BOUKEDJANI",
+      "display_name_ar": "محطة الوقود بوقجاني عبد الرحمان"
+    },
+    {
+      "id": "osm-way-438297465",
+      "coordinates": [
+        5.9901203,
+        36.57106365
+      ],
+      "osm": {
+        "id": "way/438297465",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          5.9901203,
+          36.57106365
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5836",
+          "route_id": "10714",
+          "name_fr": "Station de services Zimiche Moloud",
+          "name_ar": "محطة نفطال زميش مولود",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            5.99,
+            36.571
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال زميش مولود"
+    },
+    {
+      "id": "osm-way-439398572",
+      "coordinates": [
+        6.26957185,
+        36.51810965
+      ],
+      "osm": {
+        "id": "way/439398572",
+        "name": "Station Gernoub",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          6.26957185,
+          36.51810965
+        ]
+      },
+      "tariki": [
+        {
+          "id": "7647",
+          "route_id": "12255",
+          "name_fr": "STATION gharnoub",
+          "name_ar": "محطة غرنوب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.2698,
+            36.518
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 24
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Gernoub",
+      "display_name_ar": "محطة غرنوب"
+    },
+    {
+      "id": "osm-way-477830800",
+      "coordinates": [
+        6.14329785,
+        36.44903665
+      ],
+      "osm": {
+        "id": "way/477830800",
+        "name": "Station Service Alalta",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.14329785,
+          36.44903665
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10459",
+          "route_id": "15239",
+          "name_fr": "STATION DE SERVICES ALALTA",
+          "name_ar": "محطةالاخوة علالطة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.143,
+            36.449
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Service Alalta",
+      "display_name_ar": "محطةالاخوة علالطة"
+    },
+    {
+      "id": "osm-way-616556091",
+      "coordinates": [
+        6.2515032999999995,
+        36.185615850000005
+      ],
+      "osm": {
+        "id": "way/616556091",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.2515032999999995,
+          36.185615850000005
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12992",
+      "coordinates": [
+        6.3934,
+        36.1866
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12992",
+          "route_id": "10875",
+          "name_fr": "//",
+          "name_ar": "محطة الوقود هامل علي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.3934,
+            36.1866
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة الوقود هامل علي"
+    },
+    {
+      "id": "tariki-13340",
+      "coordinates": [
+        6.2081,
+        36.0611
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13340",
+          "route_id": "18482",
+          "name_fr": "STATION SERVICE NAFTAL",
+          "name_ar": "محطة خدمات نفطال",
+          "services": [
+            "fuel",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.2081,
+            36.0611
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE NAFTAL",
+      "display_name_ar": "محطة خدمات نفطال"
+    },
+    {
+      "id": "tariki-13347",
+      "coordinates": [
+        6.2568,
+        36.1867
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13347",
+          "route_id": "18493",
+          "name_fr": "STAION MILAF",
+          "name_ar": "محطة الخدمات و الراحة ميلاف",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.2568,
+            36.1867
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STAION MILAF",
+      "display_name_ar": "محطة الخدمات و الراحة ميلاف"
+    },
+    {
+      "id": "tariki-13358",
+      "coordinates": [
+        6.128,
+        36.143
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13358",
+          "route_id": "18506",
+          "name_fr": "station de bdjaoui",
+          "name_ar": "محطة الوقود بجاوي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.128,
+            36.143
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de bdjaoui",
+      "display_name_ar": "محطة الوقود بجاوي"
+    },
+    {
+      "id": "tariki-13885",
+      "coordinates": [
+        6.151,
+        36.105
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13885",
+          "route_id": "20141",
+          "name_fr": "milève",
+          "name_ar": "محطة ميلاف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.151,
+            36.105
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "milève",
+      "display_name_ar": "محطة ميلاف"
+    },
+    {
+      "id": "tariki-4634",
+      "coordinates": [
+        6.247,
+        36.404
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4634",
+          "route_id": "9264",
+          "name_fr": "Station de services Saidani",
+          "name_ar": "محطة سعيداني",
+          "services": [
+            "fuel",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.247,
+            36.404
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Saidani",
+      "display_name_ar": "محطة سعيداني"
+    },
+    {
+      "id": "tariki-6494",
+      "coordinates": [
+        6.381,
+        36.509
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6494",
+          "route_id": "11360",
+          "name_fr": "Station de services BOULHLIB",
+          "name_ar": "محطة الخدمات بولحليب",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.381,
+            36.509
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BOULHLIB",
+      "display_name_ar": "محطة الخدمات بولحليب"
+    },
+    {
+      "id": "tariki-6497",
+      "coordinates": [
+        6.314,
+        36.518
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "6497",
+          "route_id": "11360",
+          "name_fr": "Station de services LES FRERES DIB",
+          "name_ar": "محطة الخدمات الإخوة ديب",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.314,
+            36.518
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services LES FRERES DIB",
+      "display_name_ar": "محطة الخدمات الإخوة ديب"
+    },
+    {
+      "id": "tariki-7434",
+      "coordinates": [
+        6.024,
+        36.222
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7434",
+          "route_id": "10969",
+          "name_fr": "Carrefour de la résidence universitaire Machta Boufouh",
+          "name_ar": "مفترق الطرق الاقامة الجامعية  مشتة بوفوح",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.024,
+            36.222
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Carrefour de la résidence universitaire Machta Boufouh",
+      "display_name_ar": "مفترق الطرق الاقامة الجامعية  مشتة بوفوح"
+    },
+    {
+      "id": "tariki-7440",
+      "coordinates": [
+        5.9458,
+        36.3678
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7440",
+          "route_id": "12324",
+          "name_fr": "STATION D'ESSENCE KOUITA",
+          "name_ar": "محطة البنزين قويتة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            5.9458,
+            36.3678
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE KOUITA",
+      "display_name_ar": "محطة البنزين قويتة"
+    },
+    {
+      "id": "tariki-7588",
+      "coordinates": [
+        6.0173,
+        36.1651
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7588",
+          "route_id": "12242",
+          "name_fr": "Station d'essence",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.0173,
+            36.1651
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station d'essence",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-7615",
+      "coordinates": [
+        6.334,
+        36.404
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7615",
+          "route_id": "12473",
+          "name_fr": "STATION D'ESSENCE BELKIMOUCH",
+          "name_ar": "محطة البنزين الإخوة بلكيموش",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.334,
+            36.404
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE BELKIMOUCH",
+      "display_name_ar": "محطة البنزين الإخوة بلكيموش"
+    },
+    {
+      "id": "tariki-7681",
+      "coordinates": [
+        6.161,
+        36.315
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7681",
+          "route_id": "12253",
+          "name_fr": "Station de services Ghernoub",
+          "name_ar": "محطة خدمات غرنوب",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.161,
+            36.315
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ghernoub",
+      "display_name_ar": "محطة خدمات غرنوب"
+    },
+    {
+      "id": "tariki-7795",
+      "coordinates": [
+        6.1927,
+        36.0673
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "7795",
+          "route_id": "12748",
+          "name_fr": "STATION DE SERVICES BEN DJABELLAH",
+          "name_ar": "محطة خدمات بن جاب الله",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1927,
+            36.0673
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES BEN DJABELLAH",
+      "display_name_ar": "محطة خدمات بن جاب الله"
+    },
+    {
+      "id": "tariki-8560",
+      "coordinates": [
+        6.2644,
+        36.2564
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8560",
+          "route_id": "4990",
+          "name_fr": "Station de services KOUISSEM BUIKOR",
+          "name_ar": "محطة متعددة الخدمات خاصة بالمسمى قويسم بطريق بويقور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.2644,
+            36.2564
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KOUISSEM BUIKOR",
+      "display_name_ar": "محطة متعددة الخدمات خاصة بالمسمى قويسم بطريق بويقور"
+    },
+    {
+      "id": "tariki-8621",
+      "coordinates": [
+        6.275,
+        36.26
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8621",
+          "route_id": "4968",
+          "name_fr": "station multiservice kouissem rue bouikour",
+          "name_ar": "محطة متعددة الخدمات قويسم بطريق بويقور",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.275,
+            36.26
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station multiservice kouissem rue bouikour",
+      "display_name_ar": "محطة متعددة الخدمات قويسم بطريق بويقور"
+    },
+    {
+      "id": "tariki-9339",
+      "coordinates": [
+        6.1663,
+        36.1841
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9339",
+          "route_id": "14182",
+          "name_fr": "Station de services Aieb Abd el-krim Mechta el-djouaneh",
+          "name_ar": "محطة عايب عبد الكريم بمشتى الجوانج",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.1663,
+            36.1841
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Aieb Abd el-krim Mechta el-djouaneh",
+      "display_name_ar": "محطة عايب عبد الكريم بمشتى الجوانج"
+    },
+    {
+      "id": "tariki-9345",
+      "coordinates": [
+        6.2546,
+        36.186
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9345",
+          "route_id": "14183",
+          "name_fr": "Station de services Milaf en direction de Setif",
+          "name_ar": "محطة ميلاف باتجاه سطيف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.2546,
+            36.186
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Milaf en direction de Setif",
+      "display_name_ar": "محطة ميلاف باتجاه سطيف"
+    },
+    {
+      "id": "tariki-9661",
+      "coordinates": [
+        6.1519,
+        36.1551
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9661",
+          "route_id": "14182",
+          "name_fr": "Station de services  Naftal",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.1519,
+            36.1551
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "tariki-9669",
+      "coordinates": [
+        6.2517,
+        36.182
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "9669",
+          "route_id": "14182",
+          "name_fr": "Station de services  Milaf",
+          "name_ar": "محطة ميلاف",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.2517,
+            36.182
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 43,
+          "wilaya_fr": "Mila",
+          "wilaya_ar": "ميلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services  Milaf",
+      "display_name_ar": "محطة ميلاف"
+    }
+  ]
+}

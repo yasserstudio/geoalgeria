@@ -1,0 +1,1998 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-02",
+    "wilaya_code": 2,
+    "name": "Chlef",
+    "name_ar": "الشلف",
+    "center": [
+      1.2065,
+      36.203
+    ],
+    "bounds": [
+      0.693,
+      35.851,
+      1.72,
+      36.555
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 50,
+    "osm_records": 38,
+    "tariki_records": 37,
+    "cross_source": 22,
+    "multiple_tariki": 1,
+    "osm_only": 15,
+    "tariki_only": 12,
+    "nearby_osm_pairs": 0,
+    "conflicts": 13
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-way-337817915",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1850",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2187",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2295",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2302",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-2360",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3016",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3026",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3859",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5489",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5548",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5949",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8318",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-11195025375",
+      "coordinates": [
+        1.5821395,
+        36.5309746
+      ],
+      "osm": {
+        "id": "node/11195025375",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5821395,
+          36.5309746
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-11583151469",
+      "coordinates": [
+        1.1992525,
+        36.0925068
+      ],
+      "osm": {
+        "id": "node/11583151469",
+        "name": null,
+        "name_ar": null,
+        "name_fr": "dahra",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1992525,
+          36.0925068
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "dahra",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2176528173",
+      "coordinates": [
+        1.5502613,
+        36.1159611
+      ],
+      "osm": {
+        "id": "node/2176528173",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5502613,
+          36.1159611
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2186452449",
+      "coordinates": [
+        1.4070713,
+        36.0562008
+      ],
+      "osm": {
+        "id": "node/2186452449",
+        "name": "Station service NAAS LARABA",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          1.4070713,
+          36.0562008
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4226",
+          "route_id": "5404",
+          "name_fr": "Station de services NEAASS",
+          "name_ar": "محطة نعاس",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.407,
+            36.056
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 23
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station service NAAS LARABA",
+      "display_name_ar": "محطة نعاس"
+    },
+    {
+      "id": "osm-node-2954362899",
+      "coordinates": [
+        0.9217868,
+        36.2428996
+      ],
+      "osm": {
+        "id": "node/2954362899",
+        "name": "محطة صاعب و آخوته",
+        "name_ar": "محطة صاعب و آخوته",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9217868,
+          36.2428996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2964",
+          "route_id": "6576",
+          "name_fr": "Station de services SAAB",
+          "name_ar": "محطة الوقود صاعب",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.9218,
+            36.2429
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة صاعب و آخوته",
+      "display_name_ar": "محطة صاعب و آخوته"
+    },
+    {
+      "id": "osm-node-2975603593",
+      "coordinates": [
+        1.1192698,
+        36.0616444
+      ],
+      "osm": {
+        "id": "node/2975603593",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1192698,
+          36.0616444
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2631",
+          "route_id": "5865",
+          "name_fr": "Station de services",
+          "name_ar": "محطة البنزين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.1192,
+            36.0616
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "osm-node-3158764108",
+      "coordinates": [
+        1.340262,
+        36.1721652
+      ],
+      "osm": {
+        "id": "node/3158764108",
+        "name": "Station de services El Zahra",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.340262,
+          36.1721652
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de services El Zahra",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3385998325",
+      "coordinates": [
+        1.2002556,
+        36.0931589
+      ],
+      "osm": {
+        "id": "node/3385998325",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2002556,
+          36.0931589
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2539",
+          "route_id": "5958",
+          "name_fr": "Station de services DAHRA NOUR",
+          "name_ar": "محطة الظهرة نور",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            1.2003,
+            36.0931
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 8
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الظهرة نور"
+    },
+    {
+      "id": "osm-node-3468645421",
+      "coordinates": [
+        1.2957883,
+        36.4573397
+      ],
+      "osm": {
+        "id": "node/3468645421",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "نور الدين مرسلي",
+        "opening_hours": null,
+        "coordinates": [
+          1.2957883,
+          36.4573397
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5095",
+          "route_id": "9586",
+          "name_fr": "Station de services NOUREDDINE MORSLI",
+          "name_ar": "نورالدين مرسلي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.296,
+            36.457
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 42
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نورالدين مرسلي"
+    },
+    {
+      "id": "osm-node-4144884589",
+      "coordinates": [
+        1.5835776,
+        36.5317306
+      ],
+      "osm": {
+        "id": "node/4144884589",
+        "name": "Station Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "NAFTAL",
+        "opening_hours": "Mo-Su 06:00-24:00",
+        "coordinates": [
+          1.5835776,
+          36.5317306
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4210796120",
+      "coordinates": [
+        0.9780676,
+        36.1652719
+      ],
+      "osm": {
+        "id": "node/4210796120",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9780676,
+          36.1652719
+        ]
+      },
+      "tariki": [
+        {
+          "id": "3981",
+          "route_id": "8190",
+          "name_fr": "Station de services AIN MERANE",
+          "name_ar": "محطة البنزين بعين مران",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.978,
+            36.165
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين بعين مران"
+    },
+    {
+      "id": "osm-node-4375939991",
+      "coordinates": [
+        1.2475702,
+        36.1961577
+      ],
+      "osm": {
+        "id": "node/4375939991",
+        "name": "NORGAZ EURL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2475702,
+          36.1961577
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "NORGAZ EURL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4397684195",
+      "coordinates": [
+        1.4193329,
+        36.2004781
+      ],
+      "osm": {
+        "id": "node/4397684195",
+        "name": "station de services",
+        "name_ar": null,
+        "name_fr": "station de services",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.4193329,
+          36.2004781
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10048",
+          "route_id": "5086",
+          "name_fr": "STATION  FALLOUH",
+          "name_ar": "محطة فلوح",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.419,
+            36.2
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services",
+      "display_name_ar": "محطة فلوح"
+    },
+    {
+      "id": "osm-node-4416163118",
+      "coordinates": [
+        1.3439615,
+        36.1463617
+      ],
+      "osm": {
+        "id": "node/4416163118",
+        "name": "Station de service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3439615,
+          36.1463617
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station de service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4474850627",
+      "coordinates": [
+        1.1070527,
+        36.113707
+      ],
+      "osm": {
+        "id": "node/4474850627",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1070527,
+          36.113707
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4474850628",
+      "coordinates": [
+        1.1078455,
+        36.1156283
+      ],
+      "osm": {
+        "id": "node/4474850628",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1078455,
+          36.1156283
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4503855490",
+      "coordinates": [
+        1.3881601,
+        36.1965812
+      ],
+      "osm": {
+        "id": "node/4503855490",
+        "name": "أم الذروع",
+        "name_ar": "أم الذروع",
+        "name_fr": "Oum Drou",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3881601,
+          36.1965812
+        ]
+      },
+      "tariki": [
+        {
+          "id": "10047",
+          "route_id": "5086",
+          "name_fr": "STATION  LAKRIDARE",
+          "name_ar": "محطة لكريدار",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.388,
+            36.197
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Oum Drou",
+      "display_name_ar": "أم الذروع"
+    },
+    {
+      "id": "osm-node-4509693451",
+      "coordinates": [
+        1.3661446,
+        36.1330335
+      ],
+      "osm": {
+        "id": "node/4509693451",
+        "name": "Station des Service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3661446,
+          36.1330335
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4211",
+          "route_id": "5404",
+          "name_fr": "Station de services BEN YAMINA",
+          "name_ar": "محطة بن يمينة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.366,
+            36.133
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station des Service",
+      "display_name_ar": "محطة بن يمينة"
+    },
+    {
+      "id": "osm-node-4581680813",
+      "coordinates": [
+        1.3444356,
+        36.1732416
+      ],
+      "osm": {
+        "id": "node/4581680813",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3444356,
+          36.1732416
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4643858989",
+      "coordinates": [
+        1.1808261,
+        36.0751816
+      ],
+      "osm": {
+        "id": "node/4643858989",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          1.1808261,
+          36.0751816
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5991",
+          "route_id": "6310",
+          "name_fr": "Station de services DAHRA",
+          "name_ar": "محطة الظهرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.1799,
+            36.0753
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 84
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services DAHRA",
+      "display_name_ar": "محطة الظهرة"
+    },
+    {
+      "id": "osm-node-4797381322",
+      "coordinates": [
+        1.2746016,
+        36.1740796
+      ],
+      "osm": {
+        "id": "node/4797381322",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2746016,
+          36.1740796
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4895403921",
+      "coordinates": [
+        1.415025,
+        36.2563495
+      ],
+      "osm": {
+        "id": "node/4895403921",
+        "name": "محطة خدمات البراشما",
+        "name_ar": "محطة خدمات البراشما",
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.415025,
+          36.2563495
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12357",
+          "route_id": "5335",
+          "name_fr": null,
+          "name_ar": "محطة خدمات",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.415,
+            36.256
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة خدمات البراشما",
+      "display_name_ar": "محطة خدمات البراشما"
+    },
+    {
+      "id": "osm-node-5516315968",
+      "coordinates": [
+        1.2468463,
+        36.1995542
+      ],
+      "osm": {
+        "id": "node/5516315968",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2468463,
+          36.1995542
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2293",
+          "route_id": "5591",
+          "name_fr": "Station de services ELAIADA",
+          "name_ar": "العيايدة",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.247,
+            36.2
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 51
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services ELAIADA",
+      "display_name_ar": "العيايدة"
+    },
+    {
+      "id": "osm-node-5688641041",
+      "coordinates": [
+        0.9133056,
+        36.4004175
+      ],
+      "osm": {
+        "id": "node/5688641041",
+        "name": "satation service NAFTAL",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9133056,
+          36.4004175
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5487",
+          "route_id": "8877",
+          "name_fr": "Station de services Morsi",
+          "name_ar": "محطة الوقود المرسى",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.9136,
+            36.4006
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 33
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "satation service NAFTAL",
+      "display_name_ar": "محطة الوقود المرسى"
+    },
+    {
+      "id": "osm-node-5722592335",
+      "coordinates": [
+        1.3077271,
+        36.5064072
+      ],
+      "osm": {
+        "id": "node/5722592335",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "STATION SERVICE NAFTAL",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3077271,
+          36.5064072
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "STATION SERVICE NAFTAL",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6270528153",
+      "coordinates": [
+        1.5475885,
+        36.1931453
+      ],
+      "osm": {
+        "id": "node/6270528153",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5475885,
+          36.1931453
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6270553528",
+      "coordinates": [
+        1.2405707,
+        36.3340306
+      ],
+      "osm": {
+        "id": "node/6270553528",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2405707,
+          36.3340306
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6284679681",
+      "coordinates": [
+        1.2589102,
+        36.1295083
+      ],
+      "osm": {
+        "id": "node/6284679681",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2589102,
+          36.1295083
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5545",
+          "route_id": "6190",
+          "name_fr": "Station de services zone industrielle",
+          "name_ar": "محطة البنزين المنطقة الصناعية",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            1.26,
+            36.13
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 112
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services zone industrielle",
+      "display_name_ar": "محطة البنزين المنطقة الصناعية"
+    },
+    {
+      "id": "osm-node-6284683578",
+      "coordinates": [
+        1.27615,
+        36.1398776
+      ],
+      "osm": {
+        "id": "node/6284683578",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.27615,
+          36.1398776
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14737",
+          "route_id": "23138",
+          "name_fr": null,
+          "name_ar": "محطة تزقايت",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.276,
+            36.14
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة تزقايت",
+      "display_name_ar": "محطة تزقايت"
+    },
+    {
+      "id": "osm-node-6399692820",
+      "coordinates": [
+        1.1964562,
+        36.0972724
+      ],
+      "osm": {
+        "id": "node/6399692820",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.1964562,
+          36.0972724
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2686",
+          "route_id": "6190",
+          "name_fr": "station de services cité Elhomre",
+          "name_ar": "محطة البنزين حي الحمر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.197,
+            36.097
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 57
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "station de services cité Elhomre",
+      "display_name_ar": "محطة البنزين حي الحمر"
+    },
+    {
+      "id": "osm-node-8484905446",
+      "coordinates": [
+        1.3546416,
+        36.1766223
+      ],
+      "osm": {
+        "id": "node/8484905446",
+        "name": "Naftal",
+        "name_ar": null,
+        "name_fr": "Naftal",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3546416,
+          36.1766223
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-237296327",
+      "coordinates": [
+        1.5182956,
+        36.1473666
+      ],
+      "osm": {
+        "id": "way/237296327",
+        "name": "Station services El Khedra",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5182956,
+          36.1473666
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4827",
+          "route_id": "9091",
+          "name_fr": "Station de services KHEDRA",
+          "name_ar": "محطة الخضراء",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.5183,
+            36.1474
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station services El Khedra",
+      "display_name_ar": "محطة الخضراء"
+    },
+    {
+      "id": "osm-way-253617927",
+      "coordinates": [
+        1.3078734,
+        36.180986250000004
+      ],
+      "osm": {
+        "id": "way/253617927",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3078734,
+          36.180986250000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4253",
+          "route_id": "8752",
+          "name_fr": "Station de services SIDI AMMER",
+          "name_ar": "محطة سيدي عامر",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.308,
+            36.181
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 11
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services SIDI AMMER",
+      "display_name_ar": "محطة سيدي عامر"
+    },
+    {
+      "id": "osm-way-293978654",
+      "coordinates": [
+        1.139208,
+        36.069676099999995
+      ],
+      "osm": {
+        "id": "way/293978654",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.139208,
+          36.069676099999995
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2626",
+          "route_id": "5865",
+          "name_fr": "Station de services MADJEDJI",
+          "name_ar": "محطة البنزين مجاجي",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.1389,
+            36.0698
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 31
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services MADJEDJI",
+      "display_name_ar": "محطة البنزين مجاجي"
+    },
+    {
+      "id": "osm-way-310506331",
+      "coordinates": [
+        1.5308809,
+        36.187856249999996
+      ],
+      "osm": {
+        "id": "way/310506331",
+        "name": "Station de services El-Baradei",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": "El-Baradei",
+        "opening_hours": null,
+        "coordinates": [
+          1.5308809,
+          36.187856249999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "1842",
+          "route_id": "4906",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.531,
+            36.188
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 19
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services El-Baradei",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "osm-way-337817915",
+      "coordinates": [
+        1.3201667000000001,
+        36.515502350000006
+      ],
+      "osm": {
+        "id": "way/337817915",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.3201667000000001,
+          36.515502350000006
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5493",
+          "route_id": "8655",
+          "name_fr": "Station de services ROUTE DE CHERCHEL",
+          "name_ar": "محطة وقود طريق شرشال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.32,
+            36.515
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 58
+        },
+        {
+          "id": "5494",
+          "route_id": "8639",
+          "name_fr": "Station de services BOUCHAHDA",
+          "name_ar": "محطة بنزين بوشهدة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.32,
+            36.515
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 58
+        },
+        {
+          "id": "14709",
+          "route_id": "22943",
+          "name_fr": "Station de services BOUCHAHDA",
+          "name_ar": "محطة بنزين بوشهدة",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            1.32,
+            36.515
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 58
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station de services ROUTE DE CHERCHEL",
+      "display_name_ar": "محطة وقود طريق شرشال"
+    },
+    {
+      "id": "osm-way-784898521",
+      "coordinates": [
+        1.2455422,
+        36.308562249999994
+      ],
+      "osm": {
+        "id": "way/784898521",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          1.2455422,
+          36.308562249999994
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4287",
+          "route_id": "8825",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.245,
+            36.309
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 69
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-784903853",
+      "coordinates": [
+        1.2356272000000001,
+        36.224813850000004
+      ],
+      "osm": {
+        "id": "way/784903853",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          1.2356272000000001,
+          36.224813850000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2125",
+          "route_id": "5290",
+          "name_fr": "Station de services KHDIM ZOHRA",
+          "name_ar": "خديم الزهرة",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.236,
+            36.225
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "tariki-1850",
+      "coordinates": [
+        1.549,
+        36.193
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1850",
+          "route_id": "4906",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.549,
+            36.193
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-2187",
+      "coordinates": [
+        1.2,
+        36.416
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2187",
+          "route_id": "5421",
+          "name_fr": "Station de services Ziane",
+          "name_ar": "محطة زيان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.2,
+            36.416
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Ziane",
+      "display_name_ar": "محطة زيان"
+    },
+    {
+      "id": "tariki-2295",
+      "coordinates": [
+        1.276,
+        36.174
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2295",
+          "route_id": "5591",
+          "name_fr": "Station de services AICHE",
+          "name_ar": "عيش",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.276,
+            36.174
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services AICHE",
+      "display_name_ar": "عيش"
+    },
+    {
+      "id": "tariki-2302",
+      "coordinates": [
+        1.253,
+        36.171
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2302",
+          "route_id": "5602",
+          "name_fr": "station de services BOUALI",
+          "name_ar": "بواعلي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            1.253,
+            36.171
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station de services BOUALI",
+      "display_name_ar": "بواعلي"
+    },
+    {
+      "id": "tariki-2360",
+      "coordinates": [
+        1.271,
+        36.026
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "2360",
+          "route_id": "5667",
+          "name_fr": "Station de services",
+          "name_ar": "محطة البنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.271,
+            36.026
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة البنزين"
+    },
+    {
+      "id": "tariki-3016",
+      "coordinates": [
+        1.106,
+        36.123
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3016",
+          "route_id": "6607",
+          "name_fr": "Station de services KOULALA MOHAMED",
+          "name_ar": "محطة البنزين قولالة محمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.106,
+            36.123
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KOULALA MOHAMED",
+      "display_name_ar": "محطة البنزين قولالة محمد"
+    },
+    {
+      "id": "tariki-3026",
+      "coordinates": [
+        1.105,
+        36.123
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3026",
+          "route_id": "6607",
+          "name_fr": "Station de services KHAROUBI AHMED",
+          "name_ar": "محطة البنزين خروبي أحمد",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.105,
+            36.123
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services KHAROUBI AHMED",
+      "display_name_ar": "محطة البنزين خروبي أحمد"
+    },
+    {
+      "id": "tariki-3859",
+      "coordinates": [
+        1.406,
+        36.34
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3859",
+          "route_id": "7986",
+          "name_fr": "Station de services",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            1.406,
+            36.34
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-5489",
+      "coordinates": [
+        1.5789,
+        36.53
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5489",
+          "route_id": "8822",
+          "name_fr": "Station de services",
+          "name_ar": "محطة وقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.5789,
+            36.53
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة وقود"
+    },
+    {
+      "id": "tariki-5548",
+      "coordinates": [
+        1.239,
+        36.086
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5548",
+          "route_id": "6199",
+          "name_fr": "Station de services cite MEAMERIYA",
+          "name_ar": "محطة البنزين بحي المعامرية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.239,
+            36.086
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services cite MEAMERIYA",
+      "display_name_ar": "محطة البنزين بحي المعامرية"
+    },
+    {
+      "id": "tariki-5949",
+      "coordinates": [
+        1.267,
+        36.43
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5949",
+          "route_id": "9586",
+          "name_fr": "STATION D'ESSENCE",
+          "name_ar": "محطة بنزين",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.267,
+            36.43
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION D'ESSENCE",
+      "display_name_ar": "محطة بنزين"
+    },
+    {
+      "id": "tariki-8318",
+      "coordinates": [
+        1.343,
+        36.149
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8318",
+          "route_id": "8752",
+          "name_fr": "STATION DE BOKAA GAZ",
+          "name_ar": "محطة بقعة الغاز",
+          "services": [
+            "fuel",
+            "cafe",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.343,
+            36.149
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 2,
+          "wilaya_fr": "Chlef",
+          "wilaya_ar": "الشلف",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE BOKAA GAZ",
+      "display_name_ar": "محطة بقعة الغاز"
+    }
+  ]
+}

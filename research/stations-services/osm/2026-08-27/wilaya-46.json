@@ -1,0 +1,671 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 46,
+  "records": [
+    {
+      "id": "node/1602222757",
+      "amenity": "fuel",
+      "name": "Station service Sidi Boudia",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.8101458,
+        35.3765759
+      ]
+    },
+    {
+      "id": "node/1686557272",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "Naftal",
+      "opening_hours": null,
+      "coordinates": [
+        -1.0247001,
+        35.5211296
+      ]
+    },
+    {
+      "id": "node/2059610087",
+      "amenity": "fuel",
+      "name": "Station-service Chentouf (fermée temporairement)",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0334151,
+        35.3033779
+      ]
+    },
+    {
+      "id": "node/3068837872",
+      "amenity": "fuel",
+      "name": "Station-service Carbu-Sud",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.284027,
+        35.2442479
+      ]
+    },
+    {
+      "id": "node/3373759071",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.8832902,
+        35.407608
+      ]
+    },
+    {
+      "id": "node/3389486588",
+      "amenity": "fuel",
+      "name": "Station service Bendahma",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1432971,
+        35.2911062
+      ]
+    },
+    {
+      "id": "node/3389492193",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "SONATRACH",
+      "opening_hours": null,
+      "coordinates": [
+        -1.1438808,
+        35.2988209
+      ]
+    },
+    {
+      "id": "node/3389493763",
+      "amenity": "fuel",
+      "name": "Station Service Gala Oil",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "GALA OIL",
+      "opening_hours": null,
+      "coordinates": [
+        -1.1438621,
+        35.2983635
+      ]
+    },
+    {
+      "id": "node/3389495221",
+      "amenity": "fuel",
+      "name": "Station Service Mouadène",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1292142,
+        35.3021855
+      ]
+    },
+    {
+      "id": "node/3389504021",
+      "amenity": "fuel",
+      "name": "Station de Service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1546356,
+        35.3034111
+      ]
+    },
+    {
+      "id": "node/3934799718",
+      "amenity": "fuel",
+      "name": "Station service Sirgaz (GPL)",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1377098,
+        35.322496
+      ]
+    },
+    {
+      "id": "node/4043414528",
+      "amenity": "fuel",
+      "name": "Station-Service Naftal",
+      "name_ar": "محطة وقود",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.2395836,
+        35.3421026
+      ]
+    },
+    {
+      "id": "node/4333650740",
+      "amenity": "fuel",
+      "name": "محطة البنزين",
+      "name_ar": "محطة البنزين",
+      "name_fr": "Station d'essence El Maïda",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0109735,
+        35.3729271
+      ]
+    },
+    {
+      "id": "node/4746117927",
+      "amenity": "fuel",
+      "name": "Station-service Naftal",
+      "name_ar": "محطة بنزين",
+      "name_fr": "Station-service Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.9721232,
+        35.382754
+      ]
+    },
+    {
+      "id": "node/5161853022",
+      "amenity": "fuel",
+      "name": "محطة بنزين",
+      "name_ar": "محطة بنزين",
+      "name_fr": "Station D'essence",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1811382,
+        35.2994598
+      ]
+    },
+    {
+      "id": "node/5299528920",
+      "amenity": "fuel",
+      "name": "Station d'essence Maaroufi",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": "PH,Mo-Su 06:00-22:00",
+      "coordinates": [
+        -1.1489028,
+        35.2991848
+      ]
+    },
+    {
+      "id": "node/5314892046",
+      "amenity": "fuel",
+      "name": "Naftal - Branche GPL",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1203488,
+        35.316943
+      ]
+    },
+    {
+      "id": "node/5319194694",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0996125,
+        35.346347
+      ]
+    },
+    {
+      "id": "node/5376136454",
+      "amenity": "fuel",
+      "name": "Station Service Gourinet",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0910071,
+        35.3960434
+      ]
+    },
+    {
+      "id": "node/5810742154",
+      "amenity": "fuel",
+      "name": "Station-service Petrolium",
+      "name_ar": "محطة بنزين",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1846142,
+        35.415193
+      ]
+    },
+    {
+      "id": "node/6218994602",
+      "amenity": "fuel",
+      "name": "Station service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0596026,
+        35.4469405
+      ]
+    },
+    {
+      "id": "node/6256002713",
+      "amenity": "fuel",
+      "name": "Station-service Naftal",
+      "name_ar": "محطة الخدمة",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.5165415,
+        35.2417101
+      ]
+    },
+    {
+      "id": "node/6256002715",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": "المحطة الخدمة نفطال",
+      "name_fr": "Station Service Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -1.5079338,
+        35.2420436
+      ]
+    },
+    {
+      "id": "node/6313475586",
+      "amenity": "fuel",
+      "name": "محطة وقود السيارات قادرة",
+      "name_ar": "محطة وقود السيارات قادرة",
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": "GADRA",
+      "opening_hours": "24/7",
+      "coordinates": [
+        -0.8727184,
+        35.4040209
+      ]
+    },
+    {
+      "id": "node/6318035639",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.6547491,
+        35.4113933
+      ]
+    },
+    {
+      "id": "node/6775837054",
+      "amenity": "fuel",
+      "name": "أحمد بلواتي",
+      "name_ar": "أحمد بلواتي",
+      "name_fr": null,
+      "brand": null,
+      "operator": "أحمد بلواتي",
+      "opening_hours": "Mo,Su 08:00-18:00",
+      "coordinates": [
+        -1.1917539,
+        35.4709468
+      ]
+    },
+    {
+      "id": "node/8302791793",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0956537,
+        35.3695387
+      ]
+    },
+    {
+      "id": "way/1080399238",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -0.9397299,
+        35.19501075
+      ]
+    },
+    {
+      "id": "way/1195352653",
+      "amenity": "fuel",
+      "name": "Station service Alpétro",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0258281999999999,
+        35.4796086
+      ]
+    },
+    {
+      "id": "way/159056266",
+      "amenity": "fuel",
+      "name": "Station service En-Nakhil",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": "24/24 - 7/7",
+      "coordinates": [
+        -0.96493685,
+        35.54635625
+      ]
+    },
+    {
+      "id": "way/195534704",
+      "amenity": "fuel",
+      "name": "Station services Chentouf (fermée temporairement)",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0334146,
+        35.303484499999996
+      ]
+    },
+    {
+      "id": "way/235464516",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3844140999999999,
+        35.302686699999995
+      ]
+    },
+    {
+      "id": "way/235470500",
+      "amenity": "fuel",
+      "name": "Station Service",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.3310918,
+        35.3190473
+      ]
+    },
+    {
+      "id": "way/235479652",
+      "amenity": "fuel",
+      "name": "Station-Service Naftal",
+      "name_ar": "محطة خدمات",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.40691875,
+        35.29862385
+      ]
+    },
+    {
+      "id": "way/238911258",
+      "amenity": "fuel",
+      "name": "Station d'essence Maaroufi",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": "Naftal",
+      "opening_hours": "PH,Mo-Su 06:00-22:00",
+      "coordinates": [
+        -1.14897195,
+        35.29922345
+      ]
+    },
+    {
+      "id": "way/253260484",
+      "amenity": "fuel",
+      "name": "Station Service E. Leclerc",
+      "name_ar": "محطة خدمات",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.34171225,
+        35.28367514999999
+      ]
+    },
+    {
+      "id": "way/254130652",
+      "amenity": "fuel",
+      "name": "Station Service Benadla",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.18632605,
+        35.294492500000004
+      ]
+    },
+    {
+      "id": "way/254322940",
+      "amenity": "fuel",
+      "name": "Station Service محطات خدمات",
+      "name_ar": "Station Service محطات خدمات",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": "PH,Mo-Su 06:00-21:00",
+      "coordinates": [
+        -1.1478743,
+        35.29320645
+      ]
+    },
+    {
+      "id": "way/548626213",
+      "amenity": "fuel",
+      "name": "Station service Lalla Maghnia",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.12230925,
+        35.326624249999995
+      ]
+    },
+    {
+      "id": "way/550263601",
+      "amenity": "fuel",
+      "name": "Station service Sirgaz",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1206449,
+        35.3167614
+      ]
+    },
+    {
+      "id": "way/550396175",
+      "amenity": "fuel",
+      "name": "Station service Mouaden",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1287967,
+        35.30239225
+      ]
+    },
+    {
+      "id": "way/557436834",
+      "amenity": "fuel",
+      "name": "Station Service Matalah",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.1020854,
+        35.39315345
+      ]
+    },
+    {
+      "id": "way/664447892",
+      "amenity": "fuel",
+      "name": "Relais routier Riahi",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.0665018499999999,
+        35.4405343
+      ]
+    },
+    {
+      "id": "way/719503717",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.530557,
+        35.22036265
+      ]
+    },
+    {
+      "id": "way/719503720",
+      "amenity": "fuel",
+      "name": "Station-service Emir Abdelkader",
+      "name_ar": "محطة التزود بالوقود",
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.408191,
+        35.220637249999996
+      ]
+    },
+    {
+      "id": "way/741733610",
+      "amenity": "fuel",
+      "name": "Carbu Sud (Relai routier Aïn Tolba)",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.284106,
+        35.2441499
+      ]
+    },
+    {
+      "id": "way/93576202",
+      "amenity": "fuel",
+      "name": "Station Service Naftal",
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -1.47643145,
+        35.29021865
+      ]
+    }
+  ]
+}

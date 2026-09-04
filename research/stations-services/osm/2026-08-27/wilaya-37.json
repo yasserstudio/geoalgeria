@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 37,
+  "records": [
+    {
+      "id": "node/3752973397",
+      "amenity": "fuel",
+      "name": "محطة خدمات أم العسل",
+      "name_ar": "محطة خدمات أم العسل",
+      "name_fr": "Station Service Oum El Assel",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -6.9819912,
+        28.6244845
+      ]
+    },
+    {
+      "id": "node/3936255133",
+      "amenity": "fuel",
+      "name": "نفطال",
+      "name_ar": "نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -8.1065971,
+        27.6089097
+      ]
+    },
+    {
+      "id": "node/4577820553",
+      "amenity": "fuel",
+      "name": "محطة الخدمات توهامي",
+      "name_ar": "محطة الخدمات توهامي",
+      "name_fr": "Station service touhami",
+      "brand": "Naftal",
+      "operator": "توهامي",
+      "opening_hours": null,
+      "coordinates": [
+        -8.1382244,
+        27.6564232
+      ]
+    },
+    {
+      "id": "node/4577820554",
+      "amenity": "fuel",
+      "name": "محطة الخدمات شارع الطيب بولحروف",
+      "name_ar": "محطة الخدمات شارع الطيب بولحروف",
+      "name_fr": "Station service Tayeb boulehrouf",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -8.1493536,
+        27.6779549
+      ]
+    },
+    {
+      "id": "node/4577820555",
+      "amenity": "fuel",
+      "name": "محطة الخدمات حي البناء",
+      "name_ar": "محطة الخدمات حي البناء",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -8.1201688,
+        27.6803483
+      ]
+    },
+    {
+      "id": "node/4577885342",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -8.1496702,
+        27.7421137
+      ]
+    },
+    {
+      "id": "node/4577991330",
+      "amenity": "fuel",
+      "name": "محطة الخدمات حاسي خبي",
+      "name_ar": "محطة الخدمات حاسي خبي",
+      "name_fr": "Station-Service Hassi Khebi",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -5.0714287,
+        29.1875142
+      ]
+    },
+    {
+      "id": "node/8033935160",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        -7.2398327,
+        28.5586415
+      ]
+    },
+    {
+      "id": "node/9929791718",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        -7.4511592,
+        28.5026092
+      ]
+    }
+  ]
+}

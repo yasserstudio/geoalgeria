@@ -1,0 +1,16 @@
+[
+  {
+    "network": null,
+    "ref": "1",
+    "terminus1_ar": "بشار",
+    "terminus1_fr": "Bechar",
+    "terminus2_ar": "القنادسة",
+    "terminus2_fr": "Kenadsa",
+    "via": null,
+    "source_url": "https://www.openstreetmap.org/relation/9974721",
+    "source_kind": "osm",
+    "evidence_type": "osm_only_unattributed",
+    "retrieved": "2026-09-03",
+    "notes": "NOT PROMOTABLE. OSM relations 9974721 (بشار -> القنادسة, 19 stop members, 23.4 km) and 10169262 (Kenadsa -> Bechar, 7 stop members, 22.5 km) both carry ref=1 and NO operator and NO network tag. No official ETUSB line list was found on 2026-09-03, so the ref and the termini are unverified against the operator and the route cannot be attributed to ETUSB. network left null deliberately."
+  }
+]

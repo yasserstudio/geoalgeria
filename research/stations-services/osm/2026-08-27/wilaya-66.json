@@ -1,0 +1,195 @@
+{
+  "schema_version": 2,
+  "source": "openstreetmap",
+  "license": "ODbL-1.0",
+  "attribution": "OpenStreetMap contributors",
+  "retrieved_at": "2026-08-27T18:41:56.305Z",
+  "source_updated_at": "2026-08-26T20:22:15.000Z",
+  "collection_strategy": "geofabrik-pbf-polygon-v1",
+  "extract_url": "https://download.geofabrik.de/africa/algeria-latest.osm.pbf",
+  "wilaya_code": 66,
+  "records": [
+    {
+      "id": "node/10912492859",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        4.6618858,
+        33.1761286
+      ]
+    },
+    {
+      "id": "node/12010373887",
+      "amenity": "fuel",
+      "name": "Naftal",
+      "name_ar": null,
+      "name_fr": "Naftal",
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.4115427,
+        34.1836704
+      ]
+    },
+    {
+      "id": "node/2145317375",
+      "amenity": "fuel",
+      "name": "محطة بنزين العايب",
+      "name_ar": "محطة بنزين العايب",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.4978686,
+        34.178311
+      ]
+    },
+    {
+      "id": "node/2145970909",
+      "amenity": "fuel",
+      "name": "محطة بنزين",
+      "name_ar": "محطة بنزين",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.2334111,
+        33.9581631
+      ]
+    },
+    {
+      "id": "node/2176224573",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.5109335,
+        34.1464322
+      ]
+    },
+    {
+      "id": "node/2182262183",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.5008054,
+        34.1479327
+      ]
+    },
+    {
+      "id": "node/2437356059",
+      "amenity": "fuel",
+      "name": "محطة وقود سير غاز",
+      "name_ar": "محطة وقود سير غاز",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "سير غاز",
+      "opening_hours": null,
+      "coordinates": [
+        3.4770738,
+        34.1545569
+      ]
+    },
+    {
+      "id": "node/4319364768",
+      "amenity": "fuel",
+      "name": "فيض البطمة",
+      "name_ar": "فيض البطمة",
+      "name_fr": null,
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.7739586,
+        34.5346902
+      ]
+    },
+    {
+      "id": "node/6122497535",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.7714725,
+        34.5230266
+      ]
+    },
+    {
+      "id": "node/6390414762",
+      "amenity": "fuel",
+      "name": null,
+      "name_ar": null,
+      "name_fr": null,
+      "brand": null,
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.5335502,
+        34.1371603
+      ]
+    },
+    {
+      "id": "way/1373090107",
+      "amenity": "fuel",
+      "name": "محطة بنزين وسط المدينة",
+      "name_ar": "محطة بنزين وسط المدينة",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": null,
+      "opening_hours": null,
+      "coordinates": [
+        3.4958813500000003,
+        34.152629149999996
+      ]
+    },
+    {
+      "id": "way/791591468",
+      "amenity": "fuel",
+      "name": "محطة وقود نفطال",
+      "name_ar": "محطة وقود نفطال",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        4.43791945,
+        33.466406649999996
+      ]
+    },
+    {
+      "id": "way/791591469",
+      "amenity": "fuel",
+      "name": "محطة الوقود رماضنية",
+      "name_ar": "محطة الوقود رماضنية",
+      "name_fr": "Naftal",
+      "brand": "Naftal",
+      "operator": "نفطال",
+      "opening_hours": null,
+      "coordinates": [
+        4.4463931500000005,
+        33.46386905
+      ]
+    }
+  ]
+}

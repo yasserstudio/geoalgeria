@@ -1,0 +1,741 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-32",
+    "wilaya_code": 32,
+    "name": "El Bayadh",
+    "name_ar": "البيض",
+    "center": [
+      1.1444999999999999,
+      33.0525
+    ],
+    "bounds": [
+      -0.071,
+      31.657,
+      2.36,
+      34.448
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 17,
+    "osm_records": 9,
+    "tariki_records": 15,
+    "cross_source": 7,
+    "multiple_tariki": 0,
+    "osm_only": 2,
+    "tariki_only": 8,
+    "nearby_osm_pairs": 0,
+    "conflicts": 8
+  },
+  "conflicts": [
+    {
+      "candidate_id": "tariki-13925",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14209",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14320",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14434",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14729",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-1849",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4277",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-5651",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-13685480999",
+      "coordinates": [
+        1.2499952,
+        34.0561975
+      ],
+      "osm": {
+        "id": "node/13685480999",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.2499952,
+          34.0561975
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-2127365223",
+      "coordinates": [
+        0.0703898,
+        34.1568336
+      ],
+      "osm": {
+        "id": "node/2127365223",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0703898,
+          34.1568336
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2051",
+          "route_id": "5182",
+          "name_fr": "Station de services commune Elkheiter",
+          "name_ar": "محطة البنزين مدخل بلدية الخيثر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.07,
+            34.156
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 99
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين مدخل بلدية الخيثر"
+    },
+    {
+      "id": "osm-node-2127413035",
+      "coordinates": [
+        0.9555963,
+        33.6968886
+      ],
+      "osm": {
+        "id": "node/2127413035",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.9555963,
+          33.6968886
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5546",
+          "route_id": "3659",
+          "name_fr": "station de services  BOURENANE R N A6",
+          "name_ar": "محطة بورنان ط و أ6",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.956,
+            33.697
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بورنان ط و أ6"
+    },
+    {
+      "id": "osm-node-3152998822",
+      "coordinates": [
+        1.0464328,
+        33.6670243
+      ],
+      "osm": {
+        "id": "node/3152998822",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.0464328,
+          33.6670243
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5547",
+          "route_id": "3663",
+          "name_fr": "station de services  BOURENANE R N 47",
+          "name_ar": "محطة بورنان ط و 47",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.046,
+            33.667
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 40
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بورنان ط و 47"
+    },
+    {
+      "id": "osm-node-3740560089",
+      "coordinates": [
+        1.0212983,
+        33.6899749
+      ],
+      "osm": {
+        "id": "node/3740560089",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          1.0212983,
+          33.6899749
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5569",
+          "route_id": "3659",
+          "name_fr": "Station de services NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.021,
+            33.69
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 28
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة نفطال"
+    },
+    {
+      "id": "osm-node-3923601865",
+      "coordinates": [
+        0.0825647,
+        34.4127288
+      ],
+      "osm": {
+        "id": "node/3923601865",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.0825647,
+          34.4127288
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2047",
+          "route_id": "5182",
+          "name_fr": "Station de services Mesbah",
+          "name_ar": "محطة البنزين مصباح",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.082,
+            34.412
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 96
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة البنزين مصباح"
+    },
+    {
+      "id": "osm-node-4872497222",
+      "coordinates": [
+        1.030136,
+        33.6855754
+      ],
+      "osm": {
+        "id": "node/4872497222",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.030136,
+          33.6855754
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5570",
+          "route_id": "3659",
+          "name_fr": "Station de services HAMITOU",
+          "name_ar": "محطة حميتو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.03,
+            33.686
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services HAMITOU",
+      "display_name_ar": "محطة حميتو"
+    },
+    {
+      "id": "osm-node-5509621820",
+      "coordinates": [
+        1.5302459,
+        33.7258916
+      ],
+      "osm": {
+        "id": "node/5509621820",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          1.5302459,
+          33.7258916
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-304261732",
+      "coordinates": [
+        0.080261,
+        34.03790025
+      ],
+      "osm": {
+        "id": "way/304261732",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          0.080261,
+          34.03790025
+        ]
+      },
+      "tariki": [
+        {
+          "id": "5869",
+          "route_id": "4887",
+          "name_fr": "Station de services BOURENANE",
+          "name_ar": "محطة الخدمات بورنان",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.08,
+            34.038
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": 26
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services BOURENANE",
+      "display_name_ar": "محطة الخدمات بورنان"
+    },
+    {
+      "id": "tariki-13925",
+      "coordinates": [
+        1.249,
+        34.057
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13925",
+          "route_id": "5212",
+          "name_fr": "STATION SERVICE SIDID NACEUR",
+          "name_ar": "محطة الخدمات بسيدي الناصر",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            1.249,
+            34.057
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE SIDID NACEUR",
+      "display_name_ar": "محطة الخدمات بسيدي الناصر"
+    },
+    {
+      "id": "tariki-14209",
+      "coordinates": [
+        0.928,
+        34.017
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14209",
+          "route_id": "5113",
+          "name_fr": "STATION NAFTAL",
+          "name_ar": "محطة نفطال بلدية الرقاصة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            0.928,
+            34.017
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION NAFTAL",
+      "display_name_ar": "محطة نفطال بلدية الرقاصة"
+    },
+    {
+      "id": "tariki-14320",
+      "coordinates": [
+        0.905,
+        33.723
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14320",
+          "route_id": "21544",
+          "name_fr": "STATION SERVICE (HACHELIF ABDELHAFID)",
+          "name_ar": "محطة الخدمات (حشليف عبد الحفيظ)",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            0.905,
+            33.723
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION SERVICE (HACHELIF ABDELHAFID)",
+      "display_name_ar": "محطة الخدمات (حشليف عبد الحفيظ)"
+    },
+    {
+      "id": "tariki-14434",
+      "coordinates": [
+        1.167,
+        33.85
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14434",
+          "route_id": "21950",
+          "name_fr": "//",
+          "name_ar": "محطة خدمات التزود بالوقود واد الحجل بلدية ستيتن",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.167,
+            33.85
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "//",
+      "display_name_ar": "محطة خدمات التزود بالوقود واد الحجل بلدية ستيتن"
+    },
+    {
+      "id": "tariki-14729",
+      "coordinates": [
+        1.206,
+        32.973
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14729",
+          "route_id": "9179",
+          "name_fr": "station dessence",
+          "name_ar": "محطة الخدمات",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.206,
+            32.973
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "station dessence",
+      "display_name_ar": "محطة الخدمات"
+    },
+    {
+      "id": "tariki-1849",
+      "coordinates": [
+        0.085,
+        34.051
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "1849",
+          "route_id": "4887",
+          "name_fr": "Station de services Bougtob",
+          "name_ar": "محطة الخدمات بوقطب",
+          "services": [
+            "fuel",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            0.085,
+            34.051
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bougtob",
+      "display_name_ar": "محطة الخدمات بوقطب"
+    },
+    {
+      "id": "tariki-4277",
+      "coordinates": [
+        1.268,
+        33.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4277",
+          "route_id": "8809",
+          "name_fr": "Station de services Bendjeka",
+          "name_ar": "محطة الوقود بريزينة بن جقة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            1.268,
+            33.102
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Bendjeka",
+      "display_name_ar": "محطة الوقود بريزينة بن جقة"
+    },
+    {
+      "id": "tariki-5651",
+      "coordinates": [
+        1.269,
+        33.102
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "5651",
+          "route_id": "10484",
+          "name_fr": "Station de services BEN DJOKA ELARBI",
+          "name_ar": "محطة خدمات نفطال بن جقة العربي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            1.269,
+            33.102
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 32,
+          "wilaya_fr": "El Bayadh",
+          "wilaya_ar": "البيض",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services BEN DJOKA ELARBI",
+      "display_name_ar": "محطة خدمات نفطال بن جقة العربي"
+    }
+  ]
+}

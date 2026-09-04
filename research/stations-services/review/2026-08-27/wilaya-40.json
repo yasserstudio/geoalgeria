@@ -1,0 +1,2297 @@
+{
+  "schema_version": 1,
+  "usage": "internal-review-only",
+  "scope": {
+    "id": "wilaya-40",
+    "wilaya_code": 40,
+    "name": "Khenchela",
+    "name_ar": "خنشلة",
+    "center": [
+      7.023,
+      34.9135
+    ],
+    "bounds": [
+      6.497,
+      34.154,
+      7.549,
+      35.673
+    ],
+    "retrieved_at": "2026-08-27T18:19:29.386Z"
+  },
+  "sources": {
+    "osm": {
+      "license": "ODbL-1.0",
+      "attribution": "OpenStreetMap contributors",
+      "retrieved_at": "2026-08-27T18:19:29.386Z"
+    },
+    "tariki": {
+      "snapshot_date": "2024-12-15",
+      "license": null,
+      "usage": "internal-review-leads-only"
+    },
+    "viamichelin": {
+      "license": null,
+      "usage": "manual-visual-check-only",
+      "url": "https://www.viamichelin.fr/"
+    },
+    "naftal": {
+      "license": null,
+      "usage": "official-operator-manual-check-only",
+      "url": "https://www.naftal.dz/fr/?cat=22"
+    }
+  },
+  "match_radius_m": 120,
+  "nearby_osm_radius_m": 50,
+  "metrics": {
+    "candidates": 58,
+    "osm_records": 39,
+    "tariki_records": 40,
+    "cross_source": 17,
+    "multiple_tariki": 2,
+    "osm_only": 20,
+    "tariki_only": 19,
+    "nearby_osm_pairs": 4,
+    "conflicts": 29
+  },
+  "conflicts": [
+    {
+      "candidate_id": "osm-node-3239988128",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-3921181366",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-4406660311",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6693672585",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-6745764587",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-node-7780854971",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1385640710",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-1486275499",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-653566078",
+      "reasons": [
+        "multiple-tariki"
+      ]
+    },
+    {
+      "candidate_id": "osm-way-833505978",
+      "reasons": [
+        "nearby-osm"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12263",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12279",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12321",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12322",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-12386",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13058",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13584",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13585",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13592",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-13594",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-14582",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3041",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-3785",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4216",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-4322",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8297",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8317",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8330",
+      "reasons": [
+        "tariki-only"
+      ]
+    },
+    {
+      "candidate_id": "tariki-8339",
+      "reasons": [
+        "tariki-only"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "osm-node-10796133915",
+      "coordinates": [
+        6.6460472,
+        35.4150733
+      ],
+      "osm": {
+        "id": "node/10796133915",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.6460472,
+          35.4150733
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14578",
+          "route_id": "16778",
+          "name_fr": "//",
+          "name_ar": "محطة الخدمات بوفجيغن سليم",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.646,
+            35.415
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "//",
+      "display_name_ar": "محطة الخدمات بوفجيغن سليم"
+    },
+    {
+      "id": "osm-node-11954069082",
+      "coordinates": [
+        7.1178424,
+        35.1443714
+      ],
+      "osm": {
+        "id": "node/11954069082",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1178424,
+          35.1443714
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-14124519276",
+      "coordinates": [
+        7.2365414,
+        35.5816867
+      ],
+      "osm": {
+        "id": "node/14124519276",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2365414,
+          35.5816867
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2502",
+          "route_id": "5917",
+          "name_fr": "Station de services Medessi Idriss",
+          "name_ar": "محطة متعددة الخدمات مرداسي ادريس",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "shop",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.237,
+            35.581
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 87
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Medessi Idriss",
+      "display_name_ar": "محطة متعددة الخدمات مرداسي ادريس"
+    },
+    {
+      "id": "osm-node-3239988128",
+      "coordinates": [
+        7.1418923,
+        35.4071001
+      ],
+      "osm": {
+        "id": "node/3239988128",
+        "name": null,
+        "name_ar": "محطة بوقفة",
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": "Naftal",
+        "opening_hours": null,
+        "coordinates": [
+          7.1418923,
+          35.4071001
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12297",
+          "route_id": "16753",
+          "name_fr": "STATION BOUGUEFA",
+          "name_ar": "محطة بوقفة",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1419,
+            35.4071
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 1
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1486275499",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بوقفة"
+    },
+    {
+      "id": "osm-node-3239994708",
+      "coordinates": [
+        7.1707207,
+        35.4098546
+      ],
+      "osm": {
+        "id": "node/3239994708",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1707207,
+          35.4098546
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12277",
+          "route_id": "16723",
+          "name_fr": "STATION OUADI",
+          "name_ar": "محطة وادي",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.1707,
+            35.4098
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 6
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة وادي"
+    },
+    {
+      "id": "osm-node-3240031632",
+      "coordinates": [
+        7.1868643,
+        35.393137
+      ],
+      "osm": {
+        "id": "node/3240031632",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1868643,
+          35.393137
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12278",
+          "route_id": "16723",
+          "name_fr": "STATION FALEK",
+          "name_ar": "محطة فالق",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.1869,
+            35.3931
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 5
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة فالق"
+    },
+    {
+      "id": "osm-node-3240149460",
+      "coordinates": [
+        7.3553994,
+        35.2941411
+      ],
+      "osm": {
+        "id": "node/3240149460",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3553994,
+          35.2941411
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4040",
+          "route_id": "8298",
+          "name_fr": "Station de services Hafidi",
+          "name_ar": "محطة الوقود حفيظي",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.355,
+            35.294
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 39
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة الوقود حفيظي"
+    },
+    {
+      "id": "osm-node-3249928787",
+      "coordinates": [
+        7.3631488,
+        35.2503036
+      ],
+      "osm": {
+        "id": "node/3249928787",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.3631488,
+          35.2503036
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-3921150607",
+      "coordinates": [
+        7.1120221,
+        35.4539023
+      ],
+      "osm": {
+        "id": "node/3921150607",
+        "name": "ⵜⴰⵙⵉⵜⴰⵙⵢⵓⵏⵜ ⵏ ⴵⵔⴰⵎⵓ محطة جرامو",
+        "name_ar": "محطة جرامو",
+        "name_fr": "Djramou",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.1120221,
+          35.4539023
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Djramou",
+      "display_name_ar": "محطة جرامو"
+    },
+    {
+      "id": "osm-node-3921181366",
+      "coordinates": [
+        7.0656211,
+        35.4699182
+      ],
+      "osm": {
+        "id": "node/3921181366",
+        "name": "محطة بدغيو",
+        "name_ar": "محطة بدغيو",
+        "name_fr": "Bedghiou",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.0656211,
+          35.4699182
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4532",
+          "route_id": "9159",
+          "name_fr": "Station de services Bedghiou",
+          "name_ar": "بدغيو",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.0656,
+            35.4698
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 13
+        },
+        {
+          "id": "12218",
+          "route_id": "16612",
+          "name_fr": null,
+          "name_ar": "محطة بدغيو",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.066,
+            35.47
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 35
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Bedghiou",
+      "display_name_ar": "محطة بدغيو"
+    },
+    {
+      "id": "osm-node-3921197427",
+      "coordinates": [
+        6.9845939,
+        35.4800612
+      ],
+      "osm": {
+        "id": "node/3921197427",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9845939,
+          35.4800612
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12186",
+          "route_id": "16612",
+          "name_fr": null,
+          "name_ar": "محطة بردوق",
+          "services": [
+            "fuel",
+            "car_wash"
+          ],
+          "coordinates": [
+            6.985,
+            35.48
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 37
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بردوق"
+    },
+    {
+      "id": "osm-node-3921199183",
+      "coordinates": [
+        6.9410571,
+        35.4829656
+      ],
+      "osm": {
+        "id": "node/3921199183",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9410571,
+          35.4829656
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4328043772",
+      "coordinates": [
+        7.4579181,
+        35.4322791
+      ],
+      "osm": {
+        "id": "node/4328043772",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.4579181,
+          35.4322791
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4406547743",
+      "coordinates": [
+        6.7538627,
+        35.3229604
+      ],
+      "osm": {
+        "id": "node/4406547743",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7538627,
+          35.3229604
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4406657952",
+      "coordinates": [
+        6.8322622,
+        35.5127941
+      ],
+      "osm": {
+        "id": "node/4406657952",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8322622,
+          35.5127941
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4213",
+          "route_id": "8649",
+          "name_fr": "Station de services Belabed",
+          "name_ar": "محطة بلعابد",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.833,
+            35.513
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 71
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة بلعابد"
+    },
+    {
+      "id": "osm-node-4406660311",
+      "coordinates": [
+        6.7895497,
+        35.5163819
+      ],
+      "osm": {
+        "id": "node/4406660311",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.7895497,
+          35.5163819
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-1385640710",
+          "offset_m": 11
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4422669391",
+      "coordinates": [
+        7.1629057,
+        35.4521927
+      ],
+      "osm": {
+        "id": "node/4422669391",
+        "name": "kalile",
+        "name_ar": null,
+        "name_fr": "kalile",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1629057,
+          35.4521927
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "kalile",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-4699148594",
+      "coordinates": [
+        7.1320561,
+        35.4571565
+      ],
+      "osm": {
+        "id": "node/4699148594",
+        "name": "(ⵜⴰⵙⴳⴰ ⵏ ⵓⴼⴻⴳⴳⴰⴳ محطة خدمات",
+        "name_ar": "محطة خدمات",
+        "name_fr": "Station-service",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1320561,
+          35.4571565
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station-service",
+      "display_name_ar": "محطة خدمات"
+    },
+    {
+      "id": "osm-node-5523834448",
+      "coordinates": [
+        7.1988196,
+        35.528097
+      ],
+      "osm": {
+        "id": "node/5523834448",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1988196,
+          35.528097
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5523869657",
+      "coordinates": [
+        7.1466575,
+        35.3717124
+      ],
+      "osm": {
+        "id": "node/5523869657",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1466575,
+          35.3717124
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12296",
+          "route_id": "16752",
+          "name_fr": "STATION CHEBADEN",
+          "name_ar": "محطة شبدن",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.1461,
+            35.3722
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 74
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "STATION CHEBADEN",
+      "display_name_ar": "محطة شبدن"
+    },
+    {
+      "id": "osm-node-5523889332",
+      "coordinates": [
+        7.1085515,
+        35.1982567
+      ],
+      "osm": {
+        "id": "node/5523889332",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1085515,
+          35.1982567
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-5550646897",
+      "coordinates": [
+        6.9867442,
+        34.5002695
+      ],
+      "osm": {
+        "id": "node/5550646897",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.9867442,
+          34.5002695
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-6503811812",
+      "coordinates": [
+        7.2506111,
+        35.6027338
+      ],
+      "osm": {
+        "id": "node/6503811812",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2506111,
+          35.6027338
+        ]
+      },
+      "tariki": [
+        {
+          "id": "2493",
+          "route_id": "5917",
+          "name_fr": "Station de services Saidani Mohamed",
+          "name_ar": "محطة متعددة الخدمات سعيداني محمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.251,
+            35.602
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 89
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station de services Saidani Mohamed",
+      "display_name_ar": "محطة متعددة الخدمات سعيداني محمد"
+    },
+    {
+      "id": "osm-node-6693672585",
+      "coordinates": [
+        6.5800056,
+        35.231251
+      ],
+      "osm": {
+        "id": "node/6693672585",
+        "name": "محطة خدمات البنزين شحاط لمصارة",
+        "name_ar": "محطة خدمات البنزين شحاط لمصارة",
+        "name_fr": "Station-service Lmsara",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5800056,
+          35.231251
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6745764587",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station-service Lmsara",
+      "display_name_ar": "محطة خدمات البنزين شحاط لمصارة"
+    },
+    {
+      "id": "osm-node-6745764587",
+      "coordinates": [
+        6.5801288,
+        35.2312209
+      ],
+      "osm": {
+        "id": "node/6745764587",
+        "name": "محطة خدمات بنزين شحاط لمصارة",
+        "name_ar": null,
+        "name_fr": "Naftal Lmsara",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.5801288,
+          35.2312209
+        ]
+      },
+      "tariki": [
+        {
+          "id": "14584",
+          "route_id": "22386",
+          "name_fr": "STATION SERVICE CHAHATI",
+          "name_ar": "محطات خدمات شحاطي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.58,
+            35.231
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 27
+        }
+      ],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-6693672585",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "cross-source",
+      "display_name": "Naftal Lmsara",
+      "display_name_ar": "محطات خدمات شحاطي"
+    },
+    {
+      "id": "osm-node-7043417010",
+      "coordinates": [
+        7.1219771,
+        35.1539784
+      ],
+      "osm": {
+        "id": "node/7043417010",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1219771,
+          35.1539784
+        ]
+      },
+      "tariki": [
+        {
+          "id": "13468",
+          "route_id": "18845",
+          "name_fr": null,
+          "name_ar": "محطة الخدمات زروالي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.122,
+            35.154
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 3
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "محطة الخدمات زروالي",
+      "display_name_ar": "محطة الخدمات زروالي"
+    },
+    {
+      "id": "osm-node-7780854971",
+      "coordinates": [
+        7.0455381,
+        34.4849393
+      ],
+      "osm": {
+        "id": "node/7780854971",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.0455381,
+          34.4849393
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-way-833505978",
+          "offset_m": 30
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-node-8585986219",
+      "coordinates": [
+        7.0477628,
+        35.0636538
+      ],
+      "osm": {
+        "id": "node/8585986219",
+        "name": "station service",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.0477628,
+          35.0636538
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "station service",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1385640710",
+      "coordinates": [
+        6.78966535,
+        35.51641285
+      ],
+      "osm": {
+        "id": "way/1385640710",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.78966535,
+          35.51641285
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-4406660311",
+          "offset_m": 11
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-1486275499",
+      "coordinates": [
+        7.1420069999999996,
+        35.4070428
+      ],
+      "osm": {
+        "id": "way/1486275499",
+        "name": "محطة وقود بوقفة (أنسيغة)",
+        "name_ar": null,
+        "name_fr": "Station-service Bougofa",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.1420069999999996,
+          35.4070428
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-3239988128",
+          "offset_m": 12
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Station-service Bougofa",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-317708397",
+      "coordinates": [
+        7.14506275,
+        35.3866832
+      ],
+      "osm": {
+        "id": "way/317708397",
+        "name": null,
+        "name_ar": "محطة طالبي",
+        "name_fr": "Station Talbi",
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.14506275,
+          35.3866832
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12283",
+          "route_id": "13366",
+          "name_fr": "STATION TALBI",
+          "name_ar": "محطة طالبي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.1451,
+            35.3867
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 4
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station Talbi",
+      "display_name_ar": "محطة طالبي"
+    },
+    {
+      "id": "osm-way-317712370",
+      "coordinates": [
+        7.2301768,
+        35.35872745
+      ],
+      "osm": {
+        "id": "way/317712370",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": "Naftal",
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.2301768,
+          35.35872745
+        ]
+      },
+      "tariki": [
+        {
+          "id": "12342",
+          "route_id": "16748",
+          "name_fr": "STATION SERVICSE AZZEADDINE",
+          "name_ar": "محطة خدمات عزالدين",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.2303,
+            35.3588
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 14
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "محطة خدمات عزالدين"
+    },
+    {
+      "id": "osm-way-317981190",
+      "coordinates": [
+        6.8988939,
+        35.50353925
+      ],
+      "osm": {
+        "id": "way/317981190",
+        "name": "Station Service Naftal",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.8988939,
+          35.50353925
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Station Service Naftal",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-336577808",
+      "coordinates": [
+        6.98544025,
+        35.028199400000005
+      ],
+      "osm": {
+        "id": "way/336577808",
+        "name": "Station D'essence Kourdani",
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          6.98544025,
+          35.028199400000005
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4712",
+          "route_id": "9400",
+          "name_fr": "Station de services Courdani",
+          "name_ar": "محطة الوقود كورداني",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            6.9853,
+            35.0282
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 13
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Station D'essence Kourdani",
+      "display_name_ar": "محطة الوقود كورداني"
+    },
+    {
+      "id": "osm-way-369093839",
+      "coordinates": [
+        7.0107269500000005,
+        35.043860699999996
+      ],
+      "osm": {
+        "id": "way/369093839",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.0107269500000005,
+          35.043860699999996
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4726",
+          "route_id": "9400",
+          "name_fr": "Station de services Checher centre",
+          "name_ar": "محطة الوقود  وتوزع المواد البترولية ششار وسط",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.0108,
+            35.0438
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 9
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-653558500",
+      "coordinates": [
+        7.056911400000001,
+        35.53714335
+      ],
+      "osm": {
+        "id": "way/653558500",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.056911400000001,
+          35.53714335
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "osm-way-653566078",
+      "coordinates": [
+        7.06453855,
+        35.469674850000004
+      ],
+      "osm": {
+        "id": "way/653566078",
+        "name": "محطة عقون",
+        "name_ar": "محطة عقون",
+        "name_fr": "Station agoune",
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.06453855,
+          35.469674850000004
+        ]
+      },
+      "tariki": [
+        {
+          "id": "4528",
+          "route_id": "9159",
+          "name_fr": "Station de services",
+          "name_ar": "محطة توزيغ الوقود",
+          "services": [
+            "fuel",
+            "cafe",
+            "shop"
+          ],
+          "coordinates": [
+            7.0645,
+            35.4695
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 20
+        },
+        {
+          "id": "12219",
+          "route_id": "16612",
+          "name_fr": null,
+          "name_ar": "محطة عقون",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.064,
+            35.47
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 61
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "multiple-tariki",
+      "display_name": "Station agoune",
+      "display_name_ar": "محطة عقون"
+    },
+    {
+      "id": "osm-way-801815476",
+      "coordinates": [
+        7.122654799999999,
+        35.448084
+      ],
+      "osm": {
+        "id": "way/801815476",
+        "name": "نفطال",
+        "name_ar": "نفطال",
+        "name_fr": "Naftal",
+        "brand": "Naftal",
+        "operator": "نفطال",
+        "opening_hours": null,
+        "coordinates": [
+          7.122654799999999,
+          35.448084
+        ]
+      },
+      "tariki": [
+        {
+          "id": "8305",
+          "route_id": "13286",
+          "name_fr": "NAFTAL",
+          "name_ar": "محطة نفطال",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1224,
+            35.4477
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": 49
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "cross-source",
+      "display_name": "Naftal",
+      "display_name_ar": "نفطال"
+    },
+    {
+      "id": "osm-way-833505978",
+      "coordinates": [
+        7.045526049999999,
+        34.48520455
+      ],
+      "osm": {
+        "id": "way/833505978",
+        "name": null,
+        "name_ar": null,
+        "name_fr": null,
+        "brand": null,
+        "operator": null,
+        "opening_hours": null,
+        "coordinates": [
+          7.045526049999999,
+          34.48520455
+        ]
+      },
+      "tariki": [],
+      "nearby_osm": [
+        {
+          "candidate_id": "osm-node-7780854971",
+          "offset_m": 30
+        }
+      ],
+      "source_state": "osm-only",
+      "display_name": "Unnamed station candidate",
+      "display_name_ar": null
+    },
+    {
+      "id": "tariki-12263",
+      "coordinates": [
+        7.4626,
+        35.4319
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12263",
+          "route_id": "16710",
+          "name_fr": "aiyache station  essence",
+          "name_ar": "محطة الوقود العايش",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.4626,
+            35.4319
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "aiyache station  essence",
+      "display_name_ar": "محطة الوقود العايش"
+    },
+    {
+      "id": "tariki-12279",
+      "coordinates": [
+        7.2597,
+        35.4446
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12279",
+          "route_id": "16725",
+          "name_fr": "STATION AOUN ELAH",
+          "name_ar": "محطة عون الله",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.2597,
+            35.4446
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION AOUN ELAH",
+      "display_name_ar": "محطة عون الله"
+    },
+    {
+      "id": "tariki-12321",
+      "coordinates": [
+        7.199,
+        35.527
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12321",
+          "route_id": "16772",
+          "name_fr": null,
+          "name_ar": "محطة خدمات بغزو",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.199,
+            35.527
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة خدمات بغزو",
+      "display_name_ar": "محطة خدمات بغزو"
+    },
+    {
+      "id": "tariki-12322",
+      "coordinates": [
+        7.164,
+        35.453
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12322",
+          "route_id": "16772",
+          "name_fr": null,
+          "name_ar": "محطة خدمات قليل السبتي",
+          "services": [
+            "fuel",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.164,
+            35.453
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "محطة خدمات قليل السبتي",
+      "display_name_ar": "محطة خدمات قليل السبتي"
+    },
+    {
+      "id": "tariki-12386",
+      "coordinates": [
+        7.107,
+        35.171
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "12386",
+          "route_id": "13339",
+          "name_fr": "STATION DE SERVICSE GROUP TALOUS",
+          "name_ar": "محطة خدمات مجمع طالوس",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.107,
+            35.171
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICSE GROUP TALOUS",
+      "display_name_ar": "محطة خدمات مجمع طالوس"
+    },
+    {
+      "id": "tariki-13058",
+      "coordinates": [
+        6.901,
+        35.563
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13058",
+          "route_id": "8675",
+          "name_fr": "STATION FRERES OUCHEN",
+          "name_ar": "محطة الإخوة أوشن",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant"
+          ],
+          "coordinates": [
+            6.901,
+            35.563
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION FRERES OUCHEN",
+      "display_name_ar": "محطة الإخوة أوشن"
+    },
+    {
+      "id": "tariki-13584",
+      "coordinates": [
+        7.346,
+        35.299
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13584",
+          "route_id": "8298",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود شرابن",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.346,
+            35.299
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الوقود شرابن"
+    },
+    {
+      "id": "tariki-13585",
+      "coordinates": [
+        7.36,
+        35.25
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13585",
+          "route_id": "8298",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود راس الماء ( معوش)",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.36,
+            35.25
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الوقود راس الماء ( معوش)"
+    },
+    {
+      "id": "tariki-13592",
+      "coordinates": [
+        6.898,
+        34.528
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13592",
+          "route_id": "13339",
+          "name_fr": "STATION DE SERVICSE  CHITOUR",
+          "name_ar": "محطة الخدمات شيتور",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.898,
+            34.528
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICSE  CHITOUR",
+      "display_name_ar": "محطة الخدمات شيتور"
+    },
+    {
+      "id": "tariki-13594",
+      "coordinates": [
+        7.048,
+        34.484
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "13594",
+          "route_id": "13339",
+          "name_fr": "STATION DE SERVICSE NAJAH AHJAMEI",
+          "name_ar": "محطة الخدمات نجاح الجمعي قرية الميتة",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco"
+          ],
+          "coordinates": [
+            7.048,
+            34.484
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICSE NAJAH AHJAMEI",
+      "display_name_ar": "محطة الخدمات نجاح الجمعي قرية الميتة"
+    },
+    {
+      "id": "tariki-14582",
+      "coordinates": [
+        6.582,
+        35.23
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "14582",
+          "route_id": "172",
+          "name_fr": "STATION CHAHATI",
+          "name_ar": "محطة شحاطي",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.582,
+            35.23
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION CHAHATI",
+      "display_name_ar": "محطة شحاطي"
+    },
+    {
+      "id": "tariki-3041",
+      "coordinates": [
+        6.9991,
+        35.2554
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3041",
+          "route_id": "6701",
+          "name_fr": "Station de services ATIYA",
+          "name_ar": "محطة عطية",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.9991,
+            35.2554
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services ATIYA",
+      "display_name_ar": "محطة عطية"
+    },
+    {
+      "id": "tariki-3785",
+      "coordinates": [
+        7.441,
+        35.431
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "3785",
+          "route_id": "7850",
+          "name_fr": "Station de services Elaiche",
+          "name_ar": "محطة العايش",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            7.441,
+            35.431
+          ],
+          "coordinate_fix": "lat_lng_swapped",
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Elaiche",
+      "display_name_ar": "محطة العايش"
+    },
+    {
+      "id": "tariki-4216",
+      "coordinates": [
+        6.791,
+        35.516
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4216",
+          "route_id": "8649",
+          "name_fr": "Station de services Dersaoui Eldjemai",
+          "name_ar": "محطة درساوي الجمعي",
+          "services": [
+            "fuel",
+            "cafe"
+          ],
+          "coordinates": [
+            6.791,
+            35.516
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services Dersaoui Eldjemai",
+      "display_name_ar": "محطة درساوي الجمعي"
+    },
+    {
+      "id": "tariki-4322",
+      "coordinates": [
+        6.746,
+        35.32
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "4322",
+          "route_id": "5595",
+          "name_fr": "Station de services",
+          "name_ar": "محطة الوقود",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            6.746,
+            35.32
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Station de services",
+      "display_name_ar": "محطة الوقود"
+    },
+    {
+      "id": "tariki-8297",
+      "coordinates": [
+        7.131,
+        35.456
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8297",
+          "route_id": "13282",
+          "name_fr": "STATION DE SERVICES DEKIR ET SES FILS",
+          "name_ar": "محطة الخدمات دكير وابنائه",
+          "services": [
+            "fuel",
+            "cafe",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.131,
+            35.456
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES DEKIR ET SES FILS",
+      "display_name_ar": "محطة الخدمات دكير وابنائه"
+    },
+    {
+      "id": "tariki-8317",
+      "coordinates": [
+        7.111,
+        35.453
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8317",
+          "route_id": "13282",
+          "name_fr": "STATION DE SERVICES DJRAMOU OMAR (En Construction)",
+          "name_ar": "محطة الخدمات جرامو عمر / قيد الانجاز",
+          "services": [
+            "fuel",
+            "cafe",
+            "restaurant",
+            "tobacco",
+            "car_wash"
+          ],
+          "coordinates": [
+            7.111,
+            35.453
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES DJRAMOU OMAR (En Construction)",
+      "display_name_ar": "محطة الخدمات جرامو عمر / قيد الانجاز"
+    },
+    {
+      "id": "tariki-8330",
+      "coordinates": [
+        7.1452,
+        35.4323
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8330",
+          "route_id": "13320",
+          "name_fr": "Koptane Ahmed",
+          "name_ar": "نقطة البيع قبطان احمد",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.1452,
+            35.4323
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "Koptane Ahmed",
+      "display_name_ar": "نقطة البيع قبطان احمد"
+    },
+    {
+      "id": "tariki-8339",
+      "coordinates": [
+        7.146,
+        35.4341
+      ],
+      "osm": null,
+      "tariki": [
+        {
+          "id": "8339",
+          "route_id": "13328",
+          "name_fr": "STATION DE SERVICES BOUGOFFA ABD ENNACER",
+          "name_ar": "محطة الخدمات بوقفة عبد الناصر",
+          "services": [
+            "fuel"
+          ],
+          "coordinates": [
+            7.146,
+            35.4341
+          ],
+          "coordinate_fix": null,
+          "wilaya_code": 40,
+          "wilaya_fr": "Khenchela",
+          "wilaya_ar": "خنشلة",
+          "offset_m": null
+        }
+      ],
+      "nearby_osm": [],
+      "source_state": "tariki-only",
+      "display_name": "STATION DE SERVICES BOUGOFFA ABD ENNACER",
+      "display_name_ar": "محطة الخدمات بوقفة عبد الناصر"
+    }
+  ]
+}

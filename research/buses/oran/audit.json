@@ -1,0 +1,100 @@
+{
+  "updated": "2026-09-01",
+  "operator_id": "etus-oran",
+  "operator_name": "Entreprise de transport urbain et suburbain d'Oran",
+  "wilaya_code": "31",
+  "scope": "urban_suburban",
+  "publication_status": "blocked_no_reusable_line_dataset",
+  "official_tracker": {
+    "url": "https://gps.etusoran.dz/",
+    "server_url": "https://gps.etusoran.dz/api/server",
+    "logo_url": "https://gps.etusoran.dz/logo.png",
+    "software": "Traccar",
+    "version": "6.6",
+    "public_claims": [
+      "operator_identity",
+      "server_metadata",
+      "operator_logo"
+    ],
+    "reuse_status": "no_open_license_found"
+  },
+  "endpoint_audit": [
+    {"path": "/api/server", "status": 200, "access": "public", "meaning": "server metadata only"},
+    {"path": "/api/devices", "status": 401, "access": "authenticated", "meaning": "fleet devices"},
+    {"path": "/api/groups", "status": 401, "access": "authenticated", "meaning": "device groups"},
+    {"path": "/api/positions", "status": 401, "access": "authenticated", "meaning": "vehicle telemetry"},
+    {"path": "/api/routes", "status": 404, "access": "not_available", "meaning": "no transit Line resource"},
+    {"path": "/api/stops", "status": 404, "access": "not_available", "meaning": "no passenger Station resource"},
+    {"path": "/api/reports/route", "status": 401, "access": "authenticated", "meaning": "historical vehicle traces, not Line geometry"},
+    {"path": "/api/reports/stops", "status": 401, "access": "authenticated", "meaning": "detected dwell events, not passenger Stations"},
+    {"path": "/api/socket", "status": 503, "access": "unavailable_anonymously", "meaning": "live telemetry stream"}
+  ],
+  "current_reported_line_leads": [
+    {
+      "ref": "69",
+      "from": "El Hamri",
+      "to": "El Braya",
+      "geometry": null,
+      "station_sequence": null,
+      "source_url": "https://capdz.dz/archives/16261",
+      "evidence": "secondary_report",
+      "reuse_status": "no_open_license_found"
+    },
+    {
+      "ref": null,
+      "from": "El Morchid station",
+      "to": "Gdyel bus station",
+      "geometry": null,
+      "station_sequence": null,
+      "source_url": "https://capdz.dz/archives/16261",
+      "evidence": "secondary_report",
+      "reuse_status": "no_open_license_found"
+    },
+    {
+      "ref": "G1",
+      "from": "Arab Maghreb roundabout",
+      "to": "El Bahia station",
+      "via": ["Belgaïd 4,000 logements", "Miloud-Hadefi complex", "Boulevard des Lions", "Emir-Abdelkader mosque"],
+      "geometry": null,
+      "station_sequence": null,
+      "source_url": "https://www.lexpression.dz/societe/mise-en-service-de-deux-nouvelles-lignes-de-transport-urbain-407130",
+      "evidence": "secondary_report",
+      "reuse_status": "no_open_license_found"
+    },
+    {
+      "ref": null,
+      "from": "AADL Ain El Beïda and Hassi housing areas",
+      "to": "M'dina J'dida and Haï El Hamri",
+      "geometry": null,
+      "station_sequence": null,
+      "source_url": "https://www.lexpression.dz/societe/mise-en-service-de-deux-nouvelles-lignes-de-transport-urbain-407130",
+      "evidence": "secondary_report",
+      "reuse_status": "no_open_license_found"
+    }
+  ],
+  "historical_line_refs": ["16", "23", "50", "52", "53", "54", "A", "G01", "K03", "NAVETTE"],
+  "historical_source": {
+    "url": "https://di.univ-blida.dz/xmlui/bitstream/handle/123456789/15306/4.720.1770.pdf?isAllowed=y&sequence=1",
+    "evidence": "historical_academic_table",
+    "status": "stale_research_only",
+    "reuse_status": "no_open_license_found"
+  },
+  "excluded_sources": [
+    {
+      "url": "https://www.dzairtransport.com/",
+      "reason": "Algiers-only legacy planner; it explicitly states that the web version is no longer updated"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=oran.routes.devcloud",
+      "reason": "third-party application claim; no authorized or openly licensed feed found"
+    }
+  ],
+  "required_before_publication": [
+    "operator-authorized read-only export or openly licensed official feed",
+    "written republication permission or explicit open licence",
+    "device-to-Line mapping if telemetry is supplied",
+    "canonical Line identifiers and endpoints",
+    "reviewed Line geometry",
+    "ordered passenger Station membership"
+  ]
+}
