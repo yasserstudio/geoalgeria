@@ -21,6 +21,7 @@ const officialAinDefla = readCapture("buses", "etus-ain-defla-lines");
 const officialAnnaba = readCapture("buses", "etus-annaba-lines");
 const officialTlemcen = readCapture("buses", "etus-tlemcen-lines");
 const officialOran = readCapture("buses", "eto-oran-lines");
+const officialOeb = readCapture("buses", "etus-oeb-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
 const officialLineByKey = new Map([
@@ -41,6 +42,13 @@ const coordinateDecimals = (value) => {
 };
 const lineId = (operatorId, ref) => `${operatorId}-${ref}`;
 const shapeId = (operatorId, ref) => `shape-${lineId(operatorId, ref)}`;
+const oebTerminiFr = {
+  "01": ["Nouvelle cité des logements sociaux", "Cité El Kmine"],
+  "02": ["Station urbaine", "Cité des logements AADL"],
+  "03": ["Station urbaine", "Gare routière"],
+  "04": ["Station urbaine", "Maison de jeunes"],
+  "05": ["Station urbaine", "Cité Mohamed Lakhdar (Bir Terch)"],
+};
 
 const lines = etusa.lines.map((line) => {
   const shape = shapeSourceByKey.get(`etusa|${line.line}`);
@@ -206,6 +214,26 @@ for (const official of officialOran.lines) {
   });
 }
 
+// ETUS Oum El Bouaghi: five numbered Lines from supplied Operator diagrams.
+// Directory-only: the diagrams' basemap drawings are validation evidence, not
+// reusable geometry. Major-Station lists and distances stay in the Source
+// capture until the public schema can represent them without inventing stops.
+for (const official of officialOeb.lines) {
+  const [terminus1Fr, terminus2Fr] = oebTerminiFr[official.ref];
+  lines.push({
+    id: lineId("etus-oeb", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-oeb", operator: "ETUS Oum El Bouaghi", network: "Oum El Bouaghi",
+    line: official.ref,
+    terminus1: terminus1Fr, terminus1_fr: terminus1Fr, terminus1_ar: official.terminus1_ar,
+    terminus2: terminus2Fr, terminus2_fr: terminus2Fr, terminus2_ar: official.terminus2_ar,
+    stops: null, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "04",
+    source: "etus-oeb", source_refs: ["etus-oeb"],
+    source_url: officialOeb.evidence.line_source_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
 for (const official of officialEtusto) {
   const shape = shapeSourceByKey.get(`etusto|${official.ref}`);
   lines.push({
@@ -318,7 +346,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 144, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 149, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -334,7 +362,7 @@ const { metadata } = writePackageV2({
         || String(a.name_fr ?? a.id).localeCompare(String(b.name_fr ?? b.id), "fr", { numeric: true }) },
     { file: "stations.json", rows: stations },
   ],
-  meta: cfg.meta, updated: "2026-09-02", retrieved: "2026-09-02",
+  meta: cfg.meta, updated: "2026-09-04", retrieved: "2026-09-04",
   stats: { shapes: shapes.length, directions: directions.length, stations: stations.length, station_memberships: memberships.length },
 });
 write(join(DATA, "metadata.json"), {
@@ -396,6 +424,13 @@ operatorRows.push({
   line_count: officialSidiBelAbbes.lines.length, shape_count: 0,
   source_refs: ["etus-sidi-bel-abbes"],
 });
+operatorRows.push({
+  id: "etus-oeb", name: "ETUS Oum El Bouaghi",
+  name_fr: "Entreprise publique de transport urbain et suburbain d'Oum El Bouaghi",
+  name_ar: officialOeb.evidence.operator_name_ar,
+  wilaya_codes: ["04"], scope: "urban_suburban",
+  line_count: officialOeb.lines.length, shape_count: 0, source_refs: ["etus-oeb"],
+});
 // Where a reader can confirm a Line with the Operator itself. Only pages whose
 // title was verified in review; a missing page is null, never guessed.
 const operatorContacts = {
@@ -411,6 +446,7 @@ const operatorContacts = {
   "etus-annaba": { website_url: null, facebook_url: "https://www.facebook.com/100063517660926/" },
   "etus-tlemcen": { website_url: "https://www.etus-tlemcen.dz/", facebook_url: "https://www.facebook.com/etustlemcen13/" },
   "etus-oran": { website_url: null, facebook_url: "https://www.facebook.com/p/ETO-100093054514209/" },
+  "etus-oeb": { website_url: null, facebook_url: null },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));
