@@ -1,30 +1,5 @@
 # @geoalgeria/buses
 
-## Unreleased
-
-### Added
-
-- Expanded the reviewed directory to 85 urban/suburban Lines across eight
-  Operators, with 47 reusable shapes, 83 source Directions, 1,290 Stations and
-  2,105 raw ordered memberships.
-- Added official Line identities for Tiaret, Tizi Ouzou, Béjaïa, M'Sila, Sidi
-  Bel Abbès, Sétif and Mostaganem alongside ETUSA. Official-only Lines remain
-  available when no reusable geometry can be established.
-- Added complete bidirectional departure lists for eight Sidi Bel Abbès Lines;
-  the supplied source does not state service days, so `days` remains `null`.
-- Added Sétif Lines 101, 104, 105, 106A and 106B. Lines 101, 104 and 106B use
-  reviewed OpenStreetMap relation geometry; 105 and 106A remain directory-only
-  rather than receiving inferred paths.
-
-### Changed
-
-- Source identity, geometry, Direction membership and display endpoints now
-  retain separate provenance. Duplicate Sétif 106B relations produce one shape,
-  and stale OSM endpoint labels do not overwrite current operator facts.
-- Live trackers, APK/XAPK contents, raster diagrams and embedded maps are
-  validation or partnership evidence only unless an explicit reusable export
-  and permission exist. No embedded credential was used or published.
-
 ## 2.0.0
 
 ### Major Changes
