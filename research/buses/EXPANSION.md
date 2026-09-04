@@ -149,6 +149,9 @@ a fetcher and exposed nothing but its title.
 - **[seen]** Oran: fr.wikipedia "Reseau de bus d'Oran" (Ministry of Interior + GuideOran)
   lists line 39 Palais des Sports (M'dina Jdida) - Hai Nedjma; OSM "Line 39" has
   to=Medina Jdida, 0 stop members, no operator. **Decision: not yet.** Lead: that table.
+  Partly resolved 2026-09-04: the project owner supplied six route drawings from ETO's official page;
+  Line 83 (El Hamri - HPC 41) promoted directory-only, five destination-named services kept as evidence
+  (`sources/buses/eto-oran-lines.json`). A numbered ETO list is still the missing piece.
 - **[seen]** Annaba, resolved 2026-09-03 the Aïn Defla way: the project owner read the ETUS Annaba page and
   supplied its Eid al-Adha 2026 service program; six numbered Lines (05, 25, 26, 30, 33, 41) transcribed,
   nineteen unnumbered services kept as evidence (`sources/buses/etus-annaba-lines.json`). Directory-only:

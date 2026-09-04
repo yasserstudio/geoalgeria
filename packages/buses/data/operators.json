@@ -86,6 +86,23 @@
     "facebook_url": null
   },
   {
+    "id": "etus-oran",
+    "name": "ETO",
+    "name_fr": "Entreprise de transport d'Oran",
+    "name_ar": null,
+    "wilaya_codes": [
+      "31"
+    ],
+    "scope": "urban_suburban",
+    "line_count": 1,
+    "shape_count": 0,
+    "source_refs": [
+      "eto-oran"
+    ],
+    "website_url": null,
+    "facebook_url": "https://www.facebook.com/p/ETO-100093054514209/"
+  },
+  {
     "id": "etus-setif",
     "name": "ETUS Setif",
     "name_fr": "Entreprise de transport urbain et suburbain de Sétif",
