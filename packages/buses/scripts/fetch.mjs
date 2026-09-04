@@ -112,6 +112,7 @@ for (const official of officialMsila) {
     operator_id: "etus-msila", operator: "ETUS M'Sila", network: "M'Sila",
     line: official.ref, terminus1: official.terminus1, terminus2: official.terminus2,
     stops: official.stop_count, major_stops: null, service_hours: [],
+    route_diagram_url: official.diagram_receipts[0].url,
     communes_served: [], stations_served: [], wilaya_code: "28",
     source: "etus-msila", source_refs: ["etus-msila"], source_url: official.page_url,
     shape_id: null, osm_relation_ids: [],
@@ -472,18 +473,18 @@ operatorRows.push({
 const operatorContacts = {
   etusa: { website_url: "https://www.etusa.dz/", facebook_url: null },
   "etus-tiaret": { website_url: "https://www.etus-tiaret.dz/", facebook_url: null },
-  etusto: { website_url: "http://etusto.dz/", facebook_url: null },
+  etusto: { website_url: "http://etusto.dz/", facebook_url: "https://www.facebook.com/etusto15" },
   "etus-setif": { website_url: null, facebook_url: "https://www.facebook.com/111330534776381/" },
   "etus-mostaganem": { website_url: null, facebook_url: "https://www.facebook.com/100048728689041/" },
-  "etus-bejaia": { website_url: "https://etusbejaia.dz/", facebook_url: null },
+  "etus-bejaia": { website_url: "https://etusbejaia.dz/", facebook_url: "https://www.facebook.com/etusbejaia.bejaia.5" },
   "etus-msila": { website_url: "https://etus-msila.dz/", facebook_url: null },
-  "etus-sidi-bel-abbes": { website_url: "https://etus22.dz/", facebook_url: null },
+  "etus-sidi-bel-abbes": { website_url: "https://etus22.dz/", facebook_url: "https://www.facebook.com/etus22" },
   etuad: { website_url: null, facebook_url: "https://www.facebook.com/ETUS44/" },
   "etus-annaba": { website_url: null, facebook_url: "https://www.facebook.com/100063517660926/" },
   "etus-tlemcen": { website_url: "https://www.etus-tlemcen.dz/", facebook_url: "https://www.facebook.com/etustlemcen13/" },
   "etus-oran": { website_url: null, facebook_url: "https://www.facebook.com/p/ETO-100093054514209/" },
   "etus-oeb": { website_url: null, facebook_url: null },
-  "etusl-laghouat": { website_url: null, facebook_url: null },
+  "etusl-laghouat": { website_url: null, facebook_url: "https://www.facebook.com/ETUSL/" },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
 write(join(DATA, "operators.json"), operatorRows.sort((a, b) => a.id.localeCompare(b.id)));

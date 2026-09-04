@@ -185,10 +185,40 @@ if ([...new Set(msilaSlugs)].sort().join(",") !== "la-ligne-10,la-ligne-11,la-li
   throw new Error("ETUS M'Sila current Line set drifted");
 }
 const msilaDefinitions = [
-  { ref: "17", terminus1: "محطة القطب الجامعي", terminus2: "محطة حي 800 مسكن", stop_count: 29, diagram_ids: ["etus-msila-line-17-diagram", "etus-msila-line-17-stop-diagram"] },
-  { ref: "11", terminus1: "محطة القطب الجامعي", terminus2: "محطة المسافرين الجديدة", stop_count: 27, diagram_ids: ["etus-msila-line-11-diagram"] },
-  { ref: "12", terminus1: "محطة القطب الجامعي", terminus2: "موقف أولاد أحمد", stop_count: 26, diagram_ids: ["etus-msila-line-12-diagram"] },
-  { ref: "16", terminus1: "محطة لوكاد", terminus2: "موقف المويلحة", stop_count: 23, diagram_ids: ["etus-msila-line-16-diagram"] },
+  {
+    ref: "17", terminus1: "محطة القطب الجامعي", terminus2: "محطة حي 800 مسكن", diagram_ids: ["etus-msila-line-17-diagram", "etus-msila-line-17-stop-diagram"],
+    stop_names_ar: [
+      "محطة القطب الجامعي", "مطاحن الرياض", "حي 270 مسكن", "دار الرحمة", "حي 108 مسكن", "السجل التجاري", "الضمان الاجتماعي",
+      "مستشفى الزهراوي", "إكمالية أبي علي", "حي الكوش", "مقر البلدية", "السوق المغطاة", "المركز التجاري بن طبي", "مديرية البناء و التعمير",
+      "حي 500 مسكن", "المدخل الشمالي للجامعة", "مخرج اشبيليا", "حي 504 مسكن", "حي 295 مسكن", "حي 570 مسكن", "مقهى القطب", "البلدية", "ثانوية الرائد الصحراوي",
+      "حي 1500/400 مسكن", "مقابل العمارات البنية", "حي 700/450 مسكن", "مفترق الطرق الدائري", "حي عمارات الباتي جاك", "محطة حي 800 مسكن",
+    ],
+  },
+  {
+    ref: "11", terminus1: "محطة القطب الجامعي", terminus2: "محطة المسافرين الجديدة", diagram_ids: ["etus-msila-line-11-diagram"],
+    stop_names_ar: [
+      "محطة القطب الجامعي", "مطاحن الرياض", "حي 270 مسكن", "دار الرحمة", "حي 108 مسكن", "السجل التجاري", "الضمان الاجتماعي",
+      "مستشفى الزهراوي", "إكمالية أبي علي", "حي الكوش", "مقر البلدية", "السوق المغطاة", "المركز التجاري بن طبي", "مديرية البناء و التعمير",
+      "حي 500 مسكن", "المدخل الشمالي للجامعة", "حي اشبيليا", "مسجد اشبيليا", "حي 138 مسكن", "حمام القدس", "المحلات التجارية 138 مسكن", "حي 608 مسكن", "حي الشارقة", "مخبزة سحنون",
+      "صيدلية بورزق", "مخرج المحطة", "محطة المسافرين الجديدة",
+    ],
+  },
+  {
+    ref: "12", terminus1: "محطة القطب الجامعي", terminus2: "موقف أولاد أحمد", diagram_ids: ["etus-msila-line-12-diagram"],
+    stop_names_ar: [
+      "محطة القطب الجامعي", "مطاحن الرياض", "حي 270 مسكن", "تعاونية البهجة", "حي 700 مسكن", "الأمن الحضري الخامس", "مقهى الجزيرة", "حي 924 مسكن", "مدخل شارع دبي",
+      "وسط شارع دبي", "مخرج شارع دبي", "حي السونلغاز", "الفرع البلدي 1000 مسكن", "متقنة جابر بن حيان", "حي 500 مسكن", "المدخل الشمالي للجامعة", "حي اشبيليا", "حي 144 مسكن",
+      "ملعب الفروسية", "حي 300 مسكن", "مفترق الطرق 05 جويلية", "السكن التطوري", "مجمع كيا", "موقف المويلحة", "موقف محطة البنزين", "موقف أولاد أحمد",
+    ],
+  },
+  {
+    ref: "16", terminus1: "محطة لاروكاد", terminus2: "موقف المويلحة", diagram_ids: ["etus-msila-line-16-diagram"],
+    stop_names_ar: [
+      "محطة لاروكاد", "الأمن الحضري الرابع", "حي الجعافرة", "الكدية", "ساحة الشهداء", "السوق المغطاة", "مقر الولاية", "مقابل وكالة جيزي", "مقابل إدارة السجون",
+      "مقابل النشاط الاجتماعي", "مسجد الحسن البصري", "محطة المسافرين الجديدة", "مديرية الري", "المدخل الغربي للجامعة", "المدخل الشمالي للجامعة", "حي اشبيليا", "حي 144 مسكن", "ملعب الفروسية",
+      "حي 300 مسكن", "مفترق الطرق 05 جويلية", "السكن التطوري", "مجمع كيا", "موقف المويلحة",
+    ],
+  },
 ];
 const msilaLines = msilaDefinitions.map((definition) => {
   const pageReceipt = receipt(`etus-msila-line-${definition.ref}-page`);
@@ -201,8 +231,9 @@ const msilaLines = msilaDefinitions.map((definition) => {
     ref: definition.ref,
     terminus1: definition.terminus1,
     terminus2: definition.terminus2,
-    stop_count: definition.stop_count,
+    stop_count: definition.stop_names_ar.length,
     stop_count_kind: "total",
+    stop_names_ar: definition.stop_names_ar,
     geometry: "official_route_diagram_reference",
     page_url: pageReceipt.source_url,
     page_receipt: sourceReceipt(pageReceipt),
@@ -213,7 +244,7 @@ writeCapture("buses", "etus-msila-lines", msilaLines, {
   url: msilaHomeReceipt.source_url,
   retrieved: msilaHomeReceipt.retrieved_at.slice(0, 10),
   records: msilaLines.length,
-  note: "Rights-safe projection of Line identities, endpoints and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
+  note: "Rights-safe projection of Line identities, endpoints, ordered Arabic stop names and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
 });
 
 console.log(`promoted ${tiaretLines.length} ETUS Tiaret, ${etustoLines.length} ETUSTO, ${bejaiaLines.length} ETUS Béjaïa and ${msilaLines.length} ETUS M'Sila official Lines`);

@@ -182,6 +182,9 @@ test("official Operator Sources define the reviewed Line sets", () => {
   assert.deepEqual(officialMsila.map((line) => line.ref), ["17", "11", "12", "16"]);
   assert.ok(officialMsila.every((line) => line.terminus1 && line.terminus2
     && line.stop_count > 0 && line.stop_count_kind === "total"));
+  assert.ok(officialMsila.every((line) => line.stop_names_ar.length === line.stop_count));
+  assert.ok(officialMsila.every((line) => line.stop_names_ar[0] === line.terminus1
+    && line.stop_names_ar.at(-1) === line.terminus2));
   assert.ok(officialMsila.every((line) => line.geometry === "official_route_diagram_reference"
     && line.page_receipt.payload_sha256
     && line.diagram_receipts.length > 0
@@ -246,6 +249,14 @@ test("bus v3 public API reaches new entities", async () => {
     [api.operatorById("etus-oeb")?.website_url, api.operatorById("etus-oeb")?.facebook_url],
     [null, null],
   );
+  assert.deepEqual(Object.fromEntries([
+    "etus-bejaia", "etus-sidi-bel-abbes", "etusl-laghouat", "etusto",
+  ].map((id) => [id, api.operatorById(id)?.facebook_url])), {
+    "etus-bejaia": "https://www.facebook.com/etusbejaia.bejaia.5",
+    "etus-sidi-bel-abbes": "https://www.facebook.com/etus22",
+    "etusl-laghouat": "https://www.facebook.com/ETUSL/",
+    etusto: "https://www.facebook.com/etusto15",
+  });
   assert.ok(api.lines().every((line) => line.source_url == null || /^https?:\/\//.test(line.source_url)));
   assert.equal(api.shapes().length, 76);
   assert.equal(api.directions().length, 128);
@@ -259,6 +270,10 @@ test("bus v3 public API reaches new entities", async () => {
   const sidiLine = api.lineById("etus-sidi-bel-abbes-3B");
   assert.equal(sidiLine?.route_diagram_url, "https://etus22.dz/assets/image/3.jpg");
   assert.deepEqual(sidiLine?.departure_schedules?.map((schedule) => schedule.departures.length), [25, 25]);
+  const msilaLines = api.lines().filter((line) => line.operator_id === "etus-msila");
+  assert.ok(msilaLines.every((line) => line.route_diagram_url === officialMsila
+    .find((sourceLine) => sourceLine.ref === line.line)?.diagram_receipts[0].url));
+  assert.equal(api.lineById("etus-msila-16")?.terminus1, "محطة لاروكاد");
   const direction = api.directionsByLine("etus-mostaganem-1")[0];
   assert.ok(direction);
   assert.ok(api.membershipsByDirection(direction.id).length > 0);

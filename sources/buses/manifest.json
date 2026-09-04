@@ -41,11 +41,11 @@
     "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes&_fields=id,modified,link,content"
   },
   "etus-msila-lines": {
-    "bytes": 3690,
-    "note": "Rights-safe projection of Line identities, endpoints and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
+    "bytes": 7586,
+    "note": "Rights-safe projection of Line identities, endpoints, ordered Arabic stop names and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
     "records": 4,
     "retrieved": "2026-09-02",
-    "sha256": "90251715cb1f732b42bec54c2badd70c04bcb5a44946b086831c5e791c7c5bb5",
+    "sha256": "cb3db1747ca225d566c443d05c7f9ce78fa02756a68754ae2621fe5d51c8cc6c",
     "url": "https://etus-msila.dz/"
   },
   "etus-oeb-lines": {
