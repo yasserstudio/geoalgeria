@@ -23,6 +23,34 @@ const officialSetif = read("sources/buses/etus-setif-lines.json");
 const officialOeb = read("sources/buses/etus-oeb-lines.json");
 const officialLaghouat = read("sources/buses/etul-laghouat-lines.json");
 
+test("bus package documentation stays aligned with the shipped release", () => {
+  const packageJson = read("packages/buses/package.json");
+  const readmes = ["README.md", "README.fr.md", "README.ar.md"]
+    .map((name) => readFileSync(join(ROOT, "packages/buses", name), "utf8"));
+  const notice = readFileSync(join(ROOT, "packages/buses/NOTICE"), "utf8");
+
+  for (const [label, count] of [
+    ["Lines", lines.length],
+    ["shapes", shapes.length],
+    ["Directions", directions.length],
+    ["Stations", stations.length],
+    ["Operators", operators.length],
+  ]) {
+    assert.match(packageJson.description, new RegExp(`\\b${count.toLocaleString("en-US")} ${label}\\b`, "i"));
+  }
+  for (const readme of readmes) {
+    const compactNumbers = readme.replace(/[\s,\u202f]/g, "");
+    for (const count of [lines.length, shapes.length, directions.length, stations.length, operators.length]) {
+      assert.ok(compactNumbers.includes(String(count)), `README is missing current count ${count}`);
+    }
+  }
+  for (const operatorName of [
+    "ETUS Tiaret", "ETUSTO", "ETUS Béjaïa", "ETUS M'Sila", "ETUS Sidi Bel Abbès",
+    "ETUS Setif", "ETUS Aïn Defla", "ETUS Annaba", "ETUS Tlemcen", "ETO Oran",
+    "ETUS Oum El Bouaghi", "ETUL Laghouat",
+  ]) assert.ok(notice.includes(operatorName), `NOTICE is missing ${operatorName}`);
+});
+
 test("buses v3 ships only the reviewed release boundary", () => {
   assert.equal(lines.length, 153);
   assert.equal(shapes.length, 76);
