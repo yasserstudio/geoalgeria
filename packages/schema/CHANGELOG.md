@@ -1,5 +1,12 @@
 # @geoalgeria/schema
 
+## 1.1.0
+
+### Minor Changes
+
+- da9af34: Add a reusable reviewed-correction ledger contract with stale-baseline protection,
+  public evidence requirements, and deterministic keep, patch, and exclusion actions.
+
 ## 1.0.1
 
 ### Patch Changes

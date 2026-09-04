@@ -1,5 +1,16 @@
 # @geoalgeria/protection-civile
 
+## 1.0.2
+
+### Patch Changes
+
+- f27c543: Correct 107 unit records by replacing non-dialable telephone and fax placeholders with null.
+- ef41100: Keep retired public record IDs permanently reserved across data refreshes and
+  exclude the internal retirement ledger from catalog distributions.
+- ee3956c: Cross-check Protection Civile location risks, correct six coarse unit points
+  with public evidence, and publish review provenance while keeping unresolved
+  coordinates approximate.
+
 ## Unreleased
 
 - Cross-checked all 36 precision/boundary risk records against the current DGPC

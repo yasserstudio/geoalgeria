@@ -1,5 +1,12 @@
 # @geoalgeria/gares-routieres
 
+## 2.2.3
+
+### Patch Changes
+
+- ef41100: Keep retired public record IDs permanently reserved across data refreshes and
+  exclude the internal retirement ledger from catalog distributions.
+
 ## 2.2.2
 
 ### Patch Changes

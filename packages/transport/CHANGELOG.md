@@ -1,5 +1,25 @@
 # @geoalgeria/transport
 
+## 2.0.1
+
+### Patch Changes
+
+- 0308a2a: Reconcile ETUS Tiaret with its extracted official Line payload, publish all five official ETUSTO Lines (three with reusable OSM shapes), add five ETUS Béjaïa Lines with typed stop counts and transcribed service hours, add four ETUS M'Sila Lines from official route pages and diagrams, add eight ETUS Sidi Bel Abbès Lines with complete directional departure lists from supplied official HTML, and add five official ETUS Setif Lines with a verified reusable OSM shape for Line 101. Published Line provenance now identifies Operator sources first and uses OSM only where it supplies reusable geometry.
+- Updated dependencies [05e17e5]
+- Updated dependencies [0308a2a]
+- Updated dependencies [b3746f5]
+- Updated dependencies [186a9c5]
+- Updated dependencies [23c4df9]
+- Updated dependencies [354eac0]
+- Updated dependencies [ccc9ebf]
+- Updated dependencies [24518b5]
+- Updated dependencies [14aa4bf]
+- Updated dependencies [ce1509f]
+- Updated dependencies [ef41100]
+- Updated dependencies [bb24c0b]
+  - @geoalgeria/buses@2.1.0
+  - @geoalgeria/gares-routieres@2.2.3
+
 ## 2.0.0
 
 ### Major Changes
