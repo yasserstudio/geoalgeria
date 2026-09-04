@@ -134,12 +134,12 @@ reads as further along than it is.
   `COMMUNE_FIX` in the gares-routieres fetch as deliberately unresolved.
   _(logged 2026-08-14)_
 
-- [x] **Nearest-centroid fallback can cross a boundary** — fixed in the shared
+- [x] **Nearest-centroid fallback can cross a boundary**, fixed in the shared
   helper: `attachCommune` now resolves the containing wilaya by point-in-polygon
   against the 69 boundaries first and restricts the centroid search to it, so
   the join can never cross a wilaya boundary (commune-level containment stays
   best-effort; commune polygons don't exist). Data effects land at each
-  package's next refresh — the 3 known ooredoo records (documented in their
+  package's next refresh: the 3 known ooredoo records (documented in their
   coverageNote) repair themselves on the next ooredoo fetch. Per-package local
   copies of `nearestCommune` (djezzy, ooredoo, culture, ecoles,
   enseignement-superieur) converge on the shared helper as those packages are
@@ -148,7 +148,7 @@ reads as further along than it is.
 - [ ] **Ferroviaire regeneration drifts from the committed dataset.** Discovered
   while testing the fix above: re-running `packages/ferroviaire/scripts/fetch.mjs`
   on today's committed research/ferroviaire raws produces 233 coordinate
-  changes, 232 name changes and 18 id add/removes against the committed data —
+  changes, 232 name changes and 18 id add/removes against the committed data:
   the OSM↔Wikidata merge no longer reproduces what shipped, and the per-wilaya
   sequential ids reshuffle (the id-churn class the v2 generator rework
   eliminated elsewhere). Until diagnosed, do NOT regenerate ferroviaire; the
@@ -235,6 +235,20 @@ reads as further along than it is.
   Demand signal: a user on Reddit (2026-08-09) describing exactly this gap,
   planning a move to an unfamiliar area with no way to see what serves it.
   _(logged 2026-08-09)_
+
+  **Update 2026-09-04:** the breaking id-scheme change sketched above never
+  shipped. Every ETUSA Line kept its Wikipedia registry id; OSM only supplies
+  geometry and identifies additional Lines the registry omitted (the 6xx/7xx
+  suburban network), so the release stayed additive and went out as **2.0.0**
+  then **2.1.0**, not 3.0.0. The package has since grown well past the numbers
+  above: **153 Lines across 14 Operators** (ETUSA plus ETUS Setif, Tiaret,
+  ETUSTO Tizi Ouzou, Bejaia, M'Sila, Sidi Bel Abbes, Mostaganem, Ain Defla,
+  Annaba, Tlemcen, Oum El Bouaghi, ETUL Laghouat and ETO Oran), **76 shapes,
+  128 Directions, 1,603 Stations and 2,685 memberships**. Next levers: an ETO
+  Oran numbered Line list (only one of six ETO drawings carries a ref today,
+  the rest are evidence-only), the ETUSA network API probed 2026-09-03
+  (validation-only, see `research/buses/ETUSA-API-PROBE.md`), and Constantine
+  (ETUSC), whose page is login-walled.
 
 - [ ] **Intercity bus schedules are a licence problem, not a scraping
   problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction

@@ -15,7 +15,7 @@ import transport from "@geoalgeria/transport";
 transport.aviation.airports();        // aéroports (ANAC)
 transport.ferroviaire.stations();     // rail / tram / métro (SNTF / SETRAM / SEMA)
 transport.garesRoutieres.stations();  // gares routières (SOGRAL)
-transport.buses.lines();              // réseaux de bus urbains (ETUSA)
+transport.buses.lines();              // réseaux de bus urbains et suburbains (14 exploitants)
 ```
 
 ## Membres
@@ -25,7 +25,7 @@ transport.buses.lines();              // réseaux de bus urbains (ETUSA)
 | `aviation` | `@geoalgeria/aviation` | Aéroports civils (ANAC) |
 | `ferroviaire` | `@geoalgeria/ferroviaire` | Rail, tram & métro (SNTF / SETRAM / SEMA) |
 | `garesRoutieres` | `@geoalgeria/gares-routieres` | Gares routières (SOGRAL) |
-| `buses` | `@geoalgeria/buses` | Réseaux de bus urbains (ETUSA) |
+| `buses` | `@geoalgeria/buses` | Réseaux de bus urbains et suburbains (14 exploitants) |
 
 ## Licence
 
