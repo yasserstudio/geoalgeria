@@ -84,6 +84,6 @@ https://ui-avatars.com/api/
   there were no records or response fields to inspect, and no payload was added to the repository.
 - **[inferred]** The static bundle proves that this build was designed to request structured Line
   records, but the exact unauthenticated endpoint was not available at probe time. The evidence is
-  **validation-only**: there is no retrieved data to import and no observed reuse licence. Do not
-  probe another endpoint or authenticate without new authorization; pursue an operator/vendor export
-  and explicit reuse terms instead.
+  **validation-only**: there is no retrieved data to import and no observed reuse licence. Project
+  policy excludes outreach, account creation and further probing. Leave this as a documented gap
+  unless an openly reusable public source appears.

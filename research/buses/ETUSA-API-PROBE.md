@@ -29,6 +29,6 @@ that is recorded here. No credential, no token, nothing written.
   publishes for other Operators, but the endpoint is not a published feed and no terms
   accompany it.
 - **[inferred]** `/reseau/arretwithligne`, `/reseau/drawofligne2` and `/reseau/horaire`
-  take a line parameter whose name is not known; enumerating it would be probing, not
-  reading. Next step is a reuse request to ETUSA naming these three endpoints, or a
-  published feed. If granted, this is the full 186-Line network with timetables.
+  take a Line parameter whose name is not known; enumerating it would be probing, not
+  reading. Project policy excludes outreach and permission requests. Keep this source
+  validation-only unless ETUSA publishes an openly reusable feed in the future.
