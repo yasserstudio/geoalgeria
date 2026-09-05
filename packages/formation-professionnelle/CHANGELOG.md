@@ -1,5 +1,11 @@
 # @geoalgeria/formation-professionnelle
 
+## 2.1.2
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+
 ## 2.1.1
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @geoalgeria/transport
 
+## 2.0.2
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+  - @geoalgeria/aviation@2.5.1
+  - @geoalgeria/buses@2.1.1
+  - @geoalgeria/ferroviaire@2.0.2
+  - @geoalgeria/gares-routieres@2.2.4
+
 ## 2.0.1
 
 ### Patch Changes
