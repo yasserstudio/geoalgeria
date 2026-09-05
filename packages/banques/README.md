@@ -7,7 +7,7 @@
 **Every bank in Algeria, as data you can install.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/banques)](https://www.npmjs.com/package/@geoalgeria/banques)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
