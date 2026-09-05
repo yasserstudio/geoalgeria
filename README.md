@@ -14,7 +14,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/geoalgeria)](https://www.jsdelivr.com/package/npm/geoalgeria)
 [![GitHub stars](https://img.shields.io/github/stars/yasserstudio/geoalgeria?style=flat)](https://github.com/yasserstudio/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -38,7 +38,7 @@ GeoAlgeria is a solo-built, open project with one goal: to become the first and 
 
 ## The data
 
-Most Algeria datasets online still list **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is kept current, with real Algérie Poste postal codes, geographic coordinates, bilingual names, and post offices & ATMs, shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT-licensed, and CI-validated on every commit.
+Most Algeria datasets online still list **48 wilayas**. Algeria has had **69 since April 2026**. GeoAlgeria is kept current, with real Algérie Poste postal codes, geographic coordinates, bilingual names, and post offices & ATMs, shipped as JSON, CSV, GeoJSON, SQL, and TypeScript. One `npm install`, MIT code with per-package data terms, and CI-validated on every commit.
 
 ```bash
 npm install geoalgeria
@@ -205,11 +205,13 @@ Semantic versioning per package, automated with [Changesets](https://github.com/
 
 ## Sponsor
 
-GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), it funds keeping the data current and expanding the coverage.
+GeoAlgeria is free. The code is MIT and each package states its own data terms. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), it funds keeping the data current and expanding the coverage.
 
 ## License & disclaimer
 
 **Code:** [MIT](LICENSE). **Data:** compiled from public official sources (the *Journal Officiel*, Algérie Poste, ANEM, ANAC, each operator's/institution's public site) and redistributed for reference.
+
+Each package manifest declares its exact terms (an SPDX expression, or `SEE LICENSE IN LICENSE`) and its own `LICENSE` file carries the data terms in full.
 
 GeoAlgeria is an **independent project, not affiliated with or endorsed by** any government body, regulator, operator, or institution it references; their names and marks belong to their respective owners. The data is provided **"as is", without warranty, verify against the official source** before relying on it, especially for financial, payment, KYC, or compliance use. Full terms: **[DISCLAIMER](DISCLAIMER.md)**.
 

@@ -14,7 +14,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![jsDelivr hits](https://img.shields.io/jsdelivr/npm/hm/geoalgeria)](https://www.jsdelivr.com/package/npm/geoalgeria)
 [![GitHub stars](https://img.shields.io/github/stars/yasserstudio/geoalgeria?style=flat)](https://github.com/yasserstudio/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
@@ -38,7 +38,7 @@ GeoAlgeria est un projet ouvert, développé en solo, avec un seul objectif : de
 
 ## Les données
 
-La plupart des jeux de données sur l'Algérie disponibles en ligne listent encore **48 wilayas**. L'Algérie en compte **69 depuis avril 2026**. GeoAlgeria fait partie des rares jeux de données déjà mis à jour, avec les vrais codes postaux d'Algérie Poste, les coordonnées géographiques, les noms bilingues, les bureaux de poste et les DAB, livré en JSON, CSV, GeoJSON, SQL et TypeScript. Un seul `npm install`, licence MIT, validation CI automatique à chaque mise à jour.
+La plupart des jeux de données sur l'Algérie disponibles en ligne listent encore **48 wilayas**. L'Algérie en compte **69 depuis avril 2026**. GeoAlgeria fait partie des rares jeux de données déjà mis à jour, avec les vrais codes postaux d'Algérie Poste, les coordonnées géographiques, les noms bilingues, les bureaux de poste et les DAB, livré en JSON, CSV, GeoJSON, SQL et TypeScript. Un seul `npm install`, code sous licence MIT et conditions de données propres à chaque paquet, validation CI automatique à chaque mise à jour.
 
 ```bash
 npm install geoalgeria
@@ -198,11 +198,13 @@ Versionnage sémantique par paquet, automatisé avec [Changesets](https://github
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit et MIT. Si ça vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio), ça finance la mise à jour des données et l'extension de la couverture.
+GeoAlgeria est gratuit. Le code est sous licence MIT et chaque paquet indique ses propres conditions de données. Si ça vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio), ça finance la mise à jour des données et l'extension de la couverture.
 
 ## Licence et avertissement
 
 **Code :** [MIT](LICENSE). **Données :** compilées à partir de sources officielles publiques (le *Journal Officiel*, Algérie Poste, ANEM, ANAC, le site public de chaque opérateur/institution) et redistribuées pour référence.
+
+Le `package.json` de chaque paquet déclare ses conditions exactes (une expression SPDX, ou `SEE LICENSE IN LICENSE`) et son propre fichier `LICENSE` porte les conditions de données en entier.
 
 GeoAlgeria est un **projet indépendant, non affilié ni soutenu par** aucun organisme gouvernemental, régulateur, opérateur ou institution qu'il référence ; leurs noms et marques appartiennent à leurs propriétaires respectifs. Les données sont fournies **« en l'état », sans garantie, vérifiez auprès de la source officielle** avant de vous y fier, notamment pour les usages financiers, de paiement, KYC ou de conformité. Conditions complètes : **[DISCLAIMER](DISCLAIMER.md)**.
 

@@ -7,7 +7,7 @@
 **Algeria's transport sector, one install for every mode.**
 
 [![npm](https://img.shields.io/npm/v/@geoalgeria/transport)](https://www.npmjs.com/package/@geoalgeria/transport)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
 
 </div>
 
