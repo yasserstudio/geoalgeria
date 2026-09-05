@@ -1,6 +1,6 @@
 {
   "name": "@geoalgeria/schema",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "description": "Canonical data contract for GeoAlgeria datasets — TypeScript types, a zero-dependency runtime validator (incl. point-in-wilaya boundary checks + an Algeria-bbox coordinate guard), canonical metadata + manifest (schema.org/DCAT) builders, and CSV/GeoJSON emit helpers. The shared schema every @geoalgeria/* package conforms to.",
   "main": "index.js",

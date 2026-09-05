@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.1
+
+### Patch Changes
+
+- 76dfd0d: Confirm the MIT licence field against the new licence-terms validator rule.
+
 ## 2.0.0
 
 ### Major Changes
