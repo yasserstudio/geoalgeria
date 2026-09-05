@@ -1,3 +1,5 @@
+## Code
+
 MIT License
 
 Copyright (c) 2025-2026 Yasser's Studio (https://yasser.studio)
@@ -19,3 +21,12 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Data
+
+This package re-exports the following packages. Each member's own data terms apply:
+
+- @geoalgeria/aviation: Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)
+- @geoalgeria/ferroviaire: ODbL 1.0 (https://opendatacommons.org/licenses/odbl/1-0/), © OpenStreetMap contributors
+- @geoalgeria/gares-routieres: Data © SOGRAL; redistributed for reference
+- @geoalgeria/buses: CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data
