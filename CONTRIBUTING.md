@@ -108,6 +108,23 @@ Always cite a source for data changes. Accepted:
 - Interior Ministry publications
 - Wikipedia (secondary reference only)
 
+### Licence field
+Every package states its terms in three places that must agree: the manifest
+`license`, the package `LICENSE` file, and the data terms in
+`dataset-metadata.json`. Pick the class that matches the metadata:
+
+| `dataset-metadata.json` | manifest `license` | `LICENSE` file |
+| --- | --- | --- |
+| absent, with `dependencies` on `@geoalgeria/*` (umbrella) | `SEE LICENSE IN LICENSE` | `## Data` lists one `- @geoalgeria/<member>: <terms>` line per member |
+| absent (code only) | `MIT` | the plain MIT text |
+| `license` is the MIT URL | `MIT` | the plain MIT text |
+| `license` is the ODbL 1.0 URL | `MIT AND ODbL-1.0` | `## Code` MIT, plus a `## Data` section carrying the ODbL URL |
+| `conditionsOfAccess` | `SEE LICENSE IN LICENSE` | starts with `## Code` then the MIT text, plus a `## Data` section carrying `conditionsOfAccess` verbatim |
+
+`pnpm validate` enforces this on every package, so a new licence class needs an
+entry in [`scripts/lib/licence-terms.mjs`](scripts/lib/licence-terms.mjs) before
+the package can pass.
+
 ### What not to submit
 - Data from unofficial/unverifiable sources
 - Frequently-changing data better served as its own dataset (e.g. population)
