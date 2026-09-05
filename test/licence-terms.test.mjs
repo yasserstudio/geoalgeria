@@ -8,9 +8,13 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { licenceTermsErrors } from "../scripts/lib/licence-terms.mjs";
+import { MIT_BODY, licenceTermsErrors } from "../scripts/lib/licence-terms.mjs";
 
-const MIT_TEXT = "MIT License\n\nCopyright (c) 2025-2026 Yasser's Studio\n";
+// The real header a package LICENSE carries: the MIT title, the copyright line, and
+// the grant itself. The grant is what a consumer relies on, so it is part of every
+// fixture; a fixture without it is the "gutted MIT" case the tests below pin.
+const MIT_TEXT = `MIT License\n\nCopyright (c) 2025-2026 Yasser's Studio\n\n${MIT_BODY}\n`;
+const GUTTED_MIT = "MIT License\n\nCopyright (c) 2025-2026 Yasser's Studio\n";
 
 test("a code-only package with no metadata must declare MIT", () => {
   assert.deepEqual(
@@ -94,10 +98,10 @@ test("a restricted dataset must declare SEE LICENSE IN LICENSE over a Code + Dat
   assert.equal(paraphrased.length, 1);
   assert.match(paraphrased[0], /verbatim/);
 
-  // A LICENSE with no Code heading leaves the code terms unstated.
+  // A LICENSE with no Code heading leaves the code terms unstated, and with them the
+  // MIT grant, so both code checks fire.
   const noCode = licenceTermsErrors({ ...restricted, licenceText: `## Data\n\n${terms}\n` });
-  assert.equal(noCode.length, 1);
-  assert.match(noCode[0], /## Code/);
+  assert.ok(noCode.some((e) => /## Code/.test(e)));
 });
 
 test("license and conditionsOfAccess are exclusive, and one of them is required", () => {
@@ -148,6 +152,107 @@ test("an umbrella must list every member's data terms in the Data section", () =
   const wrongManifest = licenceTermsErrors({ ...umbrella, manifest: { license: "MIT" } });
   assert.equal(wrongManifest.length, 1);
   assert.match(wrongManifest[0], /SEE LICENSE IN LICENSE/);
+});
+
+test("a package with metadata is never treated as an umbrella, whatever it depends on", () => {
+  // An umbrella has no metadata of its own. A package that has both used to take the
+  // umbrella branch and return early, so its own data terms went unchecked.
+  const errors = licenceTermsErrors({
+    name: "transport",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    metadata: { conditionsOfAccess: "Official registry (Ministry of Transport)" },
+    licenceText: `## Code\n\n${MIT_TEXT}\n## Data\n\n- @geoalgeria/gares-routieres: Factual public register\n`,
+    members: ["@geoalgeria/gares-routieres"],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /verbatim/);
+});
+
+test("an umbrella LICENSE must state the code terms too", () => {
+  const errors = licenceTermsErrors({
+    name: "pharma",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    metadata: null,
+    licenceText: `## Data\n\n- @geoalgeria/pharmacies: ODbL 1.0\n`,
+    members: ["@geoalgeria/pharmacies"],
+  });
+  assert.ok(errors.some((e) => /## Code/.test(e)));
+});
+
+test("an umbrella may not list a member it does not depend on", () => {
+  // A member dropped from dependencies but left in the LICENSE states terms for data
+  // the package no longer ships.
+  const errors = licenceTermsErrors({
+    name: "pharma",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    metadata: null,
+    licenceText:
+      `## Code\n\n${MIT_TEXT}\n## Data\n\n` +
+      `- @geoalgeria/pharmacies: ODbL 1.0, © OpenStreetMap contributors\n` +
+      `- @geoalgeria/laboratoires: Factual public register\n`,
+    members: ["@geoalgeria/pharmacies"],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /@geoalgeria\/laboratoires/);
+});
+
+test("every class needs the MIT grant itself, not just the heading", () => {
+  const codeOnly = licenceTermsErrors({
+    name: "schema",
+    manifest: { license: "MIT" },
+    metadata: null,
+    licenceText: GUTTED_MIT,
+    members: [],
+  });
+  assert.equal(codeOnly.length, 1);
+  assert.match(codeOnly[0], /LICENSE/);
+
+  const openMit = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT" },
+    metadata: { license: "https://opensource.org/licenses/MIT" },
+    licenceText: GUTTED_MIT,
+    members: [],
+  });
+  assert.equal(openMit.length, 1);
+
+  const odbl = licenceTermsErrors({
+    name: "cliniques",
+    manifest: { license: "MIT AND ODbL-1.0" },
+    metadata: { license: "https://opendatacommons.org/licenses/odbl/1-0/" },
+    licenceText: `## Code\n\n${GUTTED_MIT}\n## Data\n\nODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n`,
+    members: [],
+  });
+  assert.equal(odbl.length, 1);
+
+  const terms = "Data © Algérie Poste; redistributed for reference";
+  const restricted = licenceTermsErrors({
+    name: "poste",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    metadata: { conditionsOfAccess: terms },
+    licenceText: `## Code\n\n${GUTTED_MIT}\n## Data\n\n${terms}\n`,
+    members: [],
+  });
+  assert.equal(restricted.length, 1);
+
+  const umbrella = licenceTermsErrors({
+    name: "pharma",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    metadata: null,
+    licenceText: `## Code\n\n${GUTTED_MIT}\n## Data\n\n- @geoalgeria/pharmacies: ODbL 1.0\n`,
+    members: ["@geoalgeria/pharmacies"],
+  });
+  assert.equal(umbrella.length, 1);
+
+  // The grant sitting after the "## Data" heading is not the code terms.
+  const misplaced = licenceTermsErrors({
+    name: "poste",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    metadata: { conditionsOfAccess: terms },
+    licenceText: `## Code\n\n${GUTTED_MIT}\n## Data\n\n${terms}\n\n${MIT_BODY}\n`,
+    members: [],
+  });
+  assert.equal(misplaced.length, 1);
 });
 
 test("every package in the repository satisfies its licence class", () => {

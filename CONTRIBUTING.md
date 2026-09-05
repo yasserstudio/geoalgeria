@@ -115,7 +115,7 @@ Every package states its terms in three places that must agree: the manifest
 
 | `dataset-metadata.json` | manifest `license` | `LICENSE` file |
 | --- | --- | --- |
-| absent, with `dependencies` on `@geoalgeria/*` (umbrella) | `SEE LICENSE IN LICENSE` | `## Data` lists one `- @geoalgeria/<member>: <terms>` line per member |
+| absent, with `dependencies` on `@geoalgeria/*` (umbrella) | `SEE LICENSE IN LICENSE` | starts with `## Code` then the MIT text, plus a `## Data` section listing exactly one `- @geoalgeria/<member>: <terms>` line per member |
 | absent (code only) | `MIT` | the plain MIT text |
 | `license` is the MIT URL | `MIT` | the plain MIT text |
 | `license` is the ODbL 1.0 URL | `MIT AND ODbL-1.0` | `## Code` MIT, plus a `## Data` section carrying the ODbL URL |
@@ -123,7 +123,9 @@ Every package states its terms in three places that must agree: the manifest
 
 `pnpm validate` enforces this on every package, so a new licence class needs an
 entry in [`scripts/lib/licence-terms.mjs`](scripts/lib/licence-terms.mjs) before
-the package can pass.
+the package can pass. Whichever class a package falls in, its
+`LICENSE` must carry the MIT grant itself, verbatim and above any `## Data`
+section: the `## Code` heading is not the terms.
 
 ### What not to submit
 - Data from unofficial/unverifiable sources
