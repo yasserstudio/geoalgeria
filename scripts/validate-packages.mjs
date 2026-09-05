@@ -45,6 +45,7 @@ import {
 // shipped records rather than trusted.
 import { MIGRATIONS } from "./lib/v2-transforms.mjs";
 import { canonicalCommuneCodes } from "./lib/commune-index.mjs";
+import { licenceTermsErrors } from "./lib/licence-terms.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -1366,6 +1367,50 @@ function validateTypes(pkgs) {
   }
 }
 
+// The manifest `license` field, the LICENSE file and the data terms in
+// dataset-metadata.json are three statements of the same fact, and until ticket
+// #120 nothing compared them: every manifest said "MIT" while most packages
+// redistribute data that is not MIT. The class table and the rule live in
+// scripts/lib/licence-terms.mjs; a new licence needs an entry there.
+function validateLicenceTerms(pkgs) {
+  for (const pkg of pkgs) {
+    const dir = join(ROOT, "packages", pkg);
+    const manifestPath = join(dir, "package.json");
+    const licencePath = join(dir, "LICENSE");
+    if (!existsSync(manifestPath)) continue;
+    if (!existsSync(licencePath)) {
+      fail(`${pkg}: has no LICENSE file, so its data terms are unstated`);
+      continue;
+    }
+    let manifest;
+    try {
+      manifest = readJson(manifestPath);
+    } catch (e) {
+      fail(`${pkg}/package.json: cannot read for the licence check, ${e.message}`);
+      continue;
+    }
+    const metadataPath = join(dir, "dataset-metadata.json");
+    let metadata = null;
+    if (existsSync(metadataPath)) {
+      try {
+        metadata = readJson(metadataPath);
+      } catch (e) {
+        fail(`${pkg}/dataset-metadata.json: cannot read for the licence check, ${e.message}`);
+        continue;
+      }
+    }
+    const problems = licenceTermsErrors({
+      name: pkg,
+      manifest,
+      metadata,
+      licenceText: readFileSync(licencePath, "utf-8"),
+      members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
+    });
+    for (const problem of problems) fail(problem);
+    if (!problems.length) console.log(`  OK: ${pkg} declares ${JSON.stringify(manifest.license)} and its LICENSE says so`);
+  }
+}
+
 // livraison has three datasets of different shapes: only `stopdesks` is geocoded and
 // carries wilaya_code; `carriers` (registry) and `coverage` (per-carrier presence) have
 // no wilaya_code, so they can't use the wilaya_code-enforcing table validator. Dedicated
@@ -1539,6 +1584,9 @@ validatePackageFiles(
 
 console.log(`\n[types/index.d.ts ↔ shipped data]`);
 validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
+validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 // the mirror is poste-specific — only run it when validating poste (or all)
 if (!only || only === "poste") {
