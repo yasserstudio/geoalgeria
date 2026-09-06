@@ -153,6 +153,28 @@ _Avoid_: multilingual, translated, i18n
 Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only or wilaya-linked-only).
 _Avoid_: located, mapped, positioned
 
+### Search and normalization
+
+**Search key**:
+The umbrella term for a folded form of a name, produced by the shared normalization package and matched against instead of the display name. Always qualified as a **Conservative key** or a **Loose key**; unqualified "search key" names the concept, never one of the two.
+_Avoid_: slug (that is a URL identity), normalized name, canonical name, search string
+
+**Conservative key**:
+The strict fold every consumer must reproduce byte for byte: presentation forms, alef and hamza variants, tatweel, combining marks, Arabic-Indic digits and case are all resolved, word boundaries are preserved, and nothing that changes which letter a reader sees is folded away. A published catalog's keys are this fold, so a change to it is a major version.
+_Avoid_: strict key, exact key, base key
+
+**Loose key**:
+The additional equivalence tier over the Conservative key, folding the pairs a speaker may spell either way (alef maqsura with yaa, taa marbuta with haa). It exists so a loose hit can be ranked below an exact one instead of being indistinguishable from it.
+_Avoid_: fuzzy key, relaxed key, approximate key
+
+**Rule**:
+One reviewed fold or alias in the normalization package's frozen table, carrying an id (`ar.taa-marbuta-haa`), its class, the script it applies to, one sentence a speaker can argue with, and a review record. A Rule states something about the script and is safe for every name; a statement about one record is that record's own alias, carrying its own Source, not a Rule.
+_Avoid_: mapping, transform, substitution
+
+**Golden corpus**:
+The exported fixture of cases every consumer asserts against, so the package, the release generator, Web and Mobile all prove the same keys from the same inputs. Every Rule is exercised by at least one case, and every case declares which Rule it proves.
+_Avoid_: test fixtures, sample data, test corpus
+
 ### Provenance
 
 **Source**:

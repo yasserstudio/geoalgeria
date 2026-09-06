@@ -92,11 +92,16 @@ jobs:
             fi
             echo "releasing: $TAG"
 
+            # A code-only package (no data/) still gets a Release, just no
+            # bundle: BUNDLE stays empty and drops out of the gh calls below.
             BUNDLE="$RUNNER_TEMP/geoalgeria-$(basename "$pkg")-$VER.zip"
             if [ "$pkg" = "packages/dataset" ]; then
               (cd "$pkg" && zip -qr "$BUNDLE" data algeria.geojson dataset-metadata.json)
-            else
+            elif [ -d "$pkg/data" ]; then
               (cd "$pkg" && zip -qr "$BUNDLE" data)
+            else
+              echo "no data/ in $pkg, releasing without a data bundle"
+              BUNDLE=""
             fi
 
             # Title + body + patch-flag come from scripts/release-notes.mjs (see
@@ -118,10 +123,13 @@ jobs:
 
             if [ -s "$NOTES" ]; then
               TITLE=$($RN title)
-              gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" "$BUNDLE"
+              # shellcheck disable=SC2086 -- ${BUNDLE:+"$BUNDLE"} is one quoted
+              # argument when set, and no argument at all when empty.
+              gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" ${BUNDLE:+"$BUNDLE"}
             else
               echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
-              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes "$BUNDLE"
+              # shellcheck disable=SC2086 -- see above.
+              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes ${BUNDLE:+"$BUNDLE"}
             fi
 
             # Announce this release. The release: published event won't fire (this

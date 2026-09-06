@@ -96,6 +96,7 @@ pnpm changeset   # pick package(s) + bump type + a one-line note
 - Keep entries sorted by `wilaya_code`, then alphabetically by `name_fr`
 
 ### Naming
+- Use the project glossary's terms ([`CONTEXT.md`](CONTEXT.md)), including [Search and normalization](CONTEXT.md#search-and-normalization) for Search key, Conservative key, Loose key, Rule and Golden corpus
 - **French**: official JORA spelling (e.g., "Oum El Bouaghi")
 - **Arabic**: standard script, no tashkeel (diacritics)
 - **Daira**: the French name of the daira seat (chef-lieu)
