@@ -378,3 +378,37 @@ export const LOOSE = new Map(LOOSE_GROUPS.flatMap((group) => group.entries));
 export const TABLE_RULE_IDS = Object.freeze(
   [...REMOVE_GROUPS, ...SEPARATOR_GROUPS, ...FOLD_GROUPS, ...LOOSE_GROUPS].map((group) => group.id),
 );
+
+/**
+ * Codepoint to the id of the Rule that acts on it, over the removals, the word
+ * boundaries and the Conservative folds together. The three sets are disjoint by
+ * construction, so one lookup answers "which Rule was that" for any character the
+ * key path did something to. This is what `explain` reads; the key path itself
+ * only touches it when a caller asked for the record.
+ */
+export const RULE_OF_CODE = new Map([
+  ...REMOVE_GROUPS.flatMap((group) => group.codes.map((code) => [code, group.id])),
+  ...SEPARATOR_GROUPS.flatMap((group) => group.codes.map((code) => [code, group.id])),
+  ...FOLD_GROUPS.flatMap((group) => group.entries.map(([code]) => [code, group.id])),
+]);
+
+/** The same, for the two Rules that only the Loose key applies. */
+export const LOOSE_RULE_OF_CODE = new Map(
+  LOOSE_GROUPS.flatMap((group) => group.entries.map(([code]) => [code, group.id])),
+);
+
+/**
+ * Every table entry under the id of the Rule it belongs to, written as the pair of
+ * codepoint sequences it maps: `["أ", "ا"]`. An empty target means the
+ * character is removed, and a single space means it ends a word.
+ *
+ * The reviewed table in `src/rules.js` reads its `from` and `to` out of this, so a
+ * codepoint added to a fold is a codepoint the published Rule states, and the two
+ * cannot drift apart.
+ */
+export const RULE_ENTRIES = new Map([
+  ...REMOVE_GROUPS.map((group) => [group.id, group.codes.map((code) => [String.fromCodePoint(code), ""])]),
+  ...SEPARATOR_GROUPS.map((group) => [group.id, group.codes.map((code) => [String.fromCodePoint(code), " "])]),
+  ...FOLD_GROUPS.map((group) => [group.id, group.entries.map(([code, to]) => [String.fromCodePoint(code), to])]),
+  ...LOOSE_GROUPS.map((group) => [group.id, group.entries.map(([code, to]) => [String.fromCodePoint(code), to])]),
+]);

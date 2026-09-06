@@ -24,23 +24,42 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   too; the exact set is written out in the READMEs.
 - `searchKeys(text)`, both keys, the tokens and `looseDiffers` from one pass over the text:
   the call the Content release generator makes.
-- A stable identifier on every fold, `ar.taa-marbuta-haa` or `latn.extended-a`, with the
-  sentence it asserts about the script, and the two declined rules recorded with their
-  reasons: the Arabic definite article is never stripped, and no Latin transliteration of an
-  Arabic name is generated.
+- `rules`, the reviewed table, frozen: every fold with its stable identifier
+  (`ar.taa-marbuta-haa`, `latn.extended-a`), its class, its script, the exact codepoint
+  sequences it maps from and to, the sentence it asserts about the script, and a review
+  record naming who reviewed that sentence and when. The two declined rules are in the table
+  too, with the fold they decline, so what was refused is as legible as what was accepted:
+  the Arabic definite article is never stripped, and no Latin transliteration of an Arabic
+  name is generated. `from` and `to` are read out of the tables the key path runs, so the
+  published claim and the applied fold cannot drift apart. The rationales are listed in all
+  three READMEs, in each language, because the reader most able to find a wrong rule is one
+  who reads the language rather than the code.
+- `explain(text)`, the keys plus `applied`: the identifiers of the rules that fired, in the
+  order they ran. A loose match can therefore say what made it loose, which is what lets a
+  ranking place it below an exact one. It is the key path with the record switched on rather
+  than a second implementation, so it cannot disagree with `searchKeys`. A rule is reported
+  when it changed at least one codepoint or ended at least one word; the rules that state a
+  fold this package does not apply, the pass-through rule and the two declined ones, are
+  proved instead by a corpus case whose expected keys show the character, or the article,
+  surviving.
 - `NORMALIZE_VERSION`, the package's semver major, which the Content manifest records for
   the release it was built with. A change to what a key function returns for any input is a
   major version, because keys are baked into published catalogs and an installed catalog is
   never migrated record by record.
-- `@geoalgeria/normalize/fixtures`, the Golden corpus: 63 cases built from real Algerian
+- `@geoalgeria/normalize/fixtures`, the Golden corpus: 64 cases built from real Algerian
   names, each with both keys, the tokens, the Rule ids it proves and a note saying what it is
-  about. Every Rule is exercised by at least one case. Consumers assert against this fixture
-  rather than writing cases of their own.
+  about. Every Rule is exercised by at least one case, and for every rule that folds
+  something the ids a case names are exactly what `explain` reports for that input. Consumers
+  assert against this fixture rather than writing cases of their own.
 - Trilingual documentation (English, French, Arabic), hand-written type declarations, and no
   runtime dependencies.
 
 ### Notes
 
+- The data repository's `pnpm validate` gates the table: a rule with no review record, a rule
+  no corpus case proves, a case naming a rule that is not in the table, a repeated identifier
+  and a table order that stops matching the committed reviewed order each fail the build.
+  Review is a rule here rather than a habit.
 - The key path owns its codepoint tables outright: no call into the host's Unicode
   machinery, no Unicode property escape, no locale-aware case operation and no platform
   built-in, so a Node or Hermes upgrade cannot change a published catalog's keys. A

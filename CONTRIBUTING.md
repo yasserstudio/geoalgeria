@@ -129,6 +129,27 @@ the package can pass. Whichever class a package falls in, its
 `LICENSE` must carry the MIT grant itself, verbatim and above any `## Data`
 section: the `## Code` heading is not the terms.
 
+### Search-key rules
+`@geoalgeria/normalize` publishes the orthographic equivalences GeoAlgeria asserts
+about Algerian names as a reviewed table, so that someone who reads the language
+and not the code can argue with one. Changing or adding a rule means, in the same
+pull request:
+
+- the rule in [`packages/normalize/src/rules.js`](packages/normalize/src/rules.js),
+  with one sentence a speaker of the language can argue with and a review record
+  naming who reviewed that sentence and when;
+- at least one case in `packages/normalize/fixtures/corpus.js` proving it, naming
+  the rule in its `proves` list;
+- the committed reviewed order in
+  [`scripts/lib/normalize-rules.mjs`](scripts/lib/normalize-rules.mjs), if the rule
+  is new, moved or removed;
+- the rationale in all three package READMEs, in each language.
+
+`pnpm validate` fails on a rule with no review record, a rule no corpus case
+proves, a case naming a rule that is not in the table, a repeated identifier, or a
+table order that no longer matches the committed one. Changing what a key function
+returns for any input is a major version: published catalogs are keyed on it.
+
 ### What not to submit
 - Data from unofficial/unverifiable sources
 - Frequently-changing data better served as its own dataset (e.g. population)
