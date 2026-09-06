@@ -45,7 +45,7 @@ function spans(rows) {
 
 /**
  * Removed outright: they carry no letter of their own, so a key that kept them
- * would split on how a source happened to vocalise or pad a name.
+ * would split on how a Source happened to vocalise or pad a name.
  */
 const REMOVE_GROUPS = [
   {
@@ -80,7 +80,7 @@ const REMOVE_GROUPS = [
 
 /**
  * Word boundaries: whitespace, and the apostrophe and hyphen variants a keyboard
- * or a source may produce for the same name.
+ * or a Source may produce for the same name.
  */
 const SEPARATOR_GROUP = {
   id: "any.separators",
@@ -239,7 +239,7 @@ const YAA_HAMZA = [
 
 /**
  * Arabic Presentation Forms-B (U+FE70..U+FEFF), the positional shapes some
- * sources and a good deal of copied PDF text carry, folded back to the base
+ * Sources and a good deal of copied PDF text carry, folded back to the base
  * letter each shape draws. Each row is [first, last, base] over the block's
  * isolated, final, initial and medial forms in that order; the base is already
  * the conservative letter, so alef and hamza variants land on the bare letter
