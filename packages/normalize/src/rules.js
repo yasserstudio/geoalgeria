@@ -162,7 +162,7 @@ export const FOLD_RULES = Object.freeze([
     id: "any.whitespace",
     class: "conservative",
     script: "any",
-    why: "Repeated, leading and trailing whitespace is typing, not naming, so the key is the tokens joined by one space and a partial last word can still complete.",
+    why: "Repeated and leading separators are typing, not naming: a separator that meets no open word adds nothing to the key, so the key is the words joined by one space and a partial last word can still complete.",
     reviewed: REVIEW,
   },
   {

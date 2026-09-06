@@ -5,6 +5,9 @@
 // gate fails, one fixture per way, against the real table as the passing case.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { REVIEWED_RULE_ORDER, normalizeRuleErrors } from "../scripts/lib/normalize-rules.mjs";
 import { rules } from "../packages/normalize/index.js";
@@ -95,4 +98,17 @@ test("a table whose order is not the reviewed one fails", () => {
 // two files have to agree on instead of one file rewriting its own expectation.
 test("the committed order is the table the package ships", () => {
   assert.deepEqual(rules.map((r) => r.id), REVIEWED_RULE_ORDER);
+});
+
+// The gate is only a gate if the validator runs it and turns its messages into
+// failures. The five tests above call the rule directly, so this one holds the
+// wiring: a refactor that stops calling it, or stops reporting through fail(),
+// would otherwise leave every test green and the build unguarded.
+test("the validator runs the gate and reports through fail()", () => {
+  const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+  const source = readFileSync(join(ROOT, "scripts", "validate-packages.mjs"), "utf-8");
+  assert.match(source, /import \{ normalizeRuleErrors \} from "\.\/lib\/normalize-rules\.mjs";/);
+  assert.match(source, /const problems = normalizeRuleErrors\(\{ rules: normalizeRules, corpus: normalizeCorpus \}\);/);
+  assert.match(source, /for \(const problem of problems\) fail\(problem\);/);
+  assert.match(source, /^validateNormalizeRules\(\);$/m, "the gate is called at the top level, not only defined");
 });

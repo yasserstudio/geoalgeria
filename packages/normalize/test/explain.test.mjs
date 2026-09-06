@@ -23,11 +23,14 @@ test("explain returns the same keys as searchKeys, for every corpus case", () =>
   }
 });
 
-test("the Rules explain says fired are the ones the corpus case proves", () => {
+// Not sorted: the corpus documents `proves` as the order the key path ran the
+// Rules in, and a claim nothing checks rots. The Rules that cannot fire are named
+// after the ones that did, so the fired ids keep their order at the front.
+test("the Rules explain says fired are the ones the corpus case proves, in that order", () => {
   for (const kase of corpus) {
     assert.deepEqual(
-      [...explain(kase.input).applied].sort(),
-      [...fireable(kase)].sort(),
+      [...explain(kase.input).applied],
+      fireable(kase),
       `${JSON.stringify(kase.input)}: explain and the corpus disagree about which Rules fired`,
     );
   }

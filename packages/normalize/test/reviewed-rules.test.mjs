@@ -9,9 +9,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { rules } from "../index.js";
-import { DECLINED_RULES, FOLD_RULES, NON_FIRING_RULES } from "../src/rules.js";
-import { RULE_ENTRIES } from "../src/tables.js";
+import { conservativeKey, looseKey, rules } from "../index.js";
+import { DECLINED_RULES, FOLD_RULES, NON_FIRING_RULES, RULES_WITHOUT_A_TABLE } from "../src/rules.js";
 
 const CLASSES = new Set(["canonical", "conservative", "loose", "declined"]);
 const SCRIPTS = new Set(["arab", "latn", "any"]);
@@ -44,27 +43,44 @@ test("every Rule carries a review record", () => {
   }
 });
 
-// The published claim is read out of the table the key path runs, so a codepoint
-// added to a fold appears in the Rule that fold belongs to without anyone having
-// to remember to write it down twice.
-test("a table-backed Rule states the codepoints its table actually maps", () => {
+// The published sequences are checked through the public key functions, one probe
+// per stated pair, so the table is held to what a caller can observe rather than
+// to the table it was read from. A Rule that claims a fold the keys do not perform
+// fails here even though both sides come from the same source.
+//
+// The probe puts the sequence between two letters, because a removal and a word
+// boundary are only visible in context: `a<from>b` keys to `ab` when the sequence
+// is removed, to `a b` when it ends a word, and to `a<to>b` otherwise.
+const probe = (rule, from) => (rule.class === "loose" ? looseKey : conservativeKey)(`a${from}b`);
+const expected = (to) => (to === "" ? "ab" : to === " " ? "a b" : `a${to}b`);
+
+test("every Rule the package applies folds exactly what it says it folds", () => {
   for (const rule of rules) {
-    const entries = RULE_ENTRIES.get(rule.id);
-    if (!entries) continue;
-    assert.deepEqual(rule.from, entries.map(([from]) => from), `${rule.id} states the wrong sources`);
-    assert.deepEqual(rule.to, entries.map(([, to]) => to), `${rule.id} states the wrong targets`);
+    if (rule.class === "declined") continue;
+    rule.from.forEach((from, i) => {
+      assert.equal(
+        probe(rule, from),
+        expected(rule.to[i]),
+        `${rule.id} says ${JSON.stringify(from)} maps to ${JSON.stringify(rule.to[i])}, and the keys disagree`,
+      );
+    });
+  }
+});
+
+test("neither declined Rule folds what it declines", () => {
+  for (const rule of rules.filter((r) => r.class === "declined")) {
+    rule.from.forEach((from, i) => {
+      assert.notEqual(conservativeKey(`a${from}b`), expected(rule.to[i]), `${rule.id} is being applied`);
+      assert.notEqual(looseKey(`a${from}b`), expected(rule.to[i]), `${rule.id} is being applied by the Loose key`);
+    });
   }
 });
 
 test("the Rules with no table are the three applied by construction and the two declined", () => {
-  const untabled = rules.filter((rule) => !RULE_ENTRIES.has(rule.id)).map((rule) => rule.id);
-  assert.deepEqual(untabled, [
-    "any.whitespace",
-    "any.case",
-    "any.pass-through",
-    "ar.definite-article",
-    "latn.transliteration",
-  ]);
+  assert.deepEqual(
+    [...RULES_WITHOUT_A_TABLE, ...DECLINED_RULES.map((rule) => rule.id)],
+    ["any.whitespace", "any.case", "any.pass-through", "ar.definite-article", "latn.transliteration"],
+  );
 });
 
 test("the Rules that state a fold the package does not apply are named", () => {
