@@ -59,6 +59,7 @@ plier ce qui change la lettre que le lecteur voit :
 | Une lettre du berbère latin garde sa lettre et ne perd que sa majuscule | `TAMAZIƔT` devient `tamaziɣt` |
 | Les chiffres arabo-indiens et arabo-indiens orientaux deviennent des chiffres ASCII | `٣٤٥` et `۳۴۵` donnent `345` |
 | Les variantes d'apostrophe et de trait d'union séparent les mots | `El M'Ghair` et `El M’Ghair` donnent `el m ghair` |
+| La ponctuation sépare les mots et n'atteint jamais la clé | `Alger, Oran (Es Senia).` devient `alger oran es senia`, `وهران، تلمسان؟` devient `وهران تلمسان` |
 | Les espaces se réduisent, et les limites de mots survivent dans la clé | `  Oran   El Bahia ` devient `oran el bahia` |
 | La casse est ramenée en minuscules | `SÉTIF` devient `setif` |
 | Un caractère qu'aucune table ne nomme est conservé, jamais supprimé | `Tamaziɣt` devient `tamaziɣt` |
@@ -92,14 +93,17 @@ s'y accorder caractère pour caractère. Un mot se termine à, et seulement à :
 - une espace : `U+0009` à `U+000D`, `U+0020`, `U+00A0`, `U+1680`, `U+2000` à `U+200A`,
   `U+2028`, `U+2029`, `U+202F`, `U+205F`, `U+3000` ;
 - une variante d'apostrophe : `'` `` ` `` `ʼ` `‘` `’` (`U+0027`, `U+0060`, `U+02BC`, `U+2018`, `U+2019`) ;
-- une variante de trait d'union ou de tiret : `-` et `U+2010` à `U+2015`.
+- une variante de trait d'union ou de tiret : `-` et `U+2010` à `U+2015` ;
+- la ponctuation : `U+0021` à `U+0026`, `U+0028` à `U+002C`, `U+002E`, `U+002F`, `U+003A` à
+  `U+0040`, `U+005B` à `U+005F`, `U+007B` à `U+007E`, les guillemets `U+00AB` et `U+00BB`, la
+  virgule arabe `U+060C`, le point-virgule `U+061B`, le point d'interrogation `U+061F` et le
+  point `U+06D4`, ainsi que `U+2016` à `U+2017`, `U+201A` à `U+2027` et `U+2030` à `U+205E`.
 
 Tout le reste est plié, supprimé, ou fait partie du mot où il se trouve. Les caractères
 invisibles, dont le trait d'union conditionnel et les marques bidirectionnelles, sont
-supprimés plutôt que traités comme des limites, car ce n'est pas ce que le lecteur voit. La
-ponctuation n'en fait pas partie non plus : une virgule reste dans le mot qu'elle suit, et un
-cas du corpus le consigne, car combler cet écart serait une règle que ce paquet ne porte pas
-encore.
+supprimés plutôt que traités comme des limites, car ce n'est pas ce que le lecteur voit. Une
+clé ne porte donc jamais de ponctuation, et c'est aussi ce qui garde cette découpe identique
+à celle d'un moteur de recherche plein texte.
 
 ## Les règles et leurs identifiants
 
@@ -135,7 +139,7 @@ Le paquet n'a **aucune dépendance d'exécution**.
 
 ## Le corpus de référence
 
-Le corpus est le contrat, 62 cas. Chaque règle ci-dessus est prouvée par au moins un cas construit
+Le corpus est le contrat, 63 cas. Chaque règle ci-dessus est prouvée par au moins un cas construit
 à partir d'un vrai nom algérien, et les consommateurs importent la même fixture plutôt que
 d'écrire leurs propres cas :
 

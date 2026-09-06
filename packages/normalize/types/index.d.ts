@@ -29,7 +29,11 @@ export declare function conservativeKey(text: string): string;
  */
 export declare function looseKey(text: string): string;
 
-/** The words a name folds to, in order: the split the full-text index is built from. */
+/**
+ * The words a name folds to, in order: the split the full-text index is built
+ * from. A word ends at whitespace, at an apostrophe, hyphen or dash variant, and
+ * at punctuation, so a key never carries punctuation.
+ */
 export declare function tokenize(text: string): string[];
 
 /** Both keys, the tokens and the loose flag, from one pass over the text. */

@@ -36,6 +36,7 @@ const IDS = [
   "latn.extended-a",
   "latn.extended-b",
   "any.separators",
+  "any.punctuation",
   "any.whitespace",
   "any.case",
   "any.pass-through",

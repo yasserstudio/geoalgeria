@@ -79,18 +79,42 @@ const REMOVE_GROUPS = [
 ];
 
 /**
- * Word boundaries: whitespace, and the apostrophe and hyphen variants a keyboard
- * or a Source may produce for the same name.
+ * Word boundaries: whitespace, the apostrophe and hyphen variants a keyboard or a
+ * Source may produce for the same name, and punctuation.
  */
-const SEPARATOR_GROUP = {
-  id: "any.separators",
-  codes: [
-    0x0009, 0x000a, 0x000b, 0x000c, 0x000d, 0x0020, // tab, the line breaks, space
-    0x00a0, 0x1680, ...range(0x2000, 0x200a), 0x2028, 0x2029, 0x202f, 0x205f, 0x3000, // the other spaces
-    0x0027, 0x0060, 0x02bc, 0x2018, 0x2019, //       apostrophe, grave accent, the transliteration apostrophe, the curly single quotes
-    0x002d, ...range(0x2010, 0x2015), //             hyphen-minus, hyphen, non-breaking hyphen, figure dash, en dash, long dash, horizontal bar
-  ],
-};
+const SEPARATOR_GROUPS = [
+  {
+    id: "any.separators",
+    codes: [
+      0x0009, 0x000a, 0x000b, 0x000c, 0x000d, 0x0020, // tab, the line breaks, space
+      0x00a0, 0x1680, ...range(0x2000, 0x200a), 0x2028, 0x2029, 0x202f, 0x205f, 0x3000, // the other spaces
+      0x0027, 0x0060, 0x02bc, 0x2018, 0x2019, //       apostrophe, grave accent, the transliteration apostrophe, the curly single quotes
+      0x002d, ...range(0x2010, 0x2015), //             hyphen-minus, hyphen, non-breaking hyphen, figure dash, en dash, long dash, horizontal bar
+    ],
+  },
+  {
+    // Punctuation and symbols. A comma, a full stop or a bracket is around a name
+    // rather than in it, and a key that kept one would carry a character no query
+    // types. Listing them here also keeps the tokenizer honest: the full-text
+    // tokenizer a catalog is built with ends a word at every one of these, so a
+    // key that kept a comma inside a word would be split differently downstream
+    // than it was here. Every codepoint is written out; the apostrophe, grave
+    // accent and hyphen forms above are not repeated.
+    id: "any.punctuation",
+    codes: [
+      ...range(0x0021, 0x0026), ...range(0x0028, 0x002c), 0x002e, 0x002f, // ! " # $ % & ( ) * + , . /
+      ...range(0x003a, 0x0040), //                                          : ; < = > ? @
+      ...range(0x005b, 0x005f), //                                          [ \ ] ^ _
+      ...range(0x007b, 0x007e), //                                          { | } ~
+      0x00ab, 0x00bb, //                                                    the guillemets a French source quotes a name in
+      0x060c, //                                                            Arabic comma
+      0x061b, //                                                            Arabic semicolon
+      0x061f, //                                                            Arabic question mark
+      0x06d4, //                                                            Arabic full stop
+      ...range(0x2016, 0x2017), ...range(0x201a, 0x2027), ...range(0x2030, 0x205e), // the rest of General Punctuation
+    ],
+  },
+];
 
 /**
  * The letters of Latin-1 Supplement (U+00C0..U+00FF), folded to their base letter
@@ -342,7 +366,7 @@ const LOOSE_GROUPS = [
 export const REMOVED = new Set(REMOVE_GROUPS.flatMap((group) => group.codes));
 
 /** Word boundaries. */
-export const SEPARATORS = new Set(SEPARATOR_GROUP.codes);
+export const SEPARATORS = new Set(SEPARATOR_GROUPS.flatMap((group) => group.codes));
 
 /** Codepoint to the string it folds to, in the Conservative key. */
 export const FOLD = new Map(FOLD_GROUPS.flatMap((group) => group.entries));
@@ -352,5 +376,5 @@ export const LOOSE = new Map(LOOSE_GROUPS.flatMap((group) => group.entries));
 
 /** The Rule ids the tables above stand for, so a test can hold them against the catalogue. */
 export const TABLE_RULE_IDS = Object.freeze(
-  [...REMOVE_GROUPS, SEPARATOR_GROUP, ...FOLD_GROUPS, ...LOOSE_GROUPS].map((group) => group.id),
+  [...REMOVE_GROUPS, ...SEPARATOR_GROUPS, ...FOLD_GROUPS, ...LOOSE_GROUPS].map((group) => group.id),
 );

@@ -122,6 +122,12 @@ export const FOLD_RULES = Object.freeze([
     why: "A name is one query whether it was written with an apostrophe, a hyphen, a dash or a space, so every one of those ends a word instead of joining or splitting the key differently.",
   },
   {
+    id: "any.punctuation",
+    class: "conservative",
+    script: "any",
+    why: "A comma, a full stop, a bracket or a quotation mark is around a name rather than in it, in either script, so it ends a word instead of riding into the key: a key never carries punctuation, and the full-text tokenizer that builds a catalog splits exactly where this package splits.",
+  },
+  {
     id: "any.whitespace",
     class: "conservative",
     script: "any",

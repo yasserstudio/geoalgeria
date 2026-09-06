@@ -41,8 +41,10 @@ test("text with no letters tokenizes to nothing", () => {
 });
 
 // The exact separator set. Whitespace, the apostrophe variants a keyboard or a
-// transliteration produces, and the hyphen and dash variants. Every codepoint
-// below ends a token; anything else is either folded, removed, or part of one.
+// transliteration produces, the hyphen and dash variants, and punctuation. Every
+// codepoint below ends a token; anything else is either folded, removed, or part
+// of one. The punctuation rows are a sample of each range rather than all of it,
+// and the range test below holds the rest.
 const SEPARATORS = [
   [0x0009, "tab"],
   [0x000a, "line feed"],
@@ -80,7 +82,53 @@ const SEPARATORS = [
   [0x2013, "en dash"],
   [0x2014, "em dash"],
   [0x2015, "horizontal bar"],
+  [0x002c, "comma"],
+  [0x002e, "full stop"],
+  [0x003a, "colon"],
+  [0x003f, "question mark"],
+  [0x0028, "left parenthesis"],
+  [0x005b, "left square bracket"],
+  [0x007e, "tilde"],
+  [0x0022, "quotation mark"],
+  [0x00ab, "left guillemet"],
+  [0x00bb, "right guillemet"],
+  [0x060c, "Arabic comma"],
+  [0x061b, "Arabic semicolon"],
+  [0x061f, "Arabic question mark"],
+  [0x06d4, "Arabic full stop"],
+  [0x2026, "horizontal ellipsis"],
+  [0x2039, "single left-pointing angle quotation mark"],
 ];
+
+// The punctuation ranges in full, so the sample above is not the whole promise.
+const PUNCTUATION_RANGES = [
+  [0x0021, 0x0026], [0x0028, 0x002c], [0x002e, 0x002f],
+  [0x003a, 0x0040], [0x005b, 0x005f], [0x007b, 0x007e],
+  [0x2016, 0x2017], [0x201a, 0x2027], [0x2030, 0x205e],
+];
+
+test("every codepoint of the declared punctuation ranges ends a token", () => {
+  for (const [first, last] of PUNCTUATION_RANGES) {
+    for (let code = first; code <= last; code++) {
+      assert.deepEqual(
+        tokenize(`sidi${String.fromCodePoint(code)}bel`),
+        ["sidi", "bel"],
+        `U+${code.toString(16).padStart(4, "0").toUpperCase()} did not end a token`,
+      );
+    }
+  }
+});
+
+test("no key carries punctuation", () => {
+  for (const kase of corpus) {
+    for (const [first, last] of PUNCTUATION_RANGES) {
+      for (const character of conservativeKey(kase.input)) {
+        const code = character.codePointAt(0);
+        assert.ok(code < first || code > last, `${JSON.stringify(kase.input)} kept ${JSON.stringify(character)}`);
+      }
+    }
+  }
+});
 
 for (const [code, name] of SEPARATORS) {
   test(`U+${code.toString(16).padStart(4, "0").toUpperCase()} (${name}) ends a token`, () => {

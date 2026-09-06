@@ -263,12 +263,12 @@ export const corpus = Object.freeze([
     note: "the soft hyphen U+00AD is a line-break hint, invisible on screen, so it is removed and not treated as a word boundary",
   },
   {
-    input: "Alger, Oran",
-    conservative: "alger, oran",
-    loose: "alger, oran",
-    tokens: ["alger,", "oran"],
-    proves: ["any.pass-through"],
-    note: "punctuation is not in the declared separator set, so a comma stays inside its word: a full-text tokenizer that splits on it would disagree with these tokens, and closing that gap is a rule this package does not yet carry",
+    input: "Alger, Oran (Es Senia).",
+    conservative: "alger oran es senia",
+    loose: "alger oran es senia",
+    tokens: ["alger", "oran", "es", "senia"],
+    proves: ["any.punctuation"],
+    note: "a comma, brackets and a full stop end words and never reach the key, which is also where the full-text tokenizer a catalog is built with splits",
   },
   {
     input: "   Oran    El   Bahia  ",
@@ -335,6 +335,14 @@ export const corpus = Object.freeze([
     tokens: ["وهران"],
     proves: ["ar.marks"],
     note: "a combining mark from Arabic Extended-A, U+08F0, is removed like the marks of the Arabic block",
+  },
+  {
+    input: "وهران، تلمسان؟",
+    conservative: "وهران تلمسان",
+    loose: "وهران تلمسان",
+    tokens: ["وهران", "تلمسان"],
+    proves: ["any.punctuation"],
+    note: "the Arabic comma U+060C and the Arabic question mark U+061F end words like their Latin counterparts",
   },
   {
     input: "\u200fالجزائر\u200e",

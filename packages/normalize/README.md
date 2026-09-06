@@ -58,6 +58,7 @@ changes which letter a reader sees:
 | A Berber Latin letter keeps its letter and loses only its capital | `TAMAZIƔT` becomes `tamaziɣt` |
 | Arabic-Indic and Eastern Arabic-Indic digits fold to ASCII | `٣٤٥` and `۳۴۵` both become `345` |
 | Apostrophe and hyphen variants are word separators | `El M'Ghair`, `El M’Ghair` become `el m ghair` |
+| Punctuation is a word separator and never reaches the key | `Alger, Oran (Es Senia).` becomes `alger oran es senia`, `وهران، تلمسان؟` becomes `وهران تلمسان` |
 | Whitespace collapses, and word boundaries survive into the key | `  Oran   El Bahia ` becomes `oran el bahia` |
 | Case folds to lower | `SÉTIF` becomes `setif` |
 | A character no table names is kept, not dropped | `Tamaziɣt` becomes `tamaziɣt` |
@@ -89,13 +90,16 @@ ends at, and only at:
 - whitespace: `U+0009` to `U+000D`, `U+0020`, `U+00A0`, `U+1680`, `U+2000` to `U+200A`,
   `U+2028`, `U+2029`, `U+202F`, `U+205F`, `U+3000`;
 - an apostrophe variant: `'` `` ` `` `ʼ` `‘` `’` (`U+0027`, `U+0060`, `U+02BC`, `U+2018`, `U+2019`);
-- a hyphen or dash variant: `-` and `U+2010` to `U+2015`.
+- a hyphen or dash variant: `-` and `U+2010` to `U+2015`;
+- punctuation: `U+0021` to `U+0026`, `U+0028` to `U+002C`, `U+002E`, `U+002F`, `U+003A` to
+  `U+0040`, `U+005B` to `U+005F`, `U+007B` to `U+007E`, the guillemets `U+00AB` and `U+00BB`,
+  the Arabic comma `U+060C`, semicolon `U+061B`, question mark `U+061F` and full stop
+  `U+06D4`, and `U+2016` to `U+2017`, `U+201A` to `U+2027` and `U+2030` to `U+205E`.
 
 Everything else is folded, removed, or part of the word it is in. The invisible characters,
 the soft hyphen and the bidi marks among them, are removed rather than treated as
-boundaries, because they are not what a reader sees. Punctuation is not in this set either,
-so a comma stays inside the word it follows; a corpus case records that, because closing the
-gap would be a rule this package does not yet carry.
+boundaries, because they are not what a reader sees. A key therefore never carries
+punctuation, which is also what keeps this split and a full-text tokenizer's split the same.
 
 ## Rules and their ids
 
@@ -128,7 +132,7 @@ The package has **zero runtime dependencies**.
 
 ## The golden corpus
 
-The corpus is the contract, 62 cases. Every rule above is proved by at least one case built
+The corpus is the contract, 63 cases. Every rule above is proved by at least one case built
 from a real Algerian name, and consumers import the same fixture rather than writing cases of
 their own:
 

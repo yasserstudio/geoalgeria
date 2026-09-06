@@ -10,16 +10,18 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   forms fold back to base letters, alef variants and hamza on waw or yaa fold to the plain
   letter, tatweel and the Arabic combining marks are removed, Latin accents fold to their
   base letter whether the input is precomposed or decomposed, Arabic-Indic and Eastern
-  Arabic-Indic digits fold to ASCII, apostrophe and hyphen variants become word separators,
-  whitespace collapses, and case folds to lower. Taa marbuta and alef maqsura are left as
+  Arabic-Indic digits fold to ASCII, apostrophe and hyphen variants and punctuation become
+  word separators so a key never carries punctuation, whitespace collapses, and case folds to
+  lower. Taa marbuta and alef maqsura are left as
   written: those belong to the Loose key.
 - `looseKey(text)`, the Loose key: the Conservative key plus exactly two equivalences, alef
   maqsura with yaa and taa marbuta with haa. They are a tier of their own so that a match
   they cause can be ranked below an exact one instead of being indistinguishable from it.
 - `tokenize(text)`, the words a name folds to, in order. Both keys are that list joined by
   single spaces, so a partial last word still completes and a query is never matched against
-  one long run of letters. The separator set is documented in the READMEs, and the index a
-  consumer builds must agree with it character for character.
+  one long run of letters. A word ends at whitespace, at an apostrophe, hyphen or dash
+  variant, and at punctuation in either script, which is where a full-text tokenizer ends one
+  too; the exact set is written out in the READMEs.
 - `searchKeys(text)`, both keys, the tokens and `looseDiffers` from one pass over the text:
   the call the Content release generator makes.
 - A stable identifier on every fold, `ar.taa-marbuta-haa` or `latn.extended-a`, with the
@@ -30,7 +32,7 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   the release it was built with. A change to what a key function returns for any input is a
   major version, because keys are baked into published catalogs and an installed catalog is
   never migrated record by record.
-- `@geoalgeria/normalize/fixtures`, the Golden corpus: 62 cases built from real Algerian
+- `@geoalgeria/normalize/fixtures`, the Golden corpus: 63 cases built from real Algerian
   names, each with both keys, the tokens, the Rule ids it proves and a note saying what it is
   about. Every Rule is exercised by at least one case. Consumers assert against this fixture
   rather than writing cases of their own.
