@@ -168,7 +168,7 @@ The additional equivalence tier over the Conservative key, folding the pairs a s
 _Avoid_: fuzzy key, relaxed key, approximate key
 
 **Rule**:
-One reviewed fold or alias in the normalization package's frozen table, carrying an id (`ar.taa-marbuta-haa`), its class, the script it applies to, one sentence a speaker can argue with, and a review record. A Rule states something about the script and is safe for every name; a statement about one Place is a per-record alias with its own Source, not a Rule.
+One reviewed fold or alias in the normalization package's frozen table, carrying an id (`ar.taa-marbuta-haa`), its class, the script it applies to, one sentence a speaker can argue with, and a review record. A Rule states something about the script and is safe for every name; a statement about one record is that record's own alias, carrying its own Source, not a Rule.
 _Avoid_: mapping, transform, substitution
 
 **Golden corpus**:
