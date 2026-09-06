@@ -103,9 +103,19 @@ export function normalizeRuleErrors({ rules, corpus, order = REVIEWED_RULE_ORDER
   }
 
   // 5. An order nobody reviewed. Insertions, deletions and reorderings all land
-  //    here, so a Rule cannot arrive between two reviewed ones unnoticed.
-  if (ids.length !== order.length || ids.some((id, i) => id !== order[i]))
-    errors.push(`normalize/src/rules.js: the Rule table is ordered ${ids.join(", ")}; the reviewed order is ${order.join(", ")}`);
+  //    here, so a Rule cannot arrive between two reviewed ones unnoticed. The
+  //    message names the first place the two disagree rather than printing both
+  //    lists, so a build log stays readable.
+  const longest = Math.max(ids.length, order.length);
+  let at = -1;
+  for (let i = 0; i < longest; i++) {
+    if (ids[i] !== order[i]) {
+      at = i;
+      break;
+    }
+  }
+  if (at !== -1)
+    errors.push(`normalize/src/rules.js: the Rule table order is not the reviewed one: position ${at + 1} is ${ids[at] ?? "nothing"}, the reviewed order has ${order[at] ?? "nothing"} (${ids.length} Rules against ${order.length} reviewed)`);
 
   return errors;
 }

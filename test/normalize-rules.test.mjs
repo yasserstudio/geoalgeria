@@ -85,7 +85,7 @@ test("a table whose order is not the reviewed one fails", () => {
       order: ["any.case", "any.whitespace"],
     }),
     [
-      "normalize/src/rules.js: the Rule table is ordered any.whitespace, any.case; the reviewed order is any.case, any.whitespace",
+      "normalize/src/rules.js: the Rule table order is not the reviewed one: position 1 is any.whitespace, the reviewed order has any.case (2 Rules against 2 reviewed)",
     ],
   );
 });
