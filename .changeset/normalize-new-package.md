@@ -1,0 +1,5 @@
+---
+"@geoalgeria/normalize": major
+---
+
+New package `@geoalgeria/normalize`, search-key generation for Algerian place names in Arabic and in French. `conservativeKey` folds Arabic presentation forms back to base letters, alef variants and hamza on waw or yaa to the plain letter, removes tatweel and the Arabic combining marks, folds Latin accents from both precomposed and decomposed spellings, folds Arabic-Indic and Eastern Arabic-Indic digits to ASCII, treats apostrophe and hyphen variants as word separators, collapses whitespace and case folds to lower, while leaving taa marbuta and alef maqsura as written for the Loose key. `NORMALIZE_VERSION` is the semver major the Content manifest records. The Golden corpus ships as an importable fixture at `@geoalgeria/normalize/fixtures`, 46 cases from real Algerian names, so every consumer proves the same keys from the same inputs. The key path owns its codepoint tables and has no runtime dependencies, so a runtime upgrade cannot change a published catalog's keys. Code only, plain MIT.

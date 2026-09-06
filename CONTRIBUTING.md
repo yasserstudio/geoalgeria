@@ -10,6 +10,7 @@ This is a small monorepo:
 | Path | Package | Contents |
 | --- | --- | --- |
 | `packages/schema/` | `@geoalgeria/schema` | shared v2 record/metadata contract, types, runtime validator, canonical metadata + manifest builders, CSV/GeoJSON emit helpers; a dev dependency of every generator, not itself a dataset |
+| `packages/normalize/` | `@geoalgeria/normalize` | Search key generation, the Conservative key plus its Golden corpus; code only, no data, zero runtime dependencies |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |

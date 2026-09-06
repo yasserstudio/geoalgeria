@@ -152,6 +152,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو، 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية والربط بالبلدية/الولاية (ooredoo.dz)؛ يُكمل ثلاثي الاتصالات |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة، تثبّت aviation + ferroviaire + gares-routieres + buses دفعة واحدة |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة، تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
+| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | مفاتيح البحث لأسماء الأماكن الجزائرية، المفتاح المحافظ ومدوّنته المرجعية؛ شيفرة فقط، بلا اعتماديات، حتى تطوي كل الفهارس الاسم بالطريقة نفسها |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 
