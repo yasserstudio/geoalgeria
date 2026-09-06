@@ -20,7 +20,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | Path | Package | Contents |
 | --- | --- | --- |
 | `packages/schema/` | `@geoalgeria/schema` | shared v2 contract – types, validator, canonical metadata/manifest builders, emit helpers; a dev dependency of every generator, not itself a dataset |
-| `packages/normalize/` | `@geoalgeria/normalize` | Search key generation, the Conservative key plus its Golden corpus; code only, zero dependencies, published so every consumer folds a name the same way |
+| `packages/normalize/` | `@geoalgeria/normalize` | Search key generation, the Conservative key, the Loose key, the tokenizer and their Golden corpus; code only, zero dependencies, published so every consumer folds a name the same way |
 | `packages/dataset/` | `geoalgeria` | wilayas, dairas, communes (+ mirrored postal data) |
 | `packages/poste/` | `@geoalgeria/poste` | post offices & ATMs (Algérie Poste) |
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |

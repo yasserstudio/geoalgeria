@@ -23,13 +23,20 @@ npm install @geoalgeria/normalize
 ```
 
 ```js
-import { conservativeKey, NORMALIZE_VERSION } from "@geoalgeria/normalize";
+import { conservativeKey, looseKey, tokenize, searchKeys, NORMALIZE_VERSION } from "@geoalgeria/normalize";
 
 conservativeKey("Béjaïa");         // "bejaia"
 conservativeKey("Sidi-Bel-Abbès"); // "sidi bel abbes"
 conservativeKey("El M’Ghair");     // "el m ghair"
 conservativeKey("بِجَايَة");           // "بجاية"
 conservativeKey("الجـــزائر");        // "الجزاير"
+
+looseKey("قسنطينة");                // "قسنطينه"
+looseKey("مصطفى");                  // "مصطفي"
+tokenize("Sidi-Bel-Abbès");        // ["sidi", "bel", "abbes"]
+
+searchKeys("قسنطينة");
+// { conservative: "قسنطينة", loose: "قسنطينه", tokens: ["قسنطينة"], looseDiffers: true }
 
 NORMALIZE_VERSION;                 // 1
 ```
@@ -47,14 +54,58 @@ changes which letter a reader sees:
 | Tatweel is removed | `الجـــزائر` becomes `الجزاير` |
 | Harakat and the other Arabic combining marks are removed | `بِجَايَة` becomes `بجاية` |
 | Latin accents fold to their base letter, precomposed or decomposed alike | `Béjaïa` becomes `bejaia` |
+| Latin Extended-A and the accented letters of Latin Extended-B fold too | `Bāb el Oued` becomes `bab el oued`, `Ǧerǧer` becomes `gerger` |
+| A Berber Latin letter keeps its letter and loses only its capital | `TAMAZIƔT` becomes `tamaziɣt` |
 | Arabic-Indic and Eastern Arabic-Indic digits fold to ASCII | `٣٤٥` and `۳۴۵` both become `345` |
 | Apostrophe and hyphen variants are word separators | `El M'Ghair`, `El M’Ghair` become `el m ghair` |
+| Punctuation is a word separator and never reaches the key | `Alger, Oran (Es Senia).` becomes `alger oran es senia`, `وهران، تلمسان؟` becomes `وهران تلمسان` |
 | Whitespace collapses, and word boundaries survive into the key | `  Oran   El Bahia ` becomes `oran el bahia` |
 | Case folds to lower | `SÉTIF` becomes `setif` |
+| A character no table names is kept, not dropped | `Tamaziɣt` becomes `tamaziɣt` |
 
-Two folds are deliberately **not** here: taa marbuta with haa, and alef maqsura with yaa.
-They belong to the looser tier, so that a match they cause can be ranked below an exact
-one instead of being indistinguishable from it.
+## The loose key
+
+The **loose key** is the conservative key plus exactly two equivalences, and nothing else:
+
+| Rule | Example |
+| --- | --- |
+| Alef maqsura and yaa are one letter | `مصطفى` becomes `مصطفي` |
+| Taa marbuta and haa are one letter | `قسنطينة` becomes `قسنطينه` |
+
+They are separate so that a match they cause can be ranked below an exact one instead of
+being indistinguishable from it. `searchKeys` says whether either of them actually fired:
+
+```js
+searchKeys("تيزي وزو").looseDiffers; // false, the two keys are the same string
+searchKeys("قسنطينة").looseDiffers;   // true
+```
+
+## Words, and the separator set
+
+Both keys are the token list joined by single spaces, so a partial last word still
+completes and a query is never matched against one long run of letters. `tokenize` is that
+split, and the index a consumer builds must agree with it character for character. A token
+ends at, and only at:
+
+- whitespace: `U+0009` to `U+000D`, `U+0020`, `U+00A0`, `U+1680`, `U+2000` to `U+200A`,
+  `U+2028`, `U+2029`, `U+202F`, `U+205F`, `U+3000`;
+- an apostrophe variant: `'` `` ` `` `ʼ` `‘` `’` (`U+0027`, `U+0060`, `U+02BC`, `U+2018`, `U+2019`);
+- a hyphen or dash variant: `-` and `U+2010` to `U+2015`;
+- punctuation: `U+0021` to `U+0026`, `U+0028` to `U+002C`, `U+002E`, `U+002F`, `U+003A` to
+  `U+0040`, `U+005B` to `U+005F`, `U+007B` to `U+007E`, the guillemets `U+00AB` and `U+00BB`,
+  the Arabic comma `U+060C`, semicolon `U+061B`, question mark `U+061F` and full stop
+  `U+06D4`, and `U+2016` to `U+2017`, `U+201A` to `U+2027` and `U+2030` to `U+205E`.
+
+Everything else is folded, removed, or part of the word it is in. The invisible characters,
+the soft hyphen and the bidi marks among them, are removed rather than treated as
+boundaries, because they are not what a reader sees. A key therefore never carries
+punctuation, which is also what keeps this split and a full-text tokenizer's split the same.
+
+## Rules and their ids
+
+Every fold carries a stable identifier, `ar.taa-marbuta-haa` or `latn.extended-a`, and every
+rule is proved by at least one corpus case. The ids are the durable part: a corpus case, a
+review record and a caller asking which rule made a match all name the same string.
 
 Two rules are declined outright, and recorded so they are not quietly re-added: the Arabic
 definite article is never stripped (whether a name with the article and one without are the
@@ -69,19 +120,27 @@ platform built-in, so it produces the same bytes on Node and on a phone, and a r
 upgrade cannot silently change a published key. A test enforces that by reading the source
 rather than trusting a comment.
 
+The tables declare ASCII, Latin-1 Supplement, Latin Extended-A and B, the combining
+diacritical marks, the Arabic block, Arabic Supplement, Arabic Extended-A and both Arabic
+presentation form blocks. Inside those blocks the marks are removed and the variants are
+folded; the letters that are letters in their own right, the Berber Latin gamma, the
+Maghrebi hard g of the Arabic Supplement, peh and veh and ng, are kept as they are. A
+character outside every declared block is lower-cased if it is an ASCII capital and
+otherwise passed through unchanged, never dropped.
+
 The package has **zero runtime dependencies**.
 
 ## The golden corpus
 
-The corpus is the contract. Every rule above is proved by at least one case built from a
-real Algerian name, and consumers import the same fixture rather than writing cases of
+The corpus is the contract, 63 cases. Every rule above is proved by at least one case built
+from a real Algerian name, and consumers import the same fixture rather than writing cases of
 their own:
 
 ```js
 import { corpus } from "@geoalgeria/normalize/fixtures";
 
 for (const kase of corpus) {
-  // kase.input, kase.conservative, kase.note
+  // kase.input, kase.conservative, kase.loose, kase.tokens, kase.proves, kase.note
 }
 ```
 

@@ -8,7 +8,7 @@ import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
-import { NORMALIZE_VERSION } from "../index.js";
+import { NORMALIZE_VERSION, searchKeys } from "../index.js";
 
 const PKG = dirname(dirname(fileURLToPath(import.meta.url)));
 const manifest = JSON.parse(readFileSync(join(PKG, "package.json"), "utf-8"));
@@ -17,8 +17,17 @@ const manifest = JSON.parse(readFileSync(join(PKG, "package.json"), "utf-8"));
 // public commitment by slipping in beside the ones that were.
 test("the root export surface is exactly what was reviewed", async () => {
   const module = await import("../index.js");
-  assert.deepEqual(Object.keys(module).sort(), ["NORMALIZE_VERSION", "conservativeKey"]);
+  assert.deepEqual(Object.keys(module).sort(), [
+    "NORMALIZE_VERSION",
+    "conservativeKey",
+    "looseKey",
+    "searchKeys",
+    "tokenize",
+  ]);
   assert.equal(typeof module.conservativeKey, "function");
+  assert.equal(typeof module.looseKey, "function");
+  assert.equal(typeof module.tokenize, "function");
+  assert.equal(typeof module.searchKeys, "function");
   assert.equal(typeof module.NORMALIZE_VERSION, "number");
 });
 
@@ -27,11 +36,25 @@ test("the fixtures export surface is exactly what was reviewed", async () => {
   assert.deepEqual(Object.keys(module).sort(), ["corpus"]);
   assert.ok(Array.isArray(module.corpus));
   for (const kase of module.corpus) {
-    assert.deepEqual(Object.keys(kase).sort(), ["conservative", "input", "note"]);
+    assert.deepEqual(Object.keys(kase).sort(), ["conservative", "input", "loose", "note", "proves", "tokens"]);
     assert.equal(typeof kase.input, "string");
     assert.equal(typeof kase.conservative, "string");
+    assert.equal(typeof kase.loose, "string");
+    assert.ok(Array.isArray(kase.tokens));
+    assert.ok(Array.isArray(kase.proves));
     assert.ok(kase.note.length > 0, "every case says what it proves");
   }
+});
+
+// The one-pass call the release generator makes. Its shape is as public as the
+// function names are, so it is snapshotted the same way.
+test("the searchKeys result shape is exactly what was reviewed", () => {
+  const keys = searchKeys("Béjaïa");
+  assert.deepEqual(Object.keys(keys).sort(), ["conservative", "loose", "looseDiffers", "tokens"]);
+  assert.equal(typeof keys.conservative, "string");
+  assert.equal(typeof keys.loose, "string");
+  assert.equal(typeof keys.looseDiffers, "boolean");
+  assert.ok(Array.isArray(keys.tokens));
 });
 
 // One number, so there is nothing to keep in step by hand. A change to what the
@@ -66,7 +89,12 @@ const FORBIDDEN = [
 const keyPath = ["index.js", ...readdirSync(join(PKG, "src")).map((f) => join("src", f))];
 
 test("the key path files are the ones this scan expects", () => {
-  assert.deepEqual([...keyPath].sort(), ["index.js", join("src", "conservative.js"), join("src", "tables.js")]);
+  assert.deepEqual([...keyPath].sort(), [
+    "index.js",
+    join("src", "keys.js"),
+    join("src", "rules.js"),
+    join("src", "tables.js"),
+  ]);
 });
 
 for (const file of keyPath) {
