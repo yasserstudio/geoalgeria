@@ -12,8 +12,10 @@ import { execFileSync } from "node:child_process";
 import { conservativeKey } from "../index.js";
 import { corpus } from "../fixtures/corpus.js";
 
-test("the corpus is large enough to be worth the name", () => {
-  assert.ok(corpus.length >= 25, `the corpus carries ${corpus.length} cases, expected at least 25`);
+// The corpus grows and never shrinks: the cases the first release shipped are the
+// keys every published catalog is built from.
+test("the corpus is at least the size it shipped at", () => {
+  assert.ok(corpus.length >= 48, `the corpus carries ${corpus.length} cases, expected at least 48`);
 });
 
 for (const [index, kase] of corpus.entries()) {

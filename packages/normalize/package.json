@@ -2,7 +2,7 @@
   "name": "@geoalgeria/normalize",
   "version": "1.0.0",
   "type": "module",
-  "description": "Search-key generation for Algerian place names, in Arabic and in French. A zero-dependency, host-independent conservative key (presentation forms, alef and hamza variants, tatweel, harakat, Arabic-Indic digits, Latin accents, separator variants, case) with its golden corpus, so every GeoAlgeria index agrees character for character.",
+  "description": "Search-key generation for Algerian place names, in Arabic and in French. A zero-dependency, host-independent conservative key (presentation forms, alef and hamza variants, tatweel, harakat, Arabic-Indic digits, Latin accents, separator variants, case), a loose key (alef maqsura with yaa, taa marbuta with haa), a tokenizer and its golden corpus, so every GeoAlgeria index agrees character for character.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {

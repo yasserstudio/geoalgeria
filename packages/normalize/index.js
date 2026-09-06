@@ -5,7 +5,7 @@
 // code, so identical keys are structural rather than something a test has to
 // police. It carries no data about places, and ranking lives elsewhere.
 
-export { conservativeKey } from "./src/conservative.js";
+export { conservativeKey, looseKey, searchKeys, tokenize } from "./src/keys.js";
 
 /**
  * The package's semver major, as a number. Any change to what a key function

@@ -103,4 +103,4 @@ jobs:
 
       - name: Smoke test - @geoalgeria/normalize (ESM)
         working-directory: packages/normalize
-        run: node --input-type=module -e "import('./index.js').then(m=>{const k=m.conservativeKey('B\u00e9ja\u00efa'); if(k!=='bejaia'){console.error('conservativeKey gave',JSON.stringify(k),'expected bejaia');process.exit(1)} console.log('normalize:','v'+m.NORMALIZE_VERSION+',','B\u00e9ja\u00efa ->',k)})"
+        run: node --input-type=module -e "import('./index.js').then(m=>{const k=m.searchKeys('B\u00e9ja\u00efa-Ville'); if(k.conservative!=='bejaia ville'||k.loose!==k.conservative||k.tokens.join('|')!=='bejaia|ville'||k.looseDiffers){console.error('searchKeys gave',JSON.stringify(k));process.exit(1)} const l=m.looseKey('\u0642\u0633\u0646\u0637\u064a\u0646\u0629'); if(l!=='\u0642\u0633\u0646\u0637\u064a\u0646\u0647'){console.error('looseKey gave',JSON.stringify(l));process.exit(1)} console.log('normalize:','v'+m.NORMALIZE_VERSION+',','B\u00e9ja\u00efa-Ville ->',k.conservative)})"
