@@ -100,3 +100,7 @@ jobs:
       - name: Smoke test - @geoalgeria/cliniques (ESM)
         working-directory: packages/cliniques
         run: node --input-type=module -e "import('./index.js').then(m=>{const c=m.cliniques(); if(!Array.isArray(c)||!c.length){console.error('empty data');process.exit(1)} console.log('cliniques:',c.length,'facilities,',m.metadata().wilayas_covered,'wilayas')})"
+
+      - name: Smoke test - @geoalgeria/normalize (ESM)
+        working-directory: packages/normalize
+        run: node --input-type=module -e "import('./index.js').then(m=>{const k=m.conservativeKey('B\u00e9ja\u00efa'); if(k!=='bejaia'){console.error('conservativeKey gave',JSON.stringify(k),'expected bejaia');process.exit(1)} console.log('normalize:','v'+m.NORMALIZE_VERSION+',','B\u00e9ja\u00efa ->',k)})"
