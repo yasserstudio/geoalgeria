@@ -337,6 +337,23 @@ reads as further along than it is.
   page on exactly the basis this repo already redistributes their station list.
   _(logged 2026-08-09)_
 
+## Search
+
+- [ ] **Publish `@geoalgeria/normalize`.** Tickets #128 to #132 (PRs #211 to
+  #214) landed the package at 1.0.0: seven exports, a fixtures subpath, 24
+  reviewed Rules with a review gate, punctuation as a separator so tokens
+  match SQLite FTS5 `unicode61`, and a Match class documented in the fixtures
+  but not exported. The release script skips a package npm has never seen, so
+  publish is a manual bootstrap (ticket #134, Owner action per RELEASING.md),
+  gated on the Owner's native Arabic review of the Arabic rationales.
+  _(logged 2026-09-06)_
+
+- [ ] **Web adoption of `@geoalgeria/normalize`** (ticket #136), after #134
+  publishes and after the core-extraction ticket #139. Replaces the live Web
+  normalizer's three deviations (concatenated tokens, taa marbuta/alef
+  maqsura folded into its only key, tatweel not stripped) with the package's
+  keys. _(logged 2026-09-06)_
+
 ## Releases
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have

@@ -166,7 +166,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 - المعرّفات الخارجية مجمّعة تحت `refs` (`osm`، `wikidata`، …).
 - `geo_precision` يأخذ حصرًا القيم `exact | approximate | null`، و`null` فقط عند غياب الإحداثيات، مع طريقة الترميز الجغرافي في `geo_method`.
 
-تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض).
+تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة تحمل بيانات (الحزمة `@geoalgeria/normalize`، شيفرة فقط، لا تحمل واصفًا من هذا النوع)، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض).
 
 حزمة واحدة تسبق العقد، مجموعة البيانات الأساسية `geoalgeria` (تقسيمات إدارية وليست GeoRecords؛ مميَّزة بـ `schema_version: null` في الفهرس).
 

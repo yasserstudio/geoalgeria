@@ -164,7 +164,7 @@ Every record follows the same shape:
 - External ids live under `refs` (`osm`, `wikidata`, …).
 - `geo_precision` is strictly `exact | approximate | null`, `null` exactly when there is no coordinate, with the geocoding method in `geo_method`.
 
-Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each package, and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
+Machine-readable artifacts ride alongside: a root [`index.json`](index.json) catalog, a `schema.org/Dataset` descriptor (`dataset-metadata.json`) in each data-bearing package (the code-only `@geoalgeria/normalize` carries no dataset descriptor), and the 69 wilaya boundary polygons in the core package at [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (display-grade).
 
 Human-reviewed corrections use the same contract across packages. A package can
 add `quality/overrides/<package>.json`; the canonical writer checks the expected

@@ -164,7 +164,7 @@ Chaque enregistrement suit la même forme :
 - Les identifiants externes sont regroupés sous `refs` (`osm`, `wikidata`, …).
 - `geo_precision` vaut strictement `exact | approximate | null`, `null` exactement lorsqu'il n'y a pas de coordonnée, avec la méthode de géocodage dans `geo_method`.
 
-Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet, et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
+Des artefacts lisibles par machine les accompagnent : un catalogue racine [`index.json`](index.json), un descripteur `schema.org/Dataset` (`dataset-metadata.json`) dans chaque paquet porteur de données (le paquet `@geoalgeria/normalize`, code seul, n'en porte pas), et les 69 polygones de limites des wilayas dans le paquet principal, sous [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (qualité d'affichage).
 
 Un paquet est antérieur au contrat, le jeu de données principal `geoalgeria` (divisions administratives, pas des GeoRecords ; marqué `schema_version: null` dans le catalogue).
 
