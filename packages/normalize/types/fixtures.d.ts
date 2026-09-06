@@ -1,4 +1,4 @@
-/** One Golden corpus case: an input, the key it must produce, and the rule it proves. */
+/** One Golden corpus case: an input, the key it must produce, and a note on what it proves. */
 export interface KeyCase {
   input: string;
   conservative: string;

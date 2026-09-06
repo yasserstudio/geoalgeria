@@ -8,6 +8,7 @@
 // list names is passed through unchanged.
 //
 // Blocks covered, by their Unicode range:
+//   U+0080..U+00FF  Latin-1 Supplement (every accented letter, upper and lower case)
 //   U+0300..U+036F  Combining Diacritical Marks (the marks a decomposed spelling carries)
 //   U+0600..U+06FF  Arabic (letters, harakat, tatweel, Arabic-Indic digits)
 //   U+FB50..U+FDFF  Arabic Presentation Forms-A (the letter forms Algerian names use)
@@ -26,11 +27,14 @@ function range(from, to) {
  */
 export const REMOVED = new Set([
   ...range(0x0300, 0x036f), // combining diacritical marks, so a decomposed spelling meets its precomposed twin
+  0x00ad, //                   soft hyphen, a printing hint that is invisible on screen
+  ...range(0x0610, 0x061a), // the Arabic honorific and annotation marks
   0x0640, //                   tatweel, the elongation padding
   ...range(0x064b, 0x065f), // harakat, shadda, sukun, and the combining hamza and madda a decomposed alef carries
   0x0670, //                   superscript alef
+  ...range(0x06d6, 0x06ed), // the Quranic annotation marks, which a copied register entry can carry
   ...range(0x200b, 0x200f), // zero-width space, the joiners, and the bidi marks
-  ...range(0xfe70, 0xfe7f), // the harakat again, in their Presentation Forms-B shapes
+  ...range(0xfe70, 0xfe7f), // the Presentation Forms-B shapes of the harakat, and the tail fragment beside them
   0xfeff, //                   byte order mark
 ]);
 
@@ -41,14 +45,16 @@ export const REMOVED = new Set([
 export const SEPARATORS = new Set([
   0x0009, 0x000a, 0x000b, 0x000c, 0x000d, 0x0020, // tab, the line breaks, space
   0x00a0, 0x1680, ...range(0x2000, 0x200a), 0x2028, 0x2029, 0x202f, 0x205f, 0x3000, // the other spaces
-  0x0027, 0x0060, 0x2018, 0x2019, //               apostrophe, grave accent, the curly single quotes
-  0x002d, ...range(0x2010, 0x2014), //             hyphen-minus, hyphen, non-breaking hyphen, figure dash, en dash, long dash
+  0x0027, 0x0060, 0x02bc, 0x2018, 0x2019, //       apostrophe, grave accent, the transliteration apostrophe, the curly single quotes
+  0x002d, ...range(0x2010, 0x2015), //             hyphen-minus, hyphen, non-breaking hyphen, figure dash, en dash, long dash, horizontal bar
 ]);
 
 /**
- * Latin letters that carry an accent in French place names, folded to their base
- * letter and to lower case in one step. Uppercase forms map straight to the
- * lower-case base, so case folding needs no second pass.
+ * The letters of Latin-1 Supplement (U+00C0..U+00FF), folded to their base letter
+ * and to lower case in one step. Uppercase forms map straight to the lower-case
+ * base, so case folding needs no second pass and no letter of this block can reach
+ * a key still capitalised. The first block is what French place names use; the rest
+ * of the range follows so the declared block is covered rather than sampled.
  */
 const LATIN = [
   [0x00e0, "a"], [0x00e2, "a"], [0x00e4, "a"], // à â ä
@@ -63,6 +69,20 @@ const LATIN = [
   [0x00ce, "i"], [0x00cf, "i"], //                Î Ï
   [0x00d4, "o"], [0x00d6, "o"], //                Ô Ö
   [0x00d9, "u"], [0x00db, "u"], [0x00dc, "u"], // Ù Û Ü
+  [0x00e1, "a"], [0x00e3, "a"], [0x00e5, "a"], [0x00e6, "ae"], // á ã å æ
+  [0x00ec, "i"], [0x00ed, "i"], //                ì í
+  [0x00f0, "d"], [0x00f1, "n"], //                ð ñ
+  [0x00f2, "o"], [0x00f3, "o"], [0x00f5, "o"], [0x00f8, "o"], // ò ó õ ø
+  [0x00fa, "u"], //                               ú
+  [0x00fd, "y"], [0x00ff, "y"], //                ý ÿ
+  [0x00fe, "th"], [0x00df, "ss"], //              þ ß
+  [0x00c1, "a"], [0x00c3, "a"], [0x00c5, "a"], [0x00c6, "ae"], // Á Ã Å Æ
+  [0x00cc, "i"], [0x00cd, "i"], //                Ì Í
+  [0x00d0, "d"], [0x00d1, "n"], //                Ð Ñ
+  [0x00d2, "o"], [0x00d3, "o"], [0x00d5, "o"], [0x00d8, "o"], // Ò Ó Õ Ø
+  [0x00da, "u"], //                               Ú
+  [0x00dd, "y"], //                               Ý
+  [0x00de, "th"], //                              Þ
 ];
 
 /**

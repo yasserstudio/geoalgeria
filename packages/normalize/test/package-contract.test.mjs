@@ -30,7 +30,7 @@ test("the fixtures export surface is exactly what was reviewed", async () => {
     assert.deepEqual(Object.keys(kase).sort(), ["conservative", "input", "note"]);
     assert.equal(typeof kase.input, "string");
     assert.equal(typeof kase.conservative, "string");
-    assert.ok(kase.note.length > 0, "every case says which rule it proves");
+    assert.ok(kase.note.length > 0, "every case says what it proves");
   }
 });
 

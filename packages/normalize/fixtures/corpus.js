@@ -1,7 +1,7 @@
 // The Golden corpus for the Conservative key.
 //
-// Every case is one input and the exact key it must produce, with a note naming
-// the rule it proves. The corpus is the contract: the package's own tests, and
+// Every case is one input and the exact key it must produce, with a note saying
+// what it proves. The corpus is the contract: the package's own tests, and
 // later every consumer that builds an index, assert against this array rather
 // than against hand-written cases of their own.
 //
@@ -64,6 +64,11 @@ export const corpus = Object.freeze([
     note: "an accent inside the first word of a two-word name",
   },
   {
+    input: "ÁÍÓÚÑÅÆØ",
+    conservative: "aiounaaeo",
+    note: "the rest of Latin-1 Supplement folds too, so no letter of the block reaches a key capitalised",
+  },
+  {
     input: "Tlemcen",
     conservative: "tlemcen",
     note: "a name no rule touches passes through, lower cased",
@@ -94,6 +99,11 @@ export const corpus = Object.freeze([
     input: "M`Sila",
     conservative: "m sila",
     note: "the grave accent U+0060, typed as an apostrophe, is a separator",
+  },
+  {
+    input: "MʼSila",
+    conservative: "m sila",
+    note: "the modifier letter apostrophe U+02BC, the transliteration form, is a separator",
   },
   {
     input: "Sidi-Bel-Abbes",
