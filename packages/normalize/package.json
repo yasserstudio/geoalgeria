@@ -12,14 +12,15 @@
     },
     "./fixtures": {
       "types": "./types/fixtures.d.ts",
-      "default": "./fixtures/corpus.js"
+      "default": "./fixtures/index.js"
     }
   },
   "files": [
     "index.js",
     "src/",
     "fixtures/",
-    "types/"
+    "types/",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "test": "node --test"

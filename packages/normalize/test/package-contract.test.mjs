@@ -4,7 +4,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -36,9 +36,10 @@ test("the root export surface is exactly what was reviewed", async () => {
 });
 
 test("the fixtures export surface is exactly what was reviewed", async () => {
-  const module = await import("../fixtures/corpus.js");
-  assert.deepEqual(Object.keys(module).sort(), ["corpus"]);
+  const module = await import("../fixtures/index.js");
+  assert.deepEqual(Object.keys(module).sort(), ["corpus", "matchCases"]);
   assert.ok(Array.isArray(module.corpus));
+  assert.ok(Array.isArray(module.matchCases));
   for (const kase of module.corpus) {
     assert.deepEqual(Object.keys(kase).sort(), ["conservative", "input", "loose", "note", "proves", "tokens"]);
     assert.equal(typeof kase.input, "string");
@@ -48,6 +49,65 @@ test("the fixtures export surface is exactly what was reviewed", async () => {
     assert.ok(Array.isArray(kase.proves));
     assert.ok(kase.note.length > 0, "every case says what it proves");
   }
+});
+
+// Three statements of the same thing that can disagree silently: the subpaths the
+// exports map promises, the paths the files array ships, and what is on disk. A
+// subpath that resolves from the source tree but was never listed in files
+// resolves from a checkout and fails from a tarball, which is exactly the failure
+// a consumer installing from npm hits and nobody working in the repository does.
+const SHIPPED_ANYWAY = new Set(["package.json", "README.md", "README.fr.md", "README.ar.md", "LICENSE"]);
+
+/** The paths the files array covers: an entry ending in "/" is a directory. */
+const shipped = (path) =>
+  manifest.files.some((entry) => (entry.endsWith("/") ? path.startsWith(entry) : path === entry));
+
+/** Every file in the package, as package-relative paths, tests and tooling included. */
+const onDisk = (dir = PKG, prefix = "") =>
+  readdirSync(dir, { withFileTypes: true }).flatMap((entry) =>
+    entry.isDirectory()
+      ? entry.name === "node_modules"
+        ? []
+        : onDisk(join(dir, entry.name), `${prefix}${entry.name}/`)
+      : [`${prefix}${entry.name}`],
+  );
+
+test("the exports map, the files array and the files on disk agree", () => {
+  const targets = Object.values(manifest.exports).flatMap((conditions) => Object.values(conditions));
+  assert.deepEqual(targets.sort(), [
+    "./fixtures/index.js",
+    "./index.js",
+    "./types/fixtures.d.ts",
+    "./types/index.d.ts",
+  ]);
+
+  // Every subpath the map promises exists, and ships.
+  for (const target of [...targets, `./${manifest.main}`, `./${manifest.types}`]) {
+    const path = target.replace(/^\.\//, "");
+    assert.ok(existsSync(join(PKG, path)), `the exports map names ${target}, which is not on disk`);
+    assert.ok(shipped(path), `the exports map names ${target}, which the files array does not ship`);
+  }
+
+  // Every files entry is something that exists, so a renamed directory is caught
+  // here rather than by an empty tarball.
+  for (const entry of manifest.files) {
+    assert.ok(existsSync(join(PKG, entry)), `the files array ships ${entry}, which is not on disk`);
+  }
+
+  // And the other direction: nothing on disk is left out by accident. The only
+  // files that may be unlisted are the ones npm ships regardless, and the tests,
+  // which are deliberately not published.
+  for (const path of onDisk()) {
+    if (shipped(path) || SHIPPED_ANYWAY.has(path)) continue;
+    assert.ok(
+      path.startsWith("test/"),
+      `${path} is neither shipped by the files array nor a test, so it is missing from the published package`,
+    );
+  }
+
+  // Tests are not a published surface: a consumer importing them would pin the
+  // package's own internals, and shipping them doubles the install for nothing.
+  assert.ok(!manifest.files.some((entry) => entry.startsWith("test")), "the files array must not ship the tests");
 });
 
 // The one-pass call the release generator makes. Its shape is as public as the

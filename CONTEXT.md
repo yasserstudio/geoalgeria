@@ -175,6 +175,10 @@ _Avoid_: mapping, transform, substitution
 The exported fixture of cases every consumer asserts against, so the package, the release generator, Web and Mobile all prove the same keys from the same inputs. Every Rule is exercised by at least one case, and every case declares which Rule it proves.
 _Avoid_: test fixtures, sample data, test corpus
 
+**Match class**:
+What a query and a name amount to, decided from the keys and their tokens alone: `exact`, `prefix`, `loose` or `none`. It stops short of ranking, which is private to the products, so a Match class says what the keys agree on and never which result comes first. The Golden corpus publishes the classes as `matchCases`, and every consumer proves its own classifier against them.
+_Avoid_: match type, match quality, relevance, tier (a tier is a ranking, not a class)
+
 ### Provenance
 
 **Source**:

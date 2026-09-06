@@ -150,6 +150,49 @@ proves, a case naming a rule that is not in the table, a repeated identifier, or
 table order that no longer matches the committed one. Changing what a key function
 returns for any input is a major version: published catalogs are keyed on it.
 
+### The major-changeset guard
+
+Search keys are baked into every published catalog, and an installed catalog is
+never migrated record by record, so a key that changes after a release has shipped
+rebuilds and re-downloads the whole catalog on every device. A key change is
+therefore closer to a schema change than to a bug fix, and CI enforces it at the
+only cheap moment. A pull request whose diff touches
+
+- `packages/normalize/src/**`
+- `packages/normalize/fixtures/corpus.js`
+- `packages/normalize/index.js`
+
+must carry a changeset declaring `"@geoalgeria/normalize": major`, or the
+`normalize major changeset` job fails. The decision is
+[`scripts/lib/normalize-changeset.mjs`](scripts/lib/normalize-changeset.mjs), the
+job feeds it `git diff --name-only` against the base branch, and the unit tests are
+in [`test/normalize-changeset.test.mjs`](test/normalize-changeset.test.mjs).
+
+**The check is path-based and deliberately blunt.** It reads which files the diff
+touched, not what the change meant, so fixing a typo in a comment in
+`packages/normalize/src/rules.js` still needs the major changeset, even though the
+keys did not move. That is the accepted cost: a guard that decides whether an edit
+changed behaviour would have to understand the edit, which is exactly the judgement
+this guard exists so that nobody has to trust. An unnecessary major costs one
+version number; a missed one costs every installed catalog on every device. When a
+documentation-only edit to one of those files is genuinely all you have, either
+write the major changeset or move the edit to a file outside the list, such as a
+README or a type declaration.
+
+One exception applies while `@geoalgeria/normalize` is not yet on npm: the guard
+also passes when `npm view @geoalgeria/normalize version` answers 404, because
+there is no published catalog to invalidate and the package's first release entry
+is a patch on the flagship rather than a major on a package nobody can install.
+Once the first version is published, that path closes by itself and only the major
+changeset satisfies the guard.
+
+A 404 is the only registry answer that opens that exception. If the registry
+cannot be reached at all, a timeout, an auth error, no `npm` on the PATH, the guard
+**fails closed** and asks for the major anyway. A registry that did not answer is
+not a registry that said the package does not exist, and the asymmetry above
+decides the tie: blocking a pull request until the registry is back costs a rerun,
+while letting a key change through on a timeout costs every installed catalog.
+
 ### What not to submit
 - Data from unofficial/unverifiable sources
 - Frequently-changing data better served as its own dataset (e.g. population)

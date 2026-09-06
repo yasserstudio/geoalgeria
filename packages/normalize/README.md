@@ -212,12 +212,54 @@ from a real Algerian name, and consumers import the same fixture rather than wri
 their own:
 
 ```js
-import { corpus } from "@geoalgeria/normalize/fixtures";
+import { corpus, matchCases } from "@geoalgeria/normalize/fixtures";
 
 for (const kase of corpus) {
   // kase.input, kase.conservative, kase.loose, kase.tokens, kase.proves, kase.note
 }
 ```
+
+The subpath is published: it is in the `exports` map and in the `files` array, so it
+resolves from an installed tarball and not only from a checkout.
+
+## Match classes
+
+`matchCases` is the second fixture: a query, a name, and what the two amount to.
+Four classes, decided in this order, from the keys and their tokens alone. A key is
+its tokens joined by single spaces, so a *word* below is one element of that list.
+
+| Class | The query and the name |
+| --- | --- |
+| `exact` | the two conservative keys are equal |
+| `prefix` | the query is a prefix of the name by the conservative keys, at a word boundary |
+| `loose` | neither of those by the conservative keys, but equal or prefix by the loose keys |
+| `none` | none of the above |
+
+The **word-boundary rule**, precisely: the query has at least one word and no more
+words than the name; every query word but its last equals the name's word at the
+same position; and the query's last word is a prefix of the name's word at that
+position. So a query may stop part way through the word it is still typing, and
+only there: `sidi b` is a prefix of `sidi bel abbes`, and `jaia` is not a prefix of
+`bejaia`. Equivalently, and it is the same rule because a key is a space-joined
+token list: the name's key starts with the query's non-empty key.
+
+The package exports no classifier. The reviewed root surface is the seven exports
+above, and a fifteen-line decision that follows from them is not worth a public
+commitment that can never change without a major version. Write the rule yourself
+and prove your implementation against the fixture, which is what makes the four-way
+decision the same one in every product:
+
+```js
+import { matchCases } from "@geoalgeria/normalize/fixtures";
+
+for (const kase of matchCases) {
+  // kase.query, kase.name, kase.class, kase.proves, kase.note
+  assert.equal(myMatchClass(kase.query, kase.name), kase.class);
+}
+```
+
+Classification stops here. Turning a class plus a name kind into a ranking tier is
+GeoAlgeria's own business and lives in its products, not in this package.
 
 ## Versioning
 
