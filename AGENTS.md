@@ -11,6 +11,10 @@ avoiding the synonyms each lists under `_Avoid_`. If a concept is missing or a
 term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's the
 `/domain-modeling` skill).
 
+Text folding has its own canonical terms under
+[Search and normalization](CONTEXT.md#search-and-normalization): Search key,
+Conservative key, Loose key, Rule, Golden corpus.
+
 ## Layout
 
 | Path | Package | Contents |
