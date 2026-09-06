@@ -65,6 +65,11 @@ regenerating `sante` can change `cliniques` output with nothing in
 `packages/cliniques` having changed. When a release touches both, rebuild
 `sante` first, then `cliniques`, and review the two diffs together.
 
+`pnpm --filter <pkg> fetch` runs pnpm's own built-in `fetch` command, not the
+package's generator, and tries to purge `node_modules` in the process. Run the
+generator directly instead: `node packages/<pkg>/scripts/fetch.mjs` (offline,
+deterministic) or `pnpm --filter <pkg> run fetch`.
+
 ### 1–2. Add a changeset, let the bot open the PR
 
 ```bash
@@ -106,6 +111,32 @@ then:
 
 The new GitHub Release fires the **Announce** workflow (see below).
 
+> ⚠️ **A Release cut before the Version PR merges is stuck with a bad title.**
+> Observed once (`@geoalgeria/buses` 2.1.0): the workflow cut the GitHub Release
+> and tag at the changeset-PR merge, before the Version PR merged (cause not
+> fully traced). The release-notes step then found no `CHANGELOG.md` section
+> for that version yet and fell back to a truncated first bullet as the title.
+> Fix: `gh release delete '<tag>' --cleanup-tag` before merging the Version PR,
+> so the tag-existence guard lets the workflow recreate the Release with the
+> real changelog notes once the CHANGELOG section exists. This is also why a
+> changeset's **first line must be a headline**: `scripts/release-notes.mjs`
+> falls back to it (clamped) whenever a CHANGELOG section has no headline line.
+
+### One-off: publishing an umbrella away from a terminal
+
+The `transport`/`pharma` umbrellas (see One-time setup, step 2) publish with
+pnpm, which needs interactive OTP entry. If you're away from a terminal:
+
+```bash
+pnpm pack   # in packages/<umbrella>; verify the tarball's deps resolve to real semver
+script -q -F publish.log npm publish <tgz>.tgz --access public --auth-type=web
+```
+
+Running `npm publish --auth-type=web` inside a pseudo-terminal (`script`) makes
+npm print the **unmasked** web-auth link, which you can open on a phone. A
+non-interactive `npm publish` masks the link as `***`, and `pnpm publish` itself
+refuses outright with `ERR_PNPM_OTP_NON_INTERACTIVE`.
+
 ### 5. Approve the staged packages
 
 Staging does **not** publish, approve to go live:
@@ -116,6 +147,12 @@ npm stage approve <stage-id>     # requires 2FA
 ```
 
 …or approve on npmjs.com → Staged packages.
+
+Staged packages can sit unapproved for days if the maintainer isn't at a
+terminal (the August 2026 refresh was staged 31 Aug and only approved 4 Sept).
+After merging a Version PR, check `npm view <pkg> version` for **every**
+package listed in that PR's body, not just the one you set out to release,
+before assuming the batch is live.
 
 ### 6. Purge the CDN
 
@@ -158,6 +195,10 @@ human-readable headline** (it becomes the announcement title and social hook).
 The canonical structure + a worked example is in
 [`.github/RELEASE_TEMPLATE.md`](.github/RELEASE_TEMPLATE.md); the Discussion/social
 copy built from it lives in `.agents/release-notes-templates.md` (local, gitignored).
+
+Changesets own a package's `CHANGELOG.md`; never hand-write an "## Unreleased"
+section into one. It goes stale under the next generated section instead of
+being replaced by it.
 
 ## Announcements
 

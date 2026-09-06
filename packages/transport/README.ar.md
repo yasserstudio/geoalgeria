@@ -19,7 +19,7 @@ import transport from "@geoalgeria/transport";
 transport.aviation.airports();        // المطارات (ANAC)
 transport.ferroviaire.stations();     // السكك / الترامواي / المترو (SNTF / SETRAM / SEMA)
 transport.garesRoutieres.stations();  // المحطات البرية (SOGRAL)
-transport.buses.lines();              // شبكات الحافلات الحضرية (ETUSA)
+transport.buses.lines();              // شبكات الحافلات الحضرية وشبه الحضرية (14 مشغلًا)
 ```
 
 <div dir="rtl">
@@ -31,7 +31,7 @@ transport.buses.lines();              // شبكات الحافلات الحضر�
 | `aviation` | `@geoalgeria/aviation` | المطارات المدنية (ANAC) |
 | `ferroviaire` | `@geoalgeria/ferroviaire` | السكك والترامواي والمترو |
 | `garesRoutieres` | `@geoalgeria/gares-routieres` | المحطات البرية (SOGRAL) |
-| `buses` | `@geoalgeria/buses` | شبكات الحافلات الحضرية (ETUSA) |
+| `buses` | `@geoalgeria/buses` | شبكات الحافلات الحضرية وشبه الحضرية (14 مشغلًا) |
 
 ## الرخصة
 

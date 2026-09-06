@@ -7,6 +7,14 @@ note; it does not promote data.
 `seen` means directly present in a cited committed file. `inferred` means a
 recommended action derived from those observations.
 
+> **Superseded 2026-09-04:** `@geoalgeria/buses` 2.1.0 shipped since this was
+> written. The "current directory and map coverage" totals below (85 Lines,
+> eight Operators, 47 shapes, 1,290 Stations, 2,105 memberships) are the
+> 2026-09-02 snapshot, not the live package, which now carries 153 Lines
+> across 14 Operators, 76 shapes, 128 Directions, 1,603 Stations and 2,685
+> memberships (see `packages/buses/README.md`). The per-Operator directory-only
+> vs. shapes-available calls made below still hold; only the totals are stale.
+
 ## Current directory and map coverage
 
 - **[seen]** The published working tree currently has **85 Lines across eight
@@ -79,26 +87,26 @@ recommended action derived from those observations.
 
 ## Next concrete geometry priorities
 
-1. **[inferred] Sidi Bel Abbès — fill the largest structured shape gap.** Eight
+1. **[inferred] Sidi Bel Abbès: fill the largest structured shape gap.** Eight
    official timetable Lines already exist; obtain vector paths and ordered
    Stations for those exact refs. This improves the map without inventing new
    Line identity.
-2. **[inferred] M'Sila — vectorize through an authorized source.** Four official
+2. **[inferred] M'Sila: vectorize through an authorized source.** Four official
    Line identities and diagrams exist, but neither reusable vectors nor ordered
    Station data are committed.
-3. **[inferred] Béjaïa — resolve licensing and identity.** Five official Line
+3. **[inferred] Béjaïa: resolve licensing and identity.** Five official Line
    pages expose fetchable Google My Maps KML, but no open reuse licence was
    found, and nine Béjaïa OSM candidates do not safely match the official refs.
    Use the official KML for validation only until permission is obtained; do a
    manual termini/ref reconciliation against OSM. Source:
    [`research/buses/SOURCE.md`](./SOURCE.md),
    [`research/buses/osm/READINESS.md`](./osm/READINESS.md).
-4. **[inferred] Aïn Defla — identity audit.** Two ETUAD OSM
+4. **[inferred] Aïn Defla: identity audit.** Two ETUAD OSM
    relations have complete paths and 3/5 Station members, but both remain
    `needs_identity`; they are not ready for automatic promotion. Verify Line X
    and Line 2 termini with an Operator-owned source. Source:
    [`research/buses/osm/candidate-lines.json`](./osm/candidate-lines.json).
-5. **[inferred] Oran — establish a publishable static network before any live
+5. **[inferred] Oran: establish a publishable static network before any live
    pilot.** The operator tracker is an authorization lead, not a Line dataset.
    Request current Line identities, termini, shapes, and reuse terms; do not
    derive a public network from authenticated vehicles or exposed tokens.

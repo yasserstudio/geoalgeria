@@ -33,23 +33,23 @@ term conflicts, update `CONTEXT.md` rather than drifting to a synonym (that's th
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores – 572 EO/CSO/ESO with real coordinates & wilaya/commune linkage (ooredoo.dz locator API); completes the telecom retail trio |
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques – Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments – EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
-| `packages/cliniques/` | `@geoalgeria/cliniques` | clinics & proximity-care facilities – 1,894 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas; the community tier of the health sector, disjoint from `sante` (registry tier) |
+| `packages/cliniques/` | `@geoalgeria/cliniques` | clinics & proximity-care facilities – 1,913 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas; the community tier of the health sector, disjoint from `sante` (registry tier) |
 | `packages/protection-civile/` | `@geoalgeria/protection-civile` | civil protection (fire & rescue) units – 880 DGPC units nationwide, Arabic-named, address/phone/fax, status tier, geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
 | `packages/industrie-pharmaceutique/` | `@geoalgeria/industrie-pharmaceutique` | approved pharmaceutical manufacturers – 171 medicine (PP) & medical-device (DM) makers from the Ministry of Pharmaceutical Industry (MIP) fabrication register, bilingual, typed by nature, geocoded to commune/wilaya centroid |
-| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,797 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
+| `packages/pharmacies/` | `@geoalgeria/pharmacies` | pharmacies (officines) – 3,807 geocoded across 67 wilayas, bilingual where named, phone/hours/dispensing where tagged, wilaya/commune-linked (OpenStreetMap, ODbL); honest ~half coverage |
 | `packages/pharma/` | `@geoalgeria/pharma` | pharma umbrella – re-exports industrie-pharmaceutique + pharmacies in one install |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,855 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
-| `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 59 Lines, 42 OSM shapes, 75 Directions and 1,046 Stations across 3 Operators |
+| `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 153 Lines, 76 shapes, 128 Directions and 1,603 Stations across 14 Operators |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella – re-exports aviation + ferroviaire + gares-routieres + buses |
 
 The postal data under `packages/dataset/data/poste/` is a **generated mirror**;
 edit it in `packages/poste`, then `npm run fetch` there. Never hand-edit the mirror.
 
-`sources/` holds the **committed raw captures** the fetchers build from — one
+`sources/` holds the **committed raw captures** the fetchers build from: one
 canonical latest capture per (package, source), written only via
 `scripts/lib/source-store.mjs`, so refreshes are reviewable git diffs and every
 converted package rebuilds offline (`--cache`). Rules in
