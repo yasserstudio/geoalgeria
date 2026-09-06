@@ -48,35 +48,41 @@ function readChangesets() {
 }
 
 /**
- * The version of the package on npm, or null when it has never been published.
- * A 404 from the registry is the unpublished answer, not a failure; any other
- * problem is treated as unpublished too, because a registry outage must not block
- * a pull request that is otherwise fine, and the guard's job resumes as soon as
- * the registry answers again.
+ * What the registry says about the package. Three answers, not two: only a 404 is
+ * the unpublished answer that the pre-publish exception rests on. Every other
+ * failure, a timeout, an auth error, a missing npm, is `unknown`, and the guard
+ * fails closed on it, because a registry that could not be reached must not be
+ * allowed to read as a registry that said the package does not exist.
  *
- * @returns {string | null}
+ * @returns {{ status: "published" | "unpublished" | "unknown", version?: string, reason?: string }}
  */
-function publishedVersion() {
+function askRegistry() {
   try {
     const version = execFileSync("npm", ["view", "@geoalgeria/normalize", "version"], {
       encoding: "utf-8",
       stdio: ["ignore", "pipe", "pipe"],
     }).trim();
-    return version === "" ? null : version;
-  } catch {
-    return null;
+    return version === ""
+      ? { status: "unknown", reason: "npm view printed no version" }
+      : { status: "published", version };
+  } catch (error) {
+    const output = `${error?.stdout ?? ""}${error?.stderr ?? ""}`;
+    if (/\bE404\b|404 Not Found/.test(output)) return { status: "unpublished" };
+    const reason = output.trim().split("\n").filter(Boolean).at(-1) ?? error?.message ?? "npm view failed";
+    return { status: "unknown", reason };
   }
 }
 
 const changedFiles = readChangedFiles();
-const published = publishedVersion();
-const problems = majorChangesetError({ changedFiles, changesets: readChangesets(), published });
+const registry = askRegistry();
+const problems = majorChangesetError({ changedFiles, changesets: readChangesets(), registry });
 
 for (const problem of problems) console.error(`error: ${problem}`);
 
 if (problems.length > 0) {
   process.exitCode = 1;
 } else {
-  const state = published === null ? "unpublished" : `published at ${published}`;
+  const state =
+    registry.status === "published" ? `published at ${registry.version}` : registry.status;
   console.log(`normalize changeset guard: ok (${changedFiles.length} changed files, @geoalgeria/normalize ${state})`);
 }

@@ -76,9 +76,10 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   `index.js` must carry a changeset declaring `"@geoalgeria/normalize": major`. The check is
   path-based and deliberately blunt, so a documentation-only edit to one of those files still
   needs the major; the contributing guide records that as the accepted cost. While the
-  package is not yet on npm the guard also passes on an unpublished registry answer, because
-  there is no published catalog to invalidate; that path closes by itself at the first
-  release.
+  package is not yet on npm the guard also passes on a 404 from the registry, because there
+  is no published catalog to invalidate; that path closes by itself at the first release. A
+  404 is the only answer that opens it: a registry that could not be reached fails the check
+  closed, because a timeout is not a statement that the package does not exist.
 - The key path owns its codepoint tables outright: no call into the host's Unicode
   machinery, no Unicode property escape, no locale-aware case operation and no platform
   built-in, so a Node or Hermes upgrade cannot change a published catalog's keys. A

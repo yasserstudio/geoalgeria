@@ -186,6 +186,13 @@ is a patch on the flagship rather than a major on a package nobody can install.
 Once the first version is published, that path closes by itself and only the major
 changeset satisfies the guard.
 
+A 404 is the only registry answer that opens that exception. If the registry
+cannot be reached at all, a timeout, an auth error, no `npm` on the PATH, the guard
+**fails closed** and asks for the major anyway. A registry that did not answer is
+not a registry that said the package does not exist, and the asymmetry above
+decides the tie: blocking a pull request until the registry is back costs a rerun,
+while letting a key change through on a timeout costs every installed catalog.
+
 ### What not to submit
 - Data from unofficial/unverifiable sources
 - Frequently-changing data better served as its own dataset (e.g. population)

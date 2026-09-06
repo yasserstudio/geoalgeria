@@ -56,33 +56,42 @@ function declaresMajor(contents) {
   return match !== null && BUMP.test(match[1]);
 }
 
+const WHY =
+  `Keys are baked into every published catalog and an installed catalog is never migrated record by record, so a key change rebuilds and re-downloads every catalog on every device. ` +
+  `The check is path-based: a documentation-only edit to one of these files still needs the major, which CONTRIBUTING.md records as the accepted cost.`;
+
 /**
- * The one way a pull request can be wrong here, as a list of messages so the caller
+ * The ways a pull request can be wrong here, as a list of messages so the caller
  * reports it the way the repository's other gates are reported.
  *
  * The exception is the pre-publish chain: until the first version of the package is
  * on npm there is no published catalog to invalidate and nothing installed to
  * migrate, and the release entry is a patch on the flagship rather than a major on
- * a package nobody can install yet. Once the package is published, `published`
- * carries a version and only the major path remains.
+ * a package nobody can install yet. That exception needs the registry to have
+ * actually said so, which is why `registry` carries three answers and not two. An
+ * unreachable registry is `unknown`, and the guard fails closed on it: an
+ * unnecessary major costs one version number, a missed one costs every installed
+ * catalog on every device, so a timeout must not be allowed to read as a 404.
  *
  * @param {{
  *   changedFiles: ReadonlyArray<string>,
  *   changesets: ReadonlyArray<string>,
- *   published: string | null,
+ *   registry: { status: "published" | "unpublished" | "unknown", version?: string, reason?: string },
  * }} input
  * @returns {string[]} one message when the guard fails, empty when it passes
  */
-export function majorChangesetError({ changedFiles, changesets, published }) {
+export function majorChangesetError({ changedFiles, changesets, registry }) {
   const touched = guardedFiles(changedFiles);
   if (touched.length === 0) return [];
   if (changesets.some(declaresMajor)) return [];
-  if (published === null) return [];
+  if (registry.status === "unpublished") return [];
+
+  const because =
+    registry.status === "published"
+      ? `${PACKAGE} is published at ${registry.version}, so the pre-publish exception no longer applies.`
+      : `The registry could not be asked whether ${PACKAGE} is published (${registry.reason ?? "no reason given"}), and the pre-publish exception only applies to a registry that answered 404, so this check fails closed.`;
 
   return [
-    `${touched.join(", ")}: this diff changes ${PACKAGE}'s key path, so it needs a changeset declaring "${PACKAGE}": major. ` +
-      `Keys are baked into every published catalog and an installed catalog is never migrated record by record, so a key change rebuilds and re-downloads every catalog on every device. ` +
-      `The check is path-based: a documentation-only edit to one of these files still needs the major, which CONTRIBUTING.md records as the accepted cost. ` +
-      `${PACKAGE} is published at ${published}, so the pre-publish exception no longer applies.`,
+    `${touched.join(", ")}: this diff changes ${PACKAGE}'s key path, so it needs a changeset declaring "${PACKAGE}": major. ${WHY} ${because}`,
   ];
 }
