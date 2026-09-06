@@ -23,7 +23,7 @@ npm install @geoalgeria/normalize
 ```
 
 ```js
-import { conservativeKey, looseKey, tokenize, searchKeys, NORMALIZE_VERSION } from "@geoalgeria/normalize";
+import { conservativeKey, looseKey, tokenize, searchKeys, explain, rules, NORMALIZE_VERSION } from "@geoalgeria/normalize";
 
 conservativeKey("Béjaïa");         // "bejaia"
 conservativeKey("Sidi-Bel-Abbès"); // "sidi bel abbes"
@@ -37,6 +37,9 @@ tokenize("Sidi-Bel-Abbès");        // ["sidi", "bel", "abbes"]
 
 searchKeys("قسنطينة");
 // { conservative: "قسنطينة", loose: "قسنطينه", tokens: ["قسنطينة"], looseDiffers: true }
+
+explain("قسنطينة").applied;        // ["ar.taa-marbuta-haa"], the rules that fired
+rules.length;                      // 24, the reviewed table
 
 NORMALIZE_VERSION;                 // 1
 ```
@@ -101,16 +104,88 @@ the soft hyphen and the bidi marks among them, are removed rather than treated a
 boundaries, because they are not what a reader sees. A key therefore never carries
 punctuation, which is also what keeps this split and a full-text tokenizer's split the same.
 
-## Rules and their ids
+## The reviewed rule table
 
-Every fold carries a stable identifier, `ar.taa-marbuta-haa` or `latn.extended-a`, and every
-rule is proved by at least one corpus case. The ids are the durable part: a corpus case, a
-review record and a caller asking which rule made a match all name the same string.
+`rules` is the table itself, frozen and published. The equivalences this package asserts
+about Algerian names should be readable by someone who reads the language and not the code,
+so every rule carries its identifier, its class, the script it is about, the exact codepoint
+sequences it maps from and to, one sentence a speaker can argue with, and the record of who
+reviewed that sentence and when.
 
-Two rules are declined outright, and recorded so they are not quietly re-added: the Arabic
-definite article is never stripped (whether a name with the article and one without are the
-same place is a fact about that place, not about the script), and no Latin transliteration
-of an Arabic name is generated (a spelling no source supplies is a fabricated name).
+```js
+import { rules } from "@geoalgeria/normalize";
+
+rules.find((rule) => rule.id === "ar.taa-marbuta-haa");
+// {
+//   id: "ar.taa-marbuta-haa", class: "loose", script: "arab",
+//   from: ["ة"], to: ["ه"],
+//   why: "A name ending in taa marbuta is commonly typed with haa, and the reverse, ...",
+//   reviewed: { reviewedBy: "yasserstudio", reviewedAt: "2026-09-06" },
+// }
+```
+
+`from` and `to` are read out of the same tables the key path runs, so what a rule says it
+folds and what it folds cannot drift apart. An empty target means the character is removed,
+and a single space means it ends a word. The two declined rules carry the fold they decline,
+so what was refused is as legible as what was accepted.
+
+| Rule | Class | Script | Why |
+| --- | --- | --- | --- |
+| `ar.presentation-forms-b` | `canonical` | `arab` | The positional shapes of Arabic Presentation Forms-B draw the letters of the Arabic block, so a name copied out of a PDF folds back to the letters it is written with. |
+| `ar.presentation-forms-a` | `canonical` | `arab` | The alef wasla and alef maqsura shapes of Arabic Presentation Forms-A are the same letters as their Arabic block originals. |
+| `ar.lam-alef-ligature` | `canonical` | `arab` | The lam-alef ligature is one glyph for two letters, so it folds to lam followed by bare alef and a search for either letter still reaches the name. |
+| `ar.tatweel` | `canonical` | `arab` | Tatweel stretches a letter for typesetting and says nothing about the name, so a padded spelling must reach the same key as an unpadded one. |
+| `ar.marks` | `canonical` | `arab` | Harakat, shadda, sukun, the superscript alef, the high hamza and the Quranic annotation marks are vocalisation a source may or may not have written, and nobody types them into a search box. |
+| `latn.combining-marks` | `canonical` | `latn` | A decomposed accent is the same spelling as a precomposed one, so removing the combining marks makes the two meet without asking the runtime to normalise anything. |
+| `any.invisible` | `canonical` | `any` | The soft hyphen, the zero-width characters, the bidi marks and the byte order mark are invisible on screen, so they are removed rather than allowed to split or change a name. |
+| `ar.alef-variants` | `conservative` | `arab` | Alef with hamza above, with hamza below, with madda and with wasla are written for the same letter and are routinely typed as bare alef. |
+| `ar.waw-hamza` | `conservative` | `arab` | Hamza carried on waw is an orthographic habit of one source rather than a different letter to search for. |
+| `ar.yaa-hamza` | `conservative` | `arab` | Hamza carried on yaa is an orthographic habit of one source rather than a different letter to search for. |
+| `ar.indic-digits` | `conservative` | `arab` | Which digits a keyboard produces must not change which places exist, so Arabic-Indic digits are the ASCII digits they count as. |
+| `ar.extended-indic-digits` | `conservative` | `arab` | The Eastern Arabic-Indic digits are the same numbers in a second set of shapes, and a source that uses them names the same place. |
+| `latn.accents` | `conservative` | `latn` | A French name is typed without its accents far more often than with them, so the accented letters of Latin-1 Supplement fold to their base letter. |
+| `latn.extended-a` | `conservative` | `latn` | Latin Extended-A holds the same idea one block further out, the macrons and carons of transliterated spellings and the French oe ligature, and they fold to the letters they are written over. |
+| `latn.extended-b` | `conservative` | `latn` | The accented letters of Latin Extended-B, among them the caron on g that Berber Latin spellings use, fold to their base letter; the letters of that block that are letters in their own right keep their own letter and only lose their capital. |
+| `any.separators` | `conservative` | `any` | A name is one query whether it was written with an apostrophe, a hyphen, a dash or a space, so every one of those ends a word instead of joining or splitting the key differently. |
+| `any.punctuation` | `conservative` | `any` | A comma, a full stop, a bracket or a quotation mark is around a name rather than in it, in either script, so it ends a word instead of riding into the key: a key never carries punctuation, and the full-text tokenizer that builds a catalog splits exactly where this package splits. |
+| `any.whitespace` | `conservative` | `any` | Repeated, leading and trailing whitespace is typing, not naming, so the key is the tokens joined by one space and a partial last word can still complete. |
+| `any.case` | `conservative` | `any` | Case is never a distinction between two places, and lower case is what both the browser index and the full-text tokenizer already produce. Case folding reaches the ASCII capitals and every capital a table names; lower-casing a letter no table names would mean asking the engine for its case pair, which is exactly the dependency this package refuses. |
+| `any.pass-through` | `conservative` | `any` | A character no table names is kept as it stands rather than dropped, because a name is better searchable by a letter this package has no opinion about than silently shortened. |
+| `ar.alef-maqsura-yaa` | `loose` | `arab` | Alef maqsura and yaa are written either way for the same final vowel, often by the same source, but the two are still different letters, so the equivalence belongs to the tier a match can be ranked down for. |
+| `ar.taa-marbuta-haa` | `loose` | `arab` | A name ending in taa marbuta is commonly typed with haa, and the reverse, but a reader does see two letters, so the equivalence belongs to the tier a match can be ranked down for. |
+| `ar.definite-article` | `declined` | `arab` | The Arabic definite article is never stripped, in either key. Whether a name carrying the article and a name without it are the same place is a fact about that place, not about the script, so it belongs to that place's own alias with its own source. |
+| `latn.transliteration` | `declined` | `any` | No Latin transliteration of an Arabic name is generated, and no Arabic form of a Latin name. A spelling that no source supplies is a fabricated name, and the products publish names rather than invent them. |
+
+The order above is the order the key path applies the rules in, with the declined ones last.
+`pnpm validate` in this repository fails if a rule has no review record, if no corpus case
+proves it, if a case names a rule that is not in the table, if an identifier repeats, or if
+the table order stops matching the reviewed order committed beside the check.
+
+If you read Arabic or French and one of these sentences is wrong, that is the pull request
+this package exists to receive: change the rule, or the corpus case that proves it, and say
+why.
+
+## Which rules fired
+
+`explain` returns everything `searchKeys` returns plus `applied`, the identifiers of the
+rules that fired for that input, in the order they ran. A loose match can therefore always
+say what made it loose, which is what lets a ranking place it below an exact match:
+
+```js
+import { explain } from "@geoalgeria/normalize";
+
+explain("قسنطينة").applied;   // ["ar.taa-marbuta-haa"]
+explain("الجـــزائر").applied;  // ["ar.tatweel", "ar.yaa-hamza"]
+explain("Béjaïa").applied;      // ["any.case", "latn.accents"]
+explain("الوادي").applied;     // [], no rule touched this name
+```
+
+A rule is in the list when it changed at least one codepoint or ended at least one word.
+The rules that state a fold this package does not apply, the pass-through rule and the two
+declined ones, are never in it: they are proved the other way round, by a corpus case whose
+expected keys show the character, or the article, surviving. `explain` is the key path with
+the record switched on rather than a second implementation of it, so it cannot disagree with
+`searchKeys`.
 
 ## Host independence
 
@@ -132,7 +207,7 @@ The package has **zero runtime dependencies**.
 
 ## The golden corpus
 
-The corpus is the contract, 63 cases. Every rule above is proved by at least one case built
+The corpus is the contract, 64 cases. Every rule above is proved by at least one case built
 from a real Algerian name, and consumers import the same fixture rather than writing cases of
 their own:
 

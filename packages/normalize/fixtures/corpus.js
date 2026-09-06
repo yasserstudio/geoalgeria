@@ -11,8 +11,13 @@
 // rewrite (combining marks, presentation forms, separator variants), are written
 // as escapes so a reader can see what a case is actually about.
 //
-// `proves` names the Rules in `src/rules.js` a case exercises. An empty list is a
-// case that proves a name no Rule touches, or that a declined Rule stayed declined.
+// `proves` names the Rules in `src/rules.js` a case exercises, in the order the key
+// path ran them. For every Rule that folds something, that list is exactly what
+// `explain(input).applied` returns, and a test holds the two together. The Rules
+// that state a fold the package does not apply, the pass-through and the two
+// declined ones, are proved the other way round: they are named by a case whose
+// expected keys show the character, or the article, surviving. An empty list is a
+// case no Rule touches at all.
 
 /**
  * @type {ReadonlyArray<{
@@ -31,7 +36,7 @@ export const corpus = Object.freeze([
     conservative: "bejaia",
     loose: "bejaia",
     tokens: ["bejaia"],
-    proves: ["latn.accents", "any.case"],
+    proves: ["any.case", "latn.accents"],
     note: "Latin precomposed accents fold to their base letter and the key is lower case",
   },
   {
@@ -47,7 +52,7 @@ export const corpus = Object.freeze([
     conservative: "bejaia",
     loose: "bejaia",
     tokens: ["bejaia"],
-    proves: ["latn.combining-marks", "any.case"],
+    proves: ["any.case", "latn.combining-marks"],
     note: "Bejaia written decomposed: combining marks U+0300 to U+036F are stripped",
   },
   {
@@ -55,7 +60,7 @@ export const corpus = Object.freeze([
     conservative: "ain temouchent",
     loose: "ain temouchent",
     tokens: ["ain", "temouchent"],
-    proves: ["latn.accents", "any.whitespace"],
+    proves: ["any.case", "latn.accents", "any.separators"],
     note: "two accented letters in one name, the word boundary preserved",
   },
   {
@@ -63,7 +68,7 @@ export const corpus = Object.freeze([
     conservative: "ain temouchent",
     loose: "ain temouchent",
     tokens: ["ain", "temouchent"],
-    proves: ["latn.combining-marks"],
+    proves: ["any.case", "latn.combining-marks", "any.separators"],
     note: "Ain Temouchent written decomposed reaches the same key",
   },
   {
@@ -71,7 +76,7 @@ export const corpus = Object.freeze([
     conservative: "bordj bou arreridj",
     loose: "bordj bou arreridj",
     tokens: ["bordj", "bou", "arreridj"],
-    proves: ["latn.accents", "any.whitespace"],
+    proves: ["any.case", "any.separators", "latn.accents"],
     note: "three words survive as three words",
   },
   {
@@ -79,7 +84,7 @@ export const corpus = Object.freeze([
     conservative: "sidi bel abbes",
     loose: "sidi bel abbes",
     tokens: ["sidi", "bel", "abbes"],
-    proves: ["latn.accents"],
+    proves: ["any.case", "any.separators", "latn.accents"],
     note: "the grave accent folds",
   },
   {
@@ -87,7 +92,7 @@ export const corpus = Object.freeze([
     conservative: "setif",
     loose: "setif",
     tokens: ["setif"],
-    proves: ["latn.accents", "any.case"],
+    proves: ["any.case", "latn.accents"],
     note: "an uppercase accented letter folds and the key case folds to lower",
   },
   {
@@ -95,7 +100,7 @@ export const corpus = Object.freeze([
     conservative: "ghardaia",
     loose: "ghardaia",
     tokens: ["ghardaia"],
-    proves: ["latn.accents"],
+    proves: ["any.case", "latn.accents"],
     note: "the diaeresis folds",
   },
   {
@@ -103,7 +108,7 @@ export const corpus = Object.freeze([
     conservative: "ain defla",
     loose: "ain defla",
     tokens: ["ain", "defla"],
-    proves: ["latn.accents"],
+    proves: ["any.case", "latn.accents", "any.separators"],
     note: "an accent inside the first word of a two-word name",
   },
   {
@@ -137,7 +142,7 @@ export const corpus = Object.freeze([
     conservative: "oeuvre bouzareah",
     loose: "oeuvre bouzareah",
     tokens: ["oeuvre", "bouzareah"],
-    proves: ["latn.extended-a", "latn.accents"],
+    proves: ["latn.extended-a", "any.separators", "any.case", "latn.accents"],
     note: "the French ligature U+0152 folds to the two letters it draws, beside a Latin-1 accent",
   },
   {
@@ -145,7 +150,7 @@ export const corpus = Object.freeze([
     conservative: "bab el oued",
     loose: "bab el oued",
     tokens: ["bab", "el", "oued"],
-    proves: ["latn.extended-a"],
+    proves: ["any.case", "latn.extended-a", "any.separators"],
     note: "a macron from a transliterated spelling folds to the base letter",
   },
   {
@@ -177,7 +182,7 @@ export const corpus = Object.freeze([
     conservative: "tamaziɣt",
     loose: "tamaziɣt",
     tokens: ["tamaziɣt"],
-    proves: ["latn.extended-b", "any.pass-through"],
+    proves: ["any.case", "latn.extended-b", "any.pass-through"],
     note: "the Berber Latin gamma in capital, U+0194, keeps its own letter and loses only its capital, so a name typed in capitals keys like the same name in lower case",
   },
   {
@@ -185,7 +190,7 @@ export const corpus = Object.freeze([
     conservative: "tamaziɣt",
     loose: "tamaziɣt",
     tokens: ["tamaziɣt"],
-    proves: ["any.pass-through"],
+    proves: ["any.case", "any.pass-through"],
     note: "the Berber Latin gamma U+0263 lies outside every declared range, so it passes through rather than being dropped",
   },
 
@@ -195,7 +200,7 @@ export const corpus = Object.freeze([
     conservative: "el m ghair",
     loose: "el m ghair",
     tokens: ["el", "m", "ghair"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "the ASCII apostrophe is a separator, not a letter",
   },
   {
@@ -203,7 +208,7 @@ export const corpus = Object.freeze([
     conservative: "el m ghair",
     loose: "el m ghair",
     tokens: ["el", "m", "ghair"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "the curly apostrophe U+2019 a phone keyboard produces is the same separator",
   },
   {
@@ -211,7 +216,7 @@ export const corpus = Object.freeze([
     conservative: "m sila",
     loose: "m sila",
     tokens: ["m", "sila"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "the left single quotation mark U+2018 is a separator",
   },
   {
@@ -219,7 +224,7 @@ export const corpus = Object.freeze([
     conservative: "m sila",
     loose: "m sila",
     tokens: ["m", "sila"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "the grave accent U+0060, typed as an apostrophe, is a separator",
   },
   {
@@ -227,7 +232,7 @@ export const corpus = Object.freeze([
     conservative: "m sila",
     loose: "m sila",
     tokens: ["m", "sila"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "the modifier letter apostrophe U+02BC, the transliteration form, is a separator",
   },
   {
@@ -235,7 +240,7 @@ export const corpus = Object.freeze([
     conservative: "sidi bel abbes",
     loose: "sidi bel abbes",
     tokens: ["sidi", "bel", "abbes"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "the ASCII hyphen is a separator",
   },
   {
@@ -243,7 +248,7 @@ export const corpus = Object.freeze([
     conservative: "sidi bel abbes",
     loose: "sidi bel abbes",
     tokens: ["sidi", "bel", "abbes"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "hyphen U+2010 and non-breaking hyphen U+2011 are the same separator",
   },
   {
@@ -251,7 +256,7 @@ export const corpus = Object.freeze([
     conservative: "alger centre rue didouche",
     loose: "alger centre rue didouche",
     tokens: ["alger", "centre", "rue", "didouche"],
-    proves: ["any.separators"],
+    proves: ["any.case", "any.separators"],
     note: "en dash U+2013, long dash U+2014 and figure dash U+2012 are separators",
   },
   {
@@ -259,7 +264,7 @@ export const corpus = Object.freeze([
     conservative: "aintemouchent",
     loose: "aintemouchent",
     tokens: ["aintemouchent"],
-    proves: ["any.invisible", "latn.accents"],
+    proves: ["any.case", "latn.accents", "any.invisible"],
     note: "the soft hyphen U+00AD is a line-break hint, invisible on screen, so it is removed and not treated as a word boundary",
   },
   {
@@ -267,7 +272,7 @@ export const corpus = Object.freeze([
     conservative: "alger oran es senia",
     loose: "alger oran es senia",
     tokens: ["alger", "oran", "es", "senia"],
-    proves: ["any.punctuation"],
+    proves: ["any.case", "any.punctuation", "any.separators", "any.whitespace"],
     note: "a comma, brackets and a full stop end words and never reach the key, which is also where the full-text tokenizer a catalog is built with splits",
   },
   {
@@ -275,7 +280,7 @@ export const corpus = Object.freeze([
     conservative: "oran el bahia",
     loose: "oran el bahia",
     tokens: ["oran", "el", "bahia"],
-    proves: ["any.whitespace"],
+    proves: ["any.separators", "any.whitespace", "any.case"],
     note: "leading, trailing and repeated whitespace collapses to single spaces",
   },
   {
@@ -283,7 +288,7 @@ export const corpus = Object.freeze([
     conservative: "oran el bahia",
     loose: "oran el bahia",
     tokens: ["oran", "el", "bahia"],
-    proves: ["any.whitespace"],
+    proves: ["any.case", "any.separators"],
     note: "a non-breaking space and a tab are whitespace like any other",
   },
   {
@@ -299,7 +304,7 @@ export const corpus = Object.freeze([
     conservative: "",
     loose: "",
     tokens: [],
-    proves: ["any.whitespace"],
+    proves: ["any.separators", "any.whitespace"],
     note: "whitespace alone keys to the empty string and to no tokens",
   },
 
@@ -341,7 +346,7 @@ export const corpus = Object.freeze([
     conservative: "وهران تلمسان",
     loose: "وهران تلمسان",
     tokens: ["وهران", "تلمسان"],
-    proves: ["any.punctuation"],
+    proves: ["any.punctuation", "any.separators", "any.whitespace"],
     note: "the Arabic comma U+060C and the Arabic question mark U+061F end words like their Latin counterparts",
   },
   {
@@ -357,7 +362,7 @@ export const corpus = Object.freeze([
     conservative: "تيزي وزو",
     loose: "تيزي وزو",
     tokens: ["تيزي", "وزو"],
-    proves: ["any.whitespace"],
+    proves: ["any.separators"],
     note: "an Arabic name no rule touches passes through with its word boundary, and the two keys are the same",
   },
   {
@@ -431,7 +436,7 @@ export const corpus = Object.freeze([
     conservative: "بير العاتر",
     loose: "بير العاتر",
     tokens: ["بير", "العاتر"],
-    proves: ["ar.yaa-hamza"],
+    proves: ["ar.yaa-hamza", "any.separators"],
     note: "yaa with hamza U+0626 folds to yaa",
   },
 
@@ -441,7 +446,7 @@ export const corpus = Object.freeze([
     conservative: "ادرار",
     loose: "ادرار",
     tokens: ["ادرار"],
-    proves: ["ar.presentation-forms-b", "ar.alef-variants"],
+    proves: ["ar.presentation-forms-b"],
     note: "Adrar in Arabic Presentation Forms-B folds back to the base letters",
   },
   {
@@ -457,7 +462,7 @@ export const corpus = Object.freeze([
     conservative: "لالة",
     loose: "لاله",
     tokens: ["لالة"],
-    proves: ["ar.lam-alef-ligature", "ar.taa-marbuta-haa"],
+    proves: ["ar.lam-alef-ligature", "ar.presentation-forms-b", "ar.taa-marbuta-haa"],
     note: "the lam-alef ligature U+FEFB decomposes into lam and bare alef",
   },
   {
@@ -465,7 +470,7 @@ export const corpus = Object.freeze([
     conservative: "ادرار",
     loose: "ادرار",
     tokens: ["ادرار"],
-    proves: ["ar.presentation-forms-a", "ar.alef-variants"],
+    proves: ["ar.presentation-forms-a"],
     note: "alef wasla in Arabic Presentation Forms-A folds to bare alef",
   },
 
@@ -491,7 +496,7 @@ export const corpus = Object.freeze([
     conservative: "بلدية سيدي مصطفى",
     loose: "بلديه سيدي مصطفي",
     tokens: ["بلدية", "سيدي", "مصطفى"],
-    proves: ["ar.taa-marbuta-haa", "ar.alef-maqsura-yaa"],
+    proves: ["any.separators", "ar.taa-marbuta-haa", "ar.alef-maqsura-yaa"],
     note: "both loose rules fire in one name, each inside its own token",
   },
   {
@@ -499,15 +504,23 @@ export const corpus = Object.freeze([
     conservative: "الوادي",
     loose: "الوادي",
     tokens: ["الوادي"],
-    proves: [],
+    proves: ["ar.definite-article"],
     note: "the definite article survives both keys: stripping it is a declined rule, because whether the name with it and the name without it are the same place is a fact about that place",
+  },
+  {
+    input: "وهران",
+    conservative: "وهران",
+    loose: "وهران",
+    tokens: ["وهران"],
+    proves: ["latn.transliteration"],
+    note: "no Latin spelling is invented for an Arabic name and no Arabic spelling for a Latin one: the key stays in the script the name was written in, because a spelling no source supplies is a fabricated name",
   },
   {
     input: "ݣرداية",
     conservative: "ݣرداية",
     loose: "ݣردايه",
     tokens: ["ݣرداية"],
-    proves: ["any.pass-through", "ar.taa-marbuta-haa"],
+    proves: ["ar.taa-marbuta-haa", "any.pass-through"],
     note: "the Arabic Supplement letter U+0763, which writes a hard g in Maghrebi spellings, is a letter of its own and passes through while the loose rule still reaches the rest of the name",
   },
 
@@ -517,7 +530,7 @@ export const corpus = Object.freeze([
     conservative: "حي 345 وهران",
     loose: "حي 345 وهران",
     tokens: ["حي", "345", "وهران"],
-    proves: ["ar.indic-digits"],
+    proves: ["any.separators", "ar.indic-digits"],
     note: "Arabic-Indic digits U+0660 to U+0669 fold to ASCII digits",
   },
   {
@@ -525,7 +538,7 @@ export const corpus = Object.freeze([
     conservative: "حي 345 وهران",
     loose: "حي 345 وهران",
     tokens: ["حي", "345", "وهران"],
-    proves: ["ar.extended-indic-digits"],
+    proves: ["any.separators", "ar.extended-indic-digits"],
     note: "Eastern Arabic-Indic digits U+06F0 to U+06F9 fold to ASCII digits",
   },
   {
@@ -533,7 +546,7 @@ export const corpus = Object.freeze([
     conservative: "cite 20 aout 1955",
     loose: "cite 20 aout 1955",
     tokens: ["cite", "20", "aout", "1955"],
-    proves: ["latn.accents"],
+    proves: ["any.case", "latn.accents", "any.separators"],
     note: "ASCII digits pass through beside folded Latin letters",
   },
 
@@ -543,7 +556,7 @@ export const corpus = Object.freeze([
     conservative: "wilaya الجزاير 16",
     loose: "wilaya الجزاير 16",
     tokens: ["wilaya", "الجزاير", "16"],
-    proves: ["ar.yaa-hamza", "any.whitespace"],
+    proves: ["any.case", "any.separators", "ar.yaa-hamza"],
     note: "a mixed Latin and Arabic name keeps both scripts and its word boundaries",
   },
 ]);

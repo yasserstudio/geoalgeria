@@ -46,6 +46,12 @@ import {
 import { MIGRATIONS } from "./lib/v2-transforms.mjs";
 import { canonicalCommuneCodes } from "./lib/commune-index.mjs";
 import { licenceTermsErrors } from "./lib/licence-terms.mjs";
+// The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
+// without a reviewer and a corpus case, and a case cannot claim a Rule that does
+// not exist. The table and the corpus are read from the package as data.
+import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
+import { rules as normalizeRules } from "../packages/normalize/index.js";
+import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -1411,6 +1417,20 @@ function validateLicenceTerms(pkgs) {
   }
 }
 
+// @geoalgeria/normalize publishes the orthographic equivalences GeoAlgeria asserts
+// about Algerian names as a reviewed table, so that someone who reads the language
+// and not the code can open a pull request against one of them. That only holds if
+// review is a rule rather than a habit: a Rule needs a reviewer and a corpus case
+// proving it, a case cannot claim a Rule that does not exist, an id names one Rule,
+// and the table order is the one that was reviewed. The rule itself lives in
+// scripts/lib/normalize-rules.mjs, with the committed order it checks against.
+function validateNormalizeRules() {
+  const problems = normalizeRuleErrors({ rules: normalizeRules, corpus: normalizeCorpus });
+  for (const problem of problems) fail(problem);
+  if (!problems.length)
+    console.log(`  OK: ${normalizeRules.length} Rules, each reviewed and proved by one of ${normalizeCorpus.length} corpus cases`);
+}
+
 // livraison has three datasets of different shapes: only `stopdesks` is geocoded and
 // carries wilaya_code; `carriers` (registry) and `coverage` (per-carrier presence) have
 // no wilaya_code, so they can't use the wilaya_code-enforcing table validator. Dedicated
@@ -1587,6 +1607,11 @@ validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
 validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+// Not gated on `only`: the Rule table is one table for the whole repository, like
+// the licence check above, and it is cheap.
+console.log(`\n[normalize: every Rule reviewed and proved]`);
+validateNormalizeRules();
 
 // the mirror is poste-specific — only run it when validating poste (or all)
 if (!only || only === "poste") {

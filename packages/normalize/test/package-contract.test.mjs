@@ -20,7 +20,9 @@ test("the root export surface is exactly what was reviewed", async () => {
   assert.deepEqual(Object.keys(module).sort(), [
     "NORMALIZE_VERSION",
     "conservativeKey",
+    "explain",
     "looseKey",
+    "rules",
     "searchKeys",
     "tokenize",
   ]);
@@ -28,6 +30,8 @@ test("the root export surface is exactly what was reviewed", async () => {
   assert.equal(typeof module.looseKey, "function");
   assert.equal(typeof module.tokenize, "function");
   assert.equal(typeof module.searchKeys, "function");
+  assert.equal(typeof module.explain, "function");
+  assert.ok(Array.isArray(module.rules));
   assert.equal(typeof module.NORMALIZE_VERSION, "number");
 });
 

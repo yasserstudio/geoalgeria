@@ -5,7 +5,15 @@
 // code, so identical keys are structural rather than something a test has to
 // police. It carries no data about places, and ranking lives elsewhere.
 
-export { conservativeKey, looseKey, searchKeys, tokenize } from "./src/keys.js";
+export { conservativeKey, explain, looseKey, searchKeys, tokenize } from "./src/keys.js";
+
+/**
+ * The reviewed Rule table: every fold this package applies, the codepoint
+ * sequences it maps, the sentence it asserts about the script, and who reviewed
+ * that sentence and when. Frozen, and published so that someone who reads the
+ * language and not the code can argue with an equivalence.
+ */
+export { rules } from "./src/rules.js";
 
 /**
  * The package's semver major, as a number. Any change to what a key function

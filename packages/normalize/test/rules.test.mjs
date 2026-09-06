@@ -8,7 +8,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 
-import { conservativeKey, looseKey } from "../index.js";
+import { conservativeKey, looseKey, rules } from "../index.js";
 import { corpus } from "../fixtures/corpus.js";
 import { DECLINED_RULES, FOLD_RULES, RULES_WITHOUT_A_TABLE } from "../src/rules.js";
 import { TABLE_RULE_IDS } from "../src/tables.js";
@@ -87,7 +87,7 @@ test("every Rule is exercised by at least one corpus case", () => {
 });
 
 test("every Rule a corpus case claims to prove exists", () => {
-  const ids = new Set(FOLD_RULES.map((rule) => rule.id));
+  const ids = new Set(rules.map((rule) => rule.id));
   for (const kase of corpus) {
     for (const id of kase.proves) {
       assert.ok(ids.has(id), `${JSON.stringify(kase.input)} proves ${id}, which is not a Rule`);
