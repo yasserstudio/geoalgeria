@@ -30,7 +30,7 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   the release it was built with. A change to what a key function returns for any input is a
   major version, because keys are baked into published catalogs and an installed catalog is
   never migrated record by record.
-- `@geoalgeria/normalize/fixtures`, the Golden corpus: 60 cases built from real Algerian
+- `@geoalgeria/normalize/fixtures`, the Golden corpus: 62 cases built from real Algerian
   names, each with both keys, the tokens, the Rule ids it proves and a note saying what it is
   about. Every Rule is exercised by at least one case. Consumers assert against this fixture
   rather than writing cases of their own.

@@ -166,10 +166,16 @@ const LATIN_EXT_A = [
  * ligatures. The rest of the block is letters in their own right rather than
  * accented Latin letters: the open e and the gamma that Berber Latin uses, the
  * hooked and barred consonants of African orthographies, the tone letters. They
- * are not folded, because folding them would assert that a Berber letter is a
- * French one, which is a claim about a name and not about the script, and their
- * lower-case forms live outside the declared blocks anyway. The caron on g, which
- * Berber Latin does write over a Latin letter, is here.
+ * are not folded to a Latin base, because that would assert that a Berber letter
+ * is a French one, which is a claim about a name and not about the script. The
+ * caron on g, which Berber Latin does write over a Latin letter, is here.
+ *
+ * The capitals of the Berber Latin letters are here too, mapped to their own
+ * lower-case forms rather than to another letter. Case is never a distinction
+ * between two places, and without this a name typed in capitals would key
+ * differently from the same name in lower case. Their lower-case forms sit in a
+ * block this package does not declare, so they arrive in the key as characters no
+ * table names, which is what a letter with no rule about it should look like.
  */
 const LATIN_EXT_B = [
   [0x01a0, 0x01a1, "o"], //  Ơ ơ
@@ -207,6 +213,15 @@ const LATIN_EXT_B = [
   [0x0228, 0x0229, "e"], //  Ȩ ȩ
   [0x022a, 0x0231, "o"], //  Ȫ ȫ Ȭ ȭ Ȯ ȯ Ȱ ȱ
   [0x0232, 0x0233, "y"], //  Ȳ ȳ
+];
+
+/** The capitals of the Berber Latin letters, to their own lower-case forms. */
+const LATIN_EXT_B_CASE = [
+  [0x0186, "ɔ"], // Ɔ open o
+  [0x018e, "ǝ"], // Ǝ turned e, the Tamazight schwa
+  [0x018f, "ə"], // Ə schwa
+  [0x0190, "ɛ"], // Ɛ open e
+  [0x0194, "ɣ"], // Ɣ gamma
 ];
 
 /**
@@ -310,7 +325,7 @@ const FOLD_GROUPS = [
   { id: "ar.extended-indic-digits", entries: range(0x06f0, 0x06f9).map((code, digit) => [code, String(digit)]) },
   { id: "latn.accents", entries: LATIN },
   { id: "latn.extended-a", entries: spans(LATIN_EXT_A) },
-  { id: "latn.extended-b", entries: spans(LATIN_EXT_B) },
+  { id: "latn.extended-b", entries: [...spans(LATIN_EXT_B), ...LATIN_EXT_B_CASE] },
 ];
 
 /**

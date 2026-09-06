@@ -113,7 +113,7 @@ export const FOLD_RULES = Object.freeze([
     id: "latn.extended-b",
     class: "conservative",
     script: "latn",
-    why: "The accented letters of Latin Extended-B, among them the caron on g that Berber Latin spellings use, fold to their base letter; the letters of that block that are letters in their own right are left alone.",
+    why: "The accented letters of Latin Extended-B, among them the caron on g that Berber Latin spellings use, fold to their base letter; the letters of that block that are letters in their own right keep their own letter and only lose their capital.",
   },
   {
     id: "any.separators",
@@ -131,7 +131,7 @@ export const FOLD_RULES = Object.freeze([
     id: "any.case",
     class: "conservative",
     script: "any",
-    why: "Case is never a distinction between two places, and lower case is what both the browser index and the full-text tokenizer already produce.",
+    why: "Case is never a distinction between two places, and lower case is what both the browser index and the full-text tokenizer already produce. Case folding reaches the ASCII capitals and every capital a table names; lower-casing a letter no table names would mean asking the engine for its case pair, which is exactly the dependency this package refuses.",
   },
   {
     id: "any.pass-through",

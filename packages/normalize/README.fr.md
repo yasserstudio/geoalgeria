@@ -56,6 +56,7 @@ plier ce qui change la lettre que le lecteur voit :
 | Les harakat et les autres signes combinants arabes sont supprimés | `بِجَايَة` devient `بجاية` |
 | Les accents latins reviennent à leur lettre de base, précomposés ou décomposés | `Béjaïa` devient `bejaia` |
 | Le latin étendu A et les lettres accentuées du latin étendu B se plient aussi | `Bāb el Oued` devient `bab el oued`, `Ǧerǧer` devient `gerger` |
+| Une lettre du berbère latin garde sa lettre et ne perd que sa majuscule | `TAMAZIƔT` devient `tamaziɣt` |
 | Les chiffres arabo-indiens et arabo-indiens orientaux deviennent des chiffres ASCII | `٣٤٥` et `۳۴۵` donnent `345` |
 | Les variantes d'apostrophe et de trait d'union séparent les mots | `El M'Ghair` et `El M’Ghair` donnent `el m ghair` |
 | Les espaces se réduisent, et les limites de mots survivent dans la clé | `  Oran   El Bahia ` devient `oran el bahia` |
@@ -95,7 +96,10 @@ s'y accorder caractère pour caractère. Un mot se termine à, et seulement à :
 
 Tout le reste est plié, supprimé, ou fait partie du mot où il se trouve. Les caractères
 invisibles, dont le trait d'union conditionnel et les marques bidirectionnelles, sont
-supprimés plutôt que traités comme des limites, car ce n'est pas ce que le lecteur voit.
+supprimés plutôt que traités comme des limites, car ce n'est pas ce que le lecteur voit. La
+ponctuation n'en fait pas partie non plus : une virgule reste dans le mot qu'elle suit, et un
+cas du corpus le consigne, car combler cet écart serait une règle que ce paquet ne porte pas
+encore.
 
 ## Les règles et leurs identifiants
 
@@ -131,7 +135,7 @@ Le paquet n'a **aucune dépendance d'exécution**.
 
 ## Le corpus de référence
 
-Le corpus est le contrat, 60 cas. Chaque règle ci-dessus est prouvée par au moins un cas construit
+Le corpus est le contrat, 62 cas. Chaque règle ci-dessus est prouvée par au moins un cas construit
 à partir d'un vrai nom algérien, et les consommateurs importent la même fixture plutôt que
 d'écrire leurs propres cas :
 

@@ -121,7 +121,10 @@ test("a character outside every declared range is passed through, not dropped", 
     assert.equal(conservativeKey(kase.input), kase.conservative);
   }
   // The Berber Latin gamma, outside every declared block, and a Cyrillic letter
-  // that no rule of this package will ever have an opinion about.
+  // that no rule of this package will ever have an opinion about. The Cyrillic
+  // capital keeps its case: lower-casing a letter no table names would mean
+  // asking the engine for its case pair, which is the dependency the package
+  // refuses, so a script it declares nothing about passes through as written.
   assert.equal(conservativeKey("Tamaziɣt"), "tamaziɣt");
   assert.equal(conservativeKey("Алжир"), "Алжир");
 });

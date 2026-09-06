@@ -55,6 +55,7 @@ changes which letter a reader sees:
 | Harakat and the other Arabic combining marks are removed | `بِجَايَة` becomes `بجاية` |
 | Latin accents fold to their base letter, precomposed or decomposed alike | `Béjaïa` becomes `bejaia` |
 | Latin Extended-A and the accented letters of Latin Extended-B fold too | `Bāb el Oued` becomes `bab el oued`, `Ǧerǧer` becomes `gerger` |
+| A Berber Latin letter keeps its letter and loses only its capital | `TAMAZIƔT` becomes `tamaziɣt` |
 | Arabic-Indic and Eastern Arabic-Indic digits fold to ASCII | `٣٤٥` and `۳۴۵` both become `345` |
 | Apostrophe and hyphen variants are word separators | `El M'Ghair`, `El M’Ghair` become `el m ghair` |
 | Whitespace collapses, and word boundaries survive into the key | `  Oran   El Bahia ` becomes `oran el bahia` |
@@ -92,7 +93,9 @@ ends at, and only at:
 
 Everything else is folded, removed, or part of the word it is in. The invisible characters,
 the soft hyphen and the bidi marks among them, are removed rather than treated as
-boundaries, because they are not what a reader sees.
+boundaries, because they are not what a reader sees. Punctuation is not in this set either,
+so a comma stays inside the word it follows; a corpus case records that, because closing the
+gap would be a rule this package does not yet carry.
 
 ## Rules and their ids
 
@@ -125,7 +128,7 @@ The package has **zero runtime dependencies**.
 
 ## The golden corpus
 
-The corpus is the contract, 60 cases. Every rule above is proved by at least one case built
+The corpus is the contract, 62 cases. Every rule above is proved by at least one case built
 from a real Algerian name, and consumers import the same fixture rather than writing cases of
 their own:
 

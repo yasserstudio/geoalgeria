@@ -173,6 +173,14 @@ export const corpus = Object.freeze([
     note: "the accented letters of Latin Extended-B fold too, upper case included",
   },
   {
+    input: "TAMAZIƔT",
+    conservative: "tamaziɣt",
+    loose: "tamaziɣt",
+    tokens: ["tamaziɣt"],
+    proves: ["latn.extended-b", "any.pass-through"],
+    note: "the Berber Latin gamma in capital, U+0194, keeps its own letter and loses only its capital, so a name typed in capitals keys like the same name in lower case",
+  },
+  {
     input: "Tamaziɣt",
     conservative: "tamaziɣt",
     loose: "tamaziɣt",
@@ -253,6 +261,14 @@ export const corpus = Object.freeze([
     tokens: ["aintemouchent"],
     proves: ["any.invisible", "latn.accents"],
     note: "the soft hyphen U+00AD is a line-break hint, invisible on screen, so it is removed and not treated as a word boundary",
+  },
+  {
+    input: "Alger, Oran",
+    conservative: "alger, oran",
+    loose: "alger, oran",
+    tokens: ["alger,", "oran"],
+    proves: ["any.pass-through"],
+    note: "punctuation is not in the declared separator set, so a comma stays inside its word: a full-text tokenizer that splits on it would disagree with these tokens, and closing that gap is a rule this package does not yet carry",
   },
   {
     input: "   Oran    El   Bahia  ",
