@@ -219,12 +219,58 @@ Le corpus est le contrat, 64 cas. Chaque règle ci-dessus est prouvée par au mo
 d'écrire leurs propres cas :
 
 ```js
-import { corpus } from "@geoalgeria/normalize/fixtures";
+import { corpus, matchCases } from "@geoalgeria/normalize/fixtures";
 
 for (const cas of corpus) {
   // cas.input, cas.conservative, cas.loose, cas.tokens, cas.proves, cas.note
 }
 ```
+
+Le sous-chemin est publié : il figure dans la carte `exports` et dans le tableau
+`files`, donc il se résout depuis une archive installée et pas seulement depuis un
+dépôt cloné.
+
+## Les classes d'appariement
+
+`matchCases` est la seconde fixture : une requête, un nom, et ce que les deux
+donnent ensemble. Quatre classes, décidées dans cet ordre, à partir des seules clés
+et de leurs jetons. Une clé est la liste de ses jetons jointe par des espaces
+simples ; un *mot* ci-dessous est donc un élément de cette liste.
+
+| Classe | La requête et le nom |
+| --- | --- |
+| `exact` | les deux clés conservatrices sont égales |
+| `prefix` | la requête est un préfixe du nom selon les clés conservatrices, à une frontière de mot |
+| `loose` | ni l'un ni l'autre selon les clés conservatrices, mais égalité ou préfixe selon les clés souples |
+| `none` | aucun des cas ci-dessus |
+
+La **règle de frontière de mot**, précisément : la requête a au moins un mot et pas
+plus de mots que le nom ; chaque mot de la requête sauf le dernier est égal au mot
+du nom à la même position ; et le dernier mot de la requête est un préfixe du mot du
+nom à cette position. Une requête peut donc s'arrêter au milieu du mot en cours de
+frappe, et seulement là : `sidi b` est un préfixe de `sidi bel abbes`, et `jaia`
+n'est pas un préfixe de `bejaia`. De façon équivalente, et c'est la même règle
+puisqu'une clé est une liste de jetons jointe par des espaces : la clé du nom
+commence par la clé non vide de la requête.
+
+Le paquet n'exporte aucun classifieur. La surface racine relue, ce sont les sept
+exports ci-dessus, et une décision de quinze lignes qui en découle ne vaut pas un
+engagement public qu'on ne pourrait plus changer sans version majeure. Écrivez la
+règle vous-même et prouvez votre implémentation contre la fixture, ce qui fait de
+cette décision à quatre issues la même dans tous les produits :
+
+```js
+import { matchCases } from "@geoalgeria/normalize/fixtures";
+
+for (const cas of matchCases) {
+  // cas.query, cas.name, cas.class, cas.proves, cas.note
+  assert.equal(maClasseAppariement(cas.query, cas.name), cas.class);
+}
+```
+
+La classification s'arrête là. Transformer une classe et un genre de nom en un
+palier de classement regarde GeoAlgeria et vit dans ses produits, pas dans ce
+paquet.
 
 ## Versionnage
 

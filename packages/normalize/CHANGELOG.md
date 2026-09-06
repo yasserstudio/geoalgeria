@@ -50,7 +50,19 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   names, each with both keys, the tokens, the Rule ids it proves and a note saying what it is
   about. Every Rule is exercised by at least one case, and for every rule that folds
   something the ids a case names are exactly what `explain` reports for that input. Consumers
-  assert against this fixture rather than writing cases of their own.
+  assert against this fixture rather than writing cases of their own. The subpath is in the
+  `exports` map and in the `files` array, so it resolves from an installed tarball and not
+  only from a checkout, and a package test holds the map, the array and the files on disk
+  together.
+- `matchCases` on the same subpath: 17 cases carrying the class a query and a name produce,
+  one of `exact`, `prefix`, `loose` or `none`, decided from the keys and their tokens alone.
+  The word-boundary rule the `prefix` class uses is written out in the type declaration and
+  in all three READMEs, in each language: every query word but the last equals the name's
+  word at the same position, and the last query word is a prefix of the name's word there, so
+  a query may stop part way through the word it is still typing and only there. The package
+  exports no classifier, deliberately: the reviewed root surface is the seven exports above,
+  and a consumer writes the rule and proves its implementation against this fixture. Every
+  class is covered, and each of the two loose rules causes at least one loose case.
 - Trilingual documentation (English, French, Arabic), hand-written type declarations, and no
   runtime dependencies.
 
@@ -60,6 +72,13 @@ Search-key generation for Algerian place names, in Arabic and in French. One fol
   no corpus case proves, a case naming a rule that is not in the table, a repeated identifier
   and a table order that stops matching the committed reviewed order each fail the build.
   Review is a rule here rather than a habit.
+- A second gate runs on pull requests only: a diff touching `src/`, `fixtures/corpus.js` or
+  `index.js` must carry a changeset declaring `"@geoalgeria/normalize": major`. The check is
+  path-based and deliberately blunt, so a documentation-only edit to one of those files still
+  needs the major; the contributing guide records that as the accepted cost. While the
+  package is not yet on npm the guard also passes on an unpublished registry answer, because
+  there is no published catalog to invalidate; that path closes by itself at the first
+  release.
 - The key path owns its codepoint tables outright: no call into the host's Unicode
   machinery, no Unicode property escape, no locale-aware case operation and no platform
   built-in, so a Node or Hermes upgrade cannot change a published catalog's keys. A

@@ -9,6 +9,31 @@ on:
 permissions: {}
 
 jobs:
+  # Search keys are baked into every published catalog and an installed catalog is
+  # never migrated record by record, so a key change rebuilds and re-downloads every
+  # catalog on every device. A pull request that touches the key path must therefore
+  # carry a major changeset for @geoalgeria/normalize. The check is path-based and
+  # deliberately blunt; CONTRIBUTING.md records the accepted cost.
+  normalize-changeset:
+    name: normalize major changeset
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+
+      - name: Key path changes carry a major changeset
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: git diff --name-only "origin/$BASE_REF...HEAD" | node scripts/check-normalize-changeset.mjs
+
   # Dependency security is covered by the org-wide Socket.dev GitHub App
   # (Socket Security checks run on every PR). GitHub's dependency-review action
   # is intentionally omitted — it requires the repo's Dependency Graph feature
