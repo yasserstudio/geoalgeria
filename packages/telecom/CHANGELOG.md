@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.2.0
+
+### Minor Changes
+
+- fb222be: Refresh operator-published 5G coverage to the 2026-09-08 snapshots: Mobilis grows from 1,919 to 2,421 valid points, while Djezzy remains at 1,001 and Ooredoo at 176. The combined dataset now contains 3,598 points.
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+
 ## 2.1.0
 
 ### Minor Changes

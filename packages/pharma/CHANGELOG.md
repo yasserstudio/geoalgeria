@@ -1,5 +1,15 @@
 # @geoalgeria/pharma
 
+## 2.0.1
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+- Updated dependencies [76dfd0d]
+- Updated dependencies [76dfd0d]
+  - @geoalgeria/industrie-pharmaceutique@2.0.2
+  - @geoalgeria/pharmacies@2.2.1
+
 ## 2.0.0
 
 ### Major Changes
