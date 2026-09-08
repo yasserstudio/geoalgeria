@@ -1,5 +1,12 @@
 # @geoalgeria/protection-civile
 
+## 1.0.3
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+- fb222be: Refresh the official DGPC unit directory (metadata or generated artifacts updated).
+
 ## 1.0.2
 
 ### Patch Changes

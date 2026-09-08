@@ -1,5 +1,11 @@
 # @geoalgeria/gares-routieres
 
+## 2.2.4
+
+### Patch Changes
+
+- 76dfd0d: Declare the exact per-package licence terms in the manifest and the LICENSE file.
+
 ## 2.2.3
 
 ### Patch Changes
