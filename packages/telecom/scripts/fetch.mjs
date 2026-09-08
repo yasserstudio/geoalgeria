@@ -23,7 +23,7 @@ import { dirname, join } from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
-import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
+import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
 
 // Offline replay: rebuild from the committed captures with no network — a dead
 // or WAF-blocked operator site never blocks re-emission.
@@ -85,6 +85,19 @@ const id = (operator, lat, lng, extra = "") =>
     .digest("hex")
     .slice(0, 10)}`;
 
+// Ooredoo occasionally corrects a commune spelling without changing the
+// published point. The label participates in the historical public id, so use
+// the spelling that originally minted that id while still publishing the
+// corrected current label. Extend this map when the operator makes another
+// label-only correction; a real coordinate change remains a new point/id.
+const OOREDOO_ID_LABEL = new Map([
+  ["DRAA BEN KHEDDA", "DRAA BEN KHEDA"],
+  ["EL M'GHAIR", "EL MEGAIER"],
+  ["GUE DE CONSTANTINE", "DJASR KASSENTINA"],
+  ["LARBAA NATH IRATHEN", "LARBAE NATH IRATHENE"],
+  ["OUM EL BOUAGHI", "OUM BOUAGHI"],
+]);
+
 // Algeria bounding box — reject coordinates outside it (catches comma-decimal or
 // swapped lat/lng introduced by a source format change).
 const inAlgeria = (lat, lng) =>
@@ -101,6 +114,16 @@ async function get(url, headers = {}) {
   if (!res.ok) throw new Error(`${url} → HTTP ${res.status}`);
   return res;
 }
+
+// The operator endpoints expose location collections as sets. Canonicalize
+// their array order before capture so an upstream reordering alone cannot
+// change source hashes or generate noisy diffs.
+const sortUnordered = (rows) =>
+  [...rows].sort((a, b) => {
+    const left = stableStringify(a, 0);
+    const right = stableStringify(b, 0);
+    return left < right ? -1 : left > right ? 1 : 0;
+  });
 
 // ── Djezzy ──────────────────────────────────────────────────────────────────
 // The map fetches wilayas.enc and decrypts it client-side (XOR with a key built
@@ -130,6 +153,12 @@ async function fetchDjezzy() {
         /* ignore */
       }
     }
+    byWilaya = Object.fromEntries(
+      Object.entries(byWilaya).map(([name, wilaya]) => [
+        name,
+        { ...wilaya, markers: sortUnordered(wilaya.markers ?? []) },
+      ]),
+    );
     // Raw capture before validation, so the evidence survives an aborted run.
     writeCapture("telecom", "djezzy-5g", byWilaya, {
       url: `${base}/map.html`,
@@ -178,7 +207,7 @@ async function fetchMobilis() {
       Referer: "https://mobilis.dz/map/5g",
       Accept: "application/json, text/plain, */*",
     });
-    rows = await res.json();
+    rows = sortUnordered(await res.json());
     writeCapture("telecom", "mobilis-5g", rows, { url: "https://mobilis.dz/map/5g/data" });
   }
   const sites = [];
@@ -267,6 +296,7 @@ async function fetchOoredoo() {
         /* ignore */
       }
     }
+    items = sortUnordered(items);
     writeCapture("telecom", "ooredoo-5g", items, { url });
   }
   // Projection happens here, in reviewable Node code, not in the browser eval —
@@ -286,7 +316,7 @@ async function fetchOoredoo() {
       continue;
     }
     sites.push({
-      id: id("ooredoo", lat, lng, r.c || ""),
+      id: id("ooredoo", lat, lng, OOREDOO_ID_LABEL.get(r.c) ?? r.c ?? ""),
       technology: TECH,
       operator: "ooredoo",
       name: r.c || null,

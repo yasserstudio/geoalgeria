@@ -4,11 +4,11 @@
   "title_fr": "Points de couverture 5G en Algérie",
   "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
   "title_en": "Algeria 5G coverage points",
-  "record_count": 3096,
-  "geocoded_count": 3096,
+  "record_count": 3598,
+  "geocoded_count": 3598,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 2911,
+    "exact": 3413,
     "approximate": 185
   },
   "estimated_universe": null,
@@ -28,7 +28,7 @@
     },
     {
       "file": "5g-mobilis.json",
-      "count": 1919
+      "count": 2421
     },
     {
       "file": "5g-ooredoo.json",
@@ -42,7 +42,7 @@
       "url": "https://www.djezzy5g.dz/map.html",
       "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
       "evidence_type": "official",
-      "retrieved": "2026-08-02"
+      "retrieved": "2026-09-08"
     },
     {
       "key": "mobilis",
@@ -50,7 +50,7 @@
       "url": "https://mobilis.dz/map/5g",
       "license": "Data © ATM Mobilis; redistributed for reference",
       "evidence_type": "official",
-      "retrieved": "2026-08-02"
+      "retrieved": "2026-09-08"
     },
     {
       "key": "ooredoo",
@@ -58,20 +58,20 @@
       "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
       "license": "Data © Ooredoo Algérie; redistributed for reference",
       "evidence_type": "official",
-      "retrieved": "2026-08-02"
+      "retrieved": "2026-09-08"
     }
   ],
   "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-  "updated": "2026-08-02",
+  "updated": "2026-09-08",
   "technologies": [
     "5G"
   ],
   "by_technology": {
-    "5G": 3096
+    "5G": 3598
   },
   "by_operator": {
     "djezzy": 1001,
-    "mobilis": 1919,
+    "mobilis": 2421,
     "ooredoo": 176
   }
 }

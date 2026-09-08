@@ -94,6 +94,17 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  telecom: {
+    // Ooredoo corrected these commune spellings without moving the published
+    // points. The generator keeps each historical public id while exposing the
+    // current label, so the frozen migration rows need the same label-only
+    // corrections before replay comparison.
+    "ooredoo-0d9443c3d8": { name: "GUE DE CONSTANTINE", commune: "GUE DE CONSTANTINE" },
+    "ooredoo-78ab7c5be0": { name: "DRAA BEN KHEDDA", commune: "DRAA BEN KHEDDA" },
+    "ooredoo-8a1bf7231f": { name: "LARBAA NATH IRATHEN", commune: "LARBAA NATH IRATHEN" },
+    "ooredoo-cdabff807b": { name: "EL M'GHAIR", commune: "EL M'GHAIR" },
+    "ooredoo-fbaefa673c": { name: "OUM EL BOUAGHI", commune: "OUM EL BOUAGHI" },
+  },
   djezzy: {
     // Djezzy now publishes a later closing time for its Adrar boutique. Keep
     // the frozen migration input frozen and apply this one observed source
