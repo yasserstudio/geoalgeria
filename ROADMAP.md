@@ -366,6 +366,13 @@ reads as further along than it is.
 
 ## Recently closed
 
+- **Telecom 2.2.0, the September 5G refresh** (2026-09-08): the operator map
+  now carries 3,598 coverage points: Mobilis 2,421, Djezzy 1,001 and Ooredoo
+  176. Operator source captures are stored and ordered deterministically,
+  retrieval metadata reflects the 8 September refresh, and stable Ooredoo IDs
+  survive five source label corrections. The package was published and the app
+  consumed it through the receipt-backed snapshot sync. PRs #209/#216.
+
 - **The health batch, 2026-08-09**: `@geoalgeria/cliniques` 1.0.0 published,
   its first release, 1,894 care facilities across 66 wilayas from
   OpenStreetMap, with a GitHub Release; the Trusted Publisher entry was

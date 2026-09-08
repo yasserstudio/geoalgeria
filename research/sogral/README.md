@@ -17,7 +17,7 @@ SOGRAL ever provides one.
 
 ## Latest station-directory audit
 
-The 2026-08-28 refresh found **73 unique departure agencies** and **9,077 unique
+The 2026-09-08 refresh found **73 unique departure agencies** and **9,078 unique
 agency/destination pairs** on MAHATATI. The agency ids are an exact set match
 for the 73 populated `refs.mahatati_agency` values in the 74-station
 `@geoalgeria/gares-routieres` package. Station `53-01 IN SALEH` remains the one
@@ -27,6 +27,14 @@ The package still passes its 74/74 geocoding and station-link integrity test,
 with no out-of-country or mislinked station. The audit therefore produced no
 semantic data change: it confirmed the shipped references rather than replacing
 them.
+
+A live schedule probe also succeeded on 2026-09-08. The unpublished 2026-08-31
+local capture remains intentionally incomplete: 7,741 of 9,078 schedule pairs
+are complete, with 1,337 pending and two unresolved failures; 215 of 1,145
+itinerary variants are complete, with 930 pending. It must not be presented as
+a current timetable or silently resumed under its past service date. The public
+observed graph therefore remains derived only from the completed 12 and 21
+August samples documented below.
 
 ## What the public page exposes
 
