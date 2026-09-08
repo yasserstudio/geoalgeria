@@ -47,6 +47,10 @@ jobs:
         if: steps.source.outputs.changed == 'true'
         run: pnpm review:protection-civile
 
+      - name: Rebuild the dataset catalog
+        if: steps.source.outputs.changed == 'true'
+        run: pnpm build-catalog
+
       - name: Detect public package changes
         if: steps.source.outputs.changed == 'true'
         id: package
@@ -76,7 +80,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sources/protection-civile packages/protection-civile \
+          git add index.json sources/protection-civile packages/protection-civile \
             research/protection-civile/review-candidates.json .changeset
           git commit -m "chore(protection-civile): refresh DGPC snapshot"
           git push
