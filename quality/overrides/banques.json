@@ -99,6 +99,17 @@
         { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Amirouche branch at 3 Boulevard Colonel Amirouche." },
         { "url": "https://www.openstreetmap.org/node/2964284353", "checked_at": "2026-09-09", "note": "Société Générale Amirouche point on Boulevard Colonel Amirouche, Alger." }
       ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "sga-tizi-ouzou",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "Tizi Ouzou", "address": "06, Boulevard Stiti Ali - Tizi Ouzou", "phone": "(+213) 26 20 03 80", "bank_id": "sga", "wilaya_code": "15", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "address": "Lot 254 N°34, Boulevard Stiti Ali, Tizi Ouzou" },
+      "evidence": [
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/tizi-ouzou/", "checked_at": "2026-09-09", "note": "SGA's current branch page publishes Lot 254 N°34 on Boulevard Stiti Ali; its directions point conflicts with the locality, so no coordinate is published." }
+      ]
     }
   ]
 }

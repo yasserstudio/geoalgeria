@@ -35,7 +35,9 @@ test("reviewed BDL coordinates reproduce their exact-ref OSM evidence", () => {
 });
 
 test("reviewed SGA coordinates reproduce matching bank and street evidence", () => {
-  const decisions = ledger.decisions.filter(({ record_id }) => record_id.startsWith("sga-"));
+  const decisions = ledger.decisions.filter(
+    ({ record_id, patch }) => record_id.startsWith("sga-") && patch.lat != null,
+  );
   const expectedStreets = new Map([
     ["sga-chlef", /20.*rue des martyrs/i],
     ["sga-bab-ezzouar", /1.*rezig kadda/i],
@@ -66,4 +68,16 @@ test("reviewed SGA coordinates reproduce matching bank and street evidence", () 
     assert.equal(candidate.precision, decision.patch.geo_precision);
     assert.equal(`osm_${candidate.osm_id.split("/")[0]}`, decision.patch.geo_method);
   }
+});
+
+test("reviewed SGA Tizi Ouzou address stays ungeocoded", () => {
+  const decision = ledger.decisions.find(({ record_id }) => record_id === "sga-tizi-ouzou");
+  assert.deepEqual(decision.patch, {
+    address: "Lot 254 N°34, Boulevard Stiti Ali, Tizi Ouzou",
+  });
+  assert.deepEqual(decision.evidence.map(({ url }) => url), [
+    "https://particuliers.societegenerale.dz/fr/locations-details/tizi-ouzou/",
+  ]);
+  assert.equal(decision.expect.lat, null);
+  assert.equal(decision.expect.lng, null);
 });
