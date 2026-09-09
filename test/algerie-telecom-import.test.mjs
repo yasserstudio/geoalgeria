@@ -10,6 +10,7 @@ test("decimal commas preserve operator point precision without claiming verifica
   const original = input([agency]);
   const review = reviewResponse(original, boundaries);
   assert.equal(review.candidates[0].lat, 36.5);
+  assert.equal(parseCoordinate("- 0.277723\r"), -0.277723);
   assert.equal(review.candidates[0].geo_precision, "exact");
   assert.deepEqual(review.candidates[0].reasons, []);
   assert.equal(review.usage, "internal-review-only");
@@ -25,6 +26,7 @@ test("invalid, conflicting and shared points remain separate flagged candidates"
   assert.equal(review.candidates[2].lat, null);
   assert.ok(review.candidates[3].reasons.includes("outside_all_wilaya_boundaries"));
   assert.ok(reviewResponse({ ...input([agency]), source_wilaya: 25 }, boundaries).candidates[0].reasons.includes("source_wilaya_mismatch"));
+  assert.ok(reviewResponse(input([{ ...agency, commune: "NON OPERATIONNEL" }]), boundaries).candidates[0].reasons.includes("non_operational"));
 });
 
 test("errors and schema drift cannot become successful empty captures", () => {
@@ -41,6 +43,7 @@ test("wilaya-wide responses preserve source IDs and require explicit empty commu
   const result = reviewResponse(envelope, boundaries);
   assert.equal(result.search_scope, "wilaya");
   assert.equal(result.candidates[0].source_id, "175");
+  assert.equal(reviewResponse({ ...envelope, response: { ...envelope.response, commune: null } }, boundaries).search_scope, "wilaya");
   assert.throws(() => reviewResponse({ ...envelope, source_wilaya: 43 }, boundaries), /contradicts/);
   envelope.response.content.push(envelope.response.content[0]);
   assert.throws(() => reviewResponse(envelope, boundaries), /duplicate source id/);

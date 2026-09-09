@@ -14,8 +14,8 @@ const hash = (value) => createHash("sha256").update(value).digest("hex");
 
 export function parseCoordinate(value) {
   if (typeof value === "number") return Number.isFinite(value) ? value : null;
-  if (typeof value !== "string" || !/^[+-]?\d+(?:[.,]\d+)?$/.test(value.trim())) return null;
-  const number = Number(value.trim().replace(",", "."));
+  if (typeof value !== "string" || !/^[+-]?\s*\d+(?:[.,]\d+)?$/.test(value.trim())) return null;
+  const number = Number(value.trim().replace(/^([+-])\s+/, "$1").replace(",", "."));
   return Number.isFinite(number) ? number : null;
 }
 
@@ -27,7 +27,8 @@ export function reviewResponse(input, boundaries) {
   }
   if (!Number.isInteger(input.source_wilaya) || input.source_wilaya < 1 || input.source_wilaya > 58 ||
       typeof input.source_commune !== "string" ||
-      (!input.source_commune.trim() && !(input.source_commune === "" && input.response?.commune === ""))) {
+      (!input.source_commune.trim() && !(input.source_commune === "" &&
+        (input.response?.commune === "" || input.response?.commune === null)))) {
     throw new Error("Supply the source wilaya (1–58) and selected commune label/value");
   }
   if (input.response?.resultat !== "ok" || !Array.isArray(input.response.content)) {
@@ -62,6 +63,9 @@ export function reviewResponse(input, boundaries) {
     else if (containing[0] !== String(input.source_wilaya).padStart(2, "0")) reasons.push("source_wilaya_mismatch");
     if (typeof raw.adresse !== "string" || !raw.adresse.trim()) reasons.push("missing_address");
     if (typeof raw.type !== "string" || !raw.type.trim()) reasons.push("missing_type");
+    if (typeof raw.commune === "string" && /NON\s+OPERATIONNEL/i.test(raw.commune.normalize("NFD").replace(/[\u0300-\u036f]/g, ""))) {
+      reasons.push("non_operational");
+    }
     const candidate = {
       // Keep receipt-local identity alongside the operator's ID, when supplied.
       candidate_id: `${receipt}:${index}`,

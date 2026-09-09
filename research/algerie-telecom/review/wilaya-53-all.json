@@ -1,0 +1,37 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 53,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "f970c0b4a903b8b35bf030cb53002997ca917b0d396478520615273659ddb8c9",
+  "count": 1,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "f970c0b4a903b8b35bf030cb53002997ca917b0d396478520615273659ddb8c9:0",
+      "source_id": "263",
+      "raw": {
+        "id": "263",
+        "code_wilaya": "53",
+        "wilaya": "IN SALAH",
+        "commune": "AIN SALAH/ FOGGARET EZZAOUIA/IN GHAR",
+        "adresse": "CENTRE VILLE IN SALAH ",
+        "type": "Agence Commerciale",
+        "latitude": "27,19854444",
+        "longitude": "2,477222222\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.19854444,
+      "lng": 2.477222222,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "53"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

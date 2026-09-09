@@ -1,0 +1,363 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 22,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f",
+  "count": 15,
+  "flagged": 4,
+  "candidates": [
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:0",
+      "source_id": "418",
+      "raw": {
+        "id": "418",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SIDI BEL ABBES / SIDI LAHCENE/ AMARNAS/ SIDI KHALED/ BENACHIBCHELIA/HASi DAHOU/ TILMOUNI",
+        "adresse": "EX  RUE DE LA PAIX",
+        "type": "Agence Commerciale",
+        "latitude": "35.186294",
+        "longitude": "-0.629705\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.186294,
+      "lng": -0.629705,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:1",
+      "source_id": "419",
+      "raw": {
+        "id": "419",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SIDI BEL ABBES",
+        "adresse": "CITE TAIBI ELARBI SIDI DJILLALI",
+        "type": "Agence Commerciale",
+        "latitude": "35,214613",
+        "longitude": "-0,629075\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.214613,
+      "lng": -0.629075,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:2",
+      "source_id": "420",
+      "raw": {
+        "id": "420",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SIDI BEL ABBES",
+        "adresse": "Rue Rabah Bitat, cité 54 logts Trikiÿ Route d'Oran, Sidi bel abbés",
+        "type": "Point de présence",
+        "latitude": "35,216436",
+        "longitude": "-0,613271\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.216436,
+      "lng": -0.613271,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:3",
+      "source_id": "421",
+      "raw": {
+        "id": "421",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "AIN EL BERD/ SIDI BRAHIM/ SIDI HAMADOUCHE/ MEKKEDRA",
+        "adresse": "Rue El AourŠs , coin avec Rue Kliel Mohamed, Ain El Berd",
+        "type": "Point de présence",
+        "latitude": "35,22496",
+        "longitude": "0,305225\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.22496,
+      "lng": 0.305225,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "29"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:4",
+      "source_id": "422",
+      "raw": {
+        "id": "422",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "BEN BADIS/ HASSI ZAHANA/ BEDRABINE ELMOKRANI /CHETOUANE",
+        "adresse": "RUE SERIARI AISSA, BEN BADIS",
+        "type": "Agence Commerciale",
+        "latitude": "34,84895556",
+        "longitude": "5,708125\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.84895556,
+      "lng": 5.708125,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "07"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:5",
+      "source_id": "423",
+      "raw": {
+        "id": "423",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SIDI ALI BOUSSIDI/ LAMTAR/ SIDI DAHOU ZAIR/ AIN KADA",
+        "adresse": "Rue de l'ancien bureau poste, Sidi Ali Boussidi.",
+        "type": "Point de présence",
+        "latitude": "35,103815",
+        "longitude": "-0,827186\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.103815,
+      "lng": -0.827186,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:6",
+      "source_id": "424",
+      "raw": {
+        "id": "424",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SIDI ALI BENYOUB/ BOUKHANIFIS/ TABIA",
+        "adresse": "RUE MOBAREK DJELLOUL,SIDI ALI BENYOUB",
+        "type": "Point de présence",
+        "latitude": "34,944584",
+        "longitude": "-0,719002\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.944584,
+      "lng": -0.719002,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:7",
+      "source_id": "425",
+      "raw": {
+        "id": "425",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "TELAGH/ TEGHALIMET/ MEZAOUROU/ DHAYA",
+        "adresse": "RUE SI DRIS TELAGH",
+        "type": "Agence Commerciale",
+        "latitude": "34,788467",
+        "longitude": "-0,572528\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.788467,
+      "lng": -0.572528,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:8",
+      "source_id": "426",
+      "raw": {
+        "id": "426",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "RAS EL MA/ REDJEME DEMOUCHE/ OUED SEBAA",
+        "adresse": "Rue Belkacemi Lakhdar, Ras el Ma",
+        "type": "Point de présence",
+        "latitude": "34,497874",
+        "longitude": "-0,813144\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.497874,
+      "lng": -0.813144,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:9",
+      "source_id": "427",
+      "raw": {
+        "id": "427",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "BIR EL HMAM/ SIDI CHAIB/ MARHOUM",
+        "adresse": "Rue Bahlouli Cheikh , Marhoum",
+        "type": "Point de présence",
+        "latitude": "34,448082",
+        "longitude": "-0,19471\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.448082,
+      "lng": -0.19471,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:10",
+      "source_id": "428",
+      "raw": {
+        "id": "428",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "MOULAY SLISSEN/ H'CAIBA/ AIN TINDAMINE",
+        "adresse": "RueÿÿBendahouÿ enÿfaceÿÿSiege Daira",
+        "type": "Point de présence",
+        "latitude": "045' 41.63''",
+        "longitude": "3449' 7.42''\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": null,
+      "lng": null,
+      "geo_precision": null,
+      "geo_method": null,
+      "containing_wilayas": [],
+      "reasons": [
+        "invalid_coordinate"
+      ]
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:11",
+      "source_id": "429",
+      "raw": {
+        "id": "429",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "MERINE/ TAOUDMOUT/ TEFFASSOUR/ OUED TAOURIRA",
+        "adresse": "Boulevard Capitaine AbdelhadiÿMERINE",
+        "type": "Point de présence",
+        "latitude": "ÿ34 46'50''",
+        "longitude": "027'04''\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": null,
+      "lng": null,
+      "geo_precision": null,
+      "geo_method": null,
+      "containing_wilayas": [],
+      "reasons": [
+        "invalid_coordinate"
+      ]
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:12",
+      "source_id": "430",
+      "raw": {
+        "id": "430",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SFISEF/ MOSTAFA BEN BRAHIM/ M'CID/ BELARBI/ BOUDJEBHA EL BOURDJ/ AIN ADDEN",
+        "adresse": "RUE AMIR AEK SFISEF",
+        "type": "Agence Commerciale",
+        "latitude": "35,233889",
+        "longitude": "-0,240833\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.233889,
+      "lng": -0.240833,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:13",
+      "source_id": "431",
+      "raw": {
+        "id": "431",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "TENIRA/ OUED SEFIOUNE",
+        "adresse": "RUE TOUMI LAKHDAR  TENIRA",
+        "type": "Point de présence",
+        "latitude": "35,020827",
+        "longitude": "-0,526725\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.020827,
+      "lng": -0.526725,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "cd7d27e95b8d5c3842d1576cf415d81d46b9b2d2e29347fc2fde4ad808db080f:14",
+      "source_id": "432",
+      "raw": {
+        "id": "432",
+        "code_wilaya": "22",
+        "wilaya": "SIDI BEL ABBES",
+        "commune": "SIDI BEL ABBES/ TESSALA/ SEHALA TOUARA/ AIN TRID/ ZEROUALA/SIDI YAGOUB",
+        "adresse": "ASPIRANT SAADANE SBA ",
+        "type": "Agence Commerciale",
+        "latitude": "35,185955",
+        "longitude": "-0.637167\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.185955,
+      "lng": -0.637167,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "22"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

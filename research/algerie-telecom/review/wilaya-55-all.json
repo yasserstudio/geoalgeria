@@ -1,0 +1,108 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 55,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "00e3c1b97ae9e56a3baf4ca70fead77152f603cf243822f173490ea31222293c",
+  "count": 4,
+  "flagged": 1,
+  "candidates": [
+    {
+      "candidate_id": "00e3c1b97ae9e56a3baf4ca70fead77152f603cf243822f173490ea31222293c:0",
+      "source_id": "523",
+      "raw": {
+        "id": "523",
+        "code_wilaya": "55",
+        "wilaya": "TOUGGOURT",
+        "commune": "TOUGGOURT/MEGARINE/NEZLA/SIDI SLIMANE/ZAOUIA LABIDIA/TEBESBEST",
+        "adresse": "HAI EZZAHRA",
+        "type": "Agence Commerciale",
+        "latitude": "33.107314",
+        "longitude": "6.070920\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.107314,
+      "lng": 6.07092,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "55"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "00e3c1b97ae9e56a3baf4ca70fead77152f603cf243822f173490ea31222293c:1",
+      "source_id": "524",
+      "raw": {
+        "id": "524",
+        "code_wilaya": "55",
+        "wilaya": "TOUGGOURT",
+        "commune": "TAIBET/BENNACEUR/M'NAGEUR",
+        "adresse": "TAIBAT CENTRE",
+        "type": "Point de présence",
+        "latitude": "33.084960",
+        "longitude": "6.399821\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.08496,
+      "lng": 6.399821,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "55"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "00e3c1b97ae9e56a3baf4ca70fead77152f603cf243822f173490ea31222293c:2",
+      "source_id": "525",
+      "raw": {
+        "id": "525",
+        "code_wilaya": "55",
+        "wilaya": "TOUGGOURT",
+        "commune": "TEMACINE/BLIDET AMOR",
+        "adresse": "BOULVARD  MOHAMED BODIAF",
+        "type": "Agence Commerciale",
+        "latitude": "33.01284",
+        "longitude": "6.007651\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 33.01284,
+      "lng": 6.007651,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "55"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "00e3c1b97ae9e56a3baf4ca70fead77152f603cf243822f173490ea31222293c:3",
+      "source_id": "526",
+      "raw": {
+        "id": "526",
+        "code_wilaya": "55",
+        "wilaya": "TOUGGOURT",
+        "commune": "EL HADJIRA/AL ALIA",
+        "adresse": "EL-HADJIRA CENTRE VILLE ",
+        "type": "Point de présence",
+        "latitude": "32.617497",
+        "longitude": "5.512837\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 32.617497,
+      "lng": 5.512837,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "30"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

@@ -1,0 +1,37 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 51,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "f3df900d2cec1fb204838c4befe0fd174afed05612f0f005caff1e4905f7f13b",
+  "count": 1,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "f3df900d2cec1fb204838c4befe0fd174afed05612f0f005caff1e4905f7f13b:0",
+      "source_id": "373",
+      "raw": {
+        "id": "373",
+        "code_wilaya": "51",
+        "wilaya": "OULED DJALLAL",
+        "commune": "OULED DJELLAL/SIDI KHALED/DOUCEN/RAS EL MIAAD/BESBES/CHAIBA",
+        "adresse": "AVENUE AL ISTIQLAL 19 MARS 1962",
+        "type": "Agence Commerciale",
+        "latitude": "34,42991667",
+        "longitude": "5,06854722\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.42991667,
+      "lng": 5.06854722,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "51"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

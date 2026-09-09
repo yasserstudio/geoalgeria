@@ -30,7 +30,8 @@ to operator records without an official match.
 The importer accepts one envelope or an array, validates the entire batch before
 writing, and rejects duplicate scopes. `review/national-status.json` lists completed
 wilaya-wide captures and every pending code. Commune-only searches do not complete
-a wilaya. Current real coverage remains **1/58**, Chlef; the other 57 are pending.
+a wilaya. Current real coverage is **58/58 source wilayas**, with 526 operator rows
+captured on 2026-09-09.
 
 ## Captured evidence
 
@@ -53,6 +54,9 @@ CAPTCHA tokens. Wrap that response in:
   "response": { "resultat": "ok", "content": [] }
 }
 ```
+
+For a wilaya-wide response, `source_commune` is an empty string. The observed
+API returns either `""` or `null` in `response.commune`; both are accepted.
 
 Replace `response` with the real body and use the actual retrieval date. The
 empty array above only illustrates the envelope; it is not captured evidence.

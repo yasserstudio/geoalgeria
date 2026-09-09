@@ -1,0 +1,57 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "RUE ROUABH ABDERHMANE CENTRE VILLE OUARGLA",
+        "code_wilaya": "30",
+        "commune": "OUARGLA/ N'GOUSSA/ HASSI BEN ABDALLAH/ AIN BEIDA / SIDI KHOUILED ",
+        "date": "2024-10-30 15:09:40",
+        "id": "369",
+        "latitude": "31.958294",
+        "longitude": "5.332840 \r",
+        "type": "Agence Commerciale",
+        "wilaya": "OUARGLA"
+      },
+      {
+        "adresse": "ROUTE DE L' AIR EPORT IRARA",
+        "code_wilaya": "30",
+        "commune": "HASSI MESSAOUD",
+        "date": "2024-10-30 15:09:40",
+        "id": "370",
+        "latitude": "31.686730",
+        "longitude": "6.059971\r",
+        "type": "Agence Commerciale",
+        "wilaya": "OUARGLA"
+      },
+      {
+        "adresse": "EL BORMA VILLE ",
+        "code_wilaya": "30",
+        "commune": "EL BORMA",
+        "date": "2024-10-30 15:09:40",
+        "id": "371",
+        "latitude": "31.595960",
+        "longitude": "9.161271\r",
+        "type": "Point de présence",
+        "wilaya": "OUARGLA"
+      },
+      {
+        "adresse": "CITE 328 LOGTS HAI ENNASR",
+        "code_wilaya": "30",
+        "commune": "OUARGLA/ROUISSAT ",
+        "date": "2024-10-30 15:09:40",
+        "id": "372",
+        "latitude": "31.949415",
+        "longitude": "5.264715\r",
+        "type": "Agence Commerciale",
+        "wilaya": "OUARGLA"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    OUARGLA</b> ",
+    "resultat": "ok",
+    "wilaya": "OUARGLA"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 30
+}

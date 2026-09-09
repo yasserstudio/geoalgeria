@@ -1,0 +1,129 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 1,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "049bb6f9df3d8662a41811fbc757e84d3905f819afa8b01f85c1020c8adab735",
+  "count": 5,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "049bb6f9df3d8662a41811fbc757e84d3905f819afa8b01f85c1020c8adab735:0",
+      "source_id": "1",
+      "raw": {
+        "id": "1",
+        "code_wilaya": "1",
+        "wilaya": "ADRAR",
+        "commune": "ADRAR / BOUDA / TSABIT / FENOUGHIL / TAMEST / SBAA",
+        "adresse": "CITE ADMINISTRATIVE TILILANE ADRAR",
+        "type": "Agence Commerciale",
+        "latitude": "27.878099",
+        "longitude": "-0.273921\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.878099,
+      "lng": -0.273921,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "01"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "049bb6f9df3d8662a41811fbc757e84d3905f819afa8b01f85c1020c8adab735:1",
+      "source_id": "2",
+      "raw": {
+        "id": "2",
+        "code_wilaya": "1",
+        "wilaya": "ADRAR",
+        "commune": "OULED AHMED TIMMI / TAMENTIT",
+        "adresse": "CITE CENTRE VILLE BELKBIR ADRAR",
+        "type": "Point de présence",
+        "latitude": "27.87163",
+        "longitude": "-0.28671\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.87163,
+      "lng": -0.28671,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "01"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "049bb6f9df3d8662a41811fbc757e84d3905f819afa8b01f85c1020c8adab735:2",
+      "source_id": "3",
+      "raw": {
+        "id": "3",
+        "code_wilaya": "1",
+        "wilaya": "ADRAR",
+        "commune": "REGGANE / SALI",
+        "adresse": "CENTRE VILLE REGGANE",
+        "type": "Agence Commerciale",
+        "latitude": "26.71908",
+        "longitude": "0.17324\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 26.71908,
+      "lng": 0.17324,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "01"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "049bb6f9df3d8662a41811fbc757e84d3905f819afa8b01f85c1020c8adab735:3",
+      "source_id": "4",
+      "raw": {
+        "id": "4",
+        "code_wilaya": "1",
+        "wilaya": "ADRAR",
+        "commune": "INZEGMIR / ZAOUITE KOUNTA",
+        "adresse": "ZAOUIET KOUNTA CENTRE",
+        "type": "Point de présence",
+        "latitude": "27.2281861",
+        "longitude": "-0.1915449\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 27.2281861,
+      "lng": -0.1915449,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "01"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "049bb6f9df3d8662a41811fbc757e84d3905f819afa8b01f85c1020c8adab735:4",
+      "source_id": "5",
+      "raw": {
+        "id": "5",
+        "code_wilaya": "1",
+        "wilaya": "ADRAR",
+        "commune": "AOULEF / TIT / AKABELI / TIMEKTANE",
+        "adresse": "CITE CENTRE VILLE AOULEF",
+        "type": "Agence Commerciale",
+        "latitude": "26.972426",
+        "longitude": "1.083798\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 26.972426,
+      "lng": 1.083798,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "01"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}
