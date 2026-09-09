@@ -29,6 +29,7 @@ import {
   validateReviewLedger,
   applyReviewedOverrides,
 } from "../../packages/schema/index.js";
+import { reconcileMjsCurrentWilaya } from "./mjs-current-wilaya.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
  *  whole-directory transaction — a crash between renames can still leave a mix of
@@ -100,7 +101,7 @@ export const named = (rows) => rows.filter((r) => r.name).length;
 export const LINKAGE = "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.";
 
 // canonical leading columns for CSV; domain extras are appended in first-seen order.
-const BASE_COLS = ["id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "source_commune_code", "commune", "commune_ar", "lat", "lng", "geo_precision", "geo_method", "source", "refs"];
+const BASE_COLS = ["id", "name", "name_fr", "name_ar", "wilaya_code", "source_wilaya_code", "commune_code", "source_commune_code", "commune", "commune_ar", "lat", "lng", "geo_precision", "geo_method", "source", "refs"];
 export function colsFor(rows) {
   const base = BASE_COLS.filter((c) => rows.some((r) => c in r));
   const extra = [];
@@ -456,7 +457,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_ar: r.name_ar,
-      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      ...reconcileMjsCurrentWilaya(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
@@ -467,7 +468,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
+      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 121 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria youth institutions", fr: "Établissements de jeunesse d'Algérie", ar: "مؤسسات الشباب الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named_ar: rows.filter((r) => r.name_ar).length }),
     },
@@ -478,7 +479,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: String(r.id).padStart(5, "0"),
       name: r.name,
-      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      ...reconcileMjsCurrentWilaya(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr,
@@ -489,7 +490,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
+      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 255 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria sports facilities", fr: "Infrastructures sportives d'Algérie", ar: "المنشآت الرياضية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named: named(rows) }),
     },

@@ -56,7 +56,7 @@ const houses = jeunesse.institutionsByType("MJ");     // toutes les maisons de j
 | Bloc d'accueil | `BA` | 3 |
 | **Total** | | **2 334** |
 
-Couvrant **58 wilayas**, chaque institution est géocodée. `wilaya_code` est lié au modèle wilaya de
+Couvrant **69 wilayas**, chaque institution est géocodée. `wilaya_code` est lié au modèle wilaya de
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ## Formats

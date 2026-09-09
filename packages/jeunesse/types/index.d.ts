@@ -24,9 +24,10 @@ export interface Institution {
   name_ar: string | null;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code. Currently null for every establishment (the MJS GIS
-   *  gives a commune name only); typed as `string | null` so a future
-   *  populated value is not a breaking change. */
+  /** Ministry wilaya code when it differs from the reconciled current wilaya. */
+  source_wilaya_code?: string;
+  /** Commune (ONS) code where a unique canonical match supports a reconciled
+   *  current wilaya; otherwise null because the SIG supplies only a name. */
   commune_code: string | null;
   /** Commune name (French, uppercase as published). */
   commune: string;

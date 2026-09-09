@@ -164,11 +164,11 @@
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
-      "sha256": "4492aefd2be3b32d828e449dd4ee7dab8b17db4afd5a333c15ab6accab3a1525"
+      "sha256": "a8f3dc16601592e0bc42f0da8500f87a07c104fc9cbdec79878542039d6515a5"
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
-      "sha256": "988e3ddb9716cef98e7e2e5d154474a6f9de180228a05560bd617cf450760b23"
+      "sha256": "48885b6ba9626a6a2a1b6fc43eeeea2aa2e996f674f7df5735b4be1da13e1f75"
     },
     {
       "path": "packages/livraison/data/carriers.json",
@@ -260,11 +260,11 @@
     },
     {
       "path": "packages/sports/data/facilities.json",
-      "sha256": "d664cb3a8da6a2174c7adaeb566837dd5b401e5c91cfd19584e70935dc71ee55"
+      "sha256": "11c4ec1486e29a989d86aca178dba52f0e025346b150e6154029fa9c4ee631f1"
     },
     {
       "path": "packages/sports/data/metadata.json",
-      "sha256": "48cf2c1318a50699c6592397e09e797cbf9d01200e1b12045e8fc76c71b316a8"
+      "sha256": "ed5efe70c1028321e708325cc650402b7715e213f85feb112afba43f9cf1566c"
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 19148,
+  "candidates": 18779,
   "reasons": {
     "approximate_coordinate": 16805,
-    "inside_adjacent_wilaya": 1713,
+    "inside_adjacent_wilaya": 1337,
     "missing_coordinate": 631,
     "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 1943,
+    "outside_declared_wilaya": 1567,
     "shared_coordinate": 1295
   },
   "datasets": [
@@ -1361,12 +1361,12 @@
     {
       "dataset": "jeunesse",
       "total_records": 2334,
-      "candidates": 241,
+      "candidates": 121,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 150,
+        "inside_adjacent_wilaya": 29,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 152,
+        "outside_declared_wilaya": 31,
         "shared_coordinate": 37
       },
       "metadata_path": "packages/jeunesse/data/metadata.json",
@@ -1385,8 +1385,8 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
-        "wilayas_covered": 58,
+        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 121 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "wilayas_covered": 69,
         "bbox": [
           -8.1489,
           19.5666,
@@ -1956,12 +1956,12 @@
     {
       "dataset": "sports",
       "total_records": 5141,
-      "candidates": 428,
+      "candidates": 179,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 303,
+        "inside_adjacent_wilaya": 48,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 304,
+        "outside_declared_wilaya": 49,
         "shared_coordinate": 46
       },
       "metadata_path": "packages/sports/data/metadata.json",
@@ -1980,8 +1980,8 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
-        "wilayas_covered": 58,
+        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 255 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "wilayas_covered": 69,
         "bbox": [
           -8.4324,
           19.5567,
@@ -2464,12 +2464,12 @@
       "dataset": "jeunesse",
       "entity": "institutions.json",
       "total_records": 2334,
-      "candidates": 241,
+      "candidates": 121,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 150,
+        "inside_adjacent_wilaya": 29,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 152,
+        "outside_declared_wilaya": 31,
         "shared_coordinate": 37
       },
       "path": "packages/jeunesse/data/institutions.json"
@@ -2590,12 +2590,12 @@
       "dataset": "sports",
       "entity": "facilities.json",
       "total_records": 5141,
-      "candidates": 428,
+      "candidates": 179,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 303,
+        "inside_adjacent_wilaya": 48,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 304,
+        "outside_declared_wilaya": 49,
         "shared_coordinate": 46
       },
       "path": "packages/sports/data/facilities.json"

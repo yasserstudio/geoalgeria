@@ -74,7 +74,7 @@ const pools = sports.facilitiesByType("P25");       // every 25 m pool
 | Grand stade | `GS` | 1 |
 | **Total** | | **5,141** |
 
-Spanning **58 wilayas**, every facility geocoded, 5,008 to an `exact` point, the
+Spanning **69 wilayas**, every facility geocoded, 5,008 to an `exact` point, the
 remaining 133 `approximate`. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model.
 

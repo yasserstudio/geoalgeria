@@ -56,7 +56,7 @@ const houses = jeunesse.institutionsByType("MJ");     // جميع دور الش�
 | وحدة استقبال | `BA` | 3 |
 | **المجموع** | | **2,334** |
 
-تغطي **58 ولاية**، وكل مؤسسة مُحددة جغرافيًا. `wilaya_code` مرتبط بنموذج الولايات في
+تغطي **69 ولاية**، وكل مؤسسة مُحددة جغرافيًا. `wilaya_code` مرتبط بنموذج الولايات في
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
 
 ## الصيغ

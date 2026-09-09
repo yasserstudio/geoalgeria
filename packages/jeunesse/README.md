@@ -57,7 +57,7 @@ const houses = jeunesse.institutionsByType("MJ");     // every maison de jeunes
 | Bloc d'accueil | `BA` | 3 |
 | **Total** | | **2,334** |
 
-Spanning **58 wilayas**, every establishment geocoded. `wilaya_code` is linked against the
+Spanning **69 wilayas**, every establishment geocoded. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model.
 
 ## Formats

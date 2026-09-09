@@ -13,8 +13,8 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
-  "wilayas_covered": 58,
+  "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 255 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+  "wilayas_covered": 69,
   "bbox": [
     -8.4324,
     19.5567,
