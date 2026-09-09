@@ -12,9 +12,9 @@
 
 </div>
 
-**3,598 5G coverage points** across Algeria, published by the operators' own
+**3,598 5G coverage records** across Algeria, published by the operators' own
 coverage maps, **Djezzy (1,001)**, **Mobilis (2,421)**, and **Ooredoo (176)**,
-each with coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
+with 3,580 publishable coordinates and wilaya/commune linkage. Shipped as JSON, CSV, GeoJSON,
 and TypeScript. Part of [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
 ```bash
@@ -63,6 +63,11 @@ Touggourt).
 > carry several). The circles those maps draw are a fixed display radius, **not
 > measured RF coverage**, treat these as 5G *presence* points, not coverage
 > polygons.
+
+Eighteen Djezzy records remain in the dataset without coordinates because the
+operator's wilaya and site labels contradict its published points. Their review
+receipts are included, while the false points are withheld from JSON map fields
+and GeoJSON until replacement coordinates can be verified.
 
 ## Organization (future-proof)
 

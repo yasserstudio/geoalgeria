@@ -32,6 +32,7 @@ const OFFLINE = process.argv.includes("--cache");
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(PKG, "data");
 const TECH = "5G";
+const SOURCE_MANIFEST_PATH = join(PKG, "..", "..", "sources", "telecom", "manifest.json");
 
 // ── wilaya name → zero-padded code, from the geoalgeria flagship ────────────
 const WILAYAS = JSON.parse(
@@ -363,11 +364,20 @@ async function main() {
     return { file: s.file, rows: perOperator[op].map(s.map) };
   });
   const today = new Date().toISOString().slice(0, 10);
+  // Read after all live extractors finish: writeCapture updates this file, so a
+  // module-start snapshot would stamp fresh data with the previous run's date.
+  const sourceManifest = JSON.parse(readFileSync(SOURCE_MANIFEST_PATH, "utf8"));
+  const sources = cfg.meta.sources.map((source) => {
+    const capture = sourceManifest[`${source.key}-5g`];
+    if (!capture?.retrieved)
+      throw new Error(`source manifest has no retrieval date for ${source.key}-5g`);
+    return { ...source, retrieved: capture.retrieved };
+  });
   const { records, metadata } = writePackageV2({
     pkg: "telecom",
     dir: DATA,
     files,
-    meta: cfg.meta,
+    meta: { ...cfg.meta, sources },
     updated: today,
     retrieved: today,
   });

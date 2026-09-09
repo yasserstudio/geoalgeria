@@ -12,9 +12,9 @@
 
 </div>
 
-**3 598 points de couverture 5G** à travers l'Algérie, publiés à partir des
+**3 598 enregistrements de couverture 5G** à travers l'Algérie, publiés à partir des
 cartes de couverture des opérateurs – **Djezzy (1 001)**, **Mobilis (2 421)** et
-**Ooredoo (176)** – chacun avec ses coordonnées et son rattachement
+**Ooredoo (176)** – avec 3 580 coordonnées publiables et leur rattachement
 wilaya/commune. Distribué en JSON, CSV, GeoJSON et TypeScript. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -65,6 +65,11 @@ Touggourt).
 > plusieurs). Les cercles affichés sur ces cartes ont un rayon fixe d'affichage,
 > **pas une mesure de couverture RF** – considérez-les comme des points de
 > *présence* 5G, et non comme des polygones de couverture.
+
+Dix-huit enregistrements Djezzy restent sans coordonnées : la wilaya et le nom
+du site publiés par l'opérateur contredisent le point affiché. Les justificatifs
+de revue sont conservés, tandis que ces faux points sont retirés des champs
+cartographiques et du GeoJSON jusqu'à vérification de coordonnées de remplacement.
 
 ## Organisation (évolutive)
 

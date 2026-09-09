@@ -268,7 +268,7 @@
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
-      "sha256": "ea8f61c7104c3889e76fec050959a5ca5c7893297ab75f5feb1ab208c6a45a3a"
+      "sha256": "7cabb10d5c2588ad7c499a530f30a4e13b7aed3fdb53265516bd1dab93f2037f"
     },
     {
       "path": "packages/telecom/data/5g-mobilis.json",
@@ -280,7 +280,7 @@
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "a5fa577d4fe73f40fb6701dcdce5d3ade9083caeb4e9d0668c57c996816d5c89"
+      "sha256": "25f0a888dfbd42ad6db12f9e8c270d43e4931cca5191e9d0620aa9764a605dad"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -314,10 +314,9 @@
   "reasons": {
     "approximate_coordinate": 16802,
     "inside_adjacent_wilaya": 1907,
-    "inside_nonadjacent_wilaya": 18,
-    "missing_coordinate": 621,
+    "missing_coordinate": 639,
     "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 2155,
+    "outside_declared_wilaya": 2137,
     "shared_coordinate": 1295
   },
   "datasets": [
@@ -2032,9 +2031,9 @@
       "reasons": {
         "approximate_coordinate": 185,
         "inside_adjacent_wilaya": 44,
-        "inside_nonadjacent_wilaya": 18,
+        "missing_coordinate": 18,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 65,
+        "outside_declared_wilaya": 47,
         "shared_coordinate": 2
       },
       "metadata_path": "packages/telecom/data/metadata.json",
@@ -2045,15 +2044,15 @@
         "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
         "title_en": "Algeria 5G coverage points",
         "record_count": 3598,
-        "geocoded_count": 3598,
-        "geocoded_pct": 100,
+        "geocoded_count": 3580,
+        "geocoded_pct": 99.5,
         "precision": {
-          "exact": 3413,
+          "exact": 3395,
           "approximate": 185
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "5G presence points from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
+        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
         "wilayas_covered": 58,
         "bbox": [
           -8.16521,
@@ -2601,8 +2600,8 @@
       "reasons": {
         "approximate_coordinate": 9,
         "inside_adjacent_wilaya": 12,
-        "inside_nonadjacent_wilaya": 18,
-        "outside_declared_wilaya": 30,
+        "missing_coordinate": 18,
+        "outside_declared_wilaya": 12,
         "shared_coordinate": 2
       },
       "path": "packages/telecom/data/5g-djezzy.json"
