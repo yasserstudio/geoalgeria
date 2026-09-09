@@ -49,11 +49,11 @@
       "schema_version": "2.0.0",
       "title": "Algeria banks & financial institutions",
       "record_count": 1733,
-      "geocoded_count": 1213,
-      "geocoded_pct": 70,
+      "geocoded_count": 1218,
+      "geocoded_pct": 70.3,
       "precision": {
-        "exact": 1145,
-        "approximate": 68
+        "exact": 1148,
+        "approximate": 70
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -62,8 +62,8 @@
         9.577856,
         37.008375
       ],
-      "license": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
-      "updated": "2026-06-16"
+      "license": "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+      "updated": "2026-09-09"
     },
     {
       "package": "@geoalgeria/buses",

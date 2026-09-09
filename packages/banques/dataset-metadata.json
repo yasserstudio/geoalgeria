@@ -4,8 +4,8 @@
   "name": "Algeria banks & financial institutions",
   "alternateName": "Banques et institutions financières d'Algérie",
   "identifier": "@geoalgeria/banques",
-  "description": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
-  "conditionsOfAccess": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+  "description": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,218 carry a geocoded point, including five BDL branches matched to OSM by agency number, bank, wilaya, and locality. The rest remain address-only (see README).",
+  "conditionsOfAccess": "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
   "isAccessibleForFree": true,
   "creator": {
     "@type": "Organization",
@@ -65,11 +65,12 @@
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/geojson/branches.geojson"
     }
   ],
-  "dateModified": "2026-06-16",
+  "dateModified": "2026-09-09",
   "url": "https://geoalgeria.com",
   "sameAs": "https://github.com/yasserstudio/geoalgeria",
   "citation": [
     "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026) — Factual public regulatory listing (Banque d'Algérie)",
-    "Each licensed bank's own branch locator (site/API/KML) — Data © respective banks; redistributed for reference"
+    "Each licensed bank's own branch locator (site/API/KML) — Data © respective banks; redistributed for reference",
+    "OpenStreetMap — reviewed bank coordinate evidence — ODbL 1.0 (© OpenStreetMap contributors)"
   ]
 }

@@ -124,6 +124,27 @@ function matchesExpected(record, expected) {
   });
 }
 
+function patchAlreadyApplied(record, decision, ledger) {
+  if (decision.publish_action !== "patch") return false;
+  const patch = decision.patch ?? {};
+  const unchangedExpected = Object.fromEntries(
+    Object.entries(decision.expect).filter(
+      ([field]) => !Object.prototype.hasOwnProperty.call(patch, field),
+    ),
+  );
+  return (
+    matchesExpected(record, unchangedExpected) &&
+    Object.entries(patch).every(([field, value]) => deepEqual(record[field], value)) &&
+    record.review_status === "corrected" &&
+    record.reviewed_at === (decision.reviewed_at ?? ledger.reviewed_at) &&
+    record.reviewed_by === (decision.reviewer ?? ledger.reviewer) &&
+    deepEqual(
+      record.review_evidence,
+      decision.evidence.map((item) => item.url),
+    )
+  );
+}
+
 function validateEvidence(evidence, path, errors) {
   if (!Array.isArray(evidence)) {
     errors.push(`${path} must be an array`);
@@ -337,6 +358,14 @@ export function applyReviewedOverrides(records, ledger, { file } = {}) {
       throw new Error(
         `review overrides [${file}]: unknown record ${decision.record_id}`,
       );
+    }
+    // Canonical package files are both build inputs and outputs. Accept a patch
+    // that this exact ledger already applied so a second build is reproducible,
+    // while still checking every expected field that the patch did not replace
+    // and the complete review provenance.
+    if (patchAlreadyApplied(match.record, decision, ledger)) {
+      patched += 1;
+      continue;
     }
     for (const field of Object.keys(decision.patch ?? {})) {
       if (

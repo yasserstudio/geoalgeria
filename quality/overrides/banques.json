@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "dataset": "banques",
+  "reviewer": "geoalgeria-evidence-review",
+  "reviewed_at": "2026-09-09",
+  "decisions": [
+    {
+      "file": "branches.json",
+      "record_id": "bdl-142",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "EL KSEUR", "address": "RUE ATTIR SALAH", "bank_id": "bdl", "wilaya_code": "06", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.6797911, "lng": 4.8562265, "geo_precision": "approximate", "geo_method": "osm_way" },
+      "evidence": [
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 142 in El Kseur." },
+        { "url": "https://www.openstreetmap.org/way/1172539020", "checked_at": "2026-09-09", "note": "BDL building with ref 142 on Rue Attir Salah, El Kseur." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "bdl-144",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "TIGZIRT", "address": "CITÉ 150 LOGTS, TIGZIRT", "bank_id": "bdl", "wilaya_code": "15", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.8914736, "lng": 4.1251352, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 144 in Tigzirt." },
+        { "url": "https://www.openstreetmap.org/node/4334599299", "checked_at": "2026-09-09", "note": "BDL point with ref 144 in Tigzirt." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "bdl-182",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "HADJOUT", "address": "63 FETTAKA ALI HADJOUT TIPAZA", "bank_id": "bdl", "wilaya_code": "42", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.5128396, "lng": 2.41712, "geo_precision": "approximate", "geo_method": "osm_way" },
+      "evidence": [
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 182 in Hadjout." },
+        { "url": "https://www.openstreetmap.org/way/1202402578", "checked_at": "2026-09-09", "note": "BDL building with ref 182 in Hadjout." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "bdl-424",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "SIDI ALI", "address": "01, BVD DU 1ER NOVEMBRE SIDI ALI", "bank_id": "bdl", "wilaya_code": "27", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.0974362, "lng": 0.4145834, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 424 in Sidi Ali." },
+        { "url": "https://www.openstreetmap.org/node/3692424906", "checked_at": "2026-09-09", "note": "BDL point with ref 424 in Sidi Ali." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "bdl-433",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "OUED RHIOU", "address": "RUE TAZGHAIT DJILALI OUED RHIOU", "bank_id": "bdl", "wilaya_code": "48", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 35.9605357, "lng": 0.9163278, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 433 in Oued Rhiou." },
+        { "url": "https://www.openstreetmap.org/node/3139374641", "checked_at": "2026-09-09", "note": "BDL point with ref 433 on Rue Tazghat Djillali, Oued Rhiou." }
+      ]
+    }
+  ]
+}

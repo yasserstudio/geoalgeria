@@ -10906,6 +10906,70 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          4.8562265,
+          36.6797911
+        ]
+      },
+      "properties": {
+        "id": "bdl-142",
+        "name": "EL KSEUR",
+        "wilaya_code": "06",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.6797911,
+        "lng": 4.8562265,
+        "geo_precision": "approximate",
+        "geo_method": "osm_way",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "RUE ATTIR SALAH",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/way/1172539020"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.1251352,
+          36.8914736
+        ]
+      },
+      "properties": {
+        "id": "bdl-144",
+        "name": "TIGZIRT",
+        "wilaya_code": "15",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.8914736,
+        "lng": 4.1251352,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "CITÉ 150 LOGTS, TIGZIRT",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/node/4334599299"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           4.0357937,
           36.7093938
         ]
@@ -10974,6 +11038,38 @@
         "bank_id": "bdl",
         "address": "03, PLACE EMIR ABDELKADER ALGER",
         "phone": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.41712,
+          36.5128396
+        ]
+      },
+      "properties": {
+        "id": "bdl-182",
+        "name": "HADJOUT",
+        "wilaya_code": "42",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.5128396,
+        "lng": 2.41712,
+        "geo_precision": "approximate",
+        "geo_method": "osm_way",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "63 FETTAKA ALI HADJOUT TIPAZA",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/way/1202402578"
+        ]
       }
     },
     {
@@ -11149,6 +11245,70 @@
         "bank_id": "bdl",
         "address": "04 RUE BOUGUETTAYA ABDELLAH ORAN",
         "phone": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.4145834,
+          36.0974362
+        ]
+      },
+      "properties": {
+        "id": "bdl-424",
+        "name": "SIDI ALI",
+        "wilaya_code": "27",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.0974362,
+        "lng": 0.4145834,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "01, BVD DU 1ER NOVEMBRE SIDI ALI",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/node/3692424906"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.9163278,
+          35.9605357
+        ]
+      },
+      "properties": {
+        "id": "bdl-433",
+        "name": "OUED RHIOU",
+        "wilaya_code": "48",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.9605357,
+        "lng": 0.9163278,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "bank_locator",
+        "bank_id": "bdl",
+        "address": "RUE TAZGHAIT DJILALI OUED RHIOU",
+        "phone": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+          "https://www.openstreetmap.org/node/3139374641"
+        ]
       }
     },
     {

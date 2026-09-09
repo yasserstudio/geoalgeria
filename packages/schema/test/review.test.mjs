@@ -153,6 +153,61 @@ test("reviewed patches and exclusions apply without mutating source rows", () =>
   });
 });
 
+test("an already-applied patch is reproducible on a second canonical build", () => {
+  const decision = {
+    file: "sante.json",
+    record_id: "sante:16-00001",
+    status: "corrected",
+    publish_action: "patch",
+    expect: { name: "Old name", lat: 36.7657, lng: 3.0587 },
+    patch: { lat: 36.766, lng: 3.059 },
+    evidence,
+  };
+  const first = applyReviewedOverrides(rows, ledger([decision]), {
+    file: "sante.json",
+  });
+  const second = applyReviewedOverrides(first.records, ledger([decision]), {
+    file: "sante.json",
+  });
+
+  assert.deepEqual(second, first);
+});
+
+test("an apparent applied patch still rejects changed baseline fields or provenance", () => {
+  const decision = {
+    file: "sante.json",
+    record_id: "sante:16-00001",
+    status: "corrected",
+    publish_action: "patch",
+    expect: { name: "Old name", address: "Original address", lat: 36.7657 },
+    patch: { lat: 36.766 },
+    evidence,
+  };
+  const baseline = [{ ...rows[0], address: "Original address" }, rows[1]];
+  const applied = applyReviewedOverrides(baseline, ledger([decision]), {
+    file: "sante.json",
+  }).records[0];
+
+  assert.throws(
+    () =>
+      applyReviewedOverrides(
+        [{ ...applied, address: "Relocated address" }, rows[1]],
+        ledger([decision]),
+        { file: "sante.json" },
+      ),
+    /stale decision/,
+  );
+  assert.throws(
+    () =>
+      applyReviewedOverrides(
+        [{ ...applied, reviewed_by: "someone else" }, rows[1]],
+        ledger([decision]),
+        { file: "sante.json" },
+      ),
+    /stale decision/,
+  );
+});
+
 test("stale decisions fail instead of landing on changed upstream data", () => {
   assert.throws(
     () =>

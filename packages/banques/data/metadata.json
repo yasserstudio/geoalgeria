@@ -5,15 +5,15 @@
   "title_ar": "البنوك والمؤسسات المالية الجزائرية",
   "title_en": "Algeria banks & financial institutions",
   "record_count": 1733,
-  "geocoded_count": 1213,
-  "geocoded_pct": 70,
+  "geocoded_count": 1218,
+  "geocoded_pct": 70.3,
   "precision": {
-    "exact": 1145,
-    "approximate": 68
+    "exact": 1148,
+    "approximate": 70
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
+  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,218 carry a geocoded point, including five BDL branches matched to OSM by agency number, bank, wilaya, and locality. The rest remain address-only (see README).",
   "wilayas_covered": 67,
   "bbox": [
     -8.149472,
@@ -50,13 +50,21 @@
       "license": "Data © respective banks; redistributed for reference",
       "retrieved": "2026-06-16",
       "evidence_type": "official"
+    },
+    {
+      "key": "osm",
+      "name": "OpenStreetMap — reviewed bank coordinate evidence",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+      "retrieved": "2026-09-09",
+      "evidence_type": "crowdsourced"
     }
   ],
-  "license": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
-  "updated": "2026-06-16",
+  "license": "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+  "updated": "2026-09-09",
   "banks": 21,
   "institutions": 8,
   "branches": 1704,
-  "branches_geocoded": 1213,
+  "branches_geocoded": 1218,
   "banks_with_branches": 21
 }

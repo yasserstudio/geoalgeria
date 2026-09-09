@@ -37,7 +37,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (by id or acron
 | --- | --- | --- |
 | Banks | **21** | 7 public · 14 foreign-owned – RIB bank code, name FR/AR, ownership + parent, country, SWIFT/BIC, HQ |
 | Financial institutions | **8** | leasing, refinancing & mutual-credit entities (non-deposit) |
-| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,213 geocoded; **67/69 wilayas** |
+| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,218 geocoded; **67/69 wilayas** |
 
 Every record carries `wilaya_code` (head office) linked to the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -62,6 +62,10 @@ Every record carries `wilaya_code` (head office) linked to the
   **Arab Bank** publishes only city-level points (name + coordinates, no address).
   **BDL** and **Trust Bank** come from each bank's published Google My Maps (KML);
   **Citibank**, **HSBC** and **Ziraat** are their single Algiers offices.
+- Five address-only BDL agencies are supplemented with reviewed OpenStreetMap
+  coordinates only where the OSM object carries the same BDL agency number and
+  agrees on the bank, wilaya, and locality. Node points are exact; building
+  centroids are approximate. Each corrected record includes its evidence URLs.
 - **`bank_code`** is the 3-digit RIB _code banque_ (IBAN positions 5–7), verified
   against independent code-banque tables, no single official public register
   exists. BNH and Ziraat (both newly licensed) have no published code yet →
@@ -107,8 +111,8 @@ Full terms: see the project [**DISCLAIMER**](https://github.com/yasserstudio/geo
 
 **Code** (loaders, types): [MIT](LICENSE). **Data**: public factual data
 (regulatory listings + each institution's public locator), redistributed for
-reference; attribution appreciated, and you remain responsible for the terms of the
-original sources.
+reference; reviewed OSM coordinates are © OpenStreetMap contributors under
+ODbL 1.0. You remain responsible for the terms of the original sources.
 
 [API docs & field reference →](https://geoalgeria.com/data/docs/banques) · [Browse all packages →](https://geoalgeria.com/data)
 

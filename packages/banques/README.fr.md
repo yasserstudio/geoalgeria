@@ -38,7 +38,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (par id ou acro
 | --- | --- | --- |
 | Banques | **21** | 7 publiques · 14 à capitaux étrangers – code banque RIB, nom FR/AR, propriété + groupe, pays, SWIFT/BIC, siège |
 | Établissements financiers | **8** | crédit-bail, refinancement et crédit mutuel (non-dépôt) |
-| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 213 géocodées ; **67/69 wilayas** |
+| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 218 géocodées ; **67/69 wilayas** |
 
 Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèle
 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -67,6 +67,10 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   coordonnées, sans adresse). **BDL** et **Trust Bank** proviennent des
   Google My Maps (KML) publiés par chaque banque ; **Citibank**, **HSBC** et
   **Ziraat** correspondent à leur bureau unique à Alger.
+- Cinq agences BDL sans point dans la source sont complétées par des coordonnées
+  OpenStreetMap vérifiées uniquement lorsque l'objet OSM porte le même numéro
+  d'agence BDL et concorde sur la banque, la wilaya et la localité. Chaque
+  correction publie ses liens de preuve.
 - **`bank_code`** est le _code banque_ RIB à 3 chiffres (positions 5–7 de
   l'IBAN), vérifié contre des tables de codes banque indépendantes – il n'existe
   pas de registre officiel public unique. BNH et Ziraat (toutes deux nouvellement
@@ -117,8 +121,8 @@ Conditions complètes : voir le [**DISCLAIMER**](https://github.com/yasserstudio
 
 **Code** (chargeurs, types) : [MIT](LICENSE). **Données** : données factuelles
 publiques (listes réglementaires + localisateur public de chaque établissement),
-redistribuées à titre de référence ; l'attribution est appréciée, et vous restez
-responsable des conditions des sources originales.
+redistribuées à titre de référence. Les coordonnées OSM vérifiées sont © contributeurs
+OpenStreetMap sous ODbL 1.0. Vous restez responsable des conditions des sources originales.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/banques) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
 

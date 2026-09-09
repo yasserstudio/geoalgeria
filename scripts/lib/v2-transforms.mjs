@@ -686,10 +686,11 @@ export const MIGRATIONS = {
       sources: [
         { key: "boa", name: "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: "2026-06-16", evidence_type: "official" },
         { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
+        { key: "osm", name: "OpenStreetMap — reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
       ],
-      license: "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+      license: "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       estimatedUniverse: null,
-      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
+      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,218 carry a geocoded point, including five BDL branches matched to OSM by agency number, bank, wilaya, and locality. The rest remain address-only (see README).",
       titles: { en: "Algeria banks & financial institutions", fr: "Banques et institutions financières d'Algérie", ar: "البنوك والمؤسسات المالية الجزائرية" },
       stats: (rows) => {
         const registry = rows.filter((r) => r.source === "boa");

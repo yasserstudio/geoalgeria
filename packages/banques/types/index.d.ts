@@ -12,7 +12,7 @@ export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How a coordinate was obtained. Only branches ever carry a point — the
  *  registry entries (banks/institutions) are never geocoded. */
-export type GeoMethod = "bank_locator" | null;
+export type GeoMethod = "bank_locator" | "osm_node" | "osm_way" | null;
 
 /** A licensed bank or financial institution — a registry entry (head office
  *  only, not a geocoded premises). */
@@ -83,7 +83,8 @@ export interface Branch {
   /** "exact" when the locator published a point, null when it did not — an
    *  address-only branch carries null coordinates and asserts no precision. */
   geo_precision: GeoPrecision;
-  /** "bank_locator" on a geocoded branch, null on an address-only one. */
+  /** Coordinate method: an official locator point or a reviewed OSM match;
+   *  null on an address-only branch. */
   geo_method: GeoMethod;
   /** Provenance key into `metadata.sources[]` — always "bank_locator". */
   source: "bank_locator";
@@ -91,6 +92,11 @@ export interface Branch {
   bank_id: string;
   address: string | null;
   phone: string | null;
+  /** Present when a versioned evidence review corrected this record. */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

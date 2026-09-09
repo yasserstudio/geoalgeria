@@ -7070,14 +7070,21 @@
     "wilaya_code": "06",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.6797911,
+    "lng": 4.8562265,
+    "geo_precision": "approximate",
+    "geo_method": "osm_way",
     "source": "bank_locator",
     "bank_id": "bdl",
     "address": "RUE ATTIR SALAH",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+      "https://www.openstreetmap.org/way/1172539020"
+    ]
   },
   {
     "id": "bdl-143",
@@ -7100,14 +7107,21 @@
     "wilaya_code": "15",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.8914736,
+    "lng": 4.1251352,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "bdl",
     "address": "CITÉ 150 LOGTS, TIGZIRT",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+      "https://www.openstreetmap.org/node/4334599299"
+    ]
   },
   {
     "id": "bdl-145",
@@ -7595,14 +7609,21 @@
     "wilaya_code": "42",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.5128396,
+    "lng": 2.41712,
+    "geo_precision": "approximate",
+    "geo_method": "osm_way",
     "source": "bank_locator",
     "bank_id": "bdl",
     "address": "63 FETTAKA ALI HADJOUT TIPAZA",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+      "https://www.openstreetmap.org/way/1202402578"
+    ]
   },
   {
     "id": "bdl-183",
@@ -8705,14 +8726,21 @@
     "wilaya_code": "27",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.0974362,
+    "lng": 0.4145834,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "bdl",
     "address": "01, BVD DU 1ER NOVEMBRE SIDI ALI",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+      "https://www.openstreetmap.org/node/3692424906"
+    ]
   },
   {
     "id": "bdl-425",
@@ -8825,14 +8853,21 @@
     "wilaya_code": "48",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 35.9605357,
+    "lng": 0.9163278,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "bdl",
     "address": "RUE TAZGHAIT DJILALI OUED RHIOU",
-    "phone": null
+    "phone": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8",
+      "https://www.openstreetmap.org/node/3139374641"
+    ]
   },
   {
     "id": "bdl-434",
