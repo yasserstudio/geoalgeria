@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { reconcileCurrentWilayaByCommune } from "../scripts/lib/current-wilaya-by-commune.mjs";
+import { canonicalCommuneForOfficialFrenchLabel } from "../scripts/lib/commune-index.mjs";
 
 const load = (pkg, file) =>
   JSON.parse(readFileSync(new URL(`../packages/${pkg}/data/${file}`, import.meta.url), "utf8"));
@@ -15,15 +16,15 @@ const digest = (rows) =>
 const expected = {
   sports: {
     file: "facilities.json",
-    count: 255,
-    digest: "be82341ee2690113d0a2285671b6ad306952f24bc8358be58cdffd8e5ef3beb8",
-    byWilaya: { 59: 66, 60: 40, 61: 13, 62: 12, 63: 16, 64: 15, 65: 30, 66: 16, 67: 30, 68: 16, 69: 1 },
+    count: 267,
+    digest: "5cdebacc7e79db0a9870fa989e51bf4232850bad98398451e888511997b379bd",
+    byWilaya: { 59: 70, 60: 40, 61: 13, 62: 12, 63: 16, 64: 15, 65: 30, 66: 16, 67: 37, 68: 17, 69: 1 },
   },
   jeunesse: {
     file: "institutions.json",
-    count: 121,
-    digest: "8d7d37dc44a18d90166d6057fa2594e38149423ac89437e239b3ef466e816e4c",
-    byWilaya: { 59: 23, 60: 10, 61: 9, 62: 4, 63: 9, 64: 7, 65: 12, 66: 8, 67: 19, 68: 19, 69: 1 },
+    count: 128,
+    digest: "4c137cda5050f9b9ef0be1236e6e8450cb8c47a0a04be0332b02350c7f4dd565",
+    byWilaya: { 59: 25, 60: 10, 61: 9, 62: 4, 63: 9, 64: 7, 65: 12, 66: 8, 67: 23, 68: 20, 69: 1 },
   },
 };
 
@@ -58,4 +59,23 @@ test("MJS reconciliation abstains when the commune label conflicts with the poin
     wilaya_code: "03",
     commune_code: null,
   });
+});
+
+test("official ONS French labels bridge historical spellings through stable commune codes", () => {
+  assert.deepEqual(
+    [
+      ["03", "BEIDHA", "0312", "59"],
+      ["26", "CHAHBOUNIA", "2638", "67"],
+      ["32", "EL ABIODH SIDI CHEIKH", "3207", "69"],
+    ].map(([wilaya, label, communeCode, currentWilaya]) => {
+      const commune = canonicalCommuneForOfficialFrenchLabel(wilaya, label);
+      return [String(commune.code_commune).padStart(4, "0"), String(commune.wilaya_code), communeCode, currentWilaya];
+    }),
+    [
+      ["0312", "59", "0312", "59"],
+      ["2638", "67", "2638", "67"],
+      ["3207", "69", "3207", "69"],
+    ],
+  );
+  assert.equal(canonicalCommuneForOfficialFrenchLabel("03", "not an official commune"), null);
 });

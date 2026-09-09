@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { loadBoundaries, pointInGeometry } from "../../packages/schema/index.js";
 import {
   canonicalCommunes,
+  canonicalCommuneForOfficialFrenchLabel,
   latinNameKey,
   padCommuneCode,
 } from "./commune-index.mjs";
@@ -75,10 +76,18 @@ export function reconcileCurrentWilayaByCommune(record) {
     communesByName.get(latinNameKey(record.commune ?? record.commune_fr)) ?? []
   )
     .filter((commune) => code(commune.wilaya_code) === currentWilaya);
-  if (matches.length !== 1) {
+  const historical = canonicalCommuneForOfficialFrenchLabel(
+    sourceWilaya,
+    record.commune ?? record.commune_fr,
+  );
+  const commune = matches.length === 1
+    ? matches[0]
+    : historical && code(historical.wilaya_code) === currentWilaya
+      ? historical
+      : null;
+  if (!commune) {
     return unchanged();
   }
-  const commune = matches[0];
 
   return {
     wilaya_code: currentWilaya,

@@ -13,7 +13,7 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 121 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+  "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
   "wilayas_covered": 69,
   "bbox": [
     -8.1489,

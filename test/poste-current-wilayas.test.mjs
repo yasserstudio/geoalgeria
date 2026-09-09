@@ -96,14 +96,14 @@ test("live ATM normalization reconciles only corroborated current wilayas", () =
 
 test("ATM reconciliation set is exact and covers every new wilaya", () => {
   const reconciled = atms.filter((atm) => atm.source_wilaya_code);
-  assert.equal(reconciled.length, 79);
+  assert.equal(reconciled.length, 86);
   const byWilaya = {};
   for (const atm of reconciled) {
     byWilaya[atm.wilaya_code] = (byWilaya[atm.wilaya_code] ?? 0) + 1;
   }
   assert.deepEqual(
     byWilaya,
-    { 59: 15, 60: 7, 61: 6, 62: 6, 63: 3, 64: 7, 65: 1, 66: 7, 67: 8, 68: 15, 69: 4 },
+    { 59: 17, 60: 7, 61: 6, 62: 6, 63: 3, 64: 8, 65: 1, 66: 8, 67: 10, 68: 15, 69: 5 },
   );
   assert.ok(reconciled.every((atm) => /^\d{4}$/.test(atm.commune_code)));
   assert.ok(reconciled.every((atm) => atm.source_wilaya_code !== atm.wilaya_code));
@@ -112,5 +112,5 @@ test("ATM reconciliation set is exact and covers every new wilaya", () => {
       reconciled.map((atm) => `${atm.id}->${atm.wilaya_code}`).sort().join("\n"),
     )
     .digest("hex");
-  assert.equal(digest, "443d03276b2adf217f5d1d5f4b107cd15bc4c6e9dacc83a6aa7d4964fe54af77");
+  assert.equal(digest, "221dbdbf885f299aa18408c53543391d926ded7c1a76dcc4883617f9b02ab87e");
 });

@@ -77,7 +77,7 @@ data/
 
 > GeoJSON includes only records that have coordinates, 16 offices and 5 ATMs
 > report no `lat`/`lng` and are omitted there (but remain in JSON/CSV, with
-> `geo_precision`/`geo_method` both `null`). For 79 ATMs, GeoAlgeria supplies a
+> `geo_precision`/`geo_method` both `null`). For 86 ATMs, GeoAlgeria supplies a
 > `commune_code` only where the commune name, mother wilaya, and point agree.
 
 ## Record shapes
@@ -114,7 +114,7 @@ isn't geocoded); `geo_method` names how the point was obtained.
 
 **ATM** – same shape, keyed by `id`/`name`/`wilaya_code`/`postal_code` with
 `lat`/`lng`, plus a `status` field (`"OPEN"`, `"CLOSED (OFFLINE)"`, or the
-undocumented source value `"1"`). `commune_code` is populated for 79
+undocumented source value `"1"`). `commune_code` is populated for 86
 corroborated records and is otherwise `null`; `address` is always `null`.
 
 ## Need the administrative divisions too?
@@ -132,7 +132,7 @@ from the live API; the same run mirrors the data into the `geoalgeria` package s
 the two never drift (this package is the canonical source). Re-fetch periodically.
 BaridiMap still files some records under the 58-wilaya scheme. GeoAlgeria
 reconciles each office through its canonical `commune_code`. It also reconciles
-79 ATMs where the unique French commune name, mother-wilaya relationship, and
+86 ATMs where the unique French commune name, mother-wilaya relationship, and
 sole polygon containment agree. `source_wilaya_code` preserves a differing
 provider value.
 

@@ -164,11 +164,11 @@
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
-      "sha256": "a8f3dc16601592e0bc42f0da8500f87a07c104fc9cbdec79878542039d6515a5"
+      "sha256": "6796334d183aa6235a8a9bb57bd312e05abcb03b18a4e03c3c466a30822ee60f"
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
-      "sha256": "48885b6ba9626a6a2a1b6fc43eeeea2aa2e996f674f7df5735b4be1da13e1f75"
+      "sha256": "07dc7e0360cd28fbc285cb8ce52dbf6ac31be7f001a952b95247cba4b970cd9e"
     },
     {
       "path": "packages/livraison/data/carriers.json",
@@ -228,11 +228,11 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "d489daef73c98d66d777eb63112814f15ace41122e447e7daa5e639e4ae8e816"
+      "sha256": "402b16832137a1cd1cb718df464ec43706b0c7917b638faa87676b71aacee5ec"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "8f6b9b9e10d86cbd7f2b1b36b4fe7a46eccbb44025b0d6c0e12387bdd0431319"
+      "sha256": "198a16d105a5ded118be90d0c4d7dc68934d4da194891c0943f05e19a9a4f6d8"
     },
     {
       "path": "packages/poste/data/postoffices.json",
@@ -260,11 +260,11 @@
     },
     {
       "path": "packages/sports/data/facilities.json",
-      "sha256": "11c4ec1486e29a989d86aca178dba52f0e025346b150e6154029fa9c4ee631f1"
+      "sha256": "6550a97cdb9c919a471190f881dddd0afe0aec08b316a4b05a59bdcf5b9c2a0d"
     },
     {
       "path": "packages/sports/data/metadata.json",
-      "sha256": "ed5efe70c1028321e708325cc650402b7715e213f85feb112afba43f9cf1566c"
+      "sha256": "eb4474c01aab28e5a34de3255425f2b0a57ed652005393376541500e5fdfa6c4"
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
@@ -272,7 +272,7 @@
     },
     {
       "path": "packages/telecom/data/5g-mobilis.json",
-      "sha256": "7d465b51a375ea2e8891fe7d4f89c15f950612f48e1ba9936643e25a37f42192"
+      "sha256": "44bf3a4864d849310bc8f92ff13bcaa668b28d08b8877018b08bfc36a9801171"
     },
     {
       "path": "packages/telecom/data/5g-ooredoo.json",
@@ -280,7 +280,7 @@
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "a7e4308efcc2cd790e3731a70898ffe0ebbca9ed5f26f21f4956573e837f89a4"
+      "sha256": "749b29e283d2d36907c389750b36ddf450b138b81677878660ed561411b31ac6"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 18675,
+  "candidates": 18645,
   "reasons": {
     "approximate_coordinate": 16805,
-    "inside_adjacent_wilaya": 1233,
+    "inside_adjacent_wilaya": 1203,
     "missing_coordinate": 631,
     "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 1463,
+    "outside_declared_wilaya": 1433,
     "shared_coordinate": 1295
   },
   "datasets": [
@@ -1361,12 +1361,12 @@
     {
       "dataset": "jeunesse",
       "total_records": 2334,
-      "candidates": 121,
+      "candidates": 114,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 29,
+        "inside_adjacent_wilaya": 22,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 31,
+        "outside_declared_wilaya": 24,
         "shared_coordinate": 37
       },
       "metadata_path": "packages/jeunesse/data/metadata.json",
@@ -1385,7 +1385,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 121 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.1489,
@@ -1740,12 +1740,12 @@
     {
       "dataset": "poste",
       "total_records": 5934,
-      "candidates": 56,
+      "candidates": 49,
       "reasons": {
-        "inside_adjacent_wilaya": 28,
+        "inside_adjacent_wilaya": 21,
         "missing_coordinate": 21,
         "outside_all_wilaya_boundaries": 7,
-        "outside_declared_wilaya": 35
+        "outside_declared_wilaya": 28
       },
       "metadata_path": "packages/poste/data/metadata.json",
       "metadata": {
@@ -1763,7 +1763,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its unique French commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
+        "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its exact current or official ONS 2021 French commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.165285,
@@ -1956,12 +1956,12 @@
     {
       "dataset": "sports",
       "total_records": 5141,
-      "candidates": 179,
+      "candidates": 167,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 48,
+        "inside_adjacent_wilaya": 36,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 49,
+        "outside_declared_wilaya": 37,
         "shared_coordinate": 46
       },
       "metadata_path": "packages/sports/data/metadata.json",
@@ -1980,7 +1980,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 255 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
+        "coverage_note": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.4324,
@@ -2035,13 +2035,13 @@
     {
       "dataset": "telecom",
       "total_records": 3598,
-      "candidates": 225,
+      "candidates": 221,
       "reasons": {
         "approximate_coordinate": 185,
-        "inside_adjacent_wilaya": 19,
+        "inside_adjacent_wilaya": 15,
         "missing_coordinate": 18,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 22,
+        "outside_declared_wilaya": 18,
         "shared_coordinate": 2
       },
       "metadata_path": "packages/telecom/data/metadata.json",
@@ -2060,8 +2060,8 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 25 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
-        "wilayas_covered": 65,
+        "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 29 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
+        "wilayas_covered": 66,
         "bbox": [
           -8.16521,
           19.562361,
@@ -2464,12 +2464,12 @@
       "dataset": "jeunesse",
       "entity": "institutions.json",
       "total_records": 2334,
-      "candidates": 121,
+      "candidates": 114,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 29,
+        "inside_adjacent_wilaya": 22,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 31,
+        "outside_declared_wilaya": 24,
         "shared_coordinate": 37
       },
       "path": "packages/jeunesse/data/institutions.json"
@@ -2535,12 +2535,12 @@
       "dataset": "poste",
       "entity": "atms.json",
       "total_records": 2026,
-      "candidates": 23,
+      "candidates": 16,
       "reasons": {
-        "inside_adjacent_wilaya": 16,
+        "inside_adjacent_wilaya": 9,
         "missing_coordinate": 5,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 18
+        "outside_declared_wilaya": 11
       },
       "path": "packages/poste/data/atms.json"
     },
@@ -2590,12 +2590,12 @@
       "dataset": "sports",
       "entity": "facilities.json",
       "total_records": 5141,
-      "candidates": 179,
+      "candidates": 167,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 48,
+        "inside_adjacent_wilaya": 36,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 49,
+        "outside_declared_wilaya": 37,
         "shared_coordinate": 46
       },
       "path": "packages/sports/data/facilities.json"
@@ -2618,11 +2618,11 @@
       "dataset": "telecom",
       "entity": "5g-mobilis.json",
       "total_records": 2421,
-      "candidates": 10,
+      "candidates": 6,
       "reasons": {
-        "inside_adjacent_wilaya": 7,
+        "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 10
+        "outside_declared_wilaya": 6
       },
       "path": "packages/telecom/data/5g-mobilis.json"
     },

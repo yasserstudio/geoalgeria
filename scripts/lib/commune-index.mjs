@@ -116,6 +116,15 @@ export function canonicalCommuneForCode(code) {
   return currentByCode.get(padCommuneCode(code)) ?? null;
 }
 
+/** Resolve an exact normalized French label from the official 2021 ONS scope
+ * to that stable commune code's current canonical row. */
+export function canonicalCommuneForOfficialFrenchLabel(wilayaCode, commune) {
+  const historical = officialFrench.get(
+    `${Number(wilayaCode)}|${latinNameKey(commune)}`,
+  );
+  return historical ? canonicalCommuneForCode(historical.code_commune) : null;
+}
+
 export function canonicalCommuneForCurrentLabel(wilayaCode, commune, communeAr = null) {
   const scope = Number(wilayaCode);
   return (

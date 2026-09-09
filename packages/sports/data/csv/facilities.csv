@@ -206,7 +206,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 00205,Aire jeux FB,59,03,0321,OUED MORRA,34.163,2.3241,exact,sig_mjs,mjs,AJF,Aire de jeux football,OUED MORRA,OUED MORRA,200,2009,true,false,1500,1500
 00206,Aire jeux FB,59,03,0310,GUELTAT SIDI SAAD,34.294,1.946,exact,sig_mjs,mjs,AJF,Aire de jeux football,GUELTAT SIDI SAAD,GUELTAT SIDI SAAD,300,,true,false,1800,1800
 00207,Aire jeux FB,03,,,KHENEG,33.7414,2.793,exact,sig_mjs,mjs,AJF,Aire de jeux football,AIN MADHI,KHNEG,300,2007,true,false,1800,1800
-00208,Aire jeux FB,03,,,BEIDHA,34.4809,2.1739,exact,sig_mjs,mjs,AJF,Aire de jeux football,GUELTAT SIDI SAAD,beidha,300,2007,true,false,1800,1800
+00208,Aire jeux FB,59,03,0312,BEIDHA,34.4809,2.1739,exact,sig_mjs,mjs,AJF,Aire de jeux football,GUELTAT SIDI SAAD,beidha,300,2007,true,false,1800,1800
 00209,Aire jeux FB,59,03,0317,TAOUIALA,33.8663,1.8545,exact,sig_mjs,mjs,AJF,Aire de jeux football,BRIDA,taouiala,300,2007,true,false,1800,1800
 00210,Aire jeux FB,59,03,0315,HADJ MECHRI,33.9541,1.598,exact,sig_mjs,mjs,AJF,Aire de jeux football,BRIDA,hadj mechri,300,2007,true,false,1800,1800
 00211,Aire jeux FB,03,,,SIDI MAKHLOUF,34.1525,3.0316,exact,sig_mjs,mjs,AJF,Aire de jeux football,SIDI MAKHLOUF,sidi makhlouf,1800,2007,true,false,1800,1800
@@ -216,7 +216,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 00215,Terrain combiné,03,,,LAGHOUAT,33.8012,2.8522,exact,sig_mjs,mjs,AJF,Aire de jeux football,LAGHOUAT,Laghouat,300,2007,true,false,1800,1800
 00216,bassin de natation,59,03,0311,AIN SIDI ALI,34.157,1.545,exact,sig_mjs,mjs,BN,Bassin de natation,GUELTAT SIDI SAAD,AIN SIDI ALI,115,,true,false,440,1100
 00217,bassin de natation,03,,,SIDI MAKHLOUF,34.1293,3.0184,exact,sig_mjs,mjs,BN,Bassin de natation,SIDI MAKHLOUF,sidi makhlouf,115,,true,false,440,1100
-00218,bassin de natation,03,,,BEIDHA,34.4812,2.1744,exact,sig_mjs,mjs,BN,Bassin de natation,GUELTAT SIDI SAAD,beidha,115,2008,true,false,440,1100
+00218,bassin de natation,59,03,0312,BEIDHA,34.4812,2.1744,exact,sig_mjs,mjs,BN,Bassin de natation,GUELTAT SIDI SAAD,beidha,115,2008,true,false,440,1100
 00219,bassin de natation,03,,,AIN MADHI,33.7978,2.3027,exact,sig_mjs,mjs,BN,Bassin de natation,AIN MADHI,An madhi,115,,true,false,890,1700
 00220,bassin natation,03,,,EL ASSAFIA,33.8284,2.9924,exact,sig_mjs,mjs,BN,Bassin de natation,SIDI MAKHLOUF,EL ASSAFIA,115,,true,false,440,1100
 00221,piscine semi olympique,03,,,LAGHOUAT,33.7875,2.8584,exact,sig_mjs,mjs,P25,Piscine 25 m,LAGHOUAT,Laghouat,110,,true,false,908,2270
@@ -307,7 +307,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 00306,Terrain combiné,03,,,bennacer benchora,33.7502,2.9995,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KSAR EL HIRANE,ben bennacerchora,420,2017,true,false,1000,1500
 00307,Terrain combiné,59,03,0310,GUELTAT SIDI SAAD,34.301,1.9509,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GUELTAT SIDI SAAD,GUELTAT SIDI SAAD,60,2009,true,false,1000,1000
 00308,Terrain combiné,59,03,0319,AFLOU,34.0295,1.9266,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,aflou,60,2007,true,false,1000,1000
-00309,Terrain combiné,03,,,BEIDHA,34.478,2.176,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GUELTAT SIDI SAAD,beidha,60,2007,true,false,1000,1000
+00309,Terrain combiné,59,03,0312,BEIDHA,34.478,2.176,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GUELTAT SIDI SAAD,beidha,60,2007,true,false,1000,1000
 00310,Terrain combiné,59,03,0319,AFLOU,34.1052,2.0772,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AFLOU,AFLOU,60,2007,true,false,1000,1000
 00311,Terrain combiné,03,,,bennacer benchora,33.7857,3.1455,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,KSAR EL HIRANE,ksar elhiran,60,,true,false,1000,1000
 00312,Terrain combiné,59,03,0313,BRIDA,33.9029,1.7812,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BRIDA,BRIDA,60,2009,true,false,1000,1000
@@ -346,7 +346,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 00345,Terrain combiné,59,03,0310,GUELTAT SIDI SAAD,34.2975,1.948,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GUELTAT SIDI SAAD,GUELTAT SIDI SAAD,60,,true,false,1800,1800
 00346,Terrain combiné,59,03,0314,EL GHICHA,33.9294,2.136,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,EL GHICHA,EL GHICHA,60,2007,true,false,1000,1000
 00347,Terrain combiné,03,,,SIDI MAKHLOUF,34.1307,3.0164,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI MAKHLOUF,sidi makhlouf,60,2007,true,false,1000,1000
-00348,Terrain combiné,03,,,BEIDHA,34.4809,2.1791,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GUELTAT SIDI SAAD,beidha,60,2007,true,false,1000,1000
+00348,Terrain combiné,59,03,0312,BEIDHA,34.4809,2.1791,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,GUELTAT SIDI SAAD,beidha,60,2007,true,false,1000,1000
 00349,Terrain combiné,59,03,0313,BRIDA,33.9051,1.7862,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BRIDA,BRIDA,300,2007,true,false,1800,1800
 00350,Terrain combiné,59,03,0317,TAOUIALA,33.8684,1.8578,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BRIDA,taouiala,60,2007,true,false,1000,1000
 00351,Terrain combiné,59,03,0313,BRIDA,33.9076,1.7873,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BRIDA,BRIDA,60,2009,true,false,1000,1000
@@ -2716,7 +2716,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 02715,,67,26,2658,OULED ANTAR,35.9464,2.606,exact,sig_mjs,mjs,PP,Piscine de proximité,OULED ANTAR,Ouled Antar centre,,2018,true,true,1400,4076
 02716,IND,26,,,BENI SLIMANE,36.230623,3.298422,exact,sig_mjs,mjs,PP,Piscine de proximité,BENI SLIMANE,Beni slimane centre,,2025,true,true,1060.96,3365
 02717,IND,67,26,2618,CHELALET EL ADHAOURA,35.942,3.407,exact,sig_mjs,mjs,PP,Piscine de proximité,CHELLALAT EL ADHAOURA,Centre de chellalat,,2025,true,true,1107,3000
-02718,,26,,,OULED MAAREF,35.8219,3.0328,exact,sig_mjs,mjs,SF,Stade de football,AIN BOUCIF,OuledMaaref centre,600,2008,true,true,8100,12814
+02718,,67,26,2603,OULED MAAREF,35.8219,3.0328,exact,sig_mjs,mjs,SF,Stade de football,AIN BOUCIF,OuledMaaref centre,600,2008,true,true,8100,12814
 02719,,26,,,TABLAT,36.4068,3.3202,exact,sig_mjs,mjs,SOMS,Salle OMS,TABLAT,Tablat centre,1000,1997,true,true,4165,8251
 02720,,26,,,BENI SLIMANE,36.227,3.3018,exact,sig_mjs,mjs,SOMS,Salle OMS,BENI SLIMANE,Beni Slimane centre,500,1999,true,false,2225,7503
 02721,,26,,,BERROUAGHIA,36.1328,2.9341,exact,sig_mjs,mjs,SOMS,Salle OMS,BEROUAGHIA,Quartier 1er Novembre Dumez,500,2007,true,true,1865,21283
@@ -2729,7 +2729,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 02728,Chahid Smail Meskene,67,26,2635,KSAR EL BOUKHARI,35.8764,2.7558,exact,sig_mjs,mjs,SOMS,Salle OMS,KSAR EL BOUKHARI,Quartier Zobra,500,2013,true,true,1852,7100
 02729,,26,,,DRAA ESSMAR,36.2975,2.7133,exact,sig_mjs,mjs,SS,Salle spécialisée,MEDEA,Tibhirine,50,2013,true,true,568,1538
 02730,,26,,,MEDEA,36.2622,2.769,exact,sig_mjs,mjs,SS,Salle spécialisée,MEDEA,Rue de L'ALN,50,1982,true,false,1838,1838
-02731,,26,,,CHAHBOUNIA,35.5439,2.6087,exact,sig_mjs,mjs,SS,Salle spécialisée,CHAHBOUNIA,Chahbounia centre,50,2019,true,true,567,2560
+02731,,67,26,2638,CHAHBOUNIA,35.5439,2.6087,exact,sig_mjs,mjs,SS,Salle spécialisée,CHAHBOUNIA,Chahbounia centre,50,2019,true,true,567,2560
 02732,,26,,,BERROUAGHIA,36.1326,2.9346,exact,sig_mjs,mjs,SS,Salle spécialisée,BEROUAGHIA,Quartier 1er Novembre Dumez,50,1980,true,true,896,896
 02733,,26,,,BERROUAGHIA,36.1325,2.9349,exact,sig_mjs,mjs,SS,Salle spécialisée,BEROUAGHIA,Quartier 1er Novembre Dumez,50,1980,true,true,386,386
 02734,,26,,,BOUSKENE,36.1898,3.2343,exact,sig_mjs,mjs,SS,Salle spécialisée,BENI SLIMANE,Bouskene centre,50,2016,true,true,660,841
@@ -2745,11 +2745,11 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 02744,,26,,,MEDEA,36.2619,2.7668,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Rue de l'ALN,,2007,true,true,800,924
 02745,,26,,,MEDEA,36.2625,2.7856,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Quartier Guerguara,,2012,true,true,800,924
 02746,,26,,,ZOUBIRIA,36.0724,2.8993,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SEGHOUANE,Centre ville,,2012,true,true,800,924
-02747,,26,,,CHAHBOUNIA,35.547,2.6202,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Nouveau pole Chahbounia,,2007,true,true,800,924
+02747,,67,26,2638,CHAHBOUNIA,35.547,2.6202,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Nouveau pole Chahbounia,,2007,true,true,800,924
 02748,,26,,,MEZRENNA,36.3351,3.3107,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,TABLAT,Fraction guetatcha,,2010,true,true,800,924
 02749,,26,,,DJOUAB,36.1374,3.4242,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUAGUI,Djouab centre,,2011,true,true,800,924
 02750,,26,,,MEDEA,36.2555,2.7633,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Lotissements Hadj Hamdi,,2012,true,true,800,924
-02751,,26,,,OUM EL DJALIL,35.8268,2.6252,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AZIZ,Oum el Djellil,,2008,true,true,800,924
+02751,,67,26,2642,OUM EL DJALIL,35.8268,2.6252,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AZIZ,Oum el Djellil,,2008,true,true,800,924
 02752,,26,,,DJOUAB,36.1407,3.4296,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUAGUI,Djouab centre,,2011,true,true,800,924
 02753,,26,,,MEDEA,36.261,2.7547,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Cité ouchene,,2009,true,true,800,924
 02754,,26,,,EL HAMDANIA,36.3088,2.7879,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUZERA,Sidi Ali el hamdania,,2009,true,true,800,924
@@ -2765,8 +2765,8 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 02764,,67,26,2610,BOUAICHE,35.5513,2.3602,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Bouaiche centre,,2007,true,true,800,924
 02765,,67,26,2651,BOUGHZOUL,35.6808,2.8209,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Centre ville,,2008,true,true,800,924
 02766,,67,26,2617,KEF LAKHDAR,35.9281,3.293,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Kef Lakhdar centre,,2008,true,true,800,924
-02767,,26,,,OULED MAAREF,35.8149,3.0292,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Ouled Maaref centre,,2008,true,true,800,924
-02768,,26,,,SIDI DAMED,35.8696,3.2533,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Sidi Damed centre,,2008,true,true,800,924
+02767,,67,26,2603,OULED MAAREF,35.8149,3.0292,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Ouled Maaref centre,,2008,true,true,800,924
+02768,,67,26,2631,SIDI DAMED,35.8696,3.2533,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,Sidi Damed centre,,2008,true,true,800,924
 02769,,26,,,EL AOUINET,35.8931,3.0364,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,AIN BOUCIF,El Aouinet centre,,2012,true,true,800,924
 02770,,26,,,BENI SLIMANE,36.2275,3.3023,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SLIMANE,Beni Slimane centre,,2011,true,true,800,924
 02771,,26,,,SIDI ZIANE,36.0344,3.251,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUAGUI,Sidi Ziane centre,,2009,true,true,800,924
@@ -2780,7 +2780,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 02779,,26,,,MEDEA,36.2615,2.7674,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Rue de L'ALN,,2007,true,true,1365,1365
 02780,,26,,,OUAMRI,36.217958,2.573167,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,OUAMRI,Ouled Dilmi foret El Kalitous,,2012,true,true,800,924
 02781,,26,,,SIDI NAAMANE,36.2164,3.1234,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SIDI NAAMANE,Sidi Naamane centre,,2010,true,true,800,924
-02782,,26,,,CHAHBOUNIA,35.5463,2.616,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Chahbounia centre,,2007,true,true,800,924
+02782,,67,26,2638,CHAHBOUNIA,35.5463,2.616,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,CHAHBOUNIA,Chahbounia centre,,2007,true,true,800,924
 02783,,26,,,BENI SLIMANE,36.2296,3.3093,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,BENI SLIMANE,Beni Slimane centre,,2011,true,true,800,924
 02784,,26,,,SOUAGUI,36.1094,3.2413,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,SOUAGUI,Fraction Souk El Djemaa,,2011,true,true,800,924
 02785,,26,,,MEDEA,36.262,2.767,exact,sig_mjs,mjs,TSP,Terrain sportif de proximité,MEDEA,Rue de l'ALN,,1982,true,true,620,620
@@ -2924,7 +2924,7 @@ id,name,wilaya_code,source_wilaya_code,commune_code,commune,lat,lng,geo_precisio
 02923,,28,,,SIDI AISSA,35.874228,3.781643,exact,sig_mjs,mjs,P25,Piscine 25 m,SIDI AISSA,Cité Concorde Commune de Sidi Aissa,250,2017,true,false,1000,2500
 02924,,28,,,M'SILA,35.722,4.532,exact,sig_mjs,mjs,P25,Piscine 25 m,M'SILA,Cité Olympique Commune de M'sila,250,2001,true,true,2000,70000
 02925,,28,,,M'SILA,35.7198,4.5285,exact,sig_mjs,mjs,PA,Piste d'athlétisme,M'SILA,Stade OMS M'sila,5000,2007,true,true,10000,10000
-02926,,28,,,AIN ERRICH,34.681864,4.088442,exact,sig_mjs,mjs,PP,Piscine de proximité,AIN EL MELH,Commune de Ain Erriche,400,2020,true,true,700,1500
+02926,,68,28,2844,AIN ERRICH,34.681864,4.088442,exact,sig_mjs,mjs,PP,Piscine de proximité,AIN EL MELH,Commune de Ain Erriche,400,2020,true,true,700,1500
 02927,,28,,,AIN EL HADJEL,35.668476,3.881631,exact,sig_mjs,mjs,PP,Piscine de proximité,AIN EL HADJEL,Commune de Ain El Hadjel,250,2018,true,true,700,1500
 02928,,68,28,2841,AIN EL MELH,34.850944,4.176778,exact,sig_mjs,mjs,PP,Piscine de proximité,AIN EL MELH,Commune de Ain el Melh,250,2019,true,true,700,1500
 02929,,28,,,SIDI AISSA,35.8922,3.7654,exact,sig_mjs,mjs,SOMS,Salle OMS,SIDI AISSA,Cité 11 Décembre Commune de Sidi Aissa,500,1997,true,true,3500,3500

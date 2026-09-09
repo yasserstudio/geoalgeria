@@ -4,7 +4,7 @@
   "name": "Algeria 5G coverage points",
   "alternateName": "Points de couverture 5G en Algérie",
   "identifier": "@geoalgeria/telecom",
-  "description": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 25 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
+  "description": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 29 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
   "conditionsOfAccess": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.562361 -8.16521 37.026438 10.027122"
     }
   },
-  "variableMeasured": "3598 records, 65 wilayas",
+  "variableMeasured": "3598 records, 66 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",

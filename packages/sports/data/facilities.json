@@ -4563,8 +4563,8 @@
   {
     "id": "00208",
     "name": "Aire jeux FB",
-    "wilaya_code": "03",
-    "commune_code": null,
+    "wilaya_code": "59",
+    "commune_code": "0312",
     "commune": "BEIDHA",
     "lat": 34.4809,
     "lng": 2.1739,
@@ -4580,7 +4580,8 @@
     "operational": true,
     "pmr": false,
     "surface_built_m2": 1800,
-    "surface_land_m2": 1800
+    "surface_land_m2": 1800,
+    "source_wilaya_code": "03"
   },
   {
     "id": "00209",
@@ -4788,8 +4789,8 @@
   {
     "id": "00218",
     "name": "bassin de natation",
-    "wilaya_code": "03",
-    "commune_code": null,
+    "wilaya_code": "59",
+    "commune_code": "0312",
     "commune": "BEIDHA",
     "lat": 34.4812,
     "lng": 2.1744,
@@ -4805,7 +4806,8 @@
     "operational": true,
     "pmr": false,
     "surface_built_m2": 440,
-    "surface_land_m2": 1100
+    "surface_land_m2": 1100,
+    "source_wilaya_code": "03"
   },
   {
     "id": "00219",
@@ -6823,8 +6825,8 @@
   {
     "id": "00309",
     "name": "Terrain combiné",
-    "wilaya_code": "03",
-    "commune_code": null,
+    "wilaya_code": "59",
+    "commune_code": "0312",
     "commune": "BEIDHA",
     "lat": 34.478,
     "lng": 2.176,
@@ -6840,7 +6842,8 @@
     "operational": true,
     "pmr": false,
     "surface_built_m2": 1000,
-    "surface_land_m2": 1000
+    "surface_land_m2": 1000,
+    "source_wilaya_code": "03"
   },
   {
     "id": "00310",
@@ -7696,8 +7699,8 @@
   {
     "id": "00348",
     "name": "Terrain combiné",
-    "wilaya_code": "03",
-    "commune_code": null,
+    "wilaya_code": "59",
+    "commune_code": "0312",
     "commune": "BEIDHA",
     "lat": 34.4809,
     "lng": 2.1791,
@@ -7713,7 +7716,8 @@
     "operational": true,
     "pmr": false,
     "surface_built_m2": 1000,
-    "surface_land_m2": 1000
+    "surface_land_m2": 1000,
+    "source_wilaya_code": "03"
   },
   {
     "id": "00349",
@@ -59990,8 +59994,8 @@
   {
     "id": "02718",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2603",
     "commune": "OULED MAAREF",
     "lat": 35.8219,
     "lng": 3.0328,
@@ -60007,7 +60011,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 8100,
-    "surface_land_m2": 12814
+    "surface_land_m2": 12814,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02719",
@@ -60279,8 +60284,8 @@
   {
     "id": "02731",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2638",
     "commune": "CHAHBOUNIA",
     "lat": 35.5439,
     "lng": 2.6087,
@@ -60296,7 +60301,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 567,
-    "surface_land_m2": 2560
+    "surface_land_m2": 2560,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02732",
@@ -60633,8 +60639,8 @@
   {
     "id": "02747",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2638",
     "commune": "CHAHBOUNIA",
     "lat": 35.547,
     "lng": 2.6202,
@@ -60650,7 +60656,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 800,
-    "surface_land_m2": 924
+    "surface_land_m2": 924,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02748",
@@ -60721,8 +60728,8 @@
   {
     "id": "02751",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2642",
     "commune": "OUM EL DJALIL",
     "lat": 35.8268,
     "lng": 2.6252,
@@ -60738,7 +60745,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 800,
-    "surface_land_m2": 924
+    "surface_land_m2": 924,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02752",
@@ -61078,8 +61086,8 @@
   {
     "id": "02767",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2603",
     "commune": "OULED MAAREF",
     "lat": 35.8149,
     "lng": 3.0292,
@@ -61095,13 +61103,14 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 800,
-    "surface_land_m2": 924
+    "surface_land_m2": 924,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02768",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2631",
     "commune": "SIDI DAMED",
     "lat": 35.8696,
     "lng": 3.2533,
@@ -61117,7 +61126,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 800,
-    "surface_land_m2": 924
+    "surface_land_m2": 924,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02769",
@@ -61409,8 +61419,8 @@
   {
     "id": "02782",
     "name": null,
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2638",
     "commune": "CHAHBOUNIA",
     "lat": 35.5463,
     "lng": 2.616,
@@ -61426,7 +61436,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 800,
-    "surface_land_m2": 924
+    "surface_land_m2": 924,
+    "source_wilaya_code": "26"
   },
   {
     "id": "02783",
@@ -64592,8 +64603,8 @@
   {
     "id": "02926",
     "name": null,
-    "wilaya_code": "28",
-    "commune_code": null,
+    "wilaya_code": "68",
+    "commune_code": "2844",
     "commune": "AIN ERRICH",
     "lat": 34.681864,
     "lng": 4.088442,
@@ -64609,7 +64620,8 @@
     "operational": true,
     "pmr": true,
     "surface_built_m2": 700,
-    "surface_land_m2": 1500
+    "surface_land_m2": 1500,
+    "source_wilaya_code": "28"
   },
   {
     "id": "02927",
