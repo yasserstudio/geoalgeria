@@ -547,7 +547,8 @@ export const MIGRATIONS = {
     files: [
       { file: "postoffices.json", map: (r) => clean({
         id: String(r.id), name: r.name, name_ar: r.name_ar,
-        wilaya_code: r.wilaya_code, commune_code: r.commune_code || null,
+        wilaya_code: r.wilaya_code, source_wilaya_code: r.source_wilaya_code,
+        commune_code: r.commune_code || null,
         source_commune_code: r.source_commune_code,
         commune: r.commune_fr, commune_ar: r.commune_ar,
         ...geoExact(r, "baridimap"),
@@ -567,7 +568,7 @@ export const MIGRATIONS = {
       sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference" }],
       license: "Data © Algérie Poste; redistributed for reference",
       estimatedUniverse: null,
-      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
+      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns offices to the pre-2026 58-wilaya scheme; office wilaya_code is reconciled through its canonical commune_code to the current 69-wilaya scheme, while source_wilaya_code preserves the provider value when it differs. ATM wilaya linkage remains as published because the source supplies no stable commune code for ATMs.",
       titles: { en: "Algeria post offices & ATMs", fr: "Bureaux de poste et GAB d'Algérie", ar: "مكاتب البريد والصرافات الآلية الجزائرية" },
       stats: (rows) => ({ distinct_postal_codes: new Set(rows.map((r) => r.postal_code).filter(Boolean)).size }),
     },

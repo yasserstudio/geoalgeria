@@ -29,6 +29,9 @@ export interface PostOffice {
   name_ar: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
+  /** Algérie Poste's pre-reform wilaya code when the commune now belongs to a
+   *  wilaya created in 2026. Omitted when it matches `wilaya_code`. */
+  source_wilaya_code?: string;
   /** Commune (ONS) code as a 4-digit string. */
   commune_code: string;
   /** Algérie Poste's provider-native commune code when it differs from the

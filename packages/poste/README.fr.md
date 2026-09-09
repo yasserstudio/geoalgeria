@@ -131,9 +131,11 @@ Les données proviennent d'**Algérie Poste** via l'API publique BaridiMap
 (<https://baridimap.poste.dz>). Exécutez `npm run fetch` pour régénérer toutes
 les sorties à partir de l'API en direct ; la même exécution reflète les données
 dans le paquet `geoalgeria` pour que les deux ne divergent jamais (ce paquet est
-la source canonique). Relancez périodiquement – BaridiMap classe toujours les
-bureaux selon le schéma à 58 wilayas, donc les nouvelles wilayas 59–69
-apparaissent actuellement sous leur wilaya mère.
+la source canonique). Relancez périodiquement. BaridiMap classe toujours les
+bureaux selon le schéma à 58 wilayas ; GeoAlgeria les rattache à la wilaya
+actuelle via leur `commune_code` canonique et conserve la valeur du fournisseur
+dans `source_wilaya_code` lorsqu'elle diffère. Le rattachement des DAB reste
+celui publié, car BaridiMap ne fournit pas de code communal stable pour eux.
 
 ## Licence et attribution
 

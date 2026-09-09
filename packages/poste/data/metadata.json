@@ -13,8 +13,8 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
-  "wilayas_covered": 58,
+  "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns offices to the pre-2026 58-wilaya scheme; office wilaya_code is reconciled through its canonical commune_code to the current 69-wilaya scheme, while source_wilaya_code preserves the provider value when it differs. ATM wilaya linkage remains as published because the source supplies no stable commune code for ATMs.",
+  "wilayas_covered": 69,
   "bbox": [
     -8.165285,
     19.562719,

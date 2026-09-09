@@ -130,8 +130,11 @@ Data comes from **Algérie Poste** via the public BaridiMap API
 (<https://baridimap.poste.dz>). Run `npm run fetch` to regenerate every output
 from the live API; the same run mirrors the data into the `geoalgeria` package so
 the two never drift (this package is the canonical source). Re-fetch periodically.
-BaridiMap still files offices under the 58-wilaya scheme, so new wilayas 59–69
-currently appear under their mother wilaya.
+BaridiMap still files offices under the 58-wilaya scheme. GeoAlgeria reconciles
+each office through its canonical `commune_code`, publishes the current wilaya
+59–69 in `wilaya_code`, and preserves the provider value in
+`source_wilaya_code` when they differ. ATM wilaya linkage remains as published
+because BaridiMap supplies no stable commune code for ATMs.
 
 ## License & attribution
 

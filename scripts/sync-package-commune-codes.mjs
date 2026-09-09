@@ -62,6 +62,18 @@ function replaceWilayaCode(record, wilayaCode) {
   );
 }
 
+function replacePosteWilayaCode(record, wilayaCode, sourceWilayaCode) {
+  const next = {};
+  for (const [key, value] of Object.entries(record)) {
+    if (key === "source_wilaya_code") continue;
+    next[key] = key === "wilaya_code" ? wilayaCode : value;
+    if (key === "wilaya_code" && sourceWilayaCode !== wilayaCode) {
+      next.source_wilaya_code = sourceWilayaCode;
+    }
+  }
+  return next;
+}
+
 function render(dataDir, file, rows) {
   const base = file.replace(/\.json$/, "");
   return [
@@ -126,14 +138,20 @@ const offices = JSON.parse(readFileSync(join(posteDir, posteFile), "utf8"));
 let posteChanged = 0;
 const normalizedOffices = offices.map((record) => {
   const raw = record.source_commune_code ?? record.commune_code;
+  const sourceWilayaCode = record.source_wilaya_code ?? record.wilaya_code;
   const normalized = normalizeProviderCommune({
-    wilayaCode: record.wilaya_code,
+    wilayaCode: sourceWilayaCode,
     commune: record.commune,
     communeAr: record.commune_ar,
     sourceCode: raw,
   });
+  const currentCommune = canonicalCommuneForCode(normalized.commune_code);
+  if (!currentCommune) {
+    throw new Error(`poste/${posteFile} id=${record.id}: unknown canonical commune ${normalized.commune_code}`);
+  }
+  const currentWilayaCode = String(currentCommune.wilaya_code).padStart(2, "0");
   const next = replaceCommuneFields(
-    record,
+    replacePosteWilayaCode(record, currentWilayaCode, sourceWilayaCode),
     normalized.commune_code,
     normalized.source_commune_code,
   );
