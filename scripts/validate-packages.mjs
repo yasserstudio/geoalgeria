@@ -1351,6 +1351,9 @@ function validateTypes(pkgs) {
       }
     };
 
+    // A shared interface describes the union of its entity files. Optional
+    // review fields may occur in one operator's records but not the others.
+    const byInterface = new Map();
     for (const [file, iname] of Object.entries(files)) {
       let rows;
       try {
@@ -1360,8 +1363,12 @@ function validateTypes(pkgs) {
         fail(`${pkg}/${file}: cannot read for the types check — ${e.message}`);
         continue;
       }
-      check(file, iname, rows);
+      const group = byInterface.get(iname) ?? { files: [], rows: [] };
+      group.files.push(file);
+      group.rows.push(...rows);
+      byInterface.set(iname, group);
     }
+    for (const [iname, group] of byInterface) check(group.files.join(" + "), iname, group.rows);
     try {
       check("metadata.json", "Metadata", [readJson(join(dataDir, "metadata.json"))]);
     } catch (e) {

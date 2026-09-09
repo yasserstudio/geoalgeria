@@ -28015,7 +28015,7 @@
       "properties": {
         "id": "mobilis-713f5213c0",
         "name": "TAKHMARET",
-        "wilaya_code": "22",
+        "wilaya_code": "14",
         "commune_code": null,
         "commune": "TAKHMARET",
         "commune_ar": "تخمرت",
@@ -28026,7 +28026,14 @@
         "source": "mobilis",
         "operator": "mobilis",
         "technology": "5G",
-        "address": null
+        "address": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://mobilis.dz/map/5g/data",
+          "https://www.joradp.dz/FTP/jo-francais/2008/F2008051.PDF"
+        ]
       }
     },
     {
@@ -62751,7 +62758,7 @@
       "properties": {
         "id": "mobilis-ff1371b891",
         "name": "TAOURA",
-        "wilaya_code": "42",
+        "wilaya_code": "41",
         "commune_code": null,
         "commune": "TAOURA",
         "commune_ar": "تاورة",
@@ -62762,7 +62769,14 @@
         "source": "mobilis",
         "operator": "mobilis",
         "technology": "5G",
-        "address": null
+        "address": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-09",
+        "reviewed_by": "geoalgeria-evidence-review",
+        "review_evidence": [
+          "https://mobilis.dz/map/5g/data",
+          "https://www.joradp.dz/FTP/jo-francais/2024/F2024054.pdf"
+        ]
       }
     },
     {

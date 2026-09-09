@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "dataset": "telecom",
+  "reviewer": "geoalgeria-evidence-review",
+  "reviewed_at": "2026-09-09",
+  "decisions": [
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-713f5213c0",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "TAKHMARET",
+        "commune": "TAKHMARET",
+        "lat": 35.198791,
+        "lng": 0.61084
+      },
+      "patch": {
+        "wilaya_code": "14"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2008/F2008051.PDF",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-ff1371b891",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "42",
+        "name": "TAOURA",
+        "commune": "TAOURA",
+        "lat": 36.151971,
+        "lng": 8.00535
+      },
+      "patch": {
+        "wilaya_code": "41"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2024/F2024054.pdf",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    }
+  ]
+}

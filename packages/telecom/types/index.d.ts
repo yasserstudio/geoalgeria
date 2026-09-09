@@ -54,6 +54,11 @@ export interface CoverageSite {
   technology: Technology;
   /** Street address, or null when the source gives none. */
   address: string | null;
+  /** Present only when an evidence-backed correction was applied. */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */
