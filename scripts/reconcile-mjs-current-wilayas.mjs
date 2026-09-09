@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { reconcileMjsCurrentWilaya } from "./lib/mjs-current-wilaya.mjs";
+import { reconcileCurrentWilayaByCommune } from "./lib/current-wilaya-by-commune.mjs";
 import { MIGRATIONS, writePackageV2 } from "./lib/v2-transforms.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -19,7 +19,7 @@ for (const { pkg, file } of targets) {
   const input = JSON.parse(readFileSync(join(dir, file), "utf8"));
   let changed = 0;
   const rows = input.map((record) => {
-    const linkage = reconcileMjsCurrentWilaya(record);
+    const linkage = reconcileCurrentWilayaByCommune(record);
     if (linkage.wilaya_code !== record.wilaya_code) changed++;
     const next = { ...record, ...linkage };
     if (linkage.source_wilaya_code == null) delete next.source_wilaya_code;

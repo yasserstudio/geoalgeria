@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import { reconcileMjsCurrentWilaya } from "../scripts/lib/mjs-current-wilaya.mjs";
+import { reconcileCurrentWilayaByCommune } from "../scripts/lib/current-wilaya-by-commune.mjs";
 
 const load = (pkg, file) =>
   JSON.parse(readFileSync(new URL(`../packages/${pkg}/data/${file}`, import.meta.url), "utf8"));
@@ -41,7 +41,7 @@ for (const [pkg, config] of Object.entries(expected)) {
     assert.deepEqual(byWilaya, config.byWilaya);
     for (const row of reconciled) {
       assert.match(row.commune_code, /^\d{4}$/);
-      assert.deepEqual(reconcileMjsCurrentWilaya(row), {
+      assert.deepEqual(reconcileCurrentWilayaByCommune(row), {
         wilaya_code: row.wilaya_code,
         source_wilaya_code: row.source_wilaya_code,
         commune_code: row.commune_code,
@@ -54,7 +54,7 @@ test("MJS reconciliation abstains when the commune label conflicts with the poin
   const aflouConflict = load("sports", "facilities.json").find(({ id }) => id === "00277");
   assert.equal(aflouConflict.commune, "AFLOU");
   assert.equal(aflouConflict.wilaya_code, "03");
-  assert.deepEqual(reconcileMjsCurrentWilaya(aflouConflict), {
+  assert.deepEqual(reconcileCurrentWilayaByCommune(aflouConflict), {
     wilaya_code: "03",
     commune_code: null,
   });

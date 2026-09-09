@@ -228,11 +228,11 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "60b489d3e4e87102783d66c9469db37b216550369e1fe66cd205c1979ba5b2d6"
+      "sha256": "d489daef73c98d66d777eb63112814f15ace41122e447e7daa5e639e4ae8e816"
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "d8c006f756e9eb3e46800e9e07a49452a9f5d2ef4dc1b4a1447d03e58efcb40c"
+      "sha256": "8f6b9b9e10d86cbd7f2b1b36b4fe7a46eccbb44025b0d6c0e12387bdd0431319"
     },
     {
       "path": "packages/poste/data/postoffices.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 18779,
+  "candidates": 18700,
   "reasons": {
     "approximate_coordinate": 16805,
-    "inside_adjacent_wilaya": 1337,
+    "inside_adjacent_wilaya": 1258,
     "missing_coordinate": 631,
     "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 1567,
+    "outside_declared_wilaya": 1488,
     "shared_coordinate": 1295
   },
   "datasets": [
@@ -1740,12 +1740,12 @@
     {
       "dataset": "poste",
       "total_records": 5934,
-      "candidates": 135,
+      "candidates": 56,
       "reasons": {
-        "inside_adjacent_wilaya": 107,
+        "inside_adjacent_wilaya": 28,
         "missing_coordinate": 21,
         "outside_all_wilaya_boundaries": 7,
-        "outside_declared_wilaya": 114
+        "outside_declared_wilaya": 35
       },
       "metadata_path": "packages/poste/data/metadata.json",
       "metadata": {
@@ -1763,7 +1763,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns offices to the pre-2026 58-wilaya scheme; office wilaya_code is reconciled through its canonical commune_code to the current 69-wilaya scheme, while source_wilaya_code preserves the provider value when it differs. ATM wilaya linkage remains as published because the source supplies no stable commune code for ATMs.",
+        "coverage_note": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its unique French commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
         "wilayas_covered": 69,
         "bbox": [
           -8.165285,
@@ -2535,12 +2535,12 @@
       "dataset": "poste",
       "entity": "atms.json",
       "total_records": 2026,
-      "candidates": 102,
+      "candidates": 23,
       "reasons": {
-        "inside_adjacent_wilaya": 95,
+        "inside_adjacent_wilaya": 16,
         "missing_coordinate": 5,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 97
+        "outside_declared_wilaya": 18
       },
       "path": "packages/poste/data/atms.json"
     },

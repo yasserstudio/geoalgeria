@@ -38,10 +38,10 @@ const code = (value) =>
   value == null || value === "" ? null : String(value).padStart(2, "0");
 
 /**
- * Reconcile an MJS record only when its unique canonical commune, the
- * pre-reform mother-wilaya code, and polygon containment all agree.
+ * Reconcile a record only when its unique canonical commune, the pre-reform
+ * mother-wilaya code, and polygon containment all agree.
  */
-export function reconcileMjsCurrentWilaya(record) {
+export function reconcileCurrentWilayaByCommune(record) {
   const publishedWilaya = code(record.wilaya_code);
   const sourceWilaya = code(record.source_wilaya_code ?? record.wilaya_code);
   const unchanged = () => ({
@@ -71,7 +71,9 @@ export function reconcileMjsCurrentWilaya(record) {
     return unchanged();
   }
 
-  const matches = (communesByName.get(latinNameKey(record.commune)) ?? [])
+  const matches = (
+    communesByName.get(latinNameKey(record.commune ?? record.commune_fr)) ?? []
+  )
     .filter((commune) => code(commune.wilaya_code) === currentWilaya);
   if (matches.length !== 1) {
     return unchanged();

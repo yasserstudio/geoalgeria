@@ -17,6 +17,7 @@ import {
   canonicalCommuneForCode,
   normalizeProviderCommune,
 } from "../../../scripts/lib/commune-index.mjs";
+import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Canonical output for this package, plus the byte-identical mirror inside the
@@ -88,8 +89,8 @@ export function normPostOffice(o) {
   };
 }
 
-function normAtm(a) {
-  return {
+export function normAtm(a) {
+  const record = {
     id: clean(a.atm_id),
     name: a.name ?? null,
     status: clean(a.status),
@@ -104,6 +105,7 @@ function normAtm(a) {
     lat: num(a.latitude),
     lng: num(a.longitude),
   };
+  return { ...record, ...reconcileCurrentWilayaByCommune(record) };
 }
 
 // --- main ------------------------------------------------------------------

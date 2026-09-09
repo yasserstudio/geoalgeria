@@ -1,8 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 
 import offices from "../packages/poste/data/postoffices.json" with { type: "json" };
-import { normPostOffice } from "../packages/poste/scripts/fetch.mjs";
+import atms from "../packages/poste/data/atms.json" with { type: "json" };
+import { normAtm, normPostOffice } from "../packages/poste/scripts/fetch.mjs";
 import { canonicalCommuneForCode } from "../scripts/lib/commune-index.mjs";
 import { MIGRATIONS } from "../scripts/lib/v2-transforms.mjs";
 
@@ -67,4 +69,48 @@ test("post offices cover every new wilaya and preserve BaridiMap's source code",
   assert.ok(
     reconciled.every((office) => office.source_wilaya_code !== office.wilaya_code),
   );
+});
+
+test("live ATM normalization reconciles only corroborated current wilayas", () => {
+  const atm = normAtm({
+    atm_id: 1055,
+    name: "BOUSSAADA INDOOR",
+    status: "OPEN",
+    commune_fr: "BOU SAADA",
+    commune_ar: "بوسعادة",
+    wilaya_id: 28,
+    latitude: 35.2131437,
+    longitude: 4.180336,
+  });
+  assert.equal(atm.wilaya_code, "68");
+  assert.equal(atm.source_wilaya_code, "28");
+  assert.equal(atm.commune_code, "2820");
+
+  const publish = MIGRATIONS.poste.files.find(
+    (entry) => entry.file === "atms.json",
+  ).map(atm);
+  assert.equal(publish.wilaya_code, "68");
+  assert.equal(publish.source_wilaya_code, "28");
+  assert.equal(publish.commune_code, "2820");
+});
+
+test("ATM reconciliation set is exact and covers every new wilaya", () => {
+  const reconciled = atms.filter((atm) => atm.source_wilaya_code);
+  assert.equal(reconciled.length, 79);
+  const byWilaya = {};
+  for (const atm of reconciled) {
+    byWilaya[atm.wilaya_code] = (byWilaya[atm.wilaya_code] ?? 0) + 1;
+  }
+  assert.deepEqual(
+    byWilaya,
+    { 59: 15, 60: 7, 61: 6, 62: 6, 63: 3, 64: 7, 65: 1, 66: 7, 67: 8, 68: 15, 69: 4 },
+  );
+  assert.ok(reconciled.every((atm) => /^\d{4}$/.test(atm.commune_code)));
+  assert.ok(reconciled.every((atm) => atm.source_wilaya_code !== atm.wilaya_code));
+  const digest = createHash("sha256")
+    .update(
+      reconciled.map((atm) => `${atm.id}->${atm.wilaya_code}`).sort().join("\n"),
+    )
+    .digest("hex");
+  assert.equal(digest, "443d03276b2adf217f5d1d5f4b107cd15bc4c6e9dacc83a6aa7d4964fe54af77");
 });

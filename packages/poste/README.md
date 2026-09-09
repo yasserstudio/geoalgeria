@@ -77,8 +77,8 @@ data/
 
 > GeoJSON includes only records that have coordinates, 16 offices and 5 ATMs
 > report no `lat`/`lng` and are omitted there (but remain in JSON/CSV, with
-> `geo_precision`/`geo_method` both `null`). ATM records carry `commune_code`
-> as `null` (the source API doesn't resolve ATMs to a commune code).
+> `geo_precision`/`geo_method` both `null`). For 79 ATMs, GeoAlgeria supplies a
+> `commune_code` only where the commune name, mother wilaya, and point agree.
 
 ## Record shapes
 
@@ -114,8 +114,8 @@ isn't geocoded); `geo_method` names how the point was obtained.
 
 **ATM** – same shape, keyed by `id`/`name`/`wilaya_code`/`postal_code` with
 `lat`/`lng`, plus a `status` field (`"OPEN"`, `"CLOSED (OFFLINE)"`, or the
-undocumented source value `"1"`); `commune_code` and `address` are always
-`null` (the source doesn't resolve them for ATMs).
+undocumented source value `"1"`). `commune_code` is populated for 79
+corroborated records and is otherwise `null`; `address` is always `null`.
 
 ## Need the administrative divisions too?
 
@@ -130,11 +130,11 @@ Data comes from **Algérie Poste** via the public BaridiMap API
 (<https://baridimap.poste.dz>). Run `npm run fetch` to regenerate every output
 from the live API; the same run mirrors the data into the `geoalgeria` package so
 the two never drift (this package is the canonical source). Re-fetch periodically.
-BaridiMap still files offices under the 58-wilaya scheme. GeoAlgeria reconciles
-each office through its canonical `commune_code`, publishes the current wilaya
-59–69 in `wilaya_code`, and preserves the provider value in
-`source_wilaya_code` when they differ. ATM wilaya linkage remains as published
-because BaridiMap supplies no stable commune code for ATMs.
+BaridiMap still files some records under the 58-wilaya scheme. GeoAlgeria
+reconciles each office through its canonical `commune_code`. It also reconciles
+79 ATMs where the unique French commune name, mother-wilaya relationship, and
+sole polygon containment agree. `source_wilaya_code` preserves a differing
+provider value.
 
 ## License & attribution
 

@@ -29,7 +29,7 @@ import {
   validateReviewLedger,
   applyReviewedOverrides,
 } from "../../packages/schema/index.js";
-import { reconcileMjsCurrentWilaya } from "./mjs-current-wilaya.mjs";
+import { reconcileCurrentWilayaByCommune } from "./current-wilaya-by-commune.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
  *  whole-directory transaction — a crash between renames can still leave a mix of
@@ -457,7 +457,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_ar: r.name_ar,
-      ...reconcileMjsCurrentWilaya(r), commune: r.commune,
+      ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
@@ -479,7 +479,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: String(r.id).padStart(5, "0"),
       name: r.name,
-      ...reconcileMjsCurrentWilaya(r), commune: r.commune,
+      ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr,
@@ -558,7 +558,7 @@ export const MIGRATIONS = {
       }) },
       { file: "atms.json", map: (r) => clean({
         id: String(r.id), name: r.name,
-        wilaya_code: r.wilaya_code, commune_code: null,
+        ...reconcileCurrentWilayaByCommune(r),
         commune: r.commune_fr, commune_ar: r.commune_ar,
         ...geoExact(r, "baridimap"),
         source: "baridimap",
@@ -569,7 +569,7 @@ export const MIGRATIONS = {
       sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference" }],
       license: "Data © Algérie Poste; redistributed for reference",
       estimatedUniverse: null,
-      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns offices to the pre-2026 58-wilaya scheme; office wilaya_code is reconciled through its canonical commune_code to the current 69-wilaya scheme, while source_wilaya_code preserves the provider value when it differs. ATM wilaya linkage remains as published because the source supplies no stable commune code for ATMs.",
+      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its unique French commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
       titles: { en: "Algeria post offices & ATMs", fr: "Bureaux de poste et GAB d'Algérie", ar: "مكاتب البريد والصرافات الآلية الجزائرية" },
       stats: (rows) => ({ distinct_postal_codes: new Set(rows.map((r) => r.postal_code).filter(Boolean)).size }),
     },

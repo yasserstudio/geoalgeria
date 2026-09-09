@@ -70,9 +70,9 @@ export interface Atm {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code. Currently null for every ATM (the source resolves ATMs
-   *  to a commune name only); typed as `string | null` so a future populated
-   *  value is not a breaking change. */
+  /** Provider wilaya code when it differs from the reconciled current code. */
+  source_wilaya_code?: string;
+  /** Commune (ONS) code when the name, mother wilaya, and point agree. */
   commune_code: string | null;
   /** Commune name (French). */
   commune: string;
