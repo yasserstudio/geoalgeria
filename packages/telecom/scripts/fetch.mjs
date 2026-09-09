@@ -24,6 +24,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
+import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
 // Offline replay: rebuild from the committed captures with no network — a dead
 // or WAF-blocked operator site never blocks re-emission.
@@ -229,7 +230,7 @@ async function fetchMobilis() {
       continue;
     }
     seen.add(siteId);
-    sites.push({
+    const site = {
       id: siteId,
       technology: TECH,
       operator: "mobilis",
@@ -242,7 +243,8 @@ async function fetchMobilis() {
       lat,
       lng,
       source: "https://mobilis.dz/map/5g",
-    });
+    };
+    sites.push({ ...site, ...reconcileCurrentWilayaByCommune(site) });
   }
   if (sites.length === 0) throw new Error("got 0 Mobilis sites");
   return sites;

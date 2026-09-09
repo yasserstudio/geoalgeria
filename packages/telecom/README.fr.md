@@ -55,8 +55,9 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Mobilis | **2 421** | site cellulaire | mobilis.dz/map/5g |
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
-Couvrant **58 wilayas** (y compris les nouvelles wilayas comme Timimoun, In Salah,
-Touggourt).
+Couvrant **65 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
+découpage à 58 wilayas ; 25 points Mobilis sont réaffectés de façon sûre à sept
+nouvelles wilayas.
 
 > **Ce qu'est un point :** chaque enregistrement est un point publié sur la
 > carte de couverture 5G de l'opérateur. Djezzy et Mobilis publient des
@@ -115,8 +116,10 @@ propres à la couverture :
 ```
 
 `id` est une clé déterministe `{operator}-{coordinate-hash}`, stable d'une
-extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code` de
-GeoAlgeria. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
+extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code`
+actuel de GeoAlgeria. Pour 25 enregistrements Mobilis, `source_wilaya_code`
+conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
+qui confirme la correction. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
 n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
 que le nom de la commune). Pour Ooredoo, `name` est la commune couverte et les
 points sont `approximate` (`operator_commune_point`) : un point par commune
@@ -138,7 +141,9 @@ session navigateur réelle (le site d'Ooredoo s'authentifie lui-même ; cette
 étape nécessite le CLI
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) dans le `PATH`).
 Tout est normalisé en un schéma unique avec `wilaya_code` résolu vers les codes
-GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas. Les écritures sont
+GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas ; un point Mobilis
+n'est affecté à une nouvelle wilaya que si une correspondance communale unique
+et le polygone concordent. Les écritures sont
 tout-ou-rien : un opérateur en échec n'écrase jamais des données valides
 commitées avec un jeu partiel.
 

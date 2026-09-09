@@ -136,15 +136,19 @@ const tourThermal = (prefix) => (r) => clean({
 
 // telecom 5G presence points share one row shape; only the geo treatment differs
 // per operator (Djezzy/Mobilis publish cell sites, Ooredoo covered communes).
-const telecom5g = (geo) => (r) =>
-  clean({
+const telecom5g = (geo, reconcileWilaya = false) => (r) => {
+  const linkage = reconcileWilaya
+    ? reconcileCurrentWilayaByCommune(r)
+    : { wilaya_code: wcode(r.wilaya_code), commune_code: r.commune_code ?? null };
+  return clean({
     id: r.id, name: r.name,
-    wilaya_code: wcode(r.wilaya_code), commune_code: null,
+    ...linkage,
     commune: r.commune, commune_ar: r.commune_ar,
     ...geo(r),
     source: r.operator,
     operator: r.operator, technology: r.technology, address: r.address,
   });
+};
 
 // --- per-package migrations -------------------------------------------------
 export const MIGRATIONS = {
@@ -854,7 +858,7 @@ export const MIGRATIONS = {
     // (5g-*) AND on every record, so a future 4G is purely additive.
     files: [
       { file: "5g-djezzy.json", from: "coverage/5g/djezzy.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
-      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
+      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map"), true) },
       // Ooredoo publishes covered communes, not cell sites — points are placed
       // within the commune, so they are approximate by construction.
       { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
@@ -875,7 +879,7 @@ export const MIGRATIONS = {
       license: "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
       estimatedUniverse: null,
       coverageNote:
-        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
+        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 25 records are reconciled to the current wilaya only where a unique canonical commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
       titles: { en: "Algeria 5G coverage points", fr: "Points de couverture 5G en Algérie", ar: "نقاط تغطية الجيل الخامس في الجزائر" },
       stats: (rows) => ({
         technologies: [...new Set(rows.map((r) => r.technology))].sort(),

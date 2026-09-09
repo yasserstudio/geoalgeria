@@ -32,7 +32,9 @@ export interface CoverageSite {
   name: string | null;
   /** Zero-padded wilaya code ("01".."69"); joins to geoalgeria. */
   wilaya_code: string;
-  /** Always null: operators publish free-text names, no ONS codes. */
+  /** Original operator wilaya when it differs from the current wilaya. */
+  source_wilaya_code?: string;
+  /** ONS commune code when a guarded current-wilaya reconciliation succeeds. */
   commune_code: string | null;
   /** Commune name (French), or null. */
   commune: string | null;
