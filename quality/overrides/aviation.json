@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "dataset": "aviation",
+  "reviewer": "geoalgeria-maintainers",
+  "reviewed_at": "2026-09-09",
+  "decisions": [
+    {
+      "file": "airports.json",
+      "record_id": "dabb",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "36"
+      },
+      "patch": {
+        "wilaya_code": "23"
+      },
+      "evidence": [
+        {
+          "url": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    }
+  ]
+}

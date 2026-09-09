@@ -12,11 +12,11 @@
     },
     {
       "path": "packages/aviation/data/airports.json",
-      "sha256": "3ced96fcadda2040bc0d794cf364ca2755dd45f19ed0f78a73a2da7b8f1b0c2f"
+      "sha256": "a4a4f5e3e8e6ab018ca6244daf4ee9750caff0f030e5385c5ecab06d1b65e843"
     },
     {
       "path": "packages/aviation/data/metadata.json",
-      "sha256": "68a767ee5cab5e9f500e608f29cce114064c92535dd9b48dd4851e90489112bf"
+      "sha256": "c5c5e4b383055f3b4bae6c818352f0e4ad48d910194e6fcb657cf9a524f604b1"
     },
     {
       "path": "packages/aviation/data/route-endpoints.json",
@@ -310,14 +310,14 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 19348,
+  "candidates": 19347,
   "reasons": {
     "approximate_coordinate": 16802,
-    "inside_adjacent_wilaya": 1908,
+    "inside_adjacent_wilaya": 1907,
     "inside_nonadjacent_wilaya": 18,
     "missing_coordinate": 621,
     "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 2156,
+    "outside_declared_wilaya": 2155,
     "shared_coordinate": 1295
   },
   "datasets": [
@@ -389,11 +389,8 @@
     {
       "dataset": "aviation",
       "total_records": 36,
-      "candidates": 1,
-      "reasons": {
-        "inside_adjacent_wilaya": 1,
-        "outside_declared_wilaya": 1
-      },
+      "candidates": 0,
+      "reasons": {},
       "metadata_path": "packages/aviation/data/metadata.json",
       "metadata": {
         "package": "@geoalgeria/aviation",
@@ -425,7 +422,7 @@
             "url": "https://www.anac.dz",
             "license": "Factual public listing (ANAC)",
             "evidence_type": "official",
-            "retrieved": "2026-07-28",
+            "retrieved": "2026-09-09",
             "snapshot": {
               "url": "https://www.anac.dz/carte_aeroports_algerie_fusion-1.21.html",
               "sha256": "14c3d5cc2897bc1657ba79d195140177ea898e7683b47845c49f1e4e2b58aa8f",
@@ -439,17 +436,17 @@
             "url": "https://ourairports.com/data/",
             "license": "Public domain (OurAirports)",
             "evidence_type": "crowdsourced",
-            "retrieved": "2026-07-28",
+            "retrieved": "2026-09-09",
             "snapshot": {
               "url": "https://davidmegginson.github.io/ourairports-data/airports.csv",
-              "sha256": "39a7e69af22005a8d6a6d04ad4ca20f7b1330643a8446656ff06f4e655e13a9d",
-              "bytes": 12688053,
-              "last_modified": "2026-07-28"
+              "sha256": "1f67cce9ed2e39c0f001c02e2168fd6ae01b75b008f78b88327ddaa560a99405",
+              "bytes": 12721026,
+              "last_modified": "2026-09-09"
             }
           }
         ],
         "license": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
-        "updated": "2026-07-28",
+        "updated": "2026-09-09",
         "with_iata": 36,
         "by_source": {
           "anac": 33,
@@ -2289,11 +2286,8 @@
       "dataset": "aviation",
       "entity": "airports.json",
       "total_records": 36,
-      "candidates": 1,
-      "reasons": {
-        "inside_adjacent_wilaya": 1,
-        "outside_declared_wilaya": 1
-      },
+      "candidates": 0,
+      "reasons": {},
       "path": "packages/aviation/data/airports.json"
     },
     {

@@ -173,8 +173,8 @@
     "wilaya_code": "45",
     "commune_code": null,
     "commune": null,
-    "lat": 33.535900116,
-    "lng": -0.242353007197,
+    "lat": 33.5359,
+    "lng": -0.242353,
     "geo_precision": "exact",
     "geo_method": "source_point",
     "source": "ourairports",
@@ -191,7 +191,7 @@
   {
     "id": "dabb",
     "name": "Aéroport Annaba – Rabah Bitat",
-    "wilaya_code": "36",
+    "wilaya_code": "23",
     "commune_code": null,
     "commune": null,
     "lat": 36.82441556514175,
@@ -207,7 +207,13 @@
     "iata": "AAE",
     "address": "Rabah Bitat BP 296‐ Annaba",
     "phone": "+21338529071",
-    "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat"
+    "website": "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat"
+    ]
   },
   {
     "id": "dabc",
