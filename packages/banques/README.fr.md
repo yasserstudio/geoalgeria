@@ -38,7 +38,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (par id ou acro
 | --- | --- | --- |
 | Banques | **21** | 7 publiques · 14 à capitaux étrangers – code banque RIB, nom FR/AR, propriété + groupe, pays, SWIFT/BIC, siège |
 | Établissements financiers | **8** | crédit-bail, refinancement et crédit mutuel (non-dépôt) |
-| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 218 géocodées ; **67/69 wilayas** |
+| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 221 géocodées ; **67/69 wilayas** |
 
 Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèle
 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -59,7 +59,7 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   supprimé et la wilaya conservée – jamais de coordonnée devinée. Les pages de
   localisation sont récupérées avec la vérification TLS désactivée (`curl -k`)
   car plusieurs hôtes bancaires `.dz` servent des certificats invalides.
-- **Banques sans coordonnées** (BNH, HBTF, Fransabank, BEA, SGA) : ces agences
+- **Banques généralement sans coordonnées** (BNH, HBTF, Fransabank, BEA, SGA) : ces agences
   sont livrées avec `lat`/`lng` `null` et une wilaya déduite de la localité en
   fin d'adresse. Le localisateur d'**AGB** est protégé par un défi anti-bot :
   ses 63 agences sont capturées via un navigateur headless et rafraîchies
@@ -71,6 +71,9 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   OpenStreetMap vérifiées uniquement lorsque l'objet OSM porte le même numéro
   d'agence BDL et concorde sur la banque, la wilaya et la localité. Chaque
   correction publie ses liens de preuve.
+- Trois agences SGA sont complétées uniquement lorsque la banque, la voie, la
+  wilaya et la localité concordent dans OSM, avec le numéro également concordant
+  lorsqu'il est disponible. Chaque correction publie les deux liens de preuve.
 - **`bank_code`** est le _code banque_ RIB à 3 chiffres (positions 5–7 de
   l'IBAN), vérifié contre des tables de codes banque indépendantes – il n'existe
   pas de registre officiel public unique. BNH et Ziraat (toutes deux nouvellement

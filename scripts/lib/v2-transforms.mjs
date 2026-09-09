@@ -688,9 +688,9 @@ export const MIGRATIONS = {
         { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap — reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
       ],
-      license: "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+      license: "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       estimatedUniverse: null,
-      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,218 carry a geocoded point, including five BDL branches matched to OSM by agency number, bank, wilaya, and locality. The rest remain address-only (see README).",
+      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,221 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
       titles: { en: "Algeria banks & financial institutions", fr: "Banques et institutions financières d'Algérie", ar: "البنوك والمؤسسات المالية الجزائرية" },
       stats: (rows) => {
         const registry = rows.filter((r) => r.source === "boa");

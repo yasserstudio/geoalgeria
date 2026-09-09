@@ -63,6 +63,42 @@
         { "url": "https://www.google.com/maps/d/viewer?mid=1wA-ijVkToyjzgG-d_EzHoC-GLU8", "checked_at": "2026-09-09", "note": "BDL's published branch map identifies agency 433 in Oued Rhiou." },
         { "url": "https://www.openstreetmap.org/node/3139374641", "checked_at": "2026-09-09", "note": "BDL point with ref 433 on Rue Tazghat Djillali, Oued Rhiou." }
       ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "sga-chlef",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "Chlef", "address": "20, Rue des Martyrs - Chlef", "bank_id": "sga", "wilaya_code": "02", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.1676259, "lng": 1.3359694, "geo_precision": "approximate", "geo_method": "osm_way" },
+      "evidence": [
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Chlef branch at 20 Rue des Martyrs." },
+        { "url": "https://www.openstreetmap.org/way/310443120", "checked_at": "2026-09-09", "note": "Société Générale building at 20 Rue des Martyrs, Chlef." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "sga-bab-ezzouar",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "Bab - Ezzouar", "address": "1 Boulevard Rezig kadda - Bab Ezzouar", "bank_id": "sga", "wilaya_code": "16", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.7148763, "lng": 3.1891634, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Bab Ezzouar branch at 1 Boulevard Rezig Kadda." },
+        { "url": "https://www.openstreetmap.org/node/3287544248", "checked_at": "2026-09-09", "note": "Société Générale point at 1 Rue Rezig Kadda, Bab Ezzouar." }
+      ]
+    },
+    {
+      "file": "branches.json",
+      "record_id": "sga-amirouche",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": { "name": "Amirouche", "address": "3, Boulevard Colonel Amirouche", "bank_id": "sga", "wilaya_code": "16", "lat": null, "lng": null, "geo_precision": null, "geo_method": null },
+      "patch": { "lat": 36.7715307, "lng": 3.0591324, "geo_precision": "exact", "geo_method": "osm_node" },
+      "evidence": [
+        { "url": "https://particuliers.societegenerale.dz/fr/locations-details/agences/", "checked_at": "2026-09-09", "note": "SGA's locator publishes its Amirouche branch at 3 Boulevard Colonel Amirouche." },
+        { "url": "https://www.openstreetmap.org/node/2964284353", "checked_at": "2026-09-09", "note": "Société Générale Amirouche point on Boulevard Colonel Amirouche, Alger." }
+      ]
     }
   ]
 }

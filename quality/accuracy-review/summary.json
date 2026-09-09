@@ -32,7 +32,7 @@
     },
     {
       "path": "packages/banques/data/branches.json",
-      "sha256": "bb5f0ba8871760f1c7984d4e9e48c7e7876ab160c5d835213fd48a1c75a18c34"
+      "sha256": "603d621234734ec6a4fe1fb984f883b827bb9bd8fcf13ae19a6ad2d21b3b34db"
     },
     {
       "path": "packages/banques/data/institutions.json",
@@ -40,7 +40,7 @@
     },
     {
       "path": "packages/banques/data/metadata.json",
-      "sha256": "0fc59385ba4ad074f9936e036edb2feca234f43aef5e485ba359f5989b80fcdb"
+      "sha256": "d76cfde60665992e680189ad4a2469c48925188173e1a6460d64acc36e2cdf17"
     },
     {
       "path": "packages/buses/data/lines.json",
@@ -310,11 +310,11 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 19344,
+  "candidates": 19342,
   "reasons": {
-    "approximate_coordinate": 16804,
+    "approximate_coordinate": 16805,
     "inside_adjacent_wilaya": 1907,
-    "missing_coordinate": 634,
+    "missing_coordinate": 631,
     "outside_all_wilaya_boundaries": 230,
     "outside_declared_wilaya": 2137,
     "shared_coordinate": 1295
@@ -458,11 +458,11 @@
     {
       "dataset": "banques",
       "total_records": 1704,
-      "candidates": 566,
+      "candidates": 564,
       "reasons": {
-        "approximate_coordinate": 70,
+        "approximate_coordinate": 71,
         "inside_adjacent_wilaya": 5,
-        "missing_coordinate": 486,
+        "missing_coordinate": 483,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 11,
         "shared_coordinate": 56
@@ -475,15 +475,15 @@
         "title_ar": "البنوك والمؤسسات المالية الجزائرية",
         "title_en": "Algeria banks & financial institutions",
         "record_count": 1733,
-        "geocoded_count": 1218,
-        "geocoded_pct": 70.3,
+        "geocoded_count": 1221,
+        "geocoded_pct": 70.5,
         "precision": {
-          "exact": 1148,
-          "approximate": 70
+          "exact": 1150,
+          "approximate": 71
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,218 carry a geocoded point, including five BDL branches matched to OSM by agency number, bank, wilaya, and locality. The rest remain address-only (see README).",
+        "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,221 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
         "wilayas_covered": 67,
         "bbox": [
           -8.149472,
@@ -530,12 +530,12 @@
             "evidence_type": "crowdsourced"
           }
         ],
-        "license": "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+        "license": "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
         "updated": "2026-09-09",
         "banks": 21,
         "institutions": 8,
         "branches": 1704,
-        "branches_geocoded": 1218,
+        "branches_geocoded": 1221,
         "banks_with_branches": 21
       }
     },
@@ -2301,11 +2301,11 @@
       "dataset": "banques",
       "entity": "branches.json",
       "total_records": 1704,
-      "candidates": 566,
+      "candidates": 564,
       "reasons": {
-        "approximate_coordinate": 70,
+        "approximate_coordinate": 71,
         "inside_adjacent_wilaya": 5,
-        "missing_coordinate": 486,
+        "missing_coordinate": 483,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 11,
         "shared_coordinate": 56

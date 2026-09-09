@@ -37,7 +37,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (by id or acron
 | --- | --- | --- |
 | Banks | **21** | 7 public · 14 foreign-owned – RIB bank code, name FR/AR, ownership + parent, country, SWIFT/BIC, HQ |
 | Financial institutions | **8** | leasing, refinancing & mutual-credit entities (non-deposit) |
-| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,218 geocoded; **67/69 wilayas** |
+| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,221 geocoded; **67/69 wilayas** |
 
 Every record carries `wilaya_code` (head office) linked to the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -55,7 +55,7 @@ Every record carries `wilaya_code` (head office) linked to the
   wilaya); otherwise the point is dropped and the wilaya kept, never a guessed
   coordinate. Locator pages are fetched with TLS verification disabled
   (`curl -k`) because several `.dz` bank hosts serve broken certificates.
-- **Address-only banks** (BNH, HBTF, Fransabank, BEA, SGA) publish no coordinates,
+- **Address-only banks** (BNH, HBTF, Fransabank, BEA, SGA) generally publish no coordinates,
   so those branches ship with `lat`/`lng` `null` and a wilaya read from the
   address's trailing locality. **AGB**'s locator sits behind a bot challenge, so
   its 63 branches are captured via a headless browser and refreshed manually;
@@ -66,6 +66,9 @@ Every record carries `wilaya_code` (head office) linked to the
   coordinates only where the OSM object carries the same BDL agency number and
   agrees on the bank, wilaya, and locality. Node points are exact; building
   centroids are approximate. Each corrected record includes its evidence URLs.
+- Three SGA agencies are supplemented only where the bank, street, wilaya, and
+  locality match in OSM, with the house number also matched where available. Each
+  corrected record carries both locator and OSM evidence URLs.
 - **`bank_code`** is the 3-digit RIB _code banque_ (IBAN positions 5–7), verified
   against independent code-banque tables, no single official public register
   exists. BNH and Ziraat (both newly licensed) have no published code yet →

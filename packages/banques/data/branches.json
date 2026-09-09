@@ -23890,14 +23890,21 @@
     "wilaya_code": "16",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.7715307,
+    "lng": 3.0591324,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "sga",
     "address": "3, Boulevard Colonel Amirouche",
-    "phone": "(+213) 21 74 75 30"
+    "phone": "(+213) 21 74 75 30",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
+      "https://www.openstreetmap.org/node/2964284353"
+    ]
   },
   {
     "id": "sga-annaba-1er-novembre",
@@ -23965,14 +23972,21 @@
     "wilaya_code": "16",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.7148763,
+    "lng": 3.1891634,
+    "geo_precision": "exact",
+    "geo_method": "osm_node",
     "source": "bank_locator",
     "bank_id": "sga",
     "address": "1 Boulevard Rezig kadda - Bab Ezzouar",
-    "phone": "(+213) 23 83 95 28/24"
+    "phone": "(+213) 23 83 95 28/24",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
+      "https://www.openstreetmap.org/node/3287544248"
+    ]
   },
   {
     "id": "sga-bab-oued",
@@ -24310,14 +24324,21 @@
     "wilaya_code": "02",
     "commune_code": null,
     "commune": null,
-    "lat": null,
-    "lng": null,
-    "geo_precision": null,
-    "geo_method": null,
+    "lat": 36.1676259,
+    "lng": 1.3359694,
+    "geo_precision": "approximate",
+    "geo_method": "osm_way",
     "source": "bank_locator",
     "bank_id": "sga",
     "address": "20, Rue des Martyrs - Chlef",
-    "phone": "(+213) 27 77 83 12"
+    "phone": "(+213) 27 77 83 12",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-09",
+    "reviewed_by": "geoalgeria-evidence-review",
+    "review_evidence": [
+      "https://particuliers.societegenerale.dz/fr/locations-details/agences/",
+      "https://www.openstreetmap.org/way/310443120"
+    ]
   },
   {
     "id": "sga-constantine-ali-mendjli",

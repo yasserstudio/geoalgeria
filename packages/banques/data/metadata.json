@@ -5,15 +5,15 @@
   "title_ar": "البنوك والمؤسسات المالية الجزائرية",
   "title_en": "Algeria banks & financial institutions",
   "record_count": 1733,
-  "geocoded_count": 1218,
-  "geocoded_pct": 70.3,
+  "geocoded_count": 1221,
+  "geocoded_pct": 70.5,
   "precision": {
-    "exact": 1148,
-    "approximate": 70
+    "exact": 1150,
+    "approximate": 71
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,218 carry a geocoded point, including five BDL branches matched to OSM by agency number, bank, wilaya, and locality. The rest remain address-only (see README).",
+  "coverage_note": "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,221 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
   "wilayas_covered": 67,
   "bbox": [
     -8.149472,
@@ -60,11 +60,11 @@
       "evidence_type": "crowdsourced"
     }
   ],
-  "license": "Compiled from public regulatory listings and official institution sites/locators; five reviewed BDL coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+  "license": "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
   "updated": "2026-09-09",
   "banks": 21,
   "institutions": 8,
   "branches": 1704,
-  "branches_geocoded": 1218,
+  "branches_geocoded": 1221,
   "banks_with_branches": 21
 }
