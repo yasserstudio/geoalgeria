@@ -37,7 +37,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (by id or acron
 | --- | --- | --- |
 | Banks | **21** | 7 public · 14 foreign-owned – RIB bank code, name FR/AR, ownership + parent, country, SWIFT/BIC, HQ |
 | Financial institutions | **8** | leasing, refinancing & mutual-credit entities (non-deposit) |
-| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,221 geocoded; **67/69 wilayas** |
+| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,325 geocoded; **67/69 wilayas** |
 
 Every record carries `wilaya_code` (head office) linked to the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -55,9 +55,12 @@ Every record carries `wilaya_code` (head office) linked to the
   wilaya); otherwise the point is dropped and the wilaya kept, never a guessed
   coordinate. Locator pages are fetched with TLS verification disabled
   (`curl -k`) because several `.dz` bank hosts serve broken certificates.
-- **Address-only banks** (BNH, HBTF, Fransabank, BEA, SGA) generally publish no coordinates,
-  so those branches ship with `lat`/`lng` `null` and a wilaya read from the
-  address's trailing locality. **AGB**'s locator sits behind a bot challenge, so
+- **Fully address-only banks** are BNH (60 branches), HBTF (10), and Fransabank
+  (23): their official directories publish no coordinates, so those branches
+  ship with `lat`/`lng` `null` and a wilaya read from the address's trailing
+  locality. BEA has 89 of 111 branches geocoded and SGA 3 of 84 after strict
+  source and evidence checks; their remaining branches also stay address-only.
+  **AGB**'s locator sits behind a bot challenge, so
   its 63 branches are captured via a headless browser and refreshed manually;
   **Arab Bank** publishes only city-level points (name + coordinates, no address).
   **BDL** and **Trust Bank** come from each bank's published Google My Maps (KML);

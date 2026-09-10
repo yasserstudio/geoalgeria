@@ -38,7 +38,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (par id ou acro
 | --- | --- | --- |
 | Banques | **21** | 7 publiques · 14 à capitaux étrangers – code banque RIB, nom FR/AR, propriété + groupe, pays, SWIFT/BIC, siège |
 | Établissements financiers | **8** | crédit-bail, refinancement et crédit mutuel (non-dépôt) |
-| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 221 géocodées ; **67/69 wilayas** |
+| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 325 géocodées ; **67/69 wilayas** |
 
 Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèle
 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -59,9 +59,13 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   supprimé et la wilaya conservée – jamais de coordonnée devinée. Les pages de
   localisation sont récupérées avec la vérification TLS désactivée (`curl -k`)
   car plusieurs hôtes bancaires `.dz` servent des certificats invalides.
-- **Banques généralement sans coordonnées** (BNH, HBTF, Fransabank, BEA, SGA) : ces agences
-  sont livrées avec `lat`/`lng` `null` et une wilaya déduite de la localité en
-  fin d'adresse. Le localisateur d'**AGB** est protégé par un défi anti-bot :
+- **Banques entièrement sans coordonnées** : BNH (60 agences), HBTF (10) et
+  Fransabank (23). Leurs annuaires officiels ne publient aucun point ; ces
+  agences sont donc livrées avec `lat`/`lng` `null` et une wilaya déduite de la
+  localité en fin d'adresse. BEA compte 89 agences géocodées sur 111 et SGA 3
+  sur 84 après des contrôles stricts des sources et des preuves ; leurs autres
+  agences restent elles aussi limitées à l'adresse. Le localisateur d'**AGB**
+  est protégé par un défi anti-bot :
   ses 63 agences sont capturées via un navigateur headless et rafraîchies
   manuellement ; **Arab Bank** ne publie que des points au niveau ville (nom +
   coordonnées, sans adresse). **BDL** et **Trust Bank** proviennent des
