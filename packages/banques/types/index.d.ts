@@ -73,6 +73,8 @@ export interface Branch {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
+  /** Provider wilaya code retained when reconciled to a current code. */
+  source_wilaya_code?: string;
   /** Always null — bank locators publish no commune. */
   commune_code: null;
   /** Always null — see `commune_code`. */
