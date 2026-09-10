@@ -4,7 +4,7 @@
   "name": "Algeria post offices & ATMs",
   "alternateName": "Bureaux de poste et GAB d'Algérie",
   "identifier": "@geoalgeria/poste",
-  "description": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its exact current or official ONS 2021 French commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
+  "description": "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its exact current or official ONS 2021 French or Arabic commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
   "conditionsOfAccess": "Data © Algérie Poste; redistributed for reference",
   "isAccessibleForFree": true,
   "creator": {

@@ -125,6 +125,14 @@ export function canonicalCommuneForOfficialFrenchLabel(wilayaCode, commune) {
   return historical ? canonicalCommuneForCode(historical.code_commune) : null;
 }
 
+/** Arabic counterpart to the exact official historical-label lookup. */
+export function canonicalCommuneForOfficialArabicLabel(wilayaCode, communeAr) {
+  const historical = officialArabic.get(
+    `${Number(wilayaCode)}|${arabicNameKey(communeAr)}`,
+  );
+  return historical ? canonicalCommuneForCode(historical.code_commune) : null;
+}
+
 export function canonicalCommuneForCurrentLabel(wilayaCode, commune, communeAr = null) {
   const scope = Number(wilayaCode);
   return (

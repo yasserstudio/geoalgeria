@@ -77,7 +77,7 @@ data/
 
 > Le GeoJSON n'inclut que les enregistrements ayant des coordonnées – 16
 > bureaux et 5 DAB ne rapportent pas de `lat`/`lng` et en sont absents (mais
-> restent dans JSON/CSV, avec `geo_precision`/`geo_method` à `null`). Pour 86
+> restent dans JSON/CSV, avec `geo_precision`/`geo_method` à `null`). Pour 90
 > DAB, GeoAlgeria renseigne `commune_code` uniquement lorsque le nom de commune,
 > la wilaya mère et le point concordent.
 
@@ -114,7 +114,7 @@ le bureau n'est pas géocodé) ; `geo_method` indique comment le point a été o
 
 **DAB** – même structure, identifié par `id`/`name`/`wilaya_code`/`postal_code`
 avec `lat`/`lng`, plus un champ `status` (`"OPEN"`, `"CLOSED (OFFLINE)"`, ou la
-valeur source non documentée `"1"`) ; `commune_code` est renseigné pour 86
+valeur source non documentée `"1"`) ; `commune_code` est renseigné pour 90
 enregistrements corroborés et vaut sinon `null` ; `address` vaut toujours `null`.
 
 ## Besoin des divisions administratives ?
@@ -133,7 +133,7 @@ les sorties à partir de l'API en direct ; la même exécution reflète les donn
 dans le paquet `geoalgeria` pour que les deux ne divergent jamais (ce paquet est
 la source canonique). Relancez périodiquement. BaridiMap classe encore certains
 enregistrements selon le schéma à 58 wilayas. GeoAlgeria rattache les bureaux via
-leur `commune_code` canonique et 86 DAB lorsque le nom français unique de la
+leur `commune_code` canonique et 90 DAB lorsque le nom français ou arabe exact de la
 commune, la relation avec la wilaya mère et l'unique polygone contenant le point
 concordent. `source_wilaya_code` conserve la valeur fournisseur différente.
 

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { loadBoundaries, pointInGeometry } from "../../packages/schema/index.js";
 import {
   canonicalCommunes,
+  canonicalCommuneForOfficialArabicLabel,
   canonicalCommuneForOfficialFrenchLabel,
   latinNameKey,
   padCommuneCode,
@@ -79,7 +80,7 @@ export function reconcileCurrentWilayaByCommune(record) {
   const historical = canonicalCommuneForOfficialFrenchLabel(
     sourceWilaya,
     record.commune ?? record.commune_fr,
-  );
+  ) ?? canonicalCommuneForOfficialArabicLabel(sourceWilaya, record.commune_ar);
   const commune = matches.length === 1
     ? matches[0]
     : historical && code(historical.wilaya_code) === currentWilaya

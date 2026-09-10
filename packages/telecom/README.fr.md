@@ -56,7 +56,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Ooredoo | **176** | commune couverte | ooredoo.dz |
 
 Couvrant **66 wilayas actuelles**. Les cartes des opérateurs utilisent encore le
-découpage à 58 wilayas ; 29 points Mobilis sont réaffectés de façon sûre à huit
+découpage à 58 wilayas ; 31 points Mobilis sont réaffectés de façon sûre à huit
 nouvelles wilayas.
 
 > **Ce qu'est un point :** chaque enregistrement est un point publié sur la
@@ -117,7 +117,7 @@ propres à la couverture :
 
 `id` est une clé déterministe `{operator}-{coordinate-hash}`, stable d'une
 extraction à l'autre. `wilaya_code` permet la jointure avec le `wilaya_code`
-actuel de GeoAlgeria. Pour 29 enregistrements Mobilis, `source_wilaya_code`
+actuel de GeoAlgeria. Pour 31 enregistrements Mobilis, `source_wilaya_code`
 conserve la wilaya mère publiée et `commune_code` identifie la commune canonique
 qui confirme la correction. Les champs qu'un opérateur donné ne fournit pas sont `null` (Djezzy
 n'a pas de commune ; Mobilis a la commune FR/AR mais pas d'adresse ; Ooredoo n'a
@@ -142,7 +142,7 @@ session navigateur réelle (le site d'Ooredoo s'authentifie lui-même ; cette
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) dans le `PATH`).
 Tout est normalisé en un schéma unique avec `wilaya_code` résolu vers les codes
 GeoAlgeria. Les opérateurs utilisent le schéma à 58 wilayas ; un point Mobilis
-n'est affecté à une nouvelle wilaya que si une correspondance française exacte, actuelle ou issue du registre ONS 2021
+n'est affecté à une nouvelle wilaya que si une correspondance française ou arabe exacte, actuelle ou issue du registre ONS 2021
 et le polygone concordent. Les écritures sont
 tout-ou-rien : un opérateur en échec n'écrase jamais des données valides
 commitées avec un jeu partiel.

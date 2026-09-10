@@ -16,15 +16,15 @@ test("Mobilis current-wilaya linkage is the reviewed exact set", () => {
     .update(reconciled.map((row) => row.id).sort().join("\n"))
     .digest("hex");
 
-  assert.equal(reconciled.length, 29);
-  assert.equal(digest, "b96a75138305473bf616e655fe31c529a24a84d04b6b2bc6ac249b0fe2069317");
+  assert.equal(reconciled.length, 31);
+  assert.equal(digest, "07a0c4deca725c7004cbd569ff2cb16ac7221b24f9d449082a1b5d71b70e8110");
   assert.deepEqual(
     Object.fromEntries(
       [...new Set(reconciled.map((row) => row.wilaya_code))]
         .sort()
         .map((code) => [code, reconciled.filter((row) => row.wilaya_code === code).length]),
     ),
-    { "59": 11, "63": 1, "64": 6, "65": 1, "66": 1, "67": 2, "68": 3, "69": 4 },
+    { "59": 11, "63": 1, "64": 6, "65": 3, "66": 1, "67": 2, "68": 3, "69": 4 },
   );
   assert.equal(
     manifest["mobilis-5g"].sha256,

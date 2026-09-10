@@ -4,7 +4,10 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 import { reconcileCurrentWilayaByCommune } from "../scripts/lib/current-wilaya-by-commune.mjs";
-import { canonicalCommuneForOfficialFrenchLabel } from "../scripts/lib/commune-index.mjs";
+import {
+  canonicalCommuneForOfficialArabicLabel,
+  canonicalCommuneForOfficialFrenchLabel,
+} from "../scripts/lib/commune-index.mjs";
 
 const load = (pkg, file) =>
   JSON.parse(readFileSync(new URL(`../packages/${pkg}/data/${file}`, import.meta.url), "utf8"));
@@ -78,4 +81,11 @@ test("official ONS French labels bridge historical spellings through stable comm
     ],
   );
   assert.equal(canonicalCommuneForOfficialFrenchLabel("03", "not an official commune"), null);
+});
+
+test("official ONS Arabic labels resolve only exact unambiguous historical names", () => {
+  const boughzoul = canonicalCommuneForOfficialArabicLabel("26", "بوغزول");
+  assert.equal(String(boughzoul.code_commune).padStart(4, "0"), "2651");
+  assert.equal(String(boughzoul.wilaya_code), "67");
+  assert.equal(canonicalCommuneForOfficialArabicLabel("26", "بلدية غير موجودة"), null);
 });

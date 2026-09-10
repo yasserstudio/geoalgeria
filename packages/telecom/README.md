@@ -55,7 +55,7 @@ const sites: CoverageSite[] = telecom.coverage("5G");
 | Ooredoo | **176** | covered commune | ooredoo.dz |
 
 Covering **66 current wilayas**. The operator maps still use the 58-wilaya
-scheme; 29 Mobilis points are safely reassigned to eight daughter wilayas.
+scheme; 31 Mobilis points are safely reassigned to eight daughter wilayas.
 
 > **What a point is:** each record is a point published on the operator's own 5G
 > coverage map. Djezzy and Mobilis publish **cell-site** locations; Ooredoo
@@ -113,7 +113,7 @@ coverage-specific fields:
 ```
 
 `id` is a deterministic `{operator}-{coordinate-hash}` key, stable across
-re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 29
+re-fetches. `wilaya_code` joins to GeoAlgeria's current `wilaya_code`. For 31
 Mobilis records, `source_wilaya_code` preserves the operator's mother wilaya and
 `commune_code` records the corroborating canonical commune. Fields a given
 operator doesn't provide are `null` (Djezzy has no commune; Mobilis has commune
@@ -136,7 +136,7 @@ session (the Ooredoo site authenticates itself; this step needs the
 [`agent-browser`](https://www.npmjs.com/package/agent-browser) CLI on `PATH`).
 Everything is normalized into one schema with `wilaya_code` resolved to GeoAlgeria
 codes. Operators file under the 58-wilaya scheme; Mobilis points are moved to a
-current daughter wilaya only when an exact current or official ONS 2021 French commune match and polygon containment
+current daughter wilaya only when an exact current or official ONS 2021 French or Arabic commune match and polygon containment
 agree. Writes are all-or-nothing, so a
 failed operator never overwrites good committed data with a partial set.
 
