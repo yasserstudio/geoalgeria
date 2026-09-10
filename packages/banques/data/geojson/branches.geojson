@@ -11466,6 +11466,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.3670426,
+          35.3873302
+        ]
+      },
+      "properties": {
+        "id": "bna-102",
+        "name": "Agence BARIKA",
+        "wilaya_code": "05",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.3873302,
+        "lng": 5.3670426,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue Yahiaoui Amar 3éme Tranche N°27 -",
+        "phone": "(033) 39 11 06"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.177406651160349,
           35.55460633976267
         ]
@@ -12059,6 +12084,31 @@
         "bank_id": "bna",
         "address": "Place du 1er Novembre 1954 12350",
         "phone": "(037) 67 82 12"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.0579296,
+          34.7499522
+        ]
+      },
+      "properties": {
+        "id": "bna-128",
+        "name": "Agence BIR EL ATER",
+        "wilaya_code": "12",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.7499522,
+        "lng": 8.0579296,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Cité Administrative,",
+        "phone": "(037) 64 92 51, (037) 64 92 52"
       }
     },
     {
@@ -13741,6 +13791,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.904514026584127,
+          35.457107580251716
+        ]
+      },
+      "properties": {
+        "id": "bna-199",
+        "name": "Agence AIN OUSSERA",
+        "wilaya_code": "17",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.457107580251716,
+        "lng": 2.904514026584127,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Lot Ali Amar",
+        "phone": "(027) 80 14 27, (027) 80 15 29"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.2522227114810223,
           34.67582929303842
         ]
@@ -14616,6 +14691,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          2.748638747703027,
+          35.88459450122904
+        ]
+      },
+      "properties": {
+        "id": "bna-237",
+        "name": "Agence KSAR EL BOUKHARI",
+        "wilaya_code": "26",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.88459450122904,
+        "lng": 2.748638747703027,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Bd Ahmed Zouaoucha",
+        "phone": "(025) 69 23 55 ,(025) 69 19 43 ,(025) 69 19 44"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           0.08314893334128187,
           35.930358238710525
         ]
@@ -14709,6 +14809,56 @@
         "bank_id": "bna",
         "address": "Cité administrative rue Chenouf Abdelkader",
         "phone": "(035) 33 88 71/ 06 ,(035) 33 85 79/38"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.179612231,
+          35.213552231
+        ]
+      },
+      "properties": {
+        "id": "bna-242",
+        "name": "Agence  BOUSSAADA",
+        "wilaya_code": "28",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.213552231,
+        "lng": 4.179612231,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Centre Commercial Boussaada, M'sila",
+        "phone": "(035) 43 41 22"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.16552918401589,
+          34.84546752355364
+        ]
+      },
+      "properties": {
+        "id": "bna-243",
+        "name": "Agence AIN EL-MELH",
+        "wilaya_code": "28",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.84546752355364,
+        "lng": 4.16552918401589,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Centre Commercial",
+        "phone": "(035) 10 03 18, (035) 10 03 26"
       }
     },
     {
@@ -15159,6 +15309,31 @@
         "bank_id": "bna",
         "address": "Rue des Invalides",
         "phone": " (041) 18 72 20"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.7630667090090107,
+          35.74278951485728
+        ]
+      },
+      "properties": {
+        "id": "bna-263",
+        "name": "Agence AIN TURCK",
+        "wilaya_code": "31",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.74278951485728,
+        "lng": -0.7630667090090107,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "45 Route National Angle 02",
+        "phone": "(041) 44 73 51 ,(041) 44 73 92"
       }
     },
     {
@@ -16891,6 +17066,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.82134558450683,
+          36.82454439538017
+        ]
+      },
+      "properties": {
+        "id": "bna-336",
+        "name": "ANNABA AEROPORT",
+        "wilaya_code": "23",
+        "commune_code": null,
+        "commune": null,
+        "lat": 36.82454439538017,
+        "lng": 7.82134558450683,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Aéroport Rabah BITAT",
+        "phone": "038.59.01.76"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -1.8585244709529292,
           35.099641993829636
         ]
@@ -16984,6 +17184,31 @@
         "bank_id": "bna",
         "address": "Cité Mentouri (ex- Le Bosquet)",
         "phone": "  (031) 65 01 73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.748638747703027,
+          35.88459450122904
+        ]
+      },
+      "properties": {
+        "id": "bna-341",
+        "name": "Agence KSAR EL BOUKHARI",
+        "wilaya_code": "26",
+        "commune_code": null,
+        "commune": null,
+        "lat": 35.88459450122904,
+        "lng": 2.748638747703027,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Bd Ahmed Zouaoucha",
+        "phone": "(025) 69 23 55 ,(025) 69 19 43 ,(025) 69 19 44"
       }
     },
     {
@@ -17441,6 +17666,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          7.3919173,
+          34.6814435
+        ]
+      },
+      "properties": {
+        "id": "bna-635",
+        "name": "Agence BIR EL ATER",
+        "wilaya_code": "12",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.6814435,
+        "lng": 7.3919173,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Cité 84 logts-BIR EL ATER",
+        "phone": "037.64.95.05"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           4.760740550870473,
           36.07058541750428
         ]
@@ -17666,6 +17916,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          0.15355849641455607,
+          34.83030683171389
+        ]
+      },
+      "properties": {
+        "id": "bna-659",
+        "name": "Agence Saida",
+        "wilaya_code": "20",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.83030683171389,
+        "lng": 0.15355849641455607,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue CHEBLI Mokhtar N°11",
+        "phone": "048.41.89.68"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.14054486,
           36.7187492
         ]
@@ -17684,6 +17959,81 @@
         "bank_id": "bna",
         "address": "Ave. des Frères Djeli (Hai Naîli) BP 28",
         "phone": "(021) 52 61 02 ,(021) 52 70 34"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.477427,
+          27.196947
+        ]
+      },
+      "properties": {
+        "id": "bna-660",
+        "name": "Agence In Salah",
+        "wilaya_code": "53",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.196947,
+        "lng": 2.477427,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Centre ville In Salah",
+        "phone": "029.36.66.13 - 029.36.66.10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.28023172883517217,
+          27.872356394652716
+        ]
+      },
+      "properties": {
+        "id": "bna-664",
+        "name": "Agence Adrar",
+        "wilaya_code": "01",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.872356394652716,
+        "lng": -0.28023172883517217,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue 19 Mars",
+        "phone": "040.00.18.18"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.28023172883517217,
+          27.872356394652716
+        ]
+      },
+      "properties": {
+        "id": "bna-665",
+        "name": "DIRECTION REGIONALE D'EXPLOITATION \"ADRAR\"",
+        "wilaya_code": "01",
+        "commune_code": null,
+        "commune": null,
+        "lat": 27.872356394652716,
+        "lng": -0.28023172883517217,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Rue 19 Mars",
+        "phone": "040.00.16.60 - 040.00.16.29"
       }
     },
     {
@@ -17784,6 +18134,31 @@
         "bank_id": "bna",
         "address": "Marché Couvert Place Aoulef",
         "phone": "(049) 32 77 77"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.512301807,
+          24.47518423
+        ]
+      },
+      "properties": {
+        "id": "bna-71",
+        "name": "Agence DJANET",
+        "wilaya_code": "33",
+        "commune_code": null,
+        "commune": null,
+        "lat": 24.47518423,
+        "lng": 9.512301807,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "76 Ave du Centre-Ville",
+        "phone": "(029) 48 55 78 ,(029) 48 56 03"
       }
     },
     {
@@ -17959,6 +18334,31 @@
         "bank_id": "bna",
         "address": "Rue Bensahnoun El-Maâmoura - 03000",
         "phone": "(029) 13 27 54,(029) 13 27 53,(029) 13 27 52"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.096377304525409,
+          34.116671082378154
+        ]
+      },
+      "properties": {
+        "id": "bna-95",
+        "name": "Agence AFLOU",
+        "wilaya_code": "03",
+        "commune_code": null,
+        "commune": null,
+        "lat": 34.116671082378154,
+        "lng": 2.096377304525409,
+        "geo_precision": "exact",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bna",
+        "address": "Bd Emir AbdelKader  03400 Aflou",
+        "phone": "(029) 16 60 44"
       }
     },
     {
