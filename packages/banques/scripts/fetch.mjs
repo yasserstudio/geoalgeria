@@ -499,11 +499,18 @@ const SOURCES = [
   { bank_id: "hsbc", kind: "seed", seed: "hsbc.json" },
 ];
 
+const reviewedBna = JSON.parse(readFileSync(join(SCRIPTS, "seeds", "bna-reviewed.json"), "utf8"));
+const reviewedById = new Map(reviewedBna.map((x) => [x.id, x]));
+
 const all = [];
 for (const src of SOURCES) {
   try {
     const raw = HANDLERS[src.kind](src);
-    const recs = raw.map((r) => normalize(src.bank_id, r, src.coordsAuth !== false));
+    const recs = raw.map((r) => normalize(src.bank_id, r, src.coordsAuth !== false)).map((r) => {
+      const fix = reviewedById.get(r.id);
+      if (src.bank_id === "bna" && fix) return { ...r, ...fix, geo_precision: fix.lat == null ? null : "exact", geo_method: fix.lat == null ? null : "bank_locator" };
+      return r;
+    });
     // A handler that returns nothing usually means the bank changed its markup — surface it loudly
     // rather than silently shipping a smaller dataset.
     console.log(`${src.bank_id}: ${recs.length} branches${recs.length === 0 ? "  ⚠️  ZERO — locator markup may have changed" : ""}`);

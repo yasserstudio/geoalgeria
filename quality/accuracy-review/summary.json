@@ -32,7 +32,7 @@
     },
     {
       "path": "packages/banques/data/branches.json",
-      "sha256": "c550d7f75ab93ba3c7044415331a6c714cc11056e22595703b2a4a7cc4d01300"
+      "sha256": "f7f0a05443451fc1156629f68e3f21b4b00280cf75e37782c9d388bcf510c448"
     },
     {
       "path": "packages/banques/data/institutions.json",
@@ -40,7 +40,7 @@
     },
     {
       "path": "packages/banques/data/metadata.json",
-      "sha256": "a2f19e2067bf486bffeadaad3142d24ab8e9cdc842235f6e18302320ca400604"
+      "sha256": "10e97c1743cb30eef24919e67f3c85d2877b583e14da0212eb44060128cf9bc9"
     },
     {
       "path": "packages/buses/data/lines.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 18635,
+  "candidates": 18628,
   "reasons": {
     "approximate_coordinate": 16809,
-    "inside_adjacent_wilaya": 1207,
-    "missing_coordinate": 615,
+    "inside_adjacent_wilaya": 1197,
+    "missing_coordinate": 616,
     "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 1437,
+    "outside_declared_wilaya": 1427,
     "shared_coordinate": 1299
   },
   "datasets": [
@@ -458,13 +458,13 @@
     {
       "dataset": "banques",
       "total_records": 1704,
-      "candidates": 560,
+      "candidates": 553,
       "reasons": {
         "approximate_coordinate": 75,
-        "inside_adjacent_wilaya": 15,
-        "missing_coordinate": 467,
+        "inside_adjacent_wilaya": 5,
+        "missing_coordinate": 468,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 21,
+        "outside_declared_wilaya": 11,
         "shared_coordinate": 60
       },
       "metadata_path": "packages/banques/data/metadata.json",
@@ -475,10 +475,10 @@
         "title_ar": "البنوك والمؤسسات المالية الجزائرية",
         "title_en": "Algeria banks & financial institutions",
         "record_count": 1733,
-        "geocoded_count": 1237,
-        "geocoded_pct": 71.4,
+        "geocoded_count": 1236,
+        "geocoded_pct": 71.3,
         "precision": {
-          "exact": 1162,
+          "exact": 1161,
           "approximate": 75
         },
         "estimated_universe": null,
@@ -535,7 +535,7 @@
         "banks": 21,
         "institutions": 8,
         "branches": 1704,
-        "branches_geocoded": 1237,
+        "branches_geocoded": 1236,
         "banks_with_branches": 21
       }
     },
@@ -2301,13 +2301,13 @@
       "dataset": "banques",
       "entity": "branches.json",
       "total_records": 1704,
-      "candidates": 560,
+      "candidates": 553,
       "reasons": {
         "approximate_coordinate": 75,
-        "inside_adjacent_wilaya": 15,
-        "missing_coordinate": 467,
+        "inside_adjacent_wilaya": 5,
+        "missing_coordinate": 468,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 21,
+        "outside_declared_wilaya": 11,
         "shared_coordinate": 60
       },
       "path": "packages/banques/data/branches.json"
