@@ -683,7 +683,7 @@ export const MIGRATIONS = {
       { file: "branches.json", map: (r) => clean({
         id: r.id, name: r.name,
         wilaya_code: wcode(r.wilaya_code), source_wilaya_code: r.source_wilaya_code ? wcode(r.source_wilaya_code) : undefined, commune_code: null, commune: null,
-        ...geoExact(r, "bank_locator"),
+        ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "bank_locator"),
         source: "bank_locator",
         bank_id: r.bank_id, address: r.address, phone: r.phone,
       }) },
