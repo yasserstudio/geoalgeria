@@ -412,7 +412,9 @@
     "expected_name": "بوعسادة",
     "expected_address": "المركز التجاري بوعسادة، المسيلة",
     "lat": 35.2035275,
-    "lng": 4.1693536
+    "lng": 4.1693536,
+    "wilaya_code": "68",
+    "source_wilaya_code": "28"
   },
   {
     "id": "bea-dga_setif-0-agences-9",
@@ -623,5 +625,12 @@
     "expected_address": "شارع فلسطين، قسم 44 مجموعة الملكية رقم 04 تيميمون",
     "lat": 29.257797600000004,
     "lng": 0.23049019999999998
+  },
+  {
+    "id": "bea-dga_sud-0-agences-2",
+    "expected_name": "ورقلة",
+    "expected_address": "ساحة سدراتة ورقلة",
+    "lat": 31.9538373,
+    "lng": 5.3318258
   }
 ]

@@ -13198,7 +13198,7 @@
       "properties": {
         "id": "bea-dga_setif-0-agences-8",
         "name": "بوعسادة",
-        "wilaya_code": "28",
+        "wilaya_code": "68",
         "commune_code": null,
         "commune": null,
         "lat": 35.2035275,
@@ -13208,7 +13208,8 @@
         "source": "bank_locator",
         "bank_id": "bea",
         "address": "المركز التجاري بوعسادة، المسيلة",
-        "phone": "035434111"
+        "phone": "035434111",
+        "source_wilaya_code": "28"
       }
     },
     {
@@ -13341,6 +13342,31 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.3318258,
+          31.9538373
+        ]
+      },
+      "properties": {
+        "id": "bea-dga_sud-0-agences-2",
+        "name": "ورقلة",
+        "wilaya_code": "30",
+        "commune_code": null,
+        "commune": null,
+        "lat": 31.9538373,
+        "lng": 5.3318258,
+        "geo_precision": "approximate",
+        "geo_method": "bank_locator",
+        "source": "bank_locator",
+        "bank_id": "bea",
+        "address": "ساحة سدراتة ورقلة",
+        "phone": "029703567"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           6.065346,
           31.699681100000003
         ]
@@ -13384,31 +13410,6 @@
         "bank_id": "bea",
         "address": "حي 300 مسكن حاسي مسعود",
         "phone": "029745288"
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          4.22885,
-          32.3923004
-        ]
-      },
-      "properties": {
-        "id": "bea-dga_sud-0-agences-6",
-        "name": "حاسي الرمل",
-        "wilaya_code": "03",
-        "commune_code": null,
-        "commune": null,
-        "lat": 32.3923004,
-        "lng": 4.22885,
-        "geo_precision": "approximate",
-        "geo_method": "bank_locator",
-        "source": "bank_locator",
-        "bank_id": "bea",
-        "address": "حي 176 مسكن حاسي الرمل الأغواط",
-        "phone": "029188216"
       }
     },
     {
