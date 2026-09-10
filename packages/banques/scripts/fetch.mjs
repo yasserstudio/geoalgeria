@@ -512,7 +512,7 @@ for (const src of SOURCES) {
       const fix = reviewedById.get(r.id);
       if (src.bank_id === "bna" && fix && (!fix.expected_name || fix.expected_name === r.name) && (!fix.expected_address || fix.expected_address === r.address)) return { ...r, ...fix, geo_precision: fix.lat == null ? null : "exact", geo_method: fix.lat == null ? null : "bank_locator" };
       const beaFix = reviewedBeaById.get(r.id);
-      if (src.bank_id === "bea" && beaFix && beaFix.expected_name === r.name && beaFix.expected_address === r.address) return { ...r, lat: beaFix.lat, lng: beaFix.lng, geo_precision: "approximate", geo_method: "google_mymaps_embedded_geocode" };
+      if (src.bank_id === "bea" && beaFix && beaFix.expected_name === r.name && beaFix.expected_address === r.address) return { ...r, lat: beaFix.lat, lng: beaFix.lng, wilaya_code: beaFix.wilaya_code ?? r.wilaya_code, source_wilaya_code: beaFix.source_wilaya_code ?? r.source_wilaya_code, geo_precision: "approximate", geo_method: "google_mymaps_embedded_geocode" };
       return r;
     });
     // A handler that returns nothing usually means the bank changed its markup — surface it loudly
