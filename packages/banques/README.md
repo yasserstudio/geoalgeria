@@ -37,7 +37,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (by id or acron
 | --- | --- | --- |
 | Banks | **21** | 7 public · 14 foreign-owned – RIB bank code, name FR/AR, ownership + parent, country, SWIFT/BIC, HQ |
 | Financial institutions | **8** | leasing, refinancing & mutual-credit entities (non-deposit) |
-| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,221 geocoded; **67/69 wilayas** |
+| Branch locations | **1,704** | **all 21 banks** – name, address, phone, wilaya, coordinates; 1,494 geocoded; **67/69 wilayas** |
 
 Every record carries `wilaya_code` (head office) linked to the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) 69-wilaya model.
@@ -60,9 +60,9 @@ Every record carries `wilaya_code` (head office) linked to the
   address's trailing locality. **AGB**'s locator sits behind a bot challenge, so
   its 63 branches are captured via a headless browser and refreshed manually;
   **Arab Bank** publishes only city-level points (name + coordinates, no address).
-  **BDL** and **Trust Bank** come from each bank's published Google My Maps (KML);
+  **BDL** and **Trust Bank** come from each bank's published Google My Maps (KML); the BDL viewer embeds all 191 branch points.
   **Citibank**, **HSBC** and **Ziraat** are their single Algiers offices.
-- Five address-only BDL agencies are supplemented with reviewed OpenStreetMap
+- Five BDL agencies retain reviewed OpenStreetMap
   coordinates only where the OSM object carries the same BDL agency number and
   agrees on the bank, wilaya, and locality. Node points are exact; building
   centroids are approximate. Each corrected record includes its evidence URLs.
