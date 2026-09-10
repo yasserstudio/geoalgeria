@@ -501,6 +501,8 @@ const SOURCES = [
 
 const reviewedBna = JSON.parse(readFileSync(join(SCRIPTS, "seeds", "bna-reviewed.json"), "utf8"));
 const reviewedById = new Map(reviewedBna.map((x) => [x.id, x]));
+const reviewedBea = JSON.parse(readFileSync(join(SCRIPTS, "seeds", "bea-reviewed.json"), "utf8"));
+const reviewedBeaById = new Map(reviewedBea.map((x) => [x.id, x]));
 
 const all = [];
 for (const src of SOURCES) {
@@ -509,6 +511,8 @@ for (const src of SOURCES) {
     const recs = raw.map((r) => normalize(src.bank_id, r, src.coordsAuth !== false)).map((r) => {
       const fix = reviewedById.get(r.id);
       if (src.bank_id === "bna" && fix && (!fix.expected_name || fix.expected_name === r.name) && (!fix.expected_address || fix.expected_address === r.address)) return { ...r, ...fix, geo_precision: fix.lat == null ? null : "exact", geo_method: fix.lat == null ? null : "bank_locator" };
+      const beaFix = reviewedBeaById.get(r.id);
+      if (src.bank_id === "bea" && beaFix && beaFix.expected_name === r.name && beaFix.expected_address === r.address) return { ...r, lat: beaFix.lat, lng: beaFix.lng, geo_precision: "approximate", geo_method: "google_mymaps_embedded_geocode" };
       return r;
     });
     // A handler that returns nothing usually means the bank changed its markup — surface it loudly
