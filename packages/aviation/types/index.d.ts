@@ -33,6 +33,8 @@ export interface Airport {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
+  /** ANAC's original Wilaya code when a reviewed correction changed the linkage. */
+  source_wilaya_code?: string;
   /** Always null — this dataset is wilaya-level only, no commune linkage. */
   commune_code: null;
   /** Always null — see `commune_code`. */

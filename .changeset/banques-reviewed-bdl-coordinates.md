@@ -1,5 +1,5 @@
 ---
-"@geoalgeria/banques": minor
+"@geoalgeria/banques": patch
 ---
 
-Add eight evidence-reviewed BDL and Société Générale branch coordinates, correct SGA's current Tizi Ouzou address, and make reviewed corrections reproducible when canonical package files are rebuilt.
+Publish reviewed BDL, Société Générale, BNA, BEA, and Al Baraka branch coordinate and Wilaya corrections, correct SGA's current Tizi Ouzou address, and keep every correction reproducible when canonical package files are rebuilt.

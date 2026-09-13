@@ -510,7 +510,7 @@ for (const src of SOURCES) {
     const raw = HANDLERS[src.kind](src);
     const recs = raw.map((r) => normalize(src.bank_id, r, src.coordsAuth !== false)).map((r) => {
       const fix = reviewedById.get(r.id);
-      if (src.bank_id === "bna" && fix && (!fix.expected_name || fix.expected_name === r.name) && (!fix.expected_address || fix.expected_address === r.address)) return { ...r, ...fix, geo_precision: fix.lat == null ? null : "exact", geo_method: fix.lat == null ? null : "bank_locator" };
+      if (src.bank_id === "bna" && fix && fix.expected_name === r.name && fix.expected_address === r.address) return { ...r, source_wilaya_code: fix.source_wilaya_code, wilaya_code: fix.wilaya_code, lat: fix.lat, lng: fix.lng, geo_precision: fix.lat == null ? null : "exact", geo_method: fix.lat == null ? null : "bank_locator" };
       const beaFix = reviewedBeaById.get(r.id);
       if (src.bank_id === "bea" && beaFix && beaFix.expected_name === r.name && beaFix.expected_address === r.address) return { ...r, lat: beaFix.lat, lng: beaFix.lng, wilaya_code: beaFix.wilaya_code ?? r.wilaya_code, source_wilaya_code: beaFix.source_wilaya_code ?? r.source_wilaya_code, geo_precision: "approximate", geo_method: "bank_locator" };
       return r;

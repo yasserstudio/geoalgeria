@@ -136,7 +136,9 @@ data/
 Names, communes and daïras are French (as published by the ministry's GIS). `name`
 is `null` for 1,752 facilities the ministry lists with no name (their `type_label_fr`
 still identifies them). `wilaya_code` is zero-padded to two digits; `commune_code`
-is always `null` (the ministry's GIS resolves a commune name but no ONS code).
+is populated for 267 records whose exact current or official 2021 ONS commune label and point
+agree; otherwise it is `null`. Reconciled records use the current Wilaya and preserve a
+differing ministry value in `source_wilaya_code`.
 `geo_precision` is `"exact"` or `"approximate"` (every facility is geocoded, so
 neither is ever `null` here); `geo_method` is always `"sig_mjs"`. `source` is
 `"mjs"`, a key into `metadata.sources[]` (see *Source*, below, for the live GIS

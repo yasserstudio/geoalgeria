@@ -10,6 +10,20 @@ const ledger = read("quality/overrides/banques.json");
 const candidates = read("research/banques/osm/candidates.json").records;
 const byUrl = new Map(candidates.map((record) => [record.source_url, record]));
 
+test("reviewed BNA corrections remain bound to the audited source rows", () => {
+  const seeds = read("packages/banques/scripts/seeds/bna-reviewed.json");
+  const branches = read("packages/banques/data/branches.json");
+  const byId = new Map(branches.map((record) => [record.id, record]));
+
+  assert.ok(seeds.length > 0);
+  for (const seed of seeds) {
+    const branch = byId.get(seed.id);
+    assert.ok(branch, `${seed.id}: missing canonical branch`);
+    assert.equal(seed.expected_name, branch.name);
+    assert.equal(seed.expected_address, branch.address);
+  }
+});
+
 test("reviewed BDL coordinates reproduce their exact-ref OSM evidence", () => {
   const decisions = ledger.decisions.filter(({ record_id }) => record_id.startsWith("bdl-"));
   assert.equal(decisions.length, 5);

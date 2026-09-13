@@ -12,8 +12,10 @@
       "expect": {
         "wilaya_code": "36"
       },
+      "expect_absent": ["source_wilaya_code"],
       "patch": {
-        "wilaya_code": "23"
+        "wilaya_code": "23",
+        "source_wilaya_code": "36"
       },
       "evidence": [
         {

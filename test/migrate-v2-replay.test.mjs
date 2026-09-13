@@ -114,6 +114,7 @@ const CORRECTIONS = {
     // El Tarf. The reviewed ledger corrects the wilaya using the airport's
     // official EGSA page and carries the public review receipt with the row.
     dabb: {
+      source_wilaya_code: "36",
       wilaya_code: "23",
       review_status: "corrected",
       reviewed_at: "2026-09-09",

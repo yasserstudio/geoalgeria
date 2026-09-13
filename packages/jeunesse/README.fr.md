@@ -123,12 +123,12 @@ appariement géographique au plus proche (≤ 200 m, et vérifié par type pour 
 le nom d'un bâtiment voisin) – présent sur ~59 % des enregistrements, `null` où aucune
 correspondance de confiance n'existe (comme ci-dessus). `name` est `null` pour les ~5 % que
 la source laisse vides ; `commune` et `daira` sont en français (majuscules, comme publiés) ;
-`commune_code` est actuellement toujours `null` (le SIG du MJS ne fournit qu'un nom de
-commune). Pour l'ensemble complet des divisions wilaya/commune en français, joignez
+`commune_code` est renseigné pour 128 enregistrements dont le libellé exact de commune actuel
+ou officiel ONS 2021 concorde avec le point ; sinon il vaut `null`. Pour l'ensemble complet des divisions wilaya/commune en français, joignez
 `wilaya_code` avec le jeu de données [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
-`wilaya_code` est complété avec un zéro sur deux chiffres et est `≤ 58` (la source est
-antérieure à la réforme des 69 wilayas) ; il reste compatible avec le modèle wilaya de
-GeoAlgeria. `geo_precision` vaut `"exact"` pour 2 244 enregistrements et `"approximate"` pour
+`wilaya_code` est complété avec un zéro sur deux chiffres et suit le modèle actuel à 69 wilayas.
+Lorsqu'il diffère de la valeur ministérielle antérieure à la réforme, `source_wilaya_code`
+conserve la valeur Source. `geo_precision` vaut `"exact"` pour 2 244 enregistrements et `"approximate"` pour
 90 (le point du SIG est trop grossier, ou partagé avec un autre établissement, pour compter
 comme un point propre à l'établissement) ; tous les enregistrements sont géocodés, donc
 `null` n'apparaît pas ici.
