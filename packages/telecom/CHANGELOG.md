@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.0.0
+
+### Major Changes
+
+- a8864c8: Withhold 18 Djezzy coordinates whose published points contradict their operator-assigned wilayas and site labels. The coverage records and review evidence remain available, while `lat`, `lng`, `geo_precision`, and `geo_method` are now nullable so consumers cannot display known false locations.
+
+### Patch Changes
+
+- 5e0577b: Correct the wilaya linkage of two Mobilis 5G points: Takhemaret to Tiaret (14) and Taoura to Souk Ahras (41). Preserve operator coordinates and stable IDs; retain source evidence and guard corrections against changed upstream records.
+
 ## 2.2.0
 
 ### Minor Changes

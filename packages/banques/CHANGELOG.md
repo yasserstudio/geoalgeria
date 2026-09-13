@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.2
+
+### Patch Changes
+
+- d3194af: Publish reviewed BDL, Société Générale, BNA, BEA, and Al Baraka branch coordinate and Wilaya corrections, correct SGA's current Tizi Ouzou address, and keep every correction reproducible when canonical package files are rebuilt.
+- 8d68f0e: Correct branch geocoding totals and document the current address-only coverage for BNH, HBTF, Fransabank, BEA, and SGA.
+
 ## 2.0.1
 
 ### Patch Changes
