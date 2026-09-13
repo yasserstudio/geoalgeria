@@ -4,7 +4,7 @@
   "name": "Algeria sports facilities",
   "alternateName": "Infrastructures sportives d'Algérie",
   "identifier": "@geoalgeria/sports",
-  "description": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
+  "description": "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
   "conditionsOfAccess": "Factual public listing (Ministry of Youth and Sports)",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.5567 -8.4324 37.035878 10.1953"
     }
   },
-  "variableMeasured": "5141 records, 58 wilayas",
+  "variableMeasured": "5141 records, 69 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",

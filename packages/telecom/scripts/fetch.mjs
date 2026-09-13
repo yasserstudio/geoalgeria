@@ -24,6 +24,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture, stableStringify } from "../../../scripts/lib/source-store.mjs";
+import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
 // Offline replay: rebuild from the committed captures with no network — a dead
 // or WAF-blocked operator site never blocks re-emission.
@@ -32,6 +33,7 @@ const OFFLINE = process.argv.includes("--cache");
 const PKG = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(PKG, "data");
 const TECH = "5G";
+const SOURCE_MANIFEST_PATH = join(PKG, "..", "..", "sources", "telecom", "manifest.json");
 
 // ── wilaya name → zero-padded code, from the geoalgeria flagship ────────────
 const WILAYAS = JSON.parse(
@@ -228,7 +230,7 @@ async function fetchMobilis() {
       continue;
     }
     seen.add(siteId);
-    sites.push({
+    const site = {
       id: siteId,
       technology: TECH,
       operator: "mobilis",
@@ -241,7 +243,8 @@ async function fetchMobilis() {
       lat,
       lng,
       source: "https://mobilis.dz/map/5g",
-    });
+    };
+    sites.push({ ...site, ...reconcileCurrentWilayaByCommune(site) });
   }
   if (sites.length === 0) throw new Error("got 0 Mobilis sites");
   return sites;
@@ -363,11 +366,20 @@ async function main() {
     return { file: s.file, rows: perOperator[op].map(s.map) };
   });
   const today = new Date().toISOString().slice(0, 10);
+  // Read after all live extractors finish: writeCapture updates this file, so a
+  // module-start snapshot would stamp fresh data with the previous run's date.
+  const sourceManifest = JSON.parse(readFileSync(SOURCE_MANIFEST_PATH, "utf8"));
+  const sources = cfg.meta.sources.map((source) => {
+    const capture = sourceManifest[`${source.key}-5g`];
+    if (!capture?.retrieved)
+      throw new Error(`source manifest has no retrieval date for ${source.key}-5g`);
+    return { ...source, retrieved: capture.retrieved };
+  });
   const { records, metadata } = writePackageV2({
     pkg: "telecom",
     dir: DATA,
     files,
-    meta: cfg.meta,
+    meta: { ...cfg.meta, sources },
     updated: today,
     retrieved: today,
   });

@@ -1,0 +1,152 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 20,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32",
+  "count": 6,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32:0",
+      "source_id": "399",
+      "raw": {
+        "id": "399",
+        "code_wilaya": "20",
+        "wilaya": "SAIDA",
+        "commune": "SAIDA/ AIN EL HDJAR/ MOULAY LARBI / KHALFALAH/  OULED KHALED",
+        "adresse": "RUE FRERE BENNACER-SAIDA",
+        "type": "Agence Commerciale",
+        "latitude": " 34.830852",
+        "longitude": "  0.152598\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.830852,
+      "lng": 0.152598,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "20"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32:1",
+      "source_id": "400",
+      "raw": {
+        "id": "400",
+        "code_wilaya": "20",
+        "wilaya": "SAIDA",
+        "commune": "YOUB/DOUI THABET/ HOUNET",
+        "adresse": "AVENUE ALLAL MEDAGRI -YOUB-",
+        "type": "Point de présence",
+        "latitude": " 34.920508",
+        "longitude": "-0.207648\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.920508,
+      "lng": -0.207648,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "20"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32:2",
+      "source_id": "401",
+      "raw": {
+        "id": "401",
+        "code_wilaya": "20",
+        "wilaya": "SAIDA",
+        "commune": "OULED BRAHIM /TIRCINE ",
+        "adresse": "AVENUE CHOUHADA ROUTE NATIONALE N°94- BALLOUL-",
+        "type": "Point de présence",
+        "latitude": "34,9883296",
+        "longitude": "0,473312\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.9883296,
+      "lng": 0.473312,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "20"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32:3",
+      "source_id": "402",
+      "raw": {
+        "id": "402",
+        "code_wilaya": "20",
+        "wilaya": "SAIDA",
+        "commune": "SIDI BOUBKEUR/ SIDI AMAR",
+        "adresse": "RUE FIDAH TAIB ROUTE NATIONALE N°06- SIDI BOUBKEUR-",
+        "type": "Point de présence",
+        "latitude": " 35.030923",
+        "longitude": "0.059943\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.030923,
+      "lng": 0.059943,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "20"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32:4",
+      "source_id": "403",
+      "raw": {
+        "id": "403",
+        "code_wilaya": "20",
+        "wilaya": "SAIDA",
+        "commune": "HASSASNA/ MAAMORA/ AIN SKHOUNA",
+        "adresse": "CENTRE DE HASSASNA",
+        "type": "Point de présence",
+        "latitude": " 34.824577",
+        "longitude": " 0.324456\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.824577,
+      "lng": 0.324456,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "20"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "2bba427e8b464fb48c2c5145e0e0c3028364a3ef5da258cfe3dd36d0412fcd32:5",
+      "source_id": "404",
+      "raw": {
+        "id": "404",
+        "code_wilaya": "20",
+        "wilaya": "SAIDA",
+        "commune": "SAIDA / AIN SOLTAN",
+        "adresse": "COMPLEXE ALGERIE TELECOM LOTISSEMENT MATERNITE- SAIDA",
+        "type": "Agence Commerciale",
+        "latitude": " 34.839040",
+        "longitude": "  0.155577\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.83904,
+      "lng": 0.155577,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "20"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

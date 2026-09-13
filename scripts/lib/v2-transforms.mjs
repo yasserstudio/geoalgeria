@@ -29,6 +29,7 @@ import {
   validateReviewLedger,
   applyReviewedOverrides,
 } from "../../packages/schema/index.js";
+import { reconcileCurrentWilayaByCommune } from "./current-wilaya-by-commune.mjs";
 
 /** Write via a temp sibling + rename so a reader never sees a torn file. Not a
  *  whole-directory transaction — a crash between renames can still leave a mix of
@@ -100,7 +101,7 @@ export const named = (rows) => rows.filter((r) => r.name).length;
 export const LINKAGE = "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort.";
 
 // canonical leading columns for CSV; domain extras are appended in first-seen order.
-const BASE_COLS = ["id", "name", "name_fr", "name_ar", "wilaya_code", "commune_code", "source_commune_code", "commune", "commune_ar", "lat", "lng", "geo_precision", "geo_method", "source", "refs"];
+const BASE_COLS = ["id", "name", "name_fr", "name_ar", "wilaya_code", "source_wilaya_code", "commune_code", "source_commune_code", "commune", "commune_ar", "lat", "lng", "geo_precision", "geo_method", "source", "refs"];
 export function colsFor(rows) {
   const base = BASE_COLS.filter((c) => rows.some((r) => c in r));
   const extra = [];
@@ -135,15 +136,19 @@ const tourThermal = (prefix) => (r) => clean({
 
 // telecom 5G presence points share one row shape; only the geo treatment differs
 // per operator (Djezzy/Mobilis publish cell sites, Ooredoo covered communes).
-const telecom5g = (geo) => (r) =>
-  clean({
+const telecom5g = (geo, reconcileWilaya = false) => (r) => {
+  const linkage = reconcileWilaya
+    ? reconcileCurrentWilayaByCommune(r)
+    : { wilaya_code: wcode(r.wilaya_code), commune_code: r.commune_code ?? null };
+  return clean({
     id: r.id, name: r.name,
-    wilaya_code: wcode(r.wilaya_code), commune_code: null,
+    ...linkage,
     commune: r.commune, commune_ar: r.commune_ar,
     ...geo(r),
     source: r.operator,
     operator: r.operator, technology: r.technology, address: r.address,
   });
+};
 
 // --- per-package migrations -------------------------------------------------
 export const MIGRATIONS = {
@@ -456,7 +461,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: String(r.id).padStart(5, "0"),
       name: r.name, name_ar: r.name_ar,
-      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr, type_label_ar: r.type_ar,
@@ -467,7 +472,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
+      coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria youth institutions", fr: "Établissements de jeunesse d'Algérie", ar: "مؤسسات الشباب الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named_ar: rows.filter((r) => r.name_ar).length }),
     },
@@ -478,7 +483,7 @@ export const MIGRATIONS = {
     map: (r) => clean({
       id: String(r.id).padStart(5, "0"),
       name: r.name,
-      wilaya_code: r.wilaya_code, commune_code: null, commune: r.commune,
+      ...reconcileCurrentWilayaByCommune(r), commune: r.commune,
       ...geoExact(r, "sig_mjs"),
       source: "mjs",
       type: r.type_code, type_label_fr: r.type_fr,
@@ -489,7 +494,7 @@ export const MIGRATIONS = {
       sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
-      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG.",
+      coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
       titles: { en: "Algeria sports facilities", fr: "Infrastructures sportives d'Algérie", ar: "المنشآت الرياضية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), named: named(rows) }),
     },
@@ -547,7 +552,8 @@ export const MIGRATIONS = {
     files: [
       { file: "postoffices.json", map: (r) => clean({
         id: String(r.id), name: r.name, name_ar: r.name_ar,
-        wilaya_code: r.wilaya_code, commune_code: r.commune_code || null,
+        wilaya_code: r.wilaya_code, source_wilaya_code: r.source_wilaya_code,
+        commune_code: r.commune_code || null,
         source_commune_code: r.source_commune_code,
         commune: r.commune_fr, commune_ar: r.commune_ar,
         ...geoExact(r, "baridimap"),
@@ -556,7 +562,7 @@ export const MIGRATIONS = {
       }) },
       { file: "atms.json", map: (r) => clean({
         id: String(r.id), name: r.name,
-        wilaya_code: r.wilaya_code, commune_code: null,
+        ...reconcileCurrentWilayaByCommune(r),
         commune: r.commune_fr, commune_ar: r.commune_ar,
         ...geoExact(r, "baridimap"),
         source: "baridimap",
@@ -567,7 +573,7 @@ export const MIGRATIONS = {
       sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference" }],
       license: "Data © Algérie Poste; redistributed for reference",
       estimatedUniverse: null,
-      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's baridimap portal.",
+      coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its exact current or official ONS 2021 French or Arabic commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
       titles: { en: "Algeria post offices & ATMs", fr: "Bureaux de poste et GAB d'Algérie", ar: "مكاتب البريد والصرافات الآلية الجزائرية" },
       stats: (rows) => ({ distinct_postal_codes: new Set(rows.map((r) => r.postal_code).filter(Boolean)).size }),
     },
@@ -676,8 +682,8 @@ export const MIGRATIONS = {
       }) },
       { file: "branches.json", map: (r) => clean({
         id: r.id, name: r.name,
-        wilaya_code: wcode(r.wilaya_code), commune_code: null, commune: null,
-        ...geoExact(r, "bank_locator"),
+        wilaya_code: wcode(r.wilaya_code), source_wilaya_code: r.source_wilaya_code ? wcode(r.source_wilaya_code) : undefined, commune_code: null, commune: null,
+        ...geoAt(r, r.geo_precision ?? "exact", r.geo_method ?? "bank_locator"),
         source: "bank_locator",
         bank_id: r.bank_id, address: r.address, phone: r.phone,
       }) },
@@ -686,10 +692,11 @@ export const MIGRATIONS = {
       sources: [
         { key: "boa", name: "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: "2026-06-16", evidence_type: "official" },
         { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
+        { key: "osm", name: "OpenStreetMap — reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
       ],
-      license: "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
+      license: "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       estimatedUniverse: null,
-      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,213 carry a geocoded point, the rest are address-only per each bank's published data (see README).",
+      coverageNote: "The Banque d'Algérie agréé roster (21 banks + 8 financial institutions) is complete. Branch locations cover all 21 banks' own locators (1,704 branches); 1,325 carry a geocoded point, including eight reviewed BDL and SGA branches matched to OSM by bank, wilaya, locality, and agency number or street address. The rest remain address-only (see README).",
       titles: { en: "Algeria banks & financial institutions", fr: "Banques et institutions financières d'Algérie", ar: "البنوك والمؤسسات المالية الجزائرية" },
       stats: (rows) => {
         const registry = rows.filter((r) => r.source === "boa");
@@ -851,7 +858,7 @@ export const MIGRATIONS = {
     // (5g-*) AND on every record, so a future 4G is purely additive.
     files: [
       { file: "5g-djezzy.json", from: "coverage/5g/djezzy.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
-      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map")) },
+      { file: "5g-mobilis.json", from: "coverage/5g/mobilis.json", map: telecom5g((r) => geoExact(r, "operator_map"), true) },
       // Ooredoo publishes covered communes, not cell sites — points are placed
       // within the commune, so they are approximate by construction.
       { file: "5g-ooredoo.json", from: "coverage/5g/ooredoo.json", map: telecom5g((r) => geoAt(r, "approximate", "operator_commune_point")) },
@@ -872,7 +879,7 @@ export const MIGRATIONS = {
       license: "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
       estimatedUniverse: null,
       coverageNote:
-        "5G presence points from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
+        "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
       titles: { en: "Algeria 5G coverage points", fr: "Points de couverture 5G en Algérie", ar: "نقاط تغطية الجيل الخامس في الجزائر" },
       stats: (rows) => ({
         technologies: [...new Set(rows.map((r) => r.technology))].sort(),

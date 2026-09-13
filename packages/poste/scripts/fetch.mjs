@@ -13,7 +13,11 @@
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { MIGRATIONS, writePackageV2 } from "../../../scripts/lib/v2-transforms.mjs";
-import { normalizeProviderCommune } from "../../../scripts/lib/commune-index.mjs";
+import {
+  canonicalCommuneForCode,
+  normalizeProviderCommune,
+} from "../../../scripts/lib/commune-index.mjs";
+import { reconcileCurrentWilayaByCommune } from "../../../scripts/lib/current-wilaya-by-commune.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Canonical output for this package, plus the byte-identical mirror inside the
@@ -36,6 +40,8 @@ const num = (v) => {
   return Number.isFinite(n) ? n : null;
 };
 const clean = (v) => (v === undefined ? null : v);
+const padWilayaCode = (value) =>
+  value == null || value === "" ? null : String(value).padStart(2, "0");
 
 async function getJSON(path) {
   const res = await fetch(`${API}${path}`, { headers: HEADERS });
@@ -47,7 +53,7 @@ async function getJSON(path) {
 }
 
 // --- normalizers ----------------------------------------------------------
-function normPostOffice(o) {
+export function normPostOffice(o) {
   const c = o.commune || {};
   const w = c.wilaya || {};
   const communeCodes = normalizeProviderCommune({
@@ -56,6 +62,11 @@ function normPostOffice(o) {
     communeAr: c.name_ar,
     sourceCode: c.code,
   });
+  const currentCommune = canonicalCommuneForCode(communeCodes.commune_code);
+  const sourceWilayaCode = padWilayaCode(w.id);
+  const currentWilayaCode = padWilayaCode(
+    currentCommune?.wilaya_code ?? sourceWilayaCode,
+  );
   return {
     id: o.id,
     name: o.nom ?? null,
@@ -65,9 +76,12 @@ function normPostOffice(o) {
     postal_code_old: o.cp_old ?? null,
     address: o.adresse ?? null,
     ...communeCodes,
+    ...(Number(currentWilayaCode) !== Number(sourceWilayaCode)
+      ? { source_wilaya_code: sourceWilayaCode }
+      : {}),
     commune_fr: c.name_fr ?? null,
     commune_ar: c.name_ar ?? null,
-    wilaya_code: w.id ?? null,
+    wilaya_code: currentWilayaCode,
     wilaya_fr: w.name_fr ?? null,
     wilaya_ar: w.name_ar ?? null,
     lat: num(o.gps?.lat),
@@ -75,8 +89,8 @@ function normPostOffice(o) {
   };
 }
 
-function normAtm(a) {
-  return {
+export function normAtm(a) {
+  const record = {
     id: clean(a.atm_id),
     name: a.name ?? null,
     status: clean(a.status),
@@ -91,6 +105,7 @@ function normAtm(a) {
     lat: num(a.latitude),
     lng: num(a.longitude),
   };
+  return { ...record, ...reconcileCurrentWilayaByCommune(record) };
 }
 
 // --- main ------------------------------------------------------------------
@@ -125,7 +140,9 @@ async function main() {
   console.log(`Wrote ${offices.length} post offices + ${atms.length} ATMs → v2 (package + dataset mirror).`);
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

@@ -6,6 +6,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { readCapture } from "./source-store.mjs";
+import { conservativeKey, looseKey } from "../../packages/normalize/index.js";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DATASET = join(ROOT, "packages", "dataset", "data");
@@ -16,27 +17,11 @@ const COMMUNE_FILES = [
 ];
 
 export function latinNameKey(value) {
-  return String(value ?? "")
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase()
-    .replace(/[’'`-]/g, " ")
-    .replace(/[^A-Z0-9 ]/g, " ")
-    .replace(/\s+/g, "")
-    .trim();
+  return conservativeKey(String(value ?? ""));
 }
 
 export function arabicNameKey(value) {
-  return String(value ?? "")
-    .normalize("NFKC")
-    .replace(/[\u0610-\u061a\u064b-\u065f\u0670\u06d6-\u06ed]/g, "")
-    .replace(/[\u202a-\u202e\u2066-\u2069]/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/ى/g, "ي")
-    .replace(/ؤ/g, "و")
-    .replace(/ئ/g, "ي")
-    .replace(/ة/g, "ه")
-    .replace(/[^\u0621-\u063a\u0641-\u064a]/g, "");
+  return looseKey(String(value ?? ""));
 }
 
 export const padCommuneCode = (value) =>
@@ -114,6 +99,23 @@ const currentByCode = new Map(
 
 export function canonicalCommuneForCode(code) {
   return currentByCode.get(padCommuneCode(code)) ?? null;
+}
+
+/** Resolve an exact normalized French label from the official 2021 ONS scope
+ * to that stable commune code's current canonical row. */
+export function canonicalCommuneForOfficialFrenchLabel(wilayaCode, commune) {
+  const historical = officialFrench.get(
+    `${Number(wilayaCode)}|${latinNameKey(commune)}`,
+  );
+  return historical ? canonicalCommuneForCode(historical.code_commune) : null;
+}
+
+/** Arabic counterpart to the exact official historical-label lookup. */
+export function canonicalCommuneForOfficialArabicLabel(wilayaCode, communeAr) {
+  const historical = officialArabic.get(
+    `${Number(wilayaCode)}|${arabicNameKey(communeAr)}`,
+  );
+  return historical ? canonicalCommuneForCode(historical.code_commune) : null;
 }
 
 export function canonicalCommuneForCurrentLabel(wilayaCode, commune, communeAr = null) {

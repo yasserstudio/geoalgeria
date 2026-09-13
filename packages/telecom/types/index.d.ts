@@ -17,13 +17,13 @@ export type Operator = "djezzy" | "mobilis" | "ooredoo";
  *  Djezzy and Mobilis publish cell-site points (`exact`, save a handful of
  *  coarse or coincident points demoted to `approximate`); Ooredoo publishes
  *  covered communes, so its points are `approximate` by construction. */
-export type GeoPrecision = "exact" | "approximate";
+export type GeoPrecision = "exact" | "approximate" | null;
 
 /** How the point was obtained. */
-export type GeoMethod = "operator_map" | "operator_commune_point";
+export type GeoMethod = "operator_map" | "operator_commune_point" | null;
 
-/** A single coverage point, as claimed by the operator (presence, not
- *  measured RF coverage). Every record is geocoded. */
+/** A single coverage record, as claimed by the operator (presence, not
+ *  measured RF coverage). A reviewed source conflict may have no coordinate. */
 export interface CoverageSite {
   /** Deterministic id (operator + fixed-precision coordinates + label);
    *  operator-prefixed, unique across the whole technology. */
@@ -32,16 +32,18 @@ export interface CoverageSite {
   name: string | null;
   /** Zero-padded wilaya code ("01".."69"); joins to geoalgeria. */
   wilaya_code: string;
-  /** Always null: operators publish free-text names, no ONS codes. */
+  /** Original operator wilaya when it differs from the current wilaya. */
+  source_wilaya_code?: string;
+  /** ONS commune code when a guarded current-wilaya reconciliation succeeds. */
   commune_code: string | null;
   /** Commune name (French), or null. */
   commune: string | null;
   /** Commune name (Arabic), or null. */
   commune_ar: string | null;
   /** Latitude (WGS84). */
-  lat: number;
+  lat: number | null;
   /** Longitude (WGS84). */
-  lng: number;
+  lng: number | null;
   /** Coordinate provenance. */
   geo_precision: GeoPrecision;
   /** How the point was obtained. */
@@ -54,6 +56,11 @@ export interface CoverageSite {
   technology: Technology;
   /** Street address, or null when the source gives none. */
   address: string | null;
+  /** Present only when an evidence-backed correction was applied. */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */
@@ -80,7 +87,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — every site. */
+  /** Records with publishable coordinates. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */

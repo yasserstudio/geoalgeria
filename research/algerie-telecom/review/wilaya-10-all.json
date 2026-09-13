@@ -1,0 +1,198 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 10,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a",
+  "count": 8,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:0",
+      "source_id": "161",
+      "raw": {
+        "id": "161",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "BOUIRA, AIN TURK, AIT LAAZIZ, AOMAR, AIN LAHDJAR, OUED EL BERDI, DJEBAHIA",
+        "adresse": "RUE GHERBI GHAMRAAOUI BOUIRA",
+        "type": "Agence Commerciale",
+        "latitude": "36.38697",
+        "longitude": "3.900907\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.38697,
+      "lng": 3.900907,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:1",
+      "source_id": "162",
+      "raw": {
+        "id": "162",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "BECHLOUL, AHL EL KSAR, EL ASNAM, OULED RACHED",
+        "adresse": "RUE MIHOUBI BRAHIMAIN BESSAM ",
+        "type": "Point de présence",
+        "latitude": "36.372455",
+        "longitude": "4.073892\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.372455,
+      "lng": 4.073892,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:2",
+      "source_id": "163",
+      "raw": {
+        "id": "163",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "HAIZER, TAGHZOUT",
+        "adresse": "CITE 42 LOGT HAIZER",
+        "type": "Point de présence",
+        "latitude": "36.395624",
+        "longitude": "4.00281\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.395624,
+      "lng": 4.00281,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:3",
+      "source_id": "164",
+      "raw": {
+        "id": "164",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "LAKHDARIA, BOUDERBALA, MAALA, BOUKRAM, GUERROUMA, KADIRIA, Z'BARBAR",
+        "adresse": "RUE SLIMANI MOUDJAHED LAKHDARIA",
+        "type": "Agence Commerciale",
+        "latitude": "36.562032",
+        "longitude": "3.596411\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.562032,
+      "lng": 3.596411,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:4",
+      "source_id": "165",
+      "raw": {
+        "id": "165",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "AIN BESSAM, AIN LALOUI, EL HACHIMIA, SOUK EL KHEMIS, EL MOKRANI",
+        "adresse": "RUE MIHOUBI BRAHIM N°71",
+        "type": "Agence Commerciale",
+        "latitude": "36.292555",
+        "longitude": "3.669879\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.292555,
+      "lng": 3.669879,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:5",
+      "source_id": "166",
+      "raw": {
+        "id": "166",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "BIR GHBALOU, KHABOUZIA, RAOURAOUA",
+        "adresse": "CITE 92 LOGT BIR GHBALOU",
+        "type": "Point de présence",
+        "latitude": "36.264165",
+        "longitude": "3.587924\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.264165,
+      "lng": 3.587924,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:6",
+      "source_id": "167",
+      "raw": {
+        "id": "167",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "M'CHEDALLAH, CHORFA, SAHARIDJ, AGHBALOU, AHNIF, ATH MANSOUR, EL ADJIBA",
+        "adresse": "RUE COLONEL AMIROUCHE M'CHEDALLAH",
+        "type": "Agence Commerciale",
+        "latitude": "36.365951",
+        "longitude": "4.272506\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.365951,
+      "lng": 4.272506,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "0f10b28bdebd7327a3e448cf1cf5263190d7d35c16050b7b67edfcca2fa1f32a:7",
+      "source_id": "168",
+      "raw": {
+        "id": "168",
+        "code_wilaya": "10",
+        "wilaya": "BOUIRA",
+        "commune": "SOUR EL GHOZLANE, MAAMORA, DECHMIA, DIRAH, EL HAKIMIA, RIDANE, BORDJ OKHRIS, MESDOUR, TAGUEDIT, HADJRA ZERGA",
+        "adresse": "RUE 01 ERE NOVEMBRE 1954",
+        "type": "Agence Commerciale",
+        "latitude": "36.147762",
+        "longitude": "3.688706\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.147762,
+      "lng": 3.688706,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "10"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

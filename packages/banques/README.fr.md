@@ -38,7 +38,7 @@ banques.byId("BNA");          // → Banque Nationale d'Algérie (par id ou acro
 | --- | --- | --- |
 | Banques | **21** | 7 publiques · 14 à capitaux étrangers – code banque RIB, nom FR/AR, propriété + groupe, pays, SWIFT/BIC, siège |
 | Établissements financiers | **8** | crédit-bail, refinancement et crédit mutuel (non-dépôt) |
-| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 213 géocodées ; **67/69 wilayas** |
+| Agences | **1 704** | **les 21 banques** – nom, adresse, téléphone, wilaya, coordonnées ; 1 325 géocodées ; **67/69 wilayas** |
 
 Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèle
 69 wilayas de [`geoalgeria`](https://www.npmjs.com/package/geoalgeria).
@@ -59,14 +59,25 @@ Chaque enregistrement porte un `wilaya_code` (siège social) rattaché au modèl
   supprimé et la wilaya conservée – jamais de coordonnée devinée. Les pages de
   localisation sont récupérées avec la vérification TLS désactivée (`curl -k`)
   car plusieurs hôtes bancaires `.dz` servent des certificats invalides.
-- **Banques sans coordonnées** (BNH, HBTF, Fransabank, BEA, SGA) : ces agences
-  sont livrées avec `lat`/`lng` `null` et une wilaya déduite de la localité en
-  fin d'adresse. Le localisateur d'**AGB** est protégé par un défi anti-bot :
+- **Banques entièrement sans coordonnées** : BNH (60 agences), HBTF (10) et
+  Fransabank (23). Leurs annuaires officiels ne publient aucun point ; ces
+  agences sont donc livrées avec `lat`/`lng` `null` et une wilaya déduite de la
+  localité en fin d'adresse. BEA compte 89 agences géocodées sur 111 et SGA 3
+  sur 84 après des contrôles stricts des sources et des preuves ; leurs autres
+  agences restent elles aussi limitées à l'adresse. Le localisateur d'**AGB**
+  est protégé par un défi anti-bot :
   ses 63 agences sont capturées via un navigateur headless et rafraîchies
   manuellement ; **Arab Bank** ne publie que des points au niveau ville (nom +
   coordonnées, sans adresse). **BDL** et **Trust Bank** proviennent des
   Google My Maps (KML) publiés par chaque banque ; **Citibank**, **HSBC** et
   **Ziraat** correspondent à leur bureau unique à Alger.
+- Cinq agences BDL sans point dans la source sont complétées par des coordonnées
+  OpenStreetMap vérifiées uniquement lorsque l'objet OSM porte le même numéro
+  d'agence BDL et concorde sur la banque, la wilaya et la localité. Chaque
+  correction publie ses liens de preuve.
+- Trois agences SGA sont complétées uniquement lorsque la banque, la voie, la
+  wilaya et la localité concordent dans OSM, avec le numéro également concordant
+  lorsqu'il est disponible. Chaque correction publie les deux liens de preuve.
 - **`bank_code`** est le _code banque_ RIB à 3 chiffres (positions 5–7 de
   l'IBAN), vérifié contre des tables de codes banque indépendantes – il n'existe
   pas de registre officiel public unique. BNH et Ziraat (toutes deux nouvellement
@@ -117,8 +128,8 @@ Conditions complètes : voir le [**DISCLAIMER**](https://github.com/yasserstudio
 
 **Code** (chargeurs, types) : [MIT](LICENSE). **Données** : données factuelles
 publiques (listes réglementaires + localisateur public de chaque établissement),
-redistribuées à titre de référence ; l'attribution est appréciée, et vous restez
-responsable des conditions des sources originales.
+redistribuées à titre de référence. Les coordonnées OSM vérifiées sont © contributeurs
+OpenStreetMap sous ODbL 1.0. Vous restez responsable des conditions des sources originales.
 
 [Documentation API et référence des champs →](https://geoalgeria.com/data/docs/banques) · [Parcourir tous les paquets →](https://geoalgeria.com/data)
 

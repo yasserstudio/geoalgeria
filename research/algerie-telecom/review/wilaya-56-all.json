@@ -1,0 +1,60 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 56,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "fea67184a4e02a1154b588a75fd46e14191174a797edfae3d467edfb4755aa70",
+  "count": 2,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "fea67184a4e02a1154b588a75fd46e14191174a797edfae3d467edfb4755aa70:0",
+      "source_id": "197",
+      "raw": {
+        "id": "197",
+        "code_wilaya": "56",
+        "wilaya": "DJANET",
+        "commune": "DJANET",
+        "adresse": "TINKHATMA , DJANET",
+        "type": "Agence Commerciale",
+        "latitude": "24,554928",
+        "longitude": "9,486045\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 24.554928,
+      "lng": 9.486045,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "56"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "fea67184a4e02a1154b588a75fd46e14191174a797edfae3d467edfb4755aa70:1",
+      "source_id": "198",
+      "raw": {
+        "id": "198",
+        "code_wilaya": "56",
+        "wilaya": "DJANET",
+        "commune": "BORDJ EL-HOUES",
+        "adresse": "CENTRE VILLE BORDJ  EL-HOUES",
+        "type": "Point de présence",
+        "latitude": " 24.876867",
+        "longitude": "  8.442008\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 24.876867,
+      "lng": 8.442008,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "56"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

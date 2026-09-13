@@ -27,8 +27,10 @@ export interface Facility {
   name: string | null;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code — always null: the SIG resolves to a commune name only;
-   *  typed as `string | null` so a future value is not a break. */
+  /** Ministry wilaya code when it differs from the reconciled current wilaya. */
+  source_wilaya_code?: string;
+  /** Commune (ONS) code where a unique canonical match supports a reconciled
+   *  current wilaya; otherwise null because the SIG supplies only a name. */
   commune_code: string | null;
   /** Commune name, as published by the SIG (not necessarily canonical casing). */
   commune: string;

@@ -1,0 +1,106 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 30,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "1cdcce5dd271df13f7e45a51ca0e7108c1190d18ada83554f76a7d658b21e40c",
+  "count": 4,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "1cdcce5dd271df13f7e45a51ca0e7108c1190d18ada83554f76a7d658b21e40c:0",
+      "source_id": "369",
+      "raw": {
+        "id": "369",
+        "code_wilaya": "30",
+        "wilaya": "OUARGLA",
+        "commune": "OUARGLA/ N'GOUSSA/ HASSI BEN ABDALLAH/ AIN BEIDA / SIDI KHOUILED ",
+        "adresse": "RUE ROUABH ABDERHMANE CENTRE VILLE OUARGLA",
+        "type": "Agence Commerciale",
+        "latitude": "31.958294",
+        "longitude": "5.332840 \r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 31.958294,
+      "lng": 5.33284,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "30"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1cdcce5dd271df13f7e45a51ca0e7108c1190d18ada83554f76a7d658b21e40c:1",
+      "source_id": "370",
+      "raw": {
+        "id": "370",
+        "code_wilaya": "30",
+        "wilaya": "OUARGLA",
+        "commune": "HASSI MESSAOUD",
+        "adresse": "ROUTE DE L' AIR EPORT IRARA",
+        "type": "Agence Commerciale",
+        "latitude": "31.686730",
+        "longitude": "6.059971\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 31.68673,
+      "lng": 6.059971,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "30"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1cdcce5dd271df13f7e45a51ca0e7108c1190d18ada83554f76a7d658b21e40c:2",
+      "source_id": "371",
+      "raw": {
+        "id": "371",
+        "code_wilaya": "30",
+        "wilaya": "OUARGLA",
+        "commune": "EL BORMA",
+        "adresse": "EL BORMA VILLE ",
+        "type": "Point de présence",
+        "latitude": "31.595960",
+        "longitude": "9.161271\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 31.59596,
+      "lng": 9.161271,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "30"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1cdcce5dd271df13f7e45a51ca0e7108c1190d18ada83554f76a7d658b21e40c:3",
+      "source_id": "372",
+      "raw": {
+        "id": "372",
+        "code_wilaya": "30",
+        "wilaya": "OUARGLA",
+        "commune": "OUARGLA/ROUISSAT ",
+        "adresse": "CITE 328 LOGTS HAI ENNASR",
+        "type": "Agence Commerciale",
+        "latitude": "31.949415",
+        "longitude": "5.264715\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 31.949415,
+      "lng": 5.264715,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "30"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

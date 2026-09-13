@@ -1,0 +1,129 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 38,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "92f66945badbcc3f930d8555dcceee796052f4a881be86f47ae0ab21d58e4ee7",
+  "count": 5,
+  "flagged": 0,
+  "candidates": [
+    {
+      "candidate_id": "92f66945badbcc3f930d8555dcceee796052f4a881be86f47ae0ab21d58e4ee7:0",
+      "source_id": "485",
+      "raw": {
+        "id": "485",
+        "code_wilaya": "38",
+        "wilaya": "TISSEMSILT",
+        "commune": "TISSEMSILT/AMMARI/MAACEM/OULED BESSEM/SIDI ABED",
+        "adresse": "CMPLEXE PTT TISSEMSILT",
+        "type": "Agence Commerciale",
+        "latitude": "35,604533",
+        "longitude": "1,807817\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.604533,
+      "lng": 1.807817,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "38"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "92f66945badbcc3f930d8555dcceee796052f4a881be86f47ae0ab21d58e4ee7:1",
+      "source_id": "486",
+      "raw": {
+        "id": "486",
+        "code_wilaya": "38",
+        "wilaya": "TISSEMSILT",
+        "commune": "BORDJ BOUNAAMA/LAZHARIA/BOUCAID/SIDI SLIMANE/LARBAA/BENI CHAIB/BENI LAHCEN",
+        "adresse": "REU HOUARI BOUMEDIENE",
+        "type": "Point de présence",
+        "latitude": "35,85061",
+        "longitude": "1,618478\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.85061,
+      "lng": 1.618478,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "38"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "92f66945badbcc3f930d8555dcceee796052f4a881be86f47ae0ab21d58e4ee7:2",
+      "source_id": "487",
+      "raw": {
+        "id": "487",
+        "code_wilaya": "38",
+        "wilaya": "TISSEMSILT",
+        "commune": "LARDJEM/MELAAB/TAMELAHET/SIDI LANTRI",
+        "adresse": "CENTRE VILLE LARDJEM",
+        "type": "Point de présence",
+        "latitude": "35.750264",
+        "longitude": "1.545509\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.750264,
+      "lng": 1.545509,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "38"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "92f66945badbcc3f930d8555dcceee796052f4a881be86f47ae0ab21d58e4ee7:3",
+      "source_id": "488",
+      "raw": {
+        "id": "488",
+        "code_wilaya": "38",
+        "wilaya": "TISSEMSILT",
+        "commune": "KHEMISTI/LAAYOUNE",
+        "adresse": "ROUTE NATIONAL Nø14 KHEMISTI",
+        "type": "Point de présence",
+        "latitude": "35,663057",
+        "longitude": "1,963624\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.663057,
+      "lng": 1.963624,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "38"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "92f66945badbcc3f930d8555dcceee796052f4a881be86f47ae0ab21d58e4ee7:4",
+      "source_id": "489",
+      "raw": {
+        "id": "489",
+        "code_wilaya": "38",
+        "wilaya": "TISSEMSILT",
+        "commune": "THENIET EL HAD/BORDJ EMIR AEK/YOUSSOUFIA/SIDI BOUTOUCHENT",
+        "adresse": "BOULVARD INDEPENDANCE ",
+        "type": "Agence Commerciale",
+        "latitude": "35,86711",
+        "longitude": "2,02587\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.86711,
+      "lng": 2.02587,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "38"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

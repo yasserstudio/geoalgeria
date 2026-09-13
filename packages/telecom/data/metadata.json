@@ -5,16 +5,16 @@
   "title_ar": "نقاط تغطية الجيل الخامس في الجزائر",
   "title_en": "Algeria 5G coverage points",
   "record_count": 3598,
-  "geocoded_count": 3598,
-  "geocoded_pct": 100,
+  "geocoded_count": 3580,
+  "geocoded_pct": 99.5,
   "precision": {
-    "exact": 3413,
+    "exact": 3395,
     "approximate": 185
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "5G presence points from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Commune codes are not linked (operators publish free-text names only).",
-  "wilayas_covered": 58,
+  "coverage_note": "5G presence records from each operator's published coverage map, as claimed by the operators (not measured RF coverage). Djezzy and Mobilis publish cell-site level points; 18 Djezzy records have their coordinates withheld because the operator's wilaya and site labels contradict the published point. Ooredoo publishes covered communes, so its points are commune-level and marked approximate. Mobilis still labels some communes under their pre-2026 mother wilaya; 31 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French or Arabic commune match and polygon containment agree, with source_wilaya_code preserving the operator value. Other commune names remain unlinked free text.",
+  "wilayas_covered": 66,
   "bbox": [
     -8.16521,
     19.562361,
@@ -62,7 +62,7 @@
     }
   ],
   "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-  "updated": "2026-09-08",
+  "updated": "2026-09-10",
   "technologies": [
     "5G"
   ],

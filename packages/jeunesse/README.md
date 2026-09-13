@@ -57,7 +57,7 @@ const houses = jeunesse.institutionsByType("MJ");     // every maison de jeunes
 | Bloc d'accueil | `BA` | 3 |
 | **Total** | | **2,334** |
 
-Spanning **58 wilayas**, every establishment geocoded. `wilaya_code` is linked against the
+Spanning **69 wilayas**, every establishment geocoded. `wilaya_code` is linked against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) wilaya model.
 
 ## Formats
@@ -122,12 +122,13 @@ parse it. The GIS publishes names in **French**; `name_ar` is the Arabic name **
 from the ministry's legacy public map by nearest-neighbour geo-match (≤ 200 m, and
 type-checked so a different kind of facility's name is never grafted on), present on ~59% of
 records, `null` where no confident match exists (as above). `name` is `null` for the ~5% the
-source leaves blank; `commune` and `daira` are French (uppercase, as published); `commune_code`
-is currently always `null` (the MJS GIS gives a commune name only). For the full French
+source leaves blank; `commune` and `daira` are French (uppercase, as published). `commune_code`
+is populated for 128 records whose exact current or official 2021 ONS commune label and point
+agree; otherwise it is `null`. For the full French
 wilaya/commune divisions, join `wilaya_code` against the
 [`geoalgeria`](https://www.npmjs.com/package/geoalgeria) dataset. `wilaya_code` is zero-padded
-to two digits and is `≤ 58` (the source predates the 69-wilaya reform); it still joins the
-GeoAlgeria wilaya model. `geo_precision` is `"exact"` for 2,244 records and `"approximate"`
+to two digits and uses the current 69-Wilaya model. Where it differs from the ministry's
+pre-reform value, `source_wilaya_code` preserves the Source value. `geo_precision` is `"exact"` for 2,244 records and `"approximate"`
 for 90 (the GIS point is rounded too coarse, or shared with another establishment, to count as
 a per-facility point); every record is geocoded, so `null` doesn't occur here.
 

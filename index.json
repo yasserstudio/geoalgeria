@@ -42,18 +42,18 @@
         36.824416
       ],
       "license": "Factual public listing (ANAC); IATA codes and three supplementary airports from OurAirports (public domain)",
-      "updated": "2026-07-28"
+      "updated": "2026-09-09"
     },
     {
       "package": "@geoalgeria/banques",
       "schema_version": "2.0.0",
       "title": "Algeria banks & financial institutions",
       "record_count": 1733,
-      "geocoded_count": 1213,
-      "geocoded_pct": 70,
+      "geocoded_count": 1325,
+      "geocoded_pct": 76.5,
       "precision": {
-        "exact": 1145,
-        "approximate": 68
+        "exact": 1161,
+        "approximate": 164
       },
       "wilayas_covered": 67,
       "bbox": [
@@ -62,8 +62,8 @@
         9.577856,
         37.008375
       ],
-      "license": "Compiled from public regulatory listings and official institution sites/locators; redistributed for reference. See README.",
-      "updated": "2026-06-16"
+      "license": "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
+      "updated": "2026-09-09"
     },
     {
       "package": "@geoalgeria/buses",
@@ -312,7 +312,7 @@
         "exact": 2244,
         "approximate": 90
       },
-      "wilayas_covered": 58,
+      "wilayas_covered": 69,
       "bbox": [
         -8.1489,
         19.5666,
@@ -448,7 +448,7 @@
         "exact": 5913,
         "approximate": 0
       },
-      "wilayas_covered": 58,
+      "wilayas_covered": 69,
       "bbox": [
         -8.165285,
         19.562719,
@@ -516,7 +516,7 @@
         "exact": 5008,
         "approximate": 133
       },
-      "wilayas_covered": 58,
+      "wilayas_covered": 69,
       "bbox": [
         -8.4324,
         19.5567,
@@ -531,13 +531,13 @@
       "schema_version": "2.0.0",
       "title": "Algeria 5G coverage points",
       "record_count": 3598,
-      "geocoded_count": 3598,
-      "geocoded_pct": 100,
+      "geocoded_count": 3580,
+      "geocoded_pct": 99.5,
       "precision": {
-        "exact": 3413,
+        "exact": 3395,
         "approximate": 185
       },
-      "wilayas_covered": 58,
+      "wilayas_covered": 66,
       "bbox": [
         -8.16521,
         19.562361,
@@ -545,7 +545,7 @@
         37.026438
       ],
       "license": "Data © respective operators (Djezzy, Mobilis, Ooredoo); redistributed for reference. No open licence.",
-      "updated": "2026-09-08"
+      "updated": "2026-09-10"
     },
     {
       "package": "@geoalgeria/tourisme",

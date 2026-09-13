@@ -94,6 +94,36 @@ for (const [pkg, entry] of Object.entries(FIXTURE.packages)) {
 // its own output before comparing, so the guard keeps watching every OTHER
 // field of the same record instead of being silenced record-wide.
 const CORRECTIONS = {
+  banques: {
+    // BEA's locator publishes address-only rows. The reviewed seed enriches
+    // them with the locator's embedded map coordinates after the v2 cutover;
+    // keep the frozen source row fixed while replaying that enrichment.
+    "bea-dga_mostaganem-0-agences-6": {
+      lat: 35.8554275,
+      lng: -0.3131278,
+      geo_precision: "approximate",
+      geo_method: "bank_locator",
+    },
+  },
+  aviation: {
+    // OurAirports now publishes the same Mecheria point with fewer trailing
+    // decimal places. Keep the frozen migration row fixed while accepting that
+    // source-only precision normalization on the generated supplement.
+    daay: { lat: 33.5359, lng: -0.242353 },
+    // ANAC's nearest-centroid join placed Annaba's Rabah Bitat airport in
+    // El Tarf. The reviewed ledger corrects the wilaya using the airport's
+    // official EGSA page and carries the public review receipt with the row.
+    dabb: {
+      source_wilaya_code: "36",
+      wilaya_code: "23",
+      review_status: "corrected",
+      reviewed_at: "2026-09-09",
+      reviewed_by: "geoalgeria-maintainers",
+      review_evidence: [
+        "https://www.egsa-constantine.dz/index.php/aeroports/aeroport-d-annaba-rabah-bitat",
+      ],
+    },
+  },
   telecom: {
     // Ooredoo corrected these commune spellings without moving the published
     // points. The generator keeps each historical public id while exposing the

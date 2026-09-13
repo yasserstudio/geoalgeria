@@ -10,6 +10,9 @@ export type GeoPrecision = "exact" | "approximate" | null;
 /** How the coordinate was obtained: always the source's own published point. */
 export type GeoMethod = "source_point";
 
+/** Maintainer review applied to a source-derived record. */
+export type ReviewStatus = "corrected";
+
 /** External identifiers keyed by source system. */
 export interface Refs {
   /** ICAO (OACI) code, duplicated from the top-level `icao` field. */
@@ -30,6 +33,8 @@ export interface Airport {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
+  /** ANAC's original Wilaya code when a reviewed correction changed the linkage. */
+  source_wilaya_code?: string;
   /** Always null — this dataset is wilaya-level only, no commune linkage. */
   commune_code: null;
   /** Always null — see `commune_code`. */
@@ -61,6 +66,14 @@ export interface Airport {
   phone: string | null;
   /** Official website URL, or null, see `address`. */
   website: string | null;
+  /** Present when maintainers corrected a source-derived field after review. */
+  review_status?: ReviewStatus;
+  /** ISO date (YYYY-MM-DD) of the correction review. */
+  reviewed_at?: string;
+  /** Maintainer or team that performed the review. */
+  reviewed_by?: string;
+  /** Public evidence URLs supporting the correction. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

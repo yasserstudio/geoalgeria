@@ -44,7 +44,10 @@ import {
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
 import { MIGRATIONS } from "./lib/v2-transforms.mjs";
-import { canonicalCommuneCodes } from "./lib/commune-index.mjs";
+import {
+  canonicalCommuneCodes,
+  canonicalCommuneForCode,
+} from "./lib/commune-index.mjs";
 import { licenceTermsErrors } from "./lib/licence-terms.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
@@ -754,6 +757,25 @@ function validateDataset(pkg, spec) {
     );
   }
 
+  const mismatchedCommuneWilayas = arr.filter((record) => {
+    if (record?.commune_code == null) return false;
+    const commune = canonicalCommuneForCode(record.commune_code);
+    return commune && String(commune.wilaya_code).padStart(2, "0") !== record.wilaya_code;
+  });
+  if (mismatchedCommuneWilayas.length) {
+    const sample = mismatchedCommuneWilayas
+      .slice(0, 5)
+      .map((record) => {
+        const current = canonicalCommuneForCode(record.commune_code);
+        return `${record.id}:${record.wilaya_code}->${String(current.wilaya_code).padStart(2, "0")}`;
+      })
+      .join(", ");
+    fail(
+      `${label}: ${mismatchedCommuneWilayas.length} commune_code/wilaya_code relationship(s) disagree with the canonical commune table` +
+        (sample ? ` (sample ${sample})` : ""),
+    );
+  }
+
   // count vs metadata
   let meta = {};
   try {
@@ -1351,6 +1373,9 @@ function validateTypes(pkgs) {
       }
     };
 
+    // A shared interface describes the union of its entity files. Optional
+    // review fields may occur in one operator's records but not the others.
+    const byInterface = new Map();
     for (const [file, iname] of Object.entries(files)) {
       let rows;
       try {
@@ -1360,8 +1385,12 @@ function validateTypes(pkgs) {
         fail(`${pkg}/${file}: cannot read for the types check — ${e.message}`);
         continue;
       }
-      check(file, iname, rows);
+      const group = byInterface.get(iname) ?? { files: [], rows: [] };
+      group.files.push(file);
+      group.rows.push(...rows);
+      byInterface.set(iname, group);
     }
+    for (const [iname, group] of byInterface) check(group.files.join(" + "), iname, group.rows);
     try {
       check("metadata.json", "Metadata", [readJson(join(dataDir, "metadata.json"))]);
     } catch (e) {

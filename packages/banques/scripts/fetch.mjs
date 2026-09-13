@@ -499,11 +499,22 @@ const SOURCES = [
   { bank_id: "hsbc", kind: "seed", seed: "hsbc.json" },
 ];
 
+const reviewedBna = JSON.parse(readFileSync(join(SCRIPTS, "seeds", "bna-reviewed.json"), "utf8"));
+const reviewedById = new Map(reviewedBna.map((x) => [x.id, x]));
+const reviewedBea = JSON.parse(readFileSync(join(SCRIPTS, "seeds", "bea-reviewed.json"), "utf8"));
+const reviewedBeaById = new Map(reviewedBea.map((x) => [x.id, x]));
+
 const all = [];
 for (const src of SOURCES) {
   try {
     const raw = HANDLERS[src.kind](src);
-    const recs = raw.map((r) => normalize(src.bank_id, r, src.coordsAuth !== false));
+    const recs = raw.map((r) => normalize(src.bank_id, r, src.coordsAuth !== false)).map((r) => {
+      const fix = reviewedById.get(r.id);
+      if (src.bank_id === "bna" && fix && fix.expected_name === r.name && fix.expected_address === r.address) return { ...r, source_wilaya_code: fix.source_wilaya_code, wilaya_code: fix.wilaya_code, lat: fix.lat, lng: fix.lng, geo_precision: fix.lat == null ? null : "exact", geo_method: fix.lat == null ? null : "bank_locator" };
+      const beaFix = reviewedBeaById.get(r.id);
+      if (src.bank_id === "bea" && beaFix && beaFix.expected_name === r.name && beaFix.expected_address === r.address) return { ...r, lat: beaFix.lat, lng: beaFix.lng, wilaya_code: beaFix.wilaya_code ?? r.wilaya_code, source_wilaya_code: beaFix.source_wilaya_code ?? r.source_wilaya_code, geo_precision: "approximate", geo_method: "bank_locator" };
+      return r;
+    });
     // A handler that returns nothing usually means the bank changed its markup — surface it loudly
     // rather than silently shipping a smaller dataset.
     console.log(`${src.bank_id}: ${recs.length} branches${recs.length === 0 ? "  ⚠️  ZERO — locator markup may have changed" : ""}`);
@@ -517,7 +528,7 @@ for (const src of SOURCES) {
 // published set clean and the validator green regardless of source quirks.
 const dropped = all.filter((r) => !inRange(r.wilaya_code));
 if (dropped.length) console.log(`dropped ${dropped.length} record(s) with no valid wilaya_code: ${dropped.map((r) => r.id).join(", ")}`);
-const records = all.filter((r) => inRange(r.wilaya_code));
+const records = all.filter((r) => inRange(Number(r.wilaya_code)));
 
 // Guarantee unique ids across the whole set (some sources reuse ids).
 const idSeen = new Map();

@@ -1,0 +1,528 @@
+{
+  "schema_version": 1,
+  "dataset": "telecom",
+  "reviewer": "geoalgeria-evidence-review",
+  "reviewed_at": "2026-09-09",
+  "decisions": [
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-713f5213c0",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "TAKHMARET",
+        "commune": "TAKHMARET",
+        "lat": 35.198791,
+        "lng": 0.61084
+      },
+      "patch": {
+        "wilaya_code": "14"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2008/F2008051.PDF",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-ff1371b891",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "42",
+        "name": "TAOURA",
+        "commune": "TAOURA",
+        "lat": 36.151971,
+        "lng": 8.00535
+      },
+      "patch": {
+        "wilaya_code": "41"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2024/F2024054.pdf",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-058a7dbf76",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": " Extension ouest_El Eulma",
+        "wilaya_code": "19",
+        "lat": 34.366117,
+        "lng": 5.906546,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-14f1270e00",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Cite Merdj Edib",
+        "wilaya_code": "21",
+        "lat": 35.807083,
+        "lng": 6.92093,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-2f51e05229",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Setif NORD OUEST",
+        "wilaya_code": "19",
+        "lat": 34.6301,
+        "lng": 5.4001,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-3139da873e",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "JEANNE D'ARC 2",
+        "wilaya_code": "21",
+        "lat": 35.01963889,
+        "lng": 6.9966,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-56ad53b60f",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "EL MOUNCHAR_T",
+        "wilaya_code": "25",
+        "lat": 35.702,
+        "lng": 6.594831,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-5af603a579",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "logements covalente",
+        "wilaya_code": "19",
+        "lat": 34.838415,
+        "lng": 5.67121,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-651e362949",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Zouagui 2",
+        "wilaya_code": "25",
+        "lat": 35.45503,
+        "lng": 6.63028,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-6eb33244ce",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "El Hadhaba",
+        "wilaya_code": "25",
+        "lat": 35.42816,
+        "lng": 6.59822,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-73ebe7a070",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Bouabaz 2",
+        "wilaya_code": "21",
+        "lat": 34.8948,
+        "lng": 6.92142,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-76db3e1993",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Cite DALAS",
+        "wilaya_code": "19",
+        "lat": 34.89463889,
+        "lng": 5.43322,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-8297e72d8e",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Cite des Martyres",
+        "wilaya_code": "25",
+        "lat": 32.47098,
+        "lng": 6.60194,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-9de1425077",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Freres Arafa",
+        "wilaya_code": "25",
+        "lat": 35.102019,
+        "lng": 6.59267,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-b751f2a9bb",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Cite Belhadj site 2",
+        "wilaya_code": "25",
+        "lat": 34.65177,
+        "lng": 6.6082,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-b8b84c6410",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Terrain Bouzehzeh _El Guemas",
+        "wilaya_code": "25",
+        "lat": 34.69094,
+        "lng": 6.660547,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-c0318533b6",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "cite meziane saou",
+        "wilaya_code": "19",
+        "lat": 34.89729,
+        "lng": 5.6729663,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-d0378fc7e7",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "BP EL-EULMA RP CE",
+        "wilaya_code": "19",
+        "lat": 34.8507,
+        "lng": 5.69196,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-e652571c78",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "Sarkina",
+        "wilaya_code": "25",
+        "lat": 34.65177,
+        "lng": 6.651979,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-djezzy.json",
+      "record_id": "djezzy-fd646f7e44",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "name": "NOUVELLE VILLE Souamaa",
+        "wilaya_code": "19",
+        "lat": 35.234597,
+        "lng": 5.65559,
+        "geo_precision": "exact",
+        "geo_method": "operator_map"
+      },
+      "patch": {
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "evidence": [
+        {
+          "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    }
+  ]
+}

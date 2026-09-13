@@ -4,7 +4,7 @@
   "name": "Algeria youth institutions",
   "alternateName": "Établissements de jeunesse d'Algérie",
   "identifier": "@geoalgeria/jeunesse",
-  "description": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG.",
+  "description": "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
   "conditionsOfAccess": "Factual public listing (Ministry of Youth and Sports)",
   "isAccessibleForFree": true,
   "creator": {
@@ -20,7 +20,7 @@
       "box": "19.5666 -8.1489 37.0688 9.5881"
     }
   },
-  "variableMeasured": "2334 records, 58 wilayas",
+  "variableMeasured": "2334 records, 69 wilayas",
   "distribution": [
     {
       "@type": "DataDownload",

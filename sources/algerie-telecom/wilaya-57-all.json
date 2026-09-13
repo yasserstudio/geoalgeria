@@ -1,0 +1,35 @@
+{
+  "response": {
+    "commune": "",
+    "content": [
+      {
+        "adresse": "HAI ESSAADA EL MEGHAIER",
+        "code_wilaya": "57",
+        "commune": "EL MEGHAIER/STILL/OUM THIOUR/SIDI KHELIL",
+        "date": "2024-10-30 15:09:40",
+        "id": "218",
+        "latitude": "33,94963056",
+        "longitude": "5,926422222\r",
+        "type": "Agence Commerciale",
+        "wilaya": "El M'Ghair"
+      },
+      {
+        "adresse": "RUE NATIONAL Nø03 DJAMAA",
+        "code_wilaya": "57",
+        "commune": "DJAMAA/SIDI AMRANE/TENDLA/M'RARA",
+        "date": "2024-10-30 15:09:40",
+        "id": "219",
+        "latitude": "33,53270833",
+        "longitude": "5,990455556\r",
+        "type": "Point de présence",
+        "wilaya": "El M'Ghair"
+      }
+    ],
+    "message_resultat": "الوكالات التجارية في ولاية : \n<b>\n    El M'Ghair</b> ",
+    "resultat": "ok",
+    "wilaya": "El M'Ghair"
+  },
+  "retrieved_at": "2026-09-09",
+  "source_commune": "",
+  "source_wilaya": 57
+}

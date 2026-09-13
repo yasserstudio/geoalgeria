@@ -1,0 +1,252 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 28,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f",
+  "count": 10,
+  "flagged": 4,
+  "candidates": [
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:0",
+      "source_id": "337",
+      "raw": {
+        "id": "337",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "M'SILA / OULED MANSOUR/TARMOUNT",
+        "adresse": "CITE 1ER NOVEMBRE M'SILA",
+        "type": "Agence Commerciale",
+        "latitude": "35,716976",
+        "longitude": "4,535491\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.716976,
+      "lng": 4.535491,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "28"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:1",
+      "source_id": "338",
+      "raw": {
+        "id": "338",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "HAMMAM DALAA / OUANOUGHA ",
+        "adresse": "CITE SALAM 114 LOTS HAMMAM DALAA",
+        "type": "Point de présence",
+        "latitude": "35,91963",
+        "longitude": "4,378011\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.91963,
+      "lng": 4.378011,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "28"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:2",
+      "source_id": "339",
+      "raw": {
+        "id": "339",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": " BOUSAADA/EL HAMEL/OULTEM/KHOUBANA/M'CIF /EL HOUMED/ OULED SIDI BRAHIM/ BEN SROUR / OULED SLIMAN / ZARZOUR / MAARIF ",
+        "adresse": "PLACE AMIRE ABDELKADER BOUSAADA",
+        "type": "Agence Commerciale",
+        "latitude": "35,212194",
+        "longitude": "4,182324\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.212194,
+      "lng": 4.182324,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "68"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:3",
+      "source_id": "340",
+      "raw": {
+        "id": "340",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "AIN EL MELH/ AIN ERRICH/ BIR FADHA/ SIDI M'HAMED/ AIN FARES/ SLIM/ DJEBAL MESSAD/MED BOUDIAF ",
+        "adresse": "AVENUE ABDELHAMID IBNO BADIS CENTRE VILLE AIN EL MELH",
+        "type": "Point de présence",
+        "latitude": "34,845786",
+        "longitude": "4,162161\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 34.845786,
+      "lng": 4.162161,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "68"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:4",
+      "source_id": "341",
+      "raw": {
+        "id": "341",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "SIDI AMEUR / BEN ZOUH / TEMSA ",
+        "adresse": "CITE INDEPENDANCE CENTRE VILLE SIDI AMEUR",
+        "type": "Point de présence",
+        "latitude": "35,381225",
+        "longitude": "3,907335\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.381225,
+      "lng": 3.907335,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "68"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:5",
+      "source_id": "342",
+      "raw": {
+        "id": "342",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "MEDJEDEL / MENAA",
+        "adresse": "RUE JANBA BOUZID CENTRE VILLE MEDJADEL",
+        "type": "Point de présence",
+        "latitude": "35,14726",
+        "longitude": "3,684449\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.14726,
+      "lng": 3.684449,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "68"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:6",
+      "source_id": "343",
+      "raw": {
+        "id": "343",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "SIDI AISSA /BOUTISAYEH / BENILMANE",
+        "adresse": "CITE 05 JUILLET SIDAISSA",
+        "type": "Agence Commerciale",
+        "latitude": "35,888184",
+        "longitude": "3,771356\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.888184,
+      "lng": 3.771356,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "28"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:7",
+      "source_id": "344",
+      "raw": {
+        "id": "344",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "AIN EL HADJEL /SIDI HADJERAS/ K CED EL DJIR ",
+        "adresse": "RUE BENYATOU AIN ELHADJEL",
+        "type": "Point de présence",
+        "latitude": "35,673156",
+        "longitude": "3,882416\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.673156,
+      "lng": 3.882416,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "28"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:8",
+      "source_id": "345",
+      "raw": {
+        "id": "345",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": "M'SILA / OULED DERRADJ/OULED  ADDI  GUEBALA/METARFA/OULED MADHI/MAADID /CHELLAL/ SOUAMAA",
+        "adresse": "CITE ABDELKADER SAHNOUNI MSILA",
+        "type": "Agence Commerciale",
+        "latitude": "35,705695",
+        "longitude": "4,541125\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.705695,
+      "lng": 4.541125,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "28"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "603351ceca54bc28d24c306f615e5636eeccd3704768a26e5dc04980fb30cf8f:9",
+      "source_id": "346",
+      "raw": {
+        "id": "346",
+        "code_wilaya": "28",
+        "wilaya": "M'SILA",
+        "commune": " MAGRA/BERHOUM/AIN ELKHADRA/BELAIBA/DEHAHNA",
+        "adresse": "CITE ADMINISTRATIF MAGRA",
+        "type": "Point de présence",
+        "latitude": "35,616775",
+        "longitude": "5,097395\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 35.616775,
+      "lng": 5.097395,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "28"
+      ],
+      "reasons": []
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}

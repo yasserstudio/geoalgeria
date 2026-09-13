@@ -1,0 +1,131 @@
+{
+  "usage": "internal-review-only",
+  "source_url": "https://www.algerietelecom.dz/ar/trouver_mon-agence-search",
+  "retrieved_at": "2026-09-09",
+  "source_wilaya": 21,
+  "search_scope": "wilaya",
+  "source_commune": "",
+  "source_sha256": "1ba1264f518171b594a744cf07b4a8c967518eb8babb880754c1e5cae38c20cd",
+  "count": 5,
+  "flagged": 1,
+  "candidates": [
+    {
+      "candidate_id": "1ba1264f518171b594a744cf07b4a8c967518eb8babb880754c1e5cae38c20cd:0",
+      "source_id": "433",
+      "raw": {
+        "id": "433",
+        "code_wilaya": "21",
+        "wilaya": "SKIKDA",
+        "commune": " SKIKDA /  HAMMADI KROUMA /  EL HADAIEK /  BOUCHETATA /RAMDANE DJAMEL",
+        "adresse": "LES ALLEES DU 20 AOUT 55 SKIKDA",
+        "type": "Agence Commerciale",
+        "latitude": " 36.868455",
+        "longitude": "  6.914360\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.868455,
+      "lng": 6.91436,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "21"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1ba1264f518171b594a744cf07b4a8c967518eb8babb880754c1e5cae38c20cd:1",
+      "source_id": "434",
+      "raw": {
+        "id": "434",
+        "code_wilaya": "21",
+        "wilaya": "SKIKDA",
+        "commune": "COLLO/ KERKERA/TAMALOUS/AIN KECHERA/BOULBALOUT/BIN EL OUIDEN/ CHERAIA/BENI ZID/ZITOUNA/OULED ATTIA/KANOUA/KHENAK MAYOUNE/OUED ZHOUR ",
+        "adresse": "RUE DE LA PALESTINE",
+        "type": "Agence Commerciale",
+        "latitude": " 36.981287",
+        "longitude": "  6.559354\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.981287,
+      "lng": 6.559354,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "21"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1ba1264f518171b594a744cf07b4a8c967518eb8babb880754c1e5cae38c20cd:2",
+      "source_id": "435",
+      "raw": {
+        "id": "435",
+        "code_wilaya": "21",
+        "wilaya": "SKIKDA",
+        "commune": "AZZABA / DJENDEL / BEN AZZOUZ / LA MARSA / BEKKOUCHE LAKHDER / AIN CHERCHAR/   ESSEBT",
+        "adresse": "AZZABA  CENTRE VILLE ",
+        "type": "Agence Commerciale",
+        "latitude": " 36.743336",
+        "longitude": "  7.102225\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.743336,
+      "lng": 7.102225,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "21"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1ba1264f518171b594a744cf07b4a8c967518eb8babb880754c1e5cae38c20cd:3",
+      "source_id": "436",
+      "raw": {
+        "id": "436",
+        "code_wilaya": "21",
+        "wilaya": "SKIKDA",
+        "commune": " EL HARROUCH/ SALLAH BOUCAHOUR/ EMJEZ ED CHICHE  SISDI MEZGHICHE/ BENI OULBANE / AIN BOUZIANE / OUM TOUB/ ZERDAZAS / OULED HBABA/ EL GHEDIR",
+        "adresse": "RUE DEMAGH EL ATROUSSE",
+        "type": "Agence Commerciale",
+        "latitude": " 36.649965",
+        "longitude": "  6.835478\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.649965,
+      "lng": 6.835478,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "21"
+      ],
+      "reasons": []
+    },
+    {
+      "candidate_id": "1ba1264f518171b594a744cf07b4a8c967518eb8babb880754c1e5cae38c20cd:4",
+      "source_id": "437",
+      "raw": {
+        "id": "437",
+        "code_wilaya": "21",
+        "wilaya": "SKIKDA",
+        "commune": "SKIKDA/AIN ZOUIT/FILFILA/BENI BACHIR",
+        "adresse": "AVENUE ZIGHOUD YOUCEF",
+        "type": "Agence Commerciale",
+        "latitude": "36,533672",
+        "longitude": "6,711163\r",
+        "date": "2024-10-30 15:09:40"
+      },
+      "lat": 36.533672,
+      "lng": 6.711163,
+      "geo_precision": "exact",
+      "geo_method": "operator_point",
+      "containing_wilayas": [
+        "25"
+      ],
+      "reasons": [
+        "source_wilaya_mismatch"
+      ]
+    }
+  ],
+  "boundary_sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+}
