@@ -1,5 +1,6 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etul-laghouat";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etus-c-constantine" | "etul-laghouat";
+export type RouteColor = "blue" | "green" | "orange" | "purple";
 export type SequenceStatus = "osm_member_order_unvalidated";
 export type ServicePeriod = "regular" | "friday" | "saturday";
 export type ServiceDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday";
@@ -45,6 +46,8 @@ export interface BusLine {
   operator: string;
   network: string;
   line: string;
+  /** Operator graphic color grouping; presentation evidence only. */
+  route_color?: RouteColor;
   terminus1: string | null;
   terminus1_fr?: string;
   terminus1_ar?: string;

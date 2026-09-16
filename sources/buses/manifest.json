@@ -40,6 +40,15 @@
     "sha256": "df8c6ca38c68564a430b5905074b6213ccf1116bc22d08e0daaa3541bd9e080c",
     "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes&_fields=id,modified,link,content"
   },
+  "etus-c-constantine-lines": {
+    "bytes": 4756,
+    "note": "Twenty-five ETUS-C Constantine route identities and Arabic endpoints transcribed from two owner-supplied Operator graphics. Artwork is validation-only and is not redistributed. The schematic is not used as reusable geometry; intermediate stops, schedules and exact shapes remain unknown.",
+    "provenance": "owner_supplied_artifact",
+    "records": 25,
+    "retrieved": "2026-09-16",
+    "sha256": "d7519069fd7134f6f48fbe225eb45bee90a3244a562e032dbc59d221668ad64b",
+    "url": null
+  },
   "etus-msila-lines": {
     "bytes": 7586,
     "note": "Rights-safe projection of Line identities, endpoints, ordered Arabic stop names and total stop counts transcribed from official route diagrams. The diagrams validate the facts but their map pixels and geometry are not redistributed. Per-record receipts preserve the official page and image hashes.",
