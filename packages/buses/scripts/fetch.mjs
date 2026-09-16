@@ -22,6 +22,7 @@ const officialAnnaba = readCapture("buses", "etus-annaba-lines");
 const officialTlemcen = readCapture("buses", "etus-tlemcen-lines");
 const officialOran = readCapture("buses", "eto-oran-lines");
 const officialOeb = readCapture("buses", "etus-oeb-lines");
+const officialEtusc = readCapture("buses", "etus-c-constantine-lines");
 const officialLaghouat = readCapture("buses", "etul-laghouat-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
@@ -55,6 +56,22 @@ const laghouatRouteNamesFr = {
   "04": "El Wahat Ech Chamalia",
   "05": "El Wiam",
   "07": "Boukhenfous",
+};
+
+const etuscTerminiFr = {
+  "L02": ["Boulesouf", "Kaddour Boumedous"], "L04": ["Station Zammouche", "Sidi Mabrouk"],
+  "L05": ["Cité Arfa", "Kaddour Boumedous"], "L08": ["Centre-ville", "Aéroport Zouaghi"],
+  "L14": ["Djebel El Ouahch", "Boulesouf"], "L15": ["Station Zammouche", "Nouvelle ville"],
+  "L16": ["Station Massinissa — Mausolée", "Zammouche"], "L19": ["Station Kadri Brahim", "Chaab Ersib"],
+  "L21": ["Station Kadri Brahim", "Unité de voisinage 21"], "L22": ["Gare des voyageurs", "Gendarmerie nationale"],
+  "L23": ["Station Zammouche", "Aïn Nahas"], "L24": ["Station Zammouche", "El Ratba"],
+  "L25": ["Station Zammouche", "Kaf Salah"], "L26": ["Station Zammouche", "Aïn Abid"],
+  "L27": ["Station Zammouche", "Tiddis"], "L28": ["Station Zammouche", "Aïn Smara"],
+  "L29": ["Station Aïn Smara", "Nouvelle ville"], "L31": ["Station Zammouche", "El Meridj"],
+  "L32": ["Station Zammouche", "Didouche Mourad"], "L33": ["Station Zammouche", "Beni Hamidane"],
+  "L34": ["Station Zammouche", "Hamma Bouziane"], "L35": ["Station Zammouche", "Ibn Badis"],
+  "L36": ["Aïn Nahas", "Nouvelle ville"], "L37": ["Gare des voyageurs", "Ibn Ziad"],
+  "L38": ["Gare des voyageurs", "Massoud Boudjeriou"],
 };
 
 const lines = etusa.lines.map((line) => {
@@ -242,6 +259,23 @@ for (const official of officialOeb.lines) {
   });
 }
 
+// ETUS-C Constantine: twenty-five numbered Lines transcribed from two
+// Operator graphics supplied by the project owner. Directory-only: the
+// schematic is evidence and does not provide reusable stop/shape geometry.
+for (const official of officialEtusc.lines) {
+  const [terminus1Fr, terminus2Fr] = etuscTerminiFr[official.ref] ?? [official.terminus1_ar, official.terminus2_ar];
+  lines.push({
+    id: lineId("etus-c-constantine", official.ref), name: `Ligne ${official.ref}`,
+    operator_id: "etus-c-constantine", operator: "ETUS-C Constantine", network: "Constantine",
+    line: official.ref, route_color: official.route_color,
+    terminus1: terminus1Fr, terminus1_fr: terminus1Fr, terminus1_ar: official.terminus1_ar,
+    terminus2: terminus2Fr, terminus2_fr: terminus2Fr, terminus2_ar: official.terminus2_ar,
+    stops: null, major_stops: null, service_hours: [], communes_served: [], stations_served: [], wilaya_code: "25",
+    source: "etus-c-constantine", source_refs: ["etus-c-constantine"], source_url: null,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
 // ETUL Laghouat: repeated public route refs from two dated operating programs.
 // The tables' 01-06 values are duty assignments, not Lines, and their vehicle
 // and timetable fields are date-specific. No stable endpoint pair or reusable
@@ -376,7 +410,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 153, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 178, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -392,7 +426,7 @@ const { metadata } = writePackageV2({
         || String(a.name_fr ?? a.id).localeCompare(String(b.name_fr ?? b.id), "fr", { numeric: true }) },
     { file: "stations.json", rows: stations },
   ],
-  meta: cfg.meta, updated: "2026-09-04", retrieved: "2026-09-04",
+  meta: cfg.meta, updated: "2026-09-16", retrieved: "2026-09-16",
   stats: { shapes: shapes.length, directions: directions.length, stations: stations.length, station_memberships: memberships.length },
 });
 write(join(DATA, "metadata.json"), {
@@ -462,6 +496,13 @@ operatorRows.push({
   line_count: officialOeb.lines.length, shape_count: 0, source_refs: ["etus-oeb"],
 });
 operatorRows.push({
+  id: "etus-c-constantine", name: "ETUS-C Constantine",
+  name_fr: "Entreprise publique de transport urbain et suburbain de Constantine",
+  name_ar: officialEtusc.evidence.operator_name_ar,
+  wilaya_codes: ["25"], scope: "urban_suburban", line_count: officialEtusc.lines.length, shape_count: 0,
+  source_refs: ["etus-c-constantine"],
+});
+operatorRows.push({
   id: "etusl-laghouat", name: "ETUL Laghouat",
   name_fr: "Entreprise publique de transport urbain et suburbain de Laghouat",
   name_ar: officialLaghouat.evidence.operator_name_ar,
@@ -484,6 +525,7 @@ const operatorContacts = {
   "etus-tlemcen": { website_url: "https://www.etus-tlemcen.dz/", facebook_url: "https://www.facebook.com/etustlemcen13/" },
   "etus-oran": { website_url: null, facebook_url: "https://www.facebook.com/p/ETO-100093054514209/" },
   "etus-oeb": { website_url: null, facebook_url: null },
+  "etus-c-constantine": { website_url: null, facebook_url: null },
   "etusl-laghouat": { website_url: null, facebook_url: "https://www.facebook.com/ETUSL/" },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });

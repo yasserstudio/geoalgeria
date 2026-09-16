@@ -47,24 +47,24 @@ test("bus package documentation stays aligned with the shipped release", () => {
   for (const operatorName of [
     "ETUS Tiaret", "ETUSTO", "ETUS Béjaïa", "ETUS M'Sila", "ETUS Sidi Bel Abbès",
     "ETUS Setif", "ETUS Aïn Defla", "ETUS Annaba", "ETUS Tlemcen", "ETO Oran",
-    "ETUS Oum El Bouaghi", "ETUL Laghouat",
+    "ETUS Oum El Bouaghi", "ETUS-C Constantine", "ETUL Laghouat",
   ]) assert.ok(notice.includes(operatorName), `NOTICE is missing ${operatorName}`);
 });
 
 test("buses v3 ships only the reviewed release boundary", () => {
-  assert.equal(lines.length, 153);
+  assert.equal(lines.length, 178);
   assert.equal(shapes.length, 76);
   assert.equal(directions.length, 128);
   assert.equal(stations.length, 1603);
   assert.equal(memberships.length, 2685);
-  assert.equal(operators.length, 14);
+  assert.equal(operators.length, 15);
   assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 125);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 3);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [76, 61], etuad: [16, 1], "etus-annaba": [6, 0], "etus-tlemcen": [10, 0], "etus-oran": [1, 0], "etus-oeb": [5, 0], "etusl-laghouat": [4, 0], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
+    { etusa: [76, 61], etuad: [16, 1], "etus-annaba": [6, 0], "etus-tlemcen": [10, 0], "etus-oran": [1, 0], "etus-oeb": [5, 0], "etus-c-constantine": [25, 0], "etusl-laghouat": [4, 0], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
-  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto", "etuad", "etus-annaba", "etus-tlemcen", "etus-oran", "etus-oeb", "etusl-laghouat"]));
+  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto", "etuad", "etus-annaba", "etus-tlemcen", "etus-oran", "etus-oeb", "etus-c-constantine", "etusl-laghouat"]));
   assert.ok(lines.every((line, index) => index === 0
     || Number(lines[index - 1].wilaya_code) <= Number(line.wilaya_code)));
   // ETUS Aïn Defla entered with the Operator's 2025 artwork: 16 Lines, one reviewed shape.
@@ -256,7 +256,7 @@ test("official Operator Sources define the reviewed Line sets", () => {
 
 test("tracked official Source bytes match their receipts", () => {
   const manifest = read("sources/buses/manifest.json");
-  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines", "etus-sidi-bel-abbes-lines", "etus-setif-lines", "etus-oeb-lines", "etul-laghouat-lines"]) {
+  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines", "etus-sidi-bel-abbes-lines", "etus-setif-lines", "etus-oeb-lines", "etus-c-constantine-lines", "etul-laghouat-lines"]) {
     const text = readFileSync(join(ROOT, `sources/buses/${name}.json`), "utf8");
     assert.equal(createHash("sha256").update(text).digest("hex"), manifest[name].sha256);
     assert.equal(manifest[name].bytes, Buffer.byteLength(text));
@@ -265,13 +265,13 @@ test("tracked official Source bytes match their receipts", () => {
 
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
-  assert.equal(api.operatorRecords().length, 14);
+  assert.equal(api.operatorRecords().length, 15);
   // Every Operator carries its contact links, verified or explicitly null; never a bare source key.
   for (const operator of api.operatorRecords()) {
     for (const key of ["website_url", "facebook_url"]) {
       assert.ok(operator[key] === null || /^https?:\/\//.test(operator[key]), `${operator.id}.${key}`);
     }
-    if (!["etus-oeb", "etusl-laghouat"].includes(operator.id)) assert.ok(operator.website_url || operator.facebook_url, `${operator.id} has no official link`);
+    if (!["etus-oeb", "etus-c-constantine", "etusl-laghouat"].includes(operator.id)) assert.ok(operator.website_url || operator.facebook_url, `${operator.id} has no official link`);
   }
   assert.deepEqual(
     [api.operatorById("etus-oeb")?.website_url, api.operatorById("etus-oeb")?.facebook_url],

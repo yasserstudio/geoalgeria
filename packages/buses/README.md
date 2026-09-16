@@ -2,8 +2,8 @@
 
 # @geoalgeria/buses
 
-Reviewed urban and suburban bus data for Algeria. This release contains **153 Lines**
-from 14 Operators, **76 drawable shapes**, **128 Directions**, and **1,603 Stations**.
+Reviewed urban and suburban bus data for Algeria. This release contains **178 Lines**
+from 15 Operators, **76 drawable shapes**, **128 Directions**, and **1,603 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -12,7 +12,7 @@ npm install @geoalgeria/buses
 ```js
 import buses from "@geoalgeria/buses";
 
-const lines = buses.lines();                  // 153
+const lines = buses.lines();                  // 178
 const shape = buses.shapeForLine("etusa-1");
 const stops = buses.stationsByLine("etusa-1");
 const directions = buses.directionsByLine("etusa-1");
@@ -46,12 +46,12 @@ validation-only official geometry are not published as shapes.
 
 ## Files
 
-- `data/lines.json` and `data/csv/lines.csv` — 153 Lines
+- `data/lines.json` and `data/csv/lines.csv` — 178 Lines
 - `data/shapes.json` and `data/geojson/shapes.geojson` — 76 MultiLineString shapes
 - `data/directions.json` — 128 source OSM Direction relations
 - `data/stations.json`, CSV and GeoJSON — 1,603 Station nodes
 - `data/station-memberships.json` — 2,685 ordered relation memberships
-- `data/operators.json` — 14 Operators
+- `data/operators.json` — 15 Operators
 
 Membership order is the raw OSM relation member order and carries
 `sequence_status: "osm_member_order_unvalidated"`. It is **not** a validated passenger
