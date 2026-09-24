@@ -15,7 +15,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 
 ## En bref
 
-L'Algérie compte **69 wilayas** (provinces), **564 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
+L'Algérie compte **69 wilayas** (provinces), **564 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
 
 ---
 
@@ -256,7 +256,7 @@ Visualisez les 69 wilayas sur une carte : [`algeria.geojson`](algeria.geojson) (
 ## FAQ
 
 **Combien de wilayas compte l'Algérie en 2026 ?**
-69. Les 48 d'origine, plus 10 ajoutées en 2019 (loi 19-12), plus 11 officialisées en avril 2026 ([loi n° 26-06, *Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf)). La période de transition se termine le 31 décembre 2026 ; pleine autonomie à compter du 1er janvier 2027.
+69. Les 48 d'origine, plus 10 ajoutées en 2019 (loi 19-12), plus 11 officialisées en avril 2026 ([loi n° 26-06, *Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf)). La période de transition se termine le 31 décembre 2026 ; pleine autonomie à compter du 1er janvier 2027.
 
 **Où trouver une liste de toutes les communes algériennes en JSON ?**
 Ici même – `data/ecommerce/communes.json` contient les 1 541 communes dans un format plat, prêt à l'emploi.

@@ -91,7 +91,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 
 Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contient le JSON pour rester léger ; les CSV/GeoJSON/SQL sont dans chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
 
-> À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf), ainsi que la réforme de 2019 (Loi 19-12).
+> À jour avec la **Loi n° 26-06** (nouvelle organisation territoriale), [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), ainsi que la réforme de 2019 (Loi 19-12).
 
 ## Pourquoi GeoAlgeria ?
 
