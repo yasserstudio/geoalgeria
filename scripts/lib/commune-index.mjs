@@ -101,6 +101,33 @@ export function canonicalCommuneForCode(code) {
   return currentByCode.get(padCommuneCode(code)) ?? null;
 }
 
+// Names the dataset used to carry, published as data/name-history.json. A label
+// captured before a JORA correction landed still has to resolve, so every former
+// spelling keys to the same row; a former key never shadows a current one.
+export const nameHistory = JSON.parse(readFileSync(join(DATASET, "name-history.json"), "utf8"));
+
+function formerIndex(keyOf, field, current) {
+  const index = new Map();
+  for (const entry of nameHistory.communes) {
+    for (const name of entry[field]) {
+      const key = `${Number(entry.wilaya_code)}|${keyOf(name)}`;
+      if (current.has(key)) continue;
+      index.set(key, canonicalCommuneForCode(entry.code_commune));
+    }
+  }
+  return index;
+}
+const formerFrench = formerIndex(latinNameKey, "former_names_fr", currentFrench);
+const formerArabic = formerIndex(arabicNameKey, "former_names_ar", currentArabic);
+
+/** Every French spelling, current or former, this wilaya's communes answer to. */
+export function formerFrenchLabels(wilayaCode, commune) {
+  return nameHistory.communes
+    .filter((entry) => Number(entry.wilaya_code) === Number(wilayaCode))
+    .filter((entry) => latinNameKey(entry.name_fr) === latinNameKey(commune))
+    .flatMap((entry) => entry.former_names_fr);
+}
+
 /** Resolve an exact normalized French label from the official 2021 ONS scope
  * to that stable commune code's current canonical row. */
 export function canonicalCommuneForOfficialFrenchLabel(wilayaCode, commune) {
@@ -123,6 +150,8 @@ export function canonicalCommuneForCurrentLabel(wilayaCode, commune, communeAr =
   return (
     currentFrench.get(`${scope}|${latinNameKey(commune)}`) ??
     currentArabic.get(`${scope}|${arabicNameKey(communeAr)}`) ??
+    formerFrench.get(`${scope}|${latinNameKey(commune)}`) ??
+    formerArabic.get(`${scope}|${arabicNameKey(communeAr)}`) ??
     null
   );
 }

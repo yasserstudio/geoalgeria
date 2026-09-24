@@ -23,6 +23,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { nameHistory } from "./lib/commune-index.mjs";
 import { readCapture, writeCapture } from "./lib/source-store.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -262,6 +263,17 @@ function editDistance(left, right) {
   return previous[right.length];
 }
 
+// The 2021 ONS register predates the JORA corrections of data/name-history.json,
+// so a commune the dataset has since renamed must still be looked up under the
+// spelling the register printed. Former spellings are tried after the current
+// one and never in place of it.
+const formerNames = new Map(
+  nameHistory.communes.map((entry) => [
+    entry.code_commune,
+    { fr: entry.former_names_fr, ar: entry.former_names_ar },
+  ]),
+);
+
 const communes = COMMUNE_FILES.flatMap((path) => JSON.parse(readFileSync(path, "utf8")));
 if (communes.length !== 1541) throw new Error(`Dataset must contain 1541 communes; found ${communes.length}`);
 
@@ -274,9 +286,18 @@ for (const commune of communes) {
   const scope = officialScopeByWilaya.get(currentWilaya);
   const dataKey = `${currentWilaya}|${nameKey(commune.name_fr)}`;
   const sourceScope = scope;
-  const officialName = NAME_ALIASES.get(dataKey) ?? nameKey(commune.name_fr);
-  const byFrench = officialByName.get(`${sourceScope}|${officialName}`);
-  const byArabic = officialByArabic.get(`${sourceScope}|${arabicKey(commune.name_ar)}`);
+  const former = formerNames.get(commune.code_commune) ?? { fr: [], ar: [] };
+  const frenchKeys = [commune.name_fr, ...former.fr].flatMap((name) => {
+    const key = nameKey(name);
+    const alias = NAME_ALIASES.get(`${currentWilaya}|${key}`);
+    return alias ? [alias, key] : [key];
+  });
+  const byFrench = frenchKeys
+    .map((key) => officialByName.get(`${sourceScope}|${key}`))
+    .find(Boolean);
+  const byArabic = [commune.name_ar, ...former.ar]
+    .map((name) => officialByArabic.get(`${sourceScope}|${arabicKey(name)}`))
+    .find(Boolean);
   if (byFrench && byArabic && byFrench.code_commune !== byArabic.code_commune) {
     throw new Error(`French/Arabic ONS match conflict for ${dataKey}`);
   }

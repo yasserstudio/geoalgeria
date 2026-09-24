@@ -83,6 +83,34 @@ declare namespace algeriaGeodata {
     code_commune: number;
   }
 
+  /** One record's former names, kept so an older spelling still finds it. */
+  export interface NameHistoryEntry {
+    /** Present on a commune entry; absent on a wilaya entry. */
+    code_commune?: number;
+    /** Present on a wilaya entry; absent on a commune entry. */
+    code?: number;
+    wilaya_code?: number;
+    name_fr: string;
+    name_ar: string;
+    /** Earlier French spellings. Empty when only the Arabic name moved. */
+    former_names_fr: string[];
+    /** Earlier Arabic spellings. Empty when only the French name moved. */
+    former_names_ar: string[];
+    /** The official text that replaced each former name, one line per source. */
+    sources: string[];
+  }
+
+  export interface NameHistory {
+    metadata: {
+      title: string;
+      description: string;
+      updated: string;
+      sources: { key: string; name: string; url: string; evidence_type: string }[];
+    };
+    wilayas: NameHistoryEntry[];
+    communes: NameHistoryEntry[];
+  }
+
   export interface Daira {
     id: number;
     wilaya_code: number;
@@ -210,6 +238,7 @@ declare const algeriaGeodata: {
   readonly dairas: algeriaGeodata.Daira[];
   readonly ecommerce: algeriaGeodata.CommuneEcommerce[];
   readonly all: algeriaGeodata.WilayaWithCommunes[];
+  readonly nameHistory: algeriaGeodata.NameHistory;
   readonly postOffices: algeriaGeodata.PostOffice[];
   readonly atms: algeriaGeodata.Atm[];
   getWilaya(code: number): algeriaGeodata.Wilaya | undefined;
