@@ -12,4 +12,6 @@ Reported by [@djamel2288](https://github.com/djamel2288) in issue #221, then aud
 
 **Coordinates.** Six communes shared one of two placeholder points: `Belarbi` (22) and `Makhda` (29) both sat at 35.15, 0.15; `El Hamdania` and `El Haoudane` (26), `Ouled Bouachra` and `Si Mahdjoub` (26), and `El Achir` and `El Euch` (34) each shared one neighbour's point. Every replacement is the centroid of the OpenStreetMap admin_level=8 relation whose `ref` tag is that commune's own ONS code (© OpenStreetMap contributors, ODbL 1.0). No other commune coordinate duplicates another.
 
+**Daira.** `Deux Bassins` (2653) moves from daira `Ouzera` to `Tablat`: its point lies inside the OpenStreetMap boundary of Daïra Tablat (relation 4461829). Ouzera now lists 4 communes and Tablat 4.
+
 **Atlas labels.** `algeria.geojson` and the three delivery-zone tables labelled wilayas 59 to 69 alphabetically against numeric codes, so ten wilayas carried another wilaya's name over the right point; a dozen older labels had also lost their accents. Every label is now rebuilt from the wilaya's own row.

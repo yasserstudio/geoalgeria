@@ -7,6 +7,7 @@ import test from "node:test";
 
 import { loadBoundaries, pointInWilaya } from "../packages/schema/index.js";
 import {
+  communeDairaCorrections,
   communeNameCorrections,
   coordinateCorrections,
   wilayaNameCorrections,
@@ -100,6 +101,18 @@ test("the delivery tables name the wilaya each code belongs to", () => {
     const doc = read("delivery", `${provider}.json`);
     for (const zone of doc.zones) {
       assert.equal(zone.wilaya_name_fr, wilayas.get(zone.wilaya_code), `${provider} ${zone.wilaya_code}`);
+    }
+  }
+});
+
+test("a moved commune sits in its new daira and both counts follow", () => {
+  const dairas = read("dairas.json");
+  for (const move of communeDairaCorrections) {
+    assert.equal(byCode.get(move.code_commune)?.daira, move.to, `${move.code_commune} daira`);
+    for (const name of [move.from, move.to]) {
+      const daira = dairas.find((row) => row.wilaya_code === move.wilaya_code && row.name_fr === name);
+      const members = communes.filter((c) => c.wilaya_code === move.wilaya_code && c.daira === name);
+      assert.equal(daira?.commune_count, members.length, `${name} commune_count`);
     }
   }
 });

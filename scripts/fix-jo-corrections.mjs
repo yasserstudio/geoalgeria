@@ -15,6 +15,7 @@ import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
+  communeDairaCorrections,
   communeNameCorrections,
   coordinateCorrections,
   wilayaNameCorrections,
@@ -46,6 +47,8 @@ for (const c of communeNameCorrections) {
 }
 /** code_commune -> { from:[lat,lng], to:[lat,lng] } */
 const communeCoords = new Map(coordinateCorrections.map((c) => [c.code_commune, c]));
+/** code_commune -> { from, to } for a commune filed under the wrong daira. */
+const communeDairas = new Map(communeDairaCorrections.map((c) => [c.code_commune, c]));
 /** wilaya code -> { from, to } */
 const wilayaNames = new Map(wilayaNameCorrections.map((c) => [c.code, { from: c.from, to: c.to }]));
 
@@ -66,6 +69,15 @@ for (const entry of communeNames.values()) {
   dairaRenames.set(`${entry.wilaya_code}|${entry.name_fr.from}`, entry.name_fr.to);
 }
 const dairaRename = (wilaya, name) => dairaRenames.get(`${Number(wilaya)}|${name}`) ?? name;
+
+/** The daira a commune belongs to after the renames and the moves. */
+function dairaFor(code, wilaya, name, where) {
+  const renamed = dairaRename(wilaya, name);
+  const move = communeDairas.get(Number(code));
+  if (!move) return renamed;
+  expect(renamed, [move.from, move.to], `${where} ${code} daira`);
+  return move.to;
+}
 
 // ---------------------------------------------------------------------------
 // Output queue, written atomically only once every carrier has been built.
@@ -108,7 +120,7 @@ function patchCommune(row, keys, where) {
     row[keys.lng] = coords.to[1];
   }
   if (keys.daira && row[keys.daira]) {
-    row[keys.daira] = dairaRename(row[keys.wilaya], row[keys.daira]);
+    row[keys.daira] = dairaFor(code, row[keys.wilaya], row[keys.daira], where);
   }
 }
 
@@ -180,6 +192,20 @@ queueJson(wilayasPath, wilayasDoc);
 const dairasPath = join(DATA, "dairas.json");
 const dairas = JSON.parse(readFileSync(dairasPath, "utf8"));
 for (const daira of dairas) daira.name_fr = dairaRename(daira.wilaya_code, daira.name_fr);
+// A moved commune changes two dairas' counts; recount those from the patched
+// split files rather than adjusting by one, so a re-run stays idempotent.
+const patchedCommunes = splitPaths.flatMap((path) =>
+  JSON.parse(outputs.find(([p]) => p === path)[1]),
+);
+for (const move of communeDairaCorrections) {
+  for (const name of [move.from, move.to]) {
+    const daira = dairas.find((d) => d.wilaya_code === move.wilaya_code && d.name_fr === name);
+    if (!daira) throw new Error(`dairas.json: no daira ${name} in wilaya ${move.wilaya_code}`);
+    daira.commune_count = patchedCommunes.filter(
+      (c) => c.wilaya_code === move.wilaya_code && c.daira === name,
+    ).length;
+  }
+}
 queueJson(dairasPath, dairas);
 
 // --- algeria.json (and any --target copy of it) -----------------------------
@@ -312,7 +338,7 @@ patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
     expect(f[1], [names.name_ar.from, names.name_ar.to], `csv/communes.csv ${code} name_ar`);
     f[1] = names.name_ar.to;
   }
-  f[3] = dairaRename(f[2], f[3]);
+  f[3] = dairaFor(code, f[2], f[3], "csv/communes.csv");
   const coords = communeCoords.get(code);
   if (coords) {
     f[5] = String(coords.to[0]);
@@ -338,7 +364,7 @@ patchCsv(join(DATA, "ecommerce", "communes.csv"), 8, (f) => {
     expect(f[2], [names.name_ar.from, names.name_ar.to], `ecommerce/communes.csv ${code} name_ar`);
     f[2] = names.name_ar.to;
   }
-  f[3] = dairaRename(f[4], f[3]);
+  f[3] = dairaFor(code, f[4], f[3], "ecommerce/communes.csv");
   const rename = wilayaNames.get(Number(f[4]));
   if (rename) {
     expect(f[5], [rename.from, rename.to], `ecommerce/communes.csv ${f[0]} wilaya_name_fr`);
@@ -395,7 +421,7 @@ patchSql(join(DATA, "sql", "full.sql"), (f) => {
   const code = Number(f[8]);
   const names = communeNames.get(code);
   const coords = communeCoords.get(code);
-  const daira = dairaRename(f[3], f[4].slice(1, -1).replace(/''/g, "'"));
+  const daira = dairaFor(code, f[3], f[4].slice(1, -1).replace(/''/g, "'"), "sql/full.sql");
   let changed = false;
   if (names?.name_fr) {
     expect(f[1], [sqlQuote(names.name_fr.from), sqlQuote(names.name_fr.to)], `sql/full.sql commune ${code} name_fr`);
@@ -430,7 +456,7 @@ patchSql(join(DATA, "ecommerce", "communes.sql"), (f) => {
     f[2] = sqlQuote(names.name_ar.to);
     changed = true;
   }
-  const daira = dairaRename(f[4], unquote(f[3]));
+  const daira = dairaFor(code, f[4], unquote(f[3]), "ecommerce/communes.sql");
   if (sqlQuote(daira) !== f[3]) { f[3] = sqlQuote(daira); changed = true; }
   const rename = wilayaNames.get(Number(f[4]));
   if (rename) {

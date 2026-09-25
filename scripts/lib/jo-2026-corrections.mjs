@@ -269,3 +269,12 @@ export const coordinateCorrections = [
   { code_commune: 2627, wilaya_code: 26, label: "Ouled Bouachra", from: [36.160382, 2.722206], to: [36.101909, 2.712187], osm: "relation/2540223" },
   { code_commune: 3427, wilaya_code: 34, label: "El Euch", from: [36.06386, 4.6167], to: [35.899032, 4.598431], osm: "relation/4475450" },
 ];
+
+/** A commune moved to the daira that contains it. Deux Bassins (2653) was
+ *  filed under Ouzera; its point lies inside the OpenStreetMap daira boundary
+ *  of Tablat, confirmed by an Overpass is_in lookup on 2026-09-25, and the
+ *  Owner chose Tablat on reading the corrections. The JORA lists communes by
+ *  wilaya only, so it does not settle dairas either way. */
+export const communeDairaCorrections = [
+  { code_commune: 2653, wilaya_code: 26, from: "Ouzera", to: "Tablat", osm: "relation/4461829", source: "OpenStreetMap daira boundary (relation 4461829, Daïra Tablat), Owner decision 2026-09-25" },
+];
