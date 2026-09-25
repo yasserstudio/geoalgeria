@@ -116,3 +116,24 @@ test("a moved commune sits in its new daira and both counts follow", () => {
     }
   }
 });
+
+test("every published variant a correction replaces is kept as a former name", () => {
+  const formerOf = (entries, key, code) =>
+    entries.find((entry) => entry[key] === code)?.former_names_fr ?? [];
+  for (const correction of communeNameCorrections.filter((c) => c.variants)) {
+    for (const variant of correction.variants) {
+      assert.ok(
+        formerOf(history.communes, "code_commune", correction.code_commune).includes(variant),
+        `${correction.code_commune} lacks former name ${variant}`,
+      );
+    }
+  }
+  for (const correction of wilayaNameCorrections.filter((c) => c.variants)) {
+    for (const variant of correction.variants) {
+      assert.ok(
+        formerOf(history.wilayas, "code", correction.code).includes(variant),
+        `wilaya ${correction.code} lacks former name ${variant}`,
+      );
+    }
+  }
+});

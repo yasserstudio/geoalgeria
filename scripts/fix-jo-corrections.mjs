@@ -41,7 +41,7 @@ for (let i = 2; i < process.argv.length; i++) {
 const communeNames = new Map();
 for (const c of communeNameCorrections) {
   const entry = communeNames.get(c.code_commune) ?? {};
-  entry[c.field] = { from: c.from, to: c.to };
+  entry[c.field] = { from: c.from, olds: [c.from, ...(c.variants ?? [])], to: c.to };
   entry.wilaya_code = c.wilaya_code;
   communeNames.set(c.code_commune, entry);
 }
@@ -50,7 +50,9 @@ const communeCoords = new Map(coordinateCorrections.map((c) => [c.code_commune, 
 /** code_commune -> { from, to } for a commune filed under the wrong daira. */
 const communeDairas = new Map(communeDairaCorrections.map((c) => [c.code_commune, c]));
 /** wilaya code -> { from, to } */
-const wilayaNames = new Map(wilayaNameCorrections.map((c) => [c.code, { from: c.from, to: c.to }]));
+const wilayaNames = new Map(
+  wilayaNameCorrections.map((c) => [c.code, { from: c.from, olds: [c.from, ...(c.variants ?? [])], to: c.to }]),
+);
 
 const splitPaths = [
   join(DATA, "communes_w1_w23.json"),
@@ -66,7 +68,7 @@ const oldNameOf = new Map(before.map((row) => [row.code_commune, row.name_fr]));
 const dairaRenames = new Map(); // "wilaya|oldName" -> newName
 for (const entry of communeNames.values()) {
   if (!entry.name_fr) continue;
-  dairaRenames.set(`${entry.wilaya_code}|${entry.name_fr.from}`, entry.name_fr.to);
+  for (const old of entry.name_fr.olds) dairaRenames.set(`${entry.wilaya_code}|${old}`, entry.name_fr.to);
 }
 const dairaRename = (wilaya, name) => dairaRenames.get(`${Number(wilaya)}|${name}`) ?? name;
 
@@ -108,7 +110,7 @@ function patchCommune(row, keys, where) {
   if (names) {
     for (const field of ["name_fr", "name_ar"]) {
       if (!names[field] || !keys[field]) continue;
-      expect(row[keys[field]], [names[field].from, names[field].to], `${where} ${code} ${field}`);
+      expect(row[keys[field]], [...names[field].olds, names[field].to], `${where} ${code} ${field}`);
       row[keys[field]] = names[field].to;
     }
   }
@@ -213,7 +215,7 @@ function patchUnified(doc, label) {
   for (const wilaya of doc) {
     const rename = wilayaNames.get(Number(wilaya.code));
     if (rename) {
-      expect(wilaya.name_fr, [rename.from, rename.to], `${label} ${wilaya.code} name_fr`);
+      expect(wilaya.name_fr, [...rename.olds, rename.to], `${label} ${wilaya.code} name_fr`);
       wilaya.name_fr = rename.to;
     }
     // A reform wilaya names its mother in prose, so a renamed mother renames it.
@@ -226,11 +228,6 @@ const unifiedPath = join(DATA, "algeria.json");
 const unified = JSON.parse(readFileSync(unifiedPath, "utf8"));
 patchUnified(unified, "algeria.json");
 queueJson(unifiedPath, unified);
-for (const target of targets) {
-  const doc = JSON.parse(readFileSync(target, "utf8"));
-  patchUnified(doc, basename(target));
-  queueJson(target, doc);
-}
 
 // --- ecommerce/communes.json ------------------------------------------------
 const ecommercePath = join(DATA, "ecommerce", "communes.json");
@@ -506,6 +503,72 @@ patchCsv(join(DATA, "communes_new_wilayas.csv"), 4, (f) => {
   if (bucket.ar.has(f[2])) f[2] = bucket.ar.get(f[2]);
   if (bucket.fr.has(f[3])) f[3] = bucket.fr.get(f[3]);
 });
+
+// --- --target: another copy of the flagship data (the web app's fork) --------
+// The app keeps its own carriers, in its own formatting, with repairs of its
+// own. Each is recognised by shape and only the corrected fields are touched.
+
+/** Write a target back in the formatting it was read in. */
+function queueLike(path, original, value) {
+  const indent = /^[[{]\r?\n/.test(original) ? 2 : 0;
+  const newline = original.endsWith("\n") ? "\n" : "";
+  queueText(path, `${JSON.stringify(value, null, indent)}${newline}`);
+}
+
+/** "wilaya|name" -> code for every name a commune is or was known by. */
+const codeByAnyName = new Map(codeByOldName);
+for (const [code, entry] of communeNames) {
+  if (!entry.name_fr) continue;
+  for (const name of [...entry.name_fr.olds, entry.name_fr.to]) {
+    codeByAnyName.set(`${entry.wilaya_code}|${name}`, code);
+  }
+}
+
+function patchCommunePoints(doc, label) {
+  for (const feature of doc.features) {
+    const props = feature.properties;
+    const code = codeByAnyName.get(`${Number(props.wilaya_code)}|${props.name_fr}`);
+    if (code == null) continue;
+    patchCommune(Object.assign(props, { code_commune: code }), GEOJSON_KEYS, label);
+    delete props.code_commune;
+    const coords = communeCoords.get(code);
+    if (coords) {
+      expect(feature.geometry.coordinates[0], [coords.from[1], coords.to[1]], `${label} ${code} lng`);
+      expect(feature.geometry.coordinates[1], [coords.from[0], coords.to[0]], `${label} ${code} lat`);
+      feature.geometry.coordinates = [coords.to[1], coords.to[0]];
+    }
+  }
+}
+
+function patchWilayaPoints(doc, label) {
+  for (const feature of doc.features) {
+    const rename = wilayaNames.get(Number(feature.properties.code));
+    if (!rename) continue;
+    expect(feature.properties.name_fr, [...rename.olds, rename.to], `${label} ${feature.properties.code} name_fr`);
+    feature.properties.name_fr = rename.to;
+  }
+}
+
+function patchTarget(path) {
+  const original = readFileSync(path, "utf8");
+  const doc = JSON.parse(original);
+  const label = basename(path);
+  if (Array.isArray(doc)) {
+    patchUnified(doc, label);
+  } else if (doc.type === "FeatureCollection") {
+    const props = doc.features[0]?.properties ?? {};
+    if ("wilaya_code" in props && "name_fr" in props) patchCommunePoints(doc, label);
+    else if ("code" in props && "name_fr" in props) patchWilayaPoints(doc, label);
+    else if ("code" in props && !("name_fr" in props)) {
+      // Boundaries carry only the wilaya code: nothing a name correction touches.
+    } else throw new Error(`${label}: unrecognised carrier shape`);
+  } else {
+    throw new Error(`${label}: unrecognised carrier shape`);
+  }
+  queueLike(path, original, doc);
+}
+
+for (const target of targets) patchTarget(target);
 
 // ---------------------------------------------------------------------------
 let changed = 0;
