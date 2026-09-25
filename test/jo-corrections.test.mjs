@@ -117,22 +117,22 @@ test("a moved commune sits in its new daira and both counts follow", () => {
   }
 });
 
-test("every published variant a correction replaces is kept as a former name", () => {
+test("every extra Former name a correction replaces stays in the name history", () => {
   const formerOf = (entries, key, code) =>
     entries.find((entry) => entry[key] === code)?.former_names_fr ?? [];
-  for (const correction of communeNameCorrections.filter((c) => c.variants)) {
-    for (const variant of correction.variants) {
+  for (const correction of communeNameCorrections.filter((c) => c.former_names)) {
+    for (const name of correction.former_names) {
       assert.ok(
-        formerOf(history.communes, "code_commune", correction.code_commune).includes(variant),
-        `${correction.code_commune} lacks former name ${variant}`,
+        formerOf(history.communes, "code_commune", correction.code_commune).includes(name),
+        `${correction.code_commune} lacks former name ${name}`,
       );
     }
   }
-  for (const correction of wilayaNameCorrections.filter((c) => c.variants)) {
-    for (const variant of correction.variants) {
+  for (const correction of wilayaNameCorrections.filter((c) => c.former_names)) {
+    for (const name of correction.former_names) {
       assert.ok(
-        formerOf(history.wilayas, "code", correction.code).includes(variant),
-        `wilaya ${correction.code} lacks former name ${variant}`,
+        formerOf(history.wilayas, "code", correction.code).includes(name),
+        `wilaya ${correction.code} lacks former name ${name}`,
       );
     }
   }

@@ -168,10 +168,10 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 
 ## Former names
 
-`name-history.json` lists every name this dataset used to carry, with the
-official text that replaced it: 2 wilayas and 178 communes as of the April 2026
-corrections. The current name is authoritative; a former name is a search alias
-and never a label. `require("geoalgeria").findCommune(name)` matches both, so an
+`name-history.json` lists every name this dataset, or GeoAlgeria's own
+published copy of it, used to carry, with the official text that replaced it:
+2 wilayas and 178 communes as of the April 2026 corrections. The current name is
+authoritative; a former name still finds its record and is never a label. `require("geoalgeria").findCommune(name)` matches both, so an
 address stored before a correction still resolves.
 
 ```json

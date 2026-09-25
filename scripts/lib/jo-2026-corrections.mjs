@@ -33,17 +33,17 @@
  *  the same table) and wilaya 57 ("El M'Ghair" here, "El Meghaier" there and
  *  "El Megaier" in 2019) are left alone for the same reason. */
 export const wilayaNameCorrections = [
-  { code: 65, field: "name_fr", from: "Aïn Oussera", variants: ["Aïn Oussara"], to: "Aïn Ouessara", source: "JORA n° 40 (2026), decree 26-206 art. 1, item 65, p. 5" },
+  { code: 65, field: "name_fr", from: "Aïn Oussera", former_names: ["Aïn Oussara"], to: "Aïn Ouessara", source: "JORA n° 40 (2026), decree 26-206 art. 1, item 65, p. 5" },
   { code: 28, field: "name_fr", from: "M'sila", to: "M'Sila", source: "JORA n° 25 (2026), law 26-06 art. 32, item 1, p. 7; wilaya table p. 16" },
 ];
 
 /** A commune-level name correction, keyed by the stable ONS commune code.
  *
- *  `variants` lists other readings of the same name that were published and
- *  that the correction also replaces: the GeoAlgeria web app keeps its own copy
- *  of this data and wrote wilaya 65 "Aïn Oussara" (as the dataset README did
- *  until 2026-09-24) and its seat "Ain Oussera". A variant is accepted as an old
- *  value wherever the correction is applied and is kept as a former name. */
+ *  `former_names` lists Former names beyond `from`: other published readings
+ *  the correction also replaces. The GeoAlgeria web app keeps its own copy of
+ *  this data and wrote wilaya 65 "Aïn Oussara" (as the dataset README did until
+ *  2026-09-24) and its seat "Ain Oussera". Each is accepted as an old value
+ *  wherever the correction is applied and is kept in name-history.json. */
 export const communeNameCorrections = [
   { code_commune: 306, wilaya_code: 3, field: "name_fr", from: "Hassi R'mel", to: "Hassi R'Mel", source: "JORA n° 25 (2026), law 26-06 art. 7, item 6, p. 4" },
   { code_commune: 307, wilaya_code: 3, field: "name_fr", from: "Ain Madhi", to: "Aïn Madhi", source: "JORA n° 25 (2026), law 26-06 art. 7, item 7, p. 4" },
@@ -208,7 +208,7 @@ export const communeNameCorrections = [
   { code_commune: 1409, wilaya_code: 64, field: "name_fr", from: "Zmalet El Emir Abdelkade", to: "Zmalet El Emir Abdelkader", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 15, item 2, p. 8" },
   { code_commune: 1439, wilaya_code: 64, field: "name_fr", from: "Serghine", to: "Serguine", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 15, item 5, p. 8" },
   { code_commune: 1439, wilaya_code: 64, field: "name_ar", from: "سرغين", to: "سرقين", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 15, item 5, p. 10" },
-  { code_commune: 1731, wilaya_code: 65, field: "name_fr", from: "Aïn Oussera", variants: ["Ain Oussera"], to: "Aïn Ouessara", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 1, p. 8" },
+  { code_commune: 1731, wilaya_code: 65, field: "name_fr", from: "Aïn Oussera", former_names: ["Ain Oussera"], to: "Aïn Ouessara", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 1, p. 8" },
   { code_commune: 1708, wilaya_code: 65, field: "name_ar", from: "بيرين", to: "البيرين", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 2, p. 10" },
   { code_commune: 1709, wilaya_code: 65, field: "name_ar", from: "بويرة الأحداب", to: "بويرة الأحدب", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 3, p. 10" },
   { code_commune: 1719, wilaya_code: 65, field: "name_fr", from: "Sidi Laadjel", to: "Sidi Ladjel", source: "JORA n° 25 (2026), law 26-06 art. 52 bis 16, item 5, p. 8" },

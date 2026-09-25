@@ -41,7 +41,7 @@ for (let i = 2; i < process.argv.length; i++) {
 const communeNames = new Map();
 for (const c of communeNameCorrections) {
   const entry = communeNames.get(c.code_commune) ?? {};
-  entry[c.field] = { from: c.from, olds: [c.from, ...(c.variants ?? [])], to: c.to };
+  entry[c.field] = { from: c.from, formerNames: [c.from, ...(c.former_names ?? [])], to: c.to };
   entry.wilaya_code = c.wilaya_code;
   communeNames.set(c.code_commune, entry);
 }
@@ -51,7 +51,7 @@ const communeCoords = new Map(coordinateCorrections.map((c) => [c.code_commune, 
 const communeDairas = new Map(communeDairaCorrections.map((c) => [c.code_commune, c]));
 /** wilaya code -> { from, to } */
 const wilayaNames = new Map(
-  wilayaNameCorrections.map((c) => [c.code, { from: c.from, olds: [c.from, ...(c.variants ?? [])], to: c.to }]),
+  wilayaNameCorrections.map((c) => [c.code, { from: c.from, formerNames: [c.from, ...(c.former_names ?? [])], to: c.to }]),
 );
 
 const splitPaths = [
@@ -68,7 +68,7 @@ const oldNameOf = new Map(before.map((row) => [row.code_commune, row.name_fr]));
 const dairaRenames = new Map(); // "wilaya|oldName" -> newName
 for (const entry of communeNames.values()) {
   if (!entry.name_fr) continue;
-  for (const old of entry.name_fr.olds) dairaRenames.set(`${entry.wilaya_code}|${old}`, entry.name_fr.to);
+  for (const name of entry.name_fr.formerNames) dairaRenames.set(`${entry.wilaya_code}|${name}`, entry.name_fr.to);
 }
 const dairaRename = (wilaya, name) => dairaRenames.get(`${Number(wilaya)}|${name}`) ?? name;
 
@@ -110,7 +110,7 @@ function patchCommune(row, keys, where) {
   if (names) {
     for (const field of ["name_fr", "name_ar"]) {
       if (!names[field] || !keys[field]) continue;
-      expect(row[keys[field]], [...names[field].olds, names[field].to], `${where} ${code} ${field}`);
+      expect(row[keys[field]], [...names[field].formerNames, names[field].to], `${where} ${code} ${field}`);
       row[keys[field]] = names[field].to;
     }
   }
@@ -161,8 +161,8 @@ for (const entry of communeNames.values()) {
   const w = entry.wilaya_code;
   if (!nestedByWilaya.has(w)) nestedByWilaya.set(w, { fr: new Map(), ar: new Map() });
   const bucket = nestedByWilaya.get(w);
-  if (entry.name_fr) bucket.fr.set(entry.name_fr.from, entry.name_fr.to);
-  if (entry.name_ar) bucket.ar.set(entry.name_ar.from, entry.name_ar.to);
+  for (const name of entry.name_fr?.formerNames ?? []) bucket.fr.set(name, entry.name_fr.to);
+  for (const name of entry.name_ar?.formerNames ?? []) bucket.ar.set(name, entry.name_ar.to);
 }
 function patchNestedNames(node, wilaya) {
   const bucket = nestedByWilaya.get(Number(wilaya));
@@ -173,7 +173,7 @@ function patchNestedNames(node, wilaya) {
 for (const wilaya of wilayasDoc.wilayas) {
   const rename = wilayaNames.get(wilaya.code);
   if (rename) {
-    expect(wilaya.name_fr, [rename.from, rename.to], `wilayas.json ${wilaya.code} name_fr`);
+    expect(wilaya.name_fr, [...rename.formerNames, rename.to], `wilayas.json ${wilaya.code} name_fr`);
     wilaya.name_fr = rename.to;
     if (wilaya.name_en === rename.from) wilaya.name_en = rename.to;
   }
@@ -215,7 +215,7 @@ function patchUnified(doc, label) {
   for (const wilaya of doc) {
     const rename = wilayaNames.get(Number(wilaya.code));
     if (rename) {
-      expect(wilaya.name_fr, [...rename.olds, rename.to], `${label} ${wilaya.code} name_fr`);
+      expect(wilaya.name_fr, [...rename.formerNames, rename.to], `${label} ${wilaya.code} name_fr`);
       wilaya.name_fr = rename.to;
     }
     // A reform wilaya names its mother in prose, so a renamed mother renames it.
@@ -237,6 +237,16 @@ const codeByOldName = new Map(
   before.map((row) => [`${row.wilaya_code}|${row.name_fr}`, row.code_commune]),
 );
 const codeForOldName = (wilaya, name) => codeByOldName.get(`${Number(wilaya)}|${name}`);
+/** "wilaya|name" -> code for every name a commune is or was known by: every
+ *  Former name as well as the current one. */
+const codeByAnyName = new Map(codeByOldName);
+for (const [code, entry] of communeNames) {
+  if (!entry.name_fr) continue;
+  for (const name of [...entry.name_fr.formerNames, entry.name_fr.to]) {
+    codeByAnyName.set(`${entry.wilaya_code}|${name}`, code);
+  }
+}
+
 for (const row of ecommerce) {
   const code = codeForOldName(row.wilaya_code, row.commune_name_fr);
   if (code == null) throw new Error(`ecommerce/communes.json: unknown commune ${row.id}`);
@@ -254,7 +264,7 @@ for (const row of ecommerce) {
   delete row.code_commune;
   const rename = wilayaNames.get(Number(row.wilaya_code));
   if (rename) {
-    expect(row.wilaya_name_fr, [rename.from, rename.to], `ecommerce/communes.json ${row.id} wilaya_name_fr`);
+    expect(row.wilaya_name_fr, [...rename.formerNames, rename.to], `ecommerce/communes.json ${row.id} wilaya_name_fr`);
     row.wilaya_name_fr = rename.to;
   }
 }
@@ -263,29 +273,12 @@ queueJson(ecommercePath, ecommerce);
 // --- geojson ----------------------------------------------------------------
 const communesGeoPath = join(DATA, "geojson", "communes.geojson");
 const communesGeo = JSON.parse(readFileSync(communesGeoPath, "utf8"));
-for (const feature of communesGeo.features) {
-  const props = feature.properties;
-  const code = codeForOldName(props.wilaya_code, props.name_fr);
-  if (code == null) throw new Error(`communes.geojson: unknown commune ${props.name_fr}`);
-  const coords = communeCoords.get(code);
-  patchCommune(Object.assign(props, { code_commune: code }), GEOJSON_KEYS, "communes.geojson");
-  delete props.code_commune;
-  if (coords) {
-    expect(feature.geometry.coordinates[0], [coords.from[1], coords.to[1]], `communes.geojson ${code} lng`);
-    expect(feature.geometry.coordinates[1], [coords.from[0], coords.to[0]], `communes.geojson ${code} lat`);
-    feature.geometry.coordinates = [coords.to[1], coords.to[0]];
-  }
-}
+patchCommunePoints(communesGeo, "communes.geojson", { strict: true });
 queueJson(communesGeoPath, communesGeo);
 
 const wilayasGeoPath = join(DATA, "geojson", "wilayas.geojson");
 const wilayasGeo = JSON.parse(readFileSync(wilayasGeoPath, "utf8"));
-for (const feature of wilayasGeo.features) {
-  const rename = wilayaNames.get(Number(feature.properties.code));
-  if (!rename) continue;
-  expect(feature.properties.name_fr, [rename.from, rename.to], `wilayas.geojson ${feature.properties.code}`);
-  feature.properties.name_fr = rename.to;
-}
+patchWilayaPoints(wilayasGeo, "wilayas.geojson");
 queueJson(wilayasGeoPath, wilayasGeo);
 
 // The repo-root atlas GeoJSON (README map, release bundle) labels each wilaya
@@ -328,11 +321,11 @@ patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
   const code = Number(f[7]);
   const names = communeNames.get(code);
   if (names?.name_fr) {
-    expect(f[0], [names.name_fr.from, names.name_fr.to], `csv/communes.csv ${code} name_fr`);
+    expect(f[0], [...names.name_fr.formerNames, names.name_fr.to], `csv/communes.csv ${code} name_fr`);
     f[0] = names.name_fr.to;
   }
   if (names?.name_ar) {
-    expect(f[1], [names.name_ar.from, names.name_ar.to], `csv/communes.csv ${code} name_ar`);
+    expect(f[1], [...names.name_ar.formerNames, names.name_ar.to], `csv/communes.csv ${code} name_ar`);
     f[1] = names.name_ar.to;
   }
   f[3] = dairaFor(code, f[2], f[3], "csv/communes.csv");
@@ -347,7 +340,7 @@ patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
 patchCsv(join(DATA, "csv", "wilayas.csv"), 8, (f) => {
   const rename = wilayaNames.get(Number(f[0]));
   if (!rename) return;
-  expect(f[1], [rename.from, rename.to], `csv/wilayas.csv ${f[0]} name_fr`);
+  expect(f[1], [...rename.formerNames, rename.to], `csv/wilayas.csv ${f[0]} name_fr`);
   f[1] = rename.to;
 });
 
@@ -358,13 +351,13 @@ patchCsv(join(DATA, "ecommerce", "communes.csv"), 8, (f) => {
   const names = communeNames.get(code);
   if (names?.name_fr) f[1] = names.name_fr.to;
   if (names?.name_ar) {
-    expect(f[2], [names.name_ar.from, names.name_ar.to], `ecommerce/communes.csv ${code} name_ar`);
+    expect(f[2], [...names.name_ar.formerNames, names.name_ar.to], `ecommerce/communes.csv ${code} name_ar`);
     f[2] = names.name_ar.to;
   }
   f[3] = dairaFor(code, f[4], f[3], "ecommerce/communes.csv");
   const rename = wilayaNames.get(Number(f[4]));
   if (rename) {
-    expect(f[5], [rename.from, rename.to], `ecommerce/communes.csv ${f[0]} wilaya_name_fr`);
+    expect(f[5], [...rename.formerNames, rename.to], `ecommerce/communes.csv ${f[0]} wilaya_name_fr`);
     f[5] = rename.to;
   }
 });
@@ -487,7 +480,7 @@ for (const provider of ["yalidine", "zr_express", "maystro"]) {
 patchCsv(join(DATA, "wilayas.csv"), 11, (f) => {
   const rename = wilayaNames.get(Number(f[0]));
   if (!rename) return;
-  expect(f[2], [rename.from, rename.to], `wilayas.csv ${f[0]} name_fr`);
+  expect(f[2], [...rename.formerNames, rename.to], `wilayas.csv ${f[0]} name_fr`);
   f[2] = rename.to;
   if (f[3] === rename.from) f[3] = rename.to;
 });
@@ -510,25 +503,24 @@ patchCsv(join(DATA, "communes_new_wilayas.csv"), 4, (f) => {
 
 /** Write a target back in the formatting it was read in. */
 function queueLike(path, original, value) {
-  const indent = /^[[{]\r?\n/.test(original) ? 2 : 0;
-  const newline = original.endsWith("\n") ? "\n" : "";
-  queueText(path, `${JSON.stringify(value, null, indent)}${newline}`);
+  const eol = original.includes("\r\n") ? "\r\n" : "\n";
+  const indent = /^[[{]\r?\n([ \t]+)/.exec(original)?.[1] ?? "";
+  const body = JSON.stringify(value, null, indent).replace(/\n/g, eol);
+  queueText(path, `${body}${/\r?\n$/.test(original) ? eol : ""}`);
 }
 
-/** "wilaya|name" -> code for every name a commune is or was known by. */
-const codeByAnyName = new Map(codeByOldName);
-for (const [code, entry] of communeNames) {
-  if (!entry.name_fr) continue;
-  for (const name of [...entry.name_fr.olds, entry.name_fr.to]) {
-    codeByAnyName.set(`${entry.wilaya_code}|${name}`, code);
-  }
-}
-
-function patchCommunePoints(doc, label) {
+/** Commune points carry no code, so each is placed by any name the commune is
+ *  or was known by. `strict` (this repo's own carrier) refuses a point it
+ *  cannot place; a --target fork may hold communes of its own, so there the
+ *  corrected points are cross-checked against its algeria.json instead. */
+function patchCommunePoints(doc, label, { strict = false } = {}) {
   for (const feature of doc.features) {
     const props = feature.properties;
     const code = codeByAnyName.get(`${Number(props.wilaya_code)}|${props.name_fr}`);
-    if (code == null) continue;
+    if (code == null) {
+      if (strict) throw new Error(`${label}: unknown commune ${props.name_fr}`);
+      continue;
+    }
     patchCommune(Object.assign(props, { code_commune: code }), GEOJSON_KEYS, label);
     delete props.code_commune;
     const coords = communeCoords.get(code);
@@ -544,9 +536,14 @@ function patchWilayaPoints(doc, label) {
   for (const feature of doc.features) {
     const rename = wilayaNames.get(Number(feature.properties.code));
     if (!rename) continue;
-    expect(feature.properties.name_fr, [...rename.olds, rename.to], `${label} ${feature.properties.code} name_fr`);
+    expect(feature.properties.name_fr, [...rename.formerNames, rename.to], `${label} ${feature.properties.code} name_fr`);
     feature.properties.name_fr = rename.to;
   }
+}
+
+function isCommunePoints(doc) {
+  const props = doc.features[0]?.properties ?? {};
+  return "wilaya_code" in props && "name_fr" in props;
 }
 
 function patchTarget(path) {
@@ -557,7 +554,7 @@ function patchTarget(path) {
     patchUnified(doc, label);
   } else if (doc.type === "FeatureCollection") {
     const props = doc.features[0]?.properties ?? {};
-    if ("wilaya_code" in props && "name_fr" in props) patchCommunePoints(doc, label);
+    if (isCommunePoints(doc)) patchCommunePoints(doc, label);
     else if ("code" in props && "name_fr" in props) patchWilayaPoints(doc, label);
     else if ("code" in props && !("name_fr" in props)) {
       // Boundaries carry only the wilaya code: nothing a name correction touches.
@@ -566,9 +563,37 @@ function patchTarget(path) {
     throw new Error(`${label}: unrecognised carrier shape`);
   }
   queueLike(path, original, doc);
+  return { label, doc };
 }
 
-for (const target of targets) patchTarget(target);
+/** A commune points carrier has no codes, so a commune spelled some way no
+ *  correction knows would be skipped silently. Each corrected commune's name
+ *  in the coded algeria.json target must therefore also name a point. */
+function checkPointsAgainstUnified(patched) {
+  const points = patched.filter(({ doc }) => doc.type === "FeatureCollection" && isCommunePoints(doc));
+  if (!points.length) return;
+  const unified = patched.find(({ doc }) => Array.isArray(doc));
+  if (!unified) {
+    throw new Error(`${points[0].label}: pass the algeria.json it must agree with as another --target`);
+  }
+  const byCode = new Map(unified.doc.flatMap((wilaya) => wilaya.communes ?? []).map((c) => [c.code_commune, c]));
+  const corrected = new Set([...communeNames.keys(), ...communeCoords.keys(), ...communeDairas.keys()]);
+  for (const { label, doc } of points) {
+    const named = new Set(doc.features.map((f) => `${Number(f.properties.wilaya_code)}|${f.properties.name_fr}`));
+    for (const code of corrected) {
+      const commune = byCode.get(code);
+      if (!commune) continue;
+      if (!named.has(`${commune.wilaya_code}|${commune.name_fr}`)) {
+        throw new Error(
+          `${label}: no point for commune ${code} "${commune.name_fr}" (wilaya ${commune.wilaya_code}); it is spelled some way no correction knows`,
+        );
+      }
+    }
+  }
+}
+
+const patchedTargets = targets.map(patchTarget);
+checkPointsAgainstUnified(patchedTargets);
 
 // ---------------------------------------------------------------------------
 let changed = 0;

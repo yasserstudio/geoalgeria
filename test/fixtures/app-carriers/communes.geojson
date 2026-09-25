@@ -21,6 +21,23 @@
     {
       "type": "Feature",
       "properties": {
+        "name_fr": "Arris",
+        "name_ar": "أريس",
+        "wilaya_code": 5,
+        "postal_code": "05007",
+        "daira": "Arris"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          6.34706,
+          35.25881
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "name_fr": "El Haoudane",
         "name_ar": "الحوضان",
         "wilaya_code": 26,

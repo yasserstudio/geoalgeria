@@ -49,7 +49,7 @@ test("the app's algeria.json takes the corrections and keeps its own repairs", (
 
 test("the app's communes.geojson is matched by old name and corrected", () => {
   const dir = appCopy();
-  fix(dir, "--write", ["communes.geojson"]);
+  fix(dir, "--write", ["algeria.json", "communes.geojson"]);
   const features = readJson(dir, "communes.geojson").features;
   const at = (wilaya, name) =>
     features.find((f) => f.properties.wilaya_code === wilaya && f.properties.name_fr === name);
@@ -59,7 +59,7 @@ test("the app's communes.geojson is matched by old name and corrected", () => {
   assert.deepEqual(deuxBassins?.geometry.coordinates, [3.299409, 36.46947]);
   assert.equal(deuxBassins?.properties.daira, "Tablat");
   assert.equal(at(65, "Aïn Ouessara")?.properties.daira, "Aïn Ouessara");
-  assert.equal(features.length, 3);
+  assert.equal(features.length, 4);
 });
 
 test("the app's wilayas.geojson takes the wilaya renames in its own formatting", () => {
@@ -115,4 +115,24 @@ test("a drifted copy stops the run and names what drifted", () => {
 
   assert.throws(() => fix(dir, "--write"), (error) => /algeria\.json 527 name_fr/.test(error.stderr));
   assert.equal(readFileSync(join(dir, "wilayas.geojson"), "utf8"), before, "no carrier is half-written");
+});
+
+test("a commune point the fixer cannot place stops the run", () => {
+  const dir = appCopy();
+  const doc = readJson(dir, "communes.geojson");
+  doc.features.find((f) => f.properties.name_fr === "Lemcene").properties.name_fr = "Lemcéne";
+  writeFileSync(join(dir, "communes.geojson"), `${JSON.stringify(doc, null, 2)}\n`);
+
+  assert.throws(
+    () => fix(dir, "--write"),
+    (error) => /communes\.geojson/.test(error.stderr) && /Lemsane/.test(error.stderr),
+  );
+});
+
+test("commune points are only corrected beside the algeria.json they must agree with", () => {
+  const dir = appCopy();
+  assert.throws(
+    () => fix(dir, "--write", ["communes.geojson"]),
+    (error) => /algeria\.json/.test(error.stderr),
+  );
 });
