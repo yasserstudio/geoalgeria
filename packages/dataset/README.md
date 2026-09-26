@@ -74,7 +74,7 @@ dz.atms;                       // 2,026 ATMs
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
 dz.getDairasByWilaya(16);      // dairas in Algiers
-dz.findCommune('Oran');        // search by name (FR or AR)
+dz.findCommune('Oran');        // search by name (FR or AR, Former names too)
 dz.findByPostalCode('16000');  // lookup by postal code
 dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
@@ -144,6 +144,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
 | `data/dairas.json` | JSON | 556 | Daira list with commune counts |
+| `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |

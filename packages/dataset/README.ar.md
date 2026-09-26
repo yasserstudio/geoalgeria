@@ -144,6 +144,7 @@ sqlite3 mydb.sqlite < full.sql
 | `data/algeria.json` | JSON | 69 ولاية + بلديات | الاستخدام بملف واحد |
 | `data/wilayas.json` | JSON | 69 | قائمة الولايات فقط |
 | `data/dairas.json` | JSON | 556 | قائمة الدوائر مع عدد البلديات |
+| `data/name-history.json` | JSON | 210 | الكتابات السابقة لأسماء الولايات والبلديات، مع النص الذي عوّض كل واحدة منها |
 | `data/communes_w*.json` | JSON | 1,541 | بيانات البلديات المفصّلة |
 | `data/csv/wilayas.csv` | CSV | 69 | جداول البيانات، الاستيراد |
 | `data/csv/communes.csv` | CSV | 1,541 | جداول البيانات، الاستيراد |

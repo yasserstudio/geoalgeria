@@ -1,5 +1,5 @@
 ---
-"geoalgeria": patch
+"geoalgeria": minor
 ---
 
 Correct 2 wilaya and 178 commune names against the Official Journal, repair six placeholder coordinates, and publish the former spellings so search still finds them.
