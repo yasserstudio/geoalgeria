@@ -18,6 +18,10 @@ _Avoid_: district, sub-prefecture, arrondissement
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town
 
+**Former name**:
+A spelling a Wilaya or Commune carried before a sourced correction; it still resolves to that record but is never shown as its current name.
+_Avoid_: alias, old name, legacy name
+
 **Postal code**:
 The Algérie Poste code identifying a commune; resolves upward to its daira and wilaya.
 _Avoid_: ZIP, zipcode, code postal

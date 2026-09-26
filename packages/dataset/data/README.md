@@ -21,6 +21,7 @@ data/
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
+├── name-history.json            ← former names, so an older spelling still finds the record
 ├── csv/
 │   ├── wilayas.csv
 │   └── communes.csv
@@ -165,6 +166,26 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
 
+## Former names
+
+`name-history.json` lists every name this dataset, or GeoAlgeria's own
+published copy of it, used to carry, with the official text that replaced it:
+2 wilayas and 178 communes as of the April 2026 corrections. The current name is
+authoritative; a former name still finds its record and is never a label. `require("geoalgeria").findCommune(name)` matches both, so an
+address stored before a correction still resolves.
+
+```json
+{
+  "code_commune": 527,
+  "wilaya_code": 5,
+  "name_fr": "Lemsane",
+  "name_ar": "لمسان",
+  "former_names_fr": ["Lemcene"],
+  "former_names_ar": [],
+  "sources": ["JORA n° 25 (2026), law 26-06 art. 9, item 24, p. 4"]
+}
+```
+
 ## Wilaya boundaries
 
 `geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
@@ -178,7 +199,8 @@ implies. Full provenance in `geojson/wilaya-boundaries.metadata.json`.
 
 ## Sources
 
-- Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69
+- Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69 and for the commune lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28 and 32
+- Journal Officiel No. 40, June 3, 2026 (Presidential decree 26-206) for the names and chef-lieux of wilayas 59–69
 - Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
 - Ministry of Interior (interieur.gov.dz)
 - APS (Algérie Presse Service)

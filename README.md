@@ -91,7 +91,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships JSON to stay light; CSV/GeoJSON/SQL ride in every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
 
-> Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf), plus the 2019 reform (Law 19-12).
+> Current to **Law n° 26-06** (new territorial organization), [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf), plus the 2019 reform (Law 19-12).
 
 ## Why GeoAlgeria?
 

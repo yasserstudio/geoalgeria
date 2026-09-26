@@ -1,0 +1,39 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "code": 28,
+        "name_fr": "M'sila",
+        "name_ar": "المسيلة",
+        "phone_code": "035",
+        "postal_code": "28000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.54,
+          35.7
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": 65,
+        "name_fr": "Aïn Oussara",
+        "name_ar": "عين وسارة",
+        "phone_code": null,
+        "postal_code": "65000"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.90733,
+          35.44873
+        ]
+      }
+    }
+  ]
+}

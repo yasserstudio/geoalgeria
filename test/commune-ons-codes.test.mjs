@@ -116,6 +116,6 @@ test("every code-carrying export agrees with the canonical commune files", () =>
 
 test("a 2021 ONS code survives a later wilaya assignment", () => {
   assert.equal(commune(59, "Hadj Mechri")?.code_commune, 315);
-  assert.equal(commune(68, "Menaa")?.code_commune, 2839);
+  assert.equal(commune(68, "Menaâ")?.code_commune, 2839);
   assert.equal(commune(52, "Tabelbala")?.code_commune, 5206);
 });

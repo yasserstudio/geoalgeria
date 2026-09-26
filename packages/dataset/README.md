@@ -15,7 +15,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **556 dairas** (the daira table is still short of the official 564; see the [changelog](CHANGELOG.md)). Last validated: July 2026.
+Algeria has **69 wilayas** (provinces), **556 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **556 dairas** (the daira table is still short of the official 564; see the [changelog](CHANGELOG.md)). Last validated: July 2026.
 
 ---
 
@@ -74,7 +74,7 @@ dz.atms;                       // 2,026 ATMs
 dz.getWilaya(16);              // { name_fr: "Alger", name_ar: "الجزائر", ... }
 dz.getCommunesByWilaya(16);    // 57 communes in Algiers
 dz.getDairasByWilaya(16);      // dairas in Algiers
-dz.findCommune('Oran');        // search by name (FR or AR)
+dz.findCommune('Oran');        // search by name (FR or AR, Former names too)
 dz.findByPostalCode('16000');  // lookup by postal code
 dz.getPostOfficesByCommune(1731); // post offices in a commune (by code_commune)
 ```
@@ -144,6 +144,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
 | `data/dairas.json` | JSON | 556 | Daira list with commune counts |
+| `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
@@ -256,13 +257,13 @@ View all 69 wilayas on a map: [`algeria.geojson`](algeria.geojson) (GitHub rende
 ## FAQ
 
 **How many wilayas does Algeria have in 2026?**
-69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 made official in April 2026 ([Law n° 26-06, *Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf)). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
+69. The original 48, plus 10 added in 2019 (Law 19-12), plus 11 made official in April 2026 ([Law n° 26-06, *Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf)). Transition period ends December 31, 2026; full autonomy from January 1, 2027.
 
 **Where can I find a list of all Algerian communes in JSON?**
 Right here, `data/ecommerce/communes.json` has all 1,541 communes in a flat, ready-to-use format.
 
 **What are the new wilayas added in 2026?**
-Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Oussara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
+Wilayas 59-69 (numbered by mother wilaya code order): 59 Aflou (from Laghouat), 60 Barika (from Batna), 61 El Kantara (from Biskra), 62 Bir El Ater (from Tébessa), 63 El Aricha (from Tlemcen), 64 Ksar Chellala (from Tiaret), 65 Aïn Ouessara (from Djelfa), 66 Messaad (from Djelfa), 67 Ksar El Boukhari (from Médéa), 68 Bou Saâda (from M'Sila), 69 El Abiodh Sidi Cheikh (from El Bayadh).
 
 **How can I get Algeria postal codes in JSON format?**
 Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly, it maps commune names in French and Arabic to their postal codes across all 1,541 communes (5 have no citable code yet).
