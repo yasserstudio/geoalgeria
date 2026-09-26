@@ -114,7 +114,8 @@ then:
 The new GitHub Release fires the **Announce** workflow (see below).
 
 > ⚠️ **A Release cut before the Version PR merges is stuck with a bad title.**
-> Observed once (`@geoalgeria/buses` 2.1.0): the workflow cut the GitHub Release
+> Observed twice (`@geoalgeria/buses` 2.1.0, and `geoalgeria` 2.1.0 on
+> 2026-09-26): the workflow cut the GitHub Release
 > and tag at the changeset-PR merge, before the Version PR merged (cause not
 > fully traced). The release-notes step then found no `CHANGELOG.md` section
 > for that version yet and fell back to a truncated first bullet as the title.
@@ -138,6 +139,11 @@ Running `npm publish --auth-type=web` inside a pseudo-terminal (`script`) makes
 npm print the **unmasked** web-auth link, which you can open on a phone. A
 non-interactive `npm publish` masks the link as `***`, and `pnpm publish` itself
 refuses outright with `ERR_PNPM_OTP_NON_INTERACTIVE`.
+
+On a machine that has never logged in, the publish fails with
+`E404 Not Found - PUT https://registry.npmjs.org/@geoalgeria%2f<pkg>`: npm
+answers 404 rather than 401 for an unauthenticated write to a scope. Run
+`npm login --auth-type=web` first (check with `npm whoami`), then publish.
 
 ### 5. Approve the staged packages
 
