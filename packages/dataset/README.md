@@ -15,7 +15,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **564 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **556 dairas** (the daira table is still short of the official 564; see the [changelog](CHANGELOG.md)). Last validated: July 2026.
+Algeria has **69 wilayas** (provinces), **556 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **556 dairas** (the daira table is still short of the official 564; see the [changelog](CHANGELOG.md)). Last validated: July 2026.
 
 ---
 

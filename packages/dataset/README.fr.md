@@ -15,7 +15,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 
 ## En bref
 
-L'Algérie compte **69 wilayas** (provinces), **564 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
+L'Algérie compte **69 wilayas** (provinces), **556 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
 
 ---
 
