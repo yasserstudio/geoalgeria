@@ -356,6 +356,13 @@ reads as further along than it is.
 
 ## Releases
 
+- [ ] **Announce workflow failed for `geoalgeria` 2.1.0** (2026-09-26): the
+  run for the real release exited 1 and posted nothing, and `scripts/announce.js`
+  collapsed the multi-paragraph changeset into one run-on "headline", so
+  Discussion #225 was written by hand. Make announce.js stop the headline at
+  the first sentence or paragraph, and find why the run failed (the earlier
+  run for the premature, since-deleted Release succeeded).
+
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
   kept up; the project-level tag has not. Manual, and worth doing at the next
   meaningful group of bumps rather than on its own.
@@ -365,6 +372,18 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **`geoalgeria` 2.1.0, the Official Journal corrections** (2026-09-26): issue
+  #221 from @djamel2288 led to a full audit of the commune list of Law 26-06
+  against both editions of the Journal. 2 wilaya and 178 commune names follow
+  the law (wilaya 65 `Aïn Ouessara`, 28 `M'Sila`), six placeholder coordinates
+  are replaced from each commune's own OSM boundary, `Deux Bassins` moved to
+  daira Tablat, the 59 to 69 atlas and delivery labels are rebuilt, and the new
+  `data/name-history.json` keeps all 210 replaced spellings searchable. Released
+  as a minor (a new data file). `@geoalgeria/transport` 2.0.3 published the
+  umbrella licence declaration by hand. PRs #222/#223; announced in Discussion
+  #225. The web app took the same corrections the same day, with Former-address
+  redirects.
 
 - **Telecom 2.2.0, the September 5G refresh** (2026-09-08): the operator map
   now carries 3,598 coverage points: Mobilis 2,421, Djezzy 1,001 and Ooredoo
