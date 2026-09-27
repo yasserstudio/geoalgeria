@@ -355,6 +355,23 @@ WITHDRAWN = {("ALG", "DEL"), ("DEL", "ALG")}
 #            records above.
 AIRPORT_CORRECTED = {("BLJ", "CDG")}
 
+# Legs a citable, dated source says are not operating on AS_OF. The map is
+# structural (section 2), so a suspension DIMS the arc and never deletes it: the
+# record keeps its evidence tier and its place in `routes()`, and gains the status
+# plus the source that dates the suspension. The override is applied to whichever
+# collection carries the pair, so a pair listed by the Wikipedia pass does not
+# need a curated duplicate just to change its status.
+#
+#   ALG-DXB  Air Algérie has not resumed its Algiers-Dubai service. Same report
+#            dates the wider picture: Algeria closed its airspace to UAE-registered
+#            civil and military aircraft from 11 Sep 2026 at 00:00, with Emirati
+#            commercial flights to and from Algiers carved out until the end of
+#            2026, so this is Air Algérie's own leg being down, not a blanket stop
+#            on every Algeria-UAE flight.
+SUSPENDED = {
+    ("ALG", "DXB"): "https://www.visa-algerie.com/emirats-lalgerie-ferme-son-espace-aerien-les-vols-commerciaux-maintenus-provisoirement/",
+}
+
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
 # only selling seats on it. See collection-rules.md section 16.
 #
@@ -504,6 +521,19 @@ def main():
             "source_is_the_table": not r["source_urls"],
             "listed_at": r["from_article"],
         })
+
+    # Suspensions are applied last, over whichever collection carries the pair, so
+    # a citable "this is not flying" only has to name the leg. A key that matches
+    # nothing is a stale override, not a silent no-op: fail instead.
+    for key, url in SUSPENDED.items():
+        hits = [r for r in routes + planned_routes if (r["from"], r["to"]) == key]
+        if not hits:
+            raise SystemExit(f"{key[0]}-{key[1]}: SUSPENDED names a leg the dataset "
+                             f"does not carry; drop the override or add the leg")
+        for r in hits:
+            r["status"] = "suspended"
+            r["source"] = url
+            r["source_is_the_table"] = False
 
     used = sorted({c for r in routes + planned_routes for c in (r["from"], r["to"])})
     endpoints = [ep[c] for c in used]
