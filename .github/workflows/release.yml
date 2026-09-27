@@ -90,6 +90,28 @@ jobs:
               echo "skip: $TAG already released"
               continue
             fi
+
+            # NAME/VER above come from the working tree, which the changesets
+            # step leaves BUMPED whenever it (re)builds the Version PR: it
+            # checks out changeset-release/main in this same workspace, runs
+            # `changeset version` there and never switches back. Releasing from
+            # that tree cut geoalgeria@2.1.0 on 2026-09-26 and seven tags on
+            # 2026-09-13 on pushes that released nothing, each pointing at the
+            # pre-bump commit with the bot's raw notes, and the tag-existence
+            # guard above then blocked the real release for good. So gate every
+            # release on what $GITHUB_SHA actually carries: the version must be
+            # committed there AND have a CHANGELOG section. Fail closed.
+            set +e
+            node scripts/release-guard.mjs "$pkg" "$VER" "$TAG" "$GITHUB_SHA"
+            GUARD=$?
+            set -e
+            if [ "$GUARD" -eq 3 ]; then
+              continue
+            elif [ "$GUARD" -ne 0 ]; then
+              echo "::error::release guard errored (exit $GUARD) for $TAG"
+              exit 1
+            fi
+
             echo "releasing: $TAG"
 
             # A code-only package (no data/) still gets a Release, just no

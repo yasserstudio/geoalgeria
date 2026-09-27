@@ -113,17 +113,35 @@ then:
 
 The new GitHub Release fires the **Announce** workflow (see below).
 
-> ⚠️ **A Release cut before the Version PR merges is stuck with a bad title.**
-> Observed twice (`@geoalgeria/buses` 2.1.0, and `geoalgeria` 2.1.0 on
-> 2026-09-26): the workflow cut the GitHub Release
-> and tag at the changeset-PR merge, before the Version PR merged (cause not
-> fully traced). The release-notes step then found no `CHANGELOG.md` section
-> for that version yet and fell back to a truncated first bullet as the title.
-> Fix: `gh release delete '<tag>' --cleanup-tag` before merging the Version PR,
-> so the tag-existence guard lets the workflow recreate the Release with the
-> real changelog notes once the CHANGELOG section exists. This is also why a
-> changeset's **first line must be a headline**: `scripts/release-notes.mjs`
-> falls back to it (clamped) whenever a CHANGELOG section has no headline line.
+### The release-timing guard
+
+A Release is only cut for a version `main` actually carries. Each iteration of
+the releases loop runs `scripts/release-guard.mjs <pkg> <version> <tag>
+$GITHUB_SHA`, which reads `package.json` and `CHANGELOG.md` **as committed at
+the released commit** and declines (`release guard skip: ...`, exit 3) unless
+both the version is there and that version has a `CHANGELOG.md` section. It
+fails closed: a missing file, unparseable JSON or an empty section all decline.
+
+This exists because `changesets/action` builds the Version PR **in the runner's
+own workspace**: it runs `git checkout -b changeset-release/main`, then
+`changeset version`, commits, pushes, and never switches back. Every step after
+it therefore sees a working tree whose versions and CHANGELOGs are already
+bumped, on a push that released nothing. The loop read those files and cut the
+tag at the pre-bump commit with the bot's raw `### Minor Changes` notes, and the
+tag-existence guard then blocked the real Release for good, so the tag had to be
+deleted by hand.
+
+> **Incident, 2026-09-26.** `geoalgeria@2.1.0` was tagged at 13:03 UTC on the
+> push that merged feature PR #222, three minutes before Version PR #223 merged
+> at 13:06 (run 36243800992: `git checkout -b changeset-release/main` 13:02:48,
+> `creating pull request` 13:03:07, `releasing: geoalgeria@2.1.0` 13:03:09). The
+> Owner cleared it with `gh release delete '<tag>' --cleanup-tag`. The same run
+> shape cut seven tags early on 2026-09-13 (run 34766226083), so this fired on
+> every release cycle, not twice. The manual delete is no longer the fix; the
+> guard is.
+
+A changeset's **first line must still be a headline**: `scripts/release-notes.mjs`
+falls back to it (clamped) whenever a CHANGELOG section has no headline line.
 
 ### One-off: publishing an umbrella away from a terminal
 
