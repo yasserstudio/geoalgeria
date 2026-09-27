@@ -95,6 +95,65 @@ test("a workspace: spec that cannot be resolved is rejected, never published as-
   assert.equal(manifest.devDependencies["@geoalgeria/ghost"], "workspace:^");
 });
 
+test("an explicit range after the protocol is kept, in every shape npm understands", () => {
+  const versions = new Map([["@geoalgeria/poste", "2.0.4"]]);
+  const keeps = ["^2.0.0", "~2.0", ">=2.0.0 <3", "2.x", "1.2.3 - 2.0.0", "^1.0.0 || ^2.0.0", "2.0.4", "1.0.0-beta.1"];
+  for (const range of keeps) {
+    const { manifest, unresolved } = rewriteWorkspaceSpecs(
+      { name: "x", dependencies: { "@geoalgeria/poste": `workspace:${range}` } },
+      versions,
+    );
+    assert.deepEqual(unresolved, [], `workspace:${range} should resolve`);
+    assert.equal(manifest.dependencies["@geoalgeria/poste"], range);
+  }
+});
+
+test("an alias or malformed spec is unresolved, never stripped and published", () => {
+  // The leak: anything that was not *, ^ or ~ had the protocol stripped and the
+  // remainder shipped verbatim. pnpm's alias form `workspace:<name>@<range>`
+  // became `geoalgeria@*`, which no resolver can install, and a bare
+  // `workspace:` became "", which npm reads as `*` and so silently widens the
+  // dependency to any version. Both looked resolved to the fail-closed guard.
+  const versions = new Map([
+    ["@geoalgeria/poste", "2.0.4"],
+    ["geoalgeria", "2.2.0"],
+  ]);
+  const refuses = [
+    "workspace:geoalgeria@*",
+    "workspace:",
+    "workspace:@geoalgeria/poste@^2.0.0",
+    "workspace:latest",
+    "workspace:file:../poste",
+  ];
+  for (const spec of refuses) {
+    const { unresolved, manifest, changed } = rewriteWorkspaceSpecs(
+      { name: "x", dependencies: { "@geoalgeria/poste": spec } },
+      versions,
+    );
+    assert.equal(changed, false, `${spec} must not rewrite`);
+    assert.equal(unresolved.length, 1, `${spec} must be reported`);
+    assert.match(unresolved[0].reason, /neither workspace:\* \/ \^ \/ ~ nor workspace:<semver range>/);
+    // Untouched, so stage-publish.js refuses the package instead of shipping it.
+    assert.equal(manifest.dependencies["@geoalgeria/poste"], spec);
+  }
+});
+
+test("one unsupported spec fails the whole manifest closed, alongside resolvable ones", () => {
+  const { unresolved, changed, manifest } = rewriteWorkspaceSpecs(
+    {
+      name: "@geoalgeria/transport",
+      dependencies: { "@geoalgeria/buses": "workspace:^", "@geoalgeria/poste": "workspace:geoalgeria@*" },
+    },
+    new Map([
+      ["@geoalgeria/buses", "2.2.0"],
+      ["@geoalgeria/poste", "2.0.4"],
+    ]),
+  );
+  assert.equal(changed, false);
+  assert.equal(unresolved.length, 1);
+  assert.equal(manifest.dependencies["@geoalgeria/buses"], "workspace:^", "nothing is half-rewritten");
+});
+
 test("a workspace package with no version of its own is rejected", () => {
   const { unresolved } = rewriteWorkspaceSpecs(
     { name: "x", dependencies: { "@geoalgeria/schema": "workspace:^" } },

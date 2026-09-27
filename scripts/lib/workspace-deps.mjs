@@ -38,20 +38,56 @@ export function findWorkspaceSpecs(manifest) {
   return found;
 }
 
+/** The three bare aliases that stand for the linked package's own version. */
+const ALIASES = new Set(["*", "^", "~"]);
+
 /**
- * The real range a `workspace:` spec stands for, following pnpm:
- * `workspace:*` pins the exact version, `workspace:^` and `workspace:~` take
- * that prefix, and `workspace:<range>` keeps the range it already states.
+ * One comparator inside a semver range: an optional operator, then a version
+ * whose parts are numbers or an `x`/`X`/`*` wildcard, then an optional
+ * prerelease and build. Deliberately narrow, because anything it rejects is
+ * refused rather than published.
  */
-function resolveSpec(spec, version) {
-  const alias = spec.slice(PROTOCOL.length);
-  if (alias === "*") return version;
-  if (alias === "^" || alias === "~") return `${alias}${version}`;
-  return alias;
+const COMPARATOR = /^(?:[<>]=?|=|\^|~)?v?(?:\d+|[xX*])(?:\.(?:\d+|[xX*])){0,2}(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$/;
+
+/**
+ * Whether a string is a semver RANGE npm will understand: `||`-separated
+ * comparator sets, each a space-separated run of comparators, with `-` allowed
+ * for a hyphen range (`1.2.3 - 2.0.0`).
+ */
+function isSemverRange(range) {
+  if (range.trim() === "") return false;
+  return range.split("||").every((set) => {
+    const parts = set.trim().split(/\s+/).filter(Boolean);
+    return parts.length > 0 && parts.every((part) => part === "-" || COMPARATOR.test(part));
+  });
 }
 
-/** Whether an alias needs the linked package's own version to resolve. */
-const needsVersion = (spec) => ["*", "^", "~"].includes(spec.slice(PROTOCOL.length));
+/**
+ * What a `workspace:` spec is, following pnpm:
+ *  - `alias`: `workspace:*` pins the exact version, `workspace:^` and
+ *    `workspace:~` take that prefix. All three need the linked package's version.
+ *  - `range`: `workspace:<semver range>` keeps the range it already states, so
+ *    only the protocol is stripped.
+ *  - `unsupported`: everything else. pnpm also accepts the ALIAS form
+ *    `workspace:<name>@<range>` (a dependency published under a different name),
+ *    and a bare `workspace:` is simply malformed. Stripping the protocol off
+ *    either one produced a manifest npm would accept and publish: `geoalgeria@*`,
+ *    which no resolver can install, and `""`, which npm reads as `*` and so
+ *    silently widens the dependency to any version. Neither is rewritable here,
+ *    so both are reported as unresolved and the fail-closed guard refuses the
+ *    package.
+ */
+function classifySpec(spec) {
+  const alias = spec.slice(PROTOCOL.length);
+  if (ALIASES.has(alias)) return { kind: "alias", alias };
+  if (isSemverRange(alias)) return { kind: "range", range: alias };
+  return { kind: "unsupported" };
+}
+
+/** The real range an alias spec stands for, given the linked package's version. */
+function resolveAlias(alias, version) {
+  return alias === "*" ? version : `${alias}${version}`;
+}
 
 /**
  * A copy of the manifest with every `workspace:` spec resolved to real semver.
@@ -72,8 +108,18 @@ export function rewriteWorkspaceSpecs(manifest, versions) {
   const unresolved = [];
 
   for (const { field, name, spec } of found) {
-    if (!needsVersion(spec)) {
-      rewritten.push({ field, name, from: spec, to: resolveSpec(spec, undefined) });
+    const classified = classifySpec(spec);
+    if (classified.kind === "unsupported") {
+      unresolved.push({
+        field,
+        name,
+        spec,
+        reason: `${JSON.stringify(spec)} is neither workspace:* / ^ / ~ nor workspace:<semver range>`,
+      });
+      continue;
+    }
+    if (classified.kind === "range") {
+      rewritten.push({ field, name, from: spec, to: classified.range });
       continue;
     }
     if (!versions.has(name)) {
@@ -85,7 +131,7 @@ export function rewriteWorkspaceSpecs(manifest, versions) {
       unresolved.push({ field, name, spec, reason: `workspace package ${name} carries no version` });
       continue;
     }
-    rewritten.push({ field, name, from: spec, to: resolveSpec(spec, version) });
+    rewritten.push({ field, name, from: spec, to: resolveAlias(classified.alias, version) });
   }
 
   if (unresolved.length > 0) return { manifest, rewritten: [], unresolved, changed: false };
