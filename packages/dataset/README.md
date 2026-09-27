@@ -286,8 +286,8 @@ Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contri
 licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
-- 64 of the 1,541 commune centre coordinates, each taken from that commune's own
-  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 8 from the relation
+- 62 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 6 from the relation
   centroid in 2.1.0), wherever those values appear.
 
 If you use or redistribute either part you must **attribute OpenStreetMap contributors** and

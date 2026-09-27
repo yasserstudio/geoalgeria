@@ -9,7 +9,7 @@
     "https://opensource.org/licenses/MIT",
     "https://opendatacommons.org/licenses/odbl/1-0/"
   ],
-  "usageInfo": "The compilation of wilayas, dairas, communes, their names, postal codes and administrative codes is MIT. Two OpenStreetMap-derived parts are ODbL 1.0, (c) OpenStreetMap contributors: the 69 wilaya boundary polygons in data/geojson/wilaya-boundaries.geojson, and 64 commune centre coordinates taken from the commune's own admin_level=8 relation, 56 from its admin_centre node on 2026-09-27 and 8 from the relation centroid in version 2.1.0, wherever those values appear. Per-part attribution is in the package NOTICE file.",
+  "usageInfo": "The compilation of wilayas, dairas, communes, their names, postal codes and administrative codes is MIT. Two OpenStreetMap-derived parts are ODbL 1.0, (c) OpenStreetMap contributors: the 69 wilaya boundary polygons in data/geojson/wilaya-boundaries.geojson, and 62 commune centre coordinates taken from the commune's own admin_level=8 relation, 56 from its admin_centre node on 2026-09-27 and 6 from the relation centroid in version 2.1.0, wherever those values appear. Per-part attribution is in the package NOTICE file.",
   "creator": {
     "@type": "Organization",
     "name": "Yasser's Studio",
@@ -78,7 +78,7 @@
     "algerie",
     "code postal"
   ],
-  "measurementTechnique": "Official sources: ONS Code Géographique National 2021, JORA, Algérie Poste BaridiMap (baridimap.poste.dz), Law 19-12 (2019), Law 26-06 of 4 April 2026 (Journal Officiel n° 25, 5 April 2026); OpenStreetMap administrative relations for the wilaya boundary polygons and for 64 commune centre coordinates",
+  "measurementTechnique": "Official sources: ONS Code Géographique National 2021, JORA, Algérie Poste BaridiMap (baridimap.poste.dz), Law 19-12 (2019), Law 26-06 of 4 April 2026 (Journal Officiel n° 25, 5 April 2026); OpenStreetMap administrative relations for the wilaya boundary polygons and for 62 commune centre coordinates",
   "citation": [
     "Loi n° 26-06 du 4 avril 2026 relative à la nouvelle organisation territoriale du pays, Journal Officiel de la République Algérienne n° 25 du 5 avril 2026. https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
     "OpenStreetMap: administrative boundaries (boundary=administrative, admin_level=4) in Algeria, ODbL 1.0 ((c) OpenStreetMap contributors), retrieved 2026-06-21",
