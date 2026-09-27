@@ -1,5 +1,21 @@
 # @geoalgeria/transport
 
+## 2.0.4
+
+### Patch Changes
+
+- 5d84d16: Carry the umbrella to buses 2.2.0, so its published dependency range and docs name 16 bus Operators.
+
+  `@geoalgeria/buses` 2.2.0 adds ETUS-C Constantine and ETUS Skikda as its fifteenth and sixteenth Operators. The umbrella's own `workspace:^` range already resolves to it, but the last published manifest pins `^2.1.1` and the published READMEs (EN/FR/AR) still say 14 Operators. This patch republishes the umbrella so the resolved range and the counts match the member package. No API change.
+
+- Updated dependencies [ecaaa2c]
+- Updated dependencies [5d84d16]
+- Updated dependencies [4deabd3]
+  - @geoalgeria/aviation@2.6.0
+  - @geoalgeria/buses@2.2.0
+  - @geoalgeria/ferroviaire@2.0.3
+  - @geoalgeria/gares-routieres@2.2.5
+
 ## 2.0.3
 
 ### Patch Changes

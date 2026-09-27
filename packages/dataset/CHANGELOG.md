@@ -1,5 +1,44 @@
 # Changelog
 
+## 2.1.1
+
+### Patch Changes
+
+- 48c080d: Alger Centre was in the sea and Bethioua inside the Arzew LNG complex: 56 commune centres corrected from OpenStreetMap.
+
+  Two reported defects turned out to be one class. **Alger Centre (16)** shipped at `[3.0909, 36.76846]`, in the water east of the port of Algiers, about 3 km from the Grande Poste; **Bethioua (31)** shipped at `[-0.2596, 35.805837]`, inside the Arzew industrial complex, 0.75 km east of the town. Both are real Algerian coordinates inside the national bounding box, which is why no range or bbox check ever saw them.
+
+  Sweeping **all 1,541 commune centres** against the 69 wilaya polygons this package already ships found **68 outside their own wilaya**, from 10 m to 188 km. The wilaya outlines are display-grade and simplified to a 3.4 km median vertex gap, so they cannot tell a bad point from a simplification artefact on their own. Each of the 68 was therefore decided against a second, unsimplified source: its own OpenStreetMap `admin_level=8` commune relation, fetched with full geometry. A stored point outside the commune's own OSM boundary, whose `admin_centre` node is inside that boundary and inside the declared wilaya, is a coordinate error.
+
+  That split **55 errors from 13 artefacts**, and Bethioua is the 56th correction, admitted on its own evidence: its stored latitude is byte-identical to the `admin_centre` node and only the longitude is displaced.
+
+  **56 commune centres move**, by 0.75 km to 217 km. The largest are Ksabi (52) 217 km, Tousnina (14) 121 km, Oultem (68) 88 km, Hannacha (26) 86 km, Boudria Beniyadjis (18) 74 km, Ain Diss (04) 72 km, Bir Dheheb (12) 69 km and El Harrach (16) 51 km. Five more were independently reported as offshore and are all in this set: Rais Hamidou (16), which was 15 km out in the bay, Melbou (06), Tichy (06), El Ancor (31) and Alger Centre itself. Every row carries its own source in `research/_commune-centres/corrections-2026-09-27.json`: the OSM relation id, the `admin_centre` node id, the relation's `ref:ONS` and the Overpass `timestamp_osm_base` of the pull, so any single value can be re-checked without re-running the sweep. New values are the node coordinate rounded to 6 decimals, the package's existing resolution.
+
+  This matters past the table. `attachCommune()` and the same inlined pattern across seven sector packages stamp `commune` and `commune_code` onto OpenStreetMap features by **nearest commune centroid**, so a centre 25 km from its town is an attractor that claims facilities near a place it does not belong to. The same class of row produced 30 of this project's known mislinks before they were repaired.
+
+  All five representations change together, `communes_w*.json`, `algeria.json`, `geojson/communes.geojson`, `csv/communes.csv` and `sql/full.sql`, and a new guard keeps the class out: no commune centre may sit more than **500 m** outside its own wilaya polygon, in any of those five files, with the three reviewed exceptions pinned by name and measured distance. 500 m is the loosest line that still fails an Alger Centre and the tightest that does not fail a legitimately coastal commune.
+
+  **The licence carve-out now covers commune centres, not just boundaries.** These values come from OpenStreetMap, so the package's ODbL 1.0 carve-out is extended to cover them: `license` becomes `MIT AND ODbL-1.0`, and `LICENSE`, a new `NOTICE`, the READMEs in all three locales and `data/geojson/communes.metadata.json` state that the 69 wilaya boundary polygons and **62 commune centre coordinates** are ODbL 1.0, (c) OpenStreetMap contributors, while the compilation of wilayas, dairas, communes, names, postal codes and administrative codes stays MIT. 62, not 56: the 6 centres replaced in 2.1.0 came from the same `admin_level=8` relations, as relation centroids. Only 6, because 2.1.0 repaired one commune of each placeholder pair: Si Mahdjoub (2644) and El Achir (3407) still carry the pre-2.1.0 placeholder byte for byte and were never OpenStreetMap-sourced. The carve-out follows the values rather than a file, so it covers them in all five representations. The other 1,479 commune centres and the 69 wilaya capitals carry no recorded source, are not OpenStreetMap-derived, and no ODbL claim is made over them. Reusing either carved-out part means attributing OpenStreetMap contributors and keeping derived databases under a compatible licence.
+
+  The 13 hits that were not point errors are listed in `research/_commune-centres/review-2026-09-27.json` rather than silently tolerated. Three of them say something about the boundaries instead: El Alia and El-Hadjira, both declared in Touggourt (55), sit 53 km and 51 km outside the wilaya 55 polygon with their chef-lieu nodes outside it too, and Mansoura (47) sits 5 km outside wilaya 47. Coordinates are unchanged for all 13.
+
+  Commune centres that are wrong while staying inside the right commune, Bethioua's own class, are not addressed by the sweep and need a separate audit against every commune's `admin_centre` node.
+
+- 4deabd3: Replace em dashes in source names and citations with plain separators.
+
+  - Every source `name` reads `Operator: descriptor`, where it used to carry a
+    U+2014 em dash, in `data/metadata.json` and in the `dataset-metadata.json`
+    descriptor built from it.
+  - The schema.org/DCAT `citation` entries join a source name and its licence with
+    a comma: `OpenStreetMap: schools & kindergartens in Algeria, ODbL 1.0 (© OpenStreetMap contributors)`.
+  - Coverage notes, package `description`s, the `types/index.d.ts` documentation and
+    the `index.js` headers carry a colon, comma or semicolon in place of the dash.
+
+  No count, coordinate, licence or date changes. Consumers that match a source name
+  or a citation string literally need to update the separator; anything keyed on
+  `sources[].key` is unaffected. `pnpm validate` now fails on an em dash in
+  published metadata, so it cannot come back through a generator.
+
 ## 2.1.0
 
 ### Minor Changes
