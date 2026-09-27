@@ -248,6 +248,19 @@ VERIFIED = [
      "source": "https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/"},
     {"from": "CZL", "to": "SSH", "status": "seasonal",
      "source": "https://www.visa-algerie.com/apres-djerba-en-tunisie-air-algerie-se-pose-a-charm-el-cheikh-en-egypte/"},
+    # Berlin, planned since the sales opened and OPERATING since Monday 14 Sep
+    # 2026, when the inaugural rotation flew. `plannedRoutes()` means announced
+    # but not yet operating, so the pair belongs here now, and each direction
+    # cites a page covering that direction: the launch report for the outbound,
+    # and the winter-schedule report, which carries the Berlin departure and
+    # confirms the leg stays nonstop, for the return.
+    # One weekly same-day rotation. The winter programme moves the slot from
+    # Monday to SUNDAY on 25 Oct 2026; `days` records the day the route operates
+    # on as of AS_OF and the next pass moves it.
+    {"from": "ALG", "to": "BER", "flight": "AH 2072", "status": "active", "days": ["mon"],
+     "source": "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/"},
+    {"from": "BER", "to": "ALG", "flight": "AH 2073", "status": "active", "days": ["mon"],
+     "source": "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/"},
 ]
 
 # Explicitly announced, but not operating on AS_OF. These stay separate from
@@ -255,9 +268,6 @@ VERIFIED = [
 # booking result can establish carrier, direction, flight number and duration;
 # a reported announcement stays `listed` until those details are confirmed.
 PLANNED = [
-    {"from": "ALG", "to": "BER", "flight": "AH 2072", "status": "unclear",
-     "days": ["mon"], "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/"},
     {"from": "ALG", "to": "BZV", "flight": "AH 5390", "status": "unclear",
      "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
@@ -278,9 +288,6 @@ PLANNED = [
     {"from": "ABV", "to": "ALG", "flight": "AH 5354", "status": "unclear",
      "days": ["fri"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
-    {"from": "BER", "to": "ALG", "flight": "AH 2073", "status": "unclear",
-     "days": ["mon"], "evidence": "verified",
-     "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/"},
     {"from": "BZV", "to": "ALG", "flight": "AH 5391", "status": "unclear",
      "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},

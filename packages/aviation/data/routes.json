@@ -171,6 +171,21 @@
     "great_circle_km": 520
   },
   {
+    "id": "alg-ber",
+    "from": "ALG",
+    "to": "BER",
+    "carrier": "AH",
+    "flight": "AH 2072",
+    "status": "active",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/",
+    "great_circle_km": 1919
+  },
+  {
     "id": "alg-bey",
     "from": "ALG",
     "to": "BEY",
@@ -626,6 +641,21 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 520
+  },
+  {
+    "id": "ber-alg",
+    "from": "BER",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2073",
+    "status": "active",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/",
+    "great_circle_km": 1919
   },
   {
     "id": "bja-cdg",
@@ -1639,21 +1669,6 @@
     "great_circle_km": 3106
   },
   {
-    "id": "alg-ber",
-    "from": "ALG",
-    "to": "BER",
-    "carrier": "AH",
-    "flight": "AH 2072",
-    "status": "unclear",
-    "days": [
-      "mon"
-    ],
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
-    "great_circle_km": 1919
-  },
-  {
     "id": "alg-bzv",
     "from": "ALG",
     "to": "BZV",
@@ -1752,21 +1767,6 @@
     "planned": true,
     "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
     "great_circle_km": 3332
-  },
-  {
-    "id": "ber-alg",
-    "from": "BER",
-    "to": "ALG",
-    "carrier": "AH",
-    "flight": "AH 2073",
-    "status": "unclear",
-    "days": [
-      "mon"
-    ],
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
-    "great_circle_km": 1919
   },
   {
     "id": "bzv-alg",
