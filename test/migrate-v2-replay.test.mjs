@@ -143,6 +143,10 @@ const CORRECTIONS = {
     "47-001": { hours: "08H00 - 19H30" },
     "55-001": { hours: "08H00 -14H00 & 16H00-20H00" },
     "59-001": { hours: "08H00 - 19H00" },
+    // Commune label and re-join, the two classes documented further down.
+    "12-001": { commune: "Tébessa" }, // label
+    "60-001": { commune: "Abdelkader Azil" }, // label
+    "16-009": { commune: "El Harrach" }, // re-join: El Harrach's centre moved 51.5 km
   },
   "gares-routieres": {
     // NAAMA is one of six stations SOGRAL ships with a corrupted longitude. The
@@ -174,6 +178,41 @@ const CORRECTIONS = {
     // nearest-centroid join had labelled it Bab Ezzouar. Corrected via
     // scripts/seeds/commune-labels.json, user report 2026-08-06.
     "00065": { commune: "Oued Smar" },
+    // Flagship commune label, corrected against JORA n° 25 / n° 40.
+    "00033": { commune: "M'Sila" },
+  },
+  // Two classes below, both of them the flagship moving under a derived field,
+  // and both caught by gates of their own rather than by this replay:
+  //
+  //   label   the commune kept its code and changed its spelling (JORA n° 25 and
+  //           n° 40). The packages publish the flagship's current label, so the
+  //           frozen v1 row carries the old one. Repository-wide FK tests own the
+  //           code; the label follows it.
+  //   re-join the commune CHANGED, because its centre moved in the 2026-09-27
+  //           correction of 56 commune centres and the nearest-centroid join
+  //           answers differently now. The new validator section "commune-centroid
+  //           coordinates track the flagship commune centres" owns that class.
+  mosquees: {
+    "16-0914": { commune: "Alger Centre" }, // re-join: Alger Centre's centre left the sea
+    "26-0114": { commune: "Sedraïa" }, // label
+  },
+  culture: {
+    "14-bcp-09": { commune: "Chehaïma" }, // label
+    "28-bcp-07": { commune: "Hammam Dhalaa" }, // label
+  },
+  ooredoo: {
+    "69-002": { commune: "El Abiodh Sidi Cheikh" }, // label
+  },
+  cliniques: {
+    "28-00005": { commune: "M'Sila" }, // label
+    "40-00009": { commune: "Taouzianat" }, // re-join: Kais' centre moved
+  },
+  agriculture: {
+    // Both rows are Algiers institutions placed at the wilaya chief town's centre.
+    // Alger Centre's centre was in the sea east of the port and now sits by the
+    // Grande Poste, so every record that borrows it moves with it.
+    "16-chambre_agriculture-01": { lat: 36.776335, lng: 3.058211 },
+    "16-institut_recherche-10": { lat: 36.776335, lng: 3.058211 },
   },
 };
 
