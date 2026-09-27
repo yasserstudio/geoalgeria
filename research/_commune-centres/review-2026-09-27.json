@@ -1,0 +1,361 @@
+{
+  "generated": "2026-09-27",
+  "source": "OpenStreetMap admin_level=8 commune relations and their admin_centre nodes, via Overpass",
+  "timestamp_osm_base": "2026-09-27T11:03:52Z",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "method": "The same sweep's remaining hits. Each stored point is inside its own commune per OSM, so it is not a coordinate error; it is outside the SIMPLIFIED wilaya outline this repository ships. Where `osm.admin_centre_in_declared_wilaya` is false the outline misses the commune's chef-lieu too, which makes the outline the suspect.",
+  "count": 13,
+  "records": [
+    {
+      "code_commune": 5513,
+      "wilaya_code": 55,
+      "name_fr": "El Alia",
+      "name_ar": "العالية",
+      "from": [
+        5.425556,
+        32.6999655
+      ],
+      "outside_own_wilaya_m": 53201,
+      "osm": {
+        "relation": 6542936,
+        "admin_centre_node": 1941809118,
+        "name": "El Allia ⵍⵄⴰⵍⵉⵢⴰ العالية",
+        "ref:ONS": "3020",
+        "point": [
+          5.425863,
+          32.697101
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 320,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 5507,
+      "wilaya_code": 55,
+      "name_fr": "El-Hadjira",
+      "name_ar": "الحجيرة",
+      "from": [
+        5.51259,
+        32.6130464
+      ],
+      "outside_own_wilaya_m": 51107,
+      "osm": {
+        "relation": 6542937,
+        "admin_centre_node": 3040399726,
+        "name": "El Hadjira ⵍⴻⵃⴵⵉⵔⴰ الحجيرة",
+        "ref:ONS": "3014",
+        "point": [
+          5.5152,
+          32.613046
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 244,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 4713,
+      "wilaya_code": 47,
+      "name_fr": "Mansoura",
+      "name_ar": "المنصورة",
+      "from": [
+        3.7459731,
+        31.979444
+      ],
+      "outside_own_wilaya_m": 5233,
+      "osm": {
+        "relation": 5117521,
+        "admin_centre_node": 1035413464,
+        "name": "Mansoura ⵎⴻⵏⵚⵓⵔⴰ منصورة",
+        "ref:ONS": "4713",
+        "point": [
+          3.748134,
+          31.978693
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 220,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 1538,
+      "wilaya_code": 15,
+      "name_fr": "Tigzirt",
+      "name_ar": "تيقـزيرت",
+      "from": [
+        4.12142,
+        36.89623
+      ],
+      "outside_own_wilaya_m": 479,
+      "osm": {
+        "relation": 4285531,
+        "admin_centre_node": 425029266,
+        "name": "Tigzirt",
+        "ref:ONS": "1538",
+        "point": [
+          4.126179,
+          36.892661
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 580,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 4413,
+      "wilaya_code": 44,
+      "name_fr": "Oued Chorfa",
+      "name_ar": "وادي الشرفاء",
+      "from": [
+        2.516667,
+        36.2
+      ],
+      "outside_own_wilaya_m": 426,
+      "osm": {
+        "relation": 2645875,
+        "admin_centre_node": 1019348170,
+        "name": "Oued Chorfa وادي الشرفاء",
+        "ref:ONS": "4413",
+        "point": [
+          2.554606,
+          36.165549
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 5125,
+      "verdict": "not-a-point-error",
+      "why": "stored point is inside its own commune per OSM but outside the simplified wilaya outline"
+    },
+    {
+      "code_commune": 1640,
+      "wilaya_code": 16,
+      "name_fr": "El Marsa",
+      "name_ar": "المرسى",
+      "from": [
+        3.254722,
+        36.8111249
+      ],
+      "outside_own_wilaya_m": 231,
+      "osm": {
+        "relation": 157462,
+        "admin_centre_node": 317353675,
+        "name": "El Marsa ⵍⵎⴻⵔⵙⴰ المرسى",
+        "ref:ONS": "1640",
+        "point": [
+          3.254604,
+          36.809128
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 222,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 1554,
+      "wilaya_code": 15,
+      "name_fr": "Iflissen",
+      "name_ar": "إفليـــسن",
+      "from": [
+        4.2230836,
+        36.89623
+      ],
+      "outside_own_wilaya_m": 210,
+      "osm": {
+        "relation": 4285481,
+        "admin_centre_node": 3241049673,
+        "name": "Iflissen",
+        "ref:ONS": "1554",
+        "point": [
+          4.219797,
+          36.865014
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 3483,
+      "verdict": "not-a-point-error",
+      "why": "stored point is inside its own commune per OSM but outside the simplified wilaya outline"
+    },
+    {
+      "code_commune": 1606,
+      "wilaya_code": 16,
+      "name_fr": "Bologhine Ibnou Ziri",
+      "name_ar": "بولوغين بن زيري",
+      "from": [
+        3.04278,
+        36.80528
+      ],
+      "outside_own_wilaya_m": 139,
+      "osm": {
+        "relation": 548210,
+        "admin_centre_node": 288656379,
+        "name": "Bologhine ⴱⵓⵍⵓⵖⵉⵏ بولوغين",
+        "ref:ONS": "1606",
+        "point": [
+          3.042617,
+          36.804678
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 69,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 514,
+      "wilaya_code": 60,
+      "name_fr": "Bitam",
+      "name_ar": "بيطام",
+      "from": [
+        5.3,
+        35.0333
+      ],
+      "outside_own_wilaya_m": 134,
+      "osm": {
+        "relation": 5177042,
+        "admin_centre_node": 427909998,
+        "name": "Bitam ⴱⵉⵜⴰⵎ بيطام",
+        "ref:ONS": "0514",
+        "point": [
+          5.374082,
+          35.307778
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 31255,
+      "verdict": "not-a-point-error",
+      "why": "stored point is inside its own commune per OSM but outside the simplified wilaya outline"
+    },
+    {
+      "code_commune": 4242,
+      "wilaya_code": 42,
+      "name_fr": "Hadjret Ennous",
+      "name_ar": "حجرة النص",
+      "from": [
+        2.051944,
+        36.573333
+      ],
+      "outside_own_wilaya_m": 92,
+      "osm": {
+        "relation": 2318187,
+        "admin_centre_node": 424965583,
+        "name": "Hadjret Ennous ⵃⴻⴵⵔⴻⵜ ⵏⵏⴻⵚ حجرة النص",
+        "ref:ONS": "4242",
+        "point": [
+          2.053413,
+          36.57309
+        ],
+        "admin_centre_in_declared_wilaya": false
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 134,
+      "verdict": "not-a-point-error",
+      "why": "stored point AND the OSM admin_centre are both outside the simplified wilaya outline: the outline is the suspect, not the point"
+    },
+    {
+      "code_commune": 2802,
+      "wilaya_code": 28,
+      "name_fr": "Maadid",
+      "name_ar": "المعاضيد",
+      "from": [
+        4.795556,
+        35.8667
+      ],
+      "outside_own_wilaya_m": 83,
+      "osm": {
+        "relation": 6547247,
+        "admin_centre_node": 1560595793,
+        "name": "Maadid ⵎⴰⵄⴷⵉⴷ المعاضيد",
+        "ref:ONS": "2802",
+        "point": [
+          4.80151,
+          35.815127
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 5760,
+      "verdict": "not-a-point-error",
+      "why": "stored point is inside its own commune per OSM but outside the simplified wilaya outline"
+    },
+    {
+      "code_commune": 1226,
+      "wilaya_code": 12,
+      "name_fr": "Bedjene",
+      "name_ar": "بجن",
+      "from": [
+        7.4746519,
+        35.40417
+      ],
+      "outside_own_wilaya_m": 29,
+      "osm": {
+        "relation": 6618827,
+        "admin_centre_node": 1551314985,
+        "name": "Bedjene ⴱⴻⴵⴻⵏ بجن",
+        "ref:ONS": "1226",
+        "point": [
+          7.471557,
+          35.34933
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 6104,
+      "verdict": "not-a-point-error",
+      "why": "stored point is inside its own commune per OSM but outside the simplified wilaya outline"
+    },
+    {
+      "code_commune": 4230,
+      "wilaya_code": 42,
+      "name_fr": "Bou Haroun",
+      "name_ar": "بوهارون",
+      "from": [
+        2.6548,
+        36.62503
+      ],
+      "outside_own_wilaya_m": 10,
+      "osm": {
+        "relation": 2301021,
+        "admin_centre_node": 424976062,
+        "name": "Bou Haroun ⴱⵓⵀⴰⵔⵓⵏ بوهارون",
+        "ref:ONS": "4230",
+        "point": [
+          2.657232,
+          36.624876
+        ],
+        "admin_centre_in_declared_wilaya": true
+      },
+      "stored_in_own_commune_boundary": true,
+      "stored_outside_own_commune_m": 0,
+      "move_m": 218,
+      "verdict": "not-a-point-error",
+      "why": "stored point is inside its own commune per OSM but outside the simplified wilaya outline"
+    }
+  ]
+}

@@ -197,6 +197,18 @@ Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km,
 outline can depart from the true border by much more than the ~150 m the coordinate rounding
 implies. Full provenance in `geojson/wilaya-boundaries.metadata.json`.
 
+## Commune centres
+
+A commune's `latitude`/`longitude` is its chef-lieu, not the polygon centroid of its
+territory, so it is a point in the built-up centre of the commune.
+
+56 of them were corrected on 2026-09-27 from the `admin_centre` node of the commune's
+OpenStreetMap `admin_level=8` relation, after a sweep of all 1,541 against the wilaya
+polygons found 68 outside their own wilaya. Alger Centre had been in the sea east of the
+port and Bethioua inside the Arzew industrial complex. Method, per-row evidence (relation
+id, node id, Overpass `timestamp_osm_base`) and the 13 hits that turned out to be boundary
+simplification rather than bad points: `research/_commune-centres/` in the repository.
+
 ## Sources
 
 - Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69 and for the commune lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28 and 32
@@ -207,3 +219,4 @@ implies. Full provenance in `geojson/wilaya-boundaries.metadata.json`.
 - Echorouk Online, Awras, Djelfa Info, Aures News, El Moudjahid, France 24 Arabic
 - Algérie Poste for postal codes
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
+- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 56 commune centres corrected on 2026-09-27
