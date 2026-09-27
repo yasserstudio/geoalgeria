@@ -135,7 +135,10 @@ ENDPOINTS = [
     # --- Asia ---
     {"city": "Guangzhou", "iata": "CAN", "country": "CN"},
     {"city": "New Delhi", "iata": "DEL", "country": "IN",
-     "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026."},
+     "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026, then "
+             "withdrew the authorization request (reported 12 Sep 2026). Kept as a "
+             "candidate endpoint; with both planned legs gone nothing references it, "
+             "so the dataset no longer emits it."},
     {"city": "Incheon", "iata": "ICN", "country": "KR",
      "note": "Planned Korea-Algeria link. July 2026 traffic-rights coverage names "
              "Incheon-Algiers, but the bilateral agreement permits regional airports."},

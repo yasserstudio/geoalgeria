@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-08-21",
+  "as_of": "2026-09-27",
   "routes": [
     {
       "id": "aae-cdg",
@@ -1680,22 +1680,6 @@
       "great_circle_km": 3459
     },
     {
-      "id": "alg-del",
-      "from": "ALG",
-      "to": "DEL",
-      "carrier": "AH",
-      "flight": "AH 3104",
-      "status": "unclear",
-      "days": [
-        "tue",
-        "thu",
-        "sun"
-      ],
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
-      "great_circle_km": 6810
-    },
-    {
       "id": "alg-doh",
       "from": "ALG",
       "to": "DOH",
@@ -1803,22 +1787,6 @@
       "evidence": "verified",
       "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
       "great_circle_km": 3459
-    },
-    {
-      "id": "del-alg",
-      "from": "DEL",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 3105",
-      "status": "unclear",
-      "days": [
-        "mon",
-        "wed",
-        "fri"
-      ],
-      "evidence": "listed",
-      "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
-      "great_circle_km": 6810
     },
     {
       "id": "doh-alg",
@@ -2094,15 +2062,6 @@
       "lat": 36.28378418745162,
       "lng": 6.621478825849163,
       "country": "DZ"
-    },
-    {
-      "iata": "DEL",
-      "name": "Aéroport international Indira-Gandhi",
-      "name_en": "Indira Gandhi International Airport",
-      "name_ar": "مطار أنديرا غاندي الدولي",
-      "lat": 28.55563,
-      "lng": 77.09519,
-      "country": "IN"
     },
     {
       "iata": "DJE",

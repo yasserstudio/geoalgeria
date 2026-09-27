@@ -38,7 +38,7 @@ DATA = os.path.join(HERE, "..", "..")
 # dataset, so the package carries this as a validity stamp (`routes_as_of` in
 # metadata.json) rather than reading as evergreen. Bump it only after a real
 # collection/verification pass (see verification-YYYY-MM-DD.md).
-AS_OF = "2026-08-21"
+AS_OF = "2026-09-27"
 
 # Legs walked end to end: operator confirmed as operating, direction recorded,
 # duration checked. Flight numbers are the operating carrier's own, and none of
@@ -253,9 +253,6 @@ PLANNED = [
     {"from": "ALG", "to": "CKY", "flight": "AH 5358", "status": "unclear",
      "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
-    {"from": "ALG", "to": "DEL", "flight": "AH 3104", "status": "unclear",
-     "days": ["tue", "thu", "sun"], "evidence": "listed",
-     "source": "https://www.aeroroutes.com/eng/260619-ahnw26as"},
     {"from": "ALG", "to": "DOH", "flight": "AH 4078", "status": "unclear",
      "days": ["tue", "fri"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/"},
@@ -279,9 +276,6 @@ PLANNED = [
     {"from": "CKY", "to": "ALG", "flight": "AH 5359", "status": "unclear",
      "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
-    {"from": "DEL", "to": "ALG", "flight": "AH 3105", "status": "unclear",
-     "days": ["mon", "wed", "fri"], "evidence": "listed",
-     "source": "https://www.aeroroutes.com/eng/260619-ahnw26as"},
     {"from": "DOH", "to": "ALG", "flight": "AH 4079", "status": "unclear",
      "days": ["tue", "fri"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/"},
@@ -294,6 +288,24 @@ PLANNED = [
      "days": ["tue", "thu", "sun"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/"},
 ]
+
+# Planned legs withdrawn before they ever operated. Kept as a record, not as
+# data: `plannedRoutes()` is a claim that a route is coming, so a withdrawal has
+# to remove the rows rather than restyle them. This is the one case where a
+# planned route leaves the dataset, and it needs the same thing an arrival needs,
+# a citable source, because section 7's "silence is never a negative" cuts both
+# ways: what removes these rows is a source stating the withdrawal, never an
+# empty probe.
+#
+#   ALG-DEL / DEL-ALG  Air Algérie withdrew the traffic-rights authorization
+#                      request for the India route, reported 12 Sep 2026: "Air
+#                      Algérie a retiré la demande d'autorisation pour la liaison
+#                      prévue vers l'Inde". The three weekly A330-900neo
+#                      rotations from 25 Oct 2026 that the 19 Jun schedule filing
+#                      carried (AH3104/AH3105) are gone from the forward
+#                      programme with the 11 Sep update.
+#                      https://www.visa-algerie.com/air-algerie-reporte-le-lancement-dune-nouvelle-ligne-internationale/
+WITHDRAWN = {("ALG", "DEL"), ("DEL", "ALG")}
 
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
 # only selling seats on it. See collection-rules.md section 16.
@@ -375,7 +387,7 @@ def main():
     dz = {a["iata"] for a in airports if a.get("iata")}
 
     routes, planned_routes = [], []
-    skipped = {"no_endpoint": [], "codeshare": [], "domestic": []}
+    skipped = {"no_endpoint": [], "codeshare": [], "domestic": [], "withdrawn": []}
     seen = set()
 
     def add_curated_route(record, destination, evidence):
@@ -411,6 +423,10 @@ def main():
             continue
         if key in CODESHARE_ONLY or key in OPERATED_BY_OTHERS:
             skipped["codeshare"].append(key); continue
+        # A withdrawal removes the pair for good, so the Wikipedia table must not
+        # put it back as a `listed` row the way it would any other absent pair.
+        if key in WITHDRAWN:
+            skipped["withdrawn"].append(key); continue
         if frm not in ep or to not in ep:
             skipped["no_endpoint"].append(key); continue
         seen.add(key)
@@ -463,7 +479,8 @@ def main():
           f"across {len(endpoints)} endpoints -> {path}")
     print(f"  listed routes with no citation: {unsourced}")
     print(f"  skipped: {len(skipped['codeshare'])} codeshare-only, "
-          f"{len(skipped['domestic'])} domestic, {len(skipped['no_endpoint'])} without an endpoint")
+          f"{len(skipped['domestic'])} domestic, {len(skipped['no_endpoint'])} without an endpoint, "
+          f"{len(skipped['withdrawn'])} withdrawn")
     print(f"  planned (announced, not yet flying): {len(planned_routes)}"
           + (f" -> {', '.join(r['id'] for r in planned_routes)}" if planned_routes else ""))
     print(f"  longest arc: {max(r['great_circle_km'] for r in routes)} km")

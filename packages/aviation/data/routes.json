@@ -1680,23 +1680,6 @@
     "great_circle_km": 3459
   },
   {
-    "id": "alg-del",
-    "from": "ALG",
-    "to": "DEL",
-    "carrier": "AH",
-    "flight": "AH 3104",
-    "status": "unclear",
-    "days": [
-      "tue",
-      "thu",
-      "sun"
-    ],
-    "evidence": "listed",
-    "planned": true,
-    "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
-    "great_circle_km": 6810
-  },
-  {
     "id": "alg-doh",
     "from": "ALG",
     "to": "DOH",
@@ -1810,23 +1793,6 @@
     "planned": true,
     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
     "great_circle_km": 3459
-  },
-  {
-    "id": "del-alg",
-    "from": "DEL",
-    "to": "ALG",
-    "carrier": "AH",
-    "flight": "AH 3105",
-    "status": "unclear",
-    "days": [
-      "mon",
-      "wed",
-      "fri"
-    ],
-    "evidence": "listed",
-    "planned": true,
-    "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
-    "great_circle_km": 6810
   },
   {
     "id": "doh-alg",
