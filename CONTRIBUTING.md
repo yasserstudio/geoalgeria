@@ -110,6 +110,16 @@ Always cite a source for data changes. Accepted:
 - Interior Ministry publications
 - Wikipedia (secondary reference only)
 
+### Separators in metadata
+No em dash (U+2014) anywhere in published metadata. A source name reads
+`Operator: descriptor`, the DCAT `citation` joins a name and its licence with a
+comma, and a coverage note takes the colon or semicolon the sentence wants. Fix
+it in the generator that writes the field, never in the generated file:
+`pnpm validate` walks every `dataset-metadata.json`, `data/metadata.json` and
+`data/geojson/*.metadata.json` and fails on one
+([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)). A record's own
+`name` is a value, not prose, and is out of scope.
+
 ### Licence field
 Every package states its terms in three places that must agree: the manifest
 `license`, the package `LICENSE` file, and the data terms in
