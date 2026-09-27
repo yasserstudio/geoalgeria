@@ -35,6 +35,12 @@ export const LICENCE_CLASSES = [
     licence: "`## Code` MIT plus a `## Data` section carrying the ODbL URL",
   },
   {
+    id: "open-mixed",
+    metadata: "`license` is an array of the MIT URL and the ODbL 1.0 URL",
+    manifest: "MIT AND ODbL-1.0",
+    licence: "`## Code` MIT plus a `## Data` section carrying both URLs and naming which part of the data each one covers",
+  },
+  {
     id: "restricted",
     metadata: "`conditionsOfAccess`",
     manifest: "SEE LICENSE IN LICENSE",
@@ -68,6 +74,7 @@ SOFTWARE.`;
 const SEE_LICENSE = "SEE LICENSE IN LICENSE";
 const CODE_HEADING = "## Code\n\nMIT License";
 const ODBL_URL = "https://opendatacommons.org/licenses/odbl/1-0/";
+const MIT_URL = "https://opensource.org/licenses/MIT";
 const IS_ODBL = /opendatacommons\.org\/licenses\/odbl/i;
 const IS_MIT = /opensource\.org\/licenses\/MIT/i;
 
@@ -135,7 +142,28 @@ export function licenceTermsErrors({ name, manifest, metadata, licenceText, memb
   const data = dataSection(licenceText);
 
   if (metadata.license) {
-    if (IS_ODBL.test(metadata.license)) {
+    if (Array.isArray(metadata.license)) {
+      // A package whose data is not all under one set of terms: the bulk under one
+      // licence, a named part under another. A single URL cannot say that, and
+      // picking the stricter one alone would relicense the rest, so the array holds
+      // every licence the shipped data is under and the LICENSE says which part each
+      // one covers. Only the MIT + ODbL pair is known, because that is the only
+      // split the repository actually ships; another pair is an error naming the
+      // URLs, exactly like an unknown single URL.
+      const urls = metadata.license;
+      const unknown = urls.filter((url) => !IS_MIT.test(url) && !IS_ODBL.test(url));
+      if (unknown.length || !urls.some((url) => IS_MIT.test(url)) || !urls.some((url) => IS_ODBL.test(url))) {
+        errors.push(`${name}/dataset-metadata.json: license ${JSON.stringify(urls)} is not the MIT plus ODbL 1.0 pair, the only array class known, add the class to licence-terms.mjs`);
+      } else {
+        if (declared !== "MIT AND ODbL-1.0")
+          errors.push(`${name}/package.json: license is ${JSON.stringify(declared ?? null)}, expected "MIT AND ODbL-1.0" (dataset-metadata.json licenses part of the data under the ODbL and the rest under the MIT licence)`);
+        if (!(licenceText ?? "").startsWith(CODE_HEADING))
+          errors.push(`${name}/LICENSE: must start with "## Code" then the MIT text, so the code terms are stated apart from the two sets of data terms`);
+        for (const url of [MIT_URL, ODBL_URL])
+          if (!data.includes(url))
+            errors.push(`${name}/LICENSE: the "## Data" section does not carry ${url}, so a consumer cannot tell which part of the data it covers`);
+      }
+    } else if (IS_ODBL.test(metadata.license)) {
       if (declared !== "MIT AND ODbL-1.0")
         errors.push(`${name}/package.json: license is ${JSON.stringify(declared ?? null)}, expected "MIT AND ODbL-1.0" (dataset-metadata.json licenses the data under the ODbL)`);
       if (!data.includes(ODBL_URL))

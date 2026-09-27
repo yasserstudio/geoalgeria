@@ -9,7 +9,7 @@
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 ---
 
@@ -244,7 +244,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ## الرعاية
 
-GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع جزأين بترخيص ODbL مذكورين أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -276,9 +276,21 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 
 ---
 
-## الرخصة
+## الرخصة والإسناد
 
-MIT – مجاني للاستخدام الشخصي والتجاري.
+**شيفرة** الحزمة بترخيص [MIT](LICENSE)، وكذلك **التجميع**: الولايات والدوائر والبلديات
+وأسماؤها ثنائية اللغة والرموز البريدية والرموز الإدارية. مجاني للاستخدام الشخصي والتجاري.
+
+جزءان من البيانات مصدرهما **OpenStreetMap**، وهما **© مساهمو OpenStreetMap** وبترخيص
+**[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** بدلًا من ذلك:
+
+- الـ69 مضلّع حدود ولاية في `data/geojson/wilaya-boundaries.geojson`؛
+- 64 من أصل 1,541 إحداثية مركز بلدية، كل واحدة مأخوذة من علاقة `admin_level=8` الخاصة بالبلدية
+  نفسها (56 من عقدة `admin_centre` بتاريخ 2026-09-27، و8 من مركز العلاقة في الإصدار 2.1.0)،
+  في كل مكان تظهر فيه هذه القيم.
+
+عند استخدامك أو إعادة نشرك لأيٍّ من هذين الجزأين يجب **إسناد الفضل لمساهمي OpenStreetMap**
+وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق. الإسناد لكل جزء والصفوف المعنية في [NOTICE](NOTICE).
 
 صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

@@ -7,8 +7,8 @@
 - Algeria has 69 wilayas as of 2025 (48 original + 10 added in 2019 via Law 19-12 + 11 added in 2025 via Law 26-06)
 - 556 dairas and 1,541 communes total
 - Available as: JSON, CSV, GeoJSON, SQL, npm package (TypeScript)
-- Source: Official Algerian government gazette (JORA), Algérie Poste
-- License: MIT
+- Source: Official Algerian government gazette (JORA), Algérie Poste, plus OpenStreetMap for the wilaya boundary polygons and 64 commune centre coordinates
+- License: MIT AND ODbL-1.0. The compilation is MIT; the wilaya boundary polygons and those 64 commune centre coordinates are ODbL 1.0, (c) OpenStreetMap contributors, and must keep that attribution (see NOTICE)
 - npm: geoalgeria
 - GitHub: https://github.com/yasserstudio/geoalgeria
 

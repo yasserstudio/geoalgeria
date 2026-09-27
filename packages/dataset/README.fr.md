@@ -9,7 +9,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 ---
 
@@ -244,7 +244,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/ge
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit et sous licence MIT. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit, code MIT et compilation MIT avec deux parties sous ODbL indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 
@@ -276,9 +276,23 @@ GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postau
 
 ---
 
-## Licence
+## Licence et attribution
 
-MIT – libre pour usage personnel et commercial.
+Le **code** du paquet est sous [MIT](LICENSE), ainsi que la **compilation** : wilayas, dairas,
+communes, leurs noms bilingues, codes postaux et codes administratifs. Libre pour usage
+personnel et commercial.
+
+Deux parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
+d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
+
+- les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
+- 64 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
+  `admin_level=8` de la commune elle-même (56 de son nœud `admin_centre` le 2026-09-27, 8 du
+  centroïde de la relation en 2.1.0), partout où ces valeurs apparaissent.
+
+Si vous utilisez ou redistribuez l'une de ces deux parties, vous devez **attribuer aux
+contributeurs d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.
+L'attribution par partie et les lignes concernées sont dans [NOTICE](NOTICE).
 
 Réalisé avec soin par [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

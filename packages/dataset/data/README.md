@@ -28,6 +28,7 @@ data/
 ├── geojson/
 │   ├── wilayas.geojson          ← point features
 │   ├── communes.geojson         ← point features
+│   ├── communes.metadata.json             ← their provenance + licence split
 │   ├── wilaya-boundaries.geojson          ← 69 wilaya polygons (OSM, ODbL)
 │   └── wilaya-boundaries.metadata.json    ← its provenance + simplification
 ├── sql/
@@ -190,7 +191,8 @@ address stored before a correction still resolves.
 
 `geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
 `properties.code` joining to `wilayas.json`. Derived from OpenStreetMap `admin_level=4`
-relations (**ODbL 1.0, © OpenStreetMap contributors** — the rest of this package is MIT) and
+relations (**ODbL 1.0, © OpenStreetMap contributors**, one of the two carve-outs from this
+package's MIT licence; the other is the 64 OpenStreetMap-derived commune centres below) and
 simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 decimals.
 
 Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the
@@ -209,6 +211,19 @@ port and Bethioua inside the Arzew industrial complex. Method, per-row evidence 
 id, node id, Overpass `timestamp_osm_base`) and the 13 hits that turned out to be boundary
 simplification rather than bad points: `research/_commune-centres/` in the repository.
 
+Eight more were replaced in version 2.1.0 with the centroid of the commune's own
+`admin_level=8` relation, after they had shared a placeholder point with a neighbour:
+Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Si Mahdjoub (2644),
+Deux Bassins (2653), Makhda (2915), El Achir (3407) and El Euch (3427).
+
+**Licence.** Those 64 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
+copy of them in `algeria.json`, `communes_w*.json`, `csv/communes.csv`,
+`geojson/communes.geojson` and `sql/full.sql`. Reusing them means attributing OpenStreetMap
+contributors and keeping derived databases under a compatible licence. The other 1,477
+commune points carry no recorded source and are covered by the package's MIT licence; no
+ODbL claim is made over them. Per-part terms are in the package `LICENSE` and `NOTICE`, and
+the per-source breakdown is in `geojson/communes.metadata.json`.
+
 ## Sources
 
 - Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69 and for the commune lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28 and 32
@@ -220,3 +235,4 @@ simplification rather than bad points: `research/_commune-centres/` in the repos
 - Algérie Poste for postal codes
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
 - OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 56 commune centres corrected on 2026-09-27
+- OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 8 commune centres replaced in version 2.1.0

@@ -61,6 +61,47 @@ test("an ODbL dataset must declare MIT AND ODbL-1.0 and carry the URL in the Dat
   assert.match(silent[0], /LICENSE/);
 });
 
+test("a dataset that is MIT except for an ODbL part carries both URLs and names each part", () => {
+  const mixed = {
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0" },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText:
+      `## Code\n\n${MIT_TEXT}\n## Data\n\nThe compilation is MIT: https://opensource.org/licenses/MIT\n` +
+      `The wilaya boundaries and 64 commune centres are ODbL 1.0, (c) OpenStreetMap contributors: ` +
+      `https://opendatacommons.org/licenses/odbl/1-0/\n`,
+    members: [],
+  };
+  assert.deepEqual(licenceTermsErrors(mixed), []);
+
+  // The bug the array exists for: an ODbL part under a manifest still saying plain MIT.
+  const stale = licenceTermsErrors({ ...mixed, manifest: { license: "MIT" } });
+  assert.equal(stale.length, 1);
+  assert.match(stale[0], /MIT AND ODbL-1\.0/);
+
+  // Naming one of the two licences is not the split: a consumer cannot tell what the
+  // missing one covers.
+  const halfStated = licenceTermsErrors({
+    ...mixed,
+    licenceText: `## Code\n\n${MIT_TEXT}\n## Data\n\nODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n`,
+  });
+  assert.equal(halfStated.length, 1);
+  assert.match(halfStated[0], /opensource\.org\/licenses\/MIT/);
+
+  // The array is not a place to list any two licences: only the MIT plus ODbL split
+  // the repository ships is known, and another pair is an error, not a silent pass.
+  const unknownPair = licenceTermsErrors({
+    ...mixed,
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://creativecommons.org/licenses/by/4.0/"],
+    },
+  });
+  assert.equal(unknownPair.length, 1);
+  assert.match(unknownPair[0], /licence-terms\.mjs/);
+});
+
 test("an unknown data licence URL is an error naming the URL", () => {
   const errors = licenceTermsErrors({
     name: "tourisme",

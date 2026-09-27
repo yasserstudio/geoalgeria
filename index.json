@@ -577,7 +577,10 @@
       "geocoded_pct": 100,
       "wilayas_covered": 69,
       "bbox": null,
-      "license": "https://opensource.org/licenses/MIT",
+      "license": [
+        "https://opensource.org/licenses/MIT",
+        "https://opendatacommons.org/licenses/odbl/1-0/"
+      ],
       "updated": "2026-08-21"
     }
   ]

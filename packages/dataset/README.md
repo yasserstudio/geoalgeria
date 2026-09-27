@@ -9,7 +9,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 ---
 
@@ -244,7 +244,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free, MIT code and an MIT compilation with two ODbL parts named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -276,9 +276,23 @@ GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postau
 
 ---
 
-## License
+## License & attribution
 
-MIT, free for personal and commercial use.
+Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dairas, communes,
+their bilingual names, postal codes and administrative codes. Free for personal and commercial
+use.
+
+Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and are
+licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
+
+- the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
+- 64 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 8 from the relation
+  centroid in 2.1.0), wherever those values appear.
+
+If you use or redistribute either part you must **attribute OpenStreetMap contributors** and
+keep derived databases under a compatible licence. Per-part attribution and the affected rows
+are in [NOTICE](NOTICE).
 
 Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

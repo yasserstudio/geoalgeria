@@ -13,6 +13,7 @@
   },
   "files": [
     "dataset-metadata.json",
+    "NOTICE",
     "data/**/*.json",
     "data/**/*.csv",
     "data/**/*.geojson",
@@ -53,7 +54,7 @@
     "open-data"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT",
+  "license": "MIT AND ODbL-1.0",
   "publishConfig": {
     "access": "public"
   },

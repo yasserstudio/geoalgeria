@@ -1,0 +1,46 @@
+geoalgeria data notices
+
+Package code is licensed under the MIT License in LICENSE, and so is the
+compilation of wilayas, dairas, communes, their bilingual names, postal codes and
+administrative codes.
+
+Two parts of the data are derived from OpenStreetMap and are made available under
+the Open Database License (ODbL) 1.0 instead. Attribution:
+(c) OpenStreetMap contributors
+https://opendatacommons.org/licenses/odbl/1-0/
+https://www.openstreetmap.org/copyright
+
+1. Wilaya boundary polygons
+
+   data/geojson/wilaya-boundaries.geojson, 69 features, derived from
+   OpenStreetMap `admin_level=4` relations, retrieved 2026-06-21, simplified with
+   mapshaper. Provenance, including the one deliberate departure from upstream
+   OpenStreetMap, is in data/geojson/wilaya-boundaries.metadata.json.
+
+2. Commune centre coordinates
+
+   64 of the 1,541 commune `latitude` / `longitude` values, each taken from that
+   commune's own OpenStreetMap `admin_level=8` relation:
+
+   - 56 corrected on 2026-09-27 from the relation's `admin_centre` node, Overpass
+     `timestamp_osm_base` 2026-09-27T11:03:52Z. Every row, with its OSM relation
+     id, `admin_centre` node id and `ref:ONS`, is listed in
+     research/_commune-centres/corrections-2026-09-27.json in the repository, and
+     summarised in data/geojson/communes.metadata.json.
+   - 8 corrected in version 2.1.0 from the relation centroid, matched on the
+     relation's `ref` tag: Belarbi (2242), El Hamdania (2616), Ouled Bouachra
+     (2627), Si Mahdjoub (2644), Deux Bassins (2653), Makhda (2915),
+     El Achir (3407) and El Euch (3427). See CHANGELOG.md, 2.1.0.
+
+   A commune centre is one value repeated across representations, so the ODbL
+   covers these 64 coordinates wherever they appear: data/algeria.json,
+   data/communes_w1_w23.json, data/communes_w24_w48.json,
+   data/communes_w49_w69.json, data/csv/communes.csv,
+   data/geojson/communes.geojson and data/sql/full.sql.
+
+   The other 1,477 commune coordinates, and the 69 wilaya capital coordinates, are
+   not OpenStreetMap-derived and no ODbL claim is made over them.
+
+Database rights and share-alike obligations may apply to redistributed derived
+databases. This notice does not replace any applicable licence text or source
+terms.
