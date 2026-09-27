@@ -4,7 +4,7 @@
   "inputs": [
     {
       "path": "packages/agriculture/data/agriculture.json",
-      "sha256": "ed960cbd0069d7f6b89afd9073c032a06916da4febd45f2d6a78d5f6f000c5d3"
+      "sha256": "1066a19a5c308545c3792c741122efe7aeeff9b0d2845db2e4927caad5c08eb6"
     },
     {
       "path": "packages/agriculture/data/metadata.json",
@@ -56,7 +56,7 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "dcaef63b9ad985adaedb0e0d98d0b000626a2bb4dd0c70b50819229122ad3a23"
+      "sha256": "8e713964bec46ef10e0997da291dc250c81716383b70103290be83f3722a9ac2"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
@@ -68,7 +68,7 @@
     },
     {
       "path": "packages/culture/data/culture.json",
-      "sha256": "fef9136cba10b002cd0e3866cd7d9e685a8000c36beac4e3edbb086403c4c5be"
+      "sha256": "510d6f188b758bbb9ba791bdbf7c61132a732827b5bfcdf36299abf265852bba"
     },
     {
       "path": "packages/culture/data/metadata.json",
@@ -84,7 +84,7 @@
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
-      "sha256": "69019772198c0f10250e63ac27915e15d1afe4ec06c7f45a870b28ccd7cc0fac"
+      "sha256": "88c651f0c4ca31ec70df979e4f66565e7bdb4a6bc5e9b3ae6e185de1e25f3515"
     },
     {
       "path": "packages/djezzy/data/metadata.json",
@@ -96,7 +96,7 @@
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
-      "sha256": "eb0191d51438e5826d3bda8af9cf4e5f25ddc4ac05bc29aff481da87bf492d3d"
+      "sha256": "b401f81cccfaec1dd34ed0bfa17c1fca95b5f55995fd9db6367104a1845f924b"
     },
     {
       "path": "packages/ecoles/data/metadata.json",
@@ -120,7 +120,7 @@
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
-      "sha256": "d04dd8c25d6d7411c44f0c425505ddc2ebe4fcb9b4903fdb65c3527f61ad5d12"
+      "sha256": "e1590f51d952709e39b391cac86af67c99cb501232b8c6da1f4886dc82aa28ac"
     },
     {
       "path": "packages/enseignement-superieur/data/metadata.json",
@@ -136,11 +136,11 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "3a20672dfd4f516416a835bde51a91dbb94f0814ad2954b5f788464ec59b8b7d"
+      "sha256": "3d360dec39be721abe492b5d753b24a758d11e0b2448d60bfee77f4b8e4441e3"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "7111b2bed9862dcab22be694fd6d1e62f5a588181db370dc73dac34544fae82e"
+      "sha256": "f1fcddbdc8dc72aa2d14ca05eb45b349bf7cc1a81ba7c99dfe46966c138c6606"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
@@ -156,7 +156,7 @@
     },
     {
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json",
-      "sha256": "5df0ea839e99dc5dbe88e6556a3a41f1b5890fe257143304d90fc9e8a2976d97"
+      "sha256": "945af35c8d00220d1f733469c41411afa830bb7dcc7c69597b881161671710b8"
     },
     {
       "path": "packages/industrie-pharmaceutique/data/metadata.json",
@@ -204,7 +204,7 @@
     },
     {
       "path": "packages/mosquees/data/mosquees.json",
-      "sha256": "df0839bd97c6f14253618d63eac2624f4cf4f2026b90ae81751de8f4628b84b0"
+      "sha256": "7f241cd260e9bf5a8a1abc0827ddbf46217534e0f0dc0868688dbd348cdf881c"
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
@@ -212,7 +212,7 @@
     },
     {
       "path": "packages/ooredoo/data/stores.json",
-      "sha256": "5e9d81800a96acc420a6709ae81dbe81830275333595cd48a30793377d783d3a"
+      "sha256": "1d235934365030caf06015dd3e69c927b98bdda31c861163f89d0aa306e192b2"
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
@@ -220,7 +220,7 @@
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "34c04bddb749e53d199c1fc78279d07194b419743a321ad633bd91e1fc9a7984"
+      "sha256": "cb5685328585da0d995adc619bddb84d6c1749045614e02996d57d3832e77802"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
@@ -244,7 +244,7 @@
     },
     {
       "path": "packages/protection-civile/data/protection-civile.json",
-      "sha256": "5f63a6ea71c0e568168023ab9680bd192b9a982b3b8b14198703445b365d4c13"
+      "sha256": "05347374e536628e541662da0727e9e42c47dd9f129cbe84b510c8436e8ea1ef"
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
@@ -252,11 +252,11 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "969c9f03015232fd05660a774b50dbfb5403bf6562faa0f38f611b856bed655f"
+      "sha256": "e07fdba5a506e25684d2b3e035220572f30da7676b7c578a012b9f3424cbcecb"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "748842a1805e6fdad7eadeda8e3b90b824ddab29ef621b890186487224c6c1e2"
+      "sha256": "96da90ece3205f56f01265aaeceaad6f60535374fcb9ecb834f3fb9cfd4bb608"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 18628,
+  "candidates": 18450,
   "reasons": {
-    "approximate_coordinate": 16898,
-    "inside_adjacent_wilaya": 1197,
-    "missing_coordinate": 527,
-    "outside_all_wilaya_boundaries": 230,
-    "outside_declared_wilaya": 1427,
+    "approximate_coordinate": 16899,
+    "inside_adjacent_wilaya": 960,
+    "missing_coordinate": 526,
+    "outside_all_wilaya_boundaries": 199,
+    "outside_declared_wilaya": 1159,
     "shared_coordinate": 1299
   },
   "datasets": [
@@ -326,8 +326,6 @@
       "candidates": 196,
       "reasons": {
         "approximate_coordinate": 196,
-        "outside_all_wilaya_boundaries": 23,
-        "outside_declared_wilaya": 23,
         "shared_coordinate": 178
       },
       "metadata_path": "packages/agriculture/data/metadata.json",
@@ -821,12 +819,12 @@
     {
       "dataset": "culture",
       "total_records": 1083,
-      "candidates": 49,
+      "candidates": 40,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 23,
+        "inside_adjacent_wilaya": 14,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 34,
+        "outside_declared_wilaya": 25,
         "shared_coordinate": 12
       },
       "metadata_path": "packages/culture/data/metadata.json",
@@ -1072,8 +1070,6 @@
       "candidates": 110,
       "reasons": {
         "approximate_coordinate": 110,
-        "inside_adjacent_wilaya": 3,
-        "outside_declared_wilaya": 3,
         "shared_coordinate": 83
       },
       "metadata_path": "packages/enseignement-superieur/data/metadata.json",
@@ -1204,11 +1200,10 @@
       "total_records": 1932,
       "candidates": 570,
       "reasons": {
-        "approximate_coordinate": 557,
-        "inside_adjacent_wilaya": 3,
-        "missing_coordinate": 12,
-        "outside_all_wilaya_boundaries": 13,
-        "outside_declared_wilaya": 16,
+        "approximate_coordinate": 558,
+        "missing_coordinate": 11,
+        "outside_all_wilaya_boundaries": 6,
+        "outside_declared_wilaya": 6,
         "shared_coordinate": 396
       },
       "metadata_path": "packages/formation-professionnelle/data/metadata.json",
@@ -1219,11 +1214,11 @@
         "title_ar": "مؤسسات التكوين المهني الجزائرية",
         "title_en": "Algeria vocational-training establishments",
         "record_count": 1932,
-        "geocoded_count": 1920,
+        "geocoded_count": 1921,
         "geocoded_pct": 99.4,
         "precision": {
           "exact": 1363,
-          "approximate": 557
+          "approximate": 558
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1321,9 +1316,6 @@
       "candidates": 171,
       "reasons": {
         "approximate_coordinate": 171,
-        "inside_adjacent_wilaya": 1,
-        "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 2,
         "shared_coordinate": 140
       },
       "metadata_path": "packages/industrie-pharmaceutique/data/metadata.json",
@@ -1589,12 +1581,12 @@
     {
       "dataset": "mosquees",
       "total_records": 20759,
-      "candidates": 5281,
+      "candidates": 5116,
       "reasons": {
         "approximate_coordinate": 4532,
-        "inside_adjacent_wilaya": 876,
+        "inside_adjacent_wilaya": 666,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 895
+        "outside_declared_wilaya": 685
       },
       "metadata_path": "packages/mosquees/data/metadata.json",
       "metadata": {
@@ -1705,12 +1697,12 @@
     {
       "dataset": "pharmacies",
       "total_records": 3807,
-      "candidates": 318,
+      "candidates": 314,
       "reasons": {
         "approximate_coordinate": 298,
-        "inside_adjacent_wilaya": 18,
+        "inside_adjacent_wilaya": 14,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 23
+        "outside_declared_wilaya": 19
       },
       "metadata_path": "packages/pharmacies/data/metadata.json",
       "metadata": {
@@ -1895,10 +1887,10 @@
       "candidates": 572,
       "reasons": {
         "approximate_coordinate": 476,
-        "inside_adjacent_wilaya": 9,
+        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 95,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 12,
+        "outside_declared_wilaya": 5,
         "shared_coordinate": 312
       },
       "metadata_path": "packages/sante/data/metadata.json",
@@ -1923,7 +1915,7 @@
           -8.140085,
           19.573539,
           9.635,
-          37.0072
+          37.065039
         ],
         "sources": [
           {
@@ -2302,8 +2294,6 @@
       "candidates": 196,
       "reasons": {
         "approximate_coordinate": 196,
-        "outside_all_wilaya_boundaries": 23,
-        "outside_declared_wilaya": 23,
         "shared_coordinate": 178
       },
       "path": "packages/agriculture/data/agriculture.json"
@@ -2359,12 +2349,12 @@
       "dataset": "culture",
       "entity": "culture.json",
       "total_records": 1083,
-      "candidates": 49,
+      "candidates": 40,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 23,
+        "inside_adjacent_wilaya": 14,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 34,
+        "outside_declared_wilaya": 25,
         "shared_coordinate": 12
       },
       "path": "packages/culture/data/culture.json"
@@ -2420,8 +2410,6 @@
       "candidates": 110,
       "reasons": {
         "approximate_coordinate": 110,
-        "inside_adjacent_wilaya": 3,
-        "outside_declared_wilaya": 3,
         "shared_coordinate": 83
       },
       "path": "packages/enseignement-superieur/data/institutions.json"
@@ -2446,11 +2434,10 @@
       "total_records": 1932,
       "candidates": 570,
       "reasons": {
-        "approximate_coordinate": 557,
-        "inside_adjacent_wilaya": 3,
-        "missing_coordinate": 12,
-        "outside_all_wilaya_boundaries": 13,
-        "outside_declared_wilaya": 16,
+        "approximate_coordinate": 558,
+        "missing_coordinate": 11,
+        "outside_all_wilaya_boundaries": 6,
+        "outside_declared_wilaya": 6,
         "shared_coordinate": 396
       },
       "path": "packages/formation-professionnelle/data/establishments.json"
@@ -2472,9 +2459,6 @@
       "candidates": 171,
       "reasons": {
         "approximate_coordinate": 171,
-        "inside_adjacent_wilaya": 1,
-        "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 2,
         "shared_coordinate": 140
       },
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json"
@@ -2515,12 +2499,12 @@
       "dataset": "mosquees",
       "entity": "mosquees.json",
       "total_records": 20759,
-      "candidates": 5281,
+      "candidates": 5116,
       "reasons": {
         "approximate_coordinate": 4532,
-        "inside_adjacent_wilaya": 876,
+        "inside_adjacent_wilaya": 666,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 895
+        "outside_declared_wilaya": 685
       },
       "path": "packages/mosquees/data/mosquees.json"
     },
@@ -2541,12 +2525,12 @@
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
       "total_records": 3807,
-      "candidates": 318,
+      "candidates": 314,
       "reasons": {
         "approximate_coordinate": 298,
-        "inside_adjacent_wilaya": 18,
+        "inside_adjacent_wilaya": 14,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 23
+        "outside_declared_wilaya": 19
       },
       "path": "packages/pharmacies/data/pharmacies.json"
     },
@@ -2597,10 +2581,10 @@
       "candidates": 572,
       "reasons": {
         "approximate_coordinate": 476,
-        "inside_adjacent_wilaya": 9,
+        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 95,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 12,
+        "outside_declared_wilaya": 5,
         "shared_coordinate": 312
       },
       "path": "packages/sante/data/sante.json"
