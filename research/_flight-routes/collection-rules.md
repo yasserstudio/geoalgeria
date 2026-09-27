@@ -805,3 +805,36 @@ directional schedule are enough for `listed` planned rows, but an empty booking
 probe is not enough to upgrade them. Tripoli remains below the inclusion bar
 because the current report states only an objective and supplies no filed
 schedule or sale inventory.
+
+## 32. What leaves the dataset, and on whose word (2026-09-27)
+
+Three durable rules from the Delhi, Batna and Dubai changes. Detail in
+`verification-2026-09-27.md`.
+
+**A withdrawal removes planned rows; a suspension never removes anything.** Both
+are negatives and they are not interchangeable. `plannedRoutes()` is a claim that a
+route is coming, so "Air Algérie a retiré la demande d'autorisation" for Delhi
+deletes `alg-del` and `del-alg` outright. A suspension is a route that exists and
+is not running, so Dubai keeps its row, keeps its evidence tier, and only changes
+`status`. The asymmetry follows from section 2: the map is structural, but a plan
+that was called off was never structure.
+
+Both still need a citable source. Section 7 is usually read as protecting a route
+from an empty probe, and it protects a removal the same way: what takes a row out
+is a source saying so, never a silence.
+
+**A removal needs a guard, or the Wikipedia pass undoes it.** `alg-del` and
+`blj-cdg` would both have walked straight back in as `listed` rows on the table's
+own citation. `WITHDRAWN` and `AIRPORT_CORRECTED` exist for that, alongside
+`CODESHARE_ONLY` and `OPERATED_BY_OTHERS`, and each carries the reason inline
+rather than in a commit message nobody will find. The same applies in reverse:
+`SUSPENDED` fails the build if it names a leg the dataset does not carry, so a
+stale override cannot sit there looking effective.
+
+**An exclusion is about a leg, not about an endpoint.** `ALG-AMM` was excluded
+because the probe returned Royal Jordanian metal and no Air Algérie leg. The
+announced Algiers-Kuwait-Amman-Algiers triangle then made `AMM-ALG` an Air Algérie
+leg, and both statements are true at once: nonstop Algiers to Amman is still not an
+Air Algérie route, and Amman to Algiers is a planned one. A triangle is exactly the
+shape that produces this, which is why section 1's directional record is the unit
+and an "Amman: in or out" question has no answer.
