@@ -113,6 +113,23 @@ then:
 
 The new GitHub Release fires the **Announce** workflow (see below).
 
+#### The `workspace:` protocol on the staged path
+
+npm uploads a manifest verbatim, so a `workspace:` spec that reaches it ships as
+the literal string and a consumer's resolver answers `EUNSUPPORTEDPROTOCOL`.
+`scripts/stage-publish.js` therefore resolves every `workspace:` spec to real
+semver, the way pnpm does, across **all four** dependency fields, and refuses to
+stage a package whose spec it cannot resolve. The rewrite lives only for the
+upload; the file is put back afterwards.
+
+> **Leak, found 2026-09-27.** The old check read `dependencies` only, so
+> `@geoalgeria/telecom` 3.0.0, `@geoalgeria/pharmacies` 2.2.1 and
+> `@geoalgeria/protection-civile` 1.0.3 are all live on npm carrying
+> `"@geoalgeria/schema": "workspace:^"` in **devDependencies**. A published
+> version's manifest cannot be repaired in place: each is fixed only by its next
+> version. `test/workspace-deps.test.mjs` pins the resolver and walks the real
+> workspace, so no publishable package can carry an unresolvable spec again.
+
 ### The release-timing guard
 
 A Release is only cut for a version `main` actually carries. Each iteration of
