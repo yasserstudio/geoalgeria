@@ -1,4 +1,4 @@
-// @geoalgeria/gares-routieres — loaders for Algeria's intercity bus stations (SOGRAL).
+// @geoalgeria/gares-routieres: loaders for Algeria's intercity bus stations (SOGRAL).
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

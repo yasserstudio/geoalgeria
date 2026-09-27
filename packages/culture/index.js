@@ -1,4 +1,4 @@
-// @geoalgeria/culture — lightweight loaders for Algeria's cultural atlas.
+// @geoalgeria/culture: lightweight loaders for Algeria's cultural atlas.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

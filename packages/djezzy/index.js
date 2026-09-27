@@ -1,4 +1,4 @@
-// @geoalgeria/djezzy — lightweight loaders for the Djezzy retail-network data.
+// @geoalgeria/djezzy: lightweight loaders for the Djezzy retail-network data.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

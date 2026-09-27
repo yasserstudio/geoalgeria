@@ -11,7 +11,7 @@ export type TypeCode =
   | "SA" | "SF" | "SOMS" | "SS" | "STOMS" | "TF" | "TR" | "TSP" | "UHR";
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
- *  `null` means there is no coordinate at all — not observed in this dataset
+ *  `null` means there is no coordinate at all: not observed in this dataset
  *  (every facility is geocoded), but part of the shared contract vocabulary. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
@@ -34,16 +34,16 @@ export interface Facility {
   commune_code: string | null;
   /** Commune name, as published by the SIG (not necessarily canonical casing). */
   commune: string;
-  /** Latitude — every facility in this dataset is geocoded. */
+  /** Latitude: every facility in this dataset is geocoded. */
   lat: number;
-  /** Longitude — every facility in this dataset is geocoded. */
+  /** Longitude: every facility in this dataset is geocoded. */
   lng: number;
   /** `"exact"`, or `"approximate"` where the SIG coordinate is rounded too coarse,
    *  or is shared with another facility, to be a per-facility point. */
   geo_precision: "exact" | "approximate";
   /** Always `"sig_mjs"`. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "mjs". */
+  /** Provenance key into `metadata.sources[]`: always "mjs". */
   source: "mjs";
   /** Facility type code. */
   type: TypeCode;
@@ -77,7 +77,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus facility stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus facility stats. */
 export interface Metadata {
   package: "@geoalgeria/sports";
   schema_version: string;
@@ -85,7 +85,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — every facility. */
+  /** Records with coordinates: every facility. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */
@@ -110,7 +110,7 @@ export interface Metadata {
 export function facilities(): Facility[];
 /** A single facility by id (numeric or zero-padded string), or null. */
 export function facilityById(id: number | string): Facility | null;
-/** Facilities in a wilaya — accepts `16` or `"16"`. */
+/** Facilities in a wilaya: accepts `16` or `"16"`. */
 export function facilitiesByWilaya(code: string | number): Facility[];
 /** Facilities of a given type code (e.g. "TSP"). */
 export function facilitiesByType(code: string): Facility[];

@@ -7,11 +7,11 @@
 /** Denomination, where known. */
 export type Denomination = "ibadi" | "sufi" | "sunni";
 
-/** Where a record came from — Wikidata, OSM, or both matched within ~150 m. */
+/** Where a record came from: Wikidata, OSM, or both matched within ~150 m. */
 export type MosqueeSource = "osm" | "wikidata" | "wikidata+osm";
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
- *  `null` means there is no coordinate at all — not observed in this dataset
+ *  `null` means there is no coordinate at all: not observed in this dataset
  *  (every mosque is geocoded), but part of the shared contract vocabulary. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
@@ -42,9 +42,9 @@ export interface Mosquee {
   commune_code: string | null;
   /** Commune name (French), nearest-centroid best-effort. */
   commune: string;
-  /** Latitude — every mosque in this dataset is geocoded. */
+  /** Latitude: every mosque in this dataset is geocoded. */
   lat: number;
-  /** Longitude — every mosque in this dataset is geocoded. */
+  /** Longitude: every mosque in this dataset is geocoded. */
   lng: number;
   /** "exact" for an OSM/Wikidata point, "approximate" when the match is coarser. */
   geo_precision: "exact" | "approximate";
@@ -68,7 +68,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus mosque stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus mosque stats. */
 export interface Metadata {
   package: "@geoalgeria/mosquees";
   schema_version: string;
@@ -76,7 +76,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — every mosque. */
+  /** Records with coordinates: every mosque. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */

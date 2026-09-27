@@ -1,4 +1,4 @@
-// @geoalgeria/sante — lightweight loaders for Algeria's public health establishments.
+// @geoalgeria/sante: lightweight loaders for Algeria's public health establishments.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

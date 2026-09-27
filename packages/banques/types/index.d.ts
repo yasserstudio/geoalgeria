@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/banques (schema v2).
-// Licensed banks, financial institutions and their branches in Algeria —
+// Licensed banks, financial institutions and their branches in Algeria:
 // the Banque d'Algérie agréé roster, plus each institution's own branch
 // locator where one is published.
 
@@ -10,16 +10,16 @@ export type Ownership = "public" | "private_foreign" | "private_domestic";
  *  `null` when the record carries no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How a coordinate was obtained. Only branches ever carry a point — the
+/** How a coordinate was obtained. Only branches ever carry a point: the
  *  registry entries (banks/institutions) are never geocoded. */
 export type GeoMethod = "bank_locator" | "osm_node" | "osm_way" | null;
 
-/** A licensed bank or financial institution — a registry entry (head office
+/** A licensed bank or financial institution: a registry entry (head office
  *  only, not a geocoded premises). */
 export interface Institution {
   /** Stable lowercase id, equal to the lowercased acronym (e.g. "bna"). */
   id: string;
-  /** Canonical display name — same value as `name_fr`. */
+  /** Canonical display name: same value as `name_fr`. */
   name: string;
   /** Official French legal name. */
   name_fr: string;
@@ -28,19 +28,19 @@ export interface Institution {
   /** Head-office wilaya code, zero-padded 2-digit string. Every institution
    *  in this registry is headquartered in Algiers ("16") today. */
   wilaya_code: string;
-  /** Always null — the register states a head-office city, not a commune. */
+  /** Always null: the register states a head-office city, not a commune. */
   commune_code: null;
-  /** Always null — see `commune_code`. */
+  /** Always null: see `commune_code`. */
   commune: null;
-  /** Always null — registry entries are institutions, not geocoded premises. */
+  /** Always null: registry entries are institutions, not geocoded premises. */
   lat: null;
-  /** Always null — see `lat`. */
+  /** Always null: see `lat`. */
   lng: null;
   /** Always null: the record carries no point, so it asserts no precision. */
   geo_precision: null;
-  /** Always null — no geocoding method produced a point. */
+  /** Always null: no geocoding method produced a point. */
   geo_method: null;
-  /** Provenance key into `metadata.sources[]` — always "boa" (Banque d'Algérie). */
+  /** Provenance key into `metadata.sources[]`: always "boa" (Banque d'Algérie). */
   source: "boa";
   /** Common acronym (e.g. "BNA", "CPA"). */
   acronym: string;
@@ -75,20 +75,20 @@ export interface Branch {
   wilaya_code: string;
   /** Provider wilaya code retained when reconciled to a current code. */
   source_wilaya_code?: string;
-  /** Always null — bank locators publish no commune. */
+  /** Always null: bank locators publish no commune. */
   commune_code: null;
-  /** Always null — see `commune_code`. */
+  /** Always null: see `commune_code`. */
   commune: null;
   /** Null when the source gave no usable (in-Algeria) coordinates. */
   lat: number | null;
   lng: number | null;
-  /** "exact" when the locator published a point, null when it did not — an
+  /** "exact" when the locator published a point, null when it did not; an
    *  address-only branch carries null coordinates and asserts no precision. */
   geo_precision: GeoPrecision;
   /** Coordinate method: an official locator point or a reviewed OSM match;
    *  null on an address-only branch. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "bank_locator". */
+  /** Provenance key into `metadata.sources[]`: always "bank_locator". */
   source: "bank_locator";
   /** Owning bank's id (links to Bank.id / Institution.id, e.g. "abc"). */
   bank_id: string;

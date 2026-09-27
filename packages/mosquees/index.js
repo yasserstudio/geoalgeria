@@ -1,4 +1,4 @@
-// @geoalgeria/mosquees — lightweight loaders for the Algeria mosque composite.
+// @geoalgeria/mosquees: lightweight loaders for the Algeria mosque composite.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

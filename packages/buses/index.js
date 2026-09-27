@@ -1,4 +1,4 @@
-// @geoalgeria/buses — loaders for Algeria's reviewed urban/suburban bus networks.
+// @geoalgeria/buses: loaders for Algeria's reviewed urban/suburban bus networks.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

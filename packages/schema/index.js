@@ -1,4 +1,4 @@
-// @geoalgeria/schema — the canonical data contract for GeoAlgeria datasets.
+// @geoalgeria/schema: the canonical data contract for GeoAlgeria datasets.
 // Types (types/index.d.ts) + a zero-dependency runtime validator + canonical
 // metadata / manifest / DCAT builders + CSV/GeoJSON emit helpers.
 

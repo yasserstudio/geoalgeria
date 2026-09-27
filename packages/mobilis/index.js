@@ -1,4 +1,4 @@
-// @geoalgeria/mobilis — lightweight loaders for the Mobilis sales-network data.
+// @geoalgeria/mobilis: lightweight loaders for the Mobilis sales-network data.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

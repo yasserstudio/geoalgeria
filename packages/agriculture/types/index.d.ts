@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/agriculture (schema v2).
-// Agriculture-sector institutions of Algeria — the Ministry of Agriculture,
+// Agriculture-sector institutions of Algeria: the Ministry of Agriculture,
 // Rural Development and Fisheries (MADR) institutional directory, geocoded
 // against the geoalgeria commune/wilaya centroid set.
 
@@ -20,7 +20,7 @@ export type AgricultureSector = "public";
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained — always a centroid fallback; no
+/** How the coordinate was obtained: always a centroid fallback; no
  *  institution in this directory carries a surveyed point. */
 export type GeoMethod = "commune_centroid" | "wilaya_centroid";
 
@@ -40,7 +40,7 @@ export interface AgricultureInstitution {
   id: string;
   /** Best available display name (Arabic preferred, else French). */
   name: string;
-  /** French name, or null — most entities are Arabic-only at source. */
+  /** French name, or null: most entities are Arabic-only at source. */
   name_fr: string | null;
   /** Arabic name. */
   name_ar: string;
@@ -50,15 +50,15 @@ export interface AgricultureInstitution {
   commune_code: string | null;
   /** Commune name (French), best-effort. Null when unresolved. */
   commune: string | null;
-  /** Latitude — a commune or wilaya centroid, never a surveyed point. */
+  /** Latitude: a commune or wilaya centroid, never a surveyed point. */
   lat: number;
-  /** Longitude — see `lat`. */
+  /** Longitude: see `lat`. */
   lng: number;
   /** Always "approximate": every position here is a centroid fallback. */
   geo_precision: "approximate";
   /** How `lat`/`lng` were derived. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "madr". */
+  /** Provenance key into `metadata.sources[]`: always "madr". */
   source: "madr";
   /** Institution network / category. */
   type: AgricultureType;
@@ -88,7 +88,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — equal to `record_count`: every institution
+  /** Records with coordinates, equal to `record_count`: every institution
    *  resolves to at least a wilaya centroid. */
   geocoded_count: number;
   geocoded_pct: number;

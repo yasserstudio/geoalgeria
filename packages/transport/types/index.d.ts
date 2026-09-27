@@ -1,4 +1,4 @@
-// Type definitions for @geoalgeria/transport — umbrella meta-package.
+// Type definitions for @geoalgeria/transport: umbrella meta-package.
 import type aviation from "@geoalgeria/aviation";
 import type ferroviaire from "@geoalgeria/ferroviaire";
 import type garesRoutieres from "@geoalgeria/gares-routieres";

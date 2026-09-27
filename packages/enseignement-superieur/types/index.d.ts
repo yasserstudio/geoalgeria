@@ -29,10 +29,10 @@ export type SupervisoryMinistry =
 
 /** A higher-education institution, as published by the MESRS. */
 export interface Institution {
-  /** Stable id, assigned by this package (the MESRS source publishes none). Opaque — do not parse. */
+  /** Stable id, assigned by this package (the MESRS source publishes none). Opaque: do not parse. */
   id: string;
   /** Official French name. Null for private/other-ministry institutions, which
-   *  MESRS lists in Arabic only — read `name_ar` for those. */
+   *  MESRS lists in Arabic only: read `name_ar` for those. */
   name: string | null;
   /** Official Arabic name. Present for every private/other-ministry institution
    *  and backfilled for most of the public network; null otherwise. */
@@ -52,9 +52,9 @@ export interface Institution {
   lng: number;
   /** "exact" for a real campus point, "approximate" for a commune/wilaya centroid. */
   geo_precision: GeoPrecision;
-  /** How `lat`/`lng` were placed — see {@link GeoMethod}. */
+  /** How `lat`/`lng` were placed: see {@link GeoMethod}. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "mesrs". */
+  /** Provenance key into `metadata.sources[]`: always "mesrs". */
   source: "mesrs";
   /** Institution category. */
   type: InstitutionType;
@@ -79,7 +79,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus institution stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus institution stats. */
 export interface Metadata {
   package: "@geoalgeria/enseignement-superieur";
   schema_version: string;
@@ -116,11 +116,11 @@ export function institutions(): Institution[];
  *  number or string (compared both ways since `Institution.id` is an
  *  opaque zero-padded string, e.g. "00001"). */
 export function institutionById(id: number | string): Institution | null;
-/** Institutions in a wilaya — accepts `"16"`, `16`, or `"01"`. */
+/** Institutions in a wilaya: accepts `"16"`, `16`, or `"01"`. */
 export function institutionsByWilaya(code: string | number): Institution[];
-/** Institutions of a category — accepts a type (case-insensitive), e.g. `"universite"`. */
+/** Institutions of a category: accepts a type (case-insensitive), e.g. `"universite"`. */
 export function institutionsByType(type: string): Institution[];
-/** Institutions in a sector — `"public"` or `"private"` (case-insensitive). */
+/** Institutions in a sector: `"public"` or `"private"` (case-insensitive). */
 export function institutionsBySector(sector: string): Institution[];
 /** Dataset metadata. */
 export function metadata(): Metadata;

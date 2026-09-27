@@ -1,4 +1,4 @@
-// @geoalgeria/poste — lightweight loaders for the post-office & ATM datasets.
+// @geoalgeria/poste: lightweight loaders for the post-office & ATM datasets.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
