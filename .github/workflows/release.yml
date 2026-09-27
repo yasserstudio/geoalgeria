@@ -66,6 +66,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # Name every publishable package whose version will NOT reach npm on this
+      # run: an umbrella the staged path skips, a package npm has never seen, or a
+      # dir missing from the two loops in this file. All three were silent until
+      # now (npm served @geoalgeria/pharma 2.0.0 against a repo saying 2.0.1, and
+      # @geoalgeria/normalize was advertised on npm while never published there).
+      # Reads versions at $GITHUB_SHA, not the working tree, which the changesets
+      # step above leaves bumped. Reports only; never fails the release.
+      - name: Release gap check
+        if: always()
+        run: node scripts/release-gap.mjs "$GITHUB_SHA"
+
       # Cut a per-package GitHub Release (geoalgeria@x.y.z) with the raw data
       # bundle attached — CSV/GeoJSON/SQL never ship to npm, so this is their
       # only download channel. Guarded by tag existence: fires once per new
