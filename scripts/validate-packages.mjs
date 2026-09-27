@@ -1556,6 +1556,9 @@ function validateLicenceTerms(pkgs) {
     const dir = join(ROOT, "packages", pkg);
     const manifestPath = join(dir, "package.json");
     const licencePath = join(dir, "LICENSE");
+    // A mixed MIT/ODbL package carries its per-part attribution in NOTICE, which
+    // the licence rule treats as part of the terms; absent for every other class.
+    const noticePath = join(dir, "NOTICE");
     if (!existsSync(manifestPath)) continue;
     if (!existsSync(licencePath)) {
       fail(`${pkg}: has no LICENSE file, so its data terms are unstated`);
@@ -1583,6 +1586,7 @@ function validateLicenceTerms(pkgs) {
       manifest,
       metadata,
       licenceText: readFileSync(licencePath, "utf-8"),
+      noticeText: existsSync(noticePath) ? readFileSync(noticePath, "utf-8") : null,
       members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
     });
     for (const problem of problems) fail(problem);

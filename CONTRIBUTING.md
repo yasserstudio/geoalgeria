@@ -131,7 +131,7 @@ Every package states its terms in three places that must agree: the manifest
 | absent (code only) | `MIT` | the plain MIT text |
 | `license` is the MIT URL | `MIT` | the plain MIT text |
 | `license` is the ODbL 1.0 URL | `MIT AND ODbL-1.0` | `## Code` MIT, plus a `## Data` section carrying the ODbL URL |
-| `license` is an array of the MIT URL and the ODbL 1.0 URL | `MIT AND ODbL-1.0` | starts with `## Code` then the MIT text, plus a `## Data` section carrying both URLs and naming which part of the data each one covers |
+| `license` is an array of the MIT URL and the ODbL 1.0 URL | `MIT AND ODbL-1.0` | starts with `## Code` then the MIT text, plus a `## Data` section carrying both URLs and listing each non-MIT carve-out as a `- ` bullet naming the `data/...` paths it covers. Also needs a `NOTICE`, listed in `files[]`, carrying the ODbL URL and every one of those paths |
 | `conditionsOfAccess` | `SEE LICENSE IN LICENSE` | starts with `## Code` then the MIT text, plus a `## Data` section carrying `conditionsOfAccess` verbatim |
 
 The array class is for a package whose data is not all under one set of terms:
@@ -140,6 +140,13 @@ MIT-licensed administrative divisions beside OpenStreetMap-derived geometry and
 coordinates. A single URL cannot say that, and picking the stricter one alone
 would relicense the rest, so the array carries both and the `LICENSE` and
 `NOTICE` say which part each one covers.
+
+It is the only class where the carve-out has to be enumerated, so it is the only
+one whose `NOTICE` is checked: the `LICENSE` sends a consumer there for the
+per-part attribution, so a missing `NOTICE`, a `NOTICE` left out of `files[]` (in
+git, absent from the npm tarball), a `NOTICE` without the ODbL URL, or a carved-out
+path the `NOTICE` never names all fail `pnpm validate`. A carve-out bullet that
+names no `data/...` path fails too: prose cannot be checked part by part.
 
 `pnpm validate` enforces this on every package, so a new licence class needs an
 entry in [`scripts/lib/licence-terms.mjs`](scripts/lib/licence-terms.mjs) before

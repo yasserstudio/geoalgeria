@@ -87,7 +87,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **المحطات البرية** | 74 | محطات سوقرال البرية عبر 52 ولاية، الأسماء، العناوين، المساحات، الإحداثيات. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **السكك والنقل الحضري** | 692 | عُقَد القطار والترامواي والمترو والتلفريك (SNTF / SETRAM / SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة، 50 ولاية. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
 | **خطوط الحافلات الحضرية وشبه الحضرية** | 184 | 16 مشغلًا، 76 مسارًا، 128 اتجاهًا، و1,603 محطة. [`@geoalgeria/buses`](packages/buses) |
-| **الصيدليات** | 3٬807 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **الصيدليات** | 3,807 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **مصنّعو الأدوية** | 171 | مصنّعون معتمدون للأدوية والأجهزة الطبية من سجل وزارة الصناعة الصيدلانية، مُحدَّدون جغرافيًا. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **نقاط بيع أوريدو** | 572 | فضاءات أوريدو ومتاجر المدينة وفضاءات الخدمات بإحداثيات حقيقية، مربوطة بالبلدية/الولاية (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
@@ -147,12 +147,12 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري، 692 عقدة قطار/ترامواي/مترو/تلفريك (SNTF/SETRAM/SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة |
 | [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 خطًا حضريًا وشبه حضري، و76 مسارًا و1,603 محطة لدى 16 مشغلًا |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية، 171 مصنّعًا معتمدًا للأدوية (PP) والأجهزة الطبية (DM) من سجل وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون إلى مركز البلدية/الولاية |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines)، 3٬807 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines)، 3,807 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | وحدات الحماية المدنية (الإطفاء والإنقاذ)، 880 وحدة تابعة للمديرية العامة للحماية المدنية على كامل التراب، مُسمّاة بالعربية، بعنوان/هاتف/فاكس ومستوى صفة، كلها بإحداثيات، مصدر رسمي أوّلي (dgpc.dz)؛ الولاية مُعاد اشتقاقها على حدود ما بعد إصلاح 2026 الـ69 |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو، 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية والربط بالبلدية/الولاية (ooredoo.dz)؛ يُكمل ثلاثي الاتصالات |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة، تثبّت aviation + ferroviaire + gares-routieres + buses دفعة واحدة |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة، تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
-| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | مفاتيح البحث لأسماء الأماكن الجزائرية، المفتاح المحافظ والمفتاح الأوسع والتقطيع إلى كلمات ومدوّنتها المرجعية؛ شيفرة فقط، بلا اعتماديات، حتى تطوي كل الفهارس الاسم بالطريقة نفسها |
+| [`packages/normalize`](packages/normalize) | `@geoalgeria/normalize` (ليست على npm بعد) | مفاتيح البحث لأسماء الأماكن الجزائرية، المفتاح المحافظ والمفتاح الأوسع والتقطيع إلى كلمات ومدوّنتها المرجعية؛ شيفرة فقط، بلا اعتماديات، حتى تطوي كل الفهارس الاسم بالطريقة نفسها |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 

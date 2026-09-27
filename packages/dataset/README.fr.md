@@ -133,7 +133,7 @@ sqlite3 mydb.sqlite < full.sql
 
 Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON standard, compatible avec Leaflet, Mapbox, QGIS, etc.
 
-> **Note :** le package npm ne contient que les fichiers JSON (pour rester léger). Les exports **CSV, GeoJSON et SQL** se trouvent dans le dépôt sous `data/` et sont inclus dans l'archive zip de chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+> **Note :** depuis la passe de correction v2, le package npm contient le **JSON, le CSV, le GeoJSON et le SQL** : `data/geojson/communes.geojson` est donc aussi dans l'archive npm. L'archive zip de chaque [release GitHub](https://github.com/yasserstudio/geoalgeria/releases) reprend la même arborescence `data/` pour qui n'utilise pas npm.
 
 ---
 
@@ -286,8 +286,8 @@ Deux parties des données proviennent d'**OpenStreetMap**, sont **© les contrib
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
-- 64 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
-  `admin_level=8` de la commune elle-même (56 de son nœud `admin_centre` le 2026-09-27, 8 du
+- 62 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
+  `admin_level=8` de la commune elle-même (56 de son nœud `admin_centre` le 2026-09-27, 6 du
   centroïde de la relation en 2.1.0), partout où ces valeurs apparaissent.
 
 Si vous utilisez ou redistribuez l'une de ces deux parties, vous devez **attribuer aux

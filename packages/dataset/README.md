@@ -133,7 +133,7 @@ sqlite3 mydb.sqlite < full.sql
 
 Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works with Leaflet, Mapbox, QGIS, etc.
 
-> **Note:** the npm package ships JSON only (to stay lightweight). The **CSV, GeoJSON, and SQL** exports live in the repo under `data/` and are bundled as a zip on every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+> **Note:** the npm package ships **JSON, CSV, GeoJSON and SQL** since the v2 correctness pass, so `data/geojson/communes.geojson` is in the tarball too. The [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) zip bundles the same `data/` tree for people who do not use npm.
 
 ---
 
@@ -271,8 +271,8 @@ Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly
 **What is the best Algeria geodata package for developers?**
 GeoAlgeria is the most complete option as of 2026, it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
 
-**Liste des wilayas d'Algérie 2026, où trouver?**
-GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postaux, et coordonnées GPS. Disponible en JSON, CSV, GeoJSON, et SQL. `npm install geoalgeria`
+**Where can I find the 2026 list of Algeria's wilayas?**
+GeoAlgeria carries all 69 wilayas with French and Arabic names, postal codes, and GPS coordinates. Available as JSON, CSV, GeoJSON, and SQL. `npm install geoalgeria`
 
 ---
 
@@ -286,8 +286,8 @@ Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contri
 licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
-- 64 of the 1,541 commune centre coordinates, each taken from that commune's own
-  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 8 from the relation
+- 62 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 6 from the relation
   centroid in 2.1.0), wherever those values appear.
 
 If you use or redistribute either part you must **attribute OpenStreetMap contributors** and

@@ -31,14 +31,14 @@
       "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
       "retrieved": "2026-09-24",
       "evidence_type": "crowdsourced",
-      "covers": "8 commune centres that shared a placeholder point, replaced in version 2.1.0: Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Si Mahdjoub (2644), Deux Bassins (2653), Makhda (2915), El Achir (3407), El Euch (3427)",
+      "covers": "6 commune centres that shared a placeholder point, replaced in version 2.1.0: Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Deux Bassins (2653), Makhda (2915), El Euch (3427). Si Mahdjoub (2644) and El Achir (3407) shared a placeholder too but were left unchanged, byte-identical to their pre-2.1.0 values, so this source does not cover them",
       "retrieved_note": "2026-09-24 is the commit date of that repair (b39ee3b) and therefore an upper bound on the pull date; the run recorded no timestamp of its own"
     }
   ],
   "provenance_notes": [
     "A commune's point is its chef-lieu, a point in the built-up centre of the commune, not the centroid of its territory.",
-    "Licence split: 64 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the two sources above. The remaining 1,477 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
-    "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 64 values in each of them. data/ecommerce/ ships no coordinates.",
+    "Licence split: 62 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the two sources above. The remaining 1,479 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
+    "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 62 values in each of them. data/ecommerce/ ships no coordinates.",
     "Guarded by test/commune-in-boundary.test.mjs: no commune centre may sit more than 500 m outside its own wilaya polygon in any of those representations, with three reviewed exceptions pinned by name."
   ]
 }
