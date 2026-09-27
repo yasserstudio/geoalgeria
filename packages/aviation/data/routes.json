@@ -1724,6 +1724,21 @@
     "great_circle_km": 9914
   },
   {
+    "id": "alg-kwi",
+    "from": "ALG",
+    "to": "KWI",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": [
+      "mon"
+    ],
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "great_circle_km": 4219
+  },
+  {
     "id": "alg-los",
     "from": "ALG",
     "to": "LOS",
@@ -1767,6 +1782,19 @@
     "planned": true,
     "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
     "great_circle_km": 3332
+  },
+  {
+    "id": "amm-alg",
+    "from": "AMM",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": null,
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "great_circle_km": 3050
   },
   {
     "id": "bzv-alg",

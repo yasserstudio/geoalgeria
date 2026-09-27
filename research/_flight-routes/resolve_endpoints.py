@@ -127,7 +127,16 @@ ENDPOINTS = [
     {"city": "Monastir", "iata": "MIR", "country": "TN",
      "note": "Not on the airline's booking city list; surfaced by the route sweep."},
     {"city": "CAIRE", "iata": "CAI", "country": "EG"},
-    {"city": "AMMAN", "iata": "AMM", "country": "JO"},
+    {"city": "AMMAN", "iata": "AMM", "country": "JO",
+     "note": "Queen Alia. Nonstop ALG-AMM stays excluded, the probes return Royal "
+             "Jordanian metal and no Air Algerie leg, but the announced Algiers-"
+             "Kuwait-Amman-Algiers triangle makes AMM-ALG an Air Algerie leg, so the "
+             "endpoint is in scope in that direction from 26 Oct 2026."},
+    {"city": "Kuwait City", "iata": "KWI", "country": "KW",
+     "note": "Kuwait International, the country's only civil airport, so the "
+             "city-to-airport choice is not a judgement. Not on the airline's "
+             "destination page: added for the announced weekly Algiers-Kuwait-Amman-"
+             "Algiers triangle from 26 Oct 2026."},
     {"city": "BEYROUTH", "iata": "BEY", "country": "LB"},
     {"city": "DJEDDAH", "iata": "JED", "country": "SA",
      "note": "The JED-LOO arc's foreign end. LOO (Laghouat) shipped 2026-07-27."},

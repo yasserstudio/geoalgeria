@@ -279,6 +279,25 @@ PLANNED = [
      "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/"},
     {"from": "ALG", "to": "ICN", "status": "unclear", "evidence": "listed",
      "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/"},
+    # The announced Algiers-Kuwait-Amman-Algiers triangle, one weekly Monday
+    # rotation on a 737-800 from 26 Oct 2026, confirmed on the record by Algeria's
+    # ambassador to Kuwait. A triangle yields ONE-DIRECTIONAL nonstops, and only
+    # the Algeria-touching legs are this dataset's business, so it produces
+    # exactly two rows: ALG-KWI outbound and AMM-ALG inbound. There is no ALG-AMM
+    # row and no KWI-ALG row, because neither is ever flown nonstop on this
+    # rotation, and the KWI-AMM leg touches Algeria at neither end.
+    # Evidence stays `listed`: a diplomatic confirmation with a stated day, date
+    # and aircraft clears the plannedRoutes() bar, but no flight number, filed
+    # schedule or sale inventory has appeared, which is the same lower boundary
+    # Delhi and Incheon sat on (collection-rules.md section 31).
+    {"from": "ALG", "to": "KWI", "status": "unclear", "days": ["mon"], "evidence": "listed",
+     "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"},
+    # `days` is set on the outbound only. "Un vol par semaine le lundi" dates the
+    # rotation's departure from Algiers; when the Amman leg flies back is a
+    # separate fact nothing published pins down, and the Nigeria triangle is the
+    # standing reminder (Monday out, Friday and Tuesday back).
+    {"from": "AMM", "to": "ALG", "status": "unclear", "evidence": "listed",
+     "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/"},
     {"from": "ALG", "to": "LOS", "flight": "AH 5354", "status": "unclear",
      "days": ["thu"], "evidence": "verified",
      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/"},
@@ -365,6 +384,13 @@ OPERATED_BY_OTHERS = {
     # weak evidence per section 7; two on different dates, both showing another
     # airline actually flying the pair, is a different thing entirely.
     ("ALG", "JED"),   # SV 0340 / SV 0342, Saudia
+    # Amman, re-checked 2026-09-27 and still excluded in THIS direction. The
+    # 2026-07-28 screen found RJ 0518 and no Air Algérie leg, and Air Algérie's own
+    # Amman service has stayed suspended since. What changed is the other
+    # direction: the announced Algiers-Kuwait-Amman-Algiers triangle flies AMM-ALG
+    # on Air Algérie metal, so `amm-alg` ships as a planned route while nonstop
+    # ALG-AMM stays out. The exclusion was never about the endpoint, it was about a
+    # leg, which is why it survives the triangle rather than being repealed by it.
     ("ALG", "AMM"),   # RJ 0518, Royal Jordanian
     # Algeria to Italy on 14 Aug returned ONE flight, ITA Airways, and no Air
     # Algérie leg from any Algerian airport. The country-form probe of section 20
