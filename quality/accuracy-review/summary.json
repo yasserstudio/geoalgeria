@@ -8,7 +8,7 @@
     },
     {
       "path": "packages/agriculture/data/metadata.json",
-      "sha256": "9ee94822554058b78979d2f014c7ea351d695265119c0dd886b9d51f2f4b91ca"
+      "sha256": "9c957fd7a9db39376d4de287aeed80113c5916a0f088bc461a58323b696cfd1e"
     },
     {
       "path": "packages/aviation/data/airports.json",
@@ -16,7 +16,7 @@
     },
     {
       "path": "packages/aviation/data/metadata.json",
-      "sha256": "c5c5e4b383055f3b4bae6c818352f0e4ad48d910194e6fcb657cf9a524f604b1"
+      "sha256": "da003b55cc3a2a79efe258b5ad55b23fe25b978f1594e1a93026d677a73e9484"
     },
     {
       "path": "packages/aviation/data/route-endpoints.json",
@@ -40,7 +40,7 @@
     },
     {
       "path": "packages/banques/data/metadata.json",
-      "sha256": "a9ad468d4fd4bdcddbcfd8a8b1e4b0e7ad86cfa47b123333d7255817c04a67a6"
+      "sha256": "18af82cec1b12376f6fe4af76222cc2293d90d21b017d47c81953cd255dfa123"
     },
     {
       "path": "packages/buses/data/lines.json",
@@ -48,7 +48,7 @@
     },
     {
       "path": "packages/buses/data/metadata.json",
-      "sha256": "2028fe1ac962c4ae54b76c324d26dab92cee0beac79d4511dc87ff41b7fc8a35"
+      "sha256": "6cd3d998d89a95298452cedae6f06bd79e3140b146a9c17cef10a73797d30009"
     },
     {
       "path": "packages/buses/data/stations.json",
@@ -72,7 +72,7 @@
     },
     {
       "path": "packages/culture/data/metadata.json",
-      "sha256": "5602adad449e415ee25b5288a2bee41050b467a3ab3f89b784a15b066384de02"
+      "sha256": "36833cddb813b8b5f1fe48febcc6ca6aab2fd22c7bd9adca5b3abf0d04316f72"
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.geojson",
@@ -80,7 +80,7 @@
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.metadata.json",
-      "sha256": "f3af9e03489f96dbd71f96882c993729b83ee96382329ca0ba61285a1609abf9"
+      "sha256": "d6af21eaeca4e292757096d34b34b3a011644b9588ab4d05629e5d84bf0e9d1e"
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
@@ -88,7 +88,7 @@
     },
     {
       "path": "packages/djezzy/data/metadata.json",
-      "sha256": "df61300b882f89bdaf62a903db2fc459c3089876bf3070186016b533f1bd7e8e"
+      "sha256": "8df494e87965656ccb31284531e9a764d900520e4113db173fb248cbdd00d7ce"
     },
     {
       "path": "packages/djezzy/data/retired-ids.json",
@@ -100,7 +100,7 @@
     },
     {
       "path": "packages/ecoles/data/metadata.json",
-      "sha256": "8784e9286ee44ddc34f1b30e6dd536e7694707360ecf4f527606b3056d12092e"
+      "sha256": "a66f865eca91a24e909e8dcd1a50396edbc3df6dc610adb426a7378fb651de3b"
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
@@ -116,7 +116,7 @@
     },
     {
       "path": "packages/emploi/data/metadata.json",
-      "sha256": "a4b4d0900fb71b70094cad35facbc7fe916ea8dccdae6653703dd60291a97d8a"
+      "sha256": "a82113b78d1b2ea33c0602910f1dec8c349bf6a2013a8487e3bae44274005c92"
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
@@ -128,7 +128,7 @@
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
-      "sha256": "3d08c503fef5715000aab0285a5362937964ffebccfc54e686cff0e59748c1ee"
+      "sha256": "938ed67289896e2a0af45f2d104df6109429f356153217e16830c85d34a8e19f"
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
@@ -140,11 +140,11 @@
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
-      "sha256": "13027be0392dbbf0dc4a26253c52018dcd348ee54e4d995499bb93bade51881f"
+      "sha256": "7111b2bed9862dcab22be694fd6d1e62f5a588181db370dc73dac34544fae82e"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
-      "sha256": "29953611465611e7b1768cf1e8291e96d8f611a702942080aa6cc1bcdc27eea9"
+      "sha256": "b192e1810c8900a50b27290f480f69d0d61cc083f31497e1ed891c2d1d907e97"
     },
     {
       "path": "packages/gares-routieres/data/retired-ids.json",
@@ -160,7 +160,7 @@
     },
     {
       "path": "packages/industrie-pharmaceutique/data/metadata.json",
-      "sha256": "57090eaa71bc783d0ef6e8f4d25b3e202d195ab84a64dbb4cb0ddcd0c9d6abe9"
+      "sha256": "b5560b531b2ae15e802f43d607c7ffa8175701cc177b35b75c8880a9f6647d43"
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
@@ -168,7 +168,7 @@
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
-      "sha256": "07dc7e0360cd28fbc285cb8ce52dbf6ac31be7f001a952b95247cba4b970cd9e"
+      "sha256": "fb1392992aed1594e604cfafe3f968e64b11c193929f195f33223a96236cd305"
     },
     {
       "path": "packages/livraison/data/carriers.json",
@@ -180,7 +180,7 @@
     },
     {
       "path": "packages/livraison/data/metadata.json",
-      "sha256": "b77881a84a5fb0b0cfd8726a988b203380677554e0bc471f0a298c181423ef1d"
+      "sha256": "e2b087312a8e695e5a1e06896b5eb5b80fee74010b3fbcafa64313952583157f"
     },
     {
       "path": "packages/livraison/data/stopdesks.json",
@@ -192,7 +192,7 @@
     },
     {
       "path": "packages/mobilis/data/metadata.json",
-      "sha256": "04f3caef8357324df8ffcc0d74d9163dcb0ed2b831e63c9a208404674dcf7ffe"
+      "sha256": "62840375e067042b69851fc98b0c97d7a056e25f89383c703fe34bc867a8dabe"
     },
     {
       "path": "packages/mobilis/data/pdv.json",
@@ -200,7 +200,7 @@
     },
     {
       "path": "packages/mosquees/data/metadata.json",
-      "sha256": "dd20540ad398ccad2e84ae2d7a4125af1fd5ddf7ea422061bd00a6bee0cfa8ef"
+      "sha256": "0fee14ec95bc63e3b66b2afbbbf496b37ead57833486444285208e2b97d5075b"
     },
     {
       "path": "packages/mosquees/data/mosquees.json",
@@ -208,7 +208,7 @@
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
-      "sha256": "35b58abff5e0c8b9280338f563c91c0b2a213ad5efb22310ac6aa7d0953339bf"
+      "sha256": "5506fed5163bf5930d598826113c25aa99a12b7299dc0cc98759691107fd3110"
     },
     {
       "path": "packages/ooredoo/data/stores.json",
@@ -216,7 +216,7 @@
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
-      "sha256": "947e1f92f841cefb922af2a2ddf5ef30a0080832f9ad2a017d3c143aa530de37"
+      "sha256": "83fb3e153f40cdf65769bc4a41aad1c3bd452149187645b28fc1992a350317a9"
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
@@ -232,7 +232,7 @@
     },
     {
       "path": "packages/poste/data/metadata.json",
-      "sha256": "9f686cdd4c0255d81bc09ee4f7f71036d7fe1e69c7242f457e248a65d5e8e953"
+      "sha256": "086b7df5169607814a1786f5d85612428ca49be1412ace9be1cb35b1ab6598f2"
     },
     {
       "path": "packages/poste/data/postoffices.json",
@@ -240,7 +240,7 @@
     },
     {
       "path": "packages/protection-civile/data/metadata.json",
-      "sha256": "881332b340145379092098b067112adeaffcff110af28125f28c8ad2dc5da806"
+      "sha256": "bbf57322fd71d519348b7d22c59150a92585a815cf90d4d3b1798de5787998e2"
     },
     {
       "path": "packages/protection-civile/data/protection-civile.json",
@@ -252,7 +252,7 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "a6c8402fba8e1bc239b33d71ee9ac0495a31ac1f55b0f2883e143ef0504e26dd"
+      "sha256": "969c9f03015232fd05660a774b50dbfb5403bf6562faa0f38f611b856bed655f"
     },
     {
       "path": "packages/sante/data/sante.json",
@@ -264,7 +264,7 @@
     },
     {
       "path": "packages/sports/data/metadata.json",
-      "sha256": "eb4474c01aab28e5a34de3255425f2b0a57ed652005393376541500e5fdfa6c4"
+      "sha256": "e207439f02fcd973e58f6108e9ad9b69aef031368d879294eb126dd32efec3b7"
     },
     {
       "path": "packages/telecom/data/5g-djezzy.json",
@@ -280,7 +280,7 @@
     },
     {
       "path": "packages/telecom/data/metadata.json",
-      "sha256": "5c48d14b20af1bfd3cdc86e950bfb4871cb8fa8e50f691c78453748b9c11c665"
+      "sha256": "b4759e7596b28de71f9b8ce6d7c4ebfc7d4ec7ecd0da4907dc9f90eef846596b"
     },
     {
       "path": "packages/tourisme/data/attractions.json",
@@ -296,7 +296,7 @@
     },
     {
       "path": "packages/tourisme/data/metadata.json",
-      "sha256": "15e3cab41494d713c9873c649c9597bbdbee402528d3f19160ad54d807df297c"
+      "sha256": "bfa42c5507a5de25d861b9de9753dc471122bb79f5d08315055045d0d8066b66"
     },
     {
       "path": "packages/tourisme/data/parks.json",
@@ -346,7 +346,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Agricultural institutions (training institutes, research, services) from the MADR — all positions are wilaya- or commune-centroid approximations (no surveyed points).",
+        "coverage_note": "Agricultural institutions (training institutes, research, services) from the MADR; all positions are wilaya- or commune-centroid approximations (no surveyed points).",
         "wilayas_covered": 58,
         "bbox": [
           -8.12724,
@@ -417,7 +417,7 @@
         "sources": [
           {
             "key": "anac",
-            "name": "ANAC — Autorité Nationale de l'Aviation Civile",
+            "name": "ANAC: Autorité Nationale de l'Aviation Civile",
             "url": "https://www.anac.dz",
             "license": "Factual public listing (ANAC)",
             "evidence_type": "official",
@@ -508,7 +508,7 @@
         "sources": [
           {
             "key": "boa",
-            "name": "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)",
+            "name": "Banque d'Algérie: liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)",
             "url": "https://www.bank-of-algeria.dz/banques-commerciales/",
             "license": "Factual public regulatory listing (Banque d'Algérie)",
             "retrieved": "2026-06-16",
@@ -523,7 +523,7 @@
           },
           {
             "key": "osm",
-            "name": "OpenStreetMap — reviewed bank coordinate evidence",
+            "name": "OpenStreetMap: reviewed bank coordinate evidence",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-09-09",
@@ -585,7 +585,7 @@
         "sources": [
           {
             "key": "wikipedia",
-            "name": "French Wikipedia — Lignes de bus ETUSA de 1 à 99",
+            "name": "French Wikipedia: Lignes de bus ETUSA de 1 à 99",
             "url": "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99",
             "license": "CC BY-SA 4.0",
             "retrieved": "2026-07-01",
@@ -593,7 +593,7 @@
           },
           {
             "key": "etus-tiaret",
-            "name": "ETUS Tiaret — current Lines",
+            "name": "ETUS Tiaret: current Lines",
             "url": "https://www.etus-tiaret.dz/ar/lines",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-02",
@@ -601,7 +601,7 @@
           },
           {
             "key": "etusto",
-            "name": "ETUSTO — passenger Lines",
+            "name": "ETUSTO: passenger Lines",
             "url": "http://etusto.dz/espv.html",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-02",
@@ -609,7 +609,7 @@
           },
           {
             "key": "etus-bejaia",
-            "name": "ETUS Béjaïa — WordPress REST itineraries and Line maps",
+            "name": "ETUS Béjaïa: WordPress REST itineraries and Line maps",
             "url": "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-02",
@@ -617,7 +617,7 @@
           },
           {
             "key": "etus-msila",
-            "name": "ETUS M'Sila — official Line pages and diagrams",
+            "name": "ETUS M'Sila: official Line pages and diagrams",
             "url": "https://etus-msila.dz/",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-02",
@@ -625,7 +625,7 @@
           },
           {
             "key": "etus-sidi-bel-abbes",
-            "name": "ETUS Sidi Bel Abbès — network and timetable pages",
+            "name": "ETUS Sidi Bel Abbès: network and timetable pages",
             "url": "https://etus22.dz/Horaires.php",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-02",
@@ -633,14 +633,14 @@
           },
           {
             "key": "etus-setif",
-            "name": "ETUS Setif — 2026 Line artwork supplied by project owner",
+            "name": "ETUS Setif: 2026 Line artwork supplied by project owner",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-02",
             "evidence_type": "official"
           },
           {
             "key": "etus-ain-defla",
-            "name": "ETUS Aïn Defla — 2025 Line artwork and Eid service program supplied by project owner",
+            "name": "ETUS Aïn Defla: 2025 Line artwork and Eid service program supplied by project owner",
             "url": "https://www.facebook.com/ETUS44/",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-03",
@@ -648,7 +648,7 @@
           },
           {
             "key": "etus-annaba",
-            "name": "ETUS Annaba — Eid al-Adha 2026 service program supplied by project owner",
+            "name": "ETUS Annaba: Eid al-Adha 2026 service program supplied by project owner",
             "url": "https://www.facebook.com/100063517660926/",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-03",
@@ -656,7 +656,7 @@
           },
           {
             "key": "etus-tlemcen",
-            "name": "ETUS Tlemcen — Eid al-Adha 2026 service program supplied by project owner",
+            "name": "ETUS Tlemcen: Eid al-Adha 2026 service program supplied by project owner",
             "url": "https://www.facebook.com/etustlemcen13/",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-03",
@@ -664,7 +664,7 @@
           },
           {
             "key": "eto-oran",
-            "name": "ETO Oran — route drawings published on the Operator page, supplied by project owner",
+            "name": "ETO Oran: route drawings published on the Operator page, supplied by project owner",
             "url": "https://www.facebook.com/p/ETO-100093054514209/",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-04",
@@ -672,7 +672,7 @@
           },
           {
             "key": "etus-oeb",
-            "name": "ETUS Oum El Bouaghi — numbered Line diagrams supplied by project owner",
+            "name": "ETUS Oum El Bouaghi: numbered Line diagrams supplied by project owner",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-04",
             "evidence_type": "official"
@@ -686,14 +686,14 @@
           },
           {
             "key": "etul-laghouat",
-            "name": "ETUL Laghouat — dated operating programs supplied by project owner",
+            "name": "ETUL Laghouat: dated operating programs supplied by project owner",
             "license": "Proprietary factual reference data; no open reuse license",
             "retrieved": "2026-09-04",
             "evidence_type": "official"
           },
           {
             "key": "osm",
-            "name": "OpenStreetMap — reviewed urban bus relations",
+            "name": "OpenStreetMap: reviewed urban bus relations",
             "url": "https://www.openstreetmap.org/copyright",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-09-01",
@@ -835,7 +835,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
+        "coverage_note": "Cultural places from Algeria's official cultural atlas (Ministry of Culture): protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
         "wilayas_covered": 66,
         "bbox": [
           -8.433817,
@@ -908,7 +908,7 @@
         "sources": [
           {
             "key": "djezzy",
-            "name": "Djezzy — Optimum Telecom Algérie (nos-boutiques)",
+            "name": "Djezzy: Optimum Telecom Algérie (nos-boutiques)",
             "url": "https://www.djezzy.dz",
             "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
             "retrieved": "2026-08-31",
@@ -959,7 +959,7 @@
         "sources": [
           {
             "key": "osm",
-            "name": "OpenStreetMap — schools & kindergartens in Algeria",
+            "name": "OpenStreetMap: schools & kindergartens in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-08-31",
@@ -1020,7 +1020,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Employment agencies — regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
+        "coverage_note": "Employment agencies: regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
         "wilayas_covered": 58,
         "bbox": [
           -8.13476,
@@ -1041,7 +1041,7 @@
         "sources": [
           {
             "key": "anem",
-            "name": "ANEM — National Employment Agency (anem.dz)",
+            "name": "ANEM: National Employment Agency (anem.dz)",
             "url": "https://www.anem.dz",
             "license": "Factual public listing (ANEM)",
             "retrieved": "2026-08-31",
@@ -1157,7 +1157,7 @@
         "sources": [
           {
             "key": "wikidata",
-            "name": "Wikidata — rail & urban transit stations in Algeria",
+            "name": "Wikidata: rail & urban transit stations in Algeria",
             "url": "https://www.wikidata.org",
             "license": "CC0-1.0",
             "retrieved": "2026-07-01",
@@ -1165,7 +1165,7 @@
           },
           {
             "key": "osm",
-            "name": "OpenStreetMap — rail & urban transit stations in Algeria",
+            "name": "OpenStreetMap: rail & urban transit stations in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-07-01",
@@ -1228,7 +1228,7 @@
         "sources": [
           {
             "key": "mfep",
-            "name": "Ministry of Vocational Training and Education (MFEP) — takwin.dz",
+            "name": "Ministry of Vocational Training and Education (MFEP): takwin.dz",
             "url": "https://takwin.dz",
             "license": "Factual public listing (MFEP)",
             "retrieved": "2026-06-22",
@@ -1289,7 +1289,7 @@
         "sources": [
           {
             "key": "sogral",
-            "name": "SOGRAL — Société de Gestion des Gares Routières d'Algérie",
+            "name": "SOGRAL: Société de Gestion des Gares Routières d'Algérie",
             "url": "https://live.sogral.com",
             "license": "Data © SOGRAL; redistributed for reference",
             "retrieved": "2026-07-01",
@@ -1343,7 +1343,7 @@
         "sources": [
           {
             "key": "mip",
-            "name": "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register",
+            "name": "Ministère de l'Industrie Pharmaceutique (MIP): approved manufacturers register",
             "url": "https://www.miph.gov.dz",
             "license": "Factual public register (MIP)",
             "retrieved": "2026-07-05",
@@ -1405,7 +1405,7 @@
         "sources": [
           {
             "key": "mjs",
-            "name": "Ministry of Youth and Sports — SIG",
+            "name": "Ministry of Youth and Sports: SIG",
             "url": "https://sig.mjs.gov.dz",
             "license": "Factual public listing (Ministry of Youth and Sports)",
             "retrieved": "2026-06-23",
@@ -1449,7 +1449,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+        "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
         "wilayas_covered": 61,
         "bbox": [
           -8.143583,
@@ -1460,7 +1460,7 @@
         "sources": [
           {
             "key": "yalidine",
-            "name": "Yalidine Express — nos-agences",
+            "name": "Yalidine Express: nos-agences",
             "url": "https://yalidine-express.com.dz/nos-agences/",
             "license": "Data © Yalidine Express; redistributed for reference",
             "retrieved": "2026-06-18",
@@ -1468,7 +1468,7 @@
           },
           {
             "key": "guepex",
-            "name": "Guepex — public agences feed",
+            "name": "Guepex: public agences feed",
             "url": "https://www.guepex.dz/public/data/agences.json",
             "license": "Data © Guepex; redistributed for reference",
             "retrieved": "2026-06-18",
@@ -1476,7 +1476,7 @@
           },
           {
             "key": "anderson",
-            "name": "Anderson Logistics — agency directory",
+            "name": "Anderson Logistics: agency directory",
             "url": "https://anderson-ecommerce.com/",
             "license": "Data © Anderson Logistics; redistributed for reference",
             "retrieved": "2026-06-18",
@@ -1484,7 +1484,7 @@
           },
           {
             "key": "noest",
-            "name": "Noest Express — bureaux directory",
+            "name": "Noest Express: bureaux directory",
             "url": "https://noest-dz.com/",
             "license": "Data © Noest Express; redistributed for reference",
             "retrieved": "2026-06-18",
@@ -1492,7 +1492,7 @@
           },
           {
             "key": "maystro",
-            "name": "Maystro Delivery — coverage page",
+            "name": "Maystro Delivery: coverage page",
             "url": "https://maystro-delivery.com/Coverage.html",
             "license": "Data © Maystro Delivery; redistributed for reference",
             "retrieved": "2026-06-18",
@@ -1540,7 +1540,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
+        "coverage_note": "Mobilis retail network: commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
         "wilayas_covered": 67,
         "bbox": [
           -8.14066,
@@ -1561,7 +1561,7 @@
         "sources": [
           {
             "key": "mobilis",
-            "name": "Mobilis — ATM Mobilis (mobilis.dz)",
+            "name": "Mobilis: ATM Mobilis (mobilis.dz)",
             "url": "https://www.mobilis.dz",
             "license": "Data © ATM Mobilis; redistributed for reference",
             "retrieved": "2026-08-31",
@@ -1602,7 +1602,7 @@
         },
         "estimated_universe": 18449,
         "coverage_pct": 112.5,
-        "coverage_note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
+        "coverage_note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry; the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
         "wilayas_covered": 69,
         "bbox": [
           -8.148174,
@@ -1613,7 +1613,7 @@
         "sources": [
           {
             "key": "wikidata",
-            "name": "Wikidata — mosques in Algeria",
+            "name": "Wikidata: mosques in Algeria",
             "url": "https://www.wikidata.org",
             "license": "CC0-1.0",
             "retrieved": "2026-06-25",
@@ -1621,7 +1621,7 @@
           },
           {
             "key": "osm",
-            "name": "OpenStreetMap — mosques in Algeria",
+            "name": "OpenStreetMap: mosques in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-06-25",
@@ -1676,7 +1676,7 @@
         "sources": [
           {
             "key": "ooredoo",
-            "name": "Ooredoo Algérie — retail network (trouvez-nous JSON API)",
+            "name": "Ooredoo Algérie: retail network (trouvez-nous JSON API)",
             "url": "https://www.ooredoo.dz/fr/particuliers/trouvez-nous",
             "license": "Data © Ooredoo Algérie; redistributed for reference",
             "retrieved": "2026-08-31",
@@ -1729,7 +1729,7 @@
         "sources": [
           {
             "key": "osm",
-            "name": "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria",
+            "name": "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-08-31",
@@ -1793,7 +1793,7 @@
         "sources": [
           {
             "key": "baridimap",
-            "name": "Algérie Poste — baridimap.poste.dz",
+            "name": "Algérie Poste: baridimap.poste.dz",
             "url": "https://baridimap.poste.dz",
             "license": "Data © Algérie Poste; redistributed for reference",
             "retrieved": "2026-06-08",
@@ -1832,7 +1832,7 @@
         },
         "estimated_universe": 880,
         "coverage_pct": 100,
-        "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+        "coverage_note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
         "wilayas_covered": 69,
         "bbox": [
           -8.15059,
@@ -1851,7 +1851,7 @@
           },
           {
             "key": "osm",
-            "name": "OpenStreetMap contributors — reviewed unit coordinates",
+            "name": "OpenStreetMap contributors: reviewed unit coordinates",
             "url": "https://www.openstreetmap.org/copyright",
             "license": "© OpenStreetMap contributors, ODbL 1.0",
             "evidence_type": "crowdsourced",
@@ -1918,7 +1918,7 @@
         "sources": [
           {
             "key": "msp",
-            "name": "Ministry of Health (sante.gov.dz) — health-establishment registry",
+            "name": "Ministry of Health (sante.gov.dz): health-establishment registry",
             "url": "https://sante.gov.dz",
             "license": "Official public registry (Ministry of Health)",
             "retrieved": "2026-06-27",
@@ -1926,7 +1926,7 @@
           },
           {
             "key": "osm",
-            "name": "OpenStreetMap — geocoding",
+            "name": "OpenStreetMap: geocoding",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-06-27",
@@ -1934,7 +1934,7 @@
           },
           {
             "key": "wikidata",
-            "name": "Wikidata — geocoding",
+            "name": "Wikidata: geocoding",
             "url": "https://www.wikidata.org",
             "license": "CC0-1.0",
             "retrieved": "2026-06-27",
@@ -2000,7 +2000,7 @@
         "sources": [
           {
             "key": "mjs",
-            "name": "Ministry of Youth and Sports — SIG",
+            "name": "Ministry of Youth and Sports: SIG",
             "url": "https://sig.mjs.gov.dz",
             "license": "Factual public listing (Ministry of Youth and Sports)",
             "retrieved": "2026-06-23",
@@ -2094,7 +2094,7 @@
         "sources": [
           {
             "key": "djezzy",
-            "name": "Djezzy — published 5G coverage map (Optimum Telecom Algérie)",
+            "name": "Djezzy: published 5G coverage map (Optimum Telecom Algérie)",
             "url": "https://www.djezzy5g.dz/map.html",
             "license": "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
             "evidence_type": "official",
@@ -2102,7 +2102,7 @@
           },
           {
             "key": "mobilis",
-            "name": "Mobilis — published 5G coverage map (ATM Mobilis)",
+            "name": "Mobilis: published 5G coverage map (ATM Mobilis)",
             "url": "https://mobilis.dz/map/5g",
             "license": "Data © ATM Mobilis; redistributed for reference",
             "evidence_type": "official",
@@ -2110,7 +2110,7 @@
           },
           {
             "key": "ooredoo",
-            "name": "Ooredoo Algérie — published 5G covered communes",
+            "name": "Ooredoo Algérie: published 5G covered communes",
             "url": "https://www.ooredoo.dz/fr/particuliers/internet/5g",
             "license": "Data © Ooredoo Algérie; redistributed for reference",
             "evidence_type": "official",
@@ -2159,7 +2159,7 @@
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
+        "coverage_note": "Tourism points: attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
         "wilayas_covered": 69,
         "bbox": [
           -8.153594,
@@ -2192,7 +2192,7 @@
         "sources": [
           {
             "key": "osm",
-            "name": "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria",
+            "name": "OpenStreetMap: attractions, historic sites, lodging & parks in Algeria",
             "url": "https://www.openstreetmap.org",
             "license": "ODbL 1.0 (© OpenStreetMap contributors)",
             "retrieved": "2026-06-21",
@@ -2200,7 +2200,7 @@
           },
           {
             "key": "wikidata",
-            "name": "Wikidata — heritage sites, museums & parks in Algeria",
+            "name": "Wikidata: heritage sites, museums & parks in Algeria",
             "url": "https://www.wikidata.org",
             "license": "CC0-1.0",
             "retrieved": "2026-06-21",
@@ -2208,7 +2208,7 @@
           },
           {
             "key": "asal",
-            "name": "ASAL Geoportail — thermal springs",
+            "name": "ASAL Geoportail: thermal springs",
             "url": "https://www.asal.dz",
             "license": "Factual public listing (ASAL)",
             "retrieved": "2026-06-21",
@@ -2792,9 +2792,9 @@
     "path": "packages/dataset/data/geojson/wilaya-boundaries.geojson",
     "metadata": {
       "file": "wilaya-boundaries.geojson",
-      "title_en": "Algeria — wilaya boundary polygons (69)",
-      "title_fr": "Algérie — polygones des limites de wilaya (69)",
-      "title_ar": "الجزائر — حدود الولايات (69)",
+      "title_en": "Algeria: wilaya boundary polygons (69)",
+      "title_fr": "Algérie: polygones des limites de wilaya (69)",
+      "title_ar": "الجزائر: حدود الولايات (69)",
       "feature_count": 69,
       "geometry_types": {
         "Polygon": 68,
@@ -2813,7 +2813,7 @@
       "sources": [
         {
           "key": "osm",
-          "name": "OpenStreetMap — administrative boundaries (relation, boundary=administrative, admin_level=4) in Algeria",
+          "name": "OpenStreetMap: administrative boundaries (relation, boundary=administrative, admin_level=4) in Algeria",
           "url": "https://www.openstreetmap.org",
           "license": "ODbL 1.0 (© OpenStreetMap contributors)",
           "retrieved": "2026-06-21",
@@ -2835,12 +2835,12 @@
       },
       "provenance_notes": [
         "CORRECTION 2026-08-09, the one place this file deliberately departs from upstream OSM: El Aricha (63) was subtracted from Tlemcen (13). El Aricha became its own wilaya in the 2026 reform, carved out of Tlemcen; OSM added the new relation (20815946, ref 63) but never shrank the parent relation (1280702, ref 13), which still spans its pre-reform extent, so 100% of El Aricha also fell inside Tlemcen and a third of the area Tlemcen drew was really El Aricha. Verified against a live Overpass pull on 2026-08-09 (timestamp_osm_base 2026-08-08T16:16:37Z): re-sourcing from OSM reproduces the defect rather than fixing it, which is why the correction lives here. Computed as a polygon difference by scripts/fix-wilaya-overlap.mjs (polygon-clipping), reusing the 24 vertices the two rings already shared, so no sliver was introduced and no territory was lost or gained: Tlemcen 9,098 km2 to 6,083 km2 and El Aricha 3,015 km2 sum back to the original 9,098 km2. Tlemcen went from 127 to 135 vertices; every other feature is byte-identical. Reported by Karim OA (konfo.net) from the Sismoo mobile app, and submitted upstream to OSM. Guarded by test/wilaya-boundaries-disjoint.test.mjs, which fails on the pre-correction geometry.",
-        "Imported verbatim from the GeoAlgeria app repo, commit 300cb85 (main), blob 92642be34c678e243e664a55ca7a373dd1f08e94 — byte-identical, geometry untouched.",
+        "Imported verbatim from the GeoAlgeria app repo, commit 300cb85 (main), blob 92642be34c678e243e664a55ca7a373dd1f08e94; byte-identical, geometry untouched.",
         "The OSM extraction itself landed in the app repo on 2026-06-21 in commit f107d6a ('fix: replace GADM wilaya boundaries with OSM data (69 wilayas)'), which records the source (OSM admin_level=4 relations), the licence (ODbL) and the simplification (mapshaper dp 2%, keep-shapes). The bytes have not changed since.",
         "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
         "The commonly quoted '~150 m' figure describes the COORDINATE QUANTISATION (3 decimal places ≈ 111 m in latitude, ≈ 96 m in longitude at 30°N), not the simplification error. Douglas-Peucker at 2% left a median vertex spacing of 3.4 km, so the polygon can depart from the true border by far more than 150 m along any simplified stretch. Treat these as display-grade boundaries (good to about z11), not as a survey-grade border test.",
         "Superseded predecessor: the same file was built from GADM 4.1 before f107d6a; app-repo scripts/prepare-boundaries.mjs still builds that version and must never be re-run. An unverified OSM re-extraction is parked on the app-repo branch chore/osm-boundaries and was deliberately NOT used here.",
-        "Data licence is ODbL-1.0 even though the geoalgeria npm package is MIT — the same split the repo already uses for its other OSM-derived packages (ecoles, mosquees, pharmacies, tourisme)."
+        "Data licence is ODbL-1.0 even though the geoalgeria npm package is MIT: the same split the repo already uses for its other OSM-derived packages (ecoles, mosquees, pharmacies, tourisme)."
       ]
     }
   }

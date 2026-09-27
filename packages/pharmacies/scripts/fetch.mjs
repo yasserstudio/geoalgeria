@@ -427,7 +427,7 @@ async function main() {
       sources: [
         {
           key: "osm",
-          name: "OpenStreetMap — pharmacies (amenity=pharmacy) in Algeria",
+          name: "OpenStreetMap: pharmacies (amenity=pharmacy) in Algeria",
           url: "https://www.openstreetmap.org",
           license: "ODbL 1.0 (© OpenStreetMap contributors)",
           retrieved,

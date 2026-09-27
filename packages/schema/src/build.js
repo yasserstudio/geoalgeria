@@ -247,7 +247,7 @@ export function buildDcat(meta, opts = {}) {
     url: homepage,
     ...(opts.repo ? { sameAs: opts.repo } : {}),
     ...(meta.sources
-      ? { citation: meta.sources.map((s) => (s.license ? `${s.name} — ${s.license}` : s.name)) }
+      ? { citation: meta.sources.map((s) => (s.license ? `${s.name}, ${s.license}` : s.name)) }
       : {}),
   };
 }

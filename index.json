@@ -1,6 +1,6 @@
 {
   "schema_version": "2.0.0",
-  "note": "Every figure is copied from the package's own metadata.json — nothing is computed here. `coverage` appears only where the package states an estimated universe, and always carries the note saying which universe it divides by. Entries with schema_version null predate the v2 data contract (see each package's README).",
+  "note": "Every figure is copied from the package's own metadata.json; nothing is computed here. `coverage` appears only where the package states an estimated universe, and always carries the note saying which universe it divides by. Entries with schema_version null predate the v2 data contract (see each package's README).",
   "datasets": [
     {
       "package": "@geoalgeria/agriculture",
@@ -378,7 +378,7 @@
       "ratio": {
         "pct": 112.5,
         "of": 18449,
-        "note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it."
+        "note": "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry; the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it."
       },
       "wilayas_covered": 69,
       "bbox": [
@@ -472,7 +472,7 @@
       "coverage": {
         "pct": 100,
         "of": 880,
-        "note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback)."
+        "note": "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback)."
       },
       "wilayas_covered": 69,
       "bbox": [
