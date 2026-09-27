@@ -680,19 +680,6 @@
     "great_circle_km": 1354
   },
   {
-    "id": "blj-cdg",
-    "from": "BLJ",
-    "to": "CDG",
-    "carrier": "AH",
-    "flight": "AH 1120",
-    "status": "active",
-    "days": null,
-    "evidence": "verified",
-    "planned": false,
-    "source": "https://www.aeroroutes.com/",
-    "great_circle_km": 1505
-  },
-  {
     "id": "blj-lys",
     "from": "BLJ",
     "to": "LYS",
@@ -723,12 +710,12 @@
     "from": "BLJ",
     "to": "ORY",
     "carrier": "AH",
-    "flight": null,
-    "status": "seasonal",
+    "flight": "AH 1120",
+    "status": "active",
     "days": null,
-    "evidence": "listed",
+    "evidence": "verified",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+    "source": "https://www.flightsfrom.com/BLJ-ORY",
     "great_circle_km": 1478
   },
   {
@@ -1423,6 +1410,19 @@
     "planned": false,
     "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
     "great_circle_km": 1339
+  },
+  {
+    "id": "ory-blj",
+    "from": "ORY",
+    "to": "BLJ",
+    "carrier": "AH",
+    "flight": "AH 1121",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightsfrom.com/ORY-BLJ",
+    "great_circle_km": 1478
   },
   {
     "id": "ory-orn",

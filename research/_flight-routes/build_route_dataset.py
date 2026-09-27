@@ -68,8 +68,19 @@ VERIFIED = [
      "source": "https://www.parisaeroport.fr/"},
     {"from": "ALG", "to": "MRS", "flight": "AH 1020", "status": "active",
      "source": "https://www.marseille.aeroport.fr/"},
-    {"from": "BLJ", "to": "CDG", "flight": "AH 1120", "status": "active",
-     "source": "https://www.aeroroutes.com/"},
+    # Batna's Paris service is at ORLY, not CDG. The record shipped as BLJ-CDG on
+    # an aeroroutes homepage citation that names no airport, and the dispute stood
+    # open since 2026-07-29. Three independent flight-tracking aggregators now
+    # converge on ORY for both AH1120 and AH1121, with nothing current naming CDG,
+    # which is the Reported tier of section 9: cross-checked secondary sources, so
+    # it ships with the most specific page as the citation. Each direction cites
+    # its own page, because direction is established per leg. Durations (2h24 out,
+    # 2h15 back, against a 1,478 km great circle) clear the 1.35x technical-stop
+    # check comfortably.
+    {"from": "BLJ", "to": "ORY", "flight": "AH 1120", "status": "active",
+     "source": "https://www.flightsfrom.com/BLJ-ORY"},
+    {"from": "ORY", "to": "BLJ", "flight": "AH 1121", "status": "active",
+     "source": "https://www.flightsfrom.com/ORY-BLJ"},
     {"from": "TLM", "to": "MRS", "flight": "AH 1092", "status": "active",
      "source": "https://www.marseille.aeroport.fr/vols-et-destinations/destinations/toutes-les-destinations/afrique/algerie/tlemcen"},
     {"from": "SXB", "to": "ALG", "flight": "AH 1453", "status": "seasonal",
@@ -307,6 +318,17 @@ PLANNED = [
 #                      https://www.visa-algerie.com/air-algerie-reporte-le-lancement-dune-nouvelle-ligne-internationale/
 WITHDRAWN = {("ALG", "DEL"), ("DEL", "ALG")}
 
+# Pairs whose Wikipedia row names the WRONG airport of a multi-airport city, so a
+# curated record above carries the same service under the right code. Without
+# this the table re-adds the wrong endpoint as a `listed` row beside the corrected
+# one and the map draws both.
+#
+#   BLJ-CDG  The table's citation is a 2017 routesonline piece about PROPOSED new
+#            French routes, which is a plan and not an operating pair (section 11).
+#            Batna's Paris service operates at Orly; see the BLJ-ORY / ORY-BLJ
+#            records above.
+AIRPORT_CORRECTED = {("BLJ", "CDG")}
+
 # Pairs a booking probe shows being flown by ANOTHER airline, with Air Algérie
 # only selling seats on it. See collection-rules.md section 16.
 #
@@ -425,7 +447,7 @@ def main():
             skipped["codeshare"].append(key); continue
         # A withdrawal removes the pair for good, so the Wikipedia table must not
         # put it back as a `listed` row the way it would any other absent pair.
-        if key in WITHDRAWN:
+        if key in WITHDRAWN or key in AIRPORT_CORRECTED:
             skipped["withdrawn"].append(key); continue
         if frm not in ep or to not in ep:
             skipped["no_endpoint"].append(key); continue
@@ -480,7 +502,7 @@ def main():
     print(f"  listed routes with no citation: {unsourced}")
     print(f"  skipped: {len(skipped['codeshare'])} codeshare-only, "
           f"{len(skipped['domestic'])} domestic, {len(skipped['no_endpoint'])} without an endpoint, "
-          f"{len(skipped['withdrawn'])} withdrawn")
+          f"{len(skipped['withdrawn'])} withdrawn or corrected")
     print(f"  planned (announced, not yet flying): {len(planned_routes)}"
           + (f" -> {', '.join(r['id'] for r in planned_routes)}" if planned_routes else ""))
     print(f"  longest arc: {max(r['great_circle_km'] for r in routes)} km")

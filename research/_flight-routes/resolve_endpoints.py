@@ -47,7 +47,9 @@ ENDPOINTS = [
     {"city": "PARIS", "iata": "CDG", "country": "FR"},
     {"city": "PARIS", "iata": "ORY", "country": "FR",
      "note": "Paris is two endpoints, not one. Both are carried; which one a given "
-             "route uses is a per-route finding. BLJ resolved to CDG on 2026-07-27."},
+             "route uses is a per-route finding. BLJ was resolved to CDG on "
+             "2026-07-27 and corrected to ORY on 2026-09-27: AH1120/AH1121 operate "
+             "at Orly, so Batna is an ORY route in both directions."},
     {"city": "BORDEAUX", "iata": "BOD", "country": "FR"},
     {"city": "LILLE", "iata": "LIL", "country": "FR"},
     {"city": "LYON", "iata": "LYS", "country": "FR"},

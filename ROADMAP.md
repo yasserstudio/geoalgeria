@@ -37,15 +37,16 @@ reads as further along than it is.
   citable confirmation); open-ended collection, better run as background.
   _(logged 2026-07-28, updated 2026-07-29)_
 
-- [ ] **Disputed: `blj-cdg` may actually serve Orly.** The verified record
-  cites aeroroutes' homepage (which names nothing by itself), and 2026-07-29
-  live operations showed AH1120 landing at ORY and AH1121 flying ORY -> BLJ.
-  parisaeroport.fr sits behind a bot-check that blocks automated fetches; a
-  human browser session on its Batna flight search settles it in a minute. If
-  Orly confirms: correct blj-cdg to blj-ory, add ory-blj, and replace the
-  citation with the page that names the airport. Detail in
-  `research/_flight-routes/verification-2026-07-29.md`.
-  _(logged 2026-07-29)_
+- [x] **Settled: `blj-cdg` was Orly all along.** Three independent
+  flight-tracking aggregators name ORY for both AH1120 and AH1121 and nothing
+  current names CDG, which is section 9's Reported tier. So `blj-cdg` is
+  corrected to `blj-ory`, the `ory-blj` return leg ships, each direction cites
+  its own route page, and the Wikipedia row for the old pair is guarded so the
+  table cannot re-add it. parisaeroport.fr still blocks automated fetches and its
+  Air Algérie page names no city, so the hoped-for single official source was
+  never obtained. Detail in
+  `research/_flight-routes/verification-2026-09-27.md`.
+  _(logged 2026-07-29, resolved 2026-09-27)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
