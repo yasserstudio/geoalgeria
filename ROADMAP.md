@@ -356,6 +356,24 @@ reads as further along than it is.
 
 ## Releases
 
+- [x] **Releases were cut before the Version PR merged** (2026-09-26 and
+  2026-09-13), fixed 2026-09-27. Root cause: `changesets/action` builds the
+  Version PR in the runner's own workspace (`git checkout -b
+  changeset-release/main`, then `changeset version`, commit, push) and never
+  switches back, so the `GitHub Releases + data bundles` step read an
+  already-bumped working tree on a push that released nothing. Run 36243800992
+  shows it in sequence: branch created 13:02:48, `creating pull request`
+  13:03:07, `releasing: geoalgeria@2.1.0` 13:03:09, while Version PR #223 only
+  merged at 13:06. The tag landed on the pre-bump commit with the bot's raw
+  `### Minor Changes` notes, and the tag-existence guard then blocked the real
+  Release, so the Owner had to `gh release delete --cleanup-tag`. Run
+  34766226083 did the same to seven tags on 2026-09-13, so this fired every
+  cycle. Fixed with `scripts/release-guard.mjs` (logic in
+  `scripts/lib/release-guard.mjs`): the loop now declines a release unless
+  `$GITHUB_SHA` itself carries that version AND a `CHANGELOG.md` section for it,
+  failing closed on anything it cannot read. `test/release-guard.test.mjs`
+  pins the verdicts, including the 2.1.0 replay.
+
 - [x] **Announce workflow failed for `geoalgeria` 2.1.0** (2026-09-26), fixed
   2026-09-27. Root cause, from run 36244148854: `createDiscussion` answered
   `Title is too long (maximum is 256 characters)` and the step exited 1. A
