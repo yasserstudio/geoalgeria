@@ -250,6 +250,14 @@ reads as further along than it is.
   (validation-only, see `research/buses/ETUSA-API-PROBE.md`), and Constantine
   (ETUSC), whose page is login-walled.
 
+  **Update 2026-09-27:** Constantine is no longer a gap. 25 reviewed ETUS-C
+  route identities landed from owner-supplied numbered route graphics, with no
+  inferred geometry, taking the package to **178 Lines across 15 Operators**;
+  shapes, Directions, Stations and memberships stay at **76, 128, 1,603 and
+  2,685**. Released as `@geoalgeria/buses` **2.2.0**. The remaining levers are
+  unchanged: an ETO Oran numbered Line list, and the validation-only ETUSA
+  network API.
+
 - [ ] **Intercity bus schedules are a licence problem, not a scraping
   problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction
   above cannot answer the question a person moving to another wilaya actually

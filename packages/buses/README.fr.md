@@ -49,10 +49,13 @@ terminus n'est déduit automatiquement.
 
 Les attributs ETUSA issus de **fr.wikipedia** sont sous **CC BY-SA 4.0**. Les tracés,
 directions et stations OpenStreetMap sont sous **ODbL 1.0**, attribution
-**© OpenStreetMap contributors**. Les faits de 12 exploitants cités dans
+**© OpenStreetMap contributors**. Les faits de 13 exploitants cités dans
 [NOTICE](NOTICE) sont extraits de sources officielles sans licence ouverte déclarée ; les cartes Google de
-Béjaïa, les schémas de M'Sila et les images de tracé de Sidi Bel Abbès servent uniquement
-à la validation et leur géométrie n'est pas redistribuée. Les départs complets de Sidi
+Béjaïa, les schémas de M'Sila, les images de tracé de Sidi Bel Abbès et les graphiques
+ETUS-C Constantine servent uniquement
+à la validation et leur géométrie n'est pas redistribuée. Les 25 lignes de Constantine
+sont transcrites de deux graphiques de l'exploitant fournis par le propriétaire du
+projet et restent en annuaire seul, sans tracé, sans arrêts intermédiaires et sans horaires. Les départs complets de Sidi
 Bel Abbès sont transcrits du HTML officiel fourni par le propriétaire du projet ; les
 jours non indiqués restent explicitement inconnus.
 Le code est sous [MIT](LICENSE) ; voir [NOTICE](NOTICE).

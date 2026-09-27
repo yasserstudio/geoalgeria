@@ -23,6 +23,7 @@ const directions = buses.directionsByLine("etusa-1");
 | Operator | Lines | Shapes |
 | --- | ---: | ---: |
 | ETUSA (Alger) | 76 | 61 |
+| ETUS-C Constantine | 25 | 0 |
 | ETUS Aïn Defla | 16 | 1 |
 | ETUS Tlemcen | 10 | 0 |
 | ETUS Sidi Bel Abbès | 8 | 0 |
@@ -71,12 +72,16 @@ includes the Overpass queries, retrieval interval, upstream response hashes, and
 of the promoted selection, so regeneration is offline and reproducible.
 
 ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila, ETUS Sidi Bel Abbès, ETUS Setif,
-ETUS Aïn Defla, ETUS Annaba, ETUS Tlemcen, ETO Oran, ETUS Oum El Bouaghi, and
-ETUL Laghouat Line facts come from official Operator pages, APIs, programs, and
-maps. Sidi Bel Abbès includes complete bidirectional
+ETUS Aïn Defla, ETUS Annaba, ETUS Tlemcen, ETO Oran, ETUS Oum El Bouaghi,
+ETUS-C Constantine, and ETUL Laghouat Line facts come from official Operator pages,
+APIs, programs, and maps. Sidi Bel Abbès includes complete bidirectional
 departure lists from owner-supplied official HTML; the page did not state their service
-days, so `days` remains `null`. Béjaïa embedded maps, M'Sila route diagrams, and Sidi Bel
-Abbès route images and Setif announcement artwork are validation-only; their geometry is not redistributed.
+days, so `days` remains `null`. Constantine route identities and Arabic endpoints are transcribed from two
+owner-supplied Operator graphics, a route list and a schematic network map; the 25
+Lines are directory-only, with no shape, no intermediate Stations and no schedules.
+Béjaïa embedded maps, M'Sila route diagrams, Sidi Bel
+Abbès route images, Setif announcement artwork and the Constantine graphics are
+validation-only; their geometry is not redistributed.
 The official source materials do not state an open reuse licence.
 
 Package code is MIT. Data licences and attribution requirements are detailed in
