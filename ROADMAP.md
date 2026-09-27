@@ -21,21 +21,20 @@ reads as further along than it is.
 ## Aviation
 
 - [ ] **Scheduled flight duration per route.** Asked for on the route card and
-  refused, correctly: there is no duration field, and **0 of 122** routes in
+  refused, correctly: there is no duration field, and **0 of 142** routes in
   `research/_flight-routes/route-dataset.json` carry one. The great-circle
   duration check used during verification was computed and discarded. Deriving a
   duration from distance would put a fabricated number beside sourced ones. Wants
   scheduled block times collected per route from a citable source.
   _(logged 2026-07-28)_
 
-- [ ] **64 routes are `listed` rather than `verified`,** and 69 pairs are
-  one-directional (an outbound leg with no recorded return; was 70 before the
-  LYS -> TLM return verified on 2026-07-29). `listed` means a published table
-  names the carrier serving the pair without confirming Air Algérie operates
-  it. The screen + confirm pipeline exists now
+- [ ] **66 rows are `listed` rather than `verified`,** and 70 legs are
+  one-directional (an outbound with no recorded return). `listed` means a
+  published table names the carrier serving the pair without confirming Air
+  Algérie operates it. The screen + confirm pipeline exists now
   (`research/_flight-routes/screen_returns_soar.py`, hypotheses only, then
   citable confirmation); open-ended collection, better run as background.
-  _(logged 2026-07-28, updated 2026-07-29)_
+  _(logged 2026-07-28, counts refreshed 2026-09-27)_
 
 - [x] **Settled: `blj-cdg` was Orly all along.** Three independent
   flight-tracking aggregators name ORY for both AH1120 and AH1121 and nothing
@@ -47,6 +46,13 @@ reads as further along than it is.
   never obtained. Detail in
   `research/_flight-routes/verification-2026-09-27.md`.
   _(logged 2026-07-29, resolved 2026-09-27)_
+
+- [ ] **`alg-ber` / `ber-alg` move from Monday to Sunday on 25 Oct 2026.** The
+  winter programme keeps the Algiers-Berlin weekly nonstop and changes its day
+  ([visa-algerie, 20 Sep 2026](https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/)).
+  `days: ["mon"]` is right for the 2026-09-27 snapshot, so this is a one-line edit
+  plus an `as_of` bump at the next pass, not a correction to make now.
+  _(logged 2026-09-27)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
