@@ -323,14 +323,14 @@ function reportBoundaries(full) {
 //   formation-professionnelle `wilaya`    the takwin wilaya seat
 //
 // Anchors:
-//   code    the record names its commune by code — the anchor is that commune.
-//   name    it names it in prose only (`commune`, no code) — the anchor is what
+//   code    the record names its commune by code, and that commune is the anchor.
+//   name    it names it in prose only (`commune`, no code), so the anchor is what
 //           that label resolves to inside the declared wilaya. A label that does
 //           not resolve is counted, not failed: the takwin source concatenates
 //           words ("برجالبحري"), and inventing a match is worse than no check.
 //   wilaya  no anchor per record (agriculture's `wilaya_centroid` rows carry
 //           commune: null by design, the value being the wilaya chief town's
-//           centre) — the coordinate must still be SOME current centre of the
+//           centre), but the coordinate must still be SOME current centre of the
 //           declared wilaya, which is what a repudiated one stops being.
 const CENTROID_ANCHORS = {
   agriculture: { commune_centroid: "code", wilaya_centroid: "wilaya" },
@@ -344,7 +344,7 @@ const CENTROID_ANCHORS = {
 
 // 6 decimals is the repository's coordinate resolution (~0.1 m) and a few flagship
 // centres are stored at 7, so the comparison is made on the rounded value a
-// published record can actually carry — not with a distance tolerance, which would
+// published record can actually carry, not with a distance tolerance, which would
 // let a slow drift through one metre at a time.
 //
 // Both roundings in use here are accepted, because they genuinely disagree on an
@@ -422,7 +422,7 @@ function reportCentroidAnchors(full) {
       continue;
     }
     fail(
-      `${line} — ${t.stale.length} no longer sit on the commune centre they claim. ` +
+      `${line}: ${t.stale.length} no longer sit on the commune centre they claim. ` +
         `Re-run the package generator (or node scripts/sync-commune-centroid-dependents.mjs --write) ` +
         `so the borrowed coordinate follows the flagship.`,
     );
@@ -436,7 +436,7 @@ function reportCentroidAnchors(full) {
     for (const pkg of Object.keys(CENTROID_ANCHORS))
       if (!CENTROID_TALLY.has(pkg))
         fail(
-          `CENTROID_ANCHORS binds "${pkg}", but no record of it was checked — the package or its ` +
+          `CENTROID_ANCHORS binds "${pkg}", but no record of it was checked: the package or its ` +
             `geo_method vocabulary changed. Update the table deliberately; do not leave a silent check.`,
         );
   console.log(`  ${checked} borrowed commune-centre coordinate(s) checked against the flagship, ${stale} stale`);

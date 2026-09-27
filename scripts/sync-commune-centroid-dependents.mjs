@@ -96,7 +96,7 @@ function communesSplit() {
       if (Number.isFinite(c.latitude) && Number.isFinite(c.longitude)) out.push(c);
     }
   }
-  if (!out.length) throw new Error("no commune centroids loaded — check packages/dataset/data");
+  if (!out.length) throw new Error("no commune centroids loaded: check packages/dataset/data");
   return out;
 }
 
@@ -230,6 +230,6 @@ for (const spec of PACKAGES) {
 console.log(`flagship centres repudiated by this release: ${corrections.count} (OSM ${corrections.timestamp_osm_base})`);
 for (const line of report) console.log(`  ${line}`);
 if (CHECK && anyChange) {
-  console.error("\ndependents are stale — run node scripts/sync-commune-centroid-dependents.mjs --write");
+  console.error("\ndependents are stale: run node scripts/sync-commune-centroid-dependents.mjs --write");
   process.exit(1);
 }

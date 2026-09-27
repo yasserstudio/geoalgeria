@@ -58,7 +58,7 @@ for (const pkg of PACKAGES) {
     String(v).startsWith("workspace:"),
   );
   if (hasWorkspaceRuntimeDeps) {
-    console.log(`skip: ${name}@${version} (workspace: runtime deps, an umbrella — publish via 'pnpm publish', not npm; see RELEASING.md)`);
+    console.log(`skip: ${name}@${version} (workspace: runtime deps, an umbrella; publish via 'pnpm publish', not npm; see RELEASING.md)`);
     skipped++;
     continue;
   }
