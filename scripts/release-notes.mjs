@@ -21,6 +21,7 @@
  */
 
 import { readFileSync } from "node:fs";
+import { clampTitle } from "./lib/release-copy.mjs";
 
 const [, , changelogPath, version, tag, mode] = process.argv;
 if (!changelogPath || !version || !tag || !mode) {
@@ -63,34 +64,10 @@ const isBullet = (l) => /^\s*[-*]\s+/.test(l);
 const cleanBullet = (l) =>
   l.replace(/^\s*[-*]\s+/, "").replace(/^[0-9a-f]{7,}:\s*/i, "").replace(/\*\*/g, "").trim();
 
-// GitHub rejects a release name over 256 characters with a bare HTTP 422, which
-// fails the whole release step AFTER packages have already been staged, leaving
-// the release half done. A changeset written as one long paragraph (the
-// cliniques 1.0.0 one ran past 1,200 characters) hits this, so the title is
-// always clamped here rather than trusted to be short.
-//
-// Clamped well under the hard limit, because a 256-character release name is
-// unreadable in the releases list anyway. Order of preference: the first
-// sentence, then a word-boundary cut, then the tag. The full text is never
-// lost, it is the first thing in the release body.
-const MAX_TITLE = 120;
-const GITHUB_MAX_TITLE = 256;
-
-export function clampTitle(text, tagFallback) {
-  const s = text.trim();
-  if (s.length <= MAX_TITLE) return s;
-
-  // A first sentence that fits is the natural title.
-  const firstSentence = s.match(/^(.+?[.!?])(?:\s|$)/)?.[1];
-  if (firstSentence && firstSentence.length <= MAX_TITLE) return firstSentence;
-
-  // Otherwise cut on a word boundary and mark the truncation.
-  const cut = s.slice(0, MAX_TITLE - 1);
-  const atSpace = cut.lastIndexOf(" ");
-  const trimmed = (atSpace > MAX_TITLE / 2 ? cut.slice(0, atSpace) : cut).replace(/[\s,;:.-]+$/, "");
-  const out = trimmed ? `${trimmed}...` : tagFallback;
-  return out.length <= GITHUB_MAX_TITLE ? out : tagFallback;
-}
+// The title clamp lives in scripts/lib/release-copy.mjs, so the GitHub Release
+// title and the announcement headline obey the same 256-character limit. Kept
+// re-exported here, where it used to be defined.
+export { clampTitle };
 
 function title() {
   for (const l of section) {
