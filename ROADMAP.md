@@ -257,11 +257,15 @@ reads as further along than it is.
   (validation-only, see `research/buses/ETUSA-API-PROBE.md`), and Constantine
   (ETUSC), whose page is login-walled.
 
-  **Update 2026-09-27:** Constantine is no longer a gap. 25 reviewed ETUS-C
-  route identities landed from owner-supplied numbered route graphics, with no
-  inferred geometry, taking the package to **178 Lines across 15 Operators**;
+  **Update 2026-09-27:** Constantine and Skikda are no longer gaps. 25 reviewed
+  ETUS-C route identities landed from owner-supplied numbered route graphics,
+  and 6 ETUS Skikda Lines from the Operator's own website page, both with no
+  inferred geometry, taking the package to **184 Lines across 16 Operators**;
   shapes, Directions, Stations and memberships stay at **76, 128, 1,603 and
-  2,685**. Released as `@geoalgeria/buses` **2.2.0**. The remaining levers are
+  2,685**. Released as `@geoalgeria/buses` **2.2.0**. Skikda is the first
+  Operator to publish complete ordered stop sequences for every Line, so it is
+  the best candidate for the next geometry pass: the stop names are committed as
+  Source evidence and only need coordinates. The remaining directory levers are
   unchanged: an ETO Oran numbered Line list, and the validation-only ETUSA
   network API.
 
