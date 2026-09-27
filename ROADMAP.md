@@ -356,12 +356,22 @@ reads as further along than it is.
 
 ## Releases
 
-- [ ] **Announce workflow failed for `geoalgeria` 2.1.0** (2026-09-26): the
-  run for the real release exited 1 and posted nothing, and `scripts/announce.js`
-  collapsed the multi-paragraph changeset into one run-on "headline", so
-  Discussion #225 was written by hand. Make announce.js stop the headline at
-  the first sentence or paragraph, and find why the run failed (the earlier
-  run for the premature, since-deleted Release succeeded).
+- [x] **Announce workflow failed for `geoalgeria` 2.1.0** (2026-09-26), fixed
+  2026-09-27. Root cause, from run 36244148854: `createDiscussion` answered
+  `Title is too long (maximum is 256 characters)` and the step exited 1. A
+  changeset writes its brief as one bullet continued in indented paragraphs, and
+  `highlights()` merged every indented line into the lead bullet, so the title
+  was the whole 2,705-character brief. The earlier run succeeded because it ran
+  before the Version PR merged: no CHANGELOG section existed for 2.1.0 yet, so
+  the headline was the short fallback and the post step stood down on
+  `announceWorthy: false`. Fixed by sharing the release-notes title clamp:
+  `scripts/lib/release-copy.mjs` now holds section extraction,
+  entry splitting (a blank line ends an entry, so each paragraph of a brief is
+  its own body entry) and `clampTitle`, and the headline is the lead paragraph's
+  first sentence clamped to 120 characters. `test/announce-copy.test.mjs` pins it
+  on the real 2.1.0 section. Announce also gained a `dry_run` dispatch input
+  (`GEOALGERIA_DRY_RUN` locally) that renders the Discussion into the job summary
+  and posts nothing.
 
 - [ ] **Umbrella release tag for the current state.** Per-package releases have
   kept up; the project-level tag has not. Manual, and worth doing at the next

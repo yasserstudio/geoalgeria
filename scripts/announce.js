@@ -10,11 +10,17 @@
  *
  *   GEOALGERIA_TAG="geoalgeria@1.2.0" node scripts/announce.js
  *
+ * Dry run: same files, plus the rendered Discussion title and body on stdout and
+ * `dryRun: true` in meta.json, which stops announce.yml posting:
+ *
+ *   GEOALGERIA_DRY_RUN=1 GEOALGERIA_TAG="geoalgeria@2.1.0" node scripts/announce.js
+ *
  * No dependencies — Node built-ins only.
  */
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { headlineFrom, highlights, plain, sectionFor } from "./lib/release-copy.mjs";
 
 const REPO = "https://github.com/yasserstudio/geoalgeria";
 
@@ -73,6 +79,8 @@ if (!pkg) {
 }
 
 // --- Extract this version's CHANGELOG section -------------------------------
+// Section extraction, entry splitting and the title clamp are shared with
+// scripts/release-notes.mjs in scripts/lib/release-copy.mjs.
 function changelogSection(dir, ver) {
   let md;
   try {
@@ -80,25 +88,7 @@ function changelogSection(dir, ver) {
   } catch {
     return "";
   }
-  const lines = md.split("\n");
-  const esc = ver.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  // Match the version anywhere on a `## ` heading — handles both changesets
-  // (`## 1.1.1`) and keep-a-changelog (`## [1.1.0] - 2026-06-08`) styles. The
-  // non-digit/dot boundaries stop 1.1.0 from matching inside 11.1.0 or a date.
-  const re = new RegExp(`(^|[^0-9.])${esc}([^0-9.]|$)`);
-  let grab = false;
-  const out = [];
-  for (const line of lines) {
-    if (/^##\s/.test(line)) {
-      if (grab) break; // next version heading ends the section
-      if (re.test(line)) {
-        grab = true;
-        continue;
-      }
-    }
-    if (grab) out.push(line);
-  }
-  return out.join("\n").trim();
+  return sectionFor(md, ver);
 }
 
 const section = changelogSection(pkg.dir, version);
@@ -141,34 +131,12 @@ function classifyBump(sec, dir, ver) {
 }
 const bump = classifyBump(section, pkg.dir, version);
 
-// Pull clean bullets out of a CHANGELOG section: drop the changeset hash, and
-// merge wrapped continuation lines back into their bullet (keep-a-changelog
-// style wraps long bullets across indented lines).
-function highlights(raw) {
-  const bullets = [];
-  for (const line of raw.split("\n")) {
-    const m = line.match(/^\s*[-*]\s+(.*)$/);
-    if (m) {
-      bullets.push(m[1].replace(/^[0-9a-f]{7,}:\s*/i, "").trim());
-    } else if (bullets.length && /^\s+\S/.test(line)) {
-      // Indented continuation of the previous bullet (keep-a-changelog wraps long
-      // bullets). Only indented lines merge — flush-left prose is left alone.
-      bullets[bullets.length - 1] += " " + line.trim();
-    }
-  }
-  const cleaned = bullets.map((b) => b.trim()).filter(Boolean);
-  return cleaned.length ? cleaned : ["See the full changelog for details."];
-}
-// Strip markdown emphasis for plain-text contexts (titles, social posts).
-const plain = (s) =>
-  s
-    .replace(/[*_`]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
 const bullets = highlights(section);
-// The lead bullet is the headline (title + hook). Drop trailing sentence punctuation
-// so it reads as a title, not a sentence — the full bullet still carries its period.
-const headline = plain(bullets[0]).replace(/[.;,\s]+$/, "");
+// The lead entry is the headline source. `highlights` keeps each paragraph of a
+// changeset brief separate and `headlineFrom` stops at the first sentence and
+// clamps: a run-on title is what broke the geoalgeria 2.1.0 announcement
+// ("Title is too long (maximum is 256 characters)").
+const headline = headlineFrom(bullets, tag);
 
 // --- Best-effort "what's inside" totals (flagship dataset only) -------------
 function datasetTotals() {
@@ -193,9 +161,11 @@ const install = name === "geoalgeria" ? `npm install geoalgeria` : `npm install 
 // Only the flagship dataset ships a SQL dump; the scoped data packages ship CSV + GeoJSON.
 const bundles = name === "geoalgeria" ? "CSV / GeoJSON / SQL" : "CSV and GeoJSON";
 const allFormats = name === "geoalgeria" ? "JSON/CSV/GeoJSON/SQL/TypeScript" : "JSON/CSV/GeoJSON/TypeScript";
-// The headline IS bullets[0] and now leads the body as the `##` title, so don't
-// repeat it in the list below (keep it only if it's the sole bullet).
-const bulletList = (bullets.length > 1 ? bullets.slice(1) : bullets)
+// Every entry is listed, lead entry included: the title is only that entry's
+// FIRST SENTENCE, so dropping it would lose the rest of the paragraph. It is
+// skipped only when the title already says all of it.
+const bulletList = bullets
+  .filter((b, i) => !(i === 0 && plain(b).replace(/[.;,\s]+$/, "") === headline))
   .map((b) => `- ${b}`)
   .join("\n");
 
@@ -246,6 +216,15 @@ First comment (link):
 npm: ${npmUrl} · Release: ${releaseUrl}
 `;
 
+// Never auto-announce when no CHANGELOG section matched (the headline would be the
+// "See the full changelog" fallback); that would post an empty/junk Discussion.
+const announceWorthy = bump !== "patch" && section.trim().length > 0;
+
+// A dry run renders everything and posts nothing: announce.yml reads `dryRun`
+// from meta.json to skip the Discussion step, and the copy goes to stdout so a
+// rehearsal on an already-released tag shows exactly what would be posted.
+const dryRun = /^(1|true|yes)$/i.test(process.env.GEOALGERIA_DRY_RUN || "");
+
 const outDir = process.env.GEOALGERIA_OUT || ".release-notes";
 mkdirSync(outDir, { recursive: true });
 writeFileSync(join(outDir, "announcement.md"), discussion);
@@ -254,11 +233,14 @@ writeFileSync(join(outDir, "linkedin.md"), linkedin);
 // Emit machine-readable bits for the workflow (title, bump, whether to announce).
 writeFileSync(
   join(outDir, "meta.json"),
-  // Never auto-announce when no CHANGELOG section matched (headline would be the
-  // "See the full changelog" fallback) — avoids posting an empty/junk Discussion.
-  JSON.stringify({ tag, name, version, bump, headline, announceWorthy: bump !== "patch" && section.trim().length > 0 }, null, 2),
+  JSON.stringify({ tag, name, version, bump, headline, dryRun, announceWorthy }, null, 2),
 );
 
 console.log(`Announce kit for ${tag} (${bump}) written to ${outDir}/`);
-console.log(`  headline: ${headline}`);
-console.log(`  announceWorthy: ${bump !== "patch"} (Discussion auto-posts on minor/major only)`);
+console.log(`  headline: ${headline} (${headline.length} chars)`);
+console.log(`  announceWorthy: ${announceWorthy} (Discussion auto-posts on minor/major only)`);
+if (dryRun) {
+  console.log(`\nDRY RUN: nothing is posted. The Discussion would be:\n`);
+  console.log(`title: ${headline}`);
+  console.log(`---\n${discussion}---`);
+}

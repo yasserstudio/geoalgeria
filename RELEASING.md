@@ -199,7 +199,13 @@ Bumps: **major** = breaking project change (package removed/renamed, schema brea
 
 The GitHub Release notes and the auto-generated announcements both read from each
 package's `CHANGELOG.md`. Write changeset notes so the **first bullet is a
-human-readable headline** (it becomes the announcement title and social hook).
+human-readable headline** (its **first sentence** becomes the Release title, the
+announcement title and the social hook, so make that sentence stand alone). Both
+titles come from the same clamp in
+[`scripts/lib/release-copy.mjs`](scripts/lib/release-copy.mjs): the first
+sentence of the lead entry, cut at a word boundary past 120 characters, well
+under GitHub's hard limit of 256. A changeset brief continued in indented
+paragraphs is fine, each paragraph becomes its own body entry.
 The canonical structure + a worked example is in
 [`.github/RELEASE_TEMPLATE.md`](.github/RELEASE_TEMPLATE.md); the Discussion/social
 copy built from it lives in `.agents/release-notes-templates.md` (local, gitignored).
@@ -222,6 +228,25 @@ Run it manually for any tag from the Actions tab (workflow_dispatch), or locally
 ```bash
 GEOALGERIA_TAG="geoalgeria@1.2.0" pnpm announce   # writes .release-notes/
 ```
+
+**Rehearse with a dry run.** The dispatch has a `dry_run` checkbox: it builds the
+kit, prints the exact Discussion title and body into the job summary, and posts
+nothing. Locally the same switch is an env flag:
+
+```bash
+GEOALGERIA_DRY_RUN=1 GEOALGERIA_TAG="geoalgeria@2.1.0" pnpm announce
+```
+
+Use it on an already-released tag before trusting a new changeset shape, and read
+the headline the run prints with its character count.
+
+> ⚠️ **A run-on headline fails the post, it is not trimmed.** `geoalgeria` 2.1.0
+> (run 36244148854, 2026-09-26): the announcer merged every indented paragraph of
+> the changeset brief into the lead bullet, so `createDiscussion` got a
+> 2,705-character title and answered `Title is too long (maximum is 256
+> characters)`; the step exited 1, nothing was posted, and Discussion #225 was
+> written by hand. The headline is clamped since, and
+> `test/announce-copy.test.mjs` pins it on that same changeset.
 
 > Timing: the GitHub Release (and thus the announcement) is cut at **stage**
 > time, before npm goes live. Approve the staged packages promptly so the
