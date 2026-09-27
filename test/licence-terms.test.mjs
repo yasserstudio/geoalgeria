@@ -61,6 +61,173 @@ test("an ODbL dataset must declare MIT AND ODbL-1.0 and carry the URL in the Dat
   assert.match(silent[0], /LICENSE/);
 });
 
+// The real shape of the only mixed package: the `## Data` section states the MIT
+// bulk, then lists each ODbL carve-out as a `- ` bullet naming the data paths it
+// covers, and points at NOTICE for the per-part attribution.
+const MIXED_LICENCE =
+  `## Code\n\n${MIT_TEXT}\n## Data\n\n` +
+  `The compilation is MIT: https://opensource.org/licenses/MIT\n\n` +
+  `Two OpenStreetMap-derived parts are ODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n\n` +
+  "- The 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`,\n" +
+  "  derived from OpenStreetMap `admin_level=4` relations.\n" +
+  "- 62 commune centre coordinates, repeated in `data/algeria.json`,\n" +
+  "  `data/communes_w*.json` and `data/csv/communes.csv`.\n\n" +
+  "Per-part attribution: NOTICE.\n";
+
+const MIXED_NOTICE =
+  "geoalgeria data notices\n\n(c) OpenStreetMap contributors\n" +
+  "https://opendatacommons.org/licenses/odbl/1-0/\n\n" +
+  "1. Wilaya boundary polygons\n\n   data/geojson/wilaya-boundaries.geojson, 69 features.\n\n" +
+  "2. Commune centre coordinates\n\n   62 of the 1,541 values, carried by data/algeria.json,\n" +
+  "   data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json\n" +
+  "   and data/csv/communes.csv.\n";
+
+test("a dataset that is MIT except for an ODbL part carries both URLs and names each part", () => {
+  const mixed = {
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["dataset-metadata.json", "NOTICE", "data/**/*.json"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText: MIXED_LICENCE,
+    noticeText: MIXED_NOTICE,
+    members: [],
+  };
+  assert.deepEqual(licenceTermsErrors(mixed), []);
+
+  // The bug the array exists for: an ODbL part under a manifest still saying plain MIT.
+  const stale = licenceTermsErrors({ ...mixed, manifest: { ...mixed.manifest, license: "MIT" } });
+  assert.equal(stale.length, 1);
+  assert.match(stale[0], /MIT AND ODbL-1\.0/);
+
+  // Naming one of the two licences is not the split: a consumer cannot tell what the
+  // missing one covers.
+  const halfStated = licenceTermsErrors({
+    ...mixed,
+    licenceText: `## Code\n\n${MIT_TEXT}\n## Data\n\nODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n\n- The 69 wilaya boundary polygons in \`data/geojson/wilaya-boundaries.geojson\`.\n`,
+  });
+  assert.equal(halfStated.length, 1);
+  assert.match(halfStated[0], /opensource\.org\/licenses\/MIT/);
+
+  // The array is not a place to list any two licences: only the MIT plus ODbL split
+  // the repository ships is known, and another pair is an error, not a silent pass.
+  const unknownPair = licenceTermsErrors({
+    ...mixed,
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://creativecommons.org/licenses/by/4.0/"],
+    },
+  });
+  assert.equal(unknownPair.length, 1);
+  assert.match(unknownPair[0], /licence-terms\.mjs/);
+});
+
+test("a mixed package with no NOTICE fails: the LICENSE points at nothing", () => {
+  const errors = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["NOTICE"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText: MIXED_LICENCE,
+    noticeText: null,
+    members: [],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /NOTICE: missing/);
+});
+
+test("a NOTICE outside files[] fails: it ships in git, not in the tarball", () => {
+  const errors = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["dataset-metadata.json", "data/**/*.json"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText: MIXED_LICENCE,
+    noticeText: MIXED_NOTICE,
+    members: [],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /files\[\] does not list "NOTICE"/);
+});
+
+test("a NOTICE that leaves one carve-out unnamed fails", () => {
+  // The fixture the rule exists for: NOTICE attributes the boundaries and says
+  // nothing about the commune centres, so that carved-out part ships with no
+  // attribution while the LICENSE claims ODbL over it.
+  const boundariesOnly =
+    "geoalgeria data notices\n\n(c) OpenStreetMap contributors\n" +
+    "https://opendatacommons.org/licenses/odbl/1-0/\n\n" +
+    "1. Wilaya boundary polygons\n\n   data/geojson/wilaya-boundaries.geojson, 69 features.\n";
+  const errors = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["NOTICE"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText: MIXED_LICENCE,
+    noticeText: boundariesOnly,
+    members: [],
+  });
+  assert.equal(errors.length, 3, errors.join("\n"));
+  for (const path of ["data/algeria.json", "data/communes_w", "data/csv/communes.csv"])
+    assert.ok(
+      errors.some((e) => e.includes(`does not name ${path}`)),
+      `expected a finding for ${path}, got:\n${errors.join("\n")}`,
+    );
+});
+
+test("a NOTICE without the ODbL URL fails: attribution with no terms", () => {
+  const errors = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["NOTICE"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText: MIXED_LICENCE,
+    noticeText: MIXED_NOTICE.replace("https://opendatacommons.org/licenses/odbl/1-0/\n", ""),
+    members: [],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /does not carry https:\/\/opendatacommons/);
+});
+
+test("a mixed LICENSE that enumerates no carve-out fails", () => {
+  // Prose alone cannot be checked part by part, so the carve-outs must be listed.
+  const errors = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["NOTICE"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText:
+      `## Code\n\n${MIT_TEXT}\n## Data\n\nMostly MIT: https://opensource.org/licenses/MIT\n` +
+      `Some of it ODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n`,
+    noticeText: MIXED_NOTICE,
+    members: [],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /lists no "- " carve-out bullet/);
+});
+
+test("a carve-out bullet that names no data path fails", () => {
+  const errors = licenceTermsErrors({
+    name: "dataset",
+    manifest: { license: "MIT AND ODbL-1.0", files: ["NOTICE"] },
+    metadata: {
+      license: ["https://opensource.org/licenses/MIT", "https://opendatacommons.org/licenses/odbl/1-0/"],
+    },
+    licenceText:
+      `## Code\n\n${MIT_TEXT}\n## Data\n\nThe compilation is MIT: https://opensource.org/licenses/MIT\n` +
+      `Two parts are ODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n\n` +
+      "- Some of the geometry, from OpenStreetMap.\n",
+    noticeText: MIXED_NOTICE,
+    members: [],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /names no `data\/\.\.\.` path/);
+});
+
 test("an unknown data licence URL is an error naming the URL", () => {
   const errors = licenceTermsErrors({
     name: "tourisme",
@@ -269,6 +436,7 @@ test("every package in the repository satisfies its licence class", () => {
         manifest,
         metadata: existsSync(metadataPath) ? JSON.parse(readFileSync(metadataPath, "utf-8")) : null,
         licenceText: readFileSync(join(dir, "LICENSE"), "utf-8"),
+        noticeText: existsSync(join(dir, "NOTICE")) ? readFileSync(join(dir, "NOTICE"), "utf-8") : null,
         members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
       }),
     );

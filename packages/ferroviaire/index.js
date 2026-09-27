@@ -1,4 +1,4 @@
-// @geoalgeria/ferroviaire — loaders for Algeria's rail & urban-transit network.
+// @geoalgeria/ferroviaire: loaders for Algeria's rail & urban-transit network.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

@@ -12,8 +12,8 @@
 
 </div>
 
-Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **178 lignes**,
-**76 tracés**, **128 directions** et **1 603 stations** pour 15 exploitants. En JSON,
+Les **lignes** de bus urbains et suburbains d'Algérie. Cette version livre **184 lignes**,
+**76 tracés**, **128 directions** et **1 603 stations** pour 16 exploitants. En JSON,
 CSV et GeoJSON. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
@@ -27,7 +27,7 @@ npm install @geoalgeria/buses
 
 ```js
 import buses from "@geoalgeria/buses";
-const all = buses.lines();                    // 178
+const all = buses.lines();                    // 184
 const etusa = buses.linesByOperator("ETUSA"); // 76
 const trace = buses.shapeForLine("etusa-1");
 ```
@@ -36,7 +36,7 @@ const trace = buses.shapeForLine("etusa-1");
 
 | Jeu de données | Nombre | Notes |
 | --- | --- | --- |
-| Lignes | **178** | 15 exploitants ; lignes officielles sans tracé conservées dans l'annuaire |
+| Lignes | **184** | 16 exploitants ; lignes officielles sans tracé conservées dans l'annuaire |
 | Tracés OSM | **76** | 61 ETUSA + 15 lignes des autres exploitants |
 | Directions | **128** | Relations OSM sources |
 | Stations | **1 603** | Nœuds OSM, noms nuls conservés |
@@ -49,10 +49,18 @@ terminus n'est déduit automatiquement.
 
 Les attributs ETUSA issus de **fr.wikipedia** sont sous **CC BY-SA 4.0**. Les tracés,
 directions et stations OpenStreetMap sont sous **ODbL 1.0**, attribution
-**© OpenStreetMap contributors**. Les faits de 12 exploitants cités dans
+**© OpenStreetMap contributors**. Les faits de 14 exploitants cités dans
 [NOTICE](NOTICE) sont extraits de sources officielles sans licence ouverte déclarée ; les cartes Google de
-Béjaïa, les schémas de M'Sila et les images de tracé de Sidi Bel Abbès servent uniquement
-à la validation et leur géométrie n'est pas redistribuée. Les départs complets de Sidi
+Béjaïa, les schémas de M'Sila, les images de tracé de Sidi Bel Abbès et les graphiques
+ETUS-C Constantine servent uniquement
+à la validation et leur géométrie n'est pas redistribuée. Les 25 lignes de Constantine
+sont transcrites de deux graphiques de l'exploitant fournis par le propriétaire du
+projet et restent en annuaire seul, sans tracé, sans arrêts intermédiaires et sans horaires.
+Les identités, terminus arabes et séquences d'arrêts ordonnées de Skikda viennent du site
+de l'exploitant, lu dans un navigateur par le propriétaire du projet car le certificat TLS
+du site avait expiré : les six lignes partent toutes de la place ساحة الشهداء au centre-ville,
+`stops` porte la longueur de la séquence publiée, et la plage de service 06:00 à 19:00,
+qui vaut pour le réseau entier, n'est pas publiée comme horaires par ligne. Les départs complets de Sidi
 Bel Abbès sont transcrits du HTML officiel fourni par le propriétaire du projet ; les
 jours non indiqués restent explicitement inconnus.
 Le code est sous [MIT](LICENSE) ; voir [NOTICE](NOTICE).

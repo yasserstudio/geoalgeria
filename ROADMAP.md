@@ -21,31 +21,38 @@ reads as further along than it is.
 ## Aviation
 
 - [ ] **Scheduled flight duration per route.** Asked for on the route card and
-  refused, correctly: there is no duration field, and **0 of 122** routes in
+  refused, correctly: there is no duration field, and **0 of 142** routes in
   `research/_flight-routes/route-dataset.json` carry one. The great-circle
   duration check used during verification was computed and discarded. Deriving a
   duration from distance would put a fabricated number beside sourced ones. Wants
   scheduled block times collected per route from a citable source.
   _(logged 2026-07-28)_
 
-- [ ] **64 routes are `listed` rather than `verified`,** and 69 pairs are
-  one-directional (an outbound leg with no recorded return; was 70 before the
-  LYS -> TLM return verified on 2026-07-29). `listed` means a published table
-  names the carrier serving the pair without confirming Air Algérie operates
-  it. The screen + confirm pipeline exists now
+- [ ] **66 rows are `listed` rather than `verified`,** and 70 legs are
+  one-directional (an outbound with no recorded return). `listed` means a
+  published table names the carrier serving the pair without confirming Air
+  Algérie operates it. The screen + confirm pipeline exists now
   (`research/_flight-routes/screen_returns_soar.py`, hypotheses only, then
   citable confirmation); open-ended collection, better run as background.
-  _(logged 2026-07-28, updated 2026-07-29)_
+  _(logged 2026-07-28, counts refreshed 2026-09-27)_
 
-- [ ] **Disputed: `blj-cdg` may actually serve Orly.** The verified record
-  cites aeroroutes' homepage (which names nothing by itself), and 2026-07-29
-  live operations showed AH1120 landing at ORY and AH1121 flying ORY -> BLJ.
-  parisaeroport.fr sits behind a bot-check that blocks automated fetches; a
-  human browser session on its Batna flight search settles it in a minute. If
-  Orly confirms: correct blj-cdg to blj-ory, add ory-blj, and replace the
-  citation with the page that names the airport. Detail in
-  `research/_flight-routes/verification-2026-07-29.md`.
-  _(logged 2026-07-29)_
+- [x] **Settled: `blj-cdg` was Orly all along.** Three independent
+  flight-tracking aggregators name ORY for both AH1120 and AH1121 and nothing
+  current names CDG, which is section 9's Reported tier. So `blj-cdg` is
+  corrected to `blj-ory`, the `ory-blj` return leg ships, each direction cites
+  its own route page, and the Wikipedia row for the old pair is guarded so the
+  table cannot re-add it. parisaeroport.fr still blocks automated fetches and its
+  Air Algérie page names no city, so the hoped-for single official source was
+  never obtained. Detail in
+  `research/_flight-routes/verification-2026-09-27.md`.
+  _(logged 2026-07-29, resolved 2026-09-27)_
+
+- [ ] **`alg-ber` / `ber-alg` move from Monday to Sunday on 25 Oct 2026.** The
+  winter programme keeps the Algiers-Berlin weekly nonstop and changes its day
+  ([visa-algerie, 20 Sep 2026](https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/)).
+  `days: ["mon"]` is right for the 2026-09-27 snapshot, so this is a one-line edit
+  plus an `as_of` bump at the next pass, not a correction to make now.
+  _(logged 2026-09-27)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes
@@ -249,6 +256,18 @@ reads as further along than it is.
   the rest are evidence-only), the ETUSA network API probed 2026-09-03
   (validation-only, see `research/buses/ETUSA-API-PROBE.md`), and Constantine
   (ETUSC), whose page is login-walled.
+
+  **Update 2026-09-27:** Constantine and Skikda are no longer gaps. 25 reviewed
+  ETUS-C route identities landed from owner-supplied numbered route graphics,
+  and 6 ETUS Skikda Lines from the Operator's own website page, both with no
+  inferred geometry, taking the package to **184 Lines across 16 Operators**;
+  shapes, Directions, Stations and memberships stay at **76, 128, 1,603 and
+  2,685**. Released as `@geoalgeria/buses` **2.2.0**. Skikda is the first
+  Operator to publish complete ordered stop sequences for every Line, so it is
+  the best candidate for the next geometry pass: the stop names are committed as
+  Source evidence and only need coordinates. The remaining directory levers are
+  unchanged: an ETO Oran numbered Line list, and the validation-only ETUSA
+  network API.
 
 - [ ] **Intercity bus schedules are a licence problem, not a scraping
   problem.** ETUSA is Algiers **urban** transport only, so the OSM re-extraction

@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/emploi (schema v2).
-// ANEM employment agencies — AWEM at wilaya level, ALEM at local level (anem.dz).
+// ANEM employment agencies: AWEM at wilaya level, ALEM at local level (anem.dz).
 // Records follow the canonical GeoRecord contract (zero-padded string
 // wilaya_code, geo_precision/geo_method/source) plus the agency fields below.
 
@@ -7,13 +7,13 @@
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. `null` on an ungeocoded record — no method
+/** How the coordinate was obtained. `null` on an ungeocoded record: no method
  *  produced a point, so none can be named. */
 export type GeoMethod = "anem" | null;
 
 /** A wilaya-level employment agency (AWEM). */
 export interface Awem {
-  /** Stable id, unique within this file. Opaque — do not parse. */
+  /** Stable id, unique within this file. Opaque: do not parse. */
   id: string;
   /** Agency name. */
   name: string;
@@ -24,16 +24,16 @@ export interface Awem {
   commune_code: string | null;
   /** Commune name. Currently null for every AWEM; see `commune_code`. */
   commune: string | null;
-  /** Latitude — AWEM agencies are fully geocoded. */
+  /** Latitude: AWEM agencies are fully geocoded. */
   lat: number;
-  /** Longitude — AWEM agencies are fully geocoded. */
+  /** Longitude: AWEM agencies are fully geocoded. */
   lng: number;
   /** `"exact"`, or `"approximate"` where the source coordinate is too coarse
    *  to be a per-agency point (see `@geoalgeria/schema` MIN_EXACT_DECIMALS). */
   geo_precision: "exact" | "approximate";
   /** Always `"anem"`: the point comes from the ANEM directory. */
   geo_method: "anem";
-  /** Provenance key into `metadata.sources[]` — always "anem". */
+  /** Provenance key into `metadata.sources[]`: always "anem". */
   source: "anem";
   /** Record type discriminator. */
   type: "AWEM";
@@ -53,7 +53,7 @@ export interface Awem {
 
 /** A local employment agency (ALEM). */
 export interface Alem {
-  /** Stable id, unique within this file. Opaque — do not parse. */
+  /** Stable id, unique within this file. Opaque: do not parse. */
   id: string;
   /** Agency name. */
   name: string;
@@ -72,7 +72,7 @@ export interface Alem {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "anem". */
+  /** Provenance key into `metadata.sources[]`: always "anem". */
   source: "anem";
   /** Record type discriminator. */
   type: "ALEM";
@@ -109,7 +109,7 @@ export interface EntityRef {
   count: number;
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus ANEM stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus ANEM stats. */
 export interface Metadata {
   package: "@geoalgeria/emploi";
   schema_version: string;
@@ -143,7 +143,7 @@ export interface Metadata {
 export function awem(): Awem[];
 /** All local agencies (ALEM). */
 export function alem(): Alem[];
-/** AWEM and ALEM combined (AWEM first). Ids are unique across the merged set —
+/** AWEM and ALEM combined (AWEM first). Ids are unique across the merged set;
  *  narrow on `type`. */
 export function agencies(): Array<Awem | Alem>;
 /** Dataset metadata. */

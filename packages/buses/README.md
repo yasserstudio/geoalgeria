@@ -2,8 +2,8 @@
 
 # @geoalgeria/buses
 
-Reviewed urban and suburban bus data for Algeria. This release contains **178 Lines**
-from 15 Operators, **76 drawable shapes**, **128 Directions**, and **1,603 Stations**.
+Reviewed urban and suburban bus data for Algeria. This release contains **184 Lines**
+from 16 Operators, **76 drawable shapes**, **128 Directions**, and **1,603 Stations**.
 
 ```bash
 npm install @geoalgeria/buses
@@ -12,7 +12,7 @@ npm install @geoalgeria/buses
 ```js
 import buses from "@geoalgeria/buses";
 
-const lines = buses.lines();                  // 178
+const lines = buses.lines();                  // 184
 const shape = buses.shapeForLine("etusa-1");
 const stops = buses.stationsByLine("etusa-1");
 const directions = buses.directionsByLine("etusa-1");
@@ -23,11 +23,13 @@ const directions = buses.directionsByLine("etusa-1");
 | Operator | Lines | Shapes |
 | --- | ---: | ---: |
 | ETUSA (Alger) | 76 | 61 |
+| ETUS-C Constantine | 25 | 0 |
 | ETUS Aïn Defla | 16 | 1 |
 | ETUS Tlemcen | 10 | 0 |
 | ETUS Sidi Bel Abbès | 8 | 0 |
 | ETUS Tiaret | 7 | 7 |
 | ETUS Annaba | 6 | 0 |
+| ETUS Skikda | 6 | 0 |
 | ETUSTO (Tizi Ouzou) | 5 | 3 |
 | ETUS Béjaïa | 5 | 0 |
 | ETUS Setif | 5 | 3 |
@@ -46,12 +48,12 @@ validation-only official geometry are not published as shapes.
 
 ## Files
 
-- `data/lines.json` and `data/csv/lines.csv` — 178 Lines
-- `data/shapes.json` and `data/geojson/shapes.geojson` — 76 MultiLineString shapes
-- `data/directions.json` — 128 source OSM Direction relations
-- `data/stations.json`, CSV and GeoJSON — 1,603 Station nodes
-- `data/station-memberships.json` — 2,685 ordered relation memberships
-- `data/operators.json` — 15 Operators
+- `data/lines.json` and `data/csv/lines.csv`: 184 Lines
+- `data/shapes.json` and `data/geojson/shapes.geojson`: 76 MultiLineString shapes
+- `data/directions.json`: 128 source OSM Direction relations
+- `data/stations.json`, CSV and GeoJSON: 1,603 Station nodes
+- `data/station-memberships.json`: 2,685 ordered relation memberships
+- `data/operators.json`: 16 Operators
 
 Membership order is the raw OSM relation member order and carries
 `sequence_status: "osm_member_order_unvalidated"`. It is **not** a validated passenger
@@ -71,12 +73,21 @@ includes the Overpass queries, retrieval interval, upstream response hashes, and
 of the promoted selection, so regeneration is offline and reproducible.
 
 ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila, ETUS Sidi Bel Abbès, ETUS Setif,
-ETUS Aïn Defla, ETUS Annaba, ETUS Tlemcen, ETO Oran, ETUS Oum El Bouaghi, and
-ETUL Laghouat Line facts come from official Operator pages, APIs, programs, and
-maps. Sidi Bel Abbès includes complete bidirectional
+ETUS Aïn Defla, ETUS Annaba, ETUS Tlemcen, ETO Oran, ETUS Oum El Bouaghi,
+ETUS-C Constantine, ETUS Skikda, and ETUL Laghouat Line facts come from official
+Operator pages, APIs, programs, and maps. Sidi Bel Abbès includes complete bidirectional
 departure lists from owner-supplied official HTML; the page did not state their service
-days, so `days` remains `null`. Béjaïa embedded maps, M'Sila route diagrams, and Sidi Bel
-Abbès route images and Setif announcement artwork are validation-only; their geometry is not redistributed.
+days, so `days` remains `null`. Constantine route identities and Arabic endpoints are transcribed from two
+owner-supplied Operator graphics, a route list and a schematic network map; the 25
+Lines are directory-only, with no shape, no intermediate Stations and no schedules.
+Skikda identities, Arabic termini and complete ordered Arabic stop sequences come from
+the Operator's own website, read in a browser by the project owner because the site
+served an expired TLS certificate; all six Lines start at the city-centre square
+ساحة الشهداء, `stops` carries the published sequence length, and the network-wide
+06:00 to 19:00 service window is not published as per-Line service hours.
+Béjaïa embedded maps, M'Sila route diagrams, Sidi Bel
+Abbès route images, Setif announcement artwork and the Constantine graphics are
+validation-only; their geometry is not redistributed.
 The official source materials do not state an open reuse licence.
 
 Package code is MIT. Data licences and attribution requirements are detailed in

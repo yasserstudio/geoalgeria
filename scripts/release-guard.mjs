@@ -7,9 +7,15 @@
  *
  * Usage: node scripts/release-guard.mjs <pkgDir> <version> <tag> [ref]
  *
- * Exit codes, so the workflow can tell a skip from a breakage:
+ * Exit codes, so the workflow can tell a routine skip from one worth shouting
+ * about. The two used to be one code, which hid the second case entirely:
  *   0  release it: the version is committed at <ref> and has a CHANGELOG section
- *   3  skip it: one of those is not true yet (the normal pending-Version-PR case)
+ *   3  routine skip: the version is not on main yet, so npm published nothing
+ *      either and the Release is cut on the push that merges the Version PR
+ *   4  skip, but WARN: the version IS committed at <ref>, so it stages and goes
+ *      live on npm, yet no Release can be cut (missing/empty CHANGELOG section, or
+ *      a tree the guard cannot read). A published version with no Release behind
+ *      it. The workflow turns this into a ::warning::.
  *   2  usage error
  */
 
@@ -34,7 +40,7 @@ const showAtRef = (path) => {
   }
 };
 
-const { releasable, reason } = releaseVerdict({
+const { releasable, kind, reason } = releaseVerdict({
   tag,
   version,
   packageJson: showAtRef(`${pkgDir}/package.json`),
@@ -46,5 +52,6 @@ if (releasable) {
   console.log(`release guard ok: ${reason}`);
   process.exit(0);
 }
-console.log(`release guard skip: ${reason}`);
-process.exit(3);
+
+console.log(`release guard skip (${kind}): ${reason}`);
+process.exit(kind === "pending-version-pr" ? 3 : 4);

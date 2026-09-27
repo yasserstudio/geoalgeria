@@ -24,7 +24,7 @@ import transport from "@geoalgeria/transport";
 transport.aviation.airports();          // civil airports (ANAC)
 transport.ferroviaire.stations();       // rail / tram / metro (SNTF / SETRAM / SEMA)
 transport.garesRoutieres.stations();    // intercity bus stations (SOGRAL)
-transport.buses.lines();                // urban & suburban bus networks (14 Operators)
+transport.buses.lines();                // urban & suburban bus networks (16 Operators)
 
 // or import a member directly:
 import { ferroviaire } from "@geoalgeria/transport";
@@ -37,7 +37,7 @@ import { ferroviaire } from "@geoalgeria/transport";
 | `aviation` | [`@geoalgeria/aviation`](https://www.npmjs.com/package/@geoalgeria/aviation) | Civil airports (ANAC) |
 | `ferroviaire` | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | Rail, tram & metro (SNTF / SETRAM / SEMA) |
 | `garesRoutieres` | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | Intercity bus stations (SOGRAL) |
-| `buses` | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Urban & suburban bus networks (14 Operators) |
+| `buses` | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | Urban & suburban bus networks (16 Operators) |
 
 Prefer a single dataset? Install just that member. This umbrella is for when you want the
 whole sector.

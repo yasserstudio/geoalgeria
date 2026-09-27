@@ -65,7 +65,7 @@ const V1_HOLDOUTS = {
 };
 
 const NOTE =
-  "Every figure is copied from the package's own metadata.json — nothing is computed here. " +
+  "Every figure is copied from the package's own metadata.json; nothing is computed here. " +
   "`coverage` appears only where the package states an estimated universe, and always carries " +
   "the note saying which universe it divides by. Entries with schema_version null predate the " +
   "v2 data contract (see each package's README).";

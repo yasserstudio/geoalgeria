@@ -1,0 +1,235 @@
+#!/usr/bin/env node
+// Cascade corrected flagship commune centres into the sector packages that
+// derive from them but cannot replay their own generator offline.
+//
+// WHY. `scripts/fix-commune-centres.mjs` moved 56 commune centres in
+// packages/dataset (research/_commune-centres/README.md). Two kinds of published
+// record are derived from those values and go stale the moment they move:
+//
+//   1. a coordinate that IS a commune centre, because the record has no point of
+//      its own (geo_method `commune_centroid` / `wilaya_centroid` / `commune`).
+//      Left alone it keeps pointing at a repudiated value: sante's EPH El Harrach
+//      sat 51.5 km away, inside wilaya 35.
+//   2. `wilaya_code` / `commune` / `commune_code` stamped by a nearest-commune-
+//      centroid join. A centre that moves 25 km stops being the nearest centroid
+//      for everything around its old position and starts being it around the new
+//      one.
+//
+// Most dependents rebuild from a capture their generator can replay and are
+// simply re-run (`node packages/<pkg>/scripts/fetch.mjs --cache`). The four
+// handled here cannot:
+//
+//   djezzy                     has no offline mode at all; only a live pull of
+//                              djezzy.dz feeds its generator.
+//   agriculture                was built by research/agriculture/geocode.py, which
+//                              predates the v2 contract and would emit the old shape.
+//   industrie-pharmaceutique   ships no generator; its data was assembled once from
+//                              the MIP fabrication register.
+//   sante                      replays, but its MSP capture re-pairs two FR/AR posts
+//                              once the corrected commune names land, which retires
+//                              two published ids (05-epsp-07, 16-ehs-14). Ids are
+//                              public join keys, so a coordinate correction is not
+//                              the release that churns them.
+//
+// WHAT EACH PACKAGE GETS
+//   sante, agriculture, industrie-pharmaceutique  recentre only. Their commune is
+//     matched from the source's own text (an MSP locality, a MADR address, an MIP
+//     commune column), not from geometry, so no attribution can move; only the
+//     coordinate they borrow from the commune has to follow it.
+//   djezzy  re-join. It stamps wilaya/commune by unrestricted nearest commune
+//     centroid over the flagship set, the join reproduced in nearestCommune() below.
+//
+// RECENTRE ANCHORS (also the rule scripts/validate-packages.mjs enforces)
+//   commune_code    the record names its commune by code: the anchor is that
+//                   commune's current centre.
+//   commune_name    the record names it in prose (`commune`, no code): the anchor
+//                   is the commune that name resolves to inside the declared
+//                   wilaya, via the canonical crosswalk. A name that does not
+//                   resolve is reported, never guessed at.
+//   repudiated      no usable anchor (agriculture's `wilaya_centroid` rows carry
+//                   commune: null by design). Those move only when the stored
+//                   coordinate is byte-equal to a value the corrections file
+//                   repudiates, and only to that row's replacement.
+//
+// USAGE
+//   node scripts/sync-commune-centroid-dependents.mjs            # report
+//   node scripts/sync-commune-centroid-dependents.mjs --write    # patch
+//   node scripts/sync-commune-centroid-dependents.mjs --check    # fail if stale
+
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+import {
+  MIGRATIONS,
+  committedDates,
+  padC,
+  readRetiredIds,
+  writePackageV2,
+} from "./lib/v2-transforms.mjs";
+import { canonicalCommuneForCode, canonicalCommuneForCurrentLabel } from "./lib/commune-index.mjs";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+const DATA = join(ROOT, "packages", "dataset", "data");
+const CORRECTIONS = join(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json");
+
+const WRITE = process.argv.includes("--write");
+const CHECK = process.argv.includes("--check");
+if (WRITE && CHECK) throw new Error("Choose either --write or --check");
+
+const DEG = Math.PI / 180;
+// 6 decimals is the repository's coordinate resolution (schema round6, ~0.1 m), and
+// the flagship keeps a handful of centres at 7, so every comparison is made on the
+// rounded value a published record can actually carry.
+const round6 = (n) => Number(n.toFixed(6));
+const samePoint = (lat, lng, c) => round6(c.latitude) === round6(lat) && round6(c.longitude) === round6(lng);
+
+// --- the flagship commune set, in both shapes its consumers read --------------
+// djezzy reads the three split files in that order, and the join is first-wins on
+// an exact distance tie, so the iteration order is part of the reproduced join.
+const SPLIT_FILES = ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"];
+
+function communesSplit() {
+  const out = [];
+  for (const f of SPLIT_FILES) {
+    for (const c of JSON.parse(readFileSync(join(DATA, f), "utf-8"))) {
+      if (Number.isFinite(c.latitude) && Number.isFinite(c.longitude)) out.push(c);
+    }
+  }
+  if (!out.length) throw new Error("no commune centroids loaded: check packages/dataset/data");
+  return out;
+}
+
+/** The unrestricted nearest-centroid join djezzy uses: equirectangular squared
+ *  distance, monotonic with great-circle distance at this scale. */
+function nearestCommune(lat, lng, communes) {
+  let best = null;
+  let bestD = Infinity;
+  const cosLat = Math.cos(lat * DEG);
+  for (const c of communes) {
+    const dx = (c.longitude - lng) * cosLat;
+    const dy = c.latitude - lat;
+    const d = dx * dx + dy * dy;
+    if (d < bestD) {
+      bestD = d;
+      best = c;
+    }
+  }
+  return best;
+}
+
+// --- the repudiated values, from the corrections file ------------------------
+const corrections = JSON.parse(readFileSync(CORRECTIONS, "utf-8"));
+if (corrections.corrections.length !== corrections.count) {
+  throw new Error(`corrections file says ${corrections.count} rows, carries ${corrections.corrections.length}`);
+}
+const repudiated = new Map(); // "lat,lng" of the old centre -> correction row
+for (const f of corrections.corrections) repudiated.set(`${round6(f.from[1])},${round6(f.from[0])}`, f);
+
+// --- what each package needs -------------------------------------------------
+const PACKAGES = [
+  { pkg: "sante", file: "sante.json", recentre: { commune_centroid: "commune_code" } },
+  {
+    pkg: "agriculture",
+    file: "agriculture.json",
+    recentre: { commune_centroid: "commune_code", wilaya_centroid: "repudiated" },
+  },
+  {
+    pkg: "industrie-pharmaceutique",
+    file: "industrie-pharmaceutique.json",
+    recentre: { commune_centroid: "commune_code" },
+  },
+  { pkg: "djezzy", file: "boutiques.json", rejoin: "split" },
+];
+
+const split = communesSplit();
+
+const report = [];
+let anyChange = false;
+
+for (const spec of PACKAGES) {
+  const dir = join(ROOT, "packages", spec.pkg, "data");
+  const path = join(dir, spec.file);
+  const rows = JSON.parse(readFileSync(path, "utf-8"));
+
+  let rejoined = 0;
+  if (spec.rejoin) {
+    for (const r of rows) {
+      if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
+      const c = nearestCommune(r.lat, r.lng, split);
+      const wilaya_code = String(c.wilaya_code).padStart(2, "0");
+      const commune_code = padC(c.code_commune);
+      if (r.wilaya_code === wilaya_code && r.commune_code === commune_code && r.commune === c.name_fr) continue;
+      r.wilaya_code = wilaya_code;
+      r.commune_code = commune_code;
+      r.commune = c.name_fr;
+      rejoined++;
+    }
+  }
+
+  let moved = 0;
+  let unresolved = 0;
+  for (const [method, anchorKind] of Object.entries(spec.recentre ?? {})) {
+    for (const r of rows) {
+      if (r.geo_method !== method) continue;
+      if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
+
+      if (anchorKind === "repudiated") {
+        const f = repudiated.get(`${round6(r.lat)},${round6(r.lng)}`);
+        if (!f) continue;
+        r.lat = round6(f.to[1]);
+        r.lng = round6(f.to[0]);
+        moved++;
+        continue;
+      }
+
+      const anchor =
+        anchorKind === "commune_code"
+          ? r.commune_code == null
+            ? null
+            : canonicalCommuneForCode(r.commune_code)
+          : canonicalCommuneForCurrentLabel(r.wilaya_code, r.commune, r.commune_ar ?? r.commune);
+      if (!anchor) {
+        unresolved++;
+        continue;
+      }
+      if (samePoint(r.lat, r.lng, anchor)) continue;
+      // A record that declares commune-level precision but sits somewhere its
+      // commune never was is not this script's business to invent a point for;
+      // the honest value is the commune centre it already claims.
+      r.lat = round6(anchor.latitude);
+      r.lng = round6(anchor.longitude);
+      moved++;
+    }
+  }
+
+  // writePackageV2 owns the JSON/CSV/GeoJSON/metadata fan-out and validates the
+  // v2 contract before it writes anything, so an emit can never ship a shape the
+  // release gate would reject. It writes unconditionally, hence only under --write.
+  if (WRITE) {
+    const cfg = MIGRATIONS[spec.pkg];
+    const { updated, retrieved } = committedDates(dir);
+    writePackageV2({
+      pkg: spec.pkg,
+      dir,
+      files: [{ file: spec.file, rows }],
+      meta: cfg.meta,
+      updated,
+      retrieved,
+      retiredIds: readRetiredIds(dir),
+    });
+  }
+
+  report.push(
+    `${spec.pkg}/${spec.file}: ${moved} coordinate(s) recentred, ${rejoined} attribution(s) re-joined` +
+      (unresolved ? `, ${unresolved} row(s) with no resolvable commune anchor (left alone)` : ""),
+  );
+  if (moved || rejoined) anyChange = true;
+}
+
+console.log(`flagship centres repudiated by this release: ${corrections.count} (OSM ${corrections.timestamp_osm_base})`);
+for (const line of report) console.log(`  ${line}`);
+if (CHECK && anyChange) {
+  console.error("\ndependents are stale: run node scripts/sync-commune-centroid-dependents.mjs --write");
+  process.exit(1);
+}

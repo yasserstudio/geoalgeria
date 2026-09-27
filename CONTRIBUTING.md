@@ -110,6 +110,16 @@ Always cite a source for data changes. Accepted:
 - Interior Ministry publications
 - Wikipedia (secondary reference only)
 
+### Separators in metadata
+No em dash (U+2014) anywhere in published metadata. A source name reads
+`Operator: descriptor`, the DCAT `citation` joins a name and its licence with a
+comma, and a coverage note takes the colon or semicolon the sentence wants. Fix
+it in the generator that writes the field, never in the generated file:
+`pnpm validate` walks every `dataset-metadata.json`, `data/metadata.json` and
+`data/geojson/*.metadata.json` and fails on one
+([`scripts/lib/no-em-dash.mjs`](scripts/lib/no-em-dash.mjs)). A record's own
+`name` is a value, not prose, and is out of scope.
+
 ### Licence field
 Every package states its terms in three places that must agree: the manifest
 `license`, the package `LICENSE` file, and the data terms in
@@ -121,7 +131,22 @@ Every package states its terms in three places that must agree: the manifest
 | absent (code only) | `MIT` | the plain MIT text |
 | `license` is the MIT URL | `MIT` | the plain MIT text |
 | `license` is the ODbL 1.0 URL | `MIT AND ODbL-1.0` | `## Code` MIT, plus a `## Data` section carrying the ODbL URL |
+| `license` is an array of the MIT URL and the ODbL 1.0 URL | `MIT AND ODbL-1.0` | starts with `## Code` then the MIT text, plus a `## Data` section carrying both URLs and listing each non-MIT carve-out as a `- ` bullet naming the `data/...` paths it covers. Also needs a `NOTICE`, listed in `files[]`, carrying the ODbL URL and every one of those paths |
 | `conditionsOfAccess` | `SEE LICENSE IN LICENSE` | starts with `## Code` then the MIT text, plus a `## Data` section carrying `conditionsOfAccess` verbatim |
+
+The array class is for a package whose data is not all under one set of terms:
+the bulk under one licence and a named part under another, as `geoalgeria` ships
+MIT-licensed administrative divisions beside OpenStreetMap-derived geometry and
+coordinates. A single URL cannot say that, and picking the stricter one alone
+would relicense the rest, so the array carries both and the `LICENSE` and
+`NOTICE` say which part each one covers.
+
+It is the only class where the carve-out has to be enumerated, so it is the only
+one whose `NOTICE` is checked: the `LICENSE` sends a consumer there for the
+per-part attribution, so a missing `NOTICE`, a `NOTICE` left out of `files[]` (in
+git, absent from the npm tarball), a `NOTICE` without the ODbL URL, or a carved-out
+path the `NOTICE` never names all fail `pnpm validate`. A carve-out bullet that
+names no `data/...` path fails too: prose cannot be checked part by part.
 
 `pnpm validate` enforces this on every package, so a new licence class needs an
 entry in [`scripts/lib/licence-terms.mjs`](scripts/lib/licence-terms.mjs) before

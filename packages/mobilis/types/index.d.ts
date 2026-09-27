@@ -8,7 +8,7 @@
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. `null` on an ungeocoded record — no method
+/** How the coordinate was obtained. `null` on an ungeocoded record: no method
  *  produced a point, so none can be named. */
 export type GeoMethod = "mobilis" | "commune_centroid" | null;
 
@@ -18,7 +18,7 @@ export type ReviewStatus = "corrected";
 /** A geocoded Mobilis commercial agency. */
 export interface Agence {
   /** Stable id, prefixed `ag-` to stay unique alongside {@link Pdv} inside
-   *  {@link all}. Opaque — do not parse. */
+   *  {@link all}. Opaque: do not parse. */
   id: string;
   /** Agency name in French. */
   name: string;
@@ -31,15 +31,15 @@ export interface Agence {
   commune_code: string | null;
   /** Commune name when `commune_code` is available. */
   commune: string | null;
-  /** Latitude — agencies are fully geocoded. */
+  /** Latitude: agencies are fully geocoded. */
   lat: number;
-  /** Longitude — agencies are fully geocoded. */
+  /** Longitude: agencies are fully geocoded. */
   lng: number;
   /** Exact for operator points, approximate for a reviewed commune centroid. */
   geo_precision: "exact" | "approximate";
   /** Operator point or reviewed commune-centroid fallback. */
   geo_method: "mobilis" | "commune_centroid";
-  /** Provenance key into `metadata.sources[]` — always "mobilis". */
+  /** Provenance key into `metadata.sources[]`: always "mobilis". */
   source: "mobilis";
   /** Record type discriminator. */
   type: "agence";
@@ -59,12 +59,12 @@ export interface Agence {
   review_evidence?: string[];
 }
 
-/** An approved point of sale — a third-party resale partner, listed at commune
+/** An approved point of sale: a third-party resale partner, listed at commune
  *  level. The Mobilis locator publishes no coordinates for these, so they are
  *  density-only by design. */
 export interface Pdv {
   /** Stable id, prefixed `pdv-` to stay unique alongside {@link Agence} inside
-   *  {@link all}. Opaque — do not parse. */
+   *  {@link all}. Opaque: do not parse. */
   id: string;
   /** Point-of-sale name. */
   name: string;
@@ -75,15 +75,15 @@ export interface Pdv {
   commune_code: string | null;
   /** Commune name. */
   commune: string;
-  /** Always null — points of sale carry no coordinate. */
+  /** Always null: points of sale carry no coordinate. */
   lat: null;
-  /** Always null — points of sale carry no coordinate. */
+  /** Always null: points of sale carry no coordinate. */
   lng: null;
   /** Always null: `geo_precision` is null if and only if `lat`/`lng` are. */
   geo_precision: null;
-  /** Always null — no method produced a point, so none can be named. */
+  /** Always null: no method produced a point, so none can be named. */
   geo_method: null;
-  /** Provenance key into `metadata.sources[]` — always "mobilis". */
+  /** Provenance key into `metadata.sources[]`: always "mobilis". */
   source: "mobilis";
   /** Record type discriminator. */
   type: "pdv";
@@ -109,7 +109,7 @@ export interface EntityRef {
   count: number;
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus Mobilis stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus Mobilis stats. */
 export interface Metadata {
   package: "@geoalgeria/mobilis";
   schema_version: string;
@@ -118,7 +118,7 @@ export interface Metadata {
   title_en: string;
   /** Agencies + points of sale. */
   record_count: number;
-  /** Records with coordinates — the agencies only. */
+  /** Records with coordinates: the agencies only. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision` among geocoded records; ungeocoded records carry none. */
@@ -144,7 +144,7 @@ export function agences(): Agence[];
 /** All approved points of sale. */
 export function pdv(): Pdv[];
 /** Agencies and points of sale combined (agencies first). Ids are unique across
- *  the merged set — narrow on `type`. */
+ *  the merged set: narrow on `type`. */
 export function all(): Array<Agence | Pdv>;
 /** Dataset metadata. */
 export function metadata(): Metadata;

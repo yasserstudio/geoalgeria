@@ -1,4 +1,4 @@
-// Emit + numeric helpers — the canonical home for these (scripts/lib/build-utils.mjs
+// Emit + numeric helpers: the canonical home for these (scripts/lib/build-utils.mjs
 // re-exports from here in v2 so the CSV/GeoJSON logic lives in exactly one place).
 
 const DEG = Math.PI / 180;

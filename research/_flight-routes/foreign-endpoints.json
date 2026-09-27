@@ -57,7 +57,8 @@
     "lng": 35.9931983948,
     "type": "large_airport",
     "airline_city_label": "AMMAN",
-    "source": "ourairports"
+    "source": "ourairports",
+    "note": "Queen Alia. Nonstop ALG-AMM stays excluded, the probes return Royal Jordanian metal and no Air Algerie leg, but the announced Algiers-Kuwait-Amman-Algiers triangle makes AMM-ALG an Air Algerie leg, so the endpoint is in scope in that direction from 26 Oct 2026."
   },
   {
     "iata": "AYT",
@@ -244,7 +245,7 @@
     "type": "large_airport",
     "airline_city_label": "New Delhi",
     "source": "ourairports",
-    "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026."
+    "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026, then withdrew the authorization request (reported 12 Sep 2026). Kept as a candidate endpoint; with both planned legs gone nothing references it, so the dataset no longer emits it."
   },
   {
     "iata": "DJE",
@@ -433,6 +434,19 @@
     "type": "large_airport",
     "airline_city_label": "Kuala Lumpur",
     "source": "ourairports"
+  },
+  {
+    "iata": "KWI",
+    "icao": "OKKK",
+    "name": "Kuwait International Airport",
+    "municipality": "Kuwait City",
+    "country": "KW",
+    "lat": 29.224487,
+    "lng": 47.969813,
+    "type": "large_airport",
+    "airline_city_label": "Kuwait City",
+    "source": "ourairports",
+    "note": "Kuwait International, the country's only civil airport, so the city-to-airport choice is not a judgement. Not on the airline's destination page: added for the announced weekly Algiers-Kuwait-Amman-Algiers triangle from 26 Oct 2026."
   },
   {
     "iata": "LBV",
@@ -702,7 +716,7 @@
     "country": "FR",
     "lat": 47.153198,
     "lng": -1.61073,
-    "type": "medium_airport",
+    "type": "large_airport",
     "airline_city_label": "Nantes",
     "source": "ourairports"
   },
@@ -729,7 +743,7 @@
     "type": "large_airport",
     "airline_city_label": "PARIS",
     "source": "ourairports",
-    "note": "Paris is two endpoints, not one. Both are carried; which one a given route uses is a per-route finding. BLJ resolved to CDG on 2026-07-27."
+    "note": "Paris is two endpoints, not one. Both are carried; which one a given route uses is a per-route finding. BLJ was resolved to CDG on 2026-07-27 and corrected to ORY on 2026-09-27: AH1120/AH1121 operate at Orly, so Batna is an ORY route in both directions."
   },
   {
     "iata": "OUA",

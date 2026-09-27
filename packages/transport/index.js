@@ -1,4 +1,4 @@
-// @geoalgeria/transport — umbrella for Algeria's transport sector.
+// @geoalgeria/transport: umbrella for Algeria's transport sector.
 // Re-exports the member packages namespaced; install once to get them all.
 import aviation from "@geoalgeria/aviation";
 import ferroviaire from "@geoalgeria/ferroviaire";

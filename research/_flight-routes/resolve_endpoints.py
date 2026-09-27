@@ -47,7 +47,9 @@ ENDPOINTS = [
     {"city": "PARIS", "iata": "CDG", "country": "FR"},
     {"city": "PARIS", "iata": "ORY", "country": "FR",
      "note": "Paris is two endpoints, not one. Both are carried; which one a given "
-             "route uses is a per-route finding. BLJ resolved to CDG on 2026-07-27."},
+             "route uses is a per-route finding. BLJ was resolved to CDG on "
+             "2026-07-27 and corrected to ORY on 2026-09-27: AH1120/AH1121 operate "
+             "at Orly, so Batna is an ORY route in both directions."},
     {"city": "BORDEAUX", "iata": "BOD", "country": "FR"},
     {"city": "LILLE", "iata": "LIL", "country": "FR"},
     {"city": "LYON", "iata": "LYS", "country": "FR"},
@@ -125,7 +127,16 @@ ENDPOINTS = [
     {"city": "Monastir", "iata": "MIR", "country": "TN",
      "note": "Not on the airline's booking city list; surfaced by the route sweep."},
     {"city": "CAIRE", "iata": "CAI", "country": "EG"},
-    {"city": "AMMAN", "iata": "AMM", "country": "JO"},
+    {"city": "AMMAN", "iata": "AMM", "country": "JO",
+     "note": "Queen Alia. Nonstop ALG-AMM stays excluded, the probes return Royal "
+             "Jordanian metal and no Air Algerie leg, but the announced Algiers-"
+             "Kuwait-Amman-Algiers triangle makes AMM-ALG an Air Algerie leg, so the "
+             "endpoint is in scope in that direction from 26 Oct 2026."},
+    {"city": "Kuwait City", "iata": "KWI", "country": "KW",
+     "note": "Kuwait International, the country's only civil airport, so the "
+             "city-to-airport choice is not a judgement. Not on the airline's "
+             "destination page: added for the announced weekly Algiers-Kuwait-Amman-"
+             "Algiers triangle from 26 Oct 2026."},
     {"city": "BEYROUTH", "iata": "BEY", "country": "LB"},
     {"city": "DJEDDAH", "iata": "JED", "country": "SA",
      "note": "The JED-LOO arc's foreign end. LOO (Laghouat) shipped 2026-07-27."},
@@ -135,7 +146,10 @@ ENDPOINTS = [
     # --- Asia ---
     {"city": "Guangzhou", "iata": "CAN", "country": "CN"},
     {"city": "New Delhi", "iata": "DEL", "country": "IN",
-     "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026."},
+     "note": "Air Algerie filed three weekly ALG-DEL rotations from 25 Oct 2026, then "
+             "withdrew the authorization request (reported 12 Sep 2026). Kept as a "
+             "candidate endpoint; with both planned legs gone nothing references it, "
+             "so the dataset no longer emits it."},
     {"city": "Incheon", "iata": "ICN", "country": "KR",
      "note": "Planned Korea-Algeria link. July 2026 traffic-rights coverage names "
              "Incheon-Algiers, but the bilateral agreement permits regional airports."},

@@ -9,7 +9,7 @@
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 ---
 
@@ -133,7 +133,7 @@ sqlite3 mydb.sqlite < full.sql
 
 حمّل `data/geojson/communes.geojson` من هذا المستودع – GeoJSON قياسي، يعمل مع Leaflet، Mapbox، QGIS، إلخ.
 
-> **ملاحظة:** حزمة npm تحتوي على ملفات JSON فقط (للحفاظ على خفة الحجم). تصديرات **CSV وGeoJSON وSQL** موجودة في المستودع تحت `data/` ومرفقة كملف zip مع كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+> **ملاحظة:** منذ مراجعة الصحة في الإصدار v2، تحتوي حزمة npm على **JSON وCSV وGeoJSON وSQL**، فملف `data/geojson/communes.geojson` موجود في الحزمة أيضًا. وملف zip المرفق بكل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases) يحمل شجرة `data/` نفسها لمن لا يستخدم npm.
 
 ---
 
@@ -218,7 +218,7 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري – 692 عقدة قطار/ترام/مترو/تلفريك/قمرة (SNTF/SETRAM/SEMA)، تجميع Wikidata + OpenStreetMap، ثنائي اللغة |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية – 50 خط ETUSA (الجزائر) مع المحطات الطرفية وعدد المواقف والبلديات والمحطات المخدومة (مستوى الخط v1) |
 | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية – 171 مصنّعًا معتمدًا للأدوية والأجهزة الطبية من وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون جغرافيًا |
-| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3٬797 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
+| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3,797 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
 | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو – 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية؛ يُكمل ثلاثي الاتصالات |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة النقل – تثبّت aviation + ferroviaire + gares-routieres + buses في خطوة واحدة |
 | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة الصيدلة – تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
@@ -244,7 +244,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ## الرعاية
 
-GeoAlgeria مجاني وتحت رخصة MIT. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع جزأين بترخيص ODbL مذكورين أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -276,9 +276,21 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
 
 ---
 
-## الرخصة
+## الرخصة والإسناد
 
-MIT – مجاني للاستخدام الشخصي والتجاري.
+**شيفرة** الحزمة بترخيص [MIT](LICENSE)، وكذلك **التجميع**: الولايات والدوائر والبلديات
+وأسماؤها ثنائية اللغة والرموز البريدية والرموز الإدارية. مجاني للاستخدام الشخصي والتجاري.
+
+جزءان من البيانات مصدرهما **OpenStreetMap**، وهما **© مساهمو OpenStreetMap** وبترخيص
+**[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** بدلًا من ذلك:
+
+- الـ69 مضلّع حدود ولاية في `data/geojson/wilaya-boundaries.geojson`؛
+- 62 من أصل 1,541 إحداثية مركز بلدية، كل واحدة مأخوذة من علاقة `admin_level=8` الخاصة بالبلدية
+  نفسها (56 من عقدة `admin_centre` بتاريخ 2026-09-27، و6 من مركز العلاقة في الإصدار 2.1.0)،
+  في كل مكان تظهر فيه هذه القيم.
+
+عند استخدامك أو إعادة نشرك لأيٍّ من هذين الجزأين يجب **إسناد الفضل لمساهمي OpenStreetMap**
+وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق. الإسناد لكل جزء والصفوف المعنية في [NOTICE](NOTICE).
 
 صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

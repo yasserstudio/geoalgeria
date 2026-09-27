@@ -9,7 +9,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
 
 ---
 
@@ -133,7 +133,7 @@ sqlite3 mydb.sqlite < full.sql
 
 Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works with Leaflet, Mapbox, QGIS, etc.
 
-> **Note:** the npm package ships JSON only (to stay lightweight). The **CSV, GeoJSON, and SQL** exports live in the repo under `data/` and are bundled as a zip on every [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases).
+> **Note:** the npm package ships **JSON, CSV, GeoJSON and SQL** since the v2 correctness pass, so `data/geojson/communes.geojson` is in the tarball too. The [GitHub Release](https://github.com/yasserstudio/geoalgeria/releases) zip bundles the same `data/` tree for people who do not use npm.
 
 ---
 
@@ -244,7 +244,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free and MIT. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free, MIT code and an MIT compilation with two ODbL parts named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -271,14 +271,28 @@ Install `geoalgeria` via npm or download `data/ecommerce/communes.json` directly
 **What is the best Algeria geodata package for developers?**
 GeoAlgeria is the most complete option as of 2026, it is the only npm package with all 69 wilayas, postal codes, coordinates, dairas, and delivery zone templates in one install. CI-validated on every commit.
 
-**Liste des wilayas d'Algérie 2026, où trouver?**
-GeoAlgeria contient les 69 wilayas avec noms en français et arabe, codes postaux, et coordonnées GPS. Disponible en JSON, CSV, GeoJSON, et SQL. `npm install geoalgeria`
+**Where can I find the 2026 list of Algeria's wilayas?**
+GeoAlgeria carries all 69 wilayas with French and Arabic names, postal codes, and GPS coordinates. Available as JSON, CSV, GeoJSON, and SQL. `npm install geoalgeria`
 
 ---
 
-## License
+## License & attribution
 
-MIT, free for personal and commercial use.
+Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dairas, communes,
+their bilingual names, postal codes and administrative codes. Free for personal and commercial
+use.
+
+Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and are
+licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
+
+- the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
+- 62 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 6 from the relation
+  centroid in 2.1.0), wherever those values appear.
+
+If you use or redistribute either part you must **attribute OpenStreetMap contributors** and
+keep derived databases under a compatible licence. Per-part attribution and the affected rows
+are in [NOTICE](NOTICE).
 
 Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

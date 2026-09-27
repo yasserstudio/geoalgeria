@@ -10,34 +10,55 @@
  */
 
 import { execFileSync } from "node:child_process";
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { rewriteWorkspaceSpecs } from "./lib/workspace-deps.mjs";
+import { createManifestRestore, guardWithProcessSignals } from "./lib/manifest-restore.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+// Every manifest this run rewrote for the upload, put back on the way out. The
+// per-package `finally` below covers a throw and a normal return; it does NOT
+// run on a signal, and Ctrl-C during `npm stage publish` (the slow step, so the
+// likely moment) used to leave the resolved `"@geoalgeria/schema": "^1.1.1"` on
+// disk. Restores are idempotent, so the two paths cannot fight.
+const restores = createManifestRestore();
+guardWithProcessSignals(restores);
+
+const ALL_PACKAGE_DIRS = readdirSync(join(ROOT, "packages"))
+  .map((d) => `packages/${d}`)
+  .filter((p) => existsSync(join(ROOT, p, "package.json")))
+  .sort();
+
+const manifestOf = (pkg) => JSON.parse(readFileSync(join(ROOT, pkg, "package.json"), "utf8"));
+
+// Every workspace package's own version, including the private ones: a
+// `workspace:` spec can point at any of them and must resolve to real semver
+// before npm sees the manifest.
+const WORKSPACE_VERSIONS = new Map(ALL_PACKAGE_DIRS.map((p) => manifestOf(p)).map((m) => [m.name, m.version]));
 
 // Derive the publishable packages from the workspace so a newly added package is
 // never silently skipped (it would otherwise never stage on release). Every
 // non-private package dir under packages/ is a staging candidate.
-const PACKAGES = readdirSync(join(ROOT, "packages"))
-  .map((d) => `packages/${d}`)
-  .filter((p) => existsSync(join(ROOT, p, "package.json")) && !JSON.parse(readFileSync(join(ROOT, p, "package.json"), "utf8")).private)
-  .sort();
+const PACKAGES = ALL_PACKAGE_DIRS.filter((p) => !manifestOf(p).private);
 
 let staged = 0;
 let skipped = 0;
 const failed = [];
 
 for (const pkg of PACKAGES) {
-  const pkgJson = JSON.parse(readFileSync(join(ROOT, pkg, "package.json"), "utf8"));
+  const pkgJson = manifestOf(pkg);
   const { name, version } = pkgJson;
 
-  // Packages with workspace: deps (e.g. the transport umbrella) must NOT be
-  // published with npm — it ships the literal "workspace:^" spec and breaks
-  // installs. Only pnpm/changeset converts it. Skip here; release via `pnpm release`.
-  const hasWorkspaceDeps = Object.values(pkgJson.dependencies ?? {}).some((v) => String(v).startsWith("workspace:"));
-  if (hasWorkspaceDeps) {
-    console.log(`skip: ${name}@${version} (workspace: deps — publish via 'pnpm publish' / changeset, not npm; see RELEASING.md)`);
+  // The umbrellas (transport, pharma) re-export their siblings as RUNTIME
+  // dependencies and are published by hand with pnpm, so they have no Trusted
+  // Publisher entry and staging them would 401. Skip them here; see RELEASING.md.
+  const hasWorkspaceRuntimeDeps = Object.values(pkgJson.dependencies ?? {}).some((v) =>
+    String(v).startsWith("workspace:"),
+  );
+  if (hasWorkspaceRuntimeDeps) {
+    console.log(`skip: ${name}@${version} (workspace: runtime deps, an umbrella; publish via 'pnpm publish', not npm; see RELEASING.md)`);
     skipped++;
     continue;
   }
@@ -68,6 +89,35 @@ for (const pkg of PACKAGES) {
     continue;
   }
 
+  // npm uploads the manifest verbatim, so any surviving `workspace:` spec ships
+  // as the literal string and a consumer's resolver answers EUNSUPPORTEDPROTOCOL.
+  // Resolve them all to real semver first, the way pnpm would, and refuse the
+  // package outright if one cannot be resolved. This covers devDependencies,
+  // peerDependencies and optionalDependencies, not only `dependencies`: telecom,
+  // pharmacies and protection-civile each went live with
+  // `"@geoalgeria/schema": "workspace:^"` in devDependencies while the old check
+  // read `dependencies` alone.
+  const manifestPath = join(ROOT, pkg, "package.json");
+  const originalManifest = readFileSync(manifestPath, "utf8");
+  const { manifest: publishManifest, rewritten, unresolved } = rewriteWorkspaceSpecs(pkgJson, WORKSPACE_VERSIONS);
+  if (unresolved.length > 0) {
+    console.error(`FAILED to stage ${name}@${version}: unresolvable workspace: spec, refusing to publish it verbatim`);
+    for (const u of unresolved) console.error(`  ${u.field}.${u.name} = ${u.spec} (${u.reason})`);
+    failed.push(name);
+    continue;
+  }
+  if (rewritten.length > 0) {
+    for (const r of rewritten) {
+      console.log(`  rewrite: ${name} ${r.field}.${r.name} ${r.from} -> ${r.to}`);
+    }
+    // Registered BEFORE the write, so a signal landing between the two still
+    // finds the original.
+    restores.remember(manifestPath, originalManifest);
+    // Trailing newline: keep the file's shape so a restore is byte-identical in
+    // spirit and a stray failure leaves a normal package.json behind.
+    writeFileSync(manifestPath, `${JSON.stringify(publishManifest, null, 2)}\n`);
+  }
+
   console.log(`staging: ${name}@${version} (registry: ${registryVersion ?? "unpublished"})`);
   try {
     const out = execFileSync("npm", ["stage", "publish", "--ignore-scripts"], {
@@ -92,6 +142,10 @@ for (const pkg of PACKAGES) {
     console.error(`FAILED to stage ${name}@${version}`);
     if (log) console.error(log);
     failed.push(name);
+  } finally {
+    // The rewrite exists only for the upload. Put the workspace: specs back so
+    // the runner's tree, and a local `pnpm release-staged`, stay installable.
+    restores.restore(manifestPath);
   }
 }
 

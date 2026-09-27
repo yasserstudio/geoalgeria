@@ -16,23 +16,30 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 (under the `@geoalgeria` org), using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
-monorepo). Of these, `release.yml`'s automated staging covers **28**: the flagship
+monorepo). Of these, `release.yml`'s automated staging lists **28**: the flagship
 `geoalgeria`, `@geoalgeria/telecom`, the 25 sector packages and the code-only
-`@geoalgeria/normalize` (search keys, no data bundle); the two umbrellas
-**`@geoalgeria/transport`** and **`@geoalgeria/pharma`** carry `workspace:*` deps and are
-published **manually** with pnpm (see setup, step 2). `@geoalgeria/schema` is the v2 data
+`@geoalgeria/normalize` (search keys, no data bundle). **27 of those 28 actually
+stage today:** `@geoalgeria/normalize` has never been published, and Trusted
+Publishing cannot claim a name npm has never seen, so it is skipped until the
+Owner bootstraps it by hand (see below). The two umbrellas
+**`@geoalgeria/transport`** and **`@geoalgeria/pharma`** carry `workspace:*` deps, are
+absent from `release.yml` entirely, and are published **manually** with pnpm on
+every bump (see below). `@geoalgeria/schema` is the v2 data
 contract every other package's generator depends on, a dev dependency, not a dataset, and
 is **not** published to npm at all (it is absent from the workflow's package list). The web
 app lives in the separate **`geoalgeria.com`** repo and is not part of this one.
 
+Anything that falls out of the automated path is reported on every release run by
+the [release gap check](#the-release-gap-check).
+
 Since the v2 correctness pass, every package's npm tarball ships the data as
 **JSON, CSV and GeoJSON** (its `files[]` globs `data/**/*.csv` and
-`data/**/*.geojson`, not only `*.json`). The one format still kept out of the
-tarballs is **SQL**, which exists only for the flagship `geoalgeria` dataset.
-Each minor/major release also cuts a **GitHub Release** with a zipped data
-bundle: it remains the download channel for people who do not use npm (and the
-home of the flagship's SQL dump), not because CSV/GeoJSON are absent from the
-tarballs.
+`data/**/*.geojson`, not only `*.json`). **SQL ships on npm too**, for the one
+package that has any: `geoalgeria`'s `files[]` globs `data/**/*.sql`, so
+`data/sql/full.sql` is in the tarball like every other format. Each minor/major
+release also cuts a **GitHub Release** with a zipped data bundle: it is the
+download channel for people who do not use npm, not a format the tarballs are
+missing.
 
 ## The flow
 
@@ -113,14 +120,49 @@ then:
 
 The new GitHub Release fires the **Announce** workflow (see below).
 
+#### The `workspace:` protocol on the staged path
+
+npm uploads a manifest verbatim, so a `workspace:` spec that reaches it ships as
+the literal string and a consumer's resolver answers `EUNSUPPORTEDPROTOCOL`.
+`scripts/stage-publish.js` therefore resolves every `workspace:` spec to real
+semver, the way pnpm does, across **all four** dependency fields, and refuses to
+stage a package whose spec it cannot resolve. The rewrite lives only for the
+upload; the file is put back afterwards.
+
+> **Leak, found 2026-09-27.** The old check read `dependencies` only, so
+> `@geoalgeria/telecom` 3.0.0, `@geoalgeria/pharmacies` 2.2.1 and
+> `@geoalgeria/protection-civile` 1.0.3 are all live on npm carrying
+> `"@geoalgeria/schema": "workspace:^"` in **devDependencies**. A published
+> version's manifest cannot be repaired in place: each is fixed only by its next
+> version. `test/workspace-deps.test.mjs` pins the resolver and walks the real
+> workspace, so no publishable package can carry an unresolvable spec again.
+
 ### The release-timing guard
 
 A Release is only cut for a version `main` actually carries. Each iteration of
 the releases loop runs `scripts/release-guard.mjs <pkg> <version> <tag>
 $GITHUB_SHA`, which reads `package.json` and `CHANGELOG.md` **as committed at
-the released commit** and declines (`release guard skip: ...`, exit 3) unless
-both the version is there and that version has a `CHANGELOG.md` section. It
-fails closed: a missing file, unparseable JSON or an empty section all decline.
+the released commit** and declines unless both the version is there and that
+version has a `CHANGELOG.md` section. It fails closed: a missing file,
+unparseable JSON or an empty section all decline.
+
+**Two declines, two exit codes.** They used to share one, which hid the second:
+
+| Exit | Kind | Means | Workflow |
+| --- | --- | --- | --- |
+| 0 | `release` | version committed at `$GITHUB_SHA` with a CHANGELOG section | cuts the Release |
+| 3 | `pending-version-pr` | the version is not on `main` yet, so npm published nothing either. Routine: the Release is cut on the push that merges the Version PR | silent skip |
+| 4 | `missing-changelog` / `unreadable` | the version **is** committed, so it stages and npm serves it, but its CHANGELOG section is missing/empty (or the tree is unreadable). A version live on npm with **no Release, no data bundle and no announcement** behind it | `::warning::`, then skip |
+| 2 | usage | wrong arguments | n/a |
+
+Fix an exit 4 by adding the missing CHANGELOG section and re-running **Release**
+from the Actions tab, or cut that one Release by hand.
+
+There is no auto-generated-notes fallback. The guard has already proved the
+section exists at `$GITHUB_SHA` by the time the loop builds the notes, so an
+empty body there means `release-notes.mjs` disagrees with the guard: the step
+fails loudly instead of publishing GitHub's commit-list notes on a public
+release.
 
 This exists because `changesets/action` builds the Version PR **in the runner's
 own workspace**: it runs `git checkout -b changeset-release/main`, then
@@ -142,6 +184,85 @@ deleted by hand.
 
 A changeset's **first line must still be a headline**: `scripts/release-notes.mjs`
 falls back to it (clamped) whenever a CHANGELOG section has no headline line.
+
+### The release gap check
+
+Three ways a publishable package's version never reaches npm, all of them silent
+until 2026-09-27:
+
+| Gap | Live case |
+| --- | --- |
+| an umbrella the staged path skips | npm served `@geoalgeria/pharma` **2.0.0** while the repo said **2.0.1** |
+| a name npm has never seen, so it cannot be staged | `@geoalgeria/normalize` **1.0.0**, advertised with npm badges and listed here among the staged 28 |
+| a package dir absent from `release.yml`'s two loops, so no dry run and no GitHub Release | `packages/transport`, `packages/pharma` |
+
+`scripts/release-gap.mjs` reports all three as GitHub Actions `::warning::`
+annotations on every release run, and the **Release gap check** step in
+`release.yml` runs it. It reads versions as committed at `$GITHUB_SHA`, not the
+runner's working tree (which the changesets step leaves bumped), and never fails
+the run. Run it locally the same way:
+
+```bash
+node scripts/release-gap.mjs          # against HEAD
+```
+
+The only recorded exclusion is `@geoalgeria/schema`, which prints as a `::notice::`
+instead; it is named in `scripts/lib/release-gap.mjs`, so a new package cannot
+join that list by accident. `test/release-gap.test.mjs` pins the report and fails
+if a workspace package other than the two umbrellas and `schema` drops out of
+`release.yml`.
+
+### Publishing the `transport` / `pharma` umbrellas (manual, every bump)
+
+Neither umbrella is in `release.yml` or in `stage-publish.js`'s staged set, and
+neither has a Trusted Publisher entry. **Every** bump of either is a manual pnpm
+publish by the Owner, not just the first:
+
+```bash
+# 1. Confirm what npm actually serves against what the repo carries.
+npm view @geoalgeria/transport version
+npm view @geoalgeria/pharma version
+node -p "require('./packages/transport/package.json').version"
+node -p "require('./packages/pharma/package.json').version"
+
+# 2. Verify the tarball resolves the workspace: ranges to real semver BEFORE
+#    publishing. pnpm rewrites them; npm would ship the literal spec.
+cd packages/transport
+pnpm pack
+tar -xzOf geoalgeria-transport-*.tgz package/package.json | node -p \
+  "JSON.parse(require('fs').readFileSync(0,'utf8')).dependencies"
+#    Expect ^x.y.z for every @geoalgeria/* dep. A "workspace:^" here means STOP.
+rm geoalgeria-transport-*.tgz
+
+# 3. Publish (interactive OTP; --no-git-checks because the tag is per-package).
+pnpm publish --access public --no-git-checks
+```
+
+Same three steps in `packages/pharma`. Then check `npm view <pkg> version` again,
+and `pnpm purge-cdn`.
+
+> `@geoalgeria/pharma` 2.0.1 has been sitting unpublished since it was bumped:
+> npm still serves 2.0.0. The gap check now names it on every release run.
+
+### Bootstrapping `@geoalgeria/normalize` (one time, Owner only)
+
+`@geoalgeria/normalize` has never been on npm. Trusted Publishing's OIDC grant
+attaches to an **existing** package, so the staged path can never claim the name:
+it needs exactly one manual publish, by the Owner, from a terminal logged in to
+npm.
+
+```bash
+npm whoami                                  # else: npm login --auth-type=web
+cd packages/normalize
+npm publish --access public                 # the one-time bootstrap
+npm view @geoalgeria/normalize version      # expect 1.0.0
+```
+
+Then give it a Trusted Publisher entry (One-time setup, step 3) **before** the
+next release, and restore the npm badges and the plain `npm install` line in
+`packages/normalize/README.md`, `README.fr.md` and `README.ar.md`, plus its row in
+the three root READMEs: all six currently say "not yet published" on purpose, and
+they stay wrong in the other direction the moment it is live.
 
 ### One-off: publishing an umbrella away from a terminal
 
@@ -283,14 +404,17 @@ These are prerequisites the workflow can't do for you:
    ```
    For a package that will flow through CI, follow the bootstrap with its
    Trusted Publisher entry (step 3) **before** the first staged release.
+   > **Still owed:** `@geoalgeria/normalize` 1.0.0 has never had this bootstrap, so
+   > it cannot stage. Exact steps: [Bootstrapping
+   > `@geoalgeria/normalize`](#bootstrapping-geoalgerianormalize-one-time-owner-only).
    > ⚠️ **Umbrella / any package with `workspace:*` deps** (e.g.
    > `@geoalgeria/transport`, `@geoalgeria/pharma`) is **not** in the workflow, it is
    > published with **pnpm**, not npm, both to bootstrap and for every bump, because
    > npm ships the literal `workspace:^` spec and breaks installs (pnpm rewrites it to
-   > real semver). Publish it with
-   > `cd packages/transport && pnpm publish --access public --no-git-checks`
-   > (verify via `pnpm pack` that deps resolve to `^x.y.z`). These umbrellas need no
-   > Trusted Publisher entry.
+   > real semver). Exact steps, including the `pnpm pack` check:
+   > [Publishing the `transport` / `pharma`
+   > umbrellas](#publishing-the-transport--pharma-umbrellas-manual-every-bump).
+   > These umbrellas need no Trusted Publisher entry.
 3. **Trusted Publisher per package**: for each of the **28** packages the workflow
    stages (`geoalgeria`, `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`,
    `@geoalgeria/telecom`, `@geoalgeria/aviation`, `@geoalgeria/banques`,
@@ -301,7 +425,9 @@ These are prerequisites the workflow can't do for you:
    `@geoalgeria/agriculture`,
    `@geoalgeria/ecoles`, `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`,
    `@geoalgeria/buses`, `@geoalgeria/industrie-pharmaceutique`, `@geoalgeria/pharmacies`,
-   `@geoalgeria/ooredoo`, `@geoalgeria/protection-civile`, `@geoalgeria/normalize`). The
+   `@geoalgeria/ooredoo`, `@geoalgeria/protection-civile`, `@geoalgeria/normalize`).
+   `@geoalgeria/normalize` needs its bootstrap publish (step 2) **before** the entry
+   can be created, because the grant attaches to an existing package. The
    umbrellas (`transport`,
    `pharma`) and the unpublished
    contract package (`@geoalgeria/schema`) get **no** entry. Manage entries with the npm

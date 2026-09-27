@@ -68,7 +68,7 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **شبكة موبيليس** | 12,344 | 164 وكالة + 12,180 نقطة بيع. [`@geoalgeria/mobilis`](packages/mobilis) |
 | **تغطية 5G** | 3,598 | مواقع 5G لجيزي + موبيليس + أوريدو. [`@geoalgeria/telecom`](packages/telecom) |
 | **المطارات المدنية** | 36 | ANAC + OurAirports: أسماء، رموز ICAO + IATA، معلومات اتصال، إحداثيات. [`@geoalgeria/aviation`](packages/aviation) |
-| **الخطوط الجوية المباشرة** | 123 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات ومصدر. [`@geoalgeria/aviation`](packages/aviation) |
+| **الخطوط الجوية المباشرة** | 126 | شبكة الجوية الجزائرية الدولية كخطوط اتجاهية، لكل منها مشغّل ودرجة إثبات ومصدر. [`@geoalgeria/aviation`](packages/aviation) |
 | **البنوك والفروع** | 1,704 | كل البنوك الـ 21 المعتمدة + 8 مؤسسات مالية؛ فروع مع أكواد RIB/SWIFT، الملكية، الإحداثيات. [`@geoalgeria/banques`](packages/banques) |
 | **شركات التوصيل** | 411 | 16 ناقلًا + 411 نقطة استلام في 61 ولاية (Yalidine، Guepex، Anderson، Noest، Maystro). [`@geoalgeria/livraison`](packages/livraison) |
 | **مؤسسات الشباب** | 2,334 | دور الشباب، مركّبات رياضية من الدرجة الأولى، قاعات متعددة الاستخدامات، دور إيواء، مراكز ثقافية وعلمية وأكثر في 58 ولاية (وزارة الشباب والرياضة). [`@geoalgeria/jeunesse`](packages/jeunesse) |
@@ -86,8 +86,8 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **المدارس** | 11,858 | مدارس ابتدائية ومتوسطات وثانويات ورياض أطفال مُصنَّفة حسب الطور من OpenStreetMap، ثنائية اللغة، كل الـ69 ولاية. [`@geoalgeria/ecoles`](packages/ecoles) |
 | **المحطات البرية** | 74 | محطات سوقرال البرية عبر 52 ولاية، الأسماء، العناوين، المساحات، الإحداثيات. [`@geoalgeria/gares-routieres`](packages/gares-routieres) |
 | **السكك والنقل الحضري** | 692 | عُقَد القطار والترامواي والمترو والتلفريك (SNTF / SETRAM / SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة، 50 ولاية. [`@geoalgeria/ferroviaire`](packages/ferroviaire) |
-| **خطوط الحافلات الحضرية وشبه الحضرية** | 153 | 14 مشغلًا، 76 مسارًا، 128 اتجاهًا، و1,603 محطة. [`@geoalgeria/buses`](packages/buses) |
-| **الصيدليات** | 3٬807 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية. [`@geoalgeria/pharmacies`](packages/pharmacies) |
+| **خطوط الحافلات الحضرية وشبه الحضرية** | 184 | 16 مشغلًا، 76 مسارًا، 128 اتجاهًا، و1,603 محطة. [`@geoalgeria/buses`](packages/buses) |
+| **الصيدليات** | 3,807 | صيدليات (officines) مُحدَّدة جغرافيًا من OpenStreetMap، ثنائية اللغة عند التسمية، مربوطة بالبلدية/الولاية. [`@geoalgeria/pharmacies`](packages/pharmacies) |
 | **مصنّعو الأدوية** | 171 | مصنّعون معتمدون للأدوية والأجهزة الطبية من سجل وزارة الصناعة الصيدلانية، مُحدَّدون جغرافيًا. [`@geoalgeria/industrie-pharmaceutique`](packages/industrie-pharmaceutique) |
 | **نقاط بيع أوريدو** | 572 | فضاءات أوريدو ومتاجر المدينة وفضاءات الخدمات بإحداثيات حقيقية، مربوطة بالبلدية/الولاية (ooredoo.dz). [`@geoalgeria/ooredoo`](packages/ooredoo) |
 
@@ -145,14 +145,14 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس، 11,858 مدرسة وروضة من OpenStreetMap، مُصنَّفة حسب الطور (ابتدائي/متوسط/ثانوي/تحضيري)، ثنائية اللغة، كل الـ69 ولاية، مع ربط بالبلدية/الولاية |
 | [`packages/gares-routieres`](packages/gares-routieres) | [`@geoalgeria/gares-routieres`](https://www.npmjs.com/package/@geoalgeria/gares-routieres) | المحطات البرية، 74 محطة سوقرال عبر 52 ولاية، بإحداثيات ومساحات وربط بالبلدية/الولاية |
 | [`packages/ferroviaire`](packages/ferroviaire) | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري، 692 عقدة قطار/ترامواي/مترو/تلفريك (SNTF/SETRAM/SEMA)، تجميعة Wikidata + OSM، ثنائية اللغة |
-| [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 153 خطًا حضريًا وشبه حضري، و76 مسارًا و1,603 محطة لدى 14 مشغلًا |
+| [`packages/buses`](packages/buses) | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | 184 خطًا حضريًا وشبه حضري، و76 مسارًا و1,603 محطة لدى 16 مشغلًا |
 | [`packages/industrie-pharmaceutique`](packages/industrie-pharmaceutique) | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية، 171 مصنّعًا معتمدًا للأدوية (PP) والأجهزة الطبية (DM) من سجل وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون إلى مركز البلدية/الولاية |
-| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines)، 3٬807 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
+| [`packages/pharmacies`](packages/pharmacies) | [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines)، 3,807 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية، مع الهاتف/الساعات/dispensing عند توفّرها والربط بالبلدية/الولاية |
 | [`packages/protection-civile`](packages/protection-civile) | [`@geoalgeria/protection-civile`](https://www.npmjs.com/package/@geoalgeria/protection-civile) | وحدات الحماية المدنية (الإطفاء والإنقاذ)، 880 وحدة تابعة للمديرية العامة للحماية المدنية على كامل التراب، مُسمّاة بالعربية، بعنوان/هاتف/فاكس ومستوى صفة، كلها بإحداثيات، مصدر رسمي أوّلي (dgpc.dz)؛ الولاية مُعاد اشتقاقها على حدود ما بعد إصلاح 2026 الـ69 |
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو، 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية والربط بالبلدية/الولاية (ooredoo.dz)؛ يُكمل ثلاثي الاتصالات |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة، تثبّت aviation + ferroviaire + gares-routieres + buses دفعة واحدة |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة، تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |
-| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | مفاتيح البحث لأسماء الأماكن الجزائرية، المفتاح المحافظ والمفتاح الأوسع والتقطيع إلى كلمات ومدوّنتها المرجعية؛ شيفرة فقط، بلا اعتماديات، حتى تطوي كل الفهارس الاسم بالطريقة نفسها |
+| [`packages/normalize`](packages/normalize) | `@geoalgeria/normalize` (ليست على npm بعد) | مفاتيح البحث لأسماء الأماكن الجزائرية، المفتاح المحافظ والمفتاح الأوسع والتقطيع إلى كلمات ومدوّنتها المرجعية؛ شيفرة فقط، بلا اعتماديات، حتى تطوي كل الفهارس الاسم بالطريقة نفسها |
 
 [تصفح جميع الحزم →](https://geoalgeria.com/data) · [توثيق API ومرجع الحقول →](https://geoalgeria.com/data/docs)
 

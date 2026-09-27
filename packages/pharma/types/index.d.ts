@@ -1,4 +1,4 @@
-// Type definitions for @geoalgeria/pharma — umbrella meta-package.
+// Type definitions for @geoalgeria/pharma: umbrella meta-package.
 import type industrie from "@geoalgeria/industrie-pharmaceutique";
 import type pharmacies from "@geoalgeria/pharmacies";
 

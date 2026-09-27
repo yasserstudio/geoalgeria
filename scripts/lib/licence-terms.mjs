@@ -35,6 +35,15 @@ export const LICENCE_CLASSES = [
     licence: "`## Code` MIT plus a `## Data` section carrying the ODbL URL",
   },
   {
+    id: "open-mixed",
+    metadata: "`license` is an array of the MIT URL and the ODbL 1.0 URL",
+    manifest: "MIT AND ODbL-1.0",
+    licence:
+      "`## Code` MIT plus a `## Data` section carrying both URLs and listing each non-MIT carve-out as a `- ` bullet naming the `data/...` paths it covers",
+    notice:
+      "a NOTICE file, listed in the manifest `files[]`, carrying the ODbL URL and every `data/...` path the LICENSE's carve-out bullets name",
+  },
+  {
     id: "restricted",
     metadata: "`conditionsOfAccess`",
     manifest: "SEE LICENSE IN LICENSE",
@@ -68,6 +77,7 @@ SOFTWARE.`;
 const SEE_LICENSE = "SEE LICENSE IN LICENSE";
 const CODE_HEADING = "## Code\n\nMIT License";
 const ODBL_URL = "https://opendatacommons.org/licenses/odbl/1-0/";
+const MIT_URL = "https://opensource.org/licenses/MIT";
 const IS_ODBL = /opendatacommons\.org\/licenses\/odbl/i;
 const IS_MIT = /opensource\.org\/licenses\/MIT/i;
 
@@ -85,6 +95,98 @@ function codeSection(licenceText) {
 }
 
 /**
+ * The `- ` bullets of a `## Data` section, one per carve-out, each folded to a
+ * single line so a wrapped bullet reads as one item.
+ */
+function carveOutBullets(dataText) {
+  const bullets = [];
+  for (const line of dataText.split("\n")) {
+    if (/^- \S/.test(line)) bullets.push(line.slice(2).trim());
+    else if (bullets.length && /^\s+\S/.test(line)) bullets[bullets.length - 1] += ` ${line.trim()}`;
+    else if (line.trim() === "") continue;
+    else if (bullets.length) bullets.push("");
+  }
+  return bullets.filter(Boolean);
+}
+
+/**
+ * The `data/...` paths a carve-out bullet names, from its backticked tokens. A
+ * path is what identifies a carved-out part; the rest of the bullet describes it.
+ * A glob is reduced to the literal prefix before the `*`, so `data/communes_w*.json`
+ * matches a NOTICE that spells the three files out.
+ */
+function dataPathsIn(bullet) {
+  const paths = [];
+  for (const [, token] of bullet.matchAll(/`([^`]+)`/g)) {
+    if (!token.startsWith("data/")) continue;
+    paths.push(token.includes("*") ? token.slice(0, token.indexOf("*")) : token);
+  }
+  return paths;
+}
+
+/**
+ * The `open-mixed` class alone splits ONE package's data between two licences, so
+ * the LICENSE can only say which part is which by naming the parts. That naming is
+ * the whole carve-out: get it wrong and the package either claims share-alike over
+ * MIT data or quietly relicenses ODbL data. The LICENSE points at NOTICE for the
+ * per-part attribution, so NOTICE is part of the terms, not a courtesy:
+ *
+ *  - it has to exist, or the LICENSE points nowhere;
+ *  - it has to be in `files[]`, or it exists in git and is absent from the npm
+ *    tarball, where the consumer who needs it is;
+ *  - it has to carry the ODbL URL, so the terms travel with the attribution; and
+ *  - it has to name every `data/...` path the LICENSE's carve-out bullets name, so
+ *    no carved-out part is left without attribution.
+ *
+ * Checked only for `open-mixed`: the single-licence classes have nothing to split.
+ */
+function mixedNoticeErrors({ name, manifest, licenceText, noticeText, data }) {
+  const errors = [];
+
+  if (noticeText == null) {
+    errors.push(
+      `${name}/NOTICE: missing, so the per-part attribution the LICENSE refers to does not exist. A mixed MIT/ODbL package must name each carved-out part somewhere.`,
+    );
+    return errors;
+  }
+
+  const files = manifest?.files;
+  if (!Array.isArray(files) || !files.includes("NOTICE"))
+    errors.push(
+      `${name}/package.json: files[] does not list "NOTICE", so the per-part ODbL attribution is in git but not in the npm tarball`,
+    );
+
+  if (!noticeText.includes(ODBL_URL))
+    errors.push(`${name}/NOTICE: does not carry ${ODBL_URL}, so the attribution does not state the terms it is for`);
+
+  const bullets = carveOutBullets(data);
+  if (bullets.length === 0) {
+    errors.push(
+      `${name}/LICENSE: the "## Data" section lists no "- " carve-out bullet, so the non-MIT parts are not enumerated and cannot be checked against NOTICE`,
+    );
+    return errors;
+  }
+
+  for (const bullet of bullets) {
+    const paths = dataPathsIn(bullet);
+    const label = bullet.length > 60 ? `${bullet.slice(0, 60)}...` : bullet;
+    if (paths.length === 0) {
+      errors.push(
+        `${name}/LICENSE: the carve-out "${label}" names no \`data/...\` path, so which shipped data it covers is unstated`,
+      );
+      continue;
+    }
+    for (const path of paths)
+      if (!noticeText.includes(path))
+        errors.push(
+          `${name}/NOTICE: does not name ${path}, carved out by "${label}" in the LICENSE, so that part ships without its attribution`,
+        );
+  }
+
+  return errors;
+}
+
+/**
  * Errors (empty when consistent) for one package's licence trio.
  *
  * @param {object} input
@@ -92,10 +194,11 @@ function codeSection(licenceText) {
  * @param {object} input.manifest parsed package.json
  * @param {object|null} input.metadata parsed dataset-metadata.json, null when absent
  * @param {string} input.licenceText the package LICENSE file
+ * @param {string|null} [input.noticeText] the package NOTICE file, null when absent
  * @param {string[]} input.members `@geoalgeria/*` dependency names (umbrellas only)
  * @returns {string[]}
  */
-export function licenceTermsErrors({ name, manifest, metadata, licenceText, members = [] }) {
+export function licenceTermsErrors({ name, manifest, metadata, licenceText, noticeText = null, members = [] }) {
   const errors = [];
   const declared = manifest?.license;
 
@@ -135,7 +238,29 @@ export function licenceTermsErrors({ name, manifest, metadata, licenceText, memb
   const data = dataSection(licenceText);
 
   if (metadata.license) {
-    if (IS_ODBL.test(metadata.license)) {
+    if (Array.isArray(metadata.license)) {
+      // A package whose data is not all under one set of terms: the bulk under one
+      // licence, a named part under another. A single URL cannot say that, and
+      // picking the stricter one alone would relicense the rest, so the array holds
+      // every licence the shipped data is under and the LICENSE says which part each
+      // one covers. Only the MIT + ODbL pair is known, because that is the only
+      // split the repository actually ships; another pair is an error naming the
+      // URLs, exactly like an unknown single URL.
+      const urls = metadata.license;
+      const unknown = urls.filter((url) => !IS_MIT.test(url) && !IS_ODBL.test(url));
+      if (unknown.length || !urls.some((url) => IS_MIT.test(url)) || !urls.some((url) => IS_ODBL.test(url))) {
+        errors.push(`${name}/dataset-metadata.json: license ${JSON.stringify(urls)} is not the MIT plus ODbL 1.0 pair, the only array class known, add the class to licence-terms.mjs`);
+      } else {
+        if (declared !== "MIT AND ODbL-1.0")
+          errors.push(`${name}/package.json: license is ${JSON.stringify(declared ?? null)}, expected "MIT AND ODbL-1.0" (dataset-metadata.json licenses part of the data under the ODbL and the rest under the MIT licence)`);
+        if (!(licenceText ?? "").startsWith(CODE_HEADING))
+          errors.push(`${name}/LICENSE: must start with "## Code" then the MIT text, so the code terms are stated apart from the two sets of data terms`);
+        for (const url of [MIT_URL, ODBL_URL])
+          if (!data.includes(url))
+            errors.push(`${name}/LICENSE: the "## Data" section does not carry ${url}, so a consumer cannot tell which part of the data it covers`);
+        errors.push(...mixedNoticeErrors({ name, manifest, licenceText, noticeText, data }));
+      }
+    } else if (IS_ODBL.test(metadata.license)) {
       if (declared !== "MIT AND ODbL-1.0")
         errors.push(`${name}/package.json: license is ${JSON.stringify(declared ?? null)}, expected "MIT AND ODbL-1.0" (dataset-metadata.json licenses the data under the ODbL)`);
       if (!data.includes(ODBL_URL))

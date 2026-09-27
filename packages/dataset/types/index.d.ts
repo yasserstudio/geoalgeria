@@ -154,7 +154,7 @@ declare namespace algeriaGeodata {
    *  `null` when the record has no coordinate at all. */
   export type GeoPrecision = "exact" | "approximate" | null;
 
-  /** How the coordinate was obtained. `null` on an ungeocoded record — no
+  /** How the coordinate was obtained. `null` on an ungeocoded record: no
    *  method produced a point, so none can be named. */
   export type GeoMethod = "baridimap" | null;
 
@@ -167,7 +167,7 @@ declare namespace algeriaGeodata {
 
   /** A post office (bureau de poste). Mirrored from @geoalgeria/poste. */
   export interface PostOffice {
-    /** Stable id, unique within this file. Opaque — do not parse. */
+    /** Stable id, unique within this file. Opaque: do not parse. */
     id: string;
     name: string;
     name_ar: string;
@@ -186,7 +186,7 @@ declare namespace algeriaGeodata {
     lat: number | null;
     /** Longitude, or null. Both coordinates are set, or both are null. */
     lng: number | null;
-    /** `null` when `lat`/`lng` are null — a record with no point asserts no
+    /** `null` when `lat`/`lng` are null: a record with no point asserts no
      *  precision. */
     geo_precision: GeoPrecision;
     /** How `lat`/`lng` were obtained; null when there are none. */
@@ -201,7 +201,7 @@ declare namespace algeriaGeodata {
 
   /** An ATM (GAB). Mirrored from @geoalgeria/poste. */
   export interface Atm {
-    /** Stable id, unique within this file. Opaque — do not parse. */
+    /** Stable id, unique within this file. Opaque: do not parse. */
     id: string;
     name: string;
     /** Wilaya code, zero-padded 2-digit string ("01".."69"). */

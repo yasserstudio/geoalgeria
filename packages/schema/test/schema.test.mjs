@@ -411,7 +411,7 @@ test("buildManifest + buildDcat shape", () => {
   // to its canonical URL, and an open dataset carries no conditionsOfAccess prose.
   assert.equal(dcat.license, "https://opensource.org/licenses/MIT");
   assert.equal("conditionsOfAccess" in dcat, false);
-  assert.deepEqual(dcat.citation, ["Ministry of Health — official"]);
+  assert.deepEqual(dcat.citation, ["Ministry of Health, official"]);
 
   // A non-open prose licence is never fabricated into a URL: the `license` slot
   // is omitted and the prose moves to conditionsOfAccess.

@@ -26,7 +26,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 | `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |
 | `packages/telecom/` | `@geoalgeria/telecom` | cross-operator 5G coverage (Djezzy, Mobilis, Ooredoo) |
-| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC) |
+| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC), plus Air Algérie's international network as 126 directional nonstop legs and 16 planned ones, each with an evidence tier and a source |
 | `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministry of Youth and Sports) |
@@ -48,7 +48,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/ecoles/` | `@geoalgeria/ecoles` | schools – 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap, ODbL) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations – 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit – 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
-| `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 153 Lines, 76 shapes, 128 Directions and 1,603 Stations across 14 Operators |
+| `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks – 184 Lines, 76 shapes, 128 Directions and 1,603 Stations across 16 Operators |
 | `packages/transport/` | `@geoalgeria/transport` | transport umbrella – re-exports aviation + ferroviaire + gares-routieres + buses |
 
 The postal data under `packages/dataset/data/poste/` is a **generated mirror**;

@@ -168,13 +168,13 @@ export const MIGRATIONS = {
     },
     meta: {
       sources: [
-        { key: "wikidata", name: "Wikidata — mosques in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0" },
-        { key: "osm", name: "OpenStreetMap — mosques in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
+        { key: "wikidata", name: "Wikidata: mosques in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0" },
+        { key: "osm", name: "OpenStreetMap: mosques in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
       ],
       license: "CC0-1.0 AND ODbL-1.0",
       estimatedUniverse: 18449,
       coverageNote:
-        "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry — the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
+        "Mosques compiled from Wikidata + OpenStreetMap, against the ~18449 counted by the Ministry of Religious Affairs (MARW). A community-maintained composite, not an official registry; the two do not count the same population, which is why the ratio exceeds 100%: OSM tags every amenity=place_of_worship/muslim, including the neighbourhood musallas and prayer rooms the MARW figure (built mosques) excludes. Read it as a comparison against the official count, not as coverage of it.",
       titles: { en: "Algeria mosques", fr: "Mosquées d'Algérie", ar: "مساجد الجزائر" },
       stats: (rows) => ({ named: named(rows), by_source: count(rows, "source"), linkage_note: LINKAGE }),
     },
@@ -192,7 +192,7 @@ export const MIGRATIONS = {
       isced_levels: r.isced_levels, sector: r.sector, address: r.address,
     }),
     meta: {
-      sources: [{ key: "osm", name: "OpenStreetMap — schools & kindergartens in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" }],
+      sources: [{ key: "osm", name: "OpenStreetMap: schools & kindergartens in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" }],
       license: "ODbL-1.0",
       // 29,702 is the Ministry of National Education's own headline aggregate
       // ("Education in numbers" block on education.gov.dz, 2024-2025 school
@@ -222,7 +222,7 @@ export const MIGRATIONS = {
       sources: [{ key: "patrimoine", name: "Cartes du Patrimoine Culturel Algérien (Ministry of Culture)", url: "https://cartes.patrimoineculturelalgerien.org", license: "Factual public cultural listing (Ministry of Culture)", retrieved: "2026-06-28" }],
       license: "Factual public listing (Ministry of Culture); commune linkage from the GeoAlgeria set",
       estimatedUniverse: null,
-      coverageNote: "Cultural places from Algeria's official cultural atlas (Ministry of Culture) — protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
+      coverageNote: "Cultural places from Algeria's official cultural atlas (Ministry of Culture): protected heritage, museums, theatres, libraries, and cultural establishments. Every place carries a source coordinate; wilaya is exact, commune is best-effort.",
       titles: { en: "Algeria cultural heritage", fr: "Patrimoine culturel d'Algérie", ar: "التراث الثقافي الجزائري" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_category: count(rows, "category"), virtual_tours: rows.filter((r) => r.has_virtual_tour).length, linkage_note: LINKAGE }),
     },
@@ -239,7 +239,7 @@ export const MIGRATIONS = {
       type: r.type, category: r.category, address: r.address, hours: r.hours, code_ouverture: r.code_ouverture,
     }),
     meta: {
-      sources: [{ key: "djezzy", name: "Djezzy — Optimum Telecom Algérie (nos-boutiques)", url: "https://www.djezzy.dz", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference" }],
+      sources: [{ key: "djezzy", name: "Djezzy: Optimum Telecom Algérie (nos-boutiques)", url: "https://www.djezzy.dz", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference" }],
       license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Djezzy retail boutiques from djezzy.dz/nos-boutiques. Wilaya/commune linkage is best-effort (nearest-centroid).",
@@ -260,7 +260,7 @@ export const MIGRATIONS = {
       address: r.address, operator_wilaya: r.operator_wilaya,
     }),
     meta: {
-      sources: [{ key: "ooredoo", name: "Ooredoo Algérie — retail network (trouvez-nous JSON API)", url: "https://www.ooredoo.dz/fr/particuliers/trouvez-nous", license: "Data © Ooredoo Algérie; redistributed for reference" }],
+      sources: [{ key: "ooredoo", name: "Ooredoo Algérie: retail network (trouvez-nous JSON API)", url: "https://www.ooredoo.dz/fr/particuliers/trouvez-nous", license: "Data © Ooredoo Algérie; redistributed for reference" }],
       license: "Data © Ooredoo Algérie; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Ooredoo retail network (Espaces Ooredoo, City Shops, Espaces Services) via the public API. 567 of the 572 records carry the operator's own coordinate; the other 5 are placed on their commune's point instead (geo_precision approximate, geo_method commune_centroid) because the API coordinate contradicts both the wilaya Ooredoo declares for the store and the store's own name and address. 3 further records keep their operator coordinate but a derived wilaya/commune the wilaya outlines disagree with (the nearest-centroid join filed a near-boundary point one wilaya over). operator_wilaya preserves the operator's declared wilaya on every record.",
@@ -285,9 +285,9 @@ export const MIGRATIONS = {
     },
     meta: {
       sources: [
-        { key: "msp", name: "Ministry of Health (sante.gov.dz) — health-establishment registry", url: "https://sante.gov.dz", license: "Official public registry (Ministry of Health)" },
-        { key: "osm", name: "OpenStreetMap — geocoding", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
-        { key: "wikidata", name: "Wikidata — geocoding", url: "https://www.wikidata.org", license: "CC0-1.0" },
+        { key: "msp", name: "Ministry of Health (sante.gov.dz): health-establishment registry", url: "https://sante.gov.dz", license: "Official public registry (Ministry of Health)" },
+        { key: "osm", name: "OpenStreetMap: geocoding", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)" },
+        { key: "wikidata", name: "Wikidata: geocoding", url: "https://www.wikidata.org", license: "CC0-1.0" },
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
@@ -343,8 +343,8 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [
-        { key: "wikidata", name: "Wikidata — rail & urban transit stations in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-07-01" },
-        { key: "osm", name: "OpenStreetMap — rail & urban transit stations in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-07-01" },
+        { key: "wikidata", name: "Wikidata: rail & urban transit stations in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-07-01" },
+        { key: "osm", name: "OpenStreetMap: rail & urban transit stations in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-07-01" },
       ],
       license: "CC0-1.0 AND ODbL-1.0",
       estimatedUniverse: null,
@@ -369,7 +369,7 @@ export const MIGRATIONS = {
       surface_total_m2: r.surface_total_m2, surface_built_m2: r.surface_built_m2,
     }),
     meta: {
-      sources: [{ key: "sogral", name: "SOGRAL — Société de Gestion des Gares Routières d'Algérie", url: "https://live.sogral.com", license: "Data © SOGRAL; redistributed for reference", retrieved: "2026-07-01" }],
+      sources: [{ key: "sogral", name: "SOGRAL: Société de Gestion des Gares Routières d'Algérie", url: "https://live.sogral.com", license: "Data © SOGRAL; redistributed for reference", retrieved: "2026-07-01" }],
       license: "Data © SOGRAL; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "SOGRAL-managed intercity bus stations (gares routières) with surface areas, from the SOGRAL live API.",
@@ -394,7 +394,7 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [
-        { key: "anac", name: "ANAC — Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)", evidence_type: "official" },
+        { key: "anac", name: "ANAC: Autorité Nationale de l'Aviation Civile", url: "https://www.anac.dz", license: "Factual public listing (ANAC)", evidence_type: "official" },
         // crowdsourced, pinned: OurAirports is volunteer-edited ("create a free
         // account" to add or correct an airport), so it is neither a government
         // register nor a first-party operator feed. Left to infer, it would take
@@ -429,7 +429,7 @@ export const MIGRATIONS = {
       sources: [{ key: "madr", name: "Ministry of Agriculture, Rural Development and Fisheries (MADR)", url: "https://madr.gov.dz", license: "Factual public institutional listing (MADR)", retrieved: "2026-06-30" }],
       license: "Factual public institutional listing (MADR)",
       estimatedUniverse: null,
-      coverageNote: "Agricultural institutions (training institutes, research, services) from the MADR — all positions are wilaya- or commune-centroid approximations (no surveyed points).",
+      coverageNote: "Agricultural institutions (training institutes, research, services) from the MADR; all positions are wilaya- or commune-centroid approximations (no surveyed points).",
       titles: { en: "Algeria agricultural institutions", fr: "Institutions agricoles d'Algérie", ar: "المؤسسات الفلاحية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), linkage_note: LINKAGE }),
     },
@@ -447,7 +447,7 @@ export const MIGRATIONS = {
       nature_label_fr: r.nature_label_fr, nature_label_ar: r.nature_label_ar, slug: r.slug,
     }),
     meta: {
-      sources: [{ key: "mip", name: "Ministère de l'Industrie Pharmaceutique (MIP) — approved manufacturers register", url: "https://www.miph.gov.dz", license: "Factual public register (MIP)", retrieved: "2026-07-05" }],
+      sources: [{ key: "mip", name: "Ministère de l'Industrie Pharmaceutique (MIP): approved manufacturers register", url: "https://www.miph.gov.dz", license: "Factual public register (MIP)", retrieved: "2026-07-05" }],
       license: "Factual public register (MIP)",
       estimatedUniverse: null,
       coverageNote: "Approved pharmaceutical & medical-device manufacturers from the MIP register, geocoded to commune/wilaya centroids (approximate).",
@@ -469,7 +469,7 @@ export const MIGRATIONS = {
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
     }),
     meta: {
-      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
+      sources: [{ key: "mjs", name: "Ministry of Youth and Sports: SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
       coverageNote: "Youth institutions (auberges & maisons de jeunes, camps) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 128 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
@@ -491,7 +491,7 @@ export const MIGRATIONS = {
       operational: r.operational, pmr: r.pmr, surface_built_m2: r.surface_built_m2, surface_land_m2: r.surface_land_m2,
     }),
     meta: {
-      sources: [{ key: "mjs", name: "Ministry of Youth and Sports — SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
+      sources: [{ key: "mjs", name: "Ministry of Youth and Sports: SIG", url: "https://sig.mjs.gov.dz", license: "Factual public listing (Ministry of Youth and Sports)" }],
       license: "Factual public listing (Ministry of Youth and Sports)",
       estimatedUniverse: null,
       coverageNote: "Sports facilities (stadiums, gyms, fields, pools) from the Ministry of Youth and Sports SIG. The SIG still labels some communes under their pre-2026 mother wilaya; 267 records are reconciled to the current wilaya only where an exact current or official ONS 2021 French commune match and polygon containment agree, with source_wilaya_code preserving the ministry value.",
@@ -539,7 +539,7 @@ export const MIGRATIONS = {
       surface_m2: r.surface_m2, internat: r.internat, capacite_internat: r.capacite_internat, vocations: r.vocations,
     }),
     meta: {
-      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP) — takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-06-22" }],
+      sources: [{ key: "mfep", name: "Ministry of Vocational Training and Education (MFEP): takwin.dz", url: "https://takwin.dz", license: "Factual public listing (MFEP)", retrieved: "2026-06-22" }],
       license: "Factual public listing (MFEP)",
       estimatedUniverse: null,
       coverageNote: "Vocational-training establishments (CFPA, INSFP, DFEP) from the MFEP takwin.dz portal; 1920 of 1932 are geocoded: 1375 on the portal's own point, 510 on their commune's centroid and 35 on their wilaya's, the portal having left those coordinates empty.",
@@ -570,7 +570,7 @@ export const MIGRATIONS = {
       }) },
     ],
     meta: {
-      sources: [{ key: "baridimap", name: "Algérie Poste — baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference" }],
+      sources: [{ key: "baridimap", name: "Algérie Poste: baridimap.poste.dz", url: "https://baridimap.poste.dz", license: "Data © Algérie Poste; redistributed for reference" }],
       license: "Data © Algérie Poste; redistributed for reference",
       estimatedUniverse: null,
       coverageNote: "Post offices and Baridi Mob ATMs from Algérie Poste's BaridiMap portal. BaridiMap still assigns some records to pre-2026 mother wilayas. Office wilaya_code is reconciled through canonical commune_code. ATM linkage is reconciled only when its exact current or official ONS 2021 French or Arabic commune label, mother relationship, and sole polygon containment agree. source_wilaya_code preserves a differing provider value.",
@@ -600,10 +600,10 @@ export const MIGRATIONS = {
       }) },
     ],
     meta: {
-      sources: [{ key: "anem", name: "ANEM — National Employment Agency (anem.dz)", url: "https://www.anem.dz", license: "Factual public listing (ANEM)" }],
+      sources: [{ key: "anem", name: "ANEM: National Employment Agency (anem.dz)", url: "https://www.anem.dz", license: "Factual public listing (ANEM)" }],
       license: "Factual public listing (ANEM)",
       estimatedUniverse: null,
-      coverageNote: "Employment agencies — regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
+      coverageNote: "Employment agencies: regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
       titles: { en: "Algeria employment agencies", fr: "Agences pour l'emploi d'Algérie", ar: "وكالات التشغيل الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
@@ -627,10 +627,10 @@ export const MIGRATIONS = {
       }) },
     ],
     meta: {
-      sources: [{ key: "mobilis", name: "Mobilis — ATM Mobilis (mobilis.dz)", url: "https://www.mobilis.dz", license: "Data © ATM Mobilis; redistributed for reference" }],
+      sources: [{ key: "mobilis", name: "Mobilis: ATM Mobilis (mobilis.dz)", url: "https://www.mobilis.dz", license: "Data © ATM Mobilis; redistributed for reference" }],
       license: "Data © ATM Mobilis; redistributed for reference",
       estimatedUniverse: null,
-      coverageNote: "Mobilis retail network — commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
+      coverageNote: "Mobilis retail network: commercial agencies (geocoded) and points of sale (PDV, listed but not geocoded).",
       titles: { en: "Mobilis stores (Algeria)", fr: "Points de vente Mobilis", ar: "نقاط بيع موبيليس" },
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
@@ -646,13 +646,13 @@ export const MIGRATIONS = {
     ],
     meta: {
       sources: [
-        { key: "osm", name: "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-06-21" },
-        { key: "wikidata", name: "Wikidata — heritage sites, museums & parks in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-06-21" },
-        { key: "asal", name: "ASAL Geoportail — thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: "2026-06-21" },
+        { key: "osm", name: "OpenStreetMap: attractions, historic sites, lodging & parks in Algeria", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-06-21" },
+        { key: "wikidata", name: "Wikidata: heritage sites, museums & parks in Algeria", url: "https://www.wikidata.org", license: "CC0-1.0", retrieved: "2026-06-21" },
+        { key: "asal", name: "ASAL Geoportail: thermal springs", url: "https://www.asal.dz", license: "Factual public listing (ASAL)", retrieved: "2026-06-21" },
       ],
       license: "Attractions, historic sites, lodging and parks from OpenStreetMap (ODbL 1.0, © OpenStreetMap contributors) and Wikidata (CC0); thermal springs are a factual public listing (ASAL). Per-source terms in citation.",
       estimatedUniverse: null,
-      coverageNote: "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
+      coverageNote: "Tourism points: attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
       titles: { en: "Algeria tourism", fr: "Tourisme en Algérie", ar: "السياحة في الجزائر" },
       stats: (rows) => ({ by_type: count(rows, "type") }),
     },
@@ -690,9 +690,9 @@ export const MIGRATIONS = {
     ],
     meta: {
       sources: [
-        { key: "boa", name: "Banque d'Algérie — liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: "2026-06-16", evidence_type: "official" },
+        { key: "boa", name: "Banque d'Algérie: liste des banques et établissements financiers agréés (JO n° 9, 6 février 2026)", url: "https://www.bank-of-algeria.dz/banques-commerciales/", license: "Factual public regulatory listing (Banque d'Algérie)", retrieved: "2026-06-16", evidence_type: "official" },
         { key: "bank_locator", name: "Each licensed bank's own branch locator (site/API/KML)", license: "Data © respective banks; redistributed for reference", retrieved: "2026-06-16", evidence_type: "official" },
-        { key: "osm", name: "OpenStreetMap — reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
+        { key: "osm", name: "OpenStreetMap: reviewed bank coordinate evidence", url: "https://www.openstreetmap.org", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-09", evidence_type: "crowdsourced" },
       ],
       license: "Compiled from public regulatory listings and official institution sites/locators; eight reviewed branch coordinates use OpenStreetMap under ODbL 1.0 (© OpenStreetMap contributors). See README.",
       estimatedUniverse: null,
@@ -746,25 +746,26 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [
-        { key: "wikipedia", name: "French Wikipedia — Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" },
-        { key: "etus-tiaret", name: "ETUS Tiaret — current Lines", url: "https://www.etus-tiaret.dz/ar/lines", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etusto", name: "ETUSTO — passenger Lines", url: "http://etusto.dz/espv.html", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etus-bejaia", name: "ETUS Béjaïa — WordPress REST itineraries and Line maps", url: "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etus-msila", name: "ETUS M'Sila — official Line pages and diagrams", url: "https://etus-msila.dz/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etus-sidi-bel-abbes", name: "ETUS Sidi Bel Abbès — network and timetable pages", url: "https://etus22.dz/Horaires.php", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etus-setif", name: "ETUS Setif — 2026 Line artwork supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
-        { key: "etus-ain-defla", name: "ETUS Aïn Defla — 2025 Line artwork and Eid service program supplied by project owner", url: "https://www.facebook.com/ETUS44/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
-        { key: "etus-annaba", name: "ETUS Annaba — Eid al-Adha 2026 service program supplied by project owner", url: "https://www.facebook.com/100063517660926/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
-        { key: "etus-tlemcen", name: "ETUS Tlemcen — Eid al-Adha 2026 service program supplied by project owner", url: "https://www.facebook.com/etustlemcen13/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
-        { key: "eto-oran", name: "ETO Oran — route drawings published on the Operator page, supplied by project owner", url: "https://www.facebook.com/p/ETO-100093054514209/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
-        { key: "etus-oeb", name: "ETUS Oum El Bouaghi — numbered Line diagrams supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
-        { key: "etus-c-constantine", name: "ETUS-C Constantine — numbered route graphics supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-16", evidence_type: "official" },
-        { key: "etul-laghouat", name: "ETUL Laghouat — dated operating programs supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
-        { key: "osm", name: "OpenStreetMap — reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
+        { key: "wikipedia", name: "French Wikipedia: Lignes de bus ETUSA de 1 à 99", url: "https://fr.wikipedia.org/wiki/Lignes_de_bus_ETUSA_de_1_à_99", license: "CC BY-SA 4.0", retrieved: "2026-07-01", evidence_type: "crowdsourced" },
+        { key: "etus-tiaret", name: "ETUS Tiaret: current Lines", url: "https://www.etus-tiaret.dz/ar/lines", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etusto", name: "ETUSTO: passenger Lines", url: "http://etusto.dz/espv.html", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-bejaia", name: "ETUS Béjaïa: WordPress REST itineraries and Line maps", url: "https://etusbejaia.dz/wp-json/wp/v2/pages?slug=itineraires-et-plans-des-lignes", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-msila", name: "ETUS M'Sila: official Line pages and diagrams", url: "https://etus-msila.dz/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-sidi-bel-abbes", name: "ETUS Sidi Bel Abbès: network and timetable pages", url: "https://etus22.dz/Horaires.php", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-setif", name: "ETUS Setif: 2026 Line artwork supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-02", evidence_type: "official" },
+        { key: "etus-ain-defla", name: "ETUS Aïn Defla: 2025 Line artwork and Eid service program supplied by project owner", url: "https://www.facebook.com/ETUS44/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
+        { key: "etus-annaba", name: "ETUS Annaba: Eid al-Adha 2026 service program supplied by project owner", url: "https://www.facebook.com/100063517660926/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
+        { key: "etus-tlemcen", name: "ETUS Tlemcen: Eid al-Adha 2026 service program supplied by project owner", url: "https://www.facebook.com/etustlemcen13/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-03", evidence_type: "official" },
+        { key: "eto-oran", name: "ETO Oran: route drawings published on the Operator page, supplied by project owner", url: "https://www.facebook.com/p/ETO-100093054514209/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
+        { key: "etus-oeb", name: "ETUS Oum El Bouaghi: numbered Line diagrams supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
+        { key: "etus-c-constantine", name: "ETUS-C Constantine: numbered route graphics supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-16", evidence_type: "official" },
+        { key: "etus-skikda", name: "ETUS Skikda: Operator website Line pages and service section supplied by project owner", url: "https://etus-skikda.dz/", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-27", evidence_type: "official" },
+        { key: "etul-laghouat", name: "ETUL Laghouat: dated operating programs supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
+        { key: "osm", name: "OpenStreetMap: reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
       ],
       license: "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
       estimatedUniverse: null,
-      coverageNote: "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
+      coverageNote: "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), 25 official ETUS-C Constantine Lines, 6 official ETUS Skikda Lines, and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Constantine identities, Arabic endpoints and route colours come from two supplied Operator graphics, a numbered route list and a schematic network map; the schematic is not reusable geometry, so all 25 Lines are directory-only with no intermediate Stations, no distances and no service hours. Skikda identities, Arabic termini and complete ordered Arabic stop sequences come from the Operator\'s own website, read in a browser by the project owner because the site served an expired TLS certificate; every Line starts at the city-centre square ساحة الشهداء, stops carries the published sequence length, the stop names stay Source evidence because the page gives no coordinates, and the network-wide 06:00 to 19:00 window is not published as per-Line service hours. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
       titles: { en: "Algeria urban and suburban bus lines", fr: "Lignes de bus urbaines et suburbaines d'Algérie", ar: "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر" },
       stats: (rows) => {
         const lines = rows.filter((r) => r.line != null);
@@ -791,15 +792,15 @@ export const MIGRATIONS = {
     }),
     meta: {
       sources: [
-        { key: "yalidine", name: "Yalidine Express — nos-agences", url: "https://yalidine-express.com.dz/nos-agences/", license: "Data © Yalidine Express; redistributed for reference", evidence_type: "official" },
-        { key: "guepex", name: "Guepex — public agences feed", url: "https://www.guepex.dz/public/data/agences.json", license: "Data © Guepex; redistributed for reference", evidence_type: "official" },
-        { key: "anderson", name: "Anderson Logistics — agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", evidence_type: "official" },
-        { key: "noest", name: "Noest Express — bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", evidence_type: "official" },
-        { key: "maystro", name: "Maystro Delivery — coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
+        { key: "yalidine", name: "Yalidine Express: nos-agences", url: "https://yalidine-express.com.dz/nos-agences/", license: "Data © Yalidine Express; redistributed for reference", evidence_type: "official" },
+        { key: "guepex", name: "Guepex: public agences feed", url: "https://www.guepex.dz/public/data/agences.json", license: "Data © Guepex; redistributed for reference", evidence_type: "official" },
+        { key: "anderson", name: "Anderson Logistics: agency directory", url: "https://anderson-ecommerce.com/", license: "Data © Anderson Logistics; redistributed for reference", evidence_type: "official" },
+        { key: "noest", name: "Noest Express: bureaux directory", url: "https://noest-dz.com/", license: "Data © Noest Express; redistributed for reference", evidence_type: "official" },
+        { key: "maystro", name: "Maystro Delivery: coverage page", url: "https://maystro-delivery.com/Coverage.html", license: "Data © Maystro Delivery; redistributed for reference", evidence_type: "official" },
       ],
       license: "Stop-desk data © the respective carriers; carrier registry compiled by GeoAlgeria. Redistributed for reference. See README.",
       estimatedUniverse: null,
-      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+      coverageNote: "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
       titles: { en: "Algeria delivery stop-desks", fr: "Points relais de livraison d'Algérie", ar: "نقاط استلام التوصيل في الجزائر" },
       stats: (rows) => {
         const dataDir = join(REPO_ROOT, "packages", "livraison", "data");
@@ -829,7 +830,7 @@ export const MIGRATIONS = {
     meta: {
       sources: [
         { key: "dgpc", name: "Direction Générale de la Protection Civile", url: "https://dgpc.dz/dgpc2/", license: "Government content © Direction Générale de la Protection Civile (DGPC); redistributed for reference", evidence_type: "official" },
-        { key: "osm", name: "OpenStreetMap contributors — reviewed unit coordinates", url: "https://www.openstreetmap.org/copyright", license: "© OpenStreetMap contributors, ODbL 1.0", evidence_type: "crowdsourced" },
+        { key: "osm", name: "OpenStreetMap contributors: reviewed unit coordinates", url: "https://www.openstreetmap.org/copyright", license: "© OpenStreetMap contributors, ODbL 1.0", evidence_type: "crowdsourced" },
       ],
       // No open licence — official government content, so the prose moves to
       // conditionsOfAccess in the discovery descriptor (buildDcat) rather than a
@@ -837,7 +838,7 @@ export const MIGRATIONS = {
       license: "DGPC records © Direction Générale de la Protection Civile; redistributed for reference with no stated open licence. Reviewed OpenStreetMap coordinate evidence © OpenStreetMap contributors, ODbL 1.0.",
       estimatedUniverse: 880,
       coverageNote:
-        "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz) — 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
+        "The complete national Protection Civile (civil protection / fire & rescue) unit network published by the DGPC (dgpc.dz): 880 units across all wilayas, each with an Arabic name, address, coordinate and status tier, plus telephone/fax fields when the DGPC publishes a dialable value. Every unit carries a real DGPC coordinate; six coarse points have evidence-backed unit coordinates from OpenStreetMap, while unresolved coincident, polygon-centroid, or coarse points remain approximate. The DGPC's own cod_wilaya is pre-2026-reform (\"01\"..\"58\"); wilaya_code here is derived by point-in-polygon against the 69 post-reform wilaya boundaries and cross-checked against the DGPC code, so units in the new wilayas carry their correct code while a border unit misfiled by a simplified outline (geometry and DGPC disagree among pre-reform codes) resolves to the DGPC's official code. The DGPC code is preserved in refs.dgpc_wilaya. Commune is best-effort (Arabic name match, nearest-centroid fallback).",
       titles: { en: "Civil protection units of Algeria", fr: "Unités de la Protection Civile d'Algérie", ar: "وحدات الحماية المدنية الجزائرية" },
       stats: (rows) => ({
         by_statut: count(rows, "statut"),
@@ -870,9 +871,9 @@ export const MIGRATIONS = {
     updated: "2026-06-13",
     meta: {
       sources: [
-        { key: "djezzy", name: "Djezzy — published 5G coverage map (Optimum Telecom Algérie)", url: "https://www.djezzy5g.dz/map.html", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference", evidence_type: "official" },
-        { key: "mobilis", name: "Mobilis — published 5G coverage map (ATM Mobilis)", url: "https://mobilis.dz/map/5g", license: "Data © ATM Mobilis; redistributed for reference", evidence_type: "official" },
-        { key: "ooredoo", name: "Ooredoo Algérie — published 5G covered communes", url: "https://www.ooredoo.dz/fr/particuliers/internet/5g", license: "Data © Ooredoo Algérie; redistributed for reference", evidence_type: "official" },
+        { key: "djezzy", name: "Djezzy: published 5G coverage map (Optimum Telecom Algérie)", url: "https://www.djezzy5g.dz/map.html", license: "Data © Optimum Telecom Algérie (Djezzy); redistributed for reference", evidence_type: "official" },
+        { key: "mobilis", name: "Mobilis: published 5G coverage map (ATM Mobilis)", url: "https://mobilis.dz/map/5g", license: "Data © ATM Mobilis; redistributed for reference", evidence_type: "official" },
+        { key: "ooredoo", name: "Ooredoo Algérie: published 5G covered communes", url: "https://www.ooredoo.dz/fr/particuliers/internet/5g", license: "Data © Ooredoo Algérie; redistributed for reference", evidence_type: "official" },
       ],
       // No open licence — operator-published coverage claims, so the prose moves
       // to conditionsOfAccess in the discovery descriptor (buildDcat) rather than

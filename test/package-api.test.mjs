@@ -187,11 +187,12 @@ test("aviation: routes resolve to endpoints, are directional, and carry a source
   assert.ok(alg.every((r) => r.from === "ALG"), "routesFrom returned arrivals");
 });
 
-test("aviation: the confirmed Berlin launch stays directional and planned", async () => {
+// Berlin launched on 14 Sep 2026, so it moved out of plannedRoutes(). The test
+// keeps the same shape as before the launch, with the collections swapped: what
+// it is really guarding is that a launch moves a pair rather than duplicating it.
+test("aviation: the launched Berlin route is operating and still directional", async () => {
   const m = await pkg("aviation");
-  const berlin = m
-    .plannedRoutes()
-    .filter((r) => r.from === "BER" || r.to === "BER");
+  const berlin = m.routes().filter((r) => r.from === "BER" || r.to === "BER");
 
   assert.deepEqual(
     berlin.map((r) => ({
@@ -205,22 +206,22 @@ test("aviation: the confirmed Berlin launch stays directional and planned", asyn
       {
         id: "alg-ber",
         flight: "AH 2072",
-        status: "unclear",
+        status: "active",
         days: ["mon"],
         evidence: "verified",
       },
       {
         id: "ber-alg",
         flight: "AH 2073",
-        status: "unclear",
+        status: "active",
         days: ["mon"],
         evidence: "verified",
       },
     ],
   );
   assert.ok(
-    !m.routes().some((r) => r.from === "BER" || r.to === "BER"),
-    "Berlin leaked into the operating-route collection before launch",
+    !m.plannedRoutes().some((r) => r.from === "BER" || r.to === "BER"),
+    "Berlin is operating and must not also sit in plannedRoutes()",
   );
   assert.deepEqual(
     m.routeEndpoints().find((e) => e.iata === "BER"),
@@ -319,20 +320,14 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     evidence: "verified",
     planned: true,
   });
-  assert.deepEqual(pick("alg-del"), {
-    flight: "AH 3104",
-    status: "unclear",
-    days: ["tue", "thu", "sun"],
-    evidence: "listed",
-    planned: true,
-  });
-  assert.deepEqual(pick("del-alg"), {
-    flight: "AH 3105",
-    status: "unclear",
-    days: ["mon", "wed", "fri"],
-    evidence: "listed",
-    planned: true,
-  });
+  // Delhi was withdrawn before it ever operated (12 Sep 2026), so both legs are
+  // gone rather than restyled, and the endpoint goes with them.
+  for (const id of ["alg-del", "del-alg"])
+    assert.ok(!byId.has(id), `${id}: a withdrawn planned route is still shipping`);
+  assert.ok(
+    !m.routeEndpoints().some((e) => e.iata === "DEL"),
+    "DEL is still an endpoint with no route referencing it",
+  );
 
   for (const id of ["alg-bzv", "bzv-alg", "alg-cky", "cky-alg"])
     assert.deepEqual(
@@ -386,14 +381,65 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
   assert.deepEqual(
     m
       .routeEndpoints()
-      .filter((e) => ["BZV", "CKY", "DEL", "DJE", "LOS"].includes(e.iata))
+      .filter((e) => ["BZV", "CKY", "DJE", "LOS"].includes(e.iata))
       .map((e) => [e.iata, e.country]),
     [
       ["BZV", "CG"],
       ["CKY", "GN"],
-      ["DEL", "IN"],
       ["DJE", "TN"],
       ["LOS", "NG"],
     ],
   );
+});
+
+// The 2026-09-27 pass: an airport correction, a triangle, and a suspension. Each
+// one is a shape the collection rules single out, so each gets an assertion.
+test("aviation: Batna serves Orly, the Gulf triangle is planned, Dubai is suspended", async () => {
+  const m = await pkg("aviation");
+  const routes = m.routes();
+  const byId = new Map([...routes, ...m.plannedRoutes()].map((r) => [r.id, r]));
+  const shape = (id) => {
+    const r = byId.get(id);
+    assert.ok(r, `${id}: route missing`);
+    return { flight: r.flight, status: r.status, days: r.days, evidence: r.evidence, planned: r.planned };
+  };
+
+  // Batna's Paris service is at Orly. The corrected id must not coexist with the
+  // wrong one, which the Wikipedia table would otherwise re-add as a listed row.
+  assert.ok(!byId.has("blj-cdg"), "blj-cdg is back: the wrong-airport guard is not holding");
+  assert.deepEqual(shape("blj-ory"), {
+    flight: "AH 1120", status: "active", days: null, evidence: "verified", planned: false,
+  });
+  assert.deepEqual(shape("ory-blj"), {
+    flight: "AH 1121", status: "active", days: null, evidence: "verified", planned: false,
+  });
+
+  // A triangle yields one-directional nonstops, and only the Algeria-touching
+  // legs are in scope: two rows, not four, and none for the Kuwait-Amman leg.
+  assert.deepEqual(shape("alg-kwi"), {
+    flight: null, status: "unclear", days: ["mon"], evidence: "listed", planned: true,
+  });
+  assert.deepEqual(shape("amm-alg"), {
+    flight: null, status: "unclear", days: null, evidence: "listed", planned: true,
+  });
+  for (const id of ["kwi-alg", "alg-amm", "kwi-amm", "amm-kwi"])
+    assert.ok(!byId.has(id), `${id}: not a nonstop leg of the announced triangle`);
+  assert.deepEqual(
+    m.routeEndpoints().find((e) => e.iata === "KWI"),
+    {
+      iata: "KWI",
+      name: "Aéroport international de Koweït",
+      name_en: "Kuwait International Airport",
+      name_ar: "مطار الكويت الدولي",
+      lat: 29.224487,
+      lng: 47.969813,
+      country: "KW",
+    },
+  );
+
+  // A suspension dims an arc and never deletes it, so the row stays in routes().
+  assert.deepEqual(shape("alg-dxb"), {
+    flight: null, status: "suspended", days: null, evidence: "listed", planned: false,
+  });
+  assert.match(byId.get("alg-dxb").source, /^https:\/\//);
 });

@@ -47,12 +47,15 @@ import { MIGRATIONS } from "./lib/v2-transforms.mjs";
 import {
   canonicalCommuneCodes,
   canonicalCommuneForCode,
+  canonicalCommuneForCurrentLabel,
+  canonicalCommunes,
 } from "./lib/commune-index.mjs";
 import { licenceTermsErrors } from "./lib/licence-terms.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
 import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
+import { emDashErrors } from "./lib/no-em-dash.mjs";
 import { rules as normalizeRules } from "../packages/normalize/index.js";
 import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
@@ -297,6 +300,146 @@ function reportBoundaries(full) {
     `  ${checked} geocoded records checked against 69 polygons — ${outside} outside their declared wilaya ` +
       `(${((100 * outside) / checked).toFixed(2)}%, warnings: the outlines are display-grade), ${mislinked} mislinked`,
   );
+}
+
+// --- commune-centroid coordinates track the flagship centres ------------------
+// A record with no point of its own borrows its commune's centre and says so in
+// `geo_method`. That borrowed value is a copy, so it goes stale silently the
+// moment the flagship corrects the centre: the 56 centres corrected on 2026-09-27
+// left 45 published records pointing at a repudiated value, sante's EPH El Harrach
+// 51.5 km away and inside another wilaya (research/_commune-centres/README.md).
+// Nothing caught it, because every one of those coordinates is a real Algerian
+// point inside the national outline and inside the right wilaya polygon.
+//
+// So the claim is checked against the flagship instead of against geography: a
+// record that says "this is my commune's centre" must carry the centre that
+// commune has NOW. The bound (package, geo_method) pairs are listed rather than
+// inferred, because `geo_method` is per-package vocabulary and three of its
+// commune-flavoured values are NOT a flagship centre at all:
+//
+//   telecom `operator_commune_point`      the operator's own per-commune point
+//   industrie-pharmaceutique              the mean of the wilaya's commune points,
+//   + enseignement-superieur `wilaya*`    not any one commune's centre
+//   formation-professionnelle `wilaya`    the takwin wilaya seat
+//
+// Anchors:
+//   code    the record names its commune by code, and that commune is the anchor.
+//   name    it names it in prose only (`commune`, no code), so the anchor is what
+//           that label resolves to inside the declared wilaya. A label that does
+//           not resolve is counted, not failed: the takwin source concatenates
+//           words ("برجالبحري"), and inventing a match is worse than no check.
+//   wilaya  no anchor per record (agriculture's `wilaya_centroid` rows carry
+//           commune: null by design, the value being the wilaya chief town's
+//           centre), but the coordinate must still be SOME current centre of the
+//           declared wilaya, which is what a repudiated one stops being.
+const CENTROID_ANCHORS = {
+  agriculture: { commune_centroid: "code", wilaya_centroid: "wilaya" },
+  "enseignement-superieur": { commune: "name" },
+  "formation-professionnelle": { commune: "name" },
+  "industrie-pharmaceutique": { commune_centroid: "code" },
+  mobilis: { commune_centroid: "code" },
+  ooredoo: { commune_centroid: "code" },
+  sante: { commune_centroid: "code" },
+};
+
+// 6 decimals is the repository's coordinate resolution (~0.1 m) and a few flagship
+// centres are stored at 7, so the comparison is made on the rounded value a
+// published record can actually carry, not with a distance tolerance, which would
+// let a slow drift through one metre at a time.
+//
+// Both roundings in use here are accepted, because they genuinely disagree on an
+// exact half at the 7th decimal and the difference is 1e-6 degrees, ~0.1 m:
+// Cheria's 7.7471025 is 7.747102 under toFixed(6) (every generator but one) and
+// 7.747103 under Math.round(n*1e6)/1e6 (formation-professionnelle). Failing nine
+// correct records over 0.1 m would teach the next reader to disable the check.
+const round6 = (n) => Number(n.toFixed(6));
+const round6Half = (n) => Math.round(n * 1e6) / 1e6;
+const pointKeys = (lat, lng) => [
+  `${round6(lat)},${round6(lng)}`,
+  `${round6Half(lat)},${round6Half(lng)}`,
+];
+const CENTRES_BY_WILAYA = new Map();
+for (const c of canonicalCommunes) {
+  if (!Number.isFinite(c.latitude) || !Number.isFinite(c.longitude)) continue;
+  const w = String(c.wilaya_code).padStart(2, "0");
+  if (!CENTRES_BY_WILAYA.has(w)) CENTRES_BY_WILAYA.set(w, new Set());
+  for (const k of pointKeys(c.latitude, c.longitude)) CENTRES_BY_WILAYA.get(w).add(k);
+}
+
+const CENTROID_TALLY = new Map();
+
+function tallyCentroidAnchors(pkg, label, rows) {
+  const anchors = CENTROID_ANCHORS[pkg];
+  if (!anchors) return;
+  const t = CENTROID_TALLY.get(pkg) || { checked: 0, unresolved: 0, stale: [] };
+  for (const r of rows) {
+    const anchor = anchors[r.geo_method];
+    if (!anchor) continue;
+    if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
+    const point = `${round6(r.lat)},${round6(r.lng)}`;
+
+    if (anchor === "wilaya") {
+      const centres = CENTRES_BY_WILAYA.get(r.wilaya_code);
+      if (!centres) {
+        t.unresolved++;
+        continue;
+      }
+      t.checked++;
+      if (centres.has(point)) continue;
+      t.stale.push({ label, id: r.id, method: r.geo_method, want: `any current centre of w${r.wilaya_code}`, got: point });
+      continue;
+    }
+
+    const commune =
+      anchor === "code"
+        ? r.commune_code == null
+          ? null
+          : canonicalCommuneForCode(r.commune_code)
+        : canonicalCommuneForCurrentLabel(r.wilaya_code, r.commune, r.commune_ar ?? r.commune);
+    if (!commune) {
+      t.unresolved++;
+      continue;
+    }
+    t.checked++;
+    const want = pointKeys(commune.latitude, commune.longitude);
+    if (want.includes(point)) continue;
+    t.stale.push({ label, id: r.id, method: r.geo_method, want: `${commune.name_fr} ${want[0]}`, got: point });
+  }
+  CENTROID_TALLY.set(pkg, t);
+}
+
+function reportCentroidAnchors(full) {
+  let checked = 0;
+  let stale = 0;
+  for (const [pkg, t] of [...CENTROID_TALLY].sort()) {
+    checked += t.checked;
+    stale += t.stale.length;
+    const line =
+      `${pkg}: ${t.checked} centroid-declared record(s) checked` +
+      (t.unresolved ? `, ${t.unresolved} with no resolvable commune anchor (skipped)` : "");
+    if (!t.stale.length) {
+      console.log(`  OK: ${line}`);
+      continue;
+    }
+    fail(
+      `${line}: ${t.stale.length} no longer sit on the commune centre they claim. ` +
+        `Re-run the package generator (or node scripts/sync-commune-centroid-dependents.mjs --write) ` +
+        `so the borrowed coordinate follows the flagship.`,
+    );
+    for (const s of t.stale.slice(0, 5))
+      console.log(`      ${s.label} id=${s.id} geo_method=${s.method} has ${s.got}, expected ${s.want}`);
+    if (t.stale.length > 5) console.log(`      … ${t.stale.length - 5} more`);
+  }
+  // A bound package that was never visited means the pair was renamed out from
+  // under the table, and the check went quiet rather than failing.
+  if (full)
+    for (const pkg of Object.keys(CENTROID_ANCHORS))
+      if (!CENTROID_TALLY.has(pkg))
+        fail(
+          `CENTROID_ANCHORS binds "${pkg}", but no record of it was checked: the package or its ` +
+            `geo_method vocabulary changed. Update the table deliberately; do not leave a silent check.`,
+        );
+  console.log(`  ${checked} borrowed commune-centre coordinate(s) checked against the flagship, ${stale} stale`);
 }
 
 // data/<dataset>.json + its metadata key, csv mirror, optional geojson mirror.
@@ -826,6 +969,7 @@ function validateDataset(pkg, spec) {
     });
     for (const m of v2errs) fail(`${label} [v2]: ${m}`);
     tallyBoundaries(pkg, label, arr);
+    tallyCentroidAnchors(pkg, label, arr);
     const metaRes = validateV2Metadata(meta);
     for (const m of metaRes.errors) fail(`${pkg}/metadata.json [v2]: ${m}`);
     const warnCount = v2warn.length + metaRes.warnings.length;
@@ -1412,6 +1556,9 @@ function validateLicenceTerms(pkgs) {
     const dir = join(ROOT, "packages", pkg);
     const manifestPath = join(dir, "package.json");
     const licencePath = join(dir, "LICENSE");
+    // A mixed MIT/ODbL package carries its per-part attribution in NOTICE, which
+    // the licence rule treats as part of the terms; absent for every other class.
+    const noticePath = join(dir, "NOTICE");
     if (!existsSync(manifestPath)) continue;
     if (!existsSync(licencePath)) {
       fail(`${pkg}: has no LICENSE file, so its data terms are unstated`);
@@ -1439,11 +1586,45 @@ function validateLicenceTerms(pkgs) {
       manifest,
       metadata,
       licenceText: readFileSync(licencePath, "utf-8"),
+      noticeText: existsSync(noticePath) ? readFileSync(noticePath, "utf-8") : null,
       members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
     });
     for (const problem of problems) fail(problem);
     if (!problems.length) console.log(`  OK: ${pkg} declares ${JSON.stringify(manifest.license)} and its LICENSE says so`);
   }
+}
+
+// No em dash (U+2014) in the metadata GeoAlgeria publishes. Every separator that
+// used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
+// @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
+// sweep would come back on the next rebuild. The rule and the message live in
+// scripts/lib/no-em-dash.mjs; record values are out of scope on purpose.
+function validateNoEmDash(pkgs) {
+  const files = [];
+  for (const pkg of pkgs) {
+    const dir = join(ROOT, "packages", pkg);
+    for (const rel of ["dataset-metadata.json", join("data", "metadata.json")]) {
+      const path = join(dir, rel);
+      if (!existsSync(path)) continue;
+      try {
+        files.push({ label: `${pkg}/${rel}`, json: readJson(path) });
+      } catch (e) {
+        fail(`${pkg}/${rel}: cannot read for the em-dash check, ${e.message}`);
+      }
+    }
+    const geoDir = join(dir, "data", "geojson");
+    if (!existsSync(geoDir)) continue;
+    for (const name of readdirSync(geoDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
+      try {
+        files.push({ label: `${pkg}/data/geojson/${name}`, json: readJson(join(geoDir, name)) });
+      } catch (e) {
+        fail(`${pkg}/data/geojson/${name}: cannot read for the em-dash check, ${e.message}`);
+      }
+    }
+  }
+  const problems = emDashErrors(files);
+  for (const problem of problems) fail(problem);
+  if (!problems.length) console.log(`  OK: ${files.length} metadata file(s) carry no em dash`);
 }
 
 // @geoalgeria/normalize publishes the orthographic equivalences GeoAlgeria asserts
@@ -1620,6 +1801,9 @@ for (const pkg of targets) {
 console.log(`\n[geo: every point inside its declared wilaya]`);
 reportBoundaries(!only);
 
+console.log(`\n[commune-centroid coordinates track the flagship commune centres]`);
+reportCentroidAnchors(!only);
+
 console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
 validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
 
@@ -1636,6 +1820,9 @@ validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
 validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[no em dash in published metadata]`);
+validateNoEmDash(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 // Not gated on `only`: the Rule table is one table for the whole repository, like
 // the licence check above, and it is cheap.
