@@ -114,14 +114,51 @@ jobs:
           fi
           # Idempotency: one announcement per tag. Re-runs and workflow_dispatch
           # must not post a second public Discussion.
-          # The title is headline-only (no tag), so match the tag in title+body —
+          # The title is headline-only (no tag), so match the tag in title+body,
           # the body always prints "Release `<tag>`". Keeps one announcement per tag.
-          EXISTING=$(gh api graphql -f catId="$CAT_ID" -f query='
-            query($catId:ID!){repository(owner:"yasserstudio",name:"geoalgeria"){
-              discussions(first:50,categoryId:$catId){nodes{title body}}}}' \
-            --jq '.data.repository.discussions.nodes[] | .title + " " + .body' | grep -F "$TAG" || true)
-          if [ -n "$EXISTING" ]; then
-            echo "Announcement for $TAG already exists — skipping."
+          #
+          # This is the ONLY duplicate guard, so it has to see every Discussion in
+          # the category, not the first page of them. An unpaginated first:50 starts
+          # missing announcements as soon as the category holds more than 50, and
+          # then posts a second public Discussion for a tag that already has one.
+          # Newest first, so a re-run of a recent tag matches on page 1.
+          PAGE_QUERY='
+            query($catId:ID!,$cursor:String){repository(owner:"yasserstudio",name:"geoalgeria"){
+              discussions(first:100,categoryId:$catId,after:$cursor,
+                          orderBy:{field:CREATED_AT,direction:DESC}){
+                pageInfo{hasNextPage endCursor}
+                nodes{title body}}}}'
+          CURSOR=""
+          FOUND=""
+          EXHAUSTED=""
+          # 100 pages = 10,000 Discussions. The cap exists only so a lying pageInfo
+          # cannot spin forever; reaching it is itself a finding.
+          for _ in $(seq 1 100); do
+            if [ -z "$CURSOR" ]; then
+              RESP=$(gh api graphql -f catId="$CAT_ID" -f query="$PAGE_QUERY")
+            else
+              RESP=$(gh api graphql -f catId="$CAT_ID" -f cursor="$CURSOR" -f query="$PAGE_QUERY")
+            fi
+            if printf '%s' "$RESP" \
+              | jq -r '.data.repository.discussions.nodes[] | .title + " " + .body' \
+              | grep -qF "$TAG"; then
+              FOUND=yes
+              break
+            fi
+            if [ "$(printf '%s' "$RESP" | jq -r '.data.repository.discussions.pageInfo.hasNextPage')" != "true" ]; then
+              EXHAUSTED=yes
+              break
+            fi
+            CURSOR=$(printf '%s' "$RESP" | jq -r '.data.repository.discussions.pageInfo.endCursor')
+          done
+          if [ -n "$FOUND" ]; then
+            echo "Announcement for $TAG already exists, skipping."
+            exit 0
+          fi
+          if [ -z "$EXHAUSTED" ]; then
+            # Absence is not proven. Posting anyway risks a duplicate public
+            # Discussion, which is worse than a missing one, so hand it back.
+            echo "::warning::Could not read every Announcements Discussion while checking for $TAG (page cap reached). Not posting; check by hand and post from the job summary if it is missing."
             exit 0
           fi
           gh api graphql -f query='
