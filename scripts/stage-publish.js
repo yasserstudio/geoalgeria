@@ -14,8 +14,17 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { rewriteWorkspaceSpecs } from "./lib/workspace-deps.mjs";
+import { createManifestRestore, guardWithProcessSignals } from "./lib/manifest-restore.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+// Every manifest this run rewrote for the upload, put back on the way out. The
+// per-package `finally` below covers a throw and a normal return; it does NOT
+// run on a signal, and Ctrl-C during `npm stage publish` (the slow step, so the
+// likely moment) used to leave the resolved `"@geoalgeria/schema": "^1.1.1"` on
+// disk. Restores are idempotent, so the two paths cannot fight.
+const restores = createManifestRestore();
+guardWithProcessSignals(restores);
 
 const ALL_PACKAGE_DIRS = readdirSync(join(ROOT, "packages"))
   .map((d) => `packages/${d}`)
@@ -101,6 +110,9 @@ for (const pkg of PACKAGES) {
     for (const r of rewritten) {
       console.log(`  rewrite: ${name} ${r.field}.${r.name} ${r.from} -> ${r.to}`);
     }
+    // Registered BEFORE the write, so a signal landing between the two still
+    // finds the original.
+    restores.remember(manifestPath, originalManifest);
     // Trailing newline: keep the file's shape so a restore is byte-identical in
     // spirit and a stray failure leaves a normal package.json behind.
     writeFileSync(manifestPath, `${JSON.stringify(publishManifest, null, 2)}\n`);
@@ -133,7 +145,7 @@ for (const pkg of PACKAGES) {
   } finally {
     // The rewrite exists only for the upload. Put the workspace: specs back so
     // the runner's tree, and a local `pnpm release-staged`, stay installable.
-    if (rewritten.length > 0) writeFileSync(manifestPath, originalManifest);
+    restores.restore(manifestPath);
   }
 }
 
