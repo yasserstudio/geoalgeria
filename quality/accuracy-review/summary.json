@@ -44,11 +44,11 @@
     },
     {
       "path": "packages/buses/data/lines.json",
-      "sha256": "4fd2e2f342777378d191b661c64e4733851eccfb1dad3bd9fa99a889d1987bc0"
+      "sha256": "e3b9fa9f8d294e53d05a1fc18336cef5354b8e7af83d5425dee539f3f8d8a2c1"
     },
     {
       "path": "packages/buses/data/metadata.json",
-      "sha256": "6cd3d998d89a95298452cedae6f06bd79e3140b146a9c17cef10a73797d30009"
+      "sha256": "df61ae313f4db1c081fe36c359bbe1a404ec82038d2a782a6fd5b021c8cfb2b2"
     },
     {
       "path": "packages/buses/data/stations.json",
@@ -555,17 +555,17 @@
         "title_fr": "Lignes de bus urbaines et suburbaines d'Algérie",
         "title_ar": "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر",
         "title_en": "Algeria urban and suburban bus lines",
-        "record_count": 1781,
+        "record_count": 1787,
         "geocoded_count": 1603,
-        "geocoded_pct": 90,
+        "geocoded_pct": 89.7,
         "precision": {
           "exact": 1596,
           "approximate": 7
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), 25 official ETUS-C Constantine Lines, and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Constantine identities, Arabic endpoints and route colours come from two supplied Operator graphics, a numbered route list and a schematic network map; the schematic is not reusable geometry, so all 25 Lines are directory-only with no intermediate Stations, no distances and no service hours. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
-        "wilayas_covered": 17,
+        "coverage_note": "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), 25 official ETUS-C Constantine Lines, 6 official ETUS Skikda Lines, and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Constantine identities, Arabic endpoints and route colours come from two supplied Operator graphics, a numbered route list and a schematic network map; the schematic is not reusable geometry, so all 25 Lines are directory-only with no intermediate Stations, no distances and no service hours. Skikda identities, Arabic termini and complete ordered Arabic stop sequences come from the Operator's own website, read in a browser by the project owner because the site served an expired TLS certificate; every Line starts at the city-centre square ساحة الشهداء, stops carries the published sequence length, the stop names stay Source evidence because the page gives no coordinates, and the network-wide 06:00 to 19:00 window is not published as per-Line service hours. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
+        "wilayas_covered": 18,
         "bbox": [
           0.078075,
           35.290352,
@@ -575,7 +575,7 @@
         "entities": [
           {
             "file": "lines.json",
-            "count": 178
+            "count": 184
           },
           {
             "file": "stations.json",
@@ -685,6 +685,14 @@
             "evidence_type": "official"
           },
           {
+            "key": "etus-skikda",
+            "name": "ETUS Skikda: Operator website Line pages and service section supplied by project owner",
+            "url": "https://etus-skikda.dz/",
+            "license": "Proprietary factual reference data; no open reuse license",
+            "retrieved": "2026-09-27",
+            "evidence_type": "official"
+          },
+          {
             "key": "etul-laghouat",
             "name": "ETUL Laghouat: dated operating programs supplied by project owner",
             "license": "Proprietary factual reference data; no open reuse license",
@@ -701,7 +709,7 @@
           }
         ],
         "license": "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
-        "updated": "2026-09-16",
+        "updated": "2026-09-27",
         "operators": [
           "ETUL Laghouat",
           "ETUS Oum El Bouaghi",
@@ -711,6 +719,7 @@
           "ETUSTO",
           "ETUSA",
           "ETUS Setif",
+          "ETUS Skikda",
           "ETUS Sidi Bel Abbès",
           "ETUS Annaba",
           "ETUS-C Constantine",
@@ -728,6 +737,7 @@
           "ETUSTO": 5,
           "ETUSA": 76,
           "ETUS Setif": 5,
+          "ETUS Skikda": 6,
           "ETUS Sidi Bel Abbès": 8,
           "ETUS Annaba": 6,
           "ETUS-C Constantine": 25,
@@ -736,7 +746,7 @@
           "ETO": 1,
           "ETUS Aïn Defla": 16
         },
-        "with_stop_count": 52,
+        "with_stop_count": 58,
         "with_major_stop_count": 1,
         "with_service_hours": 5,
         "with_departure_schedules": 8,

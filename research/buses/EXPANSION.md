@@ -10,8 +10,8 @@ recommended action derived from those observations.
 > **Superseded 2026-09-04:** `@geoalgeria/buses` 2.1.0 shipped since this was
 > written. The "current directory and map coverage" totals below (85 Lines,
 > eight Operators, 47 shapes, 1,290 Stations, 2,105 memberships) are the
-> 2026-09-02 snapshot, not the live package, which now carries 178 Lines
-> across 15 Operators, 76 shapes, 128 Directions, 1,603 Stations and 2,685
+> 2026-09-02 snapshot, not the live package, which now carries 184 Lines
+> across 16 Operators, 76 shapes, 128 Directions, 1,603 Stations and 2,685
 > memberships (see `packages/buses/README.md`). The per-Operator directory-only
 > vs. shapes-available calls made below still hold; only the totals are stale.
 

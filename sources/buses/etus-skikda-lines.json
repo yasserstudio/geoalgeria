@@ -1,0 +1,257 @@
+{
+  "evidence": {
+    "contact": {
+      "email": "russicada-bus@etus-skikda.dz",
+      "facebook_url": "https://www.facebook.com/RussicadaBus",
+      "fax": "038.93.18.53",
+      "phone": "038.93.18.08",
+      "website_url": "https://etus-skikda.dz/"
+    },
+    "excerpt_file": "research/buses/etus-skikda-site-2026-09-27.md",
+    "fetch_note": "The Operator site served an expired TLS certificate on 2026-09-27, so the page was read in a browser by the project owner and transcribed. Nothing was retrieved by an automated client.",
+    "head_office": "Zone Industrielle de la Commune Hammadi Krouma, Skikda",
+    "legal_status": "Public industrial and commercial establishment under the Minister of Transport, created by executive decree 06-504 of 24 December 2006; operations began 12 March 2008.",
+    "line_source_url": "https://etus-skikda.dz/",
+    "mode": "operator_website_page_supplied_by_project_owner",
+    "operator_name_ar": "المؤسسة العمومية للنقل الحضري وشبه الحضري لولاية سكيكدة (ETUS-Skikda)",
+    "osm_name_receipts": [
+      {
+        "name_ar": "ساحة الشهداء",
+        "name_fr": "Place des Martyrs",
+        "osm": "way/168946052",
+        "role": "shared_terminus",
+        "timestamp_osm_base": "2026-09-27T11:32:21Z"
+      },
+      {
+        "name_ar": "الحدائق",
+        "name_fr": "El Hadaïek",
+        "osm": "node/3042693423",
+        "role": "served_area",
+        "timestamp_osm_base": "2026-09-27T11:31:21Z"
+      },
+      {
+        "name_ar": "حمادي كرومة",
+        "name_fr": "Hammadi Krouma",
+        "osm": "node/2852022479",
+        "role": "served_area",
+        "timestamp_osm_base": "2026-09-27T11:31:21Z"
+      },
+      {
+        "name_ar": "فلفلة",
+        "name_fr": "Filfila",
+        "osm": "relation/5174375",
+        "role": "served_area",
+        "timestamp_osm_base": "2026-09-27T11:31:21Z"
+      },
+      {
+        "name_ar": "بوزعرورة",
+        "name_fr": "Bouzaâroura",
+        "osm": "node/2861255057",
+        "role": "served_area",
+        "timestamp_osm_base": "2026-09-27T11:32:21Z"
+      },
+      {
+        "name_ar": "الزفزاف",
+        "name_fr": null,
+        "osm": "node/7730537685",
+        "role": "served_area_unnamed_in_fr",
+        "timestamp_osm_base": "2026-09-27T11:32:21Z"
+      },
+      {
+        "name_ar": "الزرامنة",
+        "name_fr": null,
+        "osm": null,
+        "role": "served_area_unnamed_in_fr",
+        "timestamp_osm_base": "2026-09-27T11:32:21Z"
+      }
+    ],
+    "service": {
+      "daily_passengers_claimed": 3000,
+      "days": "all_year",
+      "fleet_buses": 30,
+      "line_count": 6,
+      "window_first": "06:00",
+      "window_last": "19:00"
+    },
+    "service_areas_ar": [
+      "الزفزاف",
+      "الزرامنة",
+      "الحدائق",
+      "حمادي كرومة",
+      "فلفلة",
+      "بوزعرورة"
+    ],
+    "service_areas_note": "The service paragraph names these six areas alongside the count of six Lines, but it never binds an area to a Line number, so they are not published as Line names. Three of them appear inside the Line stop lists (مقبرة الزفزاف on Line 01, مدخل الحدائق on Line 03, تكوين حمادي كرومة on Line 04); الزرامنة, فلفلة and بوزعرورة appear in no stop list.",
+    "service_hours_note": "06:00 to 19:00 is one network-wide service window, not a per-Line first and last departure, so no Line ships service_hours. Publishing it per Line would claim departure times the page never states.",
+    "stop_list_note": "Stop names are transcribed verbatim, including the page's own inconsistent spacing (مركز العربي بن مهيدي07 against مركز العربي بن مهيدي 08) and its mixed-script entries (كارافاني ladécente, Gaz de France, ADL 1, LPP, SLMB, OAIC, PLF). Lines 04 and 05 end on a stray separator in the page, so their lists are the full published sequence but cannot be proven exhaustive. The sequences carry no coordinates and are not published as Stations.",
+    "supplied_at": "2026-09-27",
+    "terminus_fr_note": "The page publishes no French. ساحة الشهداء, the shared city-centre origin of all six Lines, is named Place des Martyrs in OpenStreetMap; no French name was found for any other terminus, so those stay Arabic only rather than transliterated.",
+    "tracking_app": {
+      "claims": [
+        "bus_tracking",
+        "electronic_ticket_payment"
+      ],
+      "name": "Rusicada-Bus",
+      "play_url": "https://play.google.com/store/apps/details?id=com.deeper.etus.skikda",
+      "reuse_status": "no_open_feed_found"
+    }
+  },
+  "lines": [
+    {
+      "ref": "01",
+      "stop_count": 10,
+      "stop_names_ar": [
+        "ساحة الشهداء",
+        "حي الممرات",
+        "اكمالية 20اوث 1955",
+        "20 اوث 1955",
+        "المركز التجاري",
+        "السوق",
+        "مقبرة الزفزاف",
+        "كسار",
+        "الحواس",
+        "مدخل الجامعة"
+      ],
+      "terminus1_ar": "ساحة الشهداء",
+      "terminus2_ar": "مدخل الجامعة"
+    },
+    {
+      "ref": "02",
+      "stop_count": 9,
+      "stop_names_ar": [
+        "ساحة الشهداء",
+        "حي الممرات",
+        "ملعب 20 اوث",
+        "مركز التكوين المهني",
+        "جامعة مرج الديب",
+        "المحول",
+        "الموقف 1 اول نوفمبر",
+        "الموقف 2 اول نوفمبر",
+        "الحانوت"
+      ],
+      "terminus1_ar": "ساحة الشهداء",
+      "terminus2_ar": "الحانوت"
+    },
+    {
+      "ref": "03",
+      "stop_count": 12,
+      "stop_names_ar": [
+        "ساحة الشهداء",
+        "نابوليثا",
+        "حي عمار شطايبي",
+        "المخبزة",
+        "حي الاخوة ساكر",
+        "تكوين شبه طبي",
+        "مدخل عيسى بوكرمة",
+        "الاقامة الجامعية",
+        "الجامعة",
+        "مدخل الحدائق",
+        "عمارات سوناطراك",
+        "المشتى"
+      ],
+      "terminus1_ar": "ساحة الشهداء",
+      "terminus2_ar": "المشتى"
+    },
+    {
+      "ref": "04",
+      "stop_count": 16,
+      "stop_names_ar": [
+        "ساحة الشهداء",
+        "حي الممرات",
+        "ملعب 20 اوث",
+        "مركز التكوين المهني",
+        "جامعة مرج الديب",
+        "المحول",
+        "عمارات سطورة",
+        "عمارات PLF",
+        "البناء الداتي",
+        "المدبحة",
+        "صندوق الضمان الاجتماعي",
+        "SLMB",
+        "مركز البريد",
+        "العمارات",
+        "تكوين حمادي كرومة",
+        "الشركة الوطنية للحبوب OAIC"
+      ],
+      "terminus1_ar": "ساحة الشهداء",
+      "terminus2_ar": "الشركة الوطنية للحبوب OAIC"
+    },
+    {
+      "ref": "05",
+      "stop_count": 30,
+      "stop_names_ar": [
+        "ساحة الشهداء",
+        "المركز 03",
+        "المركز 05",
+        "حمروش حمودي",
+        "ملعب بوثلجة",
+        "محطة الوقود",
+        "المالحة",
+        "33 مسكن",
+        "القلتة",
+        "الرخامة",
+        "بارو",
+        "المدرسة",
+        "الكاسية",
+        "مفترق الطرق",
+        "الكاليتوس",
+        "سوناتيبا",
+        "كارافاني ladécente",
+        "لابيسين",
+        "Gaz de France",
+        "العمارات",
+        "مركز العربي بن مهيدي 04",
+        "مركز العربي بن مهيدي 05",
+        "مركز العربي بن مهيدي 06",
+        "مركز العربي بن مهيدي07",
+        "مركز العربي بن مهيدي 08",
+        "معهد سوناطراك",
+        "القرية",
+        "الاخوة لكحل (شعباني)",
+        "مركز البريد",
+        "الاخوة عياشي (الفتوي)"
+      ],
+      "terminus1_ar": "ساحة الشهداء",
+      "terminus2_ar": "الاخوة عياشي (الفتوي)"
+    },
+    {
+      "ref": "06",
+      "stop_count": 31,
+      "stop_names_ar": [
+        "ساحة الشهداء",
+        "المركز 03",
+        "المركز 05",
+        "حمروش حمودي",
+        "ملعب بوثلجة",
+        "محطة الوقود",
+        "المالحة",
+        "33 مسكن",
+        "القلتة",
+        "الرخامة",
+        "بارو",
+        "المدرسة",
+        "الكاسية",
+        "مفترق الطرق",
+        "الكاليتوس",
+        "سوناتيبا",
+        "كارافاني ladécente",
+        "لابيسين",
+        "Gaz de France",
+        "العمارات",
+        "مركز العربي بن مهيدي 04",
+        "مركز العربي بن مهيدي 05",
+        "مركز العربي بن مهيدي 06",
+        "مركز العربي بن مهيدي07",
+        "السياحة",
+        "المكتبة",
+        "ADL 1",
+        "ADL 2",
+        "LPP",
+        "السكن الاجتماعي",
+        "المتوسطة"
+      ],
+      "terminus1_ar": "ساحة الشهداء",
+      "terminus2_ar": "المتوسطة"
+    }
+  ]
+}

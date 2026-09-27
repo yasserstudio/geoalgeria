@@ -1,5 +1,5 @@
 export type GeoPrecision = "exact" | "approximate" | null;
-export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etus-c-constantine" | "etul-laghouat";
+export type SourceKey = "wikipedia" | "osm" | "wikipedia+osm" | "etus-tiaret" | "etusto" | "etus-bejaia" | "etus-msila" | "etus-sidi-bel-abbes" | "etus-setif" | "etus-setif+osm" | "etus-ain-defla" | "etus-ain-defla+osm" | "etus-annaba" | "etus-tlemcen" | "eto-oran" | "etus-oeb" | "etus-c-constantine" | "etus-skikda" | "etul-laghouat";
 export type RouteColor = "blue" | "green" | "orange" | "purple";
 export type SequenceStatus = "osm_member_order_unvalidated";
 export type ServicePeriod = "regular" | "friday" | "saturday";
