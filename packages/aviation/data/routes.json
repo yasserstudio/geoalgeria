@@ -171,6 +171,21 @@
     "great_circle_km": 520
   },
   {
+    "id": "alg-ber",
+    "from": "ALG",
+    "to": "BER",
+    "carrier": "AH",
+    "flight": "AH 2072",
+    "status": "active",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/",
+    "great_circle_km": 1919
+  },
+  {
     "id": "alg-bey",
     "from": "ALG",
     "to": "BEY",
@@ -308,11 +323,11 @@
     "to": "DXB",
     "carrier": "AH",
     "flight": null,
-    "status": "unclear",
+    "status": "suspended",
     "days": null,
     "evidence": "listed",
     "planned": false,
-    "source": "https://www.air-journal.fr/2026-02-18-emirates-prepare-la-fin-de-sa-ligne-dubai-alger-en-2027-sur-fond-de-crise-diplomatique-avec-lalgerie-5273218.html",
+    "source": "https://www.visa-algerie.com/emirats-lalgerie-ferme-son-espace-aerien-les-vols-commerciaux-maintenus-provisoirement/",
     "great_circle_km": 5069
   },
   {
@@ -628,6 +643,21 @@
     "great_circle_km": 520
   },
   {
+    "id": "ber-alg",
+    "from": "BER",
+    "to": "ALG",
+    "carrier": "AH",
+    "flight": "AH 2073",
+    "status": "active",
+    "days": [
+      "mon"
+    ],
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/",
+    "great_circle_km": 1919
+  },
+  {
     "id": "bja-cdg",
     "from": "BJA",
     "to": "CDG",
@@ -680,19 +710,6 @@
     "great_circle_km": 1354
   },
   {
-    "id": "blj-cdg",
-    "from": "BLJ",
-    "to": "CDG",
-    "carrier": "AH",
-    "flight": "AH 1120",
-    "status": "active",
-    "days": null,
-    "evidence": "verified",
-    "planned": false,
-    "source": "https://www.aeroroutes.com/",
-    "great_circle_km": 1505
-  },
-  {
     "id": "blj-lys",
     "from": "BLJ",
     "to": "LYS",
@@ -723,12 +740,12 @@
     "from": "BLJ",
     "to": "ORY",
     "carrier": "AH",
-    "flight": null,
-    "status": "seasonal",
+    "flight": "AH 1120",
+    "status": "active",
     "days": null,
-    "evidence": "listed",
+    "evidence": "verified",
     "planned": false,
-    "source": "https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport",
+    "source": "https://www.flightsfrom.com/BLJ-ORY",
     "great_circle_km": 1478
   },
   {
@@ -1425,6 +1442,19 @@
     "great_circle_km": 1339
   },
   {
+    "id": "ory-blj",
+    "from": "ORY",
+    "to": "BLJ",
+    "carrier": "AH",
+    "flight": "AH 1121",
+    "status": "active",
+    "days": null,
+    "evidence": "verified",
+    "planned": false,
+    "source": "https://www.flightsfrom.com/ORY-BLJ",
+    "great_circle_km": 1478
+  },
+  {
     "id": "ory-orn",
     "from": "ORY",
     "to": "ORN",
@@ -1639,21 +1669,6 @@
     "great_circle_km": 3106
   },
   {
-    "id": "alg-ber",
-    "from": "ALG",
-    "to": "BER",
-    "carrier": "AH",
-    "flight": "AH 2072",
-    "status": "unclear",
-    "days": [
-      "mon"
-    ],
-    "evidence": "verified",
-    "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
-    "great_circle_km": 1919
-  },
-  {
     "id": "alg-bzv",
     "from": "ALG",
     "to": "BZV",
@@ -1678,23 +1693,6 @@
     "planned": true,
     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
     "great_circle_km": 3459
-  },
-  {
-    "id": "alg-del",
-    "from": "ALG",
-    "to": "DEL",
-    "carrier": "AH",
-    "flight": "AH 3104",
-    "status": "unclear",
-    "days": [
-      "tue",
-      "thu",
-      "sun"
-    ],
-    "evidence": "listed",
-    "planned": true,
-    "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
-    "great_circle_km": 6810
   },
   {
     "id": "alg-doh",
@@ -1724,6 +1722,21 @@
     "planned": true,
     "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
     "great_circle_km": 9914
+  },
+  {
+    "id": "alg-kwi",
+    "from": "ALG",
+    "to": "KWI",
+    "carrier": "AH",
+    "flight": null,
+    "status": "unclear",
+    "days": [
+      "mon"
+    ],
+    "evidence": "listed",
+    "planned": true,
+    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "great_circle_km": 4219
   },
   {
     "id": "alg-los",
@@ -1771,19 +1784,17 @@
     "great_circle_km": 3332
   },
   {
-    "id": "ber-alg",
-    "from": "BER",
+    "id": "amm-alg",
+    "from": "AMM",
     "to": "ALG",
     "carrier": "AH",
-    "flight": "AH 2073",
+    "flight": null,
     "status": "unclear",
-    "days": [
-      "mon"
-    ],
-    "evidence": "verified",
+    "days": null,
+    "evidence": "listed",
     "planned": true,
-    "source": "https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/",
-    "great_circle_km": 1919
+    "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+    "great_circle_km": 3050
   },
   {
     "id": "bzv-alg",
@@ -1810,23 +1821,6 @@
     "planned": true,
     "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
     "great_circle_km": 3459
-  },
-  {
-    "id": "del-alg",
-    "from": "DEL",
-    "to": "ALG",
-    "carrier": "AH",
-    "flight": "AH 3105",
-    "status": "unclear",
-    "days": [
-      "mon",
-      "wed",
-      "fri"
-    ],
-    "evidence": "listed",
-    "planned": true,
-    "source": "https://www.aeroroutes.com/eng/260619-ahnw26as",
-    "great_circle_km": 6810
   },
   {
     "id": "doh-alg",

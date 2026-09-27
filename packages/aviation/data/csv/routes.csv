@@ -12,6 +12,7 @@ alg-add,ALG,ADD,AH,,unclear,,listed,false,https://al24news.dz/fr/transport-aerie
 alg-alc,ALG,ALC,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,376
 alg-ayt,ALG,AYT,AH,,unclear,,listed,false,https://www.visa-algerie.com/air-algerie-lance-une-promo-vers-une-magnifique-destination-populaire-3-raisons-de-reserver/,2448
 alg-bcn,ALG,BCN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,520
+alg-ber,ALG,BER,AH,AH 2072,active,mon,verified,false,https://www.algerie360.com/air-algerie-nouvelle-ligne-directe-berlin/,1919
 alg-bey,ALG,BEY,AH,,unclear,,listed,false,https://algerie-eco.com/2026/06/20/air-algerie-prevoit-douvrir-des-vols-vers-delhi-et-shanghai-des-lhiver-prochain/,2934
 alg-bko,ALG,BKO,AH,,unclear,,listed,false,https://www.visa-algerie.com/air-algerie-apres-pekin-et-guangzhou-une-autre-grande-ville-en-chine-dans-le-viseur/,2909
 alg-bru,ALG,BRU,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1582
@@ -22,7 +23,7 @@ alg-cdg,ALG,CDG,AH,AH 1002,active,,verified,false,https://www.parisaeroport.fr/,
 alg-dje,ALG,DJE,AH,AH 4708,seasonal,,verified,false,https://www.visa-algerie.com/air-algerie-relance-ses-vols-saisonniers-vers-la-destination-la-plus-prisee-de-tunisie/,755
 alg-dla,ALG,DLA,AH,AH 5350,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,3696
 alg-dss,ALG,DSS,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,3168
-alg-dxb,ALG,DXB,AH,,unclear,,listed,false,https://www.air-journal.fr/2026-02-18-emirates-prepare-la-fin-de-sa-ligne-dubai-alger-en-2027-sur-fond-de-crise-diplomatique-avec-lalgerie-5273218.html,5069
+alg-dxb,ALG,DXB,AH,,suspended,,listed,false,https://www.visa-algerie.com/emirats-lalgerie-ferme-son-espace-aerien-les-vols-commerciaux-maintenus-provisoirement/,5069
 alg-fra,ALG,FRA,AH,,unclear,,listed,false,https://www.air-journal.fr/2025-08-29-air-algerie-etend-son-reseau-a-linternational-desservant-addis-abeba-et-guangzhou-5265040.html,1543
 alg-hrg,ALG,HRG,AH,,unclear,,verified,false,https://www.observalgerie.com/,3058
 alg-ist,ALG,IST,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,2255
@@ -47,14 +48,14 @@ alg-tun,ALG,TUN,AH,AH 4002,active,,verified,false,https://www.airalgerie.dz/deco
 alg-vie,ALG,VIE,AH,,active,,verified,false,https://www.aeroroutes.com/eng/250728-ahnw25bud,1672
 alg-vlc,ALG,VLC,AH,,seasonal,,listed,false,https://algerie-eco.com/2026/04/01/air-algerie-reouverture-de-la-ligne-alger-budapest-via-vienne/,448
 bcn-alg,BCN,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,520
+ber-alg,BER,ALG,AH,AH 2073,active,mon,verified,false,https://www.visa-algerie.com/air-algerie-la-nouvelle-ligne-vers-leurope-maintenue-sans-escale-en-hiver/,1919
 bja-cdg,BJA,CDG,AH,,unclear,,listed,false,https://www.parisaeroport.fr/en/passengers/flights/airlines/ah,1382
 bja-lys,BJA,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Abane_Ramdane_Airport,1002
 bja-mrs,BJA,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Abane_Ramdane_Airport,748
 bja-ory,BJA,ORY,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Abane_Ramdane_Airport,1354
-blj-cdg,BLJ,CDG,AH,AH 1120,active,,verified,false,https://www.aeroroutes.com/,1505
 blj-lys,BLJ,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport,1113
 blj-mrs,BLJ,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport,859
-blj-ory,BLJ,ORY,AH,,seasonal,,listed,false,https://en.wikipedia.org/wiki/Mostépha_Ben_Boulaid_Airport,1478
+blj-ory,BLJ,ORY,AH,AH 1120,active,,verified,false,https://www.flightsfrom.com/BLJ-ORY,1478
 bod-alg,BOD,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,962
 bru-alg,BRU,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1582
 bsk-lys,BSK,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Biskra_Airport,1217
@@ -108,6 +109,7 @@ orn-lys,ORN,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ahmed_Be
 orn-mrs,ORN,MRS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ahmed_Ben_Bella_Airport,1002
 orn-ssh,ORN,SSH,AH,,unclear,,listed,false,https://www.aeroroutes.com/eng/250722-ah3q25eg,3396
 ory-alg,ORY,ALG,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1339
+ory-blj,ORY,BLJ,AH,AH 1121,active,,verified,false,https://www.flightsfrom.com/ORY-BLJ,1478
 ory-orn,ORY,ORN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,1478
 qsf-lil,QSF,LIL,AH,,unclear,,listed,false,https://www.air-journal.fr/2025-01-06-asl-airlines-france-lance-une-ligne-entre-lille-et-toulon-5260220.html,1610
 qsf-lys,QSF,LYS,AH,,unclear,,listed,false,https://en.wikipedia.org/wiki/Ain_Arnat_Airport,1062
@@ -124,19 +126,17 @@ tls-orn,TLS,ORN,AH,,active,,verified,false,https://www.airalgerie.dz/decouvrir/n
 tun-alg,TUN,ALG,AH,AH 4001,active,,verified,false,https://www.airalgerie.dz/decouvrir/nos-destinations/,625
 yul-alg,YUL,ALG,AH,,active,,verified,false,https://www.visa-algerie.com/air-algerie-se-renforce-a-montreal-pour-compenser-labsence-dair-canada/,6275
 abv-alg,ABV,ALG,AH,AH 5354,unclear,fri,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,3106
-alg-ber,ALG,BER,AH,AH 2072,unclear,mon,verified,true,https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/,1919
 alg-bzv,ALG,BZV,AH,AH 5390,unclear,,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,4722
 alg-cky,ALG,CKY,AH,AH 5358,unclear,,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,3459
-alg-del,ALG,DEL,AH,AH 3104,unclear,tue thu sun,listed,true,https://www.aeroroutes.com/eng/260619-ahnw26as,6810
 alg-doh,ALG,DOH,AH,AH 4078,unclear,tue fri,verified,true,https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/,4733
 alg-icn,ALG,ICN,AH,,unclear,,listed,true,https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/,9914
+alg-kwi,ALG,KWI,AH,,unclear,mon,listed,true,https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/,4219
 alg-los,ALG,LOS,AH,AH 5354,unclear,thu,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,3349
 alg-pvg,ALG,PVG,AH,AH 3082,unclear,mon wed sat,verified,true,https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/,10131
 alg-svo,ALG,SVO,AH,,unclear,,listed,true,https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/,3332
-ber-alg,BER,ALG,AH,AH 2073,unclear,mon,verified,true,https://www.visa-algerie.com/air-algerie-ouvre-les-ventes-sur-une-nouvelle-ligne-vers-leurope/,1919
+amm-alg,AMM,ALG,AH,,unclear,,listed,true,https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/,3050
 bzv-alg,BZV,ALG,AH,AH 5391,unclear,,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,4722
 cky-alg,CKY,ALG,AH,AH 5359,unclear,,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,3459
-del-alg,DEL,ALG,AH,AH 3105,unclear,mon wed fri,listed,true,https://www.aeroroutes.com/eng/260619-ahnw26as,6810
 doh-alg,DOH,ALG,AH,AH 4079,unclear,tue fri,verified,true,https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/,4733
 icn-alg,ICN,ALG,AH,,unclear,,listed,true,https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/,9914
 los-alg,LOS,ALG,AH,AH 5354,unclear,tue,verified,true,https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/,3349
