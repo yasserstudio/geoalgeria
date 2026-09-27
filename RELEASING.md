@@ -34,12 +34,12 @@ the [release gap check](#the-release-gap-check).
 
 Since the v2 correctness pass, every package's npm tarball ships the data as
 **JSON, CSV and GeoJSON** (its `files[]` globs `data/**/*.csv` and
-`data/**/*.geojson`, not only `*.json`). The one format still kept out of the
-tarballs is **SQL**, which exists only for the flagship `geoalgeria` dataset.
-Each minor/major release also cuts a **GitHub Release** with a zipped data
-bundle: it remains the download channel for people who do not use npm (and the
-home of the flagship's SQL dump), not because CSV/GeoJSON are absent from the
-tarballs.
+`data/**/*.geojson`, not only `*.json`). **SQL ships on npm too**, for the one
+package that has any: `geoalgeria`'s `files[]` globs `data/**/*.sql`, so
+`data/sql/full.sql` is in the tarball like every other format. Each minor/major
+release also cuts a **GitHub Release** with a zipped data bundle: it is the
+download channel for people who do not use npm, not a format the tarballs are
+missing.
 
 ## The flow
 

@@ -133,7 +133,7 @@ sqlite3 mydb.sqlite < full.sql
 
 حمّل `data/geojson/communes.geojson` من هذا المستودع – GeoJSON قياسي، يعمل مع Leaflet، Mapbox، QGIS، إلخ.
 
-> **ملاحظة:** حزمة npm تحتوي على ملفات JSON فقط (للحفاظ على خفة الحجم). تصديرات **CSV وGeoJSON وSQL** موجودة في المستودع تحت `data/` ومرفقة كملف zip مع كل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases).
+> **ملاحظة:** منذ مراجعة الصحة في الإصدار v2، تحتوي حزمة npm على **JSON وCSV وGeoJSON وSQL**، فملف `data/geojson/communes.geojson` موجود في الحزمة أيضًا. وملف zip المرفق بكل [إصدار GitHub](https://github.com/yasserstudio/geoalgeria/releases) يحمل شجرة `data/` نفسها لمن لا يستخدم npm.
 
 ---
 
@@ -218,7 +218,7 @@ sqlite3 mydb.sqlite < full.sql
 | [`@geoalgeria/ferroviaire`](https://www.npmjs.com/package/@geoalgeria/ferroviaire) | السكك والنقل الحضري – 692 عقدة قطار/ترام/مترو/تلفريك/قمرة (SNTF/SETRAM/SEMA)، تجميع Wikidata + OpenStreetMap، ثنائي اللغة |
 | [`@geoalgeria/buses`](https://www.npmjs.com/package/@geoalgeria/buses) | شبكات الحافلات الحضرية – 50 خط ETUSA (الجزائر) مع المحطات الطرفية وعدد المواقف والبلديات والمحطات المخدومة (مستوى الخط v1) |
 | [`@geoalgeria/industrie-pharmaceutique`](https://www.npmjs.com/package/@geoalgeria/industrie-pharmaceutique) | مصنّعو الأدوية – 171 مصنّعًا معتمدًا للأدوية والأجهزة الطبية من وزارة الصناعة الصيدلانية، ثنائيو اللغة، مُحدَّدون جغرافيًا |
-| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3٬797 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
+| [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) | الصيدليات (officines) – 3,797 مُحدَّدة جغرافيًا عبر 67 ولاية من OpenStreetMap، ثنائية اللغة عند التسمية |
 | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | نقاط بيع أوريدو – 572 فضاء أوريدو / متجر مدينة / فضاء خدمات بإحداثيات حقيقية؛ يُكمل ثلاثي الاتصالات |
 | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | مظلة النقل – تثبّت aviation + ferroviaire + gares-routieres + buses في خطوة واحدة |
 | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | مظلة الصيدلة – تثبّت industrie-pharmaceutique + pharmacies دفعة واحدة |

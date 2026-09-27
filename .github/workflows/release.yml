@@ -78,9 +78,11 @@ jobs:
         run: node scripts/release-gap.mjs "$GITHUB_SHA"
 
       # Cut a per-package GitHub Release (geoalgeria@x.y.z) with the raw data
-      # bundle attached — CSV/GeoJSON/SQL never ship to npm, so this is their
-      # only download channel. Guarded by tag existence: fires once per new
-      # version, independent of npm's staged-approval timing.
+      # bundle attached: the download channel for people who do not use npm. The
+      # tarballs carry JSON/CSV/GeoJSON/SQL themselves since the v2 correctness
+      # pass, so this is a second channel, not the only one. Guarded by tag
+      # existence: fires once per new version, independent of npm's
+      # staged-approval timing.
       - name: GitHub Releases + data bundles
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
