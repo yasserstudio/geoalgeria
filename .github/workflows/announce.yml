@@ -139,9 +139,17 @@ jobs:
             else
               RESP=$(gh api graphql -f catId="$CAT_ID" -f cursor="$CURSOR" -f query="$PAGE_QUERY")
             fi
+            # One jq test, no second pipe stage. The old form piped jq into
+            # `grep -qF "$TAG"`, and grep -q exits on its first match while jq is
+            # still writing: jq dies of SIGPIPE, `pipefail` makes the pipeline
+            # 141, and the `if` reads a FOUND tag as not found, which posts a
+            # second public Discussion for a tag that already has one. The tag
+            # stays in env and is passed as jq data (--arg), never interpolated
+            # into the jq program.
             if printf '%s' "$RESP" \
-              | jq -r '.data.repository.discussions.nodes[] | .title + " " + .body' \
-              | grep -qF "$TAG"; then
+              | jq -e --arg t "$TAG" \
+                  '[.data.repository.discussions.nodes[] | .title + " " + .body] | any(contains($t))' \
+                  >/dev/null; then
               FOUND=yes
               break
             fi
