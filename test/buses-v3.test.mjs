@@ -21,6 +21,7 @@ const officialMsila = read("sources/buses/etus-msila-lines.json");
 const officialSidiBelAbbes = read("sources/buses/etus-sidi-bel-abbes-lines.json");
 const officialSetif = read("sources/buses/etus-setif-lines.json");
 const officialOeb = read("sources/buses/etus-oeb-lines.json");
+const officialSkikda = read("sources/buses/etus-skikda-lines.json");
 const officialLaghouat = read("sources/buses/etul-laghouat-lines.json");
 
 test("bus package documentation stays aligned with the shipped release", () => {
@@ -47,24 +48,24 @@ test("bus package documentation stays aligned with the shipped release", () => {
   for (const operatorName of [
     "ETUS Tiaret", "ETUSTO", "ETUS Béjaïa", "ETUS M'Sila", "ETUS Sidi Bel Abbès",
     "ETUS Setif", "ETUS Aïn Defla", "ETUS Annaba", "ETUS Tlemcen", "ETO Oran",
-    "ETUS Oum El Bouaghi", "ETUS-C Constantine", "ETUL Laghouat",
+    "ETUS Oum El Bouaghi", "ETUS-C Constantine", "ETUS Skikda", "ETUL Laghouat",
   ]) assert.ok(notice.includes(operatorName), `NOTICE is missing ${operatorName}`);
 });
 
 test("buses v3 ships only the reviewed release boundary", () => {
-  assert.equal(lines.length, 178);
+  assert.equal(lines.length, 184);
   assert.equal(shapes.length, 76);
   assert.equal(directions.length, 128);
   assert.equal(stations.length, 1603);
   assert.equal(memberships.length, 2685);
-  assert.equal(operators.length, 15);
+  assert.equal(operators.length, 16);
   assert.equal(directions.filter((direction) => direction.public_transport_version === 2).length, 125);
   assert.equal(directions.filter((direction) => direction.public_transport_version === null).length, 3);
   assert.deepEqual(
     Object.fromEntries(operators.map((operator) => [operator.id, [operator.line_count, operator.shape_count]])),
-    { etusa: [76, 61], etuad: [16, 1], "etus-annaba": [6, 0], "etus-tlemcen": [10, 0], "etus-oran": [1, 0], "etus-oeb": [5, 0], "etus-c-constantine": [25, 0], "etusl-laghouat": [4, 0], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
+    { etusa: [76, 61], etuad: [16, 1], "etus-annaba": [6, 0], "etus-tlemcen": [10, 0], "etus-oran": [1, 0], "etus-oeb": [5, 0], "etus-c-constantine": [25, 0], "etus-skikda": [6, 0], "etusl-laghouat": [4, 0], "etus-bejaia": [5, 0], "etus-mostaganem": [1, 1], "etus-msila": [4, 0], "etus-setif": [5, 3], "etus-sidi-bel-abbes": [8, 0], "etus-tiaret": [7, 7], etusto: [5, 3] },
   );
-  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto", "etuad", "etus-annaba", "etus-tlemcen", "etus-oran", "etus-oeb", "etus-c-constantine", "etusl-laghouat"]));
+  assert.deepEqual(new Set(lines.map((line) => line.operator_id)), new Set(["etusa", "etus-bejaia", "etus-msila", "etus-setif", "etus-sidi-bel-abbes", "etus-tiaret", "etus-mostaganem", "etusto", "etuad", "etus-annaba", "etus-tlemcen", "etus-oran", "etus-oeb", "etus-c-constantine", "etus-skikda", "etusl-laghouat"]));
   assert.ok(lines.every((line, index) => index === 0
     || Number(lines[index - 1].wilaya_code) <= Number(line.wilaya_code)));
   // ETUS Aïn Defla entered with the Operator's 2025 artwork: 16 Lines, one reviewed shape.
@@ -102,6 +103,29 @@ test("buses v3 ships only the reviewed release boundary", () => {
   assert.deepEqual(
     [lines.find((line) => line.id === "etusl-laghouat-02")?.name_fr, lines.find((line) => line.id === "etusl-laghouat-02")?.name_ar],
     ["Ligne 02: Cité El Mousalaha", "الخط رقم 02: حي المصالحة"],
+  );
+  // ETUS Skikda ships the published stop-sequence length, the shared city-centre
+  // origin in French and Arabic, and Arabic-only far termini: the Operator page
+  // publishes no French for them and none was sourced.
+  assert.deepEqual(lines.filter((line) => line.operator_id === "etus-skikda").map((line) => line.line), ["01", "02", "03", "04", "05", "06"]);
+  assert.ok(lines.filter((line) => line.operator_id === "etus-skikda")
+    .every((line) => line.source === "etus-skikda" && line.source_refs.join("+") === "etus-skikda"
+      && line.shape_id === null && line.source_url === "https://etus-skikda.dz/"
+      && line.service_hours.length === 0 && line.major_stops === null
+      && line.terminus1 === "Place des Martyrs" && line.terminus1_fr === "Place des Martyrs"
+      && line.terminus1_ar === "ساحة الشهداء" && line.terminus2_fr === undefined
+      && line.terminus2 === line.terminus2_ar));
+  assert.deepEqual(
+    lines.filter((line) => line.operator_id === "etus-skikda").map((line) => [line.line, line.stops, line.terminus2_ar]),
+    [
+      ["01", 10, "مدخل الجامعة"], ["02", 9, "الحانوت"], ["03", 12, "المشتى"],
+      ["04", 16, "الشركة الوطنية للحبوب OAIC"], ["05", 30, "الاخوة عياشي (الفتوي)"],
+      ["06", 31, "المتوسطة"],
+    ],
+  );
+  assert.deepEqual(
+    [lines.find((line) => line.id === "etus-skikda-01")?.name_fr, lines.find((line) => line.id === "etus-skikda-01")?.name_ar],
+    ["Ligne 01", "الخط رقم 01"],
   );
   assert.deepEqual(lines.filter((line) => line.operator_id === "etus-setif").map((line) => line.line), ["101", "104", "105", "106A", "106B"]);
   const setif101 = lines.find((line) => line.id === "etus-setif-101");
@@ -252,11 +276,24 @@ test("official Operator Sources define the reviewed Line sets", () => {
   assert.deepEqual(officialLaghouat.lines.map((line) => line.ref), ["02", "04", "05", "07"]);
   assert.equal(officialLaghouat.evidence.excluded_services[0].name_ar, "عدل");
   assert.equal(officialLaghouat.evidence.programs.length, 2);
+  assert.deepEqual(officialSkikda.lines.map((line) => line.ref), ["01", "02", "03", "04", "05", "06"]);
+  // The stop sequences are the whole point of this Source: every Line's list is
+  // ordered, its length is the published stop count, and its ends are the termini.
+  assert.ok(officialSkikda.lines.every((line) => line.stop_names_ar.length === line.stop_count
+    && line.stop_names_ar[0] === line.terminus1_ar
+    && line.stop_names_ar.at(-1) === line.terminus2_ar
+    && line.terminus1_ar === "ساحة الشهداء"));
+  assert.deepEqual(officialSkikda.lines.map((line) => line.stop_count), [10, 9, 12, 16, 30, 31]);
+  assert.equal(officialSkikda.evidence.service.window_first, "06:00");
+  assert.equal(officialSkikda.evidence.service.window_last, "19:00");
+  assert.equal(officialSkikda.evidence.service.fleet_buses, 30);
+  assert.equal(officialSkikda.evidence.service_areas_ar.length, 6);
+  assert.equal(officialSkikda.evidence.line_source_url, "https://etus-skikda.dz/");
 });
 
 test("tracked official Source bytes match their receipts", () => {
   const manifest = read("sources/buses/manifest.json");
-  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines", "etus-sidi-bel-abbes-lines", "etus-setif-lines", "etus-oeb-lines", "etus-c-constantine-lines", "etul-laghouat-lines"]) {
+  for (const name of ["etus-tiaret-lines", "etusto-lines", "etus-bejaia-lines", "etus-msila-lines", "etus-sidi-bel-abbes-lines", "etus-setif-lines", "etus-oeb-lines", "etus-c-constantine-lines", "etus-skikda-lines", "etul-laghouat-lines"]) {
     const text = readFileSync(join(ROOT, `sources/buses/${name}.json`), "utf8");
     assert.equal(createHash("sha256").update(text).digest("hex"), manifest[name].sha256);
     assert.equal(manifest[name].bytes, Buffer.byteLength(text));
@@ -265,7 +302,7 @@ test("tracked official Source bytes match their receipts", () => {
 
 test("bus v3 public API reaches new entities", async () => {
   const api = await import(join(ROOT, "packages/buses/index.js"));
-  assert.equal(api.operatorRecords().length, 15);
+  assert.equal(api.operatorRecords().length, 16);
   // Every Operator carries its contact links, verified or explicitly null; never a bare source key.
   for (const operator of api.operatorRecords()) {
     for (const key of ["website_url", "facebook_url"]) {
