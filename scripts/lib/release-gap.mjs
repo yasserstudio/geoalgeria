@@ -45,13 +45,33 @@ export const DELIBERATELY_UNPUBLISHED = new Map([
 ]);
 
 /**
- * Whether the workflow text lists this exact package dir. A plain substring test
- * is wrong: `packages/pharma` is a prefix of `packages/pharmacies`, so the
- * pharma umbrella would read as present because pharmacies is.
+ * release.yml's hand-written package lists: the `for pkg in ...` line of the
+ * dry-run loop and of the GitHub Releases loop. A package has to be in BOTH, and
+ * they are two separate lists, so each one is checked on its own.
+ */
+export function packageLoops(workflow) {
+  return workflow.match(/^.*\bfor pkg in\b.*$/gm) ?? [];
+}
+
+/**
+ * Whether EVERY one of release.yml's package loops lists this exact package dir.
+ *
+ * Two traps, both of which made a missing package read as present:
+ *  - a plain substring test over the whole file: `packages/pharma` is a prefix of
+ *    `packages/pharmacies`, so the pharma umbrella read as listed because
+ *    pharmacies is. Hence the `(?![\w-])` boundary.
+ *  - matching the file rather than each loop: one mention anywhere satisfied it,
+ *    so a dir added to the dry-run loop but not the Releases loop (it then stages
+ *    and goes live on npm with no GitHub Release) read as present. Hence `every`.
+ *
+ * No loops at all proves nothing, so it answers false.
  */
 export function mentionsDir(workflow, dir) {
   const escaped = dir.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`${escaped}(?![\\w-])`).test(workflow);
+  const listed = new RegExp(`${escaped}(?![\\w-])`);
+  const loops = packageLoops(workflow);
+  if (loops.length === 0) return false;
+  return loops.every((loop) => listed.test(loop));
 }
 
 /**

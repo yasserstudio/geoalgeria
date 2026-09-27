@@ -3,7 +3,13 @@ import assert from "node:assert/strict";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { releaseGaps, gapAnnotations, mentionsDir, DELIBERATELY_UNPUBLISHED } from "../scripts/lib/release-gap.mjs";
+import {
+  releaseGaps,
+  gapAnnotations,
+  mentionsDir,
+  packageLoops,
+  DELIBERATELY_UNPUBLISHED,
+} from "../scripts/lib/release-gap.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const WORKFLOW = readFileSync(join(ROOT, ".github/workflows/release.yml"), "utf8");
@@ -65,6 +71,43 @@ test("a package dir the workflow's lists never mention is a gap on its own", () 
   const gaps = releaseGaps([pkg({ dir: "packages/ghost", name: "@geoalgeria/ghost" })], "for pkg in packages/poste; do\n");
   assert.deepEqual(gaps.map((g) => g.kind), ["not-in-workflow"]);
   assert.match(gaps[0].message, /no publish dry run/);
+});
+
+test("a dir in only one of release.yml's two loops is still a gap", () => {
+  // release.yml lists its packages twice by hand: the dry-run loop and the
+  // GitHub Releases loop. A dir in the first but not the second stages and goes
+  // live on npm with no GitHub Release and no data bundle, which is exactly the
+  // silence this check exists to break. One mention anywhere used to satisfy it.
+  const oneLoopOnly = [
+    "      - name: Dry-run publish",
+    "        run: |",
+    "          for pkg in packages/poste packages/ghost; do",
+    "            echo dry-run",
+    "          done",
+    "      - name: GitHub Releases + data bundles",
+    "        run: |",
+    "          for pkg in packages/poste; do",
+    "            echo release",
+    "          done",
+  ].join("\n");
+
+  assert.equal(mentionsDir(oneLoopOnly, "packages/ghost"), false, "in the dry-run loop only");
+  assert.equal(mentionsDir(oneLoopOnly, "packages/poste"), true, "in both loops");
+
+  const gaps = releaseGaps([pkg({ dir: "packages/ghost", name: "@geoalgeria/ghost" })], oneLoopOnly);
+  assert.deepEqual(
+    gaps.map((g) => g.kind),
+    ["not-in-workflow"],
+  );
+  assert.match(gaps[0].message, /Add it to both loops/);
+  assert.deepEqual(releaseGaps([pkg()], oneLoopOnly), [], "a dir in both loops is not a gap");
+});
+
+test("release.yml really does carry two package loops", () => {
+  // mentionsDir proves a dir is in EVERY loop, so it is only as strong as the
+  // number of loops it finds. If the file is restructured so the lists stop
+  // matching `for pkg in`, this test says so rather than the check going quiet.
+  assert.equal(packageLoops(WORKFLOW).length, 2);
 });
 
 test("a dir is matched whole, not as a prefix of a longer one", () => {
