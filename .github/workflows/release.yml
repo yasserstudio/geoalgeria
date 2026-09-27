@@ -112,11 +112,20 @@ jobs:
             # guard above then blocked the real release for good. So gate every
             # release on what $GITHUB_SHA actually carries: the version must be
             # committed there AND have a CHANGELOG section. Fail closed.
+            #
+            # Exit 3 is the routine skip: the version is not on main yet, so npm
+            # published nothing either. Exit 4 is not routine: the version IS
+            # committed, so it stages and goes live on npm, but no Release can be
+            # cut for it. That used to share code 3 and pass unnoticed.
             set +e
-            node scripts/release-guard.mjs "$pkg" "$VER" "$TAG" "$GITHUB_SHA"
+            GUARD_OUT=$(node scripts/release-guard.mjs "$pkg" "$VER" "$TAG" "$GITHUB_SHA" 2>&1)
             GUARD=$?
             set -e
+            echo "$GUARD_OUT"
             if [ "$GUARD" -eq 3 ]; then
+              continue
+            elif [ "$GUARD" -eq 4 ]; then
+              echo "::warning title=Release missing for a published version::$GUARD_OUT"
               continue
             elif [ "$GUARD" -ne 0 ]; then
               echo "::error::release guard errored (exit $GUARD) for $TAG"
@@ -154,16 +163,20 @@ jobs:
             NOTES="$RUNNER_TEMP/$(basename "$NAME")-notes.md"  # basename: scoped names contain '/'
             $RN body > "$NOTES" || true
 
-            if [ -s "$NOTES" ]; then
-              TITLE=$($RN title)
-              # shellcheck disable=SC2086 -- ${BUNDLE:+"$BUNDLE"} is one quoted
-              # argument when set, and no argument at all when empty.
-              gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" ${BUNDLE:+"$BUNDLE"}
-            else
-              echo "::warning::No CHANGELOG section found for $TAG; using auto-generated notes"
-              # shellcheck disable=SC2086 -- see above.
-              gh release create "$TAG" --title "$TAG" --target "$GITHUB_SHA" --generate-notes ${BUNDLE:+"$BUNDLE"}
+            # No auto-generated-notes fallback any more. The guard above already
+            # proved this version has a non-empty CHANGELOG section at
+            # $GITHUB_SHA, and declines with exit 4 when it does not, so an empty
+            # body here means release-notes.mjs disagrees with the guard. That is a
+            # bug, not a case to paper over with GitHub's commit-list notes on a
+            # public release.
+            if [ ! -s "$NOTES" ]; then
+              echo "::error::release-notes.mjs produced an empty body for $TAG although the guard found a CHANGELOG section at $GITHUB_SHA. Refusing to cut a Release with auto-generated notes."
+              exit 1
             fi
+            TITLE=$($RN title)
+            # shellcheck disable=SC2086 -- ${BUNDLE:+"$BUNDLE"} is one quoted
+            # argument when set, and no argument at all when empty.
+            gh release create "$TAG" --title "$TITLE" --target "$GITHUB_SHA" --notes-file "$NOTES" ${BUNDLE:+"$BUNDLE"}
 
             # Announce this release. The release: published event won't fire (this
             # release was created with GITHUB_TOKEN, which GitHub suppresses to avoid

@@ -142,9 +142,27 @@ upload; the file is put back afterwards.
 A Release is only cut for a version `main` actually carries. Each iteration of
 the releases loop runs `scripts/release-guard.mjs <pkg> <version> <tag>
 $GITHUB_SHA`, which reads `package.json` and `CHANGELOG.md` **as committed at
-the released commit** and declines (`release guard skip: ...`, exit 3) unless
-both the version is there and that version has a `CHANGELOG.md` section. It
-fails closed: a missing file, unparseable JSON or an empty section all decline.
+the released commit** and declines unless both the version is there and that
+version has a `CHANGELOG.md` section. It fails closed: a missing file,
+unparseable JSON or an empty section all decline.
+
+**Two declines, two exit codes.** They used to share one, which hid the second:
+
+| Exit | Kind | Means | Workflow |
+| --- | --- | --- | --- |
+| 0 | `release` | version committed at `$GITHUB_SHA` with a CHANGELOG section | cuts the Release |
+| 3 | `pending-version-pr` | the version is not on `main` yet, so npm published nothing either. Routine: the Release is cut on the push that merges the Version PR | silent skip |
+| 4 | `missing-changelog` / `unreadable` | the version **is** committed, so it stages and npm serves it, but its CHANGELOG section is missing/empty (or the tree is unreadable). A version live on npm with **no Release, no data bundle and no announcement** behind it | `::warning::`, then skip |
+| 2 | usage | wrong arguments | n/a |
+
+Fix an exit 4 by adding the missing CHANGELOG section and re-running **Release**
+from the Actions tab, or cut that one Release by hand.
+
+There is no auto-generated-notes fallback. The guard has already proved the
+section exists at `$GITHUB_SHA` by the time the loop builds the notes, so an
+empty body there means `release-notes.mjs` disagrees with the guard: the step
+fails loudly instead of publishing GitHub's commit-list notes on a public
+release.
 
 This exists because `changesets/action` builds the Version PR **in the runner's
 own workspace**: it runs `git checkout -b changeset-release/main`, then
