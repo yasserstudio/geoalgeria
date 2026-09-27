@@ -81,6 +81,14 @@
     "sha256": "a51df096db62083b51d9a4668f299b697a5dcfc3071d9f3a8f46abf74c0d0a40",
     "url": "https://etus22.dz/Horaires.php"
   },
+  "etus-skikda-lines": {
+    "bytes": 9422,
+    "note": "Six ETUS Skikda Line identities, Arabic termini and complete ordered Arabic stop sequences transcribed from the Operator's own website page, read in a browser by the project owner because the site's TLS certificate had expired. The page publishes no geometry, no per-Line timetable and no French names; the network-wide 06:00 to 19:00 window, the 30-bus fleet and the six served areas stay evidence here rather than becoming Line fields.",
+    "records": 6,
+    "retrieved": "2026-09-27",
+    "sha256": "e9a111e6cb8e63d7528cb622d1f312a85004e3acbb90043e61af011359cdc054",
+    "url": "https://etus-skikda.dz/"
+  },
   "etus-tiaret-lines": {
     "bytes": 2624,
     "note": "Structured Inertia props extracted from the official Operator Lines page. Source content is used for identity validation; no open reuse license was found.",

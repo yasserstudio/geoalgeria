@@ -23,6 +23,7 @@ const officialTlemcen = readCapture("buses", "etus-tlemcen-lines");
 const officialOran = readCapture("buses", "eto-oran-lines");
 const officialOeb = readCapture("buses", "etus-oeb-lines");
 const officialEtusc = readCapture("buses", "etus-c-constantine-lines");
+const officialSkikda = readCapture("buses", "etus-skikda-lines");
 const officialLaghouat = readCapture("buses", "etul-laghouat-lines");
 const etusa = read(join(ROOT, "research", "buses", "etusa-lines-clean.json"));
 const shapeSourceByKey = new Map(osm.line_shapes.map((shape) => [`${shape.operator_id}|${shape.ref}`, shape]));
@@ -73,6 +74,12 @@ const etuscTerminiFr = {
   "L36": ["Aïn Nahas", "Nouvelle ville"], "L37": ["Gare des voyageurs", "Ibn Ziad"],
   "L38": ["Gare des voyageurs", "Massoud Boudjeriou"],
 };
+
+// ساحة الشهداء is the city-centre square all six ETUS Skikda Lines start from.
+// OpenStreetMap names it Place des Martyrs (way 168946052, name:fr, osm_base
+// 2026-09-27); no French name was found for any other terminus the page
+// publishes, so those ship Arabic only rather than transliterated.
+const skikdaTerminus1Fr = "Place des Martyrs";
 
 const lines = etusa.lines.map((line) => {
   const shape = shapeSourceByKey.get(`etusa|${line.line}`);
@@ -276,6 +283,28 @@ for (const official of officialEtusc.lines) {
   });
 }
 
+// ETUS Skikda: the six numbered Lines of the Operator's own website, every one
+// starting at ساحة الشهداء. Directory-only: the page publishes ordered stop
+// names but no coordinates, so `stops` carries the published sequence length
+// while the names themselves stay in the Source capture. Its 06:00 to 19:00
+// window is network-wide, not a per-Line first and last departure, so no Line
+// claims service hours.
+for (const official of officialSkikda.lines) {
+  lines.push({
+    id: lineId("etus-skikda", official.ref),
+    name: `Ligne ${official.ref}`, name_fr: `Ligne ${official.ref}`, name_ar: `الخط رقم ${official.ref}`,
+    operator_id: "etus-skikda", operator: "ETUS Skikda", network: "Skikda",
+    line: official.ref,
+    terminus1: skikdaTerminus1Fr, terminus1_fr: skikdaTerminus1Fr, terminus1_ar: official.terminus1_ar,
+    terminus2: official.terminus2_ar, terminus2_ar: official.terminus2_ar,
+    stops: official.stop_count, major_stops: null, service_hours: [],
+    communes_served: [], stations_served: [], wilaya_code: "21",
+    source: "etus-skikda", source_refs: ["etus-skikda"],
+    source_url: officialSkikda.evidence.line_source_url,
+    shape_id: null, osm_relation_ids: [],
+  });
+}
+
 // ETUL Laghouat: repeated public route refs from two dated operating programs.
 // The tables' 01-06 values are duty assignments, not Lines, and their vehicle
 // and timetable fields are date-specific. No stable endpoint pair or reusable
@@ -410,7 +439,7 @@ const shapes = osm.line_shapes.map((shape) => {
 });
 
 const counts = { lines: lines.length, shapes: shapes.length, directions: directions.length, stations: stations.length, memberships: memberships.length };
-if (JSON.stringify(counts) !== JSON.stringify({ lines: 178, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
+if (JSON.stringify(counts) !== JSON.stringify({ lines: 184, shapes: 76, directions: 128, stations: 1603, memberships: 2685 })) {
   throw new Error(`Bus release count drift: ${JSON.stringify(counts)}`);
 }
 if (stations.filter((station) => station.wilaya_method === "operator_scope").length !== 12) {
@@ -426,7 +455,7 @@ const { metadata } = writePackageV2({
         || String(a.name_fr ?? a.id).localeCompare(String(b.name_fr ?? b.id), "fr", { numeric: true }) },
     { file: "stations.json", rows: stations },
   ],
-  meta: cfg.meta, updated: "2026-09-16", retrieved: "2026-09-16",
+  meta: cfg.meta, updated: "2026-09-27", retrieved: "2026-09-27",
   stats: { shapes: shapes.length, directions: directions.length, stations: stations.length, station_memberships: memberships.length },
 });
 write(join(DATA, "metadata.json"), {
@@ -503,6 +532,13 @@ operatorRows.push({
   source_refs: ["etus-c-constantine"],
 });
 operatorRows.push({
+  id: "etus-skikda", name: "ETUS Skikda",
+  name_fr: "Entreprise publique de transport urbain et suburbain de Skikda",
+  name_ar: officialSkikda.evidence.operator_name_ar,
+  wilaya_codes: ["21"], scope: "urban_suburban", line_count: officialSkikda.lines.length, shape_count: 0,
+  source_refs: ["etus-skikda"],
+});
+operatorRows.push({
   id: "etusl-laghouat", name: "ETUL Laghouat",
   name_fr: "Entreprise publique de transport urbain et suburbain de Laghouat",
   name_ar: officialLaghouat.evidence.operator_name_ar,
@@ -526,6 +562,7 @@ const operatorContacts = {
   "etus-oran": { website_url: null, facebook_url: "https://www.facebook.com/p/ETO-100093054514209/" },
   "etus-oeb": { website_url: null, facebook_url: null },
   "etus-c-constantine": { website_url: null, facebook_url: null },
+  "etus-skikda": { website_url: "https://etus-skikda.dz/", facebook_url: "https://www.facebook.com/RussicadaBus" },
   "etusl-laghouat": { website_url: null, facebook_url: "https://www.facebook.com/ETUSL/" },
 };
 for (const row of operatorRows) Object.assign(row, operatorContacts[row.id] ?? { website_url: null, facebook_url: null });
