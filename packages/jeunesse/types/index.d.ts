@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/jeunesse (schema v2).
-// Youth Establishments of Algeria — auberges & maisons de jeunes, camps, and
+// Youth Establishments of Algeria: auberges & maisons de jeunes, camps, and
 // sports complexes, from the Ministry of Youth and Sports SIG.
 
 /** The nine youth-Establishment type codes published on the MJS GIS. */
@@ -10,13 +10,13 @@ export type TypeCode =
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained — every Establishment in this dataset
+/** How the coordinate was obtained: every Establishment in this dataset
  *  carries a real point from the MJS GIS. */
 export type GeoMethod = "sig_mjs";
 
 /** A youth Establishment, as published by the Ministry of Youth and Sports GIS. */
 export interface Institution {
-  /** Stable id, unique within this dataset. Opaque — do not parse. */
+  /** Stable id, unique within this dataset. Opaque: do not parse. */
   id: string;
   /** Official name, in French. `null` for the records the source leaves blank. */
   name: string | null;
@@ -40,7 +40,7 @@ export interface Institution {
   geo_precision: "exact" | "approximate";
   /** How `lat`/`lng` were obtained. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "mjs". */
+  /** Provenance key into `metadata.sources[]`: always "mjs". */
   source: "mjs";
   /** Establishment type code. */
   type: TypeCode;
@@ -76,7 +76,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus youth-Establishment stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus youth-Establishment stats. */
 export interface Metadata {
   package: "@geoalgeria/jeunesse";
   schema_version: string;
@@ -84,7 +84,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — all of them. */
+  /** Records with coordinates: all of them. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */
@@ -109,9 +109,9 @@ export interface Metadata {
 export function institutions(): Institution[];
 /** One Establishment by id, or `null` if none matches. */
 export function institutionById(id: string | number): Institution | null;
-/** Establishments in a wilaya — accepts "16", 16, or "01". */
+/** Establishments in a wilaya: accepts "16", 16, or "01". */
 export function institutionsByWilaya(code: string | number): Institution[];
-/** Establishments of a type — accepts a type code (case-insensitive), e.g. "mj". */
+/** Establishments of a type: accepts a type code (case-insensitive), e.g. "mj". */
 export function institutionsByType(code: TypeCode | string): Institution[];
 /** Dataset metadata. */
 export function metadata(): Metadata;

@@ -22,25 +22,25 @@ export type ParkCategory = "national_park" | "nature_reserve" | "protected_area"
 export type Layer = "lodging" | "attraction" | "historic" | "thermal_spring" | "park";
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
- *  `null` means there is no coordinate at all — not observed in this dataset
+ *  `null` means there is no coordinate at all: not observed in this dataset
  *  (every tourism point is geocoded), but part of the shared contract vocabulary. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How a point's coordinate was obtained — also the value of `source` for this
+/** How a point's coordinate was obtained: also the value of `source` for this
  *  dataset. `"asal"` on thermal springs; on the other four layers `"osm"`, or
  *  `"wikidata"` for the 115 records that come from a Wikidata item rather than
- *  an OSM feature (and are CC0, not ODbL — see the licence section of the README). */
+ *  an OSM feature (and are CC0, not ODbL; see the licence section of the README). */
 export type GeoMethod = "asal" | "osm" | "wikidata";
 
 /** External identifiers keyed by source system. Every record on the four OSM
- *  layers carries at least one of these, but not necessarily an OSM id — a
+ *  layers carries at least one of these, but not necessarily an OSM id: a
  *  minority of records matched only on Wikidata. */
 export interface Refs {
   /** OSM element id (numeric, without a `node/way/relation` prefix). */
   osm?: string;
   /** Wikidata QID (e.g. "Q2664184"), present when a Wikidata item matched. */
   wikidata?: string;
-  /** Wikipedia sitelink as OSM tags it — `"<lang>:<article title>"`
+  /** Wikipedia sitelink as OSM tags it: `"<lang>:<article title>"`
    *  (e.g. `"fr:Timgad"`), present when the source carried one. */
   wikipedia?: string;
 }
@@ -55,15 +55,15 @@ interface Base {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code — always null: OSM/ASAL sources carry no ONS join;
+  /** Commune (ONS) code, always null: OSM/ASAL sources carry no ONS join;
    *  typed as `string | null` so a future value is not a break. */
   commune_code: string | null;
-  /** Commune name, or null. Only thermal springs carry a real commune name —
+  /** Commune name, or null. Only thermal springs carry a real commune name;
    *  the other four layers always carry null (point sources, no commune join). */
   commune: string | null;
-  /** Latitude — every tourism point in this dataset is geocoded. */
+  /** Latitude: every tourism point in this dataset is geocoded. */
   lat: number;
-  /** Longitude — every tourism point in this dataset is geocoded. */
+  /** Longitude: every tourism point in this dataset is geocoded. */
   lng: number;
   /** `"exact"`, or `"approximate"` where the source coordinate is rounded too
    *  coarse, or is shared with another record, to be a per-site point. */
@@ -71,7 +71,7 @@ interface Base {
   /** How the coordinate was obtained: `"osm"` for four layers, `"asal"` for
    *  thermal springs. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — same domain as `geo_method`. */
+  /** Provenance key into `metadata.sources[]`: same domain as `geo_method`. */
   source: GeoMethod;
 }
 
@@ -82,7 +82,7 @@ export interface Lodging extends Base {
   name_fr?: string;
   /** Arabic name, when distinct from `name`. */
   name_ar?: string;
-  /** External identifiers — every lodging record carries an OSM id. */
+  /** External identifiers: every lodging record carries an OSM id. */
   refs: Refs;
   /** Street address as tagged in OSM, when published. */
   address?: string;
@@ -103,7 +103,7 @@ export interface Attraction extends Base {
   name_fr?: string;
   /** Arabic name, when known. */
   name_ar?: string;
-  /** External identifiers — an OSM id, a Wikidata QID, or both. */
+  /** External identifiers: an OSM id, a Wikidata QID, or both. */
   refs: Refs;
   /** Free-text description carried by the source, when published. */
   description?: string;
@@ -118,9 +118,9 @@ export interface Historic extends Base {
   name_fr?: string;
   /** Arabic name, when known. */
   name_ar?: string;
-  /** External identifiers — an OSM id, a Wikidata QID, or both. */
+  /** External identifiers: an OSM id, a Wikidata QID, or both. */
   refs: Refs;
-  /** OSM `heritage` tag — the protection level as a string (e.g. `"1"`). */
+  /** OSM `heritage` tag: the protection level as a string (e.g. `"1"`). */
   heritage?: string;
   /** OSM `heritage:operator`-style status text
    *  (e.g. `"part of UNESCO World Heritage Site"`). */
@@ -131,7 +131,7 @@ export interface Historic extends Base {
  *  a real `commune` and no `refs` (ASAL has no OSM/Wikidata linkage). */
 export interface ThermalSpring extends Base {
   type: ThermalType;
-  /** Commune name — always a real value for thermal springs (unlike the
+  /** Commune name: always a real value for thermal springs (unlike the
    *  other four layers, where {@link Base.commune} is always null). */
   commune: string;
   /** Water temperature in °C. */
@@ -146,17 +146,17 @@ export interface ThermalSpring extends Base {
 
 /** A national park, nature reserve, or other protected area. */
 export interface Park extends Base {
-  /** Protected-area category — parks have no `type` field, unlike the other layers. */
+  /** Protected-area category: parks have no `type` field, unlike the other layers. */
   category: ParkCategory;
   /** French name, when known. */
   name_fr?: string;
   /** Arabic name, when known. */
   name_ar?: string;
-  /** External identifiers — an OSM id, a Wikidata QID, or both. */
+  /** External identifiers: an OSM id, a Wikidata QID, or both. */
   refs: Refs;
 }
 
-/** Any of the five layers, tagged with which one it came from — the shape
+/** Any of the five layers, tagged with which one it came from: the shape
  *  returned by {@link all} and {@link byLayer}. */
 export type Place = (Lodging | Attraction | Historic | ThermalSpring | Park) & {
   layer: Layer;
@@ -178,7 +178,7 @@ export interface EntityRef {
   count: number;
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus tourism stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus tourism stats. */
 export interface Metadata {
   package: "@geoalgeria/tourisme";
   schema_version: string;
@@ -187,7 +187,7 @@ export interface Metadata {
   title_en: string;
   /** All five layers combined. */
   record_count: number;
-  /** Records with coordinates — every tourism point. */
+  /** Records with coordinates: every tourism point. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */
@@ -205,7 +205,7 @@ export interface Metadata {
   license: string;
   /** ISO date (YYYY-MM-DD) the dataset was regenerated. */
   updated: string;
-  /** Count by `type`/`category`, merged across all five layers into one dict —
+  /** Count by `type`/`category`, merged across all five layers into one dict,
    *  not broken out per layer, and spanning too many distinct values (OSM's
    *  long-tailed `historic` tag especially) to type as a literal union. */
   by_type: Partial<Record<string, number>>;
@@ -223,7 +223,7 @@ export function thermalSprings(): ThermalSpring[];
 export function parks(): Park[];
 /** All five layers merged into one collection, each tagged with `layer`. */
 export function all(): Place[];
-/** Tourism points in a wilaya, across all layers — accepts `16` or `"16"`. */
+/** Tourism points in a wilaya, across all layers: accepts `16` or `"16"`. */
 export function byWilaya(code: string | number): Place[];
 /** Records for one layer (e.g. `"thermal_spring"`); unknown layers return `[]`. */
 export function byLayer(layer: Layer): (Lodging | Attraction | Historic | ThermalSpring | Park)[];

@@ -48,7 +48,7 @@ export interface CoverageSite {
   geo_precision: GeoPrecision;
   /** How the point was obtained. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — the operator slug. */
+  /** Provenance key into `metadata.sources[]`: the operator slug. */
   source: Operator;
   /** Operator that published this site. */
   operator: Operator;
@@ -79,7 +79,7 @@ export interface EntityRef {
   count: number;
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus coverage stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus coverage stats. */
 export interface Metadata {
   package: "@geoalgeria/telecom";
   schema_version: string;

@@ -1,4 +1,4 @@
-// @geoalgeria/ooredoo — lightweight loaders for the Ooredoo Algérie retail network.
+// @geoalgeria/ooredoo: lightweight loaders for the Ooredoo Algérie retail network.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

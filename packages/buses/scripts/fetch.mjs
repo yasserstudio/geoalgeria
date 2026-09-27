@@ -62,7 +62,7 @@ const etuscTerminiFr = {
   "L02": ["Boulesouf", "Kaddour Boumedous"], "L04": ["Station Zammouche", "Sidi Mabrouk"],
   "L05": ["Cité Arfa", "Kaddour Boumedous"], "L08": ["Centre-ville", "Aéroport Zouaghi"],
   "L14": ["Djebel El Ouahch", "Boulesouf"], "L15": ["Station Zammouche", "Nouvelle ville"],
-  "L16": ["Station Massinissa — Mausolée", "Zammouche"], "L19": ["Station Kadri Brahim", "Chaab Ersib"],
+  "L16": ["Station Massinissa Mausolée", "Zammouche"], "L19": ["Station Kadri Brahim", "Chaab Ersib"],
   "L21": ["Station Kadri Brahim", "Unité de voisinage 21"], "L22": ["Gare des voyageurs", "Gendarmerie nationale"],
   "L23": ["Station Zammouche", "Aïn Nahas"], "L24": ["Station Zammouche", "El Ratba"],
   "L25": ["Station Zammouche", "Kaf Salah"], "L26": ["Station Zammouche", "Aïn Abid"],

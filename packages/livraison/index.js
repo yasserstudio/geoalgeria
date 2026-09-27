@@ -1,4 +1,4 @@
-// @geoalgeria/livraison — loaders for Algeria's COD / e-commerce delivery layer.
+// @geoalgeria/livraison: loaders for Algeria's COD / e-commerce delivery layer.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -17,7 +17,7 @@ export const carrierById = (key) => {
   return carriers().find((c) => c.id === k || c.name.toLowerCase() === k) ?? null;
 };
 
-// Stop-desks in a wilaya — accepts 16, "16", or 1 / "01".
+// Stop-desks in a wilaya: accepts 16, "16", or 1 / "01".
 export const stopdesksByWilaya = (code) => {
   const w = String(code).padStart(2, "0");
   return stopdesks().filter((s) => s.wilaya_code === w);

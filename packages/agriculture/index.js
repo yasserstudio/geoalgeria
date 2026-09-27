@@ -1,4 +1,4 @@
-// @geoalgeria/agriculture — lightweight loaders for Algeria's agriculture-sector institutions.
+// @geoalgeria/agriculture: lightweight loaders for Algeria's agriculture-sector institutions.
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";

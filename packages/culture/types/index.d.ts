@@ -1,5 +1,5 @@
 // Type definitions for @geoalgeria/culture (schema v2).
-// Algeria's cultural atlas — the Ministry of Culture's "Cartes du Patrimoine
+// Algeria's cultural atlas: the Ministry of Culture's "Cartes du Patrimoine
 // Culturel Algérien" portal (cartes.patrimoineculturelalgerien.org), bilingual
 // FR/AR heritage sites and cultural establishments, each carrying the
 // portal's own published coordinate.
@@ -38,7 +38,7 @@ export interface Refs {
   patrimoine: string;
 }
 
-/** A cultural place — heritage site or cultural establishment. */
+/** A cultural place: heritage site or cultural establishment. */
 export interface CulturalSite {
   /** Stable id, `{wilaya_code}-{type_code}-{seq}` (e.g. "16-museum-01"). Unique within this dataset. */
   id: string;
@@ -54,7 +54,7 @@ export interface CulturalSite {
   commune_code: string | null;
   /** Commune name (French), nearest-centroid best-effort. Null when unresolved. */
   commune: string | null;
-  /** Latitude — every place carries the portal's published point. */
+  /** Latitude: every place carries the portal's published point. */
   lat: number;
   /** Longitude. */
   lng: number;
@@ -62,7 +62,7 @@ export interface CulturalSite {
   geo_precision: GeoPrecision;
   /** Always "source_point": the coordinate is the portal's own point, not a derived centroid. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "patrimoine". */
+  /** Provenance key into `metadata.sources[]`: always "patrimoine". */
   source: "patrimoine";
   /** External identifiers: the portal's own node id. */
   refs: Refs;
@@ -92,7 +92,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus culture stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus culture stats. */
 export interface Metadata {
   package: "@geoalgeria/culture";
   schema_version: string;

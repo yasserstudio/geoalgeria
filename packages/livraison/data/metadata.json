@@ -13,7 +13,7 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists — 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
+  "coverage_note": "Geocoded stop-desks from the openly-published Yalidine/Guepex federated relay plus Anderson, Noest and Maystro's own agency lists: 411 points across 9 carriers. Most Algerian COD carriers (90+) don't publish an open agency list; see carriers.json for the full registry and coverage.json for per-carrier presence.",
   "wilayas_covered": 61,
   "bbox": [
     -8.143583,
@@ -24,7 +24,7 @@
   "sources": [
     {
       "key": "yalidine",
-      "name": "Yalidine Express — nos-agences",
+      "name": "Yalidine Express: nos-agences",
       "url": "https://yalidine-express.com.dz/nos-agences/",
       "license": "Data © Yalidine Express; redistributed for reference",
       "retrieved": "2026-06-18",
@@ -32,7 +32,7 @@
     },
     {
       "key": "guepex",
-      "name": "Guepex — public agences feed",
+      "name": "Guepex: public agences feed",
       "url": "https://www.guepex.dz/public/data/agences.json",
       "license": "Data © Guepex; redistributed for reference",
       "retrieved": "2026-06-18",
@@ -40,7 +40,7 @@
     },
     {
       "key": "anderson",
-      "name": "Anderson Logistics — agency directory",
+      "name": "Anderson Logistics: agency directory",
       "url": "https://anderson-ecommerce.com/",
       "license": "Data © Anderson Logistics; redistributed for reference",
       "retrieved": "2026-06-18",
@@ -48,7 +48,7 @@
     },
     {
       "key": "noest",
-      "name": "Noest Express — bureaux directory",
+      "name": "Noest Express: bureaux directory",
       "url": "https://noest-dz.com/",
       "license": "Data © Noest Express; redistributed for reference",
       "retrieved": "2026-06-18",
@@ -56,7 +56,7 @@
     },
     {
       "key": "maystro",
-      "name": "Maystro Delivery — coverage page",
+      "name": "Maystro Delivery: coverage page",
       "url": "https://maystro-delivery.com/Coverage.html",
       "license": "Data © Maystro Delivery; redistributed for reference",
       "retrieved": "2026-06-18",

@@ -9,7 +9,7 @@
 // .d.ts that imported it would not resolve for consumers.
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
- *  Never null here — every pharmacy carries a real coordinate. */
+ *  Never null here: every pharmacy carries a real coordinate. */
 export type GeoPrecision = "exact" | "approximate";
 
 /** How the point was obtained: `osm_node` = a surveyed node (exact),
@@ -39,17 +39,17 @@ export interface Pharmacy {
   commune_code: string | null;
   /** Commune name. */
   commune: string;
-  /** Latitude (WGS84) — every pharmacy is geocoded. */
+  /** Latitude (WGS84): every pharmacy is geocoded. */
   lat: number;
-  /** Longitude (WGS84) — every pharmacy is geocoded. */
+  /** Longitude (WGS84): every pharmacy is geocoded. */
   lng: number;
   /** Coordinate provenance. */
   geo_precision: GeoPrecision;
   /** How the point was obtained. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "osm". */
+  /** Provenance key into `metadata.sources[]`: always "osm". */
   source: "osm";
-  /** External ids — `{ osm: "node/3012904279" }`. */
+  /** External ids: `{ osm: "node/3012904279" }`. */
   refs: Refs;
   /** Operator/chain, or null (rare in Algeria). */
   operator: string | null;
@@ -73,7 +73,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus pharmacy enrichment stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus pharmacy enrichment stats. */
 export interface Metadata {
   package: "@geoalgeria/pharmacies";
   schema_version: string;
@@ -81,7 +81,7 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — every pharmacy. */
+  /** Records with coordinates: every pharmacy. */
   geocoded_count: number;
   geocoded_pct: number;
   /** Count by `geo_precision`. */

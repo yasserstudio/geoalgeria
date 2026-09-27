@@ -1,19 +1,19 @@
 // Type definitions for @geoalgeria/industrie-pharmaceutique (schema v2).
-// Algeria's approved pharmaceutical & medical-device Manufacturers — the
+// Algeria's approved pharmaceutical & medical-device Manufacturers: the
 // Ministry of Pharmaceutical Industry (MIP) register, geocoded to commune/
 // wilaya centroids (the register publishes no coordinates of its own).
 
 /** Manufacturing nature: medicines ("pp"), medical devices ("dm"), or both. */
 export type PharmaNature = "pp" | "dm" | "mixte";
 
-/** Establishment role — this layer is the fabrication register. */
+/** Establishment role: this layer is the fabrication register. */
 export type PharmaRole = "fabricant";
 
 /** Coordinate provenance, coarse-grained. Detail lives in `geo_method`.
  *  `null` when the record has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** Which centroid the point came from — the register publishes no
+/** Which centroid the point came from: the register publishes no
  *  coordinates, so every Manufacturer sits on a commune (or, unresolved, a
  *  wilaya) centroid. */
 export type GeoMethod = "commune_centroid" | "wilaya_centroid";
@@ -38,11 +38,11 @@ export interface PharmaManufacturer {
   geo_precision: "approximate";
   /** Which centroid `lat`/`lng` came from. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "mip". */
+  /** Provenance key into `metadata.sources[]`: always "mip". */
   source: "mip";
-  /** Same as `name` — the registered operator. */
+  /** Same as `name`: the registered operator. */
   operateur: string;
-  /** Establishment role — always "fabricant" in this layer. */
+  /** Establishment role: always "fabricant" in this layer. */
   role: PharmaRole;
   /** Manufacturing nature. */
   nature: PharmaNature;
@@ -64,7 +64,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus manufacturer stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus manufacturer stats. */
 export interface Metadata {
   package: "@geoalgeria/industrie-pharmaceutique";
   schema_version: string;
@@ -72,10 +72,10 @@ export interface Metadata {
   title_ar: string;
   title_en: string;
   record_count: number;
-  /** Records with coordinates — all of them (centroid-geocoded). */
+  /** Records with coordinates: all of them (centroid-geocoded). */
   geocoded_count: number;
   geocoded_pct: number;
-  /** Count by `geo_precision` — always all-approximate for this dataset. */
+  /** Count by `geo_precision`: always all-approximate for this dataset. */
   precision: { exact: number; approximate: number };
   estimated_universe: number | null;
   coverage_pct: number | null;
@@ -89,7 +89,7 @@ export interface Metadata {
   updated: string;
   /** Count by nature. */
   by_nature: Partial<Record<PharmaNature, number>>;
-  /** Count by role — always all-"fabricant" for this dataset. */
+  /** Count by role: always all-"fabricant" for this dataset. */
   by_role: Partial<Record<PharmaRole, number>>;
   /** Count by `geo_method`. */
   by_geo_method: Partial<Record<GeoMethod, number>>;

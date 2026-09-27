@@ -1,4 +1,4 @@
-// @geoalgeria/telecom — loaders for Algeria mobile-network coverage datasets.
+// @geoalgeria/telecom: loaders for Algeria mobile-network coverage datasets.
 // Coverage files are named data/<tech>-<operator>.json (5g-djezzy.json, ...) so
 // adding a future technology (e.g. 4G) is additive and needs no API change.
 import { readFileSync } from "node:fs";

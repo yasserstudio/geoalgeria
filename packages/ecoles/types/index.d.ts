@@ -23,7 +23,7 @@ export type EcoleCycle =
   | "prescolaire" // préscolaire / maternelle / روضة (ISCED 0)
   | "autre"; // school of undetermined cycle
 
-/** Establishment kind — what the "école" is, orthogonal to its cycle. */
+/** Establishment kind: what the "école" is, orthogonal to its cycle. */
 export type EcoleKind =
   | "regular" // a standard école / CEM / lycée / maternelle
   | "langues" // language school / institute (cycle "autre")
@@ -60,7 +60,7 @@ export interface Ecole {
   commune_code: string | null;
   /** Commune name (French), nearest-centroid best-effort. */
   commune: string;
-  /** Latitude — every school in this dataset is geocoded. */
+  /** Latitude: every school in this dataset is geocoded. */
   lat: number;
   /** Longitude. */
   lng: number;
@@ -68,7 +68,7 @@ export interface Ecole {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "osm". */
+  /** Provenance key into `metadata.sources[]`: always "osm". */
   source: EcoleSource;
   /** External identifiers: the matched OSM element. */
   refs: Refs;
@@ -102,7 +102,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus school stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus school stats. */
 export interface Metadata {
   package: "@geoalgeria/ecoles";
   schema_version: string;

@@ -13,7 +13,7 @@
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Tourism points — attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
+  "coverage_note": "Tourism points: attractions, historic sites, lodging and parks from OpenStreetMap, plus thermal springs from the ASAL Geoportail.",
   "wilayas_covered": 69,
   "bbox": [
     -8.153594,
@@ -46,7 +46,7 @@
   "sources": [
     {
       "key": "osm",
-      "name": "OpenStreetMap — attractions, historic sites, lodging & parks in Algeria",
+      "name": "OpenStreetMap: attractions, historic sites, lodging & parks in Algeria",
       "url": "https://www.openstreetmap.org",
       "license": "ODbL 1.0 (© OpenStreetMap contributors)",
       "retrieved": "2026-06-21",
@@ -54,7 +54,7 @@
     },
     {
       "key": "wikidata",
-      "name": "Wikidata — heritage sites, museums & parks in Algeria",
+      "name": "Wikidata: heritage sites, museums & parks in Algeria",
       "url": "https://www.wikidata.org",
       "license": "CC0-1.0",
       "retrieved": "2026-06-21",
@@ -62,7 +62,7 @@
     },
     {
       "key": "asal",
-      "name": "ASAL Geoportail — thermal springs",
+      "name": "ASAL Geoportail: thermal springs",
       "url": "https://www.asal.dz",
       "license": "Factual public listing (ASAL)",
       "retrieved": "2026-06-21",

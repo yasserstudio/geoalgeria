@@ -33,7 +33,7 @@ export interface Boutique {
   commune_code: string;
   /** Commune name (French), nearest-centroid best-effort. */
   commune: string;
-  /** Latitude — every store carries a real operator point. */
+  /** Latitude: every store carries a real operator point. */
   lat: number;
   /** Longitude. */
   lng: number;
@@ -41,7 +41,7 @@ export interface Boutique {
   geo_precision: GeoPrecision;
   /** Always "operator_point". */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "djezzy". */
+  /** Provenance key into `metadata.sources[]`: always "djezzy". */
   source: "djezzy";
   /** External identifiers: Djezzy's internal store code. */
   refs: Refs;
@@ -67,7 +67,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus store stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus store stats. */
 export interface Metadata {
   package: "@geoalgeria/djezzy";
   schema_version: string;

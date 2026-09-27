@@ -53,6 +53,7 @@ import { licenceTermsErrors } from "./lib/licence-terms.mjs";
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
 import { normalizeRuleErrors } from "./lib/normalize-rules.mjs";
+import { emDashErrors } from "./lib/no-em-dash.mjs";
 import { rules as normalizeRules } from "../packages/normalize/index.js";
 import { corpus as normalizeCorpus } from "../packages/normalize/fixtures/corpus.js";
 
@@ -1446,6 +1447,39 @@ function validateLicenceTerms(pkgs) {
   }
 }
 
+// No em dash (U+2014) in the metadata GeoAlgeria publishes. Every separator that
+// used to be one lives in a generator (scripts/lib/v2-transforms.mjs source names,
+// @geoalgeria/schema's citation join, each coverage note), so a single hand-fixed
+// sweep would come back on the next rebuild. The rule and the message live in
+// scripts/lib/no-em-dash.mjs; record values are out of scope on purpose.
+function validateNoEmDash(pkgs) {
+  const files = [];
+  for (const pkg of pkgs) {
+    const dir = join(ROOT, "packages", pkg);
+    for (const rel of ["dataset-metadata.json", join("data", "metadata.json")]) {
+      const path = join(dir, rel);
+      if (!existsSync(path)) continue;
+      try {
+        files.push({ label: `${pkg}/${rel}`, json: readJson(path) });
+      } catch (e) {
+        fail(`${pkg}/${rel}: cannot read for the em-dash check, ${e.message}`);
+      }
+    }
+    const geoDir = join(dir, "data", "geojson");
+    if (!existsSync(geoDir)) continue;
+    for (const name of readdirSync(geoDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
+      try {
+        files.push({ label: `${pkg}/data/geojson/${name}`, json: readJson(join(geoDir, name)) });
+      } catch (e) {
+        fail(`${pkg}/data/geojson/${name}: cannot read for the em-dash check, ${e.message}`);
+      }
+    }
+  }
+  const problems = emDashErrors(files);
+  for (const problem of problems) fail(problem);
+  if (!problems.length) console.log(`  OK: ${files.length} metadata file(s) carry no em dash`);
+}
+
 // @geoalgeria/normalize publishes the orthographic equivalences GeoAlgeria asserts
 // about Algerian names as a reviewed table, so that someone who reads the language
 // and not the code can open a pull request against one of them. That only holds if
@@ -1636,6 +1670,9 @@ validateTypes(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[licence terms: manifest ↔ LICENSE ↔ metadata]`);
 validateLicenceTerms(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
+
+console.log(`\n[no em dash in published metadata]`);
+validateNoEmDash(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 // Not gated on `only`: the Rule table is one table for the whole repository, like
 // the licence check above, and it is cheap.

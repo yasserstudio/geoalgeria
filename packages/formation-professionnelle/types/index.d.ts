@@ -24,7 +24,7 @@ export type Secteur = "public" | "prive";
  *  `null` when the establishment has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. `null` on an ungeocoded record — no method
+/** How the coordinate was obtained. `null` on an ungeocoded record: no method
  *  produced a point, so none can be named.
  *  - `"takwin"`: the point the MFEP portal publishes for the establishment.
  *  - `"commune"`: the portal left the coordinate empty, so the record sits on
@@ -36,7 +36,7 @@ export type GeoMethod = "takwin" | "commune" | "wilaya" | null;
 /** A vocational training establishment, as published by the MFEP via takwin.dz. */
 export interface Establishment {
   /** Stable id, a zero-padded sequence string (e.g. "00001"). Unique within
-   *  this dataset. Opaque — do not parse. */
+   *  this dataset. Opaque: do not parse. */
   id: string;
   /** Official name (Arabic). */
   name: string;
@@ -59,7 +59,7 @@ export interface Establishment {
   geo_precision: GeoPrecision;
   /** How `lat`/`lng` were obtained; null when there are none. */
   geo_method: GeoMethod;
-  /** Provenance key into `metadata.sources[]` — always "mfep". */
+  /** Provenance key into `metadata.sources[]`: always "mfep". */
   source: "mfep";
   /** Establishment category. */
   type: EstablishmentType;
@@ -109,7 +109,7 @@ export interface SourceRef {
   evidence_type?: "official" | "crowdsourced" | "derived";
 }
 
-/** Dataset metadata (data/metadata.json) — canonical fields plus MFEP stats. */
+/** Dataset metadata (data/metadata.json): canonical fields plus MFEP stats. */
 export interface Metadata {
   package: "@geoalgeria/formation-professionnelle";
   schema_version: string;
@@ -143,9 +143,9 @@ export function establishments(): Establishment[];
 /** One establishment by id, or `null` if none matches. Accepts the padded
  *  string form ("00001") or its numeric equivalent. */
 export function establishmentById(id: number | string): Establishment | null;
-/** Establishments in a wilaya — accepts `"16"`, `16`, or `"01"`. */
+/** Establishments in a wilaya: accepts `"16"`, `16`, or `"01"`. */
 export function establishmentsByWilaya(code: string | number): Establishment[];
-/** Establishments of a type — accepts a slug (case-insensitive), e.g. `"cfpa"`. */
+/** Establishments of a type: accepts a slug (case-insensitive), e.g. `"cfpa"`. */
 export function establishmentsByType(type: string): Establishment[];
 /** Dataset metadata (counts, sources, updated). */
 export function metadata(): Metadata;
