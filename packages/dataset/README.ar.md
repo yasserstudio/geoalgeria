@@ -9,7 +9,7 @@
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
@@ -244,7 +244,7 @@ sqlite3 mydb.sqlite < full.sql
 
 ## الرعاية
 
-GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع جزأين بترخيص ODbL مذكورين أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
+GeoAlgeria مجاني، شيفرته وتجميعه بترخيص MIT مع جزأين بترخيص ODbL وبيانات بريد الجزائر المنسوخة، جميعها مذكورة أدناه. إذا وفّر لك الوقت، [**ادعم صيانته**](https://github.com/sponsors/yasserstudio) – الرعاية تموّل تحديث البيانات مع كل إصلاح وتوسيع GeoAlgeria نحو *جميع* أنواع البيانات المفتوحة عن الجزائر.
 
 ---
 
@@ -290,7 +290,15 @@ GeoAlgeria هي الخيار الأكثر اكتمالاً في 2026 – هي ح
   في كل مكان تظهر فيه هذه القيم.
 
 عند استخدامك أو إعادة نشرك لأيٍّ من هذين الجزأين يجب **إسناد الفضل لمساهمي OpenStreetMap**
-وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق. الإسناد لكل جزء والصفوف المعنية في [NOTICE](NOTICE).
+وإبقاء القواعد المُشتقّة تحت ترخيصٍ متوافق.
+
+البيانات البريدية المنسوخة في `data/poste/` تخضع لشروط **بريد الجزائر** نفسها، لا لترخيص MIT:
+**Data © Algérie Poste; redistributed for reference**، وهي الشروط ذاتها التي تعلنها حزمة
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste). تحقّق من بريد الجزائر
+للحصول على معلومات رسمية وآنية.
+
+لأن البيانات تخضع لثلاث مجموعات من الشروط، يعلن الـmanifest القيمة
+`SEE LICENSE IN LICENSE` بدلًا من تعبير SPDX. الإسناد لكل جزء والصفوف المعنية في [NOTICE](NOTICE).
 
 صُنع بعناية من طرف [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

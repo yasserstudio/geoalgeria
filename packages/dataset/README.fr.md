@@ -9,7 +9,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
@@ -244,7 +244,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/ge
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit, code MIT et compilation MIT avec deux parties sous ODbL indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit : code MIT et compilation MIT, avec deux parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 
@@ -292,7 +292,16 @@ d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/
 
 Si vous utilisez ou redistribuez l'une de ces deux parties, vous devez **attribuer aux
 contributeurs d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.
-L'attribution par partie et les lignes concernées sont dans [NOTICE](NOTICE).
+
+Les données postales miroir sous `data/poste/` relèvent des conditions propres d'**Algérie
+Poste**, et non de la licence MIT : **Data © Algérie Poste; redistributed for reference**, les
+mêmes conditions que celles énoncées par
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste). Vérifiez auprès
+d'Algérie Poste pour une information faisant foi et en temps réel.
+
+Les données relevant de trois ensembles de conditions, le manifeste déclare
+`SEE LICENSE IN LICENSE` plutôt qu'une expression SPDX. L'attribution par partie et les lignes
+concernées sont dans [NOTICE](NOTICE).
 
 Réalisé avec soin par [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 
