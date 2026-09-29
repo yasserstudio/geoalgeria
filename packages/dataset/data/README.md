@@ -17,11 +17,12 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
-├── dairas.json                  ← 555 dairas
+├── dairas.json                  ← 551 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
 ├── name-history.json            ← former names, so an older spelling still finds the record
+├── retired-ids.json             ← daira ids that no longer exist and are never reused
 ├── csv/
 │   ├── wilayas.csv
 │   └── communes.csv
@@ -136,10 +137,27 @@ data/
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Stable ID, 1 to 564 with 9 retired ids that are not reused, so the table is 555 rows |
+| `id` | integer | Stable ID, 1 to 570 with 19 retired ids that are not reused, so the table is 551 rows |
 | `wilaya_code` | integer | Parent wilaya code |
-| `name_fr` | string | French name |
+| `name_fr` | string | French name, the name of the daira's seat commune |
 | `commune_count` | integer | Number of communes in this daira |
+
+A commune names its daira by this `name_fr`, in every carrier that repeats the
+linkage, so the two always join. A daira that stops existing leaves its id in
+`retired-ids.json` with the reason, and a new daira takes a fresh id, so an id a
+consumer holds never comes back meaning something else.
+
+### Where the daira lists come from
+
+Executive decree n° 26-253 of 15 July 2026 (*Journal Officiel* n° 52 of 21 July
+2026) fixes the communes each chef de daïra administers in **wilayas 3, 5, 7,
+12, 13, 14, 17, 26, 28, 32 and 59–69**: **142 dairas**, carried here exactly as
+its annex prints them. It leaves the remaining 48 wilayas under decree n° 91-306
+of 24 August 1991, and those lists as this dataset holds them come to **409**.
+
+**551 is therefore this dataset's count, not a published national total**: no
+post-reform text states one. The reading of the annex, and what it does and does
+not settle, is in [`research/_dairas/`](../../../research/_dairas/).
 
 ## SQL Schema
 
@@ -162,7 +180,7 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 ## Coverage
 
 - **69 wilayas** — complete (original 48 + 2019 reform + 2025 reform)
-- **555 dairas**
+- **551 dairas**
 - **1,541 communes** (complete; the 13 name-twin communes of the reform wilayas were added 2026-07-29 from `research/_communes-reconcile/`)
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
@@ -245,6 +263,7 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 
 - Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69 and for the commune lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28 and 32
 - Journal Officiel No. 40, June 3, 2026 (Presidential decree 26-206) for the names and chef-lieux of wilayas 59–69
+- Journal Officiel No. 52, July 21, 2026 (Executive decree 26-253) for the daira lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69
 - Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
 - Ministry of Interior (interieur.gov.dz)
 - APS (Algérie Presse Service)
