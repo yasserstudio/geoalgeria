@@ -2,8 +2,9 @@
 // Cascade corrected flagship commune centres into the sector packages that
 // derive from them but cannot replay their own generator offline.
 //
-// WHY. `scripts/fix-commune-centres.mjs` moved 56 commune centres in
-// packages/dataset (research/_commune-centres/README.md). Two kinds of published
+// WHY. `scripts/fix-commune-centres.mjs` has moved 230 commune centres in
+// packages/dataset over two audits, 56 on 2026-09-27 and 174 on 2026-09-29
+// (research/_commune-centres/README.md). Two kinds of published
 // record are derived from those values and go stale the moment they move:
 //
 //   1. a coordinate that IS a commune centre, because the record has no point of
@@ -25,11 +26,14 @@
 //                              predates the v2 contract and would emit the old shape.
 //   industrie-pharmaceutique   ships no generator; its data was assembled once from
 //                              the MIP fabrication register.
-//   sante                      replays, but its MSP capture re-pairs two FR/AR posts
+//   sante                      replays, but its MSP capture re-pairs FR/AR posts
 //                              once the corrected commune names land, which retires
-//                              two published ids (05-epsp-07, 16-ehs-14). Ids are
-//                              public join keys, so a coordinate correction is not
-//                              the release that churns them.
+//                              published ids (05-epsp-07 and 16-ehs-14 on
+//                              2026-09-27). Ids are public join keys and the Owner
+//                              rule is that a published id is never retired or
+//                              renumbered unless the place itself is gone, so a
+//                              coordinate correction is not the release that churns
+//                              them.
 //
 // WHAT EACH PACKAGE GETS
 //   sante, agriculture, industrie-pharmaceutique  recentre only. Their commune is
@@ -68,10 +72,10 @@ import {
   writePackageV2,
 } from "./lib/v2-transforms.mjs";
 import { canonicalCommuneForCode, canonicalCommuneForCurrentLabel } from "./lib/commune-index.mjs";
+import { describeBatches, loadCorrections } from "./lib/commune-corrections.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
-const CORRECTIONS = join(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json");
 
 const WRITE = process.argv.includes("--write");
 const CHECK = process.argv.includes("--check");
@@ -118,11 +122,10 @@ function nearestCommune(lat, lng, communes) {
   return best;
 }
 
-// --- the repudiated values, from the corrections file ------------------------
-const corrections = JSON.parse(readFileSync(CORRECTIONS, "utf-8"));
-if (corrections.corrections.length !== corrections.count) {
-  throw new Error(`corrections file says ${corrections.count} rows, carries ${corrections.corrections.length}`);
-}
+// --- the repudiated values, from every applied corrections file ---------------
+// Every batch, not the latest: a dependent can still be sitting on a value the
+// 2026-09-27 batch repudiated, and dropping that batch would read as clean.
+const corrections = loadCorrections();
 const repudiated = new Map(); // "lat,lng" of the old centre -> correction row
 for (const f of corrections.corrections) repudiated.set(`${round6(f.from[1])},${round6(f.from[0])}`, f);
 
@@ -227,7 +230,7 @@ for (const spec of PACKAGES) {
   if (moved || rejoined) anyChange = true;
 }
 
-console.log(`flagship centres repudiated by this release: ${corrections.count} (OSM ${corrections.timestamp_osm_base})`);
+console.log(`flagship centres repudiated to date: ${corrections.count} over ${corrections.docs.length} batch(es): ${describeBatches(corrections.docs)}`);
 for (const line of report) console.log(`  ${line}`);
 if (CHECK && anyChange) {
   console.error("\ndependents are stale: run node scripts/sync-commune-centroid-dependents.mjs --write");

@@ -11,7 +11,7 @@ id,name,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_method,source
 06-001,Béjaia - Akbou,06,0625,Akbou,36.45577,4.53582,exact,operator_point,djezzy,"{""djezzy"":""Z66""}",boutique,C,"Rue Aïssat Idir, Guendouza, R.N 26, Akbou, Béjaïa.",08H00-19H00,A06B002
 06-002,Béjaia - Kherata,06,0644,Kherrata,36.49134,5.27866,exact,operator_point,djezzy,"{""djezzy"":""ZA8""}",boutique,,"Route national 05, Kherrata- Béjaia",08H00-18H00,
 06-003,Béjaia - Ihadeden,06,0601,Bejaia,36.74188,5.04545,exact,operator_point,djezzy,"{""djezzy"":""ZC9""}",boutique,,"Laazib Oumaamar Ihadeden, Bejaia.",08H00-20H00,
-07-001,BISKRA - Centre commercial El Khir,07,0701,Biskra,34.85636,5.72389,exact,operator_point,djezzy,"{""djezzy"":""Z31""}",boutique,B,Centre commercial El Khir sis 03 avenue frères Saouli Biskra,08H00-19H00,C07B001
+07-001,BISKRA - Centre commercial El Khir,07,0704,Chetma,34.85636,5.72389,exact,operator_point,djezzy,"{""djezzy"":""Z31""}",boutique,B,Centre commercial El Khir sis 03 avenue frères Saouli Biskra,08H00-19H00,C07B001
 08-001,BECHAR,08,0801,Bechar,31.61366,-2.21709,exact,operator_point,djezzy,"{""djezzy"":""Z44""}",boutique,B,"56, Rue Slimane Belkhedim, Béchar.",08H00 - 18H00,O08B001
 09-001,Blida - place Zabana,09,0901,Blida,36.47498,2.82818,exact,operator_point,djezzy,"{""djezzy"":""Z17""}",boutique,A,"38, Boulevard Larbi Tebessi, place Zabana, Blida.",08H00-20H00,A09B001
 09-002,Blida - Boufarik,09,0920,Boufarik,36.57347,2.91213,exact,operator_point,djezzy,"{""djezzy"":""Z73""}",boutique,,"31, BOULEVARD MOUKHTARI, BOUFARIK, BLIDA.",08H00-19H00,
@@ -31,7 +31,7 @@ Maghnia-Wilaya Tlemcen,",08H00 - 18H00,
 16-001,Alger - El Biar,16,1610,El Biar,36.76904,3.02544,exact,operator_point,djezzy,"{""djezzy"":""Z04""}",boutique,,"130 Boulevard Ali KHODJA , El Biar",08H00 -20H30,
 16-002,Alger - Bir Mourad Rais,16,1609,Bir Mourad Rais,36.739521,3.04958,exact,operator_point,djezzy,"{""djezzy"":""Z05""}",boutique,B,Rue Saada Larbi (Ex Gambita) Groupe 37 N° 10.,08H00 -20H30,A16B002
 16-003,ALGER AÉROPORT National,16,1620,Dar El Beida,36.69849,3.20585,exact,operator_point,djezzy,"{""djezzy"":""Z08""}",boutique,C-,"Aéroport Houari Boumediene, Terminal International, Hall Central, Alger.",08H00 -22H00,A16M708
-16-004,Alger - Kouba (Ex Lavigerie),16,1603,El Madania,36.72947,3.07893,exact,operator_point,djezzy,"{""djezzy"":""Z09""}",boutique,A,"86, Avenue des frères Abdeslami (Ex Lavigerie), Vieux Kouba, Alger.",08H00 -20H30,A16B003
+16-004,Alger - Kouba (Ex Lavigerie),16,1618,Kouba,36.72947,3.07893,exact,operator_point,djezzy,"{""djezzy"":""Z09""}",boutique,A,"86, Avenue des frères Abdeslami (Ex Lavigerie), Vieux Kouba, Alger.",08H00 -20H30,A16B003
 16-005,Alger - Audin,16,1601,Alger Centre,36.76921,3.05506,exact,operator_point,djezzy,"{""djezzy"":""Z11""}",boutique,A,"23, Rue Didouche Mourad, Place Audin, Alger.",08H00 -20H30,A16B004
 16-006,Alger - Dar El Beida,16,1620,Dar El Beida,36.71529,3.20854,exact,operator_point,djezzy,"{""djezzy"":""Z48""}",boutique,B,"Rue Mohamed KHEMISTI N°14 & N°16 Lot N°18 propriété N°13 – Commune Dar El Beida, Alger.",08H00 -20H30,A16T033
 16-007,Alger - Rouiba,16,1642,Rouiba,36.73778,3.28249,exact,operator_point,djezzy,"{""djezzy"":""Z50""}",boutique,A,"5, Boulevard Colonel Amirouche, Rouiba, Alger.",08H00 -20H30,A16B006
@@ -57,7 +57,7 @@ Maghnia-Wilaya Tlemcen,",08H00 - 18H00,
 20-001,SAIDA,20,2001,Saida,34.83155,0.14632,exact,operator_point,djezzy,"{""djezzy"":""Z40""}",boutique,B,"46, Avenue Ahmed Medeghri, Saïda.",08H00 - 19H00,O20B001
 21-001,SKIKDA - BACHIR BOUKADOUM,21,2101,Skikda,36.87234,6.90916,exact,operator_point,djezzy,"{""djezzy"":""Z21""}",boutique,B,"50, Rue Bachir Boukadoum (face à la CNR), Skikda.",08H00 - 20H00,C21B001
 21-002,Azzaba - Skikda,21,2104,Azzaba,36.7382,7.10728,exact,operator_point,djezzy,"{""djezzy"":""ZF6""}",boutique,,"56 Avenue de l’indépendance, Azzaba - Skikda",08H00 - 18H00,
-21-003,Skikda - El Harrouche,21,2117,Zerdezas,36.65245,6.83603,exact,operator_point,djezzy,"{""djezzy"":""ZG6""}",boutique,,"40 Rue Mégharbi, El Harrouche - Skikda",08H00 - 18H00,
+21-003,Skikda - El Harrouche,21,2116,El Arrouch,36.65245,6.83603,exact,operator_point,djezzy,"{""djezzy"":""ZG6""}",boutique,,"40 Rue Mégharbi, El Harrouche - Skikda",08H00 - 18H00,
 22-001,Sidi Bel Abbes - République,22,2201,Sidi Bel-Abbes,35.19074,-0.63368,exact,operator_point,djezzy,"{""djezzy"":""Z19""}",boutique,B+,"21, Avenue de la république, SBA.",08H00 - 19H00,O22B001
 23-001,Annaba - Ex Majestic,23,2301,Annaba,36.90625,7.76014,exact,operator_point,djezzy,"{""djezzy"":""Z10""}",boutique,B+,"15, Boulevard du 1er Novembre 1954 (Ex Majestic), Annaba.",08H00 - 20H00,C23B001
 23-002,Annaba - El Bouni,23,2311,Sidi Amar,36.85454,7.74166,exact,operator_point,djezzy,"{""djezzy"":""Z84""}",boutique,C,"Division 52, Groupe 62 N° D15, EL Bouni Centre, Annaba",08H00 - 20H00,C23B002
@@ -93,7 +93,7 @@ Maghnia-Wilaya Tlemcen,",08H00 - 18H00,
 32-001,EL BAYADH,32,3201,El Bayadh,33.68269,1.01499,exact,operator_point,djezzy,"{""djezzy"":""Z61""}",boutique,C,"Rue Brahim Belkacem, Place Emir Abdelkader, El Bayadh.",08H00 - 18H00,O32B001
 33-001,Illizi - Centre Ville,33,3301,Illizi,26.499959,8.475434,exact,operator_point,djezzy,"{""djezzy"":""Z67""}",boutique,,"Centre-ville, Illizi",07H00-14H00 & 16H00 - 20H00,
 34-001,BORDJ BOU ARRÉRIDJ,34,3401,Bordj Bou Arreridj,36.07344,4.75651,exact,operator_point,djezzy,"{""djezzy"":""Z34""}",boutique,B+,"07, Rue Ramache Aïssa, Bordj Bou Arréridj.",08h00-19h00,C34B001
-35-001,BOUMERDES,35,3519,Corso,36.75038,3.47381,exact,operator_point,djezzy,"{""djezzy"":""Z12""}",boutique,B,"Cité Deriche N°24, Lot N°06, Boumerdes.",08H00-19H00,A35B001
+35-001,BOUMERDES,35,3501,Boumerdes,36.75038,3.47381,exact,operator_point,djezzy,"{""djezzy"":""Z12""}",boutique,B,"Cité Deriche N°24, Lot N°06, Boumerdes.",08H00-19H00,A35B001
 36-001,El Taref,36,3601,El Tarf,36.76686,8.31395,exact,operator_point,djezzy,"{""djezzy"":""Z55""}",boutique,,"Centre Commercial CITY CENTER ZAIDI, RN 44, El Taref 36000",08H00 - 19H00,
 37-001,TINDOUF,37,3701,Tindouf,27.67362,-8.14332,exact,operator_point,djezzy,"{""djezzy"":""Z60""}",boutique,C,"Cité El Kassabi, N°05, Tindouf.",09H00- 20H00,O37B001
 38-001,Tissemsilt,38,3801,Tissemsilt,35.60439,1.8045,exact,operator_point,djezzy,"{""djezzy"":""Z59""}",boutique,,"Cité des 132 Logements, N° 133, Tissemesilt.",08H00-18H00,
