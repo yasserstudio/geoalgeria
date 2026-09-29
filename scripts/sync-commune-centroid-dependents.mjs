@@ -3,7 +3,7 @@
 // derive from them but cannot replay their own generator offline.
 //
 // WHY. `scripts/fix-commune-centres.mjs` has moved 230 commune centres in
-// packages/dataset over two audits, 56 on 2026-09-27 and 174 on 2026-09-29
+// packages/dataset over two audits, 56 on 2026-09-27 and 189 on 2026-09-29
 // (research/_commune-centres/README.md). Two kinds of published
 // record are derived from those values and go stale the moment they move:
 //
@@ -40,8 +40,11 @@
 //     matched from the source's own text (an MSP locality, a MADR address, an MIP
 //     commune column), not from geometry, so no attribution can move; only the
 //     coordinate they borrow from the commune has to follow it.
-//   djezzy  re-join. It stamps wilaya/commune by unrestricted nearest commune
-//     centroid over the flagship set, the join reproduced in nearestCommune() below.
+//   djezzy  re-join. It stamps wilaya/commune from the flagship set by the shared
+//     rule scripts/lib/build-utils.mjs resolveCommune(), reproduced in
+//     rejoinCommune() below: containing wilaya polygon, then containing commune
+//     outline, then distance. It was an unrestricted nearest-centroid search until
+//     2026-09-29.
 //
 // RECENTRE ANCHORS (also the rule scripts/validate-packages.mjs enforces)
 //   commune_code    the record names its commune by code: the anchor is that
@@ -72,6 +75,7 @@ import {
   writePackageV2,
 } from "./lib/v2-transforms.mjs";
 import { canonicalCommuneForCode, canonicalCommuneForCurrentLabel } from "./lib/commune-index.mjs";
+import { resolveCommune } from "./lib/build-utils.mjs";
 import { describeBatches, loadCorrections } from "./lib/commune-corrections.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -81,7 +85,6 @@ const WRITE = process.argv.includes("--write");
 const CHECK = process.argv.includes("--check");
 if (WRITE && CHECK) throw new Error("Choose either --write or --check");
 
-const DEG = Math.PI / 180;
 // 6 decimals is the repository's coordinate resolution (schema round6, ~0.1 m), and
 // the flagship keeps a handful of centres at 7, so every comparison is made on the
 // rounded value a published record can actually carry.
@@ -104,22 +107,16 @@ function communesSplit() {
   return out;
 }
 
-/** The unrestricted nearest-centroid join djezzy uses: equirectangular squared
- *  distance, monotonic with great-circle distance at this scale. */
-function nearestCommune(lat, lng, communes) {
-  let best = null;
-  let bestD = Infinity;
-  const cosLat = Math.cos(lat * DEG);
-  for (const c of communes) {
-    const dx = (c.longitude - lng) * cosLat;
-    const dy = c.latitude - lat;
-    const d = dx * dx + dy * dy;
-    if (d < bestD) {
-      bestD = d;
-      best = c;
-    }
-  }
-  return best;
+/** The join djezzy uses, which is scripts/lib/build-utils.mjs resolveCommune(): the
+ *  wilaya whose shipped polygon contains the point fixes the candidate set, the
+ *  commune whose OSM outline contains it wins inside that set, and distance to a
+ *  hand-placed centre only breaks what is left. It was an unrestricted
+ *  nearest-centroid search until 2026-09-29, which is how moving 245 commune centres
+ *  carried 58 published records into a wilaya whose polygon does not contain them.
+ *  A boutique whose point no wilaya polygon contains keeps the wilaya it shipped in,
+ *  because a nearest-centre guess out there is the bug rather than the fix. */
+function rejoinCommune(r, communes) {
+  return resolveCommune(r.lat, r.lng, communes, r.wilaya_code ?? null).commune;
 }
 
 // --- the repudiated values, from every applied corrections file ---------------
@@ -159,7 +156,8 @@ for (const spec of PACKAGES) {
   if (spec.rejoin) {
     for (const r of rows) {
       if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
-      const c = nearestCommune(r.lat, r.lng, split);
+      const c = rejoinCommune(r, split);
+      if (!c) continue;
       const wilaya_code = String(c.wilaya_code).padStart(2, "0");
       const commune_code = padC(c.code_commune);
       if (r.wilaya_code === wilaya_code && r.commune_code === commune_code && r.commune === c.name_fr) continue;

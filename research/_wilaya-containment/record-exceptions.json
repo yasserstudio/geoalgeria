@@ -1,0 +1,1844 @@
+{
+  "generated": "2026-09-29",
+  "guard": "test/record-in-declared-wilaya.test.mjs",
+  "note": "Published records whose coordinate is inside a wilaya polygon other than the one they declare. Every row is a defect, not a tolerance: the reason per group says which two claims disagree and who can settle it. Records whose coordinate is inside NO wilaya polygon are not listed and not failed, because the 69 shipped outlines are display-grade (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the shoreline. Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.",
+  "files_checked": 46,
+  "count": 245,
+  "groups": [
+    {
+      "file": "packages/banques/data/branches.json",
+      "package": "banques",
+      "count": 5,
+      "reason": "the branch's wilaya comes from each bank's own branch list, and its coordinate from a separate geocode; the two disagree here and only the bank can say which is wrong",
+      "records": [
+        {
+          "id": "agb-tebessa",
+          "declared_wilaya": "12",
+          "containing_wilaya": "62",
+          "lng": 8,
+          "lat": 35
+        },
+        {
+          "id": "badr-281",
+          "declared_wilaya": "67",
+          "containing_wilaya": "65",
+          "lng": 2.7048777,
+          "lat": 35.4050761
+        },
+        {
+          "id": "cnep-117",
+          "declared_wilaya": "19",
+          "containing_wilaya": "05",
+          "lng": 5.7566156,
+          "lat": 35.8697687
+        },
+        {
+          "id": "cnep-73",
+          "declared_wilaya": "38",
+          "containing_wilaya": "44",
+          "lng": 2.2222787,
+          "lat": 35.9724564
+        },
+        {
+          "id": "trustbank-agenceoran",
+          "declared_wilaya": "31",
+          "containing_wilaya": "29",
+          "lng": -0.3853798,
+          "lat": 35.536417
+        }
+      ]
+    },
+    {
+      "file": "packages/emploi/data/alem.json",
+      "package": "emploi",
+      "count": 20,
+      "reason": "ANEM publishes the agency's wilaya as a field and its address separately; the coordinate is geocoded from the address, so a disagreement is an address or a geocode to re-check against ANEM, not a re-join",
+      "records": [
+        {
+          "id": "03-02",
+          "declared_wilaya": "03",
+          "containing_wilaya": "59",
+          "lng": 2.08051,
+          "lat": 34.11215
+        },
+        {
+          "id": "05-02",
+          "declared_wilaya": "05",
+          "containing_wilaya": "60",
+          "lng": 5.36762,
+          "lat": 35.38662
+        },
+        {
+          "id": "07-02",
+          "declared_wilaya": "07",
+          "containing_wilaya": "61",
+          "lng": 5.71741,
+          "lat": 35.21655
+        },
+        {
+          "id": "12-02",
+          "declared_wilaya": "12",
+          "containing_wilaya": "62",
+          "lng": 8.05845,
+          "lat": 34.75207
+        },
+        {
+          "id": "14-03",
+          "declared_wilaya": "14",
+          "containing_wilaya": "64",
+          "lng": 2.31744,
+          "lat": 35.21407
+        },
+        {
+          "id": "17-02",
+          "declared_wilaya": "17",
+          "containing_wilaya": "65",
+          "lng": 2.90455,
+          "lat": 35.44863
+        },
+        {
+          "id": "17-03",
+          "declared_wilaya": "17",
+          "containing_wilaya": "65",
+          "lng": 3.22309,
+          "lat": 35.63289
+        },
+        {
+          "id": "17-05",
+          "declared_wilaya": "17",
+          "containing_wilaya": "66",
+          "lng": 3.48802,
+          "lat": 34.15352
+        },
+        {
+          "id": "17-07",
+          "declared_wilaya": "17",
+          "containing_wilaya": "65",
+          "lng": 2.51662,
+          "lat": 35.43959
+        },
+        {
+          "id": "17-08",
+          "declared_wilaya": "17",
+          "containing_wilaya": "65",
+          "lng": 3.36041,
+          "lat": 35.34348
+        },
+        {
+          "id": "26-02",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 2.74946,
+          "lat": 35.88379
+        },
+        {
+          "id": "26-05",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 2.84233,
+          "lat": 35.70472
+        },
+        {
+          "id": "26-07",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.42916,
+          "lat": 35.93795
+        },
+        {
+          "id": "26-08",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.14205,
+          "lat": 35.8876
+        },
+        {
+          "id": "28-02",
+          "declared_wilaya": "28",
+          "containing_wilaya": "68",
+          "lng": 4.17141,
+          "lat": 35.20663
+        },
+        {
+          "id": "28-05",
+          "declared_wilaya": "28",
+          "containing_wilaya": "68",
+          "lng": 4.15839,
+          "lat": 34.85362
+        },
+        {
+          "id": "31-04",
+          "declared_wilaya": "31",
+          "containing_wilaya": "29",
+          "lng": -0.08324,
+          "lat": 35.67854
+        },
+        {
+          "id": "32-03",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.54628,
+          "lat": 32.89808
+        },
+        {
+          "id": "35-04",
+          "declared_wilaya": "35",
+          "containing_wilaya": "10",
+          "lng": 3.68591,
+          "lat": 36.53259
+        },
+        {
+          "id": "55-01",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.51251,
+          "lat": 32.61702
+        }
+      ]
+    },
+    {
+      "file": "packages/jeunesse/data/institutions.json",
+      "package": "jeunesse",
+      "count": 22,
+      "reason": "the establishment's wilaya is the ministry register's own column and the coordinate was geocoded from the same row's locality, so the two are independent claims and the register decides",
+      "records": [
+        {
+          "id": "00728",
+          "declared_wilaya": "14",
+          "containing_wilaya": "64",
+          "lng": 2.4868,
+          "lat": 35.255
+        },
+        {
+          "id": "01268",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.4216,
+          "lat": 35.9396
+        },
+        {
+          "id": "01283",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.4174,
+          "lat": 35.9412
+        },
+        {
+          "id": "01403",
+          "declared_wilaya": "28",
+          "containing_wilaya": "68",
+          "lng": 4.368947,
+          "lat": 35.121633
+        },
+        {
+          "id": "01554",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.545365,
+          "lat": 32.894455
+        },
+        {
+          "id": "01558",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.063674,
+          "lat": 33.033688
+        },
+        {
+          "id": "01559",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0536,
+          "lat": 33.0319
+        },
+        {
+          "id": "01561",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.021,
+          "lat": 32.8689
+        },
+        {
+          "id": "01563",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0245,
+          "lat": 32.8747
+        },
+        {
+          "id": "01565",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0483,
+          "lat": 33.0287
+        },
+        {
+          "id": "01570",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.5466,
+          "lat": 32.9117
+        },
+        {
+          "id": "01574",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.547,
+          "lat": 32.8973
+        },
+        {
+          "id": "01582",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.1146,
+          "lat": 33.026
+        },
+        {
+          "id": "01583",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.021055,
+          "lat": 32.868254
+        },
+        {
+          "id": "01584",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0535,
+          "lat": 33.0314
+        },
+        {
+          "id": "02127",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.748261,
+          "lat": 31.982183
+        },
+        {
+          "id": "02137",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.745099,
+          "lat": 31.97821
+        },
+        {
+          "id": "02138",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.7416,
+          "lat": 31.9805
+        },
+        {
+          "id": "02273",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5185,
+          "lat": 32.6118
+        },
+        {
+          "id": "02284",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4275,
+          "lat": 32.6957
+        },
+        {
+          "id": "02285",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.515684,
+          "lat": 32.615041
+        },
+        {
+          "id": "02290",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5961,
+          "lat": 32.6211
+        }
+      ]
+    },
+    {
+      "file": "packages/poste/data/atms.json",
+      "package": "poste",
+      "count": 5,
+      "reason": "Algérie Poste's own office and ATM lists carry the wilaya; the coordinate is the operator's, and a disagreement is a row for the operator, not for this join",
+      "records": [
+        {
+          "id": "11610",
+          "declared_wilaya": "28",
+          "containing_wilaya": "68",
+          "lng": 3.6964617,
+          "lat": 35.1458683
+        },
+        {
+          "id": "14761",
+          "declared_wilaya": "20",
+          "containing_wilaya": "29",
+          "lng": -0.1471426,
+          "lat": 35.1196427
+        },
+        {
+          "id": "14899",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.7698375,
+          "lat": 31.9522417
+        },
+        {
+          "id": "14908",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.4279322,
+          "lat": 35.9380268
+        },
+        {
+          "id": "15228",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4567231,
+          "lat": 32.6503421
+        }
+      ]
+    },
+    {
+      "file": "packages/poste/data/postoffices.json",
+      "package": "poste",
+      "count": 12,
+      "reason": "Algérie Poste's own office and ATM lists carry the wilaya; the coordinate is the operator's, and a disagreement is a row for the operator, not for this join",
+      "records": [
+        {
+          "id": "1104",
+          "declared_wilaya": "20",
+          "containing_wilaya": "29",
+          "lng": -0.1471084,
+          "lat": 35.1195885
+        },
+        {
+          "id": "1184",
+          "declared_wilaya": "55",
+          "containing_wilaya": "57",
+          "lng": 5.9843079,
+          "lat": 33.8807181
+        },
+        {
+          "id": "174",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5131974,
+          "lat": 32.6176347
+        },
+        {
+          "id": "2829",
+          "declared_wilaya": "24",
+          "containing_wilaya": "36",
+          "lng": 7.777375,
+          "lat": 36.5837667
+        },
+        {
+          "id": "3437",
+          "declared_wilaya": "32",
+          "containing_wilaya": "20",
+          "lng": 0.4264462,
+          "lat": 34.4081325
+        },
+        {
+          "id": "352",
+          "declared_wilaya": "12",
+          "containing_wilaya": "62",
+          "lng": 7.9990879,
+          "lat": 35.2653552
+        },
+        {
+          "id": "374",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5155792,
+          "lat": 32.9290146
+        },
+        {
+          "id": "520",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4259192,
+          "lat": 32.6970466
+        },
+        {
+          "id": "804",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5970495,
+          "lat": 32.6226754
+        },
+        {
+          "id": "919",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.748075,
+          "lat": 31.980045
+        },
+        {
+          "id": "931",
+          "declared_wilaya": "06",
+          "containing_wilaya": "10",
+          "lng": 4.3540144,
+          "lat": 36.3362178
+        },
+        {
+          "id": "996",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.6050191,
+          "lat": 32.6475715
+        }
+      ]
+    },
+    {
+      "file": "packages/protection-civile/data/protection-civile.json",
+      "package": "protection-civile",
+      "count": 3,
+      "reason": "the unit's wilaya is the DGPC's own field in dgpc.dz/dgpc2/unite.geojson, shipped beside the DGPC's own coordinate; both are the same authority's claim and correcting either needs the DGPC",
+      "records": [
+        {
+          "id": "47-013",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.74793,
+          "lat": 31.9813
+        },
+        {
+          "id": "55-007",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.84566,
+          "lat": 32.597698
+        },
+        {
+          "id": "55-008",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.52382,
+          "lat": 32.602699
+        }
+      ]
+    },
+    {
+      "file": "packages/sante/data/sante.json",
+      "package": "sante",
+      "count": 2,
+      "reason": "the facility's wilaya and commune come from the MSP's own posts, matched on the locality text rather than on geometry, and its coordinate is geocoded; re-pairing those posts retires published ids, which a coordinate correction is not the release for",
+      "records": [
+        {
+          "id": "55-eph-01",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.51259,
+          "lat": 32.613046
+        },
+        {
+          "id": "55-epsp-01",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.51259,
+          "lat": 32.613046
+        }
+      ]
+    },
+    {
+      "file": "packages/sports/data/facilities.json",
+      "package": "sports",
+      "count": 36,
+      "reason": "the facility's wilaya is the ministry register's own column, its coordinate geocoded from the same row, so a disagreement is a register row to re-check",
+      "records": [
+        {
+          "id": "00724",
+          "declared_wilaya": "05",
+          "containing_wilaya": "60",
+          "lng": 5.3734,
+          "lat": 35.3623
+        },
+        {
+          "id": "01205",
+          "declared_wilaya": "10",
+          "containing_wilaya": "35",
+          "lng": 3.53306,
+          "lat": 36.6775
+        },
+        {
+          "id": "01663",
+          "declared_wilaya": "14",
+          "containing_wilaya": "64",
+          "lng": 2.4818,
+          "lat": 35.2515
+        },
+        {
+          "id": "01666",
+          "declared_wilaya": "14",
+          "containing_wilaya": "64",
+          "lng": 2.4996,
+          "lat": 35.2967
+        },
+        {
+          "id": "02725",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.4337,
+          "lat": 35.9368
+        },
+        {
+          "id": "02769",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.0364,
+          "lat": 35.8931
+        },
+        {
+          "id": "02775",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.427,
+          "lat": 35.9388
+        },
+        {
+          "id": "02776",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.4115,
+          "lat": 35.9423
+        },
+        {
+          "id": "02777",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.4125,
+          "lat": 35.944
+        },
+        {
+          "id": "02802",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.05,
+          "lat": 35.8538
+        },
+        {
+          "id": "03396",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.5444,
+          "lat": 32.8947
+        },
+        {
+          "id": "03398",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.547,
+          "lat": 32.9126
+        },
+        {
+          "id": "03400",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0249,
+          "lat": 32.8749
+        },
+        {
+          "id": "03401",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0479,
+          "lat": 33.0302
+        },
+        {
+          "id": "03404",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0216,
+          "lat": 32.8697
+        },
+        {
+          "id": "03406",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.0481,
+          "lat": 33.0293
+        },
+        {
+          "id": "03407",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.549,
+          "lat": 32.9126
+        },
+        {
+          "id": "03416",
+          "declared_wilaya": "32",
+          "containing_wilaya": "69",
+          "lng": 0.5479,
+          "lat": 32.9142
+        },
+        {
+          "id": "03466",
+          "declared_wilaya": "34",
+          "containing_wilaya": "28",
+          "lng": 4.4537,
+          "lat": 36.0339
+        },
+        {
+          "id": "03469",
+          "declared_wilaya": "34",
+          "containing_wilaya": "28",
+          "lng": 4.4705,
+          "lat": 36.0403
+        },
+        {
+          "id": "03476",
+          "declared_wilaya": "34",
+          "containing_wilaya": "28",
+          "lng": 4.4705,
+          "lat": 36.0403
+        },
+        {
+          "id": "03526",
+          "declared_wilaya": "34",
+          "containing_wilaya": "28",
+          "lng": 4.4606,
+          "lat": 36.0349
+        },
+        {
+          "id": "04150",
+          "declared_wilaya": "41",
+          "containing_wilaya": "24",
+          "lng": 7.828907,
+          "lat": 36.349942
+        },
+        {
+          "id": "04184",
+          "declared_wilaya": "41",
+          "containing_wilaya": "24",
+          "lng": 7.837647,
+          "lat": 36.348378
+        },
+        {
+          "id": "04493",
+          "declared_wilaya": "44",
+          "containing_wilaya": "26",
+          "lng": 2.5192,
+          "lat": 36.1979
+        },
+        {
+          "id": "04556",
+          "declared_wilaya": "45",
+          "containing_wilaya": "69",
+          "lng": -0.0115,
+          "lat": 33.0017
+        },
+        {
+          "id": "04754",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.541,
+          "lat": 31.9505
+        },
+        {
+          "id": "04765",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.7478,
+          "lat": 31.982
+        },
+        {
+          "id": "04766",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.5871,
+          "lat": 31.9596
+        },
+        {
+          "id": "05028",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5065,
+          "lat": 32.6084
+        },
+        {
+          "id": "05053",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4173,
+          "lat": 32.7075
+        },
+        {
+          "id": "05055",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.506,
+          "lat": 32.6083
+        },
+        {
+          "id": "05057",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5107,
+          "lat": 32.6459
+        },
+        {
+          "id": "05058",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.46023,
+          "lat": 32.655507
+        },
+        {
+          "id": "05064",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.60499,
+          "lat": 32.630793
+        },
+        {
+          "id": "05069",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4176,
+          "lat": 32.7075
+        }
+      ]
+    },
+    {
+      "file": "packages/telecom/data/5g-djezzy.json",
+      "package": "telecom",
+      "count": 12,
+      "reason": "the operator's 5G coverage export carries its own wilaya label per point; the label and the point are both the operator's, so a disagreement is theirs to resolve",
+      "records": [
+        {
+          "id": "djezzy-273569c0a9",
+          "declared_wilaya": "19",
+          "containing_wilaya": "05",
+          "lng": 5.442006,
+          "lat": 35.66925
+        },
+        {
+          "id": "djezzy-32aefc70ba",
+          "declared_wilaya": "25",
+          "containing_wilaya": "04",
+          "lng": 6.648874,
+          "lat": 36.03653
+        },
+        {
+          "id": "djezzy-59dc53c9b7",
+          "declared_wilaya": "25",
+          "containing_wilaya": "21",
+          "lng": 6.630418,
+          "lat": 36.9063
+        },
+        {
+          "id": "djezzy-5d8495c6eb",
+          "declared_wilaya": "25",
+          "containing_wilaya": "21",
+          "lng": 6.57172,
+          "lat": 36.7685
+        },
+        {
+          "id": "djezzy-92e58f3ae0",
+          "declared_wilaya": "21",
+          "containing_wilaya": "25",
+          "lng": 6.87914,
+          "lat": 36.21124
+        },
+        {
+          "id": "djezzy-96a6ff5021",
+          "declared_wilaya": "19",
+          "containing_wilaya": "60",
+          "lng": 5.40817,
+          "lat": 35.366527
+        },
+        {
+          "id": "djezzy-9af394aaf4",
+          "declared_wilaya": "16",
+          "containing_wilaya": "35",
+          "lng": 3.38115,
+          "lat": 36.72926
+        },
+        {
+          "id": "djezzy-a8d0001832",
+          "declared_wilaya": "25",
+          "containing_wilaya": "04",
+          "lng": 6.59907,
+          "lat": 35.8258
+        },
+        {
+          "id": "djezzy-b8506d10dd",
+          "declared_wilaya": "19",
+          "containing_wilaya": "60",
+          "lng": 5.40591,
+          "lat": 35.369
+        },
+        {
+          "id": "djezzy-c0af943238",
+          "declared_wilaya": "16",
+          "containing_wilaya": "09",
+          "lng": 3.17734,
+          "lat": 36.64141
+        },
+        {
+          "id": "djezzy-ca8bbb1642",
+          "declared_wilaya": "25",
+          "containing_wilaya": "21",
+          "lng": 6.62736,
+          "lat": 36.63841
+        },
+        {
+          "id": "djezzy-d3b41f54b5",
+          "declared_wilaya": "21",
+          "containing_wilaya": "24",
+          "lng": 7.114672,
+          "lat": 36.4812
+        }
+      ]
+    },
+    {
+      "file": "packages/telecom/data/5g-mobilis.json",
+      "package": "telecom",
+      "count": 1,
+      "reason": "the operator's 5G coverage export carries its own wilaya label per point; the label and the point are both the operator's, so a disagreement is theirs to resolve",
+      "records": [
+        {
+          "id": "mobilis-27904a9e47",
+          "declared_wilaya": "11",
+          "containing_wilaya": "54",
+          "lng": 2.96527,
+          "lat": 19.955901
+        }
+      ]
+    },
+    {
+      "file": "packages/tourisme/data/attractions.json",
+      "package": "tourisme",
+      "count": 30,
+      "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
+      "records": [
+        {
+          "id": "attraction-1112",
+          "declared_wilaya": "03",
+          "containing_wilaya": "47",
+          "lng": 2.3560633,
+          "lat": 32.4900817
+        },
+        {
+          "id": "attraction-1137",
+          "declared_wilaya": "15",
+          "containing_wilaya": "35",
+          "lng": 4.021324,
+          "lat": 36.8983827
+        },
+        {
+          "id": "attraction-1138",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.1104328,
+          "lat": 36.459556
+        },
+        {
+          "id": "attraction-1202",
+          "declared_wilaya": "47",
+          "containing_wilaya": "58",
+          "lng": 3.6459123,
+          "lat": 31.9546843
+        },
+        {
+          "id": "attraction-1212",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5173573,
+          "lat": 32.6125356
+        },
+        {
+          "id": "attraction-1213",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.0723127,
+          "lat": 32.5324297
+        },
+        {
+          "id": "attraction-264",
+          "declared_wilaya": "04",
+          "containing_wilaya": "41",
+          "lng": 7.5890767,
+          "lat": 35.8305958
+        },
+        {
+          "id": "attraction-310",
+          "declared_wilaya": "08",
+          "containing_wilaya": "52",
+          "lng": -5.0020334,
+          "lat": 29.8519331
+        },
+        {
+          "id": "attraction-312",
+          "declared_wilaya": "08",
+          "containing_wilaya": "52",
+          "lng": -4.8991921,
+          "lat": 29.829096
+        },
+        {
+          "id": "attraction-347",
+          "declared_wilaya": "15",
+          "containing_wilaya": "06",
+          "lng": 4.5621331,
+          "lat": 36.5367419
+        },
+        {
+          "id": "attraction-353",
+          "declared_wilaya": "15",
+          "containing_wilaya": "06",
+          "lng": 4.5626009,
+          "lat": 36.5379457
+        },
+        {
+          "id": "attraction-354",
+          "declared_wilaya": "15",
+          "containing_wilaya": "06",
+          "lng": 4.5641138,
+          "lat": 36.5327891
+        },
+        {
+          "id": "attraction-415",
+          "declared_wilaya": "16",
+          "containing_wilaya": "42",
+          "lng": 2.8009779,
+          "lat": 36.6969734
+        },
+        {
+          "id": "attraction-463",
+          "declared_wilaya": "21",
+          "containing_wilaya": "23",
+          "lng": 7.3368283,
+          "lat": 37.0646143
+        },
+        {
+          "id": "attraction-468",
+          "declared_wilaya": "21",
+          "containing_wilaya": "23",
+          "lng": 7.3300846,
+          "lat": 37.0654955
+        },
+        {
+          "id": "attraction-593",
+          "declared_wilaya": "43",
+          "containing_wilaya": "19",
+          "lng": 5.6205525,
+          "lat": 36.2242748
+        },
+        {
+          "id": "attraction-604",
+          "declared_wilaya": "46",
+          "containing_wilaya": "31",
+          "lng": -0.9714214,
+          "lat": 35.6484313
+        },
+        {
+          "id": "attraction-628",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4222396,
+          "lat": 32.7032251
+        },
+        {
+          "id": "attraction-629",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4342616,
+          "lat": 32.7231326
+        },
+        {
+          "id": "attraction-632",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5155644,
+          "lat": 32.9292136
+        },
+        {
+          "id": "attraction-634",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 6.051648,
+          "lat": 32.78749
+        },
+        {
+          "id": "attraction-644",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.6003583,
+          "lat": 32.621355
+        },
+        {
+          "id": "attraction-689",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.9622595,
+          "lat": 25.3078556
+        },
+        {
+          "id": "attraction-728",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.4518273,
+          "lat": 25.4354008
+        },
+        {
+          "id": "attraction-730",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.8720152,
+          "lat": 25.2661306
+        },
+        {
+          "id": "attraction-820",
+          "declared_wilaya": "58",
+          "containing_wilaya": "30",
+          "lng": 3.6984803,
+          "lat": 29.5612718
+        },
+        {
+          "id": "attraction-821",
+          "declared_wilaya": "59",
+          "containing_wilaya": "03",
+          "lng": 2.4740474,
+          "lat": 33.9017136
+        },
+        {
+          "id": "attraction-826",
+          "declared_wilaya": "61",
+          "containing_wilaya": "07",
+          "lng": 5.9181106,
+          "lat": 34.8974493
+        },
+        {
+          "id": "attraction-829",
+          "declared_wilaya": "68",
+          "containing_wilaya": "28",
+          "lng": 4.6668961,
+          "lat": 35.4286037
+        },
+        {
+          "id": "attraction-898",
+          "declared_wilaya": "15",
+          "containing_wilaya": "06",
+          "lng": 4.5512338,
+          "lat": 36.5509785
+        }
+      ]
+    },
+    {
+      "file": "packages/tourisme/data/historic.json",
+      "package": "tourisme",
+      "count": 44,
+      "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
+      "records": [
+        {
+          "id": "historic-1037",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5836463,
+          "lat": 36.2987906
+        },
+        {
+          "id": "historic-1038",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5822124,
+          "lat": 36.29574
+        },
+        {
+          "id": "historic-1040",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5773158,
+          "lat": 36.2986346
+        },
+        {
+          "id": "historic-1041",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5859393,
+          "lat": 36.2969363
+        },
+        {
+          "id": "historic-1042",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5858056,
+          "lat": 36.2967659
+        },
+        {
+          "id": "historic-1064",
+          "declared_wilaya": "43",
+          "containing_wilaya": "25",
+          "lng": 6.4823727,
+          "lat": 36.4623166
+        },
+        {
+          "id": "historic-1088",
+          "declared_wilaya": "47",
+          "containing_wilaya": "30",
+          "lng": 4.6949945,
+          "lat": 32.3840269
+        },
+        {
+          "id": "historic-1100",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4755717,
+          "lat": 32.6866304
+        },
+        {
+          "id": "historic-1101",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.4287277,
+          "lat": 32.7020538
+        },
+        {
+          "id": "historic-1112",
+          "declared_wilaya": "64",
+          "containing_wilaya": "17",
+          "lng": 2.4055941,
+          "lat": 34.7043494
+        },
+        {
+          "id": "historic-1123",
+          "declared_wilaya": "09",
+          "containing_wilaya": "16",
+          "lng": 2.8472391,
+          "lat": 36.6436139
+        },
+        {
+          "id": "historic-1155",
+          "declared_wilaya": "31",
+          "containing_wilaya": "27",
+          "lng": -0.0934596,
+          "lat": 35.7946277
+        },
+        {
+          "id": "historic-128",
+          "declared_wilaya": "43",
+          "containing_wilaya": "19",
+          "lng": 5.5706896,
+          "lat": 36.2603926
+        },
+        {
+          "id": "historic-129",
+          "declared_wilaya": "43",
+          "containing_wilaya": "25",
+          "lng": 6.483428,
+          "lat": 36.489792
+        },
+        {
+          "id": "historic-132",
+          "declared_wilaya": "43",
+          "containing_wilaya": "25",
+          "lng": 6.4834582,
+          "lat": 36.4897736
+        },
+        {
+          "id": "historic-133",
+          "declared_wilaya": "43",
+          "containing_wilaya": "25",
+          "lng": 6.4823717,
+          "lat": 36.4623723
+        },
+        {
+          "id": "historic-147",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.4483919,
+          "lat": 25.4295273
+        },
+        {
+          "id": "historic-148",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.4679961,
+          "lat": 25.4187845
+        },
+        {
+          "id": "historic-149",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.5011398,
+          "lat": 25.4354665
+        },
+        {
+          "id": "historic-157",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.9622595,
+          "lat": 25.3078556
+        },
+        {
+          "id": "historic-171",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.7487147,
+          "lat": 25.3861674
+        },
+        {
+          "id": "historic-172",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.7873743,
+          "lat": 25.3919834
+        },
+        {
+          "id": "historic-177",
+          "declared_wilaya": "56",
+          "containing_wilaya": "33",
+          "lng": 7.9752925,
+          "lat": 25.3649917
+        },
+        {
+          "id": "historic-310",
+          "declared_wilaya": "07",
+          "containing_wilaya": "05",
+          "lng": 5.9803866,
+          "lat": 35.0410566
+        },
+        {
+          "id": "historic-390",
+          "declared_wilaya": "41",
+          "containing_wilaya": "04",
+          "lng": 7.3736124,
+          "lat": 35.916256
+        },
+        {
+          "id": "historic-437",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5832413,
+          "lat": 36.2990669
+        },
+        {
+          "id": "historic-438",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.583224,
+          "lat": 36.2933962
+        },
+        {
+          "id": "historic-439",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5762848,
+          "lat": 36.2937444
+        },
+        {
+          "id": "historic-440",
+          "declared_wilaya": "34",
+          "containing_wilaya": "06",
+          "lng": 4.5776682,
+          "lat": 36.299622
+        },
+        {
+          "id": "historic-472",
+          "declared_wilaya": "39",
+          "containing_wilaya": "30",
+          "lng": 6.9499111,
+          "lat": 32.1121813
+        },
+        {
+          "id": "historic-475",
+          "declared_wilaya": "52",
+          "containing_wilaya": "49",
+          "lng": 1.6217497,
+          "lat": 29.7582024
+        },
+        {
+          "id": "historic-477",
+          "declared_wilaya": "56",
+          "containing_wilaya": "11",
+          "lng": 7.4710691,
+          "lat": 24.3051697
+        },
+        {
+          "id": "historic-479",
+          "declared_wilaya": "58",
+          "containing_wilaya": "30",
+          "lng": 3.7528932,
+          "lat": 29.8061049
+        },
+        {
+          "id": "historic-525",
+          "declared_wilaya": "06",
+          "containing_wilaya": "15",
+          "lng": 4.5681467,
+          "lat": 36.6643171
+        },
+        {
+          "id": "historic-625",
+          "declared_wilaya": "22",
+          "containing_wilaya": "13",
+          "lng": -0.9542852,
+          "lat": 34.9234653
+        },
+        {
+          "id": "historic-65",
+          "declared_wilaya": "16",
+          "containing_wilaya": "35",
+          "lng": 3.6978978,
+          "lat": 36.7132877
+        },
+        {
+          "id": "historic-651",
+          "declared_wilaya": "31",
+          "containing_wilaya": "29",
+          "lng": -0.4108474,
+          "lat": 35.5181877
+        },
+        {
+          "id": "historic-684",
+          "declared_wilaya": "47",
+          "containing_wilaya": "66",
+          "lng": 4.5338277,
+          "lat": 32.9998514
+        },
+        {
+          "id": "historic-773",
+          "declared_wilaya": "15",
+          "containing_wilaya": "06",
+          "lng": 4.6019743,
+          "lat": 36.5861442
+        },
+        {
+          "id": "historic-942",
+          "declared_wilaya": "06",
+          "containing_wilaya": "15",
+          "lng": 4.5430982,
+          "lat": 36.6045098
+        },
+        {
+          "id": "historic-953",
+          "declared_wilaya": "06",
+          "containing_wilaya": "18",
+          "lng": 5.4729352,
+          "lat": 36.6136642
+        },
+        {
+          "id": "historic-954",
+          "declared_wilaya": "06",
+          "containing_wilaya": "18",
+          "lng": 5.4343129,
+          "lat": 36.621473
+        },
+        {
+          "id": "historic-955",
+          "declared_wilaya": "06",
+          "containing_wilaya": "18",
+          "lng": 5.4841109,
+          "lat": 36.6049512
+        },
+        {
+          "id": "historic-994",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.0147744,
+          "lat": 36.4578977
+        }
+      ]
+    },
+    {
+      "file": "packages/tourisme/data/lodging.json",
+      "package": "tourisme",
+      "count": 17,
+      "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
+      "records": [
+        {
+          "id": "lodging-124",
+          "declared_wilaya": "06",
+          "containing_wilaya": "10",
+          "lng": 4.3790442,
+          "lat": 36.4257124
+        },
+        {
+          "id": "lodging-126",
+          "declared_wilaya": "06",
+          "containing_wilaya": "10",
+          "lng": 4.3731286,
+          "lat": 36.3677448
+        },
+        {
+          "id": "lodging-1458",
+          "declared_wilaya": "46",
+          "containing_wilaya": "13",
+          "lng": -1.4330744,
+          "lat": 35.1840642
+        },
+        {
+          "id": "lodging-1531",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5181952,
+          "lat": 32.6120079
+        },
+        {
+          "id": "lodging-1536",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.8468143,
+          "lat": 32.5951002
+        },
+        {
+          "id": "lodging-1574",
+          "declared_wilaya": "65",
+          "containing_wilaya": "64",
+          "lng": 2.5058864,
+          "lat": 35.2954344
+        },
+        {
+          "id": "lodging-1601",
+          "declared_wilaya": "69",
+          "containing_wilaya": "45",
+          "lng": -0.1618968,
+          "lat": 32.7310808
+        },
+        {
+          "id": "lodging-238",
+          "declared_wilaya": "08",
+          "containing_wilaya": "52",
+          "lng": -3.2557317,
+          "lat": 29.40555
+        },
+        {
+          "id": "lodging-239",
+          "declared_wilaya": "08",
+          "containing_wilaya": "52",
+          "lng": -4.4556408,
+          "lat": 30.398352
+        },
+        {
+          "id": "lodging-301",
+          "declared_wilaya": "10",
+          "containing_wilaya": "15",
+          "lng": 3.7518136,
+          "lat": 36.5567359
+        },
+        {
+          "id": "lodging-341",
+          "declared_wilaya": "12",
+          "containing_wilaya": "40",
+          "lng": 7.3225914,
+          "lat": 35.0716108
+        },
+        {
+          "id": "lodging-431",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.1095535,
+          "lat": 36.4574715
+        },
+        {
+          "id": "lodging-432",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.122164,
+          "lat": 36.4462838
+        },
+        {
+          "id": "lodging-439",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.1279666,
+          "lat": 36.4481679
+        },
+        {
+          "id": "lodging-443",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.1273685,
+          "lat": 36.4466894
+        },
+        {
+          "id": "lodging-705",
+          "declared_wilaya": "17",
+          "containing_wilaya": "68",
+          "lng": 3.5629014,
+          "lat": 35.0695443
+        },
+        {
+          "id": "lodging-840",
+          "declared_wilaya": "21",
+          "containing_wilaya": "23",
+          "lng": 7.3807325,
+          "lat": 37.0663559
+        }
+      ]
+    },
+    {
+      "file": "packages/tourisme/data/parks.json",
+      "package": "tourisme",
+      "count": 4,
+      "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
+      "records": [
+        {
+          "id": "park-12",
+          "declared_wilaya": "36",
+          "containing_wilaya": "24",
+          "lng": 7.8836538,
+          "lat": 36.5135975
+        },
+        {
+          "id": "park-15",
+          "declared_wilaya": "07",
+          "containing_wilaya": "39",
+          "lng": 6.8997709,
+          "lat": 34.1842568
+        },
+        {
+          "id": "park-29",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.1333,
+          "lat": 36.4667
+        },
+        {
+          "id": "park-6",
+          "declared_wilaya": "15",
+          "containing_wilaya": "10",
+          "lng": 4.153164,
+          "lat": 36.4646667
+        }
+      ]
+    },
+    {
+      "file": "packages/tourisme/data/thermal-springs.json",
+      "package": "tourisme",
+      "count": 32,
+      "reason": "the attraction's wilaya comes from the source listing's own wilaya field while the coordinate is OpenStreetMap's, and for a natural feature that straddles a border the listing is often right and the polygon crude",
+      "records": [
+        {
+          "id": "thermal-spring-1",
+          "declared_wilaya": "43",
+          "containing_wilaya": "25",
+          "lng": 6.4827778,
+          "lat": 36.4625
+        },
+        {
+          "id": "thermal-spring-100",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.356984,
+          "lat": 32.438263
+        },
+        {
+          "id": "thermal-spring-114",
+          "declared_wilaya": "12",
+          "containing_wilaya": "41",
+          "lng": 8.1487167,
+          "lat": 36.0564194
+        },
+        {
+          "id": "thermal-spring-116",
+          "declared_wilaya": "10",
+          "containing_wilaya": "35",
+          "lng": 3.590417,
+          "lat": 36.598611
+        },
+        {
+          "id": "thermal-spring-117",
+          "declared_wilaya": "10",
+          "containing_wilaya": "35",
+          "lng": 3.590417,
+          "lat": 36.598611
+        },
+        {
+          "id": "thermal-spring-135",
+          "declared_wilaya": "38",
+          "containing_wilaya": "48",
+          "lng": 1.276966,
+          "lat": 35.78424
+        },
+        {
+          "id": "thermal-spring-139",
+          "declared_wilaya": "69",
+          "containing_wilaya": "45",
+          "lng": -0.152305,
+          "lat": 32.728423
+        },
+        {
+          "id": "thermal-spring-150",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.700746,
+          "lat": 32.307097
+        },
+        {
+          "id": "thermal-spring-16",
+          "declared_wilaya": "02",
+          "containing_wilaya": "44",
+          "lng": 1.629972,
+          "lat": 36.366652
+        },
+        {
+          "id": "thermal-spring-162",
+          "declared_wilaya": "43",
+          "containing_wilaya": "25",
+          "lng": 6.3302778,
+          "lat": 36.3863889
+        },
+        {
+          "id": "thermal-spring-164",
+          "declared_wilaya": "18",
+          "containing_wilaya": "43",
+          "lng": 6.2836111,
+          "lat": 36.6016667
+        },
+        {
+          "id": "thermal-spring-17",
+          "declared_wilaya": "10",
+          "containing_wilaya": "35",
+          "lng": 3.590417,
+          "lat": 36.598611
+        },
+        {
+          "id": "thermal-spring-174",
+          "declared_wilaya": "46",
+          "containing_wilaya": "31",
+          "lng": -1.04171,
+          "lat": 35.635804
+        },
+        {
+          "id": "thermal-spring-205",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.5042,
+          "lat": 32.602645
+        },
+        {
+          "id": "thermal-spring-207",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.678898,
+          "lat": 32.582645
+        },
+        {
+          "id": "thermal-spring-219",
+          "declared_wilaya": "41",
+          "containing_wilaya": "24",
+          "lng": 7.3372167,
+          "lat": 36.2349833
+        },
+        {
+          "id": "thermal-spring-225",
+          "declared_wilaya": "10",
+          "containing_wilaya": "35",
+          "lng": 3.590417,
+          "lat": 36.598611
+        },
+        {
+          "id": "thermal-spring-227",
+          "declared_wilaya": "29",
+          "containing_wilaya": "27",
+          "lng": 0.1866,
+          "lat": 35.721596
+        },
+        {
+          "id": "thermal-spring-236",
+          "declared_wilaya": "04",
+          "containing_wilaya": "40",
+          "lng": 7.2516389,
+          "lat": 35.4883056
+        },
+        {
+          "id": "thermal-spring-250",
+          "declared_wilaya": "20",
+          "containing_wilaya": "32",
+          "lng": 0.967406,
+          "lat": 34.286982
+        },
+        {
+          "id": "thermal-spring-269",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 6.049807,
+          "lat": 32.403557
+        },
+        {
+          "id": "thermal-spring-270",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.69323,
+          "lat": 32.575107
+        },
+        {
+          "id": "thermal-spring-273",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.503023,
+          "lat": 32.662509
+        },
+        {
+          "id": "thermal-spring-275",
+          "declared_wilaya": "55",
+          "containing_wilaya": "30",
+          "lng": 5.443318,
+          "lat": 32.673886
+        },
+        {
+          "id": "thermal-spring-279",
+          "declared_wilaya": "04",
+          "containing_wilaya": "40",
+          "lng": 7.2555278,
+          "lat": 35.4864167
+        },
+        {
+          "id": "thermal-spring-31",
+          "declared_wilaya": "15",
+          "containing_wilaya": "06",
+          "lng": 4.5696,
+          "lat": 36.723052
+        },
+        {
+          "id": "thermal-spring-36",
+          "declared_wilaya": "26",
+          "containing_wilaya": "67",
+          "lng": 3.047429,
+          "lat": 35.867168
+        },
+        {
+          "id": "thermal-spring-43",
+          "declared_wilaya": "36",
+          "containing_wilaya": "41",
+          "lng": 7.9909,
+          "lat": 36.4372667
+        },
+        {
+          "id": "thermal-spring-44",
+          "declared_wilaya": "12",
+          "containing_wilaya": "41",
+          "lng": 8.2782167,
+          "lat": 36.0048833
+        },
+        {
+          "id": "thermal-spring-45",
+          "declared_wilaya": "10",
+          "containing_wilaya": "35",
+          "lng": 3.590417,
+          "lat": 36.598611
+        },
+        {
+          "id": "thermal-spring-74",
+          "declared_wilaya": "14",
+          "containing_wilaya": "48",
+          "lng": 0.77751,
+          "lat": 35.492226
+        },
+        {
+          "id": "thermal-spring-92",
+          "declared_wilaya": "51",
+          "containing_wilaya": "57",
+          "lng": 5.211537,
+          "lat": 34.392428
+        }
+      ]
+    }
+  ]
+}

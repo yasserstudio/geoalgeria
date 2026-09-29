@@ -28,6 +28,61 @@ export function containingWilayaCode(lat, lng) {
   return null;
 }
 
+// --- commune outlines --------------------------------------------------------
+//
+// This repository publishes no commune boundaries, so the only commune-level
+// geometry it has is OpenStreetMap's, reduced once into
+// research/_commune-centres/commune-boundaries.json by
+// scripts/build-commune-boundary-cache.mjs (that script refuses to write unless
+// every one of the 1,541 containment verdicts is identical to the verdict from the
+// unsimplified rings). It is a file, never a query: a generator that fetches is a
+// generator that fails when Overpass is busy. It stays in research/ and ships in no
+// package.
+
+let COMMUNE_POLYGONS = null;
+function communePolygons() {
+  if (!COMMUNE_POLYGONS) {
+    const doc = JSON.parse(
+      readFileSync(join(REPO_ROOT, "research", "_commune-centres", "commune-boundaries.json"), "utf-8"),
+    );
+    COMMUNE_POLYGONS = new Map();
+    for (const c of doc.communes) {
+      if (!c.usable) continue;
+      const w = wcode(c.wilaya_code);
+      if (!COMMUNE_POLYGONS.has(w)) COMMUNE_POLYGONS.set(w, []);
+      COMMUNE_POLYGONS.get(w).push(c);
+    }
+  }
+  return COMMUNE_POLYGONS;
+}
+
+/** Ray casting over one ring of [lng, lat] pairs. */
+function inRing(lng, lat, ring) {
+  let hit = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    if (yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) hit = !hit;
+  }
+  return hit;
+}
+
+/** Inside any outer ring and no inner ring. The bbox is a reject, not the answer. */
+function inCommuneOutline(lng, lat, entry) {
+  const [w, s, e, n] = entry.bbox;
+  if (lng < w || lng > e || lat < s || lat > n) return false;
+  return entry.outer.some((r) => inRing(lng, lat, r)) && !entry.inner.some((r) => inRing(lng, lat, r));
+}
+
+/** `code_commune` of the commune whose OSM outline contains (lat,lng), searched
+ *  inside `wilayaCode` only, or null when none does. */
+export function containingCommuneCode(lat, lng, wilayaCode) {
+  for (const entry of communePolygons().get(wcode(wilayaCode)) ?? []) {
+    if (inCommuneOutline(lng, lat, entry)) return entry.code_commune;
+  }
+  return null;
+}
+
 /** Round to 6 decimals (≈0.1 m), or null. */
 export const round6 = (n) =>
   n == null || !Number.isFinite(+n) ? null : Math.round(+n * 1e6) / 1e6;
@@ -87,8 +142,8 @@ export function nearestCommune(lat, lng, communes, wilayaCode = null) {
   const cosLat = Math.cos(lat * DEG);
   for (const c of communes) {
     if (w != null && wcode(c.wilaya_code) !== w) continue;
-    const dx = (c.longitude - lng) * cosLat;
-    const dy = c.latitude - lat;
+    const dx = (cLng(c) - lng) * cosLat;
+    const dy = cLat(c) - lat;
     const d = dx * dx + dy * dy;
     if (d < bestD) { bestD = d; best = c; }
   }
@@ -96,19 +151,70 @@ export function nearestCommune(lat, lng, communes, wilayaCode = null) {
   return best;
 }
 
-/** Attach wilaya_code/commune/commune_code by nearest centroid (mutates rows with
- *  lat/lng). Point-in-polygon first: when a wilaya polygon contains the point,
- *  the commune is the nearest centroid WITHIN that wilaya, so the join can never
- *  cross a wilaya boundary. Commune polygons don't exist in the dataset, so
- *  commune-level containment stays best-effort (documented in LINKAGE). */
+// Commune rows reach this file in two shapes: the flagship split files and
+// algeria.json use latitude/longitude, and the copies pharmacies and ooredoo build
+// for themselves use lat/lng. Reading both is what lets one rule serve every
+// package instead of each keeping an inlined join that drifts.
+const cLat = (c) => (c.latitude ?? c.lat);
+const cLng = (c) => (c.longitude ?? c.lng);
+
+const CODE_INDEX = new WeakMap();
+function communeByCode(communes, code) {
+  let index = CODE_INDEX.get(communes);
+  if (!index) {
+    index = new Map(communes.map((c) => [Number(c.code_commune), c]));
+    CODE_INDEX.set(communes, index);
+  }
+  return index.get(Number(code)) ?? null;
+}
+
+/**
+ * Which commune a point belongs to, without ever crossing a wilaya boundary.
+ *
+ * WHY THIS AND NOT NEAREST CENTROID. An unrestricted nearest-centroid join makes
+ * every commune centre an attractor for everything around it, so moving 245 centres
+ * moved 58 published records into a wilaya they are demonstrably not in: mosque
+ * 31-0390 at [-0.414678, 35.547628] is inside OSM commune 3111 Oued Tlelat, wilaya
+ * 31, and the join gave it Zahana in wilaya 29, outside the wilaya 29 polygon this
+ * repository ships. Distance to a hand-placed centre is a weaker claim than
+ * containment in a polygon, so containment decides and distance only breaks ties.
+ *
+ * 1. the wilaya whose SHIPPED polygon contains the point fixes the candidate set;
+ * 2. inside it, the commune whose OSM outline contains the point wins outright;
+ * 3. otherwise the nearest centre among that wilaya's communes;
+ * 4. when no wilaya polygon contains the point at all (offshore, or outside the
+ *    simplified national outline), the record keeps the wilaya it was published in
+ *    and the caller is told, because a nearest-centre guess out there is exactly
+ *    how those 58 happened.
+ *
+ * @returns {{commune: object|null, rule: string}} rule is one of `commune_polygon`,
+ *   `wilaya_nearest`, `published_wilaya_nearest`, `unrestricted` or `unresolved`.
+ */
+export function resolveCommune(lat, lng, communes, publishedWilayaCode = null) {
+  const inside = containingWilayaCode(lat, lng);
+  const scope = inside ?? (publishedWilayaCode == null ? null : wcode(publishedWilayaCode));
+  if (scope != null) {
+    const code = containingCommuneCode(lat, lng, scope);
+    const hit = code == null ? null : communeByCode(communes, code);
+    if (hit) return { commune: hit, rule: "commune_polygon" };
+  }
+  const commune = nearestCommune(lat, lng, communes, scope);
+  if (!commune) return { commune: null, rule: "unresolved" };
+  if (inside != null) return { commune, rule: "wilaya_nearest" };
+  return { commune, rule: scope != null ? "published_wilaya_nearest" : "unrestricted" };
+}
+
+/** Attach wilaya_code/commune/commune_code by resolveCommune() (mutates rows with
+ *  lat/lng). A row's existing `wilaya_code` is its published wilaya, which is what
+ *  the join keeps when no wilaya polygon contains the point. */
 export function attachCommune(rows, communes = loadCommunes()) {
   for (const r of rows) {
     if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
-    const c = nearestCommune(r.lat, r.lng, communes, containingWilayaCode(r.lat, r.lng));
-    if (!c) continue;
-    r.wilaya_code = wcode(c.wilaya_code);
-    r.commune = c.name_fr;
-    r.commune_code = c.code_commune ?? null;
+    const { commune } = resolveCommune(r.lat, r.lng, communes, r.wilaya_code ?? null);
+    if (!commune) continue;
+    r.wilaya_code = wcode(commune.wilaya_code);
+    r.commune = commune.name_fr;
+    r.commune_code = commune.code_commune ?? null;
   }
   return rows;
 }

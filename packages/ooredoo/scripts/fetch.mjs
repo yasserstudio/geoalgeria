@@ -32,6 +32,7 @@ import {
   resolveDates,
   writePackageV2,
 } from "../../../scripts/lib/v2-transforms.mjs";
+import { resolveCommune } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -251,17 +252,22 @@ function loadCommunes() {
   return communes;
 }
 
-function nearestCommune(lat, lng, communes) {
-  let best = null, bestD = Infinity;
-  const cosLat = Math.cos(lat * DEG);
-  for (const c of communes) {
-    const dx = (c.lng - lng) * cosLat, dy = c.lat - lat, d = dx * dx + dy * dy;
-    if (d < bestD) { bestD = d; best = c; }
-  }
-  return best;
+// The shared administrative-linkage rule, scripts/lib/build-utils.mjs
+// resolveCommune(): the wilaya whose shipped polygon contains the point fixes the
+// candidate set, the commune whose OSM outline contains it wins inside that set, and
+// distance to a hand-placed centre only breaks what is left. It replaces the
+// unrestricted nearest-centroid search this file used to run over the whole flagship
+// commune set, the join that lets a moving commune centre carry a store into a
+// wilaya whose polygon does not contain it.
+//
+// `published` maps Ooredoo's own store id to the wilaya the record shipped in, the
+// same key its published id is pinned on, and is the only answer for a point no
+// wilaya polygon contains.
+function nearestCommune(lat, lng, communes, publishedWilayaCode = null) {
+  return resolveCommune(lat, lng, communes, publishedWilayaCode).commune;
 }
 
-function normStores(items, communes) {
+function normStores(items, communes, published) {
   const rows = [];
   const seen = new Set();
   for (const it of items) {
@@ -273,7 +279,8 @@ function normStores(items, communes) {
       seen.add(it.id);
     }
     const t = TYPES[(it.type?.key || "").toLowerCase()] || null;
-    const c = nearestCommune(lat, lng, communes);
+    const storeId = it.id != null ? String(it.id) : null;
+    const c = nearestCommune(lat, lng, communes, published.get(`oo:${storeId}`) ?? null);
     rows.push({
       source: "ooredoo.dz",
       ooredoo_id: it.id != null ? String(it.id) : null,
@@ -315,7 +322,11 @@ function assignIds(rows) {
 async function main() {
   const raw = process.argv.includes("--cache") ? readCache() : await fetchStores();
   const communes = loadCommunes();
-  let rows = normStores(raw, communes);
+  const published = new Map();
+  for (const r of readCommitted(OUT_DIR, "stores.json") ?? []) {
+    if (r.refs?.ooredoo && r.wilaya_code) published.set(`oo:${r.refs.ooredoo}`, r.wilaya_code);
+  }
+  let rows = normStores(raw, communes, published);
   assignIds(rows);
   rows.sort((a, b) => a.id.localeCompare(b.id));
 

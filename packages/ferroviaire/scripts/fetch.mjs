@@ -8,7 +8,14 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
-import { MIGRATIONS, writePackageV2, committedDates } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  MIGRATIONS,
+  carryOverIds,
+  committedDates,
+  readCommitted,
+  readRetiredIds,
+  writePackageV2,
+} from "../../../scripts/lib/v2-transforms.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..", "..", "..");
@@ -185,13 +192,35 @@ if (unmatchedFix.length) throw new Error(`ferroviaire: WILAYA_FIX key(s) [${unma
 // Raws are staged (no live fetch), so the dates are always the committed ones.
 const cfg = MIGRATIONS.ferroviaire;
 const { updated, retrieved } = committedDates(DATA);
+const v2 = records.map(cfg.map);
+
+// Pin every still-present station back to the id it shipped under, keyed on its
+// stable Wikidata or OSM id. The ids above are `{wilaya}-{seq}`, assigned from the
+// commune join, so a station that re-joins re-sequences every later id in both
+// wilayas: correcting the 18 stations that were in a wilaya whose polygon does not
+// contain them retired and minted 18 public join keys on the first replay. A
+// published id is never retired or renumbered unless the place itself is gone
+// (Owner rule, 2026-09-29), which is why a station id can read "04-007" while its
+// wilaya_code reads 41. It is the pattern cliniques, culture, ecoles, mosquees,
+// ooredoo, pharmacies, djezzy and gares-routieres already use.
+const retiredIds = readRetiredIds(DATA);
+carryOverIds(
+  v2,
+  readCommitted(DATA, "stations.json"),
+  (r) => (r.refs?.wikidata ? `wd:${r.refs.wikidata}` : r.refs?.osm ? `osm:${r.refs.osm}` : null),
+  "ferroviaire",
+  retiredIds,
+);
+v2.sort((a, b) => (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
+
 const { records: final } = writePackageV2({
   pkg: "ferroviaire",
   dir: DATA,
-  files: [{ file: "stations.json", rows: records.map(cfg.map) }],
+  files: [{ file: "stations.json", rows: v2 }],
   meta: cfg.meta,
   updated,
   retrieved,
+  retiredIds,
 });
 
 console.log(`ferroviaire: ${final.length} nodes → v2 · merged OSM↔WD ${merged} · OSM-only added ${kept.length}`);

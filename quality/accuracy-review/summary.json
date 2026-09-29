@@ -4,7 +4,7 @@
   "inputs": [
     {
       "path": "packages/agriculture/data/agriculture.json",
-      "sha256": "4fa059757f55cb1f5fc10b4c44c69b8d5a4771a7efc1cf0d119665c2520f5839"
+      "sha256": "923cc4c084185a3768173a3c7d7ec4f64aaf0f3d44caab62c7d6dd228d6eef01"
     },
     {
       "path": "packages/agriculture/data/metadata.json",
@@ -56,7 +56,7 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "e16e71e592104d3e2eae8b79235ca449112927b5886db52fa858f32d5f95b9af"
+      "sha256": "88cd2773338adef1fbe108f00b25621265c807e793c44987537d1d4a8d6794b1"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
@@ -68,7 +68,7 @@
     },
     {
       "path": "packages/culture/data/culture.json",
-      "sha256": "8de520ad062f66725b26ef8efdffe0dedd2b16ba35d077b9b58fd3f760f31368"
+      "sha256": "c1633194815da9ceee4ee7ddac2d3796bc0b2b908aa8d270085ce32ca770c0b4"
     },
     {
       "path": "packages/culture/data/metadata.json",
@@ -84,7 +84,7 @@
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
-      "sha256": "7a151fe6ece425c60d4d836f4e4d5e884f8a5b2a3062440a1ded0140319eed8b"
+      "sha256": "bd9585550cde01685cb9401a1029b9779a18734ab2dd898f6b3f29ed8c04352f"
     },
     {
       "path": "packages/djezzy/data/metadata.json",
@@ -96,7 +96,7 @@
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
-      "sha256": "8790807c2b48648fdc72c437b517d51973ab8e63474d3c221eb5f48677536b7c"
+      "sha256": "097ea82b338765f539aa190a1d1071b754f14e25f6096369af909e039d3525a1"
     },
     {
       "path": "packages/ecoles/data/metadata.json",
@@ -128,15 +128,19 @@
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
-      "sha256": "938ed67289896e2a0af45f2d104df6109429f356153217e16830c85d34a8e19f"
+      "sha256": "cb3e356514f697a27d4727f798cfdb66af9c818f212f6e650d2c53562ece703b"
+    },
+    {
+      "path": "packages/ferroviaire/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
-      "sha256": "fb4e9015db9af2b979690f8f9d95463b0f92430634cdad2763a9adcb8f8477b4"
+      "sha256": "fdf65f989931be365e4170ac486bc26f40b720abc738a7657edfb76d85283ee0"
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "56349d82f6f636fee91732587dcc293fe5dcdadf89a858d26870d8b3eb8f2fa9"
+      "sha256": "15cf3838887fd0d69853049fe60fd4b1e65f9d1d864d9b73ea311e6dc24698a6"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
@@ -152,7 +156,7 @@
     },
     {
       "path": "packages/gares-routieres/data/stations.json",
-      "sha256": "6d74eabb3fc2fa456b782e571e20c9368ce9a5fdfb2156dd4f4d27b7d23471ee"
+      "sha256": "dacbf89c59c14d8b298cf2b9e05cee2fb37b8423308457e25cf248ad5cf1879c"
     },
     {
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json",
@@ -204,7 +208,7 @@
     },
     {
       "path": "packages/mosquees/data/mosquees.json",
-      "sha256": "7f147ef7cca4349e1b85e0895a76dc7f334f97139d5a4d215385e43ee75db1a1"
+      "sha256": "4b8223bc83e524644be9f959ffbd6fc3ee2b27397921463aed7f63ab170114ca"
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
@@ -212,7 +216,7 @@
     },
     {
       "path": "packages/ooredoo/data/stores.json",
-      "sha256": "686a38dd5789e620836a67263472944cb5c9188279a6ff4803e2a2e0fe200e4a"
+      "sha256": "c1ccd6d9c8ce3d71bfc71d71318af77145dc0602d0b836e1cc11d6787682673e"
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
@@ -220,7 +224,7 @@
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "4944abd3857a859c367de5fda590203c7b926a90b4330b5cd167ae426d397619"
+      "sha256": "91cba0f1b78a8a2fa7a290e7753c3b41a5c8a3b490a510249effea5f196162a9"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
@@ -256,7 +260,7 @@
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "428692984658cd67fae3cb4b24ed78d02387b63072b43fbf35ea53a87971d2e1"
+      "sha256": "9f7f392059c2ef41eb32c674f44b7b4b55bb02f5f8e0c84f741767c5a1d5b0b4"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -310,13 +314,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 18378,
+  "candidates": 17830,
   "reasons": {
     "approximate_coordinate": 16899,
-    "inside_adjacent_wilaya": 872,
+    "inside_adjacent_wilaya": 245,
     "missing_coordinate": 526,
     "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 1071,
+    "outside_declared_wilaya": 444,
     "shared_coordinate": 1299
   },
   "datasets": [
@@ -819,12 +823,11 @@
     {
       "dataset": "culture",
       "total_records": 1083,
-      "candidates": 38,
+      "candidates": 27,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 12,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 23,
+        "outside_declared_wilaya": 11,
         "shared_coordinate": 12
       },
       "metadata_path": "packages/culture/data/metadata.json",
@@ -1128,12 +1131,11 @@
     {
       "dataset": "ferroviaire",
       "total_records": 692,
-      "candidates": 29,
+      "candidates": 11,
       "reasons": {
         "approximate_coordinate": 9,
-        "inside_adjacent_wilaya": 18,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 20,
+        "outside_declared_wilaya": 2,
         "shared_coordinate": 4
       },
       "metadata_path": "packages/ferroviaire/data/metadata.json",
@@ -1153,7 +1155,7 @@
         "estimated_universe": null,
         "coverage_pct": null,
         "coverage_note": "Rail and urban-transit stations (SNTF, metro, tram) compiled from Wikidata + OpenStreetMap.",
-        "wilayas_covered": 51,
+        "wilayas_covered": 52,
         "bbox": [
           -8.1016,
           26.8176,
@@ -1581,12 +1583,11 @@
     {
       "dataset": "mosquees",
       "total_records": 20759,
-      "candidates": 5048,
+      "candidates": 4541,
       "reasons": {
         "approximate_coordinate": 4532,
-        "inside_adjacent_wilaya": 582,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 601
+        "outside_declared_wilaya": 19
       },
       "metadata_path": "packages/mosquees/data/metadata.json",
       "metadata": {
@@ -1644,11 +1645,9 @@
     {
       "dataset": "ooredoo",
       "total_records": 572,
-      "candidates": 25,
+      "candidates": 24,
       "reasons": {
         "approximate_coordinate": 24,
-        "inside_adjacent_wilaya": 1,
-        "outside_declared_wilaya": 1,
         "shared_coordinate": 4
       },
       "metadata_path": "packages/ooredoo/data/metadata.json",
@@ -1697,12 +1696,11 @@
     {
       "dataset": "pharmacies",
       "total_records": 3807,
-      "candidates": 314,
+      "candidates": 303,
       "reasons": {
         "approximate_coordinate": 298,
-        "inside_adjacent_wilaya": 14,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 19
+        "outside_declared_wilaya": 5
       },
       "metadata_path": "packages/pharmacies/data/metadata.json",
       "metadata": {
@@ -2349,12 +2347,11 @@
       "dataset": "culture",
       "entity": "culture.json",
       "total_records": 1083,
-      "candidates": 38,
+      "candidates": 27,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 12,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 23,
+        "outside_declared_wilaya": 11,
         "shared_coordinate": 12
       },
       "path": "packages/culture/data/culture.json"
@@ -2418,12 +2415,11 @@
       "dataset": "ferroviaire",
       "entity": "stations.json",
       "total_records": 692,
-      "candidates": 29,
+      "candidates": 11,
       "reasons": {
         "approximate_coordinate": 9,
-        "inside_adjacent_wilaya": 18,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 20,
+        "outside_declared_wilaya": 2,
         "shared_coordinate": 4
       },
       "path": "packages/ferroviaire/data/stations.json"
@@ -2499,12 +2495,11 @@
       "dataset": "mosquees",
       "entity": "mosquees.json",
       "total_records": 20759,
-      "candidates": 5048,
+      "candidates": 4541,
       "reasons": {
         "approximate_coordinate": 4532,
-        "inside_adjacent_wilaya": 582,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 601
+        "outside_declared_wilaya": 19
       },
       "path": "packages/mosquees/data/mosquees.json"
     },
@@ -2512,11 +2507,9 @@
       "dataset": "ooredoo",
       "entity": "stores.json",
       "total_records": 572,
-      "candidates": 25,
+      "candidates": 24,
       "reasons": {
         "approximate_coordinate": 24,
-        "inside_adjacent_wilaya": 1,
-        "outside_declared_wilaya": 1,
         "shared_coordinate": 4
       },
       "path": "packages/ooredoo/data/stores.json"
@@ -2525,12 +2518,11 @@
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
       "total_records": 3807,
-      "candidates": 314,
+      "candidates": 303,
       "reasons": {
         "approximate_coordinate": 298,
-        "inside_adjacent_wilaya": 14,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 19
+        "outside_declared_wilaya": 5
       },
       "path": "packages/pharmacies/data/pharmacies.json"
     },
@@ -2739,6 +2731,10 @@
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/ferroviaire/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

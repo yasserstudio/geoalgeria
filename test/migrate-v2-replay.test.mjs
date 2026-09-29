@@ -145,8 +145,12 @@ const CORRECTIONS = {
     "59-001": { hours: "08H00 - 19H00" },
     // Commune label and re-join, the two classes documented further down.
     "12-001": { commune: "Tébessa" }, // label
-    "60-001": { commune: "Abdelkader Azil" }, // label
     "16-009": { commune: "El Harrach" }, // re-join: El Harrach's centre moved 51.5 km
+    // Both re-joined by containment rather than by distance, and both now agree
+    // with the boutique's own address, which the nearest centre did not:
+    // "Barika-centre, Barika, Batna" and "Aéroport Mohamed Boudiaf, Constantine".
+    "60-001": { commune: "Barika" },
+    "25-004": { commune: "Constantine" },
   },
   "gares-routieres": {
     // NAAMA is one of six stations SOGRAL ships with a corrupted longitude. The
@@ -172,6 +176,12 @@ const CORRECTIONS = {
     // centre is 110 m closer than Ghardaïa's. Corrected in fetch.mjs
     // COMMUNE_FIX; reader report on r/algeria, 2026-08-13.
     "47-01": { commune_code: "4701", commune: "Ghardaia" },
+    // Two more of the same kind, both now agreeing with SOGRAL's own address field
+    // or with the commune outline the station's point is inside, where the nearest
+    // centre did not: "Commune El Hadjeb Biskra" for 07-01, and Tizi's outline for
+    // Mascara's 29-01, whose cité label names a locality the point is not in.
+    "07-01": { commune: "El Hadjeb" },
+    "29-01": { commune: "Tizi" },
   },
   "enseignement-superieur": {
     // ESI's campus sits in Oued Smar (its own address: BP 68M, 16270); the
@@ -198,16 +208,25 @@ const CORRECTIONS = {
   //           A re-join keeps its public id: the id is a frozen join key, not a
   //           claim about which wilaya the record is in, so 26-0114 below still
   //           reads 26 while its wilaya_code reads 10.
+  //
+  // A third class joined them on 2026-09-29: the join itself changed. It decides the
+  // commune by CONTAINMENT in the commune's own OpenStreetMap outline, inside the
+  // wilaya whose shipped polygon holds the point, and only falls back to distance
+  // (scripts/lib/build-utils.mjs resolveCommune). Several of the rows below now agree
+  // with the source's own address where the nearest centre never did.
   mosquees: {
     "16-0914": { commune: "Alger Centre" }, // re-join: Alger Centre's centre left the sea
-    // Was a label-only fix until 2026-09-29; Sedraïa's own centre moved 33 km and
-    // Raouraoua (w10) is the nearest centroid to this mosque now.
-    "26-0114": { wilaya_code: "10", commune: "Raouraoua" }, // re-join, across a wilaya
-    "29-0088": { commune: "Sidi Abdeldjebar" }, // re-join: Zelamta's centre moved
+    // Was a label-only fix until 2026-09-29; Sedraïa's own centre moved 33 km, and
+    // this mosque is inside Bir Ghbalou's outline, in wilaya 10.
+    "26-0114": { wilaya_code: "10", commune: "Bir Ghbalou" }, // re-join, across a wilaya
+    "29-0088": { commune: "El Hachem" }, // re-join: Zelamta's centre moved
+    "68-0056": { commune: "El Houamed" }, // re-join by containment, out of Bou Saada
+    "02-0384": { commune: "Sendjas" }, // re-join by containment, out of Chlef
   },
   culture: {
     "14-bcp-09": { commune: "Chehaïma" }, // label
-    "28-bcp-07": { commune: "Hammam Dhalaa" }, // label
+    "28-bcp-07": { commune: "Ouled Mansour" }, // re-join by containment, out of Hammam Dalaa
+    "34-maison-06": { commune: "El Euch" }, // re-join by containment, out of Elhammadia
   },
   ooredoo: {
     "69-002": { commune: "El Abiodh Sidi Cheikh" }, // label
@@ -215,9 +234,25 @@ const CORRECTIONS = {
   cliniques: {
     "28-00005": { commune: "M'Sila" }, // label
     "40-00009": { commune: "Taouzianat" }, // re-join: Kais' centre moved
+    "31-00107": { commune: "Oran" }, // re-join by containment, out of Es Senia
   },
   ecoles: {
     "16-00039": { commune: "Bir Touta" }, // re-join: Maalma's centre moved
+  },
+  ferroviaire: {
+    // All four re-joined by containment. Boughezoul is a spelling the flagship
+    // settled; the other three are the station's point landing inside a different
+    // commune's outline than the nearest centre belonged to.
+    "09-012": { commune: "Blida" },
+    "23-011": { commune: "Annaba" },
+    "31-010": { commune: "Sidi Chami" },
+    "67-002": { commune: "Boughezoul" },
+  },
+  sante: {
+    // Beni Ourtilane borrows its commune's centre (geo_method `commune_centroid`),
+    // and that centre moved: its OSM seat node carries the relation's own wikidata
+    // item, which the 2026-09-29 audit's first pass read as a name disagreement.
+    "19-epsp-05": { lat: 36.442259, lng: 4.855743 },
   },
   "formation-professionnelle": {
     // Borrows its commune's centre (geo_method `commune`), and Beni Messous moved.

@@ -31,6 +31,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
+import { resolveCommune } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -351,21 +352,32 @@ function loadCommunes() {
   if (!communes.length) throw new Error("no commune centroids loaded — check packages/dataset/data");
   return communes;
 }
-function attachCommune(rows, communes) {
+// The stable source key, the one carryOverIds also pins ids on.
+const sourceKey = (r) => (r.osm_id ? `osm:${r.osm_id}` : r.wikidata ? `wd:${r.wikidata}` : null);
+
+// Administrative linkage is the shared rule, scripts/lib/build-utils.mjs
+// resolveCommune(): the wilaya whose shipped polygon contains the point fixes the
+// candidate set, the commune whose OSM outline contains it wins inside that set, and
+// distance to a hand-placed centre only breaks what is left. This file used to hold
+// an unrestricted nearest-centroid join, which is what put 56 mosques in a wilaya
+// whose polygon does not contain them when the 2026-09-29 batch moved 245 commune
+// centres (31-0390 is inside Oued Tlelat in wilaya 31 and read Zahana, wilaya 29).
+//
+// `published` maps the stable source key to the wilaya the record shipped in, and is
+// the only answer for a point no wilaya polygon contains: 19 of these mosques sit
+// just outside the simplified national outline, and out there a nearest-centre guess
+// is the bug rather than the fix.
+function attachCommune(rows, communes, published) {
+  const counts = { commune_polygon: 0, wilaya_nearest: 0, published_wilaya_nearest: 0, unrestricted: 0, unresolved: 0 };
   for (const r of rows) {
-    let best = null;
-    let bestD = Infinity;
-    const cosLat = Math.cos(r.lat * DEG);
-    for (const c of communes) {
-      const dx = (c.longitude - r.lng) * cosLat;
-      const dy = c.latitude - r.lat;
-      const d = dx * dx + dy * dy;
-      if (d < bestD) { bestD = d; best = c; }
-    }
-    r.wilaya_code = wcode(best.wilaya_code);
-    r.commune_code = best.code_commune;
-    r.commune = best.name_fr;
+    const { commune, rule } = resolveCommune(r.lat, r.lng, communes, published.get(sourceKey(r)) ?? null);
+    counts[rule]++;
+    if (!commune) continue;
+    r.wilaya_code = wcode(commune.wilaya_code);
+    r.commune_code = commune.code_commune;
+    r.commune = commune.name_fr;
   }
+  return counts;
 }
 
 // Stable id `{wilaya_code}-{seq}`, seq ordered by source key so re-fetches are deterministic.
@@ -405,7 +417,17 @@ async function main() {
 
   const communes = loadCommunes();
   console.log(`  ${communes.length} commune centroids loaded`);
-  attachCommune(rows, communes);
+  const published = new Map();
+  for (const r of readCommitted(OUT_DIR, "mosquees.json") ?? []) {
+    const key = r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null;
+    if (key && r.wilaya_code) published.set(key, r.wilaya_code);
+  }
+  const linkage = attachCommune(rows, communes, published);
+  console.log(
+    `  linkage: ${linkage.commune_polygon} by commune outline, ${linkage.wilaya_nearest} by nearest centre in the ` +
+      `containing wilaya, ${linkage.published_wilaya_nearest} outside every wilaya polygon (kept their published ` +
+      `wilaya), ${linkage.unrestricted} with no wilaya at all, ${linkage.unresolved} unresolved`,
+  );
 
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);
