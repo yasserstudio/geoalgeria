@@ -201,11 +201,23 @@ const patchedCommunes = splitPaths.flatMap((path) =>
 );
 for (const move of communeDairaCorrections) {
   for (const name of [move.from, move.to]) {
-    const daira = dairas.find((d) => d.wilaya_code === move.wilaya_code && d.name_fr === name);
-    if (!daira) throw new Error(`dairas.json: no daira ${name} in wilaya ${move.wilaya_code}`);
-    daira.commune_count = patchedCommunes.filter(
+    const count = patchedCommunes.filter(
       (c) => c.wilaya_code === move.wilaya_code && c.daira === name,
     ).length;
+    const at = dairas.findIndex((d) => d.wilaya_code === move.wilaya_code && d.name_fr === name);
+    if (at === -1) {
+      // The only row that can be missing is one an earlier run already removed
+      // for holding nothing, which is what the recount is about to say again.
+      if (count) throw new Error(`dairas.json: no daira ${name} in wilaya ${move.wilaya_code}`);
+      continue;
+    }
+    // A move that empties a daira has not produced a daira with zero communes;
+    // it has exposed a row that should not exist. El Alia (5513) was the only
+    // commune filed under an "Ouargla" daira of wilaya 55, and wilaya 55 has no
+    // such daira. Ids never move, so the removal leaves a gap rather than
+    // renumbering the rows after it.
+    if (count) dairas[at].commune_count = count;
+    else dairas.splice(at, 1);
   }
 }
 queueJson(dairasPath, dairas);

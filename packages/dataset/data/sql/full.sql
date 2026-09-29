@@ -1,5 +1,5 @@
 -- GeoAlgeria SQL dump
--- 69 wilayas, 1541 communes, 556 dairas (post-2025 reform)
+-- 69 wilayas, 1541 communes, 555 dairas (post-2025 reform)
 -- Source: JORA No. 25, Law 26-06
 
 DROP TABLE IF EXISTS communes;
@@ -1510,7 +1510,7 @@ INSERT INTO communes (id, name_fr, name_ar, wilaya_code, daira, postal_code, lat
   (1407, 'Tin Zouatine', 'تين زواتين', 54, 'Tin Zaouatine', '54011', 19.953333, 2.966667, 5402),
   (1408, 'Benaceur', 'بن ناصر', 55, 'Taibet', '55020', 33.11059, 6.442694, 5510),
   (1409, 'Blidet Amor', 'بلدة اعمر', 55, 'Tamacine', '55005', 32.95138889, 5.980556, 5502),
-  (1410, 'El Alia', 'العالية', 55, 'Ouargla', '55023', 32.6999655, 5.425556, 5513),
+  (1410, 'El Alia', 'العالية', 55, 'El Hadjira', '55023', 32.6999655, 5.425556, 5513),
   (1411, 'El-Hadjira', 'الحجيرة', 55, 'El Hadjira', '55006', 32.6130464, 5.51259, 5507),
   (1412, 'M''naguer', 'المنقر', 55, 'Taibet', '55029', 33.12638889, 6.351944, 5511),
   (1413, 'Megarine', 'المقارين', 55, 'Megarine', '55009', 33.183333, 6.0833333, 5512),
