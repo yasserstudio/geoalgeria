@@ -4,8 +4,8 @@
 // exists to prevent: the nearest-centroid joins in ecoles, mosquees, culture,
 // pharmacies, sante, djezzy and ooredoo read algeria.json, while external consumers
 // install the csv/sql/geojson mirrors. Two tests hold these same seven files to two
-// different standards (wilaya containment, OSM seat distance) and must not disagree
-// about what the seven files are.
+// different standards (wilaya containment, commune containment) and must not
+// disagree about what the seven files are.
 
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";

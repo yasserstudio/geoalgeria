@@ -1,0 +1,404 @@
+{
+  "generated": "2026-09-29",
+  "guard": "test/commune-centre-in-commune.test.mjs",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "note": "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Regenerate with `node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write`.",
+  "no_boundary": [
+    {
+      "code_commune": 630,
+      "wilaya_code": 6,
+      "name_fr": "Souk Oufella",
+      "reason": "no admin_level=8 relation in the pull"
+    },
+    {
+      "code_commune": 1634,
+      "wilaya_code": 16,
+      "name_fr": "Bir Touta",
+      "reason": "no admin_level=8 relation in the pull"
+    },
+    {
+      "code_commune": 2110,
+      "wilaya_code": 21,
+      "name_fr": "Collo",
+      "reason": "no admin_level=8 relation in the pull"
+    },
+    {
+      "code_commune": 4703,
+      "wilaya_code": 47,
+      "name_fr": "Dhayet Bendhahoua",
+      "reason": "no admin_level=8 relation in the pull"
+    }
+  ],
+  "count": 41,
+  "exceptions": [
+    {
+      "code_commune": 215,
+      "wilaya_code": 2,
+      "name_fr": "Herenfa",
+      "osm_relation_id": 4830347,
+      "metres_outside": 3046,
+      "seat_delta_m": 6678,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 426,
+      "wilaya_code": 4,
+      "name_fr": "Rahia",
+      "osm_relation_id": 4491702,
+      "metres_outside": 57468,
+      "seat_delta_m": 64423,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 515,
+      "wilaya_code": 60,
+      "name_fr": "Abdelkader Azil",
+      "osm_relation_id": 5160749,
+      "metres_outside": 858,
+      "seat_delta_m": 8619,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 521,
+      "wilaya_code": 5,
+      "name_fr": "Tigherghar",
+      "osm_relation_id": 5200635,
+      "metres_outside": 2969,
+      "seat_delta_m": 5842,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 532,
+      "wilaya_code": 5,
+      "name_fr": "Béni Fedhala El Hakania",
+      "osm_relation_id": 5195901,
+      "metres_outside": 2781,
+      "seat_delta_m": 10649,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 552,
+      "wilaya_code": 5,
+      "name_fr": "Chir",
+      "osm_relation_id": 5201376,
+      "metres_outside": 4498,
+      "seat_delta_m": 12053,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 557,
+      "wilaya_code": 5,
+      "name_fr": "El Hassi",
+      "osm_relation_id": 5209309,
+      "metres_outside": 3052,
+      "seat_delta_m": 9229,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 613,
+      "wilaya_code": 6,
+      "name_fr": "Kendira",
+      "osm_relation_id": 4112944,
+      "metres_outside": 4685,
+      "seat_delta_m": 12532,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 638,
+      "wilaya_code": 6,
+      "name_fr": "Beni-Mallikeche",
+      "osm_relation_id": 2170758,
+      "metres_outside": 17864,
+      "seat_delta_m": 22702,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 647,
+      "wilaya_code": 6,
+      "name_fr": "Ait-Smail",
+      "osm_relation_id": 4112875,
+      "metres_outside": 33858,
+      "seat_delta_m": 39716,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 648,
+      "wilaya_code": 6,
+      "name_fr": "Boukhelifa",
+      "osm_relation_id": 4112950,
+      "metres_outside": 5842,
+      "seat_delta_m": 11444,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 650,
+      "wilaya_code": 6,
+      "name_fr": "Benimaouche",
+      "osm_relation_id": 4070138,
+      "metres_outside": 6957,
+      "seat_delta_m": 11004,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1006,
+      "wilaya_code": 10,
+      "name_fr": "Hanif",
+      "osm_relation_id": 3390920,
+      "metres_outside": 5215,
+      "seat_delta_m": 7141,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1027,
+      "wilaya_code": 10,
+      "name_fr": "Aghbalou",
+      "osm_relation_id": 3397589,
+      "metres_outside": 5408,
+      "seat_delta_m": 11681,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1309,
+      "wilaya_code": 13,
+      "name_fr": "Djebala",
+      "osm_relation_id": 6666562,
+      "metres_outside": 1243,
+      "seat_delta_m": 6278,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1439,
+      "wilaya_code": 64,
+      "name_fr": "Serguine",
+      "osm_relation_id": 4290220,
+      "metres_outside": 5680,
+      "seat_delta_m": 16077,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1526,
+      "wilaya_code": 15,
+      "name_fr": "M'kira",
+      "osm_relation_id": 4293722,
+      "metres_outside": 13261,
+      "seat_delta_m": 17873,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1528,
+      "wilaya_code": 15,
+      "name_fr": "Ait-Mahmoud",
+      "osm_relation_id": 4292443,
+      "metres_outside": 11262,
+      "seat_delta_m": 15402,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1533,
+      "wilaya_code": 15,
+      "name_fr": "Illilten",
+      "osm_relation_id": 2170759,
+      "metres_outside": 28239,
+      "seat_delta_m": 30806,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1546,
+      "wilaya_code": 15,
+      "name_fr": "Beni-Zikki",
+      "osm_relation_id": 2175827,
+      "metres_outside": 15406,
+      "seat_delta_m": 18423,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1560,
+      "wilaya_code": 15,
+      "name_fr": "Iboudrarene",
+      "osm_relation_id": 4288710,
+      "metres_outside": 2891,
+      "seat_delta_m": 5129,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1823,
+      "wilaya_code": 18,
+      "name_fr": "Khiri Oued Adjoul",
+      "osm_relation_id": 6669727,
+      "metres_outside": 614,
+      "seat_delta_m": 5544,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1907,
+      "wilaya_code": 19,
+      "name_fr": "Draa-Kebila",
+      "osm_relation_id": 1625410,
+      "metres_outside": 66,
+      "seat_delta_m": 2814,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 1922,
+      "wilaya_code": 19,
+      "name_fr": "Beni Ourtilane",
+      "osm_relation_id": 1625374,
+      "metres_outside": 1267,
+      "seat_delta_m": 3959,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2111,
+      "wilaya_code": 21,
+      "name_fr": "Beni Zid",
+      "osm_relation_id": 6543282,
+      "metres_outside": 4335,
+      "seat_delta_m": 1351,
+      "reason": "the relation's admin_centre node is outside the commune too, so OSM has no in-commune seat to move to; the boundary or the linkage is the suspect"
+    },
+    {
+      "code_commune": 2120,
+      "wilaya_code": 21,
+      "name_fr": "Emjez Edchich",
+      "osm_relation_id": 6543288,
+      "metres_outside": 341,
+      "seat_delta_m": 5222,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2434,
+      "wilaya_code": 24,
+      "name_fr": "Djeballah Khemissi",
+      "osm_relation_id": 6537634,
+      "metres_outside": 5190,
+      "seat_delta_m": 12761,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2826,
+      "wilaya_code": 68,
+      "name_fr": "El Houamed",
+      "osm_relation_id": 6547240,
+      "metres_outside": 6154,
+      "seat_delta_m": 22910,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2840,
+      "wilaya_code": 28,
+      "name_fr": "Souamaa",
+      "osm_relation_id": 6547262,
+      "metres_outside": 1182,
+      "seat_delta_m": 7440,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2907,
+      "wilaya_code": 29,
+      "name_fr": "El Hachem",
+      "osm_relation_id": 5348242,
+      "metres_outside": 22733,
+      "seat_delta_m": 30929,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2914,
+      "wilaya_code": 29,
+      "name_fr": "Matemore",
+      "osm_relation_id": 5488963,
+      "metres_outside": 9847,
+      "seat_delta_m": 15056,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2921,
+      "wilaya_code": 29,
+      "name_fr": "El Menaouer",
+      "osm_relation_id": 6668173,
+      "metres_outside": 9603,
+      "seat_delta_m": 16193,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2938,
+      "wilaya_code": 29,
+      "name_fr": "El Gueitena",
+      "osm_relation_id": 5585377,
+      "metres_outside": 12495,
+      "seat_delta_m": 19816,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2941,
+      "wilaya_code": 29,
+      "name_fr": "Gharrous",
+      "osm_relation_id": 5349395,
+      "metres_outside": 1594,
+      "seat_delta_m": 8910,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 2945,
+      "wilaya_code": 29,
+      "name_fr": "Nesmot",
+      "osm_relation_id": 6668181,
+      "metres_outside": 9764,
+      "seat_delta_m": 12953,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 3819,
+      "wilaya_code": 38,
+      "name_fr": "Tamellahet",
+      "osm_relation_id": 6534593,
+      "metres_outside": 4250,
+      "seat_delta_m": 11273,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 3820,
+      "wilaya_code": 38,
+      "name_fr": "Sidi Slimane",
+      "osm_relation_id": 6534592,
+      "metres_outside": 5490,
+      "seat_delta_m": 13759,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 4126,
+      "wilaya_code": 41,
+      "name_fr": "Zouabi",
+      "osm_relation_id": 6663213,
+      "metres_outside": 1123,
+      "seat_delta_m": 14618,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 4316,
+      "wilaya_code": 43,
+      "name_fr": "Tassala Lematai",
+      "osm_relation_id": 2255332,
+      "metres_outside": 25070,
+      "seat_delta_m": 31148,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 4905,
+      "wilaya_code": 49,
+      "name_fr": "Tinerkouk",
+      "osm_relation_id": 4171625,
+      "metres_outside": 51217,
+      "seat_delta_m": 94922,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    },
+    {
+      "code_commune": 5302,
+      "wilaya_code": 53,
+      "name_fr": "Inghar",
+      "osm_relation_id": 4175371,
+      "metres_outside": 30004,
+      "seat_delta_m": 60807,
+      "reason": "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat"
+    }
+  ]
+}

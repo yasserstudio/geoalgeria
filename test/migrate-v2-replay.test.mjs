@@ -180,6 +180,7 @@ const CORRECTIONS = {
     "00065": { commune: "Oued Smar" },
     // Flagship commune label, corrected against JORA n° 25 / n° 40.
     "00033": { commune: "M'Sila" },
+    "00017": { commune: "Chetma" }, // re-join: Biskra's centre moved
   },
   // Two classes below, both of them the flagship moving under a derived field,
   // and both caught by gates of their own rather than by this replay:
@@ -188,13 +189,21 @@ const CORRECTIONS = {
   //           n° 40). The packages publish the flagship's current label, so the
   //           frozen v1 row carries the old one. Repository-wide FK tests own the
   //           code; the label follows it.
-  //   re-join the commune CHANGED, because its centre moved in the 2026-09-27
-  //           correction of 56 commune centres and the nearest-centroid join
-  //           answers differently now. The new validator section "commune-centroid
-  //           coordinates track the flagship commune centres" owns that class.
+  //   re-join the commune CHANGED, because a commune centre moved in the 2026-09-27
+  //           correction of 56 centres or the 2026-09-29 correction of 174, and the
+  //           nearest-centroid join answers differently now. The validator section
+  //           "commune-centroid coordinates track the flagship commune centres" owns
+  //           the borrowed-coordinate half of that class, and
+  //           test/commune-centre-in-commune.test.mjs owns the centres themselves.
+  //           A re-join keeps its public id: the id is a frozen join key, not a
+  //           claim about which wilaya the record is in, so 26-0114 below still
+  //           reads 26 while its wilaya_code reads 10.
   mosquees: {
     "16-0914": { commune: "Alger Centre" }, // re-join: Alger Centre's centre left the sea
-    "26-0114": { commune: "Sedraïa" }, // label
+    // Was a label-only fix until 2026-09-29; Sedraïa's own centre moved 33 km and
+    // Raouraoua (w10) is the nearest centroid to this mosque now.
+    "26-0114": { wilaya_code: "10", commune: "Raouraoua" }, // re-join, across a wilaya
+    "29-0088": { commune: "Sidi Abdeldjebar" }, // re-join: Zelamta's centre moved
   },
   culture: {
     "14-bcp-09": { commune: "Chehaïma" }, // label
@@ -206,6 +215,17 @@ const CORRECTIONS = {
   cliniques: {
     "28-00005": { commune: "M'Sila" }, // label
     "40-00009": { commune: "Taouzianat" }, // re-join: Kais' centre moved
+  },
+  ecoles: {
+    "16-00039": { commune: "Bir Touta" }, // re-join: Maalma's centre moved
+  },
+  "formation-professionnelle": {
+    // Borrows its commune's centre (geo_method `commune`), and Beni Messous moved.
+    "00703": { lat: 36.780096, lng: 2.974557 },
+  },
+  "industrie-pharmaceutique": {
+    // Same class: a commune-centroid placement in Algiers whose commune moved.
+    "16-pp-08": { lat: 36.70442, lng: 3.168156 },
   },
   agriculture: {
     // Both rows are Algiers institutions placed at the wilaya chief town's centre.

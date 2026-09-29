@@ -22,12 +22,13 @@
 //       because its way-member lists are megabytes of noise no reviewer reads.
 //   research/_commune-centres/audit-2026-09-29.json   every matched row's delta
 //   research/_commune-centres/audit-2026-09-29.md     the counts and the >300 m list
-//   research/_commune-centres/osm-seat-reference.json  what test/commune-centre-osm-seat
-//       .test.mjs holds the data to. Undated on purpose: it is a standing
-//       reference the guard reads on every run, not a one-off provenance snapshot.
-//       It also carries osm_relation_id and wikidata for both communes and
-//       wilayas, harvested here and NOT published as package fields (that is a
-//       separate contract change).
+//   research/_commune-centres/osm-seat-reference.json  the seat per commune, which
+//       seat-distance-2026-09-29.md reports against. Undated on purpose: it is a
+//       standing reference, not a one-off provenance snapshot. It also carries
+//       osm_relation_id and wikidata for both communes and wilayas, harvested here
+//       and NOT published as package fields (that is a separate contract change).
+//       No test reads it: the standing guard is containment, and its polygons come
+//       from scripts/build-commune-boundary-cache.mjs.
 //
 // USAGE
 //   node scripts/audit-commune-centres.mjs --fetch --write  # pull, then write everything
@@ -689,7 +690,7 @@ writeFileSync(
   `${JSON.stringify(
     {
       ...header,
-      note: "The reference test/commune-centre-osm-seat.test.mjs reads. Undated because the guard reads it on every run; refresh it in place with `node scripts/audit-commune-centres.mjs --fetch --write` and review the diff. `osm_relation_id` and `wikidata` are harvested here and are deliberately NOT package fields yet.",
+      note: "The seat per commune, reported against by seat-distance-2026-09-29.md. No test reads it: the standing guard is containment (test/commune-centre-in-commune.test.mjs). Undated because it is a standing reference; refresh it in place with `node scripts/audit-commune-centres.mjs --fetch --write` and review the diff. `osm_relation_id` and `wikidata` are harvested here and are deliberately NOT package fields yet.",
       communes: rows.map((r) => ({
         code_commune: r.code_commune,
         wilaya_code: r.wilaya_code,
@@ -758,52 +759,19 @@ if (decided.length) {
   );
 }
 
-// The guard's exceptions. Every centre already over the 1 km line at this audit is
-// listed with the reason it is there, pinned to the metre, so the line holds from
-// today forward without pretending today is clean. A row that moves at all, in
-// either direction, fails and has to be re-decided.
-const GUARD_M = 1000;
-const exceptions = rows
-  .filter((r) => r.delta_m > GUARD_M)
-  .map((r) => ({
-    code_commune: r.code_commune,
-    wilaya_code: r.wilaya_code,
-    name_fr: r.name_fr,
-    delta_m: r.delta_m,
-    reason:
-      r.ours_in_own_commune === false && decided.includes(r)
-        ? "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
-        : r.ours_in_own_commune === false
-          ? "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
-          : r.seat_in_declared_wilaya === false
-            ? "the OSM seat itself is outside the wilaya we declare, so the linkage or the shipped outline is the suspect, not the delta"
-            : "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m",
-  }))
-  .sort((a, b) => a.code_commune - b.code_commune);
-
-writeFileSync(
-  join(RESEARCH, "seat-exceptions.json"),
-  `${JSON.stringify(
-    {
-      generated: PULL,
-      guard: "test/commune-centre-osm-seat.test.mjs",
-      tolerance_m: GUARD_M,
-      note: "Communes allowed to sit further than tolerance_m from their recorded OSM seat, each with the reason and the exact distance measured at the 2026-09-29 audit. The distance is part of the pin: a listed commune that moves is a new fact and fails rather than being absorbed. Regenerate with `node scripts/audit-commune-centres.mjs --write` after any centre correction.",
-      count: exceptions.length,
-      // Communes the guard cannot measure at all, because OSM carries no
-      // admin_level=8 relation for them. Pinned so one quietly losing its
-      // reference cannot turn into a pass.
-      no_reference: unmatchedCommunes
-        .map((c) => `${c.name_fr} (w${c.wilaya_code})`)
-        .sort(),
-      exceptions,
-    },
-    null,
-    2,
-  )}\n`,
-);
+// The seat delta is a REPORT, not a gate. This script used to also write
+// seat-exceptions.json, the 496 communes over a 1 km seat-distance line, for a
+// standing guard. The Owner replaced that rule on 2026-09-29 (private tracker #170)
+// with containment, because a delta between our centre and the OSM node is two
+// hand-placed claims disagreeing, not a defect, and a rule needing 496 exceptions
+// was measuring the disagreement. The standing guard is now
+// test/commune-centre-in-commune.test.mjs, whose polygons and exceptions
+// scripts/build-commune-boundary-cache.mjs writes from the same geometry pull; the
+// deltas this script measures are published in audit-2026-09-29.md and in
+// seat-distance-2026-09-29.md.
 
 console.log(
-  `wrote audit-${PULL}.json, audit-${PULL}.md, osm-seat-reference.json, seat-exceptions.json (${exceptions.length})` +
-    (decided.length ? ` and pending-corrections-${PULL}.json (${decided.length})` : ""),
+  `wrote audit-${PULL}.json, audit-${PULL}.md, osm-seat-reference.json` +
+    (decided.length ? ` and pending-corrections-${PULL}.json (${decided.length})` : "") +
+    ". Refresh the containment guard's cache with `node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write`.",
 );
