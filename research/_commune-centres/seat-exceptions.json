@@ -1,0 +1,3487 @@
+{
+  "generated": "2026-09-29",
+  "guard": "test/commune-centre-osm-seat.test.mjs",
+  "tolerance_m": 1000,
+  "note": "Communes allowed to sit further than tolerance_m from their recorded OSM seat, each with the reason and the exact distance measured at the 2026-09-29 audit. The distance is part of the pin: a listed commune that moves is a new fact and fails rather than being absorbed. Regenerate with `node scripts/audit-commune-centres.mjs --write` after any centre correction.",
+  "count": 496,
+  "no_reference": [
+    "Bir Touta (w16)",
+    "Collo (w21)",
+    "Dhayet Bendhahoua (w47)",
+    "Souk Oufella (w6)"
+  ],
+  "exceptions": [
+    {
+      "code_commune": 102,
+      "wilaya_code": 1,
+      "name_fr": "Tamest",
+      "delta_m": 50591,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 106,
+      "wilaya_code": 1,
+      "name_fr": "Tit",
+      "delta_m": 47206,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 115,
+      "wilaya_code": 1,
+      "name_fr": "Fenoughil",
+      "delta_m": 59331,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 118,
+      "wilaya_code": 1,
+      "name_fr": "Sali",
+      "delta_m": 2466,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 119,
+      "wilaya_code": 1,
+      "name_fr": "Akabli",
+      "delta_m": 107862,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 121,
+      "wilaya_code": 1,
+      "name_fr": "Ouled Ahmed Timmi",
+      "delta_m": 55801,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 122,
+      "wilaya_code": 1,
+      "name_fr": "Bouda",
+      "delta_m": 7932,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 205,
+      "wilaya_code": 2,
+      "name_fr": "Tadjena",
+      "delta_m": 17616,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 214,
+      "wilaya_code": 2,
+      "name_fr": "Talassa",
+      "delta_m": 3918,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 215,
+      "wilaya_code": 2,
+      "name_fr": "Herenfa",
+      "delta_m": 6678,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 219,
+      "wilaya_code": 2,
+      "name_fr": "Sendjas",
+      "delta_m": 8266,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 222,
+      "wilaya_code": 2,
+      "name_fr": "Abou El Hassane",
+      "delta_m": 1625,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 224,
+      "wilaya_code": 2,
+      "name_fr": "Chettia",
+      "delta_m": 3841,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 228,
+      "wilaya_code": 2,
+      "name_fr": "Labiod Medjadja",
+      "delta_m": 2953,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 229,
+      "wilaya_code": 2,
+      "name_fr": "Oued Fodda",
+      "delta_m": 1393,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 231,
+      "wilaya_code": 2,
+      "name_fr": "Bouzeghaia",
+      "delta_m": 16818,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 235,
+      "wilaya_code": 2,
+      "name_fr": "Beni Bouattab",
+      "delta_m": 2547,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 306,
+      "wilaya_code": 3,
+      "name_fr": "Hassi R'Mel",
+      "delta_m": 2004,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 404,
+      "wilaya_code": 4,
+      "name_fr": "Behir Chergui",
+      "delta_m": 3225,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 405,
+      "wilaya_code": 4,
+      "name_fr": "El Amiria",
+      "delta_m": 1820,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 406,
+      "wilaya_code": 4,
+      "name_fr": "Sigus",
+      "delta_m": 1319,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 409,
+      "wilaya_code": 4,
+      "name_fr": "Berriche",
+      "delta_m": 13562,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 410,
+      "wilaya_code": 4,
+      "name_fr": "Ouled Hamla",
+      "delta_m": 1369,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 412,
+      "wilaya_code": 4,
+      "name_fr": "Ain Kercha",
+      "delta_m": 1863,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 413,
+      "wilaya_code": 4,
+      "name_fr": "Hanchir Toumghani",
+      "delta_m": 3559,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 426,
+      "wilaya_code": 4,
+      "name_fr": "Rahia",
+      "delta_m": 64423,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 502,
+      "wilaya_code": 5,
+      "name_fr": "Ghassira",
+      "delta_m": 17914,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 503,
+      "wilaya_code": 5,
+      "name_fr": "Maafa",
+      "delta_m": 1634,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 510,
+      "wilaya_code": 5,
+      "name_fr": "Guigba",
+      "delta_m": 37916,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 512,
+      "wilaya_code": 5,
+      "name_fr": "Ouyoun El Assafir",
+      "delta_m": 3237,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 513,
+      "wilaya_code": 5,
+      "name_fr": "Djerma",
+      "delta_m": 2646,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 514,
+      "wilaya_code": 60,
+      "name_fr": "Bitam",
+      "delta_m": 31255,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 515,
+      "wilaya_code": 60,
+      "name_fr": "Abdelkader Azil",
+      "delta_m": 8619,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 517,
+      "wilaya_code": 5,
+      "name_fr": "Kimmel",
+      "delta_m": 15660,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 519,
+      "wilaya_code": 5,
+      "name_fr": "Ain Djasser",
+      "delta_m": 3221,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 520,
+      "wilaya_code": 5,
+      "name_fr": "Ouled Sellem",
+      "delta_m": 1400,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 521,
+      "wilaya_code": 5,
+      "name_fr": "Tigherghar",
+      "delta_m": 5842,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 523,
+      "wilaya_code": 5,
+      "name_fr": "Fesdis",
+      "delta_m": 2569,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 525,
+      "wilaya_code": 5,
+      "name_fr": "Rahbat",
+      "delta_m": 19974,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 526,
+      "wilaya_code": 5,
+      "name_fr": "Tighanimine",
+      "delta_m": 5120,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 532,
+      "wilaya_code": 5,
+      "name_fr": "Béni Fedhala El Hakania",
+      "delta_m": 10649,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 534,
+      "wilaya_code": 5,
+      "name_fr": "Talkhamt",
+      "delta_m": 7347,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 536,
+      "wilaya_code": 5,
+      "name_fr": "Chemora",
+      "delta_m": 12851,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 538,
+      "wilaya_code": 5,
+      "name_fr": "Taxlent",
+      "delta_m": 8168,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 539,
+      "wilaya_code": 5,
+      "name_fr": "Gosbat",
+      "delta_m": 5583,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 542,
+      "wilaya_code": 60,
+      "name_fr": "Barika",
+      "delta_m": 1450,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 544,
+      "wilaya_code": 5,
+      "name_fr": "T'Kout",
+      "delta_m": 21518,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 545,
+      "wilaya_code": 5,
+      "name_fr": "Aïn Touta",
+      "delta_m": 3530,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 546,
+      "wilaya_code": 5,
+      "name_fr": "Hidoussa",
+      "delta_m": 12125,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 547,
+      "wilaya_code": 5,
+      "name_fr": "Teniet El Abed",
+      "delta_m": 1320,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 548,
+      "wilaya_code": 5,
+      "name_fr": "Oued Taga",
+      "delta_m": 16779,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 552,
+      "wilaya_code": 5,
+      "name_fr": "Chir",
+      "delta_m": 12053,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 554,
+      "wilaya_code": 5,
+      "name_fr": "Zana El Beïda",
+      "delta_m": 4330,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 555,
+      "wilaya_code": 60,
+      "name_fr": "M'Doukal",
+      "delta_m": 27572,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 556,
+      "wilaya_code": 60,
+      "name_fr": "Ouled Ammar",
+      "delta_m": 38526,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 557,
+      "wilaya_code": 5,
+      "name_fr": "El Hassi",
+      "delta_m": 9229,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 558,
+      "wilaya_code": 5,
+      "name_fr": "Lazrou",
+      "delta_m": 11966,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 560,
+      "wilaya_code": 5,
+      "name_fr": "Boulhilat",
+      "delta_m": 5516,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 561,
+      "wilaya_code": 5,
+      "name_fr": "Larbaa",
+      "delta_m": 6118,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 603,
+      "wilaya_code": 6,
+      "name_fr": "Feraoun",
+      "delta_m": 1036,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 604,
+      "wilaya_code": 6,
+      "name_fr": "Taourit Ighil",
+      "delta_m": 4268,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 605,
+      "wilaya_code": 6,
+      "name_fr": "Chellata",
+      "delta_m": 2990,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 612,
+      "wilaya_code": 6,
+      "name_fr": "Smaoun",
+      "delta_m": 3931,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 613,
+      "wilaya_code": 6,
+      "name_fr": "Kendira",
+      "delta_m": 12532,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 618,
+      "wilaya_code": 6,
+      "name_fr": "Fenaia Il Maten",
+      "delta_m": 2065,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 620,
+      "wilaya_code": 6,
+      "name_fr": "Darguina",
+      "delta_m": 9950,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 621,
+      "wilaya_code": 6,
+      "name_fr": "Sidi Ayad",
+      "delta_m": 3153,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 624,
+      "wilaya_code": 6,
+      "name_fr": "Adekar",
+      "delta_m": 1224,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 626,
+      "wilaya_code": 6,
+      "name_fr": "Seddouk",
+      "delta_m": 1636,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 631,
+      "wilaya_code": 6,
+      "name_fr": "Taskriout",
+      "delta_m": 2126,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 633,
+      "wilaya_code": 6,
+      "name_fr": "Tala Hamza",
+      "delta_m": 3286,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 635,
+      "wilaya_code": 6,
+      "name_fr": "Beni K'sila",
+      "delta_m": 6045,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 637,
+      "wilaya_code": 6,
+      "name_fr": "Bouhamza",
+      "delta_m": 8641,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 638,
+      "wilaya_code": 6,
+      "name_fr": "Beni-Mallikeche",
+      "delta_m": 22702,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 642,
+      "wilaya_code": 6,
+      "name_fr": "Akfadou",
+      "delta_m": 3092,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 643,
+      "wilaya_code": 6,
+      "name_fr": "Leflaye",
+      "delta_m": 18750,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 645,
+      "wilaya_code": 6,
+      "name_fr": "Dra El Caid",
+      "delta_m": 2305,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 646,
+      "wilaya_code": 6,
+      "name_fr": "Tamridjet",
+      "delta_m": 4694,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 647,
+      "wilaya_code": 6,
+      "name_fr": "Ait-Smail",
+      "delta_m": 39716,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 648,
+      "wilaya_code": 6,
+      "name_fr": "Boukhelifa",
+      "delta_m": 11444,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 650,
+      "wilaya_code": 6,
+      "name_fr": "Benimaouche",
+      "delta_m": 11004,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 652,
+      "wilaya_code": 6,
+      "name_fr": "Boudjellil",
+      "delta_m": 1764,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 701,
+      "wilaya_code": 7,
+      "name_fr": "Biskra",
+      "delta_m": 6003,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 702,
+      "wilaya_code": 7,
+      "name_fr": "Oumache",
+      "delta_m": 1023,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 704,
+      "wilaya_code": 7,
+      "name_fr": "Chetma",
+      "delta_m": 13154,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 711,
+      "wilaya_code": 7,
+      "name_fr": "Sidi Okba",
+      "delta_m": 1112,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 712,
+      "wilaya_code": 7,
+      "name_fr": "M'Chounèche",
+      "delta_m": 1877,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 713,
+      "wilaya_code": 7,
+      "name_fr": "El Haouch",
+      "delta_m": 34212,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 716,
+      "wilaya_code": 7,
+      "name_fr": "El Feïdh",
+      "delta_m": 6405,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 717,
+      "wilaya_code": 61,
+      "name_fr": "El Kantara",
+      "delta_m": 5154,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 718,
+      "wilaya_code": 61,
+      "name_fr": "Aïn Zaatout",
+      "delta_m": 26508,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 720,
+      "wilaya_code": 61,
+      "name_fr": "Djemourah",
+      "delta_m": 4161,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 721,
+      "wilaya_code": 7,
+      "name_fr": "Tolga",
+      "delta_m": 1220,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 723,
+      "wilaya_code": 7,
+      "name_fr": "Lichana",
+      "delta_m": 1046,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 724,
+      "wilaya_code": 7,
+      "name_fr": "Ourlal",
+      "delta_m": 1266,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 725,
+      "wilaya_code": 7,
+      "name_fr": "M'Lili",
+      "delta_m": 15372,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 729,
+      "wilaya_code": 7,
+      "name_fr": "Bouchagroun",
+      "delta_m": 15192,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 730,
+      "wilaya_code": 7,
+      "name_fr": "Mekhadma",
+      "delta_m": 35931,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 731,
+      "wilaya_code": 7,
+      "name_fr": "El Ghrous",
+      "delta_m": 1999,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 733,
+      "wilaya_code": 7,
+      "name_fr": "Khangat Sidi Nadji",
+      "delta_m": 2041,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 817,
+      "wilaya_code": 8,
+      "name_fr": "Abadla",
+      "delta_m": 1590,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 902,
+      "wilaya_code": 9,
+      "name_fr": "Chebli",
+      "delta_m": 1139,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 913,
+      "wilaya_code": 9,
+      "name_fr": "Benkhelil",
+      "delta_m": 5011,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 917,
+      "wilaya_code": 9,
+      "name_fr": "Souhane",
+      "delta_m": 3081,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 922,
+      "wilaya_code": 9,
+      "name_fr": "Oued Djer",
+      "delta_m": 1236,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 927,
+      "wilaya_code": 9,
+      "name_fr": "Guerrouaou",
+      "delta_m": 1100,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 928,
+      "wilaya_code": 9,
+      "name_fr": "Ain Romana",
+      "delta_m": 3952,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1003,
+      "wilaya_code": 10,
+      "name_fr": "Guerrouma",
+      "delta_m": 3381,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1005,
+      "wilaya_code": 10,
+      "name_fr": "Kadiria",
+      "delta_m": 2117,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1006,
+      "wilaya_code": 10,
+      "name_fr": "Hanif",
+      "delta_m": 7141,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1007,
+      "wilaya_code": 10,
+      "name_fr": "Dirah",
+      "delta_m": 8489,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1009,
+      "wilaya_code": 10,
+      "name_fr": "Taghzout",
+      "delta_m": 10136,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1010,
+      "wilaya_code": 10,
+      "name_fr": "Raouraoua",
+      "delta_m": 36400,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1011,
+      "wilaya_code": 10,
+      "name_fr": "Mezdour",
+      "delta_m": 32989,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1015,
+      "wilaya_code": 10,
+      "name_fr": "El Hachimia",
+      "delta_m": 2366,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1016,
+      "wilaya_code": 10,
+      "name_fr": "Aomar",
+      "delta_m": 2039,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1019,
+      "wilaya_code": 10,
+      "name_fr": "El Adjiba",
+      "delta_m": 5083,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1027,
+      "wilaya_code": 10,
+      "name_fr": "Aghbalou",
+      "delta_m": 11681,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1030,
+      "wilaya_code": 10,
+      "name_fr": "Saharidj",
+      "delta_m": 34578,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1034,
+      "wilaya_code": 10,
+      "name_fr": "Boukram",
+      "delta_m": 3271,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1036,
+      "wilaya_code": 10,
+      "name_fr": "Bir Ghbalou",
+      "delta_m": 12319,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1039,
+      "wilaya_code": 10,
+      "name_fr": "Maamora",
+      "delta_m": 6178,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1043,
+      "wilaya_code": 10,
+      "name_fr": "Ath Mansour",
+      "delta_m": 1481,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1045,
+      "wilaya_code": 10,
+      "name_fr": "Oued El Berdi",
+      "delta_m": 2851,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1109,
+      "wilaya_code": 11,
+      "name_fr": "Ain Amguel",
+      "delta_m": 1407,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1208,
+      "wilaya_code": 12,
+      "name_fr": "Hammamet",
+      "delta_m": 15741,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1215,
+      "wilaya_code": 62,
+      "name_fr": "El Ogla El Melha",
+      "delta_m": 14504,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1219,
+      "wilaya_code": 12,
+      "name_fr": "Ouenza",
+      "delta_m": 1193,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1221,
+      "wilaya_code": 12,
+      "name_fr": "Oum Ali",
+      "delta_m": 35802,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1222,
+      "wilaya_code": 12,
+      "name_fr": "Thlidjene",
+      "delta_m": 10786,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1225,
+      "wilaya_code": 12,
+      "name_fr": "Boulhaf Dyr",
+      "delta_m": 4602,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1226,
+      "wilaya_code": 12,
+      "name_fr": "Bedjene",
+      "delta_m": 6104,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1303,
+      "wilaya_code": 13,
+      "name_fr": "Aïn Tallout",
+      "delta_m": 13837,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1309,
+      "wilaya_code": 13,
+      "name_fr": "Djebala",
+      "delta_m": 6278,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1312,
+      "wilaya_code": 13,
+      "name_fr": "Ain Fezza",
+      "delta_m": 4474,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1316,
+      "wilaya_code": 13,
+      "name_fr": "Zenata",
+      "delta_m": 3056,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1333,
+      "wilaya_code": 13,
+      "name_fr": "Souk Thlata",
+      "delta_m": 6344,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1341,
+      "wilaya_code": 63,
+      "name_fr": "Sidi Djillali",
+      "delta_m": 1804,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1345,
+      "wilaya_code": 13,
+      "name_fr": "Tianet",
+      "delta_m": 4289,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1407,
+      "wilaya_code": 14,
+      "name_fr": "Sidi Bakhti",
+      "delta_m": 9471,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1411,
+      "wilaya_code": 14,
+      "name_fr": "Sebt",
+      "delta_m": 4489,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1414,
+      "wilaya_code": 14,
+      "name_fr": "Rahouia",
+      "delta_m": 52143,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1417,
+      "wilaya_code": 14,
+      "name_fr": "Sidi Abdelghani",
+      "delta_m": 1395,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1419,
+      "wilaya_code": 14,
+      "name_fr": "Djebilet Rosfa",
+      "delta_m": 16319,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1420,
+      "wilaya_code": 14,
+      "name_fr": "Naïma",
+      "delta_m": 50110,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1425,
+      "wilaya_code": 14,
+      "name_fr": "Sebaïne",
+      "delta_m": 90893,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1427,
+      "wilaya_code": 14,
+      "name_fr": "Frenda",
+      "delta_m": 1753,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1431,
+      "wilaya_code": 14,
+      "name_fr": "Nadorah",
+      "delta_m": 24664,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1432,
+      "wilaya_code": 14,
+      "name_fr": "Tagdemt",
+      "delta_m": 28667,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1434,
+      "wilaya_code": 14,
+      "name_fr": "Mechraa Sfa",
+      "delta_m": 1491,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1439,
+      "wilaya_code": 64,
+      "name_fr": "Serguine",
+      "delta_m": 16077,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1441,
+      "wilaya_code": 14,
+      "name_fr": "Faïdja",
+      "delta_m": 25878,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1501,
+      "wilaya_code": 15,
+      "name_fr": "Tizi-Ouzou",
+      "delta_m": 2174,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1503,
+      "wilaya_code": 15,
+      "name_fr": "Akbil",
+      "delta_m": 2589,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1506,
+      "wilaya_code": 15,
+      "name_fr": "Mechtras",
+      "delta_m": 1830,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1507,
+      "wilaya_code": 15,
+      "name_fr": "Irdjen",
+      "delta_m": 1037,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1508,
+      "wilaya_code": 15,
+      "name_fr": "Timizart",
+      "delta_m": 1842,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1512,
+      "wilaya_code": 15,
+      "name_fr": "Bounouh",
+      "delta_m": 11997,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1514,
+      "wilaya_code": 15,
+      "name_fr": "Frikat",
+      "delta_m": 10016,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1515,
+      "wilaya_code": 15,
+      "name_fr": "Beni-Aissi",
+      "delta_m": 1537,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1516,
+      "wilaya_code": 15,
+      "name_fr": "Beni Zmenzer",
+      "delta_m": 1217,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1517,
+      "wilaya_code": 15,
+      "name_fr": "Iferhounene",
+      "delta_m": 2307,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1523,
+      "wilaya_code": 15,
+      "name_fr": "Zekri",
+      "delta_m": 3243,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1524,
+      "wilaya_code": 15,
+      "name_fr": "Ouaguenoun",
+      "delta_m": 1271,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1526,
+      "wilaya_code": 15,
+      "name_fr": "M'kira",
+      "delta_m": 17873,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1527,
+      "wilaya_code": 15,
+      "name_fr": "Ait-Yahia",
+      "delta_m": 2814,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1528,
+      "wilaya_code": 15,
+      "name_fr": "Ait-Mahmoud",
+      "delta_m": 15402,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1529,
+      "wilaya_code": 15,
+      "name_fr": "Maatkas",
+      "delta_m": 2660,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1530,
+      "wilaya_code": 15,
+      "name_fr": "Ait Boumahdi",
+      "delta_m": 2133,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1533,
+      "wilaya_code": 15,
+      "name_fr": "Illilten",
+      "delta_m": 30806,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1539,
+      "wilaya_code": 15,
+      "name_fr": "Ait-Aissa-Mimoun",
+      "delta_m": 2097,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1541,
+      "wilaya_code": 15,
+      "name_fr": "Ifigha",
+      "delta_m": 4988,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1545,
+      "wilaya_code": 15,
+      "name_fr": "Yatafene",
+      "delta_m": 4648,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1546,
+      "wilaya_code": 15,
+      "name_fr": "Beni-Zikki",
+      "delta_m": 18423,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1554,
+      "wilaya_code": 15,
+      "name_fr": "Iflissen",
+      "delta_m": 3483,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1555,
+      "wilaya_code": 15,
+      "name_fr": "Boudjima",
+      "delta_m": 1703,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1558,
+      "wilaya_code": 15,
+      "name_fr": "Ait Khellili",
+      "delta_m": 1051,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1559,
+      "wilaya_code": 15,
+      "name_fr": "Sidi Namane",
+      "delta_m": 4644,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1560,
+      "wilaya_code": 15,
+      "name_fr": "Iboudrarene",
+      "delta_m": 5129,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1566,
+      "wilaya_code": 15,
+      "name_fr": "Assi-Youcef",
+      "delta_m": 1309,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1567,
+      "wilaya_code": 15,
+      "name_fr": "Ait-Toudert",
+      "delta_m": 19134,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1604,
+      "wilaya_code": 16,
+      "name_fr": "Mohamed Belouzdad",
+      "delta_m": 1760,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1615,
+      "wilaya_code": 16,
+      "name_fr": "Oued Smar",
+      "delta_m": 4496,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1618,
+      "wilaya_code": 16,
+      "name_fr": "Kouba",
+      "delta_m": 1312,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1619,
+      "wilaya_code": 16,
+      "name_fr": "Bachedjerah",
+      "delta_m": 4631,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1624,
+      "wilaya_code": 16,
+      "name_fr": "Hammamet",
+      "delta_m": 3054,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1626,
+      "wilaya_code": 16,
+      "name_fr": "Djasr Kasentina",
+      "delta_m": 1998,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1628,
+      "wilaya_code": 16,
+      "name_fr": "Hydra",
+      "delta_m": 1525,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1632,
+      "wilaya_code": 16,
+      "name_fr": "Beni Messous",
+      "delta_m": 4501,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1633,
+      "wilaya_code": 16,
+      "name_fr": "Les Eucalyptus",
+      "delta_m": 2135,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1635,
+      "wilaya_code": 16,
+      "name_fr": "Tessala El Merdja",
+      "delta_m": 2252,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1641,
+      "wilaya_code": 16,
+      "name_fr": "Herraoua",
+      "delta_m": 4938,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1642,
+      "wilaya_code": 16,
+      "name_fr": "Rouiba",
+      "delta_m": 1181,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1644,
+      "wilaya_code": 16,
+      "name_fr": "Ain Benian",
+      "delta_m": 1714,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1646,
+      "wilaya_code": 16,
+      "name_fr": "Zeralda",
+      "delta_m": 2257,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1647,
+      "wilaya_code": 16,
+      "name_fr": "Maalma",
+      "delta_m": 15302,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1652,
+      "wilaya_code": 16,
+      "name_fr": "El Achour",
+      "delta_m": 1029,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1654,
+      "wilaya_code": 16,
+      "name_fr": "Douira",
+      "delta_m": 1297,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1657,
+      "wilaya_code": 16,
+      "name_fr": "Sehaoula",
+      "delta_m": 1387,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1708,
+      "wilaya_code": 65,
+      "name_fr": "Birine",
+      "delta_m": 5671,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1713,
+      "wilaya_code": 17,
+      "name_fr": "M'Liliha",
+      "delta_m": 26434,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1719,
+      "wilaya_code": 65,
+      "name_fr": "Sidi Ladjel",
+      "delta_m": 1429,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1722,
+      "wilaya_code": 66,
+      "name_fr": "Selmana",
+      "delta_m": 3828,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1732,
+      "wilaya_code": 65,
+      "name_fr": "Benhar",
+      "delta_m": 8934,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1815,
+      "wilaya_code": 18,
+      "name_fr": "Ghebala",
+      "delta_m": 5347,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1823,
+      "wilaya_code": 18,
+      "name_fr": "Khiri Oued Adjoul",
+      "delta_m": 5544,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1825,
+      "wilaya_code": 18,
+      "name_fr": "Djemaa Beni Habibi",
+      "delta_m": 11297,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1826,
+      "wilaya_code": 18,
+      "name_fr": "Bordj T'har",
+      "delta_m": 1072,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1828,
+      "wilaya_code": 18,
+      "name_fr": "Oudjana",
+      "delta_m": 11204,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1904,
+      "wilaya_code": 19,
+      "name_fr": "Ouled Si Ahmed",
+      "delta_m": 2438,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1906,
+      "wilaya_code": 19,
+      "name_fr": "Ain-Roua",
+      "delta_m": 2598,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1907,
+      "wilaya_code": 19,
+      "name_fr": "Draa-Kebila",
+      "delta_m": 2814,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1908,
+      "wilaya_code": 19,
+      "name_fr": "Bir-El-Arch",
+      "delta_m": 5227,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1910,
+      "wilaya_code": 19,
+      "name_fr": "Ouled Tebben",
+      "delta_m": 3367,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1917,
+      "wilaya_code": 19,
+      "name_fr": "Guidjel",
+      "delta_m": 11797,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1922,
+      "wilaya_code": 19,
+      "name_fr": "Beni Ourtilane",
+      "delta_m": 3959,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 1924,
+      "wilaya_code": 19,
+      "name_fr": "Ouled Addouane",
+      "delta_m": 9092,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1933,
+      "wilaya_code": 19,
+      "name_fr": "Mezloug",
+      "delta_m": 5597,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1934,
+      "wilaya_code": 19,
+      "name_fr": "Bir Haddada",
+      "delta_m": 4558,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1937,
+      "wilaya_code": 19,
+      "name_fr": "El Ouricia",
+      "delta_m": 1304,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1946,
+      "wilaya_code": 19,
+      "name_fr": "Beni-Mouhli",
+      "delta_m": 1088,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1947,
+      "wilaya_code": 19,
+      "name_fr": "Ouled Sabor",
+      "delta_m": 3685,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1953,
+      "wilaya_code": 19,
+      "name_fr": "Beni Oussine",
+      "delta_m": 3121,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1954,
+      "wilaya_code": 19,
+      "name_fr": "Ait-Tizi",
+      "delta_m": 50537,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 1956,
+      "wilaya_code": 19,
+      "name_fr": "Guelta Zerka",
+      "delta_m": 1108,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 1960,
+      "wilaya_code": 19,
+      "name_fr": "Tella",
+      "delta_m": 7821,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2010,
+      "wilaya_code": 20,
+      "name_fr": "El Hassasna",
+      "delta_m": 20365,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2011,
+      "wilaya_code": 20,
+      "name_fr": "Maamora",
+      "delta_m": 32001,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2107,
+      "wilaya_code": 21,
+      "name_fr": "Bekkouche Lakhdar",
+      "delta_m": 9870,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2109,
+      "wilaya_code": 21,
+      "name_fr": "Es Sebt",
+      "delta_m": 15496,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2111,
+      "wilaya_code": 21,
+      "name_fr": "Beni Zid",
+      "delta_m": 1351,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2116,
+      "wilaya_code": 21,
+      "name_fr": "El Arrouch",
+      "delta_m": 16676,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2120,
+      "wilaya_code": 21,
+      "name_fr": "Emjez Edchich",
+      "delta_m": 5222,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2121,
+      "wilaya_code": 21,
+      "name_fr": "Beni Oulbane",
+      "delta_m": 6373,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2124,
+      "wilaya_code": 21,
+      "name_fr": "Beni Bechir",
+      "delta_m": 1037,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2125,
+      "wilaya_code": 21,
+      "name_fr": "Salah Bouchaour",
+      "delta_m": 4280,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2128,
+      "wilaya_code": 21,
+      "name_fr": "Oum Toub",
+      "delta_m": 4147,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2130,
+      "wilaya_code": 21,
+      "name_fr": "Filfila",
+      "delta_m": 2936,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2131,
+      "wilaya_code": 21,
+      "name_fr": "Cheraia",
+      "delta_m": 1428,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2137,
+      "wilaya_code": 21,
+      "name_fr": "Hammadi Krouma",
+      "delta_m": 3247,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2201,
+      "wilaya_code": 22,
+      "name_fr": "Sidi Bel-Abbes",
+      "delta_m": 1333,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2205,
+      "wilaya_code": 22,
+      "name_fr": "Telagh",
+      "delta_m": 1688,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2213,
+      "wilaya_code": 22,
+      "name_fr": "Tilmouni",
+      "delta_m": 10899,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2220,
+      "wilaya_code": 22,
+      "name_fr": "Hassi Zahana",
+      "delta_m": 4236,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2221,
+      "wilaya_code": 22,
+      "name_fr": "Tabia",
+      "delta_m": 20843,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2223,
+      "wilaya_code": 22,
+      "name_fr": "Ras El Ma",
+      "delta_m": 1165,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2235,
+      "wilaya_code": 22,
+      "name_fr": "Sidi Chaib",
+      "delta_m": 28002,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2237,
+      "wilaya_code": 22,
+      "name_fr": "Oued Sebaa",
+      "delta_m": 10731,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2239,
+      "wilaya_code": 22,
+      "name_fr": "Sehala Thaoura",
+      "delta_m": 2340,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2241,
+      "wilaya_code": 22,
+      "name_fr": "Sidi Hamadouche",
+      "delta_m": 17966,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2242,
+      "wilaya_code": 22,
+      "name_fr": "Belarbi",
+      "delta_m": 2514,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2251,
+      "wilaya_code": 22,
+      "name_fr": "Benachiba Chelia",
+      "delta_m": 4627,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2301,
+      "wilaya_code": 23,
+      "name_fr": "Annaba",
+      "delta_m": 1065,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2305,
+      "wilaya_code": 23,
+      "name_fr": "El Bouni",
+      "delta_m": 6895,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2306,
+      "wilaya_code": 23,
+      "name_fr": "Oued El Aneb",
+      "delta_m": 1262,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2307,
+      "wilaya_code": 23,
+      "name_fr": "Cheurfa",
+      "delta_m": 2070,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2312,
+      "wilaya_code": 23,
+      "name_fr": "Treat",
+      "delta_m": 22748,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2405,
+      "wilaya_code": 24,
+      "name_fr": "Tamlouka",
+      "delta_m": 1043,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2411,
+      "wilaya_code": 24,
+      "name_fr": "Bendjarah",
+      "delta_m": 4889,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2422,
+      "wilaya_code": 24,
+      "name_fr": "Hammam N'bail",
+      "delta_m": 15494,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2434,
+      "wilaya_code": 24,
+      "name_fr": "Djeballah Khemissi",
+      "delta_m": 12761,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2501,
+      "wilaya_code": 25,
+      "name_fr": "Constantine",
+      "delta_m": 3046,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2502,
+      "wilaya_code": 25,
+      "name_fr": "Hamma Bouziane",
+      "delta_m": 1493,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2509,
+      "wilaya_code": 25,
+      "name_fr": "Ouled Rahmoun",
+      "delta_m": 1097,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2601,
+      "wilaya_code": 26,
+      "name_fr": "Médéa",
+      "delta_m": 1539,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2602,
+      "wilaya_code": 26,
+      "name_fr": "Ouzera",
+      "delta_m": 18698,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2603,
+      "wilaya_code": 67,
+      "name_fr": "Ouled Maaref",
+      "delta_m": 12898,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2612,
+      "wilaya_code": 26,
+      "name_fr": "Ouled Brahim",
+      "delta_m": 3083,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2614,
+      "wilaya_code": 26,
+      "name_fr": "Sidi Ziane",
+      "delta_m": 2936,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2622,
+      "wilaya_code": 67,
+      "name_fr": "Ouled Hellal",
+      "delta_m": 4501,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2628,
+      "wilaya_code": 26,
+      "name_fr": "Sidi Zahar",
+      "delta_m": 1308,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2641,
+      "wilaya_code": 67,
+      "name_fr": "Aïn Ouksir",
+      "delta_m": 3897,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2648,
+      "wilaya_code": 26,
+      "name_fr": "Seghouane",
+      "delta_m": 21157,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2651,
+      "wilaya_code": 67,
+      "name_fr": "Boughezoul",
+      "delta_m": 11004,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2658,
+      "wilaya_code": 67,
+      "name_fr": "Ouled Antar",
+      "delta_m": 5449,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2659,
+      "wilaya_code": 26,
+      "name_fr": "Bouaïchoune",
+      "delta_m": 2106,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2663,
+      "wilaya_code": 26,
+      "name_fr": "Khamsa Djoumaa",
+      "delta_m": 9386,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2664,
+      "wilaya_code": 67,
+      "name_fr": "Saneg",
+      "delta_m": 37312,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2706,
+      "wilaya_code": 27,
+      "name_fr": "Hassi Mameche",
+      "delta_m": 2637,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2708,
+      "wilaya_code": 27,
+      "name_fr": "Sour",
+      "delta_m": 16615,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2711,
+      "wilaya_code": 27,
+      "name_fr": "Kheir-Eddine",
+      "delta_m": 3733,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2715,
+      "wilaya_code": 27,
+      "name_fr": "Nekmaria",
+      "delta_m": 1871,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2716,
+      "wilaya_code": 27,
+      "name_fr": "Sidi-Lakhdar",
+      "delta_m": 2988,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2721,
+      "wilaya_code": 27,
+      "name_fr": "Ain-Sidi Cherif",
+      "delta_m": 1066,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2724,
+      "wilaya_code": 27,
+      "name_fr": "Souaflia",
+      "delta_m": 1253,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2729,
+      "wilaya_code": 27,
+      "name_fr": "Tazgait",
+      "delta_m": 7507,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2730,
+      "wilaya_code": 27,
+      "name_fr": "Safsaf",
+      "delta_m": 26100,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2732,
+      "wilaya_code": 27,
+      "name_fr": "Hassiane",
+      "delta_m": 3993,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2802,
+      "wilaya_code": 28,
+      "name_fr": "Maadid",
+      "delta_m": 5760,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2803,
+      "wilaya_code": 28,
+      "name_fr": "Hammam Dhalaa",
+      "delta_m": 8687,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2805,
+      "wilaya_code": 28,
+      "name_fr": "Tarmount",
+      "delta_m": 17695,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2807,
+      "wilaya_code": 68,
+      "name_fr": "Khoubana",
+      "delta_m": 2775,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2810,
+      "wilaya_code": 28,
+      "name_fr": "Ouled Madhi",
+      "delta_m": 4164,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2815,
+      "wilaya_code": 28,
+      "name_fr": "Belaïba",
+      "delta_m": 20488,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2822,
+      "wilaya_code": 68,
+      "name_fr": "Sidi Ameur",
+      "delta_m": 1703,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2826,
+      "wilaya_code": 68,
+      "name_fr": "El Houamed",
+      "delta_m": 22910,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2828,
+      "wilaya_code": 28,
+      "name_fr": "Ouled Mansour",
+      "delta_m": 1743,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2829,
+      "wilaya_code": 28,
+      "name_fr": "Maarif",
+      "delta_m": 8672,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2831,
+      "wilaya_code": 28,
+      "name_fr": "Bouti Sayah",
+      "delta_m": 23226,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2832,
+      "wilaya_code": 28,
+      "name_fr": "Khetouti Sed El Djir",
+      "delta_m": 9377,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2833,
+      "wilaya_code": 68,
+      "name_fr": "Zarzour",
+      "delta_m": 36890,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2836,
+      "wilaya_code": 68,
+      "name_fr": "Bir Foda",
+      "delta_m": 12684,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2837,
+      "wilaya_code": 68,
+      "name_fr": "Aïn Farès",
+      "delta_m": 37176,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2840,
+      "wilaya_code": 28,
+      "name_fr": "Souamaa",
+      "delta_m": 7440,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2842,
+      "wilaya_code": 68,
+      "name_fr": "Medjedel",
+      "delta_m": 20638,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2843,
+      "wilaya_code": 68,
+      "name_fr": "Slim",
+      "delta_m": 4842,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2903,
+      "wilaya_code": 29,
+      "name_fr": "Tizi",
+      "delta_m": 7286,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2904,
+      "wilaya_code": 29,
+      "name_fr": "Hacine",
+      "delta_m": 16528,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2905,
+      "wilaya_code": 29,
+      "name_fr": "Maoussa",
+      "delta_m": 8251,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2907,
+      "wilaya_code": 29,
+      "name_fr": "El Hachem",
+      "delta_m": 30929,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2912,
+      "wilaya_code": 29,
+      "name_fr": "Ghriss",
+      "delta_m": 3474,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2914,
+      "wilaya_code": 29,
+      "name_fr": "Matemore",
+      "delta_m": 15056,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2915,
+      "wilaya_code": 29,
+      "name_fr": "Makhda",
+      "delta_m": 3030,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2916,
+      "wilaya_code": 29,
+      "name_fr": "Sidi Boussaid",
+      "delta_m": 4453,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2918,
+      "wilaya_code": 29,
+      "name_fr": "Ain Fekan",
+      "delta_m": 1092,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2919,
+      "wilaya_code": 29,
+      "name_fr": "Benian",
+      "delta_m": 15028,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2920,
+      "wilaya_code": 29,
+      "name_fr": "Khalouia",
+      "delta_m": 13324,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2921,
+      "wilaya_code": 29,
+      "name_fr": "El Menaouer",
+      "delta_m": 16193,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2923,
+      "wilaya_code": 29,
+      "name_fr": "Aouf",
+      "delta_m": 18778,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2925,
+      "wilaya_code": 29,
+      "name_fr": "Ain Frass",
+      "delta_m": 1129,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 2928,
+      "wilaya_code": 29,
+      "name_fr": "Alaimia",
+      "delta_m": 20418,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2929,
+      "wilaya_code": 29,
+      "name_fr": "El Gaada",
+      "delta_m": 16687,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2930,
+      "wilaya_code": 29,
+      "name_fr": "Zahana",
+      "delta_m": 23863,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2933,
+      "wilaya_code": 29,
+      "name_fr": "Ferraguig",
+      "delta_m": 10748,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2935,
+      "wilaya_code": 29,
+      "name_fr": "Sedjerara",
+      "delta_m": 10040,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2938,
+      "wilaya_code": 29,
+      "name_fr": "El Gueitena",
+      "delta_m": 19816,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2939,
+      "wilaya_code": 29,
+      "name_fr": "El Mamounia",
+      "delta_m": 9429,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2941,
+      "wilaya_code": 29,
+      "name_fr": "Gharrous",
+      "delta_m": 8910,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2942,
+      "wilaya_code": 29,
+      "name_fr": "Guerdjoum",
+      "delta_m": 3691,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2945,
+      "wilaya_code": 29,
+      "name_fr": "Nesmot",
+      "delta_m": 12953,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 2946,
+      "wilaya_code": 29,
+      "name_fr": "Sidi Abdeldjebar",
+      "delta_m": 20439,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 2947,
+      "wilaya_code": 29,
+      "name_fr": "Sehailia",
+      "delta_m": 26535,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3004,
+      "wilaya_code": 30,
+      "name_fr": "Hassi Messaoud",
+      "delta_m": 1372,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3021,
+      "wilaya_code": 30,
+      "name_fr": "El Borma",
+      "delta_m": 6997,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3101,
+      "wilaya_code": 31,
+      "name_fr": "Oran",
+      "delta_m": 1612,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3102,
+      "wilaya_code": 31,
+      "name_fr": "Gdyel",
+      "delta_m": 2534,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3103,
+      "wilaya_code": 31,
+      "name_fr": "Bir El Djir",
+      "delta_m": 2770,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3104,
+      "wilaya_code": 31,
+      "name_fr": "Hassi Bounif",
+      "delta_m": 1347,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3108,
+      "wilaya_code": 31,
+      "name_fr": "Marsat El Hadjadj",
+      "delta_m": 1291,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3109,
+      "wilaya_code": 31,
+      "name_fr": "Ain Turk",
+      "delta_m": 1523,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3113,
+      "wilaya_code": 31,
+      "name_fr": "Sidi Chami",
+      "delta_m": 3461,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3114,
+      "wilaya_code": 31,
+      "name_fr": "Boufatis",
+      "delta_m": 6314,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3116,
+      "wilaya_code": 31,
+      "name_fr": "Bousfer",
+      "delta_m": 1068,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3118,
+      "wilaya_code": 31,
+      "name_fr": "El Braya",
+      "delta_m": 1896,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3121,
+      "wilaya_code": 31,
+      "name_fr": "Hassi Mefsoukh",
+      "delta_m": 1637,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3123,
+      "wilaya_code": 31,
+      "name_fr": "Messerghin",
+      "delta_m": 4600,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3124,
+      "wilaya_code": 31,
+      "name_fr": "Boutlelis",
+      "delta_m": 5937,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3201,
+      "wilaya_code": 32,
+      "name_fr": "El Bayadh",
+      "delta_m": 4157,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3204,
+      "wilaya_code": 32,
+      "name_fr": "Brézina",
+      "delta_m": 1714,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3210,
+      "wilaya_code": 32,
+      "name_fr": "Bougtob",
+      "delta_m": 12486,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3212,
+      "wilaya_code": 32,
+      "name_fr": "Kef El Ahmar",
+      "delta_m": 33476,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3217,
+      "wilaya_code": 32,
+      "name_fr": "Cheguig",
+      "delta_m": 11799,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3218,
+      "wilaya_code": 32,
+      "name_fr": "Sidi Amar",
+      "delta_m": 1801,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3220,
+      "wilaya_code": 32,
+      "name_fr": "Tousmouline",
+      "delta_m": 4525,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3221,
+      "wilaya_code": 32,
+      "name_fr": "Sidi Slimane",
+      "delta_m": 108705,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3301,
+      "wilaya_code": 33,
+      "name_fr": "Illizi",
+      "delta_m": 2344,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3304,
+      "wilaya_code": 33,
+      "name_fr": "Bordj Omar Driss",
+      "delta_m": 9721,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3306,
+      "wilaya_code": 33,
+      "name_fr": "In Amenas",
+      "delta_m": 5781,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3403,
+      "wilaya_code": 34,
+      "name_fr": "Bordj Zemmoura",
+      "delta_m": 1404,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3404,
+      "wilaya_code": 34,
+      "name_fr": "Mansoura",
+      "delta_m": 1420,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3406,
+      "wilaya_code": 34,
+      "name_fr": "Ben Daoud",
+      "delta_m": 25559,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3407,
+      "wilaya_code": 34,
+      "name_fr": "El Achir",
+      "delta_m": 1152,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3412,
+      "wilaya_code": 34,
+      "name_fr": "Belimour",
+      "delta_m": 6705,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3414,
+      "wilaya_code": 34,
+      "name_fr": "Teniet En Nasr",
+      "delta_m": 16446,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3418,
+      "wilaya_code": 34,
+      "name_fr": "Ouled Dahmane",
+      "delta_m": 16147,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3419,
+      "wilaya_code": 34,
+      "name_fr": "Hasnaoua",
+      "delta_m": 1315,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3425,
+      "wilaya_code": 34,
+      "name_fr": "Colla",
+      "delta_m": 19035,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3426,
+      "wilaya_code": 34,
+      "name_fr": "Tixter",
+      "delta_m": 38418,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3427,
+      "wilaya_code": 34,
+      "name_fr": "El Euch",
+      "delta_m": 9651,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3428,
+      "wilaya_code": 34,
+      "name_fr": "El Annasseur",
+      "delta_m": 2955,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3429,
+      "wilaya_code": 34,
+      "name_fr": "Tassamert",
+      "delta_m": 1494,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3430,
+      "wilaya_code": 34,
+      "name_fr": "Ain Tesra",
+      "delta_m": 2577,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3432,
+      "wilaya_code": 34,
+      "name_fr": "Ghailasa",
+      "delta_m": 12221,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3433,
+      "wilaya_code": 34,
+      "name_fr": "Rabta",
+      "delta_m": 2469,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3504,
+      "wilaya_code": 35,
+      "name_fr": "Afir",
+      "delta_m": 26651,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3506,
+      "wilaya_code": 35,
+      "name_fr": "Baghlia",
+      "delta_m": 1593,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3507,
+      "wilaya_code": 35,
+      "name_fr": "Sidi Daoud",
+      "delta_m": 1042,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3510,
+      "wilaya_code": 35,
+      "name_fr": "Isser",
+      "delta_m": 2275,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3514,
+      "wilaya_code": 35,
+      "name_fr": "Chabet El Ameur",
+      "delta_m": 1110,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3519,
+      "wilaya_code": 35,
+      "name_fr": "Corso",
+      "delta_m": 2251,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3520,
+      "wilaya_code": 35,
+      "name_fr": "Ouled Moussa",
+      "delta_m": 2229,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3531,
+      "wilaya_code": 35,
+      "name_fr": "Souk El Had",
+      "delta_m": 3354,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3532,
+      "wilaya_code": 35,
+      "name_fr": "Boudouaou El Bahri",
+      "delta_m": 1650,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3533,
+      "wilaya_code": 35,
+      "name_fr": "Ouled Hedadj",
+      "delta_m": 1031,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3604,
+      "wilaya_code": 36,
+      "name_fr": "Bougous",
+      "delta_m": 11101,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3606,
+      "wilaya_code": 36,
+      "name_fr": "Ain El Assel",
+      "delta_m": 4268,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3608,
+      "wilaya_code": 36,
+      "name_fr": "Bouteldja",
+      "delta_m": 7169,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3610,
+      "wilaya_code": 36,
+      "name_fr": "Berrihane",
+      "delta_m": 5112,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3612,
+      "wilaya_code": 36,
+      "name_fr": "Chefia",
+      "delta_m": 7391,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3617,
+      "wilaya_code": 36,
+      "name_fr": "Asfour",
+      "delta_m": 20803,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3621,
+      "wilaya_code": 36,
+      "name_fr": "Ain Kerma",
+      "delta_m": 2995,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3623,
+      "wilaya_code": 36,
+      "name_fr": "Hammam Beni Salah",
+      "delta_m": 4901,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3701,
+      "wilaya_code": 37,
+      "name_fr": "Tindouf",
+      "delta_m": 1310,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3807,
+      "wilaya_code": 38,
+      "name_fr": "Melaab",
+      "delta_m": 4105,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3808,
+      "wilaya_code": 38,
+      "name_fr": "Sidi Lantri",
+      "delta_m": 9163,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3811,
+      "wilaya_code": 38,
+      "name_fr": "Khemisti",
+      "delta_m": 1501,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3816,
+      "wilaya_code": 38,
+      "name_fr": "Larbaa",
+      "delta_m": 2805,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3817,
+      "wilaya_code": 38,
+      "name_fr": "Maacem",
+      "delta_m": 4560,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3819,
+      "wilaya_code": 38,
+      "name_fr": "Tamellahet",
+      "delta_m": 11273,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 3820,
+      "wilaya_code": 38,
+      "name_fr": "Sidi Slimane",
+      "delta_m": 13759,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 3822,
+      "wilaya_code": 38,
+      "name_fr": "Beni Lahcene",
+      "delta_m": 7246,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3905,
+      "wilaya_code": 39,
+      "name_fr": "Nakhla",
+      "delta_m": 6774,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3910,
+      "wilaya_code": 39,
+      "name_fr": "Taghzout",
+      "delta_m": 56577,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3911,
+      "wilaya_code": 39,
+      "name_fr": "Debila",
+      "delta_m": 1656,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 3918,
+      "wilaya_code": 39,
+      "name_fr": "Magrane",
+      "delta_m": 6978,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3919,
+      "wilaya_code": 39,
+      "name_fr": "Ben Guecha",
+      "delta_m": 103877,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3920,
+      "wilaya_code": 39,
+      "name_fr": "Ourmes",
+      "delta_m": 36910,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 3926,
+      "wilaya_code": 39,
+      "name_fr": "Mih Ouansa",
+      "delta_m": 4602,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4011,
+      "wilaya_code": 40,
+      "name_fr": "Chechar",
+      "delta_m": 13391,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4014,
+      "wilaya_code": 40,
+      "name_fr": "Tamza",
+      "delta_m": 7058,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4018,
+      "wilaya_code": 40,
+      "name_fr": "M'sara",
+      "delta_m": 52605,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4020,
+      "wilaya_code": 40,
+      "name_fr": "Khirane",
+      "delta_m": 36833,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4021,
+      "wilaya_code": 40,
+      "name_fr": "Chelia",
+      "delta_m": 12938,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4103,
+      "wilaya_code": 41,
+      "name_fr": "Hanencha",
+      "delta_m": 11456,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4104,
+      "wilaya_code": 41,
+      "name_fr": "Machroha",
+      "delta_m": 8470,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4105,
+      "wilaya_code": 41,
+      "name_fr": "Ouled Driss",
+      "delta_m": 1149,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4110,
+      "wilaya_code": 41,
+      "name_fr": "Haddada",
+      "delta_m": 5852,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4111,
+      "wilaya_code": 41,
+      "name_fr": "Khedara",
+      "delta_m": 11972,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4113,
+      "wilaya_code": 41,
+      "name_fr": "Ouled Moumen",
+      "delta_m": 4800,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4114,
+      "wilaya_code": 41,
+      "name_fr": "Bir Bouhouche",
+      "delta_m": 17171,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4115,
+      "wilaya_code": 41,
+      "name_fr": "M'daourouche",
+      "delta_m": 4949,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4119,
+      "wilaya_code": 41,
+      "name_fr": "Ouillen",
+      "delta_m": 3644,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4122,
+      "wilaya_code": 41,
+      "name_fr": "Ragouba",
+      "delta_m": 2520,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4124,
+      "wilaya_code": 41,
+      "name_fr": "Oued Kebrit",
+      "delta_m": 1150,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4125,
+      "wilaya_code": 41,
+      "name_fr": "Terraguelt",
+      "delta_m": 23092,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4126,
+      "wilaya_code": 41,
+      "name_fr": "Zouabi",
+      "delta_m": 14618,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 4213,
+      "wilaya_code": 42,
+      "name_fr": "Sidi-Amar",
+      "delta_m": 1047,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4215,
+      "wilaya_code": 42,
+      "name_fr": "Nador",
+      "delta_m": 7256,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4217,
+      "wilaya_code": 42,
+      "name_fr": "Ain Tagourait",
+      "delta_m": 2839,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4223,
+      "wilaya_code": 42,
+      "name_fr": "Damous",
+      "delta_m": 3196,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4232,
+      "wilaya_code": 42,
+      "name_fr": "Sidi Ghiles",
+      "delta_m": 2851,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4304,
+      "wilaya_code": 43,
+      "name_fr": "Oued Athmenia",
+      "delta_m": 5095,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4307,
+      "wilaya_code": 43,
+      "name_fr": "Oued Seguen",
+      "delta_m": 3058,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4310,
+      "wilaya_code": 43,
+      "name_fr": "Oued Endja",
+      "delta_m": 7826,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4313,
+      "wilaya_code": 43,
+      "name_fr": "Tiberguent",
+      "delta_m": 6284,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4316,
+      "wilaya_code": 43,
+      "name_fr": "Tassala Lematai",
+      "delta_m": 31148,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 4319,
+      "wilaya_code": 43,
+      "name_fr": "Tassadane Haddada",
+      "delta_m": 2343,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4320,
+      "wilaya_code": 43,
+      "name_fr": "Derrahi Bousselah",
+      "delta_m": 2583,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4321,
+      "wilaya_code": 43,
+      "name_fr": "Minar Zarza",
+      "delta_m": 2914,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4323,
+      "wilaya_code": 43,
+      "name_fr": "Terrai Bainen",
+      "delta_m": 2600,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4329,
+      "wilaya_code": 43,
+      "name_fr": "El Ayadi Barbes",
+      "delta_m": 8360,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4405,
+      "wilaya_code": 44,
+      "name_fr": "Hammam-Righa",
+      "delta_m": 1090,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4406,
+      "wilaya_code": 44,
+      "name_fr": "Arib",
+      "delta_m": 5851,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4413,
+      "wilaya_code": 44,
+      "name_fr": "Oued Chorfa",
+      "delta_m": 5125,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4416,
+      "wilaya_code": 44,
+      "name_fr": "Rouina",
+      "delta_m": 1148,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4417,
+      "wilaya_code": 44,
+      "name_fr": "Zeddine",
+      "delta_m": 2811,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4418,
+      "wilaya_code": 44,
+      "name_fr": "Hassania",
+      "delta_m": 9732,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4421,
+      "wilaya_code": 44,
+      "name_fr": "Tarik-Ibn-Ziad",
+      "delta_m": 17644,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4426,
+      "wilaya_code": 44,
+      "name_fr": "Ain-Benian",
+      "delta_m": 3393,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4428,
+      "wilaya_code": 44,
+      "name_fr": "Birbouche",
+      "delta_m": 24010,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4430,
+      "wilaya_code": 44,
+      "name_fr": "Mekhatria",
+      "delta_m": 17339,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4431,
+      "wilaya_code": 44,
+      "name_fr": "Bathia",
+      "delta_m": 14020,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4432,
+      "wilaya_code": 44,
+      "name_fr": "Tacheta Zegagha",
+      "delta_m": 22197,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4433,
+      "wilaya_code": 44,
+      "name_fr": "Ain-Bouyahia",
+      "delta_m": 3101,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4434,
+      "wilaya_code": 44,
+      "name_fr": "El-Maine",
+      "delta_m": 10476,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4436,
+      "wilaya_code": 44,
+      "name_fr": "Belaas",
+      "delta_m": 13919,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4505,
+      "wilaya_code": 45,
+      "name_fr": "Sfissifa",
+      "delta_m": 1029,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4506,
+      "wilaya_code": 45,
+      "name_fr": "Moghrar",
+      "delta_m": 1167,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4507,
+      "wilaya_code": 45,
+      "name_fr": "Asla",
+      "delta_m": 2016,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4601,
+      "wilaya_code": 46,
+      "name_fr": "Ain Temouchent",
+      "delta_m": 1427,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4605,
+      "wilaya_code": 46,
+      "name_fr": "Bouzedjar",
+      "delta_m": 4093,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4611,
+      "wilaya_code": 46,
+      "name_fr": "Chentouf",
+      "delta_m": 1402,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4701,
+      "wilaya_code": 47,
+      "name_fr": "Ghardaia",
+      "delta_m": 1013,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4708,
+      "wilaya_code": 47,
+      "name_fr": "Zelfana",
+      "delta_m": 1182,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4709,
+      "wilaya_code": 47,
+      "name_fr": "Sebseb",
+      "delta_m": 1022,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4803,
+      "wilaya_code": 48,
+      "name_fr": "Belaassel Bouzagza",
+      "delta_m": 7233,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4814,
+      "wilaya_code": 48,
+      "name_fr": "Djidiouia",
+      "delta_m": 1289,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4815,
+      "wilaya_code": 48,
+      "name_fr": "El-Guettar",
+      "delta_m": 11477,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4816,
+      "wilaya_code": 48,
+      "name_fr": "Hamri",
+      "delta_m": 33256,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4823,
+      "wilaya_code": 48,
+      "name_fr": "Kalaa",
+      "delta_m": 2273,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4826,
+      "wilaya_code": 48,
+      "name_fr": "Oued El Djemaa",
+      "delta_m": 5853,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4828,
+      "wilaya_code": 48,
+      "name_fr": "Mendes",
+      "delta_m": 1322,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4831,
+      "wilaya_code": 48,
+      "name_fr": "Souk El Had",
+      "delta_m": 4458,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4833,
+      "wilaya_code": 48,
+      "name_fr": "El Hassi",
+      "delta_m": 8512,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4836,
+      "wilaya_code": 48,
+      "name_fr": "El Ouldja",
+      "delta_m": 27360,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4901,
+      "wilaya_code": 49,
+      "name_fr": "Timimoun",
+      "delta_m": 1169,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4904,
+      "wilaya_code": 49,
+      "name_fr": "Ouled Said",
+      "delta_m": 20362,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 4905,
+      "wilaya_code": 49,
+      "name_fr": "Tinerkouk",
+      "delta_m": 94922,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 4906,
+      "wilaya_code": 49,
+      "name_fr": "Deldoul",
+      "delta_m": 12161,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4908,
+      "wilaya_code": 49,
+      "name_fr": "Aougrout",
+      "delta_m": 4761,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 4909,
+      "wilaya_code": 49,
+      "name_fr": "Talmine",
+      "delta_m": 34793,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 5002,
+      "wilaya_code": 50,
+      "name_fr": "Timiaouine",
+      "delta_m": 1254,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5103,
+      "wilaya_code": 51,
+      "name_fr": "Besbes",
+      "delta_m": 2208,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5104,
+      "wilaya_code": 51,
+      "name_fr": "Sidi Khaled",
+      "delta_m": 1657,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5201,
+      "wilaya_code": 52,
+      "name_fr": "Beni-Abbes",
+      "delta_m": 5754,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5203,
+      "wilaya_code": 52,
+      "name_fr": "Timoudi",
+      "delta_m": 30519,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 5205,
+      "wilaya_code": 52,
+      "name_fr": "Igli",
+      "delta_m": 20740,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5207,
+      "wilaya_code": 52,
+      "name_fr": "El Ouata",
+      "delta_m": 2139,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5302,
+      "wilaya_code": 53,
+      "name_fr": "Inghar",
+      "delta_m": 60807,
+      "reason": "stored point outside its own OSM commune boundary, but the admin_centre evidence is incomplete; needs a hand decision"
+    },
+    {
+      "code_commune": 5502,
+      "wilaya_code": 55,
+      "name_fr": "Blidet Amor",
+      "delta_m": 1218,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5504,
+      "wilaya_code": 55,
+      "name_fr": "Nezla",
+      "delta_m": 1534,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 5509,
+      "wilaya_code": 55,
+      "name_fr": "Temacine",
+      "delta_m": 1591,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5510,
+      "wilaya_code": 55,
+      "name_fr": "Benaceur",
+      "delta_m": 29632,
+      "reason": "decided coordinate error: stored point outside its own OSM commune boundary, admin_centre inside it and named for the commune; awaiting the correction release (pending-corrections-2026-09-29.json)"
+    },
+    {
+      "code_commune": 5512,
+      "wilaya_code": 55,
+      "name_fr": "Megarine",
+      "delta_m": 1416,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5702,
+      "wilaya_code": 57,
+      "name_fr": "Still",
+      "delta_m": 7683,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    },
+    {
+      "code_commune": 5803,
+      "wilaya_code": 58,
+      "name_fr": "Hassi Gara",
+      "delta_m": 1689,
+      "reason": "unreviewed: stored point is inside its own OSM commune, so this is two hand-placed claims about one seat; pending the one-time review of every delta over 300 m"
+    }
+  ]
+}

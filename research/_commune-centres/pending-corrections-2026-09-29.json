@@ -1,0 +1,5058 @@
+{
+  "generated": "2026-09-29",
+  "source": "OpenStreetMap administrative relations (admin_level 4 and 8) and their admin_centre nodes, via Overpass",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "timestamp_osm_base": "2026-09-29T12:54:47Z",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "method": "Every row here fails the 2026-09-27 standard in full: the stored point is outside the commune's own unsimplified OSM admin_level=8 boundary, that relation's admin_centre node is inside it and inside the declared wilaya, and the node carries the commune's own name. `to` is that node rounded to 6 decimals. Corrections-file shaped, NOT applied.",
+  "applied": false,
+  "count": 174,
+  "corrections": [
+    {
+      "code_commune": 3221,
+      "wilaya_code": 32,
+      "name_fr": "Sidi Slimane",
+      "name_ar": "سيدي سليمان",
+      "from": [
+        0.554708,
+        33.833333
+      ],
+      "to": [
+        1.731609,
+        33.832116
+      ],
+      "delta_m": 108705,
+      "osm": {
+        "relation": 6533990,
+        "admin_centre_node": 1576761829,
+        "ref:ONS": "3221",
+        "name": "Sidi Slimane ⵙⵉⴷⵉ ⵙⵍⵉⵎⴰⵏ سيدي سليمان",
+        "admin_centre_place": "village",
+        "admin_centre_name": "سيدي سليمان ⵙⵉⴷⵉ ⵙⵍⵉⵎⴰⵏ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 119,
+      "wilaya_code": 1,
+      "name_fr": "Akabli",
+      "name_ar": "اقبلي",
+      "from": [
+        0.2833,
+        26.70828
+      ],
+      "to": [
+        1.369196,
+        26.713392
+      ],
+      "delta_m": 107862,
+      "osm": {
+        "relation": 4171603,
+        "admin_centre_node": 1573306343,
+        "ref:ONS": "0119",
+        "name": "Akabli",
+        "admin_centre_place": "village",
+        "admin_centre_name": "أقبلي ⴰⵇⴰⴱⵍⵉ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3919,
+      "wilaya_code": 39,
+      "name_fr": "Ben Guecha",
+      "name_ar": "بن قشة",
+      "from": [
+        7.1517,
+        33.355153
+      ],
+      "to": [
+        7.616508,
+        34.205717
+      ],
+      "delta_m": 103877,
+      "osm": {
+        "relation": 5139455,
+        "admin_centre_node": 1565592221,
+        "ref:ONS": "3919",
+        "name": "Beni Guecha ⴱⴻⵏ ⴳⴻⵛⵛⴰ بن قشة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Beni Guecha;ⴱⴻⵏ ⴳⴻⵛⵛⴰ;بني قشة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1425,
+      "wilaya_code": 14,
+      "name_fr": "Sebaïne",
+      "name_ar": "سبعين",
+      "from": [
+        1.603611,
+        34.63797
+      ],
+      "to": [
+        1.604338,
+        35.455391
+      ],
+      "delta_m": 90893,
+      "osm": {
+        "relation": 6545441,
+        "admin_centre_node": 929438421,
+        "ref:ONS": "1425",
+        "name": "Sebaïne ⵙⴻⴱⵄⵉⵏ سبعين",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sebaïne"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3910,
+      "wilaya_code": 39,
+      "name_fr": "Taghzout",
+      "name_ar": "تغزوت",
+      "from": [
+        6.7978,
+        32.966667
+      ],
+      "to": [
+        6.799851,
+        33.475477
+      ],
+      "delta_m": 56577,
+      "osm": {
+        "relation": 4489521,
+        "admin_centre_node": 1565786076,
+        "ref:ONS": "3910",
+        "name": "Taghzout ⵜⴰⵖⵣⵓⵜ تغزوت",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Taghzout;ⵜⴰⵖⵣⵓⵜ;تغزوت"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 121,
+      "wilaya_code": 1,
+      "name_fr": "Ouled Ahmed Timmi",
+      "name_ar": "أولاد أحمد تيمي",
+      "from": [
+        0.2863,
+        27.851111
+      ],
+      "to": [
+        -0.281279,
+        27.851041
+      ],
+      "delta_m": 55801,
+      "osm": {
+        "relation": 4171614,
+        "admin_centre_node": 4569325469,
+        "ref:ONS": "0121",
+        "name": "أولاد أحمد تيمي",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ouled Ahmed Timmi; ⵡⵍⴰⴷ ⴰⵃⵎⴻⴷ ⵜⵉⵎⵎⵉ;أولاد أحمد تيمي"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4018,
+      "wilaya_code": 40,
+      "name_fr": "M'sara",
+      "name_ar": "مصارة",
+      "from": [
+        7.143333,
+        35.321667
+      ],
+      "to": [
+        6.572628,
+        35.239433
+      ],
+      "delta_m": 52605,
+      "osm": {
+        "relation": 5846914,
+        "admin_centre_node": 1514825483,
+        "ref:ONS": "4018",
+        "name": "M'Sara ⵎⵚⴰⵔⴰ أمصارة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "لمصارة ⵍⵎⵙⴰⵔⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1414,
+      "wilaya_code": 14,
+      "name_fr": "Rahouia",
+      "name_ar": "الرحوية",
+      "from": [
+        1.6,
+        35.530278
+      ],
+      "to": [
+        1.023783,
+        35.53032
+      ],
+      "delta_m": 52143,
+      "osm": {
+        "relation": 6545439,
+        "admin_centre_node": 463218174,
+        "ref:ONS": "1414",
+        "name": "Rahouia ⵔⴻⵃⵡⵉⵢⵢⴰ رحوية",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Rahouia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 102,
+      "wilaya_code": 1,
+      "name_fr": "Tamest",
+      "name_ar": "تامست",
+      "from": [
+        0.2667,
+        27.416666
+      ],
+      "to": [
+        -0.245796,
+        27.423742
+      ],
+      "delta_m": 50591,
+      "osm": {
+        "relation": 4171622,
+        "admin_centre_node": 3172476761,
+        "ref:ONS": "0102",
+        "name": "تامست",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تامست ⵜⴰⵎⵎⴰⵙⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1954,
+      "wilaya_code": 19,
+      "name_fr": "Ait-Tizi",
+      "name_ar": "ايت تيزي",
+      "from": [
+        5.2967,
+        36.1247
+      ],
+      "to": [
+        5.128299,
+        36.558476
+      ],
+      "delta_m": 50537,
+      "osm": {
+        "relation": 1625360,
+        "admin_centre_node": 2960491719,
+        "ref:ONS": "1954",
+        "name": "Aït Tizi",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ayt Tizi"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1420,
+      "wilaya_code": 14,
+      "name_fr": "Naïma",
+      "name_ar": "النعيمة",
+      "from": [
+        1.4775,
+        34.639444
+      ],
+      "to": [
+        1.476987,
+        35.090091
+      ],
+      "delta_m": 50110,
+      "osm": {
+        "relation": 6545437,
+        "admin_centre_node": 3178561039,
+        "ref:ONS": "1420",
+        "name": "Naima ⵏⵄⵉⵎⴰ النعيمة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Naïma"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 106,
+      "wilaya_code": 1,
+      "name_fr": "Tit",
+      "name_ar": "تيت",
+      "from": [
+        1.015,
+        26.950833
+      ],
+      "to": [
+        1.49102,
+        26.938302
+      ],
+      "delta_m": 47206,
+      "osm": {
+        "relation": 4171626,
+        "admin_centre_node": 429533385,
+        "ref:ONS": "0106",
+        "name": "Tit",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تيط ⵜⵉⵟ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 556,
+      "wilaya_code": 60,
+      "name_fr": "Ouled Ammar",
+      "name_ar": "أولاد عمار",
+      "from": [
+        5.34,
+        35.15
+      ],
+      "to": [
+        5.156023,
+        35.462256
+      ],
+      "delta_m": 38526,
+      "osm": {
+        "relation": 5175812,
+        "admin_centre_node": 1431038797,
+        "ref:ONS": "0556",
+        "name": "Ouled Ammar ⴰⵢⵜ ⴰⵎⵎⴰⵔ أولاد عمار",
+        "admin_centre_place": "village",
+        "admin_centre_name": "أولاد عمار ⴰⵢⵜ ⵄⴻⵎⵎⴰⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3426,
+      "wilaya_code": 34,
+      "name_fr": "Tixter",
+      "name_ar": "تيكستار",
+      "from": [
+        4.654722,
+        36.0475
+      ],
+      "to": [
+        5.082035,
+        36.046707
+      ],
+      "delta_m": 38418,
+      "osm": {
+        "relation": 4484437,
+        "admin_centre_node": 832476470,
+        "ref:ONS": "3426",
+        "name": "Tixter ⵜⵉⴽⴻⵙⵜⴰⵔ تكستار",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tixter"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 510,
+      "wilaya_code": 5,
+      "name_fr": "Guigba",
+      "name_ar": "القيقبة",
+      "from": [
+        6,
+        35.807778
+      ],
+      "to": [
+        5.589648,
+        35.734156
+      ],
+      "delta_m": 37916,
+      "osm": {
+        "relation": 5149244,
+        "admin_centre_node": 460974280,
+        "ref:ONS": "0510",
+        "name": "Guigba ⴳⵉⴳⴱⴰ القيقبة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Guigba"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2664,
+      "wilaya_code": 67,
+      "name_fr": "Saneg",
+      "name_ar": "السانق",
+      "from": [
+        3.253056,
+        35.8514
+      ],
+      "to": [
+        2.839067,
+        35.851398
+      ],
+      "delta_m": 37312,
+      "osm": {
+        "relation": 2525173,
+        "admin_centre_node": 1068668404,
+        "ref:ONS": "2664",
+        "name": "Saneg ⵙⴰⵏⴻⴳ سانق",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Saneg"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2837,
+      "wilaya_code": 68,
+      "name_fr": "Aïn Farès",
+      "name_ar": "عين فارس",
+      "from": [
+        4.428333,
+        35.035833
+      ],
+      "to": [
+        4.428897,
+        34.701506
+      ],
+      "delta_m": 37176,
+      "osm": {
+        "relation": 5538988,
+        "admin_centre_node": 1561633069,
+        "ref:ONS": "2837",
+        "name": "Aïn Fares ⵄⵉⵏ ⴼⴰⵔⴻⵙ عين فارس",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Aïn Fares"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3920,
+      "wilaya_code": 39,
+      "name_fr": "Ourmes",
+      "name_ar": "ورماس",
+      "from": [
+        6.416667,
+        33.541667
+      ],
+      "to": [
+        6.779031,
+        33.404491
+      ],
+      "delta_m": 36910,
+      "osm": {
+        "relation": 4489484,
+        "admin_centre_node": 1565785970,
+        "ref:ONS": "3920",
+        "name": "Ourmes ⵓⵔⵎⴰⵙ ورماس",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ourmes;ⵓⵔⵎⴰⵙ;ورماس"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2833,
+      "wilaya_code": 68,
+      "name_fr": "Zarzour",
+      "name_ar": "الزرزور",
+      "from": [
+        4.433333,
+        35.035833
+      ],
+      "to": [
+        4.834177,
+        35.084891
+      ],
+      "delta_m": 36890,
+      "osm": {
+        "relation": 5558909,
+        "admin_centre_node": 3772778639,
+        "ref:ONS": "2833",
+        "name": "Zarzour ⵣⴻⵔⵥⵓⵔ الزرزور",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Zerzour"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4020,
+      "wilaya_code": 40,
+      "name_fr": "Khirane",
+      "name_ar": "خيران",
+      "from": [
+        6.7593,
+        34.6667
+      ],
+      "to": [
+        6.761414,
+        34.99794
+      ],
+      "delta_m": 36833,
+      "osm": {
+        "relation": 6561886,
+        "admin_centre_node": 1551206578,
+        "ref:ONS": "4020",
+        "name": "Khirane ⵅⵉⵔⴰⵏ خيران",
+        "admin_centre_place": "village",
+        "admin_centre_name": "خيران ⵅⵉⵔⴰⵏ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1010,
+      "wilaya_code": 10,
+      "name_fr": "Raouraoua",
+      "name_ar": "روراوة",
+      "from": [
+        3.7375,
+        36.55528
+      ],
+      "to": [
+        3.646335,
+        36.23626
+      ],
+      "delta_m": 36400,
+      "osm": {
+        "relation": 3279505,
+        "admin_centre_node": 3861541227,
+        "ref:ONS": "1010",
+        "name": "Raouraoua",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Raouraoua"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 730,
+      "wilaya_code": 7,
+      "name_fr": "Mekhadma",
+      "name_ar": "أمخادمة",
+      "from": [
+        5.867778,
+        34.64779
+      ],
+      "to": [
+        5.475024,
+        34.653185
+      ],
+      "delta_m": 35931,
+      "osm": {
+        "relation": 4120780,
+        "admin_centre_node": 499012299,
+        "ref:ONS": "0730",
+        "name": "Mekhadma مخادمة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "مخادمة ⵎⵅⴰⴷⵎⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1221,
+      "wilaya_code": 12,
+      "name_fr": "Oum Ali",
+      "name_ar": "أم علي",
+      "from": [
+        8.3009,
+        35.3333
+      ],
+      "to": [
+        8.300744,
+        35.011329
+      ],
+      "delta_m": 35802,
+      "osm": {
+        "relation": 6618849,
+        "admin_centre_node": 443014003,
+        "ref:ONS": "1221",
+        "name": "Oum Ali ⵓⵎ ⵄⵍⵉ أم علي",
+        "admin_centre_place": "town",
+        "admin_centre_name": "أم علي ⵓⵎ ⵄⵍⵉ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4909,
+      "wilaya_code": 49,
+      "name_fr": "Talmine",
+      "name_ar": "طالمين",
+      "from": [
+        -0.4975,
+        29.0167
+      ],
+      "to": [
+        -0.498626,
+        29.329601
+      ],
+      "delta_m": 34793,
+      "osm": {
+        "relation": 4171620,
+        "admin_centre_node": 3172515030,
+        "ref:ONS": "0124",
+        "name": "Talmine",
+        "admin_centre_place": "village",
+        "admin_centre_name": "طالمين ⵜⴰⵍⵎⵉⵏ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1030,
+      "wilaya_code": 10,
+      "name_fr": "Saharidj",
+      "name_ar": "سحاريج",
+      "from": [
+        3.8619,
+        36.396944
+      ],
+      "to": [
+        4.248234,
+        36.397485
+      ],
+      "delta_m": 34578,
+      "osm": {
+        "relation": 3397675,
+        "admin_centre_node": 443179503,
+        "ref:ONS": "1030",
+        "name": "Saharidj",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Saharidj"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 713,
+      "wilaya_code": 7,
+      "name_fr": "El Haouch",
+      "name_ar": "الحوش",
+      "from": [
+        6.025574,
+        34.8667
+      ],
+      "to": [
+        6.053999,
+        34.559917
+      ],
+      "delta_m": 34212,
+      "osm": {
+        "relation": 4120770,
+        "admin_centre_node": 1562771075,
+        "ref:ONS": "0713",
+        "name": "El Haouch ⵃⴰⵡⴻⵛ الحوش",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الحوش ⵍⵃⵓⵛ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3212,
+      "wilaya_code": 32,
+      "name_fr": "Kef El Ahmar",
+      "name_ar": "الكاف الأحمر",
+      "from": [
+        0.597544,
+        34.15
+      ],
+      "to": [
+        0.633284,
+        33.850406
+      ],
+      "delta_m": 33476,
+      "osm": {
+        "relation": 6533985,
+        "admin_centre_node": 452440131,
+        "ref:ONS": "3212",
+        "name": "Kef Lahmar ⴽⴰⴼ ⵍⴻⵃⵎⴻⵔ كاف لحمر",
+        "admin_centre_place": "town",
+        "admin_centre_name": "كاف لحمر ⴽⴰⴼ ⵍⴻⵃⵎⴻⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4816,
+      "wilaya_code": 48,
+      "name_fr": "Hamri",
+      "name_ar": "حمري",
+      "from": [
+        0.830556,
+        35.7425
+      ],
+      "to": [
+        0.689533,
+        36.018891
+      ],
+      "delta_m": 33256,
+      "osm": {
+        "relation": 6559394,
+        "admin_centre_node": 1055631274,
+        "ref:ONS": "4816",
+        "name": "Hamri",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Hamri"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1011,
+      "wilaya_code": 10,
+      "name_fr": "Mezdour",
+      "name_ar": "مزدور",
+      "from": [
+        4.07056,
+        36.376111
+      ],
+      "to": [
+        4.06826,
+        36.079443
+      ],
+      "delta_m": 32989,
+      "osm": {
+        "relation": 3201914,
+        "admin_centre_node": 1067081451,
+        "ref:ONS": "1011",
+        "name": "Mezdour",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Mezdour"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2011,
+      "wilaya_code": 20,
+      "name_fr": "Maamora",
+      "name_ar": "المعمورة",
+      "from": [
+        0.15,
+        34.681667
+      ],
+      "to": [
+        0.499971,
+        34.680922
+      ],
+      "delta_m": 32001,
+      "osm": {
+        "relation": 6544868,
+        "admin_centre_node": 464150983,
+        "ref:ONS": "2011",
+        "name": "Maamora ⵎⴻⵄⵎⵓⵔⴰ المعمورة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Maamora"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 5203,
+      "wilaya_code": 52,
+      "name_fr": "Timoudi",
+      "name_ar": "تيمودي",
+      "from": [
+        -1.428333,
+        29.406111
+      ],
+      "to": [
+        -1.12881,
+        29.321336
+      ],
+      "delta_m": 30519,
+      "osm": {
+        "relation": 6531004,
+        "admin_centre_node": 1573488047,
+        "ref:ONS": "0805",
+        "name": "Timmoudi ⵜⵉⵎⵎⵓⴷⵉ تيمودي",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تيمودي ⵜⵉⵎⵎⵓⴷⵉ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 5510,
+      "wilaya_code": 55,
+      "name_fr": "Benaceur",
+      "name_ar": "بن ناصر",
+      "from": [
+        6.441111,
+        32.844111
+      ],
+      "to": [
+        6.442694,
+        33.11059
+      ],
+      "delta_m": 29632,
+      "osm": {
+        "relation": 6542934,
+        "admin_centre_node": 262963952,
+        "ref:ONS": "3017",
+        "name": "Benaceur ⴱⴻⵏ ⵍⴰⵚⴻⵔ بن ناصر",
+        "admin_centre_place": "town",
+        "admin_centre_name": "بن ناصر ⴱⴻⵏ ⵏⴰⵚⴻⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1432,
+      "wilaya_code": 14,
+      "name_fr": "Tagdemt",
+      "name_ar": "تاقدمت",
+      "from": [
+        1.545077,
+        35.335556
+      ],
+      "to": [
+        1.22905,
+        35.334773
+      ],
+      "delta_m": 28667,
+      "osm": {
+        "relation": 6545448,
+        "admin_centre_node": 929585836,
+        "ref:ONS": "1432",
+        "name": "Tagdemt ⵜⴰⴳⴷⴻⵎⵜ تاقدمت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tagdemt"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2235,
+      "wilaya_code": 22,
+      "name_fr": "Sidi Chaib",
+      "name_ar": "سيدي شعيب",
+      "from": [
+        -0.54861,
+        34.3411
+      ],
+      "to": [
+        -0.546778,
+        34.592923
+      ],
+      "delta_m": 28002,
+      "osm": {
+        "relation": 6662005,
+        "admin_centre_node": 1370666512,
+        "ref:ONS": "2235",
+        "name": "Sidi Chaib ⵙⵉⴷⵉ ⵛⵄⵉⴱ سيدي شعيب",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sidi Chaib"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 555,
+      "wilaya_code": 60,
+      "name_fr": "M'Doukal",
+      "name_ar": "امدوكال",
+      "from": [
+        5.485278,
+        35.121
+      ],
+      "to": [
+        5.182124,
+        35.121658
+      ],
+      "delta_m": 27572,
+      "osm": {
+        "relation": 5177026,
+        "admin_centre_node": 455443194,
+        "ref:ONS": "0555",
+        "name": "M'Doukel ⴰⵎⴷⵓⴽⴻⵍ أمدوكال",
+        "admin_centre_place": "village",
+        "admin_centre_name": "امدوكال ⵉⵎⴷⵓⴽⴽⴰⵍ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4836,
+      "wilaya_code": 48,
+      "name_fr": "El Ouldja",
+      "name_ar": "الولجة",
+      "from": [
+        0.816667,
+        35.9108
+      ],
+      "to": [
+        1.120453,
+        35.909262
+      ],
+      "delta_m": 27360,
+      "osm": {
+        "relation": 6559386,
+        "admin_centre_node": 4383667768,
+        "ref:ONS": "4836",
+        "name": "El Ouldja",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Ouldja"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3504,
+      "wilaya_code": 35,
+      "name_fr": "Afir",
+      "name_ar": "أعفير",
+      "from": [
+        3.702778,
+        36.7675
+      ],
+      "to": [
+        3.987151,
+        36.842344
+      ],
+      "delta_m": 26651,
+      "osm": {
+        "relation": 4274887,
+        "admin_centre_node": 1186427440,
+        "ref:ONS": "3504",
+        "name": "Afir ⵄⴰⴼⵉⵔ عفير",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Afir"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2947,
+      "wilaya_code": 29,
+      "name_fr": "Sehailia",
+      "name_ar": "السهايلية",
+      "from": [
+        0.15,
+        35.316667
+      ],
+      "to": [
+        0.395119,
+        35.447081
+      ],
+      "delta_m": 26535,
+      "osm": {
+        "relation": 6668186,
+        "admin_centre_node": 4622565574,
+        "ref:ONS": "2947",
+        "name": "Sehailia ⵙⵃⴰⵢⵍⵉⵢⴰ سحايلية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sehailia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 718,
+      "wilaya_code": 61,
+      "name_fr": "Aïn Zaatout",
+      "name_ar": "عين زعطوط",
+      "from": [
+        5.83,
+        34.908056
+      ],
+      "to": [
+        5.837368,
+        35.146374
+      ],
+      "delta_m": 26508,
+      "osm": {
+        "relation": 4120757,
+        "admin_centre_node": 1562845245,
+        "ref:ONS": "0718",
+        "name": "Aïn Zaatout ⵄⵉⵏ ⵣⴰⵄⵟⵓⵟ عين زعطوط",
+        "admin_centre_place": "village",
+        "admin_centre_name": "عين زعطوط ⵄⵉⵏ ⵣⴰⵄⵟⵓⵟ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2730,
+      "wilaya_code": 27,
+      "name_fr": "Safsaf",
+      "name_ar": "صفصاف",
+      "from": [
+        0.428333,
+        36.075278
+      ],
+      "to": [
+        0.37901,
+        35.843977
+      ],
+      "delta_m": 26100,
+      "osm": {
+        "relation": 6660576,
+        "admin_centre_node": 501839370,
+        "ref:ONS": "2730",
+        "name": "Safsaf ⵙⴻⴼⵚⴰⴼ صفصاف",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Safsaf"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3406,
+      "wilaya_code": 34,
+      "name_fr": "Ben Daoud",
+      "name_ar": "بن داود",
+      "from": [
+        4.4025,
+        36.19702
+      ],
+      "to": [
+        4.181613,
+        36.052107
+      ],
+      "delta_m": 25559,
+      "osm": {
+        "relation": 4474388,
+        "admin_centre_node": 1351599658,
+        "ref:ONS": "3406",
+        "name": "Bendaoud ⴱⴻⵏ ⴷⴰⵡⴻⴷ بن داود",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ben Daoud"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1431,
+      "wilaya_code": 14,
+      "name_fr": "Nadorah",
+      "name_ar": "الناظورة",
+      "from": [
+        1.890556,
+        35.069
+      ],
+      "to": [
+        1.886425,
+        35.290785
+      ],
+      "delta_m": 24664,
+      "osm": {
+        "relation": 6545436,
+        "admin_centre_node": 929287940,
+        "ref:ONS": "1431",
+        "name": "Nadorah ⵏⵏⴰⴹⵓⵔⴰ الناظورة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Nadorah"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4428,
+      "wilaya_code": 44,
+      "name_fr": "Birbouche",
+      "name_ar": "بربوش",
+      "from": [
+        2.253056,
+        36.216667
+      ],
+      "to": [
+        2.483484,
+        36.107057
+      ],
+      "delta_m": 24010,
+      "osm": {
+        "relation": 2647126,
+        "admin_centre_node": 1019361543,
+        "ref:ONS": "4428",
+        "name": "Birbouche",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Barbouche"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2930,
+      "wilaya_code": 29,
+      "name_fr": "Zahana",
+      "name_ar": "زهانة",
+      "from": [
+        -0.15,
+        35.483333
+      ],
+      "to": [
+        -0.410225,
+        35.517616
+      ],
+      "delta_m": 23863,
+      "osm": {
+        "relation": 6668192,
+        "admin_centre_node": 464766551,
+        "ref:ONS": "2930",
+        "name": "Zahana ⵣⴻⵀⵀⴰⵏⴰ زھانة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Zahana"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2831,
+      "wilaya_code": 28,
+      "name_fr": "Bouti Sayah",
+      "name_ar": "بوطي السايح",
+      "from": [
+        3.694444,
+        35.85
+      ],
+      "to": [
+        3.693056,
+        35.641126
+      ],
+      "delta_m": 23226,
+      "osm": {
+        "relation": 6547236,
+        "admin_centre_node": 1561523009,
+        "ref:ONS": "2831",
+        "name": "Bouti Sayah ⴱⵓⵟⵉ ⵙⵙⴰⵢⴻⵁ بوطى السايح",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Bouti Sayah"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4125,
+      "wilaya_code": 41,
+      "name_fr": "Terraguelt",
+      "name_ar": "ترقالت",
+      "from": [
+        7.854045,
+        35.895278
+      ],
+      "to": [
+        7.598067,
+        35.884298
+      ],
+      "delta_m": 23092,
+      "osm": {
+        "relation": 6663210,
+        "admin_centre_node": 1540354456,
+        "ref:ONS": "4125",
+        "name": "Terraguelt",
+        "admin_centre_place": "village",
+        "admin_centre_name": "ترقالت ⵜⴰⵔⴻⴳⴳⴰⵍⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2312,
+      "wilaya_code": 23,
+      "name_fr": "Treat",
+      "name_ar": "التريعات",
+      "from": [
+        7.683333,
+        36.89747
+      ],
+      "to": [
+        7.427522,
+        36.8979
+      ],
+      "delta_m": 22748,
+      "osm": {
+        "relation": 1616127,
+        "admin_centre_node": 1240475690,
+        "ref:ONS": "2312",
+        "name": "Treat ⵜⵔⵉⵄⴰⵜ التريعات",
+        "admin_centre_place": "village",
+        "admin_centre_name": "التريعات ⵜⵔⵉⵄⴰⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4432,
+      "wilaya_code": 44,
+      "name_fr": "Tacheta Zegagha",
+      "name_ar": "تاشتة زقاغة",
+      "from": [
+        1.888889,
+        36.355833
+      ],
+      "to": [
+        1.64113,
+        36.350003
+      ],
+      "delta_m": 22197,
+      "osm": {
+        "relation": 2752239,
+        "admin_centre_node": 454619816,
+        "ref:ONS": "4432",
+        "name": "Tacheta Zoughagha",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tacheta Zougagha"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 544,
+      "wilaya_code": 5,
+      "name_fr": "T'Kout",
+      "name_ar": "تكوت",
+      "from": [
+        6.30861,
+        35.3339
+      ],
+      "to": [
+        6.30855,
+        35.140382
+      ],
+      "delta_m": 21518,
+      "osm": {
+        "relation": 5204381,
+        "admin_centre_node": 1406203989,
+        "ref:ONS": "0544",
+        "name": "T'Kout ⵜⴽⵓⴽⵜ تكوت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تكوت ⵜⴽⵓⴽⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2648,
+      "wilaya_code": 26,
+      "name_fr": "Seghouane",
+      "name_ar": "سغوان",
+      "from": [
+        2.9,
+        36.19112
+      ],
+      "to": [
+        2.905162,
+        36.000894
+      ],
+      "delta_m": 21157,
+      "osm": {
+        "relation": 2528015,
+        "admin_centre_node": 453662329,
+        "ref:ONS": "2648",
+        "name": "Seghouane ⵙⴻⵖⵡⴰⵏ سغوان",
+        "admin_centre_place": "village",
+        "admin_centre_name": "سغوان"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2221,
+      "wilaya_code": 22,
+      "name_fr": "Tabia",
+      "name_ar": "طابية",
+      "from": [
+        -0.73389,
+        35.206
+      ],
+      "to": [
+        -0.73566,
+        35.018562
+      ],
+      "delta_m": 20843,
+      "osm": {
+        "relation": 6662011,
+        "admin_centre_node": 464632022,
+        "ref:ONS": "2221",
+        "name": "Tabia ⵟⴰⴱⵉⵢⴰ طابية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tabia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3617,
+      "wilaya_code": 36,
+      "name_fr": "Asfour",
+      "name_ar": "عصفور",
+      "from": [
+        7.742806,
+        36.674167
+      ],
+      "to": [
+        7.976064,
+        36.67287
+      ],
+      "delta_m": 20803,
+      "osm": {
+        "relation": 1614324,
+        "admin_centre_node": 1292047955,
+        "ref:ONS": "3617",
+        "name": "Asfour ⵄⴻⵙⴼⵓⵔ عصفور",
+        "admin_centre_place": "village",
+        "admin_centre_name": "عصفور ⵄⵚⴼⵓⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2815,
+      "wilaya_code": 28,
+      "name_fr": "Belaïba",
+      "name_ar": "بلعايبة",
+      "from": [
+        5.074167,
+        35.7
+      ],
+      "to": [
+        5.154694,
+        35.527774
+      ],
+      "delta_m": 20488,
+      "osm": {
+        "relation": 6547231,
+        "admin_centre_node": 1561549472,
+        "ref:ONS": "2815",
+        "name": "Belaiba ⴱⴻⵍⵄⴰⵢⴱⵉⵢⴰ بلعايبة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Belaiba"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2946,
+      "wilaya_code": 29,
+      "name_fr": "Sidi Abdeldjebar",
+      "name_ar": "سيدي عبد الجبار",
+      "from": [
+        0.523331,
+        35.258611
+      ],
+      "to": [
+        0.524683,
+        35.442421
+      ],
+      "delta_m": 20439,
+      "osm": {
+        "relation": 6668187,
+        "admin_centre_node": 464067864,
+        "ref:ONS": "2946",
+        "name": "Sidi Abdeldjebar ⵙⵉⴷⵉ ⵄⴻⴱⴷⴻⵍⴵⴻⴱⴱⴰⵔ سيدي عبد الجبار",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sidi Abdeldjebar"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2928,
+      "wilaya_code": 29,
+      "name_fr": "Alaimia",
+      "name_ar": "العلايمية",
+      "from": [
+        -0.3225,
+        35.51011
+      ],
+      "to": [
+        -0.220539,
+        35.673952
+      ],
+      "delta_m": 20418,
+      "osm": {
+        "relation": 6668166,
+        "admin_centre_node": 464766539,
+        "ref:ONS": "2928",
+        "name": "Alaïmia ⵍⴻⵄⵍⴰⵢⵎⵉⵢⴰ العلايمية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Alaïmia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2010,
+      "wilaya_code": 20,
+      "name_fr": "El Hassasna",
+      "name_ar": "الحساسنة",
+      "from": [
+        0.1,
+        34.824167
+      ],
+      "to": [
+        0.323104,
+        34.824038
+      ],
+      "delta_m": 20365,
+      "osm": {
+        "relation": 6544866,
+        "admin_centre_node": 464150997,
+        "ref:ONS": "2010",
+        "name": "El Hessasna ⵍⴻⵃⵙⴰⵙⵏⴰ الحساسنة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Hessasna"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4904,
+      "wilaya_code": 49,
+      "name_fr": "Ouled Said",
+      "name_ar": "أولاد السعيد",
+      "from": [
+        0.238756,
+        29.231944
+      ],
+      "to": [
+        0.244438,
+        29.414996
+      ],
+      "delta_m": 20362,
+      "osm": {
+        "relation": 4171616,
+        "admin_centre_node": 1573475056,
+        "ref:ONS": "0110",
+        "name": "أولاد السعيد",
+        "admin_centre_place": "village",
+        "admin_centre_name": "أولاد السعيد ⵡⵍⴻⴷ ⵙⴰⵄⵉⴷ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 525,
+      "wilaya_code": 5,
+      "name_fr": "Rahbat",
+      "name_ar": "الرحبات",
+      "from": [
+        5.65,
+        35.5333
+      ],
+      "to": [
+        5.656285,
+        35.712857
+      ],
+      "delta_m": 19974,
+      "osm": {
+        "relation": 4730910,
+        "admin_centre_node": 1514905206,
+        "ref:ONS": "0525",
+        "name": "Rahbat ⵔⴰⵃⴱⴰⵜ الرحبات",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الرحبات ⵉⵔⴰⵃⴱⴻⵏ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1567,
+      "wilaya_code": 15,
+      "name_fr": "Ait-Toudert",
+      "name_ar": "أيت تودرت",
+      "from": [
+        4.1615,
+        36.6914
+      ],
+      "to": [
+        4.184451,
+        36.520311
+      ],
+      "delta_m": 19134,
+      "osm": {
+        "relation": 4289238,
+        "admin_centre_node": 1583123810,
+        "ref:ONS": "1567",
+        "name": "Aït Toudert",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Aït Toudert"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3425,
+      "wilaya_code": 34,
+      "name_fr": "Colla",
+      "name_ar": "القلة",
+      "from": [
+        4.6589,
+        36.10161
+      ],
+      "to": [
+        4.671282,
+        36.272506
+      ],
+      "delta_m": 19035,
+      "osm": {
+        "relation": 4424696,
+        "admin_centre_node": 3251072304,
+        "ref:ONS": "3425",
+        "name": "Colla ⵍⵇⵓⵍ القلة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Colla"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2923,
+      "wilaya_code": 29,
+      "name_fr": "Aouf",
+      "name_ar": "عوف",
+      "from": [
+        0.15,
+        35.1
+      ],
+      "to": [
+        0.356377,
+        35.097166
+      ],
+      "delta_m": 18778,
+      "osm": {
+        "relation": 6668167,
+        "admin_centre_node": 464319016,
+        "ref:ONS": "2923",
+        "name": "Aouf ⵄⵓⴼ عوف",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Aouf"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 643,
+      "wilaya_code": 6,
+      "name_fr": "Leflaye",
+      "name_ar": "الفلاي",
+      "from": [
+        4.8814,
+        36.609167
+      ],
+      "to": [
+        4.671341,
+        36.609046
+      ],
+      "delta_m": 18750,
+      "osm": {
+        "relation": 4069493,
+        "admin_centre_node": 418104568,
+        "ref:ONS": "0643",
+        "name": "Leflaye",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Leflaye"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2602,
+      "wilaya_code": 26,
+      "name_fr": "Ouzera",
+      "name_ar": "وزرة",
+      "from": [
+        3.0551,
+        36.25
+      ],
+      "to": [
+        2.846604,
+        36.252632
+      ],
+      "delta_m": 18698,
+      "osm": {
+        "relation": 2586879,
+        "admin_centre_node": 288422495,
+        "ref:ONS": "2602",
+        "name": "Ouzera ⵡⴻⵣⵔⴰ وزرة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ouzera"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2241,
+      "wilaya_code": 22,
+      "name_fr": "Sidi Hamadouche",
+      "name_ar": "سيدي حمادوش",
+      "from": [
+        -0.548889,
+        35.1375
+      ],
+      "to": [
+        -0.548756,
+        35.299075
+      ],
+      "delta_m": 17966,
+      "osm": {
+        "relation": 6662007,
+        "admin_centre_node": 464766555,
+        "ref:ONS": "2241",
+        "name": "Sidi Hamadouche ⵙⵉⴷⵉ ⵃⴰⵎⴰⴷⵓⵛ سيدي حمادوش",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sidi Hamadouche"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 502,
+      "wilaya_code": 5,
+      "name_fr": "Ghassira",
+      "name_ar": "غسيرة",
+      "from": [
+        6.20608,
+        35.2576
+      ],
+      "to": [
+        6.222807,
+        35.097077
+      ],
+      "delta_m": 17914,
+      "osm": {
+        "relation": 5202030,
+        "admin_centre_node": 443181330,
+        "ref:ONS": "0502",
+        "name": "Ghassira ⵜⴰⵖⵙⵉⵔⵜ غسيرة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "غسيرة ⵜⴰⵖⵙⵉⵔⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2805,
+      "wilaya_code": 28,
+      "name_fr": "Tarmount",
+      "name_ar": "تارمونت",
+      "from": [
+        4.174722,
+        35.688056
+      ],
+      "to": [
+        4.285996,
+        35.819091
+      ],
+      "delta_m": 17695,
+      "osm": {
+        "relation": 6547266,
+        "admin_centre_node": 1559020596,
+        "ref:ONS": "2805",
+        "name": "Tarmount ⵜⴰⵔⵎⵓⵏⵜ تارمونت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tarmount"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4421,
+      "wilaya_code": 44,
+      "name_fr": "Tarik-Ibn-Ziad",
+      "name_ar": "طارق بن زياد",
+      "from": [
+        2.15,
+        36.147222
+      ],
+      "to": [
+        2.144427,
+        35.988607
+      ],
+      "delta_m": 17644,
+      "osm": {
+        "relation": 2656514,
+        "admin_centre_node": 442979254,
+        "ref:ONS": "4421",
+        "name": "Tarik Ibn Ziad",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tarik Ibn Ziad"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 205,
+      "wilaya_code": 2,
+      "name_fr": "Tadjena",
+      "name_ar": "تاجنة",
+      "from": [
+        1.335167,
+        36.3167
+      ],
+      "to": [
+        1.138712,
+        36.32332
+      ],
+      "delta_m": 17616,
+      "osm": {
+        "relation": 4833525,
+        "admin_centre_node": 1025857203,
+        "ref:ONS": "0205",
+        "name": "Tadjena ⵜⴰⵊⴻⵏⵏⴰ تاجنة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tadjena"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4430,
+      "wilaya_code": 44,
+      "name_fr": "Mekhatria",
+      "name_ar": "المخاطرية",
+      "from": [
+        2.146111,
+        36.344656
+      ],
+      "to": [
+        1.95975,
+        36.302579
+      ],
+      "delta_m": 17339,
+      "osm": {
+        "relation": 2780991,
+        "admin_centre_node": 2169162132,
+        "ref:ONS": "4430",
+        "name": "Mekhatria",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Mekhatria"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4114,
+      "wilaya_code": 41,
+      "name_fr": "Bir Bouhouche",
+      "name_ar": "بئر بوحوش",
+      "from": [
+        7.4667,
+        36.165611
+      ],
+      "to": [
+        7.42906,
+        36.014214
+      ],
+      "delta_m": 17171,
+      "osm": {
+        "relation": 6663190,
+        "admin_centre_node": 461977230,
+        "ref:ONS": "4114",
+        "name": "Bir Bouhouche",
+        "admin_centre_place": "town",
+        "admin_centre_name": "بير بوهوش ⴱⵉⵔ ⴱⵓⵀⵓⵛ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 231,
+      "wilaya_code": 2,
+      "name_fr": "Bouzeghaia",
+      "name_ar": "بوزغاية",
+      "from": [
+        1.0503,
+        36.338889
+      ],
+      "to": [
+        1.238061,
+        36.338998
+      ],
+      "delta_m": 16818,
+      "osm": {
+        "relation": 5147952,
+        "admin_centre_node": 443050074,
+        "ref:ONS": "0231",
+        "name": "Bouzeghaia ⴱⵓⵣⵖⴰⵢⴰ بوزغاية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Bouzeghaia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 548,
+      "wilaya_code": 5,
+      "name_fr": "Oued Taga",
+      "name_ar": "وادي الطاقة",
+      "from": [
+        6.23,
+        35.4205
+      ],
+      "to": [
+        6.414608,
+        35.432337
+      ],
+      "delta_m": 16779,
+      "osm": {
+        "relation": 5234317,
+        "admin_centre_node": 462231832,
+        "ref:ONS": "0548",
+        "name": "Oued Taga ⵉⵖⵣⴻⵔ ⵏ-ⵜⴰⵇⵇⴰ وادي الطاقة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "وادي الطاقة ⵉⵖⵣⴻⵔ ⵏ ⵜⴰⵇⵇⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2929,
+      "wilaya_code": 29,
+      "name_fr": "El Gaada",
+      "name_ar": "القعدة",
+      "from": [
+        -0.183333,
+        35.533333
+      ],
+      "to": [
+        -0.312918,
+        35.426623
+      ],
+      "delta_m": 16687,
+      "osm": {
+        "relation": 6668174,
+        "admin_centre_node": 3686660225,
+        "ref:ONS": "2929",
+        "name": "El Gaada ⵍⴳⴻⵄⴷⴰ القعدة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Gaada"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2116,
+      "wilaya_code": 21,
+      "name_fr": "El Arrouch",
+      "name_ar": "الحروش",
+      "from": [
+        6.64917,
+        36.6531
+      ],
+      "to": [
+        6.836091,
+        36.651405
+      ],
+      "delta_m": 16676,
+      "osm": {
+        "relation": 6543287,
+        "admin_centre_node": 416689292,
+        "ref:ONS": "2116",
+        "name": "El Harrouche ⵍⵃⴻⵔⵔⵓⵛ الحروش",
+        "admin_centre_place": "town",
+        "admin_centre_name": "الحروش ⵍⵃⵔⵔⵓⵛ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2708,
+      "wilaya_code": 27,
+      "name_fr": "Sour",
+      "name_ar": "سور",
+      "from": [
+        0.341389,
+        35.85
+      ],
+      "to": [
+        0.338169,
+        35.9994
+      ],
+      "delta_m": 16615,
+      "osm": {
+        "relation": 6660583,
+        "admin_centre_node": 869767307,
+        "ref:ONS": "2708",
+        "name": "Sour ⵚⵓⵔ صور",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sour"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2904,
+      "wilaya_code": 29,
+      "name_fr": "Hacine",
+      "name_ar": "حسين",
+      "from": [
+        0.09833,
+        35.333333
+      ],
+      "to": [
+        -0.002455,
+        35.457206
+      ],
+      "delta_m": 16528,
+      "osm": {
+        "relation": 6668176,
+        "admin_centre_node": 424748076,
+        "ref:ONS": "2904",
+        "name": "Hacine ⵃⴰⵙⵉⵏ حاسين",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Hacine"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3414,
+      "wilaya_code": 34,
+      "name_fr": "Teniet En Nasr",
+      "name_ar": "ثنية النصر",
+      "from": [
+        4.601111,
+        36.083333
+      ],
+      "to": [
+        4.601654,
+        36.231237
+      ],
+      "delta_m": 16446,
+      "osm": {
+        "relation": 4474260,
+        "admin_centre_node": 465589384,
+        "ref:ONS": "3414",
+        "name": "Teniet Ennasr ⵜⵏⵉⵢⴻⵜ ⵏⵏⴰⵚⵔ ثنية النصر",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Teniet Ennasr"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1419,
+      "wilaya_code": 14,
+      "name_fr": "Djebilet Rosfa",
+      "name_ar": "جبيلة الرصفاء",
+      "from": [
+        1.015,
+        34.86375
+      ],
+      "to": [
+        0.836139,
+        34.864861
+      ],
+      "delta_m": 16319,
+      "osm": {
+        "relation": 6545423,
+        "admin_centre_node": 929550821,
+        "ref:ONS": "1419",
+        "name": "Djebilet Rosfa ⴵⴱⵉⵍⴻⵜ ⵔⵓⵙⴼⴰ جبيلات رصفة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Djebilet Rosfa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3418,
+      "wilaya_code": 34,
+      "name_fr": "Ouled Dahmane",
+      "name_ar": "أولاد دحمان",
+      "from": [
+        4.77,
+        36.3667
+      ],
+      "to": [
+        4.770188,
+        36.221487
+      ],
+      "delta_m": 16147,
+      "osm": {
+        "relation": 4424982,
+        "admin_centre_node": 1350982313,
+        "ref:ONS": "3418",
+        "name": "Ouled Dahmane ⵡⵍⴰⴷ ⴷⴻⵃⵎⴰⵏ أولاد دحمان",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ouled Dahmane"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1208,
+      "wilaya_code": 12,
+      "name_fr": "Hammamet",
+      "name_ar": "الحمامات",
+      "from": [
+        7.953,
+        35.590833
+      ],
+      "to": [
+        7.950322,
+        35.449291
+      ],
+      "delta_m": 15741,
+      "osm": {
+        "relation": 6618844,
+        "admin_centre_node": 442686678,
+        "ref:ONS": "1208",
+        "name": "Hammamet ⵍⵃⴻⵎⵎⴰⵎⴰⵜ الحمامات",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الحمامات ⵍⵃⴻⵎⵎⴰⵎⴰⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 517,
+      "wilaya_code": 5,
+      "name_fr": "Kimmel",
+      "name_ar": "كيمل",
+      "from": [
+        6.471658,
+        35.3442
+      ],
+      "to": [
+        6.544901,
+        35.216688
+      ],
+      "delta_m": 15660,
+      "osm": {
+        "relation": 5204368,
+        "admin_centre_node": 1514825474,
+        "ref:ONS": "0517",
+        "name": "Kimmel ⴽⵉⵎⴻⵍ كيمل",
+        "admin_centre_place": "village",
+        "admin_centre_name": "كيمل ⴽⵉⵎⴻⵍ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2109,
+      "wilaya_code": 21,
+      "name_fr": "Es Sebt",
+      "name_ar": "السبت",
+      "from": [
+        7.077427,
+        36.802
+      ],
+      "to": [
+        7.078929,
+        36.662646
+      ],
+      "delta_m": 15496,
+      "osm": {
+        "relation": 6543289,
+        "admin_centre_node": 1224635351,
+        "ref:ONS": "2109",
+        "name": "Es Sebt ⵙⵙⴻⴱⵜ السبت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Es Sebt"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2422,
+      "wilaya_code": 24,
+      "name_fr": "Hammam N'bail",
+      "name_ar": "حمام النبايل",
+      "from": [
+        7.6436,
+        36.464832
+      ],
+      "to": [
+        7.640326,
+        36.325516
+      ],
+      "delta_m": 15494,
+      "osm": {
+        "relation": 6537639,
+        "admin_centre_node": 1539007250,
+        "ref:ONS": "2422",
+        "name": "Hammam Nbail ⵃⴻⵎⵎⴰⵎ ⵏⴱⴰⵢⴻⵍ حمام النبايل",
+        "admin_centre_place": "town",
+        "admin_centre_name": "حمام النبايل ⵃⴻⵎⵎⴰⵎ ⵏⴱⴰⵢⴻⵍ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 725,
+      "wilaya_code": 7,
+      "name_fr": "M'Lili",
+      "name_ar": "أمليلي",
+      "from": [
+        5.554247,
+        34.805833
+      ],
+      "to": [
+        5.56434,
+        34.667839
+      ],
+      "delta_m": 15372,
+      "osm": {
+        "relation": 4120778,
+        "admin_centre_node": 1562495878,
+        "ref:ONS": "0725",
+        "name": "M'Lili ⵎⵍⵉⵍⵉ مليلى",
+        "admin_centre_place": "village",
+        "admin_centre_name": "مليلي ⵎⵎ'ⵍⵉⵍⵉ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1647,
+      "wilaya_code": 16,
+      "name_fr": "Maalma",
+      "name_ar": "المعالمة",
+      "from": [
+        3.030556,
+        36.619436
+      ],
+      "to": [
+        2.877873,
+        36.682153
+      ],
+      "delta_m": 15302,
+      "osm": {
+        "relation": 241459,
+        "admin_centre_node": 313983160,
+        "ref:ONS": "1647",
+        "name": "Mâalma ⵎⴰⵃⴻⵍⵎⴰ محالمة",
+        "admin_centre_place": "suburb",
+        "admin_centre_name": "Mahelma ⵎⴰⵃⴻⵍⵎⴰ المعالمة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 729,
+      "wilaya_code": 7,
+      "name_fr": "Bouchagroun",
+      "name_ar": "بوشقرون",
+      "from": [
+        5.341111,
+        34.809167
+      ],
+      "to": [
+        5.467797,
+        34.720656
+      ],
+      "delta_m": 15192,
+      "osm": {
+        "relation": 4120761,
+        "admin_centre_node": 499012295,
+        "ref:ONS": "0729",
+        "name": "Bouchagroune ⴱⵓⵛⴻⴳⵔⵓⵏ بوشقرون",
+        "admin_centre_place": "town",
+        "admin_centre_name": "بوشقرون ⴱⵓⵛⴻⴳⵔⵓⵏ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2919,
+      "wilaya_code": 29,
+      "name_fr": "Benian",
+      "name_ar": "بنيان",
+      "from": [
+        0.139722,
+        35.21222
+      ],
+      "to": [
+        0.230119,
+        35.099072
+      ],
+      "delta_m": 15028,
+      "osm": {
+        "relation": 6668168,
+        "admin_centre_node": 464319002,
+        "ref:ONS": "2919",
+        "name": "Beniane ⴱⴻⵏⵢⴰⵏ بنيان",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Benian"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4431,
+      "wilaya_code": 44,
+      "name_fr": "Bathia",
+      "name_ar": "بطحية",
+      "from": [
+        1.783097,
+        36.033333
+      ],
+      "to": [
+        1.840097,
+        35.915989
+      ],
+      "delta_m": 14020,
+      "osm": {
+        "relation": 2742409,
+        "admin_centre_node": 1193043985,
+        "ref:ONS": "4431",
+        "name": "بطحية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Bathia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4436,
+      "wilaya_code": 44,
+      "name_fr": "Belaas",
+      "name_ar": "بلعاص",
+      "from": [
+        1.8512,
+        36.10778
+      ],
+      "to": [
+        1.851008,
+        35.9826
+      ],
+      "delta_m": 13919,
+      "osm": {
+        "relation": 2742602,
+        "admin_centre_node": 1193092658,
+        "ref:ONS": "4436",
+        "name": "Belaas",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Belaas"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 409,
+      "wilaya_code": 4,
+      "name_fr": "Berriche",
+      "name_ar": "بريش",
+      "from": [
+        7.37667,
+        35.795833
+      ],
+      "to": [
+        7.376981,
+        35.917798
+      ],
+      "delta_m": 13562,
+      "osm": {
+        "relation": 4489752,
+        "admin_centre_node": 443189047,
+        "ref:ONS": "0409",
+        "name": "Berriche ⴱⴻⵔⵔⵉⵛ بريش",
+        "admin_centre_place": "village",
+        "admin_centre_name": "بريش ⴱⴻⵔⵔⵉⵛ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4011,
+      "wilaya_code": 40,
+      "name_fr": "Chechar",
+      "name_ar": "ششار",
+      "from": [
+        7.01667,
+        35.158333
+      ],
+      "to": [
+        7.004261,
+        35.038331
+      ],
+      "delta_m": 13391,
+      "osm": {
+        "relation": 6561877,
+        "admin_centre_node": 3823484201,
+        "ref:ONS": "4011",
+        "name": "Chechar ⵛⴻⵛⵛⴰⵔ ششار",
+        "admin_centre_place": "town",
+        "admin_centre_name": "ششار ⵛⴻⵛⵛⴰⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2920,
+      "wilaya_code": 29,
+      "name_fr": "Khalouia",
+      "name_ar": "خلوية",
+      "from": [
+        0.150556,
+        35.4614
+      ],
+      "to": [
+        0.297669,
+        35.461883
+      ],
+      "delta_m": 13324,
+      "osm": {
+        "relation": 6668177,
+        "admin_centre_node": 867631143,
+        "ref:ONS": "2920",
+        "name": "Khalouia ⵅⴻⵍⵡⵉⵢⵢⴰ خلوية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Khalouia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 704,
+      "wilaya_code": 7,
+      "name_fr": "Chetma",
+      "name_ar": "شتمة",
+      "from": [
+        5.659722,
+        34.801667
+      ],
+      "to": [
+        5.793942,
+        34.844731
+      ],
+      "delta_m": 13154,
+      "osm": {
+        "relation": 4120763,
+        "admin_centre_node": 443181299,
+        "ref:ONS": "0704",
+        "name": "Chetma ⵛⴻⵜⵎⴰ شتمة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Chetma"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4021,
+      "wilaya_code": 40,
+      "name_fr": "Chelia",
+      "name_ar": "شلية",
+      "from": [
+        6.63671,
+        35.364444
+      ],
+      "to": [
+        6.77939,
+        35.364229
+      ],
+      "delta_m": 12938,
+      "osm": {
+        "relation": 6561878,
+        "admin_centre_node": 1514842146,
+        "ref:ONS": "4021",
+        "name": "Chélia ⵛⵉⵍⵢⴰ شلية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "شلية ⵛⵍⵢⴻⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2603,
+      "wilaya_code": 67,
+      "name_fr": "Ouled Maaref",
+      "name_ar": "أولاد معرف",
+      "from": [
+        3.1585,
+        35.872222
+      ],
+      "to": [
+        3.033605,
+        35.81561
+      ],
+      "delta_m": 12898,
+      "osm": {
+        "relation": 2907908,
+        "admin_centre_node": 1068592951,
+        "ref:ONS": "2603",
+        "name": "Ouled Maaref ⵡⵍⴰⴷ ⵎⴻⵄⵔⴻⴼ أولاد معرف",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ouled Maaref"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 536,
+      "wilaya_code": 5,
+      "name_fr": "Chemora",
+      "name_ar": "الشمرة",
+      "from": [
+        6.5011,
+        35.66528
+      ],
+      "to": [
+        6.643333,
+        35.667088
+      ],
+      "delta_m": 12851,
+      "osm": {
+        "relation": 5241205,
+        "admin_centre_node": 1405086439,
+        "ref:ONS": "0536",
+        "name": "Chemora ⵛⴻⵎⵎⵓⵔⴰ الشمرة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الشمرة ⵛⵎⴻⵔⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3210,
+      "wilaya_code": 32,
+      "name_fr": "Bougtob",
+      "name_ar": "بوقطب",
+      "from": [
+        0.033333,
+        34.143611
+      ],
+      "to": [
+        0.087067,
+        34.04052
+      ],
+      "delta_m": 12486,
+      "osm": {
+        "relation": 6533975,
+        "admin_centre_node": 424711276,
+        "ref:ONS": "3210",
+        "name": "Bougtob ⴱⵓⴳⵟⵓⴱ بوقطب",
+        "admin_centre_place": "town",
+        "admin_centre_name": "بوقطب ⴱⵓⴳⵟⵓⴱ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1036,
+      "wilaya_code": 10,
+      "name_fr": "Bir Ghbalou",
+      "name_ar": "بئر غبالو",
+      "from": [
+        3.7224,
+        36.264167
+      ],
+      "to": [
+        3.585011,
+        36.262881
+      ],
+      "delta_m": 12319,
+      "osm": {
+        "relation": 3297140,
+        "admin_centre_node": 439918614,
+        "ref:ONS": "1036",
+        "name": "Bir Ghbalou",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Bir Ghbalou"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3432,
+      "wilaya_code": 34,
+      "name_fr": "Ghailasa",
+      "name_ar": "غيلاسة",
+      "from": [
+        4.9167,
+        35.981389
+      ],
+      "to": [
+        4.907933,
+        35.871715
+      ],
+      "delta_m": 12221,
+      "osm": {
+        "relation": 4484899,
+        "admin_centre_node": 1349282522,
+        "ref:ONS": "3432",
+        "name": "Ghilassa ⵖⵉⵍⴰⵙⴰ غيلاسة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ghilassa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 546,
+      "wilaya_code": 5,
+      "name_fr": "Hidoussa",
+      "name_ar": "حيدوسة",
+      "from": [
+        5.9375,
+        35.6375
+      ],
+      "to": [
+        5.937584,
+        35.528461
+      ],
+      "delta_m": 12125,
+      "osm": {
+        "relation": 4864578,
+        "admin_centre_node": 460942596,
+        "ref:ONS": "0546",
+        "name": "Hidoussa ⵜⴰⵃⵉⴷⵓⵙⵜ حيدوسة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Hidoussa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1512,
+      "wilaya_code": 15,
+      "name_fr": "Bounouh",
+      "name_ar": "بونوح",
+      "from": [
+        4.07056,
+        36.49935
+      ],
+      "to": [
+        3.93634,
+        36.499375
+      ],
+      "delta_m": 11997,
+      "osm": {
+        "relation": 4293695,
+        "admin_centre_node": 1584224868,
+        "ref:ONS": "1512",
+        "name": "Bounouh",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Vunuḥ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4111,
+      "wilaya_code": 41,
+      "name_fr": "Khedara",
+      "name_ar": "الخضارة",
+      "from": [
+        8.243057,
+        36.195556
+      ],
+      "to": [
+        8.321607,
+        36.282607
+      ],
+      "delta_m": 11972,
+      "osm": {
+        "relation": 6663194,
+        "admin_centre_node": 1541238500,
+        "ref:ONS": "4111",
+        "name": "Kheddara",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الخضارة ⵍⵅⴹⴰⵔⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 558,
+      "wilaya_code": 5,
+      "name_fr": "Lazrou",
+      "name_ar": "لازرو",
+      "from": [
+        6.2167,
+        35.7
+      ],
+      "to": [
+        6.225302,
+        35.807385
+      ],
+      "delta_m": 11966,
+      "osm": {
+        "relation": 5229570,
+        "admin_centre_node": 1405087503,
+        "ref:ONS": "0558",
+        "name": "Lazrou ⵍⴰⵣⵔⵓ لازرو",
+        "admin_centre_place": "village",
+        "admin_centre_name": "لازرو ⴰⵥⵔⵓ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1917,
+      "wilaya_code": 19,
+      "name_fr": "Guidjel",
+      "name_ar": "قجال",
+      "from": [
+        5.52999,
+        36.19119
+      ],
+      "to": [
+        5.487335,
+        36.090841
+      ],
+      "delta_m": 11797,
+      "osm": {
+        "relation": 1618383,
+        "admin_centre_node": 455555425,
+        "ref:ONS": "1917",
+        "name": "Guidjel",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Guijel"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4815,
+      "wilaya_code": 48,
+      "name_fr": "El-Guettar",
+      "name_ar": "القطار",
+      "from": [
+        0.816009,
+        36.19112
+      ],
+      "to": [
+        0.816847,
+        36.087904
+      ],
+      "delta_m": 11477,
+      "osm": {
+        "relation": 6559371,
+        "admin_centre_node": 1055631280,
+        "ref:ONS": "4815",
+        "name": "El Guettar",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Guettar"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4103,
+      "wilaya_code": 41,
+      "name_fr": "Hanencha",
+      "name_ar": "الحنانشة",
+      "from": [
+        7.887778,
+        36.19119
+      ],
+      "to": [
+        7.793075,
+        36.260307
+      ],
+      "delta_m": 11456,
+      "osm": {
+        "relation": 6663193,
+        "admin_centre_node": 1540358910,
+        "ref:ONS": "4103",
+        "name": "Hanancha",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الحنانشة ⵍⵃⵏⴰⵏⵛⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1825,
+      "wilaya_code": 18,
+      "name_fr": "Djemaa Beni Habibi",
+      "name_ar": "الجمعة بني حبيبي",
+      "from": [
+        6.1294,
+        36.7091
+      ],
+      "to": [
+        6.126318,
+        36.810668
+      ],
+      "delta_m": 11297,
+      "osm": {
+        "relation": 6669722,
+        "admin_centre_node": 425284680,
+        "ref:ONS": "1825",
+        "name": "Djemaa Beni Habibi ⴵⴻⵎⵄⴻⵜ ⴱⴻⵏⵉ ⵃⴱⵉⴱⵉ الجمعة بني حبيبي",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الجمعة بني حبيبي ⵊⵎⵄⵜ ⴱⵏⵉ ⵃⴱⵉⴱⵉ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1828,
+      "wilaya_code": 18,
+      "name_fr": "Oudjana",
+      "name_ar": "وجانة",
+      "from": [
+        5.888154,
+        36.6067
+      ],
+      "to": [
+        5.89489,
+        36.707316
+      ],
+      "delta_m": 11204,
+      "osm": {
+        "relation": 6024233,
+        "admin_centre_node": 1391150613,
+        "ref:ONS": "1828",
+        "name": "Oudjana ⵡⴻⴵⴵⴰⵏⴰ وجانة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "وجانة ⵓⵊⴰⵏⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3604,
+      "wilaya_code": 36,
+      "name_fr": "Bougous",
+      "name_ar": "بوقوس",
+      "from": [
+        8.369444,
+        36.758056
+      ],
+      "to": [
+        8.370731,
+        36.658225
+      ],
+      "delta_m": 11101,
+      "osm": {
+        "relation": 1614539,
+        "admin_centre_node": 1303862362,
+        "ref:ONS": "3604",
+        "name": "Bougous ⴱⵓⴳⵓⵙ بوقوس",
+        "admin_centre_place": "village",
+        "admin_centre_name": "بوقوس ⴱⵓⴳⵓⵙ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2213,
+      "wilaya_code": 22,
+      "name_fr": "Tilmouni",
+      "name_ar": "تلموني",
+      "from": [
+        -0.590518,
+        35.083333
+      ],
+      "to": [
+        -0.547775,
+        35.174902
+      ],
+      "delta_m": 10899,
+      "osm": {
+        "relation": 6662017,
+        "admin_centre_node": 439892499,
+        "ref:ONS": "2213",
+        "name": "Tilmouni ⵜⴻⵍⵎⵓⵏⵉ تلمونى",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Telmouni"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1222,
+      "wilaya_code": 12,
+      "name_fr": "Thlidjene",
+      "name_ar": "ثليجان",
+      "from": [
+        7.767222,
+        35.21525
+      ],
+      "to": [
+        7.768359,
+        35.118258
+      ],
+      "delta_m": 10786,
+      "osm": {
+        "relation": 6618852,
+        "admin_centre_node": 1553271346,
+        "ref:ONS": "1222",
+        "name": "Tlidjene ⵜⵍⵉⴵⴻⵏ ثليجان",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Telidjene"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2933,
+      "wilaya_code": 29,
+      "name_fr": "Ferraguig",
+      "name_ar": "فراقيق",
+      "from": [
+        0.053659,
+        35.583333
+      ],
+      "to": [
+        0.15514,
+        35.53306
+      ],
+      "delta_m": 10748,
+      "osm": {
+        "relation": 6668175,
+        "admin_centre_node": 4622341995,
+        "ref:ONS": "2933",
+        "name": "Ferraguig ⴼⴻⵔⵔⴰⴳⵉⴳ فرقيق",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ferraguig"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4434,
+      "wilaya_code": 44,
+      "name_fr": "El-Maine",
+      "name_ar": "الماين",
+      "from": [
+        1.758333,
+        36.145
+      ],
+      "to": [
+        1.757458,
+        36.050786
+      ],
+      "delta_m": 10476,
+      "osm": {
+        "relation": 2742666,
+        "admin_centre_node": 1191094475,
+        "ref:ONS": "4434",
+        "name": "El Maine",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Maine"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1009,
+      "wilaya_code": 10,
+      "name_fr": "Taghzout",
+      "name_ar": "تاغزوت",
+      "from": [
+        3.9667,
+        36.3167
+      ],
+      "to": [
+        3.958772,
+        36.407633
+      ],
+      "delta_m": 10136,
+      "osm": {
+        "relation": 3414766,
+        "admin_centre_node": 1194676209,
+        "ref:ONS": "1009",
+        "name": "Taghzout",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Taghzout"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2935,
+      "wilaya_code": 29,
+      "name_fr": "Sedjerara",
+      "name_ar": "سجرارة",
+      "from": [
+        0.213889,
+        35.5397
+      ],
+      "to": [
+        0.213292,
+        35.629988
+      ],
+      "delta_m": 10040,
+      "osm": {
+        "relation": 6668185,
+        "admin_centre_node": 4621757898,
+        "ref:ONS": "2935",
+        "name": "Sedjerara ⵙⴻⴵⵔⴰⵔⴰ سجرارة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sedjerara"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1514,
+      "wilaya_code": 15,
+      "name_fr": "Frikat",
+      "name_ar": "فريقات",
+      "from": [
+        3.994722,
+        36.492644
+      ],
+      "to": [
+        3.88566,
+        36.513353
+      ],
+      "delta_m": 10016,
+      "osm": {
+        "relation": 4293699,
+        "admin_centre_node": 1193541400,
+        "ref:ONS": "1514",
+        "name": "Frikat",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Frikat"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 620,
+      "wilaya_code": 6,
+      "name_fr": "Darguina",
+      "name_ar": "درقينة",
+      "from": [
+        5.375595,
+        36.6344
+      ],
+      "to": [
+        5.306312,
+        36.564307
+      ],
+      "delta_m": 9950,
+      "osm": {
+        "relation": 4112864,
+        "admin_centre_node": 443160243,
+        "ref:ONS": "0620",
+        "name": "Darguina",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Darguina"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2107,
+      "wilaya_code": 21,
+      "name_fr": "Bekkouche Lakhdar",
+      "name_ar": "بكوش لخضر",
+      "from": [
+        7.30625,
+        36.791944
+      ],
+      "to": [
+        7.304043,
+        36.703203
+      ],
+      "delta_m": 9870,
+      "osm": {
+        "relation": 6437423,
+        "admin_centre_node": 461981724,
+        "ref:ONS": "2107",
+        "name": "Bekkouche Lakhdar ⴱⴻⴽⴽⵓⵛ ⵍⴻⵅⴹⴻⵔ بكوش الأخضر",
+        "admin_centre_place": "village",
+        "admin_centre_name": "بكوش لخضر ⴱⴽⴽⵓⵛ ⵍⵅⴹⴻⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2939,
+      "wilaya_code": 29,
+      "name_fr": "El Mamounia",
+      "name_ar": "المأمونية",
+      "from": [
+        0.2449,
+        35.433333
+      ],
+      "to": [
+        0.141363,
+        35.424798
+      ],
+      "delta_m": 9429,
+      "osm": {
+        "relation": 1334214,
+        "admin_centre_node": 1052525460,
+        "ref:ONS": "2939",
+        "name": "Mamounia ⵎⴰⵎⵓⵏⵉⵢⴰ المامونية",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Mamounia"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2663,
+      "wilaya_code": 26,
+      "name_fr": "Khamsa Djoumaa",
+      "name_ar": "خمس جوامع",
+      "from": [
+        3.2367,
+        36.1914
+      ],
+      "to": [
+        3.140521,
+        36.158264
+      ],
+      "delta_m": 9386,
+      "osm": {
+        "relation": 2592263,
+        "admin_centre_node": 1068759606,
+        "ref:ONS": "2663",
+        "name": "Khams Djouamaa ⵅⴻⵎⵙ ⴵⵡⴰⵎⴻⵄ خمس جوامع",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Khams Djouamaa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1924,
+      "wilaya_code": 19,
+      "name_fr": "Ouled Addouane",
+      "name_ar": "أولاد عدوان",
+      "from": [
+        5.336022,
+        36.3401
+      ],
+      "to": [
+        5.437476,
+        36.337588
+      ],
+      "delta_m": 9092,
+      "osm": {
+        "relation": 1625325,
+        "admin_centre_node": 490604564,
+        "ref:ONS": "1924",
+        "name": "Ouled Addouane",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ouled Adouane"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 637,
+      "wilaya_code": 6,
+      "name_fr": "Bouhamza",
+      "name_ar": "بوحمزة",
+      "from": [
+        4.6064,
+        36.489722
+      ],
+      "to": [
+        4.685504,
+        36.445087
+      ],
+      "delta_m": 8641,
+      "osm": {
+        "relation": 4069950,
+        "admin_centre_node": 1117953861,
+        "ref:ONS": "0637",
+        "name": "Bouhamza",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Buḥemza"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4833,
+      "wilaya_code": 48,
+      "name_fr": "El Hassi",
+      "name_ar": "الحاسي",
+      "from": [
+        1.11143,
+        35.7425
+      ],
+      "to": [
+        1.017804,
+        35.733327
+      ],
+      "delta_m": 8512,
+      "osm": {
+        "relation": 6559378,
+        "admin_centre_node": 3596567264,
+        "ref:ONS": "4833",
+        "name": "El Hassi",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Hassi"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4329,
+      "wilaya_code": 43,
+      "name_fr": "El Ayadi Barbes",
+      "name_ar": "العياضي برباس",
+      "from": [
+        5.913076,
+        36.440278
+      ],
+      "to": [
+        5.819789,
+        36.435777
+      ],
+      "delta_m": 8360,
+      "osm": {
+        "relation": 2155366,
+        "admin_centre_node": 1339092700,
+        "ref:ONS": "4329",
+        "name": "El Ayadi Barbes ⵍⵄⴻⵢⵢⴰⴹⵉ ⴱⴰⵔⴱⴰⵙ العياضي برباس",
+        "admin_centre_place": "village",
+        "admin_centre_name": "العياضي برباس ⵍⵄⵢⴰⴹⵉ ⴱⴰⵔⴱⴰⵙ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2905,
+      "wilaya_code": 29,
+      "name_fr": "Maoussa",
+      "name_ar": "ماوسة",
+      "from": [
+        0.2025,
+        35.31299
+      ],
+      "to": [
+        0.245704,
+        35.378288
+      ],
+      "delta_m": 8251,
+      "osm": {
+        "relation": 4589684,
+        "admin_centre_node": 442967280,
+        "ref:ONS": "2905",
+        "name": "Maoussa ⵎⴰⵡⵙⴰ ماوسة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Maoussa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4310,
+      "wilaya_code": 43,
+      "name_fr": "Oued Endja",
+      "name_ar": "وادي النجاء",
+      "from": [
+        6.120833,
+        36.5
+      ],
+      "to": [
+        6.12187,
+        36.429624
+      ],
+      "delta_m": 7826,
+      "osm": {
+        "relation": 2239838,
+        "admin_centre_node": 461906172,
+        "ref:ONS": "4310",
+        "name": "Oued Endja ⵡⴰⴷ ⵏⴵⴰ وادي النجاء",
+        "admin_centre_place": "town",
+        "admin_centre_name": "وادي النجاء ⵡⴰⴷ ⵏⵏⵊⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2729,
+      "wilaya_code": 27,
+      "name_fr": "Tazgait",
+      "name_ar": "تزقايت",
+      "from": [
+        0.4675,
+        36.083333
+      ],
+      "to": [
+        0.549884,
+        36.094524
+      ],
+      "delta_m": 7507,
+      "osm": {
+        "relation": 6660584,
+        "admin_centre_node": 462633938,
+        "ref:ONS": "2729",
+        "name": "Tazgait ⵜⴰⵣⴳⴰⵢⵜ تزقايت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Tazgait"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3612,
+      "wilaya_code": 36,
+      "name_fr": "Chefia",
+      "name_ar": "الشافية",
+      "from": [
+        8.163277,
+        36.611111
+      ],
+      "to": [
+        8.10687,
+        36.659789
+      ],
+      "delta_m": 7391,
+      "osm": {
+        "relation": 1615226,
+        "admin_centre_node": 1292047956,
+        "ref:ONS": "3612",
+        "name": "Chefia ⵛⵛⴰⴼⵉⵢⴰ الشافية",
+        "admin_centre_place": "town",
+        "admin_centre_name": "الشافية ⵛⵛⴰⴼⵢⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 534,
+      "wilaya_code": 5,
+      "name_fr": "Talkhamt",
+      "name_ar": "تالخمت",
+      "from": [
+        5.8667,
+        35.665278
+      ],
+      "to": [
+        5.785401,
+        35.66698
+      ],
+      "delta_m": 7347,
+      "osm": {
+        "relation": 4730802,
+        "admin_centre_node": 1430981351,
+        "ref:ONS": "0534",
+        "name": "Talkhamt ⵜⴰⵍⵅⴻⵎⵜ تالخمت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تالخمت ⵜⴰⵍⵅⴻⵎⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2903,
+      "wilaya_code": 29,
+      "name_fr": "Tizi",
+      "name_ar": "تيزي",
+      "from": [
+        0.154215,
+        35.31603
+      ],
+      "to": [
+        0.073909,
+        35.31614
+      ],
+      "delta_m": 7286,
+      "osm": {
+        "relation": 4652433,
+        "admin_centre_node": 424744420,
+        "ref:ONS": "2903",
+        "name": "Tizi ⵜⵉⵣⵉ تيزي",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Tizi"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4215,
+      "wilaya_code": 42,
+      "name_fr": "Nador",
+      "name_ar": "الناظور",
+      "from": [
+        2.312303,
+        36.569722
+      ],
+      "to": [
+        2.393549,
+        36.569391
+      ],
+      "delta_m": 7256,
+      "osm": {
+        "relation": 2312606,
+        "admin_centre_node": 424967337,
+        "ref:ONS": "4215",
+        "name": "Nador ⵏⵏⴰⴹⵓⵔ الناظور",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Nador ⵏⵏⴰⴹⵓⵔ الناظور"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3822,
+      "wilaya_code": 38,
+      "name_fr": "Beni Lahcene",
+      "name_ar": "بني لحسن",
+      "from": [
+        1.624722,
+        35.8517
+      ],
+      "to": [
+        1.68947,
+        35.813087
+      ],
+      "delta_m": 7246,
+      "osm": {
+        "relation": 6534577,
+        "admin_centre_node": 4370089526,
+        "ref:ONS": "3822",
+        "name": "Beni Lahcene ⴱⴻⵏⵉ ⵍⴻⵃⵙⴻⵏ بنى لحسن",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Beni Lahcene"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4803,
+      "wilaya_code": 48,
+      "name_fr": "Belaassel Bouzagza",
+      "name_ar": "بلعسل بوزقزة",
+      "from": [
+        0.577778,
+        35.8247
+      ],
+      "to": [
+        0.500211,
+        35.841321
+      ],
+      "delta_m": 7233,
+      "osm": {
+        "relation": 6559345,
+        "admin_centre_node": 1055659859,
+        "ref:ONS": "4803",
+        "name": "Belassel Bouzegza",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Belassel"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3608,
+      "wilaya_code": 36,
+      "name_fr": "Bouteldja",
+      "name_ar": "بوثلجة",
+      "from": [
+        8.202423,
+        36.85
+      ],
+      "to": [
+        8.199027,
+        36.785582
+      ],
+      "delta_m": 7169,
+      "osm": {
+        "relation": 1614602,
+        "admin_centre_node": 425302343,
+        "ref:ONS": "3608",
+        "name": "Bouteldja ⴱⵓⵜⴻⵍⴵⴰ بوثلجة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "بوثلجة ⴱⵓⵜⵍⵊⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3918,
+      "wilaya_code": 39,
+      "name_fr": "Magrane",
+      "name_ar": "المقرن",
+      "from": [
+        6.930278,
+        33.499805
+      ],
+      "to": [
+        6.930939,
+        33.56256
+      ],
+      "delta_m": 6978,
+      "osm": {
+        "relation": 5139359,
+        "admin_centre_node": 1566167739,
+        "ref:ONS": "3918",
+        "name": "Magrane ⵎⴰⴳⵔⴻⵏ المقرن",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Magrane;ⵎⴻⴳⵔⴻⵏ;المقرن"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3905,
+      "wilaya_code": 39,
+      "name_fr": "Nakhla",
+      "name_ar": "النخلة",
+      "from": [
+        6.878889,
+        33.280633
+      ],
+      "to": [
+        6.951574,
+        33.276312
+      ],
+      "delta_m": 6774,
+      "osm": {
+        "relation": 5139651,
+        "admin_centre_node": 1566167652,
+        "ref:ONS": "3905",
+        "name": "Nekhla ⵏⵏⴻⵅⵍⴰ النخلة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Nekhla;ⵏⵏⴻⵅⵍⴰ;النخلة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3412,
+      "wilaya_code": 34,
+      "name_fr": "Belimour",
+      "name_ar": "بليمور",
+      "from": [
+        4.833333,
+        36.027222
+      ],
+      "to": [
+        4.877884,
+        35.978876
+      ],
+      "delta_m": 6705,
+      "osm": {
+        "relation": 4484852,
+        "admin_centre_node": 1349282525,
+        "ref:ONS": "3412",
+        "name": "Belimour ⴱⴻⵍⵉⵎⵓⵔ بليمور",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Belimour"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1333,
+      "wilaya_code": 13,
+      "name_fr": "Souk Thlata",
+      "name_ar": "سوق الثلاثاء",
+      "from": [
+        -1.927222,
+        35.023889
+      ],
+      "to": [
+        -1.996783,
+        35.027095
+      ],
+      "delta_m": 6344,
+      "osm": {
+        "relation": 6666583,
+        "admin_centre_node": 839605872,
+        "ref:ONS": "1333",
+        "name": "Souk Tlata ⵙⵓⵇ ⵜⵜⵍⴰⵜⴰ سوق الثلاثاء",
+        "admin_centre_place": "village",
+        "admin_centre_name": "سوق الثلاثاء ⵙⵓⵇ ⵜⵜⵍⴰⵜⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3114,
+      "wilaya_code": 31,
+      "name_fr": "Boufatis",
+      "name_ar": "بوفاتيس",
+      "from": [
+        -0.481667,
+        35.6791
+      ],
+      "to": [
+        -0.411768,
+        35.679141
+      ],
+      "delta_m": 6314,
+      "osm": {
+        "relation": 4270795,
+        "admin_centre_node": 810749489,
+        "ref:ONS": "3114",
+        "name": "Boufatis ⴱⵓⴼⴰⵟⵉⵙ بوفاطيس",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Boufatis"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4313,
+      "wilaya_code": 43,
+      "name_fr": "Tiberguent",
+      "name_ar": "تيبرقنت",
+      "from": [
+        6.0396,
+        36.466762
+      ],
+      "to": [
+        6.041311,
+        36.410266
+      ],
+      "delta_m": 6284,
+      "osm": {
+        "relation": 2262854,
+        "admin_centre_node": 461906177,
+        "ref:ONS": "4313",
+        "name": "Tiberguent ⵜⴰⴱⴻⵔⴳⴻⵏⵜ تبرقنت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تبرقنت ⵜⵉⴱⵔⴳⵏⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 561,
+      "wilaya_code": 5,
+      "name_fr": "Larbaa",
+      "name_ar": "لارباع",
+      "from": [
+        6.11124,
+        35.403889
+      ],
+      "to": [
+        6.141078,
+        35.354542
+      ],
+      "delta_m": 6118,
+      "osm": {
+        "relation": 5195935,
+        "admin_centre_node": 1514874825,
+        "ref:ONS": "0561",
+        "name": "Larbaa ⵍⴰⵔⴱⵄⴰ لارباع",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Larbaa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4406,
+      "wilaya_code": 44,
+      "name_fr": "Arib",
+      "name_ar": "عريب",
+      "from": [
+        2.133611,
+        36.291944
+      ],
+      "to": [
+        2.068332,
+        36.291944
+      ],
+      "delta_m": 5851,
+      "osm": {
+        "relation": 2781482,
+        "admin_centre_node": 3028239347,
+        "ref:ONS": "4406",
+        "name": "Arib",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Arib"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 560,
+      "wilaya_code": 5,
+      "name_fr": "Boulhilat",
+      "name_ar": "بولهيلات",
+      "from": [
+        6.6625,
+        35.6752
+      ],
+      "to": [
+        6.662559,
+        35.724804
+      ],
+      "delta_m": 5516,
+      "osm": {
+        "relation": 5241047,
+        "admin_centre_node": 1405079751,
+        "ref:ONS": "0560",
+        "name": "Boulehilet ⴱⵓⵍⵃⵉⵍⴰⵜ بولهيلات",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Boulehilet"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1815,
+      "wilaya_code": 18,
+      "name_fr": "Ghebala",
+      "name_ar": "غبالة",
+      "from": [
+        6.3283,
+        36.628455
+      ],
+      "to": [
+        6.388218,
+        36.62825
+      ],
+      "delta_m": 5347,
+      "osm": {
+        "relation": 6669726,
+        "admin_centre_node": 1390813538,
+        "ref:ONS": "1815",
+        "name": "Ghebala ⵖⴻⴱⴱⴰⵍⴰ غبالة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "غبالة ⵖⴱⴰⵍⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4115,
+      "wilaya_code": 41,
+      "name_fr": "M'daourouche",
+      "name_ar": "مداوروش",
+      "from": [
+        7.819722,
+        36.1218
+      ],
+      "to": [
+        7.821238,
+        36.077309
+      ],
+      "delta_m": 4949,
+      "osm": {
+        "relation": 6663196,
+        "admin_centre_node": 443019113,
+        "ref:ONS": "4115",
+        "name": "M'daourouch",
+        "admin_centre_place": "town",
+        "admin_centre_name": "مداوروش ⵎⴷⴰⵡⵔⵓⵛ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1641,
+      "wilaya_code": 16,
+      "name_fr": "Herraoua",
+      "name_ar": "هراوة",
+      "from": [
+        3.253056,
+        36.77278
+      ],
+      "to": [
+        3.308501,
+        36.772746
+      ],
+      "delta_m": 4938,
+      "osm": {
+        "relation": 157456,
+        "admin_centre_node": 317353592,
+        "ref:ONS": "1641",
+        "name": "Harraoua ⵀⴰⵔⴰⵡⴰ هراوة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "H'raoua ⵀⴰⵔⴰⵡⴰ هراوة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1545,
+      "wilaya_code": 15,
+      "name_fr": "Yatafene",
+      "name_ar": "يطــافن",
+      "from": [
+        4.2989,
+        36.575278
+      ],
+      "to": [
+        4.255757,
+        36.551908
+      ],
+      "delta_m": 4648,
+      "osm": {
+        "relation": 4288664,
+        "admin_centre_node": 1196022081,
+        "ref:ONS": "1545",
+        "name": "Yatafene",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Yatafene"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1559,
+      "wilaya_code": 15,
+      "name_fr": "Sidi Namane",
+      "name_ar": "سيدي نعمان",
+      "from": [
+        3.9839,
+        36.7169
+      ],
+      "to": [
+        3.981423,
+        36.758618
+      ],
+      "delta_m": 4644,
+      "osm": {
+        "relation": 4279910,
+        "admin_centre_node": 455463007,
+        "ref:ONS": "1559",
+        "name": "Sidi Naamane",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sidi Nâamane"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1619,
+      "wilaya_code": 16,
+      "name_fr": "Bachedjerah",
+      "name_ar": "باش جراح",
+      "from": [
+        3.0667,
+        36.7006
+      ],
+      "to": [
+        3.112637,
+        36.720059
+      ],
+      "delta_m": 4631,
+      "osm": {
+        "relation": 542690,
+        "admin_centre_node": 288402701,
+        "ref:ONS": "1619",
+        "name": "Bachdjarah ⴱⴰⵛ ⴵⴻⵔⵔⴰⵃ باش جراح",
+        "admin_centre_place": "suburb",
+        "admin_centre_name": "Bachdjarrah ⴱⴰⵛ ⴵⴻⵔⵔⴰⵃ باش جراح"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3817,
+      "wilaya_code": 38,
+      "name_fr": "Maacem",
+      "name_ar": "المعاصم",
+      "from": [
+        1.603611,
+        35.659722
+      ],
+      "to": [
+        1.553147,
+        35.658871
+      ],
+      "delta_m": 4560,
+      "osm": {
+        "relation": 6534586,
+        "admin_centre_node": 929585833,
+        "ref:ONS": "3817",
+        "name": "Maacem ⵎⵄⴰⵚⴻⵎ المعاصم",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Maacem"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1934,
+      "wilaya_code": 19,
+      "name_fr": "Bir Haddada",
+      "name_ar": "بئر حدادة",
+      "from": [
+        5.380213,
+        35.962777
+      ],
+      "to": [
+        5.430861,
+        35.963046
+      ],
+      "delta_m": 4558,
+      "osm": {
+        "relation": 4307792,
+        "admin_centre_node": 460974296,
+        "ref:ONS": "1934",
+        "name": "Bir Haddada",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Bir Haddada"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1632,
+      "wilaya_code": 16,
+      "name_fr": "Beni Messous",
+      "name_ar": "بني مسوس",
+      "from": [
+        2.974444,
+        36.73962
+      ],
+      "to": [
+        2.974557,
+        36.780096
+      ],
+      "delta_m": 4501,
+      "osm": {
+        "relation": 542466,
+        "admin_centre_node": 288090062,
+        "ref:ONS": "1632",
+        "name": "Beni Messous ⴱⵏⵉ ⵎⴻⵙⵙⵓⵙ بني مسوس",
+        "admin_centre_place": "suburb",
+        "admin_centre_name": "Beni Messous ⴱⵏⵉ ⵎⴻⵙⵙⵓⵙ بني مسوس"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1615,
+      "wilaya_code": 16,
+      "name_fr": "Oued Smar",
+      "name_ar": "وادي السمار",
+      "from": [
+        3.172222,
+        36.74472
+      ],
+      "to": [
+        3.168156,
+        36.70442
+      ],
+      "delta_m": 4496,
+      "osm": {
+        "relation": 157521,
+        "admin_centre_node": 333924930,
+        "ref:ONS": "1615",
+        "name": "Oued Smar ⵡⴻⴷ ⵙⵎⴰⵔ وادي السمار",
+        "admin_centre_place": "quarter",
+        "admin_centre_name": "Oued Smar ⵡⴻⴷ ⵙⵎⴰⵔ وادي السمار"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1345,
+      "wilaya_code": 13,
+      "name_fr": "Tianet",
+      "name_ar": "تيانت",
+      "from": [
+        -1.8389,
+        35.090833
+      ],
+      "to": [
+        -1.838749,
+        35.052261
+      ],
+      "delta_m": 4289,
+      "osm": {
+        "relation": 6666585,
+        "admin_centre_node": 838253043,
+        "ref:ONS": "1345",
+        "name": "Tienet ⵜⴰⵢⵏⴻⵜ تيانت",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تيانت ⵜⵢⴰⵏⵜ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 612,
+      "wilaya_code": 6,
+      "name_fr": "Smaoun",
+      "name_ar": "سمعون",
+      "from": [
+        4.8,
+        36.6389
+      ],
+      "to": [
+        4.822428,
+        36.608469
+      ],
+      "delta_m": 3931,
+      "osm": {
+        "relation": 4112934,
+        "admin_centre_node": 1370291698,
+        "ref:ONS": "0612",
+        "name": "Semaoun",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Semɛun"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2942,
+      "wilaya_code": 29,
+      "name_fr": "Guerdjoum",
+      "name_ar": "قرجوم",
+      "from": [
+        0.053659,
+        35.15
+      ],
+      "to": [
+        0.071249,
+        35.179917
+      ],
+      "delta_m": 3691,
+      "osm": {
+        "relation": 5481675,
+        "admin_centre_node": 3727923648,
+        "ref:ONS": "2942",
+        "name": "Guerdjoum ⴳⴻⵔⵊⵓⵎ قرجوم",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Guerdjoum"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4119,
+      "wilaya_code": 41,
+      "name_fr": "Ouillen",
+      "name_ar": "ويلان",
+      "from": [
+        8.064722,
+        36.195
+      ],
+      "to": [
+        8.065158,
+        36.227773
+      ],
+      "delta_m": 3644,
+      "osm": {
+        "relation": 6663200,
+        "admin_centre_node": 462003376,
+        "ref:ONS": "4119",
+        "name": "Ouillen",
+        "admin_centre_place": "village",
+        "admin_centre_name": "ويلان ⵡⵉⵍⴰⵏ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3113,
+      "wilaya_code": 31,
+      "name_fr": "Sidi Chami",
+      "name_ar": "سيدي الشحمي",
+      "from": [
+        -0.5217,
+        35.62687
+      ],
+      "to": [
+        -0.522015,
+        35.657994
+      ],
+      "delta_m": 3461,
+      "osm": {
+        "relation": 2078700,
+        "admin_centre_node": 4506956466,
+        "ref:ONS": "3113",
+        "name": "Sidi Chahmi ⵙⵉⴷⵉ ⵛⵛⴻⵃⵎⵉ سيدي الشحمي",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Sidi Chami"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4426,
+      "wilaya_code": 44,
+      "name_fr": "Ain-Benian",
+      "name_ar": "عين البنيان",
+      "from": [
+        2.427814,
+        36.353611
+      ],
+      "to": [
+        2.389954,
+        36.352343
+      ],
+      "delta_m": 3393,
+      "osm": {
+        "relation": 2626176,
+        "admin_centre_node": 3028241042,
+        "ref:ONS": "4426",
+        "name": "Aïn Benian",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Aïn Benian"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3531,
+      "wilaya_code": 35,
+      "name_fr": "Souk El Had",
+      "name_ar": "سوق الحد",
+      "from": [
+        3.583333,
+        36.721404
+      ],
+      "to": [
+        3.591561,
+        36.691975
+      ],
+      "delta_m": 3354,
+      "osm": {
+        "relation": 4273075,
+        "admin_centre_node": 818784416,
+        "ref:ONS": "3531",
+        "name": "Souk El Had ⵙⵓⵇ ⵍⵃⴻⴷ سوق الحد",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Souk El Had ⵙⵓⵇ ⵍⵃⴻⴷ سوق الحد"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2137,
+      "wilaya_code": 21,
+      "name_fr": "Hammadi Krouma",
+      "name_ar": "حمادي كرومة",
+      "from": [
+        6.89262,
+        36.844
+      ],
+      "to": [
+        6.929106,
+        36.844118
+      ],
+      "delta_m": 3247,
+      "osm": {
+        "relation": 6543290,
+        "admin_centre_node": 2852022479,
+        "ref:ONS": "2137",
+        "name": "Hamadi Krouma ⵃⴻⵎⵎⴰⴷⵉ ⴽⵔⵓⵎⴰ حمادي كرومة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "حمادي كرومة ⵃⵎⵎⴰⴷⵉ ⴽⵔⵓⵎⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 404,
+      "wilaya_code": 4,
+      "name_fr": "Behir Chergui",
+      "name_ar": "بحير الشرقي",
+      "from": [
+        7.6833,
+        35.790804
+      ],
+      "to": [
+        7.718791,
+        35.794315
+      ],
+      "delta_m": 3225,
+      "osm": {
+        "relation": 4489885,
+        "admin_centre_node": 462509061,
+        "ref:ONS": "0404",
+        "name": "Behir Chergui ⴱⵃⵉⵔ ⵛⴻⵔⴳⵉ بحير شرقي",
+        "admin_centre_place": "village",
+        "admin_centre_name": "بحير الشرڨي ⴱⵃⵉⵔ ⵛⴻⵔⴳⵉ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 621,
+      "wilaya_code": 6,
+      "name_fr": "Sidi Ayad",
+      "name_ar": "سيدي عياد",
+      "from": [
+        4.75,
+        36.61667
+      ],
+      "to": [
+        4.715174,
+        36.611916
+      ],
+      "delta_m": 3153,
+      "osm": {
+        "relation": 4069491,
+        "admin_centre_node": 1370317928,
+        "ref:ONS": "0621",
+        "name": "Sidi Ayad",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Sidi Ɛeyyad"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1624,
+      "wilaya_code": 16,
+      "name_fr": "Hammamet",
+      "name_ar": "الحمامات",
+      "from": [
+        3.0034,
+        36.804164
+      ],
+      "to": [
+        2.971255,
+        36.813761
+      ],
+      "delta_m": 3054,
+      "osm": {
+        "relation": 542467,
+        "admin_centre_node": 330435062,
+        "ref:ONS": "1624",
+        "name": "Hammamet",
+        "admin_centre_place": "suburb",
+        "admin_centre_name": "Hammamet ⵍⵃⴻⵎⵎⴰⵎⴻⵜ الحمامات"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4417,
+      "wilaya_code": 44,
+      "name_fr": "Zeddine",
+      "name_ar": "زدين",
+      "from": [
+        1.85,
+        36.163889
+      ],
+      "to": [
+        1.82017,
+        36.15621
+      ],
+      "delta_m": 2811,
+      "osm": {
+        "relation": 2759956,
+        "admin_centre_node": 501705381,
+        "ref:ONS": "4417",
+        "name": "Zeddine",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Zeddine"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 4319,
+      "wilaya_code": 43,
+      "name_fr": "Tassadane Haddada",
+      "name_ar": "تسدان حدادة",
+      "from": [
+        5.878729,
+        36.52269
+      ],
+      "to": [
+        5.878729,
+        36.501616
+      ],
+      "delta_m": 2343,
+      "osm": {
+        "relation": 2155362,
+        "admin_centre_node": 501761542,
+        "ref:ONS": "4319",
+        "name": "Tassadane Haddada ⵜⴰⵙⴰⴷⴰⵏ ⵃⴻⴷⴷⴰⴷⴰ تسدان حدادة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "تسدان حدادة ⵜⴰⵙⴰⴷⴰⵏ ⵃⴷⴷⴰⴷⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1517,
+      "wilaya_code": 15,
+      "name_fr": "Iferhounene",
+      "name_ar": "إفــرحــونان",
+      "from": [
+        4.38333,
+        36.51667
+      ],
+      "to": [
+        4.36935,
+        36.534112
+      ],
+      "delta_m": 2307,
+      "osm": {
+        "relation": 2170762,
+        "admin_centre_node": 442789793,
+        "ref:ONS": "1517",
+        "name": "Iferhounene",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Iferhounène"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 3519,
+      "wilaya_code": 35,
+      "name_fr": "Corso",
+      "name_ar": "قورصو",
+      "from": [
+        3.468205,
+        36.75096
+      ],
+      "to": [
+        3.443383,
+        36.754742
+      ],
+      "delta_m": 2251,
+      "osm": {
+        "relation": 4272665,
+        "admin_centre_node": 317105898,
+        "ref:ONS": "3519",
+        "name": "Corso ⵇⵓⵔⵚⵓ قورصو",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Corso ⵇⵓⵔⵚⵓ قورصو"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1506,
+      "wilaya_code": 15,
+      "name_fr": "Mechtras",
+      "name_ar": "مشطراس",
+      "from": [
+        3.9981,
+        36.53117
+      ],
+      "to": [
+        4.011092,
+        36.543892
+      ],
+      "delta_m": 1830,
+      "osm": {
+        "relation": 4293793,
+        "admin_centre_node": 443181221,
+        "ref:ONS": "1506",
+        "name": "Mechtras",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Amecṛas"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 626,
+      "wilaya_code": 6,
+      "name_fr": "Seddouk",
+      "name_ar": "صدوق",
+      "from": [
+        4.70778,
+        36.547
+      ],
+      "to": [
+        4.689464,
+        36.547234
+      ],
+      "delta_m": 1636,
+      "osm": {
+        "relation": 4070075,
+        "admin_centre_node": 455500546,
+        "ref:ONS": "0626",
+        "name": "Seddouk",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Seddouk"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 5504,
+      "wilaya_code": 55,
+      "name_fr": "Nezla",
+      "name_ar": "النزلة",
+      "from": [
+        6.050833,
+        33.10527
+      ],
+      "to": [
+        6.063053,
+        33.096019
+      ],
+      "delta_m": 1534,
+      "osm": {
+        "relation": 5711075,
+        "admin_centre_node": 3871598094,
+        "ref:ONS": "3008",
+        "name": "Nezla ⵏⴻⵣⵍⴰ نزلة",
+        "admin_centre_place": "neighbourhood",
+        "admin_centre_name": "Nezla ⵏⴻⵣⵍⴰ نزلة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1657,
+      "wilaya_code": 16,
+      "name_fr": "Sehaoula",
+      "name_ar": "السحاولة",
+      "from": [
+        3.008518,
+        36.7046
+      ],
+      "to": [
+        3.023899,
+        36.702702
+      ],
+      "delta_m": 1387,
+      "osm": {
+        "relation": 541102,
+        "admin_centre_node": 288383847,
+        "ref:ONS": "1657",
+        "name": null,
+        "admin_centre_place": "suburb",
+        "admin_centre_name": "Saoula ⵙⴰⵡⵍⴰ السحاولة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 1618,
+      "wilaya_code": 16,
+      "name_fr": "Kouba",
+      "name_ar": "القبة",
+      "from": [
+        3.086474,
+        36.74413
+      ],
+      "to": [
+        3.087478,
+        36.732356
+      ],
+      "delta_m": 1312,
+      "osm": {
+        "relation": 545895,
+        "admin_centre_node": 288387133,
+        "ref:ONS": "1618",
+        "name": "Kouba ⵍⵇⵓⴱⴱⴰ القبة",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Kouba ⵟⴰⵇⵓⴱⴰ القبة"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    },
+    {
+      "code_commune": 2124,
+      "wilaya_code": 21,
+      "name_fr": "Beni Bechir",
+      "name_ar": "بني بشير",
+      "from": [
+        6.933333,
+        36.783333
+      ],
+      "to": [
+        6.937656,
+        36.774669
+      ],
+      "delta_m": 1037,
+      "osm": {
+        "relation": 6543280,
+        "admin_centre_node": 428235617,
+        "ref:ONS": "2124",
+        "name": "Beni Bechir ⴱⴻⵏⵉ ⴱⴰⵛⵉⵔ بنى بشير",
+        "admin_centre_place": "village",
+        "admin_centre_name": "بني بشير ⴱⵏⵉ ⴱⴰⵛⵉⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": true
+      }
+    }
+  ]
+}

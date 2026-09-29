@@ -116,3 +116,122 @@ of metres while staying inside the right commune, is invisible to it and was
 caught by a human report. Answering that class for all 1,541 rows means
 comparing every centre with its OSM `admin_centre` node, which is a separate
 audit with a much larger expected diff.
+
+That audit is the section below.
+
+# The 1,541-row seat audit (2026-09-29)
+
+Private tracker #170. Every commune centre compared with the `admin_centre`
+(chef-lieu) node of its own OSM `admin_level=8` relation, which is the class the
+containment sweep could not see. The expected diff was indeed much larger.
+
+- Overpass `timestamp_osm_base` **2026-09-29T12:54:47Z**, one endpoint
+  (`overpass-api.de`) for the whole run, because mirrors are independently
+  replicated and drift by hours.
+- ODbL 1.0, (c) OpenStreetMap contributors.
+- Reproduced by `node scripts/audit-commune-centres.mjs --fetch --geometry --write`.
+
+## Coverage
+
+1,537 of the 1,541 communes matched an `admin_level=8` relation, and every one of
+those relations carries an `admin_centre` node. The four with no relation at all
+in this pull are Souk Oufella (630), Bir Touta (1634), Collo (2110) and Dhayet
+Bendhahoua (4703); no relation was left without a commune.
+
+The join is `ref:ONS` to `code_commune` for 1,477 rows. 54 more are relations
+that still carry a **pre-2019-reform** ONS code, resolved inside the set of
+communes whose current wilaya declares that code's wilaya as its
+`mother_wilaya_code` in `packages/dataset/data/wilayas.json`, and only where
+exactly one of them answers to the OSM name. The 2026 reform needs none of that:
+wilayas 59 to 69 kept their mother wilaya's commune codes, so Aflou's communes
+still read `03xx` on both sides. Six relations are pinned by id in
+`scripts/audit-commune-centres.mjs` with what was checked, all six a
+transliteration gap rather than an ambiguity (In Ghar / Inghar, Megarine /
+Magarine, and four like them).
+
+## What it found
+
+| Band | Communes |
+| --- | --- |
+| over 300 m | 857 |
+| over 1 km | 496 |
+| over 5 km | 238 |
+| largest | 108.7 km (Sidi Slimane, 3221) |
+
+The median delta over all 1,537 rows is **402 m**. That is the headline: this is
+not a short list of defects, and a delta on its own is not a defect at all, since
+our value and the OSM node are two hand-placed claims about the same seat.
+
+So the audit ran the 2026-09-27 test over every row instead of over 68: a second
+Overpass pull (`out geom`) fetched each matched relation's unsimplified boundary
+and both points were tested against it. **215 stored centres are outside their
+own commune**, which no containment rule here could have found because the wilaya
+outlines are simplified and a wilaya is enormous. 174 of those also have their
+relation's `admin_centre` node inside the commune, inside the declared wilaya, and
+carrying the commune's own name, which is the 2026-09-27 standard met in full.
+
+Several are a recognisable class. Wilaya 1 (Adrar) has four: Fenoughil, Ouled
+Ahmed Timmi and Tamest hold a **positive** longitude where the chef-lieu is west
+of Greenwich, and Tit holds Timekten's longitude to four decimals. Others keep
+their latitude exactly and lose the longitude, or the reverse, which is the
+bad name-based join already diagnosed in `research/_communes-reconcile/README.md`.
+
+## Nothing was corrected here
+
+`pending-corrections-2026-09-29.json` carries those 174 rows in the exact shape
+`scripts/fix-commune-centres.mjs` reads, with the evidence per row, and is
+deliberately **not applied**. Moving 56 centres on 2026-09-27 took ten dependent
+packages with it: `sante`, `agriculture`, `industrie-pharmaceutique` and `djezzy`
+through `scripts/sync-commune-centroid-dependents.mjs`, `ecoles`, `cliniques`,
+`pharmacies`, `mosquees`, `culture` and `ooredoo` through ordered `--cache`
+rebuilds, one of which retires published ids. Three times that is a release, not a
+rider on an audit, so it is a decision recorded here and a separate change to
+apply.
+
+## The standing guard
+
+`test/commune-centre-osm-seat.test.mjs` fails when any commune centre, in any of
+the seven files that carry one, is more than **1 km** from its recorded seat. It
+reads two files and fetches nothing:
+
+| File | Contents |
+| --- | --- |
+| `osm-seat-reference.json` | the seat, `osm_relation_id`, `admin_centre_node` and `wikidata` per commune, plus `osm_relation_id` and `wikidata` for all 69 wilayas |
+| `seat-exceptions.json` | the 496 communes already over the line on the day it was drawn, each with its reason and the distance measured for it |
+
+An exceptions list of 496 is not a clean bill of health, and it says so per row:
+174 are the decided errors above, 41 more are outside their own commune on
+incomplete evidence, and 281 are unreviewed, their stored point inside its own
+commune so that the delta really is two hand-placed claims about one seat. What
+makes it a ratchet anyway is that the distance is part of the pin: a listed
+commune that moves fails rather than being absorbed, and a pin that is no longer
+needed has to be removed.
+
+Seven rows carry a separate smell the delta cannot express: the OSM seat itself
+falls outside the wilaya we declare the commune in, which makes the linkage or the
+shipped outline the suspect. Three of them (El Alia, El-Hadjira, Mansoura) are the
+same rows the 2026-09-27 pass left for review; the other
+four are coastal (Tigzirt, El Marsa, Hadjret Ennous, Bologhine Ibnou Ziri), where
+the simplified outline cuts inside the shoreline. All seven are listed under
+`seat_in_declared_wilaya` in `audit-2026-09-29.json`; the wilaya outlines are #171,
+not this audit.
+
+The `osm_relation_id` and `wikidata` harvested here (1,536 of 1,537 communes, 69
+of 69 wilayas) stay in `research/`. Publishing them as package fields is #181.
+
+## Files
+
+| File | Contents |
+| --- | --- |
+| `audit-2026-09-29.json` | every compared row with both coordinates, the delta, how it matched and the containment verdicts |
+| `audit-2026-09-29.md` | the counts and the full list above 300 m, sorted by delta, with a hint per row |
+| `pending-corrections-2026-09-29.json` | the 174 decided errors, corrections-file shaped, not applied |
+| `osm-seat-reference.json` | what the standing guard holds the data to |
+| `seat-exceptions.json` | the guard's exceptions, with a reason each |
+| `osm-2026-09-29/admin-relations.json` | the reduced, committed Overpass capture |
+| `osm-2026-09-29/containment.json` | one containment verdict per commune from the geometry pull |
+| `osm-2026-09-29/overpass-query.overpassql` | the query, verbatim |
+
+The two raw Overpass responses are 55 MB of way-member lists and full boundary
+geometry, so they are gitignored working inputs; the reduced captures beside them
+are the reviewable record.
