@@ -76,11 +76,11 @@
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.geojson",
-      "sha256": "e83a73f460af05aeedd85b67c518d399f90af98ceb9256b4cc4f5fd99308c6bd"
+      "sha256": "126aaa4ae9e337fed1cadb41cc589036d56bca2caefa5775ad5a8d08a129635c"
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.metadata.json",
-      "sha256": "737c9cc8d2e8f52d63afb9deef4925d03cec02b154814c72f3d0c250ec0b908c"
+      "sha256": "793e2d2b48daa79844dccc225bb5b60780f83720597640e4a9346a28af9f4a06"
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
@@ -310,13 +310,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 18450,
+  "candidates": 18375,
   "reasons": {
     "approximate_coordinate": 16899,
-    "inside_adjacent_wilaya": 960,
+    "inside_adjacent_wilaya": 888,
     "missing_coordinate": 526,
     "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 1159,
+    "outside_declared_wilaya": 1087,
     "shared_coordinate": 1299
   },
   "datasets": [
@@ -819,12 +819,12 @@
     {
       "dataset": "culture",
       "total_records": 1083,
-      "candidates": 40,
+      "candidates": 39,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 14,
+        "inside_adjacent_wilaya": 13,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 25,
+        "outside_declared_wilaya": 24,
         "shared_coordinate": 12
       },
       "metadata_path": "packages/culture/data/metadata.json",
@@ -934,11 +934,12 @@
     {
       "dataset": "ecoles",
       "total_records": 11858,
-      "candidates": 9024,
+      "candidates": 9035,
       "reasons": {
         "approximate_coordinate": 9018,
+        "inside_adjacent_wilaya": 24,
         "outside_all_wilaya_boundaries": 14,
-        "outside_declared_wilaya": 14
+        "outside_declared_wilaya": 38
       },
       "metadata_path": "packages/ecoles/data/metadata.json",
       "metadata": {
@@ -1004,13 +1005,13 @@
     {
       "dataset": "emploi",
       "total_records": 331,
-      "candidates": 43,
+      "candidates": 42,
       "reasons": {
         "approximate_coordinate": 19,
-        "inside_adjacent_wilaya": 20,
+        "inside_adjacent_wilaya": 19,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 22
+        "outside_declared_wilaya": 21
       },
       "metadata_path": "packages/emploi/data/metadata.json",
       "metadata": {
@@ -1198,12 +1199,13 @@
     {
       "dataset": "formation-professionnelle",
       "total_records": 1932,
-      "candidates": 570,
+      "candidates": 572,
       "reasons": {
         "approximate_coordinate": 558,
+        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 11,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 6,
+        "outside_declared_wilaya": 8,
         "shared_coordinate": 396
       },
       "metadata_path": "packages/formation-professionnelle/data/metadata.json",
@@ -1372,12 +1374,12 @@
     {
       "dataset": "jeunesse",
       "total_records": 2334,
-      "candidates": 114,
+      "candidates": 107,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 22,
+        "inside_adjacent_wilaya": 15,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 24,
+        "outside_declared_wilaya": 17,
         "shared_coordinate": 37
       },
       "metadata_path": "packages/jeunesse/data/metadata.json",
@@ -1581,12 +1583,12 @@
     {
       "dataset": "mosquees",
       "total_records": 20759,
-      "candidates": 5116,
+      "candidates": 5075,
       "reasons": {
         "approximate_coordinate": 4532,
-        "inside_adjacent_wilaya": 666,
+        "inside_adjacent_wilaya": 618,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 685
+        "outside_declared_wilaya": 637
       },
       "metadata_path": "packages/mosquees/data/metadata.json",
       "metadata": {
@@ -1697,12 +1699,12 @@
     {
       "dataset": "pharmacies",
       "total_records": 3807,
-      "candidates": 314,
+      "candidates": 313,
       "reasons": {
         "approximate_coordinate": 298,
-        "inside_adjacent_wilaya": 14,
+        "inside_adjacent_wilaya": 12,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 19
+        "outside_declared_wilaya": 17
       },
       "metadata_path": "packages/pharmacies/data/metadata.json",
       "metadata": {
@@ -1751,12 +1753,12 @@
     {
       "dataset": "poste",
       "total_records": 5934,
-      "candidates": 45,
+      "candidates": 37,
       "reasons": {
-        "inside_adjacent_wilaya": 17,
+        "inside_adjacent_wilaya": 9,
         "missing_coordinate": 21,
         "outside_all_wilaya_boundaries": 7,
-        "outside_declared_wilaya": 24
+        "outside_declared_wilaya": 16
       },
       "metadata_path": "packages/poste/data/metadata.json",
       "metadata": {
@@ -1810,12 +1812,11 @@
     {
       "dataset": "protection-civile",
       "total_records": 880,
-      "candidates": 32,
+      "candidates": 29,
       "reasons": {
         "approximate_coordinate": 23,
-        "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 9,
+        "outside_declared_wilaya": 6,
         "shared_coordinate": 18
       },
       "metadata_path": "packages/protection-civile/data/metadata.json",
@@ -1887,10 +1888,9 @@
       "candidates": 572,
       "reasons": {
         "approximate_coordinate": 476,
-        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 95,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 5,
+        "outside_declared_wilaya": 3,
         "shared_coordinate": 312
       },
       "metadata_path": "packages/sante/data/metadata.json",
@@ -1967,12 +1967,12 @@
     {
       "dataset": "sports",
       "total_records": 5141,
-      "candidates": 167,
+      "candidates": 157,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 36,
+        "inside_adjacent_wilaya": 26,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 37,
+        "outside_declared_wilaya": 27,
         "shared_coordinate": 46
       },
       "metadata_path": "packages/sports/data/metadata.json",
@@ -2137,12 +2137,12 @@
     {
       "dataset": "tourisme",
       "total_records": 4348,
-      "candidates": 250,
+      "candidates": 234,
       "reasons": {
         "approximate_coordinate": 33,
-        "inside_adjacent_wilaya": 127,
+        "inside_adjacent_wilaya": 111,
         "outside_all_wilaya_boundaries": 95,
-        "outside_declared_wilaya": 222,
+        "outside_declared_wilaya": 206,
         "shared_coordinate": 7
       },
       "metadata_path": "packages/tourisme/data/metadata.json",
@@ -2349,12 +2349,12 @@
       "dataset": "culture",
       "entity": "culture.json",
       "total_records": 1083,
-      "candidates": 40,
+      "candidates": 39,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 14,
+        "inside_adjacent_wilaya": 13,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 25,
+        "outside_declared_wilaya": 24,
         "shared_coordinate": 12
       },
       "path": "packages/culture/data/culture.json"
@@ -2371,11 +2371,12 @@
       "dataset": "ecoles",
       "entity": "ecoles.json",
       "total_records": 11858,
-      "candidates": 9024,
+      "candidates": 9035,
       "reasons": {
         "approximate_coordinate": 9018,
+        "inside_adjacent_wilaya": 24,
         "outside_all_wilaya_boundaries": 14,
-        "outside_declared_wilaya": 14
+        "outside_declared_wilaya": 38
       },
       "path": "packages/ecoles/data/ecoles.json"
     },
@@ -2383,13 +2384,13 @@
       "dataset": "emploi",
       "entity": "alem.json",
       "total_records": 273,
-      "candidates": 40,
+      "candidates": 39,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 20,
+        "inside_adjacent_wilaya": 19,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 22
+        "outside_declared_wilaya": 21
       },
       "path": "packages/emploi/data/alem.json"
     },
@@ -2432,12 +2433,13 @@
       "dataset": "formation-professionnelle",
       "entity": "establishments.json",
       "total_records": 1932,
-      "candidates": 570,
+      "candidates": 572,
       "reasons": {
         "approximate_coordinate": 558,
+        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 11,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 6,
+        "outside_declared_wilaya": 8,
         "shared_coordinate": 396
       },
       "path": "packages/formation-professionnelle/data/establishments.json"
@@ -2467,12 +2469,12 @@
       "dataset": "jeunesse",
       "entity": "institutions.json",
       "total_records": 2334,
-      "candidates": 114,
+      "candidates": 107,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 22,
+        "inside_adjacent_wilaya": 15,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 24,
+        "outside_declared_wilaya": 17,
         "shared_coordinate": 37
       },
       "path": "packages/jeunesse/data/institutions.json"
@@ -2499,12 +2501,12 @@
       "dataset": "mosquees",
       "entity": "mosquees.json",
       "total_records": 20759,
-      "candidates": 5116,
+      "candidates": 5075,
       "reasons": {
         "approximate_coordinate": 4532,
-        "inside_adjacent_wilaya": 666,
+        "inside_adjacent_wilaya": 618,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 685
+        "outside_declared_wilaya": 637
       },
       "path": "packages/mosquees/data/mosquees.json"
     },
@@ -2525,12 +2527,12 @@
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
       "total_records": 3807,
-      "candidates": 314,
+      "candidates": 313,
       "reasons": {
         "approximate_coordinate": 298,
-        "inside_adjacent_wilaya": 14,
+        "inside_adjacent_wilaya": 12,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 19
+        "outside_declared_wilaya": 17
       },
       "path": "packages/pharmacies/data/pharmacies.json"
     },
@@ -2538,12 +2540,12 @@
       "dataset": "poste",
       "entity": "atms.json",
       "total_records": 2026,
-      "candidates": 12,
+      "candidates": 10,
       "reasons": {
-        "inside_adjacent_wilaya": 5,
+        "inside_adjacent_wilaya": 3,
         "missing_coordinate": 5,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 7
+        "outside_declared_wilaya": 5
       },
       "path": "packages/poste/data/atms.json"
     },
@@ -2551,12 +2553,12 @@
       "dataset": "poste",
       "entity": "postoffices.json",
       "total_records": 3908,
-      "candidates": 33,
+      "candidates": 27,
       "reasons": {
-        "inside_adjacent_wilaya": 12,
+        "inside_adjacent_wilaya": 6,
         "missing_coordinate": 16,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 17
+        "outside_declared_wilaya": 11
       },
       "path": "packages/poste/data/postoffices.json"
     },
@@ -2564,12 +2566,11 @@
       "dataset": "protection-civile",
       "entity": "protection-civile.json",
       "total_records": 880,
-      "candidates": 32,
+      "candidates": 29,
       "reasons": {
         "approximate_coordinate": 23,
-        "inside_adjacent_wilaya": 3,
         "outside_all_wilaya_boundaries": 6,
-        "outside_declared_wilaya": 9,
+        "outside_declared_wilaya": 6,
         "shared_coordinate": 18
       },
       "path": "packages/protection-civile/data/protection-civile.json"
@@ -2581,10 +2582,9 @@
       "candidates": 572,
       "reasons": {
         "approximate_coordinate": 476,
-        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 95,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 5,
+        "outside_declared_wilaya": 3,
         "shared_coordinate": 312
       },
       "path": "packages/sante/data/sante.json"
@@ -2593,12 +2593,12 @@
       "dataset": "sports",
       "entity": "facilities.json",
       "total_records": 5141,
-      "candidates": 167,
+      "candidates": 157,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 36,
+        "inside_adjacent_wilaya": 26,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 37,
+        "outside_declared_wilaya": 27,
         "shared_coordinate": 46
       },
       "path": "packages/sports/data/facilities.json"
@@ -2643,12 +2643,12 @@
       "dataset": "tourisme",
       "entity": "attractions.json",
       "total_records": 1248,
-      "candidates": 90,
+      "candidates": 83,
       "reasons": {
         "approximate_coordinate": 3,
-        "inside_adjacent_wilaya": 30,
+        "inside_adjacent_wilaya": 23,
         "outside_all_wilaya_boundaries": 57,
-        "outside_declared_wilaya": 87
+        "outside_declared_wilaya": 80
       },
       "path": "packages/tourisme/data/attractions.json"
     },
@@ -2656,12 +2656,12 @@
       "dataset": "tourisme",
       "entity": "historic.json",
       "total_records": 1184,
-      "candidates": 75,
+      "candidates": 73,
       "reasons": {
         "approximate_coordinate": 8,
-        "inside_adjacent_wilaya": 44,
+        "inside_adjacent_wilaya": 42,
         "outside_all_wilaya_boundaries": 23,
-        "outside_declared_wilaya": 67
+        "outside_declared_wilaya": 65
       },
       "path": "packages/tourisme/data/historic.json"
     },
@@ -2669,11 +2669,11 @@
       "dataset": "tourisme",
       "entity": "lodging.json",
       "total_records": 1602,
-      "candidates": 30,
+      "candidates": 28,
       "reasons": {
-        "inside_adjacent_wilaya": 17,
+        "inside_adjacent_wilaya": 15,
         "outside_all_wilaya_boundaries": 13,
-        "outside_declared_wilaya": 30
+        "outside_declared_wilaya": 28
       },
       "path": "packages/tourisme/data/lodging.json"
     },
@@ -2694,11 +2694,11 @@
       "dataset": "tourisme",
       "entity": "thermal-springs.json",
       "total_records": 282,
-      "candidates": 47,
+      "candidates": 42,
       "reasons": {
         "approximate_coordinate": 20,
-        "inside_adjacent_wilaya": 32,
-        "outside_declared_wilaya": 32,
+        "inside_adjacent_wilaya": 27,
+        "outside_declared_wilaya": 27,
         "shared_coordinate": 7
       },
       "path": "packages/tourisme/data/thermal-springs.json"
@@ -2812,23 +2812,34 @@
           "license": "ODbL 1.0 (© OpenStreetMap contributors)",
           "retrieved": "2026-06-21",
           "evidence_type": "crowdsourced"
+        },
+        {
+          "key": "osm-communes",
+          "name": "OpenStreetMap: commune boundaries (relation, boundary=administrative, admin_level=8) in Algeria, full geometry",
+          "url": "https://www.openstreetmap.org",
+          "license": "ODbL 1.0 (© OpenStreetMap contributors)",
+          "retrieved": "2026-09-29",
+          "timestamp_osm_base": "2026-09-29T13:04:54Z",
+          "evidence_type": "crowdsourced",
+          "note": "Used only for the 2026-09-29 membership correction below, which redraws four of the 69 features. The outlines are recorded in research/_wilaya-boundaries/commune-outlines-2026-09-29.json."
         }
       ],
       "simplification": {
-        "method": "mapshaper -simplify dp 2% keep-shapes",
+        "method": "mapshaper -simplify dp 2% keep-shapes; the four features the 2026-09-29 membership correction redrew carry a transferred part simplified with Douglas-Peucker at 0.005 degrees (~550 m) instead",
         "coordinate_precision_dp": 3,
-        "vertices": 7759,
+        "vertices": 7805,
         "rings": 70,
         "vertex_spacing_m": {
-          "p25": 2125,
-          "median": 3356,
-          "p75": 5773,
-          "p90": 11792,
-          "max": 158314
+          "p25": 2106,
+          "median": 3329,
+          "p75": 5693,
+          "p90": 11681,
+          "max": 158582
         }
       },
       "provenance_notes": [
-        "CORRECTION 2026-08-09, the one place this file deliberately departs from upstream OSM: El Aricha (63) was subtracted from Tlemcen (13). El Aricha became its own wilaya in the 2026 reform, carved out of Tlemcen; OSM added the new relation (20815946, ref 63) but never shrank the parent relation (1280702, ref 13), which still spans its pre-reform extent, so 100% of El Aricha also fell inside Tlemcen and a third of the area Tlemcen drew was really El Aricha. Verified against a live Overpass pull on 2026-08-09 (timestamp_osm_base 2026-08-08T16:16:37Z): re-sourcing from OSM reproduces the defect rather than fixing it, which is why the correction lives here. Computed as a polygon difference by scripts/fix-wilaya-overlap.mjs (polygon-clipping), reusing the 24 vertices the two rings already shared, so no sliver was introduced and no territory was lost or gained: Tlemcen 9,098 km2 to 6,083 km2 and El Aricha 3,015 km2 sum back to the original 9,098 km2. Tlemcen went from 127 to 135 vertices; every other feature is byte-identical. Reported by Karim OA (konfo.net) from the Sismoo mobile app, and submitted upstream to OSM. Guarded by test/wilaya-boundaries-disjoint.test.mjs, which fails on the pre-correction geometry.",
+        "CORRECTION 2026-09-29, the second place this file deliberately departs from upstream OSM: the territory of three communes was moved to the wilaya each of them declares. El Alia (5513) and El-Hadjira (5507) are communes of Touggourt (55) and 9,049 km2 of them was drawn as Ouargla (30); Mansoura (4713) is a commune of Ghardaia (47) and 4,783 km2 of it was drawn as El Meniaa (58). Same class of defect as the El Aricha correction below: Touggourt was carved out of Ouargla and El Meniaa out of Ghardaia by law 19-12 in 2019, OSM has the new admin_level=4 relations but never shrank the parents, and the commune relations still carry Ouargla-era ONS codes (El Alia is tagged ref:ONS=3020, El-Hadjira 3014), so re-sourcing from OSM reproduces it. Membership is not an OSM question: law 26-06 (JORA n° 25, 5 April 2026) re-states the commune list of the ten 2019 wilayas, decree 26-206 (JORA n° 40, 3 June 2026) fixes the names and chef-lieux, and the ONS code geographique 2021 (sources/dataset/ons-code-geo-2021.json) reads 55 for 5513 and 5507 and 47 for 4713, as does every commune table this package ships. Found by the 2026-09-27 commune-centre sweep (research/_commune-centres/), where all three communes' stored centre AND their OSM chef-lieu node were 5 to 53 km outside their declared wilaya. Owner decision of 2026-09-29: the commune membership decides the line and the polygons follow the communes. Computed by scripts/fix-wilaya-membership.mjs (polygon-clipping) from the commune outlines in research/_wilaya-boundaries/commune-outlines-2026-09-29.json (OSM admin_level=8, timestamp_osm_base 2026-09-29T13:04:54Z): the receiving wilaya is derived as the complement of the shrunken donor inside the pair's own union, so the two share one arc and no third wilaya gains or loses anything. Touggourt 9,775 km2 to 18,832 (published figure 17,428), Ouargla 144,496 to 135,440 (145,805), Ghardaia 21,218 to 26,009 (24,395), El Meniaa 63,353 to 58,563; each pair's total is unchanged and each redrawn polygon is within 2% of the union of its own member communes' outlines. Vertices 7,759 to 7,805; every other feature is byte-identical. Private tracker #171. Guarded by test/wilaya-membership.test.mjs.",
+        "CORRECTION 2026-08-09, the first place this file deliberately departs from upstream OSM: El Aricha (63) was subtracted from Tlemcen (13). El Aricha became its own wilaya in the 2026 reform, carved out of Tlemcen; OSM added the new relation (20815946, ref 63) but never shrank the parent relation (1280702, ref 13), which still spans its pre-reform extent, so 100% of El Aricha also fell inside Tlemcen and a third of the area Tlemcen drew was really El Aricha. Verified against a live Overpass pull on 2026-08-09 (timestamp_osm_base 2026-08-08T16:16:37Z): re-sourcing from OSM reproduces the defect rather than fixing it, which is why the correction lives here. Computed as a polygon difference by scripts/fix-wilaya-overlap.mjs (polygon-clipping), reusing the 24 vertices the two rings already shared, so no sliver was introduced and no territory was lost or gained: Tlemcen 9,098 km2 to 6,083 km2 and El Aricha 3,015 km2 sum back to the original 9,098 km2. Tlemcen went from 127 to 135 vertices; every other feature is byte-identical. Reported by Karim OA (konfo.net) from the Sismoo mobile app, and submitted upstream to OSM. Guarded by test/wilaya-boundaries-disjoint.test.mjs, which fails on the pre-correction geometry.",
         "Imported verbatim from the GeoAlgeria app repo, commit 300cb85 (main), blob 92642be34c678e243e664a55ca7a373dd1f08e94; byte-identical, geometry untouched.",
         "The OSM extraction itself landed in the app repo on 2026-06-21 in commit f107d6a ('fix: replace GADM wilaya boundaries with OSM data (69 wilayas)'), which records the source (OSM admin_level=4 relations), the licence (ODbL) and the simplification (mapshaper dp 2%, keep-shapes). The bytes have not changed since.",
         "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",

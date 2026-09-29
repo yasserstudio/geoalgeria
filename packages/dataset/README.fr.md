@@ -2,7 +2,7 @@
 
 # GeoAlgeria
 
-> Le package de géodonnées algériennes – 69 wilayas, 556 daïras, 1 541 communes. À un `npm install` près.
+> Le package de géodonnées algériennes – 69 wilayas, 555 daïras, 1 541 communes. À un `npm install` près.
 
 Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez encore des jeux de données bloqués à 48 wilayas ? GeoAlgeria est la première géodonnée algérienne installable via npm et validée par CI – mise à jour pour la réforme de 2026. JSON, CSV, GeoJSON, SQL, TypeScript.
 
@@ -15,7 +15,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 
 ## En bref
 
-L'Algérie compte **69 wilayas** (provinces), **556 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
+L'Algérie compte **69 wilayas** (provinces), **555 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **555 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
 
 ---
 
@@ -66,7 +66,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // les 69 wilayas
 dz.communes;                   // les 1 541 communes
-dz.dairas;                     // les 556 daïras
+dz.dairas;                     // les 555 daïras
 dz.ecommerce;                  // jeu de données plat pour formulaires d'adresse
 dz.postOffices;                // 3 908 bureaux Algérie Poste
 dz.atms;                       // 2 026 distributeurs automatiques
@@ -143,7 +143,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 |---------|--------|-----------------|------------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Utilisation en fichier unique |
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
-| `data/dairas.json` | JSON | 556 | Liste des daïras avec nombre de communes |
+| `data/dairas.json` | JSON | 555 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
 | `data/csv/wilayas.csv` | CSV | 69 | Tableurs, imports |

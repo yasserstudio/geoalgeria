@@ -17,7 +17,7 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
-├── dairas.json                  ← 556 dairas
+├── dairas.json                  ← 555 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
@@ -162,7 +162,7 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 ## Coverage
 
 - **69 wilayas** — complete (original 48 + 2019 reform + 2025 reform)
-- **556 dairas**
+- **555 dairas**
 - **1,541 communes** (complete; the 13 name-twin communes of the reform wilayas were added 2026-07-29 from `research/_communes-reconcile/`)
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
@@ -198,6 +198,20 @@ simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 dec
 Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the
 outline can depart from the true border by much more than the ~150 m the coordinate rounding
 implies. Full provenance in `geojson/wilaya-boundaries.metadata.json`.
+
+Two features depart from upstream OSM on purpose, because OSM added each 2019 and 2026 reform
+wilaya as a new relation without shrinking the parent it was carved out of:
+
+- **2026-08-09**: El Aricha (63) subtracted from Tlemcen (13), which still spanned its
+  pre-reform extent.
+- **2026-09-29**: the territory of three communes moved to the wilaya each one declares.
+  El Alia (5513) and El-Hadjira (5507) are communes of Touggourt (55) and were drawn as
+  Ouargla (30); Mansoura (4713) is a commune of Ghardaïa (47) and was drawn as El Meniaa (58).
+  Touggourt goes from 9,775 to 18,832 km2 and Ouargla from 144,496 to 135,440; Ghardaïa from
+  21,218 to 26,009 and El Meniaa from 63,353 to 58,563. Each pair's total is unchanged. The
+  moved parts come from the communes' own OpenStreetMap `admin_level=8` outlines.
+
+Neither is a defect re-sourcing from OSM would fix: a live pull reproduces both.
 
 ## Commune centres
 
@@ -236,5 +250,6 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 - Echorouk Online, Awras, Djelfa Info, Aures News, El Moudjahid, France 24 Arabic
 - Algérie Poste for postal codes
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
+- OpenStreetMap `admin_level=8` commune relations (ODbL 1.0) for the wilaya 30/55 and 47/58 membership correction of 2026-09-29
 - OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 56 commune centres corrected on 2026-09-27
 - OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 8 commune centres replaced in version 2.1.0

@@ -197,19 +197,18 @@ for (const [label, load] of COPIES) {
 const TOLERANCE_M = 500;
 
 // Centres known to sit further out than that, pinned with what was checked, so
-// they neither fail the build nor hide a new one. All three are cases where the
-// commune's own OSM admin_centre node is outside the shipped wilaya outline as
-// well, which makes the outline the suspect and not the point.
-const OUTSIDE_WILAYA = {
-  // Touggourt (55) was carved out of Ouargla (30) in 2019 and the shipped 55
-  // outline does not reach these two: both points, and both OSM chef-lieu nodes,
-  // fall inside 30. OSM still refs them 3020 and 3014.
-  "El Alia (w55)": 53201,
-  "El-Hadjira (w55)": 51107,
-  // Ghardaia (47) / El Menia (58) border: the point and the chef-lieu node are
-  // both inside 58.
-  "Mansoura (w47)": 5233,
-};
+// they neither fail the build nor hide a new one.
+//
+// Empty since the wilaya-membership correction of private tracker #171. The three
+// rows that used to be pinned here, El Alia (w55) at 53,201 m, El-Hadjira (w55)
+// at 51,107 m and Mansoura (w47) at 5,233 m, were never point errors: each
+// commune's own OSM chef-lieu node was outside the shipped wilaya outline too,
+// which made the outline the suspect. It was. Touggourt (55) and El Meniaa (58)
+// were carved out of Ouargla (30) and Ghardaia (47) in 2019 and OpenStreetMap
+// never re-cut the admin_level=4 relations, so the three communes' territory
+// stayed with the mother wilaya. scripts/fix-wilaya-membership.mjs moved it and
+// test/wilaya-membership.test.mjs holds that correction in place.
+const OUTSIDE_WILAYA = {};
 
 /** Metres from (lng,lat) to the nearest edge of a Polygon/MultiPolygon.
  *  Equirectangular around the point: at these distances the projection error is
