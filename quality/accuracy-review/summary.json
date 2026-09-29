@@ -11,6 +11,10 @@
       "sha256": "9c957fd7a9db39376d4de287aeed80113c5916a0f088bc461a58323b696cfd1e"
     },
     {
+      "path": "packages/agriculture/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
+    },
+    {
       "path": "packages/aviation/data/airports.json",
       "sha256": "b097ab213e42f7055e72007e9be4fce8720d6c5240a95983a7e6b97e69c74075"
     },
@@ -56,7 +60,7 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "88cd2773338adef1fbe108f00b25621265c807e793c44987537d1d4a8d6794b1"
+      "sha256": "380ba09978063d0a569ae71d24a894eb0d49497da2eef8c0271dc26c0e2a4a5b"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
@@ -68,11 +72,15 @@
     },
     {
       "path": "packages/culture/data/culture.json",
-      "sha256": "c1633194815da9ceee4ee7ddac2d3796bc0b2b908aa8d270085ce32ca770c0b4"
+      "sha256": "e20a1d1603f62068353107153e29fb1e79b2ff563a38202d4ad01a2e81fbb99f"
     },
     {
       "path": "packages/culture/data/metadata.json",
       "sha256": "36833cddb813b8b5f1fe48febcc6ca6aab2fd22c7bd9adca5b3abf0d04316f72"
+    },
+    {
+      "path": "packages/culture/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.geojson",
@@ -96,7 +104,7 @@
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
-      "sha256": "097ea82b338765f539aa190a1d1071b754f14e25f6096369af909e039d3525a1"
+      "sha256": "6bd02cdab021abe7a355182a17bc05e8575d892480eb641eae45f0094349b59f"
     },
     {
       "path": "packages/ecoles/data/metadata.json",
@@ -136,7 +144,7 @@
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
-      "sha256": "fdf65f989931be365e4170ac486bc26f40b720abc738a7657edfb76d85283ee0"
+      "sha256": "c121b30e591017c7aeb9798b1f0851f1f742cb8b4f4bba59de10bb643ce78e6e"
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
@@ -147,12 +155,16 @@
       "sha256": "f1fcddbdc8dc72aa2d14ca05eb45b349bf7cc1a81ba7c99dfe46966c138c6606"
     },
     {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
+    },
+    {
       "path": "packages/gares-routieres/data/metadata.json",
       "sha256": "b192e1810c8900a50b27290f480f69d0d61cc083f31497e1ed891c2d1d907e97"
     },
     {
       "path": "packages/gares-routieres/data/retired-ids.json",
-      "sha256": "d370b792efb39fa6a703c4acc18f56d103e8077db83a776386abb79eb984c46f"
+      "sha256": "a2272f4a5f54e5247fe3cb8ed18b5b37d603da82f21a296220566d2941b58e9d"
     },
     {
       "path": "packages/gares-routieres/data/stations.json",
@@ -165,6 +177,10 @@
     {
       "path": "packages/industrie-pharmaceutique/data/metadata.json",
       "sha256": "b5560b531b2ae15e802f43d607c7ffa8175701cc177b35b75c8880a9f6647d43"
+    },
+    {
+      "path": "packages/industrie-pharmaceutique/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
@@ -208,15 +224,23 @@
     },
     {
       "path": "packages/mosquees/data/mosquees.json",
-      "sha256": "4b8223bc83e524644be9f959ffbd6fc3ee2b27397921463aed7f63ab170114ca"
+      "sha256": "405941372a269587f3cb32a2e7f28f7c5b390639fa4fc0f0c848e6606692bce7"
+    },
+    {
+      "path": "packages/mosquees/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/ooredoo/data/metadata.json",
       "sha256": "5506fed5163bf5930d598826113c25aa99a12b7299dc0cc98759691107fd3110"
     },
     {
+      "path": "packages/ooredoo/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
+    },
+    {
       "path": "packages/ooredoo/data/stores.json",
-      "sha256": "c1ccd6d9c8ce3d71bfc71d71318af77145dc0602d0b836e1cc11d6787682673e"
+      "sha256": "d406b73d7d7668f4558d7d98de7a8f71ef30f01a6d86e52eb6f868f558154c66"
     },
     {
       "path": "packages/pharmacies/data/metadata.json",
@@ -224,7 +248,7 @@
     },
     {
       "path": "packages/pharmacies/data/pharmacies.json",
-      "sha256": "91cba0f1b78a8a2fa7a290e7753c3b41a5c8a3b490a510249effea5f196162a9"
+      "sha256": "916de0be98596fcd608b0d580a8cd08f67b80fc166017e74811bbcb8be119463"
     },
     {
       "path": "packages/pharmacies/data/retired-ids.json",
@@ -257,6 +281,10 @@
     {
       "path": "packages/sante/data/metadata.json",
       "sha256": "e07fdba5a506e25684d2b3e035220572f30da7676b7c578a012b9f3424cbcecb"
+    },
+    {
+      "path": "packages/sante/data/retired-ids.json",
+      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/sante/data/sante.json",
@@ -314,13 +342,13 @@
   "total_datasets": 26,
   "total_entities": 34,
   "total_records": 70541,
-  "candidates": 17830,
+  "candidates": 17929,
   "reasons": {
     "approximate_coordinate": 16899,
-    "inside_adjacent_wilaya": 245,
+    "inside_adjacent_wilaya": 373,
     "missing_coordinate": 526,
     "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 444,
+    "outside_declared_wilaya": 572,
     "shared_coordinate": 1299
   },
   "datasets": [
@@ -761,11 +789,12 @@
     {
       "dataset": "cliniques",
       "total_records": 1913,
-      "candidates": 835,
+      "candidates": 836,
       "reasons": {
         "approximate_coordinate": 833,
+        "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 5
+        "outside_declared_wilaya": 6
       },
       "metadata_path": "packages/cliniques/data/metadata.json",
       "metadata": {
@@ -823,11 +852,12 @@
     {
       "dataset": "culture",
       "total_records": 1083,
-      "candidates": 27,
+      "candidates": 30,
       "reasons": {
         "approximate_coordinate": 16,
+        "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 11,
+        "outside_declared_wilaya": 15,
         "shared_coordinate": 12
       },
       "metadata_path": "packages/culture/data/metadata.json",
@@ -937,11 +967,12 @@
     {
       "dataset": "ecoles",
       "total_records": 11858,
-      "candidates": 9024,
+      "candidates": 9037,
       "reasons": {
         "approximate_coordinate": 9018,
+        "inside_adjacent_wilaya": 28,
         "outside_all_wilaya_boundaries": 14,
-        "outside_declared_wilaya": 14
+        "outside_declared_wilaya": 42
       },
       "metadata_path": "packages/ecoles/data/metadata.json",
       "metadata": {
@@ -1583,11 +1614,12 @@
     {
       "dataset": "mosquees",
       "total_records": 20759,
-      "candidates": 4541,
+      "candidates": 4619,
       "reasons": {
         "approximate_coordinate": 4532,
+        "inside_adjacent_wilaya": 90,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 19
+        "outside_declared_wilaya": 109
       },
       "metadata_path": "packages/mosquees/data/metadata.json",
       "metadata": {
@@ -1696,11 +1728,12 @@
     {
       "dataset": "pharmacies",
       "total_records": 3807,
-      "candidates": 303,
+      "candidates": 307,
       "reasons": {
         "approximate_coordinate": 298,
+        "inside_adjacent_wilaya": 5,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 5
+        "outside_declared_wilaya": 10
       },
       "metadata_path": "packages/pharmacies/data/metadata.json",
       "metadata": {
@@ -2335,11 +2368,12 @@
       "dataset": "cliniques",
       "entity": "cliniques.json",
       "total_records": 1913,
-      "candidates": 835,
+      "candidates": 836,
       "reasons": {
         "approximate_coordinate": 833,
+        "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 5
+        "outside_declared_wilaya": 6
       },
       "path": "packages/cliniques/data/cliniques.json"
     },
@@ -2347,11 +2381,12 @@
       "dataset": "culture",
       "entity": "culture.json",
       "total_records": 1083,
-      "candidates": 27,
+      "candidates": 30,
       "reasons": {
         "approximate_coordinate": 16,
+        "inside_adjacent_wilaya": 4,
         "outside_all_wilaya_boundaries": 11,
-        "outside_declared_wilaya": 11,
+        "outside_declared_wilaya": 15,
         "shared_coordinate": 12
       },
       "path": "packages/culture/data/culture.json"
@@ -2368,11 +2403,12 @@
       "dataset": "ecoles",
       "entity": "ecoles.json",
       "total_records": 11858,
-      "candidates": 9024,
+      "candidates": 9037,
       "reasons": {
         "approximate_coordinate": 9018,
+        "inside_adjacent_wilaya": 28,
         "outside_all_wilaya_boundaries": 14,
-        "outside_declared_wilaya": 14
+        "outside_declared_wilaya": 42
       },
       "path": "packages/ecoles/data/ecoles.json"
     },
@@ -2495,11 +2531,12 @@
       "dataset": "mosquees",
       "entity": "mosquees.json",
       "total_records": 20759,
-      "candidates": 4541,
+      "candidates": 4619,
       "reasons": {
         "approximate_coordinate": 4532,
+        "inside_adjacent_wilaya": 90,
         "outside_all_wilaya_boundaries": 19,
-        "outside_declared_wilaya": 19
+        "outside_declared_wilaya": 109
       },
       "path": "packages/mosquees/data/mosquees.json"
     },
@@ -2518,11 +2555,12 @@
       "dataset": "pharmacies",
       "entity": "pharmacies.json",
       "total_records": 3807,
-      "candidates": 303,
+      "candidates": 307,
       "reasons": {
         "approximate_coordinate": 298,
+        "inside_adjacent_wilaya": 5,
         "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 5
+        "outside_declared_wilaya": 10
       },
       "path": "packages/pharmacies/data/pharmacies.json"
     },
@@ -2698,6 +2736,10 @@
   ],
   "excluded": [
     {
+      "path": "packages/agriculture/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
       "path": "packages/aviation/data/route-endpoints.json",
       "reason": "Route endpoints include international airports outside this audit"
     },
@@ -2722,6 +2764,10 @@
       "reason": "Not a geospatial record array"
     },
     {
+      "path": "packages/culture/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
       "path": "packages/dataset",
       "reason": "Administrative dataset uses a separate contract; outside discovery scope"
     },
@@ -2738,7 +2784,15 @@
       "reason": "Not a geospatial record array"
     },
     {
+      "path": "packages/formation-professionnelle/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
       "path": "packages/gares-routieres/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/industrie-pharmaceutique/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {
@@ -2754,8 +2808,16 @@
       "reason": "Points of sale are intentionally ungeocoded directory records"
     },
     {
+      "path": "packages/mosquees/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
       "path": "packages/normalize",
       "reason": "Package has no data directory"
+    },
+    {
+      "path": "packages/ooredoo/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
     },
     {
       "path": "packages/pharma",
@@ -2767,6 +2829,10 @@
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/sante/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

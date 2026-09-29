@@ -15,9 +15,9 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00014,Université de Batna 2 – Mustapha Ben Boulaid,جامعة باتنة 2 – مصطفى بن بولعيد,05,,Fesdis,35.6298819,6.2741797,exact,campus,mesrs,universite,Université,public,,http://www.univ-batna2.dz/
 00015,Université de Béchar – Mohamed Tahri,جامعة طاهري محمد بشار,08,,Bechar,31.6059855,-2.2349535,exact,campus,mesrs,universite,Université,public,,http://www.univ-bechar.dz/
 00016,Université de Béjaia – Abderrahmane Mira,جامعة بجاية – عبد الرحمان ميرة,06,,Tala Hamza,36.7040811,5.0535872,exact,campus,mesrs,universite,Université,public,,http://www.univ-bejaia.dz/
-00017,Université de Biskra – Mohamed Khider,جامعة بسكرة – محمد خيضر,07,,Biskra,34.8450582,5.7473592,exact,campus,mesrs,universite,Université,public,,http://www.univ-biskra.dz/
+00017,Université de Biskra – Mohamed Khider,جامعة بسكرة – محمد خيضر,07,,Chetma,34.8450582,5.7473592,exact,campus,mesrs,universite,Université,public,,http://www.univ-biskra.dz/
 00018,Université de Blida 2 – Lounici Ali,جامعة البليدة 2 – لونيسي علي,09,,El-Affroun,36.4521408,2.6348992,exact,campus,mesrs,universite,Université,public,,http://www.univ-blida2.dz/
-00019,Université de Bordj Bou Arréridj – Mohamed Bachir El Ibrahimi,جامعة برج بوعريريج – محمد البشير الابراهيمي,34,,Belimour,36.037974,4.8141892,exact,campus,mesrs,universite,Université,public,,http://www.univ-bba.dz/
+00019,Université de Bordj Bou Arréridj – Mohamed Bachir El Ibrahimi,جامعة برج بوعريريج – محمد البشير الابراهيمي,34,,El Annasseur,36.037974,4.8141892,exact,campus,mesrs,universite,Université,public,,http://www.univ-bba.dz/
 00020,Université de Bouira – Akli Mohand Oulhadj,جامعة البويرة – آكلي محند أولحاج,10,,Bouira,36.3745083,3.8737279,exact,campus,mesrs,universite,Université,public,,http://www.univ-bouira.dz/
 00021,Université de Boumerdès – M’hamed Bougara,جامعة بومرداس – محمد بوقرة,35,,Boumerdes,36.7627057,3.4746586,exact,campus,mesrs,universite,Université,public,,http://www.univ-boumerdes.dz/
 00022,Université de Chlef – Hassiba Benbouali,جامعة الشلف – حسيبة بن بوعلي,02,,Chlef,36.1664301,1.3379934,exact,campus,mesrs,universite,Université,public,,http://www.univ-chlef.dz/
@@ -32,7 +32,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00031,Université de la Formation Continue,جامعة التكوين المتواصل,16,,Dely Ibrahim,36.7528506,2.9800558,approximate,commune,mesrs,universite,Université,public,,http://www.ufc.dz/
 00032,Université de Laghouat – Amar Telidji,جامعة الأغواط – عمار ثليجي,03,,Laghouat,33.796661,2.8466973,exact,campus,mesrs,universite,Université,public,,http://www.lagh-univ.dz/
 00033,Université de M’sila – Mohamed Boudiaf,جامعة المسيلة – محمد بوضياف,28,,M'Sila,35.7416528,4.5467418,exact,campus,mesrs,universite,Université,public,,http://www.univ-msila.dz/
-00034,Université de Mascara – Mustapha Stambouli,جامعة مصطفى اسطمبولي معسكر,29,,Mascara,35.4152817,0.1276161,exact,campus,mesrs,universite,Université,public,,http://www.univ-mascara.dz/
+00034,Université de Mascara – Mustapha Stambouli,جامعة مصطفى اسطمبولي معسكر,29,,El Mamounia,35.4152817,0.1276161,exact,campus,mesrs,universite,Université,public,,http://www.univ-mascara.dz/
 00035,Université de Mila – Abdelhafid Boussouf,جامعة ميلة – عبد الحفيظ بوالصوف,43,,Mila,36.4565193,6.2317486,exact,campus,mesrs,universite,Université,public,,https://www.centre-univ-mila.dz/?lang=fr
 00036,Université de Mostaganem – Abdelhamid Ibn Badis,جامعة عبد الحميد ابن باديس مستغانم,27,,Mostaganem,35.9312755,0.0884236,exact,campus,mesrs,universite,Université,public,,http://www.univ-mosta.dz/
 00037,Université de Naama – Ahmed Salhi,جامعة النعامة – صالحي أحمد المدعو علي,45,,Naama,33.2760384,-0.3166407,exact,campus,mesrs,universite,Université,public,,http://www.cuniv-naama.dz/
@@ -53,7 +53,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00052,Université de Tlemcen – Abou Bekr Belkaid,جامعة أبو بكر بلقايد تلمسان,13,,Mansourah,34.895279,-1.350444,exact,campus,mesrs,universite,Université,public,,http://www.univ-tlemcen.dz/
 00053,"Université des sciences et de la technologie d’Alger, Houari Boumediène",جامعة الجزائر هواري بومدين للعلوم و التكنولوجيا,16,,Bab Ezzouar,36.7121849,3.1810204,exact,campus,mesrs,universite,Université,public,,http://www.usthb.dz/
 00054,Université des sciences islamiques Emir Abdelkader de Constantine,جامعة قسنطينة للعلوم الإسلامية الأمير عبد القادر,25,,,36.35,6.6,approximate,wilaya,mesrs,universite,Université,public,,http://www.univ-emir.dz/
-00055,Université du 20 Août 1955 de Skikda,جامعة سكيكدة – 20 أوت 1955,21,,Hammadi Krouma,36.8478191,6.891858,exact,campus,mesrs,universite,Université,public,,http://www.univ-skikda.dz/
+00055,Université du 20 Août 1955 de Skikda,جامعة سكيكدة – 20 أوت 1955,21,,El Hadaiek,36.8478191,6.891858,exact,campus,mesrs,universite,Université,public,,http://www.univ-skikda.dz/
 00056,Université Médéa – Yahia Farès,جامعة المدية – يحي فارس,26,,Médéa,36.2649519,2.7976246,exact,campus,mesrs,universite,Université,public,,http://www.univ-medea.dz/
 00057,Université Mohamed Boudiaf des sciences et de la technologie – Mohamed Boudiaf,جامعة محمد بوضياف العلوم والتكنولوجيا- وهران,31,,Bir El Djir,35.7368,-0.545,approximate,commune,mesrs,universite,Université,public,,http://www.univ-usto.dz/
 00058,Université Sidi Bel Abbès – Djillali Liabes,جامعة جيلالي ليابس سيدي بلعباس,22,,Sidi Lahcene,35.1795014,-0.660442,exact,campus,mesrs,universite,Université,public,,http://www.univ-sba.dz/
@@ -67,14 +67,14 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00066,Ecole Nationale Supérieure de Biotechnologie de Constantine – Tewfik Khaznadar,المدرسة الوطنية العليا في البيوتكنولوجيا بقسنطينة – الشهيد توفيق خزندار,25,,Ain Smara,36.2799184,6.5906367,exact,campus,mesrs,grande_ecole,Grande école,public,,http://ensbiotech.edu.dz/
 00067,Ecole nationale supérieure de journalisme et des sciences de l’information,المدرسة الوطنية العليا للصحافة وعلوم الإعلام,16,,Ben Aknoun,36.758895,3.0100658,approximate,commune,mesrs,grande_ecole,Grande école,public,,https://ensjsi.dz/
 00068,Ecole nationale supérieure de management,المدرسة الوطنية العليا للمناجمنت,42,,Kolea,36.6389,2.768,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.ensm.dz/
-00069,Ecole Nationale Supérieure de Technologie,,16,,Herraoua,36.7761552,3.2581993,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enst.dz/
+00069,Ecole Nationale Supérieure de Technologie,,16,,Bordj El Bahri,36.7761552,3.2581993,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enst.dz/
 00070,Ecole nationale supérieure des mines et de la métallurgie – Amar Laskri,,23,,Annaba,36.9,7.7667,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://ensmm-annaba.dz/
 00071,Ecole nationale supérieure des sciences de la mer et de l’aménagement du littoral,,16,,Dely Ibrahim,36.7553186,2.9817799,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssmal.dz/
 00072,Ecole Nationale Supérieure des sciences politiques,المدرسة الوطنية العليا للعلوم السياسية,16,,Ben Aknoun,36.758895,3.0100658,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.enssp.dz/
-00073,Ecole nationale supérieure des travaux publics – Francis Jeanson,,16,,Kouba,36.74413,3.086474,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.entp.edu.dz/
+00073,Ecole nationale supérieure des travaux publics – Francis Jeanson,,16,,Kouba,36.732356,3.087478,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.entp.edu.dz/
 00074,École Nationale Supérieure en Intelligence Artificielle,المدرسة الوطنية العليا للذكاء الاصطناعي,16,,,36.7325,3.08722,approximate,wilaya,mesrs,grande_ecole,Grande école,public,,https://ensia.edu.dz/
 00075,Ecole nationale supérieure en statistique et en économie appliquée,,42,,Kolea,36.6405353,2.7913487,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.enssea.net/
-00076,Ecole nationale supérieure vétérinaire – Rabie Bouchama,المدرسة الوطنية العليا للبيطرة-الشهيد الربيع بوشامة,16,,Bab Ezzouar,36.7122437,3.1694233,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.ensv.dz/
+00076,Ecole nationale supérieure vétérinaire – Rabie Bouchama,المدرسة الوطنية العليا للبيطرة-الشهيد الربيع بوشامة,16,,Oued Smar,36.7122437,3.1694233,exact,campus,mesrs,grande_ecole,Grande école,public,,http://www.ensv.dz/
 00077,Ecole Polytechnique d’architecture et d’Urbanisme-Hocine Aït Ahmed,المدرسة المتعددة العلوم للهندسة المعمارية والعمران-المجاهد حسين آيت أحمد,16,,El Harrach,36.720797,3.137389,approximate,commune,mesrs,grande_ecole,Grande école,public,,http://www.epau-alger.edu.dz/
 00078,Ecole Supérieure Agronomique de Mostaganem ex EP SNV Mostaganem,المدرسة العليا في علوم الفلآحة بمستغانم سابقا-ق. ت. ع.ط.ح. – مستغانم,27,,,35.933,0.083,approximate,wilaya,mesrs,grande_ecole,Grande école,public,,https://www.esa-mosta.dz
 00079,Ecole Supérieure d’Economie d’Oran ex EPSECG Oran,المدرسة العليا للإقتصاد بوهران سابقا- ق. ت.ع.ا.ت.ع.ت – وھران,31,,,35.69694,-0.63306,approximate,wilaya,mesrs,grande_ecole,Grande école,public,,https://ese-oran.dz/
@@ -165,7 +165,7 @@ id,name,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,geo_metho
 00164,Ecole normale supérieure de Bou Saâda,المدرسة العليا للأساتذة بوسعادة المجاهد الفريق احمد قايد صالح,68,,Bou Saada,35.2577086,4.1811706,exact,campus,mesrs,ens,École normale supérieure,public,,http://www.ens-bousaada.dz/ar/
 00165,Ecole normale supérieure de Bouzaréah – Cheikh Mubarak Ben Mohamed Brahimi El Mili,المدرسة العليا للأساتذة بوزريعة الشيخ مبارك بن محمد إبراهيمي الميلي الجزائري,16,,Bouzareah,36.79,3.0177,approximate,commune,mesrs,ens,École normale supérieure,public,,http://www.ensb.dz/
 00166,Ecole normale supérieure de Constantine -Assia Djebar,المدرسة العليا للأساتذة الآداب والعلوم الانسانية قسنطينة الكاتبة آسيا جبار,25,,,36.35,6.6,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://www.ensc.dz/
-00167,Ecole normale supérieure de Kouba – Mohamed Bachir El Ibrahimi,المدرسة العليا للأساتذة القبة الشيخ محمد البشير الإبراهيمي,16,,Kouba,36.74413,3.086474,approximate,commune,mesrs,ens,École normale supérieure,public,,http://www.ens-kouba.dz/
+00167,Ecole normale supérieure de Kouba – Mohamed Bachir El Ibrahimi,المدرسة العليا للأساتذة القبة الشيخ محمد البشير الإبراهيمي,16,,Kouba,36.732356,3.087478,approximate,commune,mesrs,ens,École normale supérieure,public,,http://www.ens-kouba.dz/
 00168,Ecole normale supérieure de Laghouat – Taleb Abderrahmane,المدرسة العليا للأساتذة بالأغواط – طالب عبد الرحمان,03,,Laghouat,33.8108153,2.8641055,exact,campus,mesrs,ens,École normale supérieure,public,,https://www.ens-lagh.dz/en/
 00169,Ecole Normale Supérieure de Mostaganem,المدرسة العليا للأساتذة بمستغانم,27,,,35.933,0.083,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://ens.univ-mosta.dz/
 00170,Ecole normale supérieure de Ouargla,المدرسة العليا للأساتذة ورقلة,30,,,31.95,5.317,approximate,wilaya,mesrs,ens,École normale supérieure,public,,http://ens-ouargla.dz/
