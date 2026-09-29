@@ -6,8 +6,9 @@
 
 **Les clés de recherche des noms de lieux algériens, en arabe et en français. Un seul pliage, partout.**
 
+[![npm](https://img.shields.io/npm/v/@geoalgeria/normalize)](https://www.npmjs.com/package/@geoalgeria/normalize)
+[![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/normalize)](https://www.npmjs.com/package/@geoalgeria/normalize)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
-[![npm : pas encore publié](https://img.shields.io/badge/npm-pas%20encore%20publi%C3%A9-lightgrey.svg)](https://github.com/yasserstudio/geoalgeria/tree/main/packages/normalize)
 
 </div>
 
@@ -18,14 +19,8 @@ remplit un index plein texte, et un téléphone qui cherche hors ligne. Ce paque
 pliage, et rien d'autre. Fait partie de
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
-> **Pas encore sur npm.** `@geoalgeria/normalize` 1.0.0 vit dans ce dépôt et n'a
-> jamais été publié. Tant que le propriétaire n'a pas réservé le nom (un
-> `npm publish --access public` manuel, voir [RELEASING.md](../../RELEASING.md)),
-> installez-le depuis le dépôt plutôt que depuis le registre ; la commande
-> ci-dessous fonctionnera une fois le paquet en ligne.
-
 ```bash
-npm install @geoalgeria/normalize   # une fois publié
+npm install @geoalgeria/normalize
 ```
 
 ```js

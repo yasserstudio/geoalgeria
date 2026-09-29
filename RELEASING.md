@@ -18,10 +18,11 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
 monorepo). Of these, `release.yml`'s automated staging lists **28**: the flagship
 `geoalgeria`, `@geoalgeria/telecom`, the 25 sector packages and the code-only
-`@geoalgeria/normalize` (search keys, no data bundle). **27 of those 28 actually
-stage today:** `@geoalgeria/normalize` has never been published, and Trusted
-Publishing cannot claim a name npm has never seen, so it is skipped until the
-Owner bootstraps it by hand (see below). The two umbrellas
+`@geoalgeria/normalize` (search keys, no data bundle). **All 28 stage today:**
+`@geoalgeria/normalize` was the last holdout, because Trusted Publishing cannot
+claim a name npm has never seen, and the Owner bootstrapped it by hand on
+**2026-09-29** (1.0.0 on npm, Trusted Publisher entry created the same day, see
+below). The two umbrellas
 **`@geoalgeria/transport`** and **`@geoalgeria/pharma`** carry `workspace:*` deps, are
 absent from `release.yml` entirely, and are published **manually** with pnpm on
 every bump (see below). `@geoalgeria/schema` is the v2 data
@@ -193,7 +194,7 @@ until 2026-09-27:
 | Gap | Live case |
 | --- | --- |
 | an umbrella the staged path skips | npm served `@geoalgeria/pharma` **2.0.0** while the repo said **2.0.1** |
-| a name npm has never seen, so it cannot be staged | `@geoalgeria/normalize` **1.0.0**, advertised with npm badges and listed here among the staged 28 |
+| a name npm has never seen, so it cannot be staged | `@geoalgeria/normalize` **1.0.0**, advertised with npm badges and listed here among the staged 28 (closed 2026-09-29 by the bootstrap publish) |
 | a package dir absent from `release.yml`'s two loops, so no dry run and no GitHub Release | `packages/transport`, `packages/pharma` |
 
 `scripts/release-gap.mjs` reports all three as GitHub Actions `::warning::`
@@ -244,25 +245,27 @@ and `pnpm purge-cdn`.
 > `@geoalgeria/pharma` 2.0.1 has been sitting unpublished since it was bumped:
 > npm still serves 2.0.0. The gap check now names it on every release run.
 
-### Bootstrapping `@geoalgeria/normalize` (one time, Owner only)
+### Bootstrapping `@geoalgeria/normalize` (done 2026-09-29, kept as history)
 
-`@geoalgeria/normalize` has never been on npm. Trusted Publishing's OIDC grant
-attaches to an **existing** package, so the staged path can never claim the name:
-it needs exactly one manual publish, by the Owner, from a terminal logged in to
-npm.
+Trusted Publishing's OIDC grant attaches to an **existing** package, so the staged
+path could never claim the name: `@geoalgeria/normalize` needed exactly one manual
+publish, by the Owner, from a terminal logged in to npm. That is what happened on
+**2026-09-29**.
 
 ```bash
 npm whoami                                  # else: npm login --auth-type=web
 cd packages/normalize
 npm publish --access public                 # the one-time bootstrap
-npm view @geoalgeria/normalize version      # expect 1.0.0
+npm view @geoalgeria/normalize version      # 1.0.0
 ```
 
-Then give it a Trusted Publisher entry (One-time setup, step 3) **before** the
-next release, and restore the npm badges and the plain `npm install` line in
-`packages/normalize/README.md`, `README.fr.md` and `README.ar.md`, plus its row in
-the three root READMEs: all six currently say "not yet published" on purpose, and
-they stay wrong in the other direction the moment it is live.
+Its Trusted Publisher entry (One-time setup, step 3) followed the same day
+(`github`, `release.yml`, `yasserstudio/geoalgeria`, publish + stage-publish), so
+the package stages like every other. The npm badges and the plain `npm install`
+line went back into `packages/normalize/README.md`, `README.fr.md` and
+`README.ar.md`, plus its row in the three root READMEs, which had said "not yet
+published" on purpose until then. Nothing here is outstanding; the recipe stays as
+the worked reference for the next brand-new package name.
 
 ### One-off: publishing an umbrella away from a terminal
 
@@ -404,9 +407,10 @@ These are prerequisites the workflow can't do for you:
    ```
    For a package that will flow through CI, follow the bootstrap with its
    Trusted Publisher entry (step 3) **before** the first staged release.
-   > **Still owed:** `@geoalgeria/normalize` 1.0.0 has never had this bootstrap, so
-   > it cannot stage. Exact steps: [Bootstrapping
-   > `@geoalgeria/normalize`](#bootstrapping-geoalgerianormalize-one-time-owner-only).
+   > **Done 2026-09-29:** `@geoalgeria/normalize` 1.0.0 was the last name waiting on
+   > this bootstrap. It is on npm with its Trusted Publisher entry, so every package
+   > in the staged set can stage. Worked example: [Bootstrapping
+   > `@geoalgeria/normalize`](#bootstrapping-geoalgerianormalize-done-2026-09-29-kept-as-history).
    > ⚠️ **Umbrella / any package with `workspace:*` deps** (e.g.
    > `@geoalgeria/transport`, `@geoalgeria/pharma`) is **not** in the workflow, it is
    > published with **pnpm**, not npm, both to bootstrap and for every bump, because
@@ -426,8 +430,9 @@ These are prerequisites the workflow can't do for you:
    `@geoalgeria/ecoles`, `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`,
    `@geoalgeria/buses`, `@geoalgeria/industrie-pharmaceutique`, `@geoalgeria/pharmacies`,
    `@geoalgeria/ooredoo`, `@geoalgeria/protection-civile`, `@geoalgeria/normalize`).
-   `@geoalgeria/normalize` needs its bootstrap publish (step 2) **before** the entry
-   can be created, because the grant attaches to an existing package. The
+   All **28** have an entry as of **2026-09-29**, `@geoalgeria/normalize` last: the
+   grant attaches to an existing package, so its entry could only follow the
+   bootstrap publish (step 2). The
    umbrellas (`transport`,
    `pharma`) and the unpublished
    contract package (`@geoalgeria/schema`) get **no** entry. Manage entries with the npm
