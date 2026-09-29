@@ -226,3 +226,19 @@ test("wilaya 55 has five dairas and El Alia is in El Hadjira", () => {
   const wilayas = readJson("packages", "dataset", "data", "wilayas.json").wilayas;
   assert.equal(wilayas.find((w) => w.code === 55).dairas_count, dairas.length);
 });
+
+// `total_dairas` is typed into wilayas.json by hand, and that is what went stale:
+// it still read 556 after the phantom Ouargla row was removed, and so did the SQL
+// dump's header. Nothing derives it, so the check that it is derivable is the test.
+test("every stated daira total equals the number of daira records", () => {
+  const dairas = readJson("packages", "dataset", "data", "dairas.json");
+  const { metadata, wilayas } = readJson("packages", "dataset", "data", "wilayas.json");
+  assert.equal(metadata.total_dairas, dairas.length, "wilayas.json metadata.total_dairas");
+  assert.equal(
+    wilayas.reduce((n, w) => n + (w.dairas_count ?? 0), 0),
+    dairas.length,
+    "the per-wilaya dairas_count column must sum to the daira table",
+  );
+  const sqlHeader = readFileSync(join(ROOT, "packages", "dataset", "data", "sql", "full.sql"), "utf-8").split("\n")[1];
+  assert.match(sqlHeader, new RegExp(`\\b${dairas.length} dairas\\b`), `sql/full.sql header reads: ${sqlHeader}`);
+});

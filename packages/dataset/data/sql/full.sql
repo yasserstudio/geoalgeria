@@ -1,5 +1,5 @@
 -- GeoAlgeria SQL dump
--- 69 wilayas, 1541 communes, 556 dairas (post-2025 reform)
+-- 69 wilayas, 1541 communes, 555 dairas (post-2025 reform)
 -- Source: JORA No. 25, Law 26-06
 
 DROP TABLE IF EXISTS communes;

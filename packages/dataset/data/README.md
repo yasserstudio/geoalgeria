@@ -136,7 +136,7 @@ data/
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Sequential ID (1–564) |
+| `id` | integer | Stable ID, 1 to 564 with 9 retired ids that are not reused, so the table is 555 rows |
 | `wilaya_code` | integer | Parent wilaya code |
 | `name_fr` | string | French name |
 | `commune_count` | integer | Number of communes in this daira |
@@ -207,9 +207,10 @@ wilaya as a new relation without shrinking the parent it was carved out of:
 - **2026-09-29**: the territory of three communes moved to the wilaya each one declares.
   El Alia (5513) and El-Hadjira (5507) are communes of Touggourt (55) and were drawn as
   Ouargla (30); Mansoura (4713) is a commune of Ghardaïa (47) and was drawn as El Meniaa (58).
-  Touggourt goes from 9,775 to 18,832 km2 and Ouargla from 144,496 to 135,440; Ghardaïa from
-  21,218 to 26,009 and El Meniaa from 63,353 to 58,563. Each pair's total is unchanged. The
-  moved parts come from the communes' own OpenStreetMap `admin_level=8` outlines.
+  Touggourt goes from 9,775 to 18,831 km2 and Ouargla from 144,496 to 135,440; Ghardaïa from
+  21,218 to 26,008 and El Meniaa from 63,353 to 58,563. Each pair's total is unchanged to
+  within 0.05 km2, and so is the union of all 69. The moved parts come from the communes' own
+  OpenStreetMap `admin_level=8` outlines.
 
 Neither is a defect re-sourcing from OSM would fix: a live pull reproduces both.
 
