@@ -23,7 +23,15 @@ import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
-import { MIGRATIONS, writePackageV2, resolveDates, padC } from "../../../scripts/lib/v2-transforms.mjs";
+import {
+  MIGRATIONS,
+  carryOverIds,
+  padC,
+  readCommitted,
+  readRetiredIds,
+  resolveDates,
+  writePackageV2,
+} from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -350,6 +358,22 @@ async function main() {
   const v2 = rows.map(cfg.map);
   const fixed = applyCoordFix(v2, communes);
   if (fixed) console.log(`  ${fixed} known-bad source coordinate(s) pinned to their commune centroid`);
+  // Carry ids over by Ooredoo's own store id, the one identifier that survives a
+  // re-pull. assignIds() derives `{wilaya}-{seq}` from the nearest-centroid join, so
+  // a commune centre that moves across a wilaya line re-sequences every id in the
+  // affected wilayas: the 2026-09-29 centre corrections re-scoped two stores and
+  // would have renumbered 43, retiring 20-004 and 31-034. A published id is a public
+  // join key and is never renumbered unless the place itself is gone, so the replay
+  // pins each store back to the id it shipped under and the only diff is the
+  // corrected wilaya_code/commune on the two that moved.
+  const retiredIds = readRetiredIds(OUT_DIR);
+  carryOverIds(
+    v2,
+    readCommitted(OUT_DIR, "stores.json"),
+    (r) => (r.refs?.ooredoo ? `oo:${r.refs.ooredoo}` : null),
+    "ooredoo",
+    retiredIds,
+  );
   const { records, metadata } = writePackageV2({
     pkg: "ooredoo",
     dir: OUT_DIR,
@@ -357,6 +381,7 @@ async function main() {
     meta: cfg.meta,
     updated,
     retrieved,
+    retiredIds,
   });
   console.log(`Wrote ${records.length} Ooredoo stores → v2, ${metadata.wilayas_covered} wilayas.`);
 }
