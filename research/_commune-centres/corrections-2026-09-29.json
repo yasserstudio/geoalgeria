@@ -4,8 +4,8 @@
   "endpoint": "https://overpass-api.de/api/interpreter",
   "timestamp_osm_base": "2026-09-29T12:54:47Z",
   "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
-  "method": "Every row here fails the 2026-09-27 standard in full: the stored point is outside the commune's own unsimplified OSM admin_level=8 boundary, that relation's admin_centre node is inside it and inside the declared wilaya, and the node carries the commune's own name. `to` is that node rounded to 6 decimals. Corrections-file shaped, NOT applied.",
-  "applied": false,
+  "method": "Every row here fails the 2026-09-27 standard in full: the stored point is outside the commune's own unsimplified OSM admin_level=8 boundary, that relation's admin_centre node is inside it and inside the declared wilaya, and the node carries the commune's own name. `to` is that node rounded to 6 decimals. Applied by scripts/fix-commune-centres.mjs in the 2026-10 batch.",
+  "applied": true,
   "count": 174,
   "corrections": [
     {
