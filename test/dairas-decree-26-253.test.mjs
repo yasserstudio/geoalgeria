@@ -7,9 +7,12 @@ import test from "node:test";
 import {
   ANNEXED_WILAYAS,
   CITATION,
+  DAIRA_MEMBERS_BEFORE,
   DAIRA_RENAMES,
+  DAIRA_RESEATS,
   DAIRA_ROWS_ADDED,
   DAIRA_ROWS_RETIRED,
+  idTravel,
   membershipFromExtract,
   readExtract,
 } from "../scripts/lib/decree-26-253.mjs";
@@ -105,6 +108,102 @@ test("daira ids are stable: renamed rows keep them, dropped ones are reserved", 
   }
   assert.deepEqual(ledger.ids, [...ledger.ids].sort());
   for (const id of ledger.ids) assert.equal(byId.has(Number(id)), false, `retired id ${id} is live`);
+});
+
+test("a reseated daira keeps its id: 549 is Ouled Antar, not a retirement", () => {
+  const byId = new Map(dairas.map((row) => [row.id, row]));
+  const ledger = read("retired-ids.json");
+  // The four the review named, so the reading is pinned and not merely consistent.
+  assert.deepEqual(
+    DAIRA_RESEATS.map((row) => row.id).sort((a, b) => a - b),
+    [525, 537, 541, 549],
+  );
+  for (const { wilaya_code, id, from, to } of DAIRA_RESEATS) {
+    const before = DAIRA_MEMBERS_BEFORE[`${wilaya_code}|${from}`];
+    assert.ok(before, `"${from}" has no recorded 91-306 membership`);
+    assert.equal(before.id, id, `"${from}" is id ${before.id}`);
+    assert.deepEqual(
+      { wilaya_code: byId.get(id)?.wilaya_code, name_fr: byId.get(id)?.name_fr },
+      { wilaya_code, name_fr: to },
+      `daira id ${id}`,
+    );
+    assert.equal(ledger.ids.includes(String(id)), false, `reseated id ${id} is in the retired ledger`);
+    const now = members.get(`${wilaya_code}|${to}`) ?? [];
+    const kept = before.communes.filter((code) => now.includes(code));
+    assert.ok(
+      kept.length * 2 > now.length,
+      `"${to}" holds ${kept.length} of its ${now.length} communes from "${from}", not a majority`,
+    );
+  }
+  assert.equal(byId.get(549)?.name_fr, "Ouled Antar");
+  assert.deepEqual(
+    [...(members.get("67|Ouled Antar") ?? [])].sort((a, b) => a - b),
+    DAIRA_MEMBERS_BEFORE["67|Boghar"].communes,
+    "the annex gives Ouled Antar exactly the communes Boghar held",
+  );
+});
+
+test("the reseats, mints and retirements are the ones the inheritance rule derives", () => {
+  const travel = idTravel(members, [
+    ...DAIRA_ROWS_ADDED.map(({ wilaya_code, name_fr }) => ({ wilaya_code, name_fr })),
+    ...DAIRA_RESEATS.map(({ wilaya_code, to }) => ({ wilaya_code, name_fr: to })),
+  ]);
+  assert.deepEqual(
+    [...travel.inherits].map(([key, id]) => `${key}=${id}`).sort(),
+    DAIRA_RESEATS.map((row) => `${row.wilaya_code}|${row.to}=${row.id}`).sort(),
+  );
+  assert.deepEqual(
+    [...travel.mints].sort(),
+    DAIRA_ROWS_ADDED.map((row) => `${row.wilaya_code}|${row.name_fr}`).sort(),
+  );
+  assert.deepEqual(
+    [...travel.retiredIds].sort((a, b) => a - b),
+    DAIRA_ROWS_RETIRED.map((row) => row.id).sort((a, b) => a - b),
+  );
+  // Every unseated daira is accounted for once, as a reseat or as a retirement.
+  assert.equal(
+    Object.keys(DAIRA_MEMBERS_BEFORE).length,
+    DAIRA_RESEATS.length + DAIRA_ROWS_RETIRED.length,
+  );
+});
+
+test("a minted id is a new grouping, and no retired id's commune set reappears under one", () => {
+  const live = new Map(); // "wilaya|daira" -> code_commune[]
+  for (const commune of communes) {
+    const key = `${commune.wilaya_code}|${commune.daira}`;
+    if (!live.has(key)) live.set(key, []);
+    live.get(key).push(commune.code_commune);
+  }
+  const byId = new Map(dairas.map((row) => [row.id, row]));
+  for (const row of DAIRA_ROWS_ADDED) {
+    const set = members.get(`${row.wilaya_code}|${row.name_fr}`) ?? [];
+    assert.ok(set.length, `minted daira ${row.id} has no communes`);
+    for (const [key, before] of Object.entries(DAIRA_MEMBERS_BEFORE)) {
+      if (Number(key.split("|")[0]) !== row.wilaya_code) continue;
+      const kept = before.communes.filter((code) => set.includes(code));
+      assert.ok(
+        kept.length * 2 <= set.length,
+        `minted ${row.id} "${row.name_fr}" takes ${kept.length} of ${set.length} communes from "${key}", so it should inherit id ${before.id}`,
+      );
+    }
+  }
+  for (const row of DAIRA_ROWS_RETIRED) {
+    const before = DAIRA_MEMBERS_BEFORE[`${row.wilaya_code}|${row.name_fr}`].communes;
+    for (const [key, held] of live) {
+      if (Number(key.split("|")[0]) !== row.wilaya_code) continue;
+      const seat = dairas.find(
+        (daira) => daira.wilaya_code === row.wilaya_code && daira.name_fr === key.split("|")[1],
+      );
+      assert.notDeepEqual(
+        [...held].sort((a, b) => a - b),
+        [...before].sort((a, b) => a - b),
+        `retired ${row.id} "${row.name_fr}" is live again as id ${seat?.id} "${key}"`,
+      );
+    }
+  }
+  assert.equal(byId.get(565)?.name_fr, "Oued Morra");
+  assert.equal(byId.get(566)?.name_fr, "Faïdh El Botma");
+  assert.equal(Math.max(...dairas.map((row) => row.id)), 566);
 });
 
 test("the stated total is the annex's 142 plus what the other 48 wilayas hold", () => {

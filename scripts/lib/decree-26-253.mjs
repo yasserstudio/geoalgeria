@@ -60,30 +60,116 @@ export const DAIRA_RENAMES = [
   { wilaya_code: 68, from: "Aïn El Melh", to: "Aïn El Meleh" },
 ];
 
-/** Seats the annex creates. Ids continue the table rather than filling a gap. */
-export const DAIRA_ROWS_ADDED = [
-  { wilaya_code: 59, name_fr: "Oued Morra", id: 565 },
-  { wilaya_code: 60, name_fr: "Djezzar", id: 566 },
-  { wilaya_code: 64, name_fr: "Hamadia", id: 567 },
-  { wilaya_code: 65, name_fr: "Had Sahary", id: 568 },
-  { wilaya_code: 66, name_fr: "Faïdh El Botma", id: 569 },
-  { wilaya_code: 67, name_fr: "Ouled Antar", id: 570 },
+/** The 91-306 membership this dataset held for every daira the annex unseats,
+ *  by the name the table gave it. The rows are gone from the table once the
+ *  annex is applied, so the evidence the three judgements below rest on is
+ *  recorded here rather than read back out of history. */
+export const DAIRA_MEMBERS_BEFORE = {
+  "59|Hadj Mechri": { id: 524, communes: [315, 317] },
+  "60|Azil Abdelkader": { id: 525, communes: [515, 556] },
+  "60|Tilatou": { id: 528, communes: [518] },
+  "64|Rechaiga": { id: 537, communes: [1430, 1435] },
+  "64|Zmalet El Emir Abdelkader": { id: 538, communes: [1440] },
+  "65|Bouira Lahdab": { id: 541, communes: [1709, 1720] },
+  "66|Amourah": { id: 543, communes: [1734] },
+  "66|Sed Rahal": { id: 545, communes: [1706, 1707] },
+  "66|Selmana": { id: 546, communes: [1722, 1724] },
+  "67|Boghar": { id: 549, communes: [2622, 2625, 2658] },
+};
+
+/** Seats the annex moves: the same body of communes under another commune's
+ *  name, so it keeps its id and only its name and membership change. A published
+ *  id is retired only when the daira itself is gone, never because its seat or
+ *  its name moved (owner rule, yasserstudio/geoalgeria.com#171 and #211). Which
+ *  seats these are is not a free choice: `idTravel` derives it from the
+ *  membership above, and the apply script refuses a table that disagrees. */
+export const DAIRA_RESEATS = [
+  { wilaya_code: 60, id: 525, from: "Azil Abdelkader", to: "Djezzar" },
+  { wilaya_code: 64, id: 537, from: "Rechaiga", to: "Hamadia" },
+  { wilaya_code: 65, id: 541, from: "Bouira Lahdab", to: "Had Sahary" },
+  { wilaya_code: 67, id: 549, from: "Boghar", to: "Ouled Antar" },
 ];
 
-/** Seats the annex drops. Their communes go to the daira the annex names; the
- *  ids are reserved in packages/dataset/data/retired-ids.json and never reused. */
+/** Seats the annex creates: a grouping no unseated daira is the majority of.
+ *  Ids continue the table rather than filling a gap. */
+export const DAIRA_ROWS_ADDED = [
+  { wilaya_code: 59, name_fr: "Oued Morra", id: 565 },
+  { wilaya_code: 66, name_fr: "Faïdh El Botma", id: 566 },
+];
+
+/** Seats the annex drops for good: no annex daira inherits them. Their communes
+ *  go to the dairas the annex names; the ids are reserved in
+ *  packages/dataset/data/retired-ids.json and never reused. */
 export const DAIRA_ROWS_RETIRED = [
   { wilaya_code: 59, id: 524, name_fr: "Hadj Mechri", note: "its two communes join Brida" },
-  { wilaya_code: 60, id: 525, name_fr: "Azil Abdelkader", note: "its two communes join the new Djezzar" },
   { wilaya_code: 60, id: 528, name_fr: "Tilatou", note: "Tilatou joins Seggana" },
-  { wilaya_code: 64, id: 537, name_fr: "Rechaiga", note: "its two communes join the new Hamadia" },
-  { wilaya_code: 64, id: 538, name_fr: "Zmalet El Emir Abdelkader", note: "Bougara joins the new Hamadia, the seat commune joins Ksar Chellala" },
-  { wilaya_code: 65, id: 541, name_fr: "Bouira Lahdab", note: "its two communes join the new Had Sahary" },
-  { wilaya_code: 66, id: 543, name_fr: "Amourah", note: "Amourah joins the new Faïdh El Botma" },
+  { wilaya_code: 64, id: 538, name_fr: "Zmalet El Emir Abdelkader", note: "Bougara, the one commune it held, joins Hamadia; the annex leaves the seat commune under Ksar Chellala, where this dataset already held it" },
+  { wilaya_code: 66, id: 543, name_fr: "Amourah", note: "Amourah joins the new Faïdh El Botma, one of its three communes" },
   { wilaya_code: 66, id: 545, name_fr: "Sed Rahal", note: "Sed Rahal joins Messaad, Faïdh El Botma seats its own daira" },
   { wilaya_code: 66, id: 546, name_fr: "Selmana", note: "Selmana joins Messaad, Oum Laadham joins Faïdh El Botma" },
-  { wilaya_code: 67, id: 549, name_fr: "Boghar", note: "its three communes keep company under the new seat Ouled Antar" },
 ];
+
+/**
+ * Where a daira id travels when the annex reseats a daira, and when it stops.
+ *
+ * An annex daira the table does not already name inherits the id of an unseated
+ * daira when that daira supplies a majority of its communes and is the only
+ * unseated daira of the wilaya that does: the same body of communes carries on
+ * under another seat, which is a reseat and not a new daira. A grouping no
+ * unseated daira is the majority of is genuinely new and takes a fresh id, and
+ * an unseated daira nothing inherits is retired. Majority is counted over the
+ * annex daira's communes, not the unseated one's: a daira that hands one commune
+ * to a three-commune grouping is not that grouping.
+ *
+ * @param {Map<string, number[]>} members "wilaya|seat" -> code_commune[], from
+ *   membershipFromExtract
+ * @param {Array<{wilaya_code:number, name_fr:string}>} unnamedSeats the annex
+ *   seats no row of the held table names
+ * @returns {{inherits: Map<string, number>, mints: string[], retiredIds: number[]}}
+ */
+export function idTravel(members, unnamedSeats) {
+  const unseated = Object.entries(DAIRA_MEMBERS_BEFORE).map(([key, row]) => ({
+    key,
+    wilaya_code: Number(key.split("|")[0]),
+    name_fr: key.split("|")[1],
+    ...row,
+  }));
+  const inherits = new Map();
+  const mints = [];
+  const claimedBy = new Map();
+  for (const seat of unnamedSeats) {
+    const key = `${seat.wilaya_code}|${seat.name_fr}`;
+    const communes = members.get(key) ?? [];
+    if (!communes.length) throw new Error(`idTravel: the annex seat ${key} has no communes`);
+    const claims = unseated.filter(
+      (row) =>
+        row.wilaya_code === seat.wilaya_code &&
+        row.communes.filter((code) => communes.includes(code)).length * 2 > communes.length,
+    );
+    if (claims.length > 1) {
+      throw new Error(
+        `idTravel: ${key} has more than one majority predecessor (${claims.map((row) => row.id).join(", ")}), which needs a reviewed judgement`,
+      );
+    }
+    if (!claims.length) {
+      mints.push(key);
+      continue;
+    }
+    const [claim] = claims;
+    if (claimedBy.has(claim.id)) {
+      throw new Error(
+        `idTravel: daira id ${claim.id} is claimed by both ${claimedBy.get(claim.id)} and ${key}`,
+      );
+    }
+    claimedBy.set(claim.id, key);
+    inherits.set(key, claim.id);
+  }
+  return {
+    inherits,
+    mints,
+    retiredIds: unseated.filter((row) => !claimedBy.has(row.id)).map((row) => row.id),
+  };
+}
 
 /** The annex as printed, plus the wilaya ranges it leaves unchanged. */
 export function readExtract() {

@@ -137,7 +137,7 @@ data/
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Stable ID, 1 to 570 with 19 retired ids that are not reused, so the table is 551 rows |
+| `id` | integer | Stable ID, 1 to 566 with 15 retired ids that are not reused, so the table is 551 rows |
 | `wilaya_code` | integer | Parent wilaya code |
 | `name_fr` | string | French name, the name of the daira's seat commune |
 | `commune_count` | integer | Number of communes in this daira |
@@ -145,7 +145,9 @@ data/
 A commune names its daira by this `name_fr`, in every carrier that repeats the
 linkage, so the two always join. A daira that stops existing leaves its id in
 `retired-ids.json` with the reason, and a new daira takes a fresh id, so an id a
-consumer holds never comes back meaning something else.
+consumer holds never comes back meaning something else. A daira that is renamed,
+or reseated on another of its communes, keeps its id: the id belongs to the body
+of communes, not to the seat.
 
 ### Where the daira lists come from
 

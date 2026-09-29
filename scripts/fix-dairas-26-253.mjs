@@ -5,9 +5,11 @@
 //
 // Only the 21 wilayas the annex tabulates are touched; the other 48 keep the
 // 91-306 list this dataset already holds. Daira ids never move: a seat the
-// annex keeps keeps its id, a seat it renames keeps its id, a seat it drops is
-// retired into data/retired-ids.json and a seat it creates takes a fresh id.
-// Any add or removal the reviewed plan in the lib does not name aborts the run.
+// annex keeps keeps its id, a seat it renames or reseats keeps its id, a seat it
+// drops for good is retired into data/retired-ids.json and a grouping it creates
+// takes a fresh id. Any add or removal the reviewed plan in the lib does not
+// name aborts the run, and so does a plan that mints or retires where the
+// inheritance rule says an id travels.
 //
 // Usage:
 //   node scripts/fix-dairas-26-253.mjs            # dry-run report
@@ -22,8 +24,10 @@ import {
   ANNEXED_WILAYAS,
   CITATION,
   DAIRA_RENAMES,
+  DAIRA_RESEATS,
   DAIRA_ROWS_ADDED,
   DAIRA_ROWS_RETIRED,
+  idTravel,
   membershipFromExtract,
   readExtract,
 } from "./lib/decree-26-253.mjs";
@@ -71,14 +75,19 @@ function dairaFor(code, current) {
 // --- the daira table --------------------------------------------------------
 const dairasPath = join(DATA, "dairas.json");
 const dairas = readJson(dairasPath);
-const rename = new Map(DAIRA_RENAMES.map((r) => [`${r.wilaya_code}|${r.from}`, r.to]));
+// A rename fixes a spelling, a reseat moves the seat of the same body of
+// communes; both keep the row's id, so both are the one edit to name_fr.
+const renames = [...DAIRA_RENAMES, ...DAIRA_RESEATS];
+const rename = new Map(renames.map((r) => [`${r.wilaya_code}|${r.from}`, r.to]));
 for (const row of dairas) {
   const to = rename.get(`${row.wilaya_code}|${row.name_fr}`);
   if (to) row.name_fr = to;
 }
-for (const { wilaya_code, from } of DAIRA_RENAMES) {
-  if (!dairas.some((d) => d.wilaya_code === wilaya_code && d.name_fr === rename.get(`${wilaya_code}|${from}`))) {
-    throw new Error(`dairas.json: wilaya ${wilaya_code} has no daira "${from}" to rename`);
+for (const { wilaya_code, from, to, id } of renames) {
+  const held = dairas.find((d) => d.wilaya_code === wilaya_code && d.name_fr === to);
+  if (!held) throw new Error(`dairas.json: wilaya ${wilaya_code} has no daira "${from}" to rename`);
+  if (id != null && held.id !== id) {
+    throw new Error(`dairas.json: wilaya ${wilaya_code} "${to}" is id ${held.id}, not the reseated ${id}`);
   }
 }
 
@@ -117,6 +126,34 @@ const stale = [...added.keys(), ...retired.keys()].filter(
 if (stale.length) {
   throw new Error(`the plan disagrees with the annex about: ${stale.join(", ")}`);
 }
+// A seat the held table does not name is either a reseat of an existing daira or
+// a new one, and the inheritance rule decides which; the plan may not decide it
+// by hand. Checked against the annex and the recorded 91-306 membership, so a
+// re-run of an applied plan says the same thing as the first run.
+const unnamedSeats = [
+  ...DAIRA_ROWS_ADDED.map(({ wilaya_code, name_fr }) => ({ wilaya_code, name_fr })),
+  ...DAIRA_RESEATS.map(({ wilaya_code, to }) => ({ wilaya_code, name_fr: to })),
+];
+const travel = idTravel(members, unnamedSeats);
+const list = (values) => [...values].sort().join(", ");
+const planned = {
+  reseats: list(DAIRA_RESEATS.map((r) => `${r.wilaya_code}|${r.to}=${r.id}`)),
+  mints: list(DAIRA_ROWS_ADDED.map((r) => `${r.wilaya_code}|${r.name_fr}`)),
+  retired: list(DAIRA_ROWS_RETIRED.map((r) => String(r.id))),
+};
+const ruled = {
+  reseats: list([...travel.inherits].map(([key, id]) => `${key}=${id}`)),
+  mints: list(travel.mints),
+  retired: list(travel.retiredIds.map(String)),
+};
+for (const part of ["reseats", "mints", "retired"]) {
+  if (planned[part] !== ruled[part]) {
+    throw new Error(
+      `the plan's ${part} are not the ones the inheritance rule derives: plan [${planned[part]}], rule [${ruled[part]}]`,
+    );
+  }
+}
+
 const rowById = new Map(dairas.map((d) => [d.id, d]));
 for (const row of DAIRA_ROWS_ADDED) {
   const held = rowById.get(row.id);
