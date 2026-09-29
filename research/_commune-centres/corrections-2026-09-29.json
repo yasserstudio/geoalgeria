@@ -4,9 +4,9 @@
   "endpoint": "https://overpass-api.de/api/interpreter",
   "timestamp_osm_base": "2026-09-29T12:54:47Z",
   "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
-  "method": "Every row here fails the 2026-09-27 standard in full: the stored point is outside the commune's own unsimplified OSM admin_level=8 boundary, that relation's admin_centre node is inside it and inside the declared wilaya, and the node carries the commune's own name. `to` is that node rounded to 6 decimals. Applied by scripts/fix-commune-centres.mjs in the 2026-10 batch.",
+  "method": "Every row here fails the evidence standard in full: that relation's admin_centre node is inside the commune and inside the declared wilaya and is this commune's seat (by name, by the definite article alone, or because relation and node carry the same wikidata item), AND the stored point is either outside the commune's own unsimplified OSM admin_level=8 boundary or a mangled form of the seat (a dropped minus or swapped ordinates landing within 1 km of it). `to` is that node rounded to 6 decimals. Applied by scripts/fix-commune-centres.mjs in the 2026-10 batch.",
   "applied": true,
-  "count": 174,
+  "count": 189,
   "corrections": [
     {
       "code_commune": 3221,
@@ -34,7 +34,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -63,7 +64,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -92,7 +94,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -121,7 +124,101 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 426,
+      "wilaya_code": 4,
+      "name_fr": "Rahia",
+      "name_ar": "الرحية",
+      "from": [
+        6.933333,
+        35.716667
+      ],
+      "to": [
+        7.644787,
+        35.763605
+      ],
+      "delta_m": 64423,
+      "osm": {
+        "relation": 4491702,
+        "admin_centre_node": 1544610128,
+        "ref:ONS": "0426",
+        "name": "El Rahia ⵔⵔⴰⵃⵉⵢⴰ الراحية",
+        "admin_centre_place": "village",
+        "admin_centre_name": "الراحية ⵔⵔⴰⵃⵉⵢⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "article",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 5302,
+      "wilaya_code": 53,
+      "name_fr": "Inghar",
+      "name_ar": "إينغر",
+      "from": [
+        2.511111,
+        27.2
+      ],
+      "to": [
+        1.906526,
+        27.101832
+      ],
+      "delta_m": 60807,
+      "osm": {
+        "relation": 4175371,
+        "admin_centre_node": 429533109,
+        "ref:ONS": "1103",
+        "name": "In Ghar ⵉⵏ ⵖⴰⵔ إن غار",
+        "admin_centre_place": "town",
+        "admin_centre_name": "إن غار ⵉⵏ ⵖⴰⵔ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 115,
+      "wilaya_code": 1,
+      "name_fr": "Fenoughil",
+      "name_ar": "فنوغيل",
+      "from": [
+        0.3,
+        27.602777
+      ],
+      "to": [
+        -0.30211,
+        27.606097
+      ],
+      "delta_m": 59331,
+      "osm": {
+        "relation": 4171609,
+        "admin_centre_node": 3172476281,
+        "ref:ONS": "0115",
+        "name": "فنوغيل",
+        "admin_centre_place": "town",
+        "admin_centre_name": "فنوغيل ⴼⵏⵓⵖⵉⵍ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": true,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": {
+          "form": "longitude_sign",
+          "metres": 424
+        }
       }
     },
     {
@@ -150,7 +247,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -179,7 +277,11 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": {
+          "form": "longitude_sign",
+          "metres": 494
+        }
       }
     },
     {
@@ -208,7 +310,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -237,7 +340,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -266,7 +370,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -295,7 +400,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -324,7 +430,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -353,7 +460,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -382,7 +490,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -411,7 +520,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -440,7 +550,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -469,7 +580,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -498,7 +610,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -527,7 +640,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -556,7 +670,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -585,7 +700,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -614,7 +730,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -643,7 +760,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -672,7 +790,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -701,7 +820,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -730,7 +850,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -759,7 +880,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -788,7 +910,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -817,7 +940,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -846,7 +970,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -875,7 +1000,98 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 4316,
+      "wilaya_code": 43,
+      "name_fr": "Tassala Lematai",
+      "name_ar": "تسالة لمطاعي",
+      "from": [
+        6.32488,
+        36.495833
+      ],
+      "to": [
+        5.988462,
+        36.569301
+      ],
+      "delta_m": 31148,
+      "osm": {
+        "relation": 2255332,
+        "admin_centre_node": 465568550,
+        "ref:ONS": "4316",
+        "name": "Tassala Lemtaï ⵜⵙⴰⵍⴰ ⵍⴻⵎⵟⴰⵄⵉ تسالة لمطاعي",
+        "admin_centre_place": "village",
+        "admin_centre_name": "تسالة ⵜⵙⴰⵍⴰ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 2907,
+      "wilaya_code": 29,
+      "name_fr": "El Hachem",
+      "name_ar": "الحشم",
+      "from": [
+        0.15,
+        35.366667
+      ],
+      "to": [
+        0.49094,
+        35.375427
+      ],
+      "delta_m": 30929,
+      "osm": {
+        "relation": 5348242,
+        "admin_centre_node": 1049904231,
+        "ref:ONS": "2907",
+        "name": "Hachem ⵀⴰⵛⴻⵎ الهاشم",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Hachem"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 1533,
+      "wilaya_code": 15,
+      "name_fr": "Illilten",
+      "name_ar": "إيلـيــلتـن",
+      "from": [
+        4.0497,
+        36.5167
+      ],
+      "to": [
+        4.394415,
+        36.516062
+      ],
+      "delta_m": 30806,
+      "osm": {
+        "relation": 2170759,
+        "admin_centre_node": 2921870793,
+        "ref:ONS": "1533",
+        "name": "Illilten",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Souk El Had"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -904,7 +1120,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -933,7 +1150,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -962,7 +1180,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -991,7 +1210,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1020,7 +1240,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1049,7 +1270,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1078,7 +1300,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1107,7 +1330,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1136,7 +1360,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1165,7 +1390,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1194,7 +1420,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1223,7 +1450,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1252,7 +1480,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1281,7 +1510,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1310,7 +1540,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1339,7 +1570,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1368,7 +1600,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1397,7 +1630,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1426,7 +1660,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1455,7 +1690,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1484,7 +1720,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1513,7 +1750,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1542,7 +1780,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1571,7 +1810,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1600,7 +1840,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1629,7 +1870,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1658,7 +1900,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1687,7 +1930,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 2938,
+      "wilaya_code": 29,
+      "name_fr": "El Gueitena",
+      "name_ar": "القطنة",
+      "from": [
+        0.0528,
+        35.252272
+      ],
+      "to": [
+        -0.052426,
+        35.408442
+      ],
+      "delta_m": 19816,
+      "osm": {
+        "relation": 5585377,
+        "admin_centre_node": 443038049,
+        "ref:ONS": "2938",
+        "name": "El Guettana ⴳⵓⵟⴰⵏⴰ القيطنة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "El Gueitna"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1716,7 +1990,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1745,7 +2020,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1774,7 +2050,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1803,7 +2080,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1832,7 +2110,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 1546,
+      "wilaya_code": 15,
+      "name_fr": "Beni-Zikki",
+      "name_ar": "بني زيكــي",
+      "from": [
+        4.301147,
+        36.55308
+      ],
+      "to": [
+        4.506801,
+        36.565846
+      ],
+      "delta_m": 18423,
+      "osm": {
+        "relation": 2175827,
+        "admin_centre_node": 498031248,
+        "ref:ONS": "1546",
+        "name": "Beni Ziki",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Aït Ziki"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1861,7 +2170,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1890,7 +2200,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1919,7 +2230,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1948,7 +2260,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -1977,7 +2290,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2006,7 +2320,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2035,7 +2350,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2064,7 +2380,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2093,7 +2410,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2122,7 +2440,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2151,7 +2470,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2180,7 +2500,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2209,7 +2530,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2238,7 +2560,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2267,7 +2590,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2296,7 +2620,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 1439,
+      "wilaya_code": 64,
+      "name_fr": "Serguine",
+      "name_ar": "سرقين",
+      "from": [
+        2.30861,
+        35.254444
+      ],
+      "to": [
+        2.485666,
+        35.254345
+      ],
+      "delta_m": 16077,
+      "osm": {
+        "relation": 4290220,
+        "admin_centre_node": 1435006346,
+        "ref:ONS": "1439",
+        "name": "Serghine ⵙⴻⵔⵖⵉⵏ سرغين",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Serghine"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2325,7 +2680,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2354,7 +2710,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2383,7 +2740,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2412,7 +2770,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2441,7 +2800,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2470,7 +2830,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2499,7 +2860,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 2914,
+      "wilaya_code": 29,
+      "name_fr": "Matemore",
+      "name_ar": "المطمور",
+      "from": [
+        0.053659,
+        35.361406
+      ],
+      "to": [
+        0.213642,
+        35.32529
+      ],
+      "delta_m": 15056,
+      "osm": {
+        "relation": 5488963,
+        "admin_centre_node": 867642330,
+        "ref:ONS": "2914",
+        "name": "Matemor ⵎⴻⵟⵎⵓⵔ مطمور",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Matemor"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "article",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2528,7 +2920,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2557,7 +2950,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2586,7 +2980,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2615,7 +3010,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2644,7 +3040,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2673,7 +3070,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2702,7 +3100,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 2945,
+      "wilaya_code": 29,
+      "name_fr": "Nesmot",
+      "name_ar": "نسمط",
+      "from": [
+        0.245833,
+        35.21222
+      ],
+      "to": [
+        0.378734,
+        35.254467
+      ],
+      "delta_m": 12953,
+      "osm": {
+        "relation": 6668181,
+        "admin_centre_node": 3109700968,
+        "ref:ONS": "2945",
+        "name": "Nesmoth ⵏⴻⵙⵎⵓⵟ نسموط",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Nesmoth"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2731,7 +3160,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2760,7 +3190,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2789,7 +3220,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2818,7 +3250,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2847,7 +3280,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2876,7 +3310,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2905,7 +3340,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2934,7 +3370,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2963,7 +3400,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -2992,7 +3430,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3021,7 +3460,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3050,7 +3490,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3079,7 +3520,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3108,7 +3550,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3137,7 +3580,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3166,7 +3610,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3195,7 +3640,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3224,7 +3670,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3253,7 +3700,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3282,7 +3730,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3311,7 +3760,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3340,7 +3790,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3369,7 +3820,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3398,7 +3850,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3427,7 +3880,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3456,7 +3910,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3485,7 +3940,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3514,7 +3970,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3543,7 +4000,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3572,7 +4030,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3601,7 +4060,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3630,7 +4090,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3659,7 +4120,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3688,7 +4150,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3717,7 +4180,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3746,7 +4210,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3775,7 +4240,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3804,7 +4270,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3833,7 +4300,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3862,7 +4330,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3891,7 +4360,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 1006,
+      "wilaya_code": 10,
+      "name_fr": "Hanif",
+      "name_ar": "حنيف",
+      "from": [
+        4.34149,
+        36.335801
+      ],
+      "to": [
+        4.26178,
+        36.3348
+      ],
+      "delta_m": 7141,
+      "osm": {
+        "relation": 3390920,
+        "admin_centre_node": 1194803940,
+        "ref:ONS": "1006",
+        "name": "Ahnif",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Ahnif"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3920,7 +4420,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3949,7 +4450,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -3978,7 +4480,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 215,
+      "wilaya_code": 2,
+      "name_fr": "Herenfa",
+      "name_ar": "الهرانفة",
+      "from": [
+        0.970516,
+        36.245277
+      ],
+      "to": [
+        1.044985,
+        36.24583
+      ],
+      "delta_m": 6678,
+      "osm": {
+        "relation": 4830347,
+        "admin_centre_node": 1025857199,
+        "ref:ONS": "0215",
+        "name": "Harenfa ⵀⴰⵔⴻⵏⴼⴰ الهرنفة",
+        "admin_centre_place": "village",
+        "admin_centre_name": "Harenfa"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "article",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4007,7 +4540,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4036,7 +4570,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4065,7 +4600,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4094,7 +4630,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4123,7 +4660,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4152,7 +4690,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4181,7 +4720,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 2120,
+      "wilaya_code": 21,
+      "name_fr": "Emjez Edchich",
+      "name_ar": "مجاز الدشيش",
+      "from": [
+        6.7458,
+        36.703333
+      ],
+      "to": [
+        6.804331,
+        36.70514
+      ],
+      "delta_m": 5222,
+      "osm": {
+        "relation": 6543288,
+        "admin_centre_node": 3017340456,
+        "ref:ONS": "2120",
+        "name": "Emdjez Edchich ⵎⴵⴰⵣ ⴷⵛⵉⵛ أمجاز الدشيش",
+        "admin_centre_place": "village",
+        "admin_centre_name": "امجاز ادشيش ⵎⵊⴰⵣ ⴰⴷⵛⵉⵛ"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4210,7 +4780,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4239,7 +4810,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4268,7 +4840,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4297,7 +4870,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4326,7 +4900,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4355,7 +4930,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4384,7 +4960,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4413,7 +4990,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4442,7 +5020,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4471,7 +5050,38 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
+      }
+    },
+    {
+      "code_commune": 1922,
+      "wilaya_code": 19,
+      "name_fr": "Beni Ourtilane",
+      "name_ar": "بني ورتيلان",
+      "from": [
+        4.9,
+        36.442222
+      ],
+      "to": [
+        4.855743,
+        36.442259
+      ],
+      "delta_m": 3959,
+      "osm": {
+        "relation": 1625374,
+        "admin_centre_node": 455511464,
+        "ref:ONS": "1922",
+        "name": "Beni Ouartilane",
+        "admin_centre_place": "town",
+        "admin_centre_name": "Beni Ouartilane"
+      },
+      "evidence": {
+        "stored_in_own_commune_boundary": false,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "wikidata",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4500,7 +5110,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4529,7 +5140,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4558,7 +5170,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4587,7 +5200,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4616,7 +5230,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4645,7 +5260,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4674,7 +5290,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4703,7 +5320,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4732,7 +5350,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4761,7 +5380,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4790,7 +5410,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4819,7 +5440,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4848,7 +5470,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4877,7 +5500,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4906,7 +5530,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4935,7 +5560,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4964,7 +5590,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -4993,7 +5620,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -5022,7 +5650,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     },
     {
@@ -5051,7 +5680,8 @@
         "stored_in_own_commune_boundary": false,
         "admin_centre_in_own_commune_boundary": true,
         "admin_centre_in_declared_wilaya": true,
-        "admin_centre_carries_commune_name": true
+        "admin_centre_carries_commune_name": "name",
+        "stored_value_is_the_seat_mangled": null
       }
     }
   ]

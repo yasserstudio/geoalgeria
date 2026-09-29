@@ -48,6 +48,7 @@ import {
   latinNameKey,
   arabicNameKey,
 } from "./lib/commune-index.mjs";
+import { coordinateAnomaly, seatNameAgreement } from "./lib/seat-evidence.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATASET = join(ROOT, "packages", "dataset", "data");
@@ -481,6 +482,12 @@ for (const commune of canonicalCommunes) {
   const ours = [round6(Number(commune.longitude)), round6(Number(commune.latitude))];
   const osmSeat = [round6(seat.lng), round6(seat.lat)];
   const delta = metresBetween(ours[0], ours[1], osmSeat[0], osmSeat[1]);
+  const agreement = seatNameAgreement({
+    nameFr: commune.name_fr,
+    nameAr: commune.name_ar,
+    relationTags: relation.tags,
+    seatTags: seat.tags,
+  });
   rows.push({
     code_commune: commune.code_commune,
     wilaya_code: Number(commune.wilaya_code),
@@ -498,15 +505,21 @@ for (const commune of canonicalCommunes) {
       name: relation.tags.name ?? null,
     },
     // The seat node's own identity: is it the locality this commune is named
-    // after? `place` says what kind of settlement it is, and seat_name_agrees
-    // whether it carries the commune's name in either language.
+    // after? `place` says what kind of settlement it is, and the agreement below
+    // whether it is this commune's seat at all. The rule is
+    // scripts/lib/seat-evidence.mjs, which also reads the `wikidata` item this
+    // capture harvests on both the relation and the node: until 2026-09-29 those
+    // were harvested and never read, and 12 rows stayed exceptions because a
+    // transliteration differed while OSM said outright that the node is the seat.
     seat_node: seat.tags ?? null,
-    seat_name_agrees: seat.tags
-      ? latinNameKey(seat.tags["name:fr"] ?? seat.tags.name ?? "") === latinNameKey(commune.name_fr) ||
-        arabicNameKey(seat.tags["name:ar"] ?? "") === arabicNameKey(commune.name_ar)
-      : false,
+    seat_name_agreement: agreement,
+    seat_name_agrees: agreement !== false,
     name_agrees:
       keys.fr === latinNameKey(commune.name_fr) || keys.ar === arabicNameKey(commune.name_ar),
+    // The one defect class containment cannot see: a stored value that is the seat
+    // with a dropped minus or its two ordinates in the wrong order. Fenoughil (115)
+    // sat 59.3 km from its seat and inside its own commune either way.
+    coordinate_anomaly: coordinateAnomaly(ours, osmSeat),
     // Independent of the delta: if the seat itself is outside the wilaya we
     // declare the commune in, the disagreement is about the linkage or the
     // shipped outline, not about how far apart two seat claims are.
@@ -552,14 +565,15 @@ if (containment) {
 // and the node is the locality the commune is named after. Nothing else here is a
 // decided error, and even this is a decision, not an application: corrections go
 // through research/_commune-centres/corrections-*.json and fix-commune-centres.mjs.
+//
+// Since 2026-09-29 it has a second limb, and only one: a stored value that is the
+// seat mangled (a dropped minus, or the two ordinates swapped) is our value however
+// comfortably it sits inside a Saharan commune large enough to hold both. It carries
+// the same seat evidence as the first limb, so nothing is decided on the mangling
+// alone.
+const evidenced = (r) => r.seat_in_own_commune === true && r.seat_name_agrees && r.seat_in_declared_wilaya;
 const decided = containment
-  ? rows.filter(
-      (r) =>
-        r.ours_in_own_commune === false &&
-        r.seat_in_own_commune === true &&
-        r.seat_name_agrees &&
-        r.seat_in_declared_wilaya,
-    )
+  ? rows.filter((r) => evidenced(r) && (r.ours_in_own_commune === false || r.coordinate_anomaly))
   : [];
 const over = (m) => rows.filter((r) => r.delta_m > m).length;
 const above300 = rows.filter((r) => r.delta_m > 300).map((r) => ({
@@ -583,8 +597,21 @@ console.log(`  ${seatOutside.length} matched row(s) whose OSM seat is outside th
 console.log(`deltas: >300 m ${over(300)} · >1 km ${over(1000)} · >5 km ${over(5000)} · max ${rows[0]?.delta_m ?? 0} m`);
 console.log(
   containment
-    ? `containment: ${rows.filter((r) => r.ours_in_own_commune === false).length} stored point(s) outside their own commune; ${decided.length} meet the 2026-09-27 evidence standard in full`
+    ? `containment: ${rows.filter((r) => r.ours_in_own_commune === false).length} stored point(s) outside their own commune; ${decided.length} meet the evidence standard in full`
     : "containment: not computed (run --geometry for the second pull)",
+);
+const anomalies = rows.filter((r) => r.coordinate_anomaly);
+console.log(`mangled ordinates: ${anomalies.length} stored value(s) whose flipped or swapped form lands within 1 km of the seat`);
+for (const r of anomalies)
+  console.log(
+    `    ${r.name_fr} (${r.code_commune}, w${r.wilaya_code}): ${r.coordinate_anomaly.form}, ` +
+      `${r.coordinate_anomaly.metres} m from the seat once undone, ${r.delta_m} m as stored` +
+      (r.ours_in_own_commune === true ? " (inside its own commune, so containment is blind to it)" : ""),
+  );
+const byAgreement = new Map();
+for (const r of rows) byAgreement.set(r.seat_name_agreement, (byAgreement.get(r.seat_name_agreement) ?? 0) + 1);
+console.log(
+  `seat name agreement: ${[...byAgreement].map(([k, n]) => `${k === false ? "none" : k} ${n}`).join(" · ")}`,
 );
 const wilayaHarvest = wilayaRels.filter((r) => r.tags.wikidata).length;
 console.log(`harvest: wikidata on ${rows.filter((r) => r.osm.wikidata).length}/${rows.length} communes, ${wilayaHarvest}/${wilayaRels.length} wilayas`);
@@ -614,6 +641,7 @@ writeFileSync(
         over_1000_m: over(1000),
         over_5000_m: over(5000),
         outside_own_commune: rows.filter((r) => r.ours_in_own_commune === false).length,
+        mangled_ordinates: anomalies.length,
         decided_errors: decided.length,
       },
       unmatched_communes: unmatchedCommunes.map((c) => ({
@@ -726,7 +754,7 @@ if (decided.length) {
       {
         ...header,
         method:
-          "Every row here fails the 2026-09-27 standard in full: the stored point is outside the commune's own unsimplified OSM admin_level=8 boundary, that relation's admin_centre node is inside it and inside the declared wilaya, and the node carries the commune's own name. `to` is that node rounded to 6 decimals. Corrections-file shaped, NOT applied.",
+          "Every row here fails the evidence standard in full: that relation's admin_centre node is inside the commune and inside the declared wilaya and is this commune's seat (by name, by the definite article alone, or because relation and node carry the same wikidata item), AND the stored point is either outside the commune's own unsimplified OSM admin_level=8 boundary or a mangled form of the seat (a dropped minus or swapped ordinates landing within 1 km of it). `to` is that node rounded to 6 decimals. Corrections-file shaped, NOT applied.",
         applied: false,
         count: decided.length,
         corrections: decided.map((r) => ({
@@ -746,10 +774,11 @@ if (decided.length) {
             admin_centre_name: r.seat_node?.name ?? null,
           },
           evidence: {
-            stored_in_own_commune_boundary: false,
+            stored_in_own_commune_boundary: r.ours_in_own_commune,
             admin_centre_in_own_commune_boundary: true,
             admin_centre_in_declared_wilaya: true,
-            admin_centre_carries_commune_name: true,
+            admin_centre_carries_commune_name: r.seat_name_agreement,
+            stored_value_is_the_seat_mangled: r.coordinate_anomaly,
           },
         })),
       },

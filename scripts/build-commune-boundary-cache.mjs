@@ -272,7 +272,7 @@ const byCode = new Map(cache.communes.map((c) => [c.code_commune, c]));
 const auditRow = new Map(audit.all.map((r) => [r.code_commune, r]));
 
 /** Why a centre outside its own commune was not corrected in the 2026-09-29 batch.
- *  The 174 that were corrected met all four tests; each of these fails one, and
+ *  The 189 that were corrected met all four tests; each of these fails one, and
  *  which one it fails is what a hand decision would have to answer. */
 function whyNotCorrected(code) {
   const r = auditRow.get(code);
@@ -284,7 +284,11 @@ function whyNotCorrected(code) {
   if (!r.seat_in_declared_wilaya)
     return "the admin_centre node is inside the commune but outside the wilaya we declare the commune in, which makes the linkage or the shipped outline the suspect, not the point";
   if (!r.seat_name_agrees)
-    return "the admin_centre node does not carry the commune's own name in either script, so it is not evidence that it is this commune's seat";
+    return (
+      "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs " +
+      "makes: it carries neither the commune's folded name in either script, nor that name once the definite " +
+      "article is dropped, nor the same wikidata item as its own relation"
+    );
   return "outside its own commune with the four evidence tests all met, which should have been corrected: re-run the audit";
 }
 

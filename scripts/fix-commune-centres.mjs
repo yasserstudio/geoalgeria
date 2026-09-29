@@ -73,11 +73,21 @@ for (const f of fixes) {
 // Slimane is the largest single move of the 2026-09-29 audit (108.7 km) and
 // Ouled Ahmed Timmi is its sign-flip class, a positive longitude where the
 // chef-lieu is west of Greenwich.
+//
+// Fenoughil and Inghar are the two rows that batch's first pass missed and a review
+// caught. Fenoughil's 59.3 km longitude sign flip sits INSIDE its own commune, which
+// is large enough to hold both values, so containment is blind to it and only the
+// mangled-ordinate detector in scripts/lib/seat-evidence.mjs sees it. Inghar's seat
+// node carries the same wikidata item as its own relation while the transliteration
+// differs (In Ghar), which the strict name rule read as a disagreement; its
+// correction also takes 14 mosques back out of In Salah.
 const PINS = [
   [1601, "Alger Centre", [3.058211, 36.776335]],
   [3107, "Bethioua", [-0.267936, 35.805837]],
   [3221, "Sidi Slimane", [1.731609, 33.832116]],
   [121, "Ouled Ahmed Timmi", [-0.281279, 27.851041]],
+  [115, "Fenoughil", [-0.30211, 27.606097]],
+  [5302, "Inghar", [1.906526, 27.101832]],
 ];
 for (const [code, name, want] of PINS) {
   const f = byCode.get(code);

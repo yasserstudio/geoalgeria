@@ -42,6 +42,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 import { COMMUNE_COUNT, COPIES } from "./lib/commune-carriers.mjs";
+import { coordinateAnomaly } from "../scripts/lib/seat-evidence.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const RESEARCH = join(ROOT, "research", "_commune-centres");
@@ -49,6 +50,7 @@ const readJson = (...p) => JSON.parse(readFileSync(join(RESEARCH, ...p), "utf-8"
 
 const boundaries = readJson("commune-boundaries.json");
 const exceptionsDoc = readJson("containment-exceptions.json");
+const seatReference = readJson("osm-seat-reference.json");
 
 // Keyed on (wilaya_code, name_fr) because data/geojson/communes.geojson carries no
 // code_commune, and that pair is unique across all 1,541 rows (asserted below, as
@@ -141,6 +143,33 @@ for (const [label, load] of COPIES) {
         "research/_commune-centres/containment-exceptions.json (or listed there and now inside). Decide each " +
         "one against its commune's own admin_level=8 relation (research/_commune-centres/README.md), then " +
         "correct it through a corrections file and scripts/fix-commune-centres.mjs, or list it with the reason.",
+    );
+  });
+}
+
+// The class containment is blind to, held as its own rule rather than left to the
+// next human report. Fenoughil (115) shipped [0.3, 27.602777] for a seat at
+// [-0.30211, 27.606097]: 59.3 km apart, a dropped minus, and inside its own commune
+// either way because a Saharan commune is large enough to hold both. Containment
+// passed it, the 2026-09-29 audit's evidence gate excluded it, and a review caught
+// it. A mangled ordinate is not two claims disagreeing, so it takes no exceptions
+// list: any row that trips this is a correction waiting to be written.
+const SEATS = new Map(seatReference.communes.map((c) => [keyOf(c.wilaya_code, c.name_fr), c.seat]));
+
+for (const [label, load] of COPIES) {
+  test(`${label}: no commune centre is its own seat with a dropped minus or swapped ordinates`, () => {
+    const mangled = [];
+    for (const r of load()) {
+      const seat = SEATS.get(keyOf(r.w, r.name));
+      if (!seat || !Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
+      const anomaly = coordinateAnomaly([r.lng, r.lat], seat);
+      if (anomaly) mangled.push(`${keyOf(r.w, r.name)} ${anomaly.form} (${anomaly.metres} m once undone)`);
+    }
+    assert.deepEqual(
+      mangled.sort(),
+      [],
+      `${label}: stored centre(s) that are the OSM seat mangled. Correct each through a corrections file and ` +
+        "scripts/fix-commune-centres.mjs; there is no exceptions list for this class.",
     );
   });
 }

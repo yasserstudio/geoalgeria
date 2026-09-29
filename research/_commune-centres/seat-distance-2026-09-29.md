@@ -10,7 +10,7 @@ measured here instead.
 Why. Our centre and the OSM `admin_centre` node are two hand-placed claims about
 one town, so a delta between them says the two sources disagree, not that ours is
 wrong. The median over all 1537 compared rows is
-**236 m**, and a rule needing 496 exceptions was measuring that
+**218 m**, and a rule needing 496 exceptions was measuring that
 disagreement. Containment is a fact about one claim on its own: a centre outside
 its own commune is wrong whatever the node says, and that is how the 174
 corrections of this batch were decided.
@@ -24,10 +24,10 @@ corrections of this batch were decided.
 
 | Band | Communes |
 | --- | --- |
-| over 300 m | 683 |
-| over 1 km | 322 |
-| over 5 km | 94 |
-| median | 236 m |
+| over 300 m | 668 |
+| over 1 km | 307 |
+| over 5 km | 80 |
+| median | 218 m |
 | largest | 94922 m (Tinerkouk, 4905) |
 
 The `In own commune` column is the guard's question. A row over 1 km that still
@@ -39,32 +39,21 @@ answers **no** is a defect with incomplete evidence, listed in
 | Code | Commune | Wilaya | Delta (m) | In own commune | OSM relation |
 | --- | --- | --- | --- | --- | --- |
 | 4905 | Tinerkouk | 49 | 94922 | **no** | 4171625 |
-| 426 | Rahia | 4 | 64423 | **no** | 4491702 |
-| 5302 | Inghar | 53 | 60807 | **no** | 4175371 |
-| 115 | Fenoughil | 1 | 59331 | yes | 4171609 |
 | 647 | Ait-Smail | 6 | 39716 | **no** | 4112875 |
 | 514 | Bitam | 60 | 31255 | yes | 5177042 |
-| 4316 | Tassala Lematai | 43 | 31148 | **no** | 2255332 |
-| 2907 | El Hachem | 29 | 30929 | **no** | 5348242 |
-| 1533 | Illilten | 15 | 30806 | **no** | 2170759 |
 | 1713 | M'Liliha | 17 | 26434 | yes | 6533522 |
 | 1441 | Faïdja | 14 | 25878 | yes | 6545425 |
 | 2826 | El Houamed | 68 | 22910 | **no** | 6547240 |
 | 638 | Beni-Mallikeche | 6 | 22702 | **no** | 2170758 |
 | 5205 | Igli | 52 | 20740 | yes | 6530993 |
 | 2842 | Medjedel | 68 | 20638 | yes | 6547250 |
-| 2938 | El Gueitena | 29 | 19816 | **no** | 5585377 |
-| 1546 | Beni-Zikki | 15 | 18423 | **no** | 2175827 |
 | 1526 | M'kira | 15 | 17873 | **no** | 4293722 |
 | 2921 | El Menaouer | 29 | 16193 | **no** | 6668173 |
-| 1439 | Serguine | 64 | 16077 | **no** | 4290220 |
 | 1528 | Ait-Mahmoud | 15 | 15402 | **no** | 4292443 |
-| 2914 | Matemore | 29 | 15056 | **no** | 5488963 |
 | 4126 | Zouabi | 41 | 14618 | **no** | 6663213 |
 | 1215 | El Ogla El Melha | 62 | 14504 | yes | 6618847 |
 | 1303 | Aïn Tallout | 13 | 13837 | yes | 6666550 |
 | 3820 | Sidi Slimane | 38 | 13759 | **no** | 6534592 |
-| 2945 | Nesmot | 29 | 12953 | **no** | 6668181 |
 | 2434 | Djeballah Khemissi | 24 | 12761 | **no** | 6537634 |
 | 2836 | Bir Foda | 68 | 12684 | yes | 5514983 |
 | 613 | Kendira | 6 | 12532 | **no** | 4112944 |
@@ -98,11 +87,9 @@ answers **no** is a defect with incomplete evidence, listed in
 | 1960 | Tella | 19 | 7821 | yes | 1618532 |
 | 5702 | Still | 57 | 7683 | yes | 5144111 |
 | 2840 | Souamaa | 28 | 7440 | **no** | 6547262 |
-| 1006 | Hanif | 10 | 7141 | **no** | 3390920 |
 | 4014 | Tamza | 40 | 7058 | yes | 6561890 |
 | 3021 | El Borma | 30 | 6997 | yes | 6542938 |
 | 2305 | El Bouni | 23 | 6895 | yes | 1616108 |
-| 215 | Herenfa | 2 | 6678 | **no** | 4830347 |
 | 716 | El Feïdh | 7 | 6405 | yes | 4120767 |
 | 2121 | Beni Oulbane | 21 | 6373 | yes | 6543281 |
 | 1309 | Djebala | 13 | 6278 | **no** | 6666562 |
@@ -123,7 +110,6 @@ answers **no** is a defect with incomplete evidence, listed in
 | 1823 | Khiri Oued Adjoul | 18 | 5544 | **no** | 6669727 |
 | 2658 | Ouled Antar | 67 | 5449 | yes | 2522974 |
 | 1908 | Bir-El-Arch | 19 | 5227 | yes | 1618480 |
-| 2120 | Emjez Edchich | 21 | 5222 | **no** | 6543288 |
 | 717 | El Kantara | 61 | 5154 | yes | 4120771 |
 | 1560 | Iboudrarene | 15 | 5129 | **no** | 4288710 |
 | 4413 | Oued Chorfa | 44 | 5125 | yes | 2645875 |
@@ -161,7 +147,6 @@ answers **no** is a defect with incomplete evidence, listed in
 | 3807 | Melaab | 38 | 4105 | yes | 6534587 |
 | 4605 | Bouzedjar | 46 | 4093 | yes | 6535202 |
 | 2732 | Hassiane | 27 | 3993 | yes | 6660567 |
-| 1922 | Beni Ourtilane | 19 | 3959 | **no** | 1625374 |
 | 928 | Ain Romana | 9 | 3952 | yes | 2620528 |
 | 214 | Talassa | 2 | 3918 | yes | 4836837 |
 | 2641 | Aïn Ouksir | 67 | 3897 | yes | 2897101 |
