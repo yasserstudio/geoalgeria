@@ -5,7 +5,7 @@
   "totals": {
     "records": 70015,
     "commune_relabels": 8036,
-    "wilaya_moves": 695,
+    "wilaya_moves": 697,
     "with_outline": 46779,
     "in_own_outline": 46611,
     "in_own_outline_pct": 99.6
@@ -33373,7 +33373,7 @@
       "records": 1921,
       "ref_records": 1932,
       "commune_relabels": 0,
-      "wilaya_moves": 0,
+      "wilaya_moves": 2,
       "with_outline": 0,
       "in_own_outline": 0,
       "in_own_outline_pct": null,
@@ -33383,7 +33383,34 @@
         "kept_low_precision": 96,
         "published_wilaya_nearest": 1
       },
-      "moved": []
+      "moved": [
+        {
+          "id": "01818",
+          "from": {
+            "wilaya_code": "58",
+            "commune_code": null,
+            "commune": "المنصورة"
+          },
+          "to": {
+            "wilaya_code": "47",
+            "commune_code": null,
+            "commune": "المنصورة"
+          }
+        },
+        {
+          "id": "01905",
+          "from": {
+            "wilaya_code": "30",
+            "commune_code": null,
+            "commune": "الحجيرة"
+          },
+          "to": {
+            "wilaya_code": "55",
+            "commune_code": null,
+            "commune": "الحجيرة"
+          }
+        }
+      ]
     },
     {
       "file": "packages/gares-routieres/data/stations.json",

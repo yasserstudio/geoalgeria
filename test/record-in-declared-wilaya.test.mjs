@@ -10,10 +10,11 @@
 // THE COMMUNE OUTLINE IS THE FIRST QUESTION, not the wilaya polygon. The first version
 // of this guard asked only whether a record was inside the wilaya polygon it declared,
 // and that made it blind to the very defect it was added for. The shipped wilaya 55
-// polygon is about 50 km short of the decree boundary (yasserstudio/geoalgeria.com#171),
-// so 70 records wrongly re-attributed to N'goussa (3003, wilaya 30) were inside the
-// wilaya 30 polygon and passed. They are not inside N'goussa's OpenStreetMap outline,
-// which is what fails them here.
+// polygon was about 50 km short of the decree boundary (yasserstudio/geoalgeria.com#171,
+// since rebuilt from its own member communes), so 70 records wrongly re-attributed to
+// N'goussa (3003, wilaya 30) were inside the wilaya 30 polygon and passed. They are not
+// inside N'goussa's OpenStreetMap outline, which is what fails them here, and that
+// answer did not depend on the polygons being right.
 //
 // IT IS EVERY PACKAGE, NOT THE ONES THAT BROKE. Enumeration is by pattern
 // (test/lib/wilaya-containment.mjs), so a package added later is covered the day it
@@ -120,9 +121,16 @@ for (const file of files) {
 test("the guard can fail, and the wilaya-55 records are what it fails on", () => {
   // THE #171 CASE, stated as data rather than trusted to a comment. These four records
   // are inside El-Hadjira (5507) and El Alia (5513) in wilaya 55, and the wilaya-first
-  // join published them as N'goussa (3003) in wilaya 30. The shipped wilaya 30 polygon
-  // DOES contain all four, so the old wilaya-only guard passed every one; N'goussa's
-  // OpenStreetMap outline does not, so this one fails every one.
+  // join published them as N'goussa (3003) in wilaya 30. N'goussa's OpenStreetMap
+  // outline does not contain any of them, so this guard fails every one no matter what
+  // the wilaya polygons say, which is the whole point of asking the commune first.
+  //
+  // The wilaya polygon now agrees. Until #171 rebuilt wilaya 55 from its own member
+  // communes the shipped wilaya 30 polygon contained all four, and that is what let the
+  // old wilaya-only guard pass them; on the corrected polygons they read 55. So the
+  // containing-wilaya assertion here is no longer the reason the guard works, and it is
+  // kept as the corrected value rather than deleted, so a regression that put that
+  // territory back in wilaya 30 is visible in this file too.
   const moved = [
     { id: "55-0051", wilaya_code: "30", commune_code: 3003, lat: 32.615544, lng: 5.513943 },
     { id: "55-00012", wilaya_code: "30", commune_code: 3003, lat: 32.613374, lng: 5.51684 },
@@ -130,7 +138,7 @@ test("the guard can fail, and the wilaya-55 records are what it fails on", () =>
     { id: "55-0210", wilaya_code: "30", commune_code: 3003, lat: 32.647857, lng: 5.516124 },
   ];
   for (const r of moved) {
-    assert.equal(containingWilayaCode(r.lat, r.lng), "30", `${r.id}: the shipped w30 polygon contains it, which is #171`);
+    assert.equal(containingWilayaCode(r.lat, r.lng), "55", `${r.id}: the polygon #171 rebuilt puts it in wilaya 55`);
     assert.equal(resolver.insideOwnOutline(r.lat, r.lng, 3003), false, `${r.id}: it is not inside N'goussa`);
   }
   const bad = containmentViolations(moved, resolver);

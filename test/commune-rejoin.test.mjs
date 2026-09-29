@@ -50,8 +50,14 @@ test("a commune outline beats a nearer centre in the next wilaya", () => {
 test("the commune outline wins even where the shipped wilaya polygon is wrong (#171)", () => {
   // The four rows the wilaya-first rule moved to N'goussa (3003, wilaya 30): mosque
   // 55-0051, pharmacy 55-00012, library 55-library-02 and mosque 55-0210. Every one is
-  // inside El-Hadjira (5507) or El Alia (5513), communes of wilaya 55 whose territory
-  // the shipped wilaya 55 polygon does not reach.
+  // inside El-Hadjira (5507) or El Alia (5513), communes of wilaya 55.
+  //
+  // #171 has since rebuilt the wilaya 55 polygon from those very communes, so the
+  // shipped polygon now holds all four in 55 rather than in 30. The point this test
+  // makes does not depend on that: the outline-first rule answered 5507 and 5513 while
+  // the polygon still said 30, and it answers the same now. The containing-wilaya
+  // assertion is kept at its corrected value so a regression that put the territory
+  // back in wilaya 30 shows up here as well.
   const rows = [
     { id: "55-0051", lat: 32.615544, lng: 5.513943, commune: 5507 },
     { id: "55-00012", lat: 32.613374, lng: 5.51684, commune: 5507 },
@@ -59,7 +65,7 @@ test("the commune outline wins even where the shipped wilaya polygon is wrong (#
     { id: "55-0210", lat: 32.647857, lng: 5.516124, commune: 5507 },
   ];
   for (const r of rows) {
-    assert.equal(containingWilayaCode(r.lat, r.lng), "30", `${r.id}: the shipped w30 polygon holds it, which is #171`);
+    assert.equal(containingWilayaCode(r.lat, r.lng), "55", `${r.id}: the polygon #171 rebuilt holds it in wilaya 55`);
     assert.equal(containingCommuneCode(r.lat, r.lng), r.commune, `${r.id}: the OSM outline that holds it`);
 
     // From the wrong published value, and from no published value at all.

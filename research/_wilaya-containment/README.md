@@ -19,8 +19,9 @@ Oued Tlelat in wilaya 31, and the join had given it Zahana in wilaya 29.
 The first version of this guard asked only whether a record was inside the wilaya
 polygon it declared, and that made it blind to the defect it was added for. The
 first replacement join pinned the candidate communes to the wilaya whose **shipped
-polygon** contains the point, and the shipped wilaya 55 polygon is about 50 km
-short of the decree boundary (#171). So 79 records were moved out of El-Hadjira
+polygon** contains the point, and the shipped wilaya 55 polygon was about 50 km
+short of the decree boundary (#171, which has since rebuilt it from its own member
+communes and merges before this branch). So 79 records were moved out of El-Hadjira
 (5507) and El Alia (5513) into N'goussa (3003) in wilaya 30, and every one of them
 **passed**, because they are genuinely inside the wilaya 30 polygon. Mosque
 `55-0051` at `[5.513943, 32.615544]` is inside OpenStreetMap's El-Hadjira relation
@@ -42,8 +43,9 @@ A record with no commune outline to check whose coordinate is inside **no** wila
 polygon does not fail: the 69 outlines this repository ships are display-grade
 (mapshaper `dp 2% keep-shapes`, a 3.4 km median vertex gap) and cut inside the real
 shoreline, so coastal and border records sit outside every one of them as an
-artefact of the simplification. Failing those would be failing the outlines, which
-are #171.
+artefact of the simplification. Failing those would be failing the outlines. #171
+rebuilt the four wilaya polygons whose error was a membership error rather than a
+simplification artefact; what is left here is simplification.
 
 Every row also carries `rule`, the clause of `scripts/lib/commune-resolver.mjs`
 that decides it today, and `pre_existing`, recomputed by running the same rule over
@@ -57,8 +59,12 @@ polygons and against the commune outlines, each with its own exceptions.
 
 ## What it found
 
-46 record files, 70,015 located records, **396 violations, every one of them
-pre-existing and 0 created by this batch**. Two classes:
+46 record files, 70,015 located records, **360 violations, every one of them
+pre-existing and 0 created by this batch**. It was 396 before #171 rebuilt the
+wilaya 55 and 47 polygons from their member communes: 36 rows stopped being
+violations, 28 of them declaring wilaya 55 and 8 declaring wilaya 47, all of them
+`outside_declared_wilaya_polygon` rows in packages this branch does not touch, and
+not one row was added. Two classes:
 
 - **the source's own text**: a package whose `wilaya_code` and `commune` come from a
   ministry register column or an operator's branch list while its coordinate comes
@@ -76,20 +82,20 @@ pre-existing and 0 created by this batch**. Two classes:
 | File | Records | Kinds |
 | --- | --- | --- |
 | `packages/poste/data/postoffices.json` | 82 | 82 outside their own commune outline |
-| `packages/sports/data/facilities.json` | 44 | 36 outside their wilaya polygon, 8 outside their commune outline |
-| `packages/tourisme/data/historic.json` | 44 | 44 outside their wilaya polygon |
+| `packages/sports/data/facilities.json` | 34 | 26 outside their wilaya polygon, 8 outside their commune outline |
+| `packages/tourisme/data/historic.json` | 42 | 42 outside their wilaya polygon |
 | `packages/protection-civile/data/protection-civile.json` | 33 | 33 outside their own commune outline |
-| `packages/tourisme/data/thermal-springs.json` | 32 | 32 outside their wilaya polygon |
-| `packages/tourisme/data/attractions.json` | 30 | 30 outside their wilaya polygon |
-| `packages/jeunesse/data/institutions.json` | 22 | 22 outside their wilaya polygon |
-| `packages/emploi/data/alem.json` | 20 | 20 outside their wilaya polygon |
-| `packages/tourisme/data/lodging.json` | 17 | 17 outside their wilaya polygon |
+| `packages/tourisme/data/thermal-springs.json` | 27 | 27 outside their wilaya polygon |
+| `packages/tourisme/data/attractions.json` | 23 | 23 outside their wilaya polygon |
+| `packages/jeunesse/data/institutions.json` | 15 | 15 outside their wilaya polygon |
+| `packages/emploi/data/alem.json` | 19 | 19 outside their wilaya polygon |
+| `packages/tourisme/data/lodging.json` | 15 | 15 outside their wilaya polygon |
 | `packages/mosquees/data/mosquees.json` | 14 | 14 outside their own commune outline |
 | `packages/ecoles/data/ecoles.json` | 13 | 13 outside their own commune outline |
 | `packages/telecom/data/5g-djezzy.json` | 12 | 12 outside their wilaya polygon |
 | `packages/pharmacies/data/pharmacies.json` | 7 | 7 outside their own commune outline |
 | `packages/banques/data/branches.json` | 5 | 5 outside their wilaya polygon |
-| `packages/poste/data/atms.json` | 5 | 5 outside their wilaya polygon |
+| `packages/poste/data/atms.json` | 3 | 3 outside their wilaya polygon |
 | `packages/sante/data/sante.json` | 4 | 4 outside their own commune outline |
 | `packages/tourisme/data/parks.json` | 4 | 4 outside their wilaya polygon |
 | `packages/cliniques/data/cliniques.json` | 2 | 2 outside their own commune outline |
@@ -99,23 +105,34 @@ pre-existing and 0 created by this batch**. Two classes:
 | `packages/telecom/data/5g-mobilis.json` | 1 | 1 outside its wilaya polygon |
 
 The list is exact in both directions: a record that stops needing its entry fails
-the guard rather than keeping it, so the 396 can only shrink.
+the guard rather than keeping it, so the 360 can only shrink.
 
 ## One count this batch deliberately raises
 
 `scripts/validate-packages.mjs` also warns when a record's coordinate is outside the
-display-grade polygon of the wilaya it declares. That count is **960 on `main`, 245
-after the wilaya-first join, and 373 now**. The rise from 245 is the correction, not a
-regression: 140 of the 373 are inside the OpenStreetMap outline of the commune they
-name, so it is the shipped wilaya polygon that is wrong about them, not the record.
-89 of those 140 are the #171 pairs (79 in wilaya 55 against the wilaya 30 polygon, 10
-in wilaya 47 against the wilaya 58 polygon) and the rest are display-grade seams. They
-stay warnings until #171 rebuilds those polygons from their member communes.
+display-grade polygon of the wilaya it declares. Re-measured by running that script
+over each tree rather than quoted: **1,159 on `origin/main`, 572 at this branch's
+previous head, and 447 now**. The drop to 447 is #171: 127 of the 572 were the
+wilaya 55 and 47 rows this repository drew in the wrong wilaya (108 in 55, 19 in 47),
+and rebuilding those four polygons from their member communes ends every one of them
+without creating a single new warning.
+
+An earlier revision of this file read "960 on `main`, 245 after the wilaya-first
+join, and 373 now". Those three figures do not reproduce: the same script reports
+1,159 and 572 over the same two trees. They are corrected rather than carried, and
+the two that describe a tree nobody can check again (the wilaya-first join) are
+dropped instead of restated.
+
+Of the 447 that remain, 118 are inside the OpenStreetMap outline of the commune they
+name, so it is the shipped wilaya polygon that is wrong about them and not the
+record; 322 name no commune an outline exists for, so nothing finer can be asked; and
+7 still declare wilaya 55 or 47. All of them are display-grade seams on borders this
+branch does not redraw.
 
 ## Files
 
 | File | Contents |
 | --- | --- |
-| `record-exceptions.json` | the 396 records, grouped by file, each with its kind, the clause of the join that decides it, whether it pre-exists `origin/main`, and the reason per group |
+| `record-exceptions.json` | the 360 records, grouped by file, each with its kind, the clause of the join that decides it, whether it pre-exists `origin/main`, and the reason per group |
 
 Regenerate with `node scripts/build-wilaya-containment-exceptions.mjs --write`.
