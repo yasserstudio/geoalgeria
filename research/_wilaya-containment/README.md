@@ -110,18 +110,26 @@ the guard rather than keeping it, so the 360 can only shrink.
 ## One count this batch deliberately raises
 
 `scripts/validate-packages.mjs` also warns when a record's coordinate is outside the
-display-grade polygon of the wilaya it declares. Re-measured by running that script
-over each tree rather than quoted: **1,159 on `origin/main`, 572 at this branch's
-previous head, and 447 now**. The drop to 447 is #171: 127 of the 572 were the
-wilaya 55 and 47 rows this repository drew in the wrong wilaya (108 in 55, 19 in 47),
-and rebuilding those four polygons from their member communes ends every one of them
-without creating a single new warning.
+display-grade polygon of the wilaya it declares, and `quality/accuracy-review` counts
+the same rows as `outside_declared_wilaya`. Measured by running each tree rather than
+quoted:
 
-An earlier revision of this file read "960 on `main`, 245 after the wilaya-first
-join, and 373 now". Those three figures do not reproduce: the same script reports
-1,159 and 572 over the same two trees. They are corrected rather than carried, and
-the two that describe a tree nobody can check again (the wilaya-first join) are
-dropped instead of restated.
+| Reason | `origin/main` | before #171 | now |
+| --- | --- | --- | --- |
+| `outside_declared_wilaya` | 1,159 | 572 | **447** |
+| `inside_adjacent_wilaya` | 960 | 373 | **248** |
+
+An earlier revision of this file gave 960 and 373 as the `outside_declared_wilaya`
+count. Those two numbers are real, but they are the `inside_adjacent_wilaya` row:
+the reason code was mislabelled, not the measurement. Both rows are stated here so
+the mistake cannot be made again from this file, and the third figure it quoted, for
+the wilaya-first join, describes a tree that no longer exists and is dropped rather
+than restated.
+
+The drop from 572 to 447 is #171: 127 of the 572 were wilaya 55 and 47 rows this
+repository drew in the wrong wilaya (108 in 55, 19 in 47), and rebuilding those four
+polygons from their member communes ends every one of them without creating a single
+new warning.
 
 Of the 447 that remain, 118 are inside the OpenStreetMap outline of the commune they
 name, so it is the shipped wilaya polygon that is wrong about them and not the
