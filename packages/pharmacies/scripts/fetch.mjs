@@ -24,7 +24,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { buildMetadata, toCSV, toGeoJSON } from "@geoalgeria/schema";
 import { carryOverIds, readCommitted, readRetiredIds, writeRetiredIds, resolveDates } from "../../../scripts/lib/v2-transforms.mjs";
-import { resolveCommune } from "../../../scripts/lib/build-utils.mjs";
+import { RESOLVE_RULES, describeLinkage, resolveCommune } from "../../../scripts/lib/build-utils.mjs";
 import https from "node:https";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -307,16 +307,17 @@ function loadCommunes() {
 }
 
 // Administrative linkage is the shared rule, scripts/lib/build-utils.mjs
-// resolveCommune(): the wilaya whose shipped polygon contains the point fixes the
-// candidate set, the commune whose OSM outline contains it wins inside that set, and
-// distance to a hand-placed centre only breaks what is left. The unrestricted
+// resolveCommune(): the commune whose OpenStreetMap outline contains the point wins
+// outright, searched over the whole country, with the wilaya taken from the commune
+// registry; only where no outline holds the point does distance decide, inside the
+// wilaya whose shipped polygon does. The unrestricted
 // nearest-centroid join this replaces moved a pharmacy inside the wilaya 53 polygon
 // into Adrar when the 2026-09-29 batch moved 245 commune centres.
 //
 // `published` maps the stable OSM id to the wilaya the record shipped in, and is the
 // only answer for a point no wilaya polygon contains.
 function attachCommune(rows, communes, published) {
-  const counts = { commune_polygon: 0, wilaya_nearest: 0, published_wilaya_nearest: 0, unrestricted: 0, unresolved: 0 };
+  const counts = Object.fromEntries(RESOLVE_RULES.map((k) => [k, 0]));
   for (const r of rows) {
     const { commune, rule } = resolveCommune(r.lat, r.lng, communes, published.get(`osm:${r.osm_id}`) ?? null);
     counts[rule]++;
@@ -406,14 +407,10 @@ async function main() {
   console.log(`  ${communes.length} commune centroids loaded`);
   const published = new Map();
   for (const r of readCommitted(OUT_DIR, "pharmacies.json") ?? []) {
-    if (r.refs?.osm && r.wilaya_code) published.set(`osm:${r.refs.osm}`, r.wilaya_code);
+    if (r.refs?.osm && r.wilaya_code) published.set(`osm:${r.refs.osm}`, r);
   }
   const linkage = attachCommune(rows, communes, published);
-  console.log(
-    `  linkage: ${linkage.commune_polygon} by commune outline, ${linkage.wilaya_nearest} by nearest centre in the ` +
-      `containing wilaya, ${linkage.published_wilaya_nearest} outside every wilaya polygon (kept their published ` +
-      `wilaya), ${linkage.unrestricted} with no wilaya at all, ${linkage.unresolved} unresolved`,
-  );
+  console.log(`  linkage: ${describeLinkage(linkage)}`);
 
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);

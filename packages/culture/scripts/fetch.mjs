@@ -88,9 +88,10 @@ function loadCommunes() {
   return { byWilaya, all };
 }
 // The shared administrative-linkage rule, scripts/lib/build-utils.mjs
-// resolveCommune(): the wilaya whose shipped polygon contains the point fixes the
-// candidate set, the commune whose OSM outline contains it wins inside that set, and
-// distance to a hand-placed centre only breaks what is left. The matched commune
+// resolveCommune(): the commune whose OpenStreetMap outline contains the point wins
+// outright, searched over the whole country, with the wilaya taken from the commune
+// registry; only where no outline holds the point does distance decide, inside the
+// wilaya whose shipped polygon does. The matched commune
 // carries the CURRENT wilaya_code, so a place the portal tags "01- Adrar" but that
 // sits in Timimoun is rescoped to wilaya 49, and one it tags "26- Médéa" sitting in
 // Ksar El Boukhari to wilaya 67, without a hardcoded split map, auto-tracking the
@@ -210,7 +211,7 @@ function main() {
   const stats = { unknown_type: 0, unknown_wilaya: 0, no_coords: 0, dropped_dup: 0, rescoped: 0 };
   const published = new Map();
   for (const r of readCommitted(OUT_DIR, "culture.json") ?? []) {
-    if (r.refs?.patrimoine && r.wilaya_code) published.set(`p:${r.refs.patrimoine}`, r.wilaya_code);
+    if (r.refs?.patrimoine && r.wilaya_code) published.set(`p:${r.refs.patrimoine}`, r);
   }
   let rows = build(curated, wilByCode, communes, stats, published);
   // Every DESERT_FIX key must have hit a record; an unmatched key means the

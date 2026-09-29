@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { loadCommunes, attachCommune, round6, wcode } from "../../../scripts/lib/build-utils.mjs";
+import { loadCommunes, attachCommuneWithRules, describeLinkage, round6, wcode } from "../../../scripts/lib/build-utils.mjs";
 import {
   MIGRATIONS,
   writePackageV2,
@@ -107,15 +107,27 @@ const records = raw.map((r) => {
   };
 });
 
-// Spatial-join commune + wilaya (reconciles legacy wilaya codes to geoalgeria).
-attachCommune(records, communes);
+// Spatial-join commune + wilaya (reconciles legacy wilaya codes to geoalgeria). The
+// commune and wilaya a station already shipped under are the claim the linkage KEEPS
+// wherever geometry cannot contradict it (a coordinate too coarse to join, a commune
+// OpenStreetMap ships no outline for such as Dhayet Bendhahoua 4703, a point outside
+// every wilaya polygon). Keyed on the station name, as carryOverIds is below.
+const publishedStations = new Map(
+  (readCommitted(DATA, "stations.json") ?? []).filter((r) => r.name).map((r) => [r.name, r]),
+);
+console.log(
+  `gares-routieres linkage: ${describeLinkage(
+    attachCommuneWithRules(records, communes, (r) => publishedStations.get(r.name) ?? r),
+  )}`,
+);
 
-// Commune overrides for stations the centroid join mislabels. Communes have no
-// polygons here, so `attachCommune` assigns the nearest commune centre within
-// the containing wilaya, and a station sitting between two centres can land on
-// the wrong one even with a correct coordinate. Each case below is confirmed by
-// OSM's admin_level-8 boundary containing the point, and in each the source's
-// own record already named the commune the join contradicted.
+// Commune overrides for stations the distance join mislabelled. Since 2026-09-29 the
+// linkage decides by containment in the commune's own OSM admin_level=8 outline, which
+// is the evidence each case below was already decided on, so these four are now
+// agreements rather than overrides; they stay as the ratchet that says so, and as the
+// answer for Dhayet Bendhahoua (4703), one of the four communes OSM ships no relation
+// for. In each, the source's own record already named the commune the old join
+// contradicted.
 // GHERDAIA: the new gare at Bouhraoua, the northern entrance of Ghardaïa on the
 // RN1 (OSM maps a "Gare routière" 100 m from the point). 6.46 km from Dhayet
 // Bendhahoua's centre vs 6.57 km from Ghardaïa's, so a 110 m margin published

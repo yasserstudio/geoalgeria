@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { attachCommune, round6 } from "../../../scripts/lib/build-utils.mjs";
+import { attachCommuneWithRules, describeLinkage, round6 } from "../../../scripts/lib/build-utils.mjs";
 import {
   MIGRATIONS,
   carryOverIds,
@@ -154,7 +154,21 @@ for (const a of additions) {
 const records = [...wd, ...kept];
 
 // ---- Commune / wilaya spatial join (finite-coord guarded, shared helper) ----
-attachCommune(records);
+// The commune and wilaya a station already shipped under are the claim the linkage
+// KEEPS wherever geometry cannot contradict it (a coordinate too coarse to join, a
+// commune OpenStreetMap ships no outline for, a point outside every wilaya polygon).
+// Keyed on the station's Wikidata or OSM id, as carryOverIds is below.
+const publishedStations = new Map(
+  (readCommitted(DATA, "stations.json") ?? [])
+    .map((r) => [r.refs?.wikidata ? `wd:${r.refs.wikidata}` : r.refs?.osm ? `osm:${r.refs.osm}` : null, r])
+    .filter(([k]) => k),
+);
+const stationKey = (r) => (r.wikidata ? `wd:${r.wikidata}` : r.osm_id ? `osm:${r.osm_id}` : null);
+console.log(
+  `ferroviaire linkage: ${describeLinkage(
+    attachCommuneWithRules(records, undefined, (r) => publishedStations.get(stationKey(r)) ?? r),
+  )}`,
+);
 
 // ---- Operator / network tagging ----
 for (const r of records) {

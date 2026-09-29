@@ -253,9 +253,10 @@ function loadCommunes() {
 }
 
 // The shared administrative-linkage rule, scripts/lib/build-utils.mjs
-// resolveCommune(): the wilaya whose shipped polygon contains the point fixes the
-// candidate set, the commune whose OSM outline contains it wins inside that set, and
-// distance to a hand-placed centre only breaks what is left. It replaces the
+// resolveCommune(): the commune whose OpenStreetMap outline contains the point wins
+// outright, searched over the whole country, with the wilaya taken from the commune
+// registry; only where no outline holds the point does distance decide, inside the
+// wilaya whose shipped polygon does. It replaces the
 // unrestricted nearest-centroid search this file used to run over the whole flagship
 // commune set, the join that lets a moving commune centre carry a store into a
 // wilaya whose polygon does not contain it.
@@ -324,7 +325,7 @@ async function main() {
   const communes = loadCommunes();
   const published = new Map();
   for (const r of readCommitted(OUT_DIR, "stores.json") ?? []) {
-    if (r.refs?.ooredoo && r.wilaya_code) published.set(`oo:${r.refs.ooredoo}`, r.wilaya_code);
+    if (r.refs?.ooredoo && r.wilaya_code) published.set(`oo:${r.refs.ooredoo}`, r);
   }
   let rows = normStores(raw, communes, published);
   assignIds(rows);

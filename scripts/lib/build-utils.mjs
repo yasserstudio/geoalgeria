@@ -6,89 +6,99 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { loadBoundaries, pointInGeometry } from "../../packages/schema/index.js";
+import {
+  RESOLVE_RULES,
+  cLat,
+  cLng,
+  createCommuneResolver,
+  haversine,
+  wcode,
+} from "./commune-resolver.mjs";
+
+export { RESOLVE_RULES, haversine, wcode };
+export { OUTLINE_LESS_RADIUS_M, isTooCoarseToJoin } from "./commune-resolver.mjs";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DEG = Math.PI / 180;
 
-let WILAYA_BOUNDARIES = null;
-function wilayaBoundaries() {
-  if (!WILAYA_BOUNDARIES) {
-    const fc = JSON.parse(
-      readFileSync(join(REPO_ROOT, "packages", "dataset", "data", "geojson", "wilaya-boundaries.geojson"), "utf-8"),
-    );
-    WILAYA_BOUNDARIES = loadBoundaries(fc);
+// --- the one resolver, over the geometry this repository ships ----------------
+//
+// The wilaya polygons are the 69 display-grade outlines of
+// packages/dataset/data/geojson/wilaya-boundaries.geojson. The commune outlines are
+// OpenStreetMap's, reduced once into research/_commune-centres/commune-boundaries.json
+// by scripts/build-commune-boundary-cache.mjs (that script refuses to write unless
+// every one of the 1,541 containment verdicts is identical to the verdict from the
+// unsimplified rings). It is a file, never a query: a generator that fetches is a
+// generator that fails when Overpass is busy. It stays in research/ and ships in no
+// package.
+//
+// The rule itself, with its clause order and the reasons for it, is
+// scripts/lib/commune-resolver.mjs. It is separate so it can be tested on fixtures
+// (test/commune-resolver.test.mjs) instead of only on the country.
+
+// The commune set the resolver uses when a caller names none, loaded once.
+let DEFAULT_COMMUNES = null;
+const defaultCommunes = () => (DEFAULT_COMMUNES ??= loadCommunes());
+
+// The geometry is parsed once per process (the outline file is 3.7 MB), and a resolver
+// is memoised PER COMMUNE ARRAY rather than in one slot. Both matter: a single slot
+// thrashed between the array a generator passes and the default one
+// insideOwnCommuneOutline() uses, and re-parsing on every thrash turned one grid test
+// into 185 seconds.
+let GEOMETRY = null;
+function geometry() {
+  if (!GEOMETRY) {
+    GEOMETRY = {
+      wilayaGeometries: loadBoundaries(
+        JSON.parse(
+          readFileSync(join(REPO_ROOT, "packages", "dataset", "data", "geojson", "wilaya-boundaries.geojson"), "utf-8"),
+        ),
+      ),
+      outlines: JSON.parse(
+        readFileSync(join(REPO_ROOT, "research", "_commune-centres", "commune-boundaries.json"), "utf-8"),
+      ).communes,
+    };
   }
-  return WILAYA_BOUNDARIES;
+  return GEOMETRY;
+}
+
+const RESOLVERS = new WeakMap();
+export function communeResolver(communes = defaultCommunes()) {
+  let resolver = RESOLVERS.get(communes);
+  if (!resolver) {
+    resolver = Object.assign(createCommuneResolver({ ...geometry(), communes, pointInGeometry }), { communes });
+    RESOLVERS.set(communes, resolver);
+  }
+  return resolver;
 }
 
 /** Wilaya code whose polygon contains (lat,lng), or null when no polygon does
  *  (offshore, or just outside the simplified national outline). */
 export function containingWilayaCode(lat, lng) {
-  for (const [code, geom] of wilayaBoundaries()) if (pointInGeometry(lng, lat, geom)) return code;
-  return null;
+  return communeResolver().containingWilayaCode(lat, lng);
 }
 
-// --- commune outlines --------------------------------------------------------
-//
-// This repository publishes no commune boundaries, so the only commune-level
-// geometry it has is OpenStreetMap's, reduced once into
-// research/_commune-centres/commune-boundaries.json by
-// scripts/build-commune-boundary-cache.mjs (that script refuses to write unless
-// every one of the 1,541 containment verdicts is identical to the verdict from the
-// unsimplified rings). It is a file, never a query: a generator that fetches is a
-// generator that fails when Overpass is busy. It stays in research/ and ships in no
-// package.
-
-let COMMUNE_POLYGONS = null;
-function communePolygons() {
-  if (!COMMUNE_POLYGONS) {
-    const doc = JSON.parse(
-      readFileSync(join(REPO_ROOT, "research", "_commune-centres", "commune-boundaries.json"), "utf-8"),
-    );
-    COMMUNE_POLYGONS = new Map();
-    for (const c of doc.communes) {
-      if (!c.usable) continue;
-      const w = wcode(c.wilaya_code);
-      if (!COMMUNE_POLYGONS.has(w)) COMMUNE_POLYGONS.set(w, []);
-      COMMUNE_POLYGONS.get(w).push(c);
-    }
-  }
-  return COMMUNE_POLYGONS;
+/** `code_commune` of the commune whose OSM outline contains (lat,lng), searched over
+ *  the whole country, or null when none does. Ties (overlapping outlines, where OSM
+ *  has not caught up with a split) come back in ascending code order. */
+export function containingCommuneCode(lat, lng) {
+  return communeResolver().containingCommuneCode(lat, lng);
 }
 
-/** Ray casting over one ring of [lng, lat] pairs. */
-function inRing(lng, lat, ring) {
-  let hit = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [xi, yi] = ring[i];
-    const [xj, yj] = ring[j];
-    if (yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) hit = !hit;
-  }
-  return hit;
+/** Is (lat,lng) inside the OSM outline of `communeCode`? `null` when that commune has
+ *  no outline, which is not the same answer as `false`. */
+export function insideOwnCommuneOutline(lat, lng, communeCode) {
+  return communeResolver().insideOwnOutline(lat, lng, communeCode);
 }
 
-/** Inside any outer ring and no inner ring. The bbox is a reject, not the answer. */
-function inCommuneOutline(lng, lat, entry) {
-  const [w, s, e, n] = entry.bbox;
-  if (lng < w || lng > e || lat < s || lat > n) return false;
-  return entry.outer.some((r) => inRing(lng, lat, r)) && !entry.inner.some((r) => inRing(lng, lat, r));
-}
-
-/** `code_commune` of the commune whose OSM outline contains (lat,lng), searched
- *  inside `wilayaCode` only, or null when none does. */
-export function containingCommuneCode(lat, lng, wilayaCode) {
-  for (const entry of communePolygons().get(wcode(wilayaCode)) ?? []) {
-    if (inCommuneOutline(lng, lat, entry)) return entry.code_commune;
-  }
-  return null;
+/** The `code_commune`s OpenStreetMap ships no `admin_level=8` relation for. */
+export function outlineLessCommuneCodes() {
+  return communeResolver().outlineLessCodes();
 }
 
 /** Round to 6 decimals (≈0.1 m), or null. */
 export const round6 = (n) =>
   n == null || !Number.isFinite(+n) ? null : Math.round(+n * 1e6) / 1e6;
-
-/** Wilaya code → zero-padded 2-digit string ("16", 16, "1" → "16"/"01"). */
-export const wcode = (c) => (c == null ? null : String(c).padStart(2, "0"));
 
 /** RFC-4180 CSV with spreadsheet formula-injection guard. `cols` = ordered keys. */
 export function toCSV(rows, cols) {
@@ -131,11 +141,12 @@ export function loadCommunes() {
   return out;
 }
 
-/** Nearest commune centroid to (lat,lng) — squared planar distance, cosLat-scaled.
+/** Nearest commune centre to (lat,lng), squared planar distance, cosLat-scaled.
  *  With `wilayaCode`, only that wilaya's communes are candidates: a point near a
- *  boundary must not be claimed by the neighbouring wilaya's nearer centroid
- *  (the ooredoo mislinks, ROADMAP "Generators"). Falls back to the unrestricted
- *  search if the code matches no commune row. */
+ *  boundary must not be claimed by the neighbouring wilaya's nearer centre (the
+ *  ooredoo mislinks, ROADMAP "Generators"). A code that matches no commune row
+ *  returns null: the silent widening to a national search this used to do reported
+ *  `published_wilaya_nearest` for an answer that had left the wilaya entirely. */
 export function nearestCommune(lat, lng, communes, wilayaCode = null) {
   const w = wilayaCode == null ? null : wcode(wilayaCode);
   let best = null, bestD = Infinity;
@@ -145,85 +156,62 @@ export function nearestCommune(lat, lng, communes, wilayaCode = null) {
     const dx = (cLng(c) - lng) * cosLat;
     const dy = cLat(c) - lat;
     const d = dx * dx + dy * dy;
-    if (d < bestD) { bestD = d; best = c; }
+    if (d < bestD || (d === bestD && best && Number(c.code_commune) < Number(best.code_commune))) {
+      bestD = d;
+      best = c;
+    }
   }
-  if (!best && w != null) return nearestCommune(lat, lng, communes);
   return best;
 }
 
-// Commune rows reach this file in two shapes: the flagship split files and
-// algeria.json use latitude/longitude, and the copies pharmacies and ooredoo build
-// for themselves use lat/lng. Reading both is what lets one rule serve every
-// package instead of each keeping an inlined join that drifts.
-const cLat = (c) => (c.latitude ?? c.lat);
-const cLng = (c) => (c.longitude ?? c.lng);
-
-const CODE_INDEX = new WeakMap();
-function communeByCode(communes, code) {
-  let index = CODE_INDEX.get(communes);
-  if (!index) {
-    index = new Map(communes.map((c) => [Number(c.code_commune), c]));
-    CODE_INDEX.set(communes, index);
-  }
-  return index.get(Number(code)) ?? null;
-}
-
 /**
- * Which commune a point belongs to, without ever crossing a wilaya boundary.
+ * Which commune a point belongs to. The rule and the reasons for its clause order are
+ * scripts/lib/commune-resolver.mjs; this is the binding to the geometry this
+ * repository ships.
  *
- * WHY THIS AND NOT NEAREST CENTROID. An unrestricted nearest-centroid join makes
- * every commune centre an attractor for everything around it, so moving 245 centres
- * moved 58 published records into a wilaya they are demonstrably not in: mosque
- * 31-0390 at [-0.414678, 35.547628] is inside OSM commune 3111 Oued Tlelat, wilaya
- * 31, and the join gave it Zahana in wilaya 29, outside the wilaya 29 polygon this
- * repository ships. Distance to a hand-placed centre is a weaker claim than
- * containment in a polygon, so containment decides and distance only breaks ties.
- *
- * 1. the wilaya whose SHIPPED polygon contains the point fixes the candidate set;
- * 2. inside it, the commune whose OSM outline contains the point wins outright;
- * 3. otherwise the nearest centre among that wilaya's communes;
- * 4. when no wilaya polygon contains the point at all (offshore, or outside the
- *    simplified national outline), the record keeps the wilaya it was published in
- *    and the caller is told, because a nearest-centre guess out there is exactly
- *    how those 58 happened.
- *
- * @returns {{commune: object|null, rule: string}} rule is one of `commune_polygon`,
- *   `wilaya_nearest`, `published_wilaya_nearest`, `unrestricted` or `unresolved`.
+ * @param {number} lat
+ * @param {number} lng
+ * @param {Array<object>} communes  the flagship commune rows
+ * @param {object|string|number|null} published  the record as published, or just its
+ *   wilaya code. `wilaya_code`, `commune_code` and `geo_precision` are read; passing
+ *   `commune_code` is what lets the rule keep a claim it cannot disprove instead of
+ *   re-guessing it.
+ * @returns {{commune: object|null, rule: string}} `rule` is one of RESOLVE_RULES.
  */
-export function resolveCommune(lat, lng, communes, publishedWilayaCode = null) {
-  const inside = containingWilayaCode(lat, lng);
-  const scope = inside ?? (publishedWilayaCode == null ? null : wcode(publishedWilayaCode));
-  if (scope != null) {
-    const code = containingCommuneCode(lat, lng, scope);
-    const hit = code == null ? null : communeByCode(communes, code);
-    if (hit) return { commune: hit, rule: "commune_polygon" };
-  }
-  const commune = nearestCommune(lat, lng, communes, scope);
-  if (!commune) return { commune: null, rule: "unresolved" };
-  if (inside != null) return { commune, rule: "wilaya_nearest" };
-  return { commune, rule: scope != null ? "published_wilaya_nearest" : "unrestricted" };
+export function resolveCommune(lat, lng, communes, published = null) {
+  return communeResolver(communes).resolve(lat, lng, published);
 }
 
 /** Attach wilaya_code/commune/commune_code by resolveCommune() (mutates rows with
- *  lat/lng). A row's existing `wilaya_code` is its published wilaya, which is what
- *  the join keeps when no wilaya polygon contains the point. */
-export function attachCommune(rows, communes = loadCommunes()) {
+ *  lat/lng). `publishedFor(row)` returns the row AS PUBLISHED, whose `wilaya_code`,
+ *  `commune_code` and `geo_precision` are the claim the rule keeps when geometry
+ *  cannot contradict it; the default reads those fields off the row itself, which is
+ *  right for a generator whose rows carry them already. */
+export function attachCommune(rows, communes = defaultCommunes(), publishedFor = null) {
+  attachCommuneWithRules(rows, communes, publishedFor);
+  return rows;
+}
+
+/** attachCommune() plus the per-rule tally, so a generator can print which clause
+ *  decided each of its records instead of asserting that one did. */
+export function attachCommuneWithRules(rows, communes = defaultCommunes(), publishedFor = null) {
+  const counts = Object.fromEntries(RESOLVE_RULES.map((r) => [r, 0]));
   for (const r of rows) {
     if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
-    const { commune } = resolveCommune(r.lat, r.lng, communes, r.wilaya_code ?? null);
+    const { commune, rule } = resolveCommune(r.lat, r.lng, communes, publishedFor ? publishedFor(r) : r);
+    counts[rule]++;
     if (!commune) continue;
     r.wilaya_code = wcode(commune.wilaya_code);
     r.commune = commune.name_fr;
     r.commune_code = commune.code_commune ?? null;
   }
-  return rows;
+  return counts;
 }
 
-/** Great-circle distance in metres. */
-export function haversine(aLat, aLng, bLat, bLng) {
-  const dLat = (bLat - aLat) * DEG, dLng = (bLng - aLng) * DEG;
-  const s =
-    Math.sin(dLat / 2) ** 2 +
-    Math.cos(aLat * DEG) * Math.cos(bLat * DEG) * Math.sin(dLng / 2) ** 2;
-  return 2 * 6371000 * Math.asin(Math.sqrt(s));
+/** One line naming which clause decided how many records, for a generator's log. */
+export function describeLinkage(counts) {
+  return Object.entries(counts)
+    .filter(([, n]) => n > 0)
+    .map(([k, n]) => `${n} ${k}`)
+    .join(", ");
 }

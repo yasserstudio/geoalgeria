@@ -34,7 +34,7 @@ import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
-import { attachCommune, loadCommunes } from "../../../scripts/lib/build-utils.mjs";
+import { attachCommuneWithRules, describeLinkage, loadCommunes } from "../../../scripts/lib/build-utils.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -513,7 +513,20 @@ async function main() {
 
   const communes = loadCommunes();
   console.log(`  ${communes.length} commune centroids loaded`);
-  attachCommune(rows, communes);
+  // The commune and wilaya a school already shipped under are the claim the linkage
+  // KEEPS wherever geometry cannot contradict it (a coordinate too coarse to join, a
+  // commune OpenStreetMap ships no outline for such as Bir Touta 1634, a point outside
+  // every wilaya polygon). Keyed on the canonical OSM ref, as carryOverIds is below.
+  const publishedRows = readCommitted(OUT_DIR, "ecoles.json") ?? [];
+  const published = new Map(
+    publishedRows.filter((r) => r.refs?.osm).map((r) => [`osm:${canonicalOsmRef(r.refs.osm)}`, r]),
+  );
+  const linkage = attachCommuneWithRules(
+    rows,
+    communes,
+    (r) => published.get(`osm:${canonicalOsmRef(r.osm_id)}`) ?? r,
+  );
+  console.log(`  linkage: ${describeLinkage(linkage)}`);
 
   rows = rows.filter((r) => r.wilaya_code); // drop anything that failed the commune join (should be none)
   assignIds(rows);

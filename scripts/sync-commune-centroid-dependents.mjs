@@ -108,15 +108,15 @@ function communesSplit() {
 }
 
 /** The join djezzy uses, which is scripts/lib/build-utils.mjs resolveCommune(): the
- *  wilaya whose shipped polygon contains the point fixes the candidate set, the
- *  commune whose OSM outline contains it wins inside that set, and distance to a
- *  hand-placed centre only breaks what is left. It was an unrestricted
- *  nearest-centroid search until 2026-09-29, which is how moving 245 commune centres
- *  carried 58 published records into a wilaya whose polygon does not contain them.
- *  A boutique whose point no wilaya polygon contains keeps the wilaya it shipped in,
- *  because a nearest-centre guess out there is the bug rather than the fix. */
+ *  commune whose OpenStreetMap outline contains the point wins outright, searched over
+ *  the whole country and with the wilaya taken from the commune registry; only when no
+ *  outline holds it does distance decide, inside the wilaya whose shipped polygon does.
+ *  It was an unrestricted nearest-centroid search until 2026-09-29, which is how
+ *  moving 245 commune centres carried 58 published records into a wilaya whose polygon
+ *  does not contain them. The row is passed whole, so the commune it already shipped
+ *  in is what the rule keeps wherever geometry cannot contradict it. */
 function rejoinCommune(r, communes) {
-  return resolveCommune(r.lat, r.lng, communes, r.wilaya_code ?? null).commune;
+  return resolveCommune(r.lat, r.lng, communes, r).commune;
 }
 
 // --- the repudiated values, from every applied corrections file ---------------
