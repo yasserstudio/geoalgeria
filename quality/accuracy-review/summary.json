@@ -80,7 +80,7 @@
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.metadata.json",
-      "sha256": "e26c78767ebe950e5e63ff86cae58925b504d1a483fd2f3a27b1d293d61b61c9"
+      "sha256": "7c395ee8b0dde91cdad130f14e7aa5a73f51a726de1ad24b15384a0725d98642"
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
@@ -2830,7 +2830,7 @@
         "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
         "The commonly quoted '~150 m' figure describes the COORDINATE QUANTISATION (3 decimal places ≈ 111 m in latitude, ≈ 96 m in longitude at 30°N), not the simplification error. Douglas-Peucker at 2% left a median vertex spacing of 3.4 km, so the polygon can depart from the true border by far more than 150 m along any simplified stretch. Treat these as display-grade boundaries (good to about z11), not as a survey-grade border test.",
         "Superseded predecessor: the same file was built from GADM 4.1 before f107d6a; app-repo scripts/prepare-boundaries.mjs still builds that version and must never be re-run. An unverified OSM re-extraction is parked on the app-repo branch chore/osm-boundaries and was deliberately NOT used here.",
-        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT, so the package declares MIT AND ODbL-1.0: the same split the repo already uses for its other OSM-derived packages (ecoles, mosquees, pharmacies, tourisme). This file is one of the two carve-outs; the other is the 236 OpenStreetMap-derived commune centre coordinates."
+        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT, so the package declares MIT AND ODbL-1.0: the same split the repo already uses for its other OSM-derived packages (ecoles, mosquees, pharmacies, tourisme). This file is one of the two carve-outs; the other is the 251 OpenStreetMap-derived commune centre coordinates."
       ]
     }
   }

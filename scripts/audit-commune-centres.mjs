@@ -744,7 +744,7 @@ writeFileSync(
 
 // The decided errors, in the exact shape scripts/fix-commune-centres.mjs reads, so
 // applying them is a rename and one command. Deliberately NOT named
-// corrections-*.json and deliberately not applied here: moving 174 flagship centres
+// corrections-*.json and deliberately not applied here: moving 189 flagship centres
 // re-derives ten dependent packages (research/_commune-centres/README.md), which is
 // a release of its own, not a rider on an audit.
 if (decided.length) {

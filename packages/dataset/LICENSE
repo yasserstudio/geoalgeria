@@ -35,9 +35,9 @@ https://opendatacommons.org/licenses/odbl/1-0/
 
 - The 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`,
   derived from OpenStreetMap `admin_level=4` relations.
-- 236 commune centre coordinates (`latitude` and `longitude`), each taken from
-  that commune's own OpenStreetMap `admin_level=8` relation: 230 from its
-  `admin_centre` node, 56 corrected on 2026-09-27 and 174 on 2026-09-29, and 6
+- 251 commune centre coordinates (`latitude` and `longitude`), each taken from
+  that commune's own OpenStreetMap `admin_level=8` relation: 245 from its
+  `admin_centre` node, 56 corrected on 2026-09-27 and 189 on 2026-09-29, and 6
   from the relation centroid, corrected in version 2.1.0. Those coordinates are
   repeated in
   `data/algeria.json`, `data/communes_w*.json`, `data/csv/communes.csv`,

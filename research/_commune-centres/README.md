@@ -153,7 +153,7 @@ Magarine, and four like them).
 
 Every count in this section is the state **before** the corrections below were
 applied, which is what the audit measured. The post-correction bands are in
-`seat-distance-2026-09-29.md` (over 300 m: 683, over 1 km: 322, median 236 m).
+`seat-distance-2026-09-29.md` (over 300 m: 668, over 1 km: 307, median 218 m).
 
 | Band | Communes |
 | --- | --- |
@@ -170,7 +170,7 @@ So the audit ran the 2026-09-27 test over every row instead of over 68: a second
 Overpass pull (`out geom`) fetched each matched relation's unsimplified boundary
 and both points were tested against it. **215 stored centres are outside their
 own commune**, which no containment rule here could have found because the wilaya
-outlines are simplified and a wilaya is enormous. 174 of those also have their
+outlines are simplified and a wilaya is enormous. 188 of those also have their
 relation's `admin_centre` node inside the commune, inside the declared wilaya, and
 carrying the commune's own name, which is the 2026-09-27 standard met in full.
 
@@ -180,34 +180,83 @@ of Greenwich, and Tit holds Timekten's longitude to four decimals. Others keep
 their latitude exactly and lose the longitude, or the reverse, which is the
 bad name-based join already diagnosed in `research/_communes-reconcile/README.md`.
 
-## All 174 were applied
+### Two rules the first pass got wrong, and a review caught
 
-`corrections-2026-09-29.json` carries those 174 rows in the exact shape
+The first pass of this audit decided 174, not 188, and missed one row entirely.
+Both causes were the audit reading its own evidence too narrowly, and both are now
+`scripts/lib/seat-evidence.mjs`, unit-tested in `test/seat-evidence.test.mjs`.
+
+**Name agreement was strict key equality** on the seat node's folded FR or AR name,
+and the evidence gate depended on it. The capture harvests `wikidata` on the
+relation AND on its `admin_centre` node and read neither, so eleven rows stayed
+exceptions while OpenStreetMap stated outright that the node is that commune's
+seat: Hanif/Ahnif (1006), Serguine/Serghine (1439), Illilten/Souk El Had (1533),
+Beni-Zikki/Aït Ziki (1546), Beni Ourtilane (1922), Emjez Edchich (2120), El
+Hachem/Hachem (2907), El Gueitena/El Gueitna (2938), Nesmot/Nesmoth (2945),
+Tassala Lematai/Tessala (4316) and Inghar/In Ghar (5302). Three more differ by the
+definite article alone: Rahia (426) against OSM's "El Rahia", 57.5 km out, and
+Matemore (2914) and Herenfa (215) against `مطمور` and `هرانفة`. Agreement is now
+the folded name, the article-free folded name, or one shared wikidata item, which
+over the 1,537 compared rows reads: name 1,365, wikidata 54, article 14, none 104.
+Inghar's correction alone takes 14 mosques back out of In Salah.
+
+**Containment is blind to a mangled ordinate** inside a commune large enough to
+hold both values. Fenoughil (115) shipped `[0.3, 27.602777]` for a seat at
+`[-0.30211, 27.606097]`, 59.3 km away, with `ours_in_own_commune: true` either way,
+so it was not among the 215 and no rule here could ever have failed it. A stored
+value whose sign-flipped or lat/lon swapped form lands within a kilometre of the
+seat is not two claims disagreeing; it is our value, mangled, and a named defect.
+Over all 1,537 rows the detector finds exactly two, Fenoughil and Ouled Ahmed Timmi
+(121), which the first pass had already corrected on containment. It runs in the
+audit and as a standing guard over all five carriers, with no exceptions list: a
+row that trips it is a correction waiting to be written.
+
+## All 189 were applied
+
+`corrections-2026-09-29.json` carries those 189 rows in the exact shape
 `scripts/fix-commune-centres.mjs` reads, with the evidence per row, and they were
 applied in the 2026-10 batch. The script now reads every corrections file in date
 order (`scripts/lib/commune-corrections.mjs`), so the 2026-09-27 batch is replayed
 alongside this one on every run instead of being retired; a row already at its `to`
 is a no-op and a carrier that missed an older batch still fails.
 
-Moving them took twelve dependent packages with it. `sante`, `agriculture`,
+Moving them took fourteen dependent packages with it. `sante`, `agriculture`,
 `industrie-pharmaceutique` and `djezzy` cannot replay a generator offline and went
 through `scripts/sync-commune-centroid-dependents.mjs`; `ecoles`, `cliniques`,
 `pharmacies`, `mosquees`, `culture` and `ooredoo` were rebuilt with ordered
 `--cache` runs (`sante` before `cliniques`, per `RELEASING.md`), and
-`enseignement-superieur` and `formation-professionnelle` by their own generators,
-which the validator's borrowed-centre check nominated.
+`enseignement-superieur`, `formation-professionnelle`, `gares-routieres`,
+`ferroviaire` and `buses` by their own generators, which the validator's
+borrowed-centre check and the corrected join nominated.
+
+The join itself was the second thing a review caught. Every one of those packages
+stamped `wilaya_code` and `commune` by **unrestricted nearest commune centroid**, so
+moving 245 centres carried 58 published records into a wilaya whose polygon does not
+contain them: mosque `31-0390`, at `[-0.414678, 35.547628]`, is inside OSM commune
+3111 Oued Tlelat in wilaya 31 and read Zahana in wilaya 29. The rule is now
+`scripts/lib/build-utils.mjs` `resolveCommune()`: the wilaya whose shipped polygon
+contains the point fixes the candidate set, the commune whose OSM outline contains it
+wins inside that set, distance breaks what is left, and a point no wilaya polygon
+contains keeps the wilaya the record shipped in. After it, no record in any rebuilt
+package contradicts the wilaya polygon it sits in, and
+`test/record-in-declared-wilaya.test.mjs` holds all 46 record files to that
+(`research/_wilaya-containment/README.md`).
 
 Not one published id changed: 0 retired, 0 minted and the same sequence in all
-twelve, verified per package before and after. Two of them would have churned ids
+fourteen, verified per package before and after. Three of them would have churned ids
 and did not. `sante`'s MSP capture re-pairs FR/AR posts once corrected commune
 names land and retires published ids, so its coordinates moved offline instead
 (the same decision as 2026-09-27). `ooredoo` had no carry-over at all: its ids are
 `{wilaya}-{seq}` from the nearest-centroid join, and the two stores that changed
 wilaya re-sequenced 43 ids and retired `20-004` and `31-034` on the first replay,
 so the generator now pins each store back to the id it shipped under, keyed on
-Ooredoo's own store id. A published id is never retired or renumbered unless the
-place itself is gone (Owner rule, 2026-09-29); a record that re-joins keeps its id,
-which is why a mosque id can read `26-0114` while its `wilaya_code` reads `10`.
+Ooredoo's own store id. `ferroviaire` was the same gap and got the same fix: its
+`{wilaya}-{seq}` ids re-sequenced on the 18 stations the corrected join moved,
+retiring and minting 18 public join keys, so its generator now pins each station back
+to the id it shipped under, keyed on its Wikidata or OSM id. A published id is never
+retired or renumbered unless the place itself is gone (Owner rule, 2026-09-29); a
+record that re-joins keeps its id, which is why a mosque id can read `26-0114` while
+its `wilaya_code` reads `10`.
 
 ## The standing guard
 
@@ -218,7 +267,7 @@ and fetches nothing:
 | File | Contents |
 | --- | --- |
 | `commune-boundaries.json` | one entry per commune: the OSM `admin_level=8` outer and inner rings, its bbox, the relation id, and the centre's distance to the reduced boundary |
-| `containment-exceptions.json` | the 41 centres still outside their own commune and the 4 communes with no usable OSM geometry, each with the reason it is there |
+| `containment-exceptions.json` | the 27 centres still outside their own commune and the 4 communes with no usable OSM geometry, each with the reason it is there |
 
 The rule used to be distance, not containment: until 2026-09-29 the guard failed
 any centre more than 1 km from its recorded seat, with **496** pinned exceptions.
@@ -228,12 +277,17 @@ about one town, so a rule needing 496 exceptions was measuring the disagreement
 rather than an error. Containment is a fact about one claim on its own. The seat
 delta survives as a report, `seat-distance-2026-09-29.md`, which no test reads.
 
-The exceptions are therefore defects, not a tolerance. 40 of the 41 are centres
-outside their own commune whose relation's `admin_centre` node does not carry the
-commune's name in either script, so it is not evidence of the seat; the 41st
-(Beni Zid, 2111) has its `admin_centre` outside the commune too, which makes the
-boundary or the linkage the suspect. The list is exact in both directions: a
-commune that stops needing its entry fails the guard rather than keeping it.
+The exceptions are therefore defects, not a tolerance. 26 of the 27 are centres
+outside their own commune whose relation's `admin_centre` node is not this commune's
+seat on any of the three reads `seat-evidence.mjs` makes, so it is no evidence of
+where the seat is; the 27th (Beni Zid, 2111) has its `admin_centre` outside the
+commune too, which makes the boundary or the linkage the suspect. It was 41 until the
+wikidata and article reads landed. The list is exact in both directions: a commune
+that stops needing its entry fails the guard rather than keeping it.
+
+A second standing guard rides the same carriers with no exceptions list at all: no
+commune centre may be its own OSM seat with a dropped minus or its two ordinates
+swapped. That is Fenoughil's class, which containment cannot see.
 
 The polygons are simplified, and that is proved rather than asserted.
 `scripts/build-commune-boundary-cache.mjs` reduces the 52 MB `out geom` pull with
@@ -268,7 +322,8 @@ of 69 wilayas) stay in `research/`. Publishing them as package fields is #181.
 | --- | --- |
 | `audit-2026-09-29.json` | every compared row with both coordinates, the delta, how it matched and the containment verdicts |
 | `audit-2026-09-29.md` | the counts and the full list above 300 m, sorted by delta, with a hint per row |
-| `corrections-2026-09-29.json` | the 174 decided errors, applied in the 2026-10 batch |
+| `corrections-2026-09-29.json` | the 189 decided errors, applied in the 2026-10 batch |
+| `../_wilaya-containment/record-exceptions.json` | the 245 pre-existing records outside their declared wilaya, which the corrected join does not derive |
 | `commune-boundaries.json` | the reduced commune outlines the standing guard holds the data to |
 | `containment-exceptions.json` | the guard's exceptions, with a reason each |
 | `osm-seat-reference.json` | the seat per commune, which the seat-distance report measures against |

@@ -32,7 +32,7 @@
 // hand-placed claims about one seat. A rule that needs 496 exceptions is measuring
 // disagreement, not error. Containment is a fact about one claim: a centre outside
 // its own commune is wrong whatever the other claim says, which is exactly how the
-// 174 corrections of this batch were decided.
+// 189 corrections of this batch were decided.
 //
 // OUTPUTS
 //   research/_commune-centres/commune-boundaries.json
@@ -82,7 +82,7 @@ const PRECISION = 5;
 
 // --- geometry ----------------------------------------------------------------
 // Ring stitching and the crossing test are the same code as
-// scripts/audit-commune-centres.mjs, which decided the 174 corrections. Duplicated
+// scripts/audit-commune-centres.mjs, which decided the 189 corrections. Duplicated
 // deliberately: this script has to be able to disagree with that one, and a shared
 // helper would make the two verdicts the same computation by construction instead
 // of the same answer by check.
@@ -407,7 +407,7 @@ one town, so a delta between them says the two sources disagree, not that ours i
 wrong. The median over all ${report.rows.length} compared rows is
 **${report.median} m**, and a rule needing 496 exceptions was measuring that
 disagreement. Containment is a fact about one claim on its own: a centre outside
-its own commune is wrong whatever the node says, and that is how the 174
+its own commune is wrong whatever the node says, and that is how the 189
 corrections of this batch were decided.
 
 - Seat reference: \`osm-seat-reference.json\` (Overpass \`timestamp_osm_base\`
@@ -415,7 +415,7 @@ corrections of this batch were decided.
 - Licence: ${LICENCE}
 - Regenerate: \`node scripts/build-commune-boundary-cache.mjs --write\`
 
-## Bands, after the 174 corrections
+## Bands, after the 189 corrections
 
 | Band | Communes |
 | --- | --- |

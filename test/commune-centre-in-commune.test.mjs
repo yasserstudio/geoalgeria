@@ -9,7 +9,7 @@
 // sources disagree, not which one is wrong. So the distance became a report
 // (research/_commune-centres/seat-distance-2026-09-29.md) and the standing guard
 // became containment, which is a fact about one claim on its own: a centre outside
-// its own commune is wrong whatever the node says. That is exactly how the 174
+// its own commune is wrong whatever the node says. That is exactly how the 189
 // corrections of this batch were decided, and 215 of the defects it finds were
 // invisible to every rule this repository had.
 //

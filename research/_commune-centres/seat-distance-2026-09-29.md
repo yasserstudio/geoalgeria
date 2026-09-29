@@ -12,7 +12,7 @@ one town, so a delta between them says the two sources disagree, not that ours i
 wrong. The median over all 1537 compared rows is
 **218 m**, and a rule needing 496 exceptions was measuring that
 disagreement. Containment is a fact about one claim on its own: a centre outside
-its own commune is wrong whatever the node says, and that is how the 174
+its own commune is wrong whatever the node says, and that is how the 189
 corrections of this batch were decided.
 
 - Seat reference: `osm-seat-reference.json` (Overpass `timestamp_osm_base`
@@ -20,7 +20,7 @@ corrections of this batch were decided.
 - Licence: ODbL 1.0, (c) OpenStreetMap contributors
 - Regenerate: `node scripts/build-commune-boundary-cache.mjs --write`
 
-## Bands, after the 174 corrections
+## Bands, after the 189 corrections
 
 | Band | Communes |
 | --- | --- |
