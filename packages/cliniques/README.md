@@ -12,7 +12,7 @@
 
 </div>
 
-**1,913 geocoded care facilities** across **66 wilayas** of Algeria, every one
+**1,914 geocoded care facilities** across **66 wilayas** of Algeria, every one
 with coordinates, classified by **type** (polyclinique · salle de soins ·
 centre de santé · maternité · clinique), most with Arabic and/or French names,
 and commune/wilaya linkage. Extracted from **OpenStreetMap**. This is the
@@ -29,7 +29,7 @@ npm install @geoalgeria/cliniques
 ```js
 import cliniques from "@geoalgeria/cliniques";
 
-const all = cliniques.cliniques();   // 1,913 geocoded care facilities
+const all = cliniques.cliniques();   // 1,914 geocoded care facilities
 
 // The public proximity tier of one wilaya
 const proximite = cliniques.cliniquesByWilaya("16")
@@ -41,7 +41,7 @@ const urgences = all.filter((c) => c.emergency);
 
 ## What you can build
 
-- **"Care near me" locators**, coordinates on all 1,913 records, ready for a map
+- **"Care near me" locators**, coordinates on all 1,914 records, ready for a map
   or nearest-facility distance sorting.
 - **Proximity-care coverage maps**, count polycliniques and salles de soins per
   commune or wilaya, the structures Algerians actually walk into first.
@@ -52,7 +52,7 @@ const urgences = all.filter((c) => c.emergency);
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| Care facilities | **1,913** | ✅ all | 1,608 named, 66 wilayas |
+| Care facilities | **1,914** | ✅ all | 1,608 named, 66 wilayas |
 
 **By type**
 
@@ -81,7 +81,7 @@ const urgences = all.filter((c) => c.emergency);
 > sante's other 574 records carry no OSM reference at all, so the same physical
 > establishment can still appear in both packages, under different coordinates
 > and different ids, with nothing mechanical to detect it. The two describe
-> different tiers of a health system, so adding 695 to 1,913 counts nothing real.
+> different tiers of a health system, so adding 695 to 1,914 counts nothing real.
 
 **Type is inferred from the name.** A polyclinique names itself
 polyclinique/عيادة متعددة الخدمات, a salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -157,7 +157,7 @@ const all: Clinique[] = cliniques.cliniques();
 
 ```
 data/
-  cliniques.json              # 1,913 care facilities (array)
+  cliniques.json              # 1,914 care facilities (array)
   metadata.json               # sources, counts, coverage, updated
   csv/cliniques.csv           # repo + Release bundle (not in npm tarball)
   geojson/cliniques.geojson   # Point features

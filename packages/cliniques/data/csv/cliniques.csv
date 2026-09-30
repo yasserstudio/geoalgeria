@@ -616,6 +616,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00074,consultation d'hématologie,consultation d'hématologie,,16,1632,Beni Messous,36.779889,2.983977,exact,osm_node,osm,"{""osm"":""node/4197345590""}",clinique,Clinique,عيادة / مصحة,,,,,,
 16-00075,service rhumatologie,service rhumatologie,,16,1632,Beni Messous,36.779399,2.980087,exact,osm_node,osm,"{""osm"":""node/4197345591""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,
 16-00076,consultation ORL,consultation ORL,,16,1632,Beni Messous,36.77868,2.982319,exact,osm_node,osm,"{""osm"":""node/4197348790""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,
+16-00077,عيادة متعددة الخدمات,,عيادة متعددة الخدمات,16,1626,Djasr Kasentina,36.705308,3.081607,exact,osm_node,osm,"{""osm"":""node/12912386452""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,general,,,24/7,
 16-00080,consultations pneumologie matiben (CPPA),consultations pneumologie matiben (CPPA),,16,1632,Beni Messous,36.778639,2.980473,exact,osm_node,osm,"{""osm"":""node/4197361189""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,
 16-00081,Morgue,Morgue,,16,1632,Beni Messous,36.779363,2.97881,exact,osm_node,osm,"{""osm"":""node/4202106953""}",clinique,Clinique,عيادة / مصحة,,,,,,
 16-00082,service d'anatomie pathologique,service d'anatomie pathologique,,16,1632,Beni Messous,36.779276,2.978498,exact,osm_node,osm,"{""osm"":""node/4202106954""}",clinique,Clinique,عيادة / مصحة,,,,,,
@@ -748,7 +749,6 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00224,Centre de rééducation médicale Tassili,Centre de rééducation médicale Tassili,,16,1650,Cheraga,36.768556,2.970677,approximate,osm_centroid,osm,"{""osm"":""way/1171645275""}",centre_sante,Centre de santé,مركز صحي,,,172,0561368411,Su-Th 09:00-17:00,
 16-00225,مركز التشخيص الطبي للذاكرة,Centre médical de la mémoire,مركز التشخيص الطبي للذاكرة,16,1610,El Biar,36.766898,3.027202,approximate,osm_centroid,osm,"{""osm"":""way/1171827477""}",clinique,Clinique,عيادة / مصحة,,,04 Rue Boufatit Père et Fils,021 79 78 33,Su-Th 09:00-18:00,
 16-00226,,,,16,1620,Dar El Beida,36.712453,3.210181,approximate,osm_centroid,osm,"{""osm"":""way/1171837881""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,true
-16-00227,عيادة متعددة الخدمات حي البدر,Polyclinique Hai El Badr,عيادة متعددة الخدمات حي البدر,16,1619,Bachedjerah,36.720897,3.101747,approximate,osm_centroid,osm,"{""osm"":""way/1171998839""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,شارع باش جراح,,,
 16-00228,Centre de santé de proximité Krim Belkacem,Centre de santé de proximité Krim Belkacem,مركز الصحة الجواري كريم بلقاسم,16,1601,Alger Centre,36.770556,3.050908,approximate,osm_centroid,osm,"{""osm"":""way/1172846676""}",centre_sante,Centre de santé,مركز صحي,,,الجزائر,,,
 16-00229,polyclinique d'el Kahla,polyclinique d'el Kahla,,16,1634,Bir Touta,36.636071,3.009664,approximate,osm_centroid,osm,"{""osm"":""way/1173925108""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,Birtouta 16045,,,
 16-00230,العيادة متعددة الخدمات - الشهيد ياهوني البشير,,العيادة متعددة الخدمات - الشهيد ياهوني البشير,16,1630,Bordj El Kiffan,36.747555,3.196202,approximate,osm_centroid,osm,"{""osm"":""way/1415710539""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,
@@ -1613,6 +1613,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 42-00033,,,,42,4222,Cherchell,36.608187,2.190555,exact,osm_node,osm,"{""osm"":""node/8905247046""}",clinique,Clinique,عيادة / مصحة,,vaccination;covid19,Cherchell,,,
 42-00034,Centre du sang de Tipaza,Centre du sang de Tipaza,مركز التبرع بالدم,42,4201,Tipaza,36.587359,2.438819,exact,osm_node,osm,"{""osm"":""node/9919775398""}",clinique,Clinique,عيادة / مصحة,,,Tipaza,,,
 42-00035,Polyclinique,Polyclinique,,42,4232,Sidi Ghiles,36.582335,2.122942,approximate,osm_centroid,osm,"{""osm"":""way/1172238172""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,"Rue boumaakel Ahmed, Sidi Ghiles 42021",,,
+42-00036,,,,42,4222,Cherchell,36.625385,2.27077,exact,osm_node,osm,"{""osm"":""node/3006447014""}",clinique,Clinique,عيادة / مصحة,,,,,,
 42-00037,,,,42,4205,Bourkika,36.494596,2.475568,approximate,osm_centroid,osm,"{""osm"":""way/1206140859""}",clinique,Clinique,عيادة / مصحة,,,Bourkika 42230,,,
 42-00038,Polyclinique,Polyclinique,,42,4225,Fouka,36.66217,2.738643,approximate,osm_centroid,osm,"{""osm"":""way/171845648""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,Fouka,,,
 42-00039,Clinique de chirurgie cardio-infantile,Clinique de chirurgie cardio-infantile,عيادة جراحة القلب للأطفال,42,4226,Bou Ismail,36.63748,2.686051,approximate,osm_centroid,osm,"{""osm"":""way/172241238""}",clinique,Clinique,عيادة / مصحة,,,Bou Ismaïl 42004,,,

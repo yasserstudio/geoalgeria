@@ -17,7 +17,7 @@
 //      one.
 //
 // Most dependents rebuild from a capture their generator can replay and are
-// simply re-run (`node packages/<pkg>/scripts/fetch.mjs --cache`). The four
+// simply re-run (`node packages/<pkg>/scripts/fetch.mjs --cache`). The three
 // handled here cannot:
 //
 //   djezzy                     has no offline mode at all; only a live pull of
@@ -26,20 +26,19 @@
 //                              predates the v2 contract and would emit the old shape.
 //   industrie-pharmaceutique   ships no generator; its data was assembled once from
 //                              the MIP fabrication register.
-//   sante                      replays, but its MSP capture re-pairs FR/AR posts
-//                              once the corrected commune names land, which retires
-//                              published ids (05-epsp-07 and 16-ehs-14 on
-//                              2026-09-27). Ids are public join keys and the Owner
-//                              rule is that a published id is never retired or
-//                              renumbered unless the place itself is gone, so a
-//                              coordinate correction is not the release that churns
-//                              them.
+//
+// `sante` was handled here on 2026-09-27 and 2026-09-29 for a different reason: it
+// replays, but its replay churned published ids, and ids are public join keys, so a
+// coordinate correction was not the release to churn them in. Both causes are now
+// fixed in the generator itself (it carries ids over on the MSP registry id, and it
+// no longer pairs two posts on a commune that only two name fragments agree on), so
+// sante replays like the other ten and is no longer listed below.
 //
 // WHAT EACH PACKAGE GETS
-//   sante, agriculture, industrie-pharmaceutique  recentre only. Their commune is
-//     matched from the source's own text (an MSP locality, a MADR address, an MIP
-//     commune column), not from geometry, so no attribution can move; only the
-//     coordinate they borrow from the commune has to follow it.
+//   agriculture, industrie-pharmaceutique  recentre only. Their commune is matched
+//     from the source's own text (a MADR address, an MIP commune column), not from
+//     geometry, so no attribution can move; only the coordinate they borrow from
+//     the commune has to follow it.
 //   djezzy  re-join. It stamps wilaya/commune from the flagship set by the shared
 //     rule scripts/lib/build-utils.mjs resolveCommune(), reproduced in
 //     rejoinCommune() below: containing wilaya polygon, then containing commune
@@ -128,7 +127,6 @@ for (const f of corrections.corrections) repudiated.set(`${round6(f.from[1])},${
 
 // --- what each package needs -------------------------------------------------
 const PACKAGES = [
-  { pkg: "sante", file: "sante.json", recentre: { commune_centroid: "commune_code" } },
   {
     pkg: "agriculture",
     file: "agriculture.json",

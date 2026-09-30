@@ -4,12 +4,12 @@
   "title_fr": "Cliniques et structures de soins d'Algérie",
   "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
   "title_en": "Algeria clinics & care facilities",
-  "record_count": 1913,
-  "geocoded_count": 1913,
+  "record_count": 1914,
+  "geocoded_count": 1914,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 1080,
-    "approximate": 833
+    "exact": 1082,
+    "approximate": 832
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -36,7 +36,7 @@
   "named": 1608,
   "by_type": {
     "polyclinique": 405,
-    "clinique": 1142,
+    "clinique": 1143,
     "salle_de_soins": 199,
     "maternite": 26,
     "centre_sante": 141
@@ -46,6 +46,6 @@
     "private": 67
   },
   "with_phone": 116,
-  "with_address": 655,
+  "with_address": 654,
   "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
 }
