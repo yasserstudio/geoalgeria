@@ -86,6 +86,10 @@ We use **Changesets + a "Version Packages" PR + staged Trusted Publishing**:
   bumps versions and CHANGELOGs. **Merging that PR** is the release trigger.
 - On merge, packages are **staged** on npm (OIDC, no token) and per-package
   **GitHub Releases** are cut with CSV/GeoJSON/SQL bundles attached.
+- **Every** publishable package goes through that path, the `transport` and
+  `pharma` umbrellas included since 2026-09-30: `scripts/stage-publish.js`
+  resolves their `workspace:` runtime deps to real semver and stages them last.
+  Never publish one by hand.
 - A Release is only cut for a version the released commit itself carries, with a
   `CHANGELOG.md` section: `scripts/release-guard.mjs` declines otherwise, because
   the changesets step leaves the runner's working tree bumped while it builds the

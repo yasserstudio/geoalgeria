@@ -163,6 +163,63 @@ test("a workspace package with no version of its own is rejected", () => {
   assert.match(unresolved[0].reason, /carries no version/);
 });
 
+test("staging an umbrella resolves every workspace: spec it carries", () => {
+  // @geoalgeria/transport's real manifest shape: every runtime dependency is a
+  // workspace: alias, nothing else. This is what used to make stage-publish.js
+  // refuse it, so each of the four has to come out as real semver or the staged
+  // tarball is uninstallable (EUNSUPPORTEDPROTOCOL).
+  const transport = {
+    name: "@geoalgeria/transport",
+    version: "2.0.6",
+    dependencies: {
+      "@geoalgeria/aviation": "workspace:^",
+      "@geoalgeria/ferroviaire": "workspace:^",
+      "@geoalgeria/gares-routieres": "workspace:^",
+      "@geoalgeria/buses": "workspace:^",
+    },
+  };
+  const versions = new Map([
+    ["@geoalgeria/aviation", "2.5.2"],
+    ["@geoalgeria/ferroviaire", "2.1.1"],
+    ["@geoalgeria/gares-routieres", "2.2.2"],
+    ["@geoalgeria/buses", "2.2.0"],
+  ]);
+
+  const { manifest, rewritten, unresolved, changed } = rewriteWorkspaceSpecs(transport, versions);
+  assert.deepEqual(unresolved, []);
+  assert.equal(changed, true);
+  assert.equal(rewritten.length, 4, "all four runtime deps rewrite");
+  assert.deepEqual(findWorkspaceSpecs(manifest), [], "no workspace: spec survives");
+  assert.deepEqual(manifest.dependencies, {
+    "@geoalgeria/aviation": "^2.5.2",
+    "@geoalgeria/ferroviaire": "^2.1.1",
+    "@geoalgeria/gares-routieres": "^2.2.2",
+    "@geoalgeria/buses": "^2.2.0",
+  });
+});
+
+test("the real umbrella manifests resolve against the real workspace", () => {
+  // The fixture above pins the shape; this pins the live files, so a member
+  // renamed or dropped from the workspace fails here rather than on a release.
+  const dirs = readdirSync(join(ROOT, "packages")).filter((d) =>
+    existsSync(join(ROOT, "packages", d, "package.json")),
+  );
+  const manifests = dirs.map((d) => JSON.parse(readFileSync(join(ROOT, "packages", d, "package.json"), "utf8")));
+  const versions = new Map(manifests.map((m) => [m.name, m.version]));
+
+  for (const name of ["@geoalgeria/transport", "@geoalgeria/pharma"]) {
+    const manifest = manifests.find((m) => m.name === name);
+    assert.ok(manifest, `${name} must exist in the workspace`);
+    const specs = findWorkspaceSpecs(manifest);
+    assert.ok(specs.length > 0, `${name} is expected to carry workspace: runtime deps`);
+    const { manifest: rewrittenManifest, unresolved } = rewriteWorkspaceSpecs(manifest, versions);
+    assert.deepEqual(unresolved, [], `${name}: unresolved workspace: spec`);
+    for (const [dep, spec] of Object.entries(rewrittenManifest.dependencies)) {
+      assert.match(spec, /^[\^~]?\d+\.\d+\.\d+/, `${name} -> ${dep} must be real semver, got ${spec}`);
+    }
+  }
+});
+
 test("no publishable package would ship a literal workspace: spec after the rewrite", () => {
   // The regression test for the live leak: walk the real workspace and prove the
   // rewrite resolves every workspace: spec any publishable package carries.

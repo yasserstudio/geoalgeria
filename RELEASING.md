@@ -16,16 +16,17 @@ unscoped as the flagship) plus **`@geoalgeria/poste`**, **`@geoalgeria/emploi`**
 (under the `@geoalgeria` org), using
 [Changesets](https://github.com/changesets/changesets) with a **"Version
 Packages" PR** and **staged Trusted Publishing** (the same flow as the GPC
-monorepo). Of these, `release.yml`'s automated staging lists **28**: the flagship
-`geoalgeria`, `@geoalgeria/telecom`, the 25 sector packages and the code-only
-`@geoalgeria/normalize` (search keys, no data bundle). **All 28 stage today:**
-`@geoalgeria/normalize` was the last holdout, because Trusted Publishing cannot
-claim a name npm has never seen, and the Owner bootstrapped it by hand on
-**2026-09-29** (1.0.0 on npm, Trusted Publisher entry created the same day, see
-below). The two umbrellas
-**`@geoalgeria/transport`** and **`@geoalgeria/pharma`** carry `workspace:*` deps, are
-absent from `release.yml` entirely, and are published **manually** with pnpm on
-every bump (see below). `@geoalgeria/schema` is the v2 data
+monorepo). Of these, `release.yml`'s automated staging lists **30**: the flagship
+`geoalgeria`, `@geoalgeria/telecom`, the 25 sector packages, the code-only
+`@geoalgeria/normalize` (search keys, no data bundle) and, since **2026-09-30**,
+the two umbrellas **`@geoalgeria/transport`** and **`@geoalgeria/pharma`**.
+**All 30 stage today.** Two holdouts closed in sequence:
+`@geoalgeria/normalize` because Trusted Publishing cannot claim a name npm has
+never seen, bootstrapped by hand on **2026-09-29**; and the umbrellas, which
+carry `workspace:` **runtime** deps and used to be published by hand with pnpm on
+every bump, until `stage-publish.js` learned to resolve those specs (see
+[the `workspace:` protocol on the staged path](#the-workspace-protocol-on-the-staged-path)).
+`@geoalgeria/schema` is the v2 data
 contract every other package's generator depends on, a dev dependency, not a dataset, and
 is **not** published to npm at all (it is absent from the workflow's package list). The web
 app lives in the separate **`geoalgeria.com`** repo and is not part of this one.
@@ -138,6 +139,32 @@ upload; the file is put back afterwards.
 > version. `test/workspace-deps.test.mjs` pins the resolver and walks the real
 > workspace, so no publishable package can carry an unresolvable spec again.
 
+That resolver is also what puts the **umbrellas on the staged path**.
+`@geoalgeria/transport` and `@geoalgeria/pharma` are nothing but `workspace:`
+runtime deps, so the old "skip anything with a `workspace:` runtime dep" rule
+excluded them by construction and every bump of either was a hand pnpm publish.
+Since **2026-09-30** they are in `stage-publish.js`'s staged set and in both of
+`release.yml`'s package loops, and they release exactly like every other package.
+Two details:
+
+- **They stage last.** An umbrella uploads with its members resolved
+  (`"@geoalgeria/buses": "^2.2.0"`), so those versions must already be on npm or
+  be staged in the same run. Dir-name order does not give that (`packages/pharma`
+  sorts before both of its members), so `scripts/lib/staged-set.mjs` moves the
+  umbrellas to the end of the loop. `test/staged-set.test.mjs` pins it.
+- **The dry-run step proves nothing about their specs.** `npm publish --dry-run`
+  uploads nothing and never resolves `workspace:`, so an umbrella packs clean
+  there with the literal spec inside. The fail-closed rewrite on the staged path
+  plus `test/workspace-deps.test.mjs` are what actually hold.
+
+> **History.** The manual procedure this replaced was: `npm view` both versions,
+> `pnpm pack` in the package dir, untar `package/package.json` and eyeball that
+> every `@geoalgeria/*` dep read `^x.y.z` rather than `workspace:^`, then
+> `pnpm publish --access public --no-git-checks` with interactive OTP. It ran on
+> every bump and was missed at least once: npm served `@geoalgeria/pharma` 2.0.0
+> against a repo carrying 2.0.1. Nothing is owed from it now; both names are on
+> npm and both stage.
+
 ### The release-timing guard
 
 A Release is only cut for a version `main` actually carries. Each iteration of
@@ -188,16 +215,20 @@ falls back to it (clamped) whenever a CHANGELOG section has no headline line.
 
 ### The release gap check
 
-Three ways a publishable package's version never reaches npm, all of them silent
-until 2026-09-27:
+Two ways a publishable package's version never reaches npm, both silent until
+2026-09-27:
 
 | Gap | Live case |
 | --- | --- |
-| an umbrella the staged path skips | npm served `@geoalgeria/pharma` **2.0.0** while the repo said **2.0.1** |
-| a name npm has never seen, so it cannot be staged | `@geoalgeria/normalize` **1.0.0**, advertised with npm badges and listed here among the staged 28 (closed 2026-09-29 by the bootstrap publish) |
-| a package dir absent from `release.yml`'s two loops, so no dry run and no GitHub Release | `packages/transport`, `packages/pharma` |
+| a name npm has never seen, so it cannot be staged | `@geoalgeria/normalize` **1.0.0**, advertised with npm badges and listed here among the staged set (closed 2026-09-29 by the bootstrap publish) |
+| a package dir absent from `release.yml`'s two loops, so no dry run and no GitHub Release | `packages/transport`, `packages/pharma` (closed 2026-09-30) |
 
-`scripts/release-gap.mjs` reports all three as GitHub Actions `::warning::`
+There was a third, **an umbrella the staged path skips**: npm served
+`@geoalgeria/pharma` **2.0.0** while the repo said **2.0.1**. It is gone with the
+manual procedure, so an umbrella whose repo version is ahead of npm is no longer
+reported at all: the release stages it like anything else. Only a real gap is.
+
+`scripts/release-gap.mjs` reports both as GitHub Actions `::warning::`
 annotations on every release run, and the **Release gap check** step in
 `release.yml` runs it. It reads versions as committed at `$GITHUB_SHA`, not the
 runner's working tree (which the changesets step leaves bumped), and never fails
@@ -210,40 +241,7 @@ node scripts/release-gap.mjs          # against HEAD
 The only recorded exclusion is `@geoalgeria/schema`, which prints as a `::notice::`
 instead; it is named in `scripts/lib/release-gap.mjs`, so a new package cannot
 join that list by accident. `test/release-gap.test.mjs` pins the report and fails
-if a workspace package other than the two umbrellas and `schema` drops out of
-`release.yml`.
-
-### Publishing the `transport` / `pharma` umbrellas (manual, every bump)
-
-Neither umbrella is in `release.yml` or in `stage-publish.js`'s staged set, and
-neither has a Trusted Publisher entry. **Every** bump of either is a manual pnpm
-publish by the Owner, not just the first:
-
-```bash
-# 1. Confirm what npm actually serves against what the repo carries.
-npm view @geoalgeria/transport version
-npm view @geoalgeria/pharma version
-node -p "require('./packages/transport/package.json').version"
-node -p "require('./packages/pharma/package.json').version"
-
-# 2. Verify the tarball resolves the workspace: ranges to real semver BEFORE
-#    publishing. pnpm rewrites them; npm would ship the literal spec.
-cd packages/transport
-pnpm pack
-tar -xzOf geoalgeria-transport-*.tgz package/package.json | node -p \
-  "JSON.parse(require('fs').readFileSync(0,'utf8')).dependencies"
-#    Expect ^x.y.z for every @geoalgeria/* dep. A "workspace:^" here means STOP.
-rm geoalgeria-transport-*.tgz
-
-# 3. Publish (interactive OTP; --no-git-checks because the tag is per-package).
-pnpm publish --access public --no-git-checks
-```
-
-Same three steps in `packages/pharma`. Then check `npm view <pkg> version` again,
-and `pnpm purge-cdn`.
-
-> `@geoalgeria/pharma` 2.0.1 has been sitting unpublished since it was bumped:
-> npm still serves 2.0.0. The gap check now names it on every release run.
+if a workspace package other than `schema` drops out of `release.yml`.
 
 ### Bootstrapping `@geoalgeria/normalize` (done 2026-09-29, kept as history)
 
@@ -267,13 +265,14 @@ line went back into `packages/normalize/README.md`, `README.fr.md` and
 published" on purpose until then. Nothing here is outstanding; the recipe stays as
 the worked reference for the next brand-new package name.
 
-### One-off: publishing an umbrella away from a terminal
+### One-off: a manual publish away from a terminal
 
-The `transport`/`pharma` umbrellas (see One-time setup, step 2) publish with
-pnpm, which needs interactive OTP entry. If you're away from a terminal:
+Only a **bootstrap** publishes by hand now (One-time setup, step 2); the
+umbrellas no longer do. A hand publish needs interactive OTP entry, so if you're
+away from a terminal:
 
 ```bash
-pnpm pack   # in packages/<umbrella>; verify the tarball's deps resolve to real semver
+pnpm pack   # in packages/<pkg>; verify the tarball's deps resolve to real semver
 script -q -F publish.log npm publish <tgz>.tgz --access public --auth-type=web
 ```
 
@@ -411,15 +410,11 @@ These are prerequisites the workflow can't do for you:
    > this bootstrap. It is on npm with its Trusted Publisher entry, so every package
    > in the staged set can stage. Worked example: [Bootstrapping
    > `@geoalgeria/normalize`](#bootstrapping-geoalgerianormalize-done-2026-09-29-kept-as-history).
-   > ⚠️ **Umbrella / any package with `workspace:*` deps** (e.g.
-   > `@geoalgeria/transport`, `@geoalgeria/pharma`) is **not** in the workflow, it is
-   > published with **pnpm**, not npm, both to bootstrap and for every bump, because
-   > npm ships the literal `workspace:^` spec and breaks installs (pnpm rewrites it to
-   > real semver). Exact steps, including the `pnpm pack` check:
-   > [Publishing the `transport` / `pharma`
-   > umbrellas](#publishing-the-transport--pharma-umbrellas-manual-every-bump).
-   > These umbrellas need no Trusted Publisher entry.
-3. **Trusted Publisher per package**: for each of the **28** packages the workflow
+   > A package with `workspace:` deps needs nothing special here any more: the
+   > staged path resolves them to real semver, so the umbrellas
+   > `@geoalgeria/transport` and `@geoalgeria/pharma` are bootstrapped and
+   > already on npm, and they bump through CI like every other package.
+3. **Trusted Publisher per package**: for each of the **30** packages the workflow
    stages (`geoalgeria`, `@geoalgeria/poste`, `@geoalgeria/emploi`, `@geoalgeria/mobilis`,
    `@geoalgeria/telecom`, `@geoalgeria/aviation`, `@geoalgeria/banques`,
    `@geoalgeria/livraison`, `@geoalgeria/jeunesse`, `@geoalgeria/sports`,
@@ -429,13 +424,13 @@ These are prerequisites the workflow can't do for you:
    `@geoalgeria/agriculture`,
    `@geoalgeria/ecoles`, `@geoalgeria/gares-routieres`, `@geoalgeria/ferroviaire`,
    `@geoalgeria/buses`, `@geoalgeria/industrie-pharmaceutique`, `@geoalgeria/pharmacies`,
-   `@geoalgeria/ooredoo`, `@geoalgeria/protection-civile`, `@geoalgeria/normalize`).
-   All **28** have an entry as of **2026-09-29**, `@geoalgeria/normalize` last: the
-   grant attaches to an existing package, so its entry could only follow the
-   bootstrap publish (step 2). The
-   umbrellas (`transport`,
-   `pharma`) and the unpublished
-   contract package (`@geoalgeria/schema`) get **no** entry. Manage entries with the npm
+   `@geoalgeria/ooredoo`, `@geoalgeria/protection-civile`, `@geoalgeria/normalize`,
+   `@geoalgeria/transport`, `@geoalgeria/pharma`).
+   All **30** have an entry as of **2026-09-30**: `@geoalgeria/normalize` on
+   2026-09-29 (the grant attaches to an existing package, so its entry could only
+   follow the bootstrap publish in step 2), then the two umbrellas on 2026-09-30
+   when they joined the staged path. Only the unpublished
+   contract package (`@geoalgeria/schema`) gets **no** entry. Manage entries with the npm
    CLI (npm ≥ 12) rather than the web UI:
    ```bash
    npm trust github <pkg> --file release.yml --repo yasserstudio/geoalgeria \
@@ -459,6 +454,21 @@ These are prerequisites the workflow can't do for you:
    >   --allow-publish --allow-stage-publish -y
    > ```
    > (the ids are nested in the `list` output, the `jq` filter pulls them out.)
+   >
+   > ⚠️ **`--file` must be the workflow's real filename, `release.yml`.** The
+   > umbrellas' entries were created **2026-09-30** with exactly:
+   > ```bash
+   > npm trust github @geoalgeria/transport --file release.yml \
+   >   --repo yasserstudio/geoalgeria --allow-publish --allow-stage-publish -y
+   > npm trust github @geoalgeria/pharma --file release.yml \
+   >   --repo yasserstudio/geoalgeria --allow-publish --allow-stage-publish -y
+   > ```
+   > An earlier `@geoalgeria/transport` entry, made through the npmjs.com web
+   > form, named `release.yaml`. npm matches the filename literally, so the OIDC
+   > claim from `release.yml` never matched it and the entry was dead weight: it
+   > was revoked and re-created with the command above. A wrong `--file` fails the
+   > same way a missing `--allow-stage-publish` does, with a generic E401, so
+   > check the spelling before blaming auth.
 4. **Enable 2FA** on the npm account (required to approve staged packages).
 5. **Repo → Settings → Actions → General → Workflow permissions**: *Allow GitHub
    Actions to create and approve pull requests* (so the bot can open the Version

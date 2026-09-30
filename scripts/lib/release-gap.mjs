@@ -2,14 +2,9 @@
  * Release gap report: every publishable package whose repo version will NOT
  * reach npm on this release, and why.
  *
- * Three ways a package falls out of the automated release, all of them silent
- * until now:
+ * Two ways a package falls out of the automated release, both of them silent
+ * until this check existed:
  *
- *  - **an umbrella.** `@geoalgeria/transport` and `@geoalgeria/pharma` carry
- *    `workspace:` RUNTIME deps, so `scripts/stage-publish.js` skips them (they
- *    have no Trusted Publisher entry and are published by hand with pnpm). npm
- *    served `@geoalgeria/pharma` 2.0.0 while the repo said 2.0.1 and nothing said
- *    a word.
  *  - **never bootstrapped.** Trusted Publishing's OIDC grant attaches to an
  *    EXISTING package, so a brand-new name has to be claimed by one manual
  *    publish first. `@geoalgeria/normalize` 1.0.0 sat unpublished for weeks
@@ -18,6 +13,13 @@
  *  - **absent from `release.yml`.** The dry-run step and the GitHub Releases step
  *    iterate a hand-written list of package dirs, not the workspace. A package
  *    missing from it gets no dry run and no GitHub Release even when it stages.
+ *
+ * There was a third: **an umbrella the staged path skipped.**
+ * `@geoalgeria/transport` and `@geoalgeria/pharma` carry `workspace:` RUNTIME
+ * deps, which `scripts/stage-publish.js` used to refuse, and npm served
+ * `@geoalgeria/pharma` 2.0.0 while the repo said 2.0.1 with nothing saying a
+ * word. Both stage like every other package since 2026-09-30, so an umbrella
+ * ahead of npm is no longer a gap: the release will stage it.
  *
  * Pure, so the workflow and a test can share it. `releaseGaps` takes the facts
  * (versions, registry versions, the workflow text) and returns the findings.
@@ -29,7 +31,6 @@
  * @property {string} name              npm name
  * @property {string|undefined} version version the repo carries
  * @property {string|null} registryVersion npm's current version, or null when npm has never seen it
- * @property {boolean} umbrella         has `workspace:` specs in `dependencies`, so the staged path skips it
  */
 
 /**
@@ -78,13 +79,13 @@ export function mentionsDir(workflow, dir) {
 /**
  * @param {PackageFacts[]} packages     every NON-private package in the workspace
  * @param {string} workflow             the text of .github/workflows/release.yml
- * @returns {Array<{name: string, dir: string, version: string, registryVersion: string|null, kind: "unpublished"|"manual"|"not-in-workflow", message: string}>}
+ * @returns {Array<{name: string, dir: string, version: string, registryVersion: string|null, kind: "unpublished"|"not-in-workflow"|"excluded", message: string}>}
  */
 export function releaseGaps(packages, workflow) {
   const gaps = [];
 
   for (const pkg of packages) {
-    const { dir, name, version, registryVersion, umbrella } = pkg;
+    const { dir, name, version, registryVersion } = pkg;
 
     // A recorded exclusion is not a gap. It is still listed, so the report says
     // what is off npm on purpose as well as what is off npm by accident.
@@ -130,19 +131,8 @@ export function releaseGaps(packages, workflow) {
       continue;
     }
 
-    if (umbrella) {
-      gaps.push({
-        name,
-        dir,
-        version,
-        registryVersion,
-        kind: "manual",
-        message:
-          `${name}: repo carries ${version}, npm serves ${registryVersion}. It has workspace: runtime deps, so the ` +
-          "staged path skips it and this version will NOT go live on its own. Publish it by hand with pnpm. " +
-          "See RELEASING.md, publishing an umbrella.",
-      });
-    }
+    // Anything else that is ahead of npm is simply what this release stages,
+    // umbrellas included. Not a gap.
   }
 
   return gaps;
