@@ -107,6 +107,24 @@ reads as further along than it is.
   reconciliation pass against El Aricha's new extent. Not fixed in this PR.
   _(logged 2026-08-09)_
 
+- [ ] **Wilaya capital field.** PR #242 (open) adds a `capital` field to
+  `wilayas.json`; not yet merged.
+  _(logged 2026-09-30)_
+
+- [ ] **Four wilaya capital commune centres sit 3-6 km off the real capital**:
+  Biskra, El Kantara, El Bayadh, Constantine (private tracker #236). Tracked
+  on the private tracker, not this repo, because it needs a decision on which
+  source wins before a data change lands here.
+  _(logged 2026-09-30)_
+
+- [ ] **Wilaya phone codes for 59-69** are still unset (private tracker #235).
+  _(logged 2026-09-30)_
+
+- [ ] **`@geoalgeria/sante` has FR/AR half-records** (private tracker #216):
+  some establishments carry a name in only one of the two languages. Deferred
+  out of the 2.0.4 generator rebuild.
+  _(logged 2026-09-30)_
+
 ## Generators
 
 - [ ] **A corrupt source coordinate silently rewrites a record's identity, and
@@ -421,6 +439,19 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Release batch 2026-10** (2026-09-30): `geoalgeria` 2.2.0 published with the
+  551 dairas of decree 26-253 (#240, PR #243), a commune-centre audit that
+  corrected 189 records and put 251 centres on OSM-derived coordinates (#237),
+  a 2026 creation year for wilayas 59-69 (#238), and the licence-terms cleanup
+  (`SEE LICENSE IN LICENSE`, `data/poste` carve-out, prose
+  `conditionsOfAccess` for buses/transport) (#236). `w55`/`w47` boundaries were
+  rebuilt from member communes with zero overlaps (#239). `@geoalgeria/sante`
+  2.0.4 shipped a generator rebuild with 13 owner-verified hospital locations,
+  and `@geoalgeria/cliniques` followed at 1.1.3. Version PR #244 landed
+  `geoalgeria` 2.2.0 plus 16 patches; #246 put the `transport`/`pharma`
+  umbrellas on the staged release path (`transport` 2.0.6 first, see
+  RELEASING.md). Docs normalized across the batch (#235).
 
 - **`geoalgeria` 2.1.0, the Official Journal corrections** (2026-09-26): issue
   #221 from @djamel2288 led to a full audit of the commune list of Law 26-06
