@@ -6,8 +6,9 @@
 
 **Search keys for Algerian place names, in Arabic and in French. One fold, everywhere.**
 
+[![npm](https://img.shields.io/npm/v/@geoalgeria/normalize)](https://www.npmjs.com/package/@geoalgeria/normalize)
+[![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/normalize)](https://www.npmjs.com/package/@geoalgeria/normalize)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
-[![npm: not yet published](https://img.shields.io/badge/npm-not%20yet%20published-lightgrey.svg)](https://github.com/yasserstudio/geoalgeria/tree/main/packages/normalize)
 
 </div>
 
@@ -17,14 +18,8 @@ searching in a browser, the release build that fills a full-text index, and a ph
 searching offline. This package is that fold, and nothing else. Part of
 [GeoAlgeria](https://github.com/yasserstudio/geoalgeria).
 
-> **Not on npm yet.** `@geoalgeria/normalize` 1.0.0 lives in this repository and
-> has never been published. Until the Owner claims the name (one manual
-> `npm publish --access public`, see [RELEASING.md](../../RELEASING.md)), install it
-> from the repository rather than the registry; the command below is what will work
-> once it is live.
-
 ```bash
-npm install @geoalgeria/normalize   # once published
+npm install @geoalgeria/normalize
 ```
 
 ```js
