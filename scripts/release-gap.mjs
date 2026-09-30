@@ -2,9 +2,10 @@
 /**
  * Report every publishable package whose repo version will NOT reach npm on this
  * release, as GitHub Actions `::warning::` annotations. See
- * scripts/lib/release-gap.mjs for the three ways that happens and the live cases
- * that motivated it (@geoalgeria/pharma 2.0.1 vs npm 2.0.0, @geoalgeria/normalize
- * never published, transport and pharma absent from release.yml's lists).
+ * scripts/lib/release-gap.mjs for the two ways that happens and the live cases
+ * that motivated it (@geoalgeria/normalize never published; transport and pharma
+ * absent from release.yml's lists, and skipped by the staged path, until both
+ * joined it on 2026-09-30).
  *
  * Usage: node scripts/release-gap.mjs [ref]
  *
@@ -73,7 +74,6 @@ for (const dir of dirs) {
     name: manifest.name,
     version: manifest.version,
     registryVersion: registryVersion(manifest.name),
-    umbrella: Object.values(manifest.dependencies ?? {}).some((v) => String(v).startsWith("workspace:")),
   });
 }
 

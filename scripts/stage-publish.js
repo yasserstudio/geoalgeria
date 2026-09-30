@@ -14,6 +14,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { rewriteWorkspaceSpecs } from "./lib/workspace-deps.mjs";
+import { stagedSet } from "./lib/staged-set.mjs";
 import { createManifestRestore, guardWithProcessSignals } from "./lib/manifest-restore.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -40,8 +41,10 @@ const WORKSPACE_VERSIONS = new Map(ALL_PACKAGE_DIRS.map((p) => manifestOf(p)).ma
 
 // Derive the publishable packages from the workspace so a newly added package is
 // never silently skipped (it would otherwise never stage on release). Every
-// non-private package dir under packages/ is a staging candidate.
-const PACKAGES = ALL_PACKAGE_DIRS.filter((p) => !manifestOf(p).private);
+// non-private package dir under packages/ is a staging candidate, the umbrellas
+// included, and they come last so they stage after the packages they re-export.
+// See scripts/lib/staged-set.mjs.
+const PACKAGES = stagedSet(ALL_PACKAGE_DIRS.map((dir) => ({ dir, manifest: manifestOf(dir) })));
 
 let staged = 0;
 let skipped = 0;
@@ -50,18 +53,6 @@ const failed = [];
 for (const pkg of PACKAGES) {
   const pkgJson = manifestOf(pkg);
   const { name, version } = pkgJson;
-
-  // The umbrellas (transport, pharma) re-export their siblings as RUNTIME
-  // dependencies and are published by hand with pnpm, so they have no Trusted
-  // Publisher entry and staging them would 401. Skip them here; see RELEASING.md.
-  const hasWorkspaceRuntimeDeps = Object.values(pkgJson.dependencies ?? {}).some((v) =>
-    String(v).startsWith("workspace:"),
-  );
-  if (hasWorkspaceRuntimeDeps) {
-    console.log(`skip: ${name}@${version} (workspace: runtime deps, an umbrella; publish via 'pnpm publish', not npm; see RELEASING.md)`);
-    skipped++;
-    continue;
-  }
 
   let registryVersion;
   try {
@@ -96,7 +87,9 @@ for (const pkg of PACKAGES) {
   // peerDependencies and optionalDependencies, not only `dependencies`: telecom,
   // pharmacies and protection-civile each went live with
   // `"@geoalgeria/schema": "workspace:^"` in devDependencies while the old check
-  // read `dependencies` alone.
+  // read `dependencies` alone. It is also what puts the transport and pharma
+  // umbrellas on this path at all: their whole manifest is `workspace:` runtime
+  // deps, and resolving them here replaced the hand pnpm publish.
   const manifestPath = join(ROOT, pkg, "package.json");
   const originalManifest = readFileSync(manifestPath, "utf8");
   const { manifest: publishManifest, rewritten, unresolved } = rewriteWorkspaceSpecs(pkgJson, WORKSPACE_VERSIONS);
