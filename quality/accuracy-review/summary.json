@@ -56,11 +56,11 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "f095978a72123c8aae56c27f8ff2d73993ee77ab43feb83bd8e96af67c02f95d"
+      "sha256": "826a69591a403d344e16bf41d88f2bc4d684f1c530d863fe352c136c877f6762"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "188d4164ea5ba47a11d95fba3029f713392aca1cf8d01979fddd9ed54906e938"
+      "sha256": "d5aa4c7efd372c4b797915d8b44f77187220cf79cbf60ab2b966e50c5fb8498e"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
@@ -248,11 +248,11 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "654c74957a0c218fe779f3e7564e948d365509b33480c630eb2a60285154e620"
+      "sha256": "d4fb027313a9ae65467417d5ee3fda1447bc0269d42d7823aa8cc9cc66925249"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "271427869e3e09de2fd5088d1d6748d28b91862076e68fed64f363e523b44bb5"
+      "sha256": "4f702b2dd69c1b7d46a2bd674b8d906b43e11694629a8cfb374f240d4a48fd7e"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -305,15 +305,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70545,
-  "candidates": 17827,
+  "total_records": 70546,
+  "candidates": 17829,
   "reasons": {
-    "approximate_coordinate": 16899,
+    "approximate_coordinate": 16902,
     "inside_adjacent_wilaya": 248,
-    "missing_coordinate": 525,
+    "missing_coordinate": 524,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 447,
-    "shared_coordinate": 1303
+    "shared_coordinate": 1305
   },
   "datasets": [
     {
@@ -752,7 +752,7 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1917,
+      "total_records": 1918,
       "candidates": 838,
       "reasons": {
         "approximate_coordinate": 834,
@@ -767,11 +767,11 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1917,
-        "geocoded_count": 1917,
+        "record_count": 1918,
+        "geocoded_count": 1918,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 1083,
+          "exact": 1084,
           "approximate": 834
         },
         "estimated_universe": null,
@@ -796,10 +796,10 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1611,
+        "named": 1612,
         "by_type": {
           "polyclinique": 406,
-          "clinique": 1144,
+          "clinique": 1145,
           "salle_de_soins": 199,
           "maternite": 26,
           "centre_sante": 142
@@ -1878,13 +1878,13 @@
     {
       "dataset": "sante",
       "total_records": 695,
-      "candidates": 569,
+      "candidates": 571,
       "reasons": {
-        "approximate_coordinate": 475,
-        "missing_coordinate": 94,
+        "approximate_coordinate": 478,
+        "missing_coordinate": 93,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 316
+        "shared_coordinate": 318
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1894,11 +1894,11 @@
         "title_ar": "المؤسسات الصحية العمومية الجزائرية",
         "title_en": "Algeria public health establishments",
         "record_count": 695,
-        "geocoded_count": 601,
-        "geocoded_pct": 86.5,
+        "geocoded_count": 602,
+        "geocoded_pct": 86.6,
         "precision": {
-          "exact": 126,
-          "approximate": 475
+          "exact": 124,
+          "approximate": 478
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1949,9 +1949,9 @@
           "public": 695
         },
         "by_geo_method": {
-          "commune_centroid": 473,
-          "osm_point": 117,
-          "owner_verified": 10,
+          "commune_centroid": 474,
+          "osm_point": 114,
+          "owner_verified": 13,
           "wikidata_point": 1
         },
         "bilingual": 563,
@@ -2330,7 +2330,7 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1917,
+      "total_records": 1918,
       "candidates": 838,
       "reasons": {
         "approximate_coordinate": 834,
@@ -2570,13 +2570,13 @@
       "dataset": "sante",
       "entity": "sante.json",
       "total_records": 695,
-      "candidates": 569,
+      "candidates": 571,
       "reasons": {
-        "approximate_coordinate": 475,
-        "missing_coordinate": 94,
+        "approximate_coordinate": 478,
+        "missing_coordinate": 93,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 316
+        "shared_coordinate": 318
       },
       "path": "packages/sante/data/sante.json"
     },

@@ -265,6 +265,93 @@
           "note": "The Arabic half-record of the same facility as 16-ehs-03, Clinique Mohamed Abderrahmani in Bir Mourad Rais. Building point read off the map by the project owner. The two records stay separate until the merge is decided. The point is the building the owner identified; both half-records sit on it, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
         }
       ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "19-ehs-01",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": "Setif",
+        "commune_code": "1901",
+        "lat": 36.19112,
+        "lng": 5.415087,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "commune": "Setif",
+        "commune_code": "1901",
+        "lat": 36.2028454,
+        "lng": 5.3596222,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.2028454,5.3596222",
+          "checked_at": "2026-09-30",
+          "note": "Centre Anti Cancereux Setif, building point read off the map by the project owner. The point sits between the Setif and Ain Arnat commune centres, 5.1 km and 4.5 km away, so the commune is decided by point in polygon against the committed OpenStreetMap commune outlines, which put it inside Setif 1901. Two OSM clinics had been matched to this record in turn, the last a tuberculosis and respiratory-disease service, and neither is the anti-cancer centre."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "16-ehs-04",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": null,
+        "commune_code": null,
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "patch": {
+        "commune": "Dely Ibrahim",
+        "commune_code": "1623",
+        "lat": 36.767844,
+        "lng": 3.0016057,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.767844,3.0016057",
+          "checked_at": "2026-09-30",
+          "note": "CNMS Dr Maouche Mohand Amokrane, one facility in Dely Ibrahim, located by the project owner. Point in polygon against the committed OpenStreetMap commune outlines puts it inside Dely Ibrahim 1623, not the Ben Aknoun centre 1.2 km away. The Arabic half of the same facility is 16-ehs-14; both sit on this point, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "16-ehs-14",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": "Mohamed Belouzdad",
+        "commune_code": "1604",
+        "lat": 36.75354,
+        "lng": 3.06228,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "commune": "Dely Ibrahim",
+        "commune_code": "1623",
+        "lat": 36.767844,
+        "lng": 3.0016057,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.767844,3.0016057",
+          "checked_at": "2026-09-30",
+          "note": "The Arabic half-record of the same facility as 16-ehs-04, the CNMS Dr Maouche Mohand Amokrane in Dely Ibrahim, located by the project owner. It had the Mohamed Belouzdad commune centre, reached on the given name alone. The registry writes the name محمد where the owner reads محند; the registry name is kept."
+        }
+      ]
     }
   ]
 }

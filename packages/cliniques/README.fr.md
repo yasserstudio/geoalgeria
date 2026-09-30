@@ -74,11 +74,11 @@ const urgences = all.filter((c) => c.emergency);
 
 > **Ce paquet ne republie jamais un élément OSM déjà publié par [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante), et les deux ne s'additionnent pas.**
 > `sante` est le volet *registre* : 695 établissements publics (CHU, EPH, EHS,
-> EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 117 des
+> EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 114 des
 > enregistrements de `sante` référencent un élément OSM par identifiant, et
 > chacun de ces éléments est exclu ici **par construction** : aucun lieu n'est
 > publié deux fois sous le même élément OSM. Soyons précis sur ce que cela ne
-> garantit pas : les 578 autres enregistrements de `sante` ne portent aucune
+> garantit pas : les 581 autres enregistrements de `sante` ne portent aucune
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets

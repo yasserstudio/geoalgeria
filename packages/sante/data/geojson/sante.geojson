@@ -6504,6 +6504,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.0016057,
+          36.767844
+        ]
+      },
+      "properties": {
+        "id": "16-ehs-04",
+        "name": "Etablissement Hospitalier Spécialisé Cnms Dr Maouche Mohand Amokrane",
+        "name_fr": "Etablissement Hospitalier Spécialisé Cnms Dr Maouche Mohand Amokrane",
+        "name_ar": null,
+        "wilaya_code": "16",
+        "commune_code": "1623",
+        "commune": "Dely Ibrahim",
+        "lat": 36.767844,
+        "lng": 3.0016057,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified",
+        "source": "msp",
+        "refs": {
+          "msp": "4668"
+        },
+        "type": "ehs",
+        "type_label_fr": "Établissement Hospitalier Spécialisé",
+        "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
+        "sector": "public",
+        "slug": "etablissement-hospitalier-specialise-cnms-dr-maouche-mohand-amokrane",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.767844,3.0016057"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.954043,
           36.765012
         ]
@@ -6608,8 +6646,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.06228,
-          36.75354
+          3.0016057,
+          36.767844
         ]
       },
       "properties": {
@@ -6618,12 +6656,12 @@
         "name_fr": null,
         "name_ar": "المؤسسة الإستشفائية المتخصصة مستشفى أمراض القلب والاوعية والطب الرياضي الدكتور معوش محمد أمقران",
         "wilaya_code": "16",
-        "commune_code": "1604",
-        "commune": "Mohamed Belouzdad",
-        "lat": 36.75354,
-        "lng": 3.06228,
+        "commune_code": "1623",
+        "commune": "Dely Ibrahim",
+        "lat": 36.767844,
+        "lng": 3.0016057,
         "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
           "msp": "4669"
@@ -6632,7 +6670,13 @@
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%89-3"
+        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%89-3",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.767844,3.0016057"
+        ]
       }
     },
     {
@@ -7541,8 +7585,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.784836,
-          36.659622
+          5.791,
+          36.660556
         ]
       },
       "properties": {
@@ -7553,13 +7597,12 @@
         "wilaya_code": "18",
         "commune_code": "1824",
         "commune": "Texenna",
-        "lat": 36.659622,
-        "lng": 5.784836,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 36.660556,
+        "lng": 5.791,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "way/1176151120",
           "msp": "4730"
         },
         "type": "ehs",
@@ -7929,8 +7972,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.402921,
-          36.190262
+          5.3596222,
+          36.2028454
         ]
       },
       "properties": {
@@ -7941,20 +7984,25 @@
         "wilaya_code": "19",
         "commune_code": "1901",
         "commune": "Setif",
-        "lat": 36.190262,
-        "lng": 5.402921,
+        "lat": 36.2028454,
+        "lng": 5.3596222,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "node/6444000985",
           "msp": "4750"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "etablissement-hospitalier-specialise-centre-anti-concereux-setif"
+        "slug": "etablissement-hospitalier-specialise-centre-anti-concereux-setif",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.2028454,5.3596222"
+        ]
       }
     },
     {
@@ -8574,8 +8622,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.273759,
-          34.548609
+          0.259722,
+          34.55
         ]
       },
       "properties": {
@@ -8586,13 +8634,12 @@
         "wilaya_code": "20",
         "commune_code": "2012",
         "commune": "Sidi Ahmed",
-        "lat": 34.548609,
-        "lng": 0.273759,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 34.55,
+        "lng": 0.259722,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "node/11694191152",
           "msp": "4788"
         },
         "type": "eph",

@@ -333,6 +333,9 @@ const SPECIALTY_FR = [
   [/BRULE/, "brule"],
 ];
 const SPECIALTY_AR = [
+  // before psy: التنفسيه (respiratory) literally contains نفسيه (mental), so the
+  // psy pattern would otherwise read every chest facility as psychiatric.
+  [/الصدريه|الصدر|الرئه|التنفسيه/, "pneumo"],
   [/عقليه|نفسيه/, "psy"],
   [/النساء|النسا|التوليد|الام والطفل|الامومه|الولاده/, "gyneco"],
   [/العيون|عيون/, "oph"],
@@ -340,12 +343,11 @@ const SPECIALTY_AR = [
   [/السرطان|سرطان|الاورام|اورام/, "cancer"],
   [/التاهيل|الترويض|الوظيفي|اعاده التربيه/, "reeduc"],
   [/الكلي|المسالك|البوليه|تصفيه الدم/, "nephro"],
-  [/الصدريه|الصدر|الرئه|التنفسيه/, "pneumo"],
   [/العظام|الرضوض/, "ortho"],
   [/المعديه|المتنقله/, "infect"],
   [/الحروق/, "brule"],
 ];
-function specialtyCode(title, lang) {
+export function specialtyCode(title, lang) {
   if (lang === "ar") { const n = normAr(title); for (const [re, c] of SPECIALTY_AR) if (re.test(n)) return c; }
   else { const n = norm(title); for (const [re, c] of SPECIALTY_FR) if (re.test(n)) return c; }
   return null;
@@ -862,8 +864,18 @@ function refineWithFacilities(establishments, facilities, communesByWilaya, wil,
       if (sc < 1 || usedE.has(e) || usedF.has(f)) continue;
       usedE.add(e); usedF.add(f); stamp(e, f);
     }
-    // lone establishment + lone facility in the commune → the same place
-    if (ests.length === 1 && facs.length === 1 && !usedE.has(ests[0])) stamp(ests[0], facs[0]);
+    // Lone establishment + lone facility in the commune → the same place, unless
+    // the two names contradict each other. The 1:1 loop above has already taken
+    // every pair with a specific token in common, so reaching here means they
+    // share none. That is only silence when at least one side has no specific
+    // token to give: a facility named just "Polyclinique", or the commune name,
+    // or nothing at all. When BOTH sides name something specific and none of it
+    // agrees, the names are evidence AGAINST one place, and stamping anyway put
+    // the Setif anti-cancer centre on the city's tuberculosis service.
+    if (ests.length === 1 && facs.length === 1 && !usedE.has(ests[0])) {
+      const et = estTokens(ests[0], com, wil);
+      if (!(et.length && facs[0]._tokens.length)) stamp(ests[0], facs[0]);
+    }
   }
 }
 // The facility-class vocabulary: words that say what KIND of place this is, in
@@ -882,11 +894,13 @@ const GENERIC_TOKENS = new Set([
   "centre", "center", "hopital", "hospital", "dispensaire", "infirmerie",
   "salle", "soins", "medical", "medicale", "medico", "unite", "universitaire",
   "sanitaire", "cabinet", "maternite", "secteur", "ehs", "eph", "epsp", "epse",
-  "chu", "ehu", "cht",
+  "chu", "ehu", "cht", "service", "controle", "lutte", "prevention", "maladie",
+  "maladies", "malades", "traitement", "depistage",
   // transliterated Arabic (translitAr output)
   "moussh", "amoumih", "astchfaiih", "astchfai", "mtkhssh", "shh", "llshh",
   "jouarih", "aiadh", "mstchfi", "mrkz", "mtaddh", "khdmat", "kaah", "alaj",
   "mshh", "shi", "tbi", "jamai", "ouhdh", "toulid", "aalmtkhssh", "aaadh",
+  "mslhh", "mkafhh", "amrad", "oualamrad", "alaamrad", "moukafhh", "ouhdat",
 ]);
 const isGeneric = (t) => GENERIC_TOKENS.has(t) || GENERIC_TOKENS.has(squash(t));
 

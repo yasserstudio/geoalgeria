@@ -22,6 +22,7 @@ import {
   matchCommune,
   overlapCount,
   pairPosts,
+  specialtyCode,
 } from "../packages/sante/scripts/fetch.mjs";
 
 // The two wilayas the real regression came from: Alger (the wrong pair) and
@@ -141,4 +142,53 @@ test("facility matching: the class vocabulary is dropped in both languages", () 
   // the only word left is itself a facility class ("maternité" implies gynaeco)
   assert.ok(facilityTokens("Hôpital psychiatrique", com, wil).includes("spec_psy"));
   assert.deepEqual(facilityTokens("Maternite", com, wil), ["spec_gyneco"]);
+});
+
+// The lone-establishment/lone-facility fallback stamps a facility with no shared
+// name token at all, because in a commune with exactly one of each the commune is
+// the evidence. That holds only while the two names say nothing against each
+// other. Reaching the fallback means the 1:1 loop found no specific token in
+// common, so when BOTH names still carry specific tokens they are evidence
+// AGAINST one place, and the fallback must decline. The case that forced this:
+// the Setif anti-cancer centre was stamped on the city's tuberculosis and
+// respiratory-disease service, a lone pair in the commune.
+test("facility matching: a lone pair whose names contradict each other is refused", () => {
+  const com = { name_fr: "Setif", name_ar: "سطيف", wilaya_code: "19", code_commune: 1901 };
+  const wil = { byCode: new Map([["19", { name_fr: "Setif", name_ar: "سطيف" }]]) };
+  const et = estTokens(
+    { name_fr: "Etablissement Hospitalier Spécialisé Centre Anti Concereux Setif", name_ar: null },
+    com,
+    wil,
+  );
+  const ft = facilityTokens(
+    "Service de Contrôle de la Tuberculose et des Maladies Respiratoires;مصلحة مكافحة السل والأمراض التنفسية",
+    com,
+    wil,
+  );
+  // both sides name something specific
+  assert.ok(et.length > 0, "the anti-cancer centre keeps a specific token");
+  assert.ok(ft.length > 0, "the tuberculosis service keeps a specific token");
+  // and none of it agrees: the fallback's refusal condition
+  assert.equal(overlapCount(et, ft), 0);
+  // the words that make a facility a service for a class of disease are class
+  // vocabulary in both languages, so they cannot be what a match rests on
+  for (const generic of [
+    "Service", "Controle", "Maladies", "Prevention", "Depistage",
+    "مصلحة", "مكافحة", "الأمراض",
+  ]) {
+    assert.deepEqual(facilityTokens(generic, com, wil), [], `${generic} should leave no token`);
+  }
+});
+
+// التنفسيه, respiratory, literally contains نفسيه, mental, so a psy pattern tested
+// first reads every Arabic chest facility as psychiatric. It did: the Setif
+// tuberculosis service carried spec_psy, a wrong specialty signal that the pairing
+// and the facility matcher both read as evidence.
+test("specialtyCode: an Arabic chest facility is pneumo, not psy", () => {
+  assert.equal(specialtyCode("مصلحة مكافحة السل والأمراض التنفسية", "ar"), "pneumo");
+  assert.equal(specialtyCode("المؤسسة الاستشفائية المتخصصة في الامراض الصدرية", "ar"), "pneumo");
+  // and a genuinely psychiatric name still reads psy
+  assert.equal(specialtyCode("المؤسسة الاستشفائية المتخصصة في الامراض العقلية", "ar"), "psy");
+  assert.equal(specialtyCode("مستشفى الصحة النفسية", "ar"), "psy");
+  assert.equal(specialtyCode("Etablissement Hospitalier Spécialisé en Psychiatrie", "fr"), "psy");
 });
