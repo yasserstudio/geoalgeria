@@ -145,6 +145,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
 | `data/dairas.json` | JSON | 556 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
 | `data/csv/wilayas.csv` | CSV | 69 | Tableurs, imports |
 | `data/csv/communes.csv` | CSV | 1 541 | Tableurs, imports |
@@ -162,6 +163,8 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 > `data/poste/` provient d'[Algérie Poste](https://baridimap.poste.dz). `commune_code` est normalisé pour se joindre au `code_commune` de chaque commune ; `source_commune_code` conserve une valeur native différente du fournisseur.
 
 `code_commune` est l'identifiant unique `WWCC` du [Code géographique national 2021 de l'ONS](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Les communes promues dans les wilayas 59 à 69 conservent le préfixe de leur wilaya mère de 2021.
+
+Chaque wilaya porte `capital_commune_code`, le `code_commune` de son chef-lieu ; les noms, le code postal et les coordonnées du chef-lieu se lisent donc sur l'enregistrement de la commune. Il provient des décrets qui fixent les chefs-lieux (n° 84-79 de 1984, n° 21-117 de 2021, n° 26-206 de 2026), jamais du nom de la wilaya, qui se trompe sur 4 des 69. Sources par wilaya : [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 
 ## Schéma
 

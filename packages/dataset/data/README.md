@@ -22,6 +22,7 @@ data/
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
 ├── name-history.json            ← former names, so an older spelling still finds the record
+├── wilaya-capitals.metadata.json          ← the chef-lieu of each wilaya, with its decree
 ├── csv/
 │   ├── wilayas.csv
 │   └── communes.csv
@@ -56,7 +57,8 @@ data/
   "postal_code": "16000",
   "latitude": 36.7525,
   "longitude": 3.04197,
-  "created": "original"
+  "created": "original",
+  "capital_commune_code": 1601
 }
 ```
 
@@ -70,6 +72,20 @@ data/
 | `latitude` | number | Capital city latitude |
 | `longitude` | number | Capital city longitude |
 | `created` | string | The year the wilaya became official: `"original"` (1–48, Law 84-09 of 1984), `"2019"` (49–58, Law 19-12), `"2026"` (59–69, Law n° 26-06, *JO* n° 25 of 5 April 2026) |
+| `capital_commune_code` | integer | The `code_commune` of the wilaya's capital (chef-lieu); join it for the capital's names, postal code and coordinates |
+
+`capital_commune_code` comes from the decrees that fix the names and chefs-lieux
+of the wilayas, never from the wilaya's own name: décret n° 84-79 of 3 April 1984
+(*JO* n° 14, pp. 295–296) for 1–48, décret présidentiel n° 21-117 of 22 March 2021
+(*JO* n° 22, pp. 7–8) for 49–58, and décret présidentiel n° 26-206 of 25 May 2026
+(*JO* n° 40 of 3 June 2026, p. 5) for 59–69. Deriving it from the name resolves 65
+of 69 and gets 4 wrong: wilaya 16's capital is `1601` (Alger Centre, there is no
+commune called "Alger"), and wilayas 53, 54 and 57 spell their capital commune
+`Ain Salah`, `Ain Guezzam` and `El-M'ghaier`. A commune promoted into wilayas
+59–69 keeps its 2021 mother-wilaya prefix, so a capital code need not start with
+its wilaya code: wilaya 59 (Aflou) reads `319`. Per-wilaya source, citation and
+the one point where the decree and OpenStreetMap disagree:
+[`wilaya-capitals.metadata.json`](wilaya-capitals.metadata.json).
 
 `created` is the year the creating law took effect, never the year a reform was
 announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
@@ -236,6 +252,8 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 
 - Journal Officiel No. 25, April 5, 2026 (Law 26-06) for wilayas 59–69 and for the commune lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28 and 32
 - Journal Officiel No. 40, June 3, 2026 (Presidential decree 26-206) for the names and chef-lieux of wilayas 59–69
+- Journal Officiel No. 22, March 25, 2021 (Presidential decree 21-117) for the names and chef-lieux of wilayas 49–58
+- Journal Officiel No. 14, April 3, 1984 (Decree 84-79) for the names and chef-lieux of wilayas 1–48
 - Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
 - Ministry of Interior (interieur.gov.dz)
 - APS (Algérie Presse Service)

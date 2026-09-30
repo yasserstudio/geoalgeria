@@ -24,7 +24,7 @@ def validate_json(path):
 
 
 def validate_wilayas(data):
-    required = {"code", "name_fr", "name_ar"}
+    required = {"code", "name_fr", "name_ar", "capital_commune_code"}
     # `created` is the year the wilaya became official, so the Law n° 26-06
     # cohort (JO n° 25 of 5 April 2026) is 2026, not the 2025 announcement.
     valid_created = {"original", "1984", "2019", "2026", 1984, 2019, 2026}
@@ -41,6 +41,33 @@ def validate_wilayas(data):
     if len(data) != 69:
         error(f"wilayas.json: expected 69, got {len(data)}")
     return codes
+
+
+def validate_capitals(wilayas, commune_codes):
+    """Every wilaya's Capital is a commune of that same wilaya, and no two share one.
+
+    `commune_codes` maps a `code_commune` to "<wilaya_code>|<name_fr>", so the join
+    and the wilaya it lands in are checked in one pass.
+    """
+    seen = {}
+    for w in wilayas:
+        code = w.get("code")
+        cap = w.get("capital_commune_code")
+        if not isinstance(cap, int) or isinstance(cap, bool):
+            error(f"wilaya {code}: capital_commune_code must be an integer, got {cap!r}")
+            continue
+        owner = commune_codes.get(cap)
+        if owner is None:
+            error(f"wilaya {code}: capital_commune_code {cap} is not a commune code")
+        elif int(owner.split("|", 1)[0]) != code:
+            error(
+                f"wilaya {code}: capital_commune_code {cap} is {owner}, "
+                f"a commune of another wilaya"
+            )
+        if cap in seen:
+            error(f"wilaya {code}: capital_commune_code {cap} is already the capital of {seen[cap]}")
+        else:
+            seen[cap] = code
 
 
 def validate_communes(data, filename, commune_codes):
@@ -155,6 +182,11 @@ def main():
             n = validate_communes(data, fname, commune_codes)
             total_communes += n
             print(f"  OK: {n} communes")
+    if wilayas:
+        print("[wilaya capitals]")
+        validate_capitals(wilayas, commune_codes)
+        print(f"  OK: {len(wilayas)} capitals join a commune of their own wilaya")
+
     if len(commune_codes) != total_communes:
         error(
             f"commune codes: expected {total_communes} unique non-null values, "

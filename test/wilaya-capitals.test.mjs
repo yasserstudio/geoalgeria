@@ -98,8 +98,8 @@ function fromCsv() {
 function fromSql() {
   const text = readFileSync(join(DATA, "data", "sql", "full.sql"), "utf-8");
   const out = {};
-  // (code, 'name_fr', 'name_ar', phone, postal, latitude, longitude, created)
-  const re = /^ {2}\((\d+), .*?, (-?[\d.]+), (-?[\d.]+), '[^']*'\)[,;]$/gm;
+  // (code, 'name_fr', 'name_ar', phone, postal, latitude, longitude, created, capital)
+  const re = /^ {2}\((\d+), .*?, (-?[\d.]+), (-?[\d.]+), '[^']*', \d+\)[,;]$/gm;
   for (const m of text.matchAll(re)) out[Number(m[1])] = [Number(m[3]), Number(m[2])];
   return out;
 }

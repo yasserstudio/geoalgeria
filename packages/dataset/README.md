@@ -145,6 +145,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
 | `data/dairas.json` | JSON | 556 | Daira list with commune counts |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
@@ -162,6 +163,8 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 > `data/poste/` is sourced from [Algérie Poste](https://baridimap.poste.dz). `commune_code` is normalized to join each commune's `code_commune`; `source_commune_code` preserves a differing provider-native value.
 
 `code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
+
+Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names, postal code and coordinates are read from the commune record. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 
 ## Schema
 

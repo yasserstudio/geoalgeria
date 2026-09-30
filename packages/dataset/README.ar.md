@@ -145,6 +145,7 @@ sqlite3 mydb.sqlite < full.sql
 | `data/wilayas.json` | JSON | 69 | قائمة الولايات فقط |
 | `data/dairas.json` | JSON | 556 | قائمة الدوائر مع عدد البلديات |
 | `data/name-history.json` | JSON | 210 | الكتابات السابقة لأسماء الولايات والبلديات، مع النص الذي عوّض كل واحدة منها |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | مقر كل ولاية، مع المرسوم والمادة والبند والصفحة التي تحدّده |
 | `data/communes_w*.json` | JSON | 1,541 | بيانات البلديات المفصّلة |
 | `data/csv/wilayas.csv` | CSV | 69 | جداول البيانات، الاستيراد |
 | `data/csv/communes.csv` | CSV | 1,541 | جداول البيانات، الاستيراد |
@@ -162,6 +163,8 @@ sqlite3 mydb.sqlite < full.sql
 > `data/poste/` مصدره [بريد الجزائر](https://baridimap.poste.dz). يُوحَّد `commune_code` ليرتبط بـ `code_commune` لكل بلدية، ويحتفظ `source_commune_code` بقيمة المزوّد الأصلية عندما تختلف.
 
 الحقل `code_commune` هو المعرّف الفريد `WWCC` الوارد في [الرمز الجغرافي الوطني لسنة 2021 الصادر عن الديوان الوطني للإحصائيات](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). وتحتفظ البلديات التي رُقّيت إلى الولايات 59–69 ببادئة ولايتها الأم وفق تقسيم 2021.
+
+تحمل كل ولاية الحقل `capital_commune_code`، وهو `code_commune` لبلدية مقرها (chef-lieu)، فتُقرأ أسماء المقر ورمزه البريدي وإحداثياته من سجل البلدية نفسها. ومصدره المراسيم التي تحدّد مقرات الولايات (84-79 لسنة 1984، و21-117 لسنة 2021، و26-206 لسنة 2026)، لا اسم الولاية الذي يخطئ في 4 من 69. المصادر لكل ولاية: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
 
 ## المخطط
 

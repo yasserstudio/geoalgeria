@@ -57,7 +57,7 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 | | Count | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (2019 + 2026 reforms) |
+| **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
 | **Dairas** | 556 | districts, as first-class entities |
 | **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates |
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
