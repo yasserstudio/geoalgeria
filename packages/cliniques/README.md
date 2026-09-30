@@ -12,7 +12,7 @@
 
 </div>
 
-**1,914 geocoded care facilities** across **66 wilayas** of Algeria, every one
+**1,917 geocoded care facilities** across **66 wilayas** of Algeria, every one
 with coordinates, classified by **type** (polyclinique · salle de soins ·
 centre de santé · maternité · clinique), most with Arabic and/or French names,
 and commune/wilaya linkage. Extracted from **OpenStreetMap**. This is the
@@ -29,7 +29,7 @@ npm install @geoalgeria/cliniques
 ```js
 import cliniques from "@geoalgeria/cliniques";
 
-const all = cliniques.cliniques();   // 1,914 geocoded care facilities
+const all = cliniques.cliniques();   // 1,917 geocoded care facilities
 
 // The public proximity tier of one wilaya
 const proximite = cliniques.cliniquesByWilaya("16")
@@ -41,7 +41,7 @@ const urgences = all.filter((c) => c.emergency);
 
 ## What you can build
 
-- **"Care near me" locators**, coordinates on all 1,914 records, ready for a map
+- **"Care near me" locators**, coordinates on all 1,917 records, ready for a map
   or nearest-facility distance sorting.
 - **Proximity-care coverage maps**, count polycliniques and salles de soins per
   commune or wilaya, the structures Algerians actually walk into first.
@@ -52,16 +52,16 @@ const urgences = all.filter((c) => c.emergency);
 
 | Dataset | Count | Coordinates | Notes |
 | --- | --- | --- | --- |
-| Care facilities | **1,914** | ✅ all | 1,608 named, 66 wilayas |
+| Care facilities | **1,917** | ✅ all | 1,611 named, 66 wilayas |
 
 **By type**
 
 | Type | Count | Meaning |
 | --- | --- | --- |
-| `clinique` | 1,142 | clinic (عيادة / مصحة), mostly private practice-level care |
-| `polyclinique` | 405 | polyclinique (عيادة متعددة الخدمات), public proximity tier |
+| `clinique` | 1,144 | clinic (عيادة / مصحة), mostly private practice-level care |
+| `polyclinique` | 406 | polyclinique (عيادة متعددة الخدمات), public proximity tier |
 | `salle_de_soins` | 199 | salle de soins / dispensaire (قاعة علاج / مستوصف) |
-| `centre_sante` | 141 | centre de santé / centre de soins (مركز صحي) |
+| `centre_sante` | 142 | centre de santé / centre de soins (مركز صحي) |
 | `maternite` | 26 | maternité / clinique d'accouchement (مصحة توليد) |
 
 > **This is an OpenStreetMap extract, not an official registry.** Coverage is
@@ -74,14 +74,14 @@ const urgences = all.filter((c) => c.emergency);
 
 > **It never republishes an OSM element [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) already ships, and the two must not be summed.**
 > `sante` is the *registry* tier: 695 public establishments (CHU, EPH, EHS, EPSP)
-> from the Ministry of Health. This package is the *community* tier. 121 of
+> from the Ministry of Health. This package is the *community* tier. 117 of
 > sante's records reference an OSM element by id, and every one of those elements
 > is excluded here **by construction**, so no place is published twice under the
 > same OSM element. Be precise about what that does and does not guarantee:
-> sante's other 574 records carry no OSM reference at all, so the same physical
+> sante's other 578 records carry no OSM reference at all, so the same physical
 > establishment can still appear in both packages, under different coordinates
 > and different ids, with nothing mechanical to detect it. The two describe
-> different tiers of a health system, so adding 695 to 1,914 counts nothing real.
+> different tiers of a health system, so adding 695 to 1,917 counts nothing real.
 
 **Type is inferred from the name.** A polyclinique names itself
 polyclinique/عيادة متعددة الخدمات, a salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -90,21 +90,21 @@ matched *before* the bare word "hôpital"/مستشفى, because Algerian mappers
 word for proximity structures too (10 records name themselves both ways, e.g.
 "Polyclinique des consultations spécialisées" tagged `name:ar=مستشفى بودغن`). The
 plain word "clinique"/عيادة/مصحة counts as a facility word too, one rank below
-the three specific types. Everything left over is `clinique`, including the 276
+the three specific types. Everything left over is `clinique`, including the 306
 unnamed clinic-tagged points, which the tag alone already identifies as care
 facilities.
 
-**What was excluded, and why.** The pull returns 2,936 OSM elements; 977 are
+**What was excluded, and why.** The pull returns 2,962 OSM elements; 979 are
 dropped before anything is emitted:
 
 | Excluded | Count | Reason |
 | --- | --- | --- |
 | `hopital` | 369 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, the registry tier (`@geoalgeria/sante`) |
-| `unnamed_hospital` | 241 | no name at all *and* tagged as a hospital, so it cannot be told apart from the registry tier |
-| `sante_overlap` | 89 | the OSM element is one a `@geoalgeria/sante` **hospital-tier** record (CHU/EPH/EHS) already ships, whatever it is named here. Elements referenced by a sante *EPSP* record are not excluded: there the reference is a geocoding anchor on the entity's seat and the element is usually a facility this package should carry |
+| `unnamed_hospital` | 249 | no name at all *and* tagged as a hospital, so it cannot be told apart from the registry tier |
+| `sante_overlap` | 82 | the OSM element is one a `@geoalgeria/sante` **hospital-tier** record (CHU/EPH/EHS) already ships, whatever it is named here. Elements referenced by a sante *EPSP* record are not excluded: there the reference is a geocoding anchor on the entity's seat and the element is usually a facility this package should carry |
 | `cabinet` | 96 | single-practitioner practice: the word cabinet, or a name that is just a practitioner (Dr X, الطبيب …) |
-| `epsp_entity` | 102 | the EPSP administrative entity itself (its facilities stay) |
-| `hospital_subfeature` | 54 | part of a hospital mapped as its own point: an entrance, a ward, "Service de radiologie", a bare "urgences". When the name also says hospital the record is reported as `hopital` instead |
+| `epsp_entity` | 104 | the EPSP administrative entity itself (its facilities stay) |
+| `hospital_subfeature` | 53 | part of a hospital mapped as its own point: an entrance, a ward, "Service de radiologie", a bare "urgences". When the name also says hospital the record is reported as `hopital` instead |
 | `pharmacie` | 6 | pharmacy, belongs to [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) |
 | `chu` | 15 | centre hospitalo-universitaire |
 | `institut_pasteur` | 3 | research institute rather than a care facility |
@@ -125,13 +125,13 @@ EPH (public).
 structurally for `polyclinique` and `salle_de_soins` (both are public structures
 of the Algerian proximity-care system by definition); `private` on
 `operator:type=private` or a privé/خاصة name read across every name tag, since a
-record can carry its only ownership signal in `name:en`. 615 records are public,
-67 private, and the remaining 1,231 stay `null`. Most cliniques are private in
+record can carry its only ownership signal in `name:en`. 616 records are public,
+67 private, and the remaining 1,234 stay `null`. Most cliniques are private in
 practice, but the map does not say so, so the field does not pretend to know.
 
-**Also on each record:** `speciality` (from OSM `healthcare:speciality`, on 165
+**Also on each record:** `speciality` (from OSM `healthcare:speciality`, on 166
 records), `address` (from `addr:*` tags, on 655), `phone` (on 116),
-`opening_hours` (on 167) and `emergency` (`true` on the 69 records tagged
+`opening_hours` (on 168) and `emergency` (`true` on the 69 records tagged
 `emergency=yes`, never `false`: a silent map is not a claim that there is no
 emergency service).
 
@@ -157,7 +157,7 @@ const all: Clinique[] = cliniques.cliniques();
 
 ```
 data/
-  cliniques.json              # 1,914 care facilities (array)
+  cliniques.json              # 1,917 care facilities (array)
   metadata.json               # sources, counts, coverage, updated
   csv/cliniques.csv           # repo + Release bundle (not in npm tarball)
   geojson/cliniques.geojson   # Point features

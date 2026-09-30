@@ -56,15 +56,15 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "96078f378543f4a09ffdc1ee2395fca016533b9239ae21996352e14cafd8a1fb"
+      "sha256": "f095978a72123c8aae56c27f8ff2d73993ee77ab43feb83bd8e96af67c02f95d"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "6dc3872560343f90285f2892939f4cdb8c2a7441220e30de337d6bd78a3c32ea"
+      "sha256": "188d4164ea5ba47a11d95fba3029f713392aca1cf8d01979fddd9ed54906e938"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
-      "sha256": "d57d0480140dec81b1984d3e503881a2337c4bdefc7dfcc7d605ba8680205be6"
+      "sha256": "893ace95712f3abb572e33d0e2eea05d7bdcf9525d6a643bbb590ac50c482ddc"
     },
     {
       "path": "packages/culture/data/culture.json",
@@ -248,11 +248,11 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "06269c5fd7a5494ae657acf8a09a625c4b8c64e023350a4635f4871ff1e0d300"
+      "sha256": "654c74957a0c218fe779f3e7564e948d365509b33480c630eb2a60285154e620"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "1d657d5623cea33eece8e76c6497152db4547d68d43dedfec6fe18cec40e2131"
+      "sha256": "271427869e3e09de2fd5088d1d6748d28b91862076e68fed64f363e523b44bb5"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -305,15 +305,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70542,
-  "candidates": 17825,
+  "total_records": 70545,
+  "candidates": 17827,
   "reasons": {
-    "approximate_coordinate": 16897,
+    "approximate_coordinate": 16899,
     "inside_adjacent_wilaya": 248,
     "missing_coordinate": 525,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 447,
-    "shared_coordinate": 1301
+    "shared_coordinate": 1303
   },
   "datasets": [
     {
@@ -752,10 +752,10 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1914,
-      "candidates": 836,
+      "total_records": 1917,
+      "candidates": 838,
       "reasons": {
-        "approximate_coordinate": 832,
+        "approximate_coordinate": 834,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -767,12 +767,12 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1914,
-        "geocoded_count": 1914,
+        "record_count": 1917,
+        "geocoded_count": 1917,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 1082,
-          "approximate": 832
+          "exact": 1083,
+          "approximate": 834
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -796,20 +796,20 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1608,
+        "named": 1611,
         "by_type": {
-          "polyclinique": 405,
-          "clinique": 1143,
+          "polyclinique": 406,
+          "clinique": 1144,
           "salle_de_soins": 199,
           "maternite": 26,
-          "centre_sante": 141
+          "centre_sante": 142
         },
         "by_sector": {
-          "public": 615,
+          "public": 616,
           "private": 67
         },
         "with_phone": 116,
-        "with_address": 654,
+        "with_address": 655,
         "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -1884,7 +1884,7 @@
         "missing_coordinate": 94,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 314
+        "shared_coordinate": 316
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1949,9 +1949,10 @@
           "public": 695
         },
         "by_geo_method": {
-          "commune_centroid": 475,
-          "osm_point": 123,
-          "wikidata_point": 3
+          "commune_centroid": 473,
+          "osm_point": 117,
+          "owner_verified": 10,
+          "wikidata_point": 1
         },
         "bilingual": 563,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
@@ -2329,10 +2330,10 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1914,
-      "candidates": 836,
+      "total_records": 1917,
+      "candidates": 838,
       "reasons": {
-        "approximate_coordinate": 832,
+        "approximate_coordinate": 834,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -2575,7 +2576,7 @@
         "missing_coordinate": 94,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 314
+        "shared_coordinate": 316
       },
       "path": "packages/sante/data/sante.json"
     },

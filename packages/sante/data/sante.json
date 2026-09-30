@@ -96,13 +96,12 @@
     "wilaya_code": "01",
     "commune_code": "0101",
     "commune": "Adrar",
-    "lat": 27.8709,
-    "lng": -0.281111,
-    "geo_precision": "exact",
-    "geo_method": "wikidata_point",
+    "lat": 27.87429,
+    "lng": -0.297222,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "wikidata": "Q18785599",
       "msp": "3584"
     },
     "type": "eph",
@@ -317,12 +316,12 @@
     "name_fr": "Etablissement Public Hospitalier Ouled Mohamed Chlef",
     "name_ar": null,
     "wilaya_code": "02",
-    "commune_code": "0229",
-    "commune": "Oued Fodda",
-    "lat": 36.183333,
-    "lng": 1.549921,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "commune_code": "0201",
+    "commune": "Chlef",
+    "lat": 36.1571749,
+    "lng": 1.3624474,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "3598"
@@ -331,7 +330,13 @@
     "type_label_fr": "Établissement Public Hospitalier",
     "type_label_ar": "المؤسسة العمومية الاستشفائية",
     "sector": "public",
-    "slug": "etablissement-public-hospitalier-ouled-mohamed-chlef-2"
+    "slug": "etablissement-public-hospitalier-ouled-mohamed-chlef-2",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.1571749,1.3624474"
+    ]
   },
   {
     "id": "02-eph-04",
@@ -2253,10 +2258,10 @@
     "wilaya_code": "07",
     "commune_code": "0701",
     "commune": "Biskra",
-    "lat": 34.8,
-    "lng": 5.751048,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 34.849784,
+    "lng": 5.742165,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "3663"
@@ -2265,7 +2270,13 @@
     "type_label_fr": "Établissement Hospitalier Spécialisé",
     "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
     "sector": "public",
-    "slug": "etablissement-hospitalier-specialise-mere-en-enfant-biskra"
+    "slug": "etablissement-hospitalier-specialise-mere-en-enfant-biskra",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=34.849784,5.742165"
+    ]
   },
   {
     "id": "07-eph-01",
@@ -2275,10 +2286,10 @@
     "wilaya_code": "07",
     "commune_code": "0701",
     "commune": "Biskra",
-    "lat": 34.8,
-    "lng": 5.751048,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 34.8495918,
+    "lng": 5.7435019,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "3659"
@@ -2287,7 +2298,13 @@
     "type_label_fr": "Établissement Public Hospitalier",
     "type_label_ar": "المؤسسة العمومية الاستشفائية",
     "sector": "public",
-    "slug": "etablissement-public-hospitalier-bachir-benacer-biskra"
+    "slug": "etablissement-public-hospitalier-bachir-benacer-biskra",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=34.8495918,5.7435019"
+    ]
   },
   {
     "id": "07-eph-02",
@@ -2585,13 +2602,13 @@
     "wilaya_code": "08",
     "commune_code": "0801",
     "commune": "Bechar",
-    "lat": 31.590962,
-    "lng": -2.237932,
+    "lat": 31.622059,
+    "lng": -2.204471,
     "geo_precision": "exact",
     "geo_method": "osm_point",
     "source": "msp",
     "refs": {
-      "osm": "way/330434664",
+      "osm": "way/273456230",
       "msp": "3667"
     },
     "type": "ehs",
@@ -2697,13 +2714,12 @@
     "wilaya_code": "08",
     "commune_code": "0801",
     "commune": "Bechar",
-    "lat": 31.622059,
-    "lng": -2.204471,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
+    "lat": 31.61667,
+    "lng": -2.21667,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "osm": "way/273456230",
       "msp": "4480"
     },
     "type": "eph",
@@ -2742,13 +2758,12 @@
     "wilaya_code": "08",
     "commune_code": "0801",
     "commune": "Bechar",
-    "lat": 31.602079,
-    "lng": -2.237869,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
+    "lat": 31.61667,
+    "lng": -2.21667,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "osm": "way/273523234",
       "msp": "3665"
     },
     "type": "eph",
@@ -4025,13 +4040,12 @@
     "wilaya_code": "13",
     "commune_code": "1301",
     "commune": "Tlemcen",
-    "lat": 34.863915,
-    "lng": -1.303004,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
+    "lat": 34.882777,
+    "lng": -1.316667,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "osm": "node/8873173032",
       "msp": "4560"
     },
     "type": "ehs",
@@ -5287,12 +5301,12 @@
     "name_fr": "Etablissement Hospitalier Spécialisé Chirurgie Cardiaque Clinique Mohamed Abderrahmani",
     "name_ar": null,
     "wilaya_code": "16",
-    "commune_code": "1604",
-    "commune": "Mohamed Belouzdad",
-    "lat": 36.75354,
-    "lng": 3.06228,
+    "commune_code": "1609",
+    "commune": "Bir Mourad Rais",
+    "lat": 36.7343108,
+    "lng": 3.0529602,
     "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "4660"
@@ -5301,7 +5315,13 @@
     "type_label_fr": "Établissement Hospitalier Spécialisé",
     "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
     "sector": "public",
-    "slug": "etablissement-hospitalier-specialise-chirurgie-cardiaque-clinique-mohamed-abderrahmani"
+    "slug": "etablissement-hospitalier-specialise-chirurgie-cardiaque-clinique-mohamed-abderrahmani",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.7343108,3.0529602"
+    ]
   },
   {
     "id": "16-ehs-04",
@@ -5509,22 +5529,27 @@
     "name_fr": null,
     "name_ar": "المؤسسة الإستشفائية المتخصصة في جراحة القلب عيادة عبد الرحماني محمد",
     "wilaya_code": "16",
-    "commune_code": "1619",
-    "commune": "Bachedjerah",
-    "lat": 36.720897,
-    "lng": 3.101747,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
+    "commune_code": "1609",
+    "commune": "Bir Mourad Rais",
+    "lat": 36.7343108,
+    "lng": 3.0529602,
+    "geo_precision": "approximate",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
-      "osm": "way/1171998839",
       "msp": "4661"
     },
     "type": "ehs",
     "type_label_fr": "Établissement Hospitalier Spécialisé",
     "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
     "sector": "public",
-    "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%81%d9%8a-%d8%ac%d8%b1%d8%a7%d8%ad"
+    "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%81%d9%8a-%d8%ac%d8%b1%d8%a7%d8%ad",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.7343108,3.0529602"
+    ]
   },
   {
     "id": "16-ehs-14",
@@ -6687,13 +6712,13 @@
     "wilaya_code": "19",
     "commune_code": "1901",
     "commune": "Setif",
-    "lat": 36.199147,
-    "lng": 5.402254,
+    "lat": 36.190262,
+    "lng": 5.402921,
     "geo_precision": "exact",
     "geo_method": "osm_point",
     "source": "msp",
     "refs": {
-      "osm": "node/1745778343",
+      "osm": "node/6444000985",
       "msp": "4750"
     },
     "type": "ehs",
@@ -8129,10 +8154,10 @@
     "wilaya_code": "23",
     "commune_code": "2308",
     "commune": "Seraidi",
-    "lat": 36.91129,
-    "lng": 7.666667,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 36.9093728,
+    "lng": 7.6766901,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "4914"
@@ -8141,7 +8166,13 @@
     "type_label_fr": "Établissement Hospitalier Spécialisé",
     "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
     "sector": "public",
-    "slug": "etablissement-hospitalier-specialise-reeducation-readaptation-fonctionnelle-seraidi"
+    "slug": "etablissement-hospitalier-specialise-reeducation-readaptation-fonctionnelle-seraidi",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.9093728,7.6766901"
+    ]
   },
   {
     "id": "23-eph-01",
@@ -10475,13 +10506,12 @@
     "wilaya_code": "31",
     "commune_code": "3101",
     "commune": "Oran",
-    "lat": 35.693276,
-    "lng": -0.639028,
-    "geo_precision": "exact",
-    "geo_method": "wikidata_point",
+    "lat": 35.708333,
+    "lng": -0.6331,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "wikidata": "Q7894776",
       "msp": "5158"
     },
     "type": "chu",
@@ -12969,10 +12999,10 @@
     "wilaya_code": "41",
     "commune_code": "4115",
     "commune": "M'daourouche",
-    "lat": 36.077309,
-    "lng": 7.821238,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 36.0768497,
+    "lng": 7.8309413,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "5335"
@@ -12981,7 +13011,13 @@
     "type_label_fr": "Établissement Public de Santé de Proximité",
     "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
     "sector": "public",
-    "slug": "etablissement-public-de-sante-de-proximite-mdaourouch-souk-ahras"
+    "slug": "etablissement-public-de-sante-de-proximite-mdaourouch-souk-ahras",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.0768497,7.8309413"
+    ]
   },
   {
     "id": "41-epsp-02",
@@ -13101,10 +13137,10 @@
     "wilaya_code": "42",
     "commune_code": "4215",
     "commune": "Nador",
-    "lat": 36.569391,
-    "lng": 2.393549,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 36.5695179,
+    "lng": 2.3874644,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "5354"
@@ -13113,7 +13149,13 @@
     "type_label_fr": "Établissement Hospitalier Spécialisé",
     "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
     "sector": "public",
-    "slug": "etablissement-hospitalier-specialise-psychiatrique-nador"
+    "slug": "etablissement-hospitalier-specialise-psychiatrique-nador",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.5695179,2.3874644"
+    ]
   },
   {
     "id": "42-ehs-04",
@@ -13521,10 +13563,10 @@
     "wilaya_code": "43",
     "commune_code": "4330",
     "commune": "Ain Beida Harriche",
-    "lat": 36.395968,
-    "lng": 5.893333,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 36.3948107,
+    "lng": 5.8942551,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "5380"
@@ -13533,7 +13575,13 @@
     "type_label_fr": "Établissement Public de Santé de Proximité",
     "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
     "sector": "public",
-    "slug": "etablissement-public-de-sante-de-proximite-ain-beida-heriche"
+    "slug": "etablissement-public-de-sante-de-proximite-ain-beida-heriche",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=36.3948107,5.8942551"
+    ]
   },
   {
     "id": "43-epsp-02",
@@ -14029,13 +14077,12 @@
     "wilaya_code": "45",
     "commune_code": "4503",
     "commune": "Ain Sefra",
-    "lat": 32.756467,
-    "lng": -0.583187,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
+    "lat": 32.75,
+    "lng": -0.5833,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "osm": "node/6175090785",
       "msp": "5405"
     },
     "type": "hopital",
@@ -14980,10 +15027,10 @@
     "wilaya_code": "52",
     "commune_code": "5206",
     "commune": "Tabelbala",
-    "lat": 29.41005,
-    "lng": -3.25261,
-    "geo_precision": "approximate",
-    "geo_method": "commune_centroid",
+    "lat": 29.407419,
+    "lng": -3.258131,
+    "geo_precision": "exact",
+    "geo_method": "owner_verified",
     "source": "msp",
     "refs": {
       "msp": "5507"
@@ -14992,7 +15039,13 @@
     "type_label_fr": "Établissement Public de Santé de Proximité",
     "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
     "sector": "public",
-    "slug": "etablissement-public-de-sante-de-proximite-tebelbala"
+    "slug": "etablissement-public-de-sante-de-proximite-tebelbala",
+    "review_status": "corrected",
+    "reviewed_at": "2026-09-30",
+    "reviewed_by": "GeoAlgeria owner",
+    "review_evidence": [
+      "https://www.google.com/maps?q=29.407419,-3.258131"
+    ]
   },
   {
     "id": "53-eph-01",
@@ -15092,13 +15145,12 @@
     "wilaya_code": "55",
     "commune_code": "5501",
     "commune": "Touggourt",
-    "lat": 33.099595,
-    "lng": 6.061674,
-    "geo_precision": "exact",
-    "geo_method": "osm_point",
+    "lat": 33.1,
+    "lng": 6.05796,
+    "geo_precision": "approximate",
+    "geo_method": "commune_centroid",
     "source": "msp",
     "refs": {
-      "osm": "way/321928730",
       "msp": "5521"
     },
     "type": "ehs",

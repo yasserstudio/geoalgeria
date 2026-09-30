@@ -198,43 +198,41 @@ test("writeRetiredIds: an empty ledger already on disk is removed", (t) => {
   assert.equal(existsSync(join(dir, "retired-ids.json")), false);
 });
 
+// mosquees, not sante: writePackageV2 loads quality/overrides/<pkg>.json by the
+// package name, and sante has a reviewed-correction ledger whose records this
+// one-row fixture does not contain.
 test("writePackageV2: a package with no retirement ships no ledger", (t) => {
   const dir = mkdtempSync(join(tmpdir(), "geoalgeria-writer-ledger-"));
   t.after(() => rmSync(dir, { recursive: true, force: true }));
   const ROW = {
-    id: "16-eph-01",
-    name: "Etablissement Public Hospitalier X",
-    name_fr: "Etablissement Public Hospitalier X",
-    name_ar: null,
+    id: "16-0001",
+    name: "Mosquée X",
+    name_fr: "Mosquée X",
+    name_ar: "مسجد س",
     wilaya_code: "16",
     commune_code: "1601",
     commune: "Alger Centre",
-    lat: 36.75,
-    lng: 3.06,
-    geo_precision: "approximate",
-    geo_method: "commune_centroid",
-    source: "msp",
-    refs: { msp: "1" },
-    type: "eph",
-    type_label_fr: "Etablissement Public Hospitalier",
-    type_label_ar: "المؤسسة العمومية الإستشفائية",
-    sector: "public",
-    slug: "x",
+    lat: 36.752345,
+    lng: 3.061234,
+    geo_precision: "exact",
+    geo_method: "osm_node",
+    source: "osm",
+    refs: { osm: "node/1" },
   };
   const write = (retiredIds) =>
     writePackageV2({
-      pkg: "sante",
+      pkg: "mosquees",
       dir,
-      files: [{ file: "sante.json", rows: [ROW] }],
-      meta: MIGRATIONS.sante.meta,
+      files: [{ file: "mosquees.json", rows: [ROW] }],
+      meta: MIGRATIONS.mosquees.meta,
       updated: "2026-09-30",
       retrieved: "2026-09-30",
       retiredIds,
     });
   write(new Set());
   assert.equal(existsSync(join(dir, "retired-ids.json")), false);
-  write(new Set(["16-eph-09"]));
-  assert.deepEqual([...readRetiredIds(dir)], ["16-eph-09"]);
+  write(new Set(["16-0009"]));
+  assert.deepEqual([...readRetiredIds(dir)], ["16-0009"]);
   write(new Set());
   assert.equal(existsSync(join(dir, "retired-ids.json")), false);
 });

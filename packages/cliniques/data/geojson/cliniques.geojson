@@ -9438,6 +9438,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.237932,
+          31.590962
+        ]
+      },
+      "properties": {
+        "id": "08-00007",
+        "name": "Kerroumi Mohammed",
+        "name_fr": "Kerroumi Mohammed",
+        "name_ar": null,
+        "wilaya_code": "08",
+        "commune_code": "0801",
+        "commune": "Bechar",
+        "lat": 31.590962,
+        "lng": -2.237932,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/330434664"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -2.217911,
           31.621342
         ]
@@ -27006,6 +27042,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.101747,
+          36.720897
+        ]
+      },
+      "properties": {
+        "id": "16-00227",
+        "name": "عيادة متعددة الخدمات حي البدر",
+        "name_fr": "Polyclinique Hai El Badr",
+        "name_ar": "عيادة متعددة الخدمات حي البدر",
+        "wilaya_code": "16",
+        "commune_code": "1619",
+        "commune": "Bachedjerah",
+        "lat": 36.720897,
+        "lng": 3.101747,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/1171998839"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": null,
+        "address": "شارع باش جراح",
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           3.050908,
           36.770556
         ]
@@ -32969,6 +33041,42 @@
         "type": "clinique",
         "type_label_fr": "Clinique",
         "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.402254,
+          36.199147
+        ]
+      },
+      "properties": {
+        "id": "19-00004",
+        "name": "Centre de santé bel air",
+        "name_fr": "Centre de santé bel air",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": "1901",
+        "commune": "Setif",
+        "lat": 36.199147,
+        "lng": 5.402254,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/1745778343"
+        },
+        "type": "centre_sante",
+        "type_label_fr": "Centre de santé",
+        "type_label_ar": "مركز صحي",
         "sector": null,
         "speciality": null,
         "address": null,

@@ -4,12 +4,12 @@
   "title_fr": "Cliniques et structures de soins d'Algérie",
   "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
   "title_en": "Algeria clinics & care facilities",
-  "record_count": 1914,
-  "geocoded_count": 1914,
+  "record_count": 1917,
+  "geocoded_count": 1917,
   "geocoded_pct": 100,
   "precision": {
-    "exact": 1082,
-    "approximate": 832
+    "exact": 1083,
+    "approximate": 834
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -33,19 +33,19 @@
   ],
   "license": "ODbL-1.0",
   "updated": "2026-08-31",
-  "named": 1608,
+  "named": 1611,
   "by_type": {
-    "polyclinique": 405,
-    "clinique": 1143,
+    "polyclinique": 406,
+    "clinique": 1144,
     "salle_de_soins": 199,
     "maternite": 26,
-    "centre_sante": 141
+    "centre_sante": 142
   },
   "by_sector": {
-    "public": 615,
+    "public": 616,
     "private": 67
   },
   "with_phone": 116,
-  "with_address": 654,
+  "with_address": 655,
   "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
 }

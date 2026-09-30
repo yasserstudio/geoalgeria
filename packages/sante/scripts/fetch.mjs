@@ -235,7 +235,7 @@ const TRANSLIT = {
   "ظ": "d", "ع": "a", "غ": "gh", "ف": "f", "ق": "k", "ك": "k", "ل": "l", "م": "m",
   "ن": "n", "ه": "h", "و": "ou", "ي": "i", "ء": "", "ى": "a",
 };
-function translitAr(s) {
+export function translitAr(s) {
   const n = normAr(s).replace(/^ال| ال/g, " ").trim(); // drop the definite article
   return [...n].map((c) => (c === " " ? " " : TRANSLIT[c] ?? "")).join("").replace(/\s+/g, " ").trim();
 }
@@ -801,10 +801,13 @@ function titleCaseFr(title) {
 
 // Upgrade commune-centroid coordinates to a precise OSM/Wikidata point. Within
 // each commune, establishments and facilities are matched 1:1 — every facility
-// is used at most once — by shared locality/specialty tokens, with the wilaya
-// and commune names excluded (every facility in the commune carries them, so
-// they can't tell two apart). A lone establishment + lone facility in a commune
-// is matched even without a token overlap. This prevents one facility (e.g. the
+// is used at most once — by a shared SPECIFIC locality/specialty token. The
+// wilaya name, the commune name and the facility-class vocabulary (GENERIC_TOKENS:
+// clinique, hopital, عيادة, مركز …) are all excluded, because every facility in
+// the commune carries them and they cannot tell two apart. A lone establishment +
+// lone facility in a commune is matched even without a token overlap: there the
+// commune itself is the evidence, and there is no second candidate to confuse it
+// with. This prevents one facility (e.g. the
 // city CHU) from being stamped onto every establishment in the commune.
 function refineWithFacilities(establishments, facilities, communesByWilaya, wil, stats) {
   // index facilities by nearest commune (skip null-coded communes)
@@ -863,15 +866,40 @@ function refineWithFacilities(establishments, facilities, communesByWilaya, wil,
     if (ests.length === 1 && facs.length === 1 && !usedE.has(ests[0])) stamp(ests[0], facs[0]);
   }
 }
-// Discriminating tokens of a place string, with wilaya + commune names removed.
+// The facility-class vocabulary: words that say what KIND of place this is, in
+// French and in transliterated Arabic. Every health facility in the country
+// carries some of them, so a shared one is not evidence that two names are the
+// same place. Sharing only `aiadh` (عيادة, clinic) is what stamped the OSM
+// polyclinic way/1171998839, amenity=clinic "Polyclinique Hai El Badr", onto the
+// Arabic record of the EHS cardiac-surgery Clinique Abderrahmani: one generic
+// token, no specific one, a different facility. The specialty signal
+// (`spec_cardio` and friends) is NOT in here: it discriminates.
+const GENERIC_TOKENS = new Set([
+  // French / Latin
+  "etablissement", "etablissements", "public", "publique", "hospitalier",
+  "hospitaliere", "hospitalisation", "specialise", "specialisee", "sante",
+  "proximite", "clinique", "cliniques", "clinic", "polyclinique", "polyclinic",
+  "centre", "center", "hopital", "hospital", "dispensaire", "infirmerie",
+  "salle", "soins", "medical", "medicale", "medico", "unite", "universitaire",
+  "sanitaire", "cabinet", "maternite", "secteur", "ehs", "eph", "epsp", "epse",
+  "chu", "ehu", "cht",
+  // transliterated Arabic (translitAr output)
+  "moussh", "amoumih", "astchfaiih", "astchfai", "mtkhssh", "shh", "llshh",
+  "jouarih", "aiadh", "mstchfi", "mrkz", "mtaddh", "khdmat", "kaah", "alaj",
+  "mshh", "shi", "tbi", "jamai", "ouhdh", "toulid", "aalmtkhssh", "aaadh",
+]);
+const isGeneric = (t) => GENERIC_TOKENS.has(t) || GENERIC_TOKENS.has(squash(t));
+
+// Discriminating tokens of a place string, with wilaya + commune names and the
+// facility-class vocabulary removed.
 function placeTokens(latin, com, wil) {
   const drop = new Set();
   const w = wil.byCode.get(com.wilaya_code);
   for (const s of [norm(w.name_fr).toLowerCase(), translitAr(w.name_ar), norm(com.name_fr).toLowerCase(), translitAr(com.name_ar)])
     for (const t of s.split(" ")) if (t.length >= 3) drop.add(t);
-  return latin.split(" ").filter((t) => t.length >= 3 && !drop.has(t));
+  return latin.split(" ").filter((t) => t.length >= 3 && !drop.has(t) && !isGeneric(t));
 }
-function estTokens(est, com, wil) {
+export function estTokens(est, com, wil) {
   const fr = est.name_fr ? classify(est.name_fr).locality.toLowerCase() : "";
   const ar = est.name_ar ? translitAr(classify(est.name_ar).locality) : "";
   const toks = [...placeTokens(fr, com, wil), ...placeTokens(ar, com, wil)];
@@ -879,7 +907,7 @@ function estTokens(est, com, wil) {
   if (spec) toks.push("spec_" + spec);
   return toks;
 }
-function facilityTokens(name, com, wil) {
+export function facilityTokens(name, com, wil) {
   if (!name) return [];
   const lang = isArabic(name) ? "ar" : "fr";
   const latin = lang === "ar" ? translitAr(name) : norm(name).toLowerCase();
@@ -888,7 +916,7 @@ function facilityTokens(name, com, wil) {
   if (spec) toks.push("spec_" + spec);
   return toks;
 }
-function overlapCount(a, b) {
+export function overlapCount(a, b) {
   if (!a.length || !b.length) return 0;
   let hit = 0;
   for (const x of a) for (const y of b) if (lev1(squash(x), squash(y)) <= 1) { hit++; break; }

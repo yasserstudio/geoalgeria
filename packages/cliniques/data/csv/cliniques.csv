@@ -261,6 +261,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 08-00004,Sidi moumen,Sidi moumen,,08,0801,Bechar,31.725327,-1.6012,exact,osm_node,osm,"{""osm"":""node/8364059717""}",clinique,Clinique,عيادة / مصحة,,,,,,
 08-00005,الأمومة العبادلة,Maternité de ABADLA,الأمومة العبادلة,08,0817,Abadla,31.026704,-2.706242,approximate,osm_centroid,osm,"{""osm"":""way/257152997""}",maternite,Maternité / clinique d'accouchement,مصحة توليد,,,العبادلة,,,
 08-00006,مركز الصحة الجواري,Etablissement Hospitalier de Proximité,مركز الصحة الجواري,08,0817,Abadla,31.030104,-2.709874,approximate,osm_centroid,osm,"{""osm"":""way/257153078""}",centre_sante,Centre de santé,مركز صحي,,,العبادلة,,,true
+08-00007,Kerroumi Mohammed,Kerroumi Mohammed,,08,0801,Bechar,31.590962,-2.237932,approximate,osm_centroid,osm,"{""osm"":""way/330434664""}",clinique,Clinique,عيادة / مصحة,,,,,,
 08-00008,HMRB 3°RM,HMRB 3°RM,,08,0801,Bechar,31.621342,-2.217911,approximate,osm_centroid,osm,"{""osm"":""way/272971869""}",clinique,Clinique,عيادة / مصحة,,,,,,true
 08-00009,SASSI,SASSI,,08,0801,Bechar,31.614733,-2.215105,approximate,osm_centroid,osm,"{""osm"":""way/273680169""}",clinique,Clinique,عيادة / مصحة,,,,,,
 08-00010,polyclinique Croix Rouge,polyclinique Croix Rouge,,08,0801,Bechar,31.615622,-2.206357,approximate,osm_centroid,osm,"{""osm"":""way/281228029""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,true
@@ -749,6 +750,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00224,Centre de rééducation médicale Tassili,Centre de rééducation médicale Tassili,,16,1650,Cheraga,36.768556,2.970677,approximate,osm_centroid,osm,"{""osm"":""way/1171645275""}",centre_sante,Centre de santé,مركز صحي,,,172,0561368411,Su-Th 09:00-17:00,
 16-00225,مركز التشخيص الطبي للذاكرة,Centre médical de la mémoire,مركز التشخيص الطبي للذاكرة,16,1610,El Biar,36.766898,3.027202,approximate,osm_centroid,osm,"{""osm"":""way/1171827477""}",clinique,Clinique,عيادة / مصحة,,,04 Rue Boufatit Père et Fils,021 79 78 33,Su-Th 09:00-18:00,
 16-00226,,,,16,1620,Dar El Beida,36.712453,3.210181,approximate,osm_centroid,osm,"{""osm"":""way/1171837881""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,true
+16-00227,عيادة متعددة الخدمات حي البدر,Polyclinique Hai El Badr,عيادة متعددة الخدمات حي البدر,16,1619,Bachedjerah,36.720897,3.101747,approximate,osm_centroid,osm,"{""osm"":""way/1171998839""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,شارع باش جراح,,,
 16-00228,Centre de santé de proximité Krim Belkacem,Centre de santé de proximité Krim Belkacem,مركز الصحة الجواري كريم بلقاسم,16,1601,Alger Centre,36.770556,3.050908,approximate,osm_centroid,osm,"{""osm"":""way/1172846676""}",centre_sante,Centre de santé,مركز صحي,,,الجزائر,,,
 16-00229,polyclinique d'el Kahla,polyclinique d'el Kahla,,16,1634,Bir Touta,36.636071,3.009664,approximate,osm_centroid,osm,"{""osm"":""way/1173925108""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,Birtouta 16045,,,
 16-00230,العيادة متعددة الخدمات - الشهيد ياهوني البشير,,العيادة متعددة الخدمات - الشهيد ياهوني البشير,16,1630,Bordj El Kiffan,36.747555,3.196202,approximate,osm_centroid,osm,"{""osm"":""way/1415710539""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,
@@ -915,6 +917,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00001,عيادة متخصصة في طب وجراحة الأنف والأذن والحنجرة,,عيادة متخصصة في طب وجراحة الأنف والأذن والحنجرة,19,1901,Setif,36.19646,5.408827,exact,osm_node,osm,"{""osm"":""node/10616455408""}",clinique,Clinique,عيادة / مصحة,,,,0656244444,,
 19-00002,,,,19,1955,Maouaklane,36.396061,5.074537,exact,osm_node,osm,"{""osm"":""node/11516158269""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00003,عيادة واستعجالات القدس,,عيادة واستعجالات القدس,19,1908,Bir-El-Arch,36.133519,5.842248,exact,osm_node,osm,"{""osm"":""node/12757076631""}",clinique,Clinique,عيادة / مصحة,,,,,,
+19-00004,Centre de santé bel air,Centre de santé bel air,,19,1901,Setif,36.199147,5.402254,exact,osm_node,osm,"{""osm"":""node/1745778343""}",centre_sante,Centre de santé,مركز صحي,,,,,,
 19-00005,Clinique El Hidhab,El Hidhab,الهضاب,19,1901,Setif,36.200806,5.4099,exact,osm_node,osm,"{""osm"":""node/1965123591""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00006,Clinique El Moncef,El Moncef,المنصف,19,1901,Setif,36.200624,5.41353,exact,osm_node,osm,"{""osm"":""node/1965123646""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00007,Salle de Soin,Salle de Soin,,19,1911,Hamma,35.684815,5.414336,exact,osm_node,osm,"{""osm"":""node/2306962943""}",salle_de_soins,Salle de soins / dispensaire,قاعة علاج / مستوصف,public,,Badjerou,,,
