@@ -12,12 +12,14 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { mkdtempSync, rmSync } from "node:fs";
+import { existsSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
+  MIGRATIONS,
   carryOverIds,
   readRetiredIds,
+  writePackageV2,
   writeRetiredIds,
 } from "../scripts/lib/v2-transforms.mjs";
 
@@ -174,4 +176,65 @@ test("carryOverIds: refuses an ephemeral missing ledger", () => {
     () => carryOverIds([], [], keyOf, "t"),
     /persistent retiredIds Set is required/,
   );
+});
+
+// An empty ledger is not a fact about the data, and every file under a package's
+// data/ enters its npm tarball, so a package that has never retired an id must
+// ship no retired-ids.json at all.
+test("writeRetiredIds: an empty ledger is not written", (t) => {
+  const dir = mkdtempSync(join(tmpdir(), "geoalgeria-empty-ledger-"));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  writeRetiredIds(dir, new Set());
+  assert.equal(existsSync(join(dir, "retired-ids.json")), false);
+  assert.deepEqual([...readRetiredIds(dir)], []);
+});
+
+test("writeRetiredIds: an empty ledger already on disk is removed", (t) => {
+  const dir = mkdtempSync(join(tmpdir(), "geoalgeria-empty-ledger-"));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  writeRetiredIds(dir, new Set(["06-00002"]));
+  assert.deepEqual([...readRetiredIds(dir)], ["06-00002"]);
+  writeRetiredIds(dir, new Set());
+  assert.equal(existsSync(join(dir, "retired-ids.json")), false);
+});
+
+test("writePackageV2: a package with no retirement ships no ledger", (t) => {
+  const dir = mkdtempSync(join(tmpdir(), "geoalgeria-writer-ledger-"));
+  t.after(() => rmSync(dir, { recursive: true, force: true }));
+  const ROW = {
+    id: "16-eph-01",
+    name: "Etablissement Public Hospitalier X",
+    name_fr: "Etablissement Public Hospitalier X",
+    name_ar: null,
+    wilaya_code: "16",
+    commune_code: "1601",
+    commune: "Alger Centre",
+    lat: 36.75,
+    lng: 3.06,
+    geo_precision: "approximate",
+    geo_method: "commune_centroid",
+    source: "msp",
+    refs: { msp: "1" },
+    type: "eph",
+    type_label_fr: "Etablissement Public Hospitalier",
+    type_label_ar: "المؤسسة العمومية الإستشفائية",
+    sector: "public",
+    slug: "x",
+  };
+  const write = (retiredIds) =>
+    writePackageV2({
+      pkg: "sante",
+      dir,
+      files: [{ file: "sante.json", rows: [ROW] }],
+      meta: MIGRATIONS.sante.meta,
+      updated: "2026-09-30",
+      retrieved: "2026-09-30",
+      retiredIds,
+    });
+  write(new Set());
+  assert.equal(existsSync(join(dir, "retired-ids.json")), false);
+  write(new Set(["16-eph-09"]));
+  assert.deepEqual([...readRetiredIds(dir)], ["16-eph-09"]);
+  write(new Set());
+  assert.equal(existsSync(join(dir, "retired-ids.json")), false);
 });
