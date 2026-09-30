@@ -39,13 +39,14 @@ import {
   pointInGeometry,
   wilayaNeighbours,
 } from "../packages/schema/index.js";
+// The seven carriers and their readers are shared with the OSM-seat guard, so the
+// two standards are held over the same set of files by construction.
+import { COMMUNE_COUNT, COPIES } from "./lib/commune-carriers.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
 const readText = (...p) => readFileSync(join(DATA, ...p), "utf-8");
 const readJson = (...p) => JSON.parse(readText(...p));
-
-const COMMUNE_COUNT = 1541;
 
 // Commune rows whose point cannot be asked about, pinned per file so a second one
 // cannot appear unnoticed. Stidia (w27) carries longitude 0 in every JSON/CSV/
@@ -59,71 +60,6 @@ const boundaryFc = readJson("geojson", "wilaya-boundaries.geojson");
 const BOUNDARIES = loadBoundaries(boundaryFc);
 const NEIGHBOURS = wilayaNeighbours(boundaryFc);
 
-/** Every file in packages/dataset that carries a commune point.
- *  [label, () => {name, wilaya_code, lat, lng}[]] */
-const COPIES = [
-  [
-    "data/communes_w*.json",
-    () =>
-      ["communes_w1_w23", "communes_w24_w48", "communes_w49_w69"]
-        .flatMap((f) => readJson(`${f}.json`))
-        .map((c) => ({ name: c.name_fr, w: c.wilaya_code, lat: c.latitude, lng: c.longitude })),
-  ],
-  [
-    "data/algeria.json",
-    () =>
-      readJson("algeria.json").flatMap((wil) =>
-        (wil.communes || []).map((c) => ({
-          name: c.name_fr,
-          w: c.wilaya_code,
-          lat: c.latitude,
-          lng: c.longitude,
-        })),
-      ),
-  ],
-  [
-    "data/geojson/communes.geojson",
-    () =>
-      readJson("geojson", "communes.geojson").features.map((f) => ({
-        name: f.properties.name_fr,
-        w: f.properties.wilaya_code,
-        lat: f.geometry.coordinates[1],
-        lng: f.geometry.coordinates[0],
-      })),
-  ],
-  [
-    // name_fr,name_ar,wilaya_code,daira,postal_code,latitude,longitude,code_commune
-    "data/csv/communes.csv",
-    () =>
-      readText("csv", "communes.csv")
-        .trim()
-        .split(/\r?\n/)
-        .slice(1)
-        .map((line) => line.split(","))
-        .filter((c) => c.length === 8)
-        .map((c) => ({ name: c[0], w: Number(c[2]), lat: Number(c[5]), lng: Number(c[6]) })),
-  ],
-  [
-    // …, wilaya_code, 'daira', 'postal', latitude, longitude, code_commune)
-    // Anchored at the end of the row: commune names carry SQL-escaped apostrophes
-    // (M''fatha), so a left-anchored quoted-field pattern drops them silently.
-    // postal_code matches NULL as well as a quoted value: five of the 13 communes
-    // added in the 1,541 completion have no citable postal code, and a pattern that
-    // only accepted '\d+' would drop exactly those rows instead of checking them.
-    "data/sql/full.sql",
-    () => {
-      const re =
-        /^ {2}\(\d+, '((?:[^']|'')*)', '(?:[^']|'')*', (\d+), '(?:[^']|'')*', (?:'\d+'|NULL), (-?[\d.]+|NULL), (-?[\d.]+|NULL), (?:\d+|NULL)\)[,;]$/;
-      const num = (s) => (s === "NULL" ? NaN : Number(s));
-      const out = [];
-      for (const line of readText("sql", "full.sql").split("\n")) {
-        const m = line.match(re);
-        if (m) out.push({ name: m[1].replace(/''/g, "'"), w: Number(m[2]), lat: num(m[3]), lng: num(m[4]) });
-      }
-      return out;
-    },
-  ],
-];
 
 for (const [label, load] of COPIES) {
   test(`${label}: every commune centroid sits in its own wilaya or a neighbour`, () => {
@@ -197,19 +133,18 @@ for (const [label, load] of COPIES) {
 const TOLERANCE_M = 500;
 
 // Centres known to sit further out than that, pinned with what was checked, so
-// they neither fail the build nor hide a new one. All three are cases where the
-// commune's own OSM admin_centre node is outside the shipped wilaya outline as
-// well, which makes the outline the suspect and not the point.
-const OUTSIDE_WILAYA = {
-  // Touggourt (55) was carved out of Ouargla (30) in 2019 and the shipped 55
-  // outline does not reach these two: both points, and both OSM chef-lieu nodes,
-  // fall inside 30. OSM still refs them 3020 and 3014.
-  "El Alia (w55)": 53201,
-  "El-Hadjira (w55)": 51107,
-  // Ghardaia (47) / El Menia (58) border: the point and the chef-lieu node are
-  // both inside 58.
-  "Mansoura (w47)": 5233,
-};
+// they neither fail the build nor hide a new one.
+//
+// Empty since the wilaya-membership correction of private tracker #171. The three
+// rows that used to be pinned here, El Alia (w55) at 53,201 m, El-Hadjira (w55)
+// at 51,107 m and Mansoura (w47) at 5,233 m, were never point errors: each
+// commune's own OSM chef-lieu node was outside the shipped wilaya outline too,
+// which made the outline the suspect. It was. Touggourt (55) and El Meniaa (58)
+// were carved out of Ouargla (30) and Ghardaia (47) in 2019 and OpenStreetMap
+// never re-cut the admin_level=4 relations, so the three communes' territory
+// stayed with the mother wilaya. scripts/fix-wilaya-membership.mjs moved it and
+// test/wilaya-membership.test.mjs holds that correction in place.
+const OUTSIDE_WILAYA = {};
 
 /** Metres from (lng,lat) to the nearest edge of a Polygon/MultiPolygon.
  *  Equirectangular around the point: at these distances the projection error is

@@ -2,7 +2,7 @@
 
 # GeoAlgeria
 
-> Le package de géodonnées algériennes – 69 wilayas, 556 daïras, 1 541 communes. À un `npm install` près.
+> Le package de géodonnées algériennes – 69 wilayas, 555 daïras, 1 541 communes. À un `npm install` près.
 
 Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez encore des jeux de données bloqués à 48 wilayas ? GeoAlgeria est la première géodonnée algérienne installable via npm et validée par CI – mise à jour pour la réforme de 2026. JSON, CSV, GeoJSON, SQL, TypeScript.
 
@@ -15,7 +15,7 @@ Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez e
 
 ## En bref
 
-L'Algérie compte **69 wilayas** (provinces), **556 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
+L'Algérie compte **69 wilayas** (provinces) et **1 541 communes** (municipalités), officielles depuis **avril 2026**, chaque wilaya étant divisée en daïras (districts). Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **555 daïras dans le jeu de données**. C'est le décompte propre à ce jeu de données et non un total officiel : aucun total de daïras postérieur à 2026 n'a été publié (le décret 26-206 du 25 mai 2026 ne fixe que les chefs-lieux), et les 564 que ce README qualifiait d'officielles comprenaient 9 daïras fantômes issues de 13 enregistrements de communes en double, comme le [journal des modifications](CHANGELOG.md) le consigne pour la v1.1.2. Dernière validation : juillet 2026.
 
 ---
 
@@ -66,7 +66,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // les 69 wilayas
 dz.communes;                   // les 1 541 communes
-dz.dairas;                     // les 556 daïras
+dz.dairas;                     // les 555 daïras
 dz.ecommerce;                  // jeu de données plat pour formulaires d'adresse
 dz.postOffices;                // 3 908 bureaux Algérie Poste
 dz.atms;                       // 2 026 distributeurs automatiques
@@ -143,7 +143,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 |---------|--------|-----------------|------------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Utilisation en fichier unique |
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
-| `data/dairas.json` | JSON | 556 | Liste des daïras avec nombre de communes |
+| `data/dairas.json` | JSON | 555 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
 | `data/csv/wilayas.csv` | CSV | 69 | Tableurs, imports |
@@ -286,9 +286,10 @@ Deux parties des données proviennent d'**OpenStreetMap**, sont **© les contrib
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
-- 62 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
-  `admin_level=8` de la commune elle-même (56 de son nœud `admin_centre` le 2026-09-27, 6 du
-  centroïde de la relation en 2.1.0), partout où ces valeurs apparaissent.
+- 251 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
+  `admin_level=8` de la commune elle-même (245 de son nœud `admin_centre`, 56 le 2026-09-27 et
+  189 le 2026-09-29, et 6 du centroïde de la relation en 2.1.0), partout où ces valeurs
+  apparaissent.
 
 Si vous utilisez ou redistribuez l'une de ces deux parties, vous devez **attribuer aux
 contributeurs d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.
