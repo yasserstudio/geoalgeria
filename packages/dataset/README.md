@@ -2,7 +2,7 @@
 
 # GeoAlgeria
 
-> The Algerian geodata package, 69 wilayas, 555 dairas, 1,541 communes. One `npm install` away.
+> The Algerian geodata package, 69 wilayas, 551 dairas, 1,541 communes. One `npm install` away.
 
 Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata, updated for the 2026 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
 
@@ -15,7 +15,9 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces) and **1,541 communes** (municipalities), official since **April 2026**, each wilaya divided into dairas (districts). This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **555 dairas in the dataset**. That is this dataset's own count, not an official total: no post-2026 daira total has been published (decree 26-206 of 25 May 2026 names the chefs-lieux only), and the 564 this README used to call official included 9 phantom dairas produced by 13 duplicate commune records, as the [changelog](CHANGELOG.md) records for v1.1.2. Last validated: July 2026.
+Algeria has **69 wilayas** (provinces) and **1,541 communes** (municipalities), official since **April 2026**, each wilaya divided into dairas (districts). This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **551 dairas in the dataset**. That is this dataset's own count, not an official total: no post-2026 national daira total has been published (decree 26-206 of 25 May 2026 names the chefs-lieux only), and the 564 this README used to call official included 9 phantom dairas produced by 13 duplicate commune records, as the [changelog](CHANGELOG.md) records for v1.1.2. Last validated: September 2026.
+
+**142 of the 551 are settled by decree.** Executive decree n° 26-253 of 15 July 2026, published in the *Journal Officiel* n° 52 of 21 July 2026, fixes the communes each daira chief administers in wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69, and names 142 dairas there. It leaves the other 48 wilayas under decree n° 91-306 of 24 August 1991, whose lists this dataset holds and which come to 409. The reading of the annex is in [`research/_dairas/`](../../research/_dairas/).
 
 ---
 
@@ -66,7 +68,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
-dz.dairas;                     // all 555 dairas
+dz.dairas;                     // all 551 dairas
 dz.ecommerce;                  // flat dataset for address forms
 dz.postOffices;                // 3,908 Algérie Poste offices
 dz.atms;                       // 2,026 ATMs
@@ -143,7 +145,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 |------|--------|---------|----------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
-| `data/dairas.json` | JSON | 555 | Daira list with commune counts |
+| `data/dairas.json` | JSON | 551 | Daira list with commune counts |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |

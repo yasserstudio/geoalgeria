@@ -1,0 +1,1354 @@
+{
+  "source": {
+    "decree": "Decret executif n 26-253 du 30 Moharram 1448 correspondant au 15 juillet 2026 modifiant et completant le decret executif n 91-306 du 24 aout 1991 fixant la liste des communes animees par chaque chef de daira",
+    "journal": "Journal officiel de la Republique algerienne democratique et populaire n 52",
+    "date": "2026-07-21",
+    "edition": "French",
+    "pages": "9-16 (annex: 10-16)",
+    "publisher": "Secretariat general du Gouvernement (joradp.dz)",
+    "provenance": "owner_supplied_artifact",
+    "url": null,
+    "note": "joradp.dz declines automated fetches, so the PDF was downloaded by the project owner rather than by a fetcher; it is not committed (see research/_dairas/README.md).",
+    "pdf_bytes": 187304,
+    "pdf_sha256": "438d83be0a5b82d646a1ba1035f2ec13cbcb6b92e300e08f4887c4f4ee78d268",
+    "retrieved": "2026-09-29",
+    "extracted_by": "research/_dairas/extract_decree_26_253.py"
+  },
+  "unchanged": [
+    {
+      "note": "(sans changement de la wilaya d'Adrar à la wilaya de Chlef)",
+      "wilaya_codes": [
+        1,
+        2
+      ]
+    },
+    {
+      "note": "(Wilaya d'Oum El Bouaghi sans changement)",
+      "wilaya_codes": [
+        4
+      ]
+    },
+    {
+      "note": "(Wilaya de Béjaïa sans changement)",
+      "wilaya_codes": [
+        6
+      ]
+    },
+    {
+      "note": "(sans changement de la wilaya de Béchar à la wilaya de Tamenghasset)",
+      "wilaya_codes": [
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "note": "(sans changement de la wilaya de Tizi-Ouzou à la wilaya d'Alger)",
+      "wilaya_codes": [
+        15,
+        16
+      ]
+    },
+    {
+      "note": "(sans changement de la wilaya de Jijel à la wilaya de Constantine)",
+      "wilaya_codes": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "note": "(Wilaya de Mostaganem sans changement)",
+      "wilaya_codes": [
+        27
+      ]
+    },
+    {
+      "note": "(sans changement de la wilaya de Mascara à la wilaya d'Oran)",
+      "wilaya_codes": [
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "note": "(sans changement de la wilaya d'Illizi à la wilaya d'El Meniaâ)",
+      "wilaya_codes": [
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    }
+  ],
+  "wilayas": [
+    {
+      "wilaya_code": 3,
+      "name_printed": "LAGHOUAT",
+      "dairas": [
+        {
+          "seat": "Laghouat",
+          "communes": [
+            "Laghouat"
+          ]
+        },
+        {
+          "seat": "Ksar El Hirane",
+          "communes": [
+            "Ksar El Hirane",
+            "Benacer Benchohra"
+          ]
+        },
+        {
+          "seat": "Aïn Madhi",
+          "communes": [
+            "Aïn Madhi",
+            "Kheneg",
+            "El Haouita",
+            "Tadjemout",
+            "Tadjrouna"
+          ]
+        },
+        {
+          "seat": "Hassi R'Mel",
+          "communes": [
+            "Hassi R'Mel",
+            "Hassi Delaa"
+          ]
+        },
+        {
+          "seat": "Sidi Makhlouf",
+          "communes": [
+            "Sidi Makhlouf",
+            "El Assafia"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 5,
+      "name_printed": "BATNA",
+      "dairas": [
+        {
+          "seat": "Batna",
+          "communes": [
+            "Batna",
+            "Oued Chaaba",
+            "Fesdis"
+          ]
+        },
+        {
+          "seat": "Ras El Aïoun",
+          "communes": [
+            "Ras El Aïoun",
+            "Gosbat",
+            "Guigba",
+            "Ouled Sellem",
+            "Rahbat",
+            "Talkhamt"
+          ]
+        },
+        {
+          "seat": "Ain Touta",
+          "communes": [
+            "Aïn Touta",
+            "Ouled Aouf",
+            "Maafa",
+            "Béni Fédhala El Hakania"
+          ]
+        },
+        {
+          "seat": "Merouana",
+          "communes": [
+            "Merouana",
+            "Hidoussa",
+            "Ksar Belezma",
+            "Oued El Ma"
+          ]
+        },
+        {
+          "seat": "N'Gaous",
+          "communes": [
+            "N'Gaous",
+            "Boumagueur",
+            "Sefiane"
+          ]
+        },
+        {
+          "seat": "Seriana",
+          "communes": [
+            "Seriana",
+            "Lazrou",
+            "Zana El Beïda"
+          ]
+        },
+        {
+          "seat": "Elmadher",
+          "communes": [
+            "Elmadher",
+            "Boumia",
+            "Aïn Yagout",
+            "Djerma"
+          ]
+        },
+        {
+          "seat": "Tazoult",
+          "communes": [
+            "Tazoult",
+            "Ouyoun El Assafir"
+          ]
+        },
+        {
+          "seat": "Teniet El Abed",
+          "communes": [
+            "Teniet El Abed",
+            "Chir",
+            "Oued Taga"
+          ]
+        },
+        {
+          "seat": "Arris",
+          "communes": [
+            "Arris",
+            "Tighanimine"
+          ]
+        },
+        {
+          "seat": "Timgad",
+          "communes": [
+            "Timgad",
+            "Ouled Fadel"
+          ]
+        },
+        {
+          "seat": "Chemora",
+          "communes": [
+            "Chemora",
+            "Boulhilat"
+          ]
+        },
+        {
+          "seat": "Aïn Djasser",
+          "communes": [
+            "Aïn Djasser",
+            "El Hassi"
+          ]
+        },
+        {
+          "seat": "T'Kout",
+          "communes": [
+            "T'Kout",
+            "Ghassira",
+            "Kimmel"
+          ]
+        },
+        {
+          "seat": "Bouzina",
+          "communes": [
+            "Bouzina",
+            "Larbaa"
+          ]
+        },
+        {
+          "seat": "Menaa",
+          "communes": [
+            "Menaa",
+            "Tigherghar"
+          ]
+        },
+        {
+          "seat": "Ichmoul",
+          "communes": [
+            "Ichmoul",
+            "Foum Toub",
+            "Inoughissene"
+          ]
+        },
+        {
+          "seat": "Ouled Si Slimane",
+          "communes": [
+            "Ouled Si Slimane",
+            "Lemsane",
+            "Taxlent"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 7,
+      "name_printed": "BISKRA",
+      "dairas": [
+        {
+          "seat": "Biskra",
+          "communes": [
+            "Biskra",
+            "El Hadjeb"
+          ]
+        },
+        {
+          "seat": "Sidi Okba",
+          "communes": [
+            "Sidi Okba",
+            "El Haouch",
+            "Chetma",
+            "Aïn Naga"
+          ]
+        },
+        {
+          "seat": "Tolga",
+          "communes": [
+            "Tolga",
+            "Bouchagroun",
+            "Lichana",
+            "Bordj Ben Azzouz"
+          ]
+        },
+        {
+          "seat": "Ourlal",
+          "communes": [
+            "Ourlal",
+            "Oumache",
+            "Lioua",
+            "M'Lili",
+            "Mekhadma"
+          ]
+        },
+        {
+          "seat": "Zeribet El Oued",
+          "communes": [
+            "Zeribet El Oued",
+            "El Feidh",
+            "Khangat Sidi Nadji",
+            "Meziraa"
+          ]
+        },
+        {
+          "seat": "Foughala",
+          "communes": [
+            "Foughala",
+            "El Ghrous"
+          ]
+        },
+        {
+          "seat": "M'Chounèche",
+          "communes": [
+            "M'Chounèche"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 12,
+      "name_printed": "TEBESSA",
+      "dairas": [
+        {
+          "seat": "Tébessa",
+          "communes": [
+            "Tébessa"
+          ]
+        },
+        {
+          "seat": "El Kouif",
+          "communes": [
+            "El Kouif",
+            "Bekkaria",
+            "Boulhaf Dyr"
+          ]
+        },
+        {
+          "seat": "El Aouinet",
+          "communes": [
+            "El Aouinet",
+            "Boukhadra"
+          ]
+        },
+        {
+          "seat": "Chéria",
+          "communes": [
+            "Chéria",
+            "Thlidjene"
+          ]
+        },
+        {
+          "seat": "El Ogla",
+          "communes": [
+            "El Ogla",
+            "Bedjene",
+            "El Mezeraa",
+            "Stah Guentis"
+          ]
+        },
+        {
+          "seat": "Ouenza",
+          "communes": [
+            "Ouenza",
+            "El Meridj",
+            "Ain Zerga"
+          ]
+        },
+        {
+          "seat": "El Ma Labiod",
+          "communes": [
+            "El Ma Labiod",
+            "Lahouidjbet"
+          ]
+        },
+        {
+          "seat": "Bir Mokkadem",
+          "communes": [
+            "Bir Mokkadem",
+            "Hammamet",
+            "Gourrigueur"
+          ]
+        },
+        {
+          "seat": "Oum Ali",
+          "communes": [
+            "Oum Ali",
+            "Safsaf El Ouesra"
+          ]
+        },
+        {
+          "seat": "Morsott",
+          "communes": [
+            "Morsott",
+            "Bir Dheheb"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 13,
+      "name_printed": "TLEMCEN",
+      "dairas": [
+        {
+          "seat": "Tlemcen",
+          "communes": [
+            "Tlemcen"
+          ]
+        },
+        {
+          "seat": "Maghnia",
+          "communes": [
+            "Maghnia",
+            "Hammam Boughrara"
+          ]
+        },
+        {
+          "seat": "Ghazaouet",
+          "communes": [
+            "Ghazaouet",
+            "Dar Yaghmouracène",
+            "Souahlia",
+            "Tianet"
+          ]
+        },
+        {
+          "seat": "Sabra",
+          "communes": [
+            "Sabra",
+            "Bouhlou"
+          ]
+        },
+        {
+          "seat": "Nédroma",
+          "communes": [
+            "Nédroma",
+            "Djebala"
+          ]
+        },
+        {
+          "seat": "Remchi",
+          "communes": [
+            "Remchi",
+            "Aïn Youcef",
+            "Beni Ouarsous",
+            "Sebaa Chioukh",
+            "El Fehoul"
+          ]
+        },
+        {
+          "seat": "Sebdou",
+          "communes": [
+            "Sebdou"
+          ]
+        },
+        {
+          "seat": "Bab El Assa",
+          "communes": [
+            "Bab El Assa",
+            "Souani",
+            "Souk Thlata"
+          ]
+        },
+        {
+          "seat": "Mansourah",
+          "communes": [
+            "Mansourah",
+            "Tirni Béni Hediel",
+            "Aïn Ghoraba",
+            "Béni Mester"
+          ]
+        },
+        {
+          "seat": "Ouled Mimoun",
+          "communes": [
+            "Ouled Mimoun",
+            "Béni Semiel",
+            "Oued Lakhdar"
+          ]
+        },
+        {
+          "seat": "Chetouane",
+          "communes": [
+            "Chetouane",
+            "Aïn Fezza",
+            "Amieur"
+          ]
+        },
+        {
+          "seat": "Honaïne",
+          "communes": [
+            "Honaïne",
+            "Béni Khellad"
+          ]
+        },
+        {
+          "seat": "Béni Snous",
+          "communes": [
+            "Béni Snous",
+            "Azaïls",
+            "Béni Bahdel"
+          ]
+        },
+        {
+          "seat": "Béni Boussaïd",
+          "communes": [
+            "Béni Boussaïd",
+            "Sidi Medjahed"
+          ]
+        },
+        {
+          "seat": "Marsa Ben M'Hidi",
+          "communes": [
+            "Marsa Ben M'Hidi",
+            "Msirda Fouaga"
+          ]
+        },
+        {
+          "seat": "Fellaoucène",
+          "communes": [
+            "Fellaoucène",
+            "Ain Kebira",
+            "Ain Fetah"
+          ]
+        },
+        {
+          "seat": "Ain Tallout",
+          "communes": [
+            "Ain Tallout",
+            "Ain Nehala"
+          ]
+        },
+        {
+          "seat": "Bensekrane",
+          "communes": [
+            "Bensekrane",
+            "Sidi Abdelli"
+          ]
+        },
+        {
+          "seat": "Hennaya",
+          "communes": [
+            "Hennaya",
+            "Zenata",
+            "Ouled Riyah"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 14,
+      "name_printed": "TIARET",
+      "dairas": [
+        {
+          "seat": "Tiaret",
+          "communes": [
+            "Tiaret"
+          ]
+        },
+        {
+          "seat": "Dahmouni",
+          "communes": [
+            "Dahmouni",
+            "Aïn Bouchekif"
+          ]
+        },
+        {
+          "seat": "Sougueur",
+          "communes": [
+            "Sougueur",
+            "Tousnina",
+            "Sidi Abdelghani",
+            "Faïdja"
+          ]
+        },
+        {
+          "seat": "Frenda",
+          "communes": [
+            "Frenda",
+            "Aïn El Hadid",
+            "Takhemaret"
+          ]
+        },
+        {
+          "seat": "Mahdia",
+          "communes": [
+            "Mahdia",
+            "Sebaïne",
+            "Aïn Dzarit",
+            "Nadorah"
+          ]
+        },
+        {
+          "seat": "Rahouia",
+          "communes": [
+            "Rahouia",
+            "Guertoufa"
+          ]
+        },
+        {
+          "seat": "Aïn Kermes",
+          "communes": [
+            "Aïn Kermes",
+            "Médrissa",
+            "Sidi Abderrahmane",
+            "Djebilet Rosfa",
+            "Madna"
+          ]
+        },
+        {
+          "seat": "Mechraa Sfa",
+          "communes": [
+            "Mechraa Sfa",
+            "Djileli Ben Amar",
+            "Tagdemt"
+          ]
+        },
+        {
+          "seat": "Oued Lili",
+          "communes": [
+            "Oued Lili",
+            "Sidi Ali Mellal",
+            "Tidda"
+          ]
+        },
+        {
+          "seat": "Medroussa",
+          "communes": [
+            "Medroussa",
+            "Sidi Bakhti",
+            "Mellakou"
+          ]
+        },
+        {
+          "seat": "Meghila",
+          "communes": [
+            "Meghila",
+            "Sebt",
+            "Sidi Hosni"
+          ]
+        },
+        {
+          "seat": "Aïn Deheb",
+          "communes": [
+            "Aïn Deheb",
+            "Chehaïma",
+            "Naïma"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 17,
+      "name_printed": "DJELFA",
+      "dairas": [
+        {
+          "seat": "Djelfa",
+          "communes": [
+            "Djelfa"
+          ]
+        },
+        {
+          "seat": "Hassi Bahbah",
+          "communes": [
+            "Hassi Bahbah",
+            "Aïn Maabed",
+            "Hassi El Euch",
+            "Zaafrane"
+          ]
+        },
+        {
+          "seat": "El Idrissia",
+          "communes": [
+            "El Idrissia",
+            "Douis",
+            "Aïn Chouhada"
+          ]
+        },
+        {
+          "seat": "Aïn El Ibel",
+          "communes": [
+            "Aïn El Ibel",
+            "Moudjbara",
+            "Tadmit",
+            "Zaccar"
+          ]
+        },
+        {
+          "seat": "Dar Chioukh",
+          "communes": [
+            "Dar Chioukh",
+            "Sidi Baïzid",
+            "M'Liliha"
+          ]
+        },
+        {
+          "seat": "Charef",
+          "communes": [
+            "Charef",
+            "El Gueddid",
+            "Béni Yaagoub"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 26,
+      "name_printed": "MEDEA",
+      "dairas": [
+        {
+          "seat": "Médéa",
+          "communes": [
+            "Médéa",
+            "Draa Essamar",
+            "Tamezguida"
+          ]
+        },
+        {
+          "seat": "Ouzera",
+          "communes": [
+            "Ouzera",
+            "El Hamdania",
+            "Tizi Mahdi",
+            "Benchicao"
+          ]
+        },
+        {
+          "seat": "Berrouaghia",
+          "communes": [
+            "Berrouaghia",
+            "Ouled Deïde",
+            "Rebaïa"
+          ]
+        },
+        {
+          "seat": "El Omaria",
+          "communes": [
+            "El Omaria",
+            "Ouled Brahim",
+            "Baata"
+          ]
+        },
+        {
+          "seat": "Tablat",
+          "communes": [
+            "Tablat",
+            "Deux Bassins",
+            "Mezghenna",
+            "Aïssaouia"
+          ]
+        },
+        {
+          "seat": "Béni Slimane",
+          "communes": [
+            "Béni Slimane",
+            "Sidi Errabie",
+            "Bouskène"
+          ]
+        },
+        {
+          "seat": "Si Mahdjoub",
+          "communes": [
+            "Si Mahdjoub",
+            "Ouled Bouachra",
+            "Bouaïchoune"
+          ]
+        },
+        {
+          "seat": "Seghouane",
+          "communes": [
+            "Seghouane",
+            "Zoubiria",
+            "Eddouair",
+            "Medjebar"
+          ]
+        },
+        {
+          "seat": "El Azizia",
+          "communes": [
+            "El Azizia",
+            "Meghraoua",
+            "Mihoub"
+          ]
+        },
+        {
+          "seat": "Souagui",
+          "communes": [
+            "Souagui",
+            "Sidi Ziane",
+            "Sidi Zahar",
+            "Djouab"
+          ]
+        },
+        {
+          "seat": "Ouamri",
+          "communes": [
+            "Ouamri",
+            "Oued Harbil",
+            "Hannacha"
+          ]
+        },
+        {
+          "seat": "El Guelb El Kebir",
+          "communes": [
+            "EL Guelb El Kebir",
+            "Sedraïa",
+            "Bir Ben Abed"
+          ]
+        },
+        {
+          "seat": "Sidi Naamane",
+          "communes": [
+            "Sidi Naamane",
+            "Bouchrahil",
+            "Khamsa Djoumaa"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 28,
+      "name_printed": "M'SILA",
+      "dairas": [
+        {
+          "seat": "M'Sila",
+          "communes": [
+            "M'Sila"
+          ]
+        },
+        {
+          "seat": "Hammam Dhalaa",
+          "communes": [
+            "Hammam Dhalaa",
+            "Ouanougha",
+            "Tarmount",
+            "Ouled Mansour"
+          ]
+        },
+        {
+          "seat": "Ouled Derradj",
+          "communes": [
+            "Ouled Derradj",
+            "Maadid",
+            "Souamaa",
+            "M'Tarfa",
+            "Ouled Addi Guebala"
+          ]
+        },
+        {
+          "seat": "Sidi Aïssa",
+          "communes": [
+            "Sidi Aïssa",
+            "Béni Ilmane",
+            "Bouti Sayah"
+          ]
+        },
+        {
+          "seat": "Magra",
+          "communes": [
+            "Magra",
+            "Belaïba",
+            "Berhoum",
+            "Aïn Khadra",
+            "Dehahna"
+          ]
+        },
+        {
+          "seat": "Chellal",
+          "communes": [
+            "Chellal",
+            "Ouled Madhi",
+            "Khetouti Sed El Djir",
+            "Maarif"
+          ]
+        },
+        {
+          "seat": "Aïn El Hadjel",
+          "communes": [
+            "Aïn El Hadjel",
+            "Sidi Hadjerès"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 32,
+      "name_printed": "EL BAYADH",
+      "dairas": [
+        {
+          "seat": "El Bayadh",
+          "communes": [
+            "El Bayadh"
+          ]
+        },
+        {
+          "seat": "Bougtoub",
+          "communes": [
+            "Bougtoub",
+            "El Kheïther",
+            "Tousmouline"
+          ]
+        },
+        {
+          "seat": "Boualem",
+          "communes": [
+            "Boualem",
+            "Sidi Tifour",
+            "Sidi Amar",
+            "Stitten",
+            "Sidi Slimane"
+          ]
+        },
+        {
+          "seat": "Rogassa",
+          "communes": [
+            "Rogassa",
+            "Cheguig",
+            "Kef El Ahmar"
+          ]
+        },
+        {
+          "seat": "Brézina",
+          "communes": [
+            "Brézina",
+            "Ghassoul",
+            "Krakda"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 59,
+      "name_printed": "AFLOU",
+      "dairas": [
+        {
+          "seat": "Aflou",
+          "communes": [
+            "Aflou",
+            "Sebgag",
+            "Sidi Bouzid"
+          ]
+        },
+        {
+          "seat": "Brida",
+          "communes": [
+            "Brida",
+            "Hadj Mechri",
+            "Taouiala"
+          ]
+        },
+        {
+          "seat": "Gueltat Sidi Saad",
+          "communes": [
+            "Gueltat Sidi Saad",
+            "Aïn Sidi Ali",
+            "El Beïdha"
+          ]
+        },
+        {
+          "seat": "Oued Morra",
+          "communes": [
+            "Oued Morra",
+            "Oued M'Zi"
+          ]
+        },
+        {
+          "seat": "El Ghicha",
+          "communes": [
+            "El Ghicha"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 60,
+      "name_printed": "BARIKA",
+      "dairas": [
+        {
+          "seat": "Barika",
+          "communes": [
+            "Barika",
+            "Bitam",
+            "M'Doukal"
+          ]
+        },
+        {
+          "seat": "Djezzar",
+          "communes": [
+            "Djezzar",
+            "Abdelkader Azil",
+            "Ouled Ammar"
+          ]
+        },
+        {
+          "seat": "Seggana",
+          "communes": [
+            "Seggana",
+            "Tilatou"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 61,
+      "name_printed": "EL KANTARA",
+      "dairas": [
+        {
+          "seat": "El Kantara",
+          "communes": [
+            "El Kantara",
+            "Ain Zaâtout"
+          ]
+        },
+        {
+          "seat": "Djemourah",
+          "communes": [
+            "Djemourah",
+            "Branis"
+          ]
+        },
+        {
+          "seat": "El Outaya",
+          "communes": [
+            "El Outaya"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 62,
+      "name_printed": "BIR EL ATER",
+      "dairas": [
+        {
+          "seat": "Bir El Ater",
+          "communes": [
+            "Bir El Ater",
+            "El Ogla El Melha"
+          ]
+        },
+        {
+          "seat": "Negrine",
+          "communes": [
+            "Negrine",
+            "Ferkane"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 63,
+      "name_printed": "EL ARICHA",
+      "dairas": [
+        {
+          "seat": "El Aricha",
+          "communes": [
+            "El Aricha",
+            "El Gor"
+          ]
+        },
+        {
+          "seat": "Sidi Djillali",
+          "communes": [
+            "Sidi Djillali",
+            "El Bouihi"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 64,
+      "name_printed": "KSAR CHELLALA",
+      "dairas": [
+        {
+          "seat": "Ksar Chellala",
+          "communes": [
+            "Ksar Chellala",
+            "Zmalet El Emir Abdelkader",
+            "Serguine"
+          ]
+        },
+        {
+          "seat": "Hamadia",
+          "communes": [
+            "Hamadia",
+            "Bougara",
+            "Rechaiga"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 65,
+      "name_printed": "AIN OUESSARA",
+      "dairas": [
+        {
+          "seat": "Aïn Ouessara",
+          "communes": [
+            "Aïn Ouessara",
+            "Guernini"
+          ]
+        },
+        {
+          "seat": "Birine",
+          "communes": [
+            "Birine",
+            "Benhar"
+          ]
+        },
+        {
+          "seat": "Had Sahary",
+          "communes": [
+            "Had Sahary",
+            "Aïn Fekka",
+            "Bouira Lahdab"
+          ]
+        },
+        {
+          "seat": "Sidi Ladjel",
+          "communes": [
+            "Sidi Ladjel",
+            "El Khemis",
+            "Hassi Fedoul"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 66,
+      "name_printed": "MESSAAD",
+      "dairas": [
+        {
+          "seat": "Messaad",
+          "communes": [
+            "Messaad",
+            "Sed Rahal",
+            "Guettara",
+            "Selmana",
+            "Deldoul"
+          ]
+        },
+        {
+          "seat": "Faïdh El Botma",
+          "communes": [
+            "Faïdh El Botma",
+            "Oum Laadham",
+            "Amourah"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 67,
+      "name_printed": "KSAR EL BOUKHARI",
+      "dairas": [
+        {
+          "seat": "Ksar El Boukhari",
+          "communes": [
+            "Ksar El Boukhari",
+            "Saneg",
+            "M'Fatha"
+          ]
+        },
+        {
+          "seat": "Aziz",
+          "communes": [
+            "Aziz",
+            "Oum El Djallil",
+            "Derrag"
+          ]
+        },
+        {
+          "seat": "Aïn Boucif",
+          "communes": [
+            "Aïn Boucif",
+            "Sidi Damed",
+            "El Ouinet",
+            "Ouled Maaref",
+            "Kef Lakhdar"
+          ]
+        },
+        {
+          "seat": "Chelalet El Adhaoura",
+          "communes": [
+            "Chelalet El Adhaoura",
+            "Ain Ouksir",
+            "Tafraout",
+            "Cheniguel"
+          ]
+        },
+        {
+          "seat": "Chahbounia",
+          "communes": [
+            "Chahbounia",
+            "Boughezoul",
+            "Bouaiche"
+          ]
+        },
+        {
+          "seat": "Ouled Antar",
+          "communes": [
+            "Ouled Antar",
+            "Boghar",
+            "Ouled Hellal"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 68,
+      "name_printed": "BOU SAADA",
+      "dairas": [
+        {
+          "seat": "Bou Saada",
+          "communes": [
+            "Bou Saada",
+            "El Hamel",
+            "Oultem"
+          ]
+        },
+        {
+          "seat": "Djebel Messaad",
+          "communes": [
+            "Djebel Messaad",
+            "Slim"
+          ]
+        },
+        {
+          "seat": "Khoubana",
+          "communes": [
+            "Khoubana",
+            "M'Cif",
+            "El Houamed"
+          ]
+        },
+        {
+          "seat": "Medjedel",
+          "communes": [
+            "Medjedel",
+            "Menaa"
+          ]
+        },
+        {
+          "seat": "Ouled Sidi Brahim",
+          "communes": [
+            "Ouled Sidi Brahim",
+            "Benzouh"
+          ]
+        },
+        {
+          "seat": "Sidi Ameur",
+          "communes": [
+            "Sidi Ameur",
+            "Tamsa"
+          ]
+        },
+        {
+          "seat": "Aïn El Meleh",
+          "communes": [
+            "Aïn El Meleh",
+            "Bir Foda",
+            "Aïn Farès",
+            "Sidi M'Hamed",
+            "Aïn Errich"
+          ]
+        },
+        {
+          "seat": "Ben Srour",
+          "communes": [
+            "Ben Srour",
+            "Ouled Slimane",
+            "Zarzour",
+            "Mouhamed Boudiaf"
+          ]
+        }
+      ]
+    },
+    {
+      "wilaya_code": 69,
+      "name_printed": "EL ABIODH SIDI CHEIKH",
+      "dairas": [
+        {
+          "seat": "El Abiodh Sidi Cheikh",
+          "communes": [
+            "El Abiodh Sidi Cheikh",
+            "Aïn El Orak",
+            "Arbaouat",
+            "El Bnoud"
+          ]
+        },
+        {
+          "seat": "Chellala",
+          "communes": [
+            "Chellala",
+            "El Meharra"
+          ]
+        },
+        {
+          "seat": "Boussemghoun",
+          "communes": [
+            "Boussemghoun"
+          ]
+        }
+      ]
+    }
+  ]
+}
