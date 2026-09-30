@@ -87,6 +87,14 @@ its wilaya code: wilaya 59 (Aflou) reads `319`. Per-wilaya source, citation and
 the one point where the decree and OpenStreetMap disagree:
 [`wilaya-capitals.metadata.json`](wilaya-capitals.metadata.json).
 
+A wilaya's `latitude`/`longitude` is its capital's point, so all 69 now sit on the
+centre of their own capital commune. Wilaya 16 was the exception: its point was an
+OpenStreetMap `admin_centre` at `36.7325, 3.08722`, 1.3 km from the centre of Kouba
+and 5.5 km from Alger Centre, while décret n° 84-79 names Alger as the chef-lieu. It
+now reads `36.776335, 3.058211`, the coordinate the commune record already carries
+for Alger Centre, and is therefore one of the OpenStreetMap-derived points below,
+**ODbL 1.0, © OpenStreetMap contributors**, wherever it appears.
+
 `created` is the year the creating law took effect, never the year a reform was
 announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
 `wilayas.json` carries the same value as a number, spelling the 1984 cohort

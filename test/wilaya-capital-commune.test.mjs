@@ -13,11 +13,11 @@
 //      two wilayas claim the same commune. A code shifted by one row fails here.
 //   2. all five carriers agree, so a hand-edit of one file is caught.
 //   3. the wilaya's own capital point lands nearest the centre of the capital
-//      commune. That point comes from OpenStreetMap and the commune centres are
-//      an independent table, so this catches a capital assigned to the wrong
-//      commune of the right wilaya, which check 1 cannot see. Wilaya 16 is the
-//      one declared exception and is asserted as such, not skipped: the decree
-//      says Alger and the point sits in Kouba.
+//      commune. The commune centres are an independent table, so this catches a
+//      capital assigned to the wrong commune of the right wilaya, which check 1
+//      cannot see. It has no exemptions: wilaya 16 used to be the one, its point
+//      sitting in Kouba while the decree says Alger, and the point was moved to
+//      the centre of Alger Centre rather than the check being widened.
 //   4. the documented meaning is present, because the value is only correct
 //      relative to it.
 
@@ -133,19 +133,10 @@ test("wilaya capitals: all five carriers in packages/dataset agree", () => {
   }
 });
 
-// The wilaya's capital point is an OpenStreetMap admin_centre; the commune
-// centres are a separate table. Wilaya 16 is the one place where the two
-// disagree and the legal text wins, so it is pinned rather than tolerated.
-const POINT_EXCEPTIONS = {
-  16: {
-    capital: 1601,
-    nearest: 1618,
-    why:
-      "décret n° 84-79 fixes the chef-lieu of the wilaya d'Alger as Alger, which is the commune " +
-      "Alger Centre (1601); the wilaya's OpenStreetMap-derived point falls in Kouba (1618)",
-  },
-};
-
+// No exemptions. Wilaya 16 was the only one that ever needed one: its point was
+// an OpenStreetMap admin_centre 5.5 km away in Kouba while décret n° 84-79 fixes
+// the chef-lieu of the wilaya d'Alger as Alger, so the point was moved onto the
+// centre of Alger Centre (1601) instead of this check being widened.
 test("wilaya capitals: the wilaya's capital point lands in the capital commune", () => {
   const wilayas = read("data", "algeria.json");
   const placed = communes.filter(
@@ -162,22 +153,6 @@ test("wilaya capitals: the wilaya's capital point lands in the capital commune",
         best = d;
         nearest = c;
       }
-    }
-    const expected = POINT_EXCEPTIONS[w.code];
-    if (expected) {
-      assert.equal(
-        w.capital_commune_code,
-        expected.capital,
-        `wilaya ${w.code} is a declared exception with capital ${expected.capital}: ${expected.why}`,
-      );
-      assert.equal(
-        nearest.code_commune,
-        expected.nearest,
-        `wilaya ${w.code}: the exception says the point is nearest ${expected.nearest}, ` +
-          `it is nearest ${nearest.code_commune} (${nearest.name_fr}). Re-read the exception ` +
-          `before widening it: ${expected.why}`,
-      );
-      continue;
     }
     if (nearest.code_commune !== w.capital_commune_code) {
       wrong.push(
