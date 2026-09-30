@@ -1,5 +1,17 @@
 # @geoalgeria/transport
 
+## 2.0.6
+
+### Patch Changes
+
+- 91ff643: Restate `@geoalgeria/buses`'s data terms in the umbrella LICENSE as prose, matching the member package: Line data © the respective Operators; redistributed for reference, with its CC BY-SA 4.0 and ODbL 1.0 parts named.
+- Updated dependencies [924b092]
+- Updated dependencies [91ff643]
+- Updated dependencies [2310783]
+  - @geoalgeria/ferroviaire@2.0.4
+  - @geoalgeria/gares-routieres@2.2.6
+  - @geoalgeria/buses@2.2.1
+
 ## 2.0.5
 
 ### Patch Changes
