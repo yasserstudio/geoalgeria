@@ -9,7 +9,7 @@ Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wila
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
@@ -246,7 +246,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free, MIT code and an MIT compilation with two ODbL parts named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with two ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -293,8 +293,16 @@ licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)*
   2026-09-29, and 6 from the relation centroid in 2.1.0), wherever those values appear.
 
 If you use or redistribute either part you must **attribute OpenStreetMap contributors** and
-keep derived databases under a compatible licence. Per-part attribution and the affected rows
-are in [NOTICE](NOTICE).
+keep derived databases under a compatible licence.
+
+The mirrored postal data under `data/poste/` carries **Algérie Poste's** own terms, not the MIT
+License: **Data © Algérie Poste; redistributed for reference**, the same terms
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) states. Verify against
+Algérie Poste for authoritative, real-time information.
+
+Because the data is under three sets of terms, the manifest declares
+`SEE LICENSE IN LICENSE` rather than an SPDX expression. Per-part attribution and the affected
+rows are in [NOTICE](NOTICE).
 
 Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

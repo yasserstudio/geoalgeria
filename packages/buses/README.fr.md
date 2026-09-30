@@ -63,7 +63,11 @@ du site avait expiré : les six lignes partent toutes de la place ساحة ال�
 qui vaut pour le réseau entier, n'est pas publiée comme horaires par ligne. Les départs complets de Sidi
 Bel Abbès sont transcrits du HTML officiel fourni par le propriétaire du projet ; les
 jours non indiqués restent explicitement inconnus.
-Le code est sous [MIT](LICENSE) ; voir [NOTICE](NOTICE).
+Les données de lignes sont donc **© les exploitants respectifs, redistribuées à titre de
+référence** ; aucune licence ouverte n'est revendiquée sur elles. Le code est sous
+[MIT](LICENSE). Aucune expression SPDX ne couvre ce mélange : le manifeste déclare
+`SEE LICENSE IN LICENSE` et les conditions sont énoncées en clair dans [LICENSE](LICENSE) ;
+voir [NOTICE](NOTICE).
 
 [Voir tous les paquets →](https://geoalgeria.com/data)
 
