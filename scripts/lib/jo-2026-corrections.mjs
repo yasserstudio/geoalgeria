@@ -280,7 +280,20 @@ export const coordinateCorrections = [
  *  filed under Ouzera; its point lies inside the OpenStreetMap daira boundary
  *  of Tablat, confirmed by an Overpass is_in lookup on 2026-09-25, and the
  *  Owner chose Tablat on reading the corrections. The JORA lists communes by
- *  wilaya only, so it does not settle dairas either way. */
+ *  wilaya only, so it does not settle dairas either way.
+ *
+ *  El Alia (5513) was filed under a daira called "Ouargla" inside wilaya 55.
+ *  That is the name of the wilaya 55 was carved out of in 2019, not of any daira
+ *  it has, and 5513 was the only commune holding it. Wilaya 55 has five dairas,
+ *  Touggourt, Temacine, Megarine, El Hadjira and Taibet, and El Alia belongs to
+ *  El Hadjira, whose seat commune is El-Hadjira (5507). Three independent
+ *  readings agree: the daira's own commune list, the ministry rosters in
+ *  @geoalgeria/jeunesse and @geoalgeria/sports (which between them file every
+ *  wilaya-55 record under exactly those five dairas and none under an "Ouargla"
+ *  one), and data/wilayas.csv, which already carried dairas_count 5 for wilaya 55
+ *  while data/wilayas.json said 6. Dropping the phantom daira makes the two
+ *  agree. Private tracker #171, the same report as the wilaya 55 outline. */
 export const communeDairaCorrections = [
   { code_commune: 2653, wilaya_code: 26, from: "Ouzera", to: "Tablat", osm: "relation/4461829", source: "OpenStreetMap daira boundary (relation 4461829, Daïra Tablat), Owner decision 2026-09-25" },
+  { code_commune: 5513, wilaya_code: 55, from: "Ouargla", to: "El Hadjira", osm: "relation/6542936", source: "Daira El Hadjira of wilaya 55 holds El-Hadjira (5507) and El Alia (5513); corroborated by the wilaya-55 daira rosters of @geoalgeria/jeunesse and @geoalgeria/sports, and by data/wilayas.csv dairas_count 5. Private tracker #171" },
 ];

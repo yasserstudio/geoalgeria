@@ -1424,7 +1424,7 @@ INSERT INTO communes (id, commune_name_fr, commune_name_ar, daira_name_fr, wilay
   (1407, 'Tin Zouatine', 'تين زواتين', 'Tin Zaouatine', 54, 'In Guezzam', 'عين قزام', '54011'),
   (1408, 'Benaceur', 'بن ناصر', 'Taibet', 55, 'Touggourt', 'توقرت', '55020'),
   (1409, 'Blidet Amor', 'بلدة اعمر', 'Tamacine', 55, 'Touggourt', 'توقرت', '55005'),
-  (1410, 'El Alia', 'العالية', 'Ouargla', 55, 'Touggourt', 'توقرت', '55023'),
+  (1410, 'El Alia', 'العالية', 'El Hadjira', 55, 'Touggourt', 'توقرت', '55023'),
   (1411, 'El-Hadjira', 'الحجيرة', 'El Hadjira', 55, 'Touggourt', 'توقرت', '55006'),
   (1412, 'M''naguer', 'المنقر', 'Taibet', 55, 'Touggourt', 'توقرت', '55029'),
   (1413, 'Megarine', 'المقارين', 'Megarine', 55, 'Touggourt', 'توقرت', '55009'),

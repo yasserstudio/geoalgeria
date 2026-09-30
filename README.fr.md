@@ -58,7 +58,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | | Nombre | |
 |---|---|---|
 | **Wilayas** | 69 | provinces (réformes 2019 + 2026) |
-| **Daïras** | 556 | districts, comme entités de premier niveau |
+| **Daïras** | 555 | districts, comme entités de premier niveau |
 | **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
