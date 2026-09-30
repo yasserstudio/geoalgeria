@@ -12,7 +12,7 @@
 // v1 fixture and asserts it reproduces the committed record byte-for-byte, so a
 // generator importing its own slice inherits that guarantee.
 
-import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync, rmSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -1075,14 +1075,21 @@ export function writePackageV2({
         `writePackageV2 [${pkg}]: retired id(s) are still live: ${overlap.slice(0, 5).join(", ")}`,
       );
     }
+    // An empty ledger says nothing, so it is not a file: a package that has never
+    // retired an id must not ship a `retired-ids.json` in its npm tarball. Any
+    // empty one already on disk is removed (readRetiredIds seeds the set from it,
+    // so an empty set here can only come from an empty or absent file).
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIdsContent(retiredIds),
+      content: retiredIds.size ? retiredIdsContent(retiredIds) : null,
     });
   }
 
   // Phase 2 — everything validated; now write each file atomically.
-  for (const { path, content } of pending) writeAtomic(path, content);
+  for (const { path, content } of pending) {
+    if (content === null) rmSync(path, { force: true });
+    else writeAtomic(path, content);
+  }
   return { records: all, metadata, review };
 }
 
@@ -1243,9 +1250,14 @@ export function readRetiredIds(dir) {
   return new Set(document.ids);
 }
 
-/** Persist a ledger for a generator that has not moved to writePackageV2 yet. */
+/** Persist a ledger for a generator that has not moved to writePackageV2 yet.
+ *  An empty ledger is not written, and an empty one on disk is removed, so a
+ *  package that has never retired an id ships no `retired-ids.json`. */
 export function writeRetiredIds(dir, ids) {
-  writeAtomic(join(dir, "retired-ids.json"), retiredIdsContent(ids));
+  const path = join(dir, "retired-ids.json");
+  const size = ids instanceof Set ? ids.size : [...ids].length;
+  if (!size) rmSync(path, { force: true });
+  else writeAtomic(path, retiredIdsContent(ids));
 }
 
 /** Read a package's committed records for carryOverIds, or [] if none exist yet. */

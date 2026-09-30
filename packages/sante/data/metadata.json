@@ -5,11 +5,11 @@
   "title_ar": "المؤسسات الصحية العمومية الجزائرية",
   "title_en": "Algeria public health establishments",
   "record_count": 695,
-  "geocoded_count": 600,
-  "geocoded_pct": 86.3,
+  "geocoded_count": 602,
+  "geocoded_pct": 86.6,
   "precision": {
     "exact": 124,
-    "approximate": 476
+    "approximate": 478
   },
   "estimated_universe": null,
   "coverage_pct": null,
@@ -60,9 +60,10 @@
     "public": 695
   },
   "by_geo_method": {
-    "commune_centroid": 476,
-    "osm_point": 121,
-    "wikidata_point": 3
+    "commune_centroid": 474,
+    "osm_point": 114,
+    "owner_verified": 13,
+    "wikidata_point": 1
   },
   "bilingual": 563,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."

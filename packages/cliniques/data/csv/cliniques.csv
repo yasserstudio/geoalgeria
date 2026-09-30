@@ -261,6 +261,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 08-00004,Sidi moumen,Sidi moumen,,08,0801,Bechar,31.725327,-1.6012,exact,osm_node,osm,"{""osm"":""node/8364059717""}",clinique,Clinique,عيادة / مصحة,,,,,,
 08-00005,الأمومة العبادلة,Maternité de ABADLA,الأمومة العبادلة,08,0817,Abadla,31.026704,-2.706242,approximate,osm_centroid,osm,"{""osm"":""way/257152997""}",maternite,Maternité / clinique d'accouchement,مصحة توليد,,,العبادلة,,,
 08-00006,مركز الصحة الجواري,Etablissement Hospitalier de Proximité,مركز الصحة الجواري,08,0817,Abadla,31.030104,-2.709874,approximate,osm_centroid,osm,"{""osm"":""way/257153078""}",centre_sante,Centre de santé,مركز صحي,,,العبادلة,,,true
+08-00007,Kerroumi Mohammed,Kerroumi Mohammed,,08,0801,Bechar,31.590962,-2.237932,approximate,osm_centroid,osm,"{""osm"":""way/330434664""}",clinique,Clinique,عيادة / مصحة,,,,,,
 08-00008,HMRB 3°RM,HMRB 3°RM,,08,0801,Bechar,31.621342,-2.217911,approximate,osm_centroid,osm,"{""osm"":""way/272971869""}",clinique,Clinique,عيادة / مصحة,,,,,,true
 08-00009,SASSI,SASSI,,08,0801,Bechar,31.614733,-2.215105,approximate,osm_centroid,osm,"{""osm"":""way/273680169""}",clinique,Clinique,عيادة / مصحة,,,,,,
 08-00010,polyclinique Croix Rouge,polyclinique Croix Rouge,,08,0801,Bechar,31.615622,-2.206357,approximate,osm_centroid,osm,"{""osm"":""way/281228029""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,true
@@ -616,6 +617,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 16-00074,consultation d'hématologie,consultation d'hématologie,,16,1632,Beni Messous,36.779889,2.983977,exact,osm_node,osm,"{""osm"":""node/4197345590""}",clinique,Clinique,عيادة / مصحة,,,,,,
 16-00075,service rhumatologie,service rhumatologie,,16,1632,Beni Messous,36.779399,2.980087,exact,osm_node,osm,"{""osm"":""node/4197345591""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,
 16-00076,consultation ORL,consultation ORL,,16,1632,Beni Messous,36.77868,2.982319,exact,osm_node,osm,"{""osm"":""node/4197348790""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,
+16-00077,عيادة متعددة الخدمات,,عيادة متعددة الخدمات,16,1626,Djasr Kasentina,36.705308,3.081607,exact,osm_node,osm,"{""osm"":""node/12912386452""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,general,,,24/7,
 16-00080,consultations pneumologie matiben (CPPA),consultations pneumologie matiben (CPPA),,16,1632,Beni Messous,36.778639,2.980473,exact,osm_node,osm,"{""osm"":""node/4197361189""}",clinique,Clinique,عيادة / مصحة,,,,,24/7,
 16-00081,Morgue,Morgue,,16,1632,Beni Messous,36.779363,2.97881,exact,osm_node,osm,"{""osm"":""node/4202106953""}",clinique,Clinique,عيادة / مصحة,,,,,,
 16-00082,service d'anatomie pathologique,service d'anatomie pathologique,,16,1632,Beni Messous,36.779276,2.978498,exact,osm_node,osm,"{""osm"":""node/4202106954""}",clinique,Clinique,عيادة / مصحة,,,,,,
@@ -915,6 +917,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00001,عيادة متخصصة في طب وجراحة الأنف والأذن والحنجرة,,عيادة متخصصة في طب وجراحة الأنف والأذن والحنجرة,19,1901,Setif,36.19646,5.408827,exact,osm_node,osm,"{""osm"":""node/10616455408""}",clinique,Clinique,عيادة / مصحة,,,,0656244444,,
 19-00002,,,,19,1955,Maouaklane,36.396061,5.074537,exact,osm_node,osm,"{""osm"":""node/11516158269""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00003,عيادة واستعجالات القدس,,عيادة واستعجالات القدس,19,1908,Bir-El-Arch,36.133519,5.842248,exact,osm_node,osm,"{""osm"":""node/12757076631""}",clinique,Clinique,عيادة / مصحة,,,,,,
+19-00004,Centre de santé bel air,Centre de santé bel air,,19,1901,Setif,36.199147,5.402254,exact,osm_node,osm,"{""osm"":""node/1745778343""}",centre_sante,Centre de santé,مركز صحي,,,,,,
 19-00005,Clinique El Hidhab,El Hidhab,الهضاب,19,1901,Setif,36.200806,5.4099,exact,osm_node,osm,"{""osm"":""node/1965123591""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00006,Clinique El Moncef,El Moncef,المنصف,19,1901,Setif,36.200624,5.41353,exact,osm_node,osm,"{""osm"":""node/1965123646""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00007,Salle de Soin,Salle de Soin,,19,1911,Hamma,35.684815,5.414336,exact,osm_node,osm,"{""osm"":""node/2306962943""}",salle_de_soins,Salle de soins / dispensaire,قاعة علاج / مستوصف,public,,Badjerou,,,
@@ -990,6 +993,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00089,عيادة متعددة الخدمات بني شبانة,Polyclinique Beni Chebana,عيادة متعددة الخدمات بني شبانة,19,1909,Beni Chebana,36.46885,4.86716,approximate,osm_centroid,osm,"{""osm"":""way/783082851""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,
 19-00090,عيادة بني موحلي,polyclinique Béni Mouhli,عيادة بني موحلي,19,1946,Beni-Mouhli,36.516923,4.906577,approximate,osm_centroid,osm,"{""osm"":""way/783900358""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,036404815,036404815,24/7,
 19-00091,Clinique Nabti,Clinique Nabti,عيادة نبتي,19,1901,Setif,36.175892,5.407456,approximate,osm_centroid,osm,"{""osm"":""way/783903235""}",clinique,Clinique,عيادة / مصحة,,,"Rue du 20 Août 1955, Sétif 19000",'+213 36 84 91 92;+213 36 82 30 24;+213 783 76 37 58,24/7,
+20-00001,الشيخ الراقي شويخي عبد العالي,,الشيخ الراقي شويخي عبد العالي,20,2012,Sidi Ahmed,34.548609,0.273759,exact,osm_node,osm,"{""osm"":""node/11694191152""}",clinique,Clinique,عيادة / مصحة,,,,,,
 20-00002,مركز الصحة,Centre de santé,مركز الصحة,20,2001,Saida,34.854581,0.148955,exact,osm_node,osm,"{""osm"":""node/3213832598""}",centre_sante,Centre de santé,مركز صحي,,,"حي النصر, سعيدة 20002",,,
 20-00003,Polyclinique Sid El Chikh عيادة سيدي الشيخ,Polyclinique Sid El Chikh,عيادة سيدي الشيخ,20,2001,Saida,34.83468,0.155857,exact,osm_node,osm,"{""osm"":""node/3214535532""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,سعيدة,,,
 20-00004,Polyclinique Lamarine,Polyclinique Lamarine,,20,2001,Saida,34.834782,0.149298,exact,osm_node,osm,"{""osm"":""node/3214647550""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,
@@ -1613,6 +1617,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 42-00033,,,,42,4222,Cherchell,36.608187,2.190555,exact,osm_node,osm,"{""osm"":""node/8905247046""}",clinique,Clinique,عيادة / مصحة,,vaccination;covid19,Cherchell,,,
 42-00034,Centre du sang de Tipaza,Centre du sang de Tipaza,مركز التبرع بالدم,42,4201,Tipaza,36.587359,2.438819,exact,osm_node,osm,"{""osm"":""node/9919775398""}",clinique,Clinique,عيادة / مصحة,,,Tipaza,,,
 42-00035,Polyclinique,Polyclinique,,42,4232,Sidi Ghiles,36.582335,2.122942,approximate,osm_centroid,osm,"{""osm"":""way/1172238172""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,"Rue boumaakel Ahmed, Sidi Ghiles 42021",,,
+42-00036,,,,42,4222,Cherchell,36.625385,2.27077,exact,osm_node,osm,"{""osm"":""node/3006447014""}",clinique,Clinique,عيادة / مصحة,,,,,,
 42-00037,,,,42,4205,Bourkika,36.494596,2.475568,approximate,osm_centroid,osm,"{""osm"":""way/1206140859""}",clinique,Clinique,عيادة / مصحة,,,Bourkika 42230,,,
 42-00038,Polyclinique,Polyclinique,,42,4225,Fouka,36.66217,2.738643,approximate,osm_centroid,osm,"{""osm"":""way/171845648""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,Fouka,,,
 42-00039,Clinique de chirurgie cardio-infantile,Clinique de chirurgie cardio-infantile,عيادة جراحة القلب للأطفال,42,4226,Bou Ismail,36.63748,2.686051,approximate,osm_centroid,osm,"{""osm"":""way/172241238""}",clinique,Clinique,عيادة / مصحة,,,Bou Ismaïl 42004,,,

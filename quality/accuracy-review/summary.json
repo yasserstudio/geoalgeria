@@ -11,10 +11,6 @@
       "sha256": "9c957fd7a9db39376d4de287aeed80113c5916a0f088bc461a58323b696cfd1e"
     },
     {
-      "path": "packages/agriculture/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
-    },
-    {
       "path": "packages/aviation/data/airports.json",
       "sha256": "b097ab213e42f7055e72007e9be4fce8720d6c5240a95983a7e6b97e69c74075"
     },
@@ -60,11 +56,11 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "380ba09978063d0a569ae71d24a894eb0d49497da2eef8c0271dc26c0e2a4a5b"
+      "sha256": "826a69591a403d344e16bf41d88f2bc4d684f1c530d863fe352c136c877f6762"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "4a2f632a02c9a4ce8f8a941e5230fdc074f3ff6b6aa7041c58979097bb1ec64e"
+      "sha256": "d5aa4c7efd372c4b797915d8b44f77187220cf79cbf60ab2b966e50c5fb8498e"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
@@ -77,10 +73,6 @@
     {
       "path": "packages/culture/data/metadata.json",
       "sha256": "36833cddb813b8b5f1fe48febcc6ca6aab2fd22c7bd9adca5b3abf0d04316f72"
-    },
-    {
-      "path": "packages/culture/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.geojson",
@@ -97,10 +89,6 @@
     {
       "path": "packages/djezzy/data/metadata.json",
       "sha256": "8df494e87965656ccb31284531e9a764d900520e4113db173fb248cbdd00d7ce"
-    },
-    {
-      "path": "packages/djezzy/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/ecoles/data/ecoles.json",
@@ -139,10 +127,6 @@
       "sha256": "cb3e356514f697a27d4727f798cfdb66af9c818f212f6e650d2c53562ece703b"
     },
     {
-      "path": "packages/ferroviaire/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
-    },
-    {
       "path": "packages/ferroviaire/data/stations.json",
       "sha256": "c121b30e591017c7aeb9798b1f0851f1f742cb8b4f4bba59de10bb643ce78e6e"
     },
@@ -153,10 +137,6 @@
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
       "sha256": "f1fcddbdc8dc72aa2d14ca05eb45b349bf7cc1a81ba7c99dfe46966c138c6606"
-    },
-    {
-      "path": "packages/formation-professionnelle/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/gares-routieres/data/metadata.json",
@@ -177,10 +157,6 @@
     {
       "path": "packages/industrie-pharmaceutique/data/metadata.json",
       "sha256": "b5560b531b2ae15e802f43d607c7ffa8175701cc177b35b75c8880a9f6647d43"
-    },
-    {
-      "path": "packages/industrie-pharmaceutique/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
@@ -227,16 +203,8 @@
       "sha256": "405941372a269587f3cb32a2e7f28f7c5b390639fa4fc0f0c848e6606692bce7"
     },
     {
-      "path": "packages/mosquees/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
-    },
-    {
       "path": "packages/ooredoo/data/metadata.json",
       "sha256": "5506fed5163bf5930d598826113c25aa99a12b7299dc0cc98759691107fd3110"
-    },
-    {
-      "path": "packages/ooredoo/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
     },
     {
       "path": "packages/ooredoo/data/stores.json",
@@ -280,15 +248,11 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "e07fdba5a506e25684d2b3e035220572f30da7676b7c578a012b9f3424cbcecb"
-    },
-    {
-      "path": "packages/sante/data/retired-ids.json",
-      "sha256": "f1cf9c1a1f830ac524b33aa29865446770f153ebfc21525dbf6556186a0c1ab4"
+      "sha256": "d4fb027313a9ae65467417d5ee3fda1447bc0269d42d7823aa8cc9cc66925249"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "9f7f392059c2ef41eb32c674f44b7b4b55bb02f5f8e0c84f741767c5a1d5b0b4"
+      "sha256": "4f702b2dd69c1b7d46a2bd674b8d906b43e11694629a8cfb374f240d4a48fd7e"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -341,15 +305,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70541,
-  "candidates": 17828,
+  "total_records": 70546,
+  "candidates": 17829,
   "reasons": {
-    "approximate_coordinate": 16899,
+    "approximate_coordinate": 16902,
     "inside_adjacent_wilaya": 248,
-    "missing_coordinate": 526,
+    "missing_coordinate": 524,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 447,
-    "shared_coordinate": 1299
+    "shared_coordinate": 1305
   },
   "datasets": [
     {
@@ -788,13 +752,13 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1913,
-      "candidates": 836,
+      "total_records": 1918,
+      "candidates": 838,
       "reasons": {
-        "approximate_coordinate": 833,
+        "approximate_coordinate": 834,
         "inside_adjacent_wilaya": 1,
-        "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 6
+        "outside_all_wilaya_boundaries": 6,
+        "outside_declared_wilaya": 7
       },
       "metadata_path": "packages/cliniques/data/metadata.json",
       "metadata": {
@@ -803,12 +767,12 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1913,
-        "geocoded_count": 1913,
+        "record_count": 1918,
+        "geocoded_count": 1918,
         "geocoded_pct": 100,
         "precision": {
-          "exact": 1080,
-          "approximate": 833
+          "exact": 1084,
+          "approximate": 834
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -832,16 +796,16 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1608,
+        "named": 1612,
         "by_type": {
-          "polyclinique": 405,
-          "clinique": 1142,
+          "polyclinique": 406,
+          "clinique": 1145,
           "salle_de_soins": 199,
           "maternite": 26,
-          "centre_sante": 141
+          "centre_sante": 142
         },
         "by_sector": {
-          "public": 615,
+          "public": 616,
           "private": 67
         },
         "with_phone": 116,
@@ -1914,13 +1878,13 @@
     {
       "dataset": "sante",
       "total_records": 695,
-      "candidates": 572,
+      "candidates": 571,
       "reasons": {
-        "approximate_coordinate": 476,
-        "missing_coordinate": 95,
-        "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 3,
-        "shared_coordinate": 312
+        "approximate_coordinate": 478,
+        "missing_coordinate": 93,
+        "outside_all_wilaya_boundaries": 2,
+        "outside_declared_wilaya": 2,
+        "shared_coordinate": 318
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1930,11 +1894,11 @@
         "title_ar": "المؤسسات الصحية العمومية الجزائرية",
         "title_en": "Algeria public health establishments",
         "record_count": 695,
-        "geocoded_count": 600,
-        "geocoded_pct": 86.3,
+        "geocoded_count": 602,
+        "geocoded_pct": 86.6,
         "precision": {
           "exact": 124,
-          "approximate": 476
+          "approximate": 478
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -1985,9 +1949,10 @@
           "public": 695
         },
         "by_geo_method": {
-          "commune_centroid": 476,
-          "osm_point": 121,
-          "wikidata_point": 3
+          "commune_centroid": 474,
+          "osm_point": 114,
+          "owner_verified": 13,
+          "wikidata_point": 1
         },
         "bilingual": 563,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
@@ -2365,13 +2330,13 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1913,
-      "candidates": 836,
+      "total_records": 1918,
+      "candidates": 838,
       "reasons": {
-        "approximate_coordinate": 833,
+        "approximate_coordinate": 834,
         "inside_adjacent_wilaya": 1,
-        "outside_all_wilaya_boundaries": 5,
-        "outside_declared_wilaya": 6
+        "outside_all_wilaya_boundaries": 6,
+        "outside_declared_wilaya": 7
       },
       "path": "packages/cliniques/data/cliniques.json"
     },
@@ -2605,13 +2570,13 @@
       "dataset": "sante",
       "entity": "sante.json",
       "total_records": 695,
-      "candidates": 572,
+      "candidates": 571,
       "reasons": {
-        "approximate_coordinate": 476,
-        "missing_coordinate": 95,
-        "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 3,
-        "shared_coordinate": 312
+        "approximate_coordinate": 478,
+        "missing_coordinate": 93,
+        "outside_all_wilaya_boundaries": 2,
+        "outside_declared_wilaya": 2,
+        "shared_coordinate": 318
       },
       "path": "packages/sante/data/sante.json"
     },
@@ -2732,10 +2697,6 @@
   ],
   "excluded": [
     {
-      "path": "packages/agriculture/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
       "path": "packages/aviation/data/route-endpoints.json",
       "reason": "Route endpoints include international airports outside this audit"
     },
@@ -2760,35 +2721,15 @@
       "reason": "Not a geospatial record array"
     },
     {
-      "path": "packages/culture/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
       "path": "packages/dataset",
       "reason": "Administrative dataset uses a separate contract; outside discovery scope"
-    },
-    {
-      "path": "packages/djezzy/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
     },
     {
       "path": "packages/ecoles/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {
-      "path": "packages/ferroviaire/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
-      "path": "packages/formation-professionnelle/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
       "path": "packages/gares-routieres/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
-      "path": "packages/industrie-pharmaceutique/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {
@@ -2804,16 +2745,8 @@
       "reason": "Points of sale are intentionally ungeocoded directory records"
     },
     {
-      "path": "packages/mosquees/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
       "path": "packages/normalize",
       "reason": "Package has no data directory"
-    },
-    {
-      "path": "packages/ooredoo/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
     },
     {
       "path": "packages/pharma",
@@ -2825,10 +2758,6 @@
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
-      "reason": "Not a geospatial record array"
-    },
-    {
-      "path": "packages/sante/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

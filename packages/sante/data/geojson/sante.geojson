@@ -135,8 +135,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.281111,
-          27.8709
+          -0.297222,
+          27.87429
         ]
       },
       "properties": {
@@ -147,13 +147,12 @@
         "wilaya_code": "01",
         "commune_code": "0101",
         "commune": "Adrar",
-        "lat": 27.8709,
-        "lng": -0.281111,
-        "geo_precision": "exact",
-        "geo_method": "wikidata_point",
+        "lat": 27.87429,
+        "lng": -0.297222,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "wikidata": "Q18785599",
           "msp": "3584"
         },
         "type": "eph",
@@ -426,8 +425,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          1.549921,
-          36.183333
+          1.3624474,
+          36.1571749
         ]
       },
       "properties": {
@@ -436,12 +435,12 @@
         "name_fr": "Etablissement Public Hospitalier Ouled Mohamed Chlef",
         "name_ar": null,
         "wilaya_code": "02",
-        "commune_code": "0229",
-        "commune": "Oued Fodda",
-        "lat": 36.183333,
-        "lng": 1.549921,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "commune_code": "0201",
+        "commune": "Chlef",
+        "lat": 36.1571749,
+        "lng": 1.3624474,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
           "msp": "3598"
@@ -450,7 +449,13 @@
         "type_label_fr": "Établissement Public Hospitalier",
         "type_label_ar": "المؤسسة العمومية الاستشفائية",
         "sector": "public",
-        "slug": "etablissement-public-hospitalier-ouled-mohamed-chlef-2"
+        "slug": "etablissement-public-hospitalier-ouled-mohamed-chlef-2",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.1571749,1.3624474"
+        ]
       }
     },
     {
@@ -922,7 +927,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية عين ماضي",
         "wilaya_code": "03",
         "commune_code": "0307",
-        "commune": "Ain Madhi",
+        "commune": "Aïn Madhi",
         "lat": 33.7956,
         "lng": 2.3052,
         "geo_precision": "approximate",
@@ -1503,7 +1508,7 @@
         "name_ar": "المؤسسة الإستشفائية المتخصصة في الامراض العقلية المعذر",
         "wilaya_code": "05",
         "commune_code": "0507",
-        "commune": "El Madher",
+        "commune": "Elmadher",
         "lat": 35.626542,
         "lng": 6.383443,
         "geo_precision": "exact",
@@ -1569,7 +1574,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية عين التوتة",
         "wilaya_code": "05",
         "commune_code": "0545",
-        "commune": "Ain Touta",
+        "commune": "Aïn Touta",
         "lat": 35.399109,
         "lng": 5.919839,
         "geo_precision": "approximate",
@@ -1763,7 +1768,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية نقاوس",
         "wilaya_code": "05",
         "commune_code": "0509",
-        "commune": "N Gaous",
+        "commune": "N'Gaous",
         "lat": 35.561836,
         "lng": 5.610924,
         "geo_precision": "approximate",
@@ -1827,7 +1832,7 @@
         "name_ar": "المؤسسة العمومية الاستشفائية تكوت",
         "wilaya_code": "05",
         "commune_code": "0544",
-        "commune": "T Kout",
+        "commune": "T'Kout",
         "lat": 35.140382,
         "lng": 6.30855,
         "geo_precision": "approximate",
@@ -1987,7 +1992,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية عين التوتة",
         "wilaya_code": "05",
         "commune_code": "0545",
-        "commune": "Ain Touta",
+        "commune": "Aïn Touta",
         "lat": 35.399109,
         "lng": 5.919839,
         "geo_precision": "approximate",
@@ -2072,8 +2077,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.369152,
-          35.63121
+          6.369131,
+          35.623931
         ]
       },
       "properties": {
@@ -2083,13 +2088,14 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية المعذر",
         "wilaya_code": "05",
         "commune_code": "0507",
-        "commune": "El Madher",
-        "lat": 35.63121,
-        "lng": 6.369152,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "commune": "Elmadher",
+        "lat": 35.623931,
+        "lng": 6.369131,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/782986915",
           "msp": "4403"
         },
         "type": "epsp",
@@ -2147,7 +2153,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية نقاوس",
         "wilaya_code": "05",
         "commune_code": "0509",
-        "commune": "N Gaous",
+        "commune": "N'Gaous",
         "lat": 35.561836,
         "lng": 5.610924,
         "geo_precision": "approximate",
@@ -2179,7 +2185,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية رأس العيون",
         "wilaya_code": "05",
         "commune_code": "0551",
-        "commune": "Ras El Aioun",
+        "commune": "Ras El Aïoun",
         "lat": 35.675,
         "lng": 5.65,
         "geo_precision": "approximate",
@@ -2823,7 +2829,7 @@
         "name_ar": "المؤسسة الاستشفائية المتخصصة في الأمراض العقلية مشونش",
         "wilaya_code": "07",
         "commune_code": "0712",
-        "commune": "M'chouneche",
+        "commune": "M'Chounèche",
         "lat": 34.949896,
         "lng": 5.984274,
         "geo_precision": "exact",
@@ -2845,8 +2851,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.741997,
-          34.849738
+          5.742165,
+          34.849784
         ]
       },
       "properties": {
@@ -2857,20 +2863,25 @@
         "wilaya_code": "07",
         "commune_code": "0701",
         "commune": "Biskra",
-        "lat": 34.849738,
-        "lng": 5.741997,
+        "lat": 34.849784,
+        "lng": 5.742165,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "node/4728650389",
           "msp": "3663"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "etablissement-hospitalier-specialise-mere-en-enfant-biskra"
+        "slug": "etablissement-hospitalier-specialise-mere-en-enfant-biskra",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=34.849784,5.742165"
+        ]
       }
     },
     {
@@ -2878,8 +2889,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.743875,
-          34.849537
+          5.7435019,
+          34.8495918
         ]
       },
       "properties": {
@@ -2890,20 +2901,25 @@
         "wilaya_code": "07",
         "commune_code": "0701",
         "commune": "Biskra",
-        "lat": 34.849537,
-        "lng": 5.743875,
+        "lat": 34.8495918,
+        "lng": 5.7435019,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "way/377862818",
           "msp": "3659"
         },
         "type": "eph",
         "type_label_fr": "Établissement Public Hospitalier",
         "type_label_ar": "المؤسسة العمومية الاستشفائية",
         "sector": "public",
-        "slug": "etablissement-public-hospitalier-bachir-benacer-biskra"
+        "slug": "etablissement-public-hospitalier-bachir-benacer-biskra",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=34.8495918,5.7435019"
+        ]
       }
     },
     {
@@ -3169,8 +3185,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.237932,
-          31.590962
+          -2.204471,
+          31.622059
         ]
       },
       "properties": {
@@ -3181,13 +3197,13 @@
         "wilaya_code": "08",
         "commune_code": "0801",
         "commune": "Bechar",
-        "lat": 31.590962,
-        "lng": -2.237932,
+        "lat": 31.622059,
+        "lng": -2.204471,
         "geo_precision": "exact",
         "geo_method": "osm_point",
         "source": "msp",
         "refs": {
-          "osm": "way/330434664",
+          "osm": "way/273456230",
           "msp": "3667"
         },
         "type": "ehs",
@@ -3331,8 +3347,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.204471,
-          31.622059
+          -2.21667,
+          31.61667
         ]
       },
       "properties": {
@@ -3343,13 +3359,12 @@
         "wilaya_code": "08",
         "commune_code": "0801",
         "commune": "Bechar",
-        "lat": 31.622059,
-        "lng": -2.204471,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 31.61667,
+        "lng": -2.21667,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "way/273456230",
           "msp": "4480"
         },
         "type": "eph",
@@ -3396,8 +3411,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -2.237869,
-          31.602079
+          -2.21667,
+          31.61667
         ]
       },
       "properties": {
@@ -3408,13 +3423,12 @@
         "wilaya_code": "08",
         "commune_code": "0801",
         "commune": "Bechar",
-        "lat": 31.602079,
-        "lng": -2.237869,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 31.61667,
+        "lng": -2.21667,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "way/273523234",
           "msp": "3665"
         },
         "type": "eph",
@@ -4435,7 +4449,7 @@
         "name_fr": null,
         "name_ar": "المؤسسة العمومية للصحة الجوارية أبلسة",
         "wilaya_code": "11",
-        "commune_code": null,
+        "commune_code": "1102",
         "commune": "Abelsa",
         "lat": 22.89,
         "lng": 4.84722,
@@ -4501,7 +4515,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية عاليا صالح تبسة",
         "wilaya_code": "12",
         "commune_code": "1201",
-        "commune": "Tebessa",
+        "commune": "Tébessa",
         "lat": 35.399577,
         "lng": 8.105059,
         "geo_precision": "exact",
@@ -4598,7 +4612,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية العوينات",
         "wilaya_code": "12",
         "commune_code": "1205",
-        "commune": "El-Aouinet",
+        "commune": "El Aouinet",
         "lat": 35.867,
         "lng": 7.887778,
         "geo_precision": "approximate",
@@ -4726,7 +4740,7 @@
         "name_ar": "مدير المؤسسة العمومية للصحة الجوارية لعوينات",
         "wilaya_code": "12",
         "commune_code": "1205",
-        "commune": "El-Aouinet",
+        "commune": "El Aouinet",
         "lat": 35.867,
         "lng": 7.887778,
         "geo_precision": "approximate",
@@ -4790,7 +4804,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية تبسة",
         "wilaya_code": "12",
         "commune_code": "1201",
-        "commune": "Tebessa",
+        "commune": "Tébessa",
         "lat": 35.405556,
         "lng": 8.12417,
         "geo_precision": "approximate",
@@ -4843,8 +4857,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -1.303004,
-          34.863915
+          -1.316667,
+          34.882777
         ]
       },
       "properties": {
@@ -4855,13 +4869,12 @@
         "wilaya_code": "13",
         "commune_code": "1301",
         "commune": "Tlemcen",
-        "lat": 34.863915,
-        "lng": -1.303004,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 34.882777,
+        "lng": -1.316667,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "node/8873173032",
           "msp": "4560"
         },
         "type": "ehs",
@@ -4951,7 +4964,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية ندرومة",
         "wilaya_code": "13",
         "commune_code": "1340",
-        "commune": "Nedroma",
+        "commune": "Nédroma",
         "lat": 35.01361,
         "lng": -1.748,
         "geo_precision": "approximate",
@@ -5563,7 +5576,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية عين الذهب",
         "wilaya_code": "14",
         "commune_code": "1406",
-        "commune": "Ain Deheb",
+        "commune": "Aïn Deheb",
         "lat": 34.8422,
         "lng": 1.545077,
         "geo_precision": "approximate",
@@ -5595,7 +5608,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية عين الحديد",
         "wilaya_code": "14",
         "commune_code": "1418",
-        "commune": "Ain El Hadid",
+        "commune": "Aïn El Hadid",
         "lat": 35.055802,
         "lng": 0.885517,
         "geo_precision": "exact",
@@ -5628,7 +5641,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية عين كرمس",
         "wilaya_code": "14",
         "commune_code": "1428",
-        "commune": "Ain Kermes",
+        "commune": "Aïn Kermes",
         "lat": 34.908176,
         "lng": 1.10807,
         "geo_precision": "approximate",
@@ -6195,8 +6208,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          4.36935,
-          36.534112
+          4.365141,
+          36.538666
         ]
       },
       "properties": {
@@ -6207,12 +6220,13 @@
         "wilaya_code": "15",
         "commune_code": "1517",
         "commune": "Iferhounene",
-        "lat": 36.534112,
-        "lng": 4.36935,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.538666,
+        "lng": 4.365141,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/238103077",
           "msp": "4629"
         },
         "type": "epsp",
@@ -6452,8 +6466,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.06228,
-          36.75354
+          3.0529602,
+          36.7343108
         ]
       },
       "properties": {
@@ -6462,12 +6476,12 @@
         "name_fr": "Etablissement Hospitalier Spécialisé Chirurgie Cardiaque Clinique Mohamed Abderrahmani",
         "name_ar": null,
         "wilaya_code": "16",
-        "commune_code": null,
-        "commune": "Mohamed Belouzdad",
-        "lat": 36.75354,
-        "lng": 3.06228,
+        "commune_code": "1609",
+        "commune": "Bir Mourad Rais",
+        "lat": 36.7343108,
+        "lng": 3.0529602,
         "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
           "msp": "4660"
@@ -6476,7 +6490,51 @@
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "etablissement-hospitalier-specialise-chirurgie-cardiaque-clinique-mohamed-abderrahmani"
+        "slug": "etablissement-hospitalier-specialise-chirurgie-cardiaque-clinique-mohamed-abderrahmani",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.7343108,3.0529602"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0016057,
+          36.767844
+        ]
+      },
+      "properties": {
+        "id": "16-ehs-04",
+        "name": "Etablissement Hospitalier Spécialisé Cnms Dr Maouche Mohand Amokrane",
+        "name_fr": "Etablissement Hospitalier Spécialisé Cnms Dr Maouche Mohand Amokrane",
+        "name_ar": null,
+        "wilaya_code": "16",
+        "commune_code": "1623",
+        "commune": "Dely Ibrahim",
+        "lat": 36.767844,
+        "lng": 3.0016057,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified",
+        "source": "msp",
+        "refs": {
+          "msp": "4668"
+        },
+        "type": "ehs",
+        "type_label_fr": "Établissement Hospitalier Spécialisé",
+        "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
+        "sector": "public",
+        "slug": "etablissement-hospitalier-specialise-cnms-dr-maouche-mohand-amokrane",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.767844,3.0016057"
+        ]
       }
     },
     {
@@ -6550,8 +6608,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.081607,
-          36.705308
+          3.0529602,
+          36.7343108
         ]
       },
       "properties": {
@@ -6560,22 +6618,27 @@
         "name_fr": null,
         "name_ar": "المؤسسة الإستشفائية المتخصصة في جراحة القلب عيادة عبد الرحماني محمد",
         "wilaya_code": "16",
-        "commune_code": "1619",
-        "commune": "Bachedjerah",
-        "lat": 36.705308,
-        "lng": 3.081607,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "commune_code": "1609",
+        "commune": "Bir Mourad Rais",
+        "lat": 36.7343108,
+        "lng": 3.0529602,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "node/12912386452",
           "msp": "4661"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%81%d9%8a-%d8%ac%d8%b1%d8%a7%d8%ad"
+        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%81%d9%8a-%d8%ac%d8%b1%d8%a7%d8%ad",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.7343108,3.0529602"
+        ]
       }
     },
     {
@@ -6583,8 +6646,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.06228,
-          36.75354
+          3.0016057,
+          36.767844
         ]
       },
       "properties": {
@@ -6593,12 +6656,12 @@
         "name_fr": null,
         "name_ar": "المؤسسة الإستشفائية المتخصصة مستشفى أمراض القلب والاوعية والطب الرياضي الدكتور معوش محمد أمقران",
         "wilaya_code": "16",
-        "commune_code": null,
-        "commune": "Mohamed Belouzdad",
-        "lat": 36.75354,
-        "lng": 3.06228,
+        "commune_code": "1623",
+        "commune": "Dely Ibrahim",
+        "lat": 36.767844,
+        "lng": 3.0016057,
         "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
           "msp": "4669"
@@ -6607,7 +6670,13 @@
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%89-3"
+        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%a5%d8%b3%d8%aa%d8%b4%d9%81%d8%a7%d8%a6%d9%8a%d8%a9-%d8%a7%d9%84%d9%85%d8%aa%d8%ae%d8%b5%d8%b5%d8%a9-%d9%85%d8%b3%d8%aa%d8%b4%d9%81%d9%89-3",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.767844,3.0016057"
+        ]
       }
     },
     {
@@ -6657,7 +6726,7 @@
         "name_fr": "Etablissement Public Hospitalier Bologhine Ibn Ziri",
         "name_ar": "المؤسسة العمومية الاستشفائية بولوغين بن زيري",
         "wilaya_code": "16",
-        "commune_code": null,
+        "commune_code": "1606",
         "commune": "Bologhine Ibnou Ziri",
         "lat": 36.80528,
         "lng": 3.04278,
@@ -6711,8 +6780,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.137389,
-          36.720797
+          3.146994,
+          36.721891
         ]
       },
       "properties": {
@@ -6723,12 +6792,13 @@
         "wilaya_code": "16",
         "commune_code": "1613",
         "commune": "El Harrach",
-        "lat": 36.720797,
-        "lng": 3.137389,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.721891,
+        "lng": 3.146994,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/253592388",
           "msp": "4681"
         },
         "type": "eph",
@@ -7064,8 +7134,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          3.087478,
-          36.732356
+          3.077281,
+          36.735361
         ]
       },
       "properties": {
@@ -7076,12 +7146,13 @@
         "wilaya_code": "16",
         "commune_code": "1618",
         "commune": "Kouba",
-        "lat": 36.732356,
-        "lng": 3.087478,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.735361,
+        "lng": 3.077281,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "node/8904023079",
           "msp": "4698"
         },
         "type": "epsp",
@@ -7514,8 +7585,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.784836,
-          36.659622
+          5.791,
+          36.660556
         ]
       },
       "properties": {
@@ -7526,13 +7597,12 @@
         "wilaya_code": "18",
         "commune_code": "1824",
         "commune": "Texenna",
-        "lat": 36.659622,
-        "lng": 5.784836,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 36.660556,
+        "lng": 5.791,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "way/1176151120",
           "msp": "4730"
         },
         "type": "ehs",
@@ -7902,8 +7972,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.402254,
-          36.199147
+          5.3596222,
+          36.2028454
         ]
       },
       "properties": {
@@ -7914,20 +7984,25 @@
         "wilaya_code": "19",
         "commune_code": "1901",
         "commune": "Setif",
-        "lat": 36.199147,
-        "lng": 5.402254,
+        "lat": 36.2028454,
+        "lng": 5.3596222,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "node/1745778343",
           "msp": "4750"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "etablissement-hospitalier-specialise-centre-anti-concereux-setif"
+        "slug": "etablissement-hospitalier-specialise-centre-anti-concereux-setif",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.2028454,5.3596222"
+        ]
       }
     },
     {
@@ -8547,8 +8622,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.273759,
-          34.548609
+          0.259722,
+          34.55
         ]
       },
       "properties": {
@@ -8559,13 +8634,12 @@
         "wilaya_code": "20",
         "commune_code": "2012",
         "commune": "Sidi Ahmed",
-        "lat": 34.548609,
-        "lng": 0.273759,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 34.55,
+        "lng": 0.259722,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "node/11694191152",
           "msp": "4788"
         },
         "type": "eph",
@@ -9865,8 +9939,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.7667,
-          36.9
+          7.724866,
+          36.898419
         ]
       },
       "properties": {
@@ -9877,12 +9951,13 @@
         "wilaya_code": "23",
         "commune_code": "2301",
         "commune": "Annaba",
-        "lat": 36.9,
-        "lng": 7.7667,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.898419,
+        "lng": 7.724866,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/342286213",
           "msp": "4913"
         },
         "type": "ehs",
@@ -9897,8 +9972,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.676721,
-          36.90948
+          7.6766901,
+          36.9093728
         ]
       },
       "properties": {
@@ -9909,20 +9984,25 @@
         "wilaya_code": "23",
         "commune_code": "2308",
         "commune": "Seraidi",
-        "lat": 36.90948,
-        "lng": 7.676721,
+        "lat": 36.9093728,
+        "lng": 7.6766901,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "way/378148732",
           "msp": "4914"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "etablissement-hospitalier-specialise-reeducation-readaptation-fonctionnelle-seraidi"
+        "slug": "etablissement-hospitalier-specialise-reeducation-readaptation-fonctionnelle-seraidi",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.9093728,7.6766901"
+        ]
       }
     },
     {
@@ -10940,7 +11020,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية بني سليمان",
         "wilaya_code": "26",
         "commune_code": "2646",
-        "commune": "Beni Slimane",
+        "commune": "Béni Slimane",
         "lat": 36.22703,
         "lng": 3.30596,
         "geo_precision": "approximate",
@@ -11004,7 +11084,7 @@
         "name_ar": null,
         "wilaya_code": "26",
         "commune_code": "2601",
-        "commune": "Medea",
+        "commune": "Médéa",
         "lat": 36.2675,
         "lng": 2.75,
         "geo_precision": "approximate",
@@ -11068,7 +11148,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية بني سليمان",
         "wilaya_code": "26",
         "commune_code": "2646",
-        "commune": "Beni Slimane",
+        "commune": "Béni Slimane",
         "lat": 36.22703,
         "lng": 3.30596,
         "geo_precision": "approximate",
@@ -11153,8 +11233,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.9,
-          36.066667
+          2.904836,
+          36.070212
         ]
       },
       "properties": {
@@ -11165,12 +11245,13 @@
         "wilaya_code": "26",
         "commune_code": "2634",
         "commune": "Zoubiria",
-        "lat": 36.066667,
-        "lng": 2.9,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 36.070212,
+        "lng": 2.904836,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "node/5248403921",
           "msp": "4997"
         },
         "type": "epsp",
@@ -11678,7 +11759,7 @@
         "name_ar": "المؤسسة الاستشفائية المتخصصة في طب النساء و التوليد المسيلة",
         "wilaya_code": "28",
         "commune_code": "2801",
-        "commune": "M'sila",
+        "commune": "M'Sila",
         "lat": 35.71,
         "lng": 4.5472,
         "geo_precision": "approximate",
@@ -11742,7 +11823,7 @@
         "name_ar": "المؤسسة العمومية الاستشفائية المسيلة",
         "wilaya_code": "28",
         "commune_code": "2801",
-        "commune": "M'sila",
+        "commune": "M'Sila",
         "lat": 35.71,
         "lng": 4.5472,
         "geo_precision": "approximate",
@@ -11806,7 +11887,7 @@
         "name_ar": "المؤسسة العمومية الاستشفائية سيدي عيسى",
         "wilaya_code": "28",
         "commune_code": "2816",
-        "commune": "Sidi Aissa",
+        "commune": "Sidi Aïssa",
         "lat": 35.886389,
         "lng": 3.77236,
         "geo_precision": "approximate",
@@ -11838,7 +11919,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية المسيلة",
         "wilaya_code": "28",
         "commune_code": "2801",
-        "commune": "M'sila",
+        "commune": "M'Sila",
         "lat": 35.71,
         "lng": 4.5472,
         "geo_precision": "approximate",
@@ -11902,7 +11983,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية سيدي عيسى",
         "wilaya_code": "28",
         "commune_code": "2816",
-        "commune": "Sidi Aissa",
+        "commune": "Sidi Aïssa",
         "lat": 35.886389,
         "lng": 3.77236,
         "geo_precision": "approximate",
@@ -12695,8 +12776,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.639028,
-          35.693276
+          -0.6331,
+          35.708333
         ]
       },
       "properties": {
@@ -12707,13 +12788,12 @@
         "wilaya_code": "31",
         "commune_code": "3101",
         "commune": "Oran",
-        "lat": 35.693276,
-        "lng": -0.639028,
-        "geo_precision": "exact",
-        "geo_method": "wikidata_point",
+        "lat": 35.708333,
+        "lng": -0.6331,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "wikidata": "Q7894776",
           "msp": "5158"
         },
         "type": "chu",
@@ -12989,8 +13069,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.522015,
-          35.657994
+          -0.529643,
+          35.67367
         ]
       },
       "properties": {
@@ -13001,12 +13081,13 @@
         "wilaya_code": "31",
         "commune_code": "3113",
         "commune": "Sidi Chami",
-        "lat": 35.657994,
-        "lng": -0.522015,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 35.67367,
+        "lng": -0.529643,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/154513390",
           "msp": "5134"
         },
         "type": "ehs",
@@ -13650,7 +13731,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية بوقطب",
         "wilaya_code": "32",
         "commune_code": "3210",
-        "commune": "Bougtoub",
+        "commune": "Bougtob",
         "lat": 34.04052,
         "lng": 0.087067,
         "geo_precision": "approximate",
@@ -13682,7 +13763,7 @@
         "name_ar": "المؤسسة العمومية الإستشفائية الابيض سيدي الشيخ",
         "wilaya_code": "32",
         "commune_code": "3218",
-        "commune": "Sidi Ameur",
+        "commune": "Sidi Amar",
         "lat": 33.768333,
         "lng": 1.413611,
         "geo_precision": "approximate",
@@ -13747,7 +13828,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية بريزينة",
         "wilaya_code": "32",
         "commune_code": "3204",
-        "commune": "Brezina",
+        "commune": "Brézina",
         "lat": 33.083333,
         "lng": 1.261,
         "geo_precision": "approximate",
@@ -13811,7 +13892,7 @@
         "name_ar": "المؤسسة العمومية للصحة الجوارية الخيتر",
         "wilaya_code": "32",
         "commune_code": "3211",
-        "commune": "El Kheiter",
+        "commune": "El Kheïther",
         "lat": 34.143333,
         "lng": 0.073333,
         "geo_precision": "approximate",
@@ -15341,8 +15422,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.95,
-          33.51667
+          6.935966,
+          33.503475
         ]
       },
       "properties": {
@@ -15353,12 +15434,13 @@
         "wilaya_code": "39",
         "commune_code": "3911",
         "commune": "Debila",
-        "lat": 33.51667,
-        "lng": 6.95,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
+        "lat": 33.503475,
+        "lng": 6.935966,
+        "geo_precision": "exact",
+        "geo_method": "osm_point",
         "source": "msp",
         "refs": {
+          "osm": "way/572192258",
           "msp": "5290"
         },
         "type": "epsp",
@@ -16051,8 +16133,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          7.83077,
-          36.076954
+          7.8309413,
+          36.0768497
         ]
       },
       "properties": {
@@ -16063,20 +16145,25 @@
         "wilaya_code": "41",
         "commune_code": "4115",
         "commune": "M'daourouche",
-        "lat": 36.076954,
-        "lng": 7.83077,
+        "lat": 36.0768497,
+        "lng": 7.8309413,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "way/569325575",
           "msp": "5335"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
-        "slug": "etablissement-public-de-sante-de-proximite-mdaourouch-souk-ahras"
+        "slug": "etablissement-public-de-sante-de-proximite-mdaourouch-souk-ahras",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.0768497,7.8309413"
+        ]
       }
     },
     {
@@ -16180,8 +16267,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          2.27077,
-          36.625385
+          2.3874644,
+          36.5695179
         ]
       },
       "properties": {
@@ -16192,20 +16279,25 @@
         "wilaya_code": "42",
         "commune_code": "4215",
         "commune": "Nador",
-        "lat": 36.625385,
-        "lng": 2.27077,
+        "lat": 36.5695179,
+        "lng": 2.3874644,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "node/3006447014",
           "msp": "5354"
         },
         "type": "ehs",
         "type_label_fr": "Établissement Hospitalier Spécialisé",
         "type_label_ar": "المؤسسة الاستشفائية المتخصصة",
         "sector": "public",
-        "slug": "etablissement-hospitalier-specialise-psychiatrique-nador"
+        "slug": "etablissement-hospitalier-specialise-psychiatrique-nador",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.5695179,2.3874644"
+        ]
       }
     },
     {
@@ -16791,8 +16883,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          5.894395,
-          36.394314
+          5.8942551,
+          36.3948107
         ]
       },
       "properties": {
@@ -16803,20 +16895,25 @@
         "wilaya_code": "43",
         "commune_code": "4330",
         "commune": "Ain Beida Harriche",
-        "lat": 36.394314,
-        "lng": 5.894395,
+        "lat": 36.3948107,
+        "lng": 5.8942551,
         "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "geo_method": "owner_verified",
         "source": "msp",
         "refs": {
-          "osm": "node/3548686939",
           "msp": "5380"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
-        "slug": "etablissement-public-de-sante-de-proximite-ain-beida-heriche"
+        "slug": "etablissement-public-de-sante-de-proximite-ain-beida-heriche",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=36.3948107,5.8942551"
+        ]
       }
     },
     {
@@ -17466,8 +17563,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.583187,
-          32.756467
+          -0.5833,
+          32.75
         ]
       },
       "properties": {
@@ -17478,13 +17575,12 @@
         "wilaya_code": "45",
         "commune_code": "4503",
         "commune": "Ain Sefra",
-        "lat": 32.756467,
-        "lng": -0.583187,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 32.75,
+        "lng": -0.5833,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "node/6175090785",
           "msp": "5405"
         },
         "type": "hopital",
@@ -18783,6 +18879,44 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -3.258131,
+          29.407419
+        ]
+      },
+      "properties": {
+        "id": "52-epsp-03",
+        "name": "Etablissement Public de Santé de Proximité Tebelbala",
+        "name_fr": "Etablissement Public de Santé de Proximité Tebelbala",
+        "name_ar": "المؤسسة العمومية للصحة الجوارية تبلبالة",
+        "wilaya_code": "52",
+        "commune_code": "5206",
+        "commune": "Tabelbala",
+        "lat": 29.407419,
+        "lng": -3.258131,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified",
+        "source": "msp",
+        "refs": {
+          "msp": "5507"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "etablissement-public-de-sante-de-proximite-tebelbala",
+        "review_status": "corrected",
+        "reviewed_at": "2026-09-30",
+        "reviewed_by": "GeoAlgeria owner",
+        "review_evidence": [
+          "https://www.google.com/maps?q=29.407419,-3.258131"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.483333,
           27.1935
         ]
@@ -18913,8 +19047,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          6.061674,
-          33.099595
+          6.05796,
+          33.1
         ]
       },
       "properties": {
@@ -18925,13 +19059,12 @@
         "wilaya_code": "55",
         "commune_code": "5501",
         "commune": "Touggourt",
-        "lat": 33.099595,
-        "lng": 6.061674,
-        "geo_precision": "exact",
-        "geo_method": "osm_point",
+        "lat": 33.1,
+        "lng": 6.05796,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "osm": "way/321928730",
           "msp": "5521"
         },
         "type": "ehs",

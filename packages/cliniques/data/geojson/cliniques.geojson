@@ -9438,6 +9438,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -2.237932,
+          31.590962
+        ]
+      },
+      "properties": {
+        "id": "08-00007",
+        "name": "Kerroumi Mohammed",
+        "name_fr": "Kerroumi Mohammed",
+        "name_ar": null,
+        "wilaya_code": "08",
+        "commune_code": "0801",
+        "commune": "Bechar",
+        "lat": 31.590962,
+        "lng": -2.237932,
+        "geo_precision": "approximate",
+        "geo_method": "osm_centroid",
+        "source": "osm",
+        "refs": {
+          "osm": "way/330434664"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -2.217911,
           31.621342
         ]
@@ -22218,6 +22254,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          3.081607,
+          36.705308
+        ]
+      },
+      "properties": {
+        "id": "16-00077",
+        "name": "عيادة متعددة الخدمات",
+        "name_fr": null,
+        "name_ar": "عيادة متعددة الخدمات",
+        "wilaya_code": "16",
+        "commune_code": "1626",
+        "commune": "Djasr Kasentina",
+        "lat": 36.705308,
+        "lng": 3.081607,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/12912386452"
+        },
+        "type": "polyclinique",
+        "type_label_fr": "Polyclinique",
+        "type_label_ar": "عيادة متعددة الخدمات",
+        "sector": "public",
+        "speciality": "general",
+        "address": null,
+        "phone": null,
+        "opening_hours": "24/7",
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           2.980473,
           36.778639
         ]
@@ -32982,6 +33054,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.402254,
+          36.199147
+        ]
+      },
+      "properties": {
+        "id": "19-00004",
+        "name": "Centre de santé bel air",
+        "name_fr": "Centre de santé bel air",
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": "1901",
+        "commune": "Setif",
+        "lat": 36.199147,
+        "lng": 5.402254,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/1745778343"
+        },
+        "type": "centre_sante",
+        "type_label_fr": "Centre de santé",
+        "type_label_ar": "مركز صحي",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           5.4099,
           36.200806
         ]
@@ -35674,6 +35782,42 @@
         "address": "Rue du 20 Août 1955, Sétif 19000",
         "phone": "+213 36 84 91 92;+213 36 82 30 24;+213 783 76 37 58",
         "opening_hours": "24/7",
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          0.273759,
+          34.548609
+        ]
+      },
+      "properties": {
+        "id": "20-00001",
+        "name": "الشيخ الراقي شويخي عبد العالي",
+        "name_fr": null,
+        "name_ar": "الشيخ الراقي شويخي عبد العالي",
+        "wilaya_code": "20",
+        "commune_code": "2012",
+        "commune": "Sidi Ahmed",
+        "lat": 34.548609,
+        "lng": 0.273759,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/11694191152"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
         "emergency": null
       }
     },
@@ -58100,6 +58244,42 @@
         "sector": "public",
         "speciality": null,
         "address": "Rue boumaakel Ahmed, Sidi Ghiles 42021",
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.27077,
+          36.625385
+        ]
+      },
+      "properties": {
+        "id": "42-00036",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "42",
+        "commune_code": "4222",
+        "commune": "Cherchell",
+        "lat": 36.625385,
+        "lng": 2.27077,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/3006447014"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
         "phone": null,
         "opening_hours": null,
         "emergency": null
