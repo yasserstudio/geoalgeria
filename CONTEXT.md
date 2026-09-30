@@ -26,6 +26,10 @@ _Avoid_: district, sub-prefecture, arrondissement
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town
 
+**Creation year**:
+The year a Wilaya became official, that is the year the law creating it took effect, published as `created`. The 48 founded by Law 84-09 (1984) read `original`, or `1984` where the field is a number; wilayas 49-58 read `2019` (Law 19-12); wilayas 59-69 read `2026` (Law n° 26-06, *JO* n° 25 of 5 April 2026). Never the year a reform was announced: the 59-69 reform was announced on 2025-11-16 and its Creation year is still 2026.
+_Avoid_: founded, established, announced year, reform year
+
 **Former name**:
 A spelling a Wilaya or Commune carried before a sourced correction; it still resolves to that record but is never shown as its current name.
 _Avoid_: alias, old name, legacy name

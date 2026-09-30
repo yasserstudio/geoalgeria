@@ -13,7 +13,12 @@ declare namespace algeriaGeodata {
     postal_code: string;
     latitude: number;
     longitude: number;
-    created: "original" | "2019" | "2025";
+    /** The year the wilaya became official, i.e. the year the law creating it
+     *  took effect: `"original"` for the 48 of Law 84-09 (1984), `"2019"` for
+     *  49-58 (Law 19-12), `"2026"` for 59-69 (Law n° 26-06, *JO* n° 25 of
+     *  5 April 2026). Never the year a reform was announced: the 59-69 cohort
+     *  was announced on 2025-11-16 and is still `"2026"`. */
+    created: "original" | "2019" | "2026";
     parent_wilaya?: string;
   }
 
@@ -22,6 +27,9 @@ declare namespace algeriaGeodata {
     name_fr: string;
     name_ar: string;
     name_en: string;
+    /** The year the wilaya became official, as a number: `1984`, `2019` or
+     *  `2026`. Same meaning as `Wilaya.created`, which spells the 1984 cohort
+     *  `"original"`. */
     created: number;
     dairas_count: number;
     communes_count: number;
@@ -61,6 +69,9 @@ declare namespace algeriaGeodata {
   }
 
   export interface Reform {
+    /** The year the reform took effect, matching the `created` of the wilayas
+     *  it added. The 59-69 reform is `2026` (Law n° 26-06 of 4 April 2026),
+     *  not 2025, the year it was announced. */
     year: number;
     law: string;
     journal_officiel?: string;

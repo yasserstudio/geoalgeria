@@ -25,7 +25,9 @@ def validate_json(path):
 
 def validate_wilayas(data):
     required = {"code", "name_fr", "name_ar"}
-    valid_created = {"original", "1984", "2019", "2025", 1984, 2019, 2025}
+    # `created` is the year the wilaya became official, so the Law n° 26-06
+    # cohort (JO n° 25 of 5 April 2026) is 2026, not the 2025 announcement.
+    valid_created = {"original", "1984", "2019", "2026", 1984, 2019, 2026}
     codes = set()
     for i, w in enumerate(data):
         missing = required - set(w.keys())

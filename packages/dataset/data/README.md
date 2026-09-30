@@ -70,7 +70,13 @@ data/
 | `postal_code` | string | Main postal code |
 | `latitude` | number | Capital city latitude |
 | `longitude` | number | Capital city longitude |
-| `created` | string | `"original"` (1–31), `"1984"` (32–48), `"2019"` (49–58), or `"2025"` (59–69) |
+| `created` | string | The year the wilaya became official: `"original"` (1–48, Law 84-09 of 1984), `"2019"` (49–58, Law 19-12), `"2026"` (59–69, Law n° 26-06, *JO* n° 25 of 5 April 2026) |
+
+`created` is the year the creating law took effect, never the year a reform was
+announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
+`wilayas.json` carries the same value as a number, spelling the 1984 cohort
+`1984` instead of `"original"`, and its `metadata.reforms[].year` matches the
+`created` of the wilayas that reform added.
 
 ### Commune (full)
 
@@ -96,7 +102,7 @@ data/
 | `postal_code` | string \| null | Commune postal code (null for 5 communes with no citable code) |
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
-| `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2025 retain their 2021 mother-wilaya prefix |
+| `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2026 retain their 2021 mother-wilaya prefix |
 
 ### Commune (e-commerce)
 
@@ -181,7 +187,7 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 
 ## Coverage
 
-- **69 wilayas** — complete (original 48 + 2019 reform + 2025 reform)
+- **69 wilayas** — complete (original 48 + 2019 reform + 2026 reform)
 - **551 dairas**
 - **1,541 communes** (complete; the 13 name-twin communes of the reform wilayas were added 2026-07-29 from `research/_communes-reconcile/`)
 - **Postal codes** — 100%
