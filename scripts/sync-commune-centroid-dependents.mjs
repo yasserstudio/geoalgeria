@@ -2,8 +2,9 @@
 // Cascade corrected flagship commune centres into the sector packages that
 // derive from them but cannot replay their own generator offline.
 //
-// WHY. `scripts/fix-commune-centres.mjs` moved 56 commune centres in
-// packages/dataset (research/_commune-centres/README.md). Two kinds of published
+// WHY. `scripts/fix-commune-centres.mjs` has moved 230 commune centres in
+// packages/dataset over two audits, 56 on 2026-09-27 and 189 on 2026-09-29
+// (research/_commune-centres/README.md). Two kinds of published
 // record are derived from those values and go stale the moment they move:
 //
 //   1. a coordinate that IS a commune centre, because the record has no point of
@@ -16,7 +17,7 @@
 //      one.
 //
 // Most dependents rebuild from a capture their generator can replay and are
-// simply re-run (`node packages/<pkg>/scripts/fetch.mjs --cache`). The four
+// simply re-run (`node packages/<pkg>/scripts/fetch.mjs --cache`). The three
 // handled here cannot:
 //
 //   djezzy                     has no offline mode at all; only a live pull of
@@ -25,19 +26,24 @@
 //                              predates the v2 contract and would emit the old shape.
 //   industrie-pharmaceutique   ships no generator; its data was assembled once from
 //                              the MIP fabrication register.
-//   sante                      replays, but its MSP capture re-pairs two FR/AR posts
-//                              once the corrected commune names land, which retires
-//                              two published ids (05-epsp-07, 16-ehs-14). Ids are
-//                              public join keys, so a coordinate correction is not
-//                              the release that churns them.
+//
+// `sante` was handled here on 2026-09-27 and 2026-09-29 for a different reason: it
+// replays, but its replay churned published ids, and ids are public join keys, so a
+// coordinate correction was not the release to churn them in. Both causes are now
+// fixed in the generator itself (it carries ids over on the MSP registry id, and it
+// no longer pairs two posts on a commune that only two name fragments agree on), so
+// sante replays like the other ten and is no longer listed below.
 //
 // WHAT EACH PACKAGE GETS
-//   sante, agriculture, industrie-pharmaceutique  recentre only. Their commune is
-//     matched from the source's own text (an MSP locality, a MADR address, an MIP
-//     commune column), not from geometry, so no attribution can move; only the
-//     coordinate they borrow from the commune has to follow it.
-//   djezzy  re-join. It stamps wilaya/commune by unrestricted nearest commune
-//     centroid over the flagship set, the join reproduced in nearestCommune() below.
+//   agriculture, industrie-pharmaceutique  recentre only. Their commune is matched
+//     from the source's own text (a MADR address, an MIP commune column), not from
+//     geometry, so no attribution can move; only the coordinate they borrow from
+//     the commune has to follow it.
+//   djezzy  re-join. It stamps wilaya/commune from the flagship set by the shared
+//     rule scripts/lib/build-utils.mjs resolveCommune(), reproduced in
+//     rejoinCommune() below: containing wilaya polygon, then containing commune
+//     outline, then distance. It was an unrestricted nearest-centroid search until
+//     2026-09-29.
 //
 // RECENTRE ANCHORS (also the rule scripts/validate-packages.mjs enforces)
 //   commune_code    the record names its commune by code: the anchor is that
@@ -68,16 +74,16 @@ import {
   writePackageV2,
 } from "./lib/v2-transforms.mjs";
 import { canonicalCommuneForCode, canonicalCommuneForCurrentLabel } from "./lib/commune-index.mjs";
+import { resolveCommune } from "./lib/build-utils.mjs";
+import { describeBatches, loadCorrections } from "./lib/commune-corrections.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
-const CORRECTIONS = join(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json");
 
 const WRITE = process.argv.includes("--write");
 const CHECK = process.argv.includes("--check");
 if (WRITE && CHECK) throw new Error("Choose either --write or --check");
 
-const DEG = Math.PI / 180;
 // 6 decimals is the repository's coordinate resolution (schema round6, ~0.1 m), and
 // the flagship keeps a handful of centres at 7, so every comparison is made on the
 // rounded value a published record can actually carry.
@@ -100,35 +106,27 @@ function communesSplit() {
   return out;
 }
 
-/** The unrestricted nearest-centroid join djezzy uses: equirectangular squared
- *  distance, monotonic with great-circle distance at this scale. */
-function nearestCommune(lat, lng, communes) {
-  let best = null;
-  let bestD = Infinity;
-  const cosLat = Math.cos(lat * DEG);
-  for (const c of communes) {
-    const dx = (c.longitude - lng) * cosLat;
-    const dy = c.latitude - lat;
-    const d = dx * dx + dy * dy;
-    if (d < bestD) {
-      bestD = d;
-      best = c;
-    }
-  }
-  return best;
+/** The join djezzy uses, which is scripts/lib/build-utils.mjs resolveCommune(): the
+ *  commune whose OpenStreetMap outline contains the point wins outright, searched over
+ *  the whole country and with the wilaya taken from the commune registry; only when no
+ *  outline holds it does distance decide, inside the wilaya whose shipped polygon does.
+ *  It was an unrestricted nearest-centroid search until 2026-09-29, which is how
+ *  moving 245 commune centres carried 58 published records into a wilaya whose polygon
+ *  does not contain them. The row is passed whole, so the commune it already shipped
+ *  in is what the rule keeps wherever geometry cannot contradict it. */
+function rejoinCommune(r, communes) {
+  return resolveCommune(r.lat, r.lng, communes, r).commune;
 }
 
-// --- the repudiated values, from the corrections file ------------------------
-const corrections = JSON.parse(readFileSync(CORRECTIONS, "utf-8"));
-if (corrections.corrections.length !== corrections.count) {
-  throw new Error(`corrections file says ${corrections.count} rows, carries ${corrections.corrections.length}`);
-}
+// --- the repudiated values, from every applied corrections file ---------------
+// Every batch, not the latest: a dependent can still be sitting on a value the
+// 2026-09-27 batch repudiated, and dropping that batch would read as clean.
+const corrections = loadCorrections();
 const repudiated = new Map(); // "lat,lng" of the old centre -> correction row
 for (const f of corrections.corrections) repudiated.set(`${round6(f.from[1])},${round6(f.from[0])}`, f);
 
 // --- what each package needs -------------------------------------------------
 const PACKAGES = [
-  { pkg: "sante", file: "sante.json", recentre: { commune_centroid: "commune_code" } },
   {
     pkg: "agriculture",
     file: "agriculture.json",
@@ -156,7 +154,8 @@ for (const spec of PACKAGES) {
   if (spec.rejoin) {
     for (const r of rows) {
       if (!Number.isFinite(r.lat) || !Number.isFinite(r.lng)) continue;
-      const c = nearestCommune(r.lat, r.lng, split);
+      const c = rejoinCommune(r, split);
+      if (!c) continue;
       const wilaya_code = String(c.wilaya_code).padStart(2, "0");
       const commune_code = padC(c.code_commune);
       if (r.wilaya_code === wilaya_code && r.commune_code === commune_code && r.commune === c.name_fr) continue;
@@ -227,7 +226,7 @@ for (const spec of PACKAGES) {
   if (moved || rejoined) anyChange = true;
 }
 
-console.log(`flagship centres repudiated by this release: ${corrections.count} (OSM ${corrections.timestamp_osm_base})`);
+console.log(`flagship centres repudiated to date: ${corrections.count} over ${corrections.docs.length} batch(es): ${describeBatches(corrections.docs)}`);
 for (const line of report) console.log(`  ${line}`);
 if (CHECK && anyChange) {
   console.error("\ndependents are stale: run node scripts/sync-commune-centroid-dependents.mjs --write");

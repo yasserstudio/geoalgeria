@@ -45,7 +45,7 @@ test("an umbrella ahead of npm is reported as a manual publish", () => {
 });
 
 test("a package npm has never seen names the one-time bootstrap", () => {
-  // @geoalgeria/normalize 1.0.0 has never been on npm.
+  // The shape @geoalgeria/normalize 1.0.0 had before its 2026-09-29 bootstrap.
   const gaps = releaseGaps(
     [pkg({ dir: "packages/normalize", name: "@geoalgeria/normalize", version: "1.0.0", registryVersion: null })],
     WORKFLOW,

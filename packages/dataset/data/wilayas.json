@@ -3,7 +3,7 @@
     "title": "Algeria Administrative Divisions: 69 Wilayas",
     "total_wilayas": 69,
     "total_communes": 1541,
-    "total_dairas": 556,
+    "total_dairas": 551,
     "reforms": [
       {
         "year": 1984,
@@ -17,7 +17,7 @@
         "description": "10 southern delegated wilayas promoted to full wilayas (49-58)"
       },
       {
-        "year": 2025,
+        "year": 2026,
         "law": "Law 26-06, April 4, 2026",
         "journal_officiel": "JO No. 25, April 5, 2026",
         "announced": "2025-11-16",
@@ -38,7 +38,8 @@
       "Aures News: elauresnews.dz",
       "El Moudjahid: elmoudjahid.dz",
       "France 24 Arabic",
-      "Wikipedia FR/AR (cross-referenced)"
+      "Wikipedia FR/AR (cross-referenced)",
+      "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe"
     ],
     "last_updated": "2026-08-21",
     "notes": [
@@ -555,7 +556,7 @@
       "created": 2019,
       "law": "Law 19-12",
       "mother_wilaya_code": 30,
-      "dairas_count": 6,
+      "dairas_count": 5,
       "communes_count": 13
     },
     {
@@ -596,11 +597,12 @@
       "name_ar": "آفلو",
       "name_fr": "Aflou",
       "name_en": "Aflou",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 3,
       "communes_count": 12,
       "dairas_count": 5,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "آفلو",
@@ -657,12 +659,12 @@
       "name_ar": "بريكة",
       "name_fr": "Barika",
       "name_en": "Barika",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 5,
       "communes_count": 8,
-      "dairas_count": 4,
-      "dairas_source": "Aures News: confirmed by wali of Batna",
+      "dairas_count": 3,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "بريكة",
@@ -703,11 +705,12 @@
       "name_ar": "القنطرة",
       "name_fr": "El Kantara",
       "name_en": "El Kantara",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 7,
       "communes_count": 5,
       "dairas_count": 3,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "القنطرة",
@@ -736,11 +739,12 @@
       "name_ar": "بئر العاتر",
       "name_fr": "Bir El Ater",
       "name_en": "Bir El Ater",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 12,
       "communes_count": 4,
       "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "بئر العاتر",
@@ -765,11 +769,12 @@
       "name_ar": "العريشة",
       "name_fr": "El Aricha",
       "name_en": "El Aricha",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 13,
       "communes_count": 4,
       "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "العريشة",
@@ -794,11 +799,12 @@
       "name_ar": "قصر الشلالة",
       "name_fr": "Ksar Chellala",
       "name_en": "Ksar Chellala",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 14,
       "communes_count": 6,
-      "dairas_count": 3,
+      "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "قصر الشلالة",
@@ -831,12 +837,12 @@
       "name_ar": "عين وسارة",
       "name_fr": "Aïn Ouessara",
       "name_en": "Aïn Ouessara",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 17,
       "communes_count": 10,
       "dairas_count": 4,
-      "dairas_source": "Djelfa Info: Presidential Decree 19-328",
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "dairas": [
         {
           "name_ar": "عين وسارة",
@@ -855,21 +861,21 @@
           ]
         },
         {
+          "name_ar": "حد الصحاري",
+          "name_fr": "Had Sahary",
+          "communes": [
+            "حد الصحاري",
+            "عين فقة",
+            "بويرة الأحدب"
+          ]
+        },
+        {
           "name_ar": "سيدي لعجال",
           "name_fr": "Sidi Ladjel",
           "communes": [
             "سيدي لعجال",
             "الخميس",
             "حاسي فدول"
-          ]
-        },
-        {
-          "name_ar": "حد الصحاري",
-          "name_fr": "Had Sahary",
-          "communes": [
-            "حد الصحاري",
-            "عين فكة",
-            "بويرة الأحدب"
           ]
         }
       ],
@@ -921,27 +927,27 @@
       "name_ar": "مسعد",
       "name_fr": "Messaad",
       "name_en": "Messaad",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 17,
       "communes_count": 8,
-      "dairas_count": 4,
-      "dairas_source": "Djelfa Info: Presidential Decree 19-328",
+      "dairas_count": 2,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "dairas": [
         {
           "name_ar": "مسعد",
           "name_fr": "Messaad",
           "communes": [
             "مسعد",
-            "سلمانة",
             "سد رحال",
-            "دلدول",
-            "القطارة"
+            "قطارة",
+            "سلمانة",
+            "دلدول"
           ]
         },
         {
           "name_ar": "فيض البطمة",
-          "name_fr": "Feidh El Botma",
+          "name_fr": "Faïdh El Botma",
           "communes": [
             "فيض البطمة",
             "أم العظام",
@@ -989,11 +995,12 @@
       "name_ar": "قصر البخاري",
       "name_fr": "Ksar El Boukhari",
       "name_en": "Ksar El Boukhari",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 26,
       "communes_count": 21,
       "dairas_count": 6,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "قصر البخاري",
@@ -1086,57 +1093,28 @@
       "name_ar": "بوسعادة",
       "name_fr": "Bou Saâda",
       "name_en": "Bou Saâda",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 28,
       "communes_count": 23,
       "dairas_count": 8,
-      "dairas_source": "Arabic Wikipedia: Wilaya Bou Saâda",
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "dairas": [
         {
           "name_ar": "بوسعادة",
-          "name_fr": "Bou Saâda",
+          "name_fr": "Bou Saada",
           "communes": [
             "بوسعادة",
             "الهامل",
-            "ولتان"
+            "ولتام"
           ]
         },
         {
-          "name_ar": "مجدل",
-          "name_fr": "Medjedel",
-          "communes": [
-            "مجدل",
-            "سليم"
-          ]
-        },
-        {
-          "name_ar": "جبل أمساعد",
+          "name_ar": "جبل مساعد",
           "name_fr": "Djebel Messaad",
           "communes": [
-            "جبل مسعد",
-            "عين الريش"
-          ]
-        },
-        {
-          "name_ar": "عين الملح",
-          "name_fr": "Aïn El Melh",
-          "communes": [
-            "عين الملح",
-            "بئر الفضة",
-            "عين فارس",
-            "سيدي امحمد",
-            "مناعة"
-          ]
-        },
-        {
-          "name_ar": "بن سرور",
-          "name_fr": "Ben Srour",
-          "communes": [
-            "بن سرور",
-            "أولاد سليمان",
-            "الزرزور",
-            "محمد بوضياف"
+            "جبل مساعد",
+            "سليم"
           ]
         },
         {
@@ -1144,8 +1122,24 @@
           "name_fr": "Khoubana",
           "communes": [
             "الخبانة",
-            "مصيف",
+            "امسيف",
             "الحوامد"
+          ]
+        },
+        {
+          "name_ar": "امجدل",
+          "name_fr": "Medjedel",
+          "communes": [
+            "امجدل",
+            "مناعة"
+          ]
+        },
+        {
+          "name_ar": "أولاد سيدي إبراهيم",
+          "name_fr": "Ouled Sidi Brahim",
+          "communes": [
+            "أولاد سيدي إبراهيم",
+            "بنزوه"
           ]
         },
         {
@@ -1157,11 +1151,24 @@
           ]
         },
         {
-          "name_ar": "أولاد سيدي إبراهيم",
-          "name_fr": "Ouled Sidi Brahim",
+          "name_ar": "عين الملح",
+          "name_fr": "Aïn El Meleh",
           "communes": [
-            "أولاد سيدي إبراهيم",
-            "بن زوح"
+            "عين الملح",
+            "بئر الفضة",
+            "عين فارس",
+            "سيدي امحمد",
+            "عين الريش"
+          ]
+        },
+        {
+          "name_ar": "بن سرور",
+          "name_fr": "Ben Srour",
+          "communes": [
+            "بن سرور",
+            "أولاد سليمان",
+            "الزرزور",
+            "محمد بوضياف"
           ]
         }
       ],
@@ -1266,11 +1273,12 @@
       "name_ar": "الأبيض سيدي الشيخ",
       "name_fr": "El Abiodh Sidi Cheikh",
       "name_en": "El Abiodh Sidi Cheikh",
-      "created": 2025,
+      "created": 2026,
       "law": "Law 26-06",
       "mother_wilaya_code": 32,
       "communes_count": 7,
       "dairas_count": 3,
+      "dairas_source": "Decret executif n 26-253 du 15 juillet 2026 (JORA n 52 du 21 juillet 2026), annexe",
       "communes": [
         {
           "name_ar": "الأبيض سيدي الشيخ",

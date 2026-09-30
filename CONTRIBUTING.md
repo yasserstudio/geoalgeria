@@ -204,12 +204,13 @@ documentation-only edit to one of those files is genuinely all you have, either
 write the major changeset or move the edit to a file outside the list, such as a
 README or a type declaration.
 
-One exception applies while `@geoalgeria/normalize` is not yet on npm: the guard
-also passes when `npm view @geoalgeria/normalize version` answers 404, because
-there is no published catalog to invalidate and the package's first release entry
-is a patch on the flagship rather than a major on a package nobody can install.
-Once the first version is published, that path closes by itself and only the major
-changeset satisfies the guard.
+One exception used to apply, while `@geoalgeria/normalize` was not yet on npm: the
+guard also passes when `npm view @geoalgeria/normalize version` answers 404, because
+there was then no published catalog to invalidate and the package's first release
+entry was a patch on the flagship rather than a major on a package nobody could
+install. **1.0.0 was published on 2026-09-29**, so the registry no longer answers
+404 and that path is closed: only the major changeset satisfies the guard. The code
+path stays as a fail-safe, not as a route anyone can take.
 
 A 404 is the only registry answer that opens that exception. If the registry
 cannot be reached at all, a timeout, an auth error, no `npm` on the PATH, the guard

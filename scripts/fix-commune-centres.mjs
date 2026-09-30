@@ -9,11 +9,20 @@
 // artefacts. Full method, sources and the 13 left for review:
 // research/_commune-centres/README.md.
 //
-// SOURCE OF TRUTH. research/_commune-centres/corrections-2026-09-27.json - one
-// row per commune, carrying `from`, `to`, the OSM relation and admin_centre node
-// ids the value comes from, and the Overpass `timestamp_osm_base` of the pull.
-// This script applies that file and invents nothing: a row whose stored value no
-// longer equals its `from` aborts the run rather than being overwritten.
+// THE 2026-09-29 SEAT AUDIT. Containment can only see a centre that leaves its
+// commune, and the wilaya sweep above tested only 68 of the 1,541 against a
+// commune boundary. Running the same standard over every row (private tracker
+// #170) found 215 outside their own commune, 174 of them with the evidence
+// complete, which is the second batch this script applies.
+//
+// SOURCE OF TRUTH. research/_commune-centres/corrections-<date>.json, one file
+// per audit, listed oldest-first in scripts/lib/commune-corrections.mjs. Each row
+// carries `from`, `to`, the OSM relation and admin_centre node ids the value comes
+// from, and its pull's Overpass `timestamp_osm_base`. This script applies those
+// files and invents nothing: a row whose stored value is neither its `from` nor
+// its `to` aborts the run rather than being overwritten. A row already at its `to`
+// is a no-op, so every batch is replayed on every run and a carrier that missed an
+// older one still fails.
 //
 // CARRIERS. Every file in packages/dataset that holds a commune point, because a
 // repair that lands in one and not the others is the drift that shipped v2 JSON
@@ -27,15 +36,16 @@
 //   node scripts/fix-commune-centres.mjs --write \
 //        --target /path/algeria.json --target /path/communes.geojson
 //      # patch arbitrary carriers (the app repo's committed copies) from the
-//      # SAME corrections file, so every surface agrees.
+//      # SAME corrections files, so every surface agrees.
 
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { describeBatches, loadCorrections } from "./lib/commune-corrections.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
-const CORRECTIONS = join(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json");
 
 const WRITE = process.argv.includes("--write");
 const targets = [];
@@ -43,9 +53,8 @@ for (let i = 2; i < process.argv.length; i++) {
   if (process.argv[i] === "--target") targets.push(process.argv[++i]);
 }
 
-const doc = JSON.parse(readFileSync(CORRECTIONS, "utf-8"));
+const doc = loadCorrections();
 const fixes = doc.corrections;
-if (fixes.length !== doc.count) throw new Error(`corrections file says ${doc.count} rows, carries ${fixes.length}`);
 
 /** code_commune -> fix, and "w|name_fr" -> fix (the GeoJSON has no code). */
 const byCode = new Map();
@@ -58,12 +67,27 @@ for (const f of fixes) {
   byName.set(`${f.wilaya_code}|${f.name_fr}`, f);
 }
 
-// Externally-verified answers this run must reproduce, or it aborts. Both are the
-// reported defects, and both are stated as the report stated them, not as the
-// corrections file happens to read.
+// Externally-verified answers this run must reproduce, or it aborts. Each is
+// stated as its report stated it, not as the corrections file happens to read.
+// Alger Centre and Bethioua are the two reported defects of 2026-09-27; Sidi
+// Slimane is the largest single move of the 2026-09-29 audit (108.7 km) and
+// Ouled Ahmed Timmi is its sign-flip class, a positive longitude where the
+// chef-lieu is west of Greenwich.
+//
+// Fenoughil and Inghar are the two rows that batch's first pass missed and a review
+// caught. Fenoughil's 59.3 km longitude sign flip sits INSIDE its own commune, which
+// is large enough to hold both values, so containment is blind to it and only the
+// mangled-ordinate detector in scripts/lib/seat-evidence.mjs sees it. Inghar's seat
+// node carries the same wikidata item as its own relation while the transliteration
+// differs (In Ghar), which the strict name rule read as a disagreement; its
+// correction also takes 14 mosques back out of In Salah.
 const PINS = [
   [1601, "Alger Centre", [3.058211, 36.776335]],
   [3107, "Bethioua", [-0.267936, 35.805837]],
+  [3221, "Sidi Slimane", [1.731609, 33.832116]],
+  [121, "Ouled Ahmed Timmi", [-0.281279, 27.851041]],
+  [115, "Fenoughil", [-0.30211, 27.606097]],
+  [5302, "Inghar", [1.906526, 27.101832]],
 ];
 for (const [code, name, want] of PINS) {
   const f = byCode.get(code);
@@ -211,7 +235,7 @@ if (targets.length) {
 
 // Every carrier must have seen every correction, or one file keeps a stale point
 // while the report reads clean. The three split files hold one wilaya range each,
-// so between them they see all 56 and individually they do not.
+// so between them they see all 230 and individually they do not.
 const split = new Set(["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"]);
 const splitSeen = reports.filter((r) => split.has(r.label)).reduce((n, r) => n + r.seen, 0);
 if (!targets.length) {
@@ -222,11 +246,9 @@ if (!targets.length) {
   }
 }
 
-console.log(
-  `corrections: ${fixes.length} commune centre(s), OSM timestamp_osm_base ${doc.timestamp_osm_base}`,
-);
+console.log(`corrections: ${fixes.length} commune centre(s) over ${doc.docs.length} batch(es): ${describeBatches(doc.docs)}`);
 for (const r of reports) console.log(`  ${WRITE ? "patched" : "would patch"} ${r.label}: ${r.changed} row(s) changed, ${r.seen} matched`);
-console.log("pins ok (Alger Centre [3.058211, 36.776335], Bethioua [-0.267936, 35.805837])");
+console.log(`pins ok (${PINS.map(([, name, to]) => `${name} [${to.join(", ")}]`).join(", ")})`);
 
 if (problems.length) {
   console.error(`\n${problems.length} problem(s); nothing written:`);

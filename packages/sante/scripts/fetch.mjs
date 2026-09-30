@@ -27,7 +27,7 @@
  */
 
 import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { dirname, join } from "node:path";
 import https from "node:https";
 import http from "node:http";
@@ -235,7 +235,7 @@ const TRANSLIT = {
   "ظ": "d", "ع": "a", "غ": "gh", "ف": "f", "ق": "k", "ك": "k", "ل": "l", "م": "m",
   "ن": "n", "ه": "h", "و": "ou", "ي": "i", "ء": "", "ى": "a",
 };
-function translitAr(s) {
+export function translitAr(s) {
   const n = normAr(s).replace(/^ال| ال/g, " ").trim(); // drop the definite article
   return [...n].map((c) => (c === " " ? " " : TRANSLIT[c] ?? "")).join("").replace(/\s+/g, " ").trim();
 }
@@ -333,6 +333,9 @@ const SPECIALTY_FR = [
   [/BRULE/, "brule"],
 ];
 const SPECIALTY_AR = [
+  // before psy: التنفسيه (respiratory) literally contains نفسيه (mental), so the
+  // psy pattern would otherwise read every chest facility as psychiatric.
+  [/الصدريه|الصدر|الرئه|التنفسيه/, "pneumo"],
   [/عقليه|نفسيه/, "psy"],
   [/النساء|النسا|التوليد|الام والطفل|الامومه|الولاده/, "gyneco"],
   [/العيون|عيون/, "oph"],
@@ -340,12 +343,11 @@ const SPECIALTY_AR = [
   [/السرطان|سرطان|الاورام|اورام/, "cancer"],
   [/التاهيل|الترويض|الوظيفي|اعاده التربيه/, "reeduc"],
   [/الكلي|المسالك|البوليه|تصفيه الدم/, "nephro"],
-  [/الصدريه|الصدر|الرئه|التنفسيه/, "pneumo"],
   [/العظام|الرضوض/, "ortho"],
   [/المعديه|المتنقله/, "infect"],
   [/الحروق/, "brule"],
 ];
-function specialtyCode(title, lang) {
+export function specialtyCode(title, lang) {
   if (lang === "ar") { const n = normAr(title); for (const [re, c] of SPECIALTY_AR) if (re.test(n)) return c; }
   else { const n = norm(title); for (const [re, c] of SPECIALTY_FR) if (re.test(n)) return c; }
   return null;
@@ -408,7 +410,7 @@ function resolveWilaya(termIds, taxMap, wil, locality, lang) {
 }
 
 // match a locality string to a commune within the wilaya; returns {c, how} or null.
-function matchCommune(locality, lang, wilayaCode, communesByWilaya) {
+export function matchCommune(locality, lang, wilayaCode, communesByWilaya) {
   const list = communesByWilaya.get(wilayaCode);
   if (!list || !locality) return null;
   const key = lang === "ar" ? "ar" : "fr";
@@ -422,15 +424,21 @@ function matchCommune(locality, lang, wilayaCode, communesByWilaya) {
     if ((" " + locality + " ").includes(" " + cn + " ") || e[keysq].length >= 4 && sloc.includes(e[keysq])) return { c: e.c, how: "substr" };
   }
   for (const e of list) if (e[keysq] && e[keysq].length >= 4 && lev1(e[keysq], sloc) <= 1) return { c: e.c, how: "lev1" };
-  // token-level fuzzy (handles multi-word localities with one fuzzy token)
+  // token-level fuzzy (handles multi-word localities with one fuzzy token). The
+  // first commune with a token hit wins, as before; `how` now says how much of the
+  // commune name that hit covered. `token` means every long token of the commune
+  // name is in the locality, so the locality really does name that commune.
+  // `token_partial` means only some of them are, so the match rests on a fragment
+  // such as the given name in "Mohamed Belouzdad": enough to place the record,
+  // not enough to identify the facility (see weakCommune).
   const toks = locality.split(" ").filter((t) => t.length >= 4);
   for (const e of list) {
     const cn = e[key];
     if (!cn) continue;
-    for (const ct of cn.split(" ")) {
-      if (ct.length < 4) continue;
-      for (const t of toks) if (lev1(ct, t) <= 1) return { c: e.c, how: "token" };
-    }
+    const cts = cn.split(" ").filter((ct) => ct.length >= 4);
+    if (!cts.length) continue;
+    const hits = cts.filter((ct) => toks.some((t) => lev1(ct, t) <= 1)).length;
+    if (hits) return { c: e.c, how: hits === cts.length ? "token" : "token_partial" };
   }
   return null;
 }
@@ -615,6 +623,7 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
 
     let wilayaCode = resolveWilaya(r["categorie-healthinstitution"], taxMap, wil, locality, lang);
     let commune = null;
+    let communeHow = null;
     if (wilayaCode) {
       // try the wilaya-stripped locality first (resolves the specific town, not
       // the capital); fall back to the full locality (resolves capital-named
@@ -622,17 +631,17 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
       const matchLoc = stripWilayaSuffix(locality, wil.byCode.get(wilayaCode), lang);
       let cm = matchCommune(matchLoc, lang, wilayaCode, communesByWilaya);
       if (!cm && matchLoc !== locality) cm = matchCommune(locality, lang, wilayaCode, communesByWilaya);
-      if (cm) { commune = cm.c; stats[`commune_${cm.how}`] = (stats[`commune_${cm.how}`] || 0) + 1; }
+      if (cm) { commune = cm.c; communeHow = cm.how; stats[`commune_${cm.how}`] = (stats[`commune_${cm.how}`] || 0) + 1; }
       else stats.commune_fail++;
     } else {
       // wilaya unknown: find the commune nationwide, take its wilaya
       const g = matchCommuneGlobal(locality, lang, globalCommunes);
-      if (g) { commune = g; wilayaCode = g.wilaya_code; stats.wilaya_from_commune++; }
+      if (g) { commune = g; communeHow = "global"; wilayaCode = g.wilaya_code; stats.wilaya_from_commune++; }
       else { stats.wilaya_fail++; continue; } // truly unplaceable (no wilaya at all)
     }
 
     const specialty = type === "ehs" ? specialtyCode(title, lang) : null;
-    posts.push({ lang, type, locality, specialty, wilayaCode, title, slug: str(r.slug), msp_id: r.id, commune });
+    posts.push({ lang, type, locality, specialty, wilayaCode, title, slug: str(r.slug), msp_id: r.id, commune, communeHow });
   }
 
   // 2) pair FR + AR posts within each (wilaya, type) group (see pairPosts):
@@ -693,7 +702,7 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
 // (exactly one remaining fr + one ar in it). Step 3: leftovers stay monolingual.
 // The wilaya name is stripped from locality tokens — inside the capital every
 // establishment carries it, so it can't tell two of them apart.
-function pairPosts(fr, ar, wil) {
+export function pairPosts(fr, ar, wil) {
   const out = [];
   if (!fr.length && !ar.length) return out;
   const wset = wilayaTokens(wil.byCode.get((fr[0] || ar[0]).wilayaCode));
@@ -726,7 +735,12 @@ function pairPosts(fr, ar, wil) {
   for (const f of fr) if (!usedF.has(f) && f.commune && f.commune.code_commune != null) slot(f.commune.code_commune).f.push(f);
   for (const a of ar) if (!usedA.has(a) && a.commune && a.commune.code_commune != null) slot(a.commune.code_commune).a.push(a);
   for (const { f, a } of byC.values()) {
-    if (f.length === 1 && a.length === 1) { usedF.add(f[0]); usedA.add(a[0]); out.push({ fr: f[0], ar: a[0] }); }
+    // A commune only two coincidental name fragments agree on is not evidence that
+    // the two posts are one facility, so at least one side must name its commune
+    // outright (see weakCommune).
+    if (f.length === 1 && a.length === 1 && !(weakCommune(f[0]) && weakCommune(a[0]))) {
+      usedF.add(f[0]); usedA.add(a[0]); out.push({ fr: f[0], ar: a[0] });
+    }
   }
 
   // step 2b: place-named types (EPH/EPSP/CHU…) — if exactly one fr and one ar are
@@ -768,6 +782,13 @@ function simTokens(ft, at) {
 }
 const placeNamed = (t) => t === "eph" || t === "epsp" || t === "chu" || t === "hopital" || t === "clinique";
 
+// A `token_partial` commune was reached on a fragment of a multi-word commune
+// name, which a person-named establishment hits by coincidence: "Chirurgie
+// Cardiaque Clinique Mohamed Abderrahmani" lands in the commune Mohamed
+// Belouzdad on the given name alone. Such a commune still geocodes the record; it
+// just carries too little of the name to testify that two posts are one facility.
+const weakCommune = (post) => post.communeHow === "token_partial";
+
 // Title-case a French establishment name that arrived UPPERCASED from the title.
 function titleCaseFr(title) {
   const small = new Set(["de", "du", "des", "d", "la", "le", "les", "et", "en", "à", "au", "aux"]);
@@ -782,10 +803,13 @@ function titleCaseFr(title) {
 
 // Upgrade commune-centroid coordinates to a precise OSM/Wikidata point. Within
 // each commune, establishments and facilities are matched 1:1 — every facility
-// is used at most once — by shared locality/specialty tokens, with the wilaya
-// and commune names excluded (every facility in the commune carries them, so
-// they can't tell two apart). A lone establishment + lone facility in a commune
-// is matched even without a token overlap. This prevents one facility (e.g. the
+// is used at most once — by a shared SPECIFIC locality/specialty token. The
+// wilaya name, the commune name and the facility-class vocabulary (GENERIC_TOKENS:
+// clinique, hopital, عيادة, مركز …) are all excluded, because every facility in
+// the commune carries them and they cannot tell two apart. A lone establishment +
+// lone facility in a commune is matched even without a token overlap: there the
+// commune itself is the evidence, and there is no second candidate to confuse it
+// with. This prevents one facility (e.g. the
 // city CHU) from being stamped onto every establishment in the commune.
 function refineWithFacilities(establishments, facilities, communesByWilaya, wil, stats) {
   // index facilities by nearest commune (skip null-coded communes)
@@ -840,19 +864,56 @@ function refineWithFacilities(establishments, facilities, communesByWilaya, wil,
       if (sc < 1 || usedE.has(e) || usedF.has(f)) continue;
       usedE.add(e); usedF.add(f); stamp(e, f);
     }
-    // lone establishment + lone facility in the commune → the same place
-    if (ests.length === 1 && facs.length === 1 && !usedE.has(ests[0])) stamp(ests[0], facs[0]);
+    // Lone establishment + lone facility in the commune → the same place, unless
+    // the two names contradict each other. The 1:1 loop above has already taken
+    // every pair with a specific token in common, so reaching here means they
+    // share none. That is only silence when at least one side has no specific
+    // token to give: a facility named just "Polyclinique", or the commune name,
+    // or nothing at all. When BOTH sides name something specific and none of it
+    // agrees, the names are evidence AGAINST one place, and stamping anyway put
+    // the Setif anti-cancer centre on the city's tuberculosis service.
+    if (ests.length === 1 && facs.length === 1 && !usedE.has(ests[0])) {
+      const et = estTokens(ests[0], com, wil);
+      if (!(et.length && facs[0]._tokens.length)) stamp(ests[0], facs[0]);
+    }
   }
 }
-// Discriminating tokens of a place string, with wilaya + commune names removed.
+// The facility-class vocabulary: words that say what KIND of place this is, in
+// French and in transliterated Arabic. Every health facility in the country
+// carries some of them, so a shared one is not evidence that two names are the
+// same place. Sharing only `aiadh` (عيادة, clinic) is what stamped the OSM
+// polyclinic way/1171998839, amenity=clinic "Polyclinique Hai El Badr", onto the
+// Arabic record of the EHS cardiac-surgery Clinique Abderrahmani: one generic
+// token, no specific one, a different facility. The specialty signal
+// (`spec_cardio` and friends) is NOT in here: it discriminates.
+const GENERIC_TOKENS = new Set([
+  // French / Latin
+  "etablissement", "etablissements", "public", "publique", "hospitalier",
+  "hospitaliere", "hospitalisation", "specialise", "specialisee", "sante",
+  "proximite", "clinique", "cliniques", "clinic", "polyclinique", "polyclinic",
+  "centre", "center", "hopital", "hospital", "dispensaire", "infirmerie",
+  "salle", "soins", "medical", "medicale", "medico", "unite", "universitaire",
+  "sanitaire", "cabinet", "maternite", "secteur", "ehs", "eph", "epsp", "epse",
+  "chu", "ehu", "cht", "service", "controle", "lutte", "prevention", "maladie",
+  "maladies", "malades", "traitement", "depistage",
+  // transliterated Arabic (translitAr output)
+  "moussh", "amoumih", "astchfaiih", "astchfai", "mtkhssh", "shh", "llshh",
+  "jouarih", "aiadh", "mstchfi", "mrkz", "mtaddh", "khdmat", "kaah", "alaj",
+  "mshh", "shi", "tbi", "jamai", "ouhdh", "toulid", "aalmtkhssh", "aaadh",
+  "mslhh", "mkafhh", "amrad", "oualamrad", "alaamrad", "moukafhh", "ouhdat",
+]);
+const isGeneric = (t) => GENERIC_TOKENS.has(t) || GENERIC_TOKENS.has(squash(t));
+
+// Discriminating tokens of a place string, with wilaya + commune names and the
+// facility-class vocabulary removed.
 function placeTokens(latin, com, wil) {
   const drop = new Set();
   const w = wil.byCode.get(com.wilaya_code);
   for (const s of [norm(w.name_fr).toLowerCase(), translitAr(w.name_ar), norm(com.name_fr).toLowerCase(), translitAr(com.name_ar)])
     for (const t of s.split(" ")) if (t.length >= 3) drop.add(t);
-  return latin.split(" ").filter((t) => t.length >= 3 && !drop.has(t));
+  return latin.split(" ").filter((t) => t.length >= 3 && !drop.has(t) && !isGeneric(t));
 }
-function estTokens(est, com, wil) {
+export function estTokens(est, com, wil) {
   const fr = est.name_fr ? classify(est.name_fr).locality.toLowerCase() : "";
   const ar = est.name_ar ? translitAr(classify(est.name_ar).locality) : "";
   const toks = [...placeTokens(fr, com, wil), ...placeTokens(ar, com, wil)];
@@ -860,7 +921,7 @@ function estTokens(est, com, wil) {
   if (spec) toks.push("spec_" + spec);
   return toks;
 }
-function facilityTokens(name, com, wil) {
+export function facilityTokens(name, com, wil) {
   if (!name) return [];
   const lang = isArabic(name) ? "ar" : "fr";
   const latin = lang === "ar" ? translitAr(name) : norm(name).toLowerCase();
@@ -869,7 +930,7 @@ function facilityTokens(name, com, wil) {
   if (spec) toks.push("spec_" + spec);
   return toks;
 }
-function overlapCount(a, b) {
+export function overlapCount(a, b) {
   if (!a.length || !b.length) return 0;
   let hit = 0;
   for (const x of a) for (const y of b) if (lev1(squash(x), squash(y)) <= 1) { hit++; break; }
@@ -927,14 +988,18 @@ async function main() {
 
   assignIds(rows);
 
-  // Emit v2 via the shared writer. Carry ids over by the stable OSM/Wikidata/MSP id
-  // so the commune re-scoping shows up as corrected wilaya/commune, not id churn.
+  // Emit v2 via the shared writer. Carry ids over by the MSP registry post id
+  // first: it is the establishment's own identity in the source of record, and it
+  // survives a re-pairing or a different OSM/Wikidata match. Keying on the OSM id
+  // first made ids follow the geocoding match rather than the place, so a facility
+  // that merely matched a different OSM way retired its published id and minted a
+  // new one. OSM/Wikidata stay as fallbacks for a record the MSP pull never named.
   const cfg = MIGRATIONS.sante;
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
   const retiredIds = readRetiredIds(OUT_DIR);
   carryOverIds(v2, readCommitted(OUT_DIR, "sante.json"), (r) =>
-    r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : r.refs?.msp ? `msp:${r.refs.msp}` : null,
+    r.refs?.msp ? `msp:${r.refs.msp}` : r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null,
     "sante",
     retiredIds,
   );
@@ -952,7 +1017,10 @@ async function main() {
   );
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+// Importable for the pairing tests; only the direct invocation builds.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

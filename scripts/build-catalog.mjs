@@ -58,7 +58,13 @@ const V1_HOLDOUTS = {
       geocoded_pct: 100,
       wilayas_covered: a.length,
       bbox: null,
-      license: d.license,
+      // Its data is split three ways (the MIT compilation, two ODbL parts, and
+      // Algérie Poste's terms over the data/poste mirror), so the descriptor
+      // states prose in `conditionsOfAccess` instead of a licence URL in
+      // `license`, the XOR the Dataset JSON-LD rule requires. The catalog
+      // publishes whichever of the two the descriptor carries, or this entry
+      // would state no terms at all.
+      license: d.license ?? d.conditionsOfAccess,
       updated: d.dateModified,
     };
   },

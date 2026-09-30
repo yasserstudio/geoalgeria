@@ -6,8 +6,9 @@
 
 **مفاتيح البحث لأسماء الأماكن الجزائرية، بالعربية وبالفرنسية. طيٌّ واحد في كل مكان.**
 
+[![npm](https://img.shields.io/npm/v/@geoalgeria/normalize)](https://www.npmjs.com/package/@geoalgeria/normalize)
+[![npm downloads](https://img.shields.io/npm/dm/@geoalgeria/normalize)](https://www.npmjs.com/package/@geoalgeria/normalize)
 [![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
-[![npm: غير منشورة بعد](https://img.shields.io/badge/npm-%D8%BA%D9%8A%D8%B1%20%D9%85%D9%86%D8%B4%D9%88%D8%B1%D8%A9%20%D8%A8%D8%B9%D8%AF-lightgrey.svg)](https://github.com/yasserstudio/geoalgeria/tree/main/packages/normalize)
 
 </div>
 
@@ -20,13 +21,8 @@
 
 </div>
 
-> **ليست على npm بعد.** الحزمة `@geoalgeria/normalize` 1.0.0 موجودة في هذا المستودع
-> ولم تُنشر قط. إلى أن يحجز المالك الاسم (أمر `npm publish --access public` يدوي واحد،
-> انظر [RELEASING.md](../../RELEASING.md))، ثبّتها من المستودع لا من السجل؛ الأمر أدناه
-> هو ما سيعمل بعد نشرها.
-
 ```bash
-npm install @geoalgeria/normalize   # بعد النشر
+npm install @geoalgeria/normalize
 ```
 
 ```js

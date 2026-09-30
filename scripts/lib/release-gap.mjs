@@ -12,8 +12,9 @@
  *    a word.
  *  - **never bootstrapped.** Trusted Publishing's OIDC grant attaches to an
  *    EXISTING package, so a brand-new name has to be claimed by one manual
- *    publish first. `@geoalgeria/normalize` 1.0.0 has never been on npm, while
- *    its README carried npm badges and RELEASING listed it among the staged 28.
+ *    publish first. `@geoalgeria/normalize` 1.0.0 sat unpublished for weeks
+ *    while its README carried npm badges and RELEASING listed it among the
+ *    staged 28, until its bootstrap on 2026-09-29.
  *  - **absent from `release.yml`.** The dry-run step and the GitHub Releases step
  *    iterate a hand-written list of package dirs, not the workspace. A package
  *    missing from it gets no dry run and no GitHub Release even when it stages.

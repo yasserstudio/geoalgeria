@@ -11,12 +11,24 @@ A first-level administrative division of Algeria (province). There are 69 as of 
 _Avoid_: province, governorate, state
 
 **Daira**:
-A second-level division that groups communes within a wilaya (district).
+A second-level division that groups communes within a wilaya (district). Named
+after its seat commune, and identified by a stable id that is never reused: a
+daira that stops existing leaves its id in `packages/dataset/data/retired-ids.json`,
+while one that is renamed or reseated on another of its communes keeps its id,
+because the id belongs to the body of communes and not to the seat.
+Membership for wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59 to 69 comes
+from executive decree 26-253 (JORA n 52, 21 July 2026); the other 48 wilayas
+keep their decree 91-306 lists, so the national total is the dataset's count,
+never stated as official.
 _Avoid_: district, sub-prefecture, arrondissement
 
 **Commune**:
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town
+
+**Creation year**:
+The year a Wilaya became official, that is the year the law creating it took effect, published as `created`. The 48 founded by Law 84-09 (1984) read `original`, or `1984` where the field is a number; wilayas 49-58 read `2019` (Law 19-12); wilayas 59-69 read `2026` (Law n° 26-06, *JO* n° 25 of 5 April 2026). Never the year a reform was announced: the 59-69 reform was announced on 2025-11-16 and its Creation year is still 2026.
+_Avoid_: founded, established, announced year, reform year
 
 **Former name**:
 A spelling a Wilaya or Commune carried before a sourced correction; it still resolves to that record but is never shown as its current name.

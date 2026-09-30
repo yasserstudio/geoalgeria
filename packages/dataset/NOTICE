@@ -2,10 +2,11 @@ geoalgeria data notices
 
 Package code is licensed under the MIT License in LICENSE, and so is the
 compilation of wilayas, dairas, communes, their bilingual names, postal codes and
-administrative codes.
+administrative codes. Three parts of the data are not: two derived from
+OpenStreetMap, and the mirrored postal data under data/poste/.
 
-Two parts of the data are derived from OpenStreetMap and are made available under
-the Open Database License (ODbL) 1.0 instead. Attribution:
+The two parts derived from OpenStreetMap are made available under the Open
+Database License (ODbL) 1.0 instead. Attribution:
 (c) OpenStreetMap contributors
 https://opendatacommons.org/licenses/odbl/1-0/
 https://www.openstreetmap.org/copyright
@@ -19,7 +20,7 @@ https://www.openstreetmap.org/copyright
 
 2. Commune centre coordinates
 
-   62 of the 1,541 commune `latitude` / `longitude` values, each taken from that
+   251 of the 1,541 commune `latitude` / `longitude` values, each taken from that
    commune's own OpenStreetMap `admin_level=8` relation:
 
    - 56 corrected on 2026-09-27 from the relation's `admin_centre` node, Overpass
@@ -27,6 +28,12 @@ https://www.openstreetmap.org/copyright
      id, `admin_centre` node id and `ref:ONS`, is listed in
      research/_commune-centres/corrections-2026-09-27.json in the repository, and
      summarised in data/geojson/communes.metadata.json.
+   - 189 corrected on 2026-09-29 from the same node, Overpass
+     `timestamp_osm_base` 2026-09-29T12:54:47Z, after every one of the 1,541
+     centres was compared with its relation's `admin_centre` and tested against
+     the relation's own unsimplified boundary. Every row, with the same ids and
+     the four containment verdicts that decided it, is listed in
+     research/_commune-centres/corrections-2026-09-29.json.
    - 6 corrected in version 2.1.0 from the relation centroid, matched on the
      relation's `ref` tag: Belarbi (2242), El Hamdania (2616), Ouled Bouachra
      (2627), Deux Bassins (2653), Makhda (2915) and El Euch (3427). See
@@ -36,13 +43,29 @@ https://www.openstreetmap.org/copyright
      written to either and no ODbL claim is made over them.
 
    A commune centre is one value repeated across representations, so the ODbL
-   covers these 62 coordinates wherever they appear: data/algeria.json,
+   covers these 251 coordinates wherever they appear: data/algeria.json,
    data/communes_w1_w23.json, data/communes_w24_w48.json,
    data/communes_w49_w69.json, data/csv/communes.csv,
    data/geojson/communes.geojson and data/sql/full.sql.
 
-   The other 1,479 commune coordinates, and the 69 wilaya capital coordinates, are
+   The other 1,290 commune coordinates, and the 69 wilaya capital coordinates, are
    not OpenStreetMap-derived and no ODbL claim is made over them.
+
+3. Mirrored postal data
+
+   data/poste/ (postoffices.json, atms.json, their CSV and GeoJSON
+   representations and their metadata.json) is a generated mirror of
+   @geoalgeria/poste, whose source is Algérie Poste's BaridiMap portal
+   (https://baridimap.poste.dz), retrieved 2026-06-08. Terms, exactly as
+   @geoalgeria/poste states them:
+
+   Data © Algérie Poste; redistributed for reference
+
+   The underlying data is © Algérie Poste, redistributed for reference and to
+   power GeoAlgeria (https://geoalgeria.com). It is not offered under the MIT
+   License, and no open licence is claimed over it. The post office and ATM
+   postal codes, commune codes and wilaya codes carried alongside it are part of
+   the MIT compilation above.
 
 Database rights and share-alike obligations may apply to redistributed derived
 databases. This notice does not replace any applicable licence text or source

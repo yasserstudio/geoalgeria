@@ -70,7 +70,7 @@ const MIXED_LICENCE =
   `Two OpenStreetMap-derived parts are ODbL 1.0: https://opendatacommons.org/licenses/odbl/1-0/\n\n` +
   "- The 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`,\n" +
   "  derived from OpenStreetMap `admin_level=4` relations.\n" +
-  "- 62 commune centre coordinates, repeated in `data/algeria.json`,\n" +
+  "- 251 commune centre coordinates, repeated in `data/algeria.json`,\n" +
   "  `data/communes_w*.json` and `data/csv/communes.csv`.\n\n" +
   "Per-part attribution: NOTICE.\n";
 
@@ -78,7 +78,7 @@ const MIXED_NOTICE =
   "geoalgeria data notices\n\n(c) OpenStreetMap contributors\n" +
   "https://opendatacommons.org/licenses/odbl/1-0/\n\n" +
   "1. Wilaya boundary polygons\n\n   data/geojson/wilaya-boundaries.geojson, 69 features.\n\n" +
-  "2. Commune centre coordinates\n\n   62 of the 1,541 values, carried by data/algeria.json,\n" +
+  "2. Commune centre coordinates\n\n   251 of the 1,541 values, carried by data/algeria.json,\n" +
   "   data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json\n" +
   "   and data/csv/communes.csv.\n";
 
