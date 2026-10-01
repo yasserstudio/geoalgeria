@@ -4,7 +4,7 @@
 
 A wilaya's coordinates are the centre of its capital commune, so 66 of the 69 wilaya points move.
 
-**One point per capital, not two.** A wilaya used to publish a point of its own, an OpenStreetMap `admin_level=4` relation `admin_centre`, while the commune the decrees name as its chef-lieu published another. Two values for one town centre is one too many: a consumer asking where the seat of a wilaya is got a different answer from the wilaya row and from the commune row. `latitude`/`longitude` on a wilaya is now the capital commune's own coordinate, digit for digit, which is rule 9 of `docs/adr/0001-coordinate-review-by-independent-votes.md`.
+**One point per capital, not two.** A wilaya used to publish a point of its own, an OpenStreetMap `admin_level=4` relation `admin_centre`, while the commune the decrees name as its chef-lieu published another. Two values for one town centre is one too many: a consumer asking where the seat of a wilaya is got a different answer from the wilaya row and from the commune row. `latitude`/`longitude` on a wilaya is now the capital commune's own coordinate, digit for digit, which is the Owner's rule of 2026-10-01 (ADR 0001 in the repository).
 
 **What moves.** 66 of the 69, in all five files that carry a wilaya point: `data/algeria.json`, `data/csv/wilayas.csv`, `data/sql/full.sql`, `data/geojson/wilayas.geojson` and `algeria.geojson`. 52 of the moves are under 1 km. The 14 at or over 1 km:
 

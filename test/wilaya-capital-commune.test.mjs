@@ -42,6 +42,8 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
+import { inCommuneOutline } from "../scripts/lib/commune-resolver.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset");
 const readText = (...p) => readFileSync(join(DATA, ...p), "utf-8");
@@ -134,25 +136,6 @@ function pointsFromGeojson(...p) {
   );
 }
 
-/** Ray casting over one ring of [lng, lat] pairs. */
-function inRing(lng, lat, ring) {
-  let hit = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const [xi, yi] = ring[i];
-    const [xj, yj] = ring[j];
-    if (yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) hit = !hit;
-  }
-  return hit;
-}
-
-/** Inside any outer ring and no inner ring. The bbox is a reject, not the answer. */
-function insideCommune(lng, lat, boundary) {
-  const [w, s, e, n] = boundary.bbox;
-  if (lng < w || lng > e || lat < s || lat > n) return false;
-  return (
-    boundary.outer.some((r) => inRing(lng, lat, r)) && !boundary.inner.some((r) => inRing(lng, lat, r))
-  );
-}
 
 test("wilaya capitals: the commune table loaded", () => {
   assert.equal(communes.length, 1541, `got ${communes.length} communes`);
@@ -240,10 +223,18 @@ for (const [label, load] of POINTS) {
 test("wilaya capitals: the wilaya point is inside its capital commune's own outline", () => {
   const boundaries = readResearch("commune-boundaries.json");
   const exceptionsDoc = readResearch("containment-exceptions.json");
-  const keyOf = (wilaya, name) => `${Number(wilaya)}|${name}`;
-  const BOUNDARIES = new Map(boundaries.communes.map((c) => [keyOf(c.wilaya_code, c.name_fr), c]));
+  // Keyed on code_commune, which both files carry for every row. The containment guard
+  // next door keys on (wilaya_code, name_fr) because data/geojson/communes.geojson has
+  // no code; nothing read here has that problem, and a rename must not break a check on
+  // a stable code.
+  const BOUNDARIES = new Map(boundaries.communes.map((c) => [c.code_commune, c]));
+  assert.equal(BOUNDARIES.size, boundaries.communes.length, "the boundary cache has duplicate code_commune keys");
   const EXCEPTED = new Set(
-    [...exceptionsDoc.exceptions, ...exceptionsDoc.no_boundary].map((e) => keyOf(e.wilaya_code, e.name_fr)),
+    [...exceptionsDoc.exceptions, ...exceptionsDoc.no_boundary].map((e) => e.code_commune),
+  );
+  assert.ok(
+    [...EXCEPTED].every((c) => Number.isInteger(c)),
+    "an exception row with no code_commune cannot be matched, so it would read as no exception",
   );
 
   const points = Object.fromEntries(
@@ -253,12 +244,11 @@ test("wilaya capitals: the wilaya point is inside its capital commune's own outl
   const excepted = [];
   for (const [rawCode, cap] of Object.entries(capitals)) {
     const commune = byCode.get(cap);
-    const key = keyOf(commune.wilaya_code, commune.name_fr);
-    const boundary = BOUNDARIES.get(key);
+    const boundary = BOUNDARIES.get(cap);
     assert.ok(boundary?.usable, `wilaya ${rawCode}: no usable outline for capital ${cap} (${commune.name_fr})`);
-    if (EXCEPTED.has(key)) excepted.push(`wilaya ${rawCode}: capital ${cap} (${commune.name_fr})`);
+    if (EXCEPTED.has(cap)) excepted.push(`wilaya ${rawCode}: capital ${cap} (${commune.name_fr})`);
     const [lng, lat] = points[Number(rawCode)];
-    if (!insideCommune(lng, lat, boundary))
+    if (!inCommuneOutline(lng, lat, boundary))
       outside.push(`wilaya ${rawCode}: [${lng}, ${lat}] is outside ${commune.name_fr} (${cap})`);
   }
   assert.deepEqual(
