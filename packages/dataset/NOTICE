@@ -2,10 +2,10 @@ geoalgeria data notices
 
 Package code is licensed under the MIT License in LICENSE, and so is the
 compilation of wilayas, dairas, communes, their bilingual names, postal codes and
-administrative codes. Three parts of the data are not: two derived from
+administrative codes. Four parts of the data are not: three derived from
 OpenStreetMap, and the mirrored postal data under data/poste/.
 
-The two parts derived from OpenStreetMap are made available under the Open
+The three parts derived from OpenStreetMap are made available under the Open
 Database License (ODbL) 1.0 instead. Attribution:
 (c) OpenStreetMap contributors
 https://opendatacommons.org/licenses/odbl/1-0/
@@ -60,10 +60,26 @@ https://www.openstreetmap.org/copyright
    data/communes_w49_w69.json, data/csv/communes.csv,
    data/geojson/communes.geojson and data/sql/full.sql.
 
-   The other 1,285 commune coordinates, and the 69 wilaya capital coordinates, are
-   not OpenStreetMap-derived and no ODbL claim is made over them.
+   The other 1,285 commune coordinates are not OpenStreetMap-derived and no ODbL
+   claim is made over them.
 
-3. Mirrored postal data
+3. Wilaya capital points
+
+   A wilaya's latitude / longitude is the centre of its capital commune
+   (capital_commune_code), the same value and not a second reading of it, so it
+   carries whatever terms that commune centre carries. 6 of the 69 wilaya capital
+   points are therefore among the OpenStreetMap-derived coordinates above and are
+   ODbL 1.0, (c) OpenStreetMap contributors: wilayas 7 (Biskra, commune 701),
+   16 (Alger Centre, 1601), 25 (Constantine, 2501), 32 (El Bayadh, 3201),
+   52 (Beni-Abbes, 5201) and 61 (El Kantara, 717). They appear in
+   data/algeria.json, data/csv/wilayas.csv, data/sql/full.sql,
+   data/geojson/wilayas.geojson and algeria.geojson.
+
+   The other 63 wilaya capital points are the centres of communes with no
+   recorded source, are not OpenStreetMap-derived and no ODbL claim is made over
+   them.
+
+4. Mirrored postal data
 
    data/poste/ (postoffices.json, atms.json, their CSV and GeoJSON
    representations and their metadata.json) is a generated mirror of

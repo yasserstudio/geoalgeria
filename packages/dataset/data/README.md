@@ -56,8 +56,8 @@ data/
   "name_ar": "الجزائر",
   "phone_code": "021",
   "postal_code": "16000",
-  "latitude": 36.7525,
-  "longitude": 3.04197,
+  "latitude": 36.776335,
+  "longitude": 3.058211,
   "created": "original",
   "capital_commune_code": 1601
 }
@@ -70,8 +70,8 @@ data/
 | `name_ar` | string | Arabic name |
 | `phone_code` | string | Telephone area code |
 | `postal_code` | string | Main postal code |
-| `latitude` | number | Capital city latitude |
-| `longitude` | number | Capital city longitude |
+| `latitude` | number | Latitude of the capital commune's centre, the same value as that commune's `latitude` |
+| `longitude` | number | Longitude of the capital commune's centre, the same value as that commune's `longitude` |
 | `created` | string | The year the wilaya became official: `"original"` (1–48, Law 84-09 of 1984), `"2019"` (49–58, Law 19-12), `"2026"` (59–69, Law n° 26-06, *JO* n° 25 of 5 April 2026) |
 | `capital_commune_code` | integer | The `code_commune` of the wilaya's capital (chef-lieu); join it for the capital's names, postal code and coordinates |
 
@@ -88,13 +88,24 @@ its wilaya code: wilaya 59 (Aflou) reads `319`. Per-wilaya source, citation and
 the one point where the decree and OpenStreetMap disagree:
 [`wilaya-capitals.metadata.json`](wilaya-capitals.metadata.json).
 
-A wilaya's `latitude`/`longitude` is its capital's point, so all 69 now sit on the
-centre of their own capital commune. Wilaya 16 was the exception: its point was an
-OpenStreetMap `admin_centre` at `36.7325, 3.08722`, 1.3 km from the centre of Kouba
-and 5.5 km from Alger Centre, while décret n° 84-79 names Alger as the chef-lieu. It
-now reads `36.776335, 3.058211`, the coordinate the commune record already carries
-for Alger Centre, and is therefore one of the OpenStreetMap-derived points below,
-**ODbL 1.0, © OpenStreetMap contributors**, wherever it appears.
+A wilaya's `latitude`/`longitude` **is** the centre of its capital commune, the same
+value and not a second reading of it, so there is one point to verify per capital
+(rule 9 of
+[`docs/adr/0001-coordinate-review-by-independent-votes.md`](../../../docs/adr/0001-coordinate-review-by-independent-votes.md)).
+Before that rule, 65 of the 69 wilaya points were a separate OpenStreetMap
+`admin_level=4` `admin_centre`, up to 8.8 km from the commune they were the capital
+of (wilaya 52, Beni-Abbes), and one of them, wilaya 55, sat outside its capital
+commune altogether. Each now reads its commune's own coordinate, and the check is
+containment in that commune's OpenStreetMap outline plus equality,
+`test/wilaya-capital-commune.test.mjs`.
+
+A wilaya point therefore carries whatever terms its capital commune's centre
+carries. 6 of the 69 wilaya capital points are among the OpenStreetMap-derived
+commune centres below, so
+they are **ODbL 1.0, © OpenStreetMap contributors** wherever they appear: wilayas 7
+(Biskra), 16 (Alger Centre), 25 (Constantine), 32 (El Bayadh), 52 (Beni-Abbes) and
+61 (El Kantara). The other 63 wilaya capital points are the centres of communes with
+no recorded source.
 
 `created` is the year the creating law took effect, never the year a reform was
 announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
@@ -296,8 +307,9 @@ that selects exactly these four.
 
 A fifth capital moved in the same batch, and it is the same source. Beni-Abbes (5201) sat
 5,754 m from its town centre, and the two-claim criterion could not nominate it, because
-wilaya 52's own point is 6,735 m from the repudiated centre and 8,786 m from the town: that
-point is itself about 8.8 km out. The project owner raised it instead, reading the town
+wilaya 52's own point was 6,735 m from the repudiated centre and 8,786 m from the town:
+that point was itself about 8.8 km out, and now reads this commune's corrected centre like
+every other wilaya point. The project owner raised it instead, reading the town
 centre off Google Maps on 2026-10-01. **That reading is not what ships.** The rule from
 that day is that a coordinate read off a proprietary map may only confirm an open source,
 within 500 m, and the open coordinate is what is published, so the value here is the

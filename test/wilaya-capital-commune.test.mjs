@@ -12,14 +12,29 @@
 //   1. the join holds: every capital is a commune, of that same wilaya, and no
 //      two wilayas claim the same commune. A code shifted by one row fails here.
 //   2. all five carriers agree, so a hand-edit of one file is caught.
-//   3. the wilaya's own capital point lands nearest the centre of the capital
-//      commune. The commune centres are an independent table, so this catches a
-//      capital assigned to the wrong commune of the right wilaya, which check 1
-//      cannot see. It has no exemptions: wilaya 16 used to be the one, its point
-//      sitting in Kouba while the decree says Alger, and the point was moved to
-//      the centre of Alger Centre rather than the check being widened.
+//   3. the wilaya's own capital point EQUALS the centre of its capital commune, to
+//      the digit, in every file that carries a wilaya point, and that point is
+//      inside the capital commune's own OpenStreetMap outline.
 //   4. the documented meaning is present, because the value is only correct
 //      relative to it.
+//
+// WHY EQUALITY AND CONTAINMENT, NOT A NEAREST-CENTRE SEARCH. This check used to ask
+// which commune centre the wilaya point was nearest, and require it to be the
+// capital's. That rule passes on wrong data: wilaya 52's point sat 8.8 km from the
+// centre of Beni-Abbes and still answered Beni-Abbes, because the next centre is
+// further away than the error is. It is also two claims about one town, so a reader
+// who wants the seat of a wilaya has to pick one of them. Rule 9 of
+// docs/adr/0001-coordinate-review-by-independent-votes.md (Owner, 2026-10-01)
+// collapses them: a wilaya capital point IS its capital commune's centre, so there
+// is one point to verify per capital, and it is verified the way every other
+// published point is, by containment in the commune's own outline
+// (test/commune-centre-in-commune.test.mjs states that standard and why it replaced
+// a distance). Containment is run here on the wilaya point itself rather than
+// inferred from equality, so a point that stops agreeing fails both checks.
+//
+// NO EXEMPTIONS, EITHER SIDE. None of the 69 capital communes is in
+// research/_commune-centres/containment-exceptions.json, and that is asserted: an
+// exception added there must not quietly become an exemption here.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -31,6 +46,8 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset");
 const readText = (...p) => readFileSync(join(DATA, ...p), "utf-8");
 const read = (...p) => JSON.parse(readText(...p));
+const readResearch = (...p) =>
+  JSON.parse(readFileSync(join(ROOT, "research", "_commune-centres", ...p), "utf-8"));
 
 const communes = ["communes_w1_w23", "communes_w24_w48", "communes_w49_w69"].flatMap((f) =>
   read("data", `${f}.json`),
@@ -77,10 +94,64 @@ function fromSql() {
   return out;
 }
 
-/** Equirectangular approximation, plenty for "which commune centre is nearest". */
-function km([lngA, latA], [lngB, latB]) {
-  const x = (lngA - lngB) * Math.cos((((latA + latB) / 2) * Math.PI) / 180) * 111.32;
-  return Math.hypot(x, (latA - latB) * 110.57);
+/** Every file in packages/dataset that carries a wilaya point: [label, () => {code: [lng, lat]}] */
+const POINTS = [
+  [
+    "data/algeria.json",
+    () => Object.fromEntries(read("data", "algeria.json").map((w) => [w.code, [w.longitude, w.latitude]])),
+  ],
+  ["data/csv/wilayas.csv", () => pointsFromCsv("data", "csv", "wilayas.csv")],
+  ["data/sql/full.sql", () => pointsFromSql()],
+  ["data/geojson/wilayas.geojson", () => pointsFromGeojson("data", "geojson", "wilayas.geojson")],
+  ["algeria.geojson", () => pointsFromGeojson("algeria.geojson")],
+];
+
+function pointsFromCsv(...p) {
+  const [head, ...rows] = readText(...p).trim().split(/\r?\n/);
+  const col = head.split(",");
+  const [ci, lat, lng] = [col.indexOf("code"), col.indexOf("latitude"), col.indexOf("longitude")];
+  assert.ok(ci >= 0 && lat >= 0 && lng >= 0, `${p.join("/")}: no code/latitude/longitude column`);
+  return Object.fromEntries(
+    rows.map((r) => {
+      const f = r.split(",");
+      return [Number(f[ci]), [Number(f[lng]), Number(f[lat])]];
+    }),
+  );
+}
+
+function pointsFromSql() {
+  const text = readText("data", "sql", "full.sql");
+  const out = {};
+  // (code, 'name_fr', 'name_ar', 'phone', 'postal', lat, lng, 'created', capital)
+  const re = /^ {2}\((\d+), .*, (-?[\d.]+), (-?[\d.]+), '(?:original|2019|2026)', \d+\)[,;]$/gm;
+  for (const m of text.matchAll(re)) out[Number(m[1])] = [Number(m[3]), Number(m[2])];
+  return out;
+}
+
+function pointsFromGeojson(...p) {
+  return Object.fromEntries(
+    read(...p).features.map((ft) => [Number(ft.properties.code), ft.geometry.coordinates.map(Number)]),
+  );
+}
+
+/** Ray casting over one ring of [lng, lat] pairs. */
+function inRing(lng, lat, ring) {
+  let hit = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    if (yi > lat !== yj > lat && lng < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) hit = !hit;
+  }
+  return hit;
+}
+
+/** Inside any outer ring and no inner ring. The bbox is a reject, not the answer. */
+function insideCommune(lng, lat, boundary) {
+  const [w, s, e, n] = boundary.bbox;
+  if (lng < w || lng > e || lat < s || lat > n) return false;
+  return (
+    boundary.outer.some((r) => inRing(lng, lat, r)) && !boundary.inner.some((r) => inRing(lng, lat, r))
+  );
 }
 
 test("wilaya capitals: the commune table loaded", () => {
@@ -133,39 +204,72 @@ test("wilaya capitals: all five carriers in packages/dataset agree", () => {
   }
 });
 
-// No exemptions. Wilaya 16 was the only one that ever needed one: its point was
-// an OpenStreetMap admin_centre 5.5 km away in Kouba while décret n° 84-79 fixes
-// the chef-lieu of the wilaya d'Alger as Alger, so the point was moved onto the
-// centre of Alger Centre (1601) instead of this check being widened.
-test("wilaya capitals: the wilaya's capital point lands in the capital commune", () => {
-  const wilayas = read("data", "algeria.json");
-  const placed = communes.filter(
-    (c) => Number.isFinite(c.latitude) && Number.isFinite(c.longitude),
-  );
-  const wrong = [];
-  for (const w of wilayas) {
-    const point = [w.longitude, w.latitude];
-    let nearest = null;
-    let best = Infinity;
-    for (const c of placed) {
-      const d = km(point, [c.longitude, c.latitude]);
-      if (d < best) {
-        best = d;
-        nearest = c;
+// ADR 0001 rule 9. The wilaya point is not a second claim about the seat, it is the
+// capital commune's centre, so it is compared with no tolerance at all: a rounded
+// copy is a different number and would put two values in circulation again.
+const capitals = Object.fromEntries(
+  read("data", "algeria.json").map((w) => [w.code, w.capital_commune_code]),
+);
+
+for (const [label, load] of POINTS) {
+  test(`${label}: the wilaya point is its capital commune's centre, to the digit`, () => {
+    const points = load();
+    assert.equal(Object.keys(points).length, 69, `${label}: expected 69 wilaya points`);
+
+    const wrong = [];
+    for (const [rawCode, cap] of Object.entries(capitals)) {
+      const code = Number(rawCode);
+      const commune = byCode.get(cap);
+      const point = points[code];
+      assert.ok(point, `${label}: no point for wilaya ${code}`);
+      if (point[0] !== commune.longitude || point[1] !== commune.latitude) {
+        wrong.push(
+          `wilaya ${code}: carries [${point}] but its capital ${cap} ` +
+            `(${commune.name_fr}) is at [${commune.longitude}, ${commune.latitude}]`,
+        );
       }
     }
-    if (nearest.code_commune !== w.capital_commune_code) {
-      wrong.push(
-        `wilaya ${w.code}: capital ${w.capital_commune_code} ` +
-          `(${byCode.get(w.capital_commune_code)?.name_fr}) but the wilaya point is nearest ` +
-          `${nearest.code_commune} (${nearest.name_fr}, ${best.toFixed(1)} km)`,
-      );
-    }
+    assert.deepEqual(
+      wrong,
+      [],
+      `${label}: ${wrong.length} wilaya point(s) that are not their capital commune's centre\n  ${wrong.join("\n  ")}`,
+    );
+  });
+}
+
+test("wilaya capitals: the wilaya point is inside its capital commune's own outline", () => {
+  const boundaries = readResearch("commune-boundaries.json");
+  const exceptionsDoc = readResearch("containment-exceptions.json");
+  const keyOf = (wilaya, name) => `${Number(wilaya)}|${name}`;
+  const BOUNDARIES = new Map(boundaries.communes.map((c) => [keyOf(c.wilaya_code, c.name_fr), c]));
+  const EXCEPTED = new Set(
+    [...exceptionsDoc.exceptions, ...exceptionsDoc.no_boundary].map((e) => keyOf(e.wilaya_code, e.name_fr)),
+  );
+
+  const points = Object.fromEntries(
+    read("data", "algeria.json").map((w) => [w.code, [w.longitude, w.latitude]]),
+  );
+  const outside = [];
+  const excepted = [];
+  for (const [rawCode, cap] of Object.entries(capitals)) {
+    const commune = byCode.get(cap);
+    const key = keyOf(commune.wilaya_code, commune.name_fr);
+    const boundary = BOUNDARIES.get(key);
+    assert.ok(boundary?.usable, `wilaya ${rawCode}: no usable outline for capital ${cap} (${commune.name_fr})`);
+    if (EXCEPTED.has(key)) excepted.push(`wilaya ${rawCode}: capital ${cap} (${commune.name_fr})`);
+    const [lng, lat] = points[Number(rawCode)];
+    if (!insideCommune(lng, lat, boundary))
+      outside.push(`wilaya ${rawCode}: [${lng}, ${lat}] is outside ${commune.name_fr} (${cap})`);
   }
   assert.deepEqual(
-    wrong,
+    excepted,
     [],
-    `${wrong.length} capital(s) contradicted by the wilaya point\n  ${wrong.join("\n  ")}`,
+    `${excepted.length} capital commune(s) in containment-exceptions.json; a capital point has no exemption\n  ${excepted.join("\n  ")}`,
+  );
+  assert.deepEqual(
+    outside,
+    [],
+    `${outside.length} wilaya point(s) outside their own capital commune\n  ${outside.join("\n  ")}`,
   );
 });
 

@@ -27,6 +27,16 @@
 //      `admin_level=8` `admin_centre` node. It applies to four of the five, and the
 //      one it does not apply to is Beni-Abbes.
 //
+// THAT SECOND CLAIM IS NOW A FROZEN SNAPSHOT, and it has to be. Rule 9 of
+// docs/adr/0001-coordinate-review-by-independent-votes.md makes a wilaya point equal
+// its capital commune's centre, so the published value is a Copied claim under rule 3
+// and cannot vote on the centre it is a copy of: read live, this leg would report that
+// every one of the five agrees with itself. The claim as it stood when this batch was
+// decided is research/_commune-centres/wilaya-point-reference-2026-10-01.json, and each
+// row's own `evidence.wilaya_point` is asserted against it below, so what replays here
+// is the decision that was taken and not a later reading of it. The live value has its
+// own guard, test/wilaya-capital-commune.test.mjs.
+//
 // Each claim is an absolute ceiling in metres, and each is asserted in both
 // directions: the shipped value is inside the ceiling and the repudiated value is
 // outside it. A test that only checked the new value would pass just as well on the
@@ -44,8 +54,9 @@
 //
 // BENI-ABBES (5201) STILL GETS ITS OWN BRANCH, for the other claim rather than the
 // value. The wilaya 52 point is 6.7 km from the repudiated centre and 8.8 km from the
-// node, so claim 2 argues AGAINST the move there: wilaya 52's own capital point is
-// itself about 8.8 km out, which is #228's to fix and not this batch's. Run over all
+// node, so claim 2 argues AGAINST the move there: wilaya 52's own capital point was
+// itself about 8.8 km out, which #228 fixes in the same batch, by making it this
+// commune's corrected centre. Run over all
 // 69 capitals the two-claim criterion therefore excludes Beni-Abbes, and the test at
 // the bottom of this file asserts exactly that, so nothing here pretends the criterion
 // nominated it. What nominated it is the Owner, and what evidences it is claim 1 plus
@@ -54,9 +65,9 @@
 //
 // THE FIVE ARE WILAYA CAPITALS (chefs-lieux), per décret 84-79 for Biskra (7),
 // El Bayadh (32) and Constantine (25), décret présidentiel 21-117 for Beni-Abbes (52)
-// and décret présidentiel 26-206 for El Kantara (61). The capital is not a field on a
-// wilaya yet; it arrives with #228, whose capital-point check this correction is a
-// prerequisite for.
+// and décret présidentiel 26-206 for El Kantara (61). The capital is the published
+// `capital_commune_code`, which arrives with #228 in this batch and whose capital-point
+// check this correction is a prerequisite for.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -72,8 +83,10 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const readJson = (...p) => JSON.parse(readFileSync(join(ROOT, ...p), "utf-8"));
 
 const LEDGER_FILE = "corrections-2026-10-01.json";
+const WILAYA_POINT_FILE = "wilaya-point-reference-2026-10-01.json";
 const ledger = readJson("research", "_commune-centres", LEDGER_FILE);
 const boundaries = readJson("research", "_commune-centres", "commune-boundaries.json");
+const wilayaPointReference = readJson("research", "_commune-centres", WILAYA_POINT_FILE);
 const wilayas = readJson("packages", "dataset", "data", "algeria.json");
 
 /** Absolute ceiling, metres. Every claim that applies to a row puts the corrected
@@ -108,7 +121,10 @@ const CAPITALS = [
 ];
 
 const BOUNDARIES = new Map(boundaries.communes.map((c) => [c.code_commune, c]));
-const WILAYA_POINT = new Map(wilayas.map((w) => [Number(w.code), [w.longitude, w.latitude]]));
+// The claim as it stood when this batch was decided, never the live wilaya point: see
+// the note at the top of this file. A row's own `evidence.wilaya_point` is asserted
+// against it, so the snapshot and the ledger cannot drift apart.
+const WILAYA_POINT = new Map(wilayaPointReference.wilayas.map((w) => [Number(w.wilaya_code), w.point]));
 const SHIPPED_CENTRE = new Map(
   wilayas.flatMap((w) => (w.communes ?? []).map((c) => [c.code_commune, [c.longitude, c.latitude]])),
 );
@@ -188,6 +204,36 @@ function independentClaims(code_commune, wilaya_code, candidates) {
     })),
   };
 }
+
+test(`${WILAYA_POINT_FILE} is the claim the ledger was decided against, and it is frozen`, () => {
+  assert.equal(wilayaPointReference.count, wilayaPointReference.wilayas.length, "the snapshot's own count disagrees with its rows");
+  assert.equal(WILAYA_POINT.size, 69, `the snapshot carries ${WILAYA_POINT.size} wilaya points, not 69`);
+  assert.ok(wilayaPointReference.licence, "the snapshot must state its licence; these points are OpenStreetMap-derived");
+  assert.ok(wilayaPointReference.superseded_by, "the snapshot must say what replaced it, or a reader will take it for the live value");
+
+  // The five rows' own record of this claim, against the snapshot. Either side edited
+  // alone fails here, which is what keeps the replay below honest.
+  for (const row of ledger.corrections) {
+    assert.deepEqual(
+      WILAYA_POINT.get(row.wilaya_code),
+      row.evidence.wilaya_point,
+      `${row.name_fr}: the snapshot's wilaya ${row.wilaya_code} point is not the one the ledger row recorded`,
+    );
+  }
+
+  // And it is a snapshot, not the live value: every published wilaya point is now its
+  // capital commune's centre (ADR 0001 rule 9), so reading the claim live would make it
+  // a Copied claim voting for itself. At least one wilaya has moved away from the
+  // snapshot, and the five rows' own capitals are exactly the moved-to values.
+  const live = new Map(wilayas.map((w) => [Number(w.code), [w.longitude, w.latitude]]));
+  for (const row of ledger.corrections) {
+    assert.deepEqual(
+      live.get(row.wilaya_code),
+      row.to,
+      `wilaya ${row.wilaya_code}: its published point is not the corrected centre of its capital ${row.name_fr}, which ADR 0001 rule 9 requires`,
+    );
+  }
+});
 
 test(`${LEDGER_FILE} carries exactly the five wilaya capital communes of tracker #236`, () => {
   assert.equal(ledger.applied, true, "a ledger scripts/lib/commune-corrections.mjs reads must be applied");
@@ -322,8 +368,8 @@ for (const { code_commune, wilaya_code, name_fr, wilaya_point_supports, owner_co
     const fromWilaya = metresApart(point, row.from);
     if (!wilaya_point_supports) {
       // Beni-Abbes. The claim fails here and the ledger has to admit it rather than
-      // quietly leave the leg out: wilaya 52's own capital point is about 8.8 km from
-      // its capital's town centre, which is #228's to fix.
+      // quietly leave the leg out: wilaya 52's capital point was about 8.8 km from its
+      // capital's town centre when this batch read it, which #228 fixes.
       assert.ok(
         toWilaya > CEILING_M,
         `${name_fr}: the wilaya point now agrees with the corrected centre, so the ledger should stop saying it does not support this row`,
@@ -354,22 +400,16 @@ for (const { code_commune, wilaya_code, name_fr, wilaya_point_supports, owner_co
 // here, offline, against the committed files.
 //
 // BENI-ABBES MUST COME OUT EXCLUDED, and that is asserted rather than tolerated. It is
-// the ledger's fifth row and the criterion does not reach it, because wilaya 52's own
-// point is 6.7 km from the repudiated centre and 8.5 km from the corrected one. The
-// Owner decided that row; this test is what keeps the two things from being confused.
+// the ledger's fifth row and the criterion does not reach it, because wilaya 52's point
+// as this batch read it was 6.7 km from the repudiated centre and 8.5 km from the
+// corrected one. The Owner decided that row; this test is what keeps the two things from
+// being confused.
 //
-// THE CAPITAL LIST IS DERIVED, not pinned: the commune of each wilaya whose folded name
-// is the wilaya's own, plus the four that derivation cannot resolve, which are exactly
-// the four data PR #242 (#228) tables from décret 84-79 and 21-117. When #228 lands,
-// `capital_commune_code` replaces this and the pinned four go.
-const UNDERIVABLE_CAPITALS = { 16: 1601, 53: 5301, 54: 5401, 57: 5701 };
-const fold = (s) =>
-  s
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]/g, "");
-
+// THE CAPITAL LIST IS THE PUBLISHED FIELD. It used to be derived here, by folding each
+// wilaya's name against its communes' names plus four wilayas no folding resolves.
+// `capital_commune_code` arrived with #228 and is the decreed answer, so the sweep reads
+// it and the derivation is gone; test/wilaya-capital-commune.test.mjs is what holds the
+// field itself to the decrees.
 /** The seat delta threshold the ledger's own `method` states. */
 const SEAT_DELTA_M = 3000;
 
@@ -378,12 +418,11 @@ test("the criterion selects exactly these four over all 69 wilaya capitals", () 
     readJson("research", "_commune-centres", "osm-seat-reference.json").communes.map((c) => [c.code_commune, c.seat]),
   );
 
-  const capitals = wilayas.map((w) => {
-    const code =
-      UNDERIVABLE_CAPITALS[w.code] ??
-      (w.communes ?? []).filter((c) => fold(c.name_fr) === fold(w.name_fr)).map((c) => c.code_commune)[0];
-    return { wilaya_code: Number(w.code), code_commune: code, name_fr: w.name_fr };
-  });
+  const capitals = wilayas.map((w) => ({
+    wilaya_code: Number(w.code),
+    code_commune: w.capital_commune_code,
+    name_fr: w.name_fr,
+  }));
   // A wilaya whose capital this cannot name would be a hole in the sweep, not a pass.
   assert.deepEqual(
     capitals.filter((c) => c.code_commune == null),
