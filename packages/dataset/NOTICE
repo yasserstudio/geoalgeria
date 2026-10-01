@@ -2,10 +2,10 @@ geoalgeria data notices
 
 Package code is licensed under the MIT License in LICENSE, and so is the
 compilation of wilayas, dairas, communes, their bilingual names, postal codes and
-administrative codes. Four parts of the data are not: three derived from
+administrative codes. Five parts of the data are not: four derived from
 OpenStreetMap, and the mirrored postal data under data/poste/.
 
-The three parts derived from OpenStreetMap are made available under the Open
+The four parts derived from OpenStreetMap are made available under the Open
 Database License (ODbL) 1.0 instead. Attribution:
 (c) OpenStreetMap contributors
 https://opendatacommons.org/licenses/odbl/1-0/
@@ -94,7 +94,37 @@ https://www.openstreetmap.org/copyright
    recorded source, are not OpenStreetMap-derived and no ODbL claim is made over
    them.
 
-4. Mirrored postal data
+4. OpenStreetMap relation ids and Wikidata items
+
+   The osm_relation_id and wikidata values on the commune and wilaya records, read
+   off the Overpass capture of the Algerian administrative relations whose
+   timestamp_osm_base is 2026-09-29T12:54:47Z
+   (research/_commune-centres/osm-2026-09-29/admin-relations.json in the
+   repository):
+
+   - 1,537 of the 1,541 communes carry the id of their own admin_level=8 relation,
+     and 1,536 of them carry the wikidata item that relation is tagged with. Souk
+     Oufella (630), Bir Touta (1634), Collo (2110) and Dhayet Bendhahoua (4703)
+     carry null in both fields, because the capture holds no relation for them, and
+     Ain-Defla (4401) carries its relation with a null item, because the relation has
+     no wikidata tag.
+   - All 69 wilayas carry the id of their own admin_level=4 relation and that
+     relation's wikidata item.
+
+   The linkage is the one scripts/audit-commune-centres.mjs decided and
+   research/_commune-centres/osm-seat-reference.json records: a commune relation is
+   joined on its ref:ONS tag, then on a pre-2019-reform ONS code resolved inside the
+   mother wilaya's carved-out communes, then on six reviewed per-relation pins; a
+   wilaya relation is joined on its ref tag. No record is linked by a name alone.
+   Coverage and the five records above are in data/osm-links.metadata.json.
+
+   These values are carried by data/algeria.json, data/communes_w1_w23.json,
+   data/communes_w24_w48.json, data/communes_w49_w69.json and data/wilayas.json. The
+   CSV, GeoJSON and SQL representations do not carry them. The Wikidata items are
+   OpenStreetMap tag values, not the result of a query against Wikidata, so the ODbL
+   covers them here as it covers the relation ids.
+
+5. Mirrored postal data
 
    data/poste/ (postoffices.json, atms.json, their CSV and GeoJSON
    representations and their metadata.json) is a generated mirror of

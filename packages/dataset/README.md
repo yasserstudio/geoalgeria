@@ -148,6 +148,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/dairas.json` | JSON | 551 | Daira list with commune counts |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
+| `data/osm-links.metadata.json` | JSON | 1 | Coverage, join rule and Overpass snapshot behind `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |
@@ -167,6 +168,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 `code_commune` is the unique `WWCC` identifier from the [ONS 2021 Code Géographique National](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Communes promoted into wilayas 59–69 retain their 2021 mother-wilaya prefix.
 
 Each wilaya carries `capital_commune_code`, the `code_commune` of its capital (chef-lieu), so the capital's names, postal code and coordinates are read from the commune record. It comes from the decrees that fix the chefs-lieux (n° 84-79 of 1984, n° 21-117 of 2021, n° 26-206 of 2026), never from the wilaya's name, which gets 4 of 69 wrong. Per-wilaya sources: [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
+Every commune and wilaya also carries `osm_relation_id` and `wikidata`: the OpenStreetMap administrative relation this record is linked to (`admin_level=8` for a commune, `admin_level=4` for a wilaya) and that relation's own Wikidata item, so a consumer joins to OpenStreetMap or Wikidata without matching on a name. 1,537 of the 1,541 communes and all 69 wilayas carry a relation; 1,536 communes and all 69 wilayas carry a Wikidata item. Nothing is guessed: the linkage is the one the commune-centre audit decided on the relation's `ref:ONS` / `ref` tag, Overpass `timestamp_osm_base` 2026-09-29T12:54:47Z, and a relation with no `wikidata` tag leaves that field null. The two ids are on the JSON records (`data/algeria.json`, `data/communes_w*.json`, `data/wilayas.json`); the CSV, GeoJSON and SQL mirrors do not carry them. Coverage, the join rule and the records with no link: [`data/osm-links.metadata.json`](data/osm-links.metadata.json). Both values are OpenStreetMap-derived, so **ODbL 1.0, © OpenStreetMap contributors** (see `NOTICE`).
 
 ## Schema
 

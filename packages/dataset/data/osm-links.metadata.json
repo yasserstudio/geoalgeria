@@ -1,0 +1,68 @@
+{
+  "title": "OpenStreetMap relation and Wikidata links for the communes and wilayas",
+  "source": "OpenStreetMap administrative relations (admin_level=8 for communes, admin_level=4 for wilayas) and their tags, via Overpass",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "capture": "research/_commune-centres/osm-2026-09-29/admin-relations.json",
+  "linkage": "research/_commune-centres/osm-seat-reference.json",
+  "generator": "scripts/add-osm-links.mjs",
+  "generated": "2026-09-29",
+  "timestamp_osm_base": "2026-09-29T12:54:47Z",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "attribution": "https://www.openstreetmap.org/copyright",
+  "join": "The linkage is the one scripts/audit-commune-centres.mjs decided: a commune relation is joined on its ref:ONS tag, then on a pre-2019-reform ONS code resolved inside the mother wilaya's carved-out communes, then on six reviewed per-relation pins; a wilaya relation is joined on its ref tag. No record is linked by a name alone.",
+  "wikidata": "The Q item is the relation's own wikidata tag, read as published and never looked up or guessed. A relation with no wikidata tag leaves the field null.",
+  "carriers": [
+    "data/communes_w1_w23.json",
+    "data/communes_w24_w48.json",
+    "data/communes_w49_w69.json",
+    "data/wilayas.json",
+    "data/algeria.json"
+  ],
+  "total_communes": 1541,
+  "total_wilayas": 69,
+  "coverage": {
+    "communes_with_relation": 1537,
+    "communes_with_wikidata": 1536,
+    "wilayas_with_relation": 69,
+    "wilayas_with_wikidata": 69
+  },
+  "communes_without_relation": [
+    {
+      "code_commune": 630,
+      "wilaya_code": 6,
+      "name_fr": "Souk Oufella",
+      "name_ar": "سوق اوفلا",
+      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+    },
+    {
+      "code_commune": 1634,
+      "wilaya_code": 16,
+      "name_fr": "Bir Touta",
+      "name_ar": "بئر توتة",
+      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+    },
+    {
+      "code_commune": 2110,
+      "wilaya_code": 21,
+      "name_fr": "Collo",
+      "name_ar": "القل",
+      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+    },
+    {
+      "code_commune": 4703,
+      "wilaya_code": 47,
+      "name_fr": "Dhayet Bendhahoua",
+      "name_ar": "ضاية بن ضحوة",
+      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+    }
+  ],
+  "communes_without_wikidata": [
+    {
+      "code_commune": 4401,
+      "wilaya_code": 44,
+      "name_fr": "Ain-Defla",
+      "osm_relation_id": 21037899,
+      "reason": "the relation carries no wikidata tag"
+    }
+  ]
+}

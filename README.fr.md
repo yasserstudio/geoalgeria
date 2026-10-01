@@ -59,7 +59,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 |---|---|---|
 | **Wilayas** | 69 | provinces (réformes 2019 + 2026), chacune avec la commune chef-lieu |
 | **Daïras** | 551 | districts, comme entités de premier niveau |
-| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées |
+| **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées, liens OpenStreetMap + Wikidata |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
 | **Agences d'emploi** | 331 | ANEM : 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |

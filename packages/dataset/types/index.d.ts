@@ -35,6 +35,22 @@ declare namespace algeriaGeodata {
      *  a capital code need not start with `code`: wilaya 59 reads `319`.
      *  Per-wilaya provenance: `data/wilaya-capitals.metadata.json`. */
     capital_commune_code: number;
+    /** The id of this record's own OpenStreetMap administrative relation:
+     *  `admin_level=8` for a commune, `admin_level=4` for a wilaya. Harvested from
+     *  the Overpass capture the commune-centre audit fetched, `timestamp_osm_base`
+     *  2026-09-29T12:54:47Z, through the linkage that audit decided: the relation's
+     *  `ref:ONS` (commune) or `ref` (wilaya) tag, then a pre-2019-reform ONS code
+     *  scoped to the mother wilaya, then six reviewed per-relation pins. Never a
+     *  name match. `null` on the 4 communes the capture has no relation for (630,
+     *  1634, 2110, 4703). No id repeats across records, and a wilaya's relation is
+     *  its own, not its capital commune's. ODbL 1.0, (c) OpenStreetMap
+     *  contributors; see the package NOTICE. */
+    osm_relation_id: number | null;
+    /** The Wikidata item (`Q` then digits) that the same relation is tagged with,
+     *  read as published and never resolved from a name. `null` where the relation
+     *  carries no `wikidata` tag, and always `null` where `osm_relation_id` is.
+     *  Same terms as `osm_relation_id`. */
+    wikidata: string | null;
     parent_wilaya?: string;
   }
 
@@ -51,6 +67,22 @@ declare namespace algeriaGeodata {
     capital_commune_code: number;
     dairas_count: number;
     communes_count: number;
+    /** The id of this record's own OpenStreetMap administrative relation:
+     *  `admin_level=8` for a commune, `admin_level=4` for a wilaya. Harvested from
+     *  the Overpass capture the commune-centre audit fetched, `timestamp_osm_base`
+     *  2026-09-29T12:54:47Z, through the linkage that audit decided: the relation's
+     *  `ref:ONS` (commune) or `ref` (wilaya) tag, then a pre-2019-reform ONS code
+     *  scoped to the mother wilaya, then six reviewed per-relation pins. Never a
+     *  name match. `null` on the 4 communes the capture has no relation for (630,
+     *  1634, 2110, 4703). No id repeats across records, and a wilaya's relation is
+     *  its own, not its capital commune's. ODbL 1.0, (c) OpenStreetMap
+     *  contributors; see the package NOTICE. */
+    osm_relation_id: number | null;
+    /** The Wikidata item (`Q` then digits) that the same relation is tagged with,
+     *  read as published and never resolved from a name. `null` where the relation
+     *  carries no `wikidata` tag, and always `null` where `osm_relation_id` is.
+     *  Same terms as `osm_relation_id`. */
+    wikidata: string | null;
     law?: string;
     mother_wilaya_code?: number;
     note?: string;
@@ -110,6 +142,22 @@ declare namespace algeriaGeodata {
      *  59-69 retain their 2021 mother-wilaya prefix, so the prefix does not
      *  necessarily equal `wilaya_code`. */
     code_commune: number;
+    /** The id of this record's own OpenStreetMap administrative relation:
+     *  `admin_level=8` for a commune, `admin_level=4` for a wilaya. Harvested from
+     *  the Overpass capture the commune-centre audit fetched, `timestamp_osm_base`
+     *  2026-09-29T12:54:47Z, through the linkage that audit decided: the relation's
+     *  `ref:ONS` (commune) or `ref` (wilaya) tag, then a pre-2019-reform ONS code
+     *  scoped to the mother wilaya, then six reviewed per-relation pins. Never a
+     *  name match. `null` on the 4 communes the capture has no relation for (630,
+     *  1634, 2110, 4703). No id repeats across records, and a wilaya's relation is
+     *  its own, not its capital commune's. ODbL 1.0, (c) OpenStreetMap
+     *  contributors; see the package NOTICE. */
+    osm_relation_id: number | null;
+    /** The Wikidata item (`Q` then digits) that the same relation is tagged with,
+     *  read as published and never resolved from a name. `null` where the relation
+     *  carries no `wikidata` tag, and always `null` where `osm_relation_id` is.
+     *  Same terms as `osm_relation_id`. */
+    wikidata: string | null;
   }
 
   /** One record's former names, kept so an older spelling still finds it. */
