@@ -528,3 +528,149 @@ file repudiates, and only to that row's replacement.
 | File | Contents |
 | --- | --- |
 | `corrections-2026-10-01.json` | the 5 rows, each with its `decided_by`, the OSM relation and node, the node's own coordinate, and every independent claim measured against both the repudiated and the corrected value |
+
+---
+
+# The coordinate review, layers L0 to L2 (2026-10-01)
+
+Private tracker #243. Decision record:
+[`docs/adr/0001-coordinate-review-by-independent-votes.md`](../../docs/adr/0001-coordinate-review-by-independent-votes.md).
+Terms (Claim, Candidate, Vote, Copied claim, Consensus, Review queue):
+[`CONTEXT.md`](../../CONTEXT.md#coordinate-review).
+
+Each of the three rounds above was a hand-run script, and each re-learned the same
+lessons: one source is never enough, a source our value was copied from looks like
+agreement and proves nothing, and nearest-centre tests pass on wrong data where
+containment does not. This round is the engine instead: `scripts/review/`, layers as
+modules behind one interface, thresholds as named constants in one module with the
+measurement behind each, and a run that reads committed snapshots only, so
+`test/review-decisions.test.mjs` re-derives every decision offline.
+
+## The set, and what came out
+
+The 137 communes the 2026-09-29 audit left more than 3 km from their OpenStreetMap
+seat, or with no seat at all, minus Beni-Abbes (5201), which the capitals batch above
+settled: **136 reviewed**.
+
+| Outcome | Communes |
+| --- | --- |
+| Strong consensus fix, written to `corrections-2026-10-01b.json` | 68 |
+| Confirmed at the point we already publish (Ouled Brahim, 2612) | 1 |
+| Review queue, `review-queue-2026-10-01.json` | 67 |
+
+Every one of the 68 was won by the OpenStreetMap `admin_centre` seat, so every
+published value is ODbL and no second licence enters the package. The moves run from
+3,058 m to 22,910 m.
+
+The queue, by why the rules refused to decide it:
+
+| Reason | Communes | What it means |
+| --- | --- | --- |
+| `plain_consensus` | 32 | two Votes, but not three and not with the record median among them |
+| `no_consensus` | 23 | fewer than two independent Votes, usually because Wikidata carries the seat's own coordinate and the two are one reading |
+| `split_votes` | 5 | a Candidate outside the leading answer also has a Vote |
+| `move_over_cap` | 3 | Strong consensus for a move over 25 km, which the engine never makes on its own |
+| `no_candidates` | 4 | no open source states anything: no relation, so no seat, no Wikidata item and no outline to take a median inside |
+
+Tamridjet (646) is the case the prototype got wrong, and it is in the queue:
+OpenStreetMap's seat and Wikidata back a point 4.7 km west, the median of the exact
+records inside its outline backs the point we publish, 1.6 km away. Two Votes picked
+the western answer under a plain 2-vote rule; here the median's Vote for the other
+answer blocks it, which is what `split_votes` is for.
+
+## What the rules changed about the prototype
+
+Two readings of ADR 0001 had to be made explicit once there were four Candidates
+rather than the prototype's two, and both are in `scripts/review/votes.mjs`:
+
+- **Candidates that agree are one answer.** The seat, the Wikidata point and the
+  record median landing 400 m apart are the same answer stated three times. Counted as
+  rivals they take two Votes each and cancel out, and every commune would queue.
+- **Two Claims within the copy radius of each other cast one Vote between them.** The
+  per-Candidate copy rule already stops each of them voting for the other's Candidate;
+  without this they still vote through a third Candidate in the same answer and the
+  count reads as two independent readings when it is one. It costs a Vote on 21% of
+  communes, because 20 Wikidata items carry their commune's seat node to the metre and
+  325 are within 50 m of it.
+
+## The optional L3 layer, and why the ledger is not it
+
+The Google agreement verdicts of ADR 0001 layer L3 live outside this repository, and
+`--verdicts <path>` reads them. Run with that file, the same rules settle **89** rather
+than 68 and queue 46 rather than 67, because a third Vote lifts most of the
+`plain_consensus` rows. The committed ledger is deliberately the run **without** it: a
+committed row has to re-derive from committed inputs, which is what
+`test/review-decisions.test.mjs` asserts, and no Google content, verdict or
+coordinate, enters this repository. `node scripts/review/run.mjs --write --verdicts …`
+refuses to run for the same reason.
+
+## Dependents
+
+`scripts/fix-commune-centres.mjs --write` applied the 68 to all seven flagship
+carriers. `scripts/fix-wilaya-capital-points.mjs` changed nothing: no wilaya capital
+commune is among the 68, so the 69 wilaya points already were their capital commune's
+centre. Through `scripts/sync-commune-centroid-dependents.mjs --write`, 11 borrowed
+coordinates moved in `@geoalgeria/sante` and 2 in `@geoalgeria/agriculture`;
+`@geoalgeria/formation-professionnelle` was rebuilt from its committed capture and 39
+of its commune-derived points followed. No record changed commune or wilaya.
+
+El Euch (3427) is the one row with a history to reconcile. Version 2.1.0 took it off a
+shared placeholder onto its relation's centroid, and this run moved it 9.7 km further,
+onto its own `admin_centre` node, on three independent Votes. Both repairs are real and
+they are in order, so the earlier one is recorded as superseded rather than deleted:
+`scripts/fix-jo-corrections.mjs` reads the correction ledgers and leaves a coordinate
+alone where a later ledger has moved it, instead of reading it as drift. It also leaves
+the relation-centroid carve-out at 5 communes rather than 6, which NOTICE,
+`communes.metadata.json` and `test/osm-derived-centre-count.test.mjs` all say.
+
+## The licence count
+
+The carve-out goes from 256 to **323** OpenStreetMap-derived commune centres: 318 from
+an `admin_centre` node (56 on 2026-09-27, 189 on 2026-09-29, 5 on 2026-10-01 and these
+68) and 5 from a relation centroid. The other 1,218 commune coordinates carry no
+recorded source. `test/osm-derived-centre-count.test.mjs` now derives that from
+`CORRECTION_FILES` rather than a hand-written list of ledgers, which is how this batch
+could otherwise have landed applied and uncounted, and it reads each consensus row's
+own licence from the Candidate that won it.
+
+11 of the 27 entries in `containment-exceptions.json` were resolved by these fixes, so
+that list is down to 16, rebuilt with
+`node scripts/build-commune-boundary-cache.mjs --write`. 14 of the 16 are in the review
+queue; the other 2 sit outside their own commune but within 3 km of their seat, so this
+engine never looked at them.
+
+## Measuring the thresholds
+
+Every number in `scripts/review/thresholds.mjs` is measured on the committed snapshots,
+and the measurement is in the comment beside it. They were taken with the engine's own
+helpers:
+
+```js
+// seat to record median, over the communes that have both: the AGREEMENT_KM
+// and COPY_RADIUS_M measurements
+import { loadSnapshots } from "./scripts/review/snapshots.mjs";
+import { geometricMedian } from "./scripts/review/layers/l2-record-median.mjs";
+import { metresBetween } from "./scripts/lib/seat-evidence.mjs";
+const s = loadSnapshots();
+const d = [];
+for (const c of s.communes) {
+  const seat = s.seats.byCommune.get(c.code_commune)?.seat;
+  const pts = s.records.byCommune.get(c.code_commune)?.points ?? [];
+  if (!seat || pts.length < 10) continue;
+  const m = geometricMedian(pts);
+  d.push(metresBetween(m[0], m[1], seat[0], seat[1]));
+}
+d.sort((a, b) => a - b);
+```
+
+`research/_commune-centres/wikidata-reference.json` is the CC0 snapshot the review reads
+for its L1 Wikidata Claim: 1,536 commune items, every one carrying P625, queried
+2026-10-01. Refresh it in place with
+`node scripts/review/wikidata-reference.mjs --fetch` and review the diff; the engine
+itself never queries live.
+
+| File | Contents |
+| --- | --- |
+| `corrections-2026-10-01b.json` | the 68 fixes, each with `decided_by: "consensus"`, the licence of the winning Candidate, every Candidate with its distance and Vote count, and every Vote with its source, snapshot date, distance and copy flag |
+| `review-queue-2026-10-01.json` | the 67 undecided and the 1 confirmed, in the same shape plus the reason, for the Owner's review page |
+| `wikidata-reference.json` | the CC0 Wikidata P625 snapshot, 1,536 communes, queried 2026-10-01 |
