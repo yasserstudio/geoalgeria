@@ -45,7 +45,8 @@
 //
 // EVERY PUBLISHED VALUE HERE IS THE OPEN ONE. All five are the commune's own
 // OpenStreetMap `admin_centre` node, so all five are ODbL and all five are counted in
-// the licence carve-out. That is the Owner's rule of 2026-10-01: a coordinate a human
+// the licence carve-out. That is the Owner's rule of 2026-10-01, rule 6 of
+// docs/adr/0001-coordinate-review-by-independent-votes.md: a coordinate a human
 // reads off a proprietary map (Google Maps, in Beni-Abbes's case) may CONFIRM an open
 // source when the two agree within OWNER_CONFIRMATION_M, and it is the open coordinate
 // that ships. A reading that confirms is recorded as a confirmation, never as the

@@ -30,7 +30,8 @@ export const AGREEMENT_KM = 2;
  * other for 34 of those 1,240 communes (2.7%), and the 5th percentile of that distance
  * is 69 m. Two independent readings essentially never agree this closely. Agreement
  * under 50 m is instead the signature of one value reaching two files: 222 of the 1,536
- * published commune centres are their commune's Wikidata coordinate to the metre, and 20
+ * published commune centres with a Wikidata item are that item's coordinate to the metre (7
+ * of the 136 this run reviewed, which is the figure ADR 0001 quotes), and 20
  * Wikidata coordinates are their commune's OpenStreetMap seat node to the metre. 50 m is
  * the width of a town square, two orders of magnitude under AGREEMENT_KM, so the rule
  * drops copies and keeps every real agreement.
