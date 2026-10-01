@@ -76,28 +76,28 @@ each with the measurement that justifies it.
 - There is no confidence score anywhere: a decision is a count of named Votes, which a
   reader can check.
 
-## Implementation notes (2026-10-01, private tracker #243), FOR THE OWNER TO CONFIRM
+## Rules 2 to 4 in detail (added 2026-10-01, private tracker #243)
 
-Building L0 to L2 showed that rules 2 to 4, read literally, settle almost nothing once
-there are four Candidates rather than the prototype's two, so the engine reads them in two
-ways this ADR did not state. Both are in `scripts/review/votes.mjs`, both are unit tested,
-and both are recorded here rather than left in a code comment, because they change what
-"two Votes for one Candidate" counts:
+Confirmed by the Owner, 2026-10-01. Building L0 to L2 showed that rules 2 to 4, read
+literally, settle almost nothing once there are four Candidates rather than the prototype's
+two, so the three points below state how they are read. They are implemented in
+`scripts/review/votes.mjs`, unit tested in `test/review-votes.test.mjs`, and recorded here
+rather than left in a code comment, because they decide what "two Votes for one Candidate"
+counts.
 
-1. **Candidates that agree with each other are one answer**, and Votes are counted per
-   answer. The seat, the Wikidata point and the record median landing 400 m apart are the
-   same answer stated three times. Counted as rival Candidates they take two Votes each,
-   rule 4's "none for another" is never satisfied, and every commune goes to the queue: a
-   run over the 136 open centres settles zero. An answer is a set of Candidates whose every
-   pair is within the agreement radius.
+1. **Candidates that agree with each other are one Answer**, and Votes are counted per
+   Answer. An Answer is a set of Candidates whose every pair is within the agreement radius.
+   The seat, the Wikidata point and the record median landing 400 m apart are the same
+   Answer stated three times; counted as rival Candidates they take two Votes each, rule 4's
+   "none for another" is never satisfied, and every commune goes to the queue, so a run over
+   the 136 open centres settles zero. `CONTEXT.md` carries **Answer** as a term.
 2. **Two Claims within the copy radius of each other cast one Vote between them.** Rule 3
-   already stops each of them voting for the other's Candidate. Without this they still
-   vote through a third Candidate in the same answer, and two Claims that share a value
-   read as two independent readings. This is the same rule reaching the same case, and
-   `CONTEXT.md` records it under **Copied claim**.
-
-A third point follows from (1) and is a decision, not a reading: when an answer holds
-several Candidates, the one that ships is the published point if it is in the answer, then
-the OpenStreetMap seat, then the Wikidata point, then the record median, by how directly
-the source speaks about the commune's town. That ordering is why all 68 fixes of the first
-run carry the seat's value and therefore its licence.
+   already stops each of them voting for the other's Candidate. Without this they still vote
+   through a third Candidate in the same Answer, and two Claims that share a value read as
+   two independent Claims. This is the same rule reaching the same case, and `CONTEXT.md`
+   records it under **Copied claim**.
+3. **The shipped point of an Answer that holds several Candidates** is the published point
+   where the Answer holds it, then the OpenStreetMap seat, then the Wikidata point, then the
+   record median, by how directly the source speaks about the commune's town. Keeping the
+   published value is the no-op whenever it is one of the agreeing readings. That ordering is
+   why all 68 fixes of the first run carry the seat's value and therefore its licence.

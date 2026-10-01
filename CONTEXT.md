@@ -237,7 +237,7 @@ A Claim that lands within the agreement radius of a Candidate (2 km for a commun
 _Avoid_: match, hit, support score
 
 **Answer**:
-The Candidates that agree with each other, every pair of them within the agreement radius: one place, stated by however many sources reached it. Votes are counted per Answer, because three sources landing 400 m apart are not three rivals. See ADR 0001, implementation note 1.
+The Candidates that agree with each other, every pair of them within the agreement radius: one place, stated by however many sources reached it. Votes are counted per Answer, because three sources landing 400 m apart are not three rivals. See ADR 0001, "Rules 2 to 4 in detail".
 _Avoid_: cluster, group, consensus point
 
 **Copied claim**:

@@ -23,12 +23,12 @@
 //      honest once there are four Candidates rather than the prototype's two: the seat, the
 //      Wikidata point and the record median landing 400 m apart are the same Answer stated
 //      three times, and the Votes for them belong to that Answer, not to three rivals that
-//      cancel out. ADR 0001 implementation note 1; CONTEXT.md, Answer.
+//      cancel out. ADR 0001, rules 2 to 4 in detail, point 1; CONTEXT.md, Answer.
 //   3. Two Claims within COPY_RADIUS_M of EACH OTHER are Copied claims of one another,
 //      whichever way the copying went, so they cast one Vote for an answer between them and
 //      not two. Rule 1 already stops each of them voting for the other's Candidate; this is
 //      the same rule reaching the case where they both vote through a third Candidate in the
-//      same Answer. ADR 0001 implementation note 2; CONTEXT.md, Copied claim.
+//      same Answer. ADR 0001, rules 2 to 4 in detail, point 2; CONTEXT.md, Copied claim.
 //   4. Consensus is an answer with at least CONSENSUS_VOTES distinct Votes while every
 //      Candidate outside it has none, and whose winning Candidate is inside the commune
 //      outline. Strong consensus is STRONG_CONSENSUS_VOTES Votes, or CONSENSUS_VOTES with

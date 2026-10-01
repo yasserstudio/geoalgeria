@@ -582,8 +582,9 @@ answer blocks it, which is what `split_votes` is for.
 
 Two readings of ADR 0001 had to be made explicit once there were four Candidates rather
 than the prototype's two. Both are in `scripts/review/votes.mjs`, and because they change
-what "two Votes for one Candidate" counts, both are written into the decision record as
-implementation notes for the Owner to confirm, and into `CONTEXT.md` as the term **Answer**:
+what "two Votes for one Candidate" counts, both are written into the decision record, which
+the Owner confirmed on 2026-10-01 (ADR 0001, "Rules 2 to 4 in detail"), and into
+`CONTEXT.md` as the term **Answer**:
 
 - **Candidates that agree are one answer.** The seat, the Wikidata point and the
   record median landing 400 m apart are the same answer stated three times. Counted as
