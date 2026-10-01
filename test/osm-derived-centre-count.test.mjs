@@ -56,7 +56,16 @@ function derive() {
 
   // A ledger row only counts if its value is the one the package ships: a correction
   // that was reverted, or never applied, carries no ODbL claim.
+  //
+  // AND ONLY IF ITS VALUE CAME FROM OPENSTREETMAP. From 2026-10-01 a ledger can also
+  // carry a coordinate the Owner read off a map (`decided_by: "owner_verified"`), which
+  // is MIT like the rest of the compilation and makes no ODbL claim at all. Counting it
+  // would be claiming ODbL over a value OpenStreetMap never supplied, so it is counted
+  // separately and only the node-decided rows reach the carve-out. A row with no
+  // `decided_by` is an older ledger, where every row is a node correction by
+  // construction, which is asserted here rather than assumed.
   const fromAdminCentreNode = new Set();
+  const ownerVerified = new Set();
   const perLedger = [];
   for (const ledger of ledgers) {
     perLedger.push({ generated: ledger.generated, count: ledger.corrections.length });
@@ -68,9 +77,28 @@ function derive() {
         Math.abs(commune.longitude - to[0]) < 1e-6 && Math.abs(commune.latitude - to[1]) < 1e-6,
         `commune ${row.code_commune}: shipped [${commune.longitude}, ${commune.latitude}] is not the ledger's [${to}], so the correction is not applied`,
       );
+      const decidedBy = row.decided_by ?? "osm_admin_centre_node";
+      assert.ok(
+        ["osm_admin_centre_node", "owner_verified"].includes(decidedBy),
+        `commune ${row.code_commune}: decided_by ${JSON.stringify(decidedBy)} is neither deciding source, so its licence cannot be settled`,
+      );
+      if (decidedBy === "owner_verified") {
+        // The row has to say so itself, or "not ODbL" rests on this test alone.
+        assert.ok(
+          row.owner_verified?.licence,
+          `commune ${row.code_commune}: an owner_verified row must state its own licence, because it is the exception to the carve-out`,
+        );
+        ownerVerified.add(row.code_commune);
+        continue;
+      }
       fromAdminCentreNode.add(row.code_commune);
     }
   }
+  for (const code of ownerVerified)
+    assert.ok(
+      !fromAdminCentreNode.has(code),
+      `commune ${code} is counted both as an admin_centre node correction and as an owner-verified point`,
+    );
 
   for (const code of RELATION_CENTROID_COMMUNES) {
     assert.ok(byCode.has(code), `relation-centroid commune ${code} is not a commune this package ships`);
@@ -85,6 +113,7 @@ function derive() {
     total: communes.length,
     fromAdminCentreNode: fromAdminCentreNode.size,
     fromRelationCentroid: RELATION_CENTROID_COMMUNES.length,
+    ownerVerified: ownerVerified.size,
     osmDerived: osmDerived.size,
     rest: communes.length - osmDerived.size,
     perLedger,
@@ -97,10 +126,14 @@ test("the OpenStreetMap-derived commune centres are the applied ledger rows plus
   assert.deepEqual(counts.perLedger, [
     { generated: "2026-09-27", count: 56 },
     { generated: "2026-09-29", count: 189 },
-    { generated: "2026-10-01", count: 4 },
+    { generated: "2026-10-01", count: 5 },
   ]);
   assert.equal(counts.fromAdminCentreNode, 249);
   assert.equal(counts.fromRelationCentroid, 6);
+  // Beni-Abbes (5201), the one coordinate the Owner read off a map. It is a correction
+  // the 2026-10-01 ledger carries and it is NOT in the ODbL carve-out, so 250 ledger
+  // rows still give 249 OpenStreetMap-derived centres.
+  assert.equal(counts.ownerVerified, 1);
   assert.equal(counts.osmDerived, 255);
   assert.equal(counts.rest, 1286);
 });

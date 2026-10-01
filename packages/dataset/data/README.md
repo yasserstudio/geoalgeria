@@ -270,6 +270,15 @@ put the town at the seat instead: the wilaya's own published point, from its
 other packages place inside this commune's own OpenStreetMap outline. Over all 69 capitals
 that selects exactly these four.
 
+A fifth capital moved in the same batch and is **not** OpenStreetMap-derived. Beni-Abbes
+(5201) sat 5,690 m from its town centre, and the two-claim criterion could not decide it,
+because wilaya 52's own point is 6,735 m from the repudiated centre and 8,544 m from the
+town: that point is itself about 8.5 km out. So its coordinate is the one the project
+owner read off a map on 2026-10-01, cross-checked against the exact-record median (210 m,
+against 5,628 m for the repudiated centre) and against the commune's own `admin_centre`
+node (268 m). It carries this package's MIT compilation terms, not ODbL, and is counted in
+neither figure below.
+
 Six more were replaced in version 2.1.0 with the centroid of the commune's own
 `admin_level=8` relation, after they had shared a placeholder point with a neighbour:
 Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Deux Bassins (2653),

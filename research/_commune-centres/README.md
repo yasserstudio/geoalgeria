@@ -365,18 +365,29 @@ The two raw Overpass responses are 55 MB of way-member lists and full boundary
 geometry, so they are gitignored working inputs; the reduced captures beside them
 are the reviewable record.
 
-# The four wilaya capital centres (2026-10-01)
+# The five wilaya capital centres (2026-10-01)
 
 Private tracker #236. Found while reviewing #228 (the wilaya capital field, data
-PR #242) and pre-existing on `main`. Four **wilaya capital (chef-lieu) communes**
+PR #242) and pre-existing on `main`. Five **wilaya capital (chef-lieu) communes**
 sat 3 to 6 km from the seat of the town they are the chef-lieu of:
 
-| Code | Commune | Wilaya | was | now | moved | OSM `admin_centre` node |
+| Code | Commune | Wilaya | was | now | moved | decided by |
 | --- | --- | --- | --- | --- | --- | --- |
-| 701 | Biskra | 7 | `5.751048, 34.8` | `5.729074, 34.850882` | 6,003 m | [299682811](https://www.openstreetmap.org/node/299682811) |
-| 717 | El Kantara | 61 | `5.666831, 35.192365` | `5.709284, 35.223115` | 5,154 m | [427910708](https://www.openstreetmap.org/node/427910708) |
-| 2501 | Constantine | 25 | `6.642433, 36.365` | `6.608428, 36.364164` | 3,046 m | [27564946](https://www.openstreetmap.org/node/27564946) |
-| 3201 | El Bayadh | 32 | `1.020278, 33.721667` | `1.018245, 33.684319` | 4,157 m | [452440133](https://www.openstreetmap.org/node/452440133) |
+| 701 | Biskra | 7 | `5.751048, 34.8` | `5.729074, 34.850882` | 6,003 m | OSM node [299682811](https://www.openstreetmap.org/node/299682811) |
+| 717 | El Kantara | 61 | `5.666831, 35.192365` | `5.709284, 35.223115` | 5,154 m | OSM node [427910708](https://www.openstreetmap.org/node/427910708) |
+| 2501 | Constantine | 25 | `6.642433, 36.365` | `6.608428, 36.364164` | 3,046 m | OSM node [27564946](https://www.openstreetmap.org/node/27564946) |
+| 3201 | El Bayadh | 32 | `1.020278, 33.721667` | `1.018245, 33.684319` | 4,157 m | OSM node [452440133](https://www.openstreetmap.org/node/452440133) |
+| 5201 | Beni-Abbes | 52 | `-2.17, 30.08` | `-2.16635, 30.131076` | 5,690 m | the Owner, 2026-10-01 |
+
+The fifth row is a different kind of claim from the other four and the ledger says
+so in a field, `decided_by`, not only in prose. Biskra, El Kantara, Constantine
+and El Bayadh carry their commune's OpenStreetMap `admin_centre` node, so they are
+**ODbL 1.0, (c) OpenStreetMap contributors** and they count toward the carve-out.
+Beni-Abbes carries a point the **Owner read off a map on 2026-10-01**, so it is
+**not OpenStreetMap-derived**, it carries the package's MIT compilation terms, and
+it is deliberately **not** counted among the 255. `test/osm-derived-centre-count
+.test.mjs` enforces that split from the ledger rather than from the prose: 250
+ledger rows, 249 OpenStreetMap-derived centres.
 
 ## Why this needed a standard of its own
 
@@ -415,12 +426,53 @@ centre:
 | Constantine (2501) | 4,150 / 1,746 m | 2,493 / 1,535 m (529) |
 | El Bayadh (3201) | 4,602 / 487 m | 4,791 / 730 m (164) |
 
-Over all 69 capitals that selects exactly these four. The only other capital more
-than 3 km from its node is **Beni-Abbes (5201)**, where the two claims disagree:
-its wilaya point is 8.8 km from the node and 6.7 km from the stored centre, while
-the exact-record median is 139 m from the node. Its relation (6530989) also still
-carries the pre-reform `ref:ONS` `0807`. It is left alone and stays open on the
-tracker rather than being corrected on one claim.
+Over all 69 capitals that two-claim criterion selects exactly four, and
+**Beni-Abbes is not one of them**. Its wilaya-point leg argues the wrong way: the
+wilaya 52 point is 6,735 m from the repudiated centre and 8,544 m from the
+corrected one, because that point is **itself** about 8.5 km from its capital's
+town centre. So the criterion could not decide it, and the test at the bottom of
+`test/capital-centre-near-seat.test.mjs` asserts that exclusion rather than
+tolerating it, so nothing here pretends the criterion settled the fifth row.
+
+## Beni-Abbes (5201): the Owner decided it, and it is cross-checked twice
+
+The Owner supplied the town centre on 2026-10-01, read off a map, the same
+convention as the `owner_verified` points in `quality/overrides/sante.json`
+(reviewed 2026-09-30). One hand is not evidence on its own, so the row records two
+checks against sources it is not derived from:
+
+| Check | Repudiated centre | Owner's point |
+| --- | --- | --- |
+| exact-record median, 40 records over 16 files | 5,628 m | **210 m** |
+| the commune's own OSM `admin_centre` node [1573488063](https://www.openstreetmap.org/node/1573488063) | 5,754 m | **268 m** |
+
+268 m is inside the 500 m at which two hands stop reading the same place, so the
+Owner's point and OpenStreetMap's node are one claim about one town centre, not
+two places. The node was re-read live from `api.openstreetmap.org` on 2026-10-01
+and its coordinate is stored in the row as `osm.admin_centre_point`, so the
+cross-check re-runs offline. The node value itself is **not** written: writing it
+would make the coordinate ODbL, and the Owner's reading is the deciding source.
+The relation (6530989) also still carries the pre-reform `ref:ONS` `0807`, which is
+why this row joined on that code plus the name inside the mother wilaya.
+
+## Wilaya 52's own capital point is also wrong, and is not fixed here
+
+`wilayas.csv` puts wilaya 52 at `-2.1, 30.08`, which is 8,544 m from its capital's
+town centre. It is a separate record with a separate owner: **data PR #242 (#228)**
+edits every one of the five carriers that hold a wilaya point, adds
+`capital_commune_code` to the wilaya 52 row itself, ships the capital-point tests,
+and has already moved one such point (wilaya 16, from an `admin_centre` that fell
+in Kouba onto Alger Centre's own centre) on exactly this reasoning. Correcting it
+here would collide with that branch head-on, so it is reported instead.
+
+Two consequences for #242, both checked against its branch rather than guessed:
+
+- its capital-point check is **nearest commune centre**, and it still passes:
+  after this move 5201 is 8.54 km from the wilaya 52 point and the next nearest
+  centre, Igli (5205), is 26.89 km, so the nearest centre is still the capital.
+- its prose "**0.0 to 6.7 km** out for the rest" was measuring wilaya 52, and
+  becomes 0.0 to 8.5 km once this batch lands. That sentence needs updating when
+  the two branches meet.
 
 ## Source
 
@@ -433,18 +485,21 @@ against a committed capture. ODbL 1.0, (c) OpenStreetMap contributors.
 ## The guard
 
 `test/capital-centre-near-seat.test.mjs`, which fetches nothing. For each of the
-four it holds all seven carriers to the ledger's value, tests the value against
-the commune outline, and asserts both independent claims **in both directions**:
-the corrected centre inside an absolute 2 km ceiling and the repudiated one
-outside it. A test that only checked the new value would have passed on the old
-one for three of the four, and "closer than before" is not a fact about one
-claim.
+five it holds all seven carriers to the ledger's value, tests the value against
+the commune outline, and asserts every claim that applies to that row **in both
+directions**: the corrected centre inside an absolute 2 km ceiling and the
+repudiated one outside it. A test that only checked the new value would have passed
+on the old one for three of the four, and "closer than before" is not a fact about
+one claim. Which claims apply is read from the row's `decided_by`, so Beni-Abbes is
+held to the facility median and to the 500 m Owner-against-node check, and its
+failing wilaya-point leg is asserted as a failure the ledger has to admit rather
+than quietly left out.
 
-Dependents: 44 borrowed coordinates in four packages. 15 in
+Dependents: 47 borrowed coordinates in four packages. 15 in
 `@geoalgeria/formation-professionnelle`, rebuilt by re-running its own generator
 against its committed capture, offline; and, through
 `scripts/sync-commune-centroid-dependents.mjs`, 14 in
-`@geoalgeria/industrie-pharmaceutique`, 11 in `@geoalgeria/agriculture` and 4 in
+`@geoalgeria/industrie-pharmaceutique`, 12 in `@geoalgeria/agriculture` and 6 in
 `@geoalgeria/sante`. No record changed commune or wilaya, because every one of the
 four moves stays inside its own commune outline and the join asks the outline
 first.
@@ -463,4 +518,4 @@ file repudiates, and only to that row's replacement.
 
 | File | Contents |
 | --- | --- |
-| `corrections-2026-10-01.json` | the 4 rows, with the OSM evidence and both independent claims per row |
+| `corrections-2026-10-01.json` | the 5 rows, each with its `decided_by`, the OSM relation and node, the node's own coordinate, and every independent claim measured against both the repudiated and the corrected value |

@@ -1,8 +1,8 @@
-// The four wilaya capital commune centres of tracker #236, held to geometry this
+// The five wilaya capital commune centres of tracker #236, held to geometry this
 // repository did not derive them from.
 //
 // WHY A SEPARATE FILE. test/commune-centre-in-commune.test.mjs is containment, and
-// containment cannot see this class: all four stored centres were inside their own
+// containment cannot see this class: all five stored centres were inside their own
 // commune, 3 to 6 km from the town, exactly Bethioua's class
 // (research/_commune-centres/README.md, "the guard's honest limit"). The seat delta
 // cannot see it either: the 2026-09-29 audit measured a median disagreement with the
@@ -13,28 +13,43 @@
 // are still more than 3 km from their seat by that documented decision and are not
 // defects.
 //
-// WHAT MAKES THESE FOUR DIFFERENT, and what this file asserts, is a second and a
-// third claim about the same town that the correction does not come from:
+// WHAT MAKES THEM DECIDABLE is a claim about the same town that the correction does
+// not come from. There are two, and which ones apply is per row:
 //
 //   1. the geometric median of the `geo_precision: exact` records that other
 //      packages place inside the commune's own OpenStreetMap outline. Those are
-//      pharmacies, schools, mosques, post offices, bank branches: hundreds of
-//      independently surveyed buildings, selected here by point-in-polygon rather
+//      pharmacies, schools, mosques, post offices, bank branches: dozens to hundreds
+//      of independently surveyed buildings, selected here by point-in-polygon rather
 //      than by the `commune` they name, so the selection cannot depend on the
-//      commune centre under test.
+//      commune centre under test. It applies to all five.
 //   2. the wilaya's own published point, which comes from its `admin_level=4`
 //      relation, a different OpenStreetMap object from the commune's
-//      `admin_level=8` `admin_centre` node the correction is taken from.
+//      `admin_level=8` `admin_centre` node. It applies to the four rows taken from
+//      that node, and it is the reason Beni-Abbes is not one of them.
 //
-// Both are absolute ceilings in metres, and both are asserted in both directions:
-// the shipped value is inside the ceiling and the repudiated value is outside it. A
-// test that only checked the new value would pass just as well on the old one for
-// three of the four, and "closer than before" is not a fact about one claim.
+// Each claim is an absolute ceiling in metres, and each is asserted in both
+// directions: the shipped value is inside the ceiling and the repudiated value is
+// outside it. A test that only checked the new value would pass just as well on the
+// old one for three of the four, and "closer than before" is not a fact about one
+// claim.
 //
-// THE FOUR ARE WILAYA CAPITALS (chefs-lieux), per décret 84-79 for Biskra (7),
-// El Bayadh (32) and Constantine (25) and décret présidentiel 26-206 for El Kantara
-// (61). The capital is not a field on a wilaya yet; it arrives with #228, whose
-// capital-point check this correction is a prerequisite for.
+// BENI-ABBES (5201) IS DECIDED BY THE OWNER, NOT BY THE CRITERION, and that is why
+// its row carries `decided_by: "owner_verified"` and this file branches on it. The
+// wilaya 52 point is 6.7 km from the repudiated centre and 8.5 km from the corrected
+// one, so the second claim argues AGAINST the move: wilaya 52's own capital point is
+// itself about 8.5 km out, which is #228's to fix and not this batch's. Run over all
+// 69 capitals, the two-claim criterion therefore excludes Beni-Abbes, and the test at
+// the bottom of this file asserts exactly that, so nothing here pretends the
+// criterion decided it. What decides it is the point the Owner read off the map on
+// 2026-10-01, cross-checked twice: the facility median is 210 m from it against
+// 5,628 m from the repudiated centre, and the commune's own OpenStreetMap
+// `admin_centre` node is 268 m from it.
+//
+// THE FIVE ARE WILAYA CAPITALS (chefs-lieux), per décret 84-79 for Biskra (7),
+// El Bayadh (32) and Constantine (25), décret présidentiel 21-117 for Beni-Abbes (52)
+// and décret présidentiel 26-206 for El Kantara (61). The capital is not a field on a
+// wilaya yet; it arrives with #228, whose capital-point check this correction is a
+// prerequisite for.
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -54,26 +69,34 @@ const ledger = readJson("research", "_commune-centres", LEDGER_FILE);
 const boundaries = readJson("research", "_commune-centres", "commune-boundaries.json");
 const wilayas = readJson("packages", "dataset", "data", "algeria.json");
 
-/** Absolute ceiling, metres. Both independent claims put all four corrected centres
- *  inside it (the widest is Constantine, 1.5 km from its facility median and 1.7 km
- *  from the wilaya point) and all four repudiated centres outside it (the narrowest is
- *  Constantine again, 2.5 km and 4.2 km). It is a ceiling on agreement between two
+/** Absolute ceiling, metres. Every claim that applies to a row puts the corrected
+ *  centre inside it (the widest is Constantine, 1.5 km from its facility median and
+ *  1.7 km from the wilaya point) and the repudiated centre outside it (the narrowest
+ *  is Constantine again, 2.5 km and 4.2 km). It is a ceiling on agreement between two
  *  hand-placed claims about one town centre, not a tolerance on an error. */
 const CEILING_M = 2000;
 
 /** A facility median built from fewer buildings than this is not an independent claim
- *  about where the town is. The thinnest of the four is El Kantara, a town of about
- *  7,000, with 40. */
+ *  about where the town is. The thinnest of the five is El Kantara, a town of about
+ *  7,000, with 40, and Beni-Abbes has 40 as well. */
 const MIN_FACILITY_RECORDS = 10;
 
-/** The four, with the wilaya each is the capital of. Pinned so the ledger and this
- *  file cannot drift apart: a fifth row in the ledger, or a different commune, fails
- *  here rather than riding along unchecked. */
+/** How far the Owner's reading of a town centre may sit from the commune's own
+ *  OpenStreetMap `admin_centre` node before the two stop being the same claim. At
+ *  500 m they are still the same town centre read by two hands; beyond it they are two
+ *  places and the row needs a decision, not a tolerance. Beni-Abbes reads 268 m. */
+const OWNER_VS_OSM_NODE_M = 500;
+
+/** The five, with the wilaya each is the capital of and the source that decides its
+ *  value. Pinned so the ledger and this file cannot drift apart: a sixth row in the
+ *  ledger, a different commune, or a row that changes its deciding source fails here
+ *  rather than riding along unchecked. */
 const CAPITALS = [
-  { code_commune: 701, wilaya_code: 7, name_fr: "Biskra" },
-  { code_commune: 717, wilaya_code: 61, name_fr: "El Kantara" },
-  { code_commune: 2501, wilaya_code: 25, name_fr: "Constantine" },
-  { code_commune: 3201, wilaya_code: 32, name_fr: "El Bayadh" },
+  { code_commune: 701, wilaya_code: 7, name_fr: "Biskra", decided_by: "osm_admin_centre_node" },
+  { code_commune: 717, wilaya_code: 61, name_fr: "El Kantara", decided_by: "osm_admin_centre_node" },
+  { code_commune: 2501, wilaya_code: 25, name_fr: "Constantine", decided_by: "osm_admin_centre_node" },
+  { code_commune: 3201, wilaya_code: 32, name_fr: "El Bayadh", decided_by: "osm_admin_centre_node" },
+  { code_commune: 5201, wilaya_code: 52, name_fr: "Beni-Abbes", decided_by: "owner_verified" },
 ];
 
 const BOUNDARIES = new Map(boundaries.communes.map((c) => [c.code_commune, c]));
@@ -158,25 +181,54 @@ function independentClaims(code_commune, wilaya_code, candidates) {
   };
 }
 
-test(`${LEDGER_FILE} carries exactly the four wilaya capital communes of tracker #236`, () => {
+test(`${LEDGER_FILE} carries exactly the five wilaya capital communes of tracker #236`, () => {
   assert.equal(ledger.applied, true, "a ledger scripts/lib/commune-corrections.mjs reads must be applied");
   assert.equal(ledger.count, ledger.corrections.length, "the ledger's own count disagrees with its rows");
   assert.deepEqual(
-    ledger.corrections.map((r) => ({ code_commune: r.code_commune, wilaya_code: r.wilaya_code, name_fr: r.name_fr })),
+    ledger.corrections.map((r) => ({
+      code_commune: r.code_commune,
+      wilaya_code: r.wilaya_code,
+      name_fr: r.name_fr,
+      decided_by: r.decided_by,
+    })),
     CAPITALS,
-    "the ledger's rows are not the four capital communes this file checks",
+    "the ledger's rows are not the five capital communes this file checks, or one changed its deciding source",
   );
   assert.ok(ledger.timestamp_osm_base, "the ledger must record the Overpass timestamp_osm_base its values come from");
   for (const row of ledger.corrections) {
+    // Every row names the OpenStreetMap relation and node, because every row is
+    // compared against that node even where it is not the value written.
     assert.ok(row.osm?.relation, `${row.name_fr}: no OpenStreetMap relation id`);
-    assert.ok(row.osm?.admin_centre_node, `${row.name_fr}: no admin_centre node id, which is where the value comes from`);
+    assert.ok(row.osm?.admin_centre_node, `${row.name_fr}: no admin_centre node id to compare against`);
+    assert.ok(row.osm?.admin_centre_point, `${row.name_fr}: no admin_centre node coordinate, so nothing can be re-checked offline`);
     assert.ok(row.evidence, `${row.name_fr}: no evidence block`);
+
+    // `decided_by` is what the licence turns on: a value taken from the OpenStreetMap
+    // node is ODbL and is counted by test/osm-derived-centre-count.test.mjs, and a
+    // value the Owner read off a map is neither. A row that does not say which is a
+    // row nothing can classify, so it fails here rather than defaulting to ODbL.
+    assert.ok(
+      ["osm_admin_centre_node", "owner_verified"].includes(row.decided_by),
+      `${row.name_fr}: decided_by is ${JSON.stringify(row.decided_by)}, which is neither deciding source this ledger knows`,
+    );
+    if (row.decided_by === "osm_admin_centre_node")
+      assert.deepEqual(
+        row.to,
+        row.osm.admin_centre_point,
+        `${row.name_fr}: says it is the admin_centre node but ships a different value`,
+      );
+    else {
+      assert.ok(row.owner_verified?.read_at, `${row.name_fr}: an owner_verified row must record when it was read`);
+      assert.ok(row.owner_verified?.evidence, `${row.name_fr}: an owner_verified row must record what it was read off`);
+      assert.deepEqual(row.to, row.owner_verified.point, `${row.name_fr}: says it is the Owner's point but ships a different value`);
+    }
   }
 });
 
-for (const { code_commune, wilaya_code, name_fr } of CAPITALS) {
+for (const { code_commune, wilaya_code, name_fr, decided_by } of CAPITALS) {
   const row = ROWS.get(code_commune);
   const boundary = BOUNDARIES.get(code_commune);
+  const fromOsmNode = decided_by === "osm_admin_centre_node";
 
   test(`${name_fr} (${code_commune}): every carrier ships the corrected centre`, () => {
     assert.ok(row, `${name_fr} is not in ${LEDGER_FILE}`);
@@ -219,11 +271,45 @@ for (const { code_commune, wilaya_code, name_fr } of CAPITALS) {
     );
   });
 
-  test(`${name_fr} (${code_commune}): the corrected centre agrees with the wilaya's own point, the repudiated one does not`, () => {
+  if (!fromOsmNode)
+    test(`${name_fr} (${code_commune}): the Owner's point is the same town centre the OpenStreetMap node is`, () => {
+      // The Owner reading a point off a map is one hand, and one hand is not evidence
+      // on its own. This is the cross-check that it is the same place OpenStreetMap
+      // independently puts the seat at, which is why the row carries the node's
+      // coordinate as well as its id.
+      const apart = metresApart(row.to, row.osm.admin_centre_point);
+      assert.ok(
+        apart < OWNER_VS_OSM_NODE_M,
+        `${name_fr}: the Owner's point is ${Math.round(apart)} m from the commune's own admin_centre node, so the two are not one claim`,
+      );
+      // And the node is on the same side of the question, so the Owner's point is not
+      // simply a third place: the repudiated centre is far from the node too.
+      assert.ok(
+        metresApart(row.from, row.osm.admin_centre_point) > CEILING_M,
+        `${name_fr}: the repudiated centre already agreed with the admin_centre node, so this correction is not evidenced here`,
+      );
+    });
+
+  test(`${name_fr} (${code_commune}): the wilaya's own point ${fromOsmNode ? "agrees, and the repudiated centre does not" : "does not decide this row, and the ledger says so"}`, () => {
     const point = WILAYA_POINT.get(wilaya_code);
     assert.ok(point, `wilaya ${wilaya_code} carries no point`);
     const toWilaya = metresApart(point, row.to);
     const fromWilaya = metresApart(point, row.from);
+    if (!fromOsmNode) {
+      // Beni-Abbes. The claim fails here and the ledger has to admit it rather than
+      // quietly leave the leg out: wilaya 52's own capital point is about 8.5 km from
+      // its capital's town centre, which is #228's to fix.
+      assert.ok(
+        toWilaya > CEILING_M,
+        `${name_fr}: the wilaya point now agrees with the corrected centre, so this row no longer needs its owner_verified exemption`,
+      );
+      assert.equal(
+        row.evidence.wilaya_point_supports_the_move,
+        false,
+        `${name_fr}: the ledger must state that the wilaya-point claim does not support this row`,
+      );
+      return;
+    }
     assert.ok(
       toWilaya < CEILING_M,
       `${name_fr}: the corrected centre is ${Math.round(toWilaya)} m from the point of wilaya ${wilaya_code}, whose capital it is`,
@@ -235,11 +321,17 @@ for (const { code_commune, wilaya_code, name_fr } of CAPITALS) {
   });
 }
 
-// THE SELECTION, REPLAYED OVER ALL 69 CAPITALS. The three claims above are about four
-// rows that were already chosen. The decision this batch rests on is the other half:
-// that the same criterion, run over every wilaya capital, picks exactly these four and
-// leaves the rest alone. Asserting it in prose and not in code is how a correction set
-// becomes unauditable, so it runs here, offline, against the committed files.
+// THE SELECTION, REPLAYED OVER ALL 69 CAPITALS. The claims above are about rows that
+// were already chosen. The decision this batch rests on is the other half: that the
+// two-claim criterion, run over every wilaya capital, picks exactly the four taken from
+// an `admin_centre` node and leaves the rest alone, Beni-Abbes included. Asserting it
+// in prose and not in code is how a correction set becomes unauditable, so it runs
+// here, offline, against the committed files.
+//
+// BENI-ABBES MUST COME OUT EXCLUDED, and that is asserted rather than tolerated. It is
+// the ledger's fifth row and the criterion does not reach it, because wilaya 52's own
+// point is 6.7 km from the repudiated centre and 8.5 km from the corrected one. The
+// Owner decided that row; this test is what keeps the two things from being confused.
 //
 // THE CAPITAL LIST IS DERIVED, not pinned: the commune of each wilaya whose folded name
 // is the wilaya's own, plus the four that derivation cannot resolve, which are exactly
@@ -297,6 +389,18 @@ test("the criterion selects exactly these four over all 69 wilaya capitals", () 
   assert.deepEqual(
     selected.sort(),
     ["Biskra", "Constantine", "El Bayadh", "El Kantara"],
-    "the criterion in the ledger's own `method` no longer selects exactly the four rows the ledger carries",
+    "the criterion in the ledger's own `method` no longer selects exactly the four rows it decides",
+  );
+
+  // Stated both ways round, so neither can drift: the criterion's four are exactly the
+  // ledger's `osm_admin_centre_node` rows, and its one `owner_verified` row is exactly
+  // the capital the criterion leaves behind.
+  const byNode = ledger.corrections.filter((r) => r.decided_by === "osm_admin_centre_node").map((r) => r.name_fr);
+  const byOwner = ledger.corrections.filter((r) => r.decided_by === "owner_verified").map((r) => r.name_fr);
+  assert.deepEqual(selected.sort(), byNode.sort(), "the criterion's selection and the ledger's node-decided rows disagree");
+  assert.deepEqual(byOwner, ["Beni-Abbes"], "the ledger's owner-decided rows are not the one capital the criterion excludes");
+  assert.ok(
+    !selected.includes("Beni-Abbes"),
+    "Beni-Abbes is now selected by the criterion, so its owner_verified row should be re-read rather than kept as an exemption",
   );
 });

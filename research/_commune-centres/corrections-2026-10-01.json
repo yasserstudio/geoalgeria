@@ -1,19 +1,20 @@
 {
   "generated": "2026-10-01",
-  "source": "OpenStreetMap admin_level=8 commune relations and their admin_centre nodes, via Overpass, each node re-read from the OpenStreetMap node API",
+  "source": "OpenStreetMap admin_level=8 commune relations and their admin_centre nodes, via Overpass, each node re-read from the OpenStreetMap node API; plus one coordinate read off a map by the project owner (see the row's owner_verified block), which is not OpenStreetMap-derived",
   "endpoint": "https://overpass-api.de/api/interpreter",
   "timestamp_osm_base": "2026-09-29T12:54:47Z",
   "node_api_verified": "2026-10-01",
   "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
-  "method": "Wilaya capital (chef-lieu) communes only, and a different standard from the two earlier batches, because containment cannot see this class: all four stored centres are INSIDE their own commune, 3 to 6 km from the town. A row qualifies when it is a wilaya capital commune, its stored centre is more than 3 km from its relation's admin_centre node, and two claims this correction is not derived from both put the town at the node rather than at the stored centre: the wilaya's own published point (from its admin_level=4 relation, a different OpenStreetMap object) is nearer the node, and so is the geometric median of the geo_precision: exact records other packages place inside this commune's own OpenStreetMap outline, selected by point-in-polygon rather than by the commune they name. Over all 69 capitals that selects exactly these four: the only other capital more than 3 km from its node is Beni-Abbes (5201), whose wilaya point is 8.8 km from the node and 6.7 km from the stored centre, so the two independent claims disagree there and it is left alone (its relation, 6530989, also carries the pre-reform ref:ONS 0807). `to` is that node rounded to 6 decimals, re-read from api.openstreetmap.org on 2026-10-01. A seat delta on its own is NOT a defect (the Owner's 2026-09-29 decision, private tracker #170): 132 non-capital centres stay more than 3 km from their seat, measured against osm-seat-reference.json after this batch, and none of them is corrected here. Applied by scripts/fix-commune-centres.mjs; held by test/capital-centre-near-seat.test.mjs.",
+  "method": "Wilaya capital (chef-lieu) communes only, and a different standard from the two earlier batches, because containment cannot see this class: all five stored centres are INSIDE their own commune, 3 to 6 km from the town. A row qualifies when it is a wilaya capital commune, its stored centre is more than 3 km from its relation's admin_centre node, and claims this correction is not derived from put the town at the node rather than at the stored centre: the wilaya's own published point (from its admin_level=4 relation, a different OpenStreetMap object) is nearer the node, and so is the geometric median of the geo_precision: exact records other packages place inside this commune's own OpenStreetMap outline, selected by point-in-polygon rather than by the commune they name. Over all 69 capitals that two-claim criterion selects exactly four, and the fifth row here is NOT one of them. Beni-Abbes (5201) is the only other capital more than 3 km from its node, and the wilaya-point leg argues against it: wilaya 52's own capital point is 6.7 km from the stored centre and 8.5 km from the town, because that point is itself about 8.5 km out, which is #228 to fix. So Beni-Abbes carries `decided_by: \"owner_verified\"`: the Owner read its town centre off the map on 2026-10-01 and that point is what is written, cross-checked twice, against the facility median (210 m, against 5,628 m for the stored centre) and against the commune's own admin_centre node (268 m, inside the 500 m at which two hands stop reading the same place). Its coordinate is therefore NOT OpenStreetMap-derived and is not counted in the ODbL carve-out; its relation, 6530989, also carries the pre-reform ref:ONS 0807. For the four node-decided rows `to` is that node rounded to 6 decimals, re-read from api.openstreetmap.org on 2026-10-01; every row records the node coordinate in `osm.admin_centre_point` so any of them can be re-checked offline. A seat delta on its own is NOT a defect (the Owner's 2026-09-29 decision, private tracker #170): 132 non-capital centres stay more than 3 km from their seat, measured against osm-seat-reference.json after this batch, and none of them is corrected here; after this batch Beni-Abbes is no longer the one capital left in that band either. Applied by scripts/fix-commune-centres.mjs; held by test/capital-centre-near-seat.test.mjs.",
   "applied": true,
-  "count": 4,
+  "count": 5,
   "corrections": [
     {
       "code_commune": 701,
       "wilaya_code": 7,
       "name_fr": "Biskra",
       "name_ar": "بسكرة",
+      "decided_by": "osm_admin_centre_node",
       "from": [
         5.751048,
         34.8
@@ -30,7 +31,11 @@
         "wikidata": "Q312759",
         "name": "Biskra ⵜⵉⴱⴻⵙⴽⴻⵔⵜ بسكرة",
         "admin_centre_place": "city",
-        "admin_centre_name": "Biskra;ⵜⵉⴱⴻⵙⴽⴻⵔⵜ;بسكرة"
+        "admin_centre_name": "Biskra;ⵜⵉⴱⴻⵙⴽⴻⵔⵜ;بسكرة",
+        "admin_centre_point": [
+          5.729074,
+          34.850882
+        ]
       },
       "evidence": {
         "capital_of_wilaya": 7,
@@ -51,7 +56,8 @@
           34.848968
         ],
         "exact_facility_median_to_stored_m": 5903,
-        "exact_facility_median_to_admin_centre_m": 348
+        "exact_facility_median_to_admin_centre_m": 348,
+        "wilaya_point_supports_the_move": true
       }
     },
     {
@@ -59,6 +65,7 @@
       "wilaya_code": 61,
       "name_fr": "El Kantara",
       "name_ar": "القنطرة",
+      "decided_by": "osm_admin_centre_node",
       "from": [
         5.666831,
         35.192365
@@ -75,7 +82,11 @@
         "wikidata": "Q3050002",
         "name": "El Kantara ⵜⵉⴳⴻⵏⵜⴻⵔⵜ القنطرة",
         "admin_centre_place": "town",
-        "admin_centre_name": "القنطرة ⵜⵉⵇⴻⵏⵟⵔⴻⵜ"
+        "admin_centre_name": "القنطرة ⵜⵉⵇⴻⵏⵟⵔⴻⵜ",
+        "admin_centre_point": [
+          5.709284,
+          35.223115
+        ]
       },
       "evidence": {
         "capital_of_wilaya": 61,
@@ -96,7 +107,8 @@
           35.221571
         ],
         "exact_facility_median_to_stored_m": 5137,
-        "exact_facility_median_to_admin_centre_m": 211
+        "exact_facility_median_to_admin_centre_m": 211,
+        "wilaya_point_supports_the_move": true
       }
     },
     {
@@ -104,6 +116,7 @@
       "wilaya_code": 25,
       "name_fr": "Constantine",
       "name_ar": "قسنطينة",
+      "decided_by": "osm_admin_centre_node",
       "from": [
         6.642433,
         36.365
@@ -120,7 +133,11 @@
         "wikidata": "Q187346",
         "name": "Constantine ⵇⵙⴻⵟⵉⵏⴰ قسنطينة",
         "admin_centre_place": "city",
-        "admin_centre_name": "قسنطينة ⵇⵙⵏⵟⵉⵏⴰ"
+        "admin_centre_name": "قسنطينة ⵇⵙⵏⵟⵉⵏⴰ",
+        "admin_centre_point": [
+          6.608428,
+          36.364164
+        ]
       },
       "evidence": {
         "capital_of_wilaya": 25,
@@ -141,7 +158,8 @@
           36.353161
         ],
         "exact_facility_median_to_stored_m": 2493,
-        "exact_facility_median_to_admin_centre_m": 1535
+        "exact_facility_median_to_admin_centre_m": 1535,
+        "wilaya_point_supports_the_move": true
       }
     },
     {
@@ -149,6 +167,7 @@
       "wilaya_code": 32,
       "name_fr": "El Bayadh",
       "name_ar": "البيض",
+      "decided_by": "osm_admin_centre_node",
       "from": [
         1.020278,
         33.721667
@@ -165,7 +184,11 @@
         "wikidata": "Q648784",
         "name": "El Bayadh ⵍⴱⴻⵢⴻⴹ البيض",
         "admin_centre_place": "city",
-        "admin_centre_name": "البيض"
+        "admin_centre_name": "البيض",
+        "admin_centre_point": [
+          1.018245,
+          33.684319
+        ]
       },
       "evidence": {
         "capital_of_wilaya": 32,
@@ -186,7 +209,74 @@
           33.678605
         ],
         "exact_facility_median_to_stored_m": 4791,
-        "exact_facility_median_to_admin_centre_m": 730
+        "exact_facility_median_to_admin_centre_m": 730,
+        "wilaya_point_supports_the_move": true
+      }
+    },
+    {
+      "code_commune": 5201,
+      "wilaya_code": 52,
+      "name_fr": "Beni-Abbes",
+      "name_ar": "بني عباس",
+      "decided_by": "owner_verified",
+      "from": [
+        -2.17,
+        30.08
+      ],
+      "to": [
+        -2.16635,
+        30.131076
+      ],
+      "delta_m": 5690,
+      "owner_verified": {
+        "point": [
+          -2.16635,
+          30.131076
+        ],
+        "read_at": "2026-10-01",
+        "read_by": "project owner",
+        "evidence": "The town centre of Beni-Abbes read off the map by the project owner and supplied as 30.1310763, -2.1663499, rounded here to the 6 decimals this package carries. Same convention as the owner_verified coordinates in quality/overrides/sante.json, reviewed 2026-09-30: a point a human read off a map, recorded as such and never presented as OpenStreetMap-derived.",
+        "licence": "Not OpenStreetMap-derived. This coordinate carries the package's MIT compilation terms, not ODbL, and is deliberately NOT counted among the OpenStreetMap-derived commune centres in LICENSE, NOTICE and dataset-metadata.json."
+      },
+      "osm": {
+        "relation": 6530989,
+        "admin_centre_node": 1573488063,
+        "ref:ONS": "0807",
+        "wikidata": "Q130246",
+        "name": "Béni Abbès ⴰⵢⵜ ⴰⴱⴱⴰⵙ بني عباس",
+        "admin_centre_place": "city",
+        "admin_centre_name": "بني عباس ⴰⵢⵜ ⵄⴱⴱⴰⵙ",
+        "admin_centre_point": [
+          -2.169031,
+          30.131743
+        ],
+        "note": "Compared against, not written. The relation carries the PRE-REFORM ref:ONS 0807 (Bechar), so this row joined on that code plus the name inside the mother wilaya rather than on 5201 directly."
+      },
+      "evidence": {
+        "capital_of_wilaya": 52,
+        "stored_in_own_commune_boundary": true,
+        "admin_centre_in_own_commune_boundary": true,
+        "admin_centre_in_declared_wilaya": true,
+        "admin_centre_carries_commune_name": "name",
+        "owner_point_to_admin_centre_node_m": 268.3,
+        "wilaya_point": [
+          -2.1,
+          30.08
+        ],
+        "wilaya_point_supports_the_move": false,
+        "wilaya_point_to_stored_m": 6735,
+        "wilaya_point_to_owner_point_m": 8544,
+        "wilaya_point_to_admin_centre_m": 8786,
+        "wilaya_point_note": "The only one of the five where the wilaya-point claim argues AGAINST the move: wilaya 52's own capital point is itself about 8.5 km from its capital's town centre, which is yasserstudio/geoalgeria.com#228 to fix and not this batch. So this row is NOT selected by the two-claim criterion the other four meet, and it is decided by the Owner's point instead, cross-checked against the facility median and the admin_centre node.",
+        "exact_facility_records": 40,
+        "exact_facility_files": 16,
+        "exact_facility_median": [
+          -2.168459,
+          30.130599
+        ],
+        "exact_facility_median_to_stored_m": 5628,
+        "exact_facility_median_to_owner_point_m": 210,
+        "exact_facility_median_to_admin_centre_m": 139
       }
     }
   ]
