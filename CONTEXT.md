@@ -221,3 +221,29 @@ _Avoid_: fetched, scraped, synced
 **Geometry confidence**:
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
+
+### Coordinate review
+
+**Claim**:
+One source's statement of where a place is, with its source, licence and snapshot date (the OSM seat, the Wikidata coordinate, the record median, a Google verdict, an Owner reading). See ADR 0001.
+_Avoid_: evidence, reading, observation
+
+**Candidate**:
+A point a place's coordinate could be set to: the published point, the OSM seat, the Wikidata point or the record median. A Claim never votes for the Candidate it produced.
+_Avoid_: option, proposal, suggestion
+
+**Vote**:
+A Claim that lands within the agreement radius of a Candidate (2 km for a commune centre) and is not a Copied claim.
+_Avoid_: match, hit, support score
+
+**Copied claim**:
+A Claim within 50 m of the point it would vote for, because that point was copied from it. It proves nothing and casts no Vote.
+_Avoid_: duplicate, echo
+
+**Consensus**:
+At least two independent Votes for one Candidate, none for another, and the Candidate inside the commune outline. **Strong consensus** (three Votes, or two with the record median among them) is the tier that fixes data without the Owner.
+_Avoid_: confidence score (there is no score, only Votes), ground truth, verified (an Owner reading is recorded as `owner_confirmation` of an open Candidate)
+
+**Review queue**:
+The places the engine leaves for the Owner: plain consensus, no consensus, or a move over 25 km.
+_Avoid_: backlog, inbox, todo list
