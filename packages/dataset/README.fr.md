@@ -249,7 +249,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/ge
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit : code MIT et compilation MIT, avec deux parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit : code MIT et compilation MIT, avec trois parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 

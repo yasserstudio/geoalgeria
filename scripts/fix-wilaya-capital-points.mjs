@@ -40,6 +40,9 @@ import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { haversine } from "./lib/commune-resolver.mjs";
+import { WILAYA_SQL_POINT_ROW } from "./lib/full-sql-rows.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
 const DATA = join(PKG, "data");
@@ -101,11 +104,9 @@ const outputs = [];
 const problems = [];
 const moves = [];
 
-/** Equirectangular approximation, only ever printed in the report. */
-function km([lngA, latA], [lngB, latB]) {
-  const x = (lngA - lngB) * Math.cos((((latA + latB) / 2) * Math.PI) / 180) * 111.32;
-  return Math.hypot(x, (latA - latB) * 110.57);
-}
+/** Metres between two `[lng, lat]` points, only ever printed in the report.
+ *  haversine() takes lat first, so the flip lives here instead of at the call site. */
+const metresApart = ([aLng, aLat], [bLng, bLat]) => haversine(aLat, aLng, bLat, bLng);
 
 function writeAtomic(path, content) {
   const tmp = `${path}.${process.pid}.tmp`;
@@ -128,7 +129,7 @@ function verdict(label, code, lng, lat) {
       name_fr: want.name_fr,
       from: [Number(lng), Number(lat)],
       to: want.point,
-      km: km([Number(lng), Number(lat)], want.point),
+      metres: metresApart([Number(lng), Number(lat)], want.point),
     });
   return { want, changed: true };
 }
@@ -197,14 +198,13 @@ function patchCsv(path) {
 }
 
 // --- data/sql/full.sql, the wilayas table only ---------------------------------
-//   (code, 'name_fr', 'name_ar', 'phone', 'postal', lat, lng, 'created', capital)
-// Keyed on the `created` literal in field 8, which is what tells a wilaya row from a
-// commune row: both print 9 fields.
+// Keyed on the `created` literal in field index 7, which is what tells a wilaya row
+// from a commune row: both print 9 fields. The tuple and the pattern are
+// scripts/lib/full-sql-rows.mjs, shared with the two other scripts that patch this file.
 function patchSql(path) {
   const text = readFileSync(path, "utf-8");
   const label = basename(path);
-  const re =
-    /^( {2}\((\d+), '(?:[^']|'')*', '(?:[^']|'')*', (?:'[^']*'|NULL), (?:'[^']*'|NULL), )(-?[\d.]+)(, )(-?[\d.]+)(, '(?:original|2019|2026)', \d+\)[,;])$/;
+  const re = WILAYA_SQL_POINT_ROW;
   const lines = text.split("\n");
   const seen = new Set();
   let changed = 0;
@@ -235,7 +235,7 @@ for (const r of reports) {
   if (r.seen !== WANT.size) problems.push(`${r.label} saw ${r.seen} of ${WANT.size} wilayas`);
 }
 
-moves.sort((a, b) => b.km - a.km);
+moves.sort((a, b) => b.metres - a.metres);
 console.log(`wilaya points: ${moves.length} of ${WANT.size} are not their capital commune's centre`);
 for (const m of moves)
   console.log(

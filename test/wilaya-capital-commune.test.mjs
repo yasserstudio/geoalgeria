@@ -38,6 +38,7 @@
 
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
@@ -74,17 +75,23 @@ const COPIES = [
   ["data/sql/full.sql", () => fromSql()],
 ];
 
-function fromCsv(...p) {
+/** One of the dataset's plain comma-joined CSVs, by column name: the named columns'
+ *  indexes and the split rows. The header is read rather than a width assumed, because a
+ *  column has been appended to these files twice this batch. */
+function csvColumns(p, ...names) {
   const [head, ...rows] = readText(...p).trim().split(/\r?\n/);
   const col = head.split(",");
-  const [ci, cap] = [col.indexOf("code"), col.indexOf("capital_commune_code")];
-  assert.ok(ci >= 0 && cap >= 0, `${p.join("/")}: no code/capital_commune_code column`);
-  return Object.fromEntries(
-    rows.map((r) => {
-      const f = r.split(",");
-      return [Number(f[ci]), Number(f[cap])];
-    }),
+  const at = names.map((n) => col.indexOf(n));
+  assert.ok(
+    at.every((i) => i >= 0),
+    `${p.join("/")}: missing column(s) ${names.filter((_, i) => at[i] < 0).join(", ")}`,
   );
+  return { at, rows: rows.map((r) => r.split(",")) };
+}
+
+function fromCsv(...p) {
+  const { at: [ci, cap], rows } = csvColumns(p, "code", "capital_commune_code");
+  return Object.fromEntries(rows.map((f) => [Number(f[ci]), Number(f[cap])]));
 }
 
 function fromSql() {
@@ -109,16 +116,8 @@ const POINTS = [
 ];
 
 function pointsFromCsv(...p) {
-  const [head, ...rows] = readText(...p).trim().split(/\r?\n/);
-  const col = head.split(",");
-  const [ci, lat, lng] = [col.indexOf("code"), col.indexOf("latitude"), col.indexOf("longitude")];
-  assert.ok(ci >= 0 && lat >= 0 && lng >= 0, `${p.join("/")}: no code/latitude/longitude column`);
-  return Object.fromEntries(
-    rows.map((r) => {
-      const f = r.split(",");
-      return [Number(f[ci]), [Number(f[lng]), Number(f[lat])]];
-    }),
-  );
+  const { at: [ci, lat, lng], rows } = csvColumns(p, "code", "latitude", "longitude");
+  return Object.fromEntries(rows.map((f) => [Number(f[ci]), [Number(f[lng]), Number(f[lat])]]));
 }
 
 function pointsFromSql() {
@@ -189,7 +188,10 @@ test("wilaya capitals: all five carriers in packages/dataset agree", () => {
 
 // ADR 0001 rule 9. The wilaya point is not a second claim about the seat, it is the
 // capital commune's centre, so it is compared with no tolerance at all: a rounded
-// copy is a different number and would put two values in circulation again.
+// copy is a different number and would put two values in circulation again. The
+// comparison is numeric, after parsing, so a re-serialised `36.7763350` would pass;
+// what it rules out is a different value, which is what two claims about one town
+// actually look like.
 const capitals = Object.fromEntries(
   read("data", "algeria.json").map((w) => [w.code, w.capital_commune_code]),
 );
@@ -260,6 +262,18 @@ test("wilaya capitals: the wilaya point is inside its capital commune's own outl
     outside,
     [],
     `${outside.length} wilaya point(s) outside their own capital commune\n  ${outside.join("\n  ")}`,
+  );
+});
+
+// The writer and the reader, against each other. Every other --check script in this
+// repository is driven from its test, so a carrier this file does not read still fails.
+test("wilaya capitals: the point writer agrees that nothing is stale", () => {
+  assert.doesNotThrow(() =>
+    execFileSync(
+      process.execPath,
+      [join(import.meta.dirname, "../scripts/fix-wilaya-capital-points.mjs"), "--check"],
+      { stdio: "pipe" },
+    ),
   );
 });
 

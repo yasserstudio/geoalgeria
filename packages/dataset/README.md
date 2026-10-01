@@ -249,7 +249,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free: MIT code and an MIT compilation, with two ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with three ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 

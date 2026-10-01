@@ -31,6 +31,7 @@ import {
   membershipFromExtract,
   readExtract,
 } from "./lib/decree-26-253.mjs";
+import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
@@ -361,13 +362,9 @@ function patchSql(path, patch, header) {
 }
 
 // A wilaya row prints 9 fields too since `capital_commune_code` was added, so field
-// count alone no longer tells the two tables apart: read as a commune, wilaya 3's
-// row had its postal code '03000' overwritten with the daira name 'Laghouat'. The
-// `created` literal in field 7 is the discriminator, the same one
-// scripts/fix-jo-corrections.mjs uses.
-// wilayas: (code, 'name_fr', 'name_ar', 'phone', 'postal', lat, lng, 'created', capital)
-const isWilayaSqlRow = (f) => f.length === 9 && /^'(?:original|2019|2026)'$/.test(f[7]);
-
+// count alone no longer tells the two tables apart: read as a commune, wilaya 3's row
+// had its postal code '03000' overwritten with the daira name 'Laghouat'. The tuples
+// and the discriminator live in scripts/lib/full-sql-rows.mjs.
 // communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune)
 patchSql(
   join(DATA, "sql", "full.sql"),

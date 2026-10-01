@@ -91,7 +91,7 @@ the one point where the decree and OpenStreetMap disagree:
 A wilaya's `latitude`/`longitude` **is** the centre of its capital commune, the same
 value and not a second reading of it, so there is one point to verify per capital
 (the Owner's rule of 2026-10-01).
-Before that rule, 65 of the 69 wilaya points were a separate OpenStreetMap
+Before that rule, 66 of the 69 wilaya points were a separate OpenStreetMap
 `admin_level=4` `admin_centre`, up to 8.8 km from the commune they were the capital
 of (wilaya 52, Beni-Abbes), and one of them, wilaya 55, sat outside its capital
 commune altogether. Each now reads its commune's own coordinate, and the check is

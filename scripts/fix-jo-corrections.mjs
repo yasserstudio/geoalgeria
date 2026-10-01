@@ -20,6 +20,7 @@ import {
   coordinateCorrections,
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
+import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
@@ -410,12 +411,6 @@ function patchSql(path, patch) {
   queueText(path, out.join("\n"));
 }
 
-// Both tables print 9 fields, so they are told apart by field 7: a wilaya row
-// ends with the `created` literal then its capital, a commune row has a longitude
-// there.
-// wilayas: (code, 'name_fr', 'name_ar', phone, 'postal', lat, lng, 'created', capital)
-// communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune)
-const isWilayaSqlRow = (f) => f.length === 9 && /^'(?:original|2019|2026)'$/.test(f[7]);
 
 patchSql(join(DATA, "sql", "full.sql"), (f) => {
   if (isWilayaSqlRow(f)) {
