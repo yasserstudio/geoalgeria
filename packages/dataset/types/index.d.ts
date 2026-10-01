@@ -11,7 +11,11 @@ declare namespace algeriaGeodata {
     name_ar: string;
     phone_code: string | null;
     postal_code: string;
+    /** The wilaya's point: the centre of its capital commune
+     *  (`capital_commune_code`), the same value that commune carries and not a
+     *  second reading of it. A wilaya has no point of its own. */
     latitude: number;
+    /** See `latitude`: the capital commune's own longitude. */
     longitude: number;
     /** The year the wilaya became official, i.e. the year the law creating it
      *  took effect: `"original"` for the 48 of Law 84-09 (1984), `"2019"` for

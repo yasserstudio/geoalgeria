@@ -307,4 +307,18 @@ test("wilaya capitals: the meaning is written down", () => {
   const glossary = readFileSync(join(ROOT, "CONTEXT.md"), "utf-8");
   assert.match(glossary, /\*\*Capital\*\*:/, "CONTEXT.md should define Capital");
   assert.match(glossary, /capital_commune_code/, "CONTEXT.md should name the field");
+
+  // And the point rule, because a wilaya point that reads like a point of its own is
+  // the thing rule 9 removes. Every surface that documents the field says what the
+  // coordinates are, or a consumer goes on treating them as a second claim.
+  for (const [where, text] of [
+    ["types/index.d.ts", types],
+    ["data/README.md", schemaDoc],
+    ["CONTEXT.md", glossary],
+  ])
+    assert.match(
+      text,
+      /capital commune|capital's centre|Capital's centre/,
+      `${where} should say that a wilaya's latitude/longitude is its capital commune's centre`,
+    );
 });
