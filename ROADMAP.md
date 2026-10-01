@@ -125,6 +125,32 @@ reads as further along than it is.
   out of the 2.0.4 generator rebuild.
   _(logged 2026-09-30)_
 
+- [ ] **Coordinate review engine, P2 to P4** (private tracker #244), follow-ups
+  to the P0/P1 coordinate review by independent votes (data ADR 0001, held PR
+  #252): import Owner verdicts from the review page into the ledger as Owner
+  Votes so the page reads the engine's own Review queue; run sector records
+  through the same voting module into `quality/overrides/` (starting with the
+  167 ambiguous rows from #209: poste 55, tourisme 40, protection-civile 24);
+  a weekly scheduled drift watch that refreshes snapshots, re-votes accepted
+  points and opens an issue on change; move the L3 Google-verdict script out
+  of `_tools` into the private app repo, local only.
+  _(logged 2026-10-01)_
+
+- [ ] **`communes.csv` and `communes.geojson` disagree with `algeria.json` on
+  187 commune postal codes** (private tracker #246): 132 where the mirror is
+  null and the table has a value, 54 where both differ, 1 the other way.
+  `scripts/fix-commune-postal-codes.mjs` writes only the four JSON tables,
+  never the geojson/csv/sql/ecommerce mirrors, so consumers of those mirrors
+  read wrong postal codes today.
+  _(logged 2026-10-01)_
+
+- [ ] **`fix-jo-corrections.mjs` writes CSV and SQL outside `--target`**
+  (private tracker #247): its CSV/SQL/ecommerce writers run at module top
+  level against `packages/dataset/data` unconditionally, even under
+  `--target`. Harmless today behind the supersede guard the held PR #252
+  added to all four writers, but the scoping bug itself remains.
+  _(logged 2026-10-01)_
+
 ## Generators
 
 - [ ] **A corrupt source coordinate silently rewrites a record's identity, and
