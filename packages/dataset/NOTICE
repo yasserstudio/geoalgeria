@@ -20,7 +20,7 @@ https://www.openstreetmap.org/copyright
 
 2. Commune centre coordinates
 
-   256 of the 1,541 commune `latitude` / `longitude` values, each taken from that
+   323 of the 1,541 commune `latitude` / `longitude` values, each taken from that
    commune's own OpenStreetMap `admin_level=8` relation:
 
    - 56 corrected on 2026-09-27 from the relation's `admin_centre` node, Overpass
@@ -46,21 +46,36 @@ https://www.openstreetmap.org/copyright
      proprietary map; it is recorded there as a confirmation of this node, which
      it agrees with to 268 m, and never as the published value, so the ODbL
      covers this coordinate exactly as it covers the other four.
-   - 6 corrected in version 2.1.0 from the relation centroid, matched on the
+   - 68 corrected on 2026-10-01 from the same node, same Overpass
+     `timestamp_osm_base` 2026-09-29T12:54:47Z, by the coordinate review engine:
+     each of the 136 centres more than 3 km from its seat, or with no seat, was
+     weighed against the open sources that state where its town is, and a value
+     was written only where at least three of them agree, or two including the
+     median of the exact records inside the commune's own outline, with nothing
+     voting for a different answer and the value inside that outline. Every row,
+     with its Candidates and the Votes that decided it, is listed in
+     research/_commune-centres/corrections-2026-10-01b.json; the 67 the engine
+     did not settle are in research/_commune-centres/review-queue-2026-10-01.json
+     and keep the coordinates they already had. The rules are
+     docs/adr/0001-coordinate-review-by-independent-votes.md. No reading from a
+     proprietary map decided any of the 68.
+   - 5 corrected in version 2.1.0 from the relation centroid, matched on the
      relation's `ref` tag: Belarbi (2242), El Hamdania (2616), Ouled Bouachra
-     (2627), Deux Bassins (2653), Makhda (2915) and El Euch (3427). See
-     CHANGELOG.md, 2.1.0. Si Mahdjoub (2644) and El Achir (3407) are NOT in this
+     (2627), Deux Bassins (2653) and Makhda (2915). See CHANGELOG.md, 2.1.0.
+     El Euch (3427) was a sixth until 2026-10-01, when the coordinate review moved
+     it 9.7 km off that centroid onto its own `admin_centre` node, so it is counted
+     with the node corrections above and not here. Si Mahdjoub (2644) and El Achir (3407) are NOT in this
      set: each kept the placeholder point it shared with its neighbour, still
      byte-identical to its pre-2.1.0 value, so no OpenStreetMap value was ever
      written to either and no ODbL claim is made over them.
 
    A commune centre is one value repeated across representations, so the ODbL
-   covers these 256 coordinates wherever they appear: data/algeria.json,
+   covers these 323 coordinates wherever they appear: data/algeria.json,
    data/communes_w1_w23.json, data/communes_w24_w48.json,
    data/communes_w49_w69.json, data/csv/communes.csv,
    data/geojson/communes.geojson and data/sql/full.sql.
 
-   The other 1,285 commune coordinates are not OpenStreetMap-derived and no ODbL
+   The other 1,218 commune coordinates are not OpenStreetMap-derived and no ODbL
    claim is made over them.
 
 3. Wilaya capital points

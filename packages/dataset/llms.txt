@@ -8,8 +8,8 @@
 - 551 dairas and 1,541 communes total
 - Each wilaya carries its capital (chef-lieu) as a commune code (`capital_commune_code`), fixed by the decrees that name the chefs-lieux: n° 84-79 (1984) for wilayas 1-48, n° 21-117 (2021) for 49-58, n° 26-206 (2026) for 59-69
 - Available as: JSON, CSV, GeoJSON, SQL, npm package (TypeScript)
-- Source: Official Algerian government gazette (JORA), Algérie Poste, plus OpenStreetMap for the wilaya boundary polygons and 256 commune centre coordinates
-- License: SEE LICENSE IN LICENSE, because the data is under three sets of terms. The compilation is MIT; the wilaya boundary polygons and those 256 commune centre coordinates are ODbL 1.0, (c) OpenStreetMap contributors, and must keep that attribution (see NOTICE); a wilaya's coordinates are the centre of its capital commune, so 6 of the 69 wilaya capital points are among those coordinates (wilayas 7, 16, 25, 32, 52 and 61) and the other 63 wilaya capital points are not OpenStreetMap-derived; the mirrored postal data under data/poste carries Algerie Poste's own terms, Data (c) Algerie Poste; redistributed for reference
+- Source: Official Algerian government gazette (JORA), Algérie Poste, plus OpenStreetMap for the wilaya boundary polygons and 323 commune centre coordinates
+- License: SEE LICENSE IN LICENSE, because the data is under three sets of terms. The compilation is MIT; the wilaya boundary polygons and those 323 commune centre coordinates are ODbL 1.0, (c) OpenStreetMap contributors, and must keep that attribution (see NOTICE); a wilaya's coordinates are the centre of its capital commune, so 6 of the 69 wilaya capital points are among those coordinates (wilayas 7, 16, 25, 32, 52 and 61) and the other 63 wilaya capital points are not OpenStreetMap-derived; the mirrored postal data under data/poste carries Algerie Poste's own terms, Data (c) Algerie Poste; redistributed for reference
 - npm: geoalgeria
 - GitHub: https://github.com/yasserstudio/geoalgeria
 

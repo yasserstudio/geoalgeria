@@ -252,7 +252,7 @@ address stored before a correction still resolves.
 `geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
 `properties.code` joining to `wilayas.json`. Derived from OpenStreetMap `admin_level=4`
 relations (**ODbL 1.0, © OpenStreetMap contributors**, one of the two carve-outs from this
-package's MIT licence; the other is the 256 OpenStreetMap-derived commune centres below) and
+package's MIT licence; the other is the 323 OpenStreetMap-derived commune centres below) and
 simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 decimals.
 
 Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the
@@ -324,10 +324,10 @@ Makhda (2915) and El Euch (3427). Si Mahdjoub (2644) and El Achir (3407) shared 
 placeholder with two of those but were left as they were, so they are still on their
 pre-2.1.0 values and carry no OpenStreetMap provenance.
 
-**Licence.** Those 256 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
+**Licence.** Those 323 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
 copy of them in `algeria.json`, `communes_w*.json`, `csv/communes.csv`,
 `geojson/communes.geojson` and `sql/full.sql`. Reusing them means attributing OpenStreetMap
-contributors and keeping derived databases under a compatible licence. The other 1,285
+contributors and keeping derived databases under a compatible licence. The other 1,218
 commune points carry no recorded source and are covered by the package's MIT licence; no
 ODbL claim is made over them. Per-part terms are in the package `LICENSE` and `NOTICE`, and
 the per-source breakdown is in `geojson/communes.metadata.json`.
@@ -347,4 +347,4 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
 - OpenStreetMap `admin_level=8` commune relations (ODbL 1.0) for the wilaya 30/55 and 47/58 membership correction of 2026-09-29
 - OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 250 commune centres corrected on 2026-09-27 (56), 2026-09-29 (189) and 2026-10-01 (5)
-- OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 6 commune centres replaced in version 2.1.0
+- OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 5 commune centres replaced in version 2.1.0

@@ -291,10 +291,11 @@ Three parts of the data come from **OpenStreetMap**, are **© OpenStreetMap cont
 are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
-- 256 of the 1,541 commune centre coordinates, each taken from that commune's own
-  `admin_level=8` relation (250 from its `admin_centre` node, 56 on 2026-09-27, 189 on
-  2026-09-29 and 5 on 2026-10-01, and 6 from the relation centroid in 2.1.0), wherever those
-  values appear;
+- 323 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (318 from its `admin_centre` node, 56 on 2026-09-27, 189 on
+  2026-09-29, 5 on 2026-10-01 and 68 on 2026-10-01 by the coordinate review, which writes a
+  value only where independent sources vote for it, and 5 from the relation centroid in
+  2.1.0), wherever those values appear;
 - 6 of the 69 wilaya capital points, which are the same values again: a wilaya's coordinates
   are the centre of its capital commune, so wilayas 7, 16, 25, 32, 52 and 61 carry one of the
   coordinates above. The other 63 wilaya capital points are not OpenStreetMap-derived.
