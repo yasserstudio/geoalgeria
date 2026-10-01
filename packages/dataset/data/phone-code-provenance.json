@@ -1,79 +1,117 @@
 {
   "metadata": {
     "title": "GeoAlgeria wilaya telephone area code provenance",
-    "description": "Why each of the eleven wilayas Law 26-06 created (codes 59 to 69) carries the phone_code it carries. A value appears here only with an official citation; a null carries a reason naming the official texts searched and what each one said. The codes wilayas 1 to 58 carry predate this ledger and are not restated by it.",
+    "description": "Why each of the eleven wilayas Law 26-06 created (codes 59 to 69) carries the phone_code it carries. A value appears here only with an official citation naming where in the document it was read; a null carries a reason naming the official texts searched and what each one said. The codes wilayas 1 to 58 carry predate this ledger and are not restated by it.",
     "scope": "Wilaya codes 59 to 69, the 2026 cohort.",
-    "rule": "A code is taken from an official text only: the Journal Officiel, an ARPCE decision or published numbering plan, or an Algerie Telecom announcement. It is never derived from the mother wilaya, and never taken from an encyclopaedia, directory or press listing.",
+    "rule": "A code is taken from an official text only: the Journal Officiel, an ARPCE decision or published numbering plan, or an Algérie Télécom announcement. It is never derived from the wilaya it was split from, and never taken from an encyclopaedia, directory or press listing.",
     "updated": "2026-10-01",
-    "searched": "2026-10-01",
     "sources": [
       {
         "key": "arpce-numbering",
-        "name": "ARPCE: Numbering. The ten-digit plan national de numerotation adopted 22 February 2008, format ZABPQMCDU, where ZA is the geographic zone; numbering resources are allocated by the Authority under article 13 of Law 18-04",
+        "name": "ARPCE: Numbering. The ten-digit plan national de numérotation adopted 22 February 2008, format ZABPQMCDU, where ZA is the geographic zone; numbering resources are allocated by the Authority under article 13 of Law 18-04",
         "url": "https://www.arpce.dz/en/service/num",
+        "document_date": null,
+        "date_note": "The Authority's numbering page carries no publication date of its own. The plan it describes was adopted on 22 February 2008.",
         "retrieved": "2026-10-01",
         "evidence_type": "official"
       },
       {
         "key": "arpce-numbering-plan-2007",
-        "name": "ARPT: Nouveau plan de numerotation telephonique pour l'Algerie (PDF, document dated 24 December 2007)",
+        "name": "ARPT: Nouveau plan de numérotation téléphonique pour l'Algérie (PDF)",
         "url": "https://www.arpce.dz/fr/file/a1a8a0",
+        "document_date": "2007-12-24",
         "retrieved": "2026-10-01",
         "evidence_type": "official"
       },
       {
         "key": "algerie-telecom-numerotations",
-        "name": "Algerie Telecom: Les Nouvelles numerotations, the operator's own notice archive for number changes",
+        "name": "Algérie Télécom: Les Nouvelles numérotations, the operator's own notice archive for number changes",
         "url": "https://www.algerietelecom.dz/fr/basculement/20",
+        "document_date": null,
+        "date_note": "The notice archive carries no publication date. Its entries are the operator's MSAN-era local number changes, each naming its own communes.",
         "retrieved": "2026-10-01",
         "evidence_type": "official"
       },
       {
         "key": "jora-25-2026",
-        "name": "Journal Officiel n° 25, 5 April 2026 (Law 26-06), the text that creates wilayas 59 to 69",
+        "name": "Journal Officiel n° 25 (Law n° 26-06 of 4 April 2026), the text that creates wilayas 59 to 69",
         "url": "https://www.joradp.dz/FTP/JO-FRANCAIS/2026/F2026025.pdf",
+        "document_date": "2026-04-05",
         "retrieved": "2026-10-01",
         "evidence_type": "official"
       },
       {
         "key": "jora-40-2026",
-        "name": "Journal Officiel n° 40, 3 June 2026 (Presidential decree 26-206 of 25 May 2026), the codes and seats of wilayas 59 to 69",
+        "name": "Journal Officiel n° 40 (Presidential decree n° 26-206 of 25 May 2026), the codes and seats of wilayas 59 to 69",
         "url": "https://www.joradp.dz/FTP/JO-FRANCAIS/2026/F2026040.pdf",
+        "document_date": "2026-06-03",
         "retrieved": "2026-10-01",
         "evidence_type": "official"
       },
       {
         "key": "jora-52-2026",
-        "name": "Journal Officiel n° 52, 21 July 2026 (Executive decree 26-253 of 15 July 2026), the daira annex for the new wilayas",
+        "name": "Journal Officiel n° 52 (Executive decree n° 26-253 of 15 July 2026), the daira annex for the new wilayas",
         "url": "https://www.joradp.dz/FTP/JO-FRANCAIS/2026/F2026052.pdf",
+        "document_date": "2026-07-21",
         "retrieved": "2026-10-01",
         "evidence_type": "official"
       }
     ],
     "reasons": {
       "no-official-allocation": {
-        "statement": "No official text allocates a telephone area code to this wilaya. ARPCE allocates numbering resources under the ten-digit plan national de numerotation of 22 February 2008, whose geographic digits identify a numbering zone rather than a wilaya, and the Authority has published no allocation for the 2026 cohort. The three texts that create and organise these wilayas are silent on numbering. Algerie Telecom has announced no new area code for them. The code the mother wilaya carries is not evidence for the new one and is deliberately not copied here.",
+        "statement": "No official text allocates a telephone area code to this wilaya. ARPCE allocates numbering resources under the ten-digit plan national de numérotation of 22 February 2008, whose geographic digits identify a numbering zone rather than a wilaya, and the Authority has published no allocation for the 2026 cohort. The three texts that create and organise these wilayas are silent on numbering. Algérie Télécom has announced no new area code for them. The code carried by the wilaya this one was split from is not evidence for it, and is deliberately not copied here.",
+        "searched_on": "2026-10-01",
         "searched": [
           {
             "authority": "Journal officiel (joradp.dz)",
-            "source_keys": ["jora-25-2026", "jora-40-2026", "jora-52-2026"],
-            "looked_for": "a text on the plan national de numerotation or on telephone indicatifs, and any numbering article in the three texts that create and organise wilayas 59 to 69",
-            "result": "No Journal officiel text on telephone numbering was found. JORA n° 25 (2026), Law 26-06 creates the eleven wilayas; JORA n° 40 (2026), decree 26-206 art. 1 fixes each one's code and seat; JORA n° 52 (2026), decree 26-253, annexe fixes their dairas. All three are silent on telephone numbering."
+            "looked_for": "a text on the plan national de numérotation or on wilaya area codes, and any numbering article in the three texts that create and organise wilayas 59 to 69",
+            "citations": [
+              {
+                "source_key": "jora-25-2026",
+                "article": "Law n° 26-06 in full, including the wilaya table at p. 16",
+                "finding": "Creates the eleven wilayas and lists them. No article addresses telephone numbering."
+              },
+              {
+                "source_key": "jora-40-2026",
+                "article": "decree n° 26-206, art. 1, items 59 to 69, p. 5",
+                "finding": "Fixes the code and the seat of each of the eleven wilayas. No article addresses telephone numbering."
+              },
+              {
+                "source_key": "jora-52-2026",
+                "article": "decree n° 26-253, annexe",
+                "finding": "Fixes the dairas of the new wilayas. The French edition of this issue contains no occurrence of numérotation, indicatif or téléphone."
+              }
+            ]
           },
           {
             "authority": "ARPCE (arpce.dz)",
-            "source_keys": ["arpce-numbering", "arpce-numbering-plan-2007"],
-            "looked_for": "the published numbering plan and any decision allocating area codes to the wilayas created in 2019 or in 2026",
-            "result": "The numbering page describes the ten-digit plan of 22 February 2008 and the ZABPQMCDU format whose ZA digits are a geographic zone. It publishes no wilaya-to-code table and addresses neither cohort of new wilayas. The 2007 plan document allocates 02, 03 and 04 to Algerie Telecom and leaves 01 unallocated, with no per-wilaya assignment. No ARPCE decision allocating a code to a new wilaya was found."
+            "looked_for": "the published numbering plan, and any decision allocating area codes to the wilayas created in 2019 or in 2026",
+            "citations": [
+              {
+                "source_key": "arpce-numbering",
+                "article": "the Numbering service page, National Numbering Plan section",
+                "finding": "Describes the ten-digit plan of 22 February 2008 and the ZABPQMCDU format whose ZA digits are a geographic zone. Publishes no wilaya-to-code table and addresses neither cohort of new wilayas. No decision allocating a code to a new wilaya is listed."
+              },
+              {
+                "source_key": "arpce-numbering-plan-2007",
+                "article": "the allocation table of leading digits",
+                "finding": "01 is unallocated and 02, 03 and 04 go to Algérie Télécom; no per-wilaya assignment was read. Text extraction was partial because the PDF streams are compressed, so a zone table inside it is unread rather than ruled out."
+              }
+            ]
           },
           {
-            "authority": "Algerie Telecom (algerietelecom.dz)",
-            "source_keys": ["algerie-telecom-numerotations"],
+            "authority": "Algérie Télécom (algerietelecom.dz)",
             "looked_for": "an operator announcement of new area codes for the new wilayas",
-            "result": "The operator's numbering notices concern local number changes in named communes after infrastructure upgrades. No announcement of an area code for any wilaya of the 2026 cohort was found."
+            "citations": [
+              {
+                "source_key": "algerie-telecom-numerotations",
+                "article": "the Nouvelles numérotations section, its full notice list",
+                "finding": "Every notice concerns local number changes in named communes after infrastructure upgrades. No notice announces an area code, and none names a wilaya of the 2026 cohort."
+              }
+            ]
           }
         ],
-        "note": "A silence is not a negative. This records what was searched on 2026-10-01 and what it said; an official allocation published later replaces the null with the cited value."
+        "note": "A silence is not a negative. This records what was searched on searched_on and what it said; each source's own retrieved date is when that document was read. An official allocation published later replaces the null with the cited value."
       }
     },
     "note": "Wilayas 1 to 58 are out of this ledger's scope. Their phone_code values predate it and no official citation has been established for them yet; see ROADMAP.md."

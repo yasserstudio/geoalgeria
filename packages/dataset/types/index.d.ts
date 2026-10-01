@@ -122,6 +122,75 @@ declare namespace algeriaGeodata {
     communes: NameHistoryEntry[];
   }
 
+  /** One official text the phone-code ledger relies on. */
+  export interface PhoneCodeSource {
+    key: string;
+    /** The document's own title. */
+    name: string;
+    url: string;
+    /** The document's own date, or null when it carries none, with `date_note`. */
+    document_date: string | null;
+    date_note?: string;
+    /** The date the document was read. */
+    retrieved: string;
+    evidence_type: "official";
+  }
+
+  /** Which declared document, where in it, and what it said there. */
+  export interface PhoneCodeCitation {
+    /** A key in `metadata.sources`. */
+    source_key: string;
+    /** Where in the document: an article, item, page, annex, table or section. */
+    article: string;
+    finding: string;
+  }
+
+  /** Why a wilaya of the cohort has no code: the authorities searched and the
+   *  texts read, so the null is auditable rather than bare. */
+  export interface PhoneCodeReason {
+    statement: string;
+    searched_on: string;
+    searched: {
+      authority: string;
+      looked_for: string;
+      citations: PhoneCodeCitation[];
+    }[];
+    note?: string;
+  }
+
+  /** One wilaya's `phone_code` and the evidence for it: either a value with its
+   *  citations, or null with `reason` naming an entry in `metadata.reasons`. */
+  export interface PhoneCodeProvenanceEntry {
+    code: number;
+    name_fr: string;
+    name_ar: string;
+    phone_code: string | null;
+    /** Present when `phone_code` is null. */
+    reason?: string;
+    /** Present when `phone_code` is a value. */
+    citations?: PhoneCodeCitation[];
+    /** Set when the code equals the one carried by the wilaya this was split from,
+     *  which must be declared rather than left to look like a copy. */
+    same_as_mother_wilaya?: true;
+    mother_note?: string;
+  }
+
+  /** Why each wilaya of the 2026 cohort (codes 59 to 69) carries the `phone_code`
+   *  it carries. A code enters it only with an official citation. */
+  export interface PhoneCodeProvenance {
+    metadata: {
+      title: string;
+      description: string;
+      scope: string;
+      rule: string;
+      updated: string;
+      sources: PhoneCodeSource[];
+      reasons: Record<string, PhoneCodeReason>;
+      note?: string;
+    };
+    wilayas: PhoneCodeProvenanceEntry[];
+  }
+
   export interface Daira {
     id: number;
     wilaya_code: number;
@@ -250,6 +319,7 @@ declare const algeriaGeodata: {
   readonly ecommerce: algeriaGeodata.CommuneEcommerce[];
   readonly all: algeriaGeodata.WilayaWithCommunes[];
   readonly nameHistory: algeriaGeodata.NameHistory;
+  readonly phoneCodeProvenance: algeriaGeodata.PhoneCodeProvenance;
   readonly postOffices: algeriaGeodata.PostOffice[];
   readonly atms: algeriaGeodata.Atm[];
   getWilaya(code: number): algeriaGeodata.Wilaya | undefined;

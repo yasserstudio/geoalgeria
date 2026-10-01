@@ -79,16 +79,9 @@ announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
 `1984` instead of `"original"`, and its `metadata.reforms[].year` matches the
 `created` of the wilayas that reform added.
 
-`phone_code` is `null` for all eleven wilayas of the 2026 cohort (59–69). No
-official text allocates a telephone area code to them: ARPCE allocates numbering
-resources under the ten-digit *plan national de numérotation* of 22 February
-2008, whose geographic digits identify a numbering zone rather than a wilaya, and
-has published no allocation for these eleven; Law n° 26-06, decree 26-206 and
-decree 26-253 are all silent on numbering; Algérie Télécom has announced no new
-code. The mother wilaya's code is never copied in. `phone-code-provenance.json`
-records the texts searched, what each said and the date, and is exposed as
-`phoneCodeProvenance`; a published allocation replaces the `null` with the cited
-value there and in every carrier at once.
+`phone_code` is `null` wherever no official text allocates a code, which today is
+all eleven wilayas of the 2026 cohort (59–69). See
+[Telephone area codes](#telephone-area-codes) below.
 
 ### Commune (full)
 
@@ -228,10 +221,12 @@ address stored before a correction still resolves.
 ## Telephone area codes
 
 A `phone_code` for a wilaya of the 2026 cohort (59–69) comes from an official
-text or it is not published at all: never from the mother wilaya, never from an
-encyclopaedia or a directory. None of the eleven has one, so all eleven are
-`null`, and `phone-code-provenance.json` records why: the texts searched on
-2026-10-01, each one's title, URL and retrieval date, and what each one said.
+text or it is not published at all: never from the wilaya it was split from, never
+from an encyclopaedia or a directory. None of the eleven has one, so all eleven
+are `null`, and `phone-code-provenance.json` carries the answer rather than
+leaving the gap bare: the authorities searched, and for each text its title, URL,
+own date, retrieval date, the article read and what was found there. Read the
+finding there, not here, so there is one copy of it.
 `require("geoalgeria").phoneCodeProvenance` reads it.
 
 ```json
@@ -246,10 +241,14 @@ encyclopaedia or a directory. None of the eleven has one, so all eleven are
 
 `reason` names an entry under `metadata.reasons`, which carries the statement and
 the search log behind it. A later allocation becomes a `phone_code` with its own
-`sources` and `source_keys` there, and the same value in `algeria.json`,
-`csv/wilayas.csv`, `geojson/wilayas.geojson` and `sql/full.sql`, which a test
-keeps in step. Wilayas 1–58 are outside this ledger: their codes predate it and
-no official citation has been established for them yet.
+`citations` there, and the same value in `algeria.json`, `csv/wilayas.csv`,
+`geojson/wilayas.geojson` and `sql/full.sql`, which a test keeps in step. The
+rules are `scripts/lib/phone-code-provenance.mjs`: a value has to cite a declared
+official text and name the article it was read at, the source has to sit on the
+gazette's, the regulator's or the operator's own domain, and a value equal to the
+one carried by the wilaya it was split from has to declare that coincidence rather
+than pass silently. Wilayas 1–58 are outside this ledger: their codes predate it
+and no official citation has been established for them yet.
 
 ## Wilaya boundaries
 

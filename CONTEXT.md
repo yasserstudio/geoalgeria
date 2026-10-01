@@ -39,7 +39,7 @@ The Algérie Poste code identifying a commune; resolves upward to its daira and 
 _Avoid_: ZIP, zipcode, code postal
 
 **Area code**:
-The fixed-line telephone prefix a Wilaya's territory falls under, published as `phone_code`. ARPCE allocates it as part of a numbering zone, not as an attribute of the wilaya, so a Wilaya can exist with no Area code of record and the field is `string | null`. It is taken from an official text or left null, never derived from the wilaya it was split from (`mother_wilaya_code`); `phone-code-provenance.json` carries the evidence for wilayas 59-69.
+The fixed-line telephone prefix a Wilaya's territory falls under, published as `phone_code`. ARPCE allocates it as part of a numbering zone, not as an attribute of the wilaya, so a Wilaya can exist with no Area code of record and the field is `string | null`. Taken from an official text or left null, never derived from the wilaya it was split from (`mother_wilaya_code`); the evidence for wilayas 59-69 is `phone-code-provenance.json`.
 _Avoid_: dialling code, indicatif, prefix, STD code
 
 ### Data organization

@@ -71,9 +71,9 @@ module.exports = {
   },
 
   // Why each wilaya of the 2026 cohort (codes 59 to 69) carries the `phone_code`
-  // it carries: the official texts searched, and for a null the reason it is null.
-  // A code here is taken from an official text or it is not published at all, so
-  // read this before inferring one from the mother wilaya.
+  // it carries: the official texts searched, and for a null the recorded reason.
+  // A code enters it only with an official citation, so read this before inferring
+  // one from the wilaya a 2026 wilaya was split from.
   get phoneCodeProvenance() {
     if (!_phoneCodeProvenance) _phoneCodeProvenance = load("phone-code-provenance.json");
     return _phoneCodeProvenance;
