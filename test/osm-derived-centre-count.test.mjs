@@ -23,6 +23,23 @@ const json = (...p) => JSON.parse(read(...p));
 // OpenStreetMap value was ever written to them. See CHANGELOG.md, 2.1.0.
 const RELATION_CENTROID_COMMUNES = [2242, 2616, 2627, 2653, 2915, 3427];
 
+// Every number a file puts on the carve-out has to be the derived one: a stale count
+// reads as a different claim over the same data, which is the defect this file guards.
+// These are the shapes the prose actually uses across the carriers; the denominator in
+// "N of the 1,541" is the second number and is checked separately.
+const CLAIM_SHAPES = [
+  /(?<![\d,])([\d,]+)\s+(?:OpenStreetMap-derived\s+)?commune\s+centre\s+coordinates/g,
+  /(?<![\d,])([\d,]+)\s+OpenStreetMap-derived\s+commune\s+centres\b/g,
+  /(?<![\d,])([\d,]+)\s+of\s+the\s+[\d,]+\s+(?:commune|points)\b/g,
+  /(?:these|those)\s+([\d,]+)\s+(?:coordinates|values)/g,
+  /Those\s+([\d,]+)\s+points\b/g,
+];
+
+/** The carve-out counts one text claims, in whatever shape it claims them. */
+function claimsIn(text) {
+  return CLAIM_SHAPES.flatMap((re) => [...text.matchAll(re)].map((m) => Number(m[1].replace(/,/g, ""))));
+}
+
 function derive() {
   const communes = [
     ...json(PKG, "data", "communes_w1_w23.json"),
@@ -106,18 +123,7 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   }
 
   for (const [where, text] of Object.entries(stated)) {
-    // Every number these files put on the carve-out has to be the derived one. A
-    // stale count reads as a different claim over the same data, which is the defect
-    // this guards. The three shapes the prose uses; the denominator in "N of the
-    // 1,541" is the second number and is checked separately.
-    const CLAIM_SHAPES = [
-      /(?<![\d,])([\d,]+)\s+(?:OpenStreetMap-derived\s+)?commune\s+centre\s+coordinates/g,
-      /(?<![\d,])([\d,]+)\s+of\s+the\s+[\d,]+\s+commune\b/g,
-      /these\s+([\d,]+)\s+coordinates/g,
-    ];
-    const claims = CLAIM_SHAPES.flatMap((re) =>
-      [...text.matchAll(re)].map((m) => Number(m[1].replace(/,/g, ""))),
-    );
+    const claims = claimsIn(text);
     assert.ok(claims.length > 0, `${where}: states no commune centre count at all`);
     for (const claim of claims)
       assert.equal(claim, osmDerived, `${where}: states ${claim} OpenStreetMap-derived commune centres, the data gives ${osmDerived}`);
@@ -157,4 +163,40 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   // pinned list cannot drift away from the published claim.
   for (const code of RELATION_CENTROID_COMMUNES)
     assert.ok(stated.NOTICE.includes(`(${code})`), `NOTICE: does not name relation-centroid commune ${code}`);
+});
+
+// The count is stated in more than the three files above, and every one of those is a
+// licence claim a consumer reads. `llms.txt` and `wilaya-boundaries.metadata.json` both
+// shipped 251 past this guard on 2026-10-01, because it only ever read LICENSE, NOTICE
+// and dataset-metadata.json. Each file is listed with the claim shape it uses, so a
+// carrier that stops stating the count fails here rather than going quiet.
+const OTHER_CARRIERS = [
+  ["packages/dataset/llms.txt", () => read(PKG, "llms.txt")],
+  ["packages/dataset/data/README.md", () => read(PKG, "data", "README.md")],
+  ["data/geojson/communes.metadata.json", () => JSON.stringify(json(PKG, "data", "geojson", "communes.metadata.json"))],
+  [
+    "data/geojson/wilaya-boundaries.metadata.json",
+    () => JSON.stringify(json(PKG, "data", "geojson", "wilaya-boundaries.metadata.json")),
+  ],
+  ["index.json", () => JSON.stringify(json(ROOT, "index.json"))],
+];
+
+test("every other file that states the OpenStreetMap-derived count states the derived one", () => {
+  const { osmDerived, rest } = derive();
+  for (const [where, load] of OTHER_CARRIERS) {
+    const text = load().replace(/\s+/g, " ");
+    const claims = claimsIn(text);
+    assert.ok(claims.length > 0, `${where}: states no commune centre count at all`);
+    for (const claim of claims)
+      assert.equal(claim, osmDerived, `${where}: states ${claim} OpenStreetMap-derived commune centres, the data gives ${osmDerived}`);
+    // The complement, only where the file gives it. A file naming one of the two
+    // numbers and not the other is still a complete claim.
+    const complement = [...text.matchAll(/(?:other|remaining)\s+([\d,]+)\s+commune\b|(?:other|remaining)\s+([\d,]+)\s+carry/g)];
+    for (const m of complement)
+      assert.equal(
+        Number((m[1] ?? m[2]).replace(/,/g, "")),
+        rest,
+        `${where}: states a different complement than the ${rest} commune coordinates that are not OpenStreetMap-derived`,
+      );
+  }
 });

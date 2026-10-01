@@ -386,10 +386,11 @@ Neither guard this directory already has could see them.
   commune the whole time. That is Bethioua's class, which the standing guard's
   own section above names as its honest limit.
 - **The seat delta is not a defect**, by the Owner's 2026-09-29 decision (#170).
-  The median disagreement with the `admin_centre` node over all 1,537 compared
-  rows is 402 m, and a delta says two hand-placed claims about one town disagree,
-  not which one is wrong. **132 non-capital centres are still more than 3 km from
-  their seat** and none of them is corrected here.
+  That audit measured a median disagreement with the `admin_centre` node of 402 m
+  over all 1,537 compared rows, before its own corrections, and a delta says two
+  hand-placed claims about one town disagree, not which one is wrong. The shipped
+  bands are the report `seat-distance-2026-09-29.md`; **132 non-capital centres are
+  still more than 3 km from their seat** and none of them is corrected here.
 
 What makes a capital different is that a capital has **two further claims about
 the same town** that a commune centre is not derived from:
@@ -439,10 +440,26 @@ outside it. A test that only checked the new value would have passed on the old
 one for three of the four, and "closer than before" is not a fact about one
 claim.
 
-Dependents: `scripts/sync-commune-centroid-dependents.mjs` recentred 11 rows in
-`@geoalgeria/agriculture` and 10 in `@geoalgeria/industrie-pharmaceutique`; no
-record changed commune or wilaya, because every one of the four moves stays
-inside its own commune outline and the join asks the outline first.
+Dependents: 44 borrowed coordinates in four packages. 15 in
+`@geoalgeria/formation-professionnelle`, rebuilt by re-running its own generator
+against its committed capture, offline; and, through
+`scripts/sync-commune-centroid-dependents.mjs`, 14 in
+`@geoalgeria/industrie-pharmaceutique`, 11 in `@geoalgeria/agriculture` and 4 in
+`@geoalgeria/sante`. No record changed commune or wilaya, because every one of the
+four moves stays inside its own commune outline and the join asks the outline
+first.
+
+Four of those 14 were a gap a review caught, not this batch's own work.
+`@geoalgeria/industrie-pharmaceutique` was registered in that script for
+`commune_centroid` only, so its `wilaya_centroid` rows, which carry
+`commune: null` by design and therefore have no anchor to be compared against,
+were invisible to the staleness check in `scripts/validate-packages.mjs` as well:
+`07-dm-01`, `25-pp-06`, `25-pp-07` and `25-pp-14` were still sitting byte-exact on
+the repudiated Biskra and Constantine centres, 6.0 and 3.0 km out, while
+`@geoalgeria/agriculture` rows of the same `geo_method` had moved in both earlier
+batches. The `repudiated` anchor is the only rule that reaches them and it is
+exact: it moves a coordinate only where it is byte-equal to a value a corrections
+file repudiates, and only to that row's replacement.
 
 | File | Contents |
 | --- | --- |

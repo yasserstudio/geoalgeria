@@ -218,7 +218,7 @@ address stored before a correction still resolves.
 `geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
 `properties.code` joining to `wilayas.json`. Derived from OpenStreetMap `admin_level=4`
 relations (**ODbL 1.0, © OpenStreetMap contributors**, one of the two carve-outs from this
-package's MIT licence; the other is the 251 OpenStreetMap-derived commune centres below) and
+package's MIT licence; the other is the 255 OpenStreetMap-derived commune centres below) and
 simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 decimals.
 
 Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the

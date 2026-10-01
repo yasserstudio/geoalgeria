@@ -39,7 +39,10 @@
 // point the day before (quality/overrides/sante.json, reviewed 2026-09-30), and the
 // replay aborted on that stale decision rather than overwrite it. Recentring the four
 // borrowed coordinates is the correction the batch is for; the nearest-centroid index
-// inside that generator is its own fix.
+// inside that generator is its own fix. The recentred rows are not left unguarded by
+// that: scripts/validate-packages.mjs fails any centroid-declared record that no longer
+// sits on the centre it claims, so a future replay that reverts one of the four is a
+// failing validate, not a silent regression.
 //
 // WHAT EACH PACKAGE GETS
 //   agriculture, industrie-pharmaceutique, sante  recentre only. Their commune is
@@ -142,7 +145,15 @@ const PACKAGES = [
   {
     pkg: "industrie-pharmaceutique",
     file: "industrie-pharmaceutique.json",
-    recentre: { commune_centroid: "commune_code" },
+    // `wilaya_centroid` was missing here until 2026-10-01 and nothing could see it:
+    // these rows carry `commune: null` by design, so there is no anchor to compare
+    // them against and validate-packages.mjs reports 0 stale. Four of them (07-dm-01,
+    // 25-pp-06, 25-pp-07, 25-pp-14) were still sitting byte-exact on the repudiated
+    // Biskra and Constantine centres, 6.0 and 3.0 km out, while agriculture's rows of
+    // the same geo_method moved. The `repudiated` anchor is the only rule that can
+    // reach them, and it is exact: it moves a coordinate only where it is byte-equal
+    // to a value a corrections file repudiates, and only to that row's replacement.
+    recentre: { commune_centroid: "commune_code", wilaya_centroid: "repudiated" },
   },
   { pkg: "sante", file: "sante.json", recentre: { commune_centroid: "commune_code" } },
   { pkg: "djezzy", file: "boutiques.json", rejoin: "split" },

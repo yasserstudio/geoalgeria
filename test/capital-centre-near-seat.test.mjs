@@ -5,11 +5,13 @@
 // containment cannot see this class: all four stored centres were inside their own
 // commune, 3 to 6 km from the town, exactly Bethioua's class
 // (research/_commune-centres/README.md, "the guard's honest limit"). The seat delta
-// cannot see it either, because over all 1,537 rows the median disagreement with the
-// OpenStreetMap `admin_centre` node is 402 m and a delta alone says the two sources
-// disagree, not which one is wrong (the Owner's 2026-09-29 decision, #170). So 107
-// non-capital centres are still more than 3 km from their seat by that documented
-// decision and are not defects.
+// cannot see it either: the 2026-09-29 audit measured a median disagreement with the
+// OpenStreetMap `admin_centre` node of 402 m over all 1,537 rows, and a delta alone
+// says the two sources disagree, not which one is wrong (the Owner's 2026-09-29
+// decision, #170; the shipped bands are the report
+// research/_commune-centres/seat-distance-2026-09-29.md). So 132 non-capital centres
+// are still more than 3 km from their seat by that documented decision and are not
+// defects.
 //
 // WHAT MAKES THESE FOUR DIFFERENT, and what this file asserts, is a second and a
 // third claim about the same town that the correction does not come from:
@@ -76,6 +78,9 @@ const CAPITALS = [
 
 const BOUNDARIES = new Map(boundaries.communes.map((c) => [c.code_commune, c]));
 const WILAYA_POINT = new Map(wilayas.map((w) => [Number(w.code), [w.longitude, w.latitude]]));
+const SHIPPED_CENTRE = new Map(
+  wilayas.flatMap((w) => (w.communes ?? []).map((c) => [c.code_commune, [c.longitude, c.latitude]])),
+);
 const ROWS = new Map(ledger.corrections.map((r) => [r.code_commune, r]));
 
 /**
@@ -110,6 +115,11 @@ function geometricMedian(points) {
   return [x, y];
 }
 
+/** Metres between two `[lng, lat]` points, which is the order every coordinate in this
+ *  file and in the ledger is written in. haversine() takes lat first, so one wrapper
+ *  here is one place for that flip instead of one at every call site. */
+const metresApart = ([aLng, aLat], [bLng, bLat]) => haversine(aLat, aLng, bLat, bLng);
+
 /** Every `geo_precision: exact` published record inside one commune's OpenStreetMap
  *  outline, over every package's record files, with the files it came from. The
  *  selection is point-in-polygon, never the `commune` the record names, so it is
@@ -126,6 +136,26 @@ function exactRecordsInside(boundary) {
     }
   }
   return { points, files: [...files].sort() };
+}
+
+/** One commune's exact-facility median and its wilaya's own point, measured against two
+ *  candidate centres. Both are claims about where the town is that no commune centre in
+ *  this repository is derived from, which is the whole point of the pair. */
+function independentClaims(code_commune, wilaya_code, candidates) {
+  const boundary = BOUNDARIES.get(code_commune);
+  const { points, files } = exactRecordsInside(boundary);
+  const median = points.length ? geometricMedian(points) : null;
+  const wilayaPoint = WILAYA_POINT.get(wilaya_code);
+  return {
+    records: points.length,
+    files: files.length,
+    median,
+    wilayaPoint,
+    to: candidates.map((p) => ({
+      median: median ? metresApart(median, p) : null,
+      wilaya: metresApart(wilayaPoint, p),
+    })),
+  };
 }
 
 test(`${LEDGER_FILE} carries exactly the four wilaya capital communes of tracker #236`, () => {
@@ -176,9 +206,9 @@ for (const { code_commune, wilaya_code, name_fr } of CAPITALS) {
     );
     assert.ok(files.length >= 3, `${name_fr}: the facility median rests on ${files.length} package file(s)`);
 
-    const [mLng, mLat] = geometricMedian(points);
-    const toMedian = haversine(mLat, mLng, row.to[1], row.to[0]);
-    const fromMedian = haversine(mLat, mLng, row.from[1], row.from[0]);
+    const median = geometricMedian(points);
+    const toMedian = metresApart(median, row.to);
+    const fromMedian = metresApart(median, row.from);
     assert.ok(
       toMedian < CEILING_M,
       `${name_fr}: the corrected centre is ${Math.round(toMedian)} m from the median of ${points.length} exact facilities`,
@@ -192,8 +222,8 @@ for (const { code_commune, wilaya_code, name_fr } of CAPITALS) {
   test(`${name_fr} (${code_commune}): the corrected centre agrees with the wilaya's own point, the repudiated one does not`, () => {
     const point = WILAYA_POINT.get(wilaya_code);
     assert.ok(point, `wilaya ${wilaya_code} carries no point`);
-    const toWilaya = haversine(point[1], point[0], row.to[1], row.to[0]);
-    const fromWilaya = haversine(point[1], point[0], row.from[1], row.from[0]);
+    const toWilaya = metresApart(point, row.to);
+    const fromWilaya = metresApart(point, row.from);
     assert.ok(
       toWilaya < CEILING_M,
       `${name_fr}: the corrected centre is ${Math.round(toWilaya)} m from the point of wilaya ${wilaya_code}, whose capital it is`,
@@ -204,3 +234,69 @@ for (const { code_commune, wilaya_code, name_fr } of CAPITALS) {
     );
   });
 }
+
+// THE SELECTION, REPLAYED OVER ALL 69 CAPITALS. The three claims above are about four
+// rows that were already chosen. The decision this batch rests on is the other half:
+// that the same criterion, run over every wilaya capital, picks exactly these four and
+// leaves the rest alone. Asserting it in prose and not in code is how a correction set
+// becomes unauditable, so it runs here, offline, against the committed files.
+//
+// THE CAPITAL LIST IS DERIVED, not pinned: the commune of each wilaya whose folded name
+// is the wilaya's own, plus the four that derivation cannot resolve, which are exactly
+// the four data PR #242 (#228) tables from décret 84-79 and 21-117. When #228 lands,
+// `capital_commune_code` replaces this and the pinned four go.
+const UNDERIVABLE_CAPITALS = { 16: 1601, 53: 5301, 54: 5401, 57: 5701 };
+const fold = (s) =>
+  s
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
+
+/** The seat delta threshold the ledger's own `method` states. */
+const SEAT_DELTA_M = 3000;
+
+test("the criterion selects exactly these four over all 69 wilaya capitals", () => {
+  const seats = new Map(
+    readJson("research", "_commune-centres", "osm-seat-reference.json").communes.map((c) => [c.code_commune, c.seat]),
+  );
+
+  const capitals = wilayas.map((w) => {
+    const code =
+      UNDERIVABLE_CAPITALS[w.code] ??
+      (w.communes ?? []).filter((c) => fold(c.name_fr) === fold(w.name_fr)).map((c) => c.code_commune)[0];
+    return { wilaya_code: Number(w.code), code_commune: code, name_fr: w.name_fr };
+  });
+  // A wilaya whose capital this cannot name would be a hole in the sweep, not a pass.
+  assert.deepEqual(
+    capitals.filter((c) => c.code_commune == null),
+    [],
+    "wilaya(s) whose capital commune this sweep cannot name",
+  );
+  assert.equal(new Set(capitals.map((c) => c.code_commune)).size, 69, "two wilayas resolved to one capital commune");
+
+  // The centre each capital held BEFORE this batch: the ledger's `from` where this batch
+  // moved it, the shipped value everywhere else. Running the criterion on the shipped
+  // values would select nothing, because the four now sit on their seat.
+  const selected = [];
+  for (const cap of capitals) {
+    const boundary = BOUNDARIES.get(cap.code_commune);
+    const seat = seats.get(cap.code_commune);
+    if (!seat || !boundary?.usable) continue; // no OpenStreetMap relation to compare with
+    const point = ROWS.get(cap.code_commune)?.from ?? SHIPPED_CENTRE.get(cap.code_commune);
+    assert.ok(point, `${cap.name_fr}: capital commune ${cap.code_commune} carries no centre`);
+    if (metresApart(point, seat) <= SEAT_DELTA_M) continue;
+
+    const claims = independentClaims(cap.code_commune, cap.wilaya_code, [seat, point]);
+    const [toSeat, toStored] = claims.to;
+    const wilayaAgrees = toSeat.wilaya < toStored.wilaya;
+    const facilitiesAgree = claims.records > 0 && toSeat.median < toStored.median;
+    if (wilayaAgrees && facilitiesAgree) selected.push(cap.name_fr);
+  }
+
+  assert.deepEqual(
+    selected.sort(),
+    ["Biskra", "Constantine", "El Bayadh", "El Kantara"],
+    "the criterion in the ledger's own `method` no longer selects exactly the four rows the ledger carries",
+  );
+});
