@@ -12,7 +12,7 @@ import {
   coordinateCorrections,
   wilayaNameCorrections,
 } from "../scripts/lib/jo-2026-corrections.mjs";
-import { loadCorrections } from "../scripts/lib/commune-corrections.mjs";
+import { supersededCommunePoints } from "../scripts/lib/commune-corrections.mjs";
 
 const dataRoot = join(import.meta.dirname, "../packages/dataset/data");
 const read = (...parts) => JSON.parse(readFileSync(join(dataRoot, ...parts), "utf8"));
@@ -71,9 +71,7 @@ test("no commune coordinate duplicates another", () => {
 // coordinate review of 2026-10-01 then moved it onto its own admin_centre node on three
 // independent Votes. Both values are accepted, nothing else is, and the containment claim
 // below is made about whichever one is published.
-const supersededBy = new Map(
-  loadCorrections().corrections.map((correction) => [correction.code_commune, [correction.to[1], correction.to[0]]]),
-);
+const supersededBy = supersededCommunePoints();
 
 test("each repaired point lies inside its own wilaya", () => {
   const boundaries = loadBoundaries(read("geojson", "wilaya-boundaries.geojson"));

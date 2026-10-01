@@ -28,8 +28,10 @@ export const layer = {
    * @param {object} context.commune  `{code_commune, point, ...}`
    * @param {object|null} context.outline  the commune's outline entry, or null
    * @param {number[]|null} context.seat  the OpenStreetMap seat, or null
-   * @param {Map<string, number[]>} context.centresByKey  every other commune's centre,
-   *   keyed "lng,lat", so a borrowed centre is a lookup rather than a sweep
+   * @param {Map<string, number>} context.centresByKey  "lng,lat" -> the `code_commune`
+   *   that publishes that exact point, so a borrowed centre is a lookup rather than a
+   *   sweep. Every commune is in it, this one included, which is why the check below asks
+   *   whether the code it finds is a different commune.
    */
   check({ commune, outline, seat, centresByKey }) {
     const [lng, lat] = commune.point;

@@ -41,8 +41,9 @@ const json = (...p) => JSON.parse(read(...p));
 // El Euch (3427) was one of them until 2026-10-01, when the coordinate review moved it
 // 9.7 km off that centroid onto its own `admin_centre` node on three independent Votes. Its
 // value is no longer the centroid, so it is counted with the node corrections instead and
-// NOTICE says so; the JORA repair that put it on the centroid is recorded as superseded in
-// scripts/lib/jo-2026-corrections.mjs.
+// NOTICE says so. The JORA repair that put it on the centroid is not deleted: it stays in
+// scripts/lib/jo-2026-corrections.mjs and scripts/fix-jo-corrections.mjs reads the
+// correction ledgers so it leaves a coordinate a later ledger has moved alone.
 const RELATION_CENTROID_COMMUNES = [2242, 2616, 2627, 2653, 2915];
 
 // Every number a file puts on the carve-out has to be the derived one: a stale count
@@ -109,9 +110,10 @@ function derive() {
       // A CONSENSUS ROW CARRIES ITS OWN LICENCE, because the Candidate that won says where
       // the value came from: the OpenStreetMap seat is the `admin_centre` node and counts in
       // the carve-out exactly like a node correction, a Wikidata winner is CC0, and a
-      // record-median winner is derived from this repository's own published records. The
-      // row has to state that licence and it has to be the one its winner implies, or the
-      // carve-out would rest on this test rather than on the ledger.
+      // record-median winner carries the terms of the packages its records come from. Those
+      // strings are the layers' own (WINNER_LICENCE derives them), so the row has to state
+      // the licence its winner implies and no paraphrase of it, or the carve-out would rest
+      // on this test rather than on the ledger.
       if (decidedBy === "consensus") {
         const winner = row.consensus?.winning_candidate;
         assert.ok(WINNER_LICENCE[winner], `commune ${row.code_commune}: ${JSON.stringify(winner)} is no Candidate a fix can be written from`);
@@ -238,6 +240,11 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
     "NOTICE": read(PKG, "NOTICE"),
     "dataset-metadata.json conditionsOfAccess": metadata.conditionsOfAccess,
     "dataset-metadata.json usageInfo": metadata.usageInfo,
+    // data/README.md shipped "Six more were replaced in version 2.1.0 ... El Euch (3427)"
+    // and "the 250 commune centres corrected on" past this guard on 2026-10-01, because it
+    // was only read by the OTHER_CARRIERS test below, which checks the total and not the
+    // split behind it. It states both, so it is held to both.
+    "packages/dataset/data/README.md": read(PKG, "data", "README.md"),
   };
 
   // LICENSE and NOTICE hard-wrap, so a claim can straddle a newline: every check
@@ -257,12 +264,12 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   // The split behind the total, and the complement, only in the files that enumerate
   // them. LICENSE and usageInfo give the admin_centre-node subtotal; NOTICE gives one
   // bullet per ledger instead.
-  for (const where of ["LICENSE", "dataset-metadata.json usageInfo"])
+  for (const where of ["LICENSE", "dataset-metadata.json usageInfo", "packages/dataset/data/README.md"])
     assert.ok(
       stated[where].includes(`${fromAdminCentreNode} from`),
       `${where}: does not state the ${fromAdminCentreNode} taken from an admin_centre node`,
     );
-  for (const where of ["LICENSE", "NOTICE", "dataset-metadata.json usageInfo"]) {
+  for (const where of ["LICENSE", "NOTICE", "dataset-metadata.json usageInfo", "packages/dataset/data/README.md"]) {
     // The count has to be read against its own date, not found anywhere in the file:
     // LICENSE shipped "4 on 2026-10-01" for a 5-row ledger and passed, because every
     // file that states 256 contains a "5".

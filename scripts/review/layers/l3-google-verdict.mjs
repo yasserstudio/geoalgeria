@@ -21,9 +21,6 @@ const BACKS = {
   "no-answer": null,
 };
 
-/** The verdict vocabulary, so a file with an unknown word fails instead of going quiet. */
-export const VERDICTS = Object.keys(BACKS);
-
 export const layer = {
   id: "L3",
   source: "google_verdict",

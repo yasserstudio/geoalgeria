@@ -21,7 +21,7 @@ import {
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
 import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
-import { loadCorrections } from "./lib/commune-corrections.mjs";
+import { supersededCommunePoints } from "./lib/commune-corrections.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
@@ -59,9 +59,7 @@ const communeCoords = new Map(coordinateCorrections.map((c) => [c.code_commune, 
 // it is accepted here and never rewritten. The ledgers are read rather than a code being
 // pinned, so the next such case needs no edit.
 /** code_commune -> [lat, lng] a commune-centre ledger has since moved it to. */
-const supersededCoords = new Map(
-  loadCorrections().corrections.filter((c) => communeCoords.has(c.code_commune)).map((c) => [c.code_commune, [c.to[1], c.to[0]]]),
-);
+const supersededCoords = supersededCommunePoints(new Set(communeCoords.keys()));
 
 /** Is this carrier already at the value a later ledger moved the commune to? */
 function atSupersededPoint(code, lat, lng) {

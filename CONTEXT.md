@@ -237,8 +237,8 @@ A Claim that lands within the agreement radius of a Candidate (2 km for a commun
 _Avoid_: match, hit, support score
 
 **Copied claim**:
-A Claim within 50 m of the point it would vote for, because that point was copied from it. It proves nothing and casts no Vote.
-_Avoid_: duplicate, echo
+A Claim within 50 m of the point it would vote for, because that point was copied from it. It proves nothing and casts no Vote. Two Claims within 50 m of **each other** are copies in the same sense, whichever way the copying went, so they cast one Vote between them and not two; the ledger records the silenced one under `not_independent` as a `copy_of` the one that stands.
+_Avoid_: duplicate, echo, reading (a Claim is a Claim)
 
 **Consensus**:
 At least two independent Votes for one Candidate, none for another, and the Candidate inside the commune outline. **Strong consensus** (three Votes, or two with the record median among them) is the tier that fixes data without the Owner.

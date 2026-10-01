@@ -6,7 +6,7 @@
 // verdicts file, which lives outside the repository on purpose and is read from a path.
 
 import { existsSync, readFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { inCommuneOutline } from "../lib/commune-resolver.mjs";
@@ -69,7 +69,7 @@ export function bucketExactRecords(root, outlines) {
 export function loadVerdicts(path, read = new Date().toISOString().slice(0, 10)) {
   if (!path) return null;
   if (!existsSync(path)) throw new Error(`verdicts file ${path} does not exist`);
-  if (join(path).startsWith(join(REPO_ROOT) + "/"))
+  if (resolve(path).startsWith(resolve(REPO_ROOT) + "/"))
     throw new Error(`verdicts file ${path} is inside this repository; L3 content is never committed here`);
   const rows = JSON.parse(readFileSync(path, "utf-8"));
   if (!Array.isArray(rows)) throw new Error(`verdicts file ${path} is not an array of {code, name, verdict}`);

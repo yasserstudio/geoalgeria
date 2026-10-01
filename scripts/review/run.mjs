@@ -25,6 +25,10 @@
 //   node scripts/review/run.mjs --write                # write the ledger and the queue
 //   node scripts/review/run.mjs --verdicts <path>      # add the L3 layer (report only)
 //   node scripts/review/run.mjs --rewind <ledger>      # replay a landed run
+//   node scripts/review/run.mjs --date 2026-10-01 --run 2026-10-01b
+//      # name the run: --date dates the queue and the record median's snapshot, --run
+//      # names the ledger file, which is how two runs can share a date (2026-10-01
+//      # settled the wilaya capitals and then ran this review)
 
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { join } from "node:path";

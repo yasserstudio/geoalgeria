@@ -586,10 +586,13 @@ rather than the prototype's two, and both are in `scripts/review/votes.mjs`:
 - **Candidates that agree are one answer.** The seat, the Wikidata point and the
   record median landing 400 m apart are the same answer stated three times. Counted as
   rivals they take two Votes each and cancel out, and every commune would queue.
-- **Two Claims within the copy radius of each other cast one Vote between them.** The
-  per-Candidate copy rule already stops each of them voting for the other's Candidate;
-  without this they still vote through a third Candidate in the same answer and the
-  count reads as two independent readings when it is one. It costs a Vote on 21% of
+- **Two Claims within the copy radius of each other cast one Vote between them.** They are
+  Copied claims of one another, whichever way the copying went, which is the sense
+  `CONTEXT.md` now records under that term. The per-Candidate rule already stops each of
+  them voting for the other's Candidate; without this they still vote through a third
+  Candidate in the same answer and the count reads as two independent Claims when it is
+  one. The ledger names the silenced one under `not_independent` as a `copy_of` the one
+  that stands. It costs a Vote on 21% of
   communes, because 20 Wikidata items carry their commune's seat node to the metre and
   325 are within 50 m of it.
 
@@ -620,8 +623,10 @@ onto its own `admin_centre` node, on three independent Votes. Both repairs are r
 they are in order, so the earlier one is recorded as superseded rather than deleted:
 `scripts/fix-jo-corrections.mjs` reads the correction ledgers and leaves a coordinate
 alone where a later ledger has moved it, instead of reading it as drift. It also leaves
-the relation-centroid carve-out at 5 communes rather than 6, which NOTICE,
-`communes.metadata.json` and `test/osm-derived-centre-count.test.mjs` all say.
+the relation-centroid carve-out at 5 communes rather than 6, which NOTICE, `data/README.md`,
+`communes.metadata.json` and `test/osm-derived-centre-count.test.mjs` all say; that test
+reads `data/README.md` now too, because the file states the split behind the total and
+nothing was holding it to it.
 
 ## The licence count
 

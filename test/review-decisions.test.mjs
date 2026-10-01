@@ -22,6 +22,7 @@ import { loadSnapshots, loadVerdicts } from "../scripts/review/snapshots.mjs";
 import { reviewCommuneCentres } from "../scripts/review/engine.mjs";
 import { buildDocuments, rewind } from "../scripts/review/run.mjs";
 import { CANDIDATE_PREFERENCE } from "../scripts/review/votes.mjs";
+import { WINNER_LICENCE } from "../scripts/review/layers/index.mjs";
 import { MOVE_CAP_KM } from "../scripts/review/thresholds.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -92,10 +93,13 @@ test("no shipped row was decided by a reading taken off a proprietary map", () =
   for (const row of LEDGER.corrections) {
     for (const vote of row.consensus.votes)
       assert.notEqual(vote.source, "google_verdict", `${row.name_fr} (${row.code_commune}) was decided by an L3 verdict`);
-    assert.ok(
-      ["ODbL 1.0, (c) OpenStreetMap contributors", "CC0 1.0 Universal (Wikidata statements)"].includes(row.licence) ||
-        row.licence.startsWith("derived from this repository's own published records"),
-      `${row.name_fr} (${row.code_commune}): licence ${JSON.stringify(row.licence)} is not an open one`,
+    // The licence is the winning Candidate's layer's own string, not a paraphrase of it:
+    // this assert held a copy of the wording until 2026-10-01 and would have rejected the
+    // first record-median winner for carrying the layer's text instead of the copy.
+    assert.equal(
+      row.licence,
+      WINNER_LICENCE[row.consensus.winning_candidate],
+      `${row.name_fr} (${row.code_commune}): licence ${JSON.stringify(row.licence)} is not the one its winning Candidate carries`,
     );
   }
   assert.equal(LEDGER.inputs["L3 verdicts"], null);

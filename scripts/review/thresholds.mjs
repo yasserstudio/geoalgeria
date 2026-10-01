@@ -16,7 +16,7 @@
  * MIN_EXACT_RECORDS exact records inside their own outline, which is the largest pair of
  * independent readings this repository holds: seat to record median is 378 m at the
  * median, 785 m at p75, 1,856 m at p90 and 3,235 m at p95, and 90.6% of them are within
- * 2 km. So 2 km is where two honest readings of the same town stop agreeing: below it
+ * 2 km. So 2 km is where two honest Claims about the same town stop agreeing: below it
  * they are the same answer at different precision, above it one of them is about a
  * different place.
  */
@@ -28,7 +28,7 @@ export const AGREEMENT_KM = 2;
  *
  * MEASURED on the same pair: the seat and the record median are within 50 m of each
  * other for 34 of those 1,240 communes (2.7%), and the 5th percentile of that distance
- * is 69 m. Two independent readings essentially never agree this closely. Agreement
+ * is 69 m. Two independent Claims essentially never agree this closely. Agreement
  * under 50 m is instead the signature of one value reaching two files: 222 of the 1,536
  * published commune centres with a Wikidata item are that item's coordinate to the metre (7
  * of the 136 this run reviewed, which is the figure ADR 0001 quotes), and 20

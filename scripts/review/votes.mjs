@@ -23,10 +23,11 @@
 //      Candidates rather than the prototype's two: the seat, the Wikidata point and the
 //      record median landing 400 m apart are the same answer stated three times, and the
 //      Votes for them belong to that answer, not to three rivals that cancel out.
-//   3. Two Claims within COPY_RADIUS_M of EACH OTHER are one reading stated twice, so
-//      they cast one Vote for an answer between them, not two. Rule 1 already stops each
-//      of them voting for the other's Candidate; this is the same rule reaching the case
-//      where they both vote through a third Candidate in the same answer.
+//   3. Two Claims within COPY_RADIUS_M of EACH OTHER are Copied claims of one another,
+//      whichever way the copying went, so they cast one Vote for an answer between them and
+//      not two. Rule 1 already stops each of them voting for the other's Candidate; this is
+//      the same rule reaching the case where they both vote through a third Candidate in the
+//      same answer. CONTEXT.md, Copied claim.
 //   4. Consensus is an answer with at least CONSENSUS_VOTES distinct Votes while every
 //      Candidate outside it has none, and whose winning Candidate is inside the commune
 //      outline. Strong consensus is STRONG_CONSENSUS_VOTES Votes, or CONSENSUS_VOTES with
@@ -152,8 +153,8 @@ export function decide({ candidates, claims, isInsideOutline }) {
         raw.push(v);
       }
     raw.sort((a, b) => claimRank(a.source) - claimRank(b.source));
-    // One reading stated twice is one Vote. A Claim with no coordinate (a verdict) is
-    // always its own reading, because there is no point to compare.
+    // Two Copied claims cast one Vote. A Claim with no coordinate (a verdict) is always
+    // independent, because there is no point to compare it with.
     const votes = [];
     const notIndependent = [];
     for (const v of raw) {
@@ -162,7 +163,7 @@ export function decide({ candidates, claims, isInsideOutline }) {
         const other = byClaimSource.get(w.source).point;
         return other && between(other, point) <= COPY_RADIUS_M;
       });
-      if (twin) notIndependent.push({ source: v.source, same_reading_as: twin.source, distance_m: Math.round(between(byClaimSource.get(twin.source).point, point)) });
+      if (twin) notIndependent.push({ source: v.source, copy_of: twin.source, distance_m: Math.round(between(byClaimSource.get(twin.source).point, point)) });
       else votes.push(v);
     }
     return { candidates: group, winner: group[0], votes, notIndependent };
