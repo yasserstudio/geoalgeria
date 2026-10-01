@@ -147,6 +147,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
 | `data/dairas.json` | JSON | 551 | Daira list with commune counts |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
+| `data/phone-code-provenance.json` | JSON | 11 | Why wilayas 59–69 carry the `phone_code` they carry: the official texts searched and the reason for each `null` |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
 | `data/csv/wilayas.csv` | CSV | 69 | Spreadsheets, imports |
 | `data/csv/communes.csv` | CSV | 1,541 | Spreadsheets, imports |

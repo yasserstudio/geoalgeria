@@ -5,7 +5,15 @@ function load(file) {
   return JSON.parse(fs.readFileSync(path.join(__dirname, "data", file), "utf-8"));
 }
 
-let _wilayas, _communes, _dairas, _ecommerce, _all, _postOffices, _atms, _nameHistory;
+let _wilayas,
+  _communes,
+  _dairas,
+  _ecommerce,
+  _all,
+  _postOffices,
+  _atms,
+  _nameHistory,
+  _phoneCodeProvenance;
 
 module.exports = {
   get wilayas() {
@@ -60,6 +68,15 @@ module.exports = {
   get nameHistory() {
     if (!_nameHistory) _nameHistory = load("name-history.json");
     return _nameHistory;
+  },
+
+  // Why each wilaya of the 2026 cohort (codes 59 to 69) carries the `phone_code`
+  // it carries: the official texts searched, and for a null the reason it is null.
+  // A code here is taken from an official text or it is not published at all, so
+  // read this before inferring one from the mother wilaya.
+  get phoneCodeProvenance() {
+    if (!_phoneCodeProvenance) _phoneCodeProvenance = load("phone-code-provenance.json");
+    return _phoneCodeProvenance;
   },
 
   getWilaya(code) {
