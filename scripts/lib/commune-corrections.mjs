@@ -24,6 +24,7 @@ export const CORRECTION_FILES = [
   "corrections-2026-09-27.json",
   "corrections-2026-09-29.json",
   "corrections-2026-10-01.json",
+  "corrections-2026-10-01b.json",
 ];
 
 /**
@@ -47,12 +48,14 @@ export function loadCorrections() {
       seen.add(row.code_commune);
       corrections.push({ ...row, batch: doc.generated, timestamp_osm_base: doc.timestamp_osm_base });
     }
-    docs.push({ file, generated: doc.generated, timestamp_osm_base: doc.timestamp_osm_base, count: doc.count });
+    docs.push({ file, generated: doc.generated, run: doc.run ?? doc.generated, timestamp_osm_base: doc.timestamp_osm_base, count: doc.count });
   }
   return { docs, corrections, count: corrections.length };
 }
 
-/** "2026-09-27 (56, OSM …Z), 2026-09-29 (174, OSM …Z)", for a script's own report. */
+/** "2026-09-27 (56, OSM …Z), 2026-09-29 (174, OSM …Z)", for a script's own report. Two
+ *  batches can share a date (2026-10-01 settled the wilaya capitals and then ran the
+ *  coordinate review), so a file that carries a `run` is named by it. */
 export function describeBatches(docs) {
-  return docs.map((d) => `${d.generated} (${d.count}, OSM ${d.timestamp_osm_base})`).join(", ");
+  return docs.map((d) => `${d.run ?? d.generated} (${d.count}, OSM ${d.timestamp_osm_base})`).join(", ");
 }

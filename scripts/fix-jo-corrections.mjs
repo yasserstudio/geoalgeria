@@ -21,6 +21,7 @@ import {
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
 import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
+import { loadCorrections } from "./lib/commune-corrections.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
@@ -48,6 +49,25 @@ for (const c of communeNameCorrections) {
 }
 /** code_commune -> { from:[lat,lng], to:[lat,lng] } */
 const communeCoords = new Map(coordinateCorrections.map((c) => [c.code_commune, c]));
+
+// A LATER LEDGER CAN SUPERSEDE ONE OF THOSE REPAIRS, and then this script must leave the
+// coordinate alone instead of reading it as drift. El Euch (3427) is the first case: the
+// JORA repair of version 2.1.0 took it off a placeholder onto its relation's centroid,
+// and the coordinate review of 2026-10-01 then moved it 9.7 km onto its own admin_centre
+// node on three independent Votes (research/_commune-centres/corrections-2026-10-01b.json).
+// Both repairs are real and they are in order; the ledger's value is the current one, so
+// it is accepted here and never rewritten. The ledgers are read rather than a code being
+// pinned, so the next such case needs no edit.
+/** code_commune -> [lat, lng] a commune-centre ledger has since moved it to. */
+const supersededCoords = new Map(
+  loadCorrections().corrections.filter((c) => communeCoords.has(c.code_commune)).map((c) => [c.code_commune, [c.to[1], c.to[0]]]),
+);
+
+/** Is this carrier already at the value a later ledger moved the commune to? */
+function atSupersededPoint(code, lat, lng) {
+  const later = supersededCoords.get(Number(code));
+  return Boolean(later) && Number(lat) === later[0] && Number(lng) === later[1];
+}
 /** code_commune -> { from, to } for a commune filed under the wrong daira. */
 const communeDairas = new Map(communeDairaCorrections.map((c) => [c.code_commune, c]));
 /** wilaya code -> { from, to } */
@@ -117,10 +137,12 @@ function patchCommune(row, keys, where) {
   }
   const coords = communeCoords.get(code);
   if (coords && keys.lat) {
-    expect(row[keys.lat], [coords.from[0], coords.to[0]], `${where} ${code} latitude`);
-    expect(row[keys.lng], [coords.from[1], coords.to[1]], `${where} ${code} longitude`);
-    row[keys.lat] = coords.to[0];
-    row[keys.lng] = coords.to[1];
+    if (!atSupersededPoint(code, row[keys.lat], row[keys.lng])) {
+      expect(row[keys.lat], [coords.from[0], coords.to[0]], `${where} ${code} latitude`);
+      expect(row[keys.lng], [coords.from[1], coords.to[1]], `${where} ${code} longitude`);
+      row[keys.lat] = coords.to[0];
+      row[keys.lng] = coords.to[1];
+    }
   }
   if (keys.daira && row[keys.daira]) {
     row[keys.daira] = dairaFor(code, row[keys.wilaya], row[keys.daira], where);
@@ -537,7 +559,7 @@ function patchCommunePoints(doc, label, { strict = false } = {}) {
     patchCommune(Object.assign(props, { code_commune: code }), GEOJSON_KEYS, label);
     delete props.code_commune;
     const coords = communeCoords.get(code);
-    if (coords) {
+    if (coords && !atSupersededPoint(code, feature.geometry.coordinates[1], feature.geometry.coordinates[0])) {
       expect(feature.geometry.coordinates[0], [coords.from[1], coords.to[1]], `${label} ${code} lng`);
       expect(feature.geometry.coordinates[1], [coords.from[0], coords.to[0]], `${label} ${code} lat`);
       feature.geometry.coordinates = [coords.to[1], coords.to[0]];
