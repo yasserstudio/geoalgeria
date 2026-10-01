@@ -58,7 +58,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | | Nombre | |
 |---|---|---|
 | **Wilayas** | 69 | provinces (réformes 2019 + 2026), chacune avec la commune chef-lieu |
-| **Daïras** | 556 | districts, comme entités de premier niveau |
+| **Daïras** | 551 | districts, comme entités de premier niveau |
 | **Communes** | 1 541 | bilingues FR/AR, codes postaux, coordonnées |
 | **Bureaux de poste** | 3 908 | vrais codes Algérie Poste, coordonnées |
 | **DAB** | 2 026 | réseau GAB d'Algérie Poste |
@@ -77,7 +77,7 @@ dz.getPostOfficesByCommune(1731); // vrais bureaux d'Algérie Poste
 | **Mosquées** | 20 759 | composite Wikidata + OpenStreetMap, noms arabes & français, dénomination, les 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Boutiques Djezzy** | 128 | points de vente géolocalisés avec catégorie, horaires et rattachement commune/wilaya (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
 | **Établissements de santé** | 695 | EPH · EPSP · EHS · CHU du Ministère de la Santé, bilingues, 600 géolocalisés via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **Cliniques et structures de soins** | 1 913 | Polycliniques, salles de soins, centres de santé, maternités et cliniques privées depuis OpenStreetMap, classées par type, bilingues, 66 wilayas. Le volet communautaire à côté du registre `sante`, jamais additionné avec lui. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **Cliniques et structures de soins** | 1 918 | Polycliniques, salles de soins, centres de santé, maternités et cliniques privées depuis OpenStreetMap, classées par type, bilingues, 66 wilayas. Le volet communautaire à côté du registre `sante`, jamais additionné avec lui. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Unités de la Protection Civile** | 880 | Unités de secours (incendie & secours) de la DGPC sur tout le territoire, nommées en arabe, adresse/téléphone/fax, palier de statut, toutes géolocalisées, source officielle primaire (dgpc.dz), rattachement wilaya post-réforme 2026. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Lieux culturels** | 1 083 | Sites protégés, musées, théâtres, bibliothèques + établissements culturels du Ministère de la Culture, bilingues, tous géolocalisés, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Institutions agricoles** | 196 | Directions des services agricoles (DSA), conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics du Ministère de l'Agriculture, bilingues, géolocalisées, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
@@ -137,7 +137,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Boutiques Djezzy, 128 points de vente géolocalisés de djezzy.dz, avec catégorie, horaires et rattachement commune/wilaya |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosquées d'Algérie, 20 759 géolocalisées, un composite Wikidata + OpenStreetMap avec noms arabes & français, dénomination et rattachement commune/wilaya |
 | [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Établissements de santé publics, 695 du Ministère de la Santé (EPH, EPSP, EHS, CHU), bilingues, géolocalisés via OSM + Wikidata avec rattachement commune/wilaya |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 913 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Cliniques et structures de soins, 1 918 géolocalisées depuis OpenStreetMap sur 66 wilayas, classées par type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingues, avec secteur, spécialité, téléphone & horaires si renseignés ; le volet communautaire du secteur santé, dont tout élément OSM référencé par `sante` est exclu |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Atlas culturel, 1 083 lieux du Ministère de la Culture (sites protégés, musées, théâtres, bibliothèques, établissements culturels), bilingues, entièrement géolocalisés avec rattachement commune/wilaya |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Institutions du secteur agricole, 196 du Ministère de l'Agriculture réparties en 7 réseaux (DSA, conservations des forêts, instituts de recherche/formation, chambres d'agriculture, offices et groupes publics), bilingues, géolocalisées avec rattachement commune/wilaya |
 | [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Écoles, 11 858 écoles et préscolaires depuis OpenStreetMap, classées par cycle (primaire/moyen/secondaire/préscolaire), bilingues, les 69 wilayas, avec rattachement commune/wilaya |
@@ -150,7 +150,7 @@ Formats : **JSON · CSV · GeoJSON · SQL · TypeScript**. Le paquet npm contien
 | [`packages/ooredoo`](packages/ooredoo) | [`@geoalgeria/ooredoo`](https://www.npmjs.com/package/@geoalgeria/ooredoo) | Points de vente Ooredoo, 572 EO / City Shop / Espace Services avec coordonnées réelles & rattachement commune/wilaya (ooredoo.dz) ; complète le trio télécom |
 | [`packages/transport`](packages/transport) | [`@geoalgeria/transport`](https://www.npmjs.com/package/@geoalgeria/transport) | Parapluie, installe aviation + ferroviaire + gares-routieres + buses en une fois |
 | [`packages/pharma`](packages/pharma) | [`@geoalgeria/pharma`](https://www.npmjs.com/package/@geoalgeria/pharma) | Parapluie, installe industrie-pharmaceutique + pharmacies en une fois |
-| [`packages/normalize`](packages/normalize) | `@geoalgeria/normalize` (pas encore sur npm) | Clés de recherche des noms de lieux algériens, la clé conservatrice, la clé souple, le découpage en mots et leur corpus de référence ; code seul, sans dépendances, pour que tous les index plient un nom de la même façon |
+| [`packages/normalize`](packages/normalize) | [`@geoalgeria/normalize`](https://www.npmjs.com/package/@geoalgeria/normalize) | Clés de recherche des noms de lieux algériens, la clé conservatrice, la clé souple, le découpage en mots et leur corpus de référence ; code seul, sans dépendances, pour que tous les index plient un nom de la même façon |
 
 [Parcourir tous les paquets →](https://geoalgeria.com/data) · [Documentation API et référence des champs →](https://geoalgeria.com/data/docs)
 

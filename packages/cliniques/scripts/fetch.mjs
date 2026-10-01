@@ -72,7 +72,7 @@ import { dirname, join } from "node:path";
 import https from "node:https";
 import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds } from "../../../scripts/lib/v2-transforms.mjs";
 import { writeCapture, readCapture } from "../../../scripts/lib/source-store.mjs";
-import { attachCommune } from "../../../scripts/lib/build-utils.mjs";
+import { attachCommuneWithRules, describeLinkage } from "../../../scripts/lib/build-utils.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -558,7 +558,17 @@ async function main() {
   console.log(`  excluded ${excludedTotal}: ` + Object.entries(excluded).sort().map(([k, v]) => `${k}=${v}`).join(", "));
   console.log(`  OSM: ${rows.length} care facilities kept`);
 
-  attachCommune(rows);
+  // The commune and wilaya a record already shipped under are the claim the linkage
+  // KEEPS wherever geometry cannot contradict it: a coordinate too coarse to join, a
+  // commune OpenStreetMap ships no outline for, a point outside every wilaya polygon.
+  // Keyed on the stable OSM id, exactly as carryOverIds keys the ids below.
+  const published = new Map(
+    (readCommitted(OUT_DIR, "cliniques.json") ?? [])
+      .filter((r) => r.refs?.osm)
+      .map((r) => [`osm:${r.refs.osm}`, r]),
+  );
+  const linkage = attachCommuneWithRules(rows, undefined, (r) => published.get(`osm:${r.osm_id}`) ?? r);
+  console.log(`  linkage: ${describeLinkage(linkage)}`);
   rows = rows.filter((r) => r.wilaya_code); // drop anything the commune join could not place
   assignIds(rows);
 

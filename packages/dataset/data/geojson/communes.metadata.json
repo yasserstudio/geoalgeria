@@ -25,6 +25,27 @@
       "covers": "56 commune centres corrected on 2026-09-27, one row per correction in research/_commune-centres/corrections-2026-09-27.json"
     },
     {
+      "key": "osm-admin-centre-2026-09-29",
+      "name": "OpenStreetMap: commune relations (boundary=administrative, admin_level=8) in Algeria and their admin_centre member nodes",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
+      "retrieved": "2026-09-29",
+      "timestamp_osm_base": "2026-09-29T12:54:47Z",
+      "evidence_type": "crowdsourced",
+      "covers": "189 commune centres corrected on 2026-09-29, one row per correction in research/_commune-centres/corrections-2026-09-29.json"
+    },
+    {
+      "key": "osm-admin-centre-2026-10-01",
+      "name": "OpenStreetMap: wilaya capital commune relations (boundary=administrative, admin_level=8) and their admin_centre member nodes, each node re-read from the OpenStreetMap node API",
+      "url": "https://www.openstreetmap.org",
+      "license": "ODbL 1.0 ((c) OpenStreetMap contributors)",
+      "retrieved": "2026-10-01",
+      "timestamp_osm_base": "2026-09-29T12:54:47Z",
+      "evidence_type": "crowdsourced",
+      "covers": "5 wilaya capital commune centres corrected on 2026-10-01: Biskra (701), El Kantara (717), Constantine (2501) and El Bayadh (3201), one row per correction in research/_commune-centres/corrections-2026-10-01.json",
+      "retrieved_note": "The values come from the 2026-09-29 Overpass pull this file's timestamp_osm_base records; `retrieved` is 2026-10-01 because each of the four nodes was re-read from api.openstreetmap.org that day, before the value was written"
+    },
+    {
       "key": "osm-relation-centroid",
       "name": "OpenStreetMap: commune relations (boundary=administrative, admin_level=8) in Algeria, relation centroid",
       "url": "https://www.openstreetmap.org",
@@ -37,8 +58,8 @@
   ],
   "provenance_notes": [
     "A commune's point is its chef-lieu, a point in the built-up centre of the commune, not the centroid of its territory.",
-    "Licence split: 62 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the two sources above. The remaining 1,479 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
-    "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 62 values in each of them. data/ecommerce/ ships no coordinates.",
+    "Licence split: 256 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the four sources above. The remaining 1,285 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
+    "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 256 values in each of them. data/ecommerce/ ships no coordinates.",
     "Guarded by test/commune-in-boundary.test.mjs: no commune centre may sit more than 500 m outside its own wilaya polygon in any of those representations, with three reviewed exceptions pinned by name."
   ]
 }

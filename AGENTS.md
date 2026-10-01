@@ -38,7 +38,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/ooredoo/` | `@geoalgeria/ooredoo` | Ooredoo stores – 572 EO/CSO/ESO with real coordinates & wilaya/commune linkage (ooredoo.dz locator API); completes the telecom retail trio |
 | `packages/mosquees/` | `@geoalgeria/mosquees` | mosques – Wikidata + OpenStreetMap composite, bilingual, all 69 wilayas |
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments – EPH, EPSP, EHS, CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
-| `packages/cliniques/` | `@geoalgeria/cliniques` | clinics & proximity-care facilities – 1,913 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas; the community tier of the health sector, disjoint from `sante` (registry tier) |
+| `packages/cliniques/` | `@geoalgeria/cliniques` | clinics & proximity-care facilities – 1,918 polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas; the community tier of the health sector, disjoint from `sante` (registry tier) |
 | `packages/protection-civile/` | `@geoalgeria/protection-civile` | civil protection (fire & rescue) units – 880 DGPC units nationwide, Arabic-named, address/phone/fax, status tier, geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas – protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions – services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
@@ -86,6 +86,10 @@ We use **Changesets + a "Version Packages" PR + staged Trusted Publishing**:
   bumps versions and CHANGELOGs. **Merging that PR** is the release trigger.
 - On merge, packages are **staged** on npm (OIDC, no token) and per-package
   **GitHub Releases** are cut with CSV/GeoJSON/SQL bundles attached.
+- **Every** publishable package goes through that path, the `transport` and
+  `pharma` umbrellas included since 2026-09-30: `scripts/stage-publish.js`
+  resolves their `workspace:` runtime deps to real semver and stages them last.
+  Never publish one by hand.
 - A Release is only cut for a version the released commit itself carries, with a
   `CHANGELOG.md` section: `scripts/release-guard.mjs` declines otherwise, because
   the changesets step leaves the runner's working tree bumped while it builds the

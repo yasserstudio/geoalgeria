@@ -15,9 +15,20 @@ export type HealthSector = "public" | "private";
  *  `null` when the establishment has no coordinate at all. */
 export type GeoPrecision = "exact" | "approximate" | null;
 
-/** How the coordinate was obtained. `null` on an ungeocoded record: no method
- *  produced a point, so none can be named. */
-export type GeoMethod = "osm_point" | "wikidata_point" | "commune_centroid" | null;
+/** How the coordinate was obtained. `owner_verified` is a building point a
+ *  maintainer read off the map and recorded in the guarded evidence ledger
+ *  (quality/overrides/sante.json), which outranks anything the generator derives.
+ *  `null` on an ungeocoded record: no method produced a point, so none can be
+ *  named. */
+export type GeoMethod =
+  | "osm_point"
+  | "wikidata_point"
+  | "commune_centroid"
+  | "owner_verified"
+  | null;
+
+/** A human-reviewed correction applied through the guarded evidence ledger. */
+export type ReviewStatus = "corrected";
 
 /** External identifiers keyed by source system. */
 export interface Refs {
@@ -69,6 +80,14 @@ export interface HealthEstablishment {
   sector: HealthSector;
   /** URL slug of the source post (French post preferred). */
   slug: string;
+  /** Present only when a reviewed correction was applied to this record. */
+  review_status?: ReviewStatus;
+  /** ISO date of the reviewed correction. */
+  reviewed_at?: string;
+  /** Who recorded the reviewed correction. */
+  reviewed_by?: string;
+  /** Public evidence URLs the correction was checked against. */
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

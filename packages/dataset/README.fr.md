@@ -2,20 +2,22 @@
 
 # GeoAlgeria
 
-> Le package de géodonnées algériennes – 69 wilayas, 556 daïras, 1 541 communes. À un `npm install` près.
+> Le package de géodonnées algériennes – 69 wilayas, 551 daïras, 1 541 communes. À un `npm install` près.
 
 Vous copiez-collez encore des listes de wilayas depuis des PDF ? Vous utilisez encore des jeux de données bloqués à 48 wilayas ? GeoAlgeria est la première géodonnée algérienne installable via npm et validée par CI – mise à jour pour la réforme de 2026. JSON, CSV, GeoJSON, SQL, TypeScript.
 
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
 ## En bref
 
-L'Algérie compte **69 wilayas** (provinces), **556 daïras** (districts) et **1 541 communes** (municipalités), officielles depuis **avril 2026**. Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **556 daïras** (la table des daïras reste en deçà des 564 officielles ; voir le [journal des modifications](CHANGELOG.md)). Dernière validation : juillet 2026.
+L'Algérie compte **69 wilayas** (provinces) et **1 541 communes** (municipalités), officielles depuis **avril 2026**, chaque wilaya étant divisée en daïras (districts). Cela reflète deux réformes territoriales : la loi 19-12 (2019, ajout des wilayas 49 à 58) et la loi n° 26-06 du 4 avril 2026 (ajout des wilayas 59 à 69), publiée au [*Journal Officiel* n° 25 du 5 avril 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria modélise les 69 wilayas post-réforme avec codes postaux, coordonnées GPS et noms bilingues. Cette version contient l'intégralité des **1 541 enregistrements de communes** et **551 daïras dans le jeu de données**. C'est le décompte propre à ce jeu de données et non un total officiel : aucun total national de daïras postérieur à 2026 n'a été publié (le décret 26-206 du 25 mai 2026 ne fixe que les chefs-lieux), et les 564 que ce README qualifiait d'officielles comprenaient 9 daïras fantômes issues de 13 enregistrements de communes en double, comme le [journal des modifications](CHANGELOG.md) le consigne pour la v1.1.2. Dernière validation : septembre 2026.
+
+**142 des 551 sont fixées par décret.** Le décret exécutif n° 26-253 du 15 juillet 2026, publié au *Journal Officiel* n° 52 du 21 juillet 2026, fixe les communes animées par chaque chef de daïra dans les wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 et 59 à 69, et y nomme 142 daïras. Il laisse les 48 autres wilayas sous le décret n° 91-306 du 24 août 1991, dont ce jeu de données porte les listes, qui totalisent 409. La lecture de l'annexe est dans [`research/_dairas/`](../../research/_dairas/).
 
 ---
 
@@ -66,7 +68,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // les 69 wilayas
 dz.communes;                   // les 1 541 communes
-dz.dairas;                     // les 556 daïras
+dz.dairas;                     // les 551 daïras
 dz.ecommerce;                  // jeu de données plat pour formulaires d'adresse
 dz.postOffices;                // 3 908 bureaux Algérie Poste
 dz.atms;                       // 2 026 distributeurs automatiques
@@ -143,7 +145,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 |---------|--------|-----------------|------------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Utilisation en fichier unique |
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
-| `data/dairas.json` | JSON | 556 | Liste des daïras avec nombre de communes |
+| `data/dairas.json` | JSON | 551 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
@@ -247,7 +249,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/ge
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit, code MIT et compilation MIT avec deux parties sous ODbL indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit : code MIT et compilation MIT, avec deux parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 
@@ -289,13 +291,23 @@ Deux parties des données proviennent d'**OpenStreetMap**, sont **© les contrib
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
-- 62 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
-  `admin_level=8` de la commune elle-même (56 de son nœud `admin_centre` le 2026-09-27, 6 du
-  centroïde de la relation en 2.1.0), partout où ces valeurs apparaissent.
+- 256 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
+  `admin_level=8` de la commune elle-même (250 de son nœud `admin_centre`, 56 le 2026-09-27,
+  189 le 2026-09-29 et 5 le 2026-10-01, et 6 du centroïde de la relation en 2.1.0), partout où
+  ces valeurs apparaissent.
 
 Si vous utilisez ou redistribuez l'une de ces deux parties, vous devez **attribuer aux
 contributeurs d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.
-L'attribution par partie et les lignes concernées sont dans [NOTICE](NOTICE).
+
+Les données postales miroir sous `data/poste/` relèvent des conditions propres d'**Algérie
+Poste**, et non de la licence MIT : **Data © Algérie Poste; redistributed for reference**, les
+mêmes conditions que celles énoncées par
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste). Vérifiez auprès
+d'Algérie Poste pour une information faisant foi et en temps réel.
+
+Les données relevant de trois ensembles de conditions, le manifeste déclare
+`SEE LICENSE IN LICENSE` plutôt qu'une expression SPDX. L'attribution par partie et les lignes
+concernées sont dans [NOTICE](NOTICE).
 
 Réalisé avec soin par [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 

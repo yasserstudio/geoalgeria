@@ -12,7 +12,7 @@
 // v1 fixture and asserts it reproduces the committed record byte-for-byte, so a
 // generator importing its own slice inherits that guarantee.
 
-import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, renameSync, mkdirSync, rmSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -763,7 +763,7 @@ export const MIGRATIONS = {
         { key: "etul-laghouat", name: "ETUL Laghouat: dated operating programs supplied by project owner", license: "Proprietary factual reference data; no open reuse license", retrieved: "2026-09-04", evidence_type: "official" },
         { key: "osm", name: "OpenStreetMap: reviewed urban bus relations", url: "https://www.openstreetmap.org/copyright", license: "ODbL 1.0 (© OpenStreetMap contributors)", retrieved: "2026-09-01", evidence_type: "crowdsourced" },
       ],
-      license: "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
+      license: "Line data © the respective Operators; redistributed for reference. The ETUSA Line attributes derived from French Wikipedia are CC BY-SA 4.0, and the shapes, Directions, Stations and memberships derived from OpenStreetMap are ODbL 1.0, © OpenStreetMap contributors. Per-part attribution is in LICENSE and NOTICE.",
       estimatedUniverse: null,
       coverageNote: "Reviewed urban/suburban release: 76 ETUSA Lines (50 from the retained registry plus 26 whose identity comes from the evidenced OSM operator match alone, chiefly the 6xx/7xx suburban network the registry never listed, including the three suburban runs into Boumerdes and Tipaza), 8 official ETUS Sidi Bel Abbès Lines, 7 current ETUS Tiaret Lines, 5 official ETUS Béjaïa Lines, 5 official ETUSTO Lines, 5 official ETUS Setif Lines, 5 official ETUS Oum El Bouaghi Lines, 4 official ETUL Laghouat Lines, 4 official ETUS M'Sila Lines, 16 official ETUS Aïn Defla Lines across Aïn Defla, Khemis Miliana and El Attaf, 6 official ETUS Annaba Lines (the numbered routes of its 2026 service program; 19 unnumbered services kept as evidence), 10 official ETUS Tlemcen Lines from its 2026 service program, 1 ETO Oran Line (the numbered route among six ETO published as drawings; five destination-named services kept as evidence), 25 official ETUS-C Constantine Lines, 6 official ETUS Skikda Lines, and 1 ETUS Mostaganem Line. Laghouat Line refs and Arabic route names come from two dated Operator programs; duty allocations, vehicles, times and an ambiguous ADL route code remain evidence-only. Constantine identities, Arabic endpoints and route colours come from two supplied Operator graphics, a numbered route list and a schematic network map; the schematic is not reusable geometry, so all 25 Lines are directory-only with no intermediate Stations, no distances and no service hours. Skikda identities, Arabic termini and complete ordered Arabic stop sequences come from the Operator\'s own website, read in a browser by the project owner because the site served an expired TLS certificate; every Line starts at the city-centre square ساحة الشهداء, stops carries the published sequence length, the stop names stay Source evidence because the page gives no coordinates, and the network-wide 06:00 to 19:00 window is not published as per-Line service hours. Oum El Bouaghi identities and Arabic endpoints come from five numbered Operator diagrams; major Stations and distances remain Source evidence, while the unnumbered night loop is evidence-only. Aïn Defla identities come from the Operator's 2025 route artwork and Eid service program; AD-2 has reusable OSM geometry reconciled to that identity, the rest are directory-only. Setif Line identities and Arabic endpoints come from official 2026 Operator artwork; Lines 101, 104 and 106B have reusable OSM geometry reconciled to the announced identities. Lines 105 and 106A remain directory-only because no current public geometry was found. Béjaïa Line identity, endpoints, typed stop counts and service hours come from the Operator API and linked timetable panels; Sidi Bel Abbès identities, endpoints and complete directional departures come from supplied official network/timetable HTML; M'Sila identities, endpoints, ordered Arabic stop names and stop counts come from official route diagrams. Operator-controlled map geometry remains validation-only. OSM supplies reusable geometry where available. Shapes are available for 61 ETUSA, 1 ETUS Aïn Defla, 7 Tiaret, 3 Tizi Ouzou, 3 Setif and 1 Mostaganem Lines. An OSM-identified Line carries source \"osm\", no published termini, and links every relation its shape was assembled from so a wrong route can be reported or corrected at the origin. Excludes stale Tiaret ref 33 plus unresolved, taxi, non-ETUSA cross/inter-wilaya, unmatched Setif, ETUAD and validation-only geometry.",
       titles: { en: "Algeria urban and suburban bus lines", fr: "Lignes de bus urbaines et suburbaines d'Algérie", ar: "خطوط الحافلات الحضرية وشبه الحضرية في الجزائر" },
@@ -1075,14 +1075,21 @@ export function writePackageV2({
         `writePackageV2 [${pkg}]: retired id(s) are still live: ${overlap.slice(0, 5).join(", ")}`,
       );
     }
+    // An empty ledger says nothing, so it is not a file: a package that has never
+    // retired an id must not ship a `retired-ids.json` in its npm tarball. Any
+    // empty one already on disk is removed (readRetiredIds seeds the set from it,
+    // so an empty set here can only come from an empty or absent file).
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIdsContent(retiredIds),
+      content: retiredIds.size ? retiredIdsContent(retiredIds) : null,
     });
   }
 
   // Phase 2 — everything validated; now write each file atomically.
-  for (const { path, content } of pending) writeAtomic(path, content);
+  for (const { path, content } of pending) {
+    if (content === null) rmSync(path, { force: true });
+    else writeAtomic(path, content);
+  }
   return { records: all, metadata, review };
 }
 
@@ -1243,9 +1250,14 @@ export function readRetiredIds(dir) {
   return new Set(document.ids);
 }
 
-/** Persist a ledger for a generator that has not moved to writePackageV2 yet. */
+/** Persist a ledger for a generator that has not moved to writePackageV2 yet.
+ *  An empty ledger is not written, and an empty one on disk is removed, so a
+ *  package that has never retired an id ships no `retired-ids.json`. */
 export function writeRetiredIds(dir, ids) {
-  writeAtomic(join(dir, "retired-ids.json"), retiredIdsContent(ids));
+  const path = join(dir, "retired-ids.json");
+  const size = ids instanceof Set ? ids.size : [...ids].length;
+  if (!size) rmSync(path, { force: true });
+  else writeAtomic(path, retiredIdsContent(ids));
 }
 
 /** Read a package's committed records for carryOverIds, or [] if none exist yet. */

@@ -1,15 +1,15 @@
 # GeoAlgeria
 
-> The most complete open-source dataset of Algerian administrative divisions. 69 wilayas, 556 dairas, 1,541 communes with postal codes, coordinates, and bilingual names (Arabic/French). Updated for Algeria's 2026 territorial reform (Law 26-06).
+> The most complete open-source dataset of Algerian administrative divisions. 69 wilayas, 551 dairas, 1,541 communes with postal codes, coordinates, and bilingual names (Arabic/French). Updated for Algeria's 2026 territorial reform (Law 26-06).
 
 ## Key Facts
 
 - Algeria has 69 wilayas as of April 2026 (48 original + 10 added in 2019 via Law 19-12 + 11 added in 2026 via Law 26-06)
-- 556 dairas and 1,541 communes total
+- 551 dairas and 1,541 communes total
 - Each wilaya carries its capital (chef-lieu) as a commune code (`capital_commune_code`), fixed by the decrees that name the chefs-lieux: n° 84-79 (1984) for wilayas 1-48, n° 21-117 (2021) for 49-58, n° 26-206 (2026) for 59-69
 - Available as: JSON, CSV, GeoJSON, SQL, npm package (TypeScript)
-- Source: Official Algerian government gazette (JORA), Algérie Poste, plus OpenStreetMap for the wilaya boundary polygons and 62 commune centre coordinates
-- License: MIT AND ODbL-1.0. The compilation is MIT; the wilaya boundary polygons and those 62 commune centre coordinates are ODbL 1.0, (c) OpenStreetMap contributors, and must keep that attribution (see NOTICE)
+- Source: Official Algerian government gazette (JORA), Algérie Poste, plus OpenStreetMap for the wilaya boundary polygons and 256 commune centre coordinates
+- License: SEE LICENSE IN LICENSE, because the data is under three sets of terms. The compilation is MIT; the wilaya boundary polygons and those 256 commune centre coordinates are ODbL 1.0, (c) OpenStreetMap contributors, and must keep that attribution (see NOTICE); the mirrored postal data under data/poste carries Algerie Poste's own terms, Data (c) Algerie Poste; redistributed for reference
 - npm: geoalgeria
 - GitHub: https://github.com/yasserstudio/geoalgeria
 

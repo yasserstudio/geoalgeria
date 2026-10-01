@@ -112,6 +112,15 @@ test("a moved commune sits in its new daira and both counts follow", () => {
     for (const name of [move.from, move.to]) {
       const daira = dairas.find((row) => row.wilaya_code === move.wilaya_code && row.name_fr === name);
       const members = communes.filter((c) => c.wilaya_code === move.wilaya_code && c.daira === name);
+      // A move that leaves its old daira with no commune removes that row rather
+      // than writing commune_count 0, which the schema rejects anyway: El Alia
+      // (5513) was the only commune filed under an "Ouargla" daira of wilaya 55,
+      // and wilaya 55 has no such daira. So an absent row is correct exactly when
+      // no commune claims the name, and a present one still has to count.
+      if (!members.length) {
+        assert.equal(daira, undefined, `${name} still has a row in wilaya ${move.wilaya_code} with no commune`);
+        continue;
+      }
       assert.equal(daira?.commune_count, members.length, `${name} commune_count`);
     }
   }

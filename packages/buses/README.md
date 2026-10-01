@@ -88,9 +88,13 @@ served an expired TLS certificate; all six Lines start at the city-centre square
 Béjaïa embedded maps, M'Sila route diagrams, Sidi Bel
 Abbès route images, Setif announcement artwork and the Constantine graphics are
 validation-only; their geometry is not redistributed.
-The official source materials do not state an open reuse licence.
+The official source materials do not state an open reuse licence, so that **Line data is ©
+the respective Operators and redistributed for reference**; no open licence is claimed over
+it.
 
-Package code is MIT. Data licences and attribution requirements are detailed in
-[NOTICE](NOTICE); verify current service with the relevant Operator.
+Package code is MIT. No SPDX expression covers this mix, so the manifest declares
+`SEE LICENSE IN LICENSE` and the data terms are stated as prose in [LICENSE](LICENSE). Data
+licences and attribution requirements are detailed in [NOTICE](NOTICE); verify current
+service with the relevant Operator.
 
 [Browse all packages →](https://geoalgeria.com/data)

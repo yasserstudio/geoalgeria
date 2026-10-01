@@ -1,7 +1,7 @@
 {
   "name": "geoalgeria",
-  "version": "2.1.1",
-  "description": "69 wilayas, 556 dairas, 1541 communes of Algeria: bilingual names, postal codes, coordinates, plus 3908 post offices & 2026 ATMs. JSON, CSV, GeoJSON, SQL, TypeScript.",
+  "version": "2.2.0",
+  "description": "69 wilayas, 551 dairas, 1541 communes of Algeria: bilingual names, postal codes, coordinates, plus 3908 post offices & 2026 ATMs. JSON, CSV, GeoJSON, SQL, TypeScript.",
   "main": "index.js",
   "types": "types/index.d.ts",
   "exports": {
@@ -54,7 +54,7 @@
     "open-data"
   ],
   "author": "Yasser's Studio (https://yasser.studio)",
-  "license": "MIT AND ODbL-1.0",
+  "license": "SEE LICENSE IN LICENSE",
   "publishConfig": {
     "access": "public"
   },

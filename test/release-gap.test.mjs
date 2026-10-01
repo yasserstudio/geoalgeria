@@ -19,7 +19,6 @@ const pkg = (over) => ({
   name: "@geoalgeria/poste",
   version: "2.0.4",
   registryVersion: "2.0.4",
-  umbrella: false,
   ...over,
 });
 
@@ -32,20 +31,30 @@ test("a normal package the staged path will stage is not a gap", () => {
   assert.deepEqual(gaps, []);
 });
 
-test("an umbrella ahead of npm is reported as a manual publish", () => {
-  // @geoalgeria/pharma: repo 2.0.1, npm 2.0.0, skipped by stage-publish.js.
+test("an umbrella ahead of npm is no longer a gap, the release stages it", () => {
+  // Was the live case for the "manual" gap: @geoalgeria/pharma repo 2.0.1 vs npm
+  // 2.0.0, because stage-publish.js refused anything with workspace: runtime
+  // deps. Both umbrellas are on the staged path since 2026-09-30, so an umbrella
+  // ahead of npm is an ordinary pending publish and the report must stay quiet
+  // about it.
+  for (const dir of ["packages/transport", "packages/pharma"]) {
+    const name = `@geoalgeria/${dir.slice("packages/".length)}`;
+    const gaps = releaseGaps([pkg({ dir, name, version: "2.0.6", registryVersion: "2.0.5" })], WORKFLOW);
+    assert.deepEqual(gaps, [], `${name} must not be reported`);
+  }
+});
+
+test("an umbrella npm has never seen is still the one-time bootstrap", () => {
+  // Staging cannot claim a name npm has never seen, umbrella or not.
   const gaps = releaseGaps(
-    [pkg({ dir: "packages/pharma", name: "@geoalgeria/pharma", version: "2.0.1", registryVersion: "2.0.0", umbrella: true })],
+    [pkg({ dir: "packages/transport", name: "@geoalgeria/transport", version: "2.0.6", registryVersion: null })],
     WORKFLOW,
   );
-  const manual = gaps.find((g) => g.kind === "manual");
-  assert.ok(manual, "expected a manual gap");
-  assert.match(manual.message, /repo carries 2\.0\.1, npm serves 2\.0\.0/);
-  assert.match(manual.message, /will NOT go live on its own/);
+  assert.deepEqual(gaps.map((g) => g.kind), ["unpublished"]);
 });
 
 test("a package npm has never seen names the one-time bootstrap", () => {
-  // @geoalgeria/normalize 1.0.0 has never been on npm.
+  // The shape @geoalgeria/normalize 1.0.0 had before its 2026-09-29 bootstrap.
   const gaps = releaseGaps(
     [pkg({ dir: "packages/normalize", name: "@geoalgeria/normalize", version: "1.0.0", registryVersion: null })],
     WORKFLOW,
@@ -56,9 +65,9 @@ test("a package npm has never seen names the one-time bootstrap", () => {
   assert.match(unpublished.message, /packages\/normalize/);
 });
 
-test("an unpublished package is reported once, not also as a manual one", () => {
+test("an unpublished package is reported exactly once", () => {
   const gaps = releaseGaps(
-    [pkg({ dir: "packages/normalize", name: "@geoalgeria/normalize", version: "1.0.0", registryVersion: null, umbrella: true })],
+    [pkg({ dir: "packages/normalize", name: "@geoalgeria/normalize", version: "1.0.0", registryVersion: null })],
     WORKFLOW,
   );
   assert.deepEqual(
@@ -134,13 +143,15 @@ test("a recorded exclusion is a notice, not a warning", () => {
   assert.deepEqual([...DELIBERATELY_UNPUBLISHED.keys()], ["@geoalgeria/schema"]);
 });
 
-test("the umbrellas are the only workspace packages release.yml's lists leave out", () => {
-  // The live gap this check exists for: transport and pharma are absent from both
-  // loops. If a new package lands outside them, this test names it.
+test("the contract package is the only workspace package release.yml's lists leave out", () => {
+  // transport and pharma used to be missing from both loops, which was the live
+  // gap this check exists for. They are in both since 2026-09-30, leaving only
+  // the private @geoalgeria/schema. If a new package lands outside the loops,
+  // this test names it.
   const missing = readdirSync(join(ROOT, "packages"))
     .map((d) => `packages/${d}`)
     .filter((dir) => existsSync(join(ROOT, dir, "package.json")))
     .filter((dir) => !JSON.parse(readFileSync(join(ROOT, dir, "package.json"), "utf8")).private)
     .filter((dir) => !mentionsDir(WORKFLOW, dir));
-  assert.deepEqual(missing.sort(), ["packages/pharma", "packages/schema", "packages/transport"]);
+  assert.deepEqual(missing.sort(), ["packages/schema"]);
 });

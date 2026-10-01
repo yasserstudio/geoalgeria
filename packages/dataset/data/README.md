@@ -17,11 +17,12 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
-├── dairas.json                  ← 556 dairas
+├── dairas.json                  ← 551 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
 ├── name-history.json            ← former names, so an older spelling still finds the record
+├── retired-ids.json             ← daira ids that no longer exist and are never reused
 ├── wilaya-capitals.metadata.json          ← the chef-lieu of each wilaya, with its decree
 ├── csv/
 │   ├── wilayas.csv
@@ -166,10 +167,29 @@ announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | integer | Sequential ID (1–564) |
+| `id` | integer | Stable ID, 1 to 566 with 15 retired ids that are not reused, so the table is 551 rows |
 | `wilaya_code` | integer | Parent wilaya code |
-| `name_fr` | string | French name |
+| `name_fr` | string | French name, the name of the daira's seat commune |
 | `commune_count` | integer | Number of communes in this daira |
+
+A commune names its daira by this `name_fr`, in every carrier that repeats the
+linkage, so the two always join. A daira that stops existing leaves its id in
+`retired-ids.json` with the reason, and a new daira takes a fresh id, so an id a
+consumer holds never comes back meaning something else. A daira that is renamed,
+or reseated on another of its communes, keeps its id: the id belongs to the body
+of communes, not to the seat.
+
+### Where the daira lists come from
+
+Executive decree n° 26-253 of 15 July 2026 (*Journal Officiel* n° 52 of 21 July
+2026) fixes the communes each chef de daïra administers in **wilayas 3, 5, 7,
+12, 13, 14, 17, 26, 28, 32 and 59–69**: **142 dairas**, carried here exactly as
+its annex prints them. It leaves the remaining 48 wilayas under decree n° 91-306
+of 24 August 1991, and those lists as this dataset holds them come to **409**.
+
+**551 is therefore this dataset's count, not a published national total**: no
+post-reform text states one. The reading of the annex, and what it does and does
+not settle, is in [`research/_dairas/`](../../../research/_dairas/).
 
 ## SQL Schema
 
@@ -192,7 +212,7 @@ communes (id PK, commune_name_fr, commune_name_ar, daira_name_fr, wilaya_code, w
 ## Coverage
 
 - **69 wilayas** — complete (original 48 + 2019 reform + 2026 reform)
-- **556 dairas**
+- **551 dairas**
 - **1,541 communes** (complete; the 13 name-twin communes of the reform wilayas were added 2026-07-29 from `research/_communes-reconcile/`)
 - **Postal codes** — 100%
 - **Formats** — JSON, CSV, GeoJSON, SQL
@@ -222,24 +242,69 @@ address stored before a correction still resolves.
 `geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
 `properties.code` joining to `wilayas.json`. Derived from OpenStreetMap `admin_level=4`
 relations (**ODbL 1.0, © OpenStreetMap contributors**, one of the two carve-outs from this
-package's MIT licence; the other is the 62 OpenStreetMap-derived commune centres below) and
+package's MIT licence; the other is the 256 OpenStreetMap-derived commune centres below) and
 simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 decimals.
 
 Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the
 outline can depart from the true border by much more than the ~150 m the coordinate rounding
 implies. Full provenance in `geojson/wilaya-boundaries.metadata.json`.
 
+Two features depart from upstream OSM on purpose, because OSM added each 2019 and 2026 reform
+wilaya as a new relation without shrinking the parent it was carved out of:
+
+- **2026-08-09**: El Aricha (63) subtracted from Tlemcen (13), which still spanned its
+  pre-reform extent.
+- **2026-09-29**: the territory of three communes moved to the wilaya each one declares.
+  El Alia (5513) and El-Hadjira (5507) are communes of Touggourt (55) and were drawn as
+  Ouargla (30); Mansoura (4713) is a commune of Ghardaïa (47) and was drawn as El Meniaa (58).
+  Touggourt goes from 9,775 to 18,831 km2 and Ouargla from 144,496 to 135,440; Ghardaïa from
+  21,218 to 26,008 and El Meniaa from 63,353 to 58,563. Each pair's total is unchanged to
+  within 0.05 km2, and so is the union of all 69. The moved parts come from the communes' own
+  OpenStreetMap `admin_level=8` outlines.
+
+Neither is a defect re-sourcing from OSM would fix: a live pull reproduces both.
+
 ## Commune centres
 
 A commune's `latitude`/`longitude` is its chef-lieu, not the polygon centroid of its
 territory, so it is a point in the built-up centre of the commune.
 
-56 of them were corrected on 2026-09-27 from the `admin_centre` node of the commune's
-OpenStreetMap `admin_level=8` relation, after a sweep of all 1,541 against the wilaya
-polygons found 68 outside their own wilaya. Alger Centre had been in the sea east of the
-port and Bethioua inside the Arzew industrial complex. Method, per-row evidence (relation
-id, node id, Overpass `timestamp_osm_base`) and the 13 hits that turned out to be boundary
-simplification rather than bad points: `research/_commune-centres/` in the repository.
+250 of them were corrected from the `admin_centre` node of the commune's OpenStreetMap
+`admin_level=8` relation, in three passes. 56 on 2026-09-27, after a sweep of all 1,541
+against the wilaya polygons found 68 outside their own wilaya: Alger Centre had been in
+the sea east of the port and Bethioua inside the Arzew industrial complex. 189 more on
+2026-09-29, after every one of the 1,541 was compared with its own relation's
+`admin_centre` and then tested against that relation's unsimplified boundary, which found
+215 centres outside their own commune (Sidi Slimane was 108.7 km out). A centre is decided
+wrong when that relation's `admin_centre` node is inside the commune, inside the declared
+wilaya and is this commune's seat, and either the stored point is outside the commune or it
+is the seat mangled: Fenoughil held the seat's longitude with the minus dropped, 59.3 km
+away and inside its own commune either way, where containment alone is blind. Method,
+per-row evidence (relation id, node id, Overpass `timestamp_osm_base`, the containment
+verdicts) and the 27 left undecided: `research/_commune-centres/` in the repository.
+
+Four more on 2026-10-01, and on a different standard, because containment cannot see their
+class: the wilaya capital communes Biskra (701), El Kantara (717), Constantine (2501) and
+El Bayadh (3201) each sat 3 to 6 km from the seat of the town they are the chef-lieu of,
+inside their own commune the whole time. A seat delta on its own is not a defect, which is
+why 132 non-capital centres are still more than 3 km from their seat and are left alone; a
+capital qualified only where two claims this repository did not take the value from both
+put the town at the seat instead: the wilaya's own published point, from its
+`admin_level=4` relation, and the geometric median of the `geo_precision: exact` records
+other packages place inside this commune's own OpenStreetMap outline. Over all 69 capitals
+that selects exactly these four.
+
+A fifth capital moved in the same batch, and it is the same source. Beni-Abbes (5201) sat
+5,754 m from its town centre, and the two-claim criterion could not nominate it, because
+wilaya 52's own point is 6,735 m from the repudiated centre and 8,786 m from the town: that
+point is itself about 8.8 km out. The project owner raised it instead, reading the town
+centre off Google Maps on 2026-10-01. **That reading is not what ships.** The rule from
+that day is that a coordinate read off a proprietary map may only confirm an open source,
+within 500 m, and the open coordinate is what is published, so the value here is the
+commune's own `admin_centre` node and the reading is recorded beside it as the
+confirmation, 268 m away. The exact-record median is 139 m from the published value,
+against 5,628 m from the repudiated one. It is ODbL like the other four and is counted
+below.
 
 Six more were replaced in version 2.1.0 with the centroid of the commune's own
 `admin_level=8` relation, after they had shared a placeholder point with a neighbour:
@@ -248,10 +313,10 @@ Makhda (2915) and El Euch (3427). Si Mahdjoub (2644) and El Achir (3407) shared 
 placeholder with two of those but were left as they were, so they are still on their
 pre-2.1.0 values and carry no OpenStreetMap provenance.
 
-**Licence.** Those 62 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
+**Licence.** Those 256 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
 copy of them in `algeria.json`, `communes_w*.json`, `csv/communes.csv`,
 `geojson/communes.geojson` and `sql/full.sql`. Reusing them means attributing OpenStreetMap
-contributors and keeping derived databases under a compatible licence. The other 1,479
+contributors and keeping derived databases under a compatible licence. The other 1,285
 commune points carry no recorded source and are covered by the package's MIT licence; no
 ODbL claim is made over them. Per-part terms are in the package `LICENSE` and `NOTICE`, and
 the per-source breakdown is in `geojson/communes.metadata.json`.
@@ -262,11 +327,13 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 - Journal Officiel No. 40, June 3, 2026 (Presidential decree 26-206) for the names and chef-lieux of wilayas 59–69
 - Journal Officiel No. 22, March 25, 2021 (Presidential decree 21-117) for the names and chef-lieux of wilayas 49–58
 - Journal Officiel No. 14, April 3, 1984 (Decree 84-79) for the names and chef-lieux of wilayas 1–48
+- Journal Officiel No. 52, July 21, 2026 (Executive decree 26-253) for the daira lists of wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69
 - Journal Officiel No. 78, December 18, 2019 (Law 19-12) for wilayas 49–58
 - Ministry of Interior (interieur.gov.dz)
 - APS (Algérie Presse Service)
 - Echorouk Online, Awras, Djelfa Info, Aures News, El Moudjahid, France 24 Arabic
 - Algérie Poste for postal codes
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
-- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 56 commune centres corrected on 2026-09-27
-- OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 8 commune centres replaced in version 2.1.0
+- OpenStreetMap `admin_level=8` commune relations (ODbL 1.0) for the wilaya 30/55 and 47/58 membership correction of 2026-09-29
+- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 250 commune centres corrected on 2026-09-27 (56), 2026-09-29 (189) and 2026-10-01 (5)
+- OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 6 commune centres replaced in version 2.1.0

@@ -83,19 +83,19 @@
         5.495723,
         36.817264
       ],
-      "license": "CC-BY-SA-4.0 AND ODbL-1.0 AND LicenseRef-Operator-Data",
+      "license": "Line data © the respective Operators; redistributed for reference. The ETUSA Line attributes derived from French Wikipedia are CC BY-SA 4.0, and the shapes, Directions, Stations and memberships derived from OpenStreetMap are ODbL 1.0, © OpenStreetMap contributors. Per-part attribution is in LICENSE and NOTICE.",
       "updated": "2026-09-27"
     },
     {
       "package": "@geoalgeria/cliniques",
       "schema_version": "2.0.0",
       "title": "Algeria clinics & care facilities",
-      "record_count": 1913,
-      "geocoded_count": 1913,
+      "record_count": 1918,
+      "geocoded_count": 1918,
       "geocoded_pct": 100,
       "precision": {
-        "exact": 1080,
-        "approximate": 833
+        "exact": 1084,
+        "approximate": 834
       },
       "wilayas_covered": 66,
       "bbox": [
@@ -228,7 +228,7 @@
         "exact": 683,
         "approximate": 9
       },
-      "wilayas_covered": 51,
+      "wilayas_covered": 52,
       "bbox": [
         -8.1016,
         26.8176,
@@ -489,11 +489,11 @@
       "schema_version": "2.0.0",
       "title": "Algeria public health establishments",
       "record_count": 695,
-      "geocoded_count": 600,
-      "geocoded_pct": 86.3,
+      "geocoded_count": 602,
+      "geocoded_pct": 86.6,
       "precision": {
         "exact": 124,
-        "approximate": 476
+        "approximate": 478
       },
       "wilayas_covered": 58,
       "bbox": [
@@ -577,11 +577,8 @@
       "geocoded_pct": 100,
       "wilayas_covered": 69,
       "bbox": null,
-      "license": [
-        "https://opensource.org/licenses/MIT",
-        "https://opendatacommons.org/licenses/odbl/1-0/"
-      ],
-      "updated": "2026-09-27"
+      "license": "Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 256 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.",
+      "updated": "2026-09-29"
     }
   ]
 }

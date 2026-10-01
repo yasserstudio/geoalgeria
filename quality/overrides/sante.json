@@ -1,7 +1,357 @@
 {
   "schema_version": 1,
   "dataset": "sante",
-  "reviewer": "geoalgeria-maintainers",
-  "reviewed_at": "2026-08-28",
-  "decisions": []
+  "reviewer": "GeoAlgeria owner",
+  "reviewed_at": "2026-09-30",
+  "decisions": [
+    {
+      "file": "sante.json",
+      "record_id": "02-eph-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.183333,
+        "lng": 1.549921,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "commune": "Oued Fodda",
+        "commune_code": "0229"
+      },
+      "patch": {
+        "lat": 36.1571749,
+        "lng": 1.3624474,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified",
+        "commune": "Chlef",
+        "commune_code": "0201"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.1571749,1.3624474",
+          "checked_at": "2026-09-30",
+          "note": "EPH Ouled Mohamed is in Chlef, not Oued Fodda: the generator matched the name token OULED to the commune Oued Fodda. Commune and building point read off the map by the project owner."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "07-ehs-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 34.8,
+        "lng": 5.751048,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 34.849784,
+        "lng": 5.742165,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=34.849784,5.742165",
+          "checked_at": "2026-09-30",
+          "note": "EHS Mere et Enfant Biskra, building point read off the map by the project owner. The Biskra commune centre sits about 5 km from the city, so the centroid fallback was far out."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "07-eph-01",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 34.8,
+        "lng": 5.751048,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 34.8495918,
+        "lng": 5.7435019,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=34.8495918,5.7435019",
+          "checked_at": "2026-09-30",
+          "note": "EPH Bachir Benacer Biskra, building point read off the map by the project owner."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "23-ehs-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.91129,
+        "lng": 7.666667,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 36.9093728,
+        "lng": 7.6766901,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.9093728,7.6766901",
+          "checked_at": "2026-09-30",
+          "note": "EHS Reeducation et Readaptation Fonctionnelle Seraidi, building point read off the map by the project owner."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "41-epsp-01",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.077309,
+        "lng": 7.821238,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 36.0768497,
+        "lng": 7.8309413,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.0768497,7.8309413",
+          "checked_at": "2026-09-30",
+          "note": "EPSP M'daourouch, building point read off the map by the project owner."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "42-ehs-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.569391,
+        "lng": 2.393549,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 36.5695179,
+        "lng": 2.3874644,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.5695179,2.3874644",
+          "checked_at": "2026-09-30",
+          "note": "EHS Psychiatrique Nador, building point read off the map by the project owner. The OSM node the generator used to match here stood in Cherchell and was wrong."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "43-epsp-01",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.395968,
+        "lng": 5.893333,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 36.3948107,
+        "lng": 5.8942551,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.3948107,5.8942551",
+          "checked_at": "2026-09-30",
+          "note": "EPSP Ain Beida Harriche, building point read off the map by the project owner."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "52-epsp-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 29.41005,
+        "lng": -3.25261,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "lat": 29.407419,
+        "lng": -3.258131,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=29.407419,-3.258131",
+          "checked_at": "2026-09-30",
+          "note": "EPSP Tabelbala, building point read off the map by the project owner. On the ground the facility is signed مستشفى الصحة الجوارية العياشي يعيش; the registry name is kept."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "16-ehs-03",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.75354,
+        "lng": 3.06228,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "commune": "Mohamed Belouzdad",
+        "commune_code": "1604"
+      },
+      "patch": {
+        "lat": 36.7343108,
+        "lng": 3.0529602,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified",
+        "commune": "Bir Mourad Rais",
+        "commune_code": "1609"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.7343108,3.0529602",
+          "checked_at": "2026-09-30",
+          "note": "EHS Chirurgie Cardiaque Clinique Mohamed Abderrahmani is in Bir Mourad Rais; the generator matched the given name Mohamed to the commune Mohamed Belouzdad. Building point read off the map by the project owner. The Arabic half of the same facility is 16-ehs-13; merging the two is tracked separately. The point is the building the owner identified; both half-records sit on it, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "16-ehs-13",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "lat": 36.720059,
+        "lng": 3.112637,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "commune": "Bachedjerah",
+        "commune_code": "1619"
+      },
+      "patch": {
+        "lat": 36.7343108,
+        "lng": 3.0529602,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified",
+        "commune": "Bir Mourad Rais",
+        "commune_code": "1609"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.7343108,3.0529602",
+          "checked_at": "2026-09-30",
+          "note": "The Arabic half-record of the same facility as 16-ehs-03, Clinique Mohamed Abderrahmani in Bir Mourad Rais. Building point read off the map by the project owner. The two records stay separate until the merge is decided. The point is the building the owner identified; both half-records sit on it, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "19-ehs-01",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": "Setif",
+        "commune_code": "1901",
+        "lat": 36.19112,
+        "lng": 5.415087,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "commune": "Setif",
+        "commune_code": "1901",
+        "lat": 36.2028454,
+        "lng": 5.3596222,
+        "geo_precision": "exact",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.2028454,5.3596222",
+          "checked_at": "2026-09-30",
+          "note": "Centre Anti Cancereux Setif, building point read off the map by the project owner. The point sits between the Setif and Ain Arnat commune centres, 5.1 km and 4.5 km away, so the commune is decided by point in polygon against the committed OpenStreetMap commune outlines, which put it inside Setif 1901. Two OSM clinics had been matched to this record in turn, the last a tuberculosis and respiratory-disease service, and neither is the anti-cancer centre."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "16-ehs-04",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": null,
+        "commune_code": null,
+        "lat": null,
+        "lng": null,
+        "geo_precision": null,
+        "geo_method": null
+      },
+      "patch": {
+        "commune": "Dely Ibrahim",
+        "commune_code": "1623",
+        "lat": 36.767844,
+        "lng": 3.0016057,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.767844,3.0016057",
+          "checked_at": "2026-09-30",
+          "note": "CNMS Dr Maouche Mohand Amokrane, one facility in Dely Ibrahim, located by the project owner. Point in polygon against the committed OpenStreetMap commune outlines puts it inside Dely Ibrahim 1623, not the Ben Aknoun centre 1.2 km away. The Arabic half of the same facility is 16-ehs-14; both sit on this point, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
+        }
+      ]
+    },
+    {
+      "file": "sante.json",
+      "record_id": "16-ehs-14",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "commune": "Mohamed Belouzdad",
+        "commune_code": "1604",
+        "lat": 36.75354,
+        "lng": 3.06228,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid"
+      },
+      "patch": {
+        "commune": "Dely Ibrahim",
+        "commune_code": "1623",
+        "lat": 36.767844,
+        "lng": 3.0016057,
+        "geo_precision": "approximate",
+        "geo_method": "owner_verified"
+      },
+      "evidence": [
+        {
+          "url": "https://www.google.com/maps?q=36.767844,3.0016057",
+          "checked_at": "2026-09-30",
+          "note": "The Arabic half-record of the same facility as 16-ehs-04, the CNMS Dr Maouche Mohand Amokrane in Dely Ibrahim, located by the project owner. It had the Mohamed Belouzdad commune centre, reached on the given name alone. The registry writes the name محمد where the owner reads محند; the registry name is kept."
+        }
+      ]
+    }
+  ]
 }

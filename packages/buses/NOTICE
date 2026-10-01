@@ -1,6 +1,10 @@
 @geoalgeria/buses data notices
 
-Package code is licensed under the MIT License in LICENSE.
+Package code is licensed under the MIT License in LICENSE. The Line data is not:
+it is © the respective Operators and redistributed for reference, except for the
+Wikipedia-derived and OpenStreetMap-derived parts named below, which carry an
+open licence. No SPDX expression states this, so the package declares
+"SEE LICENSE IN LICENSE" and the terms are prose.
 
 ETUSA Line attributes derived from French Wikipedia are licensed CC BY-SA 4.0:
 https://creativecommons.org/licenses/by-sa/4.0/
@@ -11,7 +15,7 @@ available under the Open Database License (ODbL) 1.0. Attribution:
 © OpenStreetMap contributors
 https://www.openstreetmap.org/copyright
 
-LicenseRef-Operator-Data
+Operator Line data, no open licence
 
 Factual Line identities, endpoints, stop counts, and service hours attributed
 to ETUS Tiaret, ETUSTO, ETUS Béjaïa, ETUS M'Sila, ETUS Sidi Bel Abbès,

@@ -2,20 +2,22 @@
 
 # GeoAlgeria
 
-> The Algerian geodata package, 69 wilayas, 556 dairas, 1,541 communes. One `npm install` away.
+> The Algerian geodata package, 69 wilayas, 551 dairas, 1,541 communes. One `npm install` away.
 
 Still copy-pasting wilaya lists from PDFs? Still using datasets stuck at 48 wilayas? GeoAlgeria is the first CI-validated, npm-installable Algerian geodata, updated for the 2026 reform. JSON, CSV, GeoJSON, SQL, TypeScript.
 
 [![CI](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml/badge.svg)](https://github.com/yasserstudio/geoalgeria/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
 [![npm downloads](https://img.shields.io/npm/dm/geoalgeria)](https://www.npmjs.com/package/geoalgeria)
-[![License: MIT AND ODbL-1.0](https://img.shields.io/badge/License-MIT%20AND%20ODbL--1.0-green.svg)](LICENSE)
+[![License: see LICENSE](https://img.shields.io/badge/License-MIT%20code%2C%20mixed%20data-green.svg)](LICENSE)
 
 ---
 
 ## Quick Facts
 
-Algeria has **69 wilayas** (provinces), **556 dairas** (districts), and **1,541 communes** (municipalities), official since **April 2026**. This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **556 dairas** (the daira table is still short of the official 564; see the [changelog](CHANGELOG.md)). Last validated: July 2026.
+Algeria has **69 wilayas** (provinces) and **1,541 communes** (municipalities), official since **April 2026**, each wilaya divided into dairas (districts). This reflects two territorial reforms: Law 19-12 (2019, added wilayas 49–58) and Law n° 26-06 of 4 April 2026 (adding wilayas 59–69), published in the [*Journal Officiel* n° 25 of 5 April 2026](https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf). GeoAlgeria models all 69 post-reform wilayas with postal codes, GPS coordinates, and bilingual names. This release ships all **1,541 commune records** and **551 dairas in the dataset**. That is this dataset's own count, not an official total: no post-2026 national daira total has been published (decree 26-206 of 25 May 2026 names the chefs-lieux only), and the 564 this README used to call official included 9 phantom dairas produced by 13 duplicate commune records, as the [changelog](CHANGELOG.md) records for v1.1.2. Last validated: September 2026.
+
+**142 of the 551 are settled by decree.** Executive decree n° 26-253 of 15 July 2026, published in the *Journal Officiel* n° 52 of 21 July 2026, fixes the communes each daira chief administers in wilayas 3, 5, 7, 12, 13, 14, 17, 26, 28, 32 and 59–69, and names 142 dairas there. It leaves the other 48 wilayas under decree n° 91-306 of 24 August 1991, whose lists this dataset holds and which come to 409. The reading of the annex is in [`research/_dairas/`](../../research/_dairas/).
 
 ---
 
@@ -66,7 +68,7 @@ const dz = require('geoalgeria');
 
 dz.wilayas;                    // all 69 wilayas
 dz.communes;                   // all 1,541 communes
-dz.dairas;                     // all 556 dairas
+dz.dairas;                     // all 551 dairas
 dz.ecommerce;                  // flat dataset for address forms
 dz.postOffices;                // 3,908 Algérie Poste offices
 dz.atms;                       // 2,026 ATMs
@@ -143,7 +145,7 @@ Download `data/geojson/communes.geojson` from this repo, standard GeoJSON, works
 |------|--------|---------|----------|
 | `data/algeria.json` | JSON | 69 wilayas + communes | Single-file usage |
 | `data/wilayas.json` | JSON | 69 | Wilaya list only |
-| `data/dairas.json` | JSON | 556 | Daira list with commune counts |
+| `data/dairas.json` | JSON | 551 | Daira list with commune counts |
 | `data/name-history.json` | JSON | 210 | Former spellings of wilaya and commune names, with the text that replaced each |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | The chef-lieu of each wilaya, with the decree, article, item and page that fixes it |
 | `data/communes_w*.json` | JSON | 1,541 | Detailed commune data |
@@ -247,7 +249,7 @@ Found wrong data? [Open an issue](https://github.com/yasserstudio/geoalgeria/iss
 
 ## Sponsor
 
-GeoAlgeria is free, MIT code and an MIT compilation with two ODbL parts named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
+GeoAlgeria is free: MIT code and an MIT compilation, with two ODbL parts and the mirrored Algérie Poste data named below. If it saves you time, [**sponsor its maintenance**](https://github.com/sponsors/yasserstudio), sponsorships fund keeping the data current through every reform and expanding GeoAlgeria toward *all* kinds of open Algeria data.
 
 ---
 
@@ -289,13 +291,22 @@ Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contri
 licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
-- 62 of the 1,541 commune centre coordinates, each taken from that commune's own
-  `admin_level=8` relation (56 from its `admin_centre` node on 2026-09-27, 6 from the relation
-  centroid in 2.1.0), wherever those values appear.
+- 256 of the 1,541 commune centre coordinates, each taken from that commune's own
+  `admin_level=8` relation (250 from its `admin_centre` node, 56 on 2026-09-27, 189 on
+  2026-09-29 and 5 on 2026-10-01, and 6 from the relation centroid in 2.1.0), wherever those
+  values appear.
 
 If you use or redistribute either part you must **attribute OpenStreetMap contributors** and
-keep derived databases under a compatible licence. Per-part attribution and the affected rows
-are in [NOTICE](NOTICE).
+keep derived databases under a compatible licence.
+
+The mirrored postal data under `data/poste/` carries **Algérie Poste's** own terms, not the MIT
+License: **Data © Algérie Poste; redistributed for reference**, the same terms
+[`@geoalgeria/poste`](https://www.npmjs.com/package/@geoalgeria/poste) states. Verify against
+Algérie Poste for authoritative, real-time information.
+
+Because the data is under three sets of terms, the manifest declares
+`SEE LICENSE IN LICENSE` rather than an SPDX expression. Per-part attribution and the affected
+rows are in [NOTICE](NOTICE).
 
 Made with care by [Yasser's Studio](https://yasser.studio) | [geoalgeria.com](https://geoalgeria.com)
 
