@@ -33,16 +33,10 @@ import { fileURLToPath } from "node:url";
 import { metresBetween } from "../lib/seat-evidence.mjs";
 import { REPO_ROOT, loadSnapshots } from "./snapshots.mjs";
 import { SEAT_DELTA_KM, reviewCommuneCentres } from "./engine.mjs";
+import { WINNER_LICENCE } from "./layers/index.mjs";
 import { AGREEMENT_KM, COPY_RADIUS_M, MIN_EXACT_RECORDS, MOVE_CAP_KM } from "./thresholds.mjs";
 
 const DIR = join(REPO_ROOT, "research", "_commune-centres");
-
-/** The licence a shipped coordinate carries, by the Candidate that won it. */
-export const WINNER_LICENCE = {
-  osm_seat: "ODbL 1.0, (c) OpenStreetMap contributors",
-  wikidata: "CC0 1.0 Universal (Wikidata statements)",
-  record_median: "derived from this repository's own published records; the terms of the packages they come from",
-};
 
 /** Put the communes a ledger corrected back at their `from`, so a landed run replays. */
 export function rewind(snapshots, ledgers) {

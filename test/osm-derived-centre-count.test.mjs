@@ -26,7 +26,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { CORRECTION_FILES } from "../scripts/lib/commune-corrections.mjs";
-import { WINNER_LICENCE } from "../scripts/review/run.mjs";
+import { WINNER_LICENCE } from "../scripts/review/layers/index.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");

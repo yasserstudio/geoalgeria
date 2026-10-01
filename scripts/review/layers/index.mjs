@@ -20,3 +20,15 @@ export const SANITY_LAYER = l0Sanity;
 export const CLAIM_LAYERS = [l1OsmSeat, l1Wikidata, l2RecordMedian, l3GoogleVerdict];
 
 export { l0Sanity, l1OsmSeat, l1Wikidata, l2RecordMedian, l3GoogleVerdict };
+
+/**
+ * The licence a shipped coordinate carries, by the Candidate that won its Consensus.
+ *
+ * Derived from the layers rather than restated, so a layer's terms are written once: a
+ * winning Candidate IS the point the layer that produced it stated, and it carries that
+ * layer's licence. The L3 verdict layer is absent on purpose; it states no coordinate and
+ * so can never be the provenance of a published value (ADR 0001 rule 6).
+ */
+export const WINNER_LICENCE = Object.fromEntries(
+  CLAIM_LAYERS.filter((l) => l !== l3GoogleVerdict).map((l) => [l.source, l.licence]),
+);
