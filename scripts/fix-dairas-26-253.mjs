@@ -311,11 +311,14 @@ patchCsv(join(DATA, "ecommerce", "communes.csv"), 8, (f) => {
   f[3] = dairaFor(code, f[3]);
 });
 
-// code,…,communes_count,dairas_count,post_reform_communes,post_reform_dairas
+// code,…,communes_count,dairas_count,post_reform_communes,post_reform_dairas,capital_commune_code
 // A wilaya that predates the 2026 reform states its pre-reform figures in
 // communes_count/dairas_count and its post-reform ones in the two post_reform
-// columns; a reform wilaya has only ever had the one, in dairas_count.
-patchCsv(join(DATA, "wilayas.csv"), 11, (f) => {
+// columns; a reform wilaya has only ever had the one, in dairas_count. The 12th
+// column is `capital_commune_code`, added in the batch this script's fix shipped in;
+// the width stays stated so a column arriving or leaving fails here rather than
+// shifting the field this patch writes.
+patchCsv(join(DATA, "wilayas.csv"), 12, (f) => {
   const code = Number(f[0]);
   if (!ANNEXED.has(code)) return;
   f[code >= 59 ? 8 : 10] = String(dairasByWilaya.get(code) ?? 0);
@@ -357,11 +360,19 @@ function patchSql(path, patch, header) {
   queueText(path, out.join("\n"));
 }
 
+// A wilaya row prints 9 fields too since `capital_commune_code` was added, so field
+// count alone no longer tells the two tables apart: read as a commune, wilaya 3's
+// row had its postal code '03000' overwritten with the daira name 'Laghouat'. The
+// `created` literal in field 7 is the discriminator, the same one
+// scripts/fix-jo-corrections.mjs uses.
+// wilayas: (code, 'name_fr', 'name_ar', 'phone', 'postal', lat, lng, 'created', capital)
+const isWilayaSqlRow = (f) => f.length === 9 && /^'(?:original|2019|2026)'$/.test(f[7]);
+
 // communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune)
 patchSql(
   join(DATA, "sql", "full.sql"),
   (f) => {
-    if (f.length !== 9) return false;
+    if (f.length !== 9 || isWilayaSqlRow(f)) return false;
     const daira = sqlQuote(dairaFor(Number(f[8]), sqlUnquote(f[4])));
     if (daira === f[4]) return false;
     f[4] = daira;
