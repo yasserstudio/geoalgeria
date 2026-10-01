@@ -218,7 +218,7 @@ address stored before a correction still resolves.
 `geojson/wilaya-boundaries.geojson` — 69 features (68 `Polygon`, 1 `MultiPolygon` for Alger),
 `properties.code` joining to `wilayas.json`. Derived from OpenStreetMap `admin_level=4`
 relations (**ODbL 1.0, © OpenStreetMap contributors**, one of the two carve-outs from this
-package's MIT licence; the other is the 255 OpenStreetMap-derived commune centres below) and
+package's MIT licence; the other is the 256 OpenStreetMap-derived commune centres below) and
 simplified with mapshaper (`dp 2%`, `keep-shapes`), coordinates rounded to 3 decimals.
 
 Display-grade, not survey-grade: the median gap between kept vertices is 3.4 km, so the
@@ -245,7 +245,7 @@ Neither is a defect re-sourcing from OSM would fix: a live pull reproduces both.
 A commune's `latitude`/`longitude` is its chef-lieu, not the polygon centroid of its
 territory, so it is a point in the built-up centre of the commune.
 
-249 of them were corrected from the `admin_centre` node of the commune's OpenStreetMap
+250 of them were corrected from the `admin_centre` node of the commune's OpenStreetMap
 `admin_level=8` relation, in three passes. 56 on 2026-09-27, after a sweep of all 1,541
 against the wilaya polygons found 68 outside their own wilaya: Alger Centre had been in
 the sea east of the port and Bethioua inside the Arzew industrial complex. 189 more on
@@ -270,14 +270,17 @@ put the town at the seat instead: the wilaya's own published point, from its
 other packages place inside this commune's own OpenStreetMap outline. Over all 69 capitals
 that selects exactly these four.
 
-A fifth capital moved in the same batch and is **not** OpenStreetMap-derived. Beni-Abbes
-(5201) sat 5,690 m from its town centre, and the two-claim criterion could not decide it,
-because wilaya 52's own point is 6,735 m from the repudiated centre and 8,544 m from the
-town: that point is itself about 8.5 km out. So its coordinate is the one the project
-owner read off a map on 2026-10-01, cross-checked against the exact-record median (210 m,
-against 5,628 m for the repudiated centre) and against the commune's own `admin_centre`
-node (268 m). It carries this package's MIT compilation terms, not ODbL, and is counted in
-neither figure below.
+A fifth capital moved in the same batch, and it is the same source. Beni-Abbes (5201) sat
+5,754 m from its town centre, and the two-claim criterion could not nominate it, because
+wilaya 52's own point is 6,735 m from the repudiated centre and 8,786 m from the town: that
+point is itself about 8.8 km out. The project owner raised it instead, reading the town
+centre off Google Maps on 2026-10-01. **That reading is not what ships.** The rule from
+that day is that a coordinate read off a proprietary map may only confirm an open source,
+within 500 m, and the open coordinate is what is published, so the value here is the
+commune's own `admin_centre` node and the reading is recorded beside it as the
+confirmation, 268 m away. The exact-record median is 139 m from the published value,
+against 5,628 m from the repudiated one. It is ODbL like the other four and is counted
+below.
 
 Six more were replaced in version 2.1.0 with the centroid of the commune's own
 `admin_level=8` relation, after they had shared a placeholder point with a neighbour:
@@ -286,10 +289,10 @@ Makhda (2915) and El Euch (3427). Si Mahdjoub (2644) and El Achir (3407) shared 
 placeholder with two of those but were left as they were, so they are still on their
 pre-2.1.0 values and carry no OpenStreetMap provenance.
 
-**Licence.** Those 255 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
+**Licence.** Those 256 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
 copy of them in `algeria.json`, `communes_w*.json`, `csv/communes.csv`,
 `geojson/communes.geojson` and `sql/full.sql`. Reusing them means attributing OpenStreetMap
-contributors and keeping derived databases under a compatible licence. The other 1,286
+contributors and keeping derived databases under a compatible licence. The other 1,285
 commune points carry no recorded source and are covered by the package's MIT licence; no
 ODbL claim is made over them. Per-part terms are in the package `LICENSE` and `NOTICE`, and
 the per-source breakdown is in `geojson/communes.metadata.json`.
@@ -306,5 +309,5 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 - Algérie Poste for postal codes
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
 - OpenStreetMap `admin_level=8` commune relations (ODbL 1.0) for the wilaya 30/55 and 47/58 membership correction of 2026-09-29
-- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 249 commune centres corrected on 2026-09-27 (56), 2026-09-29 (189) and 2026-10-01 (4)
+- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 250 commune centres corrected on 2026-09-27 (56), 2026-09-29 (189) and 2026-10-01 (5)
 - OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 6 commune centres replaced in version 2.1.0

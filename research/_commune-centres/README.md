@@ -377,17 +377,24 @@ sat 3 to 6 km from the seat of the town they are the chef-lieu of:
 | 717 | El Kantara | 61 | `5.666831, 35.192365` | `5.709284, 35.223115` | 5,154 m | OSM node [427910708](https://www.openstreetmap.org/node/427910708) |
 | 2501 | Constantine | 25 | `6.642433, 36.365` | `6.608428, 36.364164` | 3,046 m | OSM node [27564946](https://www.openstreetmap.org/node/27564946) |
 | 3201 | El Bayadh | 32 | `1.020278, 33.721667` | `1.018245, 33.684319` | 4,157 m | OSM node [452440133](https://www.openstreetmap.org/node/452440133) |
-| 5201 | Beni-Abbes | 52 | `-2.17, 30.08` | `-2.16635, 30.131076` | 5,690 m | the Owner, 2026-10-01 |
+| 5201 | Beni-Abbes | 52 | `-2.17, 30.08` | `-2.169031, 30.131743` | 5,754 m | OSM node [1573488063](https://www.openstreetmap.org/node/1573488063), confirmed by the Owner |
 
-The fifth row is a different kind of claim from the other four and the ledger says
-so in a field, `decided_by`, not only in prose. Biskra, El Kantara, Constantine
-and El Bayadh carry their commune's OpenStreetMap `admin_centre` node, so they are
-**ODbL 1.0, (c) OpenStreetMap contributors** and they count toward the carve-out.
-Beni-Abbes carries a point the **Owner read off a map on 2026-10-01**, so it is
-**not OpenStreetMap-derived**, it carries the package's MIT compilation terms, and
-it is deliberately **not** counted among the 255. `test/osm-derived-centre-count
-.test.mjs` enforces that split from the ledger rather than from the prose: 250
-ledger rows, 249 OpenStreetMap-derived centres.
+All five published values are the commune's own OpenStreetMap `admin_centre` node,
+so all five are **ODbL 1.0, (c) OpenStreetMap contributors** and all five count
+toward the carve-out: 250 ledger rows, **256** OpenStreetMap-derived centres with
+the 6 relation centroids of 2.1.0, and 1,285 that carry no recorded source.
+
+The fifth row differs in how it was **nominated**, not in where its value comes
+from, and that distinction is the Owner's rule of 2026-10-01:
+
+> A coordinate a human reads off a proprietary map may only **confirm** an open
+> source, within 500 m, and it is the open coordinate that ships.
+
+So the Owner's Google Maps reading of Beni-Abbes is recorded in the row as
+`owner_confirmation`, naming what it confirms, where it was read and how far it
+sits from the published value (268 m). It is never `to`. No proprietary map is the
+provenance of any coordinate this package publishes, and the ledger-shape test
+fails any row that ships something other than its own `admin_centre` node.
 
 ## Why this needed a standard of its own
 
@@ -428,36 +435,36 @@ centre:
 
 Over all 69 capitals that two-claim criterion selects exactly four, and
 **Beni-Abbes is not one of them**. Its wilaya-point leg argues the wrong way: the
-wilaya 52 point is 6,735 m from the repudiated centre and 8,544 m from the
-corrected one, because that point is **itself** about 8.5 km from its capital's
-town centre. So the criterion could not decide it, and the test at the bottom of
+wilaya 52 point is 6,735 m from the repudiated centre and 8,786 m from the
+corrected one, because that point is **itself** about 8.8 km from its capital's
+town centre. So the criterion could not nominate it, and the test at the bottom of
 `test/capital-centre-near-seat.test.mjs` asserts that exclusion rather than
 tolerating it, so nothing here pretends the criterion settled the fifth row.
 
-## Beni-Abbes (5201): the Owner decided it, and it is cross-checked twice
+## Beni-Abbes (5201): the Owner nominated it, OpenStreetMap supplies the value
 
-The Owner supplied the town centre on 2026-10-01, read off a map, the same
-convention as the `owner_verified` points in `quality/overrides/sante.json`
-(reviewed 2026-09-30). One hand is not evidence on its own, so the row records two
-checks against sources it is not derived from:
+The criterion could not reach this row, so the Owner raised it, reading the town
+centre off Google Maps on 2026-10-01 and supplying `30.1310763, -2.1663499`. Under
+the rule above that reading is a confirmation, not a value: what ships is the
+commune's own `admin_centre` node, [1573488063](https://www.openstreetmap.org/node/1573488063),
+re-read live from `api.openstreetmap.org` the same day and stored in the row as
+`osm.admin_centre_point` so every check re-runs offline.
 
-| Check | Repudiated centre | Owner's point |
+| Check | Repudiated centre | Published value (the node) |
 | --- | --- | --- |
-| exact-record median, 40 records over 16 files | 5,628 m | **210 m** |
-| the commune's own OSM `admin_centre` node [1573488063](https://www.openstreetmap.org/node/1573488063) | 5,754 m | **268 m** |
+| exact-record median, 40 records over 16 files | 5,628 m | **139 m** |
+| the Owner's independent reading | 5,690 m | **268 m** |
 
 268 m is inside the 500 m at which two hands stop reading the same place, so the
-Owner's point and OpenStreetMap's node are one claim about one town centre, not
-two places. The node was re-read live from `api.openstreetmap.org` on 2026-10-01
-and its coordinate is stored in the row as `osm.admin_centre_point`, so the
-cross-check re-runs offline. The node value itself is **not** written: writing it
-would make the coordinate ODbL, and the Owner's reading is the deciding source.
-The relation (6530989) also still carries the pre-reform `ref:ONS` `0807`, which is
-why this row joined on that code plus the name inside the mother wilaya.
+Owner's reading and OpenStreetMap's node are one claim about one town centre rather
+than two places, and the reading corroborates the move instead of merely labelling
+it: it is 5,690 m from the value being repudiated. The relation (6530989) also
+still carries the pre-reform `ref:ONS` `0807`, which is why this row joined on that
+code plus the name inside the mother wilaya.
 
 ## Wilaya 52's own capital point is also wrong, and is not fixed here
 
-`wilayas.csv` puts wilaya 52 at `-2.1, 30.08`, which is 8,544 m from its capital's
+`wilayas.csv` puts wilaya 52 at `-2.1, 30.08`, which is 8,786 m from its capital's
 town centre. It is a separate record with a separate owner: **data PR #242 (#228)**
 edits every one of the five carriers that hold a wilaya point, adds
 `capital_commune_code` to the wilaya 52 row itself, ships the capital-point tests,
@@ -468,10 +475,10 @@ here would collide with that branch head-on, so it is reported instead.
 Two consequences for #242, both checked against its branch rather than guessed:
 
 - its capital-point check is **nearest commune centre**, and it still passes:
-  after this move 5201 is 8.54 km from the wilaya 52 point and the next nearest
+  after this move 5201 is 8.79 km from the wilaya 52 point and the next nearest
   centre, Igli (5205), is 26.89 km, so the nearest centre is still the capital.
 - its prose "**0.0 to 6.7 km** out for the rest" was measuring wilaya 52, and
-  becomes 0.0 to 8.5 km once this batch lands. That sentence needs updating when
+  becomes 0.0 to 8.8 km once this batch lands. That sentence needs updating when
   the two branches meet.
 
 ## Source
@@ -490,10 +497,12 @@ the commune outline, and asserts every claim that applies to that row **in both
 directions**: the corrected centre inside an absolute 2 km ceiling and the
 repudiated one outside it. A test that only checked the new value would have passed
 on the old one for three of the four, and "closer than before" is not a fact about
-one claim. Which claims apply is read from the row's `decided_by`, so Beni-Abbes is
-held to the facility median and to the 500 m Owner-against-node check, and its
-failing wilaya-point leg is asserted as a failure the ledger has to admit rather
-than quietly left out.
+one claim. Which claims apply is read from the row itself, so Beni-Abbes is held to
+the facility median and to the 500 m confirmation ceiling, and its failing
+wilaya-point leg is asserted as a failure the ledger has to admit rather than
+quietly left out. The ledger-shape test also refuses any row whose published value
+is not its own `admin_centre` node, which is how the confirmation rule is enforced
+rather than remembered.
 
 Dependents: 47 borrowed coordinates in four packages. 15 in
 `@geoalgeria/formation-professionnelle`, rebuilt by re-running its own generator

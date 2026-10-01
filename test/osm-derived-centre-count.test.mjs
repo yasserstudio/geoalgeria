@@ -57,13 +57,16 @@ function derive() {
   // A ledger row only counts if its value is the one the package ships: a correction
   // that was reverted, or never applied, carries no ODbL claim.
   //
-  // AND ONLY IF ITS VALUE CAME FROM OPENSTREETMAP. From 2026-10-01 a ledger can also
-  // carry a coordinate the Owner read off a map (`decided_by: "owner_verified"`), which
-  // is MIT like the rest of the compilation and makes no ODbL claim at all. Counting it
-  // would be claiming ODbL over a value OpenStreetMap never supplied, so it is counted
-  // separately and only the node-decided rows reach the carve-out. A row with no
-  // `decided_by` is an older ledger, where every row is a node correction by
-  // construction, which is asserted here rather than assumed.
+  // AND ONLY IF ITS VALUE CAME FROM OPENSTREETMAP. Every published coordinate does
+  // today, which is the Owner's rule of 2026-10-01: a reading taken off a proprietary
+  // map may only CONFIRM an open source, within 500 m, and the open coordinate is what
+  // ships (Beni-Abbes 5201 is the first row to carry such a confirmation, and its
+  // published value is its `admin_centre` node like every other row). The counting
+  // still turns on the row's own `decided_by` rather than on that rule holding, because
+  // a row that one day ships a non-open value must drop out of the carve-out instead of
+  // being counted by default. A row with no `decided_by` is an older ledger, where every
+  // row is a node correction by construction, which is asserted here rather than
+  // assumed.
   const fromAdminCentreNode = new Set();
   const ownerVerified = new Set();
   const perLedger = [];
@@ -83,7 +86,8 @@ function derive() {
         `commune ${row.code_commune}: decided_by ${JSON.stringify(decidedBy)} is neither deciding source, so its licence cannot be settled`,
       );
       if (decidedBy === "owner_verified") {
-        // The row has to say so itself, or "not ODbL" rests on this test alone.
+        // No row ships one today. If one ever does, it has to state its own licence,
+        // or "not ODbL" would rest on this test alone.
         assert.ok(
           row.owner_verified?.licence,
           `commune ${row.code_commune}: an owner_verified row must state its own licence, because it is the exception to the carve-out`,
@@ -91,6 +95,15 @@ function derive() {
         ownerVerified.add(row.code_commune);
         continue;
       }
+      // A confirmation is not a provenance: a row may record a reading taken off a
+      // proprietary map, but only as the check on an open value it agrees with, so the
+      // row still counts and the confirmation must say what it confirms.
+      if (row.owner_confirmation)
+        assert.equal(
+          row.owner_confirmation.confirms,
+          "osm_admin_centre_node",
+          `commune ${row.code_commune}: a confirmation must name the open source it confirms, or its terms are unsettled`,
+        );
       fromAdminCentreNode.add(row.code_commune);
     }
   }
@@ -128,14 +141,15 @@ test("the OpenStreetMap-derived commune centres are the applied ledger rows plus
     { generated: "2026-09-29", count: 189 },
     { generated: "2026-10-01", count: 5 },
   ]);
-  assert.equal(counts.fromAdminCentreNode, 249);
+  assert.equal(counts.fromAdminCentreNode, 250);
   assert.equal(counts.fromRelationCentroid, 6);
-  // Beni-Abbes (5201), the one coordinate the Owner read off a map. It is a correction
-  // the 2026-10-01 ledger carries and it is NOT in the ODbL carve-out, so 250 ledger
-  // rows still give 249 OpenStreetMap-derived centres.
-  assert.equal(counts.ownerVerified, 1);
-  assert.equal(counts.osmDerived, 255);
-  assert.equal(counts.rest, 1286);
+  // No published coordinate is a reading off a proprietary map. Beni-Abbes (5201) is the
+  // one row that carries such a reading, and it carries it as a confirmation of its
+  // `admin_centre` node, which is the value that ships; so all 250 ledger rows are in
+  // the carve-out and none is an owner-verified exception.
+  assert.equal(counts.ownerVerified, 0);
+  assert.equal(counts.osmDerived, 256);
+  assert.equal(counts.rest, 1285);
 });
 
 test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no other", () => {

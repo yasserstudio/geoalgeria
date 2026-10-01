@@ -4,7 +4,7 @@
   "inputs": [
     {
       "path": "packages/agriculture/data/agriculture.json",
-      "sha256": "9c0e27876c3c64cae26d763a6630ccaa957a428853316f00eb37e526ae071846"
+      "sha256": "1a809b46ac12d07b7a5f5d5d169de46e6fe7ce1564e0ce2b427658e5ed5feebe"
     },
     {
       "path": "packages/agriculture/data/metadata.json",
@@ -80,7 +80,7 @@
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.metadata.json",
-      "sha256": "d06dd0d73c6122c95d78cd5fa486be11d752e703175c2dbfa4b359632e47af9f"
+      "sha256": "7aff147e37197fa4f64baf5debfa5add23d128530aad115e2164188dff14cdea"
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
@@ -252,7 +252,7 @@
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "8877a64f9c7e1e8d1a0f563f0fbcc6bdbc6e65f10537dcb9738cab9f6829a32b"
+      "sha256": "b5327056b3c53822b883dbc428a17cd895c12211064c816efce305a5587aec62"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -2832,7 +2832,7 @@
         "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
         "The commonly quoted '~150 m' figure describes the COORDINATE QUANTISATION (3 decimal places ≈ 111 m in latitude, ≈ 96 m in longitude at 30°N), not the simplification error. Douglas-Peucker at 2% left a median vertex spacing of 3.4 km, so the polygon can depart from the true border by far more than 150 m along any simplified stretch. Treat these as display-grade boundaries (good to about z11), not as a survey-grade border test.",
         "Superseded predecessor: the same file was built from GADM 4.1 before f107d6a; app-repo scripts/prepare-boundaries.mjs still builds that version and must never be re-run. An unverified OSM re-extraction is parked on the app-repo branch chore/osm-boundaries and was deliberately NOT used here.",
-        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT. The package also mirrors data/poste under Algérie Poste's own terms, so its data is under three sets of terms and no SPDX expression states them: the package declares SEE LICENSE IN LICENSE and its descriptor carries prose conditionsOfAccess rather than a licence URL. This file is one of the two ODbL carve-outs; the other is the 255 OpenStreetMap-derived commune centre coordinates."
+        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT. The package also mirrors data/poste under Algérie Poste's own terms, so its data is under three sets of terms and no SPDX expression states them: the package declares SEE LICENSE IN LICENSE and its descriptor carries prose conditionsOfAccess rather than a licence URL. This file is one of the two ODbL carve-outs; the other is the 256 OpenStreetMap-derived commune centre coordinates."
       ]
     }
   }

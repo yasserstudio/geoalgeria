@@ -24,7 +24,7 @@ SOFTWARE.
 
 ## Data
 
-Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 255 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
+Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 256 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
 
 In detail, the data is compiled from public official sources. The compilation of
 wilayas, dairas, communes, their bilingual names, postal codes and administrative
@@ -38,8 +38,8 @@ https://opendatacommons.org/licenses/odbl/1-0/
 
 - The 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`,
   derived from OpenStreetMap `admin_level=4` relations.
-- 255 commune centre coordinates (`latitude` and `longitude`), each taken from
-  that commune's own OpenStreetMap `admin_level=8` relation: 249 from its
+- 256 commune centre coordinates (`latitude` and `longitude`), each taken from
+  that commune's own OpenStreetMap `admin_level=8` relation: 250 from its
   `admin_centre` node, 56 corrected on 2026-09-27, 189 on 2026-09-29 and 4 on
   2026-10-01, and 6 from the relation centroid, corrected in version 2.1.0. Those coordinates are
   repeated in
