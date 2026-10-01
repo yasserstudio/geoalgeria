@@ -120,7 +120,9 @@ function queueRow(decision, snapshots) {
     seat_delta_m: decision.seat_delta_m,
     published: snapshots.byCode.get(decision.code_commune).point,
     candidates: decision.candidates,
-    votes: decision.votes.map((v) => ({
+    // Every Vote cast, because a queued row usually has no leading answer and
+    // `decision.votes` would be empty exactly where the Owner needs to see them.
+    votes: decision.all_votes.map((v) => ({
       source: v.source,
       layer: v.layer,
       snapshot: v.snapshot,

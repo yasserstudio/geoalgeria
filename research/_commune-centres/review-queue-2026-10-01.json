@@ -108,7 +108,40 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 1842,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 983,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
+          "distance_m": 1842,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "record_median",
+          "distance_m": 983,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -266,14 +299,6 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 172,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
@@ -287,6 +312,38 @@
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
           "distance_m": 398,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
+          "distance_m": 172,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "wikidata",
+          "distance_m": 417,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "record_median",
+          "distance_m": 398,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "record_median",
+          "distance_m": 417,
           "copied": false
         }
       ],
@@ -424,18 +481,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 172,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 172,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 172,
           "copied": false
         }
@@ -610,18 +667,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 66,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 66,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 66,
           "copied": false
         }
@@ -914,18 +971,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 62,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 62,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 62,
           "copied": false
         }
@@ -1100,18 +1157,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 50,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 50,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 50,
           "copied": false
         }
@@ -1628,18 +1685,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 225,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 225,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 225,
           "copied": false
         }
@@ -1812,7 +1869,32 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "published",
+          "distance_m": 1564,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 80,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
+          "distance_m": 80,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -1972,6 +2054,22 @@
       ],
       "votes": [
         {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 1018,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "wikidata",
+          "distance_m": 1027,
+          "copied": false
+        },
+        {
           "source": "osm_seat",
           "layer": "L1",
           "snapshot": "2026-09-29T12:54:47Z",
@@ -1980,11 +2078,11 @@
           "copied": false
         },
         {
-          "source": "record_median",
-          "layer": "L2",
+          "source": "wikidata",
+          "layer": "L1",
           "snapshot": "2026-10-01",
-          "voted_for": "osm_seat",
-          "distance_m": 1018,
+          "voted_for": "record_median",
+          "distance_m": 1027,
           "copied": false
         }
       ],
@@ -2144,18 +2242,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 395,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 395,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 395,
           "copied": false
         }
@@ -2330,18 +2428,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 309,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 309,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 309,
           "copied": false
         }
@@ -3050,7 +3148,16 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "published",
+          "distance_m": 988,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -3223,6 +3330,22 @@
       ],
       "votes": [
         {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 56,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 98,
+          "copied": false
+        },
+        {
           "source": "osm_seat",
           "layer": "L1",
           "snapshot": "2026-09-29T12:54:47Z",
@@ -3231,11 +3354,11 @@
           "copied": false
         },
         {
-          "source": "wikidata",
+          "source": "osm_seat",
           "layer": "L1",
-          "snapshot": "2026-10-01",
-          "voted_for": "osm_seat",
-          "distance_m": 56,
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "record_median",
+          "distance_m": 98,
           "copied": false
         }
       ],
@@ -3385,18 +3508,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 705,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 705,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 705,
           "copied": false
         }
@@ -3507,18 +3630,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 139,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 139,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 139,
           "copied": false
         }
@@ -3629,18 +3752,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 110,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 110,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 110,
           "copied": false
         }
@@ -4056,18 +4179,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 162,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 162,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 162,
           "copied": false
         }
@@ -4282,7 +4405,32 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "published",
+          "distance_m": 830,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 621,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
+          "distance_m": 621,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -4892,18 +5040,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 221,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 221,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 221,
           "copied": false
         }
@@ -5014,18 +5162,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 309,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 309,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 309,
           "copied": false
         }
@@ -5136,18 +5284,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 84,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 84,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 84,
           "copied": false
         }
@@ -5258,18 +5406,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 116,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 116,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 116,
           "copied": false
         }
@@ -5380,18 +5528,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 205,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 205,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 205,
           "copied": false
         }
@@ -5502,18 +5650,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 168,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 168,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 168,
           "copied": false
         }
@@ -5632,7 +5780,16 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "published",
+          "distance_m": 1472,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -6108,7 +6265,32 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "published",
+          "distance_m": 906,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 928,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "record_median",
+          "distance_m": 928,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -6268,18 +6450,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 69,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 69,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 69,
           "copied": false
         }
@@ -6444,18 +6626,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 145,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 145,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 145,
           "copied": false
         }
@@ -6566,18 +6748,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 74,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 74,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 74,
           "copied": false
         }
@@ -6688,18 +6870,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 181,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 181,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 181,
           "copied": false
         }
@@ -6818,7 +7000,64 @@
           "inside_outline": true
         }
       ],
-      "votes": [],
+      "votes": [
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "published",
+          "distance_m": 1463,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 53,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 1707,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
+          "distance_m": 53,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "wikidata",
+          "distance_m": 1674,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "record_median",
+          "distance_m": 1707,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "record_median",
+          "distance_m": 1674,
+          "copied": false
+        }
+      ],
       "silenced": [
         {
           "source": "osm_seat",
@@ -6949,6 +7188,14 @@
       ],
       "votes": [
         {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "osm_seat",
+          "distance_m": 66,
+          "copied": false
+        },
+        {
           "source": "osm_seat",
           "layer": "L1",
           "snapshot": "2026-09-29T12:54:47Z",
@@ -6957,11 +7204,19 @@
           "copied": false
         },
         {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "wikidata",
+          "distance_m": 74,
+          "copied": false
+        },
+        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
-          "voted_for": "osm_seat",
-          "distance_m": 66,
+          "voted_for": "record_median",
+          "distance_m": 74,
           "copied": false
         }
       ],
@@ -7647,18 +7902,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 727,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 727,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 727,
           "copied": false
         }
@@ -7779,18 +8034,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 267,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 267,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 267,
           "copied": false
         }
@@ -8132,18 +8387,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 164,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 164,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 164,
           "copied": false
         }
@@ -8254,18 +8509,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 456,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 456,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 456,
           "copied": false
         }
@@ -8494,18 +8749,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 121,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 121,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 121,
           "copied": false
         }
@@ -8616,18 +8871,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 55,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 55,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 55,
           "copied": false
         }
@@ -8738,18 +8993,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 60,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 60,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 60,
           "copied": false
         }
@@ -8860,18 +9115,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 54,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 54,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 54,
           "copied": false
         }
@@ -9147,18 +9402,18 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 165,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
+          "distance_m": 165,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
           "distance_m": 165,
           "copied": false
         }
@@ -9279,14 +9534,6 @@
       ],
       "votes": [
         {
-          "source": "osm_seat",
-          "layer": "L1",
-          "snapshot": "2026-09-29T12:54:47Z",
-          "voted_for": "wikidata",
-          "distance_m": 475,
-          "copied": false
-        },
-        {
           "source": "wikidata",
           "layer": "L1",
           "snapshot": "2026-10-01",
@@ -9300,6 +9547,38 @@
           "snapshot": "2026-10-01",
           "voted_for": "osm_seat",
           "distance_m": 1372,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "wikidata",
+          "distance_m": 475,
+          "copied": false
+        },
+        {
+          "source": "record_median",
+          "layer": "L2",
+          "snapshot": "2026-10-01",
+          "voted_for": "wikidata",
+          "distance_m": 1712,
+          "copied": false
+        },
+        {
+          "source": "osm_seat",
+          "layer": "L1",
+          "snapshot": "2026-09-29T12:54:47Z",
+          "voted_for": "record_median",
+          "distance_m": 1372,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "record_median",
+          "distance_m": 1712,
           "copied": false
         }
       ],
@@ -9439,10 +9718,10 @@
       ],
       "votes": [
         {
-          "source": "wikidata",
-          "layer": "L1",
+          "source": "record_median",
+          "layer": "L2",
           "snapshot": "2026-10-01",
-          "voted_for": "record_median",
+          "voted_for": "published",
           "distance_m": 332,
           "copied": false
         },
@@ -9450,7 +9729,15 @@
           "source": "record_median",
           "layer": "L2",
           "snapshot": "2026-10-01",
-          "voted_for": "published",
+          "voted_for": "wikidata",
+          "distance_m": 332,
+          "copied": false
+        },
+        {
+          "source": "wikidata",
+          "layer": "L1",
+          "snapshot": "2026-10-01",
+          "voted_for": "record_median",
           "distance_m": 332,
           "copied": false
         }

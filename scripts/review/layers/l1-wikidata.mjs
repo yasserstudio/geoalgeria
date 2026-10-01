@@ -2,8 +2,8 @@
 // relation points at.
 //
 // INDEPENDENT OF L1's SEAT ONLY SOMETIMES. Wikidata imports OpenStreetMap and the reverse
-// happens too: 20 of the 1,536 commune items carry their commune's seat node coordinate to
-// the metre. That is exactly what the copy radius in scripts/review/thresholds.mjs is for,
+// happens too: 19 of the 1,536 commune items are within a metre of their commune's seat node
+// coordinate and 325 within 50 m of it. That is exactly what the copy radius in scripts/review/thresholds.mjs is for,
 // so this layer states its Claim and the voting rules decide whether it is independent.
 //
 // Read from the committed snapshot research/_commune-centres/wikidata-reference.json,

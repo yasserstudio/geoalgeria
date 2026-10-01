@@ -580,8 +580,10 @@ answer blocks it, which is what `split_votes` is for.
 
 ## What the rules changed about the prototype
 
-Two readings of ADR 0001 had to be made explicit once there were four Candidates
-rather than the prototype's two, and both are in `scripts/review/votes.mjs`:
+Two readings of ADR 0001 had to be made explicit once there were four Candidates rather
+than the prototype's two. Both are in `scripts/review/votes.mjs`, and because they change
+what "two Votes for one Candidate" counts, both are written into the decision record as
+implementation notes for the Owner to confirm, and into `CONTEXT.md` as the term **Answer**:
 
 - **Candidates that agree are one answer.** The seat, the Wikidata point and the
   record median landing 400 m apart are the same answer stated three times. Counted as
@@ -592,9 +594,9 @@ rather than the prototype's two, and both are in `scripts/review/votes.mjs`:
   them voting for the other's Candidate; without this they still vote through a third
   Candidate in the same answer and the count reads as two independent Claims when it is
   one. The ledger names the silenced one under `not_independent` as a `copy_of` the one
-  that stands. It costs a Vote on 21% of
-  communes, because 20 Wikidata items carry their commune's seat node to the metre and
-  325 are within 50 m of it.
+  that stands. It bites often: 19 Wikidata items are within a metre of their commune's seat
+  node and 325 within 50 m of it, and over this run the rule silences a Vote on 24 of the 67
+  queued communes.
 
 ## The optional L3 layer, and why the ledger is not it
 
@@ -644,11 +646,28 @@ that list is down to 16, rebuilt with
 queue; the other 2 sit outside their own commune but within 3 km of their seat, so this
 engine never looked at them.
 
+## What release day still owes
+
+ADR 0001 rule 5 says a commune still undecided at release "keeps its published point and is
+listed in `record-exceptions.json` with its reason". That file,
+`research/_wilaya-containment/record-exceptions.json`, is about records that fall outside
+their declared wilaya, which is a different question from a commune centre, and its guard
+(`test/record-in-declared-wilaya.test.mjs`) finds the same set as before this batch, so
+nothing was added to it. 16 of the 67 undecided centres are listed in
+`containment-exceptions.json` because they sit outside their own commune; the other 51 exist
+only in `review-queue-2026-10-01.json`. If the Owner wants every undecided commune named in
+a committed list at release, that list is the queue file, and saying so in rule 5 is the
+amendment to make.
+
 ## Measuring the thresholds
 
 Every number in `scripts/review/thresholds.mjs` is measured on the committed snapshots,
 and the measurement is in the comment beside it. They were taken with the engine's own
 helpers:
+
+The run is replayed, not re-run: `rewind()` puts the corrected communes back at their
+`from`, which is the state the measurements were taken on and the state
+`test/review-decisions.test.mjs` asserts against.
 
 ```js
 // seat to record median, over the communes that have both: the AGREEMENT_KM
@@ -666,6 +685,16 @@ for (const c of s.communes) {
   d.push(metresBetween(m[0], m[1], seat[0], seat[1]));
 }
 d.sort((a, b) => a - b);
+```
+
+The Wikidata copy figures in `COPY_RADIUS_M` come from the same snapshot, by distance
+rather than by equality, so the radius each one is measured at is stated with it:
+
+```js
+// 212 published centres within a metre of their commune's Wikidata coordinate, 531
+// within 50 m; 19 of those coordinates within a metre of their commune's seat node,
+// 325 within 50 m
+const near = (a, b, m) => metresBetween(a[0], a[1], b[0], b[1]) <= m;
 ```
 
 `research/_commune-centres/wikidata-reference.json` is the CC0 snapshot the review reads

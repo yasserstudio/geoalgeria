@@ -75,3 +75,29 @@ each with the measurement that justifies it.
 - Google content never enters the published data or the public repository.
 - There is no confidence score anywhere: a decision is a count of named Votes, which a
   reader can check.
+
+## Implementation notes (2026-10-01, private tracker #243), FOR THE OWNER TO CONFIRM
+
+Building L0 to L2 showed that rules 2 to 4, read literally, settle almost nothing once
+there are four Candidates rather than the prototype's two, so the engine reads them in two
+ways this ADR did not state. Both are in `scripts/review/votes.mjs`, both are unit tested,
+and both are recorded here rather than left in a code comment, because they change what
+"two Votes for one Candidate" counts:
+
+1. **Candidates that agree with each other are one answer**, and Votes are counted per
+   answer. The seat, the Wikidata point and the record median landing 400 m apart are the
+   same answer stated three times. Counted as rival Candidates they take two Votes each,
+   rule 4's "none for another" is never satisfied, and every commune goes to the queue: a
+   run over the 136 open centres settles zero. An answer is a set of Candidates whose every
+   pair is within the agreement radius.
+2. **Two Claims within the copy radius of each other cast one Vote between them.** Rule 3
+   already stops each of them voting for the other's Candidate. Without this they still
+   vote through a third Candidate in the same answer, and two Claims that share a value
+   read as two independent readings. This is the same rule reaching the same case, and
+   `CONTEXT.md` records it under **Copied claim**.
+
+A third point follows from (1) and is a decision, not a reading: when an answer holds
+several Candidates, the one that ships is the published point if it is in the answer, then
+the OpenStreetMap seat, then the Wikidata point, then the record median, by how directly
+the source speaks about the commune's town. That ordering is why all 68 fixes of the first
+run carry the seat's value and therefore its licence.

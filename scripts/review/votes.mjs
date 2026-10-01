@@ -19,15 +19,16 @@
 //      when it is further than COPY_RADIUS_M from it (a Copied claim shares that value
 //      rather than confirming it, so it is not independent).
 //   2. Candidates that agree with each other, every pair within AGREEMENT_KM, are ONE
-//      answer. This is the step that keeps the count honest once there are four
-//      Candidates rather than the prototype's two: the seat, the Wikidata point and the
-//      record median landing 400 m apart are the same answer stated three times, and the
-//      Votes for them belong to that answer, not to three rivals that cancel out.
+//      Answer, and Votes are counted per Answer. This is the step that keeps the count
+//      honest once there are four Candidates rather than the prototype's two: the seat, the
+//      Wikidata point and the record median landing 400 m apart are the same Answer stated
+//      three times, and the Votes for them belong to that Answer, not to three rivals that
+//      cancel out. ADR 0001 implementation note 1; CONTEXT.md, Answer.
 //   3. Two Claims within COPY_RADIUS_M of EACH OTHER are Copied claims of one another,
 //      whichever way the copying went, so they cast one Vote for an answer between them and
 //      not two. Rule 1 already stops each of them voting for the other's Candidate; this is
 //      the same rule reaching the case where they both vote through a third Candidate in the
-//      same answer. CONTEXT.md, Copied claim.
+//      same Answer. ADR 0001 implementation note 2; CONTEXT.md, Copied claim.
 //   4. Consensus is an answer with at least CONSENSUS_VOTES distinct Votes while every
 //      Candidate outside it has none, and whose winning Candidate is inside the commune
 //      outline. Strong consensus is STRONG_CONSENSUS_VOTES Votes, or CONSENSUS_VOTES with
@@ -170,6 +171,11 @@ export function decide({ candidates, claims, isInsideOutline }) {
   });
 
   const report = {
+    // EVERY Vote cast, not only the leading answer's. A queued row is exactly the case
+    // where there is no leading answer, and those were the rows the Owner most needs to
+    // read: without this they shipped `votes: []` and the Votes survived only as bare
+    // source names under `answers`.
+    all_votes: candidates.flatMap((c) => votesFor.get(c.source)),
     candidates: candidates.map((c) => ({
       source: c.source,
       point: c.point,

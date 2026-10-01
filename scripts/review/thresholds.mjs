@@ -29,10 +29,12 @@ export const AGREEMENT_KM = 2;
  * MEASURED on the same pair: the seat and the record median are within 50 m of each
  * other for 34 of those 1,240 communes (2.7%), and the 5th percentile of that distance
  * is 69 m. Two independent Claims essentially never agree this closely. Agreement
- * under 50 m is instead the signature of one value reaching two files: 222 of the 1,536
- * published commune centres with a Wikidata item are that item's coordinate to the metre (7
- * of the 136 this run reviewed, which is the figure ADR 0001 quotes), and 20
- * Wikidata coordinates are their commune's OpenStreetMap seat node to the metre. 50 m is
+ * under 50 m is instead the signature of one value reaching two files. Of the 1,536
+ * published commune centres whose commune carries a Wikidata item, 212 are within a metre of
+ * that item's coordinate and 531 within 50 m; 19 of those Wikidata coordinates are within a
+ * metre of their commune's OpenStreetMap seat node and 325 within 50 m. Over the 136 centres
+ * this run reviewed it is 5 within a metre and 7 within 50 m, which is the seven ADR 0001
+ * quotes. 50 m is
  * the width of a town square, two orders of magnitude under AGREEMENT_KM, so the rule
  * drops copies and keeps every real agreement.
  */
@@ -81,6 +83,20 @@ export const OWNER_CONFIRMATION_KM = 0.5;
  * from their seat, so the cap is a narrow exception and not the rule.
  */
 export const MOVE_CAP_KM = 25;
+
+/**
+ * How far from its OpenStreetMap seat a published commune centre has to sit before the
+ * engine reviews it at all.
+ *
+ * MEASURED: this is the 2026-09-29 audit's own reporting threshold
+ * (research/_commune-centres/seat-distance-2026-09-29.md), kept so the set the engine
+ * settles is the set that audit left open and not a new selection of our own. A seat delta
+ * on its own is NOT a defect (the Owner's decision of 2026-09-29, private tracker #170);
+ * it is the question this engine answers. Over the 1,537 communes with a seat, 595 are
+ * more than 300 m out and 234 more than 1 km, so a lower figure would put the engine to
+ * work on disagreements nobody has called wrong.
+ */
+export const SEAT_DELTA_KM = 3;
 
 /** Votes needed for Consensus, and for Strong consensus (ADR 0001 rule 4). */
 export const CONSENSUS_VOTES = 2;

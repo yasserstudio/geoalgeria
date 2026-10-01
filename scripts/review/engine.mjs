@@ -19,15 +19,9 @@ import { metresBetween } from "../lib/seat-evidence.mjs";
 import { inCommuneOutline } from "../lib/commune-resolver.mjs";
 import { CLAIM_LAYERS, SANITY_LAYER } from "./layers/index.mjs";
 import { decide } from "./votes.mjs";
+import { SEAT_DELTA_KM } from "./thresholds.mjs";
 
-/**
- * How far from its seat a published centre has to sit before the engine reviews it.
- *
- * This is the 2026-09-29 audit's own reporting threshold
- * (research/_commune-centres/seat-distance-2026-09-29.md), kept so the set this engine
- * settles is the set that audit left open and not a new selection of our own.
- */
-export const SEAT_DELTA_KM = 3;
+export { SEAT_DELTA_KM };
 
 /** The commune codes under review, and why each one is in the set. */
 export function selectCommunes(snapshots) {
