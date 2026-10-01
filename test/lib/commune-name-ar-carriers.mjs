@@ -10,6 +10,8 @@ import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
+import { splitSqlRow, sqlUnquote } from "../../scripts/lib/sql-rows.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
 const readText = (...p) => readFileSync(join(DATA, ...p), "utf-8");
@@ -23,9 +25,6 @@ const csvRows = (text, width) =>
     .slice(1)
     .map((line) => line.split(","))
     .filter((fields) => fields.length === width);
-
-/** Unescape one SQL string literal, quotes included. */
-const unquote = (value) => value.slice(1, -1).replace(/''/g, "'");
 
 /**
  * Every carrier of a commune `name_ar`.
@@ -93,8 +92,8 @@ export const NAME_AR_CARRIERS = [
         rows.push({
           code: Number(fields[8]),
           wilaya_code: Number(fields[3]),
-          name_fr: unquote(fields[1]),
-          name_ar: unquote(fields[2]),
+          name_fr: sqlUnquote(fields[1]),
+          name_ar: sqlUnquote(fields[2]),
         });
       }
       return rows;
@@ -134,48 +133,11 @@ export const NAME_AR_CARRIERS = [
         rows.push({
           code: null,
           wilaya_code: Number(fields[4]),
-          name_fr: unquote(fields[1]),
-          name_ar: unquote(fields[2]),
+          name_fr: sqlUnquote(fields[1]),
+          name_ar: sqlUnquote(fields[2]),
         });
       }
       return rows;
     },
   ],
 ];
-
-/** Split one `(…)` VALUES body into its fields, honouring '' escaping. */
-export function splitSqlRow(body) {
-  const fields = [];
-  let current = "";
-  let quoted = false;
-  for (let i = 0; i < body.length; i++) {
-    const ch = body[i];
-    if (quoted) {
-      if (ch === "'" && body[i + 1] === "'") {
-        current += "''";
-        i++;
-        continue;
-      }
-      if (ch === "'") {
-        quoted = false;
-        current += ch;
-        continue;
-      }
-      current += ch;
-      continue;
-    }
-    if (ch === "'") {
-      quoted = true;
-      current += ch;
-      continue;
-    }
-    if (ch === ",") {
-      fields.push(current.trim());
-      current = "";
-      continue;
-    }
-    current += ch;
-  }
-  fields.push(current.trim());
-  return fields;
-}

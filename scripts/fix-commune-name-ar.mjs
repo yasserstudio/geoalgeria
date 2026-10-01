@@ -30,7 +30,8 @@ import { readFileSync, renameSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { NAME_AR_REPAIRS } from "./lib/commune-name-ar-repairs.mjs";
+import { NAME_AR_REPAIRS, repairsByCode, repairsByName } from "./lib/commune-name-ar-repairs.mjs";
+import { splitSqlRow, sqlQuote, sqlUnquote } from "./lib/sql-rows.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
@@ -40,13 +41,10 @@ const CHECK = process.argv.includes("--check");
 if (WRITE && CHECK) throw new Error("Choose either --write or --check");
 
 /** code_commune -> repair, and "wilaya|name_fr" -> repair for the code-less carriers. */
-const byCode = new Map();
-const byName = new Map();
-for (const repair of NAME_AR_REPAIRS) {
-  if (byCode.has(repair.code_commune)) throw new Error(`duplicate repair for ${repair.code_commune}`);
-  byCode.set(repair.code_commune, repair);
-  byName.set(`${repair.wilaya_code}|${repair.name_fr}`, repair);
-}
+const byCode = repairsByCode();
+const byName = repairsByName();
+if (byCode.size !== NAME_AR_REPAIRS.length) throw new Error("two repairs share a code_commune");
+if (byName.size !== NAME_AR_REPAIRS.length) throw new Error("two repairs share a (wilaya, name_fr)");
 
 const outputs = [];
 const problems = [];
@@ -170,45 +168,6 @@ patchCsv(join(DATA, "ecommerce", "communes.csv"), 8, (f) => {
 });
 
 // --- SQL --------------------------------------------------------------------
-/** Split one `(…)` VALUES body into its fields, honouring '' escaping. */
-function splitSqlRow(body) {
-  const fields = [];
-  let current = "";
-  let quoted = false;
-  for (let i = 0; i < body.length; i++) {
-    const ch = body[i];
-    if (quoted) {
-      if (ch === "'" && body[i + 1] === "'") {
-        current += "''";
-        i++;
-        continue;
-      }
-      if (ch === "'") {
-        quoted = false;
-        current += ch;
-        continue;
-      }
-      current += ch;
-      continue;
-    }
-    if (ch === "'") {
-      quoted = true;
-      current += ch;
-      continue;
-    }
-    if (ch === ",") {
-      fields.push(current.trim());
-      current = "";
-      continue;
-    }
-    current += ch;
-  }
-  fields.push(current.trim());
-  return fields;
-}
-const sqlQuote = (value) => `'${String(value).replace(/'/g, "''")}'`;
-const sqlUnquote = (value) => value.slice(1, -1).replace(/''/g, "'");
-
 function patchSql(path, patch) {
   const original = readFileSync(path, "utf8");
   const out = original.split("\n").map((line) => {

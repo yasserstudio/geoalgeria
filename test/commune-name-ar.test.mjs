@@ -1,10 +1,16 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
+import { join } from "node:path";
 import test from "node:test";
 
-import { NAME_AR_REPAIRS, TATWEEL, repairsByCode } from "../scripts/lib/commune-name-ar-repairs.mjs";
+import {
+  NAME_AR_REPAIRS,
+  TATWEEL,
+  repairsByCode,
+  repairsByName,
+} from "../scripts/lib/commune-name-ar-repairs.mjs";
+import { COMMUNE_COUNT } from "./lib/commune-carriers.mjs";
 import { NAME_AR_CARRIERS } from "./lib/commune-name-ar-carriers.mjs";
-
-const COMMUNE_COUNT = 1541;
 
 test("the repair set is one reviewed row per commune", () => {
   assert.equal(NAME_AR_REPAIRS.length, 23);
@@ -32,7 +38,7 @@ for (const [label, read] of NAME_AR_CARRIERS) {
     const rows = read();
     assert.equal(rows.length, COMMUNE_COUNT, `${label} holds ${rows.length} communes`);
     const byCode = repairsByCode();
-    const byName = new Map(NAME_AR_REPAIRS.map((r) => [`${r.wilaya_code}|${r.name_fr}`, r]));
+    const byName = repairsByName();
     let seen = 0;
     for (const row of rows) {
       const repair = row.code === null ? byName.get(`${row.wilaya_code}|${row.name_fr}`) : byCode.get(row.code);
@@ -63,4 +69,12 @@ test("both communes named Souk El Tenine spell it the same way", () => {
   const bejaia = rows.find((row) => row.code === 608);
   const tiziOuzou = rows.find((row) => row.code === 1557);
   assert.equal(bejaia.name_ar, tiziOuzou.name_ar);
+});
+
+test("the fix script agrees that every carrier is corrected", () => {
+  // The same acceptance the script's own --check runs, so a carrier that drifts
+  // fails here as well as under `node scripts/fix-commune-name-ar.mjs --check`.
+  execFileSync(process.execPath, [join(import.meta.dirname, "../scripts/fix-commune-name-ar.mjs"), "--check"], {
+    stdio: "pipe",
+  });
 });

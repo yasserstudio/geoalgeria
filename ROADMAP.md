@@ -94,11 +94,18 @@ reads as further along than it is.
   `name_ar` for dairas would let the clause return.
   _(logged 2026-08-13; tatweel half shipped 2026-10-01)_
 
-- [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
+- [x] **4 communes disagreed with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
-  coordinates ~1 degree apart. Which side is right is unresolved; verify
-  against Wikidata/OSM before touching either.
-  _(logged 2026-07-29)_
+  coordinates ~1 degree apart, and which side was right was unresolved.
+  **Closed 2026-10-01.** Three of the four were settled by the 2026-09-27 and
+  2026-09-29 commune-centre audits, which verified every centre against its own
+  OpenStreetMap commune boundary and corrected it there
+  (`research/_commune-centres/`); the app's remaining disagreement on Ouled Sidi
+  Brahim was point-in-polygon tested on the Web side and the app's value fell
+  outside wilaya 68 while this package's fell inside (ticket #179). There is no
+  app file to disagree with any more: ticket #239 retired the Web fork of this
+  table, and the app now serves this package's `algeria.json` byte for byte.
+  _(logged 2026-07-29, closed 2026-10-01)_
 
 - [ ] **39 records across packages sit geographically inside El Aricha (63)
   but still carry wilaya_code 13 or 22**, the boundary warnings the El Aricha
