@@ -287,17 +287,20 @@ Package **code** is [MIT](LICENSE), and so is the **compilation**: wilayas, dair
 their bilingual names, postal codes and administrative codes. Free for personal and commercial
 use.
 
-Two parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and are
-licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
+Three parts of the data come from **OpenStreetMap**, are **© OpenStreetMap contributors** and
+are licensed under the **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** instead:
 
 - the 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`;
 - 256 of the 1,541 commune centre coordinates, each taken from that commune's own
   `admin_level=8` relation (250 from its `admin_centre` node, 56 on 2026-09-27, 189 on
   2026-09-29 and 5 on 2026-10-01, and 6 from the relation centroid in 2.1.0), wherever those
-  values appear.
+  values appear;
+- 6 of the 69 wilaya capital points, which are the same values again: a wilaya's coordinates
+  are the centre of its capital commune, so wilayas 7, 16, 25, 32, 52 and 61 carry one of the
+  coordinates above. The other 63 wilaya capital points are not OpenStreetMap-derived.
 
-If you use or redistribute either part you must **attribute OpenStreetMap contributors** and
-keep derived databases under a compatible licence.
+If you use or redistribute any of those parts you must **attribute OpenStreetMap contributors**
+and keep derived databases under a compatible licence.
 
 The mirrored postal data under `data/poste/` carries **Algérie Poste's** own terms, not the MIT
 License: **Data © Algérie Poste; redistributed for reference**, the same terms

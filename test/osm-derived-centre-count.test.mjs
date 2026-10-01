@@ -263,6 +263,15 @@ const CAPITAL_CARRIERS = [
   ["dataset-metadata.json usageInfo", () => json(PKG, "dataset-metadata.json").usageInfo],
   ["packages/dataset/llms.txt", () => read(PKG, "llms.txt")],
   ["packages/dataset/data/README.md", () => read(PKG, "data", "README.md")],
+  ["packages/dataset/README.md", () => read(PKG, "README.md")],
+];
+
+/** The two locale READMEs carry the same claim in their own words, so the English shapes
+ *  above cannot read them. What is checkable across locales is the arithmetic and the
+ *  wilayas it covers, inside the ODbL bullet list, which is what drifts. */
+const CAPITAL_LOCALES = [
+  ["packages/dataset/README.fr.md", () => read(PKG, "README.fr.md")],
+  ["packages/dataset/README.ar.md", () => read(PKG, "README.ar.md")],
 ];
 
 test("every file that states which wilaya capital points are OpenStreetMap-derived states the derived set", () => {
@@ -296,6 +305,34 @@ test("every file that states which wilaya capital points are OpenStreetMap-deriv
       assert.match(
         text,
         new RegExp(`(?:^|[^\\d,])${code}[ ,()]`),
+        `${where}: does not name wilaya ${code} among the OpenStreetMap-derived capital points`,
+      );
+  }
+});
+
+test("the FR and AR READMEs state the same wilaya capital arithmetic as the English one", () => {
+  const { osmCapitals, restCapitals } = derive();
+  for (const [where, load] of CAPITAL_LOCALES) {
+    const text = load().replace(/\s+/g, " ");
+    // The ODbL bullet list only, so a number from elsewhere in the README cannot stand in
+    // for the claim. It runs from the licence heading to the attribution sentence after it.
+    const start = text.indexOf("ODbL 1.0");
+    const bullets = text.slice(start, text.indexOf("data/poste/", start));
+    assert.ok(bullets.length > 0, `${where}: no ODbL section to read`);
+    assert.match(
+      bullets,
+      new RegExp(`(?:^|[^\\d,])${osmCapitals.length} [^.;]*?(?:^|[^\\d,])69`),
+      `${where}: does not state that ${osmCapitals.length} of the 69 wilaya capital points are OpenStreetMap-derived`,
+    );
+    assert.match(
+      bullets,
+      new RegExp(`(?:^|[^\\d,])${restCapitals}(?![\\d])`),
+      `${where}: does not state the ${restCapitals} wilaya capital points that are not OpenStreetMap-derived`,
+    );
+    for (const code of osmCapitals)
+      assert.match(
+        bullets,
+        new RegExp(`(?:^|[^\\d,])${code}(?![\\d])`),
         `${where}: does not name wilaya ${code} among the OpenStreetMap-derived capital points`,
       );
   }
