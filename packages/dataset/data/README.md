@@ -245,8 +245,8 @@ Neither is a defect re-sourcing from OSM would fix: a live pull reproduces both.
 A commune's `latitude`/`longitude` is its chef-lieu, not the polygon centroid of its
 territory, so it is a point in the built-up centre of the commune.
 
-245 of them were corrected from the `admin_centre` node of the commune's OpenStreetMap
-`admin_level=8` relation, in two passes. 56 on 2026-09-27, after a sweep of all 1,541
+249 of them were corrected from the `admin_centre` node of the commune's OpenStreetMap
+`admin_level=8` relation, in three passes. 56 on 2026-09-27, after a sweep of all 1,541
 against the wilaya polygons found 68 outside their own wilaya: Alger Centre had been in
 the sea east of the port and Bethioua inside the Arzew industrial complex. 189 more on
 2026-09-29, after every one of the 1,541 was compared with its own relation's
@@ -259,6 +259,17 @@ away and inside its own commune either way, where containment alone is blind. Me
 per-row evidence (relation id, node id, Overpass `timestamp_osm_base`, the containment
 verdicts) and the 27 left undecided: `research/_commune-centres/` in the repository.
 
+Four more on 2026-10-01, and on a different standard, because containment cannot see their
+class: the wilaya capital communes Biskra (701), El Kantara (717), Constantine (2501) and
+El Bayadh (3201) each sat 3 to 6 km from the seat of the town they are the chef-lieu of,
+inside their own commune the whole time. A seat delta on its own is not a defect, which is
+why 132 non-capital centres are still more than 3 km from their seat and are left alone; a
+capital qualified only where two claims this repository did not take the value from both
+put the town at the seat instead: the wilaya's own published point, from its
+`admin_level=4` relation, and the geometric median of the `geo_precision: exact` records
+other packages place inside this commune's own OpenStreetMap outline. Over all 69 capitals
+that selects exactly these four.
+
 Six more were replaced in version 2.1.0 with the centroid of the commune's own
 `admin_level=8` relation, after they had shared a placeholder point with a neighbour:
 Belarbi (2242), El Hamdania (2616), Ouled Bouachra (2627), Deux Bassins (2653),
@@ -266,10 +277,10 @@ Makhda (2915) and El Euch (3427). Si Mahdjoub (2644) and El Achir (3407) shared 
 placeholder with two of those but were left as they were, so they are still on their
 pre-2.1.0 values and carry no OpenStreetMap provenance.
 
-**Licence.** Those 251 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
+**Licence.** Those 255 points are **ODbL 1.0, © OpenStreetMap contributors**, and so is every
 copy of them in `algeria.json`, `communes_w*.json`, `csv/communes.csv`,
 `geojson/communes.geojson` and `sql/full.sql`. Reusing them means attributing OpenStreetMap
-contributors and keeping derived databases under a compatible licence. The other 1,290
+contributors and keeping derived databases under a compatible licence. The other 1,286
 commune points carry no recorded source and are covered by the package's MIT licence; no
 ODbL claim is made over them. Per-part terms are in the package `LICENSE` and `NOTICE`, and
 the per-source breakdown is in `geojson/communes.metadata.json`.
@@ -286,5 +297,5 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 - Algérie Poste for postal codes
 - OpenStreetMap `admin_level=4` relations (ODbL 1.0) for `geojson/wilaya-boundaries.geojson`
 - OpenStreetMap `admin_level=8` commune relations (ODbL 1.0) for the wilaya 30/55 and 47/58 membership correction of 2026-09-29
-- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 245 commune centres corrected on 2026-09-27 (56) and 2026-09-29 (189)
+- OpenStreetMap `admin_level=8` relation `admin_centre` nodes (ODbL 1.0) for the 249 commune centres corrected on 2026-09-27 (56), 2026-09-29 (189) and 2026-10-01 (4)
 - OpenStreetMap `admin_level=8` relation centroids (ODbL 1.0) for the 6 commune centres replaced in version 2.1.0

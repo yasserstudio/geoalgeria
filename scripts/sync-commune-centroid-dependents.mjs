@@ -27,18 +27,25 @@
 //   industrie-pharmaceutique   ships no generator; its data was assembled once from
 //                              the MIP fabrication register.
 //
-// `sante` was handled here on 2026-09-27 and 2026-09-29 for a different reason: it
-// replays, but its replay churned published ids, and ids are public join keys, so a
-// coordinate correction was not the release to churn them in. Both causes are now
-// fixed in the generator itself (it carries ids over on the MSP registry id, and it
-// no longer pairs two posts on a commune that only two name fragments agree on), so
-// sante replays like the other ten and is no longer listed below.
+// `sante` was handled here on 2026-09-27 and 2026-09-29 because its replay churned
+// published ids, and ids are public join keys. Both of those causes are fixed in the
+// generator itself now (it carries ids over on the MSP registry id, and it no longer
+// pairs two posts on a commune that only two name fragments agree on), but it is
+// listed again from 2026-10-01 for a third reason: refineWithFacilities() indexes
+// every OSM and Wikidata health facility by NEAREST COMMUNE CENTROID, so moving a
+// centre changes which establishments that step refines, well beyond the handful that
+// borrow the centre. On the 2026-10-01 batch it turned EHS Mere et Enfant Biskra
+// (07-ehs-03) into an `osm_point`, which the Owner had hand-verified as a building
+// point the day before (quality/overrides/sante.json, reviewed 2026-09-30), and the
+// replay aborted on that stale decision rather than overwrite it. Recentring the four
+// borrowed coordinates is the correction the batch is for; the nearest-centroid index
+// inside that generator is its own fix.
 //
 // WHAT EACH PACKAGE GETS
-//   agriculture, industrie-pharmaceutique  recentre only. Their commune is matched
-//     from the source's own text (a MADR address, an MIP commune column), not from
-//     geometry, so no attribution can move; only the coordinate they borrow from
-//     the commune has to follow it.
+//   agriculture, industrie-pharmaceutique, sante  recentre only. Their commune is
+//     matched from the source's own text (a MADR address, an MIP commune column, the
+//     MSP registry's own wilaya and commune), not from geometry, so no attribution can
+//     move; only the coordinate they borrow from the commune has to follow it.
 //   djezzy  re-join. It stamps wilaya/commune from the flagship set by the shared
 //     rule scripts/lib/build-utils.mjs resolveCommune(), reproduced in
 //     rejoinCommune() below: containing wilaya polygon, then containing commune
@@ -137,6 +144,7 @@ const PACKAGES = [
     file: "industrie-pharmaceutique.json",
     recentre: { commune_centroid: "commune_code" },
   },
+  { pkg: "sante", file: "sante.json", recentre: { commune_centroid: "commune_code" } },
   { pkg: "djezzy", file: "boutiques.json", rejoin: "split" },
 ];
 

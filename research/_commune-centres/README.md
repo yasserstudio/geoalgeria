@@ -364,3 +364,86 @@ of 69 wilayas) stay in `research/`. Publishing them as package fields is #181.
 The two raw Overpass responses are 55 MB of way-member lists and full boundary
 geometry, so they are gitignored working inputs; the reduced captures beside them
 are the reviewable record.
+
+# The four wilaya capital centres (2026-10-01)
+
+Private tracker #236. Found while reviewing #228 (the wilaya capital field, data
+PR #242) and pre-existing on `main`. Four **wilaya capital (chef-lieu) communes**
+sat 3 to 6 km from the seat of the town they are the chef-lieu of:
+
+| Code | Commune | Wilaya | was | now | moved | OSM `admin_centre` node |
+| --- | --- | --- | --- | --- | --- | --- |
+| 701 | Biskra | 7 | `5.751048, 34.8` | `5.729074, 34.850882` | 6,003 m | [299682811](https://www.openstreetmap.org/node/299682811) |
+| 717 | El Kantara | 61 | `5.666831, 35.192365` | `5.709284, 35.223115` | 5,154 m | [427910708](https://www.openstreetmap.org/node/427910708) |
+| 2501 | Constantine | 25 | `6.642433, 36.365` | `6.608428, 36.364164` | 3,046 m | [27564946](https://www.openstreetmap.org/node/27564946) |
+| 3201 | El Bayadh | 32 | `1.020278, 33.721667` | `1.018245, 33.684319` | 4,157 m | [452440133](https://www.openstreetmap.org/node/452440133) |
+
+## Why this needed a standard of its own
+
+Neither guard this directory already has could see them.
+
+- **Containment is blind**: all four stored centres were *inside* their own
+  commune the whole time. That is Bethioua's class, which the standing guard's
+  own section above names as its honest limit.
+- **The seat delta is not a defect**, by the Owner's 2026-09-29 decision (#170).
+  The median disagreement with the `admin_centre` node over all 1,537 compared
+  rows is 402 m, and a delta says two hand-placed claims about one town disagree,
+  not which one is wrong. **132 non-capital centres are still more than 3 km from
+  their seat** and none of them is corrected here.
+
+What makes a capital different is that a capital has **two further claims about
+the same town** that a commune centre is not derived from:
+
+1. **the wilaya's own published point**, which comes from the wilaya's
+   `admin_level=4` relation, a different OpenStreetMap object from the commune's
+   `admin_level=8` `admin_centre` node;
+2. **the geometric median of the `geo_precision: exact` records** other packages
+   place inside this commune's own OpenStreetMap outline: pharmacies, schools,
+   mosques, post offices, bank branches. They are selected by point-in-polygon
+   rather than by the `commune` they name, so the selection cannot depend on the
+   centre under test.
+
+A row qualifies only where it is a wilaya capital commune, its seat delta is over
+3 km, and **both** of those put the town at the node rather than at the stored
+centre:
+
+| Commune | wilaya point to stored / to seat | exact-record median to stored / to seat (n) |
+| --- | --- | --- |
+| Biskra (701) | 5,799 / 371 m | 5,903 / 348 m (264) |
+| El Kantara (717) | 4,789 / 731 m | 5,137 / 211 m (40) |
+| Constantine (2501) | 4,150 / 1,746 m | 2,493 / 1,535 m (529) |
+| El Bayadh (3201) | 4,602 / 487 m | 4,791 / 730 m (164) |
+
+Over all 69 capitals that selects exactly these four. The only other capital more
+than 3 km from its node is **Beni-Abbes (5201)**, where the two claims disagree:
+its wilaya point is 8.8 km from the node and 6.7 km from the stored centre, while
+the exact-record median is 139 m from the node. Its relation (6530989) also still
+carries the pre-reform `ref:ONS` `0807`. It is left alone and stays open on the
+tracker rather than being corrected on one claim.
+
+## Source
+
+The values are the same `admin_centre` nodes as the 2026-09-29 pull
+(`timestamp_osm_base` **2026-09-29T12:54:47Z**), and each of the four was
+**re-read from the OpenStreetMap node API on 2026-10-01** before it was written,
+so the number in the data was confirmed against the live node and not only
+against a committed capture. ODbL 1.0, (c) OpenStreetMap contributors.
+
+## The guard
+
+`test/capital-centre-near-seat.test.mjs`, which fetches nothing. For each of the
+four it holds all seven carriers to the ledger's value, tests the value against
+the commune outline, and asserts both independent claims **in both directions**:
+the corrected centre inside an absolute 2 km ceiling and the repudiated one
+outside it. A test that only checked the new value would have passed on the old
+one for three of the four, and "closer than before" is not a fact about one
+claim.
+
+Dependents: `scripts/sync-commune-centroid-dependents.mjs` recentred 11 rows in
+`@geoalgeria/agriculture` and 10 in `@geoalgeria/industrie-pharmaceutique`; no
+record changed commune or wilaya, because every one of the four moves stays
+inside its own commune outline and the join asks the outline first.
+
+| File | Contents |
+| --- | --- |
+| `corrections-2026-10-01.json` | the 4 rows, with the OSM evidence and both independent claims per row |

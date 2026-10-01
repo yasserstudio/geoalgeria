@@ -34,6 +34,7 @@ function derive() {
   const ledgers = [
     json(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json"),
     json(ROOT, "research", "_commune-centres", "corrections-2026-09-29.json"),
+    json(ROOT, "research", "_commune-centres", "corrections-2026-10-01.json"),
   ];
 
   // A ledger row only counts if its value is the one the package ships: a correction
@@ -79,11 +80,12 @@ test("the OpenStreetMap-derived commune centres are the applied ledger rows plus
   assert.deepEqual(counts.perLedger, [
     { generated: "2026-09-27", count: 56 },
     { generated: "2026-09-29", count: 189 },
+    { generated: "2026-10-01", count: 4 },
   ]);
-  assert.equal(counts.fromAdminCentreNode, 245);
+  assert.equal(counts.fromAdminCentreNode, 249);
   assert.equal(counts.fromRelationCentroid, 6);
-  assert.equal(counts.osmDerived, 251);
-  assert.equal(counts.rest, 1290);
+  assert.equal(counts.osmDerived, 255);
+  assert.equal(counts.rest, 1286);
 });
 
 test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no other", () => {
