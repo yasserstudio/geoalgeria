@@ -248,11 +248,15 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "d4fb027313a9ae65467417d5ee3fda1447bc0269d42d7823aa8cc9cc66925249"
+      "sha256": "bc1b6c02c2e1696defe5b73aac343b720e74df6cf3d7bbb58784696487c77049"
+    },
+    {
+      "path": "packages/sante/data/retired-ids.json",
+      "sha256": "3ba23c056b5b99ae5b8da1f09034f2b147bce8defd72c914eb5f1d37aeb6732c"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "4f702b2dd69c1b7d46a2bd674b8d906b43e11694629a8cfb374f240d4a48fd7e"
+      "sha256": "c168cd804cdcbd7c594d5eee4429179417fe9505cf81409850506bbdd0a6e929"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -305,15 +309,15 @@
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70546,
-  "candidates": 17829,
+  "total_records": 70521,
+  "candidates": 17801,
   "reasons": {
-    "approximate_coordinate": 16902,
+    "approximate_coordinate": 16884,
     "inside_adjacent_wilaya": 248,
-    "missing_coordinate": 524,
+    "missing_coordinate": 514,
     "outside_all_wilaya_boundaries": 199,
     "outside_declared_wilaya": 447,
-    "shared_coordinate": 1305
+    "shared_coordinate": 1287
   },
   "datasets": [
     {
@@ -1877,14 +1881,14 @@
     },
     {
       "dataset": "sante",
-      "total_records": 695,
-      "candidates": 571,
+      "total_records": 670,
+      "candidates": 543,
       "reasons": {
-        "approximate_coordinate": 478,
-        "missing_coordinate": 93,
+        "approximate_coordinate": 460,
+        "missing_coordinate": 83,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 318
+        "shared_coordinate": 300
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1893,16 +1897,16 @@
         "title_fr": "Établissements de santé publique d'Algérie",
         "title_ar": "المؤسسات الصحية العمومية الجزائرية",
         "title_en": "Algeria public health establishments",
-        "record_count": 695,
-        "geocoded_count": 602,
-        "geocoded_pct": 86.6,
+        "record_count": 670,
+        "geocoded_count": 587,
+        "geocoded_pct": 87.6,
         "precision": {
-          "exact": 124,
-          "approximate": 478
+          "exact": 127,
+          "approximate": 460
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+        "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 83 remain ungeocoded.",
         "wilayas_covered": 58,
         "bbox": [
           -8.140085,
@@ -1939,22 +1943,22 @@
         "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
         "updated": "2026-06-27",
         "by_type": {
-          "ehs": 108,
-          "eph": 270,
-          "epsp": 292,
+          "ehs": 104,
+          "eph": 257,
+          "epsp": 285,
           "hopital": 5,
-          "chu": 20
+          "chu": 19
         },
         "by_sector": {
-          "public": 695
+          "public": 670
         },
         "by_geo_method": {
-          "commune_centroid": 474,
-          "osm_point": 114,
-          "owner_verified": 13,
-          "wikidata_point": 1
+          "commune_centroid": 460,
+          "osm_point": 113,
+          "wikidata_point": 3,
+          "owner_verified": 11
         },
-        "bilingual": 563,
+        "bilingual": 588,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -2569,14 +2573,14 @@
     {
       "dataset": "sante",
       "entity": "sante.json",
-      "total_records": 695,
-      "candidates": 571,
+      "total_records": 670,
+      "candidates": 543,
       "reasons": {
-        "approximate_coordinate": 478,
-        "missing_coordinate": 93,
+        "approximate_coordinate": 460,
+        "missing_coordinate": 83,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 318
+        "shared_coordinate": 300
       },
       "path": "packages/sante/data/sante.json"
     },
@@ -2758,6 +2762,10 @@
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/sante/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {

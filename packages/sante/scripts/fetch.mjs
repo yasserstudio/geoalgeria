@@ -33,7 +33,7 @@ import https from "node:https";
 import http from "node:http";
 import tls from "node:tls";
 import { X509Certificate, createHash } from "node:crypto";
-import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
+import { MIGRATIONS, writePackageV2, resolveDates, carryOverIds, readCommitted, readRetiredIds, readRetiredMigrations, readCacheFile } from "../../../scripts/lib/v2-transforms.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = join(__dirname, "..", "data");
@@ -322,7 +322,10 @@ function classify(title) {
 const SPECIALTY_FR = [
   [/PSYCHIATR|MALADIES MENTALES|SANTE MENTALE/, "psy"],
   [/OBSTETRIQUE|GYNECO|MERE ET ENFANT|\bMERE\b|MATERNIT|NEONAT/, "gyneco"],
-  [/OPHTALMO|\bYEUX\b|\bOEIL\b/, "oph"],
+  // OPHTALM, not OPHTALMO: the registry writes "Etablissement hospitalier
+  // Ophtalm Djelfa", and the truncation is the only thing that record shares
+  // with its Arabic twin, "المؤسسة الإستشفائية لطب العيون الجلفة".
+  [/OPHTALM|\bYEUX\b|\bOEIL\b/, "oph"],
   [/CARDIO|CARDIAQUE|\bCOEUR\b/, "cardio"],
   [/CANCER|CANCEREUX|CANCIREUX|ONCOLOG/, "cancer"],
   [/REEDUCATION|READAPTATION|FONCTIONNELLE/, "reeduc"],
@@ -603,7 +606,7 @@ function normFacilities(wdBindings, osmElements) {
 }
 
 // --- assemble establishments -----------------------------------------------
-function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
+function buildEstablishments(records, taxMap, wil, communesByWilaya, stats, twins = null) {
   // nationwide commune index for the last-resort wilaya fallback (a locality that
   // is itself a commune name pins down the wilaya even with no/odd taxonomy term).
   const globalCommunes = [];
@@ -682,13 +685,21 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
       geo_precision: commune ? "commune_centroid" : "none",
       wikidata: null,
       osm_id: null,
-      msp_id: (fr || ar).msp_id,
-      slug: (fr || ar).slug,
+      // The registry publishes one facility as two posts, so a bilingual record
+      // carries two ids. `msp_id` is the record's primary (the French post when
+      // there is one), `msp_id_twin` the other-language post of the same
+      // facility. Both are published, so the carry-over key can be resolved
+      // through either: before this, the key was `(fr || ar).msp_id`, which
+      // flipped the moment a paired record lost its French post and retired the
+      // public id of a place that had not moved.
+      msp_id: base.msp_id,
+      msp_id_twin: fr && ar ? ar.msp_id : null,
+      slug: base.slug,
     });
   };
 
   for (const g of groups.values()) {
-    for (const { fr, ar } of pairPosts(g.fr, g.ar, wil)) {
+    for (const { fr, ar } of pairPosts(g.fr, g.ar, wil, twins)) {
       if (fr && ar) stats.paired++;
       push(fr, ar);
     }
@@ -699,10 +710,12 @@ function buildEstablishments(records, taxMap, wil, communesByWilaya, stats) {
 
 // Pair FR and AR posts of one (wilaya, type) group. Step 1: transliterated-
 // locality token similarity (≥ 0.5). Step 2: an unambiguous shared commune
-// (exactly one remaining fr + one ar in it). Step 3: leftovers stay monolingual.
-// The wilaya name is stripped from locality tokens — inside the capital every
-// establishment carries it, so it can't tell two of them apart.
-export function pairPosts(fr, ar, wil) {
+// (exactly one remaining fr + one ar in it). Step 3: an adjacent MSP post id
+// whose name does not contradict (see pairTwinPosts). Step 4: leftovers stay
+// monolingual. The wilaya name is stripped from locality tokens — inside the
+// capital every establishment carries it, so it can't tell two of them apart.
+// `twins`, when passed, collects the step-3 verdicts for the review report.
+export function pairPosts(fr, ar, wil, twins = null) {
   const out = [];
   if (!fr.length && !ar.length) return out;
   const wset = wilayaTokens(wil.byCode.get((fr[0] || ar[0]).wilayaCode));
@@ -756,9 +769,161 @@ export function pairPosts(fr, ar, wil) {
     }
   }
 
+  // step 3: the registry's own twin posts — an adjacent MSP post id in the
+  // opposite language whose name does not contradict (see pairTwinPosts).
+  for (const { fr: f, ar: a, verdict } of pairTwinPosts(fr, ar, wil, usedF, usedA)) {
+    if (twins) twins.push(verdict);
+    if (!verdict.paired) continue;
+    usedF.add(f); usedA.add(a); out.push({ fr: f, ar: a });
+  }
+
   for (const f of fr) if (!usedF.has(f)) out.push({ fr: f, ar: null });
   for (const a of ar) if (!usedA.has(a)) out.push({ fr: null, ar: a });
   return out;
+}
+
+// --- the registry's twin posts ---------------------------------------------
+// The Ministry publishes each establishment twice, once per language, and the
+// two posts are usually consecutive WordPress ids. Adjacency alone is not
+// evidence — only 42.9% of French posts have an Arabic post at id+1 — so a
+// candidate must also pass a name check, and a post with two equally good
+// candidates is left alone rather than guessed at.
+//
+// The name check cannot be a transliterated-string comparison: `translitAr`
+// writes no vowels (Arabic does not), so "Chorfa" and the transliterated
+// "chrfh" are two edits apart and `simTokens` reads them as different places.
+// It compares CONSONANT SKELETONS instead (twinNameKey), which is what the two
+// scripts actually agree on. @geoalgeria/normalize is not used here: its keys
+// fold a name WITHIN one script, and this check has to cross two.
+const TWIN_MIN_KEY = 2; // a one-consonant skeleton says nothing either way
+
+// A translation is not a transliteration: "Ancien Hopital" and "المستشفى القديم"
+// are one hospital whose skeletons share nothing. Only the handful of adjectives
+// the registry itself uses, each a translation rather than a guess.
+const TWIN_SYNONYMS = new Map([
+  ["ncn", "age_old"],  // ancien
+  ["kdm", "age_old"],  // قديم
+  ["nvl", "age_new"],  // nouvel
+  ["nv", "age_new"],   // nouveau
+  ["jd", "age_new"],   // جديد
+]);
+
+/** The consonant skeleton two scripts can agree on: vowels dropped, `ch` read as
+ *  the one consonant it is, the ق/g/q/k romanizations folded (Guelma, قالمة), a
+ *  doubled consonant counted once, and the trailing h that ة surfaces as
+ *  dropped. A `spec_*` specialty code is already language-independent. */
+export function twinNameKey(token) {
+  if (token.startsWith("spec_")) return token;
+  let k = token
+    .toLowerCase()
+    .replace(/[^a-z]/g, "")
+    // ch is one consonant (ش, and the French spelling of it), so a doubled one
+    // collapses with it later. kh and gh are deliberately NOT folded: translitAr
+    // writes them for خ and غ, but it also writes a bare k beside a bare h, and
+    // "msikh" (مسيكة) would then stop matching "Massika".
+    .replace(/ch/g, "c")
+    .replace(/[aeiouy]/g, "")
+    .replace(/[gqk]/g, "k")
+    .replace(/(.)\1+/g, "$1")
+    .replace(/h$/, "");
+  return TWIN_SYNONYMS.get(k) ?? k;
+}
+
+/** The keys of a post that could testify to its identity: its locality minus
+ *  the wilaya name and the facility-class vocabulary every health facility
+ *  carries, plus its specialty code. Skeletons shorter than TWIN_MIN_KEY are
+ *  dropped — they match almost anything, so they are neither for nor against. */
+export function twinTokens(post, wset) {
+  const keys = [];
+  // The specialty, from the title and not from post.specialty: the generator
+  // only records a specialty for an EHS, but "Hopital d'ophtalmologie Bechar"
+  // and "المؤسسة الإستشفائية لطب العيون بشار" are both filed as EPH and have
+  // nothing else in common — one writes the specialty in Greek roots, the other
+  // as "medicine of the eyes". The code is the only thing the two scripts share.
+  const spec = specialtyCode(post.title, post.lang);
+  if (spec) keys.push("spec_" + spec);
+  for (const t of postTokens(post, wset)) {
+    if (isGeneric(t)) continue;
+    const k = twinNameKey(t);
+    if (k.length >= TWIN_MIN_KEY && !keys.includes(k)) keys.push(k);
+  }
+  return keys;
+}
+
+/** Does this French post and this Arabic post name the same facility?
+ *  - they agree on a discriminating key → `shared_key`
+ *  - one side names nothing discriminating → `no_contradiction`: silence, which
+ *    is what "EPH Tiaret" / "المؤسسة العمومية الإستشفائية تيارت" is
+ *  - both name something and none of it agrees → `name_conflict`, refused */
+export function twinNameCheck(f, a, wset) {
+  const ft = twinTokens(f, wset);
+  const at = twinTokens(a, wset);
+  const score = overlapCount(ft, at);
+  if (score) return { ok: true, reason: "shared_key", score, fr_keys: ft, ar_keys: at };
+  if (!ft.length || !at.length)
+    return { ok: true, reason: "no_contradiction", score: 0, fr_keys: ft, ar_keys: at };
+  return { ok: false, reason: "name_conflict", score: 0, fr_keys: ft, ar_keys: at };
+}
+
+/** Recover the still-unpaired twin posts of one (wilaya, type) group. Returns
+ *  every candidate with its verdict, so the refusals are reportable too. */
+export function pairTwinPosts(fr, ar, wil, usedF = new Set(), usedA = new Set()) {
+  const remF = fr.filter((f) => !usedF.has(f));
+  const remA = ar.filter((a) => !usedA.has(a));
+  if (!remF.length || !remA.length) return [];
+  const wset = wilayaTokens(wil.byCode.get((remF[0] || remA[0]).wilayaCode));
+
+  const cands = [];
+  for (const f of remF)
+    for (const a of remA) {
+      if (Math.abs(Number(f.msp_id) - Number(a.msp_id)) !== 1) continue;
+      cands.push({ fr: f, ar: a, check: twinNameCheck(f, a, wset) });
+    }
+
+  // Best name match first; the MSP id breaks ties so the outcome never depends
+  // on the order the registry happened to return the posts in.
+  const ranked = cands
+    .filter((c) => c.check.ok)
+    .sort((p, q) => q.check.score - p.check.score || Number(p.fr.msp_id) - Number(q.fr.msp_id));
+  const takenF = new Set(), takenA = new Set();
+  for (const c of ranked) {
+    if (takenF.has(c.fr) || takenA.has(c.ar)) { c.refusal = "claimed_by_a_better_name_match"; continue; }
+    // Two free candidates the name check cannot separate are not evidence of
+    // either pair: refuse both rather than let the sort decide.
+    const tied = ranked.some(
+      (o) =>
+        o !== c && o.check.score === c.check.score && !takenF.has(o.fr) && !takenA.has(o.ar) &&
+        (o.fr === c.fr || o.ar === c.ar),
+    );
+    if (tied) { c.refusal = "ambiguous_equal_name_match"; continue; }
+    // Silence about the name is only silence while the communes agree. A
+    // `token_partial` commune was reached on a fragment of its name, which the
+    // Arabic half of the Setif CHU hits on the given name in "Saadna Mohamed
+    // Abdenour": that is not a second place, so a weak commune cannot veto.
+    if (c.check.reason === "no_contradiction" && !weakCommune(c.fr) && !weakCommune(c.ar)) {
+      const fc = c.fr.commune?.code_commune, ac = c.ar.commune?.code_commune;
+      if (fc != null && ac != null && fc !== ac) { c.refusal = "different_commune"; continue; }
+    }
+    takenF.add(c.fr); takenA.add(c.ar);
+  }
+
+  return cands.map(({ fr: f, ar: a, check, refusal }) => ({
+    fr: f,
+    ar: a,
+    verdict: {
+      paired: check.ok && !refusal,
+      reason: refusal ?? check.reason,
+      wilaya_code: wcode(f.wilayaCode),
+      type: f.type,
+      msp_fr: String(f.msp_id),
+      msp_ar: String(a.msp_id),
+      name_fr: f.title,
+      name_ar: a.title,
+      fr_keys: check.fr_keys,
+      ar_keys: check.ar_keys,
+      shared_keys: check.score,
+    },
+  }));
 }
 
 // Locality tokens for FR↔AR matching (AR transliterated; wilaya name removed).
@@ -937,6 +1102,63 @@ export function overlapCount(a, b) {
   return hit;
 }
 
+// --- reviewed Wikidata identifications -------------------------------------
+// Two Wikidata hospitals the token matcher cannot reach, keyed by MSP post id
+// because that is the establishment's identity in the source of record. Both
+// name a city with several establishments in it, so the matcher had put each on
+// the wrong one and the wrong stamps were removed rather than corrected. Each
+// item was read from the Wikidata entity itself before being pinned here: its
+// P31 (instance of), its P131 (located in), its P625 coordinate and its labels
+// all have to name this establishment, and each carries a Wikipedia article as a
+// second source.
+const WIKIDATA_PINS = new Map([
+  [
+    "2359",
+    {
+      wikidata: "Q18785599",
+      // P31 Q16917 hospital · P17 Q262 Algeria · P131 Q251181 Adrar ·
+      // P571 1975 · fr "hôpital d'Adrar" · frwiki. 1.6 km from the Adrar
+      // commune centre, inside the commune. The EPH of Adrar, not the Nouveau
+      // Hopital (MSP 3584) the matcher had reached on the shared city name.
+      note: "EPH Adrar; Wikidata hôpital d'Adrar (inception 1975), frwiki",
+    },
+  ],
+  [
+    "5139",
+    {
+      wikidata: "Q7894776",
+      // P31 Q16917 hospital + Q3918 university · P131 Q131818 Oran ·
+      // fr "centre hospitalier universitaire d'Oran", ar "المركز الإستشفائي
+      // الجامعي وهران" · arwiki/enwiki/frwiki. 1.7 km from the Oran commune
+      // centre. The CHU, not the EHU (MSP 5158): the labels say centre
+      // hospitalier universitaire in both languages.
+      note: "CHU Oran; Wikidata centre hospitalier universitaire d'Oran, arwiki/enwiki/frwiki",
+    },
+  ],
+]);
+
+// Attach each pinned item to its establishment and, where the item carries a
+// coordinate, let it place the record. A pin is only ever a correction of which
+// record an item belongs to, so it refuses to overwrite a point this run matched
+// from a DIFFERENT source — that would be a second disagreement, to resolve
+// rather than paper over.
+function applyWikidataPins(establishments, facilities) {
+  const byItem = new Map();
+  for (const f of facilities) if (f.kind === "wikidata" && f.wikidata) byItem.set(f.wikidata, f);
+  for (const e of establishments) {
+    const pin = WIKIDATA_PINS.get(String(e.msp_id));
+    if (!pin) continue;
+    if (e.wikidata && e.wikidata !== pin.wikidata)
+      throw new Error(`sante: MSP ${e.msp_id} is pinned to ${pin.wikidata} but matched ${e.wikidata}`);
+    e.wikidata = pin.wikidata;
+    const f = byItem.get(pin.wikidata);
+    if (!f || e.osm_id) continue;
+    e.lat = f.lat;
+    e.lng = f.lng;
+    e.geo_precision = "wikidata_point";
+  }
+}
+
 // Stable id `{wilaya_code}-{type}-{seq}`, seq ordered by name for determinism.
 function assignIds(rows) {
   const groups = new Map();
@@ -953,6 +1175,42 @@ function assignIds(rows) {
   rows.sort((a, b) =>
     a.wilaya_code !== b.wilaya_code ? a.wilaya_code.localeCompare(b.wilaya_code, "en") : a.id.localeCompare(b.id, "en"),
   );
+}
+
+/**
+ * The carry-over key: the MSP post id the record SHIPPED under, found through
+ * either of the posts it carries.
+ *
+ * A bilingual record stands for two registry posts, so the naive key — the
+ * record's own primary post — moves the instant the pairing changes: when a
+ * paired record loses its French post the key flips to the Arabic one, the
+ * published id retires, and a place that never moved is handed a new public
+ * join key. Resolving the key through `refs.msp` OR `refs.msp_twin` of the
+ * committed record keeps it fixed in both directions: gaining a twin, losing a
+ * twin, or merging two half-records all land on the id the place already had.
+ * The French post is the primary, and since its Latin name sorts before every
+ * Arabic one, that is also the older (lower-sequence) of two merged ids.
+ *
+ * @param {object[]} committed  the committed v2 records
+ * @returns {(r: object) => (string|null)} a keyOf for carryOverIds
+ */
+export function mspCarryKey(committed) {
+  const primaryByPost = new Map();
+  for (const r of committed) {
+    const primary = r.refs?.msp;
+    if (primary == null) continue;
+    for (const post of [primary, r.refs?.msp_twin])
+      if (post != null && !primaryByPost.has(String(post))) primaryByPost.set(String(post), String(primary));
+  }
+  return (r) => {
+    for (const post of [r.refs?.msp, r.refs?.msp_twin]) {
+      if (post == null) continue;
+      const primary = primaryByPost.get(String(post));
+      if (primary) return `msp:${primary}`;
+    }
+    if (r.refs?.msp != null) return `msp:${r.refs.msp}`;
+    return r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null;
+  };
 }
 
 // --- main ------------------------------------------------------------------
@@ -972,8 +1230,10 @@ async function main() {
   const communesByWilaya = loadCommunes();
 
   const stats = { type_fail: 0, wilaya_fail: 0, wilaya_from_commune: 0, commune_fail: 0, paired: 0, refined: 0 };
-  const rows = buildEstablishments(records, taxMap, wil, communesByWilaya, stats);
+  const twins = [];
+  const rows = buildEstablishments(records, taxMap, wil, communesByWilaya, stats, twins);
   console.log(`  built ${rows.length} establishments (${stats.paired} bilingual pairs, type_fail ${stats.type_fail}, wilaya_fail ${stats.wilaya_fail})`);
+  console.log(`  twin posts: ${twins.filter((t) => t.paired).length} recovered, ${twins.filter((t) => !t.paired).length} candidates refused`);
 
   const wdRaw = OFFLINE
     ? JSON.parse(readCacheFile(RESEARCH_DIR, "wikidata-hospitals-raw.json", "sante")).results.bindings
@@ -985,6 +1245,7 @@ async function main() {
   console.log(`  ${facilities.length} OSM/Wikidata health facilities for refinement`);
   refineWithFacilities(rows, facilities, communesByWilaya, wil, stats);
   console.log(`  refined ${stats.refined} establishments to precise points`);
+  applyWikidataPins(rows, facilities);
 
   assignIds(rows);
 
@@ -998,11 +1259,9 @@ async function main() {
   const { updated, retrieved } = resolveDates(OUT_DIR, OFFLINE);
   const v2 = rows.map(cfg.map);
   const retiredIds = readRetiredIds(OUT_DIR);
-  carryOverIds(v2, readCommitted(OUT_DIR, "sante.json"), (r) =>
-    r.refs?.msp ? `msp:${r.refs.msp}` : r.refs?.osm ? `osm:${r.refs.osm}` : r.refs?.wikidata ? `wd:${r.refs.wikidata}` : null,
-    "sante",
-    retiredIds,
-  );
+  const committed = readCommitted(OUT_DIR, "sante.json");
+  carryOverIds(v2, committed, mspCarryKey(committed), "sante", retiredIds);
+  const twinReport = resolveTwinPairs(twins, v2, committed, readRetiredMigrations(OUT_DIR));
   const { records: out, metadata } = writePackageV2({
     pkg: "sante",
     dir: OUT_DIR,
@@ -1011,9 +1270,86 @@ async function main() {
     updated,
     retrieved,
     retiredIds,
+    retiredMigrations: twinReport.migrations,
   });
+  writeTwinReport(twinReport);
   console.log(
     `Wrote ${out.length} establishments → v2 (${metadata.wilayas_covered} wilayas, ${metadata.geocoded_count} geocoded).`,
+  );
+}
+
+/**
+ * Turn the pairing verdicts into the public record of the merge: which id each
+ * merged record keeps, which id it absorbed, and the migration note that id
+ * carries in retired-ids.json from now on. The kept id is the one the French
+ * post shipped under — the older of the two, because a Latin name sorts before
+ * every Arabic one — so it is the published id that survives, as ids follow
+ * places and not posts.
+ */
+export function resolveTwinPairs(twins, rows, committed, priorMigrations = {}) {
+  const liveByPost = new Map();
+  for (const r of rows) {
+    if (r.refs?.msp != null) liveByPost.set(String(r.refs.msp), r.id);
+    if (r.refs?.msp_twin != null) liveByPost.set(String(r.refs.msp_twin), r.id);
+  }
+  // Where the Arabic half's id is read from, in order: the committed data on the
+  // release that merges the pair, and the ledger itself on every run after it,
+  // when that record is no longer in the data to look up. The ledger is
+  // append-only for exactly this reason, and the pair is matched on its two
+  // registry posts rather than on the kept id, which several ids may share.
+  const shippedByPost = new Map();
+  for (const r of committed) if (r.refs?.msp != null) shippedByPost.set(String(r.refs.msp), r.id);
+  const ledgerByPosts = new Map();
+  for (const [id, entry] of Object.entries(priorMigrations))
+    if (Array.isArray(entry?.msp_posts)) ledgerByPosts.set(entry.msp_posts.map(String).join("/"), id);
+
+  const sortKey = (t) => `${t.wilaya_code}|${t.type}|${t.msp_fr}|${t.msp_ar}`;
+  const ordered = [...twins].sort((a, b) => (sortKey(a) < sortKey(b) ? -1 : sortKey(a) > sortKey(b) ? 1 : 0));
+
+  const migrations = { ...priorMigrations };
+  const pairs = ordered.filter((t) => t.paired).map((t) => {
+    const kept_id = liveByPost.get(t.msp_fr) ?? null;
+    const shipped = shippedByPost.get(t.msp_ar) ?? null;
+    const absorbed_id =
+      (shipped && shipped !== kept_id ? shipped : null) ??
+      ledgerByPosts.get([t.msp_fr, t.msp_ar].join("/")) ??
+      null;
+    if (absorbed_id && kept_id)
+      migrations[absorbed_id] = {
+        merged_into: kept_id,
+        msp_posts: [t.msp_fr, t.msp_ar],
+        note:
+          `Merged into ${kept_id}: the Ministry of Health registry published this establishment twice, ` +
+          `once per language (MSP posts ${t.msp_fr} and ${t.msp_ar}), and the two posts are one facility. ` +
+          `${kept_id} is the older published id and carries both names.`,
+      };
+    return { kept_id, absorbed_id, ...t };
+  });
+  return { pairs, refused: ordered.filter((t) => !t.paired), migrations };
+}
+
+// The twin-post decisions, as a reviewable file rather than build-log noise:
+// which pairs the rule recovered, which public id each merged record keeps,
+// which id it absorbed, and every candidate the rule refused with its reason.
+// Regenerated on every run, so it can never drift from the shipped data.
+const TWIN_REPORT = join(REPO_ROOT, "quality", "sante-twin-recovery.json");
+function writeTwinReport({ pairs, refused }) {
+  mkdirSync(dirname(TWIN_REPORT), { recursive: true });
+  writeFileSync(
+    TWIN_REPORT,
+    JSON.stringify(
+      {
+        note:
+          "The Ministry of Health registry publishes each establishment twice, once in French and once in Arabic, usually under consecutive post ids. This is what the twin-post recovery in packages/sante/scripts/fetch.mjs decided: the pairs it merged into one bilingual record, and every adjacent candidate it refused, with the reason. Adjacency alone is not evidence, so a candidate must also pass a consonant-skeleton name check, and an ambiguous one is left alone rather than guessed at. Regenerated by `npm run fetch` in packages/sante.",
+        dataset: "sante",
+        recovered: pairs.length,
+        refused: refused.length,
+        pairs,
+        refused_candidates: refused,
+      },
+      null,
+      2,
+    ) + "\n",
   );
 }
 

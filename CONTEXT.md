@@ -169,6 +169,15 @@ _Avoid_: multilingual, translated, i18n
 Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only or wilaya-linked-only).
 _Avoid_: located, mapped, positioned
 
+**Twin post**:
+A second upstream entry for the same place, published by the source in the other
+language. The Ministry of Health registry lists every health establishment twice,
+once in French and once in Arabic under two post ids, so one establishment is two
+twin posts; the generator pairs them into one Bilingual record that cites both
+(`refs.msp` and `refs.msp_twin`), and the id the first-published post shipped
+under is the one the merged record keeps, because ids follow places.
+_Avoid_: duplicate, double, clone, Arabic record
+
 ### Search and normalization
 
 **Search key**:

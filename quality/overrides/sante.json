@@ -224,7 +224,7 @@
       "patch": {
         "lat": 36.7343108,
         "lng": 3.0529602,
-        "geo_precision": "approximate",
+        "geo_precision": "exact",
         "geo_method": "owner_verified",
         "commune": "Bir Mourad Rais",
         "commune_code": "1609"
@@ -233,38 +233,10 @@
         {
           "url": "https://www.google.com/maps?q=36.7343108,3.0529602",
           "checked_at": "2026-09-30",
-          "note": "EHS Chirurgie Cardiaque Clinique Mohamed Abderrahmani is in Bir Mourad Rais; the generator matched the given name Mohamed to the commune Mohamed Belouzdad. Building point read off the map by the project owner. The Arabic half of the same facility is 16-ehs-13; merging the two is tracked separately. The point is the building the owner identified; both half-records sit on it, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
+          "note": "EHS Chirurgie Cardiaque Clinique Mohamed Abderrahmani is in Bir Mourad Rais; the generator matched the given name Mohamed to the commune Mohamed Belouzdad. Building point read off the map by the project owner. The Arabic half-record 16-ehs-13 has been merged into this one (Ministry of Health posts 4660 and 4661 are the same facility), so the point is no longer shared with a second half-record and the precision it was read at, exact, is what publishes."
         }
-      ]
-    },
-    {
-      "file": "sante.json",
-      "record_id": "16-ehs-13",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "lat": 36.720059,
-        "lng": 3.112637,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid",
-        "commune": "Bachedjerah",
-        "commune_code": "1619"
-      },
-      "patch": {
-        "lat": 36.7343108,
-        "lng": 3.0529602,
-        "geo_precision": "approximate",
-        "geo_method": "owner_verified",
-        "commune": "Bir Mourad Rais",
-        "commune_code": "1609"
-      },
-      "evidence": [
-        {
-          "url": "https://www.google.com/maps?q=36.7343108,3.0529602",
-          "checked_at": "2026-09-30",
-          "note": "The Arabic half-record of the same facility as 16-ehs-03, Clinique Mohamed Abderrahmani in Bir Mourad Rais. Building point read off the map by the project owner. The two records stay separate until the merge is decided. The point is the building the owner identified; both half-records sit on it, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
-        }
-      ]
+      ],
+      "reviewed_at": "2026-10-02"
     },
     {
       "file": "sante.json",
@@ -306,52 +278,31 @@
         "lat": null,
         "lng": null,
         "geo_precision": null,
-        "geo_method": null
+        "geo_method": null,
+        "name_ar": "المؤسسة الإستشفائية المتخصصة مستشفى أمراض القلب والاوعية والطب الرياضي الدكتور معوش محمد أمقران"
       },
       "patch": {
         "commune": "Dely Ibrahim",
         "commune_code": "1623",
         "lat": 36.767844,
         "lng": 3.0016057,
-        "geo_precision": "approximate",
-        "geo_method": "owner_verified"
+        "geo_precision": "exact",
+        "geo_method": "owner_verified",
+        "name_ar": "المؤسسة الإستشفائية المتخصصة مستشفى أمراض القلب والاوعية والطب الرياضي الدكتور معوش محند أمقران"
       },
       "evidence": [
         {
           "url": "https://www.google.com/maps?q=36.767844,3.0016057",
           "checked_at": "2026-09-30",
-          "note": "CNMS Dr Maouche Mohand Amokrane, one facility in Dely Ibrahim, located by the project owner. Point in polygon against the committed OpenStreetMap commune outlines puts it inside Dely Ibrahim 1623, not the Ben Aknoun centre 1.2 km away. The Arabic half of the same facility is 16-ehs-14; both sit on this point, so the writer's shared-point rule keeps geo_precision at approximate until they are merged."
-        }
-      ]
-    },
-    {
-      "file": "sante.json",
-      "record_id": "16-ehs-14",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "commune": "Mohamed Belouzdad",
-        "commune_code": "1604",
-        "lat": 36.75354,
-        "lng": 3.06228,
-        "geo_precision": "approximate",
-        "geo_method": "commune_centroid"
-      },
-      "patch": {
-        "commune": "Dely Ibrahim",
-        "commune_code": "1623",
-        "lat": 36.767844,
-        "lng": 3.0016057,
-        "geo_precision": "approximate",
-        "geo_method": "owner_verified"
-      },
-      "evidence": [
+          "note": "CNMS Dr Maouche Mohand Amokrane, one facility in Dely Ibrahim, located by the project owner. Point in polygon against the committed OpenStreetMap commune outlines puts it inside Dely Ibrahim 1623, not the Ben Aknoun centre 1.2 km away. The Arabic half-record 16-ehs-14 has been merged into this one (Ministry of Health posts 4668 and 4669 are the same facility), so the point is no longer shared and publishes at the precision it was read at, exact."
+        },
         {
-          "url": "https://www.google.com/maps?q=36.767844,3.0016057",
-          "checked_at": "2026-09-30",
-          "note": "The Arabic half-record of the same facility as 16-ehs-04, the CNMS Dr Maouche Mohand Amokrane in Dely Ibrahim, located by the project owner. It had the Mohamed Belouzdad commune centre, reached on the given name alone. The registry writes the name محمد where the owner reads محند; the registry name is kept."
+          "url": "https://sante.gov.dz/etablissements/etablissement-hospitalier-specialise-cnms-dr-maouche-mohand-amokrane/",
+          "checked_at": "2026-10-02",
+          "note": "Arabic given name: محند, the Kabyle name, decided by the project owner on 2026-10-02. The registry's own French post for this establishment writes MOHAND; only its Arabic post (4669) writes محمد, and that registry spelling is the documented variant kept here rather than in the published record."
         }
-      ]
+      ],
+      "reviewed_at": "2026-10-02"
     }
   ]
 }

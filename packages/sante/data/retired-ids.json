@@ -1,0 +1,232 @@
+{
+  "note": "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.",
+  "migrations": {
+    "01-eph-05": {
+      "merged_into": "01-eph-03",
+      "msp_posts": [
+        "3584",
+        "3585"
+      ],
+      "note": "Merged into 01-eph-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3584 and 3585), and the two posts are one facility. 01-eph-03 is the older published id and carries both names."
+    },
+    "02-eph-08": {
+      "merged_into": "02-eph-03",
+      "msp_posts": [
+        "3598",
+        "3599"
+      ],
+      "note": "Merged into 02-eph-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3598 and 3599), and the two posts are one facility. 02-eph-03 is the older published id and carries both names."
+    },
+    "02-eph-09": {
+      "merged_into": "02-eph-02",
+      "msp_posts": [
+        "3841",
+        "3840"
+      ],
+      "note": "Merged into 02-eph-02: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3841 and 3840), and the two posts are one facility. 02-eph-02 is the older published id and carries both names."
+    },
+    "05-eph-13": {
+      "merged_into": "05-eph-05",
+      "msp_posts": [
+        "3891",
+        "3892"
+      ],
+      "note": "Merged into 05-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3891 and 3892), and the two posts are one facility. 05-eph-05 is the older published id and carries both names."
+    },
+    "05-eph-14": {
+      "merged_into": "05-eph-01",
+      "msp_posts": [
+        "3895",
+        "3896"
+      ],
+      "note": "Merged into 05-eph-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3895 and 3896), and the two posts are one facility. 05-eph-01 is the older published id and carries both names."
+    },
+    "05-eph-15": {
+      "merged_into": "05-eph-08",
+      "msp_posts": [
+        "3897",
+        "3898"
+      ],
+      "note": "Merged into 05-eph-08: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3897 and 3898), and the two posts are one facility. 05-eph-08 is the older published id and carries both names."
+    },
+    "07-epsp-07": {
+      "merged_into": "07-epsp-03",
+      "msp_posts": [
+        "4458",
+        "4459"
+      ],
+      "note": "Merged into 07-epsp-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4458 and 4459), and the two posts are one facility. 07-epsp-03 is the older published id and carries both names."
+    },
+    "07-epsp-08": {
+      "merged_into": "07-epsp-02",
+      "msp_posts": [
+        "4456",
+        "4457"
+      ],
+      "note": "Merged into 07-epsp-02: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4456 and 4457), and the two posts are one facility. 07-epsp-02 is the older published id and carries both names."
+    },
+    "08-ehs-04": {
+      "merged_into": "08-ehs-01",
+      "msp_posts": [
+        "4484",
+        "4485"
+      ],
+      "note": "Merged into 08-ehs-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4484 and 4485), and the two posts are one facility. 08-ehs-01 is the older published id and carries both names."
+    },
+    "08-eph-06": {
+      "merged_into": "08-eph-01",
+      "msp_posts": [
+        "4482",
+        "4483"
+      ],
+      "note": "Merged into 08-eph-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4482 and 4483), and the two posts are one facility. 08-eph-01 is the older published id and carries both names."
+    },
+    "08-eph-08": {
+      "merged_into": "08-eph-05",
+      "msp_posts": [
+        "3665",
+        "3666"
+      ],
+      "note": "Merged into 08-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3665 and 3666), and the two posts are one facility. 08-eph-05 is the older published id and carries both names."
+    },
+    "08-eph-09": {
+      "merged_into": "08-eph-03",
+      "msp_posts": [
+        "4480",
+        "4481"
+      ],
+      "note": "Merged into 08-eph-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4480 and 4481), and the two posts are one facility. 08-eph-03 is the older published id and carries both names."
+    },
+    "09-epsp-05": {
+      "merged_into": "09-epsp-04",
+      "msp_posts": [
+        "4502",
+        "4503"
+      ],
+      "note": "Merged into 09-epsp-04: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4502 and 4503), and the two posts are one facility. 09-epsp-04 is the older published id and carries both names."
+    },
+    "11-epsp-06": {
+      "merged_into": "11-epsp-02",
+      "msp_posts": [
+        "3727",
+        "3728"
+      ],
+      "note": "Merged into 11-epsp-02: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3727 and 3728), and the two posts are one facility. 11-epsp-02 is the older published id and carries both names."
+    },
+    "11-epsp-07": {
+      "merged_into": "11-epsp-03",
+      "msp_posts": [
+        "3729",
+        "3730"
+      ],
+      "note": "Merged into 11-epsp-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3729 and 3730), and the two posts are one facility. 11-epsp-03 is the older published id and carries both names."
+    },
+    "14-eph-06": {
+      "merged_into": "14-eph-05",
+      "msp_posts": [
+        "3753",
+        "3754"
+      ],
+      "note": "Merged into 14-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3753 and 3754), and the two posts are one facility. 14-eph-05 is the older published id and carries both names."
+    },
+    "16-ehs-13": {
+      "merged_into": "16-ehs-03",
+      "msp_posts": [
+        "4660",
+        "4661"
+      ],
+      "note": "Merged into 16-ehs-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4660 and 4661), and the two posts are one facility. 16-ehs-03 is the older published id and carries both names."
+    },
+    "16-ehs-14": {
+      "merged_into": "16-ehs-04",
+      "msp_posts": [
+        "4668",
+        "4669"
+      ],
+      "note": "Merged into 16-ehs-04: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4668 and 4669), and the two posts are one facility. 16-ehs-04 is the older published id and carries both names."
+    },
+    "16-ehs-15": {
+      "merged_into": "16-ehs-06",
+      "msp_posts": [
+        "4666",
+        "4667"
+      ],
+      "note": "Merged into 16-ehs-06: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4666 and 4667), and the two posts are one facility. 16-ehs-06 is the older published id and carries both names."
+    },
+    "17-eph-08": {
+      "merged_into": "17-eph-01",
+      "msp_posts": [
+        "4718",
+        "4719"
+      ],
+      "note": "Merged into 17-eph-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4718 and 4719), and the two posts are one facility. 17-eph-01 is the older published id and carries both names."
+    },
+    "17-eph-09": {
+      "merged_into": "17-eph-07",
+      "msp_posts": [
+        "4706",
+        "4707"
+      ],
+      "note": "Merged into 17-eph-07: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4706 and 4707), and the two posts are one facility. 17-eph-07 is the older published id and carries both names."
+    },
+    "17-eph-10": {
+      "merged_into": "17-eph-05",
+      "msp_posts": [
+        "3783",
+        "3782"
+      ],
+      "note": "Merged into 17-eph-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 3783 and 3782), and the two posts are one facility. 17-eph-05 is the older published id and carries both names."
+    },
+    "17-epsp-06": {
+      "merged_into": "17-epsp-03",
+      "msp_posts": [
+        "4712",
+        "4713"
+      ],
+      "note": "Merged into 17-epsp-03: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4712 and 4713), and the two posts are one facility. 17-epsp-03 is the older published id and carries both names."
+    },
+    "17-epsp-07": {
+      "merged_into": "17-epsp-05",
+      "msp_posts": [
+        "4716",
+        "4717"
+      ],
+      "note": "Merged into 17-epsp-05: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4716 and 4717), and the two posts are one facility. 17-epsp-05 is the older published id and carries both names."
+    },
+    "19-chu-02": {
+      "merged_into": "19-chu-01",
+      "msp_posts": [
+        "4748",
+        "4749"
+      ],
+      "note": "Merged into 19-chu-01: the Ministry of Health registry published this establishment twice, once per language (MSP posts 4748 and 4749), and the two posts are one facility. 19-chu-01 is the older published id and carries both names."
+    }
+  },
+  "ids": [
+    "01-eph-05",
+    "02-eph-08",
+    "02-eph-09",
+    "05-eph-13",
+    "05-eph-14",
+    "05-eph-15",
+    "07-epsp-07",
+    "07-epsp-08",
+    "08-ehs-04",
+    "08-eph-06",
+    "08-eph-08",
+    "08-eph-09",
+    "09-epsp-05",
+    "11-epsp-06",
+    "11-epsp-07",
+    "14-eph-06",
+    "16-ehs-13",
+    "16-ehs-14",
+    "16-ehs-15",
+    "17-eph-08",
+    "17-eph-09",
+    "17-eph-10",
+    "17-epsp-06",
+    "17-epsp-07",
+    "19-chu-02"
+  ]
+}

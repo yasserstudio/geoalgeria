@@ -278,7 +278,10 @@ export const MIGRATIONS = {
         wilaya_code: r.wilaya_code, commune_code: padC(r.commune_code), commune: r.commune,
         ...geoAt(r, gp === "osm_point" || gp === "wikidata_point" ? "exact" : "approximate", gp),
         source: "msp",
-        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id }),
+        // `msp_twin` is the registry's other-language post for the same
+        // facility: the Ministry publishes each establishment once in French and
+        // once in Arabic, and a bilingual record stands for both posts.
+        refs: refs({ wikidata: r.wikidata, osm: r.osm_id, msp: r.msp_id, msp_twin: r.msp_id_twin }),
         type: r.type, type_label_fr: r.type_label_fr, type_label_ar: r.type_label_ar,
         sector: r.sector, slug: r.slug,
       });
@@ -291,7 +294,7 @@ export const MIGRATIONS = {
       ],
       license: "Official registry (Ministry of Health); geocoding ODbL/CC0",
       estimatedUniverse: null,
-      coverageNote: "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+      coverageNote: "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 83 remain ungeocoded.",
       titles: { en: "Algeria public health establishments", fr: "Établissements de santé publique d'Algérie", ar: "المؤسسات الصحية العمومية الجزائرية" },
       stats: (rows) => ({ by_type: count(rows, "type"), by_sector: count(rows, "sector"), by_geo_method: count(rows, "geo_method"), bilingual: rows.filter((r) => r.name_ar && r.name_fr).length, linkage_note: LINKAGE }),
     },
@@ -906,7 +909,7 @@ export const MIGRATIONS = {
  *           coverageNote?: string, titles?: object, preserve?: string[],
  *           stats?: (rows: object[]) => object },
  *   oldMeta?: object, reviewLedger?: object|null,
- *   retiredIds?: Set<string>|null,
+ *   retiredIds?: Set<string>|null, retiredMigrations?: Record<string,string>|null,
  * }} input
  * @returns {{ records: object[], metadata: object, review: object }}
  */
@@ -922,6 +925,7 @@ export function writePackageV2({
   oldMeta = {},
   reviewLedger = undefined,
   retiredIds = null,
+  retiredMigrations = null,
 }) {
   const effectiveReviewLedger =
     reviewLedger === undefined ? loadReviewLedger(pkg) : reviewLedger;
@@ -1081,7 +1085,7 @@ export function writePackageV2({
     // so an empty set here can only come from an empty or absent file).
     pending.push({
       path: join(dir, "retired-ids.json"),
-      content: retiredIds.size ? retiredIdsContent(retiredIds) : null,
+      content: retiredIds.size ? retiredIdsContent(retiredIds, retiredMigrations) : null,
     });
   }
 
@@ -1226,11 +1230,36 @@ export function carryOverIds(
 const RETIRED_IDS_NOTE =
   "Ids no record may ever hold again. Keeping them reserved prevents a public join key from silently pointing to a different place after a later refresh.";
 
-function retiredIdsContent(ids) {
+/** `migrations` says where a retired id's data went, for the ids whose record
+ *  did not disappear but was folded into another one. A consumer holding the old
+ *  id can then follow it instead of only learning that it is gone. Emitted only
+ *  for ids the ledger actually reserves, and omitted entirely when there are
+ *  none, so a package that has never merged a record ships the file it always
+ *  shipped. */
+function retiredIdsContent(ids, migrations = null) {
+  const reserved = [...ids].map(String).sort();
+  const moved = {};
+  for (const id of reserved) if (migrations?.[id]) moved[id] = migrations[id];
   return `${JSON.stringify({
     note: RETIRED_IDS_NOTE,
-    ids: [...ids].map(String).sort(),
+    ...(Object.keys(moved).length ? { migrations: moved } : {}),
+    ids: reserved,
   }, null, 2)}\n`;
+}
+
+/** The per-id migration entries a package's ledger already carries. The ledger
+ *  is append-only: a generator recomputes only the migrations it can see this
+ *  run, and a record merged in an earlier release is no longer visible in the
+ *  committed data, so its entry has to be carried forward rather than recomputed. */
+export function readRetiredMigrations(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return {};
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  const migrations = document.migrations;
+  if (migrations == null) return {};
+  if (typeof migrations !== "object" || Array.isArray(migrations))
+    throw new Error(`${path}: expected an object at migrations`);
+  return migrations;
 }
 
 /** Read and validate a package's persistent retired-id ledger. */
@@ -1253,11 +1282,11 @@ export function readRetiredIds(dir) {
 /** Persist a ledger for a generator that has not moved to writePackageV2 yet.
  *  An empty ledger is not written, and an empty one on disk is removed, so a
  *  package that has never retired an id ships no `retired-ids.json`. */
-export function writeRetiredIds(dir, ids) {
+export function writeRetiredIds(dir, ids, migrations = null) {
   const path = join(dir, "retired-ids.json");
   const size = ids instanceof Set ? ids.size : [...ids].length;
   if (!size) rmSync(path, { force: true });
-  else writeAtomic(path, retiredIdsContent(ids));
+  else writeAtomic(path, retiredIdsContent(ids, migrations));
 }
 
 /** Read a package's committed records for carryOverIds, or [] if none exist yet. */

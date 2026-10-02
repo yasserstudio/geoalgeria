@@ -301,6 +301,19 @@ const ENRICHMENTS = {
     // tests guard that join; replay continues to guard every other field here.
     if (shipped) produced.wilaya_code = shipped.wilaya_code;
   },
+  sante: (produced, shipped) => {
+    // refs.msp_twin is the registry's other-language post for the same
+    // establishment, decided by the generator's FR/AR pairing over the whole
+    // group. The frozen v1 row carries one post id and the per-record v2 map
+    // cannot know which other post it was paired with; test/sante-pairing and
+    // test/sante-twin-posts guard the pairing and the ids it retires.
+    if (!shipped?.refs?.msp_twin) return;
+    produced.refs = { ...produced.refs, msp_twin: shipped.refs.msp_twin };
+    // A record the frozen row shipped in one language is bilingual once the
+    // twin post is paired to it, and the name it gains comes from that post.
+    for (const key of ["name_fr", "name_ar"]) if (produced[key] == null) produced[key] = shipped[key];
+    produced.name = produced.name_fr || produced.name_ar;
+  },
   "protection-civile": (produced, shipped) => {
     // Commune is assigned by the package generator from the current Arabic
     // name/centroid index. The frozen v1 row can carry an older nearest-commune
