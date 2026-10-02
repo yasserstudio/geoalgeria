@@ -146,7 +146,7 @@ announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
 | `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2026 retain their 2021 mother-wilaya prefix |
 | `osm_relation_id` | integer \| null | The id of this commune's OpenStreetMap administrative relation, `admin_level=8` but for 3 relations mis-tagged upstream; null on the 1 commune OpenStreetMap holds no commune relation for |
-| `wikidata` | string \| null | The Wikidata item that relation carries (`Q` then digits); null where it carries no `wikidata` tag |
+| `wikidata` | string \| null | The Wikidata item that relation carries (`Q` then digits); null where it carries no `wikidata` tag, and on the 1 commune whose tag was proved to name a different place |
 
 ### Commune (e-commerce)
 
@@ -369,7 +369,7 @@ everyone else not to make.
 
 | Records | With a relation | With a Wikidata item |
 |---|---|---|
-| 1,541 communes | 1,540 | 1,539 |
+| 1,541 communes | 1,540 | 1,538 |
 | 69 wilayas | 69 | 69 |
 
 Both fields are `null` where the source has none, and neither is ever guessed:
@@ -397,9 +397,19 @@ Both fields are `null` where the source has none, and neither is ever guessed:
   `ref:ONS` 4703 is a commune: the only one is the Dayet Ben Dahoua **daira**, relation
   `6823963` at `admin_level=6`, which is a different place and covers more than this
   commune. Both fields stay null rather than linking a daira to a commune.
-- **1 commune has a relation and no item**: Ain-Defla (4401), whose relation
+- **1 commune has a relation and no item tag**: Ain-Defla (4401), whose relation
   (`21037899`) carries no `wikidata` tag. The field stays null rather than resolving the
   item from the name.
+- **1 commune has its item refused**: Tefreg (3424). Its relation is tagged
+  `Q3517130`, which Wikidata types as a *village* and describes as being inside Tafreg
+  commune; the commune's own item is `Q7674990`. The second-source check below found it,
+  and the Owner decided on 2026-10-02 to publish `null` and keep the relation: carrying
+  the village item would answer a different place, and substituting `Q7674990` would mean
+  resolving an item ourselves, which this dataset does not do. An OpenStreetMap edit is
+  owed on the relation. The exclusion is keyed on the commune code **and** on that exact
+  item in `scripts/add-osm-links.mjs`, so the day the tag changes the run fails and the
+  line is removed rather than silently suppressing whatever replaced it. It is recorded
+  under `wikidata_excluded` in the sidecar.
 - **One record is linked without an ONS code on the relation.** Five of the six pins
   above are spelling gaps: the relation carries the documented pre-2019-reform ONS code
   and this dataset spells the name differently. The sixth is Ain-Defla (4401), whose
@@ -416,7 +426,7 @@ Both fields are `null` where the source has none, and neither is ever guessed:
 - **A second source checks the links.** `research/_osm-links/wikidata-link-reference.json`
   is a committed snapshot of Wikidata's own `P402` (OpenStreetMap relation id) and `P31`
   (instance of) for every published item, read from the Wikidata SPARQL endpoint rather
-  than from OpenStreetMap. Where Wikidata states a relation id (636 of the 1,608 items)
+  than from OpenStreetMap. Where Wikidata states a relation id (636 of the 1,607 items)
   it must be the one published here, and every item must be a commune or a province of
   Algeria. The disagreements it finds are listed with their reasons in
   `test/osm-wikidata-second-source.test.mjs`; a new one fails that test.

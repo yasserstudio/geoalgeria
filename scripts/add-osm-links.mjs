@@ -146,6 +146,51 @@ for (const [code, relationId] of DAIRA_ONLY) {
   else dairaOnly.set(code, relationId);
 }
 
+// --- the one excluded Wikidata item --------------------------------------------
+
+// `wikidata` is the relation's own tag everywhere but here. The second-source guard
+// (test/osm-wikidata-second-source.test.mjs) found one relation tagged with the item of a
+// different place, and the Owner decided on 2026-10-02 to null that field and keep the
+// relation rather than publish an item that answers the wrong place. The exclusion is
+// keyed on the commune code AND the exact bad item, so the day OpenStreetMap is fixed the
+// harvest stops carrying that item, this run fails, and the line is removed instead of
+// quietly suppressing whatever the tag became.
+//   code_commune -> [the item refused, the item that is actually this commune, why]
+const WIKIDATA_EXCLUSIONS = [
+  [
+    3424,
+    {
+      excluded_item: "Q3517130",
+      correct_item: "Q7674990",
+      reason:
+        "the relation's wikidata tag names Achabou (Q3517130), a village inside this commune, not the commune: " +
+        "Wikidata types it as a village and describes it as being in Tafreg commune. The commune's own item is " +
+        "Q7674990, a commune of Algeria. An OpenStreetMap edit is owed on the relation; until it lands the field is " +
+        "null, because publishing the village item would answer a different place, and substituting Q7674990 would be " +
+        "resolving an item ourselves, which this dataset does not do",
+    },
+  ],
+];
+
+const excluded = [];
+for (const [code, row] of WIKIDATA_EXCLUSIONS) {
+  const link = wantCommune.get(code);
+  if (!link) {
+    problems.push(`commune ${code}: an exclusion names a commune neither tier links`);
+    continue;
+  }
+  if (link.wikidata !== row.excluded_item) {
+    problems.push(
+      `commune ${code}: the exclusion refuses ${row.excluded_item} but the relation now carries ` +
+        `${JSON.stringify(link.wikidata)}; recheck the tag upstream and drop or restate this exclusion`,
+    );
+    continue;
+  }
+  wantCommune.set(code, { osm_relation_id: link.osm_relation_id, wikidata: null });
+  excluded.push({ code, ...row, osm_relation_id: link.osm_relation_id });
+}
+const excludedCodes = new Set(excluded.map((row) => row.code));
+
 // One relation, one place. A repeat is reported with both holders and nothing is written.
 for (const field of ["osm_relation_id", "wikidata"]) {
   const seen = new Map();
@@ -341,7 +386,9 @@ const sidecar = {
     "relation itself; 4401 is linked by name confirmed by elimination, and no record is linked by a name alone.",
   wikidata:
     "The Q item is the relation's own wikidata tag, read as published and never looked up or guessed. A relation with no " +
-    "wikidata tag leaves the field null.",
+    "wikidata tag leaves the field null. There is one exclusion, listed under wikidata_excluded below: where the " +
+    "second-source guard proved a relation's tag names a different place, the field is null rather than carrying an item " +
+    "that answers the wrong place. Nothing is ever substituted, only refused.",
   carriers: ["data/communes_w1_w23.json", "data/communes_w24_w48.json", "data/communes_w49_w69.json", "data/wilayas.json", "data/algeria.json"],
   second_tier_capture: "research/_osm-links/relations.json",
   second_tier_timestamp_osm_base: captureMeta.timestamp_osm_base,
@@ -377,7 +424,12 @@ const sidecar = {
         : "neither the 2026-09-29 capture nor research/_osm-links/relations.json holds a commune relation carrying this commune's ONS code",
     })),
   communes_without_wikidata: communes
-    .filter((c) => communeLink(c).osm_relation_id !== null && communeLink(c).wikidata === null)
+    .filter(
+      (c) =>
+        communeLink(c).osm_relation_id !== null &&
+        communeLink(c).wikidata === null &&
+        !excludedCodes.has(Number(c.code_commune)),
+    )
     .sort((a, b) => a.code_commune - b.code_commune)
     .map((c) => ({
       code_commune: c.code_commune,
@@ -385,6 +437,20 @@ const sidecar = {
       name_fr: c.name_fr,
       osm_relation_id: communeLink(c).osm_relation_id,
       reason: "the relation carries no wikidata tag",
+    })),
+  wikidata_excluded: excluded
+    .sort((a, b) => a.code - b.code)
+    .map((row) => ({
+      code_commune: row.code,
+      wilaya_code: Number(byCommuneCode.get(row.code)?.wilaya_code),
+      name_fr: byCommuneCode.get(row.code)?.name_fr ?? null,
+      name_ar: byCommuneCode.get(row.code)?.name_ar ?? null,
+      osm_relation_id: row.osm_relation_id,
+      excluded_item: row.excluded_item,
+      correct_item: row.correct_item,
+      found_by: "test/osm-wikidata-second-source.test.mjs, the Wikidata P31 check",
+      decided: "Owner, 2026-10-02",
+      reason: row.reason,
     })),
 };
 
@@ -415,6 +481,10 @@ for (const row of sidecar.second_tier)
   );
 for (const row of sidecar.communes_without_relation)
   console.log(`  no relation: commune ${row.code_commune} ${row.name_fr} (w${row.wilaya_code})`);
+for (const row of sidecar.wikidata_excluded)
+  console.log(
+    `  wikidata excluded: commune ${row.code_commune} ${row.name_fr}, relation ${row.osm_relation_id} tags ${row.excluded_item} (the commune is ${row.correct_item})`,
+  );
 for (const row of sidecar.communes_without_wikidata)
   console.log(`  no wikidata: commune ${row.code_commune} ${row.name_fr}, relation ${row.osm_relation_id}`);
 

@@ -37,6 +37,8 @@ const wilayas = read(DATA, "wilayas.json").wilayas;
 
 const snapshot = read(ROOT, "research", "_osm-links", "wikidata-link-reference.json");
 const relations = read(ROOT, "research", "_osm-links", "relations.json");
+const sidecar = read(DATA, "osm-links.metadata.json");
+const reference = read(ROOT, "research", "_commune-centres", "osm-seat-reference.json");
 const byRelation = new Map(relations.relations.map((r) => [r.id, r]));
 
 /** Every published record that carries a Wikidata item, in the snapshot's own shape. */
@@ -67,7 +69,10 @@ const WIKIDATA_NAMES_A_DUPLICATE = new Map([
   [3818, 2806124], // Sidi Abed
 ]);
 
-// Five items Wikidata does not type as the administrative unit itself. `wikidata` is the
+// Four items Wikidata does not type as the administrative unit itself. The fifth this
+// check found, Q3517130 on commune 3424, was not a difference of classification at all:
+// the item is a village inside the commune. The Owner nulled that field on 2026-10-02, so
+// it is no longer published and is asserted as a null at the end of this file instead. `wikidata` is the
 // item the OpenStreetMap relation carries, read as published and never resolved from a
 // name, so these rows are what the second source says about five upstream tags.
 //   Q-id -> [the record it is published on, why it is listed rather than failing]
@@ -95,16 +100,6 @@ const OFF_CLASS = new Map([
       "commune 3501",
       "the item is Boumerdes the city, typed city rather than commune of Algeria, and carries no P402, the same " +
         "chef-lieu-for-commune shape as Adrar and Medea.",
-    ],
-  ],
-  [
-    "Q3517130",
-    [
-      "commune 3424",
-      "KNOWN UPSTREAM DEFECT, not a benign difference: the item is Achabou, a village inside the commune, not the " +
-        "commune. Wikidata's commune item for this record is Q7674990. The OpenStreetMap relation's wikidata tag " +
-        "is wrong and an edit is owed upstream; until it lands the published field stays what the relation carries, " +
-        "because this dataset publishes the tag and never substitutes an item of its own choosing.",
     ],
   ],
   [
@@ -233,4 +228,38 @@ test("every off-class exception states a reason", () => {
     assert.ok(snapshotByQ.has(qid), `${qid} is listed as off-class but is not published`);
     assert.ok(label.length > 0 && reason.length > 80, `${qid} (${label}): the reason is too thin to audit`);
   }
+});
+
+// --- the finding this guard produced -------------------------------------------------
+
+// P31 is the only check here that can see a relation tagged with the item of a different
+// place, and on commune 3424 it did: the relation names Achabou, a village inside the
+// commune, typed village and described by Wikidata as being in Tafreg commune, while the
+// commune's own item is Q7674990, a commune of Algeria. The Owner nulled the field and kept
+// the relation on 2026-10-02. These assertions keep that decision honest from this side:
+// the refused item must stay out of the published data and out of this snapshot, and the
+// day OpenStreetMap fixes the tag the links test fails and the exclusion is removed.
+const REFUSED = "Q3517130";
+const COMMUNE_ITEM = "Q7674990";
+
+test("the item this guard rejected is not published and not in the snapshot", () => {
+  const commune = communes.find((c) => c.code_commune === 3424);
+  assert.equal(commune.wikidata, null, `commune 3424 publishes an item again; ${REFUSED} names a village, not the commune`);
+  assert.notEqual(commune.osm_relation_id, null, "only the item was refused, so the relation is still published");
+  assert.ok(!snapshotByQ.has(REFUSED), `${REFUSED} is still in the snapshot, so it is still published somewhere`);
+  assert.ok(!snapshotByQ.has(COMMUNE_ITEM), "the commune's own item was substituted; an exclusion refuses a value, it never resolves one");
+  assert.ok(!published.some((r) => r.wikidata === REFUSED), `${REFUSED} is published on some record`);
+});
+
+test("the exclusion is recorded in the sidecar and still needed upstream", () => {
+  const row = sidecar.wikidata_excluded.find((r) => r.code_commune === 3424);
+  assert.ok(row, "the sidecar does not record the exclusion, so nothing published says why the field is null");
+  assert.equal(row.excluded_item, REFUSED);
+  assert.equal(row.correct_item, COMMUNE_ITEM);
+  assert.match(row.found_by, /second-source/, "the sidecar does not say which guard found it");
+  assert.equal(
+    reference.communes.find((c) => c.code_commune === 3424).wikidata,
+    REFUSED,
+    `the OpenStreetMap relation no longer carries ${REFUSED}: the edit may have landed, so recheck the tag and drop the exclusion`,
+  );
 });

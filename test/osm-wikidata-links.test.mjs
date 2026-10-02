@@ -53,6 +53,10 @@ const SECOND_TIER = new Map([
 ]);
 // Only a daira relation carries ONS code 4703, so that commune keeps a null link.
 const DAIRA_ONLY = new Map([[4703, 6823963]]);
+// The one commune whose relation is tagged with another place's item. The Owner nulled the
+// field on 2026-10-02 and kept the relation, so here the published value deliberately is
+// NOT the harvest's: code -> [the item refused, the commune's own item].
+const WIKIDATA_EXCLUDED = new Map([[3424, ["Q3517130", "Q7674990"]]]);
 const secondTierCapture = read(ROOT, "research", "_osm-links", "relations.json");
 const capturedRelations = new Map(secondTierCapture.relations.map((r) => [r.id, r]));
 
@@ -116,6 +120,11 @@ test("every value is the one the audit's linkage carries for that record", () =>
   for (const commune of communes) {
     if (SECOND_TIER.has(commune.code_commune)) continue; // the harvest has no row; the second-tier capture does
     const hit = referenceCommunes.get(commune.code_commune);
+    if (WIKIDATA_EXCLUDED.has(commune.code_commune)) {
+      // The relation still comes from the harvest; only the item is refused.
+      assert.equal(commune.osm_relation_id, hit.osm_relation_id, `commune ${commune.code_commune}: osm_relation_id is not the audit's`);
+      continue;
+    }
     assert.equal(
       commune.osm_relation_id,
       hit?.osm_relation_id ?? null,
@@ -161,9 +170,14 @@ test("the one record with no link is the one OpenStreetMap holds no commune rela
   assert.deepEqual(unlinked.sort((a, b) => a - b), [4703]);
   const noItem = communes.filter((c) => c.osm_relation_id !== null && c.wikidata === null);
   assert.deepEqual(
-    noItem.map((c) => c.code_commune),
+    noItem.map((c) => c.code_commune).sort((a, b) => a - b),
+    [3424, 4401],
+    "two communes have a relation and no item: Ain-Defla's relation carries no wikidata tag, and Tefreg's item is excluded",
+  );
+  assert.deepEqual(
+    sidecar.communes_without_wikidata.map((c) => c.code_commune),
     [4401],
-    "only Ain-Defla's relation carries no wikidata tag; a relation with none stays null",
+    "the no-tag list is for relations with no wikidata tag; an excluded item belongs under wikidata_excluded",
   );
   assert.equal(wilayas.filter((w) => w.osm_relation_id === null || w.wikidata === null).length, 0);
 });
@@ -177,7 +191,7 @@ test("the coverage counts are the ones the sidecar and the changelog state", () 
   };
   assert.deepEqual(counts, {
     communes_with_relation: 1540,
-    communes_with_wikidata: 1539,
+    communes_with_wikidata: 1538,
     wilayas_with_relation: 69,
     wilayas_with_wikidata: 69,
   });
@@ -316,4 +330,40 @@ test("the capture pins the Overpass snapshot the second tier was read from", () 
   assert.match(secondTierCapture.licence, /ODbL/);
   assert.equal(sidecar.second_tier_capture, "research/_osm-links/relations.json");
   assert.equal(sidecar.second_tier_timestamp_osm_base, secondTierCapture.timestamp_osm_base);
+});
+
+// --- the one excluded Wikidata item ---------------------------------------------------
+
+test("commune 3424's wikidata is null because its relation is tagged with another place", () => {
+  const commune = communes.find((c) => c.code_commune === 3424);
+  const [refused] = WIKIDATA_EXCLUDED.get(3424);
+  assert.equal(commune.wikidata, null, "commune 3424 publishes an item again; the Owner's exclusion is not being applied");
+  assert.notEqual(commune.osm_relation_id, null, "the relation is kept: only the item was refused");
+  assert.equal(
+    referenceCommunes.get(3424).wikidata,
+    refused,
+    `the harvest no longer carries ${refused} for commune 3424, so the exclusion is stale: recheck the OpenStreetMap tag and drop or restate it`,
+  );
+  assert.equal(commune.osm_relation_id, referenceCommunes.get(3424).osm_relation_id);
+});
+
+test("the sidecar records the excluded item, the commune's own item and why", () => {
+  assert.deepEqual(
+    sidecar.wikidata_excluded.map((row) => row.code_commune),
+    [...WIKIDATA_EXCLUDED.keys()].sort((a, b) => a - b),
+  );
+  for (const row of sidecar.wikidata_excluded) {
+    const [refused, correct] = WIKIDATA_EXCLUDED.get(row.code_commune);
+    assert.equal(row.excluded_item, refused);
+    assert.equal(row.correct_item, correct);
+    assert.notEqual(row.osm_relation_id, null, "the relation stays published, so the sidecar names it");
+    assert.match(row.reason, new RegExp(refused), "the reason does not name the item that was refused");
+    assert.match(row.reason, new RegExp(correct), "the reason does not name the commune's own item");
+    assert.match(row.reason, /OpenStreetMap edit is owed/, "the reason does not say the fix is owed upstream");
+    assert.match(row.decided, /Owner, 2026-10-02/);
+  }
+  assert.ok(
+    !communes.some((c) => c.wikidata === WIKIDATA_EXCLUDED.get(3424)[1]),
+    "the commune's own item was substituted somewhere; an exclusion refuses a value, it never resolves one",
+  );
 });

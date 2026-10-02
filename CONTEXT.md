@@ -174,7 +174,7 @@ Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only o
 _Avoid_: located, mapped, positioned
 
 **Upstream link**:
-An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
+An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
 _Avoid_: external id, cross-reference, mapping, concordance
 
 **OSM relation id**:
