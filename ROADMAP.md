@@ -21,20 +21,20 @@ reads as further along than it is.
 ## Aviation
 
 - [ ] **Scheduled flight duration per route.** Asked for on the route card and
-  refused, correctly: there is no duration field, and **0 of 142** routes in
+  refused, correctly: there is no duration field, and **0 of 148** routes in
   `research/_flight-routes/route-dataset.json` carry one. The great-circle
   duration check used during verification was computed and discarded. Deriving a
   duration from distance would put a fabricated number beside sourced ones. Wants
   scheduled block times collected per route from a citable source.
   _(logged 2026-07-28)_
 
-- [ ] **66 rows are `listed` rather than `verified`,** and 70 legs are
+- [ ] **72 rows are `listed` rather than `verified`,** and 70 legs are
   one-directional (an outbound with no recorded return). `listed` means a
   published table names the carrier serving the pair without confirming Air
   Algérie operates it. The screen + confirm pipeline exists now
   (`research/_flight-routes/screen_returns_soar.py`, hypotheses only, then
   citable confirmation); open-ended collection, better run as background.
-  _(logged 2026-07-28, counts refreshed 2026-09-27)_
+  _(logged 2026-07-28, counts refreshed 2026-10-02)_
 
 - [x] **Settled: `blj-cdg` was Orly all along.** Three independent
   flight-tracking aggregators name ORY for both AH1120 and AH1121 and nothing
@@ -53,6 +53,26 @@ reads as further along than it is.
   `days: ["mon"]` is right for the 2026-09-27 snapshot, so this is a one-line edit
   plus an `as_of` bump at the next pass, not a correction to make now.
   _(logged 2026-09-27)_
+
+- [ ] **The winter programme's launch dates, to flip on the release-day pass.**
+  Every row below is `planned` on the 2026-10-02 snapshot because its launch date
+  is still ahead. Each flips to the operating collection only on a dated report
+  that it flew, never because the date arrived: `alg-cky` / `cky-alg` (25 Oct),
+  `alg-bzv` / `bzv-alg`, `abv-los`, `alg-pvg` / `pvg-alg`, `alg-kwi` / `kwi-amm` /
+  `amm-alg` (26 Oct), `alg-mji` / `mji-alg` (28 Oct), `alg-los` / `los-abv`
+  (29 Oct). `alg-svo` / `svo-alg` carried an announced 2 Oct resumption with no
+  report of a first flight, so they are the first to re-check. Detail in
+  `research/_flight-routes/verification-2026-10-02.md`.
+  _(logged 2026-10-02)_
+
+- [ ] **`alg-doh` / `doh-alg` go daily on 25 Oct 2026.** The resumed service runs
+  three weekly, Sun/Tue/Fri, and the same reports announce a daily programme from
+  25 October
+  ([visa-algerie, 27 Sep 2026](https://www.visa-algerie.com/air-algerie-accelere-sur-le-qatar-avec-des-vols-quotidiens-des-octobre/)).
+  `days: ["sun", "tue", "fri"]` is right for the 2026-10-02 snapshot, so this is a
+  one-line edit plus an `as_of` bump at the next pass, the same shape as the
+  Berlin item above.
+  _(logged 2026-10-02)_
 
 - [ ] **Screened positive, awaiting a citable source: IST -> ORN** (AH3025
   en-route during the 2026-07-29 screen; istairport.com timed out, aeroroutes

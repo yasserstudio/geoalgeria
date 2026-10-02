@@ -26,7 +26,7 @@ Conservative key, Loose key, Rule, Golden corpus.
 | `packages/emploi/` | `@geoalgeria/emploi` | employment agencies (ANEM: AWEM + ALEM) |
 | `packages/mobilis/` | `@geoalgeria/mobilis` | Mobilis agencies & approved points of sale (mobilis.dz) |
 | `packages/telecom/` | `@geoalgeria/telecom` | cross-operator 5G coverage (Djezzy, Mobilis, Ooredoo) |
-| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC), plus Air Algérie's international network as 126 directional nonstop legs and 16 planned ones, each with an evidence tier and a source |
+| `packages/aviation/` | `@geoalgeria/aviation` | civil airports with ICAO codes (ANAC), plus Air Algérie's international network as 129 directional nonstop legs and 19 planned ones, each with an evidence tier and a source |
 | `packages/banques/` | `@geoalgeria/banques` | licensed banks, institutions & branches (RIB/SWIFT) |
 | `packages/livraison/` | `@geoalgeria/livraison` | delivery carriers & geocoded stop-desks |
 | `packages/jeunesse/` | `@geoalgeria/jeunesse` | youth establishments (Ministry of Youth and Sports) |
