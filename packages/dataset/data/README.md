@@ -17,6 +17,7 @@
 data/
 ├── algeria.json                 ← unified: wilayas + nested communes
 ├── wilayas.json                 ← 69 wilayas (flat)
+├── wilayas.csv                  ← the same 69, with the reform and count columns
 ├── dairas.json                  ← 551 dairas
 ├── communes_w1_w23.json         ← communes for wilayas 1–23
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
@@ -166,6 +167,23 @@ of 24 August 1991, and those lists as this dataset holds them come to **409**.
 **551 is therefore this dataset's count, not a published national total**: no
 post-reform text states one. The reading of the annex, and what it does and does
 not settle, is in [`research/_dairas/`](../../../research/_dairas/).
+
+### Counts are derived, never typed
+
+`dairas_count` and `communes_count` are summaries of `dairas.json` and the three
+commune splits, so they are generated from them by
+[`scripts/sync-division-counts.mjs`](../../../scripts/sync-division-counts.mjs)
+and never hand-edited. It writes the per-wilaya counts in `wilayas.json` and
+`wilayas.csv`, the two totals in `wilayas.json`'s `metadata`, and the header of
+`sql/full.sql`; `test/division-counts.test.mjs` fails when any of them differs
+from the records.
+
+`wilayas.csv` carries one figure the records cannot produce. The ten wilayas the
+2026 reform took territory from state what they held **before** it in
+`communes_count`/`dairas_count` and what they hold **now** in
+`post_reform_communes`/`post_reform_dairas`; every other row states its current
+figures in the first pair. The pre-reform pair is history, sourced in the
+[changelog](../CHANGELOG.md), and is the only count left to hand.
 
 ## SQL Schema
 

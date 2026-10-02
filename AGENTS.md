@@ -112,6 +112,8 @@ Full details and one-time setup: [`RELEASING.md`](RELEASING.md).
 ## Don't
 
 - Hand-edit generated mirrors (`packages/dataset/data/poste/`).
+- Type a daira or commune count into a carrier. They are derived from the records
+  by `node scripts/sync-division-counts.mjs --write`; run it instead.
 - Push a bump without a changeset, or a changeset without a source for the data.
 - Commit anything from `.agents/`; it's intentionally local.
 
