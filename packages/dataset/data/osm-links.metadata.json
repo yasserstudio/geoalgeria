@@ -9,7 +9,8 @@
   "timestamp_osm_base": "2026-09-29T12:54:47Z",
   "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
   "attribution": "https://www.openstreetmap.org/copyright",
-  "join": "The linkage is the one scripts/audit-commune-centres.mjs decided: a commune relation is joined on its ref:ONS tag, then on a pre-2019-reform ONS code resolved inside the mother wilaya's carved-out communes, then on six reviewed per-relation pins; a wilaya relation is joined on its ref tag. No record is linked by a name alone.",
+  "tiers": "Two. The first tier is the 2026-09-29 commune-centre capture, whose Overpass query asks for boundary=administrative AND admin_level=8. The second tier is the three communes that query could not see: OpenStreetMap holds their relations with the right ref:ONS code but non-standard tags, so they are fetched by id into research/_osm-links/relations.json and listed under second_tier below with the tag defect that hid each one.",
+  "join": "First tier: the linkage scripts/audit-commune-centres.mjs decided, a commune relation joined on its ref:ONS tag, then on a pre-2019-reform ONS code resolved inside the mother wilaya's carved-out communes, then on six reviewed per-relation pins. Five of those pins are spelling gaps: the relation carries the documented pre-reform ONS code and this dataset spells the name differently. The sixth, commune 4401 Ain-Defla, is the one record in the dataset whose relation carries no ONS code at all; it was pinned on the relation's name together with being the single w44 relation still unclaimed once every other w44 commune had been joined on its code, and its admin_centre node falling inside wilaya 44. Second tier: an ONS-code match on a relation the first capture's tag filter excluded. A wilaya relation is joined on its ref tag. Every record but 4401 is linked on an ONS code carried by the relation itself; 4401 is linked by name confirmed by elimination, and no record is linked by a name alone.",
   "wikidata": "The Q item is the relation's own wikidata tag, read as published and never looked up or guessed. A relation with no wikidata tag leaves the field null.",
   "carriers": [
     "data/communes_w1_w23.json",
@@ -18,42 +19,65 @@
     "data/wilayas.json",
     "data/algeria.json"
   ],
+  "second_tier_capture": "research/_osm-links/relations.json",
+  "second_tier_timestamp_osm_base": "2026-10-02T10:16:05Z",
   "total_communes": 1541,
   "total_wilayas": 69,
   "coverage": {
-    "communes_with_relation": 1537,
-    "communes_with_wikidata": 1536,
+    "communes_with_relation": 1540,
+    "communes_with_wikidata": 1539,
     "wilayas_with_relation": 69,
     "wilayas_with_wikidata": 69
   },
-  "communes_without_relation": [
+  "second_tier": [
     {
       "code_commune": 630,
       "wilaya_code": 6,
       "name_fr": "Souk Oufella",
       "name_ar": "سوق اوفلا",
-      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+      "osm_relation_id": 4069543,
+      "wikidata": "Q3087355",
+      "osm_name": "Souk Oufella",
+      "tag_defect": [
+        "no boundary tag"
+      ],
+      "reason": "the relation carries ref:ONS 630 but no boundary tag, so the 2026-09-29 capture's boundary=administrative + admin_level=8 filter excluded it; fetched by id and linked on the ONS-code match. The tagging is an OpenStreetMap defect owed upstream, not a reason to leave the record unlinked"
     },
     {
       "code_commune": 1634,
       "wilaya_code": 16,
       "name_fr": "Bir Touta",
       "name_ar": "بئر توتة",
-      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+      "osm_relation_id": 540555,
+      "wikidata": "Q4917124",
+      "osm_name": "Birtouta",
+      "tag_defect": [
+        "no boundary tag",
+        "no admin_level tag"
+      ],
+      "reason": "the relation carries ref:ONS 1634 but no boundary tag and no admin_level tag, so the 2026-09-29 capture's boundary=administrative + admin_level=8 filter excluded it; fetched by id and linked on the ONS-code match. The tagging is an OpenStreetMap defect owed upstream, not a reason to leave the record unlinked"
     },
     {
       "code_commune": 2110,
       "wilaya_code": 21,
       "name_fr": "Collo",
       "name_ar": "القل",
-      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
-    },
+      "osm_relation_id": 6407308,
+      "wikidata": "Q2983525",
+      "osm_name": "Collo",
+      "tag_defect": [
+        "admin_level=11"
+      ],
+      "reason": "the relation carries ref:ONS 2110 but admin_level=11, so the 2026-09-29 capture's boundary=administrative + admin_level=8 filter excluded it; fetched by id and linked on the ONS-code match. The tagging is an OpenStreetMap defect owed upstream, not a reason to leave the record unlinked"
+    }
+  ],
+  "communes_without_relation": [
     {
       "code_commune": 4703,
       "wilaya_code": 47,
       "name_fr": "Dhayet Bendhahoua",
       "name_ar": "ضاية بن ضحوة",
-      "reason": "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name"
+      "reason": "no relation carrying ref:ONS 4703 is a commune: the only one is the Dayet Ben Dahoua daira, relation 6823963 at admin_level=6, which is a different place and covers more than this commune. Both fields stay null rather than linking a daira to a commune"
     }
   ],
   "communes_without_wikidata": [

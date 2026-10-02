@@ -39,6 +39,23 @@ const sidecar = read(DATA, "osm-links.metadata.json");
 
 const Q = /^Q[1-9][0-9]*$/;
 
+// The second tier, decided by the Owner on 2026-10-02. Three communes OpenStreetMap does
+// hold and the 2026-09-29 capture could not see, because that capture asks Overpass for
+// `boundary=administrative` AND `admin_level=8` and each of these relations fails one half
+// of the filter while carrying the commune's own `ref:ONS` code. They are linked from their
+// own committed capture, not from the harvest, and the tests below hold that each one is
+// still mis-tagged (a relation that becomes standard belongs in the first tier) and still
+// carries the right ONS code.
+const SECOND_TIER = new Map([
+  [630, 4069543],
+  [1634, 540555],
+  [2110, 6407308],
+]);
+// Only a daira relation carries ONS code 4703, so that commune keeps a null link.
+const DAIRA_ONLY = new Map([[4703, 6823963]]);
+const secondTierCapture = read(ROOT, "research", "_osm-links", "relations.json");
+const capturedRelations = new Map(secondTierCapture.relations.map((r) => [r.id, r]));
+
 /** Every record that carries the two fields, labelled for a failure message. */
 const records = [
   ...communes.map((c) => ({ label: `commune ${c.code_commune} (${c.name_fr})`, row: c })),
@@ -97,6 +114,7 @@ test("no relation id and no Wikidata item is repeated across records", () => {
 
 test("every value is the one the audit's linkage carries for that record", () => {
   for (const commune of communes) {
+    if (SECOND_TIER.has(commune.code_commune)) continue; // the harvest has no row; the second-tier capture does
     const hit = referenceCommunes.get(commune.code_commune);
     assert.equal(
       commune.osm_relation_id,
@@ -116,11 +134,12 @@ test("every value is the one the audit's linkage carries for that record", () =>
   }
 });
 
-test("the audit decided every linkage on an ONS code or a reviewed pin, never on a name alone", () => {
+test("the audit decided every first-tier linkage on an ONS code or a reviewed pin, never on a name alone", () => {
   const audit = read(ROOT, "research", "_commune-centres", "audit-2026-09-29.json");
   const byCode = new Map(audit.all.map((row) => [row.code_commune, row]));
   for (const commune of communes) {
     if (commune.osm_relation_id === null) continue;
+    if (SECOND_TIER.has(commune.code_commune)) continue; // checked by its own test below
     const row = byCode.get(commune.code_commune);
     assert.ok(row, `commune ${commune.code_commune} carries a relation the audit does not report`);
     assert.equal(
@@ -137,9 +156,9 @@ test("the audit decided every linkage on an ONS code or a reviewed pin, never on
   }
 });
 
-test("the records with no link are exactly the ones OpenStreetMap has no relation for", () => {
+test("the one record with no link is the one OpenStreetMap holds no commune relation for", () => {
   const unlinked = communes.filter((c) => c.osm_relation_id === null).map((c) => c.code_commune);
-  assert.deepEqual(unlinked.sort((a, b) => a - b), [630, 1634, 2110, 4703]);
+  assert.deepEqual(unlinked.sort((a, b) => a - b), [4703]);
   const noItem = communes.filter((c) => c.osm_relation_id !== null && c.wikidata === null);
   assert.deepEqual(
     noItem.map((c) => c.code_commune),
@@ -157,8 +176,8 @@ test("the coverage counts are the ones the sidecar and the changelog state", () 
     wilayas_with_wikidata: wilayas.filter((w) => w.wikidata !== null).length,
   };
   assert.deepEqual(counts, {
-    communes_with_relation: 1537,
-    communes_with_wikidata: 1536,
+    communes_with_relation: 1540,
+    communes_with_wikidata: 1539,
     wilayas_with_relation: 69,
     wilayas_with_wikidata: 69,
   });
@@ -173,7 +192,7 @@ test("the sidecar pins the Overpass snapshot the ids were harvested from", () =>
   assert.equal(sidecar.total_wilayas, WILAYA_COUNT);
   assert.deepEqual(
     sidecar.communes_without_relation.map((c) => c.code_commune),
-    [630, 1634, 2110, 4703],
+    [4703],
   );
 });
 
@@ -225,4 +244,76 @@ test("the generator agrees with what is committed, sidecar included", () => {
   assert.doesNotThrow(() =>
     execFileSync(process.execPath, [join(ROOT, "scripts", "add-osm-links.mjs"), "--check"], { stdio: "pipe" }),
   );
+});
+
+// --- the second tier -----------------------------------------------------------------
+
+test("the second tier's three communes carry the relation and item their own capture holds", () => {
+  const byCode = new Map(communes.map((c) => [c.code_commune, c]));
+  for (const [code, relationId] of SECOND_TIER) {
+    const commune = byCode.get(code);
+    assert.ok(commune, `the second tier names commune ${code}, which is not published`);
+    const relation = capturedRelations.get(relationId);
+    assert.ok(relation, `relation ${relationId} is not in research/_osm-links/relations.json`);
+    assert.equal(commune.osm_relation_id, relationId, `commune ${code} (${commune.name_fr}): relation is not the captured one`);
+    assert.equal(
+      commune.wikidata,
+      relation.tags.wikidata ?? null,
+      `commune ${code} (${commune.name_fr}): the item is not the one relation ${relationId} carries`,
+    );
+    assert.ok(!referenceCommunes.get(code)?.osm_relation_id, `commune ${code} is in the first-tier harvest too; the tiers overlap`);
+  }
+});
+
+test("every second-tier relation carries this commune's ONS code, which is why it is linked at all", () => {
+  for (const [code, relationId] of SECOND_TIER) {
+    const tags = capturedRelations.get(relationId).tags;
+    assert.equal(
+      Number(tags["ref:ONS"]),
+      code,
+      `relation ${relationId} carries ref:ONS ${JSON.stringify(tags["ref:ONS"])}, not commune ${code}; an ONS match is the whole basis of the pin`,
+    );
+  }
+});
+
+test("every second-tier relation is still mis-tagged, and the sidecar names the defect", () => {
+  const listed = new Map(sidecar.second_tier.map((row) => [row.code_commune, row]));
+  assert.deepEqual([...listed.keys()], [...SECOND_TIER.keys()].sort((a, b) => a - b));
+  for (const [code, relationId] of SECOND_TIER) {
+    const tags = capturedRelations.get(relationId).tags;
+    const defects = [];
+    if (tags.boundary !== "administrative") defects.push(tags.boundary ? `boundary=${tags.boundary}` : "no boundary tag");
+    if (tags.admin_level !== "8") defects.push(tags.admin_level ? `admin_level=${tags.admin_level}` : "no admin_level tag");
+    assert.ok(
+      defects.length > 0,
+      `relation ${relationId} is now boundary=administrative and admin_level=8, so commune ${code} belongs in the first tier; refresh the capture and move it`,
+    );
+    const row = listed.get(code);
+    assert.equal(row.osm_relation_id, relationId);
+    assert.deepEqual(row.tag_defect, defects, `the sidecar's defect for commune ${code} is not the one the capture shows`);
+    assert.match(row.reason, /ref:ONS/, `the sidecar's reason for commune ${code} does not say the match was on the ONS code`);
+  }
+});
+
+test("the commune with no link has a reason naming the daira relation that does carry its code", () => {
+  const [row] = sidecar.communes_without_relation;
+  assert.equal(row.code_commune, 4703);
+  const relationId = DAIRA_ONLY.get(4703);
+  const relation = capturedRelations.get(relationId);
+  assert.ok(relation, `relation ${relationId} is not in the capture, so the reason cites evidence that is not committed`);
+  assert.equal(Number(relation.tags["ref:ONS"]), 4703);
+  assert.equal(relation.tags.admin_level, "6", `relation ${relationId} is no longer a daira; recheck whether a commune relation now exists`);
+  assert.match(row.reason, new RegExp(String(relationId)), "the reason does not name the daira relation");
+  assert.match(row.reason, /daira/i, "the reason does not say the only relation with this code is a daira");
+  assert.ok(
+    !/OpenStreetMap has no|has no relation/i.test(row.reason),
+    "the reason still claims OpenStreetMap has no relation carrying this code, which is not true",
+  );
+});
+
+test("the capture pins the Overpass snapshot the second tier was read from", () => {
+  assert.match(secondTierCapture.timestamp_osm_base, /^\d{4}-\d{2}-\d{2}T/);
+  assert.match(secondTierCapture.licence, /ODbL/);
+  assert.equal(sidecar.second_tier_capture, "research/_osm-links/relations.json");
+  assert.equal(sidecar.second_tier_timestamp_osm_base, secondTierCapture.timestamp_osm_base);
 });

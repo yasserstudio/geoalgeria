@@ -3,19 +3,31 @@
 //
 // WHY. A consumer who has a GeoAlgeria commune and wants its boundary, its population
 // or its article had to match it by name, which is the one join this repository tells
-// everyone else not to make. The audit of 2026-09-29 already resolved all 1,541
-// communes and all 69 wilayas against their own OpenStreetMap administrative
-// relations, so the two stable ids were sitting in the research directory while the
-// published records carried neither.
+// everyone else not to make. The audit of 2026-09-29 already resolved 1,537 of the 1,541
+// communes and all 69 wilayas against their own OpenStreetMap administrative relations,
+// so the two stable ids were sitting in the research directory while the published
+// records carried neither.
 //
-// SOURCE OF TRUTH. research/_commune-centres/osm-seat-reference.json, the linkage
-// written by scripts/audit-commune-centres.mjs from the Overpass capture in
+// SOURCE OF TRUTH, FIRST TIER. research/_commune-centres/osm-seat-reference.json, the
+// linkage written by scripts/audit-commune-centres.mjs from the Overpass capture in
 // research/_commune-centres/osm-2026-09-29/. This script resolves nothing itself: it
 // copies the relation id and the relation's `wikidata` tag for the code the audit
 // decided, and a code the audit left unmatched stays null in both fields. The audit
 // joins on `ref:ONS`, then on a pre-2019-reform ONS code scoped to the mother wilaya,
 // then on reviewed per-relation pins; no commune in this capture was resolved by a
 // name alone, and test/osm-wikidata-links.test.mjs holds that.
+//
+// SECOND TIER. That capture's Overpass query asks for `boundary=administrative` AND
+// `admin_level=8`, so a commune relation tagged any other way is invisible to it however
+// correct its `ref:ONS` code is. Three communes came out of the audit unmatched for
+// exactly that reason, not because OpenStreetMap lacks them, and the Owner decided on
+// 2026-10-02 to link them as a separate, documented tier. Their relations are fetched by
+// id into research/_osm-links/relations.json (scripts/osm-links-relations.mjs), each is
+// accepted only on an ONS-code match, and the sidecar names each relation's tag defect so
+// a reader sees why the first tier missed it. A relation that becomes standard-tagged
+// fails the run, because it then belongs in the first tier and the pin is stale.
+// Commune 4703 stays null: the only relation carrying its ONS code is a daira, a different
+// place, and that relation sits in the same capture as the evidence for the null.
 //
 // NOT PAPERED OVER. One OpenStreetMap relation is one place, so two records claiming
 // the same relation id or the same Wikidata item is an upstream or linkage defect and
@@ -31,10 +43,14 @@
 //   node scripts/add-osm-links.mjs            # dry-run report
 //   node scripts/add-osm-links.mjs --write    # patch packages/dataset
 //   node scripts/add-osm-links.mjs --check    # fail if any record is stale
+// The second-tier capture is refreshed by its own script, not by this one:
+//   node scripts/osm-links-relations.mjs --fetch
 
 import { readFileSync, writeFileSync } from "node:fs";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+
+import { DAIRA_ONLY, SECOND_TIER, loadRelations } from "./osm-links-relations.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "packages", "dataset", "data");
@@ -73,6 +89,62 @@ for (const row of reference.communes)
 const wantWilaya = new Map();
 for (const row of reference.wilayas)
   wantWilaya.set(Number(row.wilaya_code), linkOf(`wilaya ${row.wilaya_code} (${row.name_fr})`, row));
+
+// --- the second tier -----------------------------------------------------------
+
+const { meta: captureMeta, byId: captured } = loadRelations();
+
+/** Which halves of `boundary=administrative` + `admin_level=8` a relation fails. */
+function tagDefect(tags) {
+  const out = [];
+  if (tags.boundary !== "administrative") out.push(tags.boundary ? `boundary=${tags.boundary}` : "no boundary tag");
+  if (tags.admin_level !== "8") out.push(tags.admin_level ? `admin_level=${tags.admin_level}` : "no admin_level tag");
+  return out;
+}
+
+/** The second tier, in the sidecar's order, with each pin re-checked against the capture. */
+const secondTier = [];
+for (const [code, relationId] of [...SECOND_TIER].sort((a, b) => a[0] - b[0])) {
+  const label = `commune ${code}`;
+  const relation = captured.get(relationId);
+  if (wantCommune.get(code)?.osm_relation_id != null) {
+    problems.push(`${label}: the first-tier harvest already links relation ${wantCommune.get(code).osm_relation_id}; the tiers overlap`);
+    continue;
+  }
+  // An ONS-code match is the whole basis of the pin. A name is never enough here either.
+  if (Number(relation.tags["ref:ONS"]) !== code) {
+    problems.push(
+      `${label}: relation ${relationId} carries ref:ONS ${JSON.stringify(relation.tags["ref:ONS"])}, so nothing says it is this commune`,
+    );
+    continue;
+  }
+  const defect = tagDefect(relation.tags);
+  if (defect.length === 0) {
+    problems.push(
+      `${label}: relation ${relationId} is now boundary=administrative and admin_level=8, so it belongs in the first tier; refresh the 2026-09-29 capture and drop this pin`,
+    );
+    continue;
+  }
+  const link = linkOf(`${label} (second tier, relation ${relationId})`, {
+    osm_relation_id: relationId,
+    wikidata: relation.tags.wikidata ?? null,
+  });
+  wantCommune.set(code, link);
+  secondTier.push({ code, relationId, defect, link, name: relation.tags["name:fr"] ?? relation.tags.name ?? null });
+}
+
+// The commune that keeps a null, with the relation that explains it checked, not asserted.
+const dairaOnly = new Map();
+for (const [code, relationId] of DAIRA_ONLY) {
+  const relation = captured.get(relationId);
+  if (Number(relation.tags["ref:ONS"]) !== code)
+    problems.push(`commune ${code}: relation ${relationId} does not carry this ONS code, so it is not the reason for the null`);
+  else if (relation.tags.admin_level !== "6")
+    problems.push(
+      `commune ${code}: relation ${relationId} is admin_level=${relation.tags.admin_level}, no longer a daira; recheck whether a commune relation now exists`,
+    );
+  else dairaOnly.set(code, relationId);
+}
 
 // One relation, one place. A repeat is reported with both holders and nothing is written.
 for (const field of ["osm_relation_id", "wikidata"]) {
@@ -132,8 +204,8 @@ function verdict(label, row, link) {
 function linkFor(kind, code, label) {
   const map = kind === "commune" ? wantCommune : wantWilaya;
   if (map.has(code)) return map.get(code);
-  // A commune the audit left unmatched is a null link, not a missing one: OpenStreetMap
-  // has no admin_level=8 relation for it in this capture.
+  // A commune neither tier links is a null link, not a missing one: no relation carrying
+  // its ONS code is a commune relation in either capture.
   if (kind === "commune") return { osm_relation_id: null, wikidata: null };
   problems.push(`${label}: the harvest has no admin_level=4 relation for this wilaya`);
   return null;
@@ -226,6 +298,7 @@ const communes = ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49
   readJson(join(DATA, f)),
 );
 const wilayas = readJson(join(DATA, "wilayas.json")).wilayas;
+const byCommuneCode = new Map(communes.map((c) => [Number(c.code_commune), c]));
 
 /** The link the harvest holds for a shipped record, null fields when it holds none. */
 const NO_LINK = { osm_relation_id: null, wikidata: null };
@@ -251,17 +324,44 @@ const sidecar = {
   timestamp_osm_base: reference.timestamp_osm_base,
   licence: "ODbL 1.0, (c) OpenStreetMap contributors",
   attribution: "https://www.openstreetmap.org/copyright",
+  tiers:
+    "Two. The first tier is the 2026-09-29 commune-centre capture, whose Overpass query asks for " +
+    "boundary=administrative AND admin_level=8. The second tier is the three communes that query could not see: " +
+    "OpenStreetMap holds their relations with the right ref:ONS code but non-standard tags, so they are fetched by id " +
+    "into research/_osm-links/relations.json and listed under second_tier below with the tag defect that hid each one.",
   join:
-    "The linkage is the one scripts/audit-commune-centres.mjs decided: a commune relation is joined on its ref:ONS tag, " +
+    "First tier: the linkage scripts/audit-commune-centres.mjs decided, a commune relation joined on its ref:ONS tag, " +
     "then on a pre-2019-reform ONS code resolved inside the mother wilaya's carved-out communes, then on six reviewed " +
-    "per-relation pins; a wilaya relation is joined on its ref tag. No record is linked by a name alone.",
+    "per-relation pins. Five of those pins are spelling gaps: the relation carries the documented pre-reform ONS code " +
+    "and this dataset spells the name differently. The sixth, commune 4401 Ain-Defla, is the one record in the dataset " +
+    "whose relation carries no ONS code at all; it was pinned on the relation's name together with being the single w44 " +
+    "relation still unclaimed once every other w44 commune had been joined on its code, and its admin_centre node " +
+    "falling inside wilaya 44. Second tier: an ONS-code match on a relation the first capture's tag filter excluded. " +
+    "A wilaya relation is joined on its ref tag. Every record but 4401 is linked on an ONS code carried by the " +
+    "relation itself; 4401 is linked by name confirmed by elimination, and no record is linked by a name alone.",
   wikidata:
     "The Q item is the relation's own wikidata tag, read as published and never looked up or guessed. A relation with no " +
     "wikidata tag leaves the field null.",
   carriers: ["data/communes_w1_w23.json", "data/communes_w24_w48.json", "data/communes_w49_w69.json", "data/wilayas.json", "data/algeria.json"],
+  second_tier_capture: "research/_osm-links/relations.json",
+  second_tier_timestamp_osm_base: captureMeta.timestamp_osm_base,
   total_communes: communes.length,
   total_wilayas: wilayas.length,
   coverage,
+  second_tier: secondTier.map((row) => ({
+    code_commune: row.code,
+    wilaya_code: Number(byCommuneCode.get(row.code)?.wilaya_code),
+    name_fr: byCommuneCode.get(row.code)?.name_fr ?? null,
+    name_ar: byCommuneCode.get(row.code)?.name_ar ?? null,
+    osm_relation_id: row.relationId,
+    wikidata: row.link.wikidata,
+    osm_name: row.name,
+    tag_defect: row.defect,
+    reason:
+      `the relation carries ref:ONS ${row.code} but ${row.defect.join(" and ")}, so the 2026-09-29 capture's ` +
+      "boundary=administrative + admin_level=8 filter excluded it; fetched by id and linked on the ONS-code match. " +
+      "The tagging is an OpenStreetMap defect owed upstream, not a reason to leave the record unlinked",
+  })),
   communes_without_relation: communes
     .filter((c) => communeLink(c).osm_relation_id === null)
     .sort((a, b) => a.code_commune - b.code_commune)
@@ -270,7 +370,11 @@ const sidecar = {
       wilaya_code: Number(c.wilaya_code),
       name_fr: c.name_fr,
       name_ar: c.name_ar,
-      reason: "the 2026-09-29 Overpass capture holds no admin_level=8 relation carrying this commune's ONS code or name",
+      reason: dairaOnly.has(c.code_commune)
+        ? `no relation carrying ref:ONS ${c.code_commune} is a commune: the only one is the Dayet Ben Dahoua daira, ` +
+          `relation ${dairaOnly.get(c.code_commune)} at admin_level=6, which is a different place and covers more than ` +
+          "this commune. Both fields stay null rather than linking a daira to a commune"
+        : "neither the 2026-09-29 capture nor research/_osm-links/relations.json holds a commune relation carrying this commune's ONS code",
     })),
   communes_without_wikidata: communes
     .filter((c) => communeLink(c).osm_relation_id !== null && communeLink(c).wikidata === null)
@@ -305,6 +409,10 @@ console.log(
 for (const r of reports)
   console.log(`  ${WRITE ? "patched" : "would patch"} ${r.label}: ${r.changed} record(s) changed, ${r.seen} seen`);
 console.log(`  ${basename(sidecarPath)}: ${sidecarStale ? "would be rewritten" : "up to date"}`);
+for (const row of sidecar.second_tier)
+  console.log(
+    `  second tier: commune ${row.code_commune} ${row.name_fr}, relation ${row.osm_relation_id} (${row.tag_defect.join(", ")})`,
+  );
 for (const row of sidecar.communes_without_relation)
   console.log(`  no relation: commune ${row.code_commune} ${row.name_fr} (w${row.wilaya_code})`);
 for (const row of sidecar.communes_without_wikidata)

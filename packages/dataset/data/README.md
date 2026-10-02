@@ -24,7 +24,7 @@ data/
 ├── name-history.json            ← former names, so an older spelling still finds the record
 ├── retired-ids.json             ← daira ids that no longer exist and are never reused
 ├── wilaya-capitals.metadata.json          ← the chef-lieu of each wilaya, with its decree
-├── osm-links.metadata.json                ← coverage + Overpass snapshot behind osm_relation_id / wikidata
+├── osm-links.metadata.json                ← coverage, tiers + Overpass snapshots behind osm_relation_id / wikidata
 ├── csv/
 │   ├── wilayas.csv
 │   └── communes.csv
@@ -145,7 +145,7 @@ announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
 | `latitude` | number | Latitude (100% geocoded — no nulls) |
 | `longitude` | number | Longitude (100% geocoded — no nulls) |
 | `code_commune` | integer | Unique ONS 2021 administrative code (`WWCC`); communes promoted in 2026 retain their 2021 mother-wilaya prefix |
-| `osm_relation_id` | integer \| null | The id of this commune's OpenStreetMap `admin_level=8` administrative relation; null on the 4 communes the capture has no relation for |
+| `osm_relation_id` | integer \| null | The id of this commune's OpenStreetMap administrative relation, `admin_level=8` but for 3 relations mis-tagged upstream; null on the 1 commune OpenStreetMap holds no commune relation for |
 | `wikidata` | string \| null | The Wikidata item that relation carries (`Q` then digits); null where it carries no `wikidata` tag |
 
 ### Commune (e-commerce)
@@ -361,43 +361,70 @@ the per-source breakdown is in `geojson/communes.metadata.json`.
 
 Every commune and wilaya carries `osm_relation_id`, the OpenStreetMap administrative
 relation that *is* this record upstream (`admin_level=8` for a commune, `admin_level=4`
-for a wilaya), and `wikidata`, the Wikidata item that relation carries. They exist so a
+for a wilaya, bar three communes whose relation is mis-tagged upstream and is listed as
+such below), and `wikidata`, the Wikidata item that relation carries. They exist so a
 consumer can join a GeoAlgeria record to an OSM boundary, to Wikidata or to anything
 keyed on either, instead of matching on a name, which is the join this dataset tells
 everyone else not to make.
 
 | Records | With a relation | With a Wikidata item |
 |---|---|---|
-| 1,541 communes | 1,537 | 1,536 |
+| 1,541 communes | 1,540 | 1,539 |
 | 69 wilayas | 69 | 69 |
 
 Both fields are `null` where the source has none, and neither is ever guessed:
 
-- **The linkage is the audit's, not a name match.** The ids are harvested from the same
+- **The linkage is the audit's, not a name match.** Most ids are harvested from the same
   Overpass capture the commune-centre audit compares centres against
   (`research/_commune-centres/osm-2026-09-29/`, `timestamp_osm_base`
   **2026-09-29T12:54:47Z**), through the linkage it wrote to
   `research/_commune-centres/osm-seat-reference.json`. A commune relation is joined on
   its `ref:ONS` tag (1,477 of them), then on a pre-2019-reform ONS code resolved inside
-  the mother wilaya's carved-out communes (54), then on six reviewed per-relation pins
-  where OSM and this dataset spell the same ONS code differently. A wilaya relation is
-  joined on its `ref` tag. No record is linked by a name alone.
-- **4 communes have no relation**: Souk Oufella (630), Bir Touta (1634), Collo (2110)
-  and Dhayet Bendhahoua (4703). The capture holds 1,537 `admin_level=8` relations for
-  Algeria and every one of them is claimed by another commune, so OpenStreetMap has no
-  relation to link these four to. Both fields are null.
+  the mother wilaya's carved-out communes (54), then on six reviewed per-relation pins:
+  1,537 communes in all. A wilaya relation is joined on its `ref` tag.
+- **A second tier of 3 communes**: Souk Oufella (630), Bir Touta (1634) and Collo
+  (2110). That capture's query asks Overpass for `boundary=administrative` **and**
+  `admin_level=8`, so a commune relation tagged any other way is invisible to it however
+  correct its code is, and these three are exactly that case: relation `4069543` carries
+  no `boundary` tag, relation `540555` carries neither a `boundary` nor an `admin_level`
+  tag, and relation `6407308` is `admin_level=11`. All three carry the commune's own
+  `ref:ONS` code, which is what they are linked on. They are fetched by id into a second
+  capture, [`research/_osm-links/relations.json`](../../../research/_osm-links/relations.json),
+  and listed under `second_tier` in the sidecar with the tag defect that hid each one.
+  The tagging is an OpenStreetMap defect owed upstream; it is not a reason to leave the
+  records unlinked.
+- **1 commune has no relation**: Dhayet Bendhahoua (4703). No relation carrying
+  `ref:ONS` 4703 is a commune: the only one is the Dayet Ben Dahoua **daira**, relation
+  `6823963` at `admin_level=6`, which is a different place and covers more than this
+  commune. Both fields stay null rather than linking a daira to a commune.
 - **1 commune has a relation and no item**: Ain-Defla (4401), whose relation
   (`21037899`) carries no `wikidata` tag. The field stays null rather than resolving the
   item from the name.
+- **One record is linked without an ONS code on the relation.** Five of the six pins
+  above are spelling gaps: the relation carries the documented pre-2019-reform ONS code
+  and this dataset spells the name differently. The sixth is Ain-Defla (4401), whose
+  relation `21037899` carries no ONS code at all; it is claimed on the relation's name
+  (`Commune Ain Defla`) together with being the single wilaya 44 relation still
+  unclaimed once every other w44 commune had joined on its own code, and with its
+  `admin_centre` node inside wilaya 44. That is name plus elimination, so 4401 is the
+  one record whose link does not rest on a code the relation carries. Every other
+  record's does, and none is linked by a name alone.
 - **No id is repeated.** One relation is one place, so a relation id or a Wikidata item
   on two records would be a linkage defect; the validator fails on it rather than
   publishing a join that answers twice. A wilaya links to its own `admin_level=4`
   relation, never to its capital commune's, even though the two share a point.
+- **A second source checks the links.** `research/_osm-links/wikidata-link-reference.json`
+  is a committed snapshot of Wikidata's own `P402` (OpenStreetMap relation id) and `P31`
+  (instance of) for every published item, read from the Wikidata SPARQL endpoint rather
+  than from OpenStreetMap. Where Wikidata states a relation id (636 of the 1,608 items)
+  it must be the one published here, and every item must be a commune or a province of
+  Algeria. The disagreements it finds are listed with their reasons in
+  `test/osm-wikidata-second-source.test.mjs`; a new one fails that test.
 
 **Carriers.** The two ids are on the JSON records only: `algeria.json` at both levels,
 `communes_w*.json` and `wilayas.json`. `csv/`, `geojson/`, `sql/` and `ecommerce/` do
-not carry them in this release. Coverage, the join rule and the five records above are
-in [`osm-links.metadata.json`](osm-links.metadata.json), regenerated by
+not carry them in this release. Coverage, the tiers, the join rule and the records above
+are in [`osm-links.metadata.json`](osm-links.metadata.json), regenerated by
 `node scripts/add-osm-links.mjs --write` and checked by `--check`.
 
 **Licence.** The ids are read out of OpenStreetMap, so these values are **ODbL 1.0,

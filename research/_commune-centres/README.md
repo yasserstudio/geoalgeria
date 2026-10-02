@@ -342,8 +342,13 @@ simplified outline cuts inside the shoreline. All seven are listed under
 `seat_in_declared_wilaya` in `audit-2026-09-29.json`; the wilaya outlines are #171,
 not this audit.
 
-The `osm_relation_id` and `wikidata` harvested here (1,536 of 1,537 communes, 69
-of 69 wilayas) stay in `research/`. Publishing them as package fields is #181.
+The `osm_relation_id` and `wikidata` harvested here (1,536 of the 1,537 matched
+communes, 69 of 69 wilayas) are published fields since #181, copied by
+`scripts/add-osm-links.mjs`. Three of the four communes this audit left unmatched are
+linked there from a second capture, `research/_osm-links/relations.json`: this audit's
+Overpass query filters on `boundary=administrative` AND `admin_level=8`, and their
+relations carry the right `ref:ONS` code with non-standard tags, so the filter hid them
+rather than OpenStreetMap lacking them.
 
 ## Files
 
