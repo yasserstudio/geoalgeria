@@ -147,6 +147,7 @@ sqlite3 mydb.sqlite < full.sql
 | `data/wilayas.json` | JSON | 69 | قائمة الولايات فقط |
 | `data/dairas.json` | JSON | 551 | قائمة الدوائر مع عدد البلديات |
 | `data/name-history.json` | JSON | 210 | الكتابات السابقة لأسماء الولايات والبلديات، مع النص الذي عوّض كل واحدة منها |
+| `data/phone-code-provenance.json` | JSON | 11 | سبب حمل الولايات 59–69 لقيمة `phone_code` الحالية: النصوص الرسمية التي بُحث فيها وسبب كل `null` |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | مقر كل ولاية، مع المرسوم والمادة والبند والصفحة التي تحدّده |
 | `data/osm-links.metadata.json` | JSON | 1 | التغطية والمستويان وقاعدة الربط ولقطتا Overpass وراء `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1,541 | بيانات البلديات المفصّلة |

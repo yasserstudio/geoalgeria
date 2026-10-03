@@ -119,6 +119,23 @@ reads as further along than it is.
   reconciliation pass against El Aricha's new extent. Not fixed in this PR.
   _(logged 2026-08-09)_
 
+- [ ] **The `phone_code` of wilayas 1 to 58 has no established official source.**
+  The 2026 cohort (59 to 69) now carries its evidence in
+  `data/phone-code-provenance.json`, and the answer there is `null`: ARPCE
+  allocates numbering resources under the ten-digit *plan national de
+  numérotation* of 22 February 2008, whose geographic digits identify a numbering
+  zone rather than a wilaya, and has published no allocation for the eleven; the
+  creating texts are silent on numbering; Algérie Télécom has announced none. The
+  58 codes the dataset already ships predate that ledger and were never traced to
+  a JORA text, an ARPCE decision or an operator notice, and the commonly
+  circulated per-wilaya table is community-compiled with no citations of its own.
+  Every one of the ten wilayas the 2019 reform created carries exactly its mother
+  wilaya's code, which is the signature of a derivation rather than a source. The
+  work is to trace all 58 to an official text, or to say in the README that they
+  are unsourced. Not a correction to make blind: the values are probably right in
+  practice, and changing one without a source would be the same mistake twice.
+  _(logged 2026-10-01, from the #235 source hunt)_
+
 ## Generators
 
 - [ ] **A corrupt source coordinate silently rewrites a record's identity, and

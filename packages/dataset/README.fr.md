@@ -147,6 +147,7 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
 | `data/dairas.json` | JSON | 551 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
+| `data/phone-code-provenance.json` | JSON | 11 | Pourquoi les wilayas 59–69 portent le `phone_code` qu'elles portent : les textes officiels consultés et la raison de chaque `null` |
 | `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
 | `data/osm-links.metadata.json` | JSON | 1 | Couverture, paliers, règle de jointure et instantanés Overpass derrière `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |

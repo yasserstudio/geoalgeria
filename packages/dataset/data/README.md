@@ -22,6 +22,7 @@ data/
 ├── communes_w24_w48.json        ← communes for wilayas 24–48
 ├── communes_w49_w69.json        ← communes for wilayas 49–69
 ├── name-history.json            ← former names, so an older spelling still finds the record
+├── phone-code-provenance.json   ← why wilayas 59–69 carry the `phone_code` they carry
 ├── retired-ids.json             ← daira ids that no longer exist and are never reused
 ├── wilaya-capitals.metadata.json          ← the chef-lieu of each wilaya, with its decree
 ├── osm-links.metadata.json                ← coverage, tiers + Overpass snapshots behind osm_relation_id / wikidata
@@ -71,7 +72,7 @@ data/
 | `code` | integer | Wilaya number (1–69) |
 | `name_fr` | string | French name |
 | `name_ar` | string | Arabic name |
-| `phone_code` | string | Telephone area code |
+| `phone_code` | string \| null | Telephone area code, `null` where no official text allocates one |
 | `postal_code` | string | Main postal code |
 | `latitude` | number | Latitude of the capital commune's centre, the same value as that commune's `latitude` |
 | `longitude` | number | Longitude of the capital commune's centre, the same value as that commune's `longitude` |
@@ -117,6 +118,10 @@ announced: wilayas 59–69 were announced on 2025-11-16 and are still `"2026"`.
 `wilayas.json` carries the same value as a number, spelling the 1984 cohort
 `1984` instead of `"original"`, and its `metadata.reforms[].year` matches the
 `created` of the wilayas that reform added.
+
+`phone_code` is `null` wherever no official text allocates a code, which today is
+all eleven wilayas of the 2026 cohort (59–69). See
+[Telephone area codes](#telephone-area-codes) below.
 
 ### Commune (full)
 
@@ -257,6 +262,38 @@ address stored before a correction still resolves.
   "sources": ["JORA n° 25 (2026), law 26-06 art. 9, item 24, p. 4"]
 }
 ```
+
+## Telephone area codes
+
+A `phone_code` for a wilaya of the 2026 cohort (59–69) comes from an official
+text or it is not published at all: never from the wilaya it was split from, never
+from an encyclopaedia or a directory. None of the eleven has one, so all eleven
+are `null`, and `phone-code-provenance.json` carries the answer rather than
+leaving the gap bare: the authorities searched, and for each text its title, URL,
+own date, retrieval date, the article read and what was found there. Read the
+finding there, not here, so there is one copy of it.
+`require("geoalgeria").phoneCodeProvenance` reads it.
+
+```json
+{
+  "code": 59,
+  "name_fr": "Aflou",
+  "name_ar": "آفلو",
+  "phone_code": null,
+  "reason": "no-official-allocation"
+}
+```
+
+`reason` names an entry under `metadata.reasons`, which carries the statement and
+the search log behind it. A later allocation becomes a `phone_code` with its own
+`citations` there, and the same value in `algeria.json`, `csv/wilayas.csv`,
+`geojson/wilayas.geojson` and `sql/full.sql`, which a test keeps in step. The
+rules are `scripts/lib/phone-code-provenance.mjs`: a value has to cite a declared
+official text and name the article it was read at, the source has to sit on the
+gazette's, the regulator's or the operator's own domain, and a value equal to the
+one carried by the wilaya it was split from has to declare that coincidence rather
+than pass silently. Wilayas 1–58 are outside this ledger: their codes predate it
+and no official citation has been established for them yet.
 
 ## Wilaya boundaries
 
