@@ -4,16 +4,16 @@
   "title_fr": "Établissements de santé publique d'Algérie",
   "title_ar": "المؤسسات الصحية العمومية الجزائرية",
   "title_en": "Algeria public health establishments",
-  "record_count": 695,
-  "geocoded_count": 602,
-  "geocoded_pct": 86.6,
+  "record_count": 668,
+  "geocoded_count": 597,
+  "geocoded_pct": 89.4,
   "precision": {
-    "exact": 124,
-    "approximate": 478
+    "exact": 132,
+    "approximate": 465
   },
   "estimated_universe": null,
   "coverage_pct": null,
-  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+  "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.",
   "wilayas_covered": 58,
   "bbox": [
     -8.140085,
@@ -50,21 +50,21 @@
   "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
   "updated": "2026-06-27",
   "by_type": {
-    "ehs": 108,
-    "eph": 270,
-    "epsp": 292,
+    "ehs": 103,
+    "eph": 257,
+    "epsp": 284,
     "hopital": 5,
-    "chu": 20
+    "chu": 19
   },
   "by_sector": {
-    "public": 695
+    "public": 668
   },
   "by_geo_method": {
-    "commune_centroid": 474,
-    "osm_point": 114,
-    "owner_verified": 13,
-    "wikidata_point": 1
+    "commune_centroid": 465,
+    "osm_point": 118,
+    "wikidata_point": 3,
+    "owner_verified": 11
   },
-  "bilingual": 563,
+  "bilingual": 590,
   "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
 }

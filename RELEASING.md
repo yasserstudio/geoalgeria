@@ -100,6 +100,20 @@ data / format · **patch** = corrections to existing records.
   guarded form to use. Precedent: `@geoalgeria/enseignement-superieur` 1.1.0
   (`name` nullable), `@geoalgeria/aviation` 2.1.0 (`address`/`website`).
 
+- **Retiring a published id is a minor, with a migration note.** A published id
+  is a join key and is never reused, so a record that leaves a package leaves its
+  id in `packages/<pkg>/data/retired-ids.json` forever. Where the record was
+  merged into another rather than removed, the same ledger's `migrations` map
+  names the record that carries its data now (`merged_into`, a `note`, and the
+  upstream ids the pair stood for where there are any), so a consumer can follow
+  an old key instead of only finding it gone. `merged_into` names a live record
+  of the same package; a record whose place moved to another package (a
+  `cliniques` hospital that `sante` now ships) carries no migration entry, and
+  the changeset names the package and id that took it instead. The changeset
+  must open with a **Migration** paragraph listing the retired ids and pointing
+  at the ledger. Precedent: `@geoalgeria/sante` 2.1.0 (28 ids, French/Arabic
+  twin posts merged) and `@geoalgeria/cliniques` 1.2.0 (2 ids moved to `sante`).
+
 - **Docs parity:** the root READMEs (EN/FR/AR) and any affected package READMEs reflect every contract, artifact, licence, or count change shipping in this release, sweep before tagging, not after.
 
 On push to `main`, the **Release** workflow runs `changesets/action`. If

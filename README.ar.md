@@ -78,8 +78,8 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | **التكوين المهني** | 1,932 | 856 CFPA + 182 INSFP + 723 مؤسسة خاصة معتمدة + 58 DFEP + أكثر في الولايات الحالية الـ69 (وزارة التكوين المهني / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **المساجد** | 20,759 | تجميع Wikidata + OpenStreetMap، أسماء عربية وفرنسية، المذهب، كل الـ69 ولاية. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **محلات جيزي** | 128 | محلات بيع مُحدّدة جغرافيًا مع الفئة وأوقات العمل والربط بالبلدية/الولاية (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **المؤسسات الصحية** | 695 | EPH · EPSP · EHS · CHU من وزارة الصحة، ثنائية اللغة، 600 بإحداثيات عبر OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **العيادات ومرافق الرعاية** | 1,918 | عيادات متعددة الخدمات وقاعات علاج ومراكز صحية ومصحات توليد وعيادات خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية. الطبقة المجتمعية إلى جانب سجلّ `sante`، ولا تُجمع معه أبدًا. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **المؤسسات الصحية** | 668 | EPH · EPSP · EHS · CHU من وزارة الصحة، ثنائية اللغة، 597 بإحداثيات عبر OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **العيادات ومرافق الرعاية** | 1,917 | عيادات متعددة الخدمات وقاعات علاج ومراكز صحية ومصحات توليد وعيادات خاصة من OpenStreetMap، مُصنَّفة حسب النوع، ثنائية اللغة، 66 ولاية. الطبقة المجتمعية إلى جانب سجلّ `sante`، ولا تُجمع معه أبدًا. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **وحدات الحماية المدنية** | 880 | وحدات الإطفاء والإنقاذ التابعة للمديرية العامة للحماية المدنية على كامل التراب، مُسمّاة بالعربية، بعنوان/هاتف/فاكس، وبمستوى الصفة، كلها بإحداثيات، مصدر رسمي أوّلي (dgpc.dz)، مع ربط الولاية وفق إصلاح 2026. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **المواقع الثقافية** | 1083 | مواقع محمية، متاحف، مسارح، مكتبات + مؤسسات ثقافية من وزارة الثقافة، ثنائية اللغة، كلها بإحداثيات، 66 ولاية. [`@geoalgeria/culture`](packages/culture) |
 | **المؤسسات الفلاحية** | 196 | مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية من وزارة الفلاحة، ثنائية اللغة، بإحداثيات، 58 ولاية. [`@geoalgeria/agriculture`](packages/agriculture) |
@@ -138,8 +138,8 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | التكوين المهني، 1,932 CFPA، INSFP، IFEP، IEP، DFEP ومراكز خاصة من وزارة التكوين المهني (takwin.dz)، مع السعة والإقامة والإحداثيات |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | محلات جيزي، 128 محل بيع مُحدّد جغرافيًا من djezzy.dz، مع الفئة وأوقات العمل والربط بالبلدية/الولاية |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | مساجد الجزائر، 20,759 مُحدّدة جغرافيًا، تجميع Wikidata + OpenStreetMap بأسماء عربية وفرنسية ومذهب وربط بالبلدية/الولاية |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية، 695 من وزارة الصحة (EPH، EPSP، EHS، CHU)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata مع ربط بالبلدية/الولاية |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية، 1,918 مرفقًا بإحداثيات من OpenStreetMap عبر 66 ولاية، مُصنَّفة حسب النوع (عيادة متعددة الخدمات/قاعة علاج/مركز صحي/مصحة توليد/عيادة)، ثنائية اللغة، مع القطاع والتخصّص والهاتف والأوقات عند توفّرها؛ الطبقة المجتمعية لقطاع الصحة، ويُستبعَد منها كل عنصر OSM يُشير إليه `sante` |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | المؤسسات الصحية العمومية، 668 من وزارة الصحة (EPH، EPSP، EHS، CHU)، ثنائية اللغة، بإحداثيات عبر OSM + Wikidata مع ربط بالبلدية/الولاية |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | العيادات ومرافق الرعاية الجوارية، 1,917 مرفقًا بإحداثيات من OpenStreetMap عبر 66 ولاية، مُصنَّفة حسب النوع (عيادة متعددة الخدمات/قاعة علاج/مركز صحي/مصحة توليد/عيادة)، ثنائية اللغة، مع القطاع والتخصّص والهاتف والأوقات عند توفّرها؛ الطبقة المجتمعية لقطاع الصحة، ويُستبعَد منها كل عنصر OSM يُشير إليه `sante` |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | الأطلس الثقافي، 1083 موقعًا من وزارة الثقافة (مواقع محمية، متاحف، مسارح، مكتبات، مؤسسات ثقافية)، ثنائية اللغة، كاملة الإحداثيات مع ربط بالبلدية/الولاية |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | المؤسسات الفلاحية، 196 من وزارة الفلاحة موزعة على 7 شبكات (مديريات المصالح الفلاحية، محافظات الغابات، معاهد البحث/التكوين، الغرف الفلاحية، الدواوين والمجمعات العمومية)، ثنائية اللغة، بإحداثيات مع ربط بالبلدية/الولاية |
 | [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | المدارس، 11,858 مدرسة وروضة من OpenStreetMap، مُصنَّفة حسب الطور (ابتدائي/متوسط/ثانوي/تحضيري)، ثنائية اللغة، كل الـ69 ولاية، مع ربط بالبلدية/الولاية |
@@ -167,6 +167,13 @@ dz.getPostOfficesByCommune(1731); // مكاتب بريد الجزائر الحق
 - `geo_precision` يأخذ حصرًا القيم `exact | approximate | null`، و`null` فقط عند غياب الإحداثيات، مع طريقة الترميز الجغرافي في `geo_method`.
 
 تُرافقها أدوات قابلة للقراءة آليًا: فهرس جذري [`index.json`](index.json)، وواصف `schema.org/Dataset` (`dataset-metadata.json`) في كل حزمة تحمل بيانات (الحزمة `@geoalgeria/normalize`، شيفرة فقط، لا تحمل واصفًا من هذا النوع)، و69 مضلّع حدود للولايات في الحزمة الأساسية ضمن [`data/geojson/wilaya-boundaries.geojson`](packages/dataset/data/geojson/wilaya-boundaries.geojson) (بجودة العرض).
+
+المعرّف المنشور مفتاح ربط، فلا يُعاد استخدامه أبدًا. والسجل الذي يخرج من حزمة يترك
+معرّفه في `data/retired-ids.json` الخاص بها، محجوزًا إلى الأبد؛ وحين يُدمج سجلّان في
+واحد تذكر خريطة `migrations` في هذا الدفتر أيضًا إلى أين انتقلت بيانات المعرّف
+المُستوعَب: يسمّي `merged_into` السجل الذي يحملها الآن، مع ملاحظة، ومع معرّفات
+المصدر التي كان الزوج يمثّلها حين يوفّرها المصدر. وبهذا يستطيع مستهلك يحمل معرّفًا
+قديمًا أن يتبعه بدل أن يجده مفقودًا فحسب.
 
 حزمة واحدة تسبق العقد، مجموعة البيانات الأساسية `geoalgeria` (تقسيمات إدارية وليست GeoRecords؛ مميَّزة بـ `schema_version: null` في الفهرس).
 

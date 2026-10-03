@@ -34,7 +34,7 @@
     },
     "exact records": {
       "files": "packages/*/data/*.json",
-      "records": 53120,
+      "records": 53128,
       "read": "2026-10-01"
     },
     "L3 verdicts": null
@@ -4689,10 +4689,10 @@
           {
             "source": "record_median",
             "point": [
-              7.739532,
-              36.858242
+              7.739456,
+              36.858144
             ],
-            "distance_from_published_m": 6750,
+            "distance_from_published_m": 6743,
             "votes": 2,
             "inside_outline": true
           }
@@ -4724,8 +4724,8 @@
             "snapshot": "2026-10-01",
             "licence": "the terms of the GeoAlgeria packages the records come from",
             "voted_for": "osm_seat",
-            "distance_m": 413,
-            "distance_to_new_point_m": 413,
+            "distance_m": 406,
+            "distance_to_new_point_m": 406,
             "copied": false
           }
         ],

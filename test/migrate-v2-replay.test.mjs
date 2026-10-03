@@ -6,7 +6,7 @@
 // hand. The transform that its own header calls "the source-of-truth transform
 // for packages whose upstream source is dead or blocked" kept emitting the old
 // colliding ids, and nothing noticed, because the transform is never re-run
-// against v1 input — the double-run guard skips any package that already looks
+// against v1 input: the double-run guard skips any package that already looks
 // v2, so replaying it in place is a no-op that always passes.
 //
 // The check: keep a sample of each package's real v1 input and replay the map
@@ -15,9 +15,9 @@
 // fails the deep-equal.
 //
 // What this asserts: the per-record transform, for all 24 configured packages
-// and all 35 of their data files, over the fixture sample (429 records — 12
+// and all 35 of their data files, over the fixture sample (429 records, 12
 // evenly spaced per file plus the first ungeocoded one).
-// What it does NOT assert: the file-level behaviour of the runner — id sort
+// What it does NOT assert: the file-level behaviour of the runner: id sort
 // order, the CSV/GeoJSON emit, or metadata.json. Those are checked by replaying
 // the full v1 tree out of git history, which cannot run here: CI checks out at
 // depth 1, and the full v1 inputs are ~24 MB.
@@ -323,6 +323,23 @@ const ENRICHMENTS = {
     // tests guard that join; replay continues to guard every other field here.
     if (shipped) produced.wilaya_code = shipped.wilaya_code;
   },
+  sante: (produced, shipped) => {
+    // refs.msp_twin is the registry's other-language post for the same
+    // establishment, decided by the generator's FR/AR pairing over the whole
+    // group. The frozen v1 row carries one post id and the per-record v2 map
+    // cannot know which other post it was paired with; test/sante-pairing and
+    // test/sante-twin-posts guard the pairing and the ids it retires.
+    if (!shipped?.refs?.msp_twin) return;
+    produced.refs = { ...produced.refs, msp_twin: shipped.refs.msp_twin };
+    // A record the frozen row shipped in one language is bilingual once the
+    // twin post is paired to it, and the name it gains comes from that post.
+    for (const key of ["name_fr", "name_ar"]) if (produced[key] == null) produced[key] = shipped[key];
+    produced.name = produced.name_fr || produced.name_ar;
+    // Its geography comes from whichever half matched its commune on more of
+    // the name (betterPlaced), and the frozen row is only one half.
+    // test/sante-twin-posts guards which half places the record.
+    for (const key of ["commune", "lat", "lng", "geo_precision", "geo_method"]) produced[key] = shipped[key];
+  },
   "protection-civile": (produced, shipped) => {
     // Commune is assigned by the package generator from the current Arabic
     // name/centroid index. The frozen v1 row can carry an older nearest-commune
@@ -367,8 +384,8 @@ for (const [pkg, file, map] of SPECS) {
     } catch {
       // Packages without removals do not need a ledger.
     }
-    // The runner's demoteSharedPoints() pass is file-level — a per-record map
-    // cannot see that another record carries the same point — so replay it here.
+    // The runner's demoteSharedPoints() pass is file-level: a per-record map
+    // cannot see that another record carries the same point, so replay it here.
     // The transform never moves a coordinate, so the clusters in the committed
     // file are exactly the clusters the runner saw.
     const shared = new Set([...sharedPoints(rows)].map((i) => `${rows[i].lat},${rows[i].lng}`));
@@ -387,7 +404,7 @@ for (const [pkg, file, map] of SPECS) {
       assert.ok(
         shipped,
         `${pkg}/${file}: the transform produced id ${JSON.stringify(produced.id)}, which is not ` +
-          `in the committed data — the id rule drifted (v1 id was ${JSON.stringify(v1.id)})`,
+          `in the committed data; the id rule drifted (v1 id was ${JSON.stringify(v1.id)})`,
       );
       ENRICHMENTS[pkg]?.(produced, shipped);
       if (COMMUNE_CODE_ENRICHED.has(pkg)) {
