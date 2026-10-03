@@ -10,7 +10,7 @@ measured here instead.
 Why. Our centre and the OSM `admin_centre` node are two hand-placed claims about
 one town, so a delta between them says the two sources disagree, not that ours is
 wrong. The median over all 1537 compared rows is
-**218 m**, and a rule needing 496 exceptions was measuring that
+**180 m**, and a rule needing 496 exceptions was measuring that
 disagreement. Containment is a fact about one claim on its own: a centre outside
 its own commune is wrong whatever the node says, and that is how the 189
 corrections of this batch were decided.
@@ -24,10 +24,10 @@ corrections of this batch were decided.
 
 | Band | Communes |
 | --- | --- |
-| over 300 m | 668 |
-| over 1 km | 307 |
-| over 5 km | 80 |
-| median | 218 m |
+| over 300 m | 595 |
+| over 1 km | 234 |
+| over 5 km | 36 |
+| median | 180 m |
 | largest | 94922 m (Tinerkouk, 4905) |
 
 The `In own commune` column is the guard's question. A row over 1 km that still
@@ -43,137 +43,64 @@ answers **no** is a defect with incomplete evidence, listed in
 | 514 | Bitam | 60 | 31255 | yes | 5177042 |
 | 1713 | M'Liliha | 17 | 26434 | yes | 6533522 |
 | 1441 | Faïdja | 14 | 25878 | yes | 6545425 |
-| 2826 | El Houamed | 68 | 22910 | **no** | 6547240 |
-| 638 | Beni-Mallikeche | 6 | 22702 | **no** | 2170758 |
-| 5205 | Igli | 52 | 20740 | yes | 6530993 |
-| 2842 | Medjedel | 68 | 20638 | yes | 6547250 |
-| 1526 | M'kira | 15 | 17873 | **no** | 4293722 |
 | 2921 | El Menaouer | 29 | 16193 | **no** | 6668173 |
-| 1528 | Ait-Mahmoud | 15 | 15402 | **no** | 4292443 |
 | 4126 | Zouabi | 41 | 14618 | **no** | 6663213 |
 | 1215 | El Ogla El Melha | 62 | 14504 | yes | 6618847 |
-| 1303 | Aïn Tallout | 13 | 13837 | yes | 6666550 |
-| 3820 | Sidi Slimane | 38 | 13759 | **no** | 6534592 |
 | 2434 | Djeballah Khemissi | 24 | 12761 | **no** | 6537634 |
 | 2836 | Bir Foda | 68 | 12684 | yes | 5514983 |
-| 613 | Kendira | 6 | 12532 | **no** | 4112944 |
-| 4906 | Deldoul | 49 | 12161 | yes | 4171608 |
-| 552 | Chir | 5 | 12053 | **no** | 5201376 |
 | 3217 | Cheguig | 32 | 11799 | yes | 6533978 |
-| 1027 | Aghbalou | 10 | 11681 | **no** | 3397589 |
 | 648 | Boukhelifa | 6 | 11444 | **no** | 4112950 |
 | 3819 | Tamellahet | 38 | 11273 | **no** | 6534593 |
-| 650 | Benimaouche | 6 | 11004 | **no** | 4070138 |
-| 2651 | Boughezoul | 67 | 11004 | yes | 2435706 |
 | 2237 | Oued Sebaa | 22 | 10731 | yes | 6661995 |
 | 532 | Béni Fedhala El Hakania | 5 | 10649 | **no** | 5195901 |
 | 4418 | Hassania | 44 | 9732 | yes | 2740818 |
 | 3304 | Bordj Omar Driss | 33 | 9721 | yes | 4174331 |
-| 3427 | El Euch | 34 | 9651 | yes | 4475450 |
 | 1407 | Sidi Bakhti | 14 | 9471 | yes | 6545445 |
 | 2832 | Khetouti Sed El Djir | 28 | 9377 | yes | 6547242 |
 | 557 | El Hassi | 5 | 9229 | **no** | 5209309 |
 | 3808 | Sidi Lantri | 38 | 9163 | yes | 6534591 |
-| 1732 | Benhar | 65 | 8934 | yes | 6533503 |
 | 2941 | Gharrous | 29 | 8910 | **no** | 5349395 |
-| 2803 | Hammam Dhalaa | 28 | 8687 | yes | 6547241 |
 | 2829 | Maarif | 28 | 8672 | yes | 6547248 |
 | 515 | Abdelkader Azil | 60 | 8619 | **no** | 5160749 |
-| 1007 | Dirah | 10 | 8489 | yes | 3202071 |
-| 4104 | Machroha | 41 | 8470 | yes | 6663197 |
-| 219 | Sendjas | 2 | 8266 | yes | 2799177 |
 | 538 | Taxlent | 5 | 8168 | yes | 5147557 |
-| 122 | Bouda | 1 | 7932 | yes | 4171607 |
-| 1960 | Tella | 19 | 7821 | yes | 1618532 |
-| 5702 | Still | 57 | 7683 | yes | 5144111 |
 | 2840 | Souamaa | 28 | 7440 | **no** | 6547262 |
-| 4014 | Tamza | 40 | 7058 | yes | 6561890 |
 | 3021 | El Borma | 30 | 6997 | yes | 6542938 |
-| 2305 | El Bouni | 23 | 6895 | yes | 1616108 |
 | 716 | El Feïdh | 7 | 6405 | yes | 4120767 |
-| 2121 | Beni Oulbane | 21 | 6373 | yes | 6543281 |
-| 1309 | Djebala | 13 | 6278 | **no** | 6666562 |
 | 1039 | Maamora | 10 | 6178 | yes | 3278688 |
 | 1226 | Bedjene | 12 | 6104 | yes | 6618827 |
 | 635 | Beni K'sila | 6 | 6045 | yes | 4067904 |
-| 701 | Biskra | 7 | 6003 | yes | 4120759 |
-| 3124 | Boutlelis | 31 | 5937 | yes | 4267929 |
-| 4826 | Oued El Djemaa | 48 | 5853 | yes | 6559410 |
-| 4110 | Haddada | 41 | 5852 | yes | 6663192 |
 | 521 | Tigherghar | 5 | 5842 | **no** | 5200635 |
-| 3306 | In Amenas | 33 | 5781 | yes | 4174335 |
-| 2802 | Maadid | 28 | 5760 | yes | 6547247 |
-| 5201 | Beni-Abbes | 52 | 5754 | yes | 6530989 |
-| 1708 | Birine | 65 | 5671 | yes | 6533505 |
-| 1933 | Mezloug | 19 | 5597 | yes | 1618321 |
 | 539 | Gosbat | 5 | 5583 | yes | 5175666 |
 | 1823 | Khiri Oued Adjoul | 18 | 5544 | **no** | 6669727 |
 | 2658 | Ouled Antar | 67 | 5449 | yes | 2522974 |
-| 1908 | Bir-El-Arch | 19 | 5227 | yes | 1618480 |
-| 717 | El Kantara | 61 | 5154 | yes | 4120771 |
-| 1560 | Iboudrarene | 15 | 5129 | **no** | 4288710 |
-| 4413 | Oued Chorfa | 44 | 5125 | yes | 2645875 |
-| 526 | Tighanimine | 5 | 5120 | yes | 5201437 |
-| 3610 | Berrihane | 36 | 5112 | yes | 1604277 |
-| 4304 | Oued Athmenia | 43 | 5095 | yes | 2198535 |
-| 1019 | El Adjiba | 10 | 5083 | yes | 3412721 |
 | 913 | Benkhelil | 9 | 5011 | yes | 3823981 |
-| 1541 | Ifigha | 15 | 4988 | yes | 2175825 |
 | 3623 | Hammam Beni Salah | 36 | 4901 | yes | 1614443 |
 | 2411 | Bendjarah | 24 | 4889 | yes | 6537625 |
 | 2843 | Slim | 68 | 4842 | yes | 5514905 |
 | 4113 | Ouled Moumen | 41 | 4800 | yes | 6663202 |
-| 4908 | Aougrout | 49 | 4761 | yes | 4171604 |
 | 646 | Tamridjet | 6 | 4694 | yes | 1283404 |
-| 2251 | Benachiba Chelia | 22 | 4627 | yes | 6661978 |
-| 1225 | Boulhaf Dyr | 12 | 4602 | yes | 6618833 |
-| 3926 | Mih Ouansa | 39 | 4602 | yes | 5139492 |
-| 3123 | Messerghin | 31 | 4600 | yes | 1259561 |
 | 3220 | Tousmouline | 32 | 4525 | yes | 6533993 |
 | 2622 | Ouled Hellal | 67 | 4501 | yes | 2518403 |
 | 1411 | Sebt | 14 | 4489 | yes | 6545434 |
-| 1312 | Ain Fezza | 13 | 4474 | yes | 6666547 |
 | 4831 | Souk El Had | 48 | 4458 | yes | 6559422 |
 | 2916 | Sidi Boussaid | 29 | 4453 | yes | 6668189 |
 | 554 | Zana El Beïda | 5 | 4330 | yes | 5226646 |
-| 2125 | Salah Bouchaour | 21 | 4280 | yes | 6543299 |
-| 604 | Taourit Ighil | 6 | 4268 | yes | 4067932 |
 | 3606 | Ain El Assel | 36 | 4268 | yes | 1614560 |
-| 2220 | Hassi Zahana | 22 | 4236 | yes | 6661986 |
 | 2810 | Ouled Madhi | 28 | 4164 | yes | 6547255 |
-| 720 | Djemourah | 61 | 4161 | yes | 4120765 |
-| 3201 | El Bayadh | 32 | 4157 | yes | 6533981 |
-| 2128 | Oum Toub | 21 | 4147 | yes | 6543297 |
 | 3807 | Melaab | 38 | 4105 | yes | 6534587 |
 | 4605 | Bouzedjar | 46 | 4093 | yes | 6535202 |
 | 2732 | Hassiane | 27 | 3993 | yes | 6660567 |
 | 928 | Ain Romana | 9 | 3952 | yes | 2620528 |
-| 214 | Talassa | 2 | 3918 | yes | 4836837 |
 | 2641 | Aïn Ouksir | 67 | 3897 | yes | 2897101 |
 | 224 | Chettia | 2 | 3841 | yes | 4542228 |
 | 1722 | Selmana | 66 | 3828 | yes | 6533527 |
 | 2711 | Kheir-Eddine | 27 | 3733 | yes | 5757184 |
 | 1947 | Ouled Sabor | 19 | 3685 | yes | 1617605 |
-| 413 | Hanchir Toumghani | 4 | 3559 | yes | 4469769 |
-| 545 | Aïn Touta | 5 | 3530 | yes | 5181217 |
 | 1554 | Iflissen | 15 | 3483 | yes | 4285481 |
-| 2912 | Ghriss | 29 | 3474 | yes | 5488962 |
-| 1003 | Guerrouma | 10 | 3381 | yes | 3443260 |
-| 1910 | Ouled Tebben | 19 | 3367 | yes | 4308847 |
-| 633 | Tala Hamza | 6 | 3286 | yes | 4112949 |
-| 1034 | Boukram | 10 | 3271 | yes | 3443670 |
 | 1523 | Zekri | 15 | 3243 | yes | 4285366 |
-| 512 | Ouyoun El Assafir | 5 | 3237 | yes | 5234181 |
-| 519 | Ain Djasser | 5 | 3221 | yes | 5216386 |
-| 4223 | Damous | 42 | 3196 | yes | 2609923 |
-| 1953 | Beni Oussine | 19 | 3121 | yes | 1625407 |
-| 4433 | Ain-Bouyahia | 44 | 3101 | yes | 2754069 |
-| 642 | Akfadou | 6 | 3092 | yes | 4069527 |
 | 2612 | Ouled Brahim | 26 | 3083 | yes | 2587075 |
 | 917 | Souhane | 9 | 3081 | yes | 3830116 |
-| 4307 | Oued Seguen | 43 | 3058 | yes | 2197217 |
 | 1316 | Zenata | 13 | 3056 | yes | 6666586 |
-| 2501 | Constantine | 25 | 3046 | yes | 2245418 |
 | 2915 | Makhda | 29 | 3030 | yes | 6668178 |
 | 3621 | Ain Kerma | 36 | 2995 | yes | 1614523 |
 | 605 | Chellata | 6 | 2990 | yes | 4069657 |

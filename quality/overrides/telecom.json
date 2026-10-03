@@ -5,58 +5,6 @@
   "reviewed_at": "2026-09-09",
   "decisions": [
     {
-      "file": "5g-mobilis.json",
-      "record_id": "mobilis-713f5213c0",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "wilaya_code": "22",
-        "name": "TAKHMARET",
-        "commune": "TAKHMARET",
-        "lat": 35.198791,
-        "lng": 0.61084
-      },
-      "patch": {
-        "wilaya_code": "14"
-      },
-      "evidence": [
-        {
-          "url": "https://mobilis.dz/map/5g/data",
-          "checked_at": "2026-09-09"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2008/F2008051.PDF",
-          "checked_at": "2026-09-09"
-        }
-      ]
-    },
-    {
-      "file": "5g-mobilis.json",
-      "record_id": "mobilis-ff1371b891",
-      "status": "corrected",
-      "publish_action": "patch",
-      "expect": {
-        "wilaya_code": "42",
-        "name": "TAOURA",
-        "commune": "TAOURA",
-        "lat": 36.151971,
-        "lng": 8.00535
-      },
-      "patch": {
-        "wilaya_code": "41"
-      },
-      "evidence": [
-        {
-          "url": "https://mobilis.dz/map/5g/data",
-          "checked_at": "2026-09-09"
-        },
-        {
-          "url": "https://www.joradp.dz/FTP/jo-francais/2024/F2024054.pdf",
-          "checked_at": "2026-09-09"
-        }
-      ]
-    },
-    {
       "file": "5g-djezzy.json",
       "record_id": "djezzy-058a7dbf76",
       "status": "corrected",
@@ -520,6 +468,86 @@
       "evidence": [
         {
           "url": "https://www.djezzy5g.dz/map.html",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-27904a9e47",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "11",
+        "name": "TIN ZAOUATINE",
+        "commune": "TIN ZAOUATINE",
+        "lat": 19.955901,
+        "lng": 2.96527
+      },
+      "patch": {
+        "wilaya_code": "54"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ],
+      "reviewer": "geoalgeria-maintainers",
+      "reviewed_at": "2026-10-01"
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-713f5213c0",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "22",
+        "name": "TAKHMARET",
+        "commune": "TAKHMARET",
+        "lat": 35.198791,
+        "lng": 0.61084
+      },
+      "patch": {
+        "wilaya_code": "14"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2008/F2008051.PDF",
+          "checked_at": "2026-09-09"
+        }
+      ]
+    },
+    {
+      "file": "5g-mobilis.json",
+      "record_id": "mobilis-ff1371b891",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "42",
+        "name": "TAOURA",
+        "commune": "TAOURA",
+        "lat": 36.151971,
+        "lng": 8.00535
+      },
+      "patch": {
+        "wilaya_code": "41"
+      },
+      "evidence": [
+        {
+          "url": "https://mobilis.dz/map/5g/data",
+          "checked_at": "2026-09-09"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2024/F2024054.pdf",
           "checked_at": "2026-09-09"
         }
       ]

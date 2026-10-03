@@ -9,9 +9,10 @@
 //   node scripts/fix-jo-corrections.mjs --check    # exit 1 if a carrier drifts
 //   node scripts/fix-jo-corrections.mjs --write
 //   node scripts/fix-jo-corrections.mjs --write --target /path/algeria.json
+//   node scripts/fix-jo-corrections.mjs --write --root /path/to/a/repo/copy
 
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
-import { basename, dirname, join } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
@@ -20,18 +21,25 @@ import {
   coordinateCorrections,
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
+import { isWilayaSqlRow } from "./lib/full-sql-rows.mjs";
+import { supersededCommunePoints } from "./lib/commune-corrections.mjs";
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const PKG = join(ROOT, "packages", "dataset");
-const DATA = join(PKG, "data");
 const WRITE = process.argv.includes("--write");
 const CHECK = process.argv.includes("--check");
 if (WRITE && CHECK) throw new Error("Choose either --write or --check");
 
 const targets = [];
+// `--root` points this repo's own carriers at another checkout or a throwaway
+// copy of it, so a --write run can be exercised without touching tracked files.
+let root = join(dirname(fileURLToPath(import.meta.url)), "..");
 for (let i = 2; i < process.argv.length; i++) {
   if (process.argv[i] === "--target") targets.push(process.argv[++i]);
+  else if (process.argv[i] === "--root") root = resolve(process.argv[++i]);
 }
+
+const ROOT = root;
+const PKG = join(ROOT, "packages", "dataset");
+const DATA = join(PKG, "data");
 
 // ---------------------------------------------------------------------------
 // Index the corrections. `from` is asserted everywhere, so a carrier that has
@@ -47,6 +55,29 @@ for (const c of communeNameCorrections) {
 }
 /** code_commune -> { from:[lat,lng], to:[lat,lng] } */
 const communeCoords = new Map(coordinateCorrections.map((c) => [c.code_commune, c]));
+
+// A LATER LEDGER CAN SUPERSEDE ONE OF THOSE REPAIRS, and then this script must leave the
+// coordinate alone instead of reading it as drift. EVERY CARRIER, not only the ones a
+// review happens to read: the first version of this guard reached the JSON and the GeoJSON
+// writers and not the CSV and SQL ones, and because those two always write to
+// packages/dataset/data even under --target, a `--write --target` run from the test suite
+// quietly put El Euch back on its superseded centroid in two of the seven carriers while
+// the other five held the ledger's value. test/commune-centre-carriers.test.mjs holds all
+// seven to the ledger now, so that cannot pass again. El Euch (3427) is the first case: the
+// JORA repair of version 2.1.0 took it off a placeholder onto its relation's centroid,
+// and the coordinate review of 2026-10-01 then moved it 9.7 km onto its own admin_centre
+// node on three independent Votes (research/_commune-centres/corrections-2026-10-01b.json).
+// Both repairs are real and they are in order; the ledger's value is the current one, so
+// it is accepted here and never rewritten. The ledgers are read rather than a code being
+// pinned, so the next such case needs no edit.
+/** code_commune -> [lat, lng] a commune-centre ledger has since moved it to. */
+const supersededCoords = supersededCommunePoints(new Set(communeCoords.keys()));
+
+/** Is this carrier already at the value a later ledger moved the commune to? */
+function atSupersededPoint(code, lat, lng) {
+  const later = supersededCoords.get(Number(code));
+  return Boolean(later) && Number(lat) === later[0] && Number(lng) === later[1];
+}
 /** code_commune -> { from, to } for a commune filed under the wrong daira. */
 const communeDairas = new Map(communeDairaCorrections.map((c) => [c.code_commune, c]));
 /** wilaya code -> { from, to } */
@@ -116,10 +147,12 @@ function patchCommune(row, keys, where) {
   }
   const coords = communeCoords.get(code);
   if (coords && keys.lat) {
-    expect(row[keys.lat], [coords.from[0], coords.to[0]], `${where} ${code} latitude`);
-    expect(row[keys.lng], [coords.from[1], coords.to[1]], `${where} ${code} longitude`);
-    row[keys.lat] = coords.to[0];
-    row[keys.lng] = coords.to[1];
+    if (!atSupersededPoint(code, row[keys.lat], row[keys.lng])) {
+      expect(row[keys.lat], [coords.from[0], coords.to[0]], `${where} ${code} latitude`);
+      expect(row[keys.lng], [coords.from[1], coords.to[1]], `${where} ${code} longitude`);
+      row[keys.lat] = coords.to[0];
+      row[keys.lng] = coords.to[1];
+    }
   }
   if (keys.daira && row[keys.daira]) {
     row[keys.daira] = dairaFor(code, row[keys.wilaya], row[keys.daira], where);
@@ -342,14 +375,14 @@ patchCsv(join(DATA, "csv", "communes.csv"), 8, (f) => {
   }
   f[3] = dairaFor(code, f[2], f[3], "csv/communes.csv");
   const coords = communeCoords.get(code);
-  if (coords) {
+  if (coords && !atSupersededPoint(code, f[5], f[6])) {
     f[5] = String(coords.to[0]);
     f[6] = String(coords.to[1]);
   }
 });
 
-// code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created
-patchCsv(join(DATA, "csv", "wilayas.csv"), 8, (f) => {
+// code,name_fr,name_ar,phone_code,postal_code,latitude,longitude,created,capital_commune_code
+patchCsv(join(DATA, "csv", "wilayas.csv"), 9, (f) => {
   const rename = wilayaNames.get(Number(f[0]));
   if (!rename) return;
   expect(f[1], [...rename.formerNames, rename.to], `csv/wilayas.csv ${f[0]} name_fr`);
@@ -410,9 +443,9 @@ function patchSql(path, patch) {
   queueText(path, out.join("\n"));
 }
 
-// wilayas: (code, 'name_fr', …)   communes: (id, 'name_fr', 'name_ar', wilaya, 'daira', 'postal', lat, lng, code_commune)
+
 patchSql(join(DATA, "sql", "full.sql"), (f) => {
-  if (f.length === 8) {
+  if (isWilayaSqlRow(f)) {
     const rename = wilayaNames.get(Number(f[0]));
     if (!rename) return false;
     expect(f[1], [sqlQuote(rename.from), sqlQuote(rename.to)], `sql/full.sql wilaya ${f[0]}`);
@@ -436,7 +469,7 @@ patchSql(join(DATA, "sql", "full.sql"), (f) => {
     changed = true;
   }
   if (sqlQuote(daira) !== f[4]) { f[4] = sqlQuote(daira); changed = true; }
-  if (coords) {
+  if (coords && !atSupersededPoint(code, f[6], f[7])) {
     f[6] = String(coords.to[0]);
     f[7] = String(coords.to[1]);
     changed = true;
@@ -488,8 +521,8 @@ for (const provider of ["yalidine", "zr_express", "maystro"]) {
 }
 
 // --- the two flat CSVs beside the JSON --------------------------------------
-// code,name_ar,name_fr,name_en,created,mother_wilaya_code,law,communes_count,…
-patchCsv(join(DATA, "wilayas.csv"), 11, (f) => {
+// code,name_ar,name_fr,name_en,created,mother_wilaya_code,law,communes_count,…,capital_commune_code
+patchCsv(join(DATA, "wilayas.csv"), 12, (f) => {
   const rename = wilayaNames.get(Number(f[0]));
   if (!rename) return;
   expect(f[2], [...rename.formerNames, rename.to], `wilayas.csv ${f[0]} name_fr`);
@@ -536,7 +569,7 @@ function patchCommunePoints(doc, label, { strict = false } = {}) {
     patchCommune(Object.assign(props, { code_commune: code }), GEOJSON_KEYS, label);
     delete props.code_commune;
     const coords = communeCoords.get(code);
-    if (coords) {
+    if (coords && !atSupersededPoint(code, feature.geometry.coordinates[1], feature.geometry.coordinates[0])) {
       expect(feature.geometry.coordinates[0], [coords.from[1], coords.to[1]], `${label} ${code} lng`);
       expect(feature.geometry.coordinates[1], [coords.from[0], coords.to[0]], `${label} ${code} lat`);
       feature.geometry.coordinates = [coords.to[1], coords.to[0]];

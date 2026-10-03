@@ -29,7 +29,7 @@ This is a small monorepo:
 | `packages/sante/` | `@geoalgeria/sante` | public health establishments, EPH/EPSP/EHS/CHU (Ministry of Health), bilingual, geocoded via OSM + Wikidata |
 | `packages/culture/` | `@geoalgeria/culture` | cultural atlas, protected sites, museums, theatres, libraries + cultural establishments (Ministry of Culture), bilingual, fully geocoded |
 | `packages/agriculture/` | `@geoalgeria/agriculture` | agriculture-sector institutions, DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups (Ministry of Agriculture), bilingual, geocoded |
-| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,855 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
+| `packages/ecoles/` | `@geoalgeria/ecoles` | schools, 11,858 primaires/CEM/lycées/préscolaires classified by cycle, bilingual, all 69 wilayas (OpenStreetMap) |
 | `packages/gares-routieres/` | `@geoalgeria/gares-routieres` | intercity bus stations, 74 SOGRAL gares routières, 52 wilayas, geocoded with surfaces from the archived SOGRAL registry plus current MAHATATI agency ids |
 | `packages/ferroviaire/` | `@geoalgeria/ferroviaire` | rail & urban transit, 692 train/tram/metro/aerial-tramway/gondola nodes (SNTF/SETRAM/SEMA), Wikidata + OSM composite, bilingual |
 | `packages/buses/` | `@geoalgeria/buses` | urban/suburban bus networks, 59 Lines, 42 OSM shapes, 75 Directions and 1,046 Stations across 3 Operators |
@@ -147,6 +147,24 @@ per-part attribution, so a missing `NOTICE`, a `NOTICE` left out of `files[]` (i
 git, absent from the npm tarball), a `NOTICE` without the ODbL URL, or a carved-out
 path the `NOTICE` never names all fail `pnpm validate`. A carve-out bullet that
 names no `data/...` path fails too: prose cannot be checked part by part.
+
+A package also ships descriptors under `data/`: `data/metadata.json`, and a
+`<file>.metadata.json` beside any file that needs one. Each carries a `license`
+of its own, and `pnpm validate` reads every one of them, discovered rather than
+listed, against the class above:
+
+- exactly one of `license` or `conditionsOfAccess`, the exclusive pair the
+  Dataset JSON-LD rule already requires of `dataset-metadata.json`;
+- prose terms must be carried verbatim by the `## Data` section of the package
+  `LICENSE`, so a descriptor cannot offer data on terms no licence file grants;
+- an SPDX expression under a `SEE LICENSE IN LICENSE` package needs a
+  `provenance_notes` entry naming both the expression and that manifest value.
+  The manifest value means no SPDX expression states the package's terms, so a
+  descriptor producing one is either a stale copy of a pre-class-change manifest,
+  or a part whose own data really is wholly under that licence. Only the second
+  is allowed, and the note is where it is argued: `data/geojson/communes.geojson`
+  mixes MIT rows with ODbL ones and states prose, while every feature of
+  `data/geojson/wilaya-boundaries.geojson` is ODbL and it states `ODbL-1.0`.
 
 `pnpm validate` enforces this on every package, so a new licence class needs an
 entry in [`scripts/lib/licence-terms.mjs`](scripts/lib/licence-terms.mjs) before

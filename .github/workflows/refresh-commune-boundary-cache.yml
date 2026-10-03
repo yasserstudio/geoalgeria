@@ -1,0 +1,132 @@
+name: Refresh the commune boundary cache
+
+# The containment guard in test/commune-centre-in-commune.test.mjs holds all 1,541
+# commune centres to commune polygons OpenStreetMap owns and this repository does
+# not publish. They are reduced once into research/_commune-centres/
+# commune-boundaries.json from a 52 MB `out geom` Overpass pull that stays local, so
+# `pnpm validate` proves the cache has not been edited (its content digest) but can
+# never prove it is still current. This workflow is the other half: it re-pulls OSM,
+# rebuilds the cache, and opens a pull request when the rebuild moves a verdict.
+#
+# IT NEVER PUSHES TO main. `main` is protected, and more to the point every row this
+# finds is a hand decision about one commune's coordinates, not a refresh to apply.
+#
+# WHAT COUNTS AS A CHANGE. The geometry always moves: mappers refine a shoreline and
+# 3.7 MB of reduced rings change without one centre changing side. The gate is the
+# verdict per commune, which scripts/diff-boundary-verdicts.mjs compares across the
+# committed and rebuilt caches: a centre that crossed its own boundary either way, or
+# a commune whose geometry became or stopped being usable. Nothing else opens a pull
+# request, and a rebuild from an unchanged OSM base writes the same bytes, so a quiet
+# month leaves no diff at all.
+#
+# Overpass is rate-limited and the pull is 52 MB, so this runs monthly and makes
+# exactly one request.
+on:
+  schedule:
+    - cron: "41 4 7 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: refresh-commune-boundary-cache
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+
+      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+
+      # The committed cache's verdicts, before anything is refetched. This also
+      # fails the run if the committed cache does not match its own digest, which
+      # would make every comparison below meaningless.
+      - name: Record the committed verdicts
+        run: |
+          node --test test/boundary-cache-provenance.test.mjs
+          node scripts/build-commune-boundary-cache.mjs --verdicts "$RUNNER_TEMP/verdicts-committed.json"
+
+      # One Overpass request. The response is kept in the runner's temp directory,
+      # never in the repository: it is 52 MB of way-member geometry and gitignored
+      # for that reason.
+      - name: Re-pull OpenStreetMap and rebuild the cache
+        run: |
+          node scripts/build-commune-boundary-cache.mjs \
+            --fetch-geometry \
+            --raw-geometry "$RUNNER_TEMP/overpass-geometry-raw.json" \
+            --write
+
+      - name: Record the rebuilt verdicts
+        run: node scripts/build-commune-boundary-cache.mjs --verdicts "$RUNNER_TEMP/verdicts-rebuilt.json"
+
+      - name: Decide whether any verdict changed
+        id: verdicts
+        run: |
+          node scripts/diff-boundary-verdicts.mjs \
+            "$RUNNER_TEMP/verdicts-committed.json" \
+            "$RUNNER_TEMP/verdicts-rebuilt.json" \
+            --body "$RUNNER_TEMP/pr-body.md"
+          cat "$RUNNER_TEMP/pr-body.md" >> "$GITHUB_STEP_SUMMARY"
+
+      # The guard itself, against the rebuilt cache, so the pull request says whether
+      # the data still passes rather than leaving it to be discovered. Not blocking:
+      # a guard that fails here is exactly what a human has to see.
+      - name: Run the containment guard against the rebuilt cache
+        if: steps.verdicts.outputs.changed == 'true'
+        id: guard
+        continue-on-error: true
+        run: node --test test/commune-centre-in-commune.test.mjs test/boundary-cache-provenance.test.mjs
+
+      - name: Discard a refresh that moved no verdict
+        if: steps.verdicts.outputs.changed != 'true'
+        run: |
+          git checkout -- research/_commune-centres
+          echo "No verdict changed; the rebuilt geometry was discarded."
+
+      # A branch and a pull request, never a push to main. Note that a pull request
+      # opened with GITHUB_TOKEN does not start CI: the reviewer pushes an empty
+      # commit, or closes and reopens it, to get a green run before merging.
+      - name: Open a pull request with the verdict diff
+        if: steps.verdicts.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GUARD: ${{ steps.guard.outcome }}
+        run: |
+          set -euo pipefail
+          base=$(jq -r '.cache.timestamp_osm_base' "$RUNNER_TEMP/verdicts-rebuilt.json" | cut -c1-10)
+          branch="chore/boundary-cache-refresh-$base"
+
+          {
+            echo
+            echo "Containment guard against the rebuilt cache: \`$GUARD\`."
+            echo
+            echo "Rebuild it locally with \`node scripts/build-commune-boundary-cache.mjs --fetch-geometry --write\`."
+          } >> "$RUNNER_TEMP/pr-body.md"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add research/_commune-centres
+          git commit -m "chore(research): refresh the commune boundary cache from OSM $base"
+          git push --force origin "$branch"
+
+          if [ -n "$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')" ]; then
+            echo "A pull request for $branch is already open; the branch was updated in place."
+          else
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "chore(research): commune boundary cache, OSM $base, verdicts changed" \
+              --body-file "$RUNNER_TEMP/pr-body.md"
+          fi

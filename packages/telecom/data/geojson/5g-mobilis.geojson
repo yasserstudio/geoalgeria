@@ -9976,7 +9976,7 @@
       "properties": {
         "id": "mobilis-27904a9e47",
         "name": "TIN ZAOUATINE",
-        "wilaya_code": "11",
+        "wilaya_code": "54",
         "commune_code": null,
         "commune": "TIN ZAOUATINE",
         "commune_ar": "تين زاوتين",
@@ -9987,7 +9987,14 @@
         "source": "mobilis",
         "operator": "mobilis",
         "technology": "5G",
-        "address": null
+        "address": null,
+        "review_status": "corrected",
+        "reviewed_at": "2026-10-01",
+        "reviewed_by": "geoalgeria-maintainers",
+        "review_evidence": [
+          "https://mobilis.dz/map/5g",
+          "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf"
+        ]
       }
     },
     {

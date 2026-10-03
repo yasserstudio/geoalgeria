@@ -4,7 +4,7 @@
   "inputs": [
     {
       "path": "packages/agriculture/data/agriculture.json",
-      "sha256": "923cc4c084185a3768173a3c7d7ec4f64aaf0f3d44caab62c7d6dd228d6eef01"
+      "sha256": "206342054390859258f119b9bfcde2ab0c9a3ba2db05097fd955f71a76e1a1de"
     },
     {
       "path": "packages/agriculture/data/metadata.json",
@@ -16,15 +16,15 @@
     },
     {
       "path": "packages/aviation/data/metadata.json",
-      "sha256": "6626b4537a205ffbd926aedf74d3053b61b2a58e0b96f012928a67e9112f0d58"
+      "sha256": "9412ecb63c40394aab00482824baa528f6bb38dce6004b3f087039cef795da94"
     },
     {
       "path": "packages/aviation/data/route-endpoints.json",
-      "sha256": "7d313253bc701f0b281f6c28b691f1828297c49a817595998046d11c91d0a45e"
+      "sha256": "577c25246a44e8b018430ebdfac9105f697ed5e1377c866480c969a5562ae2e5"
     },
     {
       "path": "packages/aviation/data/routes.json",
-      "sha256": "6e1de3533ec7c0201be4843cb276d8b126567cbdc94e3715b5eac0f0722f58a6"
+      "sha256": "7207b9e2d7b9da4ced487fa3968cc0b74462be00dbfb52fca29375ea06b92eba"
     },
     {
       "path": "packages/banques/data/banks.json",
@@ -56,15 +56,15 @@
     },
     {
       "path": "packages/cliniques/data/cliniques.json",
-      "sha256": "826a69591a403d344e16bf41d88f2bc4d684f1c530d863fe352c136c877f6762"
+      "sha256": "4cf294fc55a30f0f6243ca61b2e64e15aa52767f1525f790d486f14f47492094"
     },
     {
       "path": "packages/cliniques/data/metadata.json",
-      "sha256": "d5aa4c7efd372c4b797915d8b44f77187220cf79cbf60ab2b966e50c5fb8498e"
+      "sha256": "62a1d2ac47268037aaeb95a7734b9226b75b3b25ea8607c020f1c3d53897b370"
     },
     {
       "path": "packages/cliniques/data/retired-ids.json",
-      "sha256": "893ace95712f3abb572e33d0e2eea05d7bdcf9525d6a643bbb590ac50c482ddc"
+      "sha256": "925c3324c05b74f0f59cb7518e9c27f21c21fd7c11cee8c1f161550ff7b57d12"
     },
     {
       "path": "packages/culture/data/culture.json",
@@ -80,7 +80,7 @@
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.metadata.json",
-      "sha256": "db40ff8903689f4e5177ebc74f6284134ed7b376319e565695a4747452c95be2"
+      "sha256": "3e1811e932131a9c42edb8124b16a76b53f2e96e72dc6a961d14ed031fa05e3c"
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
@@ -104,7 +104,7 @@
     },
     {
       "path": "packages/emploi/data/alem.json",
-      "sha256": "5d9ccd49d38e562ab79bb4f31a00e309213a827996065023991987784b95380d"
+      "sha256": "9f8a1ec557c7952c40397c6a1a71e0e5a120224c5e9d98a751bcab0ef01b6b39"
     },
     {
       "path": "packages/emploi/data/awem.json",
@@ -112,7 +112,7 @@
     },
     {
       "path": "packages/emploi/data/metadata.json",
-      "sha256": "a82113b78d1b2ea33c0602910f1dec8c349bf6a2013a8487e3bae44274005c92"
+      "sha256": "a305548e793c293beebd9b0d0c16d05d6696a5de8cbdd3e3d9c4b5be1ec70c5d"
     },
     {
       "path": "packages/enseignement-superieur/data/institutions.json",
@@ -124,7 +124,7 @@
     },
     {
       "path": "packages/ferroviaire/data/metadata.json",
-      "sha256": "cb3e356514f697a27d4727f798cfdb66af9c818f212f6e650d2c53562ece703b"
+      "sha256": "6f532bd2029d53bc6b27facfe213905518da5a9cb1f0dc9d2b49940e366dc723"
     },
     {
       "path": "packages/ferroviaire/data/stations.json",
@@ -132,7 +132,7 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "30b633786bd9b78b93d1a29466b41390c9a718ec0741aa70a8cf546a1d3569c3"
+      "sha256": "eb8248155ec33d4e1550fd2c77c3afaf721fd64d8e24c5e96783f070cc25ed17"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
@@ -152,7 +152,7 @@
     },
     {
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json",
-      "sha256": "93376021b9c3f013845921b68d3f301c463d7b9a09be085a4a6f376cfbddac31"
+      "sha256": "4eff8f1246eb5a96cee03066719a047612456e02b06281c048c38106d1f316b6"
     },
     {
       "path": "packages/industrie-pharmaceutique/data/metadata.json",
@@ -160,7 +160,7 @@
     },
     {
       "path": "packages/jeunesse/data/institutions.json",
-      "sha256": "6796334d183aa6235a8a9bb57bd312e05abcb03b18a4e03c3c466a30822ee60f"
+      "sha256": "4f8a2491df563e89041c37b44a0bc650f3feb6f32e2cbec7dd75038306d3882d"
     },
     {
       "path": "packages/jeunesse/data/metadata.json",
@@ -196,7 +196,7 @@
     },
     {
       "path": "packages/mosquees/data/metadata.json",
-      "sha256": "0fee14ec95bc63e3b66b2afbbbf496b37ead57833486444285208e2b97d5075b"
+      "sha256": "d2dfb8a5d82a12e83312c2ba30a32a8c3b0cc841d3e8609882f63d03e5bc1298"
     },
     {
       "path": "packages/mosquees/data/mosquees.json",
@@ -224,7 +224,7 @@
     },
     {
       "path": "packages/poste/data/atms.json",
-      "sha256": "c30d5a60ba36ccd2edb18b61870b089b11269a06191e08941282f05c92208a77"
+      "sha256": "0ed6b2996b11d255378bc573b918557d2f12e842a7720260d2369a588c3892c4"
     },
     {
       "path": "packages/poste/data/metadata.json",
@@ -248,15 +248,19 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "d4fb027313a9ae65467417d5ee3fda1447bc0269d42d7823aa8cc9cc66925249"
+      "sha256": "97e4f498d0743c0ba8fc55ba05fa7651c20b8738b4fbe606645370c277c892f5"
+    },
+    {
+      "path": "packages/sante/data/retired-ids.json",
+      "sha256": "197552fd3ba8b51ba29e4dd06d1fb078db96f9acba260f2e79ecab1b5faa4180"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "4f702b2dd69c1b7d46a2bd674b8d906b43e11694629a8cfb374f240d4a48fd7e"
+      "sha256": "66a5b2230fcc08656df61bd0c2a29211d8d8ca9c394ef55c486ff62b355f0946"
     },
     {
       "path": "packages/sports/data/facilities.json",
-      "sha256": "6550a97cdb9c919a471190f881dddd0afe0aec08b316a4b05a59bdcf5b9c2a0d"
+      "sha256": "8c70c4afc871273df847166abc9b4d620fd4b05fab81b9229e030d0adbcb0d0d"
     },
     {
       "path": "packages/sports/data/metadata.json",
@@ -268,7 +272,7 @@
     },
     {
       "path": "packages/telecom/data/5g-mobilis.json",
-      "sha256": "cf88a263c7924e2ac67d400e0ece24821a7f3290242e805a5ad0f77009161085"
+      "sha256": "f3dd4dfaed65f8f5aa5c6bce1991df61dd0d9272571ef14dbae945e15325da66"
     },
     {
       "path": "packages/telecom/data/5g-ooredoo.json",
@@ -280,7 +284,7 @@
     },
     {
       "path": "packages/tourisme/data/attractions.json",
-      "sha256": "4a0c91a9492b2d73ebfecab8070bd3c66ffe445a622f732d932b167b9a209d8a"
+      "sha256": "5ee6c22c9476427bf0b9f5c564d558626ea1ebba961441da4a1c2ed674b73278"
     },
     {
       "path": "packages/tourisme/data/historic.json",
@@ -288,7 +292,7 @@
     },
     {
       "path": "packages/tourisme/data/lodging.json",
-      "sha256": "c3337a99fc7e5865ae07c057b61f9bb5b4cfc1f0cb69d392d9b4d47f7eee9d73"
+      "sha256": "470c86e29547dcd434455010c1f10ad1114b263c58e62e610bf3dd4bb14682bc"
     },
     {
       "path": "packages/tourisme/data/metadata.json",
@@ -300,20 +304,20 @@
     },
     {
       "path": "packages/tourisme/data/thermal-springs.json",
-      "sha256": "18db247f7c9ffcf21c08f42cc8bacf8447d7e7790290c1fd203b17f9fc310d83"
+      "sha256": "efe9fc9bfd58c1b92592960f6eab836278eedd58c2222702b303b6ba46c26565"
     }
   ],
   "total_datasets": 26,
   "total_entities": 34,
-  "total_records": 70546,
-  "candidates": 17829,
+  "total_records": 70518,
+  "candidates": 17738,
   "reasons": {
-    "approximate_coordinate": 16902,
-    "inside_adjacent_wilaya": 248,
-    "missing_coordinate": 524,
+    "approximate_coordinate": 16888,
+    "inside_adjacent_wilaya": 193,
+    "missing_coordinate": 502,
     "outside_all_wilaya_boundaries": 199,
-    "outside_declared_wilaya": 447,
-    "shared_coordinate": 1305
+    "outside_declared_wilaya": 392,
+    "shared_coordinate": 1298
   },
   "datasets": [
     {
@@ -445,8 +449,8 @@
           "anac": 33,
           "ourairports": 3
         },
-        "routes": 142,
-        "routes_as_of": "2026-09-27"
+        "routes": 148,
+        "routes_as_of": "2026-10-02"
       }
     },
     {
@@ -752,10 +756,10 @@
     },
     {
       "dataset": "cliniques",
-      "total_records": 1918,
-      "candidates": 838,
+      "total_records": 1917,
+      "candidates": 837,
       "reasons": {
-        "approximate_coordinate": 834,
+        "approximate_coordinate": 833,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -767,12 +771,12 @@
         "title_fr": "Cliniques et structures de soins d'Algérie",
         "title_ar": "عيادات ومرافق الرعاية الصحية في الجزائر",
         "title_en": "Algeria clinics & care facilities",
-        "record_count": 1918,
-        "geocoded_count": 1918,
+        "record_count": 1917,
+        "geocoded_count": 1917,
         "geocoded_pct": 100,
         "precision": {
           "exact": 1084,
-          "approximate": 834
+          "approximate": 833
         },
         "estimated_universe": null,
         "coverage_pct": null,
@@ -796,10 +800,10 @@
         ],
         "license": "ODbL-1.0",
         "updated": "2026-08-31",
-        "named": 1612,
+        "named": 1610,
         "by_type": {
           "polyclinique": 406,
-          "clinique": 1145,
+          "clinique": 1144,
           "salle_de_soins": 199,
           "maternite": 26,
           "centre_sante": 142
@@ -809,7 +813,7 @@
           "private": 67
         },
         "with_phone": 116,
-        "with_address": 655,
+        "with_address": 654,
         "linkage_note": "wilaya_code is derived by point-in-polygon against the 69 wilaya boundaries; commune is the nearest centroid WITHIN that wilaya, so the join never crosses a wilaya boundary. Wilaya is effectively exact, commune is best-effort."
       }
     },
@@ -1002,13 +1006,13 @@
     {
       "dataset": "emploi",
       "total_records": 331,
-      "candidates": 42,
+      "candidates": 25,
       "reasons": {
         "approximate_coordinate": 19,
-        "inside_adjacent_wilaya": 19,
+        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 21
+        "outside_declared_wilaya": 4
       },
       "metadata_path": "packages/emploi/data/metadata.json",
       "metadata": {
@@ -1027,7 +1031,7 @@
         "estimated_universe": null,
         "coverage_pct": null,
         "coverage_note": "Employment agencies: regional (AWEM) and local (ALEM) offices of the National Employment Agency (ANEM).",
-        "wilayas_covered": 58,
+        "wilayas_covered": 68,
         "bbox": [
           -8.13476,
           19.56506,
@@ -1175,7 +1179,7 @@
             "evidence_type": "crowdsourced"
           }
         ],
-        "license": "CC0-1.0 AND ODbL-1.0",
+        "license": "MIT AND ODbL-1.0",
         "updated": "2026-07-01",
         "by_type": {
           "rail": 427,
@@ -1369,12 +1373,11 @@
     {
       "dataset": "jeunesse",
       "total_records": 2334,
-      "candidates": 107,
+      "candidates": 92,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 15,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 17,
+        "outside_declared_wilaya": 2,
         "shared_coordinate": 37
       },
       "metadata_path": "packages/jeunesse/data/metadata.json",
@@ -1627,7 +1630,7 @@
             "evidence_type": "crowdsourced"
           }
         ],
-        "license": "CC0-1.0 AND ODbL-1.0",
+        "license": "MIT AND ODbL-1.0",
         "updated": "2026-06-25",
         "named": 19783,
         "by_source": {
@@ -1746,12 +1749,12 @@
     {
       "dataset": "poste",
       "total_records": 5934,
-      "candidates": 37,
+      "candidates": 35,
       "reasons": {
-        "inside_adjacent_wilaya": 9,
+        "inside_adjacent_wilaya": 7,
         "missing_coordinate": 21,
         "outside_all_wilaya_boundaries": 7,
-        "outside_declared_wilaya": 16
+        "outside_declared_wilaya": 14
       },
       "metadata_path": "packages/poste/data/metadata.json",
       "metadata": {
@@ -1877,14 +1880,14 @@
     },
     {
       "dataset": "sante",
-      "total_records": 695,
-      "candidates": 571,
+      "total_records": 668,
+      "candidates": 536,
       "reasons": {
-        "approximate_coordinate": 478,
-        "missing_coordinate": 93,
+        "approximate_coordinate": 465,
+        "missing_coordinate": 71,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 318
+        "shared_coordinate": 311
       },
       "metadata_path": "packages/sante/data/metadata.json",
       "metadata": {
@@ -1893,21 +1896,21 @@
         "title_fr": "Établissements de santé publique d'Algérie",
         "title_ar": "المؤسسات الصحية العمومية الجزائرية",
         "title_en": "Algeria public health establishments",
-        "record_count": 695,
-        "geocoded_count": 602,
-        "geocoded_pct": 86.6,
+        "record_count": 668,
+        "geocoded_count": 597,
+        "geocoded_pct": 89.4,
         "precision": {
-          "exact": 124,
-          "approximate": 478
+          "exact": 132,
+          "approximate": 465
         },
         "estimated_universe": null,
         "coverage_pct": null,
-        "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 95 remain ungeocoded.",
+        "coverage_note": "Public health establishments (EPH/EPSP/EHS/CHU) from the Ministry of Health registry. The Ministry of Health registry lists each establishment twice, once in French and once in Arabic under two post ids, and the two posts are paired into one bilingual record; `refs.msp_twin` names the second post, so either id resolves to the record. Coordinates layered on via OSM/Wikidata; where no point was found the commune centroid is used (approximate) and 71 remain ungeocoded.",
         "wilayas_covered": 58,
         "bbox": [
           -8.140085,
           19.573539,
-          9.635,
+          9.576151,
           37.065039
         ],
         "sources": [
@@ -1939,34 +1942,34 @@
         "license": "Official registry (Ministry of Health); geocoding ODbL/CC0",
         "updated": "2026-06-27",
         "by_type": {
-          "ehs": 108,
-          "eph": 270,
-          "epsp": 292,
+          "ehs": 103,
+          "eph": 257,
+          "epsp": 284,
           "hopital": 5,
-          "chu": 20
+          "chu": 19
         },
         "by_sector": {
-          "public": 695
+          "public": 668
         },
         "by_geo_method": {
-          "commune_centroid": 474,
-          "osm_point": 114,
-          "owner_verified": 13,
-          "wikidata_point": 1
+          "commune_centroid": 465,
+          "osm_point": 118,
+          "wikidata_point": 3,
+          "owner_verified": 11
         },
-        "bilingual": 563,
+        "bilingual": 590,
         "linkage_note": "Commune/wilaya linkage is derived by nearest-centroid join against the geoalgeria commune set; wilaya is effectively exact, commune is best-effort."
       }
     },
     {
       "dataset": "sports",
       "total_records": 5141,
-      "candidates": 157,
+      "candidates": 142,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 26,
+        "inside_adjacent_wilaya": 11,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 27,
+        "outside_declared_wilaya": 12,
         "shared_coordinate": 46
       },
       "metadata_path": "packages/sports/data/metadata.json",
@@ -2040,13 +2043,13 @@
     {
       "dataset": "telecom",
       "total_records": 3598,
-      "candidates": 219,
+      "candidates": 218,
       "reasons": {
         "approximate_coordinate": 185,
-        "inside_adjacent_wilaya": 13,
+        "inside_adjacent_wilaya": 12,
         "missing_coordinate": 18,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 16,
+        "outside_declared_wilaya": 15,
         "shared_coordinate": 2
       },
       "metadata_path": "packages/telecom/data/metadata.json",
@@ -2131,12 +2134,12 @@
     {
       "dataset": "tourisme",
       "total_records": 4348,
-      "candidates": 234,
+      "candidates": 229,
       "reasons": {
         "approximate_coordinate": 33,
-        "inside_adjacent_wilaya": 111,
+        "inside_adjacent_wilaya": 106,
         "outside_all_wilaya_boundaries": 95,
-        "outside_declared_wilaya": 206,
+        "outside_declared_wilaya": 201,
         "shared_coordinate": 7
       },
       "metadata_path": "packages/tourisme/data/metadata.json",
@@ -2330,10 +2333,10 @@
     {
       "dataset": "cliniques",
       "entity": "cliniques.json",
-      "total_records": 1918,
-      "candidates": 838,
+      "total_records": 1917,
+      "candidates": 837,
       "reasons": {
-        "approximate_coordinate": 834,
+        "approximate_coordinate": 833,
         "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 6,
         "outside_declared_wilaya": 7
@@ -2379,13 +2382,13 @@
       "dataset": "emploi",
       "entity": "alem.json",
       "total_records": 273,
-      "candidates": 39,
+      "candidates": 22,
       "reasons": {
         "approximate_coordinate": 16,
-        "inside_adjacent_wilaya": 19,
+        "inside_adjacent_wilaya": 2,
         "missing_coordinate": 2,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 21
+        "outside_declared_wilaya": 4
       },
       "path": "packages/emploi/data/alem.json"
     },
@@ -2462,12 +2465,11 @@
       "dataset": "jeunesse",
       "entity": "institutions.json",
       "total_records": 2334,
-      "candidates": 107,
+      "candidates": 92,
       "reasons": {
         "approximate_coordinate": 90,
-        "inside_adjacent_wilaya": 15,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 17,
+        "outside_declared_wilaya": 2,
         "shared_coordinate": 37
       },
       "path": "packages/jeunesse/data/institutions.json"
@@ -2531,12 +2533,12 @@
       "dataset": "poste",
       "entity": "atms.json",
       "total_records": 2026,
-      "candidates": 10,
+      "candidates": 8,
       "reasons": {
-        "inside_adjacent_wilaya": 3,
+        "inside_adjacent_wilaya": 1,
         "missing_coordinate": 5,
         "outside_all_wilaya_boundaries": 2,
-        "outside_declared_wilaya": 5
+        "outside_declared_wilaya": 3
       },
       "path": "packages/poste/data/atms.json"
     },
@@ -2569,14 +2571,14 @@
     {
       "dataset": "sante",
       "entity": "sante.json",
-      "total_records": 695,
-      "candidates": 571,
+      "total_records": 668,
+      "candidates": 536,
       "reasons": {
-        "approximate_coordinate": 478,
-        "missing_coordinate": 93,
+        "approximate_coordinate": 465,
+        "missing_coordinate": 71,
         "outside_all_wilaya_boundaries": 2,
         "outside_declared_wilaya": 2,
-        "shared_coordinate": 318
+        "shared_coordinate": 311
       },
       "path": "packages/sante/data/sante.json"
     },
@@ -2584,12 +2586,12 @@
       "dataset": "sports",
       "entity": "facilities.json",
       "total_records": 5141,
-      "candidates": 157,
+      "candidates": 142,
       "reasons": {
         "approximate_coordinate": 133,
-        "inside_adjacent_wilaya": 26,
+        "inside_adjacent_wilaya": 11,
         "outside_all_wilaya_boundaries": 1,
-        "outside_declared_wilaya": 27,
+        "outside_declared_wilaya": 12,
         "shared_coordinate": 46
       },
       "path": "packages/sports/data/facilities.json"
@@ -2612,11 +2614,10 @@
       "dataset": "telecom",
       "entity": "5g-mobilis.json",
       "total_records": 2421,
-      "candidates": 4,
+      "candidates": 3,
       "reasons": {
-        "inside_adjacent_wilaya": 1,
         "outside_all_wilaya_boundaries": 3,
-        "outside_declared_wilaya": 4
+        "outside_declared_wilaya": 3
       },
       "path": "packages/telecom/data/5g-mobilis.json"
     },
@@ -2634,12 +2635,12 @@
       "dataset": "tourisme",
       "entity": "attractions.json",
       "total_records": 1248,
-      "candidates": 83,
+      "candidates": 81,
       "reasons": {
         "approximate_coordinate": 3,
-        "inside_adjacent_wilaya": 23,
+        "inside_adjacent_wilaya": 21,
         "outside_all_wilaya_boundaries": 57,
-        "outside_declared_wilaya": 80
+        "outside_declared_wilaya": 78
       },
       "path": "packages/tourisme/data/attractions.json"
     },
@@ -2660,11 +2661,11 @@
       "dataset": "tourisme",
       "entity": "lodging.json",
       "total_records": 1602,
-      "candidates": 28,
+      "candidates": 26,
       "reasons": {
-        "inside_adjacent_wilaya": 15,
+        "inside_adjacent_wilaya": 13,
         "outside_all_wilaya_boundaries": 13,
-        "outside_declared_wilaya": 28
+        "outside_declared_wilaya": 26
       },
       "path": "packages/tourisme/data/lodging.json"
     },
@@ -2685,11 +2686,11 @@
       "dataset": "tourisme",
       "entity": "thermal-springs.json",
       "total_records": 282,
-      "candidates": 42,
+      "candidates": 41,
       "reasons": {
         "approximate_coordinate": 20,
-        "inside_adjacent_wilaya": 27,
-        "outside_declared_wilaya": 27,
+        "inside_adjacent_wilaya": 26,
+        "outside_declared_wilaya": 26,
         "shared_coordinate": 7
       },
       "path": "packages/tourisme/data/thermal-springs.json"
@@ -2758,6 +2759,10 @@
     },
     {
       "path": "packages/protection-civile/data/retired-ids.json",
+      "reason": "Not a geospatial record array"
+    },
+    {
+      "path": "packages/sante/data/retired-ids.json",
       "reason": "Not a geospatial record array"
     },
     {
@@ -2832,7 +2837,7 @@
         "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
         "The commonly quoted '~150 m' figure describes the COORDINATE QUANTISATION (3 decimal places ≈ 111 m in latitude, ≈ 96 m in longitude at 30°N), not the simplification error. Douglas-Peucker at 2% left a median vertex spacing of 3.4 km, so the polygon can depart from the true border by far more than 150 m along any simplified stretch. Treat these as display-grade boundaries (good to about z11), not as a survey-grade border test.",
         "Superseded predecessor: the same file was built from GADM 4.1 before f107d6a; app-repo scripts/prepare-boundaries.mjs still builds that version and must never be re-run. An unverified OSM re-extraction is parked on the app-repo branch chore/osm-boundaries and was deliberately NOT used here.",
-        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT. The package also mirrors data/poste under Algérie Poste's own terms, so its data is under three sets of terms and no SPDX expression states them: the package declares SEE LICENSE IN LICENSE and its descriptor carries prose conditionsOfAccess rather than a licence URL. This file is one of the two ODbL carve-outs; the other is the 251 OpenStreetMap-derived commune centre coordinates."
+        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT. The package also mirrors data/poste under Algérie Poste's own terms, so its data is under three sets of terms and no SPDX expression states them: the package declares SEE LICENSE IN LICENSE and its descriptor carries prose conditionsOfAccess rather than a licence URL. This file is one of the two ODbL carve-outs; the other is the 323 OpenStreetMap-derived commune centre coordinates."
       ]
     }
   }

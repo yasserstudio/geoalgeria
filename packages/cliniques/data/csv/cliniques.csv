@@ -926,6 +926,7 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 19-00010,Centre 1006,Centre 1006,,19,1901,Setif,36.195858,5.439333,exact,osm_node,osm,"{""osm"":""node/3052684318""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00011,,,,19,1926,Ain Arnat,36.170794,5.23741,exact,osm_node,osm,"{""osm"":""node/3451648234""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00012,Centre de Santé,Centre de Santé,,19,1943,Bougaa,36.331722,5.086146,exact,osm_node,osm,"{""osm"":""node/3814093160""}",centre_sante,Centre de santé,مركز صحي,,,,,,
+19-00013,,,,19,1904,Ouled Si Ahmed,35.901223,5.194713,exact,osm_node,osm,"{""osm"":""node/4077454962""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00014,Lahreche,Lahreche,لحرش,19,1928,Ain Oulmene,35.916275,5.296594,exact,osm_node,osm,"{""osm"":""node/4053480918""}",clinique,Clinique,عيادة / مصحة,,,Ain Oulmane 19200,,,
 19-00016,Radjah,Radjah,,19,1901,Setif,36.187298,5.422438,exact,osm_node,osm,"{""osm"":""node/4102552589""}",clinique,Clinique,عيادة / مصحة,,,,,,
 19-00017,EPSP,EPSP,مركز صحي جواري,19,1928,Ain Oulmene,35.919622,5.302626,exact,osm_node,osm,"{""osm"":""node/4122868339""}",centre_sante,Centre de santé,مركز صحي,,,,,,
@@ -1004,7 +1005,6 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 21-00001,Polyclinique,Polyclinique,,21,2110,Collo,37.006762,6.56374,exact,osm_node,osm,"{""osm"":""node/13716260601""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,
 21-00002,د. فنوش - أخصائية تصوير بالأشعة,,د. فنوش - أخصائية تصوير بالأشعة,21,2110,Collo,37.00741,6.562472,exact,osm_node,osm,"{""osm"":""node/13718613801""}",clinique,Clinique,عيادة / مصحة,,,,,,
 21-00003,د. مصيبح - عيادة التصوير بالأشعة,,د. مصيبح - عيادة التصوير بالأشعة,21,2110,Collo,37.008595,6.557739,exact,osm_node,osm,"{""osm"":""node/13719047302""}",clinique,Clinique,عيادة / مصحة,,,,,,
-21-00004,Clinique psychiatrique pour femmes,Clinique psychiatrique pour femmes,,21,2116,El Arrouch,36.652598,6.837952,exact,osm_node,osm,"{""osm"":""node/2239891060""}",clinique,Clinique,عيادة / مصحة,,,El Harrouch,,,
 21-00005,Laboratoire de la Wilaya,Laboratoire de la Wilaya,,21,2101,Skikda,36.86335,6.927264,exact,osm_node,osm,"{""osm"":""node/2596196214""}",clinique,Clinique,عيادة / مصحة,,,,,,
 21-00006,Maternité,Maternité,,21,2110,Collo,37.007095,6.564824,exact,osm_node,osm,"{""osm"":""node/2846083307""}",maternite,Maternité / clinique d'accouchement,مصحة توليد,,,,,Sa-Th 08:00-16:00,true
 21-00007,Polyclinique Barkat Zahra,Polyclinique Barkat Zahra,مجمع بركات الزهراء الطبي,21,2101,Skikda,36.875968,6.909391,exact,osm_node,osm,"{""osm"":""node/2869482062""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,true
@@ -1339,7 +1339,6 @@ id,name,name_fr,name_ar,wilaya_code,commune_code,commune,lat,lng,geo_precision,g
 31-00057,Mutuelle générale des PTT,Mutuelle générale des PTT,,31,3101,Oran,35.704385,-0.639895,exact,osm_node,osm,"{""osm"":""node/8375673226""}",clinique,Clinique,عيادة / مصحة,,general;ophthalmology;dentist,"Boulevard du 20 Août, Oran 31000",041334767,,
 31-00058,EPSP d'Arzew المؤسسة العمومية للصحة الجوارية بأرزيو عيادة متعددة الخدمات الشهيد فريح بن يبقى,EPSP d'Arzew,EPSP d'Arzew المؤسسة العمومية للصحة الجوارية بأرزيو عيادة متعددة الخدمات الشهيد فريح بن يبقى,31,3102,Gdyel,35.779469,-0.435004,approximate,osm_centroid,osm,"{""osm"":""way/1001482485""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,24/7,
 31-00060,Polyclinique Laribère,Polyclinique Laribère,,31,3101,Oran,35.705481,-0.638729,approximate,osm_centroid,osm,"{""osm"":""way/237164995""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,Oran 31000,,,
-31-00061,Abed Attika,Abed Attika,,31,3101,Oran,35.690754,-0.655698,approximate,osm_centroid,osm,"{""osm"":""way/293367044""}",clinique,Clinique,عيادة / مصحة,,,,,,
 31-00062,Polyclinique,Polyclinique,,31,3101,Oran,35.722384,-0.594453,approximate,osm_centroid,osm,"{""osm"":""way/304898038""}",polyclinique,Polyclinique,عيادة متعددة الخدمات,public,,,,,
 31-00063,Clinique Echourouk privée,Clinique Echourouk privée,,31,3101,Oran,35.720384,-0.593664,approximate,osm_centroid,osm,"{""osm"":""way/308137339""}",clinique,Clinique,عيادة / مصحة,private,,,,,
 31-00064,Clinique Nekkache privée,Clinique Nekkache privée,,31,3101,Oran,35.702468,-0.596485,approximate,osm_centroid,osm,"{""osm"":""way/308137644""}",clinique,Clinique,عيادة / مصحة,private,,,,24/7,
