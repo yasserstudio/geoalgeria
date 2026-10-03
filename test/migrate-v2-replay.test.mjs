@@ -280,6 +280,9 @@ const CORRECTIONS = {
   "industrie-pharmaceutique": {
     // Same class: a commune-centroid placement in Algiers whose commune moved.
     "16-pp-08": { lat: 36.70442, lng: 3.168156 },
+    // And again on 2026-10-01: Constantine's own centre sat 3 km east of the city,
+    // so every record that borrows it moves with it (private tracker #236).
+    "25-pp-04": { lat: 36.364164, lng: 6.608428 },
   },
   agriculture: {
     // Both rows are Algiers institutions placed at the wilaya chief town's centre.
