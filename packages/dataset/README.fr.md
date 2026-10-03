@@ -147,6 +147,8 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 | `data/wilayas.json` | JSON | 69 | Liste des wilayas uniquement |
 | `data/dairas.json` | JSON | 551 | Liste des daïras avec nombre de communes |
 | `data/name-history.json` | JSON | 210 | Anciennes graphies des noms de wilayas et de communes, avec le texte qui a remplacé chacune |
+| `data/wilaya-capitals.metadata.json` | JSON | 69 | Le chef-lieu de chaque wilaya, avec le décret, l'article, l'item et la page qui le fixent |
+| `data/osm-links.metadata.json` | JSON | 1 | Couverture, paliers, règle de jointure et instantanés Overpass derrière `osm_relation_id` / `wikidata` |
 | `data/communes_w*.json` | JSON | 1 541 | Données détaillées des communes |
 | `data/csv/wilayas.csv` | CSV | 69 | Tableurs, imports |
 | `data/csv/communes.csv` | CSV | 1 541 | Tableurs, imports |
@@ -164,6 +166,9 @@ Téléchargez `data/geojson/communes.geojson` depuis ce dépôt – GeoJSON stan
 > `data/poste/` provient d'[Algérie Poste](https://baridimap.poste.dz). `commune_code` est normalisé pour se joindre au `code_commune` de chaque commune ; `source_commune_code` conserve une valeur native différente du fournisseur.
 
 `code_commune` est l'identifiant unique `WWCC` du [Code géographique national 2021 de l'ONS](https://www.ons.dz/IMG/pdf/code_geo_2021.pdf). Les communes promues dans les wilayas 59 à 69 conservent le préfixe de leur wilaya mère de 2021.
+
+Chaque wilaya porte `capital_commune_code`, le `code_commune` de son chef-lieu ; les noms, le code postal et les coordonnées du chef-lieu se lisent donc sur l'enregistrement de la commune. Il provient des décrets qui fixent les chefs-lieux (n° 84-79 de 1984, n° 21-117 de 2021, n° 26-206 de 2026), jamais du nom de la wilaya, qui se trompe sur 4 des 69. Sources par wilaya : [`data/wilaya-capitals.metadata.json`](data/wilaya-capitals.metadata.json).
+Chaque commune et chaque wilaya portent aussi `osm_relation_id` et `wikidata` : la relation administrative OpenStreetMap à laquelle l'enregistrement est lié (`admin_level=8` pour une commune, `admin_level=4` pour une wilaya) et l'élément Wikidata porté par cette relation, de sorte qu'un consommateur fait la jointure vers OpenStreetMap ou Wikidata sans passer par les noms. 1 540 des 1 541 communes et les 69 wilayas portent une relation ; 1 538 communes et les 69 wilayas portent un élément Wikidata. Rien n'est deviné : la liaison est celle que l'audit des chefs-lieux a établie sur le tag `ref:ONS` / `ref` de la relation, `timestamp_osm_base` Overpass 2026-09-29T12:54:47Z, plus un second palier de trois communes dont la relation porte le bon code `ref:ONS` sous des tags non standard et échappait donc à la requête de cet audit ; une relation sans tag `wikidata` laisse ce champ à null, et la seule commune sans aucune relation de commune (4703) garde les deux champs à null. L'élément est le tag de la relation dans tous les cas sauf un : la relation de la commune 3424 est taguée avec un village situé dans la commune, donc ce champ est à null et l'exclusion est consignée dans le fichier de métadonnées plutôt que de publier le mauvais élément. Les deux identifiants sont portés par les enregistrements JSON (`data/algeria.json`, `data/communes_w*.json`, `data/wilayas.json`) ; les miroirs CSV, GeoJSON et SQL ne les portent pas. Couverture, règle de jointure et enregistrements sans liaison : [`data/osm-links.metadata.json`](data/osm-links.metadata.json). Les deux valeurs sont dérivées d'OpenStreetMap, donc sous **ODbL 1.0, © les contributeurs d'OpenStreetMap** (voir `NOTICE`).
 
 ## Schéma
 
@@ -246,7 +251,7 @@ Des données incorrectes ? [Ouvrez une issue](https://github.com/yasserstudio/ge
 
 ## Sponsoriser
 
-GeoAlgeria est gratuit : code MIT et compilation MIT, avec deux parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
+GeoAlgeria est gratuit : code MIT et compilation MIT, avec trois parties sous ODbL et les données Algérie Poste miroir indiquées plus bas. Si cela vous fait gagner du temps, [**sponsorisez sa maintenance**](https://github.com/sponsors/yasserstudio) – les sponsorisations financent la mise à jour des données à chaque réforme et l'expansion de GeoAlgeria vers *tous* les types de données ouvertes sur l'Algérie.
 
 ---
 
@@ -284,16 +289,21 @@ Le **code** du paquet est sous [MIT](LICENSE), ainsi que la **compilation** : wi
 communes, leurs noms bilingues, codes postaux et codes administratifs. Libre pour usage
 personnel et commercial.
 
-Deux parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
+Trois parties des données proviennent d'**OpenStreetMap**, sont **© les contributeurs
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
-- 251 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
-  `admin_level=8` de la commune elle-même (245 de son nœud `admin_centre`, 56 le 2026-09-27 et
-  189 le 2026-09-29, et 6 du centroïde de la relation en 2.1.0), partout où ces valeurs
-  apparaissent.
+- 323 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
+  `admin_level=8` de la commune elle-même (318 de son nœud `admin_centre`, 56 le 2026-09-27,
+  189 le 2026-09-29, 5 le 2026-10-01 et 68 le 2026-10-01 par la revue des coordonnées, qui
+  n'écrit une valeur que lorsque des sources indépendantes votent pour elle, et 5 du centroïde
+  de la relation en 2.1.0), partout où ces valeurs apparaissent ;
+- 6 des 69 points de chefs-lieux de wilayas, qui sont les mêmes valeurs : les coordonnées d'une
+  wilaya sont le centre de sa commune chef-lieu, donc les wilayas 7, 16, 25, 32, 52 et 61
+  portent l'une des coordonnées ci-dessus. Les 63 autres points de chefs-lieux de wilayas ne
+  proviennent pas d'OpenStreetMap.
 
-Si vous utilisez ou redistribuez l'une de ces deux parties, vous devez **attribuer aux
+Si vous utilisez ou redistribuez l'une de ces parties, vous devez **attribuer aux
 contributeurs d'OpenStreetMap** et conserver les bases dérivées sous une licence compatible.
 
 Les données postales miroir sous `data/poste/` relèvent des conditions propres d'**Algérie

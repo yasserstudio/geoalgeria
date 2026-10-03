@@ -4,7 +4,7 @@
   "inputs": [
     {
       "path": "packages/agriculture/data/agriculture.json",
-      "sha256": "923cc4c084185a3768173a3c7d7ec4f64aaf0f3d44caab62c7d6dd228d6eef01"
+      "sha256": "206342054390859258f119b9bfcde2ab0c9a3ba2db05097fd955f71a76e1a1de"
     },
     {
       "path": "packages/agriculture/data/metadata.json",
@@ -80,7 +80,7 @@
     },
     {
       "path": "packages/dataset/data/geojson/wilaya-boundaries.metadata.json",
-      "sha256": "db40ff8903689f4e5177ebc74f6284134ed7b376319e565695a4747452c95be2"
+      "sha256": "3e1811e932131a9c42edb8124b16a76b53f2e96e72dc6a961d14ed031fa05e3c"
     },
     {
       "path": "packages/djezzy/data/boutiques.json",
@@ -132,7 +132,7 @@
     },
     {
       "path": "packages/formation-professionnelle/data/establishments.json",
-      "sha256": "30b633786bd9b78b93d1a29466b41390c9a718ec0741aa70a8cf546a1d3569c3"
+      "sha256": "eb8248155ec33d4e1550fd2c77c3afaf721fd64d8e24c5e96783f070cc25ed17"
     },
     {
       "path": "packages/formation-professionnelle/data/metadata.json",
@@ -152,7 +152,7 @@
     },
     {
       "path": "packages/industrie-pharmaceutique/data/industrie-pharmaceutique.json",
-      "sha256": "93376021b9c3f013845921b68d3f301c463d7b9a09be085a4a6f376cfbddac31"
+      "sha256": "4eff8f1246eb5a96cee03066719a047612456e02b06281c048c38106d1f316b6"
     },
     {
       "path": "packages/industrie-pharmaceutique/data/metadata.json",
@@ -248,11 +248,11 @@
     },
     {
       "path": "packages/sante/data/metadata.json",
-      "sha256": "d4fb027313a9ae65467417d5ee3fda1447bc0269d42d7823aa8cc9cc66925249"
+      "sha256": "fb5e2fed0247d4d88cfc27409653b6e3533545d57ff47fcceda56be8daa0c419"
     },
     {
       "path": "packages/sante/data/sante.json",
-      "sha256": "4f702b2dd69c1b7d46a2bd674b8d906b43e11694629a8cfb374f240d4a48fd7e"
+      "sha256": "a8c804659aacbfe5b74b2cfac0c5afdb9fbba0c6e88fe1d89f92ba2ab7884e38"
     },
     {
       "path": "packages/sports/data/facilities.json",
@@ -1907,7 +1907,7 @@
         "bbox": [
           -8.140085,
           19.573539,
-          9.635,
+          9.576151,
           37.065039
         ],
         "sources": [
@@ -2832,7 +2832,7 @@
         "retrieved = 2026-06-21 is the commit date of that extraction and therefore an UPPER BOUND on the Overpass pull date. The file carries no timestamp_osm_base or any other provenance field (properties are `code` only), and no fetch script for it exists in either repo, so the exact pull date cannot be established. It is not a guess at a narrower date.",
         "The commonly quoted '~150 m' figure describes the COORDINATE QUANTISATION (3 decimal places ≈ 111 m in latitude, ≈ 96 m in longitude at 30°N), not the simplification error. Douglas-Peucker at 2% left a median vertex spacing of 3.4 km, so the polygon can depart from the true border by far more than 150 m along any simplified stretch. Treat these as display-grade boundaries (good to about z11), not as a survey-grade border test.",
         "Superseded predecessor: the same file was built from GADM 4.1 before f107d6a; app-repo scripts/prepare-boundaries.mjs still builds that version and must never be re-run. An unverified OSM re-extraction is parked on the app-repo branch chore/osm-boundaries and was deliberately NOT used here.",
-        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT. The package also mirrors data/poste under Algérie Poste's own terms, so its data is under three sets of terms and no SPDX expression states them: the package declares SEE LICENSE IN LICENSE and its descriptor carries prose conditionsOfAccess rather than a licence URL. This file is one of the two ODbL carve-outs; the other is the 251 OpenStreetMap-derived commune centre coordinates."
+        "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT. The package also mirrors data/poste under Algérie Poste's own terms, so its data is under three sets of terms and no SPDX expression states them: the package declares SEE LICENSE IN LICENSE and its descriptor carries prose conditionsOfAccess rather than a licence URL. This file is one of the two ODbL carve-outs; the other is the 323 OpenStreetMap-derived commune centre coordinates."
       ]
     }
   }

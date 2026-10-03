@@ -1612,13 +1612,18 @@ function validateNoEmDash(pkgs) {
         fail(`${pkg}/${rel}: cannot read for the em-dash check, ${e.message}`);
       }
     }
-    const geoDir = join(dir, "data", "geojson");
-    if (!existsSync(geoDir)) continue;
-    for (const name of readdirSync(geoDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
-      try {
-        files.push({ label: `${pkg}/data/geojson/${name}`, json: readJson(join(geoDir, name)) });
-      } catch (e) {
-        fail(`${pkg}/data/geojson/${name}: cannot read for the em-dash check, ${e.message}`);
+    // Every published *.metadata.json, not only the GeoJSON sidecars: the wilaya-capital
+    // sidecar of #228 is the same kind of hand-written published prose and was not walked.
+    for (const sub of [["data"], ["data", "geojson"]]) {
+      const subDir = join(dir, ...sub);
+      if (!existsSync(subDir)) continue;
+      for (const name of readdirSync(subDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
+        const label = `${pkg}/${[...sub, name].join("/")}`;
+        try {
+          files.push({ label, json: readJson(join(subDir, name)) });
+        } catch (e) {
+          fail(`${label}: cannot read for the em-dash check, ${e.message}`);
+        }
       }
     }
   }

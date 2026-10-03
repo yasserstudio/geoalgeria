@@ -11,7 +11,11 @@ declare namespace algeriaGeodata {
     name_ar: string;
     phone_code: string | null;
     postal_code: string;
+    /** The wilaya's point: the centre of its capital commune
+     *  (`capital_commune_code`), the same value that commune carries and not a
+     *  second reading of it. A wilaya has no point of its own. */
     latitude: number;
+    /** See `latitude`: the capital commune's own longitude. */
     longitude: number;
     /** The year the wilaya became official, i.e. the year the law creating it
      *  took effect: `"original"` for the 48 of Law 84-09 (1984), `"2019"` for
@@ -19,6 +23,34 @@ declare namespace algeriaGeodata {
      *  5 April 2026). Never the year a reform was announced: the 59-69 cohort
      *  was announced on 2025-11-16 and is still `"2026"`. */
     created: "original" | "2019" | "2026";
+    /** The `code_commune` of the wilaya's Capital (chef-lieu), as fixed by the
+     *  decrees that name the chefs-lieux of the wilayas: décret n° 84-79 of
+     *  3 April 1984 for 1-48, décret présidentiel n° 21-117 of 22 March 2021
+     *  for 49-58, décret présidentiel n° 26-206 of 25 May 2026 for 59-69.
+     *  Join it to `Commune.code_commune` for the capital's names, postal code
+     *  and coordinates; the wilaya does not duplicate them. Never derived from
+     *  `name_fr`: wilaya 16's capital is `1601` (Alger Centre), and 53, 54 and
+     *  57 spell their capital commune differently from the wilaya. A commune
+     *  promoted into wilayas 59-69 keeps its 2021 mother-wilaya ONS prefix, so
+     *  a capital code need not start with `code`: wilaya 59 reads `319`.
+     *  Per-wilaya provenance: `data/wilaya-capitals.metadata.json`. */
+    capital_commune_code: number;
+    /** The id of this record's own OpenStreetMap administrative relation:
+     *  `admin_level=8` for a commune, `admin_level=4` for a wilaya. Harvested from
+     *  the Overpass capture the commune-centre audit fetched, `timestamp_osm_base`
+     *  2026-09-29T12:54:47Z, through the linkage that audit decided: the relation's
+     *  `ref:ONS` (commune) or `ref` (wilaya) tag, then a pre-2019-reform ONS code
+     *  scoped to the mother wilaya, then six reviewed per-relation pins. Never a
+     *  name match. `null` on the 4 communes the capture has no relation for (630,
+     *  1634, 2110, 4703). No id repeats across records, and a wilaya's relation is
+     *  its own, not its capital commune's. ODbL 1.0, (c) OpenStreetMap
+     *  contributors; see the package NOTICE. */
+    osm_relation_id: number | null;
+    /** The Wikidata item (`Q` then digits) that the same relation is tagged with,
+     *  read as published and never resolved from a name. `null` where the relation
+     *  carries no `wikidata` tag, and always `null` where `osm_relation_id` is.
+     *  Same terms as `osm_relation_id`. */
+    wikidata: string | null;
     parent_wilaya?: string;
   }
 
@@ -31,8 +63,26 @@ declare namespace algeriaGeodata {
      *  `2026`. Same meaning as `Wilaya.created`, which spells the 1984 cohort
      *  `"original"`. */
     created: number;
+    /** Same value and meaning as `Wilaya.capital_commune_code`. */
+    capital_commune_code: number;
     dairas_count: number;
     communes_count: number;
+    /** The id of this record's own OpenStreetMap administrative relation:
+     *  `admin_level=8` for a commune, `admin_level=4` for a wilaya. Harvested from
+     *  the Overpass capture the commune-centre audit fetched, `timestamp_osm_base`
+     *  2026-09-29T12:54:47Z, through the linkage that audit decided: the relation's
+     *  `ref:ONS` (commune) or `ref` (wilaya) tag, then a pre-2019-reform ONS code
+     *  scoped to the mother wilaya, then six reviewed per-relation pins. Never a
+     *  name match. `null` on the 4 communes the capture has no relation for (630,
+     *  1634, 2110, 4703). No id repeats across records, and a wilaya's relation is
+     *  its own, not its capital commune's. ODbL 1.0, (c) OpenStreetMap
+     *  contributors; see the package NOTICE. */
+    osm_relation_id: number | null;
+    /** The Wikidata item (`Q` then digits) that the same relation is tagged with,
+     *  read as published and never resolved from a name. `null` where the relation
+     *  carries no `wikidata` tag, and always `null` where `osm_relation_id` is.
+     *  Same terms as `osm_relation_id`. */
+    wikidata: string | null;
     law?: string;
     mother_wilaya_code?: number;
     note?: string;
@@ -92,6 +142,22 @@ declare namespace algeriaGeodata {
      *  59-69 retain their 2021 mother-wilaya prefix, so the prefix does not
      *  necessarily equal `wilaya_code`. */
     code_commune: number;
+    /** The id of this record's own OpenStreetMap administrative relation:
+     *  `admin_level=8` for a commune, `admin_level=4` for a wilaya. Harvested from
+     *  the Overpass capture the commune-centre audit fetched, `timestamp_osm_base`
+     *  2026-09-29T12:54:47Z, through the linkage that audit decided: the relation's
+     *  `ref:ONS` (commune) or `ref` (wilaya) tag, then a pre-2019-reform ONS code
+     *  scoped to the mother wilaya, then six reviewed per-relation pins. Never a
+     *  name match. `null` on the 4 communes the capture has no relation for (630,
+     *  1634, 2110, 4703). No id repeats across records, and a wilaya's relation is
+     *  its own, not its capital commune's. ODbL 1.0, (c) OpenStreetMap
+     *  contributors; see the package NOTICE. */
+    osm_relation_id: number | null;
+    /** The Wikidata item (`Q` then digits) that the same relation is tagged with,
+     *  read as published and never resolved from a name. `null` where the relation
+     *  carries no `wikidata` tag, and always `null` where `osm_relation_id` is.
+     *  Same terms as `osm_relation_id`. */
+    wikidata: string | null;
   }
 
   /** One record's former names, kept so an older spelling still finds it. */

@@ -26,6 +26,10 @@ _Avoid_: district, sub-prefecture, arrondissement
 The smallest administrative unit (municipality); the level a postal code resolves to.
 _Avoid_: municipality, baladiya, town
 
+**Capital**:
+The Commune that is a Wilaya's seat, published as `capital_commune_code`, the `code_commune` of that Commune, so it joins the Commune record instead of duplicating its names. Fixed by the decrees that name the chefs-lieux of the wilayas (décret n° 84-79 of 3 April 1984 for 1-48, décret présidentiel n° 21-117 of 22 March 2021 for 49-58, décret présidentiel n° 26-206 of 25 May 2026 for 59-69), never read off the Wilaya's own name: wilaya 16's Capital is Alger Centre, and wilayas 53, 54 and 57 spell theirs differently from the Wilaya. A Wilaya's own `latitude`/`longitude` **is** its Capital's centre, the same value and not a second reading of it, so there is one point per Capital (rule 9 of `docs/adr/0001-coordinate-review-by-independent-votes.md`). Renders FR **chef-lieu**, AR **مقر الولاية**.
+_Avoid_: seat, capital city, main city, principal town, admin centre
+
 **Creation year**:
 The year a Wilaya became official, that is the year the law creating it took effect, published as `created`. The 48 founded by Law 84-09 (1984) read `original`, or `1984` where the field is a number; wilayas 49-58 read `2019` (Law 19-12); wilayas 59-69 read `2026` (Law n° 26-06, *JO* n° 25 of 5 April 2026). Never the year a reform was announced: the 59-69 reform was announced on 2025-11-16 and its Creation year is still 2026.
 _Avoid_: founded, established, announced year, reform year
@@ -169,6 +173,18 @@ _Avoid_: multilingual, translated, i18n
 Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only or wilaya-linked-only).
 _Avoid_: located, mapped, positioned
 
+**Upstream link**:
+An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
+_Avoid_: external id, cross-reference, mapping, concordance
+
+**OSM relation id**:
+The id of the OpenStreetMap administrative relation that is this record upstream: `admin_level=8` for a Commune, `admin_level=4` for a Wilaya. A Wilaya's relation is its own, never its capital Commune's, even where the two share a point. Three Commune relations are mis-tagged upstream and reached the records as the **second tier**, linked on their `ref:ONS` code from a capture fetched by id.
+_Avoid_: osm id, relation, boundary id
+
+**Wikidata item**:
+The Q item (`Q` then digits) an upstream OpenStreetMap relation is tagged with, carried as published. A relation with no `wikidata` tag leaves the field null rather than having an item looked up for it, so the value is always a tag this repository read, not a claim it made.
+_Avoid_: QID, wikidata id, concept id
+
 ### Search and normalization
 
 **Search key**:
@@ -217,3 +233,33 @@ _Avoid_: fetched, scraped, synced
 **Geometry confidence**:
 How honest a coordinate is: `exact` (a real per-facility point → a Pin) vs `approximate` (a commune/wilaya centroid → a Dot) vs `null` (there is no coordinate at all → neither). Coarse-grained in `geo_precision`, which is null if and only if `lat`/`lng` are null; method detail (`osm_node`, `commune_centroid`) lives in `geo_method`, null on those same records because no method produced a point.
 _Avoid_: accuracy, precision score
+
+### Coordinate review
+
+**Claim**:
+One source's statement of where a place is, with its source, licence and snapshot date (the OSM seat, the Wikidata coordinate, the record median, a Google verdict, an Owner reading). See ADR 0001.
+_Avoid_: evidence, reading, observation
+
+**Candidate**:
+A point a place's coordinate could be set to: the published point, the OSM seat, the Wikidata point or the record median. A Claim never votes for the Candidate it produced.
+_Avoid_: option, proposal, suggestion
+
+**Vote**:
+A Claim that lands within the agreement radius of a Candidate (2 km for a commune centre) and is not a Copied claim.
+_Avoid_: match, hit, support score
+
+**Answer**:
+The Candidates that agree with each other, every pair of them within the agreement radius: one place, stated by however many sources reached it. Votes are counted per Answer, because three sources landing 400 m apart are not three rivals. See ADR 0001, "Rules 2 to 4 in detail".
+_Avoid_: cluster, group, consensus point
+
+**Copied claim**:
+A Claim within 50 m of the point it would vote for, because that point was copied from it. It proves nothing and casts no Vote. Two Claims within 50 m of **each other** are copies in the same sense, whichever way the copying went, so they cast one Vote between them and not two; the ledger records the silenced one under `not_independent` as a `copy_of` the one that stands.
+_Avoid_: duplicate, echo, reading (a Claim is a Claim)
+
+**Consensus**:
+At least two independent Votes for one Answer, none for any Candidate outside it, and the Answer's winning Candidate inside the commune outline. **Strong consensus** (three Votes, or two with the record median among them) is the tier that fixes data without the Owner. The Candidate that ships is the published point where the Answer holds it, then the OpenStreetMap seat, then the Wikidata point, then the record median.
+_Avoid_: confidence score (there is no score, only Votes), ground truth, verified (an Owner reading is recorded as `owner_confirmation` of an open Candidate)
+
+**Review queue**:
+The places the engine leaves for the Owner: plain consensus, no consensus, or a move over 25 km.
+_Avoid_: backlog, inbox, todo list
