@@ -9,9 +9,10 @@
 //   node scripts/fix-jo-corrections.mjs --check    # exit 1 if a carrier drifts
 //   node scripts/fix-jo-corrections.mjs --write
 //   node scripts/fix-jo-corrections.mjs --write --target /path/algeria.json
+//   node scripts/fix-jo-corrections.mjs --write --root /path/to/a/repo/copy
 
 import { readFileSync, renameSync, writeFileSync } from "node:fs";
-import { basename, dirname, join } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import {
@@ -21,17 +22,22 @@ import {
   wilayaNameCorrections,
 } from "./lib/jo-2026-corrections.mjs";
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const PKG = join(ROOT, "packages", "dataset");
-const DATA = join(PKG, "data");
 const WRITE = process.argv.includes("--write");
 const CHECK = process.argv.includes("--check");
 if (WRITE && CHECK) throw new Error("Choose either --write or --check");
 
 const targets = [];
+// `--root` points this repo's own carriers at another checkout or a throwaway
+// copy of it, so a --write run can be exercised without touching tracked files.
+let root = join(dirname(fileURLToPath(import.meta.url)), "..");
 for (let i = 2; i < process.argv.length; i++) {
   if (process.argv[i] === "--target") targets.push(process.argv[++i]);
+  else if (process.argv[i] === "--root") root = resolve(process.argv[++i]);
 }
+
+const ROOT = root;
+const PKG = join(ROOT, "packages", "dataset");
+const DATA = join(PKG, "data");
 
 // ---------------------------------------------------------------------------
 // Index the corrections. `from` is asserted everywhere, so a carrier that has
