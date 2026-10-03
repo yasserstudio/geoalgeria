@@ -6,6 +6,12 @@
 // This test derives the number from the correction ledgers and the data itself, then
 // requires LICENSE, NOTICE and dataset-metadata.json to state that number.
 //
+// THE LEDGER LIST IS NOT REPEATED HERE. It is CORRECTION_FILES in
+// scripts/lib/commune-corrections.mjs, which is what fix-commune-centres.mjs applies, so a
+// new ledger cannot land applied and uncounted. It did once: corrections-2026-10-01b.json,
+// the 68 rows of the coordinate review, were applied to the data while this file still
+// read a hand-written list of three ledgers, and every count below passed 68 short.
+//
 // THE WILAYA CAPITAL POINTS ARE THE SAME CLAIM. Since rule 9 of
 // docs/adr/0001-coordinate-review-by-independent-votes.md a wilaya's latitude/longitude
 // IS its capital commune's centre, so it carries whatever terms that centre carries.
@@ -19,6 +25,9 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { CORRECTION_FILES } from "../scripts/lib/commune-corrections.mjs";
+import { WINNER_LICENCE } from "../scripts/review/layers/index.mjs";
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PKG = join(ROOT, "packages", "dataset");
 const read = (...p) => readFileSync(join(...p), "utf-8");
@@ -29,7 +38,13 @@ const json = (...p) => JSON.parse(read(...p));
 // test fails if either side is edited alone. Si Mahdjoub (2644) and El Achir (3407)
 // are deliberately NOT in this set; each kept its pre-2.1.0 placeholder, so no
 // OpenStreetMap value was ever written to them. See CHANGELOG.md, 2.1.0.
-const RELATION_CENTROID_COMMUNES = [2242, 2616, 2627, 2653, 2915, 3427];
+// El Euch (3427) was one of them until 2026-10-01, when the coordinate review moved it
+// 9.7 km off that centroid onto its own `admin_centre` node on three independent Votes. Its
+// value is no longer the centroid, so it is counted with the node corrections instead and
+// NOTICE says so. The JORA repair that put it on the centroid is not deleted: it stays in
+// scripts/lib/jo-2026-corrections.mjs and scripts/fix-jo-corrections.mjs reads the
+// correction ledgers so it leaves a coordinate a later ledger has moved alone.
+const RELATION_CENTROID_COMMUNES = [2242, 2616, 2627, 2653, 2915];
 
 // Every number a file puts on the carve-out has to be the derived one: a stale count
 // reads as a different claim over the same data, which is the defect this file guards.
@@ -56,11 +71,7 @@ function derive() {
   ];
   const byCode = new Map(communes.map((c) => [c.code_commune, c]));
 
-  const ledgers = [
-    json(ROOT, "research", "_commune-centres", "corrections-2026-09-27.json"),
-    json(ROOT, "research", "_commune-centres", "corrections-2026-09-29.json"),
-    json(ROOT, "research", "_commune-centres", "corrections-2026-10-01.json"),
-  ];
+  const ledgers = CORRECTION_FILES.map((file) => json(ROOT, "research", "_commune-centres", file));
 
   // A ledger row only counts if its value is the one the package ships: a correction
   // that was reverted, or never applied, carries no ODbL claim.
@@ -77,6 +88,9 @@ function derive() {
   // assumed.
   const fromAdminCentreNode = new Set();
   const ownerVerified = new Set();
+  /** Candidate source -> the communes a consensus fix took its value from, where that
+   *  source is not the OpenStreetMap seat and so not in the ODbL carve-out. */
+  const byConsensusWinner = new Map();
   const perLedger = [];
   for (const ledger of ledgers) {
     perLedger.push({ generated: ledger.generated, count: ledger.corrections.length });
@@ -90,9 +104,28 @@ function derive() {
       );
       const decidedBy = row.decided_by ?? "osm_admin_centre_node";
       assert.ok(
-        ["osm_admin_centre_node", "owner_verified"].includes(decidedBy),
-        `commune ${row.code_commune}: decided_by ${JSON.stringify(decidedBy)} is neither deciding source, so its licence cannot be settled`,
+        ["osm_admin_centre_node", "owner_verified", "consensus"].includes(decidedBy),
+        `commune ${row.code_commune}: decided_by ${JSON.stringify(decidedBy)} is no deciding source, so its licence cannot be settled`,
       );
+      // A CONSENSUS ROW CARRIES ITS OWN LICENCE, because the Candidate that won says where
+      // the value came from: the OpenStreetMap seat is the `admin_centre` node and counts in
+      // the carve-out exactly like a node correction, a Wikidata winner is CC0, and a
+      // record-median winner carries the terms of the packages its records come from. Those
+      // strings are the layers' own (WINNER_LICENCE derives them), so the row has to state
+      // the licence its winner implies and no paraphrase of it, or the carve-out would rest
+      // on this test rather than on the ledger.
+      if (decidedBy === "consensus") {
+        const winner = row.consensus?.winning_candidate;
+        assert.ok(WINNER_LICENCE[winner], `commune ${row.code_commune}: ${JSON.stringify(winner)} is no Candidate a fix can be written from`);
+        assert.equal(
+          row.licence,
+          WINNER_LICENCE[winner],
+          `commune ${row.code_commune}: a consensus row's licence must be the one its winning Candidate carries`,
+        );
+        if (winner === "osm_seat") fromAdminCentreNode.add(row.code_commune);
+        else byConsensusWinner.set(winner, (byConsensusWinner.get(winner) ?? new Set()).add(row.code_commune));
+        continue;
+      }
       if (decidedBy === "owner_verified") {
         // No row ships one today. If one ever does, it has to state its own licence,
         // or "not ODbL" would rest on this test alone.
@@ -155,6 +188,7 @@ function derive() {
 
   return {
     total: communes.length,
+    consensusWinners: Object.fromEntries([...byConsensusWinner].map(([k, v]) => [k, v.size])),
     osmCapitals: osmCapitals.sort((a, b) => a - b),
     restCapitals: capitals.length - osmCapitals.length,
     fromAdminCentreNode: fromAdminCentreNode.size,
@@ -173,19 +207,27 @@ test("the OpenStreetMap-derived commune centres are the applied ledger rows plus
     { generated: "2026-09-27", count: 56 },
     { generated: "2026-09-29", count: 189 },
     { generated: "2026-10-01", count: 5 },
+    // The coordinate review of the same day, which is why two ledgers share a date and the
+    // prose has to state both counts against it.
+    { generated: "2026-10-01", count: 68 },
   ]);
-  assert.equal(counts.fromAdminCentreNode, 250);
-  assert.equal(counts.fromRelationCentroid, 6);
+  assert.equal(counts.fromAdminCentreNode, 318);
+  assert.equal(counts.fromRelationCentroid, 5);
+  // Every one of the 68 consensus fixes was won by the OpenStreetMap seat, so all 68 are
+  // the `admin_centre` node and none of them brings a second licence into the package. A
+  // Wikidata or record-median winner would appear here and would need its own statement.
+  assert.deepEqual(counts.consensusWinners, {});
   // No published coordinate is a reading off a proprietary map. Beni-Abbes (5201) is the
   // one row that carries such a reading, and it carries it as a confirmation of its
-  // `admin_centre` node, which is the value that ships; so all 250 ledger rows are in
+  // `admin_centre` node, which is the value that ships; so all 318 ledger rows are in
   // the carve-out and none is an owner-verified exception.
   assert.equal(counts.ownerVerified, 0);
-  assert.equal(counts.osmDerived, 256);
-  assert.equal(counts.rest, 1285);
+  assert.equal(counts.osmDerived, 323);
+  assert.equal(counts.rest, 1218);
   // Wilayas 7 (Biskra 701), 16 (Alger Centre 1601), 25 (Constantine 2501), 32 (El Bayadh
   // 3201), 52 (Beni-Abbes 5201) and 61 (El Kantara 717): the six whose capital commune is
-  // one of the 256, so their own point is ODbL as well.
+  // one of the 323, so their own point is ODbL as well. The coordinate review of
+  // 2026-10-01 corrected no capital commune, so the set is unchanged by its 68 rows.
   assert.deepEqual(counts.osmCapitals, [7, 16, 25, 32, 52, 61]);
   assert.equal(counts.restCapitals, 63);
 });
@@ -198,6 +240,11 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
     "NOTICE": read(PKG, "NOTICE"),
     "dataset-metadata.json conditionsOfAccess": metadata.conditionsOfAccess,
     "dataset-metadata.json usageInfo": metadata.usageInfo,
+    // data/README.md shipped "Six more were replaced in version 2.1.0 ... El Euch (3427)"
+    // and "the 250 commune centres corrected on" past this guard on 2026-10-01, because it
+    // was only read by the OTHER_CARRIERS test below, which checks the total and not the
+    // split behind it. It states both, so it is held to both.
+    "packages/dataset/data/README.md": read(PKG, "data", "README.md"),
   };
 
   // LICENSE and NOTICE hard-wrap, so a claim can straddle a newline: every check
@@ -217,12 +264,12 @@ test("LICENSE, NOTICE and dataset-metadata.json state the derived count and no o
   // The split behind the total, and the complement, only in the files that enumerate
   // them. LICENSE and usageInfo give the admin_centre-node subtotal; NOTICE gives one
   // bullet per ledger instead.
-  for (const where of ["LICENSE", "dataset-metadata.json usageInfo"])
+  for (const where of ["LICENSE", "dataset-metadata.json usageInfo", "packages/dataset/data/README.md"])
     assert.ok(
       stated[where].includes(`${fromAdminCentreNode} from`),
       `${where}: does not state the ${fromAdminCentreNode} taken from an admin_centre node`,
     );
-  for (const where of ["LICENSE", "NOTICE", "dataset-metadata.json usageInfo"]) {
+  for (const where of ["LICENSE", "NOTICE", "dataset-metadata.json usageInfo", "packages/dataset/data/README.md"]) {
     // The count has to be read against its own date, not found anywhere in the file:
     // LICENSE shipped "4 on 2026-10-01" for a 5-row ledger and passed, because every
     // file that states 256 contains a "5".

@@ -24,7 +24,7 @@ SOFTWARE.
 
 ## Data
 
-Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 256 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
+Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 323 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.
 
 In detail, the data is compiled from public official sources. The compilation of
 wilayas, dairas, communes, their bilingual names, postal codes and administrative
@@ -38,17 +38,20 @@ https://opendatacommons.org/licenses/odbl/1-0/
 
 - The 69 wilaya boundary polygons in `data/geojson/wilaya-boundaries.geojson`,
   derived from OpenStreetMap `admin_level=4` relations.
-- 256 commune centre coordinates (`latitude` and `longitude`), each taken from
-  that commune's own OpenStreetMap `admin_level=8` relation: 250 from its
-  `admin_centre` node, 56 corrected on 2026-09-27, 189 on 2026-09-29 and 5 on
-  2026-10-01, and 6 from the relation centroid, corrected in version 2.1.0. Those coordinates are
+- 323 commune centre coordinates (`latitude` and `longitude`), each taken from
+  that commune's own OpenStreetMap `admin_level=8` relation: 318 from its
+  `admin_centre` node, 56 corrected on 2026-09-27, 189 on 2026-09-29, 5 on
+  2026-10-01 and 68 corrected on 2026-10-01 by the coordinate review, which
+  writes a value only where independent sources vote for it
+  (`docs/adr/0001-coordinate-review-by-independent-votes.md`); and 5 from the
+  relation centroid, corrected in version 2.1.0. Those coordinates are
   repeated in
   `data/algeria.json`, `data/communes_w*.json`, `data/csv/communes.csv`,
   `data/geojson/communes.geojson` and `data/sql/full.sql`, so the ODbL covers
   those values in every representation that carries them.
 - 6 of the 69 wilaya capital points, which are the same values again. A wilaya's
   `latitude` / `longitude` is the centre of its capital commune, so where that
-  commune is one of the 256 above, the wilaya row carries an
+  commune is one of the 323 above, the wilaya row carries an
   OpenStreetMap-derived coordinate too: wilayas 7 (Biskra), 16 (Alger Centre),
   25 (Constantine), 32 (El Bayadh), 52 (Beni-Abbes) and 61 (El Kantara), in
   `data/algeria.json`, `data/csv/wilayas.csv`, `data/sql/full.sql`,

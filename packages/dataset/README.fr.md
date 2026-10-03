@@ -291,10 +291,11 @@ Trois parties des données proviennent d'**OpenStreetMap**, sont **© les contri
 d'OpenStreetMap** et sont sous licence **[ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/)** :
 
 - les 69 polygones de limites de wilaya dans `data/geojson/wilaya-boundaries.geojson` ;
-- 256 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
-  `admin_level=8` de la commune elle-même (250 de son nœud `admin_centre`, 56 le 2026-09-27,
-  189 le 2026-09-29 et 5 le 2026-10-01, et 6 du centroïde de la relation en 2.1.0), partout où
-  ces valeurs apparaissent ;
+- 323 des 1 541 coordonnées de chefs-lieux de communes, chacune issue de la relation
+  `admin_level=8` de la commune elle-même (318 de son nœud `admin_centre`, 56 le 2026-09-27,
+  189 le 2026-09-29, 5 le 2026-10-01 et 68 le 2026-10-01 par la revue des coordonnées, qui
+  n'écrit une valeur que lorsque des sources indépendantes votent pour elle, et 5 du centroïde
+  de la relation en 2.1.0), partout où ces valeurs apparaissent ;
 - 6 des 69 points de chefs-lieux de wilayas, qui sont les mêmes valeurs : les coordonnées d'une
   wilaya sont le centre de sa commune chef-lieu, donc les wilayas 7, 16, 25, 32, 52 et 61
   portent l'une des coordonnées ci-dessus. Les 63 autres points de chefs-lieux de wilayas ne
