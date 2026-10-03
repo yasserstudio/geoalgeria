@@ -337,18 +337,20 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
     );
 
   assert.deepEqual(
-    ["alg-los", "los-alg", "alg-doh", "doh-alg"].map((id) => ({
+    ["alg-los", "los-alg"].map((id) => ({
       id,
       ...pick(id),
     })),
     [
       { id: "alg-los", flight: "AH 5354", status: "unclear", days: ["thu"], evidence: "verified", planned: true },
       { id: "los-alg", flight: "AH 5354", status: "unclear", days: ["tue"], evidence: "verified", planned: true },
-      { id: "alg-doh", flight: "AH 4078", status: "unclear", days: ["tue", "fri"], evidence: "verified", planned: true },
-      { id: "doh-alg", flight: "AH 4079", status: "unclear", days: ["tue", "fri"], evidence: "verified", planned: true },
     ],
   );
 
+  // Both Abuja directions operate: the outbound since the 6 Apr 2025 inaugural
+  // flight, the return on that same launch schedule's Friday. The 2026-10-02 pass
+  // moved abv-alg out of plannedRoutes(), where it had sat on the NW26 sale
+  // inventory as though the leg had never flown.
   assert.deepEqual(pick("alg-abv"), {
     flight: "AH 5354",
     status: "active",
@@ -358,10 +360,10 @@ test("aviation: the newer schedule sweep preserves direction and lifecycle", asy
   });
   assert.deepEqual(pick("abv-alg"), {
     flight: "AH 5354",
-    status: "unclear",
+    status: "active",
     days: ["fri"],
     evidence: "verified",
-    planned: true,
+    planned: false,
   });
   assert.deepEqual(pick("alg-dje"), {
     flight: "AH 4708",
@@ -414,15 +416,20 @@ test("aviation: Batna serves Orly, the Gulf triangle is planned, Dubai is suspen
     flight: "AH 1121", status: "active", days: null, evidence: "verified", planned: false,
   });
 
-  // A triangle yields one-directional nonstops, and only the Algeria-touching
-  // legs are in scope: two rows, not four, and none for the Kuwait-Amman leg.
+  // A triangle yields one-directional nonstops: three rows, not four or six. The
+  // Kuwait-Amman middle leg joined on 2026-10-02 under the amended scope rule
+  // (collection-rules.md section 33), and the two legs the rotation never flies
+  // nonstop still must not appear.
   assert.deepEqual(shape("alg-kwi"), {
     flight: null, status: "unclear", days: ["mon"], evidence: "listed", planned: true,
+  });
+  assert.deepEqual(shape("kwi-amm"), {
+    flight: null, status: "unclear", days: null, evidence: "listed", planned: true,
   });
   assert.deepEqual(shape("amm-alg"), {
     flight: null, status: "unclear", days: null, evidence: "listed", planned: true,
   });
-  for (const id of ["kwi-alg", "alg-amm", "kwi-amm", "amm-kwi"])
+  for (const id of ["kwi-alg", "alg-amm", "amm-kwi"])
     assert.ok(!byId.has(id), `${id}: not a nonstop leg of the announced triangle`);
   assert.deepEqual(
     m.routeEndpoints().find((e) => e.iata === "KWI"),
@@ -442,4 +449,92 @@ test("aviation: Batna serves Orly, the Gulf triangle is planned, Dubai is suspen
     flight: null, status: "suspended", days: null, evidence: "listed", planned: false,
   });
   assert.match(byId.get("alg-dxb").source, /^https:\/\//);
+});
+
+// The 2026-10-02 winter-programme pass. The lifecycle boundary is the thing under
+// test throughout: a route whose launch date is still ahead stays planned no matter
+// how firm the announcement, and a route only leaves plannedRoutes() on a dated
+// report that it flew.
+test("aviation: the winter 2026 programme is planned until it has flown", async () => {
+  const m = await pkg("aviation");
+  const byId = new Map([...m.routes(), ...m.plannedRoutes()].map((r) => [r.id, r]));
+  const shape = (id) => {
+    const r = byId.get(id);
+    assert.ok(r, `${id}: route missing`);
+    return { flight: r.flight, status: r.status, days: r.days, evidence: r.evidence, planned: r.planned };
+  };
+
+  // Tripoli is MITIGA. Every report of the resumption that names an airport names
+  // Mitiga, so TIP must never appear beside MJI: that is the Batna mistake, and the
+  // guard against it is in the generator rather than in anyone's memory.
+  assert.deepEqual(shape("alg-mji"), {
+    flight: null, status: "unclear", days: ["wed", "fri"], evidence: "listed", planned: true,
+  });
+  assert.deepEqual(shape("mji-alg"), {
+    flight: null, status: "unclear", days: ["wed", "fri"], evidence: "listed", planned: true,
+  });
+  for (const id of ["alg-tip", "tip-alg"])
+    assert.ok(!byId.has(id), `${id}: Tripoli's service is at Mitiga, not Tripoli International`);
+  assert.deepEqual(
+    m.routeEndpoints().find((e) => e.iata === "MJI"),
+    {
+      iata: "MJI",
+      name: "Aéroport de Mitiga",
+      name_en: "Mitiga International Airport",
+      name_ar: "مطار إمعيتيقة الدولي",
+      lat: 32.89177,
+      lng: 13.287878,
+      country: "LY",
+    },
+  );
+
+  // Doha flew: Hamad International welcomed the first Air Algérie arrival on
+  // 30 Sep 2026, so the pair is no longer "announced, not yet operating".
+  for (const id of ["alg-doh", "doh-alg"])
+    assert.deepEqual(
+      { days: shape(id).days, status: shape(id).status, planned: shape(id).planned },
+      { days: ["sun", "tue", "fri"], status: "active", planned: false },
+      `${id}: the resumed Doha service is not recorded as operating`,
+    );
+
+  // Moscow did NOT. An announced 2 Oct resumption date passing is not a flight, and
+  // no dated report of one exists, so both legs stay planned with the reported days
+  // on the outbound only.
+  assert.deepEqual(shape("alg-svo"), {
+    flight: null, status: "unclear", days: ["mon", "wed", "fri"], evidence: "listed", planned: true,
+  });
+  assert.deepEqual(shape("svo-alg"), {
+    flight: null, status: "unclear", days: null, evidence: "listed", planned: true,
+  });
+
+  // The two Nigeria triangles, one per direction of travel, each with its middle
+  // leg. The days are what makes them triangles rather than six loose arcs.
+  assert.deepEqual(
+    ["alg-abv", "abv-los", "los-alg", "alg-los", "los-abv", "abv-alg"].map((id) => [
+      id,
+      shape(id).days,
+      shape(id).planned,
+    ]),
+    [
+      ["alg-abv", ["mon"], false],
+      ["abv-los", ["mon"], true],
+      ["los-alg", ["tue"], true],
+      ["alg-los", ["thu"], true],
+      ["los-abv", ["thu"], true],
+      ["abv-alg", ["fri"], false],
+    ],
+  );
+
+  // Conakry and Brazzaville gained the days their programme report publishes, on
+  // the Algiers departures only: the return legs' own day is not published.
+  assert.deepEqual(shape("alg-cky").days, ["tue", "thu", "sun"]);
+  assert.equal(shape("cky-alg").days, null);
+  assert.deepEqual(shape("alg-bzv").days, ["mon", "wed", "sat"]);
+  assert.equal(shape("bzv-alg").days, null);
+
+  // Every day name is lowercase and a real day, in every row, not only the new ones.
+  const DAYS = new Set(["mon", "tue", "wed", "thu", "fri", "sat", "sun"]);
+  for (const r of byId.values())
+    for (const d of r.days ?? [])
+      assert.ok(DAYS.has(d), `${r.id}: "${d}" is not a lowercase day name`);
 });

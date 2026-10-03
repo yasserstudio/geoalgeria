@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "dataset": "tourisme",
+  "reviewer": "geoalgeria-maintainers",
+  "reviewed_at": "2026-10-01",
+  "decisions": [
+    {
+      "file": "attractions.json",
+      "record_id": "attraction-310",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "08",
+        "commune_code": null,
+        "lat": 29.8519331,
+        "lng": -5.0020334
+      },
+      "patch": {
+        "wilaya_code": "52",
+        "commune_code": "5206"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "attractions.json",
+      "record_id": "attraction-312",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "08",
+        "commune_code": null,
+        "lat": 29.829096,
+        "lng": -4.8991921
+      },
+      "patch": {
+        "wilaya_code": "52",
+        "commune_code": "5206"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "lodging.json",
+      "record_id": "lodging-238",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "08",
+        "commune_code": null,
+        "lat": 29.40555,
+        "lng": -3.2557317
+      },
+      "patch": {
+        "wilaya_code": "52",
+        "commune_code": "5206"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "lodging.json",
+      "record_id": "lodging-239",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "08",
+        "commune_code": null,
+        "lat": 30.398352,
+        "lng": -4.4556408
+      },
+      "patch": {
+        "wilaya_code": "52",
+        "commune_code": "5206"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2019/F2019078.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    },
+    {
+      "file": "thermal-springs.json",
+      "record_id": "thermal-spring-36",
+      "status": "corrected",
+      "publish_action": "patch",
+      "expect": {
+        "wilaya_code": "26",
+        "commune_code": null,
+        "lat": 35.867168,
+        "lng": 3.047429
+      },
+      "patch": {
+        "wilaya_code": "67",
+        "commune_code": "2657"
+      },
+      "evidence": [
+        {
+          "url": "https://www.openstreetmap.org",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+          "checked_at": "2026-10-01"
+        },
+        {
+          "url": "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf",
+          "checked_at": "2026-10-01"
+        }
+      ]
+    }
+  ]
+}

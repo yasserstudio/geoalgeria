@@ -1,0 +1,143 @@
+{
+  "generated": "2026-10-02",
+  "source": "OpenStreetMap administrative relations fetched by id, via Overpass",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "query": "research/_osm-links/relations.overpassql",
+  "generator": "scripts/osm-links-relations.mjs --fetch",
+  "timestamp_osm_base": "2026-10-02T10:16:05Z",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "note": "Relations the 2026-09-29 commune-centre capture does not hold, fetched by id because that capture's query filters on boundary=administrative AND admin_level=8. Three are the second-tier links of communes 630, 1634 and 2110; one is the daira relation that carries commune 4703's ONS code and is the reason that commune keeps a null; six are the duplicate pairs behind the Wikidata P402 exceptions for communes 1347, 2240 and 3818. Which ids are captured and why is declared in scripts/osm-links-relations.mjs; refresh in place with `node scripts/osm-links-relations.mjs --fetch` and review the diff.",
+  "count": 10,
+  "relations": [
+    {
+      "id": 540555,
+      "tags": {
+        "type": "boundary",
+        "ref": "1634",
+        "ref:ONS": "1634",
+        "wikidata": "Q4917124",
+        "name:fr": "Birtouta",
+        "name:ar": "بئر توتة"
+      }
+    },
+    {
+      "id": 2758654,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "wikidata": "Q16766449",
+        "name": "Bouhlou ⴱⵓⵃⵍⵓ بوحلو",
+        "name:fr": "Bouhlou",
+        "name:ar": "بوحلو"
+      }
+    },
+    {
+      "id": 2806124,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "wikidata": "Q12217677",
+        "name": "Sidi Abed سيدي عابد",
+        "name:fr": "Sidi Abed",
+        "name:ar": "سيدي عابد"
+      }
+    },
+    {
+      "id": 2887283,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "wikidata": "Q15277645",
+        "name": "Sidi Yacoub سيدي يعقوب",
+        "name:fr": "Sidi Yacoub",
+        "name:ar": "سيدي يعقوب"
+      }
+    },
+    {
+      "id": 4069543,
+      "tags": {
+        "type": "boundary",
+        "admin_level": "8",
+        "ref": "0630",
+        "ref:ONS": "0630",
+        "wikidata": "Q3087355",
+        "name": "Souk Oufella",
+        "name:fr": "Souk Oufella",
+        "name:ar": "سوق أوفلا"
+      }
+    },
+    {
+      "id": 6407308,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "11",
+        "ref": "2110",
+        "ref:ONS": "2110",
+        "wikidata": "Q2983525",
+        "name": "collo",
+        "name:fr": "Collo",
+        "name:ar": "collo"
+      }
+    },
+    {
+      "id": 6534589,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "ref": "3818",
+        "ref:ONS": "3818",
+        "wikidata": "Q3483164",
+        "name": "Sidi Abed ⵙⵉⴷⵉ ⵄⴰⴱⴻⴷ سيدي عابد",
+        "name:fr": "Sidi Abed",
+        "name:ar": "سيدي عابد"
+      }
+    },
+    {
+      "id": 6662010,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "ref": "2240",
+        "ref:ONS": "2240",
+        "wikidata": "Q1649961",
+        "name": "Sidi Yacoub ⵙⵉⴷⵉ ⵢⴻⵄⵇⵓⴱ سيدي يعقوب",
+        "name:fr": "Sidi Yacoub",
+        "name:ar": "سيدي يعقوب"
+      }
+    },
+    {
+      "id": 6666559,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "8",
+        "ref": "1347",
+        "ref:ONS": "1347",
+        "wikidata": "Q16845185",
+        "name": "Bouhlou ⴱⵓⵃⵍⵓ بوحلو",
+        "name:fr": "Bouhlou",
+        "name:ar": "بوحلو"
+      }
+    },
+    {
+      "id": 6823963,
+      "tags": {
+        "type": "boundary",
+        "boundary": "administrative",
+        "admin_level": "6",
+        "ref": "4703",
+        "ref:ONS": "4703",
+        "wikidata": "Q3025708",
+        "name": "دائرة ضاية بن ضحوة ⴰⴷⴷⴰⵢⵔⵜ ⵏ ⴹⴰⵢⴻⵜ ⴱⴻⵏ ⴹⴻⵃⵡⴰⵏ",
+        "name:fr": "Daïra Dayet Ben Dahoua",
+        "name:ar": "دائرة ضاية بن ضحوة"
+      }
+    }
+  ]
+}

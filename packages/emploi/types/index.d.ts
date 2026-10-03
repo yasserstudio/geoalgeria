@@ -59,8 +59,8 @@ export interface Alem {
   name: string;
   /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
   wilaya_code: string;
-  /** Commune (ONS) code. Currently null for every ALEM; typed as
-   *  `string | null` so a future populated value is not a breaking change. */
+  /** Commune (ONS) code. Null unless a reviewed correction filled it
+   *  (quality/overrides/emploi.json): ANEM itself resolves to wilaya only. */
   commune_code: string | null;
   /** Commune name. Currently null for every ALEM; see `commune_code`. */
   commune: string | null;
@@ -91,6 +91,12 @@ export interface Alem {
   /** Comma-separated list of the communes this local agency serves (domain extra,
    *  v2 decision 2). Present on every ALEM record. */
   communes: string;
+  /** Present when a versioned evidence review corrected this record
+   *  (quality/overrides/). */
+  review_status?: "corrected";
+  reviewed_at?: string;
+  reviewed_by?: string;
+  review_evidence?: string[];
 }
 
 /** One provenance entry in `metadata.sources[]`. */

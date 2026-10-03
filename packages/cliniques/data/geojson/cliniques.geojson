@@ -33378,6 +33378,42 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          5.194713,
+          35.901223
+        ]
+      },
+      "properties": {
+        "id": "19-00013",
+        "name": null,
+        "name_fr": null,
+        "name_ar": null,
+        "wilaya_code": "19",
+        "commune_code": "1904",
+        "commune": "Ouled Si Ahmed",
+        "lat": 35.901223,
+        "lng": 5.194713,
+        "geo_precision": "exact",
+        "geo_method": "osm_node",
+        "source": "osm",
+        "refs": {
+          "osm": "node/4077454962"
+        },
+        "type": "clinique",
+        "type_label_fr": "Clinique",
+        "type_label_ar": "عيادة / مصحة",
+        "sector": null,
+        "speciality": null,
+        "address": null,
+        "phone": null,
+        "opening_hours": null,
+        "emergency": null
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           5.296594,
           35.916275
         ]
@@ -36176,42 +36212,6 @@
         "sector": null,
         "speciality": null,
         "address": null,
-        "phone": null,
-        "opening_hours": null,
-        "emergency": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          6.837952,
-          36.652598
-        ]
-      },
-      "properties": {
-        "id": "21-00004",
-        "name": "Clinique psychiatrique pour femmes",
-        "name_fr": "Clinique psychiatrique pour femmes",
-        "name_ar": null,
-        "wilaya_code": "21",
-        "commune_code": "2116",
-        "commune": "El Arrouch",
-        "lat": 36.652598,
-        "lng": 6.837952,
-        "geo_precision": "exact",
-        "geo_method": "osm_node",
-        "source": "osm",
-        "refs": {
-          "osm": "node/2239891060"
-        },
-        "type": "clinique",
-        "type_label_fr": "Clinique",
-        "type_label_ar": "عيادة / مصحة",
-        "sector": null,
-        "speciality": null,
-        "address": "El Harrouch",
         "phone": null,
         "opening_hours": null,
         "emergency": null
@@ -48236,42 +48236,6 @@
         "sector": "public",
         "speciality": null,
         "address": "Oran 31000",
-        "phone": null,
-        "opening_hours": null,
-        "emergency": null
-      }
-    },
-    {
-      "type": "Feature",
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.655698,
-          35.690754
-        ]
-      },
-      "properties": {
-        "id": "31-00061",
-        "name": "Abed Attika",
-        "name_fr": "Abed Attika",
-        "name_ar": null,
-        "wilaya_code": "31",
-        "commune_code": "3101",
-        "commune": "Oran",
-        "lat": 35.690754,
-        "lng": -0.655698,
-        "geo_precision": "approximate",
-        "geo_method": "osm_centroid",
-        "source": "osm",
-        "refs": {
-          "osm": "way/293367044"
-        },
-        "type": "clinique",
-        "type_label_fr": "Clinique",
-        "type_label_ar": "عيادة / مصحة",
-        "sector": null,
-        "speciality": null,
-        "address": null,
         "phone": null,
         "opening_hours": null,
         "emergency": null

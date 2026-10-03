@@ -126,6 +126,12 @@ ENDPOINTS = [
      "note": "Seasonal ALG-DJE service resumed on 17 Jul 2026 as AH4708."},
     {"city": "Monastir", "iata": "MIR", "country": "TN",
      "note": "Not on the airline's booking city list; surfaced by the route sweep."},
+    {"city": "Tripoli", "iata": "MJI", "country": "LY",
+     "note": "Tripoli is two fields: Mitiga (MJI) and Tripoli International (TIP). "
+             "The resumption reporting names Mitiga explicitly, so MJI is the pinned "
+             "code and TIP is not carried. Not on the airline's destination page: "
+             "added for the announced twice-weekly service from 28 Oct 2026, the "
+             "first since the 2016 suspension."},
     {"city": "CAIRE", "iata": "CAI", "country": "EG"},
     {"city": "AMMAN", "iata": "AMM", "country": "JO",
      "note": "Queen Alia. Nonstop ALG-AMM stays excluded, the probes return Royal "
