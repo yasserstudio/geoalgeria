@@ -116,7 +116,9 @@ data/
 `source` is a short key resolved in `metadata.sources[]`, and external ids live in `refs`
 (`refs.osm` is the OSM id as a string; `refs.wikidata` a QID; `refs.wikipedia` a
 `"<lang>:<title>"` sitelink). The four OSM layers carry no commune linkage, so
-`commune_code` and `commune` are null throughout.
+`commune_code` and `commune` are null throughout, except on the four sites a reviewed
+correction moved into the wilaya a reform gave their commune (quality/overrides/tourisme.json),
+which carry the `commune_code` the correction was derived from.
 
 Optional contact and classification fields are present where the source publishes them, and
 absent otherwise, never null. On lodging: `address` (209 records), `phone` (204, several
@@ -155,7 +157,8 @@ Wikidata QID and 100 a Wikipedia sitelink.
 `type` is one of `hammam`, `ain`, `source`, `forage`. Physical properties (`temperature_c`,
 `debit_l_s`, `altitude_m`, `minerality`) come directly from the ASAL dataset; `minerality`
 is the only optional one. This is the one layer that names a commune, as `commune`, a name
-rather than an ONS `commune_code`, which stays null.
+rather than an ONS `commune_code`, which stays null except on the one spring a reviewed
+correction moved into its current wilaya.
 
 `wilaya_code` is zero-padded to two digits across all layers and joins GeoAlgeria's wilayas.
 

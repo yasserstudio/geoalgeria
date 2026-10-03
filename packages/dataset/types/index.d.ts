@@ -352,8 +352,11 @@ declare namespace algeriaGeodata {
     name: string;
     /** Wilaya code, zero-padded 2-digit string ("01".."69"). */
     wilaya_code: string;
-    /** Commune (ONS) code. Currently null for every ATM (the source resolves
-     *  ATMs to a commune name only); typed as `string | null` for the future. */
+    /** BaridiMap's own wilaya code, when the ATM's commune has since moved to
+     *  one of the new wilayas and the published code is the current one. */
+    source_wilaya_code?: string;
+    /** Commune (ONS) code. Null unless the wilaya was reconciled or a reviewed
+     *  correction filled it; BaridiMap itself resolves ATMs to a commune name. */
     commune_code: string | null;
     /** Commune name (French). */
     commune: string;
@@ -375,6 +378,12 @@ declare namespace algeriaGeodata {
     /** Street address. Currently null for every ATM (the source omits it);
      *  typed as `string | null` so a future value is not a breaking change. */
     address: string | null;
+    /** Present when a versioned evidence review corrected this record
+     *  (quality/overrides/poste.json). */
+    review_status?: "corrected";
+    reviewed_at?: string;
+    reviewed_by?: string;
+    review_evidence?: string[];
   }
 }
 

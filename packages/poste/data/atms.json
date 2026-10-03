@@ -4459,8 +4459,8 @@
   {
     "id": "11610",
     "name": "MENAA",
-    "wilaya_code": "28",
-    "commune_code": null,
+    "wilaya_code": "68",
+    "commune_code": "2839",
     "commune": "MENAA (OULED ATIA)",
     "commune_ar": "أولاد عطية",
     "lat": 35.1458683,
@@ -4471,7 +4471,15 @@
     "status": "1",
     "postal_code": "28070",
     "postal_code_old": null,
-    "address": null
+    "address": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://baridimap.poste.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "11611",
@@ -16597,8 +16605,8 @@
   {
     "id": "14908",
     "name": "ADHAOURA BOUCHERIT SAID",
-    "wilaya_code": "26",
-    "commune_code": null,
+    "wilaya_code": "67",
+    "commune_code": "2618",
     "commune": "CHELLALAT EL ADHAOURA",
     "commune_ar": "شلالة العذاورة",
     "lat": 35.9380268,
@@ -16609,7 +16617,15 @@
     "status": "1",
     "postal_code": "26100",
     "postal_code_old": null,
-    "address": null
+    "address": null,
+    "review_status": "corrected",
+    "reviewed_at": "2026-10-01",
+    "reviewed_by": "geoalgeria-maintainers",
+    "review_evidence": [
+      "https://baridimap.poste.dz",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026025.pdf",
+      "https://www.joradp.dz/FTP/jo-francais/2026/F2026040.pdf"
+    ]
   },
   {
     "id": "14909",
