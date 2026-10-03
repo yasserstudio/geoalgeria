@@ -585,6 +585,19 @@
     "note": "Not on the airline's booking city list; surfaced by the route sweep."
   },
   {
+    "iata": "MJI",
+    "icao": "HLLM",
+    "name": "Mitiga International Airport",
+    "municipality": "Tripoli",
+    "country": "LY",
+    "lat": 32.89177,
+    "lng": 13.287878,
+    "type": "large_airport",
+    "airline_city_label": "Tripoli",
+    "source": "ourairports",
+    "note": "Tripoli is two fields: Mitiga (MJI) and Tripoli International (TIP). The resumption reporting names Mitiga explicitly, so MJI is the pinned code and TIP is not carried. Not on the airline's destination page: added for the announced twice-weekly service from 28 Oct 2026, the first since the 2016 suspension."
+  },
+  {
     "iata": "MLH",
     "icao": "LFSB",
     "name": "EuroAirport Basel–Mulhouse–Freiburg",

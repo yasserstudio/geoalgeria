@@ -32,8 +32,14 @@ export type ReviewStatus = "corrected";
 
 /** External identifiers keyed by source system. */
 export interface Refs {
-  /** MoH post id on sante.gov.dz. */
+  /** MoH post id on sante.gov.dz: this record's primary post, the French one
+   *  where the registry publishes both. */
   msp: string;
+  /** The MoH's other-language post for the SAME establishment, when it
+   *  publishes one. The registry lists each establishment twice, once in French
+   *  and once in Arabic, under two post ids; a bilingual record stands for both,
+   *  and either id resolves to it. */
+  msp_twin?: string;
   /** OSM element id (e.g. "way/432370657") when an OSM facility matched. */
   osm?: string;
   /** Wikidata QID when a Wikidata facility matched. */

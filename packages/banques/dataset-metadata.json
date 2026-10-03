@@ -36,6 +36,12 @@
     },
     {
       "@type": "DataDownload",
+      "name": "banks (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/geojson/banks.geojson"
+    },
+    {
+      "@type": "DataDownload",
       "name": "institutions (JSON)",
       "encodingFormat": "application/json",
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/institutions.json"
@@ -45,6 +51,12 @@
       "name": "institutions (CSV)",
       "encodingFormat": "text/csv",
       "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/csv/institutions.csv"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "institutions (GeoJSON)",
+      "encodingFormat": "application/geo+json",
+      "contentUrl": "https://cdn.jsdelivr.net/npm/@geoalgeria/banques/data/geojson/institutions.geojson"
     },
     {
       "@type": "DataDownload",

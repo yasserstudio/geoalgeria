@@ -132,8 +132,12 @@ cartographique (<https://www.anem.dz/#/portail-carto>). Il n'y a pas d'API publi
 les agences sont intégrées dans le bundle JavaScript du portail. Lancez `npm run fetch`
 pour régénérer toutes les sorties : le script redécouvre le bundle actuel, extrait les
 deux jeux de données, corrige l'inversion `X`=lat / `Y`=lng de la source et normalise
-les codes de wilaya. L'ANEM classe les agences selon le **schéma à 58 wilayas**, les
-nouvelles wilayas 59-69 apparaissent donc sous leur wilaya mère.
+les codes de wilaya. L'ANEM classe les agences selon le **schéma à 58 wilayas**. Lorsque
+l'adresse et la coordonnée d'une agence la situent toutes deux dans une commune déplacée par
+la réforme de 2026, une correction revue dans `quality/overrides/emploi.json` publie la wilaya
+actuelle (59-69) et la commune dont elle est tirée ; la régénération la réapplique et s'arrête
+si la valeur de l'ANEM a changé. 17 agences ALEM sont ainsi corrigées ; les autres apparaissent
+encore sous leur wilaya mère.
 
 ## Licence et attribution
 

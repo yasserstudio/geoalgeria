@@ -2,7 +2,7 @@
   "generated": "2026-09-29",
   "guard": "test/commune-centre-in-commune.test.mjs",
   "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
-  "note": "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Regenerate with `node scripts/build-commune-boundary-cache.mjs --fetch-geometry --write`.",
+  "note": "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Most of these are in the coordinate review's queue as well (research/_commune-centres/review-queue-<date>.json), which says what the open sources vote for and why the Votes did not settle it; `reason` here is why the 2026-09-29 audit did not correct it, and the queue is where the decision is waited on now. Regenerate with `node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write`.",
   "no_boundary": [
     {
       "code_commune": 630,
@@ -29,7 +29,7 @@
       "reason": "no admin_level=8 relation in the pull"
     }
   ],
-  "count": 27,
+  "count": 16,
   "exceptions": [
     {
       "code_commune": 515,
@@ -59,39 +59,12 @@
       "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
     },
     {
-      "code_commune": 552,
-      "wilaya_code": 5,
-      "name_fr": "Chir",
-      "osm_relation_id": 5201376,
-      "metres_outside": 4498,
-      "seat_delta_m": 12053,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
       "code_commune": 557,
       "wilaya_code": 5,
       "name_fr": "El Hassi",
       "osm_relation_id": 5209309,
       "metres_outside": 3052,
       "seat_delta_m": 9229,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 613,
-      "wilaya_code": 6,
-      "name_fr": "Kendira",
-      "osm_relation_id": 4112944,
-      "metres_outside": 4685,
-      "seat_delta_m": 12532,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 638,
-      "wilaya_code": 6,
-      "name_fr": "Beni-Mallikeche",
-      "osm_relation_id": 2170758,
-      "metres_outside": 17864,
-      "seat_delta_m": 22702,
       "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
     },
     {
@@ -110,60 +83,6 @@
       "osm_relation_id": 4112950,
       "metres_outside": 5842,
       "seat_delta_m": 11444,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 650,
-      "wilaya_code": 6,
-      "name_fr": "Benimaouche",
-      "osm_relation_id": 4070138,
-      "metres_outside": 6957,
-      "seat_delta_m": 11004,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 1027,
-      "wilaya_code": 10,
-      "name_fr": "Aghbalou",
-      "osm_relation_id": 3397589,
-      "metres_outside": 5408,
-      "seat_delta_m": 11681,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 1309,
-      "wilaya_code": 13,
-      "name_fr": "Djebala",
-      "osm_relation_id": 6666562,
-      "metres_outside": 1243,
-      "seat_delta_m": 6278,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 1526,
-      "wilaya_code": 15,
-      "name_fr": "M'kira",
-      "osm_relation_id": 4293722,
-      "metres_outside": 13261,
-      "seat_delta_m": 17873,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 1528,
-      "wilaya_code": 15,
-      "name_fr": "Ait-Mahmoud",
-      "osm_relation_id": 4292443,
-      "metres_outside": 11262,
-      "seat_delta_m": 15402,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 1560,
-      "wilaya_code": 15,
-      "name_fr": "Iboudrarene",
-      "osm_relation_id": 4288710,
-      "metres_outside": 2891,
-      "seat_delta_m": 5129,
       "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
     },
     {
@@ -203,15 +122,6 @@
       "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
     },
     {
-      "code_commune": 2826,
-      "wilaya_code": 68,
-      "name_fr": "El Houamed",
-      "osm_relation_id": 6547240,
-      "metres_outside": 6154,
-      "seat_delta_m": 22910,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
       "code_commune": 2840,
       "wilaya_code": 28,
       "name_fr": "Souamaa",
@@ -245,15 +155,6 @@
       "osm_relation_id": 6534593,
       "metres_outside": 4250,
       "seat_delta_m": 11273,
-      "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
-    },
-    {
-      "code_commune": 3820,
-      "wilaya_code": 38,
-      "name_fr": "Sidi Slimane",
-      "osm_relation_id": 6534592,
-      "metres_outside": 5490,
-      "seat_delta_m": 13759,
       "reason": "the admin_centre node is not this commune's seat on any of the three reads scripts/lib/seat-evidence.mjs makes: it carries neither the commune's folded name in either script, nor that name once the definite article is dropped, nor the same wikidata item as its own relation"
     },
     {

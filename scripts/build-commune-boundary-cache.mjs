@@ -466,7 +466,7 @@ writeFileSync(
       guard: "test/commune-centre-in-commune.test.mjs",
       licence: LICENCE,
       note:
-        "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Regenerate with `node scripts/build-commune-boundary-cache.mjs --fetch-geometry --write`.",
+        "Every commune the containment guard does not hold to its own polygon, with the reason. `no_boundary` is what cannot be decided at all: OpenStreetMap carries no usable admin_level=8 geometry, so there is nothing to be inside of. `exceptions` is a centre still outside its own commune, which is a known defect waiting on evidence, not a tolerance. Both lists are exact in both directions: a commune that stops needing its entry fails the guard rather than keeping it. Most of these are in the coordinate review's queue as well (research/_commune-centres/review-queue-<date>.json), which says what the open sources vote for and why the Votes did not settle it; `reason` here is why the 2026-09-29 audit did not correct it, and the queue is where the decision is waited on now. Regenerate with `node scripts/build-commune-boundary-cache.mjs --from-raw-geometry --write`.",
       no_boundary: undecidable,
       count: outside.length,
       exceptions: outside,

@@ -342,8 +342,13 @@ simplified outline cuts inside the shoreline. All seven are listed under
 `seat_in_declared_wilaya` in `audit-2026-09-29.json`; the wilaya outlines are #171,
 not this audit.
 
-The `osm_relation_id` and `wikidata` harvested here (1,536 of 1,537 communes, 69
-of 69 wilayas) stay in `research/`. Publishing them as package fields is #181.
+The `osm_relation_id` and `wikidata` harvested here (1,536 of the 1,537 matched
+communes, 69 of 69 wilayas) are published fields since #181, copied by
+`scripts/add-osm-links.mjs`. Three of the four communes this audit left unmatched are
+linked there from a second capture, `research/_osm-links/relations.json`: this audit's
+Overpass query filters on `boundary=administrative` AND `admin_level=8`, and their
+relations carry the right `ref:ONS` code with non-standard tags, so the filter hid them
+rather than OpenStreetMap lacking them.
 
 ### The cache is proved, and it is refreshed
 
@@ -392,3 +397,348 @@ is a hand decision about one commune's coordinates.
 The two raw Overpass responses are 55 MB of way-member lists and full boundary
 geometry, so they are gitignored working inputs; the reduced captures beside them
 are the reviewable record.
+
+# The five wilaya capital centres (2026-10-01)
+
+Private tracker #236. Found while reviewing #228 (the wilaya capital field, data
+PR #242) and pre-existing on `main`. Five **wilaya capital (chef-lieu) communes**
+sat 3 to 6 km from the seat of the town they are the chef-lieu of:
+
+| Code | Commune | Wilaya | was | now | moved | decided by |
+| --- | --- | --- | --- | --- | --- | --- |
+| 701 | Biskra | 7 | `5.751048, 34.8` | `5.729074, 34.850882` | 6,003 m | OSM node [299682811](https://www.openstreetmap.org/node/299682811) |
+| 717 | El Kantara | 61 | `5.666831, 35.192365` | `5.709284, 35.223115` | 5,154 m | OSM node [427910708](https://www.openstreetmap.org/node/427910708) |
+| 2501 | Constantine | 25 | `6.642433, 36.365` | `6.608428, 36.364164` | 3,046 m | OSM node [27564946](https://www.openstreetmap.org/node/27564946) |
+| 3201 | El Bayadh | 32 | `1.020278, 33.721667` | `1.018245, 33.684319` | 4,157 m | OSM node [452440133](https://www.openstreetmap.org/node/452440133) |
+| 5201 | Beni-Abbes | 52 | `-2.17, 30.08` | `-2.169031, 30.131743` | 5,754 m | OSM node [1573488063](https://www.openstreetmap.org/node/1573488063), confirmed by the Owner |
+
+All five published values are the commune's own OpenStreetMap `admin_centre` node,
+so all five are **ODbL 1.0, (c) OpenStreetMap contributors** and all five count
+toward the carve-out: 250 ledger rows, **256** OpenStreetMap-derived centres with
+the 6 relation centroids of 2.1.0, and 1,285 that carry no recorded source.
+
+The fifth row differs in how it was **nominated**, not in where its value comes
+from, and that distinction is the Owner's rule of 2026-10-01:
+
+> A coordinate a human reads off a proprietary map may only **confirm** an open
+> source, within 500 m, and it is the open coordinate that ships.
+
+So the Owner's Google Maps reading of Beni-Abbes is recorded in the row as
+`owner_confirmation`, naming what it confirms, where it was read and how far it
+sits from the published value (268 m). It is never `to`. No proprietary map is the
+provenance of any coordinate this package publishes, and the ledger-shape test
+fails any row that ships something other than its own `admin_centre` node.
+
+## Why this needed a standard of its own
+
+Neither guard this directory already has could see them.
+
+- **Containment is blind**: all four stored centres were *inside* their own
+  commune the whole time. That is Bethioua's class, which the standing guard's
+  own section above names as its honest limit.
+- **The seat delta is not a defect**, by the Owner's 2026-09-29 decision (#170).
+  That audit measured a median disagreement with the `admin_centre` node of 402 m
+  over all 1,537 compared rows, before its own corrections, and a delta says two
+  hand-placed claims about one town disagree, not which one is wrong. The shipped
+  bands are the report `seat-distance-2026-09-29.md`; **132 non-capital centres are
+  still more than 3 km from their seat** and none of them is corrected here.
+
+What makes a capital different is that a capital has **two further claims about
+the same town** that a commune centre is not derived from:
+
+1. **the wilaya's own published point**, which comes from the wilaya's
+   `admin_level=4` relation, a different OpenStreetMap object from the commune's
+   `admin_level=8` `admin_centre` node;
+2. **the geometric median of the `geo_precision: exact` records** other packages
+   place inside this commune's own OpenStreetMap outline: pharmacies, schools,
+   mosques, post offices, bank branches. They are selected by point-in-polygon
+   rather than by the `commune` they name, so the selection cannot depend on the
+   centre under test.
+
+A row qualifies only where it is a wilaya capital commune, its seat delta is over
+3 km, and **both** of those put the town at the node rather than at the stored
+centre:
+
+| Commune | wilaya point to stored / to seat | exact-record median to stored / to seat (n) |
+| --- | --- | --- |
+| Biskra (701) | 5,799 / 371 m | 5,903 / 348 m (264) |
+| El Kantara (717) | 4,789 / 731 m | 5,137 / 211 m (40) |
+| Constantine (2501) | 4,150 / 1,746 m | 2,493 / 1,535 m (529) |
+| El Bayadh (3201) | 4,602 / 487 m | 4,791 / 730 m (164) |
+
+Over all 69 capitals that two-claim criterion selects exactly four, and
+**Beni-Abbes is not one of them**. Its wilaya-point leg argues the wrong way: the
+wilaya 52 point is 6,735 m from the repudiated centre and 8,786 m from the
+corrected one, because that point is **itself** about 8.8 km from its capital's
+town centre. So the criterion could not nominate it, and the test at the bottom of
+`test/capital-centre-near-seat.test.mjs` asserts that exclusion rather than
+tolerating it, so nothing here pretends the criterion settled the fifth row.
+
+## Beni-Abbes (5201): the Owner nominated it, OpenStreetMap supplies the value
+
+The criterion could not reach this row, so the Owner raised it, reading the town
+centre off Google Maps on 2026-10-01 and supplying `30.1310763, -2.1663499`. Under
+the rule above that reading is a confirmation, not a value: what ships is the
+commune's own `admin_centre` node, [1573488063](https://www.openstreetmap.org/node/1573488063),
+re-read live from `api.openstreetmap.org` the same day and stored in the row as
+`osm.admin_centre_point` so every check re-runs offline.
+
+| Check | Repudiated centre | Published value (the node) |
+| --- | --- | --- |
+| exact-record median, 40 records over 16 files | 5,628 m | **139 m** |
+| the Owner's independent reading | 5,690 m | **268 m** |
+
+268 m is inside the 500 m at which two hands stop reading the same place, so the
+Owner's reading and OpenStreetMap's node are one claim about one town centre rather
+than two places, and the reading corroborates the move instead of merely labelling
+it: it is 5,690 m from the value being repudiated. The relation (6530989) also
+still carries the pre-reform `ref:ONS` `0807`, which is why this row joined on that
+code plus the name inside the mother wilaya.
+
+## Wilaya 52's own capital point is also wrong, and is not fixed here
+
+`wilayas.csv` puts wilaya 52 at `-2.1, 30.08`, which is 8,786 m from its capital's
+town centre. It is a separate record with a separate owner: **data PR #242 (#228)**
+edits every one of the five carriers that hold a wilaya point, adds
+`capital_commune_code` to the wilaya 52 row itself, ships the capital-point tests,
+and has already moved one such point (wilaya 16, from an `admin_centre` that fell
+in Kouba onto Alger Centre's own centre) on exactly this reasoning. Correcting it
+here would collide with that branch head-on, so it is reported instead.
+
+Two consequences for #242, both checked against its branch rather than guessed:
+
+- its capital-point check is **nearest commune centre**, and it still passes:
+  after this move 5201 is 8.79 km from the wilaya 52 point and the next nearest
+  centre, Igli (5205), is 26.89 km, so the nearest centre is still the capital.
+- its prose "**0.0 to 6.7 km** out for the rest" was measuring wilaya 52, and
+  becomes 0.0 to 8.8 km once this batch lands. That sentence needs updating when
+  the two branches meet.
+
+## Source
+
+The values are the same `admin_centre` nodes as the 2026-09-29 pull
+(`timestamp_osm_base` **2026-09-29T12:54:47Z**), and each of the four was
+**re-read from the OpenStreetMap node API on 2026-10-01** before it was written,
+so the number in the data was confirmed against the live node and not only
+against a committed capture. ODbL 1.0, (c) OpenStreetMap contributors.
+
+## The guard
+
+`test/capital-centre-near-seat.test.mjs`, which fetches nothing. For each of the
+five it holds all seven carriers to the ledger's value, tests the value against
+the commune outline, and asserts every claim that applies to that row **in both
+directions**: the corrected centre inside an absolute 2 km ceiling and the
+repudiated one outside it. A test that only checked the new value would have passed
+on the old one for three of the four, and "closer than before" is not a fact about
+one claim. Which claims apply is read from the row itself, so Beni-Abbes is held to
+the facility median and to the 500 m confirmation ceiling, and its failing
+wilaya-point leg is asserted as a failure the ledger has to admit rather than
+quietly left out. The ledger-shape test also refuses any row whose published value
+is not its own `admin_centre` node, which is how the confirmation rule is enforced
+rather than remembered.
+
+Dependents: 47 borrowed coordinates in four packages. 15 in
+`@geoalgeria/formation-professionnelle`, rebuilt by re-running its own generator
+against its committed capture, offline; and, through
+`scripts/sync-commune-centroid-dependents.mjs`, 14 in
+`@geoalgeria/industrie-pharmaceutique`, 12 in `@geoalgeria/agriculture` and 6 in
+`@geoalgeria/sante`. No record changed commune or wilaya, because every one of the
+four moves stays inside its own commune outline and the join asks the outline
+first.
+
+Four of those 14 were a gap a review caught, not this batch's own work.
+`@geoalgeria/industrie-pharmaceutique` was registered in that script for
+`commune_centroid` only, so its `wilaya_centroid` rows, which carry
+`commune: null` by design and therefore have no anchor to be compared against,
+were invisible to the staleness check in `scripts/validate-packages.mjs` as well:
+`07-dm-01`, `25-pp-06`, `25-pp-07` and `25-pp-14` were still sitting byte-exact on
+the repudiated Biskra and Constantine centres, 6.0 and 3.0 km out, while
+`@geoalgeria/agriculture` rows of the same `geo_method` had moved in both earlier
+batches. The `repudiated` anchor is the only rule that reaches them and it is
+exact: it moves a coordinate only where it is byte-equal to a value a corrections
+file repudiates, and only to that row's replacement.
+
+| File | Contents |
+| --- | --- |
+| `corrections-2026-10-01.json` | the 5 rows, each with its `decided_by`, the OSM relation and node, the node's own coordinate, and every independent claim measured against both the repudiated and the corrected value |
+
+---
+
+# The coordinate review, layers L0 to L2 (2026-10-01)
+
+Private tracker #243. Decision record:
+[`docs/adr/0001-coordinate-review-by-independent-votes.md`](../../docs/adr/0001-coordinate-review-by-independent-votes.md).
+Terms (Claim, Candidate, Vote, Copied claim, Consensus, Review queue):
+[`CONTEXT.md`](../../CONTEXT.md#coordinate-review).
+
+Each of the three rounds above was a hand-run script, and each re-learned the same
+lessons: one source is never enough, a source our value was copied from looks like
+agreement and proves nothing, and nearest-centre tests pass on wrong data where
+containment does not. This round is the engine instead: `scripts/review/`, layers as
+modules behind one interface, thresholds as named constants in one module with the
+measurement behind each, and a run that reads committed snapshots only, so
+`test/review-decisions.test.mjs` re-derives every decision offline.
+
+## The set, and what came out
+
+The 137 communes the 2026-09-29 audit left more than 3 km from their OpenStreetMap
+seat, or with no seat at all, minus Beni-Abbes (5201), which the capitals batch above
+settled: **136 reviewed**.
+
+| Outcome | Communes |
+| --- | --- |
+| Strong consensus fix, written to `corrections-2026-10-01b.json` | 68 |
+| Confirmed at the point we already publish (Ouled Brahim, 2612) | 1 |
+| Review queue, `review-queue-2026-10-01.json` | 67 |
+
+Every one of the 68 was won by the OpenStreetMap `admin_centre` seat, so every
+published value is ODbL and no second licence enters the package. The moves run from
+3,058 m to 22,910 m.
+
+The queue, by why the rules refused to decide it:
+
+| Reason | Communes | What it means |
+| --- | --- | --- |
+| `plain_consensus` | 32 | two Votes, but not three and not with the record median among them |
+| `no_consensus` | 23 | fewer than two independent Votes, usually because Wikidata carries the seat's own coordinate and the two are one reading |
+| `split_votes` | 5 | a Candidate outside the leading answer also has a Vote |
+| `move_over_cap` | 3 | Strong consensus for a move over 25 km, which the engine never makes on its own |
+| `no_candidates` | 4 | no open source states anything: no relation, so no seat, no Wikidata item and no outline to take a median inside |
+
+Tamridjet (646) is the case the prototype got wrong, and it is in the queue:
+OpenStreetMap's seat and Wikidata back a point 4.7 km west, the median of the exact
+records inside its outline backs the point we publish, 1.6 km away. Two Votes picked
+the western answer under a plain 2-vote rule; here the median's Vote for the other
+answer blocks it, which is what `split_votes` is for.
+
+## What the rules changed about the prototype
+
+Two readings of ADR 0001 had to be made explicit once there were four Candidates rather
+than the prototype's two. Both are in `scripts/review/votes.mjs`, and because they change
+what "two Votes for one Candidate" counts, both are written into the decision record, which
+the Owner confirmed on 2026-10-01 (ADR 0001, "Rules 2 to 4 in detail"), and into
+`CONTEXT.md` as the term **Answer**:
+
+- **Candidates that agree are one answer.** The seat, the Wikidata point and the
+  record median landing 400 m apart are the same answer stated three times. Counted as
+  rivals they take two Votes each and cancel out, and every commune would queue.
+- **Two Claims within the copy radius of each other cast one Vote between them.** They are
+  Copied claims of one another, whichever way the copying went, which is the sense
+  `CONTEXT.md` now records under that term. The per-Candidate rule already stops each of
+  them voting for the other's Candidate; without this they still vote through a third
+  Candidate in the same answer and the count reads as two independent Claims when it is
+  one. The ledger names the silenced one under `not_independent` as a `copy_of` the one
+  that stands. It bites often: 19 Wikidata items are within a metre of their commune's seat
+  node and 325 within 50 m of it, and over this run the rule silences a Vote on 24 of the 67
+  queued communes.
+
+## The optional L3 layer, and why the ledger is not it
+
+The Google agreement verdicts of ADR 0001 layer L3 live outside this repository, and
+`--verdicts <path>` reads them. Run with that file, the same rules settle **89** rather
+than 68 and queue 46 rather than 67, because a third Vote lifts most of the
+`plain_consensus` rows. The committed ledger is deliberately the run **without** it: a
+committed row has to re-derive from committed inputs, which is what
+`test/review-decisions.test.mjs` asserts, and no Google content, verdict or
+coordinate, enters this repository. `node scripts/review/run.mjs --write --verdicts …`
+refuses to run for the same reason.
+
+## Dependents
+
+`scripts/fix-commune-centres.mjs --write` applied the 68 to all seven flagship
+carriers. `scripts/fix-wilaya-capital-points.mjs` changed nothing: no wilaya capital
+commune is among the 68, so the 69 wilaya points already were their capital commune's
+centre. Through `scripts/sync-commune-centroid-dependents.mjs --write`, 11 borrowed
+coordinates moved in `@geoalgeria/sante` and 2 in `@geoalgeria/agriculture`;
+`@geoalgeria/formation-professionnelle` was rebuilt from its committed capture and 39
+of its commune-derived points followed. No record changed commune or wilaya.
+
+El Euch (3427) is the one row with a history to reconcile. Version 2.1.0 took it off a
+shared placeholder onto its relation's centroid, and this run moved it 9.7 km further,
+onto its own `admin_centre` node, on three independent Votes. Both repairs are real and
+they are in order, so the earlier one is recorded as superseded rather than deleted:
+`scripts/fix-jo-corrections.mjs` reads the correction ledgers and leaves a coordinate
+alone where a later ledger has moved it, instead of reading it as drift. It also leaves
+the relation-centroid carve-out at 5 communes rather than 6, which NOTICE, `data/README.md`,
+`communes.metadata.json` and `test/osm-derived-centre-count.test.mjs` all say; that test
+reads `data/README.md` now too, because the file states the split behind the total and
+nothing was holding it to it.
+
+## The licence count
+
+The carve-out goes from 256 to **323** OpenStreetMap-derived commune centres: 318 from
+an `admin_centre` node (56 on 2026-09-27, 189 on 2026-09-29, 5 on 2026-10-01 and these
+68) and 5 from a relation centroid. The other 1,218 commune coordinates carry no
+recorded source. `test/osm-derived-centre-count.test.mjs` now derives that from
+`CORRECTION_FILES` rather than a hand-written list of ledgers, which is how this batch
+could otherwise have landed applied and uncounted, and it reads each consensus row's
+own licence from the Candidate that won it.
+
+11 of the 27 entries in `containment-exceptions.json` were resolved by these fixes, so
+that list is down to 16, rebuilt with
+`node scripts/build-commune-boundary-cache.mjs --write`. 14 of the 16 are in the review
+queue; the other 2 sit outside their own commune but within 3 km of their seat, so this
+engine never looked at them.
+
+## What release day still owes
+
+ADR 0001 rule 5 says a commune still undecided at release "keeps its published point and is
+listed in `record-exceptions.json` with its reason". That file,
+`research/_wilaya-containment/record-exceptions.json`, is about records that fall outside
+their declared wilaya, which is a different question from a commune centre, and its guard
+(`test/record-in-declared-wilaya.test.mjs`) finds the same set as before this batch, so
+nothing was added to it. 16 of the 67 undecided centres are listed in
+`containment-exceptions.json` because they sit outside their own commune; the other 51 exist
+only in `review-queue-2026-10-01.json`. If the Owner wants every undecided commune named in
+a committed list at release, that list is the queue file, and saying so in rule 5 is the
+amendment to make.
+
+## Measuring the thresholds
+
+Every number in `scripts/review/thresholds.mjs` is measured on the committed snapshots,
+and the measurement is in the comment beside it. They were taken with the engine's own
+helpers:
+
+The run is replayed, not re-run: `rewind()` puts the corrected communes back at their
+`from`, which is the state the measurements were taken on and the state
+`test/review-decisions.test.mjs` asserts against.
+
+```js
+// seat to record median, over the communes that have both: the AGREEMENT_KM
+// and COPY_RADIUS_M measurements
+import { loadSnapshots } from "./scripts/review/snapshots.mjs";
+import { geometricMedian } from "./scripts/review/layers/l2-record-median.mjs";
+import { metresBetween } from "./scripts/lib/seat-evidence.mjs";
+const s = loadSnapshots();
+const d = [];
+for (const c of s.communes) {
+  const seat = s.seats.byCommune.get(c.code_commune)?.seat;
+  const pts = s.records.byCommune.get(c.code_commune)?.points ?? [];
+  if (!seat || pts.length < 10) continue;
+  const m = geometricMedian(pts);
+  d.push(metresBetween(m[0], m[1], seat[0], seat[1]));
+}
+d.sort((a, b) => a - b);
+```
+
+The Wikidata copy figures in `COPY_RADIUS_M` come from the same snapshot, by distance
+rather than by equality, so the radius each one is measured at is stated with it:
+
+```js
+// 212 published centres within a metre of their commune's Wikidata coordinate, 531
+// within 50 m; 19 of those coordinates within a metre of their commune's seat node,
+// 325 within 50 m
+const near = (a, b, m) => metresBetween(a[0], a[1], b[0], b[1]) <= m;
+```
+
+`research/_commune-centres/wikidata-reference.json` is the CC0 snapshot the review reads
+for its L1 Wikidata Claim: 1,536 commune items, every one carrying P625, queried
+2026-10-01. Refresh it in place with
+`node scripts/review/wikidata-reference.mjs --fetch` and review the diff; the engine
+itself never queries live.
+
+| File | Contents |
+| --- | --- |
+| `corrections-2026-10-01b.json` | the 68 fixes, each with `decided_by: "consensus"`, the licence of the winning Candidate, every Candidate with its distance and Vote count, and every Vote with its source, snapshot date, distance and copy flag |
+| `review-queue-2026-10-01.json` | the 67 undecided and the 1 confirmed, in the same shape plus the reason, for the Owner's review page |
+| `wikidata-reference.json` | the CC0 Wikidata P625 snapshot, 1,536 communes, queried 2026-10-01 |

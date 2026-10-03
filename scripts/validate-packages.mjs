@@ -43,14 +43,14 @@ import {
 // Each package's own stats() lives here, beside its provenance config. The
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
-import { MIGRATIONS } from "./lib/v2-transforms.mjs";
+import { MIGRATIONS, migrationErrors } from "./lib/v2-transforms.mjs";
 import {
   canonicalCommuneCodes,
   canonicalCommuneForCode,
   canonicalCommuneForCurrentLabel,
   canonicalCommunes,
 } from "./lib/commune-index.mjs";
-import { licenceTermsErrors } from "./lib/licence-terms.mjs";
+import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } from "./lib/licence-terms.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
@@ -842,6 +842,57 @@ function validateMergedIds(pkgs) {
   }
 }
 
+// One external identifier, one record. A Wikidata item or an OpenStreetMap
+// element is a single real place, so two records in the same package citing the
+// same one are the same place published twice: a wrong match, or a merge that was
+// never finished. Neither fails the schema, and the id checks above only look at
+// the package's own ids.
+//
+// Asserted per package rather than everywhere at once, because `tourisme` ships
+// 120 items cited twice across its five files (an attraction that is also a
+// historic site, and Wikidata items that OpenStreetMap tags on two elements).
+// Whether those are duplicates or two legitimate facets of one place is its own
+// question, on its own data; a package not listed here is reported and not failed.
+const REF_UNIQUE_PACKAGES = new Set(["sante"]);
+function validateRefUniqueness(pkgs) {
+  for (const pkg of pkgs) {
+    const dataDir = join(ROOT, "packages", pkg, "data");
+    if (!existsSync(dataDir)) continue;
+    const owner = new Map(); // "wikidata:Q1" -> "file.json#id"
+    const clashes = [];
+    let cited = 0;
+    for (const file of readdirSync(dataDir)) {
+      if (!file.endsWith(".json") || file === "metadata.json" || file === "retired-ids.json") continue;
+      let arr;
+      try {
+        arr = readJson(join(dataDir, file));
+      } catch {
+        continue; // the dataset validator reports malformed JSON with context
+      }
+      if (!Array.isArray(arr)) continue;
+      for (const r of arr)
+        for (const key of ["wikidata", "osm"]) {
+          const value = r?.refs?.[key];
+          if (typeof value !== "string" || !value) continue;
+          cited++;
+          const ref = `${key}:${value}`;
+          const where = `${file}#${r.id}`;
+          if (owner.has(ref)) clashes.push(`${ref} on ${owner.get(ref)} and ${where}`);
+          else owner.set(ref, where);
+        }
+    }
+    if (clashes.length) {
+      const detail =
+        `${pkg}: ${clashes.length} external id(s) cited by more than one record: ` +
+        clashes.slice(0, 5).join("; ");
+      if (REF_UNIQUE_PACKAGES.has(pkg)) fail(detail);
+      else console.log(`  NOTE: ${detail}`);
+    } else if (cited) {
+      console.log(`  OK: ${pkg}: ${cited} external ref(s), none cited twice`);
+    }
+  }
+}
+
 // Count CSV data records (excluding the header), honouring RFC-4180 quoted
 // fields: newlines inside double-quoted values do not start a new record, and
 // blank lines (including trailing ones) are ignored. A naive split("\n") would
@@ -1300,7 +1351,27 @@ function validateRetiredIds(pkgs) {
       fail(
         `${pkg}/retired-ids.json: retired id(s) are live again: ${reused.slice(0, 5).join(", ")}`,
       );
-    } else {
+    }
+
+    // `migrations` says where a retired id's data went, for an id whose record
+    // was folded into another one rather than removed. It is a public forwarding
+    // table, so a consumer must be able to follow it: a key has to be an id this
+    // ledger actually reserves, and the target has to be a record that still
+    // ships and is not itself retired, or the forward is a dead end.
+    const migrations = document.migrations;
+    if (migrations != null) {
+      const errors = migrationErrors(migrations, new Set(ids));
+      // the shape is shared with the generator; whether the target still ships
+      // is only knowable here, against the package's live records
+      if (!errors.length && typeof migrations === "object")
+        for (const [id, entry] of Object.entries(migrations))
+          if (!live.has(entry.merged_into))
+            errors.push(`migrations[${JSON.stringify(id)}].merged_into ${entry.merged_into} is not a record this package ships`);
+      for (const error of errors) fail(`${pkg}/retired-ids.json: ${error}`);
+      if (!errors.length)
+        console.log(`  OK: ${pkg}: ${Object.keys(migrations).length} retired id(s) forward to a live record`);
+    }
+    if (!reused.length) {
       console.log(`  OK: ${pkg} — ${ids.length} retired ids remain reserved`);
     }
   }
@@ -1581,16 +1652,35 @@ function validateLicenceTerms(pkgs) {
         continue;
       }
     }
+    const licenceText = readFileSync(licencePath, "utf-8");
     const problems = licenceTermsErrors({
       name: pkg,
       manifest,
       metadata,
-      licenceText: readFileSync(licencePath, "utf-8"),
+      licenceText,
       noticeText: existsSync(noticePath) ? readFileSync(noticePath, "utf-8") : null,
       members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
     });
+
+    // The descriptors a package publishes under data/ carry a `license` of their own,
+    // and nothing read them against the package class: geoalgeria moved to
+    // SEE LICENSE IN LICENSE and data/geojson/communes.metadata.json kept the SPDX
+    // expression the manifest used before the move.
+    const descriptors = [];
+    for (const rel of publishedMetadataPaths(dir)) {
+      try {
+        descriptors.push({ path: rel, json: readJson(join(dir, rel)) });
+      } catch (e) {
+        fail(`${pkg}/${rel}: cannot read for the licence check, ${e.message}`);
+      }
+    }
+    problems.push(...descriptorTermsErrors({ name: pkg, manifest, licenceText, descriptors }));
+
     for (const problem of problems) fail(problem);
-    if (!problems.length) console.log(`  OK: ${pkg} declares ${JSON.stringify(manifest.license)} and its LICENSE says so`);
+    if (!problems.length)
+      console.log(
+        `  OK: ${pkg} declares ${JSON.stringify(manifest.license)}, its LICENSE says so, and its ${descriptors.length} data descriptor(s) state the same terms`,
+      );
   }
 }
 
@@ -1612,13 +1702,18 @@ function validateNoEmDash(pkgs) {
         fail(`${pkg}/${rel}: cannot read for the em-dash check, ${e.message}`);
       }
     }
-    const geoDir = join(dir, "data", "geojson");
-    if (!existsSync(geoDir)) continue;
-    for (const name of readdirSync(geoDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
-      try {
-        files.push({ label: `${pkg}/data/geojson/${name}`, json: readJson(join(geoDir, name)) });
-      } catch (e) {
-        fail(`${pkg}/data/geojson/${name}: cannot read for the em-dash check, ${e.message}`);
+    // Every published *.metadata.json, not only the GeoJSON sidecars: the wilaya-capital
+    // sidecar of #228 is the same kind of hand-written published prose and was not walked.
+    for (const sub of [["data"], ["data", "geojson"]]) {
+      const subDir = join(dir, ...sub);
+      if (!existsSync(subDir)) continue;
+      for (const name of readdirSync(subDir).filter((f) => f.endsWith(".metadata.json")).sort()) {
+        const label = `${pkg}/${[...sub, name].join("/")}`;
+        try {
+          files.push({ label, json: readJson(join(subDir, name)) });
+        } catch (e) {
+          fail(`${label}: cannot read for the em-dash check, ${e.message}`);
+        }
       }
     }
   }
@@ -1806,6 +1901,9 @@ reportCentroidAnchors(!only);
 
 console.log(`\n[cross-file id uniqueness (merged export surfaces)]`);
 validateMergedIds(only ? [only] : Object.keys(MERGED_ID_NAMESPACES));
+
+console.log(`\n[one external identifier, one record]`);
+validateRefUniqueness(only ? [only] : readdirSync(join(ROOT, "packages")).sort());
 
 console.log(`\n[retired ids never become live again]`);
 validateRetiredIds(only ? [only] : readdirSync(join(ROOT, "packages")).sort());

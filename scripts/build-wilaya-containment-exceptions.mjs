@@ -167,7 +167,7 @@ for (const file of files) {
 }
 
 const doc = {
-  generated: "2026-09-29",
+  generated: "2026-10-01",
   guard: "test/record-in-declared-wilaya.test.mjs",
   ref: REF,
   note:
