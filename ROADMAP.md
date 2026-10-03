@@ -139,6 +139,34 @@ reads as further along than it is.
   reconciliation pass against El Aricha's new extent. Not fixed in this PR.
   _(logged 2026-08-09)_
 
+- [ ] **Coordinate review engine, P2 to P4**, follow-ups to the coordinate
+  review by independent votes (data ADR 0001, PR #252): import Owner verdicts
+  from the review page into the ledger as Owner Votes so the page reads the
+  engine's own Review queue; run sector records through the same voting module
+  into `quality/overrides/`, starting with the ambiguous rows the 2026-10 wilaya
+  triage left (poste 55, tourisme 40, protection-civile 24); a weekly scheduled
+  drift watch that refreshes snapshots, re-votes accepted points and opens an
+  issue on change. The replay test reads live package records for its
+  record-median Vote, so any data change shifts its evidence by metres: freeze
+  that input per run.
+  _(logged 2026-10-01, updated 2026-10-03)_
+
+- [ ] **`communes.csv` and `communes.geojson` disagree with `algeria.json` on
+  187 commune postal codes**: 132 where the mirror is null and the table has a
+  value, 54 where both differ, 1 the other way.
+  `scripts/fix-commune-postal-codes.mjs` writes only the four JSON tables,
+  never the geojson/csv/sql/ecommerce mirrors, so consumers of those mirrors
+  read wrong postal codes today.
+  _(logged 2026-10-01)_
+
+- [ ] **`fix-jo-corrections.mjs` writes CSV and SQL outside `--target`**: its
+  CSV/SQL/ecommerce writers run at module top level against
+  `packages/dataset/data` unconditionally, even under `--target`. Harmless
+  behind the supersede guard PR #252 added to all four writers, and the test no
+  longer runs it against the real carriers (`--root`, PR #257), but the scoping
+  bug itself remains.
+  _(logged 2026-10-01)_
+
 - [ ] **The `phone_code` of wilayas 1 to 58 has no established official source.**
   The 2026 cohort (59 to 69) now carries its evidence in
   `data/phone-code-provenance.json`, and the answer there is `null`: ARPCE
@@ -470,6 +498,19 @@ reads as further along than it is.
 ---
 
 ## Recently closed
+
+- **Release batch 2026-10** (2026-09-30): `geoalgeria` 2.2.0 published with the
+  551 dairas of decree 26-253 (#240, PR #243), a commune-centre audit that
+  corrected 189 records and put 251 centres on OSM-derived coordinates (#237),
+  a 2026 creation year for wilayas 59-69 (#238), and the licence-terms cleanup
+  (`SEE LICENSE IN LICENSE`, `data/poste` carve-out, prose
+  `conditionsOfAccess` for buses/transport) (#236). `w55`/`w47` boundaries were
+  rebuilt from member communes with zero overlaps (#239). `@geoalgeria/sante`
+  2.0.4 shipped a generator rebuild with 13 owner-verified hospital locations,
+  and `@geoalgeria/cliniques` followed at 1.1.3. Version PR #244 landed
+  `geoalgeria` 2.2.0 plus 16 patches; #246 put the `transport`/`pharma`
+  umbrellas on the staged release path (`transport` 2.0.6 first, see
+  RELEASING.md). Docs normalized across the batch (#235).
 
 - **`geoalgeria` 2.1.0, the Official Journal corrections** (2026-09-26): issue
   #221 from @djamel2288 led to a full audit of the commune list of Law 26-06
