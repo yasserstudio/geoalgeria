@@ -1,5 +1,11 @@
 # @geoalgeria/ferroviaire
 
+## 2.0.5
+
+### Patch Changes
+
+- b1a1683: `data/metadata.json` now states the package's own terms, `MIT AND ODbL-1.0`, as `package.json` always has. It said `CC0-1.0 AND ODbL-1.0`, naming the Wikidata source's licence as the package's; that licence is still recorded where it belongs, on the Wikidata entry of `sources[]`. The root catalog `index.json` follows. No record changes.
+
 ## 2.0.4
 
 ### Patch Changes
