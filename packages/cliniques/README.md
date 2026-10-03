@@ -72,16 +72,18 @@ const urgences = all.filter((c) => c.emergency);
 > public register lists private clinics. Counts move as OpenStreetMap is edited;
 > each rebuild reflects the current state of the map.
 
-> **It never republishes an OSM element [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) already ships, and the two must not be summed.**
-> `sante` is the *registry* tier: 667 public establishments (CHU, EPH, EHS, EPSP)
+> **It never republishes a hospital [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) already ships, and the two must not be summed.**
+> `sante` is the *registry* tier: 668 public establishments (CHU, EPH, EHS, EPSP)
 > from the Ministry of Health. This package is the *community* tier. 116 of
-> sante's records reference an OSM element by id, and every one of those elements
-> is excluded here **by construction**, so no place is published twice under the
-> same OSM element. Be precise about what that does and does not guarantee:
-> sante's other 551 records carry no OSM reference at all, so the same physical
+> sante's records reference an OSM element by id. The 83 of them on a hospital
+> (CHU, EPH, EHS) are excluded here **by construction**, so no hospital is
+> published twice under the same OSM element. The other 33 are EPSP records,
+> whose element anchors the entity on one of the proximity facilities it runs,
+> and that facility stays here: entity in `sante`, facility here. Be precise about what that does and does not guarantee:
+> sante's other 552 records carry no OSM reference at all, so the same physical
 > establishment can still appear in both packages, under different coordinates
 > and different ids, with nothing mechanical to detect it. The two describe
-> different tiers of a health system, so adding 667 to 1,917 counts nothing real.
+> different tiers of a health system, so adding 668 to 1,917 counts nothing real.
 
 **Type is inferred from the name.** A polyclinique names itself
 polyclinique/عيادة متعددة الخدمات, a salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -90,23 +92,23 @@ matched *before* the bare word "hôpital"/مستشفى, because Algerian mappers
 word for proximity structures too (10 records name themselves both ways, e.g.
 "Polyclinique des consultations spécialisées" tagged `name:ar=مستشفى بودغن`). The
 plain word "clinique"/عيادة/مصحة counts as a facility word too, one rank below
-the three specific types. Everything left over is `clinique`, including the 306
+the three specific types. Everything left over is `clinique`, including the 307
 unnamed clinic-tagged points, which the tag alone already identifies as care
 facilities.
 
-**What was excluded, and why.** The pull returns 2,962 OSM elements; 978 are
+**What was excluded, and why.** The pull returns 2,962 OSM elements; 979 are
 dropped before anything is emitted:
 
 | Excluded | Count | Reason |
 | --- | --- | --- |
-| `hopital` | 369 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, the registry tier (`@geoalgeria/sante`) |
+| `hopital` | 368 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, the registry tier (`@geoalgeria/sante`) |
 | `unnamed_hospital` | 249 | no name at all *and* tagged as a hospital, so it cannot be told apart from the registry tier |
-| `sante_overlap` | 79 | the OSM element is one a `@geoalgeria/sante` **hospital-tier** record (CHU/EPH/EHS) already ships, whatever it is named here. Elements referenced by a sante *EPSP* record are not excluded: there the reference is a geocoding anchor on the entity's seat and the element is usually a facility this package should carry |
+| `sante_overlap` | 82 | the OSM element is one a `@geoalgeria/sante` **hospital-tier** record (CHU/EPH/EHS) already ships, whatever it is named here. Elements referenced by a sante *EPSP* record are not excluded: there the reference is a geocoding anchor on the entity's seat and the element is usually a facility this package should carry |
 | `cabinet` | 96 | single-practitioner practice: the word cabinet, or a name that is just a practitioner (Dr X, الطبيب …) |
 | `epsp_entity` | 105 | the EPSP administrative entity itself (its facilities stay) |
 | `hospital_subfeature` | 54 | part of a hospital mapped as its own point: an entrance, a ward, "Service de radiologie", a bare "urgences". When the name also says hospital the record is reported as `hopital` instead |
 | `pharmacie` | 6 | pharmacy, belongs to [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) |
-| `chu` | 15 | centre hospitalo-universitaire |
+| `chu` | 14 | centre hospitalo-universitaire |
 | `institut_pasteur` | 3 | research institute rather than a care facility |
 | `paramedical` | 2 | paramedical training school, education rather than care |
 

@@ -1258,37 +1258,49 @@ function retiredIdsContent(ids, migrations = null) {
  *  is append-only: a generator recomputes only the migrations it can see this
  *  run, and a record merged in an earlier release is no longer visible in the
  *  committed data, so its entry has to be carried forward rather than recomputed. */
-export function readRetiredMigrations(dir) {
-  const path = join(dir, "retired-ids.json");
-  if (!existsSync(path)) return {};
-  const document = JSON.parse(readFileSync(path, "utf-8"));
-  const migrations = document.migrations;
-  if (migrations == null) return {};
-  if (typeof migrations !== "object" || Array.isArray(migrations))
-    throw new Error(`${path}: expected an object at migrations`);
-  const reserved = new Set((Array.isArray(document.ids) ? document.ids : []).map(String));
+/** What is wrong with a ledger's `migrations` map, one message per fault, each
+ *  starting `migrations[...]`. `reserved` is the ledger's own retired ids. The
+ *  generator throws on the first message and validate-packages reports them all,
+ *  so the two cannot drift into two different contracts. */
+export function migrationErrors(migrations, reserved) {
+  if (migrations == null) return [];
+  if (typeof migrations !== "object" || Array.isArray(migrations)) return ["migrations must be an object"];
+  const errors = [];
   for (const [id, entry] of Object.entries(migrations)) {
-    const where = `${path}: migrations[${JSON.stringify(id)}]`;
-    if (!reserved.has(id)) throw new Error(`${where} is not one of the retired ids`);
-    if (entry == null || typeof entry !== "object" || Array.isArray(entry))
-      throw new Error(`${where} must be an object`);
-    if (typeof entry.merged_into !== "string" || !entry.merged_into)
-      throw new Error(`${where}.merged_into must be a non-empty string`);
-    if (entry.merged_into === id) throw new Error(`${where}.merged_into points at itself`);
-    if (reserved.has(entry.merged_into))
-      throw new Error(`${where}.merged_into is itself retired`);
-    if (typeof entry.note !== "string" || !entry.note)
-      throw new Error(`${where}.note must be a non-empty string`);
+    const where = `migrations[${JSON.stringify(id)}]`;
+    if (!reserved.has(id)) { errors.push(`${where} is not one of the retired ids`); continue; }
+    if (entry == null || typeof entry !== "object" || Array.isArray(entry)) {
+      errors.push(`${where} must be an object`);
+      continue;
+    }
+    if (typeof entry.merged_into !== "string" || !entry.merged_into) {
+      errors.push(`${where}.merged_into must be a non-empty string`);
+      continue;
+    }
+    if (entry.merged_into === id) errors.push(`${where}.merged_into points at itself`);
+    else if (reserved.has(entry.merged_into)) errors.push(`${where}.merged_into ${entry.merged_into} is itself retired`);
+    if (typeof entry.note !== "string" || !entry.note) errors.push(`${where}.note must be a non-empty string`);
     if (
       entry.msp_posts != null &&
       (!Array.isArray(entry.msp_posts) ||
         !entry.msp_posts.length ||
         entry.msp_posts.some((post) => typeof post !== "string" || !post))
     ) {
-      throw new Error(`${where}.msp_posts must be a non-empty array of non-empty strings`);
+      errors.push(`${where}.msp_posts must be a non-empty array of non-empty strings`);
     }
   }
-  return migrations;
+  return errors;
+}
+
+/** Read and validate a package's `migrations` map (see migrationErrors). */
+export function readRetiredMigrations(dir) {
+  const path = join(dir, "retired-ids.json");
+  if (!existsSync(path)) return {};
+  const document = JSON.parse(readFileSync(path, "utf-8"));
+  const reserved = new Set((Array.isArray(document.ids) ? document.ids : []).map(String));
+  const [first] = migrationErrors(document.migrations, reserved);
+  if (first) throw new Error(`${path}: ${first}`);
+  return document.migrations ?? {};
 }
 
 /** Read and validate a package's persistent retired-id ledger. */

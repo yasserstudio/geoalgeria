@@ -43,7 +43,7 @@ import {
 // Each package's own stats() lives here, beside its provenance config. The
 // validator re-runs it so the published stats block is checked against the
 // shipped records rather than trusted.
-import { MIGRATIONS } from "./lib/v2-transforms.mjs";
+import { MIGRATIONS, migrationErrors } from "./lib/v2-transforms.mjs";
 import {
   canonicalCommuneCodes,
   canonicalCommuneForCode,
@@ -1359,43 +1359,17 @@ function validateRetiredIds(pkgs) {
     // ledger actually reserves, and the target has to be a record that still
     // ships and is not itself retired, or the forward is a dead end.
     const migrations = document.migrations;
-    const reserved = new Set(ids);
     if (migrations != null) {
-      if (typeof migrations !== "object" || Array.isArray(migrations)) {
-        fail(`${pkg}/retired-ids.json: migrations must be an object`);
-      } else {
-        let bad = 0;
-        for (const [id, entry] of Object.entries(migrations)) {
-          const where = `${pkg}/retired-ids.json: migrations[${JSON.stringify(id)}]`;
-          if (!reserved.has(id)) { fail(`${where} is not one of the retired ids`); bad++; continue; }
-          if (entry == null || typeof entry !== "object" || Array.isArray(entry)) {
-            fail(`${where} must be an object`); bad++; continue;
-          }
-          if (typeof entry.merged_into !== "string" || !entry.merged_into) {
-            fail(`${where}.merged_into must be a non-empty string`); bad++; continue;
-          }
-          if (typeof entry.note !== "string" || !entry.note) { fail(`${where}.note must be a non-empty string`); bad++; }
-          if (
-            entry.msp_posts != null &&
-            (!Array.isArray(entry.msp_posts) ||
-              !entry.msp_posts.length ||
-              entry.msp_posts.some((post) => typeof post !== "string" || !post))
-          ) {
-            fail(`${where}.msp_posts must be a non-empty array of non-empty strings`); bad++;
-          }
-          if (reserved.has(entry.merged_into)) {
-            fail(`${where}.merged_into ${entry.merged_into} is itself retired`); bad++; continue;
-          }
-          if (!live.has(entry.merged_into)) {
-            fail(`${where}.merged_into ${entry.merged_into} is not a record this package ships`); bad++;
-          }
-        }
-        if (!bad) {
-          console.log(
-            `  OK: ${pkg}: ${Object.keys(migrations).length} retired id(s) forward to a live record`,
-          );
-        }
-      }
+      const errors = migrationErrors(migrations, new Set(ids));
+      // the shape is shared with the generator; whether the target still ships
+      // is only knowable here, against the package's live records
+      if (!errors.length && typeof migrations === "object")
+        for (const [id, entry] of Object.entries(migrations))
+          if (!live.has(entry.merged_into))
+            errors.push(`migrations[${JSON.stringify(id)}].merged_into ${entry.merged_into} is not a record this package ships`);
+      for (const error of errors) fail(`${pkg}/retired-ids.json: ${error}`);
+      if (!errors.length)
+        console.log(`  OK: ${pkg}: ${Object.keys(migrations).length} retired id(s) forward to a live record`);
     }
     if (!reused.length) {
       console.log(`  OK: ${pkg} — ${ids.length} retired ids remain reserved`);

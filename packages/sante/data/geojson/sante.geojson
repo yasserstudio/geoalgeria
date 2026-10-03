@@ -1884,7 +1884,7 @@
         "id": "05-epsp-01",
         "name": "Etablissement Public de Santé de Proximité Ain Djasser",
         "name_fr": "Etablissement Public de Santé de Proximité Ain Djasser",
-        "name_ar": "المؤسسة العمومية للصحة الجوارية عين التوتة",
+        "name_ar": null,
         "wilaya_code": "05",
         "commune_code": "0519",
         "commune": "Ain Djasser",
@@ -1894,8 +1894,7 @@
         "geo_method": "commune_centroid",
         "source": "msp",
         "refs": {
-          "msp": "3902",
-          "msp_twin": "3905"
+          "msp": "3902"
         },
         "type": "epsp",
         "type_label_fr": "Établissement Public de Santé de Proximité",
@@ -2199,6 +2198,38 @@
         "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
         "sector": "public",
         "slug": "etablissement-public-de-sante-de-proximite-theniet-el-abed"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.919839,
+          35.399109
+        ]
+      },
+      "properties": {
+        "id": "05-epsp-13",
+        "name": "المؤسسة العمومية للصحة الجوارية عين التوتة",
+        "name_fr": null,
+        "name_ar": "المؤسسة العمومية للصحة الجوارية عين التوتة",
+        "wilaya_code": "05",
+        "commune_code": "0545",
+        "commune": "Aïn Touta",
+        "lat": 35.399109,
+        "lng": 5.919839,
+        "geo_precision": "approximate",
+        "geo_method": "commune_centroid",
+        "source": "msp",
+        "refs": {
+          "msp": "3905"
+        },
+        "type": "epsp",
+        "type_label_fr": "Établissement Public de Santé de Proximité",
+        "type_label_ar": "المؤسسة العمومية للصحة الجوارية",
+        "sector": "public",
+        "slug": "%d8%a7%d9%84%d9%85%d8%a4%d8%b3%d8%b3%d8%a9-%d8%a7%d9%84%d8%b9%d9%85%d9%88%d9%85%d9%8a%d8%a9-%d9%84%d9%84%d8%b5%d8%ad%d8%a9-%d8%a7%d9%84%d8%ac%d9%88%d8%a7%d8%b1%d9%8a%d8%a9-%d8%b9%d9%8a%d9%86-%d8%a7-2"
       }
     },
     {

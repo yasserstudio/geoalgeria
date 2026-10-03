@@ -72,17 +72,20 @@ const urgences = all.filter((c) => c.emergency);
 > comptes pour le volet registre que ce paquet exclut, et aucun registre public
 > ne liste les cliniques privées. Les chiffres bougent au fil des contributions.
 
-> **Ce paquet ne republie jamais un élément OSM déjà publié par [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante), et les deux ne s'additionnent pas.**
-> `sante` est le volet *registre* : 667 établissements publics (CHU, EPH, EHS,
+> **Ce paquet ne republie jamais un hôpital déjà publié par [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante), et les deux ne s'additionnent pas.**
+> `sante` est le volet *registre* : 668 établissements publics (CHU, EPH, EHS,
 > EPSP) du Ministère de la Santé. Ce paquet est le volet *communautaire*. 116 des
-> enregistrements de `sante` référencent un élément OSM par identifiant, et
-> chacun de ces éléments est exclu ici **par construction** : aucun lieu n'est
-> publié deux fois sous le même élément OSM. Soyons précis sur ce que cela ne
-> garantit pas : les 551 autres enregistrements de `sante` ne portent aucune
+> enregistrements de `sante` référencent un élément OSM par identifiant. Les 83
+> qui portent sur un hôpital (CHU, EPH, EHS) sont exclus ici **par
+> construction** : aucun hôpital n'est publié deux fois sous le même élément OSM.
+> Les 33 autres sont des EPSP, dont l'élément ancre l'entité sur l'une des
+> structures de proximité qu'elle gère, et cette structure reste ici : l'entité
+> dans `sante`, la structure ici. Soyons précis sur ce que cela ne
+> garantit pas : les 552 autres enregistrements de `sante` ne portent aucune
 > référence OSM, donc un même établissement physique peut malgré tout figurer
 > dans les deux paquets, sous des coordonnées et des identifiants différents,
 > sans qu'aucun mécanisme ne puisse le détecter. Les deux décrivent des volets
-> différents : additionner 667 et 1 917 ne compte rien de réel.
+> différents : additionner 668 et 1 917 ne compte rien de réel.
 
 **Le type est déduit du nom.** Une polyclinique se nomme
 polyclinique/عيادة متعددة الخدمات, une salle de soins قاعة علاج/مستوصف/dispensaire,
@@ -92,22 +95,22 @@ algériens emploient aussi pour des structures de proximité (10 enregistrements
 portent les deux, par ex. « Polyclinique des consultations spécialisées » avec
 `name:ar=مستشفى بودغن`). Le mot simple « clinique »/عيادة/مصحة compte aussi comme
 mot de structure, un rang sous les trois types précis. Le reste est `clinique`,
-y compris les 276 points non nommés tagués `clinic`, que le tag suffit à
+y compris les 307 points non nommés tagués `clinic`, que le tag suffit à
 identifier comme structures de soins.
 
-**Ce qui a été exclu, et pourquoi.** L'extraction ramène 2 936 éléments OSM ;
-990 sont écartés avant toute émission :
+**Ce qui a été exclu, et pourquoi.** L'extraction ramène 2 962 éléments OSM ;
+979 sont écartés avant toute émission :
 
 | Exclu | Nombre | Raison |
 | --- | --- | --- |
-| `hopital` | 359 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, le volet registre (`@geoalgeria/sante`) |
-| `unnamed_hospital` | 239 | aucun nom *et* tagué hôpital, donc indistinguable du volet registre |
-| `sante_overlap` | 89 | l'élément OSM est déjà publié par un enregistrement **hospitalier** (CHU/EPH/EHS) de `@geoalgeria/sante`, quel que soit son nom ici. Les éléments référencés par un enregistrement *EPSP* de sante ne sont pas exclus : la référence y sert d'ancrage de géocodage sur le siège de l'entité, et l'élément visé est en général une structure que ce paquet doit porter |
+| `hopital` | 368 | hôpital / مستشفى / المؤسسة الاستشفائية / EPH / EHS / EHU / centre anti-cancer, le volet registre (`@geoalgeria/sante`) |
+| `unnamed_hospital` | 249 | aucun nom *et* tagué hôpital, donc indistinguable du volet registre |
+| `sante_overlap` | 82 | l'élément OSM est déjà publié par un enregistrement **hospitalier** (CHU/EPH/EHS) de `@geoalgeria/sante`, quel que soit son nom ici. Les éléments référencés par un enregistrement *EPSP* de sante ne sont pas exclus : la référence y sert d'ancrage de géocodage sur le siège de l'entité, et l'élément visé est en général une structure que ce paquet doit porter |
 | `cabinet` | 96 | cabinet individuel : le mot cabinet, ou un nom qui n'est qu'un praticien (Dr X, الطبيب …) |
-| `epsp_entity` | 92 | l'entité administrative EPSP elle-même (ses structures restent) |
-| `hospital_subfeature` | 58 | partie d'un hôpital cartographiée à part : une entrée, un service, « Service de radiologie », un simple « urgences » |
+| `epsp_entity` | 105 | l'entité administrative EPSP elle-même (ses structures restent) |
+| `hospital_subfeature` | 54 | partie d'un hôpital cartographiée à part : une entrée, un service, « Service de radiologie », un simple « urgences » |
 | `pharmacie` | 6 | pharmacie, relève de [`@geoalgeria/pharmacies`](https://www.npmjs.com/package/@geoalgeria/pharmacies) |
-| `chu` | 15 | centre hospitalo-universitaire |
+| `chu` | 14 | centre hospitalo-universitaire |
 | `institut_pasteur` | 3 | institut de recherche plutôt que structure de soins |
 | `paramedical` | 2 | école paramédicale, formation plutôt que soins |
 

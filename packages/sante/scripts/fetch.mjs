@@ -730,7 +730,7 @@ export function pairPosts(fr, ar, wil, verdicts = null) {
   }
   cands.sort((p, q) => q[0] - p[0]);
   for (const [s, f, a] of cands) {
-    if (s < 0.5 || usedF.has(f) || usedA.has(a)) continue;
+    if (s < 0.5 || usedF.has(f) || usedA.has(a) || namesTwoCommunes(f, a)) continue;
     usedF.add(f); usedA.add(a); out.push({ fr: f, ar: a });
   }
 
@@ -741,7 +741,9 @@ export function pairPosts(fr, ar, wil, verdicts = null) {
   for (const f of fr) if (!usedF.has(f) && f.specialty) sslot(f.specialty).f.push(f);
   for (const a of ar) if (!usedA.has(a) && a.specialty) sslot(a.specialty).a.push(a);
   for (const { f, a } of byS.values()) {
-    if (f.length === 1 && a.length === 1) { usedF.add(f[0]); usedA.add(a[0]); out.push({ fr: f[0], ar: a[0] }); }
+    if (f.length === 1 && a.length === 1 && !namesTwoCommunes(f[0], a[0])) {
+      usedF.add(f[0]); usedA.add(a[0]); out.push({ fr: f[0], ar: a[0] });
+    }
   }
 
   const byC = new Map();
@@ -936,10 +938,7 @@ export function pairTwinPosts(fr, ar, wil, usedF = new Set(), usedA = new Set())
     // reached on a fragment of its name, which the Arabic half of the Setif CHU
     // hits on the given name in "Saadna Mohamed Abdenour", so it is not a second
     // place and cannot veto.
-    if (!weakCommune(c.fr) && !weakCommune(c.ar)) {
-      const fc = c.fr.commune?.code_commune, ac = c.ar.commune?.code_commune;
-      if (fc != null && ac != null && fc !== ac) { c.refusal = "different_commune"; continue; }
-    }
+    if (namesTwoCommunes(c.fr, c.ar)) { c.refusal = "different_commune"; continue; }
     takenF.add(c.fr); takenA.add(c.ar);
   }
 
@@ -990,6 +989,19 @@ const placeNamed = (t) => t === "eph" || t === "epsp" || t === "chu" || t === "h
 // Belouzdad on the given name alone. Such a commune still geocodes the record; it
 // just carries too little of the name to testify that two posts are one facility.
 const weakCommune = (post) => post.communeHow === "token_partial";
+
+/** Do the two halves each name a commune outright, and different ones? Then they
+ *  are two places whatever their names agree on. Every pairing step that reads
+ *  names checks this: step 1 paired the Ain Djasser EPSP with the Arabic post of
+ *  Ain Touta on the shared "ain" alone. Only a match that read the whole commune
+ *  name can testify: a `token` match can rest on one word such as سيدي, which
+ *  puts "بسيدي بلعباس" in Sidi Ali Benyoub. */
+const namesCommuneOutright = (post) => post.communeHow !== "token" && !weakCommune(post);
+const namesTwoCommunes = (f, a) => {
+  if (!namesCommuneOutright(f) || !namesCommuneOutright(a)) return false;
+  const fc = f.commune?.code_commune, ac = a.commune?.code_commune;
+  return fc != null && ac != null && fc !== ac;
+};
 
 // How much of a commune name the match rested on, as a rank. `exact` and
 // `squash` read the whole name; `global` is the same strictness applied

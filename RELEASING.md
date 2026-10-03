@@ -106,9 +106,13 @@ data / format · **patch** = corrections to existing records.
   merged into another rather than removed, the same ledger's `migrations` map
   names the record that carries its data now (`merged_into`, a `note`, and the
   upstream ids the pair stood for where there are any), so a consumer can follow
-  an old key instead of only finding it gone. The changeset must open with a
-  **Migration** paragraph listing the retired ids and pointing at the ledger.
-  Precedent: `@geoalgeria/sante` 2.1.0 (28 ids, French/Arabic twin posts merged).
+  an old key instead of only finding it gone. `merged_into` names a live record
+  of the same package; a record whose place moved to another package (a
+  `cliniques` hospital that `sante` now ships) carries no migration entry, and
+  the changeset names the package and id that took it instead. The changeset
+  must open with a **Migration** paragraph listing the retired ids and pointing
+  at the ledger. Precedent: `@geoalgeria/sante` 2.1.0 (28 ids, French/Arabic
+  twin posts merged) and `@geoalgeria/cliniques` 1.2.0 (2 ids moved to `sante`).
 
 - **Docs parity:** the root READMEs (EN/FR/AR) and any affected package READMEs reflect every contract, artifact, licence, or count change shipping in this release, sweep before tagging, not after.
 
