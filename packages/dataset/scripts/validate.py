@@ -2,6 +2,7 @@
 """Validate all dataset files for integrity and schema conformity."""
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -96,6 +97,47 @@ def validate_communes(data, filename, commune_codes):
     return len(data)
 
 
+def validate_osm_links(records):
+    """`osm_relation_id` and `wikidata` on every commune and wilaya record.
+
+    `records` is a list of (label, row). Both fields are optional values, so they are
+    present and null rather than absent, and each is checked for its shape: a positive
+    integer relation id, a Wikidata item spelled `Q` then digits. An id repeated across
+    records is the defect worth failing over: one OpenStreetMap relation is one place,
+    so two records sharing one would make a consumer's join to OpenStreetMap answer two
+    records for one boundary. A relation with no `wikidata` tag leaves that field null;
+    a Wikidata item with no relation has nothing saying where it was read.
+    """
+    seen = {"osm_relation_id": {}, "wikidata": {}}
+    for label, row in records:
+        for field in seen:
+            if field not in row:
+                error(f"{label}: {field} is absent; an optional field is null, never missing")
+        relation = row.get("osm_relation_id")
+        if relation is not None and (
+            not isinstance(relation, int) or isinstance(relation, bool) or relation < 1
+        ):
+            error(f"{label}: osm_relation_id must be a positive integer or null, got {relation!r}")
+        item = row.get("wikidata")
+        if item is not None and not (
+            isinstance(item, str) and re.fullmatch(r"Q[1-9][0-9]*", item)
+        ):
+            error(f"{label}: wikidata must be 'Q' followed by digits or null, got {item!r}")
+        if item is not None and relation is None:
+            error(f"{label}: carries a Wikidata item with no relation it could be read from")
+        for field in seen:
+            value = row.get(field)
+            if value is None:
+                continue
+            if value in seen[field]:
+                error(
+                    f"{label}: {field} {value} is already on {seen[field][value]}; "
+                    f"one OpenStreetMap relation is one place"
+                )
+            else:
+                seen[field][value] = label
+
+
 def validate_dairas(data, wilaya_codes):
     required = {"id", "wilaya_code", "name_fr", "commune_count"}
     ids = set()
@@ -175,17 +217,25 @@ def main():
     # Communes
     total_communes = 0
     commune_codes = {}
+    linked = [(f"wilaya {w.get('code')}", w) for w in (wilayas or [])]
     for fname in ["communes_w1_w23.json", "communes_w24_w48.json", "communes_w49_w69.json"]:
         print(f"[{fname}]")
         data = validate_json(ROOT / fname)
         if data:
             n = validate_communes(data, fname, commune_codes)
             total_communes += n
+            linked += [(f"{fname} commune {c.get('code_commune')}", c) for c in data]
             print(f"  OK: {n} communes")
     if wilayas:
         print("[wilaya capitals]")
         validate_capitals(wilayas, commune_codes)
         print(f"  OK: {len(wilayas)} capitals join a commune of their own wilaya")
+
+    print("[OpenStreetMap and Wikidata links]")
+    validate_osm_links(linked)
+    with_relation = sum(1 for _, row in linked if row.get("osm_relation_id") is not None)
+    with_item = sum(1 for _, row in linked if row.get("wikidata") is not None)
+    print(f"  OK: {with_relation} records link an OSM relation, {with_item} a Wikidata item")
 
     if len(commune_codes) != total_communes:
         error(

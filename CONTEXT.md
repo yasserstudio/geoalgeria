@@ -173,6 +173,18 @@ _Avoid_: multilingual, translated, i18n
 Carrying real `lat`/`lng` coordinates for a record (as opposed to density-only or wilaya-linked-only).
 _Avoid_: located, mapped, positioned
 
+**Upstream link**:
+An identifier a record carries so a consumer can join it to an outside database without matching on a name. The administrative records carry two: an **OSM relation id** (`osm_relation_id`) and a **Wikidata item** (`wikidata`). A link is harvested from a reviewed linkage, in two documented tiers, and is null where no tier has one or where a second source proved the upstream value names a different place; it is never resolved from a name, and no id is carried by two records, because one upstream relation is one place.
+_Avoid_: external id, cross-reference, mapping, concordance
+
+**OSM relation id**:
+The id of the OpenStreetMap administrative relation that is this record upstream: `admin_level=8` for a Commune, `admin_level=4` for a Wilaya. A Wilaya's relation is its own, never its capital Commune's, even where the two share a point. Three Commune relations are mis-tagged upstream and reached the records as the **second tier**, linked on their `ref:ONS` code from a capture fetched by id.
+_Avoid_: osm id, relation, boundary id
+
+**Wikidata item**:
+The Q item (`Q` then digits) an upstream OpenStreetMap relation is tagged with, carried as published. A relation with no `wikidata` tag leaves the field null rather than having an item looked up for it, so the value is always a tag this repository read, not a claim it made.
+_Avoid_: QID, wikidata id, concept id
+
 ### Search and normalization
 
 **Search key**:
