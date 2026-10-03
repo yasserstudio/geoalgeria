@@ -4,7 +4,7 @@
   "endpoint": "https://overpass-api.de/api/interpreter",
   "timestamp_osm_base": "2026-09-29T12:54:47Z",
   "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
-  "note": "The seat per commune, reported against by seat-distance-2026-09-29.md. No test reads it: the standing guard is containment (test/commune-centre-in-commune.test.mjs). Undated because it is a standing reference; refresh it in place with `node scripts/audit-commune-centres.mjs --fetch --write` and review the diff. `osm_relation_id` and `wikidata` are harvested here and are deliberately NOT package fields yet.",
+  "note": "The seat per commune, reported against by seat-distance-2026-09-29.md. No test reads it: the standing guard is containment (test/commune-centre-in-commune.test.mjs). Undated because it is a standing reference; refresh it in place with `node scripts/audit-commune-centres.mjs --fetch --write` and review the diff. `osm_relation_id` and `wikidata` are harvested here and are published fields on every commune and wilaya record: scripts/add-osm-links.mjs copies them, and its `--check` holds the published records to this file.",
   "communes": [
     {
       "code_commune": 3221,
