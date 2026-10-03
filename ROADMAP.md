@@ -79,21 +79,33 @@ reads as further along than it is.
   prefixes for reform daughters, so we do too. `code_commune` itself is still
   the open half. _(logged 2026-07-29; postal half shipped 2026-08-07)_
 
-- [ ] **Arabic name hygiene surfaced by the 2026-08-13 snippet audit.** 22
-  commune `name_ar` values in wilaya 15 carry decorative tatweel/kashida
-  characters (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken
-  typography in search snippets; the app stripped them in its committed copy,
-  so the next core regeneration must strip them at source or the lockstep
-  resurrects the artifact. Separately, dairas have NO Arabic name field at
-  all, so Arabic commune pages either showed the French daira name in Latin
-  script (fixed app-side by omitting the daira clause in Arabic) or nothing;
-  an `name_ar` for dairas would let the clause return. _(logged 2026-08-13)_
+- [ ] **Arabic name hygiene surfaced by the 2026-08-13 snippet audit.** The
+  tatweel half **shipped 2026-10-01** (ticket #239): 22 commune `name_ar`
+  values carried decorative tatweel/kashida characters
+  (`أيت عقـواشة`, `بنــــي زمنزار`, ...) that render as broken typography in
+  search snippets, 21 in wilaya 15 and Drean in wilaya 36, and the app had
+  stripped them in its own committed copy. They are now stripped at source in
+  all eight carriers by `scripts/fix-commune-name-ar.mjs`, with Souk El
+  Tenine's definite article repaired alongside them, and
+  `test/commune-name-ar.test.mjs` holds the floor at zero so a regeneration
+  cannot resurrect them. Still open: dairas have NO Arabic name field at all,
+  so Arabic commune pages either showed the French daira name in Latin script
+  (fixed app-side by omitting the daira clause in Arabic) or nothing; an
+  `name_ar` for dairas would let the clause return.
+  _(logged 2026-08-13; tatweel half shipped 2026-10-01)_
 
-- [ ] **4 communes disagree with the app file by tens of km** (Souama w15,
+- [x] **4 communes disagreed with the app file by tens of km** (Souama w15,
   Sidi Demed w67, M'fatha w67, Ouled Sidi Brahim w68): same name and wilaya,
-  coordinates ~1 degree apart. Which side is right is unresolved; verify
-  against Wikidata/OSM before touching either.
-  _(logged 2026-07-29)_
+  coordinates ~1 degree apart, and which side was right was unresolved.
+  **Closed 2026-10-01.** Three of the four were settled by the 2026-09-27 and
+  2026-09-29 commune-centre audits, which verified every centre against its own
+  OpenStreetMap commune boundary and corrected it there
+  (`research/_commune-centres/`); the app's remaining disagreement on Ouled Sidi
+  Brahim was point-in-polygon tested on the Web side and the app's value fell
+  outside wilaya 68 while this package's fell inside (ticket #179). There is no
+  app file to disagree with any more: ticket #239 retired the Web fork of this
+  table, and the app now serves this package's `algeria.json` byte for byte.
+  _(logged 2026-07-29, closed 2026-10-01)_
 
 - [ ] **39 records across packages sit geographically inside El Aricha (63)
   but still carry wilaya_code 13 or 22**, the boundary warnings the El Aricha
