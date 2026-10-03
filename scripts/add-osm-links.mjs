@@ -368,6 +368,12 @@ const sidecar = {
   generated: reference.generated,
   timestamp_osm_base: reference.timestamp_osm_base,
   licence: "ODbL 1.0, (c) OpenStreetMap contributors",
+  // The SPDX field the repository's descriptor rule reads (scripts/lib/licence-terms.mjs),
+  // with the note it requires under a package that declares SEE LICENSE IN LICENSE.
+  license: "ODbL-1.0",
+  provenance_notes: [
+    'The license is the SPDX expression "ODbL-1.0" although the package declares "SEE LICENSE IN LICENSE": every value this file describes, `osm_relation_id` and the `wikidata` item, is an OpenStreetMap relation id or that relation\'s own `wikidata` tag, so this part alone is wholly ODbL 1.0, (c) OpenStreetMap contributors, as LICENSE states.',
+  ],
   attribution: "https://www.openstreetmap.org/copyright",
   tiers:
     "Two. The first tier is the 2026-09-29 commune-centre capture, whose Overpass query asks for " +
