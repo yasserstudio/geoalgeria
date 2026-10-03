@@ -290,11 +290,15 @@ for (const commune of canonicalCommunes) {
 }
 
 // Relations whose commune no key resolves, pinned by relation id with what was
-// checked. Every one is a transliteration gap, not an ambiguity: the ONS ref is
-// the documented pre-2019 code inside the right mother wilaya, the Arabic name is
-// the same name spelled differently, and the relation's admin_centre node falls
-// inside the commune's declared current wilaya polygon (asserted below, so a pin
-// that stops being true fails the run instead of quietly standing).
+// checked. Five of the six are transliteration gaps, not ambiguities: the ONS ref is
+// the documented pre-2019 code inside the right mother wilaya and the name is the
+// same name spelled differently. The sixth, relation 21037899 for commune 4401, is
+// the one pin with no ONS ref on the relation at all: it is claimed on its name
+// together with being the single wilaya 44 relation still unclaimed once every other
+// w44 commune had joined on its own code, so it is name plus elimination, not a code
+// match. Every pin's admin_centre node falls inside the commune's declared current
+// wilaya polygon (asserted below, so a pin that stops being true fails the run
+// instead of quietly standing).
 //   relation -> [code_commune, why]
 const PINNED_RELATIONS = new Map([
   [4175368, [5303, "ref 1110, Tamanrasset's Foggaret Ezzaouia; we spell it Foggaret Ezzoua"]],
@@ -718,7 +722,7 @@ writeFileSync(
   `${JSON.stringify(
     {
       ...header,
-      note: "The seat per commune, reported against by seat-distance-2026-09-29.md. No test reads it: the standing guard is containment (test/commune-centre-in-commune.test.mjs). Undated because it is a standing reference; refresh it in place with `node scripts/audit-commune-centres.mjs --fetch --write` and review the diff. `osm_relation_id` and `wikidata` are harvested here and are deliberately NOT package fields yet.",
+      note: "The seat per commune, reported against by seat-distance-2026-09-29.md. No test reads it: the standing guard is containment (test/commune-centre-in-commune.test.mjs). Undated because it is a standing reference; refresh it in place with `node scripts/audit-commune-centres.mjs --fetch --write` and review the diff. `osm_relation_id` and `wikidata` are harvested here and are published fields on every commune and wilaya record: scripts/add-osm-links.mjs copies them, and its `--check` holds the published records to this file.",
       communes: rows.map((r) => ({
         code_commune: r.code_commune,
         wilaya_code: r.wilaya_code,

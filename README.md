@@ -57,9 +57,9 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 
 | | Count | |
 |---|---|---|
-| **Wilayas** | 69 | provinces (2019 + 2026 reforms) |
+| **Wilayas** | 69 | provinces (2019 + 2026 reforms), each with its capital commune (chef-lieu) |
 | **Dairas** | 551 | districts, as first-class entities |
-| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates |
+| **Communes** | 1,541 | bilingual FR/AR, postal codes, coordinates, OpenStreetMap + Wikidata links |
 | **Post offices** | 3,908 | real Algérie Poste codes, coordinates |
 | **ATMs** | 2,026 | Algérie Poste GAB network |
 | **Employment agencies** | 331 | ANEM: 58 AWEM + 273 ALEM. [`@geoalgeria/emploi`](packages/emploi) |
@@ -76,8 +76,8 @@ dz.getPostOfficesByCommune(1731); // real Algérie Poste offices
 | **Vocational training** | 1,932 | 856 CFPA + 182 INSFP + 723 private accredited + 58 DFEPs + more across all 69 current wilayas (MFEP / takwin.dz). [`@geoalgeria/formation-professionnelle`](packages/formation-professionnelle) |
 | **Mosques** | 20,759 | Wikidata + OpenStreetMap composite, Arabic & French names, denomination, all 69 wilayas. [`@geoalgeria/mosquees`](packages/mosquees) |
 | **Djezzy boutiques** | 128 | geocoded retail stores with category, hours & commune/wilaya linkage (djezzy.dz). [`@geoalgeria/djezzy`](packages/djezzy) |
-| **Health establishments** | 695 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 600 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
-| **Clinics & care facilities** | 1,918 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
+| **Health establishments** | 668 | EPH · EPSP · EHS · CHU from the Ministry of Health, bilingual, 597 geocoded via OSM + Wikidata. [`@geoalgeria/sante`](packages/sante) |
+| **Clinics & care facilities** | 1,917 | Polycliniques, salles de soins, centres de santé, maternités & private clinics from OpenStreetMap, classified by type, bilingual, 66 wilayas. The community tier beside the `sante` registry, never summed with it. [`@geoalgeria/cliniques`](packages/cliniques) |
 | **Civil protection units** | 880 | DGPC fire & rescue units nationwide, Arabic-named, address/phone/fax, status tier, all geocoded, official-primary (dgpc.dz), post-2026-reform wilaya linkage. [`@geoalgeria/protection-civile`](packages/protection-civile) |
 | **Cultural places** | 1,083 | Protected sites, museums, theatres, libraries + cultural establishments from the Ministry of Culture, bilingual, all geocoded, 66 wilayas. [`@geoalgeria/culture`](packages/culture) |
 | **Agriculture institutions** | 196 | Services directorates (DSA), forest conservations, research/training institutes, chambers of agriculture, public offices & groups from the Ministry of Agriculture, bilingual, geocoded, 58 wilayas. [`@geoalgeria/agriculture`](packages/agriculture) |
@@ -136,8 +136,8 @@ Formats: **JSON · CSV · GeoJSON · SQL · TypeScript**. The npm package ships 
 | [`packages/formation-professionnelle`](packages/formation-professionnelle) | [`@geoalgeria/formation-professionnelle`](https://www.npmjs.com/package/@geoalgeria/formation-professionnelle) | Vocational training, 1,932 CFPA, INSFP, IFEP, IEP, DFEPs & private centers from MFEP (takwin.dz), with capacity, boarding & coordinates |
 | [`packages/djezzy`](packages/djezzy) | [`@geoalgeria/djezzy`](https://www.npmjs.com/package/@geoalgeria/djezzy) | Djezzy boutiques, 128 geocoded retail stores from djezzy.dz, with category, hours & commune/wilaya linkage |
 | [`packages/mosquees`](packages/mosquees) | [`@geoalgeria/mosquees`](https://www.npmjs.com/package/@geoalgeria/mosquees) | Mosques of Algeria, 20,759 geocoded, a Wikidata + OpenStreetMap composite with Arabic & French names, denomination & commune/wilaya linkage |
-| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 695 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
-| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,918 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
+| [`packages/sante`](packages/sante) | [`@geoalgeria/sante`](https://www.npmjs.com/package/@geoalgeria/sante) | Public health establishments, 668 from the Ministry of Health (EPH, EPSP, EHS, CHU), bilingual, geocoded via OSM + Wikidata with commune/wilaya linkage |
+| [`packages/cliniques`](packages/cliniques) | [`@geoalgeria/cliniques`](https://www.npmjs.com/package/@geoalgeria/cliniques) | Clinics & proximity-care facilities, 1,917 geocoded from OpenStreetMap across 66 wilayas, classified by type (polyclinique/salle de soins/centre de santé/maternité/clinique), bilingual, with sector, speciality, phone & hours where tagged; the OSM community tier of the health sector, and every OSM element `sante` references is excluded from it |
 | [`packages/culture`](packages/culture) | [`@geoalgeria/culture`](https://www.npmjs.com/package/@geoalgeria/culture) | Cultural atlas, 1,083 places from the Ministry of Culture (protected sites, museums, theatres, libraries, cultural establishments), bilingual, fully geocoded with commune/wilaya linkage |
 | [`packages/agriculture`](packages/agriculture) | [`@geoalgeria/agriculture`](https://www.npmjs.com/package/@geoalgeria/agriculture) | Agriculture-sector institutions, 196 from the Ministry of Agriculture across 7 networks (DSA, forest conservations, research/training institutes, chambers of agriculture, public offices & groups), bilingual, geocoded with commune/wilaya linkage |
 | [`packages/ecoles`](packages/ecoles) | [`@geoalgeria/ecoles`](https://www.npmjs.com/package/@geoalgeria/ecoles) | Schools, 11,858 schools & kindergartens from OpenStreetMap, classified by cycle (primaire/moyen/secondaire/préscolaire), bilingual, all 69 wilayas, with commune/wilaya linkage |
@@ -172,6 +172,14 @@ old values, requires public evidence for changes or exclusions, applies the
 decision, and then runs the ordinary schema gate. See
 [`quality/overrides/README.md`](quality/overrides/README.md). Health data is the
 first pilot.
+
+A published id is a join key, so it is never reused. A record that leaves a
+package leaves its id in that package's `data/retired-ids.json`, reserved for
+good, and where two records are merged into one the ledger's `migrations` map
+also says where the absorbed id's data went: `merged_into` names the record that
+carries it now, with a note and, where the upstream has them, the source ids the
+pair stood for. A consumer holding an old id can follow it instead of only
+finding it gone.
 
 One package predates the contract, the core `geoalgeria` dataset (administrative divisions, not GeoRecords; marked `schema_version: null` in the catalog).
 

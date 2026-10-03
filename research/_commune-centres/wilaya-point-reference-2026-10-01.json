@@ -1,0 +1,631 @@
+{
+  "generated": "2026-10-01",
+  "source": "The wilaya points geoalgeria 2.2.0 published, each originally an OpenStreetMap admin_level=4 relation admin_centre, read off packages/dataset/data/algeria.json at commit 88e3f6e (the head of fix/236-capital-centres, cut from main).",
+  "licence": "ODbL 1.0, (c) OpenStreetMap contributors",
+  "note": "A FROZEN SNAPSHOT, not a live reading. These are the wilaya points the corrections-2026-10-01.json ledger was decided against, when a wilaya point was a claim about its capital town of its own. Rule 9 of docs/adr/0001-coordinate-review-by-independent-votes.md then made a wilaya point equal its capital commune centre, so the published value became a Copied claim under rule 3 and can no longer vote on the centre it is copied from. test/capital-centre-near-seat.test.mjs reads the claim from here so that decision stays replayable; nothing else reads it, and nothing regenerates it.",
+  "superseded_by": "packages/dataset/data/algeria.json, where every wilaya point is now its capital commune centre",
+  "count": 69,
+  "wilayas": [
+    {
+      "wilaya_code": 1,
+      "name_fr": "Adrar",
+      "osm_relation_id": 1258650,
+      "point": [
+        -0.283,
+        27.867
+      ]
+    },
+    {
+      "wilaya_code": 2,
+      "name_fr": "Chlef",
+      "osm_relation_id": 1283740,
+      "point": [
+        1.33167,
+        36.16472
+      ]
+    },
+    {
+      "wilaya_code": 3,
+      "name_fr": "Laghouat",
+      "osm_relation_id": 1280081,
+      "point": [
+        2.875,
+        33.80278
+      ]
+    },
+    {
+      "wilaya_code": 4,
+      "name_fr": "Oum El Bouaghi",
+      "osm_relation_id": 1278749,
+      "point": [
+        7.11361,
+        35.8775
+      ]
+    },
+    {
+      "wilaya_code": 5,
+      "name_fr": "Batna",
+      "osm_relation_id": 1278748,
+      "point": [
+        6.16667,
+        35.55
+      ]
+    },
+    {
+      "wilaya_code": 6,
+      "name_fr": "Béjaïa",
+      "osm_relation_id": 1278765,
+      "point": [
+        5.06417,
+        36.75111
+      ]
+    },
+    {
+      "wilaya_code": 7,
+      "name_fr": "Biskra",
+      "osm_relation_id": 1280072,
+      "point": [
+        5.733,
+        34.85
+      ]
+    },
+    {
+      "wilaya_code": 8,
+      "name_fr": "Béchar",
+      "osm_relation_id": 1258647,
+      "point": [
+        -2.217,
+        31.617
+      ]
+    },
+    {
+      "wilaya_code": 9,
+      "name_fr": "Blida",
+      "osm_relation_id": 1283683,
+      "point": [
+        2.83194,
+        36.46861
+      ]
+    },
+    {
+      "wilaya_code": 10,
+      "name_fr": "Bouira",
+      "osm_relation_id": 1283093,
+      "point": [
+        3.90139,
+        36.38
+      ]
+    },
+    {
+      "wilaya_code": 11,
+      "name_fr": "Tamanrasset",
+      "osm_relation_id": 1279667,
+      "point": [
+        5.52556,
+        22.78889
+      ]
+    },
+    {
+      "wilaya_code": 12,
+      "name_fr": "Tébessa",
+      "osm_relation_id": 1280465,
+      "point": [
+        8.117,
+        35.4
+      ]
+    },
+    {
+      "wilaya_code": 13,
+      "name_fr": "Tlemcen",
+      "osm_relation_id": 1280702,
+      "point": [
+        -1.31667,
+        34.88278
+      ]
+    },
+    {
+      "wilaya_code": 14,
+      "name_fr": "Tiaret",
+      "osm_relation_id": 1281404,
+      "point": [
+        1.317,
+        35.367
+      ]
+    },
+    {
+      "wilaya_code": 15,
+      "name_fr": "Tizi Ouzou",
+      "osm_relation_id": 1283601,
+      "point": [
+        4.05,
+        36.717
+      ]
+    },
+    {
+      "wilaya_code": 16,
+      "name_fr": "Alger",
+      "osm_relation_id": 157062,
+      "point": [
+        3.08722,
+        36.7325
+      ]
+    },
+    {
+      "wilaya_code": 17,
+      "name_fr": "Djelfa",
+      "osm_relation_id": 1280073,
+      "point": [
+        3.25,
+        34.66667
+      ]
+    },
+    {
+      "wilaya_code": 18,
+      "name_fr": "Jijel",
+      "osm_relation_id": 1278746,
+      "point": [
+        5.75,
+        36.81667
+      ]
+    },
+    {
+      "wilaya_code": 19,
+      "name_fr": "Sétif",
+      "osm_relation_id": 1278747,
+      "point": [
+        5.41,
+        36.19
+      ]
+    },
+    {
+      "wilaya_code": 20,
+      "name_fr": "Saïda",
+      "osm_relation_id": 1281260,
+      "point": [
+        0.15,
+        34.833
+      ]
+    },
+    {
+      "wilaya_code": 21,
+      "name_fr": "Skikda",
+      "osm_relation_id": 1273552,
+      "point": [
+        6.9,
+        36.86667
+      ]
+    },
+    {
+      "wilaya_code": 22,
+      "name_fr": "Sidi Bel Abbès",
+      "osm_relation_id": 1259189,
+      "point": [
+        -0.64139,
+        35.19389
+      ]
+    },
+    {
+      "wilaya_code": 23,
+      "name_fr": "Annaba",
+      "osm_relation_id": 1455599,
+      "point": [
+        7.767,
+        36.9
+      ]
+    },
+    {
+      "wilaya_code": 24,
+      "name_fr": "Guelma",
+      "osm_relation_id": 1273369,
+      "point": [
+        7.433,
+        36.45
+      ]
+    },
+    {
+      "wilaya_code": 25,
+      "name_fr": "Constantine",
+      "osm_relation_id": 1273368,
+      "point": [
+        6.6,
+        36.35
+      ]
+    },
+    {
+      "wilaya_code": 26,
+      "name_fr": "Médéa",
+      "osm_relation_id": 1282111,
+      "point": [
+        2.75,
+        36.2675
+      ]
+    },
+    {
+      "wilaya_code": 27,
+      "name_fr": "Mostaganem",
+      "osm_relation_id": 1259191,
+      "point": [
+        0.083,
+        35.933
+      ]
+    },
+    {
+      "wilaya_code": 28,
+      "name_fr": "M'Sila",
+      "osm_relation_id": 1278767,
+      "point": [
+        4.54722,
+        35.70194
+      ]
+    },
+    {
+      "wilaya_code": 29,
+      "name_fr": "Mascara",
+      "osm_relation_id": 1259190,
+      "point": [
+        0.13333,
+        35.4
+      ]
+    },
+    {
+      "wilaya_code": 30,
+      "name_fr": "Ouargla",
+      "osm_relation_id": 1279811,
+      "point": [
+        5.317,
+        31.95
+      ]
+    },
+    {
+      "wilaya_code": 31,
+      "name_fr": "Oran",
+      "osm_relation_id": 1259187,
+      "point": [
+        -0.63306,
+        35.69694
+      ]
+    },
+    {
+      "wilaya_code": 32,
+      "name_fr": "El Bayadh",
+      "osm_relation_id": 1258649,
+      "point": [
+        1.02028,
+        33.68028
+      ]
+    },
+    {
+      "wilaya_code": 33,
+      "name_fr": "Illizi",
+      "osm_relation_id": 1279816,
+      "point": [
+        8.482,
+        26.505
+      ]
+    },
+    {
+      "wilaya_code": 34,
+      "name_fr": "Bordj Bou Arreridj",
+      "osm_relation_id": 1278766,
+      "point": [
+        4.767,
+        36.067
+      ]
+    },
+    {
+      "wilaya_code": 35,
+      "name_fr": "Boumerdès",
+      "osm_relation_id": 1283608,
+      "point": [
+        3.47236,
+        36.76034
+      ]
+    },
+    {
+      "wilaya_code": 36,
+      "name_fr": "El Tarf",
+      "osm_relation_id": 1455600,
+      "point": [
+        8.317,
+        36.767
+      ]
+    },
+    {
+      "wilaya_code": 37,
+      "name_fr": "Tindouf",
+      "osm_relation_id": 1258651,
+      "point": [
+        -8.12861,
+        27.67528
+      ]
+    },
+    {
+      "wilaya_code": 38,
+      "name_fr": "Tissemsilt",
+      "osm_relation_id": 1282090,
+      "point": [
+        1.81111,
+        35.60778
+      ]
+    },
+    {
+      "wilaya_code": 39,
+      "name_fr": "El Oued",
+      "osm_relation_id": 1280071,
+      "point": [
+        6.86056,
+        33.36111
+      ]
+    },
+    {
+      "wilaya_code": 40,
+      "name_fr": "Khenchela",
+      "osm_relation_id": 1280466,
+      "point": [
+        7.133,
+        35.417
+      ]
+    },
+    {
+      "wilaya_code": 41,
+      "name_fr": "Souk Ahras",
+      "osm_relation_id": 1283457,
+      "point": [
+        7.95111,
+        36.28639
+      ]
+    },
+    {
+      "wilaya_code": 42,
+      "name_fr": "Tipaza",
+      "osm_relation_id": 1286213,
+      "point": [
+        2.44944,
+        36.59194
+      ]
+    },
+    {
+      "wilaya_code": 43,
+      "name_fr": "Mila",
+      "osm_relation_id": 1273544,
+      "point": [
+        6.27,
+        36.45
+      ]
+    },
+    {
+      "wilaya_code": 44,
+      "name_fr": "Aïn Defla",
+      "osm_relation_id": 1283678,
+      "point": [
+        1.9703,
+        36.2652
+      ]
+    },
+    {
+      "wilaya_code": 45,
+      "name_fr": "Naâma",
+      "osm_relation_id": 1258648,
+      "point": [
+        -0.31444,
+        33.26222
+      ]
+    },
+    {
+      "wilaya_code": 46,
+      "name_fr": "Aïn Témouchent",
+      "osm_relation_id": 1259188,
+      "point": [
+        -1.133,
+        35.3
+      ]
+    },
+    {
+      "wilaya_code": 47,
+      "name_fr": "Ghardaïa",
+      "osm_relation_id": 1279666,
+      "point": [
+        3.667,
+        32.483
+      ]
+    },
+    {
+      "wilaya_code": 48,
+      "name_fr": "Relizane",
+      "osm_relation_id": 1282091,
+      "point": [
+        0.55,
+        35.73333
+      ]
+    },
+    {
+      "wilaya_code": 49,
+      "name_fr": "Timimoun",
+      "osm_relation_id": 6528164,
+      "point": [
+        0.2285923,
+        29.25
+      ]
+    },
+    {
+      "wilaya_code": 50,
+      "name_fr": "Bordj Badji Mokhtar",
+      "osm_relation_id": 6528163,
+      "point": [
+        0.95417,
+        21.32889
+      ]
+    },
+    {
+      "wilaya_code": 51,
+      "name_fr": "Ouled Djellal",
+      "osm_relation_id": 10489092,
+      "point": [
+        5.067,
+        34.417
+      ]
+    },
+    {
+      "wilaya_code": 52,
+      "name_fr": "Béni Abbès",
+      "osm_relation_id": 6824843,
+      "point": [
+        -2.1,
+        30.08
+      ]
+    },
+    {
+      "wilaya_code": 53,
+      "name_fr": "In Salah",
+      "osm_relation_id": 6824900,
+      "point": [
+        2.48333,
+        27.195
+      ]
+    },
+    {
+      "wilaya_code": 54,
+      "name_fr": "In Guezzam",
+      "osm_relation_id": 6825881,
+      "point": [
+        5.77222,
+        19.56861
+      ]
+    },
+    {
+      "wilaya_code": 55,
+      "name_fr": "Touggourt",
+      "osm_relation_id": 6822397,
+      "point": [
+        6.067,
+        33.1
+      ]
+    },
+    {
+      "wilaya_code": 56,
+      "name_fr": "Djanet",
+      "osm_relation_id": 6825876,
+      "point": [
+        9.48528,
+        24.555
+      ]
+    },
+    {
+      "wilaya_code": 57,
+      "name_fr": "El M'Ghair",
+      "osm_relation_id": 6825874,
+      "point": [
+        5.92417,
+        33.95056
+      ]
+    },
+    {
+      "wilaya_code": 58,
+      "name_fr": "El Meniaa",
+      "osm_relation_id": 6825901,
+      "point": [
+        2.883,
+        30.583
+      ]
+    },
+    {
+      "wilaya_code": 59,
+      "name_fr": "Aflou",
+      "osm_relation_id": 20442307,
+      "point": [
+        2.10194,
+        34.10889
+      ]
+    },
+    {
+      "wilaya_code": 60,
+      "name_fr": "Barika",
+      "osm_relation_id": 20419608,
+      "point": [
+        5.36583,
+        35.39722
+      ]
+    },
+    {
+      "wilaya_code": 61,
+      "name_fr": "El Kantara",
+      "osm_relation_id": 20420206,
+      "point": [
+        5.7104,
+        35.2166
+      ]
+    },
+    {
+      "wilaya_code": 62,
+      "name_fr": "Bir El Ater",
+      "osm_relation_id": 20421910,
+      "point": [
+        8.05806,
+        34.74861
+      ]
+    },
+    {
+      "wilaya_code": 63,
+      "name_fr": "El Aricha",
+      "osm_relation_id": 20815946,
+      "point": [
+        -1.25583,
+        34.22278
+      ]
+    },
+    {
+      "wilaya_code": 64,
+      "name_fr": "Ksar Chellala",
+      "osm_relation_id": 20442362,
+      "point": [
+        2.317,
+        35.217
+      ]
+    },
+    {
+      "wilaya_code": 65,
+      "name_fr": "Aïn Ouessara",
+      "osm_relation_id": 20442406,
+      "point": [
+        2.90444,
+        35.44889
+      ]
+    },
+    {
+      "wilaya_code": 66,
+      "name_fr": "Messaad",
+      "osm_relation_id": 20812604,
+      "point": [
+        3.5,
+        34.16667
+      ]
+    },
+    {
+      "wilaya_code": 67,
+      "name_fr": "Ksar El Boukhari",
+      "osm_relation_id": 20953792,
+      "point": [
+        2.75083,
+        35.88556
+      ]
+    },
+    {
+      "wilaya_code": 68,
+      "name_fr": "Bou Saâda",
+      "osm_relation_id": 20819318,
+      "point": [
+        4.18167,
+        35.21917
+      ]
+    },
+    {
+      "wilaya_code": 69,
+      "name_fr": "El Abiodh Sidi Cheikh",
+      "osm_relation_id": 20816671,
+      "point": [
+        0.54444,
+        32.89861
+      ]
+    }
+  ]
+}
