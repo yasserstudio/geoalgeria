@@ -50,7 +50,7 @@ import {
   canonicalCommuneForCurrentLabel,
   canonicalCommunes,
 } from "./lib/commune-index.mjs";
-import { licenceTermsErrors } from "./lib/licence-terms.mjs";
+import { descriptorTermsErrors, licenceTermsErrors, publishedMetadataPaths } from "./lib/licence-terms.mjs";
 // The review gate over @geoalgeria/normalize's Rule table: a Rule cannot enter
 // without a reviewer and a corpus case, and a case cannot claim a Rule that does
 // not exist. The table and the corpus are read from the package as data.
@@ -1581,16 +1581,35 @@ function validateLicenceTerms(pkgs) {
         continue;
       }
     }
+    const licenceText = readFileSync(licencePath, "utf-8");
     const problems = licenceTermsErrors({
       name: pkg,
       manifest,
       metadata,
-      licenceText: readFileSync(licencePath, "utf-8"),
+      licenceText,
       noticeText: existsSync(noticePath) ? readFileSync(noticePath, "utf-8") : null,
       members: Object.keys(manifest.dependencies ?? {}).filter((d) => d.startsWith("@geoalgeria/")),
     });
+
+    // The descriptors a package publishes under data/ carry a `license` of their own,
+    // and nothing read them against the package class: geoalgeria moved to
+    // SEE LICENSE IN LICENSE and data/geojson/communes.metadata.json kept the SPDX
+    // expression the manifest used before the move.
+    const descriptors = [];
+    for (const rel of publishedMetadataPaths(dir)) {
+      try {
+        descriptors.push({ path: rel, json: readJson(join(dir, rel)) });
+      } catch (e) {
+        fail(`${pkg}/${rel}: cannot read for the licence check, ${e.message}`);
+      }
+    }
+    problems.push(...descriptorTermsErrors({ name: pkg, manifest, licenceText, descriptors }));
+
     for (const problem of problems) fail(problem);
-    if (!problems.length) console.log(`  OK: ${pkg} declares ${JSON.stringify(manifest.license)} and its LICENSE says so`);
+    if (!problems.length)
+      console.log(
+        `  OK: ${pkg} declares ${JSON.stringify(manifest.license)}, its LICENSE says so, and its ${descriptors.length} data descriptor(s) state the same terms`,
+      );
   }
 }
 

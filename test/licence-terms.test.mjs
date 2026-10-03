@@ -8,7 +8,13 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { MIT_BODY, licenceTermsErrors } from "../scripts/lib/licence-terms.mjs";
+import {
+  MIT_BODY,
+  descriptorTermsErrors,
+  isSpdxExpression,
+  licenceTermsErrors,
+  publishedMetadataPaths,
+} from "../scripts/lib/licence-terms.mjs";
 
 // The real header a package LICENSE carries: the MIT title, the copyright line, and
 // the grant itself. The grant is what a consumer relies on, so it is part of every
@@ -442,4 +448,168 @@ test("every package in the repository satisfies its licence class", () => {
     );
   }
   assert.deepEqual(errors, []);
+});
+
+// The `data/` descriptors. These carry a `license` of their own and no rule read
+// them, so `data/geojson/communes.metadata.json` kept "MIT AND ODbL-1.0" after the
+// package moved to SEE LICENSE IN LICENSE: an SPDX expression claiming the ODbL
+// over all 1,541 commune centres, next to the file's own note saying no such claim
+// is made over 1,290 of them.
+
+test("isSpdxExpression tells a licence expression from prose or a URL", () => {
+  for (const terms of ["MIT", "ODbL-1.0", "MIT AND ODbL-1.0", "CC0-1.0 AND ODbL-1.0"])
+    assert.ok(isSpdxExpression(terms), `${terms} reads as an SPDX expression`);
+  for (const terms of [
+    "Data © Algérie Poste; redistributed for reference",
+    "Factual public listing (ANEM)",
+    "https://opendatacommons.org/licenses/odbl/1-0/",
+    "Official registry (Ministry of Health); geocoding ODbL/CC0",
+  ])
+    assert.ok(!isSpdxExpression(terms), `${terms} is prose or a URL, not an SPDX expression`);
+});
+
+const RESTRICTED_TERMS = "Data © Algérie Poste; redistributed for reference";
+const RESTRICTED_LICENCE = `## Code\n\n${MIT_TEXT}\n## Data\n\n${RESTRICTED_TERMS}\n`;
+
+test("a descriptor repeating the terms the LICENSE grants passes", () => {
+  assert.deepEqual(
+    descriptorTermsErrors({
+      name: "poste",
+      manifest: { license: "SEE LICENSE IN LICENSE" },
+      licenceText: RESTRICTED_LICENCE,
+      descriptors: [{ path: "data/metadata.json", json: { license: RESTRICTED_TERMS } }],
+    }),
+    [],
+  );
+});
+
+test("a descriptor stating terms no licence file grants fails", () => {
+  const errors = descriptorTermsErrors({
+    name: "poste",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    licenceText: RESTRICTED_LICENCE,
+    descriptors: [{ path: "data/metadata.json", json: { license: "Public domain" } }],
+  });
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /not carried verbatim by the "## Data" section/);
+});
+
+test("a descriptor with no terms at all fails, and one with both fails", () => {
+  const base = {
+    name: "poste",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    licenceText: RESTRICTED_LICENCE,
+  };
+  const neither = descriptorTermsErrors({
+    ...base,
+    descriptors: [{ path: "data/metadata.json", json: { record_count: 10 } }],
+  });
+  assert.equal(neither.length, 1);
+  assert.match(neither[0], /declares neither/);
+
+  const both = descriptorTermsErrors({
+    ...base,
+    descriptors: [
+      { path: "data/metadata.json", json: { license: RESTRICTED_TERMS, conditionsOfAccess: RESTRICTED_TERMS } },
+    ],
+  });
+  assert.equal(both.length, 1);
+  assert.match(both[0], /exclusive/);
+});
+
+test("a descriptor SPDX expression is free under an SPDX manifest and checked under SEE LICENSE IN LICENSE", () => {
+  // cliniques: the manifest itself declares the expression, so the descriptor
+  // repeating a part of it states nothing the package does not.
+  assert.deepEqual(
+    descriptorTermsErrors({
+      name: "cliniques",
+      manifest: { license: "MIT AND ODbL-1.0" },
+      licenceText: `## Code\n\n${MIT_TEXT}\n## Data\n\nODbL 1.0: ${"https://opendatacommons.org/licenses/odbl/1-0/"}\n`,
+      descriptors: [{ path: "data/metadata.json", json: { license: "ODbL-1.0" } }],
+    }),
+    [],
+  );
+
+  // The defect: the expression the manifest carried before it moved class.
+  const stale = descriptorTermsErrors({
+    name: "dataset",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    licenceText: RESTRICTED_LICENCE,
+    descriptors: [
+      {
+        path: "data/geojson/communes.metadata.json",
+        json: { license: "MIT AND ODbL-1.0", provenance_notes: ["Licence split: 251 of the 1,541 points are ODbL."] },
+      },
+    ],
+  });
+  assert.equal(stale.length, 1);
+  assert.match(stale[0], /SPDX expression "MIT AND ODbL-1\.0"/);
+  assert.match(stale[0], /SEE LICENSE IN LICENSE/);
+});
+
+test("a part whose own data is wholly under one licence may state it, once the note says why", () => {
+  const boundaries = {
+    name: "dataset",
+    manifest: { license: "SEE LICENSE IN LICENSE" },
+    licenceText: RESTRICTED_LICENCE,
+    descriptors: [
+      {
+        path: "data/geojson/wilaya-boundaries.metadata.json",
+        json: {
+          license: "ODbL-1.0",
+          provenance_notes: [
+            "Data licence is ODbL-1.0 while the compilation the geoalgeria npm package ships is MIT, so the package declares SEE LICENSE IN LICENSE and its descriptor carries prose.",
+          ],
+        },
+      },
+    ],
+  };
+  assert.deepEqual(descriptorTermsErrors(boundaries), []);
+
+  // Half a note is not the reason: naming the expression without the manifest value
+  // it departs from leaves a reader unable to tell this was decided, not forgotten.
+  const halfNoted = descriptorTermsErrors({
+    ...boundaries,
+    descriptors: [
+      {
+        path: "data/geojson/wilaya-boundaries.metadata.json",
+        json: { license: "ODbL-1.0", provenance_notes: ["Every feature comes from OpenStreetMap."] },
+      },
+    ],
+  });
+  assert.equal(halfNoted.length, 1);
+  assert.match(halfNoted[0], /provenance_notes entry/);
+});
+
+test("publishedMetadataPaths finds every data descriptor and not dataset-metadata.json", () => {
+  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+  assert.deepEqual(publishedMetadataPaths(join(root, "packages", "dataset")), [
+    "data/geojson/communes.metadata.json",
+    "data/geojson/wilaya-boundaries.metadata.json",
+    "data/poste/metadata.json",
+  ]);
+  assert.deepEqual(publishedMetadataPaths(join(root, "packages", "ecoles")), ["data/metadata.json"]);
+  assert.deepEqual(publishedMetadataPaths(join(root, "packages", "schema")), []);
+});
+
+test("every data descriptor in the repository states the terms its package grants", () => {
+  const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+  const packagesDir = join(root, "packages");
+  const errors = [];
+  let checked = 0;
+  for (const name of readdirSync(packagesDir).sort()) {
+    const dir = join(packagesDir, name);
+    const paths = publishedMetadataPaths(dir);
+    checked += paths.length;
+    errors.push(
+      ...descriptorTermsErrors({
+        name,
+        manifest: JSON.parse(readFileSync(join(dir, "package.json"), "utf-8")),
+        licenceText: readFileSync(join(dir, "LICENSE"), "utf-8"),
+        descriptors: paths.map((path) => ({ path, json: JSON.parse(readFileSync(join(dir, path), "utf-8")) })),
+      }),
+    );
+  }
+  assert.deepEqual(errors, []);
+  assert.ok(checked >= 29, `expected every package's data descriptors, checked only ${checked}`);
 });

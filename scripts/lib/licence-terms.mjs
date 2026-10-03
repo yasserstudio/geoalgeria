@@ -7,6 +7,17 @@
 // was never read against the metadata that states the real terms. The classes
 // below are the whole map: a package that fits none of them is an error naming
 // the URL, not a silent pass.
+//
+// A package also ships per-file and per-folder descriptors under `data/`, each
+// with a `license` field of its own, and those were never read against the
+// package class. `geoalgeria` moved to SEE LICENSE IN LICENSE with prose terms,
+// and `data/geojson/communes.metadata.json` kept the SPDX expression the manifest
+// used before the move, claiming the ODbL over all 1,541 commune centres while
+// the file's own note says no such claim is made over 1,290 of them.
+// `descriptorTermsErrors` below covers every one of those descriptors.
+
+import { existsSync, readdirSync, statSync } from "node:fs";
+import { join, relative, sep } from "node:path";
 
 /** metadata state -> manifest value -> LICENSE shape. Cited by CONTRIBUTING.md. */
 export const LICENCE_CLASSES = [
@@ -286,6 +297,109 @@ export function licenceTermsErrors({ name, manifest, metadata, licenceText, noti
     errors.push(`${name}/dataset-metadata.json: license and conditionsOfAccess are exclusive, it declares both`);
   else if (!metadata.license && !metadata.conditionsOfAccess)
     errors.push(`${name}/dataset-metadata.json: needs exactly one of license or conditionsOfAccess, it declares neither`);
+
+  return errors;
+}
+
+/**
+ * Every metadata descriptor a package publishes from `data/`, as paths relative to
+ * the package directory, sorted. Discovered rather than listed, so a descriptor
+ * added next to a new data file is covered the day it lands: that is how
+ * `data/geojson/communes.metadata.json` went unchecked.
+ *
+ * `dataset-metadata.json` is deliberately not here. It is the package's own terms
+ * statement and `licenceTermsErrors` above already owns it; listing it twice would
+ * report the same defect from two rules.
+ *
+ * @param {string} pkgDir absolute path of the package directory
+ * @returns {string[]} e.g. ["data/geojson/communes.metadata.json", "data/metadata.json"]
+ */
+export function publishedMetadataPaths(pkgDir) {
+  const dataDir = join(pkgDir, "data");
+  if (!existsSync(dataDir)) return [];
+  const found = [];
+  const walk = (dir) => {
+    for (const entry of readdirSync(dir).sort()) {
+      const path = join(dir, entry);
+      if (statSync(path).isDirectory()) walk(path);
+      else if (entry === "metadata.json" || entry.endsWith(".metadata.json"))
+        found.push(relative(pkgDir, path).split(sep).join("/"));
+    }
+  };
+  walk(dataDir);
+  return found.sort();
+}
+
+/** A bare SPDX expression: identifiers joined by AND, OR or WITH, and nothing else. */
+const SPDX_EXPRESSION = /^[A-Za-z0-9][A-Za-z0-9.+-]*(?: (?:AND|OR|WITH) [A-Za-z0-9][A-Za-z0-9.+-]*)*$/;
+
+/** True when `terms` reads as an SPDX expression rather than prose or a licence URL. */
+export const isSpdxExpression = (terms) => typeof terms === "string" && SPDX_EXPRESSION.test(terms.trim());
+
+/**
+ * Errors (empty when consistent) for one package's `data/` descriptors.
+ *
+ * Three rules, and the reason each one exists:
+ *
+ *  1. A descriptor states its terms in exactly one of `license` or
+ *     `conditionsOfAccess`, the same exclusive pair the Dataset JSON-LD rule
+ *     requires of `dataset-metadata.json`. A descriptor that states neither
+ *     publishes data with no terms at all.
+ *  2. A bare SPDX expression under a package that declares SEE LICENSE IN LICENSE
+ *     has to say why. The manifest value means no SPDX expression states this
+ *     package's terms, so a descriptor that produces one is either the stale
+ *     manifest value left behind by a class change, or a part whose own data really
+ *     is wholly under that licence. The second is legitimate and the repository
+ *     ships one, `data/geojson/wilaya-boundaries.geojson`, whose every feature is
+ *     ODbL; it is told apart from the first by a `provenance_notes` entry that
+ *     names both the expression and the manifest value.
+ *  3. Prose terms have to be the terms the package grants, carried verbatim by the
+ *     `## Data` section of its LICENSE. Otherwise a descriptor can offer data on
+ *     terms no licence file states.
+ *
+ * @param {object} input
+ * @param {string} input.name package directory name, used in the messages
+ * @param {object} input.manifest parsed package.json
+ * @param {string} input.licenceText the package LICENSE file
+ * @param {{ path: string, json: object }[]} input.descriptors parsed `data/` descriptors
+ * @returns {string[]}
+ */
+export function descriptorTermsErrors({ name, manifest, licenceText, descriptors }) {
+  const errors = [];
+  const data = dataSection(licenceText);
+
+  for (const { path, json } of descriptors) {
+    const where = `${name}/${path}`;
+    const { license, conditionsOfAccess } = json ?? {};
+
+    if (license && conditionsOfAccess) {
+      errors.push(`${where}: license and conditionsOfAccess are exclusive, it declares both`);
+      continue;
+    }
+    const terms = license || conditionsOfAccess;
+    if (!terms) {
+      errors.push(
+        `${where}: needs exactly one of license or conditionsOfAccess, it declares neither, so this data ships with no terms`,
+      );
+      continue;
+    }
+
+    if (isSpdxExpression(terms)) {
+      if (manifest?.license !== SEE_LICENSE) continue;
+      const notes = Array.isArray(json.provenance_notes) ? json.provenance_notes : [];
+      const documented = notes.some((note) => note.includes(terms) && note.includes(SEE_LICENSE));
+      if (!documented)
+        errors.push(
+          `${where}: license is the SPDX expression "${terms}" while ${name}/package.json declares "${SEE_LICENSE}", meaning no SPDX expression states this package's terms. Either state the terms the LICENSE grants, or add a provenance_notes entry naming both "${terms}" and "${SEE_LICENSE}" to say why this part alone is wholly under that licence.`,
+        );
+      continue;
+    }
+
+    if (!data.includes(terms))
+      errors.push(
+        `${where}: license is not carried verbatim by the "## Data" section of ${name}/LICENSE, so it states terms no licence file grants (${terms})`,
+      );
+  }
 
   return errors;
 }

@@ -12,7 +12,7 @@
     "postal_code": "commune postal code, null for the 5 communes with no citable code",
     "daira": "parent daira name in French"
   },
-  "license": "MIT AND ODbL-1.0",
+  "license": "Mixed terms per part, stated in full in LICENSE and NOTICE. The compilation of wilayas, dairas, communes, their bilingual names, postal codes and administrative codes is MIT. The 69 wilaya boundary polygons and 251 OpenStreetMap-derived commune centre coordinates are ODbL 1.0, © OpenStreetMap contributors. The mirrored postal data under data/poste: Data © Algérie Poste; redistributed for reference.",
   "sources": [
     {
       "key": "osm-admin-centre",
@@ -38,6 +38,7 @@
   "provenance_notes": [
     "A commune's point is its chef-lieu, a point in the built-up centre of the commune, not the centroid of its territory.",
     "Licence split: 251 of the 1,541 points are OpenStreetMap-derived and are ODbL 1.0, (c) OpenStreetMap contributors, per the two sources above. The remaining 1,290 carry no recorded source: no geocoding run, generator or capture accounts for them anywhere in the repository's history, so they are offered under the package's MIT licence and their provenance reads as unknown rather than official. No ODbL claim is made over them, and none should be inferred. The per-part terms are in the package LICENSE and NOTICE.",
+    "Why this descriptor carries prose rather than an SPDX expression: the split above is per row, not per file, and no SPDX expression states it. \"MIT AND ODbL-1.0\" would read as the ODbL over all 1,541 points, which is the claim the note above refuses. The package itself declares SEE LICENSE IN LICENSE for the same reason, so this descriptor states the terms its LICENSE grants, verbatim. The other ODbL carve-out, data/geojson/wilaya-boundaries.geojson, is wholly ODbL and does carry a per-file expression.",
     "This file is a generated mirror, not an independent source. The same 1,541 points are carried by data/algeria.json, data/communes_w1_w23.json, data/communes_w24_w48.json, data/communes_w49_w69.json, data/csv/communes.csv and data/sql/full.sql, and every coordinate fix patches all six together, so the ODbL covers those 251 values in each of them. data/ecommerce/ ships no coordinates.",
     "Guarded by test/commune-in-boundary.test.mjs: no commune centre may sit more than 500 m outside its own wilaya polygon in any of those representations, with three reviewed exceptions pinned by name."
   ]
