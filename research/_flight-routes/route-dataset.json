@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-09-27",
+  "as_of": "2026-10-02",
   "routes": [
     {
       "id": "aae-cdg",
@@ -70,6 +70,20 @@
       "source_is_the_table": true,
       "listed_at": "Rabah Bitat Airport",
       "great_circle_km": 1396
+    },
+    {
+      "id": "abv-alg",
+      "from": "ABV",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 5354",
+      "status": "active",
+      "days": [
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://www.algerie360.com/air-algerie-accelere-son-envol-en-afrique-avec-40-vols-hebdomadaires-a-lhorizon-2026/",
+      "great_circle_km": 3106
     },
     {
       "id": "alc-alg",
@@ -302,6 +316,22 @@
       "evidence": "verified",
       "source": "https://www.airalgerie.dz/decouvrir/nos-destinations/",
       "great_circle_km": 3696
+    },
+    {
+      "id": "alg-doh",
+      "from": "ALG",
+      "to": "DOH",
+      "carrier": "AH",
+      "flight": "AH 4078",
+      "status": "active",
+      "days": [
+        "sun",
+        "tue",
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+      "great_circle_km": 4733
     },
     {
       "id": "alg-dss",
@@ -1092,6 +1122,22 @@
       "great_circle_km": 2814
     },
     {
+      "id": "doh-alg",
+      "from": "DOH",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": "AH 4079",
+      "status": "active",
+      "days": [
+        "sun",
+        "tue",
+        "fri"
+      ],
+      "evidence": "verified",
+      "source": "https://thepeninsulaqatar.com/article/30/09/2026/hia-welcomes-first-air-algerie-flight-as-direct-doha-algiers-service-launches",
+      "great_circle_km": 4733
+    },
+    {
       "id": "elu-cdg",
       "from": "ELU",
       "to": "CDG",
@@ -1654,18 +1700,18 @@
   ],
   "planned": [
     {
-      "id": "abv-alg",
+      "id": "abv-los",
       "from": "ABV",
-      "to": "ALG",
+      "to": "LOS",
       "carrier": "AH",
-      "flight": "AH 5354",
+      "flight": null,
       "status": "unclear",
       "days": [
-        "fri"
+        "mon"
       ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "great_circle_km": 3106
+      "evidence": "listed",
+      "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
+      "great_circle_km": 511
     },
     {
       "id": "alg-bzv",
@@ -1674,9 +1720,13 @@
       "carrier": "AH",
       "flight": "AH 5390",
       "status": "unclear",
-      "days": null,
+      "days": [
+        "mon",
+        "wed",
+        "sat"
+      ],
       "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
+      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
       "great_circle_km": 4722
     },
     {
@@ -1686,25 +1736,14 @@
       "carrier": "AH",
       "flight": "AH 5358",
       "status": "unclear",
-      "days": null,
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/air-algerie-les-ventes-sont-ouvertes-pour-quatre-nouvelles-lignes-internationales/",
-      "great_circle_km": 3459
-    },
-    {
-      "id": "alg-doh",
-      "from": "ALG",
-      "to": "DOH",
-      "carrier": "AH",
-      "flight": "AH 4078",
-      "status": "unclear",
       "days": [
         "tue",
-        "fri"
+        "thu",
+        "sun"
       ],
       "evidence": "verified",
-      "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/",
-      "great_circle_km": 4733
+      "source": "https://www.algerie360.com/air-algerie-nouvelles-lignes-afrique-conakry-brazzaville-lagos/",
+      "great_circle_km": 3459
     },
     {
       "id": "alg-icn",
@@ -1747,6 +1786,21 @@
       "great_circle_km": 3349
     },
     {
+      "id": "alg-mji",
+      "from": "ALG",
+      "to": "MJI",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": [
+        "wed",
+        "fri"
+      ],
+      "evidence": "listed",
+      "source": "https://maghrebemergent.news/fr/air-algerie-renoue-avec-tripoli-apres-une-decennie-dinterruption/",
+      "great_circle_km": 1012
+    },
+    {
       "id": "alg-pvg",
       "from": "ALG",
       "to": "PVG",
@@ -1769,11 +1823,13 @@
       "carrier": "AH",
       "flight": null,
       "status": "unclear",
-      "days": null,
+      "days": [
+        "mon",
+        "wed",
+        "fri"
+      ],
       "evidence": "listed",
-      "source": "https://www.tsa-algerie.dz/air-algerie-va-relancer-ses-vols-directs-entre-alger-et-moscou/",
-      "source_is_the_table": false,
-      "listed_at": "Houari Boumediene Airport",
+      "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
       "great_circle_km": 3332
     },
     {
@@ -1813,21 +1869,6 @@
       "great_circle_km": 3459
     },
     {
-      "id": "doh-alg",
-      "from": "DOH",
-      "to": "ALG",
-      "carrier": "AH",
-      "flight": "AH 4079",
-      "status": "unclear",
-      "days": [
-        "tue",
-        "fri"
-      ],
-      "evidence": "verified",
-      "source": "https://www.visa-algerie.com/apres-des-mois-de-suspension-air-algerie-de-retour-vers-ce-pays-du-golfe/",
-      "great_circle_km": 4733
-    },
-    {
       "id": "icn-alg",
       "from": "ICN",
       "to": "ALG",
@@ -1838,6 +1879,32 @@
       "evidence": "listed",
       "source": "https://www.visa-algerie.com/air-algerie-une-ligne-directe-vers-la-coree-du-sud-se-precise/",
       "great_circle_km": 9914
+    },
+    {
+      "id": "kwi-amm",
+      "from": "KWI",
+      "to": "AMM",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.visa-algerie.com/air-algerie-le-projet-dune-nouvelle-ligne-vers-le-golfe-confirme-officiellement/",
+      "great_circle_km": 1180
+    },
+    {
+      "id": "los-abv",
+      "from": "LOS",
+      "to": "ABV",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": [
+        "thu"
+      ],
+      "evidence": "listed",
+      "source": "https://www.aeroroutes.com/eng/260820-ahnw26af",
+      "great_circle_km": 511
     },
     {
       "id": "los-alg",
@@ -1854,6 +1921,21 @@
       "great_circle_km": 3349
     },
     {
+      "id": "mji-alg",
+      "from": "MJI",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": [
+        "wed",
+        "fri"
+      ],
+      "evidence": "listed",
+      "source": "https://algerie-eco.com/2026/10/01/air-algerie-annonce-son-retour-a-tripoli/",
+      "great_circle_km": 1012
+    },
+    {
       "id": "pvg-alg",
       "from": "PVG",
       "to": "ALG",
@@ -1868,6 +1950,18 @@
       "evidence": "verified",
       "source": "https://www.visa-algerie.com/air-algerie-ouvre-une-nouvelle-ligne-vers-la-chine-dates-horaires-et-prix/",
       "great_circle_km": 10131
+    },
+    {
+      "id": "svo-alg",
+      "from": "SVO",
+      "to": "ALG",
+      "carrier": "AH",
+      "flight": null,
+      "status": "unclear",
+      "days": null,
+      "evidence": "listed",
+      "source": "https://www.visa-algerie.com/air-algerie-le-retour-des-vols-vers-moscou-se-precise-voici-la-date-annoncee/",
+      "great_circle_km": 3332
     }
   ],
   "endpoints": [
@@ -2320,6 +2414,15 @@
       "lat": 35.75809860229492,
       "lng": 10.75469970703125,
       "country": "TN"
+    },
+    {
+      "iata": "MJI",
+      "name": "Aéroport de Mitiga",
+      "name_en": "Mitiga International Airport",
+      "name_ar": "مطار إمعيتيقة الدولي",
+      "lat": 32.89177,
+      "lng": 13.287878,
+      "country": "LY"
     },
     {
       "iata": "MRS",

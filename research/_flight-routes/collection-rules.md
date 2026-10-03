@@ -838,3 +838,46 @@ leg, and both statements are true at once: nonstop Algiers to Amman is still not
 Air Algérie route, and Amman to Algiers is a planned one. A triangle is exactly the
 shape that produces this, which is why section 1's directional record is the unit
 and an "Amman: in or out" question has no answer.
+
+## 33. A triangle's middle leg is in scope (amended 2026-10-02)
+
+Scope was locked on 2026-07-20 and section 2 says not to re-litigate it. This is an
+Owner amendment to it, dated, written here rather than left in a commit message,
+because the next pass would otherwise delete the rows as out of scope.
+
+**Old rule, as applied on 2026-09-27.** Only Algeria-touching legs ship. The
+Algiers-Kuwait-Amman-Algiers triangle therefore produced two rows and explicitly
+"nothing for the Kuwait to Amman leg, which touches Algeria at neither end".
+
+**New rule.** Every **nonstop leg of an Air Algérie rotation that touches Algeria**
+is in scope, including the legs between two foreign airports. So the Gulf triangle
+ships three rows and each Nigeria triangle ships three.
+
+**Why the old rule was the wrong cut.** Section 1 makes the directional nonstop leg
+the unit of the dataset, and the reason given is that a pair-shaped record "will
+draw a line that nobody can fly on any given day". Dropping a triangle's middle leg
+has the same defect one level up: it draws a rotation with a hole in it, where an
+aircraft leaves Algiers, reappears at a third airport, and the leg that carried it
+there is missing. `ALG-KWI` and `AMM-ALG` without `KWI-AMM` is not a smaller truth,
+it is a broken one.
+
+**What has NOT changed, and must not drift.**
+
+- **International only.** Section 2's actual lock. Algeria-to-Algeria legs stay out,
+  and nothing here touches that.
+- **Air Algérie only.** A foreign-to-foreign leg qualifies because Air Algérie flies
+  it on a rotation out of Algeria, never because two foreign airports are connected.
+- **The candidate list is unchanged.** Section 4's Algerian-airports-by-foreign-
+  airports cross-product is still how pairs are found. A foreign-to-foreign leg
+  enters only through a rotation already in the dataset, never through a sweep: no
+  probe of Lagos to Abuja, no page of Kuwait's airport, nothing that would turn this
+  into a world airline dataset.
+- **Evidence per leg.** Unchanged, and it is what keeps this honest. `ABV-LOS` ships
+  on the trade filing that states the routing `Algiers - Abuja - Lagos - Algiers`,
+  not on an assumption that a triangle must have a middle.
+- **`days` per leg.** Also unchanged. Where only the Algiers departure day is
+  published, the middle leg takes the day the filing gives the rotation and the
+  inbound leg stays null. `KWI-AMM` is null for exactly that reason.
+
+**Rows added under this rule on 2026-10-02:** `KWI-AMM`, `ABV-LOS`, `LOS-ABV`. All
+planned. See `verification-2026-10-02.md` sections 4 and 5.
